@@ -1,0 +1,21 @@
+# SIG Apps
+
+A Special Interest Group for deploying and operating applications in Kubernetes.
+
+## Goals:
+* Discuss running applications in k8s
+* Discuss how to define and run apps in k8s (APIs, CLIs, SDKs, package management tools, etc.)
+* Suggest k8s features where we see friction
+* Be the voice of the people running applications into the k8s development (developers and devops)
+* Help people get involved in the kubernetes community
+* Show early features/demos of tools that make running apps easier
+
+## Non-goals:
+* Our job is not to go implement stacks. We’re helping people to help themselves. We will help connect people to the right folks * but we do not want to own a set of examples (as a group)
+* Do not endorse one particular tool
+* Do not pick which apps to run on top of the platform
+* Do not recommend one way to do things 
+
+## Organizers:
+Michelle Noorali <michelle@deis.com>
+Matt Farina <matt@mattfarina.com>

@@ -34,6 +34,10 @@ Kubernetes Special Interest Group for Authentication and Authorization.
 
 Goals for this SIG is to discuss improvements Kubernetes Authorization and Authentication, and cluster security policy. Not in scope for this SIG is to report specific vulnerabilities in Kubernetes, please report using these instructions: http://kubernetes.io/v1.1/docs/reporting-security-issues.html
 
+### [SIG Apps](SIG Apps/README.md)
+
+A Special Interest Group for deploying and operating applications in Kubernetes.
+
 ### SIG Autoscaling
 
 The scope of our SIG includes (but is not limited to):
