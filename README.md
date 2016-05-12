@@ -22,8 +22,6 @@ The weekly community meeting provides an opportunity for the different SIGs and 
 
 Much of the community activity is organized into a community meeting and numerous SIGs. Each of those groups operates a little differently which is reflected in how they capture notes, examples, and other information. Each groups material is in its subdirectory in this project.
 
-### Groups
-
 | Name | Leads | Group | Slack Channel | Meetings |
 |------|-------|-------|---------------|----------|
 | [API Machinery](sig-api-machinery/README.md) | [@lavalamp (Daniel Smith, Google)](https://github.com/lavalamp) | [Group](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery) | [#sig-api-machinery](https://kubernetes.slack.com/messages/sig-api-machinery/) | Every other Wednesday at 11:00 AM PST |
@@ -44,7 +42,7 @@ Much of the community activity is organized into a community meeting and numerou
 | [UI](sig-ui/README.md) | [@dodwyer (David O'Dwyer, Livewyer)](https://github.com/dodwyer)<br>[@preillyme (Patrick Reilly, Kismatic)](https://github.com/preillyme)<br> [@bryk (Piotr Bryk, Google)](https://github.com/bryk) | [Group](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) | [#sig-ui](https://kubernetes.slack.com/messages/sig-ui/) | Bi-weekly Wednesdays at 9 AM PT |
 | [Windows](sig-windows/README.md) | [@preillyme (Patrick Reilly, Kismatic)](https://github.com/preillyme)<br> [ @sschuller (Sinclair Schuller, Apprenda](https://github.com/sschuller)| [Group](https://groups.google.com/forum/#!forum/kubernetes-sig-windows) | [#sig-windows](https://kubernetes.slack.com/messages/sig-windows) | Bi-weekly Tuesdays at 10:00 AM PT |
 
-### Starting a SIG
+### How to start a SIG
 
 * Create a group with at least 2 owners: kubernetes-sig-foo@googlegroups.com
   * Put a description of the topic in the welcome message
