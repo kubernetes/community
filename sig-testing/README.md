@@ -4,7 +4,7 @@ The Kubernetes Testing SIG (sig-testing) is a working group within the Kubernete
 
 ## video conference
 
-We meet weekly at 10:30am PDT (5:30pm UTC) at [this zoom room](https://zoom.us/j/553910341)
+We meet weekly at 9:30am PDT (16:30pm UTC) at [this zoom room](https://zoom.us/j/553910341)
 
 ## agenda
 
@@ -26,7 +26,7 @@ We use the @kubernetes/sig-testing team to notify SIG members of particular issu
 
 ## google group
 
-https://groups.google.com/forum/#!forum/kubernetes-sig-testing
+https://groups.google.com/forum/#!forum/kubernetes-sig-testing (FWIW this doesn't see a lot of traffic, come find us in slack!)
 
 ## organizers
 
