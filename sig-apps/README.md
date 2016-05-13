@@ -2,6 +2,12 @@
 
 A Special Interest Group for deploying and operating applications in Kubernetes.
 
+We focus on the developer and devops experience of running applications in Kubernetes. We discuss how to define and run apps in Kubernetes, demo relevant tools and projects, and discuss areas of friction that can lead to suggesting improvements or feature requests.
+
+## Meeting:
+* Meetings: Wednesdays 9:00AM PST
+* Zoom Link: https://zoom.us/j/4526666954
+
 ## Goals:
 * Discuss running applications in k8s
 * Discuss how to define and run apps in k8s (APIs, CLIs, SDKs, package management tools, etc.)
@@ -14,8 +20,8 @@ A Special Interest Group for deploying and operating applications in Kubernetes.
 * Our job is not to go implement stacks. We’re helping people to help themselves. We will help connect people to the right folks * but we do not want to own a set of examples (as a group)
 * Do not endorse one particular tool
 * Do not pick which apps to run on top of the platform
-* Do not recommend one way to do things 
+* Do not recommend one way to do things
 
 ## Organizers:
-Michelle Noorali <michelle@deis.com>
-Matt Farina <matt@mattfarina.com>
+* Michelle Noorali <michelle@deis.com>, Deis
+* Matt Farina <matt@mattfarina.com>, HPE
