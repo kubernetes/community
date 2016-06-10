@@ -1,5 +1,11 @@
 # Agenda
 
+## June 29, 2016
+* Intro
+* Janet Kuo, Software Engineer at Google working on Kubernetes, will do a demo of deployment features in Kubernetes and give an overview of Deployments, Replica Sets, and Replication Controllers.
+* Kit Merker, Product Manager at Google
+* Follow up on SIG-Apps survey status
+
 ## June 22, 2016
 * Intro
 * Antoine Legrand will demo new features of KPM
@@ -10,7 +16,7 @@
 * Eric Chiang of CoreOS will demo and discuss the freshly merged role based access control features in 1.3
 * Ben Hall, founder of Katacoda, will talk about the Kubernetes scenarios on Katacoda.
 
-## June 8, 2016
+## June 8, 2016 [[notes & video](minutes/2016-06-08.md)]
 * Intro
 * Adnan Abdulhussein from Bitnami will demo the Stacksmith workflow
 * Follow up on PetSet feedback
