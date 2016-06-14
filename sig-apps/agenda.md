@@ -1,5 +1,13 @@
 # Agenda
 
+## July 13, 2016
+* Intro
+* Christian from Jetstack will do a demo of Kube-Lego
+
+## July 6, 2016
+* _We'll plan on holding this meeting at an earlier time to accomodate more of the European Kubernetes community_
+* _More information coming soon_
+
 ## June 29, 2016
 * Intro
 * Janet Kuo, Software Engineer at Google working on Kubernetes, will do a demo of deployment features in Kubernetes and give an overview of Deployments, Replica Sets, and Replication Controllers.
