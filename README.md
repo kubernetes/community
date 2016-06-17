@@ -12,7 +12,7 @@ Kubernetes uses [Slack](http://slack.com) for community discussions.
 
 **Archives**: Discussions on most channels are archived at [kubernetes.slackarchive.io](http://kubernetes.slackarchive.io).  Start archiving by inviting the slackarchive bot to a channel via `/invite @slackarchive`
 
-To add new channels, contact one of the admins. Currently that includes briangrant, goltermann, jbeda, and thockin.
+To add new channels, contact one of the admins. Currently that includes briangrant, goltermann, jbeda, sarahnovotny and thockin.
 
 ## [Weekly Community Video Conference](community/README.md)
 
