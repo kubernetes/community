@@ -47,11 +47,11 @@ Much of the community activity is organized into a community meeting and numerou
 * Create a group with at least 2 owners: kubernetes-sig-foo@googlegroups.com
   * Put a description of the topic in the welcome message
 * Ask a repo maintainer to create a github label, if one doesn't already exist: area/foo
-* If you wish, create a new [kubernetes.slack.com](http://kubernetes.slack.com) channel (#sig-foo).  Users can join at [slack.kubernetes.io](http://slack.kubernetes.io).
-* Organize video meetings as needed. No need to wait for the [Weekly Community Video Conference](community/README.md) to discuss. Can report summary of SIG activities there.
+* If you wish, request a new [kubernetes.slack.com](http://kubernetes.slack.com) channel (#sig-foo) from @sarahnovotny.  New users can join at [slack.kubernetes.io](http://slack.kubernetes.io).
+* Organize video meetings as needed. No need to wait for the [Weekly Community Video Conference](community/README.md) to discuss. Please report summary of SIG activities there.
  * Request a Zoom account from @sarahnovotny if you expect more than 30 attendees or attendees from China.
- * add the meeting to the community meeting calendar by inviting cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com.
+ * Add the meeting to the community meeting calendar by inviting cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com.
 * Use existing proposal and PR process
-* Announce new SIG on kubernetes-dev@googlegroups.com and ask a repo maintainer to add it to this wiki
-* Submit a PR to add any SIG-related docs, schedules, roadmaps, etc. to docs/devel/sigs/
+* Announce new SIG on kubernetes-dev@googlegroups.com and ask a repo maintainer to create a kubernetes/community directory and github team for the new group
+* Submit a PR to add any SIG-related docs, schedules, roadmaps, etc. to your new kubernetes/community/SIG-$name directory.
 * Slack activity is archived at [kubernetes.slackarchive.io](http://kubernetes.slackarchive.io).  To start archiving a new channel invite the slackarchive bot to the channel via `/invite @slackarchive`
