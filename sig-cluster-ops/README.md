@@ -3,7 +3,7 @@ SIG Cluster Ops
 
 [Meeting Notes](https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#)
 
-Meeting Time: Friday @ 1 PT (so we can end the week with Ops)
+Meeting Time: Thursday @ 1 PT (so we can end the week with Ops)
 
 [Google Group](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-ops)
 
