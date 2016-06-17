@@ -2,7 +2,7 @@ The Kubernetes Storage Special-Interest-Group (SIG) is a working group within th
 
 ### Meeting
 We hold a public meeting every two weeks, on Thursdays at 9 AM (PST).
-* The meeting is held on Google Hangouts: https://plus.google.com/​hangouts/_/google.com/k8​s-sig-storage
+* The meeting is held on Google Hangouts: https://hangouts.google.com/hangouts/_/google.com/k8s-sig-storage
 * Agenda and any notes from each meeting are captured in [this document](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing).
 
 ### Links
