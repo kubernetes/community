@@ -22,6 +22,8 @@ The weekly community meeting provides an opportunity for the different SIGs and 
 
 Much of the community activity is organized into a community meeting and numerous SIGs. Each of those groups operates a little differently which is reflected in how they capture notes, examples, and other information. Each groups material is in its subdirectory in this project.
 
+The SIG meeting calendar is available as an [iCal to subscribe to] (https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) (simply  copy and paste the url into any calendar product that supports the iCal format) or [html to view] (https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles).
+
 | Name | Leads | Group | Slack Channel | Meetings |
 |------|-------|-------|---------------|----------|
 | [API Machinery](sig-api-machinery/README.md) | [@lavalamp (Daniel Smith, Google)](https://github.com/lavalamp) | [Group](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery) | [#sig-api-machinery](https://kubernetes.slack.com/messages/sig-api-machinery/) | Every other Wednesday at 11:00 AM PST |
