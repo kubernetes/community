@@ -3,21 +3,22 @@
 ## July 13, 2016
 * Intro
 * Christian from Jetstack will do a demo of Kube-Lego
+* Discussion on PetSet examples. You can prepare by checking out and working through these [examples](https://github.com/kubernetes/contrib/tree/master/pets). (*tentative*)
 
 ## July 6, 2016
-* _We'll plan on holding this meeting at an earlier time to accomodate more of the European Kubernetes community_
-* _More information coming soon_
+* Janet Kuo, Software Engineer at Google working on Kubernetes, will do a demo of deployment features in Kubernetes and give an overview of Deployments, Replica Sets, and Replication Controllers. (*needs confirmation*)
+* Saad Ali, Software Engineer at Google working on Kubernetes, will do a demo and discussion around Volume features. (*needs confirmation*)
 
 ## June 29, 2016
 * Intro
-* Janet Kuo, Software Engineer at Google working on Kubernetes, will do a demo of deployment features in Kubernetes and give an overview of Deployments, Replica Sets, and Replication Controllers.
-* Kit Merker, Product Manager at Google
+* Bart Spaans, author of [KubeFuse](https://github.com/opencredo/kubefuse/), will do a demo and discussion.
+* The DRUD team from [New Media Denver](https://www.newmediadenver.com/) will do a demo and discussion of how they use Kubernetes Jobs
 * Follow up on SIG-Apps survey status
 
 ## June 22, 2016
 * Intro
-* Antoine Legrand will demo new features of KPM
-* Discussion on PetSet examples. You can prepare by checking out and working through these [examples](https://github.com/kubernetes/contrib/tree/master/pets).
+* Antoine Legrand will demo [KPM](https://github.com/kubespray/kpm)
+* Open discussion / questions
 
 ## June 15, 2016
 * Intro
