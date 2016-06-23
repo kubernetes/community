@@ -8,5 +8,5 @@
 
 **Mailing List:** [kubernetes-sig-openstack](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack)
 
-**Meetings:** Every second Tuesday at 2 PM PDT / 5 PM EDT. Video conference using Zoom, link is in the [notes](https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit#
+**Meetings:** Every second Wednesday at 5 PM PDT / 2 PM EDT. Video conference using Zoom, link is in the [notes](https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit#
 )
