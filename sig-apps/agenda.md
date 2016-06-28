@@ -3,7 +3,7 @@
 ## July 13, 2016
 * Intro
 * Christian from Jetstack will do a demo of Kube-Lego
-* Discussion on PetSet examples. You can prepare by checking out and working through these [examples](https://github.com/kubernetes/contrib/tree/master/pets). (*tentative*)
+* Mackenzie Burnett of Redspread will do a demo of [Spread](https://github.com/redspread/spread)
 
 ## July 6, 2016
 * Janet Kuo, Software Engineer at Google working on Kubernetes, will do a demo of deployment features in Kubernetes and give an overview of Deployments, Replica Sets, and Replication Controllers. (*needs confirmation*)
