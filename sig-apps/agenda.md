@@ -17,7 +17,9 @@
 
 ## July 6, 2016
 * Intro
-* [Chris Love](https://twitter.com/chrislovecnm) will demo his 1k cassandra node cluster
+* [Chris Love](https://twitter.com/chrislovecnm) will be talking about the covering deploying Cassandra on Kubernetes 1.3 at scale.
+  * Chris is a Senior DevOps Open Source Consultant for Datapipe, and head of DevOps RnD for Apollobit.
+  * His demo application is located at https://github.com/k8s-for-greeks/gpmr.
 * Open discussion / questions
 
 ## June 29, 2016 [[notes & video](minutes/2016-06-29.md)]
