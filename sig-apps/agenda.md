@@ -1,13 +1,24 @@
 # Agenda
 
+## July 27, 2016
+* Intro
+* Demo of [Deis](https://deis.com/)
+
+## July 20, 2016
+* Intro
+* Janet Kuo, Software Engineer at Google working on Kubernetes, will do a demo of deployment features in Kubernetes and give an overview of Deployments, Replica Sets, and Replication Controllers. (*needs confirmation*)
+* Saad Ali, Software Engineer at Google working on Kubernetes, will do a demo and discussion around Volume features.
+
 ## July 13, 2016
 * Intro
 * Christian from Jetstack will do a demo of Kube-Lego
-* Saad Ali, Software Engineer at Google working on Kubernetes, will do a demo and discussion around Volume features.
 * Mackenzie Burnett of Redspread will do a demo of [Spread](https://github.com/redspread/spread)
+* Matt Farina will update us on the analysis of the SIG-Apps survey
 
 ## July 6, 2016
-* Janet Kuo, Software Engineer at Google working on Kubernetes, will do a demo of deployment features in Kubernetes and give an overview of Deployments, Replica Sets, and Replication Controllers. (*needs confirmation*)
+* Intro
+* [Chris Love](https://twitter.com/chrislovecnm) will demo his 1k cassandra node cluster
+* Open discussion / questions
 
 ## June 29, 2016 [[notes & video](minutes/2016-06-29.md)]
 * Intro
