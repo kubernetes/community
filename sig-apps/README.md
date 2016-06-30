@@ -7,7 +7,7 @@ We focus on the developer and devops experience of running applications in Kuber
 ## Meeting:
 * Meetings: Wednesdays 9:00AM PST
 * Zoom Link: https://zoom.us/j/4526666954
-* [Agenda](https://github.com/kubernetes/community/blob/master/sig-apps/agenda.md)
+* Check out the [Agenda](agenda.md)!
 
 ## Goals:
 * Discuss running applications in k8s
