@@ -1,5 +1,9 @@
 # Agenda
 
+## August 3, 2016
+* Intro / Overview of Agenda
+* [Ryan Jarvinen](https://twitter.com/ryanj?lang=en) of Red Hat will talk about k8s extensions, upstream development, OpenShift
+
 ## July 27, 2016
 * Intro
 * Demo of [Deis](https://deis.com/)
@@ -15,7 +19,7 @@
 * Mackenzie Burnett of Redspread will do a demo of [Spread](https://github.com/redspread/spread)
 * Matt Farina will update us on the analysis of the SIG-Apps survey
 
-## July 6, 2016
+## July 6, 2016 [[notes & video](minutes/2016-07-29.md)]
 * Intro
 * [Chris Love](https://twitter.com/chrislovecnm) will be talking about the covering deploying Cassandra on Kubernetes 1.3 at scale.
   * Chris is a Senior DevOps Open Source Consultant for Datapipe, and head of DevOps RnD for Apollobit.
