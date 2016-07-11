@@ -58,6 +58,7 @@ The SIG meeting calendar is available as an [iCal to subscribe to] (https://cale
 
 ### How to start a SIG
 
+* Propose the new SIG publicly, including a brief mission statement, by emailing kubernetes-dev@googlegroups.com and kubernetes-users@googlegroups.com, then wait a couple of days for feedback
 * Create a group with at least 2 owners (and one of which should be sarahnovotny at google.com): kubernetes-sig-foo@googlegroups.com
   * Put a description of the topic in the welcome message
   * Set "Join the group" and "Post" to "Public"
