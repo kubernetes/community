@@ -1,6 +1,6 @@
 # SIG Cluster Lifecycle
 
-**Leads:** TBD
+**Leads:** [@lukemarsden (Luke Marsden, Weave)] (https://github.com/lukemarsden)
 
 **Slack Channel:** [#sig-cluster-lifecycle](https://kubernetes.slack.com/messages/sig-cluster-lifecycle/)
 
