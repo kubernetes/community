@@ -6,7 +6,7 @@
 
 **Mailing List:** [kubernetes-sig-cluster-lifecycle](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 
-**Meetings:** TBD Notes (coming soon)
+**Meetings:** 9am PT Tuesday https://zoom.us/j/166836624
 
 
 Mission
