@@ -1,8 +1,18 @@
 # Agenda
+Join us for sig-apps on Wednesdays at 9am PDT on Zoom: zoom.us/my/sig.apps
+
+## August 17, 2016
+* Intro / Agenda
+* Adnan Abdulhussein from Bitnami will walk us through example helm charts for Kubernetes native applications
+
+## August 10, 2016
+* Intro / Agenda
+* Brian Hardock of the Deis Helm team will demo [Helm](www.github.com/kubernetes/helm).
+  * Helm is a tool for creating and managing Kubernetes native applications.
 
 ## August 3, 2016
 * Intro / Overview of Agenda
-* [Ryan Jarvinen](https://twitter.com/ryanj?lang=en) of Red Hat will talk about k8s extensions, upstream development, OpenShift
+* [Ryan Jarvinen](https://twitter.com/ryanj?lang=en) will talk about k8s extensions, upstream development, OpenShift
 
 ## July 27, 2016
 * Intro
@@ -16,7 +26,7 @@
 ## July 13, 2016
 * Intro
 * Christian from Jetstack will do a demo of Kube-Lego
-* Mackenzie Burnett of Redspread will do a demo of [Spread](https://github.com/redspread/spread)
+* ~~Mackenzie Burnett of Redspread will do a demo of [Spread](https://github.com/redspread/spread)~~
 * Matt Farina will update us on the analysis of the SIG-Apps survey
 
 ## July 6, 2016 [[notes & video](minutes/2016-07-29.md)]
