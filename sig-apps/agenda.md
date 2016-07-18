@@ -23,13 +23,13 @@ Join us for sig-apps on Wednesdays at 9am PDT on Zoom: zoom.us/my/sig.apps
 * Janet Kuo, Software Engineer at Google working on Kubernetes, will do a demo of deployment features in Kubernetes and give an overview of Deployments, Replica Sets, and Replication Controllers. (*needs confirmation*)
 * Saad Ali, Software Engineer at Google working on Kubernetes, will do a demo and discussion around Volume features.
 
-## July 13, 2016
+## July 13, 2016 [[notes & video](minutes/2016-07-13.md)]
 * Intro
 * Christian from Jetstack will do a demo of Kube-Lego
 * ~~Mackenzie Burnett of Redspread will do a demo of [Spread](https://github.com/redspread/spread)~~
 * Matt Farina will update us on the analysis of the SIG-Apps survey
 
-## July 6, 2016 [[notes & video](minutes/2016-07-29.md)]
+## July 6, 2016 [[notes & video](minutes/2016-07-06.md)]
 * Intro
 * [Chris Love](https://twitter.com/chrislovecnm) will be talking about the covering deploying Cassandra on Kubernetes 1.3 at scale.
   * Chris is a Senior DevOps Open Source Consultant for Datapipe, and head of DevOps RnD for Apollobit.
