@@ -21,7 +21,7 @@ Join us for sig-apps on Wednesdays at 9am PDT on Zoom: zoom.us/my/sig.apps
 * Matt Farina will give an update on results of the sig-apps survey
 * Open discussion around sig-apps survey
 
-## July 20, 2016
+## July 20, 2016 [[notes & video](minutes/2016-07-20.md)]
 * Intro
 * Janet Kuo, Software Engineer at Google working on Kubernetes, will do a demo of deployment features in Kubernetes and give an overview of Deployments, Replica Sets, and Replication Controllers. (*needs confirmation*)
 * Saad Ali, Software Engineer at Google working on Kubernetes, will do a demo and discussion around Volume features.
