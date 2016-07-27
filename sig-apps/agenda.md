@@ -14,8 +14,8 @@ Join us for sig-apps on Wednesdays at 9am PDT on Zoom: zoom.us/my/sig.apps
 * Intro / Overview of Agenda
 * [Ryan Jarvinen](https://twitter.com/ryanj?lang=en) will talk about k8s extensions, upstream development, OpenShift
 
-## July 27, 2016
-* Matt Farina will run through the agenda
+## July 27, 2016 [[notes](minutes/2016-07-27.md)]
+* Intro
 * [Gerred Dillon](https://twitter.com/justicefries) will do a demo of [Deis](https://deis.com/)
 * Group discussion on Deis
 * Matt Farina will give an update on results of the sig-apps survey
