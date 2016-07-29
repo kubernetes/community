@@ -12,7 +12,9 @@ Join us for sig-apps on Wednesdays at 9am PDT on Zoom: zoom.us/my/sig.apps
 
 ## August 3, 2016
 * Intro / Overview of Agenda
-* [Ryan Jarvinen](https://twitter.com/ryanj?lang=en) will talk about k8s extensions, upstream development, OpenShift
+* [Ryan Jarvinen](https://twitter.com/ryanj?lang=en) will talk about "Defining "Applications" for Kubernetes (and OpenShift)"
+  * In a world of distributed architecture, the term "Application" can be a difficult thing to define. RyanJ will provide a few examples of how to package and distribute applications for Kubernetes.
+* Open discussion / questions
 
 ## July 27, 2016 [[notes](minutes/2016-07-27.md)]
 * Intro
