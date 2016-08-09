@@ -3,14 +3,17 @@ Join us for sig-apps on Wednesdays at 9am PDT on Zoom: zoom.us/my/sig.apps
 
 ## August 17, 2016
 * Intro / Agenda
+* Brian Hardock of the Deis Helm team will demo [Helm](www.github.com/kubernetes/helm).
+  * Helm is a tool for creating and managing Kubernetes native applications.
 * Adnan Abdulhussein from Bitnami will walk us through example helm charts for Kubernetes native applications
 
 ## August 10, 2016
 * Intro / Agenda
-* Brian Hardock of the Deis Helm team will demo [Helm](www.github.com/kubernetes/helm).
-  * Helm is a tool for creating and managing Kubernetes native applications.
+* PoC demo and discussion of [AppController](https://github.com/kubernetes/kubernetes/issues/29453)
+* Working discussion of Pet Set beta steps led by [Clayton Coleman](https://twitter.com/smarterclayton) and [Prashanth B.](https://github.com/bprashanth)
+* Demo of [nanokube](https://github.com/metral/nanokube) by [Mike Metral](https://twitter.com/mikemetral)
 
-## August 3, 2016
+## August 3, 2016 [[notes](minutes/2016-08-03.md)]
 * Intro / Overview of Agenda
 * [Ryan Jarvinen](https://twitter.com/ryanj?lang=en) will talk about "Defining "Applications" for Kubernetes (and OpenShift)"
   * In a world of distributed architecture, the term "Application" can be a difficult thing to define. RyanJ will provide a few examples of how to package and distribute applications for Kubernetes.
