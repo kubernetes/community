@@ -14,7 +14,7 @@ The main objective of this SIG is to establish rkt as the go-to/default runtime 
 
 [Meeting Notes](https://docs.google.com/document/d/1otDQ2LSubtBUaDfdM8ZcSdWkqRHup4Hqt1VX1jSxh6A/edit?usp=sharing)
 
-[Hangout](https://plus.google.com/hangouts/_/coreos.com/sig-rktnetes-meetup?authuser=0)
+[Hangout](https://hangouts.google.com/hangouts/_/coreos.com/sig-rktnetes?authuser=0)
 
 [Google Group](https://groups.google.com/forum/#!forum/kubernetes-sig-rktnetes)
 
