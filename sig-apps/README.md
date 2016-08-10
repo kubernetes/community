@@ -7,7 +7,7 @@ We focus on the developer and devops experience of running applications in Kuber
 ## Meeting:
 * Meetings: Wednesdays 9:00AM PST
 * Zoom Link: https://zoom.us/j/4526666954
-* Check out the [Agenda](agenda.md)!
+* Check out the [Agenda and Minutes](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#)! _Note, for meetings on and prior to August 3, 2016 see the minutes in [their prior location](minutes/)._
 
 ## Goals:
 * Discuss running applications in k8s
