@@ -7,6 +7,8 @@ Join us for sig-apps on Wednesdays at 9am PDT on Zoom: zoom.us/my/sig.apps
 
 ## August 10, 2016
 * Intro / Agenda
+* Maciej Kwiek, software engineer at Mirantis will demo [AppController](https://github.com/Mirantis/k8s-AppController)
+  * AppController is a tool for orchestrating deployment of complex workflows inside Kubernetes cluster
 * Brian Hardock of the Deis Helm team will demo [Helm](www.github.com/kubernetes/helm).
   * Helm is a tool for creating and managing Kubernetes native applications.
 
