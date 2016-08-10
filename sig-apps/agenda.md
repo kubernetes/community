@@ -1,6 +1,8 @@
 # Agenda
 Join us for sig-apps on Wednesdays at 9am PDT on Zoom: zoom.us/my/sig.apps
 
+_Note, the [minutes and agenda have moved to Google Docs](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#)._
+
 ## August 17, 2016
 * Intro / Agenda
 * Brian Hardock of the Deis Helm team will demo [Helm](www.github.com/kubernetes/helm).
