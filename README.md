@@ -14,13 +14,19 @@ Kubernetes uses [Slack](http://slack.com) for community discussions.
 
 To add new channels, contact one of the admins. Currently that includes briangrant, goltermann, jbeda, sarahnovotny and thockin.
 
-## kubernetes-dev mailing list
+## kubernetes mailing lists
 
 Many important announcements and discussions end up on the main development group.
 
 kubernetes-dev@googlegroups.com
 
 [Google Group](https://groups.google.com/forum/#!forum/kubernetes-dev)
+
+Users of kubernetes trade notes on:
+
+kubernetes-users@googlegroups.com
+
+[Google Group](https://groups.google.com/forum/#!forum/kubernetes-users)
 
 
 ## [Weekly Community Video Conference](community/README.md)
