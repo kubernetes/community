@@ -1,6 +1,6 @@
 # SIG Service Catalog
 
-**Leads:** Paul Morie (@pmorie)
+**Leads:** Paul Morie (@pmorie, Red Hat), Chris Dutra (@dutronlabs, Apprenda)
 
 **Slack Channel:** [#sig-service-catalog](https://kubernetes.slack.com/messages/sig-service-catalog/).  [Archive](http://kubernetes.slackarchive.io/sig-service-catalog/)
 
