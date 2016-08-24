@@ -118,11 +118,11 @@ These projects are young but have significant user facing docs pointing at their
 
 - github.com/kubernetes/minikube
 - github.com/kubernetes/helm
+- github.com/kubernetes/charts 
  
 **Projects to Move to Incubator**
 
 - github.com/kubernetes/kube2consul
-- github.com/kubernetes/charts
 - github.com/kubernetes/frakti
 - github.com/kubernetes/kops
 - github.com/kubernetes/kube-deploy
