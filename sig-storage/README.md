@@ -5,6 +5,9 @@ We hold a public meeting every two weeks, on Thursdays at 9 AM (PST).
 * The meeting is held on Google Hangouts: https://hangouts.google.com/hangouts/_/google.com/k8s-sig-storage
 * Agenda and any notes from each meeting are captured in [this document](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing).
 
+### Contributing
+Interested in contributing to storage features in Kubernetes? [Please read our guide for new contributors](https://github.com/kubernetes/community/blob/master/sig-storage/contributing.md)
+
 ### Links
 * Public Slack Channel: https://kubernetes.slack.com/messages/sig-storage/details/
   * Get invite to join here: http://slack.k8s.io/
