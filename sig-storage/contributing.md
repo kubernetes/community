@@ -3,8 +3,12 @@ For folks that prefer reading the docs first, we recommend reading our Storage D
 - [The Persistent Volume Framework] (http://kubernetes.io/docs/user-guide/persistent-volumes/) 
 - [The new Dynamic Provisioning Proposal](https://github.com/pmorie/kubernetes/blob/7aa61dd0ff3908784acb4fa300713f02e62119af/docs/proposals/volume-provisioning.md) and [implementation](https://github.com/kubernetes/kubernetes/pull/29006)
 
-For folks that prefer that prefer a video overview, we recommend watching [this video](https://www.youtube.com/watch?v=jsTQ24CLRhI&index=6&list=PLosInM-8doqcBy3BirmLM4S_pmox6qTw3) and [this video](https://www.youtube.com/watch?v=ZqTHe6Xj0Ek&list=PLosInM-8doqcBy3BirmLM4S_pmox6qTw3&index=38). 
-Keep in mind that the video overviews reflect the state of the art in March 2016. In Kubernetes we try very hard to maintain backwards compatibility but we do add features going forward and attending the Storage SIG meetings and the Storage SIG Google group are both good ways of continually staying up to speed. 
+For folks that prefer a video overview, we recommend watching the following videos:
+- [The state of state](https://www.youtube.com/watch?v=jsTQ24CLRhI&index=6&list=PLosInM-8doqcBy3BirmLM4S_pmox6qTw3) 
+- [Kubernetes Storage 101](https://www.youtube.com/watch?v=ZqTHe6Xj0Ek&list=PLosInM-8doqcBy3BirmLM4S_pmox6qTw3&index=38)
+- [Storage overview to SIG Apps](https://www.youtube.com/watch?v=DrLGxkFdDNc&feature=youtu.be&t=11m19s)
+
+Keep in mind that the video overviews reflect the state of the art at the time they were created. In Kubernetes we try very hard to maintain backwards compatibility but Kubernetes is a fast moving project and we do add features going forward and attending the Storage SIG meetings and the Storage SIG Google group are both good ways of continually staying up to speed. 
 
 ### How to help
 
