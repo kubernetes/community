@@ -6,7 +6,11 @@
 
 **Mailing List:** [kubernetes-sig-service-catalog](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog)
 
-**Meetings:** TBD
+**Meetings:** Mondays, 4pm Eastern / 1pm Pacific time
+
+**Meeting Agenda:** https://docs.google.com/document/d/1jc2M-U8l0rbmudW7JdKXhIHe9ruX88xsJL9yZ8IcV9A/edit
+
+**Hangout Link:** https://plus.google.com/hangouts/_/google.com/k8s-sig-service-catalog
 
 ### SIG Mission
 
