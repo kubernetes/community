@@ -144,5 +144,8 @@ These projects are young but have significant user facing docs pointing at their
 
 Large portions of this process and prose are inspired by the Apache Incubator process.
 
+##  Original Discussion 
+https://groups.google.com/d/msg/kubernetes-dev/o6E1u-orDK8/SAqal_CeCgAJ
+
 ##Future Work 
 - Expanding potential sources of champions outside of Kubernetes main repo
