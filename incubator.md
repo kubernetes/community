@@ -92,7 +92,7 @@ If a project doesn't merge or graduate within 12 months it is retired. If a proj
 
 **Q: What is the role of the Sponsor?**
 
-**A:** Potential Sponsors come from the very small set of Kubernetes contributors that can approve any PR because they are listed as approvers in the pkg OWNERS file. The idea is that by relying on this small set of Kubernetes Community members to make a determination on Incubator projects we will ensure that there is consistency around new projects joining the Incubator. Being a Sponsor is a minor advisory role.
+**A:** Potential Sponsors come from the very small set of Kubernetes contributors that can approve any PR because they are listed as approvers in the `kubernetes/pkg` OWNERS file or the top-level OWNERS file. The idea is that by relying on this small set of Kubernetes Community members to make a determination on Incubator projects we will ensure that there is consistency around new projects joining the Incubator. Being a Sponsor is a minor advisory role.
 
 ## Existing Repos
 
