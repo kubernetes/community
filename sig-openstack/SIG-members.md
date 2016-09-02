@@ -10,3 +10,4 @@ Use @kubernetes/sig-openstack to mention this team in comments.
 * [Joshua Harlow](https://github.com/harlowja)
 * [Stephen McQuaid](https://github.com/stevemcquaid)
 * [Huamin Chen](https://github.com/rootfs)
+* [Flanders @DFFlanders](https://github.com/dfflanders)
