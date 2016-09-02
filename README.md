@@ -8,7 +8,7 @@ Kubernetes uses [Slack](http://slack.com) for community discussions.
 
 **Join**: Joining is self service.  Go to [slack.k8s.io](http://slack.k8s.io) to join.
 
-**Access**: Once you join, the team can be found at [kubernetes.slack.io](http://kubernetes.slack.io)
+**Access**: Once you join, the team can be found at [kubernetes.slack.com](http://kubernetes.slack.com)
 
 **Archives**: Discussions on most channels are archived at [kubernetes.slackarchive.io](http://kubernetes.slackarchive.io).  Start archiving by inviting the slackarchive bot to a channel via `/invite @slackarchive`
 
