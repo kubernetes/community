@@ -14,3 +14,4 @@
   for joining the video conference. _NOTE: Since meetings are occasionally
   canceled due to lack of content, if you have topics to discuss please also
   write a message to the list._
+- [Meeting link](https://zoom.us/zoomconference?m=rN2RrBUYxXgXY4EMiWWgQP6Vslgcsn86)
