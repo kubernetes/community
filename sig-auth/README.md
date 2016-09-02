@@ -21,3 +21,4 @@ Links/info:
 * Slack channel: https://kubernetes.slack.com/messages/sig-auth/
 * Meeting frequency & time:  Biweekly on Wednesdays, 11am Pacific (see agenda for which Wednesdays)
 * Agenda & meeting notes: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
+* Hangout link: [https://zoom.us/my/k8s.sig.auth](https://zoom.us/my/k8s.sig.auth)
