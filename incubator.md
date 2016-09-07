@@ -14,13 +14,13 @@ New Kubernetes projects are getting added in an ad-hoc manner leading to confusi
 
 This process is light on legalese, completely untested, and only works if people act as good neighbors and community members. It will evolve over time and the authors will try keeping the process light, fast, and objective.
 
-#### Does my project need to Incubate?
+## Does my project need to Incubate?
 
-**Existing Code in Kubernetes**
+### Existing Code in Kubernetes
 
 New Kubernetes Community Projects can be created by pulling out code from the Kubernetes main repo (except contrib/). For example, the OWNERS of `k8s.io/kubernetes/pkg/cloudprovider/providers/aws` want to start a new project so they can iterate and release faster than k8s itself. To do this the OWNERS of that package can directly graduate to a Kubernetes Community Project with agreement of the existing package OWNERS, agreement of the parent package (e.g. `k8s.io/kubernetes/pkg/cloudprovider`), and an announcement to kubernetes-dev@googlegroups.com.
 
-**Applications on top of Kubernetes**
+### Applications on top of Kubernetes
 
 If you are building an Open Source application on top of Kubernetes that is unrelated to the development, operation, monitoring, APIs, lifecycle, integration, or other primary concerns of the Kubernetes project there is no reason to become a Kubernetes project. If you are unsure if your project is a good fit try running it by a few Kubernetes Special Interest Groups or kubernetes-dev@googlegroups.com. 
 
