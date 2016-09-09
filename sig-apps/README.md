@@ -5,8 +5,8 @@ A Special Interest Group for deploying and operating applications in Kubernetes.
 We focus on the developer and devops experience of running applications in Kubernetes. We discuss how to define and run apps in Kubernetes, demo relevant tools and projects, and discuss areas of friction that can lead to suggesting improvements or feature requests.
 
 ## Meeting:
-* Meetings: Wednesdays 9:00AM PST
-* Zoom Link: [https://zoom.us/j/4526666954](https://zoom.us/j/4526666954)
+* Meetings: Mondays 9:00AM PST
+* Zoom Link: [https://zoom.us/my/sig.apps](https://zoom.us/j/4526666954)
 * Check out the [Agenda and Minutes](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#)! _Note, for meetings on and prior to August 3, 2016 see the minutes in [their prior location](minutes/)._
 
 ## Goals:
