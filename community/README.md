@@ -1,6 +1,6 @@
 # Weekly Community Video Conference
 
-We have PUBLIC and RECORDED weekly video meetings every Thursday at 10am US Pacific Time. You can [find the time in your timezone with this table](http://time.is/compare/1000AM_in_PT).
+We have PUBLIC and RECORDED weekly video meetings every Thursday at 10am US Pacific Time. You can [find the time in your timezone with this table](https://www.google.com/search?q=1000+am+in+pst).
 
 To be added to the calendar items, join this [google group](https://groups.google.com/forum/#!forum/kubernetes-community-video-chat) for further instructions.
 
