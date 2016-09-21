@@ -41,7 +41,7 @@ Below are the Github Issues that were filed for this area:
 ## How Did We Solve the Problem?
 Addressing these issues was the main deliverable for storage in 1.3. This required an in depth rewrite of several components.
 
-Early in the 1.3 development cycle (March 28 to April 1, 2016) several community members in the Storage SIG met at a week long face-to-face summit at Google’s office in Mountain View to address these issues. A plan was established to approach the attach/detach/mount/unmount issues as a deliberate effort with contributors already handling the design. Since that work was already in flight and a plan established, the majority of the summit was devoted to resolving the PV/PVC controller issues. Meeting notes were captured in this document.
+Early in the 1.3 development cycle (March 28 to April 1, 2016) several community members in the Storage SIG met at a week long face-to-face summit at Google’s office in Mountain View to address these issues. A plan was established to approach the attach/detach/mount/unmount issues as a deliberate effort with contributors already handling the design. Since that work was already in flight and a plan established, the majority of the summit was devoted to resolving the PV/PVC controller issues. Meeting notes were captured [in this document](https://github.com/kubernetes/community/blob/master/sig-storage/1.3-retrospective/2016-03-28_Storage-SIG-F2F_Notes.pdf).
 
 Three projects were planned to fix the issues outlined above:
 * PV/PVC Controller Redesign (a.k.a. Provisioner/Binder/Recycler controller)
