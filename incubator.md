@@ -133,6 +133,7 @@ These projects are young but have significant user facing docs pointing at their
 - github.com/kubernetes/rktlet
 - github.com/kubernetes/horizontal-self-scaler
 - github.com/kubernetes/node-problem-detector
+- github.com/kubernetes/kubernetes/contrib/mesos -> github.com/kubernetes-incubator/kube-mesos-framework
 
 **Projects to Retire**
 
