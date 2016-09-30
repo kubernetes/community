@@ -72,6 +72,7 @@ The community meeting calendar is available as an [iCal to subscribe to] (https:
   * Put a description of the topic in the welcome message
   * Set "Join the group" and "Post" to "Public"
 * Ask a repo maintainer to create a github label, if one doesn't already exist: area/foo
+* Ask organization maintainer to create a SIG-team within the [Kubernetes GitHub organization](https://github.com/orgs/kubernetes/teams)
 * If you wish, request a new [kubernetes.slack.com](http://kubernetes.slack.com) channel (#sig-foo) from @sarahnovotny.  New users can join at [slack.kubernetes.io](http://slack.kubernetes.io).
 * Organize video meetings as needed. No need to wait for the [Weekly Community Video Conference](community/README.md) to discuss. Please report summary of SIG activities there.
  * Request a Zoom account from @sarahnovotny if you expect more than 30 attendees or attendees from China.
