@@ -18,10 +18,6 @@ A Special Interest Group for documentation, doc processes, and doc publishing fo
 * Identify and implement ways to get documentation feedback and metrics
 * Help people get involved in the kubernetes community
 
-## Non-goals:
-* Do not endorse one particular tool
-* Do not recommend one way to do things
-
 ## Organizers:
 * Jared Bhatti <jaredb@google.com>, Google
 * Devin Donnelly <ddonnelly@google.com>, Google
