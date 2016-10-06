@@ -1,7 +1,7 @@
 #SIG Contribx
 ##Meeting:
-* Meetings: Thursdays 10:00AM PST (biweekly and changing soon)
-* Zoom Link: https://zoom.us/my/sig.apps
+* Meetings: Wednesdays 9:30AM PST (biweekly and changing soon)
+* Zoom Link: https://zoom.us/j/7658488911
 * Check out the [Agenda and Minutes](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/ )!
 
 ##Goals:
