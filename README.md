@@ -6,7 +6,7 @@ Welcome to the Kubernetes community documentation. Here you can learn about what
 
 Kubernetes uses [Slack](http://slack.com) for community discussions.
 
-**Join**: Joining is self service.  Go to [slack.k8s.io](http://slack.k8s.io) to join.
+**Join**: Joining is self-service.  Go to [slack.k8s.io](http://slack.k8s.io) to join.
 
 **Access**: Once you join, the team can be found at [kubernetes.slack.com](http://kubernetes.slack.com)
 
