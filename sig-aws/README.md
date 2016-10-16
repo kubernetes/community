@@ -4,7 +4,7 @@ A Special Interest Group for maintaining and supporting kubernetes on AWS.
 
 
 ## Meeting:
-* Meetings: Every other Friday 9:00AM PST
+* Meetings: Every other Friday 9:00AM PST, currently we are targeting the 1st and 3rd Friday of every month
 * Hangouts Link: [SIG AWS](https://hangouts.google.com/hangouts/_/cnmconsulting.net/plaform)
 
 ###### Note: This will be moving to an official Zoom meeting shortly
