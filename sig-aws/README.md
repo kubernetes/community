@@ -1,13 +1,11 @@
 # SIG AWS
 
-A Special Interest Group for maintaining and supporting kubernetes on AWS.
-
+A Special Interest Group for maintaining, supporting, and using Kubernetes on AWS. 
+All things K8s on AWS.  We meet twice a month.
 
 ## Meeting:
-* Meetings: Every other Friday 9:00AM PST, currently we are targeting the 1st and 3rd Friday of every month
-* Hangouts Link: [SIG AWS](https://hangouts.google.com/hangouts/_/cnmconsulting.net/plaform)
-
-###### Note: This will be moving to an official Zoom meeting shortly
+- Meetings: First and Third Friday of the month at 9:00AM PST for one hour
+- Zoom Link: [SIG AWS](https://zoom.us/my/k8ssigaws)
 
 ## Organizers:
 
@@ -19,4 +17,12 @@ A Special Interest Group for maintaining and supporting kubernetes on AWS.
 
 Ping one of the organizers for the calendar invite.
 
-###### Agenda and minutes coming soon!
+## Agenda
+
+### October 21st, 2016
+
+- Introductions
+- Future of Kubernetes on AWS: a quick overview of where K8s is going
+- HA Kubernetes on AWS: a quick demo and roundtable
+- Setting our future: what do we want to talk about
+- Kubernetes Blockers on AWS: what is blocking you today on AWS
