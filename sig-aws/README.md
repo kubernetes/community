@@ -11,9 +11,9 @@ All things K8s on AWS.  We meet twice a month.
 
 | Name  | Contact |
 | ------------- | ------------- |
-| Justin Santa Barbara  | [justinsb](github.com/justinsb)  |
-| Chris Love  | [chrislovecnm](github.com/chrislovecnm)  |
-| Kris Childress | [kris-nova](github.com/kris-nova) |
+| Justin Santa Barbara  | [justinsb](https://github.com/justinsb)  |
+| Chris Love  | [chrislovecnm](https://github.com/chrislovecnm)  |
+| Kris Childress | [kris-nova](https://github.com/kris-nova) |
 
 Ping one of the organizers for the calendar invite.
 
