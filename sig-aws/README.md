@@ -15,7 +15,9 @@ All things K8s on AWS.  We meet twice a month.
 | Chris Love  | [chrislovecnm](https://github.com/chrislovecnm)  |
 | Kris Childress | [kris-nova](https://github.com/kris-nova) |
 
-Ping one of the organizers for the calendar invite.
+The meeting is open to all and we encourage you to join. Feel free to dial into the zoom call at your convenience.
+
+If you would like to be on the official calendar invite ping one of the organizers.
 
 ## Agenda
 
