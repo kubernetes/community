@@ -14,6 +14,7 @@ All things K8s on AWS.  We meet twice a month.
 | Justin Santa Barbara  | [justinsb](https://github.com/justinsb)  |
 | Chris Love  | [chrislovecnm](https://github.com/chrislovecnm)  |
 | Kris Childress | [kris-nova](https://github.com/kris-nova) |
+| Mackenzie Burnett | [mfburnett](https://github.com/mfburnett) |
 
 The meeting is open to all and we encourage you to join. Feel free to dial into the zoom call at your convenience.
 
