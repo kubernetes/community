@@ -3,7 +3,7 @@
 kubernetes-project-managers is a github team that will help to manage and maintain the project in ways other than just writing code.  Specifically, members of the kubernetes-project-managers team are
 expected to:
 
-* Add/change routing labels to issues (team/, area/, component/)
+* Add/change routing labels to issues ([team/, area/, component/](https://github.com/kubernetes/kubernetes/wiki))
 * Apply release-note labels to PRs (until that is automated or eliminated)
 * Set the milestone on a PR or issue
 * Assign issues to the correct people for immediate triage/work
