@@ -1,5 +1,12 @@
 # Kubernetes Dev Summit
 # 
+
+## Edit - Event Location
+##
+The event is on the 4th Floor of the *Union Street Tower* of the Sheraton Seattle Hotel. 
+
+# About the Event
+#
 The Kubernetes Developers' Summit provides an avenue for Kubernetes
 developers  to connect face to face and mindshare about future community
 development and community governance endeavors.
