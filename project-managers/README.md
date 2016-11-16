@@ -1,6 +1,6 @@
-## Kubernetes Project Managers
+## Kubernetes PM
 
-kubernetes-project-managers is a github team that will help to manage and maintain the project in ways other than just writing code.  Specifically, members of the kubernetes-project-managers team are
+kubernetes-pm is a github team that will help to manage and maintain the project in ways other than just writing code.  Specifically, members of the kubernetes-pm team are
 expected to:
 
 * Add/change routing labels to issues ([team/, area/, component/](https://github.com/kubernetes/kubernetes/wiki))
