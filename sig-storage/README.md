@@ -5,6 +5,7 @@ We hold a public meeting every two weeks, on Thursdays at 9 AM (PST).
 * The meeting is held on Zoom: https://zoom.us/j/614261834
 * Agenda and any notes from each meeting are captured in [this document](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing).
 * Contact saadali@google.com to be added to the calendar invite.
+* Recordings of past meetings: https://www.youtube.com/playlist?list=PLb1_clREIGYVaqvKaUsVyXxjfcSQDBnmB
 
 ### Contributing
 Interested in contributing to storage features in Kubernetes? [Please read our guide for new contributors](https://github.com/kubernetes/community/blob/master/sig-storage/contributing.md)
