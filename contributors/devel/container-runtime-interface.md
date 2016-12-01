@@ -114,7 +114,8 @@ besides discussions on Github issues.
   - Exec/attach/port-forward (streaming requests):
      - [#35747](https://github.com/kubernetes/kubernetes/issues/35747): Does
        not support `nsenter` as the exec handler (`--exec-handler=nsenter`).
-     - Also see (#cri-1.5-known-issues) for limitations on CRI streaming.
+     - Also see [CRI 1.5 known issues](#cri-1.5-known-issues) for limitations
+       on CRI streaming.
 
 ## Contacts
 
