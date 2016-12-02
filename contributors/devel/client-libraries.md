@@ -1,8 +1,9 @@
 ## Kubernetes API client libraries
 
-### Supported
+### Supported by [Kubernetes SIG API Machinery](https://github.com/kubernetes/community/tree/master/sig-api-machinery)
 
    * [Go](https://github.com/kubernetes/client-go)
+   * [Python] (https://github.com/kubernetes-incubator/client-python)
 
 ### User Contributed
 
