@@ -151,7 +151,9 @@ Other patterns seen less frequently include:
 5. Synchronous validation on update - with side effects (quota)
 
 While admission controllers can operate on all verbs, resources, and sub resource types, in practice they
-fall into a narrow range of actions.
+mostly deal with create and update on primary resources. Most sub resources are highly privileged operations
+and so are typically covered by policy. Other controllers like quota tend to be per apiserver and therefore
+are not required to be extensible.
 
 
 ### Building enforcement
@@ -178,6 +180,7 @@ core project as plugins that can be added and removed to a stock Kubernetes rele
 of admission control should leverage similar mechanisms to our existing controller frameworks where possible
 and otherwise be performant and reliable.
 
+
 ### Requirements
 
 1.  Easy Initialization
@@ -192,19 +195,20 @@ and otherwise be performant and reliable.
     External admission must not significantly regress performance in large and dense clusters
 6.  Reliable
     External admission should be capable of being "production-grade" for deployment in an extremely large and dense cluster
-7.  Consistent
+7.  Internally Consistent
     Developing an admission controller should reuse as much infrastructure and tools as possible from building custom controllers so as to reduce the cost of extension.
+
 
 ### Specification
 
-Based on close observation of the actual admission control patterns in use, the majority of mutation
-occurs on creation, and validation of creation and updates *without mutation* dominate the remainder of the calls.
-Therefore we propose the following changes to Kubernetes:
+Based on observation of the actual admission control implementations the majority of mutation
+occurs as part of creation, and a large chunk of the remaining controllers are for side-effect free
+validation of creation and updates. Therefore we propose the following changes to Kubernetes:
 
-1.  Allow some controllers to act as "initializers" - watching the API and mutating the object before it is visible to others
-    This would reuse the majority of the infrastructure in place for controllers to be reused. Because creation is
+1.  Allow some controllers to act as "initializers" - watching the API and mutating the object before it is visible to normal clients.
+    This would reuse the majority of the infrastructure in place for controllers. Because creation is
     one-way, the object can be "revealed" to regular clients once a set list of initializers is consumed. These
-    controllers can run on the cluster as pods.
+    controllers could run on the cluster as pods.
 2.  Add a generic **external admission webhook** controller that is non-mutating (thus parallelizable)
     This generic webhook API would resemble `admission.Interface` and be given the input object (for create) and the
     previous object (for update). After initialization or on any update, these hooks would be invoked in parallel
@@ -214,7 +218,13 @@ Therefore we propose the following changes to Kubernetes:
     Configuration would be similar to registering new API group versions and include config like "fail open" or
     "fail closed".
 
-Mutating admission webhooks could be a later addition but is out of scope given its limited use.
+Some admission controller types would not be possible for these extensions:
+
+* Mutating admission webhooks could be a later addition
+* Admission controllers that need access to the acting user can receive that via the external webhook.
+* Admission controllers that "react" to the acting user can couple the information received via a webhook and then act if they observe mutation succeed (tuple combining resource UID and resource generation).
+* Quota will continue to be a core plugin per API server, so extension is not critical.
+
 
 
 #### Implications:
