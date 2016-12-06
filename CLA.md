@@ -2,6 +2,7 @@
 
 * To sign up as an individual or as an employee of a signed organization, go to https://identity.linuxfoundation.org/projects/cncf
 * To sign up as an organization, go to https://identity.linuxfoundation.org/node/285/organization-signup
+* To review the CNCF CLA, go to https://github.com/cncf/cla
 
 ***
 
