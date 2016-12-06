@@ -25,8 +25,10 @@ an invalid key is present, the container will fail to start.
 Environment variables are currently defined by services or the `Env` object in
 a container, where the `Env` takes precedence.  The introduction of ConfigMaps
 adds a third possibility. To prevent any change in behavior, the `Env` object
-will still override any environment variable introduced by a ConfigMap.
-A ConfigMap is allowed to override variables defined by services.  Variable
+will still override any environment variable introduced by a ConfigMap.  A
+ConfigMap is allowed to override variables defined by services. ConfigMaps are
+processed in order of their declaration. Duplicate keys that occur within a
+ConfigMap or across ConfigMaps will have the last value retained.  Variable
 references defined by an `EnvVar` struct can be resolved by values defined in
 other `EnvVar`s or those introduced by ConfigMaps and services.
 
@@ -58,7 +60,8 @@ type EnvFromSource struct {
 type Container struct {
   // List of sources to populate environment variables in the container.
   // The keys defined within a source must be a C_IDENTIFIER. An invalid key
-  // will prevent the container from starting.
+  // will prevent the container from starting. When a key exists in multiple
+  // sources, the value associated with the last source will take precedence.
   // All env values will take precedence over any listed source.
   // Cannot be updated.
   // +optional
