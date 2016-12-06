@@ -28,6 +28,9 @@ resources](../user-guide/working-with-resources.md).*
     - [PATCH operations](#patch-operations)
       - [Strategic Merge Patch](#strategic-merge-patch)
     - [List Operations](#list-operations)
+      - [List of Maps](#list-of-maps)
+      - [List of Primitives](#list-of-primitives)
+        - [Unordered Set](#unordered-set)
     - [Map Operations](#map-operations)
   - [Idempotency](#idempotency)
   - [Optional vs. Required](#optional-vs-required)
@@ -549,19 +552,21 @@ If we were to use standard Merge Patch, the entire container list would be
 replaced with the single log-tailer container. However, our intent is for the
 container lists to merge together based on the `name` field.
 
-To solve this problem, Strategic Merge Patch uses metadata attached to the API
+To solve this problem, Strategic Merge Patch uses the go struct tag of the API
 objects to determine what lists should be merged and which ones should not.
 Currently the metadata is available as struct tags on the API objects
 themselves, but will become available to clients as Swagger annotations in the
 future. In the above example, the `patchStrategy` metadata for the `containers`
 field would be `merge` and the `patchMergeKey` would be `name`.
 
-Note: If the patch results in merging two lists of scalars, the scalars are
+Note: If the patch results in merging two lists of primitives, the primitives are
 first deduplicated and then merged.
 
 Strategic Merge Patch also supports special operations as listed below.
 
 ### List Operations
+
+#### List of Maps
 
 To override the container list to be strictly replaced, regardless of the
 default:
@@ -581,6 +586,90 @@ containers:
     image: nginx-1.0
   - $patch: delete
     name: log-tailer  # merge key and value goes here
+```
+
+Delete operation will delete the first entry in the list that match the merge key.
+But there is validation to make sure no 2 entries with the same merge key will get in the list.
+
+#### List of Primitives
+
+We have two patch strategies for lists of primitives: replace and merge.
+Replace is the default patch strategy, which will replace the whole list on update and it will preserve the order;
+while merge strategy works as an unordered set. In this section, we call a primitive list with merge strategy an unordered set.
+The patch strategy is defined in the go struct tag of the API objects,
+e.g. `finalizers` uses `merge` as patch strategy.
+```go
+Finalizers []string `json:"finalizers,omitempty" patchStrategy:"merge" protobuf:"bytes,14,rep,name=finalizers"`
+```
+
+##### Unordered Set
+
+There are 3 operations: add, delete, replace.
+
+Suppose we have defined a `finalizers` and we call it the original finalizers:
+
+```yaml
+finalizers:
+  - a
+  - b
+  - c
+```
+
+1) To add items in a set, we use the list name as the key.
+e.g. to add items "d" and "e" in the original finalizers, the patch will be:
+
+```yaml
+finalizers:
+  - d
+  - e
+```
+
+After applying the patch on the original finalizers, it will become:
+
+```yaml
+finalizers:
+  - a
+  - b
+  - c
+  - d
+  - e
+```
+
+2) To delete items in a set, we use a parallel list with key: `$deleteFromPrimitiveList/\<keyOfPrimitiveList\>`.
+e.g. to delete items "b" and "c" from the original finalizers, the patch will be:
+
+```yaml
+$deleteFromPrimitiveList/finalizers:
+  - b
+  - c
+```
+
+After applying the patch on the original finalizers, it will become:
+
+```yaml
+finalizers:
+  - a
+```
+
+In an erroneous case, the set may be created with duplicates. Deleting an item that has duplicates will delete all matching items.
+
+3) Replace can be fulfilled by an addition and a deletion.
+e.g. to replace "a" with "x" in the original finalizers, the patch will be:
+
+```yaml
+$deleteFromPrimitiveList/finalizers:
+  - a
+finalizers:
+  - x
+```
+
+After applying the patch on the original finalizers, it will become:
+
+```yaml
+finalizers:
+  - x
+  - b
+  - c
 ```
 
 ### Map Operations
