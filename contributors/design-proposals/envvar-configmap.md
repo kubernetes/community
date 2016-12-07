@@ -38,9 +38,15 @@ ConfigMap.  Prefixes must be a "C" identifier.
 
 ### Kubectl updates
 
-The describe command will display the configmap name that have been defined as
+The `describe` command will display the configmap name that have been defined as
 part of the environment variable section including the optional prefix when
 defined.
+
+The `create configmap` should be enhanced with an option to create a ConfigMap
+from a a single file or a directory of files where the files are in VAR=VAL
+format. Lines beginning with # (comments) or blank lines are ignored. The VARs
+must be "C" identifiers. If an invalid VAR is present, a validation error will
+occur.  If duplicate VARs are encountered, the last value will be used.
 
 ### API Resource
 
