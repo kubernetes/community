@@ -22,15 +22,15 @@ variables. One such source is a ConfigMap.
 Each key defined in the ConfigMap's `Data` object must be a "C" identifier. If
 an invalid key is present, the container will fail to start.
 
-Environment variables are currently defined by services or the `Env` object in
-a container, where the `Env` takes precedence.  The introduction of ConfigMaps
-adds a third possibility. To prevent any change in behavior, the `Env` object
-will still override any environment variable introduced by a ConfigMap.  A
-ConfigMap is allowed to override variables defined by services. ConfigMaps are
-processed in order of their declaration. Duplicate keys that occur within a
-ConfigMap or across ConfigMaps will have the last value retained.  Variable
-references defined by an `EnvVar` struct can be resolved by values defined in
-other `EnvVar`s or those introduced by ConfigMaps and services.
+Environment variables defined by a `Container` are processed in a specific
+order.  The processing order is as follows:
+1. All automatic service environment variables
+1. All `EnvFrom` blocks in order
+1. All `Env` blocks in order.
+
+The last value processed for any given environment variable will be the
+decided winner.  Variable references defined by an `EnvVar` struct will be
+resolved by the current values defined even if the value is replaced later.
 
 To prevent collisions amongst multiple ConfigMaps, each defined ConfigMap can
 have an optional associated prefix that is prepended to each key in the
@@ -42,11 +42,11 @@ The `describe` command will display the configmap name that have been defined as
 part of the environment variable section including the optional prefix when
 defined.
 
-The `create configmap` should be enhanced with an option to create a ConfigMap
-from a a single file or a directory of files where the files are in VAR=VAL
-format. Lines beginning with # (comments) or blank lines are ignored. The VARs
-must be "C" identifiers. If an invalid VAR is present, a validation error will
-occur.  If duplicate VARs are encountered, the last value will be used.
+The `create configmap` will add a `--from-env-file` flag to create a ConfigMap
+from a a single file where the file is in VAR=VAL format. Lines beginning with
+\# (comments) or blank lines are ignored. The VARs must be "C" identifiers. If
+an invalid VAR is present, a validation error will occur.  If duplicate VARs
+are encountered, the last value will be used.
 
 ### API Resource
 
