@@ -42,12 +42,6 @@ The `describe` command will display the configmap name that have been defined as
 part of the environment variable section including the optional prefix when
 defined.
 
-The `create configmap` will add a `--from-env-file` flag to create a ConfigMap
-from a a single file where the file is in VAR=VAL format. Lines beginning with
-\# (comments) or blank lines are ignored. The VARs must be "C" identifiers. If
-an invalid VAR is present, a validation error will occur.  If duplicate VARs
-are encountered, the last value will be used.
-
 ### API Resource
 
 A new `EnvFromSource` type containing a `ConfigMapRef` will be added to the
