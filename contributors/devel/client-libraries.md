@@ -18,6 +18,7 @@ the core Kubernetes team*
    * [Perl](https://metacpan.org/pod/Net::Kubernetes)
    * [PHP](https://github.com/devstub/kubernetes-api-php-client)
    * [PHP](https://github.com/maclof/kubernetes-client)
+   * [Python](https://github.com/kubernetes-incubator/client-python)
    * [Python](https://github.com/eldarion-gondor/pykube)
    * [Ruby](https://github.com/Ch00k/kuber)
    * [Ruby](https://github.com/abonas/kubeclient)
