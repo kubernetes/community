@@ -35,7 +35,7 @@ The weekly community meeting provides an opportunity for the different SIGs, WGs
 
 ## Special Interest Groups (SIG) and Working Groups
 
-Much of the community activity is organized into a community meeting, numerous SIGs and time bounded WGs. Each of those groups operates a little differently which is reflected in how they capture notes, examples, and other information. Each groups material is in its subdirectory in this project.
+Much of the community activity is organized into a community meeting, numerous SIGs and time bounded WGs. SIGs follow these [guidelines](governance.md) although each of these groups may operate a little differently depending on their needs and workflow. Each groups material is in its subdirectory in this project.
 
 The community meeting calendar is available as an [iCal to subscribe to] (https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) (simply  copy and paste the url into any calendar product that supports the iCal format) or [html to view] (https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles).
 
