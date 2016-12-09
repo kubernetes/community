@@ -9,6 +9,7 @@ Getting started locally
     - [etcd](#etcd)
     - [go](#go)
     - [OpenSSL](#openssl)
+    - [CFSSL](#cfssl)
 - [Clone the repository](#clone-the-repository)
 - [Starting the cluster](#starting-the-cluster)
 - [Running a container](#running-a-container)
@@ -29,7 +30,7 @@ Not running Linux? Consider running [Minikube](http://kubernetes.io/docs/getting
 #### Docker
 
 At least [Docker](https://docs.docker.com/installation/#installation)
-1.3+. Ensure the Docker daemon is running and can be contacted (try `docker
+1.10+. Ensure the Docker daemon is running and can be contacted (try `docker
 ps`).  Some of the Kubernetes components need to run as root, which normally
 works fine with docker.
 
@@ -43,10 +44,17 @@ You need [go](https://golang.org/doc/install) in your path (see [here](developme
 
 #### OpenSSL
 
-You need [OpenSSL](https://www.openssl.org/) installed.  If you do not have the `openssl` command available, you may see the following error in `/tmp/kube-apiserver.log`:
+You need [OpenSSL](https://www.openssl.org/) installed.  If you do not have the `openssl` command available, the script will print an appropriate error.
+
+#### CFSSL
+
+The [CFSSL](https://cfssl.org/) binaries (cfssl, cfssljson) must be installed and available on your ``$PATH``.
+
+The easiest way to get it is something similar to the following:
 
 ```
-server.go:333] Invalid Authentication Config: open /tmp/kube-serviceaccount.key: no such file or directory
+$ go get -u github.com/cloudflare/cfssl/cmd/...
+$ PATH=$PATH:$GOPATH/bin
 ```
 
 ### Clone the repository
