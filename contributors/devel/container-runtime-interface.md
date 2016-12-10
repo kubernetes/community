@@ -33,6 +33,9 @@ pluggable container runtimes and build a healthier ecosystem.
      `--container-runtime-endpoint` and `--image-service-endpoint`.
    - Enable CRI in kubelet by`--experimental-cri=true`.
    - Use the "remote" runtime by `--container-runtime=remote`.
+3. Set apiserver flags
+   - Streaming proxy redirects is required for CRI exec/attach/port-forward requests:<br>
+     `--feature-gates=StreamingProxyRedirects=true`
 
 Please see the [Status Update](#status-update) section for known issues for
 each release.
