@@ -306,7 +306,7 @@ cases it may be complex. For example:
 
 Below is a sample of the YAML to create such a replication controller.
 
-```
+```yaml
 apiVersion: v1
 kind: ReplicationController
 metadata:

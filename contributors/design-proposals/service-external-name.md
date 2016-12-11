@@ -15,7 +15,7 @@ RDS resource `something.rds.aws.amazon.com`. No proxying is involved.
 # Motivation
 
 There were many related issues, but we'll try to summarize them here. More info
-is on GitHub issues/PRs: #13748, #11838, #13358, #23921
+is on GitHub issues/PRs: [#13748](https://issues.k8s.io/13748), [#11838](https://issues.k8s.io/11838), [#13358](https://issues.k8s.io/13358), [#23921](https://issues.k8s.io/23921)
 
 One motivation is to present as native cluster services, services that are
 hosted externally. Some cloud providers, like AWS, hand out hostnames (IPs are
@@ -60,7 +60,7 @@ with DNS TTL and more. One imperfect approach was to only resolve the hostname
 upon creation, but this was considered not a great idea. A better approach
 would be at a higher level, maybe a service type.
 
-There are more ideas described in #13748, but all raised further issues,
+There are more ideas described in [#13748](https://issues.k8s.io/13748), but all raised further issues,
 ranging from using another upstream DNS server to creating a Name object
 associated with DNSs.
 
@@ -81,7 +81,7 @@ https://github.com/kubernetes/kubernetes/issues/13748#issuecomment-230397975
 
 Currently a ServiceSpec looks like this, with comments edited for clarity:
 
-```
+```go
 type ServiceSpec struct {
     Ports []ServicePort
 
@@ -105,7 +105,7 @@ type ServiceSpec struct {
 
 The proposal is to change it to:
 
-```
+```go
 type ServiceSpec struct {
     Ports []ServicePort
 
@@ -135,7 +135,7 @@ type ServiceSpec struct {
 
 For example, it can be used like this:
 
-```
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
