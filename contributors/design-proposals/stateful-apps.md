@@ -108,7 +108,7 @@ if a previous pod has been fully terminated (reached its graceful termination li
 A StatefulSet has 0..N **members**, each with a unique **identity** which is a name that is unique within the
 set.
 
-```
+```go
 type StatefulSet struct {
   ObjectMeta
 
@@ -225,7 +225,7 @@ fashion via DNS by leveraging information written to the endpoints by the endpoi
 
 The end result might be DNS resolution as follows:
 
-```
+```sh
 # service mongo pointing to pods created by StatefulSet mdb, with identities mdb-1, mdb-2, mdb-3
 
 dig mongodb.namespace.svc.cluster.local +short A
@@ -244,9 +244,9 @@ dig mdb-3.mongodb.namespace.svc.cluster.local +short A
 This is currently implemented via an annotation on pods, which is surfaced to endpoints, and finally
 surfaced as DNS on the service that exposes those pods.
 
-```
-// The pods created by this StatefulSet will have the DNS names "mysql-0.NAMESPACE.svc.cluster.local"
-// and "mysql-1.NAMESPACE.svc.cluster.local"
+```yaml
+# The pods created by this StatefulSet will have the DNS names "mysql-0.NAMESPACE.svc.cluster.local"
+# and "mysql-1.NAMESPACE.svc.cluster.local"
 kind: StatefulSet
 metadata:
   name: mysql

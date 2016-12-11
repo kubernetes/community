@@ -33,9 +33,9 @@ Non-goals include:
 
 ## API Changes
 
-```
+```go
 type ObjectMeta struct {
-	...	
+	...
 	OwnerReferences []OwnerReference
 }
 ```
@@ -43,7 +43,7 @@ type ObjectMeta struct {
 **ObjectMeta.OwnerReferences**:
 List of objects depended by this object. If ***all*** objects in the list have been deleted, this object will be garbage collected. For example, a replica set `R` created by a deployment `D` should have an entry in ObjectMeta.OwnerReferences pointing to `D`, set by the deployment controller when `R` is created. This field can be updated by any client that has the privilege to both update ***and*** delete the object. For safety reasons, we can add validation rules to restrict what resources could be set as owners. For example, Events will likely be banned from being owners.
 
-```
+```go
 type OwnerReference struct {
 	// Version of the referent.
 	APIVersion string
@@ -96,7 +96,7 @@ Users may want to delete an owning object (e.g., a replicaset) while orphaning t
 
 ## API changes
 
-```
+```go
 type ObjectMeta struct {
 	…
 	Finalizers []string
@@ -133,7 +133,7 @@ type ObjectMeta struct {
 
 ## API changes
 
-```
+```go
 type DeleteOptions struct {
 	…
 	OrphanDependents bool
@@ -243,7 +243,7 @@ This section presents an example of all components working together to enforce t
 
 ## API Changes
 
-```
+```go
 type DeleteOptions struct {
 	…
 	OrphanChildren bool
@@ -252,16 +252,16 @@ type DeleteOptions struct {
 
 **DeleteOptions.OrphanChildren**: allows a user to express whether the child objects should be orphaned.
 
-```
+```go
 type ObjectMeta struct {
-	...	
+	...
 	ParentReferences []ObjectReference
 }
 ```
 
 **ObjectMeta.ParentReferences**: links the resource to the parent resources. For example, a replica set `R` created by a deployment `D` should have an entry in ObjectMeta.ParentReferences pointing to `D`. The link should be set when the child object is created. It can be updated after the creation.
 
-```
+```go
 type Tombstone struct {
     unversioned.TypeMeta
     ObjectMeta

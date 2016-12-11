@@ -464,7 +464,7 @@ provisioner and to favor existing volumes before provisioning a new one.
 
 This example shows two storage classes, "aws-fast" and "aws-slow".
 
-```
+```yaml
 apiVersion: v1
 kind: StorageClass
 metadata:

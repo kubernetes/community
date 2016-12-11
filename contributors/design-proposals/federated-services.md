@@ -473,11 +473,13 @@ underlying clusters, to make up the total of 6 replicas required. To handle
 entire cluster failures, various approaches are possible, including:
 1. **simple overprovisioning**, such that sufficient replicas remain even if a
    cluster fails. This wastes some resources, but is simple and reliable.
+
 2. **pod autoscaling**, where the replication controller in each
       cluster automatically and autonomously increases the number of
       replicas in its cluster in response to the additional traffic
       diverted from the failed cluster. This saves resources and is relatively
       simple, but there is some delay in the autoscaling.
+
 3. **federated replica migration**, where the Cluster Federation
    control system detects the cluster failure and automatically
    increases the replica count in the remaining clusters to make up
