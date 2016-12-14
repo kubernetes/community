@@ -36,7 +36,7 @@ The following is a list of roles that are currently assumed by different contrib
   create/delete labels and milestones); technically can lgtm any PR and cause it
   to be merged by the submit queue; expected to review PRs and fix bugs related
   to their domains
-- **kubernetes-project-managers**: help to manage and maintain the project in
+- **kubernetes-pm**: help to manage and maintain the project in
   ways other than just writing code (e.g. managing issues).
 - **kubernetes-admin**: direct code write/merge access; for build cops and
   release czars only.
