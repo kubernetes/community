@@ -35,7 +35,10 @@ Code and documentation contributors:
   maintenance
 - **Org Member**: active enough to be useful to assign issues to them and add
   them to a github team (e.g., for a SIG) for notification purposes; if they
-  choose public membership, they get a badge on their github profile
+  choose public membership, they get a badge on their github profile; should
+  subscribe to kubernetes-dev@googlegroups.com; expected to be familiar with
+  project organization, roles, policies, procedures, etc.; should read the [developer
+  guide](contributors/devel/README.md)
 - [**kubernetes-collaborators**](https://github.com/orgs/kubernetes/teams/kubernetes-collaborators): "read access" to kubernetes repo; get a badge 
   on PR and issue comments; trusted enough to run tests on their PRs 
   automatically; can issue "@k8s-bot ok to test" for other contributors
