@@ -73,7 +73,7 @@ Management roles:
   K8s; can influence priorities of their team members; pragmatically, 
   probably want label/assignment powers
 - [**kubernetes-pm**](https://github.com/orgs/kubernetes/teams/kubernetes-pm): help to [manage and maintain the project](project-managers/README.md) in
-  ways other than just writing code (e.g. managing issues).
+  ways other than just writing code (e.g. managing issues); should subscribe to kubernetes-pm@googlegroups.com
 
 Rotations:
 - [**Build Cop**](contributors/devel/on-call-build-cop.md): ensure tests pass, submit queue is working, rollback PRs, 
