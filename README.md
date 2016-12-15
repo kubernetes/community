@@ -31,7 +31,7 @@ kubernetes-users@googlegroups.com
 
 ## [Weekly Community Video Conference](community/README.md)
 
-The weekly community meeting provides an opportunity for the different SIGs, WGs and other parts of the community to come together.  More information about joining the weekly community meeting is available on our [agenda working document] (https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#)
+The [weekly community meeting](https://zoom.us/my/kubernetescommunity) provides an opportunity for the different SIGs, WGs and other parts of the community to come together.  More information about joining the weekly community meeting is available on our [agenda working document] (https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#)
 
 ## Special Interest Groups (SIG) and Working Groups
 
