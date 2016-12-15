@@ -22,9 +22,13 @@ use the [Apache Licence version 2.0](LICENSE). Documentation repositories should
 
 # Project Roles
 
-Kubernetes is a large project. There are many ways to participate and contribute.
+Kubernetes is a large project. It is necessarily a group effort.
 
-Roles that are currently assumed by different participants are described below.
+There are many ways to participate and contribute.
+We value all forms of constructive contributions, no matter how small, even if not
+explicitly described below.
+
+Roles that are currently assumed by project participants are described below.
 
 Code and documentation contributors:
 - **[New Contributor](https://github.com/kubernetes/contrib/issues/1090)**: a
