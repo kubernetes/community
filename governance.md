@@ -4,6 +4,8 @@ The Kubernetes community abides by the CNCF [code of conduct](https://github.com
 
 _As contributors and maintainers of this project, and in the interest of fostering an open and welcoming community, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities._
 
+We want everyone in the community to have [positive experiences](https://www.cncf.io/blog/2016/12/14/diversity-scholarship-series-one-software-engineers-unexpected-cloudnativecon-kubecon-experience).
+
 # Guidelines for repositories under Kubernetes github orgs (e.g, kubernetes, kubernetes-incubator)
 
 All repositories under Kubernetes github orgs, such as kubernetes and kubernetes-incubator,
@@ -36,7 +38,7 @@ The following is a list of roles that are currently assumed by different partici
   merged
 - **SIG Participant**: active in one or more areas of the project; wide 
   variety of roles are represented
-- **SIG lead**: SIG organizer
+- **SIG Lead**: SIG organizer
 - **Area/Component Owner**: design/proposal approval authority for some area 
   of the project, though escalation is still possible, and most beta/GA API 
   changes are vetted by the API owners
