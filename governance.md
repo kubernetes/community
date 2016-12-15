@@ -82,3 +82,5 @@ In order to standardize Special Interest Group efforts, create maximum transpare
 # CLA
 
 All contributors must sign the CNCF CLA, as described [here](CLA.md).
+
+[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/governance.md?pixel)]()
