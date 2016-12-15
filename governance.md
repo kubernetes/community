@@ -13,7 +13,9 @@ use the [Apache Licence version 2.0](LICENSE). Documentation repositories should
 
 # Kubernetes Organization Roles
 
-The following is a list of roles that are currently assumed by different contributors:
+Kubernetes is a large project. There are many ways to participate and contribute.
+
+The following is a list of roles that are currently assumed by different participants:
 
 - **[New Contributor](https://github.com/kubernetes/contrib/issues/1090)**: a
   couple of PRs
@@ -22,13 +24,13 @@ The following is a list of roles that are currently assumed by different contrib
 - **Org Member**: active enough to be useful to assign issues to them and add
   them to a github team (e.g., for a SIG) for notification purposes; if they
   choose public membership, they get a badge on their github profile
-- **kubernetes-collaborators**: "read access" to kubernetes repo; get a badge 
+- [**kubernetes-collaborators**](https://github.com/orgs/kubernetes/teams/kubernetes-collaborators): "read access" to kubernetes repo; get a badge 
   on PR and issue comments; trusted enough to run tests on their PRs 
   automatically; can issue "@k8s-bot ok to test" for other contributors
-- **Reviewer**: In some OWNERS file as a reviewer (in repos using the bot),
+- **Reviewer**: In some [OWNERS](contributors/devel/owners.md) file as a reviewer (in repos using the bot),
   assigned related PRs, assigned relevant test bugs; can champion incubator
   repos
-- **Approver**: some OWNERS file as an approver; will be needed to get code
+- **Approver**: some [OWNERS](contributors/devel/owners.md) file as an approver; will be needed to get code
   merged
 - **SIG Participant**: active in one or more areas of the project; wide 
   variety of roles are represented
@@ -44,18 +46,18 @@ The following is a list of roles that are currently assumed by different contrib
   probably want label/assignment powers
 - **Top-Level OWNERS**: de-facto project elders; technically can 
   approve virtually any PRs; can sponsor incubator repos
-- **kubernetes-maintainers**: write access to repo (assign issues/PRs,
+- [**kubernetes-maintainers**](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers): write access to repo (assign issues/PRs,
   add/remove labels and milestones, edit issues and PRs, edit wiki,
   create/delete labels and milestones); technically can lgtm any PR and cause it
   to be merged by the submit queue; expected to review PRs and fix bugs related
   to their domains
-- **kubernetes-pm**: help to manage and maintain the project in
+- [**kubernetes-pm**](https://github.com/orgs/kubernetes/teams/kubernetes-pm): help to manage and maintain the project in
   ways other than just writing code (e.g. managing issues).
-- **kubernetes-admin**: direct code write/merge access; for build cops and
+- [**kubernetes-admin**](https://github.com/orgs/kubernetes/teams/kubernetes-admin): direct code write/merge access; for build cops and
   release czars only.
-- **Build Cop**: ensure tests pass, submit queue is working, rollback PRs, 
+- [**Build Cop**](contributors/devel/on-call-build-cop.md): ensure tests pass, submit queue is working, rollback PRs, 
   manually merge as necessary to fix build
-- **User-Support Rotation**: answer questions on stackoverflow, googlegroups, 
+- [**User-Support Rotation**](contributors/devel/on-call-user-support.md): answer questions on stackoverflow, googlegroups, 
   slack, twitter, etc. full time while on duty
 - **Release Czar**: drive release
 - **K8s Org Owner**: can create repos, do ~any github action; the number of
