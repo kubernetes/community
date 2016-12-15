@@ -6,3 +6,4 @@ Links/Info:
 * Slack channel: https://kubernetes.slack.com/messages/sig-api-machinery/
 * [Agenda/Mission Doc](https://goo.gl/x5nWrF)
 * [Hangout Link](https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig)
+* Areas: apiserver, api registration and discovery, generic API CRUD semantics, admission control, encoding/decoding, conversion, defaulting, persistence layer (etcd), OpenAPI, third-party resource, garbage collection, client libraries
