@@ -13,14 +13,14 @@ _As contributors and maintainers of this project, and in the interest of fosteri
 
 We want everyone in the community to have [positive experiences](https://www.cncf.io/blog/2016/12/14/diversity-scholarship-series-one-software-engineers-unexpected-cloudnativecon-kubecon-experience).
 
-# Guidelines for repositories under Kubernetes github orgs (e.g, kubernetes, kubernetes-incubator)
+# Repository guidelines
 
 All repositories under Kubernetes github orgs, such as kubernetes and kubernetes-incubator,
 should follow the procedures outlined in the [incubator document](incubator.md). All code projects
 use the [Apache Licence version 2.0](LICENSE). Documentation repositories should use the
 [Creative Commons License version 4.0](https://github.com/kubernetes/kubernetes.github.io/blob/master/LICENSE).
 
-# Kubernetes Organization Roles
+# Project Roles
 
 Kubernetes is a large project. There are many ways to participate and contribute.
 
