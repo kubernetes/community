@@ -38,7 +38,8 @@ Code and documentation contributors:
   choose public membership, they get a badge on their github profile; should
   subscribe to kubernetes-dev@googlegroups.com; expected to be familiar with
   project organization, roles, policies, procedures, etc.; should read the [developer
-  guide](contributors/devel/README.md)
+  guide](contributors/devel/README.md); must enable
+  [two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/)
 - [**kubernetes-collaborators**](https://github.com/orgs/kubernetes/teams/kubernetes-collaborators): "read access" to kubernetes repo; get a badge 
   on PR and issue comments; trusted enough to run tests on their PRs 
   automatically; can issue "@k8s-bot ok to test" for other contributors
