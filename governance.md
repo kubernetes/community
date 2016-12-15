@@ -55,8 +55,8 @@ Code and documentation contributors:
   create/delete labels and milestones); technically can lgtm any PR and cause it
   to be merged by the submit queue; expected to review PRs and fix bugs related
   to their domains
-- **Project Approvers**: approver in top-level OWNERS file in kubernetes repo;
-  de-facto project elders; technically can 
+- **Project Approvers**: approver in [top-level OWNERS file in kubernetes repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS);
+  de-facto project decision makers; technically can 
   approve virtually any PRs; can sponsor incubator repos
   
 SIG roles:
