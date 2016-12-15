@@ -1,3 +1,10 @@
+# Principles
+
+The Kubernetes community adheres to the following principles:
+* Open: Kubernetes is open source. See repository guidelines and CLA, below.
+* Welcoming and respectful: See Code of Conduct, below.
+* Transparent and accessible: Work and collaboration should be done in public. See SIG governance, below.
+
 # Code of Conduct
 
 The Kubernetes community abides by the CNCF [code of conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md). Here is an excerpt:
@@ -70,7 +77,7 @@ The following is a list of roles that are currently assumed by different partici
   distributed across a few time zones and organizations The other repos will
   have distinct sets of people filling some of the above roles, also.
    
-# Kubernetes SIG Governance
+# SIG Governance
 
 In order to standardize Special Interest Group efforts, create maximum transparency, and route contributors to the appropriate SIG, SIGs should follow the guidelines stated below:
 
@@ -82,6 +89,7 @@ In order to standardize Special Interest Group efforts, create maximum transpare
 * Report activity in the weekly community meeting at least once every 6 weeks
 * Participate in release planning meetings and retrospectives, and burndown meetings, as needed
 * Ensure related work happens in a project-owned github org and repository, with code and tests explicitly owned and supported by the SIG, including issue triage, PR reviews, test-failure response, bug fixes, etc. 
+* Use the above forums as the primary means of working, communicating, and collaborating, as opposed to private emails and meetings
 
 # CLA
 
