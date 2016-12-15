@@ -1,7 +1,15 @@
+# Code of Conduct
+
+The Kubernetes community abides by the CNCF [code of conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md). Here is an excerpt:
+
+_As contributors and maintainers of this project, and in the interest of fostering an open and welcoming community, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities._
+
 # Guidelines for repositories under Kubernetes github orgs (e.g, kubernetes, kubernetes-incubator)
 
 All repositories under Kubernetes github orgs, such as kubernetes and kubernetes-incubator,
-should follow the procedures outlined in the [incubator document](incubator.md).
+should follow the procedures outlined in the [incubator document](incubator.md). All code projects
+use the [Apache Licence version 2.0](LICENSE). Documentation repositories should use the
+[Creative Commons License version 4.0](https://github.com/kubernetes/kubernetes.github.io/blob/master/LICENSE).
 
 # Kubernetes Organization Roles
 
@@ -68,3 +76,7 @@ In order to standardize Special Interest Group efforts, create maximum transpare
 * Report activity in the weekly community meeting at least once every 6 weeks
 * Participate in release planning meetings and retrospectives, and burndown meetings, as needed
 * Ensure related work happens in a project-owned github org and repository, with code and tests explicitly owned and supported by the SIG, including issue triage, PR reviews, test-failure response, bug fixes, etc. 
+
+# CLA
+
+All contributors must sign the CNCF CLA, as described [here](CLA.md).
