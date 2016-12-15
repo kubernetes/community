@@ -29,7 +29,7 @@ The following is a list of roles that are currently assumed by different partici
 - **[New Contributor](https://github.com/kubernetes/contrib/issues/1090)**: a
   couple of PRs
 - **Contributor**: more than a couple of PRs (which could include documentation
-  contributions as well as code); we have [expectations](https://github.com/kubernetes/kubernetes/blob/master/docs/devel/community-expectations.md)
+  contributions as well as code); we have [expectations](contributors/devel/community-expectations.md)
   that frequent contributors will assist in our code-review process and with project
   maintenance
 - **Org Member**: active enough to be useful to assign issues to them and add
