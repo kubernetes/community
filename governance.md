@@ -1,3 +1,8 @@
+# Guidelines for repositories under Kubernetes github orgs (e.g, kubernetes, kubernetes-incubator)
+
+All repositories under Kubernetes github orgs, such as kubernetes and kubernetes-incubator,
+should follow the procedures outlined in the [incubator document](incubator.md).
+
 # Kubernetes Organization Roles
 
 The following is a list of roles that are currently assumed by different contributors:
