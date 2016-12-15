@@ -50,9 +50,10 @@ Code and documentation contributors:
   - **Area/Component Owner**: design/proposal approval authority for some area 
     of the project, though escalation is still possible, and most beta/GA API 
     changes are vetted by the API owners
-  - **API Owners**: lead designers of the project, who are familiar with the 
-    design, requirements, mechanics, conventions, style, scope, gotchas, etc. 
-    of the API
+- [**API Approver**](https://github.com/orgs/kubernetes/teams/api-approvers):
+  lead designers of the project, who are familiar with the 
+  design, requirements, mechanics, conventions, style, scope, gotchas, etc. 
+  of the API
 - [**kubernetes-maintainers**](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers): write access to repo (assign issues/PRs,
   add/remove labels and milestones, edit issues and PRs, edit wiki,
   create/delete labels and milestones); technically can lgtm any PR and cause it
