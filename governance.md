@@ -34,8 +34,14 @@ explicitly described below.
 
 It is intended that contributors have the opportunity to grow in responsibilities,
 privileges, and authority corresponding to the scope, quality, quantity, and duration
-of their contributions.
+of their contributions. Definition of criteria and process is in progress.
 
+Why would someone want to perform and be accepted into a particular role?
+ - To work more efficiently; more permissions reduces development friction
+ - Status (have the Kubernetes badge on his/her profile and/or contributions)
+ - Ownership
+ - etc...
+ 
 Roles that are currently assumed by project participants are described below.
 
 Code and documentation contributors:
@@ -52,26 +58,33 @@ Code and documentation contributors:
   project organization, roles, policies, procedures, etc.; should read the [developer
   guide](contributors/devel/README.md); must enable
   [two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/)
-- [**kubernetes-collaborators**](https://github.com/orgs/kubernetes/teams/kubernetes-collaborators): "read access" to kubernetes repo; get a badge 
+- [**kubernetes-collaborators**](https://github.com/orgs/kubernetes/teams/kubernetes-collaborators):
+  "read access" to kubernetes repo; get a badge 
   on PR and issue comments; trusted enough to run tests on their PRs 
   automatically; can issue "@k8s-bot ok to test" for other contributors
-- **Reviewer**: In some [OWNERS](contributors/devel/owners.md) file as a reviewer (in repos using the bot),
+- **Reviewer**: familiar enough with some part of the codebase to be in some
+  [OWNERS](contributors/devel/owners.md) file as a reviewer (in repos using the bot),
   assigned related PRs, assigned relevant test bugs; can champion incubator
-  repos
-- **Approver**: some [OWNERS](contributors/devel/owners.md) file as an approver; will be needed to get code
-  merged
-- **Area/Component Owner**: design/proposal approval authority for some area 
-  of the project, though escalation is still possible, and most beta/GA API 
-  changes are vetted by the API owners
+  repos; must be nominated by an approver for that part of the codebase, with no
+  objections from other approvers
+- **Approver**: in some [OWNERS](contributors/devel/owners.md) file as an approver, which
+  will be needed to get code merged; previously a reviewer for that part of the
+  codebase; demonstrated sound technical judgement; nominated
+  by an area/component owner, with no objections from other owners
+- **Area/Component Owner**: in top-level [OWNERS](contributors/devel/owners.md) file for
+  some area/component as an approver; design/proposal approval authority for some area 
+  of the project, though escalation is still possible
 - [**API Approver**](https://github.com/orgs/kubernetes/teams/api-approvers):
   lead designers of the project, who are familiar with the 
   design, requirements, mechanics, conventions, style, scope, gotchas, etc. 
-  of the API
-- [**kubernetes-maintainers**](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers): write access to repo (assign issues/PRs,
+  of the API; most beta/GA API changes are vetted by the API approvers
+- [**kubernetes-maintainers**](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers):
+  write access to repo (assign issues/PRs,
   add/remove labels and milestones, edit issues and PRs, edit wiki,
   create/delete labels and milestones); technically can lgtm any PR and cause it
   to be merged by the submit queue; expected to review PRs, fix bugs, maintain and
-  improve health and quality of the project, provide user support
+  improve health and quality of the project, provide user support; on project for
+  at least 1 year
 - **Project Approvers**: approver in [top-level OWNERS file in kubernetes repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS);
   de-facto project decision makers; technically can 
   approve virtually any PRs; can sponsor incubator repos
