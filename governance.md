@@ -4,6 +4,7 @@ The Kubernetes community adheres to the following principles:
 * Open: Kubernetes is open source. See repository guidelines and CLA, below.
 * Welcoming and respectful: See Code of Conduct, below.
 * Transparent and accessible: Work and collaboration should be done in public. See SIG governance, below.
+* Merit: Ideas and contributions are accepted according to their technical merit and alignment with project objectives, [scope](kubernetes.io/docs/whatisk8s/), and [design principles](contributors/design-proposals/principles.md).
 
 # Code of Conduct
 
@@ -27,6 +28,10 @@ Kubernetes is a large project. It is necessarily a group effort.
 There are many ways to participate and contribute.
 We value all forms of constructive contributions, no matter how small, even if not
 explicitly described below.
+
+It is intended that contributors have the opportunity to grow in responsibilities,
+privileges, and authority corresponding to the scope, quality, quantity, and duration
+of their contributions.
 
 Roles that are currently assumed by project participants are described below.
 
@@ -52,9 +57,9 @@ Code and documentation contributors:
   repos
 - **Approver**: some [OWNERS](contributors/devel/owners.md) file as an approver; will be needed to get code
   merged
-  - **Area/Component Owner**: design/proposal approval authority for some area 
-    of the project, though escalation is still possible, and most beta/GA API 
-    changes are vetted by the API owners
+- **Area/Component Owner**: design/proposal approval authority for some area 
+  of the project, though escalation is still possible, and most beta/GA API 
+  changes are vetted by the API owners
 - [**API Approver**](https://github.com/orgs/kubernetes/teams/api-approvers):
   lead designers of the project, who are familiar with the 
   design, requirements, mechanics, conventions, style, scope, gotchas, etc. 
@@ -62,8 +67,8 @@ Code and documentation contributors:
 - [**kubernetes-maintainers**](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers): write access to repo (assign issues/PRs,
   add/remove labels and milestones, edit issues and PRs, edit wiki,
   create/delete labels and milestones); technically can lgtm any PR and cause it
-  to be merged by the submit queue; expected to review PRs and fix bugs related
-  to their domains
+  to be merged by the submit queue; expected to review PRs, fix bugs, maintain and
+  improve health and quality of the project, provide user support
 - **Project Approvers**: approver in [top-level OWNERS file in kubernetes repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS);
   de-facto project decision makers; technically can 
   approve virtually any PRs; can sponsor incubator repos
