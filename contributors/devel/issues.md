@@ -12,23 +12,28 @@ We try to apply these priority labels consistently across the entire project,
 but if you notice an issue that you believe to be incorrectly prioritized,
 please do let us know and we will evaluate your counter-proposal.
 
-- **priority/P0**: Must be actively worked on as someone's top priority right
+- **priority/critical-urgent**: Must be actively worked on as someone's top priority right
 now. Stuff is burning. If it's not being actively worked on, someone is expected
 to drop what they're doing immediately to work on it. Team leaders are
 responsible for making sure that all P0's in their area are being actively
 worked on. Examples include user-visible bugs in core features, broken builds or
 tests and critical security issues.
 
-- **priority/P1**: Must be staffed and worked on either currently, or very soon,
+- **priority/failing-test**: Automatically filed frequently failing test. Needs to be investigated.
+
+- **priority/important-soon**: Must be staffed and worked on either currently, or very soon,
 ideally in time for the next release.
 
-- **priority/P2**: There appears to be general agreement that this would be good
+- **priority/important-longterm**: Important over the long term, but may not be currently
+staffed and/or may require multiple releases to complete.
+
+- **priority/backlog**: There appears to be general agreement that this would be good
 to have, but we may not have anyone available to work on it right now or in the
 immediate future. Community contributions would be most welcome in the mean time
 (although it might take a while to get them reviewed if reviewers are fully
 occupied with higher priority issues, for example immediately before a release).
 
-- **priority/P3**: Possibly useful, but not yet enough support to actually get
+- **priority/awaiting-more-evidence**: Possibly useful, but not yet enough support to actually get
 it done. These are mostly place-holders for potentially good ideas, so that they
 don't get completely forgotten, and can be referenced/deduped every time they
 come up.
