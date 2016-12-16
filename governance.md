@@ -12,7 +12,10 @@ The Kubernetes community abides by the CNCF [code of conduct](https://github.com
 
 _As contributors and maintainers of this project, and in the interest of fostering an open and welcoming community, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities._
 
-We want everyone in the community to have [positive experiences](https://www.cncf.io/blog/2016/12/14/diversity-scholarship-series-one-software-engineers-unexpected-cloudnativecon-kubecon-experience).
+As a member of the Kubernetes project, you represent the project and your fellow contributors. 
+We value our community tremendously and we'd like to keep cultivating a friendly and collaborative
+environment for our contributors and users. We want everyone in the community to have 
+[positive experiences](https://www.cncf.io/blog/2016/12/14/diversity-scholarship-series-one-software-engineers-unexpected-cloudnativecon-kubecon-experience).
 
 # Repository guidelines
 
