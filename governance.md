@@ -45,29 +45,29 @@ Why would someone want to perform and be accepted into a particular role?
 Roles that are currently assumed by project participants are described below.
 
 Code and documentation contributors:
-- **[New Contributor](https://github.com/kubernetes/contrib/issues/1090)**: a
-  couple of PRs
-- **Contributor**: more than a couple of PRs (which could include documentation
+- [**New Contributor**](https://github.com/kubernetes/contrib/issues/1090): a
+  couple of PRs; should be welcomed to the community, helped with PR workflow, and
+  directed to relevant documentation
+- **Active Contributor**: more than a couple of recent PRs (which could include documentation
   contributions as well as code); we have [expectations](contributors/devel/community-expectations.md)
   that frequent contributors will assist in our code-review process and with project
   maintenance
 - **Org Member**: active enough to be useful to assign issues to them and add
-  them to a github team (e.g., for a SIG) for notification purposes; if they
-  choose public membership, they get a badge on their github profile; should
-  subscribe to kubernetes-dev@googlegroups.com; expected to be familiar with
+  them to a github team (e.g., for a SIG) for notification purposes; trusted enough
+  to run tests on their PRs automatically; can issue "@k8s-bot ok to test" for other
+  contributors; if they choose public membership, they get a badge on their github profile;
+  should subscribe to kubernetes-dev@googlegroups.com; expected to be familiar with
   project organization, roles, policies, procedures, etc.; should read the [developer
   guide](contributors/devel/README.md); must enable
   [two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/)
-- [**kubernetes-collaborators**](https://github.com/orgs/kubernetes/teams/kubernetes-collaborators):
-  "read access" to kubernetes repo; get a badge 
-  on PR and issue comments; trusted enough to run tests on their PRs 
-  automatically; can issue "@k8s-bot ok to test" for other contributors
 - **Reviewer**: familiar enough with some part of the codebase to be in some
   [OWNERS](contributors/devel/owners.md) file as a reviewer (in repos using the bot),
   assigned related PRs, assigned relevant test bugs; expected to be responsive to
   review requests as per [community expectations](contributors/devel/community-expectations.md);
   can champion incubator repos; must be nominated by an approver for that part of the codebase,
-  with no objections from other approvers
+  with no objections from other approvers; should be added to
+  [`kubernetes-reviewers`](https://github.com/orgs/kubernetes/teams/kubernetes-reviewers);
+  "read access" to kubernetes repo; get a badge on PR and issue comments
 - **Approver**: in some [OWNERS](contributors/devel/owners.md) file as an approver, which
   will be needed to get code merged; previously a reviewer for that part of the
   codebase; expected to be responsive to review requests as per [community expectations]
