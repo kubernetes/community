@@ -48,19 +48,20 @@ Code and documentation contributors:
 - [**New Contributor**](https://github.com/kubernetes/contrib/issues/1090): a
   couple of PRs; should be welcomed to the community, helped with PR workflow, and
   directed to relevant documentation
-- **Active Contributor**: more than a couple of recent PRs (which could include documentation
-  contributions as well as code); we have [expectations](contributors/devel/community-expectations.md)
+- **Active Contributor**: at least 3 merged PRs (which could include documentation
+  contributions as well as code), including one in the past month; we have
+  [expectations](contributors/devel/community-expectations.md)
   that frequent contributors will assist in our code-review process and with project
   maintenance
-- **Org Member**: active enough to be useful to assign issues to them and add
-  them to a github team (e.g., for a SIG) for notification purposes; trusted enough
-  to run tests on their PRs automatically; can issue "@k8s-bot ok to test" for other
-  contributors; if they choose public membership, they get a badge on their github profile;
+- **Org Member**: an active contributor for at least 3 months; active enough to be useful
+  to assign issues to them and add them to a github team (e.g., for a SIG) for notification
+  purposes; trusted enough to run tests on their PRs automatically; can issue "@k8s-bot ok to test"
+  for other contributors; if they choose public membership, they get a badge on their github profile;
   should subscribe to kubernetes-dev@googlegroups.com; expected to be familiar with
   project organization, roles, policies, procedures, etc.; should read the [developer
   guide](contributors/devel/README.md); must enable
   [two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/)
-- **Reviewer**: familiar enough with some part of the codebase to be in some
+- **Reviewer**: org member for at least 3 months; familiar enough with some part of the codebase to be in some
   [OWNERS](contributors/devel/owners.md) file as a reviewer (in repos using the bot),
   assigned related PRs, assigned relevant test bugs; expected to be responsive to
   review requests as per [community expectations](contributors/devel/community-expectations.md);
@@ -70,10 +71,10 @@ Code and documentation contributors:
   "read access" to kubernetes repo; get a badge on PR and issue comments
 - **Approver**: in some [OWNERS](contributors/devel/owners.md) file as an approver, which
   will be needed to get code merged; previously a reviewer for that part of the
-  codebase; expected to be responsive to review requests as per [community expectations]
-  (contributors/devel/community-expectations.md); expected to mentor contributors and
-  reviewers; demonstrated sound technical judgement; nominated by an area/component owner,
-  with no objections from other owners
+  codebase for at least 3 months; expected to be responsive to review requests as per
+  [community expectations](contributors/devel/community-expectations.md); expected to 
+  mentor contributors and reviewers; demonstrated sound technical judgement; nominated
+  by an area/component owner, with no objections from other owners
 - **Area/Component Owner**: in top-level [OWNERS](contributors/devel/owners.md) file for
   some area/component as an approver; design/proposal approval authority for some area 
   of the project, though escalation is still possible; expected to mentor and guide approvers,
@@ -83,7 +84,8 @@ Code and documentation contributors:
   create/delete labels and milestones); technically can lgtm any PR and cause it
   to be merged by the submit queue; expected to review PRs, fix bugs, maintain and
   improve health and quality of the project, provide user support, mentor and guide approvers,
-  reviewers, and other contributors; on project for at least 1 year
+  reviewers, and other contributors; approver for some part of the codebase for at least 3
+  months; on project for at least 1 year
 - **Project Approvers**: approver in [top-level OWNERS file in kubernetes repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS);
   de-facto project decision makers; technically can 
   approve virtually any PRs; can sponsor incubator repos
