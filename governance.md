@@ -74,10 +74,6 @@ Code and documentation contributors:
 - **Area/Component Owner**: in top-level [OWNERS](contributors/devel/owners.md) file for
   some area/component as an approver; design/proposal approval authority for some area 
   of the project, though escalation is still possible
-- [**API Approver**](https://github.com/orgs/kubernetes/teams/api-approvers):
-  lead designers of the project, who are familiar with the 
-  design, requirements, mechanics, conventions, style, scope, gotchas, etc. 
-  of the API; most beta/GA API changes are vetted by the API approvers
 - [**kubernetes-maintainers**](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers):
   write access to repo (assign issues/PRs,
   add/remove labels and milestones, edit issues and PRs, edit wiki,
@@ -88,6 +84,10 @@ Code and documentation contributors:
 - **Project Approvers**: approver in [top-level OWNERS file in kubernetes repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS);
   de-facto project decision makers; technically can 
   approve virtually any PRs; can sponsor incubator repos
+- [**API Approver**](https://github.com/orgs/kubernetes/teams/api-approvers):
+  lead designers of the project, who are familiar with the 
+  design, requirements, mechanics, conventions, style, scope, gotchas, etc. 
+  of the API; most beta/GA API changes are vetted by the API approvers
   
 SIG roles:
 - **SIG Participant**: active in one or more areas of the project; wide 
