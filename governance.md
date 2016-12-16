@@ -64,23 +64,26 @@ Code and documentation contributors:
   automatically; can issue "@k8s-bot ok to test" for other contributors
 - **Reviewer**: familiar enough with some part of the codebase to be in some
   [OWNERS](contributors/devel/owners.md) file as a reviewer (in repos using the bot),
-  assigned related PRs, assigned relevant test bugs; can champion incubator
-  repos; must be nominated by an approver for that part of the codebase, with no
-  objections from other approvers
+  assigned related PRs, assigned relevant test bugs; expected to be responsive to
+  review requests as per [community expectations](contributors/devel/community-expectations.md);
+  can champion incubator repos; must be nominated by an approver for that part of the codebase,
+  with no objections from other approvers
 - **Approver**: in some [OWNERS](contributors/devel/owners.md) file as an approver, which
   will be needed to get code merged; previously a reviewer for that part of the
-  codebase; demonstrated sound technical judgement; nominated
-  by an area/component owner, with no objections from other owners
+  codebase; expected to be responsive to review requests as per [community expectations]
+  (contributors/devel/community-expectations.md); expected to mentor contributors and
+  reviewers; demonstrated sound technical judgement; nominated by an area/component owner,
+  with no objections from other owners
 - **Area/Component Owner**: in top-level [OWNERS](contributors/devel/owners.md) file for
   some area/component as an approver; design/proposal approval authority for some area 
-  of the project, though escalation is still possible
+  of the project, though escalation is still possible; expected to mentor and guide approvers,
+  reviewers, and other contributors
 - [**kubernetes-maintainers**](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers):
-  write access to repo (assign issues/PRs,
-  add/remove labels and milestones, edit issues and PRs, edit wiki,
+  write access to repo (assign issues/PRs, add/remove labels and milestones, edit issues and PRs, edit wiki,
   create/delete labels and milestones); technically can lgtm any PR and cause it
   to be merged by the submit queue; expected to review PRs, fix bugs, maintain and
-  improve health and quality of the project, provide user support; on project for
-  at least 1 year
+  improve health and quality of the project, provide user support, mentor and guide approvers,
+  reviewers, and other contributors; on project for at least 1 year
 - **Project Approvers**: approver in [top-level OWNERS file in kubernetes repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS);
   de-facto project decision makers; technically can 
   approve virtually any PRs; can sponsor incubator repos
