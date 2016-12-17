@@ -66,24 +66,29 @@ The Scheduler tries to find a node for each Pod, one at a time.
 that rank the nodes that weren't filtered out by the predicate check. For example, it tries to spread Pods across nodes and zones while at the same time favoring the least (theoretically) loaded nodes (where "load" - in theory - is measured as the sum of the resource requests of the containers running on the node, divided by the node's capacity).
 - Finally, the node with the highest priority is chosen (or, if there are multiple such nodes, then one of them is chosen at random). The code for this main scheduling loop is in the function `Schedule()` in [plugin/pkg/scheduler/generic_scheduler.go](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/generic_scheduler.go)
 
+### Predicates and priorities policies
+
+Predicates are a set of policies applied one by one to filter out inappropriate nodes.
+Priorities are a set of policies applied one by one to rank nodes (that made it through the filter of the predicates).
+By default, Kubernetes provides built-in predicates and priorities policies documented in [scheduler_algorithm.md](scheduler_algorithm.md).
+The predicates and priorities code are defined in [plugin/pkg/scheduler/algorithm/predicates/predicates.go](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/algorithm/predicates/predicates.go) and [plugin/pkg/scheduler/algorithm/priorities](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/algorithm/priorities/) , respectively.
+
+
 ## Scheduler extensibility
 
 The scheduler is extensible: the cluster administrator can choose which of the pre-defined
 scheduling policies to apply, and can add new ones.
 
-### Policies (Predicates and Priorities)
-
-The built-in predicates and priorities are
-defined in [plugin/pkg/scheduler/algorithm/predicates/predicates.go](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/algorithm/predicates/predicates.go) and the directory  [plugin/pkg/scheduler/algorithm/priorities](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/algorithm/priorities/) , respectively.
-
 ### Modifying policies
 
-The policies that are applied when scheduling can be chosen in one of two ways. Normally,
-the policies used are selected by the functions `defaultPredicates()` and `defaultPriorities()` in
+The policies that are applied when scheduling can be chosen in one of two ways.
+The default policies used are selected by the functions `defaultPredicates()` and `defaultPriorities()` in
 [plugin/pkg/scheduler/algorithmprovider/defaults/defaults.go](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/algorithmprovider/defaults/defaults.go).
 However, the choice of policies can be overridden by passing the command-line flag `--policy-config-file` to the scheduler, pointing to a JSON file specifying which scheduling policies to use. See [examples/scheduler-policy-config.json](../../examples/scheduler-policy-config.json) for an example
 config file. (Note that the config file format is versioned; the API is defined in [plugin/pkg/scheduler/api](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/api/)).
 Thus to add a new scheduling policy, you should modify  [plugin/pkg/scheduler/algorithm/predicates/predicates.go] (http://releases.k8s.io/HEAD/plugin/pkg/scheduler/algorithm/predicates/predicates.go) or add to the directory  [plugin/pkg/scheduler/algorithm/priorities](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/algorithm/priorities/), and either register the policy in `defaultPredicates()` or `defaultPriorities()`, or use a policy config file.
+
+
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/scheduler.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
