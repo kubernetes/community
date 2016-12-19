@@ -150,6 +150,30 @@ non-privileged', an environment check and an WARNING log will be emitted about
 whether propagation mode is supported.
 
 
+## Extra Concerns
+
+@lucab and @euank has some extra concerns about pod isolation when propagation
+modes are changed, listed below:
+
+1. how to clean such pod resources (as mounts are now crossing pod boundaries,
+thus they can be kept busy indefinitely by processes outside of the pod)
+
+1. side-effects on restarts (possibly piling up layers of full-propagation mounts)
+
+1. how does this interacts with other mount features (nested volumeMounts may or
+may not propagate back to the host, depending of ordering of mount operations)
+
+1. limitations this imposes on runtimes (RO-remounting may now affects the host,
+is it on purpose or a dangerous side-effect?)
+
+1. interaction with pod semantics (docker doesn't have a pod concept, but pod-
+aware runtimes may perform additional moves/remounts while preparing a pod)
+
+These concerns are valid and we decide to limit the propagation mode to HostPath
+volume only, in HostPath, we expect any runtime should NOT perform any additional
+actions (such as clean up). This behavior is also consistent with current HostPath
+logic: kube does not take care of the content in HostPath either.
+
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/propagation.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
