@@ -169,8 +169,7 @@ KUBE_DNS_SERVER_IP="10.0.0.10"
 KUBE_DNS_DOMAIN="cluster.local"
 ```
 
-To know more on DNS service you can look [here](http://issue.k8s.io/6667). Related documents can be found [here](../../build-tools/kube-dns/#how-do-i-configure-it)
-
+To know more on DNS service you can check out the [docs](http://kubernetes.io/docs/admin/dns/).
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/running-locally.md?pixel)]()
