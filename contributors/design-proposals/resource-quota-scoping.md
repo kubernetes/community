@@ -121,7 +121,7 @@ tracking the following resources:
 
 ## Data Model Impact
 
-```
+```go
 // The following identify resource constants for Kubernetes object types
 const (
 	// CPU request, in cores. (500m = .5 cores)
@@ -241,7 +241,7 @@ The cluster-admin wants to restrict the following:
 
 This would require the following quotas to be added to the namespace:
 
-```
+```sh
 $ cat quota-best-effort
 apiVersion: v1
 kind: ResourceQuota
@@ -279,7 +279,7 @@ spec:
     cpu.limit: 4
   scopes:
   - NotTerminating
-  - NotBestEffort 
+  - NotBestEffort
 
 $ cat quota
 apiVersion: v1

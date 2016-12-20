@@ -96,7 +96,7 @@ be passed as annotations.
 The preferences are expressed by the following structure, passed as a
 serialized json inside annotations.
 
-```
+```go
 type FederatedReplicaSetPreferences struct {  
     // If set to true then already scheduled and running replicas may be moved to other clusters to
     // in order to bring cluster replicasets towards a desired state. Otherwise, if set to false,
@@ -126,7 +126,7 @@ How this works in practice:
 
 **Scenario 1**. I want to spread my 50 replicas evenly across all available clusters. Config:
 
-```
+```go
 FederatedReplicaSetPreferences {
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {
@@ -146,7 +146,7 @@ Example:
 
 **Scenario 2**. I want to have only 2 replicas in each of the clusters.
 
-```
+```go
 FederatedReplicaSetPreferences {
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {
@@ -157,7 +157,7 @@ FederatedReplicaSetPreferences {
 
 Or
 
-```
+```go
 FederatedReplicaSetPreferences {
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {
@@ -169,7 +169,7 @@ FederatedReplicaSetPreferences {
 
 Or
 
-```
+```go
 FederatedReplicaSetPreferences {  
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {  
@@ -182,7 +182,7 @@ There is a global target for 50, however if there are 3 clusters there will be o
 
 **Scenario 3**. I want to have 20 replicas in each of 3 clusters.
 
-```
+```go
 FederatedReplicaSetPreferences {  
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {  
@@ -196,7 +196,7 @@ There is a global target for 50, however clusters require 60. So some clusters w
 
 **Scenario 4**. I want to have equal number of replicas in clusters A,B,C, however don’t put more than 20 replicas to cluster C.
 
-```
+```go
 FederatedReplicaSetPreferences {
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {  
@@ -217,7 +217,7 @@ Example:
 
 **Scenario 5**. I want to run my application in cluster A, however if there are troubles FRS can also use clusters B and C, equally.
 
-```
+```go
 FederatedReplicaSetPreferences {  
    Clusters : map[string]LocalReplicaSet {  
      “A” : LocalReplicaSet{ Weight: 1000000}  
@@ -236,7 +236,7 @@ Example:
 
 **Scenario 6**. I want to run my application in clusters A, B and C. Cluster A gets twice the QPS than other clusters.
 
-```
+```go
 FederatedReplicaSetPreferences {  
    Clusters : map[string]LocalReplicaSet {  
      “A” : LocalReplicaSet{ Weight: 2}  
@@ -249,7 +249,7 @@ FederatedReplicaSetPreferences {
 **Scenario 7**. I want to spread my 50 replicas evenly across all available clusters, but if there
 are already some replicas, please do not move them. Config:
 
-```
+```go
 FederatedReplicaSetPreferences {
    Rebalance : false
    Clusters : map[string]LocalReplicaSet {

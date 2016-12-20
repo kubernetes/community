@@ -275,7 +275,7 @@ func (r *objectRecorderImpl) Event(reason, message string) {
 }
 
 func ObjectEventRecorderFor(object runtime.Object, recorder EventRecorder) ObjectEventRecorder {
-  return &objectRecorderImpl{object, recorder}	
+  return &objectRecorderImpl{object, recorder}
 }
 ```
 
@@ -367,7 +367,7 @@ No other variables are defined.
 | `"--$($($($($--"`              | `"--$($($($($--"`          |
 | `"$($($($($--foo$("`           | `"$($($($($--foo$("`       |
 | `"foo0--$($($($("`             | `"foo0--$($($($("`         |
-| `"$(foo$$var)`                 | `$(foo$$var)`              |
+| `"$(foo$$var)"`                | `"$(foo$$var)"`            |
 
 #### In a pod: building a URL
 

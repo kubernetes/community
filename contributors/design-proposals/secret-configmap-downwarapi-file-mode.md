@@ -94,7 +94,7 @@ and are not affected by this setting.
 
 In other words, the fields will look like this:
 
-```
+```go
 type SecretVolumeSource struct {
         // Name of the secret in the pod's namespace to use.
         SecretName string `json:"secretName,omitempty"`
