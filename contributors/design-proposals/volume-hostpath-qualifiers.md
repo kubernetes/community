@@ -64,7 +64,7 @@ below.
 
 | Value | Behavior |
 |:------|:---------|
-| *unset* | If nothing exists at the given path, an empty directory will be created there. Otherwise, behaves like `exists` |
+| `unset` | If nothing exists at the given path, an empty directory will be created there. Otherwise, behaves like `exists` |
 | `exists` | If nothing exists at the given path, the pod will fail to run and provide an informative error message |
 | `file` | If a file does not exist at the given path, the pod will fail to run and provide an informative error message |
 | `device` | If a block or character device does not exist at the given path, the pod will fail to run and provide an informative error message |
