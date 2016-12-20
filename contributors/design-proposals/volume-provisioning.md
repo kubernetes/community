@@ -86,13 +86,13 @@ We propose that:
 
 ### Controller workflow for provisioning volumes
 
-0. Kubernetes administator can configure name of a default StorageClass. This
+1. Kubernetes administator can configure name of a default StorageClass. This
    StorageClass instance is then used when user requests a dynamically
    provisioned volume, but does not specify a StorageClass. In other words,
    `claim.Spec.Class == ""`
    (or annotation `volume.beta.kubernetes.io/storage-class == ""`).
 
-1.  When a new claim is submitted, the controller attempts to find an existing
+2.  When a new claim is submitted, the controller attempts to find an existing
     volume that will fulfill the claim.
 
     1. If the claim has non-empty `claim.Spec.Class`, only PVs with the same
@@ -103,15 +103,15 @@ We propose that:
     All "considered" volumes are evaluated and the
     smallest matching volume is bound to the claim.
 
-2.  If no volume is found for the claim and `claim.Spec.Class` is not set or is
+3.  If no volume is found for the claim and `claim.Spec.Class` is not set or is
     empty string dynamic provisioning is disabled.
 
-3.  If `claim.Spec.Class` is set the controller tries to find instance of StorageClass with this name.  If no
+4.  If `claim.Spec.Class` is set the controller tries to find instance of StorageClass with this name.  If no
     such StorageClass is found, the controller goes back to step 1. and
     periodically retries finding a matching volume or storage class again until
     a match is found. The claim is `Pending` during this period.
 
-4.  With StorageClass instance, the controller updates the claim:
+5.  With StorageClass instance, the controller updates the claim:
        * `claim.Annotations["volume.beta.kubernetes.io/storage-provisioner"] = storageClass.Provisioner`
 
 * **In-tree provisioning**
@@ -119,17 +119,17 @@ We propose that:
    The controller tries to find an internal volume plugin referenced by
    `storageClass.Provisioner`. If it is found:
 
-  5.  The internal provisioner implements interface`ProvisionableVolumePlugin`,
+  1.  The internal provisioner implements interface`ProvisionableVolumePlugin`,
       which has a method called `NewProvisioner` that returns a new provisioner.
 
-  6.  The controller calls volume plugin `Provision` with Parameters
+  2.  The controller calls volume plugin `Provision` with Parameters
       from the `StorageClass` configuration object.
 
-  7.  If `Provision` returns an error, the controller generates an event on the
+  3.  If `Provision` returns an error, the controller generates an event on the
       claim and goes back to step 1., i.e. it will retry provisioning
       periodically.
 
-  8.  If `Provision` returns no error, the controller creates the returned
+  4.  If `Provision` returns no error, the controller creates the returned
       `api.PersistentVolume`, fills its `Class` attribute with `claim.Spec.Class`
       and makes it already bound to the claim
 
@@ -140,7 +140,7 @@ We propose that:
         controller attempts to delete the provisioned volume and creates an event
         on the claim
 
-Existing behavior is unchanged for claims that do not specify
+  Existing behavior is unchanged for claims that do not specify
 `claim.Spec.Class`.
 
 * **Out of tree provisioning**
@@ -155,14 +155,14 @@ Existing behavior is unchanged for claims that do not specify
 
   External provisioner must have these features:
 
-  * It MUST have a distinct name, following Kubernetenes plugin naming scheme
+  1. It MUST have a distinct name, following Kubernetenes plugin naming scheme
     `<vendor name>/<provisioner name>`, e.g. `gluster.org/gluster-volume`.
 
-  * The provisioner SHOULD send events on a claim to report any errors
+  2. The provisioner SHOULD send events on a claim to report any errors
     related to provisioning a volume for the claim. This way, users get the same
     experience as with internal provisioners.
 
-  * The provisioner MUST implement also a deleter. It must be able to delete
+  3. The provisioner MUST implement also a deleter. It must be able to delete
     storage assets it created. It MUST NOT assume that any other internal or
     external plugin is present.
 
@@ -213,48 +213,48 @@ Existing behavior is unchanged for claims that do not specify
 
      The created PV MUST have these properties:
 
-     * `pv.Spec.ClaimRef` MUST point to the claim that led to its creation
+     1. `pv.Spec.ClaimRef` MUST point to the claim that led to its creation
        (including the claim UID).
 
        *This way, the PV will be bound to the claim.*
 
-     * `pv.Annotations["pv.kubernetes.io/provisioned-by"]` MUST be set to name
+     2. `pv.Annotations["pv.kubernetes.io/provisioned-by"]` MUST be set to name
        of the external provisioner. This provisioner will be used to delete the
        volume.
 
        *The provisioner/delete should not assume there is any other
        provisioner/deleter available that would delete the volume.*
 
-     * `pv.Annotations["volume.beta.kubernetes.io/storage-class"]` MUST be set
+     3. `pv.Annotations["volume.beta.kubernetes.io/storage-class"]` MUST be set
        to name of the storage class requested by the claim.
 
        *So the created PV matches the claim.*
 
-     * The provisioner MAY store any other information to the created PV as
+     4. The provisioner MAY store any other information to the created PV as
        annotations. It SHOULD save any information that is needed to delete the
        storage asset there, as appropriate StorageClass instance may not exist
        when the volume will be deleted. However, references to Secret instance
        or direct username/password to a remote storage appliance MUST NOT be
        stored there, see issue #34822.
 
-     * `pv.Labels` MUST be set to match `claim.spec.selector`. The provisioner
+     5. `pv.Labels` MUST be set to match `claim.spec.selector`. The provisioner
        MAY add additional labels.
 
        *So the created PV matches the claim.*
 
-     * `pv.Spec` MUST be set to match requirements in `claim.Spec`, especially
+     6. `pv.Spec` MUST be set to match requirements in `claim.Spec`, especially
        access mode and PV size. The provisioned volume size MUST NOT be smaller
        than size requested in the claim, however it MAY be larger.
 
        *So the created PV matches the claim.*
 
-     * `pv.Spec.PersistentVolumeSource` MUST be set to point to the created
+     7. `pv.Spec.PersistentVolumeSource` MUST be set to point to the created
        storage asset.
 
-     * `pv.Spec.PersistentVolumeReclaimPolicy` SHOULD be set to `Delete` unless
+     8. `pv.Spec.PersistentVolumeReclaimPolicy` SHOULD be set to `Delete` unless
        user manually configures other reclaim policy.
 
-     * `pv.Name` MUST be unique. Internal provisioners use name based on
+     9. `pv.Name` MUST be unique. Internal provisioners use name based on
        `claim.UID` to produce conflicts when two provisioners accidentally
        provision a PV for the same claim, however external provisioners can use
        any mechanism to generate an unique PV name.
@@ -349,18 +349,18 @@ steps:
    `pv.Status.Phase == Released && pv.Annotations['pv.kubernetes.io/provisioned-by'] == <deleter name>`,
    the deleter:
 
-   * It MUST check reclaim policy of the PV and ignore all PVs whose
+   1. It MUST check reclaim policy of the PV and ignore all PVs whose
      `Spec.PersistentVolumeReclaimPolicy` is not `Delete`.
 
-   * It MUST delete the storage asset.
+   2. It MUST delete the storage asset.
 
-   * Only after the storage asset was successfully deleted, it MUST delete the
+   3. Only after the storage asset was successfully deleted, it MUST delete the
      PV object in Kubernetes.
 
-   * Any error SHOULD be sent as an event on the PV being deleted and the
+   4. Any error SHOULD be sent as an event on the PV being deleted and the
      deleter SHOULD retry to delete the volume periodically.
 
-   * The deleter SHOULD NOT use any information from StorageClass instance
+   5. The deleter SHOULD NOT use any information from StorageClass instance
      referenced by the PV. This is different to internal deleters, which
      need to be StorageClass instance present at the time of deletion to read
      Secret instances (see Gluster provisioner for example), however we would
@@ -377,12 +377,12 @@ Both internal and external provisioners and deleters may need access to
 credentials (e.g. username+password) of an external storage appliance to
 provision and delete volumes.
 
-* For internal provisioners, a Secret instance in a well secured namespace
+1. For internal provisioners, a Secret instance in a well secured namespace
 should be used. Pointer to the Secret instance shall be parameter of the
 StorageClass and it MUST NOT be copied around the system e.g. in annotations
 of PVs. See issue #34822.
 
-* External provisioners running in pod should have appropriate credentials
+2. External provisioners running in pod should have appropriate credentials
 mouted as Secret inside pods that run the provisioner. Namespace with the pods
 and Secret instance should be well secured.
 
@@ -487,9 +487,9 @@ parameters:
 
 # Additional Implementation Details
 
-0. Annotation `volume.alpha.kubernetes.io/storage-class` is used instead of `claim.Spec.Class` and `volume.Spec.Class` during incubation.
+1. Annotation `volume.alpha.kubernetes.io/storage-class` is used instead of `claim.Spec.Class` and `volume.Spec.Class` during incubation.
 
-1. `claim.Spec.Selector` and `claim.Spec.Class` are mutually exclusive for now (1.4). User can either match existing volumes with `Selector` XOR match existing volumes with `Class` and get dynamic provisioning by using `Class`. This simplifies initial PR and also provisioners. This limitation may be lifted in future releases.
+2. `claim.Spec.Selector` and `claim.Spec.Class` are mutually exclusive for now (1.4). User can either match existing volumes with `Selector` XOR match existing volumes with `Class` and get dynamic provisioning by using `Class`. This simplifies initial PR and also provisioners. This limitation may be lifted in future releases.
 
 # Cloud Providers
 
