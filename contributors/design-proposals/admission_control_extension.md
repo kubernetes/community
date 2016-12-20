@@ -237,7 +237,109 @@ Some admission controller types would not be possible for these extensions:
 6. Quota must still run after all validators are invoked. We may need to make quota extensible in the future.
 
 
-### TODO all implementation details
+#### Initializers
+
+An initializer must allow some API clients to perceive creations prior to other apps. For backwards compatibility,
+uninitialized objects must be invisible to legacy clients. In addition, initializers must be recognized as participating
+in the initialization process and therefore a list of initializers must be populated onto each new object. Like
+finalizers, each initializer should perform an update and remove itself from the object.
+
+Every API object will have the following field added:
+
+```
+type ObjectMeta struct {
+    ...
+    // Initializers is a list of initializers that must run prior to this object being visible to
+    // normal clients. Initializers are executed in order. This field is nil if initialization is not
+    // specified, or empty if no initializers should be run. Only highly privileged users
+    // may modify this field.
+    Initializers []Initializer `json:"initializers"`
+    ...
+}
+
+type Initializer struct {
+    // Name is the name of the process that owns this initializer
+    Name string `json:"name"`
+    // Error is set if the initializer cannot make progress
+    Status *metav1.Status `json:"status"`
+}
+```
+
+On creation, an admission controller defaults the initializers field (if nil) to a value from the system
+configuration that may vary by resource type. If initializers is set to empty slice, or has entries,
+the admission controller will check whether the user has the ability to run the `initialize` verb on
+the current resource type, and reject the entry with 403 if not.
+
+Once created, an object is not visible to clients unless the following conditions are satisfied:
+
+1. The initializers field is an empty array.
+2. The client provides a special option to GET, LIST, or WATCH indicating that the user wishes to see uninitialized objects.
+
+Each initializer is a controller or other client agent that watches for new objects with an initializer
+whose first position matches their assigned name (e.g. `PodAutoSizer`) and then operate on them. These
+clients would use the `?includeUninitializedObjects=true` query param (working name) and observe all
+objects.
+
+The initializer would perform a normal update on the object to perform their function, and then
+remove their entry from `initializers` (or adding more entries). If an error occurs during initialization
+that must terminate initialization, the `Status` field on the initializer should be set instead of removing
+the initializer entry and then the initializer should delete the object.
+
+During initialization, resources may have relaxed validation requirements, which means initializers must
+handle undefaulted or invalid objects. The update that completes initialization will be defaulted as
+normal and the normal validation logic should be enforced. UID and creation timestamp must be set before
+initializers run. The initial object creation must still be validated - resource types that wish to support
+deep initialization must design their objects to accept those.
+
+To allow naive clients to avoid having to deal with uninitialized objects, the API will automatically
+filter uninitialized objects out LIST and WATCH. Explicit GETs to that object should return the
+appropriate status code `202 Accepted` indicating that the resource is reserved and including a `Status`
+response with the correct resource version, but not the object. Clients specifying
+`includeUninitializedObjects` will see all updates, but shared code like caches and informers may need
+to implement layered filters to handle multiple clients requesting both variants. A CREATE to an
+uninitialized object should report the same status as before, and DELETE is always allowed.
+
+Finally, the apiserver that accepts the incoming creation should hold the response until the object is
+initialized or the timeout is exceeded. This increases latency, but allows clients to avoid breaking
+semantics. If the apiserver reaches the timeout it must return an appropriate error that includes the
+resource version of the object and UID so that clients can perform a watch. If an initializer reports
+a `Status` with a failure, it must return that to the user (all failures are correlated with deletion).
+
+There is no current error case for a timeout that exactly matches existing behavior except a 5xx
+timeout if etcd does not respond quickly. We should return that error, but return an appropriate
+cause that lets a client determine what the outcome was.
+
+
+##### Example flow:
+
+This flow shows the information moving across the system.
+
+```
+Client            APIServer (req)  APIServer (other) Initializer 1        Initializer 2
+----------------- ---------------- ----------------- -------------------- -------------------
+
+                                   listen <--------- WATCH /pods?init=0
+                                   listen <-------------|---------------- WATCH /pods?init=0
+                                                        |                    |
+POST /pods -----> validate                              |                    |
+                  admission(init):                      |                    |
+                    default                             v                    |
+                  save etcd -----------------------> observe                 |
+                  WATCH /pods/1                         v                    |
+                      |                              change resources        |
+                      |                              clear initializer       |
+                      |            validate <------- PUT /pods/1             |
+                      |            admission(init):                          |
+                      |              check authz                             v
+                      |            save etcd ---------------------------> observe
+                      |                                                   change env vars
+                      |                                                   clear initializer
+                      |            validate <---------------------------- PUT /pods
+                      |            admission(init):
+                      v            check authz
+                  observe <------- save etcd
+response <------- handle
+```
 
 
 ### Alternatives considered
