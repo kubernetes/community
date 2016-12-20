@@ -58,7 +58,7 @@ type Builder interface {
 Each volume plugin will have to change to support the new `SetUp` signature.  The existing
 ownership management code will be refactored into a library that volume plugins can use:
 
-```
+```go
 package volume
 
 func ManageOwnership(path string, fsGroup int64) error {

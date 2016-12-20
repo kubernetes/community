@@ -203,7 +203,7 @@ linked directly into kubelet. A partial list of tradeoffs:
 | Reliability         | Need to handle the binary disappearing at any time                                                | Fewer headeaches                                             |
 | (Un)Marshalling     | Need to talk over JSON                                                                            | None                                                         |
 | Administration cost | One more daemon to install, configure and monitor                                                 | No extra work required, other than perhaps configuring flags |
-| Releases            | Potentially on its own schedule                                                                   | Tied to Kubernetes'                                          |
+| Releases            | Potentially on its own schedule                                                                   | Tied to Kubernetes                                           |
 
 ## Implementation plan
 

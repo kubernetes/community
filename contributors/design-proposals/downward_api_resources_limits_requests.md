@@ -141,7 +141,7 @@ Volumes are pod scoped, so a selector must be specified with a container name.
 Full json path selectors will use existing `type ObjectFieldSelector`
 to extend the current implementation for resources requests and limits.
 
-```
+```go
 // ObjectFieldSelector selects an APIVersioned field of an object.
 type ObjectFieldSelector struct {
      APIVersion string `json:"apiVersion"`
@@ -154,7 +154,7 @@ type ObjectFieldSelector struct {
 
 These examples show how to use full selectors with environment variables and volume plugin.
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -178,7 +178,7 @@ spec:
               fieldPath: spec.containers[?(@.name=="test-container")].resources.limits.cpu
 ```
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -221,7 +221,7 @@ relative to the container spec. These will be implemented by introducing a
 `ContainerSpecFieldSelector` (json: `containerSpecFieldRef`) to extend the current
 implementation for `type DownwardAPIVolumeFile struct` and `type EnvVarSource struct`.
 
-```
+```go
 // ContainerSpecFieldSelector selects an APIVersioned field of an object.
 type ContainerSpecFieldSelector struct {
      APIVersion string `json:"apiVersion"`
@@ -300,7 +300,7 @@ Volumes are pod scoped, the container name must be specified as part of
 
 These examples show how to use partial selectors with environment variables and volume plugin.
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -337,7 +337,7 @@ spec:
       resources:
         requests:
           memory: "64Mi"
-	  cpu: "250m"
+          cpu: "250m"
         limits:
           memory: "128Mi"
           cpu: "500m"
@@ -388,7 +388,7 @@ For example, if requests.cpu is `250m` (250 millicores) and the divisor by defau
 exposed value will be `1` core. It is because 250 millicores when converted to cores will be 0.25 and
 the ceiling of 0.25 is 1.
 
-```
+```go
 type ResourceFieldSelector struct {
      // Container name
      ContainerName string `json:"containerName,omitempty"`
@@ -462,7 +462,7 @@ Volumes are pod scoped, the container name must be specified as part of
 
 These examples show how to use magic keys approach with environment variables and volume plugin.
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -493,7 +493,7 @@ spec:
 
 In the above example, the exposed values of CPU_LIMIT and MEMORY_LIMIT will be 1 (in cores) and 128 (in Mi), respectively.
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -578,7 +578,7 @@ in a shell script, and then export `JAVA_OPTS` (assuming your container image su
 and GOMAXPROCS environment variables inside the container image. The spec file for the
 application pod could look like:
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -609,7 +609,7 @@ spec:
 Note that the value of divisor by default is `1`. Now inside the container,
 the HEAP_SIZE (in bytes) and GOMAXPROCS (in cores) could be exported as:
 
-```
+```sh
 export JAVA_OPTS="$JAVA_OPTS -Xmx:$(HEAP_SIZE)"
 
 and

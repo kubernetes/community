@@ -31,7 +31,7 @@ which loads a `config.ConfigurationMap`:
 - kube-dns
 
 (Note kubelet is omitted, it's dynamic config story is being addressed
-by #29459). Alpha features that are not accessed via an alpha API
+by [#29459](https://issues.k8s.io/29459)). Alpha features that are not accessed via an alpha API
 group should define an `enableFeatureName` flag and use it to toggle
 activation of the feature in each system component that the feature
 uses.
@@ -60,7 +60,7 @@ not be altered in a running cluster.
 ## Future work
 
 1. The eventual plan is for component config to be managed by versioned
-APIs and not flags (#12245). When that is added, toggling of features
+APIs and not flags ([#12245](https://issues.k8s.io/12245)). When that is added, toggling of features
 could be handled by versioned component config and the component flags
 deprecated.
 

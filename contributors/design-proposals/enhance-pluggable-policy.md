@@ -141,7 +141,7 @@ accepts creates. The caller POSTs a SubjectAccessReview to this URL and he gets
 a SubjectAccessReviewResponse back. Here is an example of a call and its
 corresponding return:
 
-```
+```json
 // input
 {
   "kind": "SubjectAccessReview",
@@ -172,7 +172,7 @@ only accepts creates. The caller POSTs a PersonalSubjectAccessReview to this URL
 and he gets a SubjectAccessReviewResponse back. Here is an example of a call and
 its corresponding return:
 
-```
+```json
 // input
 {
   "kind": "PersonalSubjectAccessReview",
@@ -202,7 +202,7 @@ accepts creates. The caller POSTs a LocalSubjectAccessReview to this URL and he
 gets a LocalSubjectAccessReviewResponse back. Here is an example of a call and
 its corresponding return:
 
-```
+```json
 // input
 {
   "kind": "LocalSubjectAccessReview",
@@ -353,7 +353,7 @@ accepts creates. The caller POSTs a ResourceAccessReview to this URL and he gets
 a ResourceAccessReviewResponse back. Here is an example of a call and its
 corresponding return:
 
-```
+```json
 // input
 {
   "kind": "ResourceAccessReview",
