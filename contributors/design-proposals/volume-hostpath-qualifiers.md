@@ -1,4 +1,4 @@
-# Support HostPath volume existence qualifiers
+n.# Support HostPath volume existence qualifiers
 
 ## Introduction
 
@@ -90,7 +90,7 @@ volumes are known to always be in existence else they will not mount.
 Similarly, EmptyDir volumes will always exist as a directory.
 
 Only the HostVolume and SubPath means of referencing a path have the potential
-to reference arbitrary incorrect or nonexistent things without erroring out.
+to reference arbitrary incorrect or nonexistent things without error out.
 
 ### Alternatives
 
@@ -98,7 +98,7 @@ One alternative is to augment Host Volumes with a `MustExist` bool and provide
 no further granularity. This would allow toggling between the `auto` and
 `exists` behaviors described above. This would likely cover the "90%" use-case
 and would be a simpler API. It would be sufficient for all of the examples
-linked above in my opionion.
+linked above in my opinion
 
 ## Kubelet implementation
 
