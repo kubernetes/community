@@ -72,10 +72,13 @@ This logic will also naturally be abstracted so it's no more difficult for the u
 
 Currently, the Kubelet does not need access to arbitrary paths on the host (as
 hostPath volumes are managed entirely by the docker daemon process, including
-SELinux context applying), so Kubelet makes no operations at those paths). This
-will likely change in the future, at which point a shared bindmount of `/` will
-be made available at a known path in the Kubelet chroot. This change will
-necessarily be more intrusive.
+SELinux context applying), so Kubelet makes no operations at those paths).
+
+This will likely change in the future, at which point a shared bindmount of `/`
+will be made available at a known path in the Kubelet chroot. This change will
+necessarily be more intrusive since it will require the kubelet to behave
+differently (use the shared rootfs mount's path) when running within the
+chroot.
 
 ## Current Use
 
@@ -169,13 +172,14 @@ This requires waiting on other features which might take a signficant time to la
 
 The Flex Volume feature is several releases out from fully replacing the current volumes as well.
 
-Finally, it's likely there are dependencies that neither of these proposals cover.
+Finally, there are dependencies that neither of these proposals cover. An
+effort to identify these is underway [here](https://issues.k8s.io/26093).
 
 ## Non-Alternatives
 
 #### Pod + containerized flag
 
-Currently, there's a `--containerized` flag. This flag doesn't actually remove the dependency on mount utilities on the node though, so does not solve the problem described here. It also is under consideration for [removal](https://issues.k8s.io/18776).
+Currently, there's a `--containerized` flag. This flag doesn't actually remove the dependency on mount utilities on the node though, so does not solve the problem described here. It also is under consideration for [removal](https://issues.k8s.io/26093).
 
 ## Open Questions
 
@@ -183,7 +187,11 @@ Currently, there's a `--containerized` flag. This flag doesn't actually remove t
 
 #### Timeframe
 
-1.6?
+During the 1.6 timeframe, the changes mentioned in implementation will be undergone for the CoreOS and GCI distros.
+
+Based on the test results and additional problems that may arise, rollout will
+be determined from there. Hopefully the rollout can also occur in the 1.6
+timeframe.
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
