@@ -63,7 +63,7 @@ package volume
 
 func ManageOwnership(path string, fsGroup int64) error {
     // 1. recursive chown of path
-    // 2. make path + setgid
+    // 2. make path +setgid
 }
 ```
 
