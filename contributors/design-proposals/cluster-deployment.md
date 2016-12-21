@@ -74,7 +74,7 @@ TODO: Enumerate certificates which have to be generated.
 **v1.2 simplifications**:
 
 1. kubelet-runner.sh - we will provide a custom docker image to run kubelet; it will contain
-kubelet binary and will run it using ```nsenter``` to workaround problem with mount propagation
+kubelet binary and will run it using ```nsenter``` to workaround problems with mount propagation
 1. kubelet config file - we will read kubelet configuration file from disk instead of apiserver; it will
 be generated locally and copied to all nodes.
 
@@ -125,7 +125,7 @@ network solutions.
 
 1. flannel daemon will run as a standalone binary (not in docker container)
 2. flannel server will assign CIDRs to nodes outside of kubernetes; this will require restarting kubelet
-after reconfiguring network bridge on local machine; this will also require running master nad node differently
+after reconfiguring network bridge on local machine; this will also require running master and node differently
 (```--configure-cbr0=false``` on node and ```--allocate-node-cidrs=false``` on master), which breaks encapsulation
 between nodes
 
