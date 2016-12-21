@@ -183,10 +183,10 @@ A pseudo-code for adding a new master replica using managed DNS and a loadbalanc
   4. Update DNS to point to the load balancer.
 2. Clone existing master (create a new VM with the same configuration) including
    all env variables (certificates, IP ranges etc), with the exception of
-   `INITIAL_ETCD_CLUSTER`.
+   INITIAL_ETCD_CLUSTER.
 3. SSH to an existing master and run the following command to extend etcd cluster
    with the new instance:
-   `curl <existing_master>:4001/v2/members -XPOST -H "Content-Type: application/json" -d '{"peerURLs":["http://<new_master>:2380"]}'`
+   curl <existing_master>:4001/v2/members -XPOST -H "Content-Type: application/json" -d '{"peerURLs":["http://<new_master>:2380"]}'
 4. Add IP address of the new apiserver to the load balancer.
 ```
 
@@ -215,7 +215,7 @@ A pseudo-code for deleting an existing replica for the master is the following:
 ```
 1. Remove replica IP address from the load balancer or DNS configuration
 2. SSH to one of the remaining masters and run the following command to remove replica from the cluster:
-  `curl etcd-0:4001/v2/members/<id> -XDELETE -L`
+  curl etcd-0:4001/v2/members/<id> -XDELETE -L
 3. Delete replica VM
 4. If load balancer has only a single target instance, then delete load balancer
 5. Update DNS to point to the remaining master replica, or [on GCE] assign static IP back to the master VM.
