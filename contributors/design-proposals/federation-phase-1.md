@@ -59,7 +59,7 @@ clusters.
 
 ## SCOPE
 
-It’s difficult to have a perfect design with one click that implements
+It's difficult to have a perfect design with one click that implements
 all the above requirements. Therefore we will go with an iterative
 approach to design and build the system. This document describes the
 phase one of the whole work. In phase one we will cover only the
@@ -95,7 +95,7 @@ Some design principles we are following in this architecture:
 1. Keep the Ubernetes API interface compatible with K8S API as much as
    possible.
 1. Re-use concepts from K8S as much as possible. This reduces
-customers’ learning curve and is good for adoption.  Below is a brief
+customers' learning curve and is good for adoption.  Below is a brief
 description of each module contained in above diagram.
 
 ## Ubernetes API Server
@@ -105,7 +105,7 @@ Server in K8S. It talks to a distributed key-value store to persist,
 retrieve and watch API objects. This store is completely distinct
 from the kubernetes key-value stores (etcd) in the underlying
 kubernetes clusters. We still use `etcd` as the distributed
-storage so customers don’t need to learn and manage a different
+storage so customers don't need to learn and manage a different
 storage system, although it is envisaged that other storage systems
 (consol, zookeeper) will probably be developedand supported over
 time.
@@ -200,7 +200,7 @@ $version.clusterSpec
 <td style="padding:5px;">Credential<br>
 </td>
 <td style="padding:5px;">the type (e.g. bearer token, client
-certificate etc) and data of the credential used to access cluster. It’s used for system routines (not behalf of users)<br>
+certificate etc) and data of the credential used to access cluster. It's used for system routines (not behalf of users)<br>
 </td>
 <td style="padding:5px;">yes<br>
 </td>
@@ -263,7 +263,7 @@ $version.clusterStatus
 </tbody>
 </table>
 
-**For simplicity we didn’t introduce a separate “cluster metrics” API
+**For simplicity we didn't introduce a separate “cluster metrics” API
 object here**. The cluster resource metrics are stored in cluster
 status section, just like what we did to nodes in K8S. In phase one it
 only contains available CPU resources and memory resources. The
@@ -295,7 +295,7 @@ cases it may be complex. For example:
 + This workload can only be scheduled to cluster Foo. It cannot be
    scheduled to any other clusters. (use case: sensitive workloads).
 + This workload prefers cluster Foo. But if there is no available
-   capacity on cluster Foo, it’s OK to be scheduled to cluster Bar
+   capacity on cluster Foo, it's OK to be scheduled to cluster Bar
    (use case: workload )
 + Seventy percent of this workload should be scheduled to cluster Foo,
     and thirty percent should be scheduled to cluster Bar (use case:
@@ -373,7 +373,7 @@ plane:
 1. Each cluster control is watching the sub RCs bound to its
    corresponding cluster. It picks up the newly created sub RC.
 1. The cluster controller issues requests to the underlying cluster
-API Server to create the RC.  In phase one we don’t support complex
+API Server to create the RC.  In phase one we don't support complex
 distribution policies. The scheduling rule is basically:
     1. If a RC does not specify any nodeSelector, it will be scheduled
        to the least loaded K8S cluster(s) that has enough available
@@ -388,7 +388,7 @@ the cluster is working independently it still accepts workload
 requests from other K8S clients or even another Cluster Federation control
 plane. The Cluster Federation scheduling decision is based on this data of
 available resources. However when the actual RC creation happens to
-the cluster at time _T2_, the cluster may don’t have enough resources
+the cluster at time _T2_, the cluster may don't have enough resources
 at that time. We will address this problem in later phases with some
 proposed solutions like resource reservation mechanisms.
 

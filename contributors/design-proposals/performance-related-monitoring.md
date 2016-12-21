@@ -20,13 +20,13 @@ lost because of this issue.
 ### Adding per-pod probe-time, which increased the number of PodStatus updates, causing major slowdown
 
 In September 2015 we tried to add per-pod probe times to the PodStatus. It caused (https://github.com/kubernetes/kubernetes/issues/14273) a massive increase in both number and
-total volume of object (PodStatus) changes. It drastically increased the load on API server which wasn’t able to handle new number of requests quickly enough, violating our
+total volume of object (PodStatus) changes. It drastically increased the load on API server which wasn't able to handle new number of requests quickly enough, violating our
 response time SLO. We had to revert this change.
 
 ### Late Ready->Running PodPhase transition caused test failures as it seemed like slowdown
 
 In late September we encountered a strange problem (https://github.com/kubernetes/kubernetes/issues/14554): we observed an increased observed latencies in small clusters (few
-Nodes). It turned out that it’s caused by an added latency between PodRunning and PodReady phases. This was not a real regression, but our tests thought it were, which shows
+Nodes). It turned out that it's caused by an added latency between PodRunning and PodReady phases. This was not a real regression, but our tests thought it were, which shows
 how careful we need to be.
 
 ### Huge number of handshakes slows down API server

@@ -41,19 +41,19 @@ background on k8s networking could be found
 [here](http://kubernetes.io/docs/admin/networking/)
 
 ## Requirements
-1. Kubelet expects the runtime shim to manage pod’s network life cycle. Pod 
+1. Kubelet expects the runtime shim to manage pod's network life cycle. Pod 
 networking should be handled accordingly along with pod sandbox operations. 
-   * `RunPodSandbox` must set up pod’s network. This includes, but is not limited 
-to allocating a pod IP, configuring the pod’s network interfaces and default 
+   * `RunPodSandbox` must set up pod's network. This includes, but is not limited 
+to allocating a pod IP, configuring the pod's network interfaces and default 
 network route. Kubelet expects the pod sandbox to have an IP which is 
 routable within the k8s cluster, if `RunPodSandbox` returns successfully. 
-`RunPodSandbox` must return an error if it fails to set up the pod’s network. 
-If the pod’s network has already been set up, `RunPodSandbox` must skip 
+`RunPodSandbox` must return an error if it fails to set up the pod's network. 
+If the pod's network has already been set up, `RunPodSandbox` must skip 
 network setup and proceed. 
-   * `StopPodSandbox` must tear down the pod’s network. The runtime shim 
-must return error on network tear down failure. If pod’s network has 
+   * `StopPodSandbox` must tear down the pod's network. The runtime shim 
+must return error on network tear down failure. If pod's network has 
 already been torn down, `StopPodSandbox` must skip network tear down and proceed.
-   * `RemovePodSandbox` may tear down pod’s network, if the networking has 
+   * `RemovePodSandbox` may tear down pod's network, if the networking has 
 not been torn down already. `RemovePodSandbox` must return error on 
 network tear down failure.
    * Response from `PodSandboxStatus` must include pod sandbox network status. 
