@@ -100,11 +100,11 @@ To build binaries for all platforms:
 
 ### How to update the Go version used to test & build k8s
 
-The kubernetes project tries to stay on the latest version of Go so it can
+The Kubernetes project tries to stay on the latest version of Go so it can
 benefit from the improvements to the language over time and can easily
 bump to a minor release version for security updates.
 
-Since kubernetes is mostly built and tested in containers, there are a few
+Since Kubernetes is mostly built and tested in containers, there are a few
 unique places you need to update the go version.
 
 - The image for cross compiling in [build/build-image/cross/](https://github.com/kubernetes/kubernetes/blob/master/build/build-image/cross/). The `VERSION` file and `Dockerfile`.

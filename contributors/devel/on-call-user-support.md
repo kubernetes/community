@@ -32,10 +32,10 @@ In general, try to direct support questions to:
 1. Documentation, such as the [user guide](../user-guide/README.md) and
 [troubleshooting guide](http://kubernetes.io/docs/troubleshooting/)
 
-2. Stackoverflow
+2. Stack Overflow
 
-If you see questions on a forum other than Stackoverflow, try to redirect them
-to Stackoverflow. Example response:
+If you see questions on a forum other than Stack Overflow, try to redirect them
+to Stack Overflow. Example response:
 
 ```code
 Please re-post your question to [stackoverflow]

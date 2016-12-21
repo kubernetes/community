@@ -32,11 +32,11 @@ Documentation for other releases can be found at
 ## Introduction
 [Container Runtime Interface (CRI)](container-runtime-interface.md) is 
 an ongoing project to allow container 
-runtimes to integrate with kubernetes via a newly-defined API. This document 
+runtimes to integrate with Kubernetes via a newly-defined API. This document 
 specifies the network requirements for container runtime 
-interface (CRI). CRI networking requirements expand upon kubernetes pod 
+interface (CRI). CRI networking requirements expand upon Kubernetes pod 
 networking requirements. This document does not specify requirements 
-from upper layers of kubernetes network stack, such as `Service`. More 
+from upper layers of Kubernetes network stack, such as `Service`. More 
 background on k8s networking could be found 
 [here](http://kubernetes.io/docs/admin/networking/)
 
@@ -61,11 +61,11 @@ The runtime shim must return an empty network status if it failed
 to construct a network status. 
 
 2. User supplied pod networking configurations, which are NOT directly 
-exposed by the kubernetes API, should be handled directly by runtime 
+exposed by the Kubernetes API, should be handled directly by runtime 
 shims. For instance, `hairpin-mode`, `cni-bin-dir`, `cni-conf-dir`, `network-plugin`, 
 `network-plugin-mtu` and `non-masquerade-cidr`. Kubelet will no longer handle 
 these configurations after the transition to CRI is complete.
-3. Network configurations that are exposed through the kubernetes API 
+3. Network configurations that are exposed through the Kubernetes API 
 are communicated to the runtime shim through `UpdateRuntimeConfig` 
 interface, e.g. `podCIDR`. For each runtime and network implementation, 
 some configs may not be applicable. The runtime shim may handle or ignore 

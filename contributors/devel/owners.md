@@ -15,7 +15,7 @@ required to approve changes before they can be merged.
 
 ### Step One: A PR is submitted
 
-After a PR is submitted, the automated kubernetes PR robot will append a message to the PR indicating the owners
+After a PR is submitted, the automated Kubernetes PR robot will append a message to the PR indicating the owners
 that are required for the PR to be submitted.
 
 Subsequently, a user can also request the approval message from the robot by writing:

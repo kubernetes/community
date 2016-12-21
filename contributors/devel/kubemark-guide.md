@@ -48,9 +48,9 @@ port Kubemark to different providers.
 
 ### Starting a Kubemark cluster
 
-To start a Kubemark cluster on GCE you need to create an external kubernetes
+To start a Kubemark cluster on GCE you need to create an external Kubernetes
 cluster (it can be GCE, GKE or anything else) by yourself, make sure that kubeconfig
-points to it by default, build a kubernetes release (e.g. by running
+points to it by default, build a Kubernetes release (e.g. by running
 `make quick-release`) and run `test/kubemark/start-kubemark.sh` script.
 This script will create a VM for master components, Pods for HollowNodes
 and do all the setup necessary to let them talk to each other. It will use the
@@ -142,7 +142,7 @@ kubectl command from the master machine to play with the cluster.
 
 Debugging HollowNodes is a bit more tricky, as if you experience a problem on
 one of them you need to learn which hollow-node pod corresponds to a given
-HollowNode known by the Master. During self-registeration HollowNodes provide
+HollowNode known by the Master. During self-registration HollowNodes provide
 their cluster IPs as Names, which means that if you need to find a HollowNode
 named `10.2.4.5` you just need to find a Pod in external cluster with this
 cluster IP. There’s a helper script

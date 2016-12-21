@@ -14,10 +14,10 @@
 
 # Overview
 
-This document explains how to update kubernetes release docs hosted at http://kubernetes.io/docs/.
+This document explains how to update Kubernetes release docs hosted at http://kubernetes.io/docs/.
 
 http://kubernetes.io is served using the [gh-pages
-branch](https://github.com/kubernetes/kubernetes/tree/gh-pages) of kubernetes repo on github.
+branch](https://github.com/kubernetes/kubernetes/tree/gh-pages) of Kubernetes repo on github.
 Updating docs in that branch will update http://kubernetes.io
 
 There are 2 scenarios which require updating docs:
