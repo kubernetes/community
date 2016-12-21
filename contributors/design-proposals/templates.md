@@ -208,7 +208,7 @@ type Parameter struct {
 ```
 
 As seen above, parameters allow for metadata which can be fed into client implementations to display information about the
-parameter’s purpose and whether a value is required.  In lieu of type information, two reference styles are offered:  `$(PARAM)`
+parameter's purpose and whether a value is required.  In lieu of type information, two reference styles are offered:  `$(PARAM)`
 and `$((PARAM))`.  When the single parens option is used, the result of the substitution will remain quoted.  When the double
 parens option is used, the result of the substitution will not be quoted.  For example, given a parameter defined with a value
 of "BAR", the following behavior will be observed:
@@ -402,7 +402,7 @@ The api endpoint will then:
 
 1. Validate the template including confirming “required” parameters have an explicit value.
 2. Walk each api object in the template.
-3. Adding all labels defined in the template’s ObjectLabels field.
+3. Adding all labels defined in the template's ObjectLabels field.
 4. For each field, check if the value matches a parameter name and if so, set the value of the field to the value of the parameter.
   * Partial substitutions are accepted, such as `SOME_$(PARAM)` which would be transformed into `SOME_XXXX` where `XXXX` is the value
     of the `$(PARAM)` parameter.

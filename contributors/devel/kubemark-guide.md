@@ -43,7 +43,7 @@ Common workflow for Kubemark is:
 - monitoring test execution and debugging problems
 - turning down Kubemark cluster
 
-Included in descriptions there will be comments helpful for anyone who’ll want to
+Included in descriptions there will be comments helpful for anyone who'll want to
 port Kubemark to different providers.
 
 ### Starting a Kubemark cluster
@@ -58,7 +58,7 @@ configuration stored in `cluster/kubemark/config-default.sh` - you can tweak it
 however you want, but note that some features may not be implemented yet, as
 implementation of Hollow components/mocks will probably be lagging behind ‘real’
 one. For performance tests interesting variables are `NUM_NODES` and
-`MASTER_SIZE`. After start-kubemark script is finished you’ll have a ready
+`MASTER_SIZE`. After start-kubemark script is finished you'll have a ready
 Kubemark cluster, a kubeconfig file for talking to the Kubemark cluster is
 stored in `test/kubemark/kubeconfig.kubemark`.
 
@@ -87,7 +87,7 @@ be easy to do outside of GCE*).
 
 - Creates a ReplicationController for HollowNodes and starts them up. (*will
 work exactly the same everywhere as long as MASTER_IP will be populated
-correctly, but you’ll need to update docker image address if you’re not using
+correctly, but you'll need to update docker image address if you're not using
 GCR and default image name*)
 
 - Waits until all HollowNodes are in the Running phase (*will work exactly the
@@ -129,7 +129,7 @@ Master machine (currently) differs from the ordinary one.
 If you need to debug master machine you can do similar things as you do on your
 ordinary master. The difference between Kubemark setup and ordinary setup is
 that in Kubemark etcd is run as a plain docker container, and all master
-components are run as normal processes. There’s no Kubelet overseeing them. Logs
+components are run as normal processes. There's no Kubelet overseeing them. Logs
 are stored in exactly the same place, i.e. `/var/logs/` directory. Because
 binaries are not supervised by anything they won't be restarted in the case of a
 crash.
@@ -145,7 +145,7 @@ one of them you need to learn which hollow-node pod corresponds to a given
 HollowNode known by the Master. During self-registeration HollowNodes provide
 their cluster IPs as Names, which means that if you need to find a HollowNode
 named `10.2.4.5` you just need to find a Pod in external cluster with this
-cluster IP. There’s a helper script
+cluster IP. There's a helper script
 `test/kubemark/get-real-pod-for-hollow-node.sh` that does this for you.
 
 When you have a Pod name you can use `kubectl logs` on external cluster to get
@@ -190,7 +190,7 @@ All those things should work exactly the same on all cloud providers.
 
 On GCE you just need to execute `test/kubemark/stop-kubemark.sh` script, which
 will delete HollowNode ReplicationController and all the resources for you. On
-other providers you’ll need to delete all this stuff by yourself.
+other providers you'll need to delete all this stuff by yourself.
 
 ## Some current implementation details
 
@@ -198,12 +198,12 @@ Kubemark master uses exactly the same binaries as ordinary Kubernetes does. This
 means that it will never be out of date. On the other hand HollowNodes use
 existing fake for Kubelet (called SimpleKubelet), which mocks its runtime
 manager with `pkg/kubelet/dockertools/fake_manager.go`, where most logic sits.
-Because there’s no easy way of mocking other managers (e.g. VolumeManager), they
-are not supported in Kubemark (e.g. we can’t schedule Pods with volumes in them
+Because there's no easy way of mocking other managers (e.g. VolumeManager), they
+are not supported in Kubemark (e.g. we can't schedule Pods with volumes in them
 yet).
 
 As the time passes more fakes will probably be plugged into HollowNodes, but
-it’s crucial to make it as simple as possible to allow running a big number of
+it's crucial to make it as simple as possible to allow running a big number of
 Hollows on a single core.
 
 
