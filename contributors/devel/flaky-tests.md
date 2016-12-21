@@ -6,7 +6,7 @@ tests in various combinations, even a small percentage of flakes results in a
 lot of pain for people waiting for their PRs to merge.
 
 Therefore, it's very important that we write tests defensively. Situations that
-"almost never happen" happen with some regularity when run thousands of times in
+"almost never happen" happen with some regularities when run thousands of times in
 resource-constrained environments. Since flakes can often be quite hard to
 reproduce while still being common enough to block merges occasionally, it's
 additionally important that the test logs be useful for narrowing down exactly
