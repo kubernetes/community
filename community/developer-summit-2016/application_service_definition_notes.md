@@ -36,7 +36,7 @@ Is this different from what the PAASes already do?  It's not that different, we 
 
 Being able to view an application as a single unifying concept is a major desire.   Want to click "my app" and see all of the objects associated with it.  It would be an overlay on top of Kubernetes, not something in core.
 
-One pending feature is that you can't look up different types of controllers in the API, that's going to be fixed.  Another one is that we can't trace the depenences; helm doesn't label all of the components deployed with the app.
+One pending feature is that you can't look up different types of controllers in the API, that's going to be fixed.  Another one is that we can't trace the dependencies; helm doesn't label all of the components deployed with the app.
 
 Need to identify things which are missing in core kubernetes, if there are any.
 
