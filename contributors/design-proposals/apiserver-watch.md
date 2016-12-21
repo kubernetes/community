@@ -80,7 +80,7 @@ we will store two things:
   - the resourceVersion of the object (being an etcdIndex)
   - the object watched from etcd itself (in a deserialized form)
 
-  This should be as simple as having an array an treating it as a cyclic buffer.
+  This should be as simple as having an array and treating it as a cyclic buffer.
   Obviously resourceVersion of objects watched from etcd will be increasing, but
   they are necessary for registering a new watcher that is interested in all the
   changes since a given etcdIndex.
