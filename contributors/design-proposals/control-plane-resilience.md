@@ -10,9 +10,9 @@
 
 Some amount of confusion exists around how we currently, and in future
 want to ensure resilience of the Kubernetes (and by implication
-Kubernetes Cluster Federation) control plane.  This document is an attempt to capture that
+Kubernetes Cluster Federation) control plane. This document is an attempt to capture that
 definitively. It covers areas including self-healing, high
-availability, bootstrapping and recovery.  Most of the information in
+availability, bootstrapping and recovery. Most of the information in
 this document already exists in the form of github comments,
 PR's/proposals, scattered documents, and corridor conversations, so
 document is primarily a consolidation and clarification of existing
@@ -23,7 +23,7 @@ ideas.
 * **Self-healing:** automatically restarting or replacing failed
   processes and machines without human intervention
 * **High availability:** continuing to be available and work correctly
-  even if some components are down or uncontactable.  This typically
+  even if some components are down or uncontactable. This typically
   involves multiple replicas of critical services, and a reliable way
   to find available replicas. Note that it's possible (but not
   desirable) to have high

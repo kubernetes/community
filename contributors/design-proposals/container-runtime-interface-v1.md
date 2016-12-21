@@ -225,7 +225,7 @@ applicable to its platform, and should return an error otherwise.
 ### Keep it minimal
 
 The proposed interface is experimental, i.e., it will go through (many) changes
-until it stabilizes. The principle is to to keep the interface minimal and
+until it stabilizes. The principle is to keep the interface minimal and
 extend it later if needed. This includes a several features that are still in
 discussion and may be achieved alternatively:
 
