@@ -41,19 +41,19 @@ ideas.
    to single availability zones should be resilient to individual
    machine and process failures by being both self-healing and highly
    available (within the context of such individual failures).
-1. **Ubiquitous resilience by default:** The default cluster creation
+2. **Ubiquitous resilience by default:** The default cluster creation
    scripts for (at least) GCE, AWS and basic bare metal should adhere
    to the above (self-healing and high availability) by default (with
    options available to disable these features to reduce control plane
    resource requirements if so required).  It is hoped that other
    cloud providers will also follow the above guidelines, but the
    above 3 are the primary canonical use cases.
-1. **Resilience to some correlated failures:** Kubernetes clusters
+3. **Resilience to some correlated failures:** Kubernetes clusters
    which span multiple availability zones in a region should by
    default be resilient to complete failure of one entire availability
    zone (by similarly providing self-healing and high availability in
    the default cluster creation scripts as above).
-1. **Default implementation shared across cloud providers:** The
+4. **Default implementation shared across cloud providers:** The
    differences between the default implementations of the above for
    GCE, AWS and basic bare metal should be minimized.  This implies
    using shared libraries across these providers in the default
@@ -63,13 +63,13 @@ ideas.
    GCE, or some hosted Kubernetes provider on AWS) are discouraged.
    But those fall squarely outside the basic cross-platform OSS
    Kubernetes distro.
-1. **Self-hosting:** Where possible, Kubernetes's existing mechanisms
+5. **Self-hosting:** Where possible, Kubernetes's existing mechanisms
    for achieving system resilience (replication controllers, health
    checking, service load balancing etc) should be used in preference
    to building a separate set of mechanisms to achieve the same thing.
    This implies that self hosting (the kubernetes control plane on
    kubernetes) is strongly preferred, with the caveat below.
-1. **Recovery from catastrophic failure:** The ability to quickly and
+6. **Recovery from catastrophic failure:** The ability to quickly and
    reliably recover a cluster from catastrophic failure is critical,
    and should not be compromised by the above goal to self-host
    (i.e. it goes without saying that the cluster should be quickly and
@@ -90,7 +90,7 @@ well-bounded time period.
        often that state has been lost, and/or is scattered across
        multiple client applications or groups. So in general it is
        probably infeasible.
-    1. In theory a cluster can also be recovered to some relatively
+    2. In theory a cluster can also be recovered to some relatively
        recent non-corrupt backup/snapshot of the disk(s) backing the
        etcd cluster state. But we have no default consistent
        backup/snapshot, verification or restoration process.  And we
@@ -99,7 +99,7 @@ well-bounded time period.
        can in practise effectively recover from catastrophic cluster
        failure or data corruption by restoring from these backups. So
        there's more work to be done here.
-1. **Self-healing:** Most major cloud providers provide the ability to
+2. **Self-healing:** Most major cloud providers provide the ability to
    easily and automatically replace failed virtual machines within a
    small number of minutes (e.g. GCE
    [Auto-restart](https://cloud.google.com/compute/docs/instances/setting-instance-scheduling-options#autorestart)
@@ -111,16 +111,16 @@ well-bounded time period.
    (i.e. typically around "3 nines" availability), provided that:
     1. cluster persistent state (i.e. etcd disks) is either:
         1. truly persistent (i.e. remote persistent disks), or
-        1. reconstructible (e.g. using etcd [dynamic member
+        2. reconstructible (e.g. using etcd [dynamic member
            addition](https://github.com/coreos/etcd/blob/master/Documentation/runtime-configuration.md#add-a-new-member)
            or [backup and
            recovery](https://github.com/coreos/etcd/blob/master/Documentation/admin_guide.md#disaster-recovery)).
-    1. and boot disks are either:
+    2. and boot disks are either:
         1. truly persistent (i.e. remote persistent disks), or
-        1. reconstructible (e.g. using boot-from-snapshot,
+        2. reconstructible (e.g. using boot-from-snapshot,
            boot-from-pre-configured-image or
            boot-from-auto-initializing image).
-1. **High Availability:** This has the potential to increase
+3. **High Availability:** This has the potential to increase
    availability above the approximately "3 nines" level provided by
    automated self-healing, but it's somewhat more complex, and
    requires additional resources (e.g. redundant API servers and etcd
