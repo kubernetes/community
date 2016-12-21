@@ -45,6 +45,9 @@ At the end of this process the bootkube can be shut down and the system kubelet 
 
 ![](self-hosted-final-cluster.png)
 
+There are a few things to note. First, generally, the control components like the API server, etc will be pinned to a set of dedicated control nodes. For security policy, service discovery, and scaling reasons it is easiest to assume that control nodes will always exist on N nodes.
+
+Another challenge is load balancing the API server. Bedrock for the API server will be DNS, TLS, and a load balancer that live off cluster and that load balancer will want to only healthcheck a handful of servers for the API server port liveness probe.
 
 ### Bootkube Challenges
 
@@ -68,7 +71,7 @@ A simple updater can take care of helping users update from v1.3.0 to v1.3.1, et
 
 The kubelet could be upgraded in a very similar process to that outlined in the self-hosted proposal.
 
-However, because of the challenges around the self-hosted Kubelet (see above) Tectonic has implemented an alternative scheme that side-steps the self-hosted Kubelet challenges. First, a kubelet system service is launched that uses the [chrooted kubelet](https://github.com/kubernetes/community/pull/131) implemented by the [kubelet-wrapper](https://coreos.com/kubernetes/docs/latest/kubelet-wrapper.html) then when an update is required a daemonset updates the kubelet-wrapper configuration based on version annotations and kills the kubelet PID triggering a restart.
+However, because of the challenges around the self-hosted Kubelet (see above) Tectonic currently has a 1-4 self-hosted cluster with an alternative Kubelet update scheme which side-steps the self-hosted Kubelet issues. First, a kubelet system service is launched that uses the [chrooted kubelet](https://github.com/kubernetes/community/pull/131) implemented by the [kubelet-wrapper](https://coreos.com/kubernetes/docs/latest/kubelet-wrapper.html) then when an update is required a node annotation is made which is read by a long-running daemonset that updates the kubelet-wrapper configuration. This makes Kubelet versions updateable from the cluster API.
 
 #### API Server, Scheduler, and Controller Manager
 
