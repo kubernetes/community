@@ -408,7 +408,7 @@ selectors, annotations, data), as opposed to sets of subobjects.
 Floating-point values cannot be reliably round-tripped (encoded and re-decoded)
 without changing, and have varying precision and representations across
 languages and architectures.
-* All numbers (e.g., uint32, int64) are converted to float64 by Javascript and
+* All numbers (e.g., uint32, int64) are converted to float64 by JavaScript and
 some other languages, so any field which is expected to exceed that either in
 magnitude or in precision (specifically integer values > 53 bits) should be
 serialized and accepted as strings.
@@ -799,7 +799,7 @@ Kubernetes leverages the concept of *resource versions* to achieve optimistic
 concurrency. All Kubernetes resources have a "resourceVersion" field as part of
 their metadata. This resourceVersion is a string that identifies the internal
 version of an object that can be used by clients to determine when objects have
-changed. When a record is about to be updated, it's version is checked against a
+changed. When a record is about to be updated, it's version that is checked against a
 pre-saved value, and if it doesn't match, the update fails with a StatusConflict
 (HTTP status code 409).
 
@@ -895,7 +895,7 @@ resource), or should be called `fooRef`, and should contain a subset of the
 fields of the `ObjectReference` type.
 
 
-TODO: Plugins, extensions, nested kinds, headers
+TODO: plugins, extensions, nested kinds, headers
 
 
 ## HTTP Status codes
@@ -1032,7 +1032,7 @@ error occurs. Clients SHOULD handle these types of objects when appropriate.
 A `Status` kind will be returned by the API in two cases:
   * When an operation is not successful (i.e. when the server would return a non
 2xx HTTP status code).
-  * When a HTTP `DELETE` call is successful.
+  * When an HTTP `DELETE` call is successful.
 
 The status object is encoded as JSON and provided as the body of the response.
 The status object contains fields for humans and machine consumers of the API to
@@ -1096,7 +1096,7 @@ make any sense, for example deleting a read-only object.
   * This is different than `status reason` `Invalid` above which indicates that
 the API call could possibly succeed, but the data was invalid.
   * API calls that return BadRequest can never succeed.
-  * Http status code: `400 StatusBadRequest`
+  * HTTP status code: `400 StatusBadRequest`
 
 
 * `Unauthorized`
@@ -1174,7 +1174,7 @@ be set.
 Clients may receive this response if the server has decided to rate limit the
 client, or if the server is overloaded and cannot process the request at this
 time.
-  * Http status code: `429 TooManyRequests`
+  * HTTP status code: `429 TooManyRequests`
   * The server should set the `Retry-After` HTTP header and return
 `retryAfterSeconds` in the details field of the object. A value of `0` is the
 default.
@@ -1192,7 +1192,7 @@ server load or a transient communication issue with another server.
   * The server should set the `Retry-After` HTTP header and return
 `retryAfterSeconds` in the details field of the object. A value of `0` is the
 default.
-  * Http status code: `504 StatusServerTimeout`
+  * HTTP status code: `504 StatusServerTimeout`
 
 
 * `MethodNotAllowed`
@@ -1200,7 +1200,7 @@ default.
 was not supported by the code.
   * For instance, attempting to delete a resource that can only be created.
   * API calls that return MethodNotAllowed can never succeed.
-  * Http status code: `405 StatusMethodNotAllowed`
+  * HTTP status code: `405 StatusMethodNotAllowed`
 
 
 * `InternalError`
@@ -1209,7 +1209,7 @@ of the call is unknown.
   * Details (optional):
     * `causes`
       * The original error.
-  * Http status code: `500 StatusInternalServerError` `code` may contain the suggested HTTP return code for this status.
+  * HTTP status code: `500 StatusInternalServerError` `code` may contain the suggested HTTP return code for this status.
 
 
 ## Events
