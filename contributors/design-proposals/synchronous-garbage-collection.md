@@ -106,7 +106,7 @@ When validating the ownerReference, API server needs to query the `Authorizer` t
 
 **Modifications to processEvent()**
 
-Currently `processEvent()` manages GC’s internal owner-dependency relationship graph, `uidToNode`. It updates `uidToNode` according to the Add/Update/Delete events in the cluster. To support synchronous GC, it has to:
+Currently `processEvent()` manages GC's internal owner-dependency relationship graph, `uidToNode`. It updates `uidToNode` according to the Add/Update/Delete events in the cluster. To support synchronous GC, it has to:
 
 * handle Add or Update events where `obj.Finalizers.Has(GCFinalizer) && obj.DeletionTimestamp != nil`. The object will be added into the `dirtyQueue`. The object will be marked as “GC in progress” in `uidToNode`.
 * Upon receiving the deletion event of an object, put its owner into the `dirtyQueue` if the owner node is marked as "GC in progress". This is to force the `processItem()` (described next) to re-check if all dependents of the owner is deleted.

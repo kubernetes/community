@@ -130,7 +130,7 @@ All functions listed above are expected to be thread-safe.
 
 ### Pod/Container Lifecycle
 
-The PodSandbox’s lifecycle is decoupled from the containers, i.e., a sandbox
+The PodSandbox's lifecycle is decoupled from the containers, i.e., a sandbox
 is created before any containers, and can exist after all containers in it have
 terminated.
 

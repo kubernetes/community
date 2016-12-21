@@ -25,7 +25,7 @@ A characteristic list of issues (as not all of them were well captured in GitHub
 5. External object bleeding. Much of the logic was centered on a state machine that lived in the kubelet. Other kube components had to be aware of the state machine and other aspects of the binding framework to use Volumes. 
 6. Maintenance was difficult as this work was implemented in three different controllers that spread the logic for provisioning, binding, and recycling Volumes.
 7. Kubelet failures on the Node could “strand” storage. Requiring users to manually unmount storage.
-8. A pod’s long running detach routine could impact other pods as the operations run synchronously in the kubelet sync loop.
+8. A pod's long running detach routine could impact other pods as the operations run synchronously in the kubelet sync loop.
 9. Nodes required elevated privileges to be able to trigger attach/detach. Ideally attach/detach should be triggered from master which is considered more secure (see Issue [#12399](https://github.com/kubernetes/kubernetes/issues/12399)).
 
 Below are the Github Issues that were filed for this area:
@@ -41,7 +41,7 @@ Below are the Github Issues that were filed for this area:
 ## How Did We Solve the Problem?
 Addressing these issues was the main deliverable for storage in 1.3. This required an in depth rewrite of several components.
 
-Early in the 1.3 development cycle (March 28 to April 1, 2016) several community members in the Storage SIG met at a week long face-to-face summit at Google’s office in Mountain View to address these issues. A plan was established to approach the attach/detach/mount/unmount issues as a deliberate effort with contributors already handling the design. Since that work was already in flight and a plan established, the majority of the summit was devoted to resolving the PV/PVC controller issues. Meeting notes were captured [in this document](https://github.com/kubernetes/community/blob/master/sig-storage/1.3-retrospective/2016-03-28_Storage-SIG-F2F_Notes.pdf).
+Early in the 1.3 development cycle (March 28 to April 1, 2016) several community members in the Storage SIG met at a week long face-to-face summit at Google's office in Mountain View to address these issues. A plan was established to approach the attach/detach/mount/unmount issues as a deliberate effort with contributors already handling the design. Since that work was already in flight and a plan established, the majority of the summit was devoted to resolving the PV/PVC controller issues. Meeting notes were captured [in this document](https://github.com/kubernetes/community/blob/master/sig-storage/1.3-retrospective/2016-03-28_Storage-SIG-F2F_Notes.pdf).
 
 Three projects were planned to fix the issues outlined above:
 * PV/PVC Controller Redesign (a.k.a. Provisioner/Binder/Recycler controller)
@@ -64,7 +64,7 @@ The Kubelet Volume Redesign involved changing fundamental assumptions of data fl
 
 1. **Release delay**
   * The large amount of churn so late in the release with little stabilization time resulted in the delay of the release by one week: The Kubernetes 1.3 release [was targeted](https://github.com/kubernetes/features/blob/master/release-1.3/release-1.3.md) for June 20 to June 24, 2016. It ended up [going out on July 1, 2016](https://github.com/kubernetes/kubernetes/releases/tag/v1.3.0). This was mostly due to the time to resolve a data corruption issue on ungracefully terminated pods caused by detaching of mounted volumes ([#27691](https://github.com/kubernetes/kubernetes/issues/27691)). A large number of the bugs introduced in the release were fixed in the 1.3.4 release which [was cut on August 1, 2016](https://github.com/kubernetes/kubernetes/releases/tag/v1.3.4).
-2. **Instability in 1.3’s Storage stack**
+2. **Instability in 1.3's Storage stack**
   * The Kubelet volume redesign shipped in 1.3.0 with several bugs. These were mostly due to unexpected interactions between the new functionality and other Kubernetes components. For example, secrets were handled serially not in parallel, namespace dependencies were not well understood, etc. Most of these issues were quickly identified and addressed but waited for 1.3 patch releases.
   * Issues related to this include:
      * PVC Volume will not detach if PVC or PV is deleted before pod ([#29051](https://github.com/kubernetes/kubernetes/issues/29051))
@@ -93,4 +93,4 @@ The value of the feature freeze date is to ensure the release has time to stabil
 2. Establish a formal exception process for merging large changes after feature complete dates.
   * Status: [Drafted as of 1.4](https://github.com/kubernetes/features/blob/master/EXCEPTIONS.md)
 
-Kubernetes is an incredibly fast moving project, with hundreds of active contributors creating a solution that thousands of organization rely on. Stability, trust, and openness are paramount in both the product and the community around Kubernetes. We undertook this retrospective effort to learn from the 1.3 release’s shipping delay. These action items and other work in the upcoming releases are part of our commitment to continually improve our project, our community, and our ability to deliver production-grade infrastructure platform software.
+Kubernetes is an incredibly fast moving project, with hundreds of active contributors creating a solution that thousands of organization rely on. Stability, trust, and openness are paramount in both the product and the community around Kubernetes. We undertook this retrospective effort to learn from the 1.3 release's shipping delay. These action items and other work in the upcoming releases are part of our commitment to continually improve our project, our community, and our ability to deliver production-grade infrastructure platform software.

@@ -5,7 +5,7 @@ and set them before the container is run. This document describes design of the 
 
 ## Motivation
 
-Since we want to make Kubernetes as simple as possible for its users we don’t want to require setting [Resources](../design/resource-qos.md) for container by its owner.
+Since we want to make Kubernetes as simple as possible for its users we don't want to require setting [Resources](../design/resource-qos.md) for container by its owner.
 On the other hand having Resources filled is critical for scheduling decisions.
 Current solution to set up Resources to hardcoded value has obvious drawbacks.
 We need to implement a component which will set initial Resources to a reasonable value.
@@ -22,7 +22,7 @@ InitialResources will set only [request](../design/resource-qos.md#requests-and-
 To make the component work with LimitRanger the estimated value will be capped by min and max possible values if defined.
 It will prevent from situation when the pod is rejected due to too low or too high estimation.
 
-The container won’t be marked as managed by this component in any way, however appropriate event will be exported.
+The container won't be marked as managed by this component in any way, however appropriate event will be exported.
 The predicting algorithm should have very low latency to not increase significantly e2e pod startup latency
 [#3954](https://github.com/kubernetes/kubernetes/pull/3954).
 
