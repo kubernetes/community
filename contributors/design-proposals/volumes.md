@@ -25,7 +25,7 @@ Goals of this design:
         has permissions `0D70`
 3.  Volume plugins should not have to handle setting permissions on volumes
 5.  Preventing two containers within a pod from reading and writing to the same volume (by choosing
-    different container UIDs) is not something we intend to support today
+    different container UIDs) are not something we intend to support today
 6.  We will not design to support multiple processes running in a single container as different
     UIDs; use cases that require work by different UIDs should be divided into different pods for
     each UID
