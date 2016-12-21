@@ -8,13 +8,13 @@ depending on the point in the release cycle.
 
 1. Cherrypicks are [managed with labels and milestones]
 (pull-requests.md#release-notes)
-1. To get a PR merged to the release branch, first ensure the following labels
+2. To get a PR merged to the release branch, first ensure the following labels
    are on the original **master** branch PR:
   * An appropriate milestone (e.g. v1.3)
   * The `cherrypick-candidate` label
-1. If `release-note-none` is set on the master PR, the cherrypick PR will need
+3. If `release-note-none` is set on the master PR, the cherrypick PR will need
    to set the same label to confirm that no release note is needed.
-1. `release-note` labeled PRs generate a release note using the PR title by
+4. `release-note` labeled PRs generate a release note using the PR title by
    default OR the release-note block in the PR template if filled in.
   * See the [PR template](../../.github/PULL_REQUEST_TEMPLATE.md) for more
     details.
@@ -30,7 +30,7 @@ label and lose the `cherrypick-candidate` label.
   * PRs that won't be merged to the release branch, lose the
 `cherrypick-candidate` label.
 
-1. **INDIVIDUAL CHERRYPICKS:** After the first X.Y.0 on a branch
+2. **INDIVIDUAL CHERRYPICKS:** After the first X.Y.0 on a branch
   * Run the cherry pick script. This example applies a master branch PR #98765
 to the remote branch `upstream/release-3.14`:
 `hack/cherry_pick_pull.sh upstream/release-3.14 98765`
