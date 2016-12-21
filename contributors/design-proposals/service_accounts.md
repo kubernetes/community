@@ -112,7 +112,7 @@ another, and another, until its behavior cannot be attributed to a single human.
 **TODO**: consider getting rid of separate serviceAccount object and just
 rolling its parts into the SecurityContext or Pod Object.
 
-The `secrets` field is a list of references to /secret objects that an process
+The `secrets` field is a list of references to /secret objects that a process
 started as that service account should have access to be able to assert that
 role.
 
