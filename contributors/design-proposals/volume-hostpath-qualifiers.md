@@ -98,7 +98,7 @@ One alternative is to augment Host Volumes with a `MustExist` bool and provide
 no further granularity. This would allow toggling between the `auto` and
 `exists` behaviors described above. This would likely cover the "90%" use-case
 and would be a simpler API. It would be sufficient for all of the examples
-linked above in my opionion.
+linked above in my opinion.
 
 ## Kubelet implementation
 
