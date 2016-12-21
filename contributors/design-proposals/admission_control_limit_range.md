@@ -154,9 +154,9 @@ Per container, the following must hold true:
 
 Supported Defaults:
 
-1. Default - if the named resource has no enumerated value, the Limit is equal
+1. Default - if the named resource has no enumerated values, the Limit is equal
 to the Default
-2. DefaultRequest - if the named resource has no enumerated value, the Request
+2. DefaultRequest - if the named resource has no enumerated values, the Request
 is equal to the DefaultRequest
 
 **Type: Pod**

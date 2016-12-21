@@ -63,7 +63,7 @@ The rest of this section describes the concrete steps that need to be done
 to implement the proposal.
 
 1. Since we want the watch in apiserver to be optional for different resource
-types, this needs to be self-contained and hidden behind a well defined API.
+types, this needs to be self-contained and hidden behind a well-defined API.
 This should be a layer very close to etcd - in particular all registries:
 "pkg/registry/generic/registry" should be built on top of it.
 We will solve it by turning tools.EtcdHelper by extracting its interface
