@@ -48,9 +48,9 @@ port Kubemark to different providers.
 
 ### Starting a Kubemark cluster
 
-To start a Kubemark cluster on GCE you need to create an external Kubernetes
+To start a Kubemark cluster on GCE you need to create an external kubernetes
 cluster (it can be GCE, GKE or anything else) by yourself, make sure that kubeconfig
-points to it by default, build a Kubernetes release (e.g. by running
+points to it by default, build a kubernetes release (e.g. by running
 `make quick-release`) and run `test/kubemark/start-kubemark.sh` script.
 This script will create a VM for master components, Pods for HollowNodes
 and do all the setup necessary to let them talk to each other. It will use the

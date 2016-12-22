@@ -49,10 +49,10 @@ minor change may pass all unit and integration tests, but cause unforeseen
 changes at the system level.
 
 The primary objectives of the e2e tests are to ensure a consistent and reliable
-behavior of the Kubernetes code base, and to catch hard-to-test bugs before
+behavior of the kubernetes code base, and to catch hard-to-test bugs before
 users do, when unit and integration tests are insufficient.
 
-The e2e tests in Kubernetes are built atop of
+The e2e tests in kubernetes are built atop of
 [Ginkgo](http://onsi.github.io/ginkgo/) and
 [Gomega](http://onsi.github.io/gomega/). There are a host of features that this
 Behavior-Driven Development (BDD) testing framework provides, and it is
@@ -177,7 +177,7 @@ pushed during e2es and scraped by prometheus. Typically something like
 --provider="": The name of the Kubernetes provider (gce, gke, local, vagrant,
 etc.)
 
---repo-root="../../": Root directory of Kubernetes repository, for finding test
+--repo-root="../../": Root directory of kubernetes repository, for finding test
 files.
 ```
 
@@ -299,7 +299,7 @@ $ go run hack/e2e.go -v --down
 
 #### Shortcuts for test developers
 
-* To speed up `e2e.go -up`, provision a single-node Kubernetes cluster in a single e2e zone:
+* To speed up `e2e.go -up`, provision a single-node kubernetes cluster in a single e2e zone:
 
   `NUM_NODES=1 E2E_ZONES="us-central1-f"`
 
@@ -492,7 +492,7 @@ To use viper, rather than flags, to configure your tests:
 
 Note that advanced testing parameters, and hierarchichally defined parameters, are only defined in viper, to see what they are, you can dive into [TestContextType](../../test/e2e/framework/test_context.go).
 
-In time, it is our intent to add or autogenerate a sample viper configuration that includes all e2e parameters, to ship with Kubernetes.
+In time, it is our intent to add or autogenerate a sample viper configuration that includes all e2e parameters, to ship with kubernetes.
 
 ### Conformance tests
 

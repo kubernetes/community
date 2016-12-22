@@ -1,12 +1,12 @@
-# How to update docs for new Kubernetes features
+# How to update docs for new kubernetes features
 
 This document describes things to consider when updating Kubernetes docs for new features or changes to existing features (including removing features).
 
 ## Who should read this doc?
 
-Anyone making user facing changes to Kubernetes.  This is especially important for Api changes or anything impacting the getting started experience.
+Anyone making user facing changes to kubernetes.  This is especially important for Api changes or anything impacting the getting started experience.
 
-## What docs changes are needed when adding or updating a feature in Kubernetes?
+## What docs changes are needed when adding or updating a feature in kubernetes?
 
 ### When making Api changes
 

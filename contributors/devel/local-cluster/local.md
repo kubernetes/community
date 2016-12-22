@@ -90,7 +90,7 @@ Congratulations!
 #### I cannot reach service IPs on the network.
 
 Some firewall software that uses iptables may not interact well with
-Kubernetes.  If you have trouble around networking, try disabling any
+kubernetes.  If you have trouble around networking, try disabling any
 firewall or other iptables-using systems, first.  Also, you can check
 if SELinux is blocking anything by running a command such as `journalctl --since yesterday | grep avc`.
 

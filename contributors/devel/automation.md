@@ -18,7 +18,7 @@ We have added an automated [submit-queue]
 (https://github.com/kubernetes/contrib/blob/master/mungegithub/mungers/submit-queue.go)
 to the
 [github "munger"](https://github.com/kubernetes/contrib/tree/master/mungegithub)
-for Kubernetes.
+for kubernetes.
 
 The submit-queue does the following:
 

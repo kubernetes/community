@@ -59,7 +59,7 @@ $ PATH=$PATH:$GOPATH/bin
 
 ### Clone the repository
 
-In order to run Kubernetes you must have the Kubernetes code on the local machine. Cloning this repository is sufficient.
+In order to run kubernetes you must have the kubernetes code on the local machine. Cloning this repository is sufficient.
 
 ```$ git clone --depth=1 https://github.com/kubernetes/kubernetes.git```
 
@@ -134,7 +134,7 @@ Congratulations!
 #### I cannot reach service IPs on the network.
 
 Some firewall software that uses iptables may not interact well with
-Kubernetes.  If you have trouble around networking, try disabling any
+kubernetes.  If you have trouble around networking, try disabling any
 firewall or other iptables-using systems, first.  Also, you can check
 if SELinux is blocking anything by running a command such as `journalctl --since yesterday | grep avc`.
 
