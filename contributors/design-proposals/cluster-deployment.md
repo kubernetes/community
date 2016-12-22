@@ -81,7 +81,7 @@ be generated locally and copied to all nodes.
 **Exit criteria**:
 
 1. Can run basic API calls (e.g. create, list and delete pods) from the client side (e.g. replication
-controller works - user can create RC object and RC manager can create pods based on that)
+controller works - users can create RC object and RC manager can create pods based on that)
 2. Critical master components works:
   1. scheduler
   2. controller manager
@@ -161,7 +161,7 @@ and seems to be popular in kubernetes community which will help us to maintain i
 For simpler UX we will provide simple bash scripts that will wrap all basic commands for deployment (e.g. ```up``` or ```down```)
 
 One disadvantage of using Ansible is that it adds a dependency on a machine which runs deployment scripts. We will workaround
-this by distributing deployment scripts via a docker image so that user will run the following command to create a cluster:
+this by distributing deployment scripts via a docker image so that users will run the following command to create a cluster:
 
 ```docker run gcr.io/google_containers/deploy_kubernetes:v1.2 up --num-nodes=3 --provider=aws```
 

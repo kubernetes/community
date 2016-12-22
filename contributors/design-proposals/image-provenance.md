@@ -148,7 +148,7 @@ and since third-parties can write their own controllers, which kubernetes might 
 pod templates.
 
 The ReplicaSet, or other controller, is responsible for recognizing when a 403 has happened
-(whether due to user not having permission due to bad image, or some other permission reason)
+(whether due to users not having permission due to bad image, or some other permission reason)
 and throttling itself and surfacing the error in a way that CLIs and UIs can show to the user.
 
 Issue [22298](https://github.com/kubernetes/kubernetes/issues/22298) needs to be resolved to
@@ -219,7 +219,7 @@ Since this adds complexity and interacts with imagePullPolicy, we avoid adding t
 
 There will be a cache of decisions in the admission controller.
 TTL will be user-controllable, but default to 1 hour for allows and 30s for denies.
-Low TTL for deny allows user to correct a setting on the backend and see the fix
+Low TTL for deny allows users to correct a setting on the backend and see the fix
 rapidly.  It is assumed that denies are infrequent.
 Caching allows permits RC to scale up services even during short unavailability of the webhook backend.
 The ImageReviewSpec is used as the key to the cache.

@@ -89,7 +89,7 @@ type Authorizer interface {
   // reason is an optional return value that can describe why a policy decision
   //   was made.  Reasons are useful during debugging when trying to figure out
   //   why a user or group has access to perform a particular action.
-  Authorize(ctx api.Context, a Attributes) (allowed bool, reason string, evaluationError error)
+  Authorize(ctx api.Context, an Attributes) (allowed bool, reason string, evaluationError error)
 }
 
 // AuthorizerIntrospection is an optional interface that provides the ability to

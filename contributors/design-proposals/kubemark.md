@@ -142,7 +142,7 @@ don't need to solve this problem now.
 scalability tests. Alternatively we can just use current density/load tests,
 - Benchmark our machines - see how many Watch clients we can have before everything explodes,
 - See how many HollowNodes we can run on a single machine by attaching them to the real master <- this is the moment it starts to useful
-- Update kube-up/kube-down scripts to enable creating "HollowClusters"/write a new scripts/something, integrate HollowCluster with a Elasticsearch/Heapster equivalents,
+- Update kube-up/kube-down scripts to enable creating "HollowClusters"/write a new scripts/something, integrate HollowCluster with Elasticsearch/Heapster equivalents,
 - Allow passing custom configuration to the Player
 
 ## Future work

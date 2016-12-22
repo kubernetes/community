@@ -8,7 +8,7 @@ Helm contrib: one of the things folks as us is they start from a dockerfile, and
 
 There are different ways to package applications.  There's the potential for a lot of fragmentation in multi-pod application definitions.  Can we create standards here?
 
-We want to build and generate manifests with one tool.  We want "fun in five" that is have it up and running in five minutes or less.
+We want to build and generate manifests with one tool.  We want "fun in five" that is having it up and running in five minutes or less.
 
 Another issue is testing mode; currently production-quality Helm charts don't really work on minikube,.  There's some issues around this which we know about.  We need dummy PVCs, LoadBalancer, etc.   Also DNS and Ingress.
 
