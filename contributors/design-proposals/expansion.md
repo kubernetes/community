@@ -53,7 +53,7 @@ information they need via the downward API and composition.
 
 #### Expanding expanded variables
 
-It should be possible to reference an variable which is itself the result of an
+It should be possible to reference a variable which is itself the result of an
 expansion, if the referenced variable is declared in the container's environment
 prior to the one referencing it. Put another way -- a container's environment is
 expanded in order, and expanded variables are available to subsequent

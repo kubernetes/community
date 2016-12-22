@@ -324,7 +324,7 @@ enumerated the key idea elements:
       should be handled by cluster liveness probe and deletion
       [[I6]](#heading=h.z90979gc2216).
 
-+ [I3] For each of the cluster start an store and informer to monitor
++ [I3] For each of the cluster start a store and informer to monitor
    whether the created pods are eventually scheduled and what is the
    current number of correctly running ready pods. Errors:
 
@@ -342,7 +342,7 @@ where for each FRS controlled LRS we store a list of pods belonging
 to that LRS along with their current status and status change timestamp.
 
 + [I5] If a new cluster is added to the federation then it doesn’t
-   have a LRS and the situation is equal to
+   have an LRS and the situation is equal to
    [[E1]](#heading=h.wn3dfsyc4yuh)/[[E4]](#heading=h.vlyovyh7eef).
 
 + [I6] If a cluster is removed from the federation then the situation
@@ -407,7 +407,7 @@ cluster capacity. If there were some extra replicas added to the cluster in step
 ## Goroutines layout
 
 + [GR1] Involved in FRS informer (see
-   [[I1]]). Whenever a FRS is created and
+   [[I1]]). Whenever an FRS is created and
    updated it puts the new/updated FRS on FRS_TO_CHECK_QUEUE with
    delay 0.
 
@@ -431,8 +431,8 @@ cluster capacity. If there were some extra replicas added to the cluster in step
    FRS_TO_CHECK_QUEUE the delays are compared and updated so that the
    shorter delay is used.
 
-+ [GR6] Contains a selector that listens on a FRS_CHANNEL. Whenever
-   a FRS is received it is put to a work queue. Work queue has no delay
++ [GR6] Contains a selector that listens on an FRS_CHANNEL. Whenever
+   an FRS is received it is put to a work queue. Work queue has no delay
    and makes sure that a single replica set is process is processed by
    only one goroutine.
 
@@ -449,7 +449,7 @@ goroutines (however if needed the function can be parallelized for
 different FRS). It takes data only from store maintained by GR2_* and
 GR3_*. The external communication is only required to:
 
-+ Create LRS. If a LRS doesn’t exist it is created after the
++ Create LRS. If an LRS doesn’t exist it is created after the
    rescheduling, when we know how much replicas should it have.
 
 + Update LRS replica targets.

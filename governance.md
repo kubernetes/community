@@ -54,7 +54,7 @@ Code and documentation contributors:
   that frequent contributors will assist in our code-review process and with project
   maintenance
 - **Org Member**: an active contributor for at least 3 months; active enough to be useful
-  to assign issues to them and add them to a github team (e.g., for a SIG) for notification
+  to assign issues to them and add them to a github team (e.g., for an SIG) for notification
   purposes; trusted enough to run tests on their PRs automatically; can issue "@k8s-bot ok to test"
   for other contributors; if they choose public membership, they get a badge on their github profile;
   should subscribe to kubernetes-dev@googlegroups.com; expected to be familiar with

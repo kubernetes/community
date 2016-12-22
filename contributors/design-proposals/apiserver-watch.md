@@ -56,7 +56,7 @@ it we will be able to:
   - filter the cache for each watcher more effectively
 
 If we decide to support watches spanning different resources in the future and
-we have an efficient indexing mechanisms, it should be relatively simple to unify
+we have an efficient indexing mechanism, it should be relatively simple to unify
 the cache to be common for all the resources.
 
 The rest of this section describes the concrete steps that need to be done

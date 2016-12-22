@@ -26,13 +26,13 @@ If you are building an Open Source application on top of Kubernetes that is unre
 
 ## Entering Incubation
 
-To create a new project for incubation you must follow these steps: write a proposal, find a champion, gain acceptance into a SIG, and finally get approval of a Sponsor. The Sponsor and Champion cannot be the same person.
+To create a new project for incubation you must follow these steps: write a proposal, find a champion, gain acceptance into an SIG, and finally get approval of a Sponsor. The Sponsor and Champion cannot be the same person.
 
 Your proposal should include two items. First, a README which outlines the problem to be solved, an example use case as-if the project existed, and a rough roadmap with timelines. Second, an OWNERS file that outlines the makeup of the initial team developing the project. Initially this can be one person but ideally has a 3 or more initial developers representing a few different companies or groups. You can use whatever tool you want to host and revise the proposal until the project is accepted to the Incubator: copy/paste from your text editor, Google Docs, GitHub gist, etc.
 
 Once the proposal is written you should identify a champion; this person must be listed as either a reviewer or approver in an OWNER file in the [Kubernetes project](https://github.com/kubernetes/kubernetes). Next, reach out to your potential champion via email to ask if they are interested in helping you through the Incubation process. Ideally some significant follow-up discussion happens via email, calls, or chat to improve the proposal before announcing it to the wider community.
 
-The next discussion should be on a relevant Special Interest Group mailing list. You should post the proposal to the SIG mailing list and wait for discussion for a few days. Iterate on the proposal as needed and if there is rough consensus that the project belongs in the chosen SIG then list that SIG in the proposal README. If consensus isn't reached then identify another SIG and try again; repeat until a SIG is identified.
+The next discussion should be on a relevant Special Interest Group mailing list. You should post the proposal to the SIG mailing list and wait for discussion for a few days. Iterate on the proposal as needed and if there is rough consensus that the project belongs in the chosen SIG then list that SIG in the proposal README. If consensus isn't reached then identify another SIG and try again; repeat until an SIG is identified.
 
 The final process is to email kubernetes-dev@googlegroups.com to announce your intention to form a new Incubator project. Include your entire proposal in the body of the email and prefix the Subject with [Incubator]. Include links to your discussion on the accepted SIG mailing list to guide the discussion.
 
