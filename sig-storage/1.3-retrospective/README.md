@@ -24,7 +24,7 @@ A characteristic list of issues (as not all of them were well captured in GitHub
 4. Hiccups in the operation flow of binding the Claims to Volumes resulted in timeouts of tens of minutes.
 5. External object bleeding. Much of the logic was centered on a state machine that lived in the kubelet. Other kube components had to be aware of the state machine and other aspects of the binding framework to use Volumes. 
 6. Maintenance was difficult as this work was implemented in three different controllers that spread the logic for provisioning, binding, and recycling Volumes.
-7. Kubelet failures on the Node could “strand” storage. Requiring users to manually unmount storage.
+7. Kubelet failures on the Node could "strand" storage. Requiring users to manually unmount storage.
 8. A pod’s long running detach routine could impact other pods as the operations run synchronously in the kubelet sync loop.
 9. Nodes required elevated privileges to be able to trigger attach/detach. Ideally attach/detach should be triggered from master which is considered more secure (see Issue [#12399](https://github.com/kubernetes/kubernetes/issues/12399)).
 
@@ -52,7 +52,7 @@ At the end of the design summit, the attendees of the summit agreed to pseudo co
 
 Resources were established for the PV/PVC controller rework at the conclusion of the design summit and the existing resources on the attach/detach/mount/unmount work deemed acceptable to complete the other two projects.
 
-At this point, a group of engineers were assigned to work on the three efforts that compromised the overhaul. The plan was to not only include development work but comprehensive testing with time to have the functionality “soak” weeks before 1.3 shipped. These engineers were composed of a hybrid team of Red Hat and Google. The allocation of work made making all three sub deliverables in 1.3 aggressive but reasonable. 
+At this point, a group of engineers were assigned to work on the three efforts that compromised the overhaul. The plan was to not only include development work but comprehensive testing with time to have the functionality "soak" weeks before 1.3 shipped. These engineers were composed of a hybrid team of Red Hat and Google. The allocation of work made making all three sub deliverables in 1.3 aggressive but reasonable.
 
 Near the end of 1.3 development, on May 13, 2016, approximately one week prior to code freeze, a key engineer for this effort left the project. This disrupted the Kubelet Volume Redesign effort. The PV/PVC controller was complete (PR [#24331](https://github.com/kubernetes/kubernetes/pull/24331)) and committed at this point. However the Attach/Detach Controller was dependent on the Kubelet Volume Redesign and was impacted.
 
