@@ -12,7 +12,7 @@ You don't actually need federation for geo-location now, but it helps.  The ment
 
 From the enterprise point of view, central IT is in control and knowledge of where stuff gets deployed.  Bob thinks it would be a very bad idea for us to try to solve complex policy ideas and enable them, it's a tar pit.  We should just have the primitives of having different regions and be able to say what goes where.
 
-Currently, you either do node labelling which ends up being complex and dependant on discipline.  Or you have different clusters and you don't have common namespaces.  Some discussion of Intel proposal for cluster metadata.  
+Currently, you either do node labelling which ends up being complex and dependent on discipline.  Or you have different clusters and you don't have common namespaces.  Some discussion of Intel proposal for cluster metadata.  
 
 Bob's mental model is AWS regions and AZs.  For example, if we're building a big cassandra cluster, and you want to make sure that nodes aren't all in the same zone.
 
