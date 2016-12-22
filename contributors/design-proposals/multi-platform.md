@@ -133,7 +133,7 @@ TL;DR;
 
 It should be possible to run clusters with mixed platforms smoothly. After all, bringing heterogenous machines together to a single unit (a cluster) is one of Kubernetes' greatest strengths. And since the Kubernetes' components communicate over HTTP, two binaries of different architectures may talk to each other normally.
 
-The crucial thing here is that the components that handle platform-specific tasks (e.g. kubelet) should expose their platform. In the kubelet case, we've initially solved it by exposing the labels `beta.kubernetes.io/{os,arch}` on every node. This way a user may run binaries for different platforms on a multi-platform cluster, but still it requires manual work to apply the label to every manifest. 
+The crucial thing here is that the components that handle platform-specific tasks (e.g. kubelet) should expose their platform. In the kubelet case, we've initially solved it by exposing the labels `beta.kubernetes.io/{os,arch}` on every node. This way a user may run binaries for different platforms on a multi-platform cluster, but still it requires manual work to apply the label to every manifest.
 
 Also, [the apiserver now exposes](https://github.com/kubernetes/kubernetes/pull/19905) it's platform at `GET /version`. But note that the value exposed at `/version` only is the apiserver's platform; there might be kubelets of various other platforms.
 
