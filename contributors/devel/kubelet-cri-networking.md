@@ -31,7 +31,7 @@ Documentation for other releases can be found at
 
 ## Introduction
 [Container Runtime Interface (CRI)](container-runtime-interface.md) is 
-an ongoing project to allow container
+an ongoing project to allow container 
 runtimes to integrate with kubernetes via a newly-defined API. This document 
 specifies the network requirements for container runtime 
 interface (CRI). CRI networking requirements expand upon kubernetes pod 
@@ -56,7 +56,7 @@ already been torn down, `StopPodSandbox` must skip network tear down and proceed
    * `RemovePodSandbox` may tear down pod’s network, if the networking has 
 not been torn down already. `RemovePodSandbox` must return error on 
 network tear down failure.
-   * Response from `PodSandboxStatus` must include pod sandbox network status.
+   * Response from `PodSandboxStatus` must include pod sandbox network status. 
 The runtime shim must return an empty network status if it failed 
 to construct a network status. 
 
@@ -82,4 +82,4 @@ k8s networking requirements are satisfied.
 
 ## Related Issues
 * Kubelet network plugin for client/server container runtimes [#28667](https://github.com/kubernetes/kubernetes/issues/28667)
-* CRI networking umbrella issue [#37316](https://github.com/kubernetes/kubernetes/issues/37316) 
+* CRI networking umbrella issue [#37316](https://github.com/kubernetes/kubernetes/issues/37316)
