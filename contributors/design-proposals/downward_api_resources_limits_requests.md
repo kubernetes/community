@@ -1,4 +1,4 @@
-# Downward API for resource limits and requests
+# Downward API for resources limits and requests
 
 ## Background
 
@@ -40,7 +40,7 @@ resources too.
 
 2. The second approach requires specifying partial json path selectors
 which are relative to the container spec. This approach helps
-in retrieving a container specific resource limits and requests, and at
+in retrieving a container specific resources limits and requests, and at
 the same time, it is simpler to specify than full json path selectors.
 
 3. In the third approach, users specify fixed strings (magic keys) to retrieve
