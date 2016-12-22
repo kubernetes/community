@@ -142,7 +142,7 @@ kubectl command from the master machine to play with the cluster.
 
 Debugging HollowNodes is a bit more tricky, as if you experience a problem on
 one of them you need to learn which hollow-node pod corresponds to a given
-HollowNode known by the Master. During self-registeration HollowNodes provide
+HollowNode known by the Master. During self-registration HollowNodes provide
 their cluster IPs as Names, which means that if you need to find a HollowNode
 named `10.2.4.5` you just need to find a Pod in external cluster with this
 cluster IP. There’s a helper script

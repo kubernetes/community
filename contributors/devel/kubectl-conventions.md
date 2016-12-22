@@ -153,7 +153,7 @@ generation, etc., and display the output
 * `--output-version=...`: Convert the output to a different API group/version
 
 * `--short`: Output a compact summary of normal output; the format is subject
-to change and is optimizied for reading not parsing.
+to change and is optimized for reading not parsing.
 
 * `--validate`: Validate the resource schema
 
@@ -369,7 +369,7 @@ guarantee that the expected behavior stays the same.
 than just creation, similar to how -f is supported for most general-purpose
 commands.
 
-Generator commands shoud obey to the following conventions:
+Generator commands should obey to the following conventions:
 
 * A `--generator` flag should be defined. Users then can choose between
 different generators, if the command supports them (for example, `kubectl run`

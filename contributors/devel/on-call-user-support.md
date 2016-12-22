@@ -32,13 +32,13 @@ In general, try to direct support questions to:
 1. Documentation, such as the [user guide](../user-guide/README.md) and
 [troubleshooting guide](http://kubernetes.io/docs/troubleshooting/)
 
-2. Stackoverflow
+2. StackOverflow
 
-If you see questions on a forum other than Stackoverflow, try to redirect them
-to Stackoverflow. Example response:
+If you see questions on a forum other than StackOverflow, try to redirect them
+to Stack Overflow. Example response:
 
 ```code
-Please re-post your question to [stackoverflow]
+Please re-post your question to [StackOverflow]
 (http://stackoverflow.com/questions/tagged/kubernetes).
 
 We are trying to consolidate the channels to which questions for help/support
@@ -51,10 +51,10 @@ thread only in one place or, worse, spread across multiple forums. Also, the
 large volume of support issues on github is making it difficult for us to use
 issues to identify real bugs.
 
-The Kubernetes team scans stackoverflow on a regular basis, and will try to
+The Kubernetes team scans StackOverflow on a regular basis, and will try to
 ensure your questions don't go unanswered.
 
-Before posting a new question, please search stackoverflow for answers to
+Before posting a new question, please search StackOverflow for answers to
 similar questions, and also familiarize yourself with:
 
   * [user guide](http://kubernetes.io/docs/user-guide/)
