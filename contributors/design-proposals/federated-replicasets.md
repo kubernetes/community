@@ -201,7 +201,7 @@ FederatedReplicaSetPreferences {
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {  
      "*" : LocalReplicaSet{ Weight: 1}  
-     “C” : LocalReplicaSet{ MaxReplicas: 20,  Weight: 1}  
+     "C" : LocalReplicaSet{ MaxReplicas: 20,  Weight: 1}
    }  
 }
 ```
@@ -220,9 +220,9 @@ Example:
 ```go
 FederatedReplicaSetPreferences {  
    Clusters : map[string]LocalReplicaSet {  
-     “A” : LocalReplicaSet{ Weight: 1000000}  
-     “B” : LocalReplicaSet{ Weight: 1}  
-     “C” : LocalReplicaSet{ Weight: 1}  
+     "A" : LocalReplicaSet{ Weight: 1000000}
+     "B" : LocalReplicaSet{ Weight: 1}
+     "C" : LocalReplicaSet{ Weight: 1}
    }  
 }
 ```
@@ -239,9 +239,9 @@ Example:
 ```go
 FederatedReplicaSetPreferences {  
    Clusters : map[string]LocalReplicaSet {  
-     “A” : LocalReplicaSet{ Weight: 2}  
-     “B” : LocalReplicaSet{ Weight: 1}  
-     “C” : LocalReplicaSet{ Weight: 1}  
+     "A" : LocalReplicaSet{ Weight: 2}
+     "B" : LocalReplicaSet{ Weight: 1}
+     "C" : LocalReplicaSet{ Weight: 1}
    }  
 }
 ```
@@ -488,7 +488,7 @@ Step 2. federation-apiserver persists an FRS into the federation etcd
 Note c: federation-apiserver populates the clusterid field in the FRS
 before persisting it into the federation etcd
 
-Step 3: the federation-level “informer” in FRSC watches federation
+Step 3: the federation-level "informer" in FRSC watches federation
 etcd for new/modified FRS’s, with empty clusterid or clusterid equal
 to federation ID, and if detected, it calls the scheduling code
 
@@ -501,7 +501,7 @@ Note e: at this point let us assume that it only does the even
 distribution, i.e., equal weights for all of the underlying clusters
 
 Step 5. As soon as the scheduler function returns the control to FRSC,
-the FRSC starts a number of cluster-level “informer”s, one per every
+the FRSC starts a number of cluster-level "informer"s, one per every
 target cluster, to watch changes in every target cluster etcd
 regarding the posted LRS’s and if any violation from the scheduled
 number of replicase is detected the scheduling code is re-called for

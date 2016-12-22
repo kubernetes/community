@@ -33,7 +33,7 @@ pkg/client/unversioned}/import_known_versions.go, if you want to make your group
 accessible to other packages in the kube-apiserver binary, binaries that uses
 the client package.
 
-Step 2 and 3 are mechanical, we plan on autogenerate these using the
+Step 2 and 3 are mechanical, we plan on autogenerating these using the
 cmd/libs/go2idl/ tool.
 
 ### Scripts changes and auto-generated code:

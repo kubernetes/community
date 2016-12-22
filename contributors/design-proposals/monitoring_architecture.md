@@ -22,7 +22,7 @@ The architecture is illustrated in the diagram in the Appendix of this doc.
 ## Introduction and Objectives
 
 This document proposes a high-level monitoring architecture for Kubernetes. It covers
-a subset of the issues mentioned in the “Kubernetes Monitoring Architecture” doc,
+a subset of the issues mentioned in the "Kubernetes Monitoring Architecture" doc,
 specifically focusing on an architecture (components and their interactions) that
 hopefully meets the numerous requirements. We do not specify any particular timeframe
 for implementing this architecture, nor any particular roadmap for getting there.
@@ -43,7 +43,7 @@ We divide system metrics into
 of its internal components and core utilities -- for example, metrics used for scheduling
 (including the inputs to the algorithms for resource estimation, initial resources/vertical
 autoscaling, cluster autoscaling, and horizontal pod autoscaling excluding custom metrics),
-the kube dashboard, and “kubectl top.” As of now this would consist of cpu cumulative usage,
+the kube dashboard, and "kubectl top." As of now this would consist of cpu cumulative usage,
 memory instantaneous usage, disk usage of pods, disk usage of containers
 * *non-core metrics*, which are not interpreted by Kubernetes; we generally assume they
 include the core metrics (though not necessarily in a format Kubernetes understands) plus
@@ -97,7 +97,7 @@ scheduler)
 These sources are scraped by a component we call *metrics-server* which is like a slimmed-down
 version of today's Heapster. metrics-server stores locally only latest values and has no sinks.
 metrics-server exposes the master metrics API. (The configuration described here is similar
-to the current Heapster in “standalone” mode.)
+to the current Heapster in "standalone" mode.)
 [Discovery summarizer](../../docs/proposals/federated-api-servers.md)
 makes the master metrics API available to external clients such that from the client’s perspective
 it looks the same as talking to the API server.
@@ -111,7 +111,7 @@ Eventually the core metrics pipeline might also collect metrics from Kubelet and
 themselves (e.g. CPU usage of Kubelet), even though they do not run in containers.
 
 The core metrics pipeline is intentionally small and not designed for third-party integrations.
-“Full-fledged” monitoring is left to third-party systems, which provide the monitoring pipeline
+"Full-fledged" monitoring is left to third-party systems, which provide the monitoring pipeline
 (see next section) and can run on Kubernetes without having to make changes to upstream components.
 In this way we can remove the burden we have today that comes with maintaining Heapster as the
 integration point for every possible metrics source, sink, and feature.

@@ -360,7 +360,7 @@ Users will specify a snapshotting schedule for particular volumes, which Kuberne
 
         12. User experience is the same as (b)
 
-        13. Instead of storing the snapshot attribute on the pod/PV API object, save this information in an annotation. For instance, if we define a pod with two volumes we might have {"ssTimes-vol1": [1,5], “ssTimes-vol2”: [2,17]} where the values are slices of integer values representing UTC hours.
+        13. Instead of storing the snapshot attribute on the pod/PV API object, save this information in an annotation. For instance, if we define a pod with two volumes we might have {"ssTimes-vol1": [1,5], "ssTimes-vol2": [2,17]} where the values are slices of integer values representing UTC hours.
 
         14. Pros
 

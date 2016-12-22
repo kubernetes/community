@@ -120,7 +120,7 @@ replica of the daemon pod on the node.
 daemon pods on the node for DaemonSets whose pod template nodeSelectors match
 the node’s labels.
   - Suppose the user launches a DaemonSet that runs a logging daemon on all
-nodes labeled “logger=fluentd”. If the user then adds the “logger=fluentd” label
+nodes labeled "logger=fluentd". If the user then adds the "logger=fluentd" label
 to a node (that did not initially have the label), the logging daemon will
 launch on the node. Additionally, if a user removes the label from a node, the
 logging daemon on that node will be killed.

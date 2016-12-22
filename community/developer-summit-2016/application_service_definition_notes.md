@@ -20,7 +20,7 @@ One of the things we're discussing the Kompose API.  We want to get rid of this 
 
 What's the gap between compose files and the goal?  As an example, say you want to run a webserver pod.  You have to deal with ingress, and service, and replication controller, and a bunch of other things.  What's the equivalent of "docker run" which is easy to get. The critical thing is how fast you can learn it.
 
-We also need to have reversability so that if you use compose you don't have to edit the kube config after deployment, you can still use the simple concepts.  The context of the chart needs to not be lost.
+We also need to have reversibility so that if you use compose you don't have to edit the kube config after deployment, you can still use the simple concepts.  The context of the chart needs to not be lost.
 
 There was discussion of templating applications.  Person argued that it's really a type system.  Erin suggested that it's more like a personal template, like the car seat configuration.  
 

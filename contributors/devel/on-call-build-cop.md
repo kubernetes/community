@@ -12,7 +12,7 @@ and [pulls](https://github.com/kubernetes/kubernetes/pulls): Your job is to be
 the first responder to all new issues and PRs. If you are not equipped to do
 this (which is fine!), it is your job to seek guidance!
 
-  * Support issues should be closed and redirected to Stackoverflow (see example
+  * Support issues should be closed and redirected to StackOverflow (see example
 response below).
 
   * All incoming issues should be tagged with a team label

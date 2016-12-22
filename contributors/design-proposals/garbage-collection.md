@@ -344,7 +344,7 @@ In case the garbage collector is mistakenly deleting objects, we should provide 
 
   * A preliminary design
 
-    This is a generic design for “undoing a deletion”, not specific to undoing cascading deletion.
+    This is a generic design for "undoing a deletion", not specific to undoing cascading deletion.
     * Add a `/archive` sub-resource to every resource, it's used to store the spec of the deleted objects.
     * Before an object is deleted from the registry, the API server clears fields like DeletionTimestamp, then creates the object in /archive and sets a TTL.
     * Add a `kubectl restore` command, which takes a resource/name pair as input, creates the object with the spec stored in the /archive, and deletes the archived object.
