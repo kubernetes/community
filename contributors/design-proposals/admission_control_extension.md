@@ -342,6 +342,146 @@ response <------- handle
 ```
 
 
+##### Bypassing initializers
+
+Initializers, like external admission hooks, raise the potential for a cluster that cannot
+make progress or heal itself. An initializer on pods could block an emergency fallback
+scheduler from launching a new scheduler pod. An initializer on the endpoints resource could
+prevent masters from registering themselves, blocking an extension API server from observing
+endpoints changes to allow it to watch endpoints. In general, new initializers must be
+careful to not create circular dependencies with the masters.
+
+The ability to set an empty initializer list allows cluster level components to make progress
+in the face of extension. Additional information may need to be returned with an object
+creation error to indicate which component failed to initialize.
+
+
+#### Generic external admission webhook
+
+Existing webhooks demonstrate specific admission callouts for image policy. In general, the `admission.Interface`
+already defines a reasonable pattern for mutations. Admission is much less common for retrieval operations.
+
+Add a new `GenericAdmissionWebhook` that is a list of endpoints that will receive POST operations. The schema
+of the object is modelled after `SubjectAccessReview` and `admission.Interface`. The caller posts the object
+to the server and expects a 200, 204 or 400 response. If the response is 200 or 204, the caller proceeds. If
+the response is 400, the client should interpret the response body to determine the "status" sub field and
+then use that as the response.
+
+```
+POST [arbitrary_url]
+{
+    "kind": "AdmissionReview",
+    "apiVersion": "admission.k8s.io/v1",
+    "spec": {
+        "resource": "pods",
+        "subresource": "",
+        "operation": "Create",
+        "object": {...},
+        "oldObject": nil,
+        "userInfo": {
+            "name": "user1",
+            "uid": "cn=user,dn=ou",
+            "groups": ["g=1"]
+        }
+    },
+    "status": {
+        "status": "Failure",
+        "message": "...",
+        "reason": "Forbidden",
+        "code": 403,
+        ...
+    }
+}
+
+400 Bad Request
+{
+    "kind": "AdmissionReview",
+    "apiVersion": "admission.k8s.io/v1",
+    "spec": {
+        ...
+    },
+    "status": {
+        "status": "Failure",
+        "message": "...",
+        "reason": "Forbidden",
+        "code": 403,
+        ...
+    }
+}
+```
+
+Clients may return 204 as an optimization. `oldObject` may be sent if this is an update operation. This
+API explicitly does not allow mutations, but leaves open the possibility for that to be added in the future.
+
+Each webhook must be non-mutating and will be invoked in parallel. The first failure will terminate processing,
+and the caller may choose to retry calls and so submission must be idempotent.
+
+Because admission is performance critical, the following considerations are taken:
+
+1. The caller may pass the received body bytes AS-IS to the admission controller, so defaulting may not be performed.
+2. Protobuf will be the expected serialization format - JSON is shown above for readability, but the content-type wrapper will be used to encode bytes.
+3. The admission object will be serialized once and sent to all callers
+4. To minimize fan-out variance, future implementations may set strict timeouts and dispatch multiple requests.
+
+Admission is a high security operation, so end-to-end TLS encryption is expected and the remote endpoint
+should be authorized via strong signing, mutual-auth, or high security.
+
+
+##### Bypassing external admission hooks
+
+There may be scenarios where an external admission hook blocks a system critical loop in a non-obvious way -
+by preventing node updates that prevents a new admission pod from being created, for instance. One option
+is to allow administrators to request fail open on specific calls, or to require that certain special resource
+paths (initializers dynamic config path) are always fail open. Alternatively, it may be desirable for
+administrative users to bypass admission completely.
+
+
+#### Dynamic configuration
+
+Trusted clients should be able to modify the initialization and external admission hooks on the fly and expect
+that configuration is updated quickly. Extension API servers should also be able to leverage central
+configuration, but may opt for alternate mechanisms.
+
+The initializer admission controller and the generic webhook admission controller should dynamically load config
+from a `ConfigMap` holding the following configuration schema:
+
+```
+type AdmissionControlConfiguration struct {
+    // ResourceInitializers is a list of resources and their default initializers
+    ResourceInitializers []ResourceDefaultInitializer
+
+    ExternalAdmissionHooks []ExternalAdmissionHook
+}
+
+type ResourceDefaultInitializer struct {
+    // Resource is the resource that should be initialized
+    Resource string
+    // Initializers are the default names that will be registered to this resource
+    Initializers []string
+}
+
+type ExternalAdmissionHook struct {
+    // Operations is the list of operations this hook will be invoked on - Create, Update, or *
+    // for all operations. Defaults to '*'.
+    Operations []string
+    // Resources are the resource names this hook should be invoked on. '*' is all resources.
+    Resources []string
+    // Subresources are the list of subresources this hook should be invoked on. '*' is all resources.
+    Subresources []string
+
+    // TODO define client configuration
+
+    // FailurePolicy defines how unrecognized errors from the admission endpoint are handled -
+    // allowed values are Ignore, Retry, Fail. Default value is Fail
+    FailurePolicy FailurePolicyType
+}
+```
+
+All changes to this config must be done in an extensible matter - when adding a new hook or initializer,
+first verify the new agent is online. Removing a hook or initializer must occur before disabling the
+remote endpoint, and all queued items must complete.
+
+
 ### Alternatives considered
 
 The following are all viable alternatives to this specification, but have some downsides against the requirements above.
