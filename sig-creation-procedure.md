@@ -1,29 +1,6 @@
 ### SIG creation procedure
 
 #### 
-**Create the GitHub teams**
-
-Create the GitHub teams at [https://github.com/orgs/kubernetes/new-team](https://github.com/orgs/kubernetes/new-team), using the following name convention:
-
-* sig-foo-misc 
-* sig-foo-test-failures
-* sig-foo-bugs
-* sig-foo-feature-requests
-* sig-foo-proposals
-* sig-foo-pr-reviews
-* sig-foo-api-reviews
-
-Example:
-
-* sig-onprem-misc
-* sig-onprem-test-failures
-* sig-onprem-bugs
-* sig-onprem-feature-requests
-* sig-onprem-proposals
-* sig-onprem-pr-reviews
-* sig-onprem-api-reviews
-
-#### 
 **Google Groups creation**
 
 Create Google Groups at [https://groups.google.com/forum/#!creategroup](https://groups.google.com/forum/#!creategroup), following the procedure: 
@@ -81,3 +58,28 @@ Example:
 * k8s-sig-onprem-proposals
 * k8s-sig-onprem-pr-reviews
 * k8s-sig-onprem-api-reviews
+
+#### 
+**Create the GitHub teams**
+
+Create the GitHub teams at [https://github.com/orgs/kubernetes/new-team](https://github.com/orgs/kubernetes/new-team), using the name convention below. Please, add the GitHub users (created before) to the GitHub teams respectively.
+
+Name convention:
+
+* sig-foo-misc 
+* sig-foo-test-failures
+* sig-foo-bugs
+* sig-foo-feature-requests
+* sig-foo-proposals
+* sig-foo-pr-reviews
+* sig-foo-api-reviews
+
+Example:
+
+* sig-onprem-misc
+* sig-onprem-test-failures
+* sig-onprem-bugs
+* sig-onprem-feature-requests
+* sig-onprem-proposals
+* sig-onprem-pr-reviews
+* sig-onprem-api-reviews
