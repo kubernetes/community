@@ -43,7 +43,7 @@ of use cases (intentionally vague):
 The above use cases are by necessity left imprecisely defined.  The
 rest of this document explores these use cases and their implications
 in further detail, and compares a few alternative high level
-approaches to addressing them.  The idea of cluster federation has
+approaches to address them.  The idea of cluster federation has
 informally become known as _"Ubernetes"_.
 
 ## Summary/TL;DR

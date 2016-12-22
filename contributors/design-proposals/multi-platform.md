@@ -415,7 +415,7 @@ func main() {
 
 ```console
 $ CGO_ENABLED=1 CC=arm-linux-gnueabi-gcc GOOS=linux GOARCH=arm go build main-cgo.go
-$ file main-cgo 
+$ file main-cgo
 ./main-cgo: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, 
     interpreter /lib/ld-linux.so.3, for GNU/Linux 2.6.32, not stripped
 ```
