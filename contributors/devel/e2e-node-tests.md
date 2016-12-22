@@ -106,7 +106,7 @@ make test-e2e-node REMOTE=true IMAGES="<comma-separated-list-images>"
 
 ## Run tests against a running GCE instance (not an image)
 
-This is useful if you have an host instance running already and want to run the tests there instead of on a new instance.
+This is useful if you have a host instance running already and want to run the tests there instead of on a new instance.
 
 ```sh
 make test-e2e-node REMOTE=true HOSTS="<comma-separated-list-of-hostnames>"
