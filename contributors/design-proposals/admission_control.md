@@ -26,7 +26,7 @@ admission control strategies.
 This proposal documents the basic design, and describes how any number of
 admission control plug-ins could be injected.
 
-Implementation of specific admission control strategies are handled in separate
+Implementation of specific admission control strategies is handled in separate
 documents.
 
 ## kube-apiserver

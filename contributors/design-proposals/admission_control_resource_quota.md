@@ -121,11 +121,11 @@ The quota may be allocated as follows:
 | Y | C2 | 2 | 2 | Guaranteed | 2 |
 | Z | C3 | 1 | 3 | Burstable | 1 |
 
-It is possible that the pods may consume 9 cpu over a given time period
+It is possible that the pods may consume 9 cpus over a given time period
 depending on the nodes available cpu that held pod X and Z, but since we
 scheduled X and Z relative to the request, we only track the requesting value
 against their allocated quota. If one wants to restrict the ratio between the
-request and limit, it is encouraged that the user define a **LimitRange** with
+request and limit, it is encouraged that the user defines a **LimitRange** with
 **LimitRequestRatio** to control burst out behavior. This would in effect, let
 an administrator keep the difference between request and limit more in line with
 tracked usage if desired.
