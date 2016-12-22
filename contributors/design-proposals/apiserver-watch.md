@@ -28,7 +28,7 @@ etcd will then be stored in a cache in apiserver. This cache is in fact a
 "rolling history window" that will support clients having some amount of latency
 between their list and watch calls. Thus it will have a limited capacity and
 whenever a new change comes from etcd when a cache is full, the oldest change
-will be remove to make place for the new one.
+will be removed to make place for the new one.
 
 When a client sends a watch request to apiserver, instead of redirecting it to
 etcd, it will cause:
@@ -127,7 +127,7 @@ the same time, we can introduce an additional etcd event type:
 [EtcdResync](../../pkg/storage/etcd/etcd_watcher.go#L36)
 
   Whenever relisting will be done to refresh the internal watch to etcd,
-  EtcdResync event will be send to all the watchers. It will contain the
+  EtcdResync event will be sent to all the watchers. It will contain the
   full list of all the objects the watcher is interested in (appropriately
   filtered) as the parameter of this watch event.
   Thus, we need to create the EtcdResync event, extend watch.Interface and
