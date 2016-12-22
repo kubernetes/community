@@ -31,7 +31,7 @@ It would be great to have a developer storage class which ties back to a fake NF
 
 Will there be a API for the application?  To communicate members joining and leaving.  Answer today is that's what the KubeAPI is for.
 
-The hard problem is configchange.  You can't do config change unless you bootstrap it correctly.  If kube is changing things under me I can't maintant quorum (as an app).  This happens when expanding the set of nodes.  You need to figure out who's in and who's out.  
+The hard problem is configchange.  You can't do config change unless you bootstrap it correctly.  If kube is changing things under me I can't maintain quorum (as an app).  This happens when expanding the set of nodes.  You need to figure out who's in and who's out.  
 
 Where does the glue software which relates the statefulset to the application?  But different applications handle things like consensus and quorum very differently.  What about notifying the service that you're available for traffic.  Example for this with etcd with readiness vs. membership service.  You can have two states, one where the node is ready, and one where the application is ready.  Readiness vs. liveness check could differentiate?
 
