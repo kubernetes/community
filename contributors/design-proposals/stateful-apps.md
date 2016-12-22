@@ -64,7 +64,7 @@ While it is possible to emulate the guarantees described above by leveraging mul
 (for distinct pod templates and pod identities) and multiple services (for stable network identity), the
 resulting objects are hard to maintain and must be copied manually in order to scale a cluster.
 
-By constrast, a DaemonSet *can* offer some of the guarantees above, by leveraging Nodes as stable, long-lived
+By contrast, a DaemonSet *can* offer some of the guarantees above, by leveraging Nodes as stable, long-lived
 entities. An administrator might choose a set of nodes, label them a particular way, and create a
 DaemonSet that maps pods to each node. The storage of the node itself (which could be network attached
 storage, or a local SAN) is the persistent storage. The network identity of the node is the stable
@@ -204,7 +204,7 @@ match a volume mount within the pod template.
 
 Future work:
 
-* In the future other resources may be added that must also be templated - for instance, secrets (unique secret per member), config data (unique config per member), and in the futher future, arbitrary extension resources.
+* In the future other resources may be added that must also be templated - for instance, secrets (unique secret per member), config data (unique config per member), and in the further future, arbitrary extension resources.
 * Consider allowing the identity value itself to be passed as an environment variable via the downward API
 * Consider allowing per identity values to be specified that are passed to the pod template or volume claim.
 
@@ -276,7 +276,7 @@ The StatefulSet controller is expected to execute like other controllers, as a s
 considering designing for safety first, the possibility of the controller running concurrently cannot
 be overlooked, and so it is important to ensure that duplicate pod identities are not achieved.
 
-There are two mechanisms to acheive this at the current time. One is to leverage unique names for pods
+There are two mechanisms to achieve this at the current time. One is to leverage unique names for pods
 that carry the identity of the pod - this prevents duplication because etcd 2 can guarantee single
 key transactionality. The other is to use the status field of the StatefulSet to coordinate membership
 information. It is possible to leverage both at this time, and encourage users to not assume pod
@@ -300,7 +300,7 @@ and in the future provide more tools to reduce the amount of work necessary to m
 state.
 
 The first mechanism is that the StatefulSet controller blocks creation of new pods until all previous pods
-are reporting a healthy status. The StatefulSet controller uses the strong serializability of the underyling
+are reporting a healthy status. The StatefulSet controller uses the strong serializability of the underlying
 etcd storage to ensure that it acts on a consistent view of the cluster membership (the pods and their)
 status, and serializes the creation of pods based on the health state of other pods. This simplifies
 reasoning about how to initialize a StatefulSet, but is not sufficient to guarantee split brain does not
@@ -327,7 +327,7 @@ Criteria for advancing to beta:
 
 Criteria for advancing to GA:
 
-* StatefulSets solve 80% of clustered software configuraton with minimal input from users and are safe from common split brain problems
+* StatefulSets solve 80% of clustered software configuration with minimal input from users and are safe from common split brain problems
   * Several representative examples of StatefulSets from the community have been proven/tested to be "correct" for a variety of partition problems (possibly via Jepsen or similar)
   * Sufficient testing and soak time has been in place (like for Deployments) to ensure the necessary features are in place.
 * StatefulSets are considered easy to use for deploying clustered software for common cases
