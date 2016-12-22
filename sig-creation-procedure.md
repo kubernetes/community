@@ -13,7 +13,7 @@ Create the GitHub teams at [https://github.com/orgs/kubernetes/new-team](https:/
 * sig-foo-pr-reviews
 * sig-foo-api-reviews
 
-I.e:
+Example:
 
 * sig-onprem-misc
 * sig-onprem-test-failures
@@ -44,7 +44,7 @@ Name convention:
 * kubernetes-sig-foo-pr-reviews
 * kubernetes-sig-foo-api-reviews
 
-I.e:
+Example:
 
 * kubernetes-sig-onprem-misc
 * kubernetes-sig-onprem-test-failures
@@ -72,7 +72,7 @@ Name convention:
 * k8s-sig-foo-pr-reviews
 * k8s-sig-foo-api-reviews
 
-I.e:
+Example:
 
 * k8s-sig-onprem-misc
 * k8s-sig-onprem-test-failures
