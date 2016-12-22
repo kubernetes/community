@@ -45,4 +45,4 @@ Need to identify things which are missing in core kubernetes, if there are any.
 * Reduce the verbosity of injecting configmaps.  We want to simplify the main kubernetes API.  For example, there should be a way to map all variables to ENV as one statement.
 * Document where things are hard to understand with deployments.
 * Document where things don't work with minikube and deployments.
-* Document what's the path from minecraft.jar to running it on a kubernetes cluster?
+* Document what's the path from minecraft.jar to running it on a kubernetes cluster.
