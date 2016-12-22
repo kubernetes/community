@@ -101,14 +101,14 @@ something (or that you won't remember what you yourself did), comment it. If
 you think there's something pretty obvious that we could follow up on, add a
 TODO. Many code-review comments are about this exact issue.
 
-## 5. Tests are almost always required
+## 6. Tests are almost always required
 
 Nothing is more frustrating than doing a review, only to find that the tests are
 inadequate or even entirely absent. Very few PRs can touch code and NOT touch
 tests. If you don't know how to test Feature-X - ask!  We'll be happy to help
 you design things for easy testing or to suggest appropriate test cases.
 
-## 6. Look for opportunities to generify
+## 7. Look for opportunities to generify
 
 If you find yourself writing something that touches a lot of modules, think hard
 about the dependencies you are introducing between packages. Can some of what
@@ -121,7 +121,7 @@ month and it happens to exactly duplicate some tricky stuff from Feature-W,
 consider prefactoring core logic out and using it in both Feature-W and
 Feature-X. But do that in a different commit or PR, please.
 
-## 7. Fix feedback in a new commit
+## 8. Fix feedback in a new commit
 
 Your reviewer has finally sent you some feedback on Feature-X. You make a bunch
 of changes and ... what?  You could patch those into your commits with git
@@ -157,7 +157,7 @@ description paragraph describing in more detail the change intended. Do not link
 pull requests by `#` in a commit description, because GitHub creates lots of
 spam. Instead, reference other PRs via the PR your commit is in.
 
-## 8. KISS, YAGNI, MVP, etc
+## 9. KISS, YAGNI, MVP, etc
 
 Sometimes we need to remind each other of core tenets of software design - Keep
 It Simple, You Aren't Gonna Need It, Minimum Viable Product, and so on. Adding
@@ -165,7 +165,7 @@ features "because we might need it later" is antithetical to software that
 ships. Add the things you need NOW and (ideally) leave room for things you
 might need later - but don't implement them now.
 
-## 9. Push back
+## 10. Push back
 
 We understand that it is hard to imagine, but sometimes we make mistakes. It's
 OK to push back on changes requested during a review. If you have a good reason
@@ -173,7 +173,7 @@ for doing something a certain way, you are absolutely allowed to debate the
 merits of a requested change. You might be overruled, but you might also
 prevail. We're mostly pretty reasonable people. Mostly.
 
-## 10. I'm still getting stalled - help?!
+## 11. I'm still getting stalled - help?!
 
 So, you've done all that and you still aren't getting any PR love? Here's some
 things you can do that might help kick a stalled process along:

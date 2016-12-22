@@ -330,7 +330,7 @@ running:
 
 ```
 cluster/log-dump.sh <directory>
-````
+```
 
 will ssh to the master and all nodes and download a variety of useful logs to
 the provided directory (which should already exist).
