@@ -222,7 +222,7 @@ In the Simple Profile:
 
 Namespaces versus userAccount vs. Labels:
 - `userAccount`s are intended for audit logging (both name and UID should be
-logged), and to define who has access to `namespace`s.
+logged), and to define who has accessed to `namespace`s.
 - `labels` (see [docs/user-guide/labels.md](../../docs/user-guide/labels.md))
 should be used to distinguish pods, users, and other objects that cooperate
 towards a common goal but are different in some way, such as version, or
