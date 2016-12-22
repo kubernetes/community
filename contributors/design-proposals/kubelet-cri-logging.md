@@ -15,7 +15,7 @@ though this proposal does not touch upon these logs, the direction of
 this proposal is aligned with one of the most-discussed solutions, logging
 volumes [1], for general logging management.
 
-*In this proposal, “logs” refer to the stdout/stderr streams of the
+*In this proposal, "logs" refer to the stdout/stderr streams of the
 containers, unless specified otherwise.*
 
 Previous CRI logging issues:
@@ -40,7 +40,7 @@ docker writes the stdout/stderr streams to a file in the json format as shown
 below.
 
 ```
-{“log”: “The actual log line”, “stream”: “stderr”, “time”: “2016-10-05T00:00:30.082640485Z”}
+{"log": "The actual log line", "stream": "stderr", "time": "2016-10-05T00:00:30.082640485Z"}
 ```
 
 Docker deletes the log files when the container is removed, and a cron-job (or
@@ -57,8 +57,8 @@ using [`kubectl logs`]
 `kubectl logs` supports flags such as `--since` that requires understanding of
 the format and the metadata (i.e., timestamps) of the logs. In the current
 implementation, kubelet calls `docker logs` with parameters to return the log
-content. As of now, docker only supports `log` operations for the “journal” and
-“json-file” drivers [2]. In other words, *the support of `kubectl logs` is not
+content. As of now, docker only supports `log` operations for the "journal" and
+"json-file" drivers [2]. In other words, *the support of `kubectl logs` is not
 universal in all kuernetes deployments*.
 
 **Cluster logging support**

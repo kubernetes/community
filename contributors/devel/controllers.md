@@ -22,19 +22,19 @@ When you’re writing controllers, there are few guidelines that will help make 
 you’re looking for.
 
 1. Operate on one item at a time.  If you use a `workqueue.Interface`, you’ll be able to queue changes for a
- particular resource and later pop them in multiple “worker” gofuncs with a guarantee that no two gofuncs will
+ particular resource and later pop them in multiple "worker" gofuncs with a guarantee that no two gofuncs will
  work on the same item at the same time.
 
  Many controllers must trigger off multiple resources (I need to "check X if Y changes"), but nearly all controllers
- can collapse those into a queue of “check this X” based on relationships.  For instance, a ReplicaSetController needs
+ can collapse those into a queue of "check this X" based on relationships.  For instance, a ReplicaSetController needs
  to react to a pod being deleted, but it does that by finding the related ReplicaSets and queuing those.
 
 
 1. Random ordering between resources. When controllers queue off multiple types of resources, there is no guarantee
  of ordering amongst those resources.
 
- Distinct watches are updated independently.  Even with an objective ordering of “created resourceA/X” and “created
- resourceB/Y”, your controller could observe “created resourceB/Y” and “created resourceA/X”.
+ Distinct watches are updated independently.  Even with an objective ordering of "created resourceA/X" and "created
+ resourceB/Y", your controller could observe "created resourceB/Y" and "created resourceA/X".
 
 
 1. Level driven, not edge driven.  Just like having a shell script that isn’t running all the time, your controller
@@ -92,7 +92,7 @@ you’re looking for.
  cases and to be confident that your controller doesn’t accidentally lose things it should retry for.
 
 
-1. Watches and Informers will “sync”.  Periodically, they will deliver every matching object in the cluster to your
+1. Watches and Informers will "sync".  Periodically, they will deliver every matching object in the cluster to your
  `Update` method.  This is good for cases where you may need to take additional action on the object, but sometimes you
  know there won’t be more work to do.
 

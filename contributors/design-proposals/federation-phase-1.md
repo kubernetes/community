@@ -4,15 +4,15 @@
 
 ## INTRODUCTION
 
-In this document we propose a design for the “Control Plane” of
-Kubernetes (K8S) federation (a.k.a. “Ubernetes”). For background of
+In this document we propose a design for the "Control Plane" of
+Kubernetes (K8S) federation (a.k.a. "Ubernetes"). For background of
 this work please refer to
 [this proposal](../../docs/proposals/federation.md).
 The document is arranged as following. First we briefly list scenarios
 and use cases that motivate K8S federation work. These use cases drive
 the design and they also verify the design. We summarize the
-functionality requirements from these use cases, and define the “in
-scope” functionalities that will be covered by this design (phase
+functionality requirements from these use cases, and define the "in
+scope" functionalities that will be covered by this design (phase
 one). After that we give an overview of the proposed architecture, API
 and building blocks. And also we go through several activity flows to
 see how these building blocks work together to support use cases.
@@ -263,7 +263,7 @@ $version.clusterStatus
 </tbody>
 </table>
 
-**For simplicity we didn’t introduce a separate “cluster metrics” API
+**For simplicity we didn’t introduce a separate "cluster metrics" API
 object here**. The cluster resource metrics are stored in cluster
 status section, just like what we did to nodes in K8S. In phase one it
 only contains available CPU resources and memory resources. The
@@ -271,7 +271,7 @@ cluster controller will periodically poll the underlying cluster API
 Server to get cluster capability. In phase one it gets the metrics by
 simply aggregating metrics from all nodes. In future we will improve
 this with more efficient ways like leveraging heapster, and also more
-metrics will be supported.  Similar to node phases in K8S, the “phase”
+metrics will be supported.  Similar to node phases in K8S, the "phase"
 field includes following values:
 
 + pending: newly registered clusters or clusters suspended by admin
@@ -338,9 +338,9 @@ constraints, like cluster preference ordering, desired number of
 splitted workloads, desired ratio of workloads spread on different
 clusters, etc.
 
-Besides this explicit “clusterSelector” filter, a workload may have
+Besides this explicit "clusterSelector" filter, a workload may have
 some implicit scheduling restrictions. For example it defines
-“nodeSelector” which can only be satisfied on some particular
+"nodeSelector" which can only be satisfied on some particular
 clusters. How to handle this will be addressed after phase one.
 
 ## Federated Services
@@ -396,7 +396,7 @@ proposed solutions like resource reservation mechanisms.
 
 ## Service Discovery
 
-This part has been included in the section “Federated Service” of
+This part has been included in the section "Federated Service" of
 document
 “[Federated Cross-cluster Load Balancing and Service Discovery Requirements and System Design](federated-services.md))”.
 Please refer to that document for details.

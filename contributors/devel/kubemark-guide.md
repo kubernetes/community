@@ -14,8 +14,8 @@ and how to use it.
 ## Architecture
 
 On a very high level Kubemark cluster consists of two parts: real master
-components and a set of “Hollow” Nodes. The prefix “Hollow” means an
-implementation/instantiation of a component with all “moving” parts mocked out.
+components and a set of "Hollow" Nodes. The prefix "Hollow" means an
+implementation/instantiation of a component with all "moving" parts mocked out.
 The best example is HollowKubelet, which pretends to be an ordinary Kubelet, but
 does not start anything, nor mount any volumes - it just lies it does. More
 detailed design and implementation details are at the end of this document.
