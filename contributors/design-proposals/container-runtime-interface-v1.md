@@ -54,7 +54,7 @@ The non-goals include
 
 The existing pod-level interface will remain as it is in the near future to
 ensure supports of all existing runtimes are continued. Meanwhile, we will
-work with all parties involved to switching to the proposed interface.
+work with all parties involved to switch to the proposed interface.
 
 
 ## Container Runtime Interface

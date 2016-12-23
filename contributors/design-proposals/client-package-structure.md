@@ -100,7 +100,7 @@ Action items:
 * Possibly, convert to an interface (currently, it's a struct). This will allow
   extending the error-checking monad that's currently in request.go up an
   additional layer.
-* Switch from ParamX("x") functions to using types representing the collection
+* Switch from ParamX("x") functions to using types for representing the collection
   of parameters and the Codec for query parameter serialization.
 * Any other Kubernetes group specific behavior should also be removed from
   RESTClient.
