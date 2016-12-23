@@ -260,7 +260,7 @@ and then the master configures the route-table with the assigned CIDR. The
 kube-up script performs a health-check on the nodes but it's a self-check that
 is not required.
 
-If attempting this configuration manually, it is recommend to follow along
+If attempting this configuration manually, it is recommended to follow along
 with the kube-up script, and being sure to tag everything with a tag with name
 `KubernetesCluster` and value set to a unique cluster-id. Also, passing the
 right configuration options to Salt when not using the script is tricky: the

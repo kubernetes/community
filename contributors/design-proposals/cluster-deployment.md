@@ -16,7 +16,7 @@ together, but that is out of scope of this document.
 
 # Deployment flow
 
-**Note**: _Exit critieria_ in the following sections are not intended to list all tests that should pass,
+**Note**: _Exit criteria_ in the following sections are not intended to list all tests that should pass,
 rather list those that must pass.
 
 ## Step 1: Provision cluster
@@ -104,7 +104,7 @@ Each node can be deployed separately and the implementation should make it ~impo
 1. kubelet config file - we will read kubelet configuration file from disk instead of apiserver; it will
 be generated locally and copied to all nodes.
 
-**Exit critera**:
+**Exit criteria**:
 
 1. All nodes are registered, but not ready due to lack of kubernetes networking.
 
