@@ -68,7 +68,7 @@ The community meeting calendar is available as an [iCal to subscribe to] (https:
 | [UI](sig-ui/README.md) | [@romlein (Dan Romlein, Apprenda)](https://github.com/romlein)<br> [@bryk (Piotr Bryk, Google)](https://github.com/bryk) | [Group](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) | [#sig-ui](https://kubernetes.slack.com/messages/sig-ui/) | Wednesdays at 4:00 PM CEST |
 | [Windows](sig-windows/README.md) | [@michmike77 (Michael Michael, Apprenda)](https://github.com/michmike)| [Group](https://groups.google.com/forum/#!forum/kubernetes-sig-windows) | [#sig-windows](https://kubernetes.slack.com/messages/sig-windows) | Bi-weekly Tuesdays at 10:00 AM PT |
 
-### How to start a SIG
+### How to start an SIG
 
 * Propose the new SIG publicly, including a brief mission statement, by emailing kubernetes-dev@googlegroups.com and kubernetes-users@googlegroups.com, then wait a couple of days for feedback
 * Create a group with at least 2 owners (and one of which should be sarahnovotny at google.com): kubernetes-sig-foo@googlegroups.com

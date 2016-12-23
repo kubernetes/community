@@ -341,7 +341,7 @@ $ROOT
 ## Implementation Plan
 
 The implementation plan is outlined in the next sections.
-We will have a 'experimental-cgroups-per-qos' flag to specify if the user wants to use the QoS based cgroup hierarchy. The flag would be set to false by default at least in v1.5.
+We will have an 'experimental-cgroups-per-qos' flag to specify if the user wants to use the QoS based cgroup hierarchy. The flag would be set to false by default at least in v1.5.
 
 #### Top level Cgroups for QoS tiers
 

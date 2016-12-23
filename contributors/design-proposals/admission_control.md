@@ -45,7 +45,7 @@ An **AdmissionControl** plug-in is an implementation of the following interface:
 package admission
 
 // Attributes is an interface used by a plug-in to make an admission decision
-// on a individual request.
+// on an individual request.
 type Attributes interface {
   GetNamespace() string
   GetKind() string

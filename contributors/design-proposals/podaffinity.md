@@ -192,9 +192,9 @@ One thing that makes affinity and anti-affinity tricky is symmetry.
 Imagine a cluster that is running pods from two services, S1 and S2. Imagine
 that the pods of S1 have a RequiredDuringScheduling anti-affinity rule "do not
 run me on nodes that are running pods from S2." It is not sufficient just to
-check that there are no S2 pods on a node when you are scheduling a S1 pod. You
+check that there are no S2 pods on a node when you are scheduling an S1 pod. You
 also need to ensure that there are no S1 pods on a node when you are scheduling
-a S2 pod, *even though the S2 pod does not have any anti-affinity rules*.
+an S2 pod, *even though the S2 pod does not have any anti-affinity rules*.
 Otherwise if an S1 pod schedules before an S2 pod, the S1 pod's
 RequiredDuringScheduling anti-affinity rule can be violated by a later-arriving
 S2 pod. More specifically, if S1 has the aforementioned RequiredDuringScheduling
@@ -206,7 +206,7 @@ Note that while RequiredDuringScheduling anti-affinity is symmetric,
 RequiredDuringScheduling affinity is *not* symmetric. That is, if the pods of S1
 have a RequiredDuringScheduling affinity rule "run me on nodes that are running
 pods from S2," it is not required that there be S1 pods on a node in order to
-schedule a S2 pod onto that node. More specifically, if S1 has the
+schedule an S2 pod onto that node. More specifically, if S1 has the
 aforementioned RequiredDuringScheduling affinity rule, then:
 * if a node is empty, you can schedule S2 onto the node
 * if a node is empty, you cannot schedule S1 onto the node
@@ -220,17 +220,17 @@ an implicit PreferredDuringScheduling affinity rule corresponding to every
 RequiredDuringScheduling affinity rule: if the pods of S1 have a
 RequiredDuringScheduling affinity rule "run me on nodes that are running pods
 from S2" then it is not required that there be S1 pods on a node in order to
-schedule a S2 pod onto that node, but it would be better if there are.
+schedule an S2 pod onto that node, but it would be better if there are.
 
 PreferredDuringScheduling is symmetric. If the pods of S1 had a
 PreferredDuringScheduling anti-affinity rule "try not to run me on nodes that
-are running pods from S2" then we would prefer to keep a S1 pod that we are
-scheduling off of nodes that are running S2 pods, and also to keep a S2 pod that
+are running pods from S2" then we would prefer to keep an S1 pod that we are
+scheduling off of nodes that are running S2 pods, and also to keep an S2 pod that
 we are scheduling off of nodes that are running S1 pods. Likewise if the pods of
 S1 had a PreferredDuringScheduling affinity rule "try to run me on nodes that
-are running pods from S2" then we would prefer to place a S1 pod that we are
-scheduling onto a node that is running a S2 pod, and also to place a S2 pod that
-we are scheduling onto a node that is running a S1 pod.
+are running pods from S2" then we would prefer to place an S1 pod that we are
+scheduling onto a node that is running an S2 pod, and also to place an S2 pod that
+we are scheduling onto a node that is running an S1 pod.
 
 ## Examples
 

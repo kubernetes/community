@@ -29,7 +29,7 @@ Building initial quorums issue?
 
 It would be great to have a developer storage class which ties back to a fake NFS.  For testing and dev.  The idea behind local volumes is that it should be easy to create throwaway storage on local disk.  So that you can write things which run on every kube cluster.
 
-Will there be a API for the application?  To communicate members joining and leaving.  Answer today is that's what the KubeAPI is for.
+Will there be an API for the application?  To communicate members joining and leaving.  Answer today is that's what the KubeAPI is for.
 
 The hard problem is configchange.  You can't do config change unless you bootstrap it correctly.  If kube is changing things under me I can't maintain quorum (as an app).  This happens when expanding the set of nodes.  You need to figure out who's in and who's out.  
 
