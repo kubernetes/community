@@ -506,7 +506,7 @@ is thus considered versioned, with the same backwards compatibility guarantees
 as laid out in [our versioning policy](../design/versioning.md#supported-releases).
 Conformance tests for a given version should be run off of the release branch
 that corresponds to that version. Thus `v1.2` conformance tests would be run
-from the head of the `release-1.2` branch. eg:
+from the head of the `release-1.2` branch. e.g.:
 
  - A v1.3 development cluster should pass v1.1, v1.2 conformance tests
 

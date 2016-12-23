@@ -65,7 +65,7 @@ const (
   // Kill all existing pods before creating new ones.
   RecreateDeploymentStrategyType DeploymentStrategyType = "Recreate"
 
-  // Replace the old RCs by new one using rolling update i.e gradually scale down the old RCs and scale up the new one.
+  // Replace the old RCs by new one using rolling update i.e. gradually scale down the old RCs and scale up the new one.
   RollingUpdateDeploymentStrategyType DeploymentStrategyType = "RollingUpdate"
 )
 

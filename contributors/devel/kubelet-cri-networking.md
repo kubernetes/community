@@ -72,7 +72,7 @@ some configs may not be applicable. The runtime shim may handle or ignore
 network configuration updates from `UpdateRuntimeConfig` interface.
 
 ## Extensibility
-* Kubelet is oblivious to how the runtime shim manages networking, i.e 
+* Kubelet is oblivious to how the runtime shim manages networking, i.e. 
 runtime shim is free to use [CNI](https://github.com/containernetworking/cni), 
 [CNM](https://github.com/docker/libnetwork/blob/master/docs/design.md) or 
 any other implementation as long as the CRI networking requirements and 
