@@ -192,7 +192,7 @@ the first one.
 ### Rollback
 
 We want to allow the user to rollback a deployment. To rollback a
-completed (or ongoing) deployment, the user can create (or update) a deployment with
+completed (or ongoing) deployment, user can create (or update) a deployment with
 DeploymentSpec.PodTemplateSpec = oldRC.PodTemplateSpec.
 
 ## Deployment Strategies

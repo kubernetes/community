@@ -43,7 +43,7 @@ fails (ie, references variable names that cannot be expanded).
 ### Use Case: Composition of environment variables
 
 Currently, containers are injected with docker-style environment variables for
-the services in their pod's namespaces. There are several variables for each
+the services in their pod's namespace. There are several variables for each
 service, but users routinely need to compose URLs based on these variables
 because there is not a variable for the exact format they need. Users should be
 able to build new environment variables with the exact format they need.
