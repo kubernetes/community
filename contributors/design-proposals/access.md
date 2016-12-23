@@ -80,7 +80,7 @@ Cluster in Large organization:
    - K8s Admins typically distinct people from K8s Users.  May need to divide
 K8s Cluster Admin access by roles.
    - K8s Users need to be protected from each other.
-   - Auditing of K8s User and K8 Admin actions important.
+   - Auditing of K8s User and K8s Admin actions important.
    - Flexible accurate usage accounting and resource controls important.
    - Lots of automated access to APIs.
    - Need to integrate with existing enterprise directory, authentication,
