@@ -46,7 +46,7 @@ For other uses, see the related [feature request](https://issues.k8s.io/1518)
 The DaemonSet supports standard API features:
   - create
   - The spec for DaemonSets has a pod template field.
-  - Using the pod’s nodeSelector field, DaemonSets can be restricted to operate
+  - Using the pod's nodeSelector field, DaemonSets can be restricted to operate
 over nodes that have a certain label. For example, suppose that in a cluster
 some nodes are labeled ‘app=database’. You can use a DaemonSet to launch a
 datastore pod on exactly those nodes labeled ‘app=database’.
@@ -118,7 +118,7 @@ replica of the daemon pod on the node.
 
   - When a new node is added to the cluster, the DaemonSet controller starts
 daemon pods on the node for DaemonSets whose pod template nodeSelectors match
-the node’s labels.
+the node's labels.
   - Suppose the user launches a DaemonSet that runs a logging daemon on all
 nodes labeled “logger=fluentd”. If the user then adds the “logger=fluentd” label
 to a node (that did not initially have the label), the logging daemon will
@@ -179,7 +179,7 @@ expapi/v1/register.go
 #### Daemon Manager
 
 - Creates new DaemonSets when requested. Launches the corresponding daemon pod
-on all nodes with labels matching the new DaemonSet’s selector.
+on all nodes with labels matching the new DaemonSet's selector.
 - Listens for addition of new nodes to the cluster, by setting up a
 framework.NewInformer that watches for the creation of Node API objects. When a
 new node is added, the daemon manager will loop through each DaemonSet. If the
@@ -193,7 +193,7 @@ via its hostname.)
 
 - Does not need to be modified, but health checking will occur for the daemon
 pods and revive the pods if they are killed (we set the pod restartPolicy to
-Always). We reject DaemonSet objects with pod templates that don’t have
+Always). We reject DaemonSet objects with pod templates that don't have
 restartPolicy set to Always.
 
 ## Open Issues

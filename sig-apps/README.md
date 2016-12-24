@@ -18,7 +18,7 @@ We focus on the developer and devops experience of running applications in Kuber
 * Show early features/demos of tools that make running apps easier
 
 ## Non-goals:
-* Our job is not to go implement stacks. We’re helping people to help themselves. We will help connect people to the right folks * but we do not want to own a set of examples (as a group)
+* Our job is not to go implement stacks. We're helping people to help themselves. We will help connect people to the right folks * but we do not want to own a set of examples (as a group)
 * Do not endorse one particular tool
 * Do not pick which apps to run on top of the platform
 * Do not recommend one way to do things

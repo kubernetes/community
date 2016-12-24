@@ -22,7 +22,7 @@ Approvers:
 
 Main goal of `ControllerReference` effort is to solve a problem of overlapping controllers that fight over some resources (e.g. `ReplicaSets` fighting with `ReplicationControllers` over `Pods`), which cause serious [problems](https://github.com/kubernetes/kubernetes/issues/24433) such as exploding memory of Controller Manager.
 
-We don’t want to have (just) an in-memory solution, as we don’t want a Controller Manager crash to cause massive changes in object ownership in the system. I.e. we need to persist the information about "owning controller".
+We don't want to have (just) an in-memory solution, as we don’t want a Controller Manager crash to cause massive changes in object ownership in the system. I.e. we need to persist the information about "owning controller".
 
 Secondary goal of this effort is to improve performance of various controllers and schedulers, by removing the need for expensive lookup for all matching "controllers".
 
@@ -75,7 +75,7 @@ and
 
 By design there are possible races during adoption if multiple controllers can own a given object.
 
-To prevent re-adoption of an object during deletion the `DeletionTimestamp` will be set when deletion is starting. When a controller has a non-nil `DeletionTimestamp` it won’t take any actions except updating its `Status` (in particular it won’t adopt any objects).
+To prevent re-adoption of an object during deletion the `DeletionTimestamp` will be set when deletion is starting. When a controller has a non-nil `DeletionTimestamp` it won't take any actions except updating its `Status` (in particular it won't adopt any objects).
 
 # Implementation plan (sketch):
 
