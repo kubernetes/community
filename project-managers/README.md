@@ -17,7 +17,7 @@ They should **NOT**:
 * Apply priority labels to PRs
 * Apply cherrypick labels to PRs
 * Edit text of other people's PRs and issues, including deleting comments
-* Modify anyone else’s release note 
+* Modify anyone else's release note 
 * Create, edit, delete labels
 * Create, edit, close, delete milestones
 * Create, edit, delete releases

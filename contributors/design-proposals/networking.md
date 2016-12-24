@@ -35,7 +35,7 @@ among other problems.
 ## Container to container
 
 All containers within a pod behave as if they are on the same host with regard
-to networking. They can all reach each other’s ports on localhost.  This offers
+to networking. They can all reach each other's ports on localhost.  This offers
 simplicity (static ports know a priori), security (ports bound to localhost
 are visible within the pod but never outside it), and performance. This also
 reduces friction for applications moving from the world of uncontainerized apps

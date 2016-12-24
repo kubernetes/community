@@ -167,7 +167,7 @@ Under system memory pressure, these containers are more likely to be killed once
 
 Pod OOM score configuration
 - Note that the OOM score of a process is 10 times the % of memory the process consumes, adjusted by OOM_SCORE_ADJ, barring exceptions (e.g. process is launched by root). Processes with higher OOM scores are killed.
-- The base OOM score is between 0 and 1000, so if process A’s OOM_SCORE_ADJ - process B’s OOM_SCORE_ADJ is over a 1000, then process A will always be OOM killed before B.
+- The base OOM score is between 0 and 1000, so if process A's OOM_SCORE_ADJ - process B's OOM_SCORE_ADJ is over a 1000, then process A will always be OOM killed before B.
 - The final OOM score of a process is also between 0 and 1000
 
 *Best-effort*
@@ -194,7 +194,7 @@ Pod OOM score configuration
   - OOM_SCORE_ADJ: -998
 
 *Kubelet, Docker*
-  - OOM_SCORE_ADJ: -999 (won’t be OOM killed)
+  - OOM_SCORE_ADJ: -999 (won't be OOM killed)
   - Hack, because these critical tasks might die if they conflict with guaranteed containers. In the future, we should place all user-pods into a separate cgroup, and set a limit on the memory they can consume.
 
 ## Known issues and possible improvements
@@ -203,7 +203,7 @@ The above implementation provides for basic oversubscription with protection, bu
 
 #### Support for Swap
 
-- The current QoS policy assumes that swap is disabled. If swap is enabled, then resource guarantees (for pods that specify resource requirements) will not hold. For example, suppose 2 guaranteed pods have reached their memory limit. They can continue allocating memory by utilizing disk space. Eventually, if there isn’t enough swap space, processes in the pods might get killed. The node must take into account swap space explicitly for providing deterministic isolation behavior.
+- The current QoS policy assumes that swap is disabled. If swap is enabled, then resource guarantees (for pods that specify resource requirements) will not hold. For example, suppose 2 guaranteed pods have reached their memory limit. They can continue allocating memory by utilizing disk space. Eventually, if there isn't enough swap space, processes in the pods might get killed. The node must take into account swap space explicitly for providing deterministic isolation behavior.
 
 ## Alternative QoS Class Policy
 
