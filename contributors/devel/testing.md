@@ -40,7 +40,7 @@ passing, so it is often a good idea to make sure the e2e tests work as well.
 * All packages and any significant files require unit tests.
 * The preferred method of testing multiple scenarios or input is
   [table driven testing](https://github.com/golang/go/wiki/TableDrivenTests)
-  - Example: [TestNamespaceAuthorization](../../test/integration/auth/auth_test.go)
+  - Example: [TestNamespaceAuthorization](https://github.com/kubernetes/kubernetes/blob/master/test/integration/auth/auth_test.go)
 * Unit tests must pass on OS X and Windows platforms.
   - Tests using linux-specific features must be skipped or compiled out.
   - Skipped is better, compiled out is required when it won't compile.
