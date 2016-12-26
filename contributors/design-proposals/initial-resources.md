@@ -18,11 +18,11 @@ For every container without Resources specified it will try to predict amount of
 So that a pod without specified resources will be treated as
 .
 
-InitialResources will set only [request](../design/resource-qos.md#requests-and-limits) (independently for each resource type: cpu, memory) field in the first version to avoid killing containers due to OOM (however the container still may be killed if exceeds requested resources).
+InitialResources will set only [request](../design/resource-qos.md#requests-and-limits) (independently for each resource type: cpu, memory) field in the first version to avoid killing containers due to OOM (however, the container still may be killed if exceeds requested resources).
 To make the component work with LimitRanger the estimated value will be capped by min and max possible values if defined.
 It will prevent from situation when the pod is rejected due to too low or too high estimation.
 
-The container won’t be marked as managed by this component in any way, however appropriate event will be exported.
+The container won’t be marked as managed by this component in any way, however, appropriate event will be exported.
 The predicting algorithm should have very low latency to not increase significantly e2e pod startup latency
 [#3954](https://github.com/kubernetes/kubernetes/pull/3954).
 
@@ -54,7 +54,7 @@ In the first version there will be available 2 options for backend for predictin
 * [GCM](../../docs/user-guide/monitoring.md#google-cloud-monitoring) - since GCM is not as powerful as InfluxDB some aggregation will be made on the client side
 
 Both will be hidden under an abstraction layer, so it would be easy to add another option.
-The code will be a part of Initial Resources component to not block development, however in the future it should be a part of Heapster.
+The code will be a part of Initial Resources component to not block development, however, in the future it should be a part of Heapster.
 
 
 ## Next steps

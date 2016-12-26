@@ -27,7 +27,7 @@ another /24                 |
 
 ## Proposal
 
-Explaining vxlan is out of the scope of this document, however it does take some basic understanding to grok the proposal. Assume some pod wants to communicate across nodes with the above setup. Check the flannel vxlan devices:
+Explaining vxlan is out of the scope of this document, however, it does take some basic understanding to grok the proposal. Assume some pod wants to communicate across nodes with the above setup. Check the flannel vxlan devices:
 
 ```console
 node1 $ ip -d link show flannel.1

@@ -119,7 +119,7 @@ cluster/kubectl.sh get replicationcontrollers
 
 Note the difference between a [container](../user-guide/containers.md)
 and a [pod](../user-guide/pods.md). Since you only asked for the former, Kubernetes will create a wrapper pod for you.
-However you cannot view the nginx start page on localhost. To verify that nginx is running you need to run `curl` within the docker container (try `docker exec`).
+However, you cannot view the nginx start page on localhost. To verify that nginx is running you need to run `curl` within the docker container (try `docker exec`).
 
 You can control the specifications of a pod via a user defined manifest, and reach nginx through your browser on the port specified therein:
 

@@ -387,7 +387,7 @@ plane learns there are _m_ available resources in a K8S cluster. As
 the cluster is working independently it still accepts workload
 requests from other K8S clients or even another Cluster Federation control
 plane. The Cluster Federation scheduling decision is based on this data of
-available resources. However when the actual RC creation happens to
+available resources. However, when the actual RC creation happens to
 the cluster at time _T2_, the cluster may don’t have enough resources
 at that time. We will address this problem in later phases with some
 proposed solutions like resource reservation mechanisms.

@@ -109,7 +109,7 @@ may be necessary to perform a `hack/godep-save.sh` to pick up the transitive
 dependency changes._
 
 It is sometimes expedient to manually fix the /Godeps/Godeps.json file to
-minimize the changes. However without great care this can lead to failures
+minimize the changes. However, without great care this can lead to failures
 with `hack/verify-godeps.sh`. This must pass for every PR.
 
 6) If you updated the Godeps, please also update `Godeps/LICENSES` by running

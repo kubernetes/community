@@ -101,7 +101,7 @@ alternate ways:
 
 This document will also refrain from proposing server APIs or client implementations.  This has been a point of debate, and it makes
 more sense to focus on the template/parameter specification/syntax than to worry about the tooling that will process or manage the
-template objects.  However since there is a desire to at least be able to support a server side implementation, this proposal
+template objects.  However, since there is a desire to at least be able to support a server side implementation, this proposal
 does assume the specification will be k8s API friendly.
 
 ## Desired characteristics
@@ -441,7 +441,7 @@ set of objects in a new namespace or a new cluster.
 
 ### Example Templates
 
-These examples reflect the current OpenShift template schema, not the exact schema proposed in this document, however this
+These examples reflect the current OpenShift template schema, not the exact schema proposed in this document, however, this
 proposal, if accepted, provides sufficient capability to support the examples defined here, with the exception of
 automatic generation of passwords.
 
@@ -520,7 +520,7 @@ encouraged, at least by convention.*
 
 ## Key discussion points
 
-The preceding document is opinionated about each of these topics, however they have been popular topics of discussion so they are called out explicitly below.
+The preceding document is opinionated about each of these topics, however, they have been popular topics of discussion so they are called out explicitly below.
 
 ### Where to define parameters
 
@@ -554,7 +554,7 @@ renaming parameters seems less likely than changing field paths.
 
 ### Storing templates in k8s
 
-Openshift defines templates as a first class resource so they can be created/retrieved/etc via standard tools.  This allows client tools to list available templates (available in the openshift cluster), allows existing resource security controls to be applied to templates, and generally provides a more integrated feel to templates.  However there is no explicit requirement that for k8s to adopt templates, it must also adopt storing them in the cluster.
+Openshift defines templates as a first class resource so they can be created/retrieved/etc via standard tools.  This allows client tools to list available templates (available in the openshift cluster), allows existing resource security controls to be applied to templates, and generally provides a more integrated feel to templates.  However, there is no explicit requirement that for k8s to adopt templates, it must also adopt storing them in the cluster.
 
 ### Processing templates (server vs. client)
 
