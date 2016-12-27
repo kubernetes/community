@@ -15,3 +15,7 @@
   canceled due to lack of content, if you have topics to discuss please also
   write a message to the list._
 - [Meeting link](https://zoom.us/zoomconference?m=rN2RrBUYxXgXY4EMiWWgQP6Vslgcsn86)
+
+## Communication:
+* Slack: <https://kubernetes.slack.com/messages/sig-scheduling> ([archive](http://kubernetes.slackarchive.io/sig-scheduling))
+* Google Group: <https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling>
