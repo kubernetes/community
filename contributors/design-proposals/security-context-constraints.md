@@ -51,7 +51,7 @@ pods and service accounts within a project
 as a new cluster-scoped object called `PodSecurityPolicy`.
 1.  User information in `user.Info` must be available to admission controllers. (Completed in
 https://github.com/GoogleCloudPlatform/kubernetes/pull/8203)
-1.  Some authorizers may restrict a user’s ability to reference a service account.  Systems requiring
+1.  Some authorizers may restrict a user's ability to reference a service account.  Systems requiring
 the ability to secure service accounts on a user level must be able to add a policy that enables
 referencing specific service accounts themselves.
 1.  Admission control must validate the creation of Pods against the allowed set of constraints.

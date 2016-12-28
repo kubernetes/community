@@ -350,7 +350,7 @@ Two top level cgroups for `Bu` and `BE` QoS classes are created when Kubelet sta
 #### Pod level Cgroup creation and deletion (Docker runtime)
 
 - When a new pod is brought up, its QoS class is firstly determined.
-- We add an interface to Kubelet’s ContainerManager to create and delete pod level cgroups under the cgroup that matches the pod’s QoS class.
+- We add an interface to Kubelet's ContainerManager to create and delete pod level cgroups under the cgroup that matches the pod's QoS class.
 - This interface will be pluggable. Kubelet will support both systemd and raw cgroups based __cgroup__ drivers. We will be using the --cgroup-driver flag proposed in the [Systemd Node Spec](kubelet-systemd.md) to specify the cgroup driver.
 - We inject creation and deletion of pod level cgroups into the pod workers.
 - As new pods are added QoS class cgroup parameters are updated to match the resource requests by the Pod.
@@ -365,7 +365,7 @@ We want to have rkt create pods under a root QoS class that kubelet specifies, a
 
 #### Add Pod level metrics to Kubelet's metrics provider
 
-Update Kubelet’s metrics provider to include Pod level metrics. Use cAdvisor's cgroup subsystem information to determine various Pod level usage metrics.
+Update Kubelet's metrics provider to include Pod level metrics. Use cAdvisor's cgroup subsystem information to determine various Pod level usage metrics.
 
 `Note: Changes to cAdvisor might be necessary.`
 
@@ -393,7 +393,7 @@ Updating QoS limits needs to happen before pod cgroups values are updated. When 
 
 Other smaller work items that we would be good to have before the release of this feature.
 - [ ] Add Pod UID to the downward api which will help simplify the e2e testing logic.
-- [ ] Check if parent cgroup exist and error out if they don’t.
+- [ ] Check if parent cgroup exist and error out if they don't.
 - [ ] Set top level cgroup limit to resource allocatable until we support QoS level cgroup updates. If cgroup root is not `/` then set node resource allocatable as the cgroup resource limits on cgroup root.
 - [ ] Add a NodeResourceAllocatableProvider which returns the amount of allocatable resources on the nodes. This interface would be used both by the Kubelet and ContainerManager.
 - [ ] Add top level feasibility check to ensure that pod can be admitted on the node by estimating left over resources on the node.
@@ -403,7 +403,7 @@ Other smaller work items that we would be good to have before the release of thi
 To better support our requirements we needed to make some changes/add features to Libcontainer as well
 
 - [x] Allowing or denying all devices by writing 'a' to devices.allow or devices.deny is
-not possible once the device cgroups has children. Libcontainer doesn’t have the option of skipping updates on parent devices cgroup. opencontainers/runc/pull/958
+not possible once the device cgroups has children. Libcontainer doesn't have the option of skipping updates on parent devices cgroup. opencontainers/runc/pull/958
 - [x] To use libcontainer for creating and managing cgroups in the Kubelet, I would like to just create a cgroup with no pid attached and if need be apply a pid to the cgroup later on. But libcontainer did not support cgroup creation without attaching a pid. opencontainers/runc/pull/956
 
 

@@ -160,7 +160,7 @@ arbitrary container logs.
 **Who should rotate the logs?**
 
 We assume that a separate task (e.g., cron job) will be configured on the node
-to rotate the logs periodically, similar to today’s implementation.
+to rotate the logs periodically, similar to today's implementation.
 
 We do not rule out the possibility of letting kubelet or a per-node daemon
 (`DaemonSet`) to take up the responsibility, or even declare rotation policy
