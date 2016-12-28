@@ -49,7 +49,7 @@ It will be covered in a separate doc.
 All etcd instances will be clustered together and one of them will be an elected master.
 In order to commit any change quorum of the cluster will have to confirm it. Etcd will be
 configured in such a way that all writes and reads will go through the master (requests
-will be forwarded by the local etcd server such that it’s invisible for the user). It will
+will be forwarded by the local etcd server such that it's invisible for the user). It will
 affect latency for all operations, but it should not increase by much more than the network
 latency between master replicas (latency between GCE zones with a region is < 10ms).
 
@@ -57,7 +57,7 @@ Currently etcd exposes port only using localhost interface. In order to allow cl
 and inter-VM communication we will also have to use public interface. To secure the
 communication we will use SSL (as described [here](https://coreos.com/etcd/docs/latest/security.html)).
 
-When generating command line for etcd we will always assume it’s part of a cluster
+When generating command line for etcd we will always assume it's part of a cluster
 (initially of size 1) and list all existing kubernetes master replicas.
 Based on that, we will set the following flags:
 * `-initial-cluster` - list of all hostnames/DNS names for master replicas (including the new one)

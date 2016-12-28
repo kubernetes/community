@@ -25,6 +25,6 @@
 
 **Step 5**: The status on your old PRs will be updated when any new comment is made on it.
 
-### I’m having issues with signing the CLA.
+### I'm having issues with signing the CLA.
 
-If you’re facing difficulty with signing the CNCF CLA, please explain your case on https://github.com/kubernetes/kubernetes/issues/27796 and we (@sarahnovotny and @foxish), along with the CNCF will help sort it out.
+If you're facing difficulty with signing the CNCF CLA, please explain your case on https://github.com/kubernetes/kubernetes/issues/27796 and we (@sarahnovotny and @foxish), along with the CNCF will help sort it out.

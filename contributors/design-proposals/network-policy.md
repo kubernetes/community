@@ -96,7 +96,7 @@ The user needs a way to explicitly declare which connections are allowed into po
 This is accomplished through ingress rules on `NetworkPolicy`
 objects (of which there can be multiple in a single namespace).  Pods selected by
 one or more NetworkPolicy objects should allow any incoming connections that match any
-ingress rule on those NetworkPolicy objects, per the network plugin’s capabilities.
+ingress rule on those NetworkPolicy objects, per the network plugin's capabilities.
 
 NetworkPolicy objects and the above namespace isolation both act on _connections_ rather than individual packets.  That is to say that if traffic from pod A to pod B is allowed by the configured
 policy, then the return packets for that connection from B -> A are also allowed, even if the policy in place would not allow B to initiate a connection to A.  NetworkPolicy objects act on a broad definition of _connection_ which includes both TCP and UDP streams.   If new network policy is applied that would block an existing connection between two endpoints, the enforcer of policy
