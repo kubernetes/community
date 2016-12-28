@@ -113,10 +113,7 @@ Rotations:
   slack, twitter, etc. full time while on duty
 
 Release roles:
-- **Minor Release Team**: help with minor release
-- **Minor Release Manager**: drive minor release
-- **Patch Release Team**: help with patch release
-- **Patch Release Manager**: drive patch release
+- The roles of the individuals/team responsible for major, minor, and patch releases is documented [here](https://github.com/kubernetes/community/tree/master/contributors/devel/release).
 
 Duty-specific github roles:
 - [**kubernetes-admin**](https://github.com/orgs/kubernetes/teams/kubernetes-admin): direct code write/merge access; for build cops and
