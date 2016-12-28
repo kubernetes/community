@@ -54,7 +54,7 @@ The command differs from `kubectl config` by:
   * Basic auth: Actually try to communicate with the API server.
   * OpenID Connect: Create an OAuth2 redirect.
 
-However `kubectl login` should still be seen as a supplement to, not a
+However, `kubectl login` should still be seen as a supplement to, not a
 replacement for, `kubectl config` by helping validate any kubeconfig generated
 by the latter command.
 

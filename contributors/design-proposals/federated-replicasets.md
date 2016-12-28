@@ -79,7 +79,7 @@ then the replicas should be moved to other subclusters.
 All interaction with FederatedReplicaSet will be done by issuing
 kubectl commands pointing on the Federated Master API Server. All the
 commands would behave in a similar way as on the regular master,
-however in the next versions (1.5+) some of the commands may give
+however, in the next versions (1.5+) some of the commands may give
 slightly different output. For example kubectl describe on federated
 replica set should also give some information about the subclusters.
 
@@ -178,7 +178,7 @@ FederatedReplicaSetPreferences {
 }
 ```
 
-There is a global target for 50, however if there are 3 clusters there will be only 6 replicas running.
+There is a global target for 50, however, if there are 3 clusters there will be only 6 replicas running.
 
 **Scenario 3**. I want to have 20 replicas in each of 3 clusters.
 
@@ -191,7 +191,7 @@ FederatedReplicaSetPreferences {
 }
 ```
 
-There is a global target for 50, however clusters require 60. So some clusters will have less replicas.
+There is a global target for 50, however, clusters require 60. So some clusters will have less replicas.
  Replica layout: A=20 B=20 C=10.
 
 **Scenario 4**. I want to have equal number of replicas in clusters A,B,C, however don't put more than 20 replicas to cluster C.
@@ -215,7 +215,7 @@ Example:
 +  A and B are offline:
    Replica layout: C=20
 
-**Scenario 5**. I want to run my application in cluster A, however if there are troubles FRS can also use clusters B and C, equally.
+**Scenario 5**. I want to run my application in cluster A, however, if there are troubles FRS can also use clusters B and C, equally.
 
 ```go
 FederatedReplicaSetPreferences {  
@@ -299,7 +299,7 @@ enumerated the key idea elements:
 
    + [E3] LRS is new but the pods that match the selector exist. The
       pods are adopted by the RS (if not owned by some other
-      RS). However they may have a different image, configuration
+      RS). However, they may have a different image, configuration
       etc. Just like with regular LRS.
 
 + [I2] For each of the cluster FRSC starts a store and an informer on
@@ -335,7 +335,7 @@ enumerated the key idea elements:
 
 + [I4] It is assumed that a not scheduled pod is a normal situation
 and can last up to X min if there is a huge traffic on the
-cluster. However if the replicas are not scheduled in that time then
+cluster. However, if the replicas are not scheduled in that time then
 FRSC should consider moving most of the unscheduled replicas
 elsewhere. For that purpose FRSC will maintain a data structure
 where for each FRS controlled LRS we store a list of pods belonging
@@ -445,7 +445,7 @@ cluster capacity. If there were some extra replicas added to the cluster in step
 
 The function does [[I7]] and[[I8]]. It is assumed that it is run on a
 single thread/goroutine so we check and evaluate the same FRS on many
-goroutines (however if needed the function can be parallelized for
+goroutines (however, if needed the function can be parallelized for
 different FRS). It takes data only from store maintained by GR2_* and
 GR3_*. The external communication is only required to:
 

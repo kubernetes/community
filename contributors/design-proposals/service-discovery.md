@@ -10,7 +10,7 @@ A URL can accurately describe the location of a Service. A generic URL is of the
 
     scheme:[//[user:password@]host[:port]][/]path[?query][#fragment]
 
-however for the purpose of service discovery we can simplify this to the following form
+however, for the purpose of service discovery we can simplify this to the following form
 
     scheme:[//host[:port]][/]path
 
