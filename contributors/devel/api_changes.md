@@ -292,7 +292,7 @@ unacceptable. Compatibility for experimental or alpha APIs is not strictly
 required, but breaking compatibility should not be done lightly, as it disrupts
 all users of the feature. Experimental APIs may be removed. Alpha and beta API
 versions may be deprecated and eventually removed wholesale, as described in the
-[versioning document](../design/versioning.md). Document incompatible changes
+[versioning document](../design-proposals/versioning.md). Document incompatible changes
 across API versions under the appropriate
 [{v? conversion tips tag in the api.md doc](../api.md).
 
