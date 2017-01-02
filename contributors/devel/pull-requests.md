@@ -93,6 +93,8 @@ request that subsequently needs to be reopened. We want to limit the total numbe
 * Remove old PRs that would be difficult to rebase as the underlying code has changed over time
 * Encourage code velocity
 
+For pull requests that are in progress but not ready for review, prefix the PR title with "WIP" and
+track any remaining TODOs in a checklist in the pull request description.
 
 # Automation
 
