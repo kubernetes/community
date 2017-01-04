@@ -1,8 +1,9 @@
 # Shared PID Namespace for the Docker Runtime
 
 Pods share many namespaces, but the ability to share a PID namespace was not
-supported by Docker until version 1.12. This document proposes how to roll out
-support for sharing the PID namespace in the docker runtime.
+supported by Docker until version 1.12. SIG Node approved a change to the
+default behavior contingent on a brief rollout plan, which is this document.
+Please refer to [#1615](https://issues.k8s.io/1615) for full technical details.
 
 ## Motivation
 
@@ -18,11 +19,16 @@ and enables:
 ## Goals and Non-Goals
 
 Goals include:
-  - Change default behavior in the Kubernetes Docker runtime
+  - Changing default behavior in the Kubernetes Docker runtime
 
 Non-goals include:
   - Creating an init solution that works for all runtimes
   - Supporting isolated PID namespace indefinitely
+  - Addressing the larger issue of requiring shared namespaces in all runtimes
+
+Kubernetes does not currently specify how runtimes must support a PID namespace,
+but many runtimes (e.g. cri-o & rkt) already support a shared namespace. This
+rolls out support for Docker.
 
 ## Rollout Plan
 
@@ -30,7 +36,9 @@ Sharing the PID namespace changes an implicit behavior of the Docker runtime
 whereby the command run by the container image is always PID 1. This is a side
 effect of isolated namespaces rather than intentional behavior, but users may
 have built upon this assumption so we should change the default behavior over
-the course of multiple releases.
+the course of multiple releases. (The following release numbers are earliest
+possible releases and may change based on implementation and community
+feedback.)
 
   1. Release 1.6: Enable the shared PID namespace for pods annotated with
      `docker.kubernetes.io/shared-pid: true` (i.e. opt-in) when running with
