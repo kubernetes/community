@@ -30,7 +30,9 @@ This document proposes a design for an internal Core Metrics Pipeline.
 ### Background
 The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) proposal contains a blueprint for a set of metrics referred to as "Core Metrics".  The purpose of this proposal is to specify what those metrics are, and how they will be collected on the node.
 
-CAdvisor is an open source container monitoring solution which only monitors containers, and has no concept of k8s constructs like pods or volumes.  Kubernetes vendors cAdvisor into its codebase, and uses cAdvisor as a library with functions that enable it to collect metrics on containers.  The kubelet can then combine container-level metrics from cAdvisor with the kubelet's knowledge of k8s constructs like pods to produce the kubelet Summary statistics, which provides metrics for use by the kubelet, or by users through the Summary API.  cAdvisor works by collecting metrics at an interval (10 seconds), and the kubelet then simply querries these cached metrics whenever it has a need for them.
+
+
+is an open source container monitoring solution which only monitors containers, and has no concept of k8s constructs like pods or volumes.  Kubernetes vendors cAdvisor into its codebase, and uses cAdvisor as a library with functions that enable it to collect metrics on containers.  The kubelet can then combine container-level metrics from cAdvisor with the kubelet's knowledge of k8s constructs like pods to produce the kubelet Summary statistics, which provides metrics for use by the kubelet, or by users through the Summary API.  cAdvisor works by collecting metrics at an interval (10 seconds), and the kubelet then simply queries these cached metrics whenever it has a need for them.
 
 Currently, cAdvisor collects a large number of metrics related to system and container performance. However, only some of these metrics are consumed by the kubelet summary API, and many are not used.  The kubelet summary API is published to the kubelet summary API endpoint.  Some of the metrics provided by the summary API are consumed internally, but most are not used internally.
 
@@ -42,7 +44,7 @@ Giving the kubelet the role of both providing metrics for its own use, and provi
 
 It is very cumbersome to make changes or bugfixes in cAdvisor, because that then needs to be vendored back into kubernetes.
 
-CAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benifit from a more "On-Demand" metrics collection design.
+cAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benifit from a more "On-Demand" metrics collection design.
 
 ### Proposal
 
@@ -245,7 +247,7 @@ In addition to providing metrics, cAdvisor also provides machine info.  While it
 The code that provides this data currently resides in cAdvisor.  I propose moving this to the kubelet as well.
 
 ```go
-type CoreInfo struct {  
+type MachineInfo struct {  
   // MachineID reported by the node. For unique machine identification  
   // in the cluster this field is prefered. Learn more from man(5)  
   // machine-id: http://man7.org/linux/man-pages/man5/machine-id.5.html  
