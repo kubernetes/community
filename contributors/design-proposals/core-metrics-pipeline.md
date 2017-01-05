@@ -128,6 +128,8 @@ type MemoryResources struct {
   // The memory capacity, in bytes  
   CapacityBytes *uint64 `json:"capacitybytes,omitempty"`  
   // The available memory, in bytes  
+  // This is the number of bytes which are not included in the working set memory
+  // Working set memory includes recently accessed memory, dirty memory, and kernel memory.
   AvailableBytes *uint64 `json:"availablebytes,omitempty"`  
 }  
 
@@ -195,11 +197,13 @@ type CpuUsage struct {
   Timestamp metav1.Time `json:"time"`  
   // Total CPU usage (sum of all cores) averaged over the sample window.  
   // The "core" unit can be interpreted as CPU core-nanoseconds per second.  
+  // For example, a value of 5 means that cpu is consumed at a rate of
+  // 5 core-nanoseconds per second during the sample window.
   // +optional  
-  UsageNanoCores *uint64 `json:"usageNanoCores,omitempty"`  
+  UsageRateNanoCores *uint64 `json:"usageNanoCores,omitempty"`  
   // Cumulative CPU usage (sum of all cores) since object creation.  
   // +optional  
-  UsageCoreNanoSeconds *uint64 `json:"usageCoreNanoSeconds,omitempty"`  
+  AggregateUsageCoreNanoSeconds *uint64 `json:"usageCoreNanoSeconds,omitempty"`  
 }  
 
 // MemoryUsage holds statistics about the quantity of memory consumed  
