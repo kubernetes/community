@@ -15,7 +15,7 @@ Interested in contributing to storage features in Kubernetes? [Please read our g
   * Get invite to join here: http://slack.k8s.io/
 * Google Group: https://groups.google.com/forum/#!forum/kubernetes-sig-storage
 * Github team: https://github.com/orgs/kubernetes/teams/sig-storage
-* Github issues: [link](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Aarea%2Fstorage)
+* Github issues: [link](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Asig%2Fstorage)
 * Documentation for currently supported volume plugins: http://kubernetes.io/docs/user-guide/volumes/
 * Code for Volume plugins can be found [here](https://github.com/kubernetes/kubernetes/tree/master/pkg/volume).
 * Code for volume controllers can be found [here](https://github.com/kubernetes/kubernetes/tree/master/pkg/controller/volume/).
