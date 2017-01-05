@@ -280,9 +280,10 @@ const (
 
 ## Implementation Plan
 
-I will create a separate endpoint TBD to publish this set of core metrics.
-I will modify volume stats collection so that it relies on this code.  
-I will modify the structure of stats collection code to be "On-Demand".   
+@dashpole will internally separate core metrics from summary metrics and make the kubelet use the core metrics.
+@dashpole will create a separate endpoint TBD to publish this set of core metrics.
+@dashpole will modify volume stats collection so that it relies on this code.  
+@dashpole will modify the structure of stats collection code to be "On-Demand".   
 
 Tenative future work, not included in this proposal:  
 Obtain all runtime-specific information needed to collect metrics from the CRI.   
