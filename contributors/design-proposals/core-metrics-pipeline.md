@@ -30,27 +30,22 @@ This document proposes a design for an internal Core Metrics Pipeline.
 ### Background
 The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) proposal contains a blueprint for a set of metrics referred to as "Core Metrics".  The purpose of this proposal is to specify what those metrics are, and how they will be collected on the node.
 
-
-
-is an open source container monitoring solution which only monitors containers, and has no concept of k8s constructs like pods or volumes.  Kubernetes vendors cAdvisor into its codebase, and uses cAdvisor as a library with functions that enable it to collect metrics on containers.  The kubelet can then combine container-level metrics from cAdvisor with the kubelet's knowledge of k8s constructs like pods to produce the kubelet Summary statistics, which provides metrics for use by the kubelet, or by users through the Summary API.  cAdvisor works by collecting metrics at an interval (10 seconds), and the kubelet then simply queries these cached metrics whenever it has a need for them.
+cAdvisor is an open source container monitoring solution which only monitors containers, and has no concept of k8s constructs like pods or volumes.  Kubernetes vendors cAdvisor into its codebase, and uses cAdvisor as a library with functions that enable it to collect metrics on containers.  The kubelet can then combine container-level metrics from cAdvisor with the kubelet's knowledge of k8s constructs like pods to produce the kubelet Summary statistics, which provides metrics for use by the kubelet, or by users through the Summary API.  cAdvisor works by collecting metrics at an interval (10 seconds), and the kubelet then simply queries these cached metrics whenever it has a need for them.
 
 Currently, cAdvisor collects a large number of metrics related to system and container performance. However, only some of these metrics are consumed by the kubelet summary API, and many are not used.  The kubelet summary API is published to the kubelet summary API endpoint.  Some of the metrics provided by the summary API are consumed internally, but most are not used internally.
 
 ### Motivations
 
-Giving the kubelet the role of both providing metrics for its own use, and providing metrics for users has a couple problems
- - First, it is clearly inefficent to collect metrics and not use them.  The kubelet uses only a small portion of the metrics it collects, and thus presents considerable extra overhead to any users who do not use them, or prefer a third party monitoring solution.
- - Second, as the number of metrics collected grows over time, the kubelet will gain more and more overhead for collecting, processing, and publishing these metrics.  Since the metrics users may want is unbounded, the kubelet's resource overhead could easily grow to unreasonable levels.
-
-It is very cumbersome to make changes or bugfixes in cAdvisor, because that then needs to be vendored back into kubernetes.
+The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) proposal explains why a separate monitoring pipeline is required.
 
 cAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benifit from a more "On-Demand" metrics collection design.
 
 ### Proposal
 
-I propose to create a set of core metrics, collected by the kubelet, and used solely by internal kubernetes components.
+I propose to use this set of core metrics, collected by the kubelet, and used solely by internal kubernetes components.
 
 ### Non Goals
+
 Everything covered in the [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) design doc.  This includes the third party metrics pipeline, and the methods by which the metrics found in this proposal are provided to other kubernetes components.
 
 Integration with CRI will not be covered in this proposal.  In future proposals, integrating with CRI may provide a better abstraction of information required by the core metrics pipeline to collect metrics.
@@ -61,8 +56,7 @@ This design covers only the internal Core Metrics Pipeline.
 
 High level requirements for the design are as follows:
  - Do not break existing users.  We should continue to provide the full summary API by default.
- - The kubelet collects the minimum possible number of metrics for full kubernetes functionality.
- - Code for collecting core metrics resides in the kubernetes codebase.
+ - The kubelet collects the minimum possible number of metrics for complete portable kubernetes functionalities.
  - Metrics can be fetched "On Demand", giving the kubelet more up-to-date stats.
 
 Metrics requirements, based on kubernetes component needs, are as follows:
@@ -76,6 +70,8 @@ Metrics requirements, based on kubernetes component needs, are as follows:
  - Horizontal-Pod-Autoscaler (HPA)
   - Node-level capacity and availability metrics for CPU and Memory
   - Pod-level usage metrics for CPU and Memory
+ - Master metrics API
+  -
 
 More details on how I intend to achieve these high level goals can be found in the Implementation Plan.
 
@@ -102,10 +98,10 @@ type CoreStats struct {
 type NodeResources struct {  
   // The filesystem device used by node k8s components.  
   // +optional  
-  KubeletFsDevice string `json:"kubeletfs"`  
+  KubeletFsDevice string `json:"kubeletfs,omitempty"`  
   // The filesystem device used by node runtime components.  
   // +optional  
-  RuntimeFsDevice string `json:"runtimefs"`  
+  RuntimeFsDevice string `json:"runtimefs,omitempty"`  
   // Stats pertaining to cpu resources.  
   // +optional  
   CPU *CpuResources `json:"cpu,omitempty"`  
@@ -114,7 +110,7 @@ type NodeResources struct {
   Memory *MemoryResources `json:"memory,omitempty"`  
   // Stats pertaining to node filesystem resources.  
   // +optional  
-  Filesystems []DiskResources `json:"filesystems, omitempty" patchStrategy:"merge" patchMergeKey:"device"`  
+  Filesystems []FilesystemResources `json:"filesystems, omitempty" patchStrategy:"merge" patchMergeKey:"device"`  
 }  
 
 // CpuResources containes data about cpu resource usage  
@@ -135,8 +131,8 @@ type MemoryResources struct {
   AvailableBytes *uint64 `json:"availablebytes,omitempty"`  
 }  
 
-// DiskResources contains data about filesystem disk resources.  
-type DiskResources struct {  
+// FilesystemResources contains data about filesystem disk resources.  
+type FilesystemResources struct {  
   // The time at which these stats were updated.  
   Timestamp metav1.Time `json:"time"`  
   // The device that this filesystem is on  
@@ -187,10 +183,10 @@ type ContainerUsage struct {
   // Stats pertaining to container rootfs usage of disk.  
   // Rootfs.UsedBytes is the number of bytes used for the container write layer.  
   // +optional  
-  Rootfs *DiskUsage `json:"rootfs,omitempty"`  
+  Rootfs *FilesystemUsage `json:"rootfs,omitempty"`  
   // Stats pertaining to container logs usage of Disk.  
   // +optional  
-  Logs *DiskUsage `json:"logs,omitempty"`  
+  Logs *FilesystemUsage `json:"logs,omitempty"`  
 }  
 
 // CpuUsage holds statistics about the amount of cpu time consumed  
@@ -218,15 +214,15 @@ type MemoryUsage struct {
 
 // VolumeUsage holds statistics about the quantity of disk resources consumed for a volume  
 type VolumeUsage struct {  
-  // Embedded DiskUsage  
-  DiskUsage  
+  // Embedded FilesystemUsage  
+  FilesystemUsage  
   // Name is the name given to the Volume  
   // +optional  
   Name string `json:"name,omitempty"`  
 }  
 
-// DiskUsage holds statistics about the quantity of disk resources consumed  
-type DiskUsage struct {  
+// FilesystemUsage holds statistics about the quantity of disk resources consumed  
+type FilesystemUsage struct {  
   // The time at which these stats were updated.  
   Timestamp metav1.Time `json:"time"`  
   // The device on which resources are consumed  
@@ -286,14 +282,12 @@ const (
 
 ## Implementation Plan
 
-I will move all code pertaining to collection and processing of core metrics from cAdvisor into kubernetes.  
-I will vendor the new core metrics code back into cAdvisor. 
+I will create a separate endpoint TBD to publish this set of core metrics.
 I will modify volume stats collection so that it relies on this code.  
-I will modify the structure of stats collection code to be "On-Demand"   
+I will modify the structure of stats collection code to be "On-Demand".   
 
 Tenative future work, not included in this proposal:  
-Obtain all runtime-specific information needed to collect metrics from the CRI.  
-Create a third party metadata API, whose function is to provide third party monitoring solutions with kubernetes-specific data (pod-container relationships, for example).  
+Obtain all runtime-specific information needed to collect metrics from the CRI.   
 Modify cAdvisor to be "stand alone", and run in a seperate binary from the kubelet.  It will consume the above metadata API, and provide the summary API.  
 The kubelet no longer provides the summary API, and starts cAdvisor stand-alone by default.  Include flag to not start cAdvisor.  
 
@@ -305,8 +299,8 @@ TBD
 
 The implementation goals of the first milestone are outlined below.
 - [ ] Create the proposal
-- [ ] Move all code relevant for the collection and processing of core metrics from cAdvisor into kubernetes.
-- [ ] Vendor the new core metrics code back into cAdvisor.
+- [ ] Implement collection and consumption of core metrics.
+- [ ] Create Kubelet API endpoint for core metrics.
 - [ ] Modify volume stats collection so that it relies on this code.
 - [ ] Modify the structure of stats collection code to be "On-Demand"
 
