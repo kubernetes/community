@@ -52,8 +52,9 @@ The Release Management Team Lead is the person ultimately responsible for ensuri
 * Reviews/merges release doc PRs.
 * Merges the docs release branch to master to make release docs live as soon as the release is official.
 
-#### Release Notes Lead
+#### Features Lead
 * Compiles the major themes, new features, known issues, actions required, notable changes to existing behavior, deprecations, etc. and edits them into a release doc checked in to the feature repository (ready to go out with the release).
+* Collects and prepares the release notes
 
 #### Bug Triage Lead
 * Figures out which bugs (whether manually created or automatically generated) should be tracked for the release.
