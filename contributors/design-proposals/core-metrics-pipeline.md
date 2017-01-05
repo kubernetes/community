@@ -75,7 +75,7 @@ Metrics requirements, based on kubernetes component needs, are as follows:
 
 More details on how I intend to achieve these high level goals can be found in the Implementation Plan.
 
-In order to continue to provide the full summary API, either the kubelet or a stand-alone version of cAdvisor will need to publish these metrics.
+In order to continue to provide the full summary API, eventually a stand-alone version of cAdvisor will need to publish these metrics.
 
 This Core Metrics API will be versioned to account for version-skew between kubernetes components.
 
@@ -239,8 +239,6 @@ type FilesystemUsage struct {
 ### Core Machine Info:
 
 In addition to providing metrics, cAdvisor also provides machine info.  While it is not neccessary to use this structure for reporting Machine Info, the following contains all of the information provided to the kubelet by cAdvisor, generally used at startup.
-
-The code that provides this data currently resides in cAdvisor.  I propose moving this to the kubelet as well.
 
 ```go
 type MachineInfo struct {  
