@@ -61,7 +61,7 @@ High level requirements for the design are as follows:
 
 Metrics requirements, based on kubernetes component needs, are as follows:
  - Kubelet
-  - Node-level capacity and availability metrics for Disk and Memory
+  - Node-level capacity and availability metrics for Disk, Memory, and CPU
   - Pod-level usage metrics for Disk and Memory
  - Scheduler
   - Node-level capacity and availability metrics for Disk, CPU, and Memory
