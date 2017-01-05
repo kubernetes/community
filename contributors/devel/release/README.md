@@ -1,4 +1,4 @@
-This document captures the requirements and responsibilities of the individuals responsible for Kubernetes releases.
+This document captures the requirements and duties of the individuals responsible for Kubernetes releases.
 
 As documented in the [Kubernetes Versioning doc](https://github.com/kubernetes/kubernetes/blob/master/docs/design/versioning.md), there are 3 types of Kubernetes releases:
 * Major (x.0.0)
