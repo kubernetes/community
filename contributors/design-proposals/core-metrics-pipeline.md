@@ -209,7 +209,7 @@ type MemoryUsage struct {
   // The amount of working set memory. This includes recently accessed memory,  
   // dirty memory, and kernel memory.  
   // +optional  
-  WorkingSetBytes *uint64 `json:"workingSetBytes,omitempty"`  
+  UsageBytes *uint64 `json:"usageBytes,omitempty"`  
 }  
 
 // VolumeUsage holds statistics about the quantity of disk resources consumed for a volume  
