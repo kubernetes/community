@@ -255,22 +255,22 @@ type MachineInfo struct {
   // MachineID reported by the node. For unique machine identification  
   // in the cluster this field is prefered. Learn more from man(5)  
   // machine-id: http://man7.org/linux/man-pages/man5/machine-id.5.html  
-  MachineID string `json:"machineID" protobuf:"bytes,1,opt,name=machineID"`  
+  MachineID string `json:"machineID"`  
   // SystemUUID reported by the node. For unique machine identification  
   // MachineID is prefered. This field is specific to Red Hat hosts  
   // https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/getting-system-uuid.html  
-  SystemUUID string `json:"systemUUID" protobuf:"bytes,2,opt,name=systemUUID"`  
+  SystemUUID string `json:"systemUUID"`  
   // Boot ID reported by the node.  
-  BootID string `json:"bootID" protobuf:"bytes,3,opt,name=bootID"`  
+  BootID string `json:"bootID"`  
   // Kernel Version reported by the node from 'uname -r' (e.g. 3.16.0-0.bpo.4-amd64).  
-  KernelVersion string `json:"kernelVersion" protobuf:"bytes,4,opt,name=kernelVersion"`  
+  KernelVersion string `json:"kernelVersion"`  
   // OS Image reported by the node from /etc/os-release (e.g. Debian GNU/Linux 7 (wheezy)).  
-  OSImage string `json:"osImage" protobuf:"bytes,5,opt,name=osImage"`  
+  OSImage string `json:"osImage"`  
   // Capacity represents the total resources of a node.  
   // More info: http://kubernetes.io/docs/user-guide/persistent-volumes#capacity for more details.  
   // +optional  
   // ContainerRuntime Version reported by the node through runtime remote API (e.g. docker://1.5.0).  
-  ContainerRuntimeVersion string `json:"containerRuntimeVersion" protobuf:"bytes,6,opt,name=containerRuntimeVersion"`  
+  ContainerRuntimeVersion string `json:"containerRuntimeVersion"`  
   // Cloud provider the machine belongs to.  
   CloudProvider CloudProvider `json:"cloud_provider"`  
   // ID of cloud instance (e.g. instance-1) given to it by the cloud provider.  
