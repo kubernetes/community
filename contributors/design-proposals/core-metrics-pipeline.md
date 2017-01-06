@@ -295,10 +295,10 @@ const (
 @dashpole will modify volume stats collection so that it relies on this code.  
 @dashpole will modify the structure of stats collection code to be "On-Demand".   
 
-Tenative future work, not included in this proposal:  
-Obtain all runtime-specific information needed to collect metrics from the CRI.   
-Modify cAdvisor to be "stand alone", and run in a seperate binary from the kubelet.  It will consume the above metadata API, and provide the summary API.  
-The kubelet no longer provides the summary API, and starts cAdvisor stand-alone by default.  Include flag to not start cAdvisor.  
+Suggested, tentative future work, which may be covered by future proposals:  
+ - Obtain all runtime-specific information needed to collect metrics from the CRI.   
+ - Modify cAdvisor to be "stand alone", and run in a seperate binary from the kubelet.  It will consume the above metadata API, and provide the summary API.  
+ - The kubelet no longer provides the summary API, and starts cAdvisor stand-alone by default.  Include flag to not start stand-alone cAdvisor.  
 
 ## Rollout Plan
 
