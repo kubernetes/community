@@ -63,15 +63,23 @@ Metrics requirements, based on kubernetes component needs, are as follows:
  - Kubelet
   - Node-level capacity and availability metrics for Disk, Memory, and CPU
   - Pod-level usage metrics for Disk and Memory
- - Scheduler
+ - Scheduler (Exposed through [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md))
   - Node-level capacity and availability metrics for Disk, CPU, and Memory
   - Pod-level usage metrics for Disk, CPU, and Memory
   - Container-level usage metrics for Disk, CPU, and Memory
- - Horizontal-Pod-Autoscaler (HPA)
+ - Horizontal-Pod-Autoscaler (Exposed through [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md)))
   - Node-level capacity and availability metrics for CPU and Memory
   - Pod-level usage metrics for CPU and Memory
- - Master metrics API
-  -
+ - Cluster Federation (Exposed through [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md))
+  - Node-level capacity and availability metrics for Disk, Memory, and CPU
+ - kubectl top (Exposed through [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md))
+  - Node-level capacity and availability metrics for Disk, Memory, and CPU
+  - Pod-level usage metrics for Disk, Memory, and CPU
+  - Container-level usage metrics for Disk, CPU, and Memory
+ - Kubernetes Dashboard (Exposed through [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md))
+  - Node-level capacity and availability metrics for Disk, Memory, and CPU
+  - Pod-level usage metrics for Disk, Memory, and CPU
+  - Container-level usage metrics for Disk, CPU, and Memory
 
 More details on how I intend to achieve these high level goals can be found in the Implementation Plan.
 
