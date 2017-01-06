@@ -55,7 +55,7 @@ Integration with CRI will not be covered in this proposal.  In future proposals,
 This design covers only the internal Core Metrics Pipeline.
 
 High level requirements for the design are as follows:
- - Do not break existing users.  We should continue to provide the full summary API by default.
+ - Do not break existing users.  We should continue to provide the full summary API as an optional add-on.  Once the monitoring pipeline is completed, the summary API will be provided by the monitoring pipeline, possibly through a stand-alone version of cAdvisor.
  - The kubelet collects the minimum possible number of metrics for complete portable kubernetes functionalities.
  - Metrics can be fetched "On Demand", giving the kubelet more up-to-date stats.
 
@@ -74,8 +74,6 @@ Metrics requirements, based on kubernetes component needs, are as follows:
   -
 
 More details on how I intend to achieve these high level goals can be found in the Implementation Plan.
-
-In order to continue to provide the full summary API, eventually a stand-alone version of cAdvisor will need to publish these metrics.
 
 This Core Metrics API will be versioned to account for version-skew between kubernetes components.
 
@@ -195,10 +193,10 @@ type ContainerUsage struct {
 type CpuUsage struct {  
   // The time at which these stats were updated.  
   Timestamp metav1.Time `json:"time"`  
-  // Total CPU usage (sum of all cores) averaged over the sample window.  
-  // The "core" unit can be interpreted as CPU core-nanoseconds per second.  
-  // For example, a value of 5 means that cpu is consumed at a rate of
-  // 5 core-nanoseconds per second during the sample window.
+  // Average CPU usage rate over sample window (across all cores), in "cores".  
+  // The "core" unit represents nanoseconds of CPU time consumed per second.  
+  // For example, 5 nanocores means the process averaged 5 nanoseconds 
+  // of cpu time per second during the sample window.
   // +optional  
   UsageRateNanoCores *uint64 `json:"usageNanoCores,omitempty"`  
   // Cumulative CPU usage (sum of all cores) since object creation.  
