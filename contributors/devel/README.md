@@ -64,14 +64,14 @@ Guide](http://kubernetes.io/docs/admin/).
 
 ## Writing plugins
 
-* **Authentication Plugins** ([docs/admin/authentication.md](../admin/authentication.md)):
+* **Authentication** ([Authentication](http://kubernetes.io/docs/admin/authentication/)):
   The current and planned states of authentication tokens.
 
-* **Authorization Plugins** ([docs/admin/authorization.md](../admin/authorization.md)):
+* **Authorization Plugins** ([Authorization](http://kubernetes.github.io/docs/admin/authorization/)):
   Authorization applies to all HTTP requests on the main apiserver port.
   This doc explains the available authorization implementations.
 
-* **Admission Control Plugins** ([admission_control](../design/admission_control.md))
+* **Admission Control Plugins** ([admission_control](https://github.com/kubernetes/kubernetes/blob/master/docs/design/admission_control.md))
 
 
 ## Building releases
