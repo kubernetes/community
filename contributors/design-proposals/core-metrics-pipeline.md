@@ -2,7 +2,7 @@
 
 **Author**: David Ashpole (@dashpole)
 
-**Last Updated**: 12/21/2016
+**Last Updated**: 1/10/2017
 
 **Status**: Draft Proposal (WIP)
 
@@ -12,6 +12,7 @@ This document proposes a design for an internal Core Metrics Pipeline.
 
 - [Core Metrics Pipeline in kubelet](#core-metrics-pipeline-in-kubelet)
   - [Introduction](#introduction)
+    - [Definitions](#definitions)
     - [Background](#background)
     - [Motivations](#motivations)
     - [Proposal](#proposal)
@@ -27,25 +28,34 @@ This document proposes a design for an internal Core Metrics Pipeline.
 
 ## Introduction
 
+### Definitions
+"Kubelet": The daemon that runs on every kubernetes node and controls pod and container lifecycle, among many other things.
+["cAdvisor":](https://github.com/google/cadvisor) An open source container monitoring solution which only monitors containers, and has no concept of k8s constructs like pods or volumes.
+["Summary API":](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/api/v1alpha1/stats/types.go) A kubelet API which currently exposes node metrics for use by both system components and monitoring systems.
+["CRI":](https://github.com/kubernetes/community/blob/master/contributors/devel/container-runtime-interface.md) The Container Runtime Interface designed to provide an abstraction over runtimes (docker, rkt, etc).
+"Core Metrics": A set of metrics described in the [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) whose purpose is to provide system components with metrics for the purpose of [resource feasibility checking](https://github.com/eBay/Kubernetes/blob/master/docs/design/resources.md#the-resource-model) or node resource management.
+
 ### Background
 The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) proposal contains a blueprint for a set of metrics referred to as "Core Metrics".  The purpose of this proposal is to specify what those metrics are, and how they will be collected on the node.
 
-cAdvisor is an open source container monitoring solution which only monitors containers, and has no concept of k8s constructs like pods or volumes.  Kubernetes vendors cAdvisor into its codebase, and uses cAdvisor as a library with functions that enable it to collect metrics on containers.  The kubelet can then combine container-level metrics from cAdvisor with the kubelet's knowledge of k8s constructs like pods to produce the kubelet Summary statistics, which provides metrics for use by the kubelet, or by users through the [Summary API](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/api/v1alpha1/stats/types.go).  cAdvisor works by collecting metrics at an interval (10 seconds, by default), and the kubelet then simply queries these cached metrics whenever it has a need for them.
+Kubernetes vendors cAdvisor into its codebase, and the kubelet uses cAdvisor as a library that enables it to collect metrics on containers.  The kubelet can then combine container-level metrics from cAdvisor with the kubelet's knowledge of k8s constructs (e.g. pods) to produce the kubelet Summary statistics, which provides metrics for use by the kubelet, or by users through the [Summary API](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/api/v1alpha1/stats/types.go).  cAdvisor works by collecting metrics at an interval (10 seconds, by default), and the kubelet then simply queries these cached metrics whenever it has a need for them.
 
 Currently, cAdvisor collects a large number of metrics related to system and container performance. However, only some of these metrics are consumed by the kubelet summary API, and many are not used.  The kubelet [Summary API](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/api/v1alpha1/stats/types.go) is published to the kubelet summary API endpoint (stats/summary).  Some of the metrics provided by the summary API are consumed by kubernetes system components, but most are not for this purpose.
 
 ### Motivations
 The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) proposal explains why a separate monitoring pipeline is required.
 
-
+By publishing core metrics, the summary API is relieved of its responsibility to provide metrics to system components.  This will allow the summary API to evolve into a much richer set of metrics for monitoring, since the overhead burden falls on the third party monitoring pipeline.
 
 cAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benifit from a more "On-Demand" metrics collection design.
 
 ### Proposal
 I propose to use this set of core metrics, collected by the kubelet, and used solely by kubernetes system compenents to support resource feasibility checking and resource management on the node.
 
+The target "Users" of this set of metrics are kubernetes components.  This set of metrics does not neccessarily need to be user-friendly, but should be flexible enough to be turned into user friendly metrics.
+
 ### Non Goals
-Everything covered in the [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) design doc.  This includes the third party metrics pipeline, and the methods by which the metrics found in this proposal are provided to other kubernetes components.
+Everything covered in the [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) design doc will not be covered in this proposal.  This includes the third party metrics pipeline, and the methods by which the metrics found in this proposal are provided to other kubernetes components.
 
 Integration with CRI will not be covered in this proposal.  In future proposals, integrating with CRI may provide a better abstraction of information required by the core metrics pipeline to collect metrics.
 
@@ -75,7 +85,7 @@ Metrics requirements for resource feasibility checking and node resource managem
  - Kubelet
   - Node-level capacity and availability metrics for Disk, Memory, and CPU
   - Pod-level usage metrics for Disk and Memory
- - Scheduler (Exposed through [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md))
+ - Scheduler (Possibly through [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md))
   - Node-level capacity and availability metrics for Disk, CPU, and Memory
   - Pod-level usage metrics for Disk, CPU, and Memory
   - Container-level usage metrics for Disk, CPU, and Memory
