@@ -36,7 +36,7 @@ This document proposes a design for an internal Core Metrics Pipeline.
 "Core Metrics": A set of metrics described in the [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) whose purpose is to provide system components with metrics for the purpose of [resource feasibility checking](https://github.com/eBay/Kubernetes/blob/master/docs/design/resources.md#the-resource-model) or node resource management.  
 
 ### Background
-The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) proposal contains a blueprint for a set of metrics referred to as "Core Metrics".  The purpose of this proposal is to specify what those metrics are, and how they will be collected on the node.
+The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) proposal contains a blueprint for a set of metrics referred to as "Core Metrics".  The purpose of this proposal is to specify what those metrics are, and by what means they are exposed to system components.
 
 Kubernetes vendors cAdvisor into its codebase, and the kubelet uses cAdvisor as a library that enables it to collect metrics on containers.  The kubelet can then combine container-level metrics from cAdvisor with the kubelet's knowledge of k8s constructs (e.g. pods) to produce the kubelet Summary statistics, which provides metrics for use by the kubelet, or by users through the [Summary API](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/api/v1alpha1/stats/types.go).  cAdvisor works by collecting metrics at an interval (10 seconds, by default), and the kubelet then simply queries these cached metrics whenever it has a need for them.
 
@@ -50,7 +50,7 @@ By publishing core metrics, the summary API is relieved of its responsibility to
 cAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benifit from a more "On-Demand" metrics collection design.
 
 ### Proposal
-I propose to use this set of core metrics, collected by the kubelet, and used solely by kubernetes system compenents to support resource feasibility checking and resource management on the node.
+This proposal is to use this set of core metrics, collected by the kubelet, and used solely by kubernetes system components to support resource feasibility checking and resource management on the node.
 
 The target "Users" of this set of metrics are kubernetes components.  This set of metrics itself is not designed to be user-facing, but is designed to be general enough to support user-facing components.
 
@@ -67,7 +67,7 @@ High level requirements for the design are as follows:
  - The kubelet collects the minimum possible number of metrics for complete portable kubernetes functionalities.
  - Metrics can be fetched "On Demand", giving the kubelet more up-to-date stats.
 
-More details on how I intend to achieve these high level goals can be found in the Implementation Plan.
+More details on how these high level goals will be achieved can be found in the Implementation Plan.
 
 This Core Metrics API will be versioned to account for version-skew between kubernetes components.
 
@@ -79,7 +79,7 @@ The core metrics api is designed to provide metrics for two use-cases within kub
  - Node Resource Management
 
 Many kubernetes system components currently support these features.  Many more components that support these features are in development.
-The following is meant not meant to be an exhaustive list, but gives the current set of use cases for these metrics.
+The following is not meant to be an exhaustive list, but gives the current set of use cases for these metrics.
 
 Metrics requirements for resource feasibility checking and node resource management, based on kubernetes component needs, are as follows:
  - Kubelet
@@ -141,7 +141,7 @@ type CpuResources struct {
   // The number of cores in this machine.  
   NumCores int `json:"numcores"`  
   // The current Usage of CPU resources  
-  TotalUsage *CpuUsage `json:"cpuusage,omitempty"`  
+  Usage *CpuUsage `json:"cpuusage,omitempty"`  
 }  
 
 // MemoryResources contains data about memory resource usage.  
