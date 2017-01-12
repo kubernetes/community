@@ -20,6 +20,7 @@ This document proposes a design for an internal Core Metrics Pipeline.
   - [Design](#design)
     - [Metric Requirements:](#metric-requirements)
     - [Proposed Core Metrics API:](#proposed-core-metrics-api)
+    - [On-Demand Design:](#on-demand-design)
   - [Implementation Plan](#implementation-plan)
   - [Rollout Plan](#rollout-plan)
   - [Implementation Status](#implementation-status)
@@ -70,8 +71,6 @@ High level requirements for the design are as follows:
  - Do not break existing users.  We should continue to provide the full summary API as an optional add-on for the forseeable future.  Once the monitoring pipeline is completed, the summary API, or a suitable replacement, will be provided by the monitoring pipeline, possibly through a stand-alone version of cAdvisor.
  - The kubelet collects the minimum possible number of metrics for complete portable kubernetes functionalities.
  - Metrics can be fetched "On Demand", giving the kubelet more up-to-date stats.
-
-More details on how these high level goals will be achieved can be found in the Implementation Plan.
 
 This Core Metrics API will be versioned to account for version-skew between kubernetes components.
 
@@ -241,10 +240,17 @@ type FilesystemUsage struct {
 }  
 ```
 
-## Implementation Plan
+### On-Demand Design
+Interface:  
+The interface for exposing these metrics within the kubelet contains a method for getting this datastructure.  This method contains a "recency" parameter which specifies how recently the metrics must have been computed.  Kubelet components which require very up-to-date metrics (eviction, for example), use very low values.  Other components use higher values.  
 
+Implementation:  
+To keep performance bounded while still offering metrics "On-Demand", all calls to get metrics are cached, and a minimum recency is established to prevent repeated metrics computation.  Before computing new metrics, the previous metrics are checked to see if they meet the recency requirements of the caller.  If the age of the metrics meet the recency requirements, then the cached metrics are returned.  If not, then new metrics are computed and cached.  
+In the case where some metrics are not able to be computed instantly (time-averaged metrics, for example), then they must be recomputed on the "minimum recency" interval so that they always meet recency requirements.
+
+## Implementation Plan
 @dashpole will create an interface over cAdvisor that provides core metrics.  
-@dashpole will create a separate endpoint TBD to publish this set of core metrics.  
+@dashpole will create a separate, versioned endpoint TBD to publish this set of core metrics.  
 @dashpole will modify volume metrics collection so that it re-uses vendored cAdvisor libraries.   
 @dashpole will modify the structure of metrics collection code to be "On-Demand".   
 
