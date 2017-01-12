@@ -34,9 +34,9 @@ This document proposes a design for an internal Core Metrics Pipeline.
 ["Summary API":](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/api/v1alpha1/stats/types.go) A kubelet API which currently exposes node metrics for use by both system components and monitoring systems.  
 ["CRI":](https://github.com/kubernetes/community/blob/master/contributors/devel/container-runtime-interface.md) The Container Runtime Interface designed to provide an abstraction over runtimes (docker, rkt, etc).  
 "Core Metrics": A set of metrics described in the [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) whose purpose is to provide system components with metrics for the purpose of [resource feasibility checking](https://github.com/eBay/Kubernetes/blob/master/docs/design/resources.md#the-resource-model) or node resource management.  
-"Resource": A consumable element of a node (e.g. memory, disk space, CPU time, etc).
-"First-class Resource": A resource critical for scheduling, whose requests and limits can be (or soon will be) set via the Pod/Container Spec.
-"Metric": A measure of consumption of a Resource.
+"Resource": A consumable element of a node (e.g. memory, disk space, CPU time, etc).  
+"First-class Resource": A resource critical for scheduling, whose requests and limits can be (or soon will be) set via the Pod/Container Spec.  
+"Metric": A measure of consumption of a Resource.  
 
 ### Background
 The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) proposal contains a blueprint for a set of metrics referred to as "Core Metrics".  The purpose of this proposal is to specify what those metrics are, and by what means they are exposed to system components.
@@ -83,25 +83,26 @@ The core metrics api is designed to provide metrics for "First Class Resource Is
 Many kubernetes system components currently support these features.  Many more components that support these features are in development.
 The following is not meant to be an exhaustive list, but gives the current set of use cases for these metrics.
 
-Metrics requirements for "First Class Resource Isolation and Utilization Features", based on kubernetes component needs, are as follows:
- - Kubelet
-  - Node-level availability metrics for Disk, Memory, and CPU
-  - Pod-level usage metrics for Disk and Memory
- - Metrics Server (outlined in [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md)), which exposes the [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md) to the following system components:
-  - Scheduler
-   - Node-level capacity and availability metrics for Disk, CPU, and Memory
-   - Pod-level usage metrics for Disk, CPU, and Memory
-   - Container-level usage metrics for Disk, CPU, and Memory
-  - Horizontal-Pod-Autoscaler
-   - Node-level capacity and availability metrics for CPU and Memory
-   - Pod-level usage metrics for CPU and Memory
-  - Cluster Federation
-   - Node-level capacity and availability metrics for Disk, Memory, and CPU
-  - kubectl top and Kubernetes Dashboard
-   - Node-level capacity and availability metrics for Disk, Memory, and CPU
-   - Pod-level usage metrics for Disk, Memory, and CPU
-   - Container-level usage metrics for Disk, CPU, and Memory
+Metrics requirements for "First Class Resource Isolation and Utilization Features", based on kubernetes component needs, are as follows:  
 
+Kubelet
+ - Node-level availability metrics for Disk, Memory, and CPU  
+ - Pod-level usage metrics for Disk and Memory  
+
+Metrics Server (outlined in [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md)), which exposes the [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md) to the following system components:
+ - Scheduler  
+  - Node-level capacity and availability metrics for Disk, CPU, and Memory  
+  - Pod-level usage metrics for Disk, CPU, and Memory  
+  - Container-level usage metrics for Disk, CPU, and Memory  
+ - Horizontal-Pod-Autoscaler  
+  - Node-level capacity and availability metrics for CPU and Memory  
+  - Pod-level usage metrics for CPU and Memory  
+ - Cluster Federation  
+  - Node-level capacity and availability metrics for Disk, Memory, and CPU  
+ - kubectl top and Kubernetes Dashboard  
+  - Node-level capacity and availability metrics for Disk, Memory, and CPU  
+  - Pod-level usage metrics for Disk, Memory, and CPU  
+  - Container-level usage metrics for Disk, CPU, and Memory  
 
 ### Proposed Core Metrics API:
 
