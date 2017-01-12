@@ -30,22 +30,26 @@ This document proposes a design for an internal Core Metrics Pipeline.
 
 ### Definitions
 "Kubelet": The daemon that runs on every kubernetes node and controls pod and container lifecycle, among many other things.  
-["cAdvisor":](https://github.com/google/cadvisor) An open source container monitoring solution which only monitors containers, and has no concept of k8s constructs like pods or volumes.  
+["cAdvisor":](https://github.com/google/cadvisor) An open source container monitoring solution which only monitors containers, and has no concept of kubernetes constructs like pods or volumes.  
 ["Summary API":](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/api/v1alpha1/stats/types.go) A kubelet API which currently exposes node metrics for use by both system components and monitoring systems.  
 ["CRI":](https://github.com/kubernetes/community/blob/master/contributors/devel/container-runtime-interface.md) The Container Runtime Interface designed to provide an abstraction over runtimes (docker, rkt, etc).  
 "Core Metrics": A set of metrics described in the [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) whose purpose is to provide system components with metrics for the purpose of [resource feasibility checking](https://github.com/eBay/Kubernetes/blob/master/docs/design/resources.md#the-resource-model) or node resource management.  
+"Resource": A consumable element of a node (e.g. memory, disk space, CPU time, etc).
+"First-class Resource": A resource critical for scheduling, whose requests and limits can be (or soon will be) set via the Pod/Container Spec.
+"Metric": A measure of consumption of a Resource.
 
 ### Background
 The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) proposal contains a blueprint for a set of metrics referred to as "Core Metrics".  The purpose of this proposal is to specify what those metrics are, and by what means they are exposed to system components.
 
-Kubernetes vendors cAdvisor into its codebase, and the kubelet uses cAdvisor as a library that enables it to collect metrics on containers.  The kubelet can then combine container-level metrics from cAdvisor with the kubelet's knowledge of k8s constructs (e.g. pods) to produce the kubelet Summary statistics, which provides metrics for use by the kubelet, or by users through the [Summary API](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/api/v1alpha1/stats/types.go).  cAdvisor works by collecting metrics at an interval (10 seconds, by default), and the kubelet then simply queries these cached metrics whenever it has a need for them.
+Kubernetes vendors cAdvisor into its codebase, and the kubelet uses cAdvisor as a library that enables it to collect metrics on containers.  The kubelet can then combine container-level metrics from cAdvisor with the kubelet's knowledge of kubernetes constructs (e.g. pods) to produce the kubelet Summary statistics, which provides metrics for use by the kubelet, or by users through the [Summary API](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/api/v1alpha1/stats/types.go).  cAdvisor works by collecting metrics at an interval (10 seconds, by default), and the kubelet then simply queries these cached metrics whenever it has a need for them.
 
 Currently, cAdvisor collects a large number of metrics related to system and container performance. However, only some of these metrics are consumed by the kubelet summary API, and many are not used.  The kubelet [Summary API](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/api/v1alpha1/stats/types.go) is published to the kubelet summary API endpoint (stats/summary).  Some of the metrics provided by the summary API are consumed by kubernetes system components, but most are not for this purpose.
 
 ### Motivations
 The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) proposal explains why a separate monitoring pipeline is required.
 
-By publishing core metrics, the summary API is relieved of its responsibility to provide metrics to system components.  This will allow the summary API to evolve into a much richer set of metrics for monitoring, since the overhead burden falls on the third party monitoring pipeline.
+By publishing core metrics, the kubelet is relieved of its responsibility to provide metrics to system components.
+The third party monitoring pipeline also is relieved of any responsibility to provide these metrics to system components.
 
 cAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benifit from a more "On-Demand" metrics collection design.
 
@@ -63,7 +67,7 @@ Integration with CRI will not be covered in this proposal.  In future proposals,
 This design covers only the Core Metrics Pipeline.
 
 High level requirements for the design are as follows:
- - Do not break existing users.  We should continue to provide the full summary API as an optional add-on.  Once the monitoring pipeline is completed, the summary API will be provided by the monitoring pipeline, possibly through a stand-alone version of cAdvisor.
+ - Do not break existing users.  We should continue to provide the full summary API as an optional add-on for the forseeable future.  Once the monitoring pipeline is completed, the summary API, or a suitable replacement, will be provided by the monitoring pipeline, possibly through a stand-alone version of cAdvisor.
  - The kubelet collects the minimum possible number of metrics for complete portable kubernetes functionalities.
  - Metrics can be fetched "On Demand", giving the kubelet more up-to-date stats.
 
@@ -74,169 +78,145 @@ This Core Metrics API will be versioned to account for version-skew between kube
 This proposal purposefully omits many metrics that may eventually become core metrics.  This is by design.  Once metrics are needed to support resource feasibility checking or node resource management, they can be added to the core metrics API.
 
 ### Metric Requirements
-The core metrics api is designed to provide metrics for two use-cases within kubernetes:
- - Resource Feasibility Checking
- - Node Resource Management
+The core metrics api is designed to provide metrics for "First Class Resource Isolation and Utilization Features" within kubernetes.
 
 Many kubernetes system components currently support these features.  Many more components that support these features are in development.
 The following is not meant to be an exhaustive list, but gives the current set of use cases for these metrics.
 
-Metrics requirements for resource feasibility checking and node resource management, based on kubernetes component needs, are as follows:
+Metrics requirements for "First Class Resource Isolation and Utilization Features", based on kubernetes component needs, are as follows:
  - Kubelet
-  - Node-level capacity and availability metrics for Disk, Memory, and CPU
+  - Node-level availability metrics for Disk, Memory, and CPU
   - Pod-level usage metrics for Disk and Memory
- - Scheduler (Possibly through [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md))
-  - Node-level capacity and availability metrics for Disk, CPU, and Memory
-  - Pod-level usage metrics for Disk, CPU, and Memory
-  - Container-level usage metrics for Disk, CPU, and Memory
- - Horizontal-Pod-Autoscaler (Exposed through [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md)))
-  - Node-level capacity and availability metrics for CPU and Memory
-  - Pod-level usage metrics for CPU and Memory
- - Cluster Federation (Exposed through [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md))
-  - Node-level capacity and availability metrics for Disk, Memory, and CPU
- - kubectl top (Exposed through [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md))
-  - Node-level capacity and availability metrics for Disk, Memory, and CPU
-  - Pod-level usage metrics for Disk, Memory, and CPU
-  - Container-level usage metrics for Disk, CPU, and Memory
- - Kubernetes Dashboard (Exposed through [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md))
-  - Node-level capacity and availability metrics for Disk, Memory, and CPU
-  - Pod-level usage metrics for Disk, Memory, and CPU
-  - Container-level usage metrics for Disk, CPU, and Memory
+ - Metrics Server (outlined in [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md)), which exposes the [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md) to the following system components:
+  - Scheduler
+   - Node-level capacity and availability metrics for Disk, CPU, and Memory
+   - Pod-level usage metrics for Disk, CPU, and Memory
+   - Container-level usage metrics for Disk, CPU, and Memory
+  - Horizontal-Pod-Autoscaler
+   - Node-level capacity and availability metrics for CPU and Memory
+   - Pod-level usage metrics for CPU and Memory
+  - Cluster Federation
+   - Node-level capacity and availability metrics for Disk, Memory, and CPU
+  - kubectl top and Kubernetes Dashboard
+   - Node-level capacity and availability metrics for Disk, Memory, and CPU
+   - Pod-level usage metrics for Disk, Memory, and CPU
+   - Container-level usage metrics for Disk, CPU, and Memory
 
 
 ### Proposed Core Metrics API:
 
-An important difference between the current summary api and the proposed core metrics api is that per-pod stats in the core metrics api contain only usage data, and not capacity-related statistics.  This is more accurate since a pod's resource capacity is really defined by its "requests" and "limits", and it is a better reflection of how components use these metrics.  The kubelet, for example, finds which resources are constrained using node-level capacity and availability data, and then chooses which pods to take action on based on the pod's usage of the constrained resource.  If neccessary, capacity for resources a pod consumes can still be correlated with node-level resources using this format of stats.
+An important difference between the current summary api and the proposed core metrics api is that metrics in the core metrics api contain only usage data, and not capacity-related statistics.  This is more accurate since a pod's resource capacity is really defined by its "requests" and "limits", and it is a better reflection of how components use these metrics.  The kubelet, for example, finds which resources are constrained using node-level capacity and availability data, and then chooses which pods to take action on based on the pod's usage of the constrained resource.  If neccessary, capacity for resources a pod consumes can still be correlated with node-level resources using this format of metrics.
 
 ```go
-// CoreStats is a top-level container for holding NodeStats and PodStats.  
-type CoreStats struct {  
-  // Overall node resource stats.  
-  Node NodeResources `json:"node"`  
-  // Per-pod usage stats.  
-  Pods []PodUsage `json:"pods"`  
+// CoreMetrics is a top-level container for holding NodeResources and PodUsage.  
+type CoreMetrics struct {  
+  // Overall node resource metrics.  
+  Node NodeResources   
+  // Per-pod usage metrics.  
+  Pods []PodUsage  
 }  
 
-// NodeStats holds node-level stats.  NodeStats contains capacity and availibility for Node Resources.  
-type NodeResources struct {  
-  // The filesystem device used by node k8s components.  
-  // +optional  
-  KubeletFsDevice string `json:"kubeletfs,omitempty"`  
-  // The filesystem device used by node runtime components.  
-  // +optional  
-  RuntimeFsDevice string `json:"runtimefs,omitempty"`  
-  // Stats pertaining to cpu resources.  
-  // +optional  
-  CPU *CpuResources `json:"cpu,omitempty"`  
-  // Stats pertaining to memory (RAM) resources.  
-  // +optional  
-  Memory *MemoryResources `json:"memory,omitempty"`  
-  // Stats pertaining to node filesystem resources.  
-  // +optional  
-  Filesystems []FilesystemResources `json:"filesystems, omitempty" patchStrategy:"merge" patchMergeKey:"device"`  
+// NodeResources holds node-level metrics.  NodeResources contains capacity and availibility for Node Resources.  
+type NodeResources struct {   
+  // The filesystem used by node kubernetes components.  
+  KubeletFilesystem string 
+  // The filesystem used by node runtime components.  
+  RuntimeFilesystem string
+  // Metrics pertaining to cpu resources.  
+  CPU *CpuResources  
+  // Metrics pertaining to memory (RAM) resources.  
+  Memory *MemoryResources  
+  // Metrics pertaining to node filesystem resources.  
+  Filesystems []FilesystemResources    
 }  
 
-// CpuResources containes data about cpu resource usage  
-type CpuResources struct {  
+// CpuResources containes data about overall cpu resource capacity and usage  
+type CpuResources struct {
   // The number of cores in this machine.  
-  NumCores int `json:"numcores"`  
+  NumCores int `json:"numcores"` 
   // The current Usage of CPU resources  
-  Usage *CpuUsage `json:"cpuusage,omitempty"`  
+  Usage *CpuUsage  
 }  
 
 // MemoryResources contains data about memory resource usage.  
 type MemoryResources struct {  
-  // The time at which these stats were updated.  
-  Timestamp metav1.Time `json:"time"`  
+  // The time at which these metrics were updated.  
+  Timestamp metav1.Time  
   // The memory capacity, in bytes  
-  CapacityBytes *uint64 `json:"capacitybytes,omitempty"`  
+  CapacityBytes *uint64
   // The available memory, in bytes  
   // This is the number of bytes which are not included in the working set memory
   // Working set memory includes recently accessed memory, dirty memory, and kernel memory.
-  AvailableBytes *uint64 `json:"availablebytes,omitempty"`  
+  AvailableBytes *uint64  
 }  
 
 // FilesystemResources contains data about filesystem disk resources.  
 type FilesystemResources struct {  
-  // The time at which these stats were updated.  
-  Timestamp metav1.Time `json:"time"`  
-  // The device that this filesystem is on  
-  Device string `json:"device"`  
+  // The time at which these metrics were updated.  
+  Timestamp metav1.Time   
+  // The filesystem name, which uniquely identifies a filesystem  
+  Filesystem string  
   // AvailableBytes represents the storage space available (bytes) for the filesystem.  
-  // +optional  
-  AvailableBytes *uint64 `json:"availableBytes,omitempty"`  
+  AvailableBytes *uint64    
   // CapacityBytes represents the total capacity (bytes) of the filesystems underlying storage.  
-  // +optional  
-  CapacityBytes *uint64 `json:"capacityBytes,omitempty"`  
+  CapacityBytes *uint64  
   // InodesFree represents the free inodes in the filesystem.  
-  // +optional  
-  InodesFree *uint64 `json:"inodesFree,omitempty"`  
+  InodesFree *uint64  
   // Inodes represents the total inodes in the filesystem.  
-  // +optional  
-  Inodes *uint64 `json:"inodes,omitempty"`  
+  Inodes *uint64   
 }  
 
-// PodUsage holds pod-level unprocessed sample stats.  
+// PodUsage holds pod-level metrics.  
 type PodUsage struct {  
   // UID of the pod  
-  PodUID string `json:"uid"`  
-  // Stats pertaining to pod total usage of cpu  
+  PodUID string  
+  // Metrics pertaining to pod total usage of cpu  
   // This may include additional overhead not included in container usage statistics.  
-  // +optional  
-  CPU *CpuUsage `json:"cpu,omitempty"`  
-  // Stats pertaining to pod total usage of system memory  
+  CPU *CpuUsage  
+  // Metrics pertaining to pod total usage of system memory  
   // This may include additional overhead not included in container usage statistics.  
-  // +optional  
-  Memory *MemoryUsage `json:"memory,omitempty"`  
-  // Stats of containers in the pod.  
-  Containers []ContainerUsage `json:"containers" patchStrategy:"merge" patchMergeKey:"uid"`  
-  // Stats pertaining to volume usage of filesystem resources.  
-  // +optional  
-  Volumes []VolumeUsage `json:"volume,omitempty" patchStrategy:"merge" patchMergeKey:"name"`  
+  Memory *MemoryUsage   
+  // Metrics of containers in the pod.  
+  Containers []ContainerUsage  
+  // Metrics pertaining to volume usage of filesystem resources.  
+  Volumes []VolumeUsage  
 }  
 
-// ContainerUsage holds container-level usage stats.  
+// ContainerUsage holds container-level usage metrics.  
 type ContainerUsage struct {  
-  // UID of the container  
-  ContainerUID string `json:"uid"`  
-  // Stats pertaining to container usage of cpu  
-  // +optional  
-  CPU *CpuUsage `json:"memory,omitempty"`  
-  // Stats pertaining to container usage of system memory  
-  // +optional  
-  Memory *MemoryUsage `json:"memory,omitempty"`  
-  // Stats pertaining to container rootfs usage of disk.  
+  // ID of the container  
+  ContainerID string  
+  // Metrics pertaining to container usage of cpu  
+  CPU *CpuUsage  
+  // Metrics pertaining to container usage of system memory  
+  Memory *MemoryUsage  
+  // Metrics pertaining to container rootfs usage of disk.  
   // Rootfs.UsedBytes is the number of bytes used for the container write layer.  
-  // +optional  
-  Rootfs *FilesystemUsage `json:"rootfs,omitempty"`  
-  // Stats pertaining to container logs usage of Disk.  
-  // +optional  
-  Logs *FilesystemUsage `json:"logs,omitempty"`  
+  Rootfs *FilesystemUsage   
+  // Metrics pertaining to container logs usage of Disk.  
+  Logs *FilesystemUsage  
 }  
 
 // CpuUsage holds statistics about the amount of cpu time consumed  
 type CpuUsage struct {  
-  // The time at which these stats were updated.  
-  Timestamp metav1.Time `json:"time"`  
-  // Average CPU usage rate over sample window (across all cores), in "cores".  
+  // The time at which these Metrics were updated.  
+  Timestamp metav1.Time  
+  // Average CPU usage rate over sample window (across all cores), in "nano cores".  
   // The "core" unit represents nanoseconds of CPU time consumed per second.  
   // For example, 5 nanocores means the process averaged 5 nanoseconds 
   // of cpu time per second during the sample window.
-  // +optional  
-  UsageRateNanoCores *uint64 `json:"usageNanoCores,omitempty"`  
+  UsageRateNanoCores *uint64  
   // Cumulative CPU usage (sum of all cores) since object creation.  
-  // +optional  
-  AggregateUsageCoreNanoSeconds *uint64 `json:"usageCoreNanoSeconds,omitempty"`  
+  AggregateUsageCoreNanoSeconds *uint64   
 }  
 
 // MemoryUsage holds statistics about the quantity of memory consumed  
 type MemoryUsage struct {  
-  // The time at which these stats were updated.  
-  Timestamp metav1.Time `json:"time"`  
+  // The time at which these metrics were updated.  
+  Timestamp metav1.Time  
   // The amount of working set memory. This includes recently accessed memory,  
   // dirty memory, and kernel memory.  
-  // +optional  
-  UsageBytes *uint64 `json:"usageBytes,omitempty"`  
+  WorkingSetBytes *uint64  
 }  
 
 // VolumeUsage holds statistics about the quantity of disk resources consumed for a volume  
@@ -244,35 +224,32 @@ type VolumeUsage struct {
   // Embedded FilesystemUsage  
   FilesystemUsage  
   // Name is the name given to the Volume  
-  // +optional  
-  Name string `json:"name,omitempty"`  
+  Name string  
 }  
 
 // FilesystemUsage holds statistics about the quantity of disk resources consumed  
 type FilesystemUsage struct {  
-  // The time at which these stats were updated.  
-  Timestamp metav1.Time `json:"time"`  
-  // The device on which resources are consumed  
-  Device string `json:"device"`  
-  // UsedBytes represents the disk space consumed on the device, in bytes.  
-  // +optional  
-  UsedBytes *uint64 `json:"usedBytes,omitempty"`  
-  // InodesUsed represents the inodes consumed on the device  
-  // +optional  
-  InodesUsed *uint64 `json:"inodesUsed,omitempty"`  
+  // The time at which these metrics were updated.  
+  Timestamp metav1.Time  
+  // The name filesystme on which resources are consumed.  This must uniquely identify the filesystem.
+  Filesystem string  
+  // UsedBytes represents the disk space consumed on the filesystem, in bytes.  
+  UsedBytes *uint64  
+  // InodesUsed represents the inodes consumed on the filesystem  
+  InodesUsed *uint64  
 }  
 ```
 
 ## Implementation Plan
 
-@dashpole will internally separate core metrics from summary metrics and make the kubelet use the core metrics.  
+@dashpole will create an interface over cAdvisor that provides core metrics.  
 @dashpole will create a separate endpoint TBD to publish this set of core metrics.  
-@dashpole will modify volume stats collection so that it relies on this code.   
-@dashpole will modify the structure of stats collection code to be "On-Demand".   
+@dashpole will modify volume metrics collection so that it re-uses vendored cAdvisor libraries.   
+@dashpole will modify the structure of metrics collection code to be "On-Demand".   
 
 Suggested, tentative future work, which may be covered by future proposals:  
  - Obtain all runtime-specific information needed to collect metrics from the CRI.   
- - Modify cAdvisor to be "stand alone", and run in a seperate binary from the kubelet.  It will consume the above metadata API, and provide the summary API.  
+ - Modify cAdvisor to be "stand alone", and run in a seperate binary from the kubelet.  
  - The kubelet no longer provides the summary API, and starts, by default, cAdvisor stand-alone (which provides the summary API).  Include flag to disable running stand-alone cAdvisor.  
 
 ## Rollout Plan
@@ -285,8 +262,8 @@ The implementation goals of the first milestone are outlined below.
 - [ ] Create the proposal
 - [ ] Implement collection and consumption of core metrics.
 - [ ] Create Kubelet API endpoint for core metrics.
-- [ ] Modify volume stats collection so that it relies on this code.
-- [ ] Modify the structure of stats collection code to be "On-Demand"
+- [ ] Modify volume metrics collection so that it re-uses vendored cAdvisor libraries. 
+- [ ] Modify the structure of metrics collection code to be "On-Demand"
 
 
 
