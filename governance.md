@@ -108,7 +108,7 @@ Management roles:
 
 Rotations:
 - [**Build Cop**](contributors/devel/on-call-build-cop.md): ensure tests pass, submit queue is working, rollback PRs, 
-  manually merge as necessary to fix build
+  manually merge as necessary to fix build; should be members of appropriate repo's admin github team
 - [**User-Support Rotation**](contributors/devel/on-call-user-support.md): answer questions on stackoverflow, googlegroups, 
   slack, twitter, etc. full time while on duty
 
@@ -116,7 +116,7 @@ Release roles:
 - The roles of the individuals/team responsible for major, minor, and patch releases is documented [here](https://github.com/kubernetes/community/tree/master/contributors/devel/release).
 
 Duty-specific github roles:
-- [**kubernetes-admin**](https://github.com/orgs/kubernetes/teams/kubernetes-admin): direct code write/merge access; for build cops and
+- [**kubernetes-admins**](https://github.com/orgs/kubernetes/teams/kubernetes-admins): direct code write/merge access; for build cops and
   release czars only.
 - **K8s Org Owner**: can create repos, do ~any github action; the number of
   owners shouldn't scale with the organization's growth, O(1), and optimally it
