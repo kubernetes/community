@@ -106,7 +106,7 @@ Metrics Server (outlined in [Monitoring Architecture](https://github.com/kuberne
 
 ### Proposed Core Metrics API:
 
-An important difference between the current summary api and the proposed core metrics api is that metrics in the core metrics api contain only usage data, and not capacity-related statistics.  This is more accurate since a pod's resource capacity is really defined by its "requests" and "limits", and it is a better reflection of how components use these metrics.  The kubelet, for example, finds which resources are constrained using node-level capacity and availability data, and then chooses which pods to take action on based on the pod's usage of the constrained resource.  If neccessary, capacity for resources a pod consumes can still be correlated with node-level resources using this format of metrics.
+An important difference between the current summary api and the proposed core metrics api is that pod and container-level metrics in the core metrics api contain only usage data, and not capacity-related statistics.  Node level resource metrics continue to provide capacity.  This is more accurate since a pod's resource capacity is really defined by its "requests" and "limits", and it is a better reflection of how components use these metrics.  The kubelet, for example, finds which resources are constrained using node-level capacity and availability data, and then chooses which pods to take action on based on the pod's usage of the constrained resource.  If neccessary, capacity for resources a pod consumes can still be correlated with node-level resources using this format of metrics.
 
 ```go
 // CoreMetrics is a top-level container for holding NodeResources and PodUsage.  
