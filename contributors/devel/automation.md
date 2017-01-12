@@ -109,7 +109,7 @@ a retest with "@k8s-bot test this issue: #NNNNN", where NNNNN is replaced with
 the issue number you found or filed.
 
 Any pushes of new code to the PR will automatically trigger a new test. No human
-interraction is required.
+interaction is required.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/automation.md?pixel)]()

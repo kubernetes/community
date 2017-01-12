@@ -192,7 +192,7 @@ profiles to be opaque to kubernetes for now.
 The following format is scoped as follows:
 
 1.  `runtime/default` - the default profile for the container runtime
-2.  `unconfined` - unconfined profile, ie, no seccomp sandboxing
+2.  `unconfined` - unconfined profile, i.e., no seccomp sandboxing
 3.  `localhost/<profile-name>` - the profile installed to the node's local seccomp profile root
 
 Since seccomp profile schemes may vary between container runtimes, we will

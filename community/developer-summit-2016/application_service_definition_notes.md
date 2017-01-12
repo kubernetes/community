@@ -8,7 +8,7 @@ Helm contrib: one of the things folks as us is they start from a dockerfile, and
 
 There are different ways to package applications.  There's the potential for a lot of fragmentation in multi-pod application definitions.  Can we create standards here?
 
-We want to build and generate manifests with one tool.  We want "fun in five" that is have it up and running in five minutes or less.
+We want to build and generate manifests with one tool.  We want "fun in five" that is to have it up and running in five minutes or less.
 
 Another issue is testing mode; currently production-quality Helm charts don't really work on minikube,.  There's some issues around this which we know about.  We need dummy PVCs, LoadBalancer, etc.   Also DNS and Ingress.
 
@@ -20,7 +20,7 @@ One of the things we're discussing the Kompose API.  We want to get rid of this 
 
 What's the gap between compose files and the goal?  As an example, say you want to run a webserver pod.  You have to deal with ingress, and service, and replication controller, and a bunch of other things.  What's the equivalent of "docker run" which is easy to get. The critical thing is how fast you can learn it.
 
-We also need to have reversability so that if you use compose you don't have to edit the kube config after deployment, you can still use the simple concepts.  The context of the chart needs to not be lost.
+We also need to have reversibility so that if you use compose you don't have to edit the kube config after deployment, you can still use the simple concepts.  The context of the chart needs to not be lost.
 
 There was discussion of templating applications.  Person argued that it's really a type system.  Erin suggested that it's more like a personal template, like the car seat configuration.  
 

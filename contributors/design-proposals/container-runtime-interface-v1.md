@@ -13,7 +13,7 @@ cost, and also slowed down feature velocity for the following reasons.
      go into implementing a shim of significant size to support all pod
      features. This also adds maintenance overhead (e.g., `docker`).
   2. **High-level interface discourages code sharing and reuse among runtimes**.
-     E.g, each runtime today implements an all-encompassing `SyncPod()`
+     E.g., each runtime today implements an all-encompassing `SyncPod()`
      function, with the Pod Spec as the input argument. The runtime implements
      logic to determine how to achieve the desired state based on the current
      status, (re-)starts pods/containers and manages lifecycle hooks
@@ -54,7 +54,7 @@ The non-goals include
 
 The existing pod-level interface will remain as it is in the near future to
 ensure supports of all existing runtimes are continued. Meanwhile, we will
-work with all parties involved to switching to the proposed interface.
+work with all parties involved to switch to the proposed interface.
 
 
 ## Container Runtime Interface

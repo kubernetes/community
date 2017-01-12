@@ -15,7 +15,7 @@ enable people without many resources to run scalability tests on bigger clusters
 cheaply run scalability tests will enable us to run some set of them on "normal" test clusters, which in turn would mean ability to run
 them on every PR.
 
-This means that we need a system that will allow for realistic performance testing on (much) smaller number of “real” machines. First
+This means that we need a system that will allow for realistic performance testing on (much) smaller number of "real" machines. First
 assumption we make is that Nodes are independent, i.e. number of existing Nodes do not impact performance of a single Node. This is not
 entirely true, as number of Nodes can increase latency of various components on Master machine, which in turn may increase latency of Node
 operations, but we're not interested in measuring this effect here. Instead we want to measure how number of Nodes and the load imposed by
@@ -94,7 +94,7 @@ data from Kubelets.
 
 ### Elasticsearch and Fluentd
 
-Similarly to Heapster Elasticsearch runs outside the Master machine but generates some traffic on it. Fluentd “daemon” running on Master
+Similarly to Heapster Elasticsearch runs outside the Master machine but generates some traffic on it. Fluentd "daemon" running on Master
 periodically sends Docker logs it gathered to the Elasticsearch running on one of the Nodes. In the initial version we omit Elasticsearch,
 as it produces only a constant small load on Master Node that does not change with the size of the cluster.
 
@@ -104,7 +104,7 @@ There are three more or less independent things that needs to be worked on:
 - HollowNode implementation, creating a library/binary that will be able to listen to Watches and respond in a correct fashion with Status
 updates. This also involves creation of a CloudProvider that can produce such Hollow Nodes, or making sure that HollowNodes can correctly
 self-register in no-provider Master.
-- Kubemark setup, including figuring networking model, number of Hollow Nodes that will be allowed to run on a single “machine”, writing
+- Kubemark setup, including figuring networking model, number of Hollow Nodes that will be allowed to run on a single "machine", writing
 setup/run/teardown scripts (in [option 1](#option-1)), or figuring out how to run Master and Hollow Nodes on top of Kubernetes
 (in [option 2](#option-2))
 - Creating a Player component that will send requests to the API server putting a load on a cluster. This involves creating a way to
@@ -142,7 +142,7 @@ don't need to solve this problem now.
 scalability tests. Alternatively we can just use current density/load tests,
 - Benchmark our machines - see how many Watch clients we can have before everything explodes,
 - See how many HollowNodes we can run on a single machine by attaching them to the real master <- this is the moment it starts to useful
-- Update kube-up/kube-down scripts to enable creating “HollowClusters”/write a new scripts/something, integrate HollowCluster with a Elasticsearch/Heapster equivalents,
+- Update kube-up/kube-down scripts to enable creating "HollowClusters"/write a new scripts/something, integrate HollowCluster with a Elasticsearch/Heapster equivalents,
 - Allow passing custom configuration to the Player
 
 ## Future work

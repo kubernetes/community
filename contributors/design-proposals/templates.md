@@ -53,11 +53,11 @@ values are appropriate for a deployer to tune or what the parameters control.
 ### Use cases for parameters within templates
 
 * Share passwords between components (parameter value is provided to each component as an environment variable or as a Secret reference, with the Secret value being parameterized or produced by an [initializer](https://github.com/kubernetes/kubernetes/issues/3585))
-* Allow for simple deployment-time customization of “app” configuration via environment values or api objects, e.g. memory
+* Allow for simple deployment-time customization of "app" configuration via environment values or api objects, e.g. memory
   tuning parameters to a MySQL image, Docker image registry prefix for image strings, pod resource requests and limits, default
   scale size.
 * Allow simple, declarative defaulting of parameter values and expose them to end users in an approachable way - a parameter
-  like “MySQL table space” can be parameterized in images as an env var - the template parameters declare the parameter, give
+  like "MySQL table space" can be parameterized in images as an env var - the template parameters declare the parameter, give
   it a friendly name, give it a reasonable default, and informs the user what tuning options are available.
 * Customization of component names to avoid collisions and ensure matched labeling (e.g. replica selector value and pod label are
   user provided and in sync).
@@ -101,7 +101,7 @@ alternate ways:
 
 This document will also refrain from proposing server APIs or client implementations.  This has been a point of debate, and it makes
 more sense to focus on the template/parameter specification/syntax than to worry about the tooling that will process or manage the
-template objects.  However since there is a desire to at least be able to support a server side implementation, this proposal
+template objects.  However, since there is a desire to at least be able to support a server side implementation, this proposal
 does assume the specification will be k8s API friendly.
 
 ## Desired characteristics
@@ -140,7 +140,7 @@ that is provided by the user once, but then attached as an environment variable 
 In addition, the template can be repeatedly instantiated for a consistent application deployment experience in different
 namespaces or Kubernetes clusters.
 
-Lastly, we propose the Template API object include a “Labels” section in which the template author can define a set of labels
+Lastly, we propose the Template API object include a "Labels" section in which the template author can define a set of labels
 to be applied to all objects created from the template.  This will give the template deployer an easy way to manage all the
 components created from a given template.  These labels will also be applied to selectors defined by Objects within the template,
 allowing a combination of templates and labels to be used to scope resources within a namespace.  That is, a given template
@@ -400,7 +400,7 @@ Given a well-formed template, a client will
 
 The api endpoint will then:
 
-1. Validate the template including confirming “required” parameters have an explicit value.
+1. Validate the template including confirming "required" parameters have an explicit value.
 2. Walk each api object in the template.
 3. Adding all labels defined in the template's ObjectLabels field.
 4. For each field, check if the value matches a parameter name and if so, set the value of the field to the value of the parameter.
@@ -441,7 +441,7 @@ set of objects in a new namespace or a new cluster.
 
 ### Example Templates
 
-These examples reflect the current OpenShift template schema, not the exact schema proposed in this document, however this
+These examples reflect the current OpenShift template schema, not the exact schema proposed in this document, however, this
 proposal, if accepted, provides sufficient capability to support the examples defined here, with the exception of
 automatic generation of passwords.
 
@@ -453,7 +453,7 @@ automatic generation of passwords.
 (mapped to use cases described above)
 
 * [Share passwords](https://github.com/jboss-openshift/application-templates/blob/master/eap/eap64-mongodb-s2i.json#L146-L152)
-* [Simple deployment-time customization of “app” configuration via environment values](https://github.com/jboss-openshift/application-templates/blob/master/eap/eap64-mongodb-s2i.json#L108-L126) (e.g. memory tuning, resource limits, etc)
+* [Simple deployment-time customization of "app" configuration via environment values](https://github.com/jboss-openshift/application-templates/blob/master/eap/eap64-mongodb-s2i.json#L108-L126) (e.g. memory tuning, resource limits, etc)
 * [Customization of component names with referential integrity](https://github.com/jboss-openshift/application-templates/blob/master/eap/eap64-mongodb-s2i.json#L199-L207)
 * [Customize cross-component references](https://github.com/jboss-openshift/application-templates/blob/master/eap/eap64-mongodb-s2i.json#L78-L83) (e.g. user provides the name of a secret that already exists in their namespace, to use in a pod as a TLS cert)
 
@@ -520,7 +520,7 @@ encouraged, at least by convention.*
 
 ## Key discussion points
 
-The preceding document is opinionated about each of these topics, however they have been popular topics of discussion so they are called out explicitly below.
+The preceding document is opinionated about each of these topics, however, they have been popular topics of discussion so they are called out explicitly below.
 
 ### Where to define parameters
 
@@ -554,7 +554,7 @@ renaming parameters seems less likely than changing field paths.
 
 ### Storing templates in k8s
 
-Openshift defines templates as a first class resource so they can be created/retrieved/etc via standard tools.  This allows client tools to list available templates (available in the openshift cluster), allows existing resource security controls to be applied to templates, and generally provides a more integrated feel to templates.  However there is no explicit requirement that for k8s to adopt templates, it must also adopt storing them in the cluster.
+Openshift defines templates as a first class resource so they can be created/retrieved/etc via standard tools.  This allows client tools to list available templates (available in the openshift cluster), allows existing resource security controls to be applied to templates, and generally provides a more integrated feel to templates.  However, there is no explicit requirement that for k8s to adopt templates, it must also adopt storing them in the cluster.
 
 ### Processing templates (server vs. client)
 

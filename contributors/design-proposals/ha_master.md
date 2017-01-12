@@ -66,7 +66,7 @@ Based on that, we will set the following flags:
   * `existing` if there are more than one replica, i.e. the list of existing master replicas is non-empty.
 
 This will allow us to have exactly the same logic for HA and non-HA master. List of DNS names for VMs
-with master replicas will be generated in `kube-up.sh` script and passed to as a env variable
+with master replicas will be generated in `kube-up.sh` script and passed to as an env variable
 `INITIAL_ETCD_CLUSTER`.
 
 ### apiservers
@@ -92,7 +92,7 @@ providers have different capabilities and limitations, we will not try to find a
 denominator that will work everywhere. Instead we will document various options and apply different
 solution for different deployments. Below we list possible approaches:
 
-1. `Managed DNS` - user need to specify a domain name during cluster creation. DNS entries will be managed
+1. `Managed DNS` - user needs to specify a domain name during cluster creation. DNS entries will be managed
 automatically by the deployment tool that will be integrated with solutions like Route53 (AWS)
 or Google Cloud DNS (GCP). For load balancing we will have two options:
   1.1. create an L4 load balancer in front of all apiservers and update DNS name appropriately

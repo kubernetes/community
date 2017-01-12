@@ -6,7 +6,7 @@ and for each Pod, it posts a binding indicating where the Pod should be schedule
 
 ## Exploring the code
 
-We are dividng scheduler into three layers from high level:
+We are dividing scheduler into three layers from high level:
 - [plugin/cmd/kube-scheduler/scheduler.go](http://releases.k8s.io/HEAD/plugin/cmd/kube-scheduler/scheduler.go):
   This is the main() entry that does initialization before calling the scheduler framework.
 - [pkg/scheduler/scheduler.go](http://releases.k8s.io/HEAD/pkg/scheduler/scheduler.go):

@@ -222,7 +222,7 @@ In the Simple Profile:
 
 Namespaces versus userAccount vs. Labels:
 - `userAccount`s are intended for audit logging (both name and UID should be
-logged), and to define who has access to `namespace`s.
+logged), and to define who has accessed to `namespace`s.
 - `labels` (see [docs/user-guide/labels.md](../../docs/user-guide/labels.md))
 should be used to distinguish pods, users, and other objects that cooperate
 towards a common goal but are different in some way, such as version, or
@@ -283,7 +283,7 @@ K8s authorization should:
 the system, to integration with existing to enterprise authorization systems.
 - Allow for centralized management of users and policies. In some
 organizations, this will mean that the definition of users and access policies
-needs to reside on a system other than k8s and encompass other web services
+need to reside on a system other than k8s and encompass other web services
 (such as a storage service).
 - Allow processes running in K8s Pods to take on identity, and to allow narrow
 scoping of permissions for those identities in order to limit damage from

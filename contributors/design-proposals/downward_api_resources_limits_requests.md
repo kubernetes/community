@@ -28,7 +28,7 @@ the exported value of GOMAXPROCS.
 ## Design
 
 This is mostly driven by the discussion in [this issue](https://github.com/kubernetes/kubernetes/issues/9473).
-There are three approaches discussed in this document to obtain resources limits
+There are three approaches discussed in this document to obtain resource limits
 and requests to be exposed as environment variables and volumes inside
 containers:
 
@@ -44,7 +44,7 @@ in retrieving a container specific resource limits and requests, and at
 the same time, it is simpler to specify than full json path selectors.
 
 3. In the third approach, users specify fixed strings (magic keys) to retrieve
-resources limits and requests and do not specify any json path
+resource limits and requests and do not specify any json path
 selectors. This approach is similar to the existing downward API
 implementation approach. The advantages of this approach are that it is
 simpler to specify that the first two, and does not require any type of
@@ -216,7 +216,7 @@ valid relative to pod spec.
 
 ### API with partial JSONpath selectors
 
-Partial json path selectors specify paths to resources limits and requests
+Partial json path selectors specify paths to resource limits and requests
 relative to the container spec. These will be implemented by introducing a
 `ContainerSpecFieldSelector` (json: `containerSpecFieldRef`) to extend the current
 implementation for `type DownwardAPIVolumeFile struct` and `type EnvVarSource struct`.
@@ -238,7 +238,7 @@ type DownwardAPIVolumeFile struct {
      // Selects a field of the pod: only annotations, labels, name and
      // namespace are supported.
      FieldRef *ObjectFieldSelector `json:"fieldRef, omitempty"`
-     // Selects a field of the container: only resources limits and requests
+     // Selects a field of the container: only resource limits and requests
      // (resources.limits.cpu, resources.limits.memory, resources.requests.cpu,
      // resources.requests.memory) are currently supported.
      ContainerSpecFieldRef *ContainerSpecFieldSelector `json:"containerSpecFieldRef,omitempty"`
@@ -247,7 +247,7 @@ type DownwardAPIVolumeFile struct {
 // EnvVarSource represents a source for the value of an EnvVar.
 // Only one of its fields may be set.
 type EnvVarSource struct {
-     // Selects a field of the container: only resources limits and requests
+     // Selects a field of the container: only resource limits and requests
      // (resources.limits.cpu, resources.limits.memory, resources.requests.cpu,
      // resources.requests.memory) are currently supported.
      ContainerSpecFieldRef *ContainerSpecFieldSelector `json:"containerSpecFieldRef,omitempty"`
@@ -366,7 +366,7 @@ Also verify that container name is provided with volumes.
 
 In this approach, users specify fixed strings (or magic keys) to retrieve resources
 limits and requests. This approach is similar to the existing downward
-API implementation approach. The fixed string used for resources limits and requests
+API implementation approach. The fixed string used for resource limits and requests
 for cpu and memory are `limits.cpu`, `limits.memory`,
 `requests.cpu` and `requests.memory`. Though these strings are same
 as json path selectors but are processed as fixed strings. These will be implemented by
@@ -405,7 +405,7 @@ type DownwardAPIVolumeFile struct {
      // Selects a field of the pod: only annotations, labels, name and
      // namespace are supported.
      FieldRef *ObjectFieldSelector `json:"fieldRef, omitempty"`
-     // Selects a resource of the container: only resources limits and requests
+     // Selects a resource of the container: only resource limits and requests
      // (limits.cpu, limits.memory, requests.cpu and requests.memory) are currently supported.
      ResourceFieldRef *ResourceFieldSelector `json:"resourceFieldRef,omitempty"`
 }
@@ -413,7 +413,7 @@ type DownwardAPIVolumeFile struct {
 // EnvVarSource represents a source for the value of an EnvVar.
 // Only one of its fields may be set.
 type EnvVarSource struct {
-     // Selects a resource of the container: only resources limits and requests
+     // Selects a resource of the container: only resource limits and requests
      // (limits.cpu, limits.memory, requests.cpu and requests.memory) are currently supported.
      ResourceFieldRef *ResourceFieldSelector `json:"resourceFieldRef,omitempty"`
      // Selects a field of the pod; only name and namespace are supported.
@@ -554,7 +554,7 @@ summarizes resource access with these approaches.
 
 ## Output format
 
-The output format for resources limits and requests will be same as
+The output format for resource limits and requests will be same as
 cgroups output format, i.e. cpu in cpu shares (cores multiplied by 1024
 and rounded to integer) and memory in bytes. For example, memory request
 or limit of `64Mi` in the container spec will be output as `67108864`

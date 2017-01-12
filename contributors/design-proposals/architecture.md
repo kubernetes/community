@@ -49,7 +49,7 @@ a unified view of the cluster.
 
 ### `etcd`
 
-All persistent master state is stored in an instance of `etcd`. This provides a
+All persistent master states are stored in an instance of `etcd`. This provides a
 great way to store configuration data reliably. With `watch` support,
 coordinating components can be notified very quickly of changes.
 

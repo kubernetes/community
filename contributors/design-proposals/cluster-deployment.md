@@ -16,7 +16,7 @@ together, but that is out of scope of this document.
 
 # Deployment flow
 
-**Note**: _Exit critieria_ in the following sections are not intended to list all tests that should pass,
+**Note**: _Exit criteria_ in the following sections are not intended to list all tests that should pass,
 rather list those that must pass.
 
 ## Step 1: Provision cluster
@@ -81,7 +81,7 @@ be generated locally and copied to all nodes.
 **Exit criteria**:
 
 1. Can run basic API calls (e.g. create, list and delete pods) from the client side (e.g. replication
-controller works - user can create RC object and RC manager can create pods based on that)
+controller works - users can create RC object and RC manager can create pods based on that)
 2. Critical master components works:
   1. scheduler
   2. controller manager
@@ -104,7 +104,7 @@ Each node can be deployed separately and the implementation should make it ~impo
 1. kubelet config file - we will read kubelet configuration file from disk instead of apiserver; it will
 be generated locally and copied to all nodes.
 
-**Exit critera**:
+**Exit criteria**:
 
 1. All nodes are registered, but not ready due to lack of kubernetes networking.
 
@@ -161,7 +161,7 @@ and seems to be popular in kubernetes community which will help us to maintain i
 For simpler UX we will provide simple bash scripts that will wrap all basic commands for deployment (e.g. ```up``` or ```down```)
 
 One disadvantage of using Ansible is that it adds a dependency on a machine which runs deployment scripts. We will workaround
-this by distributing deployment scripts via a docker image so that user will run the following command to create a cluster:
+this by distributing deployment scripts via a docker image so that users will run the following command to create a cluster:
 
 ```docker run gcr.io/google_containers/deploy_kubernetes:v1.2 up --num-nodes=3 --provider=aws```
 

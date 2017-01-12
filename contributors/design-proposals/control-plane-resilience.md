@@ -142,7 +142,7 @@ well-bounded time period.
 <td><b>API Server</b></td>
 <td>
 
-Multiple stateless, self-hosted, self-healing API servers behind a HA
+Multiple stateless, self-hosted, self-healing API servers behind an HA
 load balancer, built out by the default "kube-up" automation on GCE,
 AWS and basic bare metal (BBM). Note that the single-host approach of
 having etcd listen only on localhost to ensure that only API server can

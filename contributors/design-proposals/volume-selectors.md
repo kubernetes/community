@@ -33,7 +33,7 @@ The proposed design should:
 
 1.  Deal with manually-created volumes
 2.  Not necessarily require users to know or understand the differences between
-    volumes (ie, Kubernetes should not dictate any particular set of
+    volumes (i.e., Kubernetes should not dictate any particular set of
     characteristics to administrators to think in terms of)
 
 We will focus **only** on the barest mechanisms to describe and implement
@@ -181,7 +181,7 @@ are in the process of being refactored into a single controller (see
 
 The resulting controller should be modified to use the new
 `selector` field to match a claim to a volume.  In order to
-match to a volume, all criteria must be satisfied; ie, if a label selector is
+match to a volume, all criteria must be satisfied; i.e., if a label selector is
 specified on a claim, a volume must match both the label selector and any
 specified access modes and resource requirements to be considered a match.
 

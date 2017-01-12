@@ -533,7 +533,7 @@ prefers the Decoupled Hierarchical model for the reasons stated below).
 1. **Administration complexity:** Again, I think that this could be argued
     both ways.  Superficially it would seem that administration of a
     single Monolithic multi-zone cluster might be simpler by virtue of
-    being only "one thing to manage", however in practise each of the
+    being only "one thing to manage", however, in practise each of the
     underlying availability zones (and possibly cloud providers) has
     its own capacity, pricing, hardware platforms, and possibly
     bureaucratic boundaries (e.g. "our EMEA IT department manages those

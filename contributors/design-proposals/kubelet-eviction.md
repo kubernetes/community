@@ -308,7 +308,7 @@ Until logs are split from container's lifetime, `kubelet` can delete dead contai
 
 `kubelet` performs image garbage collection based on thresholds today. It uses a high and a low watermark.
 Whenever disk usage exceeds the high watermark, it removes images until the low watermark is reached.
-`kubelet` employs a LRU policy when it comes to deleting images.
+`kubelet` employs an LRU policy when it comes to deleting images.
 
 The existing policy will be replaced with a much simpler policy.
 Images will be deleted based on eviction thresholds. If kubelet can delete logs and keep disk space availability

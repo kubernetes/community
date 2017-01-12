@@ -7,7 +7,7 @@
 ## Motivation
 
 In current Kubernetes design, there is only one default scheduler in a Kubernetes cluster.
-However it is common that multiple types of workload, such as traditional batch, DAG batch, streaming and user-facing production services,
+However, it is common that multiple types of workload, such as traditional batch, DAG batch, streaming and user-facing production services,
 are running in the same cluster and they need to be scheduled in different ways. For example, in
 [Omega](http://research.google.com/pubs/pub41684.html) batch workload and service workload are scheduled by two types of schedulers:
 the batch workload is scheduled by a scheduler which looks at the current usage of the cluster to improve the resource usage rate

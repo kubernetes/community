@@ -22,7 +22,7 @@ We officially support two different SLAs:
 1. "Pod startup time:
    99% of pods (with pre-pulled images) start within 5s
 
-This should be valid on appropriate hardware up to a 1000 node cluster with 30 pods/node.  We eventually want to expand that to 100 pods/node.
+This should be valid on appropriate hardware up to 1000 node clusters with 30 pods/node.  We eventually want to expand that to 100 pods/node.
 
 For more details how do we measure those, you can look at: http://blog.kubernetes.io/2015_09_01_archive.html
 

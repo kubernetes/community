@@ -704,7 +704,7 @@ param: "green and blue"
 ```
 
 This format allows users to specify the new field, but makes it clear that they
-are using a Alpha feature when they do, since the word `alpha` is in the
+are using an Alpha feature when they do, since the word `alpha` is in the
 annotation key.
 
 Another option is to introduce a new type with an new `alpha` or `beta` version

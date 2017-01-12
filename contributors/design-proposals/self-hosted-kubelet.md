@@ -37,8 +37,8 @@ describing the necessary modifications, and required procedures, needed to run a
 self-hosted kubelet.
 
 The approach being proposed for a self-hosted kubelet is a "pivot" style
-installation.  This procedure assumes a short-lived “bootstrap” kubelet will run
-and start a long-running “self-hosted” kubelet. Once the self-hosted kubelet is
+installation.  This procedure assumes a short-lived "bootstrap" kubelet will run
+and start a long-running "self-hosted" kubelet. Once the self-hosted kubelet is
 running the bootstrap kubelet will exit. As part of this, we propose introducing
 a new `--bootstrap` flag to the kubelet. The behaviour of that flag will be
 explained in detail below.
@@ -126,8 +126,8 @@ already been accepted, would make the overall kubelet bootstrap more
 deterministic. With this, we would also need the ability for a kubelet to
 register itself with a given taint when it first contacts the API server. Given
 that, a kubelet could register itself with a given taint such as
-“component=kubelet”, and a kubelet pod could exist that has a toleration to that
-taint, ensuring it is the only pod the “bootstrap” kubelet runs.
+"component=kubelet", and a kubelet pod could exist that has a toleration to that
+taint, ensuring it is the only pod the "bootstrap" kubelet runs.
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

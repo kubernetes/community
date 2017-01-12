@@ -1,4 +1,4 @@
-This is a SIG focused on Federation of Kubernetes Clusters ("Ubernetes") and related topics.  This includes:
+This is an SIG focused on Federation of Kubernetes Clusters ("Ubernetes") and related topics.  This includes:
 
 * Application resiliency against availability zone outages
 * Hybrid clouds

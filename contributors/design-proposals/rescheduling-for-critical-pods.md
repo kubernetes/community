@@ -55,7 +55,7 @@ The proposed order while choosing a node to schedule a critical addon and pods t
 To avoid situation when Scheduler will schedule another pod into the space prepared for the critical addon,
 the chosen node has to be temporarily excluded from a list of nodes considered by Scheduler while making decisions.
 For this purpose the node will get a temporary
-[Taint](../../docs/design/taint-toleration-dedicated.md) “CriticalAddonsOnly”
+[Taint](../../docs/design/taint-toleration-dedicated.md) "CriticalAddonsOnly"
 and each critical addon has to have defined toleration for this taint.
 After Rescheduler has no more work to do: all critical addons are scheduled or cluster is too small for them,
 all taints will be removed.

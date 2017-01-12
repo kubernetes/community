@@ -60,7 +60,7 @@ Anyone making user facing changes to kubernetes.  This is especially important f
 ## Who should help review docs changes?
 
 * cc *@kubernetes/docs*
-* Changes to [kubernetes/docs](https://github.com/kubernetes/kubernetes.github.io) repo must have both a Technical Review and a Docs Review
+* Changes to [kubernetes/docs](https://github.com/kubernetes/kubernetes.github.io) repo must have both a Technical Review and Docs Review
 
 ## Tips for writing new docs
 

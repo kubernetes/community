@@ -10,7 +10,7 @@ parameters to serve several purposes:
 1. Kubernetes metrics provides "/docker-daemon", "/kubelet",
    "/kube-proxy", "/system" etc. raw containers for monitoring system component resource usage
    patterns and detecting regressions. Eventually we want to cap system component usage to a certain
-   limit / request. However this is not currently feasible due to a variety of reasons including:
+   limit / request. However, this is not currently feasible due to a variety of reasons including:
        1. Docker still uses tons of computing resources (See
           [#16943](https://github.com/kubernetes/kubernetes/issues/16943))
        2. We have not yet defined the minimal system requirements, so we cannot control Kubernetes

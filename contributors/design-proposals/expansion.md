@@ -38,7 +38,7 @@ have a shell.
 1.  As a user, I want to be able to specify a default value for a service
 variable which may not exist.
 1.  As a user, I want to see an event associated with the pod if an expansion
-fails (ie, references variable names that cannot be expanded).
+fails (i.e., references variable names that cannot be expanded).
 
 ### Use Case: Composition of environment variables
 
@@ -53,7 +53,7 @@ information they need via the downward API and composition.
 
 #### Expanding expanded variables
 
-It should be possible to reference an variable which is itself the result of an
+It should be possible to reference a variable which is itself the result of an
 expansion, if the referenced variable is declared in the container's environment
 prior to the one referencing it. Put another way -- a container's environment is
 expanded in order, and expanded variables are available to subsequent
@@ -118,7 +118,7 @@ with the shell feature, we chose a different syntax similar to the one in
 Makefiles, `$(var)`. We also chose not to support the bar `$var` format, since
 it is not required to implement the required use-cases.
 
-Nested references, ie, variable expansion within variable names, are not
+Nested references, i.e., variable expansion within variable names, are not
 supported.
 
 #### How should unmatched references be treated?

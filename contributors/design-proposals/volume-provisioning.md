@@ -244,7 +244,7 @@ Existing behavior is unchanged for claims that do not specify
 
      * `pv.Spec` MUST be set to match requirements in `claim.Spec`, especially
        access mode and PV size. The provisioned volume size MUST NOT be smaller
-       than size requested in the claim, however it MAY be larger.
+       than size requested in the claim, however, it MAY be larger.
 
        *So the created PV matches the claim.*
 
@@ -256,7 +256,7 @@ Existing behavior is unchanged for claims that do not specify
 
      * `pv.Name` MUST be unique. Internal provisioners use name based on
        `claim.UID` to produce conflicts when two provisioners accidentally
-       provision a PV for the same claim, however external provisioners can use
+       provision a PV for the same claim, however, external provisioners can use
        any mechanism to generate an unique PV name.
 
   Example of a claim that is to be provisioned by an external provisioner for
@@ -323,7 +323,7 @@ Existing behavior is unchanged for claims that do not specify
   the PV to be delete using the protocol below.
 
   The external provisioner MAY save any annotations to the claim that is
-  provisioned, however the claim may be modified or even deleted by the user at
+  provisioned, however, the claim may be modified or even deleted by the user at
   any time.
 
 
@@ -363,10 +363,10 @@ steps:
    * The deleter SHOULD NOT use any information from StorageClass instance
      referenced by the PV. This is different to internal deleters, which
      need to be StorageClass instance present at the time of deletion to read
-     Secret instances (see Gluster provisioner for example), however we would
+     Secret instances (see Gluster provisioner for example), however, we would
      like to phase out this behavior.
 
-   Note that watching `pv.Status` has been frowned upon in the past, however in
+   Note that watching `pv.Status` has been frowned upon in the past, however, in
    this particular case we could use it quite reliably to trigger deletion.
    It's not trivial to find out if a PV is not needed and should be deleted.
    *Alternatively, an annotation could be used.*

@@ -4,7 +4,7 @@
 
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
-- [Adding a new docs collection for a release](#adding-a-new-docs-collection-for-a-release)
+- [Adding new docs collection for a release](#adding-a-new-docs-collection-for-a-release)
 - [Updating docs in an existing collection](#updating-docs-in-an-existing-collection)
   - [Updating docs on HEAD](#updating-docs-on-head)
   - [Updating docs in release branch](#updating-docs-in-release-branch)
@@ -21,10 +21,10 @@ branch](https://github.com/kubernetes/kubernetes/tree/gh-pages) of kubernetes re
 Updating docs in that branch will update http://kubernetes.io
 
 There are 2 scenarios which require updating docs:
-* Adding a new docs collection for a release.
+* Adding new docs collection for a release.
 * Updating docs in an existing collection.
 
-# Adding a new docs collection for a release
+# Adding new docs collection for a release
 
 Whenever a new release series (`release-X.Y`) is cut from `master`, we push the
 corresponding set of docs to `http://kubernetes.io/vX.Y/docs`. The steps are as follows:

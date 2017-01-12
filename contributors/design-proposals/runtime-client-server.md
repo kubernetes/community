@@ -155,7 +155,7 @@ service ImageService {
     rpc ListImages(ListImagesRequest) returns (ListImagesResponse) {}
     // ImageStatus returns the status of the image.
     rpc ImageStatus(ImageStatusRequest) returns (ImageStatusResponse) {}
-    // PullImage pulls a image with authentication config.
+    // PullImage pulls an image with authentication config.
     rpc PullImage(PullImageRequest) returns (PullImageResponse) {}
     // RemoveImage removes the image.
     rpc RemoveImage(RemoveImageRequest) returns (RemoveImageResponse) {}
