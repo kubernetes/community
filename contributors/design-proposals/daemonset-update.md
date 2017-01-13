@@ -6,19 +6,50 @@
 
 ## Abstract
 
-A proposal for adding the update feature to `DaemonSet`.
+A proposal for adding the update feature to `DaemonSet`. This feature will be
+implemented on server side (in `DaemonSet` API). 
 
-Users already can update a `DaemonSet`, which will not cause changes to its
-subsequent pods, until those pods are killed. In this proposal, we plan to add
-a "RollingUpdate" strategy which allows DaemonSet to downstream its changes to
-pods. 
+Users already can update a `DaemonSet` today (Kubernetes release 1.5), which will
+not cause changes to its subsequent pods, until those pods are killed. In this
+proposal, we plan to add a "RollingUpdate" strategy which allows DaemonSet to
+downstream its changes to pods. 
+
+## Requirements
+
+In this proposal, we design DaemonSet updates based on the following requirements:
+
+- Users can have a controlled number of in-flight updates of a DaemonSet (e.g.
+  DaemonSet only updates one pod at a time)
+- Users can monitor the status of a DaemonSet update (e.g. the number of pods
+  that are updated and healthy)
+- A broken DaemonSet update should not continue 
+- Users should be able to update a DaemonSet, even during an ongoing DaemonSet
+  upgrade (e.g. update the DaemonSet to fix a broken DaemonSet update)
+- Users should be able to view the history of previous DaemonSet updates 
+- Users can figure out the revision of a DaemonSet's pod (e.g. which version is
+  this DaemonSet pod?)
+
+Here are some potential requirements that haven't been covered by this proposal:
+
+- Users can have rate-limited DaemonSet updates (e.g. only upgrade 10% per hour)
+- DaemonSet should provide at-most-one guarantee per node (i.e. at most one pod
+  from a DaemonSet can exist on a node at any time)
+- Uptime is critical for each pod of a DaemonSet during upgrade (e.g. the time
+  from a DaemonSet pods being killed to recreated and healthy should be < 5s)
+- Each DaemonSet pod can still fit on the node after being updated
+- Some DaemonSets require the node to be drained before the DeamonSet's pod on it 
+  is updated (e.g. logging daemons)
+- DaemonSet's pods are implicitly given higher priority than non-daemons
+- DaemonSets can only be operated by admins (i.e. people who manage nodes)
+  - This is required if we allow DaemonSet controllers to drain, cordon,
+    uncordon nodes, evict pods, or allow DaemonSet pods to have higher priority
 
 ## Implementation 
 
 ### API Object 
 
-To enable DaemonSet upgrades, the `DaemonSet` API object will have the following
-structure:
+To enable DaemonSet upgrades, `DaemonSet` related API object will have the following
+changes:
 
 ```go 
 type DaemonSetUpdateStrategy struct {
@@ -31,6 +62,7 @@ type DaemonSetUpdateStrategy struct {
 	//---
 	// TODO: Update this to follow our convention for oneOf, whatever we decide it
 	// to be. Same as DeploymentStrategy.RollingUpdate.
+	// See https://github.com/kubernetes/kubernetes/issues/35345
 	RollingUpdate *RollingUpdateDaemonSet
 }
 
@@ -46,36 +78,26 @@ const (
 
 // Spec to control the desired behavior of daemon set rolling update.
 type RollingUpdateDaemonSet struct {
-	// The maximum number of DaemonSet pods that can be unavailable during the
-	// update. Value can be an absolute number (ex: 5) or a percentage of total
+	// The maximum number of DaemonSet pods that can be updated at a time.
+	// Value can be an absolute number (ex: 5) or a percentage of total
 	// number of DaemonSet pods at the start of the update (ex: 10%). Absolute
 	// number is calculated from percentage by rounding up.
 	// This cannot be 0.
 	// Default value is 1.
 	// Example: when this is set to 30%, 30% of the currently running DaemonSet
-	// pods can be stopped for an update at any given time. The update starts
+	// pods can be updated at any given time. The update starts
 	// by stopping at most 30% of the currently running DaemonSet pods and then
 	// brings up new DaemonSet pods in their place. Once the new pods are ready,
 	// it then proceeds onto other DaemonSet pods, thus ensuring that at least
 	// 70% of original number of DaemonSet pods are available at all times
 	// during the update.
-	MaxUnavailable intstr.IntOrString
+	MaxInFlight intstr.IntOrString
 }
 
 // DaemonSetSpec is the specification of a daemon set.
 type DaemonSetSpec struct {
-	// Selector is a label query over pods that are managed by the daemon set.
-	// Must match in order to be controlled.
-	// If empty, defaulted to labels on Pod template.
-	// More info: http://kubernetes.io/docs/user-guide/labels#label-selectors
-	Selector *metav1.LabelSelector `json:"selector,omitempty" protobuf:"bytes,1,opt,name=selector"`
-
-	// Template is the object that describes the pod that will be created.
-	// The DaemonSet will create exactly one copy of this pod on every node
-	// that matches the template's node selector (or on every node if no node
-	// selector is specified).
-	// More info: http://kubernetes.io/docs/user-guide/replication-controller#pod-template
-	Template v1.PodTemplateSpec `json:"template" protobuf:"bytes,2,opt,name=template"`
+	// Note: Existing fields, including Selector and Template are ommitted in
+	// this proposal.  
 
 	// Update strategy to replace existing DaemonSet pods with new pods.
 	UpdateStrategy DaemonSetUpdateStrategy `json:"updateStrategy,omitempty"`
@@ -84,35 +106,19 @@ type DaemonSetSpec struct {
 const (
 	// DefaultDaemonSetUniqueLabelKey is the default key of the labels that is added
 	// to daemon set pods to distinguish between old and new pod templates during
-	// DaemonSet update. See DaemonSetSpec's UniqueLabelKey field for more information.
-	DefaultDaemonSetUniqueLabelKey string = "daemonset.kubernetes.io/podTemplateHash"
+	// DaemonSet update.
+	DefaultDaemonSetUniqueLabelKey string = "pod-template-hash"
 )
 
 // DaemonSetStatus represents the current status of a daemon set.
 type DaemonSetStatus struct {
-	// CurrentNumberScheduled is the number of nodes that are running at least 1
-	// daemon pod and are supposed to run the daemon pod.
-	CurrentNumberScheduled int32
-
-	// NumberMisscheduled is the number of nodes that are running the daemon pod, but are
-	// not supposed to run the daemon pod.
-	NumberMisscheduled int32
-
-	// DesiredNumberScheduled is the total number of nodes that should be running the daemon
-	// pod (including nodes correctly running the daemon pod).
-	DesiredNumberScheduled int32
-
-	// NumberReady is the number of nodes that should be running the daemon pod and have one
-	// or more of the daemon pod running and ready.
-	NumberReady int32
-
-	// ObservedGeneration is the most recent generation observed by the daemon set controller.
-	ObservedGeneration int64
+	// Note: Existing fields, including CurrentNumberScheduled, NumberMissscheduled,
+	// DesiredNumberScheduled, NumberReady, and ObservedGeneration are ommitted in
+	// this proposal.
 
 	// UpdatedNumberScheduled is the total number of nodes that are running updated
 	// daemon pod
 	UpdatedNumberScheduled int32 `json:"updatedNumberScheduled"`
-
 }
 ```
 
@@ -126,6 +132,8 @@ DaemonSets in etcd.
 For each pending DaemonSet updates, it will:
 
 1. Find all pods whose label is matched by `DaemonSetSpec.Selector`. 
+   - If `OwnerReference` is implemented for DaemonSets, filter out pods that
+     aren't controlled by this DaemonSet too
 1. Find all nodes that should run these pods created by this DaemonSet.
 1. Find an existing PodTemplate whose `Template` is the same as
    `DaemonSetSpec.Template`
@@ -140,13 +148,26 @@ For each pending DaemonSet updates, it will:
    - If `OnDelete`: do nothing
    - If `RollingUpdate`:
      - From all nodes that should run daemon pods, check the daemon pod's
-       "pod-template-hash" label, and kill it if it doesn't equal to the hash of
-       `DaemonSetSpec.Template.Spec` and if it won't violate `MaxUnavailable`.
-     - Go back to step 1 
-1. Cleanup 
+       "pod-template-hash" label. If the label value doesn't equal to the hash
+       of `DaemonSetSpec.Template.Spec` and if `MaxInFlight` isn't reached, kill
+       the pod and create one with new pod template.
+       - `MaxInFlight` = the number of DaemonSet pods with new pod template (i.e.
+         the same as `DaemonSetSpec.Template`) that have not become `Ready`
+         (still being updated)
+1. Cleanup, update DaemonSet status  
 
 If DaemonSet Controller crashes during an update, it can still recover. 
 
+### kubectl 
+
+#### kubectl rollout 
+
+Users can use `kubectl rollout` to monitor or manage DaemonSet updates, just
+like Deployment rollouts. For example, 
+
+- `kubectl rollout history`: to view history of DaemonSet updates. We use
+  `PodTemplate` created by DaemonSets to store update history. 
+- `kubectl rollout status`: to see the DaemonSet upgrade status 
 
 ## Updating DaemonSets mid-way
 
@@ -167,6 +188,7 @@ To begin with, we will support 2 types:
 
 * On delete: Do nothing, until existing daemon pods are killed (for backward
   compatibility).
+  - Other alternatives: No-op, External
 * Rolling update: We gradually kill existing ones while creating the new one.
 
 
@@ -183,6 +205,8 @@ To begin with, we will support 2 types:
   - Adding or deleting nodes won't break that.
 - Users should be able to specify acceptable downtime of their daemon pods, and
   DaemonSet updates should respect that. 
+- DaemonSets can be updated while already being updated (i.e. rollover updates)
+- Broken rollout can be rolled back (by applying old config)
 
 
 ## Future
@@ -190,7 +214,9 @@ To begin with, we will support 2 types:
 In the future, we may:
 
 - Support more DaemonSet update types
-- Support history and rollback
+- Support rollback
+- Allow user-defined unique label key 
 - Add clean up policy for history
 - Add minReadySeconds and make DaemonSet update strategy respect it
 - Support pausing DaemonSets
+- Support auto-rollback
