@@ -15,6 +15,7 @@ the `spec.selector` field. e.g. [kubernetes/kubernetes#26202 (comment)](https://
 # Proposed changes
 
 We can let `kubectl` do something similar to [Selector Generation](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/selector-generation.md) on creation. We can let `kubectl` add a set of labels to assure non-overlapping. 
+There are no changes on server-side and the server-side defaulting is still kept for backward compatible reason.
 
 ## API
 
@@ -22,28 +23,37 @@ No required change.
 
 ## kubectl
 
-Add client-side defaulting in `kubectl` on creation.
+Add client-side selector generation, which is disabled by default and can be enabled by flag in `kubectl`.
 
 `kubectl` will add a set of labels to `spec.selector` and `spec.template.metadata.labels` before sending the object to the API server. 
 
 The generated labels will not be included in the `kubectl.kubernetes.io/last-applied-configuration` annotation, if it is created by `kubectl create --save-config` or `kubectl apply`.
 
-There are at least 2 sets of labels to choose:
+### Generated labels
+
+There are at least 3 sets of labels to choose:
 
 The first set of labels is:
 
 - Add 3 more labels to `spec.selector`
-  - `matchLabels["resource-group"]="$GROUPOFRESOURCE"`
-  - `matchLabels["resource-kind"]="$KINDOFRESOURCE"`
-  - `matchLabels["resource-name"]="$NAMEOFRESOURCE"`
+  - `matchLabels["resource-group"]="$GROUP"`
+  - `matchLabels["resource-kind"]="$KIND"`
+  - `matchLabels["resource-name"]="$NAME"`
 - Append 3 labels to `spec.template.metadata.labels`
-  - `resource-group=$GROUPOFRESOURCE`
-  - `resource-kind=$KINDOFRESOURCE`
-  - `resource-name=$NAMEOFRESOURCE`
+  - `resource-group=$GROUP`
+  - `resource-kind=$KIND`
+  - `resource-name=$NAME`
 
 The second set of labels is:
 
-- Add 1 more labels to `spec.selector`
+- Add 1 more label, which concatenates all the three in the first set, to `spec.selector`
+  - `matchLabels["controllers.k8s.io/selector"]="$GROUP/$KIND/$NAME"`
+- Append 1 label to `spec.template.metadata.labels`
+  - `controllers.k8s.io/selector=$GROUP/$KIND/$NAME`
+
+The third set of labels is:
+
+- Add 1 more label to `spec.selector`
   - `matchLabels["resource-uid"]="$UIDOFRESOURCE"`
 - Append 1 label to `spec.template.metadata.labels`
   - `resource-uid=$UIDOFRESOURCE`
@@ -74,7 +84,38 @@ Update examples that affected.
 
 # Alternatives considered
 
-# 1. Selector Generation from server-side
+# 1. Selector Generation from Admission Controller
+
+# Proposed changes
+
+We can move all the logic described above to a plug-in for admission controller.
+There are no changes on server-side and the server-side defaulting is still kept for backward compatible reason.
+
+## API
+
+No required change.
+
+## kubectl
+
+No required change.
+
+## Admission controller
+
+When receiving an incoming POST request of a workload controller (excluding job controller), the admission controller will add a set of labels to `spec.selector` and `spec.template.metadata.labels`.
+
+This feature is disabled by default and can be enabled by query parameters.
+
+The generated labels will not be included in the `kubectl.kubernetes.io/last-applied-configuration` annotation, if it is created by `kubectl create --save-config` or `kubectl apply`.
+
+### Generated labels
+
+The choice of labels is the same as in section [generated labels](#generated-labels).
+
+### Orphaning and adoption
+
+Orphaning and adoption are working the same as in section [orphaning and adoption](#orphaning-and-adoption).
+
+# 2. Selector Generation from server-side
 
 # Proposed changes
 
