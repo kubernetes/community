@@ -1,16 +1,16 @@
-# Core Metrics Pipeline in kubelet
+# Core Metrics in kubelet
 
 **Author**: David Ashpole (@dashpole)
 
-**Last Updated**: 1/10/2017
+**Last Updated**: 1/12/2017
 
-**Status**: Draft Proposal (WIP)
+**Status**: Proposal
 
-This document proposes a design for an internal Core Metrics Pipeline.
+This document proposes a design for the set of metrics included in an eventual Core Metrics Pipeline.
 
 <!-- BEGIN MUNGE: GENERATED_TOC -->
 
-- [Core Metrics Pipeline in kubelet](#core-metrics-pipeline-in-kubelet)
+- [Core Metrics in kubelet](#core-metrics-in-kubelet)
   - [Introduction](#introduction)
     - [Definitions](#definitions)
     - [Background](#background)
@@ -49,26 +49,28 @@ Currently, cAdvisor collects a large number of metrics related to system and con
 ### Motivations
 The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) proposal explains why a separate monitoring pipeline is required.
 
-By publishing core metrics, the kubelet is relieved of its responsibility to provide metrics to system components.
+By publishing core metrics, the kubelet is relieved of its responsibility to provide metrics for monitoring.
 The third party monitoring pipeline also is relieved of any responsibility to provide these metrics to system components.
 
 cAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benifit from a more "On-Demand" metrics collection design.
 
 ### Proposal
-This proposal is to use this set of core metrics, collected by the kubelet, and used solely by kubernetes system components to support resource feasibility checking and resource management on the node.
+This proposal is to use this set of core metrics, collected by the kubelet, and used solely by kubernetes system components to support resource feasibility checking and resource management on the node.  This proposal is not designed to be an API published by the kubelet, but rather a set of metrics collected by the kubelet that will be transformed, and published in the future.
 
-The target "Users" of this set of metrics are kubernetes components.  This set of metrics itself is not designed to be user-facing, but is designed to be general enough to support user-facing components.
+The target "Users" of this set of metrics are kubernetes components (though not neccessarily directly).  This set of metrics itself is not designed to be user-facing, but is designed to be general enough to support user-facing components.
 
 ### Non Goals
 Everything covered in the [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) design doc will not be covered in this proposal.  This includes the third party metrics pipeline, and the methods by which the metrics found in this proposal are provided to other kubernetes components.
 
 Integration with CRI will not be covered in this proposal.  In future proposals, integrating with CRI may provide a better abstraction of information required by the core metrics pipeline to collect metrics.
 
+The kubelet API endpoint, including the format, url pattern, and name of the API will be the topic of a follow-up proposal to this proposal.
+
 ## Design
 This design covers only the Core Metrics Pipeline.
 
 High level requirements for the design are as follows:
- - Do not break existing users.  We should continue to provide the full summary API as an optional add-on for the forseeable future.  Once the monitoring pipeline is completed, the summary API, or a suitable replacement, will be provided by the monitoring pipeline, possibly through a stand-alone version of cAdvisor.
+ - Do not break existing users.  We should continue to provide the full summary API as an optional add-on for the forseeable future.  Once the monitoring pipeline is completed, the summary API, or a suitable replacement, will be provided by the third party monitoring pipeline, possibly through a stand-alone version of cAdvisor.
  - The kubelet collects the minimum possible number of metrics for complete portable kubernetes functionalities.
  - Metrics can be fetched "On Demand", giving the kubelet more up-to-date stats.
 
@@ -84,24 +86,23 @@ The following is not meant to be an exhaustive list, but gives the current set o
 
 Metrics requirements for "First Class Resource Isolation and Utilization Features", based on kubernetes component needs, are as follows:  
 
-Kubelet
- - Node-level availability metrics for Disk, Memory, and CPU  
- - Pod-level usage metrics for Disk and Memory  
-
-Metrics Server (outlined in [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md)), which exposes the [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md) to the following system components:
- - Scheduler  
-  - Node-level capacity and availability metrics for Disk, CPU, and Memory  
-  - Pod-level usage metrics for Disk, CPU, and Memory  
-  - Container-level usage metrics for Disk, CPU, and Memory  
- - Horizontal-Pod-Autoscaler  
-  - Node-level capacity and availability metrics for CPU and Memory  
-  - Pod-level usage metrics for CPU and Memory  
- - Cluster Federation  
-  - Node-level capacity and availability metrics for Disk, Memory, and CPU  
- - kubectl top and Kubernetes Dashboard  
-  - Node-level capacity and availability metrics for Disk, Memory, and CPU  
-  - Pod-level usage metrics for Disk, Memory, and CPU  
-  - Container-level usage metrics for Disk, CPU, and Memory  
+ - Kubelet
+   - Node-level availability metrics for Disk, Memory, and CPU  
+   - Pod-level usage metrics for Disk and Memory  
+ - Metrics Server (outlined in [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md)), which exposes the [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md) to the following system components:
+   - Scheduler  
+     - Node-level capacity and availability metrics for Disk, CPU, and Memory  
+     - Pod-level usage metrics for Disk, CPU, and Memory  
+     - Container-level usage metrics for Disk, CPU, and Memory  
+   - Horizontal-Pod-Autoscaler  
+     - Node-level capacity and availability metrics for CPU and Memory  
+     - Pod-level usage metrics for CPU and Memory  
+   - Cluster Federation  
+     - Node-level capacity and availability metrics for Disk, Memory, and CPU  
+   - kubectl top and Kubernetes Dashboard  
+     - Node-level capacity and availability metrics for Disk, Memory, and CPU  
+     - Pod-level usage metrics for Disk, Memory, and CPU  
+     - Container-level usage metrics for Disk, CPU, and Memory  
 
 ### Proposed Core Metrics API:
 
@@ -250,25 +251,25 @@ In the case where some metrics are not able to be computed instantly (time-avera
 
 ## Implementation Plan
 @dashpole will create an interface over cAdvisor that provides core metrics.  
-@dashpole will create a separate, versioned endpoint TBD to publish this set of core metrics.  
 @dashpole will modify volume metrics collection so that it re-uses vendored cAdvisor libraries.   
 @dashpole will modify the structure of metrics collection code to be "On-Demand".   
 
 Suggested, tentative future work, which may be covered by future proposals:  
+ - Publish these metrics in some form to a kubelet API endpoint
  - Obtain all runtime-specific information needed to collect metrics from the CRI.   
  - Modify cAdvisor to be "stand alone", and run in a seperate binary from the kubelet.  
- - The kubelet no longer provides the summary API, and starts, by default, cAdvisor stand-alone (which provides the summary API).  Include flag to disable running stand-alone cAdvisor.  
+ - Kubernetes can be configured to run a default "third party metrics provider" as a daemonset.  Possibly standalone cAdvisor.
 
 ## Rollout Plan
+The work described here is entirely internal.  However, publishing a kubelet API endpoint 
 The core metrics endpoint (TBD) will be added alongside the current Summary API for the upcoming release.  This should allow concurrent developments of other portions of the system metrics pipeline (metrics-server, for example).  Once this addition is made, all other changes will be internal, and will not require any API changes.  
-Once the [implementation work](#implementation-plan) is completed, @dashpole will start discussions on how to provide the summary API through a means separate from the kubelet.  One current idea is a standalone verison of cAdvisor, but any third party metrics solution could serve this function as well.
+Once the [implementation work](#implementation-plan) is completed, @dashpole will start discussions on the future of the Summary API, and how to provide an out-of-the-box solution for the "third party monitoring" pipeline on the node.  One current idea is a standalone verison of cAdvisor, but any third party metrics solution could serve this function as well.
 
 ## Implementation Status
 
 The implementation goals of the first milestone are outlined below.
 - [ ] Create the proposal
 - [ ] Implement collection and consumption of core metrics.
-- [ ] Create Kubelet API endpoint for core metrics.
 - [ ] Modify volume metrics collection so that it re-uses vendored cAdvisor libraries. 
 - [ ] Modify the structure of metrics collection code to be "On-Demand"
 
