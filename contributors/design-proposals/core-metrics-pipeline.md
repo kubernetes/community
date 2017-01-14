@@ -55,7 +55,7 @@ The third party monitoring pipeline also is relieved of any responsibility to pr
 cAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benifit from a more "On-Demand" metrics collection design.
 
 ### Proposal
-This proposal is to use this set of core metrics, collected by the kubelet, and used solely by kubernetes system components to support resource feasibility checking and resource management on the node.  This proposal is not designed to be an API published by the kubelet, but rather a set of metrics collected by the kubelet that will be transformed, and published in the future.
+This proposal is to use this set of core metrics, collected by the kubelet, and used solely by kubernetes system components to support "First Class Resource Isolation and Utilization Features".  This proposal is not designed to be an API published by the kubelet, but rather a set of metrics collected by the kubelet that will be transformed, and published in the future.
 
 The target "Users" of this set of metrics are kubernetes components (though not neccessarily directly).  This set of metrics itself is not designed to be user-facing, but is designed to be general enough to support user-facing components.
 
@@ -64,17 +64,15 @@ Everything covered in the [Monitoring Architecture](https://github.com/kubernete
 
 Integration with CRI will not be covered in this proposal.  In future proposals, integrating with CRI may provide a better abstraction of information required by the core metrics pipeline to collect metrics.
 
-The kubelet API endpoint, including the format, url pattern, and name of the API will be the topic of a follow-up proposal to this proposal.
+The kubelet API endpoint, including the format, url pattern, versioning strategy, and name of the API will be the topic of a follow-up proposal to this proposal.
 
 ## Design
 This design covers only the Core Metrics Pipeline.
 
 High level requirements for the design are as follows:
- - Do not break existing users.  We should continue to provide the full summary API as an optional add-on for the forseeable future.  Once the monitoring pipeline is completed, the summary API, or a suitable replacement, will be provided by the third party monitoring pipeline, possibly through a stand-alone version of cAdvisor.
- - The kubelet collects the minimum possible number of metrics for complete portable kubernetes functionalities.
+ - The kubelet collects the minimum possible number of metrics to provide "First Class Resource Isolation and Utilization Features".
+ - Do not break existing users.  We should continue to provide the full summary API by default.  Once the monitoring pipeline is completed, the summary API, or a suitable replacement, will be provided by the third party monitoring pipeline, possibly through a stand-alone version of cAdvisor.
  - Metrics can be fetched "On Demand", giving the kubelet more up-to-date stats.
-
-This Core Metrics API will be versioned to account for version-skew between kubernetes components.
 
 This proposal purposefully omits many metrics that may eventually become core metrics.  This is by design.  Once metrics are needed to support resource feasibility checking or node resource management, they can be added to the core metrics API.
 
@@ -250,14 +248,12 @@ To keep performance bounded while still offering metrics "On-Demand", all calls 
 In the case where some metrics are not able to be computed instantly (time-averaged metrics, for example), then they must be recomputed on the "minimum recency" interval so that they always meet recency requirements.
 
 ## Implementation Plan
-@dashpole will create an interface over cAdvisor that provides core metrics.  
-@dashpole will modify volume metrics collection so that it re-uses vendored cAdvisor libraries.   
+@dashpole will create an interface over cAdvisor that provides core metrics.   
 @dashpole will modify the structure of metrics collection code to be "On-Demand".   
 
 Suggested, tentative future work, which may be covered by future proposals:  
  - Publish these metrics in some form to a kubelet API endpoint
  - Obtain all runtime-specific information needed to collect metrics from the CRI.   
- - Modify cAdvisor to be "stand alone", and run in a seperate binary from the kubelet.  
  - Kubernetes can be configured to run a default "third party metrics provider" as a daemonset.  Possibly standalone cAdvisor.
 
 ## Rollout Plan
@@ -270,7 +266,6 @@ Once the [implementation work](#implementation-plan) is completed, @dashpole wil
 The implementation goals of the first milestone are outlined below.
 - [ ] Create the proposal
 - [ ] Implement collection and consumption of core metrics.
-- [ ] Modify volume metrics collection so that it re-uses vendored cAdvisor libraries. 
 - [ ] Modify the structure of metrics collection code to be "On-Demand"
 
 
