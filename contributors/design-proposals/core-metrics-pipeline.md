@@ -89,16 +89,16 @@ Metrics requirements for "First Class Resource Isolation and Utilization Feature
    - Pod-level usage metrics for Disk and Memory  
  - Metrics Server (outlined in [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md)), which exposes the [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md) to the following system components:
    - Scheduler  
-     - Node-level capacity and availability metrics for Disk, CPU, and Memory  
+     - Node-level availability metrics for Disk, CPU, and Memory  
      - Pod-level usage metrics for Disk, CPU, and Memory  
      - Container-level usage metrics for Disk, CPU, and Memory  
    - Horizontal-Pod-Autoscaler  
-     - Node-level capacity and availability metrics for CPU and Memory  
+     - Node-level availability metrics for CPU and Memory  
      - Pod-level usage metrics for CPU and Memory  
    - Cluster Federation  
-     - Node-level capacity and availability metrics for Disk, Memory, and CPU  
+     - Node-level availability metrics for Disk, Memory, and CPU  
    - kubectl top and Kubernetes Dashboard  
-     - Node-level capacity and availability metrics for Disk, Memory, and CPU  
+     - Node-level availability metrics for Disk, Memory, and CPU  
      - Pod-level usage metrics for Disk, Memory, and CPU  
      - Container-level usage metrics for Disk, CPU, and Memory  
 
