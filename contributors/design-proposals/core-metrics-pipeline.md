@@ -257,7 +257,7 @@ Suggested, tentative future work, which may be covered by future proposals:
  - Kubernetes can be configured to run a default "third party metrics provider" as a daemonset.  Possibly standalone cAdvisor.
 
 ## Rollout Plan
-The work described here is entirely internal.  However, publishing a kubelet API endpoint 
+The work described here is entirely internal to the kubelet.  However, publishing a kubelet API endpoint 
 The core metrics endpoint (TBD) will be added alongside the current Summary API for the upcoming release.  This should allow concurrent developments of other portions of the system metrics pipeline (metrics-server, for example).  Once this addition is made, all other changes will be internal, and will not require any API changes.  
 Once the [implementation work](#implementation-plan) is completed, @dashpole will start discussions on the future of the Summary API, and how to provide an out-of-the-box solution for the "third party monitoring" pipeline on the node.  One current idea is a standalone verison of cAdvisor, but any third party metrics solution could serve this function as well.
 
