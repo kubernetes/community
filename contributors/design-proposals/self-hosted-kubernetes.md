@@ -43,7 +43,7 @@ Today, the first component of the installation of a self-hosted cluster is [`boo
 
 Note: In the future this temporary control plane may be replaced with a kubelet API that will enable injection of this state directly into the kubelet without a temporary Kubernetes API server.
 
-At the end of this process the bootkube can be shut down and the system kubelet will coordinate, through a POSIX lock, to let the self-hosted kubelet take over lifecycle and management of the control plane components. The final cluster state looks like this:
+At the end of this process the bootkube can be shut down and the system kubelet will coordinate, through a POSIX lock (see `kubelet --exit-on-lock-contention`), to let the self-hosted kubelet take over lifecycle and management of the control plane components. The final cluster state looks like this:
 
 ![](self-hosted-final-cluster.png)
 
