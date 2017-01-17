@@ -4,7 +4,7 @@ The Kubernetes community adheres to the following principles:
 * Open: Kubernetes is open source. See repository guidelines and CLA, below.
 * Welcoming and respectful: See Code of Conduct, below.
 * Transparent and accessible: Work and collaboration should be done in public. See SIG governance, below.
-* Merit: Ideas and contributions are accepted according to their technical merit and alignment with project objectives, [scope](kubernetes.io/docs/whatisk8s/), and [design principles](contributors/design-proposals/principles.md).
+* Merit: Ideas and contributions are accepted according to their technical merit and alignment with project objectives, [scope](http://kubernetes.io/docs/whatisk8s/), and [design principles](contributors/design-proposals/principles.md).
 
 # Code of Conduct
 
@@ -29,7 +29,7 @@ use the [Apache Licence version 2.0](LICENSE). Documentation repositories should
 Kubernetes is a large project. It is necessarily a group effort.
 
 There are many ways to participate and contribute.
-We value all forms of constructive contributions, no matter how small, even if not
+We value all forms of constructive contribution, no matter how small, even if not
 explicitly described below.
 
 It is intended that contributors have the opportunity to grow in responsibilities,
@@ -37,12 +37,13 @@ privileges, and authority corresponding to the scope, quality, quantity, and dur
 of their contributions. Definition of criteria and process is in progress.
 
 Why would someone want to perform and be accepted into a particular role?
- - To work more efficiently; more permissions reduces development friction
+ - To work more efficiently; more permissions reduce development friction
  - Status (have the Kubernetes badge on his/her profile and/or contributions)
  - Ownership
  - etc...
  
-Roles that are currently assumed by project participants are described below.
+Roles that are currently assumed by project participants are described below,
+with a focus on the `kubernetes/kubernetes` repo.
 
 Code and documentation contributors:
 - [**New Contributor**](https://github.com/kubernetes/contrib/issues/1090): a
@@ -63,7 +64,8 @@ Code and documentation contributors:
   [two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/)
 - **Reviewer**: org member for at least 3 months; familiar enough with some part of the codebase to be in some
   [OWNERS](contributors/devel/owners.md) file as a reviewer (in repos using the bot),
-  assigned related PRs, assigned relevant test bugs; expected to be responsive to
+  assigned related PRs, assigned relevant test bugs; responsible for project quality control via
+  [code reviews](contributors/devel/collab.md); expected to be responsive to
   review requests as per [community expectations](contributors/devel/community-expectations.md);
   can champion incubator repos; must be nominated by an approver for that part of the codebase,
   with no objections from other approvers; should be added to
@@ -93,7 +95,10 @@ Code and documentation contributors:
   lead designers of the project, who are familiar with the 
   design, requirements, mechanics, conventions, style, scope, gotchas, etc. 
   of the API; most beta/GA API changes are vetted by the API approvers
-  
+- [**API Reviewer**](https://github.com/orgs/kubernetes/teams/api-reviewers):
+  contributors familiar with design, requirements, mechanics, conventions, style,
+  scope, gotchas, etc. of the API; have written and/or reviewed Kubernetes APIs
+
 SIG roles:
 - **SIG Participant**: active in one or more areas of the project; wide 
   variety of roles are represented
@@ -117,13 +122,17 @@ Release roles:
 
 Duty-specific github roles:
 - [**kubernetes-admins**](https://github.com/orgs/kubernetes/teams/kubernetes-admins): direct code write/merge access; for build cops and
-  release czars only.
+  release managers only.
 - **K8s Org Owner**: can create repos, do ~any github action; the number of
   owners shouldn't scale with the organization's growth, O(1), and optimally it
   should be less than 10 people who are very familiar with project workings and
   distributed across a few time zones and organizations The other repos will
   have distinct sets of people filling some of the above roles, also.
-   
+
+Other repositories:
+
+Guidelines for roles in other repositories are TBD.
+
 # SIG Governance
 
 In order to standardize Special Interest Group efforts, create maximum transparency, and route contributors to the appropriate SIG, SIGs should follow the guidelines stated below:
