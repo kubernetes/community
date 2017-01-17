@@ -1,7 +1,6 @@
 # Proposal: Self-hosted Control Plane
 
 Author: Brandon Philips <brandon.philips@coreos.com>
-Last Updated: 2016-12-20
 
 ## Motivations
 
@@ -18,7 +17,8 @@ The advantages of a self-hosted Kubernetes cluster are:
 1. **Small Dependencies:** self-hosted should reduce the number of components required, on host, for a Kubernetes cluster to be deployed to a Kubelet (ideally running in a container). This should greatly simplify the perceived complexity of Kubernetes installation.
 2. **Deployment consistency:** self-hosted reduces the number of files that are written to disk or managed via configuration management or manual installation via SSH. Our hope is to reduce the number of moving parts relying on the host OS to make deployments consistent in all environments.
 3. **Introspection:** internal components can be debugged and inspected by users using existing Kubernetes APIs like `kubectl logs`
-4. **Cluster Upgrades:** Related to introspection the components of a Kubernetes cluster are now subject to control via Kubernetes APIs. Upgrades of Kubelet's are possible via new daemon sets, API servers can be upgraded using daemon sets and potentially deployments in the future, and flags of add-ons can be changed by updating deployments, etc. (An example script is in progress.)
+4. **Cluster Upgrades:** Related to introspection the components of a Kubernetes cluster are now subject to control via Kubernetes APIs. Upgrades of Kubelet's are possible via new daemon sets, API servers can be upgraded using daemon sets and potentially deployments in the future, and flags of add-ons can be changed by updating deployments, etc.
+5. **Easier Highly-Available Configurations:** Using Kubernetes APIs will make it easier to scale up and monitor an HA environment without complex external tooling. Because of the complexity of these configurations tools that create them without self-hosted often implement significant complex logic.
 
 However, there is a spectrum of ways that a cluster can be self-hosted. To do this we are going to divide the Kubernetes cluster into a variety of layers beginning with the Kubelet (level 0) and going up to the add-ons (Level 4). A cluster can self-host all of these levels 0-4 or only partially self-host.
 
@@ -37,9 +37,11 @@ The target audience of this document are others, like [kubeadm](https://github.c
 
 ### Bootkube
 
-Today, the first component of the installation of a self-hosted cluster is [`bootkube`](https://github.com/kubernetes-incubator/bootkube). A kubelet connects to the temporary Kubernetes API server provided by bootkube and is told to deploy the required Kubernetes components, as pods. This diagram shows all of the moving parts:
+Today, the first component of the installation of a self-hosted cluster is [`bootkube`](https://github.com/kubernetes-incubator/bootkube). Bootkube provides a temporary Kubernetes control plane that kicks tells a kubelet to execute all of the components necessary to run a full blown Kubernetes control plane. When the kubelet connects to this temporary API server it will deploy the required Kubernetes components, as pods. This diagram shows all of the moving parts:
 
 ![](self-hosted-moving-parts.png)
+
+Note: In the future this temporary control plane may be replaced with a kubelet API that will enable injection of this state directly into the kubelet without a temporary Kubernetes API server.
 
 At the end of this process the bootkube can be shut down and the system kubelet will coordinate, through a POSIX lock, to let the self-hosted kubelet take over lifecycle and management of the control plane components. The final cluster state looks like this:
 
@@ -71,7 +73,7 @@ A simple updater can take care of helping users update from v1.3.0 to v1.3.1, et
 
 The kubelet could be upgraded in a very similar process to that outlined in the self-hosted proposal.
 
-However, because of the challenges around the self-hosted Kubelet (see above) Tectonic currently has a 1-4 self-hosted cluster with an alternative Kubelet update scheme which side-steps the self-hosted Kubelet issues. First, a kubelet system service is launched that uses the [chrooted kubelet](https://github.com/kubernetes/community/pull/131) implemented by the [kubelet-wrapper](https://coreos.com/kubernetes/docs/latest/kubelet-wrapper.html) then when an update is required a node annotation is made which is read by a long-running daemonset that updates the kubelet-wrapper configuration. This makes Kubelet versions updateable from the cluster API.
+However, because of the challenges around the self-hosted Kubelet (see above) Tectonic currently has a 1-4 self-hosted cluster with an alternative Kubelet update scheme which side-steps the self-hosted Kubelet issues. First, a kubelet system service is launched that uses the [chrooted kubelet](https://github.com/kubernetes/community/pull/131) implemented by the [kubelet-wrapper](https://coreos.com/kubernetes/docs/latest/kubelet-wrapper.html). Then, when an update is required, a node annotation is made which is read by a long-running daemonset that updates the kubelet-wrapper configuration. This makes Kubelet versions updateable from the cluster API.
 
 #### API Server, Scheduler, and Controller Manager
 
@@ -85,7 +87,7 @@ As the primary data store of Kubernetes etcd plays an important role. Today, etc
 
 ### Highly-available Clusters
 
-Self-hosted will make operating highly-available clusters even easier. For internal critical components like the scheduler and controller manager, which already know how to leader elect themselves, creating HA instances will be a simple matter of `kubectl scale` for most administrators. For the data store, etcd, the etcd Operator will ease much of the scaling concern.
+Self-hosted will make operating highly-available clusters even easier. For internal critical components like the scheduler and controller manager, which already know how to leader elect using the Kubernetes leader election API, creating HA instances will be a simple matter of `kubectl scale` for most administrators. For the data store, etcd, the etcd Operator will ease much of the scaling concern.
 
 However, the API server will be a slightly trickier matter for most deployments as the API server relies on either external load balancing or external DNS in most common HA configurations. But, with the addition of Kubernetes label metadata on the [Node API](https://github.com/kubernetes/kubernetes/pull/39112) self-hosted may make it easier for systems administrators to create glue code that finds the appropriate Node IPs and adds them to these external systems.
 
