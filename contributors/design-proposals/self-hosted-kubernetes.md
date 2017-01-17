@@ -5,9 +5,9 @@ Last Updated: 2016-12-20
 
 ## Motivations
 
-> Running in our components in pods would solve many problems, which we'll otherwise need to implement other, less portable, more brittle solutions to, and doesn't require much that we don't need to do for other reasons. Full self-hosting is the eventual goal.
-
-- Brian Grant ([ref](https://github.com/kubernetes/kubernetes/issues/4090#issuecomment-74890508))
+> Running our components in pods would solve many problems, which we'll otherwise need to implement other, less portable, more brittle solutions to, and doesn't require much that we don't need to do for other reasons. Full self-hosting is the eventual goal.
+>
+> - Brian Grant ([ref](https://github.com/kubernetes/kubernetes/issues/4090#issuecomment-74890508))
 
 ### What is self-hosted?
 
@@ -77,9 +77,17 @@ However, because of the challenges around the self-hosted Kubelet (see above) Te
 
 Upgrading these components is fairly straightforward. They are stateless, easily run in containers, and can be modeled as pods and services. Upgrades are simply a matter of deploying new versions, health checking them, and changing the service label selectors.
 
+In HA configurations the API servers should be able to be upgraded in-place one-by-one and rely on external load balancing or client retries to recover from the temporary downtime. This relies on Kubernetes [versioning policy](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/versioning.md).
+
 #### etcd self-hosted
 
-As the primary data store of Kubernetes etcd plays an important role. Today, etcd does not run on top of the self-hosted cluster. However, progress is being made with the introduction of the [etcd Operator](https://coreos.com/blog/introducing-the-etcd-operator.html) and integration into [bootkube](https://github.com/kubernetes-incubator/bootkube/blob/848cf581451425293031647b5754b528ec5bf2a0/cmd/bootkube/start.go#L37). 
+As the primary data store of Kubernetes etcd plays an important role. Today, etcd does not run on top of the self-hosted cluster. However, progress is being made with the introduction of the [etcd Operator](https://coreos.com/blog/introducing-the-etcd-operator.html) and integration into [bootkube](https://github.com/kubernetes-incubator/bootkube/blob/848cf581451425293031647b5754b528ec5bf2a0/cmd/bootkube/start.go#L37).
+
+### Highly-available Clusters
+
+Self-hosted will make operating highly-available clusters even easier. For internal critical components like the scheduler and controller manager, which already know how to leader elect themselves, creating HA instances will be a simple matter of `kubectl scale` for most administrators. For the data store, etcd, the etcd Operator will ease much of the scaling concern.
+
+However, the API server will be a slightly trickier matter for most deployments as the API server relies on either external load balancing or external DNS in most common HA configurations. But, with the addition of Kubernetes label metadata on the [Node API](https://github.com/kubernetes/kubernetes/pull/39112) self-hosted may make it easier for systems administrators to create glue code that finds the appropriate Node IPs and adds them to these external systems.
 
 ### Conclusions
 
