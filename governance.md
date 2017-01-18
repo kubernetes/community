@@ -147,7 +147,8 @@ are enumerated below.
   [kubernetes-release-managers](https://github.com/orgs/kubernetes/teams/kubernetes-release-managers)).
 
 ## Other duty-specific github roles:
-- **K8s Org Owner**: can create repos, do ~any github action; the number of
+- [**Github Org Owner**](https://github.com/orgs/kubernetes/people?utf8=%E2%9C%93&query=%20role%3Aowner):
+  can create repos, do ~any github action; the number of
   owners shouldn't scale with the organization's growth, O(1), and optimally it
   should be less than 20 people who are very familiar with project workings and
   distributed across a few time zones and organizations The other repos will
