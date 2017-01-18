@@ -159,12 +159,13 @@ Guidelines for roles in other repositories are TBD. New subprojects/repositories
 able to add reviewers, approvers, and maintainers more rapidly than more mature subprojects.
 Subprojects less than 1 year old will have relaxed time and PR requirements.
 
-## Stepping down from roles
+## Removal from roles
 
 Most of the above roles require continuous, significant involvement in the project. If someone
 becomes unable or unwilling to continue in their roles, they may retire. If someone doesn't fulfill
-their role for 90 days, they will be removed from the role. If they wish to resume their role in the
-future, they may request to return to it by asking the current members filling that role.
+their role for 90 days or violates the code of conduct, they may be removed from the role (escalation/vote
+process TBD). If they wish to resume their role in the future, they may request to return to it by asking
+the current members filling that role.
 
 # SIG Governance
 
