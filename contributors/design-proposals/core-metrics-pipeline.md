@@ -85,157 +85,55 @@ The following is not meant to be an exhaustive list, but gives the current set o
 Metrics requirements for "First Class Resource Isolation and Utilization Features", based on kubernetes component needs, are as follows:  
 
  - Kubelet
-   - Node-level availability metrics for Disk, Memory, and CPU  
-   - Pod-level usage metrics for Disk and Memory  
+   - Node-level usage metrics for Filesystems, CPU, and Memory  
+   - Pod-level usage metrics for Filesystems and Memory  
  - Metrics Server (outlined in [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md)), which exposes the [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md) to the following system components:
    - Scheduler  
-     - Node-level availability metrics for Disk, CPU, and Memory  
-     - Pod-level usage metrics for Disk, CPU, and Memory  
-     - Container-level usage metrics for Disk, CPU, and Memory  
+     - Node-level usage metrics for Filesystems, CPU, and Memory  
+     - Pod-level usage metrics for Filesystems, CPU, and Memory  
+     - Container-level usage metrics for Filesystems, CPU, and Memory  
    - Horizontal-Pod-Autoscaler  
-     - Node-level availability metrics for CPU and Memory  
+     - Node-level usage metrics for CPU and Memory  
      - Pod-level usage metrics for CPU and Memory  
    - Cluster Federation  
-     - Node-level availability metrics for Disk, Memory, and CPU  
+     - Node-level usage metrics for Filesystems, CPU, and Memory  
    - kubectl top and Kubernetes Dashboard  
-     - Node-level availability metrics for Disk, Memory, and CPU  
-     - Pod-level usage metrics for Disk, Memory, and CPU  
-     - Container-level usage metrics for Disk, CPU, and Memory  
+     - Node-level usage metrics for Filesystems, CPU, and Memory  
+     - Pod-level usage metrics for Filesystems, CPU, and Memory  
+     - Container-level usage metrics for Filesystems, CPU, and Memory  
 
-### Proposed Core Metrics API:
-
-An important difference between the current summary api and the proposed core metrics api is that pod and container-level metrics in the core metrics api contain only usage data, and not capacity-related statistics.  Node level resource metrics continue to provide capacity.  This is more accurate since a pod's resource capacity is really defined by its "requests" and "limits", and it is a better reflection of how components use these metrics.  The kubelet, for example, finds which resources are constrained using node-level capacity and availability data, and then chooses which pods to take action on based on the pod's usage of the constrained resource.  If neccessary, capacity for resources a pod consumes can still be correlated with node-level resources using this format of metrics.
+### Proposed Core Metrics:
+This section defines "usage metrics" for filesystems, CPU, and Memory.  
+As stated in Non-Goals, this proposal does not attempt to define the specific format by which these are exposed.  For convenience, it may be neccessary to include static information such as start time, node capacities for CPU, Memory, or filesystems, and more.
 
 ```go
-// CoreMetrics is a top-level container for holding NodeResources and PodUsage.  
-type CoreMetrics struct {  
-  // Overall node resource metrics.  
-  Node NodeResources   
-  // Per-pod usage metrics.  
-  Pods []PodUsage  
-}  
-
-// NodeResources holds node-level metrics.  NodeResources contains capacity and availibility for Node Resources.  
-type NodeResources struct {   
-  // The filesystem used by node kubernetes components.  
-  KubeletFilesystem string 
-  // The filesystem used by node runtime components.  
-  RuntimeFilesystem string
-  // Metrics pertaining to cpu resources.  
-  CPU *CpuResources  
-  // Metrics pertaining to memory (RAM) resources.  
-  Memory *MemoryResources  
-  // Metrics pertaining to node filesystem resources.  
-  Filesystems []FilesystemResources    
-}  
-
-// CpuResources containes data about overall cpu resource capacity and usage  
-type CpuResources struct {
-  // The number of cores in this machine.  
-  NumCores int `json:"numcores"` 
-  // The current Usage of CPU resources  
-  Usage *CpuUsage  
-}  
-
-// MemoryResources contains data about memory resource usage.  
-type MemoryResources struct {  
-  // The time at which these metrics were updated.  
-  Timestamp metav1.Time  
-  // The memory capacity, in bytes  
-  CapacityBytes *uint64
-  // The available memory, in bytes  
-  // This is the number of bytes which are not included in the working set memory
-  // Working set memory includes recently accessed memory, dirty memory, and kernel memory.
-  AvailableBytes *uint64  
-}  
-
-// FilesystemResources contains data about filesystem disk resources.  
-type FilesystemResources struct {  
-  // The time at which these metrics were updated.  
-  Timestamp metav1.Time   
-  // The filesystem name, which uniquely identifies a filesystem  
-  Filesystem string  
-  // AvailableBytes represents the storage space available (bytes) for the filesystem.  
-  AvailableBytes *uint64    
-  // CapacityBytes represents the total capacity (bytes) of the filesystems underlying storage.  
-  CapacityBytes *uint64  
-  // InodesFree represents the free inodes in the filesystem.  
-  InodesFree *uint64  
-  // Inodes represents the total inodes in the filesystem.  
-  Inodes *uint64   
-}  
-
-// PodUsage holds pod-level metrics.  
-type PodUsage struct {  
-  // UID of the pod  
-  PodUID string  
-  // Metrics pertaining to pod total usage of cpu  
-  // This may include additional overhead not included in container usage statistics.  
-  CPU *CpuUsage  
-  // Metrics pertaining to pod total usage of system memory  
-  // This may include additional overhead not included in container usage statistics.  
-  Memory *MemoryUsage   
-  // Metrics of containers in the pod.  
-  Containers []ContainerUsage  
-  // Metrics pertaining to volume usage of filesystem resources.  
-  Volumes []VolumeUsage  
-}  
-
-// ContainerUsage holds container-level usage metrics.  
-type ContainerUsage struct {  
-  // ID of the container  
-  ContainerID string  
-  // Metrics pertaining to container usage of cpu  
-  CPU *CpuUsage  
-  // Metrics pertaining to container usage of system memory  
-  Memory *MemoryUsage  
-  // Metrics pertaining to container rootfs usage of disk.  
-  // Rootfs.UsedBytes is the number of bytes used for the container write layer.  
-  Rootfs *FilesystemUsage   
-  // Metrics pertaining to container logs usage of Disk.  
-  Logs *FilesystemUsage  
-}  
-
 // CpuUsage holds statistics about the amount of cpu time consumed  
 type CpuUsage struct {  
   // The time at which these Metrics were updated.  
   Timestamp metav1.Time  
-  // Average CPU usage rate over sample window (across all cores), in "nano cores".  
-  // The "core" unit represents nanoseconds of CPU time consumed per second.  
-  // For example, 5 nanocores means the process averaged 5 nanoseconds 
-  // of cpu time per second during the sample window.
-  UsageRateNanoCores *uint64  
   // Cumulative CPU usage (sum of all cores) since object creation.  
-  AggregateUsageCoreNanoSeconds *uint64   
+  CumulativeUsageNanoSeconds *uint64   
 }  
 
 // MemoryUsage holds statistics about the quantity of memory consumed  
 type MemoryUsage struct {  
   // The time at which these metrics were updated.  
   Timestamp metav1.Time  
-  // The amount of working set memory. This includes recently accessed memory,  
+  // The amount of "working set" memory. This includes recently accessed memory,  
   // dirty memory, and kernel memory.  
-  WorkingSetBytes *uint64  
-}  
+  UsageBytes *uint64  
+}   
 
-// VolumeUsage holds statistics about the quantity of disk resources consumed for a volume  
-type VolumeUsage struct {  
-  // Embedded FilesystemUsage  
-  FilesystemUsage  
-  // Name is the name given to the Volume  
-  Name string  
-}  
-
-// FilesystemUsage holds statistics about the quantity of disk resources consumed  
+// FilesystemUsage holds statistics about the quantity of local storage (e.g. disk) resources consumed  
 type FilesystemUsage struct {  
   // The time at which these metrics were updated.  
   Timestamp metav1.Time  
-  // The name filesystme on which resources are consumed.  This must uniquely identify the filesystem.
-  Filesystem string  
-  // UsedBytes represents the disk space consumed on the filesystem, in bytes.  
+  // This must uniquely identify the storage resource that is consumed.
+  StorageIdentifier string  
+  // UsedBytes represents the disk space consumed, in bytes.  
   UsedBytes *uint64  
-  // InodesUsed represents the inodes consumed on the filesystem  
-  InodesUsed *uint64  
+  // UsageInodes represents the inodes consumed  
+  UsageInodes *uint64  
 }  
 ```
 
