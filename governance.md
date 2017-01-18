@@ -107,7 +107,9 @@ are enumerated below.
   reviewers, and other contributors; must apply to `kubernetes-maintainers@googlegroups.com`, with a
   [Champion](https://github.com/kubernetes/community/blob/master/incubator.md) from the existing
   kubernetes-maintainers members and a Sponsor from Project Approvers, with a summary
-  of contributions to the project, current project responsibilities, and links to merged and assigned PRs
+  of contributions to the project, current project responsibilities, and links to merged and assigned PRs;
+  at least 3 of the maintainers must approve the application, with no objections; the application
+  expires after 2 weeks if not enough approvals are granted
 - **Project Approvers**: approver in [top-level OWNERS file in kubernetes repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS);
   de-facto project decision makers; technically can 
   approve virtually any PRs; can sponsor incubator repos
