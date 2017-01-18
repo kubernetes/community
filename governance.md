@@ -45,7 +45,7 @@ Why would someone want to perform and be accepted into a particular role?
 Roles that are currently assumed by project participants are described below,
 with a focus on the `kubernetes/kubernetes` repo.
 
-Code and documentation contributors:
+## Code and documentation contributors
 - [**New Contributor**](https://github.com/kubernetes/contrib/issues/1090): a
   couple of PRs; should be welcomed to the community, helped with PR workflow, and
   directed to relevant documentation
@@ -108,41 +108,50 @@ Code and documentation contributors:
   contributors familiar with design, requirements, mechanics, conventions, style,
   scope, gotchas, etc. of the API; have written and/or reviewed Kubernetes APIs
 
-SIG roles:
+## SIG roles
 - **SIG Participant**: active in one or more areas of the project; wide 
   variety of roles are represented
 - **SIG Lead**: SIG organizer
 
-Management roles:
+## Management roles
 - **Team Lead**: tech lead or manager of some team at some company working on 
   K8s; can influence priorities of their team members; pragmatically, 
   probably want label/assignment powers
 - [**kubernetes-pm**](https://github.com/orgs/kubernetes/teams/kubernetes-pm): help to [manage and maintain the project](project-managers/README.md) in
   ways other than just writing code (e.g. managing issues); should subscribe to kubernetes-pm@googlegroups.com
 
-Rotations:
+## Rotations
 - [**Build Cop**](contributors/devel/on-call-build-cop.md): ensure tests pass, submit queue is working, rollback PRs, 
-  manually merge as necessary to fix build; should be members of appropriate repo's admin github team
+  manually merge as necessary to fix build; should be members of appropriate repo's build-cops github team
+  (e.g., [kubernetes-build-cops](https://github.com/orgs/kubernetes/teams/kubernetes-build-cops))
 - [**User-Support Rotation**](contributors/devel/on-call-user-support.md): answer questions on stackoverflow, googlegroups, 
   slack, twitter, etc. full time while on duty
 
-Release roles:
-- The roles of the individuals/team responsible for major, minor, and patch releases is documented [here](https://github.com/kubernetes/community/tree/master/contributors/devel/release).
+## Release roles
+- The roles of the individuals/team responsible for major, minor, and patch releases is documented
+  [here](https://github.com/kubernetes/community/tree/master/contributors/devel/release). Should be
+  members of the appropriate release-managers github team (e.g., 
+  [kubernetes-release-managers](https://github.com/orgs/kubernetes/teams/kubernetes-release-managers)).
 
-Duty-specific github roles:
-- [**kubernetes-admins**](https://github.com/orgs/kubernetes/teams/kubernetes-admins): direct code write/merge access; for build cops and
-  release managers only.
+## Other duty-specific github roles:
 - **K8s Org Owner**: can create repos, do ~any github action; the number of
   owners shouldn't scale with the organization's growth, O(1), and optimally it
   should be less than 10 people who are very familiar with project workings and
   distributed across a few time zones and organizations The other repos will
   have distinct sets of people filling some of the above roles, also.
 
-Other repositories:
+## Other repositories
 
 Guidelines for roles in other repositories are TBD. New subprojects/repositories need to be
 able to add reviewers, approvers, and maintainers more rapidly than more mature subprojects.
 Subprojects less than 1 year old will have relaxed time and PR requirements.
+
+## Stepping down from roles
+
+Most of the above roles require continuous, significant involvement in the project. If someone
+becomes unable or unwilling to continue in their roles, they may retire. If someone doesn't fulfill
+their role for 90 days, they will be removed from the role. If they wish to resume their role in the
+future, they may request to return to it by asking the current members filling that role.
 
 # SIG Governance
 
