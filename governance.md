@@ -149,7 +149,7 @@ are enumerated below.
 ## Other duty-specific github roles:
 - **K8s Org Owner**: can create repos, do ~any github action; the number of
   owners shouldn't scale with the organization's growth, O(1), and optimally it
-  should be less than 10 people who are very familiar with project workings and
+  should be less than 20 people who are very familiar with project workings and
   distributed across a few time zones and organizations The other repos will
   have distinct sets of people filling some of the above roles, also.
 
