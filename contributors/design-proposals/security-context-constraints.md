@@ -18,7 +18,7 @@ granting the user themselves an elevated set of permissions.
 
 ## Goals
 
-1.  Associate [service accounts](../design/service_accounts.md), groups, and users with
+1.  Associate [service accounts](../design-proposals/service_accounts.md), groups, and users with
 a set of constraints that dictate how a security context is established for a pod and the pod's containers.
 1.  Provide the ability for users and infrastructure components to run pods with elevated privileges
 on behalf of another user or within a namespace where privileges are more restrictive.
@@ -50,7 +50,7 @@ pods and service accounts within a project
 1.  Provide a set of restrictions that controls how a security context is created for pods and containers
 as a new cluster-scoped object called `PodSecurityPolicy`.
 1.  User information in `user.Info` must be available to admission controllers. (Completed in
-https://github.com/GoogleCloudPlatform/kubernetes/pull/8203)
+https://github.com/kubernetes/kubernetes/pull/8203)
 1.  Some authorizers may restrict a user's ability to reference a service account.  Systems requiring
 the ability to secure service accounts on a user level must be able to add a policy that enables
 referencing specific service accounts themselves.
@@ -127,24 +127,24 @@ type HostPortRange struct {
 // VolumeSecurityPolicy allows and disallows the use of different types of volume plugins.
 type VolumeSecurityPolicy struct {
 	// HostPath allows or disallows the use of the HostPath volume plugin.
-	// More info: http://kubernetes.io/docs/user-guide/volumes#hostpath
+	// More info: http://kubernetes.io/docs/user-guide/volumes/#hostpath
 	HostPath bool `json:"hostPath,omitempty"`
 	// EmptyDir allows or disallows the use of the EmptyDir volume plugin.
-	// More info: http://kubernetes.io/docs/user-guide/volumes#emptydir
+	// More info: http://kubernetes.io/docs/user-guide/volumes/#emptydir
 	EmptyDir bool `json:"emptyDir,omitempty"`
 	// GCEPersistentDisk allows or disallows the use of the GCEPersistentDisk volume plugin.
-	// More info: http://kubernetes.io/docs/user-guide/volumes#gcepersistentdisk
+	// More info: http://kubernetes.io/docs/user-guide/volumes/#gcepersistentdisk
 	GCEPersistentDisk bool `json:"gcePersistentDisk,omitempty"`
 	// AWSElasticBlockStore allows or disallows the use of the AWSElasticBlockStore volume plugin.
-	// More info: http://kubernetes.io/docs/user-guide/volumes#awselasticblockstore
+	// More info: http://kubernetes.io/docs/user-guide/volumes/#awselasticblockstore
 	AWSElasticBlockStore bool `json:"awsElasticBlockStore,omitempty"`
 	// GitRepo allows or disallows the use of the GitRepo volume plugin.
 	GitRepo bool `json:"gitRepo,omitempty"`
 	// Secret allows or disallows the use of the Secret volume plugin.
-	// More info: http://kubernetes.io/docs/user-guide/volumes#secrets
+	// More info: http://kubernetes.io/docs/user-guide/volumes/#secret
 	Secret bool `json:"secret,omitempty"`
 	// NFS allows or disallows the use of the NFS volume plugin.
-	// More info: http://kubernetes.io/docs/user-guide/volumes#nfs
+	// More info: http://kubernetes.io/docs/user-guide/volumes/#nfs
 	NFS bool `json:"nfs,omitempty"`
 	// ISCSI allows or disallows the use of the ISCSI volume plugin.
 	// More info: http://releases.k8s.io/HEAD/examples/volumes/iscsi/README.md
@@ -153,7 +153,7 @@ type VolumeSecurityPolicy struct {
 	// More info: http://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md
 	Glusterfs bool `json:"glusterfs,omitempty"`
 	// PersistentVolumeClaim allows or disallows the use of the PersistentVolumeClaim volume plugin.
-	// More info: http://kubernetes.io/docs/user-guide/persistent-volumes#persistentvolumeclaims
+	// More info: http://kubernetes.io/docs/user-guide/persistent-volumes/#persistentvolumeclaims
 	PersistentVolumeClaim bool `json:"persistentVolumeClaim,omitempty"`
 	// RBD allows or disallows the use of the RBD volume plugin.
 	// More info: http://releases.k8s.io/HEAD/examples/volumes/rbd/README.md
