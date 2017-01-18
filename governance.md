@@ -46,6 +46,9 @@ Roles that are currently assumed by project participants are described below,
 with a focus on the `kubernetes/kubernetes` repo.
 
 ## Code and documentation contributors
+
+New community members:
+
 - [**New Contributor**](https://github.com/kubernetes/contrib/issues/1090): a
   couple of PRs; should be welcomed to the community, helped with PR workflow, and
   directed to relevant documentation
@@ -54,6 +57,14 @@ with a focus on the `kubernetes/kubernetes` repo.
   [expectations](contributors/devel/community-expectations.md)
   that frequent contributors will assist in our code-review process and with project
   maintenance
+  
+Established community members:
+
+Established community members are expected to demonstrate their adherence to the principles in this
+document, familiarity with project organization, roles, policies, procedures, conventions, etc.,
+and technical and/or writing ability. Role-specific expectations, responsibilities, and requirements
+are enumerated below.
+
 - **Org Member**: an active contributor for at least 3 months; at least 10 merged and/or assigned PRs; active enough to be useful
   to assign issues to them and add them to a github team (e.g., for a SIG) for notification
   purposes; trusted enough to run tests on their PRs automatically; can issue "@k8s-bot ok to test"
