@@ -34,7 +34,8 @@ explicitly described below.
 
 It is intended that contributors have the opportunity to grow in responsibilities,
 privileges, and authority corresponding to the scope, quality, quantity, and duration
-of their contributions. Definition of criteria and process is in progress.
+of their contributions. Definition of criteria and process is in progress, with preliminary
+requirements below.
 
 Why would someone want to perform and be accepted into a particular role?
  - To work more efficiently; more permissions reduce development friction
