@@ -66,7 +66,7 @@ document, familiarity with project organization, roles, policies, procedures, co
 and technical and/or writing ability. Role-specific expectations, responsibilities, and requirements
 are enumerated below.
 
-- **Org Member**: an active contributor for at least 3 months; at least 10 merged and/or assigned PRs; active enough to be useful
+- **Member**: an active contributor for at least 3 months; at least 10 merged and/or assigned PRs; active enough to be useful
   to assign issues to them and add them to a github team (e.g., for a SIG) for notification
   purposes; trusted enough to run tests on their PRs automatically; can issue "@k8s-bot ok to test"
   for other contributors; if they choose public membership, they get a badge on their github profile;
