@@ -20,8 +20,8 @@ In this proposal, we design DaemonSet updates based on the following requirement
 
 - Users can trigger a rolling update of DaemonSet at a controlled speed, which
   is achieved by:
-  - Only a certain number of DaemonSet pods can be down at all time during an
-    update
+  - Only a certain number of DaemonSet pods can be down at the same time during
+    an update
   - A DaemonSet pod needs to be ready for a specific amount of time before it's
     considered up
 - Users can monitor the status of a DaemonSet update (e.g. the number of pods
@@ -143,7 +143,7 @@ type DaemonSetStatus struct {
 #### DaemonSet Controller 
 
 The DaemonSet Controller will make DaemonSet updates happen. It will watch
-DaemonSets in etcd. 
+DaemonSets on the apiserver. 
 
 For each pending DaemonSet updates, it will:
 
@@ -239,6 +239,8 @@ In the future, we may:
 
 - Implement at-most-one and/or at-least-one guarantees for DaemonSets (i.e. at
   most/at least one pod from a DaemonSet can exist on a node at any time)
+  - At-most-one would use a deterministic name for the pod (e.g. use node name
+    as daemon pod name suffix)
 - Support use cases where uptime is critical for each pod of a DaemonSet during
   an upgrade
   - One approach is to use dummy pods to pre-pull images to reduce down time 
@@ -258,11 +260,15 @@ In the future, we may:
 - Make DaemonSets admin-only resources (admon = people who manage nodes). Some
   possible approaches include:
   - Remove namespace from DaemonSets (DaemonSets become node-level resources)
-  - Modify RBAC bootstrappolicy to make DaemonSets admin-only 
+  - Modify RBAC bootstrap policy to make DaemonSets admin-only 
   - Delegation or impersonation 
+- Make PodTemplate, which is used to store DaemonSet history, an admin-only or
+  read only resource.
 - Support more DaemonSet update strategies 
 - Support rolling back DaemonSets 
   - `kubectl rollout undo daemonset/<DaemonSet-Name>` to roll back 
+- Implement a subresource for DaemonSet history (e.g. `daemonsets/foo/history`)
+  that summarize the information in the history 
 - Allow user-defined DaemonSet unique label key
-- Support pausing DaemonSets
-- Support auto-rollback
+- Support pausing DaemonSet rolling update
+- Support auto-rollback DaemonSets
