@@ -2,7 +2,7 @@
 
 **Author**: David Ashpole (@dashpole)
 
-**Last Updated**: 1/12/2017
+**Last Updated**: 1/19/2017
 
 **Status**: Proposal
 
@@ -19,7 +19,7 @@ This document proposes a design for the set of metrics included in an eventual C
     - [Non Goals](#non-goals)
   - [Design](#design)
     - [Metric Requirements:](#metric-requirements)
-    - [Proposed Core Metrics API:](#proposed-core-metrics-api)
+    - [Proposed Core Metrics:](#proposed-core-metrics)
     - [On-Demand Design:](#on-demand-design)
   - [Implementation Plan](#implementation-plan)
   - [Rollout Plan](#rollout-plan)
@@ -34,7 +34,7 @@ This document proposes a design for the set of metrics included in an eventual C
 ["cAdvisor":](https://github.com/google/cadvisor) An open source container monitoring solution which only monitors containers, and has no concept of kubernetes constructs like pods or volumes.  
 ["Summary API":](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/api/v1alpha1/stats/types.go) A kubelet API which currently exposes node metrics for use by both system components and monitoring systems.  
 ["CRI":](https://github.com/kubernetes/community/blob/master/contributors/devel/container-runtime-interface.md) The Container Runtime Interface designed to provide an abstraction over runtimes (docker, rkt, etc).  
-"Core Metrics": A set of metrics described in the [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) whose purpose is to provide system components with metrics for the purpose of [resource feasibility checking](https://github.com/eBay/Kubernetes/blob/master/docs/design/resources.md#the-resource-model) or node resource management.  
+"Core Metrics": A set of metrics described in the [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) whose purpose is to provide metrics for first-class resource isolation and untilization features, including [resource feasibility checking](https://github.com/eBay/Kubernetes/blob/master/docs/design/resources.md#the-resource-model) and node resource management.  
 "Resource": A consumable element of a node (e.g. memory, disk space, CPU time, etc).  
 "First-class Resource": A resource critical for scheduling, whose requests and limits can be (or soon will be) set via the Pod/Container Spec.  
 "Metric": A measure of consumption of a Resource.  
@@ -55,7 +55,7 @@ The third party monitoring pipeline also is relieved of any responsibility to pr
 cAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benifit from a more "On-Demand" metrics collection design.
 
 ### Proposal
-This proposal is to use this set of core metrics, collected by the kubelet, and used solely by kubernetes system components to support "First Class Resource Isolation and Utilization Features".  This proposal is not designed to be an API published by the kubelet, but rather a set of metrics collected by the kubelet that will be transformed, and published in the future.
+This proposal is to use this set of core metrics, collected by the kubelet, and used solely by kubernetes system components to support "First-Class Resource Isolation and Utilization Features".  This proposal is not designed to be an API published by the kubelet, but rather a set of metrics collected by the kubelet that will be transformed, and published in the future.
 
 The target "Users" of this set of metrics are kubernetes components (though not neccessarily directly).  This set of metrics itself is not designed to be user-facing, but is designed to be general enough to support user-facing components.
 
@@ -67,14 +67,13 @@ Integration with CRI will not be covered in this proposal.  In future proposals,
 The kubelet API endpoint, including the format, url pattern, versioning strategy, and name of the API will be the topic of a follow-up proposal to this proposal.
 
 ## Design
-This design covers only the Core Metrics Pipeline.
+This design covers only metrics to be included in the Core Metrics Pipeline.
 
 High level requirements for the design are as follows:
- - The kubelet collects the minimum possible number of metrics to provide "First Class Resource Isolation and Utilization Features".
- - Do not break existing users.  We should continue to provide the full summary API by default.  Once the monitoring pipeline is completed, the summary API, or a suitable replacement, will be provided by the third party monitoring pipeline, possibly through a stand-alone version of cAdvisor.
+ - The kubelet collects the minimum possible number of metrics to provide "First-Class Resource Isolation and Utilization Features".
  - Metrics can be fetched "On Demand", giving the kubelet more up-to-date stats.
 
-This proposal purposefully omits many metrics that may eventually become core metrics.  This is by design.  Once metrics are needed to support resource feasibility checking or node resource management, they can be added to the core metrics API.
+This proposal purposefully omits many metrics that may eventually become core metrics.  This is by design.  Once metrics are needed to support First-Class Resource Isolation and Utilization Features, they can be added to the core metrics API.
 
 ### Metric Requirements
 The core metrics api is designed to provide metrics for "First Class Resource Isolation and Utilization Features" within kubernetes.
@@ -139,14 +138,12 @@ type FilesystemUsage struct {
 
 ### On-Demand Design
 Interface:  
-The interface for exposing these metrics within the kubelet contains a method for getting this datastructure.  This method contains a "recency" parameter which specifies how recently the metrics must have been computed.  Kubelet components which require very up-to-date metrics (eviction, for example), use very low values.  Other components use higher values.  
+The interface for exposing these metrics within the kubelet contains methods for fetching each relevant metric.  These methods contains a "recency" parameter which specifies how recently the metrics must have been computed.  Kubelet components which require very up-to-date metrics (eviction, for example), use very low values.  Other components use higher values.  
 
 Implementation:  
 To keep performance bounded while still offering metrics "On-Demand", all calls to get metrics are cached, and a minimum recency is established to prevent repeated metrics computation.  Before computing new metrics, the previous metrics are checked to see if they meet the recency requirements of the caller.  If the age of the metrics meet the recency requirements, then the cached metrics are returned.  If not, then new metrics are computed and cached.  
-In the case where some metrics are not able to be computed instantly (time-averaged metrics, for example), then they must be recomputed on the "minimum recency" interval so that they always meet recency requirements.
 
-## Implementation Plan
-@dashpole will create an interface over cAdvisor that provides core metrics.   
+## Implementation Plan 
 @dashpole will modify the structure of metrics collection code to be "On-Demand".   
 
 Suggested, tentative future work, which may be covered by future proposals:  
@@ -163,7 +160,6 @@ Once the [implementation work](#implementation-plan) is completed, @dashpole wil
 
 The implementation goals of the first milestone are outlined below.
 - [ ] Create the proposal
-- [ ] Implement collection and consumption of core metrics.
 - [ ] Modify the structure of metrics collection code to be "On-Demand"
 
 
