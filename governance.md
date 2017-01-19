@@ -106,7 +106,7 @@ are enumerated below.
   to be merged by the submit queue, but expected to respect OWNERS files; expected to review PRs, fix bugs, maintain and
   improve health and quality of the project, provide user support, mentor and guide approvers,
   reviewers, and other contributors; must apply to `kubernetes-maintainers@googlegroups.com`, with a
-  [Champion](https://github.com/kubernetes/community/blob/master/incubator.md) from the existing
+  [Champion](https://github.com/kubernetes/community/blob/master/incubator.md#faq) from the existing
   kubernetes-maintainers members and a Sponsor from Project Approvers, with a summary
   of contributions to the project, current project responsibilities, and links to merged and assigned PRs;
   at least 3 of the maintainers must approve the application, with no objections; the application
