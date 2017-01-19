@@ -49,10 +49,10 @@ Guide](http://kubernetes.io/docs/admin/).
 
 ## Developing against the Kubernetes API
 
-* The [REST API documentation](../api-reference/README.md) explains the REST
+* The [REST API documentation](http://kubernetes.io/docs/reference/) explains the REST
   API exposed by apiserver.
 
-* **Annotations** ([docs/user-guide/annotations.md](../user-guide/annotations.md)): are for attaching arbitrary non-identifying metadata to objects.
+* **Annotations** ([Annotations](http://kubernetes.io/docs/concepts/object-metadata/annotations/)): are for attaching arbitrary non-identifying metadata to objects.
   Programs that automate Kubernetes objects may use annotations to store small amounts of their state.
 
 * **API Conventions** ([api-conventions.md](api-conventions.md)):
