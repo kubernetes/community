@@ -113,7 +113,9 @@ are enumerated below.
   expires after 2 weeks if not enough approvals are granted
 - **Project Approvers**: approver in [top-level OWNERS file in kubernetes repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS);
   de-facto project decision makers; technically can 
-  approve virtually any PRs; can sponsor incubator repos
+  approve virtually any PRs; can sponsor incubator repos; can sponsor maintainers;
+  maintainer in good standing for at least 1 year; strong technical vision;
+  committed to project's mission and culture; nomination/application process TBD
 - [**API Approver**](https://github.com/orgs/kubernetes/teams/api-approvers):
   lead designers of the project, who are familiar with the 
   design, requirements, mechanics, conventions, style, scope, gotchas, etc. 
