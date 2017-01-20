@@ -8,7 +8,7 @@ A Special Interest Group for networking in Kubernetes.
 * [SIG Network Calendar](https://calendar.google.com/calendar/embed?src=ODhmZTFsM3FmbjJiNnIxMWs4dW01YW03NmNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 * Zoom Link: [https://zoom.us/j/5806599998](https://zoom.us/j/5806599998)
 * [Agenda and Minutes](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit)
-* Recorded meetings: TODO
+* Recorded meetings are on the [SIG Network YouTube channel](https://www.youtube.com/playlist?list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb)
 
 ## Google Group / Mailing List
 
