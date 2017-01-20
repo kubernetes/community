@@ -62,7 +62,9 @@ Name convention:
 * k8s-sig-foo-pr-reviews
 * k8s-sig-foo-api-reviews
 
-Note that there is no need for a k8s-sig-foo user.
+There is no need for a k8s-sig-foo user.
+
+NOTE: We have found that Github's notification autocompletion finds the users before the corresponding teams. To avoid this, you might want to try naming the users differently, such as `k8s-mirror-foo-*` instead of `k8s-sig-foo-*`.
 
 Example:
 
