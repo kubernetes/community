@@ -26,6 +26,8 @@ However, there is a spectrum of ways that a cluster can be self-hosted. To do th
 
 For example, a 0-4 self-hosted cluster means that the kubelet is a daemon set, the API server runs as a pod and is exposed as a service, and so on. While a 1-4 self-hosted cluster would have a system installed Kubelet. And a 02-4 system would have everything except etcd self-hosted.
 
+It is also important to point out that self-hosted stands alongside other methods to install and configure Kubernetes, including scripts like kube-up.sh, configuration management tools, and deb/rpm/etc packages. A non-goal of this self-hosted proposal is replacing or introducing anything that might impede these installation and management methods. In fact it is likely that by dogfooding Kubernetes APIs via self-hosted improvements will be made to Kubernetes components that will simplify other installation and management methods.
+
 ## Practical Implementation Overview
 
 This document outlines the current implementation of "self-hosted Kubernetes" installation and upgrade of Kubernetes clusters based on the work that the teams at CoreOS and Google have been doing. The work is motivated by the early ["Self-hosted Proposal"](https://github.com/kubernetes/kubernetes/issues/246#issuecomment-64533959) by Brian Grant.
