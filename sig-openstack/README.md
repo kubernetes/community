@@ -13,5 +13,9 @@ are tagged with the **sig-openstack** label.
 
 **Mailing List:** [kubernetes-sig-openstack](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack)
 
-**Meetings:** Every second Wednesday at 2100 UTC (2 PM PDT / 5 PM EDT) - [Connect using Zoom](https://zoom.us/j/417251241), [Agenda/Notes](https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit#
+**Meetings:** Meetings are held every second Wednesday. The meetings occur at
+1500 UTC or 2100 UTC, alternating. To check which time is being used for the
+upcoming meeting refer to the [Agenda/Notes](https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit#).
+Meeting reminders are also sent to the mailing list linked above. Meetings are 
+held on [Zoom](https://zoom.us) in the room at [https://zoom.us/j/417251241](https://zoom.us/j/417251241).
 )
