@@ -64,8 +64,6 @@ Name convention:
 
 There is no need for a k8s-sig-foo user.
 
-NOTE: We have found that Github's notification autocompletion finds the users before the corresponding teams. To avoid this, you might want to try naming the users differently, such as `k8s-mirror-foo-*` instead of `k8s-sig-foo-*`.
-
 Example:
 
 * k8s-sig-onprem-misc
@@ -75,6 +73,8 @@ Example:
 * k8s-sig-onprem-proposals
 * k8s-sig-onprem-pr-reviews
 * k8s-sig-onprem-api-reviews
+
+NOTE: We have found that Github's notification autocompletion finds the users before the corresponding teams. To avoid this, you might want to try naming the users differently, such as `k8s-mirror-foo-*` instead of `k8s-sig-foo-*`.
 
 #### 
 **Create the GitHub teams**
