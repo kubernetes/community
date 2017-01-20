@@ -24,20 +24,19 @@ However, there is a spectrum of ways that a cluster can be self-hosted. To do th
 
 ![](self-hosted-layers.png)
 
-For example, a 0-4 self-hosted cluster means that the kubelet is a daemon set, the API server runs as a pod and is exposed as a service, and so on. While a 1-4 self-hosted cluster would have a system installed Kubelet.
+For example, a 0-4 self-hosted cluster means that the kubelet is a daemon set, the API server runs as a pod and is exposed as a service, and so on. While a 1-4 self-hosted cluster would have a system installed Kubelet. And a 02-4 system would have everything except etcd self-hosted.
 
 ## Practical Implementation Overview
 
-This document outlines the current implementation of "self-hosted Kubernetes" installation and upgrade of Kubernetes clusters based on the work that the teams at CoreOS and Google have been doing. The work is motivated by the upstream "Self-hosted Proposal".
+This document outlines the current implementation of "self-hosted Kubernetes" installation and upgrade of Kubernetes clusters based on the work that the teams at CoreOS and Google have been doing. The work is motivated by the early ["Self-hosted Proposal"](https://github.com/kubernetes/kubernetes/issues/246#issuecomment-64533959) by Brian Grant.
 
-The entire system is working today and is used by Bootkube, a Kubernetes Incubator project, and all Tectonic clusters created since July 2016. This document outlines the implementation, not the experience. The experience goal is that users not know all of these details and instead get a working Kubernetes cluster out the other end that can be upgraded using the Kubernetes APIs.
+The entire system is working today and is used by Bootkube, a Kubernetes Incubator project, to create 2-4 and 1-4 self-hosted clusters. All Tectonic clusters created since July 2016 are 2-4 self-hosted and will be moving to 1-4 early in 2017 as the self-hosted etcd work becomes stable in bootkube. This document outlines the implementation, not the experience. The experience goal is that users not know all of these details and instead get a working Kubernetes cluster out the other end that can be upgraded using the Kubernetes APIs.
 
-The target audience of this document are others, like [kubeadm](https://github.com/kubernetes/kubernetes/pull/38407), thinking about and building the way forward for install and upgrade of Kubernetes. If you want a higher level demonstration of "Self-Hosted" and the value see this [video and blog](https://coreos.com/blog/self-hosted-kubernetes.html).
-
+The target audience are projects in SIG Cluster Lifecycle thinking about and building the way forward for install and upgrade of Kubernetes. We hope to inspire direction in various Kubernetes components like kubelet and [kubeadm](https://github.com/kubernetes/kubernetes/pull/38407) to make self-hosted a compelling mainstream installation method. If you want a higher level demonstration of "Self-Hosted" and the value see this [video and blog](https://coreos.com/blog/self-hosted-kubernetes.html).
 
 ### Bootkube
 
-Today, the first component of the installation of a self-hosted cluster is [`bootkube`](https://github.com/kubernetes-incubator/bootkube). Bootkube provides a temporary Kubernetes control plane that kicks tells a kubelet to execute all of the components necessary to run a full blown Kubernetes control plane. When the kubelet connects to this temporary API server it will deploy the required Kubernetes components, as pods. This diagram shows all of the moving parts:
+Today, the first component of the installation of a self-hosted cluster is [`bootkube`](https://github.com/kubernetes-incubator/bootkube). Bootkube provides a temporary Kubernetes control plane that tells a kubelet to execute all of the components necessary to run a full blown Kubernetes control plane. When the kubelet connects to this temporary API server it will deploy the required Kubernetes components as pods. This diagram shows all of the moving parts:
 
 ![](self-hosted-moving-parts.png)
 
@@ -79,7 +78,7 @@ However, because of the challenges around the self-hosted Kubelet (see above) Te
 
 Upgrading these components is fairly straightforward. They are stateless, easily run in containers, and can be modeled as pods and services. Upgrades are simply a matter of deploying new versions, health checking them, and changing the service label selectors.
 
-In HA configurations the API servers should be able to be upgraded in-place one-by-one and rely on external load balancing or client retries to recover from the temporary downtime. This relies on Kubernetes [versioning policy](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/versioning.md).
+In HA configurations the API servers should be able to be upgraded in-place one-by-one and rely on external load balancing or client retries to recover from the temporary downtime. This is not well tested upstream and something we need to fix (see known issues).
 
 #### etcd self-hosted
 
@@ -99,3 +98,4 @@ Kubernetes self-hosted is working today. Bootkube is an implementation of the "t
 
 - [Health check endpoints for components don't work correctly](https://github.com/kubernetes-incubator/bootkube/issues/64#issuecomment-228144345)
 - [kubeadm doesn't do self-hosted yet](https://github.com/kubernetes/kubernetes/pull/38407)
+- The Kubernetes [versioning policy](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/versioning.md) allows for version skew of kubelet and control plane but not skew between control plane components themselves. We must add testing and validation to Kubernetes that this skew works. Otherwise the work to make Kubernetes HA is rather pointless if it can't be upgraded in an HA manner as well.
