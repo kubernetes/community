@@ -31,12 +31,12 @@ In this proposal, we design DaemonSet updates based on the following requirement
 - Users should be able to update a DaemonSet even during an ongoing DaemonSet
   upgrade -- in other words, rollover (e.g. update the DaemonSet to fix a broken
   DaemonSet update)
-- Users should be able to view the history of previous DaemonSet updates 
-- Users can figure out the revision of a DaemonSet's pod (e.g. which version is
-  this DaemonSet pod?)
 
 Here are some potential requirements that haven't been covered by this proposal:
 
+- Users should be able to view the history of previous DaemonSet updates 
+- Users can figure out the revision of a DaemonSet's pod (e.g. which version is
+  this DaemonSet pod?)
 - DaemonSet should provide at-most-one guarantee per node (i.e. at most one pod
   from a DaemonSet can exist on a node at any time)
 - Uptime is critical for each pod of a DaemonSet during an upgrade (e.g. the time
@@ -112,11 +112,6 @@ type DaemonSetSpec struct {
 	// available. Defaults to 0 (pod will be considered available as soon as it
 	// is ready).
 	MinReadySeconds int32 `json:"minReadySeconds,omitempty"`
-
-	// The number of old PodTemplates to retain to allow rollback.
-	// This is a pointer to distinguish between explicit zero and not specified.
-	// Defaults to 3. 
-	RevisionHistoryLimit *int32 `json:"revisionHistoryLimit,omitempty"`
 }
 
 const (
@@ -135,6 +130,16 @@ type DaemonSetStatus struct {
 	// UpdatedNumberScheduled is the total number of nodes that are running updated
 	// daemon pod
 	UpdatedNumberScheduled int32 `json:"updatedNumberScheduled"`
+
+	// NumberAvailable is the number of nodes that should be running the
+	// daemon pod and have one or more of the daemon pod running and
+	// available (ready for at least minReadySeconds)
+	NumberAvailable int32 `json:"numberAvailable"`
+
+	// NumberUnavailable is the number of nodes that should be running the
+	// daemon pod and have non of the daemon pod running and available
+	// (ready for at least minReadySeconds)
+	NumberUnavailable int32 `json:"numberUnavailable"`
 }
 ```
 
@@ -149,34 +154,24 @@ For each pending DaemonSet updates, it will:
 
 1. Find all pods whose labels are matched by DaemonSet `.spec.selector`. 
    - If `OwnerReference` is implemented for DaemonSets, filter out pods that
-     aren't controlled by this DaemonSet too
-1. Find all nodes that should run these pods created by this DaemonSet.
-1. Find existing PodTemplates whose labels are matched by DaemonSet
-   `.spec.selector`
-   - Sort those PodTemplates by creation timestamp and only retain at most
-     `.spec.revisionHistoryLimit` latest PodTemplates (remove the rest)
-   - Find the PodTemplate whose `.template` is the same as DaemonSet
-     `.spec.template`. If not found, create a new PodTemplate from DaemonSet
-     `.spec.template`:
-     - The name will be `<DaemonSet-Name>-<Hash-of-pod-template>`
-     - PodTemplate `.metadata.labels` will have a "pod-template-hash" label,
-       value be the hash of PodTemplate `.template` (note: don't include the
-       "pod-template-hash" label when calculating hash)
-     - PodTemplate `.metadata.annotations` will be copied from DaemonSet 
-       `.metadata.annotations`
-1. Create daemon pods on nodes when they should have those pods running but not
-   yet, with the same "pod-template-hash" labels in daemon pods' `Metadata.Labels`.
-   Otherwise, delete running daemon pods that shouldn't be running on nodes. 
+     aren't controlled by this DaemonSet too.
 1. Check `DaemonSetUpdateStrategy`:
    - If `OnDelete`: do nothing
    - If `RollingUpdate`:
-     - From all nodes that should run daemon pods, check the daemon pod's
-       "pod-template-hash" label. If the label value doesn't equal to the hash
-       of `DaemonSetSpec.Template.Spec` and if `MaxUnavailable` isn't reached,
-       kill the pod. Here, we kill unavailable pods first. 
-       - `MaxUnavailable` >= the total number of DaemonSet pods that have not
-          become `Ready` for `MinReadySeconds`
+     - Compare spec of the daemon pods from step 1 with DaemonSet
+       `.spec.template.spec` to see if DaemonSet spec has changed.
+     - If DaemonSet spec has changed, compare `MaxUnavailable` with DaemonSet
+       `.status.numberUnavailable` to see how many old daemon pods can be
+       killed. Then, kill those pods in the order that unhealthy pods (failed,
+       pending, not ready) are killed first.
+1. Find all nodes that should run these pods created by this DaemonSet.
+1. Create daemon pods on nodes when they should have those pods running but not
+   yet. Otherwise, delete running daemon pods that shouldn't be running on nodes.
 1. Cleanup, update DaemonSet status  
+   - `.status.numberAvailable` = the total number of DaemonSet pods that have
+     become `Ready` for `MinReadySeconds`
+   - `.status.numberUnavailable` = `.status.desiredNumberScheduled` -
+     `.status.numberAvailable`
 
 If DaemonSet Controller crashes during an update, it can still recover. 
 
@@ -184,12 +179,8 @@ If DaemonSet Controller crashes during an update, it can still recover.
 
 #### kubectl rollout 
 
-Users can use `kubectl rollout` to monitor or manage DaemonSet updates, just
-like Deployment rollouts. For example, 
+Users can use `kubectl rollout` to monitor DaemonSet updates:
 
-- `kubectl rollout history daemonset/<DaemonSet-Name>`: to view the history of
-  DaemonSet updates. We use `PodTemplate` created by DaemonSets to store update
-  history. 
 - `kubectl rollout status daemonset/<DaemonSet-Name>`: to see the DaemonSet
   upgrade status 
 
@@ -202,7 +193,7 @@ one will begin rolling out.
 
 ## Deleting DaemonSets
 
-Deleting a DaemonSet (with cascading) will delete all its pods and PodTemplates. 
+Deleting a DaemonSet (with cascading) will delete all its pods. 
 
 
 ## DaemonSet Strategies
@@ -225,12 +216,12 @@ To begin with, we will support 2 types:
   DaemonSet updates only affect pods on those nodes.
   - For example, some nodes may be running manifest pods, and other nodes will
     be running daemon pods 
-- DaemonSet should support at most one daemon pod per node guarantee.
-  - Adding or deleting nodes won't break that.
-- Users should be able to specify acceptable downtime of their daemon pods, and
-  DaemonSet updates should respect that. 
 - DaemonSets can be updated while already being updated (i.e. rollover updates)
 - Broken rollout can be rolled back (by applying old config)
+- If a daemon pod can no long fit on the node after rolling update, the users
+  can manually evict or delete other pods on the node to make room for the
+  daemon pod, and the DaemonSet rollout will eventually succeed (DaemonSet
+  controller will recreate the failed daemon pod if it can't be scheduled)
 
 
 ## Future Plans
@@ -257,18 +248,68 @@ In the future, we may:
   can updated (e.g. logging daemons)
   - The DaemonSet controller will drain the node before upgrading the daemon on
     it, and uncordon the node once it's done 
-- Make DaemonSets admin-only resources (admon = people who manage nodes). Some
+- Make DaemonSets admin-only resources (admin = people who manage nodes). Some
   possible approaches include:
   - Remove namespace from DaemonSets (DaemonSets become node-level resources)
   - Modify RBAC bootstrap policy to make DaemonSets admin-only 
   - Delegation or impersonation 
-- Make PodTemplate, which is used to store DaemonSet history, an admin-only or
-  read only resource.
 - Support more DaemonSet update strategies 
-- Support rolling back DaemonSets 
-  - `kubectl rollout undo daemonset/<DaemonSet-Name>` to roll back 
-- Implement a subresource for DaemonSet history (e.g. `daemonsets/foo/history`)
-  that summarize the information in the history 
 - Allow user-defined DaemonSet unique label key
 - Support pausing DaemonSet rolling update
 - Support auto-rollback DaemonSets
+
+### DaemonSet History 
+
+In the future, we will support DaemonSet history, so that users can view
+previous revisions and roll back when necessary. 
+
+One possible approach is to create a new resource called `DaemonSetRevision` to
+store DaemonSet history.
+
+Another way to implement DaemonSet history is through creating `PodTemplates` as
+snapshots of DaemonSet templates, and then create them in DaemonSet controller:
+
+- Find existing PodTemplates whose labels are matched by DaemonSet
+  `.spec.selector`
+  - Sort those PodTemplates by creation timestamp and only retain at most
+   `.spec.revisionHistoryLimit` latest PodTemplates (remove the rest)
+  - Find the PodTemplate whose `.template` is the same as DaemonSet
+   `.spec.template`. If not found, create a new PodTemplate from DaemonSet
+   `.spec.template`:
+   - The name will be `<DaemonSet-Name>-<Hash-of-pod-template>`
+   - PodTemplate `.metadata.labels` will have a "pod-template-hash" label,
+     value be the hash of PodTemplate `.template` (note: don't include the
+     "pod-template-hash" label when calculating hash)
+   - PodTemplate `.metadata.annotations` will be copied from DaemonSet 
+     `.metadata.annotations`
+
+Note that when the DaemonSet controller creates pods, those pods will be created
+with the "pod-template-hash" label.
+
+PodTemplate may need to be made an admin-only or read only resource if it's used
+to store DaemonSet history. 
+
+#### History Clean Up Policy
+
+We also need to specify a clean up policy for the number of history to keep in
+the system, and keep only limited number of history by default (for example, 3).
+
+#### kubectl 
+
+`kubectl` should also support DaemonSet history:
+
+- `kubectl rollout undo daemonset/<DaemonSet-Name>` to roll back 
+- `kubectl rollout history daemonset/<DaemonSet-Name>`: to view the history of
+  DaemonSet updates
+
+#### API
+
+Implement a subresource for DaemonSet history (e.g. `daemonsets/foo/history`)
+that summarizes the information in the history.
+
+### Tests
+
+- DaemonSet should support at most one daemon pod per node guarantee.
+  - Adding or deleting nodes won't break that.
+- Users should be able to specify acceptable downtime of their daemon pods, and
+  DaemonSet updates should respect that. 
