@@ -49,32 +49,32 @@ Example:
 
 Create the GitHub users at [https://github.com/join](https://github.com/join), using the name convention below.
 
-As an e-mail address, please, use the Google Group e-mail address of the respective Google Group, created before (i.e. - for user ‘k8s-sig-foo-misc’ use ‘[kubernetes-sig-foo-misc@googlegroups.com](mailto:kubernetes-sig-foo-misc@googlegroups.com)’). After creating the GitHub users, please, request @idvoretskyi (backup person - @sarahnovotny) to add these users to the Kubernetes organization.
+As an e-mail address, please, use the Google Group e-mail address of the respective Google Group, created before (i.e. - for user ‘k8s-mirror-foo-misc’ use ‘[kubernetes-sig-foo-misc@googlegroups.com](mailto:kubernetes-sig-foo-misc@googlegroups.com)’). After creating the GitHub users, please, request @idvoretskyi (backup person - @sarahnovotny) to add these users to the Kubernetes organization. If github contacts you about having too many robot accounts, please let us know. 
 
 
 Name convention:
 
-* k8s-sig-foo-misc 
-* k8s-sig-foo-test-failures
-* k8s-sig-foo-bugs
-* k8s-sig-foo-feature-requests
-* k8s-sig-foo-proposals
-* k8s-sig-foo-pr-reviews
-* k8s-sig-foo-api-reviews
+* k8s-mirror-foo-misc 
+* k8s-mirror-foo-test-failures
+* k8s-mirror-foo-bugs
+* k8s-mirror-foo-feature-requests
+* k8s-mirror-foo-proposals
+* k8s-mirror-foo-pr-reviews
+* k8s-mirror-foo-api-reviews
 
-There is no need for a k8s-sig-foo user.
+There is no need for a k8s-mirro-foo user.
 
 Example:
 
-* k8s-sig-onprem-misc
-* k8s-sig-onprem-test-failures
-* k8s-sig-onprem-bugs
-* k8s-sig-onprem-feature-requests
-* k8s-sig-onprem-proposals
-* k8s-sig-onprem-pr-reviews
-* k8s-sig-onprem-api-reviews
+* k8s-mirror-onprem-misc
+* k8s-mirror-onprem-test-failures
+* k8s-mirror-onprem-bugs
+* k8s-mirror-onprem-feature-requests
+* k8s-mirror-onprem-proposals
+* k8s-mirror-onprem-pr-reviews
+* k8s-mirror-onprem-api-reviews
 
-NOTE: We have found that Github's notification autocompletion finds the users before the corresponding teams. To avoid this, you might want to try naming the users differently, such as `k8s-mirror-foo-*` instead of `k8s-sig-foo-*`.
+NOTE: We have found that Github's notification autocompletion finds the users before the corresponding teams. This is the reason we recommend naming the users `k8s-mirror-foo-*` instead of `k8s-sig-foo-*`. If you previously created users named `k8s-sig-foo-*`, we recommend you rename them.
 
 #### 
 **Create the GitHub teams**
