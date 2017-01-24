@@ -23,7 +23,6 @@ This document proposes a design for the set of metrics included in an eventual C
     - [On-Demand Design:](#on-demand-design)
   - [Implementation Plan](#implementation-plan)
   - [Rollout Plan](#rollout-plan)
-  - [Implementation Status](#implementation-status)
 
 <!-- END MUNGE: GENERATED_TOC -->
 
@@ -90,6 +89,9 @@ Metrics requirements for "First Class Resource Isolation and Utilization Feature
    - Scheduler  
      - Node-level usage metrics for Filesystems, CPU, and Memory  
      - Pod-level usage metrics for Filesystems, CPU, and Memory  
+   - Vertical-Pod-Autoscaler  
+     - Node-level usage metrics for Filesystems, CPU, and Memory  
+     - Pod-level usage metrics for Filesystems, CPU, and Memory  
      - Container-level usage metrics for Filesystems, CPU, and Memory  
    - Horizontal-Pod-Autoscaler  
      - Node-level usage metrics for CPU and Memory  
@@ -127,7 +129,8 @@ type MemoryUsage struct {
 type FilesystemUsage struct {  
   // The time at which these metrics were updated.  
   Timestamp metav1.Time  
-  // This must uniquely identify the storage resource that is consumed.
+  // StorageIdentifier must uniquely identify the node-level storage resource that is consumed.
+  // It may utilize device, partition, filesystem id, or other identifiers.  
   StorageIdentifier string  
   // UsedBytes represents the disk space consumed, in bytes.  
   UsedBytes *uint64  
@@ -154,13 +157,6 @@ Suggested, tentative future work, which may be covered by future proposals:
 ## Rollout Plan
 Once this set of metrics is accepted, @dashpole will begin discussions on the format, and design of the endpoint that exposes them.  The node resource metrics endpoint (TBD) will be added alongside the current Summary API in an upcoming release.  This should allow concurrent developments of other portions of the system metrics pipeline (metrics-server, for example).  Once this addition is made, all other changes will be internal, and will not require any API changes.  
 @dashpole will also start discussions on integrating with the CRI, and discussions on how to provide an out-of-the-box solution for the "third party monitoring" pipeline on the node.  One current idea is a standalone verison of cAdvisor, but any third party metrics solution could serve this function as well.
-
-## Implementation Status
-
-The implementation goals of the first milestone are outlined below.
-- [ ] Create the proposal
-- [ ] Modify the structure of metrics collection code to be "On-Demand"
-
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
