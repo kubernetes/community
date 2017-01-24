@@ -13,10 +13,29 @@ Interested in contributing to storage features in Kubernetes? [Please read our g
 ### Links
 * Public Slack Channel: https://kubernetes.slack.com/messages/sig-storage/details/
   * Get invite to join here: http://slack.k8s.io/
-* Google Group: https://groups.google.com/forum/#!forum/kubernetes-sig-storage
-* Github team: https://github.com/orgs/kubernetes/teams/sig-storage
-* Github issues: [link](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Asig%2Fstorage)
+* Google Groups
+  * General storage SIG related discussions.
+    * [kubernetes-sig-storage](https://groups.google.com/forum/#!forum/kubernetes-sig-storage)
+  * Archive of Github team notifications:
+    * [kubernetes-sig-storage-api-reviews](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-api-reviews)
+    * [kubernetes-sig-storage-bugs](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-bugs)
+    * [kubernetes-sig-storage-feature-requests](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-feature-requests)
+    * [kubernetes-sig-storage-misc](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-misc)
+    * [kubernetes-sig-storage-pr-reviews](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-pr-reviews)
+    * [kubernetes-sig-storage-proposals](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-proposals)
+    * [kubernetes-sig-storage-test-failures](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-test-failures)
+* Github Teams - These are the teams that should be mentioned on Github PRs and Issues:
+  * [kubernetes-sig-storage-api-reviews](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-api-reviews)
+  * [kubernetes-sig-storage-bugs](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-bugs)
+  * [kubernetes-sig-storage-feature-requests](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-feature-requests)
+  * [kubernetes-sig-storage-misc](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-misc)
+  * [kubernetes-sig-storage-pr-reviews](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-pr-reviews)
+  * [kubernetes-sig-storage-proposals](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-proposals)
+  * [kubernetes-sig-storage-test-failures](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-test-failures)
+* Github Issues
+  * [link](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Asig%2Fstorage)
 * Documentation for currently supported volume plugins: http://kubernetes.io/docs/user-guide/volumes/
-* Code for Volume plugins can be found [here](https://github.com/kubernetes/kubernetes/tree/master/pkg/volume).
-* Code for volume controllers can be found [here](https://github.com/kubernetes/kubernetes/tree/master/pkg/controller/volume/).
-* Code for Kubelet volume manager can be found [here](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/volumemanager/).
+* Code
+  * [Volume plugins](https://github.com/kubernetes/kubernetes/tree/master/pkg/volume)
+  * [Volume controllers](https://github.com/kubernetes/kubernetes/tree/master/pkg/controller/volume/)
+  * [Kubelet volume manager](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/volumemanager/)
