@@ -10,8 +10,8 @@ Runtime Interface and links its rollout in Docker to that of the CRI.
 
 ## Motivation
 
-Sharing a PID namespace is discussed in [#1615](https://issues.k8s.io/1615),
-and enables:
+Sharing a PID namespace between containers in a pod is discussed in
+[#1615](https://issues.k8s.io/1615), and enables:
 
   1. signaling between containers, which is useful for side cars (e.g. for
      signaling a daemon process after rotating logs).
@@ -42,32 +42,31 @@ until after switching to the CRI.
 
 Other changes that must be made to support this change:
 
-1. Ensure all containers restart if the infra container responsible for the
-   PodSandbox dies. (Note: With Docker 1.12 if the source of the PID namespace
-   dies all containers sharing that namespace are killed as well.)
+1. Add a test to verify all containers restart if the infra container
+   responsible for the PodSandbox dies. (Note: With Docker 1.12 if the source
+   of the PID namespace dies all containers sharing that namespace are killed
+   as well.)
 2. Modify the Infra container used by the Docker runtime to reap orphaned
    zombies ([#36853](https://pr.k8s.io/36853)).
 
 ## Rollout Plan
 
 SIG Node is planning to switch to the CRI as a default in 1.6, at which point
-users with Docker >= 1.12 will be able to test Shared namespaces. Switching
-back to isolated PID namespaces will require disabling the CRI.
+users with Docker >= 1.12 will receive a shared PID namespace by default.
+Cluster administrators will be able to disable this behavior by providing a flag
+to the kubelet which will cause the dockershim to revert to previous behavior.
 
-At some point, say 1.7, SIG Node will remove support for disabling the CRI.
-After this point users must roll back to a previous version of Kubernetes or
-Docker to achieve PID namespace isolation. This is acceptable because:
+The ability to disable shared PID namespaces is intended as a way to roll back
+to prior behavior in the event of unforeseen problems. It won't be possible to
+configure the behavior per-pod. We believe this is acceptable because:
 
-* No one has been able to identify a concrete use case requiring isolated PID
-  namespaces.
-* The lack of use cases means we can't justify the complexity required to make
-  PID namespace type configurable.
-* Users will already be looking for issues due to the major version upgrade and
-  prepared for a rollback to the previous release.
+* We have not identified a concrete use case requiring isolated PID namespaces.
+* Making PID namespace configurable requires changing the CRI, which we would
+  like to avoid since there are no use cases.
 
-Alternatively, we could create a flag in the kublet to disable shared PID
-namespace, but this wouldn't be especially useful to users of a hosted
-Kubernetes cluster.
+In a future release, SIG Node will recommend docker >= 1.12. Unless a compelling
+use case for isolated PID namespaces is discovered, we will remove the ability
+to disable the shared PID namespace in the subsequent release.
 
 
 [1]: https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/
