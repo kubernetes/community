@@ -131,8 +131,8 @@ type FilesystemUsage struct {
   StorageIdentifier string  
   // UsedBytes represents the disk space consumed, in bytes.  
   UsedBytes *uint64  
-  // UsageInodes represents the inodes consumed  
-  UsageInodes *uint64  
+  // UsedInodes represents the inodes consumed  
+  UsedInodes *uint64  
 }  
 ```
 
@@ -152,9 +152,8 @@ Suggested, tentative future work, which may be covered by future proposals:
  - Kubernetes can be configured to run a default "third party metrics provider" as a daemonset.  Possibly standalone cAdvisor.
 
 ## Rollout Plan
-The work described here is entirely internal to the kubelet.  However, publishing a kubelet API endpoint 
-The core metrics endpoint (TBD) will be added alongside the current Summary API for the upcoming release.  This should allow concurrent developments of other portions of the system metrics pipeline (metrics-server, for example).  Once this addition is made, all other changes will be internal, and will not require any API changes.  
-Once the [implementation work](#implementation-plan) is completed, @dashpole will start discussions on the future of the Summary API, and how to provide an out-of-the-box solution for the "third party monitoring" pipeline on the node.  One current idea is a standalone verison of cAdvisor, but any third party metrics solution could serve this function as well.
+Once this set of metrics is accepted, @dashpole will begin discussions on the format, and design of the endpoint that exposes them.  The node resource metrics endpoint (TBD) will be added alongside the current Summary API in an upcoming release.  This should allow concurrent developments of other portions of the system metrics pipeline (metrics-server, for example).  Once this addition is made, all other changes will be internal, and will not require any API changes.  
+@dashpole will also start discussions on integrating with the CRI, and discussions on how to provide an out-of-the-box solution for the "third party monitoring" pipeline on the node.  One current idea is a standalone verison of cAdvisor, but any third party metrics solution could serve this function as well.
 
 ## Implementation Status
 
