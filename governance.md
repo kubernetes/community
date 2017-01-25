@@ -47,6 +47,9 @@ Focusing on, but not limited to the `kubernetes/kubernetes` repo.
 
 ## Code and documentation contributors
 
+
+The “contributor ladder”.
+
 New community members:
 
 - [**NEWCOMER**](https://github.com/kubernetes/contrib/issues/1090):
@@ -82,6 +85,7 @@ are enumerated below.
     - at least 10 merged and/or assigned PRs
     - active enough to be assigned issues and/or PRs, and to be added to a github team
       (e.g., for a SIG) for notification purposes
+    - TODO: document nomination process
   - Expectations
     - must enable [GitHub’s two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/)
     - should subscribe to kubernetes-dev@googlegroups.com
@@ -97,7 +101,15 @@ are enumerated below.
     - at least 20 merged and/or assigned PRs, including at least 3 as the primary reviewer
     - familiar enough with some part of the codebase to be in an [OWNERS](contributors/devel/owners.md)
       file as a `reviewer` (in repos using the bot)
-    - nominated by an APPROVER for that part of the codebase, with no objections from opant**: active in one or more areas of the project; wide variety of roles are represented
+    - nominatedments, mechanics, conventions, style,
+      scope, gotchas, etc. of the API
+  - Expectations
+    - review and approve API changes and proposals in their functional area
+  - Benefits
+    - TBD
+
+## SIG roles
+- **SIG Participant**: active in one or more areas of the project; wide variety of roles are represented
 - **SIG Lead**: SIG organizer
 
 ## Management roles
@@ -108,7 +120,11 @@ are enumerated below.
   issues); should subscribe to kubernetes-pm@googlegroups.com
 
 ## Rotations
-- [**Build Cop**](contributors/devel/on-call-build-cop.md): ensure tests pass, submit queue is workinn
+- [**Build Cop**](contributors/devel/on-call-build-cop.md): ensure tests pass, submit queue is working,
+  rollback PRs, manually merge as necessary to fix build; should be members of appropriate repo's
+  build-cops github team (e.g.,
+  [kubernetes-build-cops](https://github.com/orgs/kubernetes/teams/kubernetes-build-cops))
+- [**User-Support Rotation**](contributors/devel/on-call-user-support.md): answer questions on
   stackoverflow, googlegroups, slack, twitter, etc. full time while on duty
 
 ## Release roles
@@ -124,6 +140,23 @@ are enumerated below.
   should be less than 20 people who are very familiar with project workings and
   distributed across a few time zones and organizations The other repos will
   have distinct sets of people filling some of the above roles, also.
+
+## Procedural roles
+
+- **Champion**
+  - A Champion is the primary point of contact for guiding someone through a process, such
+    as [creating a new incubator repo](incubator.md) or becoming a maintainer
+  - The majority of the mentorship, review, and advice regarding Kubernetes community norms and
+    processes will come from the Champion
+  - Potential Champions come from a group of existing Kubernetes contributors, such as REVIEWERS
+    or MAINTAINERS -- which group depends on the particular process 
+- **Sponsor**
+  - A Sponsor is an approver for initiating a process, such as creating a new incubator repo or
+    adding a new maintainer
+  - Potential Sponsors come from a very small set of senior Kubernetes contributors (typically LEADS)
+  - The idea is that by relying on this small set of Kubernetes Community members to approve
+    will ensure consistency and preserve the culture and integrity of the project.
+  - Being a Sponsor is a minor advisory role
 
 ## Other repositories
 
@@ -167,7 +200,7 @@ In order to standardize Special Interest Group efforts, create maximum transpare
 
 - Meet regularly, at least for 30 minutes every 3 weeks, except November and December
 - Keep up-to-date meeting notes, linked from the SIG's page in the community repo
-- Announce meeting agenda and minutes after each meeting, on their SIG mailing list
+- Announce meeting agenda before each meeting and post minutes after, on their SIG mailing list
 - Record SIG meeting and make it publicly available
 - Ensure the SIG's mailing list and slack channel are archived
 - Report activity in the weekly community meeting at least once every 6 weeks
@@ -175,6 +208,7 @@ In order to standardize Special Interest Group efforts, create maximum transpare
 - Ensure related work happens in a project-owned github org and repository, with code and tests 
   explicitly owned and supported by the SIG, including issue triage, PR reviews, test-failure response,
   bug fixes, etc. 
+  - TODO: Allow integration projects that need to be hosted by other github orgs for license reasons 
 - Use the above forums as the primary means of working, communicating, and collaborating, as opposed to
   private emails and meetings
 - Represent the SIG for the PM group:
@@ -195,3 +229,4 @@ Discussion to finalize the initial content can be found in a [Google Doc](https:
 Join kubernetes-dev or kubernetes-pm googlegroups to access it.
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/governance.md?pixel)]()
+
