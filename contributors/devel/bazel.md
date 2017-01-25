@@ -1,43 +1,59 @@
 # Build with Bazel
 
-Building with bazel is currently experimental. Automanaged BUILD rules have the
+Building with Bazel is currently experimental. Automanaged `BUILD` rules have the
 tag "automanaged" and are maintained by
-[gazel](https://github.com/mikedanese/gazel). Instructions for installing bazel
+[gazel](https://github.com/mikedanese/gazel). Instructions for installing Bazel
 can be found [here](https://www.bazel.io/versions/master/docs/install.html).
 
-To build docker images for the components, run:
+Several `make` rules have been created for common operations:
 
-```
-$ bazel build //build/...
+* `make bazel-build`: builds all binaries in tree
+* `make bazel-test`: runs all unit tests
+* `make bazel-release`: builds release tarballs, Docker images (for server
+  components), and Debian images
+
+You can also interact with Bazel directly; for example, to run all `kubectl` unit
+tests, run
+
+```console
+$ bazel test //pkg/kubectl/...
 ```
 
-To run many of the unit tests, run:
+## Continuous Integration
 
-```
-$ bazel test //cmd/... //build/... //pkg/... //federation/... //plugin/...
-```
+The [Bazel CI job](http://k8s-testgrid.appspot.com/google-unit#bazel) runs
+`make bazel-build`, `make bazel-test`, and (transitively) `make bazel-release`.
+A similar job is run on all PRs.
 
-To update automanaged build files, run:
+Many steps are cached, so the Bazel job usually executes fairly quickly.
 
-```
+## Known issues
+
+[Cross-compilation is not currently supported](https://github.com/bazelbuild/rules_go/issues/70),
+so all binaries will be built for the host architecture running Bazel.
+Additionally, Go build tags are not supported. This means that builds on macOS may not work.
+
+[Binaries produced by Bazel are not statically linked](https://github.com/bazelbuild/rules_go/issues/161),
+and they are not currently tagged with version information.
+
+## Updating `BUILD` files
+
+To update `BUILD` files, run:
+
+```console
 $ ./hack/update-bazel.sh
 ```
 
-**NOTES**: `update-bazel.sh` only works if check out directory of Kubernetes is "$GOPATH/src/k8s.io/kubernetes".
+**NOTE**: `update-bazel.sh` only works if check out directory of Kubernetes is `$GOPATH/src/k8s.io/kubernetes`.
 
-To update a single build file, run:
+Only rules which are automanaged will be updated, but all rules will be
+auto-formatted.
 
-```
-$ # get gazel
-$ go get -u github.com/mikedanese/gazel
-$ # .e.g. ./pkg/kubectl/BUILD
-$ gazel -root="${YOUR_KUBE_ROOT_PATH}" ./pkg/kubectl
-```
-
-Updating BUILD file for a package will be required when:
+Updating the `BUILD` file for a package will be required when:
 * Files are added to or removed from a package
 * Import dependencies change for a package
-
+* A `BUILD` file has been updated and needs to be reformatted
+* A new `BUILD` file has been added (parent `BUILD` files will be updated)
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/bazel.md?pixel)]()
