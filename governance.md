@@ -1,4 +1,7 @@
-This is a Work in Progress, documenting approximately how we have been operating up to this point.
+Last update: 1/26/2017
+
+This is a Work in Progress, documenting approximately how we have been operating up to this point,
+and formalizing some previously informal conventions.
 
 # Principles
 
@@ -77,7 +80,9 @@ Established community members:
 Established community members are expected to demonstrate their adherence to the principles in this
 document, familiarity with project organization, conventions, policies & procedures, etc.,
 and technical and/or writing abilities. Role-specific expectations, responsibilities, and requirements
-are enumerated below.
+are enumerated below. Because github teams are not visible by nonmembers of the org and because changes
+to them are not transparent, the primary documentation of role membership beyond MEMBER should be 
+maintained in OWNERS files in the repository.
 
 - **MEMBER**:
   - Requirements
@@ -85,23 +90,89 @@ are enumerated below.
     - at least 10 merged and/or assigned PRs
     - active enough to be assigned issues and/or PRs, and to be added to a github team
       (e.g., for a SIG) for notification purposes
-    - TODO: document nomination process
+    - nomination process TBD
   - Expectations
     - must enable [GitHub’s two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/)
     - should subscribe to kubernetes-dev@googlegroups.com
     - should read the [developer guide](contributors/devel/README.md)
     - expected to be familiar with project organization, conventions, policies, etc.
   - Benefits
-    - trusted enough to run tests on their PRs automatically
-    - can issue `@k8s-bot ok to test` for other contributors
-    - if they choose public membership, they get a badge on their github profile
-- **REVIEWER**:
+    - trusted enough to run tests on netes
+      repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS)
+      - Proposed initial list comprised of long-time senior project leads:
+        bgrant0607, brendandburns, dchen1107, jbeda, lavalamp, smarterclayton, thockin
+    - nomination/application process TBD
+    - cap on number of members TBD
+  - Expectations
+    - TBD
+    - provide overall technical guidance and vision for the project
+    - maintain the [definition of the project](https://kubernetes.io/docs/whatisk8s/)
+    - decide project structure, such as system layers (e.g., core) and repository breakdown
+    - resolve technical escalations in the cases of OWNER and SIG lead disagreements 
+    - meet monthly by videoconference or in person
+  - Benefits
+    - project decision makers
+    - technically can approve virtually any PRs
+    - can [Sponsor incubator repos](incubator.md)
+    - can Sponsor MAINTAINERS
+
+
+## Orthogonal technical roles
+
+API REVIEWER and APPROVER are called out specifically because the API is critical to the
+identity of Kubernetes and is a horizontal area that crosses directories and SIGs.
+
+- [**API REVIEWER**]:
   - Requirements
-    - org member for at least 3 months
-    - at least 20 merged and/or assigned PRs, including at least 3 as the primary reviewer
-    - familiar enough with some part of the codebase to be in an [OWNERS](contributors/devel/owners.md)
-      file as a `reviewer` (in repos using the bot)
-    - nominateduild; should be members of appropriate repo's
+    - tenure requirement TBD
+    - nomination process TBD
+    - initial members TBD
+    - have written and/or reviewed Kubernetes APIs
+    - familiar enough with design, requirements, mechanics, conventions, style,
+      scope, gotchas, etc. of the API to be in `kubernetes/pkg/api` and `kubernetes/pkg/apis`
+      OWNERS files `reviewers` lists
+  - Expectations
+    - review API changes and proposals in their functional area
+  - Benefits
+    - TBD
+    - added to [`api-reviewers`](https://github.com/orgs/kubernetes/teams/api-reviewers) github team
+- **API APPROVER**:
+  - Requirements
+    - tenure requirement TBD
+    - nomination process TBD
+    - initial members TBD
+    - designed and reviewed several APIs in the system
+    - familiar with the design, requirements, mechanics, conventions, style,
+      scope, gotchas, etc. of the API to be in `kubernetes/pkg/api` and `kubernetes/pkg/apis`
+      OWNERS files `approvers` lists
+  - Expectations
+    - review and approve API changes and proposals in their functional area
+  - Benefits
+    - TBD
+    - added to [`api-approvers`](https://github.com/orgs/kubernetes/teams/api-approvers) github team
+
+## SIG roles
+- **SIG PARTICIPANT**: active in one or more areas of the project; wide variety of roles are represented
+- **SIG LEAD**: SIG organizer
+
+## Management roles
+- [**PM**](https://github.com/orgs/kubernetes/teams/kubernetes-pm): help to [manage and
+  maintain the project](project-managers/README.md) in ways other than just writing code (e.g. managing
+  issues); should subscribe to kubernetes-pm@googlegroups.com
+  - Requirements, expectations, benefits TBD
+- Proposed: **PM LEAD**
+  - The project needs managers -- people to think about and improve the structure of the project,
+    processes, etc. 
+- Proposed: **TEAM LEAD**: tech lead or manager of some team at some company working on K8s; can influence
+  priorities of their team members; pragmatically, probably want label/assignment powers
+  - Requirements, expectations, benefits TBD
+    - e.g., identify and resolve staffing gaps (engineering, docs, test, release, ...), effort gaps
+     (tragedy of the commons), expertise mismatches, priority conflicts, personnel conflicts
+  - meeting requirements TBD
+
+## Rotations
+- [**Build Cop**](contributors/devel/on-call-build-cop.md): ensure tests pass, submit queue is working,
+  rollback PRs, manually merge as necessary to fix build; should be members of appropriate repo's
   build-cops github team (e.g.,
   [kubernetes-build-cops](https://github.com/orgs/kubernetes/teams/kubernetes-build-cops))
 - [**User-Support Rotation**](contributors/devel/on-call-user-support.md): answer questions on
@@ -170,7 +241,7 @@ high-volume project -- hundreds of PRs and issues per week, with contributors in
 timezones.
 
 If someone becomes unable or unwilling to continue in their roles, they may retire. If someone doesn't
-Fulfill their role for 90 days or violates the code of conduct, they may be removed from the role
+fulfill their role for 90 days or violates the code of conduct, they may be removed from the role
 (escalation/vote process TBD). If they wish to resume their role in the future, they may request to return
 to it by asking the current members filling that role.
 
@@ -228,4 +299,3 @@ Discussion to finalize the initial content can be found in a [Google Doc](https:
 Join kubernetes-dev or kubernetes-pm googlegroups to access it.
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/governance.md?pixel)]()
-
