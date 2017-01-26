@@ -101,27 +101,7 @@ are enumerated below.
     - at least 20 merged and/or assigned PRs, including at least 3 as the primary reviewer
     - familiar enough with some part of the codebase to be in an [OWNERS](contributors/devel/owners.md)
       file as a `reviewer` (in repos using the bot)
-    - nominatedments, mechanics, conventions, style,
-      scope, gotchas, etc. of the API
-  - Expectations
-    - review and approve API changes and proposals in their functional area
-  - Benefits
-    - TBD
-
-## SIG roles
-- **SIG Participant**: active in one or more areas of the project; wide variety of roles are represented
-- **SIG Lead**: SIG organizer
-
-## Management roles
-- **Team Lead**: tech lead or manager of some team at some company working on K8s; can influence
-  priorities of their team members; pragmatically, probably want label/assignment powers
-- [**kubernetes-pm**](https://github.com/orgs/kubernetes/teams/kubernetes-pm): help to [manage and
-  maintain the project](project-managers/README.md) in ways other than just writing code (e.g. managing
-  issues); should subscribe to kubernetes-pm@googlegroups.com
-
-## Rotations
-- [**Build Cop**](contributors/devel/on-call-build-cop.md): ensure tests pass, submit queue is working,
-  rollback PRs, manually merge as necessary to fix build; should be members of appropriate repo's
+    - nominateduild; should be members of appropriate repo's
   build-cops github team (e.g.,
   [kubernetes-build-cops](https://github.com/orgs/kubernetes/teams/kubernetes-build-cops))
 - [**User-Support Rotation**](contributors/devel/on-call-user-support.md): answer questions on
@@ -194,24 +174,36 @@ Fulfill their role for 90 days or violates the code of conduct, they may be remo
 (escalation/vote process TBD). If they wish to resume their role in the future, they may request to return
 to it by asking the current members filling that role.
 
-# SIG Governance
+# Special Interest Group (SIG) Governance
 
-In order to standardize Special Interest Group efforts, create maximum transparency, and route contributors to the appropriate SIG, SIGs should follow the guidelines stated below:
 
-- Meet regularly, at least for 30 minutes every 3 weeks, except November and December
+[SIGs](README.md#special-interest-groups-sig-and-working-groups) are the subteams of the project.
+SIGs own code and/or documentation of the project, share knowledge, bring new members up to speed, and
+more.
+
+We have a couple dozen SIGs, and contributors in more than a dozen timezones. People want to be able
+to follow what's going on without attending every meeting, which is impossible, especially for
+non-American timezones.
+
+In order to standardize Special Interest Group efforts, maximize transparency, and route contributors
+to the appropriate SIG, SIGs should follow the guidelines stated below:
+
+- Meet regularly, at least for 30 minutes every month except November and December
 - Keep up-to-date meeting notes, linked from the SIG's page in the community repo
 - Announce meeting agenda before each meeting and post minutes after, on their SIG mailing list
 - Record SIG meeting and make it publicly available
 - Ensure the SIG's mailing list and slack channel are archived
 - Report activity in the weekly community meeting at least once every 6 weeks
-- Participate in release planning meetings and retrospectives, and burndown meetings, as needed
+- Participate in release planning meetings and retrospectives, and burndown meetings, as needed.
+  When the right people aren't present in such meetings, it can put the project at risk, such as
+  by slipping the release.
 - Ensure related work happens in a project-owned github org and repository, with code and tests 
   explicitly owned and supported by the SIG, including issue triage, PR reviews, test-failure response,
   bug fixes, etc. 
   - TODO: Allow integration projects that need to be hosted by other github orgs for license reasons 
 - Use the above forums as the primary means of working, communicating, and collaborating, as opposed to
   private emails and meetings
-- Represent the SIG for the PM group:
+- Represent the SIG for the PM group (either a SIG liaison to the PM group or a PM liaison to the SIG):
   - identify all features in the current release from the SIG
   - track all features (in the repo with all the fields complete)
   - attend your SIG meetings
@@ -219,9 +211,16 @@ In order to standardize Special Interest Group efforts, create maximum transpare
   - identify the annual roadmap
   - advise their SIG as needed
 
+
+Not all of the responsibilities need to be shouldered by the SIG lead.
+
 # CLA
 
 All contributors must sign the CNCF CLA, as described [here](CLA.md).
+
+# Process for changing this document
+
+TBD
 
 # History
 
