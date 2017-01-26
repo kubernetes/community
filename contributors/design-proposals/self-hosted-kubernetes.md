@@ -99,5 +99,5 @@ Kubernetes self-hosted is working today. Bootkube is an implementation of the "t
 ## Known Issues
 
 - [Health check endpoints for components don't work correctly](https://github.com/kubernetes-incubator/bootkube/issues/64#issuecomment-228144345)
-- [kubeadm doesn't do self-hosted yet](https://github.com/kubernetes/kubernetes/pull/38407)
+- [kubeadm does do self-hosted, but isn't tested yet](https://github.com/kubernetes/kubernetes/pull/40075)
 - The Kubernetes [versioning policy](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/versioning.md) allows for version skew of kubelet and control plane but not skew between control plane components themselves. We must add testing and validation to Kubernetes that this skew works. Otherwise the work to make Kubernetes HA is rather pointless if it can't be upgraded in an HA manner as well.
