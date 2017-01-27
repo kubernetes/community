@@ -482,7 +482,7 @@ some separate test suites owned by the feature owner(s)
 
 In order to simplify running component-specific test suites, it may also be
 necessary to tag tests with a component label.  The component may include
-standard and non-standard tests, so the [Feature:.+] label is not sufficient for
+standard and non-standard tests, so the `[Feature:.+]` label is not sufficient for
 this purpose.  These component labels have no impact on the standard e2e test
 suites.  The following component labels have been defined:
 
