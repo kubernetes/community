@@ -1,4 +1,4 @@
-Last update: 1/26/2017
+Last update: 1/27/2017
 
 This is a Work in Progress, documenting approximately how we have been operating up to this point,
 and formalizing some previously informal conventions.
@@ -12,7 +12,7 @@ The Kubernetes community adheres to the following principles:
 * Merit: Ideas and contributions are accepted according to their technical merit and alignment with
   project objectives, [scope](http://kubernetes.io/docs/whatisk8s/), and [design
   principles](contributors/design-proposals/principles.md). People are promoted in responsibility
-  based on the scope, quality, quantity, and duration of past contributions.
+  based on the scope, quality, quantity, and duration of past contributions. See Project Roles, below.
 
 # Code of Conduct
 
@@ -74,7 +74,7 @@ New community members:
       frequent contributors will assist in our code-review process and with project
       maintenance
   - Benefits
-    - TBD
+    - TBD: swag
   
 Established community members:
 
@@ -96,8 +96,9 @@ maintained in OWNERS files in the repository.
     - must enable [GitHub’s two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/)
     - should subscribe to kubernetes-dev@googlegroups.com and kubernetes-dev-announce@googlegroups.com
     - should read the [developer guide](contributors/devel/README.md)
-    - expected to be familiar with project organization, conventions, policies, etc.
-  - Beneulture
+    - expected to be familiar with project organization, convchnical vision and judgement
+    - demonstrated empathy for the user and open-source developer perspective
+    - committed to project's mission and culture
     - In `leads` list in [top-level OWNERS file in kubernetes
       repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS)
       - Proposed initial list comprised of long-time senior project leads (formerly top-level approvers):
@@ -109,8 +110,10 @@ maintained in OWNERS files in the repository.
     - provide overall technical guidance and vision for the project
     - maintain the [definition of the project](https://kubernetes.io/docs/whatisk8s/)
     - decide project structure, such as system layers (e.g., core) and repository breakdown
+    - assist SIGs in identifying areas of overlapping technical and ownership responsibility
     - resolve technical escalations in the cases of OWNER and SIG lead disagreements 
     - meet monthly by videoconference or in person
+    - TODO: office hours?
   - Benefits
     - project decision makers
     - technically can approve virtually any PRs
@@ -134,8 +137,9 @@ identity of Kubernetes and is a horizontal area that crosses directories and SIG
       OWNERS files `reviewers` lists
   - Expectations
     - review API changes and proposals in their functional area
-    - ensure Kubernetes has a consistent [API style](contributors/devel/api-conventions.md), consistent
-      patterns and philosophies, and codify new patterns for novel problems
+    - ensure Kubernetes has a consistent [API style](contributors/devel/api-conventions.md),
+      patterns, and philosophies
+    - guide development of new APIs
   - Benefits
     - TBD
     - added to [`api-reviewers`](https://github.com/orgs/kubernetes/teams/api-reviewers) github team
@@ -148,6 +152,10 @@ identity of Kubernetes and is a horizontal area that crosses directories and SIG
     - familiar with the design, requirements, mechanics, conventions, style,
       scope, gotchas, etc. of the API to be in `kubernetes/pkg/api` and `kubernetes/pkg/apis`
       OWNERS files `approvers` lists
+    - ensure Kubernetes has a consistent [API style](contributors/devel/api-conventions.md),
+      patterns, and philosophies
+    - guide development of new APIs
+    - codify new patterns for novel problems
   - Expectations
     - review and approve API changes and proposals in their functional area
   - Benefits
@@ -176,6 +184,28 @@ identity of Kubernetes and is a horizontal area that crosses directories and SIG
     [three-branches proposal](https://github.com/kubernetes/community/issues/295) and in the
     [elders proposal discussion](https://github.com/kubernetes/community/pull/267#issuecomment-273715158).
     - TODO: what processes should be covered by PM, SIG Contributor Experience, and release managers
+- **PROCESS REVIEWER**:
+  - Requirements
+    - Have designed, driven, implemented, and rolled out new processes for the project
+  - Expectations
+    - Review proposals for new processes
+    - Guide someone who is designing, driving, implementing, and/or rolling out a new process
+  - Benefits
+    - TBD
+- **PROCESS APPROVER**:
+  - Requirements
+    - TBD
+    - Have designed, driven, implemented, and rolled out new processes for the project
+  - Expectations
+    - Approve proposals for new processes
+    - Ensure processes are consistent and effective, and that we have adequate means of measuring
+      their effectiveness and efficiency
+    - Ensure that decisions are made in a rational and transparent way
+    - Ensure that the policies of the project are documented, communicated, and followed
+    - Mentor new PROCESS REVIEWERS
+  - Benefits
+    - TBD
+    - Gratitude of contributors for a smoothly run project
 
 ## Rotations
 - [**Build Cop**](contributors/devel/on-call-build-cop.md): ensure tests pass, submit queue is working,
@@ -275,11 +305,11 @@ to the appropriate SIG, SIGs should follow the guidelines stated below:
 - Participate in release planning meetings and retrospectives, and burndown meetings, as needed.
   When the right people aren't present in such meetings, it can put the project at risk, such as
   by slipping the release.
-- Ensure related work happens in a project-owned github org and repository, with code and tests 
+- Development of new code  happens in a project-owned github org and repository, with code and tests 
   explicitly owned and supported by the SIG, including issue triage, PR reviews, test-failure response,
-  bug fixes, etc. 
-  - TODO: Allow integration projects that need to be hosted by other source repositories for license
-    reasons 
+  bug fixes, etc.  An exception is when the SIG contributes to existing OSS projects not on github (e.g.
+  Apache Spark) or which have their own github org (e.g. Tensorflow) to improve integration with
+  Kubernetes 
 - Use the above forums as the primary means of working, communicating, and collaborating, as opposed to
   private emails and meetings
 - Google Docs should be shared with at least the SIG discussion group and kubernetes-dev
