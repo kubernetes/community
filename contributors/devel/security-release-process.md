@@ -12,7 +12,6 @@ The initial Product Security Team will consist of five volunteers who are all su
 - Jess Frazelle <jessfraz@google.com>
 - Eric Tune <etune@google.com>
 - Jordan Liggitt <jliggitt@redhat.com>
-- Matthew Garrett <mjg59@coreos.com> [4096R/BE99F8F0AE90F416] (temporarily advising because he has been on boards like this in the past)
 
 **Known issues**
 
