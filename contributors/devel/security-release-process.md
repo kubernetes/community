@@ -17,6 +17,12 @@ The initial Product Security Team will consist of five volunteers who are all su
 
 - We haven't specified a way to cycle the Product Security Team; but we need this process deployed quickly as our current process isn't working. I (@philips) will put a deadline of March 1st 2017 to sort that.
 
+## Release Manager Role
+
+ALso included on the private [Kubernetes Security](https://groups.google.com/forum/#!forum/kubernetes-security) list are all [Release Managers](https://github.com/kubernetes/community/wiki).
+
+It is the responsbility of the Product Security Team to add new Release Managers and remove Release Managers as Kubernetes minor releases are deprecated.
+
 ## Disclosures
 
 ### Private Disclosure Processes
