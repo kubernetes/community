@@ -4,9 +4,11 @@ Kubernetes is a large growing community of volunteers, users, and vendors. The K
 
 ## Product Security Team (PST)
 
-By their nature security vulnerabilities should be handled quickly and sometimes privately. The Product Security Team is responsible for running the communication, disclosure, and CVE/patch processes. They are not solely responsible for fixing issues and can loop in necessary engineers to test and verify the fixes.
+Security vulnerabilities should be handled quickly and sometimes privately. The primary goal of this process is to reduce the total time users are vulnerable to publicly known exploits.
 
-The initial Product Security Team will consist of five volunteers who are all subscribed to the private [Kubernetes Security](https://groups.google.com/forum/#!forum/kubernetes-security) list. These are the people who have been involved in the initial discussion and volunteered:
+The Product Security Team (PST) is responsible for organizing the entire response including internal communication and external disclosure but will need help from relevant developers and release managers to successfully run this process.
+
+The initial Product Security Team will consist of four volunteers subscribed to the private [Kubernetes Security](https://groups.google.com/forum/#!forum/kubernetes-security) list. These are the people who have been involved in the initial discussion and volunteered:
 
 - Brandon Philips <brandon.philips> [4096R/154343260542DF34]
 - Jess Frazelle <jessfraz@google.com>
@@ -19,51 +21,78 @@ The initial Product Security Team will consist of five volunteers who are all su
 
 ## Release Manager Role
 
-ALso included on the private [Kubernetes Security](https://groups.google.com/forum/#!forum/kubernetes-security) list are all [Release Managers](https://github.com/kubernetes/community/wiki).
+Also included on the private [Kubernetes Security](https://groups.google.com/forum/#!forum/kubernetes-security) list are all [Release Managers](https://github.com/kubernetes/community/wiki).
 
-It is the responsbility of the Product Security Team to add new Release Managers and remove Release Managers as Kubernetes minor releases are deprecated.
+It is the responsibility of the PST to add and remove Release Managers as Kubernetes minor releases created and deprecated.
 
 ## Disclosures
 
 ### Private Disclosure Processes
 
-We ask that suspected vulnerabilities should be responsibility disclosed via our disclosure process. Please visit [http://kubernetes.io/security](http://kubernetes.io/security] to learn more.
+The Kubernetes Community asks that all suspected vulnerabilities be privately and responsibly disclosed via the Private Disclosure process available at [http://kubernetes.io/security](http://kubernetes.io/security].
 
 ### Public Disclosure Processes
 
-If a security issue has been publicly disclosed please IMMEDIATELY email [kubernetes-security@googlegroups.com](mailto:kubernetes-security@googlegroups.com) to inform the Product Security Team about the vulnerability and start the patch, release, and communication process.
+If you know of a publicly disclosed security vulnerability please IMMEDIATELY email [kubernetes-security@googlegroups.com](mailto:kubernetes-security@googlegroups.com) to inform the Product Security Team (PST) about the vulnerability so they may start the patch, release, and communication process.
 
-Next, ask the reporter if the issue can be handled via the private disclosure process. If the reporter denies it is best to proceed publicly and swiftly with the fix and release process. In extreme cases you can ask GitHub to delete the issue but this generally shouldn’t be necessary and is unlikely to make a public disclosure less damaging.
+If possible the PST will ask the person making the public report if the issue can be handled via a private disclosure process. If the reporter denies the PST will move swiftly with the fix and release process. In extreme cases you can ask GitHub to delete the issue but this generally isn't necessary and is unlikely to make a public disclosure less damaging.
 
 ## Patch, Release, and Public Communication
 
-- Request CVE from [DWF](https://github.com/distributedweaknessfiling/DWF-Documentation) (for embargoed issues) or [oss-security](http://www.openwall.com/lists/oss-security/) (for public issues)
-- Set the issue priority based on rough criteria
-  - P0 - **Critical impact**, flaws that could be easily exploited by a remote unauthenticated attacker and lead to system compromise (arbitrary code execution) without requiring user interaction. Flaws that require an authenticated remote user, a local user, or an unlikely configuration are not classed as Critical impact.
-  - P1 - **Important impact**, flaws that can easily compromise the confidentiality, integrity, or availability of resources. These are the types of vulnerabilities that allow local users to gain privileges, allow unauthenticated remote users to view resources that should otherwise be protected by authentication, allow authenticated remote users to execute arbitrary code, or allow remote users to cause a denial of service.
-  - P2 - **Moderate impact**, flaws that may be more difficult to exploit but could still lead to some compromise of the confidentiality, integrity, or availability of resources, under certain circumstances. These are the types of vulnerabilities that could have had a Critical impact or Important impact but are less easily exploited based on a technical evaluation of the flaw, or affect unlikely configurations.
-  - P3 - **Low Impact**, other issues that have a security impact. These are the types of vulnerabilities that are believed to require unlikely circumstances to be able to be exploited, or where a successful exploit would give minimal consequences.
-- Invite relevant developers to have access to the private security fix repo.
-- Work on a fix in a private repo, you can keep track of the issues on this repo as well. Put CVE number in commit and changelog. Please note although CVE is nice, code patch is nicer, better to move ahead without a CVE then to delay in waiting for a CVE.
-- Make sure the CVE is mentioned in the commit log and changelog. Changelog for sure, commit log is a “nice to have”, also note situations where security have been fixed and not recognized as such until after the fact
-- Apply the fixes to the release branch and any other release branches you will backport to
-  - Get LGTM on patches on the private repo
-  - **User disclosure** (1-5 days)
-    - Email kubernetes-announce@googlegroups.com informing users that a security vulnerability has been disclosed and that a fix will be made available at YYYY-MM-DD HH:MM in the future via this list.
-    - Communicate any mitigating steps they can take until a fix is available
-  - **Private distributors announce** (1-5 days):
-    - If the issue is Important or Critical email a patch to kubernetes-distributors-announce@googlegroups.com so distributors can prepare builds to be available to users on the day of the issue's announcement. Distributors can ask to be added to this list by emailing kubernetes-security@googlegroups.com and it is up to the Product Security Team's discretion to manage the list.
-    - **What if a vendor breaks embargo?** Sometimes could be small or big, just assess the damage and if you need to release earlier because of it, do that, otherwise continue with the plan. Generally speaking when that happens you just push forward and go public ASAP
-  - **On release day**
-    - Rebase the branch[es] with the fixes, including any other additional branches you applied or backported patches on, with the specific branch on the public repo you will eventually have this in, nothing should have changed upstream unless there were any public cherrypicks.
-    - Run the release on these branches (release branch, any additional backported release branches).
-    - Make sure all the binaries are up, publicly available, and functional.
-    - Open the patches in a PR on the public repo for each release branch you applied the patches to (1 PR per branch).
-    - Merge immediately (you cannot accept changes at this time, even for a typo in the CHANGELOG since it would change the git sha of the already built and published release[s]).
-    - Cherry-pick the same patches onto the master branch from the release branch. LGTM and merge.
-    - At this point everything is public.
-    - Email kubernetes-{dev,users,announce,etc}@googlegroups.com to get wide distribution and user action.
-    - Remove developers who developed the fix from the private security repo
+For each vulnerability a member of the PST will volunteer to lead coordination with the Fix Team, Release Managers and is responsible for sending disclosure emails to the rest of the community. This lead will be referred to as the Fix Lead.
+
+The role of Fix Lead should rotate round-robin across the PST.
+
+All of the timelines below are suggestions and assume a Private Disclosure. The Fix Lead drives the schedule using their best judgment based on severity, development time, and release manager feedback. If the Fix Lead is dealing with a Public Disclosure all timelines become ASAP.
+
+### Fix Team Organization
+
+These steps should be completed within the first 24 hours of Disclosure.
+
+- The Fix Lead will work quickly to identify relevant engineers from the affected projects and packages and CC those engineers into the disclosure thread. This selected developers are the Fix Team. A best guess is to invite all assignees in the OWNERS file from the affected packages.
+- The Fix Lead will request a CVE from [DWF](https://github.com/distributedweaknessfiling/DWF-Documentation) (for embargoed issues) or [oss-security](http://www.openwall.com/lists/oss-security/) (for public issues)
+- The Fix Lead will get the Fix Team access to private security repos to develop the fix.
+
+### Fix Development Process
+
+These steps should be completed within the 1-7 days of Disclosure.
+
+- The Fix Team will work on in the private security repo to develop the fix. The fix branch should include the CVE number in relevant commits (optional) and changelog.
+- The Fix Lead and the Fix Team will create a [CVSS](https://www.first.org/cvss/specification-document) using the [CVSS Calculator](https://www.first.org/cvss/calculator/3.0https://www.first.org/cvss/calculator/3.0). The Fix Lead makes the final call on the calculated CVSS; it is better to move quickly than make the CVSS prefect.
+- The Fix Team will notify the Fix Lead that work on the fix branch is complete once there are LGTMs on all commits in the private repo from one or more relevant assignees in the relevant OWNERS file.
+
+### Fix Disclosure Process
+
+With the Fix Development underway the Fix Lead needs to come up with an overall communication plan for the wider community. This Disclosure process should begin after the Fix Team has developed a Fix or mitigation so that a realistic timeline can be communicated to users.
+
+**Disclosure of Forthcoming Fix to Users** (Completed within 1-7 days of Disclosure)
+
+- The Fix Lead will email kubernetes-announce@googlegroups.com informing users that a security vulnerability has been disclosed and that a fix will be made available at YYYY-MM-DD HH:MM UTC in the future via this list. This time is the Release Date.
+- The Fix Lead will include any mitigating steps users can take until a fix is available.
+
+The communication to users should be actionable. They should know when to block time to apply patches, understand exact mitigation steps, etc.
+
+**Optional Fix Disclosure to Private Distributors List** (Completed within 1-14 days of Disclosure):
+
+- The Fix Lead will make a determination with the help of the Fix Team if an issue is critical enough to require early disclosure to distributors. Generally this Private Distributor Disclosure process should be reserved for remotely exploitable or privilege escalation issues. Otherwise, this process can be skipped.
+- The Fix Lead will email the patches to kubernetes-distributors-announce@googlegroups.com so distributors can prepare builds to be available to users on the day of the issue's announcement. Distributors can ask to be added to this list by emailing kubernetes-security@googlegroups.com and it is up to the Product Security Team's discretion to manage the list.
+- **What if a vendor breaks embargo?** The PST will assess the damage. The Fix Lead will make the call to release earlier or continue with the plan. When in doubt push forward and go public ASAP.
+
+**Fix Release Day** (Completed within 1-21 days of Disclosure)
+
+- The Release Managers will ensure all the binaries are built, publicly available, and functional before the Release Date.
+- The Release Managers will open PRs on the public repo against each release branch that applied the fix.
+- The Release Managers will merge these PRs immediately (you cannot accept changes at this time, even for a typo in the CHANGELOG since it would change the git sha of the already built and published release[s]).
+- The Fix Lead will cherry-pick the patches onto the master branch from the release branch. The Fix Team will LGTM and merge.
+- The Fix Lead will email kubernetes-{dev,users,announce,etc}@googlegroups.com now that everything is public announcing the new releases, the location of the binaries, and the relevant merged PRs to get wide distribution and user action. As much as possible this email should be actionable and include links how to apply the fix to users environments; this can include links to external distributor documentation.
+- The Fix Lead will remove the Fix Team from the private security repo.
+
+### Retrospective
+
+These steps should be completed within the 21-28 days of Disclosure.
+
+- The Fix Lead will send a retrospective of the process to kubernetes-dev@googlegroups.com including details on everyone involved, links to relevant PRs that introduced the issue, if relevant, and any critiques of the response and release process.
+- The Release Managers and Fix Team are also encouraged to send their own feedback on the process to kubernetes-dev@googlegroups.com. Honest critique is the only way we are going to get good at this as a community.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/security-release-process.md?pixel)]()
