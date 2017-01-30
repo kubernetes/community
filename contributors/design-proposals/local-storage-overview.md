@@ -35,7 +35,10 @@ Distributed systems often use replication to provide fault tolerance, and can th
 
 # Design Overview
 
-A node’s local storage can be broken into primary and secondary partitions.  Primary partitions are shared partitions that can provide ephemeral local storage.  The two supported primary partitions are:
+A node’s local storage can be broken into primary and secondary partitions.  
+
+## Primary Partitions
+Primary partitions are shared partitions that can provide ephemeral local storage.  The two supported primary partitions are:
 
 ### Root
  This partition holds the kubelet’s root directory (`/var/lib/kubelet` by default) and `/var/log` directory. This partition may be shared between user pods, OS and Kubernetes system daemons. This partition can be consumed by pods via EmptyDir volumes, container logs, image layers and container writable layers. Kubelet will manage shared access and isolation of this partition. This partition is “ephemeral” and applications cannot expect any performance SLAs (Disk IO for example) from this partition.
@@ -43,6 +46,7 @@ A node’s local storage can be broken into primary and secondary partitions.  P
 ### Runtime 
 This is an optional partition which runtimes can use for overlay filesystems. Kubelet will attempt to identify and provide shared access along with isolation to this partition.
 
+## Secondary Partitions
 All other partitions are exposed as persistent volumes. The PV interface allows for varying storage configurations to be supported, while hiding specific configuration details to the pod.  Applications can continue to use their existing PVC specifications with minimal changes to request local storage.
 
 # User Workflows
@@ -50,35 +54,39 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
 ### Alice manages a deployment and requires “Guaranteed” ephemeral storage
 
 1. Kubelet running across all nodes will identify primary partition and expose capacity and allocatable for the primary “root” partition. The runtime partition is an implementation detail and is not exposed outside the node.
-```yaml
-apiVersion: v1
-kind: Node
-metadata:
-  name: foo
-status:
-  Capacity: 
-    Storage: 100Gi
-  Allocatable:
-    Storage: 90Gi
-```
+
+    ```yaml
+    apiVersion: v1
+    kind: Node
+    metadata:
+      name: foo
+    status:
+      Capacity: 
+        Storage: 100Gi
+      Allocatable:
+        Storage: 90Gi
+    ```
+
 2. Alice adds a “Storage” requirement to her pod as follows
-```yaml
-apiVersion: v1
-kind: pod
-metadata:
- name: foo
-spec:
- containers:
-  name: fooc
-  resources:
-   limits:
-    storage-logs: 500Mi
-    storage-overlay: 1Gi
- volumes:
-  name: myEmptyDir
-  emptyDir:
-   capacity: 20Gi
-```
+
+    ```yaml
+    apiVersion: v1
+    kind: pod
+    metadata:
+     name: foo
+    spec:
+     containers:
+      name: fooc
+      resources:
+       limits:
+        storage-logs: 500Mi
+        storage-overlay: 1Gi
+     volumes:
+      name: myEmptyDir
+      emptyDir:
+       capacity: 20Gi
+    ```
+
 3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
 4. Alice’s pod is not provided any IO guarantees
 5. Kubelet will rotate logs to keep logs usage of “fooc” under 500Mi
@@ -90,177 +98,189 @@ spec:
 ### Bob runs batch workloads and is unsure of “storage” requirements
 
 1. Bob can create pods without any “storage” resource requirements. 
-```yaml
-apiVersion: v1
-kind: pod
-metadata:
- name: foo
- namespace: myns
-spec:
- containers:
-  name: fooc
- volumes:
-  name: myEmptyDir
-  emptyDir:   
-```
+
+    ```yaml
+    apiVersion: v1
+    kind: pod
+    metadata:
+     name: foo
+     namespace: myns
+    spec:
+     containers:
+      name: fooc
+     volumes:
+      name: myEmptyDir
+      emptyDir:   
+    ```
+
 2. His cluster administrator being aware of the issues with disk reclamation latencies has intelligently decided not to allow overcommitting primary partitions. The cluster administrator has installed a LimitRange to “myns” namespace that will set a default storage size. Note: A cluster administrator can also specify bust ranges and a host of other features supported by LimitRange for local storage.
-```yaml
-apiVersion: v1
-kind: LimitRange
-metadata:
-  name: mylimits
-spec:
-   - default:
-     storage-logs: 200Mi
-     Storage-overlay: 200Mi
-     type: Container
-   - default:
-     storage: 1Gi
-     type: Pod
-```
+
+    ```yaml
+    apiVersion: v1
+    kind: LimitRange
+    metadata:
+      name: mylimits
+    spec:
+       - default:
+         storage-logs: 200Mi
+         Storage-overlay: 200Mi
+         type: Container
+       - default:
+         storage: 1Gi
+         type: Pod
+    ```
+
 3. The limit range will update the pod specification as follows:
-```yaml
-apiVersion: v1
-kind: pod
-metadata:
- name: foo
-spec:
- containers:
-  name: fooc
-  resources:
-   limits:
-    storage-logs: 200Mi
-    storage-overlay: 200Mi
- volumes:
-  name: myEmptyDir
-  emptyDir:
-   capacity: 1Gi
-```
+
+    ```yaml
+    apiVersion: v1
+    kind: pod
+    metadata:
+     name: foo
+    spec:
+     containers:
+      name: fooc
+      resources:
+       limits:
+        storage-logs: 200Mi
+        storage-overlay: 200Mi
+     volumes:
+      name: myEmptyDir
+      emptyDir:
+       capacity: 1Gi
+    ```
+
 4. Bob’s “foo” pod can use upto “200Mi” for its containers logs and writable layer each, and “1Gi” for its “myEmptyDir” volume. 
 5. If Bob’s pod “foo” exceeds the “default” storage limits and gets evicted, then Bob can set a minimum storage requirement for his containers and a higher “capacity” for his EmptyDir volumes.
-```yaml
-apiVersion: v1
-kind: pod
-metadata:
- name: foo
-spec:
- containers:
-  name: fooc
-  resources:
-   requests:
-    storage-logs: 500Mi
-    storage-overlay: 500Mi
- volumes:
-  name: myEmptyDir
-  emptyDir:
-   capacity: 2Gi
-```
+
+  ```yaml
+  apiVersion: v1
+  kind: pod
+  metadata:
+   name: foo
+  spec:
+   containers:
+    name: fooc
+    resources:
+     requests:
+      storage-logs: 500Mi
+      storage-overlay: 500Mi
+   volumes:
+    name: myEmptyDir
+    emptyDir:
+     capacity: 2Gi
+  ```
+
 6. Note that it is not possible to specify a minimum storage requirement for EmptyDir volumes because we intent to limit overcommitment of local storage due to high latency in reclaiming it from terminated pods. 
 
 ### Alice manages a Database which needs access to “durable” and fast scratch space
 
 1. Cluster administrator provisions machines with local SSDs and brings up the cluster
-2. When a new node instance starts up, a addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates HostPath PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points and include additional labels and annotations that help tie to a specific node and identify the storage medium.
-```yaml
-kind: PersistentVolume
-apiVersion: v1
-metadata:
-  name: foo
-  annotations:
-    storage.kubernetes.io/node: k8s-node
-  labels:
-    storage.kubernetes.io/medium: ssd
-spec:
-  volume-type: local
-  storage-type: filesystem
-  capacity:
-    storage: 100Gi
-  hostpath:
-    path: /var/lib/kubelet/storage-partitions/foo
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Delete
-```
-```yaml
-$ kubectl get pv
-NAME       CAPACITY ACCESSMODES RECLAIMPOLICY STATUS    CLAIM … NODE  
-local-pv-1 375Gi    RWO         Delete        Available         gke-mycluster-1
-local-pv-2 375Gi    RWO         Delete        Available         gke-mycluster-1
-local-pv-1 375Gi    RWO         Delete        Available         gke-mycluster-2
-local-pv-2 375Gi    RWO         Delete        Available         gke-mycluster-2
-local-pv-1 375Gi    RWO         Delete        Available         gke-mycluster-3
-local-pv-2 375Gi    RWO         Delete        Available         gke-mycluster-3
-```
+2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates HostPath PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points and include additional labels and annotations that help tie to a specific node and identify the storage medium.
+
+    ```yaml
+    kind: PersistentVolume
+    apiVersion: v1
+    metadata:
+      name: local-pv-1
+      annotations:
+        storage.kubernetes.io/node: node-1
+      labels:
+        storage.kubernetes.io/medium: ssd
+    spec:
+      volume-type: local
+      storage-type: filesystem
+      capacity:
+        storage: 100Gi
+      hostpath:
+        path: /var/lib/kubelet/storage-partitions/local-pv-1
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Delete
+    ```
+    ```
+    $ kubectl get pv
+    NAME       CAPACITY ACCESSMODES RECLAIMPOLICY STATUS    CLAIM … NODE  
+    local-pv-1 100Gi    RWO         Delete        Available         node-1
+    local-pv-2 10Gi     RWO         Delete        Available         node-1
+    local-pv-1 100Gi    RWO         Delete        Available         node-2
+    local-pv-2 10Gi     RWO         Delete        Available         node-2
+    local-pv-1 100Gi    RWO         Delete        Available         node-3
+    local-pv-2 10Gi     RWO         Delete        Available         node-3
+    ```
 3. The addon will monitor the health of secondary partitions and taint PVs whenever the backing local storage devices becomes unhealthy.
 4. Alice creates a StatefulSet that uses local PVCs
-```yaml
-apiVersion: apps/v1beta1
-kind: StatefulSet
-metadata:
-  name: web
-spec:
-  serviceName: "nginx"
-  replicas: 3
-  template:
+
+    ```yaml
+    apiVersion: apps/v1beta1
+    kind: StatefulSet
     metadata:
-      labels:
-        app: nginx
+      name: web
     spec:
-      terminationGracePeriodSeconds: 10
-      containers:
-      - name: nginx
-        image: gcr.io/google_containers/nginx-slim:0.8
-        ports:
-        - containerPort: 80
-          name: web
-        volumeMounts:
-        - name: www
-          mountPath: /usr/share/nginx/html
-        - name: log
-          mountPath: /var/log/nginx
-  volumeClaimTemplates:
-  - metadata:
-      name: www
-      labels:
-        storage.kubernetes.io/medium: local-ssd
-        storage.kubernetes.io/volume-type: local
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 1Gi
-  - metadata:
-      name: log
-      labels:
-        storage.kubernetes.io/medium: hdd
-        storage.kubernetes.io/volume-type: local
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 1Gi
-```
+      serviceName: "nginx"
+      replicas: 3
+      template:
+        metadata:
+          labels:
+            app: nginx
+        spec:
+          terminationGracePeriodSeconds: 10
+          containers:
+          - name: nginx
+            image: gcr.io/google_containers/nginx-slim:0.8
+            ports:
+            - containerPort: 80
+              name: web
+            volumeMounts:
+            - name: www
+              mountPath: /usr/share/nginx/html
+            - name: log
+              mountPath: /var/log/nginx
+      volumeClaimTemplates:
+      - metadata:
+          name: www
+          labels:
+            storage.kubernetes.io/medium: ssd
+        spec:
+          volume-type: local
+          accessModes: [ "ReadWriteOnce" ]
+          resources:
+            requests:
+              storage: 100Gi
+      - metadata:
+          name: log
+          labels:
+            storage.kubernetes.io/medium: hdd
+        spec:
+          volume-type: local
+          accessModes: [ "ReadWriteOnce" ]
+          resources:
+            requests:
+              storage: 1Gi
+    ```
+
 5. The scheduler identifies nodes for each pods that can satisfy cpu, memory, storage requirements and also contains free local PVs to satisfy the pods PVC claims. It then binds the pod’s PVCs to specific PVs on the node and then binds the pod to the node. 
-```yaml
-$ kubectl get pvc
-NAME            STATUS VOLUME     CAPACITY ACCESSMODES … NODE  
-www-local-pvc-1 Bound  local-pv-1 375Gi    RWO           gke-mycluster-1
-www-local-pvc-2 Bound  local-pv-1 375Gi    RWO           gke-mycluster-2
-www-local-pvc-3 Bound  local-pv-1 375Gi    RWO           gke-mycluster-3
-log-local-pvc-1 Bound  local-pv-1 375Gi    RWO           gke-mycluster-1
-log-local-pvc-2 Bound  local-pv-1 375Gi    RWO           gke-mycluster-2
-log-local-pvc-3 Bound  local-pv-1 375Gi    RWO           gke-mycluster-3
-```
-```yaml
-$ kubectl get pv
-NAME       CAPACITY … STATUS    CLAIM           NODE  
-local-pv-1 375Gi      Bound     www-local-pvc-1 gke-mycluster-1
-local-pv-2 375Gi      Bound     log-local-pvc-1 gke-mycluster-1
-local-pv-1 375Gi      Bound     www-local-pvc-2 gke-mycluster-2
-local-pv-2 375Gi      Bound     log-local-pvc-2 gke-mycluster-2
-local-pv-1 375Gi      Bound     www-local-pvc-3 gke-mycluster-3
-local-pv-2 375Gi      Bound     log-local-pvc-3 gke-mycluster-3
-```
+    ```
+    $ kubectl get pvc
+    NAME            STATUS VOLUME     CAPACITY ACCESSMODES … NODE  
+    www-local-pvc-1 Bound  local-pv-1 100Gi    RWO           node-1
+    www-local-pvc-2 Bound  local-pv-1 100Gi    RWO           node-2
+    www-local-pvc-3 Bound  local-pv-1 100Gi    RWO           node-3
+    log-local-pvc-1 Bound  local-pv-2 10Gi     RWO           node-1
+    log-local-pvc-2 Bound  local-pv-2 10Gi     RWO           node-2
+    log-local-pvc-3 Bound  local-pv-2 10Gi     RWO           node-3
+    ```
+    ```
+    $ kubectl get pv
+    NAME       CAPACITY … STATUS    CLAIM           NODE  
+    local-pv-1 100Gi      Bound     www-local-pvc-1 node-1
+    local-pv-2 10Gi       Bound     log-local-pvc-1 node-1
+    local-pv-1 100Gi      Bound     www-local-pvc-2 node-2
+    local-pv-2 10Gi       Bound     log-local-pvc-2 node-2
+    local-pv-1 100Gi      Bound     www-local-pvc-3 node-3
+    local-pv-2 10Gi       Bound     log-local-pvc-3 node-3
+    ```
+
 6. If a pod dies and is replaced by a new one that reuses existing PVCs, the pod will be placed on the same node where the corresponding PVs exist. Stateful Pods are expected to have a high enough priority which will result in such pods preempting other low priority pods if necessary to run on a specific node.
 7. If a new pod fails to get scheduled while attempting to reuse an old PVC, the StatefulSet controller is expected to give up on the old PVC (delete & recycle) and instead create a new PVC based on some policy. This is to guarantee scheduling of stateful pods.
 8. If a PV gets tainted as unhealthy, the StatefulSet is expected to delete pods if they cannot tolerate PV failures. Unhealthy PVs once released will not be added back to the cluster until the corresponding local storage device is healthy.
@@ -282,43 +302,47 @@ local-pv-2 375Gi      Bound     log-local-pvc-3 gke-mycluster-3
 
 1. The cluster that Bob uses has nodes that contain raw block devices that have not been formatted yet.
 2. The cluster admin creates a DaemonSet addon that discovers all the raw block devices on a node that are available within a specific directory and creates corresponding PVs for them with a ‘StorageType’ of ‘Block’
-```yaml
-kind: PersistentVolume
-apiVersion: v1
-metadata:
-  name: foo
-  annotations:
-    storage.kubernetes.io/node: k8s-node
-  labels:
-    storage.kubernetes.io/medium: hdd
-spec:
-  volume-type: local
-  storage-type: block
-  capacity:
-    storage: 100Gi
-  hostpath:
-    path: /var/lib/kubelet/storage-raw-devices/foo
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Delete
-```
+
+    ```yaml
+    kind: PersistentVolume
+    apiVersion: v1
+    metadata:
+      name: foo
+      annotations:
+        storage.kubernetes.io/node: k8s-node
+      labels:
+        storage.kubernetes.io/medium: ssd
+    spec:
+      volume-type: local
+      storage-type: block
+      capacity:
+        storage: 100Gi
+      hostpath:
+        path: /var/lib/kubelet/storage-raw-devices/foo
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Delete
+    ```
+
 3. Bob creates a pod with a PVC that requests for block level access and similar to a Stateful Set scenario the scheduler will identify nodes that can satisfy the pods request.
-```yaml
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: myclaim
-  labels:
-    storage.kubernetes.io/medium: ssd
-spec:
-  volume-type: local
-  storage-type: block
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 80Gi
-```
+
+    ```yaml
+    kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: myclaim
+      labels:
+        storage.kubernetes.io/medium: ssd
+    spec:
+      volume-type: local
+      storage-type: block
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 80Gi
+    ```
+
 *The lifecycle of the block level PV will be similar to that of the scenarios explained earlier.* 
 
 # Open Questions & Discussion points 
