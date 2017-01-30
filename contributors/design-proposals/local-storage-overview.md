@@ -1,0 +1,356 @@
+# Local Storage Management
+Authors: vishh@, msau42@
+
+This document presents a strawman for managing local storage in Kubernetes. We expect to provide a UX and high level design overview for managing most user workflows. More detailed design and implementation will be added once the community agrees with the high level design presented here. 
+
+# Goals
+* Enable ephemeral & durable access to local storage
+* Support storage requirements for all workloads supported by Kubernetes
+* Provide flexibility for users/vendors to utilize various types of storage devices
+* Define a standard partitioning scheme for storage drives for all Kubernetes nodes
+* Provide storage usage isolation for shared partitions
+* Support random access storage devices only
+
+# Non Goals
+* Provide isolation for all partitions. Isolation will not be of concern for most partitions since they are not expected to be shared.
+* Support all storage devices natively in upstream Kubernetes. Non standard storage devices are expected to be managed using extension mechanisms.
+
+# Use Cases
+
+## Ephemeral Local Storage
+Today, ephemeral local storage is exposed to pods via the container’s writable layer, logs directory, and EmptyDir volumes.  Pods use ephemeral local storage for scratch space, caching and logs.  There are many issues related to the lack of local storage accounting and isolation, including:
+
+* Pods do not know how much local storage is available to them.
+* Pods cannot request “guaranteed” local storage.
+* Local storage is a “best-effort” resource 
+* Pods can get evicted due to other pods filling up the local storage during which time no new pods will be admitted, until sufficient storage has been reclaimed
+
+## Persistent Local Storage
+Distributed filesystems and databases are the primary use cases for persistent local storage due to the following factors:
+
+* Performance: On cloud providers, local SSDs give better performance than remote disks.
+* Cost: On baremetal, in addition to performance, local storage is typically cheaper and using it is a necessity to provision distributed filesystems.
+
+Distributed systems often use replication to provide fault tolerance, and can therefore tolerate node failures. However, data gravity is preferred for reducing replication traffic and cold startup latencies.
+
+# Design Overview
+
+A node’s local storage can be broken into primary and secondary partitions.  Primary partitions are shared partitions that can provide ephemeral local storage.  The two supported primary partitions are:
+
+### Root
+ This partition holds the kubelet’s root directory (`/var/lib/kubelet` by default) and `/var/log` directory. This partition may be shared between user pods, OS and Kubernetes system daemons. This partition can be consumed by pods via EmptyDir volumes, container logs, image layers and container writable layers. Kubelet will manage shared access and isolation of this partition. This partition is “ephemeral” and applications cannot expect any performance SLAs (Disk IO for example) from this partition.
+
+### Runtime 
+This is an optional partition which runtimes can use for overlay filesystems. Kubelet will attempt to identify and provide shared access along with isolation to this partition.
+
+All other partitions are exposed as persistent volumes. The PV interface allows for varying storage configurations to be supported, while hiding specific configuration details to the pod.  Applications can continue to use their existing PVC specifications with minimal changes to request local storage.
+
+# User Workflows
+
+### Alice manages a deployment and requires “Guaranteed” ephemeral storage
+
+1. Kubelet running across all nodes will identify primary partition and expose capacity and allocatable for the primary “root” partition. The runtime partition is an implementation detail and is not exposed outside the node.
+```yaml
+apiVersion: v1
+kind: Node
+metadata:
+  name: foo
+status:
+  Capacity: 
+    Storage: 100Gi
+  Allocatable:
+    Storage: 90Gi
+```
+2. Alice adds a “Storage” requirement to her pod as follows
+```yaml
+apiVersion: v1
+kind: pod
+metadata:
+ name: foo
+spec:
+ containers:
+  name: fooc
+  resources:
+   limits:
+    storage-logs: 500Mi
+    storage-overlay: 1Gi
+ volumes:
+  name: myEmptyDir
+  emptyDir:
+   capacity: 20Gi
+```
+3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
+4. Alice’s pod is not provided any IO guarantees
+5. Kubelet will rotate logs to keep logs usage of “fooc” under 500Mi
+6. Kubelet will attempt to hard limit local storage consumed by pod “foo” if Linux project quota feature is available and runtime supports storage isolation.
+7. With hard limits, containers will receive a ENOSPACE error if they consume all reserved storage. Without hard limits, the pod will be evicted by kubelet.
+8. Health is monitored by an external entity like the “Node Problem Detector” which is expected to place appropriate taints.
+9. If a primary partition becomes unhealthy, the node is tainted and all pods running in it will be evicted by default, unless they tolerate that taint. Kubelet’s behavior on a node with unhealthy primary partition is undefined. Cluster administrators are expected to fix unhealthy primary partitions on nodes. 
+
+### Bob runs batch workloads and is unsure of “storage” requirements
+
+1. Bob can create pods without any “storage” resource requirements. 
+```yaml
+apiVersion: v1
+kind: pod
+metadata:
+ name: foo
+ namespace: myns
+spec:
+ containers:
+  name: fooc
+ volumes:
+  name: myEmptyDir
+  emptyDir:   
+```
+2. His cluster administrator being aware of the issues with disk reclamation latencies has intelligently decided not to allow overcommitting primary partitions. The cluster administrator has installed a LimitRange to “myns” namespace that will set a default storage size. Note: A cluster administrator can also specify bust ranges and a host of other features supported by LimitRange for local storage.
+```yaml
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: mylimits
+spec:
+   - default:
+     storage-logs: 200Mi
+     Storage-overlay: 200Mi
+     type: Container
+   - default:
+     storage: 1Gi
+     type: Pod
+```
+3. The limit range will update the pod specification as follows:
+```yaml
+apiVersion: v1
+kind: pod
+metadata:
+ name: foo
+spec:
+ containers:
+  name: fooc
+  resources:
+   limits:
+    storage-logs: 200Mi
+    storage-overlay: 200Mi
+ volumes:
+  name: myEmptyDir
+  emptyDir:
+   capacity: 1Gi
+```
+4. Bob’s “foo” pod can use upto “200Mi” for its containers logs and writable layer each, and “1Gi” for its “myEmptyDir” volume. 
+5. If Bob’s pod “foo” exceeds the “default” storage limits and gets evicted, then Bob can set a minimum storage requirement for his containers and a higher “capacity” for his EmptyDir volumes.
+```yaml
+apiVersion: v1
+kind: pod
+metadata:
+ name: foo
+spec:
+ containers:
+  name: fooc
+  resources:
+   requests:
+    storage-logs: 500Mi
+    storage-overlay: 500Mi
+ volumes:
+  name: myEmptyDir
+  emptyDir:
+   capacity: 2Gi
+```
+6. Note that it is not possible to specify a minimum storage requirement for EmptyDir volumes because we intent to limit overcommitment of local storage due to high latency in reclaiming it from terminated pods. 
+
+### Alice manages a Database which needs access to “durable” and fast scratch space
+
+1. Cluster administrator provisions machines with local SSDs and brings up the cluster
+2. When a new node instance starts up, a addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates HostPath PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points and include additional labels and annotations that help tie to a specific node and identify the storage medium.
+```yaml
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: foo
+  annotations:
+    storage.kubernetes.io/node: k8s-node
+  labels:
+    storage.kubernetes.io/medium: ssd
+spec:
+  volume-type: local
+  storage-type: filesystem
+  capacity:
+    storage: 100Gi
+  hostpath:
+    path: /var/lib/kubelet/storage-partitions/foo
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+```
+```yaml
+$ kubectl get pv
+NAME       CAPACITY ACCESSMODES RECLAIMPOLICY STATUS    CLAIM … NODE  
+local-pv-1 375Gi    RWO         Delete        Available         gke-mycluster-1
+local-pv-2 375Gi    RWO         Delete        Available         gke-mycluster-1
+local-pv-1 375Gi    RWO         Delete        Available         gke-mycluster-2
+local-pv-2 375Gi    RWO         Delete        Available         gke-mycluster-2
+local-pv-1 375Gi    RWO         Delete        Available         gke-mycluster-3
+local-pv-2 375Gi    RWO         Delete        Available         gke-mycluster-3
+```
+3. The addon will monitor the health of secondary partitions and taint PVs whenever the backing local storage devices becomes unhealthy.
+4. Alice creates a StatefulSet that uses local PVCs
+```yaml
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  serviceName: "nginx"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: nginx
+        image: gcr.io/google_containers/nginx-slim:0.8
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+        - name: log
+          mountPath: /var/log/nginx
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+      labels:
+        storage.kubernetes.io/medium: local-ssd
+        storage.kubernetes.io/volume-type: local
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
+  - metadata:
+      name: log
+      labels:
+        storage.kubernetes.io/medium: hdd
+        storage.kubernetes.io/volume-type: local
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
+```
+5. The scheduler identifies nodes for each pods that can satisfy cpu, memory, storage requirements and also contains free local PVs to satisfy the pods PVC claims. It then binds the pod’s PVCs to specific PVs on the node and then binds the pod to the node. 
+```yaml
+$ kubectl get pvc
+NAME            STATUS VOLUME     CAPACITY ACCESSMODES … NODE  
+www-local-pvc-1 Bound  local-pv-1 375Gi    RWO           gke-mycluster-1
+www-local-pvc-2 Bound  local-pv-1 375Gi    RWO           gke-mycluster-2
+www-local-pvc-3 Bound  local-pv-1 375Gi    RWO           gke-mycluster-3
+log-local-pvc-1 Bound  local-pv-1 375Gi    RWO           gke-mycluster-1
+log-local-pvc-2 Bound  local-pv-1 375Gi    RWO           gke-mycluster-2
+log-local-pvc-3 Bound  local-pv-1 375Gi    RWO           gke-mycluster-3
+```
+```yaml
+$ kubectl get pv
+NAME       CAPACITY … STATUS    CLAIM           NODE  
+local-pv-1 375Gi      Bound     www-local-pvc-1 gke-mycluster-1
+local-pv-2 375Gi      Bound     log-local-pvc-1 gke-mycluster-1
+local-pv-1 375Gi      Bound     www-local-pvc-2 gke-mycluster-2
+local-pv-2 375Gi      Bound     log-local-pvc-2 gke-mycluster-2
+local-pv-1 375Gi      Bound     www-local-pvc-3 gke-mycluster-3
+local-pv-2 375Gi      Bound     log-local-pvc-3 gke-mycluster-3
+```
+6. If a pod dies and is replaced by a new one that reuses existing PVCs, the pod will be placed on the same node where the corresponding PVs exist. Stateful Pods are expected to have a high enough priority which will result in such pods preempting other low priority pods if necessary to run on a specific node.
+7. If a new pod fails to get scheduled while attempting to reuse an old PVC, the StatefulSet controller is expected to give up on the old PVC (delete & recycle) and instead create a new PVC based on some policy. This is to guarantee scheduling of stateful pods.
+8. If a PV gets tainted as unhealthy, the StatefulSet is expected to delete pods if they cannot tolerate PV failures. Unhealthy PVs once released will not be added back to the cluster until the corresponding local storage device is healthy.
+9. Once Alice decides to delete the database, the PVCs are expected to get deleted by the StatefulSet. PVs will then get recycled and deleted, and the addon adds it back to the cluster.
+
+### Bob manages a distributed filesystem which needs access to all available storage on each node
+
+1. The cluster that Bob is using is provisioned with nodes that contain one or more secondary partitions
+2. The cluster administrator runs a DaemonSet addon that discovers secondary partitions across all nodes and creates corresponding PVs for them.
+3. The addon will monitor the health of secondary partitions and taint PVs whenever the backing local storage devices becomes unhealthy.
+4. Bob creates a specialized controller (Operator) for his distributed filesystem and deploys it.
+5. The operator will identify all the nodes that it can schedule pods onto and discovers the PVs available on each of those nodes. The operator has a label selector that identifies the specific PVs that it can use (this helps preserve fast PVs for Databases for example).
+6. The operator will then create PVCs and manually bind to individual local PVs across all its nodes. 
+7. It will then create pods, manually place them on specific nodes (similar to a DaemonSet) with high enough priority and have them use all the PVCs create by the Operator on those nodes.
+8. If a pod dies, it will get replaced with a new pod that uses the same set of PVCs that the old pod had used.
+9. If a PV gets tainted as unhealthy, the Operator is expected to delete pods if they cannot tolerate device failures. 
+
+### Bob manages a specialized application that needs access to Block level storage
+
+1. The cluster that Bob uses has nodes that contain raw block devices that have not been formatted yet.
+2. The cluster admin creates a DaemonSet addon that discovers all the raw block devices on a node that are available within a specific directory and creates corresponding PVs for them with a ‘StorageType’ of ‘Block’
+```yaml
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: foo
+  annotations:
+    storage.kubernetes.io/node: k8s-node
+  labels:
+    storage.kubernetes.io/medium: hdd
+spec:
+  volume-type: local
+  storage-type: block
+  capacity:
+    storage: 100Gi
+  hostpath:
+    path: /var/lib/kubelet/storage-raw-devices/foo
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+```
+3. Bob creates a pod with a PVC that requests for block level access and similar to a Stateful Set scenario the scheduler will identify nodes that can satisfy the pods request.
+```yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: myclaim
+  labels:
+    storage.kubernetes.io/medium: ssd
+spec:
+  volume-type: local
+  storage-type: block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 80Gi
+```
+*The lifecycle of the block level PV will be similar to that of the scenarios explained earlier.* 
+
+# Open Questions & Discussion points 
+* Single vs split “limit” for storage across writable layer and logs
+* Local Persistent Volume bindings happening in the scheduler vs in PV controller
+    * Should the PV controller fold into the scheduler
+* Supporting dedicated partitions for logs and volumes in Kubelet in addition to runtime overlay filesystem
+    * This complicates kubelet.Not sure what value it adds to end users.
+* Providing IO isolation for ephemeral storage
+    * IO isolation is difficult. Use local PVs for performance
+* Support for encrypted partitions
+* Do applications need access to performant local storage for ephemeral use cases? Ex. A pod requesting local SSDs for use as ephemeral scratch space.
+    * Typically referred to as “inline PVs” in kube land
+* Should block level storage devices be auto formatted to be used as file level storage?
+    * Flexibility vs complexity
+    * Do we really need this? 
+* Repair/replace scenarios. 
+    * What are the implications of removing a disk and replacing it with a new one? 
+    * We may not do anything in the system, but may need a special workflow
+
+# Recommended Storage best practices
+
+* Have the primary partition on a reliable storage device
+* Consider using RAID and SSDs (for performance)
+* Partition the rest of the storage devices based on the application needs
+    * SSDs can be statically partitioned and they might still meet IO requirements of apps.
+    * TODO: Identify common durable storage requirements for most databases
+* Avoid having multiple logical partitions on hard drives to avoid IO isolation issues
+* Run a reliable cluster level logging service to drain logs from the nodes before they get rotated or deleted
+* The runtime partition for overlayfs is optional. You do not **need** one.
+* Alert on primary partition failures and act on it immediately. Primary partition failures will render your node unusable.
+* Use EmptyDir for all scratch space requirements of your apps. 
+* Make the container’s writable layer `readonly` if possible.
+* Another option is to keep the writable layer on tmpfs. Such a setup will allow you to eventually migrate from using local storage for anything but super fast caching purposes or distributed databases leading to higher reliability & uptime for nodes.
+
