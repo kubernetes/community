@@ -7,6 +7,7 @@ A Special Interest Group for deploying and operating big data applications (Spar
 * Meetings: Wednesdays 10:00 AM PST
 * Zoom Link: TBD
 * Check out the [Agenda and Minutes](https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit)! Note: this SIG was operational briefly in 2015. Minutes for those meetings are in [their prior location](https://docs.google.com/document/u/1/d/1YhNLN39f5oZ4AHn_g7vBp0LQd7k37azL7FkWG8CEDrE/edit).
+* Slack: https://kubernetes.slack.com/messages/sig-big-data/
 
 ## Goals:
 
