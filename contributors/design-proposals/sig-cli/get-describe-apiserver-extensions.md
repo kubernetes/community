@@ -98,11 +98,11 @@ type RESTMapping struct {
 	MetadataAccessor
 
     // Extensions
-    OpenApiExtensions OpenApiExtensions
+    ApiExtensions ApiExtensions
 }
 
-type DisplayOptions struct {
-  OpenApiExtensions map[string]interface{}
+type ApiExtensions struct {
+  Extensions map[string]interface{}
 }
 ```
 
