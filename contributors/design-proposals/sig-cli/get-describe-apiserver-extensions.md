@@ -2,6 +2,8 @@
 
 Status: Pending
 
+Version: Alpha
+
 ## Motivation
 
 `kubectl get` and `kubectl describe` do not provide a rich experience
