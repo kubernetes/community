@@ -1,4 +1,4 @@
-Last update: 1/27/2017
+Last update: 1/30/2017
 
 This is a Work in Progress, documenting approximately how we have been operating up to this point,
 and formalizing some previously informal conventions.
@@ -32,7 +32,7 @@ should follow the procedures outlined in the [incubator document](incubator.md).
 use the [Apache Licence version 2.0](LICENSE). Documentation repositories must use the
 [Creative Commons License version 4.0](https://github.com/kubernetes/kubernetes.github.io/blob/master/LICENSE).
 
-TODO: Need policies/procedures for donated code (e.g., helm, kubernetes-anywhere, kompose, kargo).
+TBD: Policies/procedures for donated code (e.g., helm, kubernetes-anywhere, kompose, kargo)
 
 # Project Roles
 
@@ -43,7 +43,7 @@ no matter how small, even if not explicitly described below.
 
 Contributors have the opportunity to grow in responsibilities, privileges, and authority corresponding
 to the scope, quality, quantity, and duration of their contributions. Definition of criteria and process
-is in progress, with preliminary requirements below.
+is in progress, with preliminary requirements below. Any position achieved by merit is achieved by an individual and the authority follows the individual whoever they go.
  
 Roles that are currently assumed by project participants are described below, focusing on, but not
 limited to the `kubernetes/kubernetes` repo.
@@ -58,7 +58,7 @@ New community members:
 - [**NEWCOMER**](https://github.com/kubernetes/contrib/issues/1090):
   - Requirements
     - submitted first PR
-      - TODO: investigate feasibility of extending this to first issue filed
+      - TBD: feasibility of extending this to first issue filed
   - Expectations
     - hopefully will contribute again in the future
   - Benefits
@@ -88,33 +88,28 @@ maintained in OWNERS files in the repository.
   - Requirements
     - an active contributor for at least 3 months
     - authored and/or reviewed at least 10 merged PRs
-      - TODO: figure out how to count reviews
+      - TBD: figure out how to count reviews
     - active enough to be assigned issues and/or PRs, and to be added to a github team
       (a SIG, for example) for notification purposes
+    - has enabled [GitHub’s two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/)
     - nomination process TBD
   - Expectations
-    - must enable [GitHub’s two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/)
     - should subscribe to kubernetes-dev@googlegroups.com and kubernetes-dev-announce@googlegroups.com
-    - should read the [developer guide](contributors/devel/README.md)
-    - expected to be familiar with project organization, convchnical vision and judgement
+    - should read the [developer gRequirements
+    - maintainer in good standing for at least 1 year
+    - demonstrated strong technical vision and judgement
     - demonstrated empathy for the user and open-source developer perspective
     - committed to project's mission and culture
-    - In `leads` list in [top-level OWNERS file in kubernetes
-      repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS)
-      - Proposed initial list comprised of long-time senior project leads (formerly top-level approvers):
-        bgrant0607, brendandburns, dchen1107, jbeda, lavalamp, smarterclayton, thockin
+    - spends majority of time on Kubernetes
     - nomination/application process TBD
     - cap on number of members TBD
   - Expectations
-    - TBD
     - provide overall technical guidance and vision for the project
     - maintain the [definition of the project](https://kubernetes.io/docs/whatisk8s/)
-    - decide project structure, such as system layers (e.g., core) and repository breakdown
-    - assist SIGs in identifying areas of overlapping technical and ownership responsibility
-    - resolve technical escalations in the cases of OWNER and SIG lead disagreements 
-    - meet monthly by videoconference or in person
-    - TODO: office hours?
-  - Benefits
+    - decide project structure, such as system layers (e.g., conetes
+      repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS)
+      - Proposed initial list comprised of long-time senior project leads (formerly top-level approvers):
+        bgrant0607, brendandburns, dchen1107, jbeda, lavalamp, smarterclayton, thockin
     - project decision makers
     - technically can approve virtually any PRs
     - can [Sponsor incubator repos](incubator.md)
@@ -171,20 +166,22 @@ identity of Kubernetes and is a horizontal area that crosses directories and SIG
   maintain the project](project-managers/README.md) in ways other than just writing code (e.g. managing
   issues); should subscribe to kubernetes-pm@googlegroups.com
   - Requirements, expectations, benefits TBD
-  - TODO: owns feature tracking and roadmap planning
-- **TEAM LEAD**: tech lead or manager of some team at some company working on K8s; can influence
+  - TBD: distinguish overall PM group from github permissions
+  - TBD: should PM group be treated like a SIG?
+  - TBD: owns feature tracking and roadmap planning
+- Proposed: **TEAM LEAD**: tech lead or manager of some team at some company working on K8s; can influence
   priorities of their team members; pragmatically, probably want label/assignment powers
   - Requirements, expectations, benefits TBD
     - e.g., identify and resolve staffing gaps (engineering, docs, test, release, ...), effort gaps
      (tragedy of the commons), expertise mismatches, priority conflicts, personnel conflicts
   - meeting requirements TBD
-- TODO: ownership of process and organization improvement
+- TBD: ownership of process and organization improvement
   - The project needs managers -- people to think about and improve the organization of the project’s
     contributors, processes, etc. There is more description in the 
     [three-branches proposal](https://github.com/kubernetes/community/issues/295) and in the
     [elders proposal discussion](https://github.com/kubernetes/community/pull/267#issuecomment-273715158).
-    - TODO: what processes should be covered by PM, SIG Contributor Experience, and release managers
-- **PROCESS REVIEWER**:
+    - TBD: what processes should be covered by PM, SIG Contributor Experience, and release managers
+- Proposed: **PROCESS REVIEWER**:
   - Requirements
     - Have designed, driven, implemented, and rolled out new processes for the project
   - Expectations
@@ -192,7 +189,7 @@ identity of Kubernetes and is a horizontal area that crosses directories and SIG
     - Guide someone who is designing, driving, implementing, and/or rolling out a new process
   - Benefits
     - TBD
-- **PROCESS APPROVER**:
+- Proposed: **PROCESS APPROVER**:
   - Requirements
     - TBD
     - Have designed, driven, implemented, and rolled out new processes for the project
@@ -300,6 +297,8 @@ to the appropriate SIG, SIGs should follow the guidelines stated below:
 - Keep up-to-date meeting notes, linked from the SIG's page in the community repo
 - Announce meeting agenda before each meeting and post minutes after, on their SIG mailing list
 - Record SIG meeting and make it publicly available
+  - TBD: Some SIG leads have objected to this, and also pointed out that it’s generally less useful
+    than notes (low information density, not searchable, not skimmable)
 - Ensure the SIG's mailing list and slack channel are archived
 - Report activity in the weekly community meeting at least once every 6 weeks
 - Participate in release planning meetings and retrospectives, and burndown meetings, as needed.
@@ -331,6 +330,13 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 # Process for changing this document
 
 TBD
+
+# Other overall TBDs/TODOs for this document
+
+- Make division of responsibilities and authority clearer
+- Develop mentorship practices to facilitate contributor advancement
+- Need an effective mechanism to drive more effort on project health
+- Need ways to solicit, capture, and share user and contributor feedback
 
 # History
 
