@@ -2,7 +2,7 @@
 
 **Author**: David Ashpole (@dashpole)
 
-**Last Updated**: 1/19/2017
+**Last Updated**: 1/31/2017
 
 **Status**: Proposal
 
@@ -21,8 +21,7 @@ This document proposes a design for the set of metrics included in an eventual C
     - [Metric Requirements:](#metric-requirements)
     - [Proposed Core Metrics:](#proposed-core-metrics)
     - [On-Demand Design:](#on-demand-design)
-  - [Implementation Plan](#implementation-plan)
-  - [Rollout Plan](#rollout-plan)
+  - [Future Work](#future-work)
 
 <!-- END MUNGE: GENERATED_TOC -->
 
@@ -146,17 +145,10 @@ The interface for exposing these metrics within the kubelet contains methods for
 Implementation:  
 To keep performance bounded while still offering metrics "On-Demand", all calls to get metrics are cached, and a minimum recency is established to prevent repeated metrics computation.  Before computing new metrics, the previous metrics are checked to see if they meet the recency requirements of the caller.  If the age of the metrics meet the recency requirements, then the cached metrics are returned.  If not, then new metrics are computed and cached.  
 
-## Implementation Plan 
-@dashpole will modify the structure of metrics collection code to be "On-Demand".   
-
+## Future work
 Suggested, tentative future work, which may be covered by future proposals:  
- - Publish these metrics in some form to a kubelet API endpoint
- - Obtain all runtime-specific information needed to collect metrics from the CRI.   
- - Kubernetes can be configured to run a default "third party metrics provider" as a daemonset.  Possibly standalone cAdvisor.
-
-## Rollout Plan
-Once this set of metrics is accepted, @dashpole will begin discussions on the format, and design of the endpoint that exposes them.  The node resource metrics endpoint (TBD) will be added alongside the current Summary API in an upcoming release.  This should allow concurrent developments of other portions of the system metrics pipeline (metrics-server, for example).  Once this addition is made, all other changes will be internal, and will not require any API changes.  
-@dashpole will also start discussions on integrating with the CRI, and discussions on how to provide an out-of-the-box solution for the "third party monitoring" pipeline on the node.  One current idea is a standalone verison of cAdvisor, but any third party metrics solution could serve this function as well.
+ - Decide on the format, name, and kubelet endpoint for publishing these metrics.
+ - Integrate with the CRI to allow compatibility with a greater number of runtimes, and to create a better runtime abstraction.   
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
