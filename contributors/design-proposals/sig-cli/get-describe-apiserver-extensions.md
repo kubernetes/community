@@ -81,8 +81,8 @@ resource builder, lookup the group version kind from the populated map.
 
 #### Option 2: Modify api-machinery RestMapper
 
-Modify the api-machinery RestMapper to parse the column tags and
-include them in the *RestMapping* used by the resource builder.
+Modify the api-machinery RestMapper to parse extensions prefixed
+with `x-kubernetes` and include them in the *RestMapping* used by the resource builder.
 
 ```go
 type RESTMapping struct {
@@ -97,13 +97,12 @@ type RESTMapping struct {
 	runtime.ObjectConvertor
 	MetadataAccessor
 
-    // New for kubectl get / describe
-    DisplayOptions DisplayOptions
+    // Extensions
+    OpenApiExtensions OpenApiExtensions
 }
 
 type DisplayOptions struct {
-  GetColumns []string
-  DescribeColumns []string
+  OpenApiExtensions map[string]interface{}
 }
 ```
 
@@ -113,6 +112,7 @@ functions through:  `resource.Builder -> Infos -> Mapping -> DisplayOptions`
 **Pros:**
   - Clean + generalized solution
   - The same strategy can be applied to support TPR
+  - Can support exposing future extensions such as patchStrategy and mergeKey
   - Can be used by other clients / tools
 
 **Cons:**
