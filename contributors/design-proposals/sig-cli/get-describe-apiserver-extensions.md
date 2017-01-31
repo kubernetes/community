@@ -16,6 +16,11 @@ printed using the open-api swagger.json spec already fetched by kubectl.
 This provides a limited describe to only print out fields on the object
 and related events.
 
+**Note:** This solution will only work for types compiled into the apiserver
+providing the open-api swagger.json to kubectl.  This solution will
+not work for TPR, though TPR could possibly be solved in a similar
+way by apply an annotation with the same key / value to the TPR.
+
 ## User Experience
 
 ### Use Cases
@@ -39,7 +44,13 @@ string format is the same as the `--custom-columns` for `kubectl get`.
 
 - Populate the open-api extension value for resource types.
 
+This is done by hardcoding the extension for types compiled into
+the api server.  As such this is only a solution for types
+implemented using federated apiservers.
+
 ### Kubectl
+
+Overview:
 
 - In `kubectl get` use the `x-kubernetes-kubectl-get-columns` value
   when printing an object iff 1) it is defined and 2) the output type
@@ -47,6 +58,69 @@ string format is the same as the `--custom-columns` for `kubectl get`.
 
 - In `kubectl describe` use the `x-kubernetes-kubectl-describe-columns` value
   when printing an object iff 1) it is defined
+
+If no open-api extension is present for a type, fallback on the 1.5
+behavior.
+
+Details:
+
+#### Option 1: Re-parse the open-api swagger.json in a kubectl library
+
+Re-parse the open-api swagger.json schema and build a map of group version kind -> columns
+parsed from the schema.  For this would look similar to validation/schema.go
+
+In get.go and describe.go: After fetching the "Infos" from the
+resource builder, lookup the group version kind from the populated map.
+
+**Pros:**
+  - Simple and straightforward solution
+  - Scope of impacted Kubernetes components is minimal
+  - Doable in 1.6
+
+**Cons:**
+  - Hacky solution
+  - Can not be cleanly extended to support TPR
+
+#### Option 2: Modify api-machinery RestMapper
+
+Modify the api-machinery RestMapper to parse the column tags and
+include them in the *RestMapping* used by the resource builder.
+
+```go
+type RESTMapping struct {
+	// Resource is a string representing the name of this resource as a REST client would see it
+	Resource string
+
+	GroupVersionKind schema.GroupVersionKind
+
+	// Scope contains the information needed to deal with REST Resources that are in a resource hierarchy
+	Scope RESTScope
+
+	runtime.ObjectConvertor
+	MetadataAccessor
+
+    // New for kubectl get / describe
+    DisplayOptions DisplayOptions
+}
+
+type DisplayOptions struct {
+  GetColumns []string
+  DescribeColumns []string
+}
+```
+
+The tags would then be easily accessible from the kubectl get / describe
+functions through:  `resource.Builder -> Infos -> Mapping -> DisplayOptions`
+
+**Pros:**
+  - Clean + generalized solution
+  - The same strategy can be applied to support TPR
+  - Can be used by other clients / tools
+
+**Cons:**
+  - Fields are only loosely tied to rest
+  - Complicated due to the broad scope and impact
+  - May not be doable in 1.6
 
 ### Client/Server Backwards/Forwards compatibility
 
@@ -59,6 +133,18 @@ Client doesn't find the open-api extensions.  Fallback on 1.5 behavior.
 Client doesn't respect open-api extensions.  Uses 1.5 behavior.
 
 ## Alternatives considered
+
+### Fork Kubectl and compile in go types
+
+Fork kubectl and compile in the go types.  Implement get / describe
+for the new types in the forked version.
+
+**Pros:** *This is what will happen for sig-service catalog if we take no action in 1.6*
+
+**Cons:** Bad user experience.  No clear solution for patching forked kubectl.
+User has to use a separate kubectl binary per-apiserver.  Bad president.
+
+I really don't want this solution to be used.
 
 ### Kubectl describe fully implemented in the server
 
