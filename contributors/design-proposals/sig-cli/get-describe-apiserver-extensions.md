@@ -59,10 +59,6 @@ Overview:
 - In `kubectl describe` use the `x-kubernetes-kubectl-describe-columns` value
   when printing an object iff 1) it is defined
 
-If no open-api extension is present for a type, fallback on the 1.5
-behavior.
-
-Details:
 
 #### Option 1: Re-parse the open-api swagger.json in a kubectl library
 
@@ -122,11 +118,30 @@ functions through:  `resource.Builder -> Infos -> Mapping -> DisplayOptions`
   - Complicated due to the broad scope and impact
   - May not be doable in 1.6
 
+#### Considerations
+
+What should be used for oth an open-api extension columns tag AND a
+compiled in printer exist for a type?
+
+- Apiserver only provides `describe` for types that are never compiled in
+  - Compiled in `describe` is much more rich - aggregating data across many other types.
+    e.g. Node describe aggregating Pod data
+  - kubectl will not be able to provide any `describe` information for new types when version skewed against a newer server
+- Always use the extensions if present
+  - Allows server to control columns.  Adds new columns for types on old clients that maybe missing the columns.
+- Always use the compiled in commands if present
+  - The compiled in `describe` is richer and provides aggregated information about many types.
+- Always use the `get` extension if present.  Always use the `describe` compiled in code if present.
+  - Inconsistent behavior across how extensions are handled
+
 ### Client/Server Backwards/Forwards compatibility
 
 #### Newer client
 
 Client doesn't find the open-api extensions.  Fallback on 1.5 behavior.
+
+In the future, this will provide stronger backwards / forwards compability
+as it will allow clients to print objects
 
 #### Newer server
 
