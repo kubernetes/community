@@ -1,6 +1,6 @@
 # Contributing to sig-Cli
 
-This document explains the process for contributing code to the kubernetes
+This document explains the process for contributing code to the Kubernetes
 repo through the sig-cli community.
 
 ## TL;DR
@@ -94,7 +94,7 @@ any PRs are sent for code review.
   - Proposal accepted by at least one sig-cli lead
   - Proposal merged
 3. Communicate what will be done - Discussion at sig-cli bi-weekly meeting - See the [sig-cli community page](https://github.com/kubernetes/community/tree/master/sig-cli) for meeting time and location.
-  - **Note:** This should be done *before* the proposal has been merged, and after an initial round of feedback - e.g. several folks have looked at it and left commends.
+  - **Note:** This should be done *before* the proposal has been merged, and after an initial round of feedback - e.g. several folks have looked at it and left comments.
   - **Action:** Add the design proposal as an item to the [bi-weekly meeting agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit)
   - Make sure the sig-cli community is aware of the work that is being done and can comment on it
   - Should be included in meeting notes sent to the sig-cli googlegroup
@@ -164,7 +164,7 @@ by copying template.md.
 Mention `@kubernetes/sig-cli-proposals` on the proposal and link to
 the proposal from the original issue.  Expect to get feedback
 from 2-3 community members.  At least
-one sig-lead must approve the design proposal for it to be accepted.
+one sig lead must approve the design proposal for it to be accepted.
 
 ## Discussing at sig-cli
 
@@ -210,21 +210,24 @@ Most new features should include user facing documentation.  This is
 important to make sure that users are aware of the cool new thing that
 was added.  Depending on the contributor and size of the feature, this
 may be done either by the same contributor that implemented the feature,
-or another contributor who is more familiar with the existing docs.
+or another contributor who is more familiar with the existing docs
+templates.
 
 ## Notes on release
 
-4 weeks before a Kubernetes release, development enters a stabilization
+Several weeks before a Kubernetes release, development enters a stabilization
 period where no new features are merged.  For a feature to be accepted
-into a release, it must be fully merged and tested by this time.
+into a release, it must be fully merged and tested by this time.  If
+your feature is not fully complete - including tests - it will have
+to wait until the next release.
 
 # Escalation
 
 ## What to do if your bug issue is stuck
 
 If an issue isn't getting any attention and is unresolved, mention
-@kubernetes/sig-cli-fea or @kubernetes/sig-cli-bugs.
-Highly the severity and urgency of the issue.  For severe issues
+@kubernetes/sig-cli-bugs.
+Highlight the severity and urgency of the issue.  For severe issues
 escalate by contacting sig leads and attending the bi-weekly sig-cli
 meeting.
 
@@ -274,11 +277,12 @@ Merge state meanings:
   - Unintentionally dropped.
 - Closed:
   - Not something we plan to implement in the proposed manner.
+  - Not something we plan to revisit in the next 12 months.
 
 ## General escalation instructions if you get stuck
 
 See the [sig-cli community page](https://github.com/kubernetes/community/tree/master/sig-cli) for points of contact and meeting times:
 
 - attend the sig-cli bi-weekly meeting
-- message one fo the sig leads [on slack](https://kubernetes.slack.com/messages/sig-cli/)
+- message one of the sig leads [on slack](https://kubernetes.slack.com/messages/sig-cli/)
 - send an email to the [kubernetes-sig-cli@googlegroups.com](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)
