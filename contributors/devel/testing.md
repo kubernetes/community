@@ -84,6 +84,11 @@ In a shell, it's often handy to use brace expansion:
 make test WHAT=pkg/{api,kubelet}  # run tests for pkg/api and pkg/kubelet
 ```
 
+**Note:** The `WHAT` argument is different whenever you want to run tests for
+admission plugins.  For example, if you wanted to run the tests for the
+`namespaces` admission plugin, instead of `WHAT=plugin/pkg/admission/namespaces`
+you would use `WHAT=k8s.io/kubernetes/plugin/pkg/admission/namespaces`.
+
 ### Run specific unit test cases in a package
 
 You can set the test args using the `KUBE_TEST_ARGS` environment variable.
