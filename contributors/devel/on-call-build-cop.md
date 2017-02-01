@@ -7,9 +7,9 @@
 
 ### Traffic sources and responsibilities
 
-* GitHub Kubernetes [issues](https://github.com/kubernetes/kubernetes/issues)
-and [pulls](https://github.com/kubernetes/kubernetes/pulls): Your job is to be
-the first responder to all new issues and PRs. If you are not equipped to do
+* GitHub Kubernetes [issues](https://github.com/kubernetes/kubernetes/issues):
+Your job is to be
+the first responder to all new issues. If you are not equipped to do
 this (which is fine!), it is your job to seek guidance!
 
   * Support issues should be closed and redirected to Stackoverflow (see example
@@ -35,18 +35,12 @@ This is the only situation in which you should add a priority/* label
     * Assign any issues related to Vagrant to @derekwaynecarr (and @mention him
 in the issue)
 
-  * All incoming PRs should be assigned a reviewer.
-
-    * unless it is a WIP (Work in Progress), RFC (Request for Comments), or design proposal.
-    * An auto-assigner [should do this for you] (https://github.com/kubernetes/kubernetes/pull/12365/files)
-    * When in doubt, choose a TL or team maintainer of the most relevant team; they can delegate
-
-  * Keep in mind that you can @ mention people in an issue/PR to bring it to
+  * Keep in mind that you can @ mention people in an issue to bring it to
 their attention without assigning it to them. You can also @ mention github
 teams, such as @kubernetes/goog-ux or @kubernetes/kubectl
 
-  * If you need help triaging an issue or PR, consult with (or assign it to)
-@brendandburns, @thockin, @bgrant0607, @quinton-hoole, @davidopp, @dchen1107,
+  * If you need help triaging an issue, consult with (or assign it to)
+@brendandburns, @thockin, @bgrant0607, @davidopp, @dchen1107,
 @lavalamp (all U.S. Pacific Time) or @fgrzadkowski (Central European Time).
 
   * At the beginning of your shift, please add team/* labels to any issues that
