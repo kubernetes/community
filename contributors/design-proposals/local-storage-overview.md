@@ -1,7 +1,7 @@
 # Local Storage Management
 Authors: vishh@, msau42@
 
-This document presents a strawman for managing local storage in Kubernetes. We expect to provide a UX and high level design overview for managing most user workflows. More detailed design and implementation will be added once the community agrees with the high level design presented here. 
+This document presents a strawman for managing local storage in Kubernetes. We expect to provide a UX and high level design overview for managing most user workflows. More detailed design and implementation will be added once the community agrees with the high level design presented here.
 
 # Goals
 * Enable ephemeral & durable access to local storage
@@ -9,10 +9,10 @@ This document presents a strawman for managing local storage in Kubernetes. We e
 * Provide flexibility for users/vendors to utilize various types of storage devices
 * Define a standard partitioning scheme for storage drives for all Kubernetes nodes
 * Provide storage usage isolation for shared partitions
-* Support random access storage devices only
+* Support random access storage devices only (e.g., hard disks and SSDs)
 
 # Non Goals
-* Provide isolation for all partitions. Isolation will not be of concern for most partitions since they are not expected to be shared.
+* Provide storage usage isolation for non-shared partitions.
 * Support all storage devices natively in upstream Kubernetes. Non standard storage devices are expected to be managed using extension mechanisms.
 
 # Use Cases
@@ -22,8 +22,8 @@ Today, ephemeral local storage is exposed to pods via the container’s writable
 
 * Pods do not know how much local storage is available to them.
 * Pods cannot request “guaranteed” local storage.
-* Local storage is a “best-effort” resource 
-* Pods can get evicted due to other pods filling up the local storage during which time no new pods will be admitted, until sufficient storage has been reclaimed
+* Local storage is a “best-effort” resource.
+* Pods can get evicted due to other pods filling up the local storage, after which no new pods will be admitted until sufficient storage has been reclaimed.
 
 ## Persistent Local Storage
 Distributed filesystems and databases are the primary use cases for persistent local storage due to the following factors:
@@ -35,19 +35,19 @@ Distributed systems often use replication to provide fault tolerance, and can th
 
 # Design Overview
 
-A node’s local storage can be broken into primary and secondary partitions.  
+A node’s local storage can be broken into primary and secondary partitions.
 
 ## Primary Partitions
 Primary partitions are shared partitions that can provide ephemeral local storage.  The two supported primary partitions are:
 
 ### Root
- This partition holds the kubelet’s root directory (`/var/lib/kubelet` by default) and `/var/log` directory. This partition may be shared between user pods, OS and Kubernetes system daemons. This partition can be consumed by pods via EmptyDir volumes, container logs, image layers and container writable layers. Kubelet will manage shared access and isolation of this partition. This partition is “ephemeral” and applications cannot expect any performance SLAs (Disk IO for example) from this partition.
+ This partition holds the kubelet’s root directory (`/var/lib/kubelet` by default) and `/var/log` directory. This partition may be shared between user pods, OS and Kubernetes system daemons. This partition can be consumed by pods via EmptyDir volumes, container logs, image layers and container writable layers. Kubelet will manage shared access and isolation of this partition. This partition is “ephemeral” and applications cannot expect any performance SLAs (Disk IOPs for example) from this partition.
 
-### Runtime 
+### Runtime
 This is an optional partition which runtimes can use for overlay filesystems. Kubelet will attempt to identify and provide shared access along with isolation to this partition.
 
 ## Secondary Partitions
-All other partitions are exposed as persistent volumes. The PV interface allows for varying storage configurations to be supported, while hiding specific configuration details to the pod.  Applications can continue to use their existing PVC specifications with minimal changes to request local storage.
+All other partitions are exposed as persistent volumes. The PV interface allows for varying storage configurations to be supported, while hiding specific configuration details to the pod.  Applications can continue to use their existing PVC specifications with minimal changes to request local storage.  Each PV uses an entire partition.  The PVs can be precreated by an addon DaemonSet that discovers all the secondary partitions, and can create new PVs as disks are added to the node.
 
 # User Workflows
 
@@ -61,10 +61,10 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
     metadata:
       name: foo
     status:
-      Capacity: 
-        Storage: 100Gi
-      Allocatable:
-        Storage: 90Gi
+      capacity: 
+        storage: 100Gi
+      allocatable:
+        storage: 90Gi
     ```
 
 2. Alice adds a “Storage” requirement to her pod as follows
@@ -76,15 +76,15 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
      name: foo
     spec:
      containers:
-      name: fooc
-      resources:
+     - name: fooc
+       resources:
        limits:
-        storage-logs: 500Mi
-        storage-overlay: 1Gi
+         storageLogs: 500Mi
+         storageOverlay: 1Gi
      volumes:
-      name: myEmptyDir
-      emptyDir:
-       capacity: 20Gi
+     - name: myEmptyDir
+       emptyDir:
+         capacity: 20Gi
     ```
 
 3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
@@ -107,13 +107,13 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
      namespace: myns
     spec:
      containers:
-      name: fooc
+     - name: fooc
      volumes:
-      name: myEmptyDir
-      emptyDir:   
+     - name: myEmptyDir
+       emptyDir:
     ```
 
-2. His cluster administrator being aware of the issues with disk reclamation latencies has intelligently decided not to allow overcommitting primary partitions. The cluster administrator has installed a LimitRange to “myns” namespace that will set a default storage size. Note: A cluster administrator can also specify bust ranges and a host of other features supported by LimitRange for local storage.
+2. His cluster administrator being aware of the issues with disk reclamation latencies has intelligently decided not to allow overcommitting primary partitions. The cluster administrator has installed a [LimitRange](https://kubernetes.io/docs/user-guide/compute-resources/) to “myns” namespace that will set a default storage size. Note: A cluster administrator can also specify burst ranges and a host of other features supported by LimitRange for local storage.
 
     ```yaml
     apiVersion: v1
@@ -122,12 +122,12 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
       name: mylimits
     spec:
        - default:
-         storage-logs: 200Mi
-         Storage-overlay: 200Mi
+         storageLogs: 200Mi
+         storageOverlay: 200Mi
          type: Container
        - default:
          storage: 1Gi
-         type: Pod
+         type: EmptyDir
     ```
 
 3. The limit range will update the pod specification as follows:
@@ -142,8 +142,8 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
       name: fooc
       resources:
        limits:
-        storage-logs: 200Mi
-        storage-overlay: 200Mi
+        storageLogs: 200Mi
+        storageOverlay: 200Mi
      volumes:
       name: myEmptyDir
       emptyDir:
@@ -163,15 +163,15 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
     name: fooc
     resources:
      requests:
-      storage-logs: 500Mi
-      storage-overlay: 500Mi
+      storageLogs: 500Mi
+      storageOverlay: 500Mi
    volumes:
     name: myEmptyDir
     emptyDir:
      capacity: 2Gi
   ```
 
-6. Note that it is not possible to specify a minimum storage requirement for EmptyDir volumes because we intent to limit overcommitment of local storage due to high latency in reclaiming it from terminated pods. 
+6. Note that it is not possible to specify a minimum storage requirement for EmptyDir volumes because we intend to limit overcommitment of local storage due to high latency in reclaiming it from terminated pods.
 
 ### Alice manages a Database which needs access to “durable” and fast scratch space
 
@@ -188,8 +188,8 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
       labels:
         storage.kubernetes.io/medium: ssd
     spec:
-      volume-type: local
-      storage-type: filesystem
+      volumeType: local
+      storageType: filesystem
       capacity:
         storage: 100Gi
       hostpath:
@@ -200,7 +200,7 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
     ```
     ```
     $ kubectl get pv
-    NAME       CAPACITY ACCESSMODES RECLAIMPOLICY STATUS    CLAIM … NODE  
+    NAME       CAPACITY ACCESSMODES RECLAIMPOLICY STATUS    CLAIM … NODE
     local-pv-1 100Gi    RWO         Delete        Available         node-1
     local-pv-2 10Gi     RWO         Delete        Available         node-1
     local-pv-1 100Gi    RWO         Delete        Available         node-2
@@ -208,7 +208,7 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
     local-pv-1 100Gi    RWO         Delete        Available         node-3
     local-pv-2 10Gi     RWO         Delete        Available         node-3
     ```
-3. The addon will monitor the health of secondary partitions and taint PVs whenever the backing local storage devices becomes unhealthy.
+3. The addon will monitor the health of secondary partitions and mark PVs as unhealthy whenever the backing local storage devices have failed.
 4. Alice creates a StatefulSet that uses local PVCs
 
     ```yaml
@@ -242,7 +242,7 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
           labels:
             storage.kubernetes.io/medium: ssd
         spec:
-          volume-type: local
+          volumeType: local
           accessModes: [ "ReadWriteOnce" ]
           resources:
             requests:
@@ -252,17 +252,17 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
           labels:
             storage.kubernetes.io/medium: hdd
         spec:
-          volume-type: local
+          volumeType: local
           accessModes: [ "ReadWriteOnce" ]
           resources:
             requests:
               storage: 1Gi
     ```
 
-5. The scheduler identifies nodes for each pods that can satisfy cpu, memory, storage requirements and also contains free local PVs to satisfy the pods PVC claims. It then binds the pod’s PVCs to specific PVs on the node and then binds the pod to the node. 
+5. The scheduler identifies nodes for each pod that can satisfy cpu, memory, storage requirements and also contains available local PVs to satisfy the pod's PVC claims. It then binds the pod’s PVCs to specific PVs on the node and then binds the pod to the node.
     ```
     $ kubectl get pvc
-    NAME            STATUS VOLUME     CAPACITY ACCESSMODES … NODE  
+    NAME            STATUS VOLUME     CAPACITY ACCESSMODES … NODE
     www-local-pvc-1 Bound  local-pv-1 100Gi    RWO           node-1
     www-local-pvc-2 Bound  local-pv-1 100Gi    RWO           node-2
     www-local-pvc-3 Bound  local-pv-1 100Gi    RWO           node-3
@@ -272,7 +272,7 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
     ```
     ```
     $ kubectl get pv
-    NAME       CAPACITY … STATUS    CLAIM           NODE  
+    NAME       CAPACITY … STATUS    CLAIM           NODE
     local-pv-1 100Gi      Bound     www-local-pvc-1 node-1
     local-pv-2 10Gi       Bound     log-local-pvc-1 node-1
     local-pv-1 100Gi      Bound     www-local-pvc-2 node-2
@@ -282,9 +282,10 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
     ```
 
 6. If a pod dies and is replaced by a new one that reuses existing PVCs, the pod will be placed on the same node where the corresponding PVs exist. Stateful Pods are expected to have a high enough priority which will result in such pods preempting other low priority pods if necessary to run on a specific node.
-7. If a new pod fails to get scheduled while attempting to reuse an old PVC, the StatefulSet controller is expected to give up on the old PVC (delete & recycle) and instead create a new PVC based on some policy. This is to guarantee scheduling of stateful pods.
-8. If a PV gets tainted as unhealthy, the StatefulSet is expected to delete pods if they cannot tolerate PV failures. Unhealthy PVs once released will not be added back to the cluster until the corresponding local storage device is healthy.
-9. Once Alice decides to delete the database, the PVCs are expected to get deleted by the StatefulSet. PVs will then get recycled and deleted, and the addon adds it back to the cluster.
+7. If a pod fails to get scheduled while attempting to reuse an old PVC, a controller will unbind the PVC from the PV, clean up the PV according to the reclaim policy, and reschedule the pod.  The PVC will get rebound to a new PV.
+8. If the node gets tainted as NotReady or Unknown, the pod is evicted according to the taint's forgiveness setting.  The pod will then fail scheduling due to the taint, and follow step 7.
+9. If a PV becomes unhealthy, the pod is evicted by a controller, and follows step 7. Unhealthy PVs once released will not be added back to the cluster until the corresponding local storage device is healthy.
+10. Once Alice decides to delete the database, the StatefulSet is destroyed, followed by the PVCs.  The PVs will then get recycled and deleted according to the reclaim policy, and the addon adds it back to the cluster.
 
 ### Bob manages a distributed filesystem which needs access to all available storage on each node
 
@@ -309,12 +310,12 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
     metadata:
       name: foo
       annotations:
-        storage.kubernetes.io/node: k8s-node
+        storage.kubernetes.io/node: node-1
       labels:
         storage.kubernetes.io/medium: ssd
     spec:
-      volume-type: local
-      storage-type: block
+      volumeType: local
+      storageLevel: block
       capacity:
         storage: 100Gi
       hostpath:
@@ -334,8 +335,8 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
       labels:
         storage.kubernetes.io/medium: ssd
     spec:
-      volume-type: local
-      storage-type: block
+      volumeType: local
+      storageLevel: block
       accessModes:
         - ReadWriteOnce
       resources:
