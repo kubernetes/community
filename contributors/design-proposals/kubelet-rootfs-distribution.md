@@ -11,7 +11,7 @@ a number of dependencies that must exist in its filesystem, including various
 mount and network utilities. Missing any of these can lead to unexpected
 differences between Kubernetes hosts. For example, the Google Container VM
 image (GCI) is missing various mount commands even though the Kernel supports
-those filesystem types. Similarly, CoreOS Linux intentionally doesn't ship with
+those filesystem types. Similarly, CoreOS Container Linux intentionally doesn't ship with
 many mount utilities or socat in the base image. Other distros have a related
 problem of ensuring these dependencies are present and versioned appropriately
 for the Kubelet.
@@ -38,7 +38,7 @@ mount --rbind /var/lib/kubelet /path/to/chroot/var/lib/kubelet
 chroot /path/to/kubelet /usr/bin/hyperkube kubelet
 ```
 
-Note: Kubelet might need access to more directories on the host and we intend to identity mount all those directories into the chroot. A partial list can be found in the CoreOS kubelet-wrapper script.
+Note: Kubelet might need access to more directories on the host and we intend to identity mount all those directories into the chroot. A partial list can be found in the CoreOS Container Linux kubelet-wrapper script.
 This logic will also naturally be abstracted so it's no more difficult for the user to run the Kubelet.
 
 Currently, the Kubelet does not need access to arbitrary paths on the host (as
@@ -53,13 +53,13 @@ chroot.
 
 ## Current Use
 
-This method of running the Kubelet is already in use by users of CoreOS Linux. The details of this implementation are found in the [kubelet wrapper documentation](https://coreos.com/kubernetes/docs/latest/kubelet-wrapper.html).
+This method of running the Kubelet is already in use by users of CoreOS Container Linux. The details of this implementation are found in the [kubelet wrapper documentation](https://coreos.com/kubernetes/docs/latest/kubelet-wrapper.html).
 
 ## Implementation
 
 ### Target Distros
 
-The two distros which benefit the most from this change are GCI and CoreOS. Initially, these changes will only be implemented for those distros.
+The two distros which benefit the most from this change are GCI and CoreOS Container Linux. Initially, these changes will only be implemented for those distros.
 
 This work will also only initially target the GCE provider and `kube-up` method of deployment.
 
@@ -158,7 +158,7 @@ Currently, there's a `--containerized` flag. This flag doesn't actually remove t
 
 #### Timeframe
 
-During the 1.6 timeframe, the changes mentioned in implementation will be undergone for the CoreOS and GCI distros.
+During the 1.6 timeframe, the changes mentioned in implementation will be undergone for the CoreOS Container Linux and GCI distros.
 
 Based on the test results and additional problems that may arise, rollout will
 be determined from there. Hopefully the rollout can also occur in the 1.6
