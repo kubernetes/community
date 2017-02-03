@@ -110,7 +110,7 @@ This contains all of the type definitions along with conversion
 between versions, validation of types, and the
 registration/installation of the API-Group.
 
-#### API-Group directory
+#### `pkg/apis/<API-Group>/`
 
 Each API-Group has it's own named directory, which should be named by
 running all the words in it together with no spaces or dashes. 
@@ -136,8 +136,22 @@ The go package that this base represents must have a `SchemeBuilder`
 variable for code generation to find. The variable is typically
 located in the file `register.go`.
 
+##### `pkg/apis/<API-Group>/types.go`
+
+##### `pkg/apis/<API-Group>/install/`
+
+This is typically a sole file named `install.go`.
+
+This package is imported by the server to cause it's `init()` to
+run. `init()` must be defined for the package. Import the base and all
+versions. Use the `AddToScheme` vars defined in each package. Use a
+GroupMetaFactory to register and enable the API-Group.
 
 
+
+##### `pkg/apis/<API-Group>/validation/`
+
+##### `pkg/apis/<API-Group>/<version>/`
 
 ### `apiserver/apiserver.go`
 
