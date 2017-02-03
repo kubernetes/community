@@ -41,10 +41,31 @@ responsibilities.
 
 ## Before you begin
 
+We are so glad you are ready to get started.  Please complete the following steps
+to join the community.
+
+- Read the Kubectl user facing documentation to make sure you understand the tool
+  - Complete the [Kubernetes Basics Tutorial](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
+  - Read the concept guides starting with the [Overview](https://kubernetes.io/docs/concepts/tools/kubectl/object-management-overview/)
+    - This is really important so that you have a good understanding of the tool before you start trying to work on it
 - Visit the [sig-cli community page](https://github.com/kubernetes/community/tree/master/sig-cli)
   - Join the `kubernetes-sig-cli@googlegroups.com` so you get email updates
   - Join the Kubernetes slack channel `sig-cli`
 - Introduce yourself to the community by sending an email to kubernetes-sig-cli@googlegroups.com and let us know you want to be a contributor
+
+Completing the following steps will make sure you are ready to immediately
+get started once you have been assigned a piece of work.  Do these right
+away.
+
+- Setup your development environment so you can build and run Kubernetes. See [this guide for details](contributors/devel/development.md)
+- Starting taking a look at the code:
+  - `kubernetes/cmd/kubectl`: This is the entry point
+  - `kubernetes/pkg/kubectl`: This contains the implementation
+  - Look at how some of the other commands are implemented
+- Try adding a new command to do something simple:
+  - Add `kubectl hello-world`: print "Hello World"
+  - Add `kubectl hello-kubernetes -f file`: Print "Hello <kind of resource> <name of resource>"
+  - Add `kubectl hello-kubernetes type/name`: Print "Hello <kind of resource> <name of resource> <creation time>"
 
 ## Finding an existing issue to work on
 
@@ -54,8 +75,28 @@ high-priority enough that it will receive PR review bandwidth from
 the sig-cli community.
 
 1. In the Kubernetes sig-cli slack channel, mention @pwittrock, @adohe, or  @fabianofranz and ask if there are any issues you could pick up
-2. Attend the sig-cli [bi-weekly meeting](https://github.com/kubernetes/community/tree/master/sig-cli).
+2. Send an email to the `kubernetes-sig-cli@googlegroups.com`
+
+        Subject: `New Sig-Cli Contributor <Your Name>`
+        Body: Hello, my name is <your name>.  I would like to get involved in
+        contributing to the Kubernetes project.  I have read all of the
+        user documentation listed on the community contributring page.
+        What should I do next to get started?
+
+3. Attend the sig-cli [bi-weekly meeting](https://github.com/kubernetes/community/tree/master/sig-cli).
   - Introduce yourself at the beginning of the meeting
+
+## Expectations
+
+If a sig-cli identifies a bug or feature to you to work on,
+they will need your help to ensure that continual progress is
+made and the fix / feature makes it into a Kubernetes release.
+While you are working on the issue, you must leave a weekly update
+including:
+
+1. What has been finished
+2. What is being worked on
+3. What if anything is blocking progress
 
 ## Life of a sig-cli bug overview
 
