@@ -57,7 +57,7 @@ Completing the following steps will make sure you are ready to immediately
 get started once you have been assigned a piece of work.  Do these right
 away.
 
-- Setup your development environment so you can build and run Kubernetes. See [this guide for details](contributors/devel/development.md)
+- Setup your development environment so you can build and run Kubernetes. See [this guide for details](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md)
 - Starting taking a look at the code:
   - `kubernetes/cmd/kubectl`: This is the entry point
   - `kubernetes/pkg/kubectl`: This contains the implementation
@@ -235,7 +235,7 @@ Contributors can begin implementing a feature before any of the above
 steps have been completed, but should not send a PR until
 the design proposal has been approved / merged.
 
-Go [here](contributors/devel/development.md)
+Go [here](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md)
 for instructions on setting up the Kubernetes development environment.
 
 **Note:** All new features must have automated tests in the same PR.
