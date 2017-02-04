@@ -9,7 +9,7 @@ by evicting a critical addon (either manually or as a side effect of an other op
 which possibly can become pending (for example when the cluster is highly utilized).
 To avoid such situation we want to have a mechanism which guarantees that
 critical addons are scheduled assuming the cluster is big enough.
-This possibly may affect other pods (including production user’s applications).
+This possibly may affect other pods (including production user's applications).
 
 ## Design
 
@@ -33,13 +33,13 @@ Later we may want to introduce some heuristic:
 * minimize number of evicted pods with violation of disruption budget or shortened termination grace period
 * minimize number of affected pods by choosing a node on which we have to evict less pods
 * increase probability of scheduling of evicted pods by preferring a set of pods with the smallest total sum of requests
-* avoid nodes which are ‘non-drainable’ (according to drain logic), for example on which there is a pod which doesn’t belong to any RC/RS/Deployment
+* avoid nodes which are ‘non-drainable’ (according to drain logic), for example on which there is a pod which doesn't belong to any RC/RS/Deployment
 
 #### Evicting pods
 
 There are 2 mechanism which possibly can delay a pod eviction: Disruption Budget and Termination Grace Period.
 
-While removing a pod we will try to avoid violating Disruption Budget, though we can’t guarantee it
+While removing a pod we will try to avoid violating Disruption Budget, though we can't guarantee it
 since there is a chance that it would block this operation for longer period of time.
 We will also try to respect Termination Grace Period, though without any guarantee.
 In case we have to remove a pod with termination grace period longer than 10s it will be shortened to 10s.
@@ -70,7 +70,7 @@ This situation would be rare and usually an extra node would be anyway needed fo
 In the worst case CA will add and then remove the node.
 To not complicate architecture by introducing interaction between those 2 components we accept this overlap.
 
-We want to ensure that CA won’t remove nodes with critical addons by adding appropriate logic there.
+We want to ensure that CA won't remove nodes with critical addons by adding appropriate logic there.
 
 ### Rescheduler control loop
 

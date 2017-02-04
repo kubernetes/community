@@ -10,7 +10,7 @@ detailed discussion.
 
 Currently performance testing happens on ‘live’ clusters of up to 100 Nodes. It takes quite a while to start such cluster or to push
 updates to all Nodes, and it uses quite a lot of resources. At this scale the amount of wasted time and used resources is still acceptable.
-In the next quarter or two we’re targeting 1000 Node cluster, which will push it way beyond ‘acceptable’ level. Additionally we want to
+In the next quarter or two we're targeting 1000 Node cluster, which will push it way beyond ‘acceptable’ level. Additionally we want to
 enable people without many resources to run scalability tests on bigger clusters than they can afford at given time. Having an ability to
 cheaply run scalability tests will enable us to run some set of them on "normal" test clusters, which in turn would mean ability to run
 them on every PR.
@@ -18,7 +18,7 @@ them on every PR.
 This means that we need a system that will allow for realistic performance testing on (much) smaller number of “real” machines. First
 assumption we make is that Nodes are independent, i.e. number of existing Nodes do not impact performance of a single Node. This is not
 entirely true, as number of Nodes can increase latency of various components on Master machine, which in turn may increase latency of Node
-operations, but we’re not interested in measuring this effect here. Instead we want to measure how number of Nodes and the load imposed by
+operations, but we're not interested in measuring this effect here. Instead we want to measure how number of Nodes and the load imposed by
 Node daemons affects the performance of Master components.
 
 ## Kubemark architecture overview
@@ -30,7 +30,7 @@ initial version). To teach Hollow components replaying recorded traffic they wil
 should die (e.g. observed lifetime). Such data can be extracted e.g. from etcd Raft logs, or it can be reconstructed from Events. In the
 initial version we only want them to be able to fool Master components and put some configurable (in what way TBD) load on them.
 
-When we have Hollow Node ready, we’ll be able to test performance of Master Components by creating a real Master Node, with API server,
+When we have Hollow Node ready, we'll be able to test performance of Master Components by creating a real Master Node, with API server,
 Controllers, etcd and whatnot, and create number of Hollow Nodes that will register to the running Master.
 
 To make Kubemark easier to maintain when system evolves Hollow components will reuse real "production" code for Kubelet and KubeProxy, but
@@ -83,8 +83,8 @@ Pod on each Node that exports logs to Elasticsearch (or Google Cloud Logging). B
 cluster so do not add any load on a Master components by themselves. There can be other systems that scrape Heapster through proxy running
 on Master, which adds additional load, but they're not the part of default setup, so in the first version we won't simulate this behavior.
 
-In the first version we’ll assume that all started Pods will run indefinitely if not explicitly deleted. In the future we can add a model
-of short-running batch jobs, but in the initial version we’ll assume only serving-like Pods.
+In the first version we'll assume that all started Pods will run indefinitely if not explicitly deleted. In the future we can add a model
+of short-running batch jobs, but in the initial version we'll assume only serving-like Pods.
 
 ### Heapster
 
@@ -138,7 +138,7 @@ don't need to solve this problem now.
   - new HollowNode combining the two,
   - make sure that Master can talk to two HollowKubelets running on the same machine
 - Make sure that we can run Hollow cluster on top of Kubernetes [option 2](#option-2)
-- Write a player that will automatically put some predefined load on Master, <- this is the moment when it’s possible to play with it and is useful by itself for
+- Write a player that will automatically put some predefined load on Master, <- this is the moment when it's possible to play with it and is useful by itself for
 scalability tests. Alternatively we can just use current density/load tests,
 - Benchmark our machines - see how many Watch clients we can have before everything explodes,
 - See how many HollowNodes we can run on a single machine by attaching them to the real master <- this is the moment it starts to useful

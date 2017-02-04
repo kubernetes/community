@@ -36,7 +36,7 @@ Additions include:
   * In an HA world, API servers may come and go and it is necessary to make sure we are talking to the same cluster as we thought we were talking to.
 * A _set_ of addresses for finding the cluster.
   * It is implied that all of these are equivalent and that a client can try multiple until an appropriate target is found.
-  * Initially I’m proposing a flat set here.  In the future we can introduce more structure that hints to the user which addresses to try first.
+  * Initially I'm proposing a flat set here.  In the future we can introduce more structure that hints to the user which addresses to try first.
 * Better documentation and exposure of:
   * The root certificates can be a bundle to enable rotation.
   * If no root certificates are given (and the insecure bit isn't set) then the client trusts the system managed list of CAs.
@@ -45,7 +45,7 @@ Additions include:
 
 **This is to be implemented in a later phase**
 
-Any client of the cluster will want to have this information.  As the configuration of the cluster changes we need the client to keep this information up to date.  It is assumed that the information here won’t drift so fast that clients won’t be able to find *some* way to connect.
+Any client of the cluster will want to have this information.  As the configuration of the cluster changes we need the client to keep this information up to date.  It is assumed that the information here won't drift so fast that clients won't be able to find *some* way to connect.
 
 In exceptional circumstances it is possible that this information may be out of date and a client would be unable to connect to a cluster.  Consider the case where a user has kubectl set up and working well and then doesn't run kubectl for quite a while.  It is possible that over this time (a) the set of servers will have migrated so that all endpoints are now invalid or (b) the root certificates will have rotated so that the user can no longer trust any endpoint.
 
@@ -83,7 +83,7 @@ If the user requires some auth to the HTTPS server (to keep the ClusterInfo obje
 
 ### Method: Bootstrap Token
 
-There won’t always be a trusted external endpoint to talk to and transmitting
+There won't always be a trusted external endpoint to talk to and transmitting
 the locator file out of band is a pain.  However, we want something more secure
 than just hitting HTTP and trusting whatever we get back.  In this case, we
 assume we have the following:

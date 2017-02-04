@@ -194,27 +194,27 @@ The cases we should test are:
 
 1. Core Functionality Tests
 
-1.1 Source IP Preservation
+  1.1 Source IP Preservation
 
-Test the main intent of this change, source ip preservation - use the all-in-one network tests container
-with new functionality that responds with the client IP. Verify the container is seeing the external IP
-of the test client.
+  Test the main intent of this change, source ip preservation - use the all-in-one network tests container
+  with new functionality that responds with the client IP. Verify the container is seeing the external IP
+  of the test client.
 
-1.2 Health Check responses
+  1.2 Health Check responses
 
-Testcases use pods explicitly pinned to nodes and delete/add to nodes randomly. Validate that healthchecks succeed
-and fail on the expected nodes as endpoints move around. Gather LB response times (time from pod declares ready to
-time for Cloud LB to declare node healthy and vice versa) to endpoint changes.
+  Testcases use pods explicitly pinned to nodes and delete/add to nodes randomly. Validate that healthchecks succeed
+  and fail on the expected nodes as endpoints move around. Gather LB response times (time from pod declares ready to
+  time for Cloud LB to declare node healthy and vice versa) to endpoint changes.
 
 2. Inter-Operability Tests
 
-Validate that internal cluster communications are still possible from nodes without local endpoints. This change
-is only for externally sourced traffic.
+  Validate that internal cluster communications are still possible from nodes without local endpoints. This change
+  is only for externally sourced traffic.
 
 3. Backward Compatibility Tests
 
-Validate that old and new functionality can simultaneously exist in a single cluster. Create services with and without
-the annotation, and validate datapath correctness.
+  Validate that old and new functionality can simultaneously exist in a single cluster. Create services with and without
+  the annotation, and validate datapath correctness.
 
 # Beta Design
 

@@ -18,7 +18,7 @@ control whether he has both enough application replicas running
 locally in each of the clusters (so that, for example, users are
 handled by a nearby cluster, with low latency) and globally (so that
 there is always enough capacity to handle all traffic). If one of the
-clusters has issues or hasn’t enough capacity to run the given set of
+clusters has issues or hasn't enough capacity to run the given set of
 replicas the replicas should be automatically moved to some other
 cluster to keep the application responsive.
 
@@ -71,7 +71,7 @@ A component that checks how many replicas are actually running in each
 of the subclusters and if the number matches to the
 FederatedReplicaSet preferences (by default spread replicas evenly
 across the clusters but custom preferences are allowed - see
-below). If it doesn’t and the situation is unlikely to improve soon
+below). If it doesn't and the situation is unlikely to improve soon
 then the replicas should be moved to other subclusters.
 
 ### API and CLI
@@ -96,7 +96,7 @@ be passed as annotations.
 The preferences are expressed by the following structure, passed as a
 serialized json inside annotations.
 
-```
+```go
 type FederatedReplicaSetPreferences struct {  
     // If set to true then already scheduled and running replicas may be moved to other clusters to
     // in order to bring cluster replicasets towards a desired state. Otherwise, if set to false,
@@ -104,7 +104,7 @@ type FederatedReplicaSetPreferences struct {
     Rebalance bool `json:"rebalance,omitempty"`
 
     // Map from cluster name to preferences for that cluster. It is assumed that if a cluster   
-    // doesn’t have a matching entry then it should not have local replica. The cluster matches   
+    // doesn't have a matching entry then it should not have local replica. The cluster matches   
     // to "*" if there is no entry with the real cluster name.   
     Clusters map[string]LocalReplicaSetPreferences  
 }
@@ -126,7 +126,7 @@ How this works in practice:
 
 **Scenario 1**. I want to spread my 50 replicas evenly across all available clusters. Config:
 
-```
+```go
 FederatedReplicaSetPreferences {
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {
@@ -146,7 +146,7 @@ Example:
 
 **Scenario 2**. I want to have only 2 replicas in each of the clusters.
 
-```
+```go
 FederatedReplicaSetPreferences {
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {
@@ -157,7 +157,7 @@ FederatedReplicaSetPreferences {
 
 Or
 
-```
+```go
 FederatedReplicaSetPreferences {
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {
@@ -169,7 +169,7 @@ FederatedReplicaSetPreferences {
 
 Or
 
-```
+```go
 FederatedReplicaSetPreferences {  
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {  
@@ -182,7 +182,7 @@ There is a global target for 50, however if there are 3 clusters there will be o
 
 **Scenario 3**. I want to have 20 replicas in each of 3 clusters.
 
-```
+```go
 FederatedReplicaSetPreferences {  
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {  
@@ -194,9 +194,9 @@ FederatedReplicaSetPreferences {
 There is a global target for 50, however clusters require 60. So some clusters will have less replicas.
  Replica layout: A=20 B=20 C=10.
 
-**Scenario 4**. I want to have equal number of replicas in clusters A,B,C, however don’t put more than 20 replicas to cluster C.
+**Scenario 4**. I want to have equal number of replicas in clusters A,B,C, however don't put more than 20 replicas to cluster C.
 
-```
+```go
 FederatedReplicaSetPreferences {
    Rebalance : true
    Clusters : map[string]LocalReplicaSet {  
@@ -217,7 +217,7 @@ Example:
 
 **Scenario 5**. I want to run my application in cluster A, however if there are troubles FRS can also use clusters B and C, equally.
 
-```
+```go
 FederatedReplicaSetPreferences {  
    Clusters : map[string]LocalReplicaSet {  
      “A” : LocalReplicaSet{ Weight: 1000000}  
@@ -236,7 +236,7 @@ Example:
 
 **Scenario 6**. I want to run my application in clusters A, B and C. Cluster A gets twice the QPS than other clusters.
 
-```
+```go
 FederatedReplicaSetPreferences {  
    Clusters : map[string]LocalReplicaSet {  
      “A” : LocalReplicaSet{ Weight: 2}  
@@ -249,7 +249,7 @@ FederatedReplicaSetPreferences {
 **Scenario 7**. I want to spread my 50 replicas evenly across all available clusters, but if there
 are already some replicas, please do not move them. Config:
 
-```
+```go
 FederatedReplicaSetPreferences {
    Rebalance : false
    Clusters : map[string]LocalReplicaSet {
@@ -312,7 +312,7 @@ enumerated the key idea elements:
    + [E4] LRS is manually deleted from the local cluster. In this case
       a new LRS should be created. It is the same case as
       [[E1]](#heading=h.wn3dfsyc4yuh). Any pods that were left behind
-      won’t be killed and will be adopted after the LRS is recreated.
+      won't be killed and will be adopted after the LRS is recreated.
 
    + [E5] LRS fails to create (not necessary schedule) the desired
       number of pods due to master troubles, admission control
@@ -341,7 +341,7 @@ elsewhere. For that purpose FRSC will maintain a data structure
 where for each FRS controlled LRS we store a list of pods belonging
 to that LRS along with their current status and status change timestamp.
 
-+ [I5] If a new cluster is added to the federation then it doesn’t
++ [I5] If a new cluster is added to the federation then it doesn't
    have a LRS and the situation is equal to
    [[E1]](#heading=h.wn3dfsyc4yuh)/[[E4]](#heading=h.vlyovyh7eef).
 
@@ -350,7 +350,7 @@ to that LRS along with their current status and status change timestamp.
    a cluster is lost completely then the cluster is removed from the
    the cluster list (or marked accordingly) so
    [[E6]](#heading=h.in6ove1c1s8f) and [[E7]](#heading=h.37bnbvwjxeda)
-   don’t need to be handled.
+   don't need to be handled.
 
 + [I7] All ToBeChecked FRS are browsed every 1 min (configurable),
    checked against the current list of clusters, and all missing LRS
@@ -449,7 +449,7 @@ goroutines (however if needed the function can be parallelized for
 different FRS). It takes data only from store maintained by GR2_* and
 GR3_*. The external communication is only required to:
 
-+ Create LRS. If a LRS doesn’t exist it is created after the
++ Create LRS. If a LRS doesn't exist it is created after the
    rescheduling, when we know how much replicas should it have.
 
 + Update LRS replica targets.
@@ -470,7 +470,7 @@ as events.
 ## Workflow
 
 Here is the sequence of tasks that need to be done in order for a
-typical FRS to be split into a number of LRS’s and to be created in
+typical FRS to be split into a number of LRS's and to be created in
 the underlying federated clusters.
 
 Note a: the reason the workflow would be helpful at this phase is that
@@ -489,7 +489,7 @@ Note c: federation-apiserver populates the clusterid field in the FRS
 before persisting it into the federation etcd
 
 Step 3: the federation-level “informer” in FRSC watches federation
-etcd for new/modified FRS’s, with empty clusterid or clusterid equal
+etcd for new/modified FRS's, with empty clusterid or clusterid equal
 to federation ID, and if detected, it calls the scheduling code
 
 Step 4.
@@ -503,7 +503,7 @@ distribution, i.e., equal weights for all of the underlying clusters
 Step 5. As soon as the scheduler function returns the control to FRSC,
 the FRSC starts a number of cluster-level “informer”s, one per every
 target cluster, to watch changes in every target cluster etcd
-regarding the posted LRS’s and if any violation from the scheduled
+regarding the posted LRS's and if any violation from the scheduled
 number of replicase is detected the scheduling code is re-called for
 re-scheduling purposes.
 

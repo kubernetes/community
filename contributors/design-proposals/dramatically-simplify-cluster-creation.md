@@ -221,7 +221,7 @@ Unable to join mesh network. Check your token.
 
     * @jbeda & @philips?
 
-1. Documentation - so that new users can see this in 1.4 (even if it’s caveated with alpha/experimental labels and flags all over it)
+1. Documentation - so that new users can see this in 1.4 (even if it's caveated with alpha/experimental labels and flags all over it)
 
     * @lukemarsden
 

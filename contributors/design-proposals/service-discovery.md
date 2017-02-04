@@ -20,7 +20,7 @@ If a user and/or password is required then this information can be passed using 
 
 `Service Scheme` - Services can be deployed using different schemes. Some popular schemes include `http`,`https`,`file`,`ftp` and `jdbc`.
 
-`Service Protocol` - Services use different protocols that clients need to speak in order to communicate with the service, some examples of service level protocols are SOAP, REST (Yes, technically REST isn’t a protocol but an architectural style). For service consumers it can be hard to tell what protocol is expected.
+`Service Protocol` - Services use different protocols that clients need to speak in order to communicate with the service, some examples of service level protocols are SOAP, REST (Yes, technically REST isn't a protocol but an architectural style). For service consumers it can be hard to tell what protocol is expected.
 
 ## Service Description
 
@@ -37,7 +37,7 @@ Kubernetes allows the creation of Service Annotations. Here we propose the use o
 * `api.service.kubernetes.io/path` - the path part of the service endpoint url. An example value could be `cxfcdi`,
 * `api.service.kubernetes.io/scheme` - the scheme part of the service endpoint url. Some values could be `http` or `https`.
 * `api.service.kubernetes.io/protocol` - the protocol of the service. Known values are `SOAP`, `XML-RPC` and `REST`,
-* `api.service.kubernetes.io/description-path` - the path part of the service description document’s endpoint. It is a pretty safe assumption that the service self-documents. An example value for a swagger 2.0 document can be `cxfcdi/swagger.json`,
+* `api.service.kubernetes.io/description-path` - the path part of the service description document's endpoint. It is a pretty safe assumption that the service self-documents. An example value for a swagger 2.0 document can be `cxfcdi/swagger.json`,
 * `api.kubernetes.io/description-language` - the type of Description Language used. Known values are `WSDL`, `WADL`, `SwaggerJSON`, `SwaggerYAML`.
 
 The fragment below is taken from the service section of the kubernetes.json were these annotations are used

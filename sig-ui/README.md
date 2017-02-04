@@ -5,7 +5,7 @@ Efforts are centered around [Kubernetes Dashboard](https://github.com/kubernetes
 
 
 ####Leads: 
-* Piotr Bryk (@bryk, _Google_) and Dan Romlein (@romlein, _Apprenda_)
+* Piotr Bryk (@bryk, _Google_) and Dan Romlein (@danielromlein, _Apprenda_)
  
 ####Meetings:
 * Wednesdays 4PM CEST

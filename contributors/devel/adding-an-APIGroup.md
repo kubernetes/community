@@ -21,20 +21,37 @@ in your group;
 
 2. Create pkg/apis/`<group>`/{register.go, `<version>`/register.go} to register
 this group's API objects to the encoding/decoding scheme (e.g.,
-[pkg/apis/authentication/register.go](../../pkg/apis/authentication/register.go) and
-[pkg/apis/authentication/v1beta1/register.go](../../pkg/apis/authentication/v1beta1/register.go);
+[pkg/apis/authentication/register.go](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/authentication/register.go)
+and
+[pkg/apis/authentication/v1beta1/register.go](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/authentication/v1beta1/register.go);
+The register files must have a var called SchemeBuilder for the generated code
+to reference. There must be an AddToScheme method for the installer to
+reference. You can look at a group under `pkg/apis/...` for example register.go
+files to use as a template, but do not copy the register.go files under
+`pkg/api/...`--they are not general.
 
-3. Add a pkg/apis/`<group>`/install/install.go, which is responsible for adding
-the group to the `latest` package, so that other packages can access the group's
-meta through `latest.Group`. You probably only need to change the name of group
-and version in the [example](../../pkg/apis/authentication/install/install.go)). You
-need to import this `install` package in {pkg/master,
-pkg/client/unversioned}/import_known_versions.go, if you want to make your group
-accessible to other packages in the kube-apiserver binary, binaries that uses
-the client package.
+3. Add a pkg/apis/`<group>`/install/install.go, You probably only need to change
+the name of group and version in the
+[example](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/authentication/install/install.go)). This
+package must be imported by the server along with
+`k8s.io/kubernetes/pkg/api/install`. Import these packages with the blank
+identifier as they do not have user callable code and exist solely for their
+initialization side-effects.
 
 Step 2 and 3 are mechanical, we plan on autogenerate these using the
 cmd/libs/go2idl/ tool.
+
+### Type definitions in `types.go`
+
+Each type should be an exported struct (have a capitalized name). The struct
+should have the `TypeMeta` and `ObjectMeta` embeds. There should be a `Spec` and
+a `Status` field. If the object is soley a data storage object, and will not be
+modified by a controller, the status field can be left off and the fields inside
+the `Spec` can be inlined directly into the struct.
+
+For each top-level type there should also be a `List` struct. The `List` struct should
+have the `TypeMeta` and `ListMeta` embeds. There should be an `Items` field that
+is a slice of the defined type.
 
 ### Scripts changes and auto-generated code:
 

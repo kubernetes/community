@@ -33,9 +33,9 @@ Non-goals include:
 
 ## API Changes
 
-```
+```go
 type ObjectMeta struct {
-	...	
+	...
 	OwnerReferences []OwnerReference
 }
 ```
@@ -43,7 +43,7 @@ type ObjectMeta struct {
 **ObjectMeta.OwnerReferences**:
 List of objects depended by this object. If ***all*** objects in the list have been deleted, this object will be garbage collected. For example, a replica set `R` created by a deployment `D` should have an entry in ObjectMeta.OwnerReferences pointing to `D`, set by the deployment controller when `R` is created. This field can be updated by any client that has the privilege to both update ***and*** delete the object. For safety reasons, we can add validation rules to restrict what resources could be set as owners. For example, Events will likely be banned from being owners.
 
-```
+```go
 type OwnerReference struct {
 	// Version of the referent.
 	APIVersion string
@@ -83,7 +83,7 @@ The Garbage Collector consists of a scanner, a garbage processor, and a propagat
   * Worker:
     * Dequeues an item from the *Event Queue*.
     * If the item is an creation or update, then updates the DAG accordingly.
-      * If the object has an owner and the owner doesn’t exist in the DAG yet, then apart from adding the object to the DAG, also enqueues the object to the *Dirty Queue*.
+      * If the object has an owner and the owner doesn't exist in the DAG yet, then apart from adding the object to the DAG, also enqueues the object to the *Dirty Queue*.
     * If the item is a deletion, then removes the object from the DAG, and enqueues all its dependent objects to the *Dirty Queue*.
   * The propagator shouldn't need to do any RPCs, so a single worker should be sufficient. This makes locking easier.
   * With the Propagator, we *only* need to run the Scanner when starting the GC to populate the DAG and the *Dirty Queue*.
@@ -96,7 +96,7 @@ Users may want to delete an owning object (e.g., a replicaset) while orphaning t
 
 ## API changes
 
-```
+```go
 type ObjectMeta struct {
 	…
 	Finalizers []string
@@ -133,7 +133,7 @@ type ObjectMeta struct {
 
 ## API changes
 
-```
+```go
 type DeleteOptions struct {
 	…
 	OrphanDependents bool
@@ -162,8 +162,8 @@ Adding a fourth component to the Garbage Collector, the"orphan" finalizer:
 ## Orphan adoption
 
 Controllers are responsible for adopting orphaned dependent resources. To do so, controllers
-* Checks a potential dependent object’s OwnerReferences to determine if it is orphaned.
-* Fills the OwnerReferences if the object matches the controller’s selector and is orphaned.
+* Checks a potential dependent object's OwnerReferences to determine if it is orphaned.
+* Fills the OwnerReferences if the object matches the controller's selector and is orphaned.
 
 There is a potential race between the "orphan" finalizer removing an owner reference and the controllers adding it back during adoption. Imagining this case: a user deletes an owning object and intends to orphan the dependent objects, so the GC removes the owner from the dependent object's OwnerReferences list, but the controller of the owner resource hasn't observed the deletion yet, so it adopts the dependent again and adds the reference back, resulting in the mistaken deletion of the dependent object. This race can be avoided by implementing Status.ObservedGeneration in all resources. Before updating the dependent Object's OwnerReferences, the "orphan" finalizer checks Status.ObservedGeneration of the owning object to ensure its controller has already observed the deletion.
 
@@ -173,7 +173,7 @@ For the master, after upgrading to a version that supports cascading deletion, t
 
 For nodes, cascading deletion does not affect them.
 
-For kubectl, we will keep the kubectl’s cascading deletion logic for one more release.
+For kubectl, we will keep the kubectl's cascading deletion logic for one more release.
 
 # End-to-End Examples
 
@@ -243,7 +243,7 @@ This section presents an example of all components working together to enforce t
 
 ## API Changes
 
-```
+```go
 type DeleteOptions struct {
 	…
 	OrphanChildren bool
@@ -252,16 +252,16 @@ type DeleteOptions struct {
 
 **DeleteOptions.OrphanChildren**: allows a user to express whether the child objects should be orphaned.
 
-```
+```go
 type ObjectMeta struct {
-	...	
+	...
 	ParentReferences []ObjectReference
 }
 ```
 
 **ObjectMeta.ParentReferences**: links the resource to the parent resources. For example, a replica set `R` created by a deployment `D` should have an entry in ObjectMeta.ParentReferences pointing to `D`. The link should be set when the child object is created. It can be updated after the creation.
 
-```
+```go
 type Tombstone struct {
     unversioned.TypeMeta
     ObjectMeta
@@ -299,7 +299,7 @@ The only new component is the Garbage Collector, which consists of a scanner, a 
   * Worker:
     * Dequeues an item from the *Event Queue*.
     * If the item is an creation or update, then updates the DAG accordingly.
-      * If the object has a parent and the parent doesn’t exist in the DAG yet, then apart from adding the object to the DAG, also enqueues the object to the *Dirty Queue*.
+      * If the object has a parent and the parent doesn't exist in the DAG yet, then apart from adding the object to the DAG, also enqueues the object to the *Dirty Queue*.
     * If the item is a deletion, then removes the object from the DAG, and enqueues all its children to the *Dirty Queue*.
   * The propagator shouldn't need to do any RPCs, so a single worker should be sufficient. This makes locking easier.
   * With the Propagator, we *only* need to run the Scanner when starting the Propagator to populate the DAG and the *Dirty Queue*.
@@ -310,14 +310,14 @@ The only new component is the Garbage Collector, which consists of a scanner, a 
 
 * API Server: when handling a deletion request, if DeleteOptions.OrphanChildren is true, then the API Server either creates a tombstone with TTL if the tombstone doesn't exist yet, or updates the TTL of the existing tombstone. The API Server deletes the object after the tombstone is created.
 
-* Controllers: when creating child objects, controllers need to fill up their ObjectMeta.ParentReferences field. Objects that don’t have a parent should have the namespace object as the parent.
+* Controllers: when creating child objects, controllers need to fill up their ObjectMeta.ParentReferences field. Objects that don't have a parent should have the namespace object as the parent.
 
 ## Comparison with the selected design
 
 The main difference between the two designs is when to update the ParentReferences. In design #1, because a tombstone is created to indicate "orphaning" is desired, the updates to ParentReferences can be deferred until the deletion of the tombstone. In design #2, the updates need to be done before the parent object is deleted from the registry.
 
 * Advantages of "Tombstone + GC" design
-  * Faster to free the resource name compared to using finalizers. The original object can be deleted to free the resource name once the tombstone is created, rather than waiting for the finalizers to update all children’s ObjectMeta.ParentReferences.
+  * Faster to free the resource name compared to using finalizers. The original object can be deleted to free the resource name once the tombstone is created, rather than waiting for the finalizers to update all children's ObjectMeta.ParentReferences.
 * Advantages of "Finalizer Framework + GC"
   * The finalizer framework is needed for other purposes as well.
 
