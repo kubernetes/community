@@ -166,9 +166,17 @@ may not propagate back to the host, depending of ordering of mount operations)
 1. limitations this imposes on runtimes (RO-remounting may now affects the host,
 is it on purpose or a dangerous side-effect?)
 
-1. interaction with pod semantics (docker doesn't have a pod concept, but pod-
-aware runtimes may perform additional moves/remounts while preparing a pod)
+1. A shared mount target imposes some costraints on its parent subtree (generally,
+it has to be shared as well), which in turn prevents some mount operations when
+preparing a pod (eg. MS_MOVE).
 
+1. The "on-by-default" nature means existing hostpath mounts, which used to be
+harmless, could begin consuming kernel resources and cause a node to crash. Even
+if a pod does not create any new mountpoints under its hostpath bindmount, it's
+not hard to reach multiplicative explosions with shared bindmounts and so the
+change in default + no cleanup could result in existing workloads knocking the
+node over.
+ 
 These concerns are valid and we decide to limit the propagation mode to HostPath
 volume only, in HostPath, we expect any runtime should NOT perform any additional
 actions (such as clean up). This behavior is also consistent with current HostPath
