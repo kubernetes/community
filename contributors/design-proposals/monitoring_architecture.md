@@ -99,12 +99,12 @@ version of today's Heapster. metrics-server stores locally only latest values an
 metrics-server exposes the master metrics API. (The configuration described here is similar
 to the current Heapster in “standalone” mode.)
 [Discovery summarizer](../../docs/proposals/federated-api-servers.md)
-makes the master metrics API available to external clients such that from the client’s perspective
+makes the master metrics API available to external clients such that from the client's perspective
 it looks the same as talking to the API server.
 
 Core (system) metrics are handled as described above in all deployment environments. The only
 easily replaceable part is resource estimator, which could be replaced by power users. In
-theory, metric-server itself can also be substituted, but it’d be similar to substituting
+theory, metric-server itself can also be substituted, but it'd be similar to substituting
 apiserver itself or controller-manager - possible, but not recommended and not supported.
 
 Eventually the core metrics pipeline might also collect metrics from Kubelet and Docker daemon
@@ -170,7 +170,7 @@ cAdvisor + Heapster + InfluxDB (or any other sink)
 * snapd + SNAP cluster-level agent
 * Sysdig
 
-As an example we’ll describe a potential integration with cAdvisor + Prometheus.
+As an example we'll describe a potential integration with cAdvisor + Prometheus.
 
 Prometheus has the following metric sources on a node:
 * core and non-core system metrics from cAdvisor

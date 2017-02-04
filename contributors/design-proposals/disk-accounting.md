@@ -8,7 +8,7 @@ This proposal is an attempt to come up with a means for accounting disk usage in
 
 ### Why is disk accounting necessary?
 
-As of kubernetes v1.1 clusters become unusable over time due to the local disk becoming full. The kubelets on the node attempt to perform garbage collection of old containers and images, but that doesn’t prevent running pods from using up all the available disk space.
+As of kubernetes v1.1 clusters become unusable over time due to the local disk becoming full. The kubelets on the node attempt to perform garbage collection of old containers and images, but that doesn't prevent running pods from using up all the available disk space.
 
 Kubernetes users have no insight into how the disk is being consumed.
 
@@ -42,13 +42,13 @@ Disk can be consumed for:
 
 1. Container images
 
-2. Container’s writable layer
+2. Container's writable layer
 
-3. Container’s logs - when written to stdout/stderr and default logging backend in docker is used.
+3. Container's logs - when written to stdout/stderr and default logging backend in docker is used.
 
 4. Local volumes - hostPath, emptyDir, gitRepo, etc.
 
-As of Kubernetes v1.1, kubelet exposes disk usage for the entire node and the container’s writable layer for aufs docker storage driver.
+As of Kubernetes v1.1, kubelet exposes disk usage for the entire node and the container's writable layer for aufs docker storage driver.
 This information is made available to end users via the heapster monitoring pipeline.
 
 #### Image layers
@@ -86,7 +86,7 @@ In addition to this, the changes introduced by a pod on the source of a hostPath
 
 ### Docker storage model
 
-Before we start exploring solutions, let’s get familiar with how docker handles storage for images, writable layer and logs.
+Before we start exploring solutions, let's get familiar with how docker handles storage for images, writable layer and logs.
 
 On all storage drivers, logs are stored under `<docker root dir>/containers/<container-id>/`
 
@@ -123,7 +123,7 @@ Everything under  `/var/lib/docker/overlay/<id>` are files required for running 
 
 Disk accounting is dependent on the storage driver in docker. A common solution that works across all storage drivers isn't available.
 
-I’m listing a few possible solutions for disk accounting below along with their limitations.
+I'm listing a few possible solutions for disk accounting below along with their limitations.
 
 We need a plugin model for disk accounting. Some storage drivers in docker will require special plugins.
 
@@ -136,7 +136,7 @@ But isolated usage isn't of much use because image layers are shared between con
 
 Continuing to use the entire partition availability for garbage collection purposes in kubelet, should not affect reliability.
 We might garbage collect more often.
-As long as we do not expose features that require persisting old containers, computing image layer usage wouldn’t be necessary.
+As long as we do not expose features that require persisting old containers, computing image layer usage wouldn't be necessary.
 
 Main goals for images are
 1. Capturing total image disk usage
@@ -181,7 +181,7 @@ Another option is to expose disk usage of all images together as a first-class f
 
 ##### Overlayfs and Aufs
 
-####### `du`
+###### `du`
 
 We can list all the image layer specific directories, excluding container directories, and run `du` on each of those directories.
 
@@ -200,7 +200,7 @@ We can list all the image layer specific directories, excluding container direct
 * Can block container deletion by keeping file descriptors open.
 
 
-####### Linux gid based Disk Quota
+###### Linux gid based Disk Quota
 
 [Disk quota](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/ch-disk-quotas.html) feature provided by the linux kernel can be used to track the usage of image layers. Ideally, we need `project` support for disk quota, which lets us track usage of directory hierarchies using `project ids`. Unfortunately, that feature is only available for zfs filesystems. Since most of our distributions use `ext4` by default, we will have to use either `uid` or `gid` based quota tracking.
 
@@ -208,7 +208,7 @@ Both `uids` and `gids` are meant for security. Overloading that concept for disk
 
 Kubelet needs to define a gid for tracking image layers and make that gid or group the owner of `/var/lib/docker/[aufs | overlayfs]` recursively. Once this is done, the quota sub-system in the kernel will report the blocks being consumed by the storage driver on the underlying partition.
 
-Since this number also includes the container’s writable layer, we will have to somehow subtract that usage from the overall usage of the storage driver directory. Luckily, we can use the same mechanism for tracking container’s writable layer. Once we apply a different `gid` to the container’s writable layer, which is located under `/var/lib/docker/<storage_driver>/diff/<container_id>`, the quota subsystem will not include the container’s writable layer usage.
+Since this number also includes the container's writable layer, we will have to somehow subtract that usage from the overall usage of the storage driver directory. Luckily, we can use the same mechanism for tracking container’s writable layer. Once we apply a different `gid` to the container's writable layer, which is located under `/var/lib/docker/<storage_driver>/diff/<container_id>`, the quota subsystem will not include the container's writable layer usage.
 
 Xfs on the other hand support project quota which lets us track disk usage of arbitrary directories using a project. Support for this feature in ext4 is being reviewed. So on xfs, we can use quota without having to clobber the writable layer's uid and gid.
 
@@ -219,7 +219,7 @@ Xfs on the other hand support project quota which lets us track disk usage of ar
 
 **Cons**
 
-* Requires updates to default ownership on docker’s internal storage driver directories. We will have to deal with storage driver implementation details in any approach that is not docker native.
+* Requires updates to default ownership on docker's internal storage driver directories. We will have to deal with storage driver implementation details in any approach that is not docker native.
 
 * Requires additional node configuration - quota subsystem needs to be setup on the node. This can either be automated or made a requirement for the node.
 
@@ -238,11 +238,11 @@ Project Quota support for ext4 is currently being reviewed upstream. If that fea
 
 Devicemapper storage driver will setup two volumes, metadata and data, that will be used to store image layers and container writable layer. The volumes can be real devices or loopback. A Pool device is created which uses the underlying volume for real storage.
 
-A new thinly-provisioned volume, based on the pool, will be created for running container’s.
+A new thinly-provisioned volume, based on the pool, will be created for running container's.
 
-The kernel tracks the usage of the pool device at the block device layer. The usage here includes image layers and container’s writable layers.
+The kernel tracks the usage of the pool device at the block device layer. The usage here includes image layers and container's writable layers.
 
-Since the kubelet has to track the writable layer usage anyways, we can subtract the aggregated root filesystem usage from the overall pool device usage to get the image layer’s disk usage.
+Since the kubelet has to track the writable layer usage anyways, we can subtract the aggregated root filesystem usage from the overall pool device usage to get the image layer's disk usage.
 
 Linux quota and `du` will not work with device mapper.
 
@@ -253,7 +253,7 @@ A docker dry run option (mentioned above) is another possibility.
 
 ###### Overlayfs / Aufs
 
-Docker creates a separate directory for the container’s writable layer which is then overlayed on top of read-only image layers.
+Docker creates a separate directory for the container's writable layer which is then overlayed on top of read-only image layers.
 
 Both the previously mentioned options of `du` and `Linux Quota` will work for this case as well.
 
@@ -268,14 +268,14 @@ If local disk becomes a schedulable resource, `linux quota` can be used to impos
 
 FIXME: How to calculate writable layer usage with devicemapper?
 
-To enforce `limits` the volume created for the container’s writable layer filesystem can be dynamically [resized](https://jpetazzo.github.io/2014/01/29/docker-device-mapper-resize/), to not use more than `limit`. `request` will have to be enforced by the kubelet.
+To enforce `limits` the volume created for the container's writable layer filesystem can be dynamically [resized](https://jpetazzo.github.io/2014/01/29/docker-device-mapper-resize/), to not use more than `limit`. `request` will have to be enforced by the kubelet.
 
 
 #### Container logs
 
 Container logs are not storage driver specific. We can use either `du` or `quota` to track log usage per container. Log files are stored under `/var/lib/docker/containers/<container-id>`.
 
-In the case of quota, we can create a separate gid for tracking log usage. This will let users track log usage and writable layer’s usage individually.
+In the case of quota, we can create a separate gid for tracking log usage. This will let users track log usage and writable layer's usage individually.
 
 For the purposes of enforcing limits though, kubelet will use the sum of logs and writable layer.
 
@@ -340,9 +340,9 @@ In this milestone, we will add support for quota and make it opt-in. There shoul
 
 * Configure linux quota automatically on startup. Do not set any limits in this phase.
 
-* Allocate gids for pod volumes, container’s writable layer and logs, and also for image layers.
+* Allocate gids for pod volumes, container's writable layer and logs, and also for image layers.
 
-* Update the docker runtime plugin in kubelet to perform the necessary `chown’s` and `chmod’s` between container creation and startup.
+* Update the docker runtime plugin in kubelet to perform the necessary `chown's` and `chmod's` between container creation and startup.
 
 * Pass the allocated gids as supplementary gids to containers.
 
@@ -363,7 +363,7 @@ In this milestone, we will make local disk a schedulable resource.
 
 * Quota plugin sets hard limits equal to user specified `limits`.
 
-* Devicemapper plugin resizes writable layer to not exceed the container’s disk `limit`.
+* Devicemapper plugin resizes writable layer to not exceed the container's disk `limit`.
 
 * Disk manager evicts pods based on `usage` - `request` delta instead of just QoS class.
 
@@ -417,15 +417,12 @@ Tested on Debian jessie
 
     8. Check usage using quota and group ‘x’
 
-		```shell
-			$ quota -g x -v
-
-			Disk quotas for group x (gid 9000): 
-
-			Filesystem  **blocks**   quota   limit   grace   files   quota   limit   grace
-
-			/dev/sda1   **10248**       0       0               3       0       0
-		```
+       ```shell
+       $ quota -g x -v
+       Disk quotas for group x (gid 9000):
+       Filesystem  blocks   quota   limit   grace   files   quota   limit   grace
+       /dev/sda1   10248       0       0               3       0       0
+       ```
 
 	Using the same workflow, we can add new sticky group IDs to emptyDir volumes and account for their usage against pods.
 
@@ -451,7 +448,7 @@ Track the space occupied by images after it has been pulled locally as follows.
 
 3. Any new images pulled or containers created will be accounted to the `docker-images` group by default.
 
-4. Once we update the group ownership on newly created containers to a different gid, the container writable layer’s specific disk usage gets dropped from this group.
+4. Once we update the group ownership on newly created containers to a different gid, the container writable layer's specific disk usage gets dropped from this group.
 
 #### Overlayfs
 
@@ -484,29 +481,24 @@ Overlayfs works similar to Aufs. The path to the writable directory for containe
 * Check quota before and after running the container.
 
     ```shell
-	   $ quota -g x -v
-
-		Disk quotas for group x (gid 9000): 
-
-		Filesystem  blocks   quota   limit   grace   files   quota   limit   grace
-
-       /dev/sda1      48       0       0              19       0       0
-   ```
+      $ quota -g x -v
+      Disk quotas for group x (gid 9000):
+      Filesystem  blocks   quota   limit   grace   files   quota   limit   grace
+      /dev/sda1      48       0       0              19       0       0
+    ```
 
     * Start the docker container
 
         * `docker start b8`
 
-    * ```shell
-	  quota -g x -v
+  Notice the **blocks** has changed
 
-	Disk quotas for group x (gid 9000):
-
-     Filesystem  **blocks**   quota   limit   grace   files   quota   limit   grace
-
-    /dev/sda1   **10288**       0       0                20      0       0
-
-	```
+    ```sh
+    $ quota -g x -v
+    Disk quotas for group x (gid 9000):
+    Filesystem  blocks   quota   limit   grace   files   quota   limit   grace
+    /dev/sda1   10288       0       0                20      0       0
+    ```
 
 ##### Device mapper
 
@@ -518,60 +510,41 @@ These devices can be loopback or real storage devices.
 
 The base device has a maximum storage capacity. This means that the sum total of storage space occupied by images and containers cannot exceed this capacity.
 
-By default, all images and containers are created from an initial filesystem with a 10GB limit. 
+By default, all images and containers are created from an initial filesystem with a 10GB limit.
 
 A separate filesystem is created for each container as part of start (not create).
 
 It is possible to [resize](https://jpetazzo.github.io/2014/01/29/docker-device-mapper-resize/) the container filesystem.  
 
-For the purposes of image space tracking, we can 
+For the purposes of image space tracking, we can
 
-####Testing notes:
-
-* ```shell
+#### Testing notes:
+Notice the **Pool Name**
+```shell
 $ docker info
-
 ...
-
 Storage Driver: devicemapper
-
- Pool Name: **docker-8:1-268480-pool**
-
+ Pool Name: docker-8:1-268480-pool
  Pool Blocksize: 65.54 kB
-
  Backing Filesystem: extfs
-
  Data file: /dev/loop0
-
  Metadata file: /dev/loop1
-
  Data Space Used: 2.059 GB
-
  Data Space Total: 107.4 GB
-
  Data Space Available: 48.45 GB
-
  Metadata Space Used: 1.806 MB
-
  Metadata Space Total: 2.147 GB
-
  Metadata Space Available: 2.146 GB
-
  Udev Sync Supported: true
-
  Deferred Removal Enabled: false
-
  Data loop file: /var/lib/docker/devicemapper/devicemapper/data
-
  Metadata loop file: /var/lib/docker/devicemapper/devicemapper/metadata
-
  Library Version: 1.02.99 (2015-06-20)
 ```
 
 ```shell
-$ dmsetup table docker-8\:1-268480-pool 
-
-0 209715200 thin-pool 7:1 7:0 **128** 32768 1 skip_block_zeroing
+$ dmsetup table docker-8\:1-268480-pool
+0 209715200 thin-pool 7:1 7:0 128 32768 1 skip_block_zeroing
 ```
 
 128 is the data block size
@@ -579,9 +552,8 @@ $ dmsetup table docker-8\:1-268480-pool
 Usage from kernel for the primary block device
 
 ```shell
-$ dmsetup status docker-8\:1-268480-pool 
-
-0 209715200 thin-pool 37 441/524288 **31424/1638400** - rw discard_passdown queue_if_no_space -
+$ dmsetup status docker-8\:1-268480-pool
+0 209715200 thin-pool 37 441/524288 31424/1638400 - rw discard_passdown queue_if_no_space -
 ```
 
 Usage/Available - 31424/1638400
@@ -602,7 +574,7 @@ Capacity in MB = 1638400 * 512 * 128 bytes = 100 GB
 
 ##### Testing titbits
 
-* Ubuntu 15.10 doesn’t ship with the quota module on virtual machines. [Install ‘linux-image-extra-virtual’](http://askubuntu.com/questions/109585/quota-format-not-supported-in-kernel) package to get quota to work.
+* Ubuntu 15.10 doesn't ship with the quota module on virtual machines. [Install ‘linux-image-extra-virtual’](http://askubuntu.com/questions/109585/quota-format-not-supported-in-kernel) package to get quota to work.
 
 * Overlay storage driver needs kernels >= 3.18. I used Ubuntu 15.10 to test Overlayfs.
 

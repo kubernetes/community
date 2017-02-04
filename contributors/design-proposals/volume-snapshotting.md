@@ -190,7 +190,7 @@ Open questions:
 
         * Can the API call methods on VolumePlugins? Yeah via controller
 
-    * The scheduler gives users functionality that doesn’t already exist, but required adding an entirely new controller
+    * The scheduler gives users functionality that doesn't already exist, but required adding an entirely new controller
 
 * Should the list and restore operations be part of v1?
 
@@ -446,7 +446,7 @@ Users will specify a snapshotting schedule for particular volumes, which Kuberne
 
     17. If the pod dies do we continue creating snapshots?
 
-    18. How to communicate errors (PD doesn’t support snapshotting, time period unsupported)
+    18. How to communicate errors (PD doesn't support snapshotting, time period unsupported)
 
     19. Off schedule snapshotting like before an application upgrade
 
@@ -456,7 +456,7 @@ Options, pros, cons, suggestion/recommendation
 
 Example 1b
 
-During pod creation, a user can specify a pod definition in a yaml file. As part of this specification, users should be able to denote a [list of] times at which an existing snapshot command can be executed on the pod’s associated volume.
+During pod creation, a user can specify a pod definition in a yaml file. As part of this specification, users should be able to denote a [list of] times at which an existing snapshot command can be executed on the pod's associated volume.
 
 For a simple example, take the definition of a [pod using a GCE PD](http://kubernetes.io/docs/user-guide/volumes/#example-pod-2):
 

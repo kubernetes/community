@@ -1,4 +1,4 @@
-## #Kubernetes Developer's Summit Discussion Topics Voting
+###Kubernetes Developer's Summit Discussion Topics Voting
 ###
 A voting poll for discussion topic proposals has been created, and the link to the poll can be found [here][poll]. 
 

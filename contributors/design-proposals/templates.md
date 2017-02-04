@@ -157,7 +157,7 @@ Template definition.
 
 **Template Object**
 
-```
+```go
 // Template contains the inputs needed to produce a Config.
 type Template struct {
     unversioned.TypeMeta
@@ -179,7 +179,7 @@ type Template struct {
 
 **Parameter Object**
 
-```
+```go
 // Parameter defines a name/value variable that is to be processed during
 // the Template to Config transformation.
 type Parameter struct {
@@ -194,7 +194,7 @@ type Parameter struct {
     Description string
 
     // Optional: Value holds the Parameter data.
-    // The value replaces all occurrences of the Parameter $(Name) or 
+    // The value replaces all occurrences of the Parameter $(Name) or
     // $((Name)) expression during the Template to Config transformation.
     Value string
 
@@ -208,26 +208,26 @@ type Parameter struct {
 ```
 
 As seen above, parameters allow for metadata which can be fed into client implementations to display information about the
-parameter’s purpose and whether a value is required.  In lieu of type information, two reference styles are offered:  `$(PARAM)`
+parameter's purpose and whether a value is required.  In lieu of type information, two reference styles are offered:  `$(PARAM)`
 and `$((PARAM))`.  When the single parens option is used, the result of the substitution will remain quoted.  When the double
 parens option is used, the result of the substitution will not be quoted.  For example, given a parameter defined with a value
 of "BAR", the following behavior will be observed:
 
-```
+```go
 somefield: "$(FOO)"  ->  somefield: "BAR"
 somefield: "$((FOO))"  ->  somefield: BAR
 ```
 
-// for concatenation, the result value reflects the type of substitution (quoted or unquoted):
+for concatenation, the result value reflects the type of substitution (quoted or unquoted):
 
-```
+```go
 somefield: "prefix_$(FOO)_suffix"  ->  somefield: "prefix_BAR_suffix"
 somefield: "prefix_$((FOO))_suffix"  ->  somefield: prefix_BAR_suffix
 ```
 
-// if both types of substitution exist, quoting is performed:
+if both types of substitution exist, quoting is performed:
 
-```
+```go
 somefield: "prefix_$((FOO))_$(FOO)_suffix"  ->  somefield: "prefix_BAR_BAR_suffix"
 ```
 
@@ -243,7 +243,7 @@ Illustration of a template which defines a service and replication controller wi
 the name of the top level objects, the number of replicas, and several environment variables defined on the
 pod template.
 
-```
+```json
 {
   "kind": "Template",
   "apiVersion": "v1",
@@ -402,7 +402,7 @@ The api endpoint will then:
 
 1. Validate the template including confirming “required” parameters have an explicit value.
 2. Walk each api object in the template.
-3. Adding all labels defined in the template’s ObjectLabels field.
+3. Adding all labels defined in the template's ObjectLabels field.
 4. For each field, check if the value matches a parameter name and if so, set the value of the field to the value of the parameter.
   * Partial substitutions are accepted, such as `SOME_$(PARAM)` which would be transformed into `SOME_XXXX` where `XXXX` is the value
     of the `$(PARAM)` parameter.

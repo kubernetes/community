@@ -154,7 +154,7 @@ version changes, not new major nor minor versions).
 
 * Users can upgrade from any Kube 1.x release to any other Kube 1.x release as a
 rolling upgrade across their cluster. (Rolling upgrade means being able to
-upgrade the master first, then one node at a time. See #4855 for details.)
+upgrade the master first, then one node at a time. See [#4855](https://issues.k8s.io/4855) for details.)
   * However, we do not recommend upgrading more than two minor releases at a
 time (see [Supported releases](#supported-releases)), and do not recommend
 running non-latest patch releases of a given minor release.

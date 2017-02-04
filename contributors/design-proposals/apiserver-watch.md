@@ -63,7 +63,7 @@ The rest of this section describes the concrete steps that need to be done
 to implement the proposal.
 
 1. Since we want the watch in apiserver to be optional for different resource
-types, this needs to be self-contained and hidden behind a well defined API.
+types, this needs to be self-contained and hidden behind a well-defined API.
 This should be a layer very close to etcd - in particular all registries:
 "pkg/registry/generic/registry" should be built on top of it.
 We will solve it by turning tools.EtcdHelper by extracting its interface
@@ -80,7 +80,7 @@ we will store two things:
   - the resourceVersion of the object (being an etcdIndex)
   - the object watched from etcd itself (in a deserialized form)
 
-  This should be as simple as having an array an treating it as a cyclic buffer.
+  This should be as simple as having an array and treating it as a cyclic buffer.
   Obviously resourceVersion of objects watched from etcd will be increasing, but
   they are necessary for registering a new watcher that is interested in all the
   changes since a given etcdIndex.

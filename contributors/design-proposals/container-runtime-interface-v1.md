@@ -86,7 +86,7 @@ container setup that are not currently trackable as Pod constraints, e.g.,
 filesystem setup, container image pulling, etc.*
 
 A container in a PodSandbox maps to an application in the Pod Spec. For Linux
-containers, they are expected to share at least network and IPC namespaces,
+containers, they are expected to share at least network, PID and IPC namespaces,
 with sharing more namespaces discussed in [#1615](https://issues.k8s.io/1615).
 
 
@@ -130,7 +130,7 @@ All functions listed above are expected to be thread-safe.
 
 ### Pod/Container Lifecycle
 
-The PodSandbox’s lifecycle is decoupled from the containers, i.e., a sandbox
+The PodSandbox's lifecycle is decoupled from the containers, i.e., a sandbox
 is created before any containers, and can exist after all containers in it have
 terminated.
 
@@ -225,7 +225,7 @@ applicable to its platform, and should return an error otherwise.
 ### Keep it minimal
 
 The proposed interface is experimental, i.e., it will go through (many) changes
-until it stabilizes. The principle is to to keep the interface minimal and
+until it stabilizes. The principle is to keep the interface minimal and
 extend it later if needed. This includes a several features that are still in
 discussion and may be achieved alternatively:
 

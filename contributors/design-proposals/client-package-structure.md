@@ -151,7 +151,7 @@ Where:
    resource.
 
 The types returned/consumed by such functions will be e.g. api/v1, NOT the
-current version inspecific types. The current internal-versioned client is
+current version in specific types. The current internal-versioned client is
 inconvenient for users, as it does not protect them from having to recompile
 their code with every minor update. (We may continue to generate an
 internal-versioned client for our own use for a while, but even for our own
@@ -235,7 +235,7 @@ We do this to:
   against their cluster, but we need to make guarantees that the clients we
   shipped with v1.X.0 will work with v1.X+1.0, and vice versa. That's not
   practical unless we "bless" a particular version of each API group and ship an
-  official client set with earch release. (If the server supports 15 groups with
+  official client set with each release. (If the server supports 15 groups with
   2 versions each, that's 2^15 different possible client sets. We don't want to
   test all of them.)
 

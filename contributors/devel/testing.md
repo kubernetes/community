@@ -40,7 +40,7 @@ passing, so it is often a good idea to make sure the e2e tests work as well.
 * All packages and any significant files require unit tests.
 * The preferred method of testing multiple scenarios or input is
   [table driven testing](https://github.com/golang/go/wiki/TableDrivenTests)
-  - Example: [TestNamespaceAuthorization](../../test/integration/auth/auth_test.go)
+  - Example: [TestNamespaceAuthorization](https://github.com/kubernetes/kubernetes/blob/master/test/integration/auth/auth_test.go)
 * Unit tests must pass on OS X and Windows platforms.
   - Tests using linux-specific features must be skipped or compiled out.
   - Skipped is better, compiled out is required when it won't compile.
@@ -161,9 +161,9 @@ See `go help test` and `go help testflag` for additional info.
   - This includes kubectl commands
 * The preferred method of testing multiple scenarios or inputs
 is [table driven testing](https://github.com/golang/go/wiki/TableDrivenTests)
-  - Example: [TestNamespaceAuthorization](../../test/integration/auth/auth_test.go)
+  - Example: [TestNamespaceAuthorization](https://github.com/kubernetes/kubernetes/blob/master/test/integration/auth/auth_test.go)
 * Each test should create its own master, httpserver and config.
-  - Example: [TestPodUpdateActiveDeadlineSeconds](../../test/integration/pods/pods_test.go)
+  - Example: [TestPodUpdateActiveDeadlineSeconds](https://github.com/kubernetes/kubernetes/blob/master/test/integration/pods/pods_test.go)
 * See [coding conventions](coding-conventions.md).
 
 ### Install etcd dependency
@@ -180,7 +180,7 @@ hack/install-etcd.sh  # Installs in ./third_party/etcd
 echo export PATH="\$PATH:$(pwd)/third_party/etcd" >> ~/.profile  # Add to PATH
 
 # Option b) install manually
-grep -E "image.*etcd" cluster/saltbase/etcd/etcd.manifest  # Find version
+grep -E "image.*etcd" cluster/saltbase/salt/etcd/etcd.manifest  # Find version
 # Install that version using yum/apt-get/etc
 echo export PATH="\$PATH:<LOCATION>" >> ~/.profile  # Add to PATH
 ```
@@ -206,12 +206,12 @@ make test-integration  # Run all integration tests.
 ```
 
 This script runs the golang tests in package
-[`test/integration`](../../test/integration/).
+[`test/integration`](https://github.com/kubernetes/kubernetes/tree/master/test/integration).
 
 ### Run a specific integration test
 
-You can use also use the `KUBE_TEST_ARGS` environment variable with the `hack
-/test-integration.sh` script to run a specific integration test case:
+You can also use the `KUBE_TEST_ARGS` environment variable with the `hack/test-integration.sh`
+script to run a specific integration test case:
 
 ```sh
 # Run integration test TestPodUpdateActiveDeadlineSeconds with the verbose flag set.
