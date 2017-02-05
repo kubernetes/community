@@ -151,7 +151,6 @@ any PRs are sent for code review.
   - **Note:** Include unit and e2e tests
 6. Update related documentation
   - [Concept Docs](https://github.com/kubernetes/kubernetes.github.io/tree/master/docs/concepts/tools/kubectl)
-  - [Tasks Docs](https://github.com/kubernetes/kubernetes.github.io/tree/master/docs/tasks/tools/kubectl)
 7. Release
   - Wait for your feature to appear in the next Kubernetes release!
 
