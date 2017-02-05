@@ -4,7 +4,7 @@ Status: Pending
 
 Version: Alpha | Beta | GA
 
-Assignee: <github handle>
+Implementation Owner: TBD
 
 ## Motivation
 
