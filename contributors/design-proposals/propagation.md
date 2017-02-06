@@ -140,7 +140,7 @@ runtime support matrix and when that will be addressed.
 distros.
 
 1. (From @euank) Changing those mountflags may make docker even less stable,
-this may lock up kernel accidently or potentially leak mounts.
+this may lock up kernel accidentally or potentially leak mounts.
 
 
 ## Decision
