@@ -1,37 +1,3 @@
-<!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
-
-<!-- BEGIN STRIP_FOR_RELEASE -->
-
-<img src="http://kubernetes.io/kubernetes/img/warning.png" alt="WARNING"
-     width="25" height="25">
-<img src="http://kubernetes.io/kubernetes/img/warning.png" alt="WARNING"
-     width="25" height="25">
-<img src="http://kubernetes.io/kubernetes/img/warning.png" alt="WARNING"
-     width="25" height="25">
-<img src="http://kubernetes.io/kubernetes/img/warning.png" alt="WARNING"
-     width="25" height="25">
-<img src="http://kubernetes.io/kubernetes/img/warning.png" alt="WARNING"
-     width="25" height="25">
-
-<h2>PLEASE NOTE: This document applies to the HEAD of the source tree</h2>
-
-If you are using a released version of Kubernetes, you should
-refer to the docs that go with that version.
-
-<!-- TAG RELEASE_LINK, added by the munger automatically -->
-<strong>
-The latest release of this document can be found
-[here](http://releases.k8s.io/release-1.4/docs/proposals/alternate-api-representations.md).
-
-Documentation for other releases can be found at
-[releases.k8s.io](http://releases.k8s.io).
-</strong>
---
-
-<!-- END STRIP_FOR_RELEASE -->
-
-<!-- END MUNGE: UNVERSIONED_WARNING -->
-
 # Alternate representations of API resources
 
 ## Abstract
@@ -39,7 +5,7 @@ Documentation for other releases can be found at
 Naive clients benefit from allowing the server to returning resource information in a form
 that is easy to represent or is more efficient when dealing with resources in bulk. It
 should be possible to ask an API server to return a representation of one or more resources
-in a way useful for:
+of the same type in a way useful for:
 
 * Retrieving a subset of object metadata in a list or watch of a resource, such as the
   metadata needed by the generic Garbage Collector or the Namespace Lifecycle Controller
@@ -73,7 +39,7 @@ We also foresee increasing difficulty in building clients that must deal with ex
 there are at least 6 known web-ui or CLI implementations that need to display some
 information about third party resources or additional API groups registered with a server
 without requiring each of them to change.  Providing a server side implementation will
-allow clietns to retrieve meaningful information for the `get` and `describe` style
+allow clients to retrieve meaningful information for the `get` and `describe` style
 operations even for new API groups.
 
 
@@ -108,12 +74,11 @@ a real API group.
     to a particular resource in a given namespace should be limited regardless of
     the representation in use.
   * Allowing "all namespaces" to be listed would require us to create "fake" resources
-    which would authorization
+    which would complicate authorization
 * We wish to support retrieving object representations in multiple schemas - JSON for
   simple clients and Protobuf for clients concerned with efficiency.
-* Most clients will wish to retrieve the more efficient / simpler object, but for
-  older servers will desire to fall back to the implict resource represented by
-  the endpoint.
+* Most clients will wish to retrieve a newer format, but for older servers will desire
+  to fall back to the implict resource represented by the endpoint.
   * Over time, clients may need to request results in multiple API group versions
     because of breaking changes (when we introduce v2, clients that know v2 will want
     to ask for v2, then v1)
@@ -151,6 +116,12 @@ more parameters are required and should be specified as query parameters. Howeve
 behavior is best represented as a variation on content-type. Supporting both is not limiting
 in the short term as long as we can validate correctly.
 
+As a simplification for common use, we should create **media-type aliases** which may show up in lists of mime-types supported
+and simplify use for clients. For example, the following aliases would be reasonable:
+
+* `application/json+vnd.kubernetes.export` would return the requested object in export form
+* `application/json+vnd.kubernetes.as+meta.k8s.io+v1+TabularOutput` would return the requested object in a tabular form
+* `text/csv` would return the requested object in a tabular form in the comma-separated-value (CSV) format
 
 ### Example: Partial metadata retrieval
 
@@ -182,6 +153,10 @@ The server would respond with
         ...
       ]
     }
+
+In this example PartialObjectMetadata is a real registered type, and each API group
+provides an efficient transformation from their schema to the partial schema directly.
+The client upon retrieving this type can act as a generic resource.
 
 Note that the `as` parameter indicates to the server the Kind of the resource, but
 the Kubernetes API convention of returning a List with a known schema continues. An older
@@ -243,7 +218,7 @@ operations:
 The client, seeing that a generic response was returned (`api.k8s.io/v1`), knows that
 the server supports accepting that resource as well, and performs a PUT:
 
-    PUT /api/v1/namespace/example/replicasets/test/scale
+    PUT /apis/extensions/v1beta1/namespace/example/replicasets/test/scale
     Accept: application/json;g=api.k8s.io,v=v1,as=Scale, application/json
     Content-Type: application/json
     {
@@ -260,7 +235,7 @@ the server supports accepting that resource as well, and performs a PUT:
       "apiVersion": "api.k8s.io/v1",
       "kind": "Scale",
       "spec": {
-        "replicas": 1
+        "replicas": 2
       }
       ...
     }
@@ -388,6 +363,14 @@ retrieving alternate representations.
    Given the need to support multiple versions, this would be reimplementing Accept
    in a slightly different way, so we prefer to reuse Accept.
 
+*  For partial object retrieval, support complex field selectors
+
+   From an efficiency perspective, calculating subpaths and filtering out sub fields
+   from the underlying object is complex.  In practice, almost all filtering falls into
+   a few limited subsets, and thus retrieving an object into a few known schemas can be made
+   much more efficient. In addition, arbitrary transformation of the object provides
+   opportunities for supporting forward "partial" migration - for instance, returning a
+   ReplicationController as a ReplicaSet to simplify a transition across resource types.
 
 ## Backwards Compatibility
 
