@@ -1,32 +1,3 @@
-<!-- BEGIN MUNGE: UNVERSIONED_WARNING -->
-
-<!-- BEGIN STRIP_FOR_RELEASE -->
-
-<img src="http://kubernetes.io/kubernetes/img/warning.png" alt="WARNING"
-     width="25" height="25">
-<img src="http://kubernetes.io/kubernetes/img/warning.png" alt="WARNING"
-     width="25" height="25">
-<img src="http://kubernetes.io/kubernetes/img/warning.png" alt="WARNING"
-     width="25" height="25">
-<img src="http://kubernetes.io/kubernetes/img/warning.png" alt="WARNING"
-     width="25" height="25">
-<img src="http://kubernetes.io/kubernetes/img/warning.png" alt="WARNING"
-     width="25" height="25">
-
-<h2>PLEASE NOTE: This document applies to the HEAD of the source tree</h2>
-
-If you are using a released version of Kubernetes, you should
-refer to the docs that go with that version.
-
-Documentation for other releases can be found at
-[releases.k8s.io](http://releases.k8s.io).
-</strong>
---
-
-<!-- END STRIP_FOR_RELEASE -->
-
-<!-- END MUNGE: UNVERSIONED_WARNING -->
-
 # Pod Safety, Consistency Guarantees, and Storage Implicitions
 
 @smarterclayton @bprashant
@@ -49,7 +20,7 @@ This allows the controller to prevent multiple processes having access to
 shared cluster resources believing they are the same entity. When a node
 containing a pet is partitioned, the Pet Set must remain consistent (no new
 entity will be spawned) but may become unavailable (cluster no longer has
-a sufficient number of members). The Pet Set guarante must be strong enough
+a sufficient number of members). The Pet Set guarantee must be strong enough
 for an administrator to reason about the state of the cluster by observing
 the Kubernetes API.
 
@@ -186,6 +157,8 @@ To do that, we will:
   pod from etcd (only the Kubelet should force delete)
   * The kubelet must not delete the pod until all processes are confirmed
     terminated.
+  * The kubelet SHOULD ensure all consumed resources on the node are freed
+    before deleting the pod.
 * Application owners must be free to force delete pods, but they *must*
   understand the implications of doing so, and all client UI must be able
   to communicate those implications.
@@ -264,7 +237,7 @@ While the methods and algorithms may vary, the basic pattern would be:
 
 For this proposal we only describe the general shape of detection and how existing
 Kubernetes components can be leveraged for policy, while the exact implementation
-and mechanisms for fencing are left to a future proposal. The fencing controller
+and mechanisms for fencing are left to a future proposal. A future fencing controller
 would be able to leverage a number of systems including but not limited to:
 
 * Cloud control plane APIs such as machine force shutdown
@@ -276,6 +249,9 @@ would be able to leverage a number of systems including but not limited to:
 * Storage server APIs to block client access
 
 to appropriately limit the ability of the partitioned system to impact the cluster.
+Fencing agents today use many of these mechanisms to allow the system to make
+progress in the event of failure.  The key contribution of Kubernetes is to define
+a strongly consistent pattern whereby fencing agents can be plugged in.
 
 To allow users, clients, and automated systems like the fencing controllers to
 observe partitions, we propose an additional responsibility to the node controller
