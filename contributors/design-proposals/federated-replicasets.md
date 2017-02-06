@@ -391,7 +391,7 @@ Include federated replica set name in the cluster name hash so that we get
 slightly different ordering for different RS. So that not all RS of size 1
 end up on the same cluster.
 
-3. Assign minimum prefered number of replicas to each of the clusters, if
+3. Assign minimum preferred number of replicas to each of the clusters, if
 there is enough replicas and capacity.
 
 4. If rebalance = false, assign the previously present replicas to the clusters,
