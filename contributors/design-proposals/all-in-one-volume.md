@@ -12,7 +12,7 @@ is no way to achieve this in Kubernetes without scripting inside of a container.
 
 ## Constraints and Assumptions
 
-1.  The volume types must remain unchanged for backward compatability
+1.  The volume types must remain unchanged for backward compatibility
 2.  There will be a new volume type for this proposed functionality, but no
     other API changes
 3.  The new volume type should support atomic updates in the event of an input

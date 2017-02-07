@@ -45,7 +45,7 @@ cmd/libs/go2idl/ tool.
 
 Each type should be an exported struct (have a capitalized name). The struct
 should have the `TypeMeta` and `ObjectMeta` embeds. There should be a `Spec` and
-a `Status` field. If the object is soley a data storage object, and will not be
+a `Status` field. If the object is solely a data storage object, and will not be
 modified by a controller, the status field can be left off and the fields inside
 the `Spec` can be inlined directly into the struct.
 
