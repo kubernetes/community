@@ -76,6 +76,9 @@ getting started steps for your chosen cloud platform (which might involve
 changing the `KUBERNETES_PROVIDER` environment variable to something other than
 "gce").
 
+- Note when using `KUBERNETES_PROVIDER=gke`, `alpha` and `beta` `gcloud`
+components must be installed.
+
 To build Kubernetes, up a cluster, run tests, and tear everything down, use:
 
 ```sh
