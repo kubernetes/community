@@ -50,12 +50,12 @@ The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/mast
 By publishing core metrics, the kubelet is relieved of its responsibility to provide metrics for monitoring.
 The third party monitoring pipeline also is relieved of any responsibility to provide these metrics to system components.
 
-cAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benifit from a more "On-Demand" metrics collection design.
+cAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benefit from a more "On-Demand" metrics collection design.
 
 ### Proposal
 This proposal is to use this set of core metrics, collected by the kubelet, and used solely by kubernetes system components to support "First-Class Resource Isolation and Utilization Features".  This proposal is not designed to be an API published by the kubelet, but rather a set of metrics collected by the kubelet that will be transformed, and published in the future.
 
-The target "Users" of this set of metrics are kubernetes components (though not neccessarily directly).  This set of metrics itself is not designed to be user-facing, but is designed to be general enough to support user-facing components.
+The target "Users" of this set of metrics are kubernetes components (though not necessarily directly).  This set of metrics itself is not designed to be user-facing, but is designed to be general enough to support user-facing components.
 
 ### Non Goals
 Everything covered in the [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) design doc will not be covered in this proposal.  This includes the third party metrics pipeline, and the methods by which the metrics found in this proposal are provided to other kubernetes components.
@@ -104,7 +104,7 @@ Metrics requirements for "First Class Resource Isolation and Utilization Feature
 
 ### Proposed Core Metrics:
 This section defines "usage metrics" for filesystems, CPU, and Memory.  
-As stated in Non-Goals, this proposal does not attempt to define the specific format by which these are exposed.  For convenience, it may be neccessary to include static information such as start time, node capacities for CPU, Memory, or filesystems, and more.
+As stated in Non-Goals, this proposal does not attempt to define the specific format by which these are exposed.  For convenience, it may be necessary to include static information such as start time, node capacities for CPU, Memory, or filesystems, and more.
 
 ```go
 // CpuUsage holds statistics about the amount of cpu time consumed  

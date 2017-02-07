@@ -139,7 +139,7 @@ Similarly, for the mount utilities, the [Flex Volume v2](https://github.com/kube
 
 **Downsides**:
 
-This requires waiting on other features which might take a signficant time to land. It also could end up not fully fixing the problem (e.g. pushing down port-forwarding to the runtime doesn't ensure the runtime doesn't rely on host utilities).
+This requires waiting on other features which might take a significant time to land. It also could end up not fully fixing the problem (e.g. pushing down port-forwarding to the runtime doesn't ensure the runtime doesn't rely on host utilities).
 
 The Flex Volume feature is several releases out from fully replacing the current volumes as well.
 

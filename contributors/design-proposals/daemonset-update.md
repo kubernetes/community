@@ -101,7 +101,7 @@ type RollingUpdateDaemonSet struct {
 
 // DaemonSetSpec is the specification of a daemon set.
 type DaemonSetSpec struct {
-	// Note: Existing fields, including Selector and Template are ommitted in
+	// Note: Existing fields, including Selector and Template are omitted in
 	// this proposal.  
 
 	// Update strategy to replace existing DaemonSet pods with new pods.
@@ -124,7 +124,7 @@ const (
 // DaemonSetStatus represents the current status of a daemon set.
 type DaemonSetStatus struct {
 	// Note: Existing fields, including CurrentNumberScheduled, NumberMissscheduled,
-	// DesiredNumberScheduled, NumberReady, and ObservedGeneration are ommitted in
+	// DesiredNumberScheduled, NumberReady, and ObservedGeneration are omitted in
 	// this proposal.
 
 	// UpdatedNumberScheduled is the total number of nodes that are running updated

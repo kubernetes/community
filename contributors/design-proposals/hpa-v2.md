@@ -1,4 +1,4 @@
-Horizontal Pod Autoscaler with Arbitary Metrics
+Horizontal Pod Autoscaler with Arbitrary Metrics
 ===============================================
 
 The current Horizontal Pod Autoscaler object only has support for CPU as
