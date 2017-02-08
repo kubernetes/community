@@ -1,39 +1,23 @@
 # Node Allocatable Resources
 
-**Issue:** https://github.com/kubernetes/kubernetes/issues/13984
+### Authors: timstclair@, vishh@
 
 ## Overview
 
-Currently Node.Status has Capacity, but no concept of node Allocatable. We need additional
-parameters to serve several purposes:
+Kubernetes nodes typically run many OS system daemons in addition to kubernetes daemons like kubelet, runtime, etc. and user pods.
+Kubernetes assumes that all the compute resources available, referred to as `Capacity`, in a node are available for user pods.
+In reality, system daemons use non-trivial amoutn of resources and their availability is critical for the stability of the system.
+To address this issue, this proposal introduces the concept of `Allocatable` which identifies the amount of compute resources available to user pods.
+Specifically, the kubelet will provide a few knobs to reserve resources for OS system daemons and kubernetes daemons.
 
-1. Kubernetes metrics provides "/docker-daemon", "/kubelet",
-   "/kube-proxy", "/system" etc. raw containers for monitoring system component resource usage
-   patterns and detecting regressions. Eventually we want to cap system component usage to a certain
-   limit / request. However this is not currently feasible due to a variety of reasons including:
-       1. Docker still uses tons of computing resources (See
-          [#16943](https://github.com/kubernetes/kubernetes/issues/16943))
-       2. We have not yet defined the minimal system requirements, so we cannot control Kubernetes
-          nodes or know about arbitrary daemons, which can make the system resources
-          unmanageable. Even with a resource cap we cannot do a full resource management on the
-          node, but with the proposed parameters we can mitigate really bad resource over commits
-       3. Usage scales with the number of pods running on the node
-2. For external schedulers (such as mesos, hadoop, etc.) integration, they might want to partition
-   compute resources on a given node, limiting how much Kubelet can use. We should provide a
-   mechanism by which they can query kubelet, and reserve some resources for their own purpose.
+By explicitly reserving compute resources, the intention is to avoid overcommiting the node and not have system daemons compete with user pods.
+The resources available to system daemons and user pods will be capped based on user specified reservations.
 
-### Scope of proposal
-
-This proposal deals with resource reporting through the [`Allocatable` field](#allocatable) for more
-reliable scheduling, and minimizing resource over commitment. This proposal *does not* cover
-resource usage enforcement (e.g. limiting kubernetes component usage), pod eviction (e.g. when
-reservation grows), or running multiple Kubelets on a single node.
+If `Allocatable` is available, the scheduler use that instead of `Capacity`, thereby not overcommiting the node.
 
 ## Design
 
 ### Definitions
-
-![image](node-allocatable.png)
 
 1. **Node Capacity** - Already provided as
    [`NodeStatus.Capacity`](https://htmlpreview.github.io/?https://github.com/kubernetes/kubernetes/blob/HEAD/docs/api-reference/v1/definitions.html#_v1_nodestatus),
@@ -89,12 +73,7 @@ The flag will be specified as a serialized `ResourceList`, with resources define
 --kube-reserved=cpu=500m,memory=5Mi
 ```
 
-Initially we will only support CPU and memory, but will eventually support more resources. See
-[#16889](https://github.com/kubernetes/kubernetes/pull/16889) for disk accounting.
-
-If KubeReserved is not set it defaults to a sane value (TBD) calculated from machine capacity. If it
-is explicitly set to 0 (along with `SystemReserved`), then `Allocatable == Capacity`, and the system
-behavior is equivalent to the 1.1 behavior with scheduling based on Capacity.
+Initially we will only support CPU and memory, but will eventually support more resources like [local storage](#phase-3) and io proportional weights to improve node reliability.
 
 #### System-Reserved
 
@@ -102,47 +81,195 @@ In the initial implementation, `SystemReserved` will be functionally equivalent 
 [`KubeReserved`](#kube-reserved), but with a different semantic meaning. While KubeReserved
 designates resources set aside for kubernetes components, SystemReserved designates resources set
 aside for non-kubernetes components (currently this is reported as all the processes lumped
-together in the `/system` raw container).
+together in the `/system` raw container on non-systemd nodes).
 
-## Issues
+## Recommended Cgroups Setup
+
+Following is the recommended cgroup configuration for Kubernetes nodes.
+All OS system daemons are expected to be placed under a top level `SystemReserved` cgroup.
+`Kubelet` and `Container Runtime` are expected to be placed under `KubeReserved` cgroup.
+The reason for recommending placing the `Container Runtime` under `KubeReserved` is as follows:
+
+1. A container runtime on Kubernetes nodes is not expected to be used outside of the Kubelet.
+1. It's resource consumption is tied to the number of pods running on a node.
+
+Note that the hierarchy below recommends having dedicated cgroups for kubelet and the runtime to individally track their usage.
+
+/ (Cgroup Root)
+.
++..systemreserved or system.slice (`SystemReserved` enforced here *optionally* by kubelet)
+.        .    .tasks(sshd,udev,etc)
+.
+.
++..kubereserved or kube.slice (`KubeReserved` enforced here *optionally* by kubelet)
+.	 .
+.	 +..kubelet
+.	 .   .tasks(kubelet)
+.        .
+.	 +..runtime
+.	     .tasks(docker-engine, containerd)
+.	 
+.
++..kubepods or kubepods.slice (Node Allocatable enforced here by Kubelet)
+.	 .
+.	 +..PodGuaranteed
+.	 .	  .
+.	 .	  +..Container1
+.	 .	  .        .tasks(container processes)
+.	 .	  .
+.	 .        +..PodOverhead
+.	 .        .        .tasks(per-pod processes)
+.	 .        ...
+.	 .
+.	 +..Burstable
+.	 .	  .
+.	 .	  +..PodBurstable
+.	 .	  .	    .
+.	 .	  .	    +..Container1
+.	 .	  .	    .         .tasks(container processes)
+.	 .	  .	    +..Container2
+.	 .	  .	    .         .tasks(container processes)
+.	 .	  .	    .
+.      	 .     	  .    	    ...
+.	 .	  .
+.	 .	  ...
+.	 .
+. 	 .
+.	 +..Besteffort
+.	 .	  .
+.	 .	  +..PodBesteffort
+.	 .	  .    	    .
+.	 .	  .	    +..Container1
+.	 .	  .	    .         .tasks(container processes)
+.	 .	  .	    +..Container2
+.	 .	  .	    .         .tasks(container processes)
+.	 .	  .	    .
+.      	 .     	  .    	    ...
+.	 .	  .
+. 	 .	  ...
+
+`systemreserved` & `kubereserved` cgroups are expected to be created by users. If Kubelet is creating cgroups for itself and docker daemon, it will create the `kubereserved` cgroup automatically.
+
+`kubepods` cgroups will be created by kubelet automatically if it is not already there. If the cgroup driver is set to `systemd` then Kubelet will create a `kubepods.slice` via systemd.
+By default, Kubelet will `mkdir` `/kubepods` cgroup directly via cgroupfs.
+
+#### Containerizing Kubelet
+
+If Kubelet is managed using a container runtime, have the runtime create cgroups for kubelet under `kubereserved`.
+
+### Metrics
+
+Kubelet identifies it's own cgroup and exposes it's usage metrics via the Summary metrics API (/stats/summary)
+With docker runtime, kubelet identifies docker runtime's cgroups too and exposes metrics for it via the Summary metrics API.
+To provide a complete overview of a node, Kubelet will expose metrics from cgroups enforcing `SystemReserved`, `KubeReserved` & `Allocatable` too.
+
+## Relationship with Kubelet Evictions
+
+To improve the reliability of nodes, kubelet evicts pods whenever the node runs out of memory or local storage.
+Together, evictions and node allocatable help improve node stability.
+
+As of v1.5, evictions are based on `Capacity` (overall node usage). Kubelet evicts pods based on QoS and user configured eviction thresholds.
+
+From v1.6, if `Allocatable` is enforced by default across all pods on a node using cgroups, pods are not expected to exceed `Allocatable`.
+Memory and CPU limits are enforced using cgroups, but there exists no easy means to enforce storage limits though. Enforcing storage limits using Linux Quota is not possible since it's not hierarchical. 
+Once storage is supported as a resource for `Allocatable`, Kubelet has to perform evictions based on `Allocatable` in addition to `Capacity`.
+More details on [evictions here](./kubelet-eviction.md#enforce-node-allocatable).
+
+Note that even if `KubeReserved` & `SystemReserved` is enforced, kernel memory will still not be restricted and so kubelet will have to continue performing evictions based on overall node usage.
+
+## Implementation Phases
+
+### Phase 1 - Introduce Allocatable to the system without enforcement
+
+**Status**: Implemented v1.2
+
+In this phase, Kubelet will support specifying `KubeReserved` & `SystemReserved` resource reservations via kubelet flags.
+The defaults for these flags will be `""`, meaning zero cpu or memory reservations.
+Kubelet will compute `Allocatable` and update `Node.Status` to include it.
+The scheduler will use `Allocatable` instead of `Capacity` if it is available.
+
+### Phase 2 - Enforce Allocatable on Pods
+
+**Status**: Targetted for v1.6
+
+In this phase, Kubelet will automatically create a top level cgroup to enforce Node Allocatable on all user pods.
+Kubelet will support specifying the top level cgroups for `KubeReserved` and `SystemReserved` and support *optionally* placing resource restrictions on these top level cgroups.
+Users are expected to specify `KubeReserved` and `SystemReserved` based on their deployment requirements.
+
+Resource requirements for Kubelet and the runtime is typically proportional to the number of pods running on a node.
+Once a user identified the maximum pod density for each of their nodes, they will be able to compute `KubeReserved` using [this performance dashboard](http://node-perf-dash.k8s.io/#/builds).
+[This blog post](http://blog.kubernetes.io/2016/11/visualize-kubelet-performance-with-node-dashboard.html) explains how the dashboard has to be interpreted.
+Note that this dashboard provides usage metrics for docker runtime only as of now.
+
+New flags introduced in this phase are as follows:
+
+1. `--enforce-node-allocatable=[pods][,][kube-reserved],[system-reserved]`
+  * This flag will default to `pods` in v1.6.
+  * Nodes have to be drained prior to upgrading to v1.6.
+  * kubelet's behavior if a node has not been drained prior to upgrades is as follows
+    * If a pod has a `RestartPolicy=Never`, then mark the pod as `Failed` and terminate its workload.
+    * All other pods that are not parented by new Allocatable top level cgroup will be restarted.
+  * Users intending to turn off this feature can set this flag to `""`.
+  * `--kube-reserved` and `--system-reserved` flags are expected to be set by users for this flag to have any meaningful effect on node stability.
+  * By including `kube-reserved` or `system-reserved` in this flag's value, and by specifying the following two flags, Kubelet will attempt to enforce the reservations specified via `--kube-reserved` & `system-reserved` respectively.
+
+2. `--kube-reserved-cgroup=<absolute path to a cgroup>`
+   * This flag helps kubelet identify the control group managing all kube components like Kubelet & container runtime that fall under the `KubeReserved` reservation.
+
+3. `--system-reserved-cgroup=<absolute path to a cgroup>`
+   * This flag helps kubelet identify the control group managing all OS specific system daemons that fall under the `SystemReserved` reservation.
+
+#### Rollout details
+
+This phase is expected to improve Kubernetes node stability. However it requires users to specify non-default values for `--kube-reserved` & `--system-reserved` flags though.
+
+The rollout of this phase has been long due and hence we are attempting to include it in v1.6
+
+Since `KubeReserved` and `SystemReserved` continue to have `""` as defaults, the node's `Allocatable` does not change automatically.
+Since this phase requires node drains (or pod restarts/terminations), it is considered disruptive to users.
+
+To rollback this phase, set `--enforce-node-allocatable` flag to `""`.
+
+This phase might cause the following symptoms to occur if `--kube-reserved` and/or `--system-reserved` flags are also specified.
+
+1. OOM kills of containers and/or evictions of pods. This can happen primarily to `Burstable` and `BestEffort` pods since they can no longer use up all the resource available on the node.
+
+##### Proposed Timeline
+
+02/14/2017 - Discuss the rollout plan in sig-node meeting
+02/15/2017 - Flip the switch to enable pod level cgroups by default
+enable existing experimental behavior by default
+02/21/2017 - Assess impacts based on enablement
+02/27/2017 - Kubernetes Feature complete (i.e. code freeze)
+03/01/2017 - Send an announcement to kubernetes-dev@ about this rollout along with rollback options and potential issues. Recommend users to set kube and system reserved.
+03/22/2017 - Kubernetes 1.6 release
+
+### Phase 3 - Metrics & support for Storage
+
+*Status*: Targetted for v1.7
+
+In this phase, Kubelet will expose usage metrics for `KubeReserved`, `SystemReserved` and `Allocatable` top level cgroups via Summary metrics API.
+`Storage` will also be introduced as a reservable resource in this phase.
+Support for evictions based on Allocatable will be introduced in this phase.
+
+## Known Issues
 
 ### Kubernetes reservation is smaller than kubernetes component usage
 
 **Solution**: Initially, do nothing (best effort). Let the kubernetes daemons overflow the reserved
 resources and hope for the best. If the node usage is less than Allocatable, there will be some room
-for overflow and the node should continue to function. If the node has been scheduled to capacity
+for overflow and the node should continue to function. If the node has been scheduled to `allocatable`
 (worst-case scenario) it may enter an unstable state, which is the current behavior in this
 situation.
 
+A recommended alternative is to enforce KubeReserved once Kubelet supports it (Phase 2).
 In the [future](#future-work) we may set a parent cgroup for kubernetes components, with limits set
 according to `KubeReserved`.
-
-### Version discrepancy
-
-**API server / scheduler is not allocatable-resources aware:** If the Kubelet rejects a Pod but the
-  scheduler expects the Kubelet to accept it, the system could get stuck in an infinite loop
-  scheduling a Pod onto the node only to have Kubelet repeatedly reject it. To avoid this situation,
-  we will do a 2-stage rollout of `Allocatable`. In stage 1 (targeted for 1.2), `Allocatable` will
-  be reported by the Kubelet and the scheduler will be updated to use it, but Kubelet will continue
-  to do admission checks based on `Capacity` (same as today). In stage 2 of the rollout (targeted
-  for 1.3 or later), the Kubelet will start doing admission checks based on `Allocatable`.
-
-**API server expects `Allocatable` but does not receive it:** If the kubelet is older and does not
-  provide `Allocatable` in the `NodeStatus`, then `Allocatable` will be
-  [defaulted](../../pkg/api/v1/defaults.go) to
-  `Capacity` (which will yield today's behavior of scheduling based on capacity).
 
 ### 3rd party schedulers
 
 The community should be notified that an update to schedulers is recommended, but if a scheduler is
 not updated it falls under the above case of "scheduler is not allocatable-resources aware".
-
-## Future work
-
-1. Convert kubelet flags to Config API - Prerequisite to (2). See
-   [#12245](https://github.com/kubernetes/kubernetes/issues/12245).
-2. Set cgroup limits according KubeReserved - as described in the [overview](#overview)
-3. Report kernel usage to be considered with scheduling decisions.
 
 
 
