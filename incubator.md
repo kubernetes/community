@@ -117,12 +117,11 @@ These are grandfathered in as full projects:
 These projects are young but have significant user facing docs pointing at their current github.com/kubernetes location. Lets put them through incubation process but leave them at github.com/kubernetes.
 
 - github.com/kubernetes/minikube
-- github.com/kubernetes/helm
+- github.com/kubernetes/helm  (Graduated from incubator on Feb 2017)
  
 **Projects to Move to Incubator**
 
 - github.com/kubernetes/kube2consul
-- github.com/kubernetes/charts
 - github.com/kubernetes/frakti
 - github.com/kubernetes/kops
 - github.com/kubernetes/kube-deploy
