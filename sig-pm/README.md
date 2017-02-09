@@ -10,7 +10,8 @@ The Kubernetes PM Group is focused on a variety of challenges: from the qualific
 - Supporting the continued effort to improve the stability and extensibility of Kubernetes Project
 - Supporting the marketing and promotion of the Kubernetes Project through the [CNCF](https://www.cncf.io/)
 - Working with the [Kubernetes Release Team](https://github.com/kubernetes/community/tree/master/contributors/devel/release) to continually ensure a high quality release of the Kubernes Project
-- Supporting the creation of Kubernetes ecosystem through [the Kubernetes Incubator](https://github.com/kubernetes/community/blob/master/incubator.md)
+- Supporting the Kubernetes ecosystem through [the Kubernetes Incubator](https://github.com/kubernetes/community/blob/master/incubator.md)
+- Coordinating project wide policy changes for Kubernetes and the Kubernetes Incubator
 - Onboarding large groups of corporate contributors and welcoming them into the Kubernetes Community
 - Whatever is needed to help make the project go!
 
@@ -26,16 +27,3 @@ TBD
 - Aparna Sinha apsinha@google.com, Google
 - Ihor Dvoretskyi ihor.dvoretskyi@gmail.com, Mirantis
 - Caleb Miles caleb.miles@coreos.com, CoreOS
-
-
-
-
-
-
-
-
-
-
-
-
-
