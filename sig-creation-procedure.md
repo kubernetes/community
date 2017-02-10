@@ -16,7 +16,7 @@
 
 Create Google Groups at [https://groups.google.com/forum/#!creategroup](https://groups.google.com/forum/#!creategroup), following the procedure: 
 
-* Each SIG should have one discussion groups, and a number of groups for mirroring relevant github notificaitons;
+* Each SIG should have one discussion groups, and a number of groups for mirroring relevant github notifications;
 * Create groups using the name conventions below;
 * Groups should be created as e-mail lists with at least three owners (including sarahnovotny at google.com and ihor.dvoretskyi at gmail.com);
 * To add the owners, visit the Group Settings (drop-down menu on the right side), select Direct Add Members on the left side and add Sarah and Ihor via email address (with a suitable welcome message); in Members/All Members select Ihor and Sarah and assign to an "owner role";
