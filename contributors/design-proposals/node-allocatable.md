@@ -6,7 +6,7 @@
 
 Kubernetes nodes typically run many OS system daemons in addition to kubernetes daemons like kubelet, runtime, etc. and user pods.
 Kubernetes assumes that all the compute resources available, referred to as `Capacity`, in a node are available for user pods.
-In reality, system daemons use non-trivial amoutn of resources and their availability is critical for the stability of the system.
+In reality, system daemons use non-trivial amount of resources and their availability is critical for the stability of the system.
 To address this issue, this proposal introduces the concept of `Allocatable` which identifies the amount of compute resources available to user pods.
 Specifically, the kubelet will provide a few knobs to reserve resources for OS system daemons and kubernetes daemons.
 
@@ -50,7 +50,7 @@ type NodeStatus struct {
 Allocatable will be computed by the Kubelet and reported to the API server. It is defined to be:
 
 ```
-   [Allocatable] = [Node Capacity] - [Kube-Reserved] - [System-Reserved]
+   [Allocatable] = [Node Capacity] - [Kube-Reserved] - [System-Reserved] - [Hard-Eviction-Threshold]
 ```
 
 The scheduler will use `Allocatable` in place of `Capacity` when scheduling pods, and the Kubelet
@@ -82,6 +82,33 @@ In the initial implementation, `SystemReserved` will be functionally equivalent 
 designates resources set aside for kubernetes components, SystemReserved designates resources set
 aside for non-kubernetes components (currently this is reported as all the processes lumped
 together in the `/system` raw container on non-systemd nodes).
+
+## Kubelet Evictions Tresholds
+
+To improve the reliability of nodes, kubelet evicts pods whenever the node runs out of memory or local storage.
+Together, evictions and node allocatable help improve node stability.
+
+As of v1.5, evictions are based on `Capacity` (overall node usage). Kubelet evicts pods based on QoS and user configured eviction thresholds.
+More deails in [this doc](./kubelet-eviction.md#enforce-node-allocatable)
+
+From v1.6, if `Allocatable` is enforced by default across all pods on a node using cgroups, pods cannot to exceed `Allocatable`.
+Memory and CPU limits are enforced using cgroups, but there exists no easy means to enforce storage limits though. 
+Enforcing storage limits using Linux Quota is not possible since it's not hierarchical. 
+Once storage is supported as a resource for `Allocatable`, Kubelet has to perform evictions based on `Allocatable` in addition to `Capacity`.
+
+Note that eviction limits are enforced on pods only and system daemons are free to use any amount of resources unless their reservations are enforced.
+
+Here is an example to illustrate Node Allocatable for memory:
+
+Node Capacity is `32Gi`, kube-reserved is `2Gi`, system-reserved is `1Gi`, eviction-hard is set to `<100Mi`
+
+For this node, the effective Node Allocatable is `28.9Gi` only; i.e. if kube and system components use up all their reservation, the memory available for pods is only `28.9Gi` and kubelet will evict pods once overall usage of pods crosses that threshold.
+
+If we enforce Node Allocatable (`28.9Gi`) via top level cgroups, then pods can never exceed `28.9Gi` in which case evictions will not be performed unless kernel memory consumption is above `100Mi`.
+
+In order to support evictions and avoid memcg OOM kills for pods, we will set the top level cgroup limits for pods to be `Node Allocatable` + `Eviction Hard Tresholds`.
+
+However, the scheduler is not expected to use more than `28.9Gi` and so `Node Allocatable` on Node Status will be `28.9Gi`.
 
 ## Recommended Cgroups Setup
 
@@ -163,20 +190,6 @@ Kubelet identifies it's own cgroup and exposes it's usage metrics via the Summar
 With docker runtime, kubelet identifies docker runtime's cgroups too and exposes metrics for it via the Summary metrics API.
 To provide a complete overview of a node, Kubelet will expose metrics from cgroups enforcing `SystemReserved`, `KubeReserved` & `Allocatable` too.
 
-## Relationship with Kubelet Evictions
-
-To improve the reliability of nodes, kubelet evicts pods whenever the node runs out of memory or local storage.
-Together, evictions and node allocatable help improve node stability.
-
-As of v1.5, evictions are based on `Capacity` (overall node usage). Kubelet evicts pods based on QoS and user configured eviction thresholds.
-
-From v1.6, if `Allocatable` is enforced by default across all pods on a node using cgroups, pods are not expected to exceed `Allocatable`.
-Memory and CPU limits are enforced using cgroups, but there exists no easy means to enforce storage limits though. Enforcing storage limits using Linux Quota is not possible since it's not hierarchical. 
-Once storage is supported as a resource for `Allocatable`, Kubelet has to perform evictions based on `Allocatable` in addition to `Capacity`.
-More details on [evictions here](./kubelet-eviction.md#enforce-node-allocatable).
-
-Note that even if `KubeReserved` & `SystemReserved` is enforced, kernel memory will still not be restricted and so kubelet will have to continue performing evictions based on overall node usage.
-
 ## Implementation Phases
 
 ### Phase 1 - Introduce Allocatable to the system without enforcement
@@ -190,7 +203,7 @@ The scheduler will use `Allocatable` instead of `Capacity` if it is available.
 
 ### Phase 2 - Enforce Allocatable on Pods
 
-**Status**: Targetted for v1.6
+**Status**: Targeted for v1.6
 
 In this phase, Kubelet will automatically create a top level cgroup to enforce Node Allocatable on all user pods.
 Kubelet will support specifying the top level cgroups for `KubeReserved` and `SystemReserved` and support *optionally* placing resource restrictions on these top level cgroups.
@@ -246,7 +259,7 @@ enable existing experimental behavior by default
 
 ### Phase 3 - Metrics & support for Storage
 
-*Status*: Targetted for v1.7
+*Status*: Targeted for v1.7
 
 In this phase, Kubelet will expose usage metrics for `KubeReserved`, `SystemReserved` and `Allocatable` top level cgroups via Summary metrics API.
 `Storage` will also be introduced as a reservable resource in this phase.
