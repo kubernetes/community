@@ -59,9 +59,9 @@ sampling.
 There is an end-to-end test for collecting overall resource usage of node
 components: [kubelet_perf.go](../../test/e2e/kubelet_perf.go). To
 run the test, simply make sure you have an e2e cluster running (`go run
-hack/e2e.go -up`) and [set up](#cluster-set-up) correctly.
+hack/e2e.go -- -up`) and [set up](#cluster-set-up) correctly.
 
-Run the test with `go run hack/e2e.go -v -test
+Run the test with `go run hack/e2e.go -- -v -test
 --test_args="--ginkgo.focus=resource\susage\stracking"`. You may also wish to
 customise the number of pods or other parameters of the test (remember to rerun
 `make WHAT=test/e2e/e2e.test` after you do).
