@@ -110,6 +110,11 @@ In order to support evictions and avoid memcg OOM kills for pods, we will set th
 
 However, the scheduler is not expected to use more than `28.9Gi` and so `Node Allocatable` on Node Status will be `28.9Gi`.
 
+If kube and system components do not use up all their reservation, with the above example, pods will face memcg OOM kills from the node allocatable cgroup before kubelet evictions kick in.
+To better enforce QoS under this situation, Kubelet will apply the hard eviction thresholds on the node allocatable cgroup as well, if node allocatable is enforced.
+The resulting behavior will be the same for user pods. 
+With the above example, Kubelet will evict pods whenever pods consume more than `28.9Gi` which will be `<100Mi` from `29Gi` which will be the memory limits on the Node Allocatable cgroup.
+
 ## Recommended Cgroups Setup
 
 Following is the recommended cgroup configuration for Kubernetes nodes.
