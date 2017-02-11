@@ -9,6 +9,8 @@
 **Meetings:** Thursdays at 9am pacific.  Contact Joe or Bob for invite. [Notes](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
 )
 
+**Docs:**
+[Scaling And Performance Goals](goals.md)
 
 ### Scalability SLAs
 
@@ -25,4 +27,3 @@ This should be valid on appropriate hardware up to a 1000 node cluster with 30 p
 For more details how do we measure those, you can look at: http://blog.kubernetes.io/2015_09_01_archive.html
 
 In the future we may want to add more SLAs (e.g. scheduler throughput), but we are not there yet.
-
