@@ -88,7 +88,8 @@ together in the `/system` raw container on non-systemd nodes).
 To improve the reliability of nodes, kubelet evicts pods whenever the node runs out of memory or local storage.
 Together, evictions and node allocatable help improve node stability.
 
-As of v1.5, evictions are based on `Capacity` (overall node usage). Kubelet evicts pods based on QoS and user configured eviction thresholds.
+As of v1.5, evictions are based on overall node usage relative to `Capacity`.
+Kubelet evicts pods based on QoS and user configured eviction thresholds.
 More deails in [this doc](./kubelet-eviction.md#enforce-node-allocatable)
 
 From v1.6, if `Allocatable` is enforced by default across all pods on a node using cgroups, pods cannot to exceed `Allocatable`.
