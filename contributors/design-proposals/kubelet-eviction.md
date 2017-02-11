@@ -433,13 +433,13 @@ However `storage` cannot be enforced using cgroups.
 Once Kubelet supports `storage` as an `Allocatable` resource, Kubelet will perform evictions whenever the total storage usage by pods exceed node allocatable.
 
 The trigger threshold for storage evictions will not be user configurable for the purposes of `Allocatable`.
-Kubelet will evict pods once the `storage` usage is greater than or equal to `98%` of `Allocatable`.
-Kubelet will evict pods until it can reclaim `5%` of `storage Allocatable`, thereby brining down usage to `93%` of `Allocatable`.
-These thresholds apply for both `storage` `capacity` and `inodes`.
+Kubelet will evict pods once the `storage` usage is greater than or equal to `Allocatable`.
+Kubelet will evict pods until it can reclaim `5%` of `storage Allocatable`, thereby brining down usage to `95%` of `Allocatable`.
+These thresholds apply for both storage `capacity` and `inodes`.
 
 *Note that these values are subject to change based on feedback from production.*
 
-If a pod cannot tolerate evictions, then ensure that a request is set and it will not exceed `requests`.
+If a pod cannot tolerate evictions, then ensure that requests is set and it will not exceed `requests`.
 
 ## Best Practices
 
