@@ -18,4 +18,4 @@ We use **sig-onprem** label to track on premise efforts in PRs and issues:
 
 **Effort tracking document** [On-Prem related projects](https://docs.google.com/spreadsheets/d/1Ca9ZpGXM4PfycYv0Foi7Y4vmN4KVXrGYcJipbH8_xLY/edit#gid=0)
 
-**Meetings:** Every second Wednesday at 0800 PST (11 AM ET / 5 PM CET) - [Connect using Zoom](https://zoom.us/my/k8s.sig.onprem), [Agenda/Notes](https://docs.google.com/document/d/1AHF1a8ni7iMOpUgDMcPKrLQCML5EMZUAwP4rro3P6sk/edit#)
+**Meetings:** Every second Wednesday at 0900 PST (12 AM ET / 6 PM CET) - [Connect using Zoom](https://zoom.us/my/k8s.sig.onprem), [Agenda/Notes](https://docs.google.com/document/d/1AHF1a8ni7iMOpUgDMcPKrLQCML5EMZUAwP4rro3P6sk/edit#)
