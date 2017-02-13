@@ -2,7 +2,13 @@
 
 ### Focus
 
-The Kubernetes PM Group focuses on aspects of product management, such as the qualification and successful management of user requests, and aspects of project and program management such as he continued improvement of the processes used by the Kubernetes community to maintain the Kubernetes Project itself. Besides helping to discover both what to build and how to build it, the PM Group also helps to try and keep the wheels on this spaceship we are all building together; bringing together people who think about Kubernetes as both a vibrant community of humans and technical program is another primary focus of this group. Members of the Kubernetes PM Group can assume [certain additional](https://github.com/kubernetes/community/blob/master/project-managers/README.md) responsibilities to help maintain the Kubernetes Project itself. It is also important to remember that the role of managing an open source project is very new and largely unscoped for a project as large as Kubernetes; we are learning too and we are excited to learn how we can best serve the community of users and contributors.
+The Kubernetes PM Group focuses on aspects of product management, such as the qualification and successful management of user requests, and aspects of project and program management such as he continued improvement of the processes used by the Kubernetes community to maintain the Kubernetes Project itself. 
+
+Besides helping to discover both what to build and how to build it, the PM Group also helps to try and keep the wheels on this spaceship we are all building together; bringing together people who think about Kubernetes as both a vibrant community of humans and technical program is another primary focus of this group. 
+
+Members of the Kubernetes PM Group can assume [certain additional](https://github.com/kubernetes/community/blob/master/project-managers/README.md) responsibilities to help maintain the Kubernetes Project itself. 
+
+It is also important to remember that the role of managing an open source project is very new and largely unscoped for a project as large as Kubernetes; we are learning too and we are excited to learn how we can best serve the community of users and contributors.
 
 ### Common activities
 - Collecting and generalizing user feedback to help drive project direction and priorities: delivering on user needs while enforcing vendor neutrality
@@ -16,14 +22,14 @@ The Kubernetes PM Group focuses on aspects of product management, such as the qu
 - Whatever is needed to help make the project go!
 
 ### Contact us
-- via [slack](https://kubernetes.slack.com/messages/kubernetes-pm/)
+- via [Slack](https://kubernetes.slack.com/messages/kubernetes-pm/)
 - via [Google Groups](https://groups.google.com/forum/#!forum/kubernetes-pm)
 
 ### Scheduled Meeting Times
 
 TBD
 
-### Current leaders
+### Leaders
 - Aparna Sinha apsinha@google.com, Google
 - Ihor Dvoretskyi ihor.dvoretskyi@gmail.com, Mirantis
 - Caleb Miles caleb.miles@coreos.com, CoreOS
