@@ -184,18 +184,31 @@ and otherwise be performant and reliable.
 ### Requirements
 
 1.  Easy Initialization
+
     Privileged components should be able to easily participate in the **initialization** of a new object.
+
 2.  Synchronous Validation
+
     Synchronous rejection of initialized objects or mutations must be possible outside of the kube-apiserver binary
+
 3.  Backwards Compatible
+
     Existing API clients must see no change in behavior to external admission other than increased latency
+
 4.  Easy Installation
+
     Administrators should be able to easily write a new admission plugin and deploy it in the cluster
+
 5.  Performant
+
     External admission must not significantly regress performance in large and dense clusters
+
 6.  Reliable
+
     External admission should be capable of being "production-grade" for deployment in an extremely large and dense cluster
+
 7.  Internally Consistent
+
     Developing an admission controller should reuse as much infrastructure and tools as possible from building custom controllers so as to reduce the cost of extension.
 
 
@@ -206,14 +219,20 @@ occurs as part of creation, and a large chunk of the remaining controllers are f
 validation of creation and updates. Therefore we propose the following changes to Kubernetes:
 
 1.  Allow some controllers to act as "initializers" - watching the API and mutating the object before it is visible to normal clients.
+
     This would reuse the majority of the infrastructure in place for controllers. Because creation is
     one-way, the object can be "revealed" to regular clients once a set list of initializers is consumed. These
-    controllers could run on the cluster as pods.
+    controllers could run on the cluster as pods. Because initialization is a non-backwards compatible API change,
+    some care must be taken to shield old clients from observing the scenario.
+
 2.  Add a generic **external admission webhook** controller that is non-mutating (thus parallelizable)
+
     This generic webhook API would resemble `admission.Interface` and be given the input object (for create) and the
     previous object (for update). After initialization or on any update, these hooks would be invoked in parallel
     against the remote servers and any rejection would reject the mutation.
+
 3.  Make the registration of both initializers and admission webhooks dynamic via the API (a configmap or cluster scoped resource)
+
     Administrators should be able to dynamically add or remove hooks and initializers on demand to the cluster.
     Configuration would be similar to registering new API group versions and include config like "fail open" or
     "fail closed".
@@ -224,7 +243,6 @@ Some admission controller types would not be possible for these extensions:
 * Admission controllers that need access to the acting user can receive that via the external webhook.
 * Admission controllers that "react" to the acting user can couple the information received via a webhook and then act if they observe mutation succeed (tuple combining resource UID and resource generation).
 * Quota will continue to be a core plugin per API server, so extension is not critical.
-
 
 
 #### Implications:
@@ -240,9 +258,9 @@ Some admission controller types would not be possible for these extensions:
 #### Initializers
 
 An initializer must allow some API clients to perceive creations prior to other apps. For backwards compatibility,
-uninitialized objects must be invisible to legacy clients. In addition, initializers must be recognized as participating
-in the initialization process and therefore a list of initializers must be populated onto each new object. Like
-finalizers, each initializer should perform an update and remove itself from the object.
+uninitialized objects must be invisible to legacy clients. In addition, initializers must be recognized as
+participating in the initialization process and therefore a list of initializers must be populated onto each
+new object. Like finalizers, each initializer should perform an update and remove itself from the object.
 
 Every API object will have the following field added:
 
@@ -250,34 +268,52 @@ Every API object will have the following field added:
 type ObjectMeta struct {
     ...
     // Initializers is a list of initializers that must run prior to this object being visible to
-    // normal clients. Initializers are executed in order. This field is nil if initialization is not
-    // specified, or empty if no initializers should be run. Only highly privileged users
-    // may modify this field.
-    Initializers []Initializer `json:"initializers"`
+    // normal clients. Only highly privileged users may modify this field. If this field is set,
+    // then normal clients will receive a 202 Accepted and a Status object if directly retrieved
+    // by name, and it will not be visible via listing or watching.
+    Initializers *Initializers `json:"initializers"`
     ...
 }
 
+// Initializers tracks the progress of initialization.
+type Initializers struct {
+    // Pending is a list of initializers that must execute in order before this object is visible.
+    // When the last pending initializer is removed, and no failing result is set, the initializers
+    // struct will be set to nil and the object is considered as initialized and visible to all
+    // clients.
+    Pending []Initializer `json:"pending"`
+    // If result is set with the Failure field, the object will be persisted to etcd and then deleted,
+    // ensuring that other clients can observe the deletion.
+    Result *metav1.Status `json:"status"`
+}
+
+// Initializer records a single pending initializer. It is a struct for future extension.
 type Initializer struct {
     // Name is the name of the process that owns this initializer
     Name string `json:"name"`
-    // Error is set if the initializer cannot make progress
-    Status *metav1.Status `json:"status"`
 }
 ```
 
 On creation, an admission controller defaults the initializers field (if nil) to a value from the system
-configuration that may vary by resource type. If initializers is set to empty slice, or has entries,
-the admission controller will check whether the user has the ability to run the `initialize` verb on
-the current resource type, and reject the entry with 403 if not.
+configuration that may vary by resource type. If initializers is set the admission controller will check
+whether the user has the ability to run the `initialize` verb on the current resource type, and reject
+the entry with 403 if not. This allows a privileged user to bypass initialization by setting `initializers`
+to the empty struct.
 
 Once created, an object is not visible to clients unless the following conditions are satisfied:
 
-1. The initializers field is an empty array.
+1. The initializers field is null.
 2. The client provides a special option to GET, LIST, or WATCH indicating that the user wishes to see uninitialized objects.
+
+The apiserver that accepts the incoming creation should hold the response until the object is
+initialized or the timeout is exceeded. This increases latency, but allows clients to avoid breaking
+semantics. If the apiserver reaches the timeout it must return an appropriate error that includes the
+resource version of the object and UID so that clients can perform a watch. If an initializer reports
+a `Result` with a failure, it must return that to the user (all failures result in deletion).
 
 Each initializer is a controller or other client agent that watches for new objects with an initializer
 whose first position matches their assigned name (e.g. `PodAutoSizer`) and then operate on them. These
-clients would use the `?includeUninitializedObjects=true` query param (working name) and observe all
+clients would use the `?includeUninitialized=true` query param (working name) and observe all
 objects.
 
 The initializer would perform a normal update on the object to perform their function, and then
@@ -286,33 +322,26 @@ that must terminate initialization, the `Status` field on the initializer should
 the initializer entry and then the initializer should delete the object.
 
 During initialization, resources may have relaxed validation requirements, which means initializers must
-handle undefaulted or invalid objects. The update that completes initialization will be defaulted as
-normal and the normal validation logic should be enforced. UID and creation timestamp must be set before
-initializers run. The initial object creation must still be validated - resource types that wish to support
-deep initialization must design their objects to accept those.
+handle incomplete objects. The create call will perform normal defaulting so that initializers are not providing
+their own defaulting, including UID and creationTimestamp. At all phases the object must be valid, so
+resources that wish to use initializers should consider how defaulting would complicate initializers.
 
 To allow naive clients to avoid having to deal with uninitialized objects, the API will automatically
 filter uninitialized objects out LIST and WATCH. Explicit GETs to that object should return the
 appropriate status code `202 Accepted` indicating that the resource is reserved and including a `Status`
 response with the correct resource version, but not the object. Clients specifying
-`includeUninitializedObjects` will see all updates, but shared code like caches and informers may need
+`includeUninitialized` will see all updates, but shared code like caches and informers may need
 to implement layered filters to handle multiple clients requesting both variants. A CREATE to an
 uninitialized object should report the same status as before, and DELETE is always allowed.
 
-Finally, the apiserver that accepts the incoming creation should hold the response until the object is
-initialized or the timeout is exceeded. This increases latency, but allows clients to avoid breaking
-semantics. If the apiserver reaches the timeout it must return an appropriate error that includes the
-resource version of the object and UID so that clients can perform a watch. If an initializer reports
-a `Status` with a failure, it must return that to the user (all failures are correlated with deletion).
-
 There is no current error case for a timeout that exactly matches existing behavior except a 5xx
-timeout if etcd does not respond quickly. We should return that error, but return an appropriate
-cause that lets a client determine what the outcome was.
+timeout if etcd does not respond quickly. We should return that error if CREATE exceeds the timeout,
+but return an appropriate status cause that lets a client determine what the outcome was.
 
 
 ##### Example flow:
 
-This flow shows the information moving across the system.
+This flow shows the information moving across the system during a successful creation
 
 ```
 Client            APIServer (req)  APIServer (other) Initializer 1        Initializer 2
@@ -340,6 +369,49 @@ POST /pods -----> validate                              |                    |
                   observe <------- save etcd
 response <------- handle
 ```
+
+An example flow where initialization fails:
+
+```
+Client            APIServer (req)  APIServer (other) Initializer 1        Initializer 2
+----------------- ---------------- ----------------- -------------------- -------------------
+
+                                   listen <--------- WATCH /pods?init=0
+                                   listen <-------------|---------------- WATCH /pods?init=0
+                                                        |                    |
+POST /pods -----> validate                              |                    |
+                  admission(init):                      |                    |
+                    default                             v                    |
+                  save etcd -----------------------> observe                 |
+                  WATCH /pods/1                         v                    |
+                      |                              change resources        |
+                      |                              clear initializer       |
+                      |            validate <------- PUT /pods/1             |
+                      |            admission(init):                          |
+                      |              check authz                             v
+                      |            save etcd ---------------------------> observe
+                      |                                                   failed to retrieve object
+                      |                                                   set result to failure
+                      |            validate <---------------------------- PUT /pods
+                      |            admission(init):
+                      |              check authz
+                      v            signal failure
+                  observe <------- save etcd
+response <------- handle               |
+                                       v
+                                   delete object
+```
+
+
+##### Quota
+
+Quota consists of two distinct parts - object count, which prevents abuse for some limited
+resource, and sub-object consumption which may not be known until after all initializers
+are executed.
+
+Object count quota should be applied prior to the object being persisted to etcd (prior
+to initialization). All other quota should be applied when the object completes initialization.
+Compensation should run at the normal spot.
 
 
 ##### Bypassing initializers
@@ -435,6 +507,19 @@ is to allow administrators to request fail open on specific calls, or to require
 paths (initializers dynamic config path) are always fail open. Alternatively, it may be desirable for
 administrative users to bypass admission completely.
 
+Some options:
+
+1. Some namespaces are opted out of external admission (kube-system)
+2. Certain service accounts can bypass external admission checks
+
+
+##### Upgrade of a cluster with external admission
+
+The current order of cluster upgrade is `apiserver` -> `controller` -> `nodes`.  External admission controllers
+would typically need to be upgraded first in order to ensure new semantic changes in objects are not ignored.
+This would include fields like PodSecurityContext - adding that *prior* to admission is necessary because it
+allows escalation that was previously impossible.
+
 
 #### Dynamic configuration
 
@@ -443,10 +528,12 @@ that configuration is updated quickly. Extension API servers should also be able
 configuration, but may opt for alternate mechanisms.
 
 The initializer admission controller and the generic webhook admission controller should dynamically load config
-from a `ConfigMap` holding the following configuration schema:
+from a `ConfigMap` or a net new API object holding the following configuration schema:
 
 ```
 type AdmissionControlConfiguration struct {
+    TypeMeta // although this object could simply be serialized like ComponentConfig
+
     // ResourceInitializers is a list of resources and their default initializers
     ResourceInitializers []ResourceDefaultInitializer
 
@@ -454,8 +541,8 @@ type AdmissionControlConfiguration struct {
 }
 
 type ResourceDefaultInitializer struct {
-    // Resource is the resource that should be initialized
-    Resource string
+    // Resource identifies the type of resource to be initialized that should be initialized
+    Resource GroupResource
     // Initializers are the default names that will be registered to this resource
     Initializers []string
 }
@@ -464,7 +551,7 @@ type ExternalAdmissionHook struct {
     // Operations is the list of operations this hook will be invoked on - Create, Update, or *
     // for all operations. Defaults to '*'.
     Operations []string
-    // Resources are the resource names this hook should be invoked on. '*' is all resources.
+    // Resources are the resources this hook should be invoked on. '*' is all resources.
     Resources []string
     // Subresources are the list of subresources this hook should be invoked on. '*' is all resources.
     Subresources []string
@@ -477,9 +564,9 @@ type ExternalAdmissionHook struct {
 }
 ```
 
-All changes to this config must be done in an extensible matter - when adding a new hook or initializer,
-first verify the new agent is online. Removing a hook or initializer must occur before disabling the
-remote endpoint, and all queued items must complete.
+All changes to this config must be done in an safe matter - when adding a new hook or initializer,
+first verify the new agent is online before allowing it to come into rotation. Removing a hook or
+initializer must occur before disabling the remote endpoint, and all queued items must complete.
 
 
 ### Alternatives considered
