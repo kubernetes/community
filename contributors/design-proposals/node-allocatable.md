@@ -127,6 +127,7 @@ The reason for recommending placing the `Container Runtime` under `KubeReserved`
 1. It's resource consumption is tied to the number of pods running on a node.
 
 Note that the hierarchy below recommends having dedicated cgroups for kubelet and the runtime to individally track their usage.
+```text
 
 / (Cgroup Root)
 .
@@ -180,6 +181,8 @@ Note that the hierarchy below recommends having dedicated cgroups for kubelet an
 .      	 .     	  .    	    ...
 .	 .	  .
 . 	 .	  ...
+
+```
 
 `systemreserved` & `kubereserved` cgroups are expected to be created by users. If Kubelet is creating cgroups for itself and docker daemon, it will create the `kubereserved` cgroup automatically.
 
