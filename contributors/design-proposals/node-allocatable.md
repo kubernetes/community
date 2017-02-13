@@ -135,7 +135,7 @@ Note that the hierarchy below recommends having dedicated cgroups for kubelet an
 .        .    .tasks(sshd,udev,etc)
 .
 .
-+..kubereserved or kube.slice (`KubeReserved` enforced here *optionally* by kubelet)
++..podruntime or podruntime.slice (`KubeReserved` enforced here *optionally* by kubelet)
 .	 .
 .	 +..kubelet
 .	 .   .tasks(kubelet)
@@ -184,7 +184,7 @@ Note that the hierarchy below recommends having dedicated cgroups for kubelet an
 
 ```
 
-`systemreserved` & `kubereserved` cgroups are expected to be created by users. If Kubelet is creating cgroups for itself and docker daemon, it will create the `kubereserved` cgroup automatically.
+`systemreserved` & `kubereserved` cgroups are expected to be created by users. If Kubelet is creating cgroups for itself and docker daemon, it will create the `kubereserved` cgroups automatically.
 
 `kubepods` cgroups will be created by kubelet automatically if it is not already there. If the cgroup driver is set to `systemd` then Kubelet will create a `kubepods.slice` via systemd.
 By default, Kubelet will `mkdir` `/kubepods` cgroup directly via cgroupfs.
