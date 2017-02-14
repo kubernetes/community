@@ -116,6 +116,24 @@ To better enforce QoS under this situation, Kubelet will apply the hard eviction
 The resulting behavior will be the same for user pods. 
 With the above example, Kubelet will evict pods whenever pods consume more than `28.9Gi` which will be `<100Mi` from `29Gi` which will be the memory limits on the Node Allocatable cgroup.
 
+## General guidelines
+
+System daemons are expected to be treated similar to `Guaranteed` pods.
+System daemons can burst within their bounding cgroups and this behavior needs to be managed as part of kubernetes deployment.
+For example, Kubelet can have its own cgroup and share `KubeReserved` resources with the Container Runtime.
+However, Kubelet cannot burst and use up all available Node resources if `KubeReserved` is enforced.
+
+Users are adviced to be extra careful while enforcing `SystemReserved` reservation since it can lead to critical services being CPU starved or OOM killed on the nodes.
+The recommendation is to enforce `SystemReserved` only if a user has profiled their nodes exhaustively to come up with precise estimates.
+
+To begin with enforce `Allocatable` on `pods` only.
+Once adequate monitoring and alerting is in place to track kube daemons, attempt to enforce `KubeReserved` based on heuristics.
+More on this in [Phase 2](#phase-2-enforce-allocatable-on-pods).
+
+The resource requirements of kube system daemons will grow over time as more and more features are added.
+Over time, the project will attempt to bring down utilization, but that is not a priority as of now.
+So expect a drop in `Allocatable` capacity over time.
+
 ## Recommended Cgroups Setup
 
 Following is the recommended cgroup configuration for Kubernetes nodes.
@@ -186,7 +204,9 @@ Note that the hierarchy below recommends having dedicated cgroups for kubelet an
 
 `systemreserved` & `kubereserved` cgroups are expected to be created by users. If Kubelet is creating cgroups for itself and docker daemon, it will create the `kubereserved` cgroups automatically.
 
-`kubepods` cgroups will be created by kubelet automatically if it is not already there. If the cgroup driver is set to `systemd` then Kubelet will create a `kubepods.slice` via systemd.
+`kubepods` cgroups will be created by kubelet automatically if it is not already there.
+Creation of `kubepods` cgroup is tied to QoS Cgroup support which is controlled by `--cgroups-per-qos` flag.
+If the cgroup driver is set to `systemd` then Kubelet will create a `kubepods.slice` via systemd.
 By default, Kubelet will `mkdir` `/kubepods` cgroup directly via cgroupfs.
 
 #### Containerizing Kubelet
@@ -214,8 +234,11 @@ The scheduler will use `Allocatable` instead of `Capacity` if it is available.
 
 **Status**: Targeted for v1.6
 
-In this phase, Kubelet will automatically create a top level cgroup to enforce Node Allocatable on all user pods.
+In this phase, Kubelet will automatically create a top level cgroup to enforce Node Allocatable across all user pods.
+The creation of this cgroup is controlled by `--cgroups-per-qos` flag.
+
 Kubelet will support specifying the top level cgroups for `KubeReserved` and `SystemReserved` and support *optionally* placing resource restrictions on these top level cgroups.
+
 Users are expected to specify `KubeReserved` and `SystemReserved` based on their deployment requirements.
 
 Resource requirements for Kubelet and the runtime is typically proportional to the number of pods running on a node.
@@ -225,15 +248,16 @@ Note that this dashboard provides usage metrics for docker runtime only as of no
 
 New flags introduced in this phase are as follows:
 
-1. `--enforce-node-allocatable=[pods][,][kube-reserved],[system-reserved]`
-  * This flag will default to `pods` in v1.6.
-  * Nodes have to be drained prior to upgrading to v1.6.
-  * kubelet's behavior if a node has not been drained prior to upgrades is as follows
-    * If a pod has a `RestartPolicy=Never`, then mark the pod as `Failed` and terminate its workload.
-    * All other pods that are not parented by new Allocatable top level cgroup will be restarted.
-  * Users intending to turn off this feature can set this flag to `""`.
-  * `--kube-reserved` and `--system-reserved` flags are expected to be set by users for this flag to have any meaningful effect on node stability.
-  * By including `kube-reserved` or `system-reserved` in this flag's value, and by specifying the following two flags, Kubelet will attempt to enforce the reservations specified via `--kube-reserved` & `system-reserved` respectively.
+1. `--enforce-node-allocatable=[pods][,][kube-reserved][,][system-reserved]`
+
+	* This flag will default to `pods` in v1.6.
+	* This flag will be a `no-op` unless `--kube-reserved` and/or `--system-reserved` has been specified.
+	* If `--cgroups-per-qos=false`, then this flag has to be set to `""`. Otherwise its an error and kubelet will fail.
+	* It is recommended to drain and restart nodes prior to upgrading to v1.6. This is necessary for `--cgroups-per-qos` feature anyways which is expected to be turned on by default in `v1.6`.
+	* Users intending to turn off this feature can set this flag to `""`.
+	* Specifying `kube-reserved` value in this flag is invalid if `--kube-reserved-cgroup` flag is not specified.
+	* Specifying `system-reserved` value in this flag is invalid if `--system-reserved-cgroup` flag is not specified.
+	* By including `kube-reserved` or `system-reserved` in this flag's value, and by specifying the following two flags, Kubelet will attempt to enforce the reservations specified via `--kube-reserved` & `system-reserved` respectively.
 
 2. `--kube-reserved-cgroup=<absolute path to a cgroup>`
    * This flag helps kubelet identify the control group managing all kube components like Kubelet & container runtime that fall under the `KubeReserved` reservation.
@@ -243,7 +267,8 @@ New flags introduced in this phase are as follows:
 
 #### Rollout details
 
-This phase is expected to improve Kubernetes node stability. However it requires users to specify non-default values for `--kube-reserved` & `--system-reserved` flags though.
+This phase is expected to improve Kubernetes node stability.
+However it requires users to specify non-default values for `--kube-reserved` & `--system-reserved` flags though.
 
 The rollout of this phase has been long due and hence we are attempting to include it in v1.6
 
@@ -258,6 +283,7 @@ This phase might cause the following symptoms to occur if `--kube-reserved` and/
 
 ##### Proposed Timeline
 
+```text
 02/14/2017 - Discuss the rollout plan in sig-node meeting
 02/15/2017 - Flip the switch to enable pod level cgroups by default
 enable existing experimental behavior by default
@@ -265,6 +291,7 @@ enable existing experimental behavior by default
 02/27/2017 - Kubernetes Feature complete (i.e. code freeze)
 03/01/2017 - Send an announcement to kubernetes-dev@ about this rollout along with rollback options and potential issues. Recommend users to set kube and system reserved.
 03/22/2017 - Kubernetes 1.6 release
+```
 
 ### Phase 3 - Metrics & support for Storage
 
