@@ -19,7 +19,7 @@ around code review that govern all active contributors to Kubernetes.
 ### Code of Conduct
 
 The most important expectation of the Kubernetes community is that all members
-abide by the Kubernetes [community code of conduct](../../code-of-conduct.md).
+abide by the Kubernetes [community code of conduct](../../governance.md#code-of-conduct).
 Only by respecting each other can we develop a productive, collaborative
 community.
 
@@ -58,7 +58,7 @@ Because reviewers are often the first points of contact between new members of
 the community and can significantly impact the first impression of the
 Kubernetes community, reviewers are especially important in shaping the
 Kubernetes community.  Reviewers are highly encouraged to review the
-[code of conduct](../../code-of-conduct.md) and are strongly encouraged to go above
+[code of conduct](../../governance.md#code-of-conduct) and are strongly encouraged to go above
 and beyond the code of conduct to promote a collaborative, respectful
 Kubernetes community.
 
