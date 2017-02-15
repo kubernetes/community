@@ -69,19 +69,19 @@ You can set [go flags](https://golang.org/cmd/go/) by setting the
 added automatically to these:
 
 ```sh
-make test WHAT=pkg/api                # run tests for pkg/api
+make test WHAT=./pkg/api                # run tests for pkg/api
 ```
 
 To run multiple targets you need quotes:
 
 ```sh
-make test WHAT="pkg/api pkg/kubelet"  # run tests for pkg/api and pkg/kubelet
+make test WHAT="./pkg/api ./pkg/kubelet"  # run tests for pkg/api and pkg/kubelet
 ```
 
 In a shell, it's often handy to use brace expansion:
 
 ```sh
-make test WHAT=pkg/{api,kubelet}  # run tests for pkg/api and pkg/kubelet
+make test WHAT=./pkg/{api,kubelet}  # run tests for pkg/api and pkg/kubelet
 ```
 
 ### Run specific unit test cases in a package
@@ -92,10 +92,10 @@ regular expression for the name of the test that should be run.
 
 ```sh
 # Runs TestValidatePod in pkg/api/validation with the verbose flag set
-make test WHAT=pkg/api/validation KUBE_GOFLAGS="-v" KUBE_TEST_ARGS='-run ^TestValidatePod$'
+make test WHAT=./pkg/api/validation KUBE_GOFLAGS="-v" KUBE_TEST_ARGS='-run ^TestValidatePod$'
 
 # Runs tests that match the regex ValidatePod|ValidateConfigMap in pkg/api/validation
-make test WHAT=pkg/api/validation KUBE_GOFLAGS="-v" KUBE_TEST_ARGS="-run ValidatePod\|ValidateConfigMap$"
+make test WHAT=./pkg/api/validation KUBE_GOFLAGS="-v" KUBE_TEST_ARGS="-run ValidatePod\|ValidateConfigMap$"
 ```
 
 For other supported test flags, see the [golang
@@ -130,7 +130,7 @@ To run tests and collect coverage in only one package, pass its relative path
 under the `kubernetes` directory as an argument, for example:
 
 ```sh
-make test WHAT=pkg/kubectl KUBE_COVER=y
+make test WHAT=./pkg/kubectl KUBE_COVER=y
 ```
 
 Multiple arguments can be passed, in which case the coverage results will be
