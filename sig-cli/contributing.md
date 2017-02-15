@@ -50,14 +50,16 @@ New contributors can try the following to work on an existing [bug] or [approved
 - In [slack], @mention a [lead][leads] and ask if there are any issues you could pick up.
   Leads can recommend issues that have enough priority to receive PR review bandwidth.
 - Send an email to the _kubernetes-sig-cli@googlegroups.com_ [group]
-   > Subject: New sig-cli contributor _${yourName}_
-   
-   > Body: Hello, my name is _${yourName}_.  I would like to get involved in
-   > contributing to the Kubernetes project.  I have read all of the
-   > user documentation listed on the community contributring page.
-   > What should I do next to get started?
-- Attend a sig-cli [meeting] and introduce yourself as looking to get started. 
-  
+
+  > Subject: New sig-cli contributor _${yourName}_
+  >
+  > Body: Hello, my name is _${yourName}_.  I would like to get involved in
+  > contributing to the Kubernetes project.  I have read all of the
+  > user documentation listed on the community contributring page.
+  > What should I do next to get started?
+
+- Attend a sig-cli [meeting] and introduce yourself as looking to get started.
+
 ### Bug lifecycle
 
 1. An [issue] is filed that
