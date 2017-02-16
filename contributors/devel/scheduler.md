@@ -11,7 +11,7 @@ We are dividng scheduler into three layers from high level:
   This is the main() entry that does initialization before calling the scheduler framework.
 - [pkg/scheduler/scheduler.go](http://releases.k8s.io/HEAD/pkg/scheduler/scheduler.go):
   This is the scheduler framework that handles stuff (e.g. binding) beyond the scheduling algorithm.
-- [pkg/scheduler/generic_scheduler.go](http://releases.k8s.io/HEAD/pkg/scheduler/generic_scheduler.go):
+- [pkg/scheduler/generic_scheduler.go](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/core/generic_scheduler.go):
   The scheduling algorithm that assigns nodes for pods.
 
 ## The scheduling algorithm
