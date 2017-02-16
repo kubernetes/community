@@ -1,7 +1,10 @@
 # OpenStack SIG
 
-This is the wiki page of the Kubernetes OpenStack SIG: a special interest group
-co-ordinating contributions of OpenStack-related changes to Kubernetes.
+This is the community page of the Kubernetes OpenStack SIG: a special
+interest group coordinating the cross-community efforts of the OpenStack
+and Kubernetes communities. This includes OpenStack-related contributions
+to Kubernetes projects, with OpenStack as a deployment platform, a
+service provider, or applications to run on Kubernetes.
 
 Relevant [Issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen%20label%3Asig%2Fopenstack%20is%3Aissue)
 and [Pull Requests](https://github.com/kubernetes/kubernetes/pulls?q=is%3Aopen%20is%3Apr%20label%3Asig%2Fopenstack)
