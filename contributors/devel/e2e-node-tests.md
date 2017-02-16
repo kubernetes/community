@@ -202,8 +202,10 @@ related test, Remote execution is recommended.**
 To enable/disable kubenet:
 
 ```sh
-make test_e2e_node TEST_ARGS="--disable-kubenet=true" # enable kubenet
-make test_e2e_node TEST_ARGS="--disable-kubenet=false" # disable kubenet
+# enable kubenet
+make test-e2e-node TEST_ARGS='--kubelet-flags="--network-plugin=kubenet --network-plugin-dir=/opt/cni/bin"'
+# disable kubenet
+make test-e2e-node TEST_ARGS='--kubelet-flags="--network-plugin= --network-plugin-dir="'
 ```
 
 ## Additional QoS Cgroups Hierarchy level testing
