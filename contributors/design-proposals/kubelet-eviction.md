@@ -99,7 +99,7 @@ termination.
 To configure soft eviction thresholds, the following flags will be supported:
 
 ```
---eviction-soft="": A set of eviction thresholds (e.g. memory.available<1.5Gi) that if met over a corresponding grace period would trigger a pod eviction.
+--eviction-soft="": A set of eviction thresholds (e.g. memory.available<1.5Gi) relative to hard eviction thresholds that if met over a corresponding grace period would trigger a pod eviction.
 --eviction-soft-grace-period="": A set of eviction grace periods (e.g. memory.available=1m30s) that correspond to how long a soft eviction threshold must hold before triggering a pod eviction.
 --eviction-max-pod-grace-period="0": Maximum allowed grace period (in seconds) to use when terminating pods in response to a soft eviction threshold being met.
 ```
@@ -177,18 +177,18 @@ Let's assume the operator started the `kubelet` with the following:
 
 ```
 --eviction-hard="memory.available<100Mi"
---eviction-soft="memory.available<300Mi"
+--eviction-soft="memory.available<200Mi"
 --eviction-soft-grace-period="memory.available=30s"
 ```
 
 The `kubelet` will run a sync loop that looks at the available memory
 on the node as reported from `cAdvisor` by calculating (capacity - workingSet).
 If available memory is observed to drop below 100Mi, the `kubelet` will immediately
-initiate eviction. If available memory is observed as falling below `300Mi`,
-it will record when that signal was observed internally in a cache.  If at the next
-sync, that criteria was no longer satisfied, the cache is cleared for that
-signal.  If that signal is observed as being satisfied for longer than the
-specified period, the `kubelet` will initiate eviction to attempt to
+initiate eviction. If available memory is observed as falling below `300Mi`
+(eviction-hard + eviction-soft), it will record when that signal was observed internally 
+in a cache.  If at the next sync, that criteria was no longer satisfied, the cache is 
+cleared for that signal.  If that signal is observed as being satisfied for longer than 
+the specified period, the `kubelet` will initiate eviction to attempt to
 reclaim the resource that has met its eviction threshold.
 
 ### Disk
@@ -197,7 +197,7 @@ Let's assume the operator started the `kubelet` with the following:
 
 ```
 --eviction-hard="nodefs.available<1Gi,nodefs.inodesFree<1,imagefs.available<10Gi,imagefs.inodesFree<10"
---eviction-soft="nodefs.available<1.5Gi,nodefs.inodesFree<10,imagefs.available<20Gi,imagefs.inodesFree<100"
+--eviction-soft="nodefs.available<0.5Gi,nodefs.inodesFree<9,imagefs.available<10Gi,imagefs.inodesFree<90"
 --eviction-soft-grace-period="nodefs.available=1m,imagefs.available=2m"
 ```
 
@@ -210,10 +210,10 @@ If available disk space on the node's image filesystem is observed to drop below
 or the free inodes on the node's primary image filesystem is less than 10,
 the `kubelet` will immediately initiate eviction.
 
-If available disk space on the node's primary filesystem is observed as falling below `1.5Gi`,
-or if the free inodes on the node's primary filesystem is less than 10,
-or if available disk space on the node's image filesystem is observed as falling below `20Gi`,
-or if the free inodes on the node's image filesystem is less than 100,
+If available disk space on the node's primary filesystem is observed as falling below `1.5Gi`
+(eviction-hard + eviction-soft), or if the free inodes on the node's primary filesystem is less 
+than 10, or if available disk space on the node's image filesystem is observed as falling below 
+`20Gi`, or if the free inodes on the node's image filesystem is less than 100,
 it will record when that signal was observed internally in a cache.  If at the next
 sync, that criterion was no longer satisfied, the cache is cleared for that
 signal.  If that signal is observed as being satisfied for longer than the
@@ -379,7 +379,8 @@ grace period.
 Let's assume the operator started the `kubelet` with the following:
 
 ```
---eviction-soft="memory.available<256Mi"
+--eviction-hard="memory.available<100Mi"
+--eviction-soft="memory.available<156Mi"
 --eviction-soft-grace-period="memory.available=30s"
 ```
 
@@ -399,7 +400,8 @@ The `kubelet` will reject all pods if any of the disk eviction thresholds have b
 Let's assume the operator started the `kubelet` with the following:
 
 ```
---eviction-soft="nodefs.available<1500Mi"
+--eviction-hard="nodefs.available<1000Mi"
+--eviction-soft="nodefs.available<500Mi"
 --eviction-soft-grace-period="nodefs.available=30s"
 ```
 
