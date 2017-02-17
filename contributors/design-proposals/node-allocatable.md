@@ -13,7 +13,7 @@ Specifically, the kubelet will provide a few knobs to reserve resources for OS s
 By explicitly reserving compute resources, the intention is to avoid overcommiting the node and not have system daemons compete with user pods.
 The resources available to system daemons and user pods will be capped based on user specified reservations.
 
-If `Allocatable` is available, the scheduler use that instead of `Capacity`, thereby not overcommiting the node.
+If `Allocatable` is available, the scheduler will use that instead of `Capacity`, thereby not overcommiting the node.
 
 ## Design
 
@@ -83,7 +83,7 @@ designates resources set aside for kubernetes components, SystemReserved designa
 aside for non-kubernetes components (currently this is reported as all the processes lumped
 together in the `/system` raw container on non-systemd nodes).
 
-## Kubelet Evictions Tresholds
+## Kubelet Evictions Thresholds
 
 To improve the reliability of nodes, kubelet evicts pods whenever the node runs out of memory or local storage.
 Together, evictions and node allocatable help improve node stability.
@@ -92,7 +92,7 @@ As of v1.5, evictions are based on overall node usage relative to `Capacity`.
 Kubelet evicts pods based on QoS and user configured eviction thresholds.
 More deails in [this doc](./kubelet-eviction.md#enforce-node-allocatable)
 
-From v1.6, if `Allocatable` is enforced by default across all pods on a node using cgroups, pods cannot to exceed `Allocatable`.
+From v1.6, if `Allocatable` is enforced by default across all pods on a node using cgroups, pods cannot exceed `Allocatable`.
 Memory and CPU limits are enforced using cgroups, but there exists no easy means to enforce storage limits though. 
 Enforcing storage limits using Linux Quota is not possible since it's not hierarchical. 
 Once storage is supported as a resource for `Allocatable`, Kubelet has to perform evictions based on `Allocatable` in addition to `Capacity`.
@@ -107,7 +107,7 @@ For this node, the effective Node Allocatable is `28.9Gi` only; i.e. if kube and
 
 If we enforce Node Allocatable (`28.9Gi`) via top level cgroups, then pods can never exceed `28.9Gi` in which case evictions will not be performed unless kernel memory consumption is above `100Mi`.
 
-In order to support evictions and avoid memcg OOM kills for pods, we will set the top level cgroup limits for pods to be `Node Allocatable` + `Eviction Hard Tresholds`.
+In order to support evictions and avoid memcg OOM kills for pods, we will set the top level cgroup limits for pods to be `Node Allocatable` + `Eviction Hard Thresholds`.
 
 However, the scheduler is not expected to use more than `28.9Gi` and so `Node Allocatable` on Node Status will be `28.9Gi`.
 
@@ -123,7 +123,7 @@ System daemons can burst within their bounding cgroups and this behavior needs t
 For example, Kubelet can have its own cgroup and share `KubeReserved` resources with the Container Runtime.
 However, Kubelet cannot burst and use up all available Node resources if `KubeReserved` is enforced.
 
-Users are adviced to be extra careful while enforcing `SystemReserved` reservation since it can lead to critical services being CPU starved or OOM killed on the nodes.
+Users are advised to be extra careful while enforcing `SystemReserved` reservation since it can lead to critical services being CPU starved or OOM killed on the nodes.
 The recommendation is to enforce `SystemReserved` only if a user has profiled their nodes exhaustively to come up with precise estimates.
 
 To begin with enforce `Allocatable` on `pods` only.
@@ -133,6 +133,11 @@ More on this in [Phase 2](#phase-2-enforce-allocatable-on-pods).
 The resource requirements of kube system daemons will grow over time as more and more features are added.
 Over time, the project will attempt to bring down utilization, but that is not a priority as of now.
 So expect a drop in `Allocatable` capacity over time.
+
+`Systemd-logind` places ssh sessions under `/user.slice`.
+Its usage will not be accounted for in the nodes.
+Take into account resource reservation for `/user.slice` while configuring `SystemReserved`.
+Ideally `/user.slice` should reside under `SystemReserved` top level cgroup.
 
 ## Recommended Cgroups Setup
 
@@ -144,16 +149,16 @@ The reason for recommending placing the `Container Runtime` under `KubeReserved`
 1. A container runtime on Kubernetes nodes is not expected to be used outside of the Kubelet.
 1. It's resource consumption is tied to the number of pods running on a node.
 
-Note that the hierarchy below recommends having dedicated cgroups for kubelet and the runtime to individally track their usage.
+Note that the hierarchy below recommends having dedicated cgroups for kubelet and the runtime to individually track their usage.
 ```text
 
 / (Cgroup Root)
 .
-+..systemreserved or system.slice (`SystemReserved` enforced here *optionally* by kubelet)
++..systemreserved or system.slice (Specified via `--system-reserved-cgroup`; `SystemReserved` enforced here *optionally* by kubelet)
 .        .    .tasks(sshd,udev,etc)
 .
 .
-+..podruntime or podruntime.slice (`KubeReserved` enforced here *optionally* by kubelet)
++..podruntime or podruntime.slice (Specified via `--kube-reserved-cgroup`; `KubeReserved` enforced here *optionally* by kubelet)
 .	 .
 .	 +..kubelet
 .	 .   .tasks(kubelet)
@@ -202,7 +207,8 @@ Note that the hierarchy below recommends having dedicated cgroups for kubelet an
 
 ```
 
-`systemreserved` & `kubereserved` cgroups are expected to be created by users. If Kubelet is creating cgroups for itself and docker daemon, it will create the `kubereserved` cgroups automatically.
+`systemreserved` & `kubereserved` cgroups are expected to be created by users.
+If Kubelet is creating cgroups for itself and docker daemon, it will create the `kubereserved` cgroups automatically.
 
 `kubepods` cgroups will be created by kubelet automatically if it is not already there.
 Creation of `kubepods` cgroup is tied to QoS Cgroup support which is controlled by `--cgroups-per-qos` flag.
@@ -261,9 +267,11 @@ New flags introduced in this phase are as follows:
 
 2. `--kube-reserved-cgroup=<absolute path to a cgroup>`
    * This flag helps kubelet identify the control group managing all kube components like Kubelet & container runtime that fall under the `KubeReserved` reservation.
+   * Example: `/kube.slice`. Note that absolute paths are required and systemd naming scheme isn't supported.
 
 3. `--system-reserved-cgroup=<absolute path to a cgroup>`
    * This flag helps kubelet identify the control group managing all OS specific system daemons that fall under the `SystemReserved` reservation.
+   * Example: `/system.slice`. Note that absolute paths are required and systemd naming scheme isn't supported.
 
 #### Rollout details
 
