@@ -18,13 +18,13 @@ Similarly, mature organizations will be able to rely on a centrally managed DNS 
 
 With that in mind, the proposals here will devolve into simply using DNS names that are validated with system installed root certificates.
 
-## Cluster Location information
+## Cluster location information (aka ClusterInfo)
 
-First we define a set of information that identifies a cluster and how to talk to it.
+First we define a set of information that identifies a cluster and how to talk to it.  We will call this ClusterInfo in this document.
 
 While we could define a new format for communicating the set of information needed here, we'll start by using the standard [`kubeconfig`](http://kubernetes.io/docs/user-guide/kubeconfig-file/) file format.
 
-It is expected that the `kubeconfig` file will have a single unnamed `Cluster` entry.  Other information (especially authentication secrets) must be omitted.
+It is expected that the `kubeconfig` file will have a single unnamed `Cluster` entry.  Other information (especially authentication secrets) MUST be omitted.
 
 ### Evolving kubeconfig
 
@@ -45,7 +45,7 @@ Additions include:
 
 **This is to be implemented in a later phase**
 
-Any client of the cluster will want to have this information.  As the configuration of the cluster changes we need the client to keep this information up to date.  It is assumed that the information here won't drift so fast that clients won't be able to find *some* way to connect.
+Any client of the cluster will want to have this information.  As the configuration of the cluster changes we need the client to keep this information up to date.  The ClusterInfo ConfigMap (defined below) is expected to be a common place to get the latest ClusterInfo for any cluster.  Clients should periodically grab this and cache it.  It is assumed that the information here won't drift so fast that clients won't be able to find *some* way to connect.
 
 In exceptional circumstances it is possible that this information may be out of date and a client would be unable to connect to a cluster.  Consider the case where a user has kubectl set up and working well and then doesn't run kubectl for quite a while.  It is possible that over this time (a) the set of servers will have migrated so that all endpoints are now invalid or (b) the root certificates will have rotated so that the user can no longer trust any endpoint.
 
@@ -55,31 +55,35 @@ Now that we know *what* we want to get to the client, the question is how.  We w
 
 ### Method: Out of Band
 
-The simplest way to do this would be to simply put this object in a file and copy it around.  This is more overhead for the user, but it is easy to implement and lets users rely on existing systems to distribute configuration.
+The simplest way to obtain ClusterInfo this would be to simply put this object in a file and copy it around.  This is more overhead for the user, but it is easy to implement and lets users rely on existing systems to distribute configuration.
 
 For the `kubeadm` flow, the command line might look like:
 
 ```
-kubeadm join --cluster-info-file=my-cluster.yaml
+kubeadm join --discovery-file=my-cluster.yaml
 ```
 
-Note that TLS bootstrap (which establishes a way for a client to authenticate itself to the server) is a separate issue and has its own set of methods.  This command line may have a TLS bootstrap token (or config file) on the command line also.
+After loading the ClusterInfo from a file, the client MAY look for updated information from the server by reading the `kube-public` `cluster-info` ConfigMap defined below.  However, when retrieving this ConfigMap the client MUST validate the certificate when talking to the API server.
+
+**Note:** TLS bootstrap (which establishes a way for a client to authenticate itself to the server) is a separate issue and has its own set of methods.  This command line may have a TLS bootstrap token (or config file) on the command line also.  For this reason, even thought the `--discovery-file` argument is in the form of a `kubeconfig`, it MUST NOT contain client credentials as defined above.
 
 ### Method: HTTPS Endpoint
 
-If the ClusterInfo information is hosted in a trusted place via HTTPS you can just request it that way.  This will use the root certificates that are installed on the system.  It may or may not be appropriate based on the user's constraints.
+If the ClusterInfo information is hosted in a trusted place via HTTPS you can just request it that way.  This will use the root certificates that are installed on the system.  It may or may not be appropriate based on the user's constraints.  This method MUST use HTTPS.  Also, even though the payload for this URL is the `kubeconfig` format, it MUST NOT contain client credentials.
 
 ```
-kubeadm join --cluster-info-url="https://example/mycluster.yaml"
+kubeadm join --discovery-url="https://example/mycluster.yaml"
 ```
 
 This is really a shorthand for someone doing something like (assuming we support stdin with `-`):
 
 ```
-curl https://example.com/mycluster.json | kubeadm join --cluster-info-file=-
+curl https://example.com/mycluster.json | kubeadm join --discovery-file=-
 ```
 
-If the user requires some auth to the HTTPS server (to keep the ClusterInfo object private) that can be done in the curl command equivalent.  Or we could eventually add it to `kubeadm` directly.
+After loading the ClusterInfo from a URL, the client MAY look for updated information from the server by reading the `kube-public` `cluster-info` ConfigMap defined below.  However, when retrieving this ConfigMap the client MUST validate the certificate when talking to the API server.
+
+**Note:** support for loading from stdin for `--discovery-file` may not be implemented immediately.
 
 ### Method: Bootstrap Token
 
@@ -100,7 +104,7 @@ The user experience for joining a cluster would be something like:
 kubeadm join --token=ae23dc.faddc87f5a5ab458 <address>
 ```
 
-**Note:** This is logically a different use of the token from TLS bootstrap.  We harmonize these usages and allow the same token to play double duty.
+**Note:** This is logically a different use of the token used for authentication for TLS bootstrap.  We harmonize these usages and allow the same token to play double duty.
 
 #### Implementation Flow
 
@@ -138,11 +142,10 @@ The following keys are on the secret data:
 * **token-id**. As defined above.
 * **token-secret**. As defined above.
 * **expiration**. After this time the token should be automatically deleted.  This is encoded as an absolute UTC time using RFC3339.
-* **usage-bootstrap-signing**. Set to `true` to indicate this token should be used for signing bootstrap configs.  If omitted or some other string, it defaults to `false`.
+* **usage-bootstrap-signing**. Set to `true` to indicate this token should be used for signing bootstrap configs.  If this is missing from the token secret or set to any other value, the usage is not allowed.
+* **usage-bootstrap-authentication**. Set to true to indicate that this token should be used for authenticating to the API server.  If this is missing from the token secret or set to any other value, the usage is not allowed.  The bootstrap token authenticagtor will use this token to auth as a user that is `system:bootstrap:<token-id>` in the group `system:bootstrappers`.
 
 These secrets can be named anything but it is suggested that they be named `bootstrap-token-<token-id>`.
-
-**QUESTION:** Should we also spec out now how we can use this token for TLS bootstrap.
 
 #### Quick Primer on JWS
 
@@ -167,11 +170,57 @@ A new well known ConfigMap will be created in the `kube-public` namespace called
 
 Users configuring the cluster (and eventually the cluster itself) will update the `kubeconfig` key here with the limited `kubeconfig` above.
 
-A new controller is introduced that will watch for both new/modified bootstrap tokens and changes to the `cluster-info` ConfigMap.  As things change it will generate new JWS signatures. These will be saved under ConfigMap keys of the pattern `jws-kubeconfig-<token-id>`.
+A new controller (`bootstrapsigner`) is introduced that will watch for both new/modified bootstrap tokens and changes to the `cluster-info` ConfigMap.  As things change it will generate new JWS signatures. These will be saved under ConfigMap keys of the pattern `jws-kubeconfig-<token-id>`.
 
-In addition, `jws-kubeconfig-<token-id>-hash` will be set to the MD5 hash of the contents of the `kubeconfig` data.  This will be in the form of `md5:d3b07384d113edec49eaa6238ad5ff00`.  This is done so that the controller can detect which signatures need to be updated without reading all of the tokens.
+Another controller (`tokencleaner`) is introduced that deletes tokens that are past their expiration time.
 
-This controller will also delete tokens that are past their expiration time.
+Logically these controllers could run as a component in the control plane.  But, for the sake of efficiency, they are bundeled as part of the Kubernetes controller-manager.
+
+## `kubeadm` UX
+
+We extend kubeadm with a set of flags and helper commands for managing and using these tokens.
+
+### `kubeadm init` flags
+
+* `--token` If set, this injects the bootstrap token to use when initializing the cluster.  If this is unset, then a random token is created and shown to the user.  If set explicitly to the empty string then no token is generated or created.  This token is used for both discovery and TLS bootstrap by having `usage-bootstrap-signing` and `usage-bootstrap-authentication` set on the token secret.
+* `--token-ttl` If set, this sets the TTL for the lifetime of this token.  Defaults to 0 which means "forever"
+
+### `kubeadm join` flags
+
+* `--token` This sets the token for both discovery and bootstrap auth.
+* `--discovery-url` If set this will grab the cluster-info data (a kubeconfig) from a URL. Due to the sensitive nature of this data, we will only support https URLs.  This also supports `username:password@host` syntax for doing HTTP auth.
+* `--discovery-file` If set, this will load the cluster-info from a file.
+* `--discovery-token` If set, (or set via `--token`) then we will be using the token scheme described above.
+* `--tls-bootstrap-token` (not officially part of this spec) This sets the token used to temporarily authenticate to the API server in order to submit a CSR for signing.  If `--insecure-experimental-approve-all-kubelet-csrs-for-group` is set to `system:bootstrappers` then these CSRs will be approved automatically for a hands off joining flow.
+
+Only one of `--discovery-url`, `--discovery-file` or `--discovery-token` can be set.  If more than one is set then an error is surfaced and `kubeadm join` exits.  Setting `--token` counts as setting `--discovery-token`.
+
+### `kubeadm token` commands
+
+`kubeadm` provides a set of utilities for manipulating token secrets in a running server.
+
+* `kubeadm token create [token]` Creates a token server side.  With no options this'll create a token that is used for discovery and TLS bootstrap.
+  * `[token]` The actual token value (in `id.secret` form) to write in.  If unset, a random value is generated.
+  * `--usages` A list of usages.  Defaults to `signing,authentication`.
+    * If the `signing` usage is specified, the token will be used (by the BootstrapSigner controller in the KCM) to JWS-sign the ConfigMap and can then be used for discovery.
+    * If the `authentication` usage is specified, the token can be used to authenticate for TLS bootstrap.
+  * `--ttl` The TTL for this token.  This sets the expiration of the token as a duration from the current time.  This is converted into an absolute UTC time as it is written into the token secret.
+* `kubeadm token delete <token-id>|<token-id>.<token-secret>`
+  * Users can either just specify the id or the full token.  This will delete the token if it exists.
+* `kubeadm token list`
+  * List tokens in a table form listing out the `token-id.token-secret`, the TTL, the absolute expiration time and the usages.
+  * **Question** Support a `--json` or `-o json` way to make this info programmatic? We don't want to recreate `kubectl` here and these aren't plain API objects so we can't reuse that plumbing easily.
+* `kubeadm token generate` This currently exists but is documented here for completeness.  This pure client side method just generated a random token in the correct form.
+
+## Implementation Details
+
+Our documentations (and output from `kubeadm`) should stress to users that when the token is configured for authenitication and used for TLS bootstrap (using `--insecure-experimental-approve-all-kubelet-csrs-for-group`) it is essentially a root password on the cluster and should be protected as such.  Users should set a TTL to limit this risk.  Or, after the cluster is up and running, users should delete the token using `kubeadm token delete`.
+
+After some back and forth, we decided to keep the separator in the token between the ID and Secret be a `.`.  During the 1.6 cycle, at one point `:` was implemented but then reverted.
+
+See https://github.com/kubernetes/client-go/issues/114 for details on creating a shared package with common constants for this scheme.
+
+This proposal assumes RBAC to lock things down in a couple of ways.  First, it will open up `cluster-info` ConfigMap in `kube-public` so that it is readable by unauthenticated users.  Next, it will make it so that the identities in the `system:bootstrappers` group can only be used to submit certs API to submit CSRs.  After a TLS certificate is created, that identity should be used instead of the bootstrap token.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/super-simple-discovery-api.md?pixel)]()
