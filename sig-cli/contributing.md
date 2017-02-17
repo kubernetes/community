@@ -56,7 +56,7 @@ New contributors can try the following to work on an existing [bug] or [approved
    > contributing to the Kubernetes project.  I have read all of the
    > user documentation listed on the community contributring page.
    > What should I do next to get started?
-- Attend a sig-cli [meeting] and introduce yourself as looking to get started.
+- Attend a sig-cli [meeting] and introduce yourself as looking to get started. 
 
 ### Bug lifecycle
 
