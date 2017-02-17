@@ -8,7 +8,7 @@ The process for contributing code to Kubernetes via the sig-cli [community][comm
   channels of [communication], and group [meeting] times.
 - New contributors: please start by adopting an [existing issue].
 - Request a feature by making an [issue] and mentioning
-  `@kubernetes/sig-cli-feature-request`.
+  `@kubernetes/sig-cli-feature-requests`.
 - Write a [design proposal] before starting work on a new feature.
 - Write [tests]!
 
@@ -50,7 +50,7 @@ New contributors can try the following to work on an existing [bug] or [approved
 - In [slack], @mention a [lead][leads] and ask if there are any issues you could pick up.
   Leads can recommend issues that have enough priority to receive PR review bandwidth.
 - Send an email to the _kubernetes-sig-cli@googlegroups.com_ [group]
-   > Subject: `New sig-cli contributor _${yourName}_`
+   > Subject: New sig-cli contributor _${yourName}_
    
    > Body: Hello, my name is _${yourName}_.  I would like to get involved in
    > contributing to the Kubernetes project.  I have read all of the
@@ -62,19 +62,19 @@ New contributors can try the following to work on an existing [bug] or [approved
 
 1. An [issue] is filed that
   - includes steps to reproduce the issue including client / server version,
-  - mentions `@kubernetes/sig-cli-bug`.
+  - mentions `@kubernetes/sig-cli-bugs`.
 2. A [PR] fixing the issue is implemented that
   - __includes unit and e2e tests__,
   - incorporates review feedback,
   - description includes `Closes #<Issue Number>`,
-  - description or comment @mentions `@kubernetes/sig-cli-pr-review`.
+  - description or comment @mentions `@kubernetes/sig-cli-pr-reviews`.
 3. Fix appears in the next Kubernetes release!
 
 ## Feature requests
 
 __New contributors:__ Please start by adopting an [existing issue].
 
-A feature request is an [issue] mentioning `@kubernetes/sig-cli-feature-request`.
+A feature request is an [issue] mentioning `@kubernetes/sig-cli-feature-requests`.
 
 To encourage readership, the issue description should _concisely_ (2-4 sentence) describe
 the problem that the feature addresses.
@@ -90,7 +90,7 @@ To minimize wasted work and improve communication across efforts,
 the user experience and software design must be agreed upon before
 any PRs are sent for code review.
 
-1. Identify a problem by filing an [issue] (mention `@kubernetes/sig-cli-feature-request`).
+1. Identify a problem by filing an [issue] (mention `@kubernetes/sig-cli-feature-requests`).
 2. Submit a [design proposal] and get it approved by a lead.
 3. Announce the proposal as an [agenda] item for the sig-cli [meeting].
   - Ensures awareness and feedback.
@@ -119,7 +119,7 @@ To make one,
   - Avoid _Work In Progress_ (WIP) PRs (send it only after
     you consider it complete).
   - For early feedback, use the email discussion [group].
-- Mention `@kubernetes/sig-cli-proposal` in the description.
+- Mention `@kubernetes/sig-cli-proposals` in the description.
 - Mention the related [feature request].
 
 Expect feedback from 2-3 different sig-cli community members.
@@ -158,7 +158,7 @@ Kubernetes development environment.
 
 Implementation PRs should
 - mention the issue of the associated design proposal,
-- mention `@kubernetes/sig-cli-pr-review`,
+- mention `@kubernetes/sig-cli-pr-reviews`,
 - __include tests__.
 
 Small features and flag changes require only unit/integration tests,
@@ -212,7 +212,7 @@ to wait until the next release.
 ### If your bug issue is stuck
 
 If an issue isn't getting any attention and is unresolved, mention
-`@kubernetes/sig-cli-bug`.
+`@kubernetes/sig-cli-bugs`.
 
 Highlight the severity and urgency of the issue.  For severe issues
 escalate by contacting sig [leads] and attending the [meeting].
@@ -220,7 +220,7 @@ escalate by contacting sig [leads] and attending the [meeting].
 ### If your feature request issue is stuck
 
 If an issue isn't getting any attention and is unresolved, mention
-`@kubernetes/sig-cli-feature-request`.
+`@kubernetes/sig-cli-feature-requests`.
 
 If a particular issue has a high impact for you or your business,
 make sure this is clear on the bug, and reach out to the sig leads
@@ -236,7 +236,7 @@ proposal_ is much less likely to be stuck than a dangling PR.
 However, if it happens do the following:
 
 - If your PR is stuck for a week or more because it has never gotten any
-  comments, mention `@kubernetes/sig-cli-pr-review` and ask for attention.
+  comments, mention `@kubernetes/sig-cli-pr-reviews` and ask for attention.
 - If your PR is stuck for a week or more _after_ it got comments, but
   the attention has died down.  Mention the reviewer and comment with
   [`PTAL`].
@@ -263,10 +263,10 @@ See the sig-cli [community page] for points of contact and meeting times:
 ## Use of @mentions
 
 - `@{any lead}` solicit opinion or advice from [leads].
-- `@kubernetes/sig-cli-bug` sig-cli centric bugs.
-- `@kubernetes/sig-cli-pr-review` triggers review of code fix PR.
-- `@kubernetes/sig-cli-feature-request` flags a feature request.
-- `@kubernetes/sig-cli-proposal` flags a design proposal.
+- `@kubernetes/sig-cli-bugs` sig-cli centric bugs.
+- `@kubernetes/sig-cli-pr-reviews` triggers review of code fix PR.
+- `@kubernetes/sig-cli-feature-requests` flags a feature request.
+- `@kubernetes/sig-cli-proposals` flags a design proposal.
 
 [Kubernetes Basics Tutorial]: https://kubernetes.io/docs/tutorials/kubernetes-basics
 [PR]: https://help.github.com/articles/creating-a-pull-request
