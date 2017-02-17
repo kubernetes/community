@@ -13,7 +13,7 @@ We focus on the development and standardization of the CLI [framework](https://g
 * Slack: <https://kubernetes.slack.com/messages/sig-cli> ([archive](http://kubernetes.slackarchive.io/sig-cli))
 * Google Group: <https://groups.google.com/forum/#!forum/kubernetes-sig-cli>
 
-## Organizers:
+## Leads
 
 **Note:** Escalate to these folks if you cannot get help from slack or the Google group
 
