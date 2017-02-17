@@ -315,7 +315,7 @@ $ go run hack/e2e.go -- -v --down
 
 #### Shortcuts for test developers
 
-* To speed up `e2e.go -up`, provision a single-node kubernetes cluster in a single e2e zone:
+* To speed up `--up`, provision a single-node kubernetes cluster in a single e2e zone:
 
   `NUM_NODES=1 E2E_ZONES="us-central1-f"`
 
@@ -329,7 +329,7 @@ $ go run hack/e2e.go -- -v --down
 
 * If you're hacking around with the federation control plane deployment itself,
   you can quickly re-deploy the federation control plane Kubernetes manifests without tearing any resources down.
-  To re-deploy the federation control plane after running `-up` for the first time:
+  To re-deploy the federation control plane after running `--up` for the first time:
 
   ```sh
   $ federation/cluster/federation-up.sh
