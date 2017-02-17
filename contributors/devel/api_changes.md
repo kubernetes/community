@@ -414,14 +414,10 @@ inefficient).
 
 The conversion code resides with each versioned API. There are two files:
 
-   - `pkg/api/<version>/conversion.go` containing manually written conversion
-functions
-   - `pkg/api/<version>/conversion_generated.go` containing auto-generated
-conversion functions
    - `pkg/apis/extensions/<version>/conversion.go` containing manually written
-conversion functions
-   - `pkg/apis/extensions/<version>/conversion_generated.go` containing
-auto-generated conversion functions
+     conversion functions
+   - `pkg/apis/extensions/<version>/zz_generated.conversion.go` containing
+     auto-generated conversion functions
 
 Since auto-generated conversion functions are using manually written ones,
 those manually written should be named with a defined convention, i.e. a
