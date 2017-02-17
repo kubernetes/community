@@ -52,8 +52,8 @@ New contributors can try the following to work on an existing [bug] or [approved
 - Send an email to the _kubernetes-sig-cli@googlegroups.com_ [group]
 
   > Subject: New sig-cli contributor _${yourName}_
-  >
-  > Body: Hello, my name is _${yourName}_.  I would like to get involved in
+
+  > Body: Hello, my name is _${yourName}_.  I'd like to get involved in
   > contributing to the Kubernetes project.  I have read all of the
   > user documentation listed on the community contributring page.
   > What should I do next to get started?
