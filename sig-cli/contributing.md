@@ -154,10 +154,17 @@ Then coding can begin.
 Contributors can begin implementing a feature before any of the above
 steps have been completed, but _should not send a PR until
 the [design proposal] has been merged_.
+<<<<<<< HEAD
 
 See the [development guide] for instructions on setting up the
 Kubernetes development environment.
 
+=======
+
+See the [development guide] for instructions on setting up the
+Kubernetes development environment.
+
+>>>>>>> 5cd7c55af68001a671747254c1e2b61e6a7343b6
 Implementation PRs should
 - mention the issue of the associated design proposal,
 - mention `@kubernetes/sig-cli-pr-reviews`,
