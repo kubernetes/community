@@ -3,14 +3,13 @@
 ## Abstract
 
 A proposal for implementing a new resource - Deployment - which will enable
-declarative config updates for Pods and ReplicationControllers.
-
-Users will be able to create a Deployment, which will spin up
-a ReplicationController to bring up the desired pods.
-Users can also target the Deployment at existing ReplicationControllers, in
-which case the new RC will replace the existing ones. The exact mechanics of
-replacement depends on the DeploymentStrategy chosen by the user.
-DeploymentStrategies are explained in detail in a later section.
+declarative config updates for ReplicaSets. Users will be able to create a
+Deployment, which will spin up a ReplicaSet to bring up the desired Pods.
+Users can also target the Deployment to an existing ReplicaSet either by
+rolling back an existing Deployment or creating a new Deployment that can
+adopt an existing ReplicaSet. The exact mechanics of replacement depends on
+the DeploymentStrategy chosen by the user. DeploymentStrategies are explained
+in detail in a later section.
 
 ## Implementation
 
@@ -33,10 +32,10 @@ type Deployment struct {
 type DeploymentSpec struct {
   // Number of desired pods. This is a pointer to distinguish between explicit
   // zero and not specified. Defaults to 1.
-  Replicas *int
+  Replicas *int32
 
-  // Label selector for pods. Existing ReplicationControllers whose pods are
-  // selected by this will be scaled down. New ReplicationControllers will be
+  // Label selector for pods. Existing ReplicaSets whose pods are
+  // selected by this will be scaled down. New ReplicaSets will be
   // created with this selector, with a unique label `pod-template-hash`.
   // If Selector is empty, it is defaulted to the labels present on the Pod template.
   Selector map[string]string
@@ -46,14 +45,17 @@ type DeploymentSpec struct {
 
   // The deployment strategy to use to replace existing pods with new ones.
   Strategy DeploymentStrategy
+
+  // Minimum number of seconds for which a newly created pod should be ready
+  // without any of its container crashing, for it to be considered available.
+  // Defaults to 0 (pod will be considered available as soon as it is ready)
+  MinReadySeconds int32
 }
 
 type DeploymentStrategy struct {
   // Type of deployment. Can be "Recreate" or "RollingUpdate".
   Type DeploymentStrategyType
 
-  // TODO: Update this to follow our convention for oneOf, whatever we decide it
-  // to be.
   // Rolling update config params. Present only if DeploymentStrategyType =
   // RollingUpdate.
   RollingUpdate *RollingUpdateDeploymentStrategy
@@ -65,7 +67,8 @@ const (
   // Kill all existing pods before creating new ones.
   RecreateDeploymentStrategyType DeploymentStrategyType = "Recreate"
 
-  // Replace the old RCs by new one using rolling update i.e gradually scale down the old RCs and scale up the new one.
+  // Replace the old ReplicaSets by new one using rolling update i.e gradually scale
+  // down the old ReplicaSets and scale up the new one.
   RollingUpdateDeploymentStrategyType DeploymentStrategyType = "RollingUpdate"
 )
 
@@ -94,20 +97,15 @@ type RollingUpdateDeploymentStrategy struct {
   // new RC can be scaled up further, ensuring that total number of pods running
   // at any time during the update is atmost 130% of original pods.
   MaxSurge IntOrString
-
-  // Minimum number of seconds for which a newly created pod should be ready
-  // without any of its container crashing, for it to be considered available.
-  // Defaults to 0 (pod will be considered available as soon as it is ready)
-  MinReadySeconds int
 }
 
 type DeploymentStatus struct {
   // Total number of ready pods targeted by this deployment (this
   // includes both the old and new pods).
-  Replicas int
+  Replicas int32
 
   // Total number of new ready pods with the desired template spec.
-  UpdatedReplicas int
+  UpdatedReplicas int32
 }
 
 ```
@@ -116,37 +114,40 @@ type DeploymentStatus struct {
 
 #### Deployment Controller
 
-The DeploymentController will make Deployments happen.
-It will watch Deployment objects in etcd.
-For each pending deployment, it will:
+The DeploymentController will process Deployments and crud ReplicaSets.
+For each creation or update for a Deployment, it will:
 
-1. Find all RCs whose label selector is a superset of DeploymentSpec.Selector.
-   - For now, we will do this in the client - list all RCs and then filter the
+1. Find all RSs (ReplicaSets) whose label selector is a superset of DeploymentSpec.Selector.
+   - For now, we will do this in the client - list all RSs and then filter the
      ones we want. Eventually, we want to expose this in the API.
-2. The new RC can have the same selector as the old RC and hence we add a unique
-   selector to all these RCs (and the corresponding label to their pods) to ensure
+2. The new RS can have the same selector as the old RS and hence we add a unique
+   selector to all these RSs (and the corresponding label to their pods) to ensure
    that they do not select the newly created pods (or old pods get selected by
-   new RC).
+   new RS).
    - The label key will be "pod-template-hash".
-   - The label value will be hash of the podTemplateSpec for that RC without
-     this label. This value will be unique for all RCs, since PodTemplateSpec should be unique.
-   - If the RCs and pods dont already have this label and selector:
-     - We will first add this to RC.PodTemplateSpec.Metadata.Labels for all RCs to
+   - The label value will be hash of the podTemplateSpec for that RS without
+     this label. This value will be unique for all RSs, unless there is a hash collision
+     (more on this later), since PodTemplateSpec should be unique.
+   - If the RSs and pods dont already have this label and selector:
+     - We will first add this to RS.PodTemplateSpec.Metadata.Labels for all RSs to
        ensure that all new pods that they create will have this label.
-     - Then we will add this label to their existing pods and then add this as a selector
-       to that RC.
-3. Find if there exists an RC for which value of "pod-template-hash" label
+     - Then we will add this label to their existing pods
+     - Eventually we flip the RS selector to use the new label.
+     This process potentially can be abstracted to a new endpoint for controllers [1].
+3. Find if there exists an RS for which value of "pod-template-hash" label
    is same as hash of DeploymentSpec.PodTemplateSpec. If it exists already, then
-   this is the RC that will be ramped up. If there is no such RC, then we create
+   this is the RS that will be ramped up. If there is no such RS, then we create
    a new one using DeploymentSpec and then add a "pod-template-hash" label
-   to it. RCSpec.replicas = 0 for a newly created RC.
-4. Scale up the new RC and scale down the olds ones as per the DeploymentStrategy.
-   - Raise an event if we detect an error, like new pods failing to come up.
-5. Go back to step 1 unless the new RC has been ramped up to desired replicas
-   and the old RCs have been ramped down to 0.
-6. Cleanup.
+   to it. The size of the new RS depends on the used DeploymentStrategyType
+4. Scale up the new RS and scale down the olds ones as per the DeploymentStrategy.
+   Raise events appropriately (both in case of failure or success).
+5. Go back to step 1 unless the new RS has been ramped up to desired replicas
+   and the old RSs have been ramped down to 0.
+6. Cleanup old RSs as per revisionHistoryLimit.
 
 DeploymentController is stateless so that it can recover in case it crashes during a deployment.
+
+[1] See https://github.com/kubernetes/kubernetes/issues/36897
 
 ### MinReadySeconds
 
@@ -163,52 +164,52 @@ LastTransitionTime to PodCondition.
 
 ### Updating
 
-Users can update an ongoing deployment before it is completed.
-In this case, the existing deployment will be stalled and the new one will
+Users can update an ongoing Deployment before it is completed.
+In this case, the existing rollout will be stalled and the new one will
 begin.
-For ex: consider the following case:
-- User creates a deployment to rolling-update 10 pods with image:v1 to
+For example, consider the following case:
+- User updates a Deployment to rolling-update 10 pods with image:v1 to
   pods with image:v2.
-- User then updates this deployment to create pods with image:v3,
-  when the image:v2 RC had been ramped up to 5 pods and the image:v1 RC
+- User then updates this Deployment to create pods with image:v3,
+  when the image:v2 RS had been ramped up to 5 pods and the image:v1 RS
   had been ramped down to 5 pods.
-- When Deployment Controller observes the new deployment, it will create
-  a new RC for creating pods with image:v3. It will then start ramping up this
-  new RC to 10 pods and will ramp down both the existing RCs to 0.
+- When Deployment Controller observes the new update, it will create
+  a new RS for creating pods with image:v3. It will then start ramping up this
+  new RS to 10 pods and will ramp down both the existing RSs to 0.
 
 ### Deleting
 
-Users can pause/cancel a deployment by deleting it before it is completed.
-Recreating the same deployment will resume it.
-For ex: consider the following case:
-- User creates a deployment to rolling-update 10 pods with image:v1 to
-  pods with image:v2.
-- User then deletes this deployment while the old and new RCs are at 5 replicas each.
-  User will end up with 2 RCs with 5 replicas each.
-User can then create the same deployment again in which case, DeploymentController will
-notice that the second RC exists already which it can ramp up while ramping down
+Users can pause/cancel a rollout by doing a non-cascading deletion of the Deployment
+before it is complete. Recreating the same Deployment will resume it.
+For example, consider the following case:
+- User creats a Deployment to perform a rolling-update for 10 pods from image:v1 to
+ image:v2.
+- User then deletes the Deployment while the old and new RSs are at 5 replicas each.
+  User will end up with 2 RSs with 5 replicas each.
+User can then re-create the same Deployment again in which case, DeploymentController will
+notice that the second RS exists already which it can ramp up while ramping down
 the first one.
 
 ### Rollback
 
-We want to allow the user to rollback a deployment. To rollback a
-completed (or ongoing) deployment, user can create (or update) a deployment with
-DeploymentSpec.PodTemplateSpec = oldRC.PodTemplateSpec.
+We want to allow the user to rollback a Deployment. To rollback a completed (or
+ongoing) Deployment, users can simply use `kubectl rollout undo` or update the
+Deployment directly by using its spec.rollbackTo.revision field and specify the
+revision they want to rollback to or no revision which means that the Deployment
+will be rolled back to its previous revision.
 
 ## Deployment Strategies
 
-DeploymentStrategy specifies how the new RC should replace existing RCs.
-To begin with, we will support 2 types of deployment:
-* Recreate: We kill all existing RCs and then bring up the new one. This results
-  in quick deployment but there is a downtime when old pods are down but
+DeploymentStrategy specifies how the new RS should replace existing RSs.
+To begin with, we will support 2 types of Deployment:
+* Recreate: We kill all existing RSs and then bring up the new one. This results
+  in quick Deployment but there is a downtime when old pods are down but
   the new ones have not come up yet.
-* Rolling update: We gradually scale down old RCs while scaling up the new one.
-  This results in a slower deployment, but there is no downtime. At all times
-  during the deployment, there are a few pods available (old or new). The number
-  of available pods and when is a pod considered "available" can be configured
-  using RollingUpdateDeploymentStrategy.
-
-In future, we want to support more deployment types.
+* Rolling update: We gradually scale down old RSs while scaling up the new one.
+  This results in a slower Deployment, but there can be no downtime. Depending on
+  the strategy parameters, it is possible to have at all times during the rollout
+  available pods (old or new). The number of available pods and when is a pod
+  considered "available" can be configured using RollingUpdateDeploymentStrategy.
 
 ## Future
 
