@@ -63,7 +63,7 @@ For the `kubeadm` flow, the command line might look like:
 kubeadm join --discovery-file=my-cluster.yaml
 ```
 
-After loading the ClusterInfo from a file, the client MAY look for updated information from the server by reading the `kube-public` `cluster-info` ConfigMap defined below.  However, when retrieving this ConfigMap the client MUST validate the certificate when talking to the API server.
+After loading the ClusterInfo from a file, the client MAY look for updated information from the server by reading the `kube-public` `cluster-info` ConfigMap defined below.  However, when retrieving this ConfigMap the client MUST validate the certificate chain when talking to the API server.
 
 **Note:** TLS bootstrap (which establishes a way for a client to authenticate itself to the server) is a separate issue and has its own set of methods.  This command line may have a TLS bootstrap token (or config file) on the command line also.  For this reason, even thought the `--discovery-file` argument is in the form of a `kubeconfig`, it MUST NOT contain client credentials as defined above.
 
@@ -81,7 +81,7 @@ This is really a shorthand for someone doing something like (assuming we support
 curl https://example.com/mycluster.json | kubeadm join --discovery-file=-
 ```
 
-After loading the ClusterInfo from a URL, the client MAY look for updated information from the server by reading the `kube-public` `cluster-info` ConfigMap defined below.  However, when retrieving this ConfigMap the client MUST validate the certificate when talking to the API server.
+After loading the ClusterInfo from a URL, the client MAY look for updated information from the server by reading the `kube-public` `cluster-info` ConfigMap defined below.  However, when retrieving this ConfigMap the client MUST validate the certificate chain when talking to the API server.
 
 **Note:** support for loading from stdin for `--discovery-file` may not be implemented immediately.
 
@@ -133,6 +133,8 @@ ae23dc.faddc87f5a5ab458
 The first part of the token is the `token-id`.  The second part is the `token-secret`.  By having a token identifier, we make it easier to specify *which* token you are talking about without sending the token itself in the clear.
 
 This new type of token is different from the current CSV token authenticator that is currently part of Kubernetes.  The CSV token authenticator requires an update on disk and a restart of the API server to update/delete tokens.  As we prove out this token mechanism we may wish to deprecate and eventually remove that mechanism.
+
+The `token-id` must be 6 characters and the `token-secret` must be 16 characters.  They must be lower case ASCII letters and numbers.  Specifically it must match the regular expression: `[a-z0-9]{6}\.[a-z0-9]{16}`.  There is no strong reasoning behind this beyond the history of how this has been implemented in alpha versions.
 
 #### NEW: Bootstrap Token Secrets
 
