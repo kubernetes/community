@@ -252,6 +252,8 @@ Once a user identified the maximum pod density for each of their nodes, they wil
 [This blog post](http://blog.kubernetes.io/2016/11/visualize-kubelet-performance-with-node-dashboard.html) explains how the dashboard has to be interpreted.
 Note that this dashboard provides usage metrics for docker runtime only as of now.
 
+Support for evictions based on Allocatable will be introduced in this phase.
+
 New flags introduced in this phase are as follows:
 
 1. `--enforce-node-allocatable=[pods][,][kube-reserved][,][system-reserved]`
@@ -273,29 +275,34 @@ New flags introduced in this phase are as follows:
    * This flag helps kubelet identify the control group managing all OS specific system daemons that fall under the `SystemReserved` reservation.
    * Example: `/system.slice`. Note that absolute paths are required and systemd naming scheme isn't supported.
 
+4. `--experimental-node-allocatable-ignore-eviction-threshold`
+   * This flag is provided as an `opt-out` option to avoid including Hard eviction thresholds in Node Allocatable which can impact existing clusters.
+   * The default value is `false`.
+
 #### Rollout details
 
 This phase is expected to improve Kubernetes node stability.
 However it requires users to specify non-default values for `--kube-reserved` & `--system-reserved` flags though.
 
-The rollout of this phase has been long due and hence we are attempting to include it in v1.6
+The rollout of this phase has been long due and hence we are attempting to include it in v1.6.
 
 Since `KubeReserved` and `SystemReserved` continue to have `""` as defaults, the node's `Allocatable` does not change automatically.
 Since this phase requires node drains (or pod restarts/terminations), it is considered disruptive to users.
 
-To rollback this phase, set `--enforce-node-allocatable` flag to `""`.
+To rollback this phase, set `--enforce-node-allocatable` flag to `""` and `--experimental-node-allocatable-ignore-eviction-threshold` to `true`.
+The former disables Node Allocatable enforcement on all pods and the latter avoids including hard eviction thresholds in Node Allocatable.
 
-This phase might cause the following symptoms to occur if `--kube-reserved` and/or `--system-reserved` flags are also specified.
+This rollout in v1.6 might cause the following symptoms:
 
-1. OOM kills of containers and/or evictions of pods. This can happen primarily to `Burstable` and `BestEffort` pods since they can no longer use up all the resource available on the node.
+1. If `--kube-reserved` and/or `--system-reserved` flags are also specified, OOM kills of containers and/or evictions of pods. This can happen primarily to `Burstable` and `BestEffort` pods since they can no longer use up all the resource available on the node.
+1. Total allocatable capadity in the cluster reduces resulting in pods staying `Pending` because Hard Eviction Thresholds are included in Node Allocatable.
 
 ##### Proposed Timeline
 
 ```text
 02/14/2017 - Discuss the rollout plan in sig-node meeting
 02/15/2017 - Flip the switch to enable pod level cgroups by default
-enable existing experimental behavior by default
-02/21/2017 - Assess impacts based on enablement
+02/21/2017 - Merge phase 2 implementation
 02/27/2017 - Kubernetes Feature complete (i.e. code freeze)
 03/01/2017 - Send an announcement to kubernetes-dev@ about this rollout along with rollback options and potential issues. Recommend users to set kube and system reserved.
 03/22/2017 - Kubernetes 1.6 release
@@ -307,7 +314,6 @@ enable existing experimental behavior by default
 
 In this phase, Kubelet will expose usage metrics for `KubeReserved`, `SystemReserved` and `Allocatable` top level cgroups via Summary metrics API.
 `Storage` will also be introduced as a reservable resource in this phase.
-Support for evictions based on Allocatable will be introduced in this phase.
 
 ## Known Issues
 
