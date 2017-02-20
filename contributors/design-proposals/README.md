@@ -34,7 +34,7 @@ physical hosts.
 A single Kubernetes cluster is not intended to span multiple availability zones.
 Instead, we recommend building a higher-level layer to replicate complete
 deployments of highly available applications across multiple zones (see
-[the multi-cluster doc](../admin/multi-cluster.md) and [cluster federation proposal](../proposals/federation.md)
+[the multi-cluster doc](https://kubernetes.io/docs/admin/multi-cluster/) and [cluster federation proposal](federation.md)
 for more details).
 
 Finally, Kubernetes aspires to be an extensible, pluggable, building-block OSS
