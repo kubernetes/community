@@ -30,6 +30,7 @@ implementation-oriented (think control knobs).
 given the desired state and the current/observed state, regardless of how many
 intermediate state updates may have been missed. Edge-triggered behavior must be
 just an optimization.
+  * There should be a CAP-like theorem regarding the tradeoffs between driving control loops via polling or events about simultaneously achieving high performance, reliability, and simplicity -- pick any 2.
 * Assume an open world: continually verify assumptions and gracefully adapt to
 external events and/or actors. Example: we allow users to kill pods under
 control of a replication controller; it just replaces them.
