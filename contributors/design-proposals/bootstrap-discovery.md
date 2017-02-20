@@ -148,6 +148,8 @@ The following keys are on the secret data:
 * **usage-bootstrap-authentication**. Set to true to indicate that this token should be used for authenticating to the API server.  If this is missing from the token secret or set to any other value, the usage is not allowed.  The bootstrap token authenticagtor will use this token to auth as a user that is `system:bootstrap:<token-id>` in the group `system:bootstrappers`.
 * **description**. An optional free form description field for denoting the purpose of the token.  If users have especially complex token management neads, they are encouraged to use labels and annotations instead of packing machined readable data in to this field.
 
+**Future**: At some point in the future we may add the ability to specify a set of groups that this token part of during authentication.  This will allow users to segment off which tokens are allowed to bootstrap which nodes.  However, we will restrict these groups under `system:bootstrappers:*` to discourage usage outside of bootstrapping.
+
 These secrets MUST be named `bootstrap-token-<token-id>`.  If a token doesn't adhere to this naming scheme it MUST be ignored.  The secret MUST also be ignored if the `token-id` key in the secret doesn't match the name of the secret.
 
 #### Quick Primer on JWS
@@ -224,7 +226,9 @@ After some back and forth, we decided to keep the separator in the token between
 
 See https://github.com/kubernetes/client-go/issues/114 for details on creating a shared package with common constants for this scheme.
 
-This proposal assumes RBAC to lock things down in a couple of ways.  First, it will open up `cluster-info` ConfigMap in `kube-public` so that it is readable by unauthenticated users.  Next, it will make it so that the identities in the `system:bootstrappers` group can only be used to submit certs API to submit CSRs.  After a TLS certificate is created, that identity should be used instead of the bootstrap token.
+This proposal assumes RBAC to lock things down in a couple of ways.  First, it will open up `cluster-info` ConfigMap in `kube-public` so that it is readable by unauthenticated users.  Next, it will make it so that the identities in the `system:bootstrappers` group can only be used with the certs API to submit CSRs.  After a TLS certificate is created, that identity should be used instead of the bootstrap token.
+
+The binding of `system:bootstrappers` to the ability to submit certs is not part of the default RBAC configuration.  Tools like `kubeadm` will have to explicitly create this binding.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/super-simple-discovery-api.md?pixel)]()
