@@ -146,8 +146,9 @@ The following keys are on the secret data:
 * **expiration**. After this time the token should be automatically deleted.  This is encoded as an absolute UTC time using RFC3339.
 * **usage-bootstrap-signing**. Set to `true` to indicate this token should be used for signing bootstrap configs.  If this is missing from the token secret or set to any other value, the usage is not allowed.
 * **usage-bootstrap-authentication**. Set to true to indicate that this token should be used for authenticating to the API server.  If this is missing from the token secret or set to any other value, the usage is not allowed.  The bootstrap token authenticagtor will use this token to auth as a user that is `system:bootstrap:<token-id>` in the group `system:bootstrappers`.
+* **description**. An optional free form description field for denoting the purpose of the token.  If users have especially complex token management neads, they are encouraged to use labels and annotations instead of packing machined readable data in to this field.
 
-These secrets can be named anything but it is suggested that they be named `bootstrap-token-<token-id>`.
+These secrets MUST be named `bootstrap-token-<token-id>`.  If a token doesn't adhere to this naming scheme it MUST be ignored.  The secret MUST also be ignored if the `token-id` key in the secret doesn't match the name of the secret.
 
 #### Quick Primer on JWS
 
@@ -207,10 +208,11 @@ Only one of `--discovery-url`, `--discovery-file` or `--discovery-token` can be 
     * If the `signing` usage is specified, the token will be used (by the BootstrapSigner controller in the KCM) to JWS-sign the ConfigMap and can then be used for discovery.
     * If the `authentication` usage is specified, the token can be used to authenticate for TLS bootstrap.
   * `--ttl` The TTL for this token.  This sets the expiration of the token as a duration from the current time.  This is converted into an absolute UTC time as it is written into the token secret.
+  * `--description` Sets the free form description field for the token.
 * `kubeadm token delete <token-id>|<token-id>.<token-secret>`
   * Users can either just specify the id or the full token.  This will delete the token if it exists.
 * `kubeadm token list`
-  * List tokens in a table form listing out the `token-id.token-secret`, the TTL, the absolute expiration time and the usages.
+  * List tokens in a table form listing out the `token-id.token-secret`, the TTL, the absolute expiration time, the usages, and the description.
   * **Question** Support a `--json` or `-o json` way to make this info programmatic? We don't want to recreate `kubectl` here and these aren't plain API objects so we can't reuse that plumbing easily.
 * `kubeadm token generate` This currently exists but is documented here for completeness.  This pure client side method just generated a random token in the correct form.
 
