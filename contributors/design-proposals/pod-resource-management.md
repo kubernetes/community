@@ -1,114 +1,480 @@
-# Pod level resource management in Kubelet
+# Kubelet pod level resource management
 
-**Author**: Buddha Prakash (@dubstack), Vishnu Kannan (@vishh)
+**Authors**:
 
-**Last Updated**: 06/23/2016
+1. Buddha Prakash (@dubstack)
+1. Vishnu Kannan (@vishh)
+1. Derek Carr (@derekwaynecarr)
 
-**Status**: Draft Proposal (WIP)
+**Last Updated**: 02/21/2017
 
-This document proposes a design for introducing pod level resource accounting to Kubernetes, and outlines the implementation and rollout plan.
+**Status**: Implementation planned for Kubernetes 1.6
 
-<!-- BEGIN MUNGE: GENERATED_TOC -->
-
-- [Pod level resource management in Kubelet](#pod-level-resource-management-in-kubelet)
-  - [Introduction](#introduction)
-  - [Non Goals](#non-goals)
-  - [Motivations](#motivations)
-  - [Design](#design)
-    - [Proposed cgroup hierarchy:](#proposed-cgroup-hierarchy)
-      - [QoS classes](#qos-classes)
-      - [Guaranteed](#guaranteed)
-      - [Burstable](#burstable)
-      - [Best Effort](#best-effort)
-    - [With Systemd](#with-systemd)
-    - [Hierarchy Outline](#hierarchy-outline)
-      - [QoS Policy Design Decisions](#qos-policy-design-decisions)
-  - [Implementation Plan](#implementation-plan)
-      - [Top level Cgroups for QoS tiers](#top-level-cgroups-for-qos-tiers)
-      - [Pod level Cgroup creation and deletion (Docker runtime)](#pod-level-cgroup-creation-and-deletion-docker-runtime)
-      - [Container level cgroups](#container-level-cgroups)
-      - [Rkt runtime](#rkt-runtime)
-      - [Add Pod level metrics to Kubelet's metrics provider](#add-pod-level-metrics-to-kubelets-metrics-provider)
-  - [Rollout Plan](#rollout-plan)
-  - [Implementation Status](#implementation-status)
-
-<!-- END MUNGE: GENERATED_TOC -->
+This document proposes a design for introducing pod level resource accounting
+to Kubernetes. It outlines the implementation and associated rollout plan.
 
 ## Introduction
 
-As of now [Quality of Service(QoS)](../../docs/design/resource-qos.md) is not enforced at a pod level. Excepting pod evictions, all the other QoS features are not applicable at the pod level.
-To better support QoS, there is a need to add support for pod level resource accounting in Kubernetes.
+Kubernetes supports container level isolation by allowing users
+to specify [compute resource requirements](resources.md) via requests and
+limits on individual containers.  The `kubelet` delegates creation of a
+cgroup sandbox for each container to its associated container runtime.
 
-We propose to have a unified cgroup hierarchy with pod level cgroups for better resource management. We will have a cgroup hierarchy with top level cgroups for the three QoS classes Guaranteed, Burstable and BestEffort. Pods (and their containers) belonging to a QoS class will be grouped under these top level QoS cgroups. And all containers in a pod are nested under the pod cgroup.
+Each pod has an associated [Quality of Service (QoS)](resource-qos.md)
+class based on the aggregate resource requirements made by individual
+containers in the pod.  The `kubelet` has the ability to
+[evict pods](kubelet-eviction.md) when compute resources are scarce. It evicts
+pods with the lowest QoS class in order to attempt to maintain stability of the
+node.
 
-The proposed cgroup hierarchy would allow for more efficient resource management and lead to improvements in node reliability.
-This would also allow for significant latency optimizations in terms of pod eviction on nodes with the use of pod level resource usage metrics.
-This document provides a basic outline of how we plan to implement and rollout this feature.
+The `kubelet` has no associated cgroup sandbox for individual QoS classes or
+individual pods.  This inhibits the ability to perform proper resource
+accounting on the node, and introduces a number of code complexities when
+trying to build features around QoS.
 
+This design introduces a new cgroup hierarchy to enable the following:
 
-## Non Goals
+1. Enforce QoS classes on the node. 
+1. Simplify resource accounting at the pod level.
+1. Allow containers in a pod to share slack resources within its pod cgroup.
+For example, a Burstable pod has two containers, where one container makes a
+CPU request and the other container does not.  The latter container should
+get CPU time not used by the former container.  Today, it must compete for
+scare resources at the node level across all BestEffort containers.
+1. Ability to charge per container overhead to the pod instead of the node.
+This overhead is container runtime specific.  For example, `docker` has
+an associated `containerd-shim` process that is created for each container
+which should be charged to the pod.
+1. Ability to charge any memory usage of memory-backed volumes to the pod when
+an individual container exits instead of the node.
 
-- Pod level disk accounting will not be tackled in this proposal.
-- Pod level resource specification in the Kubernetes API will not be tackled in this proposal.
+## Enabling QoS and Pod level cgroups
 
-## Motivations
+To enable the new cgroup hierarchy, the operator must enable the
+`--cgroups-per-qos` flag.  Once enabled, the `kubelet` will start managing
+inner nodes of the described cgroup hierarchy.
 
-Kubernetes currently supports container level isolation only and lets users specify resource requests/limits on the containers [Compute Resources](../../docs/design/resources.md). The `kubelet` creates a cgroup sandbox (via it's container runtime) for each container.
+The `--cgroup-root` flag if not specified when the `--cgroups-per-qos` flag
+is enabled will default to `/`.  The `kubelet` will parent any cgroups
+it creates below that specified value per the
+[node allocatable](node-allocatable.md) design.
 
+## Configuring a cgroup driver
 
-There are a few shortcomings to the current model.
- - Existing QoS support does not apply to pods as a whole. On-going work to support pod level eviction using QoS requires all containers in a pod to belong to the same class. By having pod level cgroups, it is easy to track pod level usage and make eviction decisions.
- - Infrastructure overhead per pod is currently charged to the node. The overhead of setting up and managing the pod sandbox is currently accounted to the node. If the pod sandbox is a bit expensive, like in the case of hyper, having pod level accounting becomes critical.
- - For the docker runtime we have a containerd-shim which is a small library that sits in front of a runtime implementation allowing it to be reparented to init, handle reattach from the caller etc. With pod level cgroups containerd-shim can be charged to the pod instead of the machine.
- - If a container exits, all its anonymous pages (tmpfs) gets accounted to the machine (root). With pod level cgroups, that usage can also be attributed to the pod.
- - Let containers share resources - with pod level limits, a pod with a Burstable container and a BestEffort container is classified as Burstable pod. The BestEffort container is able to consume slack resources not used by the Burstable container, and still be capped by the overall pod level limits.
+The `kubelet` will support manipulation of the cgroup hierarchy on
+the host using a cgroup driver. The driver is configured via the
+`--cgroup-driver` flag.
 
-## Design
+The supported values are the following:
 
-High level requirements for the design are as follows:
- - Do not break existing users. Ideally, there should be no changes to the Kubernetes API semantics.
- - Support multiple cgroup managers - systemd, cgroupfs, etc.
+* `cgroupfs` is the default driver that performs direct manipulation of the
+cgroup filesystem on the host in order to manage cgroup sandboxes.
+* `systemd` is an alternative driver that manages cgroup sandboxes using
+transient slices for resources that are supported by that init system.
 
-How we intend to achieve these high level goals is covered in greater detail in the Implementation Plan.
+Depending on the configuration of the associated container runtime,
+operators may have to choose a particular cgroup driver to ensure
+proper system behavior.  For example, if operators use the `systemd`
+cgroup driver provided by the `docker` runtime, the `kubelet` must
+be configured to use the `systemd` cgroup driver.
 
-We use the following denotations in the sections below:
+Implementation of either driver will delegate to the libcontainer library
+in opencontainers/runc.
 
-For the three QoS classes
-`G⇒ Guaranteed QoS, Bu⇒ Burstable QoS, BE⇒ BestEffort QoS`
+### Conversion of cgroupfs to systemd naming conventions
 
-For the value specified for the --qos-memory-overcommitment flag
-`qmo⇒ qos-memory-overcommitment`
+Internally, the `kubelet` maintains both an abstract and a concrete name
+for its associated cgroup sandboxes.  The abstract name follows the traditional
+`cgroupfs` style syntax.  The concrete name is the name for how the cgroup
+sandbox actually appears on the host filesystem after any conversions performed
+based on the cgroup driver.
 
-Currently the Kubelet highly prioritizes resource utilization and thus allows BE pods to use as much resources as they want. And in case of OOM the BE pods are first to be killed. We follow this policy as G pods often don't use the amount of resource request they specify. By overcommiting the node the BE pods are able to utilize these left over resources. And in case of OOM the BE pods are evicted by the eviciton manager. But there is some latency involved in the pod eviction process which can be a cause of concern in latency-sensitive servers. On such servers we would want to avoid OOM conditions on the node. Pod level cgroups allow us to restrict the amount of available resources to the BE pods. So reserving the requested resources for the G and Bu pods would allow us to avoid invoking the OOM killer.
+If the `systemd` cgroup driver is used, the `kubelet` converts the `cgroupfs`
+style syntax into transient slices, and as a result, it must follow `systemd`
+conventions for path encoding.
 
+For example, the cgroup name `/Burstable/pod_123-456` is translated to a
+transient slice with the name `Burstable-pod_123_456.slice`.  Given how
+systemd manages the cgroup filesystem, the concrete name for the cgroup
+sandbox becomes `/Burstable.slice/Burstable-pod_123_456.slice`.
 
-We add a flag `qos-memory-overcommitment` to kubelet which would allow users to configure the percentage of memory overcommitment on the node. We have the default as 100, so by default we allow complete overcommitment on the node and let the BE pod use as much memory as it wants, and not reserve any resources for the G and Bu pods. As expected if there is an OOM in such a case we first kill the BE pods before the G and Bu pods.
-On the other hand if a user wants to ensure very predictable tail latency for latency-sensitive servers he would need to set qos-memory-overcommitment to a really low value(preferrably 0). In this case memory resources would be reserved for the G and Bu pods and BE pods would be able to use only the left over memory resource.
+## Integration with container runtimes
 
-Examples in the next section.
+The `kubelet` when integrating with container runtimes always provides the
+concrete cgroup filesystem name for the pod sandbox.
 
-### Proposed cgroup hierarchy:
+## Conversion of CPU millicores to cgroup configuration
 
-For the initial implementation we will only support limits for cpu and memory resources.
+Kubernetes measures CPU requests and limits in millicores.
 
-#### QoS classes
+The following formula is used to convert CPU in millicores to cgroup values:
 
-A pod can belong to one of the following 3 QoS classes: Guaranteed, Burstable, and BestEffort, in decreasing order of priority.
+* cpu.shares = (cpu in millicores * 1024) / 1000
+* cpu.cfs_period_us = 100000 (i.e. 100ms)
+* cpu.cfs_quota_us = quota = (cpu in millicores * 100000) / 1000
 
-#### Guaranteed
+## Pod level cgroups
 
-`G` pods will be placed at the `$Root` cgroup by default. `$Root` is the system root i.e. "/" by default and if `--cgroup-root` flag is used then we use the specified cgroup-root as the `$Root`. To ensure Kubelet's idempotent behaviour we follow a pod cgroup naming format which is opaque and deterministic. Say we have a pod with UID: `5f9b19c9-3a30-11e6-8eea-28d2444e470d` the pod cgroup PodUID would be named: `pod-5f9b19c93a3011e6-8eea28d2444e470d`.
+The `kubelet` will create a cgroup sandbox for each pod.
 
+The naming convention for the cgroup sandbox is `pod<pod.UID>`.  It enables
+the `kubelet` to associate a particular cgroup on the host filesytem
+with a corresponding pod without managing any additional state.  This is useful
+when the `kubelet` restarts and needs to verify the cgroup filesystem.
 
-__Note__: The cgroup-root flag would allow the user to configure the root of the QoS cgroup hierarchy. Hence cgroup-root would be redefined as the root of QoS cgroup hierarchy and not containers.
+A pod can belong to one of the following 3 QoS classes in decreasing priority:
+
+1. Guaranteed
+1. Burstable
+1. BestEffort
+
+The resource configuration for the cgroup sandbox is dependent upon the
+pod's associated QoS class.
+
+### Guaranteed QoS
+
+A pod in this QoS class has its cgroup sandbox configured as follows:
 
 ```
-/PodUID/cpu.quota = cpu limit of Pod  
-/PodUID/cpu.shares = cpu request of Pod  
-/PodUID/memory.limit_in_bytes = memory limit of Pod
+pod<UID>/cpu.shares = sum(pod.spec.containers.resources.requests[cpu])
+pod<UID>/cpu.cfs_quota_us = sum(pod.spec.containers.resources.limits[cpu])
+pod<UID>/memory.limit_in_bytes = sum(pod.spec.containers.resources.limits[memory])
 ```
 
-Example:
+### Burstable QoS
+
+A pod in this QoS class has its cgroup sandbox configured as follows:
+
+```
+pod<UID>/cpu.shares = sum(pod.spec.containers.resources.requests[cpu])
+```
+
+If all containers in the pod specify a cpu limit:
+
+```
+pod<UID>/cpu.cfs_quota_us = sum(pod.spec.containers.resources.limits[cpu])
+```
+
+Finally, if all containers in the pod specify a memory limit:
+
+```
+pod<UID>/memory.limit_in_bytes = sum(pod.spec.containers.resources.limits[memory])
+```
+
+### BestEffort QoS
+
+A pod in this QoS class has its cgroup sandbox configured as follows:
+
+```
+pod<UID>/cpu.shares = 2
+```
+
+## QoS level cgroups
+
+The `kubelet` defines a `--cgroup-root` flag that is used to specify the `ROOT`
+node in the cgroup hierarchy below which the `kubelet` should manange individual
+cgroup sandboxes.  It is strongly recommended that users keep the default
+value for `--cgroup-root` as `/` in order to avoid deep cgroup hierarchies.  The
+`kubelet` creates a cgroup sandbox under the specified path `ROOT/kubepods` per
+[node allocatable](node-allocatable.md) to parent pods.  For simplicity, we will
+refer to `ROOT/kubepods` as `ROOT` in this document.
+
+The `ROOT` cgroup sandbox is used to parent all pod sandboxes that are in
+the Guaranteed QoS class.  By definition, pods in this class have cpu and 
+memory limits specified that are equivalent to their requests so the pod 
+level cgroup sandbox confines resource consumption without the need of an
+additional cgroup sandbox for the tier.
+
+When the `kubelet` launches, it will ensure a `Burstable` cgroup sandbox
+and a `BestEffort` cgroup sandbox exist as children of `ROOT`.  These cgroup
+sandboxes will parent pod level cgroups in those associated QoS classes.
+
+The `kubelet` highly prioritizes resource utilization, and thus
+allows BestEffort and Burstable pods to potentially consume as many
+resources that are presently available on the node.
+
+For compressible resources like CPU, the `kubelet` attempts to mitigate
+the issue via its use of CPU CFS shares.  CPU time is proportioned
+dynamically when there is contention using CFS shares that attempts to
+ensure minimum requests are satisfied.
+
+For incompressible resources, this prioritization scheme can inhibit the
+ability of a pod to have its requests satisfied.  For example, a Guaranteed
+pods memory request may not be satisfied if there are active BestEffort
+pods consuming all available memory.
+
+As a node operator, I may want to satisfy the following use cases:
+
+1. I want to prioritize access to compressible resources for my system
+and/or kubernetes daemons over end-user pods.
+1. I want to prioritize access to compressible resources for my Guaranteed
+workloads over my Burstable workloads.
+1. I want to prioritize access to compressible resources for my Burstable
+workloads over my BestEffort workloads.
+
+Almost all operators are encouraged to support the first use case by enforcing
+[node allocatable](node-allocatable.md) via `--system-reserved` and `--kube-reserved`
+flags.  It is understood that not all operators may feel the need to extend
+that level of reservation to Guaranteed and Burstable workloads if they choose
+to prioritize utilization.  That said, many users in the community deploy
+cluster services as Guaranteed or Burstable workloads via a `DaemonSet` and would like a similar
+resource reservation model as is provided via [node allocatable](node-allocatable)
+for system and kubernetes daemons.
+
+For operators that have this concern, the `kubelet` with opt-in configuration
+will attempt to limit the abilty for a pod in a lower QoS tier to burst utilization
+of a compressible resource that was requested by a pod in a higher QoS tier.
+
+The `kubelet` will support a flag `experimental-qos-reserved` that
+takes a set of percentages per incompressible resource that controls how the
+QoS cgroup sandbox attempts to reserve resources for its tier.  It attempts
+to reserve requested resources to exclude pods from lower OoS classes from
+using resources requested by higher QoS classes. The flag will accept values
+in a range from 0-100%, where a value of `0%` instructs the `kubelet` to attempt
+no reservation, and a value of `100%` will instruct the `kubelet` to attempt to
+reserve the sum of requested resource across all pods on the node.  The `kubelet`
+initially will only support `memory`.  The default value per incompressible
+resource if not specified is for no reservation to occur for the incompressible
+resource.
+
+Prior to starting a pod, the `kubelet` will attempt to update the
+QoS cgroup sandbox associated with the lower QoS tier(s) in order
+to prevent consumption of the requested resource by the new pod.
+For example, prior to starting a Guaranteed pod, the Burstable
+and BestEffort QoS cgroup sandboxes are adjusted.  For resource
+specific details, and concerns, see the sections per resource that
+follow.
+
+The `kubelet` will allocate resources to the QoS level cgroup
+dynamically in response to the following events:
+
+1. kubelet startup/recovery
+1. prior to creation of the pod level cgroup
+1. after deletion of the pod level cgroup
+1. at periodic intervals to reach `experimental-qos-reserved`
+heurisitc that converge to a desired state.
+
+All writes to the QoS level cgroup sandboxes are protected via a
+common lock in the kubelet to ensure we do not have multiple concurrent
+writers to this tier in the hierarchy.
+
+### QoS level CPU allocation
+
+The `BestEffort` cgroup sandbox is statically configured as follows:
+
+```
+ROOT/besteffort/cpu.shares = 2
+```
+
+This ensures that allocation of CPU time to pods in this QoS class
+is given the lowest priority.
+
+The `Burstable` cgroup sandbox CPU share allocation is dynamic based
+on the set of pods currently scheduled to the node.  
+
+```
+ROOT/burstable/cpu.shares = max(sum(Burstable pods cpu requests, 2)
+```
+
+The Burstable cgroup sandbox is updated dynamically in the exit
+points described in the previous section.  Given the compressible
+nature of CPU, and the fact that cpu.shares are evaluated via relative
+priority, the risk of an update being incorrect is minimized as the `kubelet`
+converges to a desired state.  Failure to set `cpu.shares` at the QoS level
+cgroup would result in `500m` of cpu for a Guaranteed pod to have different
+meaning than `500m` of cpu for a Burstable pod in the current hierarchy.  This
+is because the default `cpu.shares` value if unspecified is `1024` and `cpu.shares`
+are evaluated relative to sibling nodes in the cgroup hierarchy.  As a consequence,
+all of the Burstable pods under contention would have a relative priority of 1 cpu
+unless updated dynamically to capture the sum of requests.  For this reason,
+we will always set `cpu.shares` for the QoS level sandboxes
+by default as part of roll-out for this feature.
+
+### QoS level memory allocation
+
+By default, no memory limits are applied to the BestEffort
+and Burstable QoS level cgroups unless a `--qos-reserve-requests` value
+is specified for memory.
+
+The heuristic that is applied is as follows for each QoS level sandbox:
+
+```
+ROOT/burstable/memory.limit_in_bytes = 
+    Node.Allocatable - {(summation of memory requests of `Guaranteed` pods)*(reservePercent / 100)}
+ROOT/besteffort/memory.limit_in_bytes = 
+    Node.Allocatable - {(summation of memory requests of all `Guaranteed` and `Burstable` pods)*(reservePercent / 100)}
+```
+
+A value of `--experimental-qos-reserved=memory=100%` will cause the
+`kubelet` to adjust the Burstable and BestEffort cgroups from consuming memory
+that was requested by a higher QoS class. This increases the risk
+of inducing OOM on BestEffort and Burstable workloads in favor of increasing
+memory resource guarantees for Guaranteed and Burstable workloads.  A value of
+`--experimental-qos-reserved=memory=0%` will allow a Burstable
+and BestEffort QoS sandbox to consume up to the full node allocatable amount if
+available, but increases the risk that a Guaranteed workload will not have
+access to requested memory.
+
+Since memory is an incompressible resource, it is possible that a QoS
+level cgroup sandbox may not be able to reduce memory usage below the
+value specified in the heuristic described earlier during pod admission
+and pod termination.
+
+As a result, the `kubelet` runs a periodic thread to attempt to converge
+to this desired state from the above heuristic.  If unreclaimable memory
+usage has exceeded the desired limit for the sandbox, the `kubelet` will
+attempt to set the effective limit near the current usage to put pressure
+on the QoS cgroup sandbox and prevent further consumption.
+
+The `kubelet` will not wait for the QoS cgroup memory limit to converge
+to the desired state prior to execution of the pod, but it will always
+attempt to cap the existing usage of QoS cgroup sandboxes in lower tiers.
+This does mean that the new pod could induce an OOM event at the `ROOT`
+cgroup, but ideally per our QoS design, the oom_killer targets a pod
+in a lower QoS class, or eviction evicts a lower QoS pod.  The periodic
+task is then able to converge to the steady desired state so any future
+pods in a lower QoS class do not impact the pod at a higher QoS class.
+
+Adjusting the memory limits for the QoS level cgroup sandbox carries
+greater risk given the incompressible nature of memory.  As a result,
+we are not enabling this function by default, but would like operators
+that want to value resource priority over resource utilization to gather
+real-world feedback on its utility.
+
+As a best practice, oeprators that want to provide a similar resource
+reservation model for Guaranteed pods as we offer via enforcement of
+node allocatable are encouraged to schedule their Guaranteed pods first
+as it will ensure the Burstable and BestEffort tiers have had their QoS
+memory limits appropriately adjusted before taking unbounded workload on
+node.
+
+## Memory backed volumes
+
+The pod level cgroup ensures that any writes to a memory backed volume
+are correctly charged to the pod sandbox even when a container process
+in the pod restarts.
+
+All memory backed volumes are removed when a pod reaches a terminal state.
+
+The `kubelet` verifies that a pod's cgroup is deleted from the
+host before deleting a pod from the API server as part of the graceful
+deletion process.
+
+## Log basic cgroup management
+
+The `kubelet` will log and collect metrics associated with cgroup manipulation.
+
+It will log metrics for cgroup create, update, and delete actions.
+
+## Rollout Plan
+
+### Kubernetes 1.5
+
+The support for the described cgroup hierarchy is experimental.
+
+### Kubernetes 1.6+
+
+The feature will be enabled by default.
+
+As a result, we will recommend that users drain their nodes prior
+to upgrade of the `kubelet`.  If users do not drain their nodes, the
+`kubelet` will act as follows:
+
+1. If a pod has a `RestartPolicy=Never`, then mark the pod
+as `Failed` and terminate its workload.
+1. All other pods that are not parented by a pod-level cgroup
+will be restarted.
+
+The `cgroups-per-qos` flag will be enabled by default, but user's
+may choose to opt-out.  We may deprecate this opt-out mechanism
+in Kubernetes 1.7, and remove the flag entirely in Kubernetes 1.8.
+
+#### Risk Assessment
+
+The impact of the unified cgroup hierarchy is restricted to the `kubelet`.
+
+Potential issues:
+
+1. Bugs
+1. Performance and/or reliability issues for `BestEffort` pods.  This is
+most likely to appear on E2E test runs that mix/match pods across different
+QoS tiers.
+1. User misconfiguration; most notably the `--cgroup-driver` needs to match
+the expected behavior of the container runtime.  We provide clear errors
+in `kubelet` logs for container runtimes that we include in tree.
+
+#### Proposed Timeline
+
+* 01/31/2017 - Discuss the rollout plan in sig-node meeting
+* 02/14/2017 - Flip the switch to enable pod level cgroups by default
+ * enable existing experimental behavior by default
+* 02/21/2017 - Assess impacts based on enablement
+* 02/27/2017 - Kubernetes Feature complete (i.e. code freeze)
+ * opt-in behavior surrounding the feature (`experimental-qos-reserved` support) completed.
+* 03/01/2017 - Send an announcement to kubernetes-dev@ about the rollout and potential impact
+* 03/22/2017 - Kubernetes 1.6 release
+* TBD (1.7?) - Eliminate the option to not use the new cgroup hierarchy.
+
+This is based on the tentative timeline of kubernetes 1.6 release. Need to work out the timeline with the 1.6 release czar.
+
+## Future enhancements
+
+### Add Pod level metrics to Kubelet's metrics provider
+
+Update the `kubelet` metrics provider to include pod level metrics.
+
+### Evaluate supporting evictions local to QoS cgroup sandboxes
+
+Rather than induce eviction at `/` or `/kubepods`, evaluate supporting
+eviction decisions for the unbounded QoS tiers (Burstable, BestEffort).
+
+## Examples
+
+The following describes the cgroup representation of a node with pods
+across multiple QoS classes.
+
+### Cgroup Hierachy
+
+The following identifies a sample hierarchy based on the described design.
+
+It assumes the flag `--experimental-qos-reserved` is not enabled for clarity.
+
+```
+$ROOT
+  |
+  +- Pod1
+  |   |
+  |   +- Container1
+  |   +- Container2
+  |   ...
+  +- Pod2
+  |   +- Container3
+  |   ...
+  +- ...
+  |
+  +- burstable
+  |   |
+  |   +- Pod3
+  |   |   |
+  |   |   +- Container4
+  |   |   ...
+  |   +- Pod4
+  |   |   +- Container5
+  |   |   ...
+  |   +- ...
+  |
+  +- besteffort
+  |   |
+  |   +- Pod5
+  |   |   |
+  |   |   +- Container6
+  |   |   +- Container7
+  |   |   ...
+  |   +- ...
+```
+
+### Guaranteed Pods
+
 We have two pods Pod1 and Pod2 having Pod Spec given below
 
 ```yaml
@@ -142,32 +508,19 @@ spec:
                     memory: 2Gii
 ```
 
-Pod1 and Pod2 are both classified as `G` and are nested under the `Root` cgroup.
+Pod1 and Pod2 are both classified as Guaranteed and are nested under the `ROOT` cgroup.
 
 ```
-/Pod1/cpu.quota = 110m  
-/Pod1/cpu.shares = 110m  
-/Pod2/cpu.quota = 20m  
-/Pod2/cpu.shares = 20m  
-/Pod1/memory.limit_in_bytes = 3Gi  
-/Pod2/memory.limit_in_bytes = 2Gi
+/ROOT/Pod1/cpu.quota = 110m  
+/ROOT/Pod1/cpu.shares = 110m  
+/ROOT/Pod1/memory.limit_in_bytes = 3Gi  
+/ROOT/Pod2/cpu.quota = 20m  
+/ROOT/Pod2/cpu.shares = 20m  
+/ROOT/Pod2/memory.limit_in_bytes = 2Gi
 ```
 
-#### Burstable
+#### Burstable Pods
 
-We have the following resource parameters for the `Bu` cgroup.
-
-```
-/Bu/cpu.shares = summation of cpu requests of all Bu pods  
-/Bu/PodUID/cpu.quota = Pod Cpu Limit  
-/Bu/PodUID/cpu.shares = Pod Cpu Request   
-/Bu/memory.limit_in_bytes = Allocatable - {(summation of memory requests/limits of `G` pods)*(1-qom/100)}
-/Bu/PodUID/memory.limit_in_bytes = Pod memory limit
-```
-
-`Note: For the `Bu` QoS when limits are not specified for any one of the containers, the Pod limit defaults to the node resource allocatable quantity.`
-
-Example:
 We have two pods Pod3 and Pod4 having Pod Spec given below:
 
 ```yaml
@@ -207,33 +560,23 @@ spec:
                     memory: 1Gi  
 ```
 
-Pod3 and Pod4 are both classified as `Bu` and are hence nested under the Bu cgroup
-And for `qom` = 0
+Pod3 and Pod4 are both classified as Burstable and are hence nested under
+the Burstable cgroup.
 
 ```
-/Bu/cpu.shares = 30m  
-/Bu/Pod3/cpu.quota = 150m  
-/Bu/Pod3/cpu.shares = 20m  
-/Bu/Pod4/cpu.quota = 20m  
-/Bu/Pod4/cpu.shares = 10m  
-/Bu/memory.limit_in_bytes = Allocatable - 5Gi  
-/Bu/Pod3/memory.limit_in_bytes = 3Gi  
-/Bu/Pod4/memory.limit_in_bytes = 2Gi  
+/ROOT/burstable/cpu.shares = 30m
+/ROOT/burstable/memory.limit_in_bytes = Allocatable - 5Gi
+/ROOT/burstable/Pod3/cpu.quota = 150m
+/ROOT/burstable/Pod3/cpu.shares = 20m
+/ROOT/burstable/Pod3/memory.limit_in_bytes = 3Gi
+/ROOT/burstable/Pod4/cpu.quota = 20m
+/ROOT/burstable/Pod4/cpu.shares = 10m
+/ROOT/burstable/Pod4/memory.limit_in_bytes = 2Gi
 ```
 
-#### Best Effort
+#### Best Effort pods
 
-For pods belonging to the `BE` QoS we don't set any quota.
-
-```
-/BE/cpu.shares = 2  
-/BE/cpu.quota= not set  
-/BE/memory.limit_in_bytes = Allocatable - {(summation of memory requests of all `G` and `Bu` pods)*(1-qom/100)}
-/BE/PodUID/memory.limit_in_bytes = no limit  
-```
-
-Example:
-We have a pod 'Pod5' having Pod Spec given below:
+We have a pod, Pod5, having Pod Spec given below:
 
 ```yaml
 kind: Pod
@@ -247,170 +590,12 @@ spec:
             resources:
 ```
 
-Pod5 is classified as `BE` and is hence nested under the BE cgroup
-And for `qom` = 0
+Pod5 is classified as BestEffort and is hence nested under the BestEffort cgroup
 
 ```
-/BE/cpu.shares = 2  
-/BE/cpu.quota= not set  
-/BE/memory.limit_in_bytes = Allocatable - 7Gi  
-/BE/Pod5/memory.limit_in_bytes = no limit  
+/ROOT/besteffort/cpu.shares = 2
+/ROOT/besteffort/cpu.quota= not set
+/ROOT/besteffort/memory.limit_in_bytes = Allocatable - 7Gi
+/ROOT/besteffort/Pod5/memory.limit_in_bytes = no limit
 ```
 
-### With Systemd
-
-In systemd we have slices for the three top level QoS class. Further each pod is a subslice of exactly one of the three QoS slices. Each container in a pod belongs to a scope nested under the qosclass-pod slice.
-
-Example:  We plan to have the following cgroup hierarchy on systemd systems
-
-```
-/memory/G-PodUID.slice/containerUID.scope
-/cpu,cpuacct/G-PodUID.slice/containerUID.scope
-/memory/Bu.slice/Bu-PodUID.slice/containerUID.scope
-/cpu,cpuacct/Bu.slice/Bu-PodUID.slice/containerUID.scope
-/memory/BE.slice/BE-PodUID.slice/containerUID.scope
-/cpu,cpuacct/BE.slice/BE-PodUID.slice/containerUID.scope
-```
-
-### Hierarchy Outline
-
-- "$Root" is the system root of the node i.e. "/" by default and if `--cgroup-root` is specified then the specified cgroup-root is used as "$Root".
-- We have a top level QoS cgroup for the `Bu` and `BE` QoS classes.
-- But we __dont__ have a separate cgroup for the `G` QoS class. `G` pod cgroups are brought up directly under the `Root` cgroup.
-- Each pod has its own cgroup which is nested under the cgroup matching the pod's QoS class.
-- All containers brought up by the pod are nested under the pod's cgroup.
-- system-reserved cgroup contains the system specific processes.
-- kube-reserved cgroup contains the kubelet specific daemons.
-
-```
-$ROOT
-  |
-  +- Pod1
-  |   |
-  |   +- Container1
-  |   +- Container2
-  |   ...
-  +- Pod2
-  |   +- Container3
-  |   ...
-  +- ...
-  |
-  +- Bu
-  |   |
-  |   +- Pod3
-  |   |   |
-  |   |   +- Container4
-  |   |   ...
-  |   +- Pod4
-  |   |   +- Container5
-  |   |   ...
-  |   +- ...
-  |
-  +- BE
-  |   |
-  |   +- Pod5
-  |   |   |
-  |   |   +- Container6
-  |   |   +- Container7
-  |   |   ...
-  |   +- ...
-  |
-  +- System-reserved
-  |   |
-  |   +- system
-  |   +- docker (optional)
-  |   +- ...
-  |
-  +- Kube-reserved 
-  |   |
-  |   +- kubelet
-  |   +- docker (optional)
-  |   +- ...
-  |
-```
-
-#### QoS Policy Design Decisions
-
-- This hierarchy highly prioritizes resource guarantees to the `G` over `Bu` and `BE` pods.
-- By not having a separate cgroup for the `G` class, the hierarchy allows the `G` pods to burst and utilize all of Node's Allocatable capacity.
-- The `BE` and `Bu` pods are strictly restricted from bursting and hogging resources and thus `G` Pods are guaranteed resource isolation.
-- `BE` pods are treated as lowest priority. So for the `BE` QoS cgroup we set cpu shares to the lowest possible value ie.2. This ensures that the `BE` containers get a relatively small share of cpu time.
-- Also we don't set any quota on the cpu resources as the containers on the `BE` pods can use any amount of free resources on the node.
-- Having memory limit of `BE` cgroup as (Allocatable - summation of memory requests of `G` and `Bu` pods) would result in `BE` pods becoming more susceptible to being OOM killed. As more `G` and `Bu` pods are scheduled kubelet will more likely kill `BE` pods, even if the `G` and `Bu` pods are using less than their request since we will be dynamically reducing the size of `BE` m.limit_in_bytes. But this allows for better memory guarantees to the `G` and `Bu` pods.
-
-## Implementation Plan
-
-The implementation plan is outlined in the next sections.
-We will have a 'experimental-cgroups-per-qos' flag to specify if the user wants to use the QoS based cgroup hierarchy. The flag would be set to false by default at least in v1.5.
-
-#### Top level Cgroups for QoS tiers
-
-Two top level cgroups for `Bu` and `BE` QoS classes are created when Kubelet starts to run on a node. All `G` pods cgroups are by default nested under the `Root`. So we dont create a top level cgroup for the `G` class. For raw cgroup systems we would use libcontainers cgroups manager for general cgroup management(cgroup creation/destruction). But for systemd we don't have equivalent support for slice management in libcontainer yet. So we will be adding support for the same in the Kubelet. These cgroups are only created once on Kubelet initialization as a part of node setup. Also on systemd these cgroups are transient units and will not survive reboot.
-
-#### Pod level Cgroup creation and deletion (Docker runtime)
-
-- When a new pod is brought up, its QoS class is firstly determined.
-- We add an interface to Kubelet's ContainerManager to create and delete pod level cgroups under the cgroup that matches the pod's QoS class.
-- This interface will be pluggable. Kubelet will support both systemd and raw cgroups based __cgroup__ drivers. We will be using the --cgroup-driver flag proposed in the [Systemd Node Spec](kubelet-systemd.md) to specify the cgroup driver.
-- We inject creation and deletion of pod level cgroups into the pod workers.
-- As new pods are added QoS class cgroup parameters are updated to match the resource requests by the Pod.
-
-#### Container level cgroups
-
-Have docker manager create container cgroups under pod level cgroups. With the docker runtime, we will pass --cgroup-parent using the syntax expected for the corresponding cgroup-driver the runtime was configured to use.
-
-#### Rkt runtime
-
-We want to have rkt create pods under a root QoS class that kubelet specifies, and set pod level cgroup parameters mentioned in this proposal by itself.
-
-#### Add Pod level metrics to Kubelet's metrics provider
-
-Update Kubelet's metrics provider to include Pod level metrics. Use cAdvisor's cgroup subsystem information to determine various Pod level usage metrics.
-
-`Note: Changes to cAdvisor might be necessary.`
-
-## Rollout Plan
-
-This feature will be opt-in in v1.4 and an opt-out in v1.5. We recommend users to drain their nodes and opt-in, before switching to v1.5, which will result in a no-op when v1.5 kubelet is rolled out.
-
-## Implementation Status
-
-The implementation goals of the first milestone are outlined below.
-- [x] Finalize and submit Pod Resource Management proposal for the project #26751
-- [x] Refactor qos package to be used globally throughout the codebase #27749 #28093
-- [x] Add interfaces for CgroupManager and CgroupManagerImpl which implements the CgroupManager interface and creates, destroys/updates cgroups using the libcontainer cgroupfs driver. #27755 #28566
-- [x] Inject top level QoS Cgroup creation in the Kubelet and add e2e tests to test that behaviour. #27853
-- [x] Add PodContainerManagerImpl Create and Destroy methods which implements the respective PodContainerManager methods using a cgroupfs driver. #28017
-- [x] Have docker manager create container cgroups under pod level cgroups. Inject creation and deletion of pod cgroups into the pod workers. Add e2e tests to test this behaviour. #29049
-- [x] Add support for updating policy for the pod cgroups. Add e2e tests to test this behaviour. #29087
-- [ ] Enabling 'cgroup-per-qos' flag in Kubelet: The user is expected to drain the node and restart it before enabling this feature, but as a fallback we also want to allow the user to just restart the kubelet with the cgroup-per-qos flag enabled to use this feature. As a part of this we need to figure out a policy for pods having Restart Policy: Never. More details in this [issue](https://github.com/kubernetes/kubernetes/issues/29946).
-- [ ] Removing terminated pod's Cgroup : We need to cleanup the pod's cgroup once the pod is terminated. More details in this [issue](https://github.com/kubernetes/kubernetes/issues/29927).
-- [ ] Kubelet needs to ensure that the cgroup settings are what the kubelet expects them to be. If security is not of concern, one can assume that once kubelet applies cgroups setting successfully, the values will never change unless kubelet changes it. If security is of concern, then kubelet will have to ensure that the cgroup values meet its requirements and then continue to watch for updates to cgroups via inotify and re-apply cgroup values if necessary.
-Updating QoS limits needs to happen before pod cgroups values are updated. When pod cgroups are being deleted, QoS limits have to be updated after pod cgroup values have been updated for deletion or pod cgroups have been removed. Given that kubelet doesn't have any checkpoints and updates to QoS and pod cgroups are not atomic, kubelet needs to reconcile cgroups status whenever it restarts to ensure that the cgroups values match kubelet's expectation.
-- [ ] [TEST] Opting in for this feature and rollbacks should be accompanied by detailed error message when killing pod intermittently.
-- [ ] Add a systemd implementation for Cgroup Manager interface
-
-
-Other smaller work items that we would be good to have before the release of this feature.
-- [ ] Add Pod UID to the downward api which will help simplify the e2e testing logic.
-- [ ] Check if parent cgroup exist and error out if they don't.
-- [ ] Set top level cgroup limit to resource allocatable until we support QoS level cgroup updates. If cgroup root is not `/` then set node resource allocatable as the cgroup resource limits on cgroup root.
-- [ ] Add a NodeResourceAllocatableProvider which returns the amount of allocatable resources on the nodes. This interface would be used both by the Kubelet and ContainerManager.
-- [ ] Add top level feasibility check to ensure that pod can be admitted on the node by estimating left over resources on the node.
-- [ ] Log basic cgroup management ie. creation/deletion metrics
-
-
-To better support our requirements we needed to make some changes/add features to Libcontainer as well
-
-- [x] Allowing or denying all devices by writing 'a' to devices.allow or devices.deny is
-not possible once the device cgroups has children. Libcontainer doesn't have the option of skipping updates on parent devices cgroup. opencontainers/runc/pull/958
-- [x] To use libcontainer for creating and managing cgroups in the Kubelet, I would like to just create a cgroup with no pid attached and if need be apply a pid to the cgroup later on. But libcontainer did not support cgroup creation without attaching a pid. opencontainers/runc/pull/956
-
-
-
-
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/pod-resource-management.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->
