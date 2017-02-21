@@ -186,15 +186,31 @@ anything preceding it as before.
 ### Proposed API objects
 
 ```go
-type Projections struct {
+type ProjectedVolumeSource struct {
     Sources           []VolumeProjection `json:"sources"`
-    DefaultMode       *int32                   `json:"defaultMode,omitempty"`
+    DefaultMode       *int32             `json:"defaultMode,omitempty"`
 }
 
 type VolumeProjection struct {
-    Secret      *SecretVolumeSource      `json:"secret,omitempty"`
-    ConfigMap   *ConfigMapVolumeSource   `json:"configMap,omitempty"`
-    DownwardAPI *DownwardAPIVolumeSource `json:"downwardAPI,omitempty"`
+    Secret      *SecretProjection      `json:"secret,omitempty"`
+    ConfigMap   *ConfigMapProjection   `json:"configMap,omitempty"`
+    DownwardAPI *DownwardAPIProjection `json:"downwardAPI,omitempty"`
+}
+
+type SecretProjection struct {
+    LocalObjectReference
+    Items []KeyToPath
+    Optional *bool
+}
+
+type ConfigMapProjection struct {
+    LocalObjectReference
+    Items []KeyToPath
+    Optional *bool
+}
+
+type DownwardAPIProjection struct {
+    Items []DownwardAPIVolumeFile
 }
 ```
 
@@ -203,14 +219,7 @@ type VolumeProjection struct {
 Add to the VolumeSource struct:
 
 ```go
-Projected *Projections `json:"projected,omitempty"`
-// (other existing fields omitted for brevity)
-```
-
-Add to the SecretVolumeSource struct:
-
-```go
-LocalObjectReference `json:"name,omitempty"`
+Projected *ProjectedVolumeSource `json:"projected,omitempty"`
 // (other existing fields omitted for brevity)
 ```
 
