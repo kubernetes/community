@@ -60,6 +60,7 @@ changes:
 type DaemonSetUpdateStrategy struct {
 	// Type of daemon set update. Can be "RollingUpdate" or "OnDelete". 
 	// Default is OnDelete.
+	// +optional
 	Type DaemonSetUpdateStrategyType
 
 	// Rolling update config params. Present only if DaemonSetUpdateStrategy =
@@ -68,6 +69,7 @@ type DaemonSetUpdateStrategy struct {
 	// TODO: Update this to follow our convention for oneOf, whatever we decide it
 	// to be. Same as DeploymentStrategy.RollingUpdate.
 	// See https://github.com/kubernetes/kubernetes/issues/35345
+	// +optional
 	RollingUpdate *RollingUpdateDaemonSet
 }
 
@@ -96,6 +98,7 @@ type RollingUpdateDaemonSet struct {
 	// it then proceeds onto other DaemonSet pods, thus ensuring that at least
 	// 70% of original number of DaemonSet pods are available at all times
 	// during the update.
+	// +optional
 	MaxUnavailable intstr.IntOrString
 }
 
@@ -105,21 +108,21 @@ type DaemonSetSpec struct {
 	// this proposal.  
 
 	// Update strategy to replace existing DaemonSet pods with new pods.
+	// +optional
 	UpdateStrategy DaemonSetUpdateStrategy `json:"updateStrategy,omitempty"`
 
 	// Minimum number of seconds for which a newly created DaemonSet pod should
 	// be ready without any of its container crashing, for it to be considered
 	// available. Defaults to 0 (pod will be considered available as soon as it
 	// is ready).
+	// +optional
 	MinReadySeconds int32 `json:"minReadySeconds,omitempty"`
-}
 
-const (
-	// DefaultDaemonSetUniqueLabelKey is the default key of the labels that is added
-	// to daemon set pods to distinguish between old and new pod templates during
-	// DaemonSet update.
-	DefaultDaemonSetUniqueLabelKey string = "pod-template-hash"
-)
+	// A sequence number representing a specific generation of the template.
+	// Populated by the system. Can be set at creation time. Read-only otherwise. 
+	// +optional
+	TemplateGeneration int64 `json:"templateGeneration,omitempty"`
+}
 
 // DaemonSetStatus represents the current status of a daemon set.
 type DaemonSetStatus struct {
@@ -129,18 +132,28 @@ type DaemonSetStatus struct {
 
 	// UpdatedNumberScheduled is the total number of nodes that are running updated
 	// daemon pod
+	// +optional
 	UpdatedNumberScheduled int32 `json:"updatedNumberScheduled"`
 
 	// NumberAvailable is the number of nodes that should be running the
 	// daemon pod and have one or more of the daemon pod running and
 	// available (ready for at least minReadySeconds)
+	// +optional
 	NumberAvailable int32 `json:"numberAvailable"`
 
 	// NumberUnavailable is the number of nodes that should be running the
 	// daemon pod and have non of the daemon pod running and available
 	// (ready for at least minReadySeconds)
+	// +optional
 	NumberUnavailable int32 `json:"numberUnavailable"`
 }
+
+const (
+	// DaemonSetTemplateGenerationKey is the key of the labels that is added
+	// to daemon set pods to distinguish between old and new pod templates
+	// during DaemonSet template update.
+	DaemonSetTemplateGenerationKey string = "pod-template-generation"
+)
 ```
 
 ### Controller 
@@ -158,9 +171,13 @@ For each pending DaemonSet updates, it will:
 1. Check `DaemonSetUpdateStrategy`:
    - If `OnDelete`: do nothing
    - If `RollingUpdate`:
-     - Compare spec of the daemon pods from step 1 with DaemonSet
-       `.spec.template.spec` to see if DaemonSet spec has changed.
-     - If DaemonSet spec has changed, compare `MaxUnavailable` with DaemonSet
+     - Find all daemon pods that belong to this DaemonSet using label selectors.
+       - Pods with "pod-template-generation" value equal to the DaemonSet's
+         `.spec.templateGeneration` are new pods, otherwise they're old pods.
+       - Note that pods without "pod-template-generation" labels (e.g. DaemonSet
+         pods created before RollingUpdate strategy is implemented) will be
+         seen as old pods.
+     - If there are old pods found, compare `MaxUnavailable` with DaemonSet
        `.status.numberUnavailable` to see how many old daemon pods can be
        killed. Then, kill those pods in the order that unhealthy pods (failed,
        pending, not ready) are killed first.
@@ -174,6 +191,12 @@ For each pending DaemonSet updates, it will:
      `.status.numberAvailable`
 
 If DaemonSet Controller crashes during an update, it can still recover. 
+
+#### API Server 
+
+In DaemonSet strategy (pkg/registry/extensions/daemonset/strategy.go#PrepareForUpdate), 
+increase DaemonSet's `.spec.templateGeneration` by 1 if any changes is made to
+DaemonSet's `.spec.template`.
 
 ### kubectl 
 
@@ -270,21 +293,24 @@ Another way to implement DaemonSet history is through creating `PodTemplates` as
 snapshots of DaemonSet templates, and then create them in DaemonSet controller:
 
 - Find existing PodTemplates whose labels are matched by DaemonSet
-  `.spec.selector`
+  `.spec.selector`.
   - Sort those PodTemplates by creation timestamp and only retain at most
-   `.spec.revisionHistoryLimit` latest PodTemplates (remove the rest)
-  - Find the PodTemplate whose `.template` is the same as DaemonSet
-   `.spec.template`. If not found, create a new PodTemplate from DaemonSet
-   `.spec.template`:
-   - The name will be `<DaemonSet-Name>-<Hash-of-pod-template>`
-   - PodTemplate `.metadata.labels` will have a "pod-template-hash" label,
-     value be the hash of PodTemplate `.template` (note: don't include the
-     "pod-template-hash" label when calculating hash)
-   - PodTemplate `.metadata.annotations` will be copied from DaemonSet 
-     `.metadata.annotations`
-
-Note that when the DaemonSet controller creates pods, those pods will be created
-with the "pod-template-hash" label.
+   `.spec.revisionHistoryLimit` latest PodTemplates (remove the rest).
+  - Find the PodTemplate whose `.template` is the same as the DaemonSet's
+    `.spec.template`.
+    - If not found, create a new PodTemplate from DaemonSet's
+      `.spec.template`:
+      - The name will be `<DaemonSet-Name>-<template-generation>`
+      - PodTemplate `.metadata.labels` will have a "pod-template-generation"
+        label, value be the same as DaemonSet's `.spec.templateGeneration`.
+      - PodTemplate will have revision information to avoid triggering
+        unnecessary restarts on rollback, since we only roll forward and only
+        increase templateGeneration.
+      - PodTemplate `.metadata.annotations` will be copied from DaemonSet 
+        `.metadata.annotations`.
+    - If the PodTemplate is found, sync its "pod-template-generation" and
+      revision information with current DaemonSet. 
+    - DaemonSet creates pods with "pod-template-generation" label. 
 
 PodTemplate may need to be made an admin-only or read only resource if it's used
 to store DaemonSet history. 
