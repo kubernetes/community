@@ -1,4 +1,4 @@
-# Pod Injection Policy
+# Pod Preset
 
   * [Abstract](#abstract)
   * [Motivation](#motivation)
@@ -8,15 +8,15 @@
     * [Prior Art](#prior-art)
     * [Objectives](#objectives)
   * [Proposed Changes](#proposed-changes)
-    * [PodInjectionPolicy API object](#podinjectionpolicy-api-object)
+    * [PodPreset API object](#podpreset-api-object)
       * [Validations](#validations)
-    * [AdmissionControl Plug-in: PodInjectionPolicy](#admissioncontrol-plug-in-podinjectionpolicy)
+    * [AdmissionControl Plug-in: PodPreset](#admissioncontrol-plug-in-podpreset)
       * [Behavior](#behavior)
   * [Examples](#examples)
     * [Simple Pod Spec Example](#simple-pod-spec-example)
     * [Pod Spec with `ConfigMap` Example](#pod-spec-with-`configmap`-example)
     * [ReplicaSet with Pod Spec Example](#replicaset-with-pod-spec-example)
-    * [Multiple PodInjectionPolicy Example](#multiple-podinjectionpolicy-example)
+    * [Multiple PodPreset Example](#multiple-podpreset-example)
     * [Conflict Example](#conflict-example)
 
 
@@ -67,7 +67,7 @@ information into every pod spec where it is needed.
 1. Database Administrator provisions a MySQL service for their cluster.
 2. Database Administrator creates secrets for the cluster containing the
    database name, username, and password.
-3. Database Administrator creates a `PodInjectionPolicy`  defining the database
+3. Database Administrator creates a `PodPreset`  defining the database
    port as an enviornment variable, as well as the secrets. See
    [Examples](#examples) below for various examples.
 4. Developer of an application can now label their pod with the specified
@@ -81,7 +81,7 @@ information required to access non-Kubernetes-Services, such as accessing an
 instances of Cloud Spanner. Accessing external services such as Cloud Spanner
 may require the Pods to have specific credential and endpoint data.
 
-Using a Pod Injection Policy allows pod template authors to not have to explicitly
+Using a Pod Preset allows pod template authors to not have to explicitly
 set information for every pod. This way authors of pod templates consuming a
 specific service do not need to know all the details about that service.
 
@@ -111,24 +111,24 @@ with the credential and endpoint data required to do so).
 
 ## Proposed Changes
 
-### PodInjectionPolicy API object
+### PodPreset API object
 
 This resource is alpha. The policy itself is immutable. The API group will be
-added to `apps` and the version is `v1alpha1`.
+added to new group `settings` and the version is `v1alpha1`.
 
 ```go
-// PodInjectionPolicy is a policy resource that defines additional runtime
+// PodPreset is a policy resource that defines additional runtime
 // requirements for a Pod.
-type PodInjectionPolicy struct {
+type PodPreset struct {
     unversioned.TypeMeta
     ObjectMeta
 
     // +optional
-    Spec PodInjectionPolicySpec
+    Spec PodPresetSpec
 }
 
-// PodInjectionPolicySpec is a description of a pod injection policy.
-type PodInjectionPolicySpec struct {
+// PodPresetSpec is a description of a pod preset.
+type PodPresetSpec struct {
     // Selector is a label query over a set of resources, in this case pods.
     // Required.
     Selector      unversioned.LabelSelector
@@ -151,7 +151,7 @@ type PodInjectionPolicySpec struct {
 
 #### Validations
 
-In order for the Pod Injection Policy to be valid it must fulfill the
+In order for the Pod Preset to be valid it must fulfill the
 following constraints:
 
 - The `Selector` field must be defined. This is how we know which pods
@@ -173,7 +173,7 @@ injection. These are as follows:
 
 - Merging lists with no conflicts: if a pod already has a `Volume`,
   `VolumeMount` or `EnvVar` defined **exactly** as defined in the
-  PodInjectionPolicy. No error will occur since they are the exact same. The
+  PodPreset. No error will occur since they are the exact same. The
   motivation behind this is if services have no quite converted to using pod
   injection policies yet and have duplicated information and an error should
   obviously not be thrown if the items that need to be injected already exist
@@ -188,14 +188,14 @@ injection. These are as follows:
 > **Note:** In the case of a conflict nothing will be injected. The entire
 > policy is ignored and an event is thrown on the pod detailing the conflict.
 
-### AdmissionControl Plug-in: PodInjectionPolicy
+### AdmissionControl Plug-in: PodPreset
 
-The **PodInjectionPolicy** plug-in introspects all incoming pod creation
+The **PodPreset** plug-in introspects all incoming pod creation
 requests and injects the pod based off a `Selector` with the desired
 attributes.
 
 For the initial alpha, the order of precedence for applying multiple
-`PodInjectionPolicy` specs is from oldest to newest. All Pod Injection
+`PodPreset` specs is from oldest to newest. All Pod Injection
 Policies in a namespace should be order agnostic; the order of application is
 unspecified. Users should ensure that policies do not overlap.
 However we can use merge keys to detect some of the conflicts that may occur.
@@ -219,8 +219,8 @@ all containers in the pod with the specified matching `Selector`. The
 changes to `Volumes` apply to the pod spec for all pods matching `Selector`.
 
 The resultant modified pod spec will be annotated to show that it was modified by
-the `PodInjectionPolicy`. This will be of the form
-`podinjectionpolicy.admission.kubernetes.io/<pip name>": "<resource version>"`.
+the `PodPreset`. This will be of the form
+`podpreset.admission.kubernetes.io/<pip name>": "<resource version>"`.
 
 *Why modify all containers in a pod?*
 
@@ -235,7 +235,7 @@ In the future, even if container labels were added, we would need to be careful
 about not making breaking changes to the current behavior.
 
 Other solutions include basing the container to inject based off
-matching its name to another field in the `PodInjectionPolicy` spec, but
+matching its name to another field in the `PodPreset` spec, but
 this would not scale well and would cause annoyance with configuration
 management.
 
@@ -267,11 +267,11 @@ spec:
         - containerPort: 80
 ```
 
-**Example Pod Injection Policy:**
+**Example Pod Preset:**
 
 ```yaml
-kind: PodInjectionPolicy
-apiVersion: podinjection/v1alpha1
+kind: PodPreset
+apiVersion: settings/v1alpha1
 metadata:
   name: allow-database
   namespace: myns
@@ -301,7 +301,7 @@ metadata:
     app: website
     role: frontend
   annotations:
-    podinjectionpolicy.admission.kubernetes.io/allow-database: "resource version"
+    podpreset.admission.kubernetes.io/allow-database: "resource version"
 spec:
   containers:
     - name: website
@@ -360,11 +360,11 @@ data:
   REPLACE_ME: "a value"
 ```
 
-**Example Pod Injection Policy:**
+**Example Pod Preset:**
 
 ```yaml
-kind: PodInjectionPolicy
-apiVersion: podinjection/v1alpha1
+kind: PodPreset
+apiVersion: settings/v1alpha1
 metadata:
   name: allow-database
   namespace: myns
@@ -406,7 +406,7 @@ metadata:
     app: website
     role: frontend
   annotations:
-    podinjectionpolicy.admission.kubernetes.io/allow-database: "resource version"
+    podpreset.admission.kubernetes.io/allow-database: "resource version"
 spec:
   containers:
     - name: website
@@ -444,7 +444,7 @@ Injection Policy.
 **User submitted ReplicaSet:**
 
 ```yaml
-apiVersion: podinjection/v1alpha1
+apiVersion: settings/v1alpha1
 kind: ReplicaSet
 metadata:
   name: frontend
@@ -475,11 +475,11 @@ spec:
           - containerPort: 80
 ```
 
-**Example Pod Injection Policy:**
+**Example Pod Preset:**
 
 ```yaml
-kind: PodInjectionPolicy
-apiVersion: podinjection/v1alpha1
+kind: PodPreset
+apiVersion: settings/v1alpha1
 metadata:
   name: allow-database
   namespace: myns
@@ -507,7 +507,7 @@ kind: Pod
       app: guestbook
       tier: frontend
     annotations:
-    podinjectionpolicy.admission.kubernetes.io/allow-database: "resource version"
+    podpreset.admission.kubernetes.io/allow-database: "resource version"
   spec:
     containers:
       - name: php-redis
@@ -531,7 +531,7 @@ kind: Pod
         emptyDir: {}
 ```
 
-### Multiple PodInjectionPolicy Example
+### Multiple PodPreset Example
 
 This is an example to show how a Pod spec is modified by multiple Pod
 Injection Policies.
@@ -554,11 +554,11 @@ spec:
         - containerPort: 80
 ```
 
-**Example Pod Injection Policy:**
+**Example Pod Preset:**
 
 ```yaml
-kind: PodInjectionPolicy
-apiVersion: podinjection/v1alpha1
+kind: PodPreset
+apiVersion: settings/v1alpha1
 metadata:
   name: allow-database
   namespace: myns
@@ -577,11 +577,11 @@ spec:
       emptyDir: {}
 ```
 
-**Another Pod Injection Policy:**
+**Another Pod Preset:**
 
 ```yaml
-kind: PodInjectionPolicy
-apiVersion: podinjection/v1alpha1
+kind: PodPreset
+apiVersion: settings/v1alpha1
 metadata:
   name: proxy
   namespace: myns
@@ -608,8 +608,8 @@ metadata:
     app: website
     role: frontend
   annotations:
-    podinjectionpolicy.admission.kubernetes.io/allow-database: "resource version"
-    podinjectionpolicy.admission.kubernetes.io/proxy: "resource version"
+    podpreset.admission.kubernetes.io/allow-database: "resource version"
+    podpreset.admission.kubernetes.io/proxy: "resource version"
 spec:
   containers:
     - name: website
@@ -660,11 +660,11 @@ spec:
         - containerPort: 80
 ```
 
-**Example Pod Injection Policy:**
+**Example Pod Preset:**
 
 ```yaml
-kind: PodInjectionPolicy
-apiVersion: podinjection/v1alpha1
+kind: PodPreset
+apiVersion: settings/v1alpha1
 metadata:
   name: allow-database
   namespace: myns
@@ -714,5 +714,5 @@ $ kubectl describe ...
 ....
 Events:
   FirstSeen             LastSeen            Count   From                    SubobjectPath               Reason      Message
-  Tue, 07 Feb 2017 16:56:12 -0700   Tue, 07 Feb 2017 16:56:12 -0700 1   {podinjectionpolicy.admission.kubernetes.io/allow-database }    conflict  Conflict on pod injection policy. Duplicate mountPath /cache.
+  Tue, 07 Feb 2017 16:56:12 -0700   Tue, 07 Feb 2017 16:56:12 -0700 1   {podpreset.admission.kubernetes.io/allow-database }    conflict  Conflict on pod preset. Duplicate mountPath /cache.
 ```
