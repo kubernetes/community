@@ -109,10 +109,10 @@ spec:
     - containerPort: 2380
       protocol: TCP
     env:
-    - Name: duplicate_key
-      Value: FROM_ENV
-    - Name: expansion
-      Value: $(REPLACE_ME)
+    - name: duplicate_key
+      value: FROM_ENV
+    - name: expansion
+      value: $(REPLACE_ME)
     envFrom:
     - configMapRef:
         name: etcd-env-config
