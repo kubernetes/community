@@ -1,4 +1,4 @@
-Last update: 1/30/2017
+Last update: 2/24/2017
 
 This is a Work in Progress, documenting approximately how we have been operating up to this point,
 and formalizing some previously informal conventions.
@@ -43,7 +43,7 @@ no matter how small, even if not explicitly described below.
 
 Contributors have the opportunity to grow in responsibilities, privileges, and authority corresponding
 to the scope, quality, quantity, and duration of their contributions. Definition of criteria and process
-is in progress, with preliminary requirements below. Any position achieved by merit is achieved by an individual and the authority follows the individual whoever they go.
+is in progress, with preliminary requirements below. Any position achieved by merit is achieved by an individual and the authority follows the individual whoever they go, and does not remain with their previous employer(s).
  
 Roles that are currently assumed by project participants are described below, focusing on, but not
 limited to the `kubernetes/kubernetes` repo.
@@ -67,7 +67,7 @@ New community members:
     - directed to relevant documentation
 - **CONTRIBUTOR**:
   - Requirements
-    - at least 3 merged and/or assigned PRs (which could include documentation
+    - authored and/or reviewed at least 3 merged PRs (which could include documentation
       contributions as well as code), including one in the past month
   - Expectations
     - we [expect](contributors/devel/community-expectations.md) that
@@ -87,7 +87,7 @@ maintained in OWNERS files in the repository.
 - **MEMBER**:
   - Requirements
     - an active contributor for at least 3 months
-    - authored and/or reviewed at least 10 merged PRs
+    - authored and/or reviewed at least 10 merged non-trivial PRs
       - TBD: figure out how to count reviews
     - active enough to be assigned issues and/or PRs, and to be added to a github team
       (a SIG, for example) for notification purposes
@@ -95,7 +95,99 @@ maintained in OWNERS files in the repository.
     - nomination process TBD
   - Expectations
     - should subscribe to kubernetes-dev@googlegroups.com and kubernetes-dev-announce@googlegroups.com
-    - should read the [developer gRequirements
+    - should read the [developer guide](contributors/devel/README.md)
+    - expected to be familiar with project organization, conventions, policies, etc.
+  - Benefits
+    - trusted enough to run tests on their PRs automatically
+    - can issue `@k8s-bot ok to test` for other contributors
+    - if they choose public membership, they get a badge on their github profile
+    - TBD: swag
+- **REVIEWER**:
+  - includes all requirements, expectations, and benefits of MEMBERS
+  - Requirements
+    - org member for at least 3 months
+    - authored and/or reviewed at least 20 merged non-trivial PRs, including at least 3 as the primary
+      reviewer
+    - familiar enough with some part of the codebase to be in an [OWNERS](contributors/devel/owners.md)
+      file `reviewers` list
+    - nominated by an APPROVER for that part of the codebase, with no objections from other
+      APPROVERS
+    - may be asked to become a REVIEWER as a precondition for accepting a large code contribution
+  - Expectations
+    - responsible for project quality control
+    - will be assigned related PRs and test bugs
+    - responsive to [code review](contributors/devel/collab.md) requests as per 
+      [community expectations](contributors/devel/community-expectations.md)
+  - Benefits
+    - can champion incubator repos
+    - added to the repo’s reviewers github team (e.g., [`kubernetes-reviewers`](https://github.com/orgs/kubernetes/teams/kubernetes-reviewers))
+    - gets "read access" to the repository
+    - gets a badge on PR and issue comments
+    - TBD: swag
+- **APPROVER**:
+  - includes all requirements, expectations, and benefits of REVIEWERS
+  - Requirements
+    - previously a REVIEWER for that part of the codebase for at least 3 months
+    - authored and/or reviewed at least 30 merged non-trivial PRs, including at least 10 as the primary
+      reviewer
+    - familiar enough with some part of the codebase to be in an [OWNERS](contributors/devel/owners.md)
+      file `approvers` list
+    - demonstrated sound technical judgement
+    - nominated by a relevant APPROVER, with no objections from other APPROVERS in that area
+    - may be asked to become an APPROVER as a precondition for accepting a large code contribution
+  - Expectations
+    - responsive to [code review](contributors/devel/collab.md) requests as per
+      [community expectations](contributors/devel/community-expectations.md)
+    - mentor REVIEWERS and CONTRIBUTORS
+  - Benefits
+    - TBD: swag
+- **MAINTAINER**:
+  - includes all requirements, expectations, and benefits of APPROVERS
+  - Requirements
+    - APPROVER for some part of the codebase for at least 3 months
+    - on project for at least 1 year
+    - authored and/or reviewed at least 50 merged non-trivial PRs, including at least 20 as the primary
+      reviewer
+    - familiar enough with the codebase and project conventions to be in the repo’s top-level OWNERS
+      file `maintainers` list
+    - committed to the project: Kubernetes is a very high-volume project, with hundreds of PRs and issues
+      per week, so expect a significant time commitment 
+    - nominated by a Champion (see below) from the existing MAINTAINERS, who will find a
+      Sponsor (see below) from LEADS, and (assuming the person accepts) will email the existing
+      MAINTAINERS via their mailing list (e.g., `kubernetes-maintainers@googlegroups.com`), with
+      a summary of contributions to the project, current project responsibilities, and links to
+      queries for merged and assigned PRs
+    - at least 3 of the MAINTAINERS must approve the application, with no objections
+    - the application expires after 2 weeks if not enough approvals are granted
+  - Expectations
+    - review PRs
+    - fix bugs
+    - maintain and improve health and quality of the project
+    - provide user support
+    - mentor APPROVERS, REVIEWERS, and CONTRIBUTORS
+  - Benefits
+    - added to the repo’s maintainers github team (e.g., [`kubernetes-maintainers`](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers))
+    - write access to the repo: assign issues/PRs, add/remove labels and milestones, 
+      edit issues and PRs, edit wiki, create/delete labels and milestones
+    - technically can approve any PR and cause it to be merged by the submit queue, but expected to
+      respect OWNERS files
+- **OWNER**:
+  - includes all requirements, expectations, and benefits of MAINTAINERS
+  - Requirements
+    - PR and tenure requirements and nomination process TBD
+    - familiar enough with some area/component to be in its top-level
+      [OWNERS](contributors/devel/owners.md) file `owners` list
+    - may be asked to become an area/component OWNER as a precondition for accepting the 
+      contribution of a new component or other major function
+    - TBD: which areas/components need OWNERS? Examples: Apiserver, Kubelet, Kubectl
+  - Expectations
+    - mentor APPROVERS, REVIEWERS, and CONTRIBUTORS
+  - Benefits
+    - design/proposal approval authority for some area of the project, though escalation to LEADS
+      is still possible, and beta/GA APIs must still be vetted by API REVIEWERS and APPROVERS
+- Proposed: **LEAD**:
+  - includes all requirements, expectations, and benefits of OWNERS
+  - Requirements
     - maintainer in good standing for at least 1 year
     - demonstrated strong technical vision and judgement
     - demonstrated empathy for the user and open-source developer perspective
@@ -106,7 +198,15 @@ maintained in OWNERS files in the repository.
   - Expectations
     - provide overall technical guidance and vision for the project
     - maintain the [definition of the project](https://kubernetes.io/docs/whatisk8s/)
-    - decide project structure, such as system layers (e.g., conetes
+    - decide project structure, such as system layers (e.g., core) and repository breakdown
+      - TODO: evaluate the [consensus-seeking approach](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#consensus-seeking-process)
+    - assist SIGs in identifying areas of overlapping technical and ownership responsibility
+    - resolve technical escalations in the cases of OWNER and SIG lead disagreements 
+    - meet monthly by videoconference or in person
+    - mentor people who could grow into new members of this group
+    - TBD: office hours?
+  - Benefits
+    - In `leads` list in [top-level OWNERS file in kubernetes
       repo](https://github.com/kubernetes/kubernetes/blob/master/OWNERS)
       - Proposed initial list comprised of long-time senior project leads (formerly top-level approvers):
         bgrant0607, brendandburns, dchen1107, jbeda, lavalamp, smarterclayton, thockin
@@ -114,7 +214,6 @@ maintained in OWNERS files in the repository.
     - technically can approve virtually any PRs
     - can [Sponsor incubator repos](incubator.md)
     - can Sponsor MAINTAINERS
-
 
 ## Orthogonal technical roles
 
@@ -130,6 +229,7 @@ identity of Kubernetes and is a horizontal area that crosses directories and SIG
     - familiar enough with design, requirements, mechanics, conventions, style,
       scope, gotchas, etc. of the API to be in `kubernetes/pkg/api` and `kubernetes/pkg/apis`
       OWNERS files `reviewers` lists
+      - TODO: decouple design review from the firehose of PR reviews
   - Expectations
     - review API changes and proposals in their functional area
     - ensure Kubernetes has a consistent [API style](contributors/devel/api-conventions.md),
@@ -147,6 +247,7 @@ identity of Kubernetes and is a horizontal area that crosses directories and SIG
     - familiar with the design, requirements, mechanics, conventions, style,
       scope, gotchas, etc. of the API to be in `kubernetes/pkg/api` and `kubernetes/pkg/apis`
       OWNERS files `approvers` lists
+      - TODO: decouple design review from the firehose of PR reviews
     - ensure Kubernetes has a consistent [API style](contributors/devel/api-conventions.md),
       patterns, and philosophies
     - guide development of new APIs
@@ -159,16 +260,20 @@ identity of Kubernetes and is a horizontal area that crosses directories and SIG
 
 ## SIG roles
 - **SIG PARTICIPANT**: active in one or more areas of the project; wide variety of roles are represented
-- **SIG LEAD**: SIG organizer
+- **SIG LEAD**: SIG organizer 
+  - Expectations 
+    - ensure meetings occur, decisions are communicated
+    - facilitate planning for each release and ensure feature process is followed
+    - ensure other SIGs are able to provide input / feedback
+    - ensure SIG follows governance guidelines, below
 
 ## Management roles
 - [**PM**](https://github.com/orgs/kubernetes/teams/kubernetes-pm): help to [manage and
   maintain the project](project-managers/README.md) in ways other than just writing code (e.g. managing
-  issues); should subscribe to kubernetes-pm@googlegroups.com
+  issues); owns feature tracking and roadmap planning; should subscribe to kubernetes-pm@googlegroups.com
   - Requirements, expectations, benefits TBD
   - TBD: distinguish overall PM group from github permissions
   - TBD: should PM group be treated like a SIG?
-  - TBD: owns feature tracking and roadmap planning
 - Proposed: **TEAM LEAD**: tech lead or manager of some team at some company working on K8s; can influence
   priorities of their team members; pragmatically, probably want label/assignment powers
   - Requirements, expectations, benefits TBD
@@ -293,7 +398,8 @@ non-American timezones.
 In order to standardize Special Interest Group efforts, maximize transparency, and route contributors
 to the appropriate SIG, SIGs should follow the guidelines stated below:
 
-- Meet regularly, at least for 30 minutes every month except November and December
+- Meet regularly by video conference, phone conference, or in person, at least for 30 minutes every month
+  except November and December
 - Keep up-to-date meeting notes, linked from the SIG's page in the community repo
 - Announce meeting agenda before each meeting and post minutes after, on their SIG mailing list
 - Record SIG meeting and make it publicly available
@@ -311,7 +417,10 @@ to the appropriate SIG, SIGs should follow the guidelines stated below:
   Kubernetes 
 - Use the above forums as the primary means of working, communicating, and collaborating, as opposed to
   private emails and meetings
-- Google Docs should be shared with at least the SIG discussion group and kubernetes-dev
+- If used, Google Docs should be made available to everyone on the project. Share them with at least the
+  SIG discussion group and kubernetes-dev, and it is recommended that they be made public. When sharing
+  with kubernetes-dev, do not notify the list, unless it is really an issue that everyone on the project
+  should immediately be made aware of.
 - Represent the SIG for the PM group (either a SIG liaison to the PM group or a PM liaison to the SIG):
   - identify all features in the current release from the SIG
   - track all features (in the repo with all the fields complete)
@@ -335,8 +444,12 @@ TBD
 
 - Make division of responsibilities and authority clearer
 - Develop mentorship practices to facilitate contributor advancement
-- Need an effective mechanism to drive more effort on project health
+- Need effective mechanisms to drive more effort on project health, documentation, and other
+  important underinvested areas
 - Need ways to solicit, capture, and share user and contributor feedback
+- Add a TOC
+- Break up the document into multiple documents
+- Add more explanatory text
 
 # History
 
