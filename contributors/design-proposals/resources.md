@@ -302,8 +302,8 @@ where a `<CPU-info>` or `<memory-info>` structure looks like this:
 ```yaml
 {
     mean: <value>    # arithmetic mean
-    max: <value>     # minimum value
-    min: <value>     # maximum value
+    max: <value>     # maximum value
+    min: <value>     # minimum value
     count: <value>   # number of data points
     percentiles: [   # map from %iles to values
       "10": <10th-percentile-value>,
