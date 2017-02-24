@@ -43,11 +43,22 @@ assigned a piece of work.  Do this right away.
   - Add `kubectl hello-kubernetes -f file`: Print "Hello \<kind of resource\> \<name of resource\>"
   - Add `kubectl hello-kubernetes type/name`: Print "Hello \<kind of resource\> \<name of resource\> \<creation time\>"
 
+### Agree to contribution rules
+
+The [Cloud Native Computing Foundation][CNCF] defines the legal status of the
+contributed code in a _Contributor License Agreement_.
+
+Sign it electronically following these [instructions][CLA].
+
+Sign using the same email identity that you plan to use
+to push code via git (i.e., the output of `git config user.email`).
+
 ### Adopt an issue
 
 New contributors can try the following to work on an existing [bug] or [approved design][design repo]:
 
-- In [slack], @mention a [lead][leads] and ask if there are any issues you could pick up.
+- In [slack][slack-messages] (signup [here][slack-signup]),
+  @mention a [lead][leads] and ask if there are any issues you could pick up.
   Leads can recommend issues that have enough priority to receive PR review bandwidth.
 - Send an email to the _kubernetes-sig-cli@googlegroups.com_ [group]
 
@@ -259,10 +270,10 @@ you'd like to discuss it.
 See the sig-cli [community page] for points of contact and meeting times:
 
 - attend the sig-cli [meeting]
-- message one of the sig leads on [slack]
+- message one of the sig leads on [slack][slack-messages] (signup [here][slack-signup])
 - send an email to the _kubernetes-sig-cli@googlegroups.com_ [group].
 
-## Use of @mentions
+## Use of [@mentions]
 
 - `@{any lead}` solicit opinion or advice from [leads].
 - `@kubernetes/sig-cli-bugs` sig-cli centric bugs.
@@ -270,6 +281,9 @@ See the sig-cli [community page] for points of contact and meeting times:
 - `@kubernetes/sig-cli-feature-requests` flags a feature request.
 - `@kubernetes/sig-cli-proposals` flags a design proposal.
 
+[@mentions]: https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams
+[CLA]: https://github.com/kubernetes/kubernetes/wiki/CLA-FAQ
+[CNCF]: https://www.cncf.io/community
 [Kubernetes Basics Tutorial]: https://kubernetes.io/docs/tutorials/kubernetes-basics
 [PR]: https://help.github.com/articles/creating-a-pull-request
 [`PTAL`]: https://en.wiktionary.org/wiki/PTAL
@@ -295,5 +309,6 @@ See the sig-cli [community page] for points of contact and meeting times:
 [management overview]: https://kubernetes.io/docs/concepts/tools/kubectl/object-management-overview
 [meeting]: https://github.com/kubernetes/community/tree/master/sig-cli#meetings
 [release]: #release
-[slack]: https://kubernetes.slack.com/messages/sig-cli
+[slack-messages]: https://kubernetes.slack.com/messages/sig-cli
+[slack-signup]: http://slack.k8s.io/
 [tests]: https://github.com/kubernetes/community/blob/master/contributors/devel/testing.md
