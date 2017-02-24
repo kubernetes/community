@@ -1,18 +1,28 @@
-# Scalability SIG
+# SIG Scalability
 
-**Leads:** Bob Wise (@countspongebob) and Joe Beda (@jbeda)
 
-**Slack Channel:** [#sig-scale](https://kubernetes.slack.com/messages/sig-scale/).  [Archive](http://kubernetes.slackarchive.io/sig-scale/)
 
-**Mailing List:** [kubernetes-sig-scale](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)
+## Organizers
+- Bob Wise (@countspongebob), Samsung-CNCT 
+- Joe Beda (@jbeda), Heptio
 
-**Meetings:** Thursdays at 9am pacific.  Contact Joe or Bob for invite. [Notes](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
-)
+## Meetings
 
-**Docs:**
-[Scaling And Performance Goals](goals.md)
+- **Every Thursday at 9am pacific.**  
+- Contact Joe or Bob for invite. 
+- [Zoom link](https://zoom.us/j/989573207)
+- [Agenda items](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web)
 
-### Scalability SLAs
+## Slack / Google Groups
+- [Slack: #sig-scale](https://kubernetes.slack.com/messages/sig-scale/).  
+- [Slack Archive](http://kubernetes.slackarchive.io/sig-scale/)
+
+- [kubernetes-sig-scale](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)
+
+## Docs
+- [Scaling And Performance Goals](goals.md)
+
+## Scalability SLAs
 
 We officially support two different SLAs:
 
