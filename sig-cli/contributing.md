@@ -53,6 +53,8 @@ Sign it electronically following these [instructions][CLA].
 Sign using the same email identity that you plan to use
 to push code via git (i.e., the output of `git config user.email`).
 
+If you have trouble, ask for help at `helpdesk@rt.linuxfoundation.org`.
+
 ### Adopt an issue
 
 New contributors can try the following to work on an existing [bug] or [approved design][design repo]:
