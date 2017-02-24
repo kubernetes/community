@@ -41,19 +41,25 @@ A node’s local storage can be broken into primary and secondary partitions.
 Primary partitions are shared partitions that can provide ephemeral local storage.  The two supported primary partitions are:
 
 ### Root
- This partition holds the kubelet’s root directory (`/var/lib/kubelet` by default) and `/var/log` directory. This partition may be shared between user pods, OS and Kubernetes system daemons. This partition can be consumed by pods via EmptyDir volumes, container logs, image layers and container writable layers. Kubelet will manage shared access and isolation of this partition. This partition is “ephemeral” and applications cannot expect any performance SLAs (Disk IOPs for example) from this partition.
+ This partition holds the kubelet’s root directory (`/var/lib/kubelet` by default) and `/var/log` directory. This partition may be shared between user pods, OS and Kubernetes system daemons. This partition can be consumed by pods via EmptyDir volumes, container logs, image layers and container writable layers. Kubelet will manage shared access and isolation of this partition. This partition is “ephemeral” and applications cannot expect any performance SLAs (Disk IOPS for example) from this partition.
 
 ### Runtime
 This is an optional partition which runtimes can use for overlay filesystems. Kubelet will attempt to identify and provide shared access along with isolation to this partition.
 
 ## Secondary Partitions
-All other partitions are exposed as persistent volumes. The PV interface allows for varying storage configurations to be supported, while hiding specific configuration details to the pod.  Applications can continue to use their existing PVC specifications with minimal changes to request local storage.  Each PV uses an entire partition.  The PVs can be precreated by an addon DaemonSet that discovers all the secondary partitions, and can create new PVs as disks are added to the node.
+All other partitions are exposed as local persistent volumes.  Each local volume uses an entire partition.  The PV interface allows for varying storage configurations to be supported, while hiding specific configuration details to the pod.  All the local PVs can be queried and viewed from a cluster level using the existing PV object.  Applications can continue to use their existing PVC specifications with minimal changes to request local storage.
+
+The local PVs can be precreated by an addon DaemonSet that discovers all the secondary partitions at well-known directories, and can create new PVs as partitions are added to the node.  A default addon can be provided to handle common configurations.
+
+Local PVs can only provide semi-persistence, and are only suitable for specific use cases that need performance, data gravity and can tolerate data loss.  If the node or PV fails, then either the pod cannot run, or the pod has to give up on the local PV and find a new one.  Failure scenarios can be handled by unbinding the PVC from the local PV, and forcing the pod to reschedule and find a new PV.
+
+Since local PVs are only accessible from specific nodes, a new PV-node association will be used by the scheduler to place pods.  The association can be generalized to support any type of PV, not just local PVs.  This allows for any volume plugin to take advantage of this behavior.
 
 # User Workflows
 
 ### Alice manages a deployment and requires “Guaranteed” ephemeral storage
 
-1. Kubelet running across all nodes will identify primary partition and expose capacity and allocatable for the primary “root” partition. The runtime partition is an implementation detail and is not exposed outside the node.
+1. Kubelet running across all nodes will identify primary partition and expose capacity and allocatable for the primary “root” partition.  This allows primary storage to be considered as a first class resource when scheduling.  The runtime partition is an implementation detail and is not exposed outside the node.  
 
     ```yaml
     apiVersion: v1
@@ -67,7 +73,7 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
         storage: 90Gi
     ```
 
-2. Alice adds a “Storage” requirement to her pod as follows
+2. Alice adds new storage resource requirements to her pod, specifying limits for the container's writeable and overlay layers, and emptyDir volumes.
 
     ```yaml
     apiVersion: v1
@@ -90,10 +96,10 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
 3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
 4. Alice’s pod is not provided any IO guarantees
 5. Kubelet will rotate logs to keep logs usage of “fooc” under 500Mi
-6. Kubelet will attempt to hard limit local storage consumed by pod “foo” if Linux project quota feature is available and runtime supports storage isolation.
+6. Kubelet will attempt to hard limit local storage consumed by pod “foo” if Linux project quota feature is available and runtime supports storage isolation.  Otherwise, kubelet can attempt to enforce soft limits.
 7. With hard limits, containers will receive a ENOSPACE error if they consume all reserved storage. Without hard limits, the pod will be evicted by kubelet.
 8. Health is monitored by an external entity like the “Node Problem Detector” which is expected to place appropriate taints.
-9. If a primary partition becomes unhealthy, the node is tainted and all pods running in it will be evicted by default, unless they tolerate that taint. Kubelet’s behavior on a node with unhealthy primary partition is undefined. Cluster administrators are expected to fix unhealthy primary partitions on nodes. 
+9. If a primary partition becomes unhealthy, the node is tainted and all pods running in it will be evicted by default, unless they tolerate that taint. Kubelet’s behavior on a node with unhealthy primary partition is undefined. Cluster administrators are expected to fix unhealthy primary partitions on nodes.
 
 ### Bob runs batch workloads and is unsure of “storage” requirements
 
@@ -139,15 +145,15 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
      name: foo
     spec:
      containers:
-      name: fooc
-      resources:
-       limits:
-        storageLogs: 200Mi
-        storageOverlay: 200Mi
+     - name: fooc
+       resources:
+         limits:
+           storageLogs: 200Mi
+           storageOverlay: 200Mi
      volumes:
-      name: myEmptyDir
-      emptyDir:
-       capacity: 1Gi
+     - name: myEmptyDir
+       emptyDir:
+         capacity: 1Gi
     ```
 
 4. Bob’s “foo” pod can use upto “200Mi” for its containers logs and writable layer each, and “1Gi” for its “myEmptyDir” volume. 
@@ -160,15 +166,15 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
    name: foo
   spec:
    containers:
-    name: fooc
-    resources:
-     requests:
-      storageLogs: 500Mi
-      storageOverlay: 500Mi
+   - name: fooc
+     resources:
+       requests:
+         storageLogs: 500Mi
+         storageOverlay: 500Mi
    volumes:
-    name: myEmptyDir
-    emptyDir:
-     capacity: 2Gi
+   - name: myEmptyDir
+     emptyDir:
+       capacity: 2Gi
   ```
 
 6. Note that it is not possible to specify a minimum storage requirement for EmptyDir volumes because we intend to limit overcommitment of local storage due to high latency in reclaiming it from terminated pods.
@@ -176,7 +182,7 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
 ### Alice manages a Database which needs access to “durable” and fast scratch space
 
 1. Cluster administrator provisions machines with local SSDs and brings up the cluster
-2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates HostPath PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points and include additional labels and annotations that help tie to a specific node and identify the storage medium.
+2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a new node annotation that ties the volume to a specific node.  Storage classes and labels may also be specified.  The volume consumes the entire partition.
 
     ```yaml
     kind: PersistentVolume
@@ -184,15 +190,12 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
     metadata:
       name: local-pv-1
       annotations:
-        storage.kubernetes.io/node: node-1
-      labels:
-        storage.kubernetes.io/medium: ssd
+        volume.kubernetes.io/node: node-1
+        volume.beta.kubernetes.io/storage-class: local-fast
     spec:
-      volumeType: local
-      storageType: filesystem
       capacity:
         storage: 100Gi
-      hostpath:
+      local:
         path: /var/lib/kubelet/storage-partitions/local-pv-1
       accessModes:
         - ReadWriteOnce
@@ -208,8 +211,7 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
     local-pv-1 100Gi    RWO         Delete        Available         node-3
     local-pv-2 10Gi     RWO         Delete        Available         node-3
     ```
-3. The addon will monitor the health of secondary partitions and mark PVs as unhealthy whenever the backing local storage devices have failed.
-4. Alice creates a StatefulSet that uses local PVCs
+3. Alice creates a StatefulSet that uses local PVCs.  The annotation `volume.kubernetes.io/node = ""` is specified to indicate that the requested volume should be local to a node.  The PVC will only be bound to PVs that also have the node annotation set and vice versa.
 
     ```yaml
     apiVersion: apps/v1beta1
@@ -239,27 +241,27 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
       volumeClaimTemplates:
       - metadata:
           name: www
-          labels:
-            storage.kubernetes.io/medium: ssd
+          annotations:
+            volume.kubernetes.io/node: ""
+            volume.beta.kubernetes.io/storage-class: local-fast
         spec:
-          volumeType: local
           accessModes: [ "ReadWriteOnce" ]
           resources:
             requests:
               storage: 100Gi
       - metadata:
           name: log
-          labels:
-            storage.kubernetes.io/medium: hdd
+          annotations:
+            volume.kubernetes.io/node: ""
+            volume.beta.kubernetes.io/storage-class: local-slow
         spec:
-          volumeType: local
           accessModes: [ "ReadWriteOnce" ]
           resources:
             requests:
               storage: 1Gi
     ```
 
-5. The scheduler identifies nodes for each pod that can satisfy cpu, memory, storage requirements and also contains available local PVs to satisfy the pod's PVC claims. It then binds the pod’s PVCs to specific PVs on the node and then binds the pod to the node.
+4. The scheduler identifies nodes for each pod that can satisfy cpu, memory, storage requirements and also contains available local PVs to satisfy the pod's PVC claims. It then binds the pod’s PVCs to specific PVs on the node and then binds the pod to the node.  The annotation `volume.kubernetes.io/node` will be filled in with the chosen node name.
     ```
     $ kubectl get pvc
     NAME            STATUS VOLUME     CAPACITY ACCESSMODES … NODE
@@ -281,28 +283,40 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
     local-pv-2 10Gi       Bound     log-local-pvc-3 node-3
     ```
 
-6. If a pod dies and is replaced by a new one that reuses existing PVCs, the pod will be placed on the same node where the corresponding PVs exist. Stateful Pods are expected to have a high enough priority which will result in such pods preempting other low priority pods if necessary to run on a specific node.
-7. If a pod fails to get scheduled while attempting to reuse an old PVC, a controller will unbind the PVC from the PV, clean up the PV according to the reclaim policy, and reschedule the pod.  The PVC will get rebound to a new PV.
-8. If the node gets tainted as NotReady or Unknown, the pod is evicted according to the taint's forgiveness setting.  The pod will then fail scheduling due to the taint, and follow step 7.
-9. If a PV becomes unhealthy, the pod is evicted by a controller, and follows step 7. Unhealthy PVs once released will not be added back to the cluster until the corresponding local storage device is healthy.
-10. Once Alice decides to delete the database, the StatefulSet is destroyed, followed by the PVCs.  The PVs will then get recycled and deleted according to the reclaim policy, and the addon adds it back to the cluster.
+5. If a pod dies and is replaced by a new one that reuses existing PVCs, the pod will be placed on the same node where the corresponding PVs exist. Stateful Pods are expected to have a high enough priority which will result in such pods preempting other low priority pods if necessary to run on a specific node.
+6. Forgiveness policies can be specified as tolerations in the pod spec for each failure scenario.  No toleration specified means that the failure is not tolerated.  In that case, the PVC will immediately be unbound, and the pod will be rescheduled to obtain a new PV.  If a toleration is set, by default, it will be tolerated forever.  `tolerationSeconds` can be specified to allow for a timeout period before the PVC gets unbound.
+
+  A new PV taint will be introduced to handle unhealthy volumes.  The addon or another external entity can monitor the volumes and add a taint when it detects that it is unhealthy.
+  ```
+  tolerations:
+    - key: node.alpha.kubernetes.io/notReady
+      operator: TolerationOpExists
+      tolerationSeconds: 600
+    - key: node.alpha.kubernetes.io/unreachable
+      operator: TolerationOpExists
+      tolerationSeconds: 1200
+    - key: storage.kubernetes.io/pvUnhealthy
+      operator: TolerationOpExists
+  ```
+
+7. Once Alice decides to delete the database, she destroys the StatefulSet, and then destroys the PVCs.  The PVs will then get deleted and cleaned up according to the reclaim policy, and the addon adds it back to the cluster.
 
 ### Bob manages a distributed filesystem which needs access to all available storage on each node
 
 1. The cluster that Bob is using is provisioned with nodes that contain one or more secondary partitions
 2. The cluster administrator runs a DaemonSet addon that discovers secondary partitions across all nodes and creates corresponding PVs for them.
-3. The addon will monitor the health of secondary partitions and taint PVs whenever the backing local storage devices becomes unhealthy.
+3. The addon will monitor the health of secondary partitions and mark PVs as unhealthy whenever the backing local storage devices have failed.
 4. Bob creates a specialized controller (Operator) for his distributed filesystem and deploys it.
 5. The operator will identify all the nodes that it can schedule pods onto and discovers the PVs available on each of those nodes. The operator has a label selector that identifies the specific PVs that it can use (this helps preserve fast PVs for Databases for example).
-6. The operator will then create PVCs and manually bind to individual local PVs across all its nodes. 
-7. It will then create pods, manually place them on specific nodes (similar to a DaemonSet) with high enough priority and have them use all the PVCs create by the Operator on those nodes.
+6. The operator will then create PVCs and manually bind to individual local PVs across all its nodes.
+7. It will then create pods, manually place them on specific nodes (similar to a DaemonSet) with high enough priority and have them use all the PVCs created by the Operator on those nodes.
 8. If a pod dies, it will get replaced with a new pod that uses the same set of PVCs that the old pod had used.
-9. If a PV gets tainted as unhealthy, the Operator is expected to delete pods if they cannot tolerate device failures. 
+9. If a PV gets marked as unhealthy, the Operator is expected to delete pods if they cannot tolerate device failures
 
 ### Bob manages a specialized application that needs access to Block level storage
 
 1. The cluster that Bob uses has nodes that contain raw block devices that have not been formatted yet.
-2. The cluster admin creates a DaemonSet addon that discovers all the raw block devices on a node that are available within a specific directory and creates corresponding PVs for them with a ‘StorageType’ of ‘Block’
+2. The cluster admin creates a DaemonSet addon that discovers all the raw block devices on a node that are available within a specific directory and creates corresponding PVs for them with a new `volumeType = block` field.
 
     ```yaml
     kind: PersistentVolume
@@ -311,32 +325,30 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
       name: foo
       annotations:
         storage.kubernetes.io/node: node-1
-      labels:
-        storage.kubernetes.io/medium: ssd
+        volume.beta.kubernetes.io/storage-class: local-fast
     spec:
-      volumeType: local
-      storageLevel: block
+      volumeType: block
       capacity:
         storage: 100Gi
-      hostpath:
+      local:
         path: /var/lib/kubelet/storage-raw-devices/foo
       accessModes:
         - ReadWriteOnce
       persistentVolumeReclaimPolicy: Delete
     ```
 
-3. Bob creates a pod with a PVC that requests for block level access and similar to a Stateful Set scenario the scheduler will identify nodes that can satisfy the pods request.
+3. Bob creates a pod with a PVC that requests for block level access and similar to a Stateful Set scenario the scheduler will identify nodes that can satisfy the pods request.  The block devices will not be formatted to allow the application to handle the device using their own methods.
 
     ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
       name: myclaim
-      labels:
-        storage.kubernetes.io/medium: ssd
+      annotations:
+        volume.beta.kubernetes.io/node: ""
+        volume.beta.kubernetes.io/storage-class: local-fast
     spec:
-      volumeType: local
-      storageLevel: block
+      volumeType: block
       accessModes:
         - ReadWriteOnce
       resources:
@@ -348,24 +360,28 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
 
 # Open Questions & Discussion points 
 * Single vs split “limit” for storage across writable layer and logs
+    * Split allows for enforcement of hard quotas
+    * Single is a simpler UI
 * Local Persistent Volume bindings happening in the scheduler vs in PV controller
     * Should the PV controller fold into the scheduler
-* Supporting dedicated partitions for logs and volumes in Kubelet in addition to runtime overlay filesystem
-    * This complicates kubelet.Not sure what value it adds to end users.
-* Providing IO isolation for ephemeral storage
-    * IO isolation is difficult. Use local PVs for performance
-* Support for encrypted partitions
-* Do applications need access to performant local storage for ephemeral use cases? Ex. A pod requesting local SSDs for use as ephemeral scratch space.
-    * Typically referred to as “inline PVs” in kube land
-* Should block level storage devices be auto formatted to be used as file level storage?
-    * Flexibility vs complexity
-    * Do we really need this? 
+* Should block level storage devices be auto formatted to be used as file level storage instead of having the filesystems precreated by the admin?
+    * It would match behavior with GCE PD and EBS where the volume plugin will create the filesystem first.
+    * It can allow for more comprehensive (but slower) volume cleanup options.  The filesystem can be destroyed and then the partition can be zeroed.
+    * It limits the filesystem choices to those that k8 supports.
 * Repair/replace scenarios. 
     * What are the implications of removing a disk and replacing it with a new one? 
     * We may not do anything in the system, but may need a special workflow
+* How to handle capacity of overlay systems.  It can be specified in the pod spec, but it is not accounted for in the node capacity.
+* Volume-level replication use cases where there is no pod associated with a volume.  How could forgiveness/data gravity be handled there?
+
+# Related Features
+* Protecting system daemons from abusive IO to primary partition
+* Raw device/block volume support.  This will benefit both remote and local devices.
+* Do applications need access to performant local storage for ephemeral use cases? Ex. A pod requesting local SSDs for use as ephemeral scratch space.
+    * Typically referred to as “inline PVs” in kube land
+* Support for encrypted secondary partitions in order to make wiping more secure and reduce latency
 
 # Recommended Storage best practices
-
 * Have the primary partition on a reliable storage device
 * Consider using RAID and SSDs (for performance)
 * Partition the rest of the storage devices based on the application needs
@@ -375,7 +391,7 @@ All other partitions are exposed as persistent volumes. The PV interface allows 
 * Run a reliable cluster level logging service to drain logs from the nodes before they get rotated or deleted
 * The runtime partition for overlayfs is optional. You do not **need** one.
 * Alert on primary partition failures and act on it immediately. Primary partition failures will render your node unusable.
-* Use EmptyDir for all scratch space requirements of your apps. 
+* Use EmptyDir for all scratch space requirements of your apps when IOPS isolation is not needed.
 * Make the container’s writable layer `readonly` if possible.
 * Another option is to keep the writable layer on tmpfs. Such a setup will allow you to eventually migrate from using local storage for anything but super fast caching purposes or distributed databases leading to higher reliability & uptime for nodes.
 
