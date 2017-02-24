@@ -10,6 +10,8 @@ Updated: 5/3/2016
   - [Building and Running the Tests](#building-and-running-the-tests)
     - [Cleaning up](#cleaning-up)
   - [Advanced testing](#advanced-testing)
+    - [Installing/updating kubetest](#installingupdating-kubetest)
+    - [Extracting a specific version of kubernetes](#extracting-a-specific-version-of-kubernetes)
     - [Bringing up a cluster for testing](#bringing-up-a-cluster-for-testing)
     - [Federation e2e tests](#federation-e2e-tests)
       - [Configuring federation e2e tests](#configuring-federation-e2e-tests)
@@ -152,6 +154,39 @@ go run hack/e2e.go --get=true --old=1h -- # Update every hour
 go run hack/e2e.go --get=false -- # Never attempt to install/update.
 go install k8s.io/test-infra/kubetest  # Manually install
 go get -u k8s.io/test-infra/kubetest  # Manually update installation
+```
+### Extracting a specific version of kubernetes
+
+The `kubetest` binary can download and extract a specific version of kubernetes,
+both the server, client and test binaries. The `--extract=E` flag enables this
+functionality.
+
+There are a variety of values to pass this flag:
+
+```sh
+# Official builds: <ci|release>/<latest|stable>[-N.N]
+go run hack/e2e.go -- --extract=ci/latest --up  # Deploy the latest ci build.
+go run hack/e2e.go -- --extract=ci/latest-1.5 --up  # Deploy the latest 1.5 CI build.
+go run hack/e2e.go -- --extract=release/latest --up  # Deploy the latest RC.
+go run hack/e2e.go -- --extract=release/stable-1.5 --up  # Deploy the 1.5 release.
+
+# A specific version:
+go run hack/e2e.go -- --extract=v1.5.1 --up  # Deploy 1.5.1
+go run hack/e2e.go -- --extract=v1.5.2-beta.0  --up  # Deploy 1.5.2-beta.0
+go run hack/e2e.go -- --extract=gs://foo/bar  --up  # --stage=gs://foo/bar
+
+# Whatever GKE is using (gke, gke-staging, gke-test):
+go run hack/e2e.go -- --extract=gke  --up  # Deploy whatever GKE prod uses
+
+# Using a GCI version:
+go run hack/e2e.go -- --extract=gci/gci-canary --up  # Deploy the version for next gci release
+go run hack/e2e.go -- --extract=gci/gci-57  # Deploy the version bound to gci m57
+go run hack/e2e.go -- --extract=gci/gci-57/ci/latest  # Deploy the latest CI build using gci m57 for the VM image
+
+# Reuse whatever is already built
+go run hack/e2e.go -- --up  # Most common. Note, no extract flag
+go run hack/e2e.go -- --build --up  # Most common. Note, no extract flag
+go run hack/e2e.go -- --build --stage=gs://foo/bar --extract=local --up  # Extract the staged version
 ```
 
 ### Bringing up a cluster for testing
