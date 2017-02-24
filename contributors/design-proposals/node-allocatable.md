@@ -326,7 +326,7 @@ for overflow and the node should continue to function. If the node has been sche
 situation.
 
 A recommended alternative is to enforce KubeReserved once Kubelet supports it (Phase 2).
-In the [future](#future-work) we may set a parent cgroup for kubernetes components, with limits set
+In the future we may set a parent cgroup for kubernetes components, with limits set
 according to `KubeReserved`.
 
 ### 3rd party schedulers
