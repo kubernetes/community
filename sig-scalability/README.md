@@ -1,6 +1,12 @@
 # SIG Scalability
 
+Responsible for answering scalability related questions such as:
 
+What size clusters do we think that we should support with Kubernetes in the short to 
+medium term? How performant do we think that the control system should be at scale? 
+What resource overhead should the Kubernetes control system reasonably consume?
+
+For more details about our objectives please review [Scaling And Performance Goals](goals.md)
 
 ## Organizers
 - Bob Wise (@countspongebob), Samsung-CNCT 
