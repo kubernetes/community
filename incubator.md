@@ -114,13 +114,13 @@ These are grandfathered in as full projects:
 - github.com/kubernetes/pr-bot - move from mungebot, etc from contrib, currently running in "prod" on github.com/kubernetes
 - github.com/kubernetes/dashboard
 - github.com/kubernetes/helm  (Graduated from incubator on Feb 2017)
+- github.com/kubernetes/minikube (Graduated from incubator on Feb 2017)
 
 **Project to Incubate But Not Move**
 
 These projects are young but have significant user facing docs pointing at their current github.com/kubernetes location. Lets put them through incubation process but leave them at github.com/kubernetes.
 
 - github.com/kubernetes/charts
-- github.com/kubernetes/minikube
  
 **Projects to Move to Incubator**
 
