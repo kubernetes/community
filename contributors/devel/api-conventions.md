@@ -1,7 +1,7 @@
 API Conventions
 ===============
 
-Updated: 4/22/2016
+Updated: 2/23/2017
 
 *This document is oriented at users who want a deeper understanding of the
 Kubernetes API structure, and developers wanting to extend the Kubernetes API.
@@ -74,6 +74,9 @@ kinds would have different attributes and properties)
 via HTTP to the server. Resources are exposed via:
   * Collections - a list of resources of the same type, which may be queryable
   * Elements - an individual resource, addressable via a URL
+* **API Group** a set of resources that are exposed together at the same. Along
+with the version is exposed in the "apiVersion" field as "GROUP/VERSION", e.g.
+"policy.k8s.io/v1".
 
 Each resource typically accepts and returns data of a single kind. A kind may be
 accepted or returned by multiple resources that reflect specific use cases. For
@@ -82,8 +85,17 @@ to create, update, and delete pods, while a separate "pod status" resource (that
 acts on "Pod" kind) allows automated processes to update a subset of the fields
 in that resource.
 
+Resources are bound together in API groups - each group may have one or more
+versions that evolve independent of other API groups, and each version within
+the group has one or more resources. Group names are typically in domain name
+form - the Kubernetes project reserves use of the empty group, all single
+word names ("extensions", "apps"), and any group name ending in "*.k8s.io" for
+its sole use. When choosing a group name, we recommend selecting a subdomain
+your group or organization owns, such as "widget.mycompany.com".
+
 Resource collections should be all lowercase and plural, whereas kinds are
-CamelCase and singular.
+CamelCase and singular. Group names must be lower case and be valid DNS
+subdomains.
 
 
 ## Types (Kinds)
@@ -155,6 +167,16 @@ The standard REST verbs (defined below) MUST return singular JSON objects. Some
 API endpoints may deviate from the strict REST pattern and return resources that
 are not singular JSON objects, such as streams of JSON objects or unstructured
 text log data.
+
+A common set of "meta" API objects are used across all API groups and are
+thus considered part of the server group named `meta.k8s.io`. These types may
+evolve independent of the API group that uses them and API servers may allow
+them to be addressed in their generic form. Examples are `ListOptions`,
+`DeleteOptions`, `List`, `Status`, `WatchEvent`, and `Scale`. For historical
+reasons these types are part of each existing API group. Generic tools like
+quota, garbage collection, autoscalers, and generic clients like kubectl
+leverage these types to define consistent behavior across different resource
+types, like the interfaces in programming languages.
 
 The term "kind" is reserved for these "top-level" API types. The term "type"
 should be used for distinguishing sub-categories within objects or subobjects.
@@ -275,6 +297,14 @@ cannot vary from the user's desired intent MAY have only "spec", and MAY rename
 
 Objects that contain both spec and status should not contain additional
 top-level fields other than the standard metadata fields.
+
+Some objects which are not persisted in the system - such as `SubjectAccessReview`
+and other webhook style calls - may choose to add spec and status to encapsulate
+a "call and response" pattern. The spec is the request (often a request for
+information) and the status is the response. For these RPC like objects the only
+operation may be POST, but having a consistent schema between submission and
+response reduces the complexity of these clients.
+
 
 ##### Typical status properties
 
