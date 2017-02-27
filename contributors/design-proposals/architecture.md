@@ -176,11 +176,7 @@ available desired resources.
 The Kubernetes node has the services necessary to run application containers and
 be managed from the master systems.
 
-Each node runs a container runtime (like docker, rkt, or Hyper). The container
-runtime is responsible for downloading images and running containers.
-
 #### Kubelet
-
 
 The most important and most prominent controller in Kubernetes is the Kubelet, which is the
 primary implementer of the Pod and Node APIs that drive the container execution layer. Without
@@ -201,11 +197,21 @@ concerns, and migration from physical/virtual machines. The Pod primitive is key
 [primary benefits](https://kubernetes.io/docs/whatisk8s/#why-containers) of deployment on modern
 cloud platforms, such as Kubernetes.
 
+Kubelet also currently links in the [cAdvisor](https://github.com/google/cadvisor) resource monitoring
+agent.
+
 #### Container runtime
 
-TODO
+Each node runs a container runtime, which is responsible for downloading images and running containers.
 
-#### `kube-proxy`
+Kubelet does not link in the base container runtime. Instead, we're defining a [Container Runtime Interface]
+(container-runtime-interface-v1.md) to control the underlying runtime and facilitate pluggability of that layer.
+This decoupling is needed in order to maintain clear component boundaries, facilitate testing, and facilitate pluggability.
+Runtimes supported today, either upstream or by forks, include at least docker (for Linux and Windows), 
+[rkt](https://kubernetes.io/docs/getting-started-guides/rkt/),
+[cri-o](https://github.com/kubernetes-incubator/cri-o), and [frakti](https://github.com/kubernetes/frakti).
+
+#### Kube Proxy
 
 The [service](https://kubernetes.io/docs/user-guide/services/) abstraction provides a way to
 group pods under a common access policy (e.g., load-balanced). The implementation of this creates
