@@ -84,7 +84,8 @@ into a set of components, which can all run on a single *master* node, or can be
 in order to support high-availability clusters, or can even be run on Kubernetes itself (AKA
 [self-hosted](self-hosted-kubernetes.md#what-is-self-hosted)).
 
-Kubernetes provides a REST API supporting primarily CRUD operations on (mostly) persistent resources as the nucleus of its control plane. Kubernetes’s API provides IaaS-like
+Kubernetes provides a REST API supporting primarily CRUD operations on (mostly) persistent resources, which
+serve as the hub of its control plane. Kubernetes’s API provides IaaS-like
 container-centric primitives such as [Pods](https://kubernetes.io/docs/user-guide/pods/),
 [Services](https://kubernetes.io/docs/user-guide/services/), and [Ingress]
 (https://kubernetes.io/docs/user-guide/ingress/), and also lifecycle APIs to support orchestration
