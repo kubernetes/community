@@ -25,9 +25,9 @@ It is also important to remember that the role of managing an open source projec
 - via [Slack](https://kubernetes.slack.com/messages/kubernetes-pm/)
 - via [Google Groups](https://groups.google.com/forum/#!forum/kubernetes-pm)
 
-### Scheduled Meeting Times
+### Regular Meetings
 
-TBD
+Every second Tuesday, 8:00 AM PT/4:00 PM UTC; [Meeting Notes](https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing)
 
 ### Leaders
 - Aparna Sinha apsinha@google.com, Google
