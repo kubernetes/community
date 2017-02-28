@@ -27,7 +27,8 @@ It is also important to remember that the role of managing an open source projec
 
 ### Scheduled Meeting Times
 
-TBD
+- Biweekly on Tuesdays at 8:00am PST [Zoom](https://zoom.us/j/845373595)
+- [Meeting Notes and Agenda] (https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit#)
 
 ### Leaders
 - Aparna Sinha apsinha@google.com, Google
