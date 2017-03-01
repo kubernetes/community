@@ -42,7 +42,7 @@ contributors are considered to be anyone who meets any of the following criteria
    than 20 PRs in the previous year.
    * Filed more than three issues in the previous month, or more than 30 issues in
    the previous 12 months.
-   * Commented on more than pull requests in the previous month, or
+   * Commented on more than five pull requests in the previous month, or
    more than 50 pull requests in the previous 12 months.
    * Marked any PR as LGTM in the previous month.
    * Have *collaborator* permissions in the Kubernetes github project.
