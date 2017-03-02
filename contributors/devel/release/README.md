@@ -45,8 +45,8 @@ The Release Management Team Lead is the person ultimately responsible for ensuri
   * Ensures that cherry-picks do not destabilize the branch by either giving the PR enough time to stabilize in master or giving it enough time to stabilize in the release branch before cutting the release.
 * Cuts the actual [release](https://github.com/kubernetes/kubernetes/releases).
 
-#### Release Docs Lead
-* Sets release docs related deadlines for developers and works with Release Management Team Lead to ensure they are widely communicated.
+#### Docs Lead
+* Sets docs related deadlines for developers and works with Release Management Team Lead to ensure they are widely communicated.
 * Sets up release branch for docs.
 * Pings feature owners to ensure that release docs are created on time.
 * Reviews/merges release doc PRs.
