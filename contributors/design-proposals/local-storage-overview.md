@@ -381,10 +381,11 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
 
 # Related Features
 * Protecting system daemons from abusive IO to primary partition
-* Raw device/block volume support.  This will benefit both remote and local devices.
+* Raw device/block volume support. This will benefit both remote and local devices.
 * Do applications need access to performant local storage for ephemeral use cases? Ex. A pod requesting local SSDs for use as ephemeral scratch space.
     * Typically referred to as “inline PVs” in kube land
 * Support for encrypted secondary partitions in order to make wiping more secure and reduce latency
+* Co-locating PVs and pods across zones. Binding PVCs in the scheduler will help with this feature.
 
 # Recommended Storage best practices
 * Have the primary partition on a reliable storage device
