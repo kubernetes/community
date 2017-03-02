@@ -14,7 +14,12 @@ This document presents a strawman for managing local storage in Kubernetes. We e
 # Non Goals
 * Provide storage usage isolation for non-shared partitions.
 * Support all storage devices natively in upstream Kubernetes. Non standard storage devices are expected to be managed using extension mechanisms.
-
+* Support for I/O isolation
+  * Available IOPS on rotational media is very limited compared to other resources like CPU and Memory. This leads to severe resource stranding if IOPS is exposed as a schedulable resource.
+  * Blkio cgroup based I/O isolation doesn't provide deterministic behavior compared to memory and cpu cgroups. Years of experience at Google with Borg has taught that relying on blkio or I/O scheduler isn't suitable for multi-tenancy.
+  * Blkio cgroup based I/O isolation isn't suitable for SSDs. Turning on CFQ on SSDs will hamper performance. Its better to statically partition SSDs and share them instead of using blkio.
+  * I/O isolation can be achieved by using a combination of static partitioning and remote storage. This proposal recommends this approach.
+  
 # Use Cases
 
 ## Ephemeral Local Storage
