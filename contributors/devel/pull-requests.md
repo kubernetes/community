@@ -13,9 +13,13 @@
 
 # Pull Request Process
 
-An overview of how pull requests are managed for kubernetes. This document
-assumes the reader has already followed the [development guide](development.md)
-to set up their environment.
+An overview of how pull requests are managed for kubernetes.
+
+This document assumes the reader has already followed the
+[development guide](development.md) to set up their environment,
+and understands
+[basic pull request mechanics](https://help.github.com/articles/using-pull-requests).
+
 
 # Life of a Pull Request
 

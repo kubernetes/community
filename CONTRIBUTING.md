@@ -1,16 +1,30 @@
-# Contributing guidelines
+# Contributing to the community repo
 
-This project is for documentation about the community. To contribute to one of
-the Kubernetes projects please see the contribution guide for that project.
 
-## How To Contribute
+Contributions to this community repository follow a
+[pull request](https://help.github.com/articles/using-pull-requests/) (PR)
+model:
 
-The contributions here follow a [pull request](https://help.github.com/articles/using-pull-requests/) model with some additional process.
-The process is as follows:
+#### 1. Submit a PR with your change
 
-1. Submit a pull request with the requested change.
-2. Another person, other than a Special Interest Group (SIG) owner, can mark it Looks Good To Me (LGTM) upon successful review. Otherwise feedback can be given.
-3. A SIG owner can merge someone else's change into their SIG documentation immediate.
-4. Someone cannot immediately merge their own change. To merge your own change wait 24 hours during the week or 72 hours over a weekend. This allows others the opportunity to review a change.
+#### 2. Get an LGTM.
 
-_Note, the SIG Owners decide on the layout for their own sub-directory structure._
+Upon successful review, someone will give the PR
+a __LGTM__ (_looks good to me_) in the review thread.
+   
+#### 3. Allow time for others to see it
+
+Once you have an __LGTM__, please wait 24 hours during
+the week or 72 hours over a weekend before you
+merge it, to give others (besides your initial reviewer) 
+time to see it.
+
+__That said, a [SIG lead](sig-list.md) may shortcut this by merging
+someone else's change into their SIG's documentation
+at any time.__
+
+Edits in SIG sub-directories should follow structure and guidelines set
+by the respective SIG leads - see `CONTRIBUTING` instructions in subdirectories.
+
+
+ 
