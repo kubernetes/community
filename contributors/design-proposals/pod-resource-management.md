@@ -93,10 +93,10 @@ If the `systemd` cgroup driver is used, the `kubelet` converts the `cgroupfs`
 style syntax into transient slices, and as a result, it must follow `systemd`
 conventions for path encoding.
 
-For example, the cgroup name `/Burstable/pod_123-456` is translated to a
-transient slice with the name `Burstable-pod_123_456.slice`.  Given how
+For example, the cgroup name `/burstable/pod123-456` is translated to a
+transient slice with the name `burstable-pod123_456.slice`.  Given how
 systemd manages the cgroup filesystem, the concrete name for the cgroup
-sandbox becomes `/Burstable.slice/Burstable-pod_123_456.slice`.
+sandbox becomes `/burstable.slice/burstable-pod123_456.slice`.
 
 ## Integration with container runtimes
 
