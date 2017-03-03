@@ -1,18 +1,34 @@
-# Scalability SIG
+# SIG Scalability
 
-**Leads:** Bob Wise (@countspongebob) and Joe Beda (@jbeda)
+Responsible for answering scalability related questions such as:
 
-**Slack Channel:** [#sig-scale](https://kubernetes.slack.com/messages/sig-scale/).  [Archive](http://kubernetes.slackarchive.io/sig-scale/)
+What size clusters do we think that we should support with Kubernetes in the short to 
+medium term? How performant do we think that the control system should be at scale? 
+What resource overhead should the Kubernetes control system reasonably consume?
 
-**Mailing List:** [kubernetes-sig-scale](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)
+For more details about our objectives please review [Scaling And Performance Goals](goals.md)
 
-**Meetings:** Thursdays at 9am pacific.  Contact Joe or Bob for invite. [Notes](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
-)
+## Organizers
+- Bob Wise (@countspongebob), Samsung-CNCT 
+- Joe Beda (@jbeda), Heptio
 
-**Docs:**
-[Scaling And Performance Goals](goals.md)
+## Meetings
 
-### Scalability SLAs
+- **Every Thursday at 9am pacific.**  
+- Contact Joe or Bob for invite. 
+- [Zoom link](https://zoom.us/j/989573207)
+- [Agenda items](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web)
+
+## Slack / Google Groups
+- [Slack: #sig-scale](https://kubernetes.slack.com/messages/sig-scale/).  
+- [Slack Archive](http://kubernetes.slackarchive.io/sig-scale/)
+
+- [kubernetes-sig-scale](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)
+
+## Docs
+- [Scaling And Performance Goals](goals.md)
+
+## Scalability SLAs
 
 We officially support two different SLAs:
 
