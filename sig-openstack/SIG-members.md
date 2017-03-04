@@ -19,3 +19,4 @@ Use @kubernetes/sig-openstack to mention this team in comments.
 * [Jędrzej Nowak](https://github.com/pigmej)
 * [rohitagarwalla](https://github.com/rohitagarwalla)
 * [Russell Bryant](https://github.com/russellb)
+* [Ayrat Khayretdinov](https://github.com/archyufa)
