@@ -39,6 +39,8 @@ Much of the community activity is organized into a community meeting, numerous S
 
 The community meeting calendar is available as an [iCal to subscribe to] (https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) (simply  copy and paste the url into any calendar product that supports the iCal format) or [html to view] (https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles).
 
+Interested in starting a new SIG?  Check out the documentation [here](./sig-creation-procedure.md).
+
 | Name | Leads | Group | Slack Channel | Meetings |
 |------|-------|-------|---------------|----------|
 | [API Machinery](sig-api-machinery/README.md) | [@lavalamp (Daniel Smith, Google)](https://github.com/lavalamp) <br> [@deads2k (David Eads, Red Hat)] (https://github.com/orgs/kubernetes/people/deads2k)| [Group](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery) | [#sig-api-machinery](https://kubernetes.slack.com/messages/sig-api-machinery/) | [Every other Wednesday at 11:00 AM PST](https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig) |
@@ -68,4 +70,4 @@ The community meeting calendar is available as an [iCal to subscribe to] (https:
 | [UI](sig-ui/README.md) | [@romlein (Dan Romlein, Apprenda)](https://github.com/romlein)<br> [@bryk (Piotr Bryk, Google)](https://github.com/bryk) | [Group](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) | [#sig-ui](https://kubernetes.slack.com/messages/sig-ui/) | Wednesdays at 4:00 PM CEST |
 | [Windows](sig-windows/README.md) | [@michmike77 (Michael Michael, Apprenda)](https://github.com/michmike)| [Group](https://groups.google.com/forum/#!forum/kubernetes-sig-windows) | [#sig-windows](https://kubernetes.slack.com/messages/sig-windows) | Bi-weekly Tuesdays at 9:30 AM PT |
 
-### [How to start a SIG](sig-creation-procedure.md)
+
