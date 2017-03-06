@@ -60,7 +60,7 @@ These steps should be completed within the 1-7 days of Disclosure.
 - The Fix Lead and the Fix Team will create a [CVSS](https://www.first.org/cvss/specification-document) using the [CVSS Calculator](https://www.first.org/cvss/calculator/3.0). The Fix Lead makes the final call on the calculated CVSS; it is better to move quickly than make the CVSS prefect.
 - The Fix Team will notify the Fix Lead that work on the fix branch is complete once there are LGTMs on all commits in the private repo from one or more relevant assignees in the relevant OWNERS file.
 
-If the CVSS score is under 2.0 the Fix Team can decide to slow the release process down in the face of holidays, developer bandwidth, etc. These decisions must be discussed on the kubernetes-security mailing list.
+If the CVSS score is under 4.0 ([a low severity score](https://www.first.org/cvss/specification-document#i5)) the Fix Team can decide to slow the release process down in the face of holidays, developer bandwidth, etc. These decisions must be discussed on the kubernetes-security mailing list.
 
 ### Fix Disclosure Process
 
@@ -68,7 +68,7 @@ With the Fix Development underway the Fix Lead needs to come up with an overall 
 
 **Disclosure of Forthcoming Fix to Users** (Completed within 1-7 days of Disclosure)
 
-- The Fix Lead will email kubernetes-announce@googlegroups.com and kubernetes-security-announce@googlegroups.com informing users that a security vulnerability has been disclosed and that a fix will be made available at YYYY-MM-DD HH:MM UTC in the future via this list. This time is the Release Date.
+- The Fix Lead will email [kubernetes-announce@googlegroups.com](https://groups.google.com/forum/#!forum/kubernetes-announce) and [kubernetes-security-announce@googlegroups.com](https://groups.google.com/forum/#!forum/kubernetes-security-announce) informing users that a security vulnerability has been disclosed and that a fix will be made available at YYYY-MM-DD HH:MM UTC in the future via this list. This time is the Release Date.
 - The Fix Lead will include any mitigating steps users can take until a fix is available.
 
 The communication to users should be actionable. They should know when to block time to apply patches, understand exact mitigation steps, etc.
@@ -84,7 +84,7 @@ The communication to users should be actionable. They should know when to block 
 
 - The Release Managers will ensure all the binaries are built, publicly available, and functional before the Release Date.
   - TODO: this will require a private security build process.
-- The Release Managers will create a new patch release branch from the latest patch release tag + the fix from the security branch. As a practical example if v1.5.3 is the latest patch release in kubernetes.git a new branch will be created called v1.5.4 which includes only patches required to fix the issue. 
+- The Release Managers will create a new patch release branch from the latest patch release tag + the fix from the security branch. As a practical example if v1.5.3 is the latest patch release in kubernetes.git a new branch will be created called v1.5.4 which includes only patches required to fix the issue.
 - The Fix Lead will cherry-pick the patches onto the master branch and all relevant release branches. The Fix Team will LGTM and merge.
 - The Release Managers will merge these PRs as quickly as possible. Changes shouldn't be made to the commits even for a typo in the CHANGELOG as this will change the git sha of the already built and commits leading to confusion and potentially conflicts as the fix is cherry-picked around branches.
 - The Fix Lead will request a CVE from [DWF](https://github.com/distributedweaknessfiling/DWF-Documentation) and include the CVSS and release details.
