@@ -45,15 +45,7 @@ assigned a piece of work.  Do this right away.
 
 ### Agree to contribution rules
 
-The [Cloud Native Computing Foundation][CNCF] defines the legal status of the
-contributed code in a _Contributor License Agreement_.
-
-Sign it electronically following these [instructions][CLA].
-
-Sign using the same email identity that you plan to use
-to push code via git (i.e., the output of `git config user.email`).
-
-If you have trouble, ask for help at `helpdesk@rt.linuxfoundation.org`.
+Follow the [CLA signup instructions](../CLA.md).
 
 ### Adopt an issue
 
@@ -284,8 +276,6 @@ See the sig-cli [community page] for points of contact and meeting times:
 - `@kubernetes/sig-cli-proposals` flags a design proposal.
 
 [@mentions]: https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams
-[CLA]: https://github.com/kubernetes/kubernetes/wiki/CLA-FAQ
-[CNCF]: https://www.cncf.io/community
 [Kubernetes Basics Tutorial]: https://kubernetes.io/docs/tutorials/kubernetes-basics
 [PR]: https://help.github.com/articles/creating-a-pull-request
 [`PTAL`]: https://en.wiktionary.org/wiki/PTAL
