@@ -46,7 +46,7 @@ no matter how small, even if not explicitly described below.
 
 Contributors have the opportunity to grow in responsibilities, privileges, and authority corresponding
 to the scope, quality, quantity, and duration of their contributions. Definition of criteria and process
-is in progress, with preliminary requirements below. Any position achieved by merit is achieved by an individual and the authority follows the individual whoever they go, and does not remain with their previous employer(s).
+is in progress, with preliminary requirements below. Any position achieved by merit is achieved by an individual and the authority follows the individual wherever they go, and does not remain with their previous employer(s).
  
 Roles that are currently assumed by project participants are described below, focusing on, but not
 limited to the `kubernetes/kubernetes` repo.
