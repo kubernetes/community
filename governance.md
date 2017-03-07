@@ -196,7 +196,8 @@ maintained in OWNERS files in the repository.
 - **LEAD**:
   - includes all requirements, expectations, and benefits of OWNERS
   - Requirements
-    - current de facto project leads have been involved with the project since at least June 2014
+    - current de facto project leads have been involved with the project since at least June 2014, and
+      are a subset of people from the `approvers` list in the top-level OWNERS file in the `kubernetes` repo
     - demonstrated strong technical vision and judgement
     - demonstrated empathy for the user and open-source developer perspective
     - committed to project's mission and culture
