@@ -1,30 +1,17 @@
 # Contributing to the community repo
 
-
-Contributions to this community repository follow a
-[pull request](https://help.github.com/articles/using-pull-requests/) (PR)
-model:
-
-#### 1. Submit a PR with your change
-
-#### 2. Get an LGTM.
+Make a [pull request](https://help.github.com/articles/using-pull-requests) (PR).
 
 Upon successful review, someone will give the PR
 a __LGTM__ (_looks good to me_) in the review thread.
-   
-#### 3. Allow time for others to see it
 
-Once you have an __LGTM__, please wait 24 hours during
-the week or 72 hours over a weekend before you
-merge it, to give others (besides your initial reviewer) 
-time to see it.
+A [SIG lead](sig-list.md) (or someone with approval powers
+as specified in an OWNERS file) may merge the PR immediately
+with or without an LGTM from someone else.
+Or they may wait a business day to get further feedback from other reviewers.
 
-__That said, a [SIG lead](sig-list.md) may shortcut this by merging
-someone else's change into their SIG's documentation
-at any time.__
-
-Edits in SIG sub-directories should follow structure and guidelines set
-by the respective SIG leads - see `CONTRIBUTING` instructions in subdirectories.
-
+Edits in SIG sub-directories should follow any additional guidelines described
+by the respective SIG leads in the sub-directory's `CONTRIBUTING` file
+(e.g. [sig-cli/CONTRIBUTING](sig-cli/CONTRIBUTING.md)).
 
  
