@@ -80,7 +80,7 @@ There are two configurations in which it makes sense to run `kube-aggregator`.
   `api.mycompany.com/v2` from another apiserver while you update clients. But
   you can't serve `api.mycompany.com/v1/frobbers` and
   `api.mcompany.com/v1/grobinators` from different apiservers. This restriction
-  allows us to limit the scope of `kube-aggregator` to a managable level.
+  allows us to limit the scope of `kube-aggregator` to a manageable level.
 * Follow API conventions: APIs exposed by every API server should adhere to [kubernetes API
   conventions](../devel/api-conventions.md).
 * Support discovery API: Each API server should support the kubernetes discovery API
@@ -160,7 +160,7 @@ Since the actual server which serves client's request can be opaque to the clien
 all API servers need to have homogeneous authentication and authorisation mechanisms.
 All API servers will handle authn and authz for their resources themselves.
 The current authentication infrastructure allows token authentication delegation to the
-core `kube-apiserver` and trust of an authentication proxy, which can be fullfilled by
+core `kube-apiserver` and trust of an authentication proxy, which can be fulfilled by
 `kubernetes-aggregator`.
 
 #### Server Role Bootstrapping

@@ -113,14 +113,15 @@ These are grandfathered in as full projects:
 - github.com/kubernetes/md-check
 - github.com/kubernetes/pr-bot - move from mungebot, etc from contrib, currently running in "prod" on github.com/kubernetes
 - github.com/kubernetes/dashboard
+- github.com/kubernetes/helm  (Graduated from incubator on Feb 2017)
+- github.com/kubernetes/minikube (Graduated from incubator on Feb 2017)
 
 **Project to Incubate But Not Move**
 
 These projects are young but have significant user facing docs pointing at their current github.com/kubernetes location. Lets put them through incubation process but leave them at github.com/kubernetes.
 
-- github.com/kubernetes/minikube
 - github.com/kubernetes/charts
-
+ 
 **Projects to Move to Incubator**
 
 - github.com/kubernetes/kube2consul
@@ -149,5 +150,6 @@ Large portions of this process and prose are inspired by the Apache Incubator pr
 ## Original Discussion
 https://groups.google.com/d/msg/kubernetes-dev/o6E1u-orDK8/SAqal_CeCgAJ
 
-## Future Work 
+## Future Work
+
 - Expanding potential sources of champions outside of Kubernetes main repo

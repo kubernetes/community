@@ -2,7 +2,7 @@
 
 **Author**: David Ashpole (@dashpole)
 
-**Last Updated**: 1/19/2017
+**Last Updated**: 1/31/2017
 
 **Status**: Proposal
 
@@ -21,8 +21,7 @@ This document proposes a design for the set of metrics included in an eventual C
     - [Metric Requirements:](#metric-requirements)
     - [Proposed Core Metrics:](#proposed-core-metrics)
     - [On-Demand Design:](#on-demand-design)
-  - [Implementation Plan](#implementation-plan)
-  - [Rollout Plan](#rollout-plan)
+  - [Future Work](#future-work)
 
 <!-- END MUNGE: GENERATED_TOC -->
 
@@ -51,12 +50,12 @@ The [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/mast
 By publishing core metrics, the kubelet is relieved of its responsibility to provide metrics for monitoring.
 The third party monitoring pipeline also is relieved of any responsibility to provide these metrics to system components.
 
-cAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benifit from a more "On-Demand" metrics collection design.
+cAdvisor is structured to collect metrics on an interval, which is appropriate for a stand-alone metrics collector.  However, many functions in the kubelet are latency-sensitive (eviction, for example), and would benefit from a more "On-Demand" metrics collection design.
 
 ### Proposal
 This proposal is to use this set of core metrics, collected by the kubelet, and used solely by kubernetes system components to support "First-Class Resource Isolation and Utilization Features".  This proposal is not designed to be an API published by the kubelet, but rather a set of metrics collected by the kubelet that will be transformed, and published in the future.
 
-The target "Users" of this set of metrics are kubernetes components (though not neccessarily directly).  This set of metrics itself is not designed to be user-facing, but is designed to be general enough to support user-facing components.
+The target "Users" of this set of metrics are kubernetes components (though not necessarily directly).  This set of metrics itself is not designed to be user-facing, but is designed to be general enough to support user-facing components.
 
 ### Non Goals
 Everything covered in the [Monitoring Architecture](https://github.com/kubernetes/kubernetes/blob/master/docs/design/monitoring_architecture.md) design doc will not be covered in this proposal.  This includes the third party metrics pipeline, and the methods by which the metrics found in this proposal are provided to other kubernetes components.
@@ -105,7 +104,7 @@ Metrics requirements for "First Class Resource Isolation and Utilization Feature
 
 ### Proposed Core Metrics:
 This section defines "usage metrics" for filesystems, CPU, and Memory.  
-As stated in Non-Goals, this proposal does not attempt to define the specific format by which these are exposed.  For convenience, it may be neccessary to include static information such as start time, node capacities for CPU, Memory, or filesystems, and more.
+As stated in Non-Goals, this proposal does not attempt to define the specific format by which these are exposed.  For convenience, it may be necessary to include static information such as start time, node capacities for CPU, Memory, or filesystems, and more.
 
 ```go
 // CpuUsage holds statistics about the amount of cpu time consumed  
@@ -146,17 +145,10 @@ The interface for exposing these metrics within the kubelet contains methods for
 Implementation:  
 To keep performance bounded while still offering metrics "On-Demand", all calls to get metrics are cached, and a minimum recency is established to prevent repeated metrics computation.  Before computing new metrics, the previous metrics are checked to see if they meet the recency requirements of the caller.  If the age of the metrics meet the recency requirements, then the cached metrics are returned.  If not, then new metrics are computed and cached.  
 
-## Implementation Plan 
-@dashpole will modify the structure of metrics collection code to be "On-Demand".   
-
+## Future work
 Suggested, tentative future work, which may be covered by future proposals:  
- - Publish these metrics in some form to a kubelet API endpoint
- - Obtain all runtime-specific information needed to collect metrics from the CRI.   
- - Kubernetes can be configured to run a default "third party metrics provider" as a daemonset.  Possibly standalone cAdvisor.
-
-## Rollout Plan
-Once this set of metrics is accepted, @dashpole will begin discussions on the format, and design of the endpoint that exposes them.  The node resource metrics endpoint (TBD) will be added alongside the current Summary API in an upcoming release.  This should allow concurrent developments of other portions of the system metrics pipeline (metrics-server, for example).  Once this addition is made, all other changes will be internal, and will not require any API changes.  
-@dashpole will also start discussions on integrating with the CRI, and discussions on how to provide an out-of-the-box solution for the "third party monitoring" pipeline on the node.  One current idea is a standalone verison of cAdvisor, but any third party metrics solution could serve this function as well.
+ - Decide on the format, name, and kubelet endpoint for publishing these metrics.
+ - Integrate with the CRI to allow compatibility with a greater number of runtimes, and to create a better runtime abstraction.   
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

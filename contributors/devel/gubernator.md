@@ -19,7 +19,7 @@
 [Gubernator](https://k8s-gubernator.appspot.com/) is a webpage for viewing and filtering Kubernetes
 test results.
 
-Gubernator simplifies the debugging proccess and makes it easier to track down failures by automating many
+Gubernator simplifies the debugging process and makes it easier to track down failures by automating many
 steps commonly taken in searching through logs, and by offering tools to filter through logs to find relevant lines.
 Gubernator automates the steps of finding the failed tests, displaying relevant logs, and determining the
 failed pods and the corresponing pod UID, namespace, and container ID.
@@ -83,7 +83,7 @@ included, the "Weave by timestamp" option can weave the selected logs together b
 
 *Currently Gubernator can only be used with remote node e2e tests.*
 
-**NOTE: Using Gubernator with local tests will publically upload your test logs to Google Cloud Storage**
+**NOTE: Using Gubernator with local tests will publicly upload your test logs to Google Cloud Storage**
 
 To use Gubernator to view logs from local test runs, set the GUBERNATOR tag to true.
 A URL link to view the test results will be printed to the console.

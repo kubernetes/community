@@ -137,7 +137,7 @@ make test-e2e-node REMOTE=true IMAGE_PROJECT="<name-of-project-with-images>" IMA
 ```
 
 Setting up your own host image may require additional steps such as installing etcd or docker.  See
-[setup_host.sh](../../test/e2e_node/environment/setup_host.sh) for common steps to setup hosts to run node tests.
+[setup_host.sh](https://github.com/kubernetes/kubernetes/tree/master/test/e2e_node/environment/setup_host.sh) for common steps to setup hosts to run node tests.
 
 ## Create instances using a different instance name prefix
 
@@ -202,8 +202,10 @@ related test, Remote execution is recommended.**
 To enable/disable kubenet:
 
 ```sh
-make test_e2e_node TEST_ARGS="--disable-kubenet=true" # enable kubenet
-make test_e2e_node TEST_ARGS="--disable-kubenet=false" # disable kubenet
+# enable kubenet
+make test-e2e-node TEST_ARGS='--kubelet-flags="--network-plugin=kubenet --network-plugin-dir=/opt/cni/bin"'
+# disable kubenet
+make test-e2e-node TEST_ARGS='--kubelet-flags="--network-plugin= --network-plugin-dir="'
 ```
 
 ## Additional QoS Cgroups Hierarchy level testing
@@ -221,9 +223,9 @@ the bottom of the comments section.  To re-run just the node e2e tests from the 
 `@k8s-bot node e2e test this issue: #<Flake-Issue-Number or IGNORE>` and **include a link to the test
 failure logs if caused by a flake.**
 
-The PR builder runs tests against the images listed in [jenkins-pull.properties](../../test/e2e_node/jenkins/jenkins-pull.properties)
+The PR builder runs tests against the images listed in [jenkins-pull.properties](https://github.com/kubernetes/kubernetes/tree/master/test/e2e_node/jenkins/jenkins-pull.properties)
 
-The post submit tests run against the images listed in [jenkins-ci.properties](../../test/e2e_node/jenkins/jenkins-ci.properties)
+The post submit tests run against the images listed in [jenkins-ci.properties](https://github.com/kubernetes/kubernetes/tree/master/test/e2e_node/jenkins/jenkins-ci.properties)
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

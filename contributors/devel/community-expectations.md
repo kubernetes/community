@@ -19,7 +19,7 @@ around code review that govern all active contributors to Kubernetes.
 ### Code of Conduct
 
 The most important expectation of the Kubernetes community is that all members
-abide by the Kubernetes [community code of conduct](../../code-of-conduct.md).
+abide by the Kubernetes [community code of conduct](../../governance.md#code-of-conduct).
 Only by respecting each other can we develop a productive, collaborative
 community.
 
@@ -42,7 +42,7 @@ contributors are considered to be anyone who meets any of the following criteria
    than 20 PRs in the previous year.
    * Filed more than three issues in the previous month, or more than 30 issues in
    the previous 12 months.
-   * Commented on more than pull requests in the previous month, or
+   * Commented on more than five pull requests in the previous month, or
    more than 50 pull requests in the previous 12 months.
    * Marked any PR as LGTM in the previous month.
    * Have *collaborator* permissions in the Kubernetes github project.
@@ -58,7 +58,7 @@ Because reviewers are often the first points of contact between new members of
 the community and can significantly impact the first impression of the
 Kubernetes community, reviewers are especially important in shaping the
 Kubernetes community.  Reviewers are highly encouraged to review the
-[code of conduct](../../code-of-conduct.md) and are strongly encouraged to go above
+[code of conduct](../../governance.md#code-of-conduct) and are strongly encouraged to go above
 and beyond the code of conduct to promote a collaborative, respectful
 Kubernetes community.
 
