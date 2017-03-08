@@ -1,12 +1,11 @@
 API Conventions
 ===============
 
-Updated: 4/22/2016
+Updated: 2/23/2017
 
 *This document is oriented at users who want a deeper understanding of the
 Kubernetes API structure, and developers wanting to extend the Kubernetes API.
-An introduction to using resources with kubectl can be found in [Working with
-resources](../user-guide/working-with-resources.md).*
+An introduction to using resources with kubectl can be found in [the object management overview](https://kubernetes.io/docs/concepts/tools/kubectl/object-management-overview/).*
 
 **Table of Contents**
 <!-- BEGIN MUNGE: GENERATED_TOC -->
@@ -53,7 +52,7 @@ resources](../user-guide/working-with-resources.md).*
 
 <!-- END MUNGE: GENERATED_TOC -->
 
-The conventions of the [Kubernetes API](../api.md) (and related APIs in the
+The conventions of the [Kubernetes API](https://kubernetes.io/docs/api/) (and related APIs in the
 ecosystem) are intended to ease client development and ensure that configuration
 mechanisms can be implemented that work across a diverse set of use cases
 consistently.
@@ -75,6 +74,9 @@ kinds would have different attributes and properties)
 via HTTP to the server. Resources are exposed via:
   * Collections - a list of resources of the same type, which may be queryable
   * Elements - an individual resource, addressable via a URL
+* **API Group** a set of resources that are exposed together at the same. Along
+with the version is exposed in the "apiVersion" field as "GROUP/VERSION", e.g.
+"policy.k8s.io/v1".
 
 Each resource typically accepts and returns data of a single kind. A kind may be
 accepted or returned by multiple resources that reflect specific use cases. For
@@ -83,8 +85,17 @@ to create, update, and delete pods, while a separate "pod status" resource (that
 acts on "Pod" kind) allows automated processes to update a subset of the fields
 in that resource.
 
+Resources are bound together in API groups - each group may have one or more
+versions that evolve independent of other API groups, and each version within
+the group has one or more resources. Group names are typically in domain name
+form - the Kubernetes project reserves use of the empty group, all single
+word names ("extensions", "apps"), and any group name ending in "*.k8s.io" for
+its sole use. When choosing a group name, we recommend selecting a subdomain
+your group or organization owns, such as "widget.mycompany.com".
+
 Resource collections should be all lowercase and plural, whereas kinds are
-CamelCase and singular.
+CamelCase and singular. Group names must be lower case and be valid DNS
+subdomains.
 
 
 ## Types (Kinds)
@@ -114,7 +125,7 @@ the full list. Some objects may be singletons (the current user, the system
 defaults) and may not have lists.
 
    In addition, all lists that return objects with labels should support label
-filtering (see [docs/user-guide/labels.md](../user-guide/labels.md), and most
+filtering (see [the labels documentation](https://kubernetes.io/docs/user-guide/labels/)), and most
 lists should support filtering by fields.
 
    Examples: PodLists, ServiceLists, NodeLists
@@ -150,12 +161,22 @@ is independent of the specific resource schema.
 
    Two additional subresources, `proxy` and `portforward`, provide access to
 cluster resources as described in
-[docs/user-guide/accessing-the-cluster.md](../user-guide/accessing-the-cluster.md).
+[accessing the cluster docs](https://kubernetes.io/docs/user-guide/accessing-the-cluster/).
 
 The standard REST verbs (defined below) MUST return singular JSON objects. Some
 API endpoints may deviate from the strict REST pattern and return resources that
 are not singular JSON objects, such as streams of JSON objects or unstructured
 text log data.
+
+A common set of "meta" API objects are used across all API groups and are
+thus considered part of the server group named `meta.k8s.io`. These types may
+evolve independent of the API group that uses them and API servers may allow
+them to be addressed in their generic form. Examples are `ListOptions`,
+`DeleteOptions`, `List`, `Status`, `WatchEvent`, and `Scale`. For historical
+reasons these types are part of each existing API group. Generic tools like
+quota, garbage collection, autoscalers, and generic clients like kubectl
+leverage these types to define consistent behavior across different resource
+types, like the interfaces in programming languages.
 
 The term "kind" is reserved for these "top-level" API types. The term "type"
 should be used for distinguishing sub-categories within objects or subobjects.
@@ -181,12 +202,12 @@ called "metadata":
 
 * namespace: a namespace is a DNS compatible label that objects are subdivided
 into. The default namespace is 'default'. See
-[docs/user-guide/namespaces.md](../user-guide/namespaces.md) for more.
+[the namespace docs](https://kubernetes.io/docs/user-guide/namespaces/) for more.
 * name: a string that uniquely identifies this object within the current
-namespace (see [docs/user-guide/identifiers.md](../user-guide/identifiers.md)).
+namespace (see [the identifiers docs](https://kubernetes.io/docs/user-guide/identifiers/)).
 This value is used in the path when retrieving an individual object.
 * uid: a unique in time and space value (typically an RFC 4122 generated
-identifier, see [docs/user-guide/identifiers.md](../user-guide/identifiers.md))
+identifier, see [the identifiers docs](https://kubernetes.io/docs/user-guide/identifiers/))
 used to distinguish between objects with the same name that have been deleted
 and recreated
 
@@ -213,10 +234,10 @@ not reachable by name) after the time in this field. Once set, this value may
 not be unset or be set further into the future, although it may be shortened or
 the resource may be deleted prior to this time.
 * labels: a map of string keys and values that can be used to organize and
-categorize objects (see [docs/user-guide/labels.md](../user-guide/labels.md))
+categorize objects (see [the labels docs](https://kubernetes.io/docs/user-guide/labels/))
 * annotations: a map of string keys and values that can be used by external
 tooling to store and retrieve arbitrary metadata about this object (see
-[docs/user-guide/annotations.md](../user-guide/annotations.md))
+[the annotations docs](https://kubernetes.io/docs/user-guide/annotations/)
 
 Labels are intended for organizational purposes by end users (select the pods
 that match this label query). Annotations enable third-party automation and
@@ -277,6 +298,14 @@ cannot vary from the user's desired intent MAY have only "spec", and MAY rename
 Objects that contain both spec and status should not contain additional
 top-level fields other than the standard metadata fields.
 
+Some objects which are not persisted in the system - such as `SubjectAccessReview`
+and other webhook style calls - may choose to add spec and status to encapsulate
+a "call and response" pattern. The spec is the request (often a request for
+information) and the status is the response. For these RPC like objects the only
+operation may be POST, but having a consistent schema between submission and
+response reduces the complexity of these clients.
+
+
 ##### Typical status properties
 
 **Conditions** represent the latest available observations of an object's
@@ -322,7 +351,7 @@ Some resources in the v1 API contain fields called **`phase`**, and associated
 `message`, `reason`, and other status fields. The pattern of using `phase` is
 deprecated. Newer API types should use conditions instead. Phase was essentially
 a state-machine enumeration field, that contradicted
-[system-design principles](../design/principles.md#control-logic) and hampered
+[system-design principles](../design-proposals/principles.md#control-logic) and hampered
 evolution, since [adding new enum values breaks backward
 compatibility](api_changes.md). Rather than encouraging clients to infer
 implicit properties from phases, we intend to explicitly expose the conditions
@@ -346,7 +375,7 @@ only provided with reasonable effort, and is not guaranteed to not be lost.
 Status information that may be large (especially proportional in size to
 collections of other resources, such as lists of references to other objects --
 see below) and/or rapidly changing, such as
-[resource usage](../design/resources.md#usage-data), should be put into separate
+[resource usage](../design-proposals/resources.md#usage-data), should be put into separate
 objects, with possibly a reference from the original object. This helps to
 ensure that GETs and watch remain reasonably efficient for the majority of
 clients, which may not need that data.
@@ -359,9 +388,9 @@ the reported status reflects the most recent desired status.
 #### References to related objects
 
 References to loosely coupled sets of objects, such as
-[pods](../user-guide/pods.md) overseen by a
-[replication controller](../user-guide/replication-controller.md), are usually
-best referred to using a [label selector](../user-guide/labels.md). In order to
+[pods](https://kubernetes.io/docs/user-guide/pods/) overseen by a
+[replication controller](https://kubernetes.io/docs/user-guide/replication-controller/), are usually
+best referred to using a [label selector](https://kubernetes.io/docs/user-guide/labels/). In order to
 ensure that GETs of individual objects remain bounded in time and space, these
 sets may be queried via separate API queries, but will not be expanded in the
 referring object's status.
@@ -698,7 +727,7 @@ labels:
 All compatible Kubernetes APIs MUST support "name idempotency" and respond with
 an HTTP status code 409 when a request is made to POST an object that has the
 same name as an existing object in the system. See
-[docs/user-guide/identifiers.md](../user-guide/identifiers.md) for details.
+[the identifiers docs](https://kubernetes.io/docs/user-guide/identifiers/) for details.
 
 Names generated by the system may be requested using `metadata.generateName`.
 GenerateName indicates that the name should be made unique by the server prior
@@ -1296,7 +1325,7 @@ that hard to consistently apply schemas that ensure uniqueness. One just needs
 to ensure that at least one value of some label key in common differs compared
 to all other comparable resources. We could/should provide a verification tool
 to check that. However, development of conventions similar to the examples in
-[Labels](../user-guide/labels.md) make uniqueness straightforward. Furthermore,
+[Labels](https://kubernetes.io/docs/user-guide/labels/) make uniqueness straightforward. Furthermore,
 relatively narrowly used namespaces (e.g., per environment, per application) can
 be used to reduce the set of resources that could potentially cause overlap.
 

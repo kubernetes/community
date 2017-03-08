@@ -215,7 +215,7 @@ runs just prior to conversion. That works fine when the user creates a resource
 from a hand-written configuration -- clients can write either field and read
 either field, but what about creation or update from the output of GET, or
 update via PATCH (see
-[In-place updates](../user-guide/managing-deployments.md#in-place-updates-of-resources))?
+[In-place updates](https://kubernetes.io/docs/user-guide/managing-deployments/#in-place-updates-of-resources))?
 In this case, the two fields will conflict, because only one field would be
 updated in the case of an old client that was only aware of the old field (e.g.,
 `height`).
@@ -414,14 +414,10 @@ inefficient).
 
 The conversion code resides with each versioned API. There are two files:
 
-   - `pkg/api/<version>/conversion.go` containing manually written conversion
-functions
-   - `pkg/api/<version>/conversion_generated.go` containing auto-generated
-conversion functions
    - `pkg/apis/extensions/<version>/conversion.go` containing manually written
-conversion functions
-   - `pkg/apis/extensions/<version>/conversion_generated.go` containing
-auto-generated conversion functions
+     conversion functions
+   - `pkg/apis/extensions/<version>/zz_generated.conversion.go` containing
+     auto-generated conversion functions
 
 Since auto-generated conversion functions are using manually written ones,
 those manually written should be named with a defined convention, i.e. a

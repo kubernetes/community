@@ -6,7 +6,8 @@ For folks that prefer reading the docs first, we recommend reading our Storage D
 For folks that prefer a video overview, we recommend watching the following videos:
 - [The state of state](https://www.youtube.com/watch?v=jsTQ24CLRhI&index=6&list=PLosInM-8doqcBy3BirmLM4S_pmox6qTw3) 
 - [Kubernetes Storage 101](https://www.youtube.com/watch?v=ZqTHe6Xj0Ek&list=PLosInM-8doqcBy3BirmLM4S_pmox6qTw3&index=38)
-- [Storage overview to SIG Apps](https://www.youtube.com/watch?v=DrLGxkFdDNc&feature=youtu.be&t=11m19s)
+- [Overview of Basic Volume for SIG Apps](https://youtu.be/DrLGxkFdDNc?t=11m19s)
+- [Overview of Dynamic Provisioning for SIG Apps](https://youtu.be/NXUHmxXytUQ?t=10m33s)
 
 Keep in mind that the video overviews reflect the state of the art at the time they were created. In Kubernetes we try very hard to maintain backwards compatibility but Kubernetes is a fast moving project and we do add features going forward and attending the Storage SIG meetings and the Storage SIG Google group are both good ways of continually staying up to speed. 
 

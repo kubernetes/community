@@ -120,7 +120,7 @@ subdirectories).
 intended for users that deploy applications or cluster administrators,
 respectively. Actual application examples belong in /examples.
     - Examples should also illustrate [best practices for configuration and
-using the system](../user-guide/config-best-practices.md)
+using the system](https://kubernetes.io/docs/user-guide/config-best-practices/)
 
   - Third-party code
 

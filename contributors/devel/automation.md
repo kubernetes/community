@@ -104,7 +104,7 @@ kindness...)
 PRs should only need to be manually re-tested if you believe there was a flake
 during the original test. All flakes should be filed as an
 [issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Akind%2Fflake).
-Once you find or file a flake a contributer (this may be you!) should request
+Once you find or file a flake a contributor (this may be you!) should request
 a retest with "@k8s-bot test this issue: #NNNNN", where NNNNN is replaced with
 the issue number you found or filed.
 

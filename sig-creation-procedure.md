@@ -11,12 +11,11 @@
 * Announce new SIG on kubernetes-dev@googlegroups.com 
 * Submit a PR to add a row for the SIG to the table in the kubernetes/community README.md file, to create a kubernetes/community directory, and to add any SIG-related docs, schedules, roadmaps, etc. to your new kubernetes/community/SIG-foo directory.
 
-#### 
-**Google Groups creation**
+#### **Google Groups creation**
 
 Create Google Groups at [https://groups.google.com/forum/#!creategroup](https://groups.google.com/forum/#!creategroup), following the procedure: 
 
-* Each SIG should have one discussion groups, and a number of groups for mirroring relevant github notificaitons;
+* Each SIG should have one discussion groups, and a number of groups for mirroring relevant github notifications;
 * Create groups using the name conventions below;
 * Groups should be created as e-mail lists with at least three owners (including sarahnovotny at google.com and ihor.dvoretskyi at gmail.com);
 * To add the owners, visit the Group Settings (drop-down menu on the right side), select Direct Add Members on the left side and add Sarah and Ihor via email address (with a suitable welcome message); in Members/All Members select Ihor and Sarah and assign to an "owner role";
@@ -44,8 +43,7 @@ Example:
 * kubernetes-sig-onprem-pr-reviews
 * kubernetes-sig-onprem-api-reviews
 
-#### 
-**GitHub users creation**
+#### **GitHub users creation**
 
 Create the GitHub users at [https://github.com/join](https://github.com/join), using the name convention below.
 
@@ -76,8 +74,7 @@ Example:
 
 NOTE: We have found that Github's notification autocompletion finds the users before the corresponding teams. This is the reason we recommend naming the users `k8s-mirror-foo-*` instead of `k8s-sig-foo-*`. If you previously created users named `k8s-sig-foo-*`, we recommend you rename them.
 
-#### 
-**Create the GitHub teams**
+#### **Create the GitHub teams**
 
 Create the GitHub teams at [https://github.com/orgs/kubernetes/new-team](https://github.com/orgs/kubernetes/new-team), using the name convention below. Please, add the GitHub users (created before) to the GitHub teams respectively.
 

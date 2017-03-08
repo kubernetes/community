@@ -52,7 +52,7 @@ Example use cases for rescheduling are
   * (note that these last two cases are the only use cases where the first-order intent
     is to move a pod specifically for the benefit of another pod)
 * moving a running pod off of a node from which it is receiving poor service
-  * anomalous crashlooping or other mysterious incompatiblity between the pod and the node
+  * anomalous crashlooping or other mysterious incompatibility between the pod and the node
   * repeated out-of-resource killing (see #18724)
   * repeated attempts by the scheduler to schedule the pod onto some node, but it is
     rejected by Kubelet admission control due to incomplete scheduler knowledge

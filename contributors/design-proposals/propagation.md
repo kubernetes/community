@@ -37,7 +37,7 @@ The slave mount namespace is the correct solution for this AFAICS. Until this
 becomes available in k8s, we will have to have operations restart containers manually
 based on monitoring alerts.
 
-1. (From @victorgp) When using CoreOS that does not provides external fuse systems
+1. (From @victorgp) When using CoreOS Container Linux that does not provides external fuse systems
 like, in our case, GlusterFS, and you need a container to do the mounts. The only
 way to see those mounts in the host, hence also visible by other containers, is by
 sharing the mount propagation.
@@ -140,7 +140,7 @@ runtime support matrix and when that will be addressed.
 distros.
 
 1. (From @euank) Changing those mountflags may make docker even less stable,
-this may lock up kernel accidently or potentially leak mounts.
+this may lock up kernel accidentally or potentially leak mounts.
 
 
 ## Decision
