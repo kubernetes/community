@@ -9,9 +9,9 @@ and for each Pod, it posts a binding indicating where the Pod should be schedule
 We are dividng scheduler into three layers from high level:
 - [plugin/cmd/kube-scheduler/scheduler.go](http://releases.k8s.io/HEAD/plugin/cmd/kube-scheduler/scheduler.go):
   This is the main() entry that does initialization before calling the scheduler framework.
-- [pkg/scheduler/scheduler.go](http://releases.k8s.io/HEAD/pkg/scheduler/scheduler.go):
+- [plugin/pkg/scheduler/scheduler.go](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/scheduler.go):
   This is the scheduler framework that handles stuff (e.g. binding) beyond the scheduling algorithm.
-- [pkg/scheduler/generic_scheduler.go](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/core/generic_scheduler.go):
+- [plugin/pkg/scheduler/generic_scheduler.go](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/core/generic_scheduler.go):
   The scheduling algorithm that assigns nodes for pods.
 
 ## The scheduling algorithm
