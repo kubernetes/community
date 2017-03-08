@@ -10,6 +10,8 @@
 
 [**Meeting Agenda**](http://goo.gl/A0m24V)
 
+[**Meeting Video Playlist**](https://goo.gl/ZmLNX9)
+
 ### SIG Mission
 
 Mission: to develop a Kubernetes API for the CNCF service broker and Kubernetes broker implementation.
