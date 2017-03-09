@@ -74,11 +74,11 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
       name: foo
     status:
       capacity:
-        storage.kubernetes.io/runtime: 100Gi
-        storage.kubernetes.io/root: 100Gi
+        storage.kubernetes.io/overlay: 100Gi
+        storage.kubernetes.io/scratch: 100Gi
       allocatable:
-        storage.kubernetes.io/runtime: 100Gi
-        storage.kubernetes.io/root: 90Gi
+        storage.kubernetes.io/overlay: 100Gi
+        storage.kubernetes.io/scratch: 90Gi
 ```
 
 2. Alice adds new storage resource requirements to her pod, specifying limits for the container's writeable and overlay layers, and emptyDir volumes.
@@ -93,7 +93,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
      - name: fooc
        resources:
          limits:
-           storage.kubernetes.io/logs: 500Mi
+           storage.kubernetes.io/scratch: 500Mi
            storage.kubernetes.io/overlay: 1Gi
        volumeMounts:
        - name: myEmptyDir
@@ -101,14 +101,13 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
      volumes:
      - name: myEmptyDir
        emptyDir:
-         resources:
-           limits:
-             size: 1Gi
+	     size: 1Gi
     ```
 
 3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
-4. `storage.kubernetes.io/logs` resource can only be satisfied by `storage.kubernetes.io/root` Allocatable on nodes. `storage.kubernetes.io/overlay` resource can be satisfied by `storage.kubernetes.io/runtime` if exposed by nodes or by `storage.kubernetes.io/root` otherwise. The scheduler follows this policy to find an appropriate node which can satisfy the storage resource requirements of the pod.
-5. Kubelet will rotate logs to keep logs usage of “fooc” under 500Mi
+4. `storage.kubernetes.io/scratch` resource is meant for logs. `storage.kubernetes.io/overlay` is meant for writable layer.
+5. `storage.kubernetes.io/overlay` resource can be satisfied by `storage.kubernetes.io/overlay` if exposed by nodes or by `storage.kubernetes.io/scratch` otherwise. The scheduler follows this policy to find an appropriate node which can satisfy the storage resource requirements of the pod.
+5. Kubelet will rotate logs to keep scratch space usage of “fooc” under 500Mi
 6. Kubelet will track the usage of pods across logs and overlay filesystem and restart the container if it's total usage exceeds it's storage limits. If usage on `EmptyDir` volume exceeds its `limit`, then the pod will be evicted by the kubelet. By performing soft limiting, users will be able to easily identify pods that run out of storage.
 7. Health is monitored by an external entity like the “Node Problem Detector” which is expected to place appropriate taints.
 8. If a primary partition becomes unhealthy, the node is tainted and all pods running in it will be evicted by default, unless they tolerate that taint. Kubelet’s behavior on a node with unhealthy primary partition is undefined. Cluster administrators are expected to fix unhealthy primary partitions on nodes.
@@ -143,7 +142,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
       name: mylimits
     spec:
        - default:
-         storage.kubernetes.io/logs: 200Mi
+         storage.kubernetes.io/scratch: 200Mi
          storage.kubernetes.io/overlay: 200Mi
          type: Container
        - default:
@@ -163,7 +162,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
      - name: fooc
        resources:
          limits:
-           storage.kubernetes.io/logs: 200Mi
+           storage.kubernetes.io/scratch: 200Mi
            storage.kubernetes.io/overlay: 200Mi
        volumeMounts:
        - name: myEmptyDir
@@ -171,9 +170,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
      volumes:
      - name: myEmptyDir
        emptyDir:
-         resources:
-           limits:
-             size: 1Gi
+	     size: 1Gi
     ```
 
 4. Bob’s “foo” pod can use upto “200Mi” for its containers logs and writable layer each, and “1Gi” for its “myEmptyDir” volume. 
@@ -189,7 +186,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
    - name: fooc
      resources:
        requests:
-         storage.kubernetes.io/logs: 500Mi
+         storage.kubernetes.io/scratch: 500Mi
          storage.kubernetes.io/overlay: 500Mi
      volumeMounts:
      - name: myEmptyDir
@@ -197,9 +194,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
    volumes:
    - name: myEmptyDir
      emptyDir:
-       resources:
-         limits:
-           size: 2Gi
+		size: 2Gi
   ```
 
 6. It is recommended to require `limits` to be specified for `storage` in all pods. `storage` will not affect the `QoS` Class of a pod since no SLA is intended to be provided for storage capacity isolation. it is recommended to use Persistent Durable Volumes as much as possible and avoid primary partitions.
@@ -354,7 +349,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
      - name: fooc
        resources:
        limits:
-         storage.kubernetes.io/logs: 500Mi
+         storage.kubernetes.io/scratch: 500Mi
          storage.kubernetes.io/overlay: 1Gi
        volumeMounts:
        - name: myEphemeralPersistentVolume
@@ -547,7 +542,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
 
 # Features & Milestones
 
-The following two features are intended to prioritized over others to begin with.
+#### Features with owners
 
 1. Support for durable Local PVs
 2. Support for capacity isolation
@@ -555,7 +550,8 @@ The following two features are intended to prioritized over others to begin with
 Alpha support for these two features are targeted for v1.7. Beta and GA timelines are TBD.
 Currently, msau42@, jinxu@ and vishh@ will be developing these features.
 
-The following pending features need owners. Their delivery timelines will depend on the future owners.
+#### Features needing owners
+
 1. Support for persistent volumes tied to the lifetime of a pod (`inline PV`)
 2. Support for Logging Volumes
 3. Support for changing the writable layer type of containers
