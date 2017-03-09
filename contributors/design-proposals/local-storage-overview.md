@@ -73,12 +73,12 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
     metadata:
       name: foo
     status:
-      capacity: 
+      capacity:
         storage.kubernetes.io/runtime: 100Gi
-		storage.kubernetes.io/root: 100Gi
-	allocatable:
+        storage.kubernetes.io/root: 100Gi
+      allocatable:
         storage.kubernetes.io/runtime: 100Gi
-		storage.kubernetes.io/root: 90Gi
+        storage.kubernetes.io/root: 90Gi
 ```
 
 2. Alice adds new storage resource requirements to her pod, specifying limits for the container's writeable and overlay layers, and emptyDir volumes.
@@ -92,15 +92,18 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
      containers:
      - name: fooc
        resources:
-       limits:
-        storage.kubernetes.io/logs: 500Mi
-		storage.kubernetes.io/root: 1Gi
+         limits:
+           storage.kubernetes.io/logs: 500Mi
+           storage.kubernetes.io/overlay: 1Gi
+       volumeMounts:
+       - name: myEmptyDir
+         mountPath: /mnt/data
      volumes:
      - name: myEmptyDir
        emptyDir:
-	     resources:
-	       limits
-		     storage.kubernetes.io: 20Gi
+         resources:
+           limits:
+             size: 1Gi
     ```
 
 3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
@@ -123,6 +126,9 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
     spec:
      containers:
      - name: fooc
+       volumeMounts:
+       - name: myEmptyDir
+         mountPath: /mnt/data
      volumes:
      - name: myEmptyDir
        emptyDir:
@@ -141,7 +147,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
          storage.kubernetes.io/overlay: 200Mi
          type: Container
        - default:
-         storage.kubernetes.io: 1Gi
+         size: 1Gi
          type: EmptyDir
     ```
 
@@ -159,12 +165,15 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
          limits:
            storage.kubernetes.io/logs: 200Mi
            storage.kubernetes.io/overlay: 200Mi
+       volumeMounts:
+       - name: myEmptyDir
+         mountPath: /mnt/data
      volumes:
      - name: myEmptyDir
        emptyDir:
-	     resources:
+         resources:
            limits:
-		     storage.kubernetes.io: 1Gi
+             size: 1Gi
     ```
 
 4. Bob’s “foo” pod can use upto “200Mi” for its containers logs and writable layer each, and “1Gi” for its “myEmptyDir” volume. 
@@ -179,15 +188,18 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
    containers:
    - name: fooc
      resources:
-     requests:
-	   storage.kubernetes.io/logs: 500Mi
-	   storage.kubernetes.io/overlay: 500Mi
+       requests:
+         storage.kubernetes.io/logs: 500Mi
+         storage.kubernetes.io/overlay: 500Mi
+     volumeMounts:
+     - name: myEmptyDir
+       mountPath: /mnt/data
    volumes:
    - name: myEmptyDir
      emptyDir:
-	     resources:
-           limits:
-             storage.kubernetes.io/logs: 2Gi
+       resources:
+         limits:
+           size: 2Gi
   ```
 
 6. It is recommended to require `limits` to be specified for `storage` in all pods. `storage` will not affect the `QoS` Class of a pod since no SLA is intended to be provided for storage capacity isolation. it is recommended to use Persistent Durable Volumes as much as possible and avoid primary partitions.
@@ -195,7 +207,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
 ### Alice manages a Database which needs access to “durable” and fast scratch space
 
 1. Cluster administrator provisions machines with local SSDs and brings up the cluster
-2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a new node annotation that ties the volume to a specific node.  Storage classes and labels may also be specified.  The volume consumes the entire partition.
+2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a new node annotation that ties the volume to a specific node.  A StorageClass name that is prefixed with "local-" is required for the system to be able to differentiate between local and remote storage.  Labels may also be specified.  The volume consumes the entire partition.
 
     ```yaml
     kind: PersistentVolume
@@ -204,7 +216,6 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
       name: local-pv-1
       annotations:
         volume.kubernetes.io/node: node-1
-        volume.beta.kubernetes.io/storage-class: local-fast
     spec:
       capacity:
         storage: 100Gi
@@ -213,6 +224,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
       accessModes:
         - ReadWriteOnce
       persistentVolumeReclaimPolicy: Delete
+      storageClassName: local-fast
     ```
     ```
     $ kubectl get pv
@@ -224,7 +236,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
     local-pv-1 100Gi    RWO         Delete        Available         node-3
     local-pv-2 10Gi     RWO         Delete        Available         node-3
     ```
-3. Alice creates a StatefulSet that uses local PVCs.  The annotation `volume.kubernetes.io/node = ""` is specified to indicate that the requested volume should be local to a node.  The PVC will only be bound to PVs that also have the node annotation set and vice versa.
+3. Alice creates a StatefulSet that uses local PVCs.  The StorageClass prefix of "local-" indicates that the user wants local storage.  The PVC will only be bound to PVs that match the StorageClass name. 
 
     ```yaml
     apiVersion: apps/v1beta1
@@ -254,27 +266,23 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
       volumeClaimTemplates:
       - metadata:
           name: www
-          annotations:
-            volume.kubernetes.io/node: ""
-            volume.beta.kubernetes.io/storage-class: local-fast
         spec:
           accessModes: [ "ReadWriteOnce" ]
+          storageClassName: local-fast
           resources:
             requests:
               storage: 100Gi
       - metadata:
           name: log
-          annotations:
-            volume.kubernetes.io/node: ""
-            volume.beta.kubernetes.io/storage-class: local-slow
         spec:
           accessModes: [ "ReadWriteOnce" ]
+          storageClassName: local-slow
           resources:
             requests:
               storage: 1Gi
     ```
 
-4. The scheduler identifies nodes for each pod that can satisfy cpu, memory, storage requirements and also contains available local PVs to satisfy the pod's PVC claims. It then binds the pod’s PVCs to specific PVs on the node and then binds the pod to the node.  The annotation `volume.kubernetes.io/node` will be filled in with the chosen node name.
+4. The scheduler identifies nodes for each pod that can satisfy cpu, memory, storage requirements and also contains available local PVs to satisfy the pod's PVC claims. It then binds the pod’s PVCs to specific PVs on the node and then binds the pod to the node. 
     ```
     $ kubectl get pvc
     NAME            STATUS VOLUME     CAPACITY ACCESSMODES … NODE
@@ -297,35 +305,27 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
     ```
 
 5. If a pod dies and is replaced by a new one that reuses existing PVCs, the pod will be placed on the same node where the corresponding PVs exist. Stateful Pods are expected to have a high enough priority which will result in such pods preempting other low priority pods if necessary to run on a specific node.
-6. To workaround situations when a pod cannot get access to its existing local PV due to resource unvavilability on the local PV's node, pods can choose to opt for switching to use a new local PV after a `timeout`. If the scheduler cannot bind the pod to the node where the local PV exists before `timeout` elapses since the pod's creation then the corresponding PVC will be unbound by the scheduler and the pod will then be bound to a different node where the pod would fit and local PV requirements are met. 
+6. Forgiveness policies can be specified as tolerations in the pod spec for each failure scenario.  No toleration specified means that the failure is not tolerated.  In that case, the PVC will immediately be unbound, and the pod will be rescheduled to obtain a new PV.  If a toleration is set, by default, it will be tolerated forever.  `tolerationSeconds` can be specified to allow for a timeout period before the PVC gets unbound.
 
-```yaml
-apiVersion: v1
-type: pod
-spec:
-volumes:
- - name: myDurableVolume
-   persistentVolumeClaim:
-     claimName: foo
-     accessTimeoutSeconds: 30
-	 ```
-	 
-7. Forgiveness policies can be specified as tolerations in the pod spec for each failure scenario.  No toleration specified means that the failure is not tolerated.  In that case, the PVC will immediately be unbound, and the pod will be rescheduled to obtain a new PV.  If a toleration is set, by default, it will be tolerated forever.  `tolerationSeconds` can be specified to allow for a timeout period before the PVC gets unbound.
-
-  A new PV taint will be introduced to handle unhealthy volumes.  The addon or another external entity can monitor the volumes and add a taint when it detects that it is unhealthy.
+  Node taints already exist today.  New PV and scheduling taints can be added to handle additional failure use cases when using local storage.  A new PV taint will be introduced to handle unhealthy volumes.  The addon or another external entity can monitor the volumes and add a taint when it detects that it is unhealthy.  A scheduling taint could signal a scheduling failure for the pod due to being unable to fit on the node.
   ```yaml
-  tolerations:
+  nodeTolerations:
     - key: node.alpha.kubernetes.io/notReady
       operator: TolerationOpExists
       tolerationSeconds: 600
     - key: node.alpha.kubernetes.io/unreachable
       operator: TolerationOpExists
       tolerationSeconds: 1200
+  pvTolerations:
     - key: storage.kubernetes.io/pvUnhealthy
       operator: TolerationOpExists
+  schedulingTolerations:
+    - key: scheduler.kubernetes.io/podCannotFit
+      operator: TolerationOpExists
+      tolerationSeconds: 600
   ```
 
-8. Once Alice decides to delete the database, she destroys the StatefulSet, and then destroys the PVCs.  The PVs will then get deleted and cleaned up according to the reclaim policy, and the addon adds it back to the cluster.
+7. Once Alice decides to delete the database, she destroys the StatefulSet, and then destroys the PVCs.  The PVs will then get deleted and cleaned up according to the reclaim policy, and the addon adds it back to the cluster.
 
 ### Bob manages a distributed filesystem which needs access to all available storage on each node
 
@@ -354,20 +354,20 @@ volumes:
      - name: fooc
        resources:
        limits:
-         storageLogs: 500Mi
-         storageOverlay: 1Gi
+         storage.kubernetes.io/logs: 500Mi
+         storage.kubernetes.io/overlay: 1Gi
+       volumeMounts:
+       - name: myEphemeralPersistentVolume
+         mountPath: /mnt/tmpdata
      volumes:
      - name: myEphemeralPeristentVolume
-	   inline:
-         metadata:
-	       labels:
-		     storage.kubernetes.io/medium: local-ssd
-		     storage.kubernetes.io/volume-type: local
-		 spec:
-		     accessModes: [ "ReadWriteOnce" ]
-		     resources:
-		       requests:
-		          storage: 1Gi
+       inline:
+         spec:
+           accessModes: [ "ReadWriteOnce" ]
+           storageClassName: local-fast
+           resources:
+             limits:
+               size: 1Gi
     ```
 
 4. Phippy notices some of her pods are experiencing spurious downtimes. With the help of monitoring (`iostat`), she notices that the nodes pods are running on are overloaded with I/O operations. She then updates her pods to use Logging Volumes which are backed by persistent storage. If a logging volumeMount is associated with a container, Kubelet will place log data from stdout & stderr of the container under the volume mount path within the container. Kubelet will continue to expose stdout/stderr log data to external logging agents using symlinks as it does already.
@@ -380,39 +380,36 @@ volumes:
     spec:
      containers:
      - name: fooc
-	   volumeMounts:
-	     name: myLoggingVolume
-		 path: /var/log/
+       volumeMounts:
+       - name: myLoggingVolume
+         mountPath: /var/log/
          policy:
-		   logDir:
-		    subDir: foo
-			glob: *.log
+           logDir:
+             subDir: foo
+             glob: *.log
      - name: barc
-	   volumeMounts:
-	     name: myInMemoryLoggVolume
-		 path: /var/log/
-		 policy:
-		   logDir:
-		    subDir: bar
-			glob: *.log
+       volumeMounts:
+       - name: myInMemoryLoggVolume
+         mountPath: /var/log/
+         policy:
+           logDir:
+             subDir: bar
+             glob: *.log
     volumes:
-	- name: myLoggingVolume
-	   inline:
-         metadata:
-	       labels:
-		     storage.kubernetes.io/medium: local-ssd
-		     storage.kubernetes.io/volume-type: local
-		 spec:
-		     accessModes: [ "ReadWriteOnce" ]
-		     resources:
-		       requests:
-		          storage: 1Gi
-	- name: myInMemoryLogVolume
-	  emptyDir:
-	    medium: memory
-	    resources:
-		  limits:
-		    storage: 100Mi
+    - name: myLoggingVolume
+      inline:
+        spec:
+          accessModes: [ "ReadWriteOnce" ]
+          storageClassName: local-slow
+          resources:
+            requests:
+              storage: 1Gi
+    - name: myInMemoryLogVolume
+      emptyDir:
+        medium: memory
+        resources:
+          limits:
+            size: 100Mi
     ```
 
 5. Phippy notices some of her pods are suffering hangs by while writing to their writable layer. Phippy again notices that I/O contention is the root cause and then updates her Pod Spec to use memory backed or persistent volumes for her pods writable layer. Kubelet will instruct the runtimes to overlay the volume with `overlay` policy over the writable layer of the container.
@@ -425,41 +422,38 @@ volumes:
     spec:
      containers:
      - name: fooc
-	   volumeMounts:
-	     name: myWritableLayer
-		 policy:
-		   overlay:
-		    subDir: foo
+       volumeMounts:
+       - name: myWritableLayer
+         policy:
+           overlay:
+             subDir: foo
      - name: barc
-	   volumeMounts:
-	     name: myDurableWritableLayer
-		 policy:
-		   overlay:
-		    subDir: bar
-	volumes:
-	- name: myWritableLayer
-	  emptyDir:
-	    medium: memory
-	    resources:
-		  limits:
-		    storage: 100Mi
-	- name: myDurableWritableLayer
-	   inline:
-         metadata:
-	       labels:
-		     storage.kubernetes.io/medium: local-ssd
-		     storage.kubernetes.io/volume-type: local
-		 spec:
-		     accessModes: [ "ReadWriteOnce" ]
-		     resources:
-		       requests:
-		          storage: 1Gi
-```
+       volumeMounts:
+       - name: myDurableWritableLayer
+         policy:
+           overlay:
+               subDir: bar
+     volumes:
+     - name: myWritableLayer
+       emptyDir:
+         medium: memory
+         resources:
+           limits:
+             storage: 100Mi
+     - name: myDurableWritableLayer
+       inline:
+         spec:
+           accessModes: [ "ReadWriteOnce" ]
+           storageClassName: local-fast
+           resources:
+             requests:
+               storage: 1Gi
+    ```
 
 ### Bob manages a specialized application that needs access to Block level storage
 
 1. The cluster that Bob uses has nodes that contain raw block devices that have not been formatted yet.
-2. The cluster admin creates a DaemonSet addon that discovers all the raw block devices on a node that are available within a specific directory and creates corresponding PVs for them with a new `volumeType = block` field.
+2. The same addon DaemonSet can discover block devices in the same directory as the filesystem mount points and creates corresponding PVs for them with a new `volumeType = block` field.  This field indicates the original volume type upon PV creation.
 
     ```yaml
     kind: PersistentVolume
@@ -468,9 +462,8 @@ volumes:
       name: foo
       annotations:
         storage.kubernetes.io/node: node-1
-        volume.beta.kubernetes.io/storage-class: local-fast
     spec:
-      volumeType: block
+      volumeType: block 
       capacity:
         storage: 100Gi
       local:
@@ -478,6 +471,7 @@ volumes:
       accessModes:
         - ReadWriteOnce
       persistentVolumeReclaimPolicy: Delete
+      storageClassName: local-fast
     ```
 
 3. Bob creates a pod with a PVC that requests for block level access and similar to a Stateful Set scenario the scheduler will identify nodes that can satisfy the pods request.  The block devices will not be formatted to allow the application to handle the device using their own methods.
@@ -487,16 +481,35 @@ volumes:
     apiVersion: v1
     metadata:
       name: myclaim
-      annotations:
-        volume.beta.kubernetes.io/node: ""
-        volume.beta.kubernetes.io/storage-class: local-fast
     spec:
       volumeType: block
+      storageClassName: local-fast
       accessModes:
         - ReadWriteOnce
       resources:
         requests:
           storage: 80Gi
+    ```
+4. It is also possible for a PVC that requests `volumeType: file` to also use a PV with `volumeType: block`, if no file-based PVs are available.  In this situation, the block device would get formatted with the filesystem type specified in the PV spec.  And when the PV gets destroyed, then the filesystem also gets destroyed to return back to the original block state.
+
+    ```yaml
+    kind: PersistentVolume
+    apiVersion: v1
+    metadata:
+      name: foo
+      annotations:
+        storage.kubernetes.io/node: node-1
+    spec:
+      volumeType: block
+      capacity:
+        storage: 100Gi
+      local:
+        path: /var/lib/kubelet/storage-raw-devices/foo
+        fsType: ext4
+      accessModes:
+        - ReadWriteOnce
+      persistentVolumeReclaimPolicy: Delete
+      storageClassName: local-fast
     ```
 
 *The lifecycle of the block level PV will be similar to that of the scenarios explained earlier.* 
@@ -508,10 +521,6 @@ volumes:
 * Local Persistent Volume bindings happening in the scheduler vs in PV controller
     * Should the PV controller fold into the scheduler
 	* This will help spread PVs and pods across matching zones.
-* Should block level storage devices be auto formatted to be used as file level storage instead of having the filesystems precreated by the admin?
-    * It would match behavior with GCE PD and EBS where the volume plugin will create the filesystem first.
-    * It can allow for more comprehensive (but slower) volume cleanup options.  The filesystem can be destroyed and then the partition can be zeroed.
-    * It limits the filesystem choices to those that k8 supports.
 * Repair/replace scenarios.
     * What are the implications of removing a disk and replacing it with a new one? 
     * We may not do anything in the system, but may need a special workflow
