@@ -477,7 +477,7 @@ go run ./hack/e2e.go -- -v --up
 #
 # You can target Feature:MasterUpgrade or Feature:ClusterUpgrade
 cd ../kubernetes
-go run ./hack/e2e.go -- --provider=gke -v --test --check_version_skew=false --test_args="--ginkgo.focus=\[Feature:MasterUpgrade\]"
+go run ./hack/e2e.go -- --provider=gke -v --test --check-version-skew=false --test_args="--ginkgo.focus=\[Feature:MasterUpgrade\]"
 
 # Run old tests with new kubectl
 cd ../kubernetes_old
