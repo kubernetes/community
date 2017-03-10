@@ -15,4 +15,5 @@ A special interest group for bringing Kubernetes support to Windows.
 * Find us on Slack at https://kubernetes.slack.com/messages/sig-windows
 * Find us on Google groups https://groups.google.com/forum/#!forum/kubernetes-sig-windows
 * Slack History is archived at http://kubernetes.slackarchive.io/sig-windows/
+* **Give it a try** as demonstrated at Google Cloud Next '17 https://github.com/apprenda/kubernetes-ovn-heterogeneous-cluster
 
