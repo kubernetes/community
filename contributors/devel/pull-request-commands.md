@@ -64,8 +64,10 @@ The magic incantation to run this job again is @k8s-bot unit test this. Please h
 
 A reviewer will be automatically assigned to your PR by the `k8s-merge-robot`.  The
 reviewer will leave comments on your PR.  Once all comments have been addressed,
-squash the commits and the reviewer will mark the PR as looking good.  This
-can be done with the `/lgtm` command.
+squash the commits and the reviewer will mark the PR as looking good.  The PR will
+also need to be approved by trusted approvers who are responsible for parts of the
+code base.  `k8s-merge-robot` will comment on your PR with the approval status of
+your PR, along with suggesting the appropriate members who can do this approval.
 
 ## PR merge
 
@@ -77,4 +79,6 @@ PRs since the tests were last run on your PR.
 
 # Comment Commands Reference
 
-Documented [here](https://github.com/kubernetes/test-infra/blob/master/prow/commands.md)
+Authors, reviewers, and owners can communicate with `k8s-ci-robot` by
+commenting on a PR with the various commands entered in comments. Specific syntax
+is available [here](https://github.com/kubernetes/test-infra/blob/master/commands.md)
