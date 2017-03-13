@@ -95,8 +95,8 @@ unique across time. * This may correspond to Docker's container ID.
 1. A config file is stored on the node, containing a pod with UID="",
 Namespace="", and Name="cadvisor".
 2. Kubelet validates the input.
-   1. Since UID is not provided, kubelet generates one.
-   2. Since Namespace is not provided, kubelet generates one.
+   1. If UID is not provided, kubelet generates one.
+   2. If Namespace is not provided, kubelet generates one.
       1. The generated namespace should be deterministic and cluster-unique for
 the source, such as a hash of the hostname and file path.
          * E.g. Namespace="file-f4231812554558a718a01ca942782d81"
