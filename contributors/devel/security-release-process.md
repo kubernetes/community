@@ -58,7 +58,37 @@ These steps should be completed within the first 24 hours of Disclosure.
 These steps should be completed within the 1-7 days of Disclosure.
 
 - The Fix Lead and the Fix Team will create a [CVSS](https://www.first.org/cvss/specification-document) using the [CVSS Calculator](https://www.first.org/cvss/calculator/3.0). The Fix Lead makes the final call on the calculated CVSS; it is better to move quickly than make the CVSS prefect.
-- The Fix Team will notify the Fix Lead that work on the fix branch is complete once there are LGTMs on all commits in the private repo from one or more relevant assignees in the relevant OWNERS file.
+- To encourage fast adoption of the security fix, the new patched release should
+  contain only security fixes.
+- To facilitate this goal, the Fix Lead will [create a patch release branch](https://github.com/kubernetes/release/blob/master/docs/branching.md#branching-from-a-tag)
+  in a private fork of the public kubernetes.git repository, branched from the
+  most recent released tag for the release being fixed.
+  - As a hypothetical example, if `v2.4.7` is the latest public patch release for
+   `v2.4`, a new branch will be created in the private fork called
+   `release-2.4.7`, branching at the `v2.4.7` tag. If `HEAD` were to be used
+   instead, the security release might include non-security fixes.
+  - TODO: continuous integration testing should be set up for the branch
+- If a security incident affects multiple supported releases, then patch
+  release branches will be created for all affected releases.
+- Similarly, if a security issue affects `master`, then a private `master`
+  branch will be created, though this will be synced to public `HEAD`, rather
+  than from a particular tag.
+- The Fix Team will submit fixes to the private branch(es). If a fix is only
+  needed for a published release (and not `master`), then it is fine to merge
+  directly into the private release branch (rather than following the
+  cherry-pick process).
+  - As is feasible, the normal PR review process (including LGTM and OWNERS
+    approval) should be followed for all fixes, though the submit queue
+    infrastructure may not be operational on the private branches.
+- The Fix Team will notify the Fix Lead that work on the fix branch(es) is
+  complete once all relevant changes have been merged into the private
+  branch(es).
+- Release Managers are encouraged to refrain from creating new public patch
+  releases while security fixes are ongoing. Should it be necessary to create a
+  new public patch release before the security fixes are complete, the private
+  security branch will need to be rebased (and renamed?) on the new latest
+  patch release.
+- TODO: how frequently should the private `master` branch be updated?
 
 If the CVSS score is under 4.0 ([a low severity score](https://www.first.org/cvss/specification-document#i5)) the Fix Team can decide to slow the release process down in the face of holidays, developer bandwidth, etc. These decisions must be discussed on the kubernetes-security mailing list.
 
@@ -82,14 +112,47 @@ The communication to users should be actionable. They should know when to block 
 
 **Fix Release Day** (Completed within 1-21 days of Disclosure)
 
-- The Release Managers will ensure all the binaries are built, publicly available, and functional before the Release Date.
-  - TODO: this will require a private security build process.
-- The Release Managers will create a new patch release branch from the latest patch release tag + the fix from the security branch. As a practical example if v1.5.3 is the latest patch release in kubernetes.git a new branch will be created called v1.5.4 which includes only patches required to fix the issue.
-- The Fix Lead will cherry-pick the patches onto the master branch and all relevant release branches. The Fix Team will LGTM and merge.
-- The Release Managers will merge these PRs as quickly as possible. Changes shouldn't be made to the commits even for a typo in the CHANGELOG as this will change the git sha of the already built and commits leading to confusion and potentially conflicts as the fix is cherry-picked around branches.
+- The Release Managers will ensure all the binaries are built,
+  publicly available, and functional before the Release Date.
+    - Note: we ship source with our binary releases, so as soon as binary
+      artifacts are publicly available, the fixes (and vulnerabilities) are
+      effectively public.
+  - CI testing of the private patch release branch should provide confidence in
+    the release.
+- The Release Manager will use release tooling (i.e. `anago`) to
+  - Compute the version for the new security patch release; in the previous
+    example, the `release-2.4.7` branch would produce a `v2.4.8` release.
+  - Verify that no public patch release has occurred since the security branch
+    was cut (in this example, make sure that `v2.4.8` has not been tagged
+    publicly).
+  - Perform a normal release build from the private release branch, staging
+    binary artifacts locally (or possibly in a private bucket).
+  - Push the new patch release tag to the private repo.
+  - The tooling should **not** upload any artifacts to public storage buckets or
+    create a draft release on the public GitHub repo.
+- As soon as we are ready to make the fix known publicly (TODO: when?),
+  the Release Manager will use tooling to
+  - Publish results.
+    - Upload binary artifacts to GCS, gcr.io, and GitHub. (TODO: are these
+      prebuilt from the previous step?)
+    - Update the `CHANGELOG.md` in the **public** `master` branch
+    - Create a new release on the **public** kubernetes GitHub
+    - Send email announcing the release
+  - Merge the private patch release branch into the **public** release branch
+    including the fixes and release tag.
+    - In our continuing example, this would merge the private `release-2.4.7`
+      branch into the public `release-2.4` branch, effectively advancing the
+      latter to `2.4.9-beta.0+`. Any changes in the `release-2.4` branch will
+      now ship with `v2.4.9`.
+  - If fixes were necessary to `master`, merge the private `master` branch into
+    the public `master` branch. No release will be built or published for
+    `master`.
+    - TODO: should this be a PR or a push?
 - The Fix Lead will request a CVE from [DWF](https://github.com/distributedweaknessfiling/DWF-Documentation) and include the CVSS and release details.
 - The Fix Lead will email kubernetes-{dev,users,announce,security-announce}@googlegroups.com now that everything is public announcing the new releases, the CVE number, the location of the binaries, and the relevant merged PRs to get wide distribution and user action. As much as possible this email should be actionable and include links how to apply the fix to users environments; this can include links to external distributor documentation.
 - The Fix Lead will remove the Fix Team from the private security repo.
+- The Fix Lead will (possibly?) delete the patch release branch from the private
+  security repo.
 
 ### Retrospective
 
