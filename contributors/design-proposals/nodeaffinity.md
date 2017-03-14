@@ -15,7 +15,7 @@ which contains one or more of the following:
 represented by a `NodeSelector`, and thus generalizes the scheduling behavior of
 the current `map[string]string` but still serves the purpose of restricting
 the set of nodes onto which the pod can schedule. In addition, unlike the
-behavior of the current `map[string]string`, when it becomes violated the system
+behavior of the current `map[string]string`, when it becomes violated, the system
 will try to eventually evict the pod from its node.
 * a field called `RequiredDuringSchedulingIgnoredDuringExecution` which is
 identical to `RequiredDuringSchedulingRequiredDuringExecution` except that the
