@@ -101,7 +101,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
      volumes:
      - name: myEmptyDir
        emptyDir:
-	     size: 1Gi
+	     size: 20Gi
     ```
 
 3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
