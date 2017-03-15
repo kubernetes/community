@@ -11,6 +11,7 @@
 the core Kubernetes team*
 
    * [Clojure](https://github.com/yanatan16/clj-kubernetes-api)
+   * [Go](https://github.com/ericchiang/k8s)
    * [Java (OSGi)](https://bitbucket.org/amdatulabs/amdatu-kubernetes)
    * [Java (Fabric8, OSGi)](https://github.com/fabric8io/kubernetes-client)
    * [Node.js](https://github.com/tenxcloud/node-kubernetes-client)
