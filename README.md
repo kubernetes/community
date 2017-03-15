@@ -32,7 +32,7 @@ that should not need deep knowledge of the system.
 
 To dig deeper, read a design doc, e.g. [architecture].
 
-[Pick a SIG](sig-list), peruse its associated [cmd] directory,
+[Pick a SIG](sig-list.md), peruse its associated [cmd] directory,
 find a `main()` and read code until you find something you want to fix.
 
 There's always code that can be clarified and variables
@@ -55,7 +55,7 @@ We recommend that you work on existing [issues] before attempting
 to [develop a new feature].
 
 Find an existing issue (e.g. one marked [help-wanted], or simply
-ask a [SIG lead](sig-list) for suggestions), and respond on the
+ask a [SIG lead](sig-list.md) for suggestions), and respond on the
 issue thread expressing interest in working on it. 
  
 This helps other people know that the issue is active, and
@@ -83,7 +83,6 @@ If you want to work on a new idea of relatively small scope:
 [help-wanted]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted
 [issues]: https://github.com/kubernetes/kubernetes/issues
 [pull request]: contributors/devel/pull-requests.md
-[sig-list]: sig-list.md
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/CONTRIBUTING.md?pixel)]()
 
