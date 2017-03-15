@@ -68,20 +68,18 @@ please propose a specific date on the [Kubernetes Community Meeting Agenda].
 
 ## Conferences
 
-* [kubecon]
-* [cloudnativecon]
+Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Europe and winter in North America. Information about these and other community events is available on the CNCF [events] pages.
 
 
 [blog]: http://blog.kubernetes.io
 [calendar.google.com]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles
-[cloudnativecon]: http://events.linuxfoundation.org/events/cloudnativecon
 [CNCF code of conduct]: https://github.com/cncf/foundation/blob/master/code-of-conduct.md
 [communication]: https://github.com/kubernetes/community/blob/master/communication.md
 [community meeting]: https://github.com/kubernetes/community/blob/master/communication.md#weekly-meeting
+[events]: https://www.cncf.io/events/
 [file an issue]: https://github.com/kubernetes/kubernetes/issues/new
 [Google+]: https://plus.google.com/u/0/b/116512812300813784482/116512812300813784482
 [iCal url]: https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics
-[kubecon]: http://events.linuxfoundation.org/events/kubecon
 [Kubernetes Community Meeting Agenda]: https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#
 [kubernetes-community-video-chat]: https://groups.google.com/forum/#!forum/kubernetes-community-video-chat
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
