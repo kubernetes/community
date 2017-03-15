@@ -67,16 +67,20 @@ These steps should be completed within the 1-7 days of Disclosure.
    `v2.4`, a new branch will be created in the private fork called
    `release-2.4.7`, branching at the `v2.4.7` tag. If `HEAD` were to be used
    instead, the security release might include non-security fixes.
-  - TODO: continuous integration testing should be set up for the branch
+   - Alternatively, this branch could be named something like `issue-N`,
+     referencing the GitHub issue tracking the vulnerability and fix.
+  - TODO: continuous integration testing should be set up for the branch,
+    ideally with only a very small configuration change.
 - If a security incident affects multiple supported releases, then patch
-  release branches will be created for all affected releases.
-- Similarly, if a security issue affects `master`, then a private `master`
-  branch will be created, though this will be synced to public `HEAD`, rather
-  than from a particular tag.
-- The Fix Team will submit fixes to the private branch(es). If a fix is only
-  needed for a published release (and not `master`), then it is fine to merge
-  directly into the private release branch (rather than following the
-  cherry-pick process).
+  release branches will be created for all affected releases. Vulnerabilities
+  affecting `master` will be fixed via cherry-picks after fixes to the release
+  branches have been publicized.
+- If multiple security issues are reported simultaneously, they will be combined
+  into a single security release target, unless it is deemed infeasible to fix
+  all vulnerabilities at once (e.g. if one vulnerability will take significantly
+  longer to fix).
+- The Fix Team will merge fixes directly to the private branch(es), rather than
+  following the normal cherry-pick process
   - As is feasible, the normal PR review process (including LGTM and OWNERS
     approval) should be followed for all fixes, though the submit queue
     infrastructure may not be operational on the private branches.
@@ -87,8 +91,7 @@ These steps should be completed within the 1-7 days of Disclosure.
   releases while security fixes are ongoing. Should it be necessary to create a
   new public patch release before the security fixes are complete, the private
   security branch will need to be rebased (and renamed?) on the new latest
-  patch release.
-- TODO: how frequently should the private `master` branch be updated?
+  patch release. Only one security release will be built.
 
 If the CVSS score is under 4.0 ([a low severity score](https://www.first.org/cvss/specification-document#i5)) the Fix Team can decide to slow the release process down in the face of holidays, developer bandwidth, etc. These decisions must be discussed on the kubernetes-security mailing list.
 
@@ -139,20 +142,21 @@ The communication to users should be actionable. They should know when to block 
     - Create a new release on the **public** kubernetes GitHub
     - Send email announcing the release
   - Merge the private patch release branch into the **public** release branch
-    including the fixes and release tag.
+    including both the commits and release tag.
     - In our continuing example, this would merge the private `release-2.4.7`
       branch into the public `release-2.4` branch, effectively advancing the
-      latter to `2.4.9-beta.0+`. Any changes in the `release-2.4` branch will
+      latter to `2.4.9-beta.0+`. The `git describe --tags` will update to
+      '2.4.9-beta.0+` and any changes in the `release-2.4` branch will
       now ship with `v2.4.9`.
-  - If fixes were necessary to `master`, merge the private `master` branch into
-    the public `master` branch. No release will be built or published for
-    `master`.
-    - TODO: should this be a PR or a push?
 - The Fix Lead will request a CVE from [DWF](https://github.com/distributedweaknessfiling/DWF-Documentation) and include the CVSS and release details.
 - The Fix Lead will email kubernetes-{dev,users,announce,security-announce}@googlegroups.com now that everything is public announcing the new releases, the CVE number, the location of the binaries, and the relevant merged PRs to get wide distribution and user action. As much as possible this email should be actionable and include links how to apply the fix to users environments; this can include links to external distributor documentation.
 - The Fix Lead will remove the Fix Team from the private security repo.
-- The Fix Lead will (possibly?) delete the patch release branch from the private
-  security repo.
+- The Fix Lead will delete the patch release branch from the private security
+  repo.
+- If fixes are needed for `master`, the Fix Lead (or chosen delegate) will open
+  PRs against the public `master` branch containing cherry-picks of the commits
+  now merged into the release branch(es). No release will be built or published
+  for `master`.
 
 ### Retrospective
 
