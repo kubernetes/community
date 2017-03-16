@@ -167,17 +167,16 @@ kubectl expose deployment nginx --port=80
 
 Run the following command to obtain the cluster local IP of this service we just created:
 
-```shell{% raw %}
+```shell
 ip=$(kubectl get svc nginx --template={{.spec.clusterIP}})
 echo $ip
-{% endraw %}```
+```
 
 Hit the webserver with this IP:
 
-```shell{% raw %}
-
+```shell
 curl $ip
-{% endraw %}```
+```
 
 On OS X, since docker is running inside a VM, run the following command instead:
 
