@@ -26,7 +26,7 @@ We focus on the development and standardization of the CLI [framework](https://g
 
 ## Contributing
 
-See [this document](https://github.com/kubernetes/community/blob/master/sig-cli/contributing.md) for contributing instructions.
+See [this document](CONTRIBUTING.md) for contributing instructions.
 
 ## Sig-cli teams
 
