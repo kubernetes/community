@@ -1,7 +1,7 @@
 API Conventions
 ===============
 
-Updated: 2/23/2017
+Updated: 3/7/2017
 
 *This document is oriented at users who want a deeper understanding of the
 Kubernetes API structure, and developers wanting to extend the Kubernetes API.
@@ -1462,6 +1462,19 @@ Example: "must be greater than `request`".
 be less than 256", "must be greater than or equal to 0".  Do not use words
 like "larger than", "bigger than", "more than", "higher than", etc.
 * When specifying numeric ranges, use inclusive ranges when possible.
+
+## Backward compatibility gotchas
+
+* A single feature/property cannot be represented using multiple spec fields in the same API version
+  simultaneously. Only one field can be populated in any resource at a time, and the client
+  needs to be able to specify which field they expect to use (typically via API version),
+  on both mutation and read. Old clients must continue to function properly while only manipulating
+  the old field. New clients must be able to function properly while only manipulating the new
+  field.
+* Validation rules on spec fields can be relaxed but not strengthened -- any requests that
+  previously worked must continue to work. The opposite is true for status fields. Note that changing
+  any validation rules always has the potential of breaking some client, since it changes the
+  assumptions about part of the API, similar to adding new enum values.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/api-conventions.md?pixel)]()

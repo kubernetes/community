@@ -22,7 +22,7 @@ New Kubernetes Community Projects can be created by pulling out code from the Ku
 
 ### Applications on top of Kubernetes
 
-If you are building an Open Source application on top of Kubernetes that is unrelated to the development, operation, monitoring, APIs, lifecycle, integration, or other primary concerns of the Kubernetes project there is no reason to become a Kubernetes project. If you are unsure if your project is a good fit try running it by a few Kubernetes Special Interest Groups or kubernetes-dev@googlegroups.com. 
+If you are building an Open Source application on top of Kubernetes that is unrelated to the development, operation, monitoring, APIs, lifecycle, integration, or other primary concerns of the Kubernetes project there is no reason to become a Kubernetes project. If you are unsure if your project is a good fit try running it by a few Kubernetes Special Interest Groups or kubernetes-dev@googlegroups.com.
 
 ## Entering Incubation
 
@@ -57,7 +57,7 @@ An Incubator Project must exit 12 months from the date of acceptance in one of t
 
 - Graduate as a new Kubernetes Project
 - Merge with another Kubernetes Project
-- Retirement 
+- Retirement
 
 ### Graduation
 
@@ -65,7 +65,7 @@ Both time and traction are required to graduate to becoming a new Kubernetes Com
 
 - **Documented users:** the project tracks evidence from downloads, mailing lists, Twitter, blogs, GitHub issues, etc that the project has gained a user base
 - **Regular releases:** the project is making releases at least once every 3 months; although release should happen more often
-- **Incubation time:** a minimum of 6 months has passed since 
+- **Incubation time:** a minimum of 6 months has passed since
 - **Healthy community:** a healthy number of users, contributors, and/or OWNERS outside of your own company have participated in the project. The Sponsor and Champion can make this call.
 - **Roadmap:** A roadmap for the next release is maintained; this can be in the form of a doc, GitHub milestones, or any other tool but it must be documented in the README
 
@@ -82,7 +82,7 @@ At any point during Incubation a project can exit by merging the project with an
 
 ### Retirement
 
-If a project doesn't merge or graduate within 12 months it is retired. If a project fails to make a release for 6 months it is retired. Retired repos are moved to the github.com/kubernetes-incubator-retired organization. A warning email will be sent 3 weeks before the move to all people listed in the root OWNERS file, the Champion, and the Sponsor. A project can be re-incubated after retirement but must go through the process of Incubation Entry from the beginning, the same as any new project. 
+If a project doesn't merge or graduate within 12 months it is retired. If a project fails to make a release for 6 months it is retired. Retired repos are moved to the github.com/kubernetes-incubator-retired organization. A warning email will be sent 3 weeks before the move to all people listed in the root OWNERS file, the Champion, and the Sponsor. A project can be re-incubated after retirement but must go through the process of Incubation Entry from the beginning, the same as any new project.
 
 ## FAQ
 
@@ -113,15 +113,14 @@ These are grandfathered in as full projects:
 - github.com/kubernetes/md-check
 - github.com/kubernetes/pr-bot - move from mungebot, etc from contrib, currently running in "prod" on github.com/kubernetes
 - github.com/kubernetes/dashboard
+- github.com/kubernetes/helm  (Graduated from incubator on Feb 2017)
+- github.com/kubernetes/minikube (Graduated from incubator on Feb 2017)
 
 **Project to Incubate But Not Move**
 
 These projects are young but have significant user facing docs pointing at their current github.com/kubernetes location. Lets put them through incubation process but leave them at github.com/kubernetes.
 
 - github.com/kubernetes/charts
-- github.com/kubernetes/minikube
-- github.com/kubernetes/helm  (Graduated from incubator on Feb 2017)
-- github.com/kubernetes/charts 
  
 **Projects to Move to Incubator**
 
@@ -148,7 +147,7 @@ These projects are young but have significant user facing docs pointing at their
 
 Large portions of this process and prose are inspired by the Apache Incubator process.
 
-## Original Discussion 
+## Original Discussion
 https://groups.google.com/d/msg/kubernetes-dev/o6E1u-orDK8/SAqal_CeCgAJ
 
 ## Future Work
