@@ -1,3 +1,9 @@
+# Kubernetes Release Roles
+**Table of Contents**
+* [Patch Release Manager](#patch-release-manager)
+* [Kubernetes Release Management Team for Major/Minor Releases](#kubernetes-release-management-team-for-majorminor-releases)
+* [Individual Contributors](#individual-contributors)
+
 This document captures the requirements and duties of the individuals responsible for Kubernetes releases.
 
 As documented in the [Kubernetes Versioning doc](https://github.com/kubernetes/kubernetes/blob/master/docs/design/versioning.md), there are 3 types of Kubernetes releases:
@@ -7,7 +13,7 @@ As documented in the [Kubernetes Versioning doc](https://github.com/kubernetes/k
 
 Major and minor releases are managed by a **Kubernetes Release Management Team**, and patch releases are managed by the **Patch Release Manager**. Exact roles and duties are defined below.
 
-# Patch Release Manager
+## Patch Release Manager
 
 Patch releases are managed by the **Patch Release Manager**. Duties of the patch release manager include:
 * Ensuring the release branch (e.g. `release-1.5`) remains in a healthy state.
@@ -19,7 +25,7 @@ Patch releases are managed by the **Patch Release Manager**. Duties of the patch
 
 Current and past patch release managers are listed [here](https://github.com/kubernetes/community/wiki).
 
-# Kubernetes Release Management Team for Major/Minor Releases
+## Kubernetes Release Management Team for Major/Minor Releases
 
 Major and Minor releases are managed by the **Kubernetes Release Management Team** which is responsible for ensuring Kubernetes releases go out on time (as scheduled) and with high quality (stable, with no major bugs).
 
@@ -76,3 +82,35 @@ The Release Management Team Lead is the person ultimately responsible for ensuri
 #### Testing Lead
 * Ensures that all non-upgrade test CI provides a clear go/no-go signal for the release.
 * Tracks and finds owners to fix any issues with any (non-upgrade) tests.
+
+## Individual Contributors
+
+Release responsiblites of indvidual contributors to the Kubernetes project are captured below.
+
+### Patch Release
+
+#### Cherry Picks
+If you have a patch that needs to be ported back to a previous release (meaning it is a critical bug/security fix), once it is merged to the Kubernetes `master` branch:
+* Mark your PR with the milestone corresponding to the release you want to port back to (e.g. `v1.5`), and add the `cherrypick-candidate` label to it.
+* The Patch Release Manager will then review the PR and if it is ok for cherry-picking, will apply a `cherrypick-approved` label to it.
+* Once your PR has been marked with the `cherrypick-approved` label by the Patch Release Manager, you should prepare a cherry-pick to the requested branch following the instructions [here](https://github.com/kubernetes/community/blob/master/contributors/devel/cherry-picks.md#how-do-cherrypick-candidates-make-it-to-the-release-branch).
+
+### Major/Minor Release
+
+#### Propose and Track Feature
+If you are developing a feature for Kubernetes, make sure that an issue is open in the [features repository](https://github.com/kubernetes/features/issues). If you are targeting a particular release, make sure the issue is marked with the corresponding release milestone.
+
+Ensure that all code for your feature is written, tested, reviewed, and merged before code freeze date for the target release.
+
+During the code freeze period, fix any bugs discovered with you feature, and write feature documentation.
+
+##### Writing Feature Documentation
+
+1. Make sure your feature for the upcoming release is on the release tracking board (e.g. [link](https://docs.google.com/spreadsheets/d/1nspIeRVNjAQHRslHQD1-6gPv99OcYZLMezrBe3Pfhhg/edit#gid=0) for 1.6).
+2. Create a PR with documentation for your feature in the [documents repo](https://github.com/kubernetes/kubernetes.github.io).
+    * **Your PR should target the release branch (e.g. [release-1.6](https://github.com/kubernetes/kubernetes.github.io/tree/release-1.6)), not the [`master`](https://github.com/kubernetes/kubernetes.github.io/tree/master) branch.**
+      * Any changes to the master branch become live on https://kubernetes.io/docs/ as soon as they are merged, and for releases we do not want docuemntation to go live until the release is cut.
+3. Add link to your docs PR in the release tracking board, and notify the docs lead for the release (e.g. [Devin Donnelly](https://www.github.com/devin-donnelly) for 1.6).
+4. The docs lead will review your PR and give you feedback.
+5. Once approved, the docs lead will merge your PR into the release branch.
+6. When the release is cut, the docs lead will push the docs release branch to master, making your docs live on https://kubernetes.io/docs/.
