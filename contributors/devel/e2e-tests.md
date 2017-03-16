@@ -25,6 +25,7 @@ Updated: 5/3/2016
     - [Local clusters](#local-clusters)
       - [Testing against local clusters](#testing-against-local-clusters)
     - [Version-skewed and upgrade testing](#version-skewed-and-upgrade-testing)
+      - [Test jobs naming convention](#test-jobs-naming-convention)
   - [Kinds of tests](#kinds-of-tests)
     - [Viper configuration and hierarchichal test parameters.](#viper-configuration-and-hierarchichal-test-parameters)
     - [Conformance tests](#conformance-tests)
@@ -440,7 +441,7 @@ similarly enough to older versions.  The general strategy is to cover the follow
    same version (e.g. a cluster upgraded to v1.3 passes the same v1.3 tests as
    a newly-created v1.3 cluster).
 
-[hack/e2e-runner.sh](http://releases.k8s.io/HEAD/hack/jenkins/e2e-runner.sh) is
+[hack/e2e-runner.sh](https://github.com/kubernetes/test-infra/blob/master/jenkins/e2e-image/e2e-runner.sh) is
 the authoritative source on how to run version-skewed tests, but below is a
 quick-and-dirty tutorial.
 
@@ -487,6 +488,39 @@ go run ./hack/e2e.go -- -v --test --test_args="--kubectl-path=$(pwd)/../kubernet
 cd ../kubernetes_old
 go run ./hack/e2e.go -- -v --test --test_args="--kubectl-path=$(pwd)/../kubernetes/cluster/kubectl.sh"
 ```
+
+#### Test jobs naming convention
+
+**Version skew tests** are named as
+`<cloud-provider>-<master&node-version>-<kubectl-version>-<image-name>-kubectl-skew`
+e.g: `gke-1.5-1.6-cvm-kubectl-skew` means cloud provider is GKE;
+master and nodes are built from `release-1.5` branch;
+`kubectl` is built from `release-1.6` branch;
+image name is cvm (container_vm).
+The test suite is always the older one in version skew tests. e.g. from release-1.5 in this case.
+
+**Upgrade tests**:
+
+If a test job name ends with `upgrade-cluster`, it means we first upgrade
+the cluster (i.e. master and nodes) and then run the old test suite with new kubectl.
+
+If a test job name ends with `upgrade-cluster-new`, it means we first upgrade
+the cluster (i.e. master and nodes) and then run the new test suite with new kubectl.
+
+If a test job name ends with `upgrade-master`, it means we first upgrade
+the master and keep the nodes in old version and then run the old test suite with new kubectl.
+
+There are some examples in the table,
+where `->` means upgrading; container_vm (cvm) and gci are image names.
+
+| test name | test suite | master version (image) | node version (image) | kubectl
+| --------- | :--------: | :----: | :---:| :---:
+| gce-1.5-1.6-upgrade-cluster | 1.5 | 1.5->1.6 | 1.5->1.6 | 1.6
+| gce-1.5-1.6-upgrade-cluster-new | 1.6 | 1.5->1.6 | 1.5->1.6 | 1.6
+| gce-1.5-1.6-upgrade-master | 1.5 | 1.5->1.6 | 1.5 | 1.6
+| gke-container_vm-1.5-container_vm-1.6-upgrade-cluster | 1.5 | 1.5->1.6 (cvm) | 1.5->1.6 (cvm) | 1.6
+| gke-gci-1.5-container_vm-1.6-upgrade-cluster-new | 1.6 | 1.5->1.6 (gci) | 1.5->1.6 (cvm) | 1.6
+| gke-gci-1.5-container_vm-1.6-upgrade-master | 1.5 | 1.5->1.6 (gci) | 1.5 (cvm) | 1.6
 
 ## Kinds of tests
 
