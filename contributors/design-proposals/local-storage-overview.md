@@ -93,7 +93,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
      - name: fooc
        resources:
          limits:
-           storage.kubernetes.io/scratch: 500Mi
+           storage.kubernetes.io/logs: 500Mi
            storage.kubernetes.io/overlay: 1Gi
        volumeMounts:
        - name: myEmptyDir
@@ -105,12 +105,14 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
     ```
 
 3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
-4. `storage.kubernetes.io/scratch` resource is meant for logs. `storage.kubernetes.io/overlay` is meant for writable layer.
-5. `storage.kubernetes.io/overlay` resource can be satisfied by `storage.kubernetes.io/overlay` if exposed by nodes or by `storage.kubernetes.io/scratch` otherwise. The scheduler follows this policy to find an appropriate node which can satisfy the storage resource requirements of the pod.
-5. Kubelet will rotate logs to keep scratch space usage of “fooc” under 500Mi
-6. Kubelet will track the usage of pods across logs and overlay filesystem and restart the container if it's total usage exceeds it's storage limits. If usage on `EmptyDir` volume exceeds its `limit`, then the pod will be evicted by the kubelet. By performing soft limiting, users will be able to easily identify pods that run out of storage.
-7. Health is monitored by an external entity like the “Node Problem Detector” which is expected to place appropriate taints.
-8. If a primary partition becomes unhealthy, the node is tainted and all pods running in it will be evicted by default, unless they tolerate that taint. Kubelet’s behavior on a node with unhealthy primary partition is undefined. Cluster administrators are expected to fix unhealthy primary partitions on nodes.
+4. For the pod resources, `storage.kubernetes.io/logs` resource is meant for logs. `storage.kubernetes.io/overlay` is meant for writable layer.
+5. `storage.kubernetes.io/logs` is satisfied by `storage.kubernetes.io/scratch`.
+6. `storage.kubernetes.io/overlay` resource can be satisfied by `storage.kubernetes.io/overlay` if exposed by nodes or by `storage.kubernetes.io/scratch` otherwise. The scheduler follows this policy to find an appropriate node which can satisfy the storage resource requirements of the pod.
+7. EmptyDir.size is both a request and limit that is satisfied by `storage.kubernetes.io/scratch`. 
+8. Kubelet will rotate logs to keep scratch space usage of “fooc” under 500Mi
+9. Kubelet will track the usage of pods across logs and overlay filesystem and restart the container if it's total usage exceeds it's storage limits. If usage on `EmptyDir` volume exceeds its `limit`, then the pod will be evicted by the kubelet. By performing soft limiting, users will be able to easily identify pods that run out of storage.
+10. Health is monitored by an external entity like the “Node Problem Detector” which is expected to place appropriate taints.
+11. If a primary partition becomes unhealthy, the node is tainted and all pods running in it will be evicted by default, unless they tolerate that taint. Kubelet’s behavior on a node with unhealthy primary partition is undefined. Cluster administrators are expected to fix unhealthy primary partitions on nodes.
 
 ### Bob runs batch workloads and is unsure of “storage” requirements
 
@@ -142,7 +144,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
       name: mylimits
     spec:
        - default:
-         storage.kubernetes.io/scratch: 200Mi
+         storage.kubernetes.io/logs: 200Mi
          storage.kubernetes.io/overlay: 200Mi
          type: Container
        - default:
@@ -162,7 +164,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
      - name: fooc
        resources:
          limits:
-           storage.kubernetes.io/scratch: 200Mi
+           storage.kubernetes.io/logs: 200Mi
            storage.kubernetes.io/overlay: 200Mi
        volumeMounts:
        - name: myEmptyDir
@@ -186,7 +188,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
    - name: fooc
      resources:
        requests:
-         storage.kubernetes.io/scratch: 500Mi
+         storage.kubernetes.io/logs: 500Mi
          storage.kubernetes.io/overlay: 500Mi
      volumeMounts:
      - name: myEmptyDir
@@ -202,8 +204,16 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
 ### Alice manages a Database which needs access to “durable” and fast scratch space
 
 1. Cluster administrator provisions machines with local SSDs and brings up the cluster
-2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a new node annotation that ties the volume to a specific node.  A StorageClass name that is prefixed with "local-" is required for the system to be able to differentiate between local and remote storage.  Labels may also be specified.  The volume consumes the entire partition.
+2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a new node annotation that ties the volume to a specific node.  A StorageClass is required and will have a new optional field `locality` for the system to be able to differentiate between local and remote storage.  Labels may also be specified.  The volume consumes the entire partition.
 
+    ```yaml
+    kind: StorageClass
+    apiVersion: storage.k8s.io/v1
+    metadata:
+      name: local-fast
+    provisioner: ""
+    locality: Node
+    ```
     ```yaml
     kind: PersistentVolume
     apiVersion: v1
@@ -231,7 +241,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
     local-pv-1 100Gi    RWO         Delete        Available         node-3
     local-pv-2 10Gi     RWO         Delete        Available         node-3
     ```
-3. Alice creates a StatefulSet that uses local PVCs.  The StorageClass prefix of "local-" indicates that the user wants local storage.  The PVC will only be bound to PVs that match the StorageClass name. 
+3. Alice creates a StatefulSet that requests local storage from StorageClass "local-fast".  The PVC will only be bound to PVs that match the StorageClass name. 
 
     ```yaml
     apiVersion: apps/v1beta1
@@ -302,22 +312,25 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
 5. If a pod dies and is replaced by a new one that reuses existing PVCs, the pod will be placed on the same node where the corresponding PVs exist. Stateful Pods are expected to have a high enough priority which will result in such pods preempting other low priority pods if necessary to run on a specific node.
 6. Forgiveness policies can be specified as tolerations in the pod spec for each failure scenario.  No toleration specified means that the failure is not tolerated.  In that case, the PVC will immediately be unbound, and the pod will be rescheduled to obtain a new PV.  If a toleration is set, by default, it will be tolerated forever.  `tolerationSeconds` can be specified to allow for a timeout period before the PVC gets unbound.
 
-  Node taints already exist today.  New PV and scheduling taints can be added to handle additional failure use cases when using local storage.  A new PV taint will be introduced to handle unhealthy volumes.  The addon or another external entity can monitor the volumes and add a taint when it detects that it is unhealthy.  A scheduling taint could signal a scheduling failure for the pod due to being unable to fit on the node.
+  Node taints already exist today.  A new PV taint will be introduced to handle unhealthy volumes.  The addon or another external entity can monitor the volumes and add a taint when it detects that it is unhealthy.  Pod scheduling failures are specified separately as a timeout.
   ```yaml
-  nodeTolerations:
-    - key: node.alpha.kubernetes.io/notReady
-      operator: TolerationOpExists
-      tolerationSeconds: 600
-    - key: node.alpha.kubernetes.io/unreachable
-      operator: TolerationOpExists
-      tolerationSeconds: 1200
-  pvTolerations:
-    - key: storage.kubernetes.io/pvUnhealthy
-      operator: TolerationOpExists
-  schedulingTolerations:
-    - key: scheduler.kubernetes.io/podCannotFit
-      operator: TolerationOpExists
-      tolerationSeconds: 600
+  apiVersion: v1
+  kind: pod
+  metadata:
+    name: foo
+  spec:
+    <snip>
+    nodeTolerations:
+      - key: node.alpha.kubernetes.io/notReady
+        operator: TolerationOpExists
+        tolerationSeconds: 600
+      - key: node.alpha.kubernetes.io/unreachable
+        operator: TolerationOpExists
+        tolerationSeconds: 1200
+    pvTolerations:
+      - key: storage.kubernetes.io/pvUnhealthy
+        operator: TolerationOpExists
+    schedulingFailureTimeoutSeconds: 600
   ```
 
 7. Once Alice decides to delete the database, she destroys the StatefulSet, and then destroys the PVCs.  The PVs will then get deleted and cleaned up according to the reclaim policy, and the addon adds it back to the cluster.
@@ -349,7 +362,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
      - name: fooc
        resources:
        limits:
-         storage.kubernetes.io/scratch: 500Mi
+         storage.kubernetes.io/logs: 500Mi
          storage.kubernetes.io/overlay: 1Gi
        volumeMounts:
        - name: myEphemeralPersistentVolume
