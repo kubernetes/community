@@ -8,7 +8,7 @@ For a field presents in the request, it will be merged with the live config.
 The proposal of Full Union is in [kubernetes/community#388](https://github.com/kubernetes/community/pull/388).
 
 | Capability | Supported By This Proposal | Supported By Full Union |
-|---|---|---|---|
+|---|---|---|
 | Auto clear missing fields on patch | X | X |
 | Merge union fields on patch | X | X |
 | Validate only 1 field set on type |  | X |
@@ -42,7 +42,7 @@ that does not contain a discriminator.
 **Scope**:
 
 | Union Type | Supported |
-|---|---|---|
+|---|---|
 | non-inlined non-discriminated union | Yes |
 | non-inlined discriminated union | Yes |
 | inlined union with [patchMergeKey](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#strategic-merge-patch) only | Yes |
