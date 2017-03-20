@@ -115,29 +115,33 @@ The communication to users should be actionable. They should know when to block 
 
 **Fix Release Day** (Completed within 1-21 days of Disclosure)
 
-- The Release Managers will ensure all the binaries are built,
-  publicly available, and functional before the Release Date.
-    - Note: we ship source with our binary releases, so as soon as binary
-      artifacts are publicly available, the fixes (and vulnerabilities) are
-      effectively public.
+- Before the Release Date, the Release Manager(s) will ensure all the binaries
+  are built, publicly available, and functional.
+  - Note: since we ship source with our binary releases, as soon as binary
+    artifacts are publicly available, the fixes (and vulnerabilities) are
+    effectively public.
   - CI testing of the private patch release branch should provide confidence in
     the release.
-- The Release Manager will use release tooling (i.e. `anago`) to
-  - Compute the version for the new security patch release; in the previous
-    example, the `release-2.4.7` branch would produce a `v2.4.8` release.
-  - Verify that no public patch release has occurred since the security branch
-    was cut (in this example, make sure that `v2.4.8` has not been tagged
-    publicly).
-  - Perform a normal release build from the private release branch, staging
-    binary artifacts locally (or possibly in a private bucket).
-  - Push the new patch release tag to the private repo.
-  - The tooling should **not** upload any artifacts to public storage buckets or
-    create a draft release on the public GitHub repo.
-- As soon as we are ready to make the fix known publicly (TODO: when?),
-  the Release Manager will use tooling to
-  - Publish results.
-    - Upload binary artifacts to GCS, gcr.io, and GitHub. (TODO: are these
-      prebuilt from the previous step?)
+  - The Release Manager will use release tooling (i.e. `anago`) to
+    - Compute the version for the new security patch release; in the previous
+      example, the `release-2.4.7` branch would produce a `v2.4.8` release.
+    - Verify that no public patch release has occurred since the security branch
+      was cut (in this example, make sure that `v2.4.8` has not been tagged
+      publicly).
+    - Perform a normal release build from the private release branch, staging
+      binary artifacts locally (or possibly in a private bucket).
+    - Push the new patch release tag to the private repo.
+    - The tooling should **not** upload any artifacts to public storage buckets or
+      create a draft release on the public GitHub repo.
+- On the Release Date, the Release Manager will use tooling to
+  - Verify that nothing new has been pushed to the private release repository,
+    and that no new public patch release has occurred.
+      - If there are new commits on the private release branch, or if a new
+        public release has occurred, the previously build artifacts will be
+        discarded.
+  - Publish the release.
+    - Upload prebuilt binary artifacts (from previous step) to GCS, gcr.io, and
+      GitHub.
     - Update the `CHANGELOG.md` in the **public** `master` branch
     - Create a new release on the **public** kubernetes GitHub
     - Send email announcing the release
@@ -146,7 +150,7 @@ The communication to users should be actionable. They should know when to block 
     - In our continuing example, this would merge the private `release-2.4.7`
       branch into the public `release-2.4` branch, effectively advancing the
       latter to `2.4.9-beta.0+`. The `git describe --tags` will update to
-      '2.4.9-beta.0+` and any changes in the `release-2.4` branch will
+      `2.4.9-beta.0+` and any changes in the `release-2.4` branch will
       now ship with `v2.4.9`.
 - The Fix Lead will request a CVE from [DWF](https://github.com/distributedweaknessfiling/DWF-Documentation) and include the CVSS and release details.
 - The Fix Lead will email kubernetes-{dev,users,announce,security-announce}@googlegroups.com now that everything is public announcing the new releases, the CVE number, the location of the binaries, and the relevant merged PRs to get wide distribution and user action. As much as possible this email should be actionable and include links how to apply the fix to users environments; this can include links to external distributor documentation.
