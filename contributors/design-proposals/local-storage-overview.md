@@ -312,10 +312,10 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
 5. If a pod dies and is replaced by a new one that reuses existing PVCs, the pod will be placed on the same node where the corresponding PVs exist. Stateful Pods are expected to have a high enough priority which will result in such pods preempting other low priority pods if necessary to run on a specific node.
 6. Forgiveness policies can be specified as tolerations in the pod spec for each failure scenario.  No toleration specified means that the failure is not tolerated.  In that case, the PVC will immediately be unbound, and the pod will be rescheduled to obtain a new PV.  If a toleration is set, by default, it will be tolerated forever.  `tolerationSeconds` can be specified to allow for a timeout period before the PVC gets unbound.
 
-  Node taints already exist today.  A new PV taint will be introduced to handle unhealthy volumes.  The addon or another external entity can monitor the volumes and add a taint when it detects that it is unhealthy.  Pod scheduling failures are specified separately as a timeout.
+  Node taints already exist today.  Pod scheduling failures are specified separately as a timeout.
   ```yaml
   apiVersion: v1
-  kind: pod
+  kind: Pod
   metadata:
     name: foo
   spec:
@@ -327,12 +327,21 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
       - key: node.alpha.kubernetes.io/unreachable
         operator: TolerationOpExists
         tolerationSeconds: 1200
-    pvTolerations:
-      - key: storage.kubernetes.io/pvUnhealthy
-        operator: TolerationOpExists
     schedulingFailureTimeoutSeconds: 600
   ```
 
+  A new PV taint will be introduced to handle unhealthy volumes.  The addon or another external entity can monitor the volumes and add a taint when it detects that it is unhealthy. 
+  ```yaml
+  apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: foo
+  spec:
+    <snip>
+    pvTolerations:
+      - key: storage.kubernetes.io/pvUnhealthy
+        operator: TolerationOpExists
+  ```
 7. Once Alice decides to delete the database, she destroys the StatefulSet, and then destroys the PVCs.  The PVs will then get deleted and cleaned up according to the reclaim policy, and the addon adds it back to the cluster.
 
 ### Bob manages a distributed filesystem which needs access to all available storage on each node
