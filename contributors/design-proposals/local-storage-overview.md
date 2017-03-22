@@ -79,7 +79,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
       allocatable:
         storage.kubernetes.io/overlay: 100Gi
         storage.kubernetes.io/scratch: 90Gi
-```
+    ```
 
 2. Alice adds new storage resource requirements to her pod, specifying limits for the container's writeable and overlay layers, and emptyDir volumes.
 
