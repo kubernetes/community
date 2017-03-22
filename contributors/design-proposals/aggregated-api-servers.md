@@ -41,8 +41,7 @@ The following are related but are not the goals of this specific proposal:
 
 ## High Level Architecture
 
-There will be a new component in the cluster, `kube-aggregator`, which has these
-responsibilities:
+There will be a new component, `kube-aggregator`, which has these responsibilities:
 * Provide an API for registering API servers.
 * Summarize discovery information from all the servers.
 * Proxy client requests to individual servers.
@@ -67,10 +66,9 @@ There are two configurations in which it makes sense to run `kube-aggregator`.
     this configuration, `kube-aggregator`'s built in proxy will lack the client
     cert that allows it to perform authentication that the rest of the cluster
     will trust, so its functionality will be somewhat limited.
- 2. In **gateway mode**. Each cluster should run kube-aggregator as the official
-    gateway to the cluster, where it aggregates all of the apiservers the cluster
-    administer wishes to provide. This configuration is the intended usage of
-    `kube-aggregator`.
+ 2. In **gateway mode**. The `kube-apiserver` will embed the `kube-aggregator` component
+    and it will function as the official gateway to the cluster, where it aggregates
+    all of the apiservers the cluster administer wishes to provide.
 
 ### Constraints
 
