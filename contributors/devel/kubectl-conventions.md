@@ -32,6 +32,26 @@ Updated: 8/27/2015
     * `--namespace` should also override the value specified in a specified
 resource
 
+* Most kubectl commands should be able to operate in bulk on resources, of mixed types.
+
+* Kubectl should not make any decisions based on its nor the server's release version string. Instead, API
+  discovery and/or OpenAPI should be used to determine available features.
+
+* We currently only guarantee one release of version skew is supported, but we strive to make old releases of kubectl 
+  continue to work with newer servers in compliance with our API compatibility guarantees. This means, for instance, that
+  kubectl should not fully parse objects returned by the server into full Go types and then re-encode them, since that
+  would drop newly added fields. ([#3955](https://github.com/kubernetes/kubernetes/issues/3955))
+  
+* General-purpose kubectl commands (e.g., get, delete, create -f, replace, patch, apply) should work for all resource types,
+  even those not present when that release of kubectl was built, such as APIs added in newer releases, aggregated APIs,
+  and third-party resources.
+
+* While functionality may be added to kubectl out of expedience, commonly needed functionality should be provided by
+  the server to make it easily accessible to all API clients. ([#12143](https://github.com/kubernetes/kubernetes/issues/12143))
+  
+* Remaining non-trivial functionality remaining in kubectl should be made available to other clients via libraries
+  ([#7311](https://github.com/kubernetes/kubernetes/issues/7311))
+  
 ## Command conventions
 
 * Command names are all lowercase, and hyphenated if multiple words.
