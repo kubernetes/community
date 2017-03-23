@@ -40,6 +40,11 @@ type DeploymentSpec struct {
   // If Selector is empty, it is defaulted to the labels present on the Pod template.
   Selector map[string]string
 
+  // A counter that tracks the number of times an update happened in the PodTemplateSpec
+  // of the Deployment, similarly to how metadata.Generation tracks updates in the Spec
+  // of all first-class API objects.
+  TemplateGeneration *int32
+
   // Describes the pods that will be created.
   Template *PodTemplateSpec
 
@@ -119,25 +124,26 @@ For each creation or update for a Deployment, it will:
 1. Find all RSs (ReplicaSets) whose label selector is a superset of DeploymentSpec.Selector.
    - For now, we will do this in the client - list all RSs and then filter the
      ones we want. Eventually, we want to expose this in the API.
-2. The new RS can have the same selector as the old RS and hence we add a unique
-   selector to all these RSs (and the corresponding label to their pods) to ensure
-   that they do not select the newly created pods (or old pods get selected by
-   new RS).
-   - The label key will be "pod-template-hash".
-   - The label value will be hash of the podTemplateSpec for that RS without
-     this label. This value will be unique for all RSs, unless there is a hash collision
-     (more on this later), since PodTemplateSpec should be unique.
+2. The new RS can have the same selector as the old RS and hence we need to add a unique label
+   in the selector of all these RSs (and the corresponding label to their pods) to ensure that
+   they do not select the newly created pods (or old pods get selected by the new RS).
+   - The label key will be "controller-uid" similar to the key set in Jobs when job.spec.manualSelector
+     is unset.
+   - The label value will be the uid of the RS.
+   Unlike Jobs, the generated selector will be added by default by the API server to every RS
+   that is created with an owner reference, hence is not controlled directly by a user. To ensure
+   that existing Pods will be labeled correctly, the Deployment controller will continue to relabel
+   ReplicaSets and sync them to use their uids in their selectors and in their existing Pods.
    - If the RSs and pods dont already have this label and selector:
      - We will first add this to RS.PodTemplateSpec.Metadata.Labels for all RSs to
        ensure that all new pods that they create will have this label.
      - Then we will add this label to their existing pods
      - Eventually we flip the RS selector to use the new label.
      This process potentially can be abstracted to a new endpoint for controllers [1].
-3. Find if there exists an RS for which value of "pod-template-hash" label
-   is same as hash of DeploymentSpec.PodTemplateSpec. If it exists already, then
-   this is the RS that will be ramped up. If there is no such RS, then we create
-   a new one using DeploymentSpec and then add a "pod-template-hash" label
-   to it. The size of the new RS depends on the used DeploymentStrategyType
+3. Find if there exists an RS with the same PodTemplateSpec such as the PodTemplateSpec of the
+   Deployment. If it exists already, then this is the RS that will be ramped up. If there is no
+   such RS, then we create a new one by using TemplateGeneration in some way in its name to ensure
+   it is a stable name. The size of the new RS depends on the used DeploymentStrategyType.
 4. Scale up the new RS and scale down the olds ones as per the DeploymentStrategy.
    Raise events appropriately (both in case of failure or success).
 5. Go back to step 1 unless the new RS has been ramped up to desired replicas
@@ -158,6 +164,32 @@ assume that they are ready as soon as they are up.
 https://github.com/kubernetes/kubernetes/issues/11234 tracks updating kubelet
 and https://github.com/kubernetes/kubernetes/issues/12615 tracks adding
 LastTransitionTime to PodCondition.
+
+### TemplateGeneration
+
+Hashing an API object such as the PodTemplateSpec means that the resulting hash is subject
+to change due to API changes in PodTemplateSpec (including referenced objects) between
+minor versions of Kubernetes when new API changes are introduced. A new API field will be
+introduced in DeploymentSpec called TemplateGeneration. The new field will be a counter
+that will track the number of times an update happened in the PodTemplateSpec of the
+Deployment, similarly to how metadata.Generation tracks updates in the Spec of all
+first-class API objects. Unlike metadata.Generation, this field can be initialized by users
+in order to avoid naming collisions when re-adopting existing RSs. This is similar to how it
+is already used by DaemonSets.
+
+TemplateGeneration is not authoritative and only helps in constructing the name for the new
+ReplicaSet in case there is no other ReplicaSet that matches the Deployment. The Deployment
+controller still decides what is the new ReplicaSet by comparing PodTemplateSpecs. If no
+matching ReplicaSet is found, the controller will try to create a new ReplicaSet using its
+current TemplateGeneration.
+
+The naming scheme used by ReplicaSets (*deployment.name-podtemplatehash*) will need to change
+to something different because we cannot migrate old ReplicaSets to use TemplateGeneration
+for their names and we want to avoid name collisions. For new RS names, we can either append
+the TemplateGeneration to the Deployment name or we can compute the hash of
+*deployment.name+deployment.templategeneration*, and use something like
+*deployment.name+hash+templateGeneration* for the new RS names.
+
 
 ## Changing Deployment mid-way
 
@@ -196,6 +228,9 @@ ongoing) Deployment, users can simply use `kubectl rollout undo` or update the
 Deployment directly by using its spec.rollbackTo.revision field and specify the
 revision they want to rollback to or no revision which means that the Deployment
 will be rolled back to its previous revision.
+
+Rollbacks are going to work the same way both for hashing and TemplateGeneration.
+
 
 ## Deployment Strategies
 
