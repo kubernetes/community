@@ -1,6 +1,6 @@
 # Kubectl Conventions
 
-Updated: 8/27/2015
+Updated: 3/23/2017
 
 **Table of Contents**
 <!-- BEGIN MUNGE: GENERATED_TOC -->
