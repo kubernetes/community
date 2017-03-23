@@ -1471,10 +1471,13 @@ like "larger than", "bigger than", "more than", "higher than", etc.
   on both mutation and read. Old clients must continue to function properly while only manipulating
   the old field. New clients must be able to function properly while only manipulating the new
   field.
-* Validation rules on spec fields can be relaxed but not strengthened -- any requests that
-  previously worked must continue to work. The opposite is true for status fields. Note that changing
-  any validation rules always has the potential of breaking some client, since it changes the
-  assumptions about part of the API, similar to adding new enum values.
+* Changing any validation rules always has the potential of breaking some client, since it changes the
+  assumptions about part of the API, similar to adding new enum values. Validation rules on spec fields can
+  neither be relaxed nor strengthened. Strengthening cannot be permitted because any requests that previously
+  worked must continue to work. Weakening validation has the potential to break other consumers and generators
+  of the API resource. Status fields whose writers are under our control (e.g., written by non-pluggable
+  controllers), may potentially tighten validation, since that would cause a subset of previously valid
+  values to be observable by clients.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/api-conventions.md?pixel)]()
