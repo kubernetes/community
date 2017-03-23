@@ -106,6 +106,11 @@ type DeploymentStatus struct {
 
   // Total number of new ready pods with the desired template spec.
   UpdatedReplicas int32
+
+  // Monotonically increasing counter that tracks hash collisions for
+  // the Deployment. Used as a collision avoidance mechanism by the
+  // Deployment controller.
+  Uniquifier *int64
 }
 
 ```
@@ -122,12 +127,13 @@ For each creation or update for a Deployment, it will:
      ones we want. Eventually, we want to expose this in the API.
 2. The new RS can have the same selector as the old RS and hence we add a unique
    selector to all these RSs (and the corresponding label to their pods) to ensure
-   that they do not select the newly created pods (or old pods get selected by
+   that they do not select the newly created pods (or old pods get selected by the
    new RS).
    - The label key will be "pod-template-hash".
-   - The label value will be hash of the podTemplateSpec for that RS without
-     this label. This value will be unique for all RSs, unless there is a hash collision
-     (more on this later), since PodTemplateSpec should be unique.
+   - The label value will be the hash of {podTemplateSpec+uniquifier} where podTemplateSpec
+     is the one that the new RS uses and uniquifier is a counter in the DeploymentStatus
+     that increments every time a [hash collision](#hashing-collisions) happens (hash
+     collisions should be rare with fnv).
    - If the RSs and pods dont already have this label and selector:
      - We will first add this to RS.PodTemplateSpec.Metadata.Labels for all RSs to
        ensure that all new pods that they create will have this label.
@@ -210,6 +216,25 @@ To begin with, we will support 2 types of Deployment:
   the strategy parameters, it is possible to have at all times during the rollout
   available pods (old or new). The number of available pods and when is a pod
   considered "available" can be configured using RollingUpdateDeploymentStrategy.
+
+## Hashing collisions
+
+Hashing collisions are a real thing with the existing hashing algorithm[1]. We
+need to switch to a more stable algorithm like fnv. Preliminary benchmarks[2]
+show that while fnv is a bit slower than adler, it is much more stable. Also,
+hashing an API object is subject to API changes which means that the name
+for a ReplicaSet may differ between minor Kubernetes versions.
+
+For both of the aforementioned cases, we will use a field in the DeploymentStatus,
+called Uniquifier, to create a unique hash value when a hash collision happens.
+The Deployment controller will compute the hash value of {template+uniquifier},
+and will use the resulting hash in the ReplicaSet names and selectors. One side
+effect of this hash collision avoidance mechanism is that we don't need to
+migrate ReplicaSets that were created with adler.
+
+[1] https://github.com/kubernetes/kubernetes/issues/29735
+
+[2] https://github.com/kubernetes/kubernetes/pull/39527
 
 ## Future
 
