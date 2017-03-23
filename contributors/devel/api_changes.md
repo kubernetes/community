@@ -9,6 +9,7 @@ found at [API Conventions](api-conventions.md).
   - [Operational overview](#operational-overview)
   - [On compatibility](#on-compatibility)
   - [Incompatible API changes](#incompatible-api-changes)
+  - [Backward compatibility gotchas](#backward-compatibility-gotchas)
   - [Changing versioned APIs](#changing-versioned-apis)
     - [Edit types.go](#edit-typesgo)
     - [Edit defaults.go](#edit-defaultsgo)
@@ -321,6 +322,25 @@ Once in beta we will preserve forward compatibility, but may introduce new
 versions and delete old ones.
 
 v1 must be backward-compatible for an extended length of time.
+
+## Backward compatibility gotchas
+
+* A single feature/property cannot be represented using multiple spec fields in the same API version
+  simultaneously. Only one field can be populated in any resource at a time, and the client
+  needs to be able to specify which field they expect to use (typically via API version),
+  on both mutation and read. Old clients must continue to function properly while only manipulating
+  the old field. New clients must be able to function properly while only manipulating the new
+  field.
+* Changing any validation rules always has the potential of breaking some client, since it changes the
+  assumptions about part of the API, similar to adding new enum values. Validation rules on spec fields can
+  neither be relaxed nor strengthened. Strengthening cannot be permitted because any requests that previously
+  worked must continue to work. Weakening validation has the potential to break other consumers and generators
+  of the API resource. Status fields whose writers are under our control (e.g., written by non-pluggable
+  controllers), may potentially tighten validation, since that would cause a subset of previously valid
+  values to be observable by clients.
+* Do not add a new API version of an existing resource and make it the preferred version in the same
+  release, and do not make it the storage version. The latter is necessary so that a rollback of the
+  apiserver doesn't render resources in etcd undecodable after rollback.
 
 ## Changing versioned APIs
 
