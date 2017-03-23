@@ -17,8 +17,8 @@ for easy management and discovery.
 
 ## Scope
 
-Kubernetes is a [platform for deploying and managing containers]
-(https://kubernetes.io/docs/whatisk8s/). Kubernetes provides a container runtime, container
+Kubernetes is a [platform for deploying and managing containers](https://kubernetes.io/docs/whatisk8s/).
+Kubernetes provides a container runtime, container
 orchestration, container-centric infrastructure orchestration, self-healing mechanisms such as health checking and re-scheduling, and service discovery and load balancing.
 
 Kubernetes aspires to be an extensible, pluggable, building-block OSS
@@ -62,14 +62,14 @@ The project is committed to the following (aspirational) [design ideals](princip
   approach is key to the system’s self-healing and autonomic capabilities. 
 * _Advance the state of the art_. While Kubernetes intends to support non-cloud-native
   applications, it also aspires to advance the cloud-native and DevOps state of the art, such as
-  in the [participation of applications in their own management] 
-  (http://blog.kubernetes.io/2016/09/cloud-native-application-interfaces.html). However, in doing
+  in the [participation of applications in their own management](http://blog.kubernetes.io/2016/09/cloud-native-application-interfaces.html).
+  However, in doing
   so, we strive not to force applications to lock themselves into Kubernetes APIs, which is, for
-  example, why we prefer configuration over convention in the [downward API]
-  (https://kubernetes.io/docs/user-guide/downward-api/). Additionally, Kubernetes is not bound by
+  example, why we prefer configuration over convention in the [downward API](https://kubernetes.io/docs/user-guide/downward-api/).
+  Additionally, Kubernetes is not bound by
   the lowest common denominator of systems upon which it depends, such as container runtimes and
-  cloud providers. An example where we pushed the envelope of what was achievable was in its [IP
-  per Pod networking model](https://kubernetes.io/docs/admin/networking/#kubernetes-model).
+  cloud providers. An example where we pushed the envelope of what was achievable was in its 
+  [IP per Pod networking model](https://kubernetes.io/docs/admin/networking/#kubernetes-model).
 
 ## Architecture
 
@@ -87,24 +87,28 @@ in order to support high-availability clusters, or can even be run on Kubernetes
 Kubernetes provides a REST API supporting primarily CRUD operations on (mostly) persistent resources, which
 serve as the hub of its control plane. Kubernetes’s API provides IaaS-like
 container-centric primitives such as [Pods](https://kubernetes.io/docs/user-guide/pods/),
-[Services](https://kubernetes.io/docs/user-guide/services/), and [Ingress]
-(https://kubernetes.io/docs/user-guide/ingress/), and also lifecycle APIs to support orchestration
-(self-healing, scaling, updates, termination) of common types of workloads, such as [ReplicaSet]
-(https://kubernetes.io/docs/user-guide/replicasets/) (simple fungible/stateless app manager),
+[Services](https://kubernetes.io/docs/user-guide/services/), and 
+[Ingress](https://kubernetes.io/docs/user-guide/ingress/), and also lifecycle APIs to support orchestration
+(self-healing, scaling, updates, termination) of common types of workloads, such as 
+[ReplicaSet](https://kubernetes.io/docs/user-guide/replicasets/) (simple fungible/stateless app manager),
 [Deployment](https://kubernetes.io/docs/user-guide/deployments/) (orchestrates updates of
-stateless apps), [Job](https://kubernetes.io/docs/user-guide/jobs/) (batch), [CronJob]
-(https://kubernetes.io/docs/user-guide/cron-jobs/) (cron), [DaemonSet]
-(https://kubernetes.io/docs/admin/daemons/) (cluster services), and [StatefulSet]
-(https://kubernetes.io/docs/concepts/abstractions/controllers/statefulsets/) (stateful apps).
+stateless apps), [Job](https://kubernetes.io/docs/user-guide/jobs/) (batch), 
+[CronJob](https://kubernetes.io/docs/user-guide/cron-jobs/) (cron), 
+[DaemonSet](https://kubernetes.io/docs/admin/daemons/) (cluster services), and 
+[StatefulSet](https://kubernetes.io/docs/concepts/abstractions/controllers/statefulsets/) (stateful apps).
 We deliberately decoupled service naming/discovery and load balancing from application
 implementation, since the latter is diverse and open-ended. 
 
-Both user clients and components containing asynchronous controllers interact with the same API resources, which serve as coordination points, common intermediate representation, and shared state. Most resources contain metadata, including [labels](https://kubernetes.io/docs/user-guide/labels/) and [annotations](https://kubernetes.io/docs/user-guide/annotations/), fully elaborated desired state (spec), including default values, and observed state (status). 
+Both user clients and components containing asynchronous controllers interact with the same API resources,
+which serve as coordination points, common intermediate representation, and shared state. Most resources 
+contain metadata, including [labels](https://kubernetes.io/docs/user-guide/labels/) and 
+[annotations](https://kubernetes.io/docs/user-guide/annotations/), fully elaborated desired state (spec),
+including default values, and observed state (status). 
 
 Controllers work continuously to drive the actual state towards the desired state, while reporting back the currently observed state for users and for other controllers. 
 
-While the controllers are [level-based]
-(http://gengnosis.blogspot.com/2007/01/level-triggered-and-edge-triggered.html) to maximize fault
+While the controllers are [level-based](http://gengnosis.blogspot.com/2007/01/level-triggered-and-edge-triggered.html)
+to maximize fault
 tolerance, they typically `watch` for changes to relevant resources in order to minimize reaction
 latency and redundant work. This enables decentralized and decoupled
 [choreography-like](https://en.wikipedia.org/wiki/Service_choreography) coordination without a
@@ -144,8 +148,8 @@ Most other cluster-level functions are currently performed by a separate process
 [Controller Manager](https://kubernetes.io/docs/admin/kube-controller-manager/). It performs
 both lifecycle functions (e.g., namespace creation and lifecycle, event garbage collection,
 terminated-pod garbage collection, cascading-deletion garbage collection, node garbage collection)
-and API business logic (e.g., scaling of pods controlled by a [ReplicaSet]
-(https://kubernetes.io/docs/user-guide/replicasets/)).
+and API business logic (e.g., scaling of pods controlled by a 
+[ReplicaSet](https://kubernetes.io/docs/user-guide/replicasets/)).
 
 The application management and composition layer, providing self-healing, scaling, application lifecycle management, service discovery, routing, and service binding and provisioning.
 
@@ -163,10 +167,10 @@ subresource API, according to the availability of the requested resources, quali
 requirements, affinity and anti-affinity specifications, and other constraints.
 
 Kubernetes supports user-provided schedulers and multiple concurrent cluster schedulers,
-using the shared-state approach pioneered by [Omega]
-(https://research.google.com/pubs/pub41684.html). In addition to the disadvantages of
-pessimistic concurrency described by the Omega paper, [two-level scheduling models]
-(http://mesos.berkeley.edu/mesos_tech_report.pdf) that hide information from the upper-level
+using the shared-state approach pioneered by 
+[Omega](https://research.google.com/pubs/pub41684.html). In addition to the disadvantages of
+pessimistic concurrency described by the Omega paper, 
+[two-level scheduling models](http://mesos.berkeley.edu/mesos_tech_report.pdf) that hide information from the upper-level
 schedulers need to implement all of the same features in the lower-level scheduler as required by
 all upper-layer schedulers in order to ensure that their scheduling requests can be satisfied by
 available desired resources.
@@ -225,8 +229,7 @@ Service endpoints are found primarily via [DNS](https://kubernetes.io/docs/admin
 
 ### Add-ons and other dependencies
 
-A number of components, called [*add-ons*]
-(https://github.com/kubernetes/kubernetes/tree/master/cluster/addons) typically run on Kubernetes
+A number of components, called [*add-ons*](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons) typically run on Kubernetes
 itself:
 * [DNS](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dns)
 * [Ingress controller](https://github.com/kubernetes/ingress/tree/master/controllers)
