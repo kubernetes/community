@@ -8,8 +8,8 @@ found at [API Conventions](api-conventions.md).
 - [So you want to change the API?](#so-you-want-to-change-the-api)
   - [Operational overview](#operational-overview)
   - [On compatibility](#on-compatibility)
-  - [Incompatible API changes](#incompatible-api-changes)
   - [Backward compatibility gotchas](#backward-compatibility-gotchas)
+  - [Incompatible API changes](#incompatible-api-changes)
   - [Changing versioned APIs](#changing-versioned-apis)
     - [Edit types.go](#edit-typesgo)
     - [Edit defaults.go](#edit-defaultsgo)
@@ -104,9 +104,11 @@ An API change is considered forward and backward-compatible if it:
    * adds new functionality that is not required for correct behavior (e.g.,
 does not add a new required field)
    * does not change existing semantics, including:
-     * default values and behavior
+     * default values *and behavior*
      * interpretation of existing API types, fields, and values
      * which fields are required and which are not
+     * mutable fields do not become immutable
+     * valid values do not become invalid
 
 Put another way:
 
@@ -255,32 +257,46 @@ then PUTs back:
 The update should not fail, because it would have worked before `heightInInches`
 was added.
 
-Therefore, when there are duplicate fields, the old field MUST take precedence
-over the new, and the new field should be set to match by the server upon write.
-A new client would be aware of the old field as well as the new, and so can
-ensure that the old field is either unset or is set consistently with the new
-field. However, older clients would be unaware of the new field. Please avoid
-introducing duplicate fields due to the complexity they incur in the API.
+## Backward compatibility gotchas
 
-A new representation, even in a new API version, that is more expressive than an
-old one breaks backward compatibility, since clients that only understood the
-old representation would not be aware of the new representation nor its
-semantics. Examples of proposals that have run into this challenge include
-[generalized label selectors](http://issues.k8s.io/341) and [pod-level security
-context](http://prs.k8s.io/12823).
+* A new representation, even in a new API version, that is more expressive than an
+  old one breaks backward compatibility, since clients that only understood the
+  old representation would not be aware of the new representation nor its
+  semantics. Examples of proposals that have run into this challenge include
+  [generalized label selectors](http://issues.k8s.io/341) and [pod-level security context](http://prs.k8s.io/12823).
 
-As another interesting example, enumerated values cause similar challenges.
-Adding a new value to an enumerated set is *not* a compatible change. Clients
-which assume they know how to handle all possible values of a given field will
-not be able to handle the new values. However, removing value from an enumerated
-set *can* be a compatible change, if handled properly (treat the removed value
-as deprecated but allowed). This is actually a special case of a new
-representation, discussed above.
+* Enumerated values cause similar challenges. Adding a new value to an enumerated set
+  is *not* a compatible change. Clients which assume they know how to handle all possible
+  values of a given field will not be able to handle the new values. However, removing a
+  value from an enumerated set *can* be a compatible change, if handled properly (treat the
+  removed value as deprecated but allowed). For enumeration-like fields that expect to add
+  new values in the future, such as `reason` fields, please document that expectation clearly
+  in the API field descriptions. Clients should treat such sets of values as potentially
+  open-ended.
 
-For [Unions](api-conventions.md#unions), sets of fields where at most one should
-be set, it is acceptable to add a new option to the union if the [appropriate
-conventions](api-conventions.md#objects) were followed in the original object.
-Removing an option requires following the deprecation process.
+* For [Unions](api-conventions.md#unions), sets of fields where at most one should
+  be set, it is acceptable to add a new option to the union if the [appropriate
+  conventions](api-conventions.md#objects) were followed in the original object.
+  Removing an option requires following the [deprecation process](https://kubernetes.io/docs/deprecation-policy/).
+
+* A single feature/property cannot be represented using multiple spec fields in the same API version
+  simultaneously. Only one field can be populated in any resource at a time, and the client
+  needs to be able to specify which field they expect to use (typically via API version),
+  on both mutation and read. Old clients must continue to function properly while only manipulating
+  the old field. New clients must be able to function properly while only manipulating the new
+  field.
+  
+* Changing any validation rules always has the potential of breaking some client, since it changes the
+  assumptions about part of the API, similar to adding new enum values. Validation rules on spec fields can
+  neither be relaxed nor strengthened. Strengthening cannot be permitted because any requests that previously
+  worked must continue to work. Weakening validation has the potential to break other consumers and generators
+  of the API resource. Status fields whose writers are under our control (e.g., written by non-pluggable
+  controllers), may potentially tighten validation, since that would cause a subset of previously valid
+  values to be observable by clients.
+  
+* Do not add a new API version of an existing resource and make it the preferred version in the same
+  release, and do not make it the storage version. The latter is necessary so that a rollback of the
+  apiserver doesn't render resources in etcd undecodable after rollback.
 
 ## Incompatible API changes
 
@@ -293,15 +309,13 @@ unacceptable. Compatibility for experimental or alpha APIs is not strictly
 required, but breaking compatibility should not be done lightly, as it disrupts
 all users of the feature. Experimental APIs may be removed. Alpha and beta API
 versions may be deprecated and eventually removed wholesale, as described in the
-[versioning document](../design-proposals/versioning.md). Document incompatible changes
-across API versions under the appropriate
-[{v? conversion tips tag in the api.md doc](../api.md).
+[versioning document](../design-proposals/versioning.md).
 
 If your change is going to be backward incompatible or might be a breaking
 change for API consumers, please send an announcement to
 `kubernetes-dev@googlegroups.com` before the change gets in. If you are unsure,
 ask. Also make sure that the change gets documented in the release notes for the
-next release by labeling the PR with the "release-note" github label.
+next release by labeling the PR with the "release-note-action-required" github label.
 
 If you found that your change accidentally broke clients, it should be reverted.
 
@@ -322,25 +336,6 @@ Once in beta we will preserve forward compatibility, but may introduce new
 versions and delete old ones.
 
 v1 must be backward-compatible for an extended length of time.
-
-## Backward compatibility gotchas
-
-* A single feature/property cannot be represented using multiple spec fields in the same API version
-  simultaneously. Only one field can be populated in any resource at a time, and the client
-  needs to be able to specify which field they expect to use (typically via API version),
-  on both mutation and read. Old clients must continue to function properly while only manipulating
-  the old field. New clients must be able to function properly while only manipulating the new
-  field.
-* Changing any validation rules always has the potential of breaking some client, since it changes the
-  assumptions about part of the API, similar to adding new enum values. Validation rules on spec fields can
-  neither be relaxed nor strengthened. Strengthening cannot be permitted because any requests that previously
-  worked must continue to work. Weakening validation has the potential to break other consumers and generators
-  of the API resource. Status fields whose writers are under our control (e.g., written by non-pluggable
-  controllers), may potentially tighten validation, since that would cause a subset of previously valid
-  values to be observable by clients.
-* Do not add a new API version of an existing resource and make it the preferred version in the same
-  release, and do not make it the storage version. The latter is necessary so that a rollback of the
-  apiserver doesn't render resources in etcd undecodable after rollback.
 
 ## Changing versioned APIs
 
