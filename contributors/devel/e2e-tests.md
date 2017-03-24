@@ -68,7 +68,7 @@ looking to execute or add tests using a local development environment.
 Before writing new tests or making substantive changes to existing tests, you
 should also read [Writing Good e2e Tests](writing-good-e2e-tests.md)
 
-## Building and Running the Tests
+## Building Kubernetes and Running the Tests
 
 There are a variety of ways to run e2e tests, but we aim to decrease the number
 of ways to run e2e tests to a canonical way: `hack/e2e.go`.
@@ -104,10 +104,10 @@ go run hack/e2e.go -- -v --test --test_args="--ginkgo.focus=\[Feature:Performanc
 go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=Pods.*env"
 
 # Run tests in parallel, skip any that must be run serially
-GINKGO_PARALLEL=y go run hack/e2e.go --v --test --test_args="--ginkgo.skip=\[Serial\]"
+GINKGO_PARALLEL=y go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=\[Serial\]"
 
 # Run tests in parallel, skip any that must be run serially and keep the test namespace if test failed
-GINKGO_PARALLEL=y go run hack/e2e.go --v --test --test_args="--ginkgo.skip=\[Serial\] --delete-namespace-on-failure=false"
+GINKGO_PARALLEL=y go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=\[Serial\] --delete-namespace-on-failure=false"
 
 # Flags can be combined, and their actions will take place in this order:
 # --build, --up, --test, --down
@@ -138,6 +138,14 @@ with this command:
 ```sh
 go run hack/e2e.go -- -v --down
 ```
+
+## Building the Tests
+
+* You can quickly recompile the e2e testing framework via `go install ./test/e2e`.
+  This will not do anything besides allow you to verify that the go code compiles.
+
+* If you want to run your e2e testing framework without re-provisioning the e2e setup,
+  you can do so via `make WHAT=test/e2e/e2e.test` and then re-running the ginkgo tests.
 
 ## Advanced testing
 
@@ -351,21 +359,15 @@ $ go run hack/e2e.go -- -v --down
 
 #### Shortcuts for test developers
 
-* To speed up `e2e.go -up`, provision a single-node kubernetes cluster in a single e2e zone:
+* To speed up `--up`, provision a single-node kubernetes cluster in a single e2e zone:
 
   `NUM_NODES=1 E2E_ZONES="us-central1-f"`
 
   Keep in mind that some tests may require multiple underlying clusters and/or minimum compute resource availability.
 
-* You can quickly recompile the e2e testing framework via `go install ./test/e2e`. This will not do anything besides
-  allow you to verify that the go code compiles.
-
-* If you want to run your e2e testing framework without re-provisioning the e2e setup, you can do so via
-  `make WHAT=test/e2e/e2e.test` and then re-running the ginkgo tests.
-
 * If you're hacking around with the federation control plane deployment itself,
   you can quickly re-deploy the federation control plane Kubernetes manifests without tearing any resources down.
-  To re-deploy the federation control plane after running `-up` for the first time:
+  To re-deploy the federation control plane after running `--up` for the first time:
 
   ```sh
   $ federation/cluster/federation-up.sh
