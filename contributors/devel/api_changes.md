@@ -259,6 +259,13 @@ was added.
 
 ## Backward compatibility gotchas
 
+* A single feature/property cannot be represented using multiple spec fields in the same API version
+  simultaneously, as the example above shows. Only one field can be populated in any resource at a time, and the client
+  needs to be able to specify which field they expect to use (typically via API version),
+  on both mutation and read. Old clients must continue to function properly while only manipulating
+  the old field. New clients must be able to function properly while only manipulating the new
+  field.
+
 * A new representation, even in a new API version, that is more expressive than an
   old one breaks backward compatibility, since clients that only understood the
   old representation would not be aware of the new representation nor its
@@ -278,13 +285,6 @@ was added.
   be set, it is acceptable to add a new option to the union if the [appropriate
   conventions](api-conventions.md#objects) were followed in the original object.
   Removing an option requires following the [deprecation process](https://kubernetes.io/docs/deprecation-policy/).
-
-* A single feature/property cannot be represented using multiple spec fields in the same API version
-  simultaneously. Only one field can be populated in any resource at a time, and the client
-  needs to be able to specify which field they expect to use (typically via API version),
-  on both mutation and read. Old clients must continue to function properly while only manipulating
-  the old field. New clients must be able to function properly while only manipulating the new
-  field.
   
 * Changing any validation rules always has the potential of breaking some client, since it changes the
   assumptions about part of the API, similar to adding new enum values. Validation rules on spec fields can
