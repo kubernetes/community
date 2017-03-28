@@ -146,12 +146,14 @@ The communication to users should be actionable. They should know when to block 
     - Create a new release on the **public** kubernetes GitHub
     - Send email announcing the release
   - Merge the private patch release branch into the **public** release branch
-    including both the commits and release tag.
-    - In our continuing example, this would merge the private `release-2.4.7`
-      branch into the public `release-2.4` branch, effectively advancing the
-      latter to `2.4.9-beta.0+`. The `git describe --tags` will update to
-      `2.4.9-beta.0+` and any changes in the `release-2.4` branch will
-      now ship with `v2.4.9`.
+    including both the commits and release tag. Any metadata merge conflicts
+    (e.g.  `pkg/version/base.go`) will be resolved in favor of the patch release
+    branch. Other merge conflicts will be resolved manually.
+  - Advance the public release branch to the next beta.0 release, by updating
+    tags and metadata as necessary.
+    - In our continuing example, this would advance the `release-2.4` branch
+      from `v2.4.8-beta.0+` to `v2.4.9-beta.0+`. Any changes in the
+      `release-2.4` branch since `v2.4.7` would now ship with `v2.4.9`.
 - The Fix Lead will request a CVE from [DWF](https://github.com/distributedweaknessfiling/DWF-Documentation) and include the CVSS and release details.
 - The Fix Lead will email kubernetes-{dev,users,announce,security-announce}@googlegroups.com now that everything is public announcing the new releases, the CVE number, the location of the binaries, and the relevant merged PRs to get wide distribution and user action. As much as possible this email should be actionable and include links how to apply the fix to users environments; this can include links to external distributor documentation.
 - The Fix Lead will remove the Fix Team from the private security repo.
