@@ -15,7 +15,7 @@ Mount time options that are operationally important and have no security implica
 
 We are going to add support for mount options in PVs as a beta feature to begin with.
 
-Mount options can be specified as `mountOptions` annotations in PV. For example:
+Mount options can be specified as `mount-options` annotations in PV. For example:
 
 ``` yaml
  apiVersion: v1
@@ -23,7 +23,7 @@ Mount options can be specified as `mountOptions` annotations in PV. For example:
   metadata:
     name: pv0003
   annotations:
-    volume.beta.kubernetes.io/mountOptions: "hard,nolock,nfsvers=3"
+    volume.beta.kubernetes.io/mount-options: "hard,nolock,nfsvers=3"
   spec:
     capacity:
       storage: 5Gi
@@ -42,7 +42,7 @@ While mount options enable more flexibility in how volumes are mounted, it can r
 in user specifying options that are not supported or are known to be problematic when
 using inline volume specs.
 
-After much deliberation it was decided that - `mountOptions` as an API parameter will not be supported
+After much deliberation it was decided that - `mount-options` as an API parameter will not be supported
 for inline volume specs.
 
 ### Error handling and plugins that don't support mount option
