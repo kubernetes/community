@@ -24,7 +24,7 @@ OS X
 
   - Go
 
-    - Ensure your code passes the [presubmit checks](development.md#hooks)
+    - Ensure your code passes the [presubmit checks](development.md#define-a-pre-commit-hook)
 
     - [Go Code Review
 Comments](https://github.com/golang/go/wiki/CodeReviewComments)
