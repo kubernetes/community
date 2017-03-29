@@ -6,8 +6,7 @@ depending on the point in the release cycle.
 
 ## Propose a Cherry Pick
 
-1. Cherrypicks are [managed with labels and milestones]
-(pull-requests.md#release-notes)
+1. Cherrypicks are [managed with labels and milestones](pull-requests.md#release-notes)
 1. To get a PR merged to the release branch, first ensure the following labels
    are on the original **master** branch PR:
   * An appropriate milestone (e.g. v1.3)
