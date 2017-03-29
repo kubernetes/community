@@ -4,6 +4,10 @@ A Special Interest Group for deploying and operating applications in Kubernetes.
 
 We focus on the developer and devops experience of running applications in Kubernetes. We discuss how to define and run apps in Kubernetes, demo relevant tools and projects, and discuss areas of friction that can lead to suggesting improvements or feature requests.
 
+## Contact us:
+* via [Slack](https://kubernetes.slack.com/messages/sig-apps/)
+* via [Google Groups](https://groups.google.com/forum/#!forum/kubernetes-sig-apps)
+
 ## Meeting:
 * Meetings: Mondays 9:00AM PST
 * Zoom Link: [https://zoom.us/my/sig.apps](https://zoom.us/j/4526666954)
