@@ -468,6 +468,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
     ```
 
 ### Bob manages a specialized application that needs access to Block level storage
+Note: Block access will be considered as a separate feature because it can work for both remote and local storage.  The examples here are a suggestion on how such a feature can be applied to this local storage model, but is subject to change based on the final design for block access.
 
 1. The cluster that Bob uses has nodes that contain raw block devices that have not been formatted yet.
 2. The same addon DaemonSet can discover block devices in the same directory as the filesystem mount points and creates corresponding PVs for them with a new `volumeType = block` field.  This field indicates the original volume type upon PV creation.
