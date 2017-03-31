@@ -123,8 +123,7 @@ watch to etcd, responsible for watching all the changes of objects of a given
 resource type. However, this watch can potentially expire at any time and
 reconnecting can return "too old resource version". In that case relisting is
 necessary. In such case, to avoid LIST requests coming from all watchers at
-the same time, we can introduce an additional etcd event type:
-[EtcdResync](../../pkg/storage/etcd/etcd_watcher.go#L36)
+the same time, we can introduce an additional etcd event type: EtcdResync
 
   Whenever relisting will be done to refresh the internal watch to etcd,
   EtcdResync event will be send to all the watchers. It will contain the
@@ -133,7 +132,7 @@ the same time, we can introduce an additional etcd event type:
   Thus, we need to create the EtcdResync event, extend watch.Interface and
   its implementations to support it and handle those events appropriately
   in places like
-  [Reflector](../../pkg/client/cache/reflector.go)
+  [Reflector](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/tools/cache/reflector.go)
 
   However, this might turn out to be unnecessary optimization if apiserver
   will always keep up (which is possible in the new design). We will work
