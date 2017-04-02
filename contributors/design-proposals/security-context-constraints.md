@@ -1,0 +1,1 @@
+This file has been moved to [Pod Security Policy](pod-security-policy.md) to reflect its updated name.

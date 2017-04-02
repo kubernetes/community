@@ -17,7 +17,7 @@ cluster.
 1.  Ensure a clear isolation between the container and the underlying host it
 runs on
 2.  Limit the ability of the container to negatively impact the infrastructure
-or other containers
+of other containers
 3.  [Principle of Least Privilege](http://en.wikipedia.org/wiki/Principle_of_least_privilege) -
 ensure components are only authorized to perform the actions they need, and
 limit the scope of a compromise by limiting the capabilities of individual
@@ -90,15 +90,22 @@ applications at higher layers would not.
 
 A pod runs in a *security context* under a *service account* that is defined by
 an administrator or project administrator, and the *secrets* a pod has access to
-is limited by that *service account*.
+is limited by that *service account* and additional constraints defined by the
+system.
 
 
 1. The API should authenticate and authorize user actions [authn and authz](access.md)
 2. All infrastructure components (kubelets, kube-proxies, controllers,
-scheduler) should have an infrastructure user that they can authenticate with
+scheduler) should have a (preferably unique) infrastructure user that they can authenticate with
 and be authorized to perform only the functions they require against the API.
-3. Most infrastructure components should use the API as a way of exchanging data
-and changing the system, and only the API should have access to the underlying
+   1.  It must be possible to run a cluster such that successive rings of security
+exist - the infrastructure should define clear layers that have successively lower
+levels of privilege / angles of attack.
+   2.  It must be possible to self-host a set of components such as schedulers,
+controllers, API extensions, third party resources, ingress controllers, or network
+plugins in a way that does not compromise the layers of security of the system.
+3. All infrastructure components should use the API as a way of exchanging data
+and changing the system, and only the API server should have access to the underlying
 data store (etcd)
 4. When containers run on the cluster and need to talk to other containers or
 the API server, they should be identified and authorized clearly as an
@@ -112,7 +119,8 @@ triggered the service account behavior must be associated with the container's
 action
 5. When container processes run on the cluster, they should run in a
 [security context](security_context.md) that isolates those processes via Linux
-user security, user namespaces, and permissions.
+user security, user namespaces, and permissions, and administrators should be able
+to limit those permissions via [pod security policies](pod-security-policy.md).
    1.  Administrators should be able to configure the cluster to automatically
 confine all container processes as a non-root, randomly assigned UID
    2.  Administrators should be able to ensure that container processes within
@@ -131,6 +139,9 @@ and 5.4 are met.
    8.  When application developers want to share filesystem data via distributed
 filesystems, the Unix user ids on those filesystems must be consistent across
 different container processes
+   9.  A container process on a node should have access to a time-limited, scoped
+mechanism that allows that process to prove its identity to other components of
+the system.
 6. Developers should be able to define [secrets](secrets.md) that are
 automatically added to the containers when pods are run
    1.  Secrets are files injected into the container whose values should not be
@@ -148,6 +159,11 @@ namespace from viewing or modifying secrets (anyone who can launch an arbitrary
 pod can view secrets)
    4.  Secrets are generally not copied from one namespace to another when a
 developer's application definitions are copied
+   5.  Users and administrators should be able to subdivide and segment secrets
+so that it is not possible for users to accidentally allow secrets to be used
+to escalate an actor's access to the system
+   6.  It must be possible to allow secrets to live outside the system and be
+delivered securely to individual nodes.
 
 
 ### Related design discussion
