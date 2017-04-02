@@ -90,7 +90,7 @@ We do not currently run the master in an AutoScalingGroup, but we should
 Kubernetes uses an IP-per-pod model. This means that a node, which runs many
 pods, must have many IPs. AWS uses virtual private clouds (VPCs) and advanced
 routing support so each EC2 instance is assigned a /24 CIDR. The assigned CIDR
-is then configured to route to an instance in the VPC routing table.
+is then configured to route to that instance in the VPC routing table.
 
 It is also possible to use overlay networking on AWS, but that is not the
 default configuration of the kube-up script.
