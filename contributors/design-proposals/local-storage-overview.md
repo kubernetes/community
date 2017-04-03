@@ -59,7 +59,7 @@ The local PVs can be precreated by an addon DaemonSet that discovers all the sec
 
 Local PVs can only provide semi-persistence, and are only suitable for specific use cases that need performance, data gravity and can tolerate data loss.  If the node or PV fails, then either the pod cannot run, or the pod has to give up on the local PV and find a new one.  Failure scenarios can be handled by unbinding the PVC from the local PV, and forcing the pod to reschedule and find a new PV.
 
-Since local PVs are only accessible from specific nodes, a new PV-node association will be used by the scheduler to place pods.  The association can be generalized to support any type of PV, not just local PVs.  This allows for any volume plugin to take advantage of this behavior.
+Since local PVs are only accessible from specific nodes, the scheduler needs to take into account a PV's node constraint when placing pods.  This can be generalized to a storage toplogy constraint, which can also work with zones, and in the future: racks, clusters, etc.
 
 # User Workflows
 
@@ -204,7 +204,7 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
 ### Alice manages a Database which needs access to “durable” and fast scratch space
 
 1. Cluster administrator provisions machines with local SSDs and brings up the cluster
-2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a new node annotation that ties the volume to a specific node.  A StorageClass is required and will have a new optional field `locality` for the system to be able to differentiate between local and remote storage.  Labels may also be specified.  The volume consumes the entire partition.
+2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a hostname label ties the volume to a specific node.  A StorageClass is required and will have a new optional field `toplogyKey` for the system to apply node constraints to local storage when scheduling pods that request this StorageClass.  Other labels may also be specified.
 
     ```yaml
     kind: StorageClass
@@ -212,15 +212,15 @@ Since local PVs are only accessible from specific nodes, a new PV-node associati
     metadata:
       name: local-fast
     provisioner: ""
-    locality: Node
+    toplogyKey: kubernetes.io/hostname
     ```
     ```yaml
     kind: PersistentVolume
     apiVersion: v1
     metadata:
       name: local-pv-1
-      annotations:
-        volume.kubernetes.io/node: node-1
+      labels:
+        kubernetes.io/hostname: node-1
     spec:
       capacity:
         storage: 100Gi
@@ -478,8 +478,8 @@ Note: Block access will be considered as a separate feature because it can work 
     apiVersion: v1
     metadata:
       name: foo
-      annotations:
-        storage.kubernetes.io/node: node-1
+      labels:
+        kubernetes.io/hostname: node-1
     spec:
       volumeType: block 
       capacity:
@@ -515,8 +515,8 @@ Note: Block access will be considered as a separate feature because it can work 
     apiVersion: v1
     metadata:
       name: foo
-      annotations:
-        storage.kubernetes.io/node: node-1
+      labels:
+        kubernetes.io/hostname: node-1
     spec:
       volumeType: block
       capacity:
