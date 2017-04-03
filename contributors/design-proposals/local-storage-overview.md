@@ -50,7 +50,7 @@ Primary partitions are shared partitions that can provide ephemeral local storag
  This partition holds the kubelet’s root directory (`/var/lib/kubelet` by default) and `/var/log` directory. This partition may be shared between user pods, OS and Kubernetes system daemons. This partition can be consumed by pods via EmptyDir volumes, container logs, image layers and container writable layers. Kubelet will manage shared access and isolation of this partition. This partition is “ephemeral” and applications cannot expect any performance SLAs (Disk IOPS for example) from this partition.
 
 ### Runtime
-This is an optional partition which runtimes can use for overlay filesystems. Kubelet will attempt to identify and provide shared access along with isolation to this partition.
+This is an optional partition which runtimes can use for overlay filesystems. Kubelet will attempt to identify and provide shared access along with isolation to this partition. Container image layers and writable later is stored here. If the runtime partition exists, `root` parition will not hold any image layer or writable layers.
 
 ## Secondary Partitions
 All other partitions are exposed as local persistent volumes.  Each local volume uses an entire partition.  The PV interface allows for varying storage configurations to be supported, while hiding specific configuration details to the pod.  All the local PVs can be queried and viewed from a cluster level using the existing PV object.  Applications can continue to use their existing PVC specifications with minimal changes to request local storage.
@@ -101,7 +101,7 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
      volumes:
      - name: myEmptyDir
        emptyDir:
-	     size: 20Gi
+	     sizeLimit: 20Gi
     ```
 
 3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
@@ -562,6 +562,25 @@ Note: Block access will be considered as a separate feature because it can work 
 * Use EmptyDir for all scratch space requirements of your apps when IOPS isolation is not of concern.
 * Make the container’s writable layer `readonly` if possible.
 * Another option is to keep the writable layer on tmpfs. Such a setup will allow you to eventually migrate from using local storage for anything but super fast caching purposes or distributed databases leading to higher reliability & uptime for nodes.
+
+# FAQ
+
+### Why is the kubelet managing logs?
+
+Kubelet is managing access to shared storage on the node. Container logs outputted via it's stdout and stderr ends up on the shared storage that kubelet is managing. So, kubelet needs direct control over the log data to keep the containers running (by rotating logs), store them long enough for break glass situations and apply different storage policies in a multi-tenent cluster. All of these features are not easily expressible through external logging agents like journald for example.
+
+
+### Master are upgraded prior to nodes. How should storage as a new compute resource be rolled out on to existing clusters?
+
+Capacity isolation of shared partitions (ephemeral storage) will be controlled using a feature gate. Do not enable this feature gate until all the nodes in a cluster are running a kubelet version that supports capacity isolation.
+Since older kubelets will not surface capacity of shared partitions, the scheduler will ignore those nodes when attempting to schedule pods that request storage capacity explicitly.
+
+
+### What happens if storage usage is unavailable for writable layer?
+
+Kubelet will attempt to enforce capacity limits on a best effort basis. If the underlying container runtime cannot surface usage metrics for the writable layer, then kubelet will not provide capacity isolation for the writable layer.
+
+
 
 # Features & Milestones
 
