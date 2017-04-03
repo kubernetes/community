@@ -47,7 +47,7 @@ applications storage capacity, I want to update PersistentVolumes.
 network configuration of the application, I want to update Services and 
 container ports in a consistent way.
 - As the administrator of a stateful application, when I scale my application 
-horizontally, I went associated PodDistruptionBudgets to be adjusted to 
+horizontally, I want associated PodDistruptionBudgets to be adjusted to 
 compensate for the application's scaling.
 
 ## Assumptions
@@ -109,14 +109,14 @@ The following modifications will be made to the StatefulSetStatus API object.
  type StatefulSetStatus struct {
     // ObservedGeneration and Replicas fields are ommitted for brevity.
 
- 	// CurrentTemplateRevision, if not nil, is the revision of the PodTemplate
- 	// that was used to create Pods with ordinals in the sequence
-    // [0,CurrentRevisionReplicas).
+ 	// TemplateRevision, if not nil, is the revision of the PodTemplate that was 
+ 	// used to create Pods with ordinals in the sequence
+ 	// [0,CurrentReplicas).
  	TemplateRevision  *int64 `json:"templateRevision,omitempty"`
  	
  	// TargetTemplateRevision, if not nil, is the revision of the PodTemplate 
  	// that was used to create Pods with ordinals in the sequence 
-    // [Replicas - TargetRevisionReplicas, Replicas).
+    // [Replicas - UpdatedReplicas, Replicas).
  	TargetTemplateRevision *int64 `json:"targetTemplateRevision,omitempty"`
  	
  	// ReadyReplicas is the current number of Pods, created by the StatefulSet
@@ -127,9 +127,9 @@ The following modifications will be made to the StatefulSetStatus API object.
     // controller from the PodTemplateSpec indicated by CurrentTemplateRevision.
  	CurrentReplicas int32 `json:"currentReplicas,omitempty"`
  	
- 	// TargetRevisionReplicas is the number of Pods created by the StatefulSet
+ 	// UpdatedReplicas is the number of Pods created by the StatefulSet
     // controller from the PodTemplateSpec indicated by TargetTemplateRevision.
- 	TargeReplicas int32 `json:"taretReplicas,omitempty"`
+ 	UpdatedReplicas int32 `json:"taretReplicas,omitempty"`
 }
 ```
 
@@ -148,7 +148,7 @@ type StatefulSetSpec struct {
 	// Template.
 	TemplateRevision  *int64 `json:"templateRevision"`
 
-	// RevisionParition paritions the Pods in the StatefulSet by ordinal such 
+	// RevisionPartition partitions the Pods in the StatefulSet by ordinal such 
     // that all Pods with a lower ordinal will be created from the PodTemplate that
     // represents the current revision of the StatefulSet's revision history and 
     // all Pods with an a greater or equal ordinal will be created from the 
@@ -156,10 +156,10 @@ type StatefulSetSpec struct {
     // revision history.
 	RevisionPartition *int32 `json:"revisionPartition,omitempty`
 
-	// RevisionHistoryDepth is the maximum number of PodTemplates that will 
+	// RevisionHistoryLimit is the maximum number of PodTemplates that will 
 	// be maintained in the StatefulSet's revision history. It must be at 
 	// least two.
-	RevisionHisotryDepth int32 `json:historyRevisionDepth,omitempty`
+	RevisionHisotryLimit int32 `json:historyRevisionDepth,omitempty`
 }
 ```
 
@@ -201,7 +201,7 @@ StatefulSet's StatefulSetSpec and StatefulSetStatus are below.
     1. The StatefulSet's `.Status.TemplateRevision` is equal to its 
     `.Status.TargetRevision`.
     1. All Pods in the StatefulSet have been generated from the PodTemplate 
-    labled with a `StatefulSetTemplateRevisionLabel` equal to its 
+    labeled with a `StatefulSetTemplateRevisionLabel` equal to its 
     `.Status.TemplateRevision`.
 1. If the StatefulSet's `.Spec.RevisionPartition` is not nil, then the following 
 is true.
@@ -258,8 +258,8 @@ the largest ordinal will be deleted.
 ### StatefulSet Revision History
 The StatefulSet controller will use labeled, versioned PodTemplates to keep a 
 history of updates preformed on a StatefulSet. The number of stored PodTemplates 
-is considered to be the depth of the StatefulSet's revision history. The 
-maximum revision history depth for a StatefulSet must be at least two, but it 
+is considered to be the limit of the StatefulSet's revision history. The 
+maximum revision history limit for a StatefulSet must be at least two, but it 
 may be greater.
 
 #### PodTemplate Creation
@@ -290,7 +290,8 @@ overlap from causing the deletion of PodTemplates that are part of another
 object's revision history. In practice, these PodTemplates will be filtered out
 prior to history maintenance.
 1. If the PodTemplate's ControllerRef matches the StatefulSet, the 
-StatefulSet controller will delete the PodTemplate.
+StatefulSet controller orphan the PodTemplate by removing its ControllerRef, 
+and it will allow the PodTemplate to be deleted via garbage collection.
 
 #### History Reconstruction
 In order to reconstruct the history of revisions to a StatefulSet, the 
@@ -330,11 +331,11 @@ the oldest PodTemplates from the StatefulSet's revision history.
 [reconstruct the revision history](#history-reconstruction) 
 of the StatefulSet.
 1. If the number of PodTemplates in the StatefulSet's revision history is 
-greater than the StatefulSet's `.Spec.RevisionHistoryDepth`, the 
+greater than the StatefulSet's `.Spec.RevisionHistoryLimit, the 
 StatefulSet controller will delete PodTemplates, starting with the head of 
-the revision history, until the depth of the revision history is equal to 
-the StatefulSet's `.Spec.RevisionHistoryDepth`.
-1. As a StatefulSet's `.Spec.RevisionHistoryDepth` is always at least two, and 
+the revision history, until the limit of the revision history is equal to 
+the StatefulSet's `.Spec.RevisionHistoryLimit`.
+1. As a StatefulSet's `.Spec.RevisionHistoryLimit` is always at least two, and 
 as the PodTemplates corresponding to `.Status.TemplateRevision` 
 or `.Status.TargetTemplateRevision` are always the most recent PodTemplates 
 in the revision history, the StatefulSet controller will not delete any 
@@ -397,7 +398,7 @@ then it was previously created from the PodTemplate matching the
 StatefulSet's `.Status.TemplateRevision`, and it will be recreated 
 from this PodTemplate.
 1. If the Pod's ordinal is in the sequence
- `[.Spec.Replicas-.Status.TargetReplicas,.Spec.Replicas)`, then it was
+ `[.Spec.Replicas-.Status.UpdatedReplicas,.Spec.Replicas)`, then it was
  previously created from the PodTemplate matching the StatefulSet's, 
  `.Status.TargetTemplateRevision`, and it will be recreated from this 
  PodTemplate.
@@ -425,8 +426,8 @@ doing the following.
 1. The controller will set the StatefulSet's `.Status.TemplateRevision` to its 
 `.Status.TargetTemplateRevision`. 
 1. The controller will set the StatefulSet's `Status.CurrentReplicas` to its 
-`Status.TargetReplicas`.
-1. The controller will set the StatefulSet's `Status.TargetReplicas` to 0.
+`Status.UpdatedReplicas`.
+1. The controller will set the StatefulSet's `Status.UpdatedReplicas` to 0.
 
 ### Status Reporting
 After processing the creation, update, or deletion of a StatefulSet or Pod, 
@@ -455,7 +456,7 @@ and the status of any [complete updates](#update-completion).
 1. The controller will set the `.Status.CurrentReplicas` to the number of 
 Pods that it has created from the PodTemplate that corresponds to the 
 current revision of the StatefulSet.
-1. The controller will set the `.Status.TargetReplicas` to the number of Pods 
+1. The controller will set the `.Status.UpdatedReplicas` to the number of Pods 
 that it has created from the PodTemplate that corresponds to the target 
 revision of the StatefulSet.
 1. The controller will then persist the StatefulSetStatus make it durable and 
@@ -788,7 +789,7 @@ guarantees.
 - A StatefulSet update can be rolled forward by applying another update. 
 - A StatefulSet update's status can be retrieved.
 - A StatefulSet's revision history contains all updates with respect to the 
-configured revision history depth.
+configured revision history limit.
 - A StatefulSet update can create a canary.
 - A StatefulSet update can be performed in stages.
 
@@ -803,7 +804,7 @@ the tenant application has no way to determine if it is being terminated due to
 a scale down operation or due to an update. 
 Consider a BASE distributed storage application like Cassandra, where 2 TiB of 
 persistent data is not atypical, and the data distribution is not identical on 
-every server. We want to enable two distinct behaviors based on reason for 
+every server. We want to enable two distinct behaviors based on the reason for 
 termination.
 
 - If the termination is due to scale down, during the configured termination 
@@ -843,8 +844,8 @@ Currently configuration, images, and resource request/limits updates are all
 performed destructively. Without a [termination reason](https://github.com/kubernetes/kubernetes/issues/1462)
 implementation, there is little value to implementing in place image updates, 
 and configuration and resource request/limit updates are not possible.
-When [termination reason](#https://github.com/kubernetes/kubernetes/issues/1462) is implemented we may modify 
-the behavior of StatefulSet update to only update, rather than delete and 
-create, Pods when the only mutated value is the container image, and if resizable 
-resource request/limits is implemented, we may extend the above to 
-allow for updates to Pod resources.
+When [termination reason](#https://github.com/kubernetes/kubernetes/issues/1462) 
+is implemented we may modify the behavior of StatefulSet update to only update, 
+rather than delete and create, Pods when the only mutated value is the container
+ image, and if resizable resource request/limits is implemented, we may extend 
+ the above to allow for updates to Pod resources.
