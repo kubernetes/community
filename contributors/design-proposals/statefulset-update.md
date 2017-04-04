@@ -105,42 +105,12 @@ applied to the StatefulSet.
 
 ## API Object
 
-The following modifications will be made to the StatefulSetStatus API object.
-
-```go
- type StatefulSetStatus struct {
-    // ObservedGeneration and Replicas fields are ommitted for brevity.
-
- 	// TemplateGeneration, if not nil, is the generation of the PodTemplate that was 
- 	// used to create Pods with ordinals in the sequence
- 	// [0,CurrentReplicas).
- 	TemplateGeneration  *int64 `json:"templateGeneration,omitempty"`
- 	
- 	// TargetTemplateGeneration, if not nil, is the generation of the PodTemplate 
- 	// that was used to create Pods with ordinals in the sequence 
-    // [Replicas - UpdatedReplicas, Replicas).
- 	TargetTemplateGeneration *int64 `json:"targetTemplateGeneration,omitempty"`
- 	
- 	// ReadyReplicas is the current number of Pods, created by the StatefulSet
-    // controller, that have a Status for Running and a Ready Condition.
- 	ReadyReplicas int32 `json:"readyReplicas,omitempty"`
- 	
- 	// CurrentGenerationReplicas is the number of Pods created by the StatefulSet 
-    // controller from the PodTemplateSpec indicated by CurrentTemplateGeneration.
- 	CurrentReplicas int32 `json:"currentReplicas,omitempty"`
- 	
- 	// UpdatedReplicas is the number of Pods created by the StatefulSet
-    // controller from the PodTemplateSpec indicated by TargetTemplateGeneration.
- 	UpdatedReplicas int32 `json:"taretReplicas,omitempty"`
-}
-```
-
 The following modifications will be made to the StatefulSetSpec API object.
 
 ```go
 type StatefulSetSpec struct {
     // Replicas, Selector, Template, VolumeClaimsTemplate, and ServiceName 
-    // ommitted for brevity.
+    // omitted for brevity.
 	v1.PodTemplateSpec `json:"template"`
 
 	// TemplateGeneration is a monotonically increasing, 64 bit, integer used to 
@@ -159,20 +129,46 @@ type StatefulSetSpec struct {
 	GenerationPartition *int32 `json:"generationPartition,omitempty`
 
 	// RevisionHistoryLimit is the maximum number of PodTemplates that will 
-	// be maintained in the StatefulSet's revision history. It must be at 
-	// least two.
+	// be maintained in the StatefulSet's revision history. The revision history
+	// consists of all revisions not reprented by a currently applied 
+	// PodTemplate. The default value is 2.
 	RevisionHisotryLimit int32 `json:revisionHistoryLimit,omitempty`
 }
 ```
 
-Additionally, we introduce the following constants.
+The following modifications will be made to the StatefulSetStatus API object.
+
+```go
+ type StatefulSetStatus struct {
+    // ObservedGeneration and Replicas fields are omitted for brevity.
+
+ 	// CurrentTemplateGeneration, if not nil, is the generation of the 
+ 	// PodTemplate that was used to create Pods with ordinals in the sequence
+ 	// [0,CurrentReplicas).
+ 	CurrentTemplateGeneration  *int64 `json:"currnetTemplateGeneration,omitempty"`
+ 	
+ 	// UpdatedTemplateGeneration, if not nil, is the generation of the PodTemplate 
+ 	// that was used to create Pods with ordinals in the sequence 
+    // [Replicas - UpdatedReplicas, Replicas).
+ 	UpdatedTemplateGeneration *int64 `json:"updatedTemplateGeneration,omitempty"`
+ 	
+ 	// ReadyReplicas is the current number of Pods, created by the StatefulSet
+    // controller, that have a Status for Running and a Ready Condition.
+ 	ReadyReplicas int32 `json:"readyReplicas,omitempty"`
+ 	
+ 	// CurrentReplicas is the number of Pods created by the StatefulSet 
+    // controller from the PodTemplateSpec indicated by CurrentTemplateGeneration.
+ 	CurrentReplicas int32 `json:"currentReplicas,omitempty"`
+ 	
+ 	// UpdatedReplicas is the number of Pods created by the StatefulSet
+    // controller from the PodTemplateSpec indicated by TargetTemplateGeneration.
+ 	UpdatedReplicas int32 `json:"taretReplicas,omitempty"`
+}
+```
+
+Additionally, we introduce the following constant.
 
 ```go 
-// StatefulSetPodTemplateLabel is the label applied to a PodTemplate to allow
-// the StatefulSet controller to select the PodTemplates in its revision 
-// history.
-const StatefulSetPodTemplateLabel = "created-by-statefulset"
-
 // StatefulSetTemplateGenerationLabel is the label applied to a PodTemplate or 
 // Pod to indicate the position of the object's Template in the revision 
 // history of a StatefulSet.
@@ -199,14 +195,15 @@ conform to the other. The conditions that define this state in terms of the
 StatefulSet's StatefulSetSpec and StatefulSetStatus are below.
 
 1. The StatefulSet contains exactly `[0,.Spec.Replicas)` Pods.
-1. If StatefulSet's `.Spec.GenerationPartition` is nil, then the following is true.
-    1. The StatefulSet's `.Status.TemplateGeneration` is equal to its 
-    `.Status.TargetGeneration`.
+1. If StatefulSet's `.Spec.GenerationPartition` is nil, then the following is 
+true.
+    1. The StatefulSet's `.Status.CurrentTemplateGeneration` is equal to its 
+    `.Status.UpdatedTemplateGeneration`.
     1. All Pods in the StatefulSet have been generated from the PodTemplate 
     labeled with a `StatefulSetTemplateGenerationLabel` equal to its 
     `.Status.TemplateGeneration`.
-1. If the StatefulSet's `.Spec.GenerationPartition` is not nil, then the following 
-is true.
+1. If the StatefulSet's `.Spec.GenerationPartition` is not nil, then the 
+following is true.
     1. All Pods with ordinals is the sequence `[0,.Spec.GenerationPartition)` have 
      been generated from the PodTemplate in the StatefulSet's revision history
      that is labeled with a `StatefulSetTemplateGenerationLabel` equal to 
@@ -215,7 +212,7 @@ is true.
      `[Spec.GenerationParition,.Spec.Replicas)` have been created with the 
      PodTemplate in the StatefulSet's revision history that is labeled with a 
      `StatefulSetTemplateGenerationLabel` equal to 
-     `.Status.TargetTemplateGeneration`.
+     `.Status.UpdatedTemplateGeneration`.
 
 ### Revised Controller Algorithm
 The StatefulSet controller will use the following algorithm to continue to 
@@ -237,13 +234,12 @@ created, for the Pod corresponding to the lowest such ordinal, the controller
 will [select the PodTemplate](#podtemplate-selection) from the StatefulSet's 
 revision history corresponding to the Pod's ordinal and create the Pod.
 1. If all Pods in the sequence `[0,.Spec.Replicas)` have been created, but if any 
-have a Status other than Running or do not have a Ready Condition, the 
-StatefulSet controller will wait for these Pods to either become Running and 
-Ready, or to be completely deleted. 
-1. If all Pods in the sequence `[0,.Spec.Replicas)` have a Status of Running and 
-a Condition indicating Ready, and if `.Spec.Replicas` is less than 
-`.Status.Replicas`, the controller will delete the Pod corresponding to the 
-largest ordinal. This implies that scaling takes precedence over Pod updates.
+have a do not have a Ready Condition, the StatefulSet controller will wait for 
+these Pods to either become Ready, or to be completely deleted. 
+1. If all Pods in the sequence `[0,.Spec.Replicas)` have a Condition indicating 
+Ready, and if `.Spec.Replicas` is less than `.Status.Replicas`, the controller 
+will delete the Pod corresponding to the largest ordinal. This implies that 
+scaling takes precedence over Pod updates.
 1. If all Pods in the range `[0,.Spec.Replicas)` have a Status of Running and 
 a Ready Condition, if `.Spec.Replicas` is equal to `.Status.Replicas`, and if 
 there are Pods that do not match the 
@@ -251,7 +247,7 @@ there are Pods that do not match the
 the largest ordinal will be deleted.
 1. If the StatefulSet controller has achieved the 
 [declared target state](#target-state), and if that state has a 
-`.Spec.ParitionOrdinal` equal to `0`, the StatefulSet controller will 
+`.Spec.GenrationPartition` equal to `0`, the StatefulSet controller will 
 [complete any in progress updates](#update-completion).
 1. The controller will [report its status](#status-reporting).
 1. The controller will perform any necessary
@@ -260,22 +256,24 @@ the largest ordinal will be deleted.
 ### StatefulSet Revision History
 The StatefulSet controller will use labeled, versioned PodTemplates to keep a 
 history of updates preformed on a StatefulSet. The number of stored PodTemplates 
-is considered to be the limit of the StatefulSet's revision history. The 
-maximum revision history limit for a StatefulSet must be at least two, but it 
-may be greater.
+is considered to be the size of the StatefulSet's revision history. The 
+maximum size of a StatefulSet's revision history is two (these are the current 
+and target PodTemplates) plus the history limit (represented by its 
+`.Spec.RevisionHistoryLimit`).
 
 #### PodTemplate Creation
-When the StatefulSet controller creates a PodTemplate for a StatefulSet, it will 
-do the following.
+When the `.Spec.Template` of a StatefulSet is [updated](#template-updates), the 
+StatefulSet controller will create a new PodTemplate to represent the new 
+revision of the StatefulSet. When the controller creates a PodTemplate for a 
+StatefulSet, it will do the following.
 
 1. The controller will set the PodTemplate's `.PodTemplateSpec` field to the 
 StatefulSet's `.Spec.Template` field.
 1. The controller will create a ControllerRef object in the PodTemplate's 
 `.OwnerReferences` list to mediate selector overlapping.
-1. The controller will label the PodTemplate with a 
-`StatefulSetPodTemplateLabel` set to the StatefulSet's `.Name` to allow for 
-selection of the PodTemplates that comprise the StatefulSet's revision history.
-1. The controller will label the PodTemplate with a 
+1. The controller will label the PodTemplate with a with a label matching the 
+StatefulSet's `.Spec.Selector` to allow for the selection of the PodTemplate.
+1. The controller will label the PodTemplate's PodTemplateSpec with a 
 `StaefulSetTemplateGenerationLabel` set to the StatefulSet's 
 `.Spec.TemplateGeneration`.
 1. The controller will set the Name of the PodTemplate to a concatenation of the 
@@ -292,8 +290,7 @@ overlap from causing the deletion of PodTemplates that are part of another
 object's revision history. In practice, these PodTemplates will be filtered out
 prior to history maintenance.
 1. If the PodTemplate's ControllerRef matches the StatefulSet, the 
-StatefulSet controller orphan the PodTemplate by removing its ControllerRef, 
-and it will allow the PodTemplate to be deleted via garbage collection.
+StatefulSet controller will delete the PodTemplate.
 
 #### History Reconstruction
 In order to reconstruct the history of revisions to a StatefulSet, the 
@@ -332,16 +329,14 @@ the oldest PodTemplates from the StatefulSet's revision history.
 1. The StatefulSet controller will 
 [reconstruct the revision history](#history-reconstruction) 
 of the StatefulSet.
+1. The StatefulSet will remove any PodTemplates that correspond to created 
+Pods. There should be at most two of these, the PodTemplates corresponding 
+to the current and target revisions.
 1. If the number of PodTemplates in the StatefulSet's revision history is 
 greater than the StatefulSet's `.Spec.RevisionHistoryLimit`, the 
 StatefulSet controller will delete PodTemplates, starting with the head of 
-the revision history, until the limit of the revision history is equal to 
+the revision history, until the size of the revision history is equal to 
 the StatefulSet's `.Spec.RevisionHistoryLimit`.
-1. As a StatefulSet's `.Spec.RevisionHistoryLimit` is always at least two, and 
-as the PodTemplates corresponding to `.Status.TemplateGeneration` 
-or `.Status.TargetTemplateGeneration` are always the most recent PodTemplates 
-in the revision history, the StatefulSet controller will not delete any 
-`PodTemplates` that represent the current or target revisions.
 
 ### Template Updates
 The StatefulSet controller will create PodTemplates upon mutation of the 
@@ -349,40 +344,39 @@ The StatefulSet controller will create PodTemplates upon mutation of the
 
 1. When the StafefulSet controller observes a mutation to a StatefulSet's 
  `.Spec.Template` it will compare the `.Spec.TemplateGeneration` to the 
- `.Status.TargetTemplateGeneration`.
+ `.Status.UpdatedTemplateGeneration`.
 1. If the `.Spec.TemplateGeneration` is equivalent to the 
-`.Status.TargetTemplateGeneration`, no update has occurred. Note that, in the 
+`.Status.UpdatedTemplateGeneration`, no update has occurred. Note that, in the 
 event that both are nil, they are considered to be equivalent, and we expect 
 this to occur after an initial upgrade to a version of Kubernetes that supports 
 StatefulSet update form one that does not.
 1. If the `.Status.TemplateGeneration` field is nil, and the 
 `.Spec.TemplateGeneration` is not nil, then the StatefulSet has no revision 
 history. To initialize its revision history, the StatefulSet controller will 
-set both `.Status.TemplateGeneration` and `.Status.TargetTemplateGeneration` 
+set both `.Status.CurrentTemplateGeneration` and `.Status.UpdatedTemplateGeneration` 
 to `.Spec.TemplateGeneration` and 
 [create a new PodTemplate](#podtemplate-creation). 
-1. If the `.Status.TemplateGeneration` is not nil, and if the 
-`.Spec.TemplateGeneration` is not equal to the `.Status.TargetTemplateGeneration`, 
+1. If the `.Status.CurrentTemplateGeneration` is not nil, and if the 
+`.Spec.TemplateGeneration` is not equal to the `.Status.UpdatedTemplateGeneration`, 
 the StatefulSet controller will do the following.
     1. The controller will 
     [reconstruct the revision history](#history-reconsturction) of the 
     StatefulSet.
-    1. If the revision history of the StatefulSet contains a PodTemplate 
+    1. If the revision history of the StatefulSet contains any PodTemplate 
     whose `.PodTemplateSpec` is semantically, deeply equivalent to the 
-    StatefulSet's `.Spec.Template`, the youngest such PodTemplate will be used 
-    as the target PodTemplate. 
-    1. If no such PodTemplate exists, the StatefulSet controller will 
-    [create a new PodTemplate](#podtemplate-creation) from the StatefulSet's 
-    `.Spec.Template`, and it will use this as the target PodTemplate.
-    1. The controller will update the StatefulSet's `.Status.TargetTemplate` 
-    based on the selection made above.
+    StatefulSet's `.Spec.Template`, the controller will record the revision of
+    all such templates.
+    1. The controller will update the `StatefulSetPodTemplateGeneration` label 
+    of all Pods that match any revision recorded above.
+    1. The controller will update the StatefulSet's 
+    `.Status.UpdatedTemplateGeneration` to the new revision.
 
 ### PodTemplate Selection
 When the StatefulSet controller creates the Pods in a StatefulSet, it will use 
-the following criteria to select the PodTemplateSpec used to create a 
-Pod. These criteria allow the controller to continue to make progress toward 
-its target state, while respecting its guarantees and allowing for rolling 
-updates back and forward.
+the following criteria to select the PodTemplate used to create a Pod. These 
+criteria allow the controller to continue to make progress toward its target 
+state, while respecting its guarantees and allowing for rolling updates back 
+and forward.
 
 1. If the StatefulSet's `.Spec.TemplateGeneration` is nil, then the cluster 
 has been upgraded from a version that does not support StatefulSet update to 
@@ -393,23 +387,23 @@ a version that does.
     1. The StatefulSet will initialize its revision history on the first 
     update to its `.Spec.Template`.
 1. If the StatefulSet's `.Spec.TemplateGeneration` is equal to its 
-`.Status.TemplateGeneration`, then there is no update in progress and all 
+`.Status.CurrentTemplateGeneration`, then there is no update in progress and all 
 Pods will be created from the PodTemplate matching this revision.
 1. If the Pod's ordinal is in the sequence `[0,.Status.CurrentReplicas)`, 
 then it was previously created from the PodTemplate matching the 
-StatefulSet's `.Status.TemplateGeneration`, and it will be recreated 
+StatefulSet's `.Status.CurrentTemplateGeneration`, and it will be recreated 
 from this PodTemplate.
 1. If the Pod's ordinal is in the sequence
  `[.Spec.Replicas-.Status.UpdatedReplicas,.Spec.Replicas)`, then it was
  previously created from the PodTemplate matching the StatefulSet's, 
- `.Status.TargetTemplateGeneration`, and it will be recreated from this 
+ `.Status.UpdatedTemplateGeneration`, and it will be recreated from this 
  PodTemplate.
 1. If the ordinal does not meet either of the prior two conditions, and 
 if ordinal is in the sequence `[0, .Spec.GenerationPartition)`, it will be created 
 from the PodTemplate matching the StatefulSet's 
-`.Status.TemplateGeneration`.
+`.Status.CurrentTemplateGeneration`.
 1. Otherwise, the Pod is created from the PodTemplate matching the 
-StatefulSet's `.Status.TargetTemplateGeneration`. 
+StatefulSet's `.Status.UpdatedTemplateGeneration`. 
 
 ### Update Completion
 A StatefulSet update is complete when the following conditions are met.
@@ -419,14 +413,14 @@ Running and a Ready Condition.
 1. The StatefulSet's `.Spec.GenerationPartition` is equal to `0`. 
 1. All Pods in the StatefulSet are labeled with a 
 `StatefulSetTemplateGenerationLabel` equal to the StatefulSet's 
-`.Status.TargetTemplateGeneration` (This implies they have been created from 
+`.Status.UpdatedTemplateGeneration` (This implies they have been created from 
 the PodTemplate at that revision).
 
 When a StatefulSet update is complete, the controller will signal completion by 
 doing the following.
 
-1. The controller will set the StatefulSet's `.Status.TemplateGeneration` to its 
-`.Status.TargetTemplateGeneration`. 
+1. The controller will set the StatefulSet's `.Status.CurrentTemplateGeneration` to its 
+`.Status.UpdatedTemplateGeneration`. 
 1. The controller will set the StatefulSet's `Status.CurrentReplicas` to its 
 `Status.UpdatedReplicas`.
 1. The controller will set the StatefulSet's `Status.UpdatedReplicas` to 0.
@@ -450,9 +444,9 @@ the `.Generation` of the StatefulSet object that was observed.
 1. The controller will set the `.Status.Replicas` to the current number of 
 created Pods.
 1. The controller will set the `.Status.ReadyReplicas` to the current number of 
-Pods that have a Status of Running and a ReadyCondition.
-1. The controller will set the `.Status.TemplateGeneration` and 
-`.Status.TargetTemplateGeneration` 
+Pods that have a Ready Condition.
+1. The controller will set the `.Status.CurrentTemplateGeneration` and 
+`.Status.UpdatedTemplateGeneration` 
 in accordance with [maintaining its revision history](#history-maintenance) 
 and the status of any [complete updates](#update-completion).
 1. The controller will set the `.Status.CurrentReplicas` to the number of 
@@ -475,8 +469,10 @@ fields of the StatefulSet object other than `.Spec.Replicas` and
 `.Spec.Template.Containers`. This design imposes the following, additional 
 constraints.
 
-1. The `.Spec.RevisionHistoryLimit` must be greater than or equal to `2`. 
-1. The `.Spec.PositionOrdinal` must be in the sequence `[0,.Spec.Replicas)`. 
+1. The `.Spec.GenerationPartition` must be in the sequence `[0,.Spec.Replicas)`. 
+1. The `.Spec.TemplateGeneration` must only be mutated by the API Server. It 
+may be set upon creation by the user, but, after this, it is not mutable by 
+the user.
 
 ### TemplateGeneration Maintenance
 It will be the responsibility of the API Server to enforce that updates to 
@@ -504,7 +500,7 @@ StatefulSet updates.
 This section demonstrates how the design functions in typical usage scenarios.
 
 ### Initial Deployment
-Users can create a StatefulSet using `kubectl create`.
+Users can create a StatefulSet using `kubectl apply`.
 
 Given the following manifest `web.yaml`
 
@@ -545,7 +541,7 @@ spec:
 Users can use the following command to create the StatefulSet.
 
 ```shell
-kubectl create -f web.yaml
+kubectl apply -f web.yaml
 ```
 
 The only difference between the proposed and current implementation is that 
@@ -663,7 +659,7 @@ spec:
         volumeMounts:
         - name: www
           mountPath: /usr/share/nginx/html
-      generationParition: 3
+      generationPartition: 3
   volumeClaimTemplates:
   - metadata:
       name: www
@@ -676,9 +672,9 @@ spec:
           storage: 1Gi
 ```
 
-### Staged Roll Outs
+### Phased Roll Outs
 Users can create a canary using `kubectl apply`. The only difference between a
- [canary](#canaries) and a staged roll out is that the `.Spec.GenerationPartition` 
+ [canary](#canaries) and a phased roll out is that the `.Spec.GenerationPartition` 
  is set to value less than `.Spec.Replicas - 1`.
  
 ```yaml
@@ -703,7 +699,7 @@ spec:
         volumeMounts:
         - name: www
           mountPath: /usr/share/nginx/html
-      generationParition: 2
+      generationPartition: 2
   volumeClaimTemplates:
   - metadata:
       name: www
@@ -716,7 +712,7 @@ spec:
           storage: 1Gi
 ```
 
-Staged roll outs can be used to roll out a configuration, image, or resource 
+Phased roll outs can be used to roll out a configuration, image, or resource 
 update to some portion of the fleet maintained by the StatefulSet prior to 
 updating the entire fleet. It is useful to support linear, geometric, and 
 exponential roll out of an update. Users can modify the 
@@ -744,7 +740,7 @@ spec:
         volumeMounts:
         - name: www
           mountPath: /usr/share/nginx/html
-      generationParition: 1
+      generationPartition: 1
   volumeClaimTemplates:
   - metadata:
       name: www
@@ -773,12 +769,10 @@ Rolling back is usually the safest, and often the fastest, strategy to mitigate
 deployment failure, but rolling forward is sometimes the only practical solution 
 for stateful applications (e.g. A users has a minor configuration error but has 
 already modified the storage format for the application). Users can use 
-sequential `kubectl apply`'s to update the `.Status.TargetGeneration` of a 
-StatefulSet. This will respect the `.Spec.GenerationPartition` with respect to the 
-target state, and it therefor interacts well with canaries and staged roll outs.
-Note that, while users can update the target template revision, they can not 
-update the current template revision. The only way to advance the current 
-template revision is to successfully complete an update.
+sequential `kubectl apply`'s to update the StatefulSet's current 
+[target state](#target-state). The StatefulSet's `.Spec.GenerationPartition` 
+will be respected, and it therefore interacts well with canaries and phased roll
+ outs.
 
 ## Tests
 - Updating a StatefulSet's containers will trigger updates to the StatefulSet's 
