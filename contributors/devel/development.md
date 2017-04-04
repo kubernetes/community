@@ -13,10 +13,93 @@ This document is intended to be relative to the branch in which it is found.
 Development branch requirements will change over time, but release branch
 requirements are frozen.
 
+## Pre submit flight checks
+
+Make sure you decide whether your issue and/or pull request is improving kubernetes architecture or whehter its simply fixing a bug.
+
+Make sure there are no typos, if you need a diagram, add it.  Make sure you SEPARATE the description of the problem
+(i.e. Y is a critical component that is too slow for an SLA that we care about) from the solution (i.e. make X faster).
+
+Some of these checks were less common in Kubernetes earlier days, but now having over 1000 contributors, each issue should be
+filed with care, and should be sanity-checkable in under 5 minutes (even the busiest of reviewers can spare up to 5 minutes to
+review a patch that is thoughtfully justified).
+
+### Is this just a simple bug fix?
+
+These patches can be easy to review since test coverage is submitted with the patch.  Bug fixes don't usually require alot
+of extra testing: But please update the unit tests so that they catch the bug !
+
+### Is this an architecture improvement?
+
+Some examples of "Architecture" improvements:
+
+- Adding a new feature or making a feature more configurable/modular.
+- Converting structs to interfaces.
+- Improving test coverage.
+- Decoupling logic or creation of new utilities.
+- Making code more resilient (sleeps, backoffs, reducing flakiness, etc).
+
+These sorts of improvements are easily evaluated if they decrease lines of code without breaking functionality.
+
+If you are improving the quality of code, then justify/state exactly what you 'cleaning up' in your Pull Request so as
+not to waste reviewer time.
+
+If you're making code more resilient, test it with a local cluster to demonstrate how exactly your patch changes
+things.
+
+Example: If you made a controller more robust to inconsistent data, make a mock object which returns incorrect data a
+few times and verify the controllers behaviour accordingly.
+
+### Is this a performance improvement ?
+
+If you are submitting a performance bug, you MUST ALSO submit data that demonstrates your problem if you want the issue to
+remain open.  This can be done locally using kubemark, scheduler_perf, unit tests, go benchmark tests, or e2e tests on
+a real cluster with metrics plots.
+
+Examples of how NOT to suggest a performance bug (these can really lead to a long review process and waste cycles):
+
+- We *should* be doing X instead of Y because it *might* lead to better performance.
+- Doing X instead of Y would reduce calls to Z.
+
+The above statements have basically no value to a reviewer, because neither is a strong, testable, assertive statement.
+This will land your PR in a no-man's-land zone (at best), or waste tons of time for a busy reviewer (at worst).
+
+Of course any improvment is welcome, but performance improvements are the hardest to review.  They often make code more
+complex, and to-often are not easily evaluated at review time due to lack of sufficient data submitted by the author
+of a performance improvement patch.
+
+Some examples of "Performance" improvements:
+
+- Improving a caching implementation.
+- Reducing calls to functions which are O(n^2), or reducing dependence on API server requests.
+- Changing the value of default parameters for proceeses, or making those values 'smarter'.
+- Parallelizing a calculation that needs to run on a large set of node/pod objects.
+
+These issues should always be submitted with (in decreasing order or value):
+
+- A golang Benchmark test.
+- A visual depiction of reduced metric load on a cluster (measurable using metrics/ endpoints and grafana).
+- A hand-instrumented timing test (i.e. adding some logs into the controller manager).
+
+Without submitting data and results for your suggested performance improvements, its very possible that bikeshedding
+about meaningless possible performance optimizations could waste both reviewer time as well as your own.
+
+Some examples of properly submitted performance issues, from different parts of the codebase.  They all have one thing
+in common: Lots of data in the issue definition.  If you are new to kubernetes and thinking about filing a performance
+optimization, re-read one or all of these before you get started.
+
+- https://github.com/kubernetes/kubernetes/issues/18266 (apiserver)
+- https://github.com/kubernetes/kubernetes/issues/32833 (node)
+- https://github.com/kubernetes/kubernetes/issues/31795 (scheduler)
+
+Since performance improvements deal with empirical systems, one playing in this space should be intimately familiar with
+the "scientific method" of creating a hypothesis, collecting data, and then revising your hypothesis.  The above issues
+tend to do this transparently, using figures and data rather then theoretical postulations, as a first pass before a
+single line of code is reviewed.
+
 ## Building Kubernetes with Docker
 
-Official releases are built using Docker containers. To build Kubernetes using
-Docker please follow [these instructions]
+Official releases are built using Docker containers. To build Kubernetes using Docker please follow [these instructions]
 (http://releases.k8s.io/HEAD/build/README.md).
 
 ## Building Kubernetes on a local OS/shell environment
