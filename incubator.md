@@ -4,7 +4,7 @@
 
 ## Kubernetes Incubator
 
-The Kubernetes Incubator (github.com/kubernetes-incubator) is where all new Kubernetes projects should start. Once going through the incubation process explained in this doc they can become full Kubernetes Community Projects. The process is designed to ensure that new projects have correct licensing, up-to-date boilerplate documents, a healthy community process, and are developed using accepted Kubernetes Community practices.
+The [Kubernetes Incubator](https://github.com/kubernetes-incubator) is where all new Kubernetes projects should start. Once going through the incubation process explained in this doc they can become full Kubernetes Community Projects. The process is designed to ensure that new projects have correct licensing, up-to-date boilerplate documents, a healthy community process, and are developed using accepted Kubernetes Community practices.
 
 ### Context
 
