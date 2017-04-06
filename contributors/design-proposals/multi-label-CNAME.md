@@ -107,7 +107,7 @@ type ServiceSpec struct {
 +	// define a single-label service name, in which case it takes the role of the "name" label in metadata part.
 +	// When Name is resolved, kubedns or equivalent returns with the canonical name defined in ExternalName field above.
 +	// Must be a valid DNS name and requires Type to be ExternalName.
-+ Name string
++ 	Name string
 }
 ```
 
