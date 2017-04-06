@@ -111,7 +111,6 @@ The following modifications will be made to the StatefulSetSpec API object.
 type StatefulSetSpec struct {
     // Replicas, Selector, Template, VolumeClaimsTemplate, and ServiceName 
     // omitted for brevity.
-	v1.PodTemplateSpec `json:"template"`
 
 	// TemplateGeneration is a monotonically increasing, 64 bit, integer used to 
 	// indicate the version of the of the PodTemplateSpec. If nil, the 
@@ -255,7 +254,7 @@ the largest ordinal will be deleted.
 
 ### StatefulSet Revision History
 The StatefulSet controller will use labeled, versioned PodTemplates to keep a 
-history of updates preformed on a StatefulSet. The number of stored PodTemplates 
+history of updates performed on a StatefulSet. The number of stored PodTemplates 
 is considered to be the size of the StatefulSet's revision history. The 
 maximum size of a StatefulSet's revision history is two (these are the current 
 and target PodTemplates) plus the history limit (represented by its 
@@ -621,7 +620,7 @@ spec:
         volumeMounts:
         - name: www
           mountPath: /usr/share/nginx/html
-     generationParition: 2
+     generationPartition: 2
   volumeClaimTemplates:
   - metadata:
       name: www
