@@ -6,7 +6,7 @@ Date: August 2017
 
 Status: New
 
-#Goal
+# Goal
 
 Enable the usage of multi-label subdomains in CNAME records via ExternalName Service.
 Example: `my-service.my-cluster` could be mapped to `your-service.your-cluster`,
