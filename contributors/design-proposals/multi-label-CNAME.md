@@ -2,7 +2,7 @@
 
 Author: Laszlo Janosi (@janosi), Gergely Csatari (@CsatariGergely)
 
-Date: August 2017
+Date: April 2017
 
 Status: New
 
@@ -103,8 +103,8 @@ type ServiceSpec struct {
 	LoadBalancerSourceRanges []string
 
 +	// The name of the service which is resolved by kubedns or equivalent to a canonical name.
-+ // Enable the definition of multi-label CNAME records. But also can be used to
-+ // define a single-label service name, in which case it takes the role of the "name" label in metadata part.
++	// Enable the definition of multi-label CNAME records. But also can be used to
++	// define a single-label service name, in which case it takes the role of the "name" label in metadata part.
 +	// When Name is resolved, kubedns or equivalent returns with the canonical name defined in ExternalName field above.
 +	// Must be a valid DNS name and requires Type to be ExternalName.
 + Name string
