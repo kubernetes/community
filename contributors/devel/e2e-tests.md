@@ -218,6 +218,8 @@ if any specs are pending.
 --ginkgo.focus="": If set, ginkgo will only run specs that match this regular
 expression.
 
+--ginkgo.noColor="n": If set to "y", ginkgo will not use color in the output
+
 --ginkgo.skip="": If set, ginkgo will only run specs that do not match this
 regular expression.
 
