@@ -202,6 +202,10 @@ concerns, and migration from physical/virtual machines. The Pod primitive is key
 [primary benefits](https://kubernetes.io/docs/whatisk8s/#why-containers) of deployment on modern
 cloud platforms, such as Kubernetes.
 
+API admission control may reject pods or add additional scheduling constraints to them, but
+Kubelet is the final arbiter of what pods can and cannot run on a given node, not the schedulers
+or DaemonSets. 
+
 Kubelet also currently links in the [cAdvisor](https://github.com/google/cadvisor) resource monitoring
 agent.
 
