@@ -54,7 +54,7 @@ export GOPATH=$KPATH
 
 ```sh
 cd $KPATH/src/k8s.io/kubernetes
-godep restore
+./hack/godep-restore.sh
 ```
 
 4) Next, you can either add a new dependency or update an existing one.
@@ -69,24 +69,19 @@ godep get $DEP/...
 ./hack/godep-save.sh
 ```
 
-To update an existing dependency is a bit more complicated.  Godep has an
-`update` command, but none of us can figure out how to actually make it work.
-Instead, this procedure seems to work reliably:
+To update an existing dependency:
 
 ```sh
-cd $KPATH/src/k8s.io/kubernetes
 DEP=example.com/path/to/dependency
 # NB: For the next step, $DEP is assumed be the repo root.  If it is actually a
 # subdir of the repo, use the repo root here.  This is required to keep godep
 # from getting angry because `godep restore` left the tree in a "detached head"
 # state.
-rm -rf $KPATH/src/$DEP # repo root
-godep get $DEP/...
-# Change code in Kubernetes, if necessary.
-rm -rf Godeps
-rm -rf vendor
+cd $KPATH/src/$DEP # repo root
+git checkout <$REVISION/$TAG/$BRANCH>
+cd $KPATH/src/k8s.io/kubernetes
+godep update $DEP/...
 ./hack/godep-save.sh
-git checkout -- $(git status -s | grep "^ D" | awk '{print $2}' | grep ^Godeps)
 ```
 
 _If `go get -u path/to/dependency` fails with compilation errors, instead try
