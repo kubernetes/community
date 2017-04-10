@@ -62,10 +62,12 @@ but makes a best effort to launch DaemonSet pods (like Replication Controllers
 do with pods). Subsequent revisions might ensure that DaemonSet pods show up on
 nodes, preempting other pods if necessary.
   - The DaemonSet controller adds an annotation:
-```"kubernetes.io/created-by: \<json API object reference\>"```
+```
+"kubernetes.io/created-by: \<json API object reference\>" 
+```
   - YAML example:
-
-    ```YAML
+```
+    YAML
   apiVersion: extensions/v1beta1
   kind: DaemonSet
   metadata:
