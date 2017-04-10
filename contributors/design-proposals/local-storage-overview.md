@@ -581,6 +581,9 @@ Since older kubelets will not surface capacity of shared partitions, the schedul
 Kubelet will attempt to enforce capacity limits on a best effort basis. If the underlying container runtime cannot surface usage metrics for the writable layer, then kubelet will not provide capacity isolation for the writable layer.
 
 
+### Are LocalStorage PVs required to be a whole partition?
+
+No, but it is the recommended way to ensure capacity and performance isolation.  For HDDs, a whole disk is recommended for performance isolation.  In some environments, multiple storage partitions are not available, so the only option is to share the same filesystem.  In that case, directories in the same filesystem can be specified, and the adminstrator could configure group quota to provide capacity isolation.
 
 # Features & Milestones
 
