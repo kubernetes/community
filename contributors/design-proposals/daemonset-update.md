@@ -67,7 +67,7 @@ type DaemonSetUpdateStrategy struct {
 	// RollingUpdate.
 	//---
 	// TODO: Update this to follow our convention for oneOf, whatever we decide it
-	// to be. Same as DeploymentStrategy.RollingUpdate.
+	// to be. Same as Deployment `strategy.rollingUpdate`.
 	// See https://github.com/kubernetes/kubernetes/issues/35345
 	// +optional
 	RollingUpdate *RollingUpdateDaemonSet
@@ -122,6 +122,28 @@ type DaemonSetSpec struct {
 	// Populated by the system. Can be set at creation time. Read-only otherwise. 
 	// +optional
 	TemplateGeneration int64 `json:"templateGeneration,omitempty"`
+
+	// The number of old PodTemplates to retain to allow rollback.
+	// This is a pointer to distinguish between explicit zero and not specified.
+	// Defaults to 2.
+	RevisionHistoryLimit *int32 `json:"revisionHistoryLimit,omitempty"`
+
+	// The config this DaemonSet is rolling back to. Will be cleared after
+        // rollback is done.
+	// +optional
+	RollbackTo *RollbackConfig `json:"rollbackTo",omitempty`
+}
+
+// DaemonSetRollback stores the information required to rollback a DaemonSet.
+type DaemonSetRollback struct {
+	metav1.TypeMeta `json:",inline"`
+	// Required: This must match the Name of a DaemonSet.
+	Name string `json:"name"`
+	// The annotations to be updated to a DaemonSet
+	// +optional
+	UpdatedAnnotations map[string]string `json:"updatedAnnotations,omitempty"`
+	// The config of this DaemonSet rollback.
+	RollbackTo RollbackConfig `json:"rollbackTo"`
 }
 
 // DaemonSetStatus represents the current status of a daemon set.
@@ -150,8 +172,8 @@ type DaemonSetStatus struct {
 
 const (
 	// DaemonSetTemplateGenerationKey is the key of the labels that is added
-	// to daemon set pods to distinguish between old and new pod templates
-	// during DaemonSet template update.
+	// to daemon set pods and history to distinguish between old and new pod
+	// templates during DaemonSet template update.
 	DaemonSetTemplateGenerationKey string = "pod-template-generation"
 )
 ```
@@ -165,22 +187,38 @@ DaemonSets on the apiserver.
 
 For each pending DaemonSet updates, it will:
 
-1. Find all pods whose labels are matched by DaemonSet `.spec.selector`. 
-   - If `OwnerReference` is implemented for DaemonSets, filter out pods that
-     aren't controlled by this DaemonSet too.
+1. Find all pods controlled by DaemonSet
 1. Check `DaemonSetUpdateStrategy`:
    - If `OnDelete`: do nothing
    - If `RollingUpdate`:
-     - Find all daemon pods that belong to this DaemonSet using label selectors.
-       - Pods with "pod-template-generation" value equal to the DaemonSet's
-         `.spec.templateGeneration` are new pods, otherwise they're old pods.
-       - Note that pods without "pod-template-generation" labels (e.g. DaemonSet
-         pods created before RollingUpdate strategy is implemented) will be
-         seen as old pods.
+     - Find existing PodTemplates owned by DaemonSet, and sort them by the value
+       of `pod-template-generation` label
+     - Clean up PodTemplates based on `.spec.revisionHistoryLimit`
+       - Always keep the PodTemplate if its `pod-template-generation` label has
+         the same value of any existing pods owned by the DaemonSet
+       - Remove PodTemplates from the ones with the smallest `pod-template-generation`
+         to the highest, until `.spec.revisionHistoryLimit` is hit or no
+         PodTemplates are allowed to be removed 
+     - Create a PodTemplate based on DaemonSet
+       - PodTemplate `.name` is from DaemonSet `<.name>-<.spec.templateGeneration>`
+       - PodTemplate labels are generated from DaemonSet `.spec.selector`, in
+         addition to label `pod-template-generation=.spec.templateGeneration`
+       - PodTemplate's `.spec` is copied from DaemonSet `.spec.template.spec` 
+       - PodTemplate's `.metadata.annotations` is copied from DaemonSet
+         `.metadata.annotations`
+     - For all pods owned by this DaemonSet:
+       - If it doesn't have `pod-template-generation` label, it's an old pod 
+       - If its `pod-template-generation` label value equals to the latest
+         PodTemplate, it's a new pod 
+       - If its `pod-template-generation` label value equals to a PodTemplate
+         whose template is the same as the latest PodTemplate, it's a new pod
+         that needs to be relabeled 
+       - Otherwise, it's an old pod 
      - If there are old pods found, compare `MaxUnavailable` with DaemonSet
        `.status.numberUnavailable` to see how many old daemon pods can be
        killed. Then, kill those pods in the order that unhealthy pods (failed,
        pending, not ready) are killed first.
+     - Relabel new pods with current `.spec.templateGeneration`
 1. Find all nodes that should run these pods created by this DaemonSet.
 1. Create daemon pods on nodes when they should have those pods running but not
    yet. Otherwise, delete running daemon pods that shouldn't be running on nodes.
@@ -206,6 +244,18 @@ Users can use `kubectl rollout` to monitor DaemonSet updates:
 
 - `kubectl rollout status daemonset/<DaemonSet-Name>`: to see the DaemonSet
   upgrade status 
+- `kubectl rollout history daemonset/<DaemonSet-Name>`: to view the history of
+  DaemonSet updates. We use `PodTemplate` created by DaemonSets to store update
+  history.
+- `kubectl rollout undo daemonset/<DaemonSet-Name>`: to rollback a DaemonSet
+
+#### API
+
+Implement a subresource for DaemonSet history (`daemonsets/foo/history`) that
+summarizes the information in the history.
+
+Implement a subresource for DaemonSet rollback (`daemonsets/foo/rollback`) that
+triggers a DaemonSet rollback.
 
 ## Updating DaemonSets mid-way
 
@@ -216,7 +266,8 @@ one will begin rolling out.
 
 ## Deleting DaemonSets
 
-Deleting a DaemonSet (with cascading) will delete all its pods. 
+Deleting a DaemonSet (with cascading) will delete all its pods and history
+(PodTemplates).
 
 
 ## DaemonSet Strategies
@@ -280,58 +331,6 @@ In the future, we may:
 - Allow user-defined DaemonSet unique label key
 - Support pausing DaemonSet rolling update
 - Support auto-rollback DaemonSets
-
-### DaemonSet History 
-
-In the future, we will support DaemonSet history, so that users can view
-previous revisions and roll back when necessary. 
-
-One possible approach is to create a new resource called `DaemonSetRevision` to
-store DaemonSet history.
-
-Another way to implement DaemonSet history is through creating `PodTemplates` as
-snapshots of DaemonSet templates, and then create them in DaemonSet controller:
-
-- Find existing PodTemplates whose labels are matched by DaemonSet
-  `.spec.selector`.
-  - Sort those PodTemplates by creation timestamp and only retain at most
-   `.spec.revisionHistoryLimit` latest PodTemplates (remove the rest).
-  - Find the PodTemplate whose `.template` is the same as the DaemonSet's
-    `.spec.template`.
-    - If not found, create a new PodTemplate from DaemonSet's
-      `.spec.template`:
-      - The name will be `<DaemonSet-Name>-<template-generation>`
-      - PodTemplate `.metadata.labels` will have a "pod-template-generation"
-        label, value be the same as DaemonSet's `.spec.templateGeneration`.
-      - PodTemplate will have revision information to avoid triggering
-        unnecessary restarts on rollback, since we only roll forward and only
-        increase templateGeneration.
-      - PodTemplate `.metadata.annotations` will be copied from DaemonSet 
-        `.metadata.annotations`.
-    - If the PodTemplate is found, sync its "pod-template-generation" and
-      revision information with current DaemonSet. 
-    - DaemonSet creates pods with "pod-template-generation" label. 
-
-PodTemplate may need to be made an admin-only or read only resource if it's used
-to store DaemonSet history. 
-
-#### History Clean Up Policy
-
-We also need to specify a clean up policy for the number of history to keep in
-the system, and keep only limited number of history by default (for example, 3).
-
-#### kubectl 
-
-`kubectl` should also support DaemonSet history:
-
-- `kubectl rollout undo daemonset/<DaemonSet-Name>` to roll back 
-- `kubectl rollout history daemonset/<DaemonSet-Name>`: to view the history of
-  DaemonSet updates
-
-#### API
-
-Implement a subresource for DaemonSet history (e.g. `daemonsets/foo/history`)
-that summarizes the information in the history.
 
 ### Tests
 
