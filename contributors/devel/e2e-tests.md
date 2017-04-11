@@ -264,6 +264,18 @@ stale permissions can cause problems.
 
   - `sudo iptables -F`, clear ip tables rules left by the kube-proxy.
 
+### Reproducing failures in flaky tests
+You can run a test repeatedly until it fails. This is useful when debugging
+flaky tests. In order to do so, you need to set the following environment
+variable:
+```sh
+$ export GINKGO_UNTIL_IT_FAILS=true
+```
+
+After setting the environment variable, you can run the tests as before. The e2e
+script adds `--untilItFails=true` to ginkgo args if the environment variable is
+set. The flags asks ginkgo to run the test repeatedly until it fails.
+
 ### Federation e2e tests
 
 By default, `e2e.go` provisions a single Kubernetes cluster, and any `Feature:Federation` ginkgo tests will be skipped.
