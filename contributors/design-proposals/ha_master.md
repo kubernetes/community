@@ -177,10 +177,10 @@ A pseudo-code for adding a new master replica using managed DNS and a loadbalanc
 
 ```
 1. If there is no load balancer for this cluster:
-  1. Create load balancer using ephemeral IP address
-  2. Add existing apiserver to the load balancer
-  3. Wait until load balancer is working, i.e. all data is propagated, in GCE up to 20 min (sic!)
-  4. Update DNS to point to the load balancer.
+  1.1. Create load balancer using ephemeral IP address
+  1.2. Add existing apiserver to the load balancer
+  1.3. Wait until load balancer is working, i.e. all data is propagated, in GCE up to 20 min (sic!)
+  1.4. Update DNS to point to the load balancer.
 2. Clone existing master (create a new VM with the same configuration) including
    all env variables (certificates, IP ranges etc), with the exception of
    `INITIAL_ETCD_CLUSTER`.
@@ -195,10 +195,10 @@ is identical to the one when using DNS, with a different step to setup load bala
 
 ```
 1. If there is no load balancer for this cluster:
-  1. Unassign IP from the existing master replica
-  2. Create load balancer using static IP reclaimed in the previous step
-  3. Add existing apiserver to the load balancer
-  4. Wait until load balancer is working, i.e. all data is propagated, in GCE up to 20 min (sic!)
+  1.1. Unassign IP from the existing master replica
+  1.2. Create load balancer using static IP reclaimed in the previous step
+  1.3. Add existing apiserver to the load balancer
+  1.4. Wait until load balancer is working, i.e. all data is propagated, in GCE up to 20 min (sic!)
 ...
 ```
 
