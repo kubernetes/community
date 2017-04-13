@@ -179,6 +179,7 @@ We expect that the provider implementation may therefore be layered or composed 
 * A local HSM implementation that retrieves the keys from the secure enclave prior to reusing the AES-GCM implementation (initialization of keys only)
 * Exchanging a local temporary token for the actual decryption tokens from a networked secret vault
 * Decrypting the AES-256 keys from disk using asymmetric encryption combined with a user input password
+* Sending the data over the network to a key management system for encryption and decryption (Google KMS, Amazon KMS, Hashicorp Vault w/ Transit backend)
 
 ### Backwards Compatibility
 Once a user encrypts any resource in etcd, they are locked to that Kubernetes version and higher unless they choose to manually decrypt that resource in etcd. This will be discouraged. It will be highly recommended that users discern if their Kubernetes cluster is on a stable version before enabling encryption.
