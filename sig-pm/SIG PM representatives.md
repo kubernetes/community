@@ -1,14 +1,14 @@
 |  **SIG** | **Name** | **GitHub ID** | **e-mail** | **Secondary** |
 |  ------ | ------ | ------ | ------ | ------ |
-|  API machinery | William Denniss |  | wdenniss@google.com |  |
-|  Apps | Dan Paik, Antoine Legrand | danpaik; ant31 | danpaik@google.com | antoine.legrand@coreos.com |
+|  API machinery | William Denniss | WilliamDenniss | wdenniss@google.com |  |
+|  Apps | Dan Paik | danpaik; ant31 | danpaik@google.com | Antoine Legrand, antoine.legrand@coreos.com |
 |  Auth | CJ Cullen | cjcullen | cjcullen@google.com |  |
 |  Autoscaling | Solly Ross | directxman12 | sross@redhat.com |  |
-|  AWS | Justin Santa Barbara | justinsb |  |  |
+|  AWS | Justin Santa Barbara | justinsb | justin@fathomdb.com |  |
 |  CLI | Joe Beda | jbeda | joe@bedafamily.com |  |
 |  Cluster Lifecycle | Dan Gillespie | ethernetdan | dan.gillespie@coreos.com |  |
 |  Cluster Ops | Jason Singer DuMars | jdumars | jdumars@deis.com | Rob Hirschfeld |
-|  Contrib Experience | Garrett Rodrigues | grodrigues3 | grod@google.com |  |
+|  Contrib Experience | Garrett Rodrigues | grodrigues3 | grod@google.com | elsie.phillips@coreos.com |
 |  Docs | N/A |  |  |  |
 |  Federation | David Aronchick |  | aronchick@google.com |  |
 |  Instrumentation | Piotr Szczesniak | piosz | pszczesniak@google.com | Patrick Christopher (pat.christopher@gmail.com) |
