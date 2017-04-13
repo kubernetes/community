@@ -2,20 +2,20 @@
 
 ## Abstract
 
-The scope of this proposal is to ensure that resources can be encrypted at the datastore layer. Encrypting data at REST and via third party vendors is a desired feature but outside the scope of this proposal. Encryption will be optional for any resource but we suspect it will be used for the Secret resource in most cases.
+The scope of this proposal is to ensure that resources can be encrypted at the datastore layer. Encrypting data over the network and via third party vendors is a desired feature but outside the scope of this proposal. There is future work to be done to enable end to end encryption, until then clients of the kubernetes API should be using TLS connections. Encryption will be optional for any resource but we suspect it will be used for the Secret resource in most cases.
 
 Allowing sensitive data to be encrypted adheres to best practices as well as other requirements such as HIPAA.
 
 How encryption keys are delivered to the machine running the Kubernetes apiserver is of relevance - we assume that the encryption at rest pattern is loosely coupled to how those keys are delivered and secured on disk.
 
-In general, full disk encryption of the volumes storing etcd data is generally preferred - this proposal focuses on scenarios where additional protection is desired against malicious parties gaining read access to the etcd API or a running etcd instance without access to memory of the etcd process.
+In general, full disk encryption of the volumes storing etcd data is preferred - this proposal focuses on scenarios where additional protection is desired against malicious parties gaining read access to the etcd API or its backups or a running etcd instance without access to memory of the etcd process.
 
 ## High level design
 Before a resource is written to etcd and before it is read, an encryption provider will take the plaintext data and encrypt it.
 These providers will be able to be created and turned on depending on the users needs or requirements and will adhere to an encryption interface.
 This interface will provide the abstraction to allow various encryption mechanisms to be implemented, as well as for the method of encryption to be rotated over time.
 It should be possible for the distribution of keys to the apiserver to be separated out (injected in by a higher level security process) or to be directly
-requested by the provider implementation. For the first iteration, a default provider will be developed and will run as part of the kube-apiserver.
+requested by the provider implementation. For the first iteration, a default provider that handles encryption in-process using a locally stored key will be developed.
 
 ## Kubernetes Storage Changes
 Kubernetes requires that an update that does not change the serialized form of object not be persisted to etcd to prevent other components from seeing no-op updates.
@@ -140,7 +140,7 @@ type KeyEncryptionKeyDatabase struct {
 
 To enable encryption a user will issue a PUT to an endpoint such as `/rotate`. If this is the first time this API has ever been called the API server
 will generate a key (unecrypted DEK), encrypt it with the KEK in slot 1, and encrypt all secrets with the DEK. If this is the second + N time the API
-has been called the API server will encrypt the DEK with the KEK in slot N+1 and do a compare-and-swap on the DEK stored in etcd.
+has been called the API server will encrypt the DEK with the KEK in slot N+1 and do a compare-and-swap on the DEK stored in etcd. There will be one DEK per database.
 If this API is called and a KEK doesn't exist in the KEK DB at slot N+1 a 400 is returned. `kubectl` will have support for calling the
 rotate API endpoint eventually. To account for failure scenarios during key rotation, the old and new DEK will be stored in etcd during the rotation.
 
