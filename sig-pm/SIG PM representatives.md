@@ -1,6 +1,6 @@
 ### SIG PM representative role definition
 
-SIG PM representative is a specific person from the SIG, who represents this SIG to PM group. The role defaults to SIG lead, but not limited to - every SIG may assign a representative.
+SIG PM representative is a specific person from the SIG, who represents this SIG to PM group. The role defaults to SIG lead, but not limited to. Every SIG may assign a representative.
 
 SIG PM responsibilities:
   * identify all features in the current release from the SIG
