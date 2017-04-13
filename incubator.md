@@ -36,7 +36,7 @@ The next discussion should be on a relevant Special Interest Group mailing list.
 
 The final process is to email kubernetes-dev@googlegroups.com to announce your intention to form a new Incubator project. Include your entire proposal in the body of the email and prefix the Subject with [Incubator]. Include links to your discussion on the accepted SIG mailing list to guide the discussion.
 
-Acceptance of the project into the Kubernetes Incubator happens once a Sponsor approves. Anyone listed as an approver in the top-level pkg OWNERS file https://github.com/kubernetes/kubernetes/blob/master/pkg/OWNERS can sponsor a project by replying to the kubernetes-dev discussion with LGTM.
+Acceptance of the project into the Kubernetes Incubator happens once a Sponsor approves. Anyone listed under `approvers` in the kubernetes top-level OWNERS file https://github.com/kubernetes/kubernetes/blob/master/OWNERS can sponsor a project by replying to the kubernetes-dev discussion with LGTM.
 
 ## Creation of the Incubator Project
 
@@ -92,7 +92,7 @@ If a project doesn't merge or graduate within 12 months it is retired. If a proj
 
 **Q: What is the role of the Sponsor?**
 
-**A:** Potential Sponsors come from the very small set of Kubernetes contributors that can approve any PR because they are listed as approvers in the `kubernetes/pkg` OWNERS file or the top-level OWNERS file. The idea is that by relying on this small set of Kubernetes Community members to make a determination on Incubator projects we will ensure that there is consistency around new projects joining the Incubator. Being a Sponsor is a minor advisory role.
+**A:** Potential Sponsors come from the very small set of Kubernetes contributors that can approve expansions of scope of the project. They are listed under `approvers` in the `kubernetes` top-level OWNERS file. The idea is that by relying on this small set of Kubernetes Community members to make a determination on Incubator projects we will ensure that there is consistency around new projects joining the Incubator. Being a Sponsor is a minor advisory role.
 
 ## Existing Repos
 
