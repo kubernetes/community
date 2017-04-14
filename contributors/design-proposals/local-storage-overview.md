@@ -225,7 +225,8 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
       capacity:
         storage: 100Gi
       local:
-        path: /var/lib/kubelet/storage-partitions/local-pv-1
+        fs:
+          path: /var/lib/kubelet/storage-partitions/local-pv-1
       accessModes:
         - ReadWriteOnce
       persistentVolumeReclaimPolicy: Delete
@@ -471,7 +472,7 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
 Note: Block access will be considered as a separate feature because it can work for both remote and local storage.  The examples here are a suggestion on how such a feature can be applied to this local storage model, but is subject to change based on the final design for block access.
 
 1. The cluster that Bob uses has nodes that contain raw block devices that have not been formatted yet.
-2. The same addon DaemonSet can discover block devices in the same directory as the filesystem mount points and creates corresponding PVs for them with a new `volumeType = block` field.  This field indicates the original volume type upon PV creation.
+2. The same addon DaemonSet can also discover block devices and creates corresponding PVs for them with the `block` field.  
 
     ```yaml
     kind: PersistentVolume
@@ -481,11 +482,11 @@ Note: Block access will be considered as a separate feature because it can work 
       labels:
         kubernetes.io/hostname: node-1
     spec:
-      volumeType: block 
       capacity:
         storage: 100Gi
       local:
-        path: /var/lib/kubelet/storage-raw-devices/foo
+        block:
+          device: /var/lib/kubelet/storage-raw-devices/foo
       accessModes:
         - ReadWriteOnce
       persistentVolumeReclaimPolicy: Delete
@@ -508,7 +509,7 @@ Note: Block access will be considered as a separate feature because it can work 
         requests:
           storage: 80Gi
     ```
-4. It is also possible for a PVC that requests `volumeType: file` to also use a PV with `volumeType: block`, if no file-based PVs are available.  In this situation, the block device would get formatted with the filesystem type specified in the PV spec.  And when the PV gets destroyed, then the filesystem also gets destroyed to return back to the original block state.
+4. It is also possible for a PVC that requests `volumeType: file` to also use a block-based PV.  In this situation, the block device would get formatted with the filesystem type specified in the PV spec.  And when the PV gets destroyed, then the filesystem also gets destroyed to return back to the original block state.
 
     ```yaml
     kind: PersistentVolume
@@ -518,12 +519,12 @@ Note: Block access will be considered as a separate feature because it can work 
       labels:
         kubernetes.io/hostname: node-1
     spec:
-      volumeType: block
       capacity:
         storage: 100Gi
       local:
-        path: /var/lib/kubelet/storage-raw-devices/foo
-        fsType: ext4
+        block:
+          path: /var/lib/kubelet/storage-raw-devices/foo
+          fsType: ext4
       accessModes:
         - ReadWriteOnce
       persistentVolumeReclaimPolicy: Delete
