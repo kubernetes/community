@@ -11,7 +11,7 @@ Meeting Time: Thursday @ 1 PT (so we can end the week with Ops)
 
 Co-leaders
 * Rob Hirschfeld (@zehicle, rob@rackn.com)
-* Jason DuMars Singer (@jaydumars)
+* Jason Singer DuMars (@jaydumars)
 
 Mission
 -------
