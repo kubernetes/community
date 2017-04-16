@@ -20,7 +20,7 @@ When you're writing controllers, there are few guidelines that will help make su
 
 1. Operate on one item at a time.  If you use a `workqueue.Interface`, you'll be able to queue changes for a particular resource and later pop them in multiple “worker” gofuncs with a guarantee that no two gofuncs will work on the same item at the same time.
 
-   Many controllers must trigger off multiple resources (I need to "check X if Y changes"), but nearly all controllers can collapse those into a queue of “check this X” based on relationships.  For instance, a ReplicaSetController needs to react to a pod being deleted, but it does that by finding the related ReplicaSets and queuing those.
+   Many controllers must trigger off multiple resources (I need to "check X if Y changes"), but nearly all controllers can collapse those into a queue of “check this X” based on relationships.  For instance, a ReplicaSet controller needs to react to a pod being deleted, but it does that by finding the related ReplicaSets and queuing those.
 
 1. Random ordering between resources. When controllers queue off multiple types of resources, there is no guarantee of ordering amongst those resources.
 
@@ -58,6 +58,15 @@ When you're writing controllers, there are few guidelines that will help make su
 
    In cases where you are *certain* that you don't need to requeue items when there are no new changes, you can compare the resource version of the old and new objects.  If they are the same, you skip requeuing the work.  Be careful when you do this.  If you ever skip requeuing your item on failures, you could fail, not requeue, and then never retry that item again.
 
+1. If the primary resource your controller is reconciling supports ObservedGeneration in its status, make sure you correctly set it to metadata.Generation whenever the values between the two fields mismatches.
+
+    This lets clients know that the controller has processed a resource. Make sure that your controller is the main controller that is responsible for that resource, otherwise if you need to communicate observation via your own controller, you will need to create a different kind of ObservedGeneration in the Status of the resource.
+
+1. Consider using owner references for resources that result in the creation of other resources (eg. a ReplicaSet results in creating Pods). Thus you ensure that children resources are going to be garbage-collected once a resource managed by your controller is deleted. For more information on owner references, read more [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/controller-ref.md).
+
+    Pay special attention in the way you are doing adoption. You shouldn't adopt children for a resource when either the parent or the children are marked for deletion. If you are using a cache for your resources, you will likely need to bypass it with a direct API read in case you observe that an owner reference has been updated for one of the children. Thus, you ensure your controller is not racing with the garbage collector.
+
+ See [k8s.io/kubernetes/pull/42938](https://github.com/kubernetes/kubernetes/pull/42938) for more information.
 
 ## Rough Structure
 
