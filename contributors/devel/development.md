@@ -15,7 +15,7 @@ requirements are frozen.
 
 ## Pre submit flight checks
 
-Make sure you decide whether your issue and/or pull request is improving kubernetes architecture or whehter its simply fixing a bug.
+Make sure you decide whether your issue and/or pull request is improving kubernetes architecture or whether its simply fixing a bug.
 
 Make sure there are no typos, if you need a diagram, add it.  Make sure you SEPARATE the description of the problem
 (i.e. Y is a critical component that is too slow for an SLA that we care about) from the solution (i.e. make X faster).
