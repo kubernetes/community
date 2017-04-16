@@ -64,7 +64,7 @@ Examples of how NOT to suggest a performance bug (these can really lead to a lon
 The above statements have basically no value to a reviewer, because neither is a strong, testable, assertive statement.
 This will land your PR in a no-man's-land zone (at best), or waste tons of time for a busy reviewer (at worst).
 
-Of course any improvment is welcome, but performance improvements are the hardest to review.  They often make code more
+Of course any improvement is welcome, but performance improvements are the hardest to review.  They often make code more
 complex, and to-often are not easily evaluated at review time due to lack of sufficient data submitted by the author
 of a performance improvement patch.
 
