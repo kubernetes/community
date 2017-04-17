@@ -781,7 +781,7 @@ following [post](http://blog.kubernetes.io/2015/09/kubernetes-performance-measur
 
 For developers who are interested in doing their own performance analysis, we
 recommend setting up [prometheus](http://prometheus.io/) for data collection,
-and using [promdash](http://prometheus.io/docs/visualization/promdash/) to
+and using [grafana](https://prometheus.io/docs/visualization/grafana/) to
 visualize the data.  There also exists the option of pushing your own metrics in
 from the tests using a
 [prom-push-gateway](http://prometheus.io/docs/instrumenting/pushing/).
