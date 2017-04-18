@@ -94,7 +94,7 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
        resources:
          limits:
            storage.kubernetes.io/logs: 500Mi
-           storage.kubernetes.io/overlay: 1Gi
+           storage.kubernetes.io/writable: 1Gi
        volumeMounts:
        - name: myEmptyDir
          mountPath: /mnt/data
@@ -105,13 +105,13 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
     ```
 
 3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
-4. For the pod resources, `storage.kubernetes.io/logs` resource is meant for logs. `storage.kubernetes.io/overlay` is meant for writable layer.
+4. For the pod resources, `storage.kubernetes.io/logs` resource is meant for logs. `storage.kubernetes.io/writable` is meant for writable layer.
 5. `storage.kubernetes.io/logs` is satisfied by `storage.kubernetes.io/scratch`.
-6. `storage.kubernetes.io/overlay` resource can be satisfied by `storage.kubernetes.io/overlay` if exposed by nodes or by `storage.kubernetes.io/scratch` otherwise. The scheduler follows this policy to find an appropriate node which can satisfy the storage resource requirements of the pod.
+6. `storage.kubernetes.io/writable` resource can be satisfied by `storage.kubernetes.io/overlay` if exposed by nodes or by `storage.kubernetes.io/scratch` otherwise. The scheduler follows this policy to find an appropriate node which can satisfy the storage resource requirements of the pod.
 7. EmptyDir.size is both a request and limit that is satisfied by `storage.kubernetes.io/scratch`. 
 8. Kubelet will rotate logs to keep scratch space usage of “fooc” under 500Mi
 9. Kubelet will track the usage of pods across logs and overlay filesystem and restart the container if it's total usage exceeds it's storage limits. If usage on `EmptyDir` volume exceeds its `limit`, then the pod will be evicted by the kubelet. By performing soft limiting, users will be able to easily identify pods that run out of storage.
-10. Health is monitored by an external entity like the “Node Problem Detector” which is expected to place appropriate taints.
+10. Primary partition health is monitored by an external entity like the “Node Problem Detector” which is expected to place appropriate taints.
 11. If a primary partition becomes unhealthy, the node is tainted and all pods running in it will be evicted by default, unless they tolerate that taint. Kubelet’s behavior on a node with unhealthy primary partition is undefined. Cluster administrators are expected to fix unhealthy primary partitions on nodes.
 
 ### Bob runs batch workloads and is unsure of “storage” requirements
@@ -145,10 +145,10 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
     spec:
        - default:
          storage.kubernetes.io/logs: 200Mi
-         storage.kubernetes.io/overlay: 200Mi
+         storage.kubernetes.io/writable: 200Mi
          type: Container
        - default:
-         size: 1Gi
+         sizeLimit: 1Gi
          type: EmptyDir
     ```
 
@@ -165,18 +165,18 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
        resources:
          limits:
            storage.kubernetes.io/logs: 200Mi
-           storage.kubernetes.io/overlay: 200Mi
+           storage.kubernetes.io/writable: 200Mi
        volumeMounts:
        - name: myEmptyDir
          mountPath: /mnt/data
      volumes:
      - name: myEmptyDir
        emptyDir:
-	     size: 1Gi
+	     sizeLimit: 1Gi
     ```
 
 4. Bob’s “foo” pod can use upto “200Mi” for its containers logs and writable layer each, and “1Gi” for its “myEmptyDir” volume. 
-5. If Bob’s pod “foo” exceeds the “default” storage limits and gets evicted, then Bob can set a minimum storage requirement for his containers and a higher “capacity” for his EmptyDir volumes.
+5. If Bob’s pod “foo” exceeds the “default” storage limits and gets evicted, then Bob can set a minimum storage requirement for his containers and a higher `sizeLimit` for his EmptyDir volumes.
 
   ```yaml
   apiVersion: v1
@@ -189,22 +189,22 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
      resources:
        requests:
          storage.kubernetes.io/logs: 500Mi
-         storage.kubernetes.io/overlay: 500Mi
+         storage.kubernetes.io/writable: 500Mi
      volumeMounts:
      - name: myEmptyDir
        mountPath: /mnt/data
    volumes:
    - name: myEmptyDir
      emptyDir:
-		size: 2Gi
+		sizeLimit: 2Gi
   ```
 
-6. It is recommended to require `limits` to be specified for `storage` in all pods. `storage` will not affect the `QoS` Class of a pod since no SLA is intended to be provided for storage capacity isolation. it is recommended to use Persistent Durable Volumes as much as possible and avoid primary partitions.
+6. It is recommended to require `limits` to be specified for `storage` in all pods. `storage` will not affect the `QoS` Class of a pod since no SLA is intended to be provided for storage capacity isolation. it is recommended to use Persistent Volumes as much as possible and avoid primary partitions.
 
 ### Alice manages a Database which needs access to “durable” and fast scratch space
 
 1. Cluster administrator provisions machines with local SSDs and brings up the cluster
-2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a hostname label ties the volume to a specific node.  A StorageClass is required and will have a new optional field `toplogyKey` for the system to apply node constraints to local storage when scheduling pods that request this StorageClass.  Other labels may also be specified.
+2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a hostname label ties the volume to a specific node.  A StorageClass is required and will have a new optional field `toplogyKey`.  This field tells the scheduler to filter PVs with the same `topologyKey` value on the node. The `topologyKey` can be any label key applied to a node.  For the local storage case, the `topologyKey` is `kubernetes.io/hostname`, but the same mechanism could be used for zone constraints as well.
 
     ```yaml
     kind: StorageClass
@@ -224,7 +224,7 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
     spec:
       capacity:
         storage: 100Gi
-      local:
+      localStorage:
         fs:
           path: /var/lib/kubelet/storage-partitions/local-pv-1
       accessModes:
@@ -288,7 +288,10 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
               storage: 1Gi
     ```
 
-4. The scheduler identifies nodes for each pod that can satisfy cpu, memory, storage requirements and also contains available local PVs to satisfy the pod's PVC claims. It then binds the pod’s PVCs to specific PVs on the node and then binds the pod to the node. 
+4. The scheduler identifies nodes for each pod that can satisfy all the existing predicates.
+5. The nodes list is further filtered by looking at the PVC's StorageClass `topologyKey`, and checking if there are enough available PVs that have the same `topologyKey` value as the node.  In the case of local PVs, it checks that there are enough PVs with the same `kubernetes.io/hostname` value as the node.
+6. The scheduler chooses a node for the pod based on a ranking algorithm.
+7. Once the pod is assigned to a node, then the pod’s local PVCs get bound to specific local PVs on the node.
     ```
     $ kubectl get pvc
     NAME            STATUS VOLUME     CAPACITY ACCESSMODES … NODE
@@ -310,8 +313,8 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
     local-pv-2 10Gi       Bound     log-local-pvc-3 node-3
     ```
 
-5. If a pod dies and is replaced by a new one that reuses existing PVCs, the pod will be placed on the same node where the corresponding PVs exist. Stateful Pods are expected to have a high enough priority which will result in such pods preempting other low priority pods if necessary to run on a specific node.
-6. Forgiveness policies can be specified as tolerations in the pod spec for each failure scenario.  No toleration specified means that the failure is not tolerated.  In that case, the PVC will immediately be unbound, and the pod will be rescheduled to obtain a new PV.  If a toleration is set, by default, it will be tolerated forever.  `tolerationSeconds` can be specified to allow for a timeout period before the PVC gets unbound.
+8. If a pod dies and is replaced by a new one that reuses existing PVCs, the pod will be placed on the same node where the corresponding PVs exist. Stateful Pods are expected to have a high enough priority which will result in such pods preempting other low priority pods if necessary to run on a specific node.
+9. Forgiveness policies can be specified as tolerations in the pod spec for each failure scenario.  No toleration specified means that the failure is not tolerated.  In that case, the PVC will immediately be unbound, and the pod will be rescheduled to obtain a new PV.  If a toleration is set, by default, it will be tolerated forever.  `tolerationSeconds` can be specified to allow for a timeout period before the PVC gets unbound.
 
   Node taints already exist today.  Pod scheduling failures are specified separately as a timeout.
   ```yaml
@@ -343,7 +346,7 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
       - key: storage.kubernetes.io/pvUnhealthy
         operator: TolerationOpExists
   ```
-7. Once Alice decides to delete the database, she destroys the StatefulSet, and then destroys the PVCs.  The PVs will then get deleted and cleaned up according to the reclaim policy, and the addon adds it back to the cluster.
+10. Once Alice decides to delete the database, she destroys the StatefulSet, and then destroys the PVCs.  The PVs will then get deleted and cleaned up according to the reclaim policy, and the addon adds it back to the cluster.
 
 ### Bob manages a distributed filesystem which needs access to all available storage on each node
 
@@ -361,7 +364,7 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
 
 1. Phippy creates a dedicated partition with a separate device for her system daemons. She achieves this by making `/var/log/containers`, `/var/lib/kubelet`, `/var/lib/docker` (with the docker runtime) all reside on a separate partition.
 2. Phippy is aware that pods can cause abuse to each other.
-3. Whenever a pod experiences I/O issues with it's EmptyDir volume, Phippy reconfigures those pods to use Persistent Volumes whose lifetime is tied to the pod.
+3. Whenever a pod experiences I/O issues with it's EmptyDir volume, Phippy reconfigures those pods to use an inline Persistent Volume, whose lifetime is tied to the pod.
     ```yaml
     apiVersion: v1
     kind: pod
@@ -373,7 +376,7 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
        resources:
        limits:
          storage.kubernetes.io/logs: 500Mi
-         storage.kubernetes.io/overlay: 1Gi
+         storage.kubernetes.io/writable: 1Gi
        volumeMounts:
        - name: myEphemeralPersistentVolume
          mountPath: /mnt/tmpdata
@@ -484,7 +487,7 @@ Note: Block access will be considered as a separate feature because it can work 
     spec:
       capacity:
         storage: 100Gi
-      local:
+      localStorage:
         block:
           device: /var/lib/kubelet/storage-raw-devices/foo
       accessModes:
