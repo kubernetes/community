@@ -595,6 +595,16 @@ Strategic Merge Patch also supports special operations as listed below.
 
 ### List Operations
 
+#### Specifying element ordering for a strategic merge patch on a list [Alpha]
+
+By default, patching a list using the Strategic Merge strategy will provide no guarantees to the final ordering of elements in the patched list.
+
+As of Kubernetes 1.7, Alpha support exists for explicitly specifying the ordering of elements in a during a Strategic Merge Patch.
+This can be done by providing a parallel list containing all of the patchMergeKeys of elements that need to be ordered.
+Any elements missing from the parallel list are guaranteed to appear after elements appearing in the parallel list.
+
+When patching Strategic Merge lists, kubectl apply sends a parallel list containing keys for each of the elements in the configuration file.
+
 #### List of Maps
 
 To override the container list to be strictly replaced, regardless of the
@@ -620,18 +630,82 @@ containers:
 Delete operation will delete the first entry in the list that match the merge key.
 But there is validation to make sure no 2 entries with the same merge key will get in the list.
 
+Here is an example:
+
+Suppose we define a list of environment variables and we call them
+the original environment variables:
+```yaml
+env:
+  - name: ENV1
+    value: foo
+  - name: ENV2
+    value: bar
+  - name: ENV3
+    value: baz
+```
+
+Then the server appends another environment variable:
+```yaml
+env:
+  - name: ENV1
+    value: foo
+  - name: ENV2
+    value: bar
+  - name: ENV3
+    value: baz
+  - name: ENV4
+    value: server-added
+```
+
+Then the user wants to change it from the original to the following using `kubectl apply`:
+```yaml
+env:
+  - name: ENV1
+    value: foo
+  - name: ENV2
+    value: bar
+  - name: ENV5
+    value: new-env
+```
+
+The patch will looks like:
+```yaml
+$preserveOrderList/env:
+  - name: ENV1
+  - name: ENV2
+  - name: ENV5
+env:
+  - name: ENV3
+    $patch: delete
+  - name: ENV5
+    value: new-env
+```
+
+After server applying the patch:
+```yaml
+env:
+  - name: ENV1
+    value: foo
+  - name: ENV2
+    value: bar
+  - name: ENV5
+    value: new-env
+  - name: ENV4
+    value: server-added
+```
+
 #### List of Primitives
 
 We have two patch strategies for lists of primitives: replace and merge.
 Replace is the default patch strategy, which will replace the whole list on update and it will preserve the order;
-while merge strategy works as an unordered set. In this section, we call a primitive list with merge strategy an unordered set.
+while merge strategy works as an ordered set. In this section, we call a primitive list with merge strategy an ordered set.
 The patch strategy is defined in the go struct tag of the API objects,
 e.g. `finalizers` uses `merge` as patch strategy.
 ```go
 Finalizers []string `json:"finalizers,omitempty" patchStrategy:"merge" protobuf:"bytes,14,rep,name=finalizers"`
 ```
 
-##### Unordered Set
+##### Ordered Set
 
 There are 3 operations: add, delete, replace.
 
@@ -644,12 +718,37 @@ finalizers:
   - c
 ```
 
-1) To add items in a set, we use the list name as the key.
-e.g. to add items "d" and "e" in the original finalizers, the patch will be:
+Then the server appended another item "d", the live config is:
 
 ```yaml
 finalizers:
+  - a
+  - b
+  - c
   - d
+```
+
+1) To add items in a set, we use the list name as the key.
+And a parallel list will be sent along with the patch list.
+e.g. the use adds an item "e" in the original finalizers, local config becomes
+
+```yaml
+finalizers:
+  - a
+  - b
+  - c
+  - e
+```
+
+The patch will be:
+
+```yaml
+$preserveOrderList/finalizers:
+  - a
+  - b
+  - c
+  - e
+finalizers:
   - e
 ```
 
@@ -660,17 +759,26 @@ finalizers:
   - a
   - b
   - c
-  - d
   - e
+  - d
 ```
 
 2) To delete items in a set, we use a parallel list with key: `$deleteFromPrimitiveList/\<keyOfPrimitiveList\>`.
-e.g. to delete items "b" and "c" from the original finalizers, the patch will be:
+e.g. the user deletes items "b" and "c" from the original finalizers, local config becomes:
+
+```yaml
+finalizers:
+  - a
+```
+
+the patch will be:
 
 ```yaml
 $deleteFromPrimitiveList/finalizers:
   - b
   - c
+$preserveOrderList/finalizers:
+  - a
 ```
 
 After applying the patch on the original finalizers, it will become:
@@ -678,16 +786,30 @@ After applying the patch on the original finalizers, it will become:
 ```yaml
 finalizers:
   - a
+  - d
 ```
 
 In an erroneous case, the set may be created with duplicates. Deleting an item that has duplicates will delete all matching items.
 
 3) Replace can be fulfilled by an addition and a deletion.
-e.g. to replace "a" with "x" in the original finalizers, the patch will be:
+e.g. the user replaces "a" with "x" in the original finalizers, the local config becomes:
+
+```yaml
+finalizers:
+  - x
+  - b
+  - c
+```
+
+the patch will be:
 
 ```yaml
 $deleteFromPrimitiveList/finalizers:
   - a
+$preserveOrderList/finalizers:
+  - x
+  - b
+  - c
 finalizers:
   - x
 ```
@@ -699,6 +821,7 @@ finalizers:
   - x
   - b
   - c
+  - d
 ```
 
 ### Map Operations
