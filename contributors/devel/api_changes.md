@@ -537,17 +537,19 @@ knows how to do deep-equality is through field-by-field bitwise comparisons.
 This is a problem for us.
 
 The first thing you should do is try not to do that. If you really can't avoid
-this, I'd like to introduce you to our `semantic DeepEqual` routine. It supports
-custom overrides for specific types - you can find that in `pkg/api/helpers.go`.
+this, I'd like to introduce you to our `apiequality.Semantic.DeepEqual` routine.
+It supports custom overrides for specific types - you can find that in
+`pkg/api/helper/helpers.go`.
 
 There's one other time when you might have to touch this: `unexported fields`.
 You see, while Go's `reflect` package is allowed to touch `unexported fields`,
-us mere mortals are not - this includes `semantic DeepEqual`. Fortunately, most
-of our API objects are "dumb structs" all the way down - all fields are exported
-(start with a capital letter) and there are no unexported fields. But sometimes
-you want to include an object in our API that does have unexported fields
-somewhere in it (for example, `time.Time` has unexported fields). If this hits
-you, you may have to touch the `semantic DeepEqual` customization functions.
+us mere mortals are not - this includes `apiequality.Semantic.DeepEqual`.
+Fortunately, most of our API objects are "dumb structs" all the way down - all
+fields are exported (start with a capital letter) and there are no unexported
+fields. But sometimes you want to include an object in our API that does have
+unexported fields somewhere in it (for example, `time.Time` has unexported fields).
+If this hits you, you may have to touch the `apiequality.Semantic.DeepEqual`
+customization functions.
 
 ## Implement your change
 
