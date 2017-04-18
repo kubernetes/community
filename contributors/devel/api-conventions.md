@@ -161,7 +161,7 @@ is independent of the specific resource schema.
 
    Two additional subresources, `proxy` and `portforward`, provide access to
 cluster resources as described in
-[accessing the cluster docs](https://kubernetes.io/docs/user-guide/accessing-the-cluster/).
+[accessing the cluster](https://kubernetes.io/docs/user-guide/accessing-the-cluster/).
 
 The standard REST verbs (defined below) MUST return singular JSON objects. Some
 API endpoints may deviate from the strict REST pattern and return resources that
