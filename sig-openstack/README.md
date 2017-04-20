@@ -10,11 +10,9 @@ to Kubernetes projects with OpenStack as:
 
 ## Meetings
 
-Meetings are held every second Wednesday. The meetings occur at
-1500 UTC or 2100 UTC, alternating.
-
-To check which time is being used for the upcoming meeting refer to the
-[Agenda/Notes](https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f).
+Meetings are held every second Wednesday at 1500 UTC. To check the date and
+agenda for the next meeting refer to the
+[Kubernetes-SIG-OpenStack Working Doc](https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f).
 
 Meeting reminders are also sent to the [kubernetes-sig-openstack](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack)
 list. Meetings are held on [Zoom](https://zoom.us) in the room at
