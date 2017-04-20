@@ -116,6 +116,13 @@ signal to the entry point of a container.
 1. pre-stop handlers will not contain complicated or long running business logic. 
 The logic associated with container cleanup will be executed by the container's
 entry point during the container's configured termination grace period.
+1. Termination reason is a general string that can be associated with an 
+ObjectMeta at that time of deletion. Currently, it only has semantic meaning 
+with respect to the graceful deletion of individual Pods. We do not, at this
+time, propose to implement controller assisted propagation of termination 
+reasons from one API object to another (e.g Setting a termination reason for 
+a ReplicaSet which the controller will then propagate to its Pods). Such
+considerations will be deferred to future work.
 
 ## Requirements
 
@@ -131,100 +138,99 @@ override the defaults.
 
 ## API Objects
 
-Termination reason is implemented by a string type.
+Termination reason is implemented as a generic string that can be associated 
+with the metadata of any object that supports graceful termination. Initially, 
+the reason will only be actionable with respect to Pods' containers, but this 
+generic delivery mechanism can be extended to other use cases.
 
-```golang
-// TerminationReason is a string type used to indicate the reason for 
-// termination to the preStop lifecycle hook of a Pod's containers.
-type TerminationReason string
-
-const (
-	// ReasonEviction is the default reason used to communicate that a Pod has 
- 	// been terminated due to an eviction.
-	ReasonEviction TerminationReason = "Eviction"
-	// ReasonIntolerableTaint is the default reason used to communicate that a Pod 
-	// has been terminated due to a taint for which it has no declared toleration.
-	ReasonIntolerableTaint = "IntolerableTaint"
-	// ReasonDecommissioned is the default reason sent by controllers to 
-	// indicate that a Pod has been terminated due to a horizontal scaling 
-	// event. Pods receiving this reason should not expect to be rescheduled.
-	ReasonDecommissioned = "Decommissioned"
-	// ReasonUpdate is the reason sent by a controller or User to indicate that 
-	// a Pod has been terminated for the purposes of a destructive update. Pods 
-	// receiving this signal should expect to be rescheduled immediately. Note
-	// that this DOES NOT imply that scheduling will succeed.
-	ReasonUpdate = "Update"
-)
-
-```
-
-DeleteOptions is modified to carry the termination reason.
+DeleteOptions is modified to carry a reason.
 
 ```golang
 type DeleteOptions struct {
 	// Other fields omitted for brevity.
 	
-	// Reason indicates the reason for the Pod's termination. This field may 
-	// be supplied by a user or a controller.
-	Reason *TerminationReason `json:"reason,omitempty"`
+	// Reason indicates the reason for the deletion of an API Object that 
+	// undergo graceful termination upon deletion.
+	Reason string `json:"reason,omitempty"`
 }
 ```
 
-The ObjectMeta struct is modified to carry the termination reason via 
-a Pod's Metadata.
+The ObjectMeta struct is modified to carry the deletion reason via 
+an Object's metadata.
 
 ```golang
 type ObjectMeta {
 	// Other fields omitted for brevity.
 	
-        // TerminationReason indicates the reason for the Pod's termination.
-        // This field may be supplied by a user or a controller.
-	TerminationReason *TerminationReason `json:"reason,omitempty"`
+    // DeletionReason indicates the reason for the deletion of an API Object. 
+    // Its purpose is to provide an extra generic signal to watchers of API 
+    // Objects during the graceful termination process. 
+	DeletionReason string `json:"reason,omitempty"`
 }
 ```
 
-TerminationReasonDelivery provides configuration delivery method of Lifecycle's 
-`PreStop` Handler.
+DeleteExecAction and DeleteHttpAction are introduced to provide users with 
+the ability to configure the environment variable or HTTP Header that will be 
+used to convey a termination reason signaled by a DeletionReason.
 
 ```golang
-// TerminationReasonDelivery is used to configure the delivery method for
-// termination reasons. It is a union type, and exactly one of the fields may be
-// non-nil. The Env field is compatible with command preStop lifecycle hooks,
-// and the Header field is compatible with HTTP GET hooks.
-type TerminationReasonDelivery struct {
-    // Env is the name of the environment variable that will be set with the 
-    // termination reason. Env must only be set when used with a command 
-    // Action, and it must be a valid environment variable name.
-    Env *string `json:"env,ommitempty"`
-    // Header is the name of the header that will be set to the termination 
-    // reason. It must only be set when used with a HTTP GET Action.
-    Header *string `json:"header,ommitempty"`
+// DeleteExecAction describes a "run in container" action that will be invoked
+// invoked inside of a container prior to sending the TERM signal to the 
+// container's entry point.
+type DeleteExecAction struct {
+	// Command is the command line to execute inside the container, the working directory for the
+	// command  is root ('/') in the container's filesystem.  The command is simply exec'd, it is
+	// not run inside a shell, so traditional shell instructions ('|', etc) won't work.  To use
+	// a shell, you need to explicitly call out to that shell.
+	// +optional
+	Command []string
+	
+	// ReasonEnv is the environment variable that wil be populated with the 
+	// reason, if provided, for the Pod's termination. This variable defaults
+	// to "KUBE_DELETE_REASON"
+	ReasonEnv string
 }
 
-const ( 
-    // DefaultTerminationReasonEnv is the default environment variable that 
-    // is used to communicate a termination reason to a command Action.
-    DefaultTerminationReasonEnv string = "KUBE_POD_TERM_REASON"
-    // DefaultTerminationReasonHeader is the default header used to communicate
-    // a termination reason to a HTTP GET Action.
-    DefaultTerminationReasonHeader string = "KUBE-POD-TERM-REASON"
-)
+// DeleteHTTPGetAction describes an action to take upon deletion based on HTTP 
+// Get requests.
+type DeleteHTTPGetAction struct {
+	// Optional: Path to access on the HTTP server.
+	// +optional
+	Path string
+	// Required: Name or number of the port to access on the container.
+	// +optional
+	Port intstr.IntOrString
+	// Optional: Host name to connect to, defaults to the pod IP. You
+	// probably want to set "Host" in httpHeaders instead.
+	// +optional
+	Host string
+	// Optional: Scheme to use for connecting to the host, defaults to HTTP.
+	// +optional
+	Scheme URIScheme
+	// Optional: Custom headers to set in the request. HTTP allows repeated headers.
+	// +optional
+	HTTPHeaders []HTTPHeader
+	// ReasonHeader is the header that will be set to the reason for a 
+	// deletion. This header defaults to "KUBE-DELETE-REASON"
+	ReasonHeader string
+}
 ```
 
-PreStopHandler is introduced to aggregate Handler and TerminationReasonDelivery.
+PreStopHandler is introduced to specialize the current Handler implementation 
+to provide a termination reason during the execution of Lifecycle's PreStop 
+handler.
 
 ```golang
-// PreStopHandler aggregates Handler and a TerminationReasonDelivery to allow 
-// for configuration of the delivery method for a termination reason consumed 
-// by the hook.
+// PreStopHandler invokes either a DeleteExecAction or a DeleteHTTPGetAction 
+// prior to the graceful termination of a Pod.
 type PreStopHandler struct {
-    Handler
-    // ReasonDelivery provides configuration for the delivery of a termination 
-    // reason to the PreStopHandler. If nil, the termination reason will be 
-    // delivered to the preStop lifecycle hook by setting the
-    // KUBE_POD_TERM_REASON environment variable to the value of the termination
-    // reason.
-    ReasonDelivery *TerminationReasonDelivery `json:"reasonDelivery,ommitempty"`
+   	// One and only one of the following should be specified.
+   	// Exec specifies the action to take.
+   	// +optional
+   	Exec *DeleteExecAction
+   	// HTTPGet specifies the http request to perform.
+   	// +optional
+   	HTTPGet *DeleteHTTPGetAction
 }
 ```
 
@@ -239,99 +245,67 @@ type Lifecycle struct {
 ```
 
 ## API Server 
-During its graceful delete processing, When a termination reason is specified 
-via DeleteOptions, the API server will include the reason in the 
-Pod's metadata when setting the Pod's `DeletionTimestamp`.
+The API Server is responsible for validation and reason propagation from the 
+initiating request to the ObjectMeta corresponding to the request's subject.
 
-### Validation
 In addition to the existing validation performed for the Lifecycle struct, the 
 API Server should fail validation if `PreStop` is not nil, and if one of the 
 following are true.
 
-1. `PreStop` indicates a command action and `.ReasonDelivery.Header` is not nil.
-1. `PreStop` indicates a HTTP GET action and `.ReasonDelivery.Env` is not nil.
-1. Both `.ReasonDelivery.Header` and `.ReasonDelivery.Env` are not nil.
-1. `.ReasonDelivery.Env` is not nil and it points to string that is not a 
-valid environment variable.
+1. Both the `PreStop's` `Exec` and `HTTPGet` are nil. 
+1. Both the `PreStop's` `Exec` and `HTTPGet` are not nil.
 
-### Pod Deletion
+Validation for DeleteExecAction and DeleteHTTPGetAction is analogous to the 
+validation performed for ExecAction and HTTPGetAction with the following 
+exceptions.
+
+1. A DeleteExecAction's `ReasonEnv` must be a valid Linux environment variable 
+name.
+1. A DeleteHTTPGetAction's `ReasonHeader` must be a valid HTTP header name.
+
 When the API Server performs its graceful delete processing, in addition to 
 setting the `DeletionTimestamp` of the subject ObjectMeta, if the DeleteOptions 
-contains a `Reason`, the `Reason` should be copied to the `TerminationReason` 
+contains a `Reason`, the `Reason` should be copied to the `DeletionReason` 
 field of the ObjectMeta.
 
 ## Kubelet
 Kubelet will supply a termination reason via a configured pre-stop lifecycle 
 hook under the following conditions.
 
-1. The Pod has been explicitly deleted with a supplied `TerminationReason`.
-1. The Pod is the target of an eviction.
-1. The Pod is being terminated due to an intolerable taint.
+1. The Pod has been explicitly deleted with a supplied `DeletionReason`.
+1. The Pod is evicted due to memory pressure, disk pressure, or an intolerable 
+taint.
 
-In all cases Kubelet will deliver the termination reason to a container 
-with a declared `PreStop` handler in accordance with the configuration of its 
-`ReasonDelivery`.
+In both cases Kubelet will deliver a termination reason to containers with a 
+declared `PreStop` handler. If the termination is due to an eviction, as 
+described above, Kubelet will supply a termination reason of "Eviction".
 
 ### Termination Reason Delivery
 
-When Kublet processes the `PreStop` Handlers of a Pod's containers, prior to 
+When Kubelet processes the `PreStop` Handlers of a Pod's containers, prior to 
 sending a `TERM` signal and starting the termination grace timer, if a 
 termination reason is to be delivered, Kubelet will do the following.
 
-1. If the `PreStop` handler indicates a command action, Kubelet will supply the 
-termination reason to the container based on the following criteria.
-   1. If the `ReasonDelivery` is nil Kubelet will set the 
-   `DefaultTerminationReasonEnv` to the value of the termination reason. This 
-   is the default method of delivery for a command action pre-stop handler.
-   1. If the `Env` field of the `TerminationReasonDelivery` is not nil, Kubelet 
-   will set the environment variable indicated by this field to the value of 
-   the termination reason.
-   1. If none of the above criteria are met, then the pre-stop handler is 
-   malformed, and API Server [validation](#validation) has failed to reject 
-   its creation or update. In this case, Kubelet will log an error and deliver 
-   the termination reason via the default method specified above.
-1. If the `PreStop` handler indicates a HTTP GET action, Kublet will supply the 
-termination reason to the specified endpoint based on the following criteria.
-   1. If the `ReasonDelivery` is nil Kubelet will set the header indicated by 
-   `DefaultTerminationReasonHeader` to the value of the termination reason. This 
-   is the default method of delivery for HTTP GET pre-stop handlers.
-   1. If `ReasonDelivery` is not nil, and if its `Header` field 
-   is not nil, Kubelet will add a header, whose name is indicated by the value 
-   of this field and whose value is the termination reason, to the HTTP GET 
-   request, prior to sending the request.
-   1. If none of the above criteria are met, then the pre-stop handler is 
-   malformed, and API Server [validation](#validation) has failed. In this case,
-   Kubelet will log an error and deliver the termination reason via the default
-   header specified above.
+1. If the `PreStop` handler indicates a DeleteExecAction, Kubelet will set the 
+configured environment variable to the value of the reason prior to execution of 
+the handler.
 
-### Pod Deletion 
-
-When Kubelet finds that a Pod's `DeletionTimestamp` is set, during its 
-termination processing, if a `TerminationReason` has been set, it will 
-[deliver the termination reason](#termination-reason-delivery).
-
-### Pod Eviction
-
-When Kubelet targets a Pod for eviction, it will 
-[deliver a termination reason](#termination-reason-delivery) of 
-`ReasonEviction`.
-
-### Intolerable Taints
-
-When Kubelet evicts a Pod due to an intolerable taint, it will 
-[delivery a termination reason](#termination-reason-delivery) of 
-`ReasonIntolerableTaint`.
+1. If the `PreStop` handler indicates a DeleteHTTPGetAction, Kubelet will supply 
+the termination reason to the specified endpoint by setting the configured 
+header to the value of the reason prior to execution of the handler.
 
 ## Kubectl
 Kubectl will use the `--reason` parameter to allow users to pass a arbitrary 
-string as the termination reason as shown below.
+string as the termination reason as shown below. This parameter is applicable to 
+both the `delete` and `drain` verbs.
 
 ```shell
  > kubectl delete po my-pod --reason="resolve issue 354961"
 ```
 
 Kubectl will simply populate the `Reason` field of the DeleteOptions for the 
-DELETE request with the supplied reason.
+relevant request with the supplied reason.
+
 
 ## Tests
 - A termination reason can be delivered to a command action via an environment 
@@ -339,7 +313,5 @@ variable
 - A termination reason can be delivered to a command action via a flag.
 - A termination reason can be delivered to a HTTP GET action via a header.
 - A termination reason is delivered during Pod eviction.
-- A termination reason is delivered when a Pod is evicted due to an intolerable 
-taint.
 - A termination reason is delivered when provided by kubectl.
 
