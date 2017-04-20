@@ -59,23 +59,13 @@ Merging a PR requires the following steps to be completed before the PR will be 
 - Update the `release-note-label-needed` label
 - Pass all e2e tests
 - Get a `LGTM` from a reviewer
+- Get approval from an owner
 
 ## Update the Release Note Label (and Write Release Notes if Needed)
 
-Add release notes to any PR with user-visible changes, such as bug-fixes, feature additions, and output format changes.
+Release notes are required for any PR with user-visible changes, such as bug-fixes, feature additions, and output format changes.
 
-The `release-note-label-needed` label is added to your PR automatically when you create it. There are a few ways to update it.
-
-**Labels**
-
-1. All pull requests are initiated with a `release-note-label-needed` label
-1. Remove the `release-note-label-needed` label and replace it with one of the other `release-note-*` labels:
-    1. `release-note-none` is a valid option if the PR does not need to be mentioned at release time
-    1. `release-note` labeled PRs generate a release note using the PR title by default OR the release-note block in the PR template, if it's filled in
-
-**Comments**
-
-Or, commenting either `/release-note` or `/release-note-none` will also set the `release-note` or `release-note-none` labels respectively.
+If you don't add release notes in the PR template the `release-note-label-needed` label is added to your PR automatically when you create it. There are a few ways to update it.
 
 **Descriptions**
 
@@ -108,6 +98,18 @@ $ $RELNOTES --branch=master
 
 Release notes apply to PRs on the master branch. For cherry-pick PRs, see the [cherry-pick instructions](cherry-picks.md). The only exception to these rules is when a PR is not a cherry-pick and is targeted directly to the non-master branch.  In this case, a `release-note-*` label is required for that non-master PR.
 
+**Labels**
+
+1. All pull requests are initiated with a `release-note-label-needed` label if you don't specify them in your original PR. If you are a new contributor you won't have access to modify labels, instead leave a comment as instructed below or ask in your original PR. 
+
+1. Remove the `release-note-label-needed` label and replace it with one of the other `release-note-*` labels:
+    1. `release-note-none` is a valid option if the PR does not need to be mentioned at release time
+    1. `release-note` labeled PRs generate a release note using the PR title by default OR the release-note block in the PR template, if it's filled in
+    
+**Comments**
+
+Or, commenting either `/release-note` or `/release-note-none` will also set the `release-note` or `release-note-none` labels respectively.
+
 Now that your release notes are in shape, let's look at how the PR gets tested and merged.
 
 ## The Testing and Merge Workflow
@@ -119,29 +121,29 @@ Here's the process the PR goes through on its way from submission to merging.
 1. Make the pull request
 1. mergebot assigns a reviewer
 
-If you're **not** in the whitelist:
+If you're **not** a member:
 
 1. Reviewer suggests edits
 1. Push edits to your PR branch
 1. Repeat the prior two steps as needed
-1. Once all comments have been addressed, squash the commits
-1. Reviewer adds the labels `lgtm` and `ok-to-merge` which triggers the final tests and merge process (this can be done with the command `/lgtm`), or, if they are a whitelisted contributor, can add the comment `@k8s-bot ok to test` which triggers the intermediate tests
+1. (Optional) Some reviewers prefer that you squash commits at this step. 
+1. Reviewer adds the labels `lgtm` and `ok-to-merge` which triggers the final tests and merge process (this can be done with the command `/lgtm`), or, if they are a member, can add the comment `@k8s-bot ok to test` which triggers the intermediate tests
 
-If you are in the whitelist, or a whitelisted contributor comments `@k8s-bot ok to test`, the intermediate tests will run:
+If you are in the not a member, or a member comments `@k8s-bot ok to test`, the intermediate tests will run:
 
 1. Automatic tests run
     1. travis (go build/fmt and generated docs)
     1. Jenkins GCE e2e (minimal e2e suite on GCE)
     1. Jenkins unit/integration (unit and local cluster tests)
 1. If tests fail, resolve issues by pushing edits to your PR branch
-1. If the failure is a flake, a whitelisted contributor can comment `@k8s-bot [e2e|unit] test this issue: #<flake issue>`
+1. If the failure is a flake, a member can comment `@k8s-bot [e2e|unit] test this issue: #<flake issue>`
 
 Once the tests pass, all failures are commented as flakes, or the reviewer adds the labels `lgtm` and `ok-to-merge`, the PR enters the final merge queue. The merge queue is needed to make sure no incompatible changes have been introduced by other PRs since the tests were last run on your PR.
 
 1. The PR enters the merge queue ([http://submit-queue.k8s.io](http://submit-queue.k8s.io))
 1. The merge queue triggers a test re-run with the comment `@k8s-bot test this`
 1. If tests fail, resolve issues by pushing edits to your PR branch
-1. If the failure is a flake, a whitelisted contributor can comment `@k8s-bot [e2e|unit] test this issue: #<flake issue>`
+1. If the failure is a flake, a member can comment `@k8s-bot [e2e|unit] test this issue: #<flake issue>`
 1. If tests pass, the merge queue automatically merges the PR
 
 That's the last step. Your PR is now merged.
@@ -154,11 +156,11 @@ Include all the stuff from the pull-request-commands.md doc here
 
 ## Comment Commands Reference
 
-Refer to the comment commands [in the commands doc](https://github.com/kubernetes/test-infra/blob/master/prow/commands.md).
+Refer to the comment commands [in the commands doc](https://github.com/kubernetes/test-infra/blob/master/commands.md).
 
 ## Automation
 
-We use a variety of automation to manage pull requests.  This automation is described in detail [in the automatiion doc](automation.md).
+We use a variety of automation to manage pull requests.  This automation is described in detail [in the automation doc](automation.md).
 
 ## How the e2e Tests Work
 
@@ -202,9 +204,11 @@ things you can do to move the process along:
 
    * Ping the assignee (@username) on the PR comment stream, and ask for an estimate of when they can get to the review.
 
+   * Ping the assigned on [Slack](http://slack.kubernetes.io). Remember that a person's github username might not be the same as their Slack username. 
+
    * Ping the assignee by email (many of us have publicly available email addresses, or are the same as our GitHub handle @google.com or @redhat.com).
 
-   * Ping the [team](https://github.com/orgs/kubernetes/teams) (via @team-name) that works in the area you're submitting code.
+   * If you're a member of the organization ping the [team](https://github.com/orgs/kubernetes/teams) (via @team-name) that works in the area you're submitting code.
 
    * If you have fixed all the issues from a review, and you haven't heard back, you should ping the assignee on the comment stream with a "please take another look" (`PTAL`) or similar comment indicating that you are ready for another review.
 
@@ -234,6 +238,7 @@ Are you sure Feature-X is something the Kubernetes team wants or will accept? Is
 It's better to get confirmation beforehand. There are two ways to do this:
 
 - Make a proposal doc (in docs/proposals; for example [the QoS proposal](http://prs.k8s.io/11713))
+- Coordinate your effort with [SIG Docs](https://github.com/kubernetes/community/tree/master/sig-docs) ahead of time. 
 - Make a sketch PR (e.g., just the API or Go interface) Write or code up just enough to express the idea and the design and why you made those choices.
 
 Or, do both.
@@ -329,7 +334,7 @@ Sometimes we need to remind each other of core tenets of software design - Keep 
 
 ## 8. It's OK to Push Back
 
-Sometimes reviewers make mistakes. It's OK to push back on changes your reviewer requested. If you have a good reason for doing something a certain way, you are absolutely allowed to debate the merits of a requested change.
+Sometimes reviewers make mistakes. It's OK to push back on changes your reviewer requested. If you have a good reason for doing something a certain way, you are absolutely allowed to debate the merits of a requested change. Both the reviewer and reviwee should strive to discuss these issues in a polite and respectful manner. 
 
 You might be overruled, but you might also prevail. We're pretty reasonable people. Mostly.
 
