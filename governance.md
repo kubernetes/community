@@ -186,13 +186,7 @@ In order to standardize Special Interest Group efforts, create maximum transpare
 * Participate in release planning meetings and retrospectives, and burndown meetings, as needed
 * Ensure related work happens in a project-owned github org and repository, with code and tests explicitly owned and supported by the SIG, including issue triage, PR reviews, test-failure response, bug fixes, etc. 
 * Use the above forums as the primary means of working, communicating, and collaborating, as opposed to private emails and meetings
-* Represent the SIG for the PM group:
- * identify all features in the current release from the SIG
- * track all features (in the repo with all the fields complete)
- * attend your SIG meetings
- * attend the PM group meetings which occur 3-5 times per release
- * identify the annual roadmap
- * advise their SIG as needed
+* Represent the SIG for the PM group - see [PM SIG representatives](https://github.com/kubernetes/community/blob/master/sig-pm/SIG%20PM%20representatives.md).
 
 # CLA
 

@@ -25,6 +25,7 @@ Updated: 5/3/2016
     - [Local clusters](#local-clusters)
       - [Testing against local clusters](#testing-against-local-clusters)
     - [Version-skewed and upgrade testing](#version-skewed-and-upgrade-testing)
+      - [Test jobs naming convention](#test-jobs-naming-convention)
   - [Kinds of tests](#kinds-of-tests)
     - [Viper configuration and hierarchichal test parameters.](#viper-configuration-and-hierarchichal-test-parameters)
     - [Conformance tests](#conformance-tests)
@@ -67,7 +68,7 @@ looking to execute or add tests using a local development environment.
 Before writing new tests or making substantive changes to existing tests, you
 should also read [Writing Good e2e Tests](writing-good-e2e-tests.md)
 
-## Building and Running the Tests
+## Building Kubernetes and Running the Tests
 
 There are a variety of ways to run e2e tests, but we aim to decrease the number
 of ways to run e2e tests to a canonical way: `hack/e2e.go`.
@@ -103,10 +104,10 @@ go run hack/e2e.go -- -v --test --test_args="--ginkgo.focus=\[Feature:Performanc
 go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=Pods.*env"
 
 # Run tests in parallel, skip any that must be run serially
-GINKGO_PARALLEL=y go run hack/e2e.go --v --test --test_args="--ginkgo.skip=\[Serial\]"
+GINKGO_PARALLEL=y go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=\[Serial\]"
 
 # Run tests in parallel, skip any that must be run serially and keep the test namespace if test failed
-GINKGO_PARALLEL=y go run hack/e2e.go --v --test --test_args="--ginkgo.skip=\[Serial\] --delete-namespace-on-failure=false"
+GINKGO_PARALLEL=y go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=\[Serial\] --delete-namespace-on-failure=false"
 
 # Flags can be combined, and their actions will take place in this order:
 # --build, --up, --test, --down
@@ -137,6 +138,14 @@ with this command:
 ```sh
 go run hack/e2e.go -- -v --down
 ```
+
+## Building the Tests
+
+* You can quickly recompile the e2e testing framework via `go install ./test/e2e`.
+  This will not do anything besides allow you to verify that the go code compiles.
+
+* If you want to run your e2e testing framework without re-provisioning the e2e setup,
+  you can do so via `make WHAT=test/e2e/e2e.test` and then re-running the ginkgo tests.
 
 ## Advanced testing
 
@@ -209,6 +218,8 @@ if any specs are pending.
 --ginkgo.focus="": If set, ginkgo will only run specs that match this regular
 expression.
 
+--ginkgo.noColor="n": If set to "y", ginkgo will not use color in the output
+
 --ginkgo.skip="": If set, ginkgo will only run specs that do not match this
 regular expression.
 
@@ -252,6 +263,18 @@ to periodically perform some manual cleanup:
 stale permissions can cause problems.
 
   - `sudo iptables -F`, clear ip tables rules left by the kube-proxy.
+
+### Reproducing failures in flaky tests
+You can run a test repeatedly until it fails. This is useful when debugging
+flaky tests. In order to do so, you need to set the following environment
+variable:
+```sh
+$ export GINKGO_UNTIL_IT_FAILS=true
+```
+
+After setting the environment variable, you can run the tests as before. The e2e
+script adds `--untilItFails=true` to ginkgo args if the environment variable is
+set. The flags asks ginkgo to run the test repeatedly until it fails.
 
 ### Federation e2e tests
 
@@ -350,21 +373,15 @@ $ go run hack/e2e.go -- -v --down
 
 #### Shortcuts for test developers
 
-* To speed up `e2e.go -up`, provision a single-node kubernetes cluster in a single e2e zone:
+* To speed up `--up`, provision a single-node kubernetes cluster in a single e2e zone:
 
   `NUM_NODES=1 E2E_ZONES="us-central1-f"`
 
   Keep in mind that some tests may require multiple underlying clusters and/or minimum compute resource availability.
 
-* You can quickly recompile the e2e testing framework via `go install ./test/e2e`. This will not do anything besides
-  allow you to verify that the go code compiles.
-
-* If you want to run your e2e testing framework without re-provisioning the e2e setup, you can do so via
-  `make WHAT=test/e2e/e2e.test` and then re-running the ginkgo tests.
-
 * If you're hacking around with the federation control plane deployment itself,
   you can quickly re-deploy the federation control plane Kubernetes manifests without tearing any resources down.
-  To re-deploy the federation control plane after running `-up` for the first time:
+  To re-deploy the federation control plane after running `--up` for the first time:
 
   ```sh
   $ federation/cluster/federation-up.sh
@@ -413,7 +430,7 @@ at a custom host directly:
 
 ```sh
 export KUBECONFIG=/path/to/kubeconfig
-export KUBE_MASTER_IP="http://127.0.0.1:<PORT>"
+export KUBE_MASTER_IP="127.0.0.1:<PORT>"
 export KUBE_MASTER=local
 go run hack/e2e.go -- -v --test
 ```
@@ -440,7 +457,7 @@ similarly enough to older versions.  The general strategy is to cover the follow
    same version (e.g. a cluster upgraded to v1.3 passes the same v1.3 tests as
    a newly-created v1.3 cluster).
 
-[hack/e2e-runner.sh](http://releases.k8s.io/HEAD/hack/jenkins/e2e-runner.sh) is
+[hack/e2e-runner.sh](https://github.com/kubernetes/test-infra/blob/master/jenkins/e2e-image/e2e-runner.sh) is
 the authoritative source on how to run version-skewed tests, but below is a
 quick-and-dirty tutorial.
 
@@ -487,6 +504,39 @@ go run ./hack/e2e.go -- -v --test --test_args="--kubectl-path=$(pwd)/../kubernet
 cd ../kubernetes_old
 go run ./hack/e2e.go -- -v --test --test_args="--kubectl-path=$(pwd)/../kubernetes/cluster/kubectl.sh"
 ```
+
+#### Test jobs naming convention
+
+**Version skew tests** are named as
+`<cloud-provider>-<master&node-version>-<kubectl-version>-<image-name>-kubectl-skew`
+e.g: `gke-1.5-1.6-cvm-kubectl-skew` means cloud provider is GKE;
+master and nodes are built from `release-1.5` branch;
+`kubectl` is built from `release-1.6` branch;
+image name is cvm (container_vm).
+The test suite is always the older one in version skew tests. e.g. from release-1.5 in this case.
+
+**Upgrade tests**:
+
+If a test job name ends with `upgrade-cluster`, it means we first upgrade
+the cluster (i.e. master and nodes) and then run the old test suite with new kubectl.
+
+If a test job name ends with `upgrade-cluster-new`, it means we first upgrade
+the cluster (i.e. master and nodes) and then run the new test suite with new kubectl.
+
+If a test job name ends with `upgrade-master`, it means we first upgrade
+the master and keep the nodes in old version and then run the old test suite with new kubectl.
+
+There are some examples in the table,
+where `->` means upgrading; container_vm (cvm) and gci are image names.
+
+| test name | test suite | master version (image) | node version (image) | kubectl
+| --------- | :--------: | :----: | :---:| :---:
+| gce-1.5-1.6-upgrade-cluster | 1.5 | 1.5->1.6 | 1.5->1.6 | 1.6
+| gce-1.5-1.6-upgrade-cluster-new | 1.6 | 1.5->1.6 | 1.5->1.6 | 1.6
+| gce-1.5-1.6-upgrade-master | 1.5 | 1.5->1.6 | 1.5 | 1.6
+| gke-container_vm-1.5-container_vm-1.6-upgrade-cluster | 1.5 | 1.5->1.6 (cvm) | 1.5->1.6 (cvm) | 1.6
+| gke-gci-1.5-container_vm-1.6-upgrade-cluster-new | 1.6 | 1.5->1.6 (gci) | 1.5->1.6 (cvm) | 1.6
+| gke-gci-1.5-container_vm-1.6-upgrade-master | 1.5 | 1.5->1.6 (gci) | 1.5 (cvm) | 1.6
 
 ## Kinds of tests
 

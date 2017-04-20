@@ -113,6 +113,8 @@ pre-requisites are being merged at a reasonable rate:
 
 * When the build is broken, roll back the PRs responsible ASAP
 
+* If the build job itself fails, Jenkins will not try again automatically and everything will halt.  You can trigger one at http://kubekins.mtv.corp.google.com/job/ci-kubernetes-build/#.  Click `log in`, then click `Build Now` in the left margin.
+
 * When E2E tests are unstable, a "merge freeze" may be instituted. During a
 merge freeze:
 

@@ -11,12 +11,12 @@ Meeting Time: Thursday @ 1 PT (so we can end the week with Ops)
 
 Co-leaders
 * Rob Hirschfeld (@zehicle, rob@rackn.com)
-* Mike Danese (@mikedanese)
+* Jason Singer DuMars (@jaydumars)
 
 Mission
 -------
 
-SIG Cluster Ops Mission is to promote operability and interoperability of Kubernetes clusters.  We focus on shared operations practices for Kubernetes clusters with a goal to make kubernetes broadly accessible with a common baseline reference.  We also organize operators as a sounding board and advocacy group.
+SIG Cluster Ops Mission is to promote operability and interoperability of Kubernetes clusters.  We focus on shared operations practices for Kubernetes clusters with a goal to make Kubernetes broadly accessible with a common baseline reference.  We also organize operators as a sounding board and advocacy group.
 
 
-[Hangouts](https://plus.google.com/hangouts/_/google.com/sig-cluster-ops), every Thursday at 1PM PST
+[Zoom](https://zoom.us/j/297937771), Biweekly Thursday at 1PM PST

@@ -47,13 +47,13 @@ AppArmor can enable users to run a more secure deployment, and / or provide bett
 monitoring of their systems. Although it is not the only solution, we should enable AppArmor for
 users that want a simpler alternative to SELinux, or are already maintaining a set of AppArmor
 profiles. We have heard from multiple Kubernetes users already that AppArmor support is important to
-them. The [seccomp proposal](../../docs/design/seccomp.md#use-cases) details several use cases that
+them. The [seccomp proposal](seccomp.md#use-cases) details several use cases that
 also apply to AppArmor.
 
 ## Related work
 
 Much of this design is drawn from the work already done to support seccomp profiles in Kubernetes,
-which is outlined in the [seccomp design doc](../../docs/design/seccomp.md). The designs should be
+which is outlined in the [seccomp design doc](seccomp.md). The designs should be
 kept close to apply lessons learned, and reduce cognitive and maintenance overhead.
 
 Docker has supported AppArmor profiles since version 1.3, and maintains a default profile which is
@@ -67,7 +67,7 @@ and is supported on several
 # Alpha Design
 
 This section describes the proposed design for
-[alpha-level](../../docs/devel/api_changes.md#alpha-beta-and-stable-versions) support, although
+[alpha-level](../devel/api_changes.md#alpha-beta-and-stable-versions) support, although
 additional features are described in [future work](#future-work). For AppArmor alpha support
 (targeted for Kubernetes 1.4) we will enable:
 
@@ -122,7 +122,7 @@ is a key matching the container, and a profile name value:
 container.apparmor.security.alpha.kubernetes.io/<container_name>=<profile_name>
 ```
 
-The profiles can be specified in the following formats (following the convention used by [seccomp](../../docs/design/seccomp.md#api-changes)):
+The profiles can be specified in the following formats (following the convention used by [seccomp](seccomp.md#api-changes)):
 
 1. `runtime/default` - Applies the default profile for the runtime. For docker, the profile is
    generated from a template
@@ -292,7 +292,7 @@ documentation for following this process in a Kubernetes environment.
 # Appendix
 
 - [What is AppArmor](https://askubuntu.com/questions/236381/what-is-apparmor)
-- [Debugging AppArmor on Docker](https://github.com/docker/docker/blob/master/docs/security/apparmor.md#debug-apparmor)
+- [Debugging AppArmor on Docker](https://github.com/docker/labs/blob/master/security/apparmor/README.md)
 - Load an AppArmor profile with `apparmor_parser` (required by Docker so it should be available):
 
   ```

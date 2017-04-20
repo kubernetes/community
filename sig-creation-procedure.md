@@ -1,8 +1,10 @@
-### SIG creation procedure
+## SIG creation procedure
+
+### Prerequisites
 
 * Propose the new SIG publicly, including a brief mission statement, by emailing kubernetes-dev@googlegroups.com and kubernetes-users@googlegroups.com, then wait a couple of days for feedback
 * Ask a repo maintainer to create a github label, if one doesn't already exist: sig/foo
-* Request a new [kubernetes.slack.com](http://kubernetes.slack.com) channel (#sig-foo) from @sarahnovotny.  New users can join at [slack.kubernetes.io](http://slack.kubernetes.io).
+* Request a new [kubernetes.slack.com](http://kubernetes.slack.com) channel (#sig-foo) from **@sarahnovotny**.  New users can join at [slack.kubernetes.io](http://slack.kubernetes.io).
 * Slack activity is archived at [kubernetes.slackarchive.io](http://kubernetes.slackarchive.io).  To start archiving a new channel invite the slackarchive bot to the channel via `/invite @slackarchive`
 * Organize video meetings as needed. No need to wait for the [Weekly Community Video Conference](community/README.md) to discuss. Please report summary of SIG activities there.
  * Request a Zoom account from @sarahnovotny if you expect more than 30 attendees or attendees from China.
@@ -10,6 +12,12 @@
 * Use existing proposal and PR process (to be documented)
 * Announce new SIG on kubernetes-dev@googlegroups.com 
 * Submit a PR to add a row for the SIG to the table in the kubernetes/community README.md file, to create a kubernetes/community directory, and to add any SIG-related docs, schedules, roadmaps, etc. to your new kubernetes/community/SIG-foo directory.
+
+### **Creating service accounts for the SIG**
+
+With a purpose to distribute the channels of notification and discussion of the variuos topics, every SIG has to use multiple accounts to GitHub mentioning and notifications. Below the procedure is explained step-by-step.
+
+NOTE: This procedure is managed and maintained by **[@idvoretskyi](https://github.com/idvoretskyi)**; please, reach him directly in case of any questions/suggestions.
 
 #### **Google Groups creation**
 
@@ -47,7 +55,7 @@ Example:
 
 Create the GitHub users at [https://github.com/join](https://github.com/join), using the name convention below.
 
-As an e-mail address, please, use the Google Group e-mail address of the respective Google Group, created before (i.e. - for user ‘k8s-mirror-foo-misc’ use ‘[kubernetes-sig-foo-misc@googlegroups.com](mailto:kubernetes-sig-foo-misc@googlegroups.com)’). After creating the GitHub users, please, request @idvoretskyi (backup person - @sarahnovotny) to add these users to the Kubernetes organization. If github contacts you about having too many robot accounts, please let us know. 
+As an e-mail address, please, use the Google Group e-mail address of the respective Google Group, created before (i.e. - for user ‘k8s-mirror-foo-misc’ use ‘[kubernetes-sig-foo-misc@googlegroups.com](mailto:kubernetes-sig-foo-misc@googlegroups.com)’). After creating the GitHub users, please, add these users to the Kubernetes organization. If you don't have enought permissions to do that (by default, you don't), please request **@idvoretskyi** (backup person - **@sarahnovotny**) to help you with this. If GitHub contacts you about having too many robot accounts, please let us know. 
 
 
 Name convention:

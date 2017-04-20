@@ -26,11 +26,6 @@ An introduction to using resources with kubectl can be found in [the object mana
   - [Verbs on Resources](#verbs-on-resources)
     - [PATCH operations](#patch-operations)
       - [Strategic Merge Patch](#strategic-merge-patch)
-    - [List Operations](#list-operations)
-      - [List of Maps](#list-of-maps)
-      - [List of Primitives](#list-of-primitives)
-        - [Unordered Set](#unordered-set)
-    - [Map Operations](#map-operations)
   - [Idempotency](#idempotency)
   - [Optional vs. Required](#optional-vs-required)
   - [Defaulting](#defaulting)
@@ -555,172 +550,7 @@ below.
 
 #### Strategic Merge Patch
 
-In the standard JSON merge patch, JSON objects are always merged but lists are
-always replaced. Often that isn't what we want. Let's say we start with the
-following Pod:
-
-```yaml
-spec:
-  containers:
-    - name: nginx
-      image: nginx-1.0
-```
-
-...and we POST that to the server (as JSON). Then let's say we want to *add* a
-container to this Pod.
-
-```yaml
-PATCH /api/v1/namespaces/default/pods/pod-name
-spec:
-  containers:
-    - name: log-tailer
-      image: log-tailer-1.0
-```
-
-If we were to use standard Merge Patch, the entire container list would be
-replaced with the single log-tailer container. However, our intent is for the
-container lists to merge together based on the `name` field.
-
-To solve this problem, Strategic Merge Patch uses the go struct tag of the API
-objects to determine what lists should be merged and which ones should not.
-Currently the metadata is available as struct tags on the API objects
-themselves, but will become available to clients as Swagger annotations in the
-future. In the above example, the `patchStrategy` metadata for the `containers`
-field would be `merge` and the `patchMergeKey` would be `name`.
-
-Note: If the patch results in merging two lists of primitives, the primitives are
-first deduplicated and then merged.
-
-Strategic Merge Patch also supports special operations as listed below.
-
-### List Operations
-
-#### List of Maps
-
-To override the container list to be strictly replaced, regardless of the
-default:
-
-```yaml
-containers:
-  - name: nginx
-    image: nginx-1.0
-  - $patch: replace   # any further $patch operations nested in this list will be ignored
-```
-
-To delete an element of a list that should be merged:
-
-```yaml
-containers:
-  - name: nginx
-    image: nginx-1.0
-  - $patch: delete
-    name: log-tailer  # merge key and value goes here
-```
-
-Delete operation will delete the first entry in the list that match the merge key.
-But there is validation to make sure no 2 entries with the same merge key will get in the list.
-
-#### List of Primitives
-
-We have two patch strategies for lists of primitives: replace and merge.
-Replace is the default patch strategy, which will replace the whole list on update and it will preserve the order;
-while merge strategy works as an unordered set. In this section, we call a primitive list with merge strategy an unordered set.
-The patch strategy is defined in the go struct tag of the API objects,
-e.g. `finalizers` uses `merge` as patch strategy.
-```go
-Finalizers []string `json:"finalizers,omitempty" patchStrategy:"merge" protobuf:"bytes,14,rep,name=finalizers"`
-```
-
-##### Unordered Set
-
-There are 3 operations: add, delete, replace.
-
-Suppose we have defined a `finalizers` and we call it the original finalizers:
-
-```yaml
-finalizers:
-  - a
-  - b
-  - c
-```
-
-1) To add items in a set, we use the list name as the key.
-e.g. to add items "d" and "e" in the original finalizers, the patch will be:
-
-```yaml
-finalizers:
-  - d
-  - e
-```
-
-After applying the patch on the original finalizers, it will become:
-
-```yaml
-finalizers:
-  - a
-  - b
-  - c
-  - d
-  - e
-```
-
-2) To delete items in a set, we use a parallel list with key: `$deleteFromPrimitiveList/\<keyOfPrimitiveList\>`.
-e.g. to delete items "b" and "c" from the original finalizers, the patch will be:
-
-```yaml
-$deleteFromPrimitiveList/finalizers:
-  - b
-  - c
-```
-
-After applying the patch on the original finalizers, it will become:
-
-```yaml
-finalizers:
-  - a
-```
-
-In an erroneous case, the set may be created with duplicates. Deleting an item that has duplicates will delete all matching items.
-
-3) Replace can be fulfilled by an addition and a deletion.
-e.g. to replace "a" with "x" in the original finalizers, the patch will be:
-
-```yaml
-$deleteFromPrimitiveList/finalizers:
-  - a
-finalizers:
-  - x
-```
-
-After applying the patch on the original finalizers, it will become:
-
-```yaml
-finalizers:
-  - x
-  - b
-  - c
-```
-
-### Map Operations
-
-To indicate that a map should not be merged and instead should be taken literally:
-
-```yaml
-$patch: replace  # recursive and applies to all fields of the map it's in
-containers:
-- name: nginx
-  image: nginx-1.0
-```
-
-To delete a field of a map:
-
-```yaml
-name: nginx
-image: nginx-1.0
-labels:
-  live: null  # set the value of the map key to null
-```
-
+Details of Strategic Merge Patch are covered [here](../strategic-merge-patch.md).
 
 ## Idempotency
 
@@ -839,7 +669,7 @@ read/modify/write cycle, by verifying that the current value of resourceVersion
 matches the specified value.
 
 The resourceVersion is currently backed by [etcd's
-modifiedIndex](https://coreos.com/docs/distributed-configuration/etcd-api/).
+modifiedIndex](https://coreos.com/etcd/docs/latest/v2/api.html).
 However, it's important to note that the application should *not* rely on the
 implementation details of the versioning system maintained by Kubernetes. We may
 change the implementation of resourceVersion in the future, such as to change it
@@ -1462,19 +1292,6 @@ Example: "must be greater than `request`".
 be less than 256", "must be greater than or equal to 0".  Do not use words
 like "larger than", "bigger than", "more than", "higher than", etc.
 * When specifying numeric ranges, use inclusive ranges when possible.
-
-## Backward compatibility gotchas
-
-* A single feature/property cannot be represented using multiple spec fields in the same API version
-  simultaneously. Only one field can be populated in any resource at a time, and the client
-  needs to be able to specify which field they expect to use (typically via API version),
-  on both mutation and read. Old clients must continue to function properly while only manipulating
-  the old field. New clients must be able to function properly while only manipulating the new
-  field.
-* Validation rules on spec fields can be relaxed but not strengthened -- any requests that
-  previously worked must continue to work. The opposite is true for status fields. Note that changing
-  any validation rules always has the potential of breaking some client, since it changes the
-  assumptions about part of the API, similar to adding new enum values.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/api-conventions.md?pixel)]()

@@ -207,7 +207,7 @@ metadata:
 spec:
   limits:
     - type: "Container"
-      defaultRequests:
+      defaultRequest:
         cpu: "100m"
 ```
 
