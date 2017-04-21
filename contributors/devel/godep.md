@@ -54,7 +54,7 @@ export GOPATH=$KPATH
 
 ```sh
 cd $KPATH/src/k8s.io/kubernetes
-godep restore
+hack/godep-restore.sh
 ```
 
 4) Next, you can either add a new dependency or update an existing one.
