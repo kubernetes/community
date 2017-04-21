@@ -213,8 +213,9 @@ agent.
 
 Each node runs a container runtime, which is responsible for downloading images and running containers.
 
-Kubelet does not link in the base container runtime. Instead, we're defining a [Container Runtime Interface]
-(container-runtime-interface-v1.md) to control the underlying runtime and facilitate pluggability of that layer.
+Kubelet does not link in the base container runtime. Instead, we're defining a
+[Container Runtime Interface](container-runtime-interface-v1.md) to control the
+underlying runtime and facilitate pluggability of that layer.
 This decoupling is needed in order to maintain clear component boundaries, facilitate testing, and facilitate pluggability.
 Runtimes supported today, either upstream or by forks, include at least docker (for Linux and Windows), 
 [rkt](https://kubernetes.io/docs/getting-started-guides/rkt/),
