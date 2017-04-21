@@ -10,7 +10,7 @@ or to reject creation/update of the object. In the future other actions might be
 supported, such as applying an initializer.
 
 The first use of `MetadataPolicy` will be to decide which scheduler should
-schedule a pod in a [multi-scheduler](../proposals/multiple-schedulers.md)
+schedule a pod in a [multi-scheduler](./multiple-schedulers.md)
 Kubernetes system. In particular, the policy will add the scheduler name
 annotation to a pod based on an annotation that is already on the pod that
 indicates the QoS of the pod. (That annotation was presumably set by a simpler
