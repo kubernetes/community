@@ -4,22 +4,22 @@ Admission control is the primary business-logic policy and enforcement subsystem
 hooks for all API operations and allows an integrator to impose additional controls on the system - rejecting, altering,
 or reacting to changes to core objects. Today each of these plugins must be compiled into Kubernetes. As Kubernetes grows,
 the requirement that all policy enforcement beyond coarse grained access control be done through in-tree compilation and
-distribution becomes unweildy and limits administrators and the growth of the ecosystem.
+distribution becomes unwieldy and limits administrators and the growth of the ecosystem.
 
 This proposal covers changes to the admission control subsystem that allow extension of admission without recompilation
-and dynamic adminission control configuration in ways that resemble existing controller behavior.
+and dynamic admission control configuration in ways that resemble existing controller behavior.
 
 
 ## Background
 
 The four core systems in Kubernetes are:
 
-1. API servers with persistent storage, providing basic object validation and CRUD operations
+1. API servers with persistent storage, providing basic object validation, defaulting, and CRUD operations
 2. Authentication and authorization layers that identify an actor and constrain the coarse actions that actor can take on API objects
 3. [Admission controller layers](admission_control.md) that can control and limit the CRUD operations clients perform synchronously.
 4. Controllers which watch the API and react to changes made by other users asynchronously (scheduler, replication controller, kubelet, kube-proxy, and ingress are all examples of controllers).
 
-Admission control supports a wide range of policy and behavior enforcement for administrators.
+Admission control supports a wide range of policy and behavior enforcement for cluster administrators and integrators.
 
 
 ### Types of Admission Control
@@ -38,8 +38,8 @@ by consuming more than their fair share of resources. These perform security or 
 Name | Code | Description
 ---- | ---- | -----------
 InitialResources | initialresources/admission.go | Default the resources for a container based on past usage
-LimitRanger | limitranger/admission.go | Set defaults for container requests and limits, or enforce upper bounds on certain resources (no more than 2GB of memory, default to 512MB)
-ResourceQuota | resourcequota/admission.go | Calculate and deny number of objects (pods, rc, service load balancers) or total consumed resources (cpu, memory, disk) in a namespace
+LimitRanger | limitranger/admission.go | Set defaults for container requests and limits, or enforce upper bounds on certain resources (no more than 2GB of memory, default to 512MB). Implements the behavior of a v1 API (LimitRange).
+ResourceQuota | resourcequota/admission.go | Calculate and deny number of objects (pods, rc, service load balancers) or total consumed resources (cpu, memory, disk) in a namespace. Implements the behavior of a v1 API (ResourceQuota).
 
 ##### OpenShift
 
@@ -65,7 +65,7 @@ system cannot enforce.
 
 Name | Code | Description
 ---- | ---- | -----------
-AlwaysPullImages | alwayspullimages/admission.go | Forces the Kubelet to pull images to prevent pods from from accessing private images that another user with credentials has already pulled to the node.
+AlwaysPullImages | alwayspullimages/admission.go | Forces the Kubelet to pull images to prevent pods from accessing private images that another user with credentials has already pulled to the node.
 LimitPodHardAntiAffinityTopology | antiaffinity/admission.go | Defended the cluster against abusive anti-affinity topology rules that might hang the scheduler.
 DenyEscalatingExec | exec/admission.go | Prevent users from executing into pods that have higher privileges via their service account than allowed by their policy (regular users can't exec into admin pods).
 DenyExecOnPrivileged | exec/admission.go | Blanket ban exec access to pods with host level security. Superceded by DenyEscalatingExec
@@ -147,13 +147,13 @@ Other patterns seen less frequently include:
 1. Defaulting on update
 2. Resolving / further specifying values on update (ImagePolicy)
 3. Creating resources in response to user action with the correct permission check (JenkinsBootstrapper)
-4. Policy decisions based on *who* is doing the action (JenkinsBootstrapper)
+4. Policy decisions based on *who* is doing the action (OwnerReferencesPermissionEnforcement, PodSecurityPolicy, JenkinsBootstrapper)
 5. Synchronous validation on update - with side effects (quota)
 
 While admission controllers can operate on all verbs, resources, and sub resource types, in practice they
 mostly deal with create and update on primary resources. Most sub resources are highly privileged operations
-and so are typically covered by policy. Other controllers like quota tend to be per apiserver and therefore
-are not required to be extensible.
+and so are typically covered by authorization policy. Other controllers like quota tend to be per apiserver
+and therefore are not required to be extensible.
 
 
 ### Building enforcement
@@ -172,13 +172,26 @@ for extending the core with additional policy. This prevents the formation of an
 *around* Kubernetes, forcing all changes to policy to go through the Kubernetes codebase review gate (when
 such review is unnecessary or disruptive to Kubernetes itself).
 
+### Ordering of admission
+
+Previous work has described a logical ordering for admission:
+
+1. defaulting (PodPreset)
+2. mutation (ClusterResourceOverride)
+3. validation (PodSecurityPolicy)
+4. transactional (ResourceQuota)
+
+Most controllers fit cleanly into one of these buckets. Controllers that need to act in multiple phases
+are often best split into separate admission controllers, although today we offer no code mechanism to
+share a request local cache.  Extension may need to occur at each of these phases.
+
 
 ## Design
 
 It should be possible to perform holistic policy enforcement in Kubernetes without the recompilation of the
 core project as plugins that can be added and removed to a stock Kubernetes release. That extension
-of admission control should leverage similar mechanisms to our existing controller frameworks where possible
-and otherwise be performant and reliable.
+of admission control should leverage similar our existing controller patterns and codebase where possible.
+Extension must be as performant and reliable as other core mechanisms.
 
 
 ### Requirements
@@ -228,7 +241,7 @@ validation of creation and updates. Therefore we propose the following changes t
 2.  Add a generic **external admission webhook** controller that is non-mutating (thus parallelizable)
 
     This generic webhook API would resemble `admission.Interface` and be given the input object (for create) and the
-    previous object (for update). After initialization or on any update, these hooks would be invoked in parallel
+    previous object (for update/patch). After initialization or on any update, these hooks would be invoked in parallel
     against the remote servers and any rejection would reject the mutation.
 
 3.  Make the registration of both initializers and admission webhooks dynamic via the API (a configmap or cluster scoped resource)
@@ -239,7 +252,7 @@ validation of creation and updates. Therefore we propose the following changes t
 
 Some admission controller types would not be possible for these extensions:
 
-* Mutating admission webhooks could be a later addition
+* Mutating admission webhooks should be a design consideration, but are not required for a prototype.
 * Admission controllers that need access to the acting user can receive that via the external webhook.
 * Admission controllers that "react" to the acting user can couple the information received via a webhook and then act if they observe mutation succeed (tuple combining resource UID and resource generation).
 * Quota will continue to be a core plugin per API server, so extension is not critical.
@@ -319,7 +332,8 @@ objects.
 The initializer would perform a normal update on the object to perform their function, and then
 remove their entry from `initializers` (or adding more entries). If an error occurs during initialization
 that must terminate initialization, the `Status` field on the initializer should be set instead of removing
-the initializer entry and then the initializer should delete the object.
+the initializer entry and then the initializer should delete the object. The client would receive this
+status as the response to their creation (as described below).
 
 During initialization, resources may have relaxed validation requirements, which means initializers must
 handle incomplete objects. The create call will perform normal defaulting so that initializers are not providing
@@ -337,6 +351,8 @@ uninitialized object should report the same status as before, and DELETE is alwa
 There is no current error case for a timeout that exactly matches existing behavior except a 5xx
 timeout if etcd does not respond quickly. We should return that error if CREATE exceeds the timeout,
 but return an appropriate status cause that lets a client determine what the outcome was.
+
+Initializers are allowed to set other initializers or finalizers.
 
 
 ##### Example flow:
