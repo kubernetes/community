@@ -2,7 +2,7 @@
 
 ### Supported by [Kubernetes SIG API Machinery](https://github.com/kubernetes/community/tree/master/sig-api-machinery)
 
-   * [Go](https://github.com/kubernetes/client-go)
+* [Go](https://github.com/kubernetes/client-go)
    * [Python](https://github.com/kubernetes-incubator/client-python)
 
 ### User Contributed
@@ -10,10 +10,11 @@
 *Note: Libraries provided by outside parties are supported by their authors, not
 the core Kubernetes team*
 
-   * [Clojure](https://github.com/yanatan16/clj-kubernetes-api)
+* [Clojure](https://github.com/yanatan16/clj-kubernetes-api)
    * [Go](https://github.com/ericchiang/k8s)
    * [Java (OSGi)](https://bitbucket.org/amdatulabs/amdatu-kubernetes)
    * [Java (Fabric8, OSGi)](https://github.com/fabric8io/kubernetes-client)
+   * [Node.js](https://github.com/Goyoo/node-k8s-client)
    * [Node.js](https://github.com/tenxcloud/node-kubernetes-client)
    * [Node.js](https://github.com/godaddy/kubernetes-client)
    * [Perl](https://metacpan.org/pod/Net::Kubernetes)
