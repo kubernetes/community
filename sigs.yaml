@@ -1,0 +1,595 @@
+sigs:
+  - name: API Machinery
+    dir: sig-api-machinery
+    mission_statement: >
+      Covers all aspects of API server, API registration and discovery, generic
+      API CRUD semantics, admission control, encoding/decoding, conversion,
+      defaulting, persistence layer (etcd), OpenAPI, third-party resource,
+      garbage collection, and client libraries.
+    leads:
+    - name: Daniel Smith
+      company: Google
+      github: lavalamp
+    - name: David Eads
+      company: Red Hat
+      github: deads2k
+    meetings:
+    - day: Wednesday
+      utc: "18:00"
+      frequency: biweekly
+    meeting_url: https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig
+    meeting_archive_url: https://goo.gl/x5nWrF
+    contact:
+      slack: sig-api-machinery
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery
+      github_team: sig-api-machinery-misc
+  - name: Apps
+    dir: sig-apps
+    mission_statement: >
+      Covers deploying and operating applications in Kubernetes. We focus on
+      the developer and devops experience of running applications in Kubernetes.
+      We discuss how to define and run apps in Kubernetes, demo relevant tools
+      and projects, and discuss areas of friction that can lead to suggesting
+      improvements or feature requests.
+    leads:
+    - name: Michelle Noorali
+      github: michelleN
+      company: Deis
+    - name: Matt Farina
+      github: mattfarina
+      company: HPE
+    meetings:
+    - day: Monday
+      utc: "16:00"
+      frequency: weekly
+    meeting_url: https://zoom.us/j/4526666954
+    meeting_archive_url: https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#
+    contact:
+      slack: sig-apps
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-apps
+  - name: Auth
+    dir: sig-auth
+    mission_statement: >
+      Covers improvements to Kubernetes authorization, authentication, and
+      cluster security policy.
+    leads:
+    - name: Eric Chiang
+      github: ericchiang
+      company: CoreOS
+    - name: Jordan Liggitt
+      github: liggitt
+      company: Red Hat
+    - name: David Eads
+      github: deads2k
+      company: Red Hat
+    meetings:
+    - day: Wednesday
+      utc: "18:00"
+      frequency: biweekly
+    meeting_url: https://zoom.us/my/k8s.sig.auth
+    meeting_archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
+    contact:
+      slack: sig-auth
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-auth
+      github_team: sig-auth
+  - name: Autoscaling
+    dir: sig-autoscaling
+    mission_statement: >
+      Covers autoscaling of clusters, horizontal and vertical autoscaling of pods,
+      setting initial resources for pods, topics related to monitoring pods and
+      gathering their metrics (e.g.: Heapster)
+    leads:
+    - name: Filip Grządkowski
+      github: fgrzadkowski
+      company: Google
+    - name: Solly Ross
+      github: directxman12
+      company: Red Hat
+    meetings:
+    - day: Thursday
+      utc: "15:30"
+      frequency: biweekly/triweekly
+    meeting_url: https://plus.google.com/hangouts/_/google.com/k8s-autoscaling
+    meeting_archive_url: https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit
+    contact:
+      slack: sig-autoscaling
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling
+  - name: AWS
+    dir: sig-aws
+    mission_statement: >
+      Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
+    leads:
+    - name: Justin Santa Barbara
+      github: justinsb
+    - name: Kris Nova
+      github: kris-nova
+      company: Deis
+    - name: Chris Love
+      github: chrislovecnm
+    - name: Mackenzie Burnett
+      github: mfburnett
+      company: Redspread
+    meetings:
+    - day: Friday
+      utc: "17:00"
+      frequency: biweekly
+    meeting_url: https://zoom.us/my/k8ssigaws
+    meeting_archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
+    contact:
+      slack: sig-aws
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-aws
+  - name: Big Data
+    dir: sig-big-data
+    mission_statement: >
+      Covers deploying and operating big data applications (Spark, Kafka,
+      Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integrations with
+      big data applications and architecting the best ways to run them on Kubernetes.
+    leads:
+    - name: Anirudh Ramanathan
+      github: foxish
+      company: Google
+    meetings:
+    - day: Wednesday
+      utc: "17:00"
+      frequency: weekly
+    meeting_url: https://zoom.us/my/sig.big.data
+    meeting_archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
+    contact:
+      slack: sig-big-data
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-big-data
+  - name: CLI
+    dir: sig-cli
+    mission_statement: >
+      Covers kubectl and related tools. We focus on the development and
+      standardization of the CLI framework and its dependencies, the
+      establishment of conventions for writing CLI commands, POSIX compliance,
+      and improving the command line tools from a developer and devops user
+      experience and usability perspective.
+    leads:
+    - name: Fabiano Franz
+      github: fabianofranz
+      company: Red Hat
+    - name: Phillip Wittrock
+      github: pwittrock
+      company: Google
+    - name: Tony Ado
+      github: AdoHe
+      company: Alibaba
+    meetings:
+    - day: Wednesday
+      utc: "16:00"
+      frequency: biweekly
+    meeting_url: https://zoom.us/my/sigcli
+    meeting_archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
+    contact:
+      slack: sig-cli
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
+  - name: Cluster Lifecycle
+    dir: sig-cluster-lifecycle
+    mission_statement: >
+    leads:
+    - name: Luke Marsden
+      github: lukemarsden
+      company: Weave
+    meetings:
+    - day: Tuesday
+      utc: "16:00"
+      frequency: weekly
+    meeting_url: https://zoom.us/j/166836%E2%80%8B624
+    meeting_archive_url: https://docs.google.com/a/weave.works/document/d/1deJYPIF4LmhGjDVaqrswErIrV7mtwJgovtLnPCDxP7U/edit
+    contact:
+      slack: sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+  - name: Cluster Ops
+    dir: sig-cluster-ops
+    mission_statement: >
+      Promote operability and interoperability of Kubernetes clusters. We
+      focus on shared operations practices for Kubernetes clusters with a goal
+      to make Kubernetes broadly accessible with a common baseline reference.
+      We also organize operators as a sounding board and advocacy group.
+    leads:
+    - name: Rob Hirschfeld
+      github: zehicle
+      company: RackN
+    - name: Jason Singer DuMars
+      github: jdumars
+      company: Deis
+    meetings:
+    - day: Thursday
+      utc: "20:00"
+      frequency: biweekly
+    meeting_url: https://zoom.us/j/297937771
+    meeting_archive_url: https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#
+    contact:
+      slack: sig-cluster-ops
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-ops
+  - name: Contributor Experience
+    dir: sig-contribx
+    mission_statement: >
+      Developing and sustaining a healthy community of contributors is critical
+      to scaling the project and growing the ecosystem. We need to ensure our
+      contributors are happy and productive, we need to break the commit-rate
+      ceiling we hit in July 2015, and we need to get the monotonically growing
+      PR merge latency and numbers of open PRs and issues under control.
+    leads:
+    - name: Garrett Rodrigues
+      github: grodrigues3
+      company: Google
+    - name: Phillip Witrock
+      github: pwittrock
+      company: Google
+    - name: Elsie Phillips
+      github: Phillels
+      company: CoreOS
+    meetings:
+    - day: Wednesday
+      utc: "16:30"
+      frequency: biweekly
+    meeting_url: https://zoom.us/j/7658488911
+    meeting_archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
+    contact:
+      slack: wg-contribex
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-contribex
+  - name: Docs
+    dir: sig-docs
+    mission_statement: >
+      Covers documentation, doc processes, and doc publishing for Kubernetes.
+    leads:
+    - name: Philip Wittrock
+      github: pwittrock
+      company: Google
+    - name: Devin Donnelly
+      github: devin-donnelly
+      company: Google
+    - name: Jared Bhatti
+      github: jaredbhatti
+      company: Google
+    meetings:
+    - day: Tuesday
+      utc: "17:30"
+      frequency: biweekly
+    meeting_url: https://zoom.us/j/678394311
+    meeting_archive_url: https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit
+    contact:
+      slack: sig-docs
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
+  - name: Federation
+    dir: sig-federation
+    mission_statement: >
+      Covers the Federation of Kubernetes Clusters ("Ubernetes") and related
+      topics. This includes: application resiliency against availability zone
+      outages; hybrid clouds; spanning of multiple could providers; application
+      migration from private to public clouds (and vice versa); and other
+      similar subjects.
+    leads:
+    - name: Christian Bell
+      github: csbell
+      company: Google
+    - name: Quinton Hoole
+      github: quinton-hoole
+      company: Huawei
+    meetings:
+    - day: Monday
+      utc: "16:00"
+      frequency: biweekly
+    meeting_url: https://plus.google.com/hangouts/_/google.com/ubernetes
+    meeting_archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
+    contact:
+      slack: sig-federation
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-federation
+  - name: Instrumentation
+    dir: sig-instrumentation
+    mission_statement: >
+    leads:
+    - name: Piotr Szczesniak
+      github: piosz
+      company: Google
+    - name: Fabian Reinartz
+      github: fabxc
+      company: CoreOS
+    meetings:
+    - day: Thursday
+      utc: "16:30"
+      frequency: weekly
+    meeting_url: https://zoom.us/j/5342565819
+    meeting_archive_url: https://docs.google.com/document/d/1gWuAATtlmI7XJILXd31nA4kMq6U9u63L70382Y3xcbM/edit
+    contact:
+      slack: sig-instrumentation
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation
+  - name: Network
+    dir: sig-network
+    mission_statement: >
+      Covers networking in Kubernetes.
+    leads:
+    - name: Tim Hockin
+      github: thockin
+      company: Google
+    - name: Dan Williams
+      github: dcbw
+      company: Red Hat
+    - name: Casey Davenport
+      github: caseydavenport
+      company: Tigera
+    meetings:
+    - day: Tuesday
+      utc: "21:00"
+      frequency: weekly
+    meeting_url: https://zoom.us/j/5806599998
+    meeting_archive_url: https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit
+    contact:
+      slack: sig-network
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-network
+  - name: Node
+    dir: sig-node
+    mission_statement: >
+    leads:
+    - name: Dawn Chen
+      github: dchen1107
+      company: Google
+    - name: Derek Carr
+      github: derekwaynecarr
+      company: Red Hat
+    meetings:
+    - day: Tuesday
+      utc: "17:00"
+      frequency: weekly
+    meeting_url: https://plus.google.com/hangouts/_/google.com/sig-node-meetup?authuser=0
+    meeting_archive_url: https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing
+    contact:
+      slack: sig-node
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-node
+  - name: On Premise
+    dir: sig-on-prem
+    mission_statement: >
+      Brings together member of Kubernetes community interested in running
+      Kubernetes on premise, on bare metal or more generally beyond cloud
+      providers.
+    leads:
+    - name: Joseph Jacks
+      github: josephjacks
+      company: Apprenda
+    - name: Tomasz Napierala
+      github: zen
+      company: Mirantis
+    meetings:
+    - day: Wednesday
+      utc: "16:00"
+      frequency: weekly
+    meeting_url: https://zoom.us/my/k8s.sig.onprem
+    meeting_archive_url: https://docs.google.com/document/d/1AHF1a8ni7iMOpUgDMcPKrLQCML5EMZUAwP4rro3P6sk/edit#
+    contact:
+      slack: sig-onprem
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-on-prem
+  - name: OpenStack
+    dir: sig-openstack
+    mission_statement: >
+      Coordinates the cross-community efforts of the OpenStack and Kubernetes
+      communities. This includes OpenStack-related contributions to Kubernetes
+      projects with OpenStack as: a deployment platform for Kubernetes; a
+      service provider for Kubernetes; a collection of applications to run on
+      Kubernetes.
+    leads:
+    - name: Ihor Dvoretskyi
+      github: idvoretskyi
+      company: Mirantis
+    - name: Steve Gordon
+      github: xsgordon
+      company: Red Hat
+    meetings:
+    - day: Wednesday
+      utc: "00:00 (+1)"
+      frequency: biweekly
+    meeting_url: https://zoom.us/j/417251241
+    meeting_archive_url: https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f
+    contact:
+      slack: sig-openstack
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-openstack
+  - name: Product Management
+    dir: sig-pm
+    mission_statement: >
+      Focuses on aspects of product management, such as the qualification and
+      successful management of user requests, and aspects of project and
+      program management such as the continued improvement of the processes
+      used by the Kubernetes community to maintain the Kubernetes Project itself.
+
+      Besides helping to discover both what to build and how to build it, the
+      PM Group also helps to try and keep the wheels on this spaceship we are
+      all building together; bringing together people who think about Kubernetes
+      as both a vibrant community of humans and technical program is another
+      primary focus of this group.
+
+      Members of the Kubernetes PM Group can assume certain additional
+      responsibilities to help maintain the Kubernetes Project itself.
+
+      It is also important to remember that the role of managing an open
+      source project is very new and largely unscoped for a project as large
+      as Kubernetes; we are learning too and we are excited to learn how we
+      can best serve the community of users and contributors.
+    leads:
+    - name: Aparna Sinha
+      github: apsinha
+      company: Google
+    - name: Ihor Dvoretskyi
+      github: idvoretskyi
+      company: Mirantis
+    - name: Caleb Miles
+      github: calebamiles
+      company: CoreOS
+    meetings:
+    - day: Tuesday
+      utc: "15:00"
+      frequency: biweekly
+    meeting_url: https://zoom.us/j/845373595
+    meeting_archive_url: https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing
+    contact:
+      slack: sig-pm
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-pm
+  - name: Scalability
+    dir: sig-scalability
+    mission_statement: >
+      Responsible for answering scalability related questions such as:
+
+      What size clusters do we think that we should support with Kubernetes
+      in the short to medium term? How performant do we think that the control
+      system should be at scale? What resource overhead should the Kubernetes
+      control system reasonably consume?
+
+      For more details about our objectives please review our
+      [Scaling And Performance Goals](https://github.com/kubernetes/community/blob/master/sig-scalability/goals.md)
+    leads:
+    - name: Daniel Smith
+      github: lavalamp
+      company: Google
+    - name: Bob Wise
+      github: countspongebob
+      company: Samsung SDS
+    - name: Joe Beda
+      github: jbeda
+      company: Heptio
+    meetings:
+    - day: Thursday
+      utc: "16:00"
+      frequency: weekly
+    meeting_url: https://zoom.us/j/989573207
+    meeting_archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
+    contact:
+      slack: sig-scalability
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scale
+  - name: Scheduling
+    dir: sig-scheduling
+    mission_statement: >
+    leads:
+    - name: David Oppenheimer
+      github: davidopp
+      company: Google
+    - name: Timothy St. Clair
+      github: timothysc
+      company: Red Hat
+    meetings:
+    - day: Monday
+      utc: "20:00"
+      frequency: biweekly
+    - day: Wednesday
+      utc: "07:30"
+      frequency: biweekly
+    meeting_url: https://zoom.us/zoomconference?m=rN2RrBUYxXgXY4EMiWWgQP6Vslgcsn86
+    meeting_archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
+    contact:
+      slack: sig-scheduling
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling
+  - name: Service Catalog
+    dir: sig-service-catalog
+    mission_statement: >
+      To develop a Kubernetes API for the CNCF service broker and Kubernetes
+      broker implementation.
+    leads:
+    - name: Paul Morie
+      github: pmorie
+      company: Red Hat
+    - name: Aaron Schlesinger
+      github: arschles
+      company: Deis
+    - name: Brendan Melville
+      github: bmelville
+      company: Google
+    - name: Doug Davis
+      github: duglin
+      company: IBM
+    meetings:
+    - day: Monday
+      utc: "20:00"
+      frequency: weekly
+    meeting_url: https://zoom.us/j/7201225346
+    meeting_archive_url: http://goo.gl/A0m24V
+    contact:
+      slack: sig-service-catalog
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog
+  - name: Storage
+    dir: sig-storage
+    mission_statement: >
+      Covers storage and volume plugins.
+    leads:
+    - name: Paul Morie
+      github: pmorie
+      company: Red Hat
+    - name: Aaron Schlesinger
+      github: arschles
+      company: Deis
+    - name: Brendan Melville
+      github: bmelville
+      company: Google
+    - name: Doug Davis
+      github: duglin
+      company: IBM
+    meetings:
+    - day: Thursday
+      utc: "16:00"
+      frequency: biweekly
+    meeting_url: https://zoom.us/j/614261834
+    meeting_archive_url: https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing
+    contact:
+      slack: sig-storage
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-storage
+  - name: Testing
+    dir: sig-testing
+    mission_statement: >
+      Interested in how we can most effectively test Kubernetes. We're
+      interested specifically in making it easier for the community to run
+      tests and contribute test results, to ensure Kubernetes is stable across
+      a variety of cluster configurations and cloud providers.
+    leads:
+    - name: Aaron Crickenberger
+      github: spiffxp
+      company: Samsung
+    - name: Jeff Grafton
+      github: ixdy
+      company: Google
+    meetings:
+    - day: Tuesday
+      utc: "16:30"
+      frequency: weekly
+    meeting_url: https://zoom.us/j/553910341
+    meeting_archive_url: https://docs.google.com/document/d/1z8MQpr_jTwhmjLMUaqQyBk1EYG_Y_3D4y4YdMJ7V1Kk
+    contact:
+      slack: sig-testing
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-testing
+  - name: UI
+    dir: sig-ui
+    mission_statement: >
+      Covers all things UI related. Efforts are centered around Kubernetes
+      Dashboard: a general purpose, web-based UI for Kubernetes clusters. It
+      allows users to manage applications running in the cluster and
+      troubleshoot them, as well as manage the cluster itself.
+    leads:
+    - name: Dan Romlein
+      github: romlein
+      company: Apprenda
+    - name: Piotr Bryk
+      github: bryk
+      company: Google
+    meetings:
+    - day: Wednesday
+      utc: "14:00"
+      frequency: weekly
+    meeting_url: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
+    meeting_archive_url: https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing
+    contact:
+      slack: sig-ui
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
+  - name: Windows
+    dir: sig-windows
+    mission_statement: >
+      Focuses on bringing Kubernetes support to Windows.
+    leads:
+    - name: Michael Michael
+      github: michmike77
+      company: Apprenda
+    meetings:
+    - day: Tuesday
+      utc: "16:30"
+      frequency: weekly
+    meeting_url: https://zoom.us/my/sigwindows
+    meeting_archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
+    contact:
+      slack: sig-windows
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-windows
