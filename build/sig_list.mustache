@@ -1,0 +1,19 @@
+# SIGs and Working Groups
+
+Most community activity is organized into Special Interest Groups (SIGs),
+time bounded Working Groups, and the [community meeting](communication.md#Meeting).
+
+SIGs follow these [guidelines](governance.md) although each of these groups may operate a little differently
+depending on their needs and workflow.
+
+Each group's material is in its subdirectory in this project.
+
+When the need arises, a [new SIG can be created](sig-creation-procedure.md)
+
+### Master SIG List
+
+| Name | Leads | Contact | Meetings |
+|------|-------|---------|----------|
+{{#Sigs}}
+|[{{ Name }}]({{ Dir }}/README.md)|{{#Leads}}- [{{Name}}](https://github.com/{{GitHub}}){{#Company}}, {{Company}}{{/Company}}<br>{{/Leads}}|{{#Contact}}- [Slack](https://kubernetes.slack.com/messages/{{Slack}})<br>- [Mailing List]({{MailingList}}){{/Contact}}|{{#Meetings}}- [{{Day}}s at {{UTC}} UTC ({{Frequency}})]({{MeetingURL}})<br>{{/Meetings}}
+{{/Sigs}}

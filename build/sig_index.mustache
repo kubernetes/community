@@ -1,0 +1,19 @@
+# {{Name}} SIG
+
+{{MissionStatement}}
+## Meetings
+{{#Meetings}}
+- [{{Day}}s at {{UTC}} UTC]({{MeetingURL}}) ({{Frequency}})
+{{/Meetings}}
+Meeting notes and Agenda can be found [here]({{MeetingArchiveURL}}).
+
+## Leads
+{{#Leads}}
+- [{{Name}}](https://github.com/{{GitHub}}){{#Company}}, {{Company}}{{/Company}}
+{{/Leads}}
+## Contact
+{{#Contact}}
+Slack: https://kubernetes.slack.com/messages/{{Slack}}
+Mailing list: {{MailingList}}
+{{#GitHubTeam}}GitHub Team: https://github.com/kubernetes/teams/{{GitHubTeam}}{{/GitHubTeam}}
+{{/Contact}}
