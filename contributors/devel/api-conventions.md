@@ -550,7 +550,7 @@ below.
 
 #### Strategic Merge Patch
 
-Details of Strategic Merge Patch are covered [here](../strategic-merge-patch.md).
+Details of Strategic Merge Patch are covered [here](strategic-merge-patch.md).
 
 ## Idempotency
 
