@@ -314,9 +314,13 @@ following fields, but must contain at least `type` and `status` fields:
 ```go
   Type               FooConditionType  `json:"type" description:"type of Foo condition"`
   Status             ConditionStatus   `json:"status" description:"status of the condition, one of True, False, Unknown"`
+  // +optional
   LastHeartbeatTime  unversioned.Time  `json:"lastHeartbeatTime,omitempty" description:"last time we got an update on a given condition"`
+  // +optional
   LastTransitionTime unversioned.Time  `json:"lastTransitionTime,omitempty" description:"last time the condition transit from one status to another"`
+  // +optional
   Reason             string            `json:"reason,omitempty" description:"one-word CamelCase reason for the condition's last transition"`
+  // +optional
   Message            string            `json:"message,omitempty" description:"human-readable message indicating details about last transition"`
 ```
 
@@ -579,21 +583,32 @@ Fields must be either optional or required.
 
 Optional fields have the following properties:
 
-- They have `omitempty` struct tag in Go.
+- They have the `+optional` comment tag in Go.
 - They are a pointer type in the Go definition (e.g. `bool *awesomeFlag`) or
 have a built-in `nil` value (e.g. maps and slices).
 - The API server should allow POSTing and PUTing a resource with this field
 unset.
 
+In most cases, optional fields should also have the `omitempty` struct tag (the 
+`omitempty` option specifies that the field should be omitted from the json
+encoding if the field has an empty value). However, If you want to have 
+different logic for an optional field which is not provided vs. provided with 
+empty values, do not use `omitempty` (e.g. https://github.com/kubernetes/kubernetes/issues/34641).
+
+Note that for backward compatibility, any field that has the `omitempty` struct
+tag will considered to be optional but this may change in future and having
+the `+optional` comment tag is highly recommended.
+
 Required fields have the opposite properties, namely:
 
+- They do not have an `+optional` comment tag.
 - They do not have an `omitempty` struct tag.
 - They are not a pointer type in the Go definition (e.g. `bool otherFlag`).
 - The API server should not allow POSTing or PUTing a resource with this field
 unset.
 
-Using the `omitempty` tag causes swagger documentation to reflect that the field
-is optional.
+Using the `+optional` or the `omitempty` tag causes OpenAPI documentation to 
+reflect that the field is optional.
 
 Using a pointer allows distinguishing unset from the zero value for that type.
 There are some cases where, in principle, a pointer is not needed for an
