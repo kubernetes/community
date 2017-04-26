@@ -11,6 +11,7 @@ and we need to get the monotonically growing PR merge latency and numbers of ope
 * Meetings: Wednesdays 9:30AM PST (biweekly and changing soon)
 * Zoom Link: https://zoom.us/j/7658488911
 * Check out the [Agenda and Minutes](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/ )!
+* [ContribX Google Group](https://groups.google.com/forum/#!forum/kubernetes-wg-contribex)
 
 ## Goals:
 * Ensure contributors are happy and productive.
