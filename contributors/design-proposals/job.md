@@ -79,8 +79,12 @@ type JobSpec struct {
     // job should be run with. Defaults to 1.
     Completions *int
 
+    // Optional duration in seconds relative to the startTime that the job may be active
+    // before the system tries to terminate it; value must be positive integer
+    ActiveDeadlineSeconds *int
+
     // Selector is a label query over pods running a job.
-    Selector map[string]string
+    Selector LabelSelector
 
     // Template is the object that describes the pod that will be created when
     // executing a job.
@@ -109,12 +113,12 @@ type JobStatus struct {
     // Active is the number of actively running pods.
     Active int
 
-    // Successful is the number of pods successfully completed their job.
-    Successful int
+    // Succeeded is the number of pods successfully completed their job.
+    Succeeded int
 
-    // Unsuccessful is the number of pods failures, this applies only to jobs
+    // Failed is the number of pods failures, this applies only to jobs
     // created with RestartPolicyNever, otherwise this value will always be 0.
-    Unsuccessful int
+    Failed int
 }
 
 type JobConditionType string
