@@ -56,6 +56,6 @@ improving Kubernetes resource management.
 ## Team:
 
 * Lead: [Dawn Chen](https://github.com/dchen1107) <dawnchen@google.com>, Google
-* Load: [Derek Carr](https://github.com/derekwaynecarr) <decarr@redhat.com>, Red Hat
+* Lead: [Derek Carr](https://github.com/derekwaynecarr) <decarr@redhat.com>, Red Hat
 * Reviewers: See [OWNERS_ALIASES#sig-node-reviewers](https://github.com/kubernetes/kubernetes/blob/master/OWNERS_ALIASES)
 * And too many regular contributors to list here...
