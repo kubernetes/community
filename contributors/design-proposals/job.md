@@ -18,7 +18,7 @@ Several existing issues and PRs were already created regarding that particular s
 1. Be able to get the job status.
 1. Be able to specify the number of instances performing a job at any one time.
 1. Be able to specify the number of successfully finished instances required to finish a job.
-1. Be able to specify backoff policy, when job is continuously failing.
+1. Be able to specify a backoff policy, when job is continuously failing.
 
 
 ## Motivation
@@ -29,27 +29,31 @@ here would be the ability to implement any type of batch oriented tasks.
 
 ## Backoff policy and failed pod limit
 
-By design, Jobs do not have any notion of failure, other than Pod's `restartPolicy`
+By design, Jobs do not have any notion of failure, other than a pod's `restartPolicy`
 which is mistakenly taken as Job's restart policy ([#30243](https://github.com/kubernetes/kubernetes/issues/30243),
 [#[43964](https://github.com/kubernetes/kubernetes/issues/43964)]).  There are
-situation where one wants to fail a Job after some amount of retries over certain
+situation where one wants to fail a Job after some amount of retries over a certain
 period of time, due to a logical error in configuration etc.  To do so we are going
-following fields will be introduced, which will control the exponential backoff
-when retrying Job: number of retries and time to retry.  The two fields will allow
-creating a fine grain control over the backoff policy, limiting the number of retries
-over specified period of time.  In the case when only one of them is specified
-an exponential backoff with duration of 10 seconds and factor of 2 will be applied
-in such a way that either time or number is reached.  After reaching the limit
-a Job will be marked as failed.
+to introduce following fields will be introduced, which will control the exponential
+backoff when retrying a Job: number of retries and time to retry.  The two fields
+will allow creating a fine-grained control over the backoff policy, limiting the
+number of retries over a specified period of time.  If only one of the two fields
+is supplied, an exponential backoff with an intervening duration of ten seconds
+and a factor of two will be applied, such that either:
+* the number of retries will not exceed a specified count, if present, or
+* the maximum time elapsed will not exceed the specified duration, if present.
 
-Additionally, to help debug the issue with a job, and limit the impact of having
-too many failed pods left around (as mentioned in [#30243](https://github.com/kubernetes/kubernetes/issues/30243))
+Additionally, to help debug the issue with a Job, and limit the impact of having
+too many failed pods left around (as mentioned in [#30243](https://github.com/kubernetes/kubernetes/issues/30243)),
 we are going to introduce a field which will allow specifying the maximum number
 of failed pods to keep around.  This number will also take effect if none of the
-limits, described above, are set.
+limits described above are set.
 
 All of the above fields will be optional and will apply no matter which `restartPolicy`
-is set on a `PodTemplate`.
+is set on a `PodTemplate`.  The only difference applies to how failures are counted.
+For restart policy `Never` we count actual pod failures (reflected in `.status.failed`
+field). With restart policy `OnFailure` we look at pod restarts (calculated from
+`.status.containerStatuses[*].restartCount`).
 
 
 ## Implementation
@@ -106,13 +110,13 @@ type JobSpec struct {
     Completions *int
 
     // Optional duration in seconds relative to the startTime that the job may be active
-    // before the system tries to terminate it; value must be positive integer
+    // before the system tries to terminate it; value must be a positive integer.
     ActiveDeadlineSeconds *int
 
-    // Optional number of retries, before marking this job failed.
+    // Optional number of retries before marking this job failed.
     BackoffLimit *int
 
-    // Optional time (in seconds), how log a job should be retried before marking it failed.
+    // Optional time (in seconds) specifying how long a job should be retried before marking it failed.
     BackoffDeadlineSeconds *int
 
     // Optional number of failed pods to retain.
