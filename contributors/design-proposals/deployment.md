@@ -1,5 +1,14 @@
 # Deployment
 
+Authors:
+- Brian Grant (@bgrant0607)
+- Clayton Coleman (@smarterclayton)
+- Dan Mace (@ironcladlou)
+- David Oppenheimer (@davidopp)
+- Janet Kuo (@janetkuo)
+- Michail Kargakis (@kargakis)
+- Nikhil Jindal (@nikhiljindal)
+
 ## Abstract
 
 A proposal for implementing a new resource - Deployment - which will enable
