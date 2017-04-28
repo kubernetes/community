@@ -52,7 +52,7 @@ Guide](http://kubernetes.io/docs/admin/).
 * The [REST API documentation](http://kubernetes.io/docs/reference/) explains the REST
   API exposed by apiserver.
 
-* **Annotations** ([Annotations](http://kubernetes.io/docs/concepts/object-metadata/annotations/)): are for attaching arbitrary non-identifying metadata to objects.
+* **Annotations** ([Annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)): are for attaching arbitrary non-identifying metadata to objects.
   Programs that automate Kubernetes objects may use annotations to store small amounts of their state.
 
 * **API Conventions** ([api-conventions.md](api-conventions.md)):
@@ -71,7 +71,7 @@ Guide](http://kubernetes.io/docs/admin/).
   Authorization applies to all HTTP requests on the main apiserver port.
   This doc explains the available authorization implementations.
 
-* **Admission Control Plugins** ([admission_control](https://github.com/kubernetes/kubernetes/blob/master/docs/design/admission_control.md))
+* **Admission Control Plugins** ([admission_control](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control.md))
 
 
 ## Building releases
