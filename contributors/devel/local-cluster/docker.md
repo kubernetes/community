@@ -67,7 +67,7 @@ Here's a diagram of what the final result will look like:
       /hyperkube kubelet \
           --hostname-override=127.0.0.1 \
           --api-servers=http://localhost:8080 \
-          --config=/etc/kubernetes/manifests \
+          --kubeconfig=/etc/kubernetes/manifests \
           --cluster-dns=10.0.0.10 \
           --cluster-domain=cluster.local \
           --allow-privileged --v=2
