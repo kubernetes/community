@@ -54,7 +54,7 @@ export GOPATH=$KPATH
 
 ```sh
 cd $KPATH/src/k8s.io/kubernetes
-godep restore
+./hack/godep-restore.sh
 ```
 
 4) Next, you can either add a new dependency or update an existing one.
@@ -86,6 +86,10 @@ godep get $DEP/...
 rm -rf Godeps
 rm -rf vendor
 ./hack/godep-save.sh
+# Regenerate removed BUILD, licenses, and client-go Godeps files.
+./hack/update-bazel.sh
+./hack/update-godeps-licenses.sh
+./hack/update-staging-client-go.sh
 git checkout -- $(git status -s | grep "^ D" | awk '{print $2}' | grep ^Godeps)
 ```
 
