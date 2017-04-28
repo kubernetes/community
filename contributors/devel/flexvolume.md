@@ -89,7 +89,7 @@ Unmount the volume. This call-out defaults to bind mount for drivers which imple
 <driver executable> unmount <mount dir>
 ```
 
-See [lvm](lvm) & [nfs](nfs) for a quick example on how to write a simple flexvolume driver.
+See [lvm] & [nfs] for a quick example on how to write a simple flexvolume driver.
 
 ### Driver output:
 
@@ -121,8 +121,13 @@ Note: Secrets are passed only to "mount/unmount" call-outs.
 
 ### Example of Flexvolume
 
-See [nginx.yaml](https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/nginx.yaml) & [nginx-nfs.yaml](https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/nginx-nfs.yaml) for a quick example on how to use Flexvolume in a pod.
+See [nginx.yaml] & [nginx-nfs.yaml] for a quick example on how to use Flexvolume in a pod.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/volumes/flexvolume/README.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
+
+[lvm]: https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/lvm
+[nfs]: https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/nfs
+[nginx.yaml]: https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/nginx.yaml
+[nginx-nfs.yaml]: https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/nginx-nfs.yaml
