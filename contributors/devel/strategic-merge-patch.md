@@ -3,7 +3,9 @@ Strategic Merge Patch
 
 # Background
 
-TODO: @pwittrock complete this section
+Kubernetes supports a customized version of JSON merge patch called strategic merge patch.  This
+patch format is used by `kubectl apply`, `kubectl edit` and `kubectl patch`, and contains
+specialized directives to control how specific fields are merged.
 
 In the standard JSON merge patch, JSON objects are always merged but lists are
 always replaced. Often that isn't what we want. Let's say we start with the
@@ -209,15 +211,118 @@ In an erroneous case, the set may be created with duplicates. Deleting an
 item that has duplicates will delete all matching items.
 
 
-TODO: @pwittrock
-# Changing Patch Format
+# Changing patch format
 
-## Purpose
+As issues and limitations have been discovered with the strategic merge
+patch implementation, it has been necessary to change the patch format
+to support additional semantics - such as merging lists of
+primitives and defining order when merging lists.
 
-## Requirement
+## Requirments for any changes to the patch format
 
-### Version Skew
+**Note:** Changes to the strategic merge patch must be backwards compatible such
+that patch requests valid in previous versions continue to be valid.
+That is, old patch formats sent by old clients to new servers with
+must continue to function correctly.
 
-## Strategy
+Previously valid patch requests do not need to keep the exact same
+behavior, but do need to behave correctly.
 
-## Example
+**Example:** if a patch request previously randomized the order of elements
+in a list and we want to provide a deterministic order, we must continue
+to support old patch format but we can make the ordering deterministic
+for the old format.
+
+### Client version skew
+
+Because the server does not publish which patch versions it supports,
+and it silently ignores patch directives that it does not recognize,
+new patches should behave correctly when sent to old servers that
+may not support all of the patch directives.
+
+While the patch API must be backwards compatible, it must also
+be forward compatible for 1 version.  This is needed because `kubectl` must
+support talking to older and newer server versions without knowing what
+parts of patch are supported on each, and generate patches that work correctly on both.
+
+## Strategies for introducing new patch behavior
+
+#### 1. Add optional semantic meaning to the existing patch format.
+
+**Note:** Must not require new data or elements to be present that was not required before.  Meaning must not break old interpretation of old patches.
+
+**Good Example:**
+
+Old format
+  - ordering of elements in patch had no meaning and the final ordering was arbitrary
+
+New format
+  - ordering of elements in patch has meaning and the final ordering is deterministic based on the ordering in the patch
+
+**Bad Example:**
+
+Old format
+  - fields not present in a patch for Kind foo are ignored
+  - unmodified fields for Kind foo are optional in patch request
+
+New format
+  - fields not present in a patch for Kind foo are cleared
+  - unmodified fields for Kind foo are required in patch request
+
+This example won't work, because old patch formats will contain data that is now
+considered required.  To support this, introduce a new directive to guard the
+new patch format.
+
+#### 2. Add support for new directives in the patch format
+
+- Optional directives may be introduced to change how the patch is applied by the server - **backwards compatible** (old patch against newer server).
+  - May control how the patch is applied
+  - May contain patch information - such as elements to delete from a list
+  - Must NOT impose new requirements on the old patch format
+
+- New patch requests should be a superset of old patch requests - **forwards compatible** (newer patch against older server)
+  - *Old servers will ignore directives they do not recognize*
+  - Must include the full patch that would have been sent before the new directives were added.
+  - Must NOT rely on the directive being supported by the server
+
+**Good Example:**
+
+Old format
+  - fields not present in a patch for Kind foo are ignored
+  - unmodified fields for Kind foo are optional in patch request
+
+New format *without* directive
+  - Same as old
+
+New format *with* directive
+  - fields not present in a patch for Kind foo are cleared
+  - unmodified fields for Kind foo are required in patch request
+
+In this example, the behavior was unchanged when the directive was missing,
+retaining the old behavior for old patch requests.
+
+**Bad Example:**
+
+Old format
+  - fields not present in a patch for Kind foo are ignored
+  - unmodified fields for Kind foo are optional in patch request
+
+New format *with* directive
+  - Same as old
+
+New format *without* directive
+  - fields not present in a patch for Kind foo are cleared
+  - unmodified fields for Kind foo are required in patch request
+
+In this example, the behavior was changed when the directive was missing,
+breaking compatibility.
+
+## Alternatives
+
+The previous strategy is necessary because there is no notion of
+patch versions.  Having the client negotiate the patch version
+with the server would allow changing the patch format, but at
+the cost of supporting multiple patch formats in the server and client.
+Using client provided directives to evolve how a patch is merged
+provides some limited support for multiple versions.
+
