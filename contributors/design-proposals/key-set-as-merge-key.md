@@ -108,14 +108,109 @@ Document what the developer should consider when adding an API with `mergeKey`.
 
 ## Version Skew
 
-The new key set always covers the old merge key.
-And the new merge keys are optional.
-So the API is still backward compatible.
-For any old clients that works before will continue to function correctly with the new server.
+*There are 2 edge cases when updating:*
+
+Suppose `foo` is the merge key before, but `foo` and `bar` are new merge key now.
+A client wants to
+
+An client wants to change config from
+```yaml
+list:
+- foo: a
+  bar: x
+```
+to
+```yaml
+list:
+- foo: a
+  bar: y
+```
+
+1) When the client is an old one and talks to a new server.
+
+The patch it generated is:
+```yaml
+list:
+- foo: a # old merge key
+  bar: y
+```
+
+The live object on the new server is:
+```yaml
+list:
+- foo: a # new merge key 1
+  bar: x # new merge key 2
+```
+
+The result after merging is:
+```yaml
+list:
+- foo: a # new merge key 1
+  bar: x # new merge key 2
+- foo: a # new merge key 1
+  bar: y # new merge key 2
+```
+
+2) When the client is an new one and talks to a old server.
+
+The patch it generated is:
+```yaml
+list:
+- $patch: delete
+  foo: a # new merge key 1
+  bar: x # new merge key 2
+- foo: a # new merge key 1
+  bar: y # new merge key 2
+```
+
+The live object on the new server is:
+```yaml
+list:
+- foo: a # old merge key
+  bar: x
+  other: somevalue
+```
+
+Based on current implementation, the result after merging is:
+```yaml
+list:
+- foo: a # old merge key
+  bar: y
+  # other field is missing, this entry in list has been recreated.
+```
+
+*There is another edge case when deleting:*
+
+If we don't change the behavior, it will be the same as in 1.6.
+
+An old client sending a patch:
+
+```yaml
+list:
+- $patch: delete
+  foo: a # old merge key
+```
+
+Live config in new server is:
+
+```yaml
+list:
+- foo: a # new merge key 1
+  bar: x # new merge key 2
+- foo: a # new merge key 1
+  bar: y # new merge key 2
+```
+
+After merging the patch, both entries will be deleted.
+The config in the server is:
+```yaml
+list: []
+```
 
 ## Impacted APIs
 
-### Broken APIs will be Fixed by Key Set
+We need to examine case by case to check if it is OK to have behavior in the above 3 edge cases.
+
 (1) `ContainerPort`: Change merge key from `containerPort` to `name,containerPort`.
 
 Usage of [ContainerPort](https://github.com/kubernetes/kubernetes/blob/db9fcb06295b3db49be8efa5c4584114af0696bc/pkg/api/v1/types.go#L1637)
