@@ -33,5 +33,5 @@ Every second Tuesday, 8:00 AM PT/4:00 PM UTC
 
 ### Leaders
 - Aparna Sinha apsinha@google.com, Google
-- Ihor Dvoretskyi ihor.dvoretskyi@gmail.com, Mirantis
+- Ihor Dvoretskyi ihor@dvoretskyi.com, Mirantis
 - Caleb Miles caleb.miles@coreos.com, CoreOS
