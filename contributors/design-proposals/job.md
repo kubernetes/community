@@ -34,12 +34,12 @@ which is mistakenly taken as Job's restart policy ([#30243](https://github.com/k
 [#[43964](https://github.com/kubernetes/kubernetes/issues/43964)]).  There are
 situation where one wants to fail a Job after some amount of retries over a certain
 period of time, due to a logical error in configuration etc.  To do so we are going
-to introduce following fields will be introduced, which will control the exponential
-backoff when retrying a Job: number of retries and time to retry.  The two fields
-will allow creating a fine-grained control over the backoff policy, limiting the
-number of retries over a specified period of time.  If only one of the two fields
-is supplied, an exponential backoff with an intervening duration of ten seconds
-and a factor of two will be applied, such that either:
+to introduce following fields, which will control the exponential backoff when
+retrying a Job: number of retries and time to retry.  The two fields will allow
+fine-grained control over the backoff policy, limiting the number of retries over
+a specified period of time.  If only one of the two fields is supplied, an exponential
+backoff with an intervening duration of ten seconds and a factor of two will be
+applied, such that either:
 * the number of retries will not exceed a specified count, if present, or
 * the maximum time elapsed will not exceed the specified duration, if present.
 
