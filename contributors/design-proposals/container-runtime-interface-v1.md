@@ -1,6 +1,6 @@
 # Redefine Container Runtime Interface
 
-The umbrella issue: [#22964](https://issues.k8s.io/22964)
+The umbrella issue: [#28789](https://issues.k8s.io/28789)
 
 ## Motivation
 
