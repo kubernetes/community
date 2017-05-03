@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"time"
 
 	"github.com/cbroglie/mustache"
 	"gopkg.in/yaml.v2"
@@ -15,6 +16,7 @@ var (
 	templateDir    = "build"
 	indexTemplate  = fmt.Sprintf("%s/sig_index.mustache", templateDir)
 	listTemplate   = fmt.Sprintf("%s/sig_list.mustache", templateDir)
+	footerTemplate = fmt.Sprintf("%s/footer.mustache", templateDir)
 	sigListOutput  = "sig-list.md"
 	sigIndexOutput = "README.md"
 )
@@ -53,6 +55,10 @@ type SigEntries struct {
 	Sigs []Sig
 }
 
+type Page struct {
+	LastGenerated string
+}
+
 func dirExists(path string) (bool, error) {
 	_, err := os.Stat(path)
 	if err == nil {
@@ -62,6 +68,27 @@ func dirExists(path string) (bool, error) {
 		return false, nil
 	}
 	return true, err
+}
+
+func constructFooter() (data string, err error) {
+	template, err := mustache.ParseFile(footerTemplate)
+	if err != nil {
+		return
+	}
+
+	ctx := Page{LastGenerated: time.Now().Format("Mon Jan 2 2006 15:04:05")}
+
+	data, err = template.Render(ctx)
+	if err != nil {
+		return
+	}
+
+	err = ioutil.WriteFile(sigListOutput, []byte(data), 0644)
+	if err != nil {
+		return
+	}
+
+	return
 }
 
 func createReadmeFiles(ctx SigEntries) error {
@@ -87,10 +114,18 @@ func createReadmeFiles(ctx SigEntries) error {
 			}
 		}
 
-		err = ioutil.WriteFile(fmt.Sprintf("%s/%s", sig.Dir, sigIndexOutput), []byte(data), 0644)
+		footer, err := constructFooter()
 		if err != nil {
 			return err
 		}
+
+		filePath := fmt.Sprintf("%s/%s", sig.Dir, sigIndexOutput)
+		err = ioutil.WriteFile(filePath, []byte(data+footer), 0644)
+		if err != nil {
+			return err
+		}
+
+		fmt.Printf("Generated %s\n", filePath)
 	}
 
 	return nil
@@ -107,11 +142,17 @@ func createListFile(ctx SigEntries) error {
 		return err
 	}
 
-	err = ioutil.WriteFile(sigListOutput, []byte(data), 0644)
+	footer, err := constructFooter()
 	if err != nil {
 		return err
 	}
 
+	err = ioutil.WriteFile(sigListOutput, []byte(data+footer), 0644)
+	if err != nil {
+		return err
+	}
+
+	fmt.Printf("Generated %s\n", sigListOutput)
 	return nil
 }
 
@@ -136,4 +177,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	fmt.Println("Finished generation!")
 }
