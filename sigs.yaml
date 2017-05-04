@@ -22,7 +22,6 @@ sigs:
     contact:
       slack: sig-api-machinery
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery
-      github_team: sig-api-machinery-misc
   - name: Apps
     dir: sig-apps
     mission_statement: >
@@ -71,7 +70,6 @@ sigs:
     contact:
       slack: sig-auth
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-auth
-      github_team: sig-auth
   - name: Autoscaling
     dir: sig-autoscaling
     mission_statement: >
@@ -360,6 +358,8 @@ sigs:
     contact:
       slack: sig-onprem
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-on-prem
+      full_github_teams: true
+      github_team_prefix: onprem
   - name: OpenStack
     dir: sig-openstack
     mission_statement: >
@@ -384,6 +384,7 @@ sigs:
     contact:
       slack: sig-openstack
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-openstack
+      full_github_teams: true
   - name: Product Management
     dir: sig-pm
     mission_statement: >

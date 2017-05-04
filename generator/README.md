@@ -14,6 +14,5 @@ Based off the `sigs.yaml` metadata file.
 To (re)build documentation for all the SIGs, run these commands:
 
 ```bash
-docker build -t sigdocs -f build/Dockerfile build
-docker run -v $(pwd):/go/src/app sigdocs
+make all
 ```

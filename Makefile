@@ -6,7 +6,7 @@ reset-docs:
 	git checkout HEAD -- sig-list.md sig-*
 
 build-sigdocs:
-	docker build -t sigdocs -f build/Dockerfile build
+	docker build -t sigdocs -f generator/Dockerfile generator
 
 run-sigdocs:
 	docker run -v $(shell pwd):/go/src/app sigdocs
