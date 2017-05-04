@@ -106,11 +106,11 @@ During the code freeze period, fix any bugs discovered with you feature, and wri
 
 ##### Writing Feature Documentation
 
-1. Make sure your feature for the upcoming release is on the release tracking board (e.g. [link](https://docs.google.com/spreadsheets/d/1nspIeRVNjAQHRslHQD1-6gPv99OcYZLMezrBe3Pfhhg/edit#gid=0) for 1.6).
+1. Make sure your feature for the upcoming release is on the release tracking board (e.g. [link](https://docs.google.com/a/google.com/spreadsheets/d/14CuRzarSdVSU18ri7Cxyc6zZVm51vSvH_bUZNYe78tQ/edit?usp=sharing) for 1.7).
 2. Create a PR with documentation for your feature in the [documents repo](https://github.com/kubernetes/kubernetes.github.io).
-    * **Your PR should target the release branch (e.g. [release-1.6](https://github.com/kubernetes/kubernetes.github.io/tree/release-1.6)), not the [`master`](https://github.com/kubernetes/kubernetes.github.io/tree/master) branch.**
+    * **Your PR should target the release branch (e.g. [`release-1.7`](https://github.com/kubernetes/kubernetes.github.io/tree/release-1.6)), not the [`master`](https://github.com/kubernetes/kubernetes.github.io/tree/master) branch.**
       * Any changes to the master branch become live on https://kubernetes.io/docs/ as soon as they are merged, and for releases we do not want docuemntation to go live until the release is cut.
-3. Add link to your docs PR in the release tracking board, and notify the docs lead for the release (e.g. [Devin Donnelly](https://www.github.com/devin-donnelly) for 1.6).
+3. Add link to your docs PR in the release tracking board, and notify the docs lead for the release (e.g. [Andrew Chen](https://www.github.com/chenopis) for 1.7).
 4. The docs lead will review your PR and give you feedback.
 5. Once approved, the docs lead will merge your PR into the release branch.
 6. When the release is cut, the docs lead will push the docs release branch to master, making your docs live on https://kubernetes.io/docs/.
