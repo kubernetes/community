@@ -49,37 +49,88 @@ Since we are interested in count(or rate) and latency percentile metrics of API 
 the external Cloud Provider - we will use [Histogram](https://prometheus.io/docs/practices/histograms/) type for
 emitting these metrics.
 
-We will be using `HistogramVec` type so as we can attach dimensions at runtime. Whenever available
-`namespace` will reported as a dimension with the metric.
+We will be using `HistogramVec` type so as we can attach dimensions at runtime. All metrics will contain API action
+being taken as a dimension. The cloudprovider maintainer may choose to add additonal dimensions as needed. If a
+dimension is not available at point of emission sentinel value `<n/a>` should be emitted as a placeholder.
+
+We are also interested in counter of cloudprovider API errors. `NewCounterVec` type will be used for keeping
+track of API errors.
 
 ### GCE Implementation
 
-For GCE we simply use `gensupport.RegisterHook()` to register a function which will be called
-when request is made and response returns.
-
 To begin with we will start emitting following metrics for GCE. Because these metrics are of type
-`Summary` - both count and latency will be automatically calculated.
+`Histogram` - both count and latency will be automatically calculated.
 
-1. gce_instance_list
-2. gce_disk_insert
-3. gce_disk_delete
-4. gce_attach_disk
-5. gce_detach_disk
-6. gce_list_disk
+#### GCE Latency metrics
 
-A POC implementation can be found here - https://github.com/kubernetes/kubernetes/pull/40338/files
+All gce latency metrics will be named - `cloudprovider_gce_api_request_duration_seconds`. api request
+being made will be reported as dimensions.
+
+
+To begin we will start emitting following metrics:
+
+```
+cloudprovider_gce_api_request_duration_seconds { request = "instance_list"}
+cloudprovider_gce_api_request_duration_seconds { request = "disk_insert"}
+cloudprovider_gce_api_request_duration_seconds { request = "disk_delete"}
+cloudprovider_gce_api_request_duration_seconds { request = "attach_disk"}
+cloudprovider_gce_api_request_duration_seconds { request = "detach_disk"}
+cloudprovider_gce_api_request_duration_seconds { request = "list_disk"}
+```
+
+#### GCE API error metrics.
+
+All gce error metrics will be named `cloudprovider_gce_api_request_errors`. api request being made will be
+reported as a dimension.
+
+To begin with we expect to report following error metrics:
+
+```
+cloudprovider_gce_api_request_errors { request = "instance_list"}
+cloudprovider_gce_api_request_errors { request = "disk_insert"}
+cloudprovider_gce_api_request_errors { request = "disk_delete"}
+cloudprovider_gce_api_request_errors { request = "attach_disk"}
+cloudprovider_gce_api_request_errors { request = "detach_disk"}
+cloudprovider_gce_api_request_errors { request = "list_disk"}
+```
+
 
 ### AWS Implementation
 
 For AWS currently we will use wrapper type `awsSdkEC2` to intercept all storage API calls and
 emit metric datapoints.  The reason we are not using approach used for `aws/log_handler` is - because AWS SDK doesn't uses Contexts and hence we can't pass custom information such as API call name or namespace to record with metrics.
 
+
+#### AWS Latency metrics
+
+All aws API metrics will be named - `cloudprovider_aws_api_request_duration_seconds`. `request` will be reported as dimensions.
+AWS maintainer may choose to add additional dimensions as needed.
+
 To begin with we will start emitting following metrics for AWS:
 
-1. aws_attach_volume
-2. aws_create_tags
-3. aws_create_volume
-4. aws_delete_volume
-5. aws_describe_instance
-6. aws_describe_volume
-7. aws_detach_volume
+```
+cloudprovider_aws_api_request_duration_seconds { request = "attach_volume"}
+cloudprovider_aws_api_request_duration_seconds { request = "detach_volume"}
+cloudprovider_aws_api_request_duration_seconds { request = "create_tags"}
+cloudprovider_aws_api_request_duration_seconds { request = "create_volume"}
+cloudprovider_aws_api_request_duration_seconds { request = "delete_volume"}
+cloudprovider_aws_api_request_duration_seconds { request = "describe_instance"}
+cloudprovider_aws_api_request_duration_seconds { request = "describe_volume"}
+```
+
+#### AWS Error metrics
+
+All aws error metrics will be named `cloudprovider_aws_api_request_errors`. api request being made will be
+reported as a dimension.
+
+To begin with we expect to report following error metrics:
+
+```
+cloudprovider_aws_api_request_errors { request = "attach_volume"}
+cloudprovider_aws_api_request_errors { request = "detach_volume"}
+cloudprovider_aws_api_request_errors { request = "create_tags"}
+cloudprovider_aws_api_request_errors { request = "create_volume"}
+cloudprovider_aws_api_request_errors { request = "delete_volume"}
+cloudprovider_aws_api_request_errors { request = "describe_instance"}
+cloudprovider_aws_api_request_errors { request = "describe_volume"}
+```
