@@ -4,12 +4,17 @@
 
 Support multi-fields merge key in Strategic Merge Patch.
 
-## Motivation
+## Background
 
-*Background*: Strategic Merge Patch is covered in this [doc](https://github.com/kubernetes/community/blob/master/contributors/devel/strategic-merge-patch.md).
-In Strategic Merge Patch, Merge Key is the key to distinguish the entries in the list of non-primitive types.
+Strategic Merge Patch is covered in this [doc](https://github.com/kubernetes/community/blob/master/contributors/devel/strategic-merge-patch.md).
+In Strategic Merge Patch, Merge Key is the key to identify the entries in the list of non-primitive types.
 It must always be present and unique to perform the merge on the list of non-primitive types,
 and will be preserved.
+
+The merge key exists in the struct tag (e.g. in [types.go](https://github.com/kubernetes/kubernetes/blob/5a9759b0b41d5e9bbd90d5a8f3a4e0a6c0b23b47/pkg/api/v1/types.go#L2831))
+and the [OpenAPI spec](https://github.com/kubernetes/kubernetes/blob/master/api/openapi-spec/swagger.json).
+
+## Motivation
 
 The current implementation requires a single field that uniquely identifies each element in a list.
 For some element Kinds, the identity is defined using multiple fields.
@@ -17,199 +22,351 @@ An [example](https://github.com/kubernetes/kubernetes/issues/39188) is the servi
 which is identified by both `protocol` and `port`.
 
 As a result we need to also support a set of keys as a Merge Key.
-A key set must be a list of strings with at least 1 element long.
+This will not only fix the APIs that cannot be effectively identified by one single field
+but also benefit new APIs when we want to use multi-field merge key for them.
 
 ## Proposed Change
 
 ### API Change
 
-For API resources that cannot be effectively merged with a single merge key,
-we will update the merge keys to a key set.
-We require the new key set has the old merge key and the new merge key must be present to keep backward compatibility.
-The keys will be seperated by ",", i.e. `patchMergeKey:"<key1>,<key2>,<key3>"`.
+We introduce a separate set of merge keys, called the recommended merge keys,
+for all of the fields using merge key.
+
+It will be in a new struct tag with key `recommendedPatchMergeKey`.
+The value will be merge keys seperated by ",", i.e. `recommendedPatchMergeKey:"<key1>,<key2>,<key3>"`.
+
+We will keep the old merge key to keep backward compatibility, and we call them the default merge key.
+
+- For API resources that cannot be effectively merged with a single merge key,
+we will introduce additional merge keys in the recommended merge keys.
+- For the others, the recommended merge keys will be the same as the default merge key.
+
+Requirements for the recommended merge keys to keep backward compatibility:
+- the recommended merge keys must have the default merge key
+- the default merge key must be the first one in the recommended merge keys, i.e. `recommendedPatchMergeKey:"<default-merge-key>,<additional-key1>,<additional-key2>"`
+- the default merge key must be present in the patch, i.e. the first key in the recommended merge keys must be used.
 
 E.g. [`Ports` in `ServiceSpec`](https://github.com/kubernetes/kubernetes/blob/c51efa9ba0929a643544078d5c182ba75e4b4087/pkg/api/v1/types.go#L2825-L2831).
 ```go
 type ServiceSpec struct {
-  // Change patchMergeKey from "port" to "name|port"
-  Ports []ServicePort `json:"ports,omitempty" patchStrategy:"merge" patchMergeKey:"name,port" protobuf:"bytes,1,rep,name=ports"`
+  // add recommendedPatchMergeKey "port,protocol"
+  Ports []ServicePort `patchMergeKey:"port" recommendedPatchMergeKey:"port,protocol" ...`
   ...
 }
+```
+
+We also need to introduce a new optional directive `$patchMergeKey` in the patch.
+This directive contains a list of strings which are the merge keys used in this patch.
+
+An example patch will look like:
+```yaml
+list:
+- $patchMergeKey:
+  - foo
+  - bar
+  foo: a
+  bar: x
+  other: val
+```
+
+We will use the default merge key for merging if the $patchMergeKey directive is not present in the patch.
+Otherwise, we will use the merge keys provided by the directive.
+
+*Note*: Operations will take effect on all matching items in the list.
+
+#### When `$patchMergeKey` contains items that are not in the patch
+
+The item in the `$patchMergeKey` list but not in the patch will be considered as:
+when merging, this key is required to be not present to match an item in the list.
+
+This will be helpful when we want to distinguish the 2 items in the following list when merging:
+```yaml
+list:
+# foo is the default merge key; foo and bar are the recommended merge key.
+- foo: a
+- foo: a
+  bar: x
+```
+
+To match the first item, the patch should look like:
+```yaml
+list:
+- $patchMergeKey:
+  - foo
+  - bar
+  foo: a
+  # bar not present
+  other: val
+```
+
+To match the second item, the patch should look like:
+```yaml
+list:
+- $patchMergeKey:
+  - foo
+  - bar
+  foo: a
+  bar: x # bar presents
+  other: val
+```
+
+#### When no `$patchMergeKey` in the patch
+
+When there is no `$patchMergeKey` list in the patch,
+the server will use the default merge key when merging.
+
+E.g.
+foo is the default merge key.
+foo and bar are the recommended merge keys.
+
+Patch:
+```yaml
+list:
+- foo: a
+  bar: x
+  other: val
+```
+
+Live list:
+```yaml
+list:
+- foo: a
+  bar: y
+```
+
+Result after merging:
+```yaml
+list:
+- foo: a
+  bar: x
+  other: val
+```
+
+#### When `$patchMergeKey` only has part of all merge keys
+
+When `$patchMergeKey` only has part of all merge keys,
+the server will apply the patch to all the matching items.
+So an update or a deletion may apply to multiple items in the list.
+
+*Note*: In last release(1.6) implementation, update operation will apply to the first matching items.
+Delete operation will apply to all matching items.
+
+E.g.
+foo is the default merge key.
+foo and bar are the recommended merge keys.
+
+Live list:
+```yaml
+list:
+- foo: a
+  bar: x
+  another: 1
+- foo: a
+  bar: y
+  another: 2
+- foo: b
+  bar: x
+```
+
+Patch 1:
+```yaml
+list:
+- $patchMergeKey:
+  - foo
+  foo: a
+  bar: z
+  other: val
+```
+
+Result after merging patch 1:
+```yaml
+list:
+- foo: a
+  bar: z
+  other: val
+  another: 1
+- foo: a
+  bar: z
+  other: val
+  another: 2
+- foo: b
+  bar: x
+```
+
+Patch 2:
+```yaml
+list:
+- $patchMergeKey:
+  - foo
+  $patch: delete
+  foo: a
+```
+
+Result after merging patch 2:
+```yaml
+list:
+- foo: b
+  bar: x
+```
+
+#### When `$patchMergeKey` has all of the merge keys
+
+When `$patchMergeKey` has all of the merge keys,
+it should uniquely identify an item in the list.
+
+This case is straightforward, so we don't provide an example here.
+
+#### When the user add|delete a field which is a merge key
+
+When the user adds or deletes a field which is a merge key,
+the patch will use the the original values of the merge keys to identify the items.
+
+E.g.
+foo is the default merge key.
+foo, bar and **baz** are the recommended merge keys.
+
+Live list:
+```yaml
+list:
+- foo: a
+  bar: x
+- foo: a
+  bar: y
+```
+
+Patch 1 (add a field)
+```yaml
+list:
+- $patchMergeKey:
+  - foo
+  - bar
+  foo: a
+  bar: x
+  baz: m # add an additional merge key
+```
+
+Result after merging patch 1:
+```yaml
+list:
+- foo: a
+  bar: x
+  baz: m
+- foo: a
+  bar: y
+```
+
+Patch 2 (delete a field)
+```yaml
+list:
+- $patchMergeKey:
+  - foo
+  - bar
+  foo: a
+  bar: null # delete a merge key
+```
+
+Result after merging patch 1:
+```yaml
+list:
+- foo: a
+- foo: a
+  bar: y
+```
+
+### the user change a field which is a merge key
+
+Live list:
+```yaml
+list:
+- foo: a
+  bar: x
+  other: val
+```
+
+When the user changes a field which is a merge key and it is in the $patchMergeKey list,
+the update operation will be break into a delete operation and a create operation.
+The server will apply the deletion and then the create operation.
+
+Patch:
+```yaml
+list:
+- $patchMergeKey:
+  - foo
+  - bar
+  $patch: delete
+  foo: a
+  bar: x
+- $patchMergeKey:
+  - foo
+  - bar
+  foo: a
+  bar: y
+```
+
+Result after applying patch on live list:
+```yaml
+list:
+- foo: a
+  bar: y
+```
+
+When the user changes a field which is a merge key and it is NOT in the $patchMergeKey list,
+the update operation will be just considered as a regular update as non-mergeKey fields.
+
+Patch:
+```yaml
+list:
+- $patchMergeKey:
+  - foo
+  foo: a
+  bar: y
+```
+
+Result after applying patch on live list:
+```yaml
+list:
+- foo: a
+  bar: y
+  other: val
 ```
 
 All the impacted APIs are listed in section [Impacted APIs](#impacted-apis)
 
 ### Open API
 
+The recommended merge keys should have its corresponding OpenAPI extension as `patchMergeKey` does.
+
 Update [Open API schema](https://github.com/kubernetes/kubernetes/blob/master/api/openapi-spec/swagger.json)
-to reflect the change of `patchMergeKey` in the struct tags.
-The change should be trivial.
-E.g. change OpenAPI extension from "x-kubernetes-patch-merge-key": "port"
-to "x-kubernetes-patch-merge-key": "port,protocol".
+to reflect the additions of `recommendedPatchMergeKey` struct tags.
+E.g. add an additional extension similar to
+```
+"x-kubernetes-patch-merge-key": "foo"
+"x-kubernetes-recommended-patch-merge-key": "foo,bar"
+```
 
 ### Strategic Merge Patch pkg
 
-Entries are considered as the same if and only if all the keys in the key set are identical.
-We allow keys to be missing in the key set as long as it is not empty.
+We will use the behavior we discussed above when merging the patch.
 
-Take `Ports` as an example:
-
-Suppose we are using `name` and `port` as merge key as mentioned in section [API Change](#api-change)
-
-We have the following live config in the server:
-```yaml
-spec:
-  type: NodePort
-  ports:
-    - protocol: UDP
-      # name is missing here
-      port: 30420
-      nodePort: 30420
-```
-
-The users want to add another port. They will use the following manifest:
-```yaml
-spec:
-  type: NodePort
-  ports:
-    - protocol: UDP
-      port: 30420
-      name: udpport
-      nodePort: 30420
-    - protocol: TCP
-      port: 30420
-      name: tcpport
-      nodePort: 30420
-```
-
-The patch manifest that will be sent is:
-```yaml
-spec:
-  type: NodePort
-  ports:
-    # the entry with key set {port: 30420} is considered missing in local config file
-    - port: 30420
-      $patch: delete
-    # the entry with key set {name: udpport, port: 30420} is considered as a new entry
-    - protocol: UDP
-      port: 30420
-      name: udpport
-      nodePort: 30420
-    # the entry with key set {name: tcpport, port: 30420} is a new entry
-    - protocol: TCP
-      port: 30420
-      name: tcpport
-      nodePort: 30420
-```
+When calculating the patch, we should always use all of the recommended merge keys.
+It means we will include all the merge keys in the $patchMergeKey list,
+even though there may be only part of them present in the patch as the case in
+section [When `$patchMergeKey` contains items that are not in the patch](#when-patchmergekey-contains-items-that-are-not-in-the-patch).
 
 ### Docs
 
 Document what the developer should consider when adding an API with `mergeKey`.
 
-## Version Skew
+## Version Skew and Backward Compatibility
 
-*There are 2 edge cases when updating:*
+An old client sending a old patch without `$patchMergeKey` is backward compatible and
+has been described in section [When no `$patchMergeKey` in the patch](#when-no-patchmergekey-in-the-patch).
 
-Suppose `foo` is the merge key before, but `foo` and `bar` are new merge key now.
-A client wants to
-
-An client wants to change config from
-```yaml
-list:
-- foo: a
-  bar: x
-```
-to
-```yaml
-list:
-- foo: a
-  bar: y
-```
-
-1) When the client is an old one and talks to a new server.
-
-The patch it generated is:
-```yaml
-list:
-- foo: a # old merge key
-  bar: y
-```
-
-The live object on the new server is:
-```yaml
-list:
-- foo: a # new merge key 1
-  bar: x # new merge key 2
-```
-
-The result after merging is:
-```yaml
-list:
-- foo: a # new merge key 1
-  bar: x # new merge key 2
-- foo: a # new merge key 1
-  bar: y # new merge key 2
-```
-
-2) When the client is an new one and talks to a old server.
-
-The patch it generated is:
-```yaml
-list:
-- $patch: delete
-  foo: a # new merge key 1
-  bar: x # new merge key 2
-- foo: a # new merge key 1
-  bar: y # new merge key 2
-```
-
-The live object on the new server is:
-```yaml
-list:
-- foo: a # old merge key
-  bar: x
-  other: somevalue
-```
-
-Based on current implementation, the result after merging is:
-```yaml
-list:
-- foo: a # old merge key
-  bar: y
-  # other field is missing, this entry in list has been recreated.
-```
-
-*There is another edge case when deleting:*
-
-If we don't change the behavior, it will be the same as in 1.6.
-
-An old client sending a patch:
-
-```yaml
-list:
-- $patch: delete
-  foo: a # old merge key
-```
-
-Live config in new server is:
-
-```yaml
-list:
-- foo: a # new merge key 1
-  bar: x # new merge key 2
-- foo: a # new merge key 1
-  bar: y # new merge key 2
-```
-
-After merging the patch, both entries will be deleted.
-The config in the server is:
-```yaml
-list: []
-```
+An old server will drop the field it doesn't recognise.
+And the new patch is the superset of the old patch and the difference is the directve.
+Thus, the behavior of the old server will not be affected.
 
 ## Impacted APIs
-
-We need to examine case by case to check if it is OK to have behavior in the above 3 edge cases.
 
 (1) `ContainerPort`: Change merge key from `containerPort` to `name,containerPort`.
 
