@@ -121,8 +121,7 @@ type StatefulSetUpdateStrategy struct {
         // the StatefulSet when Type is PartitionedStatefulSetStrategyType. This 
         // value must be set when Type is PartitionedStatefulSetStrategyType, 
         // and it must be nil otherwise.
-        Partition *ParitionedStatefulSet
-}
+        Partition *PartitionedStatefulSet
 
 // StatefulSetUpdateStrategyType is a string enumeration type that enumerates 
 // all possible update strategies for the StatefulSet controller.
@@ -148,7 +147,7 @@ const (
 type PartitionedStatefulSet struct {
     // Ordinal indicates the ordinal at which the StatefulSet should be 
     // partitioned.
-    Ordianl uint32
+    Ordinal int32
 }
 
 type StatefulSetSpec struct {
@@ -164,7 +163,7 @@ type StatefulSetSpec struct {
 	// be maintained in the StatefulSet's revision history. The revision history
 	// consists of all revisions not represented by a currently applied 
 	// StatefulSetSpec version. The default value is 2.
-	RevisionHisotryLimit int32 `json:revisionHistoryLimit,omitempty`
+	RevisionHistoryLimit *int32 `json:revisionHistoryLimit,omitempty`
 }
 ```
 
@@ -174,15 +173,15 @@ The following modifications will be made to the StatefulSetStatus API object.
  type StatefulSetStatus struct {
     // ObservedGeneration and Replicas fields are omitted for brevity.
 
- 	// CurrentVersion, if not empty, indicates the version of PodSpecTemplate, 
+ 	// CurrentRevision, if not empty, indicates the version of PodSpecTemplate, 
  	// VolumeClaimsTemplate tuple used to generate Pods in the sequence
  	// [0,CurrentReplicas).
- 	CurrentVersion string `json:"currentVersion,omitempty"`
+ 	CurrentRevision string `json:"currentVersion,omitempty"`
  	
- 	// UpdatedVersion, if not empty, indicates the version of PodSpecTemplate, 
+ 	// UpdateRevision, if not empty, indicates the version of PodSpecTemplate, 
     // VolumeClaimsTemplate tuple used to generate Pods in the sequence
     // [Replicas-UpdatedReplicas,Replicas)
- 	UpdateVersion string `json:"updateVersion,omitempty"`
+ 	UpdateRevision string `json:"updateVersion,omitempty"`
  	
  	// ReadyReplicas is the current number of Pods, created by the StatefulSet
     // controller, that have a Status of Running and a Ready Condition.
@@ -190,12 +189,12 @@ The following modifications will be made to the StatefulSetStatus API object.
  	
  	// CurrentReplicas is the number of Pods created by the StatefulSet 
     // controller from the PodTemplateSpec, VolumeClaimsTemplate tuple indicated 
-    // by CurrentVersion.
+    // by CurrentRevision.
  	CurrentReplicas int32 `json:"currentReplicas,omitempty"`
  	
  	// UpdatedReplicas is the number of Pods created by the StatefulSet
     // controller from the PodTemplateSpec, VolumeClaimsTemplate tuple indicated 
-    // by CurrentVersion.
+    // by UpdateRevision.
  	UpdatedReplicas int32 `json:"taretReplicas,omitempty"`
 }
 ```
@@ -203,9 +202,9 @@ The following modifications will be made to the StatefulSetStatus API object.
 Additionally we introduce the following constant.
 
 ```go
-// StatefulSetVersionLabel is the label used by StatefulSet controller to track
+// StatefulSetRevisionLabel is the label used by StatefulSet controller to track
 // which version of StatefulSet's StatefulSetSpec was used generate a Pod.
-const StatefulSetVersionLabel = "StatefulSetVersion"
+const StatefulSetRevisionLabel = "statefulset.kubernetes.io/revision"
 
 ```
 ## StatefulSet Controller
@@ -278,33 +277,33 @@ follows.
 have a Ready Condition. This implies the Pod is Running.
 1. If Pod's ordinal is greater than or equal to `.Spec.Replicas`, the Pod 
 should be completely terminated and deleted.
-1. If StatefulSet's `Spec.UpdateStrategy.Type` is equal to 
-`OnDeleteStatefulSetStrategyType` then no version tracking is performed. Pods 
-can be at an arbitrary version and will be recreated from the current 
+1. If the StatefulSet's `Spec.UpdateStrategy.Type` is equal to 
+`OnDeleteStatefulSetStrategyType`, no version tracking is performed, Pods 
+can be at an arbitrary version, and they will be recreated from the current 
 `.Spec.Template` and `.Spec.VolumeClaimsTemplate` when the are deleted.
 1. If StatefulSet's `Spec.UpdateStrategy.Type` is equal to 
 `RollingUpdateStatefulSetStrategyType` then the version of the Pod should be 
 as follows.
     1. If the Pod's ordinal is in the sequence `[0,.Status.CurrentReplicas)`, 
-    the Pod should consistent with version indicated by `Status.CurrentVersion`.
+    the Pod should be consistent with version indicated by `Status.CurrentRevision`.
     1. If the Pod's ordinal is in the sequence 
     `[.Status.Replicas - .Status.UpdatedReplicas, .Status.Replicas)`
     the Pod should be consistent with the version indicated by 
-    `Status.UpdateVersion`.
+    `Status.UpdateRevision`.
 1. If the StatefulSet's `.Spec.UpdateStrategy.Type` is equal to 
 `PartitionedStatefulSetStrategyType` then the version of the Pod should be 
 as follows.
     1. If the Pod's ordinal is in the sequence `[0,.Status.CurrentReplicas)`, 
-    the Pod should consistent with version indicated by `Status.CurrentVersion`.
+    the Pod should be consistent with version indicated by `Status.CurrentRevision`.
     1. If the Pod's ordinal is in the sequence 
     `[.Status.Replicas - .Status.UpdatedReplicas, .Status.Replicas)`the Pod 
-    should be consistent with the version indicated by `Status.UpdateVersion`.
+    should be consistent with the version indicated by `Status.UpdateRevision`.
     1. If the Pod does not meet either of the prior two conditions, and if 
     ordinal is in the sequence `[0, .Spec.UpdateStrategy.Partition.Ordinal)`, 
     it should  be consistent with the version indicated by 
-    `Status.CurrentVersion`.
+    `Status.CurrentRevision`.
     1. Otherwise, the Pod should be consistent with the version indicated 
-    by `Status.UpdateVersion`.
+    by `Status.UpdateRevision`.
 
 ### Pod State Reconciliation
 In order to reconcile a Pod with declared desired 
@@ -313,10 +312,10 @@ following.
 
 1. If the Pod is already consistent with its target state the controller will do 
 nothing.
-1. If the Pod is labeled with a `StatefulSetVersionLabel` that indicates 
+1. If the Pod is labeled with a `StatefulSetRevisionLabel` that indicates 
 the Pod was generated from a version of the StatefulSetSpec that is semantically 
 equivalent to, but not equal to, the [target version](#target-pod-state), the 
-StatefulSet controller will update the Pod with a `StatefulSetVersionLabel` 
+StatefulSet controller will update the Pod with a `StatefulSetRevisionLabel` 
 indicating the new semantically equivalent version. This form of reconciliation 
 is non-destructive.
 1. If the Pod was not created from the target version, the Pod will be deleted 
@@ -329,16 +328,16 @@ Object state when mutations are made to its `.Spec.Template` or
 
 1. When the StatefulSet controller observes a mutation to a StatefulSet's 
  `.Spec.Template` it will snapshot its target Object state and compare 
-the snapshot with the version indicated by its `.Status.UpdateVersion`.
+the snapshot with the version indicated by its `.Status.UpdateRevision`.
 1. If the current state is equivalent to the version indicated by 
-`.Status.UpdateVersion` no update has occurred. 
-1. If the `Status.CurrentVersion` field is empty, then the StatefulSet has no 
+`.Status.UpdateRevision` no update has occurred. 
+1. If the `Status.CurrentRevision` field is empty, then the StatefulSet has no 
 revision history. To initialize its revision history, the StatefulSet controller 
-will set both `.Status.CurrentVersion` and `.Status.UpdateVersion` to the 
+will set both `.Status.CurrentRevision` and `.Status.UpdateRevision` to the 
 version of the current snapshot. 
-1. If the `.Status.CurrentVersion` is not empty, and if the 
-`.Status.UpdateVersion` is not equal to the version of the current snapshot, 
-the StatefulSet controller will set the `.Status.UpdateVersion` to the version 
+1. If the `.Status.CurrentRevision` is not empty, and if the 
+`.Status.UpdateRevision` is not equal to the version of the current snapshot, 
+the StatefulSet controller will set the `.Status.UpdateRevision` to the version 
 indicated by the current snapshot.
 
 ### StatefulSet Revision History
@@ -374,14 +373,14 @@ The criteria for update completion is as follows.
 this case an update can never be in progress.
 1. If the StatefulSet's `.Spec.UpdateStrategy.Type` is equal to 
 `PartitionedStatefulSetStrategyType` updates can not complete. The version 
-indicated `.Status.UpdateVersion` will only be applied to Pods with ordinals 
+indicated `.Status.UpdateRevision` will only be applied to Pods with ordinals 
 in the sequence `(0,.Spec.UpdateStrategy.Partition.Ordinal]`
 1. If the StatefulSet's `.Spec.UpdateStrategy.Type` is equal to 
 `RollingUpdateStatefulSetStrategyType`, then an update is complete when the 
 StatefulSet is at its [target state](#target-state). The StatefulSet controller 
 will signal update completion as follows.
-    1. The controller will set `.Status.CurrentVersion` to the value of 
-    `.Staus.UpdateVersion`.
+    1. The controller will set `.Status.CurrentRevision` to the value of 
+    `.Staus.UpdateRevision`.
     1. The controller will set `.Status.CurrentReplicas` to 
     `.Status.UpdateReplicas`. Note that this value will be equal to 
     `.Status.Replicas`.
@@ -407,15 +406,15 @@ the `.Generation` of the StatefulSet object that was observed.
 created Pods.
 1. The controller will set the `.Status.ReadyReplicas` to the current number of 
 Pods that have a Ready Condition.
-1. The controller will set the `.Status.CurrentVersion` and 
-`.Status.UpdateVersion` in accordance with StatefulSet's 
+1. The controller will set the `.Status.CurrentRevision` and 
+`.Status.UpdateRevision` in accordance with StatefulSet's 
 [revision history](#statefulset-revision history) and 
 any [complete updates](#update-completion).
 1. The controller will set the `.Status.CurrentReplicas` to the number of 
 Pods that it has created from the version indicated by 
-`.Status.CurrentVersion`.
+`.Status.CurrentRevision`.
 1. The controller will set the `.Status.UpdatedReplicas` to the number of Pods 
-that it has created from the version indicated by `.Status.UpdateVersion`.
+that it has created from the version indicated by `.Status.UpdateRevision`.
 1. The controller will then persist the StatefulSetStatus make it durable and 
 communicate it to observers.
 
