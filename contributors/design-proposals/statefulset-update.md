@@ -106,7 +106,7 @@ This design is based on the following requirements.
 - Users should be able to view a bounded history of the updates that have been 
 applied to the StatefulSet.
 
-## API Object
+## API Objects
 
 The following modifications will be made to the StatefulSetSpec API object.
 
@@ -434,7 +434,13 @@ if any of the following conditions are true.
    1. `.Spec.UpdateStratgegy.Parition` is not nil, and 
    `.Spec.UpdateStrategy.Partition.Ordinal` not in the sequence 
    `(0,.Spec.Replicas)`.
-
+1. The API Server will fail validation on any update to a StatefulSetStatus
+object if any of the following conditions are true.
+    1. `.Status.Replicas` is negative.
+    1. `.Status.ReadyReplicas` is negative or greater than `.Status.Replicas`.
+    1. `.Status.CurrentReplicas` is negative or greater than `.Status.Replicas`.
+    1. `.Stauts.UpdateReplicas` is negative or greater than `.Status.Replicas`.
+   
 ## Kubectl
 Kubectl will  use the `rollout` command to control and provide the status of 
 StatefulSet updates.
