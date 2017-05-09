@@ -30,3 +30,4 @@ We focus on the developer and devops experience of running applications in Kuber
 ## Organizers:
 * Michelle Noorali <michelle@deis.com>, Deis
 * Matt Farina <matt@mattfarina.com>, HPE
+* Adnan Abdulhussein <adnan@bitnami.com>, Bitnami
