@@ -124,6 +124,8 @@ cd go/src/k8s.io/kubernetes
 hack/local-up-cluster.sh
 ```
 
+For more information, please refer to [this](https://kubernetes-v1-4.github.io/docs/getting-started-guides/locally/)
+
 Tip: After adding new glog messages, use the command below to access the logs:
 ```
 tail -f /tmp/<log-file-name>
