@@ -176,12 +176,12 @@ The following modifications will be made to the StatefulSetStatus API object.
  	// CurrentRevision, if not empty, indicates the version of PodSpecTemplate, 
  	// VolumeClaimsTemplate tuple used to generate Pods in the sequence
  	// [0,CurrentReplicas).
- 	CurrentRevision string `json:"currentVersion,omitempty"`
+ 	CurrentRevision string `json:"currentRevision,omitempty"`
  	
  	// UpdateRevision, if not empty, indicates the version of PodSpecTemplate, 
     // VolumeClaimsTemplate tuple used to generate Pods in the sequence
     // [Replicas-UpdatedReplicas,Replicas)
- 	UpdateRevision string `json:"updateVersion,omitempty"`
+ 	UpdateRevision string `json:"updateRevision,omitempty"`
  	
  	// ReadyReplicas is the current number of Pods, created by the StatefulSet
     // controller, that have a Status of Running and a Ready Condition.
