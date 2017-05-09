@@ -118,18 +118,19 @@ type DaemonSetSpec struct {
 	// +optional
 	MinReadySeconds int32 `json:"minReadySeconds,omitempty"`
 
+	// DEPRECATED.
 	// A sequence number representing a specific generation of the template.
 	// Populated by the system. Can be set at creation time. Read-only otherwise. 
 	// +optional
 	TemplateGeneration int64 `json:"templateGeneration,omitempty"`
 
-	// The number of old PodTemplates to retain to allow rollback.
+	// The number of old history to retain to allow rollback.
 	// This is a pointer to distinguish between explicit zero and not specified.
 	// Defaults to 2.
 	RevisionHistoryLimit *int32 `json:"revisionHistoryLimit,omitempty"`
 
 	// The config this DaemonSet is rolling back to. Will be cleared after
-        // rollback is done.
+	// rollback is done.
 	// +optional
 	RollbackTo *RollbackConfig `json:"rollbackTo",omitempty`
 }
@@ -168,13 +169,25 @@ type DaemonSetStatus struct {
 	// (ready for at least minReadySeconds)
 	// +optional
 	NumberUnavailable int32 `json:"numberUnavailable"`
+
+	// A monotonically increasing counter that tracks hash collisions for
+	// the DaemonSet. Used as a collision avoidance mechanism by the 
+	// DaemonSet controller.
+	// +optional
+	Uniquifier *int64 `json:"uniquifier,omitempty"`
 }
 
 const (
+	// DEPRECATED: DefaultDeploymentUniqueLabelKey is used instead.
 	// DaemonSetTemplateGenerationKey is the key of the labels that is added
-	// to daemon set pods and history to distinguish between old and new pod
-	// templates during DaemonSet template update.
+	// to daemon set pods to distinguish between old and new pod
+	// during DaemonSet template update.
 	DaemonSetTemplateGenerationKey string = "pod-template-generation"
+
+	// DefaultDaemonSetUniqueLabelKey is the default label key that is added
+	// to existing DaemonSet pods to distinguish between old and new
+	// DaemonSet pods during DaemonSet template updates.
+	DefaultDaemonSetUniqueLabelKey string = "pod-template-hash"
 )
 ```
 
@@ -185,43 +198,57 @@ const (
 The DaemonSet Controller will make DaemonSet updates happen. It will watch
 DaemonSets on the apiserver. 
 
+DaemonSet controller manages [Controller History](controller_history.md) for
+DaemonSet revision introspection and rollback. It's referred to as "history"
+throughout the rest of this proposal.
+
 For each pending DaemonSet updates, it will:
 
 1. Find all pods controlled by DaemonSet
 1. Check `DaemonSetUpdateStrategy`:
    - If `OnDelete`: do nothing
    - If `RollingUpdate`:
-     - Find existing PodTemplates owned by DaemonSet, and sort them by the value
-       of `pod-template-generation` label
-     - Clean up PodTemplates based on `.spec.revisionHistoryLimit`
-       - Always keep the PodTemplate if its `pod-template-generation` label has
-         the same value of any existing pods owned by the DaemonSet
-       - Remove PodTemplates from the ones with the smallest `pod-template-generation`
-         to the highest, until `.spec.revisionHistoryLimit` is hit or no
-         PodTemplates are allowed to be removed 
-     - Create a PodTemplate based on DaemonSet
-       - PodTemplate `.name` is from DaemonSet `<.name>-<.spec.templateGeneration>`
-       - PodTemplate labels are generated from DaemonSet `.spec.selector`, in
-         addition to label `pod-template-generation=.spec.templateGeneration`
-       - PodTemplate's `.spec` is copied from DaemonSet `.spec.template.spec` 
-       - PodTemplate's `.metadata.annotations` is copied from DaemonSet
-         `.metadata.annotations`
+     - Reconstruct DaemonSet history: filter and sort existing DaemonSet history
+       owned by this DaemonSet
+     - Find the history of DaemonSet's current target state, and create one if
+       not found:
+       - The `.name` of this history will be unique, generated from pod template
+         hash with hash collision resolution. If history creation failed:
+         - If it's because of name collision:
+           - Compare history with DaemonSet current target state:
+             - If they're the same, we've already created the history
+             - Otherwise, bump DaemonSet `.status.uniquifier` by 1, exit and
+               retry in the next sync loop
+         - Otherwise, exit and retry again in the next sync loop.
+       - The history will be labeled with `pod-template-hash`.
+       - DaemonSet controller will add a ControllerRef in the history
+         `.ownerReferences`.
      - For all pods owned by this DaemonSet:
-       - If it doesn't have `pod-template-generation` label, it's an old pod 
-       - If its `pod-template-generation` label value equals to the latest
-         PodTemplate, it's a new pod 
-       - If its `pod-template-generation` label value equals to a PodTemplate
-         whose template is the same as the latest PodTemplate, it's a new pod
-         that needs to be relabeled 
-       - Otherwise, it's an old pod 
+       - If its `pod-template-generation` label value equals to DaemonSet's 
+         `.spec.templateGeneration`, it's a new pod (don't compare
+         `pod-template-hash`, for backward compatibility).
+         - Add `pod-template-hash` label to the new pod based on current
+           history, if the pod doesn't have this label set yet. 
+       - Otherwise, if the value doesn't match, or the pod doesn't have a
+         `pod-template-generation` label, check its `pod-template-hash` label:
+         - If the value matches any of the history's `pod-template-hash` label,
+           it's a pod generated from that history.
+           - If that history matches the current target state of the DaemonSet,
+             it's a new pod.
+           - Otherwise, it's an old pod. 
+         - Otherwise, if the pod doesn't have a `pod-template-hash` label, or no
+           matching history is found, it's an old pod. 
      - If there are old pods found, compare `MaxUnavailable` with DaemonSet
        `.status.numberUnavailable` to see how many old daemon pods can be
        killed. Then, kill those pods in the order that unhealthy pods (failed,
        pending, not ready) are killed first.
-     - Relabel new pods with current `.spec.templateGeneration`
+     - Clean up history based on `.spec.revisionHistoryLimit`
+       - Always keep live history
 1. Find all nodes that should run these pods created by this DaemonSet.
 1. Create daemon pods on nodes when they should have those pods running but not
    yet. Otherwise, delete running daemon pods that shouldn't be running on nodes.
+   - Label new pods with current `.spec.templateGeneration` and
+     `pod-template-hash` value of current history when creating them.
 1. Cleanup, update DaemonSet status  
    - `.status.numberAvailable` = the total number of DaemonSet pods that have
      become `Ready` for `MinReadySeconds`
@@ -245,8 +272,7 @@ Users can use `kubectl rollout` to monitor DaemonSet updates:
 - `kubectl rollout status daemonset/<DaemonSet-Name>`: to see the DaemonSet
   upgrade status 
 - `kubectl rollout history daemonset/<DaemonSet-Name>`: to view the history of
-  DaemonSet updates. We use `PodTemplate` created by DaemonSets to store update
-  history.
+  DaemonSet updates.
 - `kubectl rollout undo daemonset/<DaemonSet-Name>`: to rollback a DaemonSet
 
 #### API
@@ -266,8 +292,7 @@ one will begin rolling out.
 
 ## Deleting DaemonSets
 
-Deleting a DaemonSet (with cascading) will delete all its pods and history
-(PodTemplates).
+Deleting a DaemonSet (with cascading) will delete all its pods and history.
 
 
 ## DaemonSet Strategies
