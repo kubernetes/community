@@ -24,7 +24,7 @@ SIG PM responsibilities:
 |  Cluster Ops | Jason Singer DuMars | jdumars | jdumars@deis.com | Rob Hirschfeld |
 |  Contrib Experience | Garrett Rodrigues | grodrigues3 | grod@google.com | elsie.phillips@coreos.com |
 |  Docs | N/A |  |  |  |
-|  Federation | David Aronchick |  | aronchick@google.com |  |
+|  Federation | David Aronchick | aronchick | aronchick@google.com |  |
 |  Instrumentation | Piotr Szczesniak | piosz | pszczesniak@google.com | Patrick Christopher (pat.christopher@gmail.com) |
 |  Network | Dan Williams | dcbw | dcbw@redhat.com | Christopher M Luciano, @cmluciano, cmluciano@us.ibm.com |
 |  Node | Caleb Miles | calebamiles | caleb.miles@coreos.com |  |
