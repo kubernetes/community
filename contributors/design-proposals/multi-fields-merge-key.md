@@ -40,7 +40,10 @@ If a merge key has multiple fields, it will be a string of merge key fields sepe
 If a merge key only has one field, it will be the same as before, i.e. `patchMergeKey:"<key1>"`.
 
 There are no patch format changes.
-Additional fields are just extra fields in the patch.
+Patches for fields that have multiple fields in the merge key must include all of the fields of the merge key in the patch.
+
+If a new API uses multi-fields merge key, all the fields of the merge key are required to present.
+Otherwise, the server will reject the patch.
 
 E.g.
 foo and bar are the merge keys.
