@@ -69,44 +69,49 @@ type Initializer struct {
     Timeout *int64
 }
 
+type FailurePolicyType string
+
+const (
+    Ignore FailurePolicyType = "Ignore"
+    Fail FailurePolicyType = "Fail"
+)
+
 type ExternalAdmissionHook struct {
     // Operations is the list of operations this hook will be invoked on - Create, Update, or *
     // for all operations. Defaults to '*'.
-    Operations []string
+    Operations []OperationType
     // Resources are the resources this hook should be invoked on. '*' is all resources.
     Resources []string
-    // Subresources are the list of subresources this hook should be invoked on. '*' is all resources.
+    // Subresources is list of subresources. If non-empty, this hook should be invoked on 
+    // all combinations of Resources and Subresources. '*' is all subresources.
     Subresources []string
 
     // ClientConfig defines how to talk to the hook.
     ClientConfig AdmissionHookClientConfig
 
     // FailurePolicy defines how unrecognized errors from the admission endpoint are handled -
-    // allowed values are Ignore, Retry, Fail. Default value is Fail
+    // allowed values are Ignore, Fail. Default value is Fail
     FailurePolicy FailurePolicyType
 }
 
+type OperationType string
+
+const (
+    All OperationType = "*"
+    Create OperationType= "Create"
+    Update OperationType= "Update"
+)
+
 // AdmissionHookClientConfig contains the information to make a TLS
 // connection with the webhook
-// **very similar to the schema of kubeconfig**
 type AdmissionHookClientConfig struct {
 	// Address of the external admission hook, could be a host string, 
     // a host:port pair, or a URL.
 	Address string
-	// ClientCertificate is the path to a client cert file for TLS.
-	ClientCertificate string
-    // ClientCertificateData contains PEM-encoded data from a client cert file
-    for TLS. Overrides ClientCertificate
-	ClientCertificateData []byte
-	// ClientKey is the path to a client key file for TLS.
-	ClientKey string
-	// ClientKeyData contains PEM-encoded data from a client key file for TLS. Overrides ClientKey
-	ClientKeyData []byte
-	// CertificateAuthority is the path to a cert file for the certificate authority.
-	CertificateAuthority string
-	// CertificateAuthorityData contains PEM-encoded certificate authority certificates. Overrides CertificateAuthority
-	CertificateAuthorityData []byte
+	// CABundle is a PEM encoded CA bundle which will be used to validate webhook's server certificate.
+	CABundle []byte
 }
+
 ```
 
 ## Synchronization of AdmissionControlConfiguration (**optional for alpha implement**)
@@ -114,7 +119,7 @@ type AdmissionHookClientConfig struct {
 If the `initializer admission controller` and the `generic webhook admission
 controller` watch the `AdmissionControlConfiguration` and act upon deltas, their
 cached version of the configuration might be arbitrarily delayed. This makes it
-impossible to predicate what initializer/hooks will be applied to newly created
+impossible to predict what initializer/hooks will be applied to newly created
 objects.
 
 We considered a few ways to make the behavior of the `initializer admission
