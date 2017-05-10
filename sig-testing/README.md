@@ -4,7 +4,7 @@ The Kubernetes Testing SIG (sig-testing) is a working group within the Kubernete
 
 ## video conference
 
-We meet weekly on Tuesdays at 9:30am PDT (16:30 UTC) at [this zoom room](https://zoom.us/j/553910341)
+We meet weekly on Tuesdays at 1:00pm PDT (20:00 UTC) at [this zoom room](https://zoom.us/j/553910341)
 
 ## agenda
 
@@ -19,10 +19,20 @@ Signup for access at http://slack.kubernetes.io/
 
 ## github
 
-- [our github team: @kubernetes/sig-testing](https://github.com/orgs/kubernetes/teams/sig-testing)
-- [issues mentioning @kubernetes/sig-testing](https://github.com/issues?q=is%3Aopen+team%3Akubernetes%2Fsig-testing)
+We use the following GitHub teams to notify SIG members of particular issues or PR's of interest:
+- @kubernetes/sig-testing-api-reviews
+- @kubernetes/sig-testing-bugs
+- @kubernetes/sig-testing-feature-requests
+- @kubernetes/sig-testing-misc
+- @kubernetes/sig-testing-pr-reviews
+- @kubernetes/sig-testing-proposals
+- @kubernetes/sig-testing-test-failures
 
-We use the @kubernetes/sig-testing team to notify SIG members of particular issues or PR's of interest.  If you would like to be added to this team, please contact the organizers listed below.
+If you would like to be added to any of these teams, please contact the organizers listed below.
+
+We use the `sig/testing` label to identify issues that have mentioned any of the above teams
+- [issues with `sig/testing` label applied](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Asig%2Ftesting)
+- [PRs with `sig/testing` label applied](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+label%3Asig%2Ftesting)
 
 ## google group
 
@@ -31,4 +41,5 @@ https://groups.google.com/forum/#!forum/kubernetes-sig-testing (FWIW this doesn'
 ## organizers
 
 - [Aaron Crickenberger, Samsung SDS](https://github.com/spiffxp), email: spiffxp@gmail.com
-- [Jeff Grafton, Google](https://github.com/ixdy), email: jgrafton@google.com
+- [Erick Fejta, Google](https://github.com/fejta), email: fejta@google.com
+- [Timothy St. Clair, Heptio](https://github.com/timothysc), email: tstclair@heptio.com
