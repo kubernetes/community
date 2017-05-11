@@ -15,26 +15,26 @@ equipped to respond, it is your job to redirect to someone who can.
 
 * [Slack](https://kubernetes.slack.com) ([registration](http://slack.k8s.io)):
 Your job is to be on Slack, watching for questions and answering or redirecting
-as needed. Also check out the [Slack Archive](http://kubernetes.slackarchive.io/).
+as needed, such as to a SIG-specific channel. Please especially watch 
+`#kubernetes-users` and `#kubernetes-novice`. Also check out the 
+[Slack Archive](http://kubernetes.slackarchive.io/).
 
-* [Email/Groups](https://groups.google.com/forum/#!forum/google-containers):
+* [Email/Groups](https://groups.google.com/forum/#!forum/kubernetes-users):
 Respond to any thread that has no responses and is more than 6 hours old (over
 time we will lengthen this timeout to allow community responses). If you are not
 equipped to respond, it is your job to redirect to someone who can.
 
-* [Legacy] [IRC](irc://irc.freenode.net/#google-containers)
-(irc.freenode.net #google-containers): watch IRC for questions and try to
-redirect users to Slack. Also check out the
-[IRC logs](https://botbot.me/freenode/google-containers/).
+*  on slack: Respond to questions that
+don't get answers. 
 
 In general, try to direct support questions to:
 
-1. Documentation, such as the [user guide](https://kubernetes.io/docs/user-guide/) and
-[troubleshooting guide](http://kubernetes.io/docs/troubleshooting/)
+1. Documentation, such as the [user documentation](https://kubernetes.io/docs/) and
+[troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
 
 2. Stackoverflow
 
-If you see questions on a forum other than Stackoverflow, try to redirect them
+If you see questions on kubernetes-dev@googlegroups.com, try to redirect them
 to Stackoverflow. Example response:
 
 ```code
@@ -57,8 +57,8 @@ ensure your questions don't go unanswered.
 Before posting a new question, please search stackoverflow for answers to
 similar questions, and also familiarize yourself with:
 
-  * [user guide](http://kubernetes.io/docs/user-guide/)
-  * [troubleshooting guide](http://kubernetes.io/docs/troubleshooting/)
+  * [user documentation](http://kubernetes.io/docs/)
+  * [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
 
 Again, thanks for using Kubernetes.
 
@@ -66,16 +66,8 @@ The Kubernetes Team
 ```
 
 If you answer a question (in any of the above forums) that you think might be
-useful for someone else in the future, *please add it to one of the FAQs in the
-wiki*:
-
-* [User FAQ](https://github.com/kubernetes/kubernetes/wiki/User-FAQ)
-* [Developer FAQ](https://github.com/kubernetes/kubernetes/wiki/Developer-FAQ)
-* [Debugging FAQ](https://github.com/kubernetes/kubernetes/wiki/Debugging-FAQ).
-
-Getting it into the FAQ is more important than polish. Please indicate the date
-it was added, so people can judge the likelihood that it is out-of-date (and
-please correct any FAQ entries that you see contain out-of-date information).
+useful for someone else in the future, please send a PR or file an issue in 
+[kubernetes.github.io](https://github.com/kubernetes/kubernetes.github.io).
 
 ### Contact information
 
