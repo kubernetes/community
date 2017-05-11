@@ -81,7 +81,7 @@ type ExternalAdmissionHook struct {
     // for all operations. Defaults to '*'.
     Operations []OperationType
     // Resources are the resources this hook should be invoked on. '*' is all resources.
-    Resources []string
+    Resources []Resource
     // Subresources is list of subresources. If non-empty, this hook should be invoked on 
     // all combinations of Resources and Subresources. '*' is all subresources.
     Subresources []string
@@ -92,6 +92,13 @@ type ExternalAdmissionHook struct {
     // FailurePolicy defines how unrecognized errors from the admission endpoint are handled -
     // allowed values are Ignore, Fail. Default value is Fail
     FailurePolicy FailurePolicyType
+}
+
+type Resource struct {
+    // Group is the API group the resource belongs to.
+    Group string
+    // Resource is the name of the resource.
+    Resource string
 }
 
 type OperationType string
