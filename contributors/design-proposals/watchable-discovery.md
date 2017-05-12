@@ -207,9 +207,29 @@ groups. But, this is not part of the API types yet.
 
 - We could implement the discovery resource in the aggregator only and
   use polling to the sub-API-servers. This would look mostly the same
-  for the cluster end-user, but would be less real-time. Moreover,
-  speaking to the sub-API-servers directly without going through the
-  aggregator would show a different behavior which is not desirable.
+  for the cluster end-user, but this would have the following down-sides:
+  1. it's **less real-time** if no watch is involved to trigger a new re-poll.
+	 We could watch TPRs (the old and the new kind) in the aggregator
+     and assume that no other third-party API server has dynamic API
+	 groups. Having this knowledge in the aggregator is ugly, but might
+	 be acceptable if it reduces complexity or implementation effort.
+  1. **watchable discovery won't work without the aggregator**. This is
+     probably mostly an issue during testing. In a real setup,
+     everything will go through the aggregator, especially because it
+     does authentication.
+  The advantage is that 
+  1. we don't have to implement the DiscoveryController in normal
+     generic storage based API server (as kube-apiserver,
+     service-catalog and probably most other third-party API
+     servers). This though is a one-time implementation in
+     `k8s.io/apiserver` and then two calls per API server:
+	 - `genericApiServer.InstallDiscoveryAPI()`
+	 - `genericApiServer.StartDiscoveryController(loopBackClient)`
+  1. we don't have to implement the DiscoveryController in the
+	 new kube-apiextensions-apiserver.
+  The prototype will show whether these two steps actually safe much
+  effort or reduce complexity. It is expected that the changes will
+  be pretty straight forward.
 - We could implement an in-memory variant of the discovery
   resource. While this is considerable more complex (painful
   experience exists in the OpenShift project), we still have to
