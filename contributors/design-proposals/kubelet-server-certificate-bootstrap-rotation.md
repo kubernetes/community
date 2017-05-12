@@ -40,12 +40,8 @@ cert/key pair on disk, begin using the new cert/key pair.
    default value if it is unspecified. This will allow the kubelet to have a
    place for storing the multiple cert/key pairs that it might have available at
    any given moment (because of a rotation in progress).
-    - When cert/key data is directly embedded in the kubelet config file
-      (client-certificate-data, client-key-data)
-        - The values be used only if there are no updated cert/key pairs due to
-          rotation
-    - When cert/key files are specified in kubeconfig, or with the
-      `--tls-cert-file` and `--tls-private-key-file`:
+    - When cert/key files are specified with the `--tls-cert-file` and
+      `--tls-private-key-file`:
         - These values be used only if there are no updated cert/key pairs due
           to rotation
 1. There will be a feature gate to enable certificate bootstrapping and
@@ -80,11 +76,7 @@ cert/key pair on disk, begin using the new cert/key pair.
           kubelet-server-<timestamp>.pem.
         - Write kubelet-server-updated.pem symlink to point to the new cert/key
           pair.
-        - Delete kubelet-server-current.pem
         - Move kubelet-server-updated.pem to kubelet-server-current.pem
-1. Currently the Certificate Request Signing API is hard coded to issue
-   certificates for 1 year. Making this a parameter that can be set quite short
-   during end to end testing would enable easy certificate rotation testing.
 
 ### Certificate Approval
 
@@ -95,3 +87,8 @@ to this will require authenticating the kubelet making the request in some way,
 and will be covered by a [future design]
 (https://github.com/kubernetes/kubernetes/issues/45030).
 
+## Future Work
+
+1. Currently the Certificate Request Signing controller is hard coded to issue
+   certificates for 1 year. Making this a parameter that can be set quite short
+   during end to end testing would enable easy certificate rotation testing.
