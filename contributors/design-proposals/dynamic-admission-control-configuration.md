@@ -14,8 +14,12 @@ details.
 
 ## Goals
 
-* Admins are able to predict what initializers/webhooks will be applied to newly
+* Admin is able to predict what initializers/webhooks will be applied to newly
   created objects.
+
+* Admin needs to be able to ensure initializers/webhooks config will be applied within some bound
+
+* As a fallback, admin can always restart an apiserver and guarantee it sees the latest config
 
 * Do not block the entire cluster if the intializers/webhooks are not ready
   after registration.
@@ -128,7 +132,7 @@ type ServiceReference struct {
 }
 ```
 
-## Synchronization of AdmissionControlConfiguration (**optional for alpha implement**)
+## Synchronization of AdmissionControlConfiguration 
 
 If the `initializer admission controller` and the `generic webhook admission
 controller` watch the `AdmissionControlConfiguration` and act upon deltas, their
@@ -136,12 +140,58 @@ cached version of the configuration might be arbitrarily delayed. This makes it
 impossible to predict what initializer/hooks will be applied to newly created
 objects.
 
-We considered a few ways to make the behavior of the `initializer admission
+We propose two ways to make the behavior of the `initializer admission
 controller` and the `generic webhook admission controller` predictable.
 
-(I prefer #2. #1 is inefficient, #3 requires complex schema and is not intuitive)
+#### 1. Do consistent read of AdmissionControlConfiguration periodically
 
-#### 1. Always do consistent read 
+The `initializer admission controller` and the `generic webhook admission
+controller` do a consistent read of the AdmissionControlConfiguration either 30s
+after the last read, or when there is a request that needs the two controllers to
+apply the configuration, whichever comes later.
+
+If the read fails, the two admission controllers block all incoming request.
+
+#### 2. Always do a consistent read of a smaller object
+
+A consistent read of the AdmissionControlConfiguration object is expensive, we
+cannot do it for every incoming request.
+
+Alternatively, we record the resource version of the AdmissionControlConfiguration
+in a configmap. The apiserver that handles an update of the AdmissionControlConfiguration
+updates the configmap with the updated resource version. In the HA setup, there
+are multiple apiservers that update this configmap, they should only
+update if the recorded resource version is lower than the local one.
+
+The `initializer admission controller` and the `generic webhook admission
+controller` do a consistent read of the configmap *everytime* before applying
+the configuration to an incoming request. If the configmap has changed, then
+they do a consistent read of the `AdmissionControlConfiguration`.
+
+## What if an initializer controller/webhook is not ready after registered? (**optional for alpha implement**)
+
+This will block the entire cluster. We have a few options:
+
+1. only allow initializers/webhooks to be created as "fail open". This could be
+   enforced via validation. They can upgrade themselves to "fail closed" via the
+   normal Update operation. A human can also update them to "fail closed" later. 
+
+2. less preferred: add readiness check to initializer and webhooks, `initializer
+   admission controller` and `generic webhook admission controller` only apply
+   those have passed readiness check. Specifically, we add `readiness` fields to
+   `AdmissionControllerConfiguration`; then we either create yet another
+   controller to probe for the readiness and update the
+   `AdmissionControllerConfiguration`, or ask each initializer/webhook to update
+   their readiness in the `AdmissionControllerConfigure`. The former is complex.
+   The latter is essentially the same as the first approach, except that we need
+   to introduce the additional concept of "readiness".
+
+
+## Considered bug REJECTED synchronization mechinism:
+
+#### Rejected 1. Always do consistent read
+
+Rejected because of inefficiency.
 
 The `initializer admission controller` and the `generic webhook admission
 controller` always do consistent read of the `AdmissionControlConfiguration`
@@ -150,16 +200,10 @@ every CREATE request. Because the two admission controllers are in the same
 process as the apiserver, the latency mainly consists of the consistent read
 latency of the backend storage (etcd), and the proto unmarshalling.
 
-#### 2. Optimized version of #1, do consistent read of a smaller object
 
-Instead of having the two controllers do consistent read of the entire
-`AdmissionControlConfiguration` object, we let the registry store the
-resourceVersion of the `AdmissionControlConfiguration` (perhaps in a configMap),
-and let the two controllers always do consistent read of the resourceVersion and
-only read the entire `AdmissionControlConfiguration` if the local version is
-lower than the stored one.
+#### Rejected 2. Don't synchronize, but report what is the cached version
 
-#### 3. Don't synchronize, but report what is the cached version
+Rejected because it violates Goal 2 on the time bound.
 
 The main goal is *NOT* to always apply the latest
 `AdmissionControlConfiguration`, but to make it predictable what
@@ -172,50 +216,3 @@ observedGeneration and predict if all the initializer/hooks listed in the
 In the HA setup, the `observedGeneration` reported by of every apiserver's
 `initializer admission controller` and `generic webhook admission controller`
 are different, so the API needs to record multiple `observedGeneration`.
-
-A tentative schema:
-
-```golang
-Type AdmissionControlConfiguration struct {
-    ...
-    // Generation is set by the registry
-    Geneartion int64
-    // ObserverdGenerations is set by `initializer admission controller` and 
-    // `generic webhook admission controller` in each apiserver.
-    ObserverdGenerations []ObservedGenerationByServer
-}
-
-type ObservedGenerationByServer struct {
-    // Address of this server
-    // This can be a hostname, hostname:port, IP or IP:port
-    Server string
-    // The entity that reports the observedGeneration
-    AdmissionController AdmissionControllerType 
-    ObservedGeneration int64
-}
-
-type AdmissionControllerType string
-
-const (
-    InitializerAdmissionController AdmissionControllerType = "initializer admission controller"
-    GenericWebhookAdmissionController AdmissionControllerType = "generic webhook admission controller"
-)
-```
-
-## What if an initializer controller/webhook is not ready after registered? (**optional for alpha implement**)
-
-This will block the entire cluster. We have a few options:
-
-1. only allow initializers/webhooks to be created as "fail open". They can
-   upgrade themselves to "fail closed" via the normal Update operation. A human
-   can also update them to "fail closed" later. 
-
-2. less preferred: add readiness check to initializer and webhooks, `initializer
-   admission controller` and `generic webhook admission controller` only apply
-   those have passed readiness check. Specifically, we add `readiness` fields to
-   `AdmissionControllerConfiguration`; then we either create yet another
-   controller to probe for the readiness and update the
-   `AdmissionControllerConfiguration`, or ask each initializer/webhook to update
-   their readiness in the `AdmissionControllerConfigure`. The former is complex.
-   The latter is essentially the same as the first approach, except that we need
-   to introduce the additional concept of "readiness".
