@@ -252,7 +252,7 @@ validation of creation and updates. Therefore we propose the following changes t
 
 Some admission controller types would not be possible for these extensions:
 
-* Mutating admission webhooks should be a design consideration, but are not required for a prototype.
+* Mutating admission webhooks are not part of the initial implementation but are desired in the future.
 * Admission controllers that need access to the acting user can receive that via the external webhook.
 * Admission controllers that "react" to the acting user can couple the information received via a webhook and then act if they observe mutation succeed (tuple combining resource UID and resource generation).
 * Quota will continue to be a core plugin per API server, so extension is not critical.
@@ -307,11 +307,11 @@ type Initializer struct {
 }
 ```
 
-On creation, an admission controller defaults the initializers field (if nil) to a value from the system
-configuration that may vary by resource type. If initializers is set the admission controller will check
-whether the user has the ability to run the `initialize` verb on the current resource type, and reject
-the entry with 403 if not. This allows a privileged user to bypass initialization by setting `initializers`
-to the empty struct.
+On creation, a compiled in admission controller defaults the initializers field (if nil) to a value from 
+the system configuration that may vary by resource type. If initializers is set the admission controller 
+will check whether the user has the ability to run the `initialize` verb on the current resource type, and 
+reject the entry with 403 if not. This allows a privileged user to bypass initialization by setting 
+`initializers` to the empty struct.
 
 Once created, an object is not visible to clients unless the following conditions are satisfied:
 
@@ -418,6 +418,15 @@ response <------- handle               |
                                    delete object
 ```
 
+##### Failure
+
+If the apiserver crashes before the initialization is complete, it may be necessary for the
+apiserver or another controller to complete deletion. 
+
+1. Alternatively, upon receiving a failed status update during initialization, the apiserver could delete the object at that time.
+2. The garbage collector controller could be responsible for cleaning up resources that failed initialization.
+3. Read repair could be performed when listing resources from the apiserver.
+
 
 ##### Quota
 
@@ -506,27 +515,17 @@ and the caller may choose to retry calls and so submission must be idempotent.
 
 Because admission is performance critical, the following considerations are taken:
 
-1. The caller may pass the received body bytes AS-IS to the admission controller, so defaulting may not be performed.
-2. Protobuf will be the expected serialization format - JSON is shown above for readability, but the content-type wrapper will be used to encode bytes.
-3. The admission object will be serialized once and sent to all callers
-4. To minimize fan-out variance, future implementations may set strict timeouts and dispatch multiple requests.
+1. Protobuf will be the expected serialization format - JSON is shown above for readability, but the content-type wrapper will be used to encode bytes.
+2. The admission object will be serialized once and sent to all callers
+3. To minimize fan-out variance, future implementations may set strict timeouts and dispatch multiple requests.
+4. Admission controllers MAY omit the spec field in returning a response to the caller, specifically the `object` and `oldObject` fields.
+
+Future work:
+
+1. It should be possible to bypass expensive parts of the serialization action by potentially passing the input bytes directly to the webhook, but mutation and defaulting may complicate this goal.
 
 Admission is a high security operation, so end-to-end TLS encryption is expected and the remote endpoint
 should be authorized via strong signing, mutual-auth, or high security.
-
-
-##### Bypassing external admission hooks
-
-There may be scenarios where an external admission hook blocks a system critical loop in a non-obvious way -
-by preventing node updates that prevents a new admission pod from being created, for instance. One option
-is to allow administrators to request fail open on specific calls, or to require that certain special resource
-paths (initializers dynamic config path) are always fail open. Alternatively, it may be desirable for
-administrative users to bypass admission completely.
-
-Some options:
-
-1. Some namespaces are opted out of external admission (kube-system)
-2. Certain service accounts can bypass external admission checks
 
 
 ##### Upgrade of a cluster with external admission
@@ -603,6 +602,37 @@ There should be no reason these could not be implemented for specific use cases.
 4. Make it easy to recompile Kubernetes to have new admission controllers
     * Limits administrators to using Go
     * Prevents easy installation and dynamic reconfiguration
+
+
+## Future Work
+
+### Mutating admission controllers
+
+Allow webhook admission controllers to return a mutated object that is then sent to others. Requires some
+ordering / dependency tree in order to control the set of changes. Is necessary for some forms of controller,
+such as those that resolve fields into more specific values (converting an update of a pod image from a 
+tag reference to a digest reference, or pointing to a proxy server).
+
+
+### Bypassing external admission hooks
+
+There may be scenarios where an external admission hook blocks a system critical loop in a non-obvious way -
+by preventing node updates that prevents a new admission pod from being created, for instance. One option
+is to allow administrators to request fail open on specific calls, or to require that certain special resource
+paths (initializers dynamic config path) are always fail open. Alternatively, it may be desirable for
+administrative users to bypass admission completely.
+
+Some options:
+
+1. Some namespaces are opted out of external admission (kube-system)
+2. Certain service accounts can bypass external admission checks
+
+
+### An easily accessible policy engine for moderately complex scenarios
+
+It should be easy for a novice Kubernetes administrator to apply simple policy rules to the cluster. In
+the future it is desirable to have many such policy engines enabled via extension to enable quick policy 
+customization to meet specific needs.
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
