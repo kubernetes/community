@@ -112,13 +112,20 @@ const (
 // AdmissionHookClientConfig contains the information to make a TLS
 // connection with the webhook
 type AdmissionHookClientConfig struct {
-	// Address of the external admission hook, could be a host string, 
-    // a host:port pair, or a URL.
-	Address string
+    // Service is a reference to the service for this webhook. It must communicate
+	// on port 443
+	Service ServiceReference
 	// CABundle is a PEM encoded CA bundle which will be used to validate webhook's server certificate.
 	CABundle []byte
 }
 
+// ServiceReference holds a reference to Service.legacy.k8s.io
+type ServiceReference struct {
+	// Namespace is the namespace of the service
+	Namespace string
+	// Name is the name of the service
+	Name string
+}
 ```
 
 ## Synchronization of AdmissionControlConfiguration (**optional for alpha implement**)
