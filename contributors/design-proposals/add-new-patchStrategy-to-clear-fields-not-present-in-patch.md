@@ -1,9 +1,8 @@
 Add new patchStrategy to clear fields not present in the patch
 =============
 
-Add tags `patchStrategy:"replaceKeys"`. For a given type that has the tag, all keys/fields missing
-from the request will be cleared when patching the object.
-For a field presents in the request, it will be merged with the live config.
+We introduce a new struct tag `patchStrategy:"retainKeys"` and
+a new optional directive `$retainKeys: <list of fields>` in the patch.
 
 The proposal of Full Union is in [kubernetes/community#388](https://github.com/kubernetes/community/pull/388).
 
@@ -66,11 +65,53 @@ It indicates how to generate and merge a patch for lists. It could be `merge` or
 
 new tags:
 
-`patchStrategy: replaceKeys`:
+`patchStrategy: "retainKeys"`:
 
-We introduce a new value `replaceKeys` for `patchStrategy`.
-It indicates that all fields needing to be preserved must be present in the patch.
-And the fields that are present will be merged with live object. All the missing fields will be cleared when patching.
+We introduce a new optional directive `$retainKeys` to support the new patch strategy.
+
+`$retainKeys` directive has the following properties:
+- It contains a list of strings.
+- All fields needing to be preserved must be present in the `$retainKeys` list.
+- The fields that are present will be merged with live object.
+- All of the missing fields will be cleared when patching.
+- All fields in the `$retainKeys` list must be a superset or the same as the fields present in the patch.
+
+A new patch will have the same content as the old patch and an additional new directive.
+It will be backward compatible.
+
+#### When the patch doesn't have `$retainKeys` directive
+
+When the patch doesn't have `$retainKeys` directive, even for a type with `patchStrategy: "retainKeys"`,
+the server won't treat the patch with the retainKeys logic.
+
+This will guarantee the backward compatibility: old patch behaves the same as before on the new server.
+
+#### When the patch has fields that not present in the `$retainKeys` list
+
+The server will reject the patch in this case.
+
+This is an invalid patch:
+
+```yaml
+union:
+  $retainKeys:
+  - foo
+  foo: a
+  bar: x
+```
+
+#### When the `$retainKeys` list has fields that are not present in the patch
+
+The server will merge the change and clear the fields not present in the `$retainKeys` list
+
+This is a valid patch:
+```yaml
+union:
+  $retainKeys:
+  - foo
+  - bar
+  foo: a
+```
 
 #### Examples
 
@@ -80,8 +121,8 @@ Type definition:
 ```go
 type ContainerStatus struct {
 	...
-	// Add patchStrategy:"replaceKeys"
-	State ContainerState `json:"state,omitempty" protobuf:"bytes,2,opt,name=state" patchStrategy:"replaceKeys"``
+	// Add patchStrategy:"retainKeys"
+	State ContainerState `json:"state,omitempty" protobuf:"bytes,2,opt,name=state" patchStrategy:"retainKeys"``
 	...
 }
 ```
@@ -101,7 +142,8 @@ state:
 Patch:
 ```yaml
 state:
-  $patch: replaceKeys
+  $retainKeys:
+  - terminated
   terminated:
     exitCode: 0
     finishedAt: ...
@@ -120,8 +162,8 @@ Type definition:
 ```go
 type DeploymentSpec struct {
 	...
-	// Add patchStrategy:"replaceKeys"
-	Strategy DeploymentStrategy `json:"strategy,omitempty" protobuf:"bytes,4,opt,name=strategy" patchStrategy:"replaceKeys"`
+	// Add patchStrategy:"retainKeys"
+	Strategy DeploymentStrategy `json:"strategy,omitempty" protobuf:"bytes,4,opt,name=strategy" patchStrategy:"retainKeys"`
 	...
 }
 ```
@@ -144,7 +186,9 @@ unionName:
 Patch:
 ```yaml
 unionName:
-  $patch: replaceKeys
+  $retainKeys:
+  - discriminatorName
+  - barField
   discriminatorName: bar
   barField:
     barSubfield: val2
@@ -159,14 +203,14 @@ unionName:
 
 3) Inlined union with `patchMergeKey` only.
 This case is special, because `Volumes` already has a tag `patchStrategy:"merge"`.
-We change the tag to `patchStrategy:"merge|replaceKeys"`
+We change the tag to `patchStrategy:"merge|retainKeys"`
 
 Type definition:
 ```go
 type PodSpec struct {
 	...
-	// Add another value "replaceKeys" to patchStrategy
-	Volumes []Volume `json:"volumes,omitempty" patchStrategy:"merge|replaceKeys" patchMergeKey:"name" protobuf:"bytes,1,rep,name=volumes"`
+	// Add another value "retainKeys" to patchStrategy
+	Volumes []Volume `json:"volumes,omitempty" patchStrategy:"merge|retainKeys" patchMergeKey:"name" protobuf:"bytes,1,rep,name=volumes"`
 	...
 }
 ```
@@ -191,8 +235,10 @@ Patch:
 ```yaml
 spec:
   volumes:
-  - name: foo
-    $patch: replaceKeys
+  - $retainKeys:
+    - name
+    - hostPath
+    name: foo
     hostPath:
       path: ...
 ```
@@ -224,8 +270,8 @@ Changes about how to generate the patch rely on package Strategic Merge Patch.
 Strategic Merge Patch is a package used by both client and server. A typical usage is that a client
 calls the function to calculate the patch and the API server calls another function to merge the patch.
 
-We need to make sure the client always sends a patch that includes all of the fields that it wants to keep.
-When merging, auto clear missing fields of a patch if the patch has a directive `$patch: replaceKeys`
+We need to make sure the new client always sends its patches with the `$retainKeys` directive.
+When merging, auto clear missing fields of a patch if the patch has a directive `$retainKeys`
 
 ### Open API
 
@@ -238,13 +284,32 @@ The changes are all backward compatible.
 Old kubectl vs New server: All behave the same as before, since no new directive in the patch.
 
 New kubectl vs Old server: All behave the same as before, since new directive will not be recognized
-by the old server and it will be dropped in conversion; Unchanged fields will not affect the merged result.
+by the old server and it will be dropped in conversion.
 
 # Alternatives Considered
 
+# 1. Use directive `$patch: retainKeys` in the patch
+
+Add tags `patchStrategy:"retainKeys"`.
+For a given type that has the tag, all keys/fields missing
+from the request will be cleared when patching the object.
+Each field present in the request will be merged with the live config.
+
+## Analysis
+
+There are 2 reasons of avoiding this logic:
+- Using `$patch` as directive key will break backward compatibility.
+But can easily fixed by using a different key, e.g. `retainKeys: true`.
+Reason is that `$patch` has been used in earlier releases.
+If we add new value to this directive,
+the old server will reject the new patch due to not knowing the new value.
+- The patch has to include the entire struct to hold the place in a list with `replace` patch strategy,
+even though there may be no changes at all.
+This is less efficient compared to the approach above.
+
 The proposals below are not mutually exclusive with the proposal above, and maybe can be added at some point in the future.
 
-# 1. Add Discriminators in All Unions/OneOf APIs
+# 2. Add Discriminators in All Unions/OneOf APIs
 
 Original issue is described in kubernetes/kubernetes#35345
 
