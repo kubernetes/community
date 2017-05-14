@@ -1,6 +1,6 @@
 # Generation and release cycle of clientset
 
-Client-gen is an automatic tool that generates [clientset](../../docs/proposals/client-package-structure.md#high-level-client-sets) based on API types. This doc introduces the use the client-gen, and the release cycle of the generated clientsets.
+Client-gen is an automatic tool that generates [clientset](../design-proposals/client-package-structure.md#high-level-client-sets) based on API types. This doc introduces the use the client-gen, and the release cycle of the generated clientsets.
 
 ## Using client-gen
 
@@ -16,7 +16,7 @@ The workflow includes three steps:
 $ client-gen --input="api/v1,extensions/v1beta1" --clientset-name="my_release"
 ```
 
-**3.** ***Adding expansion methods***: client-gen only generates the common methods, such as CRUD. You can manually add additional methods through the expansion interface. For example, this [file](../../pkg/client/clientset_generated/clientset/typed/core/v1/pod_expansion.go) adds additional methods to Pod's client. As a convention, we put the expansion interface and its methods in file ${TYPE}_expansion.go. In most cases, you don't want to remove existing expansion files. So to make life easier, instead of creating a new clientset from scratch, ***you can copy and rename an existing clientset (so that all the expansion files are copied)***, and then run client-gen.
+**3.** ***Adding expansion methods***: client-gen only generates the common methods, such as CRUD. You can manually add additional methods through the expansion interface. For example, this [file](https://github.com/kubernetes/kubernetes/tree/master/pkg/client/clientset_generated/clientset/typed/core/v1/pod_expansion.go) adds additional methods to Pod's client. As a convention, we put the expansion interface and its methods in file ${TYPE}_expansion.go. In most cases, you don't want to remove existing expansion files. So to make life easier, instead of creating a new clientset from scratch, ***you can copy and rename an existing clientset (so that all the expansion files are copied)***, and then run client-gen.
 
 ## Output of client-gen
 
@@ -26,13 +26,11 @@ $ client-gen --input="api/v1,extensions/v1beta1" --clientset-name="my_release"
 
 ## Released clientsets
 
-If you are contributing code to k8s.io/kubernetes, try to use the generated clientset [here](../../pkg/client/clientset_generated/clientset/).
+If you are contributing code to k8s.io/kubernetes, try to use the generated clientset [here](https://github.com/kubernetes/kubernetes/tree/master/pkg/client/clientset_generated/clientset).
 
 If you need a stable Go client to build your own project, please refer to the [client-go repository](https://github.com/kubernetes/client-go).
 
 We are migrating k8s.io/kubernetes to use client-go as well, see issue [#35159](https://github.com/kubernetes/kubernetes/issues/35159).
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS --> [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/generating-clientset.md?pixel)]() <!-- END MUNGE: GENERATED_ANALYTICS -->
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->

@@ -25,7 +25,7 @@ in addition to many other responsibilities.
 ### Understand the big picture
 
 - Complete the [Kubernetes Basics Tutorial].
-- Be familiar with [kubctl user facing documentation ][kubectl docs].
+- Be familiar with [kubectl user facing documentation ][kubectl docs].
 - Read the concept guides starting with the [management overview].
 
 ### Modify your own `kubectl` fork
@@ -54,13 +54,15 @@ New contributors can try the following to work on an existing [bug] or [approved
 - In [slack][slack-messages] (signup [here][slack-signup]),
   @mention a [lead][leads] and ask if there are any issues you could pick up.
   Leads can recommend issues that have enough priority to receive PR review bandwidth.
+  We also maintain a list of [CLI issues where help is wanted][cli_help_wanted_issues].
+  Most of them are not very complex, so that's probably a good starting point.
 - Send an email to the _kubernetes-sig-cli@googlegroups.com_ [group]
 
   > Subject: New sig-cli contributor _${yourName}_
   >
   > Body: Hello, my name is _${yourName}_.  I would like to get involved in
   > contributing to the Kubernetes project.  I have read all of the
-  > user documentation listed on the community contributring page.
+  > user documentation listed on the community contributing page.
   > What should I do next to get started?
 
 - Attend a sig-cli [meeting] and introduce yourself as looking to get started.
@@ -71,9 +73,9 @@ New contributors can try the following to work on an existing [bug] or [approved
   - includes steps to reproduce the issue including client / server version,
   - mentions `@kubernetes/sig-cli-bugs`.
 2. A [PR] fixing the issue is implemented that
-  - __includes unit and e2e tests__,
+  - __includes unit and test-cmd tests__,
   - incorporates review feedback,
-  - description includes `Closes #<Issue Number>`,
+  - description includes `Closes #<Issue Number>` or `Fixes #<Issue Number>`,
   - description or comment @mentions `@kubernetes/sig-cli-pr-reviews`.
 3. Fix appears in the next Kubernetes release!
 
@@ -293,6 +295,7 @@ See the sig-cli [community page] for points of contact and meeting times:
 [feature]: https://github.com/kubernetes/features
 [group]: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
 [issue]: https://github.com/kubernetes/kubernetes/issues
+[cli_help_wanted_issues]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Asig%2Fcli+label%3Ahelp-wanted
 [kubectl concept docs]: https://github.com/kubernetes/kubernetes.github.io/tree/master/docs/concepts/tools/kubectl
 [kubectl docs]: https://kubernetes.io/docs/user-guide/kubectl-overview
 [kubernetes/cmd/kubectl]: https://github.com/kubernetes/kubernetes/tree/master/cmd/kubectl

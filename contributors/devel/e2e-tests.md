@@ -675,8 +675,7 @@ A quick overview of how we run e2e CI on Kubernetes.
 We run a battery of `e2e` tests against `HEAD` of the master branch on a
 continuous basis, and block merges via the [submit
 queue](http://submit-queue.k8s.io/) on a subset of those tests if they fail (the
-subset is defined in the [munger config]
-(https://github.com/kubernetes/contrib/blob/master/mungegithub/mungers/submit-queue.go)
+subset is defined in the [munger config](https://github.com/kubernetes/test-infra/tree/master/mungegithub/mungers/submit-queue.go)
 via the `jenkins-jobs` flag; note we also block on	`kubernetes-build` and
 `kubernetes-test-go` jobs for build and unit and integration tests).
 
@@ -752,7 +751,7 @@ label, and will be incorporated into our core suites. If tests are not expected
 to pass by default, (e.g. they require a special environment such as added
 quota,) they should remain with the `[Feature:.+]` label, and the suites that
 run them should be incorporated into the
-[munger config](https://github.com/kubernetes/contrib/blob/master/mungegithub/mungers/submit-queue.go)
+[munger config](https://github.com/kubernetes/test-infra/tree/master/mungegithub/mungers/submit-queue.go)
 via the `jenkins-jobs` flag.
 
 Occasionally, we'll want to add tests to better exercise features that are
@@ -781,7 +780,7 @@ following [post](http://blog.kubernetes.io/2015/09/kubernetes-performance-measur
 
 For developers who are interested in doing their own performance analysis, we
 recommend setting up [prometheus](http://prometheus.io/) for data collection,
-and using [promdash](http://prometheus.io/docs/visualization/promdash/) to
+and using [grafana](https://prometheus.io/docs/visualization/grafana/) to
 visualize the data.  There also exists the option of pushing your own metrics in
 from the tests using a
 [prom-push-gateway](http://prometheus.io/docs/instrumenting/pushing/).
