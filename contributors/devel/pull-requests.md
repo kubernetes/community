@@ -9,7 +9,6 @@
   * [Comment Commands Reference](#comment-commands-reference)
   * [Automation](#automation)
   * [How the e2e Tests Work](#how-the-e2e-tests-work)
-  * [How Final Merging Works](#how-final-merging-works)
 - [Why was my PR closed?](#why-was-my-pr-closed-)
 - [Why is my PR not getting reviewed?](#why-is-my-pr-not-getting-reviewed-)
 - [Best Practices for Faster Reviews](#best-practices-for-faster-reviews)
@@ -93,7 +92,7 @@ Release notes apply to PRs on the master branch. For cherry-pick PRs, see the [c
 
 **Labels**
 
-1. All pull requests are initiated with a `release-note-label-needed` label if you don't specify them in your original PR. If you are a new contributor you won't have access to modify labels, instead leave a comment as instructed below or ask in your original PR. 
+1. All pull requests are initiated with a `release-note-label-needed` label if you don't specify them in your original PR. If you are a new contributor you won't have access to modify labels; instead, leave a comment as instructed below or ask in your original PR. 
 
 1. Remove the `release-note-label-needed` label and replace it with one of the other `release-note-*` labels:
     1. `release-note-none` is a valid option if the PR does not need to be mentioned at release time
@@ -120,12 +119,12 @@ If you're **not** a member of the Kubernetes organization:
 1. Reviewer suggests edits
 1. Push edits to your PR branch
 1. Repeat the prior two steps as needed
-1. (Optional) Some reviewers prefer that you squash commits at this step. 
+1. (Optional) Some reviewers prefer that you squash commits at this step 
 1. Owner is assigned and will add the `/approve` label to the PR
 
 If you are a member, or a member comments `@k8s-bot ok to test`, the pre-submit tests will run:
 
-1. Automatic tests run. See the current list of tests on the [MERGE REQUIREMENTS tab, here](https://submit-queue.k8s.io/#/info)
+1. Automatic tests run. See the current list of tests on the [MERGE REQUIREMENTS tab, at this link](https://submit-queue.k8s.io/#/info)
 1. If tests fail, resolve issues by pushing edits to your PR branch
 1. If the failure is a flake, a member can comment `@k8s-bot [e2e|unit] test this issue: #<flake issue>`
 
@@ -135,8 +134,8 @@ Either the [on call contributor](on-call-rotations.md) will manage the merge que
 
 1. The PR enters the merge queue ([http://submit-queue.k8s.io](http://submit-queue.k8s.io))
 1. The merge queue triggers a test re-run with the comment `@k8s-bot test this`
-  1. Author has signed the CLA (`cla: yes` label added to PR)
-  1. No changes made since last `lgtm` label applied
+    1. Author has signed the CLA (`cla: yes` label added to PR)
+    1. No changes made since last `lgtm` label applied
 1. If tests fail, resolve issues by pushing edits to your PR branch
 1. If the failure is a flake, a member can comment `@k8s-bot [e2e|unit] test this issue: #<flake issue>`
 1. If tests pass, the merge queue automatically merges the PR
@@ -181,7 +180,7 @@ things you can do to move the process along:
 
    * Ping the assignee (@username) on the PR comment stream, and ask for an estimate of when they can get to the review.
 
-   * Ping the assigned on [Slack](http://slack.kubernetes.io). Remember that a person's github username might not be the same as their Slack username. 
+   * Ping the assigned on [Slack](http://slack.kubernetes.io). Remember that a person's GitHub username might not be the same as their Slack username. 
 
    * Ping the assignee by email (many of us have publicly available email addresses).
 
@@ -214,11 +213,11 @@ Are you sure Feature-X is something the Kubernetes team wants or will accept? Is
 
 It's better to get confirmation beforehand. There are two ways to do this:
 
-- Make a proposal doc (in docs/proposals; for example [the QoS proposal](http://prs.k8s.io/11713)), or reach out to the affected special interest group (SIG). Here's a [list of SIGs](https://github.com/kubernetes/community/blob/master/sig-list.md).
-- Coordinate your effort with [SIG Docs](https://github.com/kubernetes/community/tree/master/sig-docs) ahead of time. 
-- Make a sketch PR (e.g., just the API or Go interface) Write or code up just enough to express the idea and the design and why you made those choices.
+- Make a proposal doc (in docs/proposals; for example [the QoS proposal](http://prs.k8s.io/11713)), or reach out to the affected special interest group (SIG). Here's a [list of SIGs](https://github.com/kubernetes/community/blob/master/sig-list.md)
+- Coordinate your effort with [SIG Docs](https://github.com/kubernetes/community/tree/master/sig-docs) ahead of time 
+- Make a sketch PR (e.g., just the API or Go interface). Write or code up just enough to express the idea and the design and why you made those choices
 
-Or, do both.
+Or, do all of the above.
 
 Be clear about what type of feedback you are asking for when you submit a proposal doc or sketch PR.
 
