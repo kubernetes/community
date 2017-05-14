@@ -52,14 +52,18 @@ If you haven't signed the CLA before making a PR, the `k8s-ci-robot` will leave 
 
 # What to Expect When You Submit a PR
 
-Merging a PR requires the following steps to be completed before the PR will be merged automatically:
+Merging a PR requires the following steps to be completed before the PR will be merged automatically. For details about each step, see the [The Testing and Merge Workflow](#the-testing-and-merge-workflow) section below.
 
 - Sign the CLA (prerequisite)
 - Make the PR
-- Update the `release-note-label-needed` label
+- Release notes - do one of the following:
+  - Add notes in the release notes block, or
+  - Update the `release-note-label-needed` label
 - Pass all e2e tests
 - Get a `LGTM` from a reviewer
 - Get approval from an owner
+
+If your PR meets all of the steps above, it will enter the submit queue to be merged. When it is next in line to be merged, the e2e tests will run a second time. If all tests pass, the PR will be merged automatically.
 
 ## Update the Release Note Label (and Write Release Notes if Needed)
 
@@ -85,17 +89,6 @@ For PRs without a release note:
 
 To see how to format your release notes, view the [PR template](https://github.com/kubernetes/kubernetes/blob/master/.github/PULL_REQUEST_TEMPLATE.md) for a brief example. PR titles and body comments can be modified at any time prior to the release to make them friendly for release notes.
 
-You can preview what the release notes will look like on any branch. (NOTE: This only works on Linux for now.)
-
-```
-$ git pull https://github.com/kubernetes/release
-$ RELNOTES=$PWD/release/relnotes
-$ cd /to/your/kubernetes/repo
-$ $RELNOTES -man # for details on how to use the tool
-# Show release notes from the last release on a branch to HEAD
-$ $RELNOTES --branch=master
-```
-
 Release notes apply to PRs on the master branch. For cherry-pick PRs, see the [cherry-pick instructions](cherry-picks.md). The only exception to these rules is when a PR is not a cherry-pick and is targeted directly to the non-master branch.  In this case, a `release-note-*` label is required for that non-master PR.
 
 **Labels**
@@ -116,43 +109,39 @@ Now that your release notes are in shape, let's look at how the PR gets tested a
 
 The Kubernetes merge workflow uses comments to run tests and labels for merging PRs. NOTE: For pull requests that are in progress but not ready for review, prefix the PR title with "WIP" and track any remaining TODOs in a checklist in the pull request description.
 
-Here's the process the PR goes through on its way from submission to merging.
+Here's the process the PR goes through on its way from submission to merging:
 
 1. Make the pull request
-1. mergebot assigns a reviewer
+1. mergebot assigns reviewers
 
-If you're **not** a member:
+If you're **not** a member of the Kubernetes organization:
 
+1. Reviewer/Kubernetes Member checks that the PR is safe to test. If so, they comment `@k8s-bot ok to test`
 1. Reviewer suggests edits
 1. Push edits to your PR branch
 1. Repeat the prior two steps as needed
 1. (Optional) Some reviewers prefer that you squash commits at this step. 
-1. Reviewer adds the labels `lgtm` and `ok-to-merge` which triggers the final tests and merge process (this can be done with the command `/lgtm`), or, if they are a member, can add the comment `@k8s-bot ok to test` which triggers the intermediate tests
+1. Owner is assigned and will add the `/approve` label to the PR
 
-If you are in the not a member, or a member comments `@k8s-bot ok to test`, the intermediate tests will run:
+If you are a member, or a member comments `@k8s-bot ok to test`, the pre-submit tests will run:
 
-1. Automatic tests run
-    1. travis (go build/fmt and generated docs)
-    1. Jenkins GCE e2e (minimal e2e suite on GCE)
-    1. Jenkins unit/integration (unit and local cluster tests)
+1. Automatic tests run. See the current list of tests on the [MERGE REQUIREMENTS tab, here](https://submit-queue.k8s.io/#/info)
 1. If tests fail, resolve issues by pushing edits to your PR branch
 1. If the failure is a flake, a member can comment `@k8s-bot [e2e|unit] test this issue: #<flake issue>`
 
-Once the tests pass, all failures are commented as flakes, or the reviewer adds the labels `lgtm` and `ok-to-merge`, the PR enters the final merge queue. The merge queue is needed to make sure no incompatible changes have been introduced by other PRs since the tests were last run on your PR.
+Once the tests pass, all failures are commented as flakes, or the reviewer adds the labels `lgtm` and `approved`, the PR enters the final merge queue. The merge queue is needed to make sure no incompatible changes have been introduced by other PRs since the tests were last run on your PR.
+
+Either the [on call contributor](on-call-rotations.md) will manage the merge queue manually, or the [GitHub "munger"](https://github.com/kubernetes/test-infra/tree/master/mungegithub) submit-queue plugin will manage the merge queue automatically.
 
 1. The PR enters the merge queue ([http://submit-queue.k8s.io](http://submit-queue.k8s.io))
 1. The merge queue triggers a test re-run with the comment `@k8s-bot test this`
+  1. Author has signed the CLA (`cla: yes` label added to PR)
+  1. No changes made since last `lgtm` label applied
 1. If tests fail, resolve issues by pushing edits to your PR branch
 1. If the failure is a flake, a member can comment `@k8s-bot [e2e|unit] test this issue: #<flake issue>`
 1. If tests pass, the merge queue automatically merges the PR
 
 That's the last step. Your PR is now merged.
-
-Here's a graphic showing the merge process described above in flowchart form:
-
-![PR workflow](pr_workflow.png)
-
-Include all the stuff from the pull-request-commands.md doc here
 
 ## Comment Commands Reference
 
@@ -166,25 +155,13 @@ We use a variety of automation to manage pull requests.  This automation is desc
 
 The end-to-end tests will post the status results to the PR. If an e2e test fails, `k8s-ci-robot` will comment on the PR with the test history and the comment-command to re-run that test.  e.g.
 
->
-The magic incantation to run this job again is @k8s-bot unit test this. Please help us cut down flakes by linking to an open flake issue when you hit one in your PR.
-
-## How Final Merging Works
-
-Either the [on call contributor](on-call-rotations.md) will manage the merge queue manually, or the [GitHub "munger"](https://github.com/kubernetes/test-infra/tree/master/mungegithub) submit-queue plugin will manage the merge queue automatically.
-
-Here are the requirements the submit-queue checks automatically before it will merge your PR:
-
-* Author has signed the CLA ("cla: yes" label added to PR)
-* No changes made since last `lgtm` label applied
-* k8s-bot reported that the GCE E2E build and test steps passed (Jenkins unit/integration, Jenkins e2e)
-* On call contributor has applied the `ok-to-merge` label manually, unless you are on the [whitelist](https://github.com/kubernetes/contrib/blob/master/mungegithub/whitelist.txt) ??: this link seems to be broken
+> The magic incantation to run this job again is @k8s-bot unit test this. Please help us cut down flakes by linking to an open flake issue when you hit one in your PR.
 
 # Why was my PR closed?
 
 Pull requests that are purely support questions will be closed and redirected to [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes). We do this to consolidate questions into a single channel, improve efficiency in responding to requests, and make FAQs easier to find.
 
-Pull requests older than 2 weeks will be closed. Exceptions can be made for PRs that have active review comments, or that are awaiting other dependent PRs. Closed pull requests are easy to recreate, and little work is lost by closing a pull request that subsequently needs to be reopened. We want to limit the total number of PRs in flight to:
+Pull requests older than 90 days will be closed. Exceptions can be made for PRs that have active review comments, or that are awaiting other dependent PRs. Closed pull requests are easy to recreate, and little work is lost by closing a pull request that subsequently needs to be reopened. We want to limit the total number of PRs in flight to:
 * Maintain a clean project
 * Remove old PRs that would be difficult to rebase as the underlying code has changed over time
 * Encourage code velocity
@@ -206,7 +183,7 @@ things you can do to move the process along:
 
    * Ping the assigned on [Slack](http://slack.kubernetes.io). Remember that a person's github username might not be the same as their Slack username. 
 
-   * Ping the assignee by email (many of us have publicly available email addresses, or are the same as our GitHub handle @google.com or @redhat.com).
+   * Ping the assignee by email (many of us have publicly available email addresses).
 
    * If you're a member of the organization ping the [team](https://github.com/orgs/kubernetes/teams) (via @team-name) that works in the area you're submitting code.
 
@@ -237,7 +214,7 @@ Are you sure Feature-X is something the Kubernetes team wants or will accept? Is
 
 It's better to get confirmation beforehand. There are two ways to do this:
 
-- Make a proposal doc (in docs/proposals; for example [the QoS proposal](http://prs.k8s.io/11713))
+- Make a proposal doc (in docs/proposals; for example [the QoS proposal](http://prs.k8s.io/11713)), or reach out to the affected special interest group (SIG). Here's a [list of SIGs](https://github.com/kubernetes/community/blob/master/sig-list.md).
 - Coordinate your effort with [SIG Docs](https://github.com/kubernetes/community/tree/master/sig-docs) ahead of time. 
 - Make a sketch PR (e.g., just the API or Go interface) Write or code up just enough to express the idea and the design and why you made those choices.
 
