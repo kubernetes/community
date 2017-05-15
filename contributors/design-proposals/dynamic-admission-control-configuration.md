@@ -52,11 +52,6 @@ type ResourceDefaultInitializer struct {
 
     // Initializers are the default names that will be registered to this resource
     Initializers []Initializer
-
-    // If timeout is reached, an intializer is removed from the resource's
-    // initializer list by the apiserver.
-    // Default to XXX seconds.
-    Timeout *int64
 }
 
 type Initializer struct {
@@ -67,8 +62,8 @@ type Initializer struct {
     // FailurePolicy defines what happens if there is no initializer controller
     // takes action. Allowed values are Ignore, or Fail. If "Ignore" is set, 
     // apiserver removes initilizer from the initializers list of the resource
-    // if the timeout is reached; If "Fail" is set, apiserver returns timeout
-    // error if the timeout is reached.
+    // if the timeout (30s) is reached; If "Fail" is set, apiserver returns 
+    // timeout error if the timeout is reached.
     FailurePolicy FailurePolicyType
 }
 
@@ -171,6 +166,32 @@ This will block the entire cluster. We have a few options:
    The latter is essentially the same as the first approach, except that we need
    to introduce the additional concept of "readiness".
 
+## Handling fail-open initializers
+
+#132 assumed initializers always failed closed. It is dangerous since crashed 
+initializers can block the whole cluster. We propose to allow initializers to 
+fail open, and in 1.7, let all initializers fail open.
+
+A `fail-open initializers controller` will remove the timed out fail-open
+initializers from objects' initializers list. Every 30s, the controller 
+
+* lists uninitialized objects
+* indexes the objects by the name of the first initialilzer in the objectMeta.Initializers
+* compares with the snapshot 30s ago, finds objects whose first initializers haven't changed
+* does a consistent read of AdmissionControllerConfiguration, finds which initializers are fail-open
+* spawns goroutines to send patches to remove fail-open initializers
+
+## Future work
+
+1. Allow the user to POST the individual initializer/webhook, expressing the
+   dependency on other initializers/webhooks, and let a controller assembles the
+   ordered list of initializers/webhooks.
+
+2. study if it's necessary to have a per-initializer timeout
+
+3. optimize `fail-open initializers controller` if more sophiticated watch
+   selectors are supported, e.g., selecting on the first initializer in
+   objectMeta.Intializers.
 
 ## Considered but REJECTED synchronization mechinism:
 
