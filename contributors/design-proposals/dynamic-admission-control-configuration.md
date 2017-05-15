@@ -49,8 +49,14 @@ type ResourceDefaultInitializer struct {
     // Resource identifies the type of resource to be initialized that should be
     // initialized
     Resource GroupResource
+
     // Initializers are the default names that will be registered to this resource
     Initializers []Initializer
+
+    // If timeout is reached, an intializer is removed from the resource's
+    // initializer list by the apiserver.
+    // Default to XXX seconds.
+    Timeout *int64
 }
 
 type Initializer struct {
@@ -58,25 +64,20 @@ type Initializer struct {
     // initialization.
     Name string
 
-    // **Optional for alpha implement**
     // FailurePolicy defines what happens if there is no initializer controller
     // takes action. Allowed values are Ignore, or Fail. If "Ignore" is set, 
     // apiserver removes initilizer from the initializers list of the resource
     // if the timeout is reached; If "Fail" is set, apiserver returns timeout
     // error if the timeout is reached.
     FailurePolicy FailurePolicyType
-
-    // **Optional for alpha implement**
-    // If timeout is reached, the intializer is removed from the resource's
-    // initializer list by the apiserver.
-    // Default to XXX seconds.
-    Timeout *int64
 }
 
 type FailurePolicyType string
 
 const (
     Ignore FailurePolicyType = "Ignore"
+    // **optional** For 1.7, only "Ignore" is allowed. We can add "Fail" when
+    // the feature is more mature.
     Fail FailurePolicyType = "Fail"
 )
 
@@ -116,8 +117,9 @@ const (
 // AdmissionHookClientConfig contains the information to make a TLS
 // connection with the webhook
 type AdmissionHookClientConfig struct {
-    // Service is a reference to the service for this webhook. It must communicate
-	// on port 443
+    // Service is a reference to the service for this webhook. If there is only
+    // one port open for the service, that port will be used. If there are multiple
+    // ports open, port 443 will be used if it is open, otherwise it is an error.
 	Service ServiceReference
 	// CABundle is a PEM encoded CA bundle which will be used to validate webhook's server certificate.
 	CABundle []byte
@@ -140,35 +142,18 @@ cached version of the configuration might be arbitrarily delayed. This makes it
 impossible to predict what initializer/hooks will be applied to newly created
 objects.
 
-We propose two ways to make the behavior of the `initializer admission
+We propose the following way to make the behavior of the `initializer admission
 controller` and the `generic webhook admission controller` predictable.
 
 #### 1. Do consistent read of AdmissionControlConfiguration periodically
 
 The `initializer admission controller` and the `generic webhook admission
-controller` do a consistent read of the AdmissionControlConfiguration either 30s
-after the last read, or when there is a request that needs the two controllers to
-apply the configuration, whichever comes later.
+controller` do a consistent read of the AdmissionControlConfiguration every 1s.
+If there isn't any successful read in the last 5s, the two admission controllers 
+block all incoming request.
+One consistent read per second isn't going to cause performance issues.
 
-If the read fails, the two admission controllers block all incoming request.
-
-#### 2. Always do a consistent read of a smaller object
-
-A consistent read of the AdmissionControlConfiguration object is expensive, we
-cannot do it for every incoming request.
-
-Alternatively, we record the resource version of the AdmissionControlConfiguration
-in a configmap. The apiserver that handles an update of the AdmissionControlConfiguration
-updates the configmap with the updated resource version. In the HA setup, there
-are multiple apiservers that update this configmap, they should only
-update if the recorded resource version is lower than the local one.
-
-The `initializer admission controller` and the `generic webhook admission
-controller` do a consistent read of the configmap *everytime* before applying
-the configuration to an incoming request. If the configmap has changed, then
-they do a consistent read of the `AdmissionControlConfiguration`.
-
-## What if an initializer controller/webhook is not ready after registered? (**optional for alpha implement**)
+## What if an initializer controller/webhook is not ready after registered?
 
 This will block the entire cluster. We have a few options:
 
@@ -187,7 +172,7 @@ This will block the entire cluster. We have a few options:
    to introduce the additional concept of "readiness".
 
 
-## Considered bug REJECTED synchronization mechinism:
+## Considered but REJECTED synchronization mechinism:
 
 #### Rejected 1. Always do consistent read
 
@@ -216,3 +201,22 @@ observedGeneration and predict if all the initializer/hooks listed in the
 In the HA setup, the `observedGeneration` reported by of every apiserver's
 `initializer admission controller` and `generic webhook admission controller`
 are different, so the API needs to record multiple `observedGeneration`.
+
+#### Rejected 3. Always do a consistent read of a smaller object
+
+Rejected because of the complexity.
+
+A consistent read of the AdmissionControlConfiguration object is expensive, we
+cannot do it for every incoming request.
+
+Alternatively, we record the resource version of the AdmissionControlConfiguration
+in a configmap. The apiserver that handles an update of the AdmissionControlConfiguration
+updates the configmap with the updated resource version. In the HA setup, there
+are multiple apiservers that update this configmap, they should only
+update if the recorded resource version is lower than the local one.
+
+The `initializer admission controller` and the `generic webhook admission
+controller` do a consistent read of the configmap *everytime* before applying
+the configuration to an incoming request. If the configmap has changed, then
+they do a consistent read of the `AdmissionControlConfiguration`.
+
