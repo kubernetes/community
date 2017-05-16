@@ -23,7 +23,7 @@ and we need to get the monotonically growing PR merge latency and numbers of ope
 * Elsie Phillips elsie.phillips@coreos.com, @Phillels, CoreOS
 
 ## Issues:
-* [Detailed backlog](https://github.com/orgs/kubernetes/projects/1)
+* [Detailed backlog](https://github.com/kubernetes)
 * [velocity-improvement issues](https://github.com/kubernetes/contrib/labels/kind%2Fvelocity-improvement)
 * Too many notifications, which are insufficiently targeted and have too little context, as well as missing
   notifications for important events
