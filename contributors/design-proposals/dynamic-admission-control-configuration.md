@@ -88,28 +88,28 @@ const (
 )
 
 type ExternalAdmissionHook struct {
-    // Operations is the list of operations this hook will be invoked on - Create, Update, or *
-    // for all operations. Defaults to '*'.
-    Operations []OperationType
-    // Resources are the resources this hook should be invoked on.
-    Resources []Resource
-    // Subresources is a list of subresources. If non-empty, this hook should be invoked on 
-    // all combinations of Resources and Subresources. '*' is all subresources.
-    Subresources []string
+    // Name of the AdmissionHook. It must be unique. It is used as the merge key.
+    Name string
 
     // ClientConfig defines how to talk to the hook.
     ClientConfig AdmissionHookClientConfig
+
+    // Operations describes what operations on what resources/subresources the webhook cares about.
+    // The webhook cares about an operation if it matches any Operaiton.
+    Operations []Operation
 
     // FailurePolicy defines how unrecognized errors from the admission endpoint are handled -
     // allowed values are Ignore, Fail. Default value is Fail
     FailurePolicy FailurePolicyType
 }
 
-type Resource struct {
-    // Group is the API group the resource belongs to.  '*' is all groups.
-    Group string
-    // Resource is the name of the resource. '*' is all resoures.
-    Resource string
+type Operation struct {
+    // Operations is the list of operations this hook will be invoked on - Create, Update, or *
+    // for all operations. Defaults to '*'.
+    type OperationType
+
+    // Resource describes the group, resource and subresources. Defaults to all groups, resources, subresources.
+    Resouce Resource
 }
 
 type OperationType string
@@ -119,6 +119,15 @@ const (
     Create OperationType= "Create"
     Update OperationType= "Update"
 )
+
+type Resource struct {
+    // Group is the API group the resource belongs to.  '*' is all groups.
+    Group string
+    // Resource is the name of the resource. '*' is all resoures.
+    Resource string
+    // Subresources is a list of subresources. '*' is all subresources.
+    Subresource string
+}
 
 // AdmissionHookClientConfig contains the information to make a TLS
 // connection with the webhook
