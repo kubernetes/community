@@ -38,7 +38,10 @@ modifications.
 
 ```golang
 type AdmissionControlConfiguration struct {
-    TypeMeta // although this object could simply be serialized like ComponentConfig
+    metav1.TypeMeta 
+
+    // validation will only allow one name in 1.7, it can be relaxed later. 
+    v1.ObjectMeta
 
     // ResourceInitializers is a list of resources and their default initializers
     ResourceInitializers []ResourceDefaultInitializer
@@ -209,15 +212,17 @@ informers to track uninitialized objects. Every 30s, the controller
 
 ## Future work
 
-1. allow the user to POST the individual initializer/webhook, expressing the
-   dependency on other initializers/webhooks, and let a controller assembles the
+1. allow the user to POST the individual initializer/webhook, expressing partial
+   order among initializers/webhooks, and let a controller assembles the
    ordered list of initializers/webhooks.
 
-2. study if it's necessary to have a per-initializer timeout
+2. #1 will allow parallel initializers as well.
 
-3. optimize `fail-open initializers controller` if more sophiticated watch
-   selectors are supported, e.g., selecting on the first initializer in
-   objectMeta.Intializers.
+3. make the AdmissionControllerConfiguration more flexible in expressing the
+   combination of verbs and resources, if needed.
+
+4. implement the fail closed initializers according to
+   [proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control_extension.md#initializers).
 
 ## Considered but REJECTED synchronization mechinism:
 
