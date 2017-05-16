@@ -96,36 +96,38 @@ type ExternalAdmissionHook struct {
 
     // Operations describes what operations on what resources/subresources the webhook cares about.
     // The webhook cares about an operation if it matches any Operaiton.
-    Operations []Operation
+    Operations []OperationsPerResource
 
     // FailurePolicy defines how unrecognized errors from the admission endpoint are handled -
     // allowed values are Ignore, Fail. Default value is Fail
     FailurePolicy FailurePolicyType
 }
 
-type Operation struct {
-    // Operations is the list of operations this hook will be invoked on - Create, Update, or *
-    // for all operations. Defaults to '*'.
-    type OperationType
-
-    // Resource describes the group, resource and subresources. Defaults to all groups, resources, subresources.
+type OperationsPerResource struct {
+    // Resource describes the group, resource and subresource. Defaults to all groups, resources, subresources.
     Resouce Resource
+
+    // Verbs is the list of verbs this hook will be invoked on - POST, PUT, or *
+    // for all operations. Defaults to '*'.
+    Verbs []OperationType
 }
 
 type OperationType string
 
 const (
     All OperationType = "*"
-    Create OperationType= "Create"
-    Update OperationType= "Update"
+    Create OperationType= "POST"
+    Update OperationType= "PUT"
 )
 
 type Resource struct {
     // Group is the API group the resource belongs to.  '*' is all groups.
     Group string
+    // Version is the API version of the resource. '*' is all versions. 
+    Version string
     // Resource is the name of the resource. '*' is all resoures.
     Resource string
-    // Subresources is a list of subresources. '*' is all subresources.
+    // Subresource is the name of the subresource. '*' is all subresources. Empty string means no subresource.
     Subresource string
 }
 
