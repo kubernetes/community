@@ -32,11 +32,11 @@ When you're writing controllers, there are few guidelines that will help make su
 
 1. Use `SharedInformers`.  `SharedInformers` provide hooks to receive notifications of adds, updates, and deletes for a particular resource.  They also provide convenience functions for accessing shared caches and determining when a cache is primed.
 
-   Use the factory methods down in https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/informers/factory.go to ensure that you are sharing the same instance of the cache as everyone else.
+   Use the factory methods down in https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/informers/factory.go to ensure that you are sharing the same instance of the cache as everyone else.
 
    This saves us connections against the API server, duplicate serialization costs server-side, duplicate deserialization costs controller-side, and duplicate caching costs controller-side.
 
-   You may see other mechanisms like reflectors and deltafifos driving controllers.  Those were older mechanisms that we later used to build the `SharedInformers`.  You should avoid using them in new controllers
+   You may see other mechanisms like reflectors and deltafifos driving controllers.  Those were older mechanisms that we later used to build the `SharedInformers`.  You should avoid using them in new controllers.
 
 1. Never mutate original objects!  Caches are shared across controllers, this means that if you mutate your "copy" (actually a reference or shallow copy) of an object, you'll mess up other controllers (not just your own).
 
