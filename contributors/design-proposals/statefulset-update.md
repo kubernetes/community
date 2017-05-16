@@ -100,7 +100,7 @@ This design is based on the following requirements.
   [deployment, and scaling](https://kubernetes.io/docs/concepts/abstractions/controllers/statefulsets/#deployment-and-scaling-guarantee) 
   guarantees.
 - A failed update must halt.
-- Users must be able to rollback an update.
+- Users must be able to roll back an update.
 - Users must be able to roll forward to fix a failing/failed update.
 - Users must be able to view the status of an update.
 - Users should be able to view a bounded history of the updates that have been 
@@ -113,38 +113,42 @@ The following modifications will be made to the StatefulSetSpec API object.
 ```go
 // StatefulSetUpdateStrategy indicates the strategy that the StatefulSet 
 // controller will use to perform updates. It includes any additional parameters 
-// nessecary to preform the update for the indicated strategy.
+// necessary to preform the update for the indicated strategy.
 type StatefulSetUpdateStrategy struct {
         // Type indicates the type of the StatefulSetUpdateStrategy.
         Type StatefulSetUpdateStrategyType
         // Partition is used to communicate the ordinal at which to partition 
-        // the StatefulSet when Type is PartitionedStatefulSetStrategyType. This 
-        // value must be set when Type is PartitionedStatefulSetStrategyType, 
+        // the StatefulSet when Type is PartitionStatefulSetStrategyType. This 
+        // value must be set when Type is PartitionStatefulSetStrategyType, 
         // and it must be nil otherwise.
-        Partition *PartitionedStatefulSet
+        Partition *PartitionStatefulSetStrategy
 
 // StatefulSetUpdateStrategyType is a string enumeration type that enumerates 
 // all possible update strategies for the StatefulSet controller.
 type StatefulSetUpdateStrategyType string
 
 const (
-    // PartitionedStatefulSetStrategyType indicates that updates will only be 
+    // PartitionStatefulSetStrategyType indicates that updates will only be 
     // applied to a partition of the StatefulSet. This is useful for canaries 
-    // and phased roll outs.
-    PartitionedStatefulSetStrategyType StatefulSetUpdateStrategyType = "Partitioned"
+    // and phased roll outs. When a scale operation is performed with this 
+    // strategy, new Pods will be created from the updated specification.
+    PartitionStatefulSetStrategyType StatefulSetUpdateStrategyType = "Partition"
     // RollingUpdateStatefulSetStrategyType indicates that update will be 
     // applied to all Pods in the StatefulSet with respect to the StatefulSet 
-    // ordering constraints.
+    // ordering constraints. When a scale operation is performed with this 
+    // strategy, new Pods will be created from the updated specification.
     RollingUpdateStatefulSetStrategyType = "RollingUpdate"
     // OnDeleteStatefulSetStrategyType triggers the legacy behavior. Version 
     // tracking and ordered rolling restarts are disabled. Pods are recreated 
-    // from the StatefulSetSpec when they are manually deleted.
+    // from the StatefulSetSpec when they are manually deleted. When a scale 
+    // operation is performed with this strategy, new Pods will be created 
+    // from the current specification.
     OnDeleteStatefulSetStrategyType = "OnDelete"
 )
 
-// PartitionedStatefulSet contains the parameters used with the 
-// PartitionedStatefulSetStrategyType.
-type PartitionedStatefulSet struct {
+// PartitionStatefulSetStrategy contains the parameters used with the 
+// PartitionStatefulSetStrategyType.
+type PartitionStatefulSetStrategy struct {
     // Ordinal indicates the ordinal at which the StatefulSet should be 
     // partitioned.
     Ordinal int32
@@ -159,7 +163,7 @@ type StatefulSetSpec struct {
 	// Template or VolumeClaimsTemplate.
 	UpdateStrategy StatefulSetUpdateStrategy `json:"updateStrategy,omitempty`
 
-	// RevisionHistoryLimit is the maximum number of PodTemplates that will 
+	// RevisionHistoryLimit is the maximum number of revisions that will 
 	// be maintained in the StatefulSet's revision history. The revision history
 	// consists of all revisions not represented by a currently applied 
 	// StatefulSetSpec version. The default value is 2.
@@ -291,7 +295,7 @@ as follows.
     the Pod should be consistent with the version indicated by 
     `Status.UpdateRevision`.
 1. If the StatefulSet's `.Spec.UpdateStrategy.Type` is equal to 
-`PartitionedStatefulSetStrategyType` then the version of the Pod should be 
+`PartitionStatefulSetStrategyType` then the version of the Pod should be 
 as follows.
     1. If the Pod's ordinal is in the sequence `[0,.Status.CurrentReplicas)`, 
     the Pod should be consistent with version indicated by `Status.CurrentRevision`.
@@ -372,9 +376,9 @@ The criteria for update completion is as follows.
 `OnDeleteStatefulSetStrategyType` then no version tracking is performed. It 
 this case an update can never be in progress.
 1. If the StatefulSet's `.Spec.UpdateStrategy.Type` is equal to 
-`PartitionedStatefulSetStrategyType` updates can not complete. The version 
+`PartitionStatefulSetStrategyType` updates can not complete. The version 
 indicated `.Status.UpdateRevision` will only be applied to Pods with ordinals 
-in the sequence `(0,.Spec.UpdateStrategy.Partition.Ordinal]`
+in the sequence `(.Spec.UpdateStrategy.Partition.Ordinal,.Spec.Replicas)`.
 1. If the StatefulSet's `.Spec.UpdateStrategy.Type` is equal to 
 `RollingUpdateStatefulSetStrategyType`, then an update is complete when the 
 StatefulSet is at its [target state](#target-state). The StatefulSet controller 
@@ -428,7 +432,7 @@ fields of the StatefulSet object other than `.Spec.Replicas` and
 constraints.
 
 1. If the `.Spec.UpdateStrategy.Type` is equal to 
-`RollingUpdateStatefulSetStrategyType`, the API Server should fail validation 
+`PartitionStatefulSetStrategyType`, the API Server should fail validation 
 if any of the following conditions are true.
    1. `.Spec.UpdateStrategy.Partition` is nil.
    1. `.Spec.UpdateStratgegy.Parition` is not nil, and 
@@ -573,7 +577,7 @@ spec:
         app: nginx
     spec:
       updateStrategy: 
-        type: Partitioned
+        type: Partition
         partition: 
           ordinal: 2
       containers:
@@ -615,7 +619,7 @@ spec:
         app: nginx
     spec:
       updateStrategy: 
-        type: Partitioned
+        type: Partition
         partition: 
           ordinal: 3
       containers:
@@ -659,7 +663,7 @@ spec:
         app: nginx
     spec:
       updateStrategy: 
-        type: Partitioned
+        type: Partition
         partition: 
           ordinal: 2
       containers:
@@ -703,7 +707,7 @@ spec:
         app: nginx
     spec:
       updateStrategy: 
-        type: Partitioned
+        type: Partition
         partition: 
           ordinal: 1
       containers:
@@ -772,6 +776,7 @@ Without communicating a signal indicating the reason for termination to a Pod in
 a StatefulSet, as proposed [here](https://github.com/kubernetes/community/pull/541),
 the tenant application has no way to determine if it is being terminated due to 
 a scale down operation or due to an update. 
+
 Consider a BASE distributed storage application like Cassandra, where 2 TiB of 
 persistent data is not atypical, and the data distribution is not identical on 
 every server. We want to enable two distinct behaviors based on the reason for 
@@ -801,8 +806,8 @@ While this proposal does not address
 this would be a valuable feature for production users of storage systems that use
 intermittent compaction as a form of garbage collection. Applications that use 
 log structured merge trees with size tiered compaction (e.g Cassandra) or append 
-only B(+/*) Trees (e.g Couchbase) can temporarily double their storage usage when 
-compacting their on disk storage. If there is insufficient space for compaction 
+only B(+/*) Trees (e.g Couchbase) can temporarily double their storage requirement 
+during compaction. If there is insufficient space for compaction 
 to progress, these applications will either fail or degrade  until 
 additional capacity is added. While, if the user is using AWS EBS or GCE PD, 
 there are valid manual workarounds to expand the size of a PD, it would be 
