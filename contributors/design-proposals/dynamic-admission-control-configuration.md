@@ -2,15 +2,16 @@
 
 ## Background
 
-[#132](https://github.com/kubernetes/community/pull/132) proposed making
-admission control extensible. In the proposal, the `initializer admission
-controller` and the `generic webhook admission controller` are the two
+The extensible admission control
+[proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control_extension.md)
+proposed making admission control extensible. In the proposal, the `initializer
+admission controller` and the `generic webhook admission controller` are the two
 controllers that set default initializers and external admission hooks for
 resources newly created. These two admission controllers are in the same binary
-as the apiserver. This [section](https://github.com/smarterclayton/community/blob/be132e88f7597ab3927b788a3de6d5ab6de673d2/contributors/design-proposals/admission_control_extension.md#dynamic-configuration)
-of #132 gave a preliminary design of the dynamic configuration of the list of
-the default admission controls. This document hashes out the implementation
-details.
+as the apiserver. This
+[section](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control_extension.md#dynamic-configuration)
+gave a preliminary design of the dynamic configuration of the list of the
+default admission controls. This document hashes out the implementation details.
 
 ## Goals
 
@@ -26,10 +27,12 @@ details.
 
 ## Specification
 
-We assume initializers could be "fail open". We need to update #132 if this is
-accepted.
+We assume initializers could be "fail open". We need to update the extensible
+admission control
+[proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control_extension.md)
+if this is accepted.
 
-The schema is copied from
+The schema is copied from 
 [#132](https://github.com/kubernetes/community/pull/132) with a few
 modifications.
 
@@ -168,14 +171,37 @@ This will block the entire cluster. We have a few options:
 
 ## Handling fail-open initializers
 
-#132 assumed initializers always failed closed. It is dangerous since crashed 
+The original [proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control_extension.md) assumed initializers always failed closed. It is dangerous since crashed 
 initializers can block the whole cluster. We propose to allow initializers to 
-fail open, and in 1.7, let all initializers fail open.
+fail open, and in 1.7, let all initializers fail open. We considered the two
+approaches to implement the fail open initializers.
+
+#### 1. apiserver + read repair
+
+In the initializer prototype
+[PR](https://github.com/kubernetes/kubernetes/pull/36721), the apiserver that
+handles the CREATE request
+[watches](https://github.com/kubernetes/kubernetes/pull/36721/files#diff-2c081fad5c858e67c96f75adac185093R349)
+the uninitialized object. We can add a timer there and let the apiserver remove
+the timed out initializer.
+
+If the apiserver crashes, then we fall back to a `read repair` mechanism. When
+handling a GET request, the apiserver checks the objectMeta.CreationTimestamp of
+the object, if a global intializer timeout (e.g., 10 mins) has reached, the
+apiserver removes the first initializer in the object.
+
+In HA setup, apiserver needs to take the clock drift into account as well.
+
+Note that the fallback is only invoked when the initializer and the apiserver
+crashes, so it is rare.
+
+#### 2. use a controller
 
 A `fail-open initializers controller` will remove the timed out fail-open
-initializers from objects' initializers list. Every 30s, the controller 
+initializers from objects' initializers list. The controller uses shared
+informers to track uninitialized objects. Every 30s, the controller 
 
-* lists uninitialized objects
+* makes a snapshot of the uninitialized objects in the informers.
 * indexes the objects by the name of the first initialilzer in the objectMeta.Initializers
 * compares with the snapshot 30s ago, finds objects whose first initializers haven't changed
 * does a consistent read of AdmissionControllerConfiguration, finds which initializers are fail-open
@@ -183,7 +209,7 @@ initializers from objects' initializers list. Every 30s, the controller
 
 ## Future work
 
-1. Allow the user to POST the individual initializer/webhook, expressing the
+1. allow the user to POST the individual initializer/webhook, expressing the
    dependency on other initializers/webhooks, and let a controller assembles the
    ordered list of initializers/webhooks.
 
