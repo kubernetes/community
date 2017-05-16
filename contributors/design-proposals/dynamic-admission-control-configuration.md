@@ -52,9 +52,14 @@ type AdmissionControlConfiguration struct {
 // Because the order of initializers matters, and each resource might need
 // differnt order, the ResourceDefaultInitializers are indexed by Resource.
 type ResourceDefaultInitializer struct {
+    // APIGroup of the resource. Because we want to use APIGroup + Resource as a
+    // merge key, we don't use a Resource struct. See muti-fields merge key
+    // [proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/multi-fields-merge-key.md).
+    APIGroup string
+
     // Resource identifies the type of resource to be initialized that should be
     // initialized
-    Resource GroupResource
+    Resource string
 
     // Initializers are the default names that will be registered to this resource
     Initializers []Initializer
@@ -86,9 +91,9 @@ type ExternalAdmissionHook struct {
     // Operations is the list of operations this hook will be invoked on - Create, Update, or *
     // for all operations. Defaults to '*'.
     Operations []OperationType
-    // Resources are the resources this hook should be invoked on. '*' is all resources.
+    // Resources are the resources this hook should be invoked on.
     Resources []Resource
-    // Subresources is list of subresources. If non-empty, this hook should be invoked on 
+    // Subresources is a list of subresources. If non-empty, this hook should be invoked on 
     // all combinations of Resources and Subresources. '*' is all subresources.
     Subresources []string
 
@@ -101,9 +106,9 @@ type ExternalAdmissionHook struct {
 }
 
 type Resource struct {
-    // Group is the API group the resource belongs to.
+    // Group is the API group the resource belongs to.  '*' is all groups.
     Group string
-    // Resource is the name of the resource.
+    // Resource is the name of the resource. '*' is all resoures.
     Resource string
 }
 
