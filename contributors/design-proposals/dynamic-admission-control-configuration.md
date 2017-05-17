@@ -96,7 +96,6 @@ type ExternalAdmissionHook struct {
 
     // Rules describes what operations on what resources/subresources the webhook cares about.
     // The webhook cares about an operation if it matches any Rule.
-    // Each rule must has a unique APIGroup.
     Rules []Rule
 
     // FailurePolicy defines how unrecognized errors from the admission endpoint are handled -
@@ -107,12 +106,15 @@ type ExternalAdmissionHook struct {
 type Rule struct {
     // Verbs is the list of verbs this hook will be invoked on - POST, PUT, or *
     // for all operations. Defaults to '*'.
+    // If '*' is present, the length of the slice must be one.
     Verbs []OperationType
 
-    // APIGroup is the API group the resources belong to. '*' is all groups.
-    APIGroup string 
+    // APIGroups is the API group the resources belong to. '*' is all groups.
+    // If '*' is present, the length of the slice must be one.
+    APIGroups []string 
     
     // APIVersions are the API versions the resources belong to. '*' is all versions.
+    // If '*' is present, the length of the slice must be one.
     APIVersions []string
 
     // Resources is a list of resources this rule applies to.
@@ -122,6 +124,7 @@ type Rule struct {
     // 'pods/*' means all subresources of pods.
     // '*/scale' means all scale subresources.
     // '*/*' means all resources and their subresources.
+    // If '*' or '*/*' is present, the length of the slice must be one.
     Resources []string `json:"resources,omitempty" protobuf:"bytes,3,rep,name=resources"`
 }
 
@@ -129,8 +132,8 @@ type OperationType string
 
 const (
     All OperationType = "*"
-    Create OperationType= "POST"
-    Update OperationType= "PUT"
+    Create OperationType= "CREATE"
+    Update OperationType= "UPDATE"
 )
 
 // AdmissionHookClientConfig contains the information to make a TLS
