@@ -94,22 +94,35 @@ type ExternalAdmissionHook struct {
     // ClientConfig defines how to talk to the hook.
     ClientConfig AdmissionHookClientConfig
 
-    // Operations describes what operations on what resources/subresources the webhook cares about.
-    // The webhook cares about an operation if it matches any Operaiton.
-    Operations []OperationsPerResource
+    // Rules describes what operations on what resources/subresources the webhook cares about.
+    // The webhook cares about an operation if it matches any Rule.
+    // Each rule must has a unique APIGroup.
+    Rules []Rule
 
     // FailurePolicy defines how unrecognized errors from the admission endpoint are handled -
     // allowed values are Ignore, Fail. Default value is Fail
     FailurePolicy FailurePolicyType
 }
 
-type OperationsPerResource struct {
-    // Resource describes the group, resource and subresource. Defaults to all groups, resources, subresources.
-    Resouce Resource
-
+type Rule struct {
     // Verbs is the list of verbs this hook will be invoked on - POST, PUT, or *
     // for all operations. Defaults to '*'.
     Verbs []OperationType
+
+    // APIGroup is the API group the resources belong to. '*' is all groups.
+    APIGroup string 
+    
+    // APIVersions are the API versions the resources belong to. '*' is all versions.
+    APIVersions []string
+
+    // Resources is a list of resources this rule applies to.
+    // 'pods' means pods.
+    // 'pods/log' means the log subresource of pods.
+    // '*' means all resources, but not subresources.
+    // 'pods/*' means all subresources of pods.
+    // '*/scale' means all scale subresources.
+    // '*/*' means all resources and their subresources.
+    Resources []string `json:"resources,omitempty" protobuf:"bytes,3,rep,name=resources"`
 }
 
 type OperationType string
@@ -119,17 +132,6 @@ const (
     Create OperationType= "POST"
     Update OperationType= "PUT"
 )
-
-type Resource struct {
-    // Group is the API group the resource belongs to.  '*' is all groups.
-    Group string
-    // Version is the API version of the resource. '*' is all versions. 
-    Version string
-    // Resource is the name of the resource. '*' is all resoures.
-    Resource string
-    // Subresource is the name of the subresource. '*' is all subresources. Empty string means no subresource.
-    Subresource string
-}
 
 // AdmissionHookClientConfig contains the information to make a TLS
 // connection with the webhook
