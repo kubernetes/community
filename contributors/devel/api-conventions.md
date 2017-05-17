@@ -1138,6 +1138,8 @@ be called `fooName`. The name of a field referring to another resource of kind
 `Foo` by ObjectReference (or subset thereof) should be called `fooRef`.
 * More generally, include the units and/or type in the field name if they could
 be ambiguous and they are not specified by the value or value type.
+* The name of a field expressing a boolean property called 'fooable' should be
+called `Fooable`, not `IsFooable`.
 
 ## Label, selector, and annotation conventions
 
