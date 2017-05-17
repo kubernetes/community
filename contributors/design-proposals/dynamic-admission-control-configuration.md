@@ -230,7 +230,7 @@ informers to track uninitialized objects. Every 30s, the controller
 
 ## Future work
 
-1. allow the user to POST the individual initializer/webhook, expressing partial
+1. allow the user to POST to individual initializer/webhook, expressing partial
    order among initializers/webhooks, and let a controller assembles the
    ordered list of initializers/webhooks.
 
@@ -241,6 +241,14 @@ informers to track uninitialized objects. Every 30s, the controller
 
 4. implement the fail closed initializers according to
    [proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control_extension.md#initializers).
+
+5. more efficient check of AdmissionControlConfiguration changes. Currently we
+   do periodic consistent read every second.
+
+6. block incoming requests if the `initializer admission controller` and the
+   `generic webhook admission controller` haven't acknowledged a recent change
+   to AdmissionControlConfiguration. Currently we only guarantee a change
+   becomes effective in 1s.
 
 ## Considered but REJECTED synchronization mechinism:
 
@@ -289,4 +297,3 @@ The `initializer admission controller` and the `generic webhook admission
 controller` do a consistent read of the configmap *everytime* before applying
 the configuration to an incoming request. If the configmap has changed, then
 they do a consistent read of the `AdmissionControlConfiguration`.
-
