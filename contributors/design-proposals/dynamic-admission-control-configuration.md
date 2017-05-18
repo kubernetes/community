@@ -38,121 +38,151 @@ modifications.
 
 ```golang
 type AdmissionControlConfiguration struct {
-    metav1.TypeMeta 
+	metav1.TypeMeta `json:",inline"`
 
-    // validation will only allow one name in 1.7, it can be relaxed later. 
-    v1.ObjectMeta
+	// ResourceInitializers is a list of resources and their default initializers
+	// +optional
+	ResourceInitializers []ResouceInitializer `json:"resourceInitializers,omitempty" protobuf:"bytes,1,rep,name=resourceInitializers"`
 
-    // ResourceInitializers is a list of resources and their default initializers
-    ResourceInitializers []ResourceDefaultInitializer
-
-    ExternalAdmissionHooks []ExternalAdmissionHook
+	// ExternalAdmissionHooks is a list of external admission webhooks and the
+	// affected resources and operations.
+	// +optional
+	ExternalAdmissionHooks []ExternalAdmissionHook `json:"externalAdmissionHooks,omitempty" patchStrategy:"merge" patchMergeKey:"name" protobuf:"bytes,2,rep,name=externalAdmissionHooks"`
 }
 
-// Because the order of initializers matters, and each resource might need
-// differnt order, the ResourceDefaultInitializers are indexed by Resource.
-type ResourceDefaultInitializer struct {
-    // APIGroup of the resource. Because we want to use APIGroup + Resource as a
-    // merge key, we don't use a Resource struct. See muti-fields merge key
-    // [proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/multi-fields-merge-key.md).
-    APIGroup string
+// ResouceInitializer describes the default initializers that will be
+// applied to a resource. The order of initializers is sensitive.
+type ResouceInitializer struct {
+	// APIGroup is the API group of the resource
+	// Required.
+	APIGroup string `json:"apiGroup" protobuf:"bytes,1,opt,name=apiGroup"`
 
-    // Resource identifies the type of resource to be initialized that should be
-    // initialized
-    Resource string
+	// APIVersions is the API Versions of the resource
+	// '*' means all API Versions.
+	// If '*' is present, the length of the slice must be one.
+	// Required.
+	APIVersions []string `json:"apiVersions,omitempty" protobuf:"bytes,2,rep,name=apiVersions"`
 
-    // Initializers are the default names that will be registered to this resource
-    Initializers []Initializer
+	// Resource is resource to be initialized
+	// Required.
+	Resource string `json:"resource" protobuf:"bytes,3,opt,name=resource"`
+
+	// Initializers is a list of initializers that will be applied to the
+	// resource by default. It is order-sensitive.
+	Initializers []Initializer `json:"initializers,omitempty" patchStrategy:"merge" patchMergeKey:"name" protobuf:"bytes,3,rep,name=initializers"`
 }
 
+// Initializer describes the name and the failure policy of an initializer.
 type Initializer struct {
-    // Name is the string that will be registered to the resource that needs
-    // initialization.
-    Name string
+	// Name is the identifier of the initializer. It will be added to the
+	// object that needs to be initialized.
+	// Required
+	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
 
-    // FailurePolicy defines what happens if there is no initializer controller
-    // takes action. Allowed values are Ignore, or Fail. If "Ignore" is set, 
-    // apiserver removes initilizer from the initializers list of the resource
-    // if the timeout (30s) is reached; If "Fail" is set, apiserver returns 
-    // timeout error if the timeout is reached.
-    FailurePolicy FailurePolicyType
+	// FailurePolicy defines what happens if the responsible initializer controller
+	// fails to takes action. Allowed values are Ignore, or Fail. If "Ignore" is
+	// set, initializer is removed from the initializers list of an object if
+	// the timeout is reached; If "Fail" is set, apiserver returns timeout error
+	// if the timeout is reached.
+	FailurePolicy *FailurePolicyType `json:"failurePolicy,omitempty" protobuf:"bytes,2,opt,name=failurePolicy"`
 }
 
 type FailurePolicyType string
 
 const (
-    Ignore FailurePolicyType = "Ignore"
-    // **optional** For 1.7, only "Ignore" is allowed. We can add "Fail" when
-    // the feature is more mature.
-    Fail FailurePolicyType = "Fail"
+	// Ignore means the initilizer is removed from the initializers list of an
+	// object if the initializer is timed out.
+	Ignore FailurePolicyType = "Ignore"
+	// For 1.7, only "Ignore" is allowed. "Fail" will be allowed when the
+	// extensible admission feature is beta.
+	Fail FailurePolicyType = "Fail"
 )
 
+// ExternalAdmissionHook describes an external admission webhook and the
+// resources and operations it applies to.
 type ExternalAdmissionHook struct {
-    // Name of the AdmissionHook. It must be unique. It is used as the merge key.
-    Name string
+	// The name of the external admission webhook.
+	// Required.
+	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
 
-    // ClientConfig defines how to talk to the hook.
-    ClientConfig AdmissionHookClientConfig
+	// ClientConfig defines how to communicate with the hook.
+	// Required
+	ClientConfig AdmissionHookClientConfig `json:"clientConfig" protobuf:"bytes,2,opt,name=clientConfig"`
 
-    // Rules describes what operations on what resources/subresources the webhook cares about.
-    // The webhook cares about an operation if it matches any Rule.
-    Rules []Rule
+	// Rules describes what operations on what resources/subresources the webhook cares about.
+	// The webhook cares about an operation if it matches _any_ Rule.
+	Rules []Rule `json:"rules,omitempty" protobuf:"bytes,3,rep,name=rules"`
 
-    // FailurePolicy defines how unrecognized errors from the admission endpoint are handled -
-    // allowed values are Ignore, Fail. Default value is Fail
-    FailurePolicy FailurePolicyType
+	// FailurePolicy defines how unrecognized errors from the admission endpoint are handled -
+	// allowed values are Ignore or Fail. Defaults to Ignore.
+	// +optional
+	FailurePolicy *FailurePolicyType
 }
 
+// Rule describes the Verbs and Resources an admission hook cares about. Each
+// Rule is a tuple of Verbs and Resources.It is recommended to make sure all
+// the tuple expansions are valid.
 type Rule struct {
-    // Verbs is the list of verbs this hook will be invoked on - POST, PUT, or *
-    // for all operations. Defaults to '*'.
-    // If '*' is present, the length of the slice must be one.
-    Verbs []OperationType
+	// Verbs is the verbs the admission hook cares about - CREATE, UPDATE, or *
+	// for all verbs.
+	// If '*' is present, the length of the slice must be one.
+	// Required.
+	Verbs []OperationType `json:"verbs,omitempty" protobuf:"bytes,1,rep,name=verbs"`
 
-    // APIGroups is the API group the resources belong to. '*' is all groups.
-    // If '*' is present, the length of the slice must be one.
-    APIGroups []string 
-    
-    // APIVersions are the API versions the resources belong to. '*' is all versions.
-    // If '*' is present, the length of the slice must be one.
-    APIVersions []string
+	// APIGroups is the API groups the resources belong to. '*' is all groups.
+	// If '*' is present, the length of the slice must be one.
+	// Required.
+	APIGroups []string `json:"apiGroups,omitempty" protobuf:"bytes,2,rep,name=apiGroups"`
 
-    // Resources is a list of resources this rule applies to.
-    // 'pods' means pods.
-    // 'pods/log' means the log subresource of pods.
-    // '*' means all resources, but not subresources.
-    // 'pods/*' means all subresources of pods.
-    // '*/scale' means all scale subresources.
-    // '*/*' means all resources and their subresources.
-    // If '*' or '*/*' is present, the length of the slice must be one.
-    Resources []string `json:"resources,omitempty" protobuf:"bytes,3,rep,name=resources"`
+	// APIVersions is the API versions the resources belong to. '*' is all versions.
+	// If '*' is present, the length of the slice must be one.
+	// Required.
+	APIVersions []string `json:"apiVersions,omitempty" protobuf:"bytes,3,rep,name=apiVersions"`
+
+	// Resources is a list of resources this rule applies to.
+	//
+	// For example:
+	// 'pods' means pods.
+	// 'pods/log' means the log subresource of pods.
+	// '*' means all resources, but not subresources.
+	// 'pods/*' means all subresources of pods.
+	// '*/scale' means all scale subresources.
+	// '*/*' means all resources and their subresources.
+	//
+	// If '*' or '*/*' is present, the length of the slice must be one.
+	// Required.
+	Resources []string `json:"resources,omitempty" protobuf:"bytes,4,rep,name=resources"`
 }
 
 type OperationType string
 
 const (
-    All OperationType = "*"
-    Create OperationType= "CREATE"
-    Update OperationType= "UPDATE"
+	VerbAll OperationType = "*"
+	Create  OperationType = "CREATE"
+	Update  OperationType = "UPDATE"
 )
 
 // AdmissionHookClientConfig contains the information to make a TLS
 // connection with the webhook
 type AdmissionHookClientConfig struct {
-    // Service is a reference to the service for this webhook. If there is only
-    // one port open for the service, that port will be used. If there are multiple
-    // ports open, port 443 will be used if it is open, otherwise it is an error.
-	Service ServiceReference
+	// Service is a reference to the service for this webhook. If there is only
+	// one port open for the service, that port will be used. If there are multiple
+	// ports open, port 443 will be used if it is open, otherwise it is an error.
+	// Required
+	Service ServiceReference `json:"service" protobuf:"bytes,1,opt,name=service"`
 	// CABundle is a PEM encoded CA bundle which will be used to validate webhook's server certificate.
-	CABundle []byte
+	// Required
+	CABundle []byte `json:"caBundle" protobuf:"bytes,2,rep,name=caBundle"`
 }
 
 // ServiceReference holds a reference to Service.legacy.k8s.io
 type ServiceReference struct {
 	// Namespace is the namespace of the service
-	Namespace string
+	// Required
+	Namespace string `json:"namespace" protobuf:"bytes,1,opt,name=namespace"`
 	// Name is the name of the service
-	Name string
+	// Required
+	Name string `json:"name" protobuf:"bytes,2,opt,name=name"`
 }
 ```
 
