@@ -510,18 +510,12 @@ sigs:
     mission_statement: >
       Covers storage and volume plugins.
     leads:
-    - name: Paul Morie
-      github: pmorie
-      company: Red Hat
-    - name: Aaron Schlesinger
-      github: arschles
-      company: Deis
-    - name: Brendan Melville
-      github: bmelville
+    - name: Saad Ali
+      github: saad-ali
       company: Google
-    - name: Doug Davis
-      github: duglin
-      company: IBM
+    - name: Bradley Childs
+      github: childsb
+      company: Red Hat
     meetings:
     - day: Thursday
       utc: "16:00"
