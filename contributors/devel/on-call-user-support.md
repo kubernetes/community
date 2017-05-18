@@ -8,8 +8,8 @@ Respond to any thread that has no responses and is more than 6 hours old (over
 time we will lengthen this timeout to allow community responses). If you are not
 equipped to respond, it is your job to redirect to someone who can.
 
-  * [Query for unanswered Kubernetes StackOverflow questions](http://stackoverflow.com/search?q=%5Bkubernetes%5D+answers%3A0)
-  * [Query for unanswered Kubernetes ServerFault questions](http://serverfault.com/questions/tagged/google-kubernetes?sort=unanswered&pageSize=15)
+  * [Query for unanswered Kubernetes StackOverflow questions](http://stackoverflow.com/search?tab=newest&q=%5bkubernetes%5d%20answers%3a0)
+  * [Query for unanswered Kubernetes ServerFault questions](https://serverfault.com/search?tab=newest&q=%5bgoogle-kubernetes%5d%20answers%3a0)
   * Direct poorly formulated questions to [stackoverflow's tips about how to ask](http://stackoverflow.com/help/how-to-ask)
   * Direct off-topic questions to [stackoverflow's policy](http://stackoverflow.com/help/on-topic)
 
