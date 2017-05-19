@@ -1,7 +1,7 @@
 Kubernetes on Amazon Web Services
 ====
 
-This page lists different options of starting a Kubernetes cluster on Amazon Web Services.
+This page lists different options, in alphabetic order, of starting a Kubernetes cluster on Amazon Web Services.
 
 * Clocker: http://www.clocker.io/tutorials/kubernetes-cluster.html
 * Heptio: https://github.com/aws-quickstart/quickstart-heptio 
