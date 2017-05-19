@@ -260,6 +260,11 @@ cd $working_dir/kubernetes
 make
 ```
 
+To remove the limit on the number of errors the Go compiler reports (default limit is 10 errors):
+```sh
+make GOGCFLAGS="-e"
+```
+
 To build with optimizations disabled for enabling use of source debug tools:
 
 ```sh
