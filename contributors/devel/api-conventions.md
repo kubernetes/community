@@ -433,21 +433,25 @@ selectors, annotations, data), as opposed to sets of subobjects.
 #### Primitive types
 
 * Avoid floating-point values as much as possible, and never use them in spec.
-Floating-point values cannot be reliably round-tripped (encoded and re-decoded)
-without changing, and have varying precision and representations across
-languages and architectures.
+  Floating-point values cannot be reliably round-tripped (encoded and
+  re-decoded) without changing, and have varying precision and representations
+  across languages and architectures.
 * All numbers (e.g., uint32, int64) are converted to float64 by Javascript and
-some other languages, so any field which is expected to exceed that either in
-magnitude or in precision (specifically integer values > 53 bits) should be
-serialized and accepted as strings.
+  some other languages, so any field which is expected to exceed that either in
+  magnitude or in precision (specifically integer values > 53 bits) should be
+  serialized and accepted as strings.
 * Do not use unsigned integers, due to inconsistent support across languages and
-libraries. Just validate that the integer is non-negative if that's the case.
+  libraries. Just validate that the integer is non-negative if that's the case.
 * Do not use enums. Use aliases for string instead (e.g., `NodeConditionType`).
 * Look at similar fields in the API (e.g., ports, durations) and follow the
-conventions of existing fields.
+  conventions of existing fields.
 * All public integer fields MUST use the Go `(u)int32` or Go `(u)int64` types,
-not `(u)int` (which is ambiguous depending on target platform). Internal types
-may use `(u)int`.
+  not `(u)int` (which is ambiguous depending on target platform). Internal
+  types may use `(u)int`.
+* Think twice about `bool` fields. Many ideas start as boolean but eventually
+  trend towards a small set of mutually exclusive options.  Plan for future
+  expansions by describing the policy options explicitly as a string type
+  alias (e.g. `TerminationMessagePolicy`).
 
 #### Constants
 
