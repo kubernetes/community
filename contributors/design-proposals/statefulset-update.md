@@ -38,7 +38,7 @@ application's configuration, I want to update environment variables, container
 entry point commands or parameters, or configuration files.
 - As the administrator of the logging and monitoring infrastructure for my 
 organization, in order to add logging and monitoring side cars, I want to patch
-containers to add images.
+a Pods' containers to add images.
 
 ### Out of Scope
 - As the administrator of a stateful application, in order to increase the 
@@ -199,7 +199,7 @@ The following modifications will be made to the StatefulSetStatus API object.
  	// UpdatedReplicas is the number of Pods created by the StatefulSet
     // controller from the PodTemplateSpec, VolumeClaimsTemplate tuple indicated 
     // by UpdateRevision.
- 	UpdatedReplicas int32 `json:"taretReplicas,omitempty"`
+ 	UpdatedReplicas int32 `json:"updatedReplicas,omitempty"`
 }
 ```
 
@@ -236,7 +236,7 @@ ensure that the StatefulSet's revision history is consistent with the user
 declared desired state.
 1. The controller will select all Pods in the StatefulSet, filter any Pods not 
 owned by the StatefulSet, and sort the remaining Pods in ordinal order.
-1. For all created Pods, the controller will perform any nessecary 
+1. For all created Pods, the controller will perform any necessary
 [non-destructive state reconciliation](#pod-state-reconciliation).
 1. If any Pods with ordinals in the sequence `[0,.Spec.Replicas)` have not been 
 created, for the Pod corresponding to the lowest such ordinal, the controller 
@@ -248,7 +248,7 @@ Pods to either become Ready, or to be completely deleted.
 if `.Spec.Replicas` is less than `.Status.Replicas`, the controller will delete 
 the Pod corresponding to the largest ordinal. This implies that scaling takes 
 precedence over Pod updates.
-1. If all Pods in the range `[0,.Spec.Replicas)` have a Status of Running and 
+1. If all Pods in the sequence `[0,.Spec.Replicas)` have a Status of Running and 
 a Ready Condition, if `.Spec.Replicas` is equal to `.Status.Replicas`, and if 
 there are Pods that do not match their [target Pod state](#target-pod-state), 
 the Pod with the largest ordinal in that set will be deleted.
@@ -263,7 +263,7 @@ the Pod with the largest ordinal in that set will be deleted.
 The target state of the StatefulSet controller with respect to an individual 
 StatefulSet is defined as follows. 
 
-1. The StatefulSet contains exactly `[0,Spec.Replicas)` Pods.
+1. The StatefulSet contains exactly `[0,.Spec.Replicas)` Pods.
 1. All Pods in the StatefulSet have the correct 
 [target Pod state](#target-pod-state).
 
@@ -300,7 +300,7 @@ as follows.
     1. If the Pod's ordinal is in the sequence `[0,.Status.CurrentReplicas)`, 
     the Pod should be consistent with version indicated by `Status.CurrentRevision`.
     1. If the Pod's ordinal is in the sequence 
-    `[.Status.Replicas - .Status.UpdatedReplicas, .Status.Replicas)`the Pod 
+    `[.Status.Replicas - .Status.UpdatedReplicas, .Status.Replicas)` the Pod 
     should be consistent with the version indicated by `Status.UpdateRevision`.
     1. If the Pod does not meet either of the prior two conditions, and if 
     ordinal is in the sequence `[0, .Spec.UpdateStrategy.Partition.Ordinal)`, 
@@ -366,15 +366,15 @@ revisions to the StatefulSet's target Object state.
 #### History Maintenance 
 In order to prevent the revision history of the StatefulSet from exceeding 
 memory or storage limits, the StatefulSet controller will periodically prune 
-its revision history so that no more that `.Spec.RevisionHisotryLimit` non-live 
+its revision history so that no more that `.Spec.RevisionHistoryLimit` non-live 
 versions of target Object state are preserved.
 
 ### Update Completion
 The criteria for update completion is as follows.
 
 1. If the StatefulSet's `.Spec.UpdateStrategy.Type` is equal to 
-`OnDeleteStatefulSetStrategyType` then no version tracking is performed. It 
-this case an update can never be in progress.
+`OnDeleteStatefulSetStrategyType` then no version tracking is performed. In
+this case, an update can never be in progress.
 1. If the StatefulSet's `.Spec.UpdateStrategy.Type` is equal to 
 `PartitionStatefulSetStrategyType` updates can not complete. The version 
 indicated `.Status.UpdateRevision` will only be applied to Pods with ordinals 
@@ -384,11 +384,11 @@ in the sequence `(.Spec.UpdateStrategy.Partition.Ordinal,.Spec.Replicas)`.
 StatefulSet is at its [target state](#target-state). The StatefulSet controller 
 will signal update completion as follows.
     1. The controller will set `.Status.CurrentRevision` to the value of 
-    `.Staus.UpdateRevision`.
+    `.Status.UpdateRevision`.
     1. The controller will set `.Status.CurrentReplicas` to 
-    `.Status.UpdateReplicas`. Note that this value will be equal to 
+    `.Status.UpdatedReplicas`. Note that this value will be equal to 
     `.Status.Replicas`.
-    1. The controller will set `.Status.UpdateReplicas` to 0.
+    1. The controller will set `.Status.UpdatedReplicas` to 0.
 
 ### Status Reporting
 After processing the creation, update, or deletion of a StatefulSet or Pod, 
@@ -412,7 +412,7 @@ created Pods.
 Pods that have a Ready Condition.
 1. The controller will set the `.Status.CurrentRevision` and 
 `.Status.UpdateRevision` in accordance with StatefulSet's 
-[revision history](#statefulset-revision history) and 
+[revision history](#statefulset-revision-history) and 
 any [complete updates](#update-completion).
 1. The controller will set the `.Status.CurrentReplicas` to the number of 
 Pods that it has created from the version indicated by 
@@ -435,7 +435,7 @@ constraints.
 `PartitionStatefulSetStrategyType`, the API Server should fail validation 
 if any of the following conditions are true.
    1. `.Spec.UpdateStrategy.Partition` is nil.
-   1. `.Spec.UpdateStratgegy.Parition` is not nil, and 
+   1. `.Spec.UpdateStrategy.Parition` is not nil, and 
    `.Spec.UpdateStrategy.Partition.Ordinal` not in the sequence 
    `(0,.Spec.Replicas)`.
 1. The API Server will fail validation on any update to a StatefulSetStatus
@@ -559,7 +559,7 @@ kubectl apply -f web.yaml
 ### Canaries
 Users can create a canary using `kubectl apply`. The only difference between a
  [rolling update](#rolling-out-an-update) and a canary is that the 
- `.Spec.UpdateStrategy.Type` is set to `ParitionedStatefulSetStrategyType` and 
+ `.Spec.UpdateStrategy.Type` is set to `PartitionStatefulSetStrategyType` and 
  the `.Spec.UpdateStrategy.Partition.Ordinal` is set to `.Spec.Replicas-1`.
  
  
@@ -604,6 +604,8 @@ spec:
 
 Users can also simultaneously scale up and add a canary. This reduces risk 
 for some deployment scenarios by adding additional capacity for the canary. 
+For example, in the manifest below, `.Spec.Replicas` is increased to `4` while 
+`.Spec.UpdateStrategy.Partition.Ordinal` is set to `.Spec.Replicas-1`.
 
 ```yaml
 apiVersion: apps/v1beta1
