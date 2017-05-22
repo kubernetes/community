@@ -115,13 +115,13 @@ The following modifications will be made to the StatefulSetSpec API object.
 // controller will use to perform updates. It includes any additional parameters 
 // necessary to preform the update for the indicated strategy.
 type StatefulSetUpdateStrategy struct {
-        // Type indicates the type of the StatefulSetUpdateStrategy.
-        Type StatefulSetUpdateStrategyType
-        // Partition is used to communicate the ordinal at which to partition 
-        // the StatefulSet when Type is PartitionStatefulSetStrategyType. This 
-        // value must be set when Type is PartitionStatefulSetStrategyType, 
-        // and it must be nil otherwise.
-        Partition *PartitionStatefulSetStrategy
+    // Type indicates the type of the StatefulSetUpdateStrategy.
+    Type StatefulSetUpdateStrategyType
+    // Partition is used to communicate the ordinal at which to partition 
+    // the StatefulSet when Type is PartitionStatefulSetStrategyType. This 
+    // value must be set when Type is PartitionStatefulSetStrategyType, 
+    // and it must be nil otherwise.
+    Partition *PartitionStatefulSetStrategy
 
 // StatefulSetUpdateStrategyType is a string enumeration type that enumerates 
 // all possible update strategies for the StatefulSet controller.
@@ -157,17 +157,17 @@ type PartitionStatefulSetStrategy struct {
 type StatefulSetSpec struct {
     // Replicas, Selector, Template, VolumeClaimsTemplate, and ServiceName 
     // omitted for brevity.
-
-	// UpdateStrategy indicates the StatefulSetUpdateStrategy that will be 
-	// employed to update Pods in the StatefulSet when a revision is made to 
-	// Template or VolumeClaimsTemplate.
-	UpdateStrategy StatefulSetUpdateStrategy `json:"updateStrategy,omitempty`
-
-	// RevisionHistoryLimit is the maximum number of revisions that will 
-	// be maintained in the StatefulSet's revision history. The revision history
-	// consists of all revisions not represented by a currently applied 
-	// StatefulSetSpec version. The default value is 2.
-	RevisionHistoryLimit *int32 `json:revisionHistoryLimit,omitempty`
+    
+    // UpdateStrategy indicates the StatefulSetUpdateStrategy that will be 
+    // employed to update Pods in the StatefulSet when a revision is made to 
+    // Template or VolumeClaimsTemplate.
+    UpdateStrategy StatefulSetUpdateStrategy `json:"updateStrategy,omitempty`
+    
+    // RevisionHistoryLimit is the maximum number of revisions that will 
+    // be maintained in the StatefulSet's revision history. The revision history
+    // consists of all revisions not represented by a currently applied 
+    // StatefulSetSpec version. The default value is 2.
+    RevisionHistoryLimit *int32 `json:revisionHistoryLimit,omitempty`
 }
 ```
 
@@ -176,30 +176,30 @@ The following modifications will be made to the StatefulSetStatus API object.
 ```go
  type StatefulSetStatus struct {
     // ObservedGeneration and Replicas fields are omitted for brevity.
-
- 	// CurrentRevision, if not empty, indicates the version of PodSpecTemplate, 
- 	// VolumeClaimsTemplate tuple used to generate Pods in the sequence
- 	// [0,CurrentReplicas).
- 	CurrentRevision string `json:"currentRevision,omitempty"`
- 	
- 	// UpdateRevision, if not empty, indicates the version of PodSpecTemplate, 
+    
+    // CurrentRevision, if not empty, indicates the version of PodSpecTemplate, 
+    // VolumeClaimsTemplate tuple used to generate Pods in the sequence
+    // [0,CurrentReplicas).
+    CurrentRevision string `json:"currentRevision,omitempty"`
+    
+    // UpdateRevision, if not empty, indicates the version of PodSpecTemplate, 
     // VolumeClaimsTemplate tuple used to generate Pods in the sequence
     // [Replicas-UpdatedReplicas,Replicas)
- 	UpdateRevision string `json:"updateRevision,omitempty"`
- 	
- 	// ReadyReplicas is the current number of Pods, created by the StatefulSet
+    UpdateRevision string `json:"updateRevision,omitempty"`
+    
+    // ReadyReplicas is the current number of Pods, created by the StatefulSet
     // controller, that have a Status of Running and a Ready Condition.
- 	ReadyReplicas int32 `json:"readyReplicas,omitempty"`
- 	
- 	// CurrentReplicas is the number of Pods created by the StatefulSet 
+    ReadyReplicas int32 `json:"readyReplicas,omitempty"`
+    
+    // CurrentReplicas is the number of Pods created by the StatefulSet 
     // controller from the PodTemplateSpec, VolumeClaimsTemplate tuple indicated 
     // by CurrentRevision.
- 	CurrentReplicas int32 `json:"currentReplicas,omitempty"`
- 	
- 	// UpdatedReplicas is the number of Pods created by the StatefulSet
+    CurrentReplicas int32 `json:"currentReplicas,omitempty"`
+    
+    // UpdatedReplicas is the number of Pods created by the StatefulSet
     // controller from the PodTemplateSpec, VolumeClaimsTemplate tuple indicated 
     // by UpdateRevision.
- 	UpdatedReplicas int32 `json:"updatedReplicas,omitempty"`
+    UpdatedReplicas int32 `json:"updatedReplicas,omitempty"`
 }
 ```
 
