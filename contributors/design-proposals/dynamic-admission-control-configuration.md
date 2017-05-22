@@ -1,4 +1,3 @@
-# Dynamic admission control configuration
 
 ## Background
 
@@ -57,7 +56,9 @@ type InitializerConfiguration struct {
 type Initializer struct {
     // Name is the identifier of the initializer. It will be added to the
     // object that needs to be initialized.
-    // Name should be fully qualified.
+    // Name should be fully qualified, e.g., alwayspullimages.kubernetes.io, where
+    // "alwayspullimages" is the name of the webhook, and kubernetes.io is the name
+    // of the organization.
     // Required
     Name string `json:"name"`
 
@@ -128,7 +129,9 @@ type ExternalAdmissionHookConfiguration struct {
 // resources and operations it applies to.
 type ExternalAdmissionHook struct {
     // The name of the external admission webhook.
-    // Name should be fully qualified.
+    // Name should be fully qualified, e.g., imagepolicy.kubernetes.io, where
+    // "imagepolicy" is the name of the webhook, and kubernetes.io is the name
+    // of the organization.
     // Required.
     Name string `json:"name"`
 
