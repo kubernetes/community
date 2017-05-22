@@ -36,26 +36,20 @@ The schema is evolved from the prototype in
 [#132](https://github.com/kubernetes/community/pull/132).
 
 ```golang
-// AdmissionControlConfiguration describes the configuration of intializers and
-// external admission webhooks.
-type AdmissionControlConfiguration struct {
+// InitializerConfiguration describes the configuration of intializers.
+type InitializerConfiguration struct {
     metav1.TypeMeta
 
     v1.ObjectMeta
 
     // Initializers is a list of resources and their default initializers
     // Order-sensitive.
-    // When merging multiple AdmissionControlConfigurations, we sort the intializers
-    // from different AdmissionControlConfigurations by the name of the
-    // AmdissionControlConfigurations; the order of the intializers from the same
-    // AdmissionControlConfiguration is preserved.
+    // When merging multiple InitializerConfigurations, we sort the intializers
+    // from different InitializerConfigurations by the name of the
+    // InitializerConfigurations; the order of the intializers from the same
+    // InitializerConfiguration is preserved.
     // +optional
     Initializers []Initializer `json:"initializers,omitempty" patchStrategy:"merge" patchMergeKey:"name"`
-
-    // ExternalAdmissionHooks is a list of external admission webhooks and the
-    // affected resources and operations.
-    // +optional
-    ExternalAdmissionHooks []ExternalAdmissionHook `json:"externalAdmissionHooks,omitempty" patchStrategy:"merge" patchMergeKey:"name"`
 }
 
 // Initializer describes the name and the failure policy of an initializer, and
@@ -63,64 +57,26 @@ type AdmissionControlConfiguration struct {
 type Initializer struct {
     // Name is the identifier of the initializer. It will be added to the
     // object that needs to be initialized.
+    // Name should be fully qualified.
     // Required
     Name string `json:"name"`
 
     // Rules describes what resources/subresources the initializer cares about.
     // The intializer cares about an operation if it matches _any_ Rule.
-    // Rule.Verbs must be string{"CREATE"}, otherwise it is a validation error.
     Rules []Rule `json:"rules,omitempty"`
 
     // FailurePolicy defines what happens if the responsible initializer controller
     // fails to takes action. Allowed values are Ignore, or Fail. If "Ignore" is
     // set, initializer is removed from the initializers list of an object if
     // the timeout is reached; If "Fail" is set, apiserver returns timeout error
-    // if the timeout is reached.
+    // if the timeout is reached. The default timeout for each initializer is
+    // 5s.
     FailurePolicy *FailurePolicyType `json:"failurePolicy,omitempty"`
 }
 
-type FailurePolicyType string
-
-const (
-    // Ignore means the initilizer is removed from the initializers list of an
-    // object if the initializer is timed out.
-    Ignore FailurePolicyType = "Ignore"
-    // For 1.7, only "Ignore" is allowed. "Fail" will be allowed when the
-    // extensible admission feature is beta.
-    Fail FailurePolicyType = "Fail"
-)
-
-// ExternalAdmissionHook describes an external admission webhook and the
-// resources and operations it applies to.
-type ExternalAdmissionHook struct {
-    // The name of the external admission webhook.
-    // Required.
-    Name string `json:"name"`
-
-    // ClientConfig defines how to communicate with the hook.
-    // Required
-    ClientConfig AdmissionHookClientConfig `json:"clientConfig"`
-
-    // Rules describes what operations on what resources/subresources the webhook cares about.
-    // The webhook cares about an operation if it matches _any_ Rule.
-    Rules []Rule `json:"rules,omitempty"`
-
-    // FailurePolicy defines how unrecognized errors from the admission endpoint are handled -
-    // allowed values are Ignore or Fail. Defaults to Ignore.
-    // +optional
-    FailurePolicy *FailurePolicyType
-}
-
-// Rule describes the Verbs and Resources an admission hook cares about. Each
-// Rule is a tuple of Verbs and Resources.It is recommended to make sure all
-// the tuple expansions are valid.
+// Rule is a tuple of APIGroups, APIVersion, and Resources.It is recommended 
+// to make sure that all the tuple expansions are valid.
 type Rule struct {
-    // Verbs is the verbs the admission hook cares about - CREATE, UPDATE, or *
-    // for all verbs.
-    // If '*' is present, the length of the slice must be one.
-    // Required.
-    Verbs []OperationType `json:"verbs,omitempty"`
-
     // APIGroups is the API groups the resources belong to. '*' is all groups.
     // If '*' is present, the length of the slice must be one.
     // Required.
@@ -144,6 +100,63 @@ type Rule struct {
     // If '*' or '*/*' is present, the length of the slice must be one.
     // Required.
     Resources []string `json:"resources,omitempty"`
+}
+
+type FailurePolicyType string
+
+const (
+    // Ignore means the initilizer is removed from the initializers list of an
+    // object if the initializer is timed out.
+    Ignore FailurePolicyType = "Ignore"
+    // For 1.7, only "Ignore" is allowed. "Fail" will be allowed when the
+    // extensible admission feature is beta.
+    Fail FailurePolicyType = "Fail"
+)
+
+// ExternalAdmissionHookConfiguration describes the configuration of intializers.
+type ExternalAdmissionHookConfiguration struct {
+    metav1.TypeMeta
+
+    v1.ObjectMeta
+    // ExternalAdmissionHooks is a list of external admission webhooks and the
+    // affected resources and operations.
+    // +optional
+    ExternalAdmissionHooks []ExternalAdmissionHook `json:"externalAdmissionHooks,omitempty" patchStrategy:"merge" patchMergeKey:"name"`
+}
+
+// ExternalAdmissionHook describes an external admission webhook and the
+// resources and operations it applies to.
+type ExternalAdmissionHook struct {
+    // The name of the external admission webhook.
+    // Name should be fully qualified.
+    // Required.
+    Name string `json:"name"`
+
+    // ClientConfig defines how to communicate with the hook.
+    // Required
+    ClientConfig AdmissionHookClientConfig `json:"clientConfig"`
+
+    // Rules describes what operations on what resources/subresources the webhook cares about.
+    // The webhook cares about an operation if it matches _any_ Rule.
+    Rules []RuleWithVerbs `json:"rules,omitempty"`
+
+    // FailurePolicy defines how unrecognized errors from the admission endpoint are handled -
+    // allowed values are Ignore or Fail. Defaults to Ignore.
+    // +optional
+    FailurePolicy *FailurePolicyType
+}
+
+// RuleWithVerbs is a tuple of Verbs and Resources. It is recommended to make 
+// sure that all the tuple expansions are valid.
+type RuleWithVerbs struct {
+    // Verbs is the verbs the admission hook cares about - CREATE, UPDATE, or *
+    // for all verbs.
+    // If '*' is present, the length of the slice must be one.
+    // Required.
+    Verbs []OperationType `json:"verbs,omitempty"`
+    // Rule is embedded, it describes other criteria of the rule, like
+    // APIGroups, APIVersions, Resources, etc. 
+    Rule `json:",inline"`
 }
 
 type OperationType string
@@ -181,8 +194,9 @@ type ServiceReference struct {
 ```
 
 Notes:
-* There could be multiple AdmissionControlConfiguration. Every service provider
-  can define its own AdmissionControlConfiguration.
+* There could be multiple InitializerConfiguration and
+  ExternalAdmissionHookConfiguration. Every service provider can define their
+  own.
 
 * This schema asserts a global order of initializers, that is, initializers are
   applied to different resources in the *same* order, if they opt-in for the
@@ -202,20 +216,20 @@ Notes:
   expansions of the `<Verbs, APIGroups, APIVersions, Resource>` tuple in each
   Rule are valid. We need to document the best practice.
 
-## Synchronization of AdmissionControlConfiguration 
+## Synchronization of admission control configurations
 
 If the `initializer admission controller` and the `generic webhook admission
-controller` watch the `AdmissionControlConfiguration` and act upon deltas, their
+controller` watch the admission control configurations and act upon deltas, their
 cached version of the configuration might be arbitrarily delayed. This makes it
 impossible to predict what initializer/hooks will be applied to newly created
 objects.
 
 To make the behavior of `initializer admission controller` and the `generic
 webhook admission controller` predictable, we let them do a consistent read (a
-"LIST") of the AdmissionControlConfiguration every 1s.  If there isn't any
-successful read in the last 5s, the two admission controllers block all incoming
-request.  One consistent read per second isn't going to cause performance
-issues.
+"LIST") of the InitializerConfiguration and ExternalAdmissionHookConfiguration
+every 1s. If there isn't any successful read in the last 5s, the two admission
+controllers block all incoming request. One consistent read per second isn't
+going to cause performance issues.
 
 In the HA setup, apiservers must be configured with --etcd-quorum-read=true.
 
