@@ -31,15 +31,17 @@ import (
 )
 
 var (
-	sigsYamlFile    = "sigs.yaml"
-	templateDir     = "generator"
-	indexTemplate   = filepath.Join(templateDir, "sig_index.tmpl")
-	listTemplate    = filepath.Join(templateDir, "sig_list.tmpl")
-	headerTemplate  = filepath.Join(templateDir, "header.tmpl")
-	footerTemplate  = filepath.Join(templateDir, "footer.tmpl")
-	sigListOutput   = "sig-list.md"
-	sigIndexOutput  = "README.md"
-	githubTeamNames = []string{"misc", "test-failures", "bugs", "feature-requests", "proposals", "pr-reviews", "api-reviews"}
+	sigsYamlFile        = "sigs.yaml"
+	templateDir         = "generator"
+	indexTemplate       = filepath.Join(templateDir, "sig_index.tmpl")
+	listTemplate        = filepath.Join(templateDir, "sig_list.tmpl")
+	headerTemplate      = filepath.Join(templateDir, "header.tmpl")
+	sigListOutput       = "sig-list.md"
+	sigIndexOutput      = "README.md"
+	githubTeamNames     = []string{"misc", "test-failures", "bugs", "feature-requests", "proposals", "pr-reviews", "api-reviews"}
+	beginMarker         = "<!-- BEGIN CUSTOM CONTENT -->"
+	endMarker           = "<!-- END CUSTOM CONTENT -->"
+	lastGeneratedPrefix = "Last generated: "
 )
 
 type Lead struct {
@@ -64,7 +66,6 @@ type Contact struct {
 }
 
 type Sig struct {
-	Page
 	Name              string
 	Dir               string
 	MissionStatement  string `yaml:"mission_statement"`
@@ -76,12 +77,7 @@ type Sig struct {
 }
 
 type SigEntries struct {
-	Page
 	Sigs []Sig
-}
-
-type Page struct {
-	LastGenerated string
 }
 
 func (slice SigEntries) Len() int {
@@ -105,33 +101,81 @@ func createDirIfNotExists(path string) error {
 	return nil
 }
 
+func getExistingContent(path string) (string, error) {
+	capture := false
+	var captured []string
+
+	// NOTE: For some reason using bufio.Scanner with existing file pointer prepends
+	// a bunch of null ^@ characters, so using to ioutil.ReadFile instead.
+	content, err := ioutil.ReadFile(path)
+	if err != nil {
+		return "", err
+	}
+
+	for _, line := range strings.Split(string(content), "\n") {
+		if strings.Contains(line, endMarker) {
+			capture = false
+		}
+		if capture {
+			captured = append(captured, line)
+		}
+		if strings.Contains(line, beginMarker) {
+			capture = true
+		}
+	}
+
+	return strings.Join(captured, "\n"), nil
+}
+
 func writeTemplate(templatePath, outputPath string, data interface{}) error {
 	// set up template
-	t, err := template.ParseFiles(templatePath, headerTemplate, footerTemplate)
+	t, err := template.ParseFiles(templatePath, headerTemplate)
 	if err != nil {
 		return err
 	}
 
 	// open file and truncate
-	f, err := os.OpenFile(outputPath, os.O_WRONLY, 0644)
+	f, err := os.OpenFile(outputPath, os.O_RDWR, 0644)
 	if err != nil {
 		return err
 	}
 	defer f.Close()
+
+	// get any existing content
+	content, err := getExistingContent(outputPath)
+	if err != nil {
+		return err
+	}
+
+	// ensure file is empty
 	f.Truncate(0)
 
-	// write template output to file
+	// generated content
 	err = t.Execute(f, data)
 	if err != nil {
 		return err
 	}
 
+	// custom content block
+	writeCustomContentBlock(f, content)
+
+	// last generated
+	writeLastGenerated(f)
+
 	fmt.Printf("Generated %s\n", outputPath)
 	return nil
 }
 
-func lastGenerated() string {
-	return time.Now().Format("Mon Jan 2 2006 15:04:05")
+func writeCustomContentBlock(f *os.File, content string) {
+	lines := []string{beginMarker, "\n", content, "\n", endMarker, "\n"}
+	for _, line := range lines {
+		f.Write([]byte(line))
+	}
+}
+
+func writeLastGenerated(f *os.File) {
+	lastGenerated := fmt.Sprintf("\n%s %s", lastGeneratedPrefix, time.Now().Format("Mon Jan 2 2006 15:04:05"))
+	f.Write([]byte(lastGenerated))
 }
 
 func createReadmeFiles(ctx SigEntries) error {
@@ -139,8 +183,6 @@ func createReadmeFiles(ctx SigEntries) error {
 		dirName := fmt.Sprintf("sig-%s", strings.ToLower(strings.Replace(sig.Name, " ", "-", -1)))
 
 		createDirIfNotExists(dirName)
-
-		sig.LastGenerated = lastGenerated()
 
 		prefix := sig.Contact.GithubTeamPrefix
 		if prefix == "" {
@@ -161,7 +203,6 @@ func createReadmeFiles(ctx SigEntries) error {
 }
 
 func createListFile(ctx SigEntries) error {
-	ctx.LastGenerated = lastGenerated()
 	return writeTemplate(listTemplate, sigListOutput, ctx)
 }
 
