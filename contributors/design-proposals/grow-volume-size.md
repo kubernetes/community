@@ -19,19 +19,19 @@ Enable users to increase size of PVs that their pods are using. The user will up
 ## Volume Plugin Matrix
 
 
-| Volume Plugin   | Supports Resize   | Requires File system Resize |
-| ----------------| :---------------: | :--------------------------:|
-| EBS             | Yes               | Yes                         |
-| GCE PD          | Yes               | Yes                         |
-| Azure Disk      | Yes               | Yes                         |
-| Cinder          | Yes               | Yes                         |
-| Vsphere         | Yes               | Yes                         |
-| Ceph RBD        | Yes               | Yes                         |
-| Host Path       | No                | No                          |
-| GlusterFS       | Yes               | No                          |
-| Azure File      | No                | No                          |
-| Cephfs          | No                | No                          |
-| NFS             | No                | No                          |
+| Volume Plugin   | Supports Resize   | Requires File system Resize | Supported in 1.7 Release |
+| ----------------| :---------------: | :--------------------------:| :----------------------: |
+| EBS             | Yes               | Yes                         | Yes                      |
+| GCE PD          | Yes               | Yes                         | Yes                      |
+| Azure Disk      | Yes               | Yes                         | No                       |
+| Cinder          | Yes               | Yes                         | Yes                      |
+| Vsphere         | Yes               | Yes                         | No                       |
+| Ceph RBD        | Yes               | Yes                         | No                       |
+| Host Path       | No                | No                          | No                       |
+| GlusterFS       | Yes               | No                          | Yes                      |
+| Azure File      | No                | No                          | No                       |
+| Cephfs          | No                | No                          | No                       |
+| NFS             | No                | No                          | No                       |
 
 
 ## Implementation Design
