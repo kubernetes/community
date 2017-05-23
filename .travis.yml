@@ -1,0 +1,9 @@
+sudo: required
+
+language: bash
+
+services:
+  - docker
+
+script:
+  - bash ./scripts/verify.sh
