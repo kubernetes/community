@@ -40,8 +40,8 @@ privileged access to networks, machines or K8s software and data. Software
 errors in K8s system components and administrator error are some types of threat
 in this category.
 
-This document is primarily concerned with K8s API paths, and secondarily with
-Internal paths. The Application path also needs to be secure, but is not the
+This document is primarily concerned with K8s API Path, and secondarily with
+Insider Path. The Application Path also needs to be secure, but is not the
 focus of this document.
 
 ### Assets to protect
@@ -113,7 +113,7 @@ configurations.
 
 # Design
 
-Related discussion:
+Related discussions:
 - http://issue.k8s.io/442
 - http://issue.k8s.io/443
 
