@@ -1,0 +1,22 @@
+repo: kubernetes/community
+labels:
+- name: bug
+  color: ee0701
+- name: 'cncf-cla: no'
+  color: d60000
+- name: 'cncf-cla: yes'
+  color: c2e0c6
+- name: duplicate
+  color: cccccc
+- name: enhancement
+  color: 84b6eb
+- name: help wanted
+  color: 0052cc
+- name: invalid
+  color: e6e6e6
+- name: lgtm
+  color: 0e8a16
+- name: question
+  color: cc317c
+- name: wontfix
+  color: ffffff
