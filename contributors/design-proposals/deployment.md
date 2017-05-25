@@ -116,10 +116,10 @@ type DeploymentStatus struct {
   // Total number of new ready pods with the desired template spec.
   UpdatedReplicas int32
 
-  // Monotonically increasing counter that tracks hash collisions for
-  // the Deployment. Used as a collision avoidance mechanism by the
-  // Deployment controller.
-  Uniquifier *int64
+  // Count of hash collisions for the Deployment. The Deployment controller uses this
+  // field as a collision avoidance mechanism when it needs to create the name for the
+  // newest ReplicaSet.
+  CollisionCount *int64
 }
 
 ```
@@ -139,8 +139,8 @@ For each creation or update for a Deployment, it will:
    that they do not select the newly created pods (or old pods get selected by the
    new RS).
    - The label key will be "pod-template-hash".
-   - The label value will be the hash of {podTemplateSpec+uniquifier} where podTemplateSpec
-     is the one that the new RS uses and uniquifier is a counter in the DeploymentStatus
+   - The label value will be the hash of {podTemplateSpec+collisionCount} where podTemplateSpec
+     is the one that the new RS uses and collisionCount is a counter in the DeploymentStatus
      that increments every time a [hash collision](#hashing-collisions) happens (hash
      collisions should be rare with fnv).
    - If the RSs and pods dont already have this label and selector:
@@ -235,8 +235,8 @@ hashing an API object is subject to API changes which means that the name
 for a ReplicaSet may differ between minor Kubernetes versions.
 
 For both of the aforementioned cases, we will use a field in the DeploymentStatus,
-called Uniquifier, to create a unique hash value when a hash collision happens.
-The Deployment controller will compute the hash value of {template+uniquifier},
+called collisionCount, to create a unique hash value when a hash collision happens.
+The Deployment controller will compute the hash value of {template+collisionCount},
 and will use the resulting hash in the ReplicaSet names and selectors. One side
 effect of this hash collision avoidance mechanism is that we don't need to
 migrate ReplicaSets that were created with adler.
