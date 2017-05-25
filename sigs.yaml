@@ -33,7 +33,7 @@ sigs:
     leads:
     - name: Michelle Noorali
       github: michelleN
-      company: Deis
+      company: Microsoft
     - name: Matt Farina
       github: mattfarina
       company: HPE
@@ -101,7 +101,7 @@ sigs:
       github: justinsb
     - name: Kris Nova
       github: kris-nova
-      company: Deis
+      company: Microsoft
     - name: Chris Love
       github: chrislovecnm
     - name: Mackenzie Burnett
@@ -189,9 +189,9 @@ sigs:
     - name: Rob Hirschfeld
       github: zehicle
       company: RackN
-    - name: Jason Singer DuMars
+    - name: Jaice Singer DuMars
       github: jdumars
-      company: Deis
+      company: Microsoft
     meetings:
     - day: Thursday
       utc: "20:00"
@@ -202,7 +202,7 @@ sigs:
       slack: sig-cluster-ops
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-ops
   - name: Contributor Experience
-    dir: sig-contribx
+    dir: sig-contributor-experience
     mission_statement: >
       Developing and sustaining a healthy community of contributors is critical
       to scaling the project and growing the ecosystem. We need to ensure our
@@ -226,7 +226,7 @@ sigs:
     meeting_url: https://zoom.us/j/7658488911
     meeting_archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
     contact:
-      slack: wg-contribex
+      slack: sig-contribex
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-contribex
   - name: Docs
     dir: sig-docs
@@ -337,7 +337,7 @@ sigs:
       slack: sig-node
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-node
   - name: On Premise
-    dir: sig-on-prem
+    dir: sig-on-premise
     mission_statement: >
       Brings together member of Kubernetes community interested in running
       Kubernetes on premise, on bare metal or more generally beyond cloud
@@ -386,7 +386,7 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-openstack
       full_github_teams: true
   - name: Product Management
-    dir: sig-pm
+    dir: sig-product-management
     mission_statement: >
       Focuses on aspects of product management, such as the qualification and
       successful management of user requests, and aspects of project and
@@ -423,7 +423,7 @@ sigs:
     meeting_url: https://zoom.us/j/845373595
     meeting_archive_url: https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing
     contact:
-      slack: sig-pm
+      slack: kubernetes-pm
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-pm
   - name: Scalability
     dir: sig-scalability
@@ -489,7 +489,7 @@ sigs:
       company: Red Hat
     - name: Aaron Schlesinger
       github: arschles
-      company: Deis
+      company: Microsoft
     - name: Brendan Melville
       github: bmelville
       company: Google
