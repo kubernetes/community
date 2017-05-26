@@ -345,6 +345,9 @@ and style.
 Commit changes made in response to review comments to the same branch on your
 fork.
 
+Avoid updating existing commits in a pull request. This will hide existing comments on your PR. 
+Instead create separate commits for each push.
+
 Very small PRs are easy to review.  Very large PRs are very difficult to
 review.
 
