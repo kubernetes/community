@@ -23,7 +23,7 @@ We also work closely with [sig-storage](../sig-storage) and [sig-networking](../
 
 ## Contact us:
 
-* via [Slack](https://kubernetes.slack.com/messages/sig-node/)
+* via [Slack](https://kubernetes.slack.com/messages/sig-node/) (new users can register [here](http://slack.k8s.io))
 * via [Google Groups](https://groups.google.com/forum/#!forum/kubernetes-sig-node)
 
 ## GitHub Aliases:
