@@ -127,12 +127,12 @@ Kubernetes is written in [Go](http://golang.org). If you don't have a Go
 development environment, please [set one up](http://golang.org/doc/code.html).
 
 
-| Kubernetes     | requires Go                               |
-|----------------|-------------------------------------------|
-| 1.0 - 1.2      | 1.4.2                                     |
-| 1.3, 1.4       | 1.6                                       |
-| 1.5 and higher | 1.7 - 1.7.5                               |
-|                | [1.8][go-1.8] not verified as of Feb 2017 |
+| Kubernetes     | requires Go |
+|----------------|-------------|
+| 1.0 - 1.2      | 1.4.2       |
+| 1.3, 1.4       | 1.6         |
+| 1.5, 1.6       | 1.7 - 1.7.5 |
+| 1.7+           | 1.8.1       |
 
 Ensure your GOPATH and PATH have been configured in accordance with the Go
 environment instructions.
@@ -373,7 +373,6 @@ masse. This makes reviews easier.
 [etcd-latest]: https://coreos.com/etcd/docs/latest
 [etcd-install]: testing.md#install-etcd-dependency
 <!-- https://github.com/coreos/etcd/releases -->
-[go-1.8]: https://blog.golang.org/go1.8
 [go-workspace]: https://golang.org/doc/code.html#Workspaces
 [issue]: https://github.com/kubernetes/kubernetes/issues
 [kubectl user guide]: https://kubernetes.io/docs/user-guide/kubectl
