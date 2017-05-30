@@ -11,15 +11,36 @@ suitable design/implementation approach for the same.
 The original design proposal of the statefulset in kubernetes, including the 
 use cases and example applications, can be found [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/stateful-apps.md).
 
-
 # Use Cases
 
-1 – A stateful app, for the reasons of high availability, wants the stateful 
-pods distributed in different clusters, such that the set can withstand cluster failures. 
-This represents an app with one single global quorum.
+1 – A stateful app, wants replicas distributed in multiple clusters, such that it can 
+form multiple smaller sized local app clusters using only local replicas, each serving 
+users local to the cluster (using in cluster stateful app identities).
 
-2 – A stateful app, wants replicas distributed in multiple clusters, such that it can 
-form multiple smaller sized local clusters using only local replicas.
+2 – A stateful app, for the reasons of high availability, wants the stateful pods 
+distributed in different clusters, such that the set can withstand cluster failures. 
+This represents an app with one single global quorum. This use case can be an extension
+to the previous, where the same app instances get multiple identities (local and global).
+
+# Concrete use case examples
+
+1 - A federated etcd statefulset of 30 replicas across 10 clusters (using minreplicas=3, 
+maxreplicas=3, PVC's) which creates a local quorum in each of the 10 clusters. The potential 
+global quorum is ignored in this example. If a cluster goes down, the quorum in that cluster 
+is dead, but the quora in all the other clusters remain up accessible locally to the in-cluster
+apps. (Similar to use case 1 above).
+
+2 - A federated etcd statefulset of 3 or more replicas across 2 or more then 2 clusters
+which creates a global quorum able to withstand the temporary failure of any one cluster,
+as well as the permanent failure of any node in any cluster. (Similar to use case 2 above).
+
+3 - A federated cassandra db statefulset of 100 replicas across, for example, 5 clusters.
+(The instances can have multiple identities each; apps and peer instances can choose to 
+preferentially connect to local dns identities, but can also connect using global dns identity,
+if need be, for example to connect to peers in other federated clusters).
+
+4 - A federated statefulset of an app, which is designed to inherently support a geo-distributed 
+app cluster, with replicas in mutiple federated k8s clusters. (for example galera db cluster).
 
 # Design Requirements
 
@@ -89,9 +110,9 @@ As an example:
 For a federation with 3 clusters all in the same DNS zone _federation.example_ and the statefulset 
 name _web_ the dns names for instances might look like:
 ```
-web-0.mynamespace.myfederation.svc.federation.example
-web-1.mynamespace.myfederation.svc.federation.example
-Web-2.mynamespace.myfederation.svc.federation.example
+web-0.mynamespace.myfederation.svc.federation.example.com
+web-1.mynamespace.myfederation.svc.federation.example.com
+Web-2.mynamespace.myfederation.svc.federation.example.com
 ```
 
 The difference compared to an in-cluster dns name for an instance of a statefulset can
@@ -110,7 +131,7 @@ If we use the existing federated service mechanism, to create this service, and 
 a particular name (for example web-0 in example above) is created in federation, it will 
 propagate the same to all federated clusters. 
 This is unnecessary for the solution mentioned in this section (or for further reading in 
-the following section), and would be extreme waste of resources. 
+the following section), and would be waste of resources. 
 Some simple proposals to tackle this problem are mentioned at the end of this document under 
 section &quot; **Handling additional LB Services**&quot;.
 
@@ -133,7 +154,7 @@ It however will be possible for each pod to take multiply dns identities.
 This is detailed in the &#39;instance identity and discovery&#39; section below.
 
 For this phase of implementation, it is proposed that the statefulset need not guarantee the 
-order of creation of the pod instances across federation (_we believe more discussion will follow this statement_).
+order of creation of the pod instances across federation.
 
 ### Replica distribution (across federated clusters)
 
@@ -167,10 +188,14 @@ It will further partition the total number of replicas and create statefulsets w
 replica numbers into at least 1 or more clusters.
 The noteworthy point is the proposal that federated stateful controller would additionally modify 
 the statefulset name by appending the cluster name to the statefulset name into whichever cluster 
-the partitioned statefulset is getting created.
+the partitioned statefulset is getting created. 
 This will ensure that each pod in the federated statefulset maintains an unique identity across 
 all clusters, including a stable non-changing hostname for each pod even with the ordinal numbers 
 being generated local to the clusters.
+There is a possible issue, however unlikely, with this approach is that the name length might exceed 
+the allowed k8s object name of 254 charaters. This can be left as an open issue (likely to be hit 
+only with automated name generators, for both clusters joining federation and the statefulset name) 
+for now, and can be subverted using an admission control plugin, to check name lengths in future.
 
 In case of clusters getting statefulsets with more than 1 replica, pods will be able to discover 
 each other using the in-cluster dns identity provided by the headless in-cluster service 
@@ -236,11 +261,11 @@ Using the example above, with statefulset name _web_, service name _nginx_ and d
 _federation.example_ the dns names created against each instance would be as below, discoverable 
 both locally and globally (assuming the registered cluster names being c1, c2 and c3):
 ```
-web-c1-0.nginx.mynamespace.svc.federation.example
-web-c1-1.nginx.mynamespace.svc.federation.example
-web-c2-0.nginx.mynamespace.svc.federation.example
-web-c2-1.nginx.mynamespace.svc.federation.example
-web-c3-0.nginx.mynamespace.svc.federation.example
+web-c1-0.nginx.mynamespace.svc.federation.example.com
+web-c1-1.nginx.mynamespace.svc.federation.example.com
+web-c2-0.nginx.mynamespace.svc.federation.example.com
+web-c2-1.nginx.mynamespace.svc.federation.example.com
+web-c3-0.nginx.mynamespace.svc.federation.example.com
 ```
 This above is fine for the case of multiple local quora (one in each cluster), but these identities 
 cannot work across the clusters, as the local pod IPs cannot be reached across the clusters.
@@ -251,9 +276,56 @@ This will be automatically created by the federated statefulset controller, on d
 controlled by an annotation on the statefulset.
 If the annotation specifies so (users choice), the federation controller will create the additional 
 service of type &#39;LoadBalancer&#39; against each pod replica.
-The service name for service, one each against the pod will be the same name as the pod identity.
-The LB service creation at federation has the same drawback as discussed in _design alternative 1_.
+
+The additional globally reachable dns identities (LB service) against each stateful pod once created will 
+have dns names as below:
+```
+web-c1-0.mynamespace.svc.federation.example.com
+web-c1-1.mynamespace.svc.federation.example.com
+web-c2-0.mynamespace.svc.federation.example.com
+web-c2-1.mynamespace.svc.federation.example.com
+web-c3-0.mynamespace.svc.federation.example.com
+```
+The service name for the LB service, one each against the pod will be the same name as the pod name.
+Also note that these particular LB services, although federated, will ideally resolve to 1 IP per service.
+These services will be created with the label selector matching the statefulset pods.
+
 The proposed solution is elaborated in section **Handling additional LB Services**.
+
+## Handling additional LB services
+
+As listed in the above approach, the current option of exposing the statefulset pods across clusters is to 
+assign a LB service to each replica pod.
+If the federated service controller is used (by creating the service in federation) to create these services, 
+then as per the current behaviour the service will be created in each cluster. 
+This leads to exactly one unused service per statefulset per cluster.
+There are two alternatives to circumvent this problem:
+
+1 - Cluster affinity is introduced for services such that the controller creates the service only 
+in needed cluster. (The need of cluster affinity and anti-affinity in general is discussed 
+[elsewhere](https://github.com/kubernetes/kubernetes/issues/41442) also)
+
+2 - Federated statefulset controller handles the creation of cluster local services, rather than the 
+federated service controller. It also will need to handle the dns records for each LB service into the 
+federation (or cloud provider specific) public dns server.
+
+We propose using alternative 1 listed here, as it fits broader scheme of things and is more consistent with 
+the user expectation of being able to query all needed resources from the federation control plane and is 
+less confusing to use at the same time.
+
+The trick for individual pods be able to discover this additional dns identity through the LB service is for the 
+federated controller to be able to update an A record of the IP resolved for the specific LB service 
+(for example ```web-c1-0.mynamespace.svc.federation.example.com```)
+against the statefulset governing service domain (```nginx.mynamespace.svc.federation.example.com```).
+A peer pod in a stateful set then can discover its federated peers by doing a dns query against the governing
+service domain ```nginx.mynamespace.svc.federation.example.com```.
+It should be noted that the the additional dns record will be updated by the federated service controller, however 
+the information linking the LB service and the target statefulset pod and the governing service domain will need to 
+be passed from the federated statesfulset controller to federated service controller.
+Doing it this was has one drawback that even if an additional LB service is available per stateful pod per cluster,
+the dns A record information linking that particular LB service to the stateful pod endpoint will be available only 
+when the dns query hits the federated dns server. This can be ignored, because the same statefulset pod can be 
+discoverd locally also, using the giverning service domain.
 
 ## Storage volumes
 
@@ -277,27 +349,6 @@ the replica numbers in each cluster will be updated independently.
 
 The behaviour of the scaling on being targeted using a **federated hpa** will be discussed in a separate design.
 
-## Handling additional LB services
-
-As listed in the approaches, the current option of exposing the statefulset pods across clusters is to 
-assign a LB service to each replica pod.
-If the federated service controller is used (by creating the service in federation) to create these services, 
-then as per the current behaviour the service will be created in each cluster. 
-This leads to exactly one unused service per statefulset per cluster.
-There are two alternatives to circumvent this problem:
-
-1 - Cluster affinity is introduced at least for services such that the controller creates the service only 
-in needed cluster. (The need of cluster affinity and anti-affinity in general is discussed 
-[elsewhere](https://github.com/kubernetes/kubernetes/issues/41442) also)
-
-2 - Federated statefulset controller handles the creation of cluster local services, rather than the 
-federated service controller. It also will need to handle the dns records for each LB service into the 
-federation (or cloud provider specific) public dns server.
-
-We propose using alternative 1 listed here, as it fits broader scheme of things and is more consistent with 
-the user expectation of being able to query all needed resources from the federation control plane and is 
-less confusing to use at the same time.
-
 # Conclusion
 
 Option 1 above can solve only 1 of the listed use cases (scenario 1), and does not remain consistent with 
@@ -305,6 +356,12 @@ the existing federated controllers.
 
 Option 2 above can solve both the use cases, is consistent with the existing federated controllers 
 and makes more sense in the scheme of things.
+
+# Federated statefulset updates
+
+The in cluster statefulsets update proposal is under implementation as per [this proposal](https://github.com/kubernetes/community/pull/503)
+The suggestion is to handle it as a separate design proposal, once the same is implemented and stabilised.
+
 
 # Limitations (to be discussed)
 
