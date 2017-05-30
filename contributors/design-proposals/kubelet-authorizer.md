@@ -21,13 +21,13 @@ pods belonging to other nodes, and accessing confidential data unrelated to the 
 
 This document proposes limiting a kubelet's API access using a new node authorizer, admission plugin, and additional API validation:
 * Node authorizer
-  * Authorizes requests from nodes using a fixed policy identical to the default RBAC `system:node` cluster role
-  * Further restricts secret and configmap access to only allow reading objects referenced by pods bound to the node making the request
+  * Authorizes requests from identifiable nodes using a fixed policy identical to the default RBAC `system:node` cluster role
+  * Further restricts secret, configmap, persistentvolumeclaim and persistentvolume access to only allow reading objects referenced by pods bound to the node making the request
 * Node admission
-  * Limit nodes to only be able to mutate their own Node API object
-  * Limit nodes to only be able to create mirror pods bound to themselves
-  * Limit nodes to only be able to mutate mirror pods bound to themselves
-  * Limit nodes to not be able to create mirror pods that reference API objects (secrets, configmaps, service accounts, persistent volume claims)
+  * Limit identifiable nodes to only be able to mutate their own Node API object
+  * Limit identifiable nodes to only be able to create mirror pods bound to themselves
+  * Limit identifiable nodes to only be able to mutate mirror pods bound to themselves
+  * Limit identifiable nodes to not be able to create mirror pods that reference API objects (secrets, configmaps, service accounts, persistent volume claims)
 * Additional API validation
   * Reject mirror pods that are not bound to a node
   * Reject pod updates that remove mirror pod annotations
@@ -72,44 +72,37 @@ type NodeIdentifier interface {
 ```
 
 The default `NodeIdentifier` implementation:
-* `isNode` - true if the user groups contain the `system:nodes` group
-* `nodeName` - populated if `isNode` is true, and the user name is in the format `system:node:<nodeName>`
+* `isNode` - true if the user groups contain the `system:nodes` group and the user name is in the format `system:node:<nodeName>`
+* `nodeName` - set if `isNode` is true, by extracting the `<nodeName>` portion of the `system:node:<nodeName>` username
 
 This group and user name format match the identity created for each kubelet as part of [kubelet TLS bootstrapping](https://kubernetes.io/docs/admin/kubelet-tls-bootstrapping/).
 
 ## Node authorizer
 
-A new node authorizer will be inserted into the authorization chain:
-* API server authorizer (existing, authorizes "loopback" API clients used by components within the API server)
-* Node authorizer (new)
-* User-configured authorizers... (e.g. ABAC, RBAC, Webhook)
+A new node authorization mode (`Node`) will be made available for use in combination 
+with other authorization modes (for example `--authorization-mode=Node,RBAC`).
 
 The node authorizer does the following:
 1. If a request is not from a node (`IdentifyNode()` returns isNode=false), reject
-2. If a request is not allowed by the rules in the default `system:node` cluster rule, reject
-3. If a specific node cannot be identified (`IdentifyNode()` returns nodeName=""):
-    * If in compatibility-mode (default), allow. This lets nodes that don't use node-specific identities continue to work with the broad authorization rules in step 2.
-    * If in strict-mode, reject. This lets deployments that provision all nodes with individual identities to indicate that only identifiable nodes should be allowed.
-4. If a request is for a secret, configmap, persistent volume or persistent volume claim, reject unless the verb is `get`, and the requested object is related to the requesting node:
-    
-    * node -> pod
-    * node -> pod -> secret
-    * node -> pod -> configmap
-    * node -> pod -> pvc
-    * node -> pod -> pvc -> pv
-    * node -> pod -> pvc -> pv -> secret
-5. For other resources, allow
+2. If a specific node cannot be identified (`IdentifyNode()` returns nodeName=""), reject
+3. If a request is for a secret, configmap, persistent volume or persistent volume claim, reject unless the verb is `get`, and the requested object is related to the requesting node:
+
+    * node <-pod
+    * node <-pod-> secret
+    * node <-pod-> configmap
+    * node <-pod-> pvc
+    * node <-pod-> pvc <-pv
+    * node <-pod-> pvc <-pv-> secret
+4. For other resources, allow if allowed by the rules in the default `system:node` cluster role
 
 Subsequent authorizers in the chain can run and choose to allow requests rejected by the node authorizer.
 
 ## Node admission
 
-A new node admission plugin is made available that does the following:
+A new node admission plugin (`--admission-control=...,NodeRestriction,...`) is made available that does the following:
 
 1. If a request is not from a node (`IdentifyNode()` returns isNode=false), allow the request
-2. If a specific node cannot be identified (`IdentifyNode()` returns nodeName=""):
-  * If in compatibility-mode (default), allow. This lets nodes that don't use node-specific identities continue to work.
-  * If in strict-mode, reject. This lets deployments that provision all nodes with individual identities to indicate that only identifiable nodes should be allowed.
+2. If a specific node cannot be identified (`IdentifyNode()` returns nodeName=""), reject the request
 3. For requests made by identifiable nodes:
   * Limits `create` of node resources:
     * only allow the node object corresponding to the node making the API request
@@ -134,10 +127,13 @@ Change Pod validation for mirror pods:
 
 ## RBAC Changes
 
-As of 1.6, the `system:node` cluster role is automatically bound to the `system:nodes` group when using RBAC.
-
+In 1.6, the `system:node` cluster role is automatically bound to the `system:nodes` group when using RBAC.
 Because the node authorizer accomplishes the same purpose, with the benefit of additional restrictions
-on secret and configmap access, this binding is no longer needed, and will no longer be set up automatically.
+on secret and configmap access, the automatic binding of the `system:nodes` group to the `system:node` role will be deprecated in 1.7.
+
+In 1.7, the binding will not be created if the `Node` authorization mode is used.
+
+In 1.8, the binding will not be created at all.
 
 The `system:node` cluster role will continue to be created when using RBAC,
 for compatibility with deployment methods that bind other users or groups to that role.
@@ -146,7 +142,7 @@ for compatibility with deployment methods that bind other users or groups to tha
 
 ### Kubelets outside the `system:nodes` group
 
-Kubelets outside the `system:nodes` group would not be authorized by the node authorizer,
+Kubelets outside the `system:nodes` group would not be authorized by the `Node` authorization mode,
 and would need to continue to be authorized via whatever mechanism currently authorizes them.
 The node admission plugin would not restrict requests from these kubelets.
 
@@ -154,21 +150,30 @@ The node admission plugin would not restrict requests from these kubelets.
 
 In some deployments, kubelets have credentials that place them in the `system:nodes` group,
 but do not identify the particular node they are associated with.
-Those kubelets would be broadly authorized by the node authorizer,
-but would not have secret and configmap requests restricted.
-The node admission plugin would not restrict requests from these kubelets.
+
+These kubelets would not be authorized by the `Node` authorization mode,
+and would need to continue to be authorized via whatever mechanism currently authorizes them.
+
+The `NodeRestriction` admission plugin would ignore requests from these kubelets,
+since the default node identifier implementation would not consider that a node identity.
 
 ### Upgrades from previous versions
 
-Versions prior to 1.7 that have the `system:node` cluster role bound to the `system:nodes` group would need to
-remove that binding in order for the node authorizer restrictions on secret and configmap access to be effective.
+Upgraded 1.6 clusters using RBAC will continue functioning as-is because the `system:nodes` group binding will already exist.
+
+If a cluster admin wishes to start using the `Node` authorizer and `NodeRestriction` admission plugin
+to limit node access to the API, they can do that non-disruptively:
+1. Enable the `Node` authorization mode (`--authorization-mode=Node,RBAC`) and the `NodeRestriction` admission plugin
+2. Ensure all their kubelets' credentials conform to the group/username requirements
+3. Audit their apiserver logs to ensure the `Node` authorizer is not rejecting requests from kubelets (no `NODE DENY` messages logged)
+4. Delete the `system:node` cluster role binding
 
 ## Future work
 
 Node and pod mutation, and secret and configmap read access are the most critical permissions to restrict.
 Future work could further limit a kubelet's API access:
-* only get persistent volume claims and persistent volumes referenced by a bound pod
 * only write events with the kubelet set as the event source
+* only get endpoints objects referenced by pods bound to the kubelet's node (currently only needed for glusterfs volumes)
 * only get/list/watch pods bound to the kubelet's node (requires additional list/watch authorization capabilities)
 * only get/list/watch it's own node object (requires additional list/watch authorization capabilities)
 
