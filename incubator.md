@@ -115,6 +115,7 @@ These are grandfathered in as full projects:
 - github.com/kubernetes/dashboard
 - github.com/kubernetes/helm  (Graduated from incubator on Feb 2017)
 - github.com/kubernetes/minikube (Graduated from incubator on Feb 2017)
+- github.com/kubernetes/kops (Graduated from incubator in Jun 2017)
 
 **Project to Incubate But Not Move**
 
@@ -126,7 +127,6 @@ These projects are young but have significant user facing docs pointing at their
 
 - github.com/kubernetes/kube2consul
 - github.com/kubernetes/frakti
-- github.com/kubernetes/kops
 - github.com/kubernetes/kube-deploy
 - github.com/kubernetes/kubernetes-anywhere
 - github.com/kubernetes/application-images
