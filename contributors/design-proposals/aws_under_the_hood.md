@@ -158,6 +158,18 @@ ELB at the other end of its connection) when forwarding requests.
 TCP and SSL will select layer 4 proxying: the ELB will forward traffic without
 modifying the headers.
 
+#### Adding addional tags to an ELB
+
+Additional tags can be set on a created ELB by annotating a service with
+
+```
+aws.kubernetes.io/aws-load-balancer-additional-resource-tags="TagName=TagValue,..."
+```
+Note that any tags which conflict with tags set by the AWS Cloud Provider will be ignored.
+Ignored tags are
+- `KubernetesCluster`
+
+
 ### Identity and Access Management (IAM)
 
 kube-proxy sets up two IAM roles, one for the master called
