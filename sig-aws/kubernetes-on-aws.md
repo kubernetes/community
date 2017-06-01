@@ -13,6 +13,7 @@ This page lists different options, in alphabetic order, of starting a Kubernetes
 * Kubeadm Quickstart: https://github.com/upmc-enterprises/kubeadm-aws
 * Kubernetes Operations (kops): https://github.com/kubernetes/kops
 * OpenShift: https://access.redhat.com/articles/2623521
+* Stackpoint.io: https://stackpoint.io
 * Tack: https://github.com/kz8s/tack
 * Tectonic: http://github.com/coreos/tectonic-installer
 * Weaveworks AMI: https://github.com/weaveworks/kubernetes-ami
