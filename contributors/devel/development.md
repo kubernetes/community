@@ -172,6 +172,13 @@ dependencies](godep.md).
 
 
 
+## Build with Bazel/Gazel
+
+Building with Bazel is currently experimental.  For more information,
+see [Build with Bazel].
+
+
+
 ## Workflow
 
 ![Git workflow](git_workflow.png)
@@ -190,7 +197,10 @@ Define a local working directory:
 
 ```sh
 # If your GOPATH has multiple paths, pick
-# just one and use it instead of $GOPATH here
+# just one and use it instead of $GOPATH here.
+# You must follow exactly this pattern,
+# neither `$GOPATH/src/github.com/${your github profile name/`
+# nor any other pattern will work.
 working_dir=$GOPATH/src/k8s.io
 ```
 
@@ -379,3 +389,4 @@ masse. This makes reviews easier.
 [kubernetes.io]: https://kubernetes.io
 [mercurial]: http://mercurial.selenic.com/wiki/Download
 [test-image]: https://github.com/kubernetes/test-infra/tree/master/jenkins/test-image
+[Build with Bazel]: bazel.md
