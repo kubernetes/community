@@ -298,6 +298,8 @@ make test-e2e
 See the [testing guide](testing.md) and [end-to-end tests](e2e-tests.md)
 for additional information and scenarios.
 
+Run `make help` for additional information on these make targets.
+
 ### 4 Keep your branch in sync
 
 ```sh
