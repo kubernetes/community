@@ -121,6 +121,10 @@ Kubernetes maintains state in [`etcd`][etcd-latest], a distributed key store.
 
 Please [install it locally][etcd-install] to run local integration tests.
 
+### Development using local cluster
+After installing etcd, you may run a local cluster with one node for development purpose.
+Refer [this](https://kubernetes-v1-4.github.io/docs/getting-started-guides/locally/#starting-the-cluster) for more information.
+
 ### Go
 
 Kubernetes is written in [Go](http://golang.org). If you don't have a Go
