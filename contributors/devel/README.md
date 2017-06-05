@@ -27,6 +27,8 @@ Guide](http://kubernetes.io/docs/admin/).
 
 * **Development Guide** ([development.md](development.md)): Setting up your development environment.
 
+* **Testing** ([testing.md](testing.md)): How to run unit, integration, and end-to-end tests in your development sandbox.
+
 * **Hunting flaky tests** ([flaky-tests.md](flaky-tests.md)): We have a goal of 99.9% flake free tests.
   Here's how to run your tests many times.
 
