@@ -4,7 +4,7 @@ The Kubernetes Testing SIG (sig-testing) is a working group within the Kubernete
 
 ## video conference
 
-We meet weekly on Tuesdays at 1:00pm PDT (20:00 UTC) at [this zoom room](https://zoom.us/j/553910341)
+We meet weekly on Tuesdays at 1:00pm PDT (20:00 UTC) at [this zoom room](https://zoom.us/j/2419653117)
 
 ## agenda
 
@@ -20,15 +20,15 @@ Signup for access at http://slack.kubernetes.io/
 ## github
 
 We use the following GitHub teams to notify SIG members of particular issues or PR's of interest:
-- @kubernetes/sig-testing-api-reviews
-- @kubernetes/sig-testing-bugs
-- @kubernetes/sig-testing-feature-requests
-- @kubernetes/sig-testing-misc
-- @kubernetes/sig-testing-pr-reviews
-- @kubernetes/sig-testing-proposals
-- @kubernetes/sig-testing-test-failures
+- [@kubernetes/sig-testing-api-reviews](https://github.com/orgs/kubernetes/teams/sig-testing-api-reviews)
+- [@kubernetes/sig-testing-bugs](https://github.com/orgs/kubernetes/teams/sig-testing-bugs)
+- [@kubernetes/sig-testing-feature-requests](https://github.com/orgs/kubernetes/teams/sig-testing-feature-requests)
+- [@kubernetes/sig-testing-misc](https://github.com/orgs/kubernetes/teams/sig-testing-misc)
+- [@kubernetes/sig-testing-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-testing-pr-reviews)
+- [@kubernetes/sig-testing-proposals](https://github.com/orgs/kubernetes/teams/sig-testing-proposals)
+- [@kubernetes/sig-testing-test-failures](https://github.com/orgs/kubernetes/teams/sig-testing-test-failures)
 
-If you would like to be added to any of these teams, please contact the organizers listed below.
+Note, you will need to be a member of the kubernetes GitHub organization to see these teams.  The [membership requirements](https://github.com/kubernetes/community/blob/master/community-membership.md#member) are still being fleshed out.  In the meantime, if you would like to be added to any of these teams, please contact the organizers listed below.
 
 We use the `sig/testing` label to identify issues that have mentioned any of the above teams
 - [issues with `sig/testing` label applied](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Asig%2Ftesting)
