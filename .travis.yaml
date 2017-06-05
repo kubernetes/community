@@ -1,0 +1,6 @@
+language: bash
+
+install: true
+
+script:
+  - bash ./scripts/verify.sh
