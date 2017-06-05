@@ -51,9 +51,9 @@ _Solution requirements:_
 ### CPU Manager component
 
 The *CPU Manager* is a new software component in Kubelet responsible for
-assigning pod containers to sets of CPUs on the local node. In the
-future, it may be expanded to control shared processor resources like
-caches.
+assigning pod containers to sets of CPUs on the local node. In later
+phases, the scope will expand to include caches, a critical shared
+processor resource.
 
 The CPU manager interacts directly with the kuberuntime. The CPU Manager
 is notified when containers come and go, before delegating container
@@ -291,7 +291,7 @@ func (m *dynamicManager) Remove(c v1.Container, qos QoS) error {
 
 ## Implementation roadmap
 
-### Phase 1
+### Phase 1: No-op policy
 
 * Internal API exists to allocate CPUs to containers
   ([PR 46105](https://github.com/kubernetes/kubernetes/pull/46105))
@@ -300,7 +300,7 @@ func (m *dynamicManager) Remove(c v1.Container, qos QoS) error {
 * All existing unit and e2e tests pass.
 * Initial unit tests pass.
 
-### Phase 2
+### Phase 2: Static policy
 
 * Kubelet can discover "basic" CPU topology (HT-to-physical-core map)
 * Static policy is implemented.
@@ -309,7 +309,11 @@ func (m *dynamicManager) Remove(c v1.Container, qos QoS) error {
 * Performance metrics for one or more plausible synthetic workloads show
   benefit over no-op policy.
 
-### Phase 3
+### Phase 3: Cache allocation
+
+* Static policy also manages [cache allocation][cat] on supported platforms.
+
+### Phase 4: Dynamic polidy
 
 * Dynamic policy is implemented.
 * Unit tests for dynamic policy pass.
@@ -317,7 +321,7 @@ func (m *dynamicManager) Remove(c v1.Container, qos QoS) error {
 * Performance metrics for one or more plausible synthetic workloads show
   benefit over no-op policy.
 
-### Phase 4
+### Phase 5: NUMA
 
 * Kubelet can discover "advanced" CPU topology (NUMA).
 
@@ -335,6 +339,7 @@ func (m *dynamicManager) Remove(c v1.Container, qos QoS) error {
    exclusivity for a CPU by removing it from all other assigned cpusets.
 1. Tricky semantics when cpusets are combined with CFS shares and quota.
 
+[cat]: http://www.intel.com/content/www/us/en/communications/cache-monitoring-cache-allocation-technologies.html
 [ht]: http://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html
 [hwloc]: https://www.open-mpi.org/projects/hwloc
 [procfs]: http://man7.org/linux/man-pages/man5/proc.5.html
