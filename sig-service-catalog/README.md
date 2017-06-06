@@ -1,6 +1,6 @@
 # SIG Service Catalog
 
-**Leads:** Paul Morie (@pmorie, Red Hat), Aaron Schlesinger (@arschles, Deis), Brendan Melville (@bmelville, Google), Doug Davis (@duglin, IBM)
+**Leads:** Paul Morie (@pmorie, Red Hat), Aaron Schlesinger (@arschles, Microsoft), Ville Aikas (@vaikas-google, Google), Doug Davis (@duglin, IBM)
 
 **Slack Channel:** [#sig-service-catalog](https://kubernetes.slack.com/messages/sig-service-catalog/).  [Archive](http://kubernetes.slackarchive.io/sig-service-catalog/)
 
