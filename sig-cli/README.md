@@ -2,7 +2,7 @@
 
 The Kubernetes Command Line Interface SIG (sig-cli) is a working group for the contributor community interested in `kubectl` and related tools.
 
-We focus on the development and standardization of the CLI [framework](https://github.com/kubernetes/kubernetes/tree/master/pkg/kubectl) and its dependencies, the establishment of [conventions](contributors/devel/kubectl-conventions.md) for writing CLI commands, POSIX compliance, and improving the command line tools from a developer and devops user experience and usability perspective.
+We focus on the development and standardization of the CLI [framework](https://github.com/kubernetes/kubernetes/tree/master/pkg/kubectl) and its dependencies, the establishment of [conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/kubectl-conventions.md) for writing CLI commands, POSIX compliance, and improving the command line tools from a developer and devops user experience and usability perspective.
 
 ## Meetings:
 * Bi-weekly on Wednesdays @ 9am [America/Los_Angeles](http://time.is/Los_Angeles) (check [the calendar](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles))
