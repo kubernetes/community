@@ -490,8 +490,8 @@ sigs:
     - name: Aaron Schlesinger
       github: arschles
       company: Microsoft
-    - name: Brendan Melville
-      github: bmelville
+    - name: Ville Aikas
+      github: vaikas-google
       company: Google
     - name: Doug Davis
       github: duglin
