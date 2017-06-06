@@ -12,8 +12,8 @@ Your job is to be
 the first responder to all new issues. If you are not equipped to do
 this (which is fine!), it is your job to seek guidance!
 
-  * Support issues should be closed and redirected to Stackoverflow (see example
-response below).
+  * Support issues should be closed and redirected to Stack Overflow (see example
+response [here](on-call-user-support.md#user-support-response-example)).
 
   * All incoming issues should be tagged with a team label
 (team/{api,ux,control-plane,node,cluster,csi,redhat,mesosphere,gke,release-infra,test-infra,none});
@@ -48,36 +48,6 @@ have fallen through the cracks and don't have one. Likewise, be fair to the next
 person in rotation: try to ensure that every issue that gets filed while you are
 on duty is handled. The Github query to find issues with no team/* label is:
 [here](https://github.com/kubernetes/kubernetes/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+-label%3Ateam%2Fcontrol-plane+-label%3Ateam%2Fmesosphere+-label%3Ateam%2Fredhat+-label%3Ateam%2Frelease-infra+-label%3Ateam%2Fnone+-label%3Ateam%2Fnode+-label%3Ateam%2Fcluster+-label%3Ateam%2Fux+-label%3Ateam%2Fapi+-label%3Ateam%2Ftest-infra+-label%3Ateam%2Fgke+-label%3A"team%2FCSI-API+Machinery+SIG"+-label%3Ateam%2Fhuawei+-label%3Ateam%2Fsig-aws).
-
-Example response for support issues:
-
-```code
-Please re-post your question to [stackoverflow]
-(http://stackoverflow.com/questions/tagged/kubernetes).
-
-We are trying to consolidate the channels to which questions for help/support
-are posted so that we can improve our efficiency in responding to your requests,
-and to make it easier for you to find answers to frequently asked questions and
-how to address common use cases.
-
-We regularly see messages posted in multiple forums, with the full response
-thread only in one place or, worse, spread across multiple forums. Also, the
-large volume of support issues on github is making it difficult for us to use
-issues to identify real bugs.
-
-The Kubernetes team scans stackoverflow on a regular basis, and will try to
-ensure your questions don't go unanswered.
-
-Before posting a new question, please search stackoverflow for answers to
-similar questions, and also familiarize yourself with:
-
-  * [user guide](http://kubernetes.io/docs/user-guide/)
-  * [troubleshooting guide](http://kubernetes.io/docs/admin/cluster-troubleshooting/)
-
-Again, thanks for using Kubernetes.
-
-The Kubernetes Team
-```
 
 ### Build-copping
 

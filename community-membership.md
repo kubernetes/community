@@ -44,7 +44,7 @@ Members are expected to remain active contributors to the community.
 - Have contributed to the project or community.  Contribution may include, but is not limited to:
   - Authoring or reviewing PRs on GitHub
   - Filing or commenting on issues on GitHub
-  - Contributing to SIG or community discussions (e.g. meetings, Slack, email discussion forums, Stackoverflow, meetups)
+  - Contributing to SIG or community discussions (e.g. meetings, Slack, email discussion forums, Stack Overflow, meetups)
 - Sponsored by 2 members
   - TODO: Define the exact process for sponsorship.
 - Have read the [developer guide](contributors/devel/README.md)
@@ -60,10 +60,10 @@ TODO: Define a process for reviewing memberships.
   - Code is well tested
   - Tests consistently pass
   - Addresses bugs or issues discovered after code is accepted
-  
+
 **Note:** members who frequently contribute code are expected to proactively perform code reviews and work towards
 becoming a primary *reviewer* for the area that they are active in.
-  
+
 ## Reviewer
 
 Reviewers are able to review code for quality and correctness on some part of the project.
