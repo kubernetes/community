@@ -26,7 +26,7 @@ make SIG=sig-testing gen-doc
 
 where the `SIG` var refers to the directory being built.
 
-## Adding custom content to your SIG's README
+## Adding custom content to your SIG's README
 
 If your SIG wishes to add custom content, you can do so by placing it within
 the following code comments:
