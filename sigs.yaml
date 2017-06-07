@@ -343,12 +343,15 @@ sigs:
       Kubernetes on premise, on bare metal or more generally beyond cloud
       providers.
     leads:
-    - name: Joseph Jacks
-      github: josephjacks
-      company: Apprenda
     - name: Tomasz Napierala
       github: zen
       company: Mirantis
+    - name: Marco Ceppi
+      github: marcoceppi
+      company: Canonical
+    - name: Dalton Hubble
+      github: dghubble
+      company: CoreOS
     meetings:
     - day: Wednesday
       utc: "16:00"
