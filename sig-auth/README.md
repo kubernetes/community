@@ -25,7 +25,7 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-auth)
 
 <!-- BEGIN CUSTOM CONTENT -->
-## Goals
+## Goals
 * Discuss improvements Kubernetes Authorization and Authentication, and cluster security policy.
 
 ## Non-goals
