@@ -24,7 +24,7 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling)
 
 <!-- BEGIN CUSTOM CONTENT -->
-## Concerns
+## Concerns
 * autoscaling of clusters,
 * horizontal and vertical autoscaling of pods,
 * setting initial resources for pods,

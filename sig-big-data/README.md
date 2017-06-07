@@ -24,14 +24,12 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
-
 * Design and architect ways to run big data applications effectively on Kubernetes
 * Discuss ongoing implementation efforts
 * Discuss resource sharing and multi-tenancy (in the context of big data applications)
 * Suggest Kubernetes features where we see a need
 
 ## Non-goals
-
 * Endorsing any particular tool/framework
 <!-- END CUSTOM CONTENT -->
 
