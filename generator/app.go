@@ -179,8 +179,14 @@ func writeLastGenerated(f *os.File) {
 }
 
 func createReadmeFiles(ctx SigEntries) error {
+	selectedSig := os.Getenv("SIG")
 	for _, sig := range ctx.Sigs {
 		dirName := fmt.Sprintf("sig-%s", strings.ToLower(strings.Replace(sig.Name, " ", "-", -1)))
+
+		if selectedSig != "" && selectedSig != dirName {
+			fmt.Printf("Skipping %s\n", dirName)
+			continue
+		}
 
 		createDirIfNotExists(dirName)
 
