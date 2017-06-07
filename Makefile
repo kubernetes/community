@@ -1,12 +1,15 @@
 all: \
-	build-sigdocs \
-	run-sigdocs \
+	build-image \
+	gen-docs \
 
 reset-docs:
 	git checkout HEAD -- sig-list.md sig-*
 
-build-sigdocs:
+build-image:
 	docker build -t sigdocs -f generator/Dockerfile generator
 
-run-sigdocs:
+gen-doc:
+	docker run -e SIG=${SIG} -v $(shell pwd):/go/src/app sigdocs
+
+gen-docs:
 	docker run -v $(shell pwd):/go/src/app sigdocs

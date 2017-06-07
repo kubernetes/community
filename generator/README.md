@@ -17,6 +17,15 @@ To (re)build documentation for all the SIGs, run these commands:
 make all
 ```
 
+To build docs for one SIG, run these commands:
+
+```bash
+make SIG=sig-apps gen-doc
+make SIG=sig-testing gen-doc
+```
+
+where the `SIG` var refers to the directory being built.
+
 ## Adding custom content to your SIG's README
 
 If your SIG wishes to add custom content, you can do so by placing it within
