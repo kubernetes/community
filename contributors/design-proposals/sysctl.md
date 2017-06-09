@@ -7,23 +7,23 @@ for namespaced kernel parameters (sysctls) set for each pod.
 
 ### v1.4
 
-- [ ] initial implementation for v1.4 https://github.com/kubernetes/kubernetes/pull/27180
+- [x] initial implementation for v1.4 https://github.com/kubernetes/kubernetes/pull/27180
   + node-level whitelist for safe sysctls: `kernel.shm_rmid_forced`, `net.ipv4.ip_local_port_range`, `net.ipv4.tcp_max_syn_backlog`, `net.ipv4.tcp_syncookies`
   + (disabled by-default) unsafe sysctls: `kernel.msg*`, `kernel.sem`, `kernel.shm*`, `fs.mqueue.*`, `net.*`
   + new kubelet flag: `--experimental-allowed-unsafe-sysctls`
   + PSP default: `*`
-- [ ] document node-level whitelist with kubectl flags and taints/tolerations
-- [ ] document host-level sysctls with daemon sets + taints/tolerations
+- [x] document node-level whitelist with kubectl flags and taints/tolerations
+- [x] document host-level sysctls with daemon sets + taints/tolerations
 - in parallel: kernel upstream patches to fix ipc accounting for 4.5+
-  + [ ] submitted to mainline
-  + [ ] merged into mainline
+  + [x] submitted to mainline
+  + [x] merged into mainline, compare https://github.com/torvalds/linux/commit/8c8d4d45204902e144abc0f15b7c658828028fa1
 
 ### v1.5+
 
 - pre-requisites for `kernel.sem`, `kernel.msg*`, `fs.mqueue.*` on the node-level whitelist
-  + [ ] pod cgroups active by default (compare [Pod Resource Management](pod-resource-management.md#implementation-status))
+  + [x] pod cgroups active by default (compare [Pod Resource Management](pod-resource-management.md#implementation-status))
   + [ ] kmem accounting active by default
-  + [ ] kernel patches for 4.5+
+  + [x] kernel patches for 4.5+ (merged since 4.9)
 - reconsider what to do with `kernel.shm*` and other resource-limit sysctls with proper isolation: (a) keep them in the API (b) set node-level defaults
 
 ## Table of Contents
