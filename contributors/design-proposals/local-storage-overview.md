@@ -20,7 +20,7 @@ This document presents a strawman for managing local storage in Kubernetes. We e
   * Blkio cgroup based I/O isolation isn't suitable for SSDs. Turning on CFQ on SSDs will hamper performance. Its better to statically partition SSDs and share them instead of using CFS.
   * I/O isolation can be achieved by using a combination of static partitioning and remote storage. This proposal recommends this approach with illustrations below.
   * Pod level resource isolation extensions will be made available in the Kubelet which will let vendors add support for CFQ if necessary for their deployments.
-  
+
 # Use Cases
 
 ## Ephemeral Local Storage
@@ -47,19 +47,21 @@ A node’s local storage can be broken into primary and secondary partitions.
 Primary partitions are shared partitions that can provide ephemeral local storage.  The two supported primary partitions are:
 
 ### Root
- This partition holds the kubelet’s root directory (`/var/lib/kubelet` by default) and `/var/log` directory. This partition may be shared between user pods, OS and Kubernetes system daemons. This partition can be consumed by pods via EmptyDir volumes, container logs, image layers and container writable layers. Kubelet will manage shared access and isolation of this partition. This partition is “ephemeral” and applications cannot expect any performance SLAs (Disk IOPS for example) from this partition.
+This partition holds the kubelet’s root directory (`/var/lib/kubelet` by default) and `/var/log` directory. This partition may be shared between user pods, OS and Kubernetes system daemons. This partition can be consumed by pods via EmptyDir volumes, container logs, image layers and container writable layers. Kubelet will manage shared access and isolation of this partition. This partition is “ephemeral” and applications cannot expect any performance SLAs (Disk IOPS for example) from this partition.
 
 ### Runtime
 This is an optional partition which runtimes can use for overlay filesystems. Kubelet will attempt to identify and provide shared access along with isolation to this partition. Container image layers and writable later is stored here. If the runtime partition exists, `root` parition will not hold any image layer or writable layers.
 
 ## Secondary Partitions
-All other partitions are exposed as local persistent volumes.  Each local volume uses an entire partition.  The PV interface allows for varying storage configurations to be supported, while hiding specific configuration details to the pod.  All the local PVs can be queried and viewed from a cluster level using the existing PV object.  Applications can continue to use their existing PVC specifications with minimal changes to request local storage.
+All other partitions are exposed as local persistent volumes. The PV interface allows for varying storage configurations to be supported, while hiding specific configuration details to the pod.  All the local PVs can be queried and viewed from a cluster level using the existing PV object.  Applications can continue to use their existing PVC specifications with minimal changes to request local storage.
 
 The local PVs can be precreated by an addon DaemonSet that discovers all the secondary partitions at well-known directories, and can create new PVs as partitions are added to the node.  A default addon can be provided to handle common configurations.
 
 Local PVs can only provide semi-persistence, and are only suitable for specific use cases that need performance, data gravity and can tolerate data loss.  If the node or PV fails, then either the pod cannot run, or the pod has to give up on the local PV and find a new one.  Failure scenarios can be handled by unbinding the PVC from the local PV, and forcing the pod to reschedule and find a new PV.
 
 Since local PVs are only accessible from specific nodes, the scheduler needs to take into account a PV's node constraint when placing pods.  This can be generalized to a storage toplogy constraint, which can also work with zones, and in the future: racks, clusters, etc.
+
+The term `Partitions` are used here to describe the main use cases for local storage. However, the proposal doesn't require a local volume to be an entire disk or a partition - it supports arbitrary directory.  This implies that cluster administrator can create multiple local volumes in one partition, each has the capacity of the partition, or even create local volume under primary partitions. Unless strictly required, e.g. if you have only one partition in your host, this is strongly discouraged.  For this reason, following description will use `partition` or `mount point` exclusively.
 
 # User Workflows
 
@@ -101,14 +103,14 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
      volumes:
      - name: myEmptyDir
        emptyDir:
-	     sizeLimit: 20Gi
+         sizeLimit: 20Gi
     ```
 
 3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
 4. For the pod resources, `storage.kubernetes.io/logs` resource is meant for logs. `storage.kubernetes.io/writable` is meant for writable layer.
 5. `storage.kubernetes.io/logs` is satisfied by `storage.kubernetes.io/scratch`.
 6. `storage.kubernetes.io/writable` resource can be satisfied by `storage.kubernetes.io/overlay` if exposed by nodes or by `storage.kubernetes.io/scratch` otherwise. The scheduler follows this policy to find an appropriate node which can satisfy the storage resource requirements of the pod.
-7. EmptyDir.size is both a request and limit that is satisfied by `storage.kubernetes.io/scratch`. 
+7. EmptyDir.size is both a request and limit that is satisfied by `storage.kubernetes.io/scratch`.
 8. Kubelet will rotate logs to keep scratch space usage of “fooc” under 500Mi
 9. Kubelet will track the usage of pods across logs and overlay filesystem and restart the container if it's total usage exceeds it's storage limits. If usage on `EmptyDir` volume exceeds its `limit`, then the pod will be evicted by the kubelet. By performing soft limiting, users will be able to easily identify pods that run out of storage.
 10. Primary partition health is monitored by an external entity like the “Node Problem Detector” which is expected to place appropriate taints.
@@ -116,7 +118,7 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
 
 ### Bob runs batch workloads and is unsure of “storage” requirements
 
-1. Bob can create pods without any “storage” resource requirements. 
+1. Bob can create pods without any “storage” resource requirements.
 
     ```yaml
     apiVersion: v1
@@ -172,10 +174,10 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
      volumes:
      - name: myEmptyDir
        emptyDir:
-	     sizeLimit: 1Gi
+         sizeLimit: 1Gi
     ```
 
-4. Bob’s “foo” pod can use upto “200Mi” for its containers logs and writable layer each, and “1Gi” for its “myEmptyDir” volume. 
+4. Bob’s “foo” pod can use upto “200Mi” for its containers logs and writable layer each, and “1Gi” for its “myEmptyDir” volume.
 5. If Bob’s pod “foo” exceeds the “default” storage limits and gets evicted, then Bob can set a minimum storage requirement for his containers and a higher `sizeLimit` for his EmptyDir volumes.
 
   ```yaml
@@ -196,22 +198,21 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
    volumes:
    - name: myEmptyDir
      emptyDir:
-		sizeLimit: 2Gi
+       sizeLimit: 2Gi
   ```
 
-6. It is recommended to require `limits` to be specified for `storage` in all pods. `storage` will not affect the `QoS` Class of a pod since no SLA is intended to be provided for storage capacity isolation. it is recommended to use Persistent Volumes as much as possible and avoid primary partitions.
+6. It is recommended to require `limits` to be specified for `storage` in all pods. `storage` will not affect the `QoS` Class of a pod since no SLA is intended to be provided for storage capacity isolation. It is recommended to use Persistent Volumes as much as possible and avoid primary partitions.
 
 ### Alice manages a Database which needs access to “durable” and fast scratch space
 
 1. Cluster administrator provisions machines with local SSDs and brings up the cluster
-2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a hostname label ties the volume to a specific node.  A StorageClass is required and will have a new optional field `toplogyKey`.  This field tells the scheduler to filter PVs with the same `topologyKey` value on the node. The `topologyKey` can be any label key applied to a node.  For the local storage case, the `topologyKey` is `kubernetes.io/hostname`, but the same mechanism could be used for zone constraints as well.
+2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a node affinity annotation ties the volume to a specific node.  The annotation tells the scheduler to filter PVs with the same affinity key/value on the node.  For the local storage case, the key is `kubernetes.io/hostname`, but the same mechanism could be used for zone constraints as well.
 
     ```yaml
     kind: StorageClass
     apiVersion: storage.k8s.io/v1
     metadata:
       name: local-fast
-    provisioner: ""
     toplogyKey: kubernetes.io/hostname
     ```
     ```yaml
@@ -219,14 +220,24 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
     apiVersion: v1
     metadata:
       name: local-pv-1
-      labels:
-        kubernetes.io/hostname: node-1
+      annotations:
+        "volume.alpha.kubernetes.io/node-affinity": >
+          {
+            "requiredDuringSchedulingIgnoredDuringExecution": {
+              "nodeSelectorTerms": [
+                { "matchExpressions": [
+                  { "key": "kubernetes.io/hostname",
+                    "operator": "In",
+                    "values": ["node-1"]
+                  }
+                ]}
+              ]}
+          }
     spec:
       capacity:
         storage: 100Gi
-      localStorage:
-        fs:
-          path: /var/lib/kubelet/storage-partitions/local-pv-1
+      local:
+        path: /var/lib/kubelet/storage-partitions/local-pv-1
       accessModes:
         - ReadWriteOnce
       persistentVolumeReclaimPolicy: Delete
@@ -242,7 +253,7 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
     local-pv-1 100Gi    RWO         Delete        Available         node-3
     local-pv-2 10Gi     RWO         Delete        Available         node-3
     ```
-3. Alice creates a StatefulSet that requests local storage from StorageClass "local-fast".  The PVC will only be bound to PVs that match the StorageClass name. 
+3. Alice creates a StatefulSet that requests local storage from StorageClass "local-fast".  The PVC will only be bound to PVs that match the StorageClass name.
 
     ```yaml
     apiVersion: apps/v1beta1
@@ -289,9 +300,10 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
     ```
 
 4. The scheduler identifies nodes for each pod that can satisfy all the existing predicates.
-5. The nodes list is further filtered by looking at the PVC's StorageClass `topologyKey`, and checking if there are enough available PVs that have the same `topologyKey` value as the node.  In the case of local PVs, it checks that there are enough PVs with the same `kubernetes.io/hostname` value as the node.
+5. The nodes list is further filtered by looking at the PVC's StorageClass, and checking if there is available PV of the same StorageClass on a node.
 6. The scheduler chooses a node for the pod based on a ranking algorithm.
 7. Once the pod is assigned to a node, then the pod’s local PVCs get bound to specific local PVs on the node.
+
     ```
     $ kubectl get pvc
     NAME            STATUS VOLUME     CAPACITY ACCESSMODES … NODE
@@ -334,7 +346,7 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
     schedulingFailureTimeoutSeconds: 600
   ```
 
-  A new PV taint will be introduced to handle unhealthy volumes.  The addon or another external entity can monitor the volumes and add a taint when it detects that it is unhealthy. 
+  A new PV taint will be introduced to handle unhealthy volumes.  The addon or another external entity can monitor the volumes and add a taint when it detects that it is unhealthy.
   ```yaml
   apiVersion: v1
   kind: PersistentVolumeClaim
@@ -475,7 +487,7 @@ Since local PVs are only accessible from specific nodes, the scheduler needs to 
 Note: Block access will be considered as a separate feature because it can work for both remote and local storage.  The examples here are a suggestion on how such a feature can be applied to this local storage model, but is subject to change based on the final design for block access.
 
 1. The cluster that Bob uses has nodes that contain raw block devices that have not been formatted yet.
-2. The same addon DaemonSet can also discover block devices and creates corresponding PVs for them with the `block` field.  
+2. The same addon DaemonSet can also discover block devices and creates corresponding PVs for them. `path` is overloaded here to mean both fs path and block device path.
 
     ```yaml
     kind: PersistentVolume
@@ -487,9 +499,8 @@ Note: Block access will be considered as a separate feature because it can work 
     spec:
       capacity:
         storage: 100Gi
-      localStorage:
-        block:
-          device: /var/lib/kubelet/storage-raw-devices/foo
+      local:
+        path: /var/lib/kubelet/storage-raw-devices/foo
       accessModes:
         - ReadWriteOnce
       persistentVolumeReclaimPolicy: Delete
@@ -512,7 +523,7 @@ Note: Block access will be considered as a separate feature because it can work 
         requests:
           storage: 80Gi
     ```
-4. It is also possible for a PVC that requests `volumeType: file` to also use a block-based PV.  In this situation, the block device would get formatted with the filesystem type specified in the PV spec.  And when the PV gets destroyed, then the filesystem also gets destroyed to return back to the original block state.
+4. The block device would get formatted with the filesystem type specified in the PV spec.  And when the PV gets destroyed, then the filesystem also gets destroyed to return back to the original block state.
 
     ```yaml
     kind: PersistentVolume
@@ -525,18 +536,17 @@ Note: Block access will be considered as a separate feature because it can work 
       capacity:
         storage: 100Gi
       local:
-        block:
-          path: /var/lib/kubelet/storage-raw-devices/foo
-          fsType: ext4
+        path: /var/lib/kubelet/storage-raw-devices/foo
+        fsType: ext4
       accessModes:
         - ReadWriteOnce
       persistentVolumeReclaimPolicy: Delete
       storageClassName: local-fast
     ```
 
-*The lifecycle of the block level PV will be similar to that of the scenarios explained earlier.* 
+*The lifecycle of the block level PV will be similar to that of the scenarios explained earlier.*
 
-# Open Questions & Discussion points 
+# Open Questions & Discussion points
 * Single vs split “limit” for storage across writable layer and logs
     * Split allows for enforcement of hard quotas
     * Single is a simpler UI
@@ -544,7 +554,7 @@ Note: Block access will be considered as a separate feature because it can work 
     * Should the PV controller fold into the scheduler
 	* This will help spread PVs and pods across matching zones.
 * Repair/replace scenarios.
-    * What are the implications of removing a disk and replacing it with a new one? 
+    * What are the implications of removing a disk and replacing it with a new one?
     * We may not do anything in the system, but may need a special workflow
 * Volume-level replication use cases where there is no pod associated with a volume.  How could forgiveness/data gravity be handled there?
 
