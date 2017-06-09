@@ -28,5 +28,6 @@ We focus on the developer and devops experience of running applications in Kuber
 * Do not recommend one way to do things
 
 ## Organizers:
-* Michelle Noorali <michelle@deis.com>, Deis
+* Michelle Noorali <michelle@deis.com>, Microsoft
 * Matt Farina <matt@mattfarina.com>, HPE
+* Adnan Abdulhussein <adnan@bitnami.com>, Bitnami
