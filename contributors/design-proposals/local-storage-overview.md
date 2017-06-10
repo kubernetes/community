@@ -96,7 +96,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
        resources:
          limits:
            storage.kubernetes.io/logs: 500Mi
-           storage.kubernetes.io/writable: 1Gi
+           storage.kubernetes.io/overlay: 1Gi
        volumeMounts:
        - name: myEmptyDir
          mountPath: /mnt/data
@@ -107,9 +107,9 @@ The term `Partitions` are used here to describe the main use cases for local sto
     ```
 
 3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
-4. For the pod resources, `storage.kubernetes.io/logs` resource is meant for logs. `storage.kubernetes.io/writable` is meant for writable layer.
+4. For the pod resources, `storage.kubernetes.io/logs` resource is meant for logs. `storage.kubernetes.io/overlay` is meant for writable layer.
 5. `storage.kubernetes.io/logs` is satisfied by `storage.kubernetes.io/scratch`.
-6. `storage.kubernetes.io/writable` resource can be satisfied by `storage.kubernetes.io/overlay` if exposed by nodes or by `storage.kubernetes.io/scratch` otherwise. The scheduler follows this policy to find an appropriate node which can satisfy the storage resource requirements of the pod.
+6. `storage.kubernetes.io/overlay` resource can be satisfied by `storage.kubernetes.io/overlay` if exposed by nodes or by `storage.kubernetes.io/scratch` otherwise. The scheduler follows this policy to find an appropriate node which can satisfy the storage resource requirements of the pod.
 7. EmptyDir.size is both a request and limit that is satisfied by `storage.kubernetes.io/scratch`.
 8. Kubelet will rotate logs to keep scratch space usage of “fooc” under 500Mi
 9. Kubelet will track the usage of pods across logs and overlay filesystem and restart the container if it's total usage exceeds it's storage limits. If usage on `EmptyDir` volume exceeds its `limit`, then the pod will be evicted by the kubelet. By performing soft limiting, users will be able to easily identify pods that run out of storage.
@@ -147,7 +147,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
     spec:
        - default:
          storage.kubernetes.io/logs: 200Mi
-         storage.kubernetes.io/writable: 200Mi
+         storage.kubernetes.io/overlay: 200Mi
          type: Container
        - default:
          sizeLimit: 1Gi
@@ -167,7 +167,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
        resources:
          limits:
            storage.kubernetes.io/logs: 200Mi
-           storage.kubernetes.io/writable: 200Mi
+           storage.kubernetes.io/overlay: 200Mi
        volumeMounts:
        - name: myEmptyDir
          mountPath: /mnt/data
@@ -191,7 +191,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
      resources:
        requests:
          storage.kubernetes.io/logs: 500Mi
-         storage.kubernetes.io/writable: 500Mi
+         storage.kubernetes.io/overlay: 500Mi
      volumeMounts:
      - name: myEmptyDir
        mountPath: /mnt/data
@@ -206,7 +206,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
 ### Alice manages a Database which needs access to “durable” and fast scratch space
 
 1. Cluster administrator provisions machines with local SSDs and brings up the cluster
-2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a node affinity annotation ties the volume to a specific node.  The annotation tells the scheduler to filter PVs with the same affinity key/value on the node.  For the local storage case, the key is `kubernetes.io/hostname`, but the same mechanism could be used for zone constraints as well.
+2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a node affinity ties the volume to a specific node.  The node affinity specification tells the scheduler to filter PVs with the same affinity key/value on the node.  For the local storage case, the key is `kubernetes.io/hostname`, but the same mechanism could be used for zone constraints as well.
 
     ```yaml
     kind: StorageClass
@@ -220,20 +220,15 @@ The term `Partitions` are used here to describe the main use cases for local sto
     apiVersion: v1
     metadata:
       name: local-pv-1
-      annotations:
-        "volume.alpha.kubernetes.io/node-affinity": >
-          {
-            "requiredDuringSchedulingIgnoredDuringExecution": {
-              "nodeSelectorTerms": [
-                { "matchExpressions": [
-                  { "key": "kubernetes.io/hostname",
-                    "operator": "In",
-                    "values": ["node-1"]
-                  }
-                ]}
-              ]}
-          }
     spec:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+              - node-1
       capacity:
         storage: 100Gi
       local:
@@ -388,7 +383,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
        resources:
        limits:
          storage.kubernetes.io/logs: 500Mi
-         storage.kubernetes.io/writable: 1Gi
+         storage.kubernetes.io/overlay: 1Gi
        volumeMounts:
        - name: myEphemeralPersistentVolume
          mountPath: /mnt/tmpdata
@@ -487,7 +482,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
 Note: Block access will be considered as a separate feature because it can work for both remote and local storage.  The examples here are a suggestion on how such a feature can be applied to this local storage model, but is subject to change based on the final design for block access.
 
 1. The cluster that Bob uses has nodes that contain raw block devices that have not been formatted yet.
-2. The same addon DaemonSet can also discover block devices and creates corresponding PVs for them. `path` is overloaded here to mean both fs path and block device path.
+2. The same addon DaemonSet can also discover block devices and creates corresponding PVs for them with the `volumeType: block` spec. `path` is overloaded here to mean both fs path and block device path.
 
     ```yaml
     kind: PersistentVolume
@@ -499,6 +494,7 @@ Note: Block access will be considered as a separate feature because it can work 
     spec:
       capacity:
         storage: 100Gi
+      volumeType: block
       local:
         path: /var/lib/kubelet/storage-raw-devices/foo
       accessModes:
@@ -523,25 +519,23 @@ Note: Block access will be considered as a separate feature because it can work 
         requests:
           storage: 80Gi
     ```
-4. The block device would get formatted with the filesystem type specified in the PV spec.  And when the PV gets destroyed, then the filesystem also gets destroyed to return back to the original block state.
+
+4. It is also possible for a PVC that requests `volumeType: block` to also use file-based bolume.  In this situation, the block device would get formatted with the filesystem type specified in the PVC spec.  And when the PVC gets destroyed, then the filesystem also gets destroyed to return back to the original block state.
 
     ```yaml
-    kind: PersistentVolume
+    kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
-      name: foo
-      labels:
-        kubernetes.io/hostname: node-1
+      name: myclaim
     spec:
-      capacity:
-        storage: 100Gi
-      local:
-        path: /var/lib/kubelet/storage-raw-devices/foo
-        fsType: ext4
+      volumeType: block
+      fsType: ext4
+      storageClassName: local-fast
       accessModes:
         - ReadWriteOnce
-      persistentVolumeReclaimPolicy: Delete
-      storageClassName: local-fast
+      resources:
+        requests:
+          storage: 80Gi
     ```
 
 *The lifecycle of the block level PV will be similar to that of the scenarios explained earlier.*
