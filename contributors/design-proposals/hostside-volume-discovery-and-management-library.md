@@ -122,10 +122,10 @@ type ConnectorProperties struct {
 // ConnectionInfo is a structure for all properties of
 // connection when connect a volume
 type ConnectionInfo struct {
-	// the type of driver type, such as iscsi, rbd and so on
+	// the type of driver volume, such as iscsi, rbd and so on
 	DriverVolumeType string `json:"driverVolumeType"`
 	
-	// Required parameters to connect volume and differ from DriverVolumeType.
+	// Required parameters to connect volume and differs from DriverVolumeType.
 	// For example, for iscsi driver, see struct IsciConnectionData below.
 	// NOTICE that you have to convert it into a map.
 	ConnectionData   map[string]interface{} `json:"data"`
