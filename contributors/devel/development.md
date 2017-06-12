@@ -259,6 +259,9 @@ cd $working_dir/kubernetes
 make
 ```
 
+(Note that this requires an unset `CDPATH` environment variable or one starting
+with the null directory (i.e., contains a leading colon).
+
 To remove the limit on the number of errors the Go compiler reports (default
 limit is 10 errors):
 ```sh
