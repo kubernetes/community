@@ -286,7 +286,7 @@ cd $working_dir/kubernetes
 make test
 
 # Run package tests verbosely
-make test WHAT=pkg/util/cache GOFLAGS=-v
+make test WHAT=./pkg/util/template GOFLAGS=-v
 
 # Run integration tests, requires etcd
 make test-integration
