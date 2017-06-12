@@ -20,7 +20,7 @@ If `Allocatable` is available, the scheduler will use that instead of `Capacity`
 ### Definitions
 
 1. **Node Capacity** - Already provided as
-   [`NodeStatus.Capacity`](https://htmlpreview.github.io/?https://github.com/kubernetes/kubernetes/blob/HEAD/docs/api-reference/v1/definitions.html#_v1_nodestatus),
+   [`NodeStatus.Capacity`](https://htmlpreview.github.io/?https://github.com/kubernetes/kubernetes.github.io/blob/HEAD/docs/api-reference/v1/definitions.html#_v1_nodestatus),
    this is total capacity read from the node instance, and assumed to be constant.
 2. **System-Reserved** (proposed) - Compute resources reserved for processes which are not managed by
    Kubernetes. Currently this covers all the processes lumped together in the `/system` raw
@@ -36,7 +36,7 @@ If `Allocatable` is available, the scheduler will use that instead of `Capacity`
 #### Allocatable
 
 Add `Allocatable` (4) to
-[`NodeStatus`](https://htmlpreview.github.io/?https://github.com/kubernetes/kubernetes/blob/HEAD/docs/api-reference/v1/definitions.html#_v1_nodestatus):
+[`NodeStatus`](https://htmlpreview.github.io/?https://github.com/kubernetes/kubernetes.github.io/blob/HEAD/docs/api-reference/v1/definitions.html#_v1_nodestatus):
 
 ```
 type NodeStatus struct {
