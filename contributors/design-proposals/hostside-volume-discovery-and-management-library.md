@@ -49,7 +49,7 @@ and even any other storage systems written in Go.
 As we know, there are a lot of storage protocols, such as iscsi, rbd, fc,
 smbfs and so forth, and some of them are implemented in different ways
 according to different system types(x86, s390, ppc64) and os types
-(linux, windows), so it is a quite complicated work if we add these device
+(linux, windows), so it is quite a complicated work if we add these device
 drivers directly into volume plugins. But what we can do is to create a
 library to communicate with kernel and expose a unified interface to
 volume plugins.
@@ -98,7 +98,7 @@ const (
 // Connector is an interface indicating what outside world can do with this
 // library, notice that it is at very early stage right now.
 type Connector interface {
-	GetConnectorProperties(multiPath string, doLocalAttach bool) (*ConnectorProperties, error)
+	GetConnectorProperties(multiPath, doLocalAttach bool) (*ConnectorProperties, error)
 	
 	ConnectVolume(conn *ConnectionInfo) (string, error)
 	
