@@ -254,6 +254,8 @@ Then edit code on the `myfeature` branch.
 
 #### Build
 
+*Note:* If you are using `CDPATH`, you must either start it with a leading colon, or unset the variable. The make rules and scripts to build require the current directory to come first on the CD search path in order to properly navigate between directories.
+
 ```sh
 cd $working_dir/kubernetes
 make
