@@ -69,7 +69,7 @@ kinds would have different attributes and properties)
 via HTTP to the server. Resources are exposed via:
   * Collections - a list of resources of the same type, which may be queryable
   * Elements - an individual resource, addressable via a URL
-* **API Group** a set of resources that are exposed together at the same. Along
+* **API Group** a set of resources that are exposed together. Along
 with the version is exposed in the "apiVersion" field as "GROUP/VERSION", e.g.
 "policy.k8s.io/v1".
 
@@ -232,7 +232,7 @@ the resource may be deleted prior to this time.
 categorize objects (see [the labels docs](https://kubernetes.io/docs/user-guide/labels/))
 * annotations: a map of string keys and values that can be used by external
 tooling to store and retrieve arbitrary metadata about this object (see
-[the annotations docs](https://kubernetes.io/docs/user-guide/annotations/)
+[the annotations docs](https://kubernetes.io/docs/user-guide/annotations/))
 
 Labels are intended for organizational purposes by end users (select the pods
 that match this label query). Annotations enable third-party automation and
@@ -531,7 +531,7 @@ overrides a default grace period, including the zero grace period ("now").
 * PUT /&lt;resourceNamePlural&gt;/&lt;name&gt; - Update or create the resource
 with the given name with the JSON object provided by the client.
 * PATCH /&lt;resourceNamePlural&gt;/&lt;name&gt; - Selectively modify the
-specified fields of the resource. See more information [below](#patch).
+specified fields of the resource. See more information [below](#patch-operations).
 * GET /&lt;resourceNamePlural&gt;&amp;watch=true - Receive a stream of JSON
 objects corresponding to changes made to any resource of the given kind over
 time.
