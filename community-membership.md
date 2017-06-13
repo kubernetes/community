@@ -1,6 +1,6 @@
 # Community membership
 
-**Note:** In progress
+**Note:** This document is in progress
 
 This doc outlines the various responsibilities of contributor roles in Kubernetes.  The Kubernetes
 project is subdivided into various sub-areas.  Responsibilities for many contributor roles are
@@ -8,8 +8,8 @@ scoped by these sub-areas.
 
 | Role | Responsibilities | Requirements | Defined by |
 | -----| ---------------- | ------------ | -------|
-| member | active contributor in the community | sponsored by 2 members.  Already active | outside collaborator to [Kubernetes repo](https://github.com/kubernetes/kubernetes) with read access. |
-| reviewer | review contribution from other members | history of review and authorship in an area | OWNERS file reviewer entry.  Kubernetes GitHub org member. |
+| member | active contributor in the community | sponsored by 2 members.  multiple contributions to the project. | Kubernetes GitHub org member. |
+| reviewer | review contribution from other members | history of review and authorship in an area | OWNERS file reviewer entry. |
 | approver | approve accepting contributions | highly experienced and active reviewer + contributor to an area | OWNERS file approver entry|
 | owner | set priorities and approve proposals | demonstrated responsibility and god judgement for entire area | OWNERS file approver entries for entire area.  "# owner" comment next to entry. |
 | maintainer | cross area ownership of project health | highly experienced contributor active in multiple areas and roles. | GitHub repo write access |
@@ -19,6 +19,9 @@ scoped by these sub-areas.
 [**New contributors**](https://github.com/kubernetes/contrib/issues/1090) should be welcomed to the community
 by existing members, helped with PR workflow, and directed to relevant documentation and communication channels.
 
+**Note:** Anyone can be added as an outside collaborator (with READ access) to a repo in the Kubernetes GitHub organization
+without any requirements.  This will allow them to be assigned issues and PRs until they become a member, but will
+not allow tests to be run against their PRs automatically.
 
 ## Established community members
 
@@ -29,34 +32,37 @@ are enumerated below.
 
 ## Member
 
-**Note:** The member role is not finalized and there is some debate about whether a member should be a GitHub org member
-(with greater requirements and responsibilities), or outside collaborators (with fewer requirements and responsibilities).
-
-Members can have issues and PRs assigned to them and participate in SIGs.
+Members are continuously active contributors in the community.  They can have issues and PRs assigned to them,
+participate in SIGs through GitHub teams, and pre-submit tests are automatically run for their PRs.
 Members are expected to remain active contributors to the community.
 
-**Defined by:** [Kubernetes](https://github.com/kubernetes/kubernetes) repo outside collaborator
-(read access) on GitHub
+**Defined by:** Member of the Kubernetes GitHub organization
 
 ### Requirements
 
 - Enabled [two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/) on their GitHub account
-- Have contributed to the project or community.  Contribution may include, but is not limited to:
+- Have made multiple contributions to the project or community.  Contribution may include, but is not limited to:
   - Authoring or reviewing PRs on GitHub
   - Filing or commenting on issues on GitHub
-  - Contributing to SIG or community discussions (e.g. meetings, Slack, email discussion forums, Stack Overflow, meetups)
-- Sponsored by 2 members
-  - TODO: Define the exact process for sponsorship.
-- Have read the [developer guide](contributors/devel/README.md)
+  - Contributing to SIG or community discussions (e.g. meetings, Slack, email discussion forums, Stack Overflow)
 - Subscribed to [`kubernetes-dev@googlegroups.com`](https://groups.google.com/forum/#!forum/kubernetes-dev)
-- Some idea of what they intend to work on
-
-TODO: Define a process for reviewing memberships.
+- Are actively contributing to 1 or more areas.
+- Sponsored by 2 members
+  - Find 2 members that you have worked with and agree to sponsor your membership
+  - Send an email to *kubernetes-membership@googlegroups.com* with:
+   - CC: your sponsors on the message
+   - Subject: `New membership for <your-GH-handle>`
+   - Body: GitHub handles of sponsors
+   - Body: List of contributions (PRs authored / reviewed, Issues responded to, etc)
+  - Have your sponsoring members reply confirmation of sponsorship: `+1`
+  - Wait for response to the message
+- Have read the [developer guide](contributors/devel/README.md)
 
 ### Responsibilities and privileges
 
 - Responsive to issues and PRs assigned to them
-- Active owner of code they have contributed (until ownership is transferred)
+- Responsive to mentions of SIG teams they are members of
+- Active owner of code they have contributed (unless ownership is explicitly transferred)
   - Code is well tested
   - Tests consistently pass
   - Addresses bugs or issues discovered after code is accepted
@@ -69,7 +75,7 @@ becoming a primary *reviewer* for the area that they are active in.
 Reviewers are able to review code for quality and correctness on some part of the project.
 They are knowledgeable about both the codebase and software engineering principles.
 
-**Defined by:** *reviewer* entry in an OWNERS file in the kubernetes codebase.  Kubernetes GitHub org member.
+**Defined by:** *reviewer* entry in an OWNERS file in the Kubernetes codebase.
 
 Reviewer status is scoped to a part of the codebase.
 
@@ -81,7 +87,6 @@ The following apply to the part of codebase for which one would be a reviewer in
 [OWNERS](contributors/devel/owners.md) file (for repos using the bot).
 
 - member for at least 3 months
-- Responsive to mentions of SIG teams they are members of
 - Primary reviewer for at least 5 PRs to the codebase
 - Reviewed or merged at least 20 substantial PRs to the codebase
 - Knowledgeable about the codebase
