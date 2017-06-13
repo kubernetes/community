@@ -119,7 +119,7 @@ sigs:
   - name: Azure
     dir: sig-azure
     mission_statement: >
-      A Special Interest Group for building, deploying, maintaining, supporting, 
+      A Special Interest Group for building, deploying, maintaining, supporting,
       and using Kubernetes on Azure Container Service.
     leads:
     - name: Jason Hansen
@@ -193,6 +193,9 @@ sigs:
     - name: Luke Marsden
       github: lukemarsden
       company: Weave
+    - name: Joe Beda
+      github: jbeda
+      company: Heptio
     meetings:
     - day: Tuesday
       utc: "16:00"
@@ -201,6 +204,7 @@ sigs:
     meeting_archive_url: https://docs.google.com/a/weave.works/document/d/1deJYPIF4LmhGjDVaqrswErIrV7mtwJgovtLnPCDxP7U/edit
     contact:
       slack: sig-cluster-lifecycle
+      full_github_teams: true
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
   - name: Cluster Ops
     dir: sig-cluster-ops
