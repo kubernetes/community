@@ -8,7 +8,7 @@ scoped by these sub-areas.
 
 | Role | Responsibilities | Requirements | Defined by |
 | -----| ---------------- | ------------ | -------|
-| member | active contributor in the community | sponsored by 2 members.  multiple contributions to the project. | Kubernetes GitHub org member. |
+| member | active contributor in the community | sponsored by 2 reviewers.  multiple contributions to the project. | Kubernetes GitHub org member. |
 | reviewer | review contribution from other members | history of review and authorship in an area | OWNERS file reviewer entry. |
 | approver | approve accepting contributions | highly experienced and active reviewer + contributor to an area | OWNERS file approver entry|
 | owner | set priorities and approve proposals | demonstrated responsibility and god judgement for entire area | OWNERS file approver entries for entire area.  "# owner" comment next to entry. |
@@ -19,9 +19,23 @@ scoped by these sub-areas.
 [**New contributors**](https://github.com/kubernetes/contrib/issues/1090) should be welcomed to the community
 by existing members, helped with PR workflow, and directed to relevant documentation and communication channels.
 
-**Note:** Anyone can be added as an outside collaborator (with READ access) to a repo in the Kubernetes GitHub organization
-without any requirements.  This will allow them to be assigned issues and PRs until they become a member, but will
-not allow tests to be run against their PRs automatically.
+**Note:** Individuals may be added as an outside collaborator (with READ access) to a repo in the Kubernetes GitHub
+organization without becoming a member.  This will allow them to be assigned issues and PRs until they become a member,
+but will not allow tests to be run against their PRs automatically nor allow them to interact with the PR bot.
+
+### Requirements for outside collaborators
+
+- Working on some contribution to the project that would benefit from
+  the abillity to have PRs or Issues to be assigned to the contributor
+- Have the support of 1 member
+  - Find a member who will sponsor you
+  - Send an email to kubernetes-membership@googlegroups.com
+    - CC: your sponsor
+    - Subject: `REQUEST: New outside collaborator for <your-GH-handle>`
+     - Body: GitHub handle of sponsor
+     - Body: Justification - any contributions or what you will be working on
+  - Have your sponsoring member reply confirmation of sponsorship: `+1`
+  - Wait for response to the message
 
 ## Established community members
 
@@ -47,14 +61,14 @@ Members are expected to remain active contributors to the community.
   - Contributing to SIG or community discussions (e.g. meetings, Slack, email discussion forums, Stack Overflow)
 - Subscribed to [`kubernetes-dev@googlegroups.com`](https://groups.google.com/forum/#!forum/kubernetes-dev)
 - Are actively contributing to 1 or more areas.
-- Sponsored by 2 members
-  - Find 2 members that you have worked with and agree to sponsor your membership
+- Sponsored by 2 reviewers
+  - Find 2 reviewers that you have worked with and agree to sponsor your membership
   - Send an email to *kubernetes-membership@googlegroups.com* with:
    - CC: your sponsors on the message
-   - Subject: `New membership for <your-GH-handle>`
+   - Subject: `REQUEST: New membership for <your-GH-handle>`
    - Body: GitHub handles of sponsors
    - Body: List of contributions (PRs authored / reviewed, Issues responded to, etc)
-  - Have your sponsoring members reply confirmation of sponsorship: `+1`
+  - Have your sponsoring reviewers reply confirmation of sponsorship: `+1`
   - Wait for response to the message
 - Have read the [developer guide](contributors/devel/README.md)
 
