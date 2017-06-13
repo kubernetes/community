@@ -126,25 +126,8 @@ type DaemonSetSpec struct {
 
 	// The number of old history to retain to allow rollback.
 	// This is a pointer to distinguish between explicit zero and not specified.
-	// Defaults to 2.
+	// Defaults to 10.
 	RevisionHistoryLimit *int32 `json:"revisionHistoryLimit,omitempty"`
-
-	// The config this DaemonSet is rolling back to. Will be cleared after
-	// rollback is done.
-	// +optional
-	RollbackTo *RollbackConfig `json:"rollbackTo",omitempty`
-}
-
-// DaemonSetRollback stores the information required to rollback a DaemonSet.
-type DaemonSetRollback struct {
-	metav1.TypeMeta `json:",inline"`
-	// Required: This must match the Name of a DaemonSet.
-	Name string `json:"name"`
-	// The annotations to be updated to a DaemonSet
-	// +optional
-	UpdatedAnnotations map[string]string `json:"updatedAnnotations,omitempty"`
-	// The config of this DaemonSet rollback.
-	RollbackTo RollbackConfig `json:"rollbackTo"`
 }
 
 // DaemonSetStatus represents the current status of a daemon set.
@@ -170,11 +153,11 @@ type DaemonSetStatus struct {
 	// +optional
 	NumberUnavailable int32 `json:"numberUnavailable"`
 
-	// A monotonically increasing counter that tracks hash collisions for
-	// the DaemonSet. Used as a collision avoidance mechanism by the 
-	// DaemonSet controller.
+	// Count of hash collisions for the DaemonSet. The DaemonSet controller
+	// uses this field as a collision avoidance mechanism when it needs to
+	// create the name for the newest ControllerRevision.
 	// +optional
-	Uniquifier *int64 `json:"uniquifier,omitempty"`
+	CollisionCount *int64 `json:"collisionCount,omitempty"`
 }
 
 const (
@@ -187,7 +170,7 @@ const (
 	// DefaultDaemonSetUniqueLabelKey is the default label key that is added
 	// to existing DaemonSet pods to distinguish between old and new
 	// DaemonSet pods during DaemonSet template updates.
-	DefaultDaemonSetUniqueLabelKey string = "pod-template-hash"
+	DefaultDaemonSetUniqueLabelKey string = "daemonset-controller-hash"
 )
 ```
 
@@ -198,57 +181,61 @@ const (
 The DaemonSet Controller will make DaemonSet updates happen. It will watch
 DaemonSets on the apiserver. 
 
-DaemonSet controller manages [Controller History](controller_history.md) for
+DaemonSet controller manages [`ControllerRevisions`](controller_history.md) for
 DaemonSet revision introspection and rollback. It's referred to as "history"
 throughout the rest of this proposal.
 
 For each pending DaemonSet updates, it will:
 
-1. Find all pods controlled by DaemonSet
+1. Reconstruct DaemonSet history:
+   - List existing DaemonSet history controlled by this DaemonSet
+   - Find the history of DaemonSet's current target state, and create one if
+     not found:
+     - The `.name` of this history will be unique, generated from pod template
+       hash with hash collision resolution. If history creation failed:
+       - If it's because of name collision:
+         - Compare history with DaemonSet current target state:
+           - If they're the same, we've already created the history
+           - Otherwise, bump DaemonSet `.status.collisionCount` by 1, exit and
+             retry in the next sync loop
+       - Otherwise, exit and retry again in the next sync loop.
+     - The history will be labeled with `DefaultDaemonSetUniqueLabelKey`.
+     - DaemonSet controller will add a ControllerRef in the history
+       `.ownerReferences`.
+   - Current history should have the largest `.revision` number amonst all
+     existing history. Update `.revision` if it's not (e.g. after a rollback.)
+   - If more than one current history is found, remove duplicates and relabel
+     their pods' `DefaultDaemonSetUniqueLabelKey`.
+1. Sync nodes:
+   - Find all nodes that should run these pods created by this DaemonSet.
+   - Create daemon pods on nodes when they should have those pods running but not
+     yet. Otherwise, delete running daemon pods that shouldn't be running on nodes.
+   - Label new pods with current `.spec.templateGeneration` and
+     `DefaultDaemonSetUniqueLabelKey` value of current history when creating them.
 1. Check `DaemonSetUpdateStrategy`:
    - If `OnDelete`: do nothing
    - If `RollingUpdate`:
-     - Reconstruct DaemonSet history: filter and sort existing DaemonSet history
-       owned by this DaemonSet
-     - Find the history of DaemonSet's current target state, and create one if
-       not found:
-       - The `.name` of this history will be unique, generated from pod template
-         hash with hash collision resolution. If history creation failed:
-         - If it's because of name collision:
-           - Compare history with DaemonSet current target state:
-             - If they're the same, we've already created the history
-             - Otherwise, bump DaemonSet `.status.uniquifier` by 1, exit and
-               retry in the next sync loop
-         - Otherwise, exit and retry again in the next sync loop.
-       - The history will be labeled with `pod-template-hash`.
-       - DaemonSet controller will add a ControllerRef in the history
-         `.ownerReferences`.
      - For all pods owned by this DaemonSet:
        - If its `pod-template-generation` label value equals to DaemonSet's 
          `.spec.templateGeneration`, it's a new pod (don't compare
-         `pod-template-hash`, for backward compatibility).
-         - Add `pod-template-hash` label to the new pod based on current
+         `DefaultDaemonSetUniqueLabelKey`, for backward compatibility).
+         - Add `DefaultDaemonSetUniqueLabelKey` label to the new pod based on current
            history, if the pod doesn't have this label set yet. 
        - Otherwise, if the value doesn't match, or the pod doesn't have a
-         `pod-template-generation` label, check its `pod-template-hash` label:
-         - If the value matches any of the history's `pod-template-hash` label,
+         `pod-template-generation` label, check its `DefaultDaemonSetUniqueLabelKey` label:
+         - If the value matches any of the history's `DefaultDaemonSetUniqueLabelKey` label,
            it's a pod generated from that history.
            - If that history matches the current target state of the DaemonSet,
              it's a new pod.
            - Otherwise, it's an old pod. 
-         - Otherwise, if the pod doesn't have a `pod-template-hash` label, or no
+         - Otherwise, if the pod doesn't have a `DefaultDaemonSetUniqueLabelKey` label, or no
            matching history is found, it's an old pod. 
      - If there are old pods found, compare `MaxUnavailable` with DaemonSet
        `.status.numberUnavailable` to see how many old daemon pods can be
        killed. Then, kill those pods in the order that unhealthy pods (failed,
        pending, not ready) are killed first.
-     - Clean up history based on `.spec.revisionHistoryLimit`
-       - Always keep live history
-1. Find all nodes that should run these pods created by this DaemonSet.
-1. Create daemon pods on nodes when they should have those pods running but not
-   yet. Otherwise, delete running daemon pods that shouldn't be running on nodes.
-   - Label new pods with current `.spec.templateGeneration` and
-     `pod-template-hash` value of current history when creating them.
+1. Clean up old history based on `.spec.revisionHistoryLimit`
+   - Always keep live history and current history
 1. Cleanup, update DaemonSet status  
    - `.status.numberAvailable` = the total number of DaemonSet pods that have
      become `Ready` for `MinReadySeconds`
@@ -263,6 +250,8 @@ In DaemonSet strategy (pkg/registry/extensions/daemonset/strategy.go#PrepareForU
 increase DaemonSet's `.spec.templateGeneration` by 1 if any changes is made to
 DaemonSet's `.spec.template`.
 
+This was originally implmeneted in 1.6, and kept in 1.7 for backward compatibility.
+
 ### kubectl 
 
 #### kubectl rollout 
@@ -274,14 +263,6 @@ Users can use `kubectl rollout` to monitor DaemonSet updates:
 - `kubectl rollout history daemonset/<DaemonSet-Name>`: to view the history of
   DaemonSet updates.
 - `kubectl rollout undo daemonset/<DaemonSet-Name>`: to rollback a DaemonSet
-
-#### API
-
-Implement a subresource for DaemonSet history (`daemonsets/foo/history`) that
-summarizes the information in the history.
-
-Implement a subresource for DaemonSet rollback (`daemonsets/foo/rollback`) that
-triggers a DaemonSet rollback.
 
 ## Updating DaemonSets mid-way
 
@@ -356,6 +337,14 @@ In the future, we may:
 - Allow user-defined DaemonSet unique label key
 - Support pausing DaemonSet rolling update
 - Support auto-rollback DaemonSets
+
+### API
+
+Implement a subresource for DaemonSet history (`daemonsets/foo/history`) that
+summarizes the information in the history.
+
+Implement a subresource for DaemonSet rollback (`daemonsets/foo/rollback`) that
+triggers a DaemonSet rollback.
 
 ### Tests
 
