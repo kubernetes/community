@@ -220,7 +220,7 @@ changes to `Volumes` apply to the pod spec for all pods matching `Selector`.
 
 The resultant modified pod spec will be annotated to show that it was modified by
 the `PodPreset`. This will be of the form
-`podpreset.admission.kubernetes.io/<pip name>": "<resource version>"`.
+`podpreset.admission.kubernetes.io/podpreset-<pip name>": "<resource version>"`.
 
 *Why modify all containers in a pod?*
 
