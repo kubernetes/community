@@ -604,10 +604,10 @@ sigs:
   - name: Windows
     dir: sig-windows
     mission_statement: >
-      Focuses on bringing Kubernetes support to Windows.
+      Focuses on supporting Windows Server Containers for Kubernetes.
     leads:
     - name: Michael Michael
-      github: michmike77
+      github: michmike
       company: Apprenda
     meetings:
     - day: Tuesday
