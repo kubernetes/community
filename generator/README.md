@@ -4,6 +4,7 @@ This script will generate the following documentation files:
 
 ```
 sig-*/README.md
+wg-*/README.md
 sig-list.md
 ```
 
@@ -22,13 +23,14 @@ To build docs for one SIG, run these commands:
 ```bash
 make SIG=sig-apps gen-doc
 make SIG=sig-testing gen-doc
+make WG=resource-management gen-doc
 ```
 
-where the `SIG` var refers to the directory being built.
+where the `SIG` or `WG` var refers to the directory being built.
 
-## Adding custom content to your SIG's README
+## Adding custom content to your README
 
-If your SIG wishes to add custom content, you can do so by placing it within
+If your SIG or WG wishes to add custom content, you can do so by placing it within
 the following code comments:
 
 ```markdown

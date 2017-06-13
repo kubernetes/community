@@ -9,7 +9,7 @@ build-image:
 	docker build -t sigdocs -f generator/Dockerfile generator
 
 gen-doc:
-	docker run -e SIG=${SIG} -v $(shell pwd):/go/src/app sigdocs
+	docker run -e WG=${WG} -e SIG=${SIG} -v $(shell pwd):/go/src/app sigdocs
 
 gen-docs:
 	docker run -v $(shell pwd):/go/src/app sigdocs
