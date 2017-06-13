@@ -92,9 +92,13 @@ func (slice SigEntries) Swap(i, j int) {
 	slice.Sigs[i], slice.Sigs[j] = slice.Sigs[j], slice.Sigs[i]
 }
 
-func createDirIfNotExists(path string) error {
+func pathExists(path string) bool {
 	_, err := os.Stat(path)
-	if os.IsNotExist(err) {
+	return os.IsExist(err)
+}
+
+func createDirIfNotExists(path string) error {
+	if !pathExists(path) {
 		fmt.Printf("%s directory does not exist, creating\n", path)
 		return os.Mkdir(path, 0755)
 	}
@@ -132,6 +136,14 @@ func writeTemplate(templatePath, outputPath string, data interface{}) error {
 	t, err := template.ParseFiles(templatePath, headerTemplate)
 	if err != nil {
 		return err
+	}
+
+	// create if not exists
+	if !pathExists(outputPath) {
+		_, err := os.Create(outputPath)
+		if err != nil {
+			return err
+		}
 	}
 
 	// open file and truncate
