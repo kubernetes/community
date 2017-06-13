@@ -16,13 +16,24 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/a/weave.wor
 
 ## Leads
 * [Luke Marsden](https://github.com/lukemarsden), Weave
+* [Joe Beda](https://github.com/jbeda), Heptio
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 
+## GitHub Teams
+* [@sig-cluster-lifecycle-misc](https://github.com/kubernetes/teams/sig-cluster-lifecycle-misc)
+* [@sig-cluster-lifecycle-test-failures](https://github.com/kubernetes/teams/sig-cluster-lifecycle-test-failures)
+* [@sig-cluster-lifecycle-bugs](https://github.com/kubernetes/teams/sig-cluster-lifecycle-bugs)
+* [@sig-cluster-lifecycle-feature-requests](https://github.com/kubernetes/teams/sig-cluster-lifecycle-feature-requests)
+* [@sig-cluster-lifecycle-proposals](https://github.com/kubernetes/teams/sig-cluster-lifecycle-proposals)
+* [@sig-cluster-lifecycle-pr-reviews](https://github.com/kubernetes/teams/sig-cluster-lifecycle-pr-reviews)
+* [@sig-cluster-lifecycle-api-reviews](https://github.com/kubernetes/teams/sig-cluster-lifecycle-api-reviews)
+
+
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
 
-Last generated:  Wed Jun 7 2017 14:27:56
+Last generated:  Tue Jun 13 2017 16:34:38
