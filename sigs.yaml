@@ -622,3 +622,24 @@ sigs:
     contact:
       slack: sig-windows
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-windows
+workinggroups:
+  - name: Resource Management
+    dir: wg-resource-management
+    mission_statement: >
+      Designing and shepherding cross-cutting features around compute resource isolation and utilization.
+    organizers:
+    - name: Vishnu Kannan
+      github: vishh
+      company: Google
+    - name: Derek Carr
+      github: derekwaynecarr
+      company: Red Hat
+    meetings:
+    - day: Tuesday
+      utc: "18:00"
+      frequency: weekly (On demand)
+    meeting_url: https://zoom.us/j/4799874685
+    meeting_archive_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG
+    contact:
+      slack: wg-resource-mgmt
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-resource-management

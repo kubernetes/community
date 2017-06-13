@@ -33,7 +33,8 @@ import (
 var (
 	sigsYamlFile        = "sigs.yaml"
 	templateDir         = "generator"
-	indexTemplate       = filepath.Join(templateDir, "sig_index.tmpl")
+	sigIndexTemplate    = filepath.Join(templateDir, "sig_index.tmpl")
+	wgIndexTemplate     = filepath.Join(templateDir, "wg_index.tmpl")
 	listTemplate        = filepath.Join(templateDir, "sig_list.tmpl")
 	headerTemplate      = filepath.Join(templateDir, "header.tmpl")
 	sigListOutput       = "sig-list.md"
@@ -76,6 +77,22 @@ type Sig struct {
 	Contact           Contact
 }
 
+type Wg struct {
+	Name              string
+	Dir               string
+	MissionStatement  string `yaml:"mission_statement"`
+	Organizers        []Lead
+	Meetings          []Meeting
+	MeetingURL        string `yaml:"meeting_url"`
+	MeetingArchiveURL string `yaml:"meeting_archive_url"`
+	Contact           Contact
+}
+
+type Context struct {
+	Sigs          []Sig
+	WorkingGroups []Wg
+}
+
 type SigEntries struct {
 	Sigs []Sig
 }
@@ -92,9 +109,25 @@ func (slice SigEntries) Swap(i, j int) {
 	slice.Sigs[i], slice.Sigs[j] = slice.Sigs[j], slice.Sigs[i]
 }
 
+type WgEntries struct {
+	WorkingGroups []Wg
+}
+
+func (slice WgEntries) Len() int {
+	return len(slice.WorkingGroups)
+}
+
+func (slice WgEntries) Less(i, j int) bool {
+	return slice.WorkingGroups[i].Name < slice.WorkingGroups[j].Name
+}
+
+func (slice WgEntries) Swap(i, j int) {
+	slice.WorkingGroups[i], slice.WorkingGroups[j] = slice.WorkingGroups[j], slice.WorkingGroups[i]
+}
+
 func pathExists(path string) bool {
 	_, err := os.Stat(path)
-	return os.IsExist(err)
+	return err == nil
 }
 
 func createDirIfNotExists(path string) error {
@@ -190,12 +223,15 @@ func writeLastGenerated(f *os.File) {
 	f.Write([]byte(lastGenerated))
 }
 
-func createReadmeFiles(ctx SigEntries) error {
-	selectedSig := os.Getenv("SIG")
+func createReadmeFiles(ctx Context) error {
+	var selectedSig *string
+	if sig, ok := os.LookupEnv("SIG"); ok {
+		selectedSig = &sig
+	}
 	for _, sig := range ctx.Sigs {
 		dirName := fmt.Sprintf("sig-%s", strings.ToLower(strings.Replace(sig.Name, " ", "-", -1)))
 
-		if selectedSig != "" && selectedSig != dirName {
+		if selectedSig != nil && *selectedSig != dirName {
 			fmt.Printf("Skipping %s\n", dirName)
 			continue
 		}
@@ -212,7 +248,35 @@ func createReadmeFiles(ctx SigEntries) error {
 		}
 
 		outputPath := fmt.Sprintf("%s/%s", dirName, sigIndexOutput)
-		if err := writeTemplate(indexTemplate, outputPath, sig); err != nil {
+		if err := writeTemplate(sigIndexTemplate, outputPath, sig); err != nil {
+			return err
+		}
+	}
+	var selectedWg *string
+	if wg, ok := os.LookupEnv("WG"); ok {
+		selectedWg = &wg
+	}
+	for _, wg := range ctx.WorkingGroups {
+		dirName := fmt.Sprintf("wg-%s", strings.ToLower(strings.Replace(wg.Name, " ", "-", -1)))
+
+		if selectedWg != nil && *selectedWg != dirName {
+			fmt.Printf("Skipping %s\n", dirName)
+			continue
+		}
+
+		createDirIfNotExists(dirName)
+
+		prefix := wg.Contact.GithubTeamPrefix
+		if prefix == "" {
+			prefix = dirName
+		}
+
+		for _, gtn := range githubTeamNames {
+			wg.Contact.GithubTeamNames = append(wg.Contact.GithubTeamNames, fmt.Sprintf("%s-%s", prefix, gtn))
+		}
+
+		outputPath := fmt.Sprintf("%s/%s", dirName, sigIndexOutput)
+		if err := writeTemplate(wgIndexTemplate, outputPath, wg); err != nil {
 			return err
 		}
 	}
@@ -220,7 +284,7 @@ func createReadmeFiles(ctx SigEntries) error {
 	return nil
 }
 
-func createListFile(ctx SigEntries) error {
+func createListFile(ctx Context) error {
 	return writeTemplate(listTemplate, sigListOutput, ctx)
 }
 
@@ -230,13 +294,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-	var ctx SigEntries
+	var ctx Context
 	err = yaml.Unmarshal(yamlData, &ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	sort.Sort(ctx)
+	sigEntries := SigEntries{ctx.Sigs}
+	sort.Sort(sigEntries)
+	ctx.Sigs = sigEntries.Sigs
+	wgEntries := WgEntries{ctx.WorkingGroups}
+	sort.Sort(wgEntries)
+	ctx.WorkingGroups = wgEntries.WorkingGroups
 
 	err = createReadmeFiles(ctx)
 	if err != nil {
