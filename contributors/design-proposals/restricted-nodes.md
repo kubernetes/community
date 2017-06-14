@@ -3,7 +3,7 @@ difficulty is two-fold. First, nodes aren't namespaced, so it's difficult to
 give selective access to only a subset of nodes. Second, placement of a pod on a
 node is equivalent to write access on the pod/node resource.
 
-#Use cases for sole-tenancy
+# Use cases for sole-tenancy
 
 There are many use cases for dedicated nodes, so a non-comprehensive list is
 provided.
@@ -17,12 +17,12 @@ applications on the same node.
    neighbors.
 1. Many applications may need isolation for compliance.
 
-#Requirements for restricted nodes
+# Requirements for restricted nodes
 
 1. Nodes must be capable of rejecting non-conforming workloads.
 1. Nodes must allow conforming workloads.
 
-#Requirements for dedicated workloads
+# Requirements for dedicated workloads
 
 1. Placement must be guaranteeable.
 1. Placement must be restrictable.
@@ -36,7 +36,7 @@ may compromise the rest of the cluster. For instance, if the container must load
 a kernel driver (e.g., NFS), then administrators may want to quarantine it on
 dedicated nodes.
 
-#Proposal: Taints
+# Proposal: Taints
 
 Node access restriction can be *cooperatively* implemented today with taints and
 tolerations. Administrators can taint a node, and restrict tolerations to the
