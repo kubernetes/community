@@ -3,7 +3,7 @@
 _Original Title: “Building community effectiveness (Contributor ladder, Code of Conduct & Committee)”_
 
 * Session Area: Community
-* Topic Facilitator(s): Sarah Navatony
+* Topic Facilitator(s): Sarah Novotony
 * Note-taker(s) (Collaborating on this doc): 
   * Rob Hirschfeld @zehicle
   * Jess Frazzelle 
