@@ -232,7 +232,7 @@ the resource may be deleted prior to this time.
 categorize objects (see [the labels docs](https://kubernetes.io/docs/user-guide/labels/))
 * annotations: a map of string keys and values that can be used by external
 tooling to store and retrieve arbitrary metadata about this object (see
-[the annotations docs](https://kubernetes.io/docs/user-guide/annotations/)
+[the annotations docs](https://kubernetes.io/docs/user-guide/annotations/)).
 
 Labels are intended for organizational purposes by end users (select the pods
 that match this label query). Annotations enable third-party automation and
@@ -300,8 +300,10 @@ information) and the status is the response. For these RPC like objects the only
 operation may be POST, but having a consistent schema between submission and
 response reduces the complexity of these clients.
 
-
 ##### Typical status properties
+
+There are two fundamental types of status information: conditions and normal
+API fields.
 
 **Conditions** represent the latest available observations of an object's
 current state. Objects may report multiple conditions, and new types of
@@ -317,14 +319,14 @@ following fields, but must contain at least `type` and `status` fields:
   // +optional
   LastHeartbeatTime  unversioned.Time  `json:"lastHeartbeatTime,omitempty" description:"last time we got an update on a given condition"`
   // +optional
-  LastTransitionTime unversioned.Time  `json:"lastTransitionTime,omitempty" description:"last time the condition transit from one status to another"`
+  LastTransitionTime unversioned.Time  `json:"lastTransitionTime,omitempty" description:"last time the condition transitioned from one status to another"`
   // +optional
   Reason             string            `json:"reason,omitempty" description:"one-word CamelCase reason for the condition's last transition"`
   // +optional
   Message            string            `json:"message,omitempty" description:"human-readable message indicating details about last transition"`
 ```
 
-Additional fields may be added in the future.
+Additional fields may be added to the prototypical condition in the future.
 
 Conditions should be added to explicitly convey properties that users and
 components care about rather than requiring those properties to be inferred from
@@ -347,17 +349,18 @@ imply failure. An object that was still active would not have a `Succeeded`
 condition, or its status would be `Unknown`.
 
 Some resources in the v1 API contain fields called **`phase`**, and associated
-`message`, `reason`, and other status fields. The pattern of using `phase` is
-deprecated. Newer API types should use conditions instead. Phase was essentially
-a state-machine enumeration field, that contradicted
-[system-design principles](../design-proposals/principles.md#control-logic) and hampered
-evolution, since [adding new enum values breaks backward
-compatibility](api_changes.md). Rather than encouraging clients to infer
-implicit properties from phases, we intend to explicitly expose the conditions
-that clients need to monitor. Conditions also have the benefit that it is
-possible to create some conditions with uniform meaning across all resource
-types, while still exposing others that are unique to specific resource types.
-See [#7856](http://issues.k8s.io/7856) for more details and discussion.
+`message`, `reason`, and other status fields similar to ones that appear in a
+condition. The pattern of using `phase` is deprecated. Newer API types should
+use conditions instead. Phase was essentially a state-machine enumeration field,
+that contradicted 
+[system-design principles](../design-proposals/principles.md#control-logic)
+and hampered evolution, since [adding new enum values breaks backward compatibility](api_changes.md).
+Rather than encouraging clients to infer implicit properties from phases, we
+intend to explicitly expose the conditions that clients need to monitor.
+Conditions also have the benefit that it is possible to create some conditions
+with uniform meaning across all resource types, while still exposing others
+that are unique to specific resource types. See
+[#7856](http://issues.k8s.io/7856) for more details and discussion.
 
 In condition types, and everywhere else they appear in the API, **`Reason`** is
 intended to be a one-word, CamelCase representation of the category of cause of
@@ -379,10 +382,13 @@ objects, with possibly a reference from the original object. This helps to
 ensure that GETs and watch remain reasonably efficient for the majority of
 clients, which may not need that data.
 
-Some resources report the `observedGeneration`, which is the `generation` most
-recently observed by the component responsible for acting upon changes to the
-desired state of the resource. This can be used, for instance, to ensure that
-the reported status reflects the most recent desired status.
+API status fields should be used when information is structured and intended
+for programmatic use. For example, some resources that control the creation of
+other resources (viz: `ReplicaSet`) report the `observedGeneration`, which is
+the `generation` of pods most recently observed by the component responsible
+for acting upon changes to the desired state of the resource. This can be
+used, for instance, to ensure that the reported status reflects the most
+recent desired status.
 
 #### References to related objects
 
