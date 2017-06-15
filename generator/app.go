@@ -31,11 +31,10 @@ import (
 
 var (
 	sigsYamlFile        = "sigs.yaml"
-	templateDir         = "generator"
-	sigIndexTemplate    = filepath.Join(templateDir, "sig_index.tmpl")
-	wgIndexTemplate     = filepath.Join(templateDir, "wg_index.tmpl")
-	listTemplate        = filepath.Join(templateDir, "sig_list.tmpl")
-	headerTemplate      = filepath.Join(templateDir, "header.tmpl")
+	sigIndexTemplate    = "sig_index.tmpl"
+	wgIndexTemplate     = "wg_index.tmpl"
+	listTemplate        = "sig_list.tmpl"
+	headerTemplate      = "header.tmpl"
 	sigListOutput       = "sig-list.md"
 	sigIndexOutput      = "README.md"
 	githubTeamNames     = []string{"misc", "test-failures", "bugs", "feature-requests", "proposals", "pr-reviews", "api-reviews"}
@@ -95,32 +94,8 @@ type SigEntries struct {
 	Sigs []Sig
 }
 
-func (slice SigEntries) Len() int {
-	return len(slice.Sigs)
-}
-
-func (slice SigEntries) Less(i, j int) bool {
-	return slice.Sigs[i].Name < slice.Sigs[j].Name
-}
-
-func (slice SigEntries) Swap(i, j int) {
-	slice.Sigs[i], slice.Sigs[j] = slice.Sigs[j], slice.Sigs[i]
-}
-
 type WgEntries struct {
 	WorkingGroups []Wg
-}
-
-func (slice WgEntries) Len() int {
-	return len(slice.WorkingGroups)
-}
-
-func (slice WgEntries) Less(i, j int) bool {
-	return slice.WorkingGroups[i].Name < slice.WorkingGroups[j].Name
-}
-
-func (slice WgEntries) Swap(i, j int) {
-	slice.WorkingGroups[i], slice.WorkingGroups[j] = slice.WorkingGroups[j], slice.WorkingGroups[i]
 }
 
 func pathExists(path string) bool {
@@ -162,7 +137,13 @@ func getExistingContent(path string) (string, error) {
 	return strings.Join(captured, "\n"), nil
 }
 
-func writeTemplate(templatePath, outputPath string, data interface{}) error {
+func writeTemplate(templateFilePath, outputPath string, data interface{}) error {
+	wd, err := os.Getwd()
+	if err != nil {
+		return err
+	}
+	templatePath := filepath.Join(wd, templateFilePath)
+
 	// set up template
 	t, err := template.ParseFiles(templatePath, headerTemplate)
 	if err != nil {
@@ -242,6 +223,7 @@ func createReadmeFiles(ctx Context) error {
 			return err
 		}
 	}
+
 	var selectedWg *string
 	if wg, ok := os.LookupEnv("WG"); ok {
 		selectedWg = &wg
@@ -289,12 +271,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	sigEntries := SigEntries{ctx.Sigs}
-	sort.Sort(sigEntries)
-	ctx.Sigs = sigEntries.Sigs
-	wgEntries := WgEntries{ctx.WorkingGroups}
-	sort.Sort(wgEntries)
-	ctx.WorkingGroups = wgEntries.WorkingGroups
+
+	sort.Slice(ctx.Sigs, func(i, j int) bool {
+		return ctx.Sigs[i].Name >= ctx.Sigs[j].Name
+	})
+
+	sort.Slice(ctx.WorkingGroups, func(i, j int) bool {
+		return ctx.WorkingGroups[i].Name >= ctx.WorkingGroups[j].Name
+	})
 
 	err = createReadmeFiles(ctx)
 	if err != nil {
