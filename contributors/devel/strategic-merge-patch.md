@@ -210,6 +210,127 @@ Note: When merging two set, the primitives are first deduplicated and then merge
 In an erroneous case, the set may be created with duplicates. Deleting an
 item that has duplicates will delete all matching items.
 
+## `setElementOrder` Directive
+
+### Purpose
+
+`setElementOrder` directive provides a way to specify the order of a list.
+The relative order specified in this directive will be retained.
+Please refer to [proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/preserve-order-in-strategic-merge-patch.md) for more information.
+
+### Syntax
+
+It is used only as the prefix of the key in the patch.
+```
+$setElementOrder/<keyOfList>: [a list]
+```
+
+### Example
+
+#### List of Primitives
+
+Suppose we have a list of `finalizers`:
+```yaml
+finalizers:
+  - a
+  - b
+  - c
+```
+
+To reorder the elements order in the list, we can send a patch:
+```yaml
+# The directive includes the prefix $setElementOrder and
+# followed by a '/' and the name of the list.
+$setElementOrder/finalizers:
+  - b
+  - c
+  - a
+```
+
+After applying the patch, it will be:
+```yaml
+finalizers:
+  - b
+  - c
+  - a
+```
+
+#### List of Maps
+
+Suppose we have a list of `containers` whose `mergeKey` is `name`:
+```yaml
+containers:
+  - name: a
+    ...
+  - name: b
+    ...
+  - name: c
+    ...
+```
+
+To reorder the elements order in the list, we can send a patch:
+```yaml
+# each map in the list should only include the mergeKey
+$setElementOrder/containers:
+  - name: b
+  - name: c
+  - name: a
+```
+
+After applying the patch, it will be:
+```yaml
+containers:
+  - name: b
+    ...
+  - name: c
+    ...
+  - name: a
+    ...
+```
+
+
+## `retainKeys` Directive
+
+### Purpose
+
+`retainKeys` directive provides a mechanism for union types to clear mutual exclusive fields.
+When this directive is present in the patch, all the fields not in this directive will be cleared.
+Please refer to [proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/add-new-patchStrategy-to-clear-fields-not-present-in-patch.md) for more information.
+
+### Syntax
+
+```
+$retainKeys: [a list of field keys]
+```
+
+### Example
+
+#### Map
+
+Suppose we have a union type:
+```
+union:
+  foo: a
+  other: b
+```
+
+And we have a patch:
+```
+union:
+  retainKeys:
+    - another
+    - bar
+  another: d
+  bar: c
+```
+
+After applying this patch, we get:
+```
+union:
+  # Field foo and other have been cleared w/o explicitly set them to null.
+  another: d
+  bar: c
+```
 
 # Changing patch format
 
