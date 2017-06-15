@@ -1,0 +1,5 @@
+sigs:
+  - name: Foo
+  - name: Bar
+workinggroups:
+  - name: Baz

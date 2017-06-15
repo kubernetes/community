@@ -30,24 +30,29 @@ import (
 )
 
 var (
-	sigsYamlFile        = "sigs.yaml"
-	sigIndexTemplate    = "sig_index.tmpl"
-	wgIndexTemplate     = "wg_index.tmpl"
-	listTemplate        = "sig_list.tmpl"
-	headerTemplate      = "header.tmpl"
-	sigListOutput       = "sig-list.md"
-	sigIndexOutput      = "README.md"
-	githubTeamNames     = []string{"misc", "test-failures", "bugs", "feature-requests", "proposals", "pr-reviews", "api-reviews"}
-	beginMarker         = "<!-- BEGIN CUSTOM CONTENT -->"
-	endMarker           = "<!-- END CUSTOM CONTENT -->"
+	readmeTemplate = "readme.tmpl"
+	listTemplate   = "list.tmpl"
+	headerTemplate = "header.tmpl"
+
+	sigsYamlFile  = "sigs.yaml"
+	sigListOutput = "sig-list.md"
+	indexFilename = "README.md"
+	baseOutputDir = "generated"
+
+	githubTeamNames = []string{"misc", "test-failures", "bugs", "feature-requests", "proposals", "pr-reviews", "api-reviews"}
+	beginMarker     = "<!-- BEGIN CUSTOM CONTENT -->"
+	endMarker       = "<!-- END CUSTOM CONTENT -->"
 )
 
+// Lead represents a lead engineer for a particular group. There are usually
+// 2 per group.
 type Lead struct {
 	Name    string
 	Company string
 	GitHub  string
 }
 
+// Meeting represents a regular meeting for a group.
 type Meeting struct {
 	Day       string
 	UTC       string
@@ -55,6 +60,7 @@ type Meeting struct {
 	Frequency string
 }
 
+// Contact represents the various contact points for a group.
 type Contact struct {
 	Slack            string
 	MailingList      string `yaml:"mailing_list"`
@@ -63,7 +69,8 @@ type Contact struct {
 	GithubTeamNames  []string
 }
 
-type Sig struct {
+// Group represents either a Special Interest Group (SIG) or a Working Group (WG)
+type Group struct {
 	Name              string
 	Dir               string
 	MissionStatement  string `yaml:"mission_statement"`
@@ -74,28 +81,31 @@ type Sig struct {
 	Contact           Contact
 }
 
-type Wg struct {
-	Name              string
-	Dir               string
-	MissionStatement  string `yaml:"mission_statement"`
-	Organizers        []Lead
-	Meetings          []Meeting
-	MeetingURL        string `yaml:"meeting_url"`
-	MeetingArchiveURL string `yaml:"meeting_archive_url"`
-	Contact           Contact
+// DirName returns the directory that a group's documentation will be
+// generated into. It is composed of a prefix (sig for SIGs and wg for WGs),
+// and a formatted version of the group's name (in kebab case).
+func (e *Group) DirName(prefix string) string {
+	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.Replace(e.Name, " ", "-", -1)))
 }
 
+// SetupGitHubTeams will iterate over all the possible teams available to a
+// group (these are defined by the Kubernetes organisation) and populate a
+// list using the group's prefix.
+func (e *Group) SetupGitHubTeams(prefix string) {
+	ghPrefix := e.Contact.GithubTeamPrefix
+	if ghPrefix == "" {
+		ghPrefix = e.DirName(prefix)
+	}
+
+	for _, gtn := range githubTeamNames {
+		e.Contact.GithubTeamNames = append(e.Contact.GithubTeamNames, fmt.Sprintf("%s-%s", ghPrefix, gtn))
+	}
+}
+
+// Context is the context for the sigs.yaml file.
 type Context struct {
-	Sigs          []Sig
-	WorkingGroups []Wg
-}
-
-type SigEntries struct {
-	Sigs []Sig
-}
-
-type WgEntries struct {
-	WorkingGroups []Wg
+	Sigs          []Group
+	WorkingGroups []Group
 }
 
 func pathExists(path string) bool {
@@ -105,8 +115,7 @@ func pathExists(path string) bool {
 
 func createDirIfNotExists(path string) error {
 	if !pathExists(path) {
-		fmt.Printf("%s directory does not exist, creating\n", path)
-		return os.Mkdir(path, 0755)
+		return os.MkdirAll(path, 0755)
 	}
 	return nil
 }
@@ -137,13 +146,7 @@ func getExistingContent(path string) (string, error) {
 	return strings.Join(captured, "\n"), nil
 }
 
-func writeTemplate(templateFilePath, outputPath string, data interface{}) error {
-	wd, err := os.Getwd()
-	if err != nil {
-		return err
-	}
-	templatePath := filepath.Join(wd, templateFilePath)
-
+func writeTemplate(templatePath, outputPath string, data interface{}) error {
 	// set up template
 	t, err := template.ParseFiles(templatePath, headerTemplate)
 	if err != nil {
@@ -152,7 +155,7 @@ func writeTemplate(templateFilePath, outputPath string, data interface{}) error 
 
 	// create if not exists
 	if !pathExists(outputPath) {
-		_, err := os.Create(outputPath)
+		_, err = os.Create(outputPath)
 		if err != nil {
 			return err
 		}
@@ -183,7 +186,6 @@ func writeTemplate(templateFilePath, outputPath string, data interface{}) error 
 	// custom content block
 	writeCustomContentBlock(f, content)
 
-	fmt.Printf("Generated %s\n", outputPath)
 	return nil
 }
 
@@ -194,61 +196,33 @@ func writeCustomContentBlock(f *os.File, content string) {
 	}
 }
 
-func createReadmeFiles(ctx Context) error {
-	var selectedSig *string
-	if sig, ok := os.LookupEnv("SIG"); ok {
-		selectedSig = &sig
+func createGroupReadme(groups []Group, prefix string) error {
+	// figure out if the user wants to generate one group
+	var selectedGroupName *string
+	if envVal, ok := os.LookupEnv(strings.ToUpper(prefix)); ok {
+		selectedGroupName = &envVal
 	}
-	for _, sig := range ctx.Sigs {
-		dirName := fmt.Sprintf("sig-%s", strings.ToLower(strings.Replace(sig.Name, " ", "-", -1)))
 
-		if selectedSig != nil && *selectedSig != dirName {
-			fmt.Printf("Skipping %s\n", dirName)
+	for _, group := range groups {
+		group.Dir = group.DirName(prefix)
+		// skip generation if the user specified only one group
+		if selectedGroupName != nil && *selectedGroupName != group.Dir {
+			fmt.Printf("Skipping %s/README.md\n", group.Dir)
 			continue
 		}
 
-		createDirIfNotExists(dirName)
+		fmt.Printf("Generating %s/README.md\n", group.Dir)
 
-		prefix := sig.Contact.GithubTeamPrefix
-		if prefix == "" {
-			prefix = dirName
-		}
-
-		for _, gtn := range githubTeamNames {
-			sig.Contact.GithubTeamNames = append(sig.Contact.GithubTeamNames, fmt.Sprintf("%s-%s", prefix, gtn))
-		}
-
-		outputPath := fmt.Sprintf("%s/%s", dirName, sigIndexOutput)
-		if err := writeTemplate(sigIndexTemplate, outputPath, sig); err != nil {
+		outputDir := filepath.Join(baseOutputDir, group.Dir)
+		if err := createDirIfNotExists(outputDir); err != nil {
 			return err
 		}
-	}
 
-	var selectedWg *string
-	if wg, ok := os.LookupEnv("WG"); ok {
-		selectedWg = &wg
-	}
-	for _, wg := range ctx.WorkingGroups {
-		dirName := fmt.Sprintf("wg-%s", strings.ToLower(strings.Replace(wg.Name, " ", "-", -1)))
+		group.SetupGitHubTeams(prefix)
 
-		if selectedWg != nil && *selectedWg != dirName {
-			fmt.Printf("Skipping %s\n", dirName)
-			continue
-		}
-
-		createDirIfNotExists(dirName)
-
-		prefix := wg.Contact.GithubTeamPrefix
-		if prefix == "" {
-			prefix = dirName
-		}
-
-		for _, gtn := range githubTeamNames {
-			wg.Contact.GithubTeamNames = append(wg.Contact.GithubTeamNames, fmt.Sprintf("%s-%s", prefix, gtn))
-		}
-
-		outputPath := fmt.Sprintf("%s/%s", dirName, sigIndexOutput)
-		if err := writeTemplate(wgIndexTemplate, outputPath, wg); err != nil {
+		outputPath := filepath.Join(outputDir, indexFilename)
+		readmePath := fmt.Sprintf("%s_%s", prefix, readmeTemplate)
+		if err := writeTemplate(readmePath, outputPath, group); err != nil {
 			return err
 		}
 	}
@@ -256,12 +230,8 @@ func createReadmeFiles(ctx Context) error {
 	return nil
 }
 
-func createListFile(ctx Context) error {
-	return writeTemplate(listTemplate, sigListOutput, ctx)
-}
-
 func main() {
-	yamlData, err := ioutil.ReadFile(sigsYamlFile)
+	yamlData, err := ioutil.ReadFile(filepath.Join(baseOutputDir, sigsYamlFile))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -273,19 +243,26 @@ func main() {
 	}
 
 	sort.Slice(ctx.Sigs, func(i, j int) bool {
-		return ctx.Sigs[i].Name >= ctx.Sigs[j].Name
+		return ctx.Sigs[i].Name <= ctx.Sigs[j].Name
 	})
 
 	sort.Slice(ctx.WorkingGroups, func(i, j int) bool {
-		return ctx.WorkingGroups[i].Name >= ctx.WorkingGroups[j].Name
+		return ctx.WorkingGroups[i].Name <= ctx.WorkingGroups[j].Name
 	})
 
-	err = createReadmeFiles(ctx)
+	err = createGroupReadme(ctx.Sigs, "sig")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	err = createListFile(ctx)
+	err = createGroupReadme(ctx.WorkingGroups, "wg")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("Generating sig-list.md")
+	outputPath := filepath.Join(baseOutputDir, sigListOutput)
+	err = writeTemplate(listTemplate, outputPath, ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
