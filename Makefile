@@ -13,3 +13,7 @@ gen-doc:
 
 gen-docs:
 	docker run -v $(shell pwd):/go/src/app sigdocs
+
+test:
+	docker build -t sigdocs-test -f generator/Dockerfile.test generator
+	docker run sigdocs-test
