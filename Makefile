@@ -1,3 +1,5 @@
+IMAGE_NAME=kube-communitydocs
+
 all: \
 	build-image \
 	gen-docs \
@@ -6,14 +8,10 @@ reset-docs:
 	git checkout HEAD -- sig-list.md sig-*
 
 build-image:
-	docker build -t sigdocs -f generator/Dockerfile generator
-
-gen-doc:
-	docker run -e WG=${WG} -e SIG=${SIG} -v $(shell pwd):/go/src/app sigdocs
+	docker build -t $(IMAGE_NAME) -f generator/Dockerfile generator
 
 gen-docs:
-	docker run -v $(shell pwd):/go/src/app sigdocs
+	docker run --rm -e WG -e SIG -v $(shell pwd):/go/src/app/generated $(IMAGE_NAME) app
 
-test:
-	docker build -t sigdocs-test -f generator/Dockerfile.test generator
-	docker run sigdocs-test
+test: build-image
+	docker run --rm $(IMAGE_NAME) go test -v ./...

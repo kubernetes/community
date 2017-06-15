@@ -6,4 +6,5 @@ services:
   - docker
 
 script:
+  - make test-unit
   - bash ./scripts/verify.sh

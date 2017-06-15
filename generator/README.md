@@ -33,9 +33,9 @@ make all
 To build docs for one SIG, run these commands:
 
 ```bash
-make SIG=sig-apps gen-doc
-make SIG=sig-testing gen-doc
-make WG=resource-management gen-doc
+make SIG=sig-apps gen-docs
+make SIG=sig-testing gen-docs
+make WG=resource-management gen-docs
 ```
 
 where the `SIG` or `WG` var refers to the directory being built.

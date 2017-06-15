@@ -17,7 +17,11 @@ limitations under the License.
 package main
 
 import (
+	"fmt"
 	"io/ioutil"
+	"os"
+	"path/filepath"
+	"reflect"
 	"strings"
 	"testing"
 )
@@ -30,6 +34,14 @@ func TestNonExistantDirIsCreated(t *testing.T) {
 	}
 	if !pathExists(dir) {
 		t.Fatalf("%s should exist", dir)
+	}
+}
+
+func TestExistantDirNotCreated(t *testing.T) {
+	dir := "./testdata"
+	err := createDirIfNotExists(dir)
+	if err != nil {
+		t.Fatalf("Received error creating dir: %v", err)
 	}
 }
 
@@ -105,13 +117,6 @@ content!
 			data:         map[string]string{"Message": "Hello!"},
 			expected:     customContent,
 		},
-		{
-			templatePath: "./testdata/example.tmpl",
-			outputPath:   "/tmp/non_existing_path.md",
-			expectErr:    false,
-			data:         map[string]string{"Message": "Hello!"},
-			expected:     "Last generated: ",
-		},
 	}
 
 	for _, c := range cases {
@@ -131,6 +136,114 @@ content!
 		}
 		if strings.Contains(string(content), c.expected) == false {
 			t.Fatalf("%s was not found in %s", c.expected, c.outputPath)
+		}
+	}
+}
+
+func TestGroupDirName(t *testing.T) {
+	group := Group{Name: "Foo Bar"}
+	if group.DirName("sig") != "sig-foo-bar" {
+		t.Fatal("DirName incorrect")
+	}
+}
+
+func TestSetupGithubTeams(t *testing.T) {
+	group := Group{Name: "Foo Bar"}
+	group.SetupGitHubTeams("sig")
+
+	var expected []string
+	for _, ght := range githubTeamNames {
+		expected = append(expected, fmt.Sprintf("sig-foo-bar-%s", ght))
+	}
+
+	if !reflect.DeepEqual(group.Contact.GithubTeamNames, expected) {
+		t.Fatalf("%v does not match %v", group.Contact.GithubTeamNames, expected)
+	}
+}
+
+func TestCustomPrefixSetupGithubTeams(t *testing.T) {
+	group := Group{Contact: Contact{GithubTeamPrefix: "foo"}}
+	group.SetupGitHubTeams("")
+
+	var expected []string
+	for _, ght := range githubTeamNames {
+		expected = append(expected, fmt.Sprintf("foo-%s", ght))
+	}
+
+	if !reflect.DeepEqual(group.Contact.GithubTeamNames, expected) {
+		t.Fatalf("%v does not match %v", group.Contact.GithubTeamNames, expected)
+	}
+}
+
+func TestCreateGroupReadmes(t *testing.T) {
+	groups := []Group{
+		Group{Name: "Foo"},
+		Group{Name: "Bar"},
+	}
+
+	err := createGroupReadme(groups, "sig")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	for _, group := range groups {
+		path := filepath.Join(baseOutputDir, group.DirName("sig"), "README.md")
+		if !pathExists(path) {
+			t.Fatalf("%s should exist", path)
+		}
+	}
+}
+
+func TestReadmesAreSkipped(t *testing.T) {
+	os.Setenv("SIG", "sig-foo")
+
+	groups := []Group{
+		Group{Name: "Foo"},
+		Group{Name: "Bar"},
+	}
+
+	err := createGroupReadme(groups, "sig")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	for _, group := range groups[1:] {
+		path := filepath.Join(baseOutputDir, group.DirName("sig"), "README.md")
+		if !pathExists(path) {
+			t.Fatalf("%s should exist", path)
+		}
+	}
+
+	os.Setenv("SIG", "")
+}
+
+func copyFile(src, dst string) error {
+	// Read all content of src to data
+	data, err := ioutil.ReadFile(src)
+	if err != nil {
+		return err
+	}
+	// Write data to dst
+	err = ioutil.WriteFile(dst, data, 0644)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func TestFullGeneration(t *testing.T) {
+	err := copyFile("testdata/sigs.yaml", "generated/sigs.yaml")
+	if err != nil {
+		t.Fatalf("Error received: %v", err)
+	}
+
+	main()
+
+	expectedDirs := []string{"sig-foo", "sig-bar", "wg-baz"}
+	for _, ed := range expectedDirs {
+		path := filepath.Join(baseOutputDir, ed, "README.md")
+		if !pathExists(path) {
+			t.Fatalf("%s should exist", path)
 		}
 	}
 }
