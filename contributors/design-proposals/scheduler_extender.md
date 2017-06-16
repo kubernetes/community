@@ -108,8 +108,8 @@ be optionally implemented by the extender. When it is implemented, it is the ext
 responbility to issue the bind call to the apiserver. Pod name, namespace, UID and Node
 name are passed to the extender.
 ```go
-// Binding represents the binding of a pod to a node.
-type Binding struct {
+// ExtenderBindingArgs represents the arguments to an extender for binding a pod to a node.
+type ExtenderBindingArgs struct {
 	// PodName is the name of the pod being bound
 	PodName string
 	// PodNamespace is the namespace of the pod being bound
