@@ -12,6 +12,7 @@
       * [Validations](#validations)
     * [AdmissionControl Plug-in: PodPreset](#admissioncontrol-plug-in-podpreset)
       * [Behavior](#behavior)
+      * [PodPreset Exclude Annotation](#podpreset-exclude-annotation)
   * [Examples](#examples)
     * [Simple Pod Spec Example](#simple-pod-spec-example)
     * [Pod Spec with `ConfigMap` Example](#pod-spec-with-`configmap`-example)
@@ -192,7 +193,8 @@ injection. These are as follows:
 
 The **PodPreset** plug-in introspects all incoming pod creation
 requests and injects the pod based off a `Selector` with the desired
-attributes.
+attributes, except when the [PodPreset Exclude Annotation](#podpreset-exclude-annotation)
+is set to true.
 
 For the initial alpha, the order of precedence for applying multiple
 `PodPreset` specs is from oldest to newest. All Pod Injection
@@ -210,6 +212,10 @@ This will be first implemented as an AdmissionControl plug-in then can be
 converted to an Initializer once that is fully ready. The proposal for
 Initializers can be found at [kubernetes/community#132](https://github.com/kubernetes/community/pull/132).
 
+#### PodPreset Exclude Annotation
+There may be instances where you wish for a pod to not be altered by any pod
+preset mutations. For these events, one can add an annotation in the pod spec
+of the form: `podpreset.admission.kubernetes.io/exclude: "true"`.
 
 #### Behavior
 
