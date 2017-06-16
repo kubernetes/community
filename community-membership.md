@@ -32,8 +32,8 @@ but will not allow tests to be run against their PRs automatically nor allow the
   - Send an email to kubernetes-membership@googlegroups.com
     - CC: your sponsor
     - Subject: `REQUEST: New outside collaborator for <your-GH-handle>`
-     - Body: GitHub handle of sponsor
-     - Body: Justification - any contributions or what you will be working on
+    - Body: GitHub handle of sponsor
+    - Body: Justification - any contributions or what you will be working on
   - Have your sponsoring member reply confirmation of sponsorship: `+1`
   - Wait for response to the message
 
@@ -64,13 +64,37 @@ Members are expected to remain active contributors to the community.
 - Sponsored by 2 reviewers
   - Find 2 reviewers that you have worked with and agree to sponsor your membership
   - Send an email to *kubernetes-membership@googlegroups.com* with:
-   - CC: your sponsors on the message
-   - Subject: `REQUEST: New membership for <your-GH-handle>`
-   - Body: GitHub handles of sponsors
-   - Body: List of contributions (PRs authored / reviewed, Issues responded to, etc)
+   - **CC:** your sponsors on the message
+   - **Subject:** `REQUEST: New membership for <your-GH-handle>`
+   - **Body:** Confirm that you have joined kubernetes-dev@googlegroups.com (e.g. `I have joined kubernetes-dev@googlegroups.com`)
+   - **Body:** GitHub handles of sponsors
+   - **Body:** List of contributions (PRs authored / reviewed, Issues responded to, etc)
   - Have your sponsoring reviewers reply confirmation of sponsorship: `+1`
   - Wait for response to the message
 - Have read the [developer guide](contributors/devel/README.md)
+
+Example message:
+
+```
+To: kubernetes-membership@googlegroups.com
+CC: <sponsor1>, <sponsor2>
+Subject: REQUEST: New membership for <your-GH-handle>
+Body:
+
+I have joined kubernetes-dev@googlegroups.com.
+
+Sponsors:
+- <GH handle> / <email>
+- <GH handle> / <email>
+
+List of contributions:
+- <PR reviewed / authored>
+- <PR reviewed / authored>
+- <PR reviewed / authored>
+- <Issue responded to>
+- <Issue responded to>
+
+```
 
 ### Responsibilities and privileges
 
