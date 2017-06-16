@@ -45,7 +45,7 @@ type ExtenderConfig struct {
 	// TLSConfig specifies the transport layer security config
 	TLSConfig *client.TLSClientConfig `json:"tlsConfig,omitempty"`
 	// HTTPTimeout specifies the timeout duration for a call to the extender. Filter timeout fails the scheduling of the pod. Prioritize
-	// timeout is ignored, k8s priorities are used to select the node.
+	// timeout is ignored, k8s/other extenders priorities are used to select the node.
 	HTTPTimeout time.Duration `json:"httpTimeout,omitempty"`
 }
 ```
@@ -71,12 +71,13 @@ A sample scheduler policy file with extender configuration:
       "weight": 1
     }
   ],
-  "extender":
+  "extenders": [
     {
       "urlPrefix": "http://127.0.0.1:12345/api/scheduler",
       "filterVerb": "filter",
       "enableHttps": false
     }
+  ]
 }
 ```
 
