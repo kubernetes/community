@@ -36,9 +36,9 @@ This guide is for contributors who already have a PR to submit. If you're lookin
 
 ## Run Local Verifications
 
-Run these local verifications before you submit your PR.
+You can run these local verifications before you submit your PR to predict the
+pass or fail of continuous integration.
 
-* Enable, run, and pass the Kubernetes [pre-commit hook](development.md#define-a-pre-commit-hook) which checks your repo formatting (and more); note that you may want to add these when you're closer to the end of your project, as they take time to run every time you commit
 * Run and pass `make verify` (can take 30-40 minutes)
 * Run and pass `make test`
 * Run and pass `make test-integration`
