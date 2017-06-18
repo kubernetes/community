@@ -1,6 +1,6 @@
 # SIG Docs
 
-A Special Interest Group for documentation, doc processes, and doc publishing for Kubernetes.
+A Special Interest Group for documentation, doc processes, and doc publishing for Kubernetes. Community calendar can be found here: (https://kubernetes.io/community/)
 
 ## Meeting:
 * Meetings: Tuesdays @ 10:30AM PST
