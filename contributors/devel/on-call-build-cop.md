@@ -36,9 +36,9 @@ that those builds are green and allowing merges to occur.
 causes for the failure. Debug if possible, else triage and assign to a particular SIG, and 
 @-mention the maintainers. For example, see: 
 [https://github.com/kubernetes/kubernetes/issues/47135](https://github.com/kubernetes/kubernetes/issues/47135)
-4. Communicate the actions to # **sig-release** via slack and ensure that the issue is being worked on.
+4. Communicate the actions to **#sig-release** via slack and ensure that the issue is being worked on.
   1. If the issue is not worked on for several hours, please escalate to the release team.
 5. When the SIG member sends a fix, manually merge if necessary, after verifying that pre-submits pass, 
 or use the 'retest-not-required' label with the appropriate 'queue/*' label to ensure merge of the 
 flake fix.
-6. Issue an update to the # **sig-release** channel on the merge rate and the PR that was used to fix the queue.
+6. Issue an update to the **#sig-release** channel on the merge rate and the PR that was used to fix the queue.
