@@ -57,37 +57,37 @@ Examples:
 
 ```yaml
 containers:
-	name: foo
-		resources:
-			limits:
-				cpu: 10m
-				memory: 1Gi
-	name: bar
-		resources:
-			limits:
-				cpu: 100m
-				memory: 100Mi
+  name: foo
+    resources:
+      limits:
+        cpu: 10m
+        memory: 1Gi
+  name: bar
+    resources:
+      limits:
+        cpu: 100m
+        memory: 100Mi
 ```
 
 ```yaml
 containers:
-	name: foo
-		resources:
-			limits:
-				cpu: 10m
-				memory: 1Gi
-			requests:
-				cpu: 10m
-				memory: 1Gi
+  name: foo
+    resources:
+      limits:
+        cpu: 10m
+        memory: 1Gi
+      requests:
+        cpu: 10m
+        memory: 1Gi
 
-	name: bar
-		resources:
-			limits:
-				cpu: 100m
-				memory: 100Mi
-			requests:
-				cpu: 100m
-				memory: 100Mi
+  name: bar
+    resources:
+      limits:
+        cpu: 100m
+        memory: 100Mi
+      requests:
+        cpu: 100m
+        memory: 100Mi
 ```
 
 - If `requests` and optionally `limits` are set (not equal to `0`) for one or more resources across one or more containers, and they are *not equal*, then the pod is classified as **Burstable**.
@@ -99,44 +99,44 @@ Container `bar` has not resources specified.
 
 ```yaml
 containers:
-	name: foo
-		resources:
-			limits:
-				cpu: 10m
-				memory: 1Gi
-			requests:
-				cpu: 10m
-				memory: 1Gi
+  name: foo
+    resources:
+      limits:
+        cpu: 10m
+        memory: 1Gi
+      requests:
+        cpu: 10m
+        memory: 1Gi
 
-	name: bar
+  name: bar
 ```
 
 Container `foo` and `bar` have limits set for different resources.
 
 ```yaml
 containers:
-	name: foo
-		resources:
-			limits:
-				memory: 1Gi
+  name: foo
+    resources:
+      limits:
+        memory: 1Gi
 
-	name: bar
-		resources:
-			limits:
-				cpu: 100m
+  name: bar
+    resources:
+      limits:
+        cpu: 100m
 ```
 
 Container `foo` has no limits set, and `bar` has neither requests nor limits specified.
 
 ```yaml
 containers:
-	name: foo
-		resources:
-			requests:
-				cpu: 10m
-				memory: 1Gi
+  name: foo
+    resources:
+      requests:
+        cpu: 10m
+        memory: 1Gi
 
-	name: bar
+  name: bar
 ```
 
 - If `requests` and `limits` are not set for all of the resources, across all containers, then the pod is classified as **Best-Effort**.
@@ -145,10 +145,10 @@ Examples:
 
 ```yaml
 containers:
-	name: foo
-		resources:
-	name: bar
-		resources:
+  name: foo
+    resources:
+  name: bar
+    resources:
 ```
 
 Pods will not be killed if CPU guarantees cannot be met (for example if system tasks or daemons take up lots of CPU), they will be temporarily throttled.
