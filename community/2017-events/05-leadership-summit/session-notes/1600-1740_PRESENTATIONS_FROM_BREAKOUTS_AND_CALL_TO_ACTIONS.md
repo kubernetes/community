@@ -5,7 +5,7 @@ Identify the following before beginning your session. Do not move
 forward until these are decided / assigned:
 
 -   **Session Topic**: Presentations From Breakouts with Call to Actions
--   **Topic Facilitator(s)**: snovotny@
+-   **Topic Facilitator(s)**: sarahnovotny@
 -   **Note-taker(s) (Collaborating on this doc)**: Jason Singer DuMars,
     Nilay Yener
 -   **Person responsible for converting to Markdown & uploading to
@@ -113,24 +113,31 @@ Focused a lot on other contributions that are getting lost:
 
 Specific Action Items (& Owners)
 
-  Action Item                                                                                         Owner(s)
-  --------------------------------------------------------------------------------------------------- ---------------------------------
-  Read-only on SIG-Leads list instead of closed SIG Cloud                                             SIG Leads mailing list
-  Proposal for how we recognize contributions                                                         Quinton Hoole
-  Need a SIG owner on utilities                                                                       Tim Hockin
-  Ladders                                                                                             Kris N
-  Regular community check-ins                                                                         Brian Grant
-  Describe the end state and then assign breakout work to SIGs. Working group needs to be organized   Brian Grant
-  Working group organization or a SIG that oversees this                                              Machinery CLI Cluster Lifecycle
+Action Item |Owner(s)
+------------|------------
+Read-only on SIG-Leads list instead of closed SIG Cloud | SIG Leads mailing list
+Proposal for how we recognize contributions | Quinton Hoole
+Need a SIG owner on utilities | Tim Hockin
+Ladders | Kris N
+Regular community check-ins | Brian Grant
+Describe the end state and then assign breakout work to SIGs. Working group needs to be organized | Brian Grant
+Working group organization or a SIG that oversees this | Machinery CLI Cluster Lifecycle
 
-SIG Meetings\
-\* Intro \* Pair mentors \* Find out what people want to do \* Off weeks
-for office hours \* find out what people want to do \* don't put mission
-critical work on new contribs \* watch time zones \* keep SIG meeting as
-status, focus on 1:1 for works
+SIG Meetings
+* Intro
+* Pair mentors
+* Find out what people want to do
+* Off weeks for office hours
+* find out what people want to do
+* don't put mission critical work on new contribs
+* watch time zones
+* keep SIG meeting as status, focus on 1:1 for works
 
-SIG User Onboarding \* education \* 1:1s \* welcome wagon \* Cluster Ops
-working on this for operators
+SIG User Onboarding
+* education
+* 1:1s
+* welcome wagon
+* Cluster Ops working on this for operators
 
 Communicate stability decision User support rotation as a way of getting
 real-world feedback
