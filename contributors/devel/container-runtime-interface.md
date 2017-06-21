@@ -26,7 +26,7 @@ pluggable container runtimes and build a healthier ecosystem.
 
 ## How to use CRI?
 
-For Kubernetes 1.6:
+For Kubernetes 1.6+:
 
 1. Start the image and runtime services on your node. You can have a single
    service acting as both image and runtime services.
@@ -35,10 +35,9 @@ For Kubernetes 1.6:
      `--container-runtime-endpoint` and `--image-service-endpoint`.
    - Use the "remote" runtime by `--container-runtime=remote`.
 
-Please see the [Status Update](#status-update) section for known issues for
-each release. Note that CRI API is still in its early stages. We are actively
-incorporating feedback from early developers to improve the API. Developers
-should expect occasional API breaking changes.
+CRI is still young and we are actively incorporating feedback from developers
+to improve the API. Although we strive to maintain backward compatibility,
+developers should expect occasional API breaking changes.
 
 *For Kubernetes 1.5, additional flags are required:*
  - Set apiserver flag `--feature-gates=StreamingProxyRedirects=true`.
@@ -46,33 +45,39 @@ should expect occasional API breaking changes.
 
 ## Does Kubelet use CRI today?
 
-Yes, Kubelet uses CRI by default in 1.6.
+Yes, Kubelet always uses CRI except for using the rktnetes integration.
 
-We still maintain the old, non-CRI Docker integration, but it has been
-deprecated and scheduled to be removed in the next release (1.7). Please file
-a Github issue and include @kubernetes/sig-node-bugs for any CRI problem.
+The old, pre-CRI Docker integration was removed in 1.7.
 
-## Design docs and proposals
+## Specifications, design documents and proposals
 
 The Kubernetes 1.5 [blog post on CRI](http://blog.kubernetes.io/2016/12/container-runtime-interface-cri-in-kubernetes.html)
 serves as a general introduction.
 
-We plan to add CRI specifications/requirements in the near future. For now,
-these proposals and design docs are the best sources to understand CRI
-besides discussions on Github issues.
+
+Below is a mixed list of CRI specifications/requirements, design docs and
+proposals. We are working on adding more documentation for the API.
 
   - [Original proposal](https://github.com/kubernetes/kubernetes/blob/release-1.5/docs/proposals/container-runtime-interface-v1.md)
+  - [Networking](https://github.com/kubernetes/community/blob/master/contributors/devel/kubelet-cri-networking.md)
+  - [Container metrics](https://github.com/kubernetes/community/blob/master/contributors/devel/cri-container-stats.md)
   - [Exec/attach/port-forward streaming requests](https://docs.google.com/document/d/1OE_QoInPlVCK9rMAx9aybRmgFiVjHpJCHI9LrfdNM_s/edit?usp=sharing)
   - [Container stdout/stderr logs](https://github.com/kubernetes/kubernetes/blob/release-1.5/docs/proposals/kubelet-cri-logging.md)
-  - [Networking](https://github.com/kubernetes/community/blob/master/contributors/devel/kubelet-cri-networking.md)
 
 ## Work-In-Progress CRI runtimes
 
  - [cri-o](https://github.com/kubernetes-incubator/cri-o)
  - [rktlet](https://github.com/kubernetes-incubator/rktlet)
  - [frakti](https://github.com/kubernetes/frakti)
+ - [cri-containerd](https://github.com/kubernetes-incubator/cri-containerd)
 
 ## [Status update](#status-update)
+### Kubernetes v1.7 release (Docker-CRI integration GA, container metrics API)
+  - The Docker CRI integration has been promoted to GA. 
+  - The legacy, non-CRI Docker integration has been completely removed from
+    Kubelet. The deprecated `--enable-cri` flag has been removed.
+  - CRI has been extended to support collecting container metrics from the
+    runtime.
 
 ### Kubernetes v1.6 release (Docker-CRI integration Beta)
  **The Docker CRI integration has been promoted to Beta, and been enabled by
