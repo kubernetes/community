@@ -56,21 +56,23 @@ Members are expected to remain active contributors to the community.
 
 - Enabled [two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/) on their GitHub account
 - Have made multiple contributions to the project or community.  Contribution may include, but is not limited to:
-  - Authoring or reviewing PRs on GitHub
-  - Filing or commenting on issues on GitHub
-  - Contributing to SIG or community discussions (e.g. meetings, Slack, email discussion forums, Stack Overflow)
+    - Authoring or reviewing PRs on GitHub
+    - Filing or commenting on issues on GitHub
+    - Contributing to SIG or community discussions (e.g. meetings, Slack, email discussion forums, Stack Overflow)
 - Subscribed to [`kubernetes-dev@googlegroups.com`](https://groups.google.com/forum/#!forum/kubernetes-dev)
 - Are actively contributing to 1 or more areas.
-- Sponsored by 2 reviewers
-  - Find 2 reviewers that you have worked with and agree to sponsor your membership
-  - Send an email to *kubernetes-membership@googlegroups.com* with:
-   - **CC:** your sponsors on the message
-   - **Subject:** `REQUEST: New membership for <your-GH-handle>`
-   - **Body:** Confirm that you have joined kubernetes-dev@googlegroups.com (e.g. `I have joined kubernetes-dev@googlegroups.com`)
-   - **Body:** GitHub handles of sponsors
-   - **Body:** List of contributions (PRs authored / reviewed, Issues responded to, etc)
-  - Have your sponsoring reviewers reply confirmation of sponsorship: `+1`
-  - Wait for response to the message
+- Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
+    - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating on issues, etc.
+    - Sponsors must be reviewers or approvers in at least 1 OWNERS file (in any repo in the Kubernetes GitHub organization)
+    - Not a requirement, but having sponsorship from a reviewer from another company is encouraged (you get a gold star).
+- Send an email to *kubernetes-membership@googlegroups.com* with:
+   - CC: your sponsors on the message
+   - Subject: `REQUEST: New membership for <your-GH-handle>`
+   - Body: Confirm that you have joined kubernetes-dev@googlegroups.com (e.g. `I have joined kubernetes-dev@googlegroups.com`)
+   - Body: GitHub handles of sponsors
+   - Body: List of contributions (PRs authored / reviewed, Issues responded to, etc)
+- Have your sponsoring reviewers reply confirmation of sponsorship: `+1`
+- Wait for response to the message
 - Have read the [developer guide](contributors/devel/README.md)
 
 Example message:
