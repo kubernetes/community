@@ -43,5 +43,3 @@ For more details how do we measure those, you can look at: http://blog.kubernete
 
 We are working on refining existing SLOs and defining more for other areas of the system.
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56

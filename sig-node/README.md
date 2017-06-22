@@ -41,5 +41,3 @@ Topics include, but are not limited to:
 
 We also work closely with [sig-storage](../sig-storage) and [sig-networking](../sig-networking). As you can see, this is a very cross-functional team!
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56

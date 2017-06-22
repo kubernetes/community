@@ -30,5 +30,3 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 * setting initial resources for pods,
 * topics related to monitoring pods and gathering their metrics (e.g.: Heapster)
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56

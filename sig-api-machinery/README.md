@@ -31,5 +31,3 @@ Meeting notes and Agenda can be found [here](https://goo.gl/x5nWrF).
 ## Areas
 apiserver, api registration and discovery, generic API CRUD semantics, admission control, encoding/decoding, conversion, defaulting, persistence layer (etcd), OpenAPI, third-party resource, garbage collection, client libraries
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56
