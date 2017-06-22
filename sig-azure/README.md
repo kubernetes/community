@@ -8,7 +8,7 @@ To understand how this file is generated, see generator/README.md.
 -->
 # Azure SIG
 
-A Special Interest Group for building, deploying, maintaining, supporting,  and using Kubernetes on Azure Container Service.
+A Special Interest Group for building, deploying, maintaining, supporting, and using Kubernetes on Azure Container Service.
 
 ## Meetings
 * [Wednesdays at 16:00 UTC](https://deis.zoom.us/j/2018742972) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
@@ -27,5 +27,3 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Thu Jun 8 2017 14:40:16

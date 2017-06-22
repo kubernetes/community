@@ -8,7 +8,7 @@ To understand how this file is generated, see generator/README.md.
 -->
 # Windows SIG
 
-Focuses on bringing Kubernetes support to Windows.
+Focuses on supporting Windows Server Containers for Kubernetes.
 
 ## Meetings
 * [Tuesdays at 16:30 UTC](https://zoom.us/my/sigwindows) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
@@ -16,7 +16,7 @@ Focuses on bringing Kubernetes support to Windows.
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431).
 
 ## Leads
-* [Michael Michael](https://github.com/michmike77), Apprenda
+* [Michael Michael](https://github.com/michmike), Apprenda
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-windows)
@@ -25,5 +25,3 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56

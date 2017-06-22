@@ -35,5 +35,3 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/a/weave.wor
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Tue Jun 13 2017 16:34:38

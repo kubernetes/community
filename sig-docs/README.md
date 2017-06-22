@@ -32,5 +32,3 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 * Identify and implement ways to get documentation feedback and metrics
 * Help community contributors get involved in kubernetes documentation
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56
