@@ -34,5 +34,3 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 * Proactive or general security discussion about Kubelet should go to kubernetes-sig-node@googlegroups.com.
 * Proactive or general security discussion about the API server should go to kubernetes-sig-api-machinery@googlegroups.com.  
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56

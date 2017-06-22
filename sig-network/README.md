@@ -44,5 +44,3 @@ SIG Network is responsible for a number of issues and PRs. A summary can be foun
 
 * [2017 Planning](https://docs.google.com/document/d/1fBxC36UCBnqY_w3m3TjdnXFsIT--GS6HmKb5o0nhkTk/edit#)
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56

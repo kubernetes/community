@@ -47,7 +47,7 @@ When the need arises, a [new SIG can be created](sig-creation-procedure.md)
 |[Storage](sig-storage/README.md)|* [Saad Ali](https://github.com/saad-ali), Google<br>* [Bradley Childs](https://github.com/childsb), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-storage)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-storage)|* [Thursdays at 16:00 UTC (biweekly)](https://zoom.us/j/614261834)<br>
 |[Testing](sig-testing/README.md)|* [Aaron Crickenberger](https://github.com/spiffxp), Samsung SDS<br>* [Erick Feja](https://github.com/fejta), Google<br>* [Timothy St. Clair](https://github.com/timothysc), Heptio<br>|* [Slack](https://kubernetes.slack.com/messages/sig-testing)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-testing)|* [Tuesdays at 20:00 UTC (weekly)](https://zoom.us/j/2419653117)<br>
 |[UI](sig-ui/README.md)|* [Dan Romlein](https://github.com/romlein), Apprenda<br>* [Piotr Bryk](https://github.com/bryk), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-ui)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)|* [Wednesdays at 14:00 UTC (weekly)](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)<br>
-|[Windows](sig-windows/README.md)|* [Michael Michael](https://github.com/michmike77), Apprenda<br>|* [Slack](https://kubernetes.slack.com/messages/sig-windows)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-windows)|* [Tuesdays at 16:30 UTC (weekly)](https://zoom.us/my/sigwindows)<br>
+|[Windows](sig-windows/README.md)|* [Michael Michael](https://github.com/michmike), Apprenda<br>|* [Slack](https://kubernetes.slack.com/messages/sig-windows)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-windows)|* [Tuesdays at 16:30 UTC (weekly)](https://zoom.us/my/sigwindows)<br>
 
 ### Master Working Group List
 
@@ -57,5 +57,3 @@ When the need arises, a [new SIG can be created](sig-creation-procedure.md)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Tue Jun 13 2017 22:28:12

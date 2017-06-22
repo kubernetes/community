@@ -38,5 +38,3 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 * Do not pick which apps to run on top of the platform
 * Do not recommend one way to do things
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56

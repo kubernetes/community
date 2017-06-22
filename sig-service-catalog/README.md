@@ -28,5 +28,3 @@ Meeting notes and Agenda can be found [here](http://goo.gl/A0m24V).
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56
