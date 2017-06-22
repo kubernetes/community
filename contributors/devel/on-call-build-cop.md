@@ -9,7 +9,9 @@ The current buildcop can be found [here](https://storage.googleapis.com/kubernet
 
 ## Prerequisites for build-copping
 
-- Ensure you have write access to [http://github.com/kubernetes/kubernetes](http://github.com/kubernetes/kubernetes)
+- Ensure you have admin access to [http://github.com/kubernetes/kubernetes](http://github.com/kubernetes/kubernetes)
+  - Check your membership in the GitHub team: [kubernetes-build-cops](https://github.com/orgs/kubernetes/teams/kubernetes-build-cops/members). 
+  If you are not a member contact one of the team maintainers to get yourself added to it.
   - Test your admin access by e.g. adding a label to an issue.
 - You must communicate any concerns/actions via the **#sig-release** slack channel to ensure that 
 the release team has context on the current state of the submit queue.
