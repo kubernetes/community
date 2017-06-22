@@ -25,7 +25,6 @@ import (
 	"sort"
 	"strings"
 	"text/template"
-	"time"
 
 	"gopkg.in/yaml.v2"
 )
@@ -42,7 +41,6 @@ var (
 	githubTeamNames     = []string{"misc", "test-failures", "bugs", "feature-requests", "proposals", "pr-reviews", "api-reviews"}
 	beginMarker         = "<!-- BEGIN CUSTOM CONTENT -->"
 	endMarker           = "<!-- END CUSTOM CONTENT -->"
-	lastGeneratedPrefix = "Last generated: "
 )
 
 type Lead struct {
@@ -204,9 +202,6 @@ func writeTemplate(templatePath, outputPath string, data interface{}) error {
 	// custom content block
 	writeCustomContentBlock(f, content)
 
-	// last generated
-	writeLastGenerated(f)
-
 	fmt.Printf("Generated %s\n", outputPath)
 	return nil
 }
@@ -216,11 +211,6 @@ func writeCustomContentBlock(f *os.File, content string) {
 	for _, line := range lines {
 		f.Write([]byte(line))
 	}
-}
-
-func writeLastGenerated(f *os.File) {
-	lastGenerated := fmt.Sprintf("\n%s %s", lastGeneratedPrefix, time.Now().Format("Mon Jan 2 2006 15:04:05"))
-	f.Write([]byte(lastGenerated))
 }
 
 func createReadmeFiles(ctx Context) error {
