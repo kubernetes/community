@@ -34,11 +34,11 @@ which is mistakenly taken as Job's restart policy ([#30243](https://github.com/k
 [#[43964](https://github.com/kubernetes/kubernetes/issues/43964)]).  There are
 situation where one wants to fail a Job after some amount of retries over a certain
 period of time, due to a logical error in configuration etc.  To do so we are going
-to introduce following fields, which will control the exponential backoff when
-retrying a Job: number of retries and time to retry.  The two fields will allow
-fine-grained control over the backoff policy, limiting the number of retries over
-a specified period of time.  If only one of the two fields is supplied, an exponential
-backoff with an intervening duration of ten seconds and a factor of two will be
+to introduce following fields, which will control the backoff policy: a number of
+retries and a time to retry (counted from the first failure).  The two fields will
+allow fine-grained control over the backoff policy, limiting the number of retries
+over a specified period of time.  If only one of the two fields is supplied,
+a backoff with an intervening duration of ten seconds and a factor of two will be
 applied, such that either:
 * the number of retries will not exceed a specified count, if present, or
 * the maximum time elapsed will not exceed the specified duration, if present.
@@ -47,13 +47,15 @@ Additionally, to help debug the issue with a Job, and limit the impact of having
 too many failed pods left around (as mentioned in [#30243](https://github.com/kubernetes/kubernetes/issues/30243)),
 we are going to introduce a field which will allow specifying the maximum number
 of failed pods to keep around.  This number will also take effect if none of the
-limits described above are set.
+limits described above are set. By default it will take value of 1, to allow debugging
+job issues, but not to flood the cluster with too many failed jobs and their
+accompanying pods.
 
 All of the above fields will be optional and will apply no matter which `restartPolicy`
 is set on a `PodTemplate`.  The only difference applies to how failures are counted.
 For restart policy `Never` we count actual pod failures (reflected in `.status.failed`
-field). With restart policy `OnFailure` we look at pod restarts (calculated from
-`.status.containerStatuses[*].restartCount`).
+field). With restart policy `OnFailure` we take an approximate value of pod restarts
+(as reported in `.status.containerStatuses[*].restartCount`).
 
 
 ## Implementation
@@ -103,24 +105,26 @@ type JobSpec struct {
     // run at any given time. The actual number of pods running in steady state will
     // be less than this number when ((.spec.completions - .status.successful) < .spec.parallelism),
     // i.e. when the work left to do is less than max parallelism.
-    Parallelism *int
+    Parallelism *int32
 
     // Completions specifies the desired number of successfully finished pods the
     // job should be run with. Defaults to 1.
-    Completions *int
+    Completions *int32
 
     // Optional duration in seconds relative to the startTime that the job may be active
     // before the system tries to terminate it; value must be a positive integer.
-    ActiveDeadlineSeconds *int
+    // It applies to overall job run time, no matter of the value of completions
+    // or parallelism parameters.
+    ActiveDeadlineSeconds *int64
 
     // Optional number of retries before marking this job failed.
-    BackoffLimit *int
+    BackoffLimit *int32
 
     // Optional time (in seconds) specifying how long a job should be retried before marking it failed.
-    BackoffDeadlineSeconds *int
+    BackoffDeadlineSeconds *int64
 
     // Optional number of failed pods to retain.
-    FailedPodsLimit *int
+    FailedPodsLimit *int32
 
     // Selector is a label query over pods running a job.
     Selector LabelSelector
@@ -150,14 +154,14 @@ type JobStatus struct {
     CompletionTime unversioned.Time
 
     // Active is the number of actively running pods.
-    Active int
+    Active int32
 
     // Succeeded is the number of pods successfully completed their job.
-    Succeeded int
+    Succeeded int32
 
     // Failed is the number of pods failures, this applies only to jobs
     // created with RestartPolicyNever, otherwise this value will always be 0.
-    Failed int
+    Failed int32
 }
 
 type JobConditionType string
