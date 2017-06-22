@@ -77,8 +77,8 @@ sigs:
       setting initial resources for pods, topics related to monitoring pods and
       gathering their metrics (e.g.: Heapster)
     leads:
-    - name: Filip Grządkowski
-      github: fgrzadkowski
+    - name: Marcin Wielgus
+      github: mwielgus
       company: Google
     - name: Solly Ross
       github: directxman12
