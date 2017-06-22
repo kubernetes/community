@@ -32,5 +32,3 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 ## Non-goals
 * Endorsing any particular tool/framework
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56

@@ -39,5 +39,3 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 - Onboarding large groups of corporate contributors and welcoming them into the Kubernetes Community
 - Whatever is needed to help make the project go!
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56

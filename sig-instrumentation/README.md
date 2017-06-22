@@ -25,5 +25,3 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56

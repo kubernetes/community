@@ -55,5 +55,3 @@ Topics include, but are not limited to:
 * APIs and extensions related to the features mentioned above 
 * ...
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Tue Jun 13 2017 22:28:12

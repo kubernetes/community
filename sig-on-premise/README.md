@@ -16,8 +16,9 @@ Brings together member of Kubernetes community interested in running Kubernetes 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1AHF1a8ni7iMOpUgDMcPKrLQCML5EMZUAwP4rro3P6sk/edit#).
 
 ## Leads
-* [Joseph Jacks](https://github.com/josephjacks), Apprenda
 * [Tomasz Napierala](https://github.com/zen), Mirantis
+* [Marco Ceppi](https://github.com/marcoceppi), Canonical
+* [Dalton Hubble](https://github.com/dghubble), CoreOS
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-onprem)
@@ -36,5 +37,3 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
-
-Last generated:  Wed Jun 7 2017 14:27:56
