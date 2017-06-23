@@ -31,7 +31,8 @@ longer a part of the mandate.
 ## Workflow
 
 1. Check the Prow batch dashboard: [https://prow.k8s.io/?type=batch](https://prow.k8s.io/?type=batch) 
-to ensure that merges are occurring regularly.
+to ensure that batch jobs are running regularly. It's okay to see occasional flakes. Do not worry
+about manually re-running individual tests, since Prow will rerun them.
 2. If there are post-submit blocking jobs (see [link](https://submit-queue.k8s.io/#/e2e)), ensure 
 that those builds are green and allowing merges to occur.
 3. If several batch merges are failing, file an issue for that job and describe the possible 
