@@ -618,12 +618,29 @@ undesirable.
 
 #### Standalone Pod in Shared Namespace
 
-Kubernetes could support starting a standalone pod that shares the namespace of
-an existing pod.
+Rather than inserting a new container into a pod namespace, Kubernetes could
+instead support creating a new pod with container namespaces shared with
+another, target pod. This would be a simpler change to the Kubernetes API, which
+would only need a new field in the pod spec to specify the target pod. To be
+useful, the containers in this "Debug Pod" should be run inside the namespaces
+(network, pid, etc) of the target pod but remain in a separate resource group
+(e.g. cgroup for container-based runtimes).
 
-This would be a small change to Kubernetes, but it would create edge cases in
-the pod lifecycle that would have to be considered. For example, what happens to
-the debugging pod when the target pod is destroyed?
+This would be a rather fundamental change to pod, which is currently treated as
+an atomic unit. The Container Runtime Interface has no provisions for sharing
+outside of a pod sandbox and would need a refactor. This could be a complicated
+change for non-container runtimes (e.g. hypervisor runtimes) which have more
+rigid boundaries between pods.
+
+Effectively, Debug Pod must be implemented by the runtimes while Debug
+Containers are implemented by the kubelet. Minimizing change to the Kubernetes
+API is not worth the increased complexity for the kubelet and runtimes.
+
+It could also be possible to implement a Debug Pod as a privileged pod that runs
+in the host namespace and interacts with the runtime directly to run a new
+container in the appropriate namespace. This solution would be runtime-specific
+and effectively pushes the complexity of debugging to the user. Additionally,
+requiring node-level access to debug a pod does not meet our requirements.
 
 #### Exec from Node
 
