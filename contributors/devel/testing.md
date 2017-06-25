@@ -61,7 +61,7 @@ make test  # Run all unit tests.
 ### Set go flags during unit tests
 
 You can set [go flags](https://golang.org/cmd/go/) by setting the
-`KUBE_GOFLAGS` environment variable.
+`GOFLAGS` environment variable.
 
 ### Run unit tests from certain packages
 
@@ -92,10 +92,10 @@ regular expression for the name of the test that should be run.
 
 ```sh
 # Runs TestValidatePod in pkg/api/validation with the verbose flag set
-make test WHAT=./pkg/api/validation KUBE_GOFLAGS="-v" KUBE_TEST_ARGS='-run ^TestValidatePod$'
+make test WHAT=./pkg/api/validation GOFLAGS="-v" KUBE_TEST_ARGS='-run ^TestValidatePod$'
 
 # Runs tests that match the regex ValidatePod|ValidateConfigMap in pkg/api/validation
-make test WHAT=./pkg/api/validation KUBE_GOFLAGS="-v" KUBE_TEST_ARGS="-run ValidatePod\|ValidateConfigMap$"
+make test WHAT=./pkg/api/validation GOFLAGS="-v" KUBE_TEST_ARGS="-run ValidatePod\|ValidateConfigMap$"
 ```
 
 For other supported test flags, see the [golang
@@ -214,7 +214,7 @@ to run a specific integration test case:
 
 ```sh
 # Run integration test TestPodUpdateActiveDeadlineSeconds with the verbose flag set.
-make test-integration WHAT=./test/integration/pods KUBE_GOFLAGS="-v" KUBE_TEST_ARGS="-run ^TestPodUpdateActiveDeadlineSeconds$"
+make test-integration WHAT=./test/integration/pods GOFLAGS="-v" KUBE_TEST_ARGS="-run ^TestPodUpdateActiveDeadlineSeconds$"
 ```
 
 If you set `KUBE_TEST_ARGS`, the test case will be run with only the `v1` API
