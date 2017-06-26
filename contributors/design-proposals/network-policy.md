@@ -215,7 +215,7 @@ def is_traffic_allowed(traffic, pod):
           return True 
 
   # Ingress isolation is DefaultDeny and no policies match the given pod and traffic.
-  return false 
+  return False 
 ```
 
 ### Potential Future Work / Questions
