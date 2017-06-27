@@ -15,31 +15,37 @@ use cases and example applications, can be found [here](https://github.com/kuber
 
 1 – A stateful app, wants replicas distributed in multiple clusters, such that it can
 form multiple smaller sized local app clusters using only local replicas, each serving
-users local to the cluster (using in cluster stateful app identities).
+users local to the cluster (using in-cluster stateful app identities).
 
-2 – A stateful app, for the reasons of high availability, wants the stateful pods
-distributed in different clusters, such that the set can withstand cluster failures.
-This represents an app with one single global quorum. This use case can be an extension
-to the previous, where the same app instances get multiple identities (local and global).
+2 – A stateful app, with the goal of high availability, wants the stateful pods
+distributed in different clusters, such that the set can withstand the failure of one
+or more clusters. This represents an app with global quorum. This use case can be an
+extension to the previous, where the same app instances get multiple identities (local
+and global).
 
 # Concrete use case examples
 
+## Local identities
 1 - A federated etcd statefulset of 30 replicas across 10 clusters which creates a local quorum
 in each of the 10 clusters. The potential global quorum is ignored in this example. If a cluster
  goes down, the quorum in that cluster is dead, but the quora in all the other clusters remain
  up accessible locally to the in-cluster apps. (Similar to use case 1 above).
 
-2 - A federated etcd statefulset of 3 or more replicas across 2 or more then 2 clusters
-which creates a global quorum able to withstand the temporary failure of any one cluster,
-as well as the permanent failure of any node in any cluster. (Similar to use case 2 above).
+## Global identities
+1 - A federated etcd statefulset of 3 or more replicas across 3 or more clusters which
+creates a global quorum able to withstand the temporary failure of any one cluster,
+as well as the permanent failure of any node in any cluster.
 
-3 - A federated cassandra db statefulset of 100 replicas across, for example, 5 clusters.
+## Multiple identities
+1 - A federated statefulset of an app, which is designed to inherently support a geo-distributed
+app cluster, with replicas in multiple federated k8s clusters and inherent ability to
+communicate across data centres (for example
+[consul multi-dc cluster](https://www.consul.io/docs/internals/architecture.html#10-000-foot-view)).
+
+2 - A federated cassandra db statefulset of 100 replicas across, for example, 5 clusters.
 (The instances can have multiple identities each; apps and peer instances can choose to
 preferentially connect to local dns identities, but can also connect using global dns identity,
 if need be, for example to connect to peers in other federated clusters).
-
-4 - A federated statefulset of an app, which is designed to inherently support a geo-distributed
-app cluster, with replicas in mutiple federated k8s clusters. (for example galera db cluster).
 
 # Design Requirements
 
@@ -115,7 +121,7 @@ first phase (alpha) of the federated statefulsets implementation.
 
 In the case of in-cluster statefulset, pods discover each other using the in-cluster dns names.
 In k8s, a headless service with selectors enables creation of dns records against the pod names
-for an in cluster statefulset.
+for an in-cluster statefulset.
 As an inherent design requirement in this proposal, the applications which are being deployed as
 the statefulset can choose to connect to the other replica instances locally (just like the local
 statefulset) within the cluster or globally across the clusters (additional federation identity) to
@@ -125,20 +131,18 @@ a local db cluster connects to local replicas forming a quorum and then subseque
 cluster/instance outside the cluster for periodic backups) using the global dns identities.
 This section deals with the cluster local stateful identities.
 
-Together with the statefulset object, the user will also need to submit the request for a headless
-service corresponding to the statefulset.
-When such requests (one for statefulset and another for the headless service) are sent to the
-federation control plane, the federation service controller will create a matching headless service
-in each of the clusters.
-The federated statefulset controller will in parallel partition the total number of stateful replicas
+When a request for the statefulset object creation is submitted to the federation control plane,
+the federated statefulset controller will partition the total number of stateful replicas
 and create statefulsets with partitioned replica numbers into at least 1 or more clusters.
 The noteworthy point is the proposal that federated stateful controller would additionally modify
 the statefulset name by appending the cluster name to the statefulset name into whichever cluster
 the partitioned statefulset is getting created.
 This will ensure that each pod in the federated statefulset maintains an unique identity across
 all clusters, including a stable non-changing hostname for each pod even with the ordinal numbers
-being generated local to the clusters. This is an important modification and will need to be
-documented well for the users of the federated stateful replicas.
+being generated local to the clusters. This also seems reasonable due to the lack of portability
+of storage and thus the dns identities across the clusters.
+This is an important modification and will need to be documented well for the users of the
+federated stateful replicas.
 
 There is a possible issue, however quite unlikely, with this approach, that the name length might exceed
 the allowed k8s object name of 254 characters. This can be left as an open issue (likely to be hit
@@ -146,6 +150,9 @@ only with automated name generators, used for both clusters joining federation a
 for now, and can be subverted using an admission control plugin, to check name lengths in future,
 only if needed.
 
+Together with the statefulset object, the user will also need to submit the request for a headless
+service corresponding to the statefulset. When this request is sent to the federation control plane,
+the federation service controller will create a matching headless service in each of the clusters.
 As the partitioned statefulsets get created locally into federated clusters, for the clusters getting
 statefulsets (those which get more than 1 replica in replica distribution), pods will be able to
 discover each other using the in-cluster dns identity provided by the headless in-cluster service exactly
@@ -220,7 +227,7 @@ clusters is overridden with example.com). The CNAME could as we be queried direc
 resolve to the SRV records local to the clusters stateful replicas for each clusters, something
 like listed further. The name resolution is exactly as it happens for the local statefulsets in
 k8s today. Additionally note that the federation name _myfederation_ has explicitly been dropped
-in this example to demonstrate a local query. This is also how the in cluster kube-dns works. It
+in this example to demonstrate a local query. This is also how the in-cluster kube-dns works. It
 parses and considers the service name query to be local or federated global based on the presence
 of valid federation name segment in the queried string. [Refer here](https://github.com/kubernetes/dns/blob/master/pkg/dns/dns.go#L588).
 
@@ -295,25 +302,22 @@ A peer pod in a stateful set then can discover its federated peers by doing a dn
 the governing service domain ```store.mynamespace.myfederation.svc.example.com```.
 It should be noted that as of now the federation service controller ignores service records which
 are not of type Loadbalancer, and does not update them in the federation dns server. This behaviour
-will be aptly modified to ensure that the dns records against the headless services are also updated
-in the federated dns server if the need be. The federation service controller will determine this based
+will need to be modified to ensure that the dns records against the headless services are also updated
+in the federated dns server required. The federation service controller will determine this based
 on the user annotation (```federation.kubernetes.io/statefulset-lb-needed```) with value ```true``` present
-on the federated headless service. Please not that this is the same annotation which is used on the
-federated statefulset to determine, if this statefulset needs LB services or not. The federation
-statefulset controller will update this on the federated headless service while creating it, or if
-its applied/updated later, will update it accordingly.
-Additionally the information about the stateful replicas (and the same name LB services) for which the
-service controller should update the dns records against the headless service will also need to be passed
-on to the headless service. The proposal is to pass this information through annotations on the headless
-service as below:
+on the federated headless service. Please note that this is the same annotation which is used on the
+federated statefulset to determine if this statefulset needs LB services or not. The federation
+statefulset controller will synchronize the headless service with the annotation value.
+Additionally the information about the stateful replicas (and the identically named LB services) for
+which the service controller should update the dns records against the headless service will also
+need to be passed on to the headless service. The proposal is to pass this information through
+annotations on the headless service as below:
 ```
 federation.kubernetes.io/stateful-replica-list: <replica-name-1>, <replica-name-2>, ..., <replica-name-n>
 ```
-The federation service controller, if finds the names in this list against a federated headless service,
+The federation service controller, if it finds the names in this list against a federated headless service,
 will look for matching federated LB services and update the CNAME record for the headless service with the
 relevant SRV records for all the LB services in the federation dns server.
-This list can certainly be updated to the first class API data, if the federation API objects and clients
-are updated and maintained separately to have additional fields/data then that present in k8s API.
 
 Once this happens, the stateful pods can discover peers by querying the governing service domain (federated
 headless service). Taking the same example listed earlier if the peer (or a user) queries the service
@@ -359,6 +363,9 @@ We propose using alternative 1 listed here, as it fits broader scheme of things 
 the user expectation of being able to query all needed resources from the federation control plane and is
 less confusing to use at the same time.
 
+Additionally, if a service with the identical name (with same or other properties exists already), it
+will be overwritten, similar to the cascading objects behaviour (for example, a deployment creates pods).
+
 ## Storage volumes
 
 There are two ways a federated statefulset can be assigned a persistent storage.
@@ -369,10 +376,11 @@ There are two ways a federated statefulset can be assigned a persistent storage.
 
 Either of the 2 options above can be used/specified by the user to attach a persistent store to the pods.
 
-It is known, that as of now, the same persistent volume, even if can be used in a different cluster,
-k8s directly does not provide an API, yet, which can aid the same. In the absence of no direct way of
-quick migration of the storage data from one zone to another, or from one cloud provider to another if the
-case be, the proposal is to disallow migration/movement of pods across clusters.
+It is known, that there is no automated way or  k8s feature/API, yet, which can enable use of the same
+persistent volume across different clusters, without users/admins intervention. In the absence of a
+direct way of quick migration of storage data from one zone to another, or from one cloud provider
+to another if the case be, the proposal is to disallow migration/movement of stateful replicas across
+clusters.
 This proposal will thus be implemented with a limitation that a particular stateful pod once created into a
 particular cluster, will not be moved to another.
 
@@ -445,17 +453,41 @@ statefulsets topology.
 The details about creation and handling of the LB services and updating the dns records will
 be similar to that elaborated in the previous design.
 
-This alternative has following drawbacks:
+# Conclusion
+### Primary design
+*** Pros ***
+ - The federation controller logic is simpler, as the in-cluster statefulset controller
+ functionality is reused (similar to other federated object controllers).
+ - Consistent with other federated controllers (including pods).
+
+*** Cons ***
+ - The additional LB services are costly resources.
+
+### Alternative design
+*** Pros ***
+
+*** Cons ***
+ - The controller will be complex to implement and a good amount of statefulset functionality
+ will either need to be reimplemented in federation controller or modifications/reorganisation
+ to reuse the same portions of code will be needed.
  - As the control over the stateful pods is with the federation statefulset controller, the
  monitoring of the stateful pods will not happen, if for some reason a cluster (or all clusters)
  are disconnected from the federation control plane.
- - Does not solve both the use cases listed at the beginning of this doc.
+ - Even if this proposal is extended to have a separate local controllers to monitor the
+ in-cluster objects (pods or statefulsets) locally, the below drawbacks would follow:
+ -- One more controller over the same objects (k8s statefulset objects which can be queried
+ from individual cluster), seems two point of control on the same object.
+ -- If the new local controller monitors only stateful pods assigned to its cluster, then the
+ statefulset object is not locally query-able.
+ - Even if the app only needs local quorum, the communication across stateful pods is forced
+ through public services, rather then the in-cluster traffic routing.
+ - The additional LB services are costly resources.
 
 Its thus proposed to use the primary design alternative listed earlier in this doc.
 
 # Federated statefulset updates
 
-The in cluster statefulsets update proposal is under implementation as per [this proposal](https://github.com/kubernetes/community/pull/503)
+The in-cluster statefulsets update proposal is under implementation as per [this proposal](https://github.com/kubernetes/community/pull/503)
 The suggestion is to handle it as a separate design proposal, once the same is implemented and stabilised.
 
 
