@@ -140,6 +140,9 @@ Diagram shows high level target control plan config using the server types liste
 
 Detail: Target config uses separate volumes for the etc configs:
 
+Config hints to testers:
+* ELB, by default, has a short timeout that'll cause control plane components to resync often. Users should set that to the max.
+
 ### Alternative Config
 
 Motivated by many of the issues above, an alternative configuration is reasonable, and worth experimentation, as some production environments are built this way:
