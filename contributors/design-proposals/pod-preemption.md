@@ -86,7 +86,8 @@ When scheduling a pending pod, scheduler tries to place the pod on a node that d
 ## Preemption - Eviction workflow
 
 "Eviction" is the act of killing one or more pods on a node when the node is under resource pressure. Kubelet performs eviction. The eviction process is described in separate document by sig-node, but since it is closely related to the "preemption", we explain it briefly here.  
-Similar to preemption, the lowest priority pods are chosen for eviction first. The difference between preemption and eviction is that when pods with the same priority are considered for eviction, the one with the highest percentage of usage over "requests" is the one that is evicted first. In other words, Kubelet uses priority for eviction and breaks ties by usage over requests.  
+Kubelet uses a function of priority, usage, and requested resources to determine
+which pod(s) should be evicted. When pods with the same priority are considered for eviction, the one with the highest percentage of usage over "requests" is the one that is evicted first.  
 This implies that Best Effort pods are more likely to be evicted among a set of pods with the same priority. The reason is that any amount of resource usage by Best Effort pods translates into a very large percentage of usage over "requests", as Best Effort pods have zero requests for resources. So, while scheduler does not preempt Best Effort pods for releasing resources on a node, it is likely that these pods are evicted by the Kubelet after scheduler schedules a higher priority pod on the node.  
 Here is an example:
 
@@ -98,7 +99,7 @@ Here is an example:
 1. The high priority pod uses more than 1GB of memory. Kubelet detects the resource pressure and kills the best effort pod.
 
 So, best effort pods may be killed to make room for higher priority pods, although the scheduler does not preempt them directly.  
-Now, assume everything in the above example, but the best effort pod has priority 300. In this scenario, scheduler schedules the pending pod with priority 200 on the node, but it is evicted by the Kubelet, because the best effort pod has a higher priority. Given this scenario, scheduler should avoid the node and should try scheduling the pod on a different node if the pod is evicted by the Kubelet.
+Now, assume everything in the above example, but the best effort pod has priority 2000. In this scenario, scheduler schedules the pending pod with priority 200 on the node, but it may be evicted by the Kubelet, because Kubelet's eviction function may determine that the  best effort pod should stay given its high priority and despite its usage above request. Given this scenario, scheduler should avoid the node and should try scheduling the pod on a different node if the pod is evicted by the Kubelet. This is an optimization to prevent possible ping-pong behavior between Kubelet and Scheduler.
 
 ## Race condition in multi-scheduler clusters
 
@@ -107,17 +108,17 @@ Our assumption is that multiple schedulers cooperate with one another. If they d
 
 ## Preemption mechanics
 
-As explained above, evicting victim(s) and binding the pending pod are not transactional. Preemption victims may have "`TerminationGracePeriodSeconds`" which will create even a larger time gap between the eviction and binding points. When a victim with termination grace period receives its termination signal, it keeps running on the node until it terminates successfully or its grace period is over. In the meantime the node resources won't be available to another pod. So, the scheduler cannot bind the pending pod right away. Scheduler should mark the pending pod as assigned and move on to schedule other pods. To do so, we propose adding a new field to PodSpec called "`FutureNodeName`". When this field is set, scheduler knows that the pod is destined to run on the given node and takes it into account when making scheduling decisions for other pods.  
+As explained above, evicting victim(s) and binding the pending pod are not transactional. Preemption victims may have "`TerminationGracePeriodSeconds`" which will create even a larger time gap between the eviction and binding points. When a victim with termination grace period receives its termination signal, it keeps running on the node until it terminates successfully or its grace period is over. In the meantime the node resources won't be available to another pod. So, the scheduler cannot bind the pending pod right away. Scheduler should mark the pending pod as assigned and move on to schedule other pods. To do so, we propose adding a new field to PodSpec called "`NominatedNodeName`". When this field is set, scheduler knows that the pod is destined to run on the given node and takes it into account when making scheduling decisions for other pods.  
 Here are all the steps taken in the process:
 
-1. Scheduler sets "`deletionTimestamp`" of the victims and sets "`FutureNodeName`" of the pending pod.
-1. Kublete sees the `deletionTimestamp` and the victims enter their graceful termination period.
+1. Scheduler sets "`deletionTimestamp`" of the victims and sets "`NominatedNodeName`" of the pending pod.
+1. Kubelet sees the `deletionTimestamp` and the victims enter their graceful termination period.
 1. When any pod is terminated (whether victims or not), Scheduler starts from the beginning of its queue which is sorted by descending priority of pods to see if it can schedule them.
    1. Scheduler skips a pod in its queue when there is no node for scheduling the pod.
-   1. Scheduler evaluates the "future" feasibility of a pending pod in the queue as if the preemption victims are already gone and the pods which are ahead in the queue and have that node as "`FutureNodeName`" are already bound. See example 1 below.
-   1. When a scheduler pass is triggered, scheduler reevaluates all the pods from the head of the queue and updates their "`FutureNodeName`" if needed. See example 4.
+   1. Scheduler evaluates the "future" feasibility of a pending pod in the queue as if the preemption victims are already gone and the pods which are ahead in the queue and have that node as "`NominatedNodeName`" are already bound. See example 1 below.
+   1. When a scheduler pass is triggered, scheduler reevaluates all the pods from the head of the queue and updates their "`NominatedNodeName`" if needed. See example 4.
 
-1. When a node becomes available, scheduler binds the pending pod to the node. The node may or may not be the same as "`FutureNodeName`". Scheduler sets the "`NodeName`" field of PodSpec, but it does not clear "`FutureNodeName`". See example 2 to find our reasons.
+1. When a node becomes available, scheduler binds the pending pod to the node. The node may or may not be the same as "`NominatedNodeName`". Scheduler sets the "`NodeName`" field of PodSpec, but it does not clear "`NominatedNodeName`". See example 2 to find our reasons.
 
 ### Example 1
 
@@ -169,7 +170,7 @@ Kubernetes has a "[rescheduler](https://kubernetes.io/docs/concepts/cluster-admi
 -  requires replicating the scheduler logic in another component. In particular, the rescheduler is responsible for choosing which node the pending pod should schedule onto, which requires it to know the predicate and priority functions.
 -  increases the race condition between pod preemption and pending pod scheduling.
 
-Another option is for the scheduler to send the pending pod to a node without doing any preemption, and relying on the kubelet to do the preemption(s). Similar to the rescheduler option, this option has  requires replicating the preemption and scheduling logic. Kubelet already has the logic to evict pods when a node is under resource pressure, but this logic is much simpler than the whole scheduling logic that considers various scheduling parameters, such as affinity, anti-affinity, PodDisruptionBudget, etc. That is why we believe the scheduler is the right component to perform preemption.
+Another option is for the scheduler to send the pending pod to a node without doing any preemption, and relying on the kubelet to do the preemption(s). Similar to the rescheduler option, this option requires replicating the preemption and scheduling logic. Kubelet already has the logic to evict pods when a node is under resource pressure, but this logic is much simpler than the whole scheduling logic that considers various scheduling parameters, such as affinity, anti-affinity, PodDisruptionBudget, etc. That is why we believe the scheduler is the right component to perform preemption.
 
 ## Preemption order
 
