@@ -70,6 +70,10 @@ NOTES:
   * Goal: 90 minutes
   * Time to restore a fully saturated large cluster is important for cluster-wide failure recovery, and/or related emergency capacity provisioning (e.g. building and populating a new cluster to replace capacity in a failed one). This number also needs to correlate with max pods per cluster, and max scheduler throughput (500,000 pods / 100 pods per second ~ 90 minutes).  We believe that this fulfills most real-world recovery requirements.  The required time to recovery is usually driven primarily by trying to reduce the probability of multiple uncorrelated cluster failures (e.g. "one of our 3 clusters has failed. We're just fine unless another one fails before we've repaired/replaced the first failed one").
 
+## Control Plane Configurations for Testing
+
+Configuration of the control plane for cluster testing varies by provider, and there are multiple reasonable configurations. Discussion and guideline of control plane configuration options and standards are documented [here](provider-configs.md).
+
 ## Open Questions
 
 1. **What, if any, reasonable use cases exist for very large numbers of very small nodes (e.g. for isolation reasons - multitenant)?  Based on comments so far, it seems that the answer is yes, and needs to be addressed.**<br>
