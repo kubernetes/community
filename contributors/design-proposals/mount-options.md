@@ -13,9 +13,31 @@ Mount time options that are operationally important and have no security implica
 
 ## Design
 
-We are going to add support for mount options in PVs as a beta feature to begin with.
+### Mount option support in Persistent Volume Objects
 
-Mount options can be specified as `mount-options` annotations in PV. For example:
+Mount options can be specified as a field on PVs. For example:
+
+``` yaml
+ apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: pv0003
+  spec:
+    capacity:
+      storage: 5Gi
+    accessModes:
+      - ReadWriteOnce
+    persistentVolumeReclaimPolicy: Recycle
+    mountOptions: "hard,nolock,nfsvers=3"
+    nfs:
+      path: /tmp
+      server: 172.17.0.2
+```
+
+
+Beta support for mount options introduced via `mount-options` annotation will be supported for near future
+and deprecated in future.
+
 
 ``` yaml
  apiVersion: v1
@@ -35,6 +57,28 @@ Mount options can be specified as `mount-options` annotations in PV. For example
       server: 172.17.0.2
 ```
 
+### Mount option support in Storage Classes
+
+Kubernetes admin can also specify mount option as a parameter in storage class.
+
+```yaml
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: slow
+provisioner: kubernetes.io/glusterfs
+parameters:
+  type: gp2
+  mountOptions: "auto_mount"
+```
+
+The mount option specified in Storage Class will be used while provisioning persistent volumes
+and added as a field to PVs.
+
+If admin has configured mount option for a storage type that does not support mount options,
+then `mountOptions` parameter will be simply ignored for such volume types.  Also, if configured
+mount option is invalid then corresponding mount time failure error will be added to pod object.
+
 
 ## Preventing users from specifying mount options in inline volume specs of Pod
 
@@ -42,7 +86,7 @@ While mount options enable more flexibility in how volumes are mounted, it can r
 in user specifying options that are not supported or are known to be problematic when
 using inline volume specs.
 
-After much deliberation it was decided that - `mount-options` as an API parameter will not be supported
+After much deliberation it was decided that - `mountOptions` as an API parameter will not be supported
 for inline volume specs.
 
 ### Error handling and plugins that don't support mount option
