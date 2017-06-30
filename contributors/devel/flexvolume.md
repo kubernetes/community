@@ -10,6 +10,8 @@ Install the vendor driver on all nodes (also on master nodes if "--enable-contro
 
 For example to add a 'cifs' driver, by vendor 'foo' install the driver at: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/\<foo~cifs\>/cifs
 
+The vendor and driver names must match flexVolume.driver in the volume spec, with '~' replaced with '/'. For example, if flexVolume.driver is set to "foo/cifs", then the vendor is "foo", and driver is "cifs".
+
 ## Plugin details
 The plugin expects the following call-outs are implemented for the backend drivers. Some call-outs are optional. Call-outs are invoked from the Kubelet & the Controller manager nodes.
 Call-outs are invoked from Controller-manager only when "--enable-controller-attach-detach" Kubelet option is enabled.
