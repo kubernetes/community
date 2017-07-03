@@ -17,7 +17,7 @@ for easy management and discovery.
 
 ## Scope
 
-Kubernetes is a [platform for deploying and managing containers](https://kubernetes.io/docs/whatisk8s/).
+Kubernetes is a [platform for deploying and managing containers](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/).
 Kubernetes provides a container runtime, container
 orchestration, container-centric infrastructure orchestration, self-healing mechanisms such as health checking and re-scheduling, and service discovery and load balancing.
 
@@ -65,11 +65,11 @@ The project is committed to the following (aspirational) [design ideals](princip
   in the [participation of applications in their own management](http://blog.kubernetes.io/2016/09/cloud-native-application-interfaces.html).
   However, in doing
   so, we strive not to force applications to lock themselves into Kubernetes APIs, which is, for
-  example, why we prefer configuration over convention in the [downward API](https://kubernetes.io/docs/user-guide/downward-api/).
+  example, why we prefer configuration over convention in the [downward API](https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/#the-downward-api).
   Additionally, Kubernetes is not bound by
   the lowest common denominator of systems upon which it depends, such as container runtimes and
   cloud providers. An example where we pushed the envelope of what was achievable was in its 
-  [IP per Pod networking model](https://kubernetes.io/docs/admin/networking/#kubernetes-model).
+  [IP per Pod networking model](https://kubernetes.io/docs/concepts/cluster-administration/networking/#kubernetes-model).
 
 ## Architecture
 
@@ -86,23 +86,23 @@ in order to support high-availability clusters, or can even be run on Kubernetes
 
 Kubernetes provides a REST API supporting primarily CRUD operations on (mostly) persistent resources, which
 serve as the hub of its control plane. Kubernetes’s API provides IaaS-like
-container-centric primitives such as [Pods](https://kubernetes.io/docs/user-guide/pods/),
-[Services](https://kubernetes.io/docs/user-guide/services/), and 
-[Ingress](https://kubernetes.io/docs/user-guide/ingress/), and also lifecycle APIs to support orchestration
+container-centric primitives such as [Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod/),
+[Services](https://kubernetes.io/docs/concepts/services-networking/service/), and 
+[Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), and also lifecycle APIs to support orchestration
 (self-healing, scaling, updates, termination) of common types of workloads, such as 
-[ReplicaSet](https://kubernetes.io/docs/user-guide/replicasets/) (simple fungible/stateless app manager),
-[Deployment](https://kubernetes.io/docs/user-guide/deployments/) (orchestrates updates of
-stateless apps), [Job](https://kubernetes.io/docs/user-guide/jobs/) (batch), 
-[CronJob](https://kubernetes.io/docs/user-guide/cron-jobs/) (cron), 
-[DaemonSet](https://kubernetes.io/docs/admin/daemons/) (cluster services), and 
-[StatefulSet](https://kubernetes.io/docs/concepts/abstractions/controllers/statefulsets/) (stateful apps).
+[ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) (simple fungible/stateless app manager),
+[Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) (orchestrates updates of
+stateless apps), [Job](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/) (batch), 
+[CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) (cron), 
+[DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) (cluster services), and 
+[StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) (stateful apps).
 We deliberately decoupled service naming/discovery and load balancing from application
 implementation, since the latter is diverse and open-ended. 
 
 Both user clients and components containing asynchronous controllers interact with the same API resources,
 which serve as coordination points, common intermediate representation, and shared state. Most resources 
-contain metadata, including [labels](https://kubernetes.io/docs/user-guide/labels/) and 
-[annotations](https://kubernetes.io/docs/user-guide/annotations/), fully elaborated desired state (spec),
+contain metadata, including [labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) and 
+[annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/), fully elaborated desired state (spec),
 including default values, and observed state (status). 
 
 Controllers work continuously to drive the actual state towards the desired state, while reporting back the currently observed state for users and for other controllers. 
@@ -117,7 +117,7 @@ message bus.
 #### API Server
 
 The [API server](https://kubernetes.io/docs/admin/kube-apiserver/) serves up the
-[Kubernetes API](https://kubernetes.io/docs/api/). It is intended to be a relatively simple
+[Kubernetes API](https://kubernetes.io/docs/concepts/overview/kubernetes-api/). It is intended to be a relatively simple
 server, with most/all business logic implemented in separate components or in plug-ins. It mainly
 processes REST operations, validates them, and updates the corresponding objects in `etcd` (and
 perhaps eventually other stores). Note that, for a number of reasons, Kubernetes deliberately does
@@ -149,7 +149,7 @@ Most other cluster-level functions are currently performed by a separate process
 both lifecycle functions (e.g., namespace creation and lifecycle, event garbage collection,
 terminated-pod garbage collection, cascading-deletion garbage collection, node garbage collection)
 and API business logic (e.g., scaling of pods controlled by a 
-[ReplicaSet](https://kubernetes.io/docs/user-guide/replicasets/)).
+[ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)).
 
 The application management and composition layer, providing self-healing, scaling, application lifecycle management, service discovery, routing, and service binding and provisioning.
 
@@ -195,11 +195,11 @@ containers isolated from each other, but they are also isolated from the hosts o
 execute, which is critical to decoupling management of individual applications from each other and
 from management of the underlying cluster physical/virtual infrastructure.
 
-Kubernetes provides [Pods](https://kubernetes.io/docs/user-guide/pods/) that can host multiple
+Kubernetes provides [Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod/) that can host multiple
 containers and storage volumes as its fundamental execution primitive in order to facilitate
 packaging a single application per container, decoupling deployment-time concerns from build-time
 concerns, and migration from physical/virtual machines. The Pod primitive is key to glean the
-[primary benefits](https://kubernetes.io/docs/whatisk8s/#why-containers) of deployment on modern
+[primary benefits](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/#why-containers) of deployment on modern
 cloud platforms, such as Kubernetes.
 
 API admission control may reject pods or add additional scheduling constraints to them, but
@@ -223,14 +223,14 @@ Runtimes supported today, either upstream or by forks, include at least docker (
 
 #### Kube Proxy
 
-The [service](https://kubernetes.io/docs/user-guide/services/) abstraction provides a way to
+The [service](https://kubernetes.io/docs/concepts/services-networking/service/) abstraction provides a way to
 group pods under a common access policy (e.g., load-balanced). The implementation of this creates
 A virtual IP which clients can access and which is transparently proxied to the pods in a Service.
 Each node runs a [kube-proxy](https://kubernetes.io/docs/admin/kube-proxy/) process which programs
 `iptables` rules to trap access to service IPs and redirect them to the correct backends. This provides a highly-available load-balancing solution with low performance overhead by balancing
 client traffic from a node on that same node.
 
-Service endpoints are found primarily via [DNS](https://kubernetes.io/docs/admin/dns/).
+Service endpoints are found primarily via [DNS](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/).
 
 ### Add-ons and other dependencies
 
