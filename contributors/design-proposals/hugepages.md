@@ -34,7 +34,8 @@ pre-allocated huge pages instead of THP.
 
 DPDK-based applications are going to request huge pages using `mmap()` system
 call and it is required that a mount point of type `hugetlbfs` is present 
-in the application's mount namespace.
+in the application's mount namespace. Proposed design includes huge page volume 
+plugin that ensures this mount point exists.
 
 The proposal is also limited to x86_64 support where two huge page sizes are
 supported: 2MB and 1GB.  The design, however, should accommodate additional huge
