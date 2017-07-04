@@ -185,7 +185,7 @@ type VolumeSource struct {
 
 // HugePagesSource represents Linux HugeTlbPage https://www.kernel.org/doc/Documentation/vm/hugetlbpage.txt                                                                                    
 type HugePagesVolumeSource struct {
-    // Defaults to 2M
+    // Defaults to  platform's default huge page size
     // +optional
     PageSize string `json:"pageSize,omitempty" protobuf:"bytes,1,opt,name=pageSize"`
     // The MaxSize option sets the maximum value of memory (huge pages).
