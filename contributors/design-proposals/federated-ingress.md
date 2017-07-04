@@ -8,7 +8,7 @@
 
 ## Overview/Summary
 
-[Kubernetes Ingress](https://github.com/kubernetes/kubernetes.github.io/blob/master/docs/user-guide/ingress.md)
+[Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
 provides an abstraction for sophisticated L7 load balancing through a
 single IP address (and DNS name) across multiple pods in a single
 Kubernetes cluster. Multiple alternative underlying implementations
