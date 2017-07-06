@@ -46,6 +46,27 @@ sigs:
     contact:
       slack: sig-apps
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-apps
+  - name: Architecture
+    dir: sig-architecture
+    mission_statement: >
+      The SIG would be intended to guide the design principles of Kubernetes, as well as provide a consistent 
+      body of expertise necessary to ensure architectural consistency over time.
+    leads:
+    - name: Brian Grant
+      github: bgrant0607
+      company: Google
+    - name: Jaice Singer DuMars
+      github: jdumars
+      company: Microsoft
+    meetings:
+    - day: Monday
+      utc: "17:00"
+      frequency: biweekly
+    meeting_url: https://deis.zoom.us/j/2018742972
+    meeting_archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
+    contact:
+      slack: sig-architecture
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-architecture
   - name: Auth
     dir: sig-auth
     mission_statement: >
