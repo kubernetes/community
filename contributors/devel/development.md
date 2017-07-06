@@ -279,10 +279,25 @@ To build binaries for all platforms:
 make cross
 ```
 
+#### Install etcd
+
+```sh
+hack/install-etcd.sh
+```
+
 #### Test
 
 ```sh
 cd $working_dir/kubernetes
+
+# Run all the presubmission verification. Then, run a specific update script (hack/update-*.sh)
+# for each failed verification. For example:
+#   hack/update-gofmt.sh (to make sure all files are correctly formatted, usually needed when you add new files)
+#   hack/update-bazel.sh (to update bazel build related files, usually needed when you add or remove imports)
+make verify 
+
+# Alternatively, run all update scripts to avoid fixing verification failures one by one.
+make update
 
 # Run every unit test
 make test
@@ -291,9 +306,13 @@ make test
 make test WHAT=pkg/util/cache GOFLAGS=-v
 
 # Run integration tests, requires etcd
+# For more info, visit https://github.com/kubernetes/community/blob/master/contributors/devel/testing.md#integration-tests
 make test-integration
 
-# Run e2e tests
+# Run e2e tests by building test binaries, turn up a test cluster, run all tests, and tear the cluster down
+# Equivalent to: go run hack/e2e.go -- -v --build --up --test --down
+# Note: running all e2e tests takes a LONG time! To run specific e2e tests, visit:
+# https://github.com/kubernetes/community/blob/master/contributors/devel/e2e-tests.md#building-kubernetes-and-running-the-tests
 make test-e2e
 ```
 
