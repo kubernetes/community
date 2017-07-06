@@ -169,12 +169,12 @@ The SIG escalation points should be bootstrapped from the [community sig list].
 - Consider moving the e2e tests for the SIG into their own test jobs if this would make maintaining them easier.
 - Consider developing a playbook for how to resolve test failures and how do identify whether or not another SIG owns the resolution of the issue.
 
-[community sig list]: (https://github.com/kubernetes/community/blob/master/sig-list.md)
-[triage tool]: (https://storage.googleapis.com/k8s-gubernator/triage/index.html)
-[test grid]: (https://k8s-testgrid.appspot.com/)
-[build cop]: (https://github.com/kubernetes/community/blob/master/contributors/devel/on-call-build-cop.md)
-[release-master-blocking]: (https://k8s-testgrid.appspot.com/release-master-blocking#Summary)
-[1.7-master-upgrade]: (https://k8s-testgrid.appspot.com/1.7-master-upgrade#Summary)
-[1.6-master-upgrade]: (https://k8s-testgrid.appspot.com/1.6-master-upgrade#Summary)
-[1.7-master-kubectl-skew]: (https://k8s-testgrid.appspot.com/1.6-1.7-kubectl-skew)
-[job config]: (https://github.com/kubernetes/test-infra/blob/master/jobs/config.json)
+[community sig list]: https://github.com/kubernetes/community/blob/master/sig-list.md
+[triage tool]: https://storage.googleapis.com/k8s-gubernator/triage/index.html
+[test grid]: https://k8s-testgrid.appspot.com/
+[build cop]: https://github.com/kubernetes/community/blob/master/contributors/devel/on-call-build-cop.md
+[release-master-blocking]: https://k8s-testgrid.appspot.com/release-master-blocking#Summary
+[1.7-master-upgrade]: https://k8s-testgrid.appspot.com/1.7-master-upgrade#Summary
+[1.6-master-upgrade]: https://k8s-testgrid.appspot.com/1.6-master-upgrade#Summary
+[1.7-master-kubectl-skew]: https://k8s-testgrid.appspot.com/1.6-1.7-kubectl-skew
+[job config]: https://github.com/kubernetes/test-infra/blob/master/jobs/config.json
