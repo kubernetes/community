@@ -19,8 +19,10 @@ Call-outs are invoked from Controller-manager only when "--enable-controller-att
 ### Driver invocation model:
 
 #### Init:
-Initializes the driver. Called during Kubelet & Controller manager initialization.
-
+Initializes the driver. Called during Kubelet & Controller manager initialization. On success, the function returns a capabilities map showing whether each Flexvolume capability is supported by the driver.
+Current capabilities:
+* `attach` - a boolean field indicating whether the driver requires attach and detach operations. This field is *required*, although for backward-compatibility the default value is set to `true`, i.e. requires attach and detach.
+See [Driver output](#driver-output) for the capabilities map format.
 ```
 <driver executable> init
 ```
@@ -105,6 +107,10 @@ following format.
 	"device": "<Path to the device attached. This field is valid only for attach & waitforattach call-outs>"
 	"volumeName": "<Cluster wide unique name of the volume. Valid only for getvolumename call-out>"
 	"attached": <True/False (Return true if volume is attached on the node. Valid only for isattached call-out)>
+    "capabilities": <Only included as part of the Init response>
+    {
+        "attach": <True/False (Return true if the driver implements attach and detach)>
+    }
 }
 ```
 
