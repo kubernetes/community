@@ -5,30 +5,26 @@
 As we all know, Kubernetes can be deployed anywhere, including various cloud
 platforms and bare metals. But as for storage resources, you have to choose
 specific storage backend according to the environment Kubernetes be deployed.
-There are some examples:
-1. if you deploy Kubernetes on AWS cloud platform, then you can only use
-EBS to provide storage resources for Kubernetes.
-2. if your Kubernetes cluster is deployed on OpenStack, then you can only
-use Cinder to provide storage resources.
-3. if you want to deploy Kubernetes on bare metals, right now you can only
-choose SCSI or RBD device (maybe one or two more).
-
-Maybe you are wondering what the problem is. Honestly it's ok if you show
-it to customers, but something interesting is that if you change the format
-of these sentences like below:
+Here are some examples:
 1. if you want to use EBS to provide storage resource for Kubernetes, you
 have to deploy Kubernetes on AWS cloud platform.
 2. if you want to use Cinder, then you have to make sure Kubernetes is
 deployed on OpenStack.
-3. if you want to use SCSI, RBD or FC device, then you can only deploy
-Kubernetes on bare metals. (except the storage bakend has supported to
-manage these devices)
+3. if you want to deploy Kubernetes on bare metals, right now you can only
+choose SCSI or RBD device (maybe one or two more).
 
-Now if you show it to customers, then customers would get confused and they
-might ask why can not you provide Cinder storage for Kubernetes deployed on
-bare metals. And we also get some feedbacks from users, and they suggested
-we enrich Kubernetes storage drivers since they were using some storage
-systems Kubernetes doesn't support.
+If you show it to users, they would get confused and ask why can not you
+provide Cinder storage for Kubernetes deployed on bare metals. Since some
+storage systems like Cinder, ScaleIO can provide volume resource for bare metals
+directly, how can users use these resources if they deploy their cluster on
+these bare metals?
+
+Another use case is that we got some suggestions from users that we enrich
+Kubernetes storage drivers since they were using some storage systems Kubernetes
+doesn't support. Right now we have an option, which is flexvolume. But it would
+be a hard work for them to develop every storage driver because the operation of
+attaching volume to host is quite complicated. Can we shield the complex
+implementation and provide a simple interface for their secondary development?
 
 All in all, our motivation is to break the limitation between storage systems
 and Kubernetes deployment environment, and to provide any storage backend
@@ -36,7 +32,7 @@ regardless of deployment environment(cloud platforms and bare metals).
 
 ## Goal
 
-To slove this problem, we plan to create a standalone project in Kubernetes
+To slove the problem, we plan to create a standalone project in Kubernetes
 that acts a library providing volume discovery and local management. For
 any in-tree volume plugins which want to provide storage resource for
 bare metals, they can call this library to finish host-side volume discovery
