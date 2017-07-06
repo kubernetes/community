@@ -88,7 +88,7 @@ rm -rf vendor
 ./hack/godep-save.sh
 # Regenerate removed BUILD, licenses, and client-go Godeps files.
 ./hack/update-bazel.sh
-./hack/update-godeps-licenses.sh
+./hack/update-godep-licenses.sh
 ./hack/update-staging-client-go.sh
 git checkout -- $(git status -s | grep "^ D" | awk '{print $2}' | grep ^Godeps)
 ```
