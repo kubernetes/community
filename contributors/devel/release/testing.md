@@ -55,7 +55,7 @@ owner and test owner must identify the owner for resolving the failure.
 Owners of test jobs are expected to maintain a dashboard of the test jobs they own and
 maintain the test job health.
 
-SIGs should update the [job/config] and mark the tests that they own.
+SIGs should update the [job config] and mark the tests that they own.
 
 ### test infrastructure
 
@@ -177,4 +177,4 @@ The SIG escalation points should be bootstrapped from the [community sig list].
 [1.7-master-upgrade]: (https://k8s-testgrid.appspot.com/1.7-master-upgrade#Summary)
 [1.6-master-upgrade]: (https://k8s-testgrid.appspot.com/1.6-master-upgrade#Summary)
 [1.7-master-kubectl-skew]: (https://k8s-testgrid.appspot.com/1.6-1.7-kubectl-skew)
-[job/config]: (https://github.com/kubernetes/test-infra/blob/master/jobs/config.json)
+[job config]: (https://github.com/kubernetes/test-infra/blob/master/jobs/config.json)
