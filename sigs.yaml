@@ -660,7 +660,7 @@ workinggroups:
       utc: "18:00"
       frequency: weekly (On demand)
     meeting_url: https://zoom.us/j/4799874685
-    meeting_archive_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG
+    meeting_archive_url: https://docs.google.com/document/d/1j3vrG6BgE0hUDs2e-1ZUegKN4W4Adb1B6oJ6j-4kyPU
     contact:
       slack: wg-resource-mgmt
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-resource-management

@@ -13,7 +13,7 @@ Designing and shepherding cross-cutting features around compute resource isolati
 ## Meetings
 * [Tuesdays at 18:00 UTC](https://zoom.us/j/4799874685) (weekly (On demand)). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
 
-Meeting notes and Agenda can be found [here](https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
+Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1j3vrG6BgE0hUDs2e-1ZUegKN4W4Adb1B6oJ6j-4kyPU).
 
 ## Organizers
 * [Vishnu Kannan](https://github.com/vishh), Google
