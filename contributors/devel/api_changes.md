@@ -20,6 +20,7 @@ found at [API Conventions](api-conventions.md).
   - [Edit version conversions](#edit-version-conversions)
   - [Generate protobuf objects](#generate-protobuf-objects)
   - [Edit json (un)marshaling code](#edit-json-unmarshaling-code)
+  - [Making a new API Version](#making-a-new-api-version)
   - [Making a new API Group](#making-a-new-api-group)
   - [Update the fuzzer](#update-the-fuzzer)
   - [Update the semantic comparisons](#update-the-semantic-comparisons)
@@ -347,12 +348,23 @@ before starting "all the rest".
 
 ### Edit types.go
 
-The struct definitions for each API are in `pkg/api/<version>/types.go`. Edit
-those files to reflect the change you want to make. Note that all types and
-non-inline fields in versioned APIs must be preceded by descriptive comments -
-these are used to generate documentation. Comments for types should not contain
-the type name; API documentation is generated from these comments and end-users
-should not be exposed to golang type names.
+The struct definitions for each API are in
+`staging/src/k8s.io/api/<group>/<version>/types.go`. Edit those files to reflect
+the change you want to make. Note that all types and non-inline fields in
+versioned APIs must be preceded by descriptive comments - these are used to
+generate documentation. Comments for types should not contain the type name; API
+documentation is generated from these comments and end-users should not be
+exposed to golang type names.
+
+For types that need the generated
+[DeepCopyObject](https://github.com/kubernetes/kubernetes/commit/8dd0989b395b29b872e1f5e06934721863e4a210#diff-6318847735efb6fae447e7dbf198c8b2R3767)
+methods, usually only required by the top-level types like `Pod`, add this line
+to the comment
+([example](https://github.com/kubernetes/kubernetes/commit/39d95b9b065fffebe5b6f233d978fe1723722085#diff-ab819c2e7a94a3521aecf6b477f9b2a7R30)): 
+
+```golang 
+  // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+```
 
 Optional fields should have the `,omitempty` json tag; fields are interpreted as
 being required otherwise.
@@ -360,8 +372,11 @@ being required otherwise.
 ### Edit defaults.go
 
 If your change includes new fields for which you will need default values, you
-need to add cases to `pkg/api/<version>/defaults.go`. Of course, since you
-have added code, you have to add a test: `pkg/api/<version>/defaults_test.go`.
+need to add cases to `pkg/apis/<group>/<version>/defaults.go` (the core v1 API
+is special, its defaults.go is at `pkg/api/v1/defaults.go`. For simplicity, we
+will not mention this special case in the rest of the article). Of course, since
+you have added code, you have to add a test:
+`pkg/apis/<group>/<version>/defaults_test.go`.
 
 Do use pointers to scalars when you need to distinguish between an unset value
 and an automatic zero value.  For example,
@@ -380,14 +395,16 @@ all in a different order (i.e. you started with the internal structs), then you
 should jump to that topic below. In the very rare case that you are making an
 incompatible change you might or might not want to do this now, but you will
 have to do more later. The files you want are
-`pkg/api/<version>/conversion.go` and `pkg/api/<version>/conversion_test.go`.
+`pkg/apis/<group>/<version>/conversion.go` and
+`pkg/apis/<group>/<version>/conversion_test.go`.
 
 Note that the conversion machinery doesn't generically handle conversion of
 values, such as various kinds of field references and API constants. [The client
-library](../../pkg/client/restclient/request.go) has custom conversion code for
-field references. You also need to add a call to
-api.Scheme.AddFieldLabelConversionFunc with a mapping function that understands
-supported translations.
+library](https://github.com/kubernetes/client-go/blob/v4.0.0-beta.0/rest/request.go#L352)
+has custom conversion code for field references. You also need to add a call to
+`AddFieldLabelConversionFunc` of your scheme with a mapping function that
+understands supported translations, like this
+[line](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/api/v1/conversion.go#L165).
 
 ## Changing the internal structures
 
@@ -397,22 +414,25 @@ used.
 ### Edit types.go
 
 Similar to the versioned APIs, the definitions for the internal structs are in
-`pkg/api/types.go`. Edit those files to reflect the change you want to make.
-Keep in mind that the internal structs must be able to express *all* of the
-versioned APIs.
+`pkg/apis/<group>/types.go`. Edit those files to reflect the change you want to
+make. Keep in mind that the internal structs must be able to express *all* of
+the versioned APIs.
+
+Similar to the versioned APIs, you need to add the `+k8s:deepcopy-gen` tag to
+types that need generated DeepCopyObject methods.
 
 ## Edit validation.go
 
 Most changes made to the internal structs need some form of input validation.
 Validation is currently done on internal objects in
-`pkg/api/validation/validation.go`. This validation is the one of the first
-opportunities we have to make a great user experience - good error messages and
-thorough validation help ensure that users are giving you what you expect and,
-when they don't, that they know why and how to fix it. Think hard about the
-contents of `string` fields, the bounds of `int` fields and the
-requiredness/optionalness of fields.
+`pkg/apis/<group>/validation/validation.go`. This validation is the one of the
+first opportunities we have to make a great user experience - good error
+messages and thorough validation help ensure that users are giving you what you
+expect and, when they don't, that they know why and how to fix it. Think hard
+about the contents of `string` fields, the bounds of `int` fields and the
+optionality of fields.
 
-Of course, code needs tests - `pkg/api/validation/validation_test.go`.
+Of course, code needs tests - `pkg/apis/<group>/validation/validation_test.go`.
 
 ## Edit version conversions
 
@@ -429,9 +449,9 @@ inefficient).
 
 The conversion code resides with each versioned API. There are two files:
 
-   - `pkg/apis/extensions/<version>/conversion.go` containing manually written
+   - `pkg/apis/<group>/<version>/conversion.go` containing manually written
      conversion functions
-   - `pkg/apis/extensions/<version>/zz_generated.conversion.go` containing
+   - `pkg/apis/<group>/<version>/zz_generated.conversion.go` containing
      auto-generated conversion functions
 
 Since auto-generated conversion functions are using manually written ones,
@@ -442,43 +462,36 @@ function converting type X in pkg a to type Y in pkg b, should be named:
 Also note that you can (and for efficiency reasons should) use auto-generated
 conversion functions when writing your conversion functions.
 
+Adding manually written conversion also requires you to add tests to
+`pkg/apis/<group>/<version>/conversion_test.go`.
+
 Once all the necessary manually written conversions are added, you need to
 regenerate auto-generated ones. To regenerate them run:
 
 ```sh
-hack/update-codegen.sh
+make clean && make generated_files
 ```
 
-As part of the build, kubernetes will also generate code to handle deep copy of
-your versioned api objects. The deep copy code resides with each versioned API:
-   - `<path_to_versioned_api>/zz_generated.deepcopy.go` containing auto-generated copy functions
+`make clean` is important, otherwise the generated files might be stale, because
+the build system uses custom cache.
+
+`make all` will invoke `make generated_files` as well.
+
+The `make generated_files` will also regenerate the `zz_generated.deepcopy.go`,
+`zz_generated.defaults.go`, and `api/openapi-spec/openapi-spec`.
 
 If regeneration is somehow not possible due to compile errors, the easiest
-workaround is to comment out the code causing errors and let the script to
-regenerate it. If the auto-generated conversion methods are not used by the
-manually-written ones, it's fine to just remove the whole file and let the
-generator to create it from scratch.
-
-Unsurprisingly, adding manually written conversion also requires you to add
-tests to `pkg/api/<version>/conversion_test.go`.
+workaround is to remove the files causing errors and rerun the command.
 
 ## Generate Code 
 
-When any `types.go` change is made, the generated code must be updated
-by running the generators. There are many small generators that
-run. They have some dependencies on each other so they must be run in
-a certain order.
-
-Approximately:
- - `defaulter-gen`
- - `deepcopy-gen`
- - `conversion-gen`
+Apart from the `defaulter-gen`, `deepcopy-gen`, `conversion-gen` and
+`openapi-gen`, there are a few other generators:
+ - `go-to-protobuf`
  - `client-gen`
- - `lister-gen` which depends upon the output of `client-gen`.
- - `informer-gen` which depends upon the output of `lister-gen` and `client-gen`.
- - `openapi-gen`
- - `codecgen` for fast json serialization with a codec.
-
+ - `lister-gen`
+ - `informer-gen`
+ - `codecgen` (for fast json serialization with ugorji codec)
 
 Many of the generators are based on
 [`gengo`](https://github.com/kubernetes/gengo) and share common
@@ -492,10 +505,16 @@ top of the generated file and should be checked with the
 [`repo-infra/verify/verify-boilerplane.sh`](https://github.com/kubernetes/repo-infra/blob/master/verify/verify-boilerplate.sh)
 script at a later stage of the build.
 
+To invoke these generators, you can run `make generated`, which runs a bunch of
+[scripts](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/hack/update-all.sh#L63-L78).
+Please continue to read the next a few sections, because some generators have
+prerequisites, also because they introduce how to invoke the generators
+individually if you find `make update` takes too long to run.
+
 ### Generate protobuf objects
 
 For any core API object, we also need to generate the Protobuf IDL and marshallers.
-That generation is done with
+That generation is invoked with
 
 ```sh
 hack/update-generated-protobuf.sh
@@ -510,26 +529,44 @@ run it several times to ensure there are no incompletely calculated fields.
 
 ### Generate Clientset
 
-See [this document](generating-clientset.md) specific to generating client sets.
+`client-gen` is a tool to generate clientsets for top-level API objects.
+
+`client-gen` requires the `// +genclient=true` annotation on each
+exported type in both the internal `pkg/apis/<group>/types.go` as well as each
+specifically versioned `staging/src/k8s.io/api/<group>/<version>/types.go`.
+
+If the apiserver hosts your API under a different group name than the `<group>`
+in the filesystem, (usually this is because the `<group>` in the filesystem
+omits the "k8s.io" suffix, e.g., admission vs. admission.k8s.io), you can
+instruct the `client-gen` to use the correct group name by adding the `//
++groupName=` annotation in the `doc.go` in both the internal
+`pkg/apis/<group>/doc.go` as well as in each specifically versioned
+`staging/src/k8s.io/api/<group>/<version>/types.go`.
+
+Once you added the annotations, generate the client with
+
+```sh
+hack/update-codegen.sh
+```
+
+client-gen is flexible. See [this document](generating-clientset.md) if you need
+client-gen for non-kubernetes API.
 
 ### Generate Listers
 
-`lister-gen` is a tool to generate listers for a client. It requires a
-client generated by `client-gen`.
+`lister-gen` is a tool to generate listers for a client. It reuses the
+`//+genclient=true` and the `// +groupName=` annotations, so you do not need to
+specify extra annotations.
 
-`lister-gen` requires the `// +genclient=true` annotation on each
-exported type in both the unversioned base `types.go` as well as each
-specifically versioned `types.go`.
-
-`lister-gen` requires the `// +groupName=` annotation on the `doc.go` in
-both the unversioned base directory as well as in each specifically
-versioned directory. The annotation does not have to have any specific
-content, but it does have to exist.
+Your previous run of `hack/update-codegen.sh` has invoked `lister-gen`.
 
 ### Generate Informers
 
 `informer-gen` generates the very useful Informers which watch API
-resources for changes. It requires a client generated by `client-gen`.
+resources for changes. It reuses the `//+genclient=true` and the
+`//+groupName=` annotations, so you do not need to specify extra annotations.
+
+Your previous run of `hack/update-codegen.sh` has invoked `informer-gen`.
 
 ### Edit json (un)marshaling code
 
@@ -538,8 +575,7 @@ of api objects - this is to improve the overall system performance.
 
 The auto-generated code resides with each versioned API:
 
-   - `pkg/api/<version>/types.generated.go`
-   - `pkg/apis/extensions/<version>/types.generated.go`
+   - `staging/src/k8s.io/api/<group>/<version>/types.generated.go`
 
 To regenerate them run:
 
@@ -547,21 +583,50 @@ To regenerate them run:
 hack/update-codecgen.sh
 ```
 
-## Making a new API Group
+## Making a new API Version
 
 This section is under construction, as we make the tooling completely generic.
 
-At the moment, you'll have to make a new directory under `pkg/apis/`; copy the
-directory structure from `pkg/apis/authentication`. Add the new group/version to all
-of the `hack/{verify,update}-generated-{deep-copy,conversions,swagger}.sh` files
-in the appropriate places--it should just require adding your new group/version
-to a bash array.  See [docs on adding an API group](adding-an-APIGroup.md) for
-more.
+If you are adding a new API version to an existing group, you can copy the
+structure of the existing `pkg/apis/<group>/<existing-version>` and
+`staging/src/k8s.io/api/<group>/<existing-version>` directories.
 
-Adding API groups outside of the `pkg/apis/` directory is not currently
-supported, but is clearly desirable. The deep copy & conversion generators need
-to work by parsing go files instead of by reflection; then they will be easy to
-point at arbitrary directories: see issue [#13775](http://issue.k8s.io/13775).
+Due to the fast changing nature of the project, the following content is probably out-dated:
+* You can control if the version is enabled by default by update
+[pkg/master/master.go](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/master/master.go#L381).
+* You must add the new version to
+  [pkg/apis/<group>/install/install.go](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/apis/apps/install/install.go).
+* You must add the new version to
+  [hack/lib/init.sh#KUBE_AVAILABLE_GROUP_VERSIONS](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/hack/lib/init.sh#L53).
+* You must add the new version  to
+  [cmd/libs/go2idl/go-to-protobuf/protobuf/cmd.go](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/cmd/libs/go2idl/go-to-protobuf/protobuf/cmd.go#L64)
+  to generate protobuf IDL and marshallers.
+* You must add the new version  to
+  [cmd/kube-apiserver/app#apiVersionPriorities](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/cmd/kube-apiserver/app/aggregator.go#L172)
+  to let the aggregator list it. This list will be removed before release 1.8.
+* You must setup storage for the new version in
+  [pkg/registry/group_name/rest](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/registry/authentication/rest/storage_authentication.go)
+
+You need to regenerate the generated code as instructed in the sections above.
+
+## Making a new API Group
+
+You'll have to make a new directory under `pkg/apis/` and
+`staging/src/k8s.io/api`; copy the directory structure of an existing API group,
+e.g. `pkg/apis/authentication` and `staging/src/k8s.io/api/authentication`;
+replace "authentication" with your group name and replace versions with your
+versions; replace the API kinds in
+[versioned](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/staging/src/k8s.io/api/authentication/v1/register.go#L47)
+and
+[internal](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/apis/authentication/register.go#L47)
+register.go, and
+[install.go](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/apis/authentication/install/install.go#L43)
+with your kinds.
+
+You'll have to add your API group/version to a few places in the code base, as
+noted in [Making a new API Version](#making-a-new-api-version) section.
+
+You need to regenerate the generated code as instructed in the sections above.
 
 ## Update the fuzzer
 
