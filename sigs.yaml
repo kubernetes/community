@@ -327,6 +327,9 @@ sigs:
   - name: Instrumentation
     dir: sig-instrumentation
     mission_statement: >
+      Covers best practices for cluster observability through metrics, logging, and events across all
+      Kubernetes components and development of relevant components such as Heapster and kube-state-metrics.
+      Coordinates metric requirements of different SIGs for other components through finding common APIs.
     leads:
     - name: Piotr Szczesniak
       github: piosz
