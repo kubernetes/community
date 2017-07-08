@@ -339,7 +339,7 @@ patch implementation, it has been necessary to change the patch format
 to support additional semantics - such as merging lists of
 primitives and defining order when merging lists.
 
-## Requirments for any changes to the patch format
+## Requirements for any changes to the patch format
 
 **Note:** Changes to the strategic merge patch must be backwards compatible such
 that patch requests valid in previous versions continue to be valid.
