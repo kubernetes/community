@@ -28,7 +28,7 @@ Before going to the details of this proposal, below lists a number of the method
 - Write your own scheduler and run it along with Kubernetes native scheduler. This is going to be detailed in this proposal
 - Use the callout approach such as the one implemented in [#13580](https://github.com/kubernetes/kubernetes/issues/13580)
 - Recompile the scheduler with a new policy
-- Restart the scheduler with a new [scheduler policy config file](../../examples/scheduler-policy-config.json)
+- Restart the scheduler with a new [scheduler policy config file](https://git.k8s.io/examples/staging/scheduler-policy-config.json)
 - Or maybe in future dynamically link a new policy into the running scheduler
 
 ## Challenges in multiple schedulers
