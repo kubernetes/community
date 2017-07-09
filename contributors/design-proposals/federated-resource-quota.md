@@ -1,4 +1,4 @@
-# Federated ResourceQuotaRequirements & Design
+# Federated ResourceQuota Requirements & Design
 @weijinxu, @IrfanUrRehman, @JianhuiZ
 reviewed by  @quinton-hoole, @deepak-vijSummary
 
