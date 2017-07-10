@@ -48,15 +48,15 @@ scaling of the pods per cluster then is controlled by the associated HPA.
 
 # Alternative approaches
 
-## Alternative 1
+## Design Alternative 1
 
 Make the autoscaling resource available and implement support for 
 horizontalpodautoscalers objects at federation. The HPA API resource 
 will need to be exposed at the federation level, which can follow the 
 version similar to one implemented in the latest k8s cluster release.
 
-Once the object is created at federation, the federation controller 
-creates and monitors  a similar object (partitioning the min and max values) 
+Once the HPA object is created at federation, the federation controller
+creates and monitors a similar HPA object (partitioning the min and max values)
 in each of the federated clusters. Based on the metadata in spec of the HPA
 describing the scaleTargetRef, the HPA will be applied on the already existing
 target objects. If the target object is not present in the cluster (either 
@@ -87,9 +87,11 @@ replicaset object as described
 One of the points to note here is that, doing this brings a two point control on 
 number of replicas of the target object, one by the federated target object (rs or 
 deployment) and other by the hpa local to the federated cluster. Solution to which 
-is discussed in the following section.
+is discussed in the following section. Another additional note here is that, the
+preferences would consider use of only minreplicas and maxreplicas in this phase
+of implementation and weights will be discarded for this alternative design.
 
-### Rebalancing (function of target federated objects)
+### Rebalancing of workload replicas and control over the same.
 
 The current implementation of federated replicasets (and deployments) first 
 distributes the replicas into underlying clusters and then monitors the status 
@@ -108,6 +110,33 @@ and deployment controllers) reconcile process, would stop updating and/or
 rebalancing the replicas in and across the underlying clusters. The reconcile 
 of the objects (rs or deployment) would still continue, to handle the scenario 
 of the object missing from any given federated cluster.
+The mechanism to achieve this behaviour shall be as below:
+ - User creates a workload object (for example rs) in federation.
+ - User then creates an HPA object in federation (this step and the previous
+ step can follow either order of creation).
+ - The rs as an object will exist in federation control plane with or without
+ the user preferences and/or cluster selection annotations.
+ - The HPA controller will first evaluate which cluster(s) get the replicas
+ and which don't (if any). This list of clusters will be a subset of the
+ cluster selector already applied on the hpa object.
+ - The HPA controller will apply this list on the federated rs object as the
+ cluster selection annotation overriding the user provided preferences (if any).
+ The control over the placement of workload replicas and the add on preferences
+ will thus lie completely with the HPA objects. This is an important assumption
+ that the user of these federated objects interacting with each other should be
+ aware of; and if the user needs to place replicas in specific clusters, together
+ with workload autoscaling he/she should apply these preferences on the HPA
+ object. Any preferences applied on the workload object (rs or deployment) will
+ be overridden.
+ - The target workload object (for example rs) replicas will be kept unchanged
+ in the cluster which already has the replicas, will be created with one replica
+ if the particular cluster does not have the same and HPA calculation resulted
+ in some replicas for that cluster and deleted from the clusters which has the
+ replicas and the federated HPA calculations result in no replicas for that
+ particular cluster.
+ - The desired replicas per cluster as per the federated HPA dynamic rebalance
+ mechanism, elaborated in the next section, will be set on individual clusters
+ local HPA, which in turn will set the same on the target local object.
 
 ### Dynamic HPA min/max rebalance
 
@@ -138,10 +167,10 @@ _CurrentReplicas == DesiredReplicas == MinReplicas_ and the observed average res
 metric usage (on the HPA) is lesser then a given threshold, to those clusters, 
 where the _DesiredReplicas > MinReplicas_.
 
-However, as stated above in 3 above, the approach of distribution will first be implemented
+However, as stated in 3 above, the approach of distribution will first be implemented
 only for _MaxReplicas_ to establish it utility, before implementing the same for _MinReplicas_.
 
-## Alternative 2
+## Design Alternative 2
 
 Same as the previous one, the API will need to be exposed at federation.
 
@@ -185,23 +214,35 @@ what is probably better than not having the replica at all.
 
 # Other Scenario
 
-All other scenario, for example rolling updates (when user updates the deployment or RS), 
-recreation of the object (when user specifies the strategy as recreate while updating the object), 
-will continue to be handled the way they are handled in an individual k8s cluster.
-
-At federation the respective controllers will monitor/watch the individual objects and update 
-reconcile as per the implementation, except the case of rebalance specified in the section 
-*rebalancing*.
+Other scenario, for example rolling updates (when user updates the deployment or RS),
+recreation of the object (when user specifies the strategy as recreate while updating
+the object), will continue to be handled the way they are handled in an individual k8s
+cluster. Additionally there is a shortcoming in the current implementation of the
+federated deployments rolling update. There is an existing proposal as part of the
+[federated deployment design doc](https://github.com/kubernetes/community/pull/325).
+Given it is implemented, the rolling updates for a federated deployment while a
+federated HPA is active on the same object will also work fine.
 
 # Conclusion
 
-The design alternative 2 has a drawback, that the monitoring and update of hpa objects (when needed) 
-for a particular federated cluster would stop if for whatever reasons network link between the 
-federated cluster and federation control plane is severed. A bigger problem can happen in case of 
-an outage of the federation control plane altogether.
+The design alternative 2 has the following major drawbacks, which are sufficient to
+discard it as a probable implementation option:
+- This option needs the federation control plane controller to collect metrics
+data from each cluster, which is an overhead with increasing gravity of the problem
+with increasing number of federated clusters, in a given federation.
+- The monitoring and update of objects which are targeted by the federated HPA object
+(when needed) for a particular federated cluster would stop if for whatever reasons
+the network link between the federated cluster and federation control plane is severed.
+A bigger problem can happen in case of an outage of the federation control plane
+altogether.
 
-Alternative 1 would be a better choice.
-
+In Design Alternative 1 the autoscaling of replicas will continue, even if a given
+cluster gets disconnected from federation or in case of the federation control plane
+outage. This would happen because the local HPAs with the last know maxreplica and
+minreplicas would exist in the local clusters. Additionally in this alternative there
+is no need of collection and processing of the pod metrices for the target object from
+each individual cluster.
+This document proposes to use ***design alternative 1*** as the preferred implementation.
 
 # Glossary
 
