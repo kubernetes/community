@@ -286,9 +286,10 @@ peer methods in its own ring.
 For every command there should be a `NewCmd<CommandName>` function that creates
 the command and returns a pointer to a `cobra.Command`, which can later be added
 to other parent commands to compose the structure tree. There should also be a
-`<CommandName>Config` struct with a variable to every flag and argument declared
-by the command (and any other variable required for the command to run). This
-makes tests and mocking easier. The struct ideally exposes three methods:
+`<CommandName>Options` struct with a variable to every flag and argument
+declared by the command (and any other variable required for the command to
+run). This makes tests and mocking easier. The struct ideally exposes three
+methods:
 
 * `Complete`: Completes the struct fields with values that may or may not be
 directly provided by the user, for example, by flags pointers, by the `args`
@@ -320,14 +321,14 @@ var (
     kubectl mine second_action --flag`)
 )
 
-// MineConfig contains all the options for running the mine cli command.
-type MineConfig struct {
+// MineOptions contains all the options for running the mine cli command.
+type MineOptions struct {
   mineLatest bool
 }
 
 // NewCmdMine implements the kubectl mine command.
 func NewCmdMine(parent, name string, f *cmdutil.Factory, out io.Writer) *cobra.Command {
-  opts := &MineConfig{}
+  opts := &MineOptions{}
 
   cmd := &cobra.Command{
     Use:     fmt.Sprintf("%s [--latest]", name),
@@ -352,17 +353,17 @@ func NewCmdMine(parent, name string, f *cmdutil.Factory, out io.Writer) *cobra.C
 }
 
 // Complete completes all the required options for mine.
-func (o *MineConfig) Complete(f *cmdutil.Factory, cmd *cobra.Command, args []string, out io.Writer) error {
+func (o *MineOptions) Complete(f *cmdutil.Factory, cmd *cobra.Command, args []string, out io.Writer) error {
   return nil
 }
 
 // Validate validates all the required options for mine.
-func (o MineConfig) Validate() error {
+func (o MineOptions) Validate() error {
   return nil
 }
 
 // RunMine implements all the necessary functionality for mine.
-func (o MineConfig) RunMine() error {
+func (o MineOptions) RunMine() error {
   return nil
 }
 ```
