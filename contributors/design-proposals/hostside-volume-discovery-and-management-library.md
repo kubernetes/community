@@ -13,7 +13,7 @@ deployed on OpenStack.
 3. if you want to deploy Kubernetes on bare metals, right now you can only
 choose SCSI or RBD device (maybe one or two more).
 
-If you show it to users, they would get confused and ask why can not you
+If you show it to users, they would get confused and ask why you can not
 provide Cinder storage for Kubernetes deployed on bare metals. Since some
 storage systems like Cinder, ScaleIO can provide volume resource for bare metals
 directly, how can users use these resources if they deploy their cluster on
@@ -32,7 +32,7 @@ regardless of deployment environment(cloud platforms and bare metals).
 
 ## Goal
 
-To slove the problem, we plan to create a standalone project in Kubernetes
+To solve the problem, we plan to create a standalone project in Kubernetes
 that acts a library providing volume discovery and local management. For
 any in-tree volume plugins which want to provide storage resource for
 bare metals, they can call this library to finish host-side volume discovery
