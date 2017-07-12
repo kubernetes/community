@@ -16,7 +16,7 @@ Covers all things UI related. Efforts are centered around Kubernetes Dashboard: 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing).
 
 ## Leads
-* [Dan Romlein](https://github.com/romlein), Apprenda
+* [Dan Romlein](https://github.com/danielromlein), Apprenda
 * [Piotr Bryk](https://github.com/bryk), Google
 
 ## Contact
