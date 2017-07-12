@@ -13,7 +13,7 @@ The initial Product Security Team will consist of four volunteers subscribed to 
 - Brandon Philips `<brandon.philips@coreos.com>` [4096R/154343260542DF34]
 - Jess Frazelle `<jessfraz@google.com>` [4096R/0x18F3685C0022BFF3]
 - CJ Cullen `<cjcullen@google.com>`
-- Tim St. Clair `<stclair@google.com>` [4096R/0x5E6F2E2DA760AF51]
+- Tim Allclair `<tallclair@google.com>` [4096R/0x5E6F2E2DA760AF51]
 - Jordan Liggitt `<jliggitt@redhat.com>` [4096R/0x39928704103C7229]
 
 **Known issues**
