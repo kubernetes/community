@@ -304,5 +304,4 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
 [hwloc]: https://www.open-mpi.org/projects/hwloc
 [procfs]: http://man7.org/linux/man-pages/man5/proc.5.html
 [qos]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-qos.md
-[topo]:
-http://github.com/intelsdi-x/swan/tree/master/pkg/isolation/topo
+[topo]: http://github.com/intelsdi-x/swan/tree/master/pkg/isolation/topo
