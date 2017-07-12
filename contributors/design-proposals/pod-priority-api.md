@@ -183,12 +183,12 @@ There will be special priority class names reserved for system use only. These
 classes have a value larger than one billion. 
 Priority admission controller ensures that new priority classes will be not
 created with those names. They are used for critical system pods that must not
-be preempted. We set default policies that deny creation of pods with these
-system priorities. Cluster admins can authorize users or service accounts to 
-create pods with these priorities. When non-authorized users set
-PriorityClassName to one of these priority classes in their pod spec, their pod
-creation request will be rejected. For pods created by controllers, the service
-account must be authorized by cluster admins.
+be preempted. We set default policies that deny creation of pods with
+PriorityClassNames corresponding to these priorities. Cluster admins can 
+authorize users or service accounts to create pods with these priorities. When
+non-authorized users set PriorityClassName to one of these priority classes in
+their pod spec, their pod creation request will be rejected. For pods created by
+controllers, the service account must be authorized by cluster admins.
 
 ### Modifying priority classes 
 
