@@ -301,13 +301,8 @@ rules:
 The policy is checked immediately after authentication in the request handling, and determines how
 the `audit.Event` is formed.
 
-In an [aggregated](aggregated-api-servers.md) deployment, the `kube-aggregator` is responsible for
-checking the policy. The kube-aggregator writes the audit Level from the policy into a request
-header that is passed on to the end-user apiserver, e.g.
-
-```
-Audit-Level: Request
-```
+In an [aggregated](aggregated-api-servers.md) deployment, each apiserver must be independently
+configured for audit logging (including the aggregator).
 
 ### Filters
 
@@ -365,12 +360,6 @@ previous sender's IP address to the `X-Forwarded-For` header IP chain. If we sim
 original sender's IP, an attacker could send there request with a bogus IP at the front of the
 `X-Forwarded-For` chain. To mitigate this, we will log the entire IP chain. This has the additional
 benefit of supporting external proxies.
-
-**Audit Policy.** The audit policy is intended to be set by the kube-aggregator and passed along in
-the `Audit-Level` header. However, we don't want an attacker to be able to simply set `Audit-Level:
-None` on their request. To prevent this, *if an apiserver has an audit policy configured, that
-policy overrides the header*. In practice, this means the kube-aggregator can be configured with an
-audit policy, and it will simply overwrite any audit level previously attached to the request.
 
 ## Sensible (not necessarily sequential) Milestones of Implementation
 
