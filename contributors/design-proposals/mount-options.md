@@ -76,8 +76,9 @@ The mount option specified in Storage Class will be used while provisioning pers
 and added as a field to PVs.
 
 If admin has configured mount option for a storage type that does not support mount options,
-then `mountOptions` parameter will be simply ignored for such volume types.  Also, if configured
-mount option is invalid then corresponding mount time failure error will be added to pod object.
+then a "provisioning failed" event will be added to PVC and PVC will stay in pending state.
+
+Also, if configured mount option is invalid then corresponding mount time failure error will be added to pod object.
 
 
 ## Preventing users from specifying mount options in inline volume specs of Pod
