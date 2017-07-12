@@ -612,7 +612,7 @@ sigs:
       troubleshoot them, as well as manage the cluster itself.
     leads:
     - name: Dan Romlein
-      github: romlein
+      github: danielromlein
       company: Apprenda
     - name: Piotr Bryk
       github: bryk
