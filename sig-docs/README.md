@@ -16,7 +16,6 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit).
 
 ## Leads
-* [Philip Wittrock](https://github.com/pwittrock), Google
 * [Devin Donnelly](https://github.com/devin-donnelly), Google
 * [Jared Bhatti](https://github.com/jaredbhatti), Google
 

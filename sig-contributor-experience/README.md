@@ -17,7 +17,6 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 
 ## Leads
 * [Garrett Rodrigues](https://github.com/grodrigues3), Google
-* [Phillip Witrock](https://github.com/pwittrock), Google
 * [Elsie Phillips](https://github.com/Phillels), CoreOS
 
 ## Contact
