@@ -87,43 +87,39 @@ system yields two cores on the same socket.
    contains code to build a ThreadSet from the output of `lscpu -p`.
 1. Execute a mature external topology program like [`mpi-hwloc`][hwloc] --
    potentially adding support for the hwloc file format to the Kubelet.
+1. Re-use existing discovery functionality from cAdvisor. **(preferred initial
+   solution)**
 
 #### CPU Manager interfaces (sketch)
 
 ```go
-type CPUManagerPolicy interface {
-  Init(driver CPUDriver, topo CPUTopo)
-  Add(c v1.Container, qos QoS) error
-  Remove(c v1.Container, qos QoS) error
+type State interface {
+  GetCPUSet(containerID string) (cpuset.CPUSet, bool)
+  GetDefaultCPUSet() cpuset.CPUSet
+  GetCPUSetOrDefault(containerID string) cpuset.CPUSet
+  SetCPUSet(containerID string, cpuset CPUSet)
+  SetDefaultCPUSet(cpuset CPUSet)
+  Delete(containerID string)
 }
 
-type CPUDriver {
-  GetPods() []v1.Pod
-  GetCPUs(containerID string) CPUList
-  SetCPUs(containerID string, clist CPUList) error
-  // Future: RDT L3 and L2 cache masks, etc.
+type Manager interface {
+  Start()
+  Policy() Policy
+  RegisterContainer(p *Pod, c *Container, containerID string) error
+  UnregisterContainer(containerID string) error
+  State() state.Reader
 }
 
-type CPUTopo TBD
+type Policy interface {
+  Name() string
+  Start(s state.State)
+  RegisterContainer(s State, pod *Pod, container *Container, containerID string) error
+  UnregisterContainer(s State, containerID string) error
+}
 
-type CPUList string
+type CPUSet map[int]struct{} // set operations and parsing/formatting helpers
 
-func (c CPUList) Size() int {}
-
-// Returns a CPU list with size n and the remainder or
-// an error if the request cannot be satisfied, taking
-// into account the supplied topology.
-//
-// @post: c = set_union(taken, remaining),
-//        empty_set = set_intersection(taken, remainder)
-func (c CPUList) Take(n int, topo CPUTopo) (taken CPUList,
-                                            remainder CPUList,
-                                            err error) {}
-
-// Returns a CPU list that includes all CPUs in c and d and no others.
-//
-// @post: result = set_union(c, d)
-func (c CPUList) Add(d CPUList) (result CPUList) {}
+type CPUTopology TBD
 ```
 
 Kubernetes will ship with three CPU manager policies. Only one policy is
@@ -154,69 +150,36 @@ becomes terminal.)
 ##### Implementation sketch
 
 ```go
-// Implements CPUManagerPolicy
-type staticManager struct {
-  driver CPUDriver
-  topo   CPUTopo
-  // CPU list assigned to non-exclusive containers.
-  shared CPUList
+func (p *staticPolicy) Start(s State) {
+  // Iteration starts at index `1` here because CPU `0` is reserved
+  // for infrastructure processes.
+  // TODO(CD): Improve this to align with kube/system reserved resources.
+  shared := NewCPUSet()
+  for cpuid := 1; cpuid < p.topology.NumCPUs; cpuid++ {
+    shared.Add(cpuid)
+  }
+  s.SetDefaultCPUSet(shared)
 }
 
-func (m *staticManager) Init(driver CPUDriver, topo CPUTopo) {
-  m.driver = driver
-  m.topo = topo
-}
-
-func (m *staticManager) Add(c v1.Container, qos QoS) error {
-  if p.QoS == GUARANTEED && numExclusive(c) > 0 {
-    excl, err := allocate(numExclusive(c))
+func (p *staticPolicy) RegisterContainer(s State, pod *Pod, container *Container, containerID string) error {
+  if numCPUs := numGuaranteedCPUs(pod, container); numCPUs != 0 {
+    // container should get some exclusively allocated CPUs
+    cpuset, err := p.allocateCPUs(s, numCPUs)
     if err != nil {
       return err
     }
-    m.driver.SetCPUs(c.ID, excl)
-    return nil
+    s.SetCPUSet(containerID, cpuset)
   }
-
-  // Default case: assign the shared set.
-  m.driver.SetCPUs(c.ID, m.shared)
+  // container belongs in the shared pool (nothing to do; use default cpuset)
   return nil
 }
 
-func (m *staticManager) Remove(c v1.Container, qos QoS) error {
-  m.free(m.driver.GetCPUs(c.ID))
-}
-
-func (m *staticManager) allocate(n int) (CPUList, err) {
-  excl, remaining, err := m.shared.Take(n, m.topo)
-  if err != nil {
-    return "", err
+func (p *staticPolicy) UnregisterContainer(s State, containerID string) error {
+  if toRelease, ok := s.GetCPUSet(containerID); ok {
+    s.Delete(containerID)
+    p.releaseCPUs(s, toRelease)
   }
-  m.setShared(remaining)
-  return excl, nil
-}
-
-func (m *staticManager) free(c CPUList) {
-  m.setShared(m.shared.add(c))
-}
-
-func (m *staticManager) setShared(c CPUList) {
-  prev := m.shared
-  m.shared = c
-  for _, pod := range m.driver.GetPods() {
-    for _, container := range p.Containers {
-      if driver.GetCPUs(container.ID) == prev {
-        driver.SetCPUs(m.shared)
-      }
-    }
-  }
-}
-
-// @pre: container_qos = guaranteed
-func numExclusive(c v1.Container) int {
-  if c.resources.requests["cpu"] % 1000 == 0 {
-    return c.resources.requests["cpu"] / 1000
-  }
-  return 0
+  return nil
 }
 ```
 
@@ -238,19 +201,16 @@ _TODO: Describe the policy._
 ##### Implementation sketch
 
 ```go
-// Implements CPUManagerPolicy.
-type dynamicManager struct {}
-
-func (m *dynamicManager) Init(driver CPUDriver, topo CPUTopo) {
-  // TODO
+func (p *dynamicPolicy) Start(s State) {
+	// TODO
 }
 
-func (m *dynamicManager) Add(c v1.Container, qos QoS) error {
-  // TODO
+func (p *dynamicPolicy) RegisterContainer(s State, pod *Pod, container *Container, containerID string) error {
+	// TODO
 }
 
-func (m *dynamicManager) Remove(c v1.Container, qos QoS) error {
-  // TODO
+func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
+	// TODO
 }
 ```
 
