@@ -8,6 +8,7 @@ To understand how this file is generated, see generator/README.md.
 -->
 # Instrumentation SIG
 
+Covers best practices for cluster observability through metrics, logging, and events across all Kubernetes components and development of relevant components such as Heapster and kube-state-metrics. Coordinates metric requirements of different SIGs for other components through finding common APIs.
 
 ## Meetings
 * [Thursdays at 16:30 UTC](https://zoom.us/j/5342565819) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
