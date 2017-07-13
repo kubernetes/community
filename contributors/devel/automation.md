@@ -14,9 +14,9 @@ In an effort to
    * maintain e2e stability
    * load test github's label feature
 
-We have added an automated [submit-queue](https://github.com/kubernetes/contrib/blob/master/mungegithub/mungers/submit-queue.go)
+We have added an automated [submit-queue](https://github.com/kubernetes/test-infra/tree/master/mungegithub/submit-queue)
 to the
-[github "munger"](https://github.com/kubernetes/contrib/tree/master/mungegithub)
+[github "munger"](https://github.com/kubernetes/test-infra/tree/master/mungegithub)
 for kubernetes.
 
 The submit-queue does the following:
