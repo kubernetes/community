@@ -493,8 +493,8 @@ sigs:
       For more details about our objectives please review our
       [Scaling And Performance Goals](https://github.com/kubernetes/community/blob/master/sig-scalability/goals.md)
     leads:
-    - name: Daniel Smith
-      github: lavalamp
+    - name: Wojciech Tyczynski
+      github: wojtek-t
       company: Google
     - name: Bob Wise
       github: countspongebob

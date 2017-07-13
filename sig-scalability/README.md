@@ -18,7 +18,7 @@ For more details about our objectives please review our [Scaling And Performance
 Meeting notes and Agenda can be found [here](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
 
 ## Leads
-* [Daniel Smith](https://github.com/lavalamp), Google
+* [Wojciech Tyczynski](https://github.com/wojtek-t), Google
 * [Bob Wise](https://github.com/countspongebob), Samsung SDS
 * [Joe Beda](https://github.com/jbeda), Heptio
 
