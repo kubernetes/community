@@ -4,12 +4,14 @@ Federation runs two classes of tests: CI and Presubmits.
 
 ## CI
 
-* These tests run on the HEADs of master and release branches.
+* These tests run on the HEADs of master and release branches (starting
+  from Kubernetes v1.6).
 * As a result, they run on code that's already merged.
 * As the name suggests, they run continuously. Currently, they are
-  configured to run at least once every 30 minutes.
-* Federation CI tests still run on Jenkins and this mode of testing is
-  now deprecated.
+  configured to run
+  [at least once every 30 minutes](https://github.com/kubernetes/test-infra/blob/22c38cfb64137086373e1b89d5e7d98766560747/prow/config.yaml#L3686).
+* Federation CI tests run as
+  [periodic jobs on prow](https://github.com/kubernetes/test-infra/blob/22c38cfb64137086373e1b89d5e7d98766560747/prow/config.yaml#L3686).
 * CI jobs always run sequentially. In other words, no single CI job
   can have two instances of the job running at the same time.
 
@@ -41,8 +43,10 @@ corresponding to the CI job you want to manually start.
 
 #### Quota cleanup
 
-Please ping someone who has access to the GCP project and ask them to
-look at the quotas and clean up the leaked resources.
+Please ping someone who has access to the GCP project. Ask them to
+look at the quotas and delete the leaked resources by clicking the
+delete button corresponding to those leaked resources on Google Cloud
+Console.
 
 
 ## Presubmit
@@ -59,15 +63,15 @@ look at the quotas and clean up the leaked resources.
     configuration later. Since recycling federated clusters is an
     expensive operation, we do not want to run this often. Hence, this
     job is configured to run once every 24 hours, around midnight
-    pacific time.
+    Pacific time.
   * Test job: This is the job that runs federation presubmit tests on
     every PR in the core repository, i.e.
     [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes).
     These jobs can run in parallel on the PRs in the repository.
 
-### Two-job setup
+### Two-jobs setup
 
-The deploy job runs once 24-hours roughly at around midnight pacific
+The deploy job runs once every 24 hours at around midnight Pacific
 time. It is configured to turn up and tear down 3 federated clusters.
 It starts out by downloading the latest Kubernetes release built from
 [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)
@@ -80,12 +84,12 @@ bucket will be overwritten.
 
 The test job on the other hand starts by copying the latest kubeconfig
 from the pre-configured GCS bucket. It uses this kubeconfig to deploy
-a new federation control plane in the on one of the clusters in the
-kubeconfig and joins all the clusters, including the host cluster
-where federation control plane is deployed, as members to the newly
-created federation control plane. It then runs the federation
-presubmit tests on this control plane and tears down the control plane
-in the end.
+a new federation control plane on one of the clusters in the
+kubeconfig. It then joins all the clusters in the kubeconfig, including
+the host cluster where federation control plane is deployed, as members
+to the newly created federation control plane. The test job then runs
+the federation presubmit tests on this control plane and tears down the
+control plane in the end.
 
 Since federated clusters are recycled only once every 24 hours, all
 presubmit runs in that period share the federated clusters. And since
@@ -93,7 +97,7 @@ there could be multiple presubmit tests running in parallel, each
 instance of the test gets its own namespace where it deploys the
 federation control plane. These federation control planes deployed in
 separate namespaces are independent of each other and do not interfere
-with other federation control planes in anyway.
+with other federation control planes in any way.
 
 ### Configuration
 
@@ -113,8 +117,10 @@ The configuration of the deploy job is stored in:
 
 #### Test job
 
-The test job is configured in prow, but it runs in Jenkins mode. The
-configuration steps are described in https://github.com/kubernetes/test-infra/blob/0c56d2c9d32307c0a0f8fece85ef6919389e77fd/README.md#create-a-new-job
+The test job is
+[configured in prow](https://github.com/kubernetes/test-infra/blob/35ceb37e999bb0589218708262634951b79dfe05/prow/config.yaml#L236),
+but it runs in Jenkins mode. The configuration steps are described in
+https://github.com/kubernetes/test-infra/blob/0c56d2c9d32307c0a0f8fece85ef6919389e77fd/README.md#create-a-new-job
 
 The configuration of the test job is stored in:
 
@@ -136,9 +142,9 @@ individual tests that run against PRs in
 [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes).
 
 * The metrics that we track are documented in https://github.com/kubernetes/test-infra/blob/0c56d2c9d32307c0a0f8fece85ef6919389e77fd/metrics/README.md#metrics.
-* Job-level metrics are available in - http://storage.googleapis.com/k8s-metrics/job-flakes-latest.json.
-* As of this writing, federation presubmits have a success rate of
-  93.4%
+* Job-level metrics are available in - [http://storage.googleapis.com/k8s-metrics/job-flakes-latest.json]().
+* As of this writing, federation presubmits have a [success rate of
+  93.4%](http://storage.googleapis.com/k8s-metrics/job-flakes-latest.json).
 
 ### Playbook
 
@@ -148,12 +154,14 @@ Please ping someone who has access to the Jenkins UI/dashboard and ask
 them to login and click the "Build Now" link on the Jenkins page
 corresponding to the CI job you want to manually start.
 
-#### Triggering a new deploy job run
+#### Triggering a new test run
 
-Use the @k8s-bot on the PR to retrigger the test. The exact bot
-incantation is: `@k8s-bot pull-kubernetes-federation-e2e-gce test this`
+Use the `/test` command on the PR to retrigger the test. The exact
+incantation is: `/test pull-kubernetes-federation-e2e-gce`
 
 #### Quota cleanup
 
-Please ping someone who has access to the GCP project and ask them to
-look at the quotas and clean up the leaked resources.
+Please ping someone who has access to `k8s-jkns-pr-bldr-e2e-gce-fdrtn`
+GCP project. Ask them to look at the quotas and delete the leaked
+resources by clicking the delete button corresponding to those leaked
+resources on Google Cloud Console.
