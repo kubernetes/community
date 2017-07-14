@@ -262,9 +262,6 @@ sigs:
     - name: Garrett Rodrigues
       github: grodrigues3
       company: Google
-    - name: Phillip Witrock
-      github: pwittrock
-      company: Google
     - name: Elsie Phillips
       github: Phillels
       company: CoreOS
@@ -282,9 +279,6 @@ sigs:
     mission_statement: >
       Covers documentation, doc processes, and doc publishing for Kubernetes.
     leads:
-    - name: Philip Wittrock
-      github: pwittrock
-      company: Google
     - name: Devin Donnelly
       github: devin-donnelly
       company: Google
