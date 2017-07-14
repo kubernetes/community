@@ -645,7 +645,7 @@ workinggroups:
     dir: wg-resource-management
     mission_statement: >
       Designing and shepherding cross-cutting features around compute resource isolation and utilization.
-    organizers:
+    leads:
     - name: Vishnu Kannan
       github: vishh
       company: Google
