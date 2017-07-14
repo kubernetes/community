@@ -238,13 +238,13 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
     case the strategy outlined above where allocations are taken
     directly from the shared pool is too simplistic. We could allow an
     explicit pool of cores that may be exclusively allocated and default
-    this to the shared pool (leaving at least one core fro the shared
+    this to the shared pool (leaving at least one core for the shared
     cpuset to be used for OS, infra and non-exclusive containers.
 
 ## Practical challenges
 
 1. Synchronizing CPU Manager state with the container runtime via the
-   CRI. Runc/libcontainer allows container cgroup settings to be updtaed
+   CRI. Runc/libcontainer allows container cgroup settings to be updated
    after creation, but neither the Kubelet docker shim nor the CRI
    implement a similar interface.
     1. Mitigation: [PR 46105](https://github.com/kubernetes/kubernetes/pull/46105)
@@ -287,7 +287,9 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
 
 ## Appendix A: cpuset pitfalls
 
-1. `cpuset.sched_relax_domain_level`
+1. [`cpuset.sched_relax_domain_level`][cpuset-files]. "controls the width of
+   the range of CPUs over  which  the kernel scheduler performs immediate
+   rebalancing of runnable tasks across CPUs."
 1. Child cpusets must be subsets of their parents. If B is a child of A,
    then B must be a subset of A. Attempting to shrink A such that B
    would contain allowed CPUs not in A is not allowed (the write will
@@ -300,6 +302,7 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
 1. Tricky semantics when cpusets are combined with CFS shares and quota.
 
 [cat]: http://www.intel.com/content/www/us/en/communications/cache-monitoring-cache-allocation-technologies.html
+[cpuset-files]: http://man7.org/linux/man-pages/man7/cpuset.7.html#FILES
 [ht]: http://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html
 [hwloc]: https://www.open-mpi.org/projects/hwloc
 [procfs]: http://man7.org/linux/man-pages/man5/proc.5.html
