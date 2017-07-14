@@ -145,7 +145,13 @@ go run hack/e2e.go -- -v --down
   This will not do anything besides allow you to verify that the go code compiles.
 
 * If you want to run your e2e testing framework without re-provisioning the e2e setup,
-  you can do so via `make WHAT=test/e2e/e2e.test` and then re-running the ginkgo tests.
+  you can do so via `make WHAT=test/e2e/e2e.test`
+  
+* You can then create a symlink pointing `e2e.test` to `_output/local/bin/linux/amd64/e2e.test`, 
+  and re-run the ginkgo tests by providing relevant flags. For example:
+```sh
+e2e.test --host="127.0.0.1:8080" --provider="local" --repo-root="path/to/main/repo" --kubeconfig="path/to/.kube/config" --ginkgo.focus="regex"
+```
 
 ## Advanced testing
 
