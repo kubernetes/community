@@ -285,7 +285,7 @@ was added.
   be set, it is acceptable to add a new option to the union if the [appropriate
   conventions](api-conventions.md#objects) were followed in the original object.
   Removing an option requires following the [deprecation process](https://kubernetes.io/docs/deprecation-policy/).
-  
+
 * Changing any validation rules always has the potential of breaking some client, since it changes the
   assumptions about part of the API, similar to adding new enum values. Validation rules on spec fields can
   neither be relaxed nor strengthened. Strengthening cannot be permitted because any requests that previously
@@ -293,7 +293,7 @@ was added.
   of the API resource. Status fields whose writers are under our control (e.g., written by non-pluggable
   controllers), may potentially tighten validation, since that would cause a subset of previously valid
   values to be observable by clients.
-  
+
 * Do not add a new API version of an existing resource and make it the preferred version in the same
   release, and do not make it the storage version. The latter is necessary so that a rollback of the
   apiserver doesn't render resources in etcd undecodable after rollback.
@@ -347,7 +347,7 @@ before starting "all the rest".
 
 ### Edit types.go
 
-The struct definitions for each API are in `pkg/api/<version>/types.go`. Edit
+The struct definitions for each API are in `staging/src/k8s.io/api/core/<version>/types.go`. Edit
 those files to reflect the change you want to make. Note that all types and
 non-inline fields in versioned APIs must be preceded by descriptive comments -
 these are used to generate documentation. Comments for types should not contain
@@ -462,7 +462,7 @@ generator to create it from scratch.
 Unsurprisingly, adding manually written conversion also requires you to add
 tests to `pkg/api/<version>/conversion_test.go`.
 
-## Generate Code 
+## Generate Code
 
 When any `types.go` change is made, the generated code must be updated
 by running the generators. There are many small generators that
@@ -538,7 +538,7 @@ of api objects - this is to improve the overall system performance.
 
 The auto-generated code resides with each versioned API:
 
-   - `pkg/api/<version>/types.generated.go`
+   - `staging/src/k8s.io/api/core/<version>/types.generated.go`
    - `pkg/apis/extensions/<version>/types.generated.go`
 
 To regenerate them run:
