@@ -4,7 +4,7 @@ A proposal to allow huge page use by applications running in a Kubernetes
 cluster.
 
 A pod should be able to have a number of huge pages for use by the
-application.  The scheduler should be able have visibility into the node
+application.  The scheduler should be able to have visibility into the node
 capacity of huge pages, for each huge page size, and make a decision about if
 the pod can be scheduled on that node.  The kubelet should report the number of
 available huge pages and set up the environment such that the pod can
@@ -12,8 +12,8 @@ successfully use the number of huge pages requested in the pod definition.
 
 ## Motivation
 
-Huge page support is needed for many large memory HPC workloads to achieve
-acceptable performance levels.
+Huge page support is needed for many large memory HPC workloads or DPDK based NFV
+solutions to achieve acceptable performance levels.
 
 This proposal is part of a larger effort to better support High Performance
 Computing (HPC) workloads in Kubernetes.
@@ -30,7 +30,12 @@ memory regions it desires to be backed by huge pages.  Note that THP might lead
 to performance degradation on nodes with high memory utilization or
 fragmentation due to the defragmenting efforts of THP, which can lock memory
 pages.  For this reason, some applications may be designed to (or recommend) use
-pre-allocated huge pages instead of THP.
+pre-allocated huge pages instead of THP. 
+
+DPDK-based applications are going to request huge pages using `mmap()` system
+call and it is required that a mount point of type `hugetlbfs` is present 
+in the application's mount namespace. Proposed design includes huge page volume 
+plugin that ensures this mount point exists.
 
 The proposal is also limited to x86_64 support where two huge page sizes are
 supported: 2MB and 1GB.  The design, however, should accommodate additional huge
@@ -73,9 +78,11 @@ The class of applications that benefit from huge pages typically have
 Example applications include:
 - Java applications can back the heap with huge pages using the `-XX:+UseLargePages` option.
 - In-memory databases
+- DPDK based applications
 
 Applications can generally use huge pages by calling
 - `mmap()` with `MAP_ANONYMOUS | MAP_HUGETLB` and use it as anonymous memory
+- `mmap()` a file backed by `hugetlbfs`
 - `shmget()` with `SHM_HUGETLB` and use it as a shared memory segment (see Known Issues).
 
 ### Pod Specification
@@ -112,6 +119,41 @@ can do a nodeSelector on this label to land on a system with a particular huge
 page size.  This is similiar to how the `beta.kubernetes.io/arch` label
 operates.
 
+### Huge page volume plugin
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example
+spec:
+  containers:
+...
+    volumeMounts:
+    - mountPath: /hugepages
+      name: hugepage
+  volumes:
+  - name: hugepage
+    hugePages:
+      pageSize: "2M"
+      size: "200M"
+      minSize: “2M” 
+```
+
+User can specify where to mount `hugetlbfs` filesystem
+inside specified container in the Pod. Volume options correspond to 
+`hugetlbfs ` mount options:
+- pageSize - if the platform supports multiple huge
+page sizes, the pagesize option can be used to specify the huge page size and
+associated pool. If pagesize is not specified the platform's default huge page 
+size and associated pool will be used.
+- size - sets the maximum value of memory (huge pages) allowed for that filesystem.
+Max size is rounded down to HPAGE_SIZE boundary. 
+- minSize - he min_size option sets the minimum value of memory (huge pages) 
+allowed for the filesystem. At mount time, the number of huge pages specified 
+by min_size are reserved for use by the filesystem.
+
+
 ## Limits and Quota
 
 LimitRange should be able to define minimum and maximum constraints for huge
@@ -125,7 +167,41 @@ pages, and Quota should be able to count them.
 
 Get design approval
 
-### Phase 1: Add huge page support
+### Phase 1: Huge page volume plugin
+
+**Target 1.8+**
+
+Implement huge page volume plugin. Accounting and limiting huge pages before 
+`Phase 2` can be done via OIR(opaque integer resources). 
+
+pkg/api/types.go ( and v1/types.go)
+
+```
+type VolumeSource struct { 
+...
+    // HugePages represensts a hugepage resource.                      
+    // +optional
+    HugePages *HugePagesVolumeSource `json:"hugePages,omitempty" protobuf:"bytes,28,opt,name=hugePages"` 
+}
+
+// HugePagesSource represents Linux HugeTlbPage https://www.kernel.org/doc/Documentation/vm/hugetlbpage.txt                                                                                    
+type HugePagesVolumeSource struct {
+    // Defaults to  platform's default huge page size
+    // +optional
+    PageSize string `json:"pageSize,omitempty" protobuf:"bytes,1,opt,name=pageSize"`
+    // The MaxSize option sets the maximum value of memory (huge pages).
+    // The MaxSize option is specified as resource.Quantity
+    MaxSize string `json:"size,omitempty" protobuf:"bytes,2,opt,name=size"`
+    // The MinSize option sets the minimum
+    // value of memory (huge pages) allowed for the filesystem and reserves them.
+    // The size option is specified as resource.Quantity
+    // +optional
+    MinSize string `json:"minSize,omitempty" protobuf:"bytes,3,opt,name=minSize"`
+}
+
+```
+
+### Phase 2: Add huge page support
 
 **Target 1.5+**
 
@@ -172,7 +248,7 @@ The scheduler will need to ensure any huge page request defined in the pod spec 
 cAdvisor will need to be modified to return the number of available huge pages.
 This is already supported in [runc/libcontainer](../../vendor/github.com/opencontainers/runc/libcontainer/cgroups/utils.go)
 
-### Phase 2: Expose huge pages in CRI
+### Phase 3: Expose huge pages in CRI
 
 *WIP*
 
