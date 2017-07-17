@@ -68,8 +68,7 @@ customise the number of pods or other parameters of the test (remember to rerun
 
 ## Profiling
 
-Kubelet installs the [go pprof handlers]
-(https://golang.org/pkg/net/http/pprof/), which can be queried for CPU profiles:
+Kubelet installs the [go pprof handlers](https://golang.org/pkg/net/http/pprof/), which can be queried for CPU profiles:
 
 ```console
 $ kubectl proxy &
