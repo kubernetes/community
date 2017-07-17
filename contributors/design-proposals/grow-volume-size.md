@@ -15,11 +15,13 @@ Enable users to increase size of PVs that their pods are using. The user will up
 * As a user I am running Mysql on a 100GB volume - but I am running out of space, I should be able to increase size of volume mysql is using without losing all my data. (*online and with data*)
 * As a user I created a PVC requesting 2GB space. I am yet to start a pod with this PVC but I realize that I probably need more space. Without having to create a new PVC, I should be able to request more size with same PVC. (*offline and no data on disk*)
 * As a user I was running a rails application with 5GB of assets PVC. I have taken my application offline for maintenance but I would like to grow asset PVC to 10GB in size. (*offline but with data*)
+* As a user I am running an application on glusterfs. I should be able to resize the gluster volume without losing data or mount point. (*online and with data and without taking pod offline*)
+* In the logging project we run on dedicated clusters, we start out with 187Gi PVs for each of the elastic search pods. However, the amount of logs being produced can vary greatly from one cluster to another and its not uncommon that these volumes fill and we need to grow them.
 
 ## Volume Plugin Matrix
 
 
-| Volume Plugin   | Supports Resize   | Requires File system Resize | Supported in 1.7 Release |
+| Volume Plugin   | Supports Resize   | Requires File system Resize | Supported in 1.8 Release |
 | ----------------| :---------------: | :--------------------------:| :----------------------: |
 | EBS             | Yes               | Yes                         | Yes                      |
 | GCE PD          | Yes               | Yes                         | Yes                      |
@@ -36,34 +38,97 @@ Enable users to increase size of PVs that their pods are using. The user will up
 
 ## Implementation Design
 
-For volume type that supports growing the PV size, this will be a two step operation:
+For volume type that requires both file system expansion and a volume plugin based modification, growing persistent volumes will be two
+step process.
 
-* A controller in master-controller will listen for PVC events and perform corresponding cloudprovider operation. If successful - controller will store new device size in PV. Some cloudproviders (such as cinder) - do not allow resizing of attached volumes. In such cases - it is upto volume plugin maintainer to decide appropriate behaviour. Volume Plugin maintainer can choose to ignore resize request if disk is attached to a pod (and add appropriate error events to PVC object).  Resize request will keep failing until user corrects the error. User can take necessary action in such cases (such as scale down the pod) which will allow resize to proceed normally.
 
-  In case where volume type requires no file system resize, both PV & PVC objects will be updated accordingly and `status.capacity` of both objects will reflect new size.
-  For volume plugins that require file system resize - an additional annotation called `volume.alpha.kubernetes.io/fs-resize-pending` will be added to PV to communicate
-  to the Kubelet that File system must be resized when a new pod is started using the PV.
+For volume types that only require volume plugin based api call, this will be one step process.
 
+### Prerequisite
+
+* `pvc.spec.resources.requests.storage` field of pvc object will become mutable after this change.
+* #sig-api-machinery has agreed to allow pvc's status update from kubelet as long as pvc and node relationship
+  can be validated by node authorizer.
+* This feature will be protected by an alpha feature gate.
+
+### Admission Control and Validations
+
+* Resource quota code has to be updated to take into account PVC expand feature.
 * In case volume plugin doesn’t support resize feature. The resize API request will be rejected and PVC object will not be saved. This check will be performed via an admission controller plugin.
-
 * In case requested size is smaller than current size of PVC. A validation will be used to reject the API request. (This could be moved to admission controller plugin too.)
 
-* There will be additional checks in controller that grows PV size - to ensure that we do not make cloudprovider API calls that can reduce size of PV.
 
-* To consider cases of missed PVC update events, an additional loop will reconcile bound PVCs with PVs.
+### Controller Manager resize
 
-* Resource Quota code in admission controller has to be updated to consider PVC updates.
+A new controller called `volume_expand_controller` will listen for pvc size expansion requests and take action as needed. The steps performed in this
+new controller will be:
 
-* The resize of file system will be performed on kubelet. If there is a running pod - no operation will be performed. Only when a new pod is started using same PVC - then kubelet will match device size and size of pv and attempt a resize of file system.  resizing filesystem will be a volume plugin function. It is upto volume plugin maintainer to correctly implement this. In following cases no resize will be necessary and hence volume plugin can return success without actually doing anything.
+* Watch for pvc update requests and add pvc to controller's desired state of world if a increase in volume size was requested.
+* A reconciler will read desired state of world and perform corresponding volume resize operation. If there is a resize operation in progress
+  for same volume then resize request will be pending and retried once previous resize request has completed.
+* Controller resize in effect will be level based rather than edge based. If there are more than one pending resize request for same PVC then
+  new resize requests for same PVC will replace older pending request.
+* Resize will be performed via volume plugin interface, executed inside a goroutine spawned by `operation_exectutor`.
+* A new plugin interface called `volume.Exander` will be added to volume plugin interface. The controller call to expand the PVC will look like:
 
-  * If disk being attached to the pod is unformatted. In which case since kubelet formats the disk, no resize is necessary.
-  * If PVC being attached to pod is of volume type that requires no file system level resize. Such as glusterfs.
+```go
+func (og *operationGenerator) GenerateExpandVolumeFunc(
+    pvcWithResizeRequest *expandcache.PvcWithResizeRequest,
+    dsow expandcache.DesiredStateOfWorld) (func() error, error) {
 
-  Once file system resize is successful - kubelet will update `pv.spec.status.capacity` and `pvc.spec.status.capacity`field to reflect updated size. Kubelet will also
-  update `storageCapacityCondition` and remove the `volume.alpha.kubernetes.io/fs-resize-pending` annotation.
+    volumePlugin, err := og.volumePluginMgr.FindExpandablePluginBySpec(pvcWithResizeRequest.VolumeSpec)
 
-* File System resize will not be performed on kubelet where volume being attached is ReadOnly.
-* Once disk has been provisioned with new size, it will be mounted and used in a pod as usual.
+    if err != nil {
+        return nil, fmt.Errorf("Error finding plugin for expanding volume: %q with error %v", pvcWithResizeRequest.UniquePvcKey(), err)
+    }
+
+    expanderPlugin, err := volumePlugin.NewExpander()
+
+    if err != nil {
+        return nil, fmt.Errorf("Error creating expander plugin for volume %q with error %v", pvcWithResizeRequest.UniquePvcKey(), err)
+    }
+
+    expandFunc := func() error {
+        expandErr := expanderPlugin.ExpandVolumeDevice(pvcWithResizeRequest.VolumeSpec, pvcWithResizeRequest.ExpectedSize, pvcWithResizeRequest.CurrentSize)
+
+        if expandErr != nil {
+            glog.Errorf("Error expanding volume through cloudprovider : %v", expandErr)
+            return expandErr
+        }
+        dsow.MarkAsResized(pvcWithResizeRequest)
+
+        return nil
+    }
+    return expandFunc, nil
+}
+```
+
+* Once volume expand is successful, the volume will be marked as expanded and new size will be updated in `pv.spec.capacity`. Any errors will be
+reported as *events* on PVC object.
+* Depending on volume type next steps would be:
+
+    * If volume is of type that does not require file system resize, then `pvc.status.capacity` will be immediately updated to reflect new size. This would conclude the volume expand operation.
+    * If volume if of type that requires file system resize then a file system resize will be performed on kubelet. Read below for steps that will be performed for file system resize.
+
+* If volume plugin is of type that can not do resizing of attached volumes (such as `Cinder`) then `ExpandVolumeDevice` can return error by checking for
+  volume status with its own API (such as by making Openstack Cinder API call in this case). Controller will keep trying to resize the volume until it is
+  successful.
+
+* To consider cases of missed PVC update events, an additional loop will reconcile bound PVCs with PVs. This additional loop will loop through all PVCs
+  and match `pvc.spec.capactiy` with `pv.spec.capacity` and add PVC in `volume_expand_controller`'s desired state of world if `pv.spec.capacity` is less
+  than `pvc.spec.capacity`.
+
+* There will be additional checks in controller that grows PV size - to ensure that we do not make volume plugin API calls that can reduce size of PV.
+
+### File system resize on kublet
+
+* When calling `MountDevice` or `Setup` call of volume plugin, volume manager will in addition compare `pv.spec.capacity` and `pvc.status.capacity` and if `pv.spec.capacity` is greater
+  than `pvc.status.spec.capacity` then volume manager will additionally resize the file system of volume.
+* The call to resize file system will be performed inside `operation_generator.GenerateMountVolumeFunc`.  `VolumeToMount` struct will be enhanced to store PVC as well.
+* Any errors during file system resize will be added as *events* to Pod object and mount operation will be failed.
+* File System resize will not be performed on kubelet where volume being attached is ReadOnly. This is similar to pattern being used for performing formatting.
+* After file system resize is successful, `pvc.status.capacity` will be updated to match `pv.spec.capacity` and volume expand operation will be considered complete.
+
 
 ## API and UI Design
 
@@ -104,56 +169,14 @@ spec:
 
 ## API Changes
 
-### PV API Change
-
-Two new fields will be added to `PersistentVolumeStatus` object. One is `capacity` and another is `storageCapacityCondition`.
-
-`storageCapacityCondition` field could be just annotation in Alpha. This field will become true if `spec.capacity.storage` and `status.capacity.storage` match their values.
-An additional `volume.alpha.kubernetes.io/fs-resize-pending` annotation will be added by controller to indicate that - `PersistentVolume` needs file system resize.
-
-
-```go
-type ResourceList map[ResourceName]resource.Quantity
-
-type PersistentVolumeStatus struct {
-        Capacity                 ResourceList
-        StorageCapacityCondition bool
-}
-```
-
-For example - YAML representation of a PV undergoing resize will become:
-
-```yaml
-apiVersion: v1
-  kind: PersistentVolume
-  metadata:
-  name: pv0003
-  spec:
-    capacity:
-      # size requested
-      storage: 10Gi
-    accessModes:
-       - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Recycle
-  status:
-    capacity:
-      # actual size
-      storage: 5Gi
-    storageCapacityCondition: false
-```
-
-
 ### PVC API Change
 
 `pvc.spec.resources.requests.storage` field of pvc object will become mutable after this change.
 
-Similar to PV, PVC API object will have `storageCapacityCondition` field:
-`storageCapacityCondition` field could be just annotation in Alpha.
-
 ### Other API changes
 
-This proposal relies on ability to update PV & PVC objects from kubelet. Kubelet policy has to be relaxed
-to enabled that - https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/auth/authorizer/rbac/bootstrappolicy/policy.go#L204-L247
+This proposal relies on ability to update PVC status from kubelet. While updating PVC's status
+a PATCH request must be made from kubelet to update the status.
 
 Also - an Admin can directly edit the PV and specify new size but controller will not perform
 any automatic resize of underlying volume or file system in such cases.
