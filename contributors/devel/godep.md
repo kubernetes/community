@@ -90,6 +90,9 @@ rm -rf vendor
 ./hack/update-bazel.sh
 ./hack/update-godep-licenses.sh
 ./hack/update-staging-client-go.sh
+# If you haven't followed this doc step-by-step and haven't created a dedicated GOPATH,
+# make sure there is no client-go or other staging repo in $GOPATH before running the next command.
+./hack/update-staging-godeps.sh
 git checkout -- $(git status -s | grep "^ D" | awk '{print $2}' | grep ^Godeps)
 ```
 
