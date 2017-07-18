@@ -34,6 +34,6 @@ Collaboration should simplify things for everyone, but with privilege comes resp
 	- If *playlist* collaboration is suspended, uploading by community managers to the playlist of interest will ***not*** be a priority, and will likely occur on a delayed basis
 	- *Note that "habitual violation" means "more than 3 issues per quarter" 
 
-Your community managers are happy to help with any questions that you may have and will do their best to help if anything goes wrong. Please get in touch via sarahnovotny *at* google *dot* com and jorge •at• heptio •dot• com
+Your community managers are happy to help with any questions that you may have and will do their best to help if anything goes wrong. Please get in touch via sarahnovotny *at* google *dot* com and jorge *at* heptio *dot* com
 
  
