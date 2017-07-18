@@ -79,6 +79,11 @@ getting started steps for your chosen cloud platform (which might involve
 changing the `KUBERNETES_PROVIDER` environment variable to something other than
 "gce").
 
+You can quickly recompile the e2e testing framework via `go install ./test/e2e`.
+This will not do anything besides allow you to verify that the go code compiles.
+If you want to run your e2e testing framework without re-provisioning the e2e setup,
+you can do so via `make WHAT=test/e2e/e2e.test`.
+
 To build Kubernetes, up a cluster, run tests, and tear everything down, use:
 
 ```sh
@@ -98,7 +103,11 @@ go run hack/e2e.go -- -v --up
 go run hack/e2e.go -- -v --test
 
 # Run tests matching the regex "\[Feature:Performance\]"
-go run hack/e2e.go -- -v --test --test_args="--ginkgo.focus=\[Feature:Performance\]"
+# Specify "--provider=local" flag when running the tests locally
+go run hack/e2e.go -- -v --test --test_args="--ginkgo.focus=\[Feature:Performance\]" --provider=local
+
+# Alternatively, specify it with KUBERNETES_PROVIDER
+KUBERNETES_PROVIDER=local go run hack/e2e.go -- -v --build --up --test --down
 
 # Conversely, exclude tests that match the regex "Pods.*env"
 go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=Pods.*env"
@@ -137,20 +146,6 @@ with this command:
 
 ```sh
 go run hack/e2e.go -- -v --down
-```
-
-## Building the Tests
-
-* You can quickly recompile the e2e testing framework via `go install ./test/e2e`.
-  This will not do anything besides allow you to verify that the go code compiles.
-
-* If you want to run your e2e testing framework without re-provisioning the e2e setup,
-  you can do so via `make WHAT=test/e2e/e2e.test`
-  
-* You can then create a symlink pointing `e2e.test` to `_output/local/bin/linux/amd64/e2e.test`, 
-  and re-run the ginkgo tests by providing relevant flags. For example:
-```sh
-e2e.test --host="127.0.0.1:8080" --provider="local" --repo-root="path/to/main/repo" --kubeconfig="path/to/.kube/config" --ginkgo.focus="regex"
 ```
 
 ## Advanced testing
