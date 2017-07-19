@@ -23,6 +23,8 @@ Patch releases are managed by the **Patch Release Manager**. Duties of the patch
   * Cherry picks should not destabilize the branch, so ensure that either the PR has had time to stabilize in master or will have time to stabilize in the release branch before the next patch release is cut.
 * Setting the exact schedule (and cadence) for patch releases and actually cutting the [releases](https://github.com/kubernetes/kubernetes/releases).
 
+See the [Patch Release Manager Playbook](patch-release-manager.md) for more details.
+
 Current and past patch release managers are listed [here](https://github.com/kubernetes/community/wiki).
 
 ## Kubernetes Release Management Team for Major/Minor Releases
