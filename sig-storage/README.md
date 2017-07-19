@@ -25,6 +25,7 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 
 <!-- BEGIN CUSTOM CONTENT -->
 
+## Details
 The Kubernetes Storage Special-Interest-Group (SIG) is a working group within the Kubernetes contributor community interested in storage and volume plugins.
 
 ### Meeting
