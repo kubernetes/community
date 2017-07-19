@@ -210,7 +210,7 @@ API for all these operations.
 
 While deleting a namespace, kubernetes server needs to ensure that resources in
 that namespace maintained by other servers are deleted as well. We can do this
-using resource [finalizers](../design/namespaces.md#finalizers). Each server
+using resource [finalizers](../namespaces.md#finalizers). Each server
 will add themselves in the set of finalizers before they create a resource in
 the corresponding namespace and delete all their resources in that namespace,
 whenever it is to be deleted (kubernetes API server already has this code, we
@@ -221,8 +221,8 @@ mechanism.
 
 #### Limit ranges and resource quotas
 
-kubernetes server maintains [resource quotas](../admin/resourcequota/README.md) and
-[limit ranges](../admin/limitrange/README.md) for all resources.
+kubernetes server maintains [resource quotas](../admission_control_resource_quota.md) and
+[limit ranges](../admission_control_limit_range.md) for all resources.
 Aggregated servers will need to check with the kubernetes server before creating any
 resource.
 
