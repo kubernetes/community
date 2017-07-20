@@ -3,30 +3,31 @@ Device Manager Proposal
 
 <!-- BEGIN MUNGE: GENERATED_TOC -->
 
-- [Motivation](#motivation)
-- [Use Cases](#use-cases)
-- [Objectives](#objectives)
-- [Non Objectives](#non-objectives)
-- [Proposed Implementation 1](#proposed-implementation-1)
-  - [Vendor story](#vendor-story)
-  - [End User story](#end-user-story)
-  - [Device Plugin](#device-plugin)
-    - [Introduction](#introduction)
-    - [Registration](#registration)
-    - [Unix Socket](#unix-socket)
-    - [Protocol Overview](#protocol-overview)
-    - [Protobuf specification](#protobuf-specification)
-- [Proposed Implementation 2](#proposed-implementation-2)
-  - [Device Plugin Lifecycle](#device-plugin-lifecycle)
-  - [Protobuf API](#protobuf-api)
-  - [Failure recovery](#failure-recovery)
-  - [Roadmap](#roadmap)
-  - [Open Questions](#open-questions-1)
-- [Installation](#installation)
-- [Versioning](#versioning)
-  - [References](#references)
-
-<!-- END MUNGE: GENERATED_TOC -->
+* [Motivation](#motivation)
+* [Use Cases](#use-cases)
+* [Objectives](#objectives)
+* [Non Objectives](#non-objectives)
+* [Proposed Implementation 1](#proposed-implementation-1)
+  * [Vendor story](#vendor-story)
+  * [End User story](#end-user-story)
+  * [Device Plugin](#device-plugin)
+  * [Introduction](#introduction)
+  * [Registration](#registration)
+  * [Unix Socket](#unix-socket)
+  * [Protocol Overview](#protocol-overview)
+  * [Protobuf specification](#protobuf-specification)
+  * [HealthCheck and Failure Recovery](#healthcheck-and-failure-recovery)
+  * [API Changes](#api-changes)
+  * [Upgrading your cluster](#upgrading-your-cluster)
+* [Proposed Implementation 2](#proposed-implementation-2)
+  * [Device Plugin Lifecycle](#device-plugin-lifecycle)
+  * [Protobuf API](#protobuf-api)
+  * [Failure recovery](#failure-recovery)
+  * [Roadmap](#roadmap)
+  * [Open Questions](#open-questions-1)
+* [Installation](#installation)
+* [Versioning](#versioning)
+* [References](#references)
 
 _Authors:_
 
@@ -48,7 +49,7 @@ This document describes a vendor independant solution to:
   * Discovering and representing external devices
   * Making these devices available to the containers using these devices and
     cleaning them up afterwards
-  * Monitoring these devices
+  * Health Check of these devices
 
 Because devices are vendor dependant and have their own sets of problems
 and mechanisms, the solution we describe is a plugin mechanism that may run
@@ -85,33 +86,43 @@ the following simple steps:
 
 1. Advanced scheduling and resource selection (solved through
    [#782](https://github.com/Kubernetes/community/pull/782)).
-   We will only try to give basic selection primitives to the devices
-2. Metrics: this should be the job of cadvisor and should probably either be
-   addressed there (cadvisor) or if people feel there is a case to be made
-   for it being addressed in the Device Plugin, in a follow up proposal.
+2. Collecting metrics is not part of this proposal. We will only solve
+   Health Check.
 
 # Proposed Implementation 1
+
+## TLDR
+
+At their core, device plugins are simple gRPC servers that may run in a
+container deployed through the pod mechanism.
+
+These servers implement the gRPC interface defined later in this design
+document and once the device plugin makes itself known to kubelet, kubelet
+will interact with the device through three simple functions:
+  1. A `ListDevices` function for the kubelet to Discover the devices and
+     their properties.
+  2. An `Allocate` function which is called before container creation
+  3. A `HealthCheck` function to notify Kubelet whenever a device becomes
+     unhealthy.
+
+![Process](device-plugin-overview.png)
 
 ## Vendor story
 
 Kubernetes provides to vendors a mechanism called device plugins to:
   * advertise devices.
   * monitor devices (currently perform health checks).
-  * hook into the runtime to instruct Kubelet what are the steps to
-    take in order to make the device available (or cleanup the device).
+  * hook into the runtime to execute device specific instructions
+    (e.g: Clean GPU memory) and instruct Kubelet what are the steps
+    to take in order to make the device available in the container.
 
-A device plugin at it's core is a simple gRPC server usually running in
-a container and deployed across clusters through a daemonSet.
-
-```gRPC
+```go
 service DevicePlugin {
-	rpc Discover(Empty) returns (stream Device) {}
-	rpc Monitor(Empty) returns (stream DeviceHealth) {}
+	rpc ListDevices(Empty) returns (stream Device) {}
+	rpc HealthCheck(Empty) returns (stream Device) {}
 
 	rpc Allocate(AllocateRequest) returns (AllocateResponse) {}
-	rpc Deallocate(DeallocateRequest) returns (Empty) {}
 }
-
 ```
 
 The gRPC server that the device plugin must implement is expected to
@@ -120,44 +131,44 @@ be advertised on a unix socket in a mounted hostPath (e.g:
 
 Finally, to notify Kubelet of the existence of the device plugin,
 the vendor's device plugin will have to make a request to Kubelet's
-onwn gRPC server.
+own gRPC server.
 Only then will kubelet start interacting with the vendor's device plugin
 through the gRPC apis.
 
 ## End User story
 
-When setting up the cluster the admin knows what kind of devices are present
-on the different machines and therefore can select what devices they want to
+When setting up the cluster the admins knows what kind of devices are present
+on the different machines and therefore can select what devices he want to
 enable.
 
 The cluster admins knows his cluster has NVIDIA GPUs therefore he deploys
 the NVIDIA device plugin through:
-`kubectl create -f NVIDIA.io/device-plugin.yml`
+`kubectl create -f nvidia.io/device-plugin.yml`
 
 The device plugin lands on all the nodes of the cluster and if it detects that
 there are no GPUs it terminates. However, when there are GPUs it reports them
-to Kubelet.
-For device plugins reporting non-GPU Devices these are advertised as
-OIRs and selected through the same method.
+to Kubelet and starts it's gRPC server to monitor devices and hook into the
+container creation process.
 
-1. A user submits a pod spec requesting X GPUs (or devices)
+Device Plugins reporting non-GPU Devices are advertised as OIRs of the shape
+`extensions.kubernetes.io/vendor-device` GPUs are advertised as `nvidia-gpu`.
+Devices can be selected using the same process as for OIRs in the pod spec.
+
+1. A user submits a pod spec requesting X GPUs (or devices) through OIR
 2. The scheduler filters the nodes which do not match the resource requests
 3. The pod lands on the node and Kubelet decides which device
    should be assigned to the pod
 4. Kubelet calls `Allocate` on the matching Device Plugins
 5. The user deletes the pod or the pod terminates
-6. Kubelet calls `Deallocate` on the matching Device Plugins
 
 When receiving a pod which requests Devices kubelet is in charge of:
-  * deciding which device to assign to the pod's containers (this will
-    change in the future)
-  * advertising the changes to the node's `Available` list
-  * advertising the changes to the pods's `Allocated` list
+  * deciding which device to assign to the pod's containers 
+    * Note: This will be decided in the future at the scheduler level as
+      part of the Resource Class proposal
   * Calling the `Allocate` function with the list of devices
 
-The scheduler is still be in charge of filtering the nodes which cannot
+The scheduler is still in charge of filtering the nodes which cannot
 satisfy the resource requests.
-He might in the future be in charge of selecting the device.
 
 ## Device Plugin
 
@@ -165,13 +176,16 @@ He might in the future be in charge of selecting the device.
 
 The device plugin is structured in 5 parts:
 1. Registration: The device plugin advertises it's presence to Kubelet
-2. Discovery: Kubelet calls the device plugin to list it's devices
-3. Allocate / Deallocate: When creating/deleting containers requesting the
-   devices advertised by the device plugin, Kubelet calls the device plugin's
-   `Allocate` and `Deallocate` functions.
-4. Cleanup: Kubelet terminates the communication through a "Stop"
-5. Heartbeat: The device plugin polls Kubelet to know if it's still alive
-   and if it has to re-issue a Register request
+2. ListDevices: Kubelet calls the device plugin to list it's devices
+3. HealthCheck: The device plugin returns a stream on which it writes when
+   a device's health changes
+4. Allocate: When creating containers, Kubelet calls the device plugin's
+   `Allocate` function so that it can run device specific instructions (gpu
+    cleanup, QRNG initialization, ...) and instruct Kubelet how to make the
+    device available in the container.
+5. Heartbeat: The device plugin polls every 5s Kubelet to know if it's still
+   alive and if it has to re-issue a Register request (e.g: Kubelet crashed
+   between two heartbeats)
 
 ### Registration
 
@@ -183,7 +197,7 @@ sockets and follow this simple pattern:
 1. The device plugins starts it's gRPC server
 2. The device plugins sends a `RegisterRequest` to Kubelet (through a
    gRPC request)
-4. Kubelet starts it's Discovery phase and calls `Discover` and `Monitor`
+4. Kubelet starts it's Discovery phase and calls `ListDevices` and `HealthCheck`
 5. Kubelet answers to the `RegisterRequest` with a `RegisterResponse`
    containing any error Kubelet might have encountered
 
@@ -192,7 +206,7 @@ sockets and follow this simple pattern:
 Device Plugins are expected to communicate with Kubelet through gRPC
 on an Unix socket.
 When starting the gRPC server, they are expected to create a unix socket
-at the following host path: `/var/run/Kubernetes`.
+at the following host path: `/var/run/kubernetes`.
 
 For non bare metal device plugin this means they will have to mount the folder
 as a volume in their pod spec ([see Installation](##installation)).
@@ -217,12 +231,10 @@ not there was an error. The errors may include (but not limited to):
   * Vendor is not consistent across discovered devices
 
 Kubelet will then interact with the plugin through the following functions:
-  * `Discover`: List Devices
-  * `Monitor`: Returns a stream that is written to when a
-     Device becomes unhealty
+  * `ListDevices`: List Devices
+  * `HealthCheck`: Returns a stream that is written to when a Device becomes
+     unhealty
   * `Allocate`: Called when creating a container with a list of devices
-     can request changes to the Container config
-  * `Deallocate`: Called when deleting a container can be used for cleanup
 
 The device plugin is also expected to periodically call the `Heartbeat` function
 exposed by Kubelet and issue a `Registration` request when it either can't reach
@@ -240,11 +252,10 @@ service PluginRegistration {
 }
 
 service DevicePlugin {
-	rpc Discover(Empty) returns (stream Device) {}
-	rpc Monitor(Empty) returns (stream DeviceHealth) {}
+	rpc ListDevices(Empty) returns (stream Device) {}
+	rpc HealthCheck(Empty) returns (stream Device) {}
 
 	rpc Allocate(AllocateRequest) returns (AllocateResponse) {}
-	rpc Deallocate(DeallocateRequest) returns (Empty) {}
 }
 
 message RegisterRequest {
@@ -262,7 +273,7 @@ message RegisterResponse {
 	string version = 1;
 	// Kubelet fills this field if it encounters any errors
 	// during the registration process or discover process
-	Error error = 2;
+	string error = 2;
 }
 
 message HeartbeatRequest {
@@ -274,7 +285,7 @@ message HeartbeatResponse {
 	// plugin to either re-register itself or not
 	string response = 1;
 	// Kubelet fills this field if it encountered any errors
-	Error error = 2;
+	string error = 2;
 }
 
 message AllocateRequest {
@@ -288,26 +299,17 @@ message AllocateResponse {
 	repeated Mount mounts = 2;
 }
 
-message DeallocateRequest {
-	repeated Device devices = 1;
-}
-
-message Error {
-	bool error = 1;
-	string reason = 2;
-}
-
 // E.g:
 // struct Device {
 //    Kind: "NVIDIA-gpu"
-//    Name: "GPU-fef8089b-4820-abfc-e83e-94318197576e"
+//    Name: "GPU-fef8089b-4820-abfc-e83e-94318197576e",
+//    Health: "Healthy",
 //    Properties: {
 //        "Family": "Pascal",
 //        "Memory": "4G",
 //        "ECC"   : "True",
 //    }
 //}
-//
 message Device {
 	string Kind = 1;
 	string Name = 2;
@@ -315,14 +317,160 @@ message Device {
 	string Vendor = 4;
 	map<string, string> properties = 5; // Could be [1, 1.2, 1G]
 }
+```
 
-message DeviceHealth {
-	string Name = 1;
-	string Kind = 2;
-	string Vendor = 4;
-	string Health = 3;
+### HealthCheck and Failure Recovery
+
+We want Kubelet as well as the Device Plugins to recover from failures
+that may happen on any side of this protocol.
+
+At the communication level, gRPC is a very strong piece of software and
+is able to ensure that if failure happens it will try it's best to recover
+through exponential backoff reconnection.
+
+The proposed mechanism intends to replace any device specific handling in
+Kubelet. Therefore in general, device plugin failure or upgrade means that
+Kubelet is not able to accept any pod requesting a Device until the upgrade
+or failure finishes.
+
+If a device fails, the Device Plugin should signal that through the HealthCheck
+stream and we expect Kubelet to stop the pod and reschedule it.
+
+If any Device Plugin fails the behavior we expect depends on the task Kubelet
+is performing:
+* In general we expect Kubelet to remove any devices that are owned by the failed
+  device plugin from the resources advertised by the Node status.
+* We however do not expect Kubelet to fail or restart any pods or containers
+  running that are using these devices.
+* If Kubelet is in the process of allocating a device, then it should fail
+  the container process and reschedule the Pod.
+
+If the Kubelet fails or restarts, we expect the Device Plugins to know about
+it through Kubelet's Heartbeat call which every Device Plugin should call
+every 5s.
+
+When Kubelet fails or restarts it should know what are the devices that are
+owned by the different containers and be able to rebuild a list of available
+devices.
+In the current design, instead of checkpointing this data, we propose to save
+this in the API server as this gives introspection capabilities to the user
+has minimal impact on performances and is a minimal change that can be
+reverted if we decide to implement checkpointing or a debug API later.
+
+If Kubelet failed and recovered between two Heartbeat we are expecting it
+to answer with a HeartbeatKo answer. Signaling the device plugins to register
+themselves again against the Kubelet (in case of heartbeat failure
+or connection error).
+
+### API Changes
+
+When discovering the devices, Kubelet will be in charge of advertising those
+resources to the API server as part of the kubelet node update current protocol.
+
+We will advertise each device returned by the Device Plugin in a new structure
+called `Device`.
+It is defined as follows:
+
+```golang
+// E.g:
+// struct Device {
+//    Kind: "NVIDIA-gpu"
+//    Name: "GPU-fef8089b-4820-abfc-e83e-94318197576e"
+//    Health: "Healthy",
+//    Properties: {
+//        "Family": "Pascal",
+//        "Memory": "4G",
+//        "ECC"   : "True",
+//    }
+//}
+type Device struct {
+	Kind       string
+	Vendor     string
+	Name       string
+	Health     DeviceHealthStatus
+	Properties map[string]string
 }
 ```
+
+Because the current API (Capacity) can not be extended to support Device,
+we will need to create one new attribute in the NodeStatus structure:
+  * `DevCapacity`: Describing the device capacity of the node
+
+```golang
+type NodeStatus struct {
+	DevCapacity []Device
+}
+```
+
+We also introduce the `Devices` field in the Containers status so that user
+can know what devices were assigned to the container.
+
+```golang
+type ContainerStatus struct {
+	Devices []Device
+}
+```
+
+Note that we will be using OIR to schedule and trigger the device plugin
+in parallel.
+So when a Device plugin registers two `foo-device` the node status will be
+updated to advertise 2 `extensions.kubernetes.io/foo-device`.
+
+If a user wants to trigger the device plugin he only needs to request this
+OIR in his Pod Spec.
+
+## Upgrading your cluster
+
+TLDR: If you are upgrading either Kubelet or any device plugin the safest way
+is to drain the node of all pods and upgrade.
+However depending on what you are upgrading and what changes happened then it
+is completely possible to only restart just Kubelet or just the device plugin.
+
+### Upgrading Kubelet
+
+This assumes that the Device Plugins running on the nodes fully implement the
+protocol and are able to recover from a Kubelet crash.
+
+Then, as long as the Device Plugin API does not change upgrading Kubelet can be done
+seamlessly through a Kubelet restart.
+
+However, as mentioned in the Versioning section, we currently expect the Device
+Plugin's API version to match exactly the Kubelet's Device Plugin API version.
+
+Therefore if the Device Plugin API version change then you will have to change
+the Device Plugin too.
+Consider draining the node in that case.
+
+When the Device Plugin API becomes a stable feature, versionning should be
+backward compatible and even if Kubelet has a different Device Plugin API,
+it should not require a Device Plugin upgrade.
+
+### Upgrading Device Plugins
+
+Because we cannot enforce what the different Device Plugins will do, we cannot
+say for certain that upgrading a device plugin will not crash any containers
+on the node.
+
+It is therefore up to the Device Plugin vendors to specify if the Device Plugins
+can be upgraded without impacting any running containers.
+
+As mentioned earlier, the safest way is to drain the node before upgrading
+the Device Plugins.
+
+## Difference Between Implementations
+
+The main difference between implementation 1 and 2 are:
+* This implementation allows vendors to run device specific code before
+  starting the containers requesting these devices.
+* This implementation allows users to know what devices were assigned
+  to a container
+* This implementation does not need checkpointing
+* This implementation has a clear separation of concerns, every functions
+  does one thing and only one. Every actor has only one explicit role:
+  * Kubelet's gRPC is in charge of keeping track of Device Plugins
+  * The Device Plugin's gRPC is in charge of handling devices
+
+
 
 # Proposed Implementation 2
 
@@ -636,7 +784,7 @@ Negotiation would take place in the registration:
 4. If the Device Plugin supports the version sent by Kubelet it can and should
    answer the different calls made by Kubelet
 
-## References
+# References
 
   * [Enable "kick the tires" support for NVIDIA GPUs in COS](https://github.com/Kubernetes/Kubernetes/pull/45136)
   * [Extend experimental support to multiple NVIDIA GPUs](https://github.com/Kubernetes/Kubernetes/pull/42116)
