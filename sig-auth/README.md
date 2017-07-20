@@ -29,7 +29,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 * Discuss improvements Kubernetes Authorization and Authentication, and cluster security policy.
 
 ## Non-goals
-* To report specific vulnerabilities in Kubernetes, please report using these instructions: http://kubernetes.io/v1.1/docs/reporting-security-issues.html
+* To report specific vulnerabilities in Kubernetes, please report using these instructions: 
+https://kubernetes.io/security/
 * General discussion of Linux security, or of containers is better directed to a non-Kubernetes mailing list.
 * Proactive or general security discussion about Kubelet should go to kubernetes-sig-node@googlegroups.com.
 * Proactive or general security discussion about the API server should go to kubernetes-sig-api-machinery@googlegroups.com.  
