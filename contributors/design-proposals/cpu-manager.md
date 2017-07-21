@@ -88,7 +88,10 @@ hyper-threading turned on yields both sibling threads on the same
 physical core. Likewise, allocating two CPUs on a non-hyper-threaded
 system yields two cores on the same socket.
 
-##### Options for discovering topology
+**Decision:** Initially the CPU Manager will re-use the existing discovery
+mechanism in cAdvisor.
+
+Alternate options considered for discovering topology:
 
 1. Read and parse the virtual file [`/proc/cpuinfo`][procfs] and construct a
    convenient data structure.
@@ -98,8 +101,6 @@ system yields two cores on the same socket.
    contains code to build a ThreadSet from the output of `lscpu -p`.
 1. Execute a mature external topology program like [`mpi-hwloc`][hwloc] --
    potentially adding support for the hwloc file format to the Kubelet.
-1. Re-use existing discovery functionality from cAdvisor. **(preferred initial
-   solution)**
 
 #### CPU Manager interfaces (sketch)
 
