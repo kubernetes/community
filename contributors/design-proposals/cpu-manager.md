@@ -55,11 +55,22 @@ assigning pod containers to sets of CPUs on the local node. In later
 phases, the scope will expand to include caches, a critical shared
 processor resource.
 
-The CPU manager interacts directly with the kuberuntime. The CPU Manager
-is notified when containers come and go, before delegating container
-creation via the container runtime interface and after the container's
-destruction respectively. The CPU Manager emits CPU settings for
-containers in response.
+The kuberuntime notifies the CPU manager when containers come and
+go. The first such notification occurs in between the container runtime
+interface calls to create and start the container. The second notification
+occurs after the container is destroyed by the container runtime. The CPU
+Manager writes CPU settings for containers using a new CRI method named
+[`UpdateContainerResources`](https://github.com/kubernetes/kubernetes/pull/46105).
+This new method is invoked from two places in the CPU manager: during each
+call to `RegisterContainer` and also periodically from a separate
+reconciliation loop.
+
+![cpu-manager-block-diagram](https://user-images.githubusercontent.com/379372/28443427-bf1b2972-6d6a-11e7-8acb-6cbe9013ac28.png)
+
+_CPU Manager block diagram. `Policy`, `State`, and `Topology` types are
+factored out of the CPU Manager to promote reuse and to make it easier
+to build and test new policies. The shared state abstraction forms a basis
+for observability and checkpointing extensions._
 
 #### Discovering CPU topology
 
@@ -104,7 +115,6 @@ type State interface {
 
 type Manager interface {
   Start()
-  Policy() Policy
   RegisterContainer(p *Pod, c *Container, containerID string) error
   UnregisterContainer(containerID string) error
   State() state.Reader
