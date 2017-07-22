@@ -59,78 +59,12 @@ The Kubelet's current configuration type is an unreadable monolith. We should de
 - The Kubelet's configuration should be stored in the `Data` of a `ConfigMap` object. Each value should be a `YAML` or `JSON` blob, and should be associated with the correct key.
   + Note that today, there is only a single `KubeletConfiguration` object (required under the `kubelet` key).
 - The `ConfigMap` containing the desired configuration should be specified via the `Node` object corresponding to the Kubelet. The `Node` will have a new `spec` subfield, `configSource`, which is a new type, `NodeConfigSource` (described below).
-- The name of the `ConfigMap` containing the desired configuration should be of the form `{name}-{alg}-{hash}`, where `name` is a human-readable identifier, `alg` is the hash algorithm to use for verification, and `hash` is the lowercase hexadecimal value of the hash, as would be formatted by Go's `%x`.
-  + For now, the only supported hash algorithm is `sha256`.
-  + The Kubelet will verify the downloaded `ConfigMap` by performing the below procedure and comparing the result to the hash in the name. This helps prevent the "shoot yourself in the foot" scenario detailed below in *Operational Considerations/Rollout workflow*.
-  + The hash is produced by following these steps:
-    1. Extract the key-value pairs from the ConfigMap's Data field into a list of pairs.
-    2. Sort the pairs in byte-value order (least-to-greatest) by key.
-    3. Serialize this sorted list of pairs into a string, where each key is separated from its value by a colon and each key-value pair is separated from the next by a comma, e.g. `key:value,key:value,...,`. There will be a trailing comma on this string if and only if the ConfigMap's Data contains a nonzero number of key-value pairs.
-    4. Take the checksum of this string with the requested alg, and format this sum as a lowercase hexadecimal number.
 
-For example, see this reference implementation in Go:
-```
-package hash
-
-import (
-  "crypto/sha256"
-  "fmt"
-  "sort"
-)
-
-const (
-  Sha256Alg = "sha256"
-)
-
-// MapStringStringHash returns a hash of the EncodeMapStringString encoding of `m`, using `alg`,
-// the returned hash is a hexidecimal string
-func MapStringStringHash(alg string, m map[string]string) (string, error) {
-  s := EncodeMapStringString(m)
-  return hash(alg, s)
-}
-
-// EncodeMapStringString extracts the key-value pairs from `m`, sorts them in byte-alphabetic order by key,
-// and encodes them in a string representation. Keys and values are separated with `:` and pairs are separated
-// with `,`. If m is non-empty, there is a trailing comma in the pre-hash serialization. If m is empty,
-// there is no trailing comma.
-func EncodeMapStringString(m map[string]string) string {
-  kv := make([][]string, len(m))
-  i := 0
-  for k, v := range m {
-    kv[i] = []string{k, v}
-    i++
-  }
-  // sort based on keys
-  sort.Slice(kv, func(i, j int) bool {
-    return kv[i][0] < kv[j][0]
-  })
-  // encode to a string
-  s := ""
-  for _, p := range kv {
-    s = s + p[0] + ":" + p[1] + ","
-  }
-  return s
-}
-
-// hash hashes `data` with `alg` if `alg` is supported
-func hash(alg string, data string) (string, error) {
-  // take the hash based on alg
-  switch alg {
-  case Sha256Alg:
-    sum := sha256.Sum256([]byte(data))
-    return fmt.Sprintf("%x", sum), nil
-  default:
-    return "", fmt.Errorf("requested hash algorithm %q is not supported", alg)
-  }
-}
-```
-
-
-`ConfigMap` object containing just the Kubelet's configuration:
+`ConfigMap` object containing the Kubelet's configuration:
 ```
 kind: ConfigMap
 metadata:
-  name: node-config-sha256-{hash-of-data}
+  name: my-kubelet-config
 data:
   kubelet: "{JSON blob}"
 ```
@@ -181,7 +115,6 @@ The requirements of the `ConfigMapRef` subfield are as follows:
 - Both  `ConfigMapRef.UID` and the `ConfigMapRef.Namespace`-`ConfigMapRef.Name` pair must unambiguously refer to the same object.
 - The referenced object must exist.
 - The referenced object must be a `ConfigMap`.
-- As noted above, the referent `ConfigMap`'s name must be of the form `{name}-{alg}-{hash}`.
 
 The Kubelet must have permission to read `ConfigMap`s in the namespace that contains the referenced `ConfigMap`. 
 
@@ -285,7 +218,7 @@ There are tradeoffs between these approaches:
 3. The Kubelet has to make sure it properly namespaces this state under a versioned directory name.
 
 **Cons in practice:**
-1. This scenario is certainly possible, but except for the crash-loop case, it is unlikely to cause serious issues, as all other "bad config" cases are discovered almost immediately during loading/verifying/parsing/validating the config. In general, we should recommend that Kubelet version upgrades only be performed when the `ConfigOK` condition is `True` anyway, so this should be a rare scenario.
+1. This scenario is certainly possible, but except for the crash-loop case, it is unlikely to cause serious issues, as all other "bad config" cases are discovered almost immediately during loading/parsing/validating the config. In general, we should recommend that Kubelet version upgrades only be performed when the `ConfigOK` condition is `True` anyway, so this should be a rare scenario.
 2. This is slightly worse than Con 1, because a Kubelet crash-loop will be more likely to disrupt Kubelet version upgrades, e.g. causing an automatic rollback. As above, however, we should recommend that Kubelet version upgrades only be performed when the `ConfigOK` condition is `True`, in which case this should be a rare scenario.
 3. This isn't particularly difficult to do, but it is additional code.
 
@@ -336,13 +269,6 @@ If `Node.spec.configSource` is invalid during Kubelet startup:
 message: "using last-known-good (init)"
 reason: "failed to sync, desired config unclear, cause: invalid NodeConfigSource, exactly one subfield must be non-nil, but all were nil"
 status: "Unknown"
-```
-
-Verification of a configuration's integrity fails:
-```
-message: "using last known good (UID: {lkg-UID})"
-reason: "failed to verify current (UID: {cur-UID})"
-status: "False"
 ```
 
 Validation of a configuration fails:
