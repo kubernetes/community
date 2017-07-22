@@ -186,7 +186,7 @@ docker-machine ssh `docker-machine active` curl $ip
 
 ## Deploy a DNS
 
-Read [documentation for manually deploying a DNS](http://kubernetes.io/docs/getting-started-guides/docker-multinode/#deploy-dns-manually-for-v12x) for instructions.
+Read [documentation for manually deploying a DNS](https://git.k8s.io/examples/staging/cluster-dns) for instructions.
 
 ### Turning down your cluster
 
