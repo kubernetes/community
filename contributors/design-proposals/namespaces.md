@@ -139,7 +139,7 @@ A *Namespace* may exist in the following phases.
 type NamespacePhase string
 const(
   NamespaceActive NamespacePhase = "Active"
-  NamespaceTerminating NamespaceTerminating = "Terminating"
+  NamespaceTerminating NamespacePhase = "Terminating"
 )
 
 type NamespaceStatus struct { 
