@@ -134,6 +134,11 @@ online file system resize if volume type and file system supports it - we are le
 * When calling `MountDevice` or `Setup` call of volume plugin, volume manager will in addition compare `pv.spec.capacity` and `pvc.status.capacity` and if `pv.spec.capacity` is greater
   than `pvc.status.spec.capacity` then volume manager will additionally resize the file system of volume.
 * The call to resize file system will be performed inside `operation_generator.GenerateMountVolumeFunc`.  `VolumeToMount` struct will be enhanced to store PVC as well.
+* The flow of file system resize will be as follow:
+    * Perform a resize based on file system used inside block device.
+    * If resize succeeds, proceed with mounting the device as usual.
+    * If resize failed with an error that shows no file system exists on the device, then log a warning and proceed with format and mount.
+    * If resize failed with any other error then fail the mount operation.
 * Any errors during file system resize will be added as *events* to Pod object and mount operation will be failed.
 * If there are any errors during file system resize `pvc.Status.Conditions` will be updated with `ResizeFailed: True`. Any errors will be added to
   `Conditions` field.
