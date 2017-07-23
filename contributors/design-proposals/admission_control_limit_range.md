@@ -217,7 +217,7 @@ An example LimitRange configuration:
 
 | Type | Resource | Min | Max | Default | DefaultRequest | LimitRequestRatio |
 | ---- | -------- | --- | --- | ------- | -------------- | ----------------- |
-| Container | cpu | 0.1 | 1 | 500m | 250m | 4 |
+| Container | cpu | 100m | 1 | 500m | 250m | 4 |
 | Container | memory | 250Mi | 1Gi | 500Mi | 250Mi | |
 
 Assuming an incoming container that specified no incoming resource requirements,
@@ -226,7 +226,7 @@ the following would happen.
 1. The incoming container cpu would request 250m with a limit of 500m.
 2. The incoming container memory would request 250Mi with a limit of 500Mi
 3. If the container is later resized, it's cpu would be constrained to between
-0.1 and 1 and the ratio of limit to request could not exceed 4.
+100m and 1 and the ratio of limit to request could not exceed 4.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/admission_control_limit_range.md?pixel)]()
