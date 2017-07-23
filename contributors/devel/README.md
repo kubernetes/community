@@ -10,7 +10,7 @@ Guide](http://kubernetes.io/docs/admin/).
 
 * **On Collaborative Development** ([collab.md](collab.md)): Info on pull requests and code reviews.
 
-* **GitHub Issues** ([issues.md](issues.md)): How incoming issues are reviewed and prioritized.
+* **GitHub Issues** ([issues.md](issues.md)): How incoming issues are triaged.
 
 * **Pull Request Process** ([pull-requests.md](pull-requests.md)): When and why pull requests are closed.
 
