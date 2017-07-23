@@ -34,6 +34,9 @@ Enable users to increase size of PVs that their pods are using. The user will up
 | Azure File      | No                | No                          | No                       |
 | Cephfs          | No                | No                          | No                       |
 | NFS             | No                | No                          | No                       |
+| Flex            | Yes               | Maybe                       | No                       |
+| LocalStorage    | Yes               | Yes                         | No                       |
+| Block device    | Yes               | No                          | No                       |
 
 
 ## Implementation Design
@@ -49,7 +52,7 @@ For volume types that only require volume plugin based api call, this will be on
 * `pvc.spec.resources.requests.storage` field of pvc object will become mutable after this change.
 * #sig-api-machinery has agreed to allow pvc's status update from kubelet as long as pvc and node relationship
   can be validated by node authorizer.
-* This feature will be protected by an alpha feature gate.
+* This feature will be protected by an alpha feature gate, so as API changes needed for it.
 
 ### Admission Control and Validations
 
@@ -66,6 +69,7 @@ new controller will be:
 * Watch for pvc update requests and add pvc to controller's desired state of world if a increase in volume size was requested. Once PVC is added to
   controller's desired state of world - `pvc.Status.Conditions` will be updated with `ResizeStarted: True`.
 * For unbound or pending PVCs - resize will trigger no action in `volume_expand_controller`.
+* If `pv.Spec.Capacity` already is of size greater or equal than requested size, similarly no action will be perfomed by the controller.
 * A reconciler will read desired state of world and perform corresponding volume resize operation. If there is a resize operation in progress
   for same volume then resize request will be pending and retried once previous resize request has completed.
 * Controller resize in effect will be level based rather than edge based. If there are more than one pending resize request for same PVC then
@@ -210,6 +214,10 @@ spec:
 In addition to that PVC's status will have a `Conditions []PvcCondition` - which will be used
 to communicate the status of PVC to the user.
 
+The API change will be protected by Alpha feature gate and api-server will not allow PVCs with
+`Status.Conditions` field if feature is not enabled. `omitempty` in serialization format will
+prevent presence of field if not set.
+
 So the `PersistentVolumeClaimStatus` will become:
 
 ```go
@@ -248,6 +256,3 @@ const (
 
 This proposal relies on ability to update PVC status from kubelet. While updating PVC's status
 a PATCH request must be made from kubelet to update the status.
-
-Also - an Admin can directly edit the PV and specify new size but controller will not perform
-any automatic resize of underlying volume or file system in such cases.
