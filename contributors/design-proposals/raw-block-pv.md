@@ -2,8 +2,7 @@
 
 Authors: erinboyd@, screeley44@, mtanino@
 
-This document presents a proposal for managing raw block storage in Kubernetes using the persistent volume soruce API as a consistent model
-of consumption.
+This document presents a proposal for managing raw block storage in Kubernetes using the persistent volume source API as a consistent model of consumption.
 
 # Goals
 * Enable durable access to block storage
@@ -31,11 +30,11 @@ of consumption.
 # Design Overview
 
   The proposed design is based on the idea of leveraging well defined concepts for storage in Kubernetes. The consumption and 
-  defintions for the block devices will be driven through the PVC and PV and Storage Class definitions. Along with Storage
-  Resource definitions, this will provide the admin with a consistent way of managaging all storage. 
-  The API changes proposed in the following section are minimal with the idea of defining a volumeType to indicate bothe the defintion
+  definitions for the block devices will be driven through the PVC and PV and Storage Class definitions. Along with Storage
+  Resource definitions, this will provide the admin with a consistent way of managing all storage. 
+  The API changes proposed in the following section are minimal with the idea of defining a volumeType to indicate both the definition
   and consumption of the devices. Since it's possible to create a volume as a block device and then later consume it by provisioning
-  a filesystem on top, the design requires explict intent for how the volume will be used.
+  a filesystem on top, the design requires explicit intent for how the volume will be used.
   The additional benefit of explicitly defining how the volume is to be consumed will provide a means for indicating the method
   by which the device should be scrubbed when the claim is deleted, as this method will differ from a raw block device compared to a 
   filesystem. The ownership of scrubbing the device properly shall be up to the plugin method being utilized.
@@ -83,8 +82,8 @@ storage: 80Gi
 
 ## Persistent Volume API Changes:
 For static provisioning the admin creates the volume and also is intentional about how the volume should be consumed. For backwards
-compatibility, the absense of volumeType will default to volumes work today, which are formatted with a filesystem depending on 
-the plug-in chosen. Recyling will not be a supported reclaim policy. Once the user deletes the claim against a PV, the volume will 
+compatibility, the absence of volumeType will default to volumes work today, which are formatted with a filesystem depending on 
+the plug-in chosen. Recycling will not be a supported reclaim policy. Once the user deletes the claim against a PV, the volume will 
 be scrubbed according to how it was bound. The path value in the PV definition would be overloaded to define the path of the raw
 block device rather than the fileystem path.
 
