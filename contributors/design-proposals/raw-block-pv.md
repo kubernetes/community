@@ -1,4 +1,4 @@
-# Local Raw Block Consumption via Persistent Volume Source
+# [WIP] Local Raw Block Consumption via Persistent Volume Source
 
 Authors: erinboyd@, screeley44@, mtanino@
 
@@ -44,104 +44,101 @@ of consumption.
   
 # Proposed API Changes
    
-  ## Persistent Volume Claim API Changes:
-  In the simplest case of static provisioning, a user asks for a volumeType of block. The binder will only bind to a PV defined 
-  with the same label.
-  
-  ```
-  kind: PersistentVolumeClaim
-  apiVersion: v1
-  metadata:
-    name: myclaim
-  spec:
-    **volumeType: block**
-    accessModes:
-      - ReadWriteOnce
-    resources:
-      requests:
-        storage: 80Gi 
-  ```
-  
- For dynamic provisioning and the use of the storageClass, the user also specifically defines the intent of the volume by 
- indicating the volumeType as block. The provisioner for this class will validate whether or not it supports block and return
- an error if it does not.
-  
-  ```
-  kind: PersistentVolumeClaim
-  apiVersion: v1
-  metadata:
-    name: myclaim
-  spec:
-    **storageClassName: local-fast**
-    **volumeType: block**
-    accessModes:
-      - ReadWriteOnce
-    resources:
-      requests:
-        storage: 80Gi
-    ```
-   
-  ## Persistent Volume API Changes:
-  For static provisioning the admin creates the volume and also is intentional about how the volume should be consumed. For backwards
-  compatibility, the absense of volumeType will default to volumes work today, which are formatted with a filesystem depending on 
-  the plug-in chosen. Recyling will not be a supported reclaim policy. Once the user deletes the claim against a PV, the volume will 
-  be scrubbed according to how it was bound. The path value in the PV definition would be overloaded to define the path of the raw
-  block device rather than the fileystem path.
-  
-   ```
-   kind: PersistentVolume
-   apiVersion: v1
-   metadata:
-     name: local-raw-pv
-   spec:
-     **volumeType: block**
-     capacity:
-       storage: 100Gi
-     local:
-       **path: /dev/xvdc**
-     accessModes:
-       - ReadWriteOnce
-     persistentVolumeReclaimPolicy: Delete
-   
-   ```
-  
-  ## Storage Class API Changes:
-  For dynamic provisioning, it is assumed that values pass in the parameter section are opaque, thus the introduction of utilizing
-  fsType in the StorageClass can be used by the provisioner to indicate how to create the volume. The proposal for this value is
-  defined here:
-  https://github.com/kubernetes/kubernetes/pull/45345 
-  Therefore, a provisioner could potentially provision a block device and install the filesystem onto it by indicating the volumeType
-  as 'block' but the fsType as 'xfs'.
-  
-  ```
-  kind: StorageClass
-  apiVersion: storage.k8s.io/v1
-  metadata:
-    name: block-volume
-  provisioner: kubernetes.io/local-block-glusterfs
-  parameters:
-    **volumeType: block**
-    fsType: xfs
+## Persistent Volume Claim API Changes:
+In the simplest case of static provisioning, a user asks for a volumeType of block. The binder will only bind to a PV defined 
+with the same label.
 
-  ```
-  The provisioner should validate the parameters and return and error if the combination specified is not supported.
-  This also allows the use case for leveraging a Storage Class for utilizing pre-defined static volumes.
-  
-  ```
-  kind: StorageClass
-  apiVersion: storage.k8s.io/v1
-  metadata:
-    name: block-volume
-  provisioner: no-provisioning 
-  parameters:
-    **volumeType: block**
+```
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+name: myclaim
+spec:
+**volumeType: block**
+accessModes:
+- ReadWriteOnce
+resources:
+requests:
+storage: 80Gi 
+```
 
-  ```
+For dynamic provisioning and the use of the storageClass, the user also specifically defines the intent of the volume by 
+indicating the volumeType as block. The provisioner for this class will validate whether or not it supports block and return
+an error if it does not.
+
+```
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+name: myclaim
+spec:
+**storageClassName: local-fast**
+**volumeType: block**
+accessModes:
+- ReadWriteOnce
+resources:
+requests:
+storage: 80Gi 
+```
+
+## Persistent Volume API Changes:
+For static provisioning the admin creates the volume and also is intentional about how the volume should be consumed. For backwards
+compatibility, the absense of volumeType will default to volumes work today, which are formatted with a filesystem depending on 
+the plug-in chosen. Recyling will not be a supported reclaim policy. Once the user deletes the claim against a PV, the volume will 
+be scrubbed according to how it was bound. The path value in the PV definition would be overloaded to define the path of the raw
+block device rather than the fileystem path.
+
+```
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+name: local-raw-pv
+spec:
+**volumeType: block**
+capacity:
+storage: 100Gi
+local:
+**path: /dev/xvdc**
+accessModes:
+  - ReadWriteOnce
+persistentVolumeReclaimPolicy: Delete 
+```
+
+## Storage Class API Changes:
+For dynamic provisioning, it is assumed that values pass in the parameter section are opaque, thus the introduction of utilizing
+fsType in the StorageClass can be used by the provisioner to indicate how to create the volume. The proposal for this value is
+defined here:
+https://github.com/kubernetes/kubernetes/pull/45345 
+Therefore, a provisioner could potentially provision a block device and install the filesystem onto it by indicating the volumeType
+as 'block' but the fsType as 'xfs'.
+
+```
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+name: block-volume
+provisioner: kubernetes.io/local-block-glusterfs
+parameters:
+**volumeType: block**
+fsType: xfs
+```
+The provisioner should validate the parameters and return and error if the combination specified is not supported.
+This also allows the use case for leveraging a Storage Class for utilizing pre-defined static volumes.
+
+```
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+name: block-volume
+provisioner: no-provisioning 
+parameters:
+**volumeType: block**
+```
   
 # Use Cases
 
 ## UC1: 
- 
+
 DESCRIPTION: 
 
 A developer wishes to enable their application to use a local raw block device as the volume for the container. The admin has already created PVs that the user will bind to by specifying 'block' as the volume type of their PVC.
@@ -202,18 +199,18 @@ spec:
       image: mysql
       volumeMounts:
       - name: my-db-data
-        mountPath: /var/lib/mysql/data
+	mountPath: /var/lib/mysql/data
     volumes:
     - name: my-db-data
       persistentVolumeClaim:
-        claimName: local-raw-pvc
+	claimName: local-raw-pvc
 ```
   NOTE: *accessModes correspond to the container runtime values. Where RWO == RWM (mknod) to enable the device to be written to and
   create new files. (Default is RWM) ROX == R
   **(RWX is NOT valid for block and should return an error.)** * This has been validated among runc, Docker and rocket. 
-  
+
 ## UC2: 
- 
+
 DESCRIPTION: 
 
 A user uses a container on virtual machine on hypervisor such as KVM, VMware and wishes to use raw block device for databases such as MariaDB. 
@@ -282,13 +279,13 @@ spec:
       image: mysql
       volumeMounts:
       - name: my-db-data
-        mountPath: /dev/xvda
+	mountPath: /dev/xvda
     nodeSelector:
       type: raw-disk
     volumes:
     - name: my-db-data
       persistentVolumeClaim:
-        claimName: raw-pvc
+	claimName: raw-pvc
 ```
 
 ## UC3: 
@@ -371,7 +368,7 @@ metadata:
 provisioner: kubernetes.io/local-block-ssd
 parameters:
   volumeType: block
-  
+
 ```
 
 ***This has implementation details that have yet to be determined. It is included in this proposal for completeness of design ****
@@ -435,31 +432,31 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx
+	app: nginx
     spec:
       containers:
       - name: nginx
-        image: gcr.io/google_containers/nginx-slim:0.8
-        ports:
-        - containerPort: 80
-          name: web
-        volumeMounts:
-        - name: www
-          mountPath: /usr/share/nginx/html
+	image: gcr.io/google_containers/nginx-slim:0.8
+	ports:
+	- containerPort: 80
+	  name: web
+	volumeMounts:
+	- name: www
+	  mountPath: /usr/share/nginx/html
  volumeClaimTemplates:
   - metadata:
       name: datadir
       annotations:
-        volume.beta.kubernetes.io/storage-class: aws-ebs-raw
+	volume.beta.kubernetes.io/storage-class: aws-ebs-raw
     spec:
       accessModes:
-        - "ReadWriteOnce"
+	- "ReadWriteOnce"
       resources:
-        requests:
-          storage: 10Gi
+	requests:
+	  storage: 10Gi
 ```
   ***SUITABLE FOR: NETWORK ATTACHED BLOCK***
-  
+
 ## UC10: 
 
 DESCRIPTION: Admin creates network raw block devices
@@ -525,11 +522,11 @@ spec:
       image: mysql
       volumeMounts:
       - name: my-db-data
-        mountPath: /var/lib/mysql/data
+	mountPath: /var/lib/mysql/data
     volumes:
     - name: my-db-data
       persistentVolumeClaim:
-        claimName: pvc-raw-block
+	claimName: pvc-raw-block
 ```
 
 # Implementation Plan
