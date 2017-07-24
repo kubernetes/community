@@ -149,7 +149,7 @@ document][node-allocatable] for details. The CPU manager will claim
 `ceiling(node.status.allocatable.cpu)` as the number of CPUs available to
 assign to pods, starting from the highest-numbered physical core and
 descending topologically. It is recommended to configure an integer value for
-`node.status.allocatable.cpus` when the CPU manager is enabled.
+`node.status.allocatable.cpu` when the CPU manager is enabled.
 
 Operator documentation will be updated to explain how to configure the
 system to use the low-numbered physical cores for kube-reserved and
@@ -181,14 +181,13 @@ becomes terminal.)
 
 ```go
 func (p *staticPolicy) Start(s State) {
-  // Iteration starts at index `1` here because CPU `0` is reserved
-  // for infrastructure processes.
-  // TODO(CD): Improve this to align with kube/system reserved resources.
-  shared := NewCPUSet()
-  for cpuid := 1; cpuid < p.topology.NumCPUs; cpuid++ {
-    shared.Add(cpuid)
-  }
-  s.SetDefaultCPUSet(shared)
+	fullCpuset := cpuset.NewCPUSet()
+	for cpuid := 0; cpuid < p.topology.NumCPUs; cpuid++ {
+		fullCpuset.Add(cpuid)
+	}
+	// Figure out which cores shall not be used in shared pool
+	reserved, _ := takeByTopology(p.topology, fullCpuset, p.topology.NumReservedCores)
+	s.SetDefaultCPUSet(fullCpuset.Difference(reserved))
 }
 
 func (p *staticPolicy) RegisterContainer(s State, pod *Pod, container *Container, containerID string) error {
