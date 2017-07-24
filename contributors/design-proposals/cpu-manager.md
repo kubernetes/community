@@ -146,9 +146,10 @@ configuration value `--cpu-manager-policy`. The default value is `noop`.
 The number of CPUs that pods may run on is set using the existing
 node-allocatable configuration settings. See the [node allocatable proposal
 document][node-allocatable] for details. The CPU manager will claim
-`floor(node.status.allocatable.cpu)` as the number of CPUs available to assign
-to pods, starting from the highest-numbered physical core and descending
-topologically.
+`ceiling(node.status.allocatable.cpu)` as the number of CPUs available to
+assign to pods, starting from the highest-numbered physical core and
+descending topologically. It is recommended to configure an integer value for
+`node.status.allocatable.cpus` when the CPU manager is enabled.
 
 Operator documentation will be updated to explain how to configure the
 system to use the low-numbered physical cores for kube-reserved and
