@@ -134,12 +134,24 @@ type CPUSet map[int]struct{} // set operations and parsing/formatting helpers
 type CPUTopology TBD
 ```
 
+#### Configuring the CPU Manager
+
 Kubernetes will ship with three CPU manager policies. Only one policy is
 active at a time on a given node, chosen by the operator via Kubelet
 configuration. The three policies are **no-op**, **static** and **dynamic**.
 
-Operators can set the active CPU manager policy through a new Kubelet
-configuration setting `--cpu-manager-policy`.
+The active CPU manager policy is set through a new Kubelet
+configuration value `--cpu-manager-policy`.
+
+The number of CPUs that pods may run on is set using the existing
+node-allocatable configuration settings. See the [node allocatable proposal
+document][node-allocatable] for details. The CPU manager will claim
+`floor(node.status.allocatable.cpu)` as the number of CPUs available to assign
+to pods, starting from the highest-numbered physical core and descending
+topologically.
+
+Operator documentation will be updated to explain how to configure the
+system to use the low-numbered physical cores for kube and system slices.
 
 Each policy is described below.
 
@@ -162,26 +174,6 @@ removed from the allowed CPUs of every other container running on the
 node. Once allocated at pod admission time, an exclusive CPU remains
 assigned to a single container for the lifetime of the pod (until it
 becomes terminal.)
-
-##### Configuration
-
-Operators can set the number of CPUs that pods may run on through a new
-Kubelet configuration setting `--cpu-manager-static-num-cpus`, which
-defaults to the number of logical CPUs available on the system. 
-The CPU manager takes this many CPUs as initial members of the shared
-pool and allocates exclusive CPUs out of it. The initial membership grows
-from the highest-numbered physical core down, topologically, leaving a gap
-at the "bottom end" (physical core 0.)
-
-Operator documentation will be updated to explain how to configure the
-system to use the low-numbered physical cores for kube and system slices.
-
-_NOTE: Although config does exist to reserve resources for the Kubelet
-and the system, it is best not to overload those values with additional
-semantics. For more information see the [node allocatable proposal
-document](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node-allocatable.md).
-Achieving compatible settings requires following a simple rule:
-`num system CPUs = kubereserved.cpus + systemreserved.cpus + static.cpus`_
 
 ##### Implementation sketch
 
@@ -367,6 +359,7 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
 [cpuset-files]: http://man7.org/linux/man-pages/man7/cpuset.7.html#FILES
 [ht]: http://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html
 [hwloc]: https://www.open-mpi.org/projects/hwloc
+[node-allocatable]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node-allocatable.md
 [procfs]: http://man7.org/linux/man-pages/man5/proc.5.html
 [qos]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-qos.md
 [topo]: http://github.com/intelsdi-x/swan/tree/master/pkg/isolation/topo
