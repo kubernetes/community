@@ -69,8 +69,9 @@ reconciliation loop.
 
 _CPU Manager block diagram. `Policy`, `State`, and `Topology` types are
 factored out of the CPU Manager to promote reuse and to make it easier
-to build and test new policies. The shared state abstraction forms a basis
-for observability and checkpointing extensions._
+to build and test new policies. The shared state abstraction allows
+other Kubelet components to be agnostic of the CPU manager policy for
+observability and checkpointing extensions._
 
 #### Discovering CPU topology
 
@@ -136,6 +137,10 @@ type CPUTopology TBD
 Kubernetes will ship with three CPU manager policies. Only one policy is
 active at a time on a given node, chosen by the operator via Kubelet
 configuration. The three policies are **no-op**, **static** and **dynamic**.
+
+Operators can set the active CPU manager policy through a new Kubelet
+configuration setting `--cpu-manager-policy`.
+
 Each policy is described below.
 
 #### Policy 1: "no-op" cpuset control [default]
@@ -157,6 +162,26 @@ removed from the allowed CPUs of every other container running on the
 node. Once allocated at pod admission time, an exclusive CPU remains
 assigned to a single container for the lifetime of the pod (until it
 becomes terminal.)
+
+##### Configuration
+
+Operators can set the number of CPUs that pods may run on through a new
+Kubelet configuration setting `--cpu-manager-static-num-cpus`, which
+defaults to the number of logical CPUs available on the system. 
+The CPU manager takes this many CPUs as initial members of the shared
+pool and allocates exclusive CPUs out of it. The initial membership grows
+from the highest-numbered physical core down, topologically, leaving a gap
+at the "bottom end" (physical core 0.)
+
+Operator documentation will be updated to explain how to configure the
+system to use the low-numbered physical cores for kube and system slices.
+
+_NOTE: Although config does exist to reserve resources for the Kubelet
+and the system, it is best not to overload those values with additional
+semantics. For more information see the [node allocatable proposal
+document](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node-allocatable.md).
+Achieving compatible settings requires following a simple rule:
+`num system CPUs = kubereserved.cpus + systemreserved.cpus + static.cpus`_
 
 ##### Implementation sketch
 
@@ -205,6 +230,38 @@ func (p *staticPolicy) UnregisterContainer(s State, containerID string) error {
 | Pod [Burstable] | All containers are assigned to the shared cpuset. |
 | Pod [BestEffort] | All containers are assigned to the shared cpuset. |
 
+##### Example scenarios and interactions
+
+1. _A container arrives that requires exclusive cores._
+    1. Kuberuntime calls the CRI delegate to create the container.
+    1. Kuberuntime registers the container with the CPU manager.
+    1. CPU manager registers the container to the static policy.
+    1. Static policy acquires CPUs from the default pool, by
+       topological-best-fit.
+    1. Static policy updates the state, adding an assignment for the new
+       container and removing those CPUs from the default pool.
+    1. CPU manager reads container assignment from the state.
+    1. CPU manager updates the container resources via the CRI.
+    1. Kuberuntime calls the CRI delegate to start the container.
+
+1. _A container that was assigned exclusive cores terminates._
+    1. Kuberuntime unregisters the container with the CPU manager.
+    1. CPU manager unregisters the contaner with the static policy.
+    1. Static policy adds the container's assigned CPUs back to the default
+       pool.
+    1. Kuberuntime calls the CRI delegate to remove the container.
+    1. Asynchronously, the CPU manager's reconcile loop updates the
+       cpuset for all containers running in the shared pool.
+
+1. _The shared pool becomes empty._
+    1. The CPU manager adds a taint with effect NoSchedule, NoExecute
+       that prevents BestEffort and Burstable QoS class pods from
+       running on the node.
+
+1. _The shared pool becomes nonempty._
+    1. The CPU manager removes the taint with effect NoSchedule, NoExecute
+       for BestEffort and Burstable QoS class pods.
+
 #### Policy 3: "dynamic" cpuset control
 
 _TODO: Describe the policy._
@@ -239,18 +296,6 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
     Kubelet restarts for any reason.
 * Read effective CPU assinments at runtime for alerting. This could be
   satisfied by the checkpointing requirement.
-* Configuration
-  * How does the CPU Manager coexist with existing kube-reserved
-    settings?
-  * How does the CPU Manager coexist with related Linux kernel
-    configuration (e.g. `isolcpus`.) The operator may want to specify a
-    low-water-mark for the size of the shared cpuset. The operator may
-    want to correlate exclusive cores with the isolated CPUs, in which
-    case the strategy outlined above where allocations are taken
-    directly from the shared pool is too simplistic. We could allow an
-    explicit pool of cores that may be exclusively allocated and default
-    this to the shared pool (leaving at least one core for the shared
-    cpuset to be used for OS, infra and non-exclusive containers.
 
 ## Practical challenges
 
@@ -259,6 +304,12 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
    after creation, but neither the Kubelet docker shim nor the CRI
    implement a similar interface.
     1. Mitigation: [PR 46105](https://github.com/kubernetes/kubernetes/pull/46105)
+1. Compatibility with the `isolcpus` Linux kernel boot parameter. The operator
+   may want to correlate exclusive cores with the isolated CPUs, in which
+   case the static policy outlined above, where allocations are taken
+   directly from the shared pool, is too simplistic.
+    1. Mitigation: defer supporting this until a new policy tailored for
+       use with `isolcpus` can be added.
 
 ## Implementation roadmap
 
