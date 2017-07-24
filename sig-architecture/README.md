@@ -8,7 +8,7 @@ To understand how this file is generated, see generator/README.md.
 -->
 # Architecture SIG
 
-The SIG would be intended to guide the design principles of Kubernetes, as well as provide a consistent  body of expertise necessary to ensure architectural consistency over time.
+The Architecture SIG maintains and evolves the design principles of Kubernetes, and provides a consistent body of expertise necessary to ensure architectural consistency over time.
 
 ## Meetings
 * [Mondays at 17:00 UTC](https://zoom.us/j/2018742972) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
@@ -24,5 +24,9 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-architecture)
 
 <!-- BEGIN CUSTOM CONTENT -->
+
+## Additional materials
+
+* [Charter](charter.md)
 
 <!-- END CUSTOM CONTENT -->
