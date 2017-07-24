@@ -83,9 +83,10 @@ please do let us know and we will evaluate your counter-proposal.
 - **priority/critical-urgent**: Must be actively worked on as someone's top
 priority right now. Stuff is burning. If it's not being actively worked on,
 someone is expected to drop what they're doing immediately to work on it. Team
-leaders are responsible for making sure that all P0's in their area are being
-actively worked on. Examples include user-visible bugs in core features, broken
-builds or tests and critical security issues.
+leaders are responsible for making sure that all the issues, labeled with this
+priority, in their area are being actively worked on. Examples include
+user-visible bugs in core features, broken builds or tests and critical
+security issues.
 
 - **priority/failing-test**: Automatically filed frequently failing test. Needs
 to be investigated.
@@ -112,7 +113,7 @@ good ideas, so that they don't get completely forgotten, and can be referenced
 If you are not sure of who should own issue, defer to the
 SIG label only. If you feel the issue should warrant a notification,you can ping
 a team with an @ mention, in this format, `@kubernetes/sig-<group-name>-<group-suffix>`.
-Here the `<group-suffix>` can be one of `bugs, feature-requests,pr-reviews, test-failures, proposals`.
+Here the `<group-suffix>` can be one of `bugs, feature-requests, pr-reviews, test-failures, proposals`.
 For example, `@kubernetes/sig-cluster-lifecycle-bugs, can you have a look at this?`
 
 If you think you can fix the issue and you are an issue reporter or a component
@@ -150,11 +151,13 @@ bug shouldn't be in this milestone for more than a day or two towards the end of
 a milestone. It should be triaged either into vX.Y, or moved out of the release
 milestones.
 
-The above [priority](#define-priority) scheme still applies. P0 and P1 issues
-are work we feel must get done before release.  P2 and P3 issues are work we
-would merge into the release if it gets done, but we wouldn't block the release
-on it. A few days before release, we will probably move all P2 and P3 bugs out
-of that milestone in bulk.
+The above [priority](#define-priority) scheme still applies. The `priority/critical-urgent`
+and `priority/failing-test` issues are work we feel must get done before
+release.  The `priority/important-soon` and `priority/important-longterm`
+issues are work we would merge into the release if it gets done, but we wouldn't
+block the release on it. A few days before release, we will probably move all
+`priority/important-soon` and `priority/important-longterm` bugs out of
+that milestone in bulk.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/issues.md?pixel)]()
