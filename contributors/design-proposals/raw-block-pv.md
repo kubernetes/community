@@ -223,12 +223,10 @@ WORKFLOW:
 
 ADMIN:
 
+* Admin creates a disk and attach it to server and pass-through the disk to KVM guest which Kubelet node1 is working inside.
+* Admin creates a PV using the path to specify the device location.
 
-
-*   Admin creates a disk and attach it to server and pass-through the disk to KVM guest which Kubelet node1 is working inside.
-*   Admin creates a PV using the path to specify the device location.
-
-    ```
+```
 kind: PersistentVolume
 apiVersion: v1
 metadata:
@@ -244,16 +242,18 @@ spec:
     targetWWNs: ['500a0982991b8dc5']
     lun: 2
 ```
-- Admin adds "raw-disk" label to the kubelet node1
+
+* Admin adds "raw-disk" label to the kubelet node1
 
 ```
 % kubectl label nodes <node1-ip> type=raw-disk
 ```
+
 USER:
 
-*   User creates a persistent volume claim with volumeType: block option.
+* User creates a persistent volume claim with volumeType: block option.
 
-    ```
+```
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -266,9 +266,10 @@ spec:
     requests:
       storage: 80Gi
 ```
+
 *   User creates a Pod yaml which uses raw-pvc PVC and selects a node that Admin attached raw disk using nodeSelector option.
 
-    ```
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -401,8 +402,7 @@ spec:
 
 DESCRIPTION: User wishes to install a software defined storage solution  (i.e.GlusterFS/Ceph(bluestore)) on top of raw block device. Using something like a StateFulSet for GlusterFS, for example, the system could provide it with provisioned block storage, and allow the software defined storage solution to consume it as needed. 
 
-
-BACKGROUNG: This provides a way to dynamically create raw block devices to later be consumed by software defined storage.
+BACKGROUND: This provides a way to dynamically create raw block devices to later be consumed by software defined storage.
 
 WORKFLOW:
 
@@ -419,7 +419,7 @@ parameters:
   fstype: raw 
 ```
 
-Storage Class Stateful Set
+* Storage Class Stateful Set
 
 ```
 apiVersion: apps/v1beta1
@@ -455,9 +455,9 @@ spec:
 	requests:
 	  storage: 10Gi
 ```
-  ***SUITABLE FOR: NETWORK ATTACHED BLOCK***
+***SUITABLE FOR: NETWORK ATTACHED BLOCK***
 
-## UC10: 
+## UC8: 
 
 DESCRIPTION: Admin creates network raw block devices
 
@@ -486,10 +486,9 @@ Spec:
 
 ```
 
-
 ***If admin specifies volumeType: block + fstype: ext4 then they would get what they already get today ***
 
-## UC11: 
+## UC9: 
 
 DESCRIPTION: Developer wishes to consumes raw device
 
@@ -545,7 +544,7 @@ Phase 2:  Discovery of block devices
 
                 Priv container concerns    
 
-Other considerations
+Other considerations:
 
                Expose volumeType to users via kubectl
 
@@ -571,6 +570,3 @@ type BlockUnmounter interface {
  	GetVolumePath() string
 }
 ```
-
-[TBD]
-
