@@ -49,7 +49,7 @@ sigs:
   - name: Architecture
     dir: sig-architecture
     mission_statement: >
-      The SIG would be intended to guide the design principles of Kubernetes, as well as provide a consistent 
+      The Architecture SIG maintains and evolves the design principles of Kubernetes, and provides a consistent 
       body of expertise necessary to ensure architectural consistency over time.
     leads:
     - name: Brian Grant
