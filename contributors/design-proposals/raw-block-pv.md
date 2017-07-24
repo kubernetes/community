@@ -1,4 +1,4 @@
-# [WIP] Local Raw Block Consumption via Persistent Volume Source
+# Local Raw Block Consumption via Persistent Volume Source
 
 Authors: erinboyd@, screeley44@, mtanino@
 
