@@ -138,10 +138,10 @@ type CPUTopology TBD
 
 Kubernetes will ship with three CPU manager policies. Only one policy is
 active at a time on a given node, chosen by the operator via Kubelet
-configuration. The three policies are **no-op**, **static** and **dynamic**.
+configuration. The three policies are **noop**, **static** and **dynamic**.
 
 The active CPU manager policy is set through a new Kubelet
-configuration value `--cpu-manager-policy`.
+configuration value `--cpu-manager-policy`. The default value is `noop`.
 
 The number of CPUs that pods may run on is set using the existing
 node-allocatable configuration settings. See the [node allocatable proposal
@@ -151,7 +151,8 @@ to pods, starting from the highest-numbered physical core and descending
 topologically.
 
 Operator documentation will be updated to explain how to configure the
-system to use the low-numbered physical cores for kube and system slices.
+system to use the low-numbered physical cores for kube-reserved and
+system-reserved slices.
 
 Each policy is described below.
 
@@ -359,7 +360,7 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
 [cpuset-files]: http://man7.org/linux/man-pages/man7/cpuset.7.html#FILES
 [ht]: http://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html
 [hwloc]: https://www.open-mpi.org/projects/hwloc
-[node-allocatable]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node-allocatable.md
+[node-allocatable]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node-allocatable.md#phase-2---enforce-allocatable-on-pods
 [procfs]: http://man7.org/linux/man-pages/man5/proc.5.html
 [qos]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-qos.md
 [topo]: http://github.com/intelsdi-x/swan/tree/master/pkg/isolation/topo
