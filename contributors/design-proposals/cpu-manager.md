@@ -138,29 +138,31 @@ type CPUTopology TBD
 
 Kubernetes will ship with three CPU manager policies. Only one policy is
 active at a time on a given node, chosen by the operator via Kubelet
-configuration. The three policies are **noop**, **static** and **dynamic**.
+configuration. The three policies are **none**, **static** and **dynamic**.
 
 The active CPU manager policy is set through a new Kubelet
-configuration value `--cpu-manager-policy`. The default value is `noop`.
+configuration value `--cpu-manager-policy`. The default value is `none`.
 
-The number of CPUs that pods may run on is set using the existing
-node-allocatable configuration settings. See the [node allocatable proposal
-document][node-allocatable] for details. The CPU manager will claim
+The number of CPUs that pods may run on can be implicitly controlled using the
+existing node-allocatable configuration settings. See the [node allocatable
+proposal document][node-allocatable] for details. The CPU manager will claim
 `ceiling(node.status.allocatable.cpu)` as the number of CPUs available to
 assign to pods, starting from the highest-numbered physical core and
-descending topologically. It is recommended to configure an integer value for
-`node.status.allocatable.cpu` when the CPU manager is enabled.
+descending topologically. It is recommended to configure `kube-reserved`
+and `system-reserved` such that their sum is an integer when the CPU manager
+is enabled. This ensures that `node.status.allocatable.cpu` is also an
+integer.
 
 Operator documentation will be updated to explain how to configure the
 system to use the low-numbered physical cores for kube-reserved and
-system-reserved slices.
+system-reserved cgroups.
 
 Each policy is described below.
 
-#### Policy 1: "no-op" cpuset control [default]
+#### Policy 1: "none" cpuset control [default]
 
 This policy preserves the existing Kubelet behavior of doing nothing
-with the cgroup `cpuset.cpus` and `cpuset.mems` controls. This “no-op”
+with the cgroup `cpuset.cpus` and `cpuset.mems` controls. This "none"
 policy would become the default CPU Manager policy until the effects of
 the other policies are better understood.
 
@@ -169,13 +171,27 @@ the other policies are better understood.
 The "static" policy allocates exclusive CPUs for containers if they are
 included in a pod of "Guaranteed" [QoS class][qos] and the container's
 resource limit for the CPU resource is an integer greater than or
-equal to one.
+equal to one. All other containers share a set of CPUs.
 
 When exclusive CPUs are allocated for a container, those CPUs are
 removed from the allowed CPUs of every other container running on the
 node. Once allocated at pod admission time, an exclusive CPU remains
 assigned to a single container for the lifetime of the pod (until it
 becomes terminal.)
+
+Workloads that need to know their own CPU mask, e.g. for managing
+thread-level affinity, can read it from the virtual file `/proc/self/status`:
+
+```
+$ grep -i cpus /proc/self/status
+Cpus_allowed:   77
+Cpus_allowed_list:      0-2,4-6
+```
+
+Note that containers running in the shared cpuset should not attempt any
+application-level CPU affinity of their own, as those settings may be
+overwritten without notice (whenever exclusive cores are
+allocated or deallocated.)
 
 ##### Implementation sketch
 
@@ -239,7 +255,7 @@ func (p *staticPolicy) UnregisterContainer(s State, containerID string) error {
 
 1. _A container that was assigned exclusive cores terminates._
     1. Kuberuntime unregisters the container with the CPU manager.
-    1. CPU manager unregisters the contaner with the static policy.
+    1. CPU manager unregisters the container with the static policy.
     1. Static policy adds the container's assigned CPUs back to the default
        pool.
     1. Kuberuntime calls the CRI delegate to remove the container.
@@ -247,17 +263,27 @@ func (p *staticPolicy) UnregisterContainer(s State, containerID string) error {
        cpuset for all containers running in the shared pool.
 
 1. _The shared pool becomes empty._
-    1. The CPU manager adds a taint with effect NoSchedule, NoExecute
-       that prevents BestEffort and Burstable QoS class pods from
-       running on the node.
+    1. The CPU manager adds a node condition with effect NoSchedule,
+       NoExecute that prevents BestEffort and Burstable QoS class pods from
+       running on the node. BestEffort and Burstable QoS class pods are
+       evicted from the node.
 
 1. _The shared pool becomes nonempty._
-    1. The CPU manager removes the taint with effect NoSchedule, NoExecute
-       for BestEffort and Burstable QoS class pods.
+    1. The CPU manager removes the node condition with effect NoSchedule,
+       NoExecute for BestEffort and Burstable QoS class pods.
 
 #### Policy 3: "dynamic" cpuset control
 
 _TODO: Describe the policy._
+
+Capturing discussions from resource management meetings and proposal comments:
+
+Unlike the static policy, when the dynamic policy allocates exclusive CPUs to
+a container, the cpuset may change during the container's lifetime. If deemed
+necessary, we discussed providing a signal in the following way. We could
+project (a subset of) the CPU manager state into a volume visible to selected
+containers. User workloads could subscribe to update events in a normal Linux
+manner (e.g. inotify.)
 
 ##### Implementation sketch
 
@@ -287,7 +313,7 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
 * Checkpointing assignments
   * The CPU Manager must be able to pick up where it left off in case the
     Kubelet restarts for any reason.
-* Read effective CPU assinments at runtime for alerting. This could be
+* Read effective CPU assignments at runtime for alerting. This could be
   satisfied by the checkpointing requirement.
 
 ## Practical challenges
@@ -306,23 +332,23 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
 
 ## Implementation roadmap
 
-### Phase 1: No-op policy
+### Phase 1: None policy [TARGET: Kubernetes v1.8]
 
 * Internal API exists to allocate CPUs to containers
   ([PR 46105](https://github.com/kubernetes/kubernetes/pull/46105))
-* Kubelet configuration includes a CPU manager policy (initially only no-op)
-* No-op policy is implemented.
+* Kubelet configuration includes a CPU manager policy (initially only none)
+* None policy is implemented.
 * All existing unit and e2e tests pass.
 * Initial unit tests pass.
 
-### Phase 2: Static policy
+### Phase 2: Static policy [TARGET: Kubernetes v1.8]
 
 * Kubelet can discover "basic" CPU topology (HT-to-physical-core map)
 * Static policy is implemented.
 * Unit tests for static policy pass.
 * e2e tests for static policy pass.
 * Performance metrics for one or more plausible synthetic workloads show
-  benefit over no-op policy.
+  benefit over none policy.
 
 ### Phase 3: Cache allocation
 
@@ -334,7 +360,7 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
 * Unit tests for dynamic policy pass.
 * e2e tests for dynamic policy pass.
 * Performance metrics for one or more plausible synthetic workloads show
-  benefit over no-op policy.
+  benefit over none policy.
 
 ### Phase 5: NUMA
 
