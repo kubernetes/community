@@ -13,8 +13,8 @@ This doc explains the process and best practices for submitting a PR to the [Kub
   * [Comment Commands Reference](#comment-commands-reference)
   * [Automation](#automation)
   * [How the e2e Tests Work](#how-the-e2e-tests-work)
-- [Why was my PR closed?](#why-was-my-pr-closed-)
-- [Why is my PR not getting reviewed?](#why-is-my-pr-not-getting-reviewed-)
+- [Why was my PR closed?](#why-was-my-pr-closed)
+- [Why is my PR not getting reviewed?](#why-is-my-pr-not-getting-reviewed)
 - [Best Practices for Faster Reviews](#best-practices-for-faster-reviews)
   * [0. Familiarize yourself with project conventions](#0-familiarize-yourself-with-project-conventions)
   * [1. Is the feature wanted? Make a Design Doc or Sketch PR](#1-is-the-feature-wanted--make-a-design-doc-or-sketch-pr)
@@ -157,8 +157,6 @@ The end-to-end tests will post the status results to the PR. If an e2e test fail
 > The magic incantation to run this job again is @k8s-bot unit test this. Please help us cut down flakes by linking to an open flake issue when you hit one in your PR.
 
 # Why was my PR closed?
-
-Pull requests that are purely support questions will be closed and redirected to [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes). The Kubernetes developer community does this to consolidate questions into a single channel, improve efficiency in responding to requests, and make FAQs easier to find.
 
 Pull requests older than 90 days will be closed. Exceptions can be made for PRs that have active review comments, or that are awaiting other dependent PRs. Closed pull requests are easy to recreate, and little work is lost by closing a pull request that subsequently needs to be reopened. We want to limit the total number of PRs in flight to:
 * Maintain a clean project
