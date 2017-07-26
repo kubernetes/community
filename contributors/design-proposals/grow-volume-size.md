@@ -59,6 +59,9 @@ For volume types that only require volume plugin based api call, this will be on
 * Resource quota code has to be updated to take into account PVC expand feature.
 * In case volume plugin doesn’t support resize feature. The resize API request will be rejected and PVC object will not be saved. This check will be performed via an admission controller plugin.
 * In case requested size is smaller than current size of PVC. A validation will be used to reject the API request. (This could be moved to admission controller plugin too.)
+* Not all PVCs will be resizable even if underlying volume plugin allows that. Only dynamically provisioned volumes
+which are explicitly enabled by an admin will be allowed to be resized. A plugin in admission controller will forbid
+size update for PVCs for which resizing is not enabled by the admin.
 
 
 ### Controller Manager resize
@@ -75,7 +78,18 @@ new controller will be:
 * Controller resize in effect will be level based rather than edge based. If there are more than one pending resize request for same PVC then
   new resize requests for same PVC will replace older pending request.
 * Resize will be performed via volume plugin interface, executed inside a goroutine spawned by `operation_exectutor`.
-* A new plugin interface called `volume.Expander` will be added to volume plugin interface. The controller call to expand the PVC will look like:
+* A new plugin interface called `volume.Expander` will be added to volume plugin interface. The `Expander` interface
+  will also define if volume requires a file system resize:
+
+  ```go
+    type Expander interface {
+      // ExpandVolume expands the volume
+      ExpandVolumeDevice(spec *Spec, newSize resource.Quantity, oldSize resource.Quantity) error
+      RequiresFSResize() bool
+    }
+  ```
+
+* The controller call to expand the PVC will look like:
 
 ```go
 func (og *operationGenerator) GenerateExpandVolumeFunc(
@@ -138,6 +152,15 @@ func (og *operationGenerator) GenerateExpandVolumeFunc(
 
 A File system resize will be pending on PVC until a new pod that uses this volume is scheduled somewhere. While theoretically we *can* perform
 online file system resize if volume type and file system supports it - we are leaving it for next iteration of this feature.
+
+#### Prerequisite of File system resize
+
+* `pv.spec.capacity` must be greater than `pvc.status.spec.capacity`.
+* A fix in pv_controller has to made to fix `claim.Status.Capacity` only during binding. See comment by jan here - https://github.com/kubernetes/community/pull/657#discussion_r128008128
+* A fix in attach_detach controller has to be made to prevent fore detaching of volumes that are undergoing resize.
+This can be done by checking `pvc.Status.Conditions` during force detach. `AttachedVolume` struct doesn't hold a reference to PVC - so PVC info can either be directly cached in `AttachedVolume` along with PV spec or it can be fetched from PersistentVolume's ClaimRef binding info.
+
+#### Steps for resizing file system available on Volume
 
 * When calling `MountDevice` or `Setup` call of volume plugin, volume manager will in addition compare `pv.spec.capacity` and `pvc.status.capacity` and if `pv.spec.capacity` is greater
   than `pvc.status.spec.capacity` then volume manager will additionally resize the file system of volume.
@@ -263,7 +286,22 @@ const (
 )
 ```
 
+### StorageClass API change
 
+A new field called `AllowVolumeExpand` will be added to StorageClass. The default of this value
+will be `false` and only if it is true - PVC expansion will be allowed.
+
+```go
+type StorageClass struct {
+    metav1.TypeMeta
+    metav1.ObjectMeta
+    Provisioner string
+    Parameters map[string]string
+    // New Field added
+    // +optional
+    AllowVolumeExpand bool
+}
+```
 
 ### Other API changes
 
