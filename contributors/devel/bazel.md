@@ -9,6 +9,7 @@ Several `make` rules have been created for common operations:
 
 * `make bazel-build`: builds all binaries in tree
 * `make bazel-test`: runs all unit tests
+* `make bazel-test-integration`: runs all integration tests
 * `make bazel-release`: builds release tarballs, Docker images (for server
   components), and Debian images
 
