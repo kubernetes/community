@@ -11,7 +11,7 @@ To understand how this file is generated, see generator/README.md.
 Covers networking in Kubernetes.
 
 ## Meetings
-* [Tuesdays at 21:00 UTC](https://zoom.us/j/5806599998) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=21:00&tz=UTC).
+* [Thursdays at 21:00 UTC](https://zoom.us/j/5806599998) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=21:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
 
