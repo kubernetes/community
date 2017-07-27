@@ -12,7 +12,7 @@ Beginning in version 1.8, the Kubernetes Storage SIG is putting a stop to accept
 
 [Flexvolume](https://github.com/kubernetes/community/blob/master/contributors/devel/flexvolume.md) is an in-tree plugin that has the ability to run any storage solution by executing volume commands against a user-provided driver on the Kubernetes host, and this currently exists today. However, the process of setting up Flexvolume is very manual, pushing it out of consideration for many users. Problems include having to copy the driver to a specific location in each node, manually restarting kubelet, and user's limited access to machines.
 
-An automated deployment technique is discussed in [Recommended Deployment Method](#recommended-driver-deployment-method). The crucial change required to enable this method is allowing kubelet and controller manager to dynamically discover plugin changes.
+An automated deployment technique is discussed in [Recommended Driver Deployment Method](#recommended-driver-deployment-method). The crucial change required to enable this method is allowing kubelet and controller manager to dynamically discover plugin changes.
 
 
 ## **Overview**
@@ -28,11 +28,11 @@ In the volume plugin code, introduce a `PluginStub` interface containing a singl
 
 `Probe()` scans the driver directory only when the goroutine sets a flag. If the flag is set, return true (indicating that new plugins are available) and the list of plugins. Otherwise, return false and nil. After the scan, the watch is refreshed to include the new list of subdirectories. The goroutine should only record a signal if there has been a 1-second delay since the last signal (see [Security Considerations](#security-considerations)). Because inotify (used by fsnotify) can only be used to watch an existing directory, the goroutine needs to maintain the invariant that the driver directory always exists.
 
-Iterating through the list of plugins inside `InitPlugins()` from `volume/plugins.go`, if the plugin is an instance of `PluginProber`, only call its `Init()` and nothing else. Add an additional field, `flexVolumePluginList`, in `VolumePluginMgr` as a cache. For every iteration of the plugin list, call `Probe()` and update `flexVolumePluginList` if true is returned, and iterate through the new plugin list. If the return value is false, iterate through the existing `flexVolumePluginList`.
+Iterating through the list of plugins inside `InitPlugins()` from `volume/plugins.go`, if the plugin is an instance of `PluginProber`, only call its `Init()` and nothing else. Add an additional field, `flexVolumePluginList`, in `VolumePluginMgr` as a cache. For every iteration of the plugin list, call `Probe()` and update `flexVolumePluginList` if true is returned, and iterate through the new plugin list. If the return value is false, iterate through the existing `flexVolumePluginList`. If `Probe()` fails, use the cached plugin instead. However, if the plugin fails to initialize, log the error but do not use the cached version. The user needs to be aware that their driver implementation has a problem initializing, so the system should not silently use an older version.
 
 Because Flexvolume has two separate plugin instantiations (attachable and non-attachable), it's worth considering the case when a driver that implements attach/detach is replaced with a driver that does not, or vice versa. This does not cause an issue because plugins are recreated every time the driver directory is changed.
 
-There is a possibility that a probe occurs at the same time the DaemonSet updates the driver, so the prober's view of drivers is inconsistent. However, this is very rare and when it does occur, the next `Probe()`call, which occurs shortly after, will be consistent.
+There is a possibility that a Flexvolume command execution occurs at the same time as the DaemonSet updates the driver, which leads to a bad execution. This cannot be solved within the Kubernetes system without an overhaul. Instead, this is discussed in [Atomic Driver Installation](#atomic-driver-installation) as part of the deployment mechanism. As part of the solution, the Prober will ignore all files that begins with "." in the driver directory.
 
 
 ## **Alternative Designs**
@@ -83,20 +83,37 @@ This section describes one possible method to automatically deploy Flexvolume dr
 
 Driver Installation:
 
-*   Alice is a storage plugin author and would like to deploy a Flexvolume driver on all node instances. She
-    1. prepares her Flexvolume driver directory, with driver names in `[vendor~]driver/driver` format (e.g. `k8s~nfs/nfs`, see [Flexvolume documentation](https://github.com/kubernetes/community/blob/master/contributors/devel/flexvolume.md#prerequisites)).
-    2. creates an image by copying her driver and the [deployment script](#driver-deployment-script) to a busybox base image.
-    3. makes her image available Bob, a cluster admin.
+*   Alice is a storage plugin author and would like to deploy a Flexvolume driver on all node instances. She creates an image by copying her driver and the [deployment script](#driver-deployment-script) to a busybox base image, and makes her image available Bob, a cluster admin.
 *   Bob modifies the existing deployment DaemonSet spec with the name of the given image, and creates the DaemonSet.
 *   Charlie, an end user, creates volumes using the installed plugin.
 
 The user story for driver update is similar: Alice creates a new image with her new drivers, and Bob deploys it using the DaemonSet spec.
 
-Note that the `/flexvolume` directory must look exactly like what is desired in the Flexvolume directory on the host (as described in the [Flexvolume documentation](https://github.com/kubernetes/community/blob/master/contributors/devel/flexvolume.md#prerequisites)). The deployment will replace the existing driver directory on the host with contents in `/flexvolume`. Thus, in order to add a new driver without removing existing ones, existing drivers must also appear in `/flexvolume`.
-
 ### Driver Deployment Script
 
-The script will copy the existing content of `/flexvolume` on the host to a location in `/tmp`, and then attempt to copy user-provided drivers to that directory. If the copy fails, the original drivers are restored. This script will not perform any driver validation.
+This script assumes that only a *single driver file* is necessary, and is located at `/$DRIVER` on the deployment image.
+
+``` bash
+#!/bin/sh
+
+set -o errexit
+set -o pipefail
+
+VENDOR=k8s.io
+DRIVER=nfs
+
+driver_dir=$VENDOR${VENDOR:+"~"}${DRIVER}
+if [ ! -d "/flexmnt/$driver_dir" ]; then
+  mkdir "/flexmnt/$driver_dir"
+fi
+
+cp "/$DRIVER" "/flexmnt/$driver_dir/.$DRIVER"
+mv -f "/flexmnt/$driver_dir/.$DRIVER" "/flexmnt/$driver_dir/$DRIVER"
+
+while : ; do
+  sleep 3600
+done
+```
 
 ### Deployment DaemonSet
 ``` yaml
@@ -125,6 +142,11 @@ spec:
             path: <host_driver_directory>
 ```
 
+### Atomic Driver Installation
+Regular file copy is not an atomic file operation, so if it were used to install the driver, it's possible that kubelet or controller manager executes the driver when it's partially installed, or the driver gets modified while it's being executed. Care must be taken to ensure the installation operation is atomic.
+
+The deployment script provided above uses renaming, which is atomic, to ensure that from the perspective of kubelet or controller manager, the driver file is completely written to disk in a single operation.
+
 ### Alternatives
 
 * Using Jobs instead of DaemonSets to deploy.
@@ -136,5 +158,4 @@ Cons: Does not guarantee every node has a pod running. Pod anti-affinity can be 
 ## **Open Questions**
 
 * How does this system work with containerized kubelet?
-* If DaemonSet deployment fails, how are errors shown to the user?
 * Are there any SELinux implications?
