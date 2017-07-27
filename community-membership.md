@@ -11,7 +11,7 @@ scoped by these sub-areas.
 | member | active contributor in the community | sponsored by 2 reviewers.  multiple contributions to the project. | Kubernetes GitHub org member. |
 | reviewer | review contribution from other members | history of review and authorship in an area | OWNERS file reviewer entry. |
 | approver | approve accepting contributions | highly experienced and active reviewer + contributor to an area | OWNERS file approver entry|
-| owner | set priorities and approve proposals | demonstrated responsibility and god judgement for entire area | OWNERS file approver entries for entire area.  "# owner" comment next to entry. |
+| owner | set priorities and approve proposals | demonstrated responsibility and good judgement for entire area | OWNERS file approver entries for entire area.  "# owner" comment next to entry. |
 | maintainer | cross area ownership of project health | highly experienced contributor active in multiple areas and roles. | GitHub repo write access |
 
 ## New contributors
