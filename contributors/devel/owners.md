@@ -1,100 +1,240 @@
-# Owners files
-
-_Note_: This is a design for a feature that is not yet implemented. See the [contrib PR](https://github.com/kubernetes/contrib/issues/1389) for the current progress.
+# OWNERS files
 
 ## Overview
 
-We want to establish owners for different parts of the code in the Kubernetes codebase.  These owners
-will serve as the approvers for code to be submitted to these parts of the repository.  Notably, owners
-are not necessarily expected to do the first code review for all commits to these areas, but they are
-required to approve changes before they can be merged.
+OWNERS files are used to designate responsibility over different parts of the Kubernetes codebase.
+Today, we use them to assign the **reviewer** and **approver** roles used in our two-phase code
+review process. Our OWNERS files were inspired by [Chromium OWNERS
+files](https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md), which in turn
+inspired [GitHub's CODEOWNERS files](https://help.github.com/articles/about-codeowners/).
 
-**Note** The Kubernetes project has a hiatus on adding new approvers to OWNERS files. At this time we are [adding more reviewers](https://github.com/kubernetes/kubernetes/pulls?utf8=%E2%9C%93&q=is%3Apr%20%22Curating%20owners%3A%22%20) to take the load off of the current set of approvers and once we have had a chance to flush this out for a release we will begin adding new approvers again. Adding new approvers is planned for after the Kubernetes 1.6.0 release.
+The velocity of a project that uses code review is limited by the number of people capable of
+reviewing code. The quality of a person's code review is limited by their familiarity with the code
+under review. Our goal is to address both of these concerns through the prudent use and maintenance
+of OWNERS files
 
-## High Level flow
+## OWNERS spec
 
-### Step One: A PR is submitted
+The [mungegithub gitrepos
+feature](https://github.com/kubernetes/test-infra/blob/master/mungegithub/features/repo-updates.go)
+is the main consumer of OWNERS files.  If this page is out of date, look there.
 
-After a PR is submitted, the automated kubernetes PR robot will append a message to the PR indicating the owners
-that are required for the PR to be submitted.
+Each directory that contains a unit of independent code or content may also contain an OWNERS file.
+This file applies to everything within the directory, including the OWNERS file itself, sibling
+files, and child directories.
 
-Subsequently, a user can also request the approval message from the robot by writing:
+OWNERS files are in YAML format and support the following keys:
+
+- `approvers`: a list of GitHub usernames or aliases that can `/approve` a PR
+- [DEPRECATED] `assignees`: do not use, equivalent to `approvers`
+  ([kubernetes/test-infra#3851](https://github.com/kubernetes/test-infra/issues/3851)) 
+- `labels`: a list of GitHub labels to automatically apply to a PR
+- `reviewers`: a list of GitHub usernames or aliases that are good candidates to `/lgtm` a PR
+
+All users are expected to be assignable. In GitHub terms, this means they are either collaborators
+of the repo, or members of the organization to which the repo belongs.
+
+A typical OWNERS file looks like:
 
 ```
-@k8s-bot approvers
+approvers:
+  - alice
+  - bob     # this is a comment
+reviewers:
+  - alice 
+  - carol   # this is another comment
+  - sig-foo # this is an alias
 ```
 
-into a comment.
+Each repo may contain at its root an OWNERS_ALIAS file.
 
-In either case, the automation replies with an annotation that indicates
-the owners required to approve.  The annotation is a comment that is applied to the PR.
-This comment will say:
+OWNERS_ALIAS files are in YAML format and support the following keys:
 
+- `aliases`: a mapping of alias name to a list of GitHub usernames
+
+We use aliases for groups instead of GitHub Teams, because changes to GitHub Teams are not
+publicly auditable.
+
+A sample OWNERS_ALISES file looks like:
+
+``` 
+aliases:
+  sig-foo:
+    - david
+    - erin
+  sig-bar:
+    - bob
+    - frank
 ```
-Approval is required from <owner-a> OR <owner-b>, AND <owner-c> OR <owner-d>, AND ...
-```
 
-The set of required owners is drawn from the OWNERS files in the repository (see below).  For each file
-there should be multiple different OWNERS, these owners are listed in the `OR` clause(s). Because
-it is possible that a PR may cover different directories, with disjoint sets of OWNERS, a PR may require
-approval from more than one person, this is where the `AND` clauses come from.
+## Code Review Process
 
-`<owner-a>` should be the github user id of the owner _without_ a leading `@` symbol to prevent the owner
-from being cc'd into the PR by email.
+This is a simplified description of our [full PR testing and merge
+workflow](https://github.com/kubernetes/community/blob/master/contributors/devel/pull-requests.md#the-testing-and-merge-workflow)
+that conveniently forgets about the existence of tests, to focus solely on the roles driven by
+OWNERS files.
 
-### Step Two: A PR is LGTM'd
+- The **author** submits a PR
+- Phase 0: Automation determines **reviewers** and **approvers** for the PR
+  - Determine the set of OWNERS files nearest to the code being changed
+  - Choose two **reviewers**, and assign them to the PR (choose more than one to avoid assigning to
+    an inactive / unavailable reviewer)
+  - Choose suggested **approvers**, one from each OWNERS file, and list them in a comment on the PR
+- Phase 1: Humans review the PR
+  - **Reviewers** look for general code quality, correctness, sane software engineering, style, etc.
+  - The PR **author** cannot be their own **reviewer**
+  - If the code changes look good to them, a **reviewer** types `/lgtm` in a PR comment or review;
+    if they change their mind, they `/lgtm cancel`
+  - Once a **reviewer** has `/lgtm`'ed, `prow` ([@k8s-ci-robot](https://github.com/k8s-ci-robot/))
+    applies an `lgtm` label to the PR
+- Phase 2: Humans approve the PR
+  - The PR **author** `/assign`'s all suggested **approvers** to the PR, and optionally notifies
+    them (eg: "pinging @foo for approval")
+  - The PR **author** can be their own **approver** (assuming they are listed in the appropriate
+    OWNERS files)
+  - **Approvers** look for holistic acceptance criteria, including dependencies with other features,
+    forwards/backwards compatibility, API and flag definitions, etc
+  - If the code changes look good to them, an **approver** types `/approve` in a PR comment or
+    review; if they change their mind, they `/approve cancel`
+  - `mungegithub` ([@k8s-merge-robot](https://github.com/k8s-merge-robot/)) updates its comment in
+    the PR to indicate which **approvers** still need to approve
+  - Once all **approvers** (one from each of the previously identified OWNERS files) have approved,
+    `mungegithub` ([@k8s-merge-robot](https://github.com/k8s-merge-robot/)) applies an `approved`
+label
+- Phase 3: Automation merges the PR
+  - All required labels are present (eg: `lgtm`, `approved`)
+  - All required status checks for the PR are verified as green
+  - The PR is merged
 
-Once a PR is reviewed and LGTM'd it is eligible for submission.  However, for it to be submitted
-an owner for all of the files changed in the PR have to 'approve' the PR.  A user is an owner for a
-file if they are included in the OWNERS hierarchy (see below) for that file.
+## Quirks of the Process
 
-Owner approval comes in two forms:
+There are a number of behaviors we've observed that while _possible_ are discouraged, as they go
+against the intent of this review process.  Some of these could be prevented in the future, but this
+is the state of today.
 
-   * An owner adds a comment to the PR saying "I approve" or "approved"
-   * An owner is the original author of the PR
+- An **approver**'s `/lgtm` is simultaneously interpreted as an `/approve`
+  - While a convenient shortcut for some, it can be surprising that the same command is interpreted
+    in one of two ways depending on who the commenter is
+  - Instead, explicitly write out `/lgtm` and `/approve` to help observers, or save the `/lgtm` for
+    a **reviewer**
+  - This goes against the idea of having at least two sets of eyes on a PR, and may be a sign that
+    there are too few **reviewers** (who aren't also **approves)
+- An **approver** can `/approve no-issue` to bypass the requirement that PR's must have linked
+  issues
+  - There is disagreement within the community over whether requiring every PR to have a linked
+    issue provides value
+  - Protest is being expressed in the form of overuse of `/approve no-issue`
+  - Instead, suggest to the PR **author** that they edit the PR description to include a linked
+    issue
+  - This is a sign that we need to actually deliver value with linked issues, or be able to define
+    what a "trivial" PR is in a machine-enforceable way to be able to automatically waive the linked
+    issue requirement
+- Technically, anyone who is a member of the kubernetes GitHub organization can drive-by `/lgtm` a
+  PR
+  - Drive-by reviews from non-members are encouraged as a way of demonstrating experience and
+    intent to become a collaborator or reviewer
+  - Drive-by `/lgtm`'s from members may be a sign that our OWNERS files are too small, or that the
+    existing **reviewers** are too unresponsive
+  - This goes against the idea of specifying **reviewers** in the first place, to ensure that
+    **author** is getting actionable feedback from people knowledgeable with the code
+- **Reviewers**, and **approvers** are unresponsive
+  - This causes a lot of frustration for **authors** who often have little visibility into why their
+    PR is being ignored
+  - Many **reviewers** and **approvers** are so overloaded by GitHub notifications that @mention'ing
+    is unlikely to get a quick response
+  - If an **author** `/assign`'s a PR, **reviewers** and **approvers** will be made aware of it on
+    their [PR dashboard](https://k8s-gubernator.appspot.com/pr)
+  - An **author** can work around this by manually reading the relevant OWNERS files,
+    `/unassign`'ing unresponsive individuals, and `/assign`'ing others
+  - This is a sign that our OWNERS files are stale; pruning the **reviewers** and **approvers** lists
+    would help with this
+- **Authors** are unresponsive
+  - This costs a tremendous amount of attention as context for an individual PR is lost over time
+  - This hurts the project in general as its general noise level increases over time
+  - Instead, close PR's that are untouched after too long (we currently have a bot do this after 90
+    days)
+  
+## Implementation
 
-In the case of a comment based approval, the same rules as for the 'lgtm' label apply.  If the PR is
-changed by pushing new commits to the PR, the previous approval is invalidated, and the owner(s) must
-approve again.  Because of this is recommended that PR authors squash their PRs prior to getting approval
-from owners.
+### [`mungegithub`](https://github.com/kubernetes/test-infra/tree/master/mungegithub)
 
-### Step Three: A PR is merged
+Mungegithub polls GitHub, and "munges" things it finds, including issues and pull requests. It is
+stateful, in that restarting it means it loses track of which things it has munged at what time.
 
-Once a PR is LGTM'd and all required owners have approved, it is eligible for merge.  The merge bot takes care of
-the actual merging.
+- [feature:
+  gitrepos](https://github.com/kubernetes/test-infra/blob/master/mungegithub/features/repo-updates.go)
+  - responsible for parsing OWNERS and OWNERS_ALIAS files
+  - if its `use-reviewers` flag is set to false, **approvers** will also be **reviewers**
+  - if its `enable-md-yaml` flag is set, `.md` files will also be parsed to see if they have
+    embedded OWNERS content (this is only used by
+[kubernetes.github.io](https://github.com/kubernetes/kubernetes.github.io/))
+  - used by other mungers to get the set of **reviewers** or **approvers** for a given path
+- [munger:
+  blunderbuss](https://github.com/kubernetes/test-infra/blob/master/mungegithub/mungers/blunderbuss.go)
+  - responsible for determining **reviewers** and assigning to them
+  - chooses from people in the deepest/closest OWNERS files to the code being changed
+  - weights its choice based on the magnitude of lines changed for each file
+  - randomly chooses to ensure the same people aren't chosen every time
+  - if its `blunderbuss-number-assignees` flag is unset, it will default to 2 assignees
+- [munger:
+  approval-handler](https://github.com/kubernetes/test-infra/blob/master/mungegithub/mungers/approval-handler.go)
+  - responsible for adding the  `approved` label once an **approver** for each of the required
+    OWNERS files has `/approve`'d
+  - responsible for commenting as required OWNERS files are satisfied
+  - responsible for removing outdated approval status comments
+  - [full description of the
+    algorithm](https://github.com/kubernetes/test-infra/blob/6f5df70c29528db89d07106a8156411068518cbc/mungegithub/mungers/approval-handler.go#L99-L111)
+- [munger:
+  submit-queue](https://github.com/kubernetes/test-infra/blob/master/mungegithub/mungers/submit-queue.go) 
+  - responsible for merging PR's
+  - responsible for updating a GitHub status check explaining why a PR can't be merged (eg: a
+    missing `lgtm` or `approved` label)
 
-## Design details
+### [`prow`](https://github.com/kubernetes/test-infra/tree/master/prow)
 
-We need to build new features into the existing github munger in order to accomplish this.  Additionally
-we need to add owners files to the repository.
+Prow receives events from GitHub, and reacts to them. It is effectively stateless.
 
-### Approval Munger
+- [plugin: lgtm](https://github.com/kubernetes/test-infra/tree/master/prow/plugins/lgtm)
+  - responsible for adding the `lgtm` label when a **reviewer** comments `/lgtm` on a PR
+  - the **PR author** may not `/lgtm` their own PR
+- [plugin: assign](https://github.com/kubernetes/test-infra/tree/master/prow/plugins/assign)
+  - responsible for assigning GitHub users in response to `/assign` comments on a PR
+  - responsible for unassigning GitHub users in response to `/unassign` comments on a PR
 
-We need to add a munger that adds comments to PRs indicating whose approval they require.  This munger will
-look for PRs that do not have approvers already present in the comments, or where approvers have been
-requested, and add an appropriate comment to the PR.
+### GitHub
+
+GitHub provides a few integration points for our automation:
+
+- [Status Checks](https://help.github.com/articles/about-required-status-checks/): our tests and
+  submit queue use these to communicate whether a commit is OK
+- [Protected Branches](https://help.github.com/articles/about-protected-branches/): ensure that a
+  branch cannot be merged unless all status checks are green
+- [Merge Button](https://developer.github.com/v3/pulls/#merge-a-pull-request-merge-button): the
+  submit queue effectively uses an API driven click of this button
 
 
-### Status Munger
+## Updating OWNERS
 
-GitHub has a [status api](https://developer.github.com/v3/repos/statuses/), we will add a status munger that pushes a status onto a PR of approval status.  This status will only be approved if the relevant
-approvers have approved the PR.
+OWNERS files should be regularly maintained.
 
-### Requiring approval status
+We should strive to:
 
-Github has the ability to [require status checks prior to merging](https://help.github.com/articles/enabling-required-status-checks/)
+- grow the number of OWNERS files
+- add new people to OWNERS files
+- ensure OWNERS files only contain org members and repo collaborators
+- ensure OWNERS files only contain people are actively contributing to or reviewing the code they own
+- remove inactive people from OWNERS files
 
-Once we have the status check munger described above implemented, we will add this required status check
-to our main branch as well as any release branches.
+Bad examples of OWNERS usage:
 
-### Adding owners files
+- directories that lack OWNERS files, resulting in too many hitting root OWNERS
+- OWNERS files that have a single person as both approver and reviewer
+- OWNERS files that haven't been touched in over 6 months
+- OWNERS files that have non-collaborators present
 
-In each directory in the repository we may add an OWNERS file.  This file will contain the github OWNERS
-for that directory.  OWNERSHIP is hierarchical, so if a directory does not container an OWNERS file, its
-parent's OWNERS file is used instead.  There will be a top-level OWNERS file to back-stop the system.
+Good examples of OWNERS usage:
 
-Obviously changing the OWNERS file requires OWNERS permission.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/owners.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->
+- team aliases are used that correspond to sigs
+- there are more `reviewers` than `approvers`
+- the `approvers` are not in the `reviewers` section
+- OWNERS files that are regularly updated (at least once per release)
