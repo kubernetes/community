@@ -17,4 +17,4 @@ This page lists different options, in alphabetic order, of starting a Kubernetes
 * Tack: https://github.com/kz8s/tack
 * Tectonic: http://github.com/coreos/tectonic-installer
 * Weaveworks AMI: https://github.com/weaveworks/kubernetes-ami
-
+* KAT - Kubernetes cluster on AWS with Terraform: https://github.com/xuwang/kube-aws-terraform
