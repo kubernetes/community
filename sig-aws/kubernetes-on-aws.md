@@ -7,6 +7,7 @@ This page lists different options, in alphabetic order, of starting a Kubernetes
 * Heptio: https://github.com/aws-quickstart/quickstart-heptio 
 * Juju Charms: https://jujucharms.com/canonical-kubernetes/
 * Kargo: https://github.com/kubernetes-incubator/kargo
+* KAT - Kubernetes cluster on AWS with Terraform: https://github.com/xuwang/kube-aws-terraform
 * Kismatic Enterprise Toolkit: https://github.com/apprenda/kismatic
 * Kraken 2: https://github.com/samsung-cnct/k2
 * kube-aws: https://github.com/kubernetes-incubator/kube-aws
@@ -17,4 +18,3 @@ This page lists different options, in alphabetic order, of starting a Kubernetes
 * Tack: https://github.com/kz8s/tack
 * Tectonic: http://github.com/coreos/tectonic-installer
 * Weaveworks AMI: https://github.com/weaveworks/kubernetes-ami
-* KAT - Kubernetes cluster on AWS with Terraform: https://github.com/xuwang/kube-aws-terraform
