@@ -162,8 +162,8 @@ and something prevents it from starting if `/sys` is shared.
 
 ## Decision
 
-* We will take 'Add an option in VolumeMount API' (with an annotation during
-  alpha instead of real VolumeMount field):
+* We will take 'Add an option in VolumeMount API'
+  * With an alpha feature gate in 1.8.
   * With validation that it can be used only with HostPath volumes.
   * With validation that shared propagation can be used only in privileged
     containers.
@@ -181,13 +181,11 @@ and something prevents it from starting if `/sys` is shared.
 * Node conformance suite will check that mount propagation in /var/lib/kubelet
   works.
 * During alpha, all the behavior above must be explicitly enabled by
-  `kubelet --experimental-enable-mount-propagation`
+  `kubelet --feature-gates=MountPropagation=true`
   It will be used only for testing of volume plugins in e2e tests and
-  it will be marked as deprecated from the beginning.
-  Developers / testers can enable it in their clusters manually.
   Mount propagation may be redesigned or even removed in any future release.
-* The default mount propagation will be `rslave`, which is different to current
-  `private`. Extensive testing is needed!
+  * When the feature is enabled the default mount propagation will be `rslave`,
+    which is different to current `private`. Extensive testing is needed!
 
 ## Extra Concerns
 
@@ -215,7 +213,7 @@ if a pod does not create any new mountpoints under its hostpath bindmount, it's
 not hard to reach multiplicative explosions with shared bindmounts and so the
 change in default + no cleanup could result in existing workloads knocking the
 node over.
- 
+
 These concerns are valid and we decide to limit the propagation mode to HostPath
 volume only, in HostPath, we expect any runtime should NOT perform any additional
 actions (such as clean up). This behavior is also consistent with current HostPath
