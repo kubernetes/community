@@ -65,6 +65,12 @@ and references to network namespaces persist.
 The new `VolumeMount` will look like:
 
 ```go
+const (
+	PropagationRShared  PropagationMode = "RShared"
+	PropagationRSlave   PropagationMode = "RSlave"
+	PropagationPrivate PropagationMode = "Private"
+)
+
 type VolumeMount struct {
 	// Required: This must match the Name of a Volume [above].
 	Name string `json:"name"`
@@ -73,13 +79,18 @@ type VolumeMount struct {
 	// Required.
 	MountPath string `json:"mountPath"`
 	// Optional.
-	Propagation string `json:"propagation"`
+	Propagation PropagationMode `json:"propagation,omitempty"`
 }
 ```
 
+Default would be `RSlave`, which should not break backward compatibility,
+`RShared` must be explicitly requested.
+
 Opinion against this:
 
-1. This will affect all volumes, while only HostPath need this.
+1. This will affect all volumes, while only HostPath need this. It could be
+checked during validation and any non-HostPath volumes with non-default
+propagation could be rejected.
 
 1. This need API change, which is discouraged.
 
@@ -89,8 +100,8 @@ The new `HostPathVolumeSource` will look like:
 
 ```go
 const (
-	PropagationShared  PropagationMode = "Shared"
-	PropagationSlave   PropagationMode = "Slave"
+	PropagationRShared  PropagationMode = "RShared"
+	PropagationRSlave   PropagationMode = "RSlave"
 	PropagationPrivate PropagationMode = "Private"
 )
 
@@ -142,13 +153,41 @@ distros.
 1. (From @euank) Changing those mountflags may make docker even less stable,
 this may lock up kernel accidentally or potentially leak mounts.
 
+1. (From @jsafrane) Typical container that needs to mount something needs to
+see host's `/dev` and `/sys` as HostPath volumes. This would make them shared
+without any way to opt-out. Docker creates a new `/dev/shm` in the
+container, which gets propagated to the host, shadowing host's `/dev/shm`.
+Similarly, systemd running in a container is very picky about `/sys/fs/cgroup`
+and something prevents it from starting if `/sys` is shared.
 
 ## Decision
 
-We will take 'Make HostPath shared for privileged containers, slave for
-non-privileged', an environment check and an WARNING log will be emitted about
-whether propagation mode is supported.
-
+* We will take 'Add an option in VolumeMount API' (with an annotation during
+  alpha instead of real VolumeMount field):
+  * With validation that it can be used only with HostPath volumes.
+  * With validation that shared propagation can be used only in privileged
+    containers.
+  * kubernetes/kubernetes#46444
+* Kubelet will make sure that at least `/var/lib/kubelet` can be share-able into
+  containers and it will refuse to start if it's unsuccessful
+  * kubernetes/kubernetes#45724
+* Kubelet's Docker shim layer will check that it is able to run a container with
+  shared mount propagation on `/var/lib/kubelet` during startup and refuse to
+  start otherwise. This ensures that both Docker and kubelet see the same
+  `/var/lib/kubelet` and it can be shared into containers.
+  E.g. Google COS-58 runs Docker in a separate mount namespace with slave
+  propagation and thus can't run a container with shared propagation on
+  anything. Other container engines should follow the suit.
+* Node conformance suite will check that mount propagation in /var/lib/kubelet
+  works.
+* During alpha, all the behavior above must be explicitly enabled by
+  `kubelet --experimental-enable-mount-propagation`
+  It will be used only for testing of volume plugins in e2e tests and
+  it will be marked as deprecated from the beginning.
+  Developers / testers can enable it in their clusters manually.
+  Mount propagation may be redesigned or even removed in any future release.
+* The default mount propagation will be `rslave`, which is different to current
+  `private`. Extensive testing is needed!
 
 ## Extra Concerns
 
