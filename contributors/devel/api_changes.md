@@ -285,7 +285,7 @@ was added.
 * For [Unions](api-conventions.md#unions), sets of fields where at most one should
   be set, it is acceptable to add a new option to the union if the [appropriate
   conventions](api-conventions.md#objects) were followed in the original object.
-  Removing an option requires following the [deprecation process](https://kubernetes.io/docs/deprecation-policy/).
+  Removing an option requires following the [deprecation process](https://kubernetes.io/docs/reference/deprecation-policy/).
   
 * Changing any validation rules always has the potential of breaking some client, since it changes the
   assumptions about part of the API, similar to adding new enum values. Validation rules on spec fields can
