@@ -788,8 +788,10 @@ For example, consider the following object:
 ```go
 // API v6.
 type Frobber struct {
-  Height int    `json:"height"`
-  Param  string `json:"param"`
+  // height ...
+  Height *int32 `json:"height" protobuf:"varint,1,opt,name=height"`
+  // param ...
+  Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
 }
 ```
 
@@ -798,59 +800,151 @@ A developer is considering adding a new `Width` parameter, like this:
 ```go
 // API v6.
 type Frobber struct {
-  Height int    `json:"height"`
-  Width  int    `json:"height"`
-  Param  string `json:"param"`
+  // height ...
+  Height *int32 `json:"height" protobuf:"varint,1,opt,name=height"`
+  // param ...
+  Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
+  // width ...
+  Width  *int32 `json:"width,omitempty" protobuf:"varint,3,opt,name=width"`
 }
 ```
 
 However, the new feature is not stable enough to be used in a stable version
 (`v6`). Some reasons for this might include:
 
-- the final representation is undecided (e.g. should it be called `Width` or
-`Breadth`?)
-- the implementation is not stable enough for general use (e.g. the `Area()`
-routine sometimes overflows.)
+- the final representation is undecided (e.g. should it be called `Width` or `Breadth`?)
+- the implementation is not stable enough for general use (e.g. the `Area()` routine sometimes overflows.)
 
-The developer cannot add the new field until stability is met. However,
+The developer cannot add the new field unconditionally until stability is met. However,
 sometimes stability cannot be met until some users try the new feature, and some
 users are only able or willing to accept a released version of Kubernetes. In
 that case, the developer has a few options, both of which require staging work
 over several releases.
 
+#### Alpha field in existing API version
 
-A preferred option is to first make a release where the new value (`Width` in
-this example) is specified via an annotation, like this:
+Previously, annotations were used for experimental alpha features, but are no longer recommended for several reasons:
 
-```go
-kind: frobber
-version: v6
-metadata:
-  name: myfrobber
-  annotations:
-    frobbing.alpha.kubernetes.io/width: 2
-height: 4
-param: "green and blue"
-```
+* They expose the cluster to "time-bomb" data added as unstructured annotations against an earlier API server (https://issue.k8s.io/30819)
+* They cannot be migrated to first-class fields in the same API version (see the issues with representing a single value in multiple places in [backward compatibility gotchas](#backward-compatibility-gotchas))
 
-This format allows users to specify the new field, but makes it clear that they
-are using a Alpha feature when they do, since the word `alpha` is in the
-annotation key.
+The preferred approach adds an alpha field to the existing object, and ensures it is disabled by default:
+
+1. Add a feature gate to the API server to control enablement of the new field (and associated function):
+
+    In [k8s.io/apiserver/pkg/util/feature/feature_gate.go](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/util/feature/feature_gate.go):
+
+    ```go
+    // owner: @you
+    // alpha: v1.11
+    //
+    // Add multiple dimensions to frobbers.
+    Frobber2D utilfeature.Feature = "Frobber2D"
+    
+    var defaultKubernetesFeatureGates = map[utilfeature.Feature]utilfeature.FeatureSpec{
+      ...
+      Frobber2D: {Default: false, PreRelease: utilfeature.Alpha},
+    }
+    ```
+
+2. Add the field to the API type:
+
+    * ensure the field is [optional](api-conventions.md#optional-vs-required)
+        * add the `omitempty` struct tag
+        * add the `// +optional` comment tag
+        * ensure the field is entirely absent from API responses when empty (if it is a struct type, it must be a pointer)
+    * include details about the alpha-level in the field description
+    
+    ```go
+    // API v6.
+    type Frobber struct {
+      // height ...
+      Height int32  `json:"height" protobuf:"varint,1,opt,name=height"`
+      // param ...
+      Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
+      // width indicates how wide the object is.
+      // This field is alpha-level and is only honored by servers that enable the Frobber2D feature.
+      // +optional
+      Width  *int32 `json:"width,omitempty" protobuf:"varint,3,opt,name=width"`
+    }
+    ```
+
+3. Before persisting the object to storage, clear disabled alpha fields.
+One possible place to do this is in the REST storage strategy's PrepareForCreate/PrepareForUpdate methods:
+
+    ```go
+    func (frobberStrategy) PrepareForCreate(ctx genericapirequest.Context, obj runtime.Object) {
+      frobber := obj.(*api.Frobber)
+    
+      if !utilfeature.DefaultFeatureGate.Enabled(features.Frobber2D) {
+        frobber.Width = nil
+      }
+    }
+    
+    func (frobberStrategy) PrepareForUpdate(ctx genericapirequest.Context, obj, old runtime.Object) {
+      newFrobber := obj.(*api.Frobber)
+      oldFrobber := old.(*api.Frobber)
+    
+      if !utilfeature.DefaultFeatureGate.Enabled(features.DynamicKubeletConfig) {
+        newFrobber.Spec.ConfigSource = nil
+        oldFrobber.Spec.ConfigSource = nil
+      }
+    }
+    ```
+
+4. In validation, ensure the alpha field is not set if the feature gate is disabled:
+
+    ```go
+    func ValidateFrobber(f *api.Frobber, fldPath *field.Path) field.ErrorList {
+      ...
+      if utilfeature.DefaultFeatureGate.Enabled(features.Frobber2D) {
+        ... normal validation of width field ...
+      } else if f.Width != nil {
+        allErrs = append(allErrs, field.Forbidden(fldPath.Child("width"), "disabled by feature-gate"))
+      }
+      ...
+    }
+    ```
+
+In future versions:
+
+* if the feature progresses to beta or stable status, the feature gate can simply be enabled by default.
+* if the schema of the alpha field must change in an incompatible way, a new field name must be used.
+* if the feature is abandoned, or a different field name is selected, the field should be removed from the go struct, with a tombstone comment ensuring the field name and protobuf tag are not reused:
+
+    ```go
+    // API v6.
+    type Frobber struct {
+      // height ...
+      Height int32  `json:"height" protobuf:"varint,1,opt,name=height"`
+      // param ...
+      Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
+      
+      // removed alpha-level field 'width'
+      // the field name 'width' and protobuf tag '3' may not be reused.
+      // Width  *int32 `json:"width,omitempty" protobuf:"varint,3,opt,name=width"`
+    }
+    ```
+
+#### New alpha API version
 
 Another option is to introduce a new type with an new `alpha` or `beta` version
 designator, like this:
 
 ```
-// API v6alpha2
+// API v7alpha1
 type Frobber struct {
-  Height int    `json:"height"`
-  Width  int    `json:"height"`
-  Param  string `json:"param"`
+  // height ...
+  Height *int32 `json:"height" protobuf:"varint,1,opt,name=height"`
+  // param ...
+  Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
+  // width ...
+  Width  *int32 `json:"width,omitempty" protobuf:"varint,3,opt,name=width"`
 }
 ```
 
 The latter requires that all objects in the same API group as `Frobber` to be
-replicated in the new version, `v6alpha2`. This also requires user to use a new
+replicated in the new version, `v7alpha1`. This also requires user to use a new
 client which uses the other version. Therefore, this is not a preferred option.
 
 A related issue is how a cluster manager can roll back from a new version
