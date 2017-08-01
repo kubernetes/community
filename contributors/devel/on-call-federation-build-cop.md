@@ -31,7 +31,7 @@ The configuration of CI tests are stored in:
 Results of all the federation CI tests, including the soak tests, are
 listed in the corresponding tabs on the Cluster Federation page in the
 testgrid.
-https://k8s-testgrid.appspot.com/cluster-federation
+https://k8s-testgrid.appspot.com/sig-federation
 
 ### Playbook
 
