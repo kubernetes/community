@@ -65,7 +65,7 @@ This new method is invoked from two places in the CPU manager: during each
 call to `RegisterContainer` and also periodically from a separate
 reconciliation loop.
 
-![cpu-manager-block-diagram](https://user-images.githubusercontent.com/379372/28443427-bf1b2972-6d6a-11e7-8acb-6cbe9013ac28.png)
+![cpu-manager-block-diagram](https://user-images.githubusercontent.com/379372/28852425-d5067648-76dd-11e7-9916-b956c235f5bb.png)
 
 _CPU Manager block diagram. `Policy`, `State`, and `Topology` types are
 factored out of the CPU Manager to promote reuse and to make it easier
@@ -119,6 +119,7 @@ type Manager interface {
   Start()
   RegisterContainer(p *Pod, c *Container, containerID string) error
   UnregisterContainer(containerID string) error
+  IsUnderCPUPresure() bool
   State() state.Reader
 }
 
@@ -127,11 +128,12 @@ type Policy interface {
   Start(s state.State)
   RegisterContainer(s State, pod *Pod, container *Container, containerID string) error
   UnregisterContainer(s State, containerID string) error
+  IsUnderCPUPresure() bool
 }
 
 type CPUSet map[int]struct{} // set operations and parsing/formatting helpers
 
-type CPUTopology TBD
+type CPUTopology // convenient type for querying and filtering CPUs
 ```
 
 #### Configuring the CPU Manager
@@ -329,6 +331,15 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
    directly from the shared pool, is too simplistic.
     1. Mitigation: defer supporting this until a new policy tailored for
        use with `isolcpus` can be added.
+1. CPU exhaustion. Terminology: a no-CPU pod is defined here as having
+   at least one container with no or zero-valued CPU request. If all available
+   CPUs are allocated exclusively, additional steps must be taken to remove
+   any no-CPU pods from the node. In addition, the system must prevent further
+   no-CPU pods from being bound to the node.
+    1. Mitigation: Introduce a new CPUPressure node condition. This
+       condition causes any no-CPU pods to fail scheduler predicates for this
+       node and also fail node-level admission checks. Also evict no-CPU pods
+       when CPUPressure occurs.
 
 ## Implementation roadmap
 
