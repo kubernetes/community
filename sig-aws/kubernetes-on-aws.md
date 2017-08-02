@@ -6,8 +6,8 @@ This page lists different options, in alphabetic order, of starting a Kubernetes
 * Clocker: http://www.clocker.io/tutorials/kubernetes-cluster.html
 * Heptio: https://github.com/aws-quickstart/quickstart-heptio 
 * Juju Charms: https://jujucharms.com/canonical-kubernetes/
-* Kargo: https://github.com/kubernetes-incubator/kargo
 * KAT - Kubernetes cluster on AWS with Terraform: https://github.com/xuwang/kube-aws-terraform
+* Kargo: https://github.com/kubernetes-incubator/kargo
 * Kismatic Enterprise Toolkit: https://github.com/apprenda/kismatic
 * Kraken 2: https://github.com/samsung-cnct/k2
 * kube-aws: https://github.com/kubernetes-incubator/kube-aws
