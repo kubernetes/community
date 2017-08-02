@@ -4,13 +4,17 @@ Authors: erinboyd@, screeley44@, mtanino@
 
 This document presents a proposal for managing raw block storage in Kubernetes using the persistent volume source API as a consistent model of consumption.
 
+# Terminology
+* Raw Block Device - a physically attached device devoid of a filesystem
+* Raw Block Volume - a logical abstraction of the raw block device as defined by a path
+* File on Block - a formatted (ie xfs) filesystem on top of a raw block device
+
 # Goals
 * Enable durable access to block storage
 * Support storage requirements for all workloads supported by Kubernetes
 * Provide flexibility for users/vendors to utilize various types of storage devices
 * Agree on API changes for block
 * Provide a consistent security model for block devices 
-* Provide block storage usage isolation
 * Provide a means for running containerized block storage offerings as non-privileged container
 
 # Non Goals
@@ -26,6 +30,10 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   drawbacks. Without having the ability to guarantee space & ensure ownership, one would lose data once a node was rescheduled. 
   Therefore, the risk outweighed the reward when trying to  leverage the power of local storage needed for stateful applications like 
   databases.
+  
+  By extending the API for volumes to specifically request a raw block device, we provide a consist method for accessing volumes. In
+  addition, the ability to use a raw block device without a filesystem will allow Kuberenets better support of high performance 
+  applications that can utilitze raw block devices directly for their storage.
     
 # Design Overview
 
@@ -45,7 +53,7 @@ This document presents a proposal for managing raw block storage in Kubernetes u
    
 ## Persistent Volume Claim API Changes:
 In the simplest case of static provisioning, a user asks for a volumeType of block. The binder will only bind to a PV defined 
-with the same label.
+with the same volumeType.
 
 ```
 kind: PersistentVolumeClaim
@@ -53,7 +61,7 @@ apiVersion: v1
 metadata:
 name: myclaim
 spec:
-**volumeType: block**
+  volumeType: block #proposed API change
 accessModes:
 - ReadWriteOnce
 resources:
@@ -71,8 +79,8 @@ apiVersion: v1
 metadata:
 name: myclaim
 spec:
-**storageClassName: local-fast**
-**volumeType: block**
+  storageClassName: local-fast 
+  volumeType: block #proposed API change
 accessModes:
 - ReadWriteOnce
 resources:
@@ -84,7 +92,7 @@ storage: 80Gi
 For static provisioning the admin creates the volume and also is intentional about how the volume should be consumed. For backwards
 compatibility, the absence of volumeType will default to volumes work today, which are formatted with a filesystem depending on 
 the plug-in chosen. Recycling will not be a supported reclaim policy. Once the user deletes the claim against a PV, the volume will 
-be scrubbed according to how it was bound. The path value in the PV definition would be overloaded to define the path of the raw
+be scrubbed according to how it was bound. The path value in the local PV definition would be overloaded to define the path of the raw
 block device rather than the fileystem path.
 
 ```
@@ -93,11 +101,11 @@ apiVersion: v1
 metadata:
 name: local-raw-pv
 spec:
-**volumeType: block**
+  volumeType: block #proposed API change
 capacity:
 storage: 100Gi
 local:
-**path: /dev/xvdc**
+  path: /dev/xvdc 
 accessModes:
   - ReadWriteOnce
 persistentVolumeReclaimPolicy: Delete 
@@ -118,12 +126,12 @@ metadata:
 name: block-volume
 provisioner: kubernetes.io/local-block-glusterfs
 parameters:
-**volumeType: block**
-fsType: xfs
+  volumeType: block #opaque value  / plug-in dependent
+  fsType: xfs
 ```
-The provisioner should validate the parameters and return and error if the combination specified is not supported.
-This also allows the use case for leveraging a Storage Class for utilizing pre-defined static volumes.
-
+The provisioner (if applicable) should validate the parameters and return and error if the combination specified is not supported.
+This also allows the use case for leveraging a Storage Class for utilizing pre-defined static volumes. By labeling the Persistent Volumes
+with the Storage Class, volumes can be grouped and used according to how they are defined in the class.
 ```
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
@@ -131,29 +139,17 @@ metadata:
 name: block-volume
 provisioner: no-provisioning 
 parameters:
-**volumeType: block**
 ```
   
 # Use Cases
 
 ## UC1: 
 
-DESCRIPTION: 
-
-A developer wishes to enable their application to use a local raw block device as the volume for the container. The admin has already created PVs that the user will bind to by specifying 'block' as the volume type of their PVC.
-
-BACKGROUND:
-
-For example, existing on-premise legacy applications such as database utilizes raw block device directly on their iSCSI or FC enterprise storage. This feature enables these users to move their application environment onto container environment by lift and shift approach with using Block Volumes Support and StatefulSets.
-
-Examples:
-*   MariaDB
+DESCRIPTION: An admin wishes to pre-create a series of raw block devices to expose as PVs for consumption. The admin wishes to specify the purpose of these devices by specifying 'block' as the volumeType for the PVs.
 
 WORKFLOW:
 
 ADMIN:
-
-Admin creates devices on disk. Admin creates PV using the path to specify the device location.
 
 ```
 kind: PersistentVolume
@@ -170,43 +166,6 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete
 ```
-
-USER:
-
-```
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: local-raw-pvc
-spec:
-  volumeType: block
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 80Gi
-```
-
-```
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-db
-spec:
-    containers:
-    - name: mysql
-      image: mysql
-      volumeMounts:
-      - name: my-db-data
-	mountPath: /var/lib/mysql/data
-    volumes:
-    - name: my-db-data
-      persistentVolumeClaim:
-	claimName: local-raw-pvc
-```
-  NOTE: *accessModes correspond to the container runtime values. Where RWO == RWM (mknod) to enable the device to be written to and
-  create new files. (Default is RWM) ROX == R
-  **(RWX is NOT valid for block and should return an error.)** * This has been validated among runc, Docker and rocket. 
 
 ## UC2: 
 
@@ -290,27 +249,55 @@ spec:
 
 ## UC3: 
 
-DESCRIPTION: An admin wishes to pre-create a series of raw block devices to expose as PVs for consumption. The admin wishes to specify the purpose of these devices by specifying 'block' as the volumeType for the PVs.
+DESCRIPTION: 
+
+A developer wishes to enable their application to use a local raw block device as the volume for the container. The admin has already created PVs that the user will bind to by specifying 'block' as the volume type of their PVC.
+
+BACKGROUND:
+
+For example, an admin has already created the devices locally and wishes to expose them to the user in a consistent manner through the 
+Persistent Volume API.
 
 WORKFLOW:
 
-ADMIN:
+USER:
 
 ```
-kind: PersistentVolume
+kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: local-raw-pv
+  name: local-raw-pvc
 spec:
   volumeType: block
-  capacity:
-    storage: 100Gi
-  local:
-    path: /dev/xvdc
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Delete
+  resources:
+    requests:
+      storage: 80Gi
 ```
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-db
+spec:
+    containers:
+    - name: mysql
+      image: mysql
+      volumeMounts:
+      - name: my-db-data
+	mountPath: /var/lib/mysql/data
+    volumes:
+    - name: my-db-data
+      persistentVolumeClaim:
+	claimName: local-raw-pvc
+```
+  NOTE: *accessModes correspond to the container runtime values. Where RWO == RWM (mknod) to enable the device to be written to and
+  create new files. (Default is RWM) ROX == R
+  **(RWX is NOT valid for block and should return an error.)** * This has been validated among runc, Docker and rocket. 
+
+
 
 ## UC4: 
 
@@ -330,7 +317,6 @@ metadata:
 provisioner: no-provisioning 
 parameters:
   volumeType: block
-
 ```
 * Sample of pre-created volume definition:
 
@@ -348,7 +334,6 @@ spec:
    - ReadWriteOnce
  local:
     path: /dev/xvdc
-
 ```
 ## [FUTURE] UC5: 
 
@@ -368,7 +353,6 @@ metadata:
 provisioner: kubernetes.io/local-block-ssd
 parameters:
   volumeType: block
-
 ```
 
 ***This has implementation details that have yet to be determined. It is included in this proposal for completeness of design ****
@@ -394,7 +378,6 @@ spec:
  resources:
    requests:
      storage: 10Gi
-
 ```  
 
 ## UC7:
@@ -482,7 +465,6 @@ Spec:
   gcePersistentDisk:
     fsType: "raw"
     pdName: "gce-disk-1"
-
 ```
 
 ***If admin specifies volumeType: block + fstype: ext4 then they would get what they already get today ***
@@ -527,27 +509,33 @@ spec:
 	claimName: pvc-raw-block
 ```
 
-# Implementation Plan
+# Implementation Plan, Features & Milesones
 
-Phase 1: Pre-provisioned PVs to precreated devices
+Phase 1: v1.8
+Feature: Pre-provisioned PVs to precreated devices 
 
-               API changes
+               Milestone 1: API changes
 
-               Special considerations: Access, Scrubbing device after PV is deleted
+               Milestone 2: Restricted Access 
                
-               Changes to the mounter interface as today it is assumed 'file' as the default.
+               Milestone 3: Scrubbing device after PV is deleted
+               
+               Milestone 4: Changes to the mounter interface as today it is assumed 'file' as the default.
+               
+               Milestone 5: Expose volumeType to users via kubectl
+               
+               Milestone 6: Adds enable/disable configuration to securityContext in PSP (Pod Security Policy) similar to hostPath
+               
+               Milestone 7: Validate container runtime options with user specifcations as indicated in UC3
 
-Phase 2:  Discovery of block devices 
+Phase 2:  v1.9
+Feature: Discovery of block devices 
 
-                Dynamically provisioned PVs to dynamically allocated devices
+                Milestone 1: Dynamically provisioned PVs to dynamically allocated devices
 
-                Priv container concerns    
+                Milestone 2: Privileged container concerns    
 
 Other considerations:
-
-               Expose volumeType to users via kubectl
-
-               Adds enable/disable configuration to securityContext
 
                Reference volume driver change(Attach/Detach logic) for pre-provisioned PVs
 
