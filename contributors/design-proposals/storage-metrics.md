@@ -49,11 +49,11 @@ The basic idea is to cache PVC and the volume information in kubelet volume mana
 type VolumeStats struct {
 	// Reference to the measured PVC.
 	PVCRef PVCReference `json:"podRef"`
-// Reference to the measured PV.
+	// Reference to the measured PV.
 	PVRef PVReference `json:"podRef"`
-// Embedded FsStats
+	// Embedded FsStats
 	FsStats
-// Name is the name given to the Volume
+	// Name is the name given to the Volume
 	// +optional
 	Name string `json:"name,omitempty"`
 }
