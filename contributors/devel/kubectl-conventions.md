@@ -390,7 +390,7 @@ guarantee that the expected behavior stays the same.
 than just creation, similar to how -f is supported for most general-purpose
 commands.
 
-Generator commands shoud obey to the following conventions:
+Generator commands should obey the following conventions:
 
 * A `--generator` flag should be defined. Users then can choose between
 different generators, if the command supports them (for example, `kubectl run`
