@@ -37,27 +37,54 @@ The gola of this proposal is to expose storage usage metrics to users for monito
 
 ## Proposal
 
-The first part of this proposal is to add volume usage information indexed by PVC name in Kubelet Summary API
+This proposal has three parts, the first part is trying to address the issue of adding volume usage information indexed by PVC and PV name in Kubelet Summary API. The second part is to register the volume metrics to . The third part is to add more storage metrics to Heapster.
 
-### volume usage information indexed by PVC
 
-The basic idea is to cache PVC and the volume information in kubelet volume manager which is similar to caching the pod and volume information. In Summary API, we could add new API type PVCStats which is similar to NodeStats and PodStats
+### volume usage information indexed by PVC/PV in Kubelet Summary API
+
+The basic idea is to cache PVC and the volume information in kubelet volume manager which is similar to caching the pod and volume information. In Summary API, In Summary API, we could add PVC and PV references into VolumeStats which is included in PodStats.
 
 ```
-// PVCStats holds pod-level unprocessed sample volume stats refered by PVC.
-type PVCStats struct {
+// VolumeStats contains data about Volume filesystem usage.
+type VolumeStats struct {
 	// Reference to the measured PVC.
 	PVCRef PVCReference `json:"podRef"`
-	// The time at which data collection for the PVC-scoped volume stats was (re)started.
-	StartTime metav1.Time `json:"startTime"`
-	// Stats pertaining to volume usage of filesystem resources.
-	// VolumeStats.UsedBytes is the number of bytes used by the Volume
+// Reference to the measured PV.
+	PVRef PVReference `json:"podRef"`
+// Embedded FsStats
+	FsStats
+// Name is the name given to the Volume
 	// +optional
-	// +patchMergeKey=name
-	// +patchStrategy=merge
-	VolumeStats VolumeStats `json:"volume,omitempty" patchStrategy:"merge" patchMergeKey:"name"`
+	Name string `json:"name,omitempty"`
 }
+
+// PVCReference contains enough information to locate the referenced PVC.
+type PodReference struct {
+	Name      string `json:"name"`
+	Namespace string `json:"namespace"`
+	UID       string `json:"uid"`
+}
+
+// PVReference contains enough information to locate the referenced PV.
+type PodReference struct {
+	Name      string `json:"name"`
+	UID       string `json:"uid"`
+}
+
 ```
+### Register the VolumeStats metrics to Prometheus 
+
+The following metrics could be registered to Prometheus
+
+
+| Metric name | Metric type | Labels/tags |
+|-------------|-------------|-------------|
+| volume_stats_capacityBytes | Gauge | namespace=\<persistentvolumeclaim-namespace\> <br/> persistentvolumeclaim=\<persistentvolumeclaim-name\>  <br/> persistentvolume=\<persistentvolume-name\> |
+| volume_stats_usedBytes | Gauge | namespace=\<persistentvolumeclaim-namespace\> <br/>  persistentvolumeclaim=\<persistentvolumeclaim-name\>  <br/> persistentvolume=\<persistentvolume-name\> |
+| volume_stats_availableBytes | Gauge | namespace=\<persistentvolumeclaim-namespace\> <br/> persistentvolumeclaim=\<persistentvolumeclaim-name\>  <br/> persistentvolume=<persistentvolume-name> |
+| volume_stats_InodesFree | Gauge | nnamespace=\<persistentvolumeclaim-namespace\> <br/> persistentvolumeclaim=\<persistentvolumeclaim-name\>  <br/> persistentvolume=\<persistentvolume-name\> |
+| volume_stats_Inodes | Gauge | namespace=\<persistentvolumeclaim-namespace\> <br/> persistentvolumeclaim=\<persistentvolumeclaim-name\>  <br/> persistentvolume=\<persistentvolume-name\> |
+| volume_stats_InodesUsed | Gauge | namespace=\<persistentvolumeclaim-namespace\> <br/> persistentvolumeclaim=\<persistentvolumeclaim-name\>  <br/> persistentvolume=\<persistentvolume-name\> |
 
 ## Implementation Timeline:
 The feature is targeted for kubernetes v1.8
