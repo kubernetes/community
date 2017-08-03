@@ -581,14 +581,8 @@ breaking changes, it does *not* block the merge-queue, and thus should run in
 some separate test suites owned by the feature owner(s)
 (see [Continuous Integration](#continuous-integration) below).
 
-In order to simplify running component-specific test suites, it may also be
-necessary to tag tests with a component label.  The component may include
-standard and non-standard tests, so the `[Feature:.+]` label is not sufficient for
-this purpose.  These component labels have no impact on the standard e2e test
-suites.  The following component labels have been defined:
-
-  - `[Volume]`: All tests related to volumes and storage: volume plugins,
-attach/detatch controller, persistent volume controller, etc.
+Every test should be owned by a [SIG](https://github.com/kubernetes/community/blob/master/sig-list.md), 
+and have a corresponding `[sig-<name>]` label.
 
 ### Viper configuration and hierarchichal test parameters.
 
