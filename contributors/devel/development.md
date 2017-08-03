@@ -303,7 +303,7 @@ make update
 make test
 
 # Run package tests verbosely
-make test WHAT=pkg/util/cache GOFLAGS=-v
+make test WHAT=./pkg/util/template GOFLAGS=-v
 
 # Run integration tests, requires etcd
 # For more info, visit https://github.com/kubernetes/community/blob/master/contributors/devel/testing.md#integration-tests
