@@ -1,4 +1,4 @@
-# Local Raw Block Consumption via Persistent Volume Source
+# Local Raw Block Consumption in Kubernetes
 
 Authors: erinboyd@, screeley44@, mtanino@
 
@@ -23,7 +23,7 @@ This document presents a proposal for managing raw block storage in Kubernetes u
    
 # Value add to Kubernetes
 
-  Before the advent of storage plugins, emptyDir and hostPath were widely used to quickly prototype stateless applications in Kube. 
+  Before the advent of storage plugins, emptyDir and hostPath were widely used to quickly prototype stateless applications in Kubernetes. 
   Both have limitations for their use in application that need to store persistent data or state. 
   EmptyDir, though quick and easy to use, provides no real guarantee of persistence for suitable amount of time. 
   Appropriately used as scratch space, it does not have the HostPath, became an initial offering for local storage, but had many
