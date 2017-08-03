@@ -27,7 +27,7 @@ In order to standardize Special Interest Group efforts, create maximum transpare
 * Request a new [kubernetes.slack.com](http://kubernetes.slack.com) channel (#sig-foo) from **@sarahnovotny**.  New users can join at [slack.kubernetes.io](http://slack.kubernetes.io).
 * Slack activity is archived at [kubernetes.slackarchive.io](http://kubernetes.slackarchive.io).  To start archiving a new channel invite the slackarchive bot to the channel via `/invite @slackarchive`
 * Organize video meetings as needed. No need to wait for the [Weekly Community Video Conference](community/README.md) to discuss. Please report summary of SIG activities there.
- * Request a Zoom account from @sarahnovotny if you expect more than 30 attendees or attendees from China.
+ * Request a Zoom account from pyao@linuxfoundation.org cc'ing sarahnovotny@google.com.
  * Add the meeting to the community meeting calendar by inviting cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com.
 * Use existing proposal and PR process (to be documented)
 * Announce new SIG on kubernetes-dev@googlegroups.com 
