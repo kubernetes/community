@@ -66,9 +66,9 @@ The new `VolumeMount` will look like:
 
 ```go
 const (
-	PropagationRShared  PropagationMode = "RShared"
-	PropagationRSlave   PropagationMode = "RSlave"
-	PropagationPrivate PropagationMode = "Private"
+	MountPropagationRShared  MountPropagationMode = "RShared"
+	MountPropagationRSlave   MountPropagationMode = "RSlave"
+	MountPropagationPrivate  MountPropagationMode = "Private"
 )
 
 type VolumeMount struct {
@@ -100,17 +100,22 @@ The new `HostPathVolumeSource` will look like:
 
 ```go
 const (
-	PropagationRShared  PropagationMode = "RShared"
-	PropagationRSlave   PropagationMode = "RSlave"
-	PropagationPrivate PropagationMode = "Private"
+	MountPropagationRShared  MountPropagationMode = "RShared"
+	MountPropagationRSlave   MountPropagationMode = "RSlave"
+	MountPropagationPrivate  MountPropagationMode = "Private"
 )
 
 type HostPathVolumeSource struct {
 	Path string `json:"path"`
 	// Mount the host path with propagation mode specified. Docker only.
-	Propagation PropagationMode `json:"propagation,omitempty"`
+	MountPropagation MountPropagationMode `json:"propagation,omitempty"`
 }
 ```
+
+The default mount propagation is `rslave`. Any HostPath can ask for `private`.
+Only privileged containers can use HostPath with `rshared` mount propagation -
+kubelet silently downgrades the propagation to `rslave` when running `rshared`
+HostPath in a non-privileged container.
 
 Opinion against this:
 
@@ -119,6 +124,12 @@ Opinion against this:
 1. All containers use this volume will share the same propagation mode.
 
 1. (From @jonboulle) May cause cross-runtime compatibility issue.
+
+1. It's not possible to validate a pod + mount propagation. Mount propagation
+   is stored in a HostPath PersistentVolume object, while privileged mode is
+   stored in Pod object. Validator sees only one object and we don't do
+   cross-object validation and can't reject non-provileged pod that uses a PV
+   with shared mount propagation.
 
 ### Make HostPath shared for privileged containers, slave for non-privileged.
 
@@ -162,12 +173,11 @@ and something prevents it from starting if `/sys` is shared.
 
 ## Decision
 
-* We will take 'Add an option in VolumeMount API'
+* We will take 'Add an option in HostPathVolumeSource API'
   * With an alpha feature gate in 1.8.
-  * With validation that it can be used only with HostPath volumes.
-  * With validation that shared propagation can be used only in privileged
-    containers.
-  * kubernetes/kubernetes#46444
+  * Only privileged containers can use `rshared` mount propagation.
+    * When non-privileged container uses `rshared` HostPath, it silently
+	  downgrades it to `rslave`.
 * Kubelet will make sure that at least `/var/lib/kubelet` can be share-able into
   containers and it will refuse to start if it's unsuccessful
   * kubernetes/kubernetes#45724
