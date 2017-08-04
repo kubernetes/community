@@ -106,9 +106,6 @@ go run hack/e2e.go -- -v --test
 # Specify "--provider=local" flag when running the tests locally
 go run hack/e2e.go -- -v --test --test_args="--ginkgo.focus=\[Feature:Performance\]" --provider=local
 
-# Alternatively, specify it with KUBERNETES_PROVIDER
-KUBERNETES_PROVIDER=local go run hack/e2e.go -- -v --build --up --test --down
-
 # Conversely, exclude tests that match the regex "Pods.*env"
 go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=Pods.*env"
 
