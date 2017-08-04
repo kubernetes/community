@@ -7,7 +7,7 @@ This document presents a proposal for managing raw block storage in Kubernetes u
 # Terminology
 * Raw Block Device - a physically attached device devoid of a filesystem
 * Raw Block Volume - a logical abstraction of the raw block device as defined by a path
-* Filesystem on Block - a formatted (ie xfs) filesystem on top of a raw block device
+* File on Block - a formatted (ie xfs) filesystem on top of a raw block device
 
 # Goals
 * Enable durable access to block storage
@@ -471,7 +471,7 @@ Spec:
     pdName: "gce-disk-1"
 ```
 
-***If admin specifies volumeType: block + fstype: ext4 then they would get what they already get today ***
+***If admin specifies volumeType: block + fstype: ext4 then they would have the default behavior of files on block ***
 
 # Implementation Plan, Features & Milesones
 
