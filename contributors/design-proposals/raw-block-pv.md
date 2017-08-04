@@ -62,11 +62,11 @@ metadata:
 name: myclaim
 spec:
   volumeType: block #proposed API change
-accessModes:
-- ReadWriteOnce
-resources:
-requests:
-storage: 80Gi 
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 80Gi 
 ```
 
 For dynamic provisioning and the use of the storageClass, the user also specifically defines the intent of the volume by 
@@ -81,11 +81,11 @@ name: myclaim
 spec:
   storageClassName: local-fast 
   volumeType: block #proposed API change
-accessModes:
-- ReadWriteOnce
-resources:
-requests:
-storage: 80Gi 
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 80Gi 
 ```
 
 ## Persistent Volume API Changes:
@@ -98,13 +98,13 @@ metadata:
 name: local-raw-pv
 spec:
   volumeType: block #proposed API change
-capacity:
-storage: 100Gi
-local:
-  path: /dev/xvdc 
-accessModes:
-  - ReadWriteOnce
-persistentVolumeReclaimPolicy: Delete 
+  capacity:
+    storage: 100Gi
+  local:
+    path: /dev/xvdc 
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete 
 ```
 
 ## Storage Class API Changes:
@@ -119,7 +119,7 @@ as 'block' but the fsType as 'xfs'.
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-name: block-volume
+  name: block-volume
 provisioner: kubernetes.io/local-block-glusterfs
 parameters:
   volumeType: block #opaque value  / plug-in dependent
@@ -132,7 +132,7 @@ with the Storage Class, volumes can be grouped and used according to how they ar
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-name: block-volume
+  name: block-volume
 provisioner: no-provisioning 
 parameters:
 ```
