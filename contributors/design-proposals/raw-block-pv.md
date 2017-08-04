@@ -90,11 +90,7 @@ storage: 80Gi
 
 ## Persistent Volume API Changes:
 For static provisioning the admin creates the volume and also is intentional about how the volume should be consumed. For backwards
-compatibility, the absence of volumeType will default to volumes work today, which are formatted with a filesystem depending on 
-the plug-in chosen. Recycling will not be a supported reclaim policy. Once the user deletes the claim against a PV, the volume will 
-be scrubbed according to how it was bound. The path value in the local PV definition would be overloaded to define the path of the raw
-block device rather than the fileystem path.
-
+compatibility, the absence of volumeType will default to file which is how volumes work today, which are formatted with a filesystem depending on the plug-in chosen. Recycling will not be a supported reclaim policy. Once the user deletes the claim against a PV, the volume will be scrubbed according to how it was bound. The path value in the local PV definition would be overloaded to define the path of the raw block device rather than the fileystem path.
 ```
 kind: PersistentVolume
 apiVersion: v1
