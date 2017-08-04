@@ -108,7 +108,7 @@ During the code freeze period, fix any bugs discovered with you feature, and wri
 
 ##### Writing Feature Documentation
 
-1. Make sure your feature for the upcoming release is on the release tracking board (e.g. [link](https://docs.google.com/spreadsheets/d/1IJSTd3MHorwUt8i492GQaKKuAFsZppauT4v1LJ91WHY/edit?usp=sharing) for 1.7).
+1. Make sure your feature for the upcoming release is on the release tracking board (e.g. [link](https://docs.google.com/spreadsheets/d/1AFksRDgAt6BGA3OjRNIiO3IyKmA-GU7CXaxbihy48ns/edit?usp=sharing) for 1.8).
 2. Create a PR with documentation for your feature in the [documents repo](https://github.com/kubernetes/kubernetes.github.io).
     * **Your PR should target the release branch (e.g. [`release-1.8`](https://github.com/kubernetes/kubernetes.github.io/tree/release-1.8)), not the [`master`](https://github.com/kubernetes/kubernetes.github.io/tree/master) branch.**
       * Any changes to the master branch become live on https://kubernetes.io/docs/ as soon as they are merged, and for releases we do not want docuemntation to go live until the release is cut.
