@@ -1,4 +1,4 @@
-# Local Raw Block Consumption in Kubernetes
+# Raw Block Consumption in Kubernetes
 
 Authors: erinboyd@, screeley44@, mtanino@
 
@@ -468,46 +468,6 @@ Spec:
 ```
 
 ***If admin specifies volumeType: block + fstype: ext4 then they would get what they already get today ***
-
-## UC9: 
-
-DESCRIPTION: Developer wishes to consumes raw device
-
-WORKFLOW:
-
-USER:
-
-```
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: pvc-raw-block
-spec:
-  volumeType: block
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 80Gi
-```
-
-```
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-db
-spec:
-    containers:
-    - name: mysql
-      image: mysql
-      volumeMounts:
-      - name: my-db-data
-	mountPath: /var/lib/mysql/data
-    volumes:
-    - name: my-db-data
-      persistentVolumeClaim:
-	claimName: pvc-raw-block
-```
 
 # Implementation Plan, Features & Milesones
 
