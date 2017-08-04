@@ -517,3 +517,18 @@ type BlockUnmounter interface {
  	GetVolumePath() string
 }
 ```
+# Mounter binding matrix
+| PV volumeType | Plugin fstype | PVC volumeType  | Result           |
+| --------------|:-------------:| ---------------:|-----------------:|
+|   unspecified | raw           | unspecified     | NO BIND          |
+|   unspecified | raw           | block           | BIND             |
+|   block       |               | unspecified     | NO BIND          |
+|   block       |               | block           | BIND             |
+|   block       |     ext4      | unspecified     | PLUGIN DEPENDENT |
+|   block       |     raw       | block           | BIND             |
+|   unspecified |     ext4      | block           | NO BIND          |
+|   unspecified |     raw       | block           | BIND             |
+
+* unspecified defaults to file today for backwards compatibility.
+
+
