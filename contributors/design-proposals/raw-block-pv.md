@@ -31,9 +31,10 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   Therefore, the risk outweighed the reward when trying to  leverage the power of local storage needed for stateful applications like 
   databases.
   
-  By extending the API for volumes to specifically request a raw block device, we provide a consist method for accessing volumes. In
-  addition, the ability to use a raw block device without a filesystem will allow Kuberenets better support of high performance 
-  applications that can utilitze raw block devices directly for their storage. For example, MariaDB or MongoDB.
+  By extending the API for volumes to specifically request a raw block device, we provide an explicit method for volume comsumption,
+  whereas previously it was always a fileystem. In addition, the ability to use a raw block device without a filesystem will allow
+  Kuberenets better support of high performance applications that can utilitze raw block devices directly for their storage. 
+  For example, MariaDB or MongoDB.
     
 # Design Overview
 
