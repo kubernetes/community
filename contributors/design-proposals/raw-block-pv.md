@@ -46,7 +46,14 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   a filesystem on top, the design requires explicit intent for how the volume will be used.
   The additional benefit of explicitly defining how the volume is to be consumed will provide a means for indicating the method
   by which the device should be scrubbed when the claim is deleted, as this method will differ from a raw block device compared to a 
-  filesystem. The ownership and responsibility of scrubbing the device properly shall be up to the plugin method being utilized.
+  filesystem. The ownership and responsibility of scrubbing the device properly shall be up to the plugin method being utilized. 
+  By explicitly having volumeType in the PV and PVC can help the storage provider determine what scrubbing method to use. As an example,
+  for local storage:
+  
+  PV = block, PVC = block: zero the bytes
+  PV = block, PVC = file: destroy the filesystem
+  PV = file, PVC = file: delete the files
+
   The last design point is block devices should be able to be fully restricted by the admin in accordance with how inline volumes 
   are today. Ideally, the admin would want to be able to restrict either raw-local devices and or raw-network attached devices.
   
