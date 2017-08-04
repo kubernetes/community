@@ -141,7 +141,7 @@ parameters:
 
 ## UC1: 
 
-DESCRIPTION: An admin wishes to pre-create a series of raw block devices to expose as PVs for consumption. The admin wishes to specify the purpose of these devices by specifying 'block' as the volumeType for the PVs.
+DESCRIPTION: An admin wishes to pre-create a series of local raw block devices to expose as PVs for consumption. The admin wishes to specify the purpose of these devices by specifying 'block' as the volumeType for the PVs.
 
 WORKFLOW:
 
