@@ -294,7 +294,7 @@ cd $working_dir/kubernetes
 # for each failed verification. For example:
 #   hack/update-gofmt.sh (to make sure all files are correctly formatted, usually needed when you add new files)
 #   hack/update-bazel.sh (to update bazel build related files, usually needed when you add or remove imports)
-make verify 
+make verify
 
 # Alternatively, run all update scripts to avoid fixing verification failures one by one.
 make update
@@ -303,7 +303,7 @@ make update
 make test
 
 # Run package tests verbosely
-make test WHAT=pkg/util/cache GOFLAGS=-v
+make test WHAT=./pkg/api/helper GOFLAGS=-v
 
 # Run integration tests, requires etcd
 # For more info, visit https://github.com/kubernetes/community/blob/master/contributors/devel/testing.md#integration-tests
