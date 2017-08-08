@@ -27,7 +27,7 @@ OWNERS files are in YAML format and support the following keys:
 
 - `approvers`: a list of GitHub usernames or aliases that can `/approve` a PR
 - [DEPRECATED] `assignees`: do not use, equivalent to `approvers`
-  ([kubernetes/test-infra#3851](https://github.com/kubernetes/test-infra/issues/3851)) 
+  ([kubernetes/test-infra#3851](https://github.com/kubernetes/test-infra/issues/3851))
 - `labels`: a list of GitHub labels to automatically apply to a PR
 - `reviewers`: a list of GitHub usernames or aliases that are good candidates to `/lgtm` a PR
 
@@ -41,7 +41,7 @@ approvers:
   - alice
   - bob     # this is a comment
 reviewers:
-  - alice 
+  - alice
   - carol   # this is another comment
   - sig-foo # this is an alias
 ```
@@ -57,7 +57,7 @@ publicly auditable.
 
 A sample OWNERS_ALISES file looks like:
 
-``` 
+```
 aliases:
   sig-foo:
     - david
@@ -66,6 +66,8 @@ aliases:
     - bob
     - frank
 ```
+
+GitHub usernames and aliases listed in OWNERS files are case-insensitive.
 
 ## Code Review Process
 
@@ -153,7 +155,7 @@ is the state of today.
   - This hurts the project in general as its general noise level increases over time
   - Instead, close PR's that are untouched after too long (we currently have a bot do this after 90
     days)
-  
+
 ## Implementation
 
 ### [`mungegithub`](https://github.com/kubernetes/test-infra/tree/master/mungegithub)
@@ -185,7 +187,7 @@ stateful, in that restarting it means it loses track of which things it has mung
   - [full description of the
     algorithm](https://github.com/kubernetes/test-infra/blob/6f5df70c29528db89d07106a8156411068518cbc/mungegithub/mungers/approval-handler.go#L99-L111)
 - [munger:
-  submit-queue](https://github.com/kubernetes/test-infra/blob/master/mungegithub/mungers/submit-queue.go) 
+  submit-queue](https://github.com/kubernetes/test-infra/blob/master/mungegithub/mungers/submit-queue.go)
   - responsible for merging PR's
   - responsible for updating a GitHub status check explaining why a PR can't be merged (eg: a
     missing `lgtm` or `approved` label)
