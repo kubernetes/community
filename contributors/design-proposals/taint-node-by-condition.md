@@ -32,9 +32,6 @@ In addition to this, with taint-based-eviction, the Node Controller already tain
 |NetworkUnavailable  |True                | NoSchedule   | node.kubernetes.io/networkUnavailable |
 |                    |False               | -            | |
 |                    |Unknown             | -            | |
-|InodePressure       |True                | NoSchedule   | node.kubernetes.io/inodePressure      |
-|                    |False               | -            | |
-|                    |Unknown             | -            | |
 
 For example, if a CNI network is not detected on the node (e.g. a network is unavailable), the Node Controller will taint the node with `node.kubernetes.io/networkUnavailable=:NoSchedule`. This will then allow users to add a toleration to their `PodSpec`, ensuring that the pod can be scheduled to this node if necessary. If the kubelet did not update the node’s status after a grace period, the Node Controller will only taint the node with `node.kubernetes.io/unreachable`; it will not taint the node with any unknown condition.
 
