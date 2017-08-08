@@ -2,7 +2,7 @@
 
 **Author**: David Ashpole (@dashpole)
 
-**Last Updated**: 7/25/2017
+**Last Updated**: 8/07/2017
 
 **Status**: Proposal
 
@@ -39,10 +39,12 @@ The implementation of priority itself is outside the scope of this proposal, and
 
 The scope of this design is restricted to the node, and does not make any proposals regarding cluster-level controllers.
 
-## Proposed Implementations
-This list is not expected to be exhaustive, but rather to explore options.  New options may be added if there is support for them.
+## Proposed Implementation
 
-The following are proposals for how to rank pods when the node is under memory pressure.
+### Only evict pods where usage > requests.  Then sort by Function(priority, usage - requests)
+This solution provides users with a clear path to avoiding evictions. It prevents abuse by high-priority pods by not allowing them to disrupt other pods that are below, or near their requests.  Using a function provides a more nuanced approach to allowing pods to consume "unused" (not requested) memory on the node.  Power users, or cluster administrators can determine how unused memory is allocated to pods by choosing priority levels for pods that are closer for more equal sharing of extra memory, or further apart to give better availability to higher priority pods.  For pods that have equal priority, the function is equivalent to usage - requests, so that clusters that do not have priority enabled maintain behavior that is similar (though not exactly the same) as today's behavior.
+
+## Alternatives
 
 ### By QoS, priority, then usage over requests
 This solution is closest to the current behavior since it only makes a small modification by considering priority before usage over requests.  Since this is a small change from the current implementation, it should be an easy transition for cluster admins and users to make.  High-priority pods are only able to able to disrupt pods in their QoS tier or below, which lowers the potential for abuse since users can run their workloads as guaranteed if they need to avoid evictions.  However, this means that burstable pods consuming less than their requests could be evicted if a different high priority burstable pod bursts.  High priority pods are given increased availability depending on the QoS of pods that they share the node with.  If the node has many guaranteed pods, it is still possible that the high priority pod could be evicted.  If the node does not have many guaranteed pods, then the high-priority pod is able to consume all memory not consumed by Guaranteed pods.
