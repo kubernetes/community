@@ -255,8 +255,10 @@ input, output, commonly used flags, etc.
 
 
   * Example should contain examples
+    * A comment should precede each example command. Comment should start with
+      an uppercase letter and terminate with a period
     * Start commands with `$`
-    * A comment should precede each example command, and should begin with `#`
+
 
 
 * Use "FILENAME" for filenames
