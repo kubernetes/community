@@ -417,9 +417,6 @@ sigs:
       Kubernetes on premise, on bare metal or more generally beyond cloud
       providers.
     leads:
-    - name: Tomasz Napierala
-      github: zen
-      company: Mirantis
     - name: Marco Ceppi
       github: marcoceppi
       company: Canonical
