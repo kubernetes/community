@@ -492,6 +492,8 @@ Feature: Pre-provisioned PVs to precreated devices
                Milestone 6: Adds enable/disable configuration to securityContext in PSP (Pod Security Policy) similar to hostPath
                
                Milestone 7: Validate container runtime options with user specifcations as indicated in UC3
+	       
+	       Milestone 8: Container Runtime changes
 
 Phase 2:  v1.9
 Feature: Discovery of block devices 
@@ -526,13 +528,15 @@ type BlockUnmounter interface {
 
 | PV volumeType | Plugin fstype | PVC volumeType  | Result           |
 | --------------|:-------------:| ---------------:|-----------------:|
-|   unspecified |    --         | unspecified     | BIND             |
-|   unspecified |    --         | block           | NO BIND          |
-|   block       |    --         | unspecified     | NO BIND          |
-|   block       |    --         | block           | BIND             |
-|   unspecified |    --         | block           | NO BIND          |
+|   unspecified |   unspecified | unspecified     | BIND             |
+|   unspecified |    block      | block           | NO BIND          |
+|   block       |    block      | unspecified     | NO BIND          |
+|   block       |    block      | block           | BIND             |
+|   unspecified |   unspecified | block           | NO BIND          |
+|   unspecified |   unspecified | block           | NO BIND          |
+|   block       |   unspecified | block           | BIND             |
 
-* unspecified defaults to 'file' today for backwards compatibility.
+* unspecified defaults to 'file/ext4' today for backwards compatibility and in mount_linux.go
 
 # Mounter binding matrix for dynamically provisioned volumes:
 
