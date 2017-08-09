@@ -210,6 +210,8 @@ sigs:
   - name: Cluster Lifecycle
     dir: sig-cluster-lifecycle
     mission_statement: >
+      The Cluster Lifecycle SIG is responsible for building the user experience
+      for deploying and upgrading Kubernetes clusters.
     leads:
     - name: Luke Marsden
       github: lukemarsden
@@ -217,6 +219,9 @@ sigs:
     - name: Joe Beda
       github: jbeda
       company: Heptio
+    - name: Robert Bailey
+      github: roberthbailey
+      company: Google
     meetings:
     - day: Tuesday
       utc: "16:00"
