@@ -534,15 +534,14 @@ type BlockUnmounter interface {
 ```
 # Mounter binding matrix for statically provisioned volumes:
 
-| PV volumeType | Plugin fstype | PVC volumeType  | Result           |
-| --------------|:-------------:| ---------------:|-----------------:|
-|   unspecified |   unspecified | unspecified     | BIND             |
-|   unspecified |    block      | block           | NO BIND          |
-|   block       |    block      | unspecified     | NO BIND          |
-|   block       |    block      | block           | BIND             |
-|   unspecified |   unspecified | block           | NO BIND          |
-|   unspecified |   unspecified | block           | NO BIND          |
-|   block       |   unspecified | block           | BIND             |
+| PV volumeType | PVC volumeType  | Result           |
+| --------------|:---------------:| ----------------:|
+|   unspecified | unspecified     | BIND             |
+|   unspecified | block           | NO BIND          |
+|   block       | unspecified     | NO BIND          |
+|   block       |  block          | BIND             |
+|   unspecified | block           | NO BIND          |
+
 
 * unspecified defaults to 'file/ext4' today for backwards compatibility and in mount_linux.go
 
