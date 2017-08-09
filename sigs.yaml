@@ -661,3 +661,23 @@ workinggroups:
     contact:
       slack: wg-resource-mgmt
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-resource-management
+  - name: Container Identity
+    dir: wg-container-identity
+    mission_statement: >
+      Ensure containers are able to interact with external systems and acquire secure identities for communication, integrating with external solutions as necessary.
+    leads:
+    - name: Clayton Coleman
+      github: smarterclayton
+      company: Red Hat
+    - name: Greg Gastle
+      github: destijl
+      company: Google
+    meetings:
+    - day: Tuesday
+      utc: "15:00"
+      frequency: bi-weekly (On demand)
+    meeting_url: TBD
+    meeting_archive_url: https://docs.google.com/document/d/1bCK-1_Zy2WfsrMBJkdaV72d2hidaxZBhS5YQHAgscPI/edit
+    contact:
+      slack: wg-container-identity
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-container-identity
