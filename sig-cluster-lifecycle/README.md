@@ -8,6 +8,7 @@ To understand how this file is generated, see generator/README.md.
 -->
 # Cluster Lifecycle SIG
 
+The Cluster Lifecycle SIG is responsible for building the user experience for deploying and upgrading Kubernetes clusters.
 
 ## Meetings
 * [Tuesdays at 16:00 UTC](https://zoom.us/j/166836%E2%80%8B624) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
@@ -17,6 +18,7 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/a/weave.wor
 ## Leads
 * [Luke Marsden](https://github.com/lukemarsden), Weave
 * [Joe Beda](https://github.com/jbeda), Heptio
+* [Robert Bailey](https://github.com/roberthbailey), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
