@@ -7,7 +7,7 @@ This document presents a proposal for managing raw block storage in Kubernetes u
 # Terminology
 * Raw Block Device - a physically attached device devoid of a filesystem
 * Raw Block Volume - a logical abstraction of the raw block device as defined by a path
-* File on Block - a formatted (ie xfs) filesystem on top of a raw block device
+* File on Block/Filesystem on Block - a formatted (ie xfs) filesystem on top of a raw block device
 
 # Goals
 * Enable durable access to block storage
@@ -467,11 +467,12 @@ Spec:
   accessModes:
     - "ReadWriteOnce"
   gcePersistentDisk:
-    fsType: "raw"
+    fsType: "block"
     pdName: "gce-disk-1"
 ```
 
 ***If admin specifies volumeType: block + fstype: ext4 then they would have the default behavior of files on block ***
+***fsType values will be provisioner dependent. Block is suggested for development simplicity
 
 # Implementation Plan, Features & Milesones
 
@@ -521,18 +522,29 @@ type BlockUnmounter interface {
  	GetVolumePath() string
 }
 ```
-# Mounter binding matrix
+# Mounter binding matrix for statically provisioned volumes:
+
 | PV volumeType | Plugin fstype | PVC volumeType  | Result           |
 | --------------|:-------------:| ---------------:|-----------------:|
-|   unspecified | raw           | unspecified     | NO BIND          |
-|   unspecified | raw           | block           | BIND             |
-|   block       |               | unspecified     | NO BIND          |
-|   block       |               | block           | BIND             |
-|   block       |     ext4      | unspecified     | PLUGIN DEPENDENT |
-|   block       |     raw       | block           | BIND             |
-|   unspecified |     ext4      | block           | NO BIND          |
-|   unspecified |     raw       | block           | BIND             |
+|   unspecified |    --         | unspecified     | BIND             |
+|   unspecified |    --         | block           | NO BIND          |
+|   block       |    --         | unspecified     | NO BIND          |
+|   block       |    --         | block           | BIND             |
+|   unspecified |    --         | block           | NO BIND          |
+
+* unspecified defaults to 'file' today for backwards compatibility.
+
+# Mounter binding matrix for dynamically provisioned volumes:
+
+Note: The value used for the plugin to indicate is it provisioning 
+block will be plugin dependent and is an opaque parameter. Thus, not an API
+change and possibly inconsistent between plugins. We are suggesting using 'block'
+to simplify validation in the code (rather than raw that what proposed before).
+
+| PV volumeType | Plugin fstype | PVC volumeType  | Result           |
+| --------------|:-------------:| ---------------:|-----------------:|
+|  --           | ext4/xfs      | block           | NO BIND          |
+|  --           | ext4/xfs      | unspecified     | BIND             |
+|  --           | block         | block           | BIND             |
 
 * unspecified defaults to file today for backwards compatibility.
-
-
