@@ -474,6 +474,14 @@ Spec:
 ***If admin specifies volumeType: block + fstype: ext4 then they would have the default behavior of files on block ***
 ***fsType values will be provisioner dependent. Block is suggested for development simplicity
 
+# Container Runtime considerations
+It is important the values that are passed to the container runtimes are valid and support the current implementation of these various runtimes. Listed below are a table of various runtime and the mapping of their values to what is passed from the mount. 
+
+| runtime engine    | runtime options  | accessMode       |  
+| --------------    |:----------------:| ----------------:|
+| docker/runc/rkt   |  mknod / RWM     | RWO              |
+| docker/runc/rkt   |       R          | ROX              |
+
 # Implementation Plan, Features & Milesones
 
 Phase 1: v1.8
