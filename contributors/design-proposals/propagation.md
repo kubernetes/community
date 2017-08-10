@@ -65,10 +65,25 @@ and references to network namespaces persist.
 The new `VolumeMount` will look like:
 
 ```go
+type MountPropagationMode string
+
 const (
-	MountPropagationRShared  MountPropagationMode = "RShared"
-	MountPropagationRSlave   MountPropagationMode = "RSlave"
-	MountPropagationPrivate  MountPropagationMode = "Private"
+	// MountPropagationPrivate means that the volume in a container won't receive
+	// new mounts from host and also no mounts in this volume will be propagated
+	// to the host.
+	MountPropagationPrivate MountPropagationMode = "private"
+	// MountPropagationSlave means that the volume in a container will receive
+	// new mounts from the host or other containers, but its own mounts won't
+	// be propagated to the host or other containers.
+	// Note that this mode is recursively applied to all mounts in the volume
+	// ("rslave" in Linux terminology)
+	MountPropagationSlave  MountPropagationMode = "slave"
+	// MountPropagationShared means that the volume in a container will receive
+	// new mounts from the host or other containers, and its own mounts will
+	// be propagated from the container to the host or other containers.
+	// Note that this mode is recursively applied to all mounts in the volume
+	// ("rshared" in Linux terminology)
+	MountPropagationShared MountPropagationMode = "shared"
 )
 
 type VolumeMount struct {
@@ -78,13 +93,18 @@ type VolumeMount struct {
 	ReadOnly bool `json:"readOnly,omitempty"`
 	// Required.
 	MountPath string `json:"mountPath"`
+	// mountPropagation is the propagation mode how is the directory
+	// made available to a container in a pod. See description of individual
+	// modes for details.
+	// This field is alpha in 1.8 and can be reworked or removed in a future
+	// release.
 	// Optional.
-	Propagation PropagationMode `json:"propagation,omitempty"`
+	MountPropagation MountPropagationMode `json:"mountPropagation,omitempty"`
 }
 ```
 
-Default would be `RSlave`, which should not break backward compatibility,
-`RShared` must be explicitly requested.
+Default would be `Slave`, which should not break backward compatibility,
+`Shared` must be explicitly requested.
 
 Opinion against this:
 
@@ -99,22 +119,42 @@ propagation could be rejected.
 The new `HostPathVolumeSource` will look like:
 
 ```go
+type MountPropagationMode string
+
 const (
-	MountPropagationRShared  MountPropagationMode = "RShared"
-	MountPropagationRSlave   MountPropagationMode = "RSlave"
-	MountPropagationPrivate  MountPropagationMode = "Private"
+	// MountPropagationPrivate means that the volume in a container won't receive
+	// new mounts from host and also no mounts in this volume will be propagated
+	// to the host.
+	MountPropagationPrivate MountPropagationMode = "private"
+	// MountPropagationSlave means that the volume in a container will receive
+	// new mounts from the host or other containers, but its own mounts won't
+	// be propagated to the host or other containers.
+	// Note that this mode is recursively applied to all mounts in the volume
+	// ("rslave" in Linux terminology)
+	MountPropagationSlave  MountPropagationMode = "slave"
+	// MountPropagationShared means that the volume in a container will receive
+	// new mounts from the host or other containers, and its own mounts will
+	// be propagated from the container to the host or other containers.
+	// Note that this mode is recursively applied to all mounts in the volume
+	// ("rshared" in Linux terminology)
+	MountPropagationShared MountPropagationMode = "shared"
 )
 
 type HostPathVolumeSource struct {
 	Path string `json:"path"`
-	// Mount the host path with propagation mode specified. Docker only.
-	MountPropagation MountPropagationMode `json:"propagation,omitempty"`
+	// mountPropagation is the propagation mode how is the directory
+	// made available to a container in a pod. See description of individual
+	// modes for details.
+	// This field is alpha in 1.8 and can be reworked or removed in a future
+	// release.
+	// Optional.
+	MountPropagation MountPropagationMode `json:"mountPropagation,omitempty"`
 }
 ```
 
-The default mount propagation is `rslave`. Any HostPath can ask for `private`.
-Only privileged containers can use HostPath with `rshared` mount propagation -
-kubelet silently downgrades the propagation to `rslave` when running `rshared`
+The default mount propagation is `slave`. Any HostPath can ask for `private`.
+Only privileged containers can use HostPath with `shared` mount propagation -
+kubelet silently downgrades the propagation to `slave` when running `shared`
 HostPath in a non-privileged container.
 
 Opinion against this:
@@ -140,14 +180,14 @@ privileged, or we can introduce a new option in SecurityContext to control this.
 The propagation mode could be determined by the following logic:
 
 ```go
-// Environment check to ensure "rshared" is supported.
+// Environment check to ensure "shared" is supported.
 if !dockerNewerThanV110 || !mountPathIsShared {
 	return ""
 }
 if container.SecurityContext.Privileged {
-	return "rshared"
+	return "shared"
 } else {
-	return "rslave"
+	return "slave"
 }
 ```
 
@@ -175,9 +215,9 @@ and something prevents it from starting if `/sys` is shared.
 
 * We will take 'Add an option in HostPathVolumeSource API'
   * With an alpha feature gate in 1.8.
-  * Only privileged containers can use `rshared` mount propagation.
-    * When non-privileged container uses `rshared` HostPath, it silently
-	  downgrades it to `rslave`.
+  * Only privileged containers can use `shared` mount propagation.
+    * When non-privileged container uses `shared` HostPath, it silently
+	  downgrades it to `slave`.
 * Kubelet will make sure that at least `/var/lib/kubelet` can be share-able into
   containers and it will refuse to start if it's unsuccessful
   * kubernetes/kubernetes#45724
@@ -194,7 +234,7 @@ and something prevents it from starting if `/sys` is shared.
   `kubelet --feature-gates=MountPropagation=true`
   It will be used only for testing of volume plugins in e2e tests and
   Mount propagation may be redesigned or even removed in any future release.
-  * When the feature is enabled the default mount propagation will be `rslave`,
+  * When the feature is enabled the default mount propagation will be `slave`,
     which is different to current `private`. Extensive testing is needed!
 
 ## Extra Concerns
