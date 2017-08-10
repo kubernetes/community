@@ -542,6 +542,9 @@ type BlockUnmounter interface {
 |   block       | unspecified     | NO BIND          |
 |   block       |  block          | BIND             |
 |   unspecified | block           | NO BIND          |
+|   block       |  file           | NO BIND          |
+|   file        |  block          | NO BIND          |
+|  unspecified  | file            | BIND             |
 
 
 * unspecified defaults to 'file/ext4' today for backwards compatibility and in mount_linux.go
