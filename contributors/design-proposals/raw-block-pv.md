@@ -483,6 +483,9 @@ It is important the values that are passed to the container runtimes are valid a
 | docker/runc/rkt   |  mknod / RWM     | RWO              |
 | docker/runc/rkt   |       R          | ROX              |
 
+The accessModes would be passed as part of the options array and would need validate against the specific runtime engine. 
+Since rkt doesn't use the CRI, the config values would need to be passed in the legacy method.
+
 # Implementation Plan, Features & Milesones
 
 Phase 1: v1.8
