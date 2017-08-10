@@ -20,8 +20,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 * [Greg Gastle](https://github.com/destijl), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-auth)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-auth)
+* [Slack](https://kubernetes.slack.com/messages/wg-container-identity)
+* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-container-identity)
 
 <!-- BEGIN CUSTOM CONTENT -->
 
