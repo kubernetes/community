@@ -54,7 +54,7 @@ When the need arises, a [new SIG can be created](sig-creation-procedure.md)
 
 | Name | Organizers | Contact | Meetings |
 |------|------------|---------|----------|
-|[Container Identity](wg-container-identity/README.md)|* [Clayton Coleman](https://github.com/smarterclayton), Red Hat<br>* [Greg Gastle](https://github.com/destijl), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-auth)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-auth)|* [Tuesdays at 15:00 UTC (bi-weekly (On demand))](TBD)<br>
+|[Container Identity](wg-container-identity/README.md)|* [Clayton Coleman](https://github.com/smarterclayton), Red Hat<br>* [Greg Gastle](https://github.com/destijl), Google<br>|* [Slack](https://kubernetes.slack.com/messages/wg-container-identity)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-container-identity)|* [Tuesdays at 15:00 UTC (bi-weekly (On demand))](TBD)<br>
 |[Resource Management](wg-resource-management/README.md)|* [Vishnu Kannan](https://github.com/vishh), Google<br>* [Derek Carr](https://github.com/derekwaynecarr), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/wg-resource-mgmt)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-resource-management)|* [Tuesdays at 18:00 UTC (weekly (On demand))](https://zoom.us/j/4799874685)<br>
 <!-- BEGIN CUSTOM CONTENT -->
 
