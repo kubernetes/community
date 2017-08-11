@@ -6,6 +6,7 @@ This is a backlog of items that the steering committee needs to either handle or
 ## Backlog Items
 
 - Check the governance documents into the community repo
+- Clarify the inferface with the CNCF
 - Update the Code of Conduct Committee to a more recent version, documenting enforcement, broaden coverage
   beyond maintainers and committers, coding activities, and project/public spaces, specify our own reporting
   path, clarify the policy on employer notification and who else may be involved, decide what should
@@ -18,6 +19,7 @@ This is a backlog of items that the steering committee needs to either handle or
 - Formalize the concept of subprojects
 - Decide how/whether ecosystem subprojects (e.g., kops, helm) are governed differently
 - Resolve the disconnect between code organization (OWNERS, maintainers) and people organization (SIGs)
+- Simplify the contributor ladder
 - Update incubator process to explain new GitHub organization strategy
 - Explicitly delegate areas to SIGs
 - Escalation process
@@ -26,3 +28,4 @@ This is a backlog of items that the steering committee needs to either handle or
 - Improve/expand definition of members of standing
 - Identify who is responsible for evolving the governance going forward and how changes will be approved
 - Do we need user groups?
+
