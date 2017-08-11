@@ -8,7 +8,7 @@ for applications requiring long lived data.
 Two new API kinds:
 
 A `PersistentVolume` (PV) is a storage resource provisioned by an administrator.
-It is analogous to a node. See [Persistent Volume Guide](../user-guide/persistent-volumes/)
+It is analogous to a node. See [Persistent Volume Guide](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
 for how to use it.
 
 A `PersistentVolumeClaim` (PVC) is a user's request for a persistent volume to
