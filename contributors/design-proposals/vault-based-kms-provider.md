@@ -29,8 +29,8 @@ to implement specific providers for each (in K8S).
 * Reduced risk of encryption key compromise.
     * encryption key is stored and managed in Vault.
     * encryption key does not need to leave the Vault.
-    * Vault provides ability to define access control suitable for a wide range of deployment scenarios and security needs.
-    * Vault provides In-built auditing of vault API calls.
+* Vault provides ability to define access control suitable for a wide range of deployment scenarios and security needs.
+* Vault provides In-built auditing of vault API calls.
 * Ability for a customer already using Vault to leverage the instance to also
 secure keys used to encrypt secrets managed within a Kubernetes cluster
 * Separation of Kubernetes cluster management responsibilities from encryption key
@@ -55,7 +55,7 @@ reading from the storage.
 
 The KEK will be stored and managed in Vault backend. The Vault based provider
 configured in KMS Transformer configuration will make REST requests to encrypt
-and decrypt DEKs over a secure channel, if TLS is enabled. KMS Transformer will
+and decrypt DEKs over a secure channel (must enable TLS). KMS Transformer will
 store the DEKs in etcd in encrypted form along with encrypted secrets. As with
 existing providers, encrypted DEKs will be stored with metadata used to identify
 the provider and KEK to be used for decryption.
@@ -79,8 +79,10 @@ Backend.
 ### Pseudocode
 #### Prefix Metadata
 Every encrypted secret will have the following metadata prefixed.
-``k8s:enc:kms:<api-version>:vault:len(<KEK-key-name>:<KEK-key-version>:<DEK
-encrypted with KEK>):<KEK-key-name>:<KEK-key-version>:<DEK encrypted with KEK>``
+```json
+k8s:enc:kms:<api-version>:vault:len(<KEK-key-name>:<KEK-key-version>:<DEK
+encrypted with KEK>):<KEK-key-name>:<KEK-key-version>:<DEK encrypted with KEK>
+```
 
 * ``<api-version>`` represents api version in the providers configuration file.
 * ``vault`` represents the KMS service *kind* value. It is a fixed value for Vault
@@ -168,9 +170,9 @@ Here is a sample configuration file with the vault provider configured:
 	    - secrets
 	    providers:
 	    - kms:
-	      name: vault
-	      cachesize: 10
-	      configfile: /home/myvault/vault-config.yaml
+	        name: vault
+	        cachesize: 10
+	        configfile: /home/myvault/vault-config.yaml
 
 #### Minimal required Configuration
 The Vault based Provider needs the following configuration elements, at a
@@ -190,7 +192,7 @@ the prefix to the encrypted DEK stored in etcd
 #### Authentication Configuration
 ##### Vault Server Authentication
 
-For the Kubernetes cluster to authenticate the vault server, if TLS is enabled :
+For the Kubernetes cluster to authenticate the vault server, TLS must be enabled :
 1. ``ca-cert`` location of x509 certificate to authenticate the vault server eg:
 ``/var/run/kubernetes/ssl/vault.crt``
 
@@ -206,72 +208,43 @@ server  to vault server eg. ``/var/run/kubernetes/ssl/valut-client-cert.pem``
 2. ``client-key`` : location of x509 private key to authenticate kubernetes API
 server  to vault server eg. ``/var/run/kubernetes/ssl/vault-client-key.pem``
 
-Here's a sample configuration file with ``client-cert``:
-
-	kind: EncryptionConfig
-	apiVersion: v1
-	resources:
-	  - resources:
-		- secrets
-		providers:
-	 	- kms:
-	    	kind: vault
-	    	apiVersion: v1
-	    	cache-size: 100
-	    	config:
-	      	addr: https://localhost:8200
-	      	key-names:
-	            - kube-secret-enc-key
-	      	ca-cert:/var/run/kubernetes/ssl/vault.crt
-	      	client-cert:/var/run/kubernetes/ssl/vault-client-cert.pem
-	      	client-key:/var/run/kubernetes/ssl/vault-client-key.pem
+Here's a sample ``vault-config.yaml`` configuration with ``client-cert``:
+```
+	key-names:
+	  - kube-secret-enc-key
+	addr: https://example.com:8200
+	ca-cert:/var/run/kubernetes/ssl/vault.crt
+	client-cert:/var/run/kubernetes/ssl/vault-client-cert.pem
+	client-key:/var/run/kubernetes/ssl/vault-client-key.pem
+```
 
 ###### Vault token based authentication
 1. ``token`` : limited access vault token required by kubernetes API sever to
 authenticate itself while making requests to vault eg:
 8dad1053-4a4e-f359-2eab-d57968eb277f
 
-Here's a sample configuration file when using a Vault Token for authenticating
+Here's a sample ``vault-config.yaml`` configuration using a Vault Token for authentication.
 the Kubernetes cluster as a client to Vault:
-
-	kind: EncryptionConfig
-	apiVersion: v1
-	resources:
-	  - resources:
-		- secrets
-		providers:
-	 	- kms:
-	    		kind: vault
-	    		apiVersion: v1
-	    		cache-size: 100
-	    		config:
-	      		addr: https://localhost:8200
-	      		key-names:
-	           		- kube-secret-enc-key
-	      		ca-cert:/var/run/kubernetes/ssl/vault.crt
-	      		token: 8dad1053-4a4e-f359-2eab-d57968eb277f
+```
+  key-names:
+  	 -kube-secret-enc-key
+  addr: https://example.com:8200
+  ca-cert:/var/run/kubernetes/ssl/vault.crt
+  token: 8dad1053-4a4e-f359-2eab-d57968eb277f
+```
 
 ###### Vault AppRole based authentication
 1. ``role-id`` : RoleID of the AppRole
 2. ``secret-id`` : secret Id only if associated with the appRole.
 
-Here's a sample configuration file with Vault AppRole
-	kind: EncryptionConfig
-	apiVersion: v1
-	resources:
-	  - resources:
-		- secrets
-		providers:
-	     - kms:
-	    	kind: vault
-	    	apiVersion: v1
-	    	cache-size: 100
-	    	config:
-	      	addr: https://localhost:8200
-	      	key-names:
-	            - kube-secret-enc-key
-	      	ca-cert: /var/run/kubernetes/ssl/vault.crt
-	      	role-id: db02de05-fa39-4855-059b-67221c5c2f63
+Here's a sample configuration file using a Vault AppRole for authentication.
+```
+  key-names:
+    - kube-secret-enc-key
+  addr: https://localhost:8200
+  ca-cert: /var/run/kubernetes/ssl/vault.crt
+  role-id: db02de05-fa39-4855-059b-67221c5c2f63
+```
 
 ## Key Generation and rotation
 The KEK is generated in Vault and rotated using direct API call or CLI to Vault
