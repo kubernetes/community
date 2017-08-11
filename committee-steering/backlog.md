@@ -19,16 +19,21 @@ This is a backlog of items that the steering committee needs to either handle or
   of authority/leadership are selected/granted, how decisions are made, and how conflicts are resolved
 - Formalize the concept of subprojects
 - Decide how/whether ecosystem subprojects (e.g., kops, helm) are governed differently
+- In particular, develop policies/procedures for donated code (e.g., helm, kubernetes-anywhere, kompose, kargo)
 - Resolve the disconnect between code organization (OWNERS, maintainers) and people organization (SIGs)
 - Simplify the contributor ladder
 - Update incubator process to explain new GitHub organization strategy
 - Explicitly delegate areas to SIGs
 - Escalation process
 - Fund-requesting and budget processes
-- Committee decision-making process (e.g., modified lazy consensus) and quorum requirement
+- Committee decision-making process (e.g., modified lazy consensus seeking) and quorum requirement
 - Improve/expand definition of members of standing
 - Identify who is responsible for evolving the governance going forward and how changes will be approved
 - Do we need user groups?
 - Do we need insurance?
 - Do we need a policy similar to [Apache's release policy](http://www.apache.org/legal/release-policy.html)?
 - Update project values
+- Do we need a Conflict of Interest policy?
+- Develop processes to address staffing gaps (engineering, docs, test, release, ...), effort gaps 
+  (tragedy of the commons), expertise mismatches, priority conflicts, personnel conflicts
+- 
