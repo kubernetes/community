@@ -20,11 +20,11 @@ The advantages of a self-hosted Kubernetes cluster are:
 4. **Cluster Upgrades:** Related to introspection the components of a Kubernetes cluster are now subject to control via Kubernetes APIs. Upgrades of Kubelet's are possible via new daemon sets, API servers can be upgraded using daemon sets and potentially deployments in the future, and flags of add-ons can be changed by updating deployments, etc.
 5. **Easier Highly-Available Configurations:** Using Kubernetes APIs will make it easier to scale up and monitor an HA environment without complex external tooling. Because of the complexity of these configurations tools that create them without self-hosted often implement significant complex logic.
 
-However, there is a spectrum of ways that a cluster can be self-hosted. To do this we are going to divide the Kubernetes cluster into a variety of layers beginning with the Kubelet (level 0) and going up to the add-ons (Level 4). A cluster can self-host all of these levels 0-4 or only partially self-host.
+However, there is a spectrum of ways that a cluster can be self-hosted. To do this we are going to divide the Kubernetes cluster into a variety of layers beginning with the Kubelet (level 0) and going up to the add-ons (level 4). A cluster can self-host all of these levels 0-4 or only partially self-host.
 
 ![](self-hosted-layers.png)
 
-For example, a 0-4 self-hosted cluster means that the kubelet is a daemon set, the API server runs as a pod and is exposed as a service, and so on. While a 1-4 self-hosted cluster would have a system installed Kubelet. And a 02-4 system would have everything except etcd self-hosted.
+For example, a 0-4 self-hosted cluster means that the kubelet is a daemon set, the API server runs as a pod and is exposed as a service, and so on. While a 1-4 self-hosted cluster would have a system installed Kubelet. And a 2-4 system would have everything except etcd self-hosted.
 
 It is also important to point out that self-hosted stands alongside other methods to install and configure Kubernetes, including scripts like kube-up.sh, configuration management tools, and deb/rpm/etc packages. A non-goal of this self-hosted proposal is replacing or introducing anything that might impede these installation and management methods. In fact it is likely that by dogfooding Kubernetes APIs via self-hosted improvements will be made to Kubernetes components that will simplify other installation and management methods.
 
