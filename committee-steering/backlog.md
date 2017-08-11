@@ -11,6 +11,7 @@ This is a backlog of items that the steering committee needs to either handle or
   beyond maintainers and committers, coding activities, and project/public spaces, specify our own reporting
   path, clarify the policy on employer notification and who else may be involved, decide what should
   be shared with the accused
+- Determine how members of the Code of Conduct Committee should be selected
 - Document resources that the community has and make sure they have a home: releases, twitter handles, etc
 - Find homes for unowned areas of the project, such as the build system
 - SIG charter template, including suggested governance and minimum required intra-SIG governance, its scope 
