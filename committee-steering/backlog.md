@@ -28,4 +28,5 @@ This is a backlog of items that the steering committee needs to either handle or
 - Improve/expand definition of members of standing
 - Identify who is responsible for evolving the governance going forward and how changes will be approved
 - Do we need user groups?
-
+- Do we need insurance?
+- Do we need a policy similar to [Apache's release policy](http://www.apache.org/legal/release-policy.html)?
