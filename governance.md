@@ -60,7 +60,7 @@ responsible for the operation of the SIG and for communication and
 coordination with the other SIGs, the Steering Committee, and the
 broader community.
 
-We still have work to do to unifiy people organization via SIGs and
+We still have work to do to unify people organization via SIGs and
 code organization using [OWNERS](contributors/devel/owners.md), and to
 find homes for all subparts of the project, such as the build
 system. We also need to create a charter for each SIG to more clearly
