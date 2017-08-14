@@ -51,10 +51,12 @@ lead to many relevant topics, including
 
 ## Your First Contribution
 
-We recommend that you work on existing [issues] before attempting
-to [develop a new feature].
+We recommend that you work on an existing issue before attempting
+to [develop a new feature]. 
 
-Find an existing issue (e.g. one marked [help-wanted], or simply
+Start by finding an existing issue with the [help-wanted] label; 
+these are issues we've deemed are well suited for new contributors.
+Alternatively, if there is a specific area you are interested in, 
 ask a [SIG lead](sig-list.md) for suggestions), and respond on the
 issue thread expressing interest in working on it. 
  
@@ -81,7 +83,6 @@ If you want to work on a new idea of relatively small scope:
 [develop a new feature]: https://github.com/kubernetes/features
 [expectations]: contributors/devel/community-expectations.md
 [help-wanted]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted
-[issues]: https://github.com/kubernetes/kubernetes/issues
 [pull request]: contributors/devel/pull-requests.md
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/CONTRIBUTING.md?pixel)]()
