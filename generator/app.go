@@ -71,14 +71,15 @@ type Contact struct {
 
 // Group represents either a Special Interest Group (SIG) or a Working Group (WG)
 type Group struct {
-	Name              string
-	Dir               string
-	MissionStatement  string `yaml:"mission_statement"`
-	Leads             []Lead
-	Meetings          []Meeting
-	MeetingURL        string `yaml:"meeting_url"`
-	MeetingArchiveURL string `yaml:"meeting_archive_url"`
-	Contact           Contact
+	Name                 string
+	Dir                  string
+	MissionStatement     string `yaml:"mission_statement"`
+	Leads                []Lead
+	Meetings             []Meeting
+	MeetingURL           string `yaml:"meeting_url"`
+	MeetingArchiveURL    string `yaml:"meeting_archive_url"`
+	MeetingRecordingsURL string `yaml:"meeting_recordings_url"`
+	Contact              Contact
 }
 
 // DirName returns the directory that a group's documentation will be
