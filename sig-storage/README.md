@@ -55,7 +55,7 @@ Interested in contributing to storage features in Kubernetes? [Please read our g
     * [kubernetes-sig-storage-test-failures](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-test-failures) - On GitHub metioning `@kubernetes/sig-storage-test-failures` will CC this group.
 * Github Issues
   * [link](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Asig%2Fstorage)
-* Documentation for currently supported volume plugins: http://kubernetes.io/docs/user-guide/volumes/
+* Documentation for currently supported volume plugins: https://kubernetes.io/docs/concepts/storage/volumes/
 * Code
   * [Volume plugins](https://github.com/kubernetes/kubernetes/tree/master/pkg/volume)
   * [Volume controllers](https://github.com/kubernetes/kubernetes/tree/master/pkg/controller/volume/)
