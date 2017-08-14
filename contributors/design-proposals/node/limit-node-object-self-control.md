@@ -10,6 +10,7 @@ fields the kubelet self-reports in the early node object are:
 
 1. Labels (provided by kubelet commandline)
 1. Taints (provided by kubelet commandline)
+1. Addresses (provided by kubelet commandline and detected from the environment)
 
 As well as others.
 
@@ -41,6 +42,24 @@ trusted server certificates. They use the secret mechanism to distribute the
 serving certificate key. An intruder captures the dedicated nginx workload in
 the same way and can now use the node certificate to read the company's serving
 certificate key.
+
+### Gaining Access to Arbitrary Serving Certificates
+
+Suppose company `foo` uses TLS for server authentication between internal
+microservices. The company uses the Kubernetes certificates API to provision
+these workload certificates for workload `bar` and trust is rooted to the
+cluster's root certificate authority.
+
+When [kubelet server certificate
+rotation](https://github.com/kubernetes/features/issues/267) is complete, the
+same API will be used to provision serving certificates for kubelets. The design
+expects to cross-reference the addresses reported in the NodeStatus with the
+subject alternative names in the certificate signing request to validate the
+certificate signing request.
+
+An intruder can easily register a node with a NodeAddress `bar` and use this
+certificate to MITM all traffic to service `bar` the flows through kube-proxy on
+that node.
 
 ## Proposed Solution
 
