@@ -14,6 +14,7 @@ Ensure containers are able to interact with external systems and acquire secure 
 * [Tuesdays at 15:00 UTC](TBD) (bi-weekly (On demand)). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1bCK-1_Zy2WfsrMBJkdaV72d2hidaxZBhS5YQHAgscPI/edit).
+Meeting recordings can be found [here]().
 
 ## Organizers
 * [Clayton Coleman](https://github.com/smarterclayton), Red Hat

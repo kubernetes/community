@@ -14,6 +14,7 @@ The Cluster Lifecycle SIG is responsible for building the user experience for de
 * [Tuesdays at 16:00 UTC](https://zoom.us/j/166836%E2%80%8B624) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/a/weave.works/document/d/1deJYPIF4LmhGjDVaqrswErIrV7mtwJgovtLnPCDxP7U/edit).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=ljK5dgSA7vc&list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 
 ## Leads
 * [Luke Marsden](https://github.com/lukemarsden), Weave

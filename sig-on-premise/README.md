@@ -14,6 +14,7 @@ Brings together member of Kubernetes community interested in running Kubernetes 
 * [Wednesdays at 16:00 UTC](https://zoom.us/my/k8s.sig.onprem) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1AHF1a8ni7iMOpUgDMcPKrLQCML5EMZUAwP4rro3P6sk/edit#).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=dyUWqqNYUio&list=PL69nYSiGNLP2MvqC6NeegrgtOl5s1KlYa).
 
 ## Leads
 * [Tomasz Napierala](https://github.com/zen), Mirantis

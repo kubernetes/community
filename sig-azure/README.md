@@ -14,6 +14,7 @@ A Special Interest Group for building, deploying, maintaining, supporting, and u
 * [Wednesdays at 16:00 UTC](https://deis.zoom.us/j/2018742972) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
 
 ## Leads
 * [Jason Hansen](https://github.com/slack), Microsoft
