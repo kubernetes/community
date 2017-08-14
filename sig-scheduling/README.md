@@ -14,6 +14,7 @@ To understand how this file is generated, see generator/README.md.
 * [Wednesdays at 07:30 UTC](https://zoom.us/zoomconference?m=rN2RrBUYxXgXY4EMiWWgQP6Vslgcsn86) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
 
 ## Leads
 * [David Oppenheimer](https://github.com/davidopp), Google

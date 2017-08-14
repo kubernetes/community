@@ -13,6 +13,7 @@ To understand how this file is generated, see generator/README.md.
 * [Tuesdays at 21:00 UTC](https://zoom.us/j/664772523) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=21:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1vhsixdT58iJFfoGZbpmvI_xnK59XyAjtadu3h6hHPpY/edit?usp=sharing).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ).
 
 ## Leads
 * [Phillip Wittrock](https://github.com/pwittrock), Google

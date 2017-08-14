@@ -14,6 +14,7 @@ Covers the Federation of Kubernetes Clusters and related topics. This includes: 
 * [Tuesdays at 16:30 UTC](https://plus.google.com/hangouts/_/google.com/k8s-federation) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
 
 ## Leads
 * [Christian Bell](https://github.com/csbell), Google

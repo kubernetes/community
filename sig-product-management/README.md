@@ -17,6 +17,7 @@ It is also important to remember that the role of managing an open source projec
 * [Tuesdays at 15:00 UTC](https://zoom.us/j/845373595) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ).
 
 ## Leads
 * [Aparna Sinha](https://github.com/apsinha), Google

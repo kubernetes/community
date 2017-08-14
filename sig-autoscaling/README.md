@@ -14,6 +14,7 @@ Covers autoscaling of clusters, horizontal and vertical autoscaling of pods, set
 * [Thursdays at 15:30 UTC](https://plus.google.com/hangouts/_/google.com/k8s-autoscaling) (biweekly/triweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit).
+Meeting recordings can be found [here]().
 
 ## Leads
 * [Marcin Wielgus](https://github.com/mwielgus), Google

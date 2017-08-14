@@ -14,6 +14,7 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 * [Mondays at 17:00 UTC](https://zoom.us/j/2018742972) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=d5ERqm3oHN0&list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
 
 ## Leads
 * [Brian Grant](https://github.com/bgrant0607), Google

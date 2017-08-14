@@ -14,6 +14,7 @@ Developing and sustaining a healthy community of contributors is critical to sca
 * [Wednesdays at 16:30 UTC](https://zoom.us/j/7658488911) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 
 ## Leads
 * [Garrett Rodrigues](https://github.com/grodrigues3), Google
