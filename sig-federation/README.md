@@ -11,7 +11,7 @@ To understand how this file is generated, see generator/README.md.
 Covers the Federation of Kubernetes Clusters and related topics. This includes: application resiliency against availability zone outages; hybrid clouds; spanning of multiple could providers; application migration from private to public clouds (and vice versa); and other similar subjects.
 
 ## Meetings
-* [Tuesdays at 16:30 UTC](https://plus.google.com/hangouts/_/google.com/k8s-federation) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
+* [Tuesdays at 16:30 UTC](https://plus.google.com/hangouts/_/google.com/k8s-federation) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit).
 
