@@ -541,7 +541,7 @@ type BlockUnmounter interface {
 | PV volumeType | PVC volumeType  | Result           |
 | --------------|:---------------:| ----------------:|
 |   unspecified | unspecified     | BIND             |
-|   unspecified | block           | NO BIND          |
+|   file        | file            | BIND             |
 |   block       | unspecified     | NO BIND          |
 |   block       |  block          | BIND             |
 |   unspecified | block           | NO BIND          |
