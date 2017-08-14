@@ -122,7 +122,7 @@ $ tail -f /tmp/kube-apiserver.log
 
 #### The pods fail to connect to the services by host names
 
-The local-up-cluster.sh script doesn't start a DNS service. Similar situation can be found [here](http://issue.k8s.io/6667). You can start a manually.
+The local-up-cluster.sh script doesn't start a DNS service. Similar situation can be found [here](https://issue.k8s.io/6667). You can start a manually.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/local-cluster/local.md?pixel)]()
