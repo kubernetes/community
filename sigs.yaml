@@ -479,6 +479,24 @@ sigs:
     contact:
       slack: kubernetes-pm
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-pm
+  - name: Release
+    dir: sig-release
+    leads:
+    - name: Phillip Wittrock
+      github: pwittrock
+      company: Google
+    - name: Caleb Miles
+      github: calebamiles
+      company: CoreOS
+    meetings:
+    - day: Tuesday
+      utc: "21:00"
+      frequency: biweekly
+    meeting_url: https://zoom.us/j/664772523
+    meeting_archive_url: https://docs.google.com/document/d/1vhsixdT58iJFfoGZbpmvI_xnK59XyAjtadu3h6hHPpY/edit?usp=sharing
+    contact:
+      slack: sig-release
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-release
   - name: Scalability
     dir: sig-scalability
     mission_statement: >
