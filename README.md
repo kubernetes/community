@@ -78,7 +78,7 @@ If you want to work on a new idea of relatively small scope:
 [architecture]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture.md
 [cmd]: https://github.com/kubernetes/kubernetes/tree/master/cmd
 [CLA]: CLA.md
-[Collaboration Guide]: contributors/devel/development.md
+[Collaboration Guide]: contributors/devel/collab.md
 [Developer's Guide]: contributors/devel/development.md
 [develop a new feature]: https://github.com/kubernetes/features
 [expectations]: contributors/devel/community-expectations.md
