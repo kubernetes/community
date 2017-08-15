@@ -1,18 +1,24 @@
 reviewers:
-	- sarahnovotny
-	- idvoretskyi
-	- calebamiles
-	- grodrigues3
+    - sarahnovotny
+    - idvoretskyi
+    - calebamiles
+    - grodrigues3
+    - brendandburns
+    - dchen1107
+    - jbeda
+    - lavalamp
+    - smarterclayton
+    - thockin
+    - wojtek-t
 approvers:
-	- sarahnovotny
-	- idvoretskyi
-	- calebamiles
-	- grodrigues3
-	- brendandburns
-	- dchen1107
-	- jbeda
-	- lavalamp
-	- smarterclayton
-	- thockin
-	- wojtek-t
-
+    - sarahnovotny
+    - idvoretskyi
+    - calebamiles
+    - grodrigues3
+    - brendandburns
+    - dchen1107
+    - jbeda
+    - lavalamp
+    - smarterclayton
+    - thockin
+    - wojtek-t
