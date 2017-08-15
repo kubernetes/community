@@ -1,12 +1,12 @@
 reviewers:
-	- saad-ali
-	- pwittrock
-	- steveperry-53
-	- chenopis
-	- sig-release
+  - saad-ali
+  - pwittrock
+  - steveperry-53
+  - chenopis
+  - sig-release
 approvers:
-	- saad-ali
-	- pwittrock
-	- steveperry-53
-	- chenopis
-	- sig-release
+  - saad-ali
+  - pwittrock
+  - steveperry-53
+  - chenopis
+  - sig-release
