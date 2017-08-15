@@ -57,6 +57,16 @@ survive we need to bind mount a dir from host mount namespace to container one
 with shared flag, so that all bind mounts are propagated across mount namespaces
 and references to network namespaces persist.
 
+1. (From https://github.com/kubernetes/kubernetes/issues/46643) I expect the
+   container to start and any fuse mounts it creates in a volume that exists on
+   other containers in the pod (that are using :slave) are available to those
+   other containers.
+
+   In other words, two containers in the same pod share an EmptyDir. One
+   container mounts something in it and the other one can see it. The first
+   container must have (r)shared mount propagation to the EmptyDir, the second
+   one can have (r)slave.
+
 
 ## Implementation Alternatives
 
@@ -68,22 +78,19 @@ The new `VolumeMount` will look like:
 type MountPropagationMode string
 
 const (
-	// MountPropagationPrivate means that the volume in a container won't receive
-	// new mounts from host and also no mounts in this volume will be propagated
-	// to the host.
-	MountPropagationPrivate MountPropagationMode = "private"
-	// MountPropagationSlave means that the volume in a container will receive
-	// new mounts from the host or other containers, but its own mounts won't
-	// be propagated to the host or other containers.
+	// MountPropagationHostToContainer means that the volume in a container will
+	// receive new mounts from the host or other containers, but filesystems
+	// mounted inside the container won't be propagated to the host or other
+	// containers.
 	// Note that this mode is recursively applied to all mounts in the volume
-	// ("rslave" in Linux terminology)
-	MountPropagationSlave  MountPropagationMode = "slave"
-	// MountPropagationShared means that the volume in a container will receive
-	// new mounts from the host or other containers, and its own mounts will
-	// be propagated from the container to the host or other containers.
+	// ("rslave" in Linux terminology).
+	MountPropagationHostToContainer  MountPropagationMode = "HostToContainer"
+	// MountPropagationBidirectional means that the volume in a container will
+	// receive new mounts from the host or other containers, and its own mounts
+	// will be propagated from the container to the host or other containers.
 	// Note that this mode is recursively applied to all mounts in the volume
-	// ("rshared" in Linux terminology)
-	MountPropagationShared MountPropagationMode = "shared"
+	// ("rshared" in Linux terminology).
+	MountPropagationBidirectional MountPropagationMode = "Bidirectional"
 )
 
 type VolumeMount struct {
@@ -93,18 +100,24 @@ type VolumeMount struct {
 	ReadOnly bool `json:"readOnly,omitempty"`
 	// Required.
 	MountPath string `json:"mountPath"`
-	// mountPropagation is the propagation mode how is the directory
-	// made available to a container in a pod. See description of individual
-	// modes for details.
+	// mountPropagation is the mode how are mounts in the volume propagated from
+	// the host to the container and from the container to the host.
+	// When not set, MountPropagationHostToContainer is used.
 	// This field is alpha in 1.8 and can be reworked or removed in a future
 	// release.
 	// Optional.
-	MountPropagation MountPropagationMode `json:"mountPropagation,omitempty"`
+	MountPropagation *MountPropagationMode `json:"mountPropagation,omitempty"`
 }
 ```
 
-Default would be `Slave`, which should not break backward compatibility,
-`Shared` must be explicitly requested.
+Default would be `HostToContainer`, i.e. `rslave`, which should not break
+backward compatibility, `Bidirectional` must be explicitly requested.
+Using enum instead of simple `PropagateMounts bool` allows us to extend the
+modes to `private` or non-recursive `shared` and `slave` if we need so in
+future.
+
+Only privileged containers are allowed to use `Bidirectional` for their volumes.
+This will be enforced during validation.
 
 Opinion against this:
 
@@ -122,46 +135,54 @@ The new `HostPathVolumeSource` will look like:
 type MountPropagationMode string
 
 const (
-	// MountPropagationPrivate means that the volume in a container won't receive
-	// new mounts from host and also no mounts in this volume will be propagated
-	// to the host.
-	MountPropagationPrivate MountPropagationMode = "private"
-	// MountPropagationSlave means that the volume in a container will receive
-	// new mounts from the host or other containers, but its own mounts won't
-	// be propagated to the host or other containers.
+	// MountPropagationHostToContainer means that the volume in a container will
+	// receive new mounts from the host or other containers, but filesystems
+	// mounted inside the container won't be propagated to the host or other
+	// containers.
 	// Note that this mode is recursively applied to all mounts in the volume
-	// ("rslave" in Linux terminology)
-	MountPropagationSlave  MountPropagationMode = "slave"
-	// MountPropagationShared means that the volume in a container will receive
-	// new mounts from the host or other containers, and its own mounts will
-	// be propagated from the container to the host or other containers.
+	// ("rslave" in Linux terminology).
+	MountPropagationHostToContainer  MountPropagationMode = "HostToContainer"
+	// MountPropagationBidirectional means that the volume in a container will
+	// receive new mounts from the host or other containers, and its own mounts
+	// will be propagated from the container to the host or other containers.
 	// Note that this mode is recursively applied to all mounts in the volume
-	// ("rshared" in Linux terminology)
-	MountPropagationShared MountPropagationMode = "shared"
+	// ("rshared" in Linux terminology).
+	MountPropagationBidirectional MountPropagationMode = "Bidirectional"
 )
 
 type HostPathVolumeSource struct {
 	Path string `json:"path"`
-	// mountPropagation is the propagation mode how is the directory
-	// made available to a container in a pod. See description of individual
-	// modes for details.
+	// mountPropagation is the mode how are mounts in the volume propagated from
+	// the host to the container and from the container to the host.
+	// When not set, MountPropagationHostToContainer is used.
 	// This field is alpha in 1.8 and can be reworked or removed in a future
 	// release.
 	// Optional.
-	MountPropagation MountPropagationMode `json:"mountPropagation,omitempty"`
+	MountPropagation *MountPropagationMode `json:"mountPropagation,omitempty"`
 }
 ```
 
-The default mount propagation is `slave`. Any HostPath can ask for `private`.
-Only privileged containers can use HostPath with `shared` mount propagation -
-kubelet silently downgrades the propagation to `slave` when running `shared`
-HostPath in a non-privileged container.
+Default would be `HostToContainer`, i.e. `rslave`, which should not break
+backward compatibility, `Bidirectional` must be explicitly requested.
+Using enum instead of simple `PropagateMounts bool` allows us to extend the
+modes to `private` or non-recursive `shared` and `slave` if we need so in
+future.
+
+Only privileged containers can use HostPath with `Bidirectional` mount
+propagation - kubelet silently downgrades the propagation to `HostToContainer`
+when running `Bidirectional` HostPath in a non-privileged container. This allows
+us to use the same `HostPathVolumeSource` in a pod with two containers, one
+non-privileged with `HostToContainer` propagation and second privileged with
+`Bidirectional` that mounts stuff for the first one.
 
 Opinion against this:
 
 1. This need API change, which is discouraged.
 
 1. All containers use this volume will share the same propagation mode.
+
+1. Silent downgrade from `Bidirectional` to `HostToContainer` for non-privileged
+   containers.
 
 1. (From @jonboulle) May cause cross-runtime compatibility issue.
 
@@ -213,29 +234,49 @@ and something prevents it from starting if `/sys` is shared.
 
 ## Decision
 
-* We will take 'Add an option in HostPathVolumeSource API'
+* We will take 'Add an option in VolumeMount API'
   * With an alpha feature gate in 1.8.
-  * Only privileged containers can use `shared` mount propagation.
-    * When non-privileged container uses `shared` HostPath, it silently
-	  downgrades it to `slave`.
-* Kubelet will make sure that at least `/var/lib/kubelet` can be share-able into
-  containers and it will refuse to start if it's unsuccessful
-  * kubernetes/kubernetes#45724
-* Kubelet's Docker shim layer will check that it is able to run a container with
-  shared mount propagation on `/var/lib/kubelet` during startup and refuse to
-  start otherwise. This ensures that both Docker and kubelet see the same
-  `/var/lib/kubelet` and it can be shared into containers.
-  E.g. Google COS-58 runs Docker in a separate mount namespace with slave
-  propagation and thus can't run a container with shared propagation on
-  anything. Other container engines should follow the suit.
-* Node conformance suite will check that mount propagation in /var/lib/kubelet
-  works.
+  * Only privileged containers can use `rshared` (`Bidirectional`) mount
+    propagation (with a validator).
+
 * During alpha, all the behavior above must be explicitly enabled by
   `kubelet --feature-gates=MountPropagation=true`
   It will be used only for testing of volume plugins in e2e tests and
   Mount propagation may be redesigned or even removed in any future release.
-  * When the feature is enabled the default mount propagation will be `slave`,
-    which is different to current `private`. Extensive testing is needed!
+
+  When the feature is enabled:
+
+  * The default mount propagation of **all** volumes (incl. GCE, AWS, Cinder,
+	Gluster, Flex, ...) will be `slave`, which is different to current
+	`private`. Extensive testing is needed! We may restrict it to HostPath +
+	EmptyDir in Beta.
+
+  * **Any** volume in a privileged container can be `Bidirectional`. We may
+  restrict it to HostPath + EmptyDir in Beta.
+
+  * Kubelet's Docker shim layer will check that it is able to run a container
+    with shared mount propagation on `/var/lib/kubelet` during startup and log
+    a warning otherwise. This ensures that both Docker and kubelet see the same
+    `/var/lib/kubelet` and it can be shared into containers.
+    E.g. Google COS-58 runs Docker in a separate mount namespace with slave
+    propagation and thus can't run a container with shared propagation on
+    anything.
+
+    This will be done via simple docker version check (1.13 is required) when
+    the feature gate is enabled.
+
+  * Node conformance suite will check that mount propagation in /var/lib/kubelet
+    works.
+
+  * When running on a distro with `private` as default mount propagation
+    (probably anything that does not run systemd, such as Debian Wheezy),
+	Kubelet will make `/var/lib/kubelet` share-able into containers and it will
+	refuse to start if it's unsuccessful.
+
+	It sounds complicated, but it's simple
+	`mount --bind --rshared /var/lib/kubelet /var/lib/kubelet`. See
+	kubernetes/kubernetes#45724
+
 
 ## Extra Concerns
 
