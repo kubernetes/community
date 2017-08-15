@@ -73,7 +73,7 @@ When you're writing controllers, there are few guidelines that will help make su
 Overall, your controller should look something like this:
 
 ```go
-type Controller struct{
+type Controller struct {
 	// podLister is secondary cache of pods which is used for object lookups
 	podLister cache.StoreToPodLister
 
@@ -82,7 +82,7 @@ type Controller struct{
 	queue workqueue.RateLimitingInterface
 }
 
-func (c *Controller) Run(threadiness int, stopCh chan struct{}){
+func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
 	// don't let panics crash the process
 	defer utilruntime.HandleCrash()
 	// make sure the work queue is shutdown which will trigger workers to end
