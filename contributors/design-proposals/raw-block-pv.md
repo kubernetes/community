@@ -486,6 +486,12 @@ It is important the values that are passed to the container runtimes are valid a
 The accessModes would be passed as part of the options array and would need validate against the specific runtime engine. 
 Since rkt doesn't use the CRI, the config values would need to be passed in the legacy method.
 
+The runtime option would be placed in the DeviceInfo as such:
+devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "mrw"}) for RWO
+devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "mr"}) for ROX
+
+Today, this is defaulted always to mrw, thus it would need to be updated with what is passed in.
+
 # Implementation Plan, Features & Milesones
 
 Phase 1: v1.8
