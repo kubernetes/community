@@ -59,14 +59,14 @@ type VolumeStats struct {
 }
 
 // PVCReference contains enough information to locate the referenced PVC.
-type PodReference struct {
+type PVCReference struct {
 	Name      string `json:"name"`
 	Namespace string `json:"namespace"`
 	UID       string `json:"uid"`
 }
 
 // PVReference contains enough information to locate the referenced PV.
-type PodReference struct {
+type PVReference struct {
 	Name      string `json:"name"`
 	UID       string `json:"uid"`
 }
