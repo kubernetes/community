@@ -10,7 +10,7 @@ build-image:
 	docker build -q -t $(IMAGE_NAME) -f generator/Dockerfile generator
 
 generate: build-image
-	docker run --rm -e WG -e SIG -v $(shell pwd):/go/src/app/generated $(IMAGE_NAME) app
+	docker run --rm -e WG -e SIG -v $(shell pwd):/go/src/app/generated:Z $(IMAGE_NAME) app
 
 verify:
 	@hack/verify.sh
