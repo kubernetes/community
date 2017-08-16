@@ -14,6 +14,7 @@ Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
 * [Fridays at 17:00 UTC](https://zoom.us/my/k8ssigaws) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit).
+Meeting recordings can be found [here]().
 
 ## Leads
 * [Justin Santa Barbara](https://github.com/justinsb)

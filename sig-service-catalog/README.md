@@ -14,6 +14,7 @@ To develop a Kubernetes API for the CNCF service broker and Kubernetes broker im
 * [Mondays at 20:00 UTC](https://zoom.us/j/7201225346) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](http://goo.gl/A0m24V).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs).
 
 ## Leads
 * [Paul Morie](https://github.com/pmorie), Red Hat

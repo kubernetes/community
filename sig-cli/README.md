@@ -14,6 +14,7 @@ Covers kubectl and related tools. We focus on the development and standardizatio
 * [Wednesdays at 16:00 UTC](https://zoom.us/my/sigcli) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=X29sffrQJU4&list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
 
 ## Leads
 * [Fabiano Franz](https://github.com/fabianofranz), Red Hat
