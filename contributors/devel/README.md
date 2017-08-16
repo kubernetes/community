@@ -8,6 +8,10 @@ Guide](http://kubernetes.io/docs/admin/).
 
 ## The process of developing and contributing code to the Kubernetes project
 
+* **Welcome to Kubernetes (New Developer Guide)**
+  ([welcome-to-kubernetes-new-developer-guide.md](welcome-to-kubernetes-new-developer-guide.md)):
+  An introductory guide to contributing to K8s.
+
 * **On Collaborative Development** ([collab.md](collab.md)): Info on pull requests and code reviews.
 
 * **GitHub Issues** ([issues.md](issues.md)): How incoming issues are triaged.
