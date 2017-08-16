@@ -14,6 +14,7 @@ Focuses on supporting Windows Server Containers for Kubernetes.
 * [Tuesdays at 16:30 UTC](https://zoom.us/my/sigwindows) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=7zawb3KT9Xk&list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4).
 
 ## Leads
 * [Michael Michael](https://github.com/michmike), Apprenda

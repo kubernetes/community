@@ -14,6 +14,7 @@ Covers all things UI related. Efforts are centered around Kubernetes Dashboard: 
 * [Wednesdays at 14:00 UTC](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing).
+Meeting recordings can be found [here]().
 
 ## Leads
 * [Dan Romlein](https://github.com/danielromlein), Apprenda

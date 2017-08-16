@@ -14,6 +14,7 @@ Covers networking in Kubernetes.
 * [Thursdays at 21:00 UTC](https://zoom.us/j/5806599998) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=21:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
 
 ## Leads
 * [Tim Hockin](https://github.com/thockin), Google

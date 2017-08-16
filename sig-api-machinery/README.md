@@ -14,6 +14,7 @@ Covers all aspects of API server, API registration and discovery, generic API CR
 * [Wednesdays at 18:00 UTC](https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://goo.gl/x5nWrF).
+Meeting recordings can be found [here](https://www.youtube.com/watch?v=Lj1ScbXpnpY&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R).
 
 ## Leads
 * [Daniel Smith](https://github.com/lavalamp), Google
