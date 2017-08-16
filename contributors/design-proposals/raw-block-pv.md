@@ -77,7 +77,7 @@ spec:
       storage: 80Gi 
 ```
 
-For dynamic provisioning and the use of the storageClass, the user also specifically defines the intent of the volume by 
+For dynamic provisioning and the use of the storageClass, the admin also specifically defines the intent of the volume by 
 indicating the volumeType as block. The provisioner for this class will validate whether or not it supports block and return
 an error if it does not.
 
