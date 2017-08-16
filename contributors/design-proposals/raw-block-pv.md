@@ -177,16 +177,11 @@ DESCRIPTION:
 
 A user uses a container on virtual machine on hypervisor such as KVM, VMware and wishes to use raw block device for databases such as MariaDB. 
 
-BACKGROUND:
-
-Using hypervisor's device passthrough feature(KVM: device passthrough, VMware: RawDeviceMapping), storage admin can expose raw block device into virtual machine then user can consume it via PV and PVC. Also dynamic provisioning could work if external-provisioner support this.
-
 WORKFLOW:
 
 ADMIN:
-
-* Admin creates a disk and attach it to server and pass-through the disk to KVM guest which Kubelet node1 is working inside.
-* Admin creates a PV using the path to specify the device location.
+* Admin creates a disk and exposes it to all kubelet worker node VMs which are running on KVM hypervisor.(This is done by storage operation).
+* Admin creates an iSCSI persistent volume using storage information such as portal IP, iqn and lun.
 
 ```
 kind: PersistentVolume
@@ -200,20 +195,15 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete
-  fc:
-    targetWWNs: ['500a0982991b8dc5']
-    lun: 2
-```
-
-* Admin adds "raw-disk" label to the kubelet node1
-
-```
-% kubectl label nodes <node1-ip> type=raw-disk
+  iscsi:
+    targetPortal: 1.2.3.4:3260
+    iqn: iqn.2017-05.com.example:test
+    lun: 0
 ```
 
 USER:
 
-* User creates a persistent volume claim with volumeType: block option.
+* User creates a persistent volume claim with volumeType: block option to bind pre-created iSCSI PV.
 
 ```
 kind: PersistentVolumeClaim
@@ -229,7 +219,7 @@ spec:
       storage: 80Gi
 ```
 
-*   User creates a Pod yaml which uses raw-pvc PVC and selects a node that Admin attached raw disk using nodeSelector option.
+* User creates a Pod yaml which uses raw-pvc PVC.
 
 ```
 apiVersion: v1
@@ -243,13 +233,12 @@ spec:
       volumeMounts:
       - name: my-db-data
 	mountPath: /dev/xvda
-    nodeSelector:
-      type: raw-disk
     volumes:
     - name: my-db-data
       persistentVolumeClaim:
 	claimName: raw-pvc
 ```
+* During Pod creation, iSCSI Plugin attaches iSCSI volume to the kubelet worker node VM using storage information.
 
 ## UC3: 
 
