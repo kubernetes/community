@@ -541,11 +541,12 @@ type BlockUnmounter interface {
 |   block       |  block          | BIND             |
 |   unspecified | block           | NO BIND          |
 |   block       |  file           | NO BIND          |
-|   file        |  block          | NO BIND          |
+|   file        |  block          | BIND**           |
 |  unspecified  | file            | BIND             |
 
 
-* unspecified defaults to 'file/ext4' today for backwards compatibility and in mount_linux.go
+* unspecified defaults to 'file/ext4' today for backwards compatibility and in mount_linux.go  
+**this is plugin dependent 
 
 # Mounter binding matrix for dynamically provisioned volumes:
 
