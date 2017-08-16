@@ -87,6 +87,7 @@ rm -rf Godeps
 rm -rf vendor
 ./hack/godep-save.sh
 # Regenerate removed BUILD, licenses.
+touch vendor/BUILD
 ./hack/update-bazel.sh
 ./hack/update-godep-licenses.sh
 # If you haven't followed this doc step-by-step and haven't created a dedicated GOPATH,
