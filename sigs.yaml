@@ -37,7 +37,10 @@ sigs:
       company: Microsoft
     - name: Matt Farina
       github: mattfarina
-      company: HPE
+      company: Samsung SDS
+    - name: Adnan Abdulhussein
+      github: prydonius
+      company: Bitnami
     meetings:
     - day: Monday
       utc: "16:00"
