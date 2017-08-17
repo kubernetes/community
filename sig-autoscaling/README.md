@@ -11,7 +11,7 @@ To understand how this file is generated, see generator/README.md.
 Covers autoscaling of clusters, horizontal and vertical autoscaling of pods, setting initial resources for pods, topics related to monitoring pods and gathering their metrics (e.g.: Heapster)
 
 ## Meetings
-* [Thursdays at 15:30 UTC](https://zoom.us/meeting/176352399) (biweekly/triweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
+* [Thursdays at 15:30 UTC](https://zoom.us/j/176352399) (biweekly/triweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit).
 Meeting recordings can be found [here]().
