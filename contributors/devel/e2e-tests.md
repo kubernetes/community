@@ -76,8 +76,7 @@ of ways to run e2e tests to a canonical way: `hack/e2e.go`.
 You can run an end-to-end test which will bring up a master and nodes, perform
 some tests, and then tear everything down. Make sure you have followed the
 getting started steps for your chosen cloud platform (which might involve
-changing the `KUBERNETES_PROVIDER` environment variable to something other than
-"gce").
+changing the --provider flag value to something other than "gce").
 
 To build Kubernetes, up a cluster, run tests, and tear everything down, use:
 
@@ -115,7 +114,7 @@ GINKGO_PARALLEL=y go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=\[S
 # You can also specify an alternative provider, such as 'aws'
 #
 # e.g.:
-KUBERNETES_PROVIDER=aws go run hack/e2e.go -- -v --build --up --test --down
+go run hack/e2e.go -- --provider=aws -v --build --up --test --down
 
 # -ctl can be used to quickly call kubectl against your e2e cluster. Useful for
 # cleaning up after a failed test or viewing logs. Use -v to avoid suppressing
@@ -300,7 +299,7 @@ A Kubernetes cluster will be provisioned in each zone listed in `E2E_ZONES`. A z
 
 Next, specify the docker repository where your ci images will be pushed.
 
-* **If `KUBERNETES_PROVIDER=gce` or `KUBERNETES_PROVIDER=gke`**:
+* **If `--provider=gce` or `--provider=gke`**:
 
   If you use the same GCP project where you to run the e2e tests as the container image repository,
   FEDERATION_PUSH_REPO_BASE environment variable will be defaulted to "gcr.io/${DEFAULT_GCP_PROJECT_NAME}".
@@ -432,7 +431,7 @@ at a custom host directly:
 export KUBECONFIG=/path/to/kubeconfig
 export KUBE_MASTER_IP="127.0.0.1:<PORT>"
 export KUBE_MASTER=local
-go run hack/e2e.go -- -v --test
+go run hack/e2e.go -- --provider=local -v --test
 ```
 
 To control the tests that are run:
@@ -466,7 +465,6 @@ quick-and-dirty tutorial.
 # ./kubernetes and ./kubernetes_old
 
 # If using GKE:
-export KUBERNETES_PROVIDER=gke
 export CLUSTER_API_VERSION=${OLD_VERSION}
 
 # Deploy a cluster at the old version; see above for more details
@@ -479,11 +477,11 @@ go run ./hack/e2e.go -- -v --up
 #
 # You can target Feature:MasterUpgrade or Feature:ClusterUpgrade
 cd ../kubernetes
-go run ./hack/e2e.go -- -v --test --check_version_skew=false --test_args="--ginkgo.focus=\[Feature:MasterUpgrade\]"
+go run ./hack/e2e.go -- --provider=gke -v --test --check_version_skew=false --test_args="--ginkgo.focus=\[Feature:MasterUpgrade\]"
 
 # Run old tests with new kubectl
 cd ../kubernetes_old
-go run ./hack/e2e.go -- -v --test --test_args="--kubectl-path=$(pwd)/../kubernetes/cluster/kubectl.sh"
+go run ./hack/e2e.go -- --provider=gke -v --test --test_args="--kubectl-path=$(pwd)/../kubernetes/cluster/kubectl.sh"
 ```
 
 If you are just testing version-skew, you may want to just deploy at one
@@ -628,16 +626,15 @@ credentials.
 # setup for conformance tests
 export KUBECONFIG=/path/to/kubeconfig
 export KUBERNETES_CONFORMANCE_TEST=y
-export KUBERNETES_PROVIDER=skeleton
 
 # run all conformance tests
-go run hack/e2e.go -- -v --test --test_args="--ginkgo.focus=\[Conformance\]"
+go run hack/e2e.go -- --provider=skeleton -v --test --test_args="--ginkgo.focus=\[Conformance\]"
 
 # run all parallel-safe conformance tests in parallel
-GINKGO_PARALLEL=y go run hack/e2e.go -- -v --test --test_args="--ginkgo.focus=\[Conformance\] --ginkgo.skip=\[Serial\]"
+GINKGO_PARALLEL=y go run hack/e2e.go -- --provider=skeleton -v --test --test_args="--ginkgo.focus=\[Conformance\] --ginkgo.skip=\[Serial\]"
 
 # ... and finish up with remaining tests in serial
-go run hack/e2e.go -- -v --test --test_args="--ginkgo.focus=\[Serial\].*\[Conformance\]"
+go run hack/e2e.go -- --provider=skeleton -v --test --test_args="--ginkgo.focus=\[Serial\].*\[Conformance\]"
 ```
 
 ### Defining Conformance Subset
