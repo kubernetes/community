@@ -308,7 +308,7 @@ sigs:
     meetings:
     - day: Tuesday
       utc: "17:30"
-      frequency: biweekly
+      frequency: weekly
     meeting_url: https://zoom.us/j/678394311
     meeting_archive_url: https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit
     meeting_recordings_url:
