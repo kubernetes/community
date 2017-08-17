@@ -11,13 +11,12 @@ To understand how this file is generated, see generator/README.md.
 Covers all things UI related. Efforts are centered around Kubernetes Dashboard: a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
 
 ## Meetings
-* [Wednesdays at 14:00 UTC](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
+* [Thursdays at 16:00 UTC](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing).
-Meeting recordings can be found [here]().
 
 ## Leads
-* [Dan Romlein](https://github.com/danielromlein), Apprenda
+* [Dan Romlein](https://github.com/danielromlein), Google
 * [Piotr Bryk](https://github.com/bryk), Google
 
 ## Contact
