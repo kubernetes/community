@@ -29,5 +29,6 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=d5ERqm3oH
 ## Additional materials
 
 * [Charter](charter.md)
+* [Backlog](backlog.md)
 
 <!-- END CUSTOM CONTENT -->
