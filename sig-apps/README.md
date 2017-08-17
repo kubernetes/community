@@ -18,7 +18,8 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=hn23Z-vL_
 
 ## Leads
 * [Michelle Noorali](https://github.com/michelleN), Microsoft
-* [Matt Farina](https://github.com/mattfarina), HPE
+* [Matt Farina](https://github.com/mattfarina), Samsung SDS
+* [Adnan Abdulhussein](https://github.com/prydonius), Bitnami
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-apps)
