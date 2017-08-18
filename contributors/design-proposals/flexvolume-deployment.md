@@ -32,7 +32,9 @@ Iterating through the list of plugins inside `InitPlugins()` from `volume/plugin
 
 Because Flexvolume has two separate plugin instantiations (attachable and non-attachable), it's worth considering the case when a driver that implements attach/detach is replaced with a driver that does not, or vice versa. This does not cause an issue because plugins are recreated every time the driver directory is changed.
 
-There is a possibility that a Flexvolume command execution occurs at the same time as the DaemonSet updates the driver, which leads to a bad execution. This cannot be solved within the Kubernetes system without an overhaul. Instead, this is discussed in [Atomic Driver Installation](#atomic-driver-installation) as part of the deployment mechanism. As part of the solution, the Prober will ignore all files that begins with "." in the driver directory.
+There is a possibility that a Flexvolume command execution occurs at the same time as the driver is updated, which leads to a bad execution. This cannot be solved within the Kubernetes system without an overhaul. Instead, this is discussed in [Atomic Driver Installation](#atomic-driver-installation) as part of the deployment mechanism. As part of the solution, the Prober will **ignore all files that begins with "."** in the driver directory.
+
+Word of caution about symlinks in the Flexvolume plugin directory: as a result of the recursive filesystem watch implementation, if a symlink links to a directory, unless the directory is visible to the prober (i.e. it's inside the Flexvolume plugin directory and does not start with '.'), the directory's files and subdirectories are not added to filesystem watch, thus their change will not trigger a probe.
 
 
 ## **Alternative Designs**
@@ -102,6 +104,8 @@ set -o pipefail
 VENDOR=k8s.io
 DRIVER=nfs
 
+# Assuming the single driver file is located at /$DRIVER inside the DaemonSet image.
+
 driver_dir=$VENDOR${VENDOR:+"~"}${DRIVER}
 if [ ! -d "/flexmnt/$driver_dir" ]; then
   mkdir "/flexmnt/$driver_dir"
@@ -145,7 +149,7 @@ spec:
 ### Atomic Driver Installation
 Regular file copy is not an atomic file operation, so if it were used to install the driver, it's possible that kubelet or controller manager executes the driver when it's partially installed, or the driver gets modified while it's being executed. Care must be taken to ensure the installation operation is atomic.
 
-The deployment script provided above uses renaming, which is atomic, to ensure that from the perspective of kubelet or controller manager, the driver file is completely written to disk in a single operation.
+The deployment script provided above uses renaming, which is atomic, to ensure that from the perspective of kubelet or controller manager, the driver file is completely written to disk in a single operation. The file is first installed with a name prefixed with '.', which the prober ignores.
 
 ### Alternatives
 
