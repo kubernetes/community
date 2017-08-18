@@ -22,7 +22,7 @@ Endpoints does not get cleaned up.
 
 ## Known Issues
 
-Each apiserver’s reconciler only cleans up for its own IP. If a new server
+Each apiserver’s reconciler only cleans up for it's own IP. If a new server
 is spun up at a new IP, then the old IP in the Endpoints list is only
 reclaimed if the number of apiservers becomes greater-than or equal to the
 masterCount. For example:
@@ -53,7 +53,15 @@ would never become consistent.
 
 The MasterCountEndpointReconciler does not meet the current needs for durability of API Endpoint creation, deletion, or failure cases.
 
-Create a new MasterEndpointReconciler within master/controller.go.
+Create a new `MasterEndpointReconciler` within master/controller.go.
+
+Add a `kube-apiserver-endpoints-config` ConfigMap in the `default` namespace. The duration found within the map would be configurable by admins without a recompile. The ConfigMap would include the following:
+
+```go
+ConfigMap{
+	"expire-duration": "1m", // golang duration (ns,us,ms,s,m,h)
+}
+```
 
 Add a standard `kube-apiserver-endpoints` ConfigMap in the `default` namespace. The ConfigMap would be formed such that: 
 
@@ -74,6 +82,14 @@ type ControllerEndpointData struct {
 }
 ```
 
+On each reconcile loop (defaults to every 10 seconds currently):
+
+1. Retrieve `kube-apiserver-endpoints-config` ConfigMap (as configMap)
+1. Retrieve `kube-apiserver-endpoints` ConfigMap (as endpointMap)
+1. Update the `UpdateTimestamp` for the currently running API server
+1. Remove all endpoints where the UpdateTimestamp is greater than `expire-duration` from the configMap.
+1. Write endpointMap back to Kubernetes ConfigMap API
+
 configmap.yml:
 
 ```yaml
@@ -82,7 +98,6 @@ apiVersion: v1
 metadata:
   name: kube-apiserver-endpoints
   namespace: default
-data: 
 ```
 
 ### Refactor Old Reconciler
