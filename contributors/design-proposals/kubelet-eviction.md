@@ -241,6 +241,20 @@ the `kubelet` will select a subsequent pod.
 
 ## Eviction Strategy
 
+The `kubelet` will implement an eviction strategy oriented around
+[Priority](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/pod-priority-api.md)
+and pod usage relative to requests.  It will target pods that are the lowest
+Priority, and are the largest consumers of the starved resource relative to
+their scheduling request.
+
+It will target pods whose usage of the starved resource exceeds its requests.
+Of those pods, it will rank by a function of priority, and usage - requests.
+If system daemons are exceeding their allocation (see [Strategy Caveat](strategy-caveat) below),
+and all pods are using less than their requests, then it will evict a pod
+whose usage is less than requests, based on the function of priority, and
+usage - requests.
+
+Prior to v1.8:
 The `kubelet` will implement a default eviction strategy oriented around
 the pod quality of service class.
 
@@ -258,14 +272,16 @@ starved resource.
 relative to their request are killed first.  If no pod has exceeded its request,
 the strategy targets the largest consumer of the starved resource.
 
-A guaranteed pod is guaranteed to never be evicted because of another pod's
-resource consumption.  That said, guarantees are only as good as the underlying
-foundation they are built upon.  If a system daemon
+### Strategy Caveat
+
+A pod consuming less resources than its requests is guaranteed to never be
+evicted because of another pod's resource consumption.  That said, guarantees
+are only as good as the underlying foundation they are built upon.  If a system daemon
 (i.e. `kubelet`, `docker`, `journald`, etc.) is consuming more resources than
-were reserved via `system-reserved` or `kube-reserved` allocations, and the node
-only has guaranteed pod(s) remaining, then the node must choose to evict a
-guaranteed pod in order to preserve node stability, and to limit the impact
-of the unexpected consumption to other guaranteed pod(s).
+were reserved via `system-reserved` or `kube-reserved` allocations, then the node
+must choose to evict a pod, even if it is consuming less than its requests.
+It must take action in order to preserve node stability, and to limit the impact
+of the unexpected consumption to other well-behaved pod(s).
 
 ## Disk based evictions
 
@@ -458,13 +474,6 @@ for eviction. Instead `DaemonSet` should ideally include Guaranteed pods only.
 The pod eviction may evict more pods than needed due to stats collection timing gap. This can be mitigated by adding
 the ability to get root container stats on an on-demand basis (https://github.com/google/cadvisor/issues/1247) in the future.
 
-### How kubelet ranks pods for eviction in response to inode exhaustion
-
-At this time, it is not possible to know how many inodes were consumed by a particular container.  If the `kubelet` observes
-inode exhaustion, it will evict pods by ranking them by quality of service.  The following issue has been opened in cadvisor
-to track per container inode consumption (https://github.com/google/cadvisor/issues/1422) which would allow us to rank pods
-by inode consumption.  For example, this would let us identify a container that created large numbers of 0 byte files, and evict
-that pod over others.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/kubelet-eviction.md?pixel)]()
