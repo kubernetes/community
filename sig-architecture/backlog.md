@@ -10,7 +10,7 @@
 ## Processes
 
 * Proposal process
-* API review process
+* [API review process](https://github.com/kubernetes/community/pull/419/files)
 * Determine initial reviewers and approvers
 * [Branching policy](https://github.com/kubernetes/community/issues/566)
 
@@ -21,6 +21,8 @@
 * [Well known labels](https://groups.google.com/forum/#!topic/kubernetes-sig-architecture/PEp7NqWuFpw)
 * [Conditions and phase](https://github.com/kubernetes/kubernetes/issues/7856)
 * ["v2 API" plan](https://github.com/kubernetes/kubernetes/issues/8190)
+* Multi-repo plan and roadmap
+* Architectural layers
 
 ## Documentation
 
@@ -29,6 +31,7 @@
 * [Organize design-proposals by area](https://github.com/kubernetes/community/issues/918)
 * Document who owns client library, build, and release artifacts
 * Document who owns conformance definition, profiles, etc.
+* Extension strategy
 
 ## Conformance
 
