@@ -2,7 +2,7 @@
 
 ## Overview
 
-Kubernetes is production-grade, open-source infrastructure for the deployment, scaling,
+Kubernetes is a production-grade, open-source infrastructure for the deployment, scaling,
 management, and composition of application containers across clusters of hosts, inspired
 by [previous work at Google](https://research.google.com/pubs/pub44843.html). Kubernetes
 is more than just a “container orchestrator”. It aims to eliminate the burden of orchestrating
