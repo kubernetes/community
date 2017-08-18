@@ -82,7 +82,8 @@ type ControllerEndpointData struct {
 }
 ```
 
-On each reconcile loop (defaults to every 10 seconds currently):
+The reconcile loop will expire endpoints that do not meet the duration. On
+each reconcile loop (the loop runs every 10 seconds currently):
 
 1. Retrieve `kube-apiserver-endpoints-config` ConfigMap (as configMap)
 1. Retrieve `kube-apiserver-endpoints` ConfigMap (as endpointMap)
