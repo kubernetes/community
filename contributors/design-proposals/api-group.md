@@ -10,7 +10,7 @@
 
 4. Exposing the API groups and versions supported by the server. This is required to develop a dynamic client.
 
-5. Laying the basis for [API Plugin](../../docs/design/extending-api.md).
+5. Laying the basis for [API Plugin](./extending-api.md).
 
 6. Keeping the user interaction easy. For example, we should allow users to omit group name when using kubectl if there is no ambiguity.
 
