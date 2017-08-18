@@ -10,3 +10,6 @@
 ### HDFS
 * [Data Locality Doc](https://docs.google.com/document/d/1TAC6UQDS3M2sin2msFcZ9UBBQFyyz4jFKWw5BM54cQo/edit)
 * [External Repository](https://github.com/apache-spark-on-k8s/kubernetes-HDFS)
+
+### Airflow
+* [Airflow roadmap](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=71013666)
