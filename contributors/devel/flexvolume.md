@@ -24,6 +24,23 @@ Initializes the driver. Called during Kubelet & Controller manager initializatio
 ```
 <driver executable> init
 ```
+The Init phase also supports returning the underlying driver capabilities, both are optional and default to _true_
+
+| Capability | Bool | k8s version | PR/Commit |
+| ---        | ---  |:-----------:| ---       |
+| attach | **true**\|false | >= 1.7 | [commit](https://github.com/kubernetes/kubernetes/commit/894b9b2add77034772cc8860857ca566a1eee110) |
+| selinuxRelabel | **true**\|false | >= 1.8 | [PR](https://github.com/kubernetes/kubernetes/pull/50843) |
+
+In your init() function, you would define and return them via JSON as such
+```JSON
+{
+	"status": "Success",
+	"capabilities": {
+		"attach": false,
+		"selinuxRelabel": false
+	}
+}
+```
 
 #### Get volume name:
 Get a cluster wide unique volume name for the volume. Called from both Kubelet & Controller manager.
