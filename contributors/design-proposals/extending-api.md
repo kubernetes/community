@@ -121,7 +121,7 @@ and the corresponding data will be stored into etcd by the APIServer, so that
 when the user issues:
 
 ```
-GET /apis/mygroup.example.com/v1/namespaces/default/crontabs/my-new-cron-object`
+GET /apis/mygroup.example.com/v1/namespaces/default/crontabs/my-new-cron-object
 ```
 
 And when they do that, they will get back the same data, but with additional
