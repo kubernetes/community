@@ -133,7 +133,7 @@ pv controller.
    ```
 
    `operationExecutorHook` function is a hook that is registered in operation_executor and it will
-   initialize necessary metric params and will return a function. This will will be called when
+   initialize necessary metric params and will return a function. This will be called when
    operation is complete and will finalize metric creation and finally emit the metrics.
 
 ### Conclusion
