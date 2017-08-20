@@ -1,43 +1,44 @@
 # Priority in ResourceQuota
 
-@resouer @bsalamat
+Authors:
 
-Aug 2017
+@resouer @bsalamat @derekwaynecarr 
+
+Sep 2017
+
   * [Objective](#objective)
     * [Non-Goals](#non-goals)
   * [Background](#background)
   * [Overview](#overview)
   * [Detailed Design](#detailed-design)
-    * [Expected behavior of ResourceQuota apply to pod](#resourcequota-apply-to-pod)
+    * [Expected behavior of ResourceQuota](#resourcequota)
     * [Expected behavior of ResourceQuota admission controller](#resourcequota-admission-controller)
 
 
 ## Objective
 
-This feature is designed to make ResourceQuota become priority aware, three sub-tasks are included.
+This feature is designed to make ResourceQuota become priority aware, 3 sub-tasks are included.
 
-* Add a field to ResourceQuota that specifies a priority class name.
+* Add a field to ResourceQuota that specifies priority class names.
 * Incorporate priority in quota checks.
-* ResourceQuota admission controller to check ResourceQuota priority class and resolve the priority class to its integer value.
+* ResourceQuota admission controller to check ResourceQuota priority class name and make corresponding decision.
 
 ### Non-Goals 
 
-* Add priority in Pod spec (this is implemented in: #45610)
-* Incorporate priority in pod scheduling logic.
+* Add priority in Pod spec (this has been implemented in: #45610)
 
 ## Background 
 
-Since we already have [priority filed in Pod spec](https://github.com/kubernetes/kubernetes/pull/45610), 
-Pods can now be classified into different priority classes. So it is nature to make ResourceQuota apply to Pods based on its priority class. In order to implement this, we need to add a priority filed to ResourceQuota definition.
+Since we already have [priority field in Pod spec](https://github.com/kubernetes/kubernetes/pull/45610), 
+Pods can now be classified into different priority classes. We would like to be able to create quota for various priority classes in order to manage cluster resources better and limit abuse scenarios. In order to implement this, we need to include priority class name field to ResourceQuota definition.
 
 ## Overview 
 
-This design doc introduces the motivation of adding priority filed in ResourceQuota and
-how this priority impacts ResourceQuta applying to Pod. 
+This design doc introduces a new field in ResourceQuota to specify a group of priority classes for the quota to match with, and explains how quota enforcement logic is changed to apply the quota to pods with the given priority classes.
 
 ## Detailed Design 
 
-### Expected behavior of ResourceQuota apply to pod 
+### Expected behavior of ResourceQuota
 
 The design will be like:
 
@@ -51,31 +52,30 @@ type ResourceQuotaSpec struct {
   // If not specified, the quota matches all objects.
   // +optional
   Scopes []ResourceQuotaScope
-  // If specified, indicates this ResourceQuota applies to that priority class
-  // If not specified, this ResourceQuota applies to all priority classes.
+  // A list of PriorityClassName with which this quota is expected to match.
+  // If specified, the quota's hard limits are restricted to only account resources oriented around pod which matched with given priority classes.
+  // If not specified, the quota's hard limits are restricted to only account resources oriented around pods without priority class name.
   // +optional
-  PriorityClassName string
-  // The priority value. Various system components use this field to find the
-  // priority of the ResourceQuota. When Priority Admission Controller is enabled, it
-  // prevents users from setting this field. The admission controller populates
-  // this field from PriorityClassName.
-  // +optional
-  Priority *int32
+  PriorityClassNameList []string
 }
 ```
+Any `PriorityClassName` in `PriorityClassNameList` of ResourceQuota will be checked against `PriorityClassName` field in the Pod, in detail:
 
-* One could expect when `PriorityClassName` field is set, it indicates that this quota applies to Pod with same priority class. 
-* If this field is not present, this quota applies to all priority classes.
+* If `PriorityClassNameList` is present, for any given `PriorityClassName` in the list:
+    * This quota's hard limits matches to all pods with the matched priority class.
+    * If any `PriorityClassName` is set to *, it means this quota matches all priority classes.
+* If `PriorityClassNameList` is not present, it indicates this `ResourceQuota` matches to pods without priority class name.
+* The absence of `ResourceQuota` for a particular `PriorityClassName` means no quota at that priority.
+* If multiple `ResourceQuota` apply to a Pod, the pod must satisfy all of them.
 
-It is worth noting that quota is assigned per namespace, not per user, in Kubernetes. Adding priority to ResourceQuota will not change anything with respect to the scope of ResourceQuota. In other words, when priority is defined for a ResourceQuota object, the quota is applied to all pods at that priority in the specified namespace.
+It is worth noting that quota is assigned per namespace, not per user, in Kubernetes. Adding priority class names to ResourceQuota will not change anything with respect to the scope of ResourceQuota. In other words, when priority class names are defined for a ResourceQuota object, the quota is applied to all pods at those priority classes in the specified namespace.
 
-Just like pod spec, we also have `Priority *int32` in `ResourceQuta` spec. So the class don't need to be resolved every time it is being used.
+Unlike pod spec, ResourceQuota does not have Priority `*int32` in its spec. As explained above, `ResourceQuota` with `PriorityClassNameList` matches against pods with the same `PriorityClassName` in list, regardless of the integer value of priority.
 
 ### Expected behavior of ResourceQuota admission controller
 
-This part is about how to make admission controller work with priority aware `ResourceQuota`.
-
-* ResourceQuota admission controller should reject creation or update of ResourceQuota object if new ResourceQuota names a PriorityClass that does not exist, i.e. is not a pre-defined or user-specified PriorityClass (but empty is allowed).
-* ResourceQuota admission controller should reject creation of ResourceQuota object if another ResourceQuota object with same PriorityClass already exists, or if a ResourceQuota object with no PriorityClass exists.
-* ResourceQuota admission controller should reject update of ResourceQuota object if the new (updated) PriorityClass matches that of another ResourceQuota object, or if another ResourceQuota object has no PriorityClass.
-* priority admission controller should reject deletion of a PriorityClass object if it is named in any ResourceQuota object in any namespace.
+* `ResourceQuota` admission controller **should not reject** creation or update of `ResourceQuota` object if new `ResourceQuota` names a `PriorityClass` that does not exist, and empty `PriorityClassNameList` field is also allowed. For now, we don't want to introduce extra order by this design.
+* `ResourceQuota` admission controller **should not reject** creation of a `ResourceQuota` object if the `PriorityClassNameList` field of an existing `ResourceQuota` object has one or more of the same `PriorityClassNames`. Overlapping quota is allowed in Kubernetes.
+* `ResourceQuota` admission controller **should reject** pod with priority set but has no matched ResourceQuota found.
+* `ResourceQuota` admission controller **should reject** update of `ResourceQuota` object. Users should create a new quota and delete the old one if the quota needs to be updated.
+* `ResourceQuota` admission controller **should not reject** deletion of `ResourceQuota` objects with reference. In other words, a `ResourceQuota` object can be deleted even if there are Pods that the `ResourceQuota` object applies to them.
