@@ -373,66 +373,7 @@ spec:
      storage: 10Gi
 ```  
 
-## UC7:
-
-DESCRIPTION: User wishes to install a software defined storage solution  (i.e.GlusterFS/Ceph(bluestore)) on top of raw block device. Using something like a StateFulSet for GlusterFS, for example, the system could provide it with provisioned block storage, and allow the software defined storage solution to consume it as needed. 
-
-BACKGROUND: This provides a way to dynamically create raw block devices to later be consumed by software defined storage.
-
-WORKFLOW:
-
-ADMIN:
-
-```
-kind: StorageClass
-apiVersion: storage.k8s.io/v1beta1
-metadata:
-  name: aws-ebs-raw
-provisioner: kubernetes.io/aws-ebs-raw
-parameters:
-  type: gp2
-  fstype: raw 
-```
-
-* Storage Class Stateful Set
-
-```
-apiVersion: apps/v1beta1
-kind: StatefulSet
-metadata:
-  name: web
-spec:
-  serviceName: "nginx"
-  replicas: 2
-  template:
-    metadata:
-      labels:
-	app: nginx
-    spec:
-      containers:
-      - name: nginx
-	image: gcr.io/google_containers/nginx-slim:0.8
-	ports:
-	- containerPort: 80
-	  name: web
-	volumeMounts:
-	- name: www
-	  mountPath: /usr/share/nginx/html
- volumeClaimTemplates:
-  - metadata:
-      name: datadir
-      annotations:
-	volume.beta.kubernetes.io/storage-class: aws-ebs-raw
-    spec:
-      accessModes:
-	- "ReadWriteOnce"
-      resources:
-	requests:
-	  storage: 10Gi
-```
-***SUITABLE FOR: NETWORK ATTACHED BLOCK***
-
-## UC8: 
+## UC7: 
 
 DESCRIPTION: Admin creates network raw block devices
 
@@ -477,9 +418,8 @@ Since rkt doesn't use the CRI, the config values would need to be passed in the 
 
 The runtime option would be placed in the DeviceInfo as such:
 devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "mrw"}) for RWO
-devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "mr"}) for ROX
 
-Today, this is defaulted always to mrw, thus it would need to be updated with what is passed in.
+The implemenation plan would be to rename the current makeDevices ot makeGPUDevices and create a seperate function to add the raw block devices to the option array to be passed to the container runtime. This would interate on the paths passed in for the pod/container.
 
 # Implementation Plan, Features & Milesones
 
@@ -551,14 +491,4 @@ type BlockUnmounter interface {
 # Mounter binding matrix for dynamically provisioned volumes:
 
 Note: The value used for the plugin to indicate is it provisioning 
-block will be plugin dependent and is an opaque parameter. Thus, not an API
-change and possibly inconsistent between plugins. We are suggesting using 'block'
-to simplify validation in the code (rather than raw that what proposed before).
-
-| PV volumeType | Plugin fstype | PVC volumeType  | Result           |
-| --------------|:-------------:| ---------------:|-----------------:|
-|  --           | ext4/xfs      | block           | NO BIND          |
-|  --           | ext4/xfs      | unspecified     | BIND             |
-|  --           | block         | block           | BIND             |
-
-* unspecified defaults to file today for backwards compatibility.
+block will be plugin dependent and is an opaque parameter. Binding will be plugin dependent and must handle the parameter being passed and indicate whether or not it supports block.
