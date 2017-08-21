@@ -139,3 +139,11 @@ The allowance and eviction for per-user and per-source+object rate limiting
 works identically to the per-namespace rate limiting, with the exception that
 the former consider the user or source+object of the event and the latter
 considers the namespace of the event request.
+
+## Client Behavior
+
+Currently, the Client event recorder treats a 429 response as http transport
+type of error, that warrants retrying the event request. Instead, the event
+recorder should abandon the event. Additionally, the event recorder should
+abandon all future events for the period of time specified in the
+retryAfterSeconds field of the 429 response.
