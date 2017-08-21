@@ -31,18 +31,18 @@ type Configuration struct {
 	metav1.TypeMeta `json:",inline"`
 
 	// Limits to place on events received.
-	// Limits can be placed on events received server-wide, per namespace, and
-	// per source+object.
+	// Limits can be placed on events received server-wide, per namespace,
+	// per user, and per source+object.
 	// At least one limit is required.
 	Limits []Limit `json:"limits"`
 }
 
-// Limit provides configuration for a single type of limit
 type Limit struct {
 	// Type of limit.
 	// The following are valid values.
 	// "server": limits are maintained against all events received by the server
 	// "namespace": limits are maintained against events from each namespace
+	// "user": limits are maintained against events from each user
 	// "source+object": limits are maintained against events from each source+object
 	Type string `json:"type"`
 
