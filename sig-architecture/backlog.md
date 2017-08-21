@@ -21,8 +21,8 @@
 * [Well known labels](https://groups.google.com/forum/#!topic/kubernetes-sig-architecture/PEp7NqWuFpw)
 * [Conditions and phase](https://github.com/kubernetes/kubernetes/issues/7856)
 * ["v2 API" plan](https://github.com/kubernetes/kubernetes/issues/8190)
-* Multi-repo plan and roadmap
-* Architectural layers
+* [Multi-repo plan and roadmap](https://github.com/kubernetes/kubernetes/issues/24343)
+* [Architectural layers](https://github.com/kubernetes/community/issues/952)
 
 ## Documentation
 
