@@ -110,9 +110,11 @@ type State interface {
   GetCPUSet(containerID string) (cpuset.CPUSet, bool)
   GetDefaultCPUSet() cpuset.CPUSet
   GetCPUSetOrDefault(containerID string) cpuset.CPUSet
+  GetPresure() bool
   SetCPUSet(containerID string, cpuset CPUSet)
   SetDefaultCPUSet(cpuset CPUSet)
   Delete(containerID string)
+  SetPresure(value bool)
 }
 
 type Manager interface {
@@ -128,7 +130,6 @@ type Policy interface {
   Start(s state.State)
   RegisterContainer(s State, pod *Pod, container *Container, containerID string) error
   UnregisterContainer(s State, containerID string) error
-  IsUnderCPUPresure() bool
 }
 
 type CPUSet map[int]struct{} // set operations and parsing/formatting helpers
