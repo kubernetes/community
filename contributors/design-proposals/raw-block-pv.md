@@ -480,8 +480,8 @@ type BlockUnmounter interface {
 |   block       | unspecified     | NO BIND          |
 |   block       |  block          | BIND             |
 |   unspecified | block           | NO BIND          |
-|   block       |  file           | NO BIND          |
-|   file        |  block          | BIND**           |
+|   block       |  file           | BIND**           |
+|   file        |  block          | NO BIND          |
 |  unspecified  | file            | BIND             |
 
 
