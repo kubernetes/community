@@ -65,7 +65,7 @@ This new method is invoked from two places in the CPU manager: during each
 call to `RegisterContainer` and also periodically from a separate
 reconciliation loop.
 
-![cpu-manager-block-diagram](https://user-images.githubusercontent.com/379372/28852425-d5067648-76dd-11e7-9916-b956c235f5bb.png)
+![cpu-manager-block-diagram](https://user-images.githubusercontent.com/379372/29538505-064ca496-867b-11e7-9951-1cf5e975c4d2.png)
 
 _CPU Manager block diagram. `Policy`, `State`, and `Topology` types are
 factored out of the CPU Manager to promote reuse and to make it easier
