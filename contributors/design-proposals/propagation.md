@@ -57,6 +57,16 @@ survive we need to bind mount a dir from host mount namespace to container one
 with shared flag, so that all bind mounts are propagated across mount namespaces
 and references to network namespaces persist.
 
+1. (From https://github.com/kubernetes/kubernetes/issues/46643) I expect the
+   container to start and any fuse mounts it creates in a volume that exists on
+   other containers in the pod (that are using :slave) are available to those
+   other containers.
+
+   In other words, two containers in the same pod share an EmptyDir. One
+   container mounts something in it and the other one can see it. The first
+   container must have (r)shared mount propagation to the EmptyDir, the second
+   one can have (r)slave.
+
 
 ## Implementation Alternatives
 
@@ -65,6 +75,24 @@ and references to network namespaces persist.
 The new `VolumeMount` will look like:
 
 ```go
+type MountPropagationMode string
+
+const (
+	// MountPropagationHostToContainer means that the volume in a container will
+	// receive new mounts from the host or other containers, but filesystems
+	// mounted inside the container won't be propagated to the host or other
+	// containers.
+	// Note that this mode is recursively applied to all mounts in the volume
+	// ("rslave" in Linux terminology).
+	MountPropagationHostToContainer  MountPropagationMode = "HostToContainer"
+	// MountPropagationBidirectional means that the volume in a container will
+	// receive new mounts from the host or other containers, and its own mounts
+	// will be propagated from the container to the host or other containers.
+	// Note that this mode is recursively applied to all mounts in the volume
+	// ("rshared" in Linux terminology).
+	MountPropagationBidirectional MountPropagationMode = "Bidirectional"
+)
+
 type VolumeMount struct {
 	// Required: This must match the Name of a Volume [above].
 	Name string `json:"name"`
@@ -72,14 +100,30 @@ type VolumeMount struct {
 	ReadOnly bool `json:"readOnly,omitempty"`
 	// Required.
 	MountPath string `json:"mountPath"`
+	// mountPropagation is the mode how are mounts in the volume propagated from
+	// the host to the container and from the container to the host.
+	// When not set, MountPropagationHostToContainer is used.
+	// This field is alpha in 1.8 and can be reworked or removed in a future
+	// release.
 	// Optional.
-	Propagation string `json:"propagation"`
+	MountPropagation *MountPropagationMode `json:"mountPropagation,omitempty"`
 }
 ```
 
+Default would be `HostToContainer`, i.e. `rslave`, which should not break
+backward compatibility, `Bidirectional` must be explicitly requested.
+Using enum instead of simple `PropagateMounts bool` allows us to extend the
+modes to `private` or non-recursive `shared` and `slave` if we need so in
+future.
+
+Only privileged containers are allowed to use `Bidirectional` for their volumes.
+This will be enforced during validation.
+
 Opinion against this:
 
-1. This will affect all volumes, while only HostPath need this.
+1. This will affect all volumes, while only HostPath need this. It could be
+checked during validation and any non-HostPath volumes with non-default
+propagation could be rejected.
 
 1. This need API change, which is discouraged.
 
@@ -88,18 +132,48 @@ Opinion against this:
 The new `HostPathVolumeSource` will look like:
 
 ```go
+type MountPropagationMode string
+
 const (
-	PropagationShared  PropagationMode = "Shared"
-	PropagationSlave   PropagationMode = "Slave"
-	PropagationPrivate PropagationMode = "Private"
+	// MountPropagationHostToContainer means that the volume in a container will
+	// receive new mounts from the host or other containers, but filesystems
+	// mounted inside the container won't be propagated to the host or other
+	// containers.
+	// Note that this mode is recursively applied to all mounts in the volume
+	// ("rslave" in Linux terminology).
+	MountPropagationHostToContainer  MountPropagationMode = "HostToContainer"
+	// MountPropagationBidirectional means that the volume in a container will
+	// receive new mounts from the host or other containers, and its own mounts
+	// will be propagated from the container to the host or other containers.
+	// Note that this mode is recursively applied to all mounts in the volume
+	// ("rshared" in Linux terminology).
+	MountPropagationBidirectional MountPropagationMode = "Bidirectional"
 )
 
 type HostPathVolumeSource struct {
 	Path string `json:"path"`
-	// Mount the host path with propagation mode specified. Docker only.
-	Propagation PropagationMode `json:"propagation,omitempty"`
+	// mountPropagation is the mode how are mounts in the volume propagated from
+	// the host to the container and from the container to the host.
+	// When not set, MountPropagationHostToContainer is used.
+	// This field is alpha in 1.8 and can be reworked or removed in a future
+	// release.
+	// Optional.
+	MountPropagation *MountPropagationMode `json:"mountPropagation,omitempty"`
 }
 ```
+
+Default would be `HostToContainer`, i.e. `rslave`, which should not break
+backward compatibility, `Bidirectional` must be explicitly requested.
+Using enum instead of simple `PropagateMounts bool` allows us to extend the
+modes to `private` or non-recursive `shared` and `slave` if we need so in
+future.
+
+Only privileged containers can use HostPath with `Bidirectional` mount
+propagation - kubelet silently downgrades the propagation to `HostToContainer`
+when running `Bidirectional` HostPath in a non-privileged container. This allows
+us to use the same `HostPathVolumeSource` in a pod with two containers, one
+non-privileged with `HostToContainer` propagation and second privileged with
+`Bidirectional` that mounts stuff for the first one.
 
 Opinion against this:
 
@@ -107,7 +181,16 @@ Opinion against this:
 
 1. All containers use this volume will share the same propagation mode.
 
+1. Silent downgrade from `Bidirectional` to `HostToContainer` for non-privileged
+   containers.
+
 1. (From @jonboulle) May cause cross-runtime compatibility issue.
+
+1. It's not possible to validate a pod + mount propagation. Mount propagation
+   is stored in a HostPath PersistentVolume object, while privileged mode is
+   stored in Pod object. Validator sees only one object and we don't do
+   cross-object validation and can't reject non-provileged pod that uses a PV
+   with shared mount propagation.
 
 ### Make HostPath shared for privileged containers, slave for non-privileged.
 
@@ -118,14 +201,14 @@ privileged, or we can introduce a new option in SecurityContext to control this.
 The propagation mode could be determined by the following logic:
 
 ```go
-// Environment check to ensure "rshared" is supported.
+// Environment check to ensure "shared" is supported.
 if !dockerNewerThanV110 || !mountPathIsShared {
 	return ""
 }
 if container.SecurityContext.Privileged {
-	return "rshared"
+	return "shared"
 } else {
-	return "rslave"
+	return "slave"
 }
 ```
 
@@ -142,12 +225,57 @@ distros.
 1. (From @euank) Changing those mountflags may make docker even less stable,
 this may lock up kernel accidentally or potentially leak mounts.
 
+1. (From @jsafrane) Typical container that needs to mount something needs to
+see host's `/dev` and `/sys` as HostPath volumes. This would make them shared
+without any way to opt-out. Docker creates a new `/dev/shm` in the
+container, which gets propagated to the host, shadowing host's `/dev/shm`.
+Similarly, systemd running in a container is very picky about `/sys/fs/cgroup`
+and something prevents it from starting if `/sys` is shared.
 
 ## Decision
 
-We will take 'Make HostPath shared for privileged containers, slave for
-non-privileged', an environment check and an WARNING log will be emitted about
-whether propagation mode is supported.
+* We will take 'Add an option in VolumeMount API'
+  * With an alpha feature gate in 1.8.
+  * Only privileged containers can use `rshared` (`Bidirectional`) mount
+    propagation (with a validator).
+
+* During alpha, all the behavior above must be explicitly enabled by
+  `kubelet --feature-gates=MountPropagation=true`
+  It will be used only for testing of volume plugins in e2e tests and
+  Mount propagation may be redesigned or even removed in any future release.
+
+  When the feature is enabled:
+
+  * The default mount propagation of **all** volumes (incl. GCE, AWS, Cinder,
+	Gluster, Flex, ...) will be `slave`, which is different to current
+	`private`. Extensive testing is needed! We may restrict it to HostPath +
+	EmptyDir in Beta.
+
+  * **Any** volume in a privileged container can be `Bidirectional`. We may
+  restrict it to HostPath + EmptyDir in Beta.
+
+  * Kubelet's Docker shim layer will check that it is able to run a container
+    with shared mount propagation on `/var/lib/kubelet` during startup and log
+    a warning otherwise. This ensures that both Docker and kubelet see the same
+    `/var/lib/kubelet` and it can be shared into containers.
+    E.g. Google COS-58 runs Docker in a separate mount namespace with slave
+    propagation and thus can't run a container with shared propagation on
+    anything.
+
+    This will be done via simple docker version check (1.13 is required) when
+    the feature gate is enabled.
+
+  * Node conformance suite will check that mount propagation in /var/lib/kubelet
+    works.
+
+  * When running on a distro with `private` as default mount propagation
+    (probably anything that does not run systemd, such as Debian Wheezy),
+	Kubelet will make `/var/lib/kubelet` share-able into containers and it will
+	refuse to start if it's unsuccessful.
+
+	It sounds complicated, but it's simple
+	`mount --bind --rshared /var/lib/kubelet /var/lib/kubelet`. See
+	kubernetes/kubernetes#45724
 
 
 ## Extra Concerns
@@ -176,7 +304,7 @@ if a pod does not create any new mountpoints under its hostpath bindmount, it's
 not hard to reach multiplicative explosions with shared bindmounts and so the
 change in default + no cleanup could result in existing workloads knocking the
 node over.
- 
+
 These concerns are valid and we decide to limit the propagation mode to HostPath
 volume only, in HostPath, we expect any runtime should NOT perform any additional
 actions (such as clean up). This behavior is also consistent with current HostPath
