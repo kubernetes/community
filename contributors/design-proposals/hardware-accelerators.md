@@ -36,14 +36,13 @@ Some of them are general purpose, but many of them are purpose built for specifi
 Exposing all hardware accelerators as well known (first class) Compute Resource Types will bloat the API and compromise portability.
 For this reason, Hardware Accelerators are expected to be handled as “Extended Compute Resources”.
 
-Kubernetes nucleus will recommend and document a general purpose resource name for each family of accelerators - examples include `nvidia-gpu`, `amd-gpu`, `google-tpu`, etc., with a standard prefix `extensions.kubernetes.io`. This naming scheme partially mimics PCI ID - `<Vendor Name>-<Device Type>`.
-Any further differentiation amongst hardware accelerators using the resource name will not be considered “portable” across Kubernetes clusters.
-It is expected that accelerator hardware vendors will define and manage Resource Types.
+Kubernetes nucleus will recommend and document a general purpose resource name for each family of accelerators - examples include `nvidia.com/gpu`, `amd.com/gpu`, `google.com/tpu`, etc., with a standard domain name that unambiguously identifies the vendor of a hardware followed by the hardware type `<hardware-vendor-domain>/<hardware-type>`.
+It is expected that the hardware vendors will work with the kubernetes community to keep their resource names consistent across kubernetes clusters.
 
 Nodes are expected to be homogenous and any attributes specific to hardware accelerators are expected to be exposed as node labels in Kubernetes to begin with.
 Users can expose “extended resources” with other names and consume them in their own clusters.
-The admission logic will be extended to allow any resource with an `extensions.kubernetes.io` prefix.
-The scheduler will be extended to treat any resource with that prefix as an integer resource to begin with.
+The admission logic will be extended to allow any resource with a non empty non-default (not `kubernetes.io`) domain name.
+The scheduler will be extended to treat such extended resources as an integer resource to begin with.
 
 GPU workloads may wish to express soft and hard preferences for specific accelerator sub-types within a family.
 For example, a CUDA app may benefit from running on the latest and greatest Nvidia GPU, but has a minimum GPU version requirement.
@@ -116,7 +115,7 @@ Support for Nvidia GPUs has been in alpha since `v1.6`.
 
 ### Timelines
 
-* Current target is `v1.9`
+* Current target is `v1.10`
 
 ## General Availability
 
@@ -130,4 +129,4 @@ Support for Nvidia GPUs has been in alpha since `v1.6`.
 
 ### Timelines
 
-* Current target is `v1.11`
+* Current target is `v1.12`
