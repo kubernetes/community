@@ -329,6 +329,12 @@ git fetch upstream
 git rebase upstream/master
 ```
 
+Please don't use `git pull` instead of the above `fetch` / `rebase`. `git pull`
+does a merge, which leaves merge commits. These make the commit history messy
+and violate the principle that commits ought to be individually understandable
+and useful (see below). You can also consider changing your `.git/config` file via
+`git config branch.autoSetupRebase always` to change the behavior of `git pull`.
+
 ### 5 Commit
 
 Commit your changes.
@@ -384,11 +390,23 @@ Upon merge (by either you or your reviewer), all commits left on the review
 branch should represent meaningful milestones or units of work.  Use commits to
 add clarity to the development and review process.
 
-Before merging a PR, squash any _fix review feedback_, _typo_, and _rebased_
-sorts of commits.
+Before merging a PR, squash any _fix review feedback_, _typo_, _merged_, and
+_rebased_ sorts of commits.
 
 It is not imperative that every commit in a PR compile and pass tests
 independently, but it is worth striving for.
+
+In particular, if you happened to have used `git merge` and have merge
+commits, please squash those away: they do not meet the above test.
+
+A nifty way to manage the commits in your PR is to do an [interactive
+rebase](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History),
+which will let you tell git what to do with every commit:
+
+```sh
+git fetch upstream
+git rebase -i upstream/master
+```
 
 For mass automated fixups (e.g. automated doc formatting), use one or more
 commits for the changes to tooling and a final commit to apply the fixup en
