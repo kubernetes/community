@@ -178,9 +178,9 @@ Here are a few pointers:
 + **Follow the examples of stable, well-written tests:** Some of our
    existing end-to-end tests are better written and more reliable than
    others.  A few examples of well-written tests include:
-   [Replication Controllers](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/rc.go),
-   [Services](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/service.go),
-   [Reboot](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/reboot.go).
+   [Replication Controllers](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/apps/rc.go),
+   [Services](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/network/service.go),
+   [Reboot](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/lifecycle/reboot.go).
 + [Ginkgo Test Framework](https://github.com/onsi/ginkgo): This is the
    test library and runner upon which our e2e tests are built.  Before
    you write or refactor a test, read the docs and make sure that you
