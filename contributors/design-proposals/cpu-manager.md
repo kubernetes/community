@@ -35,7 +35,7 @@ _Solution requirements:_
    sure that the pod gets its cpu quota primarily from reserved core(s),
    resulting in fewer context switches and higher cache affinity".
 1. Support the case where in a given pod, one container is latency-critical
-   and another is not (e.g. auxillary side-car containers responsible for
+   and another is not (e.g. auxiliary side-car containers responsible for
    log forwarding, metrics collection and the like.)
 1. Do not cap CPU quota for guaranteed containers that are granted
    exclusive cores, since that would be antithetical to (1) above.
@@ -110,18 +110,18 @@ type State interface {
   GetCPUSet(containerID string) (cpuset.CPUSet, bool)
   GetDefaultCPUSet() cpuset.CPUSet
   GetCPUSetOrDefault(containerID string) cpuset.CPUSet
-  GetPresure() bool
+  GetPressure() bool
   SetCPUSet(containerID string, cpuset CPUSet)
   SetDefaultCPUSet(cpuset CPUSet)
   Delete(containerID string)
-  SetPresure(value bool)
+  SetPressure(value bool)
 }
 
 type Manager interface {
   Start()
   RegisterContainer(p *Pod, c *Container, containerID string) error
   UnregisterContainer(containerID string) error
-  IsUnderCPUPresure() bool
+  IsUnderCPUPressure() bool
   State() state.Reader
 }
 
