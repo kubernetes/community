@@ -6,7 +6,7 @@
 
 This document captures the requirements and duties of the individuals responsible for Kubernetes releases.
 
-As documented in the [Kubernetes Versioning doc](https://github.com/kubernetes/kubernetes/blob/master/docs/design/versioning.md), there are 3 types of Kubernetes releases:
+As documented in the [Kubernetes Versioning doc](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/versioning.md), there are 3 types of Kubernetes releases:
 * Major (x.0.0)
 * Minor (x.x.0)
 * Patch (x.x.x)
