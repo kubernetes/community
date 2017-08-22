@@ -5,22 +5,23 @@ Authors: @rphillips
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Known Issues](#known-issues)
-3. [Proposal](#proposal)
-4. [Prior Art](#prior-art)
+1. [Known Issues](#known-issues)
+1. [Proposal](#proposal)
+1. [Alternate Proposals](#alternate-proposals)
+  1. [Custom Resource Definitions](#custom-resource-definitions)
+  1. [Refactor Old Reconciler](#refactor-old-reconciler)
 
 ## Overview
 
 Proposal to fix Issue [#22609](https://github.com/kubernetes/kubernetes/issues/22609)
 
-`kube-apiserver` currently has a command-line argument
-`--apiserver-count` specifying the number of api masters. This
-masterCount is used in the MasterCountEndpointReconciler on a 10 second
-interval to potentially cleanup stale API Endpoints. The issue is when
-the number of kube-apiserver instances gets below masterCount. If this
-case happens, the stale instances within the Endpoints does not get
-cleaned up.
-
+`kube-apiserver` currently has a command-line argument `--apiserver-count`
+specifying the number of api servers. This masterCount is used in the
+MasterCountEndpointReconciler on a 10 second interval to potentially cleanup
+stale API Endpoints. The issue is when the number of kube-apiserver instances
+gets below or above the masterCount. If the below case happens, the stale
+instances within the Endpoints does not get cleaned up, or in the latter case
+the endpoints start to flap.
 ## Known Issues
 
 Each apiserver’s reconciler only cleans up for it's own IP. If a new
@@ -48,7 +49,7 @@ Endpoints would never become consistent.
 
 | Kubernetes Release  | Quality | Description |
 | ------------- | ------------- | ----------- |
-| 1.9           | alpha         | <ul><li>Add a new reconciler</li><li>Add a command-line type `--apiserver-endpoint-reconciler-type`<ul><li>configmap</li><li>default</li></ul></li></ul>
+| 1.9           | alpha         | <ul><li>Add a new reconciler</li><li>Add a command-line type `--alpha-apiserver-endpoint-reconciler-type`<ul><li>configmap</li><li>default</li></ul></li></ul>
 | 1.10          | beta          | <ul><li>Turn on the `configmap` type by default</li></ul>
 | 1.11          | stable        | <ul><li>Remove code for old reconciler</li><li>Remove --apiserver-count</li></ul>
 
@@ -87,11 +88,13 @@ KubeAPIServerEndpointConfigMap{
 }
 ```
 
+***TODO: should it a serialized struct, or the raw time value?***
+
 The reconcile loop will expire endpoints that do not meet the duration.
 On each reconcile loop (the loop runs every 10 seconds currently,
 but interval will be changed to 80% of the `expiration-duration`):
 
-1. Retrieve `kube-apiserver-endpoints` ConfigMap (as endpointMap)
+1. GET `kube-apiserver-endpoints` ConfigMap (as endpointMap)
 1. Update the timestamp for the currently running API server
 1. Remove all endpoints where the timestamp is greater than `expiration-duration` from the configMap.
 1. Do a GET on the `kube-apiserver-endpoints`
@@ -107,22 +110,20 @@ metadata:
   namespace: default
 ```
 
-### Custom Resource Definitions
+### Alternate Proposals
+
+#### Custom Resource Definitions
 
 CRD's were considered for this proposal, but were not proposed due to
 constraints of having CRDs within core has not been clearly defined.
 Layering could also be an issue, so the proposal defined ConfigMaps as
 the current path forward.
 
-### Refactor Old Reconciler
+#### Refactor Old Reconciler
 
 | Release | Quality |                         Description                          |
 | ------- | ------- | ------------------------------------------------------------ |
-| 1.9     | stable  | <ul><li>Change the logic in the current reconciler</li></ul> |
+| 1.9     | stable  | Change the logic in the current reconciler
 
 We could potentially reuse the old reconciler by changing the reconciler to count
 the endpoints and set the `masterCount` (with a RWLock) to the count.
-
-## Prior Art
-
-[Security Labeller](https://github.com/coreos-inc/security-labeller/issues/18#issuecomment-320791878)
