@@ -27,7 +27,7 @@ environment.
 Any ill-formed line will be flagged as an error and will prevent the
 `ConfigMap` or `Secret` from being created.
 
-[Docker's environment file processing](https://github.com/docker/docker/blob/master/runconfig/opts/envfile.go)
+[Docker's environment file processing](https://github.com/moby/moby/blob/master/opts/env.go)
 
 ## Examples
 
