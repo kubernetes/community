@@ -5,11 +5,11 @@ Authors: @rphillips
 ## Table of Contents
 
 1. [Overview](#overview)
-1. [Known Issues](#known-issues)
-1. [Proposal](#proposal)
-1. [Alternate Proposals](#alternate-proposals)
-  1. [Custom Resource Definitions](#custom-resource-definitions)
-  1. [Refactor Old Reconciler](#refactor-old-reconciler)
+2. [Known Issues](#known-issues)
+3. [Proposal](#proposal)
+4. [Alternate Proposals](#alternate-proposals)
+    1. [Custom Resource Definitions](#custom-resource-definitions)
+    2. [Refactor Old Reconciler](#refactor-old-reconciler)
 
 ## Overview
 
