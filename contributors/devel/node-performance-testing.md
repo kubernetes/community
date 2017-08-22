@@ -57,7 +57,7 @@ sampling.
 ## E2E Performance Test
 
 There is an end-to-end test for collecting overall resource usage of node
-components: [kubelet_perf.go](https://github.com/kubernetes/kubernetes/tree/master/test/e2e/kubelet_perf.go). To
+components: [kubelet_perf.go](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/node/kubelet_perf.go). To
 run the test, simply make sure you have an e2e cluster running (`go run
 hack/e2e.go -- -up`) and [set up](#cluster-set-up) correctly.
 
