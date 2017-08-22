@@ -25,7 +25,7 @@ Getting started locally
 
 #### Linux
 
-Not running Linux? Consider running [Minikube](http://kubernetes.io/docs/getting-started-guides/minikube/), or on a cloud provider like [Google Compute Engine](../getting-started-guides/gce.md).
+Not running Linux? Consider running [Minikube](http://kubernetes.io/docs/getting-started-guides/minikube/), or on a cloud provider like [Google Compute Engine](https://kubernetes.io/docs/getting-started-guides/gce/).
 
 #### Docker
 
