@@ -56,7 +56,7 @@ Use inline links instead of urls at all times. When you add internal links to
 `http://releases.k8s.io/HEAD/<path/to/link>`. For example, avoid using:
 
 ```
-[GCE](https://github.com/kubernetes/kubernetes/blob/master/docs/getting-started-guides/gce.md)  # note that it's under docs/
+[Kubefed](https://github.com/kubernetes/kubernetes/blob/master/docs/admin/kubefed.md)           # note that it's under docs/
 [Kubernetes package](../../pkg/)                                                                # note that it's under pkg/
 http://kubernetes.io/                                                                           # external link
 ```
@@ -64,13 +64,13 @@ http://kubernetes.io/                                                           
 Instead, use:
 
 ```
-[GCE](../getting-started-guides/gce.md)                 # note that it's under docs/
+[Kubefed](../admin/kubefed.md)                          # note that it's under docs/
 [Kubernetes package](http://releases.k8s.io/HEAD/pkg/)  # note that it's under pkg/
 [Kubernetes](http://kubernetes.io/)                     # external link
 ```
 
 The above example generates the following links:
-[GCE](../getting-started-guides/gce.md),
+[Kubefed](../admin/kubefed.md),
 [Kubernetes package](http://releases.k8s.io/HEAD/pkg/), and
 [Kubernetes](http://kubernetes.io/).
 
