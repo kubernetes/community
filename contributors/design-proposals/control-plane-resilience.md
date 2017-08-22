@@ -112,9 +112,9 @@ well-bounded time period.
     1. cluster persistent state (i.e. etcd disks) is either:
         1. truly persistent (i.e. remote persistent disks), or
         1. reconstructible (e.g. using etcd [dynamic member
-           addition](https://github.com/coreos/etcd/blob/master/Documentation/runtime-configuration.md#add-a-new-member)
+           addition](https://github.com/coreos/etcd/blob/master/Documentation/v2/runtime-configuration.md#add-a-new-member)
            or [backup and
-           recovery](https://github.com/coreos/etcd/blob/master/Documentation/admin_guide.md#disaster-recovery)).
+           recovery](https://github.com/coreos/etcd/blob/master/Documentation/v2/admin_guide.md#disaster-recovery)).
     1. and boot disks are either:
         1. truly persistent (i.e. remote persistent disks), or
         1. reconstructible (e.g. using boot-from-snapshot,
