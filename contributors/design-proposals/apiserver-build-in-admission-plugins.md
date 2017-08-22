@@ -43,7 +43,7 @@ These plugins should be moved. One example is the Namespace Lifecycle plugin whi
 from creating resources in non-existent namespaces.
 
 *Note*:
-For loading in-cluster configuration [visit](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/examples/in-cluster-client-configuration/main.go#L30)
+For loading in-cluster configuration [visit](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/examples/in-cluster-client-configuration/main.go)
  For loading the configuration directly from a file [visit](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/examples/out-of-cluster-client-configuration/main.go)
  
 ## How to add an admission plugin ?
