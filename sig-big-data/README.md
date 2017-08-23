@@ -14,10 +14,11 @@ Covers deploying and operating big data applications (Spark, Kafka, Hadoop, Flin
 * [Wednesdays at 17:00 UTC](https://zoom.us/my/sig.big.data) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit).
-Meeting recordings can be found [here]().
+Meeting recordings can be found [here](https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit).
 
 ## Leads
 * [Anirudh Ramanathan](https://github.com/foxish), Google
+* [Erik Erlandson](https://github.com/erikerlandson), Redhat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-big-data)
