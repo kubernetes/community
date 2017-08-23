@@ -145,6 +145,10 @@ configuration. The three policies are **none**, **static** and **dynamic**.
 
 The active CPU manager policy is set through a new Kubelet
 configuration value `--cpu-manager-policy`. The default value is `none`.
+This policy will be reported in the Node resource as a label with key
+`alpha.kubernetes.io/cpu-policy`.  This allows users with with a policy
+preference to use a node selector to ensure the pod lands on a node with a
+particular cpu manager policy enabled.
 
 The number of CPUs that pods may run on can be implicitly controlled using the
 existing node-allocatable configuration settings. See the [node allocatable
@@ -266,14 +270,22 @@ func (p *staticPolicy) UnregisterContainer(s State, containerID string) error {
        cpuset for all containers running in the shared pool.
 
 1. _The shared pool becomes empty._
-    1. The CPU manager adds a node condition with effect NoSchedule,
-       NoExecute that prevents BestEffort and Burstable QoS class pods from
-       running on the node. BestEffort and Burstable QoS class pods are
-       evicted from the node.
+    1. The CPU manager sets a CPUPressure node condition to true that prevents
+       BestEffort and Burstable QoS class pods with no CPU resource request
+       from being scheduled on the node. Already running BestEffort and Burstable QoS
+       class pods without a CPU resource request are evicted from the node.
+
+       NOTE: The decision to allow the shared pool to completely empty is
+       driven by a desire to keep the scheduler accounting simple. If a
+       --cpu-policy-static-min-shared-cpus flag were to exist, there is no simple way
+       to convey that information to the scheduler. The scheduler would then need to
+       know that some portion of the CPU Allocatable is "special", for use only by
+       non-exlusive containers.
 
 1. _The shared pool becomes nonempty._
-    1. The CPU manager removes the node condition with effect NoSchedule,
-       NoExecute for BestEffort and Burstable QoS class pods.
+    1. The CPU manager sets a CPUPressure node condition to false that allows
+       BestEffort and Burstable QoS class pods with no CPU resource request to
+       be scheduled on the node.
 
 #### Policy 3: "dynamic" cpuset control
 
