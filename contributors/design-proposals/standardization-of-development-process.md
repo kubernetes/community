@@ -7,9 +7,9 @@ Links:
 - Issues:
   - [someIssueURL]()
 - PRs:
-  - [somePullRequestURL]()
+  - https://github.com/kubernetes/community/pull/967
 - MailingListDiscussions:
-  - [someGoogleGroupsURL]()
+  - https://groups.google.com/forum/#!topic/kubernetes-dev/65A-3ULYPB0
 - Documentation:
   - [someDocsLinkURL]()
 ```
