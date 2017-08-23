@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://goo.gl/x5nWrF).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=Lj1ScbXpnpY&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R).
 
 ## Leads
-* [Daniel Smith](https://github.com/lavalamp), Google
-* [David Eads](https://github.com/deads2k), Red Hat
+* Daniel Smith (**[@lavalamp](https://github.com/lavalamp)**), Google
+* David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-api-machinery)

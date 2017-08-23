@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
 
 ## Leads
-* [David Oppenheimer](https://github.com/davidopp), Google
-* [Timothy St. Clair](https://github.com/timothysc), Red Hat
+* David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google
+* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-scheduling)

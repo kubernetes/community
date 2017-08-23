@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=FUUJeWIEej0&list=PL69nYSiGNLP2uTrVwZCFtdEvLQvsbG2w4).
 
 ## Organizers
-* [Vishnu Kannan](https://github.com/vishh), Google
-* [Derek Carr](https://github.com/derekwaynecarr), Red Hat
+* Vishnu Kannan (**[@vishh](https://github.com/vishh)**), Google
+* Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-resource-mgmt)
