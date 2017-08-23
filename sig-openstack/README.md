@@ -24,7 +24,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=iCfUx7ilh
 * [Slack](https://kubernetes.slack.com/messages/sig-openstack)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack)
 
-## GitHub Teams
+## GitHub Teams
 * [@sig-openstack-misc](https://github.com/kubernetes/teams/sig-openstack-misc)
 * [@sig-openstack-test-failures](https://github.com/kubernetes/teams/sig-openstack-test-failures)
 * [@sig-openstack-bugs](https://github.com/kubernetes/teams/sig-openstack-bugs)
