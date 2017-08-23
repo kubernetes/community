@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here]().
 
 ## Leads
-* [Marcin Wielgus](https://github.com/mwielgus), Google
-* [Solly Ross](https://github.com/directxman12), Red Hat
+* Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
+* Solly Ross (**[@directxman12](https://github.com/directxman12)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-autoscaling)

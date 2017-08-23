@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 
 ## Leads
-* [Garrett Rodrigues](https://github.com/grodrigues3), Google
-* [Elsie Phillips](https://github.com/Phillels), CoreOS
+* Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**), Google
+* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), CoreOS
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-contribex)

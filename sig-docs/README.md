@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here]().
 
 ## Leads
-* [Devin Donnelly](https://github.com/devin-donnelly), Google
-* [Jared Bhatti](https://github.com/jaredbhatti), Google
+* Devin Donnelly (**[@devin-donnelly](https://github.com/devin-donnelly)**), Google
+* Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-docs)

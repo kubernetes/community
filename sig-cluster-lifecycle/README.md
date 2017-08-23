@@ -17,15 +17,15 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/a/weave.wor
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=ljK5dgSA7vc&list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 
 ## Leads
-* [Luke Marsden](https://github.com/lukemarsden), Weave
-* [Joe Beda](https://github.com/jbeda), Heptio
-* [Robert Bailey](https://github.com/roberthbailey), Google
+* Luke Marsden (**[@lukemarsden](https://github.com/lukemarsden)**), Weave
+* Joe Beda (**[@jbeda](https://github.com/jbeda)**), Heptio
+* Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 
-## GitHub Teams
+## GitHub Teams
 * [@sig-cluster-lifecycle-misc](https://github.com/kubernetes/teams/sig-cluster-lifecycle-misc)
 * [@sig-cluster-lifecycle-test-failures](https://github.com/kubernetes/teams/sig-cluster-lifecycle-test-failures)
 * [@sig-cluster-lifecycle-bugs](https://github.com/kubernetes/teams/sig-cluster-lifecycle-bugs)

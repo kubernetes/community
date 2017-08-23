@@ -19,9 +19,9 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/a/bobsplane
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
 
 ## Leads
-* [Wojciech Tyczynski](https://github.com/wojtek-t), Google
-* [Bob Wise](https://github.com/countspongebob), Samsung SDS
-* [Joe Beda](https://github.com/jbeda), Heptio
+* Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
+* Bob Wise (**[@countspongebob](https://github.com/countspongebob)**), Samsung SDS
+* Joe Beda (**[@jbeda](https://github.com/jbeda)**), Heptio
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-scalability)

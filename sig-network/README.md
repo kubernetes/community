@@ -17,9 +17,9 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
 
 ## Leads
-* [Tim Hockin](https://github.com/thockin), Google
-* [Dan Williams](https://github.com/dcbw), Red Hat
-* [Casey Davenport](https://github.com/caseydavenport), Tigera
+* Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
+* Dan Williams (**[@dcbw](https://github.com/dcbw)**), Red Hat
+* Casey Davenport (**[@caseydavenport](https://github.com/caseydavenport)**), Tigera
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-network)

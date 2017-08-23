@@ -17,10 +17,10 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here]().
 
 ## Leads
-* [Justin Santa Barbara](https://github.com/justinsb)
-* [Kris Nova](https://github.com/kris-nova), Microsoft
-* [Chris Love](https://github.com/chrislovecnm)
-* [Mackenzie Burnett](https://github.com/mfburnett), Redspread
+* Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
+* Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Microsoft
+* Chris Love (**[@chrislovecnm](https://github.com/chrislovecnm)**)
+* Mackenzie Burnett (**[@mfburnett](https://github.com/mfburnett)**), Redspread
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-aws)

@@ -17,9 +17,9 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3).
 
 ## Leads
-* [Michelle Noorali](https://github.com/michelleN), Microsoft
-* [Matt Farina](https://github.com/mattfarina), Samsung SDS
-* [Adnan Abdulhussein](https://github.com/prydonius), Bitnami
+* Michelle Noorali (**[@michelleN](https://github.com/michelleN)**), Microsoft
+* Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
+* Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), Bitnami
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-apps)

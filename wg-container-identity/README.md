@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here]().
 
 ## Organizers
-* [Clayton Coleman](https://github.com/smarterclayton), Red Hat
-* [Greg Gastle](https://github.com/destijl), Google
+* Clayton Coleman (**[@smarterclayton](https://github.com/smarterclayton)**), Red Hat
+* Greg Gastle (**[@destijl](https://github.com/destijl)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-container-identity)
