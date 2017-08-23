@@ -35,6 +35,15 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   whereas previously it was always a fileystem. In addition, the ability to use a raw block device without a filesystem will allow
   Kubernetes better support of high performance applications that can utilize raw block devices directly for their storage. 
   For example, MariaDB or MongoDB.
+  
+  Specific use cases around improved usage of storage consumption are included in the use cases listed below as follows:
+  * An admin wishes to expose a block volume to be consumed as a block volume for the user
+  * A user wishes to be specific about the storage consumption and intentionally request a block device
+  * A user wishes to utilitze block storage to fully realize the performance of an application tuned to using block devices
+  * A user wishes to utilize raw block devices for consumption from a virtual machine
+  Future use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the foundation
+  for more fully developing these methods to enable block volume consumption.
+  
     
 # Design Overview
 
@@ -50,10 +59,12 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   By explicitly having volumeType in the PV and PVC can help the storage provider determine what scrubbing method to use. As an example,
   for local storage:
   
-  PV = block, PVC = block: zero the bytes
-  PV = block, PVC = file: destroy the filesystem
-  PV = file, PVC = file: delete the files
-
+  | PV                | PVC              | action              |  
+  | --------------    |:----------------:| -------------------:|
+  | block             |  block           | zero the bytes      |  
+  | block             |  file            | destroy filesystem  |
+  | file              |  file            | delete the files    |
+  
   The last design point is block devices should be able to be fully restricted by the admin in accordance with how inline volumes 
   are today. Ideally, the admin would want to be able to restrict either raw-local devices and or raw-network attached devices.
   
@@ -115,7 +126,7 @@ spec:
   persistentVolumeReclaimPolicy: Delete 
 ```
 
-## Storage Class API Changes:
+## Storage Class non-API Changes:
 For dynamic provisioning, it is assumed that values pass in the parameter section are opaque, thus the introduction of utilizing
 fsType in the StorageClass can be used by the provisioner to indicate how to create the volume. The proposal for this value is
 defined here:
@@ -144,7 +155,19 @@ metadata:
 provisioner: no-provisioning 
 parameters:
 ```
-  
+
+# Pod Security Policy (PSP) Changes:
+Since the utilization of block devices can pose a risk to possible kernel manipulation by malicious users, it may be desirable for the administrator to restrict the usage entirely within a cluster. A similar convention is used with hostPath in that for some kubernetes 
+implmentations it is disabled by default.
+Thus, the PSP can define whether a validating pod can request the usage of such devices through the volumeType label in the PV/PVC.
+The changes to the pod security policy for volumes would include a 'rawBlockVolumes' parameter as such:
+
+```
+NAME               PRIV      CAPS      SELINUX     RUNASUSER          FSGROUP     SUPGROUP    PRIORITY   READONLYROOTFS   VOLUMES
+anyuid             false     []        MustRunAs   RunAsAny           RunAsAny    RunAsAny    10         false            [configMap downwardAPI emptyDir persistentVolumeClaim secret rawBlockVolume]
+```
+
+
 # Use Cases
 
 ## UC1: 
@@ -415,9 +438,10 @@ It is important the values that are passed to the container runtimes are valid a
 
 The accessModes would be passed as part of the options array and would need validate against the specific runtime engine. 
 Since rkt doesn't use the CRI, the config values would need to be passed in the legacy method.
+Note: the container runtime doesn't require a priviledged pod to enable the device as RWX (RMW).
 
 The runtime option would be placed in the DeviceInfo as such:
-devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "mrw"}) for RWO
+devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "rmw"}) for RWO
 
 The implemenation plan would be to rename the current makeDevices ot makeGPUDevices and create a seperate function to add the raw block devices to the option array to be passed to the container runtime. This would interate on the paths passed in for the pod/container.
 
@@ -429,18 +453,16 @@ Feature: Pre-provisioned PVs to precreated devices
                Milestone 1: API changes
 
                Milestone 2: Restricted Access 
+              
+               Milestone 3: Changes to the mounter interface as today it is assumed 'file' as the default.
                
-               Milestone 3: Scrubbing device after PV is deleted
+               Milestone 4: Expose volumeType to users via kubectl
                
-               Milestone 4: Changes to the mounter interface as today it is assumed 'file' as the default.
+               Milestone 5: Adds enable/disable configuration to securityContext in PSP (Pod Security Policy) similar to hostPath
                
-               Milestone 5: Expose volumeType to users via kubectl
-               
-               Milestone 6: Adds enable/disable configuration to securityContext in PSP (Pod Security Policy) similar to hostPath
-               
-               Milestone 7: Validate container runtime options with user specifcations as indicated in UC3
+               Milestone 6: Validate container runtime options with user specifcations as indicated in UC3
 	       
-	       Milestone 8: Container Runtime changes
+	       Milestone 7: Container Runtime changes
 
 Phase 2:  v1.9
 Feature: Discovery of block devices 
