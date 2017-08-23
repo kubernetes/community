@@ -53,7 +53,7 @@ Each binary that generates events:
  * Maintains a historical record of previously generated events:
    * Implemented with
 ["Least Recently Used Cache"](https://github.com/golang/groupcache/blob/master/lru/lru.go)
-in [`pkg/client/record/events_cache.go`](../../pkg/client/record/events_cache.go).
+in [`pkg/client/record/events_cache.go`](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/tools/record/events_cache.go).
    * Implemented behind an `EventCorrelator` that manages two subcomponents:
 `EventAggregator` and `EventLogger`.
    * The `EventCorrelator` observes all incoming events and lets each
@@ -98,7 +98,7 @@ of time and generates tons of unique events, the previously generated events
 cache will not grow unchecked in memory. Instead, after 4096 unique events are
 generated, the oldest events are evicted from the cache.
  * When an event is generated, the previously generated events cache is checked
-(see [`pkg/client/unversioned/record/event.go`](http://releases.k8s.io/HEAD/pkg/client/record/event.go)).
+(see [`pkg/client/unversioned/record/event.go`](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/tools/record/event.go)).
    * If the key for the new event matches the key for a previously generated
 event (meaning all of the above fields match between the new event and some
 previously generated event), then the event is considered to be a duplicate and
