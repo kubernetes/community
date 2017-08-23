@@ -34,14 +34,12 @@ which is mistakenly taken as Job's restart policy ([#30243](https://github.com/k
 [#[43964](https://github.com/kubernetes/kubernetes/issues/43964)]).  There are
 situation where one wants to fail a Job after some amount of retries over a certain
 period of time, due to a logical error in configuration etc.  To do so we are going
-to introduce following fields, which will control the backoff policy: a number of
-retries and a time to retry (counted from the first failure).  The two fields will
-allow fine-grained control over the backoff policy, limiting the number of retries
-over a specified period of time.  If only one of the two fields is supplied,
-a backoff with an intervening duration of ten seconds and a factor of two will be
-applied, such that either:
-* the number of retries will not exceed a specified count, if present, or
-* the maximum time elapsed will not exceed the specified duration, if present.
+to introduce the following fields, which will control the backoff policy: a number of
+retries and an initial time of retry.  The two fields will allow fine-grained control
+over the backoff policy.  Each of the two fields will use a default value if none
+is provided,  `BackoffLimit` is set by default to 6 and `BackoffSeconds` to 10s.
+This will result in the following retry sequence: 10s, 20s, 40s, 1m20s, 2m40s,
+5m20s.  After which the job will be considered failed.
 
 Additionally, to help debug the issue with a Job, and limit the impact of having
 too many failed pods left around (as mentioned in [#30243](https://github.com/kubernetes/kubernetes/issues/30243)),
@@ -56,6 +54,9 @@ is set on a `PodTemplate`.  The only difference applies to how failures are coun
 For restart policy `Never` we count actual pod failures (reflected in `.status.failed`
 field). With restart policy `OnFailure` we take an approximate value of pod restarts
 (as reported in `.status.containerStatuses[*].restartCount`).
+When `.spec.parallelism` is set to a value higher than 1, the failures are an
+overall number (as coming from `.status.failed`) because the controller does not
+hold information about failures coming from separate pods.
 
 
 ## Implementation
@@ -118,10 +119,12 @@ type JobSpec struct {
     ActiveDeadlineSeconds *int64
 
     // Optional number of retries before marking this job failed.
+    // Defaults to 6.
     BackoffLimit *int32
 
-    // Optional time (in seconds) specifying how long a job should be retried before marking it failed.
-    BackoffDeadlineSeconds *int64
+    // Optional time (in seconds) specifying how long the initial backoff will last.
+    // Defaults to 10s.
+    BackoffSeconds *int64
 
     // Optional number of failed pods to retain.
     FailedPodsLimit *int32
