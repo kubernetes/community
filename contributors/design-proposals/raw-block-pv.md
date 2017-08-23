@@ -41,8 +41,12 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   * A user wishes to be specific about the storage consumption and intentionally request a block device
   * A user wishes to utilitze block storage to fully realize the performance of an application tuned to using block devices
   * A user wishes to utilize raw block devices for consumption from a virtual machine
-  Future use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the foundation
-  for more fully developing these methods to enable block volume consumption.
+  Future use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the 
+  foundation for more fully developing these methods to enable block volume consumption.
+  
+  When a PV is bound, it is either bound as a raw block device or formatted with a filesystem. Therefore, the PVC drives the request and
+  intended usage of the device by specifying the volumeType as part of the API. This design lends itself to future support of dynamic 
+  provisioning by also letting the request intiate from the PVC defining the role for the PV. 
   
     
 # Design Overview
