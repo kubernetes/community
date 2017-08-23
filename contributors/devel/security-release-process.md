@@ -11,7 +11,7 @@ The Product Security Team (PST) is responsible for organizing the entire respons
 The initial Product Security Team will consist of four volunteers subscribed to the private [Kubernetes Security](https://groups.google.com/forum/#!forum/kubernetes-security) list. These are the people who have been involved in the initial discussion and volunteered:
 
 - Brandon Philips `<brandon.philips@coreos.com>` [4096R/154343260542DF34]
-- Jess Frazelle `<jessfraz@google.com>` [4096R/0x18F3685C0022BFF3]
+- Jess Frazelle `<jess@linux.com>` [4096R/0x18F3685C0022BFF3]
 - CJ Cullen `<cjcullen@google.com>`
 - Tim Allclair `<tallclair@google.com>` [4096R/0x5E6F2E2DA760AF51]
 - Jordan Liggitt `<jliggitt@redhat.com>` [4096R/0x39928704103C7229]
