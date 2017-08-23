@@ -18,6 +18,7 @@ Meeting recordings can be found [here]().
 
 ## Leads
 * [Anirudh Ramanathan](https://github.com/foxish), Google
+* [Erik Erlandson](https://github.com/erikerlandson), Redhat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-big-data)
