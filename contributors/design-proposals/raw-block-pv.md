@@ -30,6 +30,9 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   Block volumes are critical to applications like databases (MongoDB, Cassandra) that require consistent I/O performance
   and low latency. For mission critical applications, like SAP, block storage is a requirement. 
   
+  For applications that use block storage natively (like MongoDB) no additional configuration is required as the mount path passed
+  to the application provides the device which MongoDB then uses for the storage path in the configuration file (dbpath).
+  
   Specific use cases around improved usage of storage consumption are included in the use cases listed below as follows:
   * An admin wishes to expose a block volume to be consumed as a block volume for the user
   * A user wishes to be specific about the storage consumption and intentionally request a block device
