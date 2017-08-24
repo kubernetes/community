@@ -17,14 +17,14 @@ Federation runs two classes of tests: CI and Presubmits.
 
 ### Configuration
 
-Configuration steps are described in https://github.com/kubernetes/test-infra/blob/0c56d2c9d32307c0a0f8fece85ef6919389e77fd/jenkins/README.md#how-to-work-with-jenkins-jobs
+Configuration steps are described in https://github.com/kubernetes/test-infra#create-a-new-job
 
 The configuration of CI tests are stored in:
 
-* Jenkins config: https://github.com/kubernetes/test-infra/blob/0c56d2c9d32307c0a0f8fece85ef6919389e77fd/jenkins/job-configs/kubernetes-jenkins/bootstrap-ci.yaml
-* Test job/bootstrap config: https://github.com/kubernetes/test-infra/blob/0c56d2c9d32307c0a0f8fece85ef6919389e77fd/jobs/config.json
-* Test grid config: https://github.com/kubernetes/test-infra/blob/0c56d2c9d32307c0a0f8fece85ef6919389e77fd/testgrid/config/config.yaml
-* Job specific config: https://github.com/kubernetes/test-infra/tree/0c56d2c9d32307c0a0f8fece85ef6919389e77fd/jobs
+* Prow config: https://github.com/kubernetes/test-infra/blob/499410989420f724b833b07f797fde38fff58910/prow/config.yaml
+* Test job/bootstrap config: https://github.com/kubernetes/test-infra/blob/499410989420f724b833b07f797fde38fff58910/jobs/config.json
+* Test grid config: https://github.com/kubernetes/test-infra/blob/499410989420f724b833b07f797fde38fff58910/testgrid/config/config.yaml
+* Job specific config: https://github.com/kubernetes/test-infra/tree/499410989420f724b833b07f797fde38fff58910/jobs/env
 
 ### Results
 
@@ -37,9 +37,10 @@ https://k8s-testgrid.appspot.com/sig-federation
 
 #### Triggering a new run
 
-Please ping someone who has access to the Jenkins UI/dashboard and ask
-them to login and click the "Build Now" link on the Jenkins page
-corresponding to the CI job you want to manually start.
+Please ping someone who has access to the prow project and ask
+them to click the `rerun` button from, for example 
+http://prow.k8s.io/?type=periodic&job=ci-kubernetes-e2e-gce-federation,
+and execute the kubectl command.
 
 #### Quota cleanup
 
