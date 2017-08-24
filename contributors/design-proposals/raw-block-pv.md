@@ -22,31 +22,28 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   mechanisms.
    
 # Value add to Kubernetes
-
-  Before the advent of storage plugins, emptyDir and hostPath were widely used to quickly prototype stateless applications in Kubernetes. 
-  Both have limitations for their use in application that need to store persistent data or state. 
-  EmptyDir, though quick and easy to use, provides no real guarantee of persistence for suitable amount of time. 
-  Appropriately used as scratch space, it does not have the HostPath, became an initial offering for local storage, but had many
-  drawbacks. Without having the ability to guarantee space & ensure ownership, one would lose data once a node was rescheduled. 
-  Therefore, the risk outweighed the reward when trying to  leverage the power of local storage needed for stateful applications like 
-  databases.
   
   By extending the API for volumes to specifically request a raw block device, we provide an explicit method for volume comsumption,
-  whereas previously it was always a fileystem. In addition, the ability to use a raw block device without a filesystem will allow
+  whereas previously any request for storage was always fullfilled with a formatted fileystem, even when the underlying storage was 
+  block. In addition, the ability to use a raw block device without a filesystem will allow
   Kubernetes better support of high performance applications that can utilize raw block devices directly for their storage. 
-  For example, MariaDB or MongoDB.
+  Block volumes are critical to applications like databases (MongoDB, Cassandra) that require consistent I/O performance
+  and low latency. For mission critical applications, like SAP, block storage is a requirement. 
   
   Specific use cases around improved usage of storage consumption are included in the use cases listed below as follows:
   * An admin wishes to expose a block volume to be consumed as a block volume for the user
   * A user wishes to be specific about the storage consumption and intentionally request a block device
   * A user wishes to utilitze block storage to fully realize the performance of an application tuned to using block devices
   * A user wishes to utilize raw block devices for consumption from a virtual machine
+  * A user wishes to specify an inline volume as a block device in their pod
   Future use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the 
-  foundation for more fully developing these methods to enable block volume consumption.
+  foundation for more fully developing these methods. 
   
-  When a PV is bound, it is either bound as a raw block device or formatted with a filesystem. Therefore, the PVC drives the request and
-  intended usage of the device by specifying the volumeType as part of the API. This design lends itself to future support of dynamic 
-  provisioning by also letting the request intiate from the PVC defining the role for the PV. 
+  It is importnant to note that when a PV is bound, it is either bound as a raw block device or formatted with a filesystem. Therefore, 
+  the PVC drives the request and intended usage of the device by specifying the volumeMode as part of the API. This design lends itself
+  to future support of dynamic provisioning by also letting the request intiate from the PVC defining the role for the PV. It also allows
+  flexibility in the implementation and storage plugins to determine their support of this feature.
+  
   
     
 # Design Overview
@@ -54,13 +51,13 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   The proposed design is based on the idea of leveraging well defined concepts for storage in Kubernetes. The consumption and 
   definitions for the block devices will be driven through the PVC and PV and Storage Class definitions. Along with Storage
   Resource definitions, this will provide the admin with a consistent way of managing all storage. 
-  The API changes proposed in the following section are minimal with the idea of defining a volumeType to indicate both the definition
+  The API changes proposed in the following section are minimal with the idea of defining a volumeMode to indicate both the definition
   and consumption of the devices. Since it's possible to create a volume as a block device and then later consume it by provisioning
   a filesystem on top, the design requires explicit intent for how the volume will be used.
   The additional benefit of explicitly defining how the volume is to be consumed will provide a means for indicating the method
   by which the device should be scrubbed when the claim is deleted, as this method will differ from a raw block device compared to a 
   filesystem. The ownership and responsibility of scrubbing the device properly shall be up to the plugin method being utilized. 
-  By explicitly having volumeType in the PV and PVC can help the storage provider determine what scrubbing method to use. As an example,
+  By explicitly having volumeMode in the PV and PVC can help the storage provider determine what scrubbing method to use. As an example,
   for local storage:
   
   | PV                | PVC              | action              |  
@@ -75,8 +72,8 @@ This document presents a proposal for managing raw block storage in Kubernetes u
 # Proposed API Changes
    
 ## Persistent Volume Claim API Changes:
-In the simplest case of static provisioning, a user asks for a volumeType of block. The binder will only bind to a PV defined 
-with the same volumeType.
+In the simplest case of static provisioning, a user asks for a volumeMode of block. The binder will only bind to a PV defined 
+with the same volumeMode.
 
 ```
 kind: PersistentVolumeClaim
@@ -84,7 +81,7 @@ apiVersion: v1
 metadata:
 name: myclaim
 spec:
-  volumeType: block #proposed API change
+  volumeMode: block #proposed API change
   accessModes:
     - ReadWriteOnce
   resources:
@@ -93,7 +90,7 @@ spec:
 ```
 
 For dynamic provisioning and the use of the storageClass, the admin also specifically defines the intent of the volume by 
-indicating the volumeType as block. The provisioner for this class will validate whether or not it supports block and return
+indicating the volumeMode as block. The provisioner for this class will validate whether or not it supports block and return
 an error if it does not.
 
 ```
@@ -103,7 +100,7 @@ metadata:
 name: myclaim
 spec:
   storageClassName: local-fast 
-  volumeType: block #proposed API change
+  volumeMode: block #proposed API change
   accessModes:
     - ReadWriteOnce
   resources:
@@ -113,14 +110,14 @@ spec:
 
 ## Persistent Volume API Changes:
 For static provisioning the admin creates the volume and also is intentional about how the volume should be consumed. For backwards
-compatibility, the absence of volumeType will default to file which is how volumes work today, which are formatted with a filesystem depending on the plug-in chosen. Recycling will not be a supported reclaim policy. Once the user deletes the claim against a PV, the volume will be scrubbed according to how it was bound. The path value in the local PV definition would be overloaded to define the path of the raw block device rather than the fileystem path.
+compatibility, the absence of volumeMode will default to file which is how volumes work today, which are formatted with a filesystem depending on the plug-in chosen. Recycling will not be a supported reclaim policy. Once the user deletes the claim against a PV, the volume will be scrubbed according to how it was bound. The path value in the local PV definition would be overloaded to define the path of the raw block device rather than the fileystem path.
 ```
 kind: PersistentVolume
 apiVersion: v1
 metadata:
 name: local-raw-pv
 spec:
-  volumeType: block #proposed API change
+  volumeMode: block #proposed API change
   capacity:
     storage: 100Gi
   local:
@@ -135,8 +132,10 @@ For dynamic provisioning, it is assumed that values pass in the parameter sectio
 fsType in the StorageClass can be used by the provisioner to indicate how to create the volume. The proposal for this value is
 defined here:
 https://github.com/kubernetes/kubernetes/pull/45345 
-Therefore, a provisioner could potentially provision a block device and install the filesystem onto it by indicating the volumeType
+Therefore, a provisioner could potentially provision a block device and install the filesystem onto it by indicating the volumeMode
 as 'block' but the fsType as 'xfs'.
+This section is provided as a general guideline, but each provisioner may implement their parameters independent of what is defined
+here.
 
 ```
 kind: StorageClass
@@ -145,8 +144,8 @@ metadata:
   name: block-volume
 provisioner: kubernetes.io/local-block-glusterfs
 parameters:
-  volumeType: block #opaque value  / plug-in dependent
-  fsType: xfs
+  volumeMode: block #opaque value  / plug-in dependent -AND/OR-
+  fsType: block
 ```
 The provisioner (if applicable) should validate the parameters and return and error if the combination specified is not supported.
 This also allows the use case for leveraging a Storage Class for utilizing pre-defined static volumes. By labeling the Persistent Volumes
@@ -163,7 +162,7 @@ parameters:
 # Pod Security Policy (PSP) Changes:
 Since the utilization of block devices can pose a risk to possible kernel manipulation by malicious users, it may be desirable for the administrator to restrict the usage entirely within a cluster. A similar convention is used with hostPath in that for some kubernetes 
 implmentations it is disabled by default.
-Thus, the PSP can define whether a validating pod can request the usage of such devices through the volumeType label in the PV/PVC.
+Thus, the PSP can define whether a validating pod can request the usage of such devices through the volumeMode label in the PV/PVC.
 The changes to the pod security policy for volumes would include a 'rawBlockVolumes' parameter as such:
 
 ```
@@ -176,7 +175,7 @@ anyuid             false     []        MustRunAs   RunAsAny           RunAsAny  
 
 ## UC1: 
 
-DESCRIPTION: An admin wishes to pre-create a series of local raw block devices to expose as PVs for consumption. The admin wishes to specify the purpose of these devices by specifying 'block' as the volumeType for the PVs.
+DESCRIPTION: An admin wishes to pre-create a series of local raw block devices to expose as PVs for consumption. The admin wishes to specify the purpose of these devices by specifying 'block' as the volumeMode for the PVs.
 
 WORKFLOW:
 
@@ -188,7 +187,7 @@ apiVersion: v1
 metadata:
   name: local-raw-pv
 spec:
-  volumeType: block
+  volumeMode: block
   capacity:
     storage: 100Gi
   local:
@@ -216,7 +215,7 @@ apiVersion: v1
 metadata:
   name: raw-pv
 spec:
-  volumeType: block
+  volumeMode: block
   capacity:
     storage: 100Gi
   accessModes:
@@ -230,7 +229,7 @@ spec:
 
 USER:
 
-* User creates a persistent volume claim with volumeType: block option to bind pre-created iSCSI PV.
+* User creates a persistent volume claim with volumeMode: block option to bind pre-created iSCSI PV.
 
 ```
 kind: PersistentVolumeClaim
@@ -238,7 +237,7 @@ apiVersion: v1
 metadata:
   name: raw-pvc
 spec:
-  volumeType: block
+  volumeMode: block
   accessModes:
     - ReadWriteOnce
   resources:
@@ -288,7 +287,7 @@ apiVersion: v1
 metadata:
   name: local-raw-pvc
 spec:
-  volumeType: block
+  volumeMode: block
   accessModes:
     - ReadWriteOnce
   resources:
@@ -323,7 +322,7 @@ spec:
 
 DESCRIPTION: StorageClass with non-dynamically created volumes
 
-BACKGROUND: The admin wishes to create a storage class that will identify pre-provisioned block PVs based on a user's PVC request for volumeType: Block. 
+BACKGROUND: The admin wishes to create a storage class that will identify pre-provisioned block PVs based on a user's PVC request for volumeMode: Block. 
 
 WORKFLOW: 
 
@@ -336,7 +335,7 @@ metadata:
   name: block-volume
 provisioner: no-provisioning 
 parameters:
-  volumeType: block
+  volumeMode: block
 ```
 * Sample of pre-created volume definition:
 
@@ -346,7 +345,7 @@ kind: PersistentVolume
 metadata:
  name: pv-block-volume
 spec:
- volumeType: block
+ volumeMode: block
  storageClassName: block-volume
  capacity:
    storage: 35Gi
@@ -359,7 +358,7 @@ spec:
 
 DESCRIPTION: StorageClass with dynamically created volumes 
 
-BACKGROUND: The admin wishes to create a storage class that will dynamically create block PVs based on a user's PVC request for volumeType: Block. The admin desires the volumes be created dynamically and deleted when the PV definition is deleted. 
+BACKGROUND: The admin wishes to create a storage class that will dynamically create block PVs based on a user's PVC request for volumeMode: Block. The admin desires the volumes be created dynamically and deleted when the PV definition is deleted. 
 
 WORKFLOW:
 
@@ -372,7 +371,7 @@ metadata:
   name: local-fast
 provisioner: kubernetes.io/local-block-ssd
 parameters:
-  volumeType: block
+  volumeMode: block #suggested value - this is plugin dependent
 ```
 
 ***This has implementation details that have yet to be determined. It is included in this proposal for completeness of design ****
@@ -391,7 +390,7 @@ kind: PersistentVolumeClaim
 metadata:
  name: pvc-local-block
 spec:
- volumeType: block
+ volumeMode: block
  storageClassName: local-fast
  accessModes:
   - ReadWriteOnce
@@ -418,7 +417,7 @@ metadata:
   annotations:
     volume.beta.kubernetes.io/mount-options: "discard"
 Spec:
-  volumeType: block
+  volumeMode: block
   capacity:
     storage: "10Gi"
   accessModes:
@@ -428,9 +427,9 @@ Spec:
     pdName: "gce-disk-1"
 ```
 
-***If admin specifies volumeType: block + fstype: ext4 then they would have the default behavior of files on block ***
+***If admin specifies volumeMode: block + fstype: ext4 then they would have the default behavior of files on block ***
 ***fsType values will be provisioner dependent. Block is suggested for development simplicity. Since the PVC object is passed
-   to the provisioner, it will be responsible for validating and handling whether or not it supports the volumeType being passed ***
+   to the provisioner, it will be responsible for validating and handling whether or not it supports the volumeMode being passed ***
 
 # Container Runtime considerations
 It is important the values that are passed to the container runtimes are valid and support the current implementation of these various runtimes. Listed below are a table of various runtime and the mapping of their values to what is passed from the mount. 
@@ -460,7 +459,7 @@ Feature: Pre-provisioned PVs to precreated devices
               
                Milestone 3: Changes to the mounter interface as today it is assumed 'file' as the default.
                
-               Milestone 4: Expose volumeType to users via kubectl
+               Milestone 4: Expose volumeMode to users via kubectl
                
                Milestone 5: Adds enable/disable configuration to securityContext in PSP (Pod Security Policy) similar to hostPath
                
@@ -499,7 +498,7 @@ type BlockUnmounter interface {
 ```
 # Mounter binding matrix for statically provisioned volumes:
 
-| PV volumeType | PVC volumeType  | Result           |
+| PV volumeMode | PVC volumeMode  | Result           |
 | --------------|:---------------:| ----------------:|
 |   unspecified | unspecified     | BIND             |
 |   file        | file            | BIND             |
