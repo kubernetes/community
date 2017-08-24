@@ -26,7 +26,7 @@ Either signup form looks like this:
 
 #### 3. Enter the correct E-mail address to validate!
 
-The address entered on the form must meet two constraints:
+The address entered in the form must meet two constraints:
  
  * It __must match__ your  [git email] (the output of `git config user.email`)
    or your PRs will not be approved!
