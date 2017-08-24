@@ -27,13 +27,6 @@ See [Driver output](#driver-output) for the capabilities map format.
 <driver executable> init
 ```
 
-#### Get volume name:
-Get a cluster wide unique volume name for the volume. Called from both Kubelet & Controller manager.
-
-```
-<driver executable> getvolumename <json options>
-```
-
 #### Attach:
 Attach the volume specified by the given spec on the given host. On success, returns the device path where the device is attached on the node. Nodename param is only valid/relevant if "--enable-controller-attach-detach" Kubelet option is enabled. Called from both Kubelet & Controller manager.
 
