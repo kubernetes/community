@@ -20,6 +20,8 @@ This document presents a proposal for managing raw block storage in Kubernetes u
 # Non Goals
 * Support all storage devices natively in upstream Kubernetes. Non-standard storage devices are expected to be managed using extension
   mechanisms.
+* Provide a means for full integration into the scheduler based on non-storage related requests (CPU, etc.)
+* Provide a means of ensuring specific topology to ensure co-location of the data 
    
 # Value add to Kubernetes
   
@@ -31,7 +33,8 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   and low latency. For mission critical applications, like SAP, block storage is a requirement. 
   
   For applications that use block storage natively (like MongoDB) no additional configuration is required as the mount path passed
-  to the application provides the device which MongoDB then uses for the storage path in the configuration file (dbpath).
+  to the application provides the device which MongoDB then uses for the storage path in the configuration file (dbpath). Specific
+  tuning for each application to achieve the highest possibly performance is provided as part of its recommended configurations.
   
   Specific use cases around improved usage of storage consumption are included in the use cases listed below as follows:
   * An admin wishes to expose a block volume to be consumed as a block volume for the user
@@ -46,31 +49,27 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   the PVC drives the request and intended usage of the device by specifying the volumeMode as part of the API. This design lends itself
   to future support of dynamic provisioning by also letting the request intiate from the PVC defining the role for the PV. It also allows
   flexibility in the implementation and storage plugins to determine their support of this feature.
-  
-  
-    
+ 
 # Design Overview
 
   The proposed design is based on the idea of leveraging well defined concepts for storage in Kubernetes. The consumption and 
-  definitions for the block devices will be driven through the PVC and PV and Storage Class definitions. Along with Storage
+  definitions for the block devices will be driven through the PVC and PV definitions. Along with Storage
   Resource definitions, this will provide the admin with a consistent way of managing all storage. 
   The API changes proposed in the following section are minimal with the idea of defining a volumeMode to indicate both the definition
   and consumption of the devices. Since it's possible to create a volume as a block device and then later consume it by provisioning
   a filesystem on top, the design requires explicit intent for how the volume will be used.
   The additional benefit of explicitly defining how the volume is to be consumed will provide a means for indicating the method
   by which the device should be scrubbed when the claim is deleted, as this method will differ from a raw block device compared to a 
-  filesystem. The ownership and responsibility of scrubbing the device properly shall be up to the plugin method being utilized. 
-  By explicitly having volumeMode in the PV and PVC can help the storage provider determine what scrubbing method to use. As an example,
-  for local storage:
-  
-  | PV                | PVC              | action              |  
-  | --------------    |:----------------:| -------------------:|
-  | block             |  block           | zero the bytes      |  
-  | block             |  file            | destroy filesystem  |
-  | file              |  file            | delete the files    |
+  filesystem. The ownership and responsibility of defining the rention policy shall be up to the plugin method being utilized and is not 
+  covered in this proposal.
   
   The last design point is block devices should be able to be fully restricted by the admin in accordance with how inline volumes 
   are today. Ideally, the admin would want to be able to restrict either raw-local devices and or raw-network attached devices.
+  
+  To ensure backwards compatibility and a phased transition of this feature, the consensus from the community is to intentionally disable
+  the volumeMode: block for external provisioners until a suitable implementation for provisioner versioning has been accepted and 
+  implemented in the community. This requirement is better described in the design PR discussion and will be implemented as a seperate
+  initiative. 
   
 # Proposed API Changes
    
@@ -113,7 +112,7 @@ spec:
 
 ## Persistent Volume API Changes:
 For static provisioning the admin creates the volume and also is intentional about how the volume should be consumed. For backwards
-compatibility, the absence of volumeMode will default to file which is how volumes work today, which are formatted with a filesystem depending on the plug-in chosen. Recycling will not be a supported reclaim policy. Once the user deletes the claim against a PV, the volume will be scrubbed according to how it was bound. The path value in the local PV definition would be overloaded to define the path of the raw block device rather than the fileystem path.
+compatibility, the absence of volumeMode will default to file which is how volumes work today, which are formatted with a filesystem depending on the plug-in chosen. Recycling will not be a supported reclaim policy as it has been deprecated. The path value in the local PV definition would be overloaded to define the path of the raw block device rather than the fileystem path.
 ```
 kind: PersistentVolume
 apiVersion: v1
@@ -124,12 +123,30 @@ spec:
   capacity:
     storage: 100Gi
   local:
-    path: /dev/xvdc 
+    path: /dev/xvdc #device path
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete 
 ```
-
+## Pod API Changes:
+To provide better specificy and ensure support of inline volumes, the following changes are proposed in the pod specification.
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-db
+spec:
+    containers
+    - name: mysql
+      image: mysql
+      volumeDevices:
+      - name: my-db-data
+      devicePath: /dev/xvda
+    volumes:
+    - name: my-db-data
+      persistentVolumeClaim:
+	claimName: raw-pvc
+```
 ## Storage Class non-API Changes:
 For dynamic provisioning, it is assumed that values pass in the parameter section are opaque, thus the introduction of utilizing
 fsType in the StorageClass can be used by the provisioner to indicate how to create the volume. The proposal for this value is
@@ -166,13 +183,12 @@ parameters:
 Since the utilization of block devices can pose a risk to possible kernel manipulation by malicious users, it may be desirable for the administrator to restrict the usage entirely within a cluster. A similar convention is used with hostPath in that for some kubernetes 
 implmentations it is disabled by default.
 Thus, the PSP can define whether a validating pod can request the usage of such devices through the volumeMode label in the PV/PVC.
-The changes to the pod security policy for volumes would include a 'rawBlockVolumes' parameter as such:
+The changes to the pod security policy for volumes would include a 'localRawBlockVolumes' and 'newtworkRawBlockVolumes' parameters as such:
 
 ```
 NAME               PRIV      CAPS      SELINUX     RUNASUSER          FSGROUP     SUPGROUP    PRIORITY   READONLYROOTFS   VOLUMES
-anyuid             false     []        MustRunAs   RunAsAny           RunAsAny    RunAsAny    10         false            [configMap downwardAPI emptyDir persistentVolumeClaim secret rawBlockVolume]
+anyuid             false     []        MustRunAs   RunAsAny           RunAsAny    RunAsAny    10         false            [configMap downwardAPI emptyDir persistentVolumeClaim secret localRawBlockVolumes networkRawBlockVolumes]
 ```
-
 
 # Use Cases
 
@@ -259,9 +275,9 @@ spec:
     containers
     - name: mysql
       image: mysql
-      volumeMounts:
+      volumeDevices:
       - name: my-db-data
-	mountPath: /dev/xvda
+      devicePath: /dev/xvda
     volumes:
     - name: my-db-data
       persistentVolumeClaim:
@@ -307,9 +323,9 @@ spec:
     containers:
     - name: mysql
       image: mysql
-      volumeMounts:
+      volumeDevices:
       - name: my-db-data
-	mountPath: /var/lib/mysql/data
+      devicePath: /var/lib/mysql/data
     volumes:
     - name: my-db-data
       persistentVolumeClaim:
@@ -318,8 +334,6 @@ spec:
   NOTE: *accessModes correspond to the container runtime values. Where RWO == RWM (mknod) to enable the device to be written to and
   create new files. (Default is RWM) ROX == R
   **(RWX is NOT valid for block and should return an error.)** * This has been validated among runc, Docker and rocket. 
-
-
 
 ## UC4: 
 
@@ -338,7 +352,6 @@ metadata:
   name: block-volume
 provisioner: no-provisioning 
 parameters:
-  volumeMode: block
 ```
 * Sample of pre-created volume definition:
 
@@ -374,7 +387,7 @@ metadata:
   name: local-fast
 provisioner: kubernetes.io/local-block-ssd
 parameters:
-  volumeMode: block #suggested value - this is plugin dependent
+  volumeMode: block #suggested value - this is plugin/provisioner dependent
 ```
 
 ***This has implementation details that have yet to be determined. It is included in this proposal for completeness of design ****
@@ -435,7 +448,7 @@ Spec:
    to the provisioner, it will be responsible for validating and handling whether or not it supports the volumeMode being passed ***
 
 # Container Runtime considerations
-It is important the values that are passed to the container runtimes are valid and support the current implementation of these various runtimes. Listed below are a table of various runtime and the mapping of their values to what is passed from the mount. 
+It is important the values that are passed to the container runtimes are valid and support the current implementation of these various runtimes. Listed below are a table of various runtime and the mapping of their values to what is passed from the kubelet.
 
 | runtime engine    | runtime options  | accessMode       |  
 | --------------    |:----------------:| ----------------:|
@@ -447,9 +460,14 @@ Since rkt doesn't use the CRI, the config values would need to be passed in the 
 Note: the container runtime doesn't require a priviledged pod to enable the device as RWX (RMW).
 
 The runtime option would be placed in the DeviceInfo as such:
-devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "rmw"}) for RWO
+devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "rmw"}) 
 
-The implemenation plan would be to rename the current makeDevices ot makeGPUDevices and create a seperate function to add the raw block devices to the option array to be passed to the container runtime. This would interate on the paths passed in for the pod/container.
+The implemenation plan would be to rename the current makeDevices to makeGPUDevices and create a seperate function to add the raw block devices to the option array to be passed to the container runtime. This would interate on the paths passed in for the pod/container.
+
+Since the future of this in Kubernetes for GPUs and other plugable devices is migrating to a device plugin architecture, there are 
+still differentiating components of storage that are enough to not to enforce alignment to their convention. Two factors when
+considering the usage of device plugins center around discoverability and topology of devices. Since neither of these are requirements
+for using raw block devices, the legacy method of populating the devices and appending it to the device array is sufficient.
 
 # Implementation Plan, Features & Milesones
 
