@@ -18,20 +18,20 @@ In addition to this, with taint-based-eviction, the Node Controller already tain
 | ConditionType      | Condition Status   |Effect        | Key      |
 | ------------------ | ------------------ | ------------ | -------- |
 |Ready               |True                | -            | |
-|                    |False               | NoExecute    | node.kubernetes.io/notReady           |
+|                    |False               | NoExecute    | node.kubernetes.io/not-ready           |
 |                    |Unknown             | NoExecute    | node.kubernetes.io/unreachable        |
-|OutOfDisk           |True                | NoSchedule   | node.kubernetes.io/outOfDisk          |
+|OutOfDisk           |True                | NoSchedule   | node.kubernetes.io/out-of-disk          |
 |                    |False               | -            | |
 |                    |Unknown             | -            | |
-|MemoryPressure      |True                | NoSchedule   | node.kubernetes.io/memoryPressure     |
+|MemoryPressure      |True                | NoSchedule   | node.kubernetes.io/memory-pressure     |
 |                    |False               | -            | |
 |                    |Unknown             | -            | |
-|DiskPressure        |True                | NoSchedule   | node.kubernetes.io/diskPressure       |
+|DiskPressure        |True                | NoSchedule   | node.kubernetes.io/disk-pressure       |
 |                    |False               | -            | |
 |                    |Unknown             | -            | |
-|NetworkUnavailable  |True                | NoSchedule   | node.kubernetes.io/networkUnavailable |
+|NetworkUnavailable  |True                | NoSchedule   | node.kubernetes.io/network-unavailable |
 |                    |False               | -            | |
 |                    |Unknown             | -            | |
 
-For example, if a CNI network is not detected on the node (e.g. a network is unavailable), the Node Controller will taint the node with `node.kubernetes.io/networkUnavailable=:NoSchedule`. This will then allow users to add a toleration to their `PodSpec`, ensuring that the pod can be scheduled to this node if necessary. If the kubelet did not update the node’s status after a grace period, the Node Controller will only taint the node with `node.kubernetes.io/unreachable`; it will not taint the node with any unknown condition.
+For example, if a CNI network is not detected on the node (e.g. a network is unavailable), the Node Controller will taint the node with `node.kubernetes.io/network-unavailable=:NoSchedule`. This will then allow users to add a toleration to their `PodSpec`, ensuring that the pod can be scheduled to this node if necessary. If the kubelet did not update the node’s status after a grace period, the Node Controller will only taint the node with `node.kubernetes.io/unreachable`; it will not taint the node with any unknown condition.
 
