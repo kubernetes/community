@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here]().
 
 ## Leads
-* [Dan Romlein](https://github.com/danielromlein), Apprenda
-* [Sebastian Florek](https://github.com/floreks), Fujitsu
+* Dan Romlein (**[@danielromlein](https://github.com/danielromlein)**), Apprenda
+* Sebastian Florek (**[@floreks](https://github.com/floreks)**), Fujitsu
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-ui)

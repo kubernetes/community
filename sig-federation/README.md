@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
 
 ## Leads
-* [Christian Bell](https://github.com/csbell), Google
-* [Quinton Hoole](https://github.com/quinton-hoole), Huawei
+* Christian Bell (**[@csbell](https://github.com/csbell)**), Google
+* Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-federation)

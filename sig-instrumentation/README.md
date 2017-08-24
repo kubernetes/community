@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here]().
 
 ## Leads
-* [Piotr Szczesniak](https://github.com/piosz), Google
-* [Fabian Reinartz](https://github.com/fabxc), CoreOS
+* Piotr Szczesniak (**[@piosz](https://github.com/piosz)**), Google
+* Fabian Reinartz (**[@fabxc](https://github.com/fabxc)**), CoreOS
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-instrumentation)

@@ -17,7 +17,7 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=7zawb3KT9Xk&list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4).
 
 ## Leads
-* [Michael Michael](https://github.com/michmike), Apprenda
+* Michael Michael (**[@michmike](https://github.com/michmike)**), Apprenda
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-windows)

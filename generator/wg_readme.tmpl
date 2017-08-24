@@ -12,14 +12,14 @@ Meeting recordings can be found [here]({{.MeetingRecordingsURL}}).
 
 ## Organizers
 {{- range .Leads }}
-* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}
+* {{.Name}} (**[@{{.GitHub}}](https://github.com/{{.GitHub}})**){{if .Company}}, {{.Company}}{{end}}
 {{- end }}
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})
 * [Mailing list]({{.Contact.MailingList}})
 {{if .Contact.FullGitHubTeams}}
-## GitHub Teams
+## GitHub Teams
 {{range .Contact.GithubTeamNames -}}
 * [@{{.}}](https://github.com/kubernetes/teams/{{.}})
 {{end}}

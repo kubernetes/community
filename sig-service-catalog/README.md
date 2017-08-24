@@ -17,10 +17,10 @@ Meeting notes and Agenda can be found [here](http://goo.gl/A0m24V).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs).
 
 ## Leads
-* [Paul Morie](https://github.com/pmorie), Red Hat
-* [Aaron Schlesinger](https://github.com/arschles), Microsoft
-* [Ville Aikas](https://github.com/vaikas-google), Google
-* [Doug Davis](https://github.com/duglin), IBM
+* Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
+* Aaron Schlesinger (**[@arschles](https://github.com/arschles)**), Microsoft
+* Ville Aikas (**[@vaikas-google](https://github.com/vaikas-google)**), Google
+* Doug Davis (**[@duglin](https://github.com/duglin)**), IBM
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-service-catalog)

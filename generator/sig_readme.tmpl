@@ -12,7 +12,7 @@ Meeting recordings can be found [here]({{.MeetingRecordingsURL}}).
 
 ## Leads
 {{- range .Leads }}
-* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}
+* {{.Name}} (**[@{{.GitHub}}](https://github.com/{{.GitHub}})**){{if .Company}}, {{.Company}}{{end}}
 {{- end }}
 
 ## Contact
