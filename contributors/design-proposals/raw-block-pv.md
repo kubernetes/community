@@ -66,9 +66,10 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   are today. Ideally, the admin would want to be able to restrict either raw-local devices and or raw-network attached devices.
   
   To ensure backwards compatibility and a phased transition of this feature, the consensus from the community is to intentionally disable
-  the volumeMode: block for external provisioners until a suitable implementation for provisioner versioning has been accepted and 
+  the volumeMode: Block for external provisioners until a suitable implementation for provisioner versioning has been accepted and 
   implemented in the community. This requirement is better described in the design PR discussion and will be implemented as a seperate
-  initiative. 
+  initiative. Acceptable values for volumeMode are 'Block' and 'Filesystem'. Where 'Filesystem' is the default value today and not 
+  required to be set in the PV/PVC.
   
 # Proposed API Changes
    
@@ -82,7 +83,7 @@ apiVersion: v1
 metadata:
 name: myclaim
 spec:
-  volumeMode: block #proposed API change
+  volumeMode: Block #proposed API change
   accessModes:
     - ReadWriteOnce
   resources:
@@ -101,7 +102,7 @@ metadata:
 name: myclaim
 spec:
   storageClassName: local-fast 
-  volumeMode: block #proposed API change
+  volumeMode: Block #proposed API change
   accessModes:
     - ReadWriteOnce
   resources:
@@ -118,7 +119,7 @@ apiVersion: v1
 metadata:
 name: local-raw-pv
 spec:
-  volumeMode: block #proposed API change
+  volumeMode: Block #proposed API change
   capacity:
     storage: 100Gi
   local:
@@ -163,7 +164,7 @@ metadata:
   name: block-volume
 provisioner: kubernetes.io/local-block-glusterfs
 parameters:
-  volumeMode: block #opaque value  / plug-in dependent -AND/OR-
+  volumeMode: Block #opaque value  / plug-in dependent -AND/OR-
   fsType: block
 ```
 The provisioner (if applicable) should validate the parameters and return and error if the combination specified is not supported.
@@ -205,7 +206,7 @@ apiVersion: v1
 metadata:
   name: local-raw-pv
 spec:
-  volumeMode: block
+  volumeMode: Block
   capacity:
     storage: 100Gi
   local:
@@ -233,7 +234,7 @@ apiVersion: v1
 metadata:
   name: raw-pv
 spec:
-  volumeMode: block
+  volumeMode: Block
   capacity:
     storage: 100Gi
   accessModes:
@@ -247,7 +248,7 @@ spec:
 
 USER:
 
-* User creates a persistent volume claim with volumeMode: block option to bind pre-created iSCSI PV.
+* User creates a persistent volume claim with volumeMode: Block option to bind pre-created iSCSI PV.
 
 ```
 kind: PersistentVolumeClaim
@@ -255,7 +256,7 @@ apiVersion: v1
 metadata:
   name: raw-pvc
 spec:
-  volumeMode: block
+  volumeMode: Block
   accessModes:
     - ReadWriteOnce
   resources:
@@ -305,7 +306,7 @@ apiVersion: v1
 metadata:
   name: local-raw-pvc
 spec:
-  volumeMode: block
+  volumeMode: Block
   accessModes:
     - ReadWriteOnce
   resources:
@@ -357,7 +358,7 @@ kind: PersistentVolume
 metadata:
  name: pv-block-volume
 spec:
- volumeMode: block
+ volumeMode: Block
  storageClassName: block-volume
  capacity:
    storage: 35Gi
@@ -383,7 +384,7 @@ metadata:
   name: local-fast
 provisioner: kubernetes.io/local-block-ssd
 parameters:
-  volumeMode: block #suggested value - this is plugin/provisioner dependent
+  volumeMode: Block #suggested value - this is plugin/provisioner dependent
 ```
 
 ***This has implementation details that have yet to be determined. It is included in this proposal for completeness of design ****
@@ -402,7 +403,7 @@ kind: PersistentVolumeClaim
 metadata:
  name: pvc-local-block
 spec:
- volumeMode: block
+ volumeMode: Block
  storageClassName: local-fast
  accessModes:
   - ReadWriteOnce
@@ -429,7 +430,7 @@ metadata:
   annotations:
     volume.beta.kubernetes.io/mount-options: "discard"
 Spec:
-  volumeMode: block
+  volumeMode: Block
   capacity:
     storage: "10Gi"
   accessModes:
@@ -439,10 +440,37 @@ Spec:
     pdName: "gce-disk-1"
 ```
 
-***If admin specifies volumeMode: block + fstype: ext4 then they would have the default behavior of files on block ***
+***If admin specifies volumeMode: Block + fstype: ext4 then they would have the default behavior of files on block ***
 ***fsType values will be provisioner dependent. Block is suggested for development simplicity. Since the PVC object is passed
    to the provisioner, it will be responsible for validating and handling whether or not it supports the volumeMode being passed ***
 
+## UC8: 
+
+DESCRIPTION: 
+
+A developer wishes to enable their application to use a raw block device as an inline volume in the pod. 
+
+WORKFLOW:
+
+USER:
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-db
+spec:
+    containers:
+    - name: mysql
+      image: mysql
+      volumeDevices:
+      - name: my-db-data
+        devicePath: /var/lib/mysql/data
+    volumes:
+    - name: my-db-data
+      local:
+        path: /dev/sdb
+```
 # Container Runtime considerations
 It is important the values that are passed to the container runtimes are valid and support the current implementation of these various runtimes. Listed below are a table of various runtime and the mapping of their values to what is passed from the kubelet.
 
