@@ -549,13 +549,14 @@ type BlockUnmounter interface {
 | PV volumeMode | PVC volumeMode  | Result           |
 | --------------|:---------------:| ----------------:|
 |   unspecified | unspecified     | BIND             |
-|   file        | file            | BIND             |
+|   unspecified | block           | NO BIND          |
+|   unspecified | file            | BIND             |
 |   block       | unspecified     | NO BIND          |
 |   block       |  block          | BIND             |
-|   unspecified | block           | NO BIND          |
 |   block       |  file           | BIND**           |
+|   file        | file            | BIND             |
 |   file        |  block          | NO BIND          |
-|  unspecified  | file            | BIND             |
+
 
 
 * unspecified defaults to 'file/ext4' today for backwards compatibility and in mount_linux.go  
