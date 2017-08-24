@@ -50,7 +50,7 @@ Detach the volume from the Kubelet node. Nodename param is only valid/relevant i
 ```
 
 #### Wait for attach:
-Wait for the volume to be attached on the remote node. On success, the path to the device is returned. Called from both Kubelet & Controller manager.
+Wait for the volume to be attached on the remote node. On success, the path to the device is returned. Called from both Kubelet & Controller manager. The timeout should be 10m (based on https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/volumemanager/volume_manager.go#L88 )
 
 ```
 <driver executable> waitforattach <mount device> <json options>
