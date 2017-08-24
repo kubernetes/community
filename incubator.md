@@ -22,13 +22,13 @@ New Kubernetes Community Projects can be created by pulling out code from the Ku
 
 ### Applications on top of Kubernetes
 
-If you are building an Open Source application on top of Kubernetes that is unrelated to the development, operation, monitoring, APIs, lifecycle, integration, or other primary concerns of the Kubernetes project there is no reason to become a Kubernetes project. If you are unsure if your project is a good fit try running it by a few Kubernetes Special Interest Groups or kubernetes-dev@googlegroups.com.
+If you are building an Open Source application on top of Kubernetes that is unrelated to the development, operation, monitoring, APIs, lifecycle, integration, or other primary concerns of the Kubernetes project there is no reason to become a Kubernetes project. If you are unsure that your project is a good fit try running it by a few Kubernetes Special Interest Groups or kubernetes-dev@googlegroups.com.
 
 ## Entering Incubation
 
 To create a new project for incubation you must follow these steps: write a proposal, find a champion, gain acceptance into a SIG, and finally get approval of a Sponsor. The Sponsor and Champion cannot be the same person.
 
-Your proposal should include two items. First, a README which outlines the problem to be solved, an example use case as-if the project existed, and a rough roadmap with timelines. Second, an OWNERS file that outlines the makeup of the initial team developing the project. Initially this can be one person but ideally has a 3 or more initial developers representing a few different companies or groups. You can use whatever tool you want to host and revise the proposal until the project is accepted to the Incubator: copy/paste from your text editor, Google Docs, GitHub gist, etc.
+Your proposal should include two items. First, a README which outlines the problem to be solved, an example use case as-if the project existed, and a rough roadmap with timelines. Second, an OWNERS file that outlines the makeup of the initial team developing the project. Initially this can be one person but ideally has 3 or more initial developers representing a few different companies or groups. You can use whatever tool you want to host and revise the proposal until the project is accepted to the Incubator: copy/paste from your text editor, Google Docs, GitHub gist, etc.
 
 Once the proposal is written you should identify a champion; this person must be listed as either a reviewer or approver in an OWNER file in the [Kubernetes project](https://github.com/kubernetes/kubernetes). Next, reach out to your potential champion via email to ask if they are interested in helping you through the Incubation process. Ideally some significant follow-up discussion happens via email, calls, or chat to improve the proposal before announcing it to the wider community.
 
