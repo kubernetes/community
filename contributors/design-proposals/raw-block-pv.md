@@ -140,7 +140,7 @@ spec:
       image: mysql
       volumeDevices:
       - name: my-db-data
-      devicePath: /dev/xvda
+        devicePath: /dev/xvda
     volumes:
     - name: my-db-data
       persistentVolumeClaim:
@@ -276,7 +276,7 @@ spec:
       image: mysql
       volumeDevices:
       - name: my-db-data
-      devicePath: /dev/xvda
+        devicePath: /dev/xvda
     volumes:
     - name: my-db-data
       persistentVolumeClaim:
@@ -324,15 +324,12 @@ spec:
       image: mysql
       volumeDevices:
       - name: my-db-data
-      devicePath: /var/lib/mysql/data
+        devicePath: /var/lib/mysql/data
     volumes:
     - name: my-db-data
       persistentVolumeClaim:
 	claimName: local-raw-pvc
 ```
-  NOTE: *accessModes correspond to the container runtime values. Where RWO == RWM (mknod) to enable the device to be written to and
-  create new files. (Default is RWM) ROX == R
-  **(RWX is NOT valid for block and should return an error.)** * This has been validated among runc, Docker and rocket. 
 
 ## UC4: 
 
@@ -459,7 +456,10 @@ Since rkt doesn't use the CRI, the config values would need to be passed in the 
 Note: the container runtime doesn't require a priviledged pod to enable the device as RWX (RMW).
 
 The runtime option would be placed in the DeviceInfo as such:
+accessMode == RWX or RWO would map to:
 devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "rmw"}) 
+accessMode == ROX would map to:
+devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "r"}) 
 
 The implemenation plan would be to rename the current makeDevices to makeGPUDevices and create a seperate function to add the raw block devices to the option array to be passed to the container runtime. This would interate on the paths passed in for the pod/container.
 
@@ -533,7 +533,7 @@ type BlockUnmounter interface {
 * unspecified defaults to 'file/ext4' today for backwards compatibility and in mount_linux.go  
 **this is plugin dependent 
 
-# Mounter binding matrix for dynamically provisioned volumes:
+# Volume binding matrix for dynamically provisioned volumes:
 
 Note: The value used for the plugin to indicate is it provisioning 
-block will be plugin dependent and is an opaque parameter. Binding will be plugin dependent and must handle the parameter being passed and indicate whether or not it supports block.
+block will be plugin dependent and is an opaque parameter. Binding will also be plugin dependent and must handle the parameter being passed and indicate whether or not it supports block. 
