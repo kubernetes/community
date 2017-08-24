@@ -249,7 +249,9 @@ their scheduling request.
 
 It will target pods whose usage of the starved resource exceeds its requests.
 Of those pods, it will rank by a function of priority, and usage - requests.
-If system daemons are exceeding their allocation (see [Strategy Caveat](strategy-caveat) below),
+Roughly speaking, if a pod has twice the priority of another pod, it will
+recieve half the penalty for usage above requests. If system daemons are 
+exceeding their allocation (see [Strategy Caveat](strategy-caveat) below),
 and all pods are using less than their requests, then it will evict a pod
 whose usage is less than requests, based on the function of priority, and
 usage - requests.
