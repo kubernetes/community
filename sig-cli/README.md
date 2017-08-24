@@ -17,9 +17,9 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=X29sffrQJU4&list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
 
 ## Leads
-* [Fabiano Franz](https://github.com/fabianofranz), Red Hat
-* [Phillip Wittrock](https://github.com/pwittrock), Google
-* [Tony Ado](https://github.com/AdoHe), Alibaba
+* Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**), Red Hat
+* Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
+* Tony Ado (**[@AdoHe](https://github.com/AdoHe)**), Alibaba
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cli)

@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit).
 
 ## Leads
-* [Anirudh Ramanathan](https://github.com/foxish), Google
-* [Erik Erlandson](https://github.com/erikerlandson), Redhat
+* Anirudh Ramanathan (**[@foxish](https://github.com/foxish)**), Google
+* Erik Erlandson (**[@erikerlandson](https://github.com/erikerlandson)**), Redhat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-big-data)

@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=d5ERqm3oHN0&list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
 
 ## Leads
-* [Brian Grant](https://github.com/bgrant0607), Google
-* [Jaice Singer DuMars](https://github.com/jdumars), Microsoft
+* Brian Grant (**[@bgrant0607](https://github.com/bgrant0607)**), Google
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Microsoft
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-architecture)

@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq).
 
 ## Leads
-* [Saad Ali](https://github.com/saad-ali), Google
-* [Bradley Childs](https://github.com/childsb), Red Hat
+* Saad Ali (**[@saad-ali](https://github.com/saad-ali)**), Google
+* Bradley Childs (**[@childsb](https://github.com/childsb)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-storage)

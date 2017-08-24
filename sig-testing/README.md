@@ -17,9 +17,9 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=BbFjuxe3N4w&list=PL69nYSiGNLP0ofY51bEooJ4TKuQtUSizR).
 
 ## Leads
-* [Aaron Crickenberger](https://github.com/spiffxp), Samsung SDS
-* [Erick Feja](https://github.com/fejta), Google
-* [Timothy St. Clair](https://github.com/timothysc), Heptio
+* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Samsung SDS
+* Erick Feja (**[@fejta](https://github.com/fejta)**), Google
+* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Heptio
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-testing)

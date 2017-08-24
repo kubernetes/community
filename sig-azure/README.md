@@ -17,9 +17,9 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
 
 ## Leads
-* [Jason Hansen](https://github.com/slack), Microsoft
-* [Cole Mickens](https://github.com/colemickens), Microsoft
-* [Jaice Singer DuMars](https://github.com/jdumars), Microsoft
+* Jason Hansen (**[@slack](https://github.com/slack)**), Microsoft
+* Cole Mickens (**[@colemickens](https://github.com/colemickens)**), Microsoft
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Microsoft
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-azure)

@@ -16,8 +16,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ).
 
 ## Leads
-* [Phillip Wittrock](https://github.com/pwittrock), Google
-* [Caleb Miles](https://github.com/calebamiles), CoreOS
+* Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
+* Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), CoreOS
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-release)

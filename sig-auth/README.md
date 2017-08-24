@@ -17,9 +17,9 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=DJDuDNALcMo&list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw).
 
 ## Leads
-* [Eric Chiang](https://github.com/ericchiang), CoreOS
-* [Jordan Liggitt](https://github.com/liggitt), Red Hat
-* [David Eads](https://github.com/deads2k), Red Hat
+* Eric Chiang (**[@ericchiang](https://github.com/ericchiang)**), CoreOS
+* Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Red Hat
+* David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-auth)

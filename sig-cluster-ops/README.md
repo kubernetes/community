@@ -17,8 +17,8 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR).
 
 ## Leads
-* [Rob Hirschfeld](https://github.com/zehicle), RackN
-* [Jaice Singer DuMars](https://github.com/jdumars), Microsoft
+* Rob Hirschfeld (**[@zehicle](https://github.com/zehicle)**), RackN
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Microsoft
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cluster-ops)

@@ -20,9 +20,9 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ).
 
 ## Leads
-* [Aparna Sinha](https://github.com/apsinha), Google
-* [Ihor Dvoretskyi](https://github.com/idvoretskyi), Mirantis
-* [Caleb Miles](https://github.com/calebamiles), CoreOS
+* Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google
+* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), Mirantis
+* Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), CoreOS
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/kubernetes-pm)
