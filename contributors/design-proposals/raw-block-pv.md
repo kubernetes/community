@@ -446,13 +446,12 @@ spec:
       image: mysql
       volumeDevices:
       - name: my-db-data
-        devicePath: /var/lib/mysql/data
+        devicePath: /dev/sdb
     volumes:
     - name: my-db-data
       gcePersistentDisk:
         fsType: "ext4"
         pdName: "gce-disk-1":
-      path: /dev/sdb
 ```
 * Important implemenation detail: This design then assumes the specification of 'volumeDevices' that the volume bound will be a block device.
 
