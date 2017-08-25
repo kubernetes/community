@@ -149,7 +149,7 @@ spec:
 	claimName: raw-pvc
 ```
 ## Storage Class non-API Changes:
-For dynamic provisioning, it is assumed that values pass in the parameter section are opaque, thus the introduction of utilizing
+For dynamic provisioning, it is assumed that values passed in the parameter section are opaque, thus the introduction of utilizing
 fsType in the StorageClass can be used by the provisioner to indicate how to create the volume. The proposal for this value is
 defined here:
 https://github.com/kubernetes/kubernetes/pull/45345 
@@ -161,8 +161,16 @@ kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
   name: block-volume
-provisioner: kubernetes.io/local-block-glusterfs
-parameters:
+ provisioner: kubernetes.io/scaleio
+ parameters:
+  gateway: https://192.168.99.200:443/api
+  system: scaleio
+  protectionDomain: default
+  storagePool: default
+  storageMode: ThinProvisionned
+  secretRef: sio-secret
+  readOnly: false
+  fsType: Block #suggested value
 ```
 The provisioner (if applicable) should validate the parameters and return and error if the combination specified is not supported.
 This also allows the use case for leveraging a Storage Class for utilizing pre-defined static volumes. By labeling the Persistent Volumes
@@ -415,11 +423,9 @@ Spec:
   accessModes:
     - "ReadWriteOnce"
   gcePersistentDisk:
-    fsType: "block" #this is a suggestion, it is plugin 
+    fsType: "Block" #this is a suggestion, it is plugin dependent
     pdName: "gce-disk-1"
 ```
-
-***If admin specifies volumeMode: Block + fstype: ext4 then they would have the default behavior of files on block ***
 ***fsType values will be provisioner dependent. Block is suggested for development simplicity. Since the PVC object is passed
    to the provisioner, it will be responsible for validating and handling whether or not it supports the volumeMode being passed ***
 
