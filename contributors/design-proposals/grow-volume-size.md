@@ -66,11 +66,11 @@ For volume types that only require volume plugin based api call, this will be on
 A new controller called `volume_expand_controller` will listen for pvc size expansion requests and take action as needed. The steps performed in this
 new controller will be:
 
-* Watch for pvc update requests and add pvc to controller's desired state of world if a increase in volume size was requested. Once PVC is added to
-  controller's desired state of world - `pvc.Status.Conditions` will be updated with `ResizeStarted: True`.
+* Watch for pvc update requests and add pvc to controller's work queue if a increase in volume size was requested. Once PVC is added to
+  controller's work queue - `pvc.Status.Conditions` will be updated with `ResizeStarted: True`.
 * For unbound or pending PVCs - resize will trigger no action in `volume_expand_controller`.
 * If `pv.Spec.Capacity` already is of size greater or equal than requested size, similarly no action will be perfomed by the controller.
-* A reconciler will read desired state of world and perform corresponding volume resize operation. If there is a resize operation in progress
+* A separate goroutine will read work queue and perform corresponding volume resize operation. If there is a resize operation in progress
   for same volume then resize request will be pending and retried once previous resize request has completed.
 * Controller resize in effect will be level based rather than edge based. If there are more than one pending resize request for same PVC then
   new resize requests for same PVC will replace older pending request.
@@ -80,30 +80,38 @@ new controller will be:
 ```go
 func (og *operationGenerator) GenerateExpandVolumeFunc(
     pvcWithResizeRequest *expandcache.PvcWithResizeRequest,
-    dsow expandcache.DesiredStateOfWorld) (func() error, error) {
+    resizeMap expandcache.VolumeResizeMap) (func() error, error) {
 
     volumePlugin, err := og.volumePluginMgr.FindExpandablePluginBySpec(pvcWithResizeRequest.VolumeSpec)
+    expanderPlugin, err := volumePlugin.NewExpander(pvcWithResizeRequest.VolumeSpec)
 
-    if err != nil {
-        return nil, fmt.Errorf("Error finding plugin for expanding volume: %q with error %v", pvcWithResizeRequest.UniquePvcKey(), err)
-    }
-
-    expanderPlugin, err := volumePlugin.NewExpander()
-
-    if err != nil {
-        return nil, fmt.Errorf("Error creating expander plugin for volume %q with error %v", pvcWithResizeRequest.UniquePvcKey(), err)
-    }
 
     expandFunc := func() error {
-        expandErr := expanderPlugin.ExpandVolumeDevice(pvcWithResizeRequest.VolumeSpec, pvcWithResizeRequest.ExpectedSize, pvcWithResizeRequest.CurrentSize)
+        expandErr := expanderPlugin.ExpandVolumeDevice(pvcWithResizeRequest.ExpectedSize, pvcWithResizeRequest.CurrentSize)
 
         if expandErr != nil {
-            glog.Errorf("Error expanding volume through cloudprovider : %v", expandErr)
+            og.recorder.Eventf(pvcWithResizeRequest.PVC, v1.EventTypeWarning, kevents.VolumeResizeFailed, expandErr.Error())
+            resizeMap.MarkResizeFailed(pvcWithResizeRequest, expandErr.Error())
             return expandErr
         }
-        dsow.MarkAsResized(pvcWithResizeRequest)
 
+        // CloudProvider resize succeded - lets mark api objects as resized
+        if expanderPlugin.RequiresFSResize() {
+            err := resizeMap.MarkForFileSystemResize(pvcWithResizeRequest)
+            if err != nil {
+                og.recorder.Eventf(pvcWithResizeRequest.PVC, v1.EventTypeWarning, kevents.VolumeResizeFailed, err.Error())
+                return err
+            }
+        } else {
+            err := resizeMap.MarkAsResized(pvcWithResizeRequest)
+
+            if err != nil {
+                og.recorder.Eventf(pvcWithResizeRequest.PVC, v1.EventTypeWarning, kevents.VolumeResizeFailed, err.Error())
+                return err
+            }
+        }
         return nil
+
     }
     return expandFunc, nil
 }
@@ -121,7 +129,7 @@ func (og *operationGenerator) GenerateExpandVolumeFunc(
   successful.
 
 * To consider cases of missed PVC update events, an additional loop will reconcile bound PVCs with PVs. This additional loop will loop through all PVCs
-  and match `pvc.spec.resources.requests` with `pv.spec.capacity` and add PVC in `volume_expand_controller`'s desired state of world if `pv.spec.capacity` is less
+  and match `pvc.spec.resources.requests` with `pv.spec.capacity` and add PVC in `volume_expand_controller`'s work queue if `pv.spec.capacity` is less
   than `pvc.spec.resources.requests`.
 
 * There will be additional checks in controller that grows PV size - to ensure that we do not make volume plugin API calls that can reduce size of PV.
