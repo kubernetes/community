@@ -564,7 +564,5 @@ Instead of volume mount, plugin needs to create symbolic link with `<volume name
 * unspecified defaults to 'file/ext4' today for backwards compatibility and in mount_linux.go  
 
 
-# Volume binding matrix for dynamically provisioned volumes:
-
-Note: The value used for the plugin to indicate is it provisioning 
-block will be plugin dependent and is an opaque parameter. Binding will also be plugin dependent and must handle the parameter being passed and indicate whether or not it supports block. 
+# Volume binding considerations for dynamically provisioned volumes:
+The value used for the plugin to indicate is it provisioning block will be plugin dependent and is an opaque parameter. Binding will also be plugin dependent and must handle the parameter being passed and indicate whether or not it supports block. 
