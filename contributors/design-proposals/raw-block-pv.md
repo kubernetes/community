@@ -371,7 +371,7 @@ metadata:
   name: local-fast
 provisioner: kubernetes.io/local-block-ssd
 parameters:
-  volumeMode: Block #suggested value - this is plugin/provisioner dependent
+  fstype: Block #suggested value
 ```
 
 ***This has implementation details that have yet to be determined. It is included in this proposal for completeness of design ****
