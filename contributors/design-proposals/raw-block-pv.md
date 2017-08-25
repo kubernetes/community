@@ -180,12 +180,11 @@ parameters:
 # Pod Security Policy (PSP) Changes:
 Since the utilization of block devices can pose a risk to possible kernel manipulation by malicious users, it may be desirable for the administrator to restrict the usage entirely within a cluster. A similar convention is used with hostPath in that for some kubernetes 
 implmentations it is disabled by default.
-Thus, the PSP can define whether a validating pod can request the usage of such devices through the volumeMode label in the PV/PVC.
-The changes to the pod security policy for volumes would include a 'localRawBlockVolumes' and 'newtworkRawBlockVolumes' parameters as such:
+Thus, the PSP can define whether a validating pod can request the usage of such devices through the volumeDevices parameter.
 
 ```
 NAME               PRIV      CAPS      SELINUX     RUNASUSER          FSGROUP     SUPGROUP    PRIORITY   READONLYROOTFS   VOLUMES
-anyuid             false     []        MustRunAs   RunAsAny           RunAsAny    RunAsAny    10         false            [configMap downwardAPI emptyDir persistentVolumeClaim secret localRawBlockVolumes networkRawBlockVolumes]
+anyuid             false     []        MustRunAs   RunAsAny           RunAsAny    RunAsAny    10         false            [configMap downwardAPI emptyDir persistentVolumeClaim secret volumeDevices]
 ```
 
 # Use Cases
