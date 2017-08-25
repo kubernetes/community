@@ -219,8 +219,8 @@ spec:
 ## UC2: 
 
 DESCRIPTION: 
-
-A user uses a container on virtual machine on hypervisor such as KVM, VMware and wishes to use raw block device for databases such as MariaDB. 
+* A user uses a raw block device for database applications such as MariaDB.
+* User creates a persistent volume claim with "volumeMode: Block" option to bind pre-created iSCSI PV. 
 
 WORKFLOW:
 
@@ -283,7 +283,8 @@ spec:
       persistentVolumeClaim:
 	claimName: raw-pvc
 ```
-* During Pod creation, iSCSI Plugin attaches iSCSI volume to the kubelet worker node VM using storage information.
+* During Pod creation, iSCSI Plugin attaches iSCSI volume to the kubelet worker node using storage information.
+
 
 ## UC3: 
 
@@ -312,24 +313,6 @@ spec:
   resources:
     requests:
       storage: 80Gi
-```
-
-```
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-db
-spec:
-    containers:
-    - name: mysql
-      image: mysql
-      volumeDevices:
-      - name: my-db-data
-        devicePath: /var/lib/mysql/data
-    volumes:
-    - name: my-db-data
-      persistentVolumeClaim:
-	claimName: local-raw-pvc
 ```
 
 ## UC4: 
@@ -531,20 +514,38 @@ Other considerations:
                Reference volume driver change(Provision/Delete logic) for dynamic provisioning
 
 ## Mounter interface proposed design
+# Plugin changes
+## New BlockVolumeMapper interface proposed design
 
 ```
- type BlockMounter interface {
-	Mounter
- 	CanSupportFileOnBlock() error
-            // kubelet needs volume's device path when attaches a volume to container
- 	GetVolumePath() string
- 	GetVolumeType() string   //TBD
+ type BlockVolumeMapper interface {
+       Volume
+       CanBlockMap() error
+       SetUpDevice() error
+       SetUpDeviceAt(dir string) error
+       GetVolumePath() string
+       GetVolumeType() v1.PersistentVolumeType
  }
+ type BlockVolumeUnmapper interface {
+       Volume
+       TearDownDevice() error
+       TearDownDeviceAt(dir string) error
+ }
+```
+## Changes for volume definition under pod directory
 
-type BlockUnmounter interface {
- 	Unmounter
- 	GetVolumePath() string
-}
+Currently, volume is mounted to the following path of a kubelet node when the volumes is in-use.
+
+```
+/var/lib/kubelet/pods/<pod uid>/volumes/<plugin name>/<volume name>
+```
+
+If the volume is raw block device, the volume can't be mounted because there isn't a filesystem.
+Instead of volume mount, plugin needs to create symbolic link with `<volume name>` name under the
+`<pod uid>/devices/<plugin name>` directory.
+
+```
+/var/lib/kubelet/pods/<pod uid>/devices/<plugin name>/<volume name>
 ```
 # Volume binding matrix for statically provisioned volumes:
 
