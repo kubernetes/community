@@ -49,11 +49,14 @@ limits described above are set. By default it will take value of 1, to allow deb
 job issues, but not to flood the cluster with too many failed jobs and their
 accompanying pods.
 
-All of the above fields will be optional and will apply no matter which `restartPolicy`
-is set on a `PodTemplate`.  The only difference applies to how failures are counted.
-For restart policy `Never` we count actual pod failures (reflected in `.status.failed`
-field). With restart policy `OnFailure` we take an approximate value of pod restarts
-(as reported in `.status.containerStatuses[*].restartCount`).
+All of the above fields will be optional and will apply when `restartPolicy` is
+set to `Never` on a `PodTemplate`.  With restart policy `OnFailure` only `BackoffLimit`
+applies. The reason for that is that failed pods are already restarted by the
+kubelet with an [exponential backoff](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy).
+Additionally, failures are counted differently depending on `restartPolicy`
+setting.  For `Never` we count actual pod failures (reflected in `.status.failed`
+field). With `OnFailure`, we take an approximate value of pod restarts (as reported
+in `.status.containerStatuses[*].restartCount`).
 When `.spec.parallelism` is set to a value higher than 1, the failures are an
 overall number (as coming from `.status.failed`) because the controller does not
 hold information about failures coming from separate pods.
