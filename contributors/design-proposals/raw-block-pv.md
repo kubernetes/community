@@ -229,7 +229,7 @@ DESCRIPTION:
 WORKFLOW:
 
 ADMIN:
-* Admin creates a disk and exposes it to all kubelet worker node VMs which are running on KVM hypervisor.(This is done by storage operation).
+* Admin creates a disk and exposes it to all kubelet worker nodes. (This is done by storage operation).
 * Admin creates an iSCSI persistent volume using storage information such as portal IP, iqn and lun.
 
 ```
