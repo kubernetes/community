@@ -164,8 +164,6 @@ metadata:
   name: block-volume
 provisioner: kubernetes.io/local-block-glusterfs
 parameters:
-  volumeMode: Block #opaque value  / plug-in dependent -AND/OR-
-  fsType: block
 ```
 The provisioner (if applicable) should validate the parameters and return and error if the combination specified is not supported.
 This also allows the use case for leveraging a Storage Class for utilizing pre-defined static volumes. By labeling the Persistent Volumes
@@ -419,7 +417,7 @@ Spec:
   accessModes:
     - "ReadWriteOnce"
   gcePersistentDisk:
-    fsType: "block"
+    fsType: "block" #this is a suggestion, it is plugin 
     pdName: "gce-disk-1"
 ```
 
