@@ -38,12 +38,14 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   
   Specific use cases around improved usage of storage consumption are included in the use cases listed below as follows:
   * An admin wishes to expose a block volume to be consumed as a block volume for the user  
+  * An admin wishes to expose a block volume to be consumed as a block volume for an administrative function such 
+    as bootstrapping 
   * A user wishes to utilitze block storage to fully realize the performance of an application tuned to using block devices
   * A user wishes to specify an inline volume as a block device in their pod
   Future use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the 
   foundation for more fully developing these methods. 
   
-  It is importnant to note that when a PV is bound, it is either bound as a raw block device or formatted with a filesystem. Therefore, 
+  It is important to note that when a PV is bound, it is either bound as a raw block device or formatted with a filesystem. Therefore, 
   the PVC drives the request and intended usage of the device by specifying the volumeMode as part of the API. This design lends itself
   to future support of dynamic provisioning by also letting the request intiate from the PVC defining the role for the PV. It also allows
   flexibility in the implementation and storage plugins to determine their support of this feature.
@@ -62,7 +64,7 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   covered in this proposal.
   
   The last design point is block devices should be able to be fully restricted by the admin in accordance with how inline volumes 
-  are today. Ideally, the admin would want to be able to restrict either raw-local devices and or raw-network attached devices.
+  are today. 
   
   To ensure backwards compatibility and a phased transition of this feature, the consensus from the community is to intentionally disable
   the volumeMode: Block for external provisioners until a suitable implementation for provisioner versioning has been accepted and 
