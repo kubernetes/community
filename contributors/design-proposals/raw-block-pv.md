@@ -39,7 +39,6 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   Specific use cases around improved usage of storage consumption are included in the use cases listed below as follows:
   * An admin wishes to expose a block volume to be consumed as a block volume for the user  
   * A user wishes to utilitze block storage to fully realize the performance of an application tuned to using block devices
-  * A user wishes to utilize raw block devices for consumption from a virtual machine
   * A user wishes to specify an inline volume as a block device in their pod
   Future use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the 
   foundation for more fully developing these methods. 
