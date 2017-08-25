@@ -139,9 +139,9 @@ spec:
     containers
     - name: mysql
       image: mysql
-      volumeDevices:
+      volumeDevices: #proposed API change
       - name: my-db-data
-        devicePath: /dev/xvda
+        devicePath: /dev/xvda #proposed API change
     volumes:
     - name: my-db-data
       persistentVolumeClaim:
@@ -273,7 +273,7 @@ spec:
     containers
     - name: mysql
       image: mysql
-      volumeDevices:
+      volumeDevices: 
       - name: my-db-data
         devicePath: /dev/xvda
     volumes:
