@@ -113,7 +113,7 @@ spec:
 
 ## Persistent Volume API Changes:
 For static provisioning the admin creates the volume and also is intentional about how the volume should be consumed. For backwards
-compatibility, the absence of volumeMode will default to file which is how volumes work today, which are formatted with a filesystem depending on the plug-in chosen. Recycling will not be a supported reclaim policy as it has been deprecated. The path value in the local PV definition would be overloaded to define the path of the raw block device rather than the fileystem path.
+compatibility, the absence of volumeMode will default to filesystem which is how volumes work today, which are formatted with a filesystem depending on the plug-in chosen. Recycling will not be a supported reclaim policy as it has been deprecated. The path value in the local PV definition would be overloaded to define the path of the raw block device rather than the fileystem path.
 ```
 kind: PersistentVolume
 apiVersion: v1
@@ -130,7 +130,7 @@ spec:
   persistentVolumeReclaimPolicy: Delete 
 ```
 ## Pod API Changes:
-To provide better specificy and ensure support of inline volumes, the following changes are proposed in the pod specification.
+To ensure support of inline volumes, the following changes are proposed in the pod specification. In addition, this change intentionally calls out the use of a block device (volumeDevices) rather than the mount point on a filesystem.
 ```
 apiVersion: v1
 kind: Pod
@@ -153,8 +153,6 @@ For dynamic provisioning, it is assumed that values pass in the parameter sectio
 fsType in the StorageClass can be used by the provisioner to indicate how to create the volume. The proposal for this value is
 defined here:
 https://github.com/kubernetes/kubernetes/pull/45345 
-Therefore, a provisioner could potentially provision a block device and install the filesystem onto it by indicating the volumeMode
-as 'block' but the fsType as 'xfs'.
 This section is provided as a general guideline, but each provisioner may implement their parameters independent of what is defined
 here. It is our recommendation that the volumeMode in the PVC be the guidance for the provisioner and overrides the value given in the fstype. Therefore a provisioner should be able to ignore the fstype and provision a block device if that is what the user requested via the PVC and the provisioner can support this.
 
@@ -550,14 +548,14 @@ Instead of volume mount, plugin needs to create symbolic link with `<volume name
 | PV volumeMode | PVC volumeMode  | Result           |
 | --------------|:---------------:| ----------------:|
 |   unspecified | unspecified     | BIND             |
-|   unspecified | block           | NO BIND          |
-|   unspecified | file            | BIND             |
-|   block       | unspecified     | NO BIND          |
-|   block       |  block          | BIND             |
-|   block       |  file           | NO BIND          |
-|   file        |  file           | BIND             |
-|   file        |  block          | NO BIND          |
-|   file        | unspecified     | BIND             |
+|   unspecified | Block           | NO BIND          |
+|   unspecified | Filesystem      | BIND             |
+|   Block       | unspecified     | NO BIND          |
+|   Block       | Block           | BIND             |
+|   Block       | Filesystem      | NO BIND          |
+|   Filesystem  | Filesystem      | BIND             |
+|   Filesystem  | Block           | NO BIND          |
+|   Filesystem  | unspecified     | BIND             |
 
 
 
