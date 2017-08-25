@@ -506,6 +506,8 @@ Feature: Discovery of block devices
                 Milestone 1: Dynamically provisioned PVs to dynamically allocated devices
 
                 Milestone 2: Privileged container concerns    
+		
+		Milestone 3: Flex volume updates
 
 Other considerations:
 
