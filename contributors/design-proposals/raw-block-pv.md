@@ -155,7 +155,7 @@ https://github.com/kubernetes/kubernetes/pull/45345
 Therefore, a provisioner could potentially provision a block device and install the filesystem onto it by indicating the volumeMode
 as 'block' but the fsType as 'xfs'.
 This section is provided as a general guideline, but each provisioner may implement their parameters independent of what is defined
-here. It is our recommendation that the volumeMode be the guidance for the provisioner and overrides the value given in the fstype. Therefore a provisioner should be able to ignore the fstype and provision a block device if that is what the user requested via the PVC and the provisioner can support this.
+here. It is our recommendation that the volumeMode in the PVC be the guidance for the provisioner and overrides the value given in the fstype. Therefore a provisioner should be able to ignore the fstype and provision a block device if that is what the user requested via the PVC and the provisioner can support this.
 
 ```
 kind: StorageClass
