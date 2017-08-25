@@ -469,10 +469,7 @@ Since rkt doesn't use the CRI, the config values would need to be passed in the 
 Note: the container runtime doesn't require a priviledged pod to enable the device as RWX (RMW).
 
 The runtime option would be placed in the DeviceInfo as such:
-accessMode == RWX or RWO would map to:
-devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "rmw"}) 
-accessMode == ROX would map to:
-devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "r"}) 
+devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "XXX"}) 
 
 The implemenation plan would be to rename the current makeDevices to makeGPUDevices and create a seperate function to add the raw block devices to the option array to be passed to the container runtime. This would interate on the paths passed in for the pod/container.
 
