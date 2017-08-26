@@ -25,8 +25,8 @@ This document presents a proposal for managing raw block storage in Kubernetes u
    
 # Value add to Kubernetes
   
-  By extending the API for volumes to specifically request a raw block device, we provide an explicit method for volume comsumption,
-  whereas previously any request for storage was always fullfilled with a formatted fileystem, even when the underlying storage was 
+  By extending the API for volumes to specifically request a raw block device, we provide an explicit method for volume consumption,
+  whereas previously any request for storage was always fulfilled with a formatted fileystem, even when the underlying storage was 
   block. In addition, the ability to use a raw block device without a filesystem will allow
   Kubernetes better support of high performance applications that can utilize raw block devices directly for their storage. 
   Block volumes are critical to applications like databases (MongoDB, Cassandra) that require consistent I/O performance
@@ -40,15 +40,14 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   * An admin wishes to expose a block volume to be consumed as a block volume for the user  
   * An admin wishes to expose a block volume to be consumed as a block volume for an administrative function such 
     as bootstrapping 
-  * A user wishes to utilitze block storage to fully realize the performance of an application tuned to using block devices
-  * A user wishes to specify an inline volume as a block device in their pod
+  * A user wishes to utilize initiate block storage to fully realize the performance of an application tuned to using block devices
   Future use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the 
   foundation for more fully developing these methods. 
   
   It is important to note that when a PV is bound, it is either bound as a raw block device or formatted with a filesystem. Therefore, 
   the PVC drives the request and intended usage of the device by specifying the volumeMode as part of the API. This design lends itself
-  to future support of dynamic provisioning by also letting the request intiate from the PVC defining the role for the PV. It also allows
-  flexibility in the implementation and storage plugins to determine their support of this feature.
+  to future support of dynamic provisioning by also letting the request initiate from the PVC defining the role for the PV. It also 
+  allows flexibility in the implementation and storage plugins to determine their support of this feature.
  
 # Design Overview
 
@@ -60,16 +59,18 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   a filesystem on top, the design requires explicit intent for how the volume will be used.
   The additional benefit of explicitly defining how the volume is to be consumed will provide a means for indicating the method
   by which the device should be scrubbed when the claim is deleted, as this method will differ from a raw block device compared to a 
-  filesystem. The ownership and responsibility of defining the rention policy shall be up to the plugin method being utilized and is not 
-  covered in this proposal.
+  filesystem. The ownership and responsibility of defining the retention policy shall be up to the plugin method being utilized and is
+  not covered in this proposal.
   
-  The last design point is block devices should be able to be fully restricted by the admin in accordance with how inline volumes 
-  are today. 
+  Limiting use of the volumeMode to block can be executed through the use of storage resource quotas and storageClasses defined by the 
+  administrator.
   
   To ensure backwards compatibility and a phased transition of this feature, the consensus from the community is to intentionally disable
   the volumeMode: Block for external provisioners until a suitable implementation for provisioner versioning has been accepted and 
-  implemented in the community. This requirement is better described in the design PR discussion and will be implemented as a seperate
-  initiative. Acceptable values for volumeMode are 'Block' and 'Filesystem'. Where 'Filesystem' is the default value today and not 
+  implemented in the community. This requirement is better described in the design PR discussion and will be implemented as a separate
+  initiative. 
+  In addition, in-tree provisioners should be able to gracefully ignore volumeMode API objects for plugins that haven't been updated to
+  accept this value. Acceptable values for volumeMode are 'Block' and 'Filesystem'. Where 'Filesystem' is the default value today and not 
   required to be set in the PV/PVC.
   
 # Proposed API Changes
@@ -150,7 +151,7 @@ spec:
 ```
 ## Storage Class non-API Changes:
 For dynamic provisioning, it is assumed that values passed in the parameter section are opaque, thus the introduction of utilizing
-fsType in the StorageClass can be used by the provisioner to indicate how to create the volume. The proposal for this value is
+fstype in the StorageClass can be used by the provisioner to indicate how to create the volume. The proposal for this value is
 defined here:
 https://github.com/kubernetes/kubernetes/pull/45345 
 This section is provided as a general guideline, but each provisioner may implement their parameters independent of what is defined
@@ -182,16 +183,6 @@ metadata:
   name: block-volume
 provisioner: no-provisioning 
 parameters:
-```
-
-# Pod Security Policy (PSP) Changes:
-Since the utilization of block devices can pose a risk to possible kernel manipulation by malicious users, it may be desirable for the administrator to restrict the usage entirely within a cluster. A similar convention is used with hostPath in that for some kubernetes 
-implmentations it is disabled by default.
-Thus, the PSP can define whether a validating pod can request the usage of such devices through the volumeDevices parameter.
-
-```
-NAME               PRIV      CAPS      SELINUX     RUNASUSER          FSGROUP     SUPGROUP    PRIORITY   READONLYROOTFS   VOLUMES
-anyuid             false     []        MustRunAs   RunAsAny           RunAsAny    RunAsAny    10         false            [configMap downwardAPI emptyDir persistentVolumeClaim secret volumeDevices]
 ```
 
 # Use Cases
@@ -371,7 +362,6 @@ metadata:
   name: local-fast
 provisioner: kubernetes.io/local-block-ssd
 parameters:
-  fstype: Block #suggested value
 ```
 
 ***This has implementation details that have yet to be determined. It is included in this proposal for completeness of design ****
@@ -423,41 +413,10 @@ Spec:
   accessModes:
     - "ReadWriteOnce"
   gcePersistentDisk:
-    fsType: "Block" #this is a suggestion, it is plugin dependent
     pdName: "gce-disk-1"
 ```
-***fsType values will be provisioner dependent. Block is suggested for development simplicity. Since the PVC object is passed
-   to the provisioner, it will be responsible for validating and handling whether or not it supports the volumeMode being passed ***
+***Since the PVC object is passed to the provisioner, it will be responsible for validating and handling whether or not it supports the volumeMode being passed ***
 
-## UC8: 
-
-DESCRIPTION: 
-
-A developer wishes to enable their application to use a raw block device as an inline volume in the pod. 
-
-WORKFLOW:
-
-USER:
-
-```
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-db
-spec:
-    containers:
-    - name: mysql
-      image: mysql
-      volumeDevices:
-      - name: my-db-data
-        devicePath: /dev/sdb
-    volumes:
-    - name: my-db-data
-      gcePersistentDisk:
-        fsType: "ext4"
-        pdName: "gce-disk-1":
-```
-* Important implemenation detail: This design then assumes the specification of 'volumeDevices' that the volume bound will be a block device.
 
 # Container Runtime considerations
 It is important the values that are passed to the container runtimes are valid and support the current implementation of these various runtimes. Listed below are a table of various runtime and the mapping of their values to what is passed from the kubelet.
@@ -474,9 +433,9 @@ Note: the container runtime doesn't require a priviledged pod to enable the devi
 The runtime option would be placed in the DeviceInfo as such:
 devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "XXX"}) 
 
-The implemenation plan would be to rename the current makeDevices to makeGPUDevices and create a seperate function to add the raw block devices to the option array to be passed to the container runtime. This would interate on the paths passed in for the pod/container.
+The implemenation plan would be to rename the current makeDevices to makeGPUDevices and create a separate function to add the raw block devices to the option array to be passed to the container runtime. This would iterate on the paths passed in for the pod/container.
 
-Since the future of this in Kubernetes for GPUs and other plugable devices is migrating to a device plugin architecture, there are 
+Since the future of this in Kubernetes for GPUs and other plug-able devices is migrating to a device plugin architecture, there are 
 still differentiating components of storage that are enough to not to enforce alignment to their convention. Two factors when
 considering the usage of device plugins center around discoverability and topology of devices. Since neither of these are requirements
 for using raw block devices, the legacy method of populating the devices and appending it to the device array is sufficient.
