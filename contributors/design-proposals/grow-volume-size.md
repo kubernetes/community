@@ -36,7 +36,6 @@ Enable users to increase size of PVs that their pods are using. The user will up
 | NFS             | No                | No                          | No                       |
 | Flex            | Yes               | Maybe                       | No                       |
 | LocalStorage    | Yes               | Yes                         | No                       |
-| Block device    | Yes               | No                          | No                       |
 
 
 ## Implementation Design
@@ -54,6 +53,7 @@ For volume types that only require volume plugin based api call, this will be on
   can be validated by node authorizer.
 * This feature will be protected by an alpha feature gate, so as API changes needed for it.
 
+
 ### Admission Control and Validations
 
 * Resource quota code has to be updated to take into account PVC expand feature.
@@ -62,6 +62,7 @@ For volume types that only require volume plugin based api call, this will be on
 * Not all PVCs will be resizable even if underlying volume plugin allows that. Only dynamically provisioned volumes
 which are explicitly enabled by an admin will be allowed to be resized. A plugin in admission controller will forbid
 size update for PVCs for which resizing is not enabled by the admin.
+* The design proposal for raw block devices should make sure that, users aren't able to resize raw block devices.
 
 
 ### Controller Manager resize
