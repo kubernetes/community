@@ -180,7 +180,7 @@ things you can do to move the process along:
 
    * Ping the assignee (@username) on the PR comment stream, and ask for an estimate of when they can get to the review.
 
-   * Ping the assigned on [Slack](http://slack.kubernetes.io). Remember that a person's GitHub username might not be the same as their Slack username. 
+   * Ping the assignee on [Slack](http://slack.kubernetes.io). Remember that a person's GitHub username might not be the same as their Slack username. 
 
    * Ping the assignee by email (many of us have publicly available email addresses).
 
