@@ -53,6 +53,28 @@ following series of steps:
  2. Register the plugin 
  3. Reference the plugin in the admission chain
 
-**TODO**(p0lyn0mial): There is also a [sample apiserver](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/sample-apiserver/main.go) to demonstrate the usage of the generic API library. 
-After implementation sample could would be placed there - copy & paste it here and include a reference.
+## An example
+The sample apiserver provides an example admission plugin that makes meaningful use of the "standard" plugin initializer. 
+The admission plugin ensures that a resource name is not on the list of banned names.
+The source code of the plugin can be found [here](https://github.com/kubernetes/kubernetes/blob/2f00e6d72c9d58fe3edc3488a91948cf4bfcc6d9/staging/src/k8s.io/sample-apiserver/pkg/admission/plugin/banflunder/admission.go). 
 
+Having the plugin, the next step is the registration. [AdmissionOptions](https://github.com/kubernetes/kubernetes/blob/2f00e6d72c9d58fe3edc3488a91948cf4bfcc6d9/staging/src/k8s.io/apiserver/pkg/server/options/admission.go)
+provides two important things. Firstly it exposes [a register](https://github.com/kubernetes/kubernetes/blob/2f00e6d72c9d58fe3edc3488a91948cf4bfcc6d9/staging/src/k8s.io/apiserver/pkg/server/options/admission.go#L43) 
+under which all addmission plugins are registered. In fact, that's exactly what the [Register](https://github.com/kubernetes/kubernetes/blob/2f00e6d72c9d58fe3edc3488a91948cf4bfcc6d9/staging/src/k8s.io/sample-apiserver/pkg/admission/plugin/banflunder/admission.go#L33) 
+method does from our example admision plugin. It accepts a global registry as a parameter and then simply registers itself in that registry.
+Secondly, it adds an admission chain to the server configuration via [ApplyTo](https://github.com/kubernetes/kubernetes/blob/2f00e6d72c9d58fe3edc3488a91948cf4bfcc6d9/staging/src/k8s.io/apiserver/pkg/server/options/admission.go#L66) method.
+The method accepts optional parameters in the form of `pluginInitalizers`. This is useful when admission plugins need custom configuration that is not provided by the generic initializer. 
+
+The following code has been extracted from the sample server and ilustrates how to register and wire an admission plugin:
+
+```go
+  // register admission plugins
+  banflunder.Register(o.Admission.Plugins)
+
+  // create custom plugin initializer
+  informerFactory := informers.NewSharedInformerFactory(client, serverConfig.LoopbackClientConfig.Timeout)
+  admissionInitializer, _ := wardleinitializer.New(informerFactory)
+ 
+  // add admission chain to the server configuration
+  o.Admission.ApplyTo(serverConfig, admissionInitializer)
+```
