@@ -41,6 +41,7 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   * An admin wishes to expose a block volume to be consumed as a block volume for an administrative function such 
     as bootstrapping 
   * A user wishes to utilize initiate block storage to fully realize the performance of an application tuned to using block devices
+  * A user wishes to read from a block storage device and write to a filesystem (big data analytics processing)
   Future use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the 
   foundation for more fully developing these methods. 
   
@@ -417,6 +418,109 @@ Spec:
 ```
 ***Since the PVC object is passed to the provisioner, it will be responsible for validating and handling whether or not it supports the volumeMode being passed ***
 
+## UC8:
+
+DESCRIPTION: 
+* A user uses a raw block device for database applications such as mysql to read data from and write the results to a disk that 
+  has a formatted filesystem to be displayed via nginx web server.
+
+ADMIN:
+* Admin creates a 2 block devices and formats one with a filesystem
+
+```
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: raw-pv
+spec:
+  volumeMode: Block
+  capacity:
+    storage: 100Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  gcePersistentDisk:
+    pdName: "gce-disk-1"
+  
+```
+```
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: gluster-pv
+spec:
+  volumeMode: Filesystem
+  capacity:
+    storage: 100Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Delete
+  glusterfs: 
+    endpoints: glusterfs-cluster 
+    path: glusterVol
+```
+USER:
+
+* User creates a persistent volume claim with volumeMode: Block option to bind pre-created block volume.
+
+```
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: raw-pvc
+spec:
+  volumeMode: Block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 80Gi
+```
+* User creates a persistent volume claim with volumeMode: Filesystem to the pre-created gluster volume.
+
+```
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: gluster-pvc
+spec:
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 50Gi
+```
+* User creates a Pod yaml which will utilitze both block and filesystem storage by its containers.
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-db
+spec:
+  volumes:
+  - name: my-db-data
+    persistentVolumeClaim:
+      claimName: raw-pvc
+  - name: my-nginx-data
+    persistentVolumeClaim:
+      claimName: gluster-pvc
+  containers
+    - name: mysql
+      image: mysql
+      volumeDevices: 
+      - name: my-db-data
+        devicePath: /var/lib/mysql/data
+    - name: nginx
+      image: nginx
+      ports:
+      - containerPort: 80
+      volumeMounts:
+      - mountPath: /usr/share/nginx/html
+        name: my-nginx-data 
+	readOnly: false
+```
 
 # Container Runtime considerations
 It is important the values that are passed to the container runtimes are valid and support the current implementation of these various runtimes. Listed below are a table of various runtime and the mapping of their values to what is passed from the kubelet.
