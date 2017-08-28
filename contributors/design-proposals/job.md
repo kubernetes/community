@@ -18,12 +18,48 @@ Several existing issues and PRs were already created regarding that particular s
 1. Be able to get the job status.
 1. Be able to specify the number of instances performing a job at any one time.
 1. Be able to specify the number of successfully finished instances required to finish a job.
+1. Be able to specify a backoff policy, when job is continuously failing.
 
 
 ## Motivation
 
 Jobs are needed for executing multi-pod computation to completion; a good example
 here would be the ability to implement any type of batch oriented tasks.
+
+
+## Backoff policy and failed pod limit
+
+By design, Jobs do not have any notion of failure, other than a pod's `restartPolicy`
+which is mistakenly taken as Job's restart policy ([#30243](https://github.com/kubernetes/kubernetes/issues/30243),
+[#[43964](https://github.com/kubernetes/kubernetes/issues/43964)]).  There are
+situation where one wants to fail a Job after some amount of retries over a certain
+period of time, due to a logical error in configuration etc.  To do so we are going
+to introduce the following fields, which will control the backoff policy: a number of
+retries and an initial time of retry.  The two fields will allow fine-grained control
+over the backoff policy.  Each of the two fields will use a default value if none
+is provided,  `BackoffLimit` is set by default to 6 and `BackoffSeconds` to 10s.
+This will result in the following retry sequence: 10s, 20s, 40s, 1m20s, 2m40s,
+5m20s.  After which the job will be considered failed.
+
+Additionally, to help debug the issue with a Job, and limit the impact of having
+too many failed pods left around (as mentioned in [#30243](https://github.com/kubernetes/kubernetes/issues/30243)),
+we are going to introduce a field which will allow specifying the maximum number
+of failed pods to keep around.  This number will also take effect if none of the
+limits described above are set. By default it will take value of 1, to allow debugging
+job issues, but not to flood the cluster with too many failed jobs and their
+accompanying pods.
+
+All of the above fields will be optional and will apply when `restartPolicy` is
+set to `Never` on a `PodTemplate`.  With restart policy `OnFailure` only `BackoffLimit`
+applies. The reason for that is that failed pods are already restarted by the
+kubelet with an [exponential backoff](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy).
+Additionally, failures are counted differently depending on `restartPolicy`
+setting.  For `Never` we count actual pod failures (reflected in `.status.failed`
+field). With `OnFailure`, we take an approximate value of pod restarts (as reported
+in `.status.containerStatuses[*].restartCount`).
+When `.spec.parallelism` is set to a value higher than 1, the failures are an
+overall number (as coming from `.status.failed`) because the controller does not
+hold information about failures coming from separate pods.
 
 
 ## Implementation
@@ -73,14 +109,31 @@ type JobSpec struct {
     // run at any given time. The actual number of pods running in steady state will
     // be less than this number when ((.spec.completions - .status.successful) < .spec.parallelism),
     // i.e. when the work left to do is less than max parallelism.
-    Parallelism *int
+    Parallelism *int32
 
     // Completions specifies the desired number of successfully finished pods the
     // job should be run with. Defaults to 1.
-    Completions *int
+    Completions *int32
+
+    // Optional duration in seconds relative to the startTime that the job may be active
+    // before the system tries to terminate it; value must be a positive integer.
+    // It applies to overall job run time, no matter of the value of completions
+    // or parallelism parameters.
+    ActiveDeadlineSeconds *int64
+
+    // Optional number of retries before marking this job failed.
+    // Defaults to 6.
+    BackoffLimit *int32
+
+    // Optional time (in seconds) specifying how long the initial backoff will last.
+    // Defaults to 10s.
+    BackoffSeconds *int64
+
+    // Optional number of failed pods to retain.
+    FailedPodsLimit *int32
 
     // Selector is a label query over pods running a job.
-    Selector map[string]string
+    Selector LabelSelector
 
     // Template is the object that describes the pod that will be created when
     // executing a job.
@@ -107,14 +160,14 @@ type JobStatus struct {
     CompletionTime unversioned.Time
 
     // Active is the number of actively running pods.
-    Active int
+    Active int32
 
-    // Successful is the number of pods successfully completed their job.
-    Successful int
+    // Succeeded is the number of pods successfully completed their job.
+    Succeeded int32
 
-    // Unsuccessful is the number of pods failures, this applies only to jobs
+    // Failed is the number of pods failures, this applies only to jobs
     // created with RestartPolicyNever, otherwise this value will always be 0.
-    Unsuccessful int
+    Failed int32
 }
 
 type JobConditionType string
