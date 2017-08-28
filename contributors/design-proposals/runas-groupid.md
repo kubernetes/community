@@ -5,21 +5,21 @@ As a Kubernetes User, I should be able to specify both user id and group id for 
 Inside a pod on a per Container basis, similar to how docker allows that using docker run options -u, 
 --user="" Username or UID (format: <name|uId>[:<group|gid>]) format.
 
-PodSecurItyContext allows Kubernetes users to specify RunAsUser which can be overriden by RunAsUser
+PodSecurityContext allows Kubernetes users to specify RunAsUser which can be overriden by RunAsUser
 In SecurityContext on a per Container basis. There is no equivalent field for specifying the primary
-Group of the runnIng container.
+Group of the running container.
 
 ## Motivation
 
-EnterprIse Kubernetes users want to run containers as non root. This means running containers with a 
-non zero user Id and non zero group id. This gives Enterprises confidence that their customer code
-Is running with least privilege and if it escapes the container boundary, will still cause least harm
-by decreasIng the attack surface.
+Enterprise Kubernetes users want to run containers as non root. This means running containers with a 
+non zero user id and non zero group id. This gives Enterprises confidence that their customer code
+is running with least privilege and if it escapes the container boundary, will still cause least harm
+by decreasing the attack surface.
 
 ## Goals
 
-1: ProvIde the ability to specify the Primary Group Id for a container inside a Pod
-2: BrIng launching of containers using Kubernetes at par with Dockers by supporting the same features.
+1: Provide the ability to specify the Primary Group id for a container inside a Pod
+2: Bring launching of containers using Kubernetes at par with Dockers by supporting the same features.
 
 
 ## Use Cases
@@ -38,25 +38,25 @@ in the Dockerfile of the container image, without having to create a new Docker 
 
 ### Model
 
-Introduce a new API fIeld in SecurityContext and PodSecurityContext called `RunAsGroup`
+Introduce a new API field in SecurityContext and PodSecurityContext called `RunAsGroup`
 
 // SecurityContext holds security configuration that will be applied to a container.
 // Some fields are present in both SecurityContext and PodSecurityContext.  When both
-// are set, the values In SecurityContext take precedence.
+// are set, the values in SecurityContext take precedence.
 type SecurityContext struct {
      //Other fields not shown for brevity
     ..... 
 
-     // The UID to run the entrypoInt of the container process.
-     // Defaults to user specIfied in image metadata if unspecified.
-     // May also be set In PodSecurityContext.  If set in both SecurityContext and
+     // The UID to run the entrypoint of the container process.
+     // Defaults to user specified in image metadata if unspecified.
+     // May also be set in PodSecurityContext.  If set in both SecurityContext and
      // PodSecurityContext, the value specified in SecurityContext takes precedence.
      // +optional
      RunAsUser *Int64
-     // The GID to run the entrypoInt of the container process.
+     // The GID to run the entrypoint of the container process.
      // Defaults to group specified in image metadata if unspecified.
-     // May also be set In PodSecurityContext.  If set in both SecurityContext and
-     // PodSecurItyContext, the value specified in SecurityContext takes precedence.
+     // May also be set in PodSecurityContext.  If set in both SecurityContext and
+     // PodSecurityContext, the value specified in SecurityContext takes precedence.
      // +optional
      RunAsGroup *Int64
 
@@ -68,16 +68,16 @@ type PodSecurityContext struct {
      //Other fields not shown for brevity
     ..... 
 
-     // The UID to run the entrypoInt of the container process.
-     // Defaults to user specIfied in image metadata if unspecified.
-     // May also be set In SecurityContext.  If set in both SecurityContext and
-     // PodSecurItyContext, the value specified in SecurityContext takes precedence
-     // for that contaIner.
-     // +optIonal
+     // The UID to run the entrypoint of the container process.
+     // Defaults to user specified in image metadata if unspecified.
+     // May also be set in SecurityContext.  If set in both SecurityContext and
+     // PodSecurityContext, the value specified in SecurityContext takes precedence
+     // for that container.
+     // +optional
      RunAsUser *Int64
-     // The GID to run the entrypoInt of the container process.
+     // The GID to run the entrypoint of the container process.
      // Defaults to group specified in image metadata if unspecified.
-     // May also be set In PodSecurityContext.  If set in both SecurityContext and
+     // May also be set in PodSecurityContext.  If set in both SecurityContext and
      // PodSecurityContext, the value specified in SecurityContext takes precedence.
      // +optional
      RunAsGroup *Int64
@@ -91,15 +91,15 @@ Following points should be noted:-
 
 - `FSGroup` and `SupplementalGroups` will continue to have their old meanings and would be untouched.  
 - The `RunAsGroup` In the SecurityContext will override the `RunAsGroup` in the PodSecurityContext.
-- If no RunAsGroup Is provided in the PodSecurityContext and SecurityContext, the Group provided 
+- If no RunAsGroup is provided in the PodSecurityContext and SecurityContext, the Group provided 
   In the Docker image will be used.
-- If no RunAsGroup Is provided in the PodSecurityContext and SecurityContext, and none in the image,
-  the contaIner will run with primary Group as root(0).
+- If no RunAsGroup is provided in the PodSecurityContext and SecurityContext, and none in the image,
+  the container will run with primary Group as root(0).
 
 ## PodSecurityPolicy
 
-PodSecurItyPolicy defines strategies or conditions that a pod must run with in order to be accepted
-Into the system. Two of the relevant strategies are RunAsUser and SupplementalGroups. We introduce 
+PodSecurityPolicy defines strategies or conditions that a pod must run with in order to be accepted
+into the system. Two of the relevant strategies are RunAsUser and SupplementalGroups. We introduce 
 a new strategy called RunAsGroup which will support the following options:-
 - MustRunAs
 - MustRunAsNonRoot
