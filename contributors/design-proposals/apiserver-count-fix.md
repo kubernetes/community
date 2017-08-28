@@ -22,6 +22,7 @@ stale API Endpoints. The issue is when the number of kube-apiserver instances
 gets below or above the masterCount. If the below case happens, the stale
 instances within the Endpoints does not get cleaned up, or in the latter case
 the endpoints start to flap.
+
 ## Known Issues
 
 Each apiserver’s reconciler only cleans up for it's own IP. If a new
@@ -34,11 +35,11 @@ to the masterCount. For example:
 * The IP for endpoint ‘B’ is not
 removed from the Endpoints list
 
-There is logic within the [MasterCountEndpointReconciler](https://github.com/kubernetes/kubernetes/blob/68814c0203c4b8abe59812b1093844a1f9bdac05/pkg/master/controller.go#L293) to attempt to make
-the Endpoints eventually consistent, but the code relies on the
-Endpoints count becoming equal to or greater than masterCount. When the
-apiservers become greater than the masterCount the Endpoints tend to
-flap.
+There is logic within the
+[MasterCountEndpointReconciler](https://github.com/kubernetes/kubernetes/blob/68814c0203c4b8abe59812b1093844a1f9bdac05/pkg/master/controller.go#L293)
+to attempt to make the Endpoints eventually consistent, but the code relies on
+the Endpoints count becoming equal to or greater than masterCount. When the
+apiservers become greater than the masterCount the Endpoints tend to flap.
 
 If the number endpoints were scaled down from automation, then the
 Endpoints would never become consistent.
@@ -49,75 +50,27 @@ Endpoints would never become consistent.
 
 | Kubernetes Release  | Quality | Description |
 | ------------- | ------------- | ----------- |
-| 1.9           | alpha         | <ul><li>Add a new reconciler</li><li>Add a command-line type `--alpha-apiserver-endpoint-reconciler-type`<ul><li>configmap</li><li>default</li></ul></li></ul>
-| 1.10          | beta          | <ul><li>Turn on the `configmap` type by default</li></ul>
+| 1.9           | alpha         | <ul><li>Add a new reconciler</li><li>Add a command-line type `--alpha-apiserver-endpoint-reconciler-type`<ul><li>storage</li><li>default</li></ul></li></ul>
+| 1.10          | beta          | <ul><li>Turn on the `storage` type by default</li></ul>
 | 1.11          | stable        | <ul><li>Remove code for old reconciler</li><li>Remove --apiserver-count</li></ul>
 
-The MasterCountEndpointReconciler does not meet the current needs for
-durability of API Endpoint creation, deletion, or failure cases.
+The MasterCountEndpointReconciler does not meet the current needs for durability
+of API Endpoint creation, deletion, or failure cases.
 
-Create a new `MasterEndpointConfigMapReconciler` within
-master/controller.go.
+Custom Resource Definitions and ConfigMaps were proposed, but since they are
+watched globally, liveliness updates could be overly chatty.
 
-Add a `kube-apiserver-config` ConfigMap in the `kube-system`
-namespace. The duration found within the Coordination map would be configurable by
-admins without a recompile. The ConfigMap would include the following:
-
-```go
-KubeApiServerConfigMap{
-  "expiration-duration":        "1m",
-  ... [other flags potentially]
-}
-```
-
-The Coordination ConfigMap would be formed such that:
-
-```go
-CoordinationConfigMap{
-  "[namespace]/[name]": "[KubeAPIServerEndpoint]",
-}
-```
-
-*Key Format*: ip-[IP String Formatted]-[port]
-
-```go
-KubeAPIServerEndpointConfigMap{
-  "master-count":                "0",
-	"ip-2001-4860-4860--8888-443": "time.Time",
-	"ip-192-168-0-3-443":          "time.Time",
-}
-```
-
-***TODO: should it a serialized struct, or the raw time value?***
-
-The reconcile loop will expire endpoints that do not meet the duration.
-On each reconcile loop (the loop runs every 10 seconds currently,
-but interval will be changed to 80% of the `expiration-duration`):
-
-1. GET `kube-apiserver-endpoints` ConfigMap (as endpointMap)
-1. Update the timestamp for the currently running API server
-1. Remove all endpoints where the timestamp is greater than `expiration-duration` from the configMap.
-1. Do a GET on the `kube-apiserver-endpoints`
-1. Construct a PATCH operation with the deleted endpoints
-
-configmap.yml:
-
-```yaml
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: kube-apiserver-endpoints
-  namespace: default
-```
+By porting OpenShift's
+[LeaseEndpointReconciler](https://github.com/openshift/origin/blob/master/pkg/cmd/server/election/lease_endpoint_reconciler.go)
+to Kubernetes we can use use the Storage API directly to store Endpoints
+dynamically within the system.
 
 ### Alternate Proposals
 
-#### Custom Resource Definitions
+#### Custom Resource Definitions and ConfigMaps
 
-CRD's were considered for this proposal, but were not proposed due to
-constraints of having CRDs within core has not been clearly defined.
-Layering could also be an issue, so the proposal defined ConfigMaps as
-the current path forward.
+CRD's and ConfigMaps were considered for this proposal. They were not adopted
+for this proposal by the community due to tecnical issues explained earlier.
 
 #### Refactor Old Reconciler
 
