@@ -18,18 +18,18 @@ by decreasing the attack surface.
 
 ## Goals
 
-1: Provide the ability to specify the Primary Group id for a container inside a Pod
-2: Bring launching of containers using Kubernetes at par with Dockers by supporting the same features.
+1. Provide the ability to specify the Primary Group id for a container inside a Pod
+2. Bring launching of containers using Kubernetes at par with Dockers by supporting the same features.
 
 
 ## Use Cases
 
-Use case 1:
+### Use case 1:
 As a Kubernetes User, I should be able to control both user id and primary group id of containers 
 launched using Kubernetes at runtime, so that i can run the container as non root with least possible
 privilege.
 
-Use case 2:
+### Use case 2:
 As a Kubernetes User, I should be able to control both user id and primary group id of containers 
 launched using Kubernetes at runtime, so that i can override the user id and primary group id specified
 in the Dockerfile of the container image, without having to create a new Docker image.
@@ -40,6 +40,9 @@ in the Dockerfile of the container image, without having to create a new Docker 
 
 Introduce a new API field in SecurityContext and PodSecurityContext called `RunAsGroup`
 
+#### SecurityContext
+
+```
 // SecurityContext holds security configuration that will be applied to a container.
 // Some fields are present in both SecurityContext and PodSecurityContext.  When both
 // are set, the values in SecurityContext take precedence.
@@ -62,8 +65,11 @@ type SecurityContext struct {
 
     .....
  }
- 
+```
 
+#### PodSecurityContext 
+
+```
 type PodSecurityContext struct {
      //Other fields not shown for brevity
     ..... 
@@ -84,19 +90,9 @@ type PodSecurityContext struct {
 
     .....
  }
+```
 
-## Behavior
-
-Following points should be noted:-
-
-- `FSGroup` and `SupplementalGroups` will continue to have their old meanings and would be untouched.  
-- The `RunAsGroup` In the SecurityContext will override the `RunAsGroup` in the PodSecurityContext.
-- If no RunAsGroup is provided in the PodSecurityContext and SecurityContext, the Group provided 
-  In the Docker image will be used.
-- If no RunAsGroup is provided in the PodSecurityContext and SecurityContext, and none in the image,
-  the container will run with primary Group as root(0).
-
-## PodSecurityPolicy
+#### PodSecurityPolicy
 
 PodSecurityPolicy defines strategies or conditions that a pod must run with in order to be accepted
 into the system. Two of the relevant strategies are RunAsUser and SupplementalGroups. We introduce 
@@ -105,6 +101,7 @@ a new strategy called RunAsGroup which will support the following options:-
 - MustRunAsNonRoot
 - RunAsAny
 
+```
 // PodSecurityPolicySpec defines the policy enforced.
  type PodSecurityPolicySpec struct {
      //Other fields not shown for brevity
@@ -141,6 +138,18 @@ a new strategy called RunAsGroup which will support the following options:-
      // container may make requests for any gid.
      RunAsGroupStrategyRunAsAny RunAsGroupStrategy = "RunAsAny"
  )
+```
+
+## Behavior
+
+Following points should be noted:-
+
+- `FSGroup` and `SupplementalGroups` will continue to have their old meanings and would be untouched.  
+- The `RunAsGroup` In the SecurityContext will override the `RunAsGroup` in the PodSecurityContext.
+- If no RunAsGroup is provided in the PodSecurityContext and SecurityContext, the Group provided 
+  In the Docker image will be used.
+- If no RunAsGroup is provided in the PodSecurityContext and SecurityContext, and none in the image,
+  the container will run with primary Group as root(0).
 
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
