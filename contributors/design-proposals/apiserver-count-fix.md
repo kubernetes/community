@@ -57,8 +57,12 @@ Endpoints would never become consistent.
 The MasterCountEndpointReconciler does not meet the current needs for durability
 of API Endpoint creation, deletion, or failure cases.
 
-Custom Resource Definitions and ConfigMaps were proposed, but since they are
-watched globally, liveliness updates could be overly chatty.
+Custom Resource Definitions were proposed, but they do not have clean layering.
+Additionally, liveness and locking would be a nice to have feature for a long
+term solution.
+
+ConfigMaps were proposed, but since they are watched globally, liveliness
+updates could be overly chatty.
 
 By porting OpenShift's
 [LeaseEndpointReconciler](https://github.com/openshift/origin/blob/master/pkg/cmd/server/election/lease_endpoint_reconciler.go)
