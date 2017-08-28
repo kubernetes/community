@@ -28,15 +28,15 @@ follows:
 
 ```go
 type DaemonSetUpdateStrategy struct {
-  // Type of daemon set update. Can be "RollingUpdate", "SurgingUpdate", or "OnDelete".
-  // Default is OnDelete.
-  // +optional
-  Type DaemonSetUpdateStrategyType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-
-  // Rolling update config params. Present only if type = "RollingUpdate".
-  //---
-  // TODO: Update this to follow our convention for oneOf, whatever we decide it
-  // to be. Same as Deployment `strategy.rollingUpdate`.
+	// Type of daemon set update. Can be "RollingUpdate", "SurgingUpdate", or "OnDelete".
+	// Default is OnDelete.
+	// +optional
+	Type DaemonSetUpdateStrategyType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	
+	// Rolling update config params. Present only if type = "RollingUpdate".
+	//---
+	// TODO: Update this to follow our convention for oneOf, whatever we decide it
+	// to be. Same as Deployment `strategy.rollingUpdate`.
 	// See https://github.com/kubernetes/kubernetes/issues/35345
 	// +optional
 	RollingUpdate *RollingUpdateDaemonSet `json:"rollingUpdate,omitempty" protobuf:"bytes,2,opt,name=rollingUpdate"`
@@ -53,16 +53,16 @@ type DaemonSetUpdateStrategy struct {
 ...
 
 const (
- 	// Replace the old daemons by new ones using rolling update i.e replace them on each node one after the other,
- 	// killing the old pod before starting the new one.
- 	RollingUpdateDaemonSetStrategyType DaemonSetUpdateStrategyType = "RollingUpdate"
+	// Replace the old daemons by new ones using rolling update i.e replace them on each node one after the other,
+	// killing the old pod before starting the new one.
+	RollingUpdateDaemonSetStrategyType DaemonSetUpdateStrategyType = "RollingUpdate"
  
- 	// Replace the old daemons by new ones using rolling update i.e replace them on each node one
- 	// after the other, creating the new pod and then killing the old one.
- 	SurgingRollingUpdateDaemonSetStrategyType DaemonSetUpdateStrategyType = "SurgingRollingUpdate"
+	// Replace the old daemons by new ones using rolling update i.e replace them on each node one
+	// after the other, creating the new pod and then killing the old one.
+	SurgingRollingUpdateDaemonSetStrategyType DaemonSetUpdateStrategyType = "SurgingRollingUpdate"
  
- 	// Replace the old daemons only when it's killed
- 	OnDeleteDaemonSetStrategyType DaemonSetUpdateStrategyType = "OnDelete"
+	// Replace the old daemons only when it's killed
+	OnDeleteDaemonSetStrategyType DaemonSetUpdateStrategyType = "OnDelete"
 )
 
 ...
@@ -87,15 +87,16 @@ type SurgingRollingUpdateDaemonSet struct {
 Then an additional hook for this strategy will be added to the part of the
 reconciliation loop that runs when pod updates are needed. That hook will:
 
-1. Determine how many new pods can be created, according to the number of extra
-   pods currently running and the `maxSurge` parameter.
-2. Determine how many previous-generation pods can be retired once their
-   replacement pods are scheduled and running.
-3. Instruct the controller-manager to add and delete pods based on the results
-   of (1) and (2).
+1. Determine how many nodes can have new pods scheduled, according to the
+   number of extra nodes currently running more than one pod and the `maxSurge`
+   parameter.
+2. Determine how many nodes can have their previous-generation pods retired
+   once the replacement pods are scheduled and running.
+3. Instruct the controller-manager to add and delete pods on nodes based on the
+   results of (1) and (2).
 
 This is mechanically almost identical to the current `RollingUpdate` strategy,
-with the key differences being the direct creation of new pods (the
+with the key differences being the direct creation of new pods on nodes (the
 `RollingUpdate` strategy only deletes pods up to the `maxUnavailable` threshold
 and then waits for the main reconciler create new pods to replace them).
 
