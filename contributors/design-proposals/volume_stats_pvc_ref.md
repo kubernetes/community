@@ -41,7 +41,7 @@ type VolumeStats struct {
 - The limitation of this approach is that we're limited to reporting only what is available in the pod spec (Pod namespace and PVC claimname)
 
 ### Option 2
-- Modify the ```volumemanager::GetMountedVolumesForPod()``` (or add a new function) to return additional volume information from the ASOW/DSOW caches
+- Modify the ```volumemanager::GetMountedVolumesForPod()``` (or add a new function) to return additional volume information from the actual/desired state-of-world caches
     - Use this to populate PVCRef in VolumeStats
 
 - This allows us to get information not available in the Pod spec such as the PV name/UID which can be used to label metrics - enables exposing/querying volume metrics by PV name
