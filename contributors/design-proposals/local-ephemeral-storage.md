@@ -1,5 +1,5 @@
 # Local Ephemeral Storage Resource Management
-Authors: jinxu@
+Authors: jinxu@ vishh@
 
 Currently Kubernetes does not support storage resource usage guarantee and isolation like compute resources such as CPU and memory. This doc details an effort for improving Storage Resource Management in Kubernetes with focus on
 capacity isolation for local ephemeral storage. 
