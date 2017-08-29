@@ -1,20 +1,27 @@
 ## Abstract
 
 
-As a Kubernetes User, I should be able to specify both user id and group id for the containers running 
-Inside a pod on a per Container basis, similar to how docker allows that using docker run options -u, 
---user="" Username or UID (format: <name|uId>[:<group|gid>]) format.
+As a Kubernetes User, we should be able to specify both user id and group id for the containers running 
+inside a pod on a per Container basis, similar to how docker allows that using docker run options `-u, 
+--user="" Username or UID (format: <name|uId>[:<group|gid>]) format`.
 
 PodSecurityContext allows Kubernetes users to specify RunAsUser which can be overriden by RunAsUser
-In SecurityContext on a per Container basis. There is no equivalent field for specifying the primary
+in SecurityContext on a per Container basis. There is no equivalent field for specifying the primary
 Group of the running container.
 
 ## Motivation
 
 Enterprise Kubernetes users want to run containers as non root. This means running containers with a 
-non zero user id and non zero group id. This gives Enterprises confidence that their customer code
+non zero user id and non zero primary group id. This gives Enterprises, confidence that their customer code
 is running with least privilege and if it escapes the container boundary, will still cause least harm
 by decreasing the attack surface.
+
+### What is the significance of Primary Group Id ?
+Primary Group Id is the group id used when creating files and directories. It is also the default group 
+associated with a user, when he/she logins. All groups are defined in `/etc/group` file and are created
+with the `groupadd` command. A Process/Container runs with uid/primary gid of the calling user. If no
+primary group is specified for a user, 0(root) group is assumed. This means , any files/directories created
+by a process running as user with no primary group associated with it, will be owned by group id 0(root).
 
 ## Goals
 
