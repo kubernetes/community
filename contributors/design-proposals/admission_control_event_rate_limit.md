@@ -26,6 +26,20 @@ the performance of the cluster overall.
 ### Configuration
 
 ```go
+// Type of limit (e.g., per-namespace)
+type LimitType string
+
+const (
+	// ServerLimitType limits are maintained against all events received by the server
+	ServerLimitType LimitType = "server"
+	// NamespaceLimitType limits are maintained against events from each namespace
+	NamespaceLimitType LimitType = "namespace"
+	// UserLimitType limits are maintained against events from each user
+	UserLimitType LimitType = "user"
+	// SourceObjectLimitType limits are maintained against events from each source+object
+	SourceObjectLimitType LimitType = "source+object"
+)
+
 // Configuration provides configuration for the EventRateLimit admission controller.
 type Configuration struct {
 	metav1.TypeMeta `json:",inline"`
@@ -38,32 +52,25 @@ type Configuration struct {
 }
 
 type Limit struct {
-	// Type of limit.
-	// The following are valid values.
-	// "server": limits are maintained against all events received by the server
-	// "namespace": limits are maintained against events from each namespace
-	// "user": limits are maintained against events from each user
-	// "source+object": limits are maintained against events from each source+object
-	Type string `json:"type"`
+	// Type of limit
+	Type LimitType `json:"type"`
 
 	// Maximum QPS of events for this limit
 	QPS float32 `json:"qps"`
 
 	// Maximum burst for throttle of events for this limit
-	Burst int ` json:"burst"`
+	Burst int64 ` json:"burst"`
 
-	// Maximum number of limits to maintain. If room is needed in the cache for a
-	// new limit, then the least-recently used limit is evicted, resetting the
-	// stats for that subset of the universe.
+	// Size of the LRU cache for this limit. If a bucket is evicted from the cache,
+	// then the stats for that bucket are reset. If more events are later received
+	// for that bucket, then that bucket will re-enter the cache with a clean slate,
+	// giving that bucket a full Burst number of tokens to use.
 	//
-	// For example, if the type of limit is "namespace" and the limit for
-	// namespace "A" is evicted, then the next event received from namespace "A"
-	// will use reset stats, enabling events from namespace "A" as though no
-	// events from namespace "A" have yet been received.
+	// The default cache size is 4096.
 	//
-	// If the type of limit is "server", then CacheSize is ignored and can be
-	// omitted.
-	CacheSize int `json:"cacheSize"`
+	// If LimitType is ServerLimitType, then CacheSize is ignored.
+	// +optional
+	CacheSize int64 `json:"cacheSize,omitempty"`
 }
 ```
 
@@ -79,7 +86,6 @@ Validation of a **Limit** enforces that the following rules apply:
 * **Type** is one of "server", "namespace", "user", and "source+object".
 * **QPS** is positive.
 * **Burst** is positive.
-* If **Type** is not "server", then **CacheSize** is positive.
 
 ### Default Value Behavior
 
