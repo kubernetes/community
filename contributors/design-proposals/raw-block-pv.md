@@ -589,7 +589,7 @@ Other considerations:
        SetUpDevice() error
        SetUpDeviceAt(dir string) error
        GetVolumePath() string
-       GetVolumeType() v1.PersistentVolumeType
+       GetVolumeMode() v1.PersistentVolumeMode
  }
  type BlockVolumeUnmapper interface {
        Volume
