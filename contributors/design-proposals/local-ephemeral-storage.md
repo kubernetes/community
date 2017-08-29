@@ -95,14 +95,12 @@ Similar to CPU and memory, admin could use LimitRange to set default container�
       name: foo
     status:
       capacity:
-        storage.kubernetes.io/overlay: 100Gi
-        storage.kubernetes.io/scratch: 100Gi
+        ephemeral-storage: 100Gi
       allocatable:
-        storage.kubernetes.io/overlay: 100Gi
-        storage.kubernetes.io/scratch: 90Gi
+        ephemeral-storage: 90Gi
     ```
 
-2. Alice adds new storage resource requirements to her pod, specifying limits for the container's writeable and overlay layers, and emptyDir volumes.
+2. Alice adds new storage resource requirements to her pod.
 
     ```yaml
     apiVersion: v1
@@ -114,18 +112,17 @@ Similar to CPU and memory, admin could use LimitRange to set default container�
      - name: fooc
        resources:
          limits:
-           storage.kubernetes.io/logs: 500Mi
-           storage.kubernetes.io/overlay: 1Gi
+           ephemeral-storage: 10Gi
        volumeMounts:
        - name: myEmptyDir
          mountPath: /mnt/data
      volumes:
      - name: myEmptyDir
        emptyDir:
-         sizeLimit: 20Gi
+         sizeLimit: 5Gi
     ```
 
-3. Alice’s pod “foo” is Guaranteed a total of “21.5Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
+3. Alice’s pod “foo” is Guaranteed a total of “10Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
 4. For the pod resources, `storage.kubernetes.io/logs` resource is meant for logs. `storage.kubernetes.io/overlay` is meant for writable layer.
 5. `storage.kubernetes.io/logs` is satisfied by `storage.kubernetes.io/scratch`.
 6. `storage.kubernetes.io/overlay` resource can be satisfied by `storage.kubernetes.io/overlay` if exposed by nodes or by `storage.kubernetes.io/scratch` otherwise. The scheduler follows this policy to find an appropriate node which can satisfy the storage resource requirements of the pod.
