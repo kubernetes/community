@@ -149,7 +149,7 @@ func (og *operationGenerator) GenerateExpandVolumeFunc(
 
 * There will be additional checks in controller that grows PV size - to ensure that we do not make volume plugin API calls that can reduce size of PV.
 
-### File system resize on kublet
+### File system resize on kubelet
 
 A File system resize will be pending on PVC until a new pod that uses this volume is scheduled somewhere. While theoretically we *can* perform
 online file system resize if volume type and file system supports it - we are leaving it for next iteration of this feature.
