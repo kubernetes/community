@@ -3,7 +3,7 @@
 
 As a Kubernetes User, we should be able to specify both user id and group id for the containers running 
 inside a pod on a per Container basis, similar to how docker allows that using docker run options `-u, 
---user="" Username or UID (format: <name|uId>[:<group|gid>]) format`.
+--user="" Username or UID (format: <name|uid>[:<group|gid>]) format`.
 
 PodSecurityContext allows Kubernetes users to specify RunAsUser which can be overriden by RunAsUser
 in SecurityContext on a per Container basis. There is no equivalent field for specifying the primary
@@ -45,7 +45,7 @@ in the Dockerfile of the container image, without having to create a new Docker 
 
 ### Model
 
-Introduce a new API field in SecurityContext and PodSecurityContext called `RunAsGroup`
+Introduce a new API field in SecurityContext and PodSecurityContext called `RunAsGroup`.
 
 #### SecurityContext
 
@@ -62,13 +62,13 @@ type SecurityContext struct {
      // May also be set in PodSecurityContext.  If set in both SecurityContext and
      // PodSecurityContext, the value specified in SecurityContext takes precedence.
      // +optional
-     RunAsUser *Int64
+     RunAsUser *int64
      // The GID to run the entrypoint of the container process.
      // Defaults to group specified in image metadata if unspecified.
      // May also be set in PodSecurityContext.  If set in both SecurityContext and
      // PodSecurityContext, the value specified in SecurityContext takes precedence.
      // +optional
-     RunAsGroup *Int64
+     RunAsGroup *int64
 
     .....
  }
@@ -87,13 +87,13 @@ type PodSecurityContext struct {
      // PodSecurityContext, the value specified in SecurityContext takes precedence
      // for that container.
      // +optional
-     RunAsUser *Int64
+     RunAsUser *int64
      // The GID to run the entrypoint of the container process.
      // Defaults to group specified in image metadata if unspecified.
      // May also be set in PodSecurityContext.  If set in both SecurityContext and
      // PodSecurityContext, the value specified in SecurityContext takes precedence.
      // +optional
-     RunAsGroup *Int64
+     RunAsGroup *int64
 
     .....
  }
@@ -103,7 +103,7 @@ type PodSecurityContext struct {
 
 PodSecurityPolicy defines strategies or conditions that a pod must run with in order to be accepted
 into the system. Two of the relevant strategies are RunAsUser and SupplementalGroups. We introduce 
-a new strategy called RunAsGroup which will support the following options:-
+a new strategy called RunAsGroup which will support the following options:
 - MustRunAs
 - MustRunAsNonRoot
 - RunAsAny
@@ -149,7 +149,7 @@ a new strategy called RunAsGroup which will support the following options:-
 
 ## Behavior
 
-Following points should be noted:-
+Following points should be noted:
 
 - `FSGroup` and `SupplementalGroups` will continue to have their old meanings and would be untouched.  
 - The `RunAsGroup` In the SecurityContext will override the `RunAsGroup` in the PodSecurityContext.
