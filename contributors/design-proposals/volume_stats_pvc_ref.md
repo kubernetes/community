@@ -48,6 +48,9 @@ type VolumeStats struct {
 - It's unclear whether this is a use case we need to/should support:
   * Volume metrics are only refreshed for mounted volumes which implies a bound/available PVC
   * We expect most user-storage interactions to be via the PVC
+- Admins monitoring PVs (and not PVC's) so that they know when their users are running out of space or are over-provisioning would be a use case supporting adding PV information to
+  metrics
+
 
 
 
