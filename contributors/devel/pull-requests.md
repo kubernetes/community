@@ -10,6 +10,7 @@ This doc explains the process and best practices for submitting a PR to the [Kub
 - [The PR Submit Process](#the-pr-submit-process)
   * [Write Release Notes if Needed](#write-release-notes-if-needed)
   * [The Testing and Merge Workflow](#the-testing-and-merge-workflow)
+  * [Marking Unfinished Pull Requests](#marking-unfinished-pull-requests)
   * [Comment Commands Reference](#comment-commands-reference)
   * [Automation](#automation)
   * [How the e2e Tests Work](#how-the-e2e-tests-work)
@@ -30,7 +31,7 @@ This doc explains the process and best practices for submitting a PR to the [Kub
 
 # Before You Submit a PR
 
-This guide is for contributors who already have a PR to submit. If you're looking for information on setting up your developer environment and creating code to contribute to Kubernetes, see the [development guide](development.md). 
+This guide is for contributors who already have a PR to submit. If you're looking for information on setting up your developer environment and creating code to contribute to Kubernetes, see the [development guide](development.md).
 
 **Make sure your PR adheres to our best practices. These include following project conventions, making small PRs, and commenting thoroughly. Please read the more detailed section on [Best Practices for Faster Reviews](#best-practices-for-faster-reviews) at the end of this doc.**
 
@@ -112,7 +113,7 @@ If you're **not** a member of the Kubernetes organization:
 1. Reviewer suggests edits
 1. Push edits to your PR branch
 1. Repeat the prior two steps as needed
-1. (Optional) Some reviewers prefer that you squash commits at this step 
+1. (Optional) Some reviewers prefer that you squash commits at this step
 1. Owner is assigned and will add the `/approve` label to the PR
 
 If you are a member, or a member comments `@k8s-bot ok to test`, the pre-submit tests will run:
@@ -134,6 +135,12 @@ Either the [on call contributor](on-call-rotations.md) will manage the merge que
 1. If tests pass, the merge queue automatically merges the PR
 
 That's the last step. Your PR is now merged.
+
+## Marking Unfinished Pull Requests
+
+If you want to solicit reviews before the implementation of your pull request is complete, you should mark your pull request as a work in progress to ensure that the merge queue does not pick it up and attempt to merge it. You may prefix your pull request title with `WIP` or `[WIP]` to indicate this.
+
+The GitHub robots will add and remove the `do-not-merge/work-in-progress` label as you edit your title. While the label is present, your pull request will not be considered for merging.
 
 ## Comment Commands Reference
 
@@ -173,7 +180,7 @@ things you can do to move the process along:
 
    * Ping the assignee (@username) on the PR comment stream, and ask for an estimate of when they can get to the review.
 
-   * Ping the assignee on [Slack](http://slack.kubernetes.io). Remember that a person's GitHub username might not be the same as their Slack username. 
+   * Ping the assignee on [Slack](http://slack.kubernetes.io). Remember that a person's GitHub username might not be the same as their Slack username.
 
    * Ping the assignee by email (many of us have publicly available email addresses).
 
@@ -205,7 +212,7 @@ Are you sure Feature-X is something the Kubernetes team wants or will accept? Is
 It's better to get confirmation beforehand. There are two ways to do this:
 
 - Make a proposal doc (in docs/proposals; for example [the QoS proposal](http://prs.k8s.io/11713)), or reach out to the affected special interest group (SIG). Here's a [list of SIGs](https://github.com/kubernetes/community/blob/master/sig-list.md)
-- Coordinate your effort with [SIG Docs](https://github.com/kubernetes/community/tree/master/sig-docs) ahead of time 
+- Coordinate your effort with [SIG Docs](https://github.com/kubernetes/community/tree/master/sig-docs) ahead of time
 - Make a sketch PR (e.g., just the API or Go interface). Write or code up just enough to express the idea and the design and why you made those choices
 
 Or, do all of the above.
@@ -263,7 +270,7 @@ Feature-X. (Do that in its own commit or PR, please.)
 
 In your code, if someone might not understand why you did something (or you won't remember why later), comment it. Many code-review comments are about this exact issue.
 
-If you think there's something pretty obvious that we could follow up on, add a TODO. 
+If you think there's something pretty obvious that we could follow up on, add a TODO.
 
 Read up on [GoDoc](https://blog.golang.org/godoc-documenting-go-code) - follow those general rules for comments.
 
@@ -281,7 +288,7 @@ Make the fixups, and don't squash yet. Put them in a new commit, and re-push. Th
 
 We might still ask you to clean up your commits at the very end for the sake of a more readable history, but don't do this until asked: typically at the point where the PR would otherwise be tagged `LGTM`.
 
-Each commit should have a good title line (<70 characters) and include an additional description paragraph describing in more detail the change intended. 
+Each commit should have a good title line (<70 characters) and include an additional description paragraph describing in more detail the change intended.
 
 **General squashing guidelines:**
 
@@ -301,7 +308,7 @@ Sometimes we need to remind each other of core tenets of software design - Keep 
 
 ## 8. It's OK to Push Back
 
-Sometimes reviewers make mistakes. It's OK to push back on changes your reviewer requested. If you have a good reason for doing something a certain way, you are absolutely allowed to debate the merits of a requested change. Both the reviewer and reviewee should strive to discuss these issues in a polite and respectful manner. 
+Sometimes reviewers make mistakes. It's OK to push back on changes your reviewer requested. If you have a good reason for doing something a certain way, you are absolutely allowed to debate the merits of a requested change. Both the reviewer and reviewee should strive to discuss these issues in a polite and respectful manner.
 
 You might be overruled, but you might also prevail. We're pretty reasonable people. Mostly.
 
