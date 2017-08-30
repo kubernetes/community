@@ -22,7 +22,7 @@ A few examples...
 1. Deploy the baz service to all prod clusters globally
 
 Currently, it's possible to control placement decision of Federated ReplicaSets
-using the `federation.kubernetes.io/replica-set-preferences` annotation. This provides functionaility to change the number of ReplicaSets created on each Federated Cluster, by setting the quantity for each Cluster by Cluster Name. Since cluster names are required, in situations where clusters are add/removed from Federation it would require the object definitions to change in order to maintain the same configuration. From the example above, if a new cluster is created in Europe and added to federation, then the replica-set-preferences would need to be updated to include the new cluster name.
+using the `federation.kubernetes.io/replica-set-preferences` annotation. This provides functionality to change the number of ReplicaSets created on each Federated Cluster, by setting the quantity for each Cluster by Cluster Name. Since cluster names are required, in situations where clusters are add/removed from Federation it would require the object definitions to change in order to maintain the same configuration. From the example above, if a new cluster is created in Europe and added to federation, then the replica-set-preferences would need to be updated to include the new cluster name.
 
 This proposal is to provide placement decision support for all object types using Labels on the Federated Clusters as opposed to cluster names. The matching language currently used for nodeAffinity placement decisions onto nodes can be leveraged. 
 
@@ -34,7 +34,7 @@ Carrying forward the examples from above...
 
 ## Design
 
-The proposed design uses a ClusterSelector annotation that has a value that is parsed into a struct definition that follows the same design as the [NodeSelector type used w/ nodeAffinity](https://github.com/kubernetes/kubernetes/blob/master/pkg/api/v1/types.go#L1798) and will also use the [Matches function](https://github.com/kubernetes/apimachinery/blob/master/pkg/labels/selector.go#L172) of the apimachinery project to determine if an object should be sent on to federated clusters or not.
+The proposed design uses a ClusterSelector annotation that has a value that is parsed into a struct definition that follows the same design as the [NodeSelector type used w/ nodeAffinity](https://github.com/kubernetes/kubernetes/blob/master/pkg/api/types.go#L1972) and will also use the [Matches function](https://github.com/kubernetes/apimachinery/blob/master/pkg/labels/selector.go#L172) of the apimachinery project to determine if an object should be sent on to federated clusters or not.
 
 In situations where objects are not to be forwarded to federated clusters, instead a delete api call will be made using the object definition. If the object does not exist it will be ignored.
 
