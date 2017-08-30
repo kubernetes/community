@@ -109,10 +109,18 @@ Similar to CPU and memory, admin could use LimitRange to set default container�
      name: foo
     spec:
      containers:
-     - name: fooc
+     - name: fooa
        resources:
+        requests:
+           ephemeral-storage: 10Gi
          limits:
            ephemeral-storage: 10Gi
+     - name: foob
+       resources:
+        requests:
+           ephemeral-storage: 20Gi
+         limits:
+           ephemeral-storage: 20Gi
        volumeMounts:
        - name: myEmptyDir
          mountPath: /mnt/data
@@ -122,15 +130,11 @@ Similar to CPU and memory, admin could use LimitRange to set default container�
          sizeLimit: 5Gi
     ```
 
-3. Alice’s pod “foo” is Guaranteed a total of “10Gi” of local storage. The container “fooc” in her pod cannot consume more than 1Gi for writable layer and 500Mi for logs, and “myEmptyDir” volume cannot consume more than 20Gi.
-4. For the pod resources, `storage.kubernetes.io/logs` resource is meant for logs. `storage.kubernetes.io/overlay` is meant for writable layer.
-5. `storage.kubernetes.io/logs` is satisfied by `storage.kubernetes.io/scratch`.
-6. `storage.kubernetes.io/overlay` resource can be satisfied by `storage.kubernetes.io/overlay` if exposed by nodes or by `storage.kubernetes.io/scratch` otherwise. The scheduler follows this policy to find an appropriate node which can satisfy the storage resource requirements of the pod.
-7. EmptyDir.size is both a request and limit that is satisfied by `storage.kubernetes.io/scratch`.
-8. Kubelet will rotate logs to keep scratch space usage of “fooc” under 500Mi
-9. Kubelet will track the usage of pods across logs and overlay filesystem and restart the container if it's total usage exceeds it's storage limits. If usage on `EmptyDir` volume exceeds its `limit`, then the pod will be evicted by the kubelet. By performing soft limiting, users will be able to easily identify pods that run out of storage.
-10. Primary partition health is monitored by an external entity like the “Node Problem Detector” which is expected to place appropriate taints.
-11. If a primary partition becomes unhealthy, the node is tainted and all pods running in it will be evicted by default, unless they tolerate that taint. Kubelet’s behavior on a node with unhealthy primary partition is undefined. Cluster administrators are expected to fix unhealthy primary partitions on nodes.
+3. Alice’s pod “foo” is Guaranteed a total of “30Gi” of local ephemeral storage. The container “fooa” in her pod cannot consume more than 10Gi for local ephemeral storage (could be used by container writable layer and logs), and container “foob” cannot consume more than 20Gi for local ephemeral storag. 
+4. EmptyDir.sizeLimit is both a request and limit. So “myEmptyDir” volume is garanteed to have 5Gi storage and at the same time it cannot consume more than 5Gi.
+5. The total ephemeral storage is limited by 10+20=30Gi for pod "foo". Kubelet will track the usage of pods across containers and emptyDir volumes if it's total usage exceeds it's storage limits. If usage exceeds its `limit`, then the pod will be evicted by the kubelet. By performing soft limiting, users will be able to easily identify pods that run out of storage.
+6. Primary partition health is monitored by an external entity like the “Node Problem Detector” which is expected to place appropriate taints.
+7. If a primary partition becomes unhealthy, the node is tainted and all pods running in it will be evicted by default, unless they tolerate that taint. Kubelet’s behavior on a node with unhealthy primary partition is undefined. Cluster administrators are expected to fix unhealthy primary partitions on nodes.
 
 ### Bob runs batch workloads and is unsure of “storage” requirements
 
@@ -162,12 +166,8 @@ Similar to CPU and memory, admin could use LimitRange to set default container�
       name: mylimits
     spec:
        - default:
-         storage.kubernetes.io/logs: 200Mi
-         storage.kubernetes.io/overlay: 200Mi
+         ephemeral-storage: 2Gi
          type: Container
-       - default:
-         sizeLimit: 1Gi
-         type: EmptyDir
     ```
 
 3. The limit range will update the pod specification as follows:
@@ -182,18 +182,10 @@ Similar to CPU and memory, admin could use LimitRange to set default container�
      - name: fooc
        resources:
          limits:
-           storage.kubernetes.io/logs: 200Mi
-           storage.kubernetes.io/overlay: 200Mi
-       volumeMounts:
-       - name: myEmptyDir
-         mountPath: /mnt/data
-     volumes:
-     - name: myEmptyDir
-       emptyDir:
-         sizeLimit: 1Gi
+           ephemeral-storage: 2Gi
     ```
 
-4. Bob’s “foo” pod can use upto “200Mi” for its containers logs and writable layer each, and “1Gi” for its “myEmptyDir” volume.
+4. Bob’s “foo” pod can use upto “2Gi” for its containers. 
 5. If Bob’s pod “foo” exceeds the “default” storage limits and gets evicted, then Bob can set a minimum storage requirement for his containers and a higher `sizeLimit` for his EmptyDir volumes.
 
   ```yaml
