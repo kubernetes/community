@@ -30,17 +30,17 @@ To create a new project for incubation you must follow these steps: write a prop
 
 Your proposal should include two items. First, a README which outlines the problem to be solved, an example use case as-if the project existed, and a rough roadmap with timelines. Second, an OWNERS file that outlines the makeup of the initial team developing the project. Initially this can be one person but ideally has a 3 or more initial developers representing a few different companies or groups. You can use whatever tool you want to host and revise the proposal until the project is accepted to the Incubator: copy/paste from your text editor, Google Docs, GitHub gist, etc.
 
-Once the proposal is written you should identify a champion; this person must be listed as either a reviewer or approver in an OWNER file in the [Kubernetes project](https://github.com/kubernetes/kubernetes). Next, reach out to your potential champion via email to ask if they are interested in helping you through the Incubation process. Ideally some significant follow-up discussion happens via email, calls, or chat to improve the proposal before announcing it to the wider community.
+Once the proposal is written you should identify a champion; this person must be listed as either a reviewer or approver in an [OWNERS file](https://github.com/kubernetes/kubernetes/blob/master/OWNERS) in the Kubernetes project. Next, reach out to your potential champion via email to ask if they are interested in helping you through the Incubation process. Ideally some significant follow-up discussion happens via email, calls, or chat to improve the proposal before announcing it to the wider community.
 
 The next discussion should be on a relevant Special Interest Group mailing list. You should post the proposal to the SIG mailing list and wait for discussion for a few days. Iterate on the proposal as needed and if there is rough consensus that the project belongs in the chosen SIG then list that SIG in the proposal README. If consensus isn't reached then identify another SIG and try again; repeat until a SIG is identified.
 
 The final process is to email kubernetes-dev@googlegroups.com to announce your intention to form a new Incubator project. Include your entire proposal in the body of the email and prefix the Subject with [Incubator]. Include links to your discussion on the accepted SIG mailing list to guide the discussion.
 
-Acceptance of the project into the Kubernetes Incubator happens once a Sponsor approves. Anyone listed as an approver in the top-level pkg OWNERS file https://github.com/kubernetes/kubernetes/blob/master/pkg/OWNERS can sponsor a project by replying to the kubernetes-dev discussion with LGTM.
+Acceptance of the project into the Kubernetes Incubator happens once a Sponsor approves. Anyone listed as an approver in the top-level pkg [OWNERS file](https://github.com/kubernetes/kubernetes/blob/master/pkg/OWNERS) can sponsor a project by replying to the kubernetes-dev discussion with LGTM.
 
 ## Creation of the Incubator Project
 
-Once your project is accepted someone will create a new GitHub repo for your project to use in the github.com/kubernetes-incubator organization. The first order of business is to add the following files to the repo:
+Once your project is accepted someone will create a new GitHub repo for your project to use in the [kubernetes-incubator] (https://github.com/kubernetes-incubator) organization. The first order of business is to add the following files to the repo:
 
 - a README from the accepted proposal
 - an OWNERS from the accepted proposal
@@ -49,7 +49,7 @@ Once your project is accepted someone will create a new GitHub repo for your pro
 - a LICENSE file with the Apache 2.0 license
 - a RELEASE.md file that talks about the process for releases
 
-A template project to start your project with these files can be found here: https://github.com/kubernetes/kubernetes-template-project
+To start your project with these files can be found here at [template project](https://github.com/kubernetes/kubernetes-template-project)
 
 ## Exiting Incubation
 
