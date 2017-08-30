@@ -40,7 +40,7 @@ Acceptance of the project into the Kubernetes Incubator happens once a Sponsor a
 
 ## Creation of the Incubator Project
 
-Once your project is accepted someone will create a new GitHub repo for your project to use in the [kubernetes-incubator] (https://github.com/kubernetes-incubator) organization. The first order of business is to add the following files to the repo:
+Once your project is accepted someone will create a new GitHub repo for your project to use in the [kubernetes-incubator](https://github.com/kubernetes-incubator) organization. The first order of business is to add the following files to the repo:
 
 - a README from the accepted proposal
 - an OWNERS from the accepted proposal
