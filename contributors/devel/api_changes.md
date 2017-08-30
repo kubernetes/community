@@ -852,7 +852,7 @@ The preferred approach adds an alpha field to the existing object, and ensures i
     * ensure the field is [optional](api-conventions.md#optional-vs-required)
         * add the `omitempty` struct tag
         * add the `// +optional` comment tag
-        * ensure the field is entirely absent from API responses when empty (if it is a struct type, it must be a pointer)
+        * ensure the field is entirely absent from API responses when empty (optional fields should be pointers, anyway)
     * include details about the alpha-level in the field description
     
     ```go
@@ -885,32 +885,35 @@ One possible place to do this is in the REST storage strategy's PrepareForCreate
       newFrobber := obj.(*api.Frobber)
       oldFrobber := old.(*api.Frobber)
     
-      if !utilfeature.DefaultFeatureGate.Enabled(features.DynamicKubeletConfig) {
-        newFrobber.Spec.ConfigSource = nil
-        oldFrobber.Spec.ConfigSource = nil
+      if !utilfeature.DefaultFeatureGate.Enabled(features.Frobber2D) {
+        newFrobber.Width = nil
+        oldFrobber.Width = nil
       }
     }
     ```
 
-4. In validation, ensure the alpha field is not set if the feature gate is disabled:
+4. In validation, ensure the alpha field is not set if the feature gate is disabled (covers cases we might miss in the above):
 
     ```go
     func ValidateFrobber(f *api.Frobber, fldPath *field.Path) field.ErrorList {
       ...
       if utilfeature.DefaultFeatureGate.Enabled(features.Frobber2D) {
         ... normal validation of width field ...
-      } else if f.Width != nil {
+      } else if f.Width != nil {		
         allErrs = append(allErrs, field.Forbidden(fldPath.Child("width"), "disabled by feature-gate"))
       }
       ...
     }
     ```
 
-In future versions:
+Eventually, the API machinery will handle a lot of these things automatically from
+declarative inputs.
 
-* if the feature progresses to beta or stable status, the feature gate can simply be enabled by default.
+In future Kubernetes versions:
+
+* if the feature progresses to beta or stable status, the feature gate can be removed or be enabled by default.
 * if the schema of the alpha field must change in an incompatible way, a new field name must be used.
-* if the feature is abandoned, or a different field name is selected, the field should be removed from the go struct, with a tombstone comment ensuring the field name and protobuf tag are not reused:
+* if the feature is abandoned, or the field name is changed, the field should be removed from the go struct, with a tombstone comment ensuring the field name and protobuf tag are not reused:
 
     ```go
     // API v6.
@@ -920,9 +923,7 @@ In future versions:
       // param ...
       Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
       
-      // removed alpha-level field 'width'
-      // the field name 'width' and protobuf tag '3' may not be reused.
-      // Width  *int32 `json:"width,omitempty" protobuf:"varint,3,opt,name=width"`
+      // +k8s:deprecated=width,protobuf=3
     }
     ```
 
