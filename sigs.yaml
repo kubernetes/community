@@ -183,7 +183,7 @@ sigs:
       company: Google
     - name: Erik Erlandson
       github: erikerlandson
-      company: Redhat
+      company: Red Hat
     meetings:
     - day: Wednesday
       utc: "17:00"

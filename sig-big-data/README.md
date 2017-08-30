@@ -18,7 +18,7 @@ Meeting recordings can be found [here](https://docs.google.com/document/d/1pnF38
 
 ## Leads
 * Anirudh Ramanathan (**[@foxish](https://github.com/foxish)**), Google
-* Erik Erlandson (**[@erikerlandson](https://github.com/erikerlandson)**), Redhat
+* Erik Erlandson (**[@erikerlandson](https://github.com/erikerlandson)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-big-data)
