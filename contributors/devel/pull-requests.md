@@ -138,9 +138,13 @@ That's the last step. Your PR is now merged.
 
 ## Marking Unfinished Pull Requests
 
-If you want to solicit reviews before the implementation of your pull request is complete, you should mark your pull request as a work in progress to ensure that the merge queue does not pick it up and attempt to merge it. You may prefix your pull request title with `WIP` or `[WIP]` to indicate this.
+If you want to solicit reviews before the implementation of your pull request is complete, you should hold your pull request to ensure that the merge queue does not pick it up and attempt to merge it. There are two methods to achieve this:
 
-The GitHub robots will add and remove the `do-not-merge/work-in-progress` label as you edit your title. While the label is present, your pull request will not be considered for merging.
+1. You may add the `/hold` or `/hold cancel` comment commands
+2. You may add or remove a `WIP` or `[WIP]` prefix to your pull request title
+
+The GitHub robots will add and remove the `do-not-merge/hold` label as you use the comment commands and the `do-not-merge/work-in-progress` label as you edit your title. While either label is present, your pull request will not be considered for merging.
+
 
 ## Comment Commands Reference
 
