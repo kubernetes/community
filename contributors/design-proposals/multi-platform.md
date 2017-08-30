@@ -100,7 +100,7 @@ When it's possible to test Kubernetes using Kubernetes; volunteers should be giv
 ### Official support level
 
 When all e2e tests are passing for a given platform; the platform should be officially supported by the Kubernetes team.
-At the time of writing, `amd64` is in the officially supported category category.
+At the time of writing, `amd64` is in the officially supported category.
 
 When a platform is building and it's possible to set up a cluster with the core functionality, the platform is supported on a "best-effort" and experimental basis.
 At the time of writing, `arm`, `arm64` and `ppc64le` are in the experimental category; the e2e tests aren't cross-platform yet.
@@ -140,7 +140,7 @@ Also, [the apiserver now exposes](https://github.com/kubernetes/kubernetes/pull/
 ### Standardize all image Makefiles to follow the same pattern
 
 All Makefiles should push for all platforms when doing `make push`, and build for all platforms when doing `make build`.
-Under the hood; they should compile binaries in a container for reproducability, and use QEMU for emulating Dockerfile `RUN` commands if necessary.
+Under the hood; they should compile binaries in a container for reproducibility, and use QEMU for emulating Dockerfile `RUN` commands if necessary.
 
 ### Remove linux/amd64 hard-codings from the codebase
 
@@ -215,7 +215,7 @@ Go 1.5 introduced many changes. To name a few that are relevant to Kubernetes:
 
 All release notes for Go 1.5 [are here](https://golang.org/doc/go1.5)
 
-Go 1.6 didn't introduce as many changes as Go 1.5 did, but here are some of note:
+Go 1.6 didn't introduce as many changes as Go 1.5 did, but here are some of notes:
  - It should perform a little bit better than Go 1.5.
  - `linux/mips64` and `linux/mips64le` were added as new ports.
  - Go < 1.6.2 for `ppc64le` had [bugs in it](https://github.com/kubernetes/kubernetes/issues/24922).
