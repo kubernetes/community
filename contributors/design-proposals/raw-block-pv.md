@@ -7,7 +7,7 @@ This document presents a proposal for managing raw block storage in Kubernetes u
 # Terminology
 * Raw Block Device - a physically attached device devoid of a filesystem
 * Raw Block Volume - a logical abstraction of the raw block device as defined by a path
-* File on Block/Filesystem on Block - a formatted (ie xfs) filesystem on top of a raw block device
+* Filesystem on Block - a formatted (ie xfs) filesystem on top of a raw block device
 
 # Goals
 * Enable durable access to block storage
