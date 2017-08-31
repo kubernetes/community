@@ -57,7 +57,7 @@ Merging a PR requires the following steps to be completed before the PR will be 
 - Make the PR
 - Release notes - do one of the following:
   - Add notes in the release notes block, or
-  - Update the `release-note-label-needed` label
+  - Update the release note label
 - Pass all e2e tests
 - Get a `LGTM` from a reviewer
 - Get approval from an owner
@@ -68,7 +68,7 @@ If your PR meets all of the steps above, it will enter the submit queue to be me
 
 Release notes are required for any PR with user-visible changes, such as bug-fixes, feature additions, and output format changes.
 
-If you don't add release notes in the PR template the `release-note-label-needed` label is added to your PR automatically when you create it. There are a few ways to update it.
+If you don't add release notes in the PR template the `do-not-merge/release-note-label-needed` label is added to your PR automatically when you create it. There are a few ways to update it.
 
 **Descriptions**
 
@@ -90,17 +90,10 @@ To see how to format your release notes, view the [PR template](https://github.c
 
 Release notes apply to PRs on the master branch. For cherry-pick PRs, see the [cherry-pick instructions](cherry-picks.md). The only exception to these rules is when a PR is not a cherry-pick and is targeted directly to the non-master branch.  In this case, a `release-note-*` label is required for that non-master PR.
 
-**Labels**
-
-1. All pull requests are initiated with a `release-note-label-needed` label if you don't specify them in your original PR. If you are a new contributor you won't have access to modify labels; instead, leave a comment as instructed below or ask in your original PR. 
-
-1. Remove the `release-note-label-needed` label and replace it with one of the other `release-note-*` labels:
-    1. `release-note-none` is a valid option if the PR does not need to be mentioned at release time
-    1. `release-note` labelled PRs generate a release note using the PR title by default OR the release-note block in the PR template, if it's filled in
-    
 **Comments**
 
-Or, commenting either `/release-note` or `/release-note-none` will also set the `release-note` or `release-note-none` labels respectively.
+- If the PR does not need to be mentioned at release time, leave the `/release-note-none` comment command.
+- To create a release note, leave the `/release-note` comment command. This will generate a release note using the PR title by default OR the release-note block in the PR template, if it's filled in.
 
 Now that your release notes are in shape, let's look at how the PR gets tested and merged.
 

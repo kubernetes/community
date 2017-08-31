@@ -33,8 +33,8 @@ label and lose the `cherrypick-candidate` label.
 to the remote branch `upstream/release-3.14`:
 `hack/cherry_pick_pull.sh upstream/release-3.14 98765`
   * Your cherrypick PR (targeted to the branch) will immediately get the
-`do-not-merge` label. The branch owner will triage PRs targeted to
-the branch and label the ones to be merged by applying the `lgtm`
+`do-not-merge/cherry-pick-not-approved` label. The branch owner will triage PRs
+targeted to the branch and label the ones to be merged by applying the `lgtm`
 label.
 
 There is an [issue](https://github.com/kubernetes/kubernetes/issues/23347) open
