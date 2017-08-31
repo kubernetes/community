@@ -6,7 +6,19 @@ Client-gen is an automatic tool that generates [clientset](../design-proposals/c
 
 The workflow includes three steps:
 
-**1.** Marking API types with tags: in `pkg/apis/${GROUP}/${VERSION}/types.go`, mark the types (e.g., Pods) that you want to generate clients for with the `// +genclient=true` tag. If the resource associated with the type is not namespace scoped (e.g., PersistentVolume), you need to append the `nonNamespaced=true` tag as well.
+**1.** Marking API types with tags: in `pkg/apis/${GROUP}/${VERSION}/types.go`, mark the types (e.g., Pods) that you want to generate clients for with the `// +genclient` tag. If the resource associated with the type is not namespace scoped (e.g., PersistentVolume), you need to append the `// +genclient:nonNamespaced` tag as well.
+
+The following `// +genclient` are supported:
+
+- `// +genclient` - generate default client verb functions (*create*, *update*, *delete*, *get*, *list*, *update*, *patch*, *watch* and depending on the existence of `.Status` field in the type the client is generated for also *updateStatus*).
+- `// +genclient:nonNamespaced` - all verb functions are generated without namespace.
+- `// +genclient:onlyVerbs=create,get` - only listed verb functions will be generated.
+- `// +genclient:skipVerbs=watch` - all default client verb functions will be generated **except** *watch* verb.
+- `// +genclient:noStatus` - skip generation of *updateStatus* verb even thought the `.Status` field exists.
+
+In some cases you want to generate non-standard verbs (eg. for sub-resources). To do that you can use the following generator tag:
+
+- `// +genclient:method=Scale,verb=update,subresource=scale,input=k8s.io/api/extensions/v1beta1.Scale,result=k8s.io/api/extensions/v1beta1.Scale` - in this case a new function `Scale(string, *v1beta.Scale) *v1beta.Scale` will be added to the default client and the body of the function will be based on the *update* verb. The optional *subresource* argument will make the generated client function use subresource `scale`. Using the optional *input* and *result* arguments you can override the default type with a custom type. If the import path is not given, the generator will assume the type exists in the same package.
 
 **2a.** If you are developing in the k8s.io/kubernetes repository, you just need to run hack/update-codegen.sh.
 
