@@ -17,7 +17,6 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=dyUWqqNYUio&list=PL69nYSiGNLP2MvqC6NeegrgtOl5s1KlYa).
 
 ## Leads
-* Tomasz Napierala (**[@zen](https://github.com/zen)**), Mirantis
 * Marco Ceppi (**[@marcoceppi](https://github.com/marcoceppi)**), Canonical
 * Dalton Hubble (**[@dghubble](https://github.com/dghubble)**), CoreOS
 
