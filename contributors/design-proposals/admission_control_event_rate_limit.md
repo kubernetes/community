@@ -2,14 +2,15 @@
 
 ## Background
 
-This document proposes a system for using admission control to enforce a limit
+This document proposes a system for using an admission control to enforce a limit
 on the number of event requests that the API Server will accept in a given time
-slice. In a large multi-tenant cluster, there may be a small percentage of
-tenants that are always in some type of error state, in which each tenant is
-producing a steady stream of error event requests. Each individual tenant may not
-be producing an absurd amount of event requests on its own, but taken collectively
-the errors from this small percentage of tenants can have a significant impact on
-the performance of the cluster overall. 
+slice. In a large cluster with many namespaces managed by disparate administrators,
+there may be a small percentage of namespaces that have pods that are always in
+some type of error state, for which the kubelets and controllers in the cluster
+are producing a steady stream of error event requests. Each individual namespace
+may not be causing a large amount of event requests on its own, but taken
+collectively the errors from this small percentage of namespaces can have a
+significant impact on the performance of the cluster overall. 
 
 ## Use cases
 
@@ -26,51 +27,68 @@ the performance of the cluster overall.
 ### Configuration
 
 ```go
-// Type of limit (e.g., per-namespace)
+// LimitType is the type of the limit (e.g., per-namespace)
 type LimitType string
 
 const (
-	// ServerLimitType limits are maintained against all events received by the server
+	// ServerLimitType is a type of limit where there is one bucket shared by
+	// all of the event queries received by the API Server.
 	ServerLimitType LimitType = "server"
-	// NamespaceLimitType limits are maintained against events from each namespace
+	// NamespaceLimitType is a type of limit where there is one bucket used by
+	// each namespace
 	NamespaceLimitType LimitType = "namespace"
-	// UserLimitType limits are maintained against events from each user
+	// UserLimitType is a type of limit where there is one bucket used by each
+	// user
 	UserLimitType LimitType = "user"
-	// SourceObjectLimitType limits are maintained against events from each source+object
-	SourceObjectLimitType LimitType = "source+object"
+	// SourceAndObjectLimitType is a type of limit where there is one bucket used
+	// by each combination of source and involved object of the event.
+	SourceAndObjectLimitType LimitType = "sourceAndObject"
 )
 
-// Configuration provides configuration for the EventRateLimit admission controller.
+// Configuration provides configuration for the EventRateLimit admission
+// controller.
 type Configuration struct {
 	metav1.TypeMeta `json:",inline"`
 
-	// Limits to place on events received.
+	// limits are the limits to place on event queries received.
 	// Limits can be placed on events received server-wide, per namespace,
 	// per user, and per source+object.
 	// At least one limit is required.
 	Limits []Limit `json:"limits"`
 }
 
+// Limit is the configuration for a particular limit type
 type Limit struct {
-	// Type of limit
+	// type is the type of limit to which this configuration applies
 	Type LimitType `json:"type"`
 
-	// Maximum QPS of events for this limit
-	QPS float32 `json:"qps"`
+	// qps is the number of event queries per second that are allowed for this
+	// type of limit. The qps and burst fields are used together to determine if
+	// a particular event query is accepted. The qps determines how many queries
+	// are accepted once the burst amount of queries has been exhausted.
+	QPS int32 `json:"qps"`
 
-	// Maximum burst for throttle of events for this limit
-	Burst int64 ` json:"burst"`
+	// burst is the burst number of event queries that are allowed for this type
+	// of limit. The qps and burst fields are used together to determine if a
+	// particular event query is accepted. The burst determines the maximum size
+	// of the allowance granted for a particular bucket. For example, if the burst
+	// is 10 and the qps is 3, then the admission control will accept 10 queries
+	// before blocking any queries. Every second, 3 more queries will be allowed.
+	// If some of that allowance is not used, then it will roll over to the next
+	// second, until the maximum allowance of 10 is reached.
+	Burst int32 `json:"burst"`
 
-	// Size of the LRU cache for this limit. If a bucket is evicted from the cache,
-	// then the stats for that bucket are reset. If more events are later received
-	// for that bucket, then that bucket will re-enter the cache with a clean slate,
-	// giving that bucket a full Burst number of tokens to use.
+	// cacheSize is the size of the LRU cache for this type of limit. If a bucket
+	// is evicted from the cache, then the allowance for that bucket is reset. If
+	// more queries are later received for an evicted bucket, then that bucket
+	// will re-enter the cache with a clean slate, giving that bucket a full
+	// allowance of burst queries.
 	//
 	// The default cache size is 4096.
 	//
-	// If LimitType is ServerLimitType, then CacheSize is ignored.
+	// If limitType is 'server', then cacheSize is ignored.
 	// +optional
-	CacheSize int64 `json:"cacheSize,omitempty"`
+	CacheSize int32 `json:"cacheSize,omitempty"`
 }
 ```
 
@@ -86,6 +104,7 @@ Validation of a **Limit** enforces that the following rules apply:
 * **Type** is one of "server", "namespace", "user", and "source+object".
 * **QPS** is positive.
 * **Burst** is positive.
+* **CacheSize** is non-negative.
 
 ### Default Value Behavior
 
@@ -129,27 +148,29 @@ another 500 event requests. The first 100 to be handled are accepted. The last
 400 are rejected.
 
 The API Server also starts with an allowance to accept 100 event requests from
-each namespace. This allowance works in conjunction with the server-wide
+each namespace. This allowance works in parallel with the server-wide
 allowance. An accepted event request will count against both the server-side
-allowance and the per-namespace allowance. The API Server keeps an allowance
-for at most 50 namespaces. The API Server will evict the allowance for the
-least-recently used nameapce if more than event requests from more than 50
-namespaces are received. If an event request for namespace N is received after
-the API Server has evicted the allowance for namespace N, then a new, full
-allowance will be created for namespace N.
+allowance and the per-namespace allowance. An event request rejected by the
+server-side allowance will still count against the per-namespace allowance,
+and vice versa. The API Server tracks the allowances for at most 50 namespaces.
+The API Server will stop tracking the allowance for the least-recently-used
+namespace if event requests from more than 50 namespaces are received. If an
+event request for namespace N is received after the API Server has stop
+tracking the allowance for namespace N, then a new, full allowance will be
+created for namespace N.
 
-In this example, the API Server will not maintain any allowances for the
-user nor source+object of the event in an event request because both the
-user and the source+object details have been omitted from the configuration.
-The allowance and eviction for per-user and per-source+object rate limiting
-works identically to the per-namespace rate limiting, with the exception that
-the former consider the user or source+object of the event and the latter
+In this example, the API Server will track any allowances for neither the user
+nor the source+object in an event request because both the user and the
+source+object details have been omitted from the configuration. The allowance
+mechanisms for per-user and per-source+object rate limiting works identically
+to the per-namespace rate limiting, with the exception that the former consider
+the user of the event request or source+object of the event and the latter
 considers the namespace of the event request.
 
 ## Client Behavior
 
-Currently, the Client event recorder treats a 429 response as http transport
-type of error, that warrants retrying the event request. Instead, the event
+Currently, the Client event recorder treats a 429 response as an http transport
+type of error, which warrants retrying the event request. Instead, the event
 recorder should abandon the event. Additionally, the event recorder should
 abandon all future events for the period of time specified in the
-retryAfterSeconds field of the 429 response.
+Retry-After header of the 429 response.
