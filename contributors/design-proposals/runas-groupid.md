@@ -153,9 +153,9 @@ Following points should be noted:
 
 - `FSGroup` and `SupplementalGroups` will continue to have their old meanings and would be untouched.  
 - The `RunAsGroup` In the SecurityContext will override the `RunAsGroup` in the PodSecurityContext.
-- If no RunAsGroup is provided in the PodSecurityContext and SecurityContext, the Group provided 
-  In the Docker image will be used.
-- If no RunAsGroup is provided in the PodSecurityContext and SecurityContext, and none in the image,
+- If no `RunAsGroup` is provided in the PodSecurityContext and SecurityContext, the Group provided 
+  in the Docker image will be used.
+- If no `RunAsGroup` is provided in the PodSecurityContext and SecurityContext, and none in the image,
   the container will run with primary Group as root(0).
 
 
