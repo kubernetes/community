@@ -55,7 +55,7 @@ We recommend that you work on an existing issue before attempting
 to [develop a new feature]. 
 
 Start by finding an existing issue with the [help-wanted] label; 
-these are issues we've deemed are well suited for new contributors.
+these issues we've deemed are well suited for new contributors.
 Alternatively, if there is a specific area you are interested in, 
 ask a [SIG lead](sig-list.md) for suggestions), and respond on the
 issue thread expressing interest in working on it. 
