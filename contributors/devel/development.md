@@ -152,31 +152,17 @@ images.
 
 #### Dependency management
 
-Kubernetes build/test scripts use [`godep`](https://github.com/tools/godep) to
-manage dependencies.
+Kubernetes uses [`godep`](https://github.com/tools/godep) to manage
+dependencies.
 
-```sh
-go get -u github.com/tools/godep
-```
-
-The Godep version that Kubernetes is using is listed in `Godep/Godep.json` (in
-the kubernetes repo root). See what version you are running with this command:
-
-```sh
-godep version
-```
-
-Developers planning to manage dependencies in the `vendor/` tree may want to
-explore alternative environment setups. See [using godep to manage
-dependencies](godep.md).
-
+Developers who need to manage dependencies in the `vendor/` tree should read
+the docs on [using godep to manage dependencies](godep.md).
 
 
 ## Build with Bazel/Gazel
 
 Building with Bazel is currently experimental.  For more information,
 see [Build with Bazel].
-
 
 
 ## Workflow
