@@ -19,6 +19,7 @@ An automated deployment technique is discussed in [Recommended Driver Deployment
 
 When there is a modification of the driver directory, a notification is sent to the filesystem watch from kubelet or controller manager. When kubelet or controller-manager searches for plugins (such as when a volume needs to be mounted), if there is a signal from the watch, it probes the driver directory and loads currently installed drivers as volume plugins.
 
+The modification can be a driver install (addition), upgrade/downgrade (update), or uninstall (deletion). If a volume depends on an existing driver, it can be *updated* but not *deleted*.
 
 ## **Detailed Design**
 
