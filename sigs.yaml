@@ -737,3 +737,24 @@ workinggroups:
     contact:
       slack: wg-container-identity
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-container-identity
+  - name: kubeadm adoption
+    dir: wg-kubeadm-adoption
+    mission_statement: >
+      Boost adoption of the kubeadm tool. kubeadm is a tool for creating new Kubernetes clusters easily for new users, but can also be used as a toolbox for higher-level deployment
+      solutions. This working group makes sure kubeadm meets the extensibility requirements of those higher-level Kubernetes installers.
+    leads:
+    - name: Lucas Käldström
+      github: luxas
+      company: Luxas Labs (occasionally contracting for Weaveworks)
+    - name: Justin Santa Barbara
+      github: justinsb
+    meetings:
+    - day: Tuesday
+      utc: "18:00"
+      frequency: bi-weekly
+    meeting_url: https://zoom.us/j/166836%E2%80%8B624
+    meeting_archive_url: https://docs.google.com/document/d/1KdXsLYiJYJdiRbtgZsx6qbHF4g_K-gAScB9Zs4avgzg/edit
+    meeting_recordings_url: https://www.youtube.com/watch?v=-Xlcrm5iT80&list=PLPgAK4Icr0ehh93BiMC3djAc5KoW7WIkl
+    contact:
+      slack: sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
