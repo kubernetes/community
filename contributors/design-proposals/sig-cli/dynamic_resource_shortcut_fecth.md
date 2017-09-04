@@ -10,10 +10,11 @@ Previously, when a new resources added to server, developer should add those res
 
 ## Proposal
 
-we should fetch those information from server, but for how to prompt those information proply, there's two solutions here: 
+We should eliminate those every time add new hardcoded resources in kubectl, improve development experiences, but for how to prompt those information proply, there's two solutions here: 
 
 ### solution 1
-keep current help messages, and add an ring1Factory function use clientDiscovery fetch resources/shortcuts from server then concatenate those valid resources string and print every time when user execute command like this:
+
+Keep current help messages, and add an ring1Factory function use clientDiscovery fetch resources/shortcuts from server then concatenate those valid resources string and print every time when user execute command like this:
 ```
 ➜  ~ kubectl get -h
 Display one or many resources. 
@@ -32,12 +33,12 @@ Valid resource types include:
 
 ### solution 2
 
-remove those valid resources list in help messages, and add a dedicated command from fetch resources/shortcuts, and tell user use `kubectl new-command` to check what kind of valid resouces they can use.
+Remove those valid resources list in help messages, and add a dedicated command to fetch resources/shortcuts, like `kubectl api-resources` similiar to `kubectl api-versions` or we could extend `api-versions` to support that, then tell user use `kubectl api-resources` to check what kind of valid resouces they can use.
  ```
 ➜  ~ kubectl get -h
 Display one or many resources. 
 
-You can use `kubectl new-command` to check valid resource types server provided. 
+You can use `kubectl api-resources` to check valid resource types server provided. 
 
 ...
 ```
@@ -64,23 +65,19 @@ solution 1 may have some shortage in first time prompt help messages.
 ## Implementation
 
 ### solution 1
-ring1Factory change
 
-add function/interface in ring1Factory  `func ValidResourcesFromDiscoveryClient []ResourceShortcut`
-
-change functions `ResourceShortFormFor` and `ResourceAliases` use `ValidResourcesFromDiscoveryClient` returned values to lookup shortcuts, if `len(ResourceShortcut)== 0` means fetch from server faild, use  ResourcesShortcutStatic
-
-
+Add function/interface in ring1Factory  `func ValidResourcesFromDiscoveryClient []ResourceShortcut`
 
 change for resource in kubectl get/describe/explain... -h
 
-    	cmd := &cobra.Command{
-    		...
-    		Short:   i18n.T("Display one or many resources"),
-    		Long:    templates.LongDynamicDesc(getLong, f.ValidResourcesFromDiscoveryClient()) 
-    		Example: getExample,
-    		...
-    
+    pkg/kubectl/cmd/get.go
+    cmd := &cobra.Command{
+        ...
+        Short:   i18n.T("Display one or many resources"),
+        Long:    templates.LongDynamicDesc(getLong, f.ValidResourcesFromDiscoveryClient())  
+        Example: getExample,
+
+    pkg/kubectl/cmd/templates/normalizers.go    
     func LongDynamicDesc(s string, r []kubectl.ResourceShortcuts) {
     	if len(r) != 0 {
     		//foreach ResourcesShortcuts sorted, and concatenate to string  
@@ -90,34 +87,21 @@ change for resource in kubectl get/describe/explain... -h
     }
 
 
-
-change for shortcuts in `pkg/kubectl/kubectl.go`
-
-change signature of those two functions `ResourceShortFormFor` and `ResourceAliases`
-
-accept  `[]kubectl.ResourceShortcuts` if exist
-
 ### solution 2 
-add an new command, and change help messages in `kubectl get/explain/describe ...`
 
-for shortcuts funtions `ResourceShortFormFor` and `ResourceAliases` use the same solution as above.
+This is a simple one, only change is remove hardcoded list in help messages of `kubectl get/explain/describe ...` and implement a new command `kubectl api-resources`.
+
 
 ## Client/Server Backwards/Forwards compatibility
 
-### solution 1
-Shortname of meta.v1.APIResource was an new added filed in commit https://github.com/kubernetes/kubernetes/pull/40312/commits/d100d5644661c288d52dbe0456a9c7d184f61d31, but theoretically, I think we can do fully backwards/forwards comptibility, need to check with @deads2k.
+Depend on which solution we use.
 
-### solution 2
-new kubectl will prompt differently with old server, but I think it won't be a big problem.
+## Other things need to discuss
 
-## Other things
+1. Use binary cache from OpenAPI instead of cache from `.kube/cache/discovery` ?
 
-about fetched resources use binary cache from OpenAPI ?
+2. Also there's another two functions in `pkg/kubectl/kubectl.go` `ResourceShortFormFor` and `ResourceAliases`, we may also want to replace it with dynamic fetching, change signature of those two functions and also fetch resources from discoveryClient, this work is a follow up of PRs: https://github.com/kubernetes/kubernetes/pull/40312 and https://github.com/kubernetes/kubernetes/pull/38835 I think we have no reason to not eliminate those hardcoded resources/shortcuts.
 
 
-
-## Other things you need to know
-
-This work is a follow up of PRs: https://github.com/kubernetes/kubernetes/pull/40312 and https://github.com/kubernetes/kubernetes/pull/38835 I think we have no reason to not eliminate those hardcoded resources/shortcuts.
 
 
