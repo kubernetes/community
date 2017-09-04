@@ -13,7 +13,7 @@ Previously, when a new resources added to server, developer should add those res
 we should fetch those information from server, but for how to prompt those information proply, there's two solutions here: 
 
 ### solution 1
-keep current help messages, and add an ring1Factory function use clientDiscovery fetch resources/shortcuts from server then concatenet those valid resources string and print every time when user execute command like this:
+keep current help messages, and add an ring1Factory function use clientDiscovery fetch resources/shortcuts from server then concatenate those valid resources string and print every time when user execute command like this:
 ```
 ➜  ~ kubectl get -h
 Display one or many resources. 
@@ -32,7 +32,7 @@ Valid resource types include:
 
 ### solution 2
 
-remove those valid resources list in help messages, and add an dedicated command from fetch resources/shortcuts, and tell user use `kubectl new-command` to check what kind of valid resouces they can use.
+remove those valid resources list in help messages, and add a dedicated command from fetch resources/shortcuts, and tell user use `kubectl new-command` to check what kind of valid resouces they can use.
  ```
 ➜  ~ kubectl get -h
 Display one or many resources. 
@@ -66,9 +66,9 @@ solution 1 may have some shortage in first time prompt help messages.
 ### solution 1
 ring1Factory change
 
-add function/interface in ring1Factory  func ValidResourcesFromDiscoveryClient []ResourceShortcut
+add function/interface in ring1Factory  `func ValidResourcesFromDiscoveryClient []ResourceShortcut`
 
-change functions ResourceShortFormFor and ResourceAliases use ValidResourcesFromDiscoveryClient returned values to lookup shortcuts, if len(ResourceShortcut)== 0means fetch from server faild, use  ResourcesShortcutStatic
+change functions `ResourceShortFormFor` and `ResourceAliases` use `ValidResourcesFromDiscoveryClient` returned values to lookup shortcuts, if `len(ResourceShortcut)== 0` means fetch from server faild, use  ResourcesShortcutStatic
 
 
 
@@ -91,15 +91,16 @@ change for resource in kubectl get/describe/explain... -h
 
 
 
-change for shortcuts in pkg/kubectl/kubectl.go
+change for shortcuts in `pkg/kubectl/kubectl.go`
 
-change signature of those two functions ResourceShortFormFor and ResourceAliases
+change signature of those two functions `ResourceShortFormFor` and `ResourceAliases`
 
-accept  []kubectl.ResourceShortcuts if exist
+accept  `[]kubectl.ResourceShortcuts` if exist
 
 ### solution 2 
 add an new command, and change help messages in `kubectl get/explain/describe ...`
 
+for shortcuts funtions `ResourceShortFormFor` and `ResourceAliases` use the same solution as above.
 
 ## Client/Server Backwards/Forwards compatibility
 
