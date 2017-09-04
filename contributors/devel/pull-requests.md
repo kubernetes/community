@@ -47,7 +47,8 @@ pass or fail of continuous integration.
 
 You must sign the CLA before your first contribution. [Read more about the CLA.](https://github.com/kubernetes/community/blob/master/CLA.md)
 
-If you haven't signed the Contributor License Agreement (CLA) before making a PR, the `k8s-ci-robot` will leave a comment with instructions on how to sign the CLA.
+If you haven't signed the Contributor License Agreement (CLA) before making a PR,
+the `@k8s-ci-robot` will leave a comment with instructions on how to sign the CLA.
 
 # The PR Submit Process
 
@@ -59,7 +60,7 @@ Merging a PR requires the following steps to be completed before the PR will be 
   - Add notes in the release notes block, or
   - Update the release note label
 - Pass all e2e tests
-- Get a `LGTM` from a reviewer
+- Get a `/lgtm` from a reviewer
 - Get approval from an owner
 
 If your PR meets all of the steps above, it will enter the submit queue to be merged. When it is next in line to be merged, the e2e tests will run a second time. If all tests pass, the PR will be merged automatically.
@@ -99,38 +100,41 @@ Now that your release notes are in shape, let's look at how the PR gets tested a
 
 ## The Testing and Merge Workflow
 
-The Kubernetes merge workflow uses comments to run tests and labels for merging PRs. NOTE: For pull requests that are in progress but not ready for review, prefix the PR title with "WIP" and track any remaining TODOs in a checklist in the pull request description.
+The Kubernetes merge workflow uses comments to run tests and labels for merging PRs.
+NOTE: For pull requests that are in progress but not ready for review,
+prefix the PR title with `WIP` or `[WIP]` and track any remaining TODOs
+in a checklist in the pull request description.
 
 Here's the process the PR goes through on its way from submission to merging:
 
 1. Make the pull request
-1. mergebot assigns reviewers
+1. `@k8s-merge-robot` assigns reviewers
 
 If you're **not** a member of the Kubernetes organization:
 
-1. Reviewer/Kubernetes Member checks that the PR is safe to test. If so, they comment `@k8s-bot ok to test`
+1. Reviewer/Kubernetes Member checks that the PR is safe to test. If so, they comment `/ok-to-test`
 1. Reviewer suggests edits
 1. Push edits to your PR branch
 1. Repeat the prior two steps as needed
 1. (Optional) Some reviewers prefer that you squash commits at this step 
 1. Owner is assigned and will add the `/approve` label to the PR
 
-If you are a member, or a member comments `@k8s-bot ok to test`, the pre-submit tests will run:
+If you are a member, or a member comments `/ok-to-test`, the PR will be considered to be trusted. Then the pre-submit tests will run:
 
 1. Automatic tests run. See the current list of tests on the [MERGE REQUIREMENTS tab, at this link](https://submit-queue.k8s.io/#/info)
 1. If tests fail, resolve issues by pushing edits to your PR branch
-1. If the failure is a flake, a member can comment `@k8s-bot [e2e|unit] test this issue: #<flake issue>`
+1. If the failure is a flake, anyone on trusted PRs can comment `/retest` to rerun failed tests
 
 Once the tests pass, all failures are commented as flakes, or the reviewer adds the labels `lgtm` and `approved`, the PR enters the final merge queue. The merge queue is needed to make sure no incompatible changes have been introduced by other PRs since the tests were last run on your PR.
 
 Either the [on call contributor](on-call-rotations.md) will manage the merge queue manually, or the [GitHub "munger"](https://github.com/kubernetes/test-infra/tree/master/mungegithub) submit-queue plugin will manage the merge queue automatically.
 
 1. The PR enters the merge queue ([http://submit-queue.k8s.io](http://submit-queue.k8s.io))
-1. The merge queue triggers a test re-run with the comment `@k8s-bot test this`
-    1. Author has signed the CLA (`cla: yes` label added to PR)
+1. The merge queue triggers a test re-run with the comment `/test all [submit-queue is verifying that this PR is safe to merge]`
+    1. Author has signed the CLA (`cncf-cla: yes` label added to PR)
     1. No changes made since last `lgtm` label applied
 1. If tests fail, resolve issues by pushing edits to your PR branch
-1. If the failure is a flake, a member can comment `@k8s-bot [e2e|unit] test this issue: #<flake issue>`
+1. If the failure is a flake, anyone can comment `/retest` if the PR is trusted
 1. If tests pass, the merge queue automatically merges the PR
 
 That's the last step. Your PR is now merged.
@@ -145,9 +149,11 @@ The Kubernetes developer community uses a variety of automation to manage pull r
 
 ## How the e2e Tests Work
 
-The end-to-end tests will post the status results to the PR. If an e2e test fails, `k8s-ci-robot` will comment on the PR with the test history and the comment-command to re-run that test.  e.g.
+The end-to-end tests will post the status results to the PR. If an e2e test fails,
+`@k8s-ci-robot` will comment on the PR with the test history and the
+comment-command to re-run that test. e.g.
 
-> The magic incantation to run this job again is @k8s-bot unit test this. Please help us cut down flakes by linking to an open flake issue when you hit one in your PR.
+> The following tests failed, say /retest to rerun them all.
 
 # Why was my PR closed?
 
