@@ -11,7 +11,6 @@ This document presents a proposal for managing raw block storage in Kubernetes u
 
 # Goals
 * Enable durable access to block storage
-* Support storage requirements for all workloads supported by Kubernetes
 * Provide flexibility for users/vendors to utilize various types of storage devices
 * Agree on API changes for block
 * Provide a consistent security model for block devices 
@@ -132,7 +131,7 @@ spec:
   persistentVolumeReclaimPolicy: Delete 
 ```
 ## Pod API Changes:
-To ensure support of inline volumes, the following changes are proposed in the pod specification. In addition, this change intentionally calls out the use of a block device (volumeDevices) rather than the mount point on a filesystem.
+This change intentionally calls out the use of a block device (volumeDevices) rather than the mount point on a filesystem.
 ```
 apiVersion: v1
 kind: Pod
