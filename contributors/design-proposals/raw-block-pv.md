@@ -39,7 +39,7 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   * An admin wishes to expose a block volume to be consumed as a block volume for the user  
   * An admin wishes to expose a block volume to be consumed as a block volume for an administrative function such 
     as bootstrapping 
-  * A user wishes to utilize initiate block storage to fully realize the performance of an application tuned to using block devices
+  * A user wishes to utilize block storage to fully realize the performance of an application tuned to using block devices
   * A user wishes to read from a block storage device and write to a filesystem (big data analytics processing)
   Future use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the 
   foundation for more fully developing these methods. 
