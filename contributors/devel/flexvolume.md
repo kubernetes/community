@@ -1,16 +1,23 @@
 # Flexvolume
 
-Flexvolume enables users to write their own drivers and add support for their volumes in Kubernetes. Vendor drivers should be installed in the volume plugin path on every Kubelet node and on master node(s) if "--enable-controller-attach-detach" Kubelet option is enabled. 
+Flexvolume enables users to write their own drivers and add support for their volumes in Kubernetes. Vendor drivers should be installed in the volume plugin path on every Kubelet node and on master node(s) if `--enable-controller-attach-detach` Kubelet option is enabled. 
 
 *Note: Flexvolume is an alpha feature and is most likely to change in future*
 
 ## Prerequisites
 
-Install the vendor driver on all nodes (also on master nodes if "--enable-controller-attach-detach" Kubelet option is enabled) in the plugin path. Path for installing the plugin: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/\<vendor~driver\>/\<driver\>
+Install the vendor driver on all nodes (also on master nodes if "--enable-controller-attach-detach" Kubelet option is enabled) in the plugin path. Path for installing the plugin: `<plugindir>/<vendor~driver>/<driver>`. The default plugin directory is `/usr/libexec/kubernetes/kubelet-plugins/volume/exec/`. It can be changed in kubelet via the `--volume-plugin-dir` flag, and in controller manager via the `--flex-volume-plugin-dir` flag.
 
-For example to add a 'cifs' driver, by vendor 'foo' install the driver at: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/\<foo~cifs\>/cifs
+For example to add a `cifs` driver, by vendor `foo` install the driver at: `/usr/libexec/kubernetes/kubelet-plugins/volume/exec/foo~cifs/cifs`
 
-The vendor and driver names must match flexVolume.driver in the volume spec, with '~' replaced with '/'. For example, if flexVolume.driver is set to "foo/cifs", then the vendor is "foo", and driver is "cifs".
+The vendor and driver names must match flexVolume.driver in the volume spec, with '~' replaced with '/'. For example, if `flexVolume.driver` is set to `foo/cifs`, then the vendor is `foo`, and driver is `cifs`.
+
+## Dynamic Plugin Discovery
+Beginning in v1.8, Flexvolume supports the ability to detect drivers on the fly. Instead of requiring drivers to exist at system initialization time or having to restart kubelet or controller manager, drivers can be installed, upgraded/downgraded, and uninstalled while the system is running.
+For more information, please refer to the [design document](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/flexvolume-deployment.md).
+
+## Automated Plugin Installation/Upgrade
+One possible way to install and upgrade your Flexvolume drivers is by using a DaemonSet. See [Recommended Driver Deployment Method](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/flexvolume-deployment.md#recommended-driver-deployment-method) for details.
 
 ## Plugin details
 The plugin expects the following call-outs are implemented for the backend drivers. Some call-outs are optional. Call-outs are invoked from the Kubelet & the Controller manager nodes.
