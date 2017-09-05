@@ -43,11 +43,7 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   * A user wishes to read from a block storage device and write to a filesystem (big data analytics processing)
   Future use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the 
   foundation for more fully developing these methods. 
-  
-  It is important to note that when a PV is bound, it is either bound as a raw block device or formatted with a filesystem. Therefore, 
-  the PVC drives the request and intended usage of the device by specifying the volumeMode as part of the API. This design lends itself
-  to future support of dynamic provisioning by also letting the request initiate from the PVC defining the role for the PV. It also 
-  allows flexibility in the implementation and storage plugins to determine their support of this feature.
+
  
 # Design Overview
 
@@ -72,6 +68,11 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   In addition, in-tree provisioners should be able to gracefully ignore volumeMode API objects for plugins that haven't been updated to
   accept this value. Acceptable values for volumeMode are 'Block' and 'Filesystem'. Where 'Filesystem' is the default value today and not 
   required to be set in the PV/PVC.
+  
+  It is important to note that when a PV is bound, it is either bound as a raw block device or formatted with a filesystem. Therefore, 
+  the PVC drives the request and intended usage of the device by specifying the volumeMode as part of the API. This design lends itself
+  to future support of dynamic provisioning by also letting the request initiate from the PVC defining the role for the PV. It also 
+  allows flexibility in the implementation and storage plugins to determine their support of this feature.
   
 # Proposed API Changes
    
