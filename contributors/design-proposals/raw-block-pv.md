@@ -532,7 +532,7 @@ It is important the values that are passed to the container runtimes are valid a
 
 The accessModes would be passed as part of the options array and would need validate against the specific runtime engine. 
 Since rkt doesn't use the CRI, the config values would need to be passed in the legacy method.
-Note: the container runtime doesn't require a priviledged pod to enable the device as RWX (RMW).
+Note: the container runtime doesn't require a privileged pod to enable the device as RWX (RMW), but still requires privileges to mount as is consistent with the filesystem implemenatation today.
 
 The runtime option would be placed in the DeviceInfo as such:
 devices = append(devices, kubecontainer.DeviceInfo{PathOnHost: path, PathInContainer: path, Permissions: "XXX"}) 
