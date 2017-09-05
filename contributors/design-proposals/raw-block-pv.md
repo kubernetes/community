@@ -589,7 +589,6 @@ Other considerations:
        SetUpDevice() error
        SetUpDeviceAt(dir string) error
        GetVolumePath() string
-       GetVolumeMode() v1.PersistentVolumeMode
  }
  type BlockVolumeUnmapper interface {
        Volume
@@ -597,21 +596,40 @@ Other considerations:
        TearDownDeviceAt(dir string) error
  }
 ```
-## Changes for volume definition under pod directory
+## Changes for volume mount points
 
-Currently, volume is mounted to the following path of a kubelet node when the volumes is in-use.
-
-```
-/var/lib/kubelet/pods/<pod uid>/volumes/<plugin name>/<volume name>
-```
-
-If the volume is raw block device, the volume can't be mounted because there isn't a filesystem.
-Instead of volume mount, plugin needs to create symbolic link with `<volume name>` name under the
-`<pod uid>/devices/<plugin name>` directory.
+Currently, a volume which has filesystem is mounted to the following two paths on a kubelet node when the volumes is in-use.
+The purpose of those mount points are that Kubernetes manages volume attach/detach status using these mount points and number
+of references to these mount points.
 
 ```
-/var/lib/kubelet/pods/<pod uid>/devices/<plugin name>/<volume name>
+- Global mount path
+`/var/lib/kubelet/plugins/kubernetes.io/{pluginName}/{volumePluginDependentPath}/`
+
+- Volume mount path
+`/var/lib/kubelet/pods/{podUID}/volumes/{escapeQualifiedPluginName}/{volumeName}/`
 ```
+
+Even if the volumeMode is "Block", similar scheme is needed. However, the volume which 
+doesn't have filesystem can't be mounted.
+Therefore, instead of volume mount, we use symbolic link.
+- Kubelet creates a new symbolic link under the new global mount path when volume is attached to a Pod. Number of symbolic links
+is equal to the number of Pods which uses the same volume. Kubelet needs to manage both creation and deletion of symbolic links
+under the global mount path.
+ 
+```
+Global mount path for "Block" mode volume
+/var/lib/kubelet/plugins/kubernetes.io/{pluginName}/volumeDevices/{volumePluginDependentPath}/
+```
+ 
+- Plugin creates a symbolic link under the new volume mount path. This symbolic link is not used to manage volume attach/detach
++status but is needed to keep compatibility of current scheme.
+
+```
+Volume mount path for "Block" mode volume
+/var/lib/kubelet/pods/{podUID}/volumeDevices/{escapeQualifiedPluginName}/{volumeName}/
+```
+ 
 # Volume binding matrix for statically provisioned volumes:
 
 | PV volumeMode | PVC volumeMode  | Result           |
