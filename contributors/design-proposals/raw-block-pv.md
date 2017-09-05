@@ -174,7 +174,7 @@ metadata:
   readOnly: false
   fsType: Block #suggested value
 ```
-The provisioner (if applicable) should validate the parameters and return and error if the combination specified is not supported.
+The provisioner (if applicable) should validate the parameters and return an error if the combination specified is not supported.
 This also allows the use case for leveraging a Storage Class for utilizing pre-defined static volumes. By labeling the Persistent Volumes
 with the Storage Class, volumes can be grouped and used according to how they are defined in the class.
 ```
@@ -544,7 +544,7 @@ still differentiating components of storage that are enough to not to enforce al
 considering the usage of device plugins center around discoverability and topology of devices. Since neither of these are requirements
 for using raw block devices, the legacy method of populating the devices and appending it to the device array is sufficient.
 
-# Implementation Plan, Features & Milesones
+# Implementation Plan, Features & Milestones
 
 Phase 1: v1.8
 Feature: Pre-provisioned PVs to precreated devices 
