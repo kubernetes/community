@@ -66,7 +66,8 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   implemented in the community. This requirement is better described in the design PR discussion and will be implemented as a separate
   initiative. 
   In addition, in-tree provisioners should be able to gracefully ignore volumeMode API objects for plugins that haven't been updated to
-  accept this value. Acceptable values for volumeMode are 'Block' and 'Filesystem'. Where 'Filesystem' is the default value today and not 
+  accept this value. Therefore, we will have to update the pv controller to not invoke dynamic provisioning for PVC.volumeMode ==
+  Block. Acceptable values for volumeMode are 'Block' and 'Filesystem'. Where 'Filesystem' is the default value today and not 
   required to be set in the PV/PVC.
   
   It is important to note that when a PV is bound, it is either bound as a raw block device or formatted with a filesystem. Therefore, 
