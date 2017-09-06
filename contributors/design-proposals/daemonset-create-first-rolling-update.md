@@ -32,7 +32,7 @@ type DaemonSetUpdateStrategy struct {
 	// Default is OnDelete.
 	// +optional
 	Type DaemonSetUpdateStrategyType `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	
+
 	// Rolling update config params. Present only if type = "RollingUpdate".
 	//---
 	// TODO: Update this to follow our convention for oneOf, whatever we decide it
@@ -56,11 +56,11 @@ const (
 	// Replace the old daemons by new ones using rolling update i.e replace them on each node one after the other,
 	// killing the old pod before starting the new one.
 	RollingUpdateDaemonSetStrategyType DaemonSetUpdateStrategyType = "RollingUpdate"
- 
+
 	// Replace the old daemons by new ones using rolling update i.e replace them on each node one
 	// after the other, creating the new pod and then killing the old one.
 	SurgingRollingUpdateDaemonSetStrategyType DaemonSetUpdateStrategyType = "SurgingRollingUpdate"
- 
+
 	// Replace the old daemons only when it's killed
 	OnDeleteDaemonSetStrategyType DaemonSetUpdateStrategyType = "OnDelete"
 )
@@ -125,17 +125,17 @@ For more background see https://github.com/kubernetes/kubernetes/issues/48841.
 
 ### Considerations / questions
 
-1. How are `hostPort`s handled? 
+1. How are `hostPort`s handled?
 
 They are not handled as part of this proposal. We can either:
 
-  1. Attempt to determine a mechanism to handle this (unclear, perhaps best
-     left as future work, i.e. prior to GA)
-  2. Note in the documentation that this may cause port conflicts that prevent
-     new pods from scheduling successfully (and therefore updates from
-     completing successfully)
-  3. Add a validation check that rejects the combination of `hostPort` and the
-     `SurgingRollingUpdate` strategy.
+   1. Attempt to determine a mechanism to handle this (unclear, perhaps best
+      left as future work, i.e. prior to GA)
+   2. Note in the documentation that this may cause port conflicts that prevent
+      new pods from scheduling successfully (and therefore updates from
+      completing successfully)
+   3. Add a validation check that rejects the combination of `hostPort` and the
+      `SurgingRollingUpdate` strategy.
 
 2. How will the scheduler handle hostPort collisions?
 
@@ -144,7 +144,11 @@ can get stuck in pending). To verify, create a new Deployment that uses a
 hostPort, has replicas = the number of workers (or use a selector), and set
 `maxUnavailable` to 0. If you attempt to update this Deployment the update will
 get stuck since the scheduler cannot find any nodes upon which to place the
-pods. 
+pods.
+
+It's noted that DaemonSets use `hostPort`s more frequently than Deployments,
+and Deployment replica counts are ideally << the number of nodes, so this
+issue will likely affect DaemonSets much more than Deployments.
 
 3. How are other shared resources (e.g. local devices, GPUs, specific core
    types) handled?
