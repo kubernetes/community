@@ -1,240 +1,244 @@
-Uncategorized (Please Help)
-	high-availability.md
-	control-plane-resilience.md
-	downward_api_resources_limits_requests.md
-	seccomp.md
-	client-package-structure.md
-	service-discovery.md
-	metadata-policy.md
-	containerized-mounter.md~
-	identifiers.md
-	local-cluster-ux.md
-	pod-pid-namespace.md
-	grow-volume-size.md
-	image-provenance.md
-	core-metrics-pipeline.md
-	versioning.md
-	ha_master.md
-	secret-configmap-downwarapi-file-mode.md
-	protobuf.md
-	flakiness-sla.md
-	resources.md
-	initial-resources.md
+Uncategorized
+	admission_control_event_rate_limit.md
 	create_sheet.py
-	runtime-client-server.md
-	OWNERS
-	namespaces.md
-	cpu-manager.md
-	selinux-enhancements.md
-	sysctl.md
+	create_sheet.py~
+	design_proposal_template.md
 	dir_struct.txt
-	selinux.md
-	templates.md
-	pod-cache.png
-	README.md
-	multi-platform.md
-	pod-lifecycle-event-generator.md
-	secrets.md
-	cri-dockershim-checkpoint.md
 	event_compression.md
+	multi-platform.md
+	owners
 	pleg.png
+	readme.md
+	runtime-client-server.md
+	templates.md~
 ./sig-cli
+	get-describe-apiserver-extensions.md
+	kubectl-create-from-env-file.md
 	kubectl-extension.md
+	kubectl-login.md
 	kubectl_apply_getsetdiff_last_applied_config.md
 	multi-fields-merge-key.md
-	template.md
-	expansion.md
-	kubectl-login.md
-	simple-rolling-update.md
-	OWNERS
-	get-describe-apiserver-extensions.md
+	owners
 	preserve-order-in-strategic-merge-patch.md
-	kubectl-create-from-env-file.md
+	simple-rolling-update.md
 ./network
-	flannel-integration.md
-	service-external-name.md
-	networking.md
 	command_execution_port_forwarding.md
-	network-policy.md
 	external-lb-source-ip-preservation.md
+	flannel-integration.md
+	network-policy.md
+	networking.md
+	selinux-enhancements.md
+	service-discovery.md
+	service-external-name.md
 ./resource-management
+	admission_control_limit_range.md
+	admission_control_resource_quota.md
+	device-plugin-overview.png
 	device-plugin.md
 	device-plugin.png
 	gpu-support.md
-	device-plugin-overview.png
+	hugepages.md
+	resource-quota-scoping.md
+./testing
+	flakiness-sla.md
 ./autoscaling
-	hpa-v2.md
-	hpa-status-conditions.md
 	horizontal-pod-autoscaler.md
+	hpa-status-conditions.md
+	hpa-v2.md
+	initial-resources.md
 ./architecture
 	architecture.md
-	architecture.dia
 	architecture.png
 	architecture.svg
-./api-machinery
-	admission_control_extension.md
-	csi-client-structure-proposal.md
-	selector-generation.md
-	pod-safety.md
-	container-init.md
-	resource-quota-scoping.md
-	thirdpartyresources.md
-	aggregated-api-servers.md
-	extending-api.md
-	envvar-configmap.md
-	dynamic-admission-control-configuration.md
-	api-chunking.md
-	garbage-collection.md
-	customresources-validation.md
-	auditing.md
-	apiserver-watch.md
-	admission_control_limit_range.md
-	apiserver-build-in-admission-plugins.md
-	synchronous-garbage-collection.md
-	configmap.md
-	csi-new-client-library-procedure.md
-	pod-preset.md
-	add-new-patchStrategy-to-clear-fields-not-present-in-patch.md
-	api-group.md
+	identifiers.md
+	namespaces.md
 	principles.md
+./api-machinery
+	add-new-patchstrategy-to-clear-fields-not-present-in-patch.md
 	admission_control.md
-	optional-configmap.md
-	server-get.md
+	admission_control_extension.md
+	aggregated-api-servers.md
+	api-chunking.md
+	api-group.md
+	apiserver-build-in-admission-plugins.md
 	apiserver-count-fix.md
-	admission_control_resource_quota.md
+	apiserver-watch.md
+	auditing.md
+	bulk_watch.md
+	client-package-structure.md
+	controller-ref.md
+	csi-client-structure-proposal.md
+	csi-new-client-library-procedure.md
+	customresources-validation.md
+	dynamic-admission-control-configuration.md
+	extending-api.md
+	garbage-collection.md
+	metadata-policy.md
+	protobuf.md
+	server-get.md
+	synchronous-garbage-collection.md
+	thirdpartyresources.md
 ./node
-	pod-resource-management.md
-	kubelet-tls-bootstrap.md
-	dynamic-kubelet-configuration.md
-	kubelet-hypercontainer-runtime.md
+	all-in-one-volume.md
+	annotations-downward-api.md
+	configmap.md
+	container-init.md
 	container-runtime-interface-v1.md
-	kubelet-authorizer.md
+	cpu-manager.md
+	cri-dockershim-checkpoint.md
 	disk-accounting.md
-	kubelet-systemd.md
-	kubelet-cri-logging.md
+	downward_api_resources_limits_requests.md
+	dynamic-kubelet-configuration.md
+	envvar-configmap.md
+	expansion.md
 	kubelet-auth.md
-	runtimeconfig.md
+	kubelet-authorizer.md
+	kubelet-cri-logging.md
+	kubelet-eviction.md
+	kubelet-hypercontainer-runtime.md
+	kubelet-rkt-runtime.md
+	kubelet-rootfs-distribution.md
+	kubelet-systemd.md
+	node-allocatable.md
+	optional-configmap.md
+	pod-cache.png
+	pod-lifecycle-event-generator.md
+	pod-pid-namespace.md
+	pod-resource-management.md
+	propagation.md
 	resource-qos.md
 	runtime-pod-cache.md
-	kubelet-rootfs-distribution.md
-	kubelet-rkt-runtime.md
-	node-allocatable.md
-	kubelet-eviction.md
+	seccomp.md
+	secret-configmap-downwardapi-file-mode.md
+	selinux.md
+	sysctl.md
+./service-catalog
+	pod-preset.md
 ./instrumentation
+	core-metrics-pipeline.md
+	custom-metrics-api.md
+	metrics-server.md
 	monitoring_architecture.md
 	monitoring_architecture.png
-	custom-metrics-api.md
-	resource-metrics-api.md
 	performance-related-monitoring.md
-	metrics-server.md
+	resource-metrics-api.md
 	volume_stats_pvc_ref.md
 ./auth
-	security_context.md
-	no-new-privs.md
 	access.md
-	enhance-pluggable-policy.md
 	apparmor.md
-	security-context-constraints.md
+	enhance-pluggable-policy.md
+	image-provenance.md
+	no-new-privs.md
 	pod-security-context.md
-	bulk_watch.md
+	secrets.md
+	security-context-constraints.md
 	security.md
+	security_context.md
 	service_accounts.md
 ./federation
-	federated-replicasets.md
-	ubernetes-design.png
-	ubernetes-cluster-state.png
-	federation-phase-1.md
-	federation-clusterselector.md
-	ubernetes-scheduling.png
-	federation-lite.md
-	federation.md
-	federated-services.md
-	federation-high-level-arch.png
+	control-plane-resilience.md
 	federated-api-servers.md
-	federated-placement-policy.md
 	federated-ingress.md
+	federated-placement-policy.md
+	federated-replicasets.md
+	federated-services.md
+	federation-clusterselector.md
+	federation-high-level-arch.png
+	federation-lite.md
+	federation-phase-1.md
+	federation.md
+	ubernetes-cluster-state.png
+	ubernetes-design.png
+	ubernetes-scheduling.png
 ./scalability
-	Kubemark_architecture.png
-	scalability-testing.md
 	kubemark.md
+	kubemark_architecture.png
+	scalability-testing.md
 ./cluster-lifecycle
-	self-hosted-layers.png
-	self-hosted-kubernetes.md
-	dramatically-simplify-cluster-creation.md
 	bootstrap-discovery.md
 	cluster-deployment.md
-	self-hosted-kubelet.md
 	clustering.md
+	dramatically-simplify-cluster-creation.md
+	ha_master.md
+	high-availability.md
+	kubelet-tls-bootstrap.md
+	local-cluster-ux.md
+	runtimeconfig.md
 	self-hosted-final-cluster.png
+	self-hosted-kubelet.md
+	self-hosted-kubernetes.md
+	self-hosted-layers.png
 	self-hosted-moving-parts.png
 ./cluster-lifecycle/clustering
-	static.png
 	.gitignore
-	Dockerfile
-	static.seqdiag
-	dynamic.seqdiag
-	OWNERS
-	Makefile
-	README.md
+	dockerfile
 	dynamic.png
+	dynamic.seqdiag
+	makefile
+	owners
+	readme.md
+	static.png
+	static.seqdiag
 ./release
 	release-notes.md
 	release-test-signal.md
+	versioning.md
 ./scheduling
-	rescheduling.md
-	rescheduler.md
-	nodeaffinity.md
-	podaffinity.md
 	hugepages.md
-	taint-toleration-dedicated.md
+	multiple-schedulers.md
+	nodeaffinity.md
 	pod-preemption.md
 	pod-priority-api.md
-	taint-node-by-condition.md
-	scheduler_extender.md
+	podaffinity.md
+	rescheduler.md
 	rescheduling-for-critical-pods.md
-	multiple-schedulers.md
+	rescheduling.md
+	resources.md
+	scheduler_extender.md
+	taint-node-by-condition.md
+	taint-toleration-dedicated.md
+./scheduling/images
+	.gitignore
+	owners
+	preemption_1.png
+	preemption_2.png
+	preemption_3.png
+	preemption_4.png
 ./apps
-	daemonset-update.md
-	cronjob.md
-	annotations-downward-api.md
-	controller-ref.md
-	statefulset-update.md
-	stateful-apps.md
-	deploy.md
-	daemon.md
 	controller_history.md
-	job.md
-	indexed-job.md
+	cronjob.md
+	daemon.md
+	daemonset-update.md
+	deploy.md
 	deployment.md
+	indexed-job.md
+	job.md
+	obsolete_templates.md
+	selector-generation.md
+	stateful-apps.md
+	statefulset-update.md
 ./storage
-	flex-volumes-drivers-psp.md
-	local-storage-overview.md
-	all-in-one-volume.md
-	volume-selectors.md
-	persistent-storage.md
-	volume-metrics.md
-	flexvolume-deployment.md
-	volume-snapshotting.png
-	volume-provisioning.md
-	propagation.md
-	volume-ownership-management.md
-	mount-options.md
-	volumes.md
+	containerized-mounter.md
 	default-storage-class.md
-	volume-snapshotting.md
+	flex-volumes-drivers-psp.md
+	flexvolume-deployment.md
+	grow-volume-size.md
+	local-storage-overview.md
+	mount-options.md
+	persistent-storage.md
+	pod-safety.md
 	volume-hostpath-qualifiers.md
+	volume-metrics.md
+	volume-ownership-management.md
+	volume-provisioning.md
+	volume-selectors.md
+	volume-snapshotting.md
+	volume-snapshotting.png
+	volumes.md
 ./aws
 	aws_under_the_hood.md
-./images
-	preemption_1.png
-	preemption_3.png
-	.gitignore
-	OWNERS
-	preemption_2.png
-	preemption_4.png
 ./gcp
 	gce-l4-loadbalancer-healthcheck.md
-	containerized-mounter.md
 ./cloud-provider
-	cloudprovider-storage-metrics.md
 	cloud-provider-refactoring.md
+	cloudprovider-storage-metrics.md
