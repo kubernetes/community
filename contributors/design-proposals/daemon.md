@@ -66,8 +66,7 @@ nodes, preempting other pods if necessary.
 "kubernetes.io/created-by: \<json API object reference\>" 
 ```
   - YAML example:
-```
-    YAML
+```yaml
   apiVersion: extensions/v1beta1
   kind: DaemonSet
   metadata:
