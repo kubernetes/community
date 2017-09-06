@@ -1,5 +1,7 @@
 # Troubleshoot Running Pods
 
+[bit.ly/k8s-pod-troubleshooting](bit.ly/k8s-pod-troubleshooting)
+
 This proposal seeks to add first class support for troubleshooting by creating a
 mechanism to execute a shell or other troubleshooting tools inside a running pod
 without requiring that the associated container images include such tools.
@@ -11,17 +13,19 @@ without requiring that the associated container images include such tools.
 Many developers of native Kubernetes applications wish to treat Kubernetes as an
 execution platform for custom binaries produced by a build system. These users
 can forgo the scripted OS install of traditional Dockerfiles and instead `COPY`
-the output of their build system into a container image built `FROM scratch`.
-This confers several advantages:
+the output of their build system into a container image built `FROM scratch` or
+a [distroless container
+image](https://github.com/GoogleCloudPlatform/distroless). This confers several
+advantages:
 
 1.  **Minimal images** lower operational burden and reduce attack vectors.
 1.  **Immutable images** improve correctness and reliability.
 1.  **Smaller image size** reduces resource usage and speeds deployments.
 
 The disadvantage of using containers built `FROM scratch` is the lack of system
-binaries provided a base Operation System image makes it difficult to
-troubleshoot running containers. Kubernetes should enable troubleshooting pods
-regardless of the contents of the container image.
+binaries provided by an Operating System image makes it difficult to
+troubleshoot running containers. Kubernetes should enable one to troubleshoot
+pods regardless of the contents of the container images.
 
 ### Operations and Support
 
@@ -35,14 +39,13 @@ good" or automated debugging environment to a pod.
 A solution to troubleshoot arbitrary container images MUST:
 
 *   troubleshoot arbitrary running containers with minimal prior configuration
-*   allow access to shared pod namespaces and the file systems of individual
-    containers
+*   allow access to namespaces and the file systems of individual containers
 *   fetch troubleshooting utilities at debug time rather than at the time of pod
     creation
 *   be compatible with admission controllers and audit logging
-*   allow inspection of pod state using existing tools (no hidden containers)
+*   allow discovery of debugging status
 *   support arbitrary runtimes via the CRI (possibly with reduced feature set)
-*   require no access to the node
+*   require no administrative access to the node
 *   have an excellent user experience (i.e. should be a feature of the platform
     rather than config-time trickery)
 *   have no *inherent* side effects to the running container image
@@ -58,29 +61,28 @@ be similar but run a *container* in a *pod*.
 A container created by `kubectl debug` is a *Debug Container*. Just like a
 process run by `kubectl exec`, a Debug Container is not part of the pod spec and
 has no resource stored in the API. Unlike `kubectl exec`, a Debug Container
-*does* have a `ContainerStatus` that is reported with `v1.PodStatus` and
-displayed by `kubectl describe pod`.
+*does* have status that is reported in `v1.PodStatus` and displayed by `kubectl
+describe pod`.
 
 For example, the following command would attach to a newly created container in
 a pod:
 
 ```
-kubectl debug -it -c debug-shell --image=debian target-pod -- bash
+kubectl debug -c debug-shell --image=debian target-pod -- bash
 ```
 
-Stdin and TTY default to true, and it would be reasonable for Kubernetes to
-provide a default container name and image, making the minimal possible debug
-command:
+It would be reasonable for Kubernetes to provide a default container name and
+image, making the minimal possible debug command:
 
 ```
 kubectl debug target-pod
 ```
 
-This creates an interactive shell in a pod which can examine and signal all
+This creates an interactive shell in a pod which can examine and signal other
 processes in the pod. It has access to the same network and IPC as processes in
 the pod. It can access the filesystem of other processes by `/proc/$PID/root`.
 As is already the case with regular containers, Debug Containers can enter
-arbitrary namespaces of another container via `nsenter` if run with
+arbitrary namespaces of another container via `nsenter` when run with
 `CAP_SYS_ADMIN`.
 
 *Please see the User Stories section for additional examples and Alternatives
@@ -89,136 +91,201 @@ Considered for the considerable list of other solutions we considered.*
 ## Implementation Details
 
 The implementation of `kubectl debug` closely mirrors the implementation of
-`kubectl exec`, with most of the complexity being implemented in the `kubelet`.
-From the perspective of the client, there's a new subresource of pod, /`debug`,
-that creates a Debug Container based on a provided `v1.Container` and attaches
-to its console. Users give Debug Containers a name (e.g. "debug" or "shell")
-which is used in subsequent interactions and is reported in `kubectl describe`.
+`kubectl exec`, with most of the complexity implemented in the `kubelet`. How
+functionality like this best fits into Kubernetes API has been contentious. In
+order to make progress, we will start with the smallest possible API change,
+extending `/exec` to support Debug Containers, and iterate.
+
+From the perspective of the user, there's a new command, `kubectl debug`, that
+creates a Debug Container and attaches to its console. We believe a new command
+will be less confusing for users than overloading `kubectl exec` with a new
+concept. Users give Debug Containers a name (e.g. "debug" or "shell") which can
+subsequently be used to reattach and is reported by `kubectl describe`.
 
 ### Kubernetes API Changes
 
-Most of the complexity for Debug Containers is implemented in the kubelet, but
-the API server needs to proxy the request from the client to the kubelet. The
-most flexible approach is to allow the client to provide a `v1.Container` to the
-kubelet.
+#### Chosen Solution: "exec++"
 
-We'll create a new API Object:
-
-```
-// PodDebugContainer describes a container to attach to a running pod for troubleshooting.
-type PodDebugContainer struct {
-        metav1.TypeMeta
-
-        // Template defines the pods that will be created from this pod template
-        Container v1.Container
-}
-```
-
-The pod API will gain a new `/debug` subresource that allows the following:
-
-1.  A `POST` of a `PodDebugContainer` to
-    `/api/v1/namespaces/$NS/pods/$POD_NAME/debug/$NAME` will create Debug
-    Container named `$NAME` running in pod `$POD_NAME`.
-1.  A `DELETE` of `/api/v1/namespaces/$NS/pods/$POD_NAME/debug/$NAME` will stop
-    the Debug Container `$NAME` in pod `$POD_NAME`.
-
-Once created, a client can attach to the console of a debug container using the
-existing attach endpoint, `/api/v1/namespaces/$NS/pods/$POD_NAME/attach`. Status
-of Debug Containers is reported via a new field in `v1.PodStatus`, described in
-a subsequent section.
-
-#### Alternative: Extending `/exec`
-
-Rather than creating a new API Object and subresource, we could extend `/exec`
-to support "executing" container images. The current `/exec` endpoint must
-implement `GET` to support streaming for all clients. We don't want to encode a
-(potentially large) `v1.Container` as an HTTP parameter, so we would instead
-extend `v1.PodExecOptions` with the specific fields required for creating a
-Debug Container:
+We will extend `v1.Pod`'s `/exec` subresource to support "executing" container
+images. The current `/exec` endpoint must implement `GET` to support streaming
+for all clients. We don't want to encode a (potentially large) `v1.Container` as
+an HTTP parameter, so we must extend `v1.PodExecOptions` with the specific
+fields required for creating a Debug Container:
 
 ```
 // PodExecOptions is the query options to a Pod's remote exec call
 type PodExecOptions struct {
         ...
-        // Image is a container image name that, if specified, will be used to
-        // create a Debug Container in the specified Pod with Command as ENTRYPOINT
+        // DebugName is the name of the Debug Container. Its presence will cause
+        // exec to create a Debug Container rather than performing a runtime exec.
+        DebugName string `json:"debugName,omitempty" ...`
+        // Image is an optional container image name that will be used to for the Debug
+        // Container in the specified Pod with Command as ENTRYPOINT. If omitted a
+        // default image will be used.
         Image string `json:"image,omitempty" ...`
 }
 ```
 
 After creating the Debug Container, the kubelet will upgrade the connection to
 streaming and perform an attach to the container's console. If disconnected, the
-Debug Container can be reattached using the standard `/attach` endpoint.
+Debug Container can be reattached using the pod's `/attach` endpoint with
+`DebugName`.
 
-This approach is simpler while still meeting all requirements for pod
-troubleshooting, but it does have some disadvantages:
+Debug Containers cannot be removed via the API and instead the process must
+terminate. While not ideal, this parallels existing behavior of `kubectl exec`.
+To kill a Debug Container one would `attach` and exit the process interactively
+or create a new Debug Container to send a signal with `kill(1)` to the original
+process.
 
-1.  Some Kubernetes developers feel strongly that `kubectl exec` should not be
-    extended past an individual runtime's concept of exec (i.e. `docker exec`).
-    Note, however, that an implementation using the `/exec` subresource can
-    still have a conceptually separate `kubectl debug` subcommand.
-1.  Allowing the client to generate a `v1.Container` is more flexible and allows
-    for ad-hoc configuration that could include things like volume mounts.
-    Without passing a `v1.Container` we will need to extend `v1.PodExecOptions`
-    for each container option we want to support. At minimum this must include
-    `image` and `securityContext.capabilities.add`.
-1.  Debug Containers could not be removed via the API and instead the process
-    must terminate. This likely not a problem in practice since it parallels
-    existing behavior of `kubectl exec`. To kill a Debug Container one would
-    attach to exit the process interactively or create a new Debug Container to
-    send a signal via `kill(1)`.
+#### Alternative 1: Debug Subresource
+
+Rather than extending an existing subresource, we could create a new,
+non-streaming `debug` subresource. We would create a new API Object:
+
+```
+// DebugContainer describes a container to attach to a running pod for troubleshooting.
+type DebugContainer struct {
+        metav1.TypeMeta
+        metav1.ObjectMeta
+
+       // Name is the name of the Debug Container. Its presence will cause
+        // exec to create a Debug Container rather than performing a runtime exec.
+        Name string `json:"name,omitempty" ...`
+
+        // Image is an optional container image name that will be used to for the Debug
+        // Container in the specified Pod with Command as ENTRYPOINT. If omitted a
+        // default image will be used.
+        Image string `json:"image,omitempty" ...`
+}
+```
+
+The pod would gain a new `/debug` subresource that allows the following:
+
+1.  A `POST` of a `PodDebugContainer` to
+    `/api/v1/namespaces/$NS/pods/$POD_NAME/debug/$NAME` to create Debug
+    Container named `$NAME` running in pod `$POD_NAME`.
+1.  A `DELETE` of `/api/v1/namespaces/$NS/pods/$POD_NAME/debug/$NAME` will stop
+    the Debug Container `$NAME` in pod `$POD_NAME`.
+
+Once created, a client would attach to the console of a debug container using
+the existing attach endpoint, `/api/v1/namespaces/$NS/pods/$POD_NAME/attach`.
+
+However, this pattern does not resemble any other current usage of the API, so
+we prefer to start with exec++ and reevaluate if we discover a compelling
+reason.
+
+#### Alternative 2: Declarative Configuration
+
+Using subresources is an imperative style API where the client instructs the
+kubelet to perform an action, but in general Kubernetes prefers declarative APIs
+where the client declares a state for Kubernetes to enact.
+
+We could implement this in a declarative manner by creating a new
+`EphemeralContainer` type:
+
+```
+type EphemeralContainer struct {
+        metav1.TypeMeta
+        metav1.ObjectMeta
+
+        Spec EphemeralContainerSpec
+        Status v1.ContainerStatus
+}
+```
+
+`EphemeralContainerSpec` is similar to `v1.Container`, but contains only fields
+relevant to Debug Containers:
+
+```
+type EphemeralContainerSpec struct {
+        // Target is the pod in which to run the EphemeralContainer
+        // Required.
+        Target v1.ObjectReference
+
+        Name string
+        Image String
+        Command []string
+        Args []string
+        ImagePullPolicy PullPolicy
+        SecurityContext *SecurityContext
+}
+```
+
+A new controller in the kubelet would watch for EphemeralContainers and
+create/delete debug containers. `EphemeralContainer.Status` would be updated by
+the kubelet at the same time it updates `ContainerStatus` for regular and init
+containers. Clients would create a new `EphemeralContainer` object, wait for it
+to be started and then attach using the pod's attach subresource and the name of
+the `EphemeralContainer`.
+
+Debugging is inherently imperative, however, rather than a state for Kubernetes
+to enforce. Once a Debug Container is started it should not be automatically
+restarted, for example. This solution imposes additionally complexity and
+dependencies on the kubelet, but it's not yet clear if the complexity is
+justified.
 
 ### Debug Container Status
 
-The status of a *debug container* is reported in a new field in `v1.PodStatus`:
+The status of a Debug Container is reported in a new field in `v1.PodStatus`:
 
 ```
 type PodStatus struct {
         ...
-        DebugContainerStatuses []ContainerStatus
+        DebugStatuses []DebugStatus
+}
+
+type DebugStatus struct {
+        Name string
+        Command []string
+        Args []string
+        // Set only for Debug Containers
+        DebugContainerStatus v1.ContainerStatus
 }
 ```
 
-This list is populated by the kubelet from
-`kubecontainer.PodStatus.ContainerStatuses` in the same way as regular and init
+Initially this will be populated only for Debug Containers, but there's interest
+in tracking status for traditional exec in a similar manner. Ideally we can
+report both types of user intervention into a container with a single new type.
+
+Note that `Command` and `Args` must be tracked in the status object because
+there is no spec for Debug Containers or exec. These must either be made
+available by the runtime or tracked by the kubelet. For Debug Containers this
+could be stored as runtime labels, but the kubelet currently has no method of
+storing state across restarts for exec. Solving this problem for exec is out of
+scope for Debug Containers, but we will look for a solution as we implement this
+feature.
+
+`DebugStatuses` is populated by the kubelet in the same way as regular and init
 container statuses. This is sent to the API server and displayed by `kubectl
 describe pod`.
-
-Status of running Debug Containers will always be reported in this list, but
-Debug Containers that exit will be removed from this list when they are garbage
-collected. In order to satisfy inspection and audit requirements, we need to
-better understand the requirements and whether they will be satisfied by other
-audit features currently under development. Until then, Debug Containers may
-disappear from the list of Debug Container Statuses if the node is under
-resource pressure. This is acceptable for the alpha but must be resolved to
-graduate from alpha status.
 
 ### Creating Debug Containers
 
 1.  `kubectl` invokes the debug API as described in the preceding section.
 1.  The API server checks for name collisions with existing containers, performs
     admission control and proxies the connection to the kubelet's
-    `/poddebug/$NS/$POD_NAME/$DEBUG_CONTAINER_NAME` endpoint. `/poddebug` is
-    used because `/debug` is already used by the kubelet.
-1.  The kubelet instructs the Generic Runtime Manager (this feature is only
-    available for runtimes implementing the CRI) to create a Debug Container.
+    `/exec/$NS/$POD_NAME/$CONTAINER_NAME` endpoint.
+1.  The kubelet instructs the Runtime Manager to create a Debug Container.
 1.  The runtime manager uses the existing `startContainer()` method to create a
     container in an existing pod. `startContainer()` has one modification for
     Debug Containers: it creates a new runtime label (e.g. a docker label) that
     identifies this container as a Debug Container.
 1.  After creating the container, the kubelet schedules an asynchronous update
-    of `PodStatus` and returns success to the client. The update publishes the
-    debug container status to the API server at which point the Debug Container
-    becomes visible via `kubectl describe pod`.
-1.  If the request is successful, kubectl should then attach to the Debug
-    Container. An attach will not succeed until the API server receives an
-    updated `PodStatus`, so `kubectl` should retry if the container does not
-    exist (up to a configurable timeout).
+    of `PodStatus`. The update publishes the debug container status to the API
+    server at which point the Debug Container becomes visible via `kubectl
+    describe pod`.
+1.  The kubelet will upgrade the connection to streaming and attach to the
+    container's console.
+
+Rather than performing the implicit attach the kubelet could return success to
+the client and require the client to perform an explicit attach, but the
+implicit attach maintains consistent semantics across `/exec` rather than
+varying behavior based on parameters.
 
 The apiserver detects container name collisions with both containers in the pod
-spec and other running Debug Containers by checking `DebugContainerStatuses`. In
-a race to create two Debug Containers with the same name, the API server will
-pass both requests and the kubelet must return an error to all but one request.
+spec and other running Debug Containers by checking `DebugStatuses`. In a race
+to create two Debug Containers with the same name, the API server will pass both
+requests and the kubelet must return an error to all but one request.
 
 There are no limits on the number of Debug Containers that can be created in a
 pod, but exceeding a pod's resource allocation may cause the pod to be evicted.
@@ -238,8 +305,8 @@ terminal. This is supported by Docker.
 
 Debug containers will not be killed automatically until the pod (specifically,
 the pod sandbox) is destroyed. Debug Containers will stop when their command
-exits, such as existing a shell. Unlike `kubectl exec`, Debug Containers will
-not receive an EOF if their connection is interrupted.
+exits, such as exiting a shell. Unlike `kubectl exec`, processes in Debug
+Containers will not receive an EOF if their connection is interrupted.
 
 ### Container Lifecycle Changes
 
@@ -250,17 +317,17 @@ are necessary in the kubelet:
 1.  `SyncPod()` must not kill any Debug Container even though it is not part of
     the pod spec.
 1.  As an exception to the above, `SyncPod()` will kill Debug Containers when
-    the pod sandbox changes since a Debug Container in a no-longer-used sandbox
-    is not useful. Debug Containers are not automatically restarted in the new
+    the pod sandbox changes since a lone Debug Container in an abandoned sandbox
+    is not useful. Debug Containers are not automatically started in the new
     sandbox.
 1.  `convertStatusToAPIStatus()` must sort Debug Containers status into
-    `DebugContainerStatuses` similar to as it does for `InitContainerStatuses`
+    `DebugStatuses` similar to as it does for `InitContainerStatuses`
 1.  The kubelet must preserve `ContainerStatus` on debug containers for
     reporting.
 1.  Debug Containers must be excluded from calculation of pod phase and
     condition
 
-It's worth noting some things that do not need to change:
+It's worth noting some things that do not change:
 
 1.  `KillPod()` already operates on all running containers returned by the
     runtime.
@@ -272,17 +339,18 @@ It's worth noting some things that do not need to change:
 
 Debug Containers have no additional privileges above what is available to any
 `v1.Container`. It's the equivalent of configuring an shell container in a pod
-spec but created on demand. ACLs for the `/debug` subresource should match those
-of `/exec`, `/attach`, etc.
+spec but created on demand.
 
-Admission plugins that guard `/exec` must be updated to guard the new
-subresource `/debug`.
+Admission plugins that guard `/exec` must be updated for the new parameters. In
+particular, they should enforce the same container image policy on the `Image`
+parameter as is enforced for regular containers. During the alpha phase we will
+additionally support a container image whitelist as a kubelet flag to allow
+cluster administrators to easily constraint debug container images.
 
 ### Additional Consideration
 
-1.  Non-interactive workloads are explicitly supported. Detached workloads could
-    be trivially supported by a flag that instructs `kubectl` to skip the attach
-    operation.
+1.  Debug Containers are intended for interactive use and always have TTY and
+    Stdin enabled.
 1.  There are no guaranteed resources for ad-hoc troubleshooting. If
     troubleshooting causes a pod to exceed its resource limit it may be evicted.
 1.  There's an output stream race inherent to creating then attaching a
@@ -291,6 +359,15 @@ subresource `/debug`.
     and exists because Kubernetes has no mechanism to attach a container prior
     to starting it. This larger issue will not be addressed by Debug Containers,
     but Debug Containers would benefit from future improvements or work arounds.
+1.  We do not want to describe Debug Containers using `v1.Container`. This is to
+    reinforce that Debug Containers are not general purpose containers by
+    limiting their configurability. Debug Containers should not be used to build
+    services.
+1.  Debug Containers are of limited usefulness without a shared PID namespace.
+    If a pod is configured with isolated PID namespaces, the Debug Container
+    will join the PID namespace of the target container. Debug Containers will
+    not be available with runtimes that do not implement PID namespace sharing
+    in some form.
 
 ## Implementation Plan
 
@@ -298,31 +375,29 @@ subresource `/debug`.
 
 #### Goals and Non-Goals for Alpha Release
 
-We're targeting an alpha release in Kubernetes 1.8 that includes the following
+We're targeting an alpha release in Kubernetes 1.9 that includes the following
 basic functionality:
 
 *   Support in the kubelet for creating debug containers in a running pod
 *   A `kubectl debug` command to initiate a debug container
 *   `kubectl describe pod` will list status of debug containers running in a pod
 
-Functionality in the kubelet will be hidden behind an alpha feature flag and
-disabled by default. The following are explicitly out of scope for the 1.8 alpha
-release:
+Functionality will be hidden behind an alpha feature flag and disabled by
+default. The following are explicitly out of scope for the 1.9 alpha release:
 
-*   `kubectl describe pod` will not report the running command, only container
-    status
 *   Exited Debug Containers will be garbage collected as regular containers and
     may disappear from the list of Debug Container Statuses.
-*   There's no specific integration with admission controller and pod security
-    policy.
-*   Explicit reattaching isn't implemented. Instead a `kubectl debug` invocation
-    will implicitly reattach if there is an existing, running container with the
-    same name. In this case container configuration will be ignored.
+*   Security Context for the Debug Container is not configurable. It will always
+    be run with `CAP_SYS_PTRACE` and `CAP_SYS_ADMIN`.
+*   Image pull policy for the Debug Container is not configurable. It will
+    always be run with `PullAlways`.
+
+#### kubelet Implementation
 
 Debug Containers are implemented in the kubelet's generic runtime manager.
-Performing this operation with a legacy (non-CRI) runtime or a cluster without
-the alpha feature enabled will result in a not implemented error. Implementation
-will be split into the following steps:
+Performing this operation with a legacy (non-CRI) runtime will result in a not
+implemented error. Implementation in the kubelet will be split into the
+following steps:
 
 ##### Step 1: Container Type
 
@@ -358,39 +433,36 @@ Containers unless the sandbox is restarted.
 
 ##### Step 3: kubelet API changes
 
-The kubelet gains a new streaming endpoint
-`/poddebug/{podNamespace}/{podName}/{containerName}` which accepts a
-`PodDebugContainer` via `POST`. The `poddebug` handler looks up the pod by
-namespace and name and calls `RunDebugContainer()` with the provided Container.
+The kubelet exposes the new functionality in its existing `/exec/` endpoint.
+`ServeExec()` constructs a `v1.Container` based on `PodExecOptions`, calls
+`RunDebugContainer()`, and performs the attach.
 
-##### Step 4: Kubernetes API changes
+##### Step 4: Reporting DebugStatus
 
-This step implements the changes described in the "Kubernetes API Changes"
-section.
+The last major change to the kubelet is to populate v1.`PodStatus.DebugStatuses`
+based on the `kubecontainer.ContainerStatus` for the Debug Container.
 
-Validation should disallow the following fields which are incompatible with
-Debug Containers:
+#### Kubernetes API Changes
 
-*   Resources
-*   LivenessProbe
-*   ReadinessProbe
-*   Lifecycle
+There are two changes to be made to the Kubernetes, which will be made
+independently:
 
-Note that it should be possible to further restrict allowed Container fields via
-admission control, but this is out of scope for the alpha feature.
+1.  `v1.PodExecOptions` must be extended with new fields.
+1.  `v1.PodStatus` gains a new field to hold Debug Container statuses.
 
-The kubelet will be updated to sort status of Debug Containers into
-`DebugContainerStatuses`.
+In all cases, new fields will be prepended with `Alpha` for the duration of this
+feature's alpha status.
 
-##### Step 5: kubectl changes
+#### kubectl changes
 
-A new top-level command `kubectl debug` is added to create Debug Containers.
-`kubectl describe pod` is extended to report the contents of
-`DebugContainerStatuses` in addition to `ContainerStatuses and
-InitContainerStatuses.`
+In anticipation of this change, [#46151](https://pr.k8s.io/46151) added a
+`kubectl alpha` command to contain alpha features. We will add `kubectl alpha
+debug` to invoke Debug Containers. `kubectl` does not use feature gates, so
+`kubectl alpha debug` will be visible by default in `kubectl` 1.9 and return an
+error when used on a cluster with the feature disabled.
 
-Ideally there will be a way to hide this command when using clusters that do not
-have alpha features enabled.
+`kubectl describe pod` will report the contents of `DebugStatuses` when not
+empty as it means the feature is enabled. The field will be hidden when empty.
 
 ## Appendices
 
@@ -510,12 +582,13 @@ intended to contrast the alternatives listed below.
 **Troubleshoot arbitrary running containers with minimal prior configuration.**
 This solution requires no prior configuration.
 
-**Access to all pod namespaces and the file systems of individual containers.**
-This solution runs a container in the shared pod namespaces. It relies on the
-behavior of `/proc/<pid>/root` (and therefore shared PID namespace) to provide
-access to filesystems of individual containers.
+**Access to namespaces and the file systems of individual containers.** This
+solution runs a container in the shared pod namespaces (e.g. network) and will
+attach to the PID namespace of a target container when not shared with the
+entire pod. It relies on the behavior of `/proc/<pid>/root` to provide access to
+filesystems of individual containers.
 
-**Fetch troubleshooting utilities at debug time**. This solution use normal
+**Fetch troubleshooting utilities at debug time**. This solution uses normal
 container image distribution mechanisms to fetch images when the debug command
 is run.
 
