@@ -11,7 +11,7 @@ I am a huge fan of ideas which seek to simplify and unify possibly due to my
 undergraduate study of physics and mathematics. Coming from a background in
 agile software development, I believe that collaboration is incredibly
 important and that continuous feedback on incremental solutions are likely
-to produce the best outcome.I therefore try spend a lot of time talking with
+to produce the best outcome. I therefore try spend a lot of time talking with
 people about the problems that are important to them before stepping back to
 try to introduce a minimal solution based on their concerns.
 
