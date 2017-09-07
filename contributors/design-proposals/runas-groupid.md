@@ -158,6 +158,33 @@ Following points should be noted:
 - If no `RunAsGroup` is provided in the PodSecurityContext and SecurityContext, and none in the image,
   the container will run with primary Group as root(0).
 
+## Summary of Changes needed
+
+At a high level, the changes classify into:
+1. API
+2. Validation
+3. CRI
+4. Runtime for Docker and rkt
+5. Swagger
+6. DockerShim
+7. Admission
+8. Registry
+
+- plugin/pkg/admission/security/podsecuritypolicy
+- plugin/pkg/admission/securitycontext
+- pkg/securitycontext/util.go
+- pkg/security/podsecuritypolicy/selinux
+- pkg/security/podsecuritypolicy/user
+- pkg/security/podsecuritypolicy/group
+- pkg/registry/extensions/podsecuritypolicy/storage
+- pkg/kubelet/rkt
+- pkg/kubelet/kuberuntime
+- pkg/kubelet/dockershim/
+- pkg/kubelet/apis/cri/v1alpha1/runtime
+- pkg/apis/extensions/validation/
+- pkg/api/validation/
+- api/swagger-spec/
+- api/openapi-spec/swagger.json
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![AnalytIcs](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/security-context-constraints.md?pixel)]()
