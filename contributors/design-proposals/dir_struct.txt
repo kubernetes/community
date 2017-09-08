@@ -1,16 +1,11 @@
 Uncategorized
-	admission_control_event_rate_limit.md
 	create_sheet.py
-	create_sheet.py~
 	design_proposal_template.md
 	dir_struct.txt
-	event_compression.md
 	multi-platform.md
 	owners
-	pleg.png
 	readme.md
 	runtime-client-server.md
-	templates.md~
 ./sig-cli
 	get-describe-apiserver-extensions.md
 	kubectl-create-from-env-file.md
@@ -56,6 +51,7 @@ Uncategorized
 ./api-machinery
 	add-new-patchstrategy-to-clear-fields-not-present-in-patch.md
 	admission_control.md
+	admission_control_event_rate_limit.md
 	admission_control_extension.md
 	aggregated-api-servers.md
 	api-chunking.md
@@ -71,6 +67,7 @@ Uncategorized
 	csi-new-client-library-procedure.md
 	customresources-validation.md
 	dynamic-admission-control-configuration.md
+	event_compression.md
 	extending-api.md
 	garbage-collection.md
 	metadata-policy.md
@@ -101,6 +98,7 @@ Uncategorized
 	kubelet-systemd.md
 	node-allocatable.md
 	optional-configmap.md
+	pleg.png
 	pod-cache.png
 	pod-lifecycle-event-generator.md
 	pod-pid-namespace.md
