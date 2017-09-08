@@ -1,4 +1,4 @@
-# [WIP] Expose Storage Metrics to Users
+# Expose Storage Metrics to Users
 
 **Author**: Jing Xu (@jingxu97)
 
