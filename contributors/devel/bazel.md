@@ -37,6 +37,16 @@ Additionally, Go build tags are not supported. This means that builds on macOS m
 [Binaries produced by Bazel are not statically linked](https://github.com/bazelbuild/rules_go/issues/161),
 and they are not currently tagged with version information.
 
+[Bazel does not validate build environment](https://github.com/kubernetes/kubernetes/issues/51623), thus make sure that needed
+tools and development packages are installed in the system. Bazel builds require presense of `make`, `gcc`, `g++`, `glibc and libstdc++ development headers` and `glibc static development libraries`. Please check your distribution for exact names of the packages. Examples for some commonly used distributions are below:
+
+|     Dependency        | Debian/Ubuntu                 | CentOS                         | OpenSuSE                                |
+|:---------------------:|-------------------------------|--------------------------------|-----------------------------------------|
+| Build essentials      | `apt install build-essential` | `yum groupinstall development` | `zypper install -t pattern devel_C_C++` |
+| GCC C++               | `apt install g++`             | `yum install gcc-c++`          | `zypper install gcc-c++`                |
+| GNU Libc static files | `apt install libc6-dev`       | `yum install glibc-static`     | `zypper install glibc-devel-static`     |
+
+
 ## Updating `BUILD` files
 
 To update `BUILD` files, run:
