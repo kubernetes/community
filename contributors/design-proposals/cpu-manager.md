@@ -45,6 +45,8 @@ _Solution requirements:_
 
 * Feature: [Further differentiate performance characteristics associated
   with pod level QoS](https://github.com/kubernetes/features/issues/276)
+* Feature: [Add CPU Manager for pod cpuset
+  assignment](https://github.com/kubernetes/features/issues/375)
 
 ## Proposed changes
 
@@ -58,14 +60,14 @@ processor resource.
 The kuberuntime notifies the CPU manager when containers come and
 go. The first such notification occurs in between the container runtime
 interface calls to create and start the container. The second notification
-occurs after the container is destroyed by the container runtime. The CPU
+occurs after the container is stopped by the container runtime. The CPU
 Manager writes CPU settings for containers using a new CRI method named
 [`UpdateContainerResources`](https://github.com/kubernetes/kubernetes/pull/46105).
 This new method is invoked from two places in the CPU manager: during each
-call to `RegisterContainer` and also periodically from a separate
+call to `AddContainer` and also periodically from a separate
 reconciliation loop.
 
-![cpu-manager-block-diagram](https://user-images.githubusercontent.com/379372/29538505-064ca496-867b-11e7-9951-1cf5e975c4d2.png)
+![cpu-manager-block-diagram](https://user-images.githubusercontent.com/379372/30137651-2352f4f0-9319-11e7-8be7-0aaeb6ce593a.png)
 
 _CPU Manager block diagram. `Policy`, `State`, and `Topology` types are
 factored out of the CPU Manager to promote reuse and to make it easier
@@ -110,26 +112,23 @@ type State interface {
   GetCPUSet(containerID string) (cpuset.CPUSet, bool)
   GetDefaultCPUSet() cpuset.CPUSet
   GetCPUSetOrDefault(containerID string) cpuset.CPUSet
-  GetPressure() bool
   SetCPUSet(containerID string, cpuset CPUSet)
   SetDefaultCPUSet(cpuset CPUSet)
   Delete(containerID string)
-  SetPressure(value bool)
 }
 
 type Manager interface {
-  Start()
-  RegisterContainer(p *Pod, c *Container, containerID string) error
-  UnregisterContainer(containerID string) error
-  IsUnderCPUPressure() bool
+  Start(ActivePodsFunc, status.PodStatusProvider, runtimeService)
+  AddContainer(p *Pod, c *Container, containerID string) error
+  RemoveContainer(containerID string) error
   State() state.Reader
 }
 
 type Policy interface {
   Name() string
   Start(s state.State)
-  RegisterContainer(s State, pod *Pod, container *Container, containerID string) error
-  UnregisterContainer(s State, containerID string) error
+  AddContainer(s State, pod *Pod, container *Container, containerID string) error
+  RemoveContainer(s State, containerID string) error
 }
 
 type CPUSet map[int]struct{} // set operations and parsing/formatting helpers
@@ -145,6 +144,13 @@ configuration. The three policies are **none**, **static** and **dynamic**.
 
 The active CPU manager policy is set through a new Kubelet
 configuration value `--cpu-manager-policy`. The default value is `none`.
+
+The CPU manager periodically writes resource updates through the CRI in
+order to reconcile in-memory cpuset assignments with cgroupfs. The
+reconcile frequency is set through a new Kubelet configuration value
+`--cpu-manager-reconcile-period`. If not specified, it defaults to the
+same duration as `--node-status-update-frequency` (which itself defaults
+to 10 seconds at time of writing.)
 
 The number of CPUs that pods may run on can be implicitly controlled using the
 existing node-allocatable configuration settings. See the [node allocatable
@@ -182,6 +188,11 @@ node. Once allocated at pod admission time, an exclusive CPU remains
 assigned to a single container for the lifetime of the pod (until it
 becomes terminal.)
 
+The Kubelet requires the total CPU reservation from `--kube-reserved`
+and `--system-reserved` to be greater than zero when the static policy is
+enabled. This is because zero CPU reservation would allow the shared pool to
+become empty.
+
 Workloads that need to know their own CPU mask, e.g. for managing
 thread-level affinity, can read it from the virtual file `/proc/self/status`:
 
@@ -198,6 +209,35 @@ allocated or deallocated.)
 
 ##### Implementation sketch
 
+The static policy maintains the following sets of logical CPUs:
+
+- **SHARED:** Burstable, BestEffort, and non-integral Guaranteed containers
+  run here. Initially this contains all CPU IDs on the system. As
+  exclusive allocations are created and destroyed, this CPU set shrinks
+  and grows, accordingly. This is stored in the state as the default
+  CPU set.
+
+- **RESERVED:** A subset of the shared pool which is not exclusively
+  allocatable. The membership of this pool is static for the lifetime of
+  the Kubelet. The size of the reserved pool is the ceiling of the total
+  CPU reservation from `--kube-reserved` and `--system-reserved`.
+  Reserved CPUs are taken topologically starting with lowest-indexed
+  physical core, as reported by cAdvisor.
+
+- **ASSIGNABLE:** Equal to `SHARED - RESERVED`. Exclusive CPUs are allocated
+  from this pool.
+
+- **EXCLUSIVE ALLOCATIONS:** CPU sets assigned exclusively to one container.
+  These are stored as explicit assignments in the state.
+
+When an exclusive allocation is made, the static policy also updates the
+default cpuset in the state abstraction. The CPU manager's periodic
+reconcile loop takes care of updating the cpuset in cgroupfs for any
+containers that may be running in the shared pool. For this reason,
+applications running within exclusively-allocated containers must tolerate
+potentially sharing their allocated CPUs for up to the CPU manager
+reconcile period.
+
 ```go
 func (p *staticPolicy) Start(s State) {
 	fullCpuset := cpuset.NewCPUSet()
@@ -209,7 +249,7 @@ func (p *staticPolicy) Start(s State) {
 	s.SetDefaultCPUSet(fullCpuset.Difference(reserved))
 }
 
-func (p *staticPolicy) RegisterContainer(s State, pod *Pod, container *Container, containerID string) error {
+func (p *staticPolicy) AddContainer(s State, pod *Pod, container *Container, containerID string) error {
   if numCPUs := numGuaranteedCPUs(pod, container); numCPUs != 0 {
     // container should get some exclusively allocated CPUs
     cpuset, err := p.allocateCPUs(s, numCPUs)
@@ -222,10 +262,10 @@ func (p *staticPolicy) RegisterContainer(s State, pod *Pod, container *Container
   return nil
 }
 
-func (p *staticPolicy) UnregisterContainer(s State, containerID string) error {
+func (p *staticPolicy) RemoveContainer(s State, containerID string) error {
   if toRelease, ok := s.GetCPUSet(containerID); ok {
     s.Delete(containerID)
-    p.releaseCPUs(s, toRelease)
+    s.SetDefaultCPUSet(s.GetDefaultCPUSet().Union(toRelease))
   }
   return nil
 }
@@ -246,8 +286,8 @@ func (p *staticPolicy) UnregisterContainer(s State, containerID string) error {
 
 1. _A container arrives that requires exclusive cores._
     1. Kuberuntime calls the CRI delegate to create the container.
-    1. Kuberuntime registers the container with the CPU manager.
-    1. CPU manager registers the container to the static policy.
+    1. Kuberuntime adds the container with the CPU manager.
+    1. CPU manager adds the container to the static policy.
     1. Static policy acquires CPUs from the default pool, by
        topological-best-fit.
     1. Static policy updates the state, adding an assignment for the new
@@ -257,8 +297,8 @@ func (p *staticPolicy) UnregisterContainer(s State, containerID string) error {
     1. Kuberuntime calls the CRI delegate to start the container.
 
 1. _A container that was assigned exclusive cores terminates._
-    1. Kuberuntime unregisters the container with the CPU manager.
-    1. CPU manager unregisters the container with the static policy.
+    1. Kuberuntime removes the container with the CPU manager.
+    1. CPU manager removes the container with the static policy.
     1. Static policy adds the container's assigned CPUs back to the default
        pool.
     1. Kuberuntime calls the CRI delegate to remove the container.
@@ -266,14 +306,13 @@ func (p *staticPolicy) UnregisterContainer(s State, containerID string) error {
        cpuset for all containers running in the shared pool.
 
 1. _The shared pool becomes empty._
-    1. The CPU manager adds a node condition with effect NoSchedule,
-       NoExecute that prevents BestEffort and Burstable QoS class pods from
-       running on the node. BestEffort and Burstable QoS class pods are
-       evicted from the node.
-
-1. _The shared pool becomes nonempty._
-    1. The CPU manager removes the node condition with effect NoSchedule,
-       NoExecute for BestEffort and Burstable QoS class pods.
+    1. This cannot happen. The size of the shared pool is greater than
+       the number of exclusively allocatable CPUs. The Kubelet requires the
+       total CPU reservation from `--kube-reserved` and `--system-reserved`
+       to be greater than zero when the static policy is enabled. The number
+       of exclusively allocatable CPUs is
+       `floor(capacity.cpu - allocatable.cpu)` and the shared pool initially
+       contains all CPUs in the system.
 
 #### Policy 3: "dynamic" cpuset control
 
@@ -295,11 +334,11 @@ func (p *dynamicPolicy) Start(s State) {
 	// TODO
 }
 
-func (p *dynamicPolicy) RegisterContainer(s State, pod *Pod, container *Container, containerID string) error {
+func (p *dynamicPolicy) AddContainer(s State, pod *Pod, container *Container, containerID string) error {
 	// TODO
 }
 
-func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
+func (p *dynamicPolicy) RemoveContainer(s State, containerID string) error {
 	// TODO
 }
 ```
@@ -332,15 +371,6 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
    directly from the shared pool, is too simplistic.
     1. Mitigation: defer supporting this until a new policy tailored for
        use with `isolcpus` can be added.
-1. CPU exhaustion. Terminology: a no-CPU pod is defined here as having
-   at least one container with no or zero-valued CPU request. If all available
-   CPUs are allocated exclusively, additional steps must be taken to remove
-   any no-CPU pods from the node. In addition, the system must prevent further
-   no-CPU pods from being bound to the node.
-    1. Mitigation: Introduce a new CPUPressure node condition. This
-       condition causes any no-CPU pods to fail scheduler predicates for this
-       node and also fail node-level admission checks. Also evict no-CPU pods
-       when CPUPressure occurs.
 
 ## Implementation roadmap
 
@@ -362,21 +392,22 @@ func (p *dynamicPolicy) UnregisterContainer(s State, containerID string) error {
 * Performance metrics for one or more plausible synthetic workloads show
   benefit over none policy.
 
-### Phase 3: Cache allocation
+### Phase 3: Beta support [TARGET: Kubernetes v1.9]
+
+* Container CPU assignments are durable across Kubelet restarts.
+* Expanded user and operator docs and tutorials.
+
+### Later phases [TARGET: After Kubernetes v1.9]
 
 * Static policy also manages [cache allocation][cat] on supported platforms.
-
-### Phase 4: Dynamic policy
-
 * Dynamic policy is implemented.
 * Unit tests for dynamic policy pass.
 * e2e tests for dynamic policy pass.
 * Performance metrics for one or more plausible synthetic workloads show
   benefit over none policy.
-
-### Phase 5: NUMA
-
-* Kubelet can discover "advanced" CPU topology (NUMA).
+* Kubelet can discover "advanced" topology (NUMA).
+* Node-level coordination for NUMA-dependent resource allocations, for example
+  devices, CPUs, memory-backed volumes including hugepages.
 
 ## Appendix A: cpuset pitfalls
 
