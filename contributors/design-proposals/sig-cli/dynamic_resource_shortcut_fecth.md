@@ -6,19 +6,19 @@ Implementation Owner: @shiywang
 
 ## Motivation
 
-Previously, when a new resource added to server, developer should add those resources/shortcuts name into two places of kubectl: [here](https://github.com/kubernetes/kubernetes/blob/357db0c39c7203809b369516c0ec93831ead8649/pkg/kubectl/cmd/cmd.go#L201) and [there](https://github.com/kubernetes/kubernetes/blob/f9913c4948038b9b51f2342134d546c6bb74e7a3/pkg/kubectl/kubectl.go#L46). then `kubectl get/describe/explain... -h` will show the new added hard code resources/shortcuts, But some times people always forget to add those things, and we have to submit new pr to fix that everytime.
+Previously, when a new resource added to server, developer should add those resources/shortcuts name into two places of kubectl: [here](https://github.com/kubernetes/kubernetes/blob/357db0c39c7203809b369516c0ec93831ead8649/pkg/kubectl/cmd/cmd.go#L201) and [there](https://github.com/kubernetes/kubernetes/blob/f9913c4948038b9b51f2342134d546c6bb74e7a3/pkg/kubectl/kubectl.go#L46). then `kubectl get/describe/explain... -h` will show the new added hard code resources/shortcuts, But some times people always forget to add those things, and we have to submit new pr to fix that everytime, so is not a good experience for both developer and user, we should giving them an accurate resource list. 
 
 ## Proposal
 
-We should eliminate those every time add new hardcoded resources in kubectl, improve development experiences, but for how to prompt those information properly, there's two solutions here I've come up with: 
+For how to prompt those information properly, there're two solutions here I've come up with:
 
 ### solution 1
 
-Keep current help messages, and add a ring1Factory function use clientDiscovery fetch resources/shortcuts from server then concatenate those valid resources string and print every time when user execute command like this:
+Keep current help messages, and add a ring1Factory function use clientDiscovery fetch resources/shortcuts from server then concatenate those valid resources string and print every time when user execute command,also if cluster is not aviliable for some reason, kubectl will fall back to use hardcode resource strings.
 
 ```
 ➜  ~ kubectl get -h
-Display one or many resources. 
+Display one or many resources.
 
 Valid resource types include: 
 
@@ -34,7 +34,7 @@ Valid resource types include:
 
 ### solution 2
 
-Remove those valid resources list in help messages, and add a dedicated command to fetch resources/shortcuts, like `kubectl api-resources` similiar to `kubectl api-versions` or we could extend `api-versions` to support that, then tell user use `kubectl api-resources` to check what kind of valid resouces they can use.
+Remove those valid resources list in help messages, and add a dedicated command to fetch resources/shortcuts, like `kubectl api-resources`,implement pr [here](https://github.com/kubernetes/kubernetes/pull/42873) then tell user use `kubectl api-resources` to check what kind of valid resouces they can use.
 
 ```
 ➜  ~ kubectl get -h
@@ -98,9 +98,11 @@ Depend on which solution we choose.
 
 ## Other things need to discuss
 
-1. Use binary cache from OpenAPI instead of cache from `.kube/cache/discovery` ?
+1. Use binary cache from OpenAPI instead of cache from `.kube/cache/discovery` ? 
 
-2. Also there's another two functions in `pkg/kubectl/kubectl.go`: `ResourceShortFormFor` and `ResourceAliases`, we may also want to replace it with dynamic fetching, change signature of those two functions and also fetch resources from discoveryClient, this work is a follow up of PRs: https://github.com/kubernetes/kubernetes/pull/40312 and https://github.com/kubernetes/kubernetes/pull/38835 I think we have no reason to not eliminate those hardcoded resources/shortcuts.
+I think this is only happend in we chose solution one, and I think openapi is more suit for validation, and the information we need here is only resources name and shortcut. 
+
+2. Also there's another two functions in `pkg/kubectl/kubectl.go`: `ResourceShortFormFor` and `ResourceAliases`, those two functions only effect bash completion alias and `kubectl get xx --show-kind`, since those two functions does not have some big impact, I'm not sure if it's worth to make those also to be an accurate list, also I think this work is a follow up of PRs: https://github.com/kubernetes/kubernetes/pull/40312 and https://github.com/kubernetes/kubernetes/pull/38835.
 
 
 
