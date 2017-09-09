@@ -17,7 +17,7 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here]().
 
 ## Leads
-* Dan Romlein (**[@danielromlein](https://github.com/danielromlein)**), Apprenda
+* Dan Romlein (**[@danielromlein](https://github.com/danielromlein)**), Google
 * Sebastian Florek (**[@floreks](https://github.com/floreks)**), Fujitsu
 
 ## Contact
