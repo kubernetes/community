@@ -98,9 +98,7 @@ Depend on which solution we choose.
 
 ## Other things need to discuss
 
-1. Use binary cache from OpenAPI instead of cache from `.kube/cache/discovery` ? 
-
-I think this is only happend in we chose solution one, and I think openapi is more suit for validation, and the information we need here is only resources name and shortcut. 
+1. Use binary cache from OpenAPI instead of cache from `.kube/cache/discovery` ? I think this is only happend in we chose solution one, and I think openapi is more suit for validation, and the information we need here is only resources name and shortcut. 
 
 2. Also there's another two functions in `pkg/kubectl/kubectl.go`: `ResourceShortFormFor` and `ResourceAliases`, those two functions only effect bash completion alias and `kubectl get xx --show-kind`, since those two functions does not have some big impact, I'm not sure if it's worth to make those also to be an accurate list, also I think this work is a follow up of PRs: https://github.com/kubernetes/kubernetes/pull/40312 and https://github.com/kubernetes/kubernetes/pull/38835.
 
