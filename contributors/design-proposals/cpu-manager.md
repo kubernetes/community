@@ -152,20 +152,6 @@ reconcile frequency is set through a new Kubelet configuration value
 same duration as `--node-status-update-frequency` (which itself defaults
 to 10 seconds at time of writing.)
 
-The number of CPUs that pods may run on can be implicitly controlled using the
-existing node-allocatable configuration settings. See the [node allocatable
-proposal document][node-allocatable] for details. The CPU manager will claim
-`ceiling(node.status.allocatable.cpu)` as the number of CPUs available to
-assign to pods, starting from the highest-numbered physical core and
-descending topologically. It is recommended to configure `kube-reserved`
-and `system-reserved` such that their sum is an integer when the CPU manager
-is enabled. This ensures that `node.status.allocatable.cpu` is also an
-integer.
-
-Operator documentation will be updated to explain how to configure the
-system to use the low-numbered physical cores for kube-reserved and
-system-reserved cgroups.
-
 Each policy is described below.
 
 #### Policy 1: "none" cpuset control [default]
@@ -191,7 +177,10 @@ becomes terminal.)
 The Kubelet requires the total CPU reservation from `--kube-reserved`
 and `--system-reserved` to be greater than zero when the static policy is
 enabled. This is because zero CPU reservation would allow the shared pool to
-become empty.
+become empty. The set of reserved CPUs is taken in order of physical core ID,
+ascending. Operator documentation will be updated to explain how to configure
+the system to use the low-numbered physical cores for kube-reserved and
+system-reserved cgroups.
 
 Workloads that need to know their own CPU mask, e.g. for managing
 thread-level affinity, can read it from the virtual file `/proc/self/status`:
