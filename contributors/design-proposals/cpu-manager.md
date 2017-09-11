@@ -177,10 +177,10 @@ becomes terminal.)
 The Kubelet requires the total CPU reservation from `--kube-reserved`
 and `--system-reserved` to be greater than zero when the static policy is
 enabled. This is because zero CPU reservation would allow the shared pool to
-become empty. The set of reserved CPUs is taken in order of physical core ID,
-ascending. Operator documentation will be updated to explain how to configure
-the system to use the low-numbered physical cores for kube-reserved and
-system-reserved cgroups.
+become empty. The set of reserved CPUs is taken in order of ascending
+physical core ID. Operator documentation will be updated to explain how to
+configure the system to use the low-numbered physical cores for kube-reserved
+and system-reserved cgroups.
 
 Workloads that need to know their own CPU mask, e.g. for managing
 thread-level affinity, can read it from the virtual file `/proc/self/status`:
