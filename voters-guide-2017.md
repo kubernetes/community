@@ -36,7 +36,7 @@ Immediately following the meeting, the raw voting results and winners will be pu
 For more information, definitions, and/or detailed election process, see full [steering committee charter](https://github.com/kubernetes/steering/blob/master/charter.md).
 
 # NOMINEES
-Don’t know someone on this list? Check out their K8s bio by first+last name [here](https://github.com/kubernetes/community/tree/master/community/elections/2017). 
+Don’t know someone on this list? We asked the nominees to provide a <300 word bio about their k8s experience that we'll link to their name in this table. If you don't see a link, try [here](https://github.com/kubernetes/community/tree/master/community/elections/2017) under first+lastname.  
 
 Name | Organization/Company | GitHub 
 --- | --- | --- 
@@ -50,12 +50,12 @@ Doug Davis |	IBM	| [@duglin](https://github.com/duglin)
 Ihor Dvoretskyi |	Mirantis |	[@idvoretskyi](https://github.com/idvoretskyi)
 Ilya Dmitrichenko |	Weave |	[@errordeveloper](https://github.com/errordeveloper)
 Jaice Singer DuMars |	Microsoft	| [@jdumars](https://github.com/jdumars)
-Justin Santa Barbara	|	| [@justinsb](https://github.com/justinsb)
+Justin Santa Barbara	|	FathomDB | [@justinsb](https://github.com/justinsb)
 Kris Nova |	Microsoft	| [@kris-nova](https://github.com/kris-nova)
 Matt Farina |	Samsung SDS	 | [@mattfarina](https://github.com/mattfarina)
 Michael Rubin | Google |	[@mrubin](https://github.com/mrubin)
 Michelle Noorali |	Microsoft |	[@michelleN](https://github.com/michelleN)
-Phillip Whitrock |	Google | 	[@pwittrock](https://github.com/pwittrock)
+Phillip Whittrock |	Google | 	[@pwittrock](https://github.com/pwittrock)
 Quinton Hoole	 | Huawei |	[@quinton-hoole](https://github.com/quinton-hoole)
 Rob Hirschfeld |	RackN	| [@zehicle](https://github.com/zehicle)
 Sebastien Goasguen |	Bitnami |	[@sebgoa](http://github.com/sebgoa)
