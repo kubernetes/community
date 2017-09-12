@@ -11,7 +11,7 @@ To understand how this file is generated, see generator/README.md.
 The Architecture SIG maintains and evolves the design principles of Kubernetes, and provides a consistent body of expertise necessary to ensure architectural consistency over time.
 
 ## Meetings
-* [Mondays at 17:00 UTC](https://zoom.us/j/2018742972) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
+* [Thursdays at 15:30 UTC](https://zoom.us/j/2018742972) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=d5ERqm3oHN0&list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
