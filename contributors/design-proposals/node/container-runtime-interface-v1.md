@@ -86,8 +86,10 @@ container setup that are not currently trackable as Pod constraints, e.g.,
 filesystem setup, container image pulling, etc.*
 
 A container in a PodSandbox maps to an application in the Pod Spec. For Linux
-containers, they are expected to share at least network, PID and IPC namespaces,
-with sharing more namespaces discussed in [#1615](https://issues.k8s.io/1615).
+containers, they are expected to share at least network, IPC and sometimes PID
+namespaces. PID sharing is defined in [Shared PID
+Namespace](pod-pid-namespace.md). Other namespaces are discussed in
+[#1615](https://issues.k8s.io/1615).
 
 
 Below is an example of the proposed interfaces.

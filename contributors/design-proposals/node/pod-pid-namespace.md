@@ -1,77 +1,150 @@
 # Shared PID Namespace
 
-Pods share namespaces where possible, but a requirement for sharing the PID
-namespace has not been defined due to lack of support in Docker. Docker began
-supporting a shared PID namespace in 1.12, and other Kubernetes runtimes (rkt,
-cri-o, hyper) have already implemented a shared PID namespace.
-
-This proposal defines a shared PID namespace as a requirement of the Container
-Runtime Interface and links its rollout in Docker to that of the CRI.
+*   Status: Pending
+*   Version: Alpha
+*   Implementation Owner: verb
 
 ## Motivation
 
-Sharing a PID namespace between containers in a pod is discussed in
-[#1615](https://issues.k8s.io/1615), and enables:
+Pods share namespaces where possible, but a requirement for sharing the PID
+namespace has not been defined due to lack of support in Docker. This created an
+implicit API on which certain container images now rely. This proposal
+explicitly defines behavior for sharing a PID namespace.
 
-  1. signaling between containers, which is useful for side cars (e.g. for
-     signaling a daemon process after rotating logs).
-  2. easier troubleshooting of pods.
-  3. addressing [Docker's zombie problem][1] by reaping orphaned zombies in the
-     infra container.
+## Proposal
 
-## Goals and Non-Goals
+### Goals and Non-Goals
 
 Goals include:
-  - Changing default behavior in the Docker runtime as implemented by the CRI
-  - Making Docker behavior compatible with the other Kubernetes runtimes
+
+*   Backwards compatibility with container images expecting `pid == 1` semantics
+*   Per-pod configuration of PID namespace sharing
+*   Ability to change default sharing behavior in `v2.Pod`
 
 Non-goals include:
-  - Creating an init solution that works for all runtimes
-  - Supporting isolated PID namespace indefinitely
 
-## Modification to the Docker Runtime
+*   Creating a general purpose init solution
+*   Multiple shared PID namespaces per pod
+*   Per-container configuration of PID namespace sharing
 
-We will modify the Docker implementation of the CRI to use a shared PID
-namespace when running with a version of Docker >= 1.12. The legacy
-`dockertools` implementation will not be changed.
+### Configurable PID Namespace Sharing
 
-Linking this change to the CRI means that Kubernetes users who care to test such
-changes can test the combined changes at once. Users who do not care to test
-such changes will be insulated by Kubernetes not recommending Docker >= 1.12
-until after switching to the CRI.
+We will add first class support for configuring isolated and shared PID
+namespaces for pods by adding a new boolean field `sharedPID` to the pod spec.
+When set to true, all containers in the pod will share a single PID namespace
+when supported by runtime. When not supported by the runtime, for example with
+docker versions less than 1.13.1, the runtime will respond with an error and the
+pod will not start.
 
-Other changes that must be made to support this change:
+The Container Runtime Interface (CRI) will be updated to explicitly support
+shared PID namespaces. When `sharedPID` is true, runtimes MUST share a PID
+namespace for the pod or return an error. When `sharedPID` is false, runtimes
+MAY implement isolated PID namespaces. That is, omitting this option defaults to
+pre-existing runtime behavior. For Docker the default remains isolated PID
+namespaces.
 
-1. Add a test to verify all containers restart if the infra container
-   responsible for the PodSandbox dies. (Note: With Docker 1.12 if the source
-   of the PID namespace dies all containers sharing that namespace are killed
-   as well.)
-2. Modify the Infra container used by the Docker runtime to reap orphaned
-   zombies ([#36853](https://pr.k8s.io/36853)).
+The shared PID functionality will be hidden behind a new feature gate in both
+the API server and the kubelet, and the `--docker-disable-shared-pid` flag will
+be removed from the kubelet.
 
-## Rollout Plan
+## User Experience
 
-SIG Node is planning to switch to the CRI as a default in 1.6, at which point
-users with Docker >= 1.12 will receive a shared PID namespace by default.
-Cluster administrators will be able to disable this behavior by providing a flag
-to the kubelet which will cause the dockershim to revert to previous behavior.
+### Use Cases
 
-The ability to disable shared PID namespaces is intended as a way to roll back
-to prior behavior in the event of unforeseen problems. It won't be possible to
-configure the behavior per-pod. We believe this is acceptable because:
+Sharing a PID namespace between containers in a pod is discussed in
+[#1615](https://issues.k8s.io/1615) and enables:
 
-* We have not identified a concrete use case requiring isolated PID namespaces.
-* Making PID namespace configurable requires changing the CRI, which we would
-  like to avoid since there are no use cases.
+1.  signaling between containers, which is useful for side cars (e.g. for
+    signaling a daemon process after rotating logs).
+1.  easier troubleshooting of pods.
+1.  addressing [Docker's zombie
+    problem](https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/)
+    by reaping orphaned zombies in the infra container.
 
-In a future release, SIG Node will recommend docker >= 1.12. Unless a compelling
-use case for isolated PID namespaces is discovered, we will remove the ability
-to disable the shared PID namespace in the subsequent release.
+## Implementation
 
+### Kubernetes API Changes
 
-[1]: https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/
+`v1.PodSecurityContext` gains a new field resembling the existing `hostPID`
+field:
 
+```
+type PodSecurityContext struct {
+    ...
+    // Use the host's pid namespace.
+    // Optional: Default to false.
+    // +k8s:conversion-gen=false
+    // +optional
+    HostPID bool
+    // Use a single shared PID namespace for the pod.
+    // Optional: Default to false.
+    // +k8s:conversion-gen=false
+    // +optional
+    SharedPID bool
+       ...
+```
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/pod-pid-namespace.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->
+`PodSecurityContext` was chosen because it's where namespace configuration
+currently lives, and it is consistent with using isolated PID namespaces as a
+security feature. Setting both `SharedPID` and `HostPID` will cause a validation
+error.
+
+### Container Runtime Interface Changes
+
+Namespace options in the CRI are specified for both PodSandbox and Container
+creation requests. We will add a new field to NamespaceOption:
+
+```
+message NamespaceOption {
+    ...
+    // If set, use the host's PID namespace.
+    bool host_pid = 2;
+    ...
+    // If set, use the pod's shared PID namespace.
+    bool shared_pid = 4;
+}
+```
+
+The kubelet runtime manager will set `shared_pid` to
+`PodSecurityContext.SharedPID` for both the `LinuxSandboxSecurityContext` and
+`LinuxContainerSecurityContext`.
+
+### dockershim Changes
+
+The Docker runtime implements the pod sandbox as a container running the pause
+container image. The `shared_pid` of `LinuxSandboxSecurityContext` will be
+ignored by this runtime as the sandbox container will become the namespace
+that's shared with the containers in the pod.
+
+The dockershim will translate a `CreateContainerRequest` with `shared_pid` set
+to true in `LinuxContainerSecurityContext` to a call to Docker's create
+container request with `PidMode` set to the container ID of the sandbox
+container. All containers in the pod will then start in the same PID namespace
+as the sandbox container, with the `/pause` binary as PID 1.
+
+If the Docker runtime version does not support sharing pid namespaces, a
+`CreateContainerRequest` with `shared_pid` set to true will return an error.
+
+## Alternatives Considered
+
+### Defaulting to PID Namespace Sharing
+
+Other Kubernetes runtimes already share a single PID namespace between
+containers in a pod. We could easily change the Docker runtime to always share a
+PID namespace when supported by the installed Docker version, but this would
+cause problems for container images that assume they will always be PID 1.
+
+### Migration to Shared-only Namespaces
+
+Rather than adding support to the API for configuring namespaces we could allow
+changing the default behavior with pod annotations with the intention of
+removing support for isolated PID namespaces in v2.Pod. Many members of the
+community want to use the isolated namespaces as security boundary between
+containers in a pod, however.
+
+### Enumerated PID Mode
+
+Rather than a boolean `SharedPID` we could create a single PID mode field that
+could be set to `SHARED`, `HOST`, or `ISOLATED`. `HostPID` already exists in
+`v1.PodSpec`, however, and we should prefer consistency within an API version to
+attempting to define backwards-compatible semantics with an existing field.
