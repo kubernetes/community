@@ -17,7 +17,4 @@ Since my first moments in the community, I have sought out every opportunity I c
 
 ## Career
 
-I've been in love with systems, networks, and the human elements of interconnectivity since I was a SysOp on a BBS as a teenager. My first hack was in grade school, making the Oregon Trail game say naughty things.  In the time since, I have been a systems and network engineer, and held several engineering management directorships at companies large and small.  At Microsoft, all I do is Kubernetes, so I definitely have the organizational support to carry out my duties on the committee.  I write and speak about organizational agility, DevOps, and yep, Kubernetes!  On the side, I live/work on an organic farm, play jazz saxophone, and hand engrave brass musical instruments. 
-
-In closing, I'd like to say there is no losing in this election.  Every person nominated is stellar in their own way.  I am honored to be in such company.
-
+I've been in love with systems, networks, and the human elements of interconnectivity since I was a SysOp on a BBS as a teenager. My first hack was in grade school, making the Oregon Trail game say naughty things.  In the time since, I have been a systems and network engineer, and held several engineering management directorships at companies large and small.  At Microsoft, all I do is Kubernetes, so I definitely have the organizational support to carry out my duties on the committee.  I write and speak about organizational agility, DevOps, and yep, Kubernetes!
