@@ -198,7 +198,7 @@ When starting the gRPC server, they are expected to create a unix socket
 at the following host path: `/var/lib/kubelet/device-plugins/`.
 
 For non bare metal device plugin this means they will have to mount the folder
-as a volume in their pod spec ([see Installation](##installation)).
+as a volume in their pod spec ([see Installation](#installation)).
 
 Device plugins can expect to find the socket to register themselves on
 the host at the following path:
