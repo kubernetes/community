@@ -555,11 +555,13 @@ Feature: Pre-provisioned PVs to precreated devices
                
                Milestone 4: Expose volumeMode to users via kubectl
                
-               Milestone 5: Adds enable/disable configuration to securityContext in PSP (Pod Security Policy) similar to hostPath
-               
-               Milestone 6: Validate container runtime options with user specifcations as indicated in UC3
+               Milestone 5: PV controller binding changes for block devices
+               	       
+	       Milestone 6: Container Runtime changes
 	       
-	       Milestone 7: Container Runtime changes
+	       Milestone 7: Initial Plugin changes (GCE, AWS & GlusterFS)
+	       
+	       Milestone 8: Disabling of provisioning where volumeMode == Block is not supported
 
 Phase 2:  v1.9
 Feature: Discovery of block devices 
@@ -568,8 +570,8 @@ Feature: Discovery of block devices
 
                 Milestone 2: Privileged container concerns    
 		
-		Milestone 3: Flex volume updates
-
+		Milestone 3: Flex volume update
+		
 Other considerations:
 
                Reference volume driver change(Attach/Detach logic) for pre-provisioned PVs
