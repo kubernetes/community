@@ -64,9 +64,9 @@ sigs:
       github: jdumars
       company: Microsoft
     meetings:
-    - day: Monday
-      utc: "17:00"
-      frequency: biweekly
+    - day: Thursday
+      utc: "15:30"
+      frequency: weekly
     meeting_url: https://zoom.us/j/2018742972
     meeting_archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
     meeting_recordings_url: https://www.youtube.com/watch?v=d5ERqm3oHN0&list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
