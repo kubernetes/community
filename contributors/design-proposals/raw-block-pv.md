@@ -63,10 +63,8 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   
   To ensure backwards compatibility and a phased transition of this feature, the consensus from the community is to intentionally disable
   the volumeMode: Block for external provisioners until a suitable implementation for provisioner versioning has been accepted and 
-  implemented in the community. This requirement is better described in the design PR discussion and will be implemented as a separate
-  initiative. 
-  In addition, in-tree provisioners should be able to gracefully ignore volumeMode API objects for plugins that haven't been updated to
-  accept this value.
+  implemented in the community. In addition, in-tree provisioners should be able to gracefully ignore volumeMode API objects for plugins
+  that haven't been updated to accept this value.
   
   It is important to note that when a PV is bound, it is either bound as a raw block device or formatted with a filesystem. Therefore, 
   the PVC drives the request and intended usage of the device by specifying the volumeMode as part of the API. This design lends itself
