@@ -9,7 +9,7 @@
 
 ## Why me?
 
-When Michelle Noorali nominated me, it took me off guard. I had considered running, but wasn't sure if it was the right place for me to focus my efforts in the community, since I already wear a lot of hats.  As I got more familiar with the specific mission, goals, and responsibilities, I realized that it's a perfect fit for what I do best.  The steering committee represents a unique convergence of my passion for servant leadership, organizational dynamics, inclusion, advocacy, and process optimization. It's always my highest purpose to be a voice and advocate for those I serve.  And, if elected, I will faithfully serve the ever-changing, sometimes divergent, and always important needs of the Kubernetes community.
+The steering committee represents a unique convergence of my passion for servant leadership, organizational dynamics, inclusion, advocacy, and process optimization. It's always my highest purpose to be a voice and advocate for those I serve.  And, if elected, I will faithfully serve the ever-changing, sometimes divergent, and always important needs of the Kubernetes community.
 
 ## Servant leadership
 
@@ -17,4 +17,4 @@ Since my first moments in the community, I have sought out every opportunity I c
 
 ## Career
 
-I've been in love with systems, networks, and the human elements of interconnectivity since I was a SysOp on a BBS as a teenager. My first hack was in grade school, making the Oregon Trail game say naughty things.  In the time since, I have been a systems and network engineer, and held several engineering management directorships at companies large and small.  At Microsoft, all I do is Kubernetes, so I definitely have the organizational support to carry out my duties on the committee.  I write and speak about organizational agility, DevOps, and yep, Kubernetes!
+I've been in love with systems, networks, and the human elements of interconnectivity since I was a SysOp on a BBS as a teenager. My first hack was in grade school, making the Oregon Trail game say naughty things.  In the time since, I have been a systems and network engineer, and held several engineering management directorships at companies large and small.  At Microsoft, all I do is Kubernetes, so I definitely have the organizational support to carry out my duties on the committee.
