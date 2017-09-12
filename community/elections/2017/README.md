@@ -59,7 +59,7 @@ Michelle Noorali |	Microsoft |	[@michelleN](https://github.com/michelleN)
 Quinton Hoole	 | Huawei |	[@quinton-hoole](https://github.com/quinton-hoole)
 [Rob Hirschfeld](rhirschfeld_bio.md) |	RackN	| [@zehicle](https://github.com/zehicle)
 Sebastien Goasguen |	Bitnami |	[@sebgoa](http://github.com/sebgoa)
-Timothy St. Clair |	Heptio |	[@timothysc](https://github.com/timothysc)
+[Timothy St. Clair](timothysc_bio.md) |	Heptio |	[@timothysc](https://github.com/timothysc)
 
 
 <strong>Note:</strong>The current committee does not endorse any candidate. 
