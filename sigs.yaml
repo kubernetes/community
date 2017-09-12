@@ -758,3 +758,21 @@ workinggroups:
     contact:
       slack: sig-cluster-lifecycle
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+  - name: cluster api
+    dir: wg-cluster-api
+    mission_statement: >
+      Define a portable API that represents a Kubernetes cluster. The API will contain the control plane and its configuration and the underlying infrastructure (nodes, node pools, etc).
+    leads:
+    - name: Kris Nova
+      github: kris-nova
+      company: Microsoft
+    - name: Jacob Beacham
+      github: pipejakob
+      company: Google
+    - name: Robert Bailey
+      github: roberthbailey
+      company: Google
+    meeting_archive_url: https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit
+    contact:
+      slack: sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
