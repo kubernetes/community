@@ -153,10 +153,18 @@ Following points should be noted:
 
 - `FSGroup` and `SupplementalGroups` will continue to have their old meanings and would be untouched.  
 - The `RunAsGroup` In the SecurityContext will override the `RunAsGroup` in the PodSecurityContext.
-- If no `RunAsGroup` is provided in the PodSecurityContext and SecurityContext, the Group provided 
-  in the Docker image will be used.
+- If no `RunAsGroup` is provided in the PodSecurityContext and SecurityContext, the Primary Group Id
+  is decided by the Runtime. Current Runtime behavior is to use 0.
 - If no `RunAsGroup` is provided in the PodSecurityContext and SecurityContext, and none in the image,
   the container will run with primary Group as root(0).
+
+Basically, we guarantee to set the values provided by user, and the runtime dictates the rest.
+
+Here is an example of what gets passed to docker User
+- runAsUser set to 9999, runAsGroup set to 9999 -> Config.User set to 9999:9999
+- runAsUser set to 9999, runAsGroup unset -> Config.User set to 9999 -> docker runs you with 9999:0
+- runAsUser unset, runAsGroup set to 9999 -> Config.User set to :9999 -> docker runs you with 0:9999 
+This is to keep the behavior backward compatible and as expected.
 
 ## Summary of Changes needed
 
