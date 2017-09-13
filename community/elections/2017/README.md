@@ -42,7 +42,7 @@ Name | Organization/Company | GitHub
 --- | --- | --- 
 Aaron Crickenberger	| Samsung SDS |	[@spiffxp](https://github.com/spiffxp)
 Aaron Schlesinger |	Microsoft |	[@arschles](https://github.com/arschles)
-Adnan Abdulhussein |	Bitnami |	[@prydonius](https://github.com/prydonius)
+[Adnan Abdulhussein](adnanabdulhussein_bio.md) |	Bitnami |	[@prydonius](https://github.com/prydonius)
 [Alex Pollitt](alexpollitt_bio.md) |	Tigera	| [@lxpollitt](https://github.com/lxpollitt)
 [Caleb Miles](calebamiles_bio.md) | CoreOS |	[@calebamiles](https://github.com/calebamiles)
 Derek Carr |	Red Hat |	[@derekwaynecarr](https://github.com/derekwaynecarr)
