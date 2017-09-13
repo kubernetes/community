@@ -20,6 +20,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=ljK5dgSA7
 * Luke Marsden (**[@lukemarsden](https://github.com/lukemarsden)**), Weave
 * Joe Beda (**[@jbeda](https://github.com/jbeda)**), Heptio
 * Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
+* Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
