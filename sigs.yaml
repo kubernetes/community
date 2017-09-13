@@ -237,6 +237,9 @@ sigs:
     - name: Robert Bailey
       github: roberthbailey
       company: Google
+    - name: Lucas Käldström
+      github: luxas
+      company: Luxas Labs (occasionally contracting for Weaveworks)
     meetings:
     - day: Tuesday
       utc: "16:00"
