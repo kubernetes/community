@@ -41,7 +41,7 @@ Don’t know someone on this list? We asked the nominees to provide a <300 word 
 Name | Organization/Company | GitHub 
 --- | --- | --- 
 Aaron Crickenberger	| Samsung SDS |	[@spiffxp](https://github.com/spiffxp)
-Aaron Schlesinger |	Microsoft |	[@arschles](https://github.com/arschles)
+[Aaron Schlesinger](aaronschlesinger_bio.md) |	Microsoft |	[@arschles](https://github.com/arschles)
 [Adnan Abdulhussein](adnanabdulhussein_bio.md) |	Bitnami |	[@prydonius](https://github.com/prydonius)
 [Alex Pollitt](alexpollitt_bio.md) |	Tigera	| [@lxpollitt](https://github.com/lxpollitt)
 [Caleb Miles](calebamiles_bio.md) | CoreOS |	[@calebamiles](https://github.com/calebamiles)
