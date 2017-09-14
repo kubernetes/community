@@ -586,14 +586,16 @@ Other considerations:
  type BlockVolumeMapper interface {
        Volume
        CanBlockMap() error
-       SetUpDevice() error
-       SetUpDeviceAt(dir string) error
-       GetVolumePath() string
+       SetUpDevice(podUID types.UID) error
+       SetUpDeviceAt(dir string, podUID types.UID) error
+       GetDevicePath() (string, error)
+       GetVolumeDeviceMapPath(spec *Spec) (string, error)
  }
  type BlockVolumeUnmapper interface {
        Volume
        TearDownDevice() error
        TearDownDeviceAt(dir string) error
+       GetVolumeDeviceUnmapPath(spec *Spec) (string, error)
  }
 ```
 ## Changes for volume mount points
@@ -604,30 +606,31 @@ of references to these mount points.
 
 ```
 - Global mount path
-`/var/lib/kubelet/plugins/kubernetes.io/{pluginName}/{volumePluginDependentPath}/`
+/var/lib/kubelet/plugins/kubernetes.io/{pluginName}/{volumePluginDependentPath}/
 
 - Volume mount path
-`/var/lib/kubelet/pods/{podUID}/volumes/{escapeQualifiedPluginName}/{volumeName}/`
+/var/lib/kubelet/pods/{podUID}/volumes/{escapeQualifiedPluginName}/{volumeName}/
 ```
 
 Even if the volumeMode is "Block", similar scheme is needed. However, the volume which 
 doesn't have filesystem can't be mounted.
-Therefore, instead of volume mount, we use symbolic link.
-- Kubelet creates a new symbolic link under the new global mount path when volume is attached to a Pod. Number of symbolic links
-is equal to the number of Pods which uses the same volume. Kubelet needs to manage both creation and deletion of symbolic links
-under the global mount path.
+Therefore, instead of volume mount, we use symbolic link to map raw block device.
+Kubelet creates a new symbolic link under the new global map path when volume is attached to a Pod. Number of symbolic links
+are equal to the number of Pods which uses the same volume. Kubelet needs to manage both creation and deletion of symbolic links
+under the global map path. The name of the symbolic link is same as pod uuid.
  
 ```
-Global mount path for "Block" mode volume
-/var/lib/kubelet/plugins/kubernetes.io/{pluginName}/volumeDevices/{volumePluginDependentPath}/
+Global map path for "Block" volumeMode volume
+/var/lib/kubelet/plugins/kubernetes.io/{pluginName}/volumeDevices/{volumePluginDependentPath}/pod-uuid1
+/var/lib/kubelet/plugins/kubernetes.io/{pluginName}/volumeDevices/{volumePluginDependentPath}/pod-uuid2
 ```
  
-- Plugin creates a symbolic link under the new volume mount path. This symbolic link is not used to manage volume attach/detach
-+status but is needed to keep compatibility of current scheme.
+Plugin creates a symbolic link under the new volume map path. This symbolic link is not used to manage volume attach/detach
+status but is needed to keep compatibility of current scheme.
 
 ```
-Volume mount path for "Block" mode volume
-/var/lib/kubelet/pods/{podUID}/volumeDevices/{escapeQualifiedPluginName}/{volumeName}/
+Volume map path for "Block" volumeMode volume
+/var/lib/kubelet/pods/{podUID}/volumeDevices/{escapeQualifiedPluginName}/{volumeName}/symlink
 ```
  
 # Volume binding matrix for statically provisioned volumes:
