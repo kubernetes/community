@@ -20,7 +20,7 @@ Meeting recordings can be found [here]().
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
 * Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Microsoft
 * Chris Love (**[@chrislovecnm](https://github.com/chrislovecnm)**)
-* Mackenzie Burnett (**[@mfburnett](https://github.com/mfburnett)**), Redspread
+* Luis Pabón (**[@lpabon](https://github.com/lpabon)**), CoreOS
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-aws)
