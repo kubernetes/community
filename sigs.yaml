@@ -138,7 +138,7 @@ sigs:
       company: Redspread
     meetings:
     - day: Friday
-      utc: "17:00"
+      utc: "16:00" # Actually 9AM Pacific, but timezone support issue is https://github.com/kubernetes/community/issues/841
       frequency: biweekly
     meeting_url: https://zoom.us/my/k8ssigaws
     meeting_archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit

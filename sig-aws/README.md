@@ -11,7 +11,7 @@ To understand how this file is generated, see generator/README.md.
 Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
 
 ## Meetings
-* [Fridays at 17:00 UTC](https://zoom.us/my/k8ssigaws) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
+* [Fridays at 16:00 UTC](https://zoom.us/my/k8ssigaws) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit).
 Meeting recordings can be found [here]().
