@@ -229,10 +229,6 @@ when a failure occurs
 
 --kubeconfig="": Path to kubeconfig containing embedded authinfo.
 
---prom-push-gateway="": The URL to prometheus gateway, so that metrics can be
-pushed during e2es and scraped by prometheus. Typically something like
-127.0.0.1:9091.
-
 --provider="": The name of the Kubernetes provider (gce, gke, local, vagrant,
 etc.)
 
