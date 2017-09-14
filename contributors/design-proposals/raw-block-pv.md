@@ -589,13 +589,16 @@ Other considerations:
        SetUpDevice(podUID types.UID) error
        SetUpDeviceAt(dir string, podUID types.UID) error
        GetDevicePath() (string, error)
-       GetVolumeDeviceMapPath(spec *Spec) (string, error)
+       GetGlobalMapPath(spec *Spec) (string, error)
+       GetPodDeviceMapPath() string
  }
+ 
  type BlockVolumeUnmapper interface {
        Volume
        TearDownDevice() error
        TearDownDeviceAt(dir string) error
-       GetVolumeDeviceUnmapPath(spec *Spec) (string, error)
+       GetGlobalUnmapPath(spec *Spec) (string, error)
+       GetPodDeviceUnmapPath() string
  }
 ```
 ## Changes for volume mount points
@@ -621,9 +624,19 @@ under the global map path. The name of the symbolic link is same as pod uuid.
  
 ```
 Global map path for "Block" volumeMode volume
-/var/lib/kubelet/plugins/kubernetes.io/{pluginName}/volumeDevices/{volumePluginDependentPath}/pod-uuid1
-/var/lib/kubelet/plugins/kubernetes.io/{pluginName}/volumeDevices/{volumePluginDependentPath}/pod-uuid2
+/var/lib/kubelet/plugins/kubernetes.io/{pluginName}/volumeDevices/{volumePluginDependentPath}/{pod uuid1}
+/var/lib/kubelet/plugins/kubernetes.io/{pluginName}/volumeDevices/{volumePluginDependentPath}/{pod uuid2}
+...
 ```
+
+{volumePluginDependentPath} example:
+```
+FC plugin: {wwn}-lun-{lun} or {wwid}
+ex. /var/lib/kubelet/plugins/kubernetes.io/fc/volumeDevices/500a0982991b8dc5-lun-0/f527ca5b-6d87-11e5-aa7e-080027ff6387
+
+iSCSI plugin: {portal ip}-{iqn}-lun-{lun}
+ex. /var/lib/kubelet/plugins/kubernetes.io/iscsi/volumeDevices/1.2.3.4:3260-iqn.2001-04.com.example:storage.kube.sys1.xyz-lun-1/f527ca5b-6d87-11e5-aa7e-080027ff6387
+ ```
  
 Plugin creates a symbolic link under the new volume map path. This symbolic link is not used to manage volume attach/detach
 status but is needed to keep compatibility of current scheme.
