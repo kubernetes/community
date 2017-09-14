@@ -158,6 +158,18 @@ ELB at the other end of its connection) when forwarding requests.
 TCP and SSL will select layer 4 proxying: the ELB will forward traffic without
 modifying the headers.
 
+#### Explicit Subnet Selection
+
+To explicitly select which subnets should be associated with an ELB an AWS 
+specific annotation can be added to a service
+
+```
+aws.kubernetes.io/elb-subnets="subnet-012345a6,subnet-912345b6"
+```
+
+which will cause the created ELB to have _only_ the specified subnets
+attached.
+
 ### Identity and Access Management (IAM)
 
 kube-proxy sets up two IAM roles, one for the master called
