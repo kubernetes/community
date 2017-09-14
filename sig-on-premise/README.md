@@ -25,7 +25,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=dyUWqqNYU
 * [Slack](https://kubernetes.slack.com/messages/sig-onprem)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-on-prem)
 
-## GitHub Teams
+## GitHub Teams
 * [@onprem-misc](https://github.com/kubernetes/teams/onprem-misc)
 * [@onprem-test-failures](https://github.com/kubernetes/teams/onprem-test-failures)
 * [@onprem-bugs](https://github.com/kubernetes/teams/onprem-bugs)
