@@ -36,7 +36,7 @@ Following the meeting, the raw voting results and winners will be published on t
 For more information, definitions, and/or detailed election process, see full [steering committee charter](https://github.com/kubernetes/steering/blob/master/charter.md).
 
 # NOMINEES
-Don’t know someone on this list? We asked the nominees to provide a <300 word bio about their k8s experience that we'll link to their name in this table. If you don't see a link, try [here](https://github.com/kubernetes/community/tree/master/community/elections/2017) under first+lastname.  
+Don’t know someone on this list? We asked the nominees to provide a <300 word bio about their k8s experience that we'll link to their name in this table.
 
 Name | Organization/Company | GitHub 
 --- | --- | --- 
