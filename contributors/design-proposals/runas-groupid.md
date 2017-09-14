@@ -69,6 +69,22 @@ type SecurityContext struct {
      // PodSecurityContext, the value specified in SecurityContext takes precedence.
      // +optional
      RunAsGroup *int64
+     // Indicates that the container must run as a non-root user.
+     // If true, the Kubelet will validate the image at runtime to ensure that it
+     // does not run as UID 0 (root) and fail to start the container if it does.
+     // If unset or false, no such validation will be performed.
+     // May also be set in SecurityContext.  If set in both SecurityContext and
+     // PodSecurityContext, the value specified in SecurityContext takes precedence.
+     // +optional
+     RunAsNonRoot *bool
+     // Indicates that the container must run as a non-root group.
+     // If true, the Kubelet will validate the image at runtime to ensure that it
+     // does not run as GID 0 (root) and fail to start the container if it does.
+     // If unset or false, no such validation will be performed.
+     // May also be set in SecurityContext.  If set in both SecurityContext and
+     // PodSecurityContext, the value specified in SecurityContext takes precedence.
+     // +optional
+     RunAsNonRootGroup *bool
 
     .....
  }
@@ -94,6 +110,23 @@ type PodSecurityContext struct {
      // PodSecurityContext, the value specified in SecurityContext takes precedence.
      // +optional
      RunAsGroup *int64
+     // Indicates that the container must run as a non-root user.
+     // If true, the Kubelet will validate the image at runtime to ensure that it
+     // does not run as UID 0 (root) and fail to start the container if it does.
+     // If unset or false, no such validation will be performed.
+     // May also be set in SecurityContext.  If set in both SecurityContext and
+     // PodSecurityContext, the value specified in SecurityContext takes precedence.
+     // +optional
+     RunAsNonRoot *bool
+     // Indicates that the container must run as a non-root group.
+     // If true, the Kubelet will validate the image at runtime to ensure that it
+     // does not run as GID 0 (root) and fail to start the container if it does.
+     // If unset or false, no such validation will be performed.
+     // May also be set in SecurityContext.  If set in both SecurityContext and
+     // PodSecurityContext, the value specified in SecurityContext takes precedence.
+     // +optional
+     RunAsNonRootGroup *bool
+
 
     .....
  }
@@ -153,10 +186,12 @@ Following points should be noted:
 
 - `FSGroup` and `SupplementalGroups` will continue to have their old meanings and would be untouched.  
 - The `RunAsGroup` In the SecurityContext will override the `RunAsGroup` in the PodSecurityContext.
-- If no `RunAsGroup` is provided in the PodSecurityContext and SecurityContext, the Primary Group Id
-  is decided by the Runtime. Current Runtime behavior is to use 0.
-- If no `RunAsGroup` is provided in the PodSecurityContext and SecurityContext, and none in the image,
-  the container will run with primary Group as root(0).
+- If both `RunAsUser` and `RunAsGroup` are NOT provided, the USER field in Dockerfile is used
+- If both `RunAsUser` and `RunAsGroup` are specified, that is passed directly as User.
+- If only one of `RunAsUser` or `RunAsGroup` is specified, the remaining value is decided by the Runtime,
+  where the Runtime behavior is to make it run with uid or gid as 0.
+- If a non numeric Group is specified in the Dockerfile and `RunAsNonRootGroup` is set, this will be 
+  treated as error, similar to the behavior of `RunAsNonRoot` for non numeric User in Dockerfile.
 
 Basically, we guarantee to set the values provided by user, and the runtime dictates the rest.
 
@@ -164,6 +199,7 @@ Here is an example of what gets passed to docker User
 - runAsUser set to 9999, runAsGroup set to 9999 -> Config.User set to 9999:9999
 - runAsUser set to 9999, runAsGroup unset -> Config.User set to 9999 -> docker runs you with 9999:0
 - runAsUser unset, runAsGroup set to 9999 -> Config.User set to :9999 -> docker runs you with 0:9999 
+- runAsUser unset, runAsGroup unset -> Config.User set to whatever is present in Dockerfile
 This is to keep the behavior backward compatible and as expected.
 
 ## Summary of Changes needed
