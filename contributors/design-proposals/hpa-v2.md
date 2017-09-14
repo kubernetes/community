@@ -285,6 +285,68 @@ come from the [custom metrics API](custom-metrics-api.md), which is
 an adapter API which sources metrics directly from the monitoring
 pipeline.
 
+Conversion and Defaulting
+-------------------------
+
+### Conversion ###
+
+According the deprecation policy, objects must be round-trippable through
+all supported versions.  Therefore, two alpha annotations will be
+introduced: `autoscaling.alpha.kubernetes.io/metrics` and
+`autoscaling.alpha.kubernetes.io/current-metrics`.  These will correspond
+roughly to the `Metrics` and `CurrentMetrics` fields in `v2alpha1`.
+
+In the case of conversion from `v1` to `v2alpha`, the value of the
+appropriate CPU field will be read, converted into a `MetricSpec` of type
+`Resource`, and then appended to the list of existing `MetricSpec`s to
+form the slice for the `Metrics` field in `v2alpha1` (and similarly for
+`MetricStatus`es and `CurrentMetrics`).
+
+In the opposite direction, the list of metrics will be searched for
+a field of type `Resource` with a name of `api.ResourceCPU` and a set
+utilization percentage.  This will be removed from the list and used to
+populate the CPU field in `v1`, while the remainder of the `MetricSpec`s
+(and `MetricStatus`es) will be placed into the appropriate annotation.
+
+#### Example ####
+
+Consider the example object described above.  It would appear in
+`autoscaling/v1` as
+
+```yaml
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  annotations:
+    autoscaling.alpha.kubernetes.io/metrics: "[{\"type\": \"Object\", \"object\": {\"target\": {\"kind\": \"Service\", \"name\": \"Frontend\"}, \"metricName\": \"hits-per-second\", \"targetValue\": \"1k\"}}]"
+    object:
+      target:
+        kind: Service
+        name: Frontend
+      metricName: hits-per-second
+      targetValue: 1k
+spec:
+  scaleTargetRef:
+    kind: ReplicationController
+    name: WebFrontend
+  minReplicas: 2
+  maxReplicas: 10
+  TargetCPUUtilizationPercentage: 80
+```
+
+### Defaulting ###
+
+Currently, in `autoscaling/v1`, no API-level defaulting is done -- if the
+user creates an HPA without a set CPU autoscaling level, the controller
+will look at whether or not the custom metrics annotation is set.  If it
+is, the controller will scale on custom metrics, and if not, it will use
+a "default" value built in to the controller.
+
+Since `v2alpha1` has field-level "custom" metrics, we no longer need to
+rely on this "implicit" defaulting.  If a user creates an empty HPA, it
+will be populated with an explicit default CPU policy.  This makes it
+clearer to the end user how their HPA is scaling, and makes the jump from
+"default HPA" to "customized HPA" easier.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/hpa-v2.md?pixel)]()
