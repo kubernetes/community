@@ -26,7 +26,7 @@ SIG leads
 Approvers and reviewers in any Kubernetes owned repositories
 Anyone with write access to a Kubernetes owned repository
 Active members of our community
-If you believe you are a Member in Standing, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSeoeNSl9ufZ_jpp7OHgvtWm-GRFV6WUwTIqZ9W25eMd3xyyvg/viewform) <strong><em>before</strong></em> September 13, 2017.	
+If you believe you are a Member of Standing, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSeoeNSl9ufZ_jpp7OHgvtWm-GRFV6WUwTIqZ9W25eMd3xyyvg/viewform) <strong><em>before</strong></em> September 13, 2017.
 
 ## DECISION
 The newly elected body will be announced in the weekly Kubernetes Community Meeting on October 5, 2017 at 10:00am US Pacific Time. [Please join us](https://groups.google.com/forum/#!forum/kubernetes-community-video-chat).
