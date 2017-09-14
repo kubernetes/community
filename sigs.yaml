@@ -133,9 +133,9 @@ sigs:
       company: Microsoft
     - name: Chris Love
       github: chrislovecnm
-    - name: Mackenzie Burnett
-      github: mfburnett
-      company: Redspread
+    - name: Luis Pabón
+      github: lpabon
+      company: CoreOS
     meetings:
     - day: Friday
       utc: "16:00" # Actually 9AM Pacific, but timezone support issue is https://github.com/kubernetes/community/issues/841
