@@ -1,7 +1,7 @@
 # 2017 VOTERS GUIDE - KUBERNETES STEERING COMMITTEE ELECTION
 
 # PURPOSE
-The initial role of the steering committee is to instantiate the formal governance process for Kubernetes. In addition to defining the initial governance process, the [current bootstrap committee](https://groups.google.com/forum/#!msg/kubernetes-dev/4e8WOnMvZC0/57GYmJKfDAAJ) strongly believes that it is important to provide a means for iterating the processes defined by the steering committee. We do not believe that we will get it right the first time, or possibly ever, and won’t even complete the governance development in a single shot. The role of the steering committee is to be a living, responsive body that can refactor and reform as necessary to adapt to a changing project and community.
+The initial role of the steering committee is to instantiate the formal governance process for Kubernetes. In addition to defining the initial governance process, the [bootstrap committee](https://groups.google.com/forum/#!msg/kubernetes-dev/4e8WOnMvZC0/57GYmJKfDAAJ) strongly believes that it is important to provide a means for iterating the processes defined by the steering committee. We do not believe that we will get it right the first time, or possibly ever, and won’t even complete the governance development in a single shot. The role of the steering committee is to be a living, responsive body that can refactor and reform as necessary to adapt to a changing project and community.
 
 # VOTING
 This election will  shape the future of Kubernetes as a project and community. You will be voting on six (6) seats up for election, three with a two year term and three with an initial one year term. The motivation for these different terms is to set up an initial stagger so that the entire committee isn’t replaced every election cycle. After this first election, every elected community member will serve a two year term.
@@ -62,7 +62,9 @@ Quinton Hoole	 | Huawei |	[@quinton-hoole](https://github.com/quinton-hoole)
 [Timothy St. Clair](timothysc_bio.md) |	Heptio |	[@timothysc](https://github.com/timothysc)
 
 
-<strong>Note:</strong>The current committee does not endorse any candidate. 
+<strong>Note:</strong>The bootstrap committee members have
+recused themselves from any form of electioneering, including
+campaigning, nominating, endorsing, or even asking people to run.
 
 Please direct any questions via email to <kubernetes-governance-committee@googlegroups.com><br>
 [K8s Slack](http://slack.k8s.io/)
