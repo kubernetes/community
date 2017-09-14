@@ -46,7 +46,7 @@ Name | Organization/Company | GitHub
 [Alex Pollitt](alexpollitt_bio.md) |	Tigera	| [@lxpollitt](https://github.com/lxpollitt)
 [Caleb Miles](calebamiles_bio.md) | CoreOS |	[@calebamiles](https://github.com/calebamiles)
 Derek Carr |	Red Hat |	[@derekwaynecarr](https://github.com/derekwaynecarr)
-Doug Davis |	IBM	| [@duglin](https://github.com/duglin)
+[Doug Davis](dougdavis_bio.md) |	IBM	| [@duglin](https://github.com/duglin)
 Ihor Dvoretskyi |	*TBA* |	[@idvoretskyi](https://github.com/idvoretskyi)
 [Ilya Dmitrichenko](errordeveloper_bio.md) |	Weave |	[@errordeveloper](https://github.com/errordeveloper)
 [Jaice Singer DuMars](jaicesingerdumars_bio.md) |	Microsoft	| [@jdumars](https://github.com/jdumars)
