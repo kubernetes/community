@@ -31,7 +31,7 @@ If you believe you are a Member of Standing, please fill out [this form](https:/
 ## DECISION
 The newly elected body will be announced in the weekly Kubernetes Community Meeting on October 5, 2017 at 10:00am US Pacific Time. [Please join us](https://groups.google.com/forum/#!forum/kubernetes-community-video-chat).
 
-Immediately following the meeting, the raw voting results and winners will be published on the [Kubernetes Blog](http://blog.kubernetes.io/).
+Following the meeting, the raw voting results and winners will be published on the [Kubernetes Blog](http://blog.kubernetes.io/).
 
 For more information, definitions, and/or detailed election process, see full [steering committee charter](https://github.com/kubernetes/steering/blob/master/charter.md).
 
