@@ -16,7 +16,6 @@
 
 ## Technical issues and conventions
 
-* Events
 * [Common repo proposal](https://github.com/kubernetes/kubernetes/issues/50475)
 * Component config field deprecation
 * [Well known labels](https://groups.google.com/forum/#!topic/kubernetes-sig-architecture/PEp7NqWuFpw)
