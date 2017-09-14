@@ -10,8 +10,11 @@ Sr. Software Engineer, Microsoft Azure Containers Group
 I am a former Sr. Software Engineer at Deis and part of the team that was acquired by Microsoft.
 Now, I work on Kubernetes on Azure and have the blessing of Microsoft to continue to do so.
 
-I am a passionate engineer and leader, and I believe that Kubernetes will truly succeed when we
-as a community improve the developer and user experience.
+I am a passionate engineer, teacher and leader with over 10 years software engineering and 
+architecture experience in a wide variety of fields.
+
+I believe that Kubernetes will truly succeed when we as a community improve the developer and 
+user experience. 
 
 # My Experience
 
