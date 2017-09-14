@@ -58,7 +58,7 @@ Michelle Noorali |	Microsoft |	[@michelleN](https://github.com/michelleN)
 [Phillip Wittrock](pwittrock_bio.md) |	Google | 	[@pwittrock](https://github.com/pwittrock)
 Quinton Hoole	 | Huawei |	[@quinton-hoole](https://github.com/quinton-hoole)
 [Rob Hirschfeld](rhirschfeld_bio.md) |	RackN	| [@zehicle](https://github.com/zehicle)
-Sebastien Goasguen |	Bitnami |	[@sebgoa](http://github.com/sebgoa)
+[Sebastien Goasguen](sebastiengoasguen_bio.md) |	Bitnami |	[@sebgoa](http://github.com/sebgoa)
 [Timothy St. Clair](timothysc_bio.md) |	Heptio |	[@timothysc](https://github.com/timothysc)
 
 
