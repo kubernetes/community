@@ -2,7 +2,7 @@
 
 ## Goal
 
-Due to security and management overhead, our new Container-Optimized OS used by GKE
+Due security and management overhead, our new Container-Optimized OS used by GKE
 does not carry certain storage drivers and tools needed for such as nfs and 
 glusterfs. This project takes a containerized mount approach to package mount 
 binaries into a container. Volume plugin will execute mount inside of container 

@@ -5,7 +5,6 @@ Uncategorized
 	multi-platform.md
 	owners
 	readme.md
-	runtime-client-server.md
 ./sig-cli
 	get-describe-apiserver-extensions.md
 	kubectl-create-from-env-file.md
@@ -22,7 +21,6 @@ Uncategorized
 	flannel-integration.md
 	network-policy.md
 	networking.md
-	selinux-enhancements.md
 	service-discovery.md
 	service-external-name.md
 ./resource-management
@@ -105,9 +103,11 @@ Uncategorized
 	pod-resource-management.md
 	propagation.md
 	resource-qos.md
+	runtime-client-server.md
 	runtime-pod-cache.md
 	seccomp.md
 	secret-configmap-downwardapi-file-mode.md
+	selinux-enhancements.md
 	selinux.md
 	sysctl.md
 ./service-catalog
@@ -217,12 +217,14 @@ Uncategorized
 	statefulset-update.md
 ./storage
 	containerized-mounter.md
+	containerized-mounter.md~
 	default-storage-class.md
 	flex-volumes-drivers-psp.md
 	flexvolume-deployment.md
 	grow-volume-size.md
 	local-storage-overview.md
 	mount-options.md
+	owners
 	persistent-storage.md
 	pod-safety.md
 	volume-hostpath-qualifiers.md
