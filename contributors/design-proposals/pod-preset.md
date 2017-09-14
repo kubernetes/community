@@ -133,6 +133,21 @@ type PodPresetSpec struct {
     // Selector is a label query over a set of resources, in this case pods.
     // Required.
     Selector      unversioned.LabelSelector
+
+    // InitContainerSelector is a ContainerSelector to select init containers
+    // of a PodSpec for injecting information into.
+    // If not specified, it will default to EmptyContainerSelector which matches
+    // any init-container in the PodSpec.
+    // +optional
+    InitContainerSelector *ContainerSelector
+
+    // ContainerSelector is a ContainerSelector to select containers of a
+    // PodSpec for injecting information into.
+    // If not specified, it will default to EmptyContainerSelector which matches
+    // any container in the PodSpec.
+    // +optional
+    ContainerSelector *ContainerSelector
+
     // Env defines the collection of EnvVar to inject into containers.
     // +optional
     Env           []EnvVar
@@ -147,6 +162,46 @@ type PodPresetSpec struct {
     // containers.
     // +optional
     VolumeMounts  []VolumeMount
+
+
+    // Specification for injecting additional init/app containers will be added here
+}
+
+// ContainerSelector represents container selector criterion that can be applied on
+// list of v1.Container to select containers.
+type ContainerSelector struct {
+    // MatchNames is a list of container names to be matched to. This selector
+    // returns a match if container name matches any of the names in this list.
+    // Special string “*” is treated as match ANY.
+    // Empty or nil list is treated as match NOTHING.
+    MatchNames []string
+
+   // in future matchExpressions support can also be added to enable set expresssions.
+}
+
+// Matches returns list of containers matching selection criterion specified in
+// given container selector cs.
+func (cs *ContainerSelector) Matches(ctrs []v1.Container) []v1.Container {
+    if cs == nil {
+      return ctrs
+    }
+
+    if len(cs.MatchNames) == 0 {
+       return nil // return no match
+    }
+
+    if len(cs.MatchNames) == 1 && cs.MatchNames[0] == "*" {
+       // wild card "*" matches all the containers
+       return ctrs
+	}
+
+    var matchedCtrs []v1.Container
+    for _, ctr := range ctrs {
+       if cs.MatchesContainer(ctr) {
+         matchedCtrs = append(matchedCtrs, ctr)
+       }
+    }
+    return matchedCtrs
 }
 ```
 
@@ -221,16 +276,20 @@ of the form: `podpreset.admission.kubernetes.io/exclude: "true"`.
 
 This will modify the pod spec. The supported changes to
 `Env`, `EnvFrom`, and `VolumeMounts` apply to the container spec for
-all containers in the pod with the specified matching `Selector`. The
-changes to `Volumes` apply to the pod spec for all pods matching `Selector`.
+the init-containers matching `InitContainerSelector` selector and app-containers
+matching `AppContainerSelector` selector in the pod with the specified matching 
+`Selector`. The changes to `Volumes` apply to the pod spec for all pods matching `Selector`.
 
 The resultant modified pod spec will be annotated to show that it was modified by
 the `PodPreset`. This will be of the form
 `podpreset.admission.kubernetes.io/podpreset-<pip name>": "<resource version>"`.
 
-*Why modify all containers in a pod?*
+*Modifing selected containers in a pod?*
 
-Currently there is no concept of labels on specific containers in a pod which
+Modifying all containers in a Pod is not desirable. One of the ways to select
+containers for injection would have been to extend the labelSelector to
+containers if containers implemented labels. But currently there is no concept
+of labels on specific containers in a pod which
 would be necessary for per-container pod injections. We could add labels
 for specific containers which would allow this and be the best solution to not
 injecting all. Container labels have been discussed various times through
@@ -240,10 +299,8 @@ list](https://groups.google.com/forum/#!topic/kubernetes-sig-node/gijxbYC7HT8).
 In the future, even if container labels were added, we would need to be careful
 about not making breaking changes to the current behavior.
 
-Other solutions include basing the container to inject based off
-matching its name to another field in the `PodPreset` spec, but
-this would not scale well and would cause annoyance with configuration
-management.
+So in absense of container labels, a whitelist of container names to select
+containers is a reasonable approach.
 
 In the future we might question whether we need or want containers to express
 that they expect injection. At this time we are deferring this issue.
@@ -285,6 +342,12 @@ spec:
   selector:
     matchLabels:
       role: frontend
+  initContainerSelector:
+    matchNames:
+     - *
+  containerSelector:
+    matchNames:
+     - website
   env:
     - name: DB_PORT
       value: 6379
@@ -378,6 +441,9 @@ spec:
   selector:
     matchLabels:
       role: frontend
+  containerSelector:
+    matchNames:
+     - website
   env:
     - name: DB_PORT
       value: 6379
@@ -493,6 +559,9 @@ spec:
   selector:
     matchLabels:
       tier: frontend
+  containerSelector:
+    matchNames:
+     - php-redis 
   env:
     - name: DB_PORT
       value: 6379
@@ -572,6 +641,9 @@ spec:
   selector:
     matchLabels:
       role: frontend
+  containerSelector:
+    matchNames:
+     - website 
   env:
     - name: DB_PORT
       value: 6379
@@ -595,6 +667,9 @@ spec:
   selector:
     matchLabels:
       role: frontend
+  containerSelector:
+    matchNames:
+     - website 
   volumeMounts:
     - mountPath: /etc/proxy/configs
       name: proxy-volume
@@ -678,6 +753,9 @@ spec:
   selector:
     matchLabels:
       role: frontend
+  containerSelector:
+    matchNames:
+     - website 
   env:
     - name: DB_PORT
       value: 6379
