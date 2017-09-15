@@ -18,14 +18,16 @@ For more context, please see the [current issues](https://github.com/kubernetes/
 ## PROCESS
 Elections will be held using time-limited [Condorcet](https://en.wikipedia.org/wiki/Condorcet_method) ranking on [CIVS](http://civs.cs.cornell.edu/) using the [Schulze method](https://en.wikipedia.org/wiki/Schulze_method). The top vote getters, modulo the corporate diversity requirement of no more than 1/3 of the committee from a single company, will be elected to the respective positions, with the top 3 filling the 2 year term seats, and the next 3 filling the 1 year term seats. 
 
-The election will open for voting on September 19, 2017 at 09:00am PDT and end two weeks after on October 3, 2017 at 06:00pm PDT. You will receive an email to the address on file at the start of the election from <civs@cs.cornell.edu>; please whitelist if necessary. 
+You will be ranking your choices 1-20 with an option for no opinion. In the event of a tie, a coin will be flipped. 
+
+The election will open for voting on September 19, 2017 at 09:00am PDT and end two weeks after on October 3, 2017 at 06:00pm PDT. You will receive an email to the address on file at the start of the election from <civs@cs.cornell.edu>; please whitelist if necessary. Detailed voting instructions will be addressed in email and the CIVS polling page. 
 
 ## ELIGIBILITY 
 Members of Standing are defined by the union of:
-SIG leads
-Approvers and reviewers in any Kubernetes owned repositories
-Anyone with write access to a Kubernetes owned repository
-Active members of our community
+* SIG leads
+* Approvers and reviewers in any Kubernetes owned repositories
+* Anyone with write access to a Kubernetes owned repository
+* Active members of our community
 If you believe you are a Member of Standing, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSeoeNSl9ufZ_jpp7OHgvtWm-GRFV6WUwTIqZ9W25eMd3xyyvg/viewform) <strong><em>before</strong></em> September 13, 2017.
 
 ## DECISION
