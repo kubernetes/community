@@ -75,7 +75,7 @@ If you want to work on a new idea of relatively small scope:
   1. Submit a [pull request] containing a tested change.
 
 
-[architecture]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture.md
+[architecture]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/architecture.md
 [cmd]: https://github.com/kubernetes/kubernetes/tree/master/cmd
 [CLA]: CLA.md
 [Collaboration Guide]: contributors/devel/collab.md
