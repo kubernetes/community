@@ -45,7 +45,7 @@ Name | Organization/Company | GitHub
 [Adnan Abdulhussein](adnanabdulhussein_bio.md) |	Bitnami |	[@prydonius](https://github.com/prydonius)
 [Alex Pollitt](alexpollitt_bio.md) |	Tigera	| [@lxpollitt](https://github.com/lxpollitt)
 [Caleb Miles](calebamiles_bio.md) | CoreOS |	[@calebamiles](https://github.com/calebamiles)
-Derek Carr |	Red Hat |	[@derekwaynecarr](https://github.com/derekwaynecarr)
+[Derek Carr](derekcarr_bio.md) |	Red Hat |	[@derekwaynecarr](https://github.com/derekwaynecarr)
 [Doug Davis](dougdavis_bio.md) |	IBM	| [@duglin](https://github.com/duglin)
 Ihor Dvoretskyi |	*TBA* |	[@idvoretskyi](https://github.com/idvoretskyi)
 [Ilya Dmitrichenko](errordeveloper_bio.md) |	Weave |	[@errordeveloper](https://github.com/errordeveloper)
