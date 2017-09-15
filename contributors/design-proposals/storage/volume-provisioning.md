@@ -171,7 +171,8 @@ Existing behavior is unchanged for claims that do not specify
   claim creation or update, it implements these steps:
 
   1. The provisioner inspects if
-     `claim.Annotations["volume.beta.kubernetes.io/storage-provisioner"] == <provisioner name>`.
+     `claim.Annotations["volume.beta.kubernetes.io/storage-provisioner"] == <provisioner name>` or
+     `claim.Annotations["volume.kubernetes.io/storage-provisioner"] == <provisioner name>`
      All other claims MUST be ignored.
 
   2. The provisioner MUST check that the claim is unbound, i.e. its
@@ -182,9 +183,10 @@ Existing behavior is unchanged for claims that do not specify
      just created by admin is discussed below.*
 
   3. It tries to find a StorageClass instance referenced by annotation
-     `claim.Annotations["volume.beta.kubernetes.io/storage-class"]`. If not
-     found, it SHOULD report an error (by sending an event to the claim) and it
-     SHOULD retry periodically with step i.
+     `claim.Annotations["volume.beta.kubernetes.io/storage-class"]` or
+     `claim.Spec.StorageClassName`. If not found, it SHOULD report an error (by
+     sending an event to the claim) and it SHOULD retry periodically with step
+     i.
 
   4. The provisioner MUST parse arguments in the `StorageClass` and
      `claim.Spec.Selector` and provisions appropriate storage asset that matches
@@ -205,7 +207,15 @@ Existing behavior is unchanged for claims that do not specify
      }
      ```
 
-  5. When the volume is provisioned, the provisioner MUST create a new PV
+  5. The provisioner MUST parse
+     `claim.Annotations["volume.kubernetes.io/external-provisioning-version"]`
+     and check that it supports at least the version of this protocol requested
+     there. It SHOULD report an error and it MUST NOT provision a volume when
+     the annotation value is higher than the version known to the provisioner.
+
+     Table of protocol versions is available below.
+
+  6. When the volume is provisioned, the provisioner MUST create a new PV
      representing  the storage asset and save it in Kubernetes. When this fails,
      it SHOULD retry creating the PV again few times. If all attempts fail, it
      MUST delete the storage asset. All errors SHOULD be sent as events to the
@@ -450,6 +460,38 @@ With the scheme outlined above the provisioner creates PVs using parameters spec
 will be extended to contain StorageClass.Parameters.
 
 The existing provisioner implementations will be modified to accept the StorageClass configuration object.
+
+### External provisioner interface changes
+
+Sometimes PersistentVolume, PersistentVolumeClaim or StorageClass objects get
+new fields and/or different behavior is expected from an external provisioner.
+Old provisioner that don't know about these new fields must not provision PVCs
+that expect the provisioner knows about them.
+
+As an example, in 1.8 we introduced `StorageClass.MountOptions` and
+`StorageClass.ReclaimPolicy`. Each provisioner must copy these fields from
+`StorageClass` to created PV during provisioning. Old provisioners do not know
+about this requirement and Kubernetes should not allow them to provision a PVC
+whose `StorageClass.MountOptions` or `ReclaimPolicy` is set.
+
+* When no extra feature (i.e. Kubernetes 1.7 and below behavior is expected), Kubernetes adds these three annotations to a PVC:
+* `volume.beta.kubernetes.io/storage-provisioner` - to keep the old provisioners running.
+  * `volume.kubernetes.io/storage-provisioner` - to keep the new provisioners running.
+  * `volume.kubernetes.io/external-provisioning-version = "1.7"` - to explicitly state that no extra features/behavior is expected.
+
+* When behavior corresponding to Kubernetes 1.8 is expected (i.e. `StorageClass.MountOptions` or `StorageClass.ReclaimPolicy` is set), Kubernetes adds only these two annotations to a PVC:
+  * `volume.kubernetes.io/storage-provisioner` - to keep the new provisioners running.
+  * `volume.kubernetes.io/external-provisioning-version = "1.8"` - to explicitly state that the provisioner must know about `StorageClass.MountOptions` and how to deal with it.
+  * As no beta annotation is set, this PVC is invisible to old provisioners that support only 1.7.
+
+In future, when we add e.g. block device support, Kubernetes will set `external-provisioning-version = "1.9"` when a block volume is requested or `"1.8"` when filesystem volume with `MountOptions` or `ReclaimPolicy` is requested or even `"1.7"` when nothing special is required.
+
+#### Table of protocol versions
+
+| Version | Required features |
+|---------|-------------------|
+| 1.7     | None, standard provisionig that was working in 1.4 - 1.7 is expected |
+| 1.8     | Provisioner must interpret `StorageClass.MountOptions` and `StorageClass.ReclaimPolicy` when it's set |
 
 ### PV Controller Changes
 
