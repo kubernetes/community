@@ -7,7 +7,7 @@
 In this document we propose a design for the “Control Plane” of
 Kubernetes (K8S) federation (a.k.a. “Ubernetes”). For background of
 this work please refer to
-[this proposal](../../docs/proposals/federation.md).
+[this proposal](federation.md).
 The document is arranged as following. First we briefly list scenarios
 and use cases that motivate K8S federation work. These use cases drive
 the design and they also verify the design. We summarize the
