@@ -117,7 +117,6 @@ spec:
     - containerPort: 80
 ```
 
-[Download example](../../test/fixtures/doc-yaml/user-guide/pod.yaml?raw=true)
 <!-- END MUNGE: EXAMPLE ../../test/fixtures/doc-yaml/user-guide/pod.yaml -->
 
 ## Misc.
