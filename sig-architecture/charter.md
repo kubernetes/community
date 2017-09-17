@@ -16,10 +16,10 @@ Specific areas of focus include:
 * Maintaining, evolving, and enforcing the deprecation policy
   * [Deprecation policy](https://kubernetes.io/docs/reference/deprecation-policy/)
 * Documenting and evolving the system architecture
-  * [Kubernetes Design and Architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture.md)
+  * [Kubernetes Design and Architecture](../contributors/design-proposals/architecture/architecture.md)
 * Defining and driving necessary extensibility points
 * Establishing and documenting design principles
-  * [Design principles](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/principles.md)
+  * [Design principles](../contributors/design-proposals/architecture/principles.md)
 * Establishing and documenting conventions for system and user-facing APIs
   * [API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md)
 * Developing necessary technical review processes, such as the proposal and API review processes
