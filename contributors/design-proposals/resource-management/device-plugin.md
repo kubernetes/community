@@ -41,7 +41,7 @@ consume hardware devices across k8s clusters.
 This document describes a vendor independant solution to:
   * Discovering and representing external devices
   * Making these devices available to the containers, using these devices,
-    scrubbing and securly sharing these devices.
+    scrubbing and securely sharing these devices.
   * Health Check of these devices
 
 Because devices are vendor dependant and have their own sets of problems
