@@ -29,7 +29,7 @@ Specific areas of focus include:
 Out of scope:
 * Issues specific to a particular component or functional area, which would be the purview
   of some other SIG, except where they deviate from project-wide principles and conventions.
-* [Release support policy](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/versioning.md)
+* [Release support policy](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/release/versioning.md)
   is owned by SIG Release
 
 TODO:
