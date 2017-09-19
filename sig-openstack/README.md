@@ -17,7 +17,7 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax).
 
 ## Leads
-* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), Mirantis
+* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
 * Steve Gordon (**[@xsgordon](https://github.com/xsgordon)**), Red Hat
 
 ## Contact
