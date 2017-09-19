@@ -72,7 +72,7 @@ directly using some custom API there.
 
 ## Proposed API
 
-Initially the metrics API will be in a separate [API group](api-group.md) called ```metrics```.
+Initially the metrics API will be in a separate [API group](../api-machinery/api-group.md) called ```metrics```.
 Later if we decided to have Node and Pod in different API groups also
 NodeMetrics and PodMetrics should be in different API groups.
 
