@@ -20,7 +20,7 @@ Within the Kubernetes community, I would like to focus on helping ensure contrib
 
 I believe it is important for the processes for contribution and maintenance of the project
 to be well communicated and understood within the community.
-I would like to be involved in areas owned by the TSC such as - helping to develop a
+I would like to be involved in areas owned by the SC such as - helping to develop a
 SIG charter template, simplifying the contributor ladder, documenting resources the community has,
 and helping to find a home for unowned areas of the project.
 
@@ -45,10 +45,10 @@ Areas of the project I have contributed to include: node, kubectl, service catal
 ### Relevant non-technical contributions
 
 - (release) Changed management role from an individual to a team with defined roles
-- (release) Proposals for streamlining and automating various processes including
+- (release) Proposals for streamlining and automating various processes
 - Published community membership ladder developed from draft (draft by Brian Grant)
 - 1.4 release czar
-- Held some role in 1.5, 1.6 and 1.7 releases
+- Participated in 1.5, 1.6 and 1.7 releases
 
 ## Where I work
 
