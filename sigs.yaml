@@ -112,8 +112,8 @@ sigs:
       github: directxman12
       company: Red Hat
     meetings:
-    - day: Thursday
-      utc: "15:30"
+    - day: Monday
+      utc: "14:00"
       frequency: biweekly/triweekly
     meeting_url: https://zoom.us/j/176352399
     meeting_archive_url: https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit
