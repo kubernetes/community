@@ -24,7 +24,7 @@ Development would be based on a generated client using OpenAPI and [swagger-code
 
 ### Client Capabilities
 
-* Bronze Requirements [![Client Capabilities](https://img.shields.io/badge/Kubernetes%20client-Bronze-blue.svg?style=plastic&colorB=cd7f32&colorA=306CE8)](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/csi-new-client-library-procedure.md#client-capabilities)
+* Bronze Requirements [![Client Capabilities](https://img.shields.io/badge/Kubernetes%20client-Bronze-blue.svg?style=plastic&colorB=cd7f32&colorA=306CE8)](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/csi-new-client-library-procedure.md#client-capabilities)
 
     * Support loading config from kube config file
 
@@ -40,11 +40,11 @@ Development would be based on a generated client using OpenAPI and [swagger-code
 
     * Works from within the cluster environment.
 
-* Silver Requirements [![Client Capabilities](https://img.shields.io/badge/Kubernetes%20client-Silver-blue.svg?style=plastic&colorB=C0C0C0&colorA=306CE8)](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/csi-new-client-library-procedure.md#client-capabilities)
+* Silver Requirements [![Client Capabilities](https://img.shields.io/badge/Kubernetes%20client-Silver-blue.svg?style=plastic&colorB=C0C0C0&colorA=306CE8)](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/csi-new-client-library-procedure.md#client-capabilities)
 
     * Support watch calls
 
-* Gold Requirements [![Client Capabilities](https://img.shields.io/badge/Kubernetes%20client-Gold-blue.svg?style=plastic&colorB=FFD700&colorA=306CE8)](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/csi-new-client-library-procedure.md#client-capabilities)
+* Gold Requirements [![Client Capabilities](https://img.shields.io/badge/Kubernetes%20client-Gold-blue.svg?style=plastic&colorB=FFD700&colorA=306CE8)](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/csi-new-client-library-procedure.md#client-capabilities)
 
     * Support exec, attach, port-forward calls (these are not normally supported out of the box from [swagger-codegen](https://github.com/swagger-api/swagger-codegen))
 
@@ -54,11 +54,11 @@ Development would be based on a generated client using OpenAPI and [swagger-code
 
 ### Client Support Level
 
-* Alpha [![Client Support Level](https://img.shields.io/badge/kubernetes%20client-alpha-green.svg?style=plastic&colorA=306CE8)](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/csi-new-client-library-procedure.md#client-support-level)
+* Alpha [![Client Support Level](https://img.shields.io/badge/kubernetes%20client-alpha-green.svg?style=plastic&colorA=306CE8)](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/csi-new-client-library-procedure.md#client-support-level)
 
     * Clients don’t even have to meet bronze requirements
 
-* Beta [![Client Support Level](https://img.shields.io/badge/kubernetes%20client-beta-green.svg?style=plastic&colorA=306CE8)](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/csi-new-client-library-procedure.md#client-support-level)
+* Beta [![Client Support Level](https://img.shields.io/badge/kubernetes%20client-beta-green.svg?style=plastic&colorA=306CE8)](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/csi-new-client-library-procedure.md#client-support-level)
 
     * Client at least meets bronze standards
 
@@ -68,7 +68,7 @@ Development would be based on a generated client using OpenAPI and [swagger-code
 
     * 2+ individual maintainers/owners of the repository
 
-* Stable [![Client Support Level](https://img.shields.io/badge/kubernetes%20client-stable-green.svg?style=plastic&colorA=306CE8)](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/csi-new-client-library-procedure.md#client-support-level)
+* Stable [![Client Support Level](https://img.shields.io/badge/kubernetes%20client-stable-green.svg?style=plastic&colorA=306CE8)](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/csi-new-client-library-procedure.md#client-support-level)
 
     * Support level documented per-platform
 
