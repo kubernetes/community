@@ -49,7 +49,7 @@ Name | Organization/Company | GitHub
 [Caleb Miles](calebamiles_bio.md) | CoreOS |	[@calebamiles](https://github.com/calebamiles)
 [Derek Carr](derekcarr_bio.md) |	Red Hat |	[@derekwaynecarr](https://github.com/derekwaynecarr)
 [Doug Davis](dougdavis_bio.md) |	IBM	| [@duglin](https://github.com/duglin)
-Ihor Dvoretskyi |	*TBA* |	[@idvoretskyi](https://github.com/idvoretskyi)
+Ihor Dvoretskyi |	CNCF |	[@idvoretskyi](https://github.com/idvoretskyi)
 [Ilya Dmitrichenko](errordeveloper_bio.md) |	Weave |	[@errordeveloper](https://github.com/errordeveloper)
 [Jaice Singer DuMars](jaicesingerdumars_bio.md) |	Microsoft	| [@jdumars](https://github.com/jdumars)
 [Justin Santa Barbara](vote_for_justinsb.md)	|	Independent | [@justinsb](https://github.com/justinsb)
