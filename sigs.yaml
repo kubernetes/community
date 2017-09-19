@@ -449,7 +449,7 @@ sigs:
     leads:
     - name: Ihor Dvoretskyi
       github: idvoretskyi
-      company: Mirantis
+      company: CNCF
     - name: Steve Gordon
       github: xsgordon
       company: Red Hat
@@ -491,7 +491,7 @@ sigs:
       company: Google
     - name: Ihor Dvoretskyi
       github: idvoretskyi
-      company: Mirantis
+      company: CNCF
     - name: Caleb Miles
       github: calebamiles
       company: CoreOS
