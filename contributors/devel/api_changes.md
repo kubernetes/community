@@ -310,7 +310,7 @@ unacceptable. Compatibility for experimental or alpha APIs is not strictly
 required, but breaking compatibility should not be done lightly, as it disrupts
 all users of the feature. Experimental APIs may be removed. Alpha and beta API
 versions may be deprecated and eventually removed wholesale, as described in the
-[versioning document](../design-proposals/versioning.md).
+[versioning document](../design-proposals/release/versioning.md).
 
 If your change is going to be backward incompatible or might be a breaking
 change for API consumers, please send an announcement to
