@@ -20,7 +20,7 @@ Elections will be held using time-limited [Condorcet](https://en.wikipedia.org/w
 
 You will be ranking your choices 1-20 with an option for no opinion. In the event of a tie, a coin will be flipped. 
 
-The election will open for voting on September 19, 2017 at 09:00am PDT and end two weeks after on October 3, 2017 at 06:00pm PDT. You will receive an email to the address on file at the start of the election from <civs@cs.cornell.edu>; please whitelist if necessary. Detailed voting instructions will be addressed in email and the CIVS polling page. 
+The election will open for voting on September 19, 2017 at 09:00am PDT and end two weeks after on October 3, 2017 at 06:00pm PDT. You will receive an email to the address on file at the start of the election from Jorge Castro (jorge@heptio), Community Manager, please whitelist if necessary. Detailed voting instructions will be addressed in email and the CIVS polling page. 
 
 ## ELIGIBILITY 
 Members of Standing are defined by the union of:
@@ -49,7 +49,7 @@ Name | Organization/Company | GitHub
 [Caleb Miles](calebamiles_bio.md) | CoreOS |	[@calebamiles](https://github.com/calebamiles)
 [Derek Carr](derekcarr_bio.md) |	Red Hat |	[@derekwaynecarr](https://github.com/derekwaynecarr)
 [Doug Davis](dougdavis_bio.md) |	IBM	| [@duglin](https://github.com/duglin)
-[Ihor Dvoretskyi](idvoretskyi_bio.md) |	CNCF |	[@idvoretskyi](https://github.com/idvoretskyi)
+Ihor Dvoretskyi |	CNCF |	[@idvoretskyi](https://github.com/idvoretskyi)
 [Ilya Dmitrichenko](errordeveloper_bio.md) |	Weave |	[@errordeveloper](https://github.com/errordeveloper)
 [Jaice Singer DuMars](jaicesingerdumars_bio.md) |	Microsoft	| [@jdumars](https://github.com/jdumars)
 [Justin Santa Barbara](vote_for_justinsb.md)	|	Independent | [@justinsb](https://github.com/justinsb)
