@@ -21,7 +21,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=VcdjaZAol
 
 ## Leads
 * Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google
-* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), Mirantis
+* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
 * Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), CoreOS
 
 ## Contact
