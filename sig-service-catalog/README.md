@@ -16,9 +16,6 @@ To develop a Kubernetes API for the CNCF service broker and Kubernetes broker im
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs).
 
-Previous agenda notes are also available:
-[2016-08-29 through 2017-09-17](http://goo.gl/A0m24V)
-
 ## Leads
 * Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
 * Aaron Schlesinger (**[@arschles](https://github.com/arschles)**), Microsoft
