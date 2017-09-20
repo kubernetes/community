@@ -17,7 +17,7 @@ Beginning in v1.8, Flexvolume supports the ability to detect drivers on the fly.
 For more information, please refer to the [design document](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/flexvolume-deployment.md).
 
 ## Automated Plugin Installation/Upgrade
-One possible way to install and upgrade your Flexvolume drivers is by using a DaemonSet. See [Recommended Driver Deployment Method](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/flexvolume-deployment.md#recommended-driver-deployment-method) for details.
+One possible way to install and upgrade your Flexvolume drivers is by using a DaemonSet. See [Recommended Driver Deployment Method](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/flexvolume-deployment.md#recommended-driver-deployment-method) for details.
 
 ## Plugin details
 The plugin expects the following call-outs are implemented for the backend drivers. Some call-outs are optional. Call-outs are invoked from the Kubelet & the Controller manager nodes.
