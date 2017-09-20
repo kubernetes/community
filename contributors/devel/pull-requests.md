@@ -3,7 +3,6 @@
 This doc explains the process and best practices for submitting a PR to the [Kubernetes project](https://github.com/kubernetes/kubernetes). It should serve as a reference for all contributors, and be useful especially to new and infrequent submitters.
 
 <!-- BEGIN MUNGE: GENERATED_TOC -->
-- [Pull Request Process](#pull-request-process)
 - [Before You Submit a PR](#before-you-submit-a-pr)
   * [Run Local Verifications](#run-local-verifications)
   * [Sign the CLA](#sign-the-cla)
@@ -18,15 +17,15 @@ This doc explains the process and best practices for submitting a PR to the [Kub
 - [Why is my PR not getting reviewed?](#why-is-my-pr-not-getting-reviewed)
 - [Best Practices for Faster Reviews](#best-practices-for-faster-reviews)
   * [0. Familiarize yourself with project conventions](#0-familiarize-yourself-with-project-conventions)
-  * [1. Is the feature wanted? Make a Design Doc or Sketch PR](#1-is-the-feature-wanted--make-a-design-doc-or-sketch-pr)
-  * [2. Smaller Is Better: Small Commits, Small PRs](#2-smaller-is-better--small-commits--small-prs)
+  * [1. Is the feature wanted? Make a Design Doc or Sketch PR](#1-is-the-feature-wanted-make-a-design-doc-or-sketch-pr)
+  * [2. Smaller Is Better: Small Commits, Small PRs](#2-smaller-is-better-small-commits-small-prs)
   * [3. Open a Different PR for Fixes and Generic Features](#3-open-a-different-pr-for-fixes-and-generic-features)
   * [4. Comments Matter](#4-comments-matter)
   * [5. Test](#5-test)
   * [6. Squashing and Commit Titles](#6-squashing-and-commit-titles)
-  * [7. KISS, YAGNI, MVP, etc.](#7-kiss--yagni--mvp--etc)
-  * [8. It's OK to Push Back](#8-it-s-ok-to-push-back)
-  * [Common Sense and Courtesy](#common-sense-and-courtesy)
+  * [7. KISS, YAGNI, MVP, etc.](#7-kiss-yagni-mvp-etc)
+  * [8. It's OK to Push Back](#8-its-ok-to-push-back)
+  * [9. Common Sense and Courtesy](#9-common-sense-and-courtesy)
 <!-- END MUNGE: GENERATED_TOC -->
 
 # Before You Submit a PR
@@ -318,7 +317,7 @@ You might be overruled, but you might also prevail. We're pretty reasonable peop
 
 Another phenomenon of open-source projects (where anyone can comment on any issue) is the dog-pile - your PR gets so many comments from so many people it becomes hard to follow. In this situation, you can ask the primary reviewer (assignee) whether they want you to fork a new PR to clear out all the comments. You don't HAVE to fix every issue raised by every person who feels like commenting, but you should answer reasonable comments with an explanation.
 
-## Common Sense and Courtesy
+## 9. Common Sense and Courtesy
 
 No document can take the place of common sense and good taste. Use your best judgment, while you put
 a bit of thought into how your work can be made easier to review. If you do these things your PRs will get merged with less friction.
