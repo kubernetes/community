@@ -45,8 +45,8 @@ ConfigMap that contains the CoreDNS configuration file.
 
 ### Configuring CoreDNS
 
-The CoreDNS configuration file is called a `Corefile` and syntactically is the same as a [Caddyfile]
-(https://caddyserver.com/docs/caddyfile). The file consists of multiple stanzas called _server blocks_.
+The CoreDNS configuration file is called a `Corefile` and syntactically is the same as a
+[Caddyfile](https://caddyserver.com/docs/caddyfile). The file consists of multiple stanzas called _server blocks_.
 Each of these represents a set of zones for which that server block should respond, along with the list
 of plugins to apply to a given request. More details on this can be found in the 
 [Corefile Explained](https://coredns.io/2017/07/23/corefile-explained/) and
@@ -80,8 +80,8 @@ of the lines within `{ }` represent individual plugins:
   * `cache 30` enables [caching](https://coredns.io/plugins/cache/) of positive and negative responses for 30 seconds
   * `health` opens an HTTP port to allow [health checks](https://coredns.io/plugins/health) from Kubernetes
   * `prometheus` enables Prometheus [metrics](https://coredns.io/plugins/metrics)
-  * `kubernetes 10.0.0.0/8 cluster.local` connects to the Kubernetes API and serves records for the `cluster.local` domain and reverse DNS for 10.0.0.0/8.
-  * `proxy . /etc/resolv.conf` forwards any queries not handled by other plugins (the `.` means the root domain) to the nameservers configured in `/etc/resolv.conf`
+  * `kubernetes 10.0.0.0/8 cluster.local` connects to the Kubernetes API and [serves records](https://coredns.io/plugins/kubernetes/) for the `cluster.local` domain and reverse DNS for 10.0.0.0/8 per the [spec](https://github.com/kubernetes/dns/blob/master/docs/specification.md)
+  * `proxy . /etc/resolv.conf` [forwards](https://coredns.io/plugins/proxy) any queries not handled by other plugins (the `.` means the root domain) to the nameservers configured in `/etc/resolv.conf`
 
 ### Configuring Stub Domains
 
@@ -102,6 +102,57 @@ example.com {
   proxy . /etc/resolv.conf
 }
 ```
+
+### Configuring Federation
+
+Federation is implemented as a separate plugin. You simply list the federation names and
+their corresponding domains.
+
+```
+. {
+  errors
+  log
+  cache 30
+  health
+  prometheus
+  kubernetes 10.0.0.0/8 cluster.local
+  federation cluster.local {
+    east east.example.com
+    west west.example.com
+  }
+  proxy . /etc/resolv.conf
+}
+```
+
+### Deployment and Operations
+
+Typically when deployed for cluster DNS, CoreDNS is managed by a Deployment. The
+CoreDNS pod only contains a single container, as opposed to kube-dns which requires three
+containers. This simplifies troubleshooting.
+
+The Kubernetes integration is stateless and so multiple pods may be run. Each pod will have its
+own connection to the API server. If you (like OpenShift) run a DNS pod for each node, you should not enable
+`pods verified` as that could put a high load on the API server. Instead, if you wish to support
+that functionality, you can run another central deployment and configure the per-node
+instances to proxy `pod.cluster.local` to the central deployment.
+
+All logging is to standard out, and may be disabled if
+desired. In very high queries-per-second environments, it is advisable to disable query logging to
+avoid I/O for every query.
+
+CoreDNS can be configured to provide an HTTP health check endpoint, so that it can be monitored
+by a standard Kubernetes HTTP health check. Readiness checks are not currently supported but
+are in the works (see [#588](https://github.com/coredns/coredns/issues/588)). For Kubernetes, a
+CoreDNS instance will be considered ready when it has finished syncing with the API.
+
+CoreDNS performance metrics can be published for Prometheus.
+
+When a change is made to the Corefile, you can send each CoreDNS instance a SIGUSR1, which will
+trigger a graceful reload of the Corefile.
+
+### Performance and Resource Load
+
+Evaluation of performance and resource load (memory, CPU) is still underway. Initial results show memory consumption is generally less than 40MB without `pods verified`.
 
 ## Implementation
 
