@@ -38,9 +38,70 @@ intent to make it the default in the future.
  * Limit PTR replies to the cluster CIDR [#125](https://github.com/kubernetes/dns/issues/125)
  * Serve DNS for selected namespaces [#132](https://github.com/kubernetes/dns/issues/132)
  * Serve DNS based on a label selector
+ * Support for wildcard queries (e.g., `*.namespace.svc.cluster.local` returns all services in `namespace`)
 
 By default, the user experience would be unchanged. For more advanced uses, existing users would need to modify the
 ConfigMap that contains the CoreDNS configuration file.
+
+### Configuring CoreDNS
+
+The CoreDNS configuration file is called a `Corefile` and syntactically is the same as a [Caddyfile]
+(https://caddyserver.com/docs/caddyfile). The file consists of multiple stanzas called _server blocks_.
+Each of these represents a set of zones for which that server block should respond, along with the list
+of plugins to apply to a given request. More details on this can be found in the 
+[Corefile Explained](https://coredns.io/2017/07/23/corefile-explained/) and
+[How Queries Are Processed](https://coredns.io/2017/06/08/how-queries-are-processed-in-coredns/) blog
+entries.
+
+### Configuration for Standard Kubernetes DNS
+
+The intent is to make configuration as simple as possible. The following Corefile will behave according
+to the spec, except that it will not respond to Pod queries. It assumes the cluster domain is `cluster.local`
+and the cluster CIDRs are all within 10.0.0.0/8.
+
+```
+. {
+  errors
+  log
+  cache 30
+  health
+  prometheus
+  kubernetes 10.0.0.0/8 cluster.local
+  proxy . /etc/resolv.conf
+}
+
+```
+
+The `.` means that queries for the root zone (`.`) and below should be handled by this server block. Each
+of the lines within `{ }` represent individual plugins:
+
+  * `errors` enables [error logging](https://coredns.io/plugins/errors)
+  * `log` enables [query logging](https://coredns.io/plugins/log/)
+  * `cache 30` enables [caching](https://coredns.io/plugins/cache/) of positive and negative responses for 30 seconds
+  * `health` opens an HTTP port to allow [health checks](https://coredns.io/plugins/health) from Kubernetes
+  * `prometheus` enables Prometheus [metrics](https://coredns.io/plugins/metrics)
+  * `kubernetes 10.0.0.0/8 cluster.local` connects to the Kubernetes API and serves records for the `cluster.local` domain and reverse DNS for 10.0.0.0/8.
+  * `proxy . /etc/resolv.conf` forwards any queries not handled by other plugins (the `.` means the root domain) to the nameservers configured in `/etc/resolv.conf`
+
+### Configuring Stub Domains
+
+To configure stub domains, you add additional server blocks for those domains:
+
+```
+example.com {
+  proxy example.com 8.8.8.8:53
+}
+
+. {
+  errors
+  log
+  cache 30
+  health
+  prometheus
+  kubernetes 10.0.0.0/8 cluster.local
+  proxy . /etc/resolv.conf
+}
+```
 
 ## Implementation
 
