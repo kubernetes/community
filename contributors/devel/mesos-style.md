@@ -61,7 +61,7 @@ machine manages the collection during their lifetimes
 
 Out-of-the-box Kubernetes has *workload-specific* abstractions (ReplicaSet, Job,
 DaemonSet, etc.) and corresponding controllers, and in the future may have
-[workload-specific schedulers](../design-proposals/multiple-schedulers.md),
+[workload-specific schedulers](../design-proposals/scheduling/multiple-schedulers.md),
 e.g. different schedulers for long-running services vs. short-running batch. But
 these abstractions, controllers, and schedulers are not *application-specific*.
 
