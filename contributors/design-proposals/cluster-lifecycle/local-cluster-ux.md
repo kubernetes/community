@@ -81,10 +81,10 @@ The final name of this tool is TBD. Suggestions are welcome!
 
 Minikube will provide a unified CLI to interact with the local cluster.
 The CLI will support only a few operations:
-    - **Start** - creates & starts a local cluster along with setting up kubectl & networking (if necessary)
-    - **Stop** - suspends the local cluster & preserves cluster state
-    - **Delete** - deletes the local cluster completely
-    - **Upgrade** - upgrades internal components to the latest available version (upgrades are not guaranteed to preserve cluster state)
+- **Start** - creates & starts a local cluster along with setting up kubectl & networking (if necessary)
+- **Stop** - suspends the local cluster & preserves cluster state
+- **Delete** - deletes the local cluster completely
+- **Upgrade** - upgrades internal components to the latest available version (upgrades are not guaranteed to preserve cluster state)
 
 For running and managing the kubernetes components themselves,  we can re-use [Spread's localkube](https://github.com/redspread/localkube).
 Localkube is a self-contained go binary that includes all the master components including DNS and runs them using multiple go threads.
