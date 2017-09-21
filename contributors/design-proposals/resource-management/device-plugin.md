@@ -486,10 +486,10 @@ Currently we require exact version match between Kubelet and Device Plugin.
 API version is expected to be increased only upon incompatible API changes.
 
 Follow protobuf guidelines on versionning:
-    * Do not change ordering
-    * Do not remove fields or change types
-    * Add optional fields
-    * Introducing new fields with proper default values
+  * Do not change ordering
+  * Do not remove fields or change types
+  * Add optional fields
+  * Introducing new fields with proper default values
   * Freeze the package name to `apis/device-plugin/v1alpha1`
   * Have kubelet and the Device Plugin negotiate versions if we do break the API
 
