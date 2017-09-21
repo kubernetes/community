@@ -180,5 +180,5 @@ Future work could further limit a kubelet's API access:
 Features that expand or modify the APIs or objects accessed by the kubelet will need to involve the node authorizer.
 Known features in the design or development stages that might modify kubelet API access are:
 * [Dynamic kubelet configuration](https://github.com/kubernetes/features/issues/281)
-* [Local storage management](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/local-storage-overview.md)
+* [Local storage management](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/local-storage-overview.md)
 * [Bulk watch of secrets/configmaps](https://github.com/kubernetes/community/pull/443)

@@ -5,7 +5,7 @@ Resource Metrics API is an effort to provide a first-class Kubernetes API
 (stable, versioned, discoverable, available through apiserver and with client support)
 that serves resource usage metrics for pods and nodes. The use cases were discussed
 and the API was proposed a while ago in
-[another proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md).
+[another proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/resource-metrics-api.md).
 This document describes the architecture and the design of the second part of this effort:
 making the mentioned API available in the same way as the other Kubernetes APIs.
 

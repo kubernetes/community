@@ -140,7 +140,7 @@ complete user information, including user, groups, and "extra" for backing API s
 
 Each API server is responsible for storing their resources. They can have their
 own etcd or can use kubernetes server's etcd using [third party
-resources](../design-proposals/extending-api.md#adding-custom-resources-to-the-kubernetes-api-server).
+resources](../design-proposals/api-machinery/extending-api.md#adding-custom-resources-to-the-kubernetes-api-server).
 
 ### Health check
 
