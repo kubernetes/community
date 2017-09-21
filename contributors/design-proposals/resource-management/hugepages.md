@@ -34,7 +34,7 @@ page size.
 A huge page is a memory page that is larger than 4Ki.  On x86_64 architectures,
 there are two common huge page sizes: 2Mi and 1Gi.  Sizes vary on other
 architectures, but the idea is the same.  In order to use huge pages,
-application must write code that is aware of them.  Transparent huge pages (THP)
+application must write code that is aware of them.  Transparent Huge Pages (THP)
 attempts to automate the management of huge pages without application knowledge,
 but they have limitations.  In particular, they are limited to 2Mi page sizes.
 THP might lead to performance degradation on nodes with high memory utilization
@@ -88,14 +88,14 @@ The proposal introduces huge pages as an Alpha feature.
 It must be enabled via the `--feature-gates=HugePages=true` flag on pertinent
 components pending graduation to Beta.
 
-## Node Specfication
+## Node Specification
 
 Huge pages cannot be overcommitted on a node.
 
 A system may support multiple huge page sizes.  It is assumed that most nodes
 will be configured to primarily use the default huge page size as returned via
 `grep Hugepagesize /proc/meminfo`.  This defaults to 2Mi on most Linux systems
-unless overriden by `default_hugepagesz=1g` in kernel boot parameters.  
+unless overridden by `default_hugepagesz=1g` in kernel boot parameters.
 
 For each supported huge page size, the node will advertise a resource of the
 form `hugepages-<hugepagesize>`.  On Linux, supported huge page sizes are
