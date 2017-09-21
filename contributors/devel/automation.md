@@ -37,19 +37,9 @@ The status of the submit-queue is [online.](http://submit-queue.k8s.io/)
 
 The submit-queue lists what it believes are required on the [merge requirements tab](http://submit-queue.k8s.io/#/info) of the info page. That may be more up to date.
 
-A PR is considered "ready for merging" if it matches the following:
-  * The PR must have the label `cncf-cla: yes` or `cla: human-approved`
-  * The PR must be mergeable, aka cannot need a rebase
-  * All of the required github CI tests must be green. The current list of tests are on the [MERGE REQUIREMENTS tab, at this link](https://submit-queue.k8s.io/#/info)
-  * The PR cannot have any prohibited future milestones (such as a v1.5 milestone during v1.4 code freeze)
-  * The PR must have the `lgtm` label. The `lgtm` label is automatically applied
-    following a review comment consisting of `/lgtm` (case-insensitive) in a single line
-  * The PR must not have been updated since the `lgtm` label was applied
-  * The PR must have the `approved` label. The `approved` label is automatically
-    applied after all approvers have approved the PR by a comment consisting of
-    `/approve` (case-insensitive) in a single line
-  * The PR must not have the `do-not-merge` label or any of other `do-not-merge/*`
-    labels, e.g., `do-not-merge/release-note-label-needed`
+A PR is considered "ready for merging" by the submit queue if it matches the set
+of conditions listed in the merge requirements tab mentioned above.
+Please visit that page for more details.
 
 ### Merge process
 
