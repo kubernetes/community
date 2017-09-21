@@ -85,7 +85,7 @@ annotation. If a profile is specified, the Kubelet will verify that the node mee
 the container, and will not run the container if the profile cannot be applied. If the requirements
 are met, the container runtime will configure the appropriate options to apply the profile. Profile
 requirements and defaults can be specified on the
-[PodSecurityPolicy](security-context-constraints.md).
+[PodSecurityPolicy](pod-security-policy.md).
 
 ## Prerequisites
 
@@ -136,7 +136,7 @@ The profiles can be specified in the following formats (following the convention
 
 ### Pod Security Policy
 
-The [PodSecurityPolicy](security-context-constraints.md) allows cluster administrators to control
+The [PodSecurityPolicy](pod-security-policy.md) allows cluster administrators to control
 the security context for a pod and its containers. An annotation can be specified on the
 PodSecurityPolicy to restrict which AppArmor profiles can be used, and specify a default if no
 profile is specified.
