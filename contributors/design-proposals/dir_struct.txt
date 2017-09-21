@@ -125,6 +125,7 @@ Uncategorized
 	access.md
 	apparmor.md
 	enhance-pluggable-policy.md
+	flex-volumes-drivers-psp.md
 	image-provenance.md
 	no-new-privs.md
 	pod-security-context.md
@@ -219,7 +220,6 @@ Uncategorized
 	containerized-mounter.md
 	containerized-mounter.md~
 	default-storage-class.md
-	flex-volumes-drivers-psp.md
 	flexvolume-deployment.md
 	grow-volume-size.md
 	local-storage-overview.md
