@@ -129,8 +129,8 @@ Uncategorized
 	image-provenance.md
 	no-new-privs.md
 	pod-security-context.md
+	pod-security-policy.md
 	secrets.md
-	security-context-constraints.md
 	security.md
 	security_context.md
 	service_accounts.md

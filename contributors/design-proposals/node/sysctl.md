@@ -561,7 +561,7 @@ During kubelet launch the given value is checked against the list of known names
 
 #### Alternative 1: by name
 
-A list of permissible sysctls is to be added to `pkg/apis/extensions/types.go` (compare [security-context-constraints](security-context-constraints.md)):
+A list of permissible sysctls is to be added to `pkg/apis/extensions/types.go` (compare [pod-security-policy](pod-security-policy.md)):
 
 ```go
 // PodSecurityPolicySpec defines the policy enforced.
