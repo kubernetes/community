@@ -14,7 +14,7 @@ The vendor and driver names must match flexVolume.driver in the volume spec, wit
 
 ## Dynamic Plugin Discovery
 Beginning in v1.8, Flexvolume supports the ability to detect drivers on the fly. Instead of requiring drivers to exist at system initialization time or having to restart kubelet or controller manager, drivers can be installed, upgraded/downgraded, and uninstalled while the system is running.
-For more information, please refer to the [design document](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/flexvolume-deployment.md).
+For more information, please refer to the [design document](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/flexvolume-deployment.md).
 
 ## Automated Plugin Installation/Upgrade
 One possible way to install and upgrade your Flexvolume drivers is by using a DaemonSet. See [Recommended Driver Deployment Method](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/flexvolume-deployment.md#recommended-driver-deployment-method) for details.

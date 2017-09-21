@@ -418,7 +418,7 @@ func (p *dynamicPolicy) RemoveContainer(s State, containerID string) error {
 [cpuset-files]: http://man7.org/linux/man-pages/man7/cpuset.7.html#FILES
 [ht]: http://www.intel.com/content/www/us/en/architecture-and-technology/hyper-threading/hyper-threading-technology.html
 [hwloc]: https://www.open-mpi.org/projects/hwloc
-[node-allocatable]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node-allocatable.md#phase-2---enforce-allocatable-on-pods
+[node-allocatable]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/node-allocatable.md#phase-2---enforce-allocatable-on-pods
 [procfs]: http://man7.org/linux/man-pages/man5/proc.5.html
-[qos]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-qos.md
+[qos]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md
 [topo]: http://github.com/intelsdi-x/swan/tree/master/pkg/isolation/topo
