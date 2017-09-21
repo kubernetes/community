@@ -343,9 +343,3 @@ for a specific UID and fail early if possible.  However, if the `RunAsUser` is n
 it should still admit the pod and allow the Kubelet to ensure that the image does not run as
 `root` with the existing non-root checks.
 
-
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/security-context-constraints.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

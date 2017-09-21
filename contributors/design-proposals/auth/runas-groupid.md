@@ -230,6 +230,3 @@ At a high level, the changes classify into:
 - api/swagger-spec/
 - api/openapi-spec/swagger.json
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![AnalytIcs](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/security-context-constraints.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->  
