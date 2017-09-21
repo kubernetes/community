@@ -124,6 +124,23 @@ their corresponding domains.
 }
 ```
 
+### Reverse DNS
+
+Reverse DNS is supported for Services and Endpoints. It is not for Pods.
+
+You have to configure the reverse zone to make it work. That means knowing the service CIDR and configuring that
+ahead of time (until [#25533](https://github.com/kubernetes/kubernetes/issues/25533) is implemented).
+
+Since reverse DNS zones are on classful boundaries, if you have a classless CIDR for your service CIDR
+(say, a /12), then you have to widen that to the containing classful network. That leaves a subset of that network
+open to the spoofing described in [#125](https://github.com/kubernetes/dns/issues/125); this is to be fixed
+in [#1074](https://github.com/coredns/coredns/issues/1074).
+
+PTR spoofing by manual endpoints
+([#124](https://github.com/kubernetes/dns/issues/124)) would
+still be an issue even with [#1074](https://github.com/coredns/coredns/issues/1074) solved (as it is in kube-dns). This could be resolved in the case
+where `pods verified` is enabled but that is not done at this time.
+
 ### Deployment and Operations
 
 Typically when deployed for cluster DNS, CoreDNS is managed by a Deployment. The
