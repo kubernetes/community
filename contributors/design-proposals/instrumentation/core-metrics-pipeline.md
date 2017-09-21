@@ -84,7 +84,7 @@ Metrics requirements for "First Class Resource Isolation and Utilization Feature
  - Kubelet
    - Node-level usage metrics for Filesystems, CPU, and Memory  
    - Pod-level usage metrics for Filesystems and Memory  
- - Metrics Server (outlined in [Monitoring Architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/monitoring_architecture.md)), which exposes the [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md) to the following system components:
+ - Metrics Server (outlined in [Monitoring Architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/monitoring_architecture.md)), which exposes the [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/resource-metrics-api.md) to the following system components:
    - Scheduler  
      - Node-level usage metrics for Filesystems, CPU, and Memory  
      - Pod-level usage metrics for Filesystems, CPU, and Memory  

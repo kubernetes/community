@@ -42,7 +42,7 @@ _Author: @bsalamat_
 
 # Background
 
-Running various types of workloads with different priorities is a common practice in medium and large clusters to achieve higher resource utilization. In such scenarios, the amount of workload can be larger than what the total resources of the cluster can handle. If so, the cluster chooses the most important workloads and runs them. The importance of workloads are specified by a combination of [priority](https://github.com/bsalamat/community/blob/564ebff843532faf5dcb06a7e50b0db5c5b501cf/contributors/design-proposals/pod-priority-api.md), QoS, or other cluster-specific metrics. The potential to have more work than what cluster resources can handle is called "overcommitment". Overcommitment is very common in on-prem clusters where the number of nodes is fixed, but it can similarly happen in cloud as cloud customers may choose to run their clusters overcommitted/overloaded at times in order to save money. For example, a cloud customer may choose to run at most 100 nodes, knowing that all of their critical workloads fit on 100 nodes and if there is more work, they won't be critical and can wait until cluster load decreases.
+Running various types of workloads with different priorities is a common practice in medium and large clusters to achieve higher resource utilization. In such scenarios, the amount of workload can be larger than what the total resources of the cluster can handle. If so, the cluster chooses the most important workloads and runs them. The importance of workloads are specified by a combination of [priority](https://github.com/bsalamat/community/blob/564ebff843532faf5dcb06a7e50b0db5c5b501cf/contributors/design-proposals/scheduling/pod-priority-api.md), QoS, or other cluster-specific metrics. The potential to have more work than what cluster resources can handle is called "overcommitment". Overcommitment is very common in on-prem clusters where the number of nodes is fixed, but it can similarly happen in cloud as cloud customers may choose to run their clusters overcommitted/overloaded at times in order to save money. For example, a cloud customer may choose to run at most 100 nodes, knowing that all of their critical workloads fit on 100 nodes and if there is more work, they won't be critical and can wait until cluster load decreases.
 
 ## Terminology
 
@@ -71,11 +71,11 @@ The race condition will still exist if we have multiple schedulers. More on this
 
 ## Preemption order
 
-When scheduling a pending pod, scheduler tries to place the pod on a node that does not require preemption. If there is no such a node, scheduler may favor a node where the number and/or priority of victims (preempted pods) is smallest. After choosing the node, scheduler considers the lowest [priority](https://github.com/bsalamat/community/blob/564ebff843532faf5dcb06a7e50b0db5c5b501cf/contributors/design-proposals/pod-priority-api.md) pods for preemption first. Scheduler starts from the lowest priority and considers enough pods that should be preempted to allow the pending pod to schedule. Scheduler only considers pods that have lower priority than the pending pod.
+When scheduling a pending pod, scheduler tries to place the pod on a node that does not require preemption. If there is no such a node, scheduler may favor a node where the number and/or priority of victims (preempted pods) is smallest. After choosing the node, scheduler considers the lowest [priority](https://github.com/bsalamat/community/blob/564ebff843532faf5dcb06a7e50b0db5c5b501cf/contributors/design-proposals/scheduling/pod-priority-api.md) pods for preemption first. Scheduler starts from the lowest priority and considers enough pods that should be preempted to allow the pending pod to schedule. Scheduler only considers pods that have lower priority than the pending pod.
 
 #### Important notes
 
--  When ordering the pods from lowest to highest priority for considering which pod(s) to preempt, among pods with equal priority the pods are ordered by their [QoS class](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-qos.md#qos-classes): Best Effort, Burstable, Guaranteed.
+-  When ordering the pods from lowest to highest priority for considering which pod(s) to preempt, among pods with equal priority the pods are ordered by their [QoS class](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md#qos-classes): Best Effort, Burstable, Guaranteed.
 -  Scheduler respects pods' disruption budget when considering them for preemption.
 -  Scheduler will try to minimize the number of preempted pods. As a result, it may preempt a pod while leaving lower priority pods running if preemption of those lower priority pods is not enough to schedule the pending pod while preemption of the higher priority pod(s) is enough to schedule the pending pod. For example, if node capacity is 10, and pending pod is priority 10 and requires 5 units of resource, and the running pods are {priority 0 request 3, priority 1 request 1, priority 2 request 5, priority 3 request 1}, scheduler will preempt the priority 2 pod only and leaves priority 1 and priority 0 running.
 -  Scheduler does not have the knowledge of resource usage of pods. It makes scheduling decisions based on the requested resources ("requests") of the pods and when it considers a pod for preemption, it assumes the "requests" to be freed on the node.
@@ -183,6 +183,6 @@ To solve the problem, the user might try running his web server as Guaranteed, b
 
 # References
 
--  [Controlled Rescheduling in Kubernetes](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/rescheduling.md)
+-  [Controlled Rescheduling in Kubernetes](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/rescheduling.md)
 -  [Resource sharing architecture for batch and serving workloads in Kubernetes](https://docs.google.com/document/d/1-H2hnZap7gQivcSU-9j4ZrJ8wE_WwcfOkTeAGjzUyLA)
 -  [Design proposal for adding priority to Kubernetes API](https://github.com/kubernetes/community/pull/604/files)

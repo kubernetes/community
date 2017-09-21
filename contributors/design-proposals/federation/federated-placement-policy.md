@@ -28,7 +28,7 @@ A simple example of a placement policy is
 > compliance.
 
 The [Kubernetes Cluster
-Federation](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/federation.md#policy-engine-and-migrationreplication-controllers)
+Federation](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/federation/federation.md#policy-engine-and-migrationreplication-controllers)
 design proposal includes a pluggable policy engine component that decides how
 applications/resources are placed across federated clusters.
 
@@ -283,7 +283,7 @@ When the remediator component (in the sidecar) receives the notification it
 sends a PATCH request to the federation-apiserver to update the affected
 resource. This way, the actual rebalancing of ReplicaSets is still handled by
 the [Rescheduling
-Algorithm](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/federated-replicasets.md)
+Algorithm](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/federation/federated-replicasets.md)
 in the Federated ReplicaSet controller.
 
 The remediator component must be deployed with a kubeconfig for the
