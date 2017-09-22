@@ -39,4 +39,11 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=hn23Z-vL_
 * Do not endorse one particular tool
 * Do not pick which apps to run on top of the platform
 * Do not recommend one way to do things
+
+## [Helm](https://helm.sh) and [Charts](https://github.com/kubernetes/charts)
+Helm and Charts each have their own regular meetings.
+
+* The Helm Developer call is [Thursday at 16:15 UTC](https://zoom.us/j/4526666954). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:15&tz=UTC). Meeting notes and agenda can be found [here](https://docs.google.com/document/d/1elWRfvH3AkHdr8pOaqyPbqSZ6ONR-l1Sb9_gapqh8ZA/edit).
+* Charts Chat is [Thursday at 18:00 UTC](https://zoom.us/j/166909412). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:15&tz=UTC). Meeting notes and agenda can be found [here](https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3).
+
 <!-- END CUSTOM CONTENT -->
