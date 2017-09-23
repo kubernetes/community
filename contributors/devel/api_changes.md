@@ -751,8 +751,7 @@ cases, objects will be automatically converted to the new version; in other
 cases, a manual upgrade may be necessary; a manual upgrade may require downtime
 for anything relying on the new feature, and may require manual conversion of
 objects to the new version; when manual conversion is necessary, the project
-will provide documentation on the process (for an example, see [v1 conversion
-tips](../api.md#v1-conversion-tips))
+will provide documentation on the process 
   - Cluster Reliability: since the feature has e2e tests, enabling the feature
 via a flag should not create new bugs in unrelated features; because the feature
 is new, it may have minor bugs
