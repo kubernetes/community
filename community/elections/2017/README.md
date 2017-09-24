@@ -53,7 +53,7 @@ Name | Organization/Company | GitHub
 [Ilya Dmitrichenko](errordeveloper_bio.md) |	Weave |	[@errordeveloper](https://github.com/errordeveloper)
 [Jaice Singer DuMars](jaicesingerdumars_bio.md) |	Microsoft	| [@jdumars](https://github.com/jdumars)
 [Justin Santa Barbara](vote_for_justinsb.md)	|	Independent | [@justinsb](https://github.com/justinsb)
-Kris Nova |	Microsoft	| [@kris-nova](https://github.com/kris-nova)
+[Kris Nova](kris-nova_bio.md) |	Microsoft	| [@kris-nova](https://github.com/kris-nova)
 [Matt Farina](mattfarina_bio.md) |	Samsung SDS	 | [@mattfarina](https://github.com/mattfarina)
 [Michael Rubin](michaelrubin_bio.md) | Google |	[@matchstick](https://github.com/matchstick)
 [Michelle Noorali](michellenoorali_bio.md) |	Microsoft |	[@michelleN](https://github.com/michelleN)
