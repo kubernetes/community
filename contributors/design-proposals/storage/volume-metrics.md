@@ -17,7 +17,7 @@ higher than individual volume plugins.
 ### Metric format and collection
 
 Volume metrics emitted will fall under category of service metrics
-as defined in [Kubernetes Monitoring Architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/monitoring_architecture.md).
+as defined in [Kubernetes Monitoring Architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/monitoring_architecture.md).
 
 
 The metrics will be emitted using [Prometheus format](https://prometheus.io/docs/instrumenting/exposition_formats/) and available for collection
@@ -27,7 +27,7 @@ from `/metrics` HTTP endpoint of kubelet and controller-manager.
 Any collector which can parse Prometheus metric format should be able to collect
 metrics from these endpoints.
 
-A more detailed description of monitoring pipeline can be found in [Monitoring architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/monitoring_architecture.md#monitoring-pipeline) document.
+A more detailed description of monitoring pipeline can be found in [Monitoring architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/monitoring_architecture.md#monitoring-pipeline) document.
 
 ### Metric Types
 

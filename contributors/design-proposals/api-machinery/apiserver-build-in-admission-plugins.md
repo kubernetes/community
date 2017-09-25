@@ -4,7 +4,7 @@
 
 | Topic | Link |
 | ----- | ---- |
-| Admission Control | https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control.md |
+| Admission Control | https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/admission_control.md |
 
 ## Introduction
 

@@ -18,7 +18,7 @@ granting the user themselves an elevated set of permissions.
 
 ## Goals
 
-1.  Associate [service accounts](../design-proposals/service_accounts.md), groups, and users with
+1.  Associate [service accounts](service_accounts.md), groups, and users with
 a set of constraints that dictate how a security context is established for a pod and the pod's containers.
 1.  Provide the ability for users and infrastructure components to run pods with elevated privileges
 on behalf of another user or within a namespace where privileges are more restrictive.
