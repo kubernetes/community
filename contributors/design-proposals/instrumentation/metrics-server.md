@@ -43,7 +43,7 @@ Previously metrics server was blocked on this dependency.
 
 ### Design ###
 Metrics server will be implemented in line with
-[Kubernetes monitoring architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/monitoring_architecture.md)
+[Kubernetes monitoring architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/monitoring_architecture.md)
 and inspired by [Heapster](https://github.com/kubernetes/heapster).
 It will be a cluster level component which periodically scrapes metrics from all Kubernetes nodes
 served by Kubelet through Summary API. Then metrics will be aggregated, 

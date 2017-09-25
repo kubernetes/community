@@ -25,7 +25,7 @@ integration point.
 *See the [core metrics design
 proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/core-metrics-pipeline.md)
 for more information on metrics exposed by Kubelet, and [monitoring
-architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/monitoring_architecture.md)
+architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/monitoring_architecture.md)
 for the evolving monitoring pipeline in Kubernetes.*
 
 # Container Metrics
