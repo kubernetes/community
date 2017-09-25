@@ -96,17 +96,26 @@ a unit of work may also allow contributors to create their own personalized
 view of the state of the project while relying on Git and GitHub for consistency
 and durable storage.
 
-Ideally release notes should [tell a story][] which
-is compelling enough to encourage users and operators to upgrade their clusters.
-Without a standardized mechanism for describing important enhancements our
-talented technical writers and product managers struggle to weave a coherent
-narrative explaining why a particular release is important. Additionally for
-critical infrastructure such as Kubernetes adopters need a forward looking road map
-in order to plan their adoption strategy.
+Ideally release notes should [tell a story][] which is compelling enough to
+encourage users and operators to upgrade their clusters. Without a standardized
+mechanism for describing important enhancements our talented technical writers
+and product managers struggle to weave a coherent narrative explaining why a
+particular release is important. Additionally for critical infrastructure such
+as Kubernetes adopters need a forward looking road map in order to plan their
+adoption strategy.
+
+A KEP is broken into sections which can be merged into source control
+incrementally in order to support an iterative development process. An important
+goal of the KEP process is ensuring that the process for submitting the content
+contained in [design proposals][] is both clear and efficient. The KEP process
+is intended to create high quality uniform design and implementation documents
+for SIGs to deliberate.
 
 [tell a story]: https://blog.rust-lang.org/2017/08/31/Rust-1.20.html 
 [road to Go 2]: https://blog.golang.org/toward-go2
 [survey data]: http://opensourcesurvey.org/2017/
+[design proposals]: https://github.com/kubernetes/community/tree/master/contributors/design-proposals
+
 
 ## Detailed design
 
@@ -131,14 +140,13 @@ used throughout the process of proposing an enhancement, scoping its design,
 tracking its implementation, and agreeing on criteria for graduation to general
 availability.
 
-As the local bodies of governance SIGs should have broad latitude in describing
-what constitutes an enhancement which should be tracked through the KEP process;
-hopefully the desire to be included in the rich narrative of a release announcement
-will encourage broad participation in the KEP process across SIGs. SIGs should
-also have the freedom to customize the KEP template according to their SIG
-specific concerns. For example the KEP template used to track API changes will
-likely have different subsections than the template for proposing governance
-changes.
+As the local bodies of governance, SIGs should have broad latitude in describing
+what constitutes an enhancement which should be tracked through the KEP process.
+SIGs may find that helpful to enumerate  what _does not_ require a KEP rather
+than what does. SIGs also have the freedom to customize the KEP template
+according to their SIG specific concerns. For example the KEP template used 
+to track API changes will likely have different subsections than the template
+for proposing governance changes.
 
 ### KEP Template
 
@@ -266,6 +274,7 @@ corrections.
 It is proposed that the primary metrics which would signal the success or
 failure of the KEP process are
 
+- how many "features" are tracked with a KEP
 - distribution of time a KEP spends in each state
 - KEP rejection rate
 - PRs referencing a KEP merged per week
