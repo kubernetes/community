@@ -30,15 +30,16 @@ To (re)build documentation for all the SIGs, run these commands:
 make all
 ```
 
-To build docs for one SIG, run these commands:
+To build docs for one SIG, run one these commands:
 
 ```bash
-make SIG=sig-apps gen-docs
-make SIG=sig-testing gen-docs
-make WG=resource-management gen-docs
+make WHAT=sig-apps
+make WHAT=cluster-lifecycle
+make WHAT=wg-resource-management
+make WHAT=container-identity
 ```
 
-where the `SIG` or `WG` var refers to the directory being built.
+where the `WHAT` var refers to the directory being built.
 
 ## Adding custom content to your README
 
