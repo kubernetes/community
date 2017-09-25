@@ -33,12 +33,15 @@ make all
 To build docs for one SIG, run these commands:
 
 ```bash
-make SIG=sig-apps gen-docs
-make SIG=sig-testing gen-docs
-make WG=resource-management gen-docs
+make SIG=sig-apps WG=
+make SIG=sig-testing WG=
+make WG=resource-management SIG=
 ```
 
 where the `SIG` or `WG` var refers to the directory being built.
+
+Note, if `SIG` and `WG` are both not present the generator will attempt to
+generate all of the directories in the missing group.
 
 ## Adding custom content to your README
 
