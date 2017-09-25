@@ -1,4 +1,4 @@
-# Proposal to Standardize Development Process
+# Kubernetes Enhancement Proposal (KEP) Process
 
 ## Metadata
 ```
@@ -28,16 +28,8 @@ metadata:
     documentation:
     - [someDocsLinkURL]()
     related:
-    - [someRelatedKEPURL]()
+    - [KEP template](https://github.com/kubernetes/community/pull/1124)
 ```
-
-## Responsible SIG(s)
-
-- SIG Release
-- SIG PM
-- SIG Architecture
-- SIG Testing
-- Steering Committee
 
 ## Summary
 
@@ -150,7 +142,9 @@ changes.
 
 ### KEP Template
 
-The template for a KEP will be submitted in a separate proposal
+The template for a KEP is precisely defined in the [template proposal][]
+
+[template proposal]: https://github.com/kubernetes/community/pull/1124
 
 ### KEP Workflow
 
