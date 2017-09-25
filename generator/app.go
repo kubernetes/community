@@ -200,14 +200,14 @@ func writeCustomContentBlock(f *os.File, content string) {
 func createGroupReadme(groups []Group, prefix string) error {
 	// figure out if the user wants to generate one group
 	var selectedGroupName *string
-	if envVal, ok := os.LookupEnv(strings.ToUpper(prefix)); ok {
+	if envVal, ok := os.LookupEnv("WHAT"); ok {
 		selectedGroupName = &envVal
 	}
 
 	for _, group := range groups {
 		group.Dir = group.DirName(prefix)
 		// skip generation if the user specified only one group
-		if selectedGroupName != nil && *selectedGroupName != group.Dir {
+		if selectedGroupName != nil && strings.HasSuffix(group.Dir, *selectedGroupName) == false {
 			fmt.Printf("Skipping %s/README.md\n", group.Dir)
 			continue
 		}
