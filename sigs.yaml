@@ -45,7 +45,7 @@ sigs:
     - day: Monday
       utc: "16:00"
       frequency: weekly
-    meeting_url: https://zoom.us/j/4526666954
+    meeting_url: https://zoom.us/my/sig.apps
     meeting_archive_url: https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#
     meeting_recordings_url: https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3
     contact:
