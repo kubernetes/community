@@ -24,5 +24,8 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=7zawb3KT9
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-windows)
 
 <!-- BEGIN CUSTOM CONTENT -->
+* Recorded Meetings Playlist on Youtube: https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4&jct=LZ9EIvD4DGrhr2h4r0ItaBmco7gTgw
+
+* Give it a try as demonstrated at Google Cloud Next '17 https://github.com/apprenda/kubernetes-ovn-heterogeneous-cluster
 
 <!-- END CUSTOM CONTENT -->
