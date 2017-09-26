@@ -1,4 +1,4 @@
-# Kubernetes Enhancement Proposal (KEP) Process
+# Kubernetes Enhancement Proposal Process
 
 ## Metadata
 ```
@@ -34,6 +34,7 @@ metadata:
 ## Summary
 
 A standardized development process for Kubernetes is proposed in order to:
+
 - provide a common structure for proposing changes to Kubernetes
 - ensure that the motivation for a change is clear
 - allow for the enumeration stability milestones and stability graduation
@@ -50,6 +51,9 @@ A standardized development process for Kubernetes is proposed in order to:
 - ensure community participants are successfully able to drive changes to
   completion across one or more releases while stakeholders are adequately
   represented throughout the process
+
+This process is supported by a unit of work called a Kubernetes Enhancement
+Proposal or KEP.
 
 ## Motivation
 
