@@ -30,18 +30,23 @@ Non-goals include:
 ### Configurable PID Namespace Sharing
 
 We will add first class support for configuring isolated and shared PID
-namespaces for pods by adding a new boolean field `sharedPID` to the pod spec.
-When set to true, all containers in the pod will share a single PID namespace
-when supported by runtime. When not supported by the runtime, for example with
-docker versions less than 1.13.1, the runtime will respond with an error and the
-pod will not start.
+namespaces for pods by adding a new boolean field `sharedPID` to the pod spec,
+which will default to false. When set to true, all containers in the pod will
+share a single PID namespace when supported by runtime.
 
-The Container Runtime Interface (CRI) will be updated to explicitly support
-shared PID namespaces. When `sharedPID` is true, runtimes MUST share a PID
-namespace for the pod or return an error. When `sharedPID` is false, runtimes
-MAY implement isolated PID namespaces. That is, omitting this option defaults to
-pre-existing runtime behavior. For Docker the default remains isolated PID
-namespaces.
+The Container Runtime Interface (CRI) will be updated to require runtimes to
+support three PID Namespace modes: Isolated, Shared & Host. The Runtime Manager
+will translate the pod spec into one of these modes as follows:
+
+Pod `sharedPID` | Pod `hostPID` | CRI PID Mode
+--------------- | ------------- | ------------
+false           | false         | Isolated
+false           | true          | Host
+true            | false         | Shared
+true            | true          | *Error*
+
+When a runtime does not implement a particular PID mode, it must return an
+error. Docker will support all three modes when using version >= 1.13.1.
 
 The shared PID functionality will be hidden behind a new feature gate in both
 the API server and the kubelet, and the `--docker-disable-shared-pid` flag will
@@ -65,29 +70,26 @@ Sharing a PID namespace between containers in a pod is discussed in
 
 ### Kubernetes API Changes
 
-`v1.PodSecurityContext` gains a new field resembling the existing `hostPID`
-field:
+`v1.PodSpec` gains a new field resembling the existing `HostPID` field:
 
 ```
-type PodSecurityContext struct {
+// PodSpec is a description of a pod.
+type PodSpec struct {
     ...
-    // Use the host's pid namespace.
-    // Optional: Default to false.
-    // +k8s:conversion-gen=false
-    // +optional
-    HostPID bool
+       // Use the host's pid namespace.
+       // Optional: Default to false.
+       // +k8s:conversion-gen=false
+       // +optional
+       HostPID bool `json:"hostPID,omitempty" protobuf:"varint,12,opt,name=hostPID"`
     // Use a single shared PID namespace for the pod.
-    // Optional: Default to false.
-    // +k8s:conversion-gen=false
-    // +optional
-    SharedPID bool
+       // Optional: Default to false.
+       // +k8s:conversion-gen=false
+       // +optional
+       SharedPID bool `json:"sharedPID,omitempty" protobuf:"varint,XX,opt,name=sharedPID"`
        ...
 ```
 
-`PodSecurityContext` was chosen because it's where namespace configuration
-currently lives, and it is consistent with using isolated PID namespaces as a
-security feature. Setting both `SharedPID` and `HostPID` will cause a validation
-error.
+Setting both `SharedPID` and `HostPID` will cause a validation error.
 
 ### Container Runtime Interface Changes
 
