@@ -62,9 +62,8 @@ A standardized development process for Kubernetes is proposed in order to
 - persist project information in a Version Control System (VCS) for future
   Kubernauts
 - support the creation of _high value user facing_ information such as:
-  - release notes
-  - release announcement blog
   - an overall project development roadmap
+  - motivation for impactful user facing changes
 - support development across multiple repositories beyond `kubernetes/kubernetes`
 - reserve GitHub issues for tracking work in flight rather than creating "umbrella"
   issues
@@ -75,7 +74,7 @@ A standardized development process for Kubernetes is proposed in order to
 This process is supported by a unit of work called a Kubernetes Enhancement
 Proposal or KEP. A KEP attempts to combine aspects of a
 
-- feature, effort, and launch tracking document
+- feature, and effort tracking document
 - a product requirements document
 - design document
 
@@ -86,10 +85,8 @@ Special Interest Groups (SIGs).
 
 For cross project SIGs such as SIG PM and SIG Release an abstraction beyond a
 single GitHub Issue or Pull request seems to be required in order to understand
-and communicate upcoming changes to Kubernetes. Particularly the generation of
-release notes and the release announcement blog post are rather difficult and
-have sometimes delayed a release due to incompleteness. In a blog post
-describing the [road to Go 2][], Russ Cox explains
+and communicate upcoming changes to Kubernetes.  In a blog post describing the
+[road to Go 2][], Russ Cox explains
 
 > that it is difficult but essential to describe the significance of a problem
 > in a way that someone working in a different environment can understand
@@ -105,35 +102,16 @@ Documentation can take many forms and it is imperative to ensure that it is easy
 to produce high quality user or developer focused documentation for a complex
 project like Kubernetes.
 
-The use of GitHub issues when proposing changes does not provide SIGs good
-facilities for signaling approval or rejection of a proposed change to Kubernetes
-since anyone can open a GitHub issue at any time. Additionally managing a proposed
-change across multiple releases is somewhat cumbersome as labels and milestones
-need to be updated for every release that a change spans. These long lived GitHub
-issues lead to an ever increasing number of issues open against
-`kubernetes/features` which itself has become a management problem.
+Without a standardized mechanism for describing important enhancements our
+talented technical writers and product managers struggle to weave a coherent
+narrative explaining why a particular release is important. Additionally for
+critical infrastructure such as Kubernetes adopters need a forward looking road
+map in order to plan their adoption strategy.
 
-In addition to the challenge of managing issues over time, searching for text
-within an issue can be challenging. The flat hierarchy of issues can also make
-navigation and categorization tricky. While not all community members might
-not be comfortable using Git directly, it is imperative that as a community we
-work to educate people on a standard set of tools so they can take their
-experience to other projects they may decide to work on in the future. While
-git is a fantastic version control system (VCS), it is not a project management
-tool nor a cogent way of managing an architectural catalog or backlog; this
-proposal is limited to motivating the creation of a standardized definition of
-work in order to facilitate project management. This primitive for describing
-a unit of work may also allow contributors to create their own personalized
-view of the state of the project while relying on Git and GitHub for consistency
-and durable storage.
-
-Ideally release notes should [tell a story][] which is compelling enough to
-encourage users and operators to upgrade their clusters. Without a standardized
-mechanism for describing important enhancements our talented technical writers
-and product managers struggle to weave a coherent narrative explaining why a
-particular release is important. Additionally for critical infrastructure such
-as Kubernetes adopters need a forward looking road map in order to plan their
-adoption strategy.
+The purpose of the KEP process is to reduce the amount of "tribal knowledge" in
+our community. By moving decisions from a smattering of mailing lists, video
+calls and hallway conversations into a well tracked artifact this process aims
+to enhance communication and discoverability.
 
 A KEP is broken into sections which can be merged into source control
 incrementally in order to support an iterative development process. An important
@@ -159,25 +137,20 @@ in either written or verbal communication to anyone besides the KEP author or
 developer then consider creating a KEP. One concrete example is an enhancement
 which should be communicated to SIG Release or SIG PM.
 
-Without detailed information explaining the motivation for an enhancement SIGs
-must first approve a proposal, agreeing to a motivation over a mailing list,
-video call, or hallway conversation. During the release process this motivation
-must be rediscovered by the SIG, hopefully by finding a design proposal. The
-process of announcing an enhancement through release notes suggests another
-heuristic for describing what work should be tracked through an KEP: anything
-that would require a design proposal. In fact it is possible to consider a KEP
-an enhancement to the design proposal process in which design proposals are
-used throughout the process of proposing an enhancement, scoping its design,
-tracking its implementation, and agreeing on criteria for graduation to general
-availability.
+Similarly, any technical effort (refactoring, major architectural change) that
+will impact a large section of the development community should also be
+communicated widely. The KEP process is suited for this even if it will have
+zero impact on the typical user or operator.
 
 As the local bodies of governance, SIGs should have broad latitude in describing
 what constitutes an enhancement which should be tracked through the KEP process.
-SIGs may find that helpful to enumerate  what _does not_ require a KEP rather
+SIGs may find that helpful to enumerate what _does not_ require a KEP rather
 than what does. SIGs also have the freedom to customize the KEP template
-according to their SIG specific concerns. For example the KEP template used
-to track API changes will likely have different subsections than the template
-for proposing governance changes.
+according to their SIG specific concerns. For example the KEP template used to
+track API changes will likely have different subsections than the template for
+proposing governance changes. However, as changes start impacting other SIGs or
+the larger developer community outside of a SIG, the KEP process should be used
+to coordinate and communicate.
 
 ### KEP Template
 
@@ -371,6 +344,30 @@ this proposal attempts to place these concerns within a general framework.
 [issue management]: https://github.com/kubernetes/community/issues/580
 [accepted design and a proposal]: https://github.com/kubernetes/community/issues/914
 [the organization of design proposals]: https://github.com/kubernetes/community/issues/918
+
+### Github issues vs. KEPs
+
+The use of GitHub issues when proposing changes does not provide SIGs good
+facilities for signaling approval or rejection of a proposed change to Kubernetes
+since anyone can open a GitHub issue at any time. Additionally managing a proposed
+change across multiple releases is somewhat cumbersome as labels and milestones
+need to be updated for every release that a change spans. These long lived GitHub
+issues lead to an ever increasing number of issues open against
+`kubernetes/features` which itself has become a management problem.
+
+In addition to the challenge of managing issues over time, searching for text
+within an issue can be challenging. The flat hierarchy of issues can also make
+navigation and categorization tricky. While not all community members might
+not be comfortable using Git directly, it is imperative that as a community we
+work to educate people on a standard set of tools so they can take their
+experience to other projects they may decide to work on in the future. While
+git is a fantastic version control system (VCS), it is not a project management
+tool nor a cogent way of managing an architectural catalog or backlog; this
+proposal is limited to motivating the creation of a standardized definition of
+work in order to facilitate project management. This primitive for describing
+a unit of work may also allow contributors to create their own personalized
+view of the state of the project while relying on Git and GitHub for consistency
+and durable storage.
 
 ## Unresolved Questions
 
