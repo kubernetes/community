@@ -90,7 +90,7 @@ func (e *Group) DirName(prefix string) string {
 }
 
 // SetupGitHubTeams will iterate over all the possible teams available to a
-// group (these are defined by the Kubernetes organisation) and populate a
+// group (these are defined by the Kubernetes organization) and populate a
 // list using the group's prefix.
 func (e *Group) SetupGitHubTeams(prefix string) {
 	ghPrefix := e.Contact.GithubTeamPrefix
