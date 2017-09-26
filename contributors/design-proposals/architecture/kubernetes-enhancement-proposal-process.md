@@ -31,9 +31,29 @@ metadata:
     - [KEP template](https://github.com/kubernetes/community/pull/1124)
 ```
 
+## Table of Contents
+
+- [Kubernetes Enhancement Proposal Process](#kubernetes-enhancement-proposal-process)
+  - [Metadata](#metadata)
+  - [Summary](#summary)
+  - [Motivation](#motivation)
+  - [Reference-level explanation](#reference-level-explanation)
+     - [What type of work should be tracked by a KEP](#what-type-of-work-should-be-tracked-by-a-kep)
+     - [KEP Template](#kep-template)
+     - [KEP Workflow](#kep-workflow)
+     - [Git and GitHub Implementation](#git-and-github-implementation)
+     - [KEP Editor Role](#kep-editor-role)
+     - [Important Metrics](#important-metrics)
+     - [Prior Art](#prior-art)
+  - [Graduation Criteria](#graduation-criteria)
+  - [Drawbacks](#drawbacks)
+  - [Alternatives](#alternatives)
+  - [Unresolved Questions](#unresolved-questions)
+  - [Mentors](#mentors)
+
 ## Summary
 
-A standardized development process for Kubernetes is proposed in order to:
+A standardized development process for Kubernetes is proposed in order to
 
 - provide a common structure for proposing changes to Kubernetes
 - ensure that the motivation for a change is clear
@@ -53,7 +73,14 @@ A standardized development process for Kubernetes is proposed in order to:
   represented throughout the process
 
 This process is supported by a unit of work called a Kubernetes Enhancement
-Proposal or KEP.
+Proposal or KEP. A KEP attempts to combine aspects of a
+
+- feature, effort, and launch tracking document
+- a product requirements document
+- design document
+
+into one file which is created incrementally in collaboration with one or more
+Special Interest Groups (SIGs).
 
 ## Motivation
 
@@ -115,13 +142,13 @@ contained in [design proposals][] is both clear and efficient. The KEP process
 is intended to create high quality uniform design and implementation documents
 for SIGs to deliberate.
 
-[tell a story]: https://blog.rust-lang.org/2017/08/31/Rust-1.20.html 
+[tell a story]: https://blog.rust-lang.org/2017/08/31/Rust-1.20.html
 [road to Go 2]: https://blog.golang.org/toward-go2
 [survey data]: http://opensourcesurvey.org/2017/
 [design proposals]: https://github.com/kubernetes/community/tree/master/contributors/design-proposals
 
 
-## Detailed design
+## Reference-level explanation
 
 ### What type of work should be tracked by a KEP
 
@@ -148,7 +175,7 @@ As the local bodies of governance, SIGs should have broad latitude in describing
 what constitutes an enhancement which should be tracked through the KEP process.
 SIGs may find that helpful to enumerate  what _does not_ require a KEP rather
 than what does. SIGs also have the freedom to customize the KEP template
-according to their SIG specific concerns. For example the KEP template used 
+according to their SIG specific concerns. For example the KEP template used
 to track API changes will likely have different subsections than the template
 for proposing governance changes.
 
@@ -181,10 +208,10 @@ with possible paths through the state space
 
 - opened -> deferred (a)
 - opened -> rejected (b)
-- opened -> orphaned (c) 
+- opened -> orphaned (c)
 - opened -> accepted -> orphaned (d)
 - opened -> accepted -> scoped -> superseded (e)
-- opened -> accepted -> scoped -> orphaned (f) 
+- opened -> accepted -> scoped -> orphaned (f)
 - opened -> accepted -> scoped -> started -> retired (g)
 - opened -> accepted -> scoped -> started -> orphaned (h)
 - opened -> accepted -> scoped -> started -> superseded (i)
@@ -259,7 +286,7 @@ likely very similar to the [PEP editor responsibilities][] and will hopefully
 provide another opportunity for people who do not write code daily to contribute
 to Kubernetes.
 
-In keeping with the PEP editors which 
+In keeping with the PEP editors which
 
 > Read the PEP to check if it is ready: sound and complete. The ideas must make
 > technical sense, even if they don't seem likely to be accepted.
