@@ -1,0 +1,128 @@
+# Title
+
+`Title` should be replace with the name of the KEP which should also match the
+filename. Substitute spaces with `-`.
+
+## Metadata
+
+The `Metadata` section is intended to support the creation of tooling around the
+KEP process. The precise format for `Metadata` is described in the
+[metadata proposal][].
+
+[metadata proposal]: https://docs.google.com/document/d/1ynmBMuDuT7yGzRscObB1KtgJj8ljYq0I5q4oshrJUCs/edit#
+
+## Table of Contents
+
+A table of contents is helpful for quickly jumping to sections of a KEP and for
+highlighting any addtional information provided beyond the standard KEP
+template. [Tools for generating][] a table of contents from markdown are
+available.
+
+[Tools for generating]: https://github.com/ekalinin/github-markdown-toc
+
+## Summary
+
+The `Summary` section is incredibly important for producing high quality user
+focused documentation such as release notes or a development road map. It should
+be possible to collect this information before implementation begins in order
+to avoid requiring implementors to split their attention between writing
+release notes and implementing the feature itself. KEP editors, SIG Docs, and
+SIG PM should help to ensure that the tone and content of the `Summary` section
+is useful for a wide audience.
+
+A good summary is probably at least a paragraph in length.
+
+## Motivation
+
+The `Motivation` section should describe
+
+- why we believe this change is important
+- what benefits are expected to be realized from the change
+- the high level design goals
+
+The `Motivation` section is important for getting all responsible parties to
+understand the intention behind a change. The motivation section can optionally
+provide links to [experience reports][] to demonstrate the interest in a KEP
+within the wider Kubernetes community.
+
+[experience reports]: https://github.com/golang/go/wiki/ExperienceReports
+
+## Guide-level Explanation [optional]
+
+Merging a change to source control is a crucial, but not final, milestone in
+the implementation of a KEP. Enhancements need to be explained to the Kubernetes
+community. The `Guide-level Explaination` section should be used to explain a
+KEP to another Kubernaut after implementation. Excellent guidance can be
+found in the Rust RFC [guide-level explanation][] instructions.
+
+
+[guide-level explanation]: https://github.com/rust-lang/rfcs/blob/master/0000-template.md#guide-level-explanation
+
+
+## Reference-level explanation
+
+Before submitting a detailed implementation plan, a KEP author might begin the
+`Reference-level Explaination` by sketching high level design goals and any
+mandatory requirements.
+
+Communicating dependencies across multiple SIGs is an important use for KEPs.
+Explaining how a KEP interacts with other KEPs and existing Kubernetes
+functionality should be included in this section.
+
+The `Reference-level explaination` section should ideally contain enough
+information for someone besides the author to begin working on an implementation
+of the KEP. In a similar manner to the guidance on [implementing an RFC][] from
+the Rust community, not all KEPs must be implemented immediately. Associating
+each KEP with one or more issues filed against Kubernetes repositories allows
+interested community members to track implementation.
+
+Excellent guidance can be found in the Rust RFC [reference-level explanation][]
+instructions.
+
+[reference-level explaination]: https://github.com/rust-lang/rfcs/blob/master/0000-template.md#reference-level-explanation
+
+[implementing an RFC]: https://github.com/rust-lang/rfcs/blob/master/README.md#implementing-an-rfc
+
+## Graduation Criteria
+
+Gathering user feedback is crucial for building high quality experiences and
+SIGs have the important responsibility of setting milestones for stability
+and completeness. Hopefully the content previously contained in
+[umbrella issues][] will be tracked in the `Graduation Criteria` section.
+
+[umbrella issues]: https://github.com/kubernetes/kubernetes/issues/42752
+
+## Implementation History
+
+Major milestones in the life cycle of a KEP should be tracked in
+`Implementation History`. Major milestones might include
+
+- the `Summary` and `Motivation` sections being merged signaling SIG acceptance
+- the `Detailed Design` section being merged signaling agreement on a proposed
+  design
+- the date implementation started
+- the first Kubernetes release where an initial version of the KEP was available
+- the version of Kubneretes where the KEP graduated to general availability
+- when the KEP was retired or superseded
+
+## Drawbacks [optional]
+
+Why should this KEP _not_ be implemented.
+
+## Alternatives [optional]
+
+Similar to the `Drawbacks` section the `Alternatives` section is used to
+highlight and record other possible approaches to delivering the value proposed
+by a KEP.
+
+## Unresolved Questions [optional]
+
+The `Unresolved Questions` section is used to parking lot issues not ready to be
+addressed before implementation begins.
+
+## Mentors [optional]
+
+Mentors who can help a community member implement a KEP which follows its
+`Detailed Design` are crucial to scaling the Kubernetes project. Potential
+mentors can list their contact information using their preferred contact
+information in the `Mentors` section.
