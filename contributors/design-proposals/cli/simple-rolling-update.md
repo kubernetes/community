@@ -1,10 +1,10 @@
 ## Simple rolling update
 
 This is a lightweight design document for simple
-[rolling update](../user-guide/kubectl/kubectl_rolling-update.md) in `kubectl`.
+[rolling update](https://kubernetes.io/docs/user-guide/kubectl/kubectl_rolling-update.md#rolling-update) in `kubectl`.
 
 Complete execution flow can be found [here](#execution-details). See the
-[example of rolling update](../user-guide/update-demo/) for more information.
+[example of rolling update](https://kubernetes.io/docs/tutorials/kubernetes-basics/update-intro/) for more information.
 
 ### Lightweight rollout
 

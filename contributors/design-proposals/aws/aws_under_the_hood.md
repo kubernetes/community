@@ -47,13 +47,13 @@ kube-up.
 
 ### Storage
 
-AWS supports persistent volumes by using [Elastic Block Store (EBS)](../user-guide/volumes.md#awselasticblockstore).
+AWS supports persistent volumes by using [Elastic Block Store (EBS)](https://kubernetes.io/docs/concepts/storage/volumes/#awselasticblockstore).
 These can then be attached to pods that should store persistent data (e.g. if
 you're running a database).
 
 By default, nodes in AWS use [instance storage](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html)
 unless you create pods with persistent volumes
-[(EBS)](../user-guide/volumes.md#awselasticblockstore). In general, Kubernetes
+[(EBS)](https://kubernetes.io/docs/concepts/storage/volumes/#awselasticblockstore). In general, Kubernetes
 containers do not have persistent storage unless you attach a persistent
 volume, and so nodes on AWS use instance storage.  Instance storage is cheaper,
 often faster, and historically more reliable. Unless you can make do with
@@ -112,8 +112,8 @@ ELB has some restrictions:
 on ELB annotations for pods speaking HTTP).
 
 To work with these restrictions, in Kubernetes, [LoadBalancer
-services](../user-guide/services.md#type-loadbalancer) are exposed as
-[NodePort services](../user-guide/services.md#type-nodeport).  Then
+services](https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer) are exposed as
+[NodePort services](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport).  Then
 kube-proxy listens externally on the cluster-wide port that's assigned to
 NodePort services and forwards traffic to the corresponding pods.
 
