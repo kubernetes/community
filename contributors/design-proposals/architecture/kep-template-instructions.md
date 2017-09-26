@@ -54,7 +54,6 @@ Kubernetes development process is provided.
 [this KEP]: https://github.com/calebamiles/community/blob/propose-kep-template/contributors/design-proposals/kep-template.md
 [the KEP process]: https://github.com/kubernetes/community/pull/967
 
-## Detailed Design
 
 ## How Do I Teach This?
 
@@ -64,31 +63,16 @@ repository. This suggests that a KEP template should be used to track work
 which ultimately will result in change to source control; if you find success
 in modifying the KEP template please notify the [mentors](#mentors)!
 
+## Detailed Design
+
 ### KEP Template
 
-In order to implement an KEP like process the following template will be created
+A [KEP template][] is provided; sections marked `[optional]` may be omitted by
+KEP authors. It is expected that most KEPs will begin their lives in discussion
+with the responsible SIGs, preferably in a mailing list so that the discussion
+is saved for future Kubernauts.
 
-```
-# Title
-## Metadata
-## Table of Contents
-## Summary
-## Motivation
-## Examples [optional]
-## How Do I Teach This? [optional]
-## Detailed Design
-## Graduation Criteria
-## Implementation History
-## Drawbacks [optional]
-## Alternatives [optional]
-## Unresolved Questions [optional]
-## Mentors [optional]
-```
-
-where sections marked `[optional]` may be omitted by KEP authors. It is expected
-that most KEPs will begin their lives in discussion with the responsible SIGs,
-preferably in a mailing list so that the discussion is saved for future Kubernauts.
-
+[KEP template]: https://github.com/calebamiles/community/blob/propose-kep-template/contributors/design-proposals/kep-template.md
 
 ### Section: Metadata
 
