@@ -5,12 +5,56 @@ filename. Substitute spaces with `-`.
 
 ## Metadata
 
+## Metadata
+
 The `Metadata` section is intended to support the creation of tooling around the
-KEP process. The precise format for `Metadata` is described in the
-[metadata proposal][].
+KEP process.  This will be a YAML section that is fenced as a code block.
 
-[metadata proposal]: https://docs.google.com/document/d/1ynmBMuDuT7yGzRscObB1KtgJj8ljYq0I5q4oshrJUCs/edit#
+See the KEP process for details on each of these items.  This is here for easy
+copy/pasting.
 
+TODO(jbeda): Do we want to move this to the front the doc with a delimiter
+(`---`) so it is easier to parse.  Many static site generators use this and call
+it "front matter".
+
+TODO(jbeda): Do we want to have a "people database" to reduce the amount of
+duplication on naming people here?  This would be a simple map of github ID to
+name and contact info.
+
+```yaml
+kep-number: draft-XXX
+title: My First KEP
+authors:
+  - name: Jane Doe
+    github: janedoe
+    email: janedoe@example.com
+owning-sig: sig-xxx
+participating-sigs:
+  - sig-aaa
+  - sig-bbb
+reviewers:
+  - name: TBD
+  # - name: Alice Doe
+  #   github: alicedoe
+  #   email: alicedoe@example.com
+approvers:
+  - name: TBD
+  # - name: Oscar Doe
+  #   github: oscardoe
+  #   email: oscardoe@example.com
+editor:
+  name: TBD
+creation-date: yyyy-mm-dd
+last-updated: yyyy-mm-dd
+status: draft
+see-also:
+  - KEP-1
+  - KEP-2
+replaces:
+  - KEP-3
+superseded-by:
+  - KEP-100
+```
 ## Table of Contents
 
 A table of contents is helpful for quickly jumping to sections of a KEP and for
