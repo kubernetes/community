@@ -1,6 +1,8 @@
 # Troubleshoot Running Pods
 
-[bit.ly/k8s-pod-troubleshooting](bit.ly/k8s-pod-troubleshooting)
+*   Status: Pending
+*   Version: Alpha
+*   Implementation Owner: @verb
 
 This proposal seeks to add first class support for troubleshooting by creating a
 mechanism to execute a shell or other troubleshooting tools inside a running pod
@@ -116,20 +118,22 @@ fields required for creating a Debug Container:
 // PodExecOptions is the query options to a Pod's remote exec call
 type PodExecOptions struct {
         ...
-        // DebugName is the name of the Debug Container. Its presence will cause
-        // exec to create a Debug Container rather than performing a runtime exec.
-        DebugName string `json:"debugName,omitempty" ...`
-        // Image is an optional container image name that will be used to for the Debug
-        // Container in the specified Pod with Command as ENTRYPOINT. If omitted a
-        // default image will be used.
-        Image string `json:"image,omitempty" ...`
+        // EphemeralContainerName is the name of an ephemeral container in which the
+        // command ought to be run. Either both EphemeralContainerName and
+        // EphemeralContainerImage fields must be set, or neither.
+        EphemeralContainerName *string `json:"ephemeralContainerName,omitempty" ...`
+
+        // EphemeralContainerImage is the image of an ephemeral container in which the command
+        // ought to be run. Either both EphemeralContainerName and EphemeralContainerImage
+        // fields must be set, or neither.
+        EphemeralContainerImage *string `json:"ephemeralContainerImage,omitempty" ...`
 }
 ```
 
 After creating the Debug Container, the kubelet will upgrade the connection to
 streaming and perform an attach to the container's console. If disconnected, the
 Debug Container can be reattached using the pod's `/attach` endpoint with
-`DebugName`.
+`EphemeralContainerName`.
 
 Debug Containers cannot be removed via the API and instead the process must
 terminate. While not ideal, this parallels existing behavior of `kubectl exec`.
