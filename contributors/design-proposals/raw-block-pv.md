@@ -544,7 +544,7 @@ for using raw block devices, the legacy method of populating the devices and app
 
 # Implementation Plan, Features & Milestones
 
-Phase 1: v1.8
+Phase 1: v1.9
 Feature: Pre-provisioned PVs to precreated devices 
 
                Milestone 1: API changes
@@ -563,7 +563,7 @@ Feature: Pre-provisioned PVs to precreated devices
 	       
 	       Milestone 8: Disabling of provisioning where volumeMode == Block is not supported
 
-Phase 2:  v1.9
+Phase 2:  v1.10
 Feature: Discovery of block devices 
 
                 Milestone 1: Dynamically provisioned PVs to dynamically allocated devices
