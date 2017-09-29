@@ -22,12 +22,13 @@ order makes the registration API easier to reason about for maintainability.
 
 Initializers as implemented today attempt to push new API validation requirements into the 
 strategy and new requirements onto the admission plugins handling updates and creates.  The
-former is unecessary and the latter doesn't work.
+former is unnecessary and the latter doesn't work.
 
-API validation on uninitialized objects can reasonably follow the rules for validation on create.
+API validation on uninitialized objects can reasonably follow the rules for validation on create
+plus `ValidateObjectMetaUpdate` (to prevent name and UID changes and the like).
 Since the object hasn't been "ready", there is no reason to add the validation rules required on
 updates since restrictions like field immutability don't logically apply and would restrict the power
-of admission extensions the point of unusability.  Using the results for creation validation on 
+of admission extensions to the point of unusability.  Using the results for creation validation on 
 uninitialized objects and objects transitioning from uninitialized to initialized lets the
 strategy author focus on their API needs.
 
