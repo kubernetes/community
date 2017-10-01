@@ -1,9 +1,27 @@
 # Title
 
-`Title` should be replace with the name of the KEP which should also match the
-filename. Substitute spaces with `-`.
+This is the title of the KEP.  Keep it simple and descriptive. A good title can
+help communicate what the KEP is and should be considered as part of any review.
 
-## Metadata
+The *filename* for the KEP should include the KEP number along with the title.
+The title should be lowercased and spaces/punctuation should be replaced with
+`-`. As the KEP is approved and an official KEP number is allocated, the file
+should be renamed.
+
+To get started with this template:
+* Make a copy in the appropriate directory.  Name it `draft-YYYYMMDD-my-title.md`.
+* Create a PR in the
+  [`kubernetes/community`](https://github.com/kubernetes/community) repo.
+* Check in early.  Do this once the document holds together and general
+  direction is understood by many in the sponsoring SIG. View anything marked as
+  a draft as a working document.  Aim for single topic PRs to keep discussions
+  focused. If you disagree with what is already in a document, open a new PR
+  with suggested changes.
+* As a KEP is approved, rename the file yet again with the final KEP number.
+
+The canonical place for the latest set of instructions (and the likely source of
+this file) is
+[here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/0000-kep-template.md).
 
 ## Metadata
 
@@ -55,6 +73,7 @@ replaces:
 superseded-by:
   - KEP-100
 ```
+
 ## Table of Contents
 
 A table of contents is helpful for quickly jumping to sections of a KEP and for
