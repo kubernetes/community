@@ -1,6 +1,6 @@
 # Local Storage Persistent Volumes
 
-Authors: @msau42, @vishh
+Authors: @msau42, @vishh, @dhirajh, @ianchakeres
 
 This document presents a detailed design for supporting persistent local storage,
 as outlined in [Local Storage Overview](local-storage-overview.md).
@@ -634,10 +634,116 @@ limitations outlined above wil be fixed.
 
 #### Block devices and raw partitions
 
-Pods accessing raw block storage is a new alpha feature in 1.8.  Changes are required in
-the Local volume plugin and provisioner to be able to support raw block devices.
+Pods accessing raw block storage is a new alpha feature in 1.9.  Changes are required in
+the Local volume plugin and provisioner to be able to support raw block devices. The local
+volume provisioner will be enhanced to support discovery of block devices and creation of
+PVs corresponding to those block devices. In addition, when a block device based PV is
+released, the local volume provisioner will cleanup the block devices. The cleanup
+mechanism will be configurable and also customizable as no single mechanism covers all use
+cases.
 
-Design TBD
+
+##### Discovery
+
+Much like the current file based PVs, the local volume provisioner will look for block devices
+under designated directories that have been mounted on the provisioner container. Currently, for
+each storage class, the provisioner has a configmap entry that looks like this:
+
+```
+"local-fast":   {
+      "hostDir": "/mnt/disks",
+      "mountDir": "/local-disks"
+}
+```
+
+With this current approach, filesystems that were meant to be exposed as PVs are supposed to be
+mounted on sub-directories under hostDir and the provisioner running in a container would walk
+through the corresponding "mountDir" to find all the PVs.  
+
+For block discovery, we will extend the same approach to enable discovering block devices. The
+admin can create symbolic links under hostDir for each block device that should be discovered
+under that storage class. The provisioner would use the same configMap and its logic will be
+enhanced to auto detect if the entry under the directory is a block device or a file system. If
+it is a block device, then a block based PV is created, otherwise a file based PV is created.
+
+##### Cleanup after Release
+
+Cleanup of a block device can be a bit more involved for the following reasons:
+
+* With file based PVs, a quick deletion of all files (inode information) was sufficient, with
+block devices one might want to wipe all current content.
+* Overwriting SSDs is not guaranteed to securely cleanup all previous content as there is a
+layer of indirection in SSDs called the FTL (flash translation layer) and also wear leveling
+techniques in SSDs that prevent reliable overwrite of all previous content. 
+* SSDs can also suffer from wear if they are repeatedly subjected to zeroing out, so one would
+need different tools and strategies for HDDs vs SSDs
+* A cleanup process which favors overwriting every block in the disk can take several hours.
+
+For this reason, the cleanup process has been made configurable and extensible, so that admin
+can use the most appropriate method for their environment.
+ 
+Block device cleanup logic will be encapsulated in separate scripts or binaries. There will be
+several scripts that will be made available out of the box, for example:
+
+
+| Cleanup Method | Description | Suitable for Device |
+|:--------------:|-------------|:-------------------:|
+|dd-zero| Used for zeroing the device repeatedly | HDD |
+|blkdiscard| Discards sectors on the device. This cleanup method may not be supported by all devices.| SSD |
+|fs-reset| A non-secure overwrite of any existing filesystem with mkfs, followed by wipefs to remove the signature of the file system | SSD/HDD |
+|shred|Repeatedly writes random values to the block device. Less effective with wear levelling in SSDs.| HDD |
+| hdparm| Issues [ATA secure erase](https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase) command to erase data on device. See ATA Secure Erase. Please note that the utility has to be supported by the device in question. | SSD/HDD |
+
+The fs-reset method is a quick and minimal approach as it does a reset of any file system, which
+works for both SSD and HDD and will be the default choice for cleaning. For SSDs, admins could
+opt for either blkdiscard which is also quite fast or hdparm. For HDDs they could opt for
+dd-zeroing or shred, which can take some time to run. Finally, the user is free to create new
+cleanup scripts of their own and have them specified in the configmap of the provisioner.
+
+The configmap from earlier section will be enhanced as follows
+```
+ "local-fast":  {
+      "hostDir": "/mnt/disks",
+      "mountDir": "/local-disks",
+      "blockCleanerCommand": ["/scripts/dd_zero.sh", "2"]
+    }
+ ```
+
+The block cleaner command will specify the script and any arguments that need to be passed to it.
+The actual block device being cleaned will be supplied to the script as an environment variable
+(LOCAL_PV_BLKDEVICE) as opposed to command line, so that the script command line has complete
+freedom on its structure. The provisioner will validate that the block device path is actually
+within the directory managed by the provisioner, to prevent destructive operations on arbitrary
+paths.
+
+The provisioner logic currently does each volume’s cleanup as a synchronous serial activity.
+However, with cleanup now potentially being a multi hour activity, the processes will have to
+be asynchronous and capable of being executed in parallel. The provisioner will ensure that all
+current asynchronous cleanup processes are tracked. Special care needs to be taken to ensure that
+when a disk has only been partially cleaned. This scenario can happen if some impatient user
+manually deletes a PV and the provisioner ends up re-creating pv ready for use (but only partially
+cleaned). This issue will be addressed in the re-design of the provisioner (details will be provided
+in the re-design section). The re-design will ensure that all disks being cleaned will be tracked
+through custom resources, so no disk being cleaned will be re-created as a PV.
+
+The provisioner will also log events to let the user know that cleaning is in progress and it can
+take some time to complete.
+
+##### Testing
+
+The unit tests in the provisioner will be enhanced to test all the new block discover, block cleaning
+and asynchronous cleaning logic. The tests include
+* Validating that a discovery directory containing both block and file system volumes are appropriately discovered and have PVs created.
+* Validate that both success and failure of asynchronous cleanup processes are properly tracked by the provisioner
+* Ensure a new PV is not created while cleaning of volume behind the PV is still in progress
+* Ensure two simultaneous cleaning operations on the same PV do not occur
+
+ In addition, end to end tests will be added to support block cleaning. The tests include:
+* Validate block PV are discovered and created
+* Validate cleaning of released block PV using each of the block cleaning scripts included.
+* Validate that file and block volumes in the same discovery path have correct PVs created, and that they are appropriately cleaned up.
+* Leverage block PV via PVC and validate that serially writes data in one pod, then reads and validates the data from a second pod.
+* Restart of the provisioner during cleaning operations, and validate that the PV is not recreated by the provisioner until cleaning has occurred.
 
 #### Provisioner redesign for stricter K8s API access control
 
