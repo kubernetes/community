@@ -59,8 +59,29 @@ Disadvantages:
 
 **We've decided to go with long running DaemonSet pod as described below.**
 
-## Prerequisites
-[HostPath volume propagation](propagation.md) must be implemented first.
+## Design
+
+* Pod with mount utilities puts a registration JSON file into `/var/lib/kubelet/plugin-containers/<plugin name>.json` on the host with name of the container where mount utilities should be executed:
+  ```json
+  {
+      "podNamespace": "kubernetes-storage",
+      "podName": "gluster-daemon-set-xtzwv",
+      "podUID": "5d1942bd-7358-40e8-9547-a04345c85be9",
+      "containerName": "gluster"
+  }
+  ```
+  * Pod UID is used to avoid situation when a pod with mount utilities is terminated and leaves its registration file on the host. Kubelet should not assume that newly started pod with the same namespace+name has the same mount utilities.
+  * All slashes in `<plugin name>` must be replaced with tilde, e.g. `kubernetes.io~glusterfs.json`.
+  * Creating the file must be atomic so kubelet cannot accidentally read partly written file.
+
+ * All volume plugins use `VolumeHost.GetExec` to get the right exec interface when running their utilities.
+
+ * Kubelet's implementation of `VolumeHost.GetExec` looks at `/var/lib/kubelet/plugin-containers/<plugin name>.json` if it has a container for given volume plugin.
+   * If the file exists and referred container is running, it returns `Exec` interface implementation that leads to CRI's `ExecSync` into the container (i.e. `docker exec <container> ...`)
+   * If the file does not exist or referred container is not running, it returns `Exec` interface implementation that leads to `os.Exec`. This way, pods do not need to remove the registration file when they're terminated.
+   * Kubelet does not cache content of `plugin-containers/`, one extra `open()`/`read()` with each exec won't harm and it makes Kubelet more robust to changes in the directory.
+
+* In future, this registration of volume plugin pods should be replaced by a gRPC interface based on Device Plugin registration.
 
 ## Requirements on DaemonSets with mount utilities
 These are rules that need to be followed by DaemonSet authors:
@@ -68,72 +89,38 @@ These are rules that need to be followed by DaemonSet authors:
 * One DaemonSet must provide *all* utilities that are needed to provision, attach, mount, unmount, detach and delete a volume for a volume plugin, including `mkfs` and `fsck` utilities if they're needed.
     * E.g. `mkfs.ext4` is likely to be available on all hosts, but a pod with mount utilities should not depend on that nor use it.
     * Kernel modules should be available in the pod with mount utilities too. "Available" does not imply that they need to be shipped in a container, we expect that binding `/lib/modules` from host to `/lib/modules` in the pod will be enough for all modules that are needed by Kubernetes internal volume plugins (all distros I checked incl. the "minimal" ones ship scsi.ko, rbd.ko, nfs.ko and fuse). This will allow future flex volumes ship vendor-specific kernel modules. It's up to the vendor to ensure that any kernel module matches the kernel on the host.
-    * The only exception is:
-      * udev (or similar device manager). Only one udev can run on a system, therefore it should run on the host. If a volume plugin needs to talk to udev (e.g. by calling `udevadm trigger`), they must do it on the host and not in a container with mount utilities.
+    * The only exception is udev (or similar device manager). Only one udev can run on a system, therefore it should run on the host. If a volume plugin needs to talk to udev (e.g. by calling `udevadm trigger`), they must do it on the host and not in a container with mount utilities.
 * It is expected that these daemon sets will run privileged pods that will see host's `/proc`, `/dev`, `/sys`, `/var/lib/kubelet` and such. Especially `/var/lib/kubelet` must be mounted with shared mount propagation so kubelet can see mounts created by the pods.
-* The pods with mount utilities should run some simple init as PID 1 that reaps zombies of potential fuse daemons. `volume-exec` described below could be such simple init.
-* The pods with mount utilities run a daemon with gRPC server that implements `ExecService` defined below.
-  * Upon starting, this daemon puts a UNIX domain socket into `/var/lib/kubelet/plugin-sockets/` directory on the host. This way, kubelet is able to discover all pods with mount utilities on a node.
-  * Kubernetes will ship implementation of this daemon that creates the socket on the right place and simply executes anything what kubelet asks for, see `volume-exec` below.
-To sum it up, it's just a daemon set that spawns privileged pods, running a simple init + a daemon that executes mount utilities as requested by kubelet via gRPC.
+* The pods with mount utilities should run some simple init as PID 1 that reaps zombies of potential fuse daemons.
+* The pods with mount utilities must put a file into `/var/lib/kubelet/plugin-containers/<plugin name>.json` for each volume plugin it supports. It should overwrite any existing file - it's probably leftover from older pod.
+   * Admin is responsible to run only one pod with utilities for one volume plugin on a single host. When two pods for say GlusterFS are scheduled on the same node they will overwrite the registration file of each other.
+   * Downward API can be used to get pod's name and namespace.
+   * Root privileges (or CAP_DAC_OVERRIDE) are needed to write to `/var/lib/kubelet/plugin-containers/`.
+
+To sum it up, it's just a daemon set that spawns privileged pods, running a simple init and registering itself into Kubernetes by placing a file into well-known location.
 
 **Note**: It may be quite difficult to create a pod that see's host's `/dev` and `/sys`, contains necessary kernel modules, does the initialization right and reaps zombies. We're going to provide a template with all this. During alpha, it is expected that this template will be polished as we encounter new bugs, corner cases, systemd / udev / docker weirdness.
 
-## Design
-
-### Volume plugins
-* All volume plugins need to be updated to use a new `mount.Exec` interface to call external utilities like `mount`, `mkfs`, `rbd lock` and such. Implementation of the interface will be provided by caller and will lead either to simple `os.exec` on the host or a gRPC call to a socket in `/var/lib/kubelet/plugin-sockets/` directory.
-
-### Controllers
-TODO after alpha: how will controller-manager talk to a remote pod? It's relatively easy to do something like `kubectl exec <mount pod>` from controller-manager, however it's harder to *discover* the right pod. See Open items below for possible solution(s).
-
-### Kubelet
-* When kubelet talks to a volume plugin, it looks for a socket named `/var/lib/kubelet/plugin-sockets/<plugin-name>`. This allows for easier discovery of flex volume drivers - probe in https://github.com/kubernetes/community/pull/833 needs to scan `/var/lib/kubelet/plugin-sockets/` too and find sockets in any new subdirectories.
-  * If the socket does not exist, kubelet gives the volume plugin plain `os.Exec` and all mount utilities are executed on the host.
-  * If the socket exists, kubelet gives the volume plugin `GRPCExec` and all mount utilities are executed via gRPC on the socket which presumably leads to a pod with mount utilities running a gRPC server.
-
-As consequence, kubelet may try to run mount utilities on the host shortly after startup - it has not received pods with mount utilities yet and thus `/var/lib/kubelet/plugin-sockets/` is empty. This is likely to fails, sometimes with a cryptic error like this:
-```
-mount: wrong fs type, bad option, bad superblock on 192.168.0.1:/test_vol,
-       missing codepage or helper program, or other error
-```
-
-Kubelet will periodically retry mounting the volume and it will eventually succeed when pod with mount utilities is scheduled and running on the node.
-
-### gRPC API
-
-`ExecService` is a simple gRPC service defined in [CRI gRPC proto](https://github.com/kubernetes/kubernetes/blob/a1c0510d006ccff9be8478f86635c86658c9bf73/pkg/kubelet/apis/cri/v1alpha1/runtime/api.proto) that allows to execute anything via gRPC:
-
-```protobuf
-service ExecService {
-    // ExecSync runs a command in a container synchronously.
-    rpc ExecSync(ExecSyncRequest) returns (ExecSyncResponse) {}
-}
-```
-
-* Both `ExecSyncRequest` and `ExecSyncResponse` is copied from [RuntimeService](https://github.com/kubernetes/kubernetes/blob/a1c0510d006ccff9be8478f86635c86658c9bf73/pkg/kubelet/apis/cri/v1alpha1/runtime/api.proto#L65). So far, mount utilities don't need any stdin and stdout+stderr are typically short. Therefore there is no streaming of these file descriptors.
-
-* No authentication / authorization is done on the server side, anyone who connects to the socket can execute anything. It is expected that only root has access to `/var/lib/kubelet/plugin-sockets/`.
-
-* Kubernetes will ship a daemon with server implementation of this API in `cmd/volume-exec`. This implementation simply calls `os.Exec` for each `ExecRequest` it gets and returns the right response.
-
-  * Authors of container images with mount utilities can then add this `volume-exec` daemon to their image, they don't need to care about anything else.
-  * `cmd/volume-exec` could consume (or ignore) SIGCHLD and serve as a very simple init that reaps zombies.
-
 ### Upgrade
-Upgrade of the DaemonSet with pods with mount utilities needs to be done node by node and with extra care. The pods may run fuse daemons and killing such pod with glusterfs fuse daemon would kill all pods that use glusterfs on the same node.
+Upgrade of DaemonSets with pods with fuse-based mount utilities needs to be done node by node and with extra care. Killing a pod with fuse daemon(s) inside will un-mount all volumes that are used by other pods on the host and may result in data loss.
 
-In order to update the DaemonSet, admin must do for every node:
+In order to update the fuse-based DaemonSet (=GlusterFS or CephFS), admin must do for every node:
 * Mark the node as tainted. Only the pod with mount utilities can tolerate the taint, all other pods are evicted. As result, all volumes are unmounted and detached.
 * Update the pod.
 * Remove the taint.
 
 Is there a way how to make it with DaemonSet rolling update? Is there any other way how to do this upgrade better?
 
+### Containerized kubelet
+
+Kubelet should behave the same when it runs inside a container:
+* Use `os.Exec` to run mount utilities inside its own container when no pod with mount utilities is registered. This is current behavior, `mkfs.ext4`, `lsblk`, `rbd` and such are executed in context of the kubelet's container now.
+* Use `nsenter <host> mount` to mount things when no pod with mount utilities is registered. Again, this is current behavior.
+* Use CRI's `ExecSync` to execute both utilities and the final `mount` when a pod with mount utilities is registered so everything is executed in this pod.
 
 ## Open items
 
-* How will controller-manager talk to pods with mount utilities?
+* How will controller-manager talk to pods with mount utilities? It's needed only for (internal) Ceph provisioner and for flex.
 
   1. Mount pods expose a gRPC service.
       * controller-manager must be configured with the service namespace + name.
@@ -153,10 +140,10 @@ Is there a way how to make it with DaemonSet rolling update? Is there any other 
 
 ## Implementation notes
 
-* During alpha, only kubelet will be updated
-* Depending on flex dynamic probing in https://github.com/kubernetes/community/pull/833, flex may or may not be supported during alpha.
+* During alpha, only kubelet will be updated.
+* During alpha, flex will not be updated. It has its own method of dynamic registration of new drivers.
 
 Consequences:
 
-* Ceph RBD dynamic provisioning will still need `/usr/bin/rbd` installed on master(s). All other volume plugins will work without any problem, as they don't execute any utility when attaching/detaching/provisioning/deleting a volume.
-* Flex still needs `/usr/libexec` scripts deployed to master(s) and maybe to nodes.
+* Internal Ceph RBD dynamic provisioning will still need `/usr/bin/rbd` installed on master(s). External Ceph provisioner can be used instead.
+* All other volume plugins except flex will work without any problem, as they don't execute any utility when attaching/detaching/provisioning/deleting a volume.
