@@ -70,7 +70,7 @@ These are rules that need to be followed by DaemonSet authors:
     * The only exception are kernel modules. They are not portable across distros and they *should* be on the host.
 * It is expected that these daemon sets will run privileged pods that will see host's `/proc`, `/dev`, `/sys`, `/var/lib/kubelet` and such. Especially `/var/lib/kubelet` must be mounted with shared mount propagation so kubelet can see mounts created by the pods.
 * The pods with mount utilities should run some simple init as PID 1 that reaps zombies of potential fuse daemons.
-* The pods with mount utilities run a daemon with gRPC server that implements `VolumExecService` defined below.
+* The pods with mount utilities run a daemon with gRPC server that implements `ExecService` defined below.
   * Upon starting, this daemon puts a UNIX domain socket into `/var/lib/kubelet/plugin-sockets/` directory on the host. This way, kubelet is able to discover all pods with mount utilities on a node.
   * Kubernetes will ship implementation of this daemon that creates the socket on the right place and simply executes anything what kubelet asks for.
 
@@ -78,33 +78,18 @@ To sum it up, it's just a daemon set that spawns privileged pods, running a simp
 
 ## Design
 
-### Configuration of the host OS
-With the [HostPath volume propagation](propagation.md) implemented, we must ensure that `/var/lib/kubelet` is share-able into containers so a pod with mount utilities can mount something there in its container and this mount will be visible to kubelet and docker (or other container engine) on the host.
-We propose:
-*  During startup. kubelet checks that `/var/lib/kubelet` on the host is on a mount with shared mount propagation.
-    *  If not, kubelet makes `/var/lib/kubelet` shareable:
-       ```shell
-       mount --bind /var/lib/kubelet /var/lib/kubelet
-       mount --make-shared /var/lib/kubelet
-       ```
-       Note that these commands are executed on the host in case kubelet runs in a container.
-       If this startup adjustment fails, kubelet refuses to start with a clear error message.
-* Kubelet does not do any other special check. We assume that kubelet either runs on the host and in the same mount namespace as docker and the host, or it runs in a container that sees /var/lib/kubelet as it is on the host and with shared mount propagation.
-
-This ensures that kubelet runs out of the box on any distro without any configuration done by the cluster admin.
-
 ### Volume plugins
 * All volume plugins need to be updated to use a new `mount.Exec` interface to call external utilities like `mount`, `mkfs`, `rbd lock` and such. Implementation of the interface will be provided by caller and will lead either to simple `os.exec` on the host or a gRPC call to a socket in `/var/lib/kubelet/plugin-sockets/` directory.
 
 ### Controllers
-TODO: how will controller-manager talk to a remote pod? It's relatively easy to do something like `kubectl exec <mount pod>` from controller-manager, however it's harder to *discover* the right pod.
+TODO after alpha: how will controller-manager talk to a remote pod? It's relatively easy to do something like `kubectl exec <mount pod>` from controller-manager, however it's harder to *discover* the right pod. See Open items below for possible solution(s).
 
 ### Kubelet
 * When kubelet talks to a volume plugin, it looks for a socket named `/var/lib/kubelet/plugin-sockets/<plugin-name>`. This allows for easier discovery of flex volume drivers - probe in https://github.com/kubernetes/community/pull/833 needs to scan `/var/lib/kubelet/plugin-sockets/` too and find sockets in any new subdirectories.
-  * If the socket does not exist, kubelet gives the volume plugin plain `os.Exec` as implementation of `mount.Exec` interface and all mount utilities are executed on the host.
-  * If the socket exists, kubelet gives the volume plugin `GRPCExec` as implementation of `mount.Exec` and all mount utilities are executed via gRPC on the socket which presumably leads to a pod with mount utilities running a gRPC server.
+  * If the socket does not exist, kubelet gives the volume plugin plain `os.Exec` and all mount utilities are executed on the host.
+  * If the socket exists, kubelet gives the volume plugin `GRPCExec` and all mount utilities are executed via gRPC on the socket which presumably leads to a pod with mount utilities running a gRPC server.
 
-As consequence, kubelet will try to run mount utilities on the host when it starts and has not received pods with mount utilities yet (and thus `/var/lib/kubelet/plugin-sockets/` is empty). This is likely to fails with a cryptic error:
+As consequence, kubelet may try to run mount utilities on the host shortly after startup - it has not received pods with mount utilities yet and thus `/var/lib/kubelet/plugin-sockets/` is empty. This is likely to fails, sometimes with a cryptic error like this:
 ```
 mount: wrong fs type, bad option, bad superblock on 192.168.0.1:/test_vol,
        missing codepage or helper program, or other error
@@ -114,45 +99,18 @@ Kubelet will periodically retry mounting the volume and it will eventually succe
 
 ### gRPC API
 
-`VolumeExecService` is a simple gRPC service that allows to execute anything via gRPC:
+`ExecService` is a simple gRPC service defined in [CRI gRPC proto](https://github.com/kubernetes/kubernetes/blob/a1c0510d006ccff9be8478f86635c86658c9bf73/pkg/kubelet/apis/cri/v1alpha1/runtime/api.proto) that allows to execute anything via gRPC:
 
 ```protobuf
-service VolumeExecService {
-    // Exec executes a command and returns its output.
-    rpc Exec(ExecRequest) returns (ExecResponse) {}
-}
-
-message ExecRequest {
-    // Command to execute
-    string cmd = 1;
-    // Command arguments
-    repeated string args = 2;
-}
-
-message ExecResponse {
-    enum ExecError {
-        // Helps to reconstruct exec.ErrNotFound.
-        COMMAND_NOT_FOUND = 1;
-        // Helps to reconstruct exec.ExitError.
-        EXIT_CODE = 2;
-    }
-    Error error = 1;
-    // Exit code of the command. This field is nozero only when Error == EXIT_CODE.
-    int32 exit_code = 2;
-    // Capture of combined stdout + stderr.
-    string output = 3;
+service ExecService {
+    // ExecSync runs a command in a container synchronously.
+    rpc ExecSync(ExecSyncRequest) returns (ExecSyncResponse) {}
 }
 ```
 
-* Both `ExecRequest` and `ExecResponse` are tailored for execution of mount utilities that don't need any stdin and stdout+stderr are typically short. Therefore there is no streaming of these file descriptors.
+* Both `ExecSyncRequest` and `ExecSyncResponse` is copied from [RuntimeService](https://github.com/kubernetes/kubernetes/blob/a1c0510d006ccff9be8478f86635c86658c9bf73/pkg/kubelet/apis/cri/v1alpha1/runtime/api.proto#L65). So far, mount utilities don't need any stdin and stdout+stderr are typically short. Therefore there is no streaming of these file descriptors.
 
 * No authentication / authorization is done on the server side, anyone who connects to the socket can execute anything. It is expected that only root has access to `/var/lib/kubelet/plugin-sockets/`.
-
-* `.proto` file for this API will be stored in `k8s.io/kubernetes/pkg/version/apis/exec/v1alpha1`.
-
-  * `hack/update-generated-runtime.sh` will be updated to generate go files for this API.
-
-    * Should it be renamed to `update-generated-grpc-apis.sh`?
 
 * Kubernetes will ship a daemon with server implementation of this API in `cmd/volume-exec`. This implementation simply calls `os.Exec` for each `ExecRequest` it gets and returns the right response.
 
@@ -182,7 +140,7 @@ Is there a way how to make it with DaemonSet rolling update? Is there any other 
       * controller manager scans a namespace with a labelselector and does `kubectl exec <pod>` to execute anything in the pod.
       * Needs configuration of the namespace.
       * Admin must make sure that nothing else can run in the namespace (e.g. rogue pods that would steal volumes).
-      * Admin must configure access to the namespace so only pv-controller and attach-detach-controller can do `exec` there.
+      * Admin/installer must configure access to the namespace so only pv-controller and attach-detach-controller can do `exec` there.
 
   3. We allow pods to run on hosts that run controller-manager.
 
