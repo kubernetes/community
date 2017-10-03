@@ -25,24 +25,23 @@ topology-constrained PVs.
     * The more constraints you add to your pod, the less flexible it becomes
 in terms of placement.  Because of this, tightly constrained storage, such as
 local storage, is only recommended for specific use cases, and the pods should
-have high priority.
-    * Pod priorities could handle this scenario.  PV taints/tolerations could
-also handle this case.
+have higher priority in order to preempt lower priority pods from the node.
 * Binding decision considering scheduling constraints from two or more pods
 sharing the same PVC.
     * The scheduler itself only handles one pod at a time.  It’s possible the
 two pods may not run at the same time either, so there’s no guarantee that you
 will know both pod’s requirements at once.
     * For two+ pods simultaneously sharing a PVC, this scenario may require an
-operator to schedule them together.
+operator to schedule them together.  Another alternative is to merge the two
+pods into one.
     * For two+ pods non-simultaneously sharing a PVC, this scenario could be
-handled by pod priorities.
+handled by pod priorities and preemption.
 
 
 ## Problem
 Volumes can have topology constraints that restrict the set of nodes that the
-volume is accessible from.  For example, a GCE PD can only be accessed from a
-single zone, and a local disk can only be accessible from a single node.  In the
+volume can be accessed on.  For example, a GCE PD can only be accessed from a
+single zone, and a local disk can only be accessed from a single node.  In the
 future, there could be other topology constraints, such as rack or region.
 
 A pod that uses such a volume must be scheduled to a node that fits within the
@@ -80,7 +79,7 @@ pod scheduling.
 
 
 ## Background
-In 1.7, we added alpha support for local PVs (TODO: link) with node affinity.
+In 1.7, we added alpha support for [local PVs](local-storage-pv) with node affinity.
 You can specify a PV object with node affinity, and if a pod is using such a PV,
 the scheduler will evaluate the PV node affinity in addition to the other
 scheduling predicates.  So far, the PV node affinity only influences pod
@@ -111,7 +110,8 @@ In alpha, this configuration can be controlled by a feature gate,
 An alternative approach is to only trigger the new behavior only for volumes that
 have topology constraints.  A new annotation can be added to the StorageClass to
 indicate that its volumes have constraints and will need to use the new
-topology-aware scheduling logic.
+topology-aware scheduling logic.  The PV controller checks for this annotation
+every time it handles an unbound PVC, and will delay binding if it's set.
 
 ```
 // Value is “true” or “false”.  Default is false.
@@ -183,20 +183,6 @@ avoid these error conditions are to:
 * Separate out volumes that the user prebinds from the volumes that are
 available for the system to choose from by StorageClass.
 
-In addition, this new design will cause functional regression for the
-following use cases:
-* While a Pod is running, a user deletes the PVC and PV, and then recreates them.
-    * With the current behavior, the PVC will rebind to the same or different PV.
-    * With this new behavior, the PVC will not rebind because binding would only
-be triggered when the Pod has to go through scheduling.  This could cause
-problems with Pod volume cleanup because the PVC will no longer be bound.
-    * But deleting the PVC and PV (especially both) while a Pod is still using it
-is also dangerous and should be prevented in the first place.  There could be
-serious problems if you recreate the PVC and it rebinds to a different PV.  If
-the PV had a reclaim policy of Delete, then deleting the PVC could cause the
-underlying disk to get deleted while the Pod is still using it.
-
-
 #### PV Controller Changes
 When the feature gate is enabled, the PV controller needs to skip binding and
 provisioning all unbound PVCs that don’t have prebound PVs, and let it come
@@ -229,7 +215,8 @@ processing later in the priority and bind functions.
 6. Return true if all PVCs are matched.
 7. If there are still unmatched PVCs, check if dynamic provisioning is possible.
 For this alpha phase, the provisioner is not topology aware, so the predicate
-will just return true if there is a provisioner specified (internal or external).
+will just return true if there is a provisioner specified in the StorageClass
+(internal or external).
 8. Otherwise return false.
 
 TODO: caching format and details
@@ -239,12 +226,14 @@ After all the predicates run, there is a reduced set of Nodes that can fit a
 Pod. A new priority function will rank the remaining nodes based on the
 unbound PVCs and their matching PVs.
 ```
-PrioritizeUnboundPVCs(pod *v1.Pod, filteredNodes HostPriorityList) (rankedNodes HostPriorityList, err error) 
+PrioritizeUnboundPVCs(pod *v1.Pod, filteredNodes HostPriorityList) (rankedNodes HostPriorityList, err error)
 ```
 1. For each Node, get the cached PV matches for the Pod’s PVCs.
 2. Compute a priority score for the Node using the following factors:
     1. How close the PVC’s requested capacity and PV’s capacity are.
-    2. Matching static PVs is preferred over dynamic provisioning.
+    2. Matching static PVs is preferred over dynamic provisioning because we
+       assume that the administrator has specifically created these PVs for
+       the Pod.
 
 TODO (beta): figure out weights and exact calculation
 
@@ -323,7 +312,9 @@ to be bound.  The bound assumption needs to be changed in order to work with
 this new workflow.
 
 TODO: how to handle race condition of PVCs becoming bound in the middle of
-running predicates?  Do we need to impose ordering on the predicates?
+running predicates?  One possible way is to mark at the beginning of scheduling
+a Pod if all PVCs were bound.  Then we can check if a second scheduler pass is
+needed.
 
 ###### Max PD Volume Count Predicate
 This predicate checks the maximum number of PDs per node is not exceeded.  It
@@ -424,6 +415,63 @@ Kubernetes.
 With all this complexity, the library approach is the most feasible in a single
 release time frame, and aligns better with the current Kubernetes architecture.
 
+#### Downsides/Problems
+
+##### Expanding Scheduler Scope
+This approach expands the role of the Kubernetes default scheduler to also
+schedule PVCs, and not just Pods.  This breaks some fundamental design
+assumptions in the scheduler, primarily that if `Pod.Spec.NodeName`
+is set, then the Pod is scheduled.  Users can set the `NodeName` field directly,
+and controllers like DaemonSets also currently bypass the scheduler.
+
+For this approach to be fully functional, we need to change the scheduling
+criteria to also include unbound PVCs.
+
+TODO: details
+
+A general extension mechanism is needed to support scheduling and binding other
+objects in the future.
+
+##### Impact on Custom Schedulers
+This approach is going to make it harder to run custom schedulers, controllers and
+operators if you use PVCs and PVs. This adds a requirement to schedulers
+that they also need to make the PV binding decision.
+
+There are a few ways to mitigate the impact:
+* Custom schedulers could be implemented through the scheduler extender
+interface.  This allows the default scheduler to be run in addition to the
+custom scheduling logic.
+* The new code for this implementation will be packaged as a library to make it
+easier for custom schedulers to include in their own implementation.
+* Ample notice of feature/behavioral deprecation will be given, with at least
+the amount of time defined in the Kubernetes deprecation policy.
+
+In general, many advanced scheduling features have been added into the default
+scheduler, such that it is becoming more difficult to run custom schedulers with
+the new features.
+
+##### HA Master Upgrades
+HA masters adds a bit of complexity to this design because the active scheduler
+process and active controller-manager (PV controller) process can be on different
+nodes.  That means during an HA master upgrade, the scheduler and controller-manager
+can be on different versions.
+
+The scenario where the scheduler is newer than the PV controller is fine.  PV
+binding will not be delayed and in successful scenarios, all PVCs will be bound
+before coming to the scheduler.
+
+However, if the PV controller is newer than the scheduler, then PV binding will
+be delayed, and the scheduler does not have the logic to choose and prebind PVs.
+That will cause PVCs to remain unbound and the Pod will remain unschedulable.
+
+TODO: One way to solve this is to have some new mechanism to feature gate system
+components based on versions.  That way, the new feature is not turned on until
+all dependencies are at the required versions.
+
+For alpha, this is not concerning, but it needs to be solved by GA when the new
+functionality is enabled by default.
+
+
 #### Other Alternatives Considered
 
 ##### One scheduler function
@@ -454,22 +502,36 @@ Handling these scenarios in the scheduler’s Pod sync loop is not possible, so
 they have to remain in the PV controller.
 
 ##### Keep all PVC binding in the PV controller
-Add a new “node” annotation to the PVC object and have the scheduler update it
-when it schedules the pod to a node.  A new scheduling predicate is still
-needed to filter and match the PVs (but not actually bind).
+Instead of initiating PV binding in the scheduler, have the PV controller wait
+until the Pod has been scheduled to a Node, and then try to bind based on the
+chosen Node.  A new scheduling predicate is still needed to filter and match
+the PVs (but not actually bind).
+
+The advantages are:
+* Existing scenarios where scheduler is bypassed will work the same way.
+* Custom schedulers will continue to work the same way.
+* Most of the PV logic is still contained in the PV controller, simplifying HA
+upgrades.
 
 Major downsides of this approach include:
-* Requires PV controller to change its sync loop to operate on pods, in order
-to handle the multiple PVCs in a pod scenario.  This is a potentially big change
-that would be hard to keep separate and feature-gated from the current PV logic.
-* Needs new coordination between PV controller and kubelet to reject a pod if
-binding fails to send the pod back to scheduler.
-* Initial filtering (matching) and binding are done asynchronously so there is a
-higher chance of binding failures.  As an example, we could match PV1 for both
-pod1 and pod2, but only pod1 will be able to bind successfully, and pod2 has to
-be sent back to scheduling.
-* More race conditions and higher chance of binding failure because of 3
-different components operating independently (scheduler, PV controller, kubelet).
+* Requires PV controller to watch Pods and potentially change its sync loop
+to operate on pods, in order to handle the multiple PVCs in a pod scenario.
+This is a potentially big change that would be hard to keep separate and
+feature-gated from the current PV logic.
+* Both scheduler and PV controller processes have to make the binding decision,
+but because they are done asynchronously, it is possible for them to choose
+different PVs.  The scheduler has to cache its decision so that it won't choose
+the same PV for another PVC.  But by the time PV controller handles that PVC,
+it could choose a different PV than the scheduler.
+    * Recovering from this inconsistent decision and syncing the two caches is
+very difficult.  The scheduler could have made a cascading sequence of decisions
+based on the first inconsistent decision, and they would all have to somehow be
+fixed based on the real PVC/PV state.
+* If the scheduler process restarts, it loses all its in-memory PV decisions and
+can make a lot of wrong decisions after the restart.
+* All the volume scheduler predicates that require PVC to be bound will not get
+evaluated.  To solve this, all the volume predicates need to also be built into
+the PV controller when matching possible PVs.
 
 ##### Move PVC binding to kubelet
 Looking into the future, with the potential for NUMA-aware scheduling, you could
@@ -486,15 +548,45 @@ In addition, the sub-scheduler is just a thought at this point, and there are no
 concrete proposals in this area yet.
 
 ### Binding multiple PVCs in one transaction
+TODO (beta): More details
+
 For the alpha phase, this is not required.  Since the scheduler is serialized, a
 partial binding failure should be a rare occurrence.  Manual recovery will need
 to be done for those rare failures.
 
+One approach to handle this is to rollback previously bound PVCs using PV taints
+and tolerations.  The details will be handled as a separate feature.
+
+For rollback, PersistentVolumes will have a new status to indicate if it's clean
+or dirty.  For backwards compatibility, a nil value is defaulted to dirty.  The
+PV controller will set the status to clean if the PV is Available and unbound.
+Kubelet will set the PV status to dirty during Pod admission, before adding the
+volume to the desired state.
+
+Two new PV taints are available for the scheduler to use:
+* ScheduleFailClean, with a short default toleration.
+* ScheduleFailDirty, with an infinite default toleration.
+
+If scheduling fails, update all bound PVs and add the appropriate taint
+depending on if the PV is clean or dirty.  Then retry scheduling.  It could be
+that the reason for the scheduling failure clears within the toleration period
+and the PVCs are able to be bound and scheduled.
+
+If all PVs are bound, and have a ScheduleFail taint, but the toleration has not
+been exceeded, then remove the ScheduleFail taints.
+
+If all PVs are bound, and none have ScheduleFail taints, then continue to
+schedule the pod.
+
 ### Recovering from kubelet rejection of pod
-Again, for alpha phase, manual intervention will be required.  For beta, we’ll
-have to consider some sort of rollback mechanism for more robustness.  Perhaps
-this rollback mechanism can also be used for binding multiple PVCs in one
-transaction.
+TODO (beta): More details
+
+Again, for alpha phase, manual intervention will be required.
+
+For beta, we can use the same rollback mechanism as above to handle this case.
+If kubelet rejects a pod, it will go back to scheduling.  If the scheduler
+cannot find a node for the pod, then it will encounter scheduling failure and
+taint the PVs with the ScheduleFail taint.
 
 ### Making dynamic provisioning topology aware
 TODO (beta): Design details
