@@ -67,15 +67,17 @@ These are rules that need to be followed by DaemonSet authors:
 * One DaemonSet can serve mount utilities for one or more volume plugins. We expect that one volume plugin per DaemonSet will be the most popular choice.
 * One DaemonSet must provide *all* utilities that are needed to provision, attach, mount, unmount, detach and delete a volume for a volume plugin, including `mkfs` and `fsck` utilities if they're needed.
     * E.g. `mkfs.ext4` is likely to be available on all hosts, but a pod with mount utilities should not depend on that nor use it.
-    * The only exceptions are:
-      * kernel modules. They are not portable across distros and they *should* be on the host.
+    * Kernel modules should be available in the pod with mount utilities too. "Available" does not imply that they need to be shipped in a container, we expect that binding `/lib/modules` from host to `/lib/modules` in the pod will be enough for all modules that are needed by Kubernetes internal volume plugins (all distros I checked incl. the "minimal" ones ship scsi.ko, rbd.ko, nfs.ko and fuse). This will allow future flex volumes ship vendor-specific kernel modules. It's up to the vendor to ensure that any kernel module matches the kernel on the host.
+    * The only exception is:
       * udev (or similar device manager). Only one udev can run on a system, therefore it should run on the host. If a volume plugin needs to talk to udev (e.g. by calling `udevadm trigger`), they must do it on the host and not in a container with mount utilities.
 * It is expected that these daemon sets will run privileged pods that will see host's `/proc`, `/dev`, `/sys`, `/var/lib/kubelet` and such. Especially `/var/lib/kubelet` must be mounted with shared mount propagation so kubelet can see mounts created by the pods.
 * The pods with mount utilities should run some simple init as PID 1 that reaps zombies of potential fuse daemons. `volume-exec` described below could be such simple init.
 * The pods with mount utilities run a daemon with gRPC server that implements `ExecService` defined below.
   * Upon starting, this daemon puts a UNIX domain socket into `/var/lib/kubelet/plugin-sockets/` directory on the host. This way, kubelet is able to discover all pods with mount utilities on a node.
-  * Kubernetes will ship implementation of this daemon that creates the socket on the right place and simply executes anything what kubelet asks for.
+  * Kubernetes will ship implementation of this daemon that creates the socket on the right place and simply executes anything what kubelet asks for, see `volume-exec` below.
 To sum it up, it's just a daemon set that spawns privileged pods, running a simple init + a daemon that executes mount utilities as requested by kubelet via gRPC.
+
+**Note**: It may be quite difficult to create a pod that see's host's `/dev` and `/sys`, contains necessary kernel modules, does the initialization right and reaps zombies. We're going to provide a template with all this. During alpha, it is expected that this template will be polished as we encounter new bugs, corner cases, systemd / udev / docker weirdness.
 
 ## Design
 
