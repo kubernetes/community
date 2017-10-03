@@ -67,13 +67,14 @@ These are rules that need to be followed by DaemonSet authors:
 * One DaemonSet can serve mount utilities for one or more volume plugins. We expect that one volume plugin per DaemonSet will be the most popular choice.
 * One DaemonSet must provide *all* utilities that are needed to provision, attach, mount, unmount, detach and delete a volume for a volume plugin, including `mkfs` and `fsck` utilities if they're needed.
     * E.g. `mkfs.ext4` is likely to be available on all hosts, but a pod with mount utilities should not depend on that nor use it.
-    * The only exception are kernel modules. They are not portable across distros and they *should* be on the host.
+    * The only exceptions are:
+      * kernel modules. They are not portable across distros and they *should* be on the host.
+      * udev (or similar device manager). Only one udev can run on a system, therefore it should run on the host. If a volume plugin needs to talk to udev (e.g. by calling `udevadm trigger`), they must do it on the host and not in a container with mount utilities.
 * It is expected that these daemon sets will run privileged pods that will see host's `/proc`, `/dev`, `/sys`, `/var/lib/kubelet` and such. Especially `/var/lib/kubelet` must be mounted with shared mount propagation so kubelet can see mounts created by the pods.
-* The pods with mount utilities should run some simple init as PID 1 that reaps zombies of potential fuse daemons.
+* The pods with mount utilities should run some simple init as PID 1 that reaps zombies of potential fuse daemons. `volume-exec` described below could be such simple init.
 * The pods with mount utilities run a daemon with gRPC server that implements `ExecService` defined below.
   * Upon starting, this daemon puts a UNIX domain socket into `/var/lib/kubelet/plugin-sockets/` directory on the host. This way, kubelet is able to discover all pods with mount utilities on a node.
   * Kubernetes will ship implementation of this daemon that creates the socket on the right place and simply executes anything what kubelet asks for.
-
 To sum it up, it's just a daemon set that spawns privileged pods, running a simple init + a daemon that executes mount utilities as requested by kubelet via gRPC.
 
 ## Design
@@ -115,6 +116,7 @@ service ExecService {
 * Kubernetes will ship a daemon with server implementation of this API in `cmd/volume-exec`. This implementation simply calls `os.Exec` for each `ExecRequest` it gets and returns the right response.
 
   * Authors of container images with mount utilities can then add this `volume-exec` daemon to their image, they don't need to care about anything else.
+  * `cmd/volume-exec` could consume (or ignore) SIGCHLD and serve as a very simple init that reaps zombies.
 
 ### Upgrade
 Upgrade of the DaemonSet with pods with mount utilities needs to be done node by node and with extra care. The pods may run fuse daemons and killing such pod with glusterfs fuse daemon would kill all pods that use glusterfs on the same node.
