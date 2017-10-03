@@ -3,53 +3,50 @@
 ## Metadata
 ```
 ---
-metadata:
-  number: 0001
-  state: opened
-  authors:
-  - author:
-      name: caleb miles
-      github: @calebamiles
-      slack: @calebamiles
-  owners:
-  - sig-release
-  - sig-pm
-  - sig-architecture
-  - sig-testing
-  - steering-committee
-  links:
-    issues:
-    - [someIssueURL]()
-    prs:
-    - https://github.com/kubernetes/community/pull/967
-    discussions:
-    - https://groups.google.com/forum/#!topic/kubernetes-dev/65A-3ULYPB0
-    - https://groups.google.com/forum/#!topic/kubernetes-sig-architecture/t-1EqeEoLPA
-    documentation:
-    - [someDocsLinkURL]()
-    related:
-    - [KEP template](https://github.com/kubernetes/community/pull/1124)
+kep-number: 1
+title: Kubernetes Enhancement Proposal Process
+authors:
+  - name: Caleb Miles
+    github: calebamiles
+    slack: calebamiles
+  - name: Joe Beda
+    github: jbeda
+    email: joe@heptio.com
+    slack: jbeda
+owning-sig: sig-architecture
+participating-sigs:
+  - `kubernetes-wide`
+reviewers:
+  - name: TBD
+approvers:
+  - name: TBD
+editor:
+  name: TBD
+creation-date: 2017-08-22
+status: draft
 ```
 
 ## Table of Contents
 
-- [Kubernetes Enhancement Proposal Process](#kubernetes-enhancement-proposal-process)
-  - [Metadata](#metadata)
-  - [Summary](#summary)
-  - [Motivation](#motivation)
-  - [Reference-level explanation](#reference-level-explanation)
-     - [What type of work should be tracked by a KEP](#what-type-of-work-should-be-tracked-by-a-kep)
-     - [KEP Template](#kep-template)
-     - [KEP Workflow](#kep-workflow)
-     - [Git and GitHub Implementation](#git-and-github-implementation)
-     - [KEP Editor Role](#kep-editor-role)
-     - [Important Metrics](#important-metrics)
-     - [Prior Art](#prior-art)
-  - [Graduation Criteria](#graduation-criteria)
-  - [Drawbacks](#drawbacks)
-  - [Alternatives](#alternatives)
-  - [Unresolved Questions](#unresolved-questions)
-  - [Mentors](#mentors)
+* [Kubernetes Enhancement Proposal Process](#kubernetes-enhancement-proposal-process)
+  * [Metadata](#metadata)
+  * [Table of Contents](#table-of-contents)
+  * [Summary](#summary)
+  * [Motivation](#motivation)
+  * [Reference-level explanation](#reference-level-explanation)
+      * [What type of work should be tracked by a KEP](#what-type-of-work-should-be-tracked-by-a-kep)
+      * [KEP Template](#kep-template)
+      * [KEP Metadata](#kep-metadata)
+      * [KEP Workflow](#kep-workflow)
+      * [Git and GitHub Implementation](#git-and-github-implementation)
+      * [KEP Editor Role](#kep-editor-role)
+      * [Important Metrics](#important-metrics)
+      * [Prior Art](#prior-art)
+  * [Graduation Criteria](#graduation-criteria)
+  * [Drawbacks](#drawbacks)
+  * [Alternatives](#alternatives)
+  * [Unresolved Questions](#unresolved-questions)
+  * [Mentors](#mentors)
 
 ## Summary
 
@@ -158,7 +155,81 @@ The template for a KEP is precisely defined in the [template proposal][]
 
 [template proposal]: https://github.com/kubernetes/community/pull/1124
 
+### KEP Metadata
+
+There is a place in each KEP for a YAML document that has standard metadata.
+This will be used to support tooling around filtering and display.  It is also
+critical to clearly communicate the status of a KEP.
+
+Metadata items:
+* **kep-number** Required
+  * Each proposal has a number.  This is to make all references to proposals as
+    clear as possible.  This is especially important as we create a network
+    cross references between proposals.
+  * Before having the `Approved` status, the number for the KEP will be in the
+    form of `draft-YYYYMMDD`.  The `YYYYMMDD` is replaced with the current date
+    when first creating the KEP.  The goal is to enable fast parallel merges of
+    pre-acceptance KEPs.
+  * On acceptance a sequential dense number will be assigned.  This will be done
+    by the editor and will be done in such a way as to minimize the chances of
+    conficts.  The final number for a KEP will have no prefix.
+* **title** Required
+  * The title of the KEP in plain language.  The title will also be used in the
+    KEP filename.  See the template for instructions and details.
+* **status** Required
+  * The current state of the KEP.
+  * Must be one of `Draft`, `Deferred`, `Approved`, `Rejected`, `Withdrawn`,
+    `Final`, `Replaced`.
+* **authors** Required
+  * A list of authors for the KEP.  We require a name (which can be a psuedonym)
+    along with a github ID.  Other ways to contact the author is strongly
+    encouraged.  This is a list of maps.  Subkeys of each item: `name`,
+    `github`, `email` (optional), `slack` (optional).
+* **owning-sig** Required
+  * The SIG that is most closely associated with this KEP. If there is code or
+    other artifacts that will result from this KEP, then it is expected that
+    this SIG will take responsiblity for the bulk of those artificats.
+  * Sigs are listed as `sig-abc-def` where the name matches up with the
+    directory in the `kubernetes/community` repo.
+* **participating-sigs** Optional
+  * A list of SIGs that are involved or impacted by this KEP.
+  * A special value of `kubernetes-wide` will indicate that this KEP has impact
+    across the entire project.
+* **reviewers** Required
+  * Reviewer(s) chosen after triage according to proposal process
+  * If not yet chosen replace with `TBD`
+  * Same name/contact scheme as `authors`
+* **approvers** Required
+  * Approver(s) chosen after triage according to proposal process
+  * If not yet chosen replace with `TBD`
+  * Same name/contact scheme as `authors`
+* **editor** Required
+  * Someone to keep things moving forward.
+  * If not yet chosen replace with `TBD`
+  * Same name/contact scheme as `authors`
+* **creation-date** Required
+  * The date that the KEP was first submitted in a PR.
+  * In the form `yyyy-mm-dd`
+  * While this info will also be in source control, it is helpful to have the set of KEP files stand on their own.
+* **last-updated** Optional
+  * The date that the KEP was last changed significantly.
+  * In the form `yyyy-mm-dd`
+* **see-also** Optional
+  * A list of other KEPs that are relevant to this KEP.
+  * In the form `KEP-123`
+* **replaces** Optional
+  * A list of KEPs that this KEP replaces.  Those KEPs should list this KEP in
+    their `superceded-by`.
+  * In the form `KEP-123`
+* **superseded-by**
+  * A list of KEPs that superced this KEP. Use of this should be paired with
+    this KEP moving into the `Replaced` status.
+  * In the form `KEP-123`
+
+
 ### KEP Workflow
+
+TODO(jbeda) Rationalize this with status entires in the Metadata above.
 
 A KEP is proposed to have the following states
 
