@@ -110,7 +110,7 @@ These are grandfathered in as full projects:
 - github.com/kubernetes/community
 - github.com/kubernetes/release
 - github.com/kubernetes/features
-- github.com/kubernetes/md-check
+- github.com/kubernetes/kube-state-metrics
 - github.com/kubernetes/pr-bot - move from mungebot, etc from contrib, currently running in "prod" on github.com/kubernetes
 - github.com/kubernetes/dashboard
 - github.com/kubernetes/helm  (Graduated from incubator on Feb 2017)
@@ -141,7 +141,7 @@ These projects are young but have significant user facing docs pointing at their
 - github.com/kubernetes/contrib - new projects could be created from the code in this repo, issue to move
 - github.com/kubernetes/kubedash
 - github.com/kubernetes/kubernetes-docs-cn
-- github.com/kubernetes/kube-state-metrics
+- github.com/kubernetes/md-check
 
 ## Thank You
 
