@@ -70,92 +70,111 @@ This will also be used to escalate to the correct SIG GitHub team.
 - `kind/feature`: New functionality.
 - `kind/cleanup`: Adding tests, refactoring, fixing old bugs.
 
+## Bot communication
+
+The bot will communicate the state of an issue in the active milestone via comments and labels.
+
+### Comments
+
+All bot comments will mention issue owners and link to this doc.  Bot
+comments in the workflow section of this document will only include
+the message but be presumed to include the header and footer in the
+following example:
+
+```
+@pwittrock @droot
+
+<message>
+
+Additional instructions available [here](<link to this doc>)
+```
+
+### Labels
+
+The following labels are used by the bot to track the state of an
+issue in the milestone:
+
+ - status/incomplete-labels - one or more of the required `kind/`, `priority`/ or `sig/` labels are missing
+ - status/needs-approval - the `status/approved-for-milestone` label is missing
+ - status/needs-attention - a status label is missing or an update is required
+ - status/milestone-removed - the issue was removed from the milestone
+
+These labels are mutually exclusive - only one will appear on an issue at once.
+
 ## Workflow
 
 1. An issue is added to the current release milestone (either through creation or update)
   - Bot checks to make sure all required labels are set on the issue
-  - If and only if any labels are missing, comment listing the missing labels and include a link to this document.  Mention all issue owners.
+  - If any labels are missing, the bot comments listing the missing labels and applies the `status/incomplete-labels` label.
     ```
-    @pwittrock @droot
-    
-    **Action required**: Issue is missing the following required labels.  Set the labels or the issue will be moved
-    out of the milestone within 2 days.
-    
+    **Action required**: Issue is missing the following required labels.  Set the labels or the issue
+    will be moved out of the milestone within 3 days.
+
     - priority
     - severity
-    
-    Additional instructions available [here](<link to this doc>)
     ```
-  - If and only if all labels are present, comment summarizing the state.  Mention all issue owners.
+  - **If required labels are not applied within 3 days of being moved to the milestone, the bot will move the issue out of the milestone and apply the `status/milestone-removed` label (unless the issue is critical-urgent).**
+  - If the required labels are present, the bot checks whether the issue has the `status/approved-for-milestone` label.
+  - If the approved label is not present, the bot comments indicating that the label must be applied by a SIG maintainer and applies the `status/needs-approval` label.
     ```
-    @pwittrock @droot
-    
+    **Action required**: This issue must have the `status/approved-for-milestone` label applied
+    by a SIG maintainer.
+    ```
+  - If the approved label is present, the bot comments summarizing the label state and removes the other `status/*` labels.
+    ```
     Issue label settings:
+
     sig/node: Issue will be escalated to SIG node if needed
-    priority/critical-urgent: Never automatically move out of a release milestone.  Escalate to SIG and contributor through all available channels.
+    priority/critical-urgent: Never automatically move out of a release milestone.
+                              Escalate to SIG and contributor through all available channels.
     kind/bug: Fixes a bug.
-    
-    Additional instructions available [here](<link to this doc>)
     ```
-  - **If required labels are not applied within 3 days of being moved to the milestone,  the issue is moved back out of the milestone.  (unless it is critical-urgent)**
-2. If labels change, bot checks that the needed labels are present and comments with updated meaning.
+  - **If the approved label is not applied within 7 days of the `status/needs-approval` label being applied, the bot will move the issue out of the milestone and apply the `status/milestone-removed` label (unless the issue is critical-urgent).**
+2. If labels change, the bot checks that the needed labels are present and updates its comment and labeling to reflect the issue's current state.
 3. Code slush
-  - **priority/important-* issues**
-    - bot comments mentioning issue owners, expects a 1 time response.
+  - All issues are required to have a status label - one of `status/in-review` or `status/in-progress`.
+  - If an issue does not have a status label, the bot comments indicating the required action and applies the `status/needs-attention` label.
     ```
-    **Action Required**:
-    This issue is marked as priority/important-x, and is in the 1.y milestone.  Please confirm the following
-    or the issue will be removed from the milestone.
-    
-    1. it is still targeted at the milestone
-    2. it has not been completed and should remain open
-    3. it is being actively worked on by the assignee
-    
-    **Note**: This issue must be resolved or moved out of the milestone by <date of code freeze> or it will
-    automatically be moved out of the milestone
+    **Action required**: Must specify at most one of `status/in-review` or `status/in-progress`.
     ```
-    - after 2 days without a reply, bot follows escalation procedure derived from priority label
-      - important-longterm, remove from milestone and notify the owners
-      - important-soon, escalate to SIG daily for 2 days.
-    - removal should add the `release/removed-from-milestone` label and contain the following message
-      ```
-      **Important**:
-      There has been no confirmation that this issue belongs in the v1.X milestone.
-      Removing it from the milestone.
-      ```
+  - **priority/important- issues**
+    - The bot includes a warning in the issue comment that the issue will be moved out of the milestone at code freeze.
+    ```
+    **Note**: This issue must be resolved or labeled as priority/critical-urgent by
+    <date of code freeze> or it will automatically be moved out of the milestone
+    ```
   - **priority/critical-urgent issues**
-    - bot comments on issues not updated within 3 days mentioning issue owners, expects updates every 3 days going forward.
+    - The bot includes a warning in the issue comment that the issue must be updated regularly.
       ```
-      **Action Required**:
-      This issue is marked as priority/critical-urgent, but has not been updated in 3 days.  Please provide
-      an update or the issue will be escalated to the SIG.
+      **Note**: This issue is marked as priority/critical-urgent, and is expected to be updated at
+      least every 3 days.
       ```
-    - owner updates can be a short ACK, but should include an ETA for completion and any risk factors.
+    - If an issue hasn't been updated for more than 3 days, the bot comments and adds the `status/needs-attention` label.
+      ```
+      **Action Required**: This issue is marked as priority/critical-urgent, but has not been updated
+      in 3 days.  Please provide an update.
+      ```
+    - Owner updates can be a short ACK, but should include an ETA for completion and any risk factors.
       ```
       ACK.  In progress
       ETA: DD/MM/YYYY
       Risks: Complicated fix required
       ```
-      
+
       ```
       ACK.  In progress
       ETA: ???
       Risks: Root cause unknown.
       ```
 4. Code freeze
-  - **priority/important-* issues**
-    - bot comments mentioning issue owners, expects the issue to be escalated in priority or removed from milestone within 2 days.
-    ```
-    **Action Required**:
-    This issue is marked as priority/important-x, and is in the 1.y milestone.  Only critical-urgent issue
-    are being tracked for the 1.y release.  Escalate the priority to critical-urgent within 1 day, **or the issue
-    will be removed from the milestone**.
-    ```
-    - bot immediately escalates to the SIG.  escalation message includes link to all priority/important issues
-      for the SIG remaining in the milestone.
+  - **priority/important- issues**
+    - The bot removes non-blocker issues from the milestone, comments as to why this was done, and adds the `status/milestone-removed` label.
+      ```
+      **Important**: Code freeze is in effect and only issues with priority/critical-urgent may remain
+      in the active milestone.  Removing it from the milestone.
+      ```
   - **priority/critical-urgent issues**
-    - bot comments on issues not updated within 1 day mentioning issue owners, expects updates every day going forward.
-    - bot escalates to SIG after 2 days without updates and applies the label `release/needs-attention`
+    - If an issue has not been updated within 2 days, the bot comments and adds the `status/needs-attention` label.
 
 ## Escalation
 
