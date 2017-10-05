@@ -1,5 +1,9 @@
 # 2017 VOTERS GUIDE - KUBERNETES STEERING COMMITTEE ELECTION
 
+This election has been completed.
+
+[Results](RESULTS.md)
+
 # PURPOSE
 The initial role of the steering committee is to instantiate the formal governance process for Kubernetes. In addition to defining the initial governance process, the [bootstrap committee](https://groups.google.com/forum/#!msg/kubernetes-dev/4e8WOnMvZC0/57GYmJKfDAAJ) strongly believes that it is important to provide a means for iterating the processes defined by the steering committee. We do not believe that we will get it right the first time, or possibly ever, and won’t even complete the governance development in a single shot. The role of the steering committee is to be a living, responsive body that can refactor and reform as necessary to adapt to a changing project and community.
 
