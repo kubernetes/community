@@ -94,10 +94,10 @@ Additional instructions available [here](<link to this doc>)
 The following labels are used by the bot to track the state of an
 issue in the milestone:
 
- - status/incomplete-labels - one or more of the required `kind/`, `priority`/ or `sig/` labels are missing
- - status/needs-approval - the `status/approved-for-milestone` label is missing
- - status/needs-attention - a status label is missing or an update is required
- - status/milestone-removed - the issue was removed from the milestone
+ - milestone/incomplete-labels - one or more of the required `kind/`, `priority`/ or `sig/` labels are missing
+ - milestone/needs-approval - the `status/approved-for-milestone` label is missing
+ - milestone/needs-attention - a status label is missing or an update is required
+ - milestone/removed - the issue was removed from the milestone
 
 These labels are mutually exclusive - only one will appear on an issue at once.
 
@@ -105,7 +105,7 @@ These labels are mutually exclusive - only one will appear on an issue at once.
 
 1. An issue is added to the current release milestone (either through creation or update)
   - Bot checks to make sure all required labels are set on the issue
-  - If any labels are missing, the bot comments listing the missing labels and applies the `status/incomplete-labels` label.
+  - If any labels are missing, the bot comments listing the missing labels and applies the `milestone/incomplete-labels` label.
     ```
     **Action required**: Issue is missing the following required labels.  Set the labels or the issue
     will be moved out of the milestone within 3 days.
@@ -113,14 +113,14 @@ These labels are mutually exclusive - only one will appear on an issue at once.
     - priority
     - severity
     ```
-  - **If required labels are not applied within 3 days of being moved to the milestone, the bot will move the issue out of the milestone and apply the `status/milestone-removed` label (unless the issue is critical-urgent).**
+  - **If required labels are not applied within 3 days of being moved to the milestone, the bot will move the issue out of the milestone and apply the `milestone/removed` label (unless the issue is critical-urgent).**
   - If the required labels are present, the bot checks whether the issue has the `status/approved-for-milestone` label.
-  - If the approved label is not present, the bot comments indicating that the label must be applied by a SIG maintainer and applies the `status/needs-approval` label.
+  - If the approved label is not present, the bot comments indicating that the label must be applied by a SIG maintainer and applies the `milestone/needs-approval` label.
     ```
     **Action required**: This issue must have the `status/approved-for-milestone` label applied
     by a SIG maintainer.
     ```
-  - If the approved label is present, the bot comments summarizing the label state and removes the other `status/*` labels.
+  - If the approved label is present, the bot comments summarizing the label state and removes the other `milestone/*` labels.
     ```
     Issue label settings:
 
@@ -129,11 +129,11 @@ These labels are mutually exclusive - only one will appear on an issue at once.
                               Escalate to SIG and contributor through all available channels.
     kind/bug: Fixes a bug.
     ```
-  - **If the approved label is not applied within 7 days of the `status/needs-approval` label being applied, the bot will move the issue out of the milestone and apply the `status/milestone-removed` label (unless the issue is critical-urgent).**
+  - **If the approved label is not applied within 7 days of the `milestone/needs-approval` label being applied, the bot will move the issue out of the milestone and apply the `milestone/removed` label (unless the issue is critical-urgent).**
 2. If labels change, the bot checks that the needed labels are present and updates its comment and labeling to reflect the issue's current state.
 3. Code slush
   - All issues are required to have a status label - one of `status/in-review` or `status/in-progress`.
-  - If an issue does not have a status label, the bot comments indicating the required action and applies the `status/needs-attention` label.
+  - If an issue does not have a status label, the bot comments indicating the required action and applies the `milestone/needs-attention` label.
     ```
     **Action required**: Must specify at most one of `status/in-review` or `status/in-progress`.
     ```
@@ -149,7 +149,7 @@ These labels are mutually exclusive - only one will appear on an issue at once.
       **Note**: This issue is marked as priority/critical-urgent, and is expected to be updated at
       least every 3 days.
       ```
-    - If an issue hasn't been updated for more than 3 days, the bot comments and adds the `status/needs-attention` label.
+    - If an issue hasn't been updated for more than 3 days, the bot comments and adds the `milestone/needs-attention` label.
       ```
       **Action Required**: This issue is marked as priority/critical-urgent, but has not been updated
       in 3 days.  Please provide an update.
@@ -168,13 +168,13 @@ These labels are mutually exclusive - only one will appear on an issue at once.
       ```
 4. Code freeze
   - **priority/important- issues**
-    - The bot removes non-blocker issues from the milestone, comments as to why this was done, and adds the `status/milestone-removed` label.
+    - The bot removes non-blocker issues from the milestone, comments as to why this was done, and adds the `milestone/removed` label.
       ```
       **Important**: Code freeze is in effect and only issues with priority/critical-urgent may remain
       in the active milestone.  Removing it from the milestone.
       ```
   - **priority/critical-urgent issues**
-    - If an issue has not been updated within 2 days, the bot comments and adds the `status/needs-attention` label.
+    - If an issue has not been updated within 2 days, the bot comments and adds the `milestone/needs-attention` label.
 
 ## Escalation
 
