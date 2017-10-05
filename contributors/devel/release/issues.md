@@ -96,7 +96,7 @@ issue in the milestone:
 
  - milestone/incomplete-labels - one or more of the required `kind/`, `priority`/ or `sig/` labels are missing
  - milestone/needs-approval - the `status/approved-for-milestone` label is missing
- - milestone/needs-attention - a status label is missing or an update is required
+ - milestone/needs-attention - the `status/in-progress` label is missing or an update is required
  - milestone/removed - the issue was removed from the milestone
 
 These labels are mutually exclusive - only one will appear on an issue at once.
@@ -132,10 +132,13 @@ These labels are mutually exclusive - only one will appear on an issue at once.
   - **If the approved label is not applied within 7 days of the `milestone/needs-approval` label being applied, the bot will move the issue out of the milestone and apply the `milestone/removed` label (unless the issue is critical-urgent).**
 2. If labels change, the bot checks that the needed labels are present and updates its comment and labeling to reflect the issue's current state.
 3. Code slush
-  - All issues are required to have a status label - one of `status/in-review` or `status/in-progress`.
-  - If an issue does not have a status label, the bot comments indicating the required action and applies the `milestone/needs-attention` label.
+  - All issues are required to be in progress, as indicated by the `status/in-progress` label.
+  - If an issue does not have the label, the bot comments indicating the required action and applies the `milestone/needs-attention` label.
     ```
-    **Action required**: Must specify at most one of `status/in-review` or `status/in-progress`.
+    **Action required**: During code slush, issues in the milestone should be in progress.
+    If this issue is not being actively worked on, please remove it from the milestone.
+    If it is being worked on, please add the status/in-progress label so it can be tracked
+    with other in-flight issues.
     ```
   - **priority/important- issues**
     - The bot includes a warning in the issue comment that the issue will be moved out of the milestone at code freeze.
