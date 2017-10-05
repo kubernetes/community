@@ -322,6 +322,10 @@ by two instances (replicated or restarting) of the controller process.
 
 We chose to use the hashed-date suffix approach.
 
+## Manually triggering CronJobs
+
+A user may wish to manually trigger a CronJob for some reason (see [#47538](http://issues.k8s.io/47538)), such as testing it prior to its scheduled time. This could be made possible via an `/instantiate` subresource in the API, which when POSTed to would immediately spawn a Job from the JobSpec contained within the CronJob. 
+
 ## Future evolution
 
 Below are the possible future extensions to the Job controller:
