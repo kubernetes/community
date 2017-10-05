@@ -432,16 +432,13 @@ metadata:
   name: local-volume-config
   namespace: kube-system
 data:
-  "local-fast": |
-    {
-      "hostDir": "/mnt/ssds",
-      "mountDir": "/local-ssds"
-    }
-  "local-slow": |
-    {
-      "hostDir": "/mnt/hdds",
-      "mountDir": "/local-hdds"
-    }
+  storageClassMap: |
+    local-fast:
+      hostDir: "/mnt/ssds"
+      mountDir: "/local-ssds"
+    local-slow:
+      hostDir: "/mnt/hdds"
+      mountDir: "/local-hdds"
 ```
 
 The `hostDir` is the discovery path on the host, and the `mountDir` is the path it is mounted to in
@@ -518,14 +515,11 @@ metadata:
   name: local-volume-config
   namespace: kube-system
 data:
-  "local-fast": |
-    {
-      "hostDir": "/mnt/ssds",
-    }
-  "local-slow": |
-    {
-      "hostDir": "/mnt/hdds",
-    }
+ storageClassMap: |
+    local-fast:
+      hostDir: "/mnt/ssds"
+    local-slow:
+      hostDir: "/mnt/hdds"
 ```
 
 The boostrapper will update the ConfigMap with the generated `mountDir`.  It generates the `mountDir`
@@ -650,10 +644,11 @@ under designated directories that have been mounted on the provisioner container
 each storage class, the provisioner has a configmap entry that looks like this:
 
 ```
-"local-fast":   {
-      "hostDir": "/mnt/disks",
-      "mountDir": "/local-disks"
-}
+data:
+  storageClassMap: |
+    local-fast:
+      hostDir: "/mnt/disks"
+      mountDir: "/local-ssds"
 ```
 
 With this current approach, filesystems that were meant to be exposed as PVs are supposed to be
@@ -702,11 +697,14 @@ cleanup scripts of their own and have them specified in the configmap of the pro
 
 The configmap from earlier section will be enhanced as follows
 ```
- "local-fast":  {
-      "hostDir": "/mnt/disks",
-      "mountDir": "/local-disks",
-      "blockCleanerCommand": ["/scripts/dd_zero.sh", "2"]
-    }
+data:
+  storageClassMap: |
+    local-fast:
+      hostDir: "/mnt/disks"
+      mountDir: "/local-ssds"
+      blockCleanerCommand:
+         - "/scripts/dd_zero.sh"
+         - "2"
  ```
 
 The block cleaner command will specify the script and any arguments that need to be passed to it.
