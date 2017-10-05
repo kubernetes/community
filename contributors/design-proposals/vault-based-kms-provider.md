@@ -182,7 +182,7 @@ minimum:
 2. ``key-names`` list of names of the keys in Vault to be used. eg: key-name:
 kube-secret-enc-key.
 
-Note :  key name does not need to be changed if key is rotated in Vault, the
+Note :  key name does not need to be changed if the key is rotated in Vault, the
 rotated key is identified by key version which is prefix to ciphertext.
 
 A new key can be added in the list. Encryption will be done using the first key
@@ -250,7 +250,7 @@ Here's a sample configuration file using a Vault AppRole for authentication.
 The KEK is generated in Vault and rotated using direct API call or CLI to Vault
 itself. The Key never leaves the vault.
 
-Note that when a key is rotated, Vault does not allow to choose a different
+Note that when a key is rotated, Vault does not allow choosing a different
 encryption algorithm or key size. If a key for different encryption algorithm or
 a different key size is desired, new key needs to be generated in Vault and the
 corresponding key name be added in the configuration. Subsequent encryption will
