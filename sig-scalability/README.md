@@ -14,15 +14,6 @@ For more details about our objectives please review our [Scaling And Performance
 
 ## Meetings
 * [Thursdays at 16:00 UTC](https://zoom.us/j/989573207) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
-* Remaining 2017 Dates:
-   * 10/5
-   * 10/19
-   * 11/2
-   * 11/16
-   * 11/30
-   * 12/14
-   * 12/28 - no meeting
-
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
@@ -37,6 +28,15 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=NDP1uYyom
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)
 
 <!-- BEGIN CUSTOM CONTENT -->
+## Remaining 2017 Meeting Dates
+   * 10/5
+   * 10/19
+   * 11/2
+   * 11/16
+   * 11/30
+   * 12/14
+   * 12/28 - no meeting
+
 ## Scalability SLOs
 
 We officially support two different SLOs:
