@@ -1,13 +1,13 @@
 # Local PV Distributed Static Provisioner
 Authors: @verult, @msau42
 
-The current preference is [design 3](#design-3-event-driven-with-custom-resources).
+The current preference is [design 5](#design-5-worker-as-jobs-watcher-in-daemonset).
         
 ## Design Goals
 1. Limit all PV object interactions to a single master pod in order to minimize node access to the Kubernetes system. The original discussion is [here](https://github.com/kubernetes/community/pull/989#discussion_r135397619).
 1. Assume disk deletion is asynchronous, as required by block volumes.
 
-In all designs mentioned below, the provisioner will be run in a master-minion configuration. ProvisionerWorkers are deployed on every node in a DaemonSet (just as before) and ProvisionerMaster is deployed in a Deployment on a trusted node.
+In all designs mentioned below, the provisioner will be run in a master-worker configuration. ProvisionerWorkers are deployed on every node in a DaemonSet (just as before) and ProvisionerMaster is deployed in a Deployment on a trusted node.
 
 ## Related Works
 * Original provisioner design, [here](https://github.com/kubernetes-incubator/external-storage/tree/master/local-volume/provisioner#design).
@@ -36,7 +36,7 @@ The following fields are retrieved as part of the `GetWorkerStatus()` call:
 
 | Field               | Description |
 | --- | --- |
-| `LocalPVs`          | A collection of PVs mounted in the local storage directory on the node. The discoverer is triggered to acquire this information. |
+| `LocalVolumes`          | A collection of PVs mounted in the local storage directory on the node. The discoverer is triggered to acquire this information. |
 | `DeletesInProgress` | A collection of PVs currently being deleted asynchronously. This status is managed by the cleaner. |
 
 Every worker must maintain the invariant that `DeletesInProgress` is correct even after a worker restart. In the case that a user manually deletes the PV currently being deleted by a worker, master can only depend on the WorkerStatus to ensure a replacement PV isn't created.
@@ -54,7 +54,7 @@ Each WorkerInfo entry contains the following fields:
 ### Goroutine
 The goroutine will start by populating the `apiCache` using the populator logic that already exists in the previous design. Then, it will run the following loop with several seconds of delay in between executions:
 1. Call the RPC `GetWorkerStatus()`.
-1. Using `LocalPVs` from the worker status, **reconcile** with the `PVCache`. Create an additional PV if it exists in `LocalPVs` but not in `PVCache` *and no delete is in progress for this PV, i.e. it's not in `DeletesInProgress`*.
+1. Using `LocalVolumes` from the worker status, **reconcile** with the `PVCache`. Create an additional PV if it exists in `LocalVolumes` but not in `PVCache` *and no delete is in progress for this PV, i.e. it's not in `DeletesInProgress`*.
 1. For each PV in `VolumeReleased` state (ready for cleanup), if it's not in `DeletesInProgress`, call the `Delete()` RPC.
 
 Master must delete the PV object after the disk delete operation is complete. In order for master to know when this occurs, the worker must persist a "complete" state, because in the wake of worker failure, master has to differentiate between an error and a completion. Master also needs to notify the worker that the PV is deleted, so the persisted state can be removed.
@@ -122,12 +122,12 @@ To ensure correctness, master and worker never write to the same field. Specific
 * After a `DeleteOperation` is created, its `PV` field is never modified.
 * Master can only create and delete `DeleteOperation`s. It never modifies those objects.
 * Worker can only modify `DeleteStatus`. It can never create or delete `DeleteOperation`s.
-* Only a worker can write to `LocalPVs`.
+* Only a worker can write to `LocalVolumes`.
 
 ### Worker Provisioner
 Create the ProvisionerStatus object on initialization.
 
-The Discoverer periodically probes the filesystem and updates ProvisionerStatus `LocalPVs`. This can be further improved by using a filesystem watch.
+The Discoverer periodically probes the filesystem and updates ProvisionerStatus `LocalVolumes`. This can be further improved by using a filesystem watch.
 
 The Deleter uses ProvisionerStatus to keep track of states for each PV being deleted. Deletion is started when the ProvisionerStatus is updated (by the master) and some PVs are in the Requested state. Details will be included in the async volume cleaner design.
 
@@ -135,26 +135,51 @@ The Deleter uses ProvisionerStatus to keep track of states for each PV being del
 A single goroutine processes events from all informers.
 
 On ProvisionerStatus Informer update, perform the following actions:
-1. For deletion: If a PV is in the Completed state, delete the PV from the API server and remove the entry from `DeleteOperations`.
-1. For discovery: compare `LocalPVs` with existing PVs in the API server. If a PV exists in `LocalPVs` but has not been persisted, and if the disk is not about to be deleted (i.e. in Requested or InProgress state), then create the PV.
+1. For deletion: If a volume is in the Completed state, delete the corresponding PV from the API server and remove the entry from `DeleteOperations`.
+1. For discovery: compare `LocalVolumes` with existing PVs in the API server. If a volume exists in `LocalVolumes` but has not been persisted, and if the disk is not about to be deleted (i.e. in Requested or InProgress state), then create the PV.
 
 On PV Informer update: if the updated PV is in VolumeReleased state, add the PV to `DeleteOperations` with the Requested state.
 
 On Node deletion: delete the associated ProvisionerStatus object.
 
-**TODO**: Consider marking cache dirty when its corresponding API object is modified within master and ignoring Informer events if cache is dirty. This ensures master is always operating on the most up-to-date data. One possible bad scenario it could prevent:
-1. A worker discovers a volume and updates `LocalPVs`.
-1. A PV corresponding to this volume already exists, and now gets released.
-1. The PV Informer fires on master, which then adds a new entry to `DeleteOperations` to signal a delete request.
-1. The ProvisionerStatus Informer fires on master from the discovered volume. Since the cache is not updated with the new `DeleteOperations`, master proceeds to create a volume, while a delete operation is underway in reality.
+**TODO**: Consider marking cache dirty when its corresponding API object is modified within master and ignoring Informer events if cache is dirty. This ensures master is always operating on the most up-to-date data. 
+
+## Design 4: Hybrid RPC-CRD Approach
+Keep the same CRD object described in Design 3, but only master has write access to them. Workers must persist its delete state locally and report its status to master through gRPC. Master makes requests to workers by writing to CRD, and fetches worker status by polling (similar to Design 1).
+
+Several modifications to Design 1:
+* For discovery, do not rely on worker to report its identity as it can be compromised. Identify workers using the Endpoints object (pod name and node name).
+* In future versions, master goroutines should be event-driven, as constant polling is not scalable to large number of nodes. A worker pings the master when it's ready to report status, and master makes a separate call to fetch status from the worker. Worker must continuously ping master until it receives a status request to ensure master recognizes the status update. As a safety check, master should also poll workers periodically, but with very low frequency.
+  * It's not as secure to have workers push status directly because a worker can't be accurately identified from a gRPC request (the request IP can be spoofed).
+  * It's more convenient to use gRPC server streams, but it's hard to scale this to thousands of nodes as streams require TCP connections to be kept open.
+
+**TODO**: Use network policy to limit pod communication to only within the provisioner system?
+
+## Design 5: Worker as Jobs, Watcher in DaemonSet
+One of the major issues with previous approaches is worker identity - when a worker tries to communicate with master, it has to prove it's the worker it claims to be. To fix these issues, each worker must maintain different credentials.
+
+Alternatively, master can actively create worker Jobs to perform discovery and delete rather than having long-running worker pods in a DaemonSet sending data to the master. For discovery, workers can store the list of local volumes in its container STDOUT (**TODO**: decide on a form of structured output rather than plain text). For deletion, the status of the Job acts as an indication of deletion state. Master has perfect knowledge of which Job runs on which node, so if any worker is compromised, the damage is contained within the node the worker is scheduled on.
+
+To trigger discovery, we have local volume directory watcher pod running in a DaemonSet. It keeps an in-memory cache of local volumes and periodically checks the volume directory for changes. If there is a change, it notifies master through either gRPC or a CRD notification object, and master can then spawn a discovery Job.
+
+To ensure the provisioner system has up-to-date state on initialization, the following needs to be done:
+* When the master initializes, it spawns discovery jobs on every node to make sure it knows about all local volumes in the cluster.
+* When a watcher initializes, it should notify master so a discovery Job can be spawned to fetch the latest list of local volumes.
+
+Master can be made completely event driven using Job informers.
 
 ## Conclusion
 One main downside of design 2 is the possibility of duplicate discover and delete operations, as a result of the cache not being updated immediately. Also, because the logic of PV updates is divided over the network, it's easy for PVs to end up in an inconsistent state.
 
-Design 3 seems like the best approach because:
+Design 3 has the following advantages:
 * Master has perfect knowledge of when to issue PV delete (based on the Complete DeleteStatus) without requiring multiple acknowledgment messages between master and worker.
 * Because the API server persists state reliably, we can simplify our reasoning with failure modes.
 * Provisioner discovery is no longer necessary.
 * Retries and backoffs are no longer necessary.
 * Provisioner state is more visible to admins.
 * Almost entirely event-driven (the only exception being the filesystem probe).
+But one major concern with this approach is each worker has access to all ProvisionerStatus objects. If a worker is compromised, it could disrupt the entire provisioner system instead of just its node.
+
+Design 4 is a compromise, taking advantage of benefits from other designs. However, it would not work if the network can be damaged to the point that a compromised worker can intercept all traffic to the IP of another normal worker.
+
+Design 5 removes the need to maintain worker identity, and thus is the simplest design that protects against our security concerns. Each pod in the DaemonSet is also smaller in size and actual workers are spawned only as needed.
