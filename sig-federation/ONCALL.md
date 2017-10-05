@@ -9,7 +9,8 @@ Oncall playbook: https://github.com/kubernetes/community/blob/master/contributor
 
 # Joining the rotation
 
-Add your name at the end of the current rotation schedule.
+Add your name at the end of the current rotation schedule if you want to join the rotation.
+Anyone is free to join as long as they can perform the expected work described above. No special permissions are required but familiarity with existing codebase is recommended.
 
 # Swapping the rotation
 
