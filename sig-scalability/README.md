@@ -13,7 +13,16 @@ What size clusters do we think that we should support with Kubernetes in the sho
 For more details about our objectives please review our [Scaling And Performance Goals](https://github.com/kubernetes/community/blob/master/sig-scalability/goals.md)
 
 ## Meetings
-* [Thursdays at 16:00 UTC](https://zoom.us/j/989573207) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+* [Thursdays at 16:00 UTC](https://zoom.us/j/989573207) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+* Remaining 2017 Dates:
+   * 10/5
+   * 10/19
+   * 11/2
+   * 11/16
+   * 11/30
+   * 12/14
+   * 12/28 - no meeting
+
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
