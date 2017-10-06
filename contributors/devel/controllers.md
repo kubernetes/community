@@ -82,27 +82,12 @@ type Controller struct {
 	queue workqueue.RateLimitingInterface
 }
 
-func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
-	// don't let panics crash the process
-	defer utilruntime.HandleCrash()
-	// make sure the work queue is shutdown which will trigger workers to end
-	defer c.queue.ShutDown()
-
-	glog.Infof("Starting <NAME> controller")
-
-	// wait for your secondary caches to fill before starting your work
-	if !cache.WaitForCacheSync(stopCh, c.pods.Informer().HasSynced) {
-		return
+func NewController(pods informers.PodInformer) *Controller {
+	c := &Controller{
+		pods: pods
+		queue: workqueue.NewNamedRateLimitingQueue(workqueue.DefaultControllerRateLimiter(), "controller-name"),
 	}
-
-	// start up your worker threads based on threadiness.  Some controllers
-	// have multiple kinds of workers
-	for i := 0; i < threadiness; i++ {
-		// runWorker will loop until "something bad" happens.  The .Until will
-		// then rekick the worker after one second
-		go wait.Until(c.runWorker, time.Second, stopCh)
-	}
-
+	
 	// register event handlers to fill the queue with pod creations, updates and deletions
 	c.pods.Informer().AddEventHandler(cache.ResourceEventHandlerFuncs{
 		AddFunc: func(obj interface{}) {
@@ -126,6 +111,30 @@ func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
 			}
 		},
 	},)
+	
+	return c
+}
+
+func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
+	// don't let panics crash the process
+	defer utilruntime.HandleCrash()
+	// make sure the work queue is shutdown which will trigger workers to end
+	defer c.queue.ShutDown()
+
+	glog.Infof("Starting <NAME> controller")
+
+	// wait for your secondary caches to fill before starting your work
+	if !cache.WaitForCacheSync(stopCh, c.pods.Informer().HasSynced) {
+		return
+	}
+
+	// start up your worker threads based on threadiness.  Some controllers
+	// have multiple kinds of workers
+	for i := 0; i < threadiness; i++ {
+		// runWorker will loop until "something bad" happens.  The .Until will
+		// then rekick the worker after one second
+		go wait.Until(c.runWorker, time.Second, stopCh)
+	}
 
 	// wait until we're told to stop
 	<-stopCh
