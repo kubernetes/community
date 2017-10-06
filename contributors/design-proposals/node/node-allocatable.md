@@ -295,7 +295,7 @@ The former disables Node Allocatable enforcement on all pods and the latter avoi
 This rollout in v1.6 might cause the following symptoms:
 
 1. If `--kube-reserved` and/or `--system-reserved` flags are also specified, OOM kills of containers and/or evictions of pods. This can happen primarily to `Burstable` and `BestEffort` pods since they can no longer use up all the resource available on the node.
-1. Total allocatable capadity in the cluster reduces resulting in pods staying `Pending` because Hard Eviction Thresholds are included in Node Allocatable.
+1. Total allocatable capacity in the cluster reduces resulting in pods staying `Pending` because Hard Eviction Thresholds are included in Node Allocatable.
 
 ##### Proposed Timeline
 
