@@ -70,14 +70,6 @@ type CustomResourceSubResources struct {
 
 // CustomResourceSubResourceStatus defines how to serve the HTTP path <CR Name>/status.
 type CustomResourceSubResourceStatus struct {
-    // The JSON path (e.g. “.status”) of the status of a CustomResource.
-    // The whole object is transferred over the wire, but only the status can be mutated via the /status subresource.
-    // StatusPath is restricted to be “.status” and defaults to “.status”.
-    StatusPath string `json:“statusPath,omitempty”`
-    // The JSON path (e.g. “.spec”) of the spec of a CustomResource.
-    // SpecPath is restricted to be “.spec” and defaults to “.spec”.
-    // Changes to the specified JSON path increase the “.metadata.generation” value.
-    SpecPath string `json:“specPath,omitempty”`
 }
 
 // CustomResourceSubResourceScale defines how to serve the HTTP path <CR name>/scale.
@@ -145,8 +137,8 @@ If the gate is not open, the value of the new field within `CustomResourceDefini
 
 #### Status
 
-The status endpoint of a CustomResource receives a full CR object. Changes outside of the status path are ignored.
-For validation everything outside of the JSON Path `StatusPath` can be reset to the existing values of the CustomResource. Then the JSON Schema presented in the CRD is validated against the whole object.
+The status endpoint of a CustomResource receives a full CR object. Changes outside of the `.status` subpath are ignored.
+For validation everything outside of the `.status` subpath can be reset to the existing values of the CustomResource. Then the JSON Schema presented in the CRD is validated against the whole object.
 
 Note: one could extract the status subobject, filter the JSON schema by rules applied to the status and then validate the status subobject only.
 The filter step of the JSON schema though is not obvious in the case that there are status validations not below a properties JSON Schema construct. For that reason, the alternative implementation is preferred as its semantics are much simpler.
@@ -166,20 +158,20 @@ If it is invalid, an empty `LabelSelector` is used.
 
 If the `/status` subresource is enabled, the following behaviors change:
 
-- The main resource endpoint will ignore all changes in the specified status subpath.
+- The main resource endpoint will ignore all changes in the status subpath.
 (note: it will **not** reject requests which try to change the status, following the existing semantics of other resources).
 
-- The `.metadata.generation` field is updated if and only if the value at the specified `SpecPath` (e.g. `.spec`)  changes.
+- The `.metadata.generation` field is updated if and only if the value at the `.spec` subpath changes.
 Additionally, if the spec does not change, `.metadata.generation` is not updated.
 
-- The `/status` subresource receives a full resource object, but only considers the value at the specified `StatusPath` subpath (e.g. `.status`) for the update.
+- The `/status` subresource receives a full resource object, but only considers the value at the `.status` subpath for the update.
 The value at the `.metadata` subpath is **not** considered for update as decided in https://github.com/kubernetes/kubernetes/issues/45539.
 
 Both the status and the spec (and everything else if there is anything) of the object share the same key in the storage layer, i.e. the value at  `.metadata.resourceVersion` is increased for any kind of change. There is no split of status and spec in the storage layer.
 
 ### Scale Behavior
 
-The number of CustomResources can be easily scaled up or down depending on the replicas field present in path specified by `SpecPath`.
+The number of CustomResources can be easily scaled up or down depending on the replicas field present in the `.spec` subpath.
 
 Only `ScaleSpec.Replicas` can be written. All other values are read-only and changes will be ignored. i.e. upon updating the scale subresource, two fields are modified:
 
