@@ -248,15 +248,12 @@ Priority, and are the largest consumers of the starved resource relative to
 their scheduling request.
 
 It will target pods whose usage of the starved resource exceeds its requests.
-Of those pods, it will rank by a function of priority, and usage - requests.
-Roughly speaking, if a pod has twice the priority of another pod, it will
-recieve half the penalty for usage above requests. If system daemons are 
-exceeding their allocation (see [Strategy Caveat](strategy-caveat) below),
-and all pods are using less than their requests, then it will evict a pod
-whose usage is less than requests, based on the function of priority, and
-usage - requests.
+Of those pods, it will rank by priority, then usage - requests. If system 
+daemons are exceeding their allocation (see [Strategy Caveat](strategy-caveat) below),
+and all pods are using less than their requests, then it must evict a pod
+whose usage is less than requests, based on priority, then usage - requests.
 
-Prior to v1.8:
+Prior to v1.9:
 The `kubelet` will implement a default eviction strategy oriented around
 the pod quality of service class.
 
