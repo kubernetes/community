@@ -82,7 +82,7 @@ A running Kubernetes cluster contains node agents (kubelet) and a cluster contro
 The Kubernetes [control plane](https://en.wikipedia.org/wiki/Control_plane) is split 
 into a set of components, which can all run on a single *master* node, or can be replicated
 in order to support high-availability clusters, or can even be run on Kubernetes itself (AKA
-[self-hosted](self-hosted-kubernetes.md#what-is-self-hosted)).
+[self-hosted](../cluster-lifecycle/self-hosted-kubernetes.md#what-is-self-hosted)).
 
 Kubernetes provides a REST API supporting primarily CRUD operations on (mostly) persistent resources, which
 serve as the hub of its control plane. Kubernetes’s API provides IaaS-like
@@ -225,7 +225,7 @@ Runtimes supported today, either upstream or by forks, include at least docker (
 
 The [service](https://kubernetes.io/docs/concepts/services-networking/service/) abstraction provides a way to
 group pods under a common access policy (e.g., load-balanced). The implementation of this creates
-A virtual IP which clients can access and which is transparently proxied to the pods in a Service.
+a virtual IP which clients can access and which is transparently proxied to the pods in a Service.
 Each node runs a [kube-proxy](https://kubernetes.io/docs/admin/kube-proxy/) process which programs
 `iptables` rules to trap access to service IPs and redirect them to the correct backends. This provides a highly-available load-balancing solution with low performance overhead by balancing
 client traffic from a node on that same node.
@@ -245,7 +245,7 @@ itself:
 
 A single Kubernetes cluster may span multiple availability zones.
 
-However, for the highest availability, we recommend using [cluster federation](federation.md).
+However, for the highest availability, we recommend using [cluster federation](../federation/federation.md).
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/architecture.md?pixel)]()
