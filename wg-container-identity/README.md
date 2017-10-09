@@ -10,11 +10,12 @@ To understand how this file is generated, see generator/README.md.
 
 Ensure containers are able to interact with external systems and acquire secure identities for communication, integrating with external solutions as necessary.
 
+The working group proposal can be found [here](https://docs.google.com/document/d/1bCK-1_Zy2WfsrMBJkdaV72d2hidaxZBhS5YQHAgscPI/edit?usp=sharing).
+
 ## Meetings
 * [Tuesdays at 15:00 UTC](TBD) (bi-weekly (On demand)). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
 
-Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1bCK-1_Zy2WfsrMBJkdaV72d2hidaxZBhS5YQHAgscPI/edit).
-Meeting recordings can be found [here]().
+Meeting notes, agenda, and recordings can be found [here](https://docs.google.com/document/d/1uH60pNr1-jBn7N2pEcddk6-6NTnmV5qepwKUJe9tMRo/edit?usp=sharing).
 
 ## Organizers
 * Clayton Coleman (**[@smarterclayton](https://github.com/smarterclayton)**), Red Hat
