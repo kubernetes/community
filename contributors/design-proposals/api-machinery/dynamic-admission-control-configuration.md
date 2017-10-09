@@ -2,13 +2,13 @@
 ## Background
 
 The extensible admission control
-[proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control_extension.md)
+[proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/admission_control_extension.md)
 proposed making admission control extensible. In the proposal, the `initializer
 admission controller` and the `generic webhook admission controller` are the two
 controllers that set default initializers and external admission hooks for
 resources newly created. These two admission controllers are in the same binary
 as the apiserver. This
-[section](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control_extension.md#dynamic-configuration)
+[section](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/admission_control_extension.md#dynamic-configuration)
 gave a preliminary design of the dynamic configuration of the list of the
 default admission controls. This document hashes out the implementation details.
 
