@@ -134,8 +134,6 @@ by default in GA.
 For the alpha phase, the focus is on static provisioning of PVs to support
 persistent local storage.
 
-TODO: flow chart
-
 The proposed new workflow for volume binding is:
 1. Admin statically creates PVs and/or StorageClasses.
 2. User creates unbound PVC and there are no prebound PVs for it.
@@ -164,6 +162,9 @@ scheduler again for reasons explained later.
 10. When a Pod makes a successful scheduler pass once all PVCs are bound, the
 scheduler assumes and binds the Pod to a Node.
 11. Kubelet starts the Pod.
+
+This diagram depicts the new additions to the default scheduler:
+![alt text](volume-topology-scheduling.png)
 
 This new workflow will have the scheduler handle unbound PVCs by choosing PVs
 and prebinding them to the PVCs.  The PV controller completes the binding
@@ -555,7 +556,8 @@ partial binding failure should be a rare occurrence.  Manual recovery will need
 to be done for those rare failures.
 
 One approach to handle this is to rollback previously bound PVCs using PV taints
-and tolerations.  The details will be handled as a separate feature.
+and tolerations.  The design details for PV taints and tolerations will be
+handled as a separate feature.
 
 For rollback, PersistentVolumes will have a new status to indicate if it's clean
 or dirty.  For backwards compatibility, a nil value is defaulted to dirty.  The
