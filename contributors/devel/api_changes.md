@@ -456,7 +456,7 @@ The conversion code resides with each versioned API. There are two files:
 
 Since auto-generated conversion functions are using manually written ones,
 those manually written should be named with a defined convention, i.e. a
-function converting type X in pkg a to type Y in pkg b, should be named:
+function converting type `X` in pkg `a` to type `Y` in pkg `b`, should be named:
 `convert_a_X_To_b_Y`.
 
 Also note that you can (and for efficiency reasons should) use auto-generated
@@ -478,7 +478,7 @@ the build system uses custom cache.
 `make all` will invoke `make generated_files` as well.
 
 The `make generated_files` will also regenerate the `zz_generated.deepcopy.go`,
-`zz_generated.defaults.go`, and `api/openapi-spec/openapi-spec`.
+`zz_generated.defaults.go`, and `api/openapi-spec/swagger.json`.
 
 If regeneration is somehow not possible due to compile errors, the easiest
 workaround is to remove the files causing errors and rerun the command.
@@ -575,7 +575,8 @@ of api objects - this is to improve the overall system performance.
 
 The auto-generated code resides with each versioned API:
 
-   - `staging/src/k8s.io/api/<group>/<version>/types.generated.go`
+   - `staging/src/k8s.io/api/<group>/<version>/generated.proto`
+   - `staging/src/k8s.io/api/<group>/<version>/generated.pb.go`
 
 To regenerate them run:
 
@@ -831,7 +832,7 @@ The preferred approach adds an alpha field to the existing object, and ensures i
 
 1. Add a feature gate to the API server to control enablement of the new field (and associated function):
 
-    In [k8s.io/apiserver/pkg/util/feature/feature_gate.go](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/util/feature/feature_gate.go):
+    In [staging/src/k8s.io/apiserver/pkg/features/kube_features.go](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/features/kube_features.go):
 
     ```go
     // owner: @you
@@ -950,7 +951,3 @@ client which uses the other version. Therefore, this is not a preferred option.
 A related issue is how a cluster manager can roll back from a new version
 with a new feature, that is already being used by users. See
 https://github.com/kubernetes/kubernetes/issues/4855.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/api_changes.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->
