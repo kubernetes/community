@@ -735,7 +735,7 @@ workinggroups:
       utc: "15:00"
       frequency: bi-weekly (On demand)
     meeting_url: TBD
-    meeting_archive_url: https://docs.google.com/document/d/1bCK-1_Zy2WfsrMBJkdaV72d2hidaxZBhS5YQHAgscPI/edit
+    meeting_archive_url: https://docs.google.com/document/d/1uH60pNr1-jBn7N2pEcddk6-6NTnmV5qepwKUJe9tMRo/edit
     meeting_recordings_url:
     contact:
       slack: wg-container-identity
