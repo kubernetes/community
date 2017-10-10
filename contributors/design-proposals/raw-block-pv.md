@@ -414,8 +414,6 @@ apiVersion: "v1"
 kind: "PersistentVolume"
 metadata:
   name: gce-disk-1
-  annotations:
-    volume.beta.kubernetes.io/mount-options: "discard"
 Spec:
   volumeMode: Block
   capacity:
