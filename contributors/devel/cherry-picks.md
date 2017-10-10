@@ -9,7 +9,7 @@ depending on the point in the release cycle.
 1. Cherrypicks are [managed with labels and milestones](pull-requests.md#write-release-notes-if-needed)
 1. To get a PR merged to the release branch, first ensure the following labels
    are on the original **master** branch PR:
-  * The `milestone` for the branch that you want to cherry-pick to (e.g. v1.7 if you want to backport your change in 1.7 branch)
+  * The milestone for the branch that you want to cherry-pick to (e.g. v1.7 if you want to backport your change in 1.7 branch)
   * The `cherrypick-candidate` label
 1. If `release-note-none` is set on the master PR, the cherrypick PR will need
    to set the same label to confirm that no release note is needed.
