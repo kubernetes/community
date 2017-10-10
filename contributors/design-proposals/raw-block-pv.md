@@ -82,7 +82,7 @@ with the same volumeMode.
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-name: myclaim
+  name: myclaim
 spec:
   volumeMode: Block #proposed API change
   accessModes:
@@ -149,7 +149,7 @@ kind: Pod
 metadata:
   name: my-db
 spec:
-    containers
+    containers:
     - name: mysql
       image: mysql
       volumeDevices: #proposed API change
