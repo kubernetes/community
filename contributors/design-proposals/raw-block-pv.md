@@ -100,7 +100,7 @@ an error if it does not.
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-name: myclaim
+  name: myclaim
 spec:
   storageClassName: local-fast 
   volumeMode: Block #proposed API change
