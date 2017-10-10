@@ -15,6 +15,7 @@ Updated: 3/23/2017
   - [Documentation conventions](#documentation-conventions)
   - [kubectl Factory conventions](#kubectl-Factory-conventions)
   - [Command implementation conventions](#command-implementation-conventions)
+  - [Exit code conventions](#exit-code-conventions)
   - [Generators](#generators)
 
 <!-- END MUNGE: GENERATED_TOC -->
@@ -374,6 +375,21 @@ should exist server-side so any client could take advantage of it. Notice that
 this is not a mandatory structure and not every command is implemented this way,
 but this is a nice convention so try to be compliant with it. As an example,
 have a look at how [kubectl logs](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubectl/cmd/logs.go) is implemented.
+
+## Exit code conventions
+
+Generally, for all the command exit code, result of `zero` means success and `non-zero` means errors.
+
+For idempotent ("make-it-so") commands, we should return `zero` when success even if no changes were provided, user can request treating "make-it-so" as "already-so" via flag `--error-unchanged` to make it return `non-zero` exit code.
+
+For non-idempotent ("already-so") commands, we should return `non-zero` by default, user can request treating "already-so" as "make-it-so" via flag `--ignore-unchanged` to make it return `zero` exit code.
+
+
+| Exit Code Number | Meaning | Enable |
+| :---             | :---    | :---    |
+| 0                | Command exited success  | By default, By flag `--ignore-unchanged` |
+| 1                | Command exited for general errors  | By default |
+| 3                | Command was successful, but the user requested a distinct exit code when no change was made | By flag `--error-unchanged`|
 
 ## Generators
 
