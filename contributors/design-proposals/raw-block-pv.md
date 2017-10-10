@@ -118,16 +118,28 @@ compatibility, the absence of volumeMode will default to filesystem which is how
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-name: local-raw-pv
+  name: local-raw-pv
+  annotations:
+        "volume.alpha.kubernetes.io/node-affinity": '{
+            "requiredDuringSchedulingIgnoredDuringExecution": {
+                "nodeSelectorTerms": [
+                    { "matchExpressions": [
+                        { "key": "kubernetes.io/hostname",
+                          "operator": "In",
+                          "values": ["ip-172-18-11-174.ec2.internal"]
+                        }
+                    ]}
+                 ]}
+              }'
 spec:
-  volumeMode: Block #proposed API change
+  volumeMode: Block
   capacity:
-    storage: 100Gi
+    storage: 10Gi
   local:
-    path: /dev/xvdc #device path
+    path: /dev/xvdf
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Delete 
+  persistentVolumeReclaimPolicy: Retain  
 ```
 ## Pod API Changes:
 This change intentionally calls out the use of a block device (volumeDevices) rather than the mount point on a filesystem.
@@ -170,7 +182,6 @@ metadata:
   storageMode: ThinProvisionned
   secretRef: sio-secret
   readOnly: false
-  fsType: Block #suggested value
 ```
 The provisioner (if applicable) should validate the parameters and return an error if the combination specified is not supported.
 This also allows the use case for leveraging a Storage Class for utilizing pre-defined static volumes. By labeling the Persistent Volumes
