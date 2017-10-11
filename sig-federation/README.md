@@ -16,6 +16,9 @@ Covers the Federation of Kubernetes Clusters and related topics. This includes: 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
 
+## Label
+federation
+
 ## Leads
 * Christian Bell (**[@csbell](https://github.com/csbell)**), Google
 * Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei

@@ -16,6 +16,9 @@ A Special Interest Group for building, deploying, maintaining, supporting, and u
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
 
+## Label
+azure
+
 ## Leads
 * Jason Hansen (**[@slack](https://github.com/slack)**), Microsoft
 * Cole Mickens (**[@colemickens](https://github.com/colemickens)**), Microsoft

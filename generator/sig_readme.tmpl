@@ -10,6 +10,9 @@
 Meeting notes and Agenda can be found [here]({{.MeetingArchiveURL}}).
 Meeting recordings can be found [here]({{.MeetingRecordingsURL}}).
 
+## Label
+{{.Label}}
+
 ## Leads
 {{- range .Leads }}
 * {{.Name}} (**[@{{.GitHub}}](https://github.com/{{.GitHub}})**){{if .Company}}, {{.Company}}{{end}}
@@ -19,6 +22,7 @@ Meeting recordings can be found [here]({{.MeetingRecordingsURL}}).
 * [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})
 * [Mailing list]({{.Contact.MailingList}})
 {{if .Contact.FullGitHubTeams}}
+
 ## GitHub Teams
 {{range .Contact.GithubTeamNames -}}
 * [@{{.}}](https://github.com/kubernetes/teams/{{.}})

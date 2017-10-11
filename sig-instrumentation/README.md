@@ -16,6 +16,9 @@ Covers best practices for cluster observability through metrics, logging, and ev
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1gWuAATtlmI7XJILXd31nA4kMq6U9u63L70382Y3xcbM/edit).
 Meeting recordings can be found [here]().
 
+## Label
+instrumentation
+
 ## Leads
 * Piotr Szczesniak (**[@piosz](https://github.com/piosz)**), Google
 * Fabian Reinartz (**[@fabxc](https://github.com/fabxc)**), CoreOS

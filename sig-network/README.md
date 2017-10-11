@@ -16,6 +16,9 @@ Covers networking in Kubernetes.
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
 
+## Label
+network
+
 ## Leads
 * Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
 * Dan Williams (**[@dcbw](https://github.com/dcbw)**), Red Hat

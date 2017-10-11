@@ -19,6 +19,9 @@ It is also important to remember that the role of managing an open source projec
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ).
 
+## Label
+product-management
+
 ## Leads
 * Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google
 * Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF

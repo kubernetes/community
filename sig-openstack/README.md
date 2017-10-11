@@ -16,6 +16,9 @@ Coordinates the cross-community efforts of the OpenStack and Kubernetes communit
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax).
 
+## Label
+openstack
+
 ## Leads
 * Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
 * Steve Gordon (**[@xsgordon](https://github.com/xsgordon)**), Red Hat
@@ -23,6 +26,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=iCfUx7ilh
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-openstack)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack)
+
 
 ## GitHub Teams
 * [@sig-openstack-misc](https://github.com/kubernetes/teams/sig-openstack-misc)

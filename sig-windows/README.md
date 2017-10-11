@@ -16,6 +16,9 @@ Focuses on supporting Windows Server Containers for Kubernetes.
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=7zawb3KT9Xk&list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4).
 
+## Label
+windows
+
 ## Leads
 * Michael Michael (**[@michmike](https://github.com/michmike)**), Apprenda
 

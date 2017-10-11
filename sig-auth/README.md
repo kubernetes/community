@@ -16,6 +16,9 @@ Covers improvements to Kubernetes authorization, authentication, and cluster sec
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=DJDuDNALcMo&list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw).
 
+## Label
+auth
+
 ## Leads
 * Eric Chiang (**[@ericchiang](https://github.com/ericchiang)**), CoreOS
 * Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Red Hat

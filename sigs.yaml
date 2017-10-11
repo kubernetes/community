@@ -6,6 +6,7 @@ sigs:
       API CRUD semantics, admission control, encoding/decoding, conversion,
       defaulting, persistence layer (etcd), OpenAPI, third-party resource,
       garbage collection, and client libraries.
+    label: api-machinery
     leads:
     - name: Daniel Smith
       company: Google
@@ -31,6 +32,7 @@ sigs:
       We discuss how to define and run apps in Kubernetes, demo relevant tools
       and projects, and discuss areas of friction that can lead to suggesting
       improvements or feature requests.
+    label: apps
     leads:
     - name: Michelle Noorali
       github: michelleN
@@ -56,6 +58,7 @@ sigs:
     mission_statement: >
       The Architecture SIG maintains and evolves the design principles of Kubernetes, and provides a consistent
       body of expertise necessary to ensure architectural consistency over time.
+    label: architecture
     leads:
     - name: Brian Grant
       github: bgrant0607
@@ -78,6 +81,7 @@ sigs:
     mission_statement: >
       Covers improvements to Kubernetes authorization, authentication, and
       cluster security policy.
+    label: auth
     leads:
     - name: Eric Chiang
       github: ericchiang
@@ -104,6 +108,7 @@ sigs:
       Covers autoscaling of clusters, horizontal and vertical autoscaling of pods,
       setting initial resources for pods, topics related to monitoring pods and
       gathering their metrics (e.g.: Heapster)
+    label: autoscaling
     leads:
     - name: Marcin Wielgus
       github: mwielgus
@@ -125,6 +130,7 @@ sigs:
     dir: sig-aws
     mission_statement: >
       Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
+    label: aws
     leads:
     - name: Justin Santa Barbara
       github: justinsb
@@ -151,6 +157,7 @@ sigs:
     mission_statement: >
       A Special Interest Group for building, deploying, maintaining, supporting,
       and using Kubernetes on Azure Container Service.
+    label: azure
     leads:
     - name: Jason Hansen
       github: slack
@@ -177,6 +184,7 @@ sigs:
       Covers deploying and operating big data applications (Spark, Kafka,
       Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integrations with
       big data applications and architecting the best ways to run them on Kubernetes.
+    label: big-data
     leads:
     - name: Anirudh Ramanathan
       github: foxish
@@ -202,6 +210,7 @@ sigs:
       establishment of conventions for writing CLI commands, POSIX compliance,
       and improving the command line tools from a developer and devops user
       experience and usability perspective.
+    label: cli
     leads:
     - name: Fabiano Franz
       github: fabianofranz
@@ -227,6 +236,7 @@ sigs:
     mission_statement: >
       The Cluster Lifecycle SIG is responsible for building the user experience
       for deploying and upgrading Kubernetes clusters.
+    label: cluster-lifecycle
     leads:
     - name: Luke Marsden
       github: lukemarsden
@@ -258,6 +268,7 @@ sigs:
       focus on shared operations practices for Kubernetes clusters with a goal
       to make Kubernetes broadly accessible with a common baseline reference.
       We also organize operators as a sounding board and advocacy group.
+    label: cluster-ops
     leads:
     - name: Rob Hirschfeld
       github: zehicle
@@ -283,6 +294,7 @@ sigs:
       contributors are happy and productive, we need to break the commit-rate
       ceiling we hit in July 2015, and we need to get the monotonically growing
       PR merge latency and numbers of open PRs and issues under control.
+    label: contributor-experience
     leads:
     - name: Garrett Rodrigues
       github: grodrigues3
@@ -304,6 +316,7 @@ sigs:
     dir: sig-docs
     mission_statement: >
       Covers documentation, doc processes, and doc publishing for Kubernetes.
+    label: docs
     leads:
     - name: Devin Donnelly
       github: devin-donnelly
@@ -329,6 +342,7 @@ sigs:
       outages; hybrid clouds; spanning of multiple could providers; application
       migration from private to public clouds (and vice versa); and other
       similar subjects.
+    label: federation
     leads:
     - name: Christian Bell
       github: csbell
@@ -352,6 +366,7 @@ sigs:
       Covers best practices for cluster observability through metrics, logging, and events across all
       Kubernetes components and development of relevant components such as Heapster and kube-state-metrics.
       Coordinates metric requirements of different SIGs for other components through finding common APIs.
+    label: instrumentation
     leads:
     - name: Piotr Szczesniak
       github: piosz
@@ -373,6 +388,7 @@ sigs:
     dir: sig-network
     mission_statement: >
       Covers networking in Kubernetes.
+    label: network
     leads:
     - name: Tim Hockin
       github: thockin
@@ -396,6 +412,7 @@ sigs:
   - name: Node
     dir: sig-node
     mission_statement: >
+    label: node
     leads:
     - name: Dawn Chen
       github: dchen1107
@@ -419,6 +436,7 @@ sigs:
       Brings together member of Kubernetes community interested in running
       Kubernetes on premise, on bare metal or more generally beyond cloud
       providers.
+    label: onprem
     leads:
     - name: Marco Ceppi
       github: marcoceppi
@@ -446,6 +464,7 @@ sigs:
       projects with OpenStack as: a deployment platform for Kubernetes; a
       service provider for Kubernetes; a collection of applications to run on
       Kubernetes.
+    label: openstack
     leads:
     - name: Ihor Dvoretskyi
       github: idvoretskyi
@@ -485,6 +504,7 @@ sigs:
       source project is very new and largely unscoped for a project as large
       as Kubernetes; we are learning too and we are excited to learn how we
       can best serve the community of users and contributors.
+    label: product-management
     leads:
     - name: Aparna Sinha
       github: apsinha
@@ -507,6 +527,7 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-pm
   - name: Release
     dir: sig-release
+    label: release
     leads:
     - name: Phillip Wittrock
       github: pwittrock
@@ -536,6 +557,7 @@ sigs:
 
       For more details about our objectives please review our
       [Scaling And Performance Goals](https://github.com/kubernetes/community/blob/master/sig-scalability/goals.md)
+    label: scalability
     leads:
     - name: Wojciech Tyczynski
       github: wojtek-t
@@ -559,6 +581,7 @@ sigs:
   - name: Scheduling
     dir: sig-scheduling
     mission_statement: >
+    label: scheduling
     leads:
     - name: David Oppenheimer
       github: davidopp
@@ -584,6 +607,7 @@ sigs:
     mission_statement: >
       To develop a Kubernetes API for the CNCF service broker and Kubernetes
       broker implementation.
+    label: service-catalog
     leads:
     - name: Paul Morie
       github: pmorie
@@ -611,6 +635,7 @@ sigs:
     dir: sig-storage
     mission_statement: >
       Covers storage and volume plugins.
+    label: storage
     leads:
     - name: Saad Ali
       github: saad-ali
@@ -635,6 +660,7 @@ sigs:
       interested specifically in making it easier for the community to run
       tests and contribute test results, to ensure Kubernetes is stable across
       a variety of cluster configurations and cloud providers.
+    label: testing
     leads:
     - name: Aaron Crickenberger
       github: spiffxp
@@ -662,6 +688,7 @@ sigs:
       Dashboard: a general purpose, web-based UI for Kubernetes clusters. It
       allows users to manage applications running in the cluster and
       troubleshoot them, as well as manage the cluster itself.
+    label: ui
     leads:
     - name: Dan Romlein
       github: danielromlein
@@ -683,6 +710,7 @@ sigs:
     dir: sig-windows
     mission_statement: >
       Focuses on supporting Windows Server Containers for Kubernetes.
+    label: windows
     leads:
     - name: Michael Michael
       github: michmike

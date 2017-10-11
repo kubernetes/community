@@ -15,6 +15,9 @@ To understand how this file is generated, see generator/README.md.
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=FbKOI9-x9hI&list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
 
+## Label
+node
+
 ## Leads
 * Dawn Chen (**[@dchen1107](https://github.com/dchen1107)**), Google
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat

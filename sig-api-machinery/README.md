@@ -16,6 +16,9 @@ Covers all aspects of API server, API registration and discovery, generic API CR
 Meeting notes and Agenda can be found [here](https://goo.gl/x5nWrF).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=Lj1ScbXpnpY&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R).
 
+## Label
+api-machinery
+
 ## Leads
 * Daniel Smith (**[@lavalamp](https://github.com/lavalamp)**), Google
 * David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
@@ -28,7 +31,6 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=Lj1ScbXpn
 ## Additional links
 
 * [YouTube Playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R) - find meeting recordings here
-
 ## Areas
 apiserver, api registration and discovery, generic API CRUD semantics, admission control, encoding/decoding, conversion, defaulting, persistence layer (etcd), OpenAPI, third-party resource, garbage collection, client libraries
 <!-- END CUSTOM CONTENT -->

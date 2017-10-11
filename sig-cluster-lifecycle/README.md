@@ -16,6 +16,9 @@ The Cluster Lifecycle SIG is responsible for building the user experience for de
 Meeting notes and Agenda can be found [here](https://docs.google.com/a/weave.works/document/d/1deJYPIF4LmhGjDVaqrswErIrV7mtwJgovtLnPCDxP7U/edit).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=ljK5dgSA7vc&list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 
+## Label
+cluster-lifecycle
+
 ## Leads
 * Luke Marsden (**[@lukemarsden](https://github.com/lukemarsden)**), Weave
 * Joe Beda (**[@jbeda](https://github.com/jbeda)**), Heptio
@@ -25,6 +28,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=ljK5dgSA7
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
+
 
 ## GitHub Teams
 * [@sig-cluster-lifecycle-misc](https://github.com/kubernetes/teams/sig-cluster-lifecycle-misc)

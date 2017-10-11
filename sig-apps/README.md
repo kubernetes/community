@@ -16,6 +16,9 @@ Covers deploying and operating applications in Kubernetes. We focus on the devel
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3).
 
+## Label
+apps
+
 ## Leads
 * Michelle Noorali (**[@michelleN](https://github.com/michelleN)**), Microsoft
 * Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS

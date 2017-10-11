@@ -16,6 +16,9 @@ Developing and sustaining a healthy community of contributors is critical to sca
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 
+## Label
+contributor-experience
+
 ## Leads
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**), Google
 * Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), CoreOS

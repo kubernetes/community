@@ -16,6 +16,9 @@ Covers deploying and operating big data applications (Spark, Kafka, Hadoop, Flin
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit).
 Meeting recordings can be found [here](https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit).
 
+## Label
+big-data
+
 ## Leads
 * Anirudh Ramanathan (**[@foxish](https://github.com/foxish)**), Google
 * Erik Erlandson (**[@erikerlandson](https://github.com/erikerlandson)**), Red Hat

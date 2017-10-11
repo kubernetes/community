@@ -16,6 +16,9 @@ Interested in how we can most effectively test Kubernetes. We're interested spec
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1z8MQpr_jTwhmjLMUaqQyBk1EYG_Y_3D4y4YdMJ7V1Kk).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=BbFjuxe3N4w&list=PL69nYSiGNLP0ofY51bEooJ4TKuQtUSizR).
 
+## Label
+testing
+
 ## Leads
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Samsung SDS
 * Erick Feja (**[@fejta](https://github.com/fejta)**), Google

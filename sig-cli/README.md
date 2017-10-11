@@ -16,6 +16,9 @@ Covers kubectl and related tools. We focus on the development and standardizatio
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
 Meeting recordings can be found [here](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
 
+## Label
+cli
+
 ## Leads
 * Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**), Red Hat
 * Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google

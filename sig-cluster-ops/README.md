@@ -16,6 +16,9 @@ Promote operability and interoperability of Kubernetes clusters. We focus on sha
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR).
 
+## Label
+cluster-ops
+
 ## Leads
 * Rob Hirschfeld (**[@zehicle](https://github.com/zehicle)**), RackN
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Microsoft

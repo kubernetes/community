@@ -15,6 +15,9 @@ To understand how this file is generated, see generator/README.md.
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1vhsixdT58iJFfoGZbpmvI_xnK59XyAjtadu3h6hHPpY/edit?usp=sharing).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ).
 
+## Label
+release
+
 ## Leads
 * Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
 * Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), CoreOS

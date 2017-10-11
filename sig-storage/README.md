@@ -16,6 +16,9 @@ Covers storage and volume plugins.
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq).
 
+## Label
+storage
+
 ## Leads
 * Saad Ali (**[@saad-ali](https://github.com/saad-ali)**), Google
 * Bradley Childs (**[@childsb](https://github.com/childsb)**), Red Hat

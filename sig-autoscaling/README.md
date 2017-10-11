@@ -16,6 +16,9 @@ Covers autoscaling of clusters, horizontal and vertical autoscaling of pods, set
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit).
 Meeting recordings can be found [here]().
 
+## Label
+autoscaling
+
 ## Leads
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
 * Solly Ross (**[@directxman12](https://github.com/directxman12)**), Red Hat

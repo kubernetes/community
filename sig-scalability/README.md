@@ -18,6 +18,9 @@ For more details about our objectives please review our [Scaling And Performance
 Meeting notes and Agenda can be found [here](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
 
+## Label
+scalability
+
 ## Leads
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
 * Bob Wise (**[@countspongebob](https://github.com/countspongebob)**), Samsung SDS

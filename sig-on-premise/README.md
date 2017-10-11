@@ -16,6 +16,9 @@ Brings together member of Kubernetes community interested in running Kubernetes 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1AHF1a8ni7iMOpUgDMcPKrLQCML5EMZUAwP4rro3P6sk/edit#).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=dyUWqqNYUio&list=PL69nYSiGNLP2MvqC6NeegrgtOl5s1KlYa).
 
+## Label
+onprem
+
 ## Leads
 * Marco Ceppi (**[@marcoceppi](https://github.com/marcoceppi)**), Canonical
 * Dalton Hubble (**[@dghubble](https://github.com/dghubble)**), CoreOS
@@ -23,6 +26,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=dyUWqqNYU
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-onprem)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-on-prem)
+
 
 ## GitHub Teams
 * [@onprem-misc](https://github.com/kubernetes/teams/onprem-misc)

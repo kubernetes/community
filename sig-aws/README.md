@@ -16,6 +16,9 @@ Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit).
 Meeting recordings can be found [here]().
 
+## Label
+aws
+
 ## Leads
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
 * Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Microsoft
