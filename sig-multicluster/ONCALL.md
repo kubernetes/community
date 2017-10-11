@@ -1,25 +1,37 @@
 # Overview
 
-We have an oncall rotation in the SIG. The role description is as follows:
+We have an oncall rotation for Federation in the SIG. The role description is as
+follows:
 
-* Ensure that the testgrid (https://k8s-testgrid.appspot.com/sig-federation) is green. This person will be the point of contact if testgrid turns red. Will identify the problem and fix it (most common scenarios: find culprit PR and revert it or free quota by deleting leaked resources).
-Will also report most common failure scenarios and suggest improvements. Its up to the sig or individuals to prioritize and take up those tasks.
+*   Ensure that the testgrid (https://k8s-testgrid.appspot.com/sig-multicluster)
+    is green. This person will be the point of contact if testgrid turns red.
+    Will identify the problem and fix it (most common scenarios: find culprit PR
+    and revert it or free quota by deleting leaked resources). Will also report
+    most common failure scenarios and suggest improvements. Its up to the sig or
+    individuals to prioritize and take up those tasks.
 
-Oncall playbook: https://github.com/kubernetes/community/blob/master/contributors/devel/on-call-federation-build-cop.md
+Oncall playbook:
+https://github.com/kubernetes/community/blob/master/contributors/devel/on-call-federation-build-cop.md
 
 # Joining the rotation
 
-Add your name at the end of the current rotation schedule if you want to join the rotation.
-Anyone is free to join as long as they can perform the expected work described above. No special permissions are required but familiarity with existing codebase is recommended.
+Add your name at the end of the current rotation schedule if you want to join
+the rotation. Anyone is free to join as long as they can perform the expected
+work described above. No special permissions are required but familiarity with
+existing codebase is recommended.
 
 # Swapping the rotation
 
-If anyone is away on their oncall week (vacation, illness, etc), they are responsible for finding someone to swap with (by sending a PR, approved by that person). Swapping one week for another is usually relatively uncontentious.
+If anyone is away on their oncall week (vacation, illness, etc), they are
+responsible for finding someone to swap with (by sending a PR, approved by that
+person). Swapping one week for another is usually relatively uncontentious.
 
 # Extending the rotation schedule
 
-Anyone can extend the existing schedule by assigning upcoming weeks to people in the same order as the existing schedule. cc the rotation members on the PR so that they know.
-Please extend the schedule unless there are atlease 2 people assigned after you.
+Anyone can extend the existing schedule by assigning upcoming weeks to people in
+the same order as the existing schedule. cc the rotation members on the PR so
+that they know. Please extend the schedule unless there are atlease 2 people
+assigned after you.
 
 # Current Oncall schedule
 
@@ -35,6 +47,7 @@ Please extend the schedule unless there are atlease 2 people assigned after you.
 ```
 
 # Past 5 rotation cycles
+
 ```
 (Adding Irfan)
 7 August - 13 August: Nikhil Jindal (https://github.com/nikhiljindal)
