@@ -779,3 +779,27 @@ workinggroups:
     contact:
       slack: sig-cluster-lifecycle
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+  - name: App Def
+    dir: wg-app-def
+    mission_statement: >
+      Improve UX of declarative primitives in the API and/or primary client libraries and tools,
+      understand the needs of other parts of the ecosystem on this layer, and improve the interoperability
+      of application management tools through better separation of concerns, common conventions,
+      and common principles.
+        
+      Charter can be found [here](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#)
+    leads:
+    - name: Antoine Legrand
+      github: ant31
+      company: CoreOS
+    - name: Sebastien Goasguen
+      github: sebgoa
+      company: Bitnami
+    meetings:
+    - day: Wednesday
+      utc: "16:00"
+      frequency: bi-weekly
+    meeting_archive_url: hhttps://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit
+    contact:
+      slack: wg-app-def
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-app-def
