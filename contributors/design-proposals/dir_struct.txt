@@ -134,7 +134,7 @@ Uncategorized
 	security.md
 	security_context.md
 	service_accounts.md
-./federation
+./multicluster
 	control-plane-resilience.md
 	federated-api-servers.md
 	federated-ingress.md
