@@ -74,6 +74,7 @@ type Group struct {
 	Name                 string
 	Dir                  string
 	MissionStatement     string `yaml:"mission_statement"`
+	Label                string
 	Leads                []Lead
 	Meetings             []Meeting
 	MeetingURL           string `yaml:"meeting_url"`

@@ -13,10 +13,10 @@ When the need arises, a [new SIG can be created](sig-creation-procedure.md)
 
 ### Master SIG List
 
-| Name | Leads | Contact | Meetings |
-|------|-------|---------|----------|
+| Name | Label | Leads | Contact | Meetings |
+|------|--------|-------|---------|----------|
 {{- range .Sigs}}
-|[{{.Name}}]({{.Dir}}/README.md)|{{range .Leads}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{ $save := . }}{{range .Meetings}}* [{{.Day}}s at {{.UTC}} UTC ({{.Frequency}})]({{$save.MeetingURL}})<br>{{end}}
+|[{{.Name}}]({{.Dir}}/README.md)|{{.Label}}|{{range .Leads}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{ $save := . }}{{range .Meetings}}* [{{.Day}}s at {{.UTC}} UTC ({{.Frequency}})]({{$save.MeetingURL}})<br>{{end}}
 {{- end }}
 
 ### Master Working Group List
