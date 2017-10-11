@@ -757,8 +757,11 @@ will provide documentation on the process
 via a flag should not create new bugs in unrelated features; because the feature
 is new, it may have minor bugs
   - Support: the project commits to complete the feature, in some form, in a
-subsequent Stable version; typically this will happen within 3 months, but
-sometimes longer; releases should simultaneously support two consecutive
+subsequent Stable version; As a general guideline, beta features should remain in beta for
+2 releases after the feature has been introduced (GA development begins
+after the feature has been beta for 1 full release cycle).
+This provides time to gather user feedback before transitioning from beta to GA;
+releases should simultaneously support two consecutive
 versions (e.g. `v1beta1` and `v1beta2`; or `v1beta2` and `v1`) for at least one
 minor release cycle (typically 3 months) so that users have enough time to
 upgrade and migrate objects

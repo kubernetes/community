@@ -116,3 +116,58 @@ During the code freeze period, fix any bugs discovered with you feature, and wri
 4. The docs lead will review your PR and give you feedback.
 5. Once approved, the docs lead will merge your PR into the release branch.
 6. When the release is cut, the docs lead will push the docs release branch to master, making your docs live on https://kubernetes.io/docs/.
+
+# Kubernetes Release Process
+
+## Development cycle
+
+Pull requests for the next release are made against the master branch.  New
+features slated for the release should have an issue filed in the [features repo].
+
+## Feature freeze
+
+Several weeks before the release is schedule to be cut, feature development will stop.  Any
+features that have not been reviewed and approved before feature freeze will not make the
+release.  At the feature freeze time, the focus will shift to completing the remaining tasks
+before the build has been validated as stable and ready to be publicly released.  During this time,
+bug fixes should be focused on regressions and release-blocking issues.  The majority of
+known issues present in previous releases will also not be accepted, since they are
+considered non-release blocking and should have been addressed during the normal
+development cycle.
+
+*Code slush*
+
+During the code slush period (1-2 weeks), the merge queue will only merge PRs labeled with the milestone
+for the upcoming release.  This will include PRs that had been approved prior to the freature
+freeze deadline, but were not yet merged.
+
+*Branching*
+
+After the code slush period, a release branch will be cut.  Parallel CI tests are
+run against the new release branch, and in order to get into the release, PRs
+must have both the *release-candidate* label and appropriate *milestone* set.
+
+## Burn down
+
+After feature freeze, regular burn down meetings are schedule to track the progress
+of the release blocking issues.  Regular beta builds are cut and published
+during this period.
+
+- Release branch tests are stable and passing on Jenkins
+- Client / server version skew tests are stable and passing on Jenkins
+- Upgrade / downgrade tests are stable and passing on Jenkins
+- Manual upgrade / downgrade tests have been run and passed
+- No open issues against the 1.x milestone
+- No open e2e flake issues against the 1.x milestone
+- No open features against the 1.x milestone
+
+## Cutting the release
+
+Once the build has been validated, a binary will be cut and published
+
+- Write and publish release notes
+- Publish user facing documentation to the k8s.io site
+- Build and publish Kubernetes binaries
+- Announce release on social media
+
+[features repo]: https://github.com/kubernetes/features/issues/
