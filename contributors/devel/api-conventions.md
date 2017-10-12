@@ -225,9 +225,12 @@ an object was created
 after which this resource will be deleted. This field is set by the server when
 a graceful deletion is requested by the user, and is not directly settable by a
 client. The resource will be deleted (no longer visible from resource lists, and
-not reachable by name) after the time in this field. Once set, this value may
-not be unset or be set further into the future, although it may be shortened or
-the resource may be deleted prior to this time.
+not reachable by name) after the time in this field except when the object has
+a finalizer set. In case the finalizer is set the deletion of the object is
+postponed at least until the finalizer is removed.
+Once the deletionTimestamp is set, this value may not be unset or be set further
+into the future, although it may be shortened or the resource may be deleted
+prior to this time.
 * labels: a map of string keys and values that can be used to organize and
 categorize objects (see [the labels docs](https://kubernetes.io/docs/user-guide/labels/))
 * annotations: a map of string keys and values that can be used by external
