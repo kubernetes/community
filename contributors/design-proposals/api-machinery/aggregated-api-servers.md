@@ -82,7 +82,7 @@ There are two configurations in which it makes sense to run `kube-aggregator`.
 * Follow API conventions: APIs exposed by every API server should adhere to [kubernetes API
   conventions](../devel/api-conventions.md).
 * Support discovery API: Each API server should support the kubernetes discovery API
-  (list the suported groupVersions at `/apis` and list the supported resources
+  (list the supported groupVersions at `/apis` and list the supported resources
   at `/apis/<groupVersion>/`)
 * No bootstrap problem: The core kubernetes apiserver must not depend on any
   other aggregated server to come up. Non-core apiservers may use other non-core
