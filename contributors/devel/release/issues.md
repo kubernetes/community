@@ -32,7 +32,7 @@ The SIG owner label defines the SIG to which the bot will escalate if the issue 
 or updated by the deadline.  If there are no updates after escalation, the
 issue may automatically removed from the milestone.
 
-e.g. `sig/node`, `sig/federation`, `sig/apps`, `sig/network`
+e.g. `sig/node`, `sig/multicluster`, `sig/apps`, `sig/network`
 
 **Note:**
   - For test-infrastructure issues use `sig/testing`.

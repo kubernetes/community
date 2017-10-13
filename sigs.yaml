@@ -334,14 +334,15 @@ sigs:
     contact:
       slack: sig-docs
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
-  - name: Federation
-    dir: sig-federation
+  - name: Multicluster
+    dir: sig-multicluster
     mission_statement: >
-      Covers the Federation of Kubernetes Clusters and related
-      topics. This includes: application resiliency against availability zone
-      outages; hybrid clouds; spanning of multiple could providers; application
-      migration from private to public clouds (and vice versa); and other
-      similar subjects.
+      Covers multi-cluster Kubernetes use cases and tooling. This includes:
+      application resiliency against availability zone outages; hybrid clouds;
+      spanning of multiple could providers; application migration from private
+      to public clouds (and vice versa); and other similar subjects. This SIG
+      was formerly called sig-federation and focused on the Federation project,
+      but expanded its charter to all multi-cluster concerns in August 2017.
     label: multicluster
     leads:
     - name: Christian Bell
@@ -354,12 +355,12 @@ sigs:
     - day: Tuesday
       utc: "16:30"
       frequency: biweekly
-    meeting_url: https://plus.google.com/hangouts/_/google.com/k8s-federation
+    meeting_url: https://plus.google.com/hangouts/_/google.com/k8s-mc
     meeting_archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
     meeting_recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
     contact:
-      slack: sig-federation
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-federation
+      slack: sig-multicluster
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster
   - name: Instrumentation
     dir: sig-instrumentation
     mission_statement: >
