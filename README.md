@@ -21,7 +21,10 @@ A SIG can have its own policy for contribution,
 described in a `README` or `CONTRIBUTING` file in the SIG
 folder in this repo (e.g. [sig-cli/CONTRIBUTING](sig-cli/CONTRIBUTING.md)),
 and its own mailing list, slack channel, etc.
-  
+
+If you want to edit details about a SIG (e.g. its weekly meeting time or its leads), 
+please follow [these instructions](./generator) that detail how our docs are auto-generated.
+
 ## How Can I Help?
 
 Documentation (like the text you are reading now) can
