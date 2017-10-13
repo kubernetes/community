@@ -9,17 +9,17 @@ When an update happens to the this file, the next step is generate the
 accompanying documentation. This takes the format of two types of doc file:
 
 ```
-./sig-<sig-name>/README.md
-./wg-<working-group-name>/README.md
-./sig-list.md
+sig-<sig-name>/README.md
+wg-<working-group-name>/README.md
+sig-list.md
 ```
 
 For example, if a contributor has updated `sig-cluster-lifecycle`, the
 following files will be generated:
 
 ```
-./sig-cluster-lifecycle/README.md
-./sig-list.md
+sig-cluster-lifecycle/README.md
+sig-list.md
 ```
 
 ## How to use
@@ -30,7 +30,7 @@ To (re)build documentation for all the SIGs, run these commands:
 make all
 ```
 
-To build docs for one SIG, run one these commands:
+To build docs for one SIG, run one of these commands:
 
 ```bash
 make WHAT=sig-apps
