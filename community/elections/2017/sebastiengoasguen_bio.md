@@ -15,7 +15,7 @@ The steering committee already has a long backlog of things to do and I submitte
  
 * Membership. Our membership and roles have grown organically, driven by our velocity and the limitations of GitHub. I would like to see us step back a bit and clearly define our membership ladder and ways by which contributors navigate it. This would provide clear criteria for example to define who is a "person of standing" and how you become one.
  
-* Decison making. We have a lot of slack channels, hangouts and mailing lists. However we do not know where decisions are made, when and how. We need to bring clarity to our decision making processes so that everyone feels that they own the decision. It is also a major issue of inclusiveness which can lead to fragmentation of the community.
+* Decision making. We have a lot of slack channels, hangouts and mailing lists. However we do not know where decisions are made, when and how. We need to bring clarity to our decision making processes so that everyone feels that they own the decision. It is also a major issue of inclusiveness which can lead to fragmentation of the community.
 
 * Incubator. We have an incubator but I believe we need to revise its "charter" now that several projects have graduated. We need more mentoring and support of the incubating projects. Moreover, the graduation criteria, need to encompass a more visible decision process (currently only 2 people decide if a project graduates).
 
