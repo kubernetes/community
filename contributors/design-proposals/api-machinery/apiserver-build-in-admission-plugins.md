@@ -61,7 +61,7 @@ The source code of the plugin can be found [here](https://github.com/kubernetes/
 Having the plugin, the next step is the registration. [AdmissionOptions](https://github.com/kubernetes/kubernetes/blob/2f00e6d72c9d58fe3edc3488a91948cf4bfcc6d9/staging/src/k8s.io/apiserver/pkg/server/options/admission.go)
 provides two important things. Firstly it exposes [a register](https://github.com/kubernetes/kubernetes/blob/2f00e6d72c9d58fe3edc3488a91948cf4bfcc6d9/staging/src/k8s.io/apiserver/pkg/server/options/admission.go#L43) 
 under which all addmission plugins are registered. In fact, that's exactly what the [Register](https://github.com/kubernetes/kubernetes/blob/2f00e6d72c9d58fe3edc3488a91948cf4bfcc6d9/staging/src/k8s.io/sample-apiserver/pkg/admission/plugin/banflunder/admission.go#L33) 
-method does from our example admision plugin. It accepts a global registry as a parameter and then simply registers itself in that registry.
+method does from our example admission plugin. It accepts a global registry as a parameter and then simply registers itself in that registry.
 Secondly, it adds an admission chain to the server configuration via [ApplyTo](https://github.com/kubernetes/kubernetes/blob/2f00e6d72c9d58fe3edc3488a91948cf4bfcc6d9/staging/src/k8s.io/apiserver/pkg/server/options/admission.go#L66) method.
 The method accepts optional parameters in the form of `pluginInitalizers`. This is useful when admission plugins need custom configuration that is not provided by the generic initializer. 
 
