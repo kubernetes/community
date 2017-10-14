@@ -116,7 +116,7 @@ In the short term we have no supported subset filtering (i.e. a user who can LIS
 
 ### Handling expired resource versions
 
-If the required data to perform a consistent list is no longer available in the storage backend (by default, old versions of objects in etcd3 are removed after 5 minutes), the server **must** return a `410 Gone ResourceExpired` status reponse (the same as for watch), which means clients must start from the beginning.
+If the required data to perform a consistent list is no longer available in the storage backend (by default, old versions of objects in etcd3 are removed after 5 minutes), the server **must** return a `410 Gone ResourceExpired` status response (the same as for watch), which means clients must start from the beginning.
 
 ```
 # resourceVersion is expired
