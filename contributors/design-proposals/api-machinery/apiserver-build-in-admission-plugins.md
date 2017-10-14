@@ -65,7 +65,7 @@ method does from our example admission plugin. It accepts a global registry as a
 Secondly, it adds an admission chain to the server configuration via [ApplyTo](https://github.com/kubernetes/kubernetes/blob/2f00e6d72c9d58fe3edc3488a91948cf4bfcc6d9/staging/src/k8s.io/apiserver/pkg/server/options/admission.go#L66) method.
 The method accepts optional parameters in the form of `pluginInitalizers`. This is useful when admission plugins need custom configuration that is not provided by the generic initializer. 
 
-The following code has been extracted from the sample server and ilustrates how to register and wire an admission plugin:
+The following code has been extracted from the sample server and illustrates how to register and wire an admission plugin:
 
 ```go
   // register admission plugins
