@@ -5,7 +5,7 @@
 * Blog: [RobHirschfeld.com](http://robhirschfeld.com)
 * I work at [RackN.com](https://RackN.com) and live in Austin, Texas.
 
-## Goverenance Perspective: it's about people, not tech
+## Governance Perspective: it's about people, not tech
 
 Open source infrastructure automation is a critical foundation for the Internet and, thus, advancing society as a whole. In a very practical way, protecting open software is essential to building a better world. I am seeking a seat on the Kubernetes Steering Committee because I bring special perspectives to governing the project.
 
