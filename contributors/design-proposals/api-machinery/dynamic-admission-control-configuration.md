@@ -24,6 +24,8 @@ default admission controls. This document hashes out the implementation details.
 * Do not block the entire cluster if the intializers/webhooks are not ready
   after registration.
 
+* Admin can enforce initializers to specific namespaces.
+
 ## Specification
 
 We assume initializers could be "fail open". We need to update the extensible
@@ -73,6 +75,13 @@ type Initializer struct {
     // if the timeout is reached. The default timeout for each initializer is
     // 5s.
     FailurePolicy *FailurePolicyType `json:"failurePolicy,omitempty"`
+
+    // Selects Namespaces using cluster scoped-labels. This
+    // matches all pods in all namespaces selected by this label selector.
+    // This field follows standard label selector semantics.
+    // If present but empty, this selector selects all namespaces.
+    // +optional
+    NamespaceSelector *metav1.LabelSelector `json:"namespaceSelector,omitempty"`
 }
 
 // Rule is a tuple of APIGroups, APIVersion, and Resources.It is recommended 
@@ -272,6 +281,23 @@ Note that the fallback is only invoked when the initializer and the apiserver
 crashes, so it is rare.
 
 See [Considered but REJECTED alternatives](#considered-but-rejected-alternatives) for considered alternatives.
+
+## Enforce initializers to specific namespaces
+
+Current `InitializerConfiguration` is at the cluster level and all of the to-be-created resources (such as rc and deployments) defined in `Rules`
+will be appended with the pending initializers automatically during creation, regardless of the namespace.
+There is no way to only apply the initializers to specific namespaces.
+
+For example, when running a multi-tenant cluster, it'd be quite useful to only apply the rules in just certain namespaces. Sometimes we
+don't want to enforce in "kube-*" related namespaces as well.
+
+With the help of `NamespaceSelector`, we can
+
+* Apply initializer to ALL namespaces (by default);
+* Apply initializer to limited namespaces using label selector;
+
+Since most users won't add extra labels for namespaces explicitly when creating new resources, the selector matching should only be applied to
+`labels.Set(map[string]string{"namespace": namespace})` instead of widely-used `metadata.Labels`.
 
 ## Future work
 
