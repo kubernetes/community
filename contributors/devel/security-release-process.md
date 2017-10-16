@@ -40,11 +40,19 @@ If possible the PST will ask the person making the public report if the issue ca
 
 ## Patch, Release, and Public Communication
 
-For each vulnerability a member of the PST will volunteer to lead coordination with the Fix Team, Release Managers and is responsible for sending disclosure emails to the rest of the community. This lead will be referred to as the Fix Lead.
+For each vulnerability a member of the PST will volunteer to lead coordination
+with the Fix Team, Release Managers and is responsible for sending disclosure
+emails to the rest of the community. This lead will be referred to as the Fix Lead.
 
 The role of Fix Lead should rotate round-robin across the PST.
 
-All of the timelines below are suggestions and assume a Private Disclosure. The Fix Lead drives the schedule using their best judgment based on severity, development time, and release manager feedback. If the Fix Lead is dealing with a Public Disclosure all timelines become ASAP.
+All of the timelines below are suggestions and assume a Private Disclosure.
+The Fix Lead drives the schedule using their best judgment based on severity,
+development time, and release manager feedback. If the Fix Lead is dealing with
+a Public Disclosure all timelines become ASAP. If the fix relies on another
+upstream project's disclosure timeline, that will adjust the process as well.
+We will work with the upstream project to fit their timeline and best protect
+our users.
 
 ### Fix Team Organization
 
