@@ -11,7 +11,7 @@ discussions see https://github.com/kubernetes/kubernetes/issues/40476.
 of the system, by significantly reducing amount of api calls coming from
 kubelets. As of now, to avoid situation that kubelet is watching all secrets/
 configmaps/... in the system, it is not using watch for this purpose. Instead of
-that, it is retrieving indidual objects, by sending individual GET requests.
+that, it is retrieving individual objects, by sending individual GET requests.
 However, to enable automatic updates of mounted secrets/configmaps/..., Kubelet
 is sending those GET requests periodically. In large clusters, this is
 generating huge unnecessary load, as this load in principle should be
@@ -64,7 +64,7 @@ API (by lists I mean e.g. `PodList` object)
 - the API has to be implemented also in aggregator so that bulk operations
 are supported also if different resource types are served by different
 apiservers
-- clients has to be able to alter their watch subscribtions incrementally (it
+- clients has to be able to alter their watch subscriptions incrementally (it
 may not be implemented in the initial version though, but has to be designed)
 
 
@@ -76,7 +76,7 @@ call). Spanning multiple resources, resource types or conditions will be more
 and more important for large number of watches. As an example, federation will
 be adding watches for every type it federates. With that in mind, bypassing
 aggregation at the resource type level and going to aggregation over objects
-with different resource types will allow us to more aggresively optimize in the
+with different resource types will allow us to more aggressively optimize in the
 future (it doesn't mean you have to watch resources of different types in a
 single watch, but we would like to make it possible).
 
@@ -125,7 +125,7 @@ handling LIST requests, where first client sends a filter definition over the
 channel and then server sends back the response, but we dropped this for now.*
 
 *Note: We aso considered implementing the POST-based watch handler that doesn't
-allow for altering subsriptions, which should be very simple once we have list
+allow for altering subscriptions, which should be very simple once we have list
 implemented. But since websocket API is needed anyway, we also dropped it.*
 
 
@@ -173,7 +173,7 @@ will be described together with dynamic watch description below.
 ### Dynamic watch
 
  As mentioned in the Proposal section, we will implement bulk watch that will
-allow for dynamic subscribtion/unsubscribtion for (sets of) objects on top of
+allow for dynamic subscription/unsubscription for (sets of) objects on top of
 websockets protocol.
 
  Note that we already support websockets in the regular Kubernetes API for
@@ -232,7 +232,7 @@ type Response struct {
 With the above structure we can guarantee that we only send and receive
 objects of a single type over the channel.
 
-We should also introduce some way of correleting responses with requests
+We should also introduce some way of correlating responses with requests
 when a client is sending multiple of them at the same time. To achieve this
 we will add a `request identified` field to the `Request` that user can set
 and that will then be returned as part of `Response`. With this mechanism
@@ -288,7 +288,7 @@ frameworks like reflector) that rely on two crucial watch invariants:
 1. there is at most one watch event delivered for any resource version
 
  However, we have no guarantee that resource version series is shared between
-diferent resource types (in fact in default GCE setup events are not sharing
+different resource types (in fact in default GCE setup events are not sharing
 the same series as they are stored in a separate etcd instance). That said,
 to avoid introducing too many assumptions (that already aren't really met)
 we can't guarantee exactly the same.
@@ -359,7 +359,7 @@ single response to the user.
 
  The only non-trivial operation above is sending the request for a single
 resource type down the stack. In order to implement it, we will need to
-slighly modify the interface of "Registry" in apiserver. The modification
+slightly modify the interface of "Registry" in apiserver. The modification
 will have to allow passing both what we are passing now and BulkListOptions
 (in some format) (this may e.g. changing signature to accept BulkListOptions
 and translating ListOptions to BulkListOptions in the current code).
@@ -433,7 +433,7 @@ do it in deterministic way. The crucial requirements are:
 1. Whenever "list" request returns a list of objects and a resource version "rv",
 starting a watch from the returned "rv" will never drop any events.
 2. For a given watch request (with resource version "rv"), the returned stream
-of events is always the same (e.g. very slow laggin watch may not cause dropped
+of events is always the same (e.g. very slow lagging watch may not cause dropped
 events).
 
 We can't really satisfy these conditions using the existing machinery. To solve
@@ -468,7 +468,7 @@ no matter if we implement it or not)
 there are few selectors selecting the same object, in dynamic approach it will
 be send multiple times, once over each channel, here it would be send once)
 - we would have to introduce a dedicate "BulkWatchEvent" type to incorporate
-resource type. This would make those two incompatible even at the ouput format.
+resource type. This would make those two incompatible even at the output format.
 
  With all of those in mind, even though the implementation would be much much
 simpler (and could potentially be a first step and would probably solve the

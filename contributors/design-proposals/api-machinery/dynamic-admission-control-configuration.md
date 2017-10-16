@@ -21,7 +21,7 @@ default admission controls. This document hashes out the implementation details.
 
 * As a fallback, admin can always restart an apiserver and guarantee it sees the latest config
 
-* Do not block the entire cluster if the intializers/webhooks are not ready
+* Do not block the entire cluster if the initializers/webhooks are not ready
   after registration.
 
 ## Specification
@@ -35,7 +35,7 @@ The schema is evolved from the prototype in
 [#132](https://github.com/kubernetes/community/pull/132).
 
 ```golang
-// InitializerConfiguration describes the configuration of intializers.
+// InitializerConfiguration describes the configuration of initializers.
 type InitializerConfiguration struct {
     metav1.TypeMeta
 
@@ -43,9 +43,9 @@ type InitializerConfiguration struct {
 
     // Initializers is a list of resources and their default initializers
     // Order-sensitive.
-    // When merging multiple InitializerConfigurations, we sort the intializers
+    // When merging multiple InitializerConfigurations, we sort the initializers
     // from different InitializerConfigurations by the name of the
-    // InitializerConfigurations; the order of the intializers from the same
+    // InitializerConfigurations; the order of the initializers from the same
     // InitializerConfiguration is preserved.
     // +optional
     Initializers []Initializer `json:"initializers,omitempty" patchStrategy:"merge" patchMergeKey:"name"`
@@ -63,7 +63,7 @@ type Initializer struct {
     Name string `json:"name"`
 
     // Rules describes what resources/subresources the initializer cares about.
-    // The intializer cares about an operation if it matches _any_ Rule.
+    // The initializer cares about an operation if it matches _any_ Rule.
     Rules []Rule `json:"rules,omitempty"`
 
     // FailurePolicy defines what happens if the responsible initializer controller
@@ -106,7 +106,7 @@ type Rule struct {
 type FailurePolicyType string
 
 const (
-    // Ignore means the initilizer is removed from the initializers list of an
+    // Ignore means the initializer is removed from the initializers list of an
     // object if the initializer is timed out.
     Ignore FailurePolicyType = "Ignore"
     // For 1.7, only "Ignore" is allowed. "Fail" will be allowed when the
@@ -114,7 +114,7 @@ const (
     Fail FailurePolicyType = "Fail"
 )
 
-// ExternalAdmissionHookConfiguration describes the configuration of intializers.
+// ExternalAdmissionHookConfiguration describes the configuration of initializers.
 type ExternalAdmissionHookConfiguration struct {
     metav1.TypeMeta
 
@@ -263,7 +263,7 @@ the timed out initializer.
 
 If the apiserver crashes, then we fall back to a `read repair` mechanism. When
 handling a GET request, the apiserver checks the objectMeta.CreationTimestamp of
-the object, if a global intializer timeout (e.g., 10 mins) has reached, the
+the object, if a global initializer timeout (e.g., 10 mins) has reached, the
 apiserver removes the first initializer in the object.
 
 In the HA setup, apiserver needs to take the clock drift into account as well.
@@ -365,7 +365,7 @@ initializers from objects' initializers list. The controller uses shared
 informers to track uninitialized objects. Every 30s, the controller 
 
 * makes a snapshot of the uninitialized objects in the informers.
-* indexes the objects by the name of the first initialilzer in the objectMeta.Initializers
+* indexes the objects by the name of the first initializer in the objectMeta.Initializers
 * compares with the snapshot 30s ago, finds objects whose first initializers haven't changed
 * does a consistent read of AdmissionControllerConfiguration, finds which initializers are fail-open
 * spawns goroutines to send patches to remove fail-open initializers

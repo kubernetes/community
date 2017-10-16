@@ -21,7 +21,7 @@ his [personal blog](https://medium.com/@errordeveloper/a-little-more-about-me-b0
 
 ## Key Priorities
 
- - Customer sucess with open-source Kubernetes
+ - Customer success with open-source Kubernetes
  - Ease of use, in majority of general cases
  - Growth of the community, and fairness
  - Social and technical diversity

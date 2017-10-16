@@ -74,7 +74,7 @@ dynamically within the system.
 #### Custom Resource Definitions and ConfigMaps
 
 CRD's and ConfigMaps were considered for this proposal. They were not adopted
-for this proposal by the community due to tecnical issues explained earlier.
+for this proposal by the community due to technical issues explained earlier.
 
 #### Refactor Old Reconciler
 
