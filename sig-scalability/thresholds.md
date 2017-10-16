@@ -20,7 +20,7 @@ future or not.
 ## Kubernetes thresholds
 
 We start with explicit definition of quantities and thresholds we assume are
-satisfied in the cluster. This is followed by an explanations for some of those.
+satisfied in the cluster. This is followed by an explanation for some of those.
 Important notes about the numbers:
 1. In most cases, exceeding these thresholds doesn’t mean that the cluster
    fails over - it just means that its overall performance degrades.
