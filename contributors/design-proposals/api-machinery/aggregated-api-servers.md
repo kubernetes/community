@@ -52,8 +52,8 @@ clients can always use the proxy and don't need to know that under the hood
 multiple apiservers are running.
 
 Wording note: When we say "API servers" we really mean groups of apiservers,
-since any individual apiserver is horizontally replicatable. Similarly,
-kube-aggregator itself is horizontally replicatable.
+since any individual apiserver is horizontally replicable. Similarly,
+kube-aggregator itself is horizontally replicable.
 
 ## Operational configurations
 
