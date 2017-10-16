@@ -577,7 +577,7 @@ sigs:
     meeting_archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
     meeting_recordings_url: https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL
     contact:
-      slack: sig-scalability
+      slack: sig-scale
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scale
   - name: Scheduling
     dir: sig-scheduling
