@@ -237,7 +237,7 @@ Service endpoints are found primarily via [DNS](https://kubernetes.io/docs/conce
 A number of components, called [*add-ons*](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons) typically run on Kubernetes
 itself:
 * [DNS](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dns)
-* [Ingress controller](https://github.com/kubernetes/ingress/tree/master/controllers)
+* [Ingress controller](https://github.com/kubernetes/ingress-nginx/tree/master/pkg/ingress/controller)
 * [Heapster](https://github.com/kubernetes/heapster/) (resource monitoring)
 * [Dashboard](https://github.com/kubernetes/dashboard/) (GUI)
 
