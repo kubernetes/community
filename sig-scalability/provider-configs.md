@@ -122,7 +122,7 @@ proposed</td>
 
 * Improving the cluster performance loading to match production deployment scenarios is critical on-going work, especially clusterloader: [https://github.com/kubernetes/perf-tests/tree/master/clusterloader](https://github.com/kubernetes/perf-tests/tree/master/clusterloader)
 
-* Multi-zone / multi-az deployments are often used to manage large clusters, but for testing/scalability efforts the target is intentionally a single AZ. This keeps greater consistency between environments that do and don’t support AZ-based deployments. Failures during scalability testing are outside the SIG charter. Protecting against network partitioning and improving total cluster availability (one of the key benefits to a multi-AZ strategy) are currently out scope for the Scalability SIG efforts.
+* Multi-zone / multi-az deployments are often used to manage large clusters, but for testing/scalability efforts the target is intentionally a single Availability Zone. This keeps greater consistency between environments that do and don’t support AZ-based deployments. Failures during scalability testing are outside the SIG charter. Protecting against network partitioning and improving total cluster availability (one of the key benefits to a multi-AZ strategy) are currently out scope for the Scalability SIG efforts.
 
 * Scalability issues on very large clusters of actual nodes (instead of kubemark simulations) are real. Efforts to improve large cluster networking performance e.g. IPVS are important, and will be interesting areas for cross-SIG collaboration.
 
