@@ -53,7 +53,7 @@ Components are divided among [Special Interest Groups (SIGs)](https://github.com
 example.
 * Multiword SIGs use dashes, for example `/sig cluster-lifecycle`.
 
-Keep in mind that these commands must be on its own and at the front of the
+Keep in mind that these commands must be on its own line and at the front of the
 comment.
 
 ## Validate if the issue is bug
