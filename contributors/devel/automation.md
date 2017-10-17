@@ -35,10 +35,9 @@ The status of the submit-queue is [online.](http://submit-queue.k8s.io/)
 
 ### Ready to merge status
 
-The submit-queue lists what it believes are required on the [merge requirements tab](http://submit-queue.k8s.io/#/info) of the info page. That may be more up to date.
-
 A PR is considered "ready for merging" by the submit queue if it matches the set
-of conditions listed in the merge requirements tab mentioned above.
+of conditions listed in the [merge requirements tab](http://submit-queue.k8s.io/#/info)
+of the info page.
 Please visit that page for more details.
 
 ### Merge process
