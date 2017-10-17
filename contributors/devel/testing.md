@@ -1,7 +1,5 @@
 # Testing guide
 
-Updated: 5/21/2016
-
 **Table of Contents**
 <!-- BEGIN MUNGE: GENERATED_TOC -->
 
