@@ -11,7 +11,7 @@ processes.
 
 In an effort to
    * reduce load on core developers
-   * maintain e2e stability
+   * maintain end-to-end test stability
    * load test github's label feature
 
 We have added an automated [submit-queue](https://github.com/kubernetes/test-infra/tree/master/mungegithub/submit-queue)
