@@ -16,7 +16,7 @@ I helped found [the kubernetes/community repo](https://github.com/kubernetes/com
 
 [The same thing we do every night Pinky...](https://www.youtube.com/watch?v=XJYmyYzuTa8)
 
-I will advocate for transparency and accountability in our decision making process. I will strive for simplicity and human-sized solutions to large-scale problems where possible. I will continue to push for community empowerment and ownership of key project responsbilities.  Narf.
+I will advocate for transparency and accountability in our decision making process. I will strive for simplicity and human-sized solutions to large-scale problems where possible. I will continue to push for community empowerment and ownership of key project responsibilities.  Narf.
 
 ## Where I work
 
