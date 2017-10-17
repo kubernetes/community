@@ -38,6 +38,13 @@ If you know of a publicly disclosed security vulnerability please IMMEDIATELY em
 
 If possible the PST will ask the person making the public report if the issue can be handled via a private disclosure process. If the reporter denies the PST will move swiftly with the fix and release process. In extreme cases you can ask GitHub to delete the issue but this generally isn't necessary and is unlikely to make a public disclosure less damaging.
 
+## Threat Model
+
+Please report any issues that may have security implications! However, the Kubernetes threat model does not currently consider the following issues as security sensitive:
+
+- Node local DoS attacks from authenticated running pods (e.g. filesystem, network, or other methods)
+- API or controller component DoS attacks by authenticated users
+
 ## Patch, Release, and Public Communication
 
 For each vulnerability a member of the PST will volunteer to lead coordination
