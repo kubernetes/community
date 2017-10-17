@@ -36,6 +36,19 @@ $ client-gen --input="api/v1,extensions/v1beta1" --clientset-name="my_release"
 
 - Individual typed clients and client for group: They will be generated at `pkg/client/clientset_generated/${clientset_name}/typed/generated/${GROUP}/${VERSION}/`
 
+### Versioned and Unversioned (internal) clients
+
+`client-gen` is run for each of the versioned and unversioned clients.
+
+To generate versioned clients, the groups on the `--input` must end in
+a version, example: `--input servicecatalog/v1`.
+
+To generate unversioned clients, the groups on the input flag should
+not have the associate version, but **MUST** end in a trailing slash,
+example: `--input servicecatalog/`. If the trailing slash is left off,
+the generated code will be incorrect, and client-gen will exist
+complaining of `gofmt` errors.
+
 ## Released clientsets
 
 If you are contributing code to k8s.io/kubernetes, try to use the generated clientset [here](https://github.com/kubernetes/kubernetes/tree/master/pkg/client/clientset_generated/internalclientset).
