@@ -73,7 +73,7 @@ useful for someone else in the future, please send a PR or file an issue in
 
 ### Contact information
 
-[@k8s-support-oncall](https://github.com/k8s-support-oncall) will reach the
+[@k8s-oncall](https://github.com/k8s-oncall) will reach the
 current person on call.
 
 
