@@ -10,7 +10,8 @@ Third Wednesday of every month, there are two sessions:
 - Western Edition: [8pm UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=Kubernetes+Office+Hours+%28Western+Edition%29&iso=20171018T13&p1=234)
 
 Tune into the [Kubernetes YouTube Channel](https://www.youtube.com/c/KubernetesCommunity/live) to follow along. 
-You can post questions on the [#office-hours channel](https://kubernetes.slack.com/messages/office-hours) on Slack.
+
+You can post questions on the [#office-hours channel](https://kubernetes.slack.com/messages/office-hours) on Slack, or if you like you can submit your question to Stack Overflow and have us take a look.
 
 ### How it Works
 
@@ -18,11 +19,11 @@ You can post questions on the [#office-hours channel](https://kubernetes.slack.c
 
 If you submit a [SO question](https://stackoverflow.com/questions/tagged/kubernetes) we can prepare ahead of time and check important details. 
 
-As a thanks to the community the asker can then ensure that a well written answer makes it way to the question afterwards so that we can build a knowledge base and help maintain the incoming questions on SO. We can also use the video archive of each meeting to bring context to each SO question we answer. 
+As a thanks to the community the person asking the question can then ensure that a well written answer makes it way to the question afterwards so that we can build a knowledge base and help maintain the incoming questions. We can also use the video archive of each meeting to bring context to each SO question we answer. 
 
-Questions that aren’t addressed or need work can be punted to the next week or we can encourage other people to give them a look, at a bare minimum we can at least help socialize the difficult questions. 
+Questions that aren’t addressed or need work can be punted to the next week or we can encourage other people to give them a look, at a bare minimum we can at least help socialize the difficult questions. We keep a backlog of open questions in the [meeting notes](http://bit.ly/k8s-office-hours-notes).
 
-The hosts will do a shout out of thanks to the current leaderboard of SO answerers each meeting so the people helping answer questions can get some recognition. 
+The hosts will do a shout out of thanks to the [current leaderboard](https://stackoverflow.com/tags/kubernetes/topusers) of SO answerers each meeting so the people helping answer questions can get some recognition. 
 
 #### What’s Ontopic
 
@@ -39,7 +40,7 @@ Specific questions about Kubernetes as pertaining to the topic. Since this is a 
 
 Local installation and debugging: The participants don’t have access to your network or your hardware. The host can/should help the user transform a vague question into something answerable and reusable. 
 
-Let’s try to just not dismiss bad questions outright, but use it as an opportunity for the answer to be a teaching tool as opposed to just answering “It’s in /var/log/foo, next question.” If the question is about logging then the developers might as well share their experiences in that area, recommend tools, share an anecdote, things of that nature. 
+Let’s try to not just dismiss bad questions outright, but use it as an opportunity for the answer to be a teaching tool as opposed to just answering “It’s in /var/log/foo, next question.” If the question is about logging then the developers might as well share their experiences in that area, recommend tools, share an anecdote, things of that nature. 
 
 
 ### Archives
