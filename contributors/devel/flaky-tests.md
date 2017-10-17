@@ -35,7 +35,7 @@ discoverable from the issue.
    link is nice but strictly optional: not only does it expire more quickly,
    it's not accessible to non-Googlers.
 
-## Finding filed flaky test cases
+## Finding failed flaky test cases
 
 Find flaky tests issues on GitHub under the [kind/flake issue label][flake].
 There are significant numbers of flaky tests reported on a regular basis and P2
