@@ -24,7 +24,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=NDP1uYyom
 * Joe Beda (**[@jbeda](https://github.com/jbeda)**), Heptio
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-scalability)
+* [Slack](https://kubernetes.slack.com/messages/sig-scale)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)
 
 <!-- BEGIN CUSTOM CONTENT -->
