@@ -5,7 +5,8 @@ Please see the main program page for the general information about the program, 
 
 **Schedule**
 
-* October 23: application deadline
+* October 23: application deadline for other Outreachy communities
+* October 30: application deadline for Kubernetes Outreachy applications
 * November 9: selection decisions are made
 * December 5 - March 5: internship
 
