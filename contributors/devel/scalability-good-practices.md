@@ -160,7 +160,7 @@ When designing new features/thinking about refactoring you should:
 - when adding complex logic make sure that you don't add it on a critical path of any basic workflow
 
 ## Closing remarks
-We know that thinking about performance impact of changes that all of us write is hard, this is exactly why we want you to help us cater for it, by always having problems that we mentioned here in the back of your mind. In return we'll answer all your question and doubts about possible impact of your changes if you post them either to #sig-scale Slack channel, or cc @kubernetes/sig-scalability-pr-reviews in your PR/proposal.
+We know that thinking about performance impact of changes that all of us write is hard, this is exactly why we want you to help us cater for it, by always having problems that we mentioned here in the back of your mind. In return we'll answer all your question and doubts about possible impact of your changes if you post them either to #sig-scalability Slack channel, or cc @kubernetes/sig-scalability-pr-reviews in your PR/proposal.
 
 * * *
 
