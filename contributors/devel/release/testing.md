@@ -81,10 +81,11 @@ When a test is failing, it must be quickly escalated to the correct owner.  Test
 are left to fail for days or weeks become toxic and create noise in the system health
 metrics.
 
-The [build cop] is expected to ensure that the release blocking tests remain
+Each SIG is expected to ensure that the release blocking tests that belong to the SIG remain
 perpetually healthy by monitoring the test grid and escalating failures.
 
-On test failures, the build cop will follow the [sig escalation](#sig-test-escalation) path.
+Failing tests that are not being addressed, can be escalated by following the 
+[sig escalation](#sig-test-escalation) path.
 
 *Tests without a responsive owner should be assigned a new owner or disabled.*
 
@@ -132,14 +133,11 @@ urgent than persistent failures, but still expected to have a root cause investi
 
 ## Broken test workflow
 
-SIGs are expected to proactively monitor and maintain their tests.  The build cop will also
-monitor the health of the entire project, but is intended as backup who will escalate
-failures to the owning SIGs.
+SIGs are expected to proactively monitor and maintain their tests.
 
 - File an issue for the broken test so it can be referenced and discovered
   - Set the following labels: `priority/failing-test`, `sig/*`
   - Assign the issue to whoever is working on it
-  - Mention the current build cop (TODO: publish this somewhere)
 - Root cause analysis of the test failure is performed by the owner
 - **Note**: The owning SIG for a test can reassign ownership of a resolution to another SIG only after getting
   approval from that SIG
@@ -152,13 +150,11 @@ failures to the owning SIGs.
 
 ## SIG test escalation
 
-The build cop should monitor the overall test health of the project, and ensure ownership for any given
-test does not fall through the cracks.  When the build cop observer a test failure, they should first
-search to see if an issue has been filed already, and if not (optionally file an issue and) escalate to the SIG
-escalation point.  If the escalation point is unresponsive within a day, the build cop should escalate to the SIG
-googlegroup and/or slack channel, mentioning the SIG leads.  If escalation through the SIG googlegroup,
-slack channel and SIG leads is unsuccessful, the build cop should escalate to SIG release through the
-googlegroup and slack - mentioning the SIG leads.
+As a Kubernetes developers if you observe a test failure, first search to see if an issue has been filed already, 
+and if not (optionally file an issue and) escalate to the SIG escalation point.
+If the escalation point is unresponsive within a day, escalate to the SIG googlegroup and/or slack channel, 
+mentioning the SIG leads.  If escalation through the SIG googlegroup, slack channel and SIG leads is unsuccessful, 
+escalate to SIG release through the googlegroup and slack - mentioning the SIG leads.
 
 The SIG escalation points should be bootstrapped from the [community sig list].
 
@@ -172,7 +168,6 @@ The SIG escalation points should be bootstrapped from the [community sig list].
 [community sig list]: https://github.com/kubernetes/community/blob/master/sig-list.md
 [triage tool]: https://storage.googleapis.com/k8s-gubernator/triage/index.html
 [test grid]: https://k8s-testgrid.appspot.com/
-[build cop]: https://github.com/kubernetes/community/blob/master/contributors/devel/on-call-build-cop.md
 [release-master-blocking]: https://k8s-testgrid.appspot.com/release-master-blocking#Summary
 [1.7-master-upgrade]: https://k8s-testgrid.appspot.com/1.7-master-upgrade#Summary
 [1.6-master-upgrade]: https://k8s-testgrid.appspot.com/1.6-master-upgrade#Summary
