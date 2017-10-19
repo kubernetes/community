@@ -22,7 +22,7 @@ SIG-CLI Covers kubectl and related tools. We focus on the development and standa
 
 **Commuication:**
 
-SIG-CLI Mailing List - kubernetes-sig-sli@googlegroups.com  
+SIG-CLI Mailing List - kubernetes-sig-cli@googlegroups.com  
 Slack - k8s.slack.io for invite; #sig-cli channel
 
 **Mentors**
