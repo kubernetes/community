@@ -50,8 +50,8 @@ If these tests pass a second time, the PR will be merged when this PR finishes r
 
 We run [github "mungers"](https://github.com/kubernetes/test-infra/tree/master/mungegithub).
 
-This runs repeatedly over github pulls and issues and runs modular "mungers"
-similar to "mungedocs". The mungers include the "submit-queue" referenced above along
+This runs repeatedly over github pulls and issues and runs modular "mungers".
+The mungers include the "submit-queue" referenced above along
 with numerous other functions. See the README in the link above.
 
 Please feel free to unleash your creativity on this tool, send us new mungers
