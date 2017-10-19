@@ -1231,10 +1231,11 @@ policy field. The "name" portion of the annotation should follow the below
 conventions for annotations. When an annotation gets promoted to a field, the
 name transformation should then be mechanical: `foo-bar` becomes `fooBar`.
 
-Other advice regarding use of labels, annotations, and other generic map keys by
+Other advice regarding use of labels, annotations, taints, and other generic map keys by
 Kubernetes components and tools:
-  - Key names should be all lowercase, with words separated by dashes, such as
-`desired-replicas`
+  - Key names should be all lowercase, with words separated by dashes instead of camelCase
+    - For instance, prefer `foo.kubernetes.io/foo-bar over` `foo.kubernetes.io/fooBar`, prefer
+    `desired-replicas` over `DesiredReplicas`
   - Prefix the key with `kubernetes.io/` or `foo.kubernetes.io/`, preferably the
 latter if the label/annotation is specific to `foo`
     - For instance, prefer `service-account.kubernetes.io/name` over
@@ -1243,7 +1244,6 @@ latter if the label/annotation is specific to `foo`
 the resource doesn't need to know about, experimental fields that aren't
 intended to be generally used API fields, etc. Beware that annotations aren't
 automatically handled by the API conversion machinery.
-
 
 ## WebSockets and SPDY
 
