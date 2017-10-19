@@ -71,8 +71,6 @@ Release notes are required for any PR with user-visible changes, such as bug-fix
 
 If you don't add release notes in the PR template, the `do-not-merge/release-note-label-needed` label is added to your PR automatically after you create it. There are a few ways to update it.
 
-**Descriptions**
-
 To add a release-note section to the PR description:
 
 For PRs with a release note:
@@ -81,26 +79,23 @@ For PRs with a release note:
     Your release note here
     ```
 
-For PRs require addtional action for users, include the string "action required" (case insensitive) in the release note:
+For PRs that require additional action from users switching to the new release, include the string "action required" (case insensitive) in the release note:
 
     ```release-note
     action required: your release note here
     ```
 
-For PRs without a release note, just write "NONE" (case insensitive):
+For PRs that don't need to be mentioned at release time, just write "NONE" (case insensitive):
 
     ```release-note
     NONE
     ```
 
+The `/release-note-none` comment command can still be used as an alternative to writing "NONE" in the release-note block if it is left empty.
+
 To see how to format your release notes, view the [PR template](https://github.com/kubernetes/kubernetes/blob/master/.github/PULL_REQUEST_TEMPLATE.md) for a brief example. PR titles and body comments can be modified at any time prior to the release to make them friendly for release notes.
 
 Release notes apply to PRs on the master branch. For cherry-pick PRs, see the [cherry-pick instructions](cherry-picks.md). The only exception to these rules is when a PR is not a cherry-pick and is targeted directly to the non-master branch.  In this case, a `release-note-*` label is required for that non-master PR.
-
-**Comments**
-
-- If the PR does not need to be mentioned at release time, leave the `/release-note-none` comment command.
-- (_DEPRECATED_) To create a release note, leave the `/release-note` comment command. This will generate a release note using the PR title by default OR the release-note block in the PR template, if it's filled in.
 
 Now that your release notes are in shape, let's look at how the PR gets tested and merged.
 
