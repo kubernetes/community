@@ -1,7 +1,8 @@
 # Outreachy
 
 Kubernetes, specifically the SIG-CLI, is happy to announce our participation in the Outreachy program, running from December 2017 to March 2018. 
-Please see the main program page for the general information about the program, such as its purpose, timeline, eligibility requirements, and how to apply.
+Please see the [main program page](https://www.outreachy.org/) for the general information about the program,
+such as its purpose, timeline, eligibility requirements, and how to apply.
 
 **Schedule**
 
