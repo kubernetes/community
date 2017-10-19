@@ -5,7 +5,7 @@ Please see the main program page for the general information about the program, 
 
 **Schedule**
 
-* October 23: application deadline
+* October 30: application deadline
 * November 9: selection decisions are made
 * December 5 - March 5: internship
 
@@ -20,14 +20,14 @@ Kubernetes is a set of projects, each shepherded by a special interest group (SI
 
 SIG-CLI Covers kubectl and related tools. We focus on the development and standardization of the CLI framework and its dependencies, the establishment of conventions for writing CLI commands, POSIX compliance, and improving the command line tools from a developer and devops user experience and usability perspective.  
 
-**Commuication:**
+**Communication:**
 
-SIG-CLI Mailing List - kubernetes-sig-sli@googlegroups.com  
-Slack - k8s.slack.io for invite; #sig-cli channel
+SIG-CLI Mailing List - kubernetes-sig-cli@googlegroups.com
+Slack - http://slack.k8s.io/ for invite; #sig-cli channel
 
 **Mentors**
 
-Philip Wittrock - pwittrock@google.com  
+Philip Wittrock - pwittrock@google.com
 Similar to contacting the coordinators, the mentors can be contacted at any time either by sending messages to the mailing lists or slack channels.
 
 ## Contribute
@@ -57,4 +57,4 @@ The coordinators can be contacted at any time. The easiest way is to send a slac
 Do you have an idea for a task that is suitable for this program? Contact the mentors or coordinators! Or even better, volunteer for mentoring an intern during the work on your idea!
 
 ## Code of Conduct
-Kubernetes abides by the CNCF [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md)
+Kubernetes abides by the CNCF [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md).
