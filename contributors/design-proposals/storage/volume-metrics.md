@@ -50,13 +50,13 @@ Following is a sample of metrics (not exhaustive) that will be added by this pro
 ```
 storage_operation_duration_seconds { volume_plugin = "aws-ebs", operation_name = "volume_attach" }
 storage_operation_duration_seconds { volume_plugin = "aws-ebs", operation_name = "volume_detach" }
-storage_operation_duration_seconds { volume_plugin = "glusterfs", operation_name = "provision" }
+storage_operation_duration_seconds { volume_plugin = "glusterfs", operation_name = "volume_provision" }
 storage_operation_duration_seconds { volume_plugin = "gce-pd", operation_name = "volume_delete" }
 storage_operation_duration_seconds { volume_plugin = "vsphere", operation_name = "volume_mount" }
 storage_operation_duration_seconds { volume_plugin = "iscsi" , operation_name = "volume_unmount" }
-storage_operation_duration_seconds { volume_plugin = "aws-ebs", operation_name = "mount_device" }
 storage_operation_duration_seconds { volume_plugin = "aws-ebs", operation_name = "unmount_device" }
-storage_operation_duration_seconds { volume_plugin = "cinder" , operation_name = "verify_volume" }
+storage_operation_duration_seconds { volume_plugin = "cinder" , operation_name = "verify_volumes_are_attached" }
+storage_operation_duration_seconds { volume_plugin = "<n/a>" , operation_name = "verify_volumes_are_attached_per_node" }
 ```
 
 Similarly errors will be named:
@@ -64,13 +64,13 @@ Similarly errors will be named:
 ```
 storage_operation_errors_total { volume_plugin = "aws-ebs", operation_name = "volume_attach" }
 storage_operation_errors_total { volume_plugin = "aws-ebs", operation_name = "volume_detach" }
-storage_operation_errors_total { volume_plugin = "glusterfs", operation_name = "provision" }
+storage_operation_errors_total { volume_plugin = "glusterfs", operation_name = "volume_provision" }
 storage_operation_errors_total { volume_plugin = "gce-pd", operation_name = "volume_delete" }
 storage_operation_errors_total { volume_plugin = "vsphere", operation_name = "volume_mount" }
 storage_operation_errors_total { volume_plugin = "iscsi" , operation_name = "volume_unmount" }
-storage_operation_errors_total { volume_plugin = "aws-ebs", operation_name = "mount_device" }
 storage_operation_errors_total { volume_plugin = "aws-ebs", operation_name = "unmount_device" }
-storage_operation_errors_total { volume_plugin = "cinder" , operation_name = "verify_volume" }
+storage_operation_errors_total { volume_plugin = "cinder" , operation_name = "verify_volumes_are_attached" }
+storage_operation_errors_total { volume_plugin = "<n/a>" , operation_name = "verify_volumes_are_attached_per_node" }
 ```
 
 ### Implementation Detail
