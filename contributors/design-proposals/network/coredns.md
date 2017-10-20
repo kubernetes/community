@@ -169,7 +169,25 @@ trigger a graceful reload of the Corefile.
 
 ### Performance and Resource Load
 
-Evaluation of performance and resource load (memory, CPU) is still underway. Initial results show memory consumption is generally less than 40MB without `pods verified`.
+The performance test was done in GCE with the following components:
+
+  * CoreDNS system with machine type : n1-standard-1 ( 1 CPU, 2.3 GHz Intel Xeon E5 v3 (Haswell))
+  * Client system with machine type: n1-standard-1 ( 1 CPU, 2.3 GHz Intel Xeon E5 v3 (Haswell))
+  * Kubemark Cluster with 5000 nodes
+
+CoreDNS and client are running out-of-cluster (due to it being a Kubemark cluster).
+
+The following is the summary of the performance of CoreDNS. CoreDNS cache was disabled.
+
+Services (with 1% change per minute\*) | Max QPS\*\* | Latency (Median) | CoreDNS memory (at max QPS) | CoreDNS CPU (at max QPS) |
+------------ | ------------- | -------------- | --------------------- | ----------------- |
+1,000 | 18,000 | 0.1 ms | 38 MB | 95 % |
+5,000 | 16,000 | 0.1 ms | 73 MB | 93 % |
+10,000 | 10,000 | 0.1 ms | 115 MB | 78 % |
+
+\* We simulated service change load by creating and destroying 1% of services per minute.
+
+\** Max QPS with < 1 % packet loss
 
 ## Implementation
 
@@ -193,6 +211,10 @@ the specification (see [#975](https://github.com/coredns/coredns/issues/975)). I
 
 Additionally, federation may return records in a slightly different manner (see [#1034](https://github.com/coredns/coredns/issues/1034)),
 though this may be changed prior to completing this proposal.
+
+In the plan for the Alpha, there will be no automated conversion of the kube-dns configuration. However, as
+part of the Beta, code will be provided that will produce a proper Corefile based upon the existing kube-dns
+configuration.
 
 ## Alternatives considered
 
