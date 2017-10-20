@@ -6,18 +6,18 @@ The Contributor Summit provides an avenue for Kubernetes contributors to connect
 In some sense, the summit is a real-life extension of the community meetings and SIG meetings.
 
 ## When:
-December 5th, 2017
-Before KubeCon
-Time TBA
+* December 5th, 2017 (before KubeCon)
+* All day event with happy hour reception to close  
+Exact times TBU
 
 ## Where:
-Austin Convention Center
-500 E Cesar Chavez St, 
-Austin, TX 78701
+Austin Convention Center  
+500 E Cesar Chavez St,   
+Austin, TX 78701  
 (same location as KubeCon)
 
 ## Invitations:
-Seleted attendees are Kubernetes upstream contributors including SIG members and lottery winners from a members of standing pool.
+Selected attendees are Kubernetes upstream contributors including SIG members and lottery winners from a [members of standing](https://github.com/kubernetes/community/blob/master/community-membership.md) pool.
 We realize that this is not the best approach now that our community is growing in exponential ways. In 2018, we will be unfolding a new strategy for bringing our contributors together so all voices can be heard. 
 
 Invitees will begin going out on October 19th.
