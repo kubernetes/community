@@ -67,6 +67,8 @@ New contributors can try the following to work on an existing [bug] or [approved
 
 - Attend a sig-cli [meeting] and introduce yourself as looking to get started.
 
+- Pick up an [issue]
+
 ### Bug lifecycle
 
 1. An [issue] is filed that
@@ -294,7 +296,7 @@ See the sig-cli [community page] for points of contact and meeting times:
 [feature request]: #feature-requests
 [feature]: https://github.com/kubernetes/features
 [group]: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
-[issue]: https://github.com/kubernetes/kubernetes/issues
+[issue]: https://github.com/kubernetes/kubectl/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20no%3Aassignee%20label%3Afor-new-contributors
 [cli_help_wanted_issues]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Asig%2Fcli+label%3Ahelp-wanted
 [kubectl concept docs]: https://github.com/kubernetes/kubernetes.github.io/tree/master/docs/concepts/tools/kubectl
 [kubectl docs]: https://kubernetes.io/docs/user-guide/kubectl-overview
