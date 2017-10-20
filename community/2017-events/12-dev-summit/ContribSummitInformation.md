@@ -17,10 +17,10 @@ Austin, TX 78701
 (same location as KubeCon)
 
 ## Invitations:
-Seleted attendees are Kubernetes upstream contributors including SIG members, top contributors, and attendee lottery winners.
+Seleted attendees are Kubernetes upstream contributors including SIG members and lottery winners from a members of standing pool.
 We realize that this is not the best approach now that our community is growing in exponential ways. In 2018, we will be unfolding a new strategy for bringing our contributors together so all voices can be heard. 
 
-Invitees will be notified as soon as possible. [section to be updated with further detail]
+Invitees will begin going out on October 19th.
 
 ## Format:
 "loosely-structured unconference"
@@ -36,8 +36,8 @@ Then, there will be 2 smaller rooms for hacking / unstructured discussion all da
 Invites will include an area to list your proposed topic to lead for a potential session. Schedule will be announced at least one week before the event. 
 
 ## Desired Outcomes
-Generate notes from the sessions to feed the project's documentation and knowledge base, and also to keep non-attendees plugged in
-Make (and document) recommendations and decisions for the near-term and mid-term future of the project
-Come up with upcoming action items, as well as leaders for those action items, for the various topics that we discuss
+* Generate notes from the sessions to feed the project's documentation and knowledge base, and also to keep non-attendees plugged in
+* Make (and document) recommendations and decisions for the near-term and mid-term future of the project
+* Come up with upcoming action items, as well as leaders for those action items, for the various topics that we discuss
 
 Further details to be updated on this doc. Please check back for a complete guide. 
