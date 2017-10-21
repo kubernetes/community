@@ -172,7 +172,7 @@ Metadata items:
     pre-acceptance KEPs.
   * On acceptance a sequential dense number will be assigned.  This will be done
     by the editor and will be done in such a way as to minimize the chances of
-    conficts.  The final number for a KEP will have no prefix.
+    conflicts.  The final number for a KEP will have no prefix.
 * **title** Required
   * The title of the KEP in plain language.  The title will also be used in the
     KEP filename.  See the template for instructions and details.
