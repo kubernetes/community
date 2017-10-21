@@ -13,7 +13,7 @@ prevent future challenges in upgrading.
 1. Ensure ThirdPartyResource APIs operate consistently with first party
 Kubernetes APIs.
 2. Enable ThirdPartyResources to specify how they will appear in API
-discovery to be consistent with other resources and avoid naming confilcts
+discovery to be consistent with other resources and avoid naming conflicts
 3. Move TPR into their own API group to allow the extensions group to be
 [removed](https://github.com/kubernetes/kubernetes/issues/43214)
 4. Support cluster scoped TPR resources
