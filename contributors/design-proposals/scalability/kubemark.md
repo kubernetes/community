@@ -45,8 +45,8 @@ components on non-default ports, and in the same time will allow to run multiple
 generate credentials for cluster communication and pass them to HollowKubelet/HollowProxy to use. Master will treat all HollowNodes as
 normal ones.
 
-![Kubmark architecture diagram for option 1](Kubemark_architecture.png?raw=true "Kubemark architecture overview")
-*Kubmark architecture diagram for option 1*
+![Kubemark architecture diagram for option 1](Kubemark_architecture.png?raw=true "Kubemark architecture overview")
+*Kubemark architecture diagram for option 1*
 
 ### Option 2
 
