@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see generator/README.md.
 -->
-# cluster api Working Group
+# Cluster API Working Group
 
 Define a portable API that represents a Kubernetes cluster. The API will contain the control plane and its configuration and the underlying infrastructure (nodes, node pools, etc).
 

@@ -769,7 +769,7 @@ workinggroups:
     contact:
       slack: wg-container-identity
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-container-identity
-  - name: kubeadm adoption
+  - name: Kubeadm Adoption
     dir: wg-kubeadm-adoption
     mission_statement: >
       Boost adoption of the kubeadm tool. kubeadm is a tool for creating new Kubernetes clusters easily for new users, but can also be used as a toolbox for higher-level deployment
@@ -790,7 +790,7 @@ workinggroups:
     contact:
       slack: sig-cluster-lifecycle
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
-  - name: cluster api
+  - name: Cluster API
     dir: wg-cluster-api
     mission_statement: >
       Define a portable API that represents a Kubernetes cluster. The API will contain the control plane and its configuration and the underlying infrastructure (nodes, node pools, etc).
@@ -828,7 +828,7 @@ workinggroups:
     - day: Wednesday
       utc: "16:00"
       frequency: bi-weekly
-    meeting_archive_url: hhttps://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit
+    meeting_archive_url: https://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit
     contact:
       slack: wg-app-def
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-app-def
