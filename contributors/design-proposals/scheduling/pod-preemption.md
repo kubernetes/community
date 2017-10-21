@@ -150,10 +150,13 @@ The head of the queue will always be the highest priority pending pod.
 1.  Move the pod to the list of unschedulable pods.
 1.  If a node was chosen to preempt pods, set the node name as an annotation with
  the "NomindatedNodeName" key to the pod.
-1.  When any pod is scheduled, or terminated, a node is added/removed, or when
-labels of pods or nodes change, remove all the pods from the unschedulable pods
-list and add them to the pending queue. (Scheduler should keep its existing rate
-limiting.)
+1.  When any pod is terminated, a node is added/removed, or when
+pods or nodes updated, remove all the pods from the unschedulable pods
+list and add them to the scheduling queue. (Scheduler should keep its existing rate
+limiting.) We should also put the pending pods with inter-pod affinity back to
+the scheduling queue when a new pod is scheduled. To be more efficient, we may check
+if the newly scheduled pod matches any of the pending pods affinity rules before
+putting the pending pods back into the scheduling queue.
 
 
 #### Changes to predicate processing
