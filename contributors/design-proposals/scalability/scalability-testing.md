@@ -19,7 +19,7 @@ Once we have a better understanding of their consequences, we may want to
 decide to drop one of them, but we are not yet in that position.
 
 
-## Proposal 1 - Kubmark
+## Proposal 1 - Kubemark
 
 In this proposal we are focusing on scalability testing of master components.
 We do NOT focus on node-scalability - this issue should be handled separately.
