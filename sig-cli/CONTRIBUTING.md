@@ -67,7 +67,40 @@ New contributors can try the following to work on an existing [bug] or [approved
 
 - Attend a sig-cli [meeting] and introduce yourself as looking to get started.
 
-- Pick up an [issue]
+#### What you need to do to get started on a piece of work
+
+Any issue being worked on by new contributors is a large investment for reviewers and maintainers.
+Because this is a big investment of a very limited resource, the issues we assign to
+new contributors are things we actually want and need.  By picking an issue up, there
+is an expectation that you will provide periodic updates so the maintainers know it is
+being actively developed.  If no updates are made for a week or more and the assignee
+is unresponsive, we may assign the issue to someone else.
+
+Pick up an [issue] from the backlog by commenting on it that you would like to work on it.
+
+Be sure to pick up an issue that is appropriate to the time you are able to commit.
+
+Following are very rough estimates, but are best effort only.  They assume you have a development environment
+already set up and are able to build + test your code.
+
+- size/S
+  - 4-8 hours
+- size/M
+  - 10-20 hours
+- size/L
+  - 20+ hours
+  
+Meta/Umbrella issues may have multiple components.  By signing up for a Meta/Umbrella issue,
+you only need to work on the next pieces.
+
+**Important**:
+
+- When you pick up an issue, be sure to comment and cc @seans3 and @mengqiy
+  - To have an issue assigned to you, you must first become an outside collaborator, which
+    means having made some contribution already.
+- Don't pick up an issue until you are ready to start working on it
+- Update the issue every 2-3 days with your progress so we know it is being worked on.
+  There is an expectation that continual progress will be made on the issue while it is assigned.
 
 ### Bug lifecycle
 
@@ -296,7 +329,7 @@ See the sig-cli [community page] for points of contact and meeting times:
 [feature request]: #feature-requests
 [feature]: https://github.com/kubernetes/features
 [group]: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
-[issue]: https://github.com/kubernetes/kubectl/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20no%3Aassignee%20label%3Afor-new-contributors
+[issue]: https://github.com/kubernetes/kubectl/projects/3
 [cli_help_wanted_issues]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Asig%2Fcli+label%3Ahelp-wanted
 [kubectl concept docs]: https://github.com/kubernetes/kubernetes.github.io/tree/master/docs/concepts/tools/kubectl
 [kubectl docs]: https://kubernetes.io/docs/user-guide/kubectl-overview
