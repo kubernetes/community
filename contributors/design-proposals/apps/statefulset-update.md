@@ -435,7 +435,7 @@ constraints.
 `PartitionStatefulSetStrategyType`, the API Server should fail validation 
 if any of the following conditions are true.
    1. `.Spec.UpdateStrategy.Partition` is nil.
-   1. `.Spec.UpdateStrategy.Parition` is not nil, and 
+   1. `.Spec.UpdateStrategy.Partition` is not nil, and 
    `.Spec.UpdateStrategy.Partition.Ordinal` not in the sequence 
    `(0,.Spec.Replicas)`.
 1. The API Server will fail validation on any update to a StatefulSetStatus
@@ -443,7 +443,7 @@ object if any of the following conditions are true.
     1. `.Status.Replicas` is negative.
     1. `.Status.ReadyReplicas` is negative or greater than `.Status.Replicas`.
     1. `.Status.CurrentReplicas` is negative or greater than `.Status.Replicas`.
-    1. `.Stauts.UpdateReplicas` is negative or greater than `.Status.Replicas`.
+    1. `.Status.UpdateReplicas` is negative or greater than `.Status.Replicas`.
    
 ## Kubectl
 Kubectl will  use the `rollout` command to control and provide the status of 
