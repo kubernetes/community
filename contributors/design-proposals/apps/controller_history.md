@@ -427,7 +427,7 @@ its feasibility, we construct such a scheme here. However, this proposal does
 not mandate its use.
 
 Given a hash function with output size `HashSize` defined 
-as `func H(s srtring) [HashSize] byte`, in order to resolve collisions we 
+as `func H(s string) [HashSize] byte`, in order to resolve collisions we 
 define a new function `func H'(s string, n int) [HashSize]byte` where `H'` 
 returns the result of invoking `H` on the concatenation of `s` with the string 
 value of `n`. We define a third function 
