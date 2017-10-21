@@ -289,7 +289,7 @@ with the following example structure
 │   └── retired
 ├── sig-node
 │   ├── deferred
-│   ├── kublet
+│   ├── kubelet
 │   ├── orphaned
 │   └── retired
 ├── sig-release
