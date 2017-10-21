@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see generator/README.md.
 -->
-# kubeadm adoption Working Group
+# Kubeadm Adoption Working Group
 
 Boost adoption of the kubeadm tool. kubeadm is a tool for creating new Kubernetes clusters easily for new users, but can also be used as a toolbox for higher-level deployment solutions. This working group makes sure kubeadm meets the extensibility requirements of those higher-level Kubernetes installers.
 
