@@ -27,7 +27,11 @@ sig-list.md
 To (re)build documentation for all the SIGs, run these commands:
 
 ```bash
-make all
+make
+```
+or
+```bash
+make generate
 ```
 
 To build docs for one SIG, run one of these commands:
