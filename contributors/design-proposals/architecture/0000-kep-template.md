@@ -165,7 +165,7 @@ Major milestones in the life cycle of a KEP should be tracked in
   design
 - the date implementation started
 - the first Kubernetes release where an initial version of the KEP was available
-- the version of Kubneretes where the KEP graduated to general availability
+- the version of Kubernetes where the KEP graduated to general availability
 - when the KEP was retired or superseded
 
 ## Drawbacks [optional]
