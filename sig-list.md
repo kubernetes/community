@@ -9,7 +9,7 @@ To understand how this file is generated, see generator/README.md.
 # SIGs and Working Groups
 
 Most community activity is organized into Special Interest Groups (SIGs),
-time bounded Working Groups, and the [community meeting](communication.md#Meeting).
+time bounded Working Groups, and the [community meeting](communication.md#weekly-meeting).
 
 SIGs follow these [guidelines](governance.md) although each of these groups may operate a little differently
 depending on their needs and workflow.
