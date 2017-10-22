@@ -237,7 +237,7 @@ This section lists considerations specific to a given controller.
 
 * **ReplicaSet/ReplicationController**
 
-  * These controllers currenly only enable ControllerRef behavior when the
+  * These controllers currently only enable ControllerRef behavior when the
     Garbage Collector is enabled. When ControllerRef was first added to these
     controllers, the main purpose was to enable server-side cascading deletion
     via the Garbage Collector, so it made sense to gate it behind the same flag.
