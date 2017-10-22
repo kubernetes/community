@@ -11,7 +11,7 @@ As a Kubernetes User, we should be able to specify both user id and group id for
 inside a pod on a per Container basis, similar to how docker allows that using docker run options `-u, 
 --user="" Username or UID (format: <name|uid>[:<group|gid>]) format`.
 
-PodSecurityContext allows Kubernetes users to specify RunAsUser which can be overriden by RunAsUser
+PodSecurityContext allows Kubernetes users to specify RunAsUser which can be overridden by RunAsUser
 in SecurityContext on a per Container basis. There is no equivalent field for specifying the primary
 Group of the running container.
 
