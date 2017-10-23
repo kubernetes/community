@@ -346,7 +346,7 @@ Requested features:
 
 * Jobs can be used to perform a run-once initialization of the cluster
 * Init containers can be used to prime PVs and config with the identity of the pod.
-* Templates and how fields are overriden in the resulting object should have broad alignment
+* Templates and how fields are overridden in the resulting object should have broad alignment
 * DaemonSet defines the core model for how new controllers sit alongside replication controller and
   how upgrades can be implemented outside of Deployment objects.
 
