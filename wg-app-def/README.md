@@ -13,7 +13,7 @@ Improve UX of declarative primitives in the API and/or primary client libraries 
 Charter can be found [here](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#)
 
 ## Meetings
-* [Wednesdays at 16:00 UTC]() (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+* [Wednesdays at 16:00 UTC](https://zoom.us/j/748123863) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit).
 Meeting recordings can be found [here]().
