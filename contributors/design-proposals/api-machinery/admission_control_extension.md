@@ -68,7 +68,7 @@ Name | Code | Description
 AlwaysPullImages | alwayspullimages/admission.go | Forces the Kubelet to pull images to prevent pods from accessing private images that another user with credentials has already pulled to the node.
 LimitPodHardAntiAffinityTopology | antiaffinity/admission.go | Defended the cluster against abusive anti-affinity topology rules that might hang the scheduler.
 DenyEscalatingExec | exec/admission.go | Prevent users from executing into pods that have higher privileges via their service account than allowed by their policy (regular users can't exec into admin pods).
-DenyExecOnPrivileged | exec/admission.go | Blanket ban exec access to pods with host level security. Superceded by DenyEscalatingExec
+DenyExecOnPrivileged | exec/admission.go | Blanket ban exec access to pods with host level security. Superseded by DenyEscalatingExec
 OwnerReferencesPermissionEnforcement | gc/gc_admission.go | Require that a user who sets a owner reference (which could result in garbage collection) has permission to delete the object, to prevent abuse.
 ImagePolicyWebhook | imagepolicy/admission.go | Invoke a remote API to determine whether an image is allowed to run on the cluster.
 PodNodeSelector | podnodeselector/admission.go | Default and limit what node selectors may be used within a namespace by reading a namespace annotation and a global configuration.
