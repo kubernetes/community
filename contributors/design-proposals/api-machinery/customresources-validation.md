@@ -70,7 +70,7 @@ The schema is referenced in [`CustomResourceDefinitionSpec`](https://github.com/
 
 The schema types follow those of the OpenAPI library, but we decided to define them independently for the API to have full control over the serialization and versioning. Hence, it is easy to convert our types into those used for validation or to integrate them into an OpenAPI spec later.
 
-Reference http://json-schema.org is also used by OpenAPI. We propose this as there are implementations available in Go and with OpenAPI, we will also be able to serve OpenAPI specs for CustomResourceDefintions.
+Reference http://json-schema.org is also used by OpenAPI. We propose this as there are implementations available in Go and with OpenAPI, we will also be able to serve OpenAPI specs for CustomResourceDefinitions.
 
 ```go
 // CustomResourceSpec describes how a user wants their resource to appear
