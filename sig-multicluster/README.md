@@ -11,7 +11,7 @@ To understand how this file is generated, see generator/README.md.
 Covers multi-cluster Kubernetes use cases and tooling. This includes: application resiliency against availability zone outages; hybrid clouds; spanning of multiple could providers; application migration from private to public clouds (and vice versa); and other similar subjects. This SIG was formerly called sig-federation and focused on the Federation project, but expanded its charter to all multi-cluster concerns in August 2017.
 
 ## Meetings
-* [Tuesdays at 16:30 UTC](https://plus.google.com/hangouts/_/google.com/k8s-mc) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
+* [Tuesdays at 16:30 UTC](https://zoom.us/my/k8s.mc) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
