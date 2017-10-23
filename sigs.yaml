@@ -355,7 +355,7 @@ sigs:
     - day: Tuesday
       utc: "16:30"
       frequency: biweekly
-    meeting_url: https://plus.google.com/hangouts/_/google.com/k8s-mc
+    meeting_url: https://zoom.us/my/k8s.mc
     meeting_archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
     meeting_recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
     contact:
