@@ -7,7 +7,7 @@ Updated: 5/3/2016
 
 - [End-to-End Testing in Kubernetes](#end-to-end-testing-in-kubernetes)
   - [Overview](#overview)
-  - [Building and Running the Tests](#building-and-running-the-tests)
+  - [Building Kubernetes and Running the Tests](#building-kubernetes-and-running-the-tests)
     - [Cleaning up](#cleaning-up)
   - [Advanced testing](#advanced-testing)
     - [Installing/updating kubetest](#installingupdating-kubetest)
