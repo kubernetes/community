@@ -146,9 +146,8 @@ images.
 
 - The image for cross compiling in [build/build-image/cross].
   The `VERSION` file and `Dockerfile`.
-- Update [dockerized-e2e-runner.sh] to run a kubekins-e2e with the desired Go
-  version. This requires pushing the [e2e][e2e-image] and [test][test-image]
-  images that are `FROM` the desired Go version.
+- Update the desired Go version in Dockerfile for the [e2e][e2e-image] and [test][test-image].
+  This requires pushing the [e2e][e2e-image] and [test][test-image] images that are `FROM` the desired Go version.
 - The cross tag `KUBE_BUILD_IMAGE_CROSS_TAG` in [build/common.sh].
 
 
@@ -404,7 +403,6 @@ masse. This makes reviews easier.
 [OS X GNU tools]: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x
 [build/build-image/cross]: https://github.com/kubernetes/kubernetes/blob/master/build/build-image/cross
 [build/common.sh]: https://github.com/kubernetes/kubernetes/blob/master/build/common.sh
-[dockerized-e2e-runner.sh]: https://github.com/kubernetes/test-infra/blob/master/jenkins/dockerized-e2e-runner.sh
 [e2e-image]: https://github.com/kubernetes/test-infra/tree/master/jenkins/e2e-image
 [etcd-latest]: https://coreos.com/etcd/docs/latest
 [etcd-install]: testing.md#install-etcd-dependency
