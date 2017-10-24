@@ -77,7 +77,7 @@ superseded-by:
 ## Table of Contents
 
 A table of contents is helpful for quickly jumping to sections of a KEP and for
-highlighting any addtional information provided beyond the standard KEP
+highlighting any additional information provided beyond the standard KEP
 template. [Tools for generating][] a table of contents from markdown are
 available.
 

@@ -18,7 +18,7 @@ schema). `get` supports a `wide` mode that includes additional columns. Users ca
 flag. Headers corresponding to the columns are optionally displayed.
 
 `kubectl describe` shows a textual representation of individual objects that describes individual fields as subsequent
-lines and uses indendation and nested tables to convey deeper structure on the resource (such as events for a pod or
+lines and uses indentation and nested tables to convey deeper structure on the resource (such as events for a pod or
 each container). It sometimes retrieves related objects like events, pods for a replication controller, or autoscalers
 for a deployment. It supports no significant flags.
 
