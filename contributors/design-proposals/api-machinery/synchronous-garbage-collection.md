@@ -124,7 +124,7 @@ In addition, if an object popped from `dirtyQueue` is marked as "GC in progress"
 * To avoid racing with another controller, it requeues the object if `observedGeneration < Generation`. This is best-effort, see [unhandled cases](#unhandled-cases).
 * Checks if the object has dependents
   * If not, send a PUT request to remove the `GCFinalizer`;
-  * If so, then add all dependents to the `dirtryQueue`; we need bookkeeping to avoid adding the dependents repeatedly if the owner gets in the `synchronousGC queue` multiple times.
+  * If so, then add all dependents to the `dirtyQueue`; we need bookkeeping to avoid adding the dependents repeatedly if the owner gets in the `synchronousGC queue` multiple times.
 
 ## Controllers
 
