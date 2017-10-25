@@ -9,7 +9,6 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 # App Def Working Group
 
 Improve UX of declarative primitives in the API and/or primary client libraries and tools, understand the needs of other parts of the ecosystem on this layer, and improve the interoperability of application management tools through better separation of concerns, common conventions, and common principles.
-  
 Charter can be found [here](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#)
 
 ## Meetings
