@@ -11,7 +11,7 @@ function cleanup {
 }
 trap cleanup EXIT
 
-cp -r sig* Makefile generator ${WORKING_DIR}
+cp -r sigs.yaml sig-* wg-* Makefile generator ${WORKING_DIR}/
 
 cd ${WORKING_DIR}
 make 1>/dev/null
@@ -19,7 +19,7 @@ make 1>/dev/null
 mismatches=0
 break=$(printf "=%.0s" $(seq 1 68))
 
-for file in $(ls ${CRT_DIR}/sig-*/README.md ${CRT_DIR}/sig-list.md); do
+for file in $(ls ${CRT_DIR}/sig-*/README.md ${CRT_DIR}/wg-*/README.md ${CRT_DIR}/sig-list.md); do
   real=${file#$CRT_DIR/}
   if ! diff -q ${file} ${WORKING_DIR}/${real} &>/dev/null; then
     echo "${file} does not match ${WORKING_DIR}/${real}";
