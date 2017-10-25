@@ -7,7 +7,6 @@ reset-docs:
 	git checkout HEAD -- sig-list.md sig-*/README.md
 
 generate:
-	go get ./...
 	go run ./generator/app.go
 
 generate-dockerized:
@@ -17,7 +16,6 @@ verify:
 	@hack/verify.sh
 
 test:
-	go get ./...
 	go test -v ./generator/...
 
 test-dockerized:
