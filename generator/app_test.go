@@ -83,6 +83,9 @@ func TestGetExistingData(t *testing.T) {
 }
 
 func TestWriteTemplate(t *testing.T) {
+	baseGeneratorDir = "generated"
+	templateDir = "../../generator"
+
 	customContent := `
 <!-- BEGIN CUSTOM CONTENT -->
 Example
@@ -176,9 +179,12 @@ func TestCustomPrefixSetupGithubTeams(t *testing.T) {
 }
 
 func TestCreateGroupReadmes(t *testing.T) {
+	baseGeneratorDir = "generated"
+	templateDir = "../../generator"
+
 	groups := []Group{
-		Group{Name: "Foo"},
-		Group{Name: "Bar"},
+		{Name: "Foo"},
+		{Name: "Bar"},
 	}
 
 	err := createGroupReadme(groups, "sig")
@@ -187,7 +193,7 @@ func TestCreateGroupReadmes(t *testing.T) {
 	}
 
 	for _, group := range groups {
-		path := filepath.Join(baseOutputDir, group.DirName("sig"), "README.md")
+		path := filepath.Join(baseGeneratorDir, group.DirName("sig"), "README.md")
 		if !pathExists(path) {
 			t.Fatalf("%s should exist", path)
 		}
@@ -195,11 +201,14 @@ func TestCreateGroupReadmes(t *testing.T) {
 }
 
 func TestReadmesAreSkipped(t *testing.T) {
+	baseGeneratorDir = "generated"
+	templateDir = "../../generator"
+
 	os.Setenv("SIG", "sig-foo")
 
 	groups := []Group{
-		Group{Name: "Foo"},
-		Group{Name: "Bar"},
+		{Name: "Foo"},
+		{Name: "Bar"},
 	}
 
 	err := createGroupReadme(groups, "sig")
@@ -208,7 +217,7 @@ func TestReadmesAreSkipped(t *testing.T) {
 	}
 
 	for _, group := range groups[1:] {
-		path := filepath.Join(baseOutputDir, group.DirName("sig"), "README.md")
+		path := filepath.Join(baseGeneratorDir, group.DirName("sig"), "README.md")
 		if !pathExists(path) {
 			t.Fatalf("%s should exist", path)
 		}
@@ -232,6 +241,9 @@ func copyFile(src, dst string) error {
 }
 
 func TestFullGeneration(t *testing.T) {
+	baseGeneratorDir = "generated"
+	templateDir = "../../generator"
+
 	err := copyFile("testdata/sigs.yaml", "generated/sigs.yaml")
 	if err != nil {
 		t.Fatalf("Error received: %v", err)
@@ -241,7 +253,7 @@ func TestFullGeneration(t *testing.T) {
 
 	expectedDirs := []string{"sig-foo", "sig-bar", "wg-baz"}
 	for _, ed := range expectedDirs {
-		path := filepath.Join(baseOutputDir, ed, "README.md")
+		path := filepath.Join(baseGeneratorDir, ed, "README.md")
 		if !pathExists(path) {
 			t.Fatalf("%s should exist", path)
 		}

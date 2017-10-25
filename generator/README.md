@@ -24,14 +24,14 @@ sig-list.md
 
 ## How to use
 
-To (re)build documentation for all the SIGs, run these commands:
+To (re)build documentation for all the SIGs in a go environment, run:
 
 ```bash
-make
-```
-or
-```bash
 make generate
+```
+or to run this inside a docker container:
+```bash
+make generate-dockerized
 ```
 
 To build docs for one SIG, run one of these commands:

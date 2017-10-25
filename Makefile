@@ -1,4 +1,4 @@
-IMAGE_NAME=kube-communitydocs
+IMAGE_NAME=golang:1.9
 
 default: \
 	generate \
@@ -6,16 +6,21 @@ default: \
 reset-docs:
 	git checkout HEAD -- sig-list.md sig-*/README.md
 
-build-image:
-	docker build -q -t $(IMAGE_NAME) -f generator/Dockerfile generator
+generate:
+	go get ./...
+	go run ./generator/app.go
 
-generate: build-image
-	docker run --rm -e WHAT -v $(shell pwd):/go/src/app/generated:Z $(IMAGE_NAME) app
+generate-dockerized:
+	docker run --rm -e WHAT -v $(shell pwd):/go/src/app:Z $(IMAGE_NAME) make -C /go/src/app generate
 
 verify:
 	@hack/verify.sh
 
-test: build-image
-	docker run --rm $(IMAGE_NAME) go test -v ./...
+test:
+	go get ./...
+	go test -v ./generator/...
 
-.PHONY: default reset-docs build-image generate verify test
+test-dockerized:
+	docker run --rm -v $(shell pwd):/go/src/app:Z $(IMAGE_NAME) make -C /go/src/app test
+
+.PHONY: default reset-docs generate generate-dockerized verify test test-dockerized
