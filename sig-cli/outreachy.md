@@ -40,6 +40,7 @@ To start working on the project, make sure to fill out the CLA and check if you 
 Check out these specific resources for how to contribute to CLI: 
 * SIG-CLI - [How to Contribute](https://github.com/kubernetes/community/blob/master/sig-cli/CONTRIBUTING.md)
 * Filter issue search for: `is:open is:issue label:sig/cli label:help-wanted` (or `label:for-new-contributors`)  
+* Hand picked issues for outreachy applications: https://github.com/kubernetes/kubectl/projects/3
 
 ## Available tasks
 
