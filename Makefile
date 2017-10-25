@@ -4,7 +4,7 @@ default: \
 	generate \
 
 reset-docs:
-	git checkout HEAD -- sig-list.md sig-*/README.md
+	git checkout HEAD -- ./sig-list.md ./sig-*/README.md ./wg-*/README.md
 
 generate:
 	go run ./generator/app.go
