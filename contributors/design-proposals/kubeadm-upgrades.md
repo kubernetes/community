@@ -1,397 +1,330 @@
-kubeadm upgrades proposal
-
-Lucas Käldström, Luke Marsden & the SIG Cluster Lifecycle team
-July 2017
-
-See also: [sig-cluster-lifecycle 1.7 Planning](https://docs.google.com/document/d/1xpjz9373KQ56gr7812eo85wB7G6n39LtUIn9Lq74t0Q/edit) and [sig-cluster-lifecycle 1.8 Planning](https://docs.google.com/document/d/17C2D1Ghgv40pWByevo0ih8T-18Q1GlxbR4gu1_ZKlPE/edit).
-
-# Abstract
-
-This proposal describes how kubeadm will support upgrades via self-hosting, and includes enough design for HA to ensure that we're not painting ourselves into an architectural corner.
-
-This document is somewhat based on the [notes](https://docs.google.com/document/d/19GzaaqqW7Q6IdfJa6gYy2JsCgnmChTmol4V0kHI50pc/edit) from the face-to-face SIG-cluster-lifecycle meeting during KubeCon 2017 in Berlin and the "self-hosting, upgrades & HA"-special effort SIG Cluster Lifecycle meetings late June and early July 2017.
-
-Timescale for implementation of this proposal (working self-hosting & upgrades) is Kubernetes 1.8. This means that [features issues must be in by Aug 1](https://github.com/kubernetes/features/pull/305) and [code must be in by Sept 1](https://github.com/kubernetes/features/pull/305).
-
-# Self-hosting
-
-Self-hosting will be the default way of deploying the control plane, but it will be optional. There will be a `kubeadm init`-time feature gate to disable it.
-
-Only *control plane components* will be in-scope for self-hosting for v1.8.
-
-Notably, not etcd or kubelet for the moment.
-
-Self-hosting will be a [phase](https://github.com/kubernetes/kubeadm/blob/master/docs/design/design.md) in the kubeadm perspective. As there are Static Pods on disk from earlier in the `kubeadm init` process, kubeadm can pretty easily parse that file and extract the PodSpec from the file. This PodSpec will be modified a little to fit the self-hosting purposes and be injected into a DaemonSet which will be created for all control plane components (API Server, Scheduler and Controller Manager). kubeadm will wait for the self-hosted control plane Pods to be running and then destroy the Static Pod-hosted control plane.
-
-What actually happens in the Static Pod -> Self-hosted transition?
-
-First the PodSpec is modified. For instance, instead of hard-coding an IP for the API server to listen on it is dynamically fetched from the Downward API. When it’s ok to proceed, the self-hosted control plane DaemonSets are posted to the Static Pod API Server. The Static Pod API Server starts the self-hosted Pods normally. The Pods get in the Running state, but fails to bind to the port on the host and backs off internally. During that time, kubeadm notices the Running state of the self-hosted Pod, and deletes the Static Pod file which leads to that the kubelet stops the Static Pod-hosted component immediately. On the next run, the self-hosted component will try to bind to the port, which now is free, and will succeed. A self-hosted control plane has been created!
-
-Status as of v1.7: self hosted config file option exists; not split out into phase. The code is fragile and uses Deployments for the scheduler and controller-manager, which unfortunately [leads to a deadlock](https://github.com/kubernetes/kubernetes/issues/45717) at `kubeadm init` time. It does not leverage checkpointing so the entire cluster burns to the ground if you reboot your computer(s). Long story short; self-hosting is not production-ready in 1.7.
-
-The rest of the document assumes a self-hosted cluster. It will not be possible to use 'kubeadm upgrade' a cluster unless it's self-hosted. The sig-cluster-lifecycle team will still provide some manual, documented steps that an user can follow to upgrade a non-self-hosted cluster.
-
-Self-hosting implementation for v1.8
-
-The API Server, controller manager and scheduler will all be deployed in DaemonSets with node affinity (using `nodeSelector`) to masters. The current way DaemonSet upgrades currently operate is "remove an old Pod, then add a new Pod". Since supporting “single masters” is a definite requirement, we have to either workaround removing the only replica of the scheduler/controller-manager by duplicating the existing DaemonSets (e.g. a `temp-self-hosted-kube-apiserver` DS will be created as a copy of the normal `self-hosted-kube-apiserver` DS during the upgrade) or ask for a [new upgrade strategy](https://github.com/kubernetes/kubernetes/issues/48841) (“add first, then delete”, which is generally useful) from sig-apps.
-
-Checkpointing
-
-In order to be able to reboot a self-hosted cluster (e.g. a single, self-hosted master), there has to be some kind of checkpointing mechanism. Basically the kubelet will write some state to disk for Pods that opt-in to checkpointing ("I’m running an API Server, let’s write that down so I remember it", etc.). Then if the kubelet reboots (in the single-master case for example), it will check the state store for Pods it was running before the reboot. It discovers that it ran an API Server, Controller Manager and Scheduler and starts those Pods now as well.
-
-This solves the chicken-and-egg problem that otherwise would occur when the kubelet comes back up, where the kubelet tries to connect to the API server, but the API server hasn’t been started yet, it should be running as a Pod on that kubelet, although it isn’t aware of that.
-
-We’re aiming to build this functionality into the kubelet behind an alpha feature flag.
-
-# Upgrading policies
-
-Defining decent upgrading and version skew policies is important before implementing.
-
-Definitions
-
-Minor version upgrade = This is an upgrade from a version (vX.Y.Z1) with the minor component equal to `Y` to a version (vX.Y+1.Z2) with the minor component of `Y+1`. For instance, a minor version upgrade can look like `v1.8.3` to `v1.9.0`.
-
-Patch version upgrade = This is an upgrade from a version (vX.Y.Z) with the patch component equal to `Z` to a version (vX.Y.Z+n) with the patch component of `Z+n`. `n` can be freely chosen by the user. For instance, a patch version upgrade can look like `v1.8.3` to `v1.8.6`.
-
-1. The user must upgrade the kubeadm CLI before the control plane
-
-    1. Upgrading to a higher patch release than the kubeadm CLI version will
-*be possible*, but yield a warning and require the `--force` flag to `kubeadm upgrade apply` to continue
-
-    2. Upgrading to a higher minor release than the kubeadm CLI version will **not** be supported.
-
-    3. Example: kubeadm v1.8.3 can upgrade your v1.8.3 cluster to v1.8.6 if you specify `--force` at the time of the upgrade, but kubeadm can never upgrade your v1.8.3 cluster to v1.9.0
-
-2. The kubeadm CLI can create clusters with the latest two minor releases.
-
-    4. Example: kubeadm v1.8.2 supports *creating a new cluster* for Kubernetes versions v1.7.x and v1.8.x
-
-3. The control plane must be upgraded before the kubelets in the cluster
-
-    5. For kubeadm; the maximum amount of skew between the control plane and the kubelets is *one minor release*.
-
-    6. Example: running `kubeadm upgrade apply --version v1.9.0` against a v1.8.2 control plane will error out if the nodes are still on v1.7.x
-
-4. This means that there are possibly two kinds of upgrades kubeadm can do:
-
-    7. A patch release upgrade (from v1.8.1 to v1.8.3 for instance)
-
-        1. This is very much about bumping the version number. It is very uncommon that things change in a breaking manner between these versions
-
-    8. A minor release upgrade (from v1.7.5 to v1.8.3 for instance)
-
-        2. This kind of upgrade is much harder as lots of things tend to change with every minor version. Common minor release upgrade (from v1.7.5 to v1.8.3 for instance) tasks kubeadm must handle:
-
-            1. Old/deprecated flags that should be removed
-
-                1. Example: the --insecure-experimental-approve-all-node-csrs flag for the controller-manager
-
-            2. Arguments that have to be changed
-
-                2. Example: the list of admission controllers grew from v1.6 to v1.7; two new admission controllers (Initializers and NodeRestriction) had to be inserted in the right place of the chain
-
-            3. New flags that should be added
-
-                3. In order to enable new and required features, kubeadm should automatically append these config options
-
-            4. Resources that have to be modified
-
-                4. Example: The `system:nodes` ClusterRoleBinding had to lose its binding to the `system:nodes` Group when upgrading to v1.7; otherwise the Node Authorizer wouldn’t have had any effect.
-
-5. Using kubeadm, you must upgrade the control plane atomically.
-
-    9. It’s out of scope for now to upgrade only a part of the control plane. All  control plane components must be upgraded at the same time for it to be a supported operation from kubeadm’s point of view.
-
-    10. If you upgrade your cluster, the apiserver, controller-manager, scheduler, proxy and dns will get upgraded at the same time, and necessary resources (like RBAC rules) are modified in-cluster.
-
-        3. Kube-dns will be upgraded to the latest available, branched, manifest inside of the kubeadm source code.
-
-6. `kubeadm upgrade plan` will fetch the latest stable versions from `dl.k8s.io/release/stable-1.X.txt` where X is the minor version for the given release branch.
-
-    11. If the user can’t connect to the internet, `kubeadm upgrade plan` won’t show the user which versions he/she can upgrade to, but `kubeadm upgrade apply --version` will work just normally. 
-
-    12. The only thing that changes is that the user has to know which version to upgrade to, but that is a good requirement, since the user is the one that knows which images has been pre-pulled anyway.
-
-7. Upgrading etcd might or might not be supported, depending on the complexity of the upgrade. 
-
-    13. Major version bumps with schema changes require a proposal on its own
-
-    14. If the user opts-in to it, and kubeadm knows that a higher Kubernetes version than what the user have now requires or recommends a minor/patch version bump of etcd, kubeadm may be able to upgrade etcd via a Job (see the related section below)
-
-8. An upgrade *could* imply other things than a version number bump, for example 
-
-# The `kubeadm upgrade` command
-
-There will exist a `kubeadm upgrade` command that takes care of all the hard parts involved in upgrading a Kubernetes cluster.
-
-It will have two subcommands:
-
-* `plan`: Usually the first command the user will run (the recommended).
-
-    * Validates that the cluster is upgradable
-
-    * Outputs available versions to upgrade to (if any)
-
-    * In an air-gapped environment, it won’t show the available versions to upgrade to.
-
-* `apply`: Will do the actual upgrade
-
-    * `--dry-run`: Computes the changes/actions that would have to be taken and outputs the manifests that will be applied, resources that will be modified, etc.
+# kubeadm upgrades proposal
+
+Authors: Lucas Käldström & the SIG Cluster Lifecycle team
+Last updated: October 2017
+
+## Abstract
+
+This proposal describes how kubeadm will support a upgrading clusters in an user-friendly and automated way using different techniques.
+Eventually we aim to consolidate and unify upgrading procedures across different Kubernetes installer/deployment tools, but that is out of scope
+to address for this initial proposal.
+
+SIG Cluster Lifecycle is the responsible SIG for kubeadm and its functionality, and prioritized the making the upgrading functionality easier and more user-friendly during the v1.8 coding cycle (v1.6 -> v1.7 upgrades with kubeadm were supported, but in alpha and with a non-optimal UX).
+
+## Graduation requirements
+
+ - Beta in v1.8:
+   - Support for the `kubeadm upgrade plan` and `kubeadm upgrade apply` commands.
+   - Support for dry-running upgrades.
+   - Supports upgrading clusters, but not 100% support for downgrades or "runtime reconfiguration"
+   - Support for upgrading the API Server, the Controller Manager, the Scheduler, kube-dns & kube-proxy
+   - Support for performing necessary post-upgrade steps like upgrading Bootstrap Tokens that were alpha in v1.6 & v1.7 to beta ones in v1.8
+   - Automated e2e tests running.
+ - GA in v1.10:
+   - Support for downgrades and runtime reconfiguration.
+   - Support for upgrading etcd.
+   - The upgrading functionality is available from the `kubeadm phase` command.
+   - Support for upgrading kubelets.
+   - Supported Control Plane <-> kubelet minor skew: two minor versions.
+   - Support for fully remote-executable upgrade operations against the cluster
+   - Support for machine-readable `kubeadm plan` output
+   - Support for upgrading HA/multi-master clusters
+
+## Upgrading policies
+
+The initial task that must be performed when considering to add functionality to seamlessly upgrade clusters, is to define policies for which kinds of upgrades
+and version skews should be supported.
+
+### Definitions
+
+ - **Minor version upgrade**: An upgrade from a version (`vX.Y.Z1`) with the minor component equal to `Y` to a version (`vX.Y+1.Z2`) with the minor component of `Y+1`. Upgrading from `v1.8.3` to `v1.9.0` is a minor version upgrade.
+ - **Patch version upgrade**: An upgrade from a version (`vX.Y.Z`) with the patch component equal to `Z` to a version (`vX.Y.Z+n`) with the patch component of `Z+n`. `n` can be freely chosen by the user. Upgrading from `v1.8.3` to `v1.8.6` is a patch version upgrade.
+ - **Required upgrade policy**: An upgrade policy that must be satisfied; a precondition the user can't ignore.
+ - **Skippable upgrade policy**: An upgrade policy that should be satisfied, but is skippable by passing the `--force` flag.
+ - **Runtime reconfiguration**: An user invokes the `kubeadm upgrade apply` command with the current version, but with a different configuration.
+
+### Pre-upgrade policies
+
+ - The kubeadm CLI version must be higher or equal to the upgrade target version
+   - **Required policy**: The kubeadm CLI minor version must be equal to or higher than the upgrade target minor version.
+     - Example: kubeadm CLI version `v1.8.3` can upgrade a cluster to `v1.7.4` and `v1.8.5`, but not `v1.9.0`.
+   - **Optional policy**: The kubeadm CLI patch version should be equal to or higher than the upgrade target patch version.
+     - Example: kubeadm CLI version `v1.8.3` can upgrade a cluster to `v1.8.3` without an explicit grant, but upgrading to `v1.8.5` requires forcing. 
+ - The kubeadm CLI of version `vX.Y.Z` can create clusters with minor versions `Y` and `Y-1`.
+   - This is a **required policy**, and is not specific to upgrades. This policy is also is also enforced when creating a cluster.
+     - Example: kubeadm CLI version `v1.8.2` can create clusters of (and upgrade clusters to) version `v1.8.x` and `v1.7.x`.
+ - The control plane version must always be higher than or equal to the version of all the kubelets, and the maximum allowed skew is one minor versions.
+   - **Required policy**: The control plane version must be higher than or equal to the kubelet version. This is a generic Kubernetes policy.
+     - Example: For a control plane of version `v1.8.4`; a kubelet version may be `v1.8.2`, but not `v1.9.3`
+   - **Skippable policy**: The maximum allowed minor skew between the control plane and the kubelets is one minor version.
+     - Example: For a control plane of version `v1.7.2` being upgraded to `v1.8.5`; the minimum allowed kubelet version is `v1.7.0`.
+     - Note: We might relax this policy to allow two minor versions before going to GA.
+ - The version change must be positive, i.e. only upgrades are supported; not downgrades or runtime reconfiguration.
+   - This is a **skippable policy** in v1.8, and will be removed in future versions before going to GA.
+     - Example: Downgrading from `v1.8.3` to `v1.8.2` or reconfiguring a cluster on version `v1.8.1` can only be done (initially) along with the `--force` flag.
+ - The maximum allowed upgrade minor skew is one minor version.
+   - This is a **required policy**. You can upgrade from `vX.Y.Z1` to `vX.Y+1.Z2`, but not to `vX.Y+2.Z3`.
+     - Example: Upgrading from `v1.6.2` to `v1.8.4` is not supported.
+     - Note: We might relax this policy to allow two minor versions before going to GA.
+ - The target upgrade version must not be an alpha, beta version unless the user explicitely allows it with `--allow-experimental-upgrades`
+   - This is a **skippable policy**, in order to have an extra safety check but still allow it for users who may want it. Such upgrades are not supported.
+     - Example: Upgrading from `v1.7.1` to `v1.8.0-beta.3` can only be done with at least one of the `--allow-experimental-upgrades` or `--force` flags.
+ - The target upgrade version must not be a release candidate version unless the user explicitely allows it with `--allow-release-candidate-upgrades` (or `--allow-experimental-upgrades`)
+   - This is a **skippable policy**, in order to have an extra safety check but still allow users to easily test our RCs. These upgrades "should work".
+     - Example: Upgrading from `v1.7.1` to `v1.8.0-rc.1` can only be done with at least one of the `--allow-release-candidate-upgrades`, `--allow-experimental-upgrades` or `--force` flags.
+
+## Initial scope of `kubeadm upgrade`
+
+The initial scope of kubeadm upgrades in v1.8 is to upgrade the _control plane_ along with kube-proxy and kube-dns that are hosted on top of Kubernetes.
+The control plane upgrade is atomic; either all or nocontrol plane components get upgraded. If a post-upgrade step fails though (like upgrading Bootstrap Tokens or applying a new kube-dns), kubeadm upgrade just returns a non-zero code instead of reverting the successful control plane upgrade. We might change the latter behavior in the future.
+
+In the first iteration, upgrading the kubelets and/or etcd in the cluster is a manual task (see the sections below).
+We will address these limitations in future versions before graduating this functionality to GA.
+
+## Command structure
+
+ - `kubeadm upgrade`: Placeholder command for other subcommands.
+   - Relevant, generic flags:
+     - `--config`: A path to a configuration file to use as the desired state for the cluster component configuration. If omitted, configuration is read from a ConfigMap in the cluster.
+     - `--kubeconfig`: The path to a configuration file to use when talking to the cluster. Default: `/etc/kubernetes/admin.conf`.
+     - `--allow-experimental-upgrades`: Allow the user to upgrade to alpha, beta and release candidate versions.
+     - `--allow-release-candidate-upgrades`: Allow the user to upgrade to release candidate versions.
+     - `--print-config`: Print out the configuration read from the file or ConfigMap in the cluster.
+     - `--skip-preflight-checks`: Skip the preflight checks that are run before execution.
+ - `kubeadm upgrade plan`: Serves as a way to show users:
+   - If the cluster is in an upgradeable state.
+   - What versions the user can upgrade the cluster to.
+ - `kubeadm upgrade apply [version]`:
+   - Is the command that actually performs the upgrade (of the control plane).
+   - Will interactively ask the user for a `[Y/n]` confirmation if the upgrade really should be performed.
+   - Relevant flags:
+     - `--dry-run`: Only log the changes that would be made to the cluster without changing any state.
+     - `--force`, `-f`: Ignore any skippable version policy errors and the interactive yes/no upgrade confirmation.
+     - `--image-pull-timeout`: The time to wait for the new control plane images to pull before timing out. Default: 15 minutes.
+     - `--yes`, `-y`: Run the command non-interactively, don't ask for an upgrade confirmation.
+
+## Example user experience
 
 UX when upgrading a patch version:
 
+```console
 $ kubeadm upgrade plan
-
-Inspecting current cluster state:
-
- -> Self-hosting active ✓
-
- -> Configuration exists in-cluster ✓
-
- --> Validating configuration ✓
-
- -> Fetching cluster versions ✓
-
- --> Control plane version: v1.8.1
-
- --> Latest stable patch version: v1.8.3
-
- --> Latest stable minor version: v1.8.3
-
- --> Kubeadm CLI version: v1.8.3
-
- ---> Good! Kubeadm is up-to-date!
-
- Upgrade to the latest patch version of your release branch:
-
-			Current version	Upgrade available
-
- API server:		v1.8.1		v1.8.3
-
- Controller-manager:	v1.8.1		v1.8.3
-
- Scheduler:		v1.8.1		v1.8.3
-
- Kube-proxy:		v1.8.1		v1.8.3
-
- Kube-dns:			v1.15.4		v1.15.5
-
- Etcd				v3.1.10		v3.1.10
-
- Upgrades available!
-
- You can now apply the upgrade by executing the following command:
-
-	kubeadm upgrade apply --version v1.8.3
-
- Components that must be upgraded manually:
-
- Kubelet			2 x v1.8.0		v1.8.3
-
-				3 x v1.8.1		v1.8.3
+[kubeadm upgrade plan output]
+```
 
 To upgrade the kubelets in the cluster, please upgrade them from the source you installed them from (most often using your package manager).
 
+```console
 $ kubeadm upgrade apply --version v1.8.3
-
-Pulling the required images... ✓
-
-* gcr.io/google_containers/kube-apiserver: 2/2 pulled
-
-* gcr.io/google_containers/kube-controller-manager: 2/2 pulled
-
-* gcr.io/google_containers/kube-scheduler: 2/2 pulled
-
-* gcr.io/google_containers/kube-proxy: 5/5 pulled
-
-Upgrading the API Server DaemonSet... 
-
-* Applying the new version of the DaemonSet... ✓
-
-* Verifying that it comes up cleanly... ✓
-
-Upgrading the Controller-manager DaemonSet...
-
-* Applying the new version of the DaemonSet... ✓
-
-* Verifying that it comes up cleanly... ✓
-
-Upgrading the Scheduler DaemonSet...
-
-* Applying the new version of the DaemonSet... ✓
-
-* Verifying that it comes up cleanly... ✓
-
-Upgrading the kube-proxy DaemonSet... ✓
-
-Upgrading the kube-dns Deployment... ✓
-
-Success! Your cluster was upgraded to v1.8.3
-
-UX when upgrading a minor version:
-
-$ kubeadm upgrade plan
-
-Inspecting current cluster state:
-
- -> Self-hosting active ✓
-
- -> Configuration exists in-cluster ✓
-
- --> Validating configuration ✓
-
- -> Fetching cluster versions ✓
-
- --> Control plane version: v1.7.5
-
- --> Latest stable patch version: v1.7.8
-
- --> Latest stable minor version: v1.8.3
-
- --> Kubeadm CLI version: v1.8.1
-
- ---> Note! The kubeadm CLI should be upgraded
-      to v1.8.3 if you want to upgrade your
-      Cluster to v1.8.3
-
- Both minor and patch release upgrades available!
-
- Upgrade to the latest patch version of your branch:
-
-			Current version	Upgrade available
-
- API server:		v1.7.5		v1.7.8
-
- Controller-manager:	v1.7.5		v1.7.8
-
- Scheduler:		v1.7.5		v1.7.8
-
- Kube-proxy:		v1.7.5		v1.7.8
-
- Kube-dns:			v1.14.2		v1.14.4
-
- Etcd:			v3.0.17		v3.1.10
-
- You can now apply the upgrade by executing the following command:
-
-	kubeadm upgrade apply --version v1.7.8
-
-Upgrade to the latest stable minor release:
-
-			Current version	Upgrade available
-
- API server:		v1.7.5		v1.8.3
-
- Controller-manager:	v1.7.5		v1.8.3
-
- Scheduler:		v1.7.5		v1.8.3
-
- Kube-proxy:		v1.7.5		v1.8.3
-
- Kube-dns:			v1.14.2		v1.15.5
-
- You can now apply the upgrade by executing the following command:
-
-	kubeadm upgrade apply --version v1.8.3
-
- Components that must be upgraded manually:
-
- Kubelet			2 x v1.8.0		v1.8.3
-
-				3 x v1.8.1		v1.8.3
-
-# Implementation options of the upgrade
-
-High-level approaches:
-
-1. Build the upgrade logic into kubeadm
-
-2. Build an upgrading Operator that does the upgrading for us
-
-    * Would consume a TPR with details how to do the upgrade
-
-The historical preference was to build a reusable Operator that does the upgrading for us. *Either way we would deliver the same 'kubeadm upgrade' UX.* In the latter case, that would involve kubeadm deploying an upgrading controller on behalf of the user, and tracking its lifecycle through the kubernetes API.
-
-There are pros and cons for each method:
-
-1. Build it into the `kubeadm` CLI command
-
-    1. Pros:
-
-        1. *Simplicity*; Very straightforward to implement; basically doing the same steps as `kubeadm init` would, only slightly modified to fit the upgrading purpose. We will construct a `kubeadm upgrade` command in any case
-
-        2. The kubeadm v1.6 -> v1.7 upgrade used this method this successfully
-
-        3. Being able to easily have an interactive flow where the user can inspect the changes that are about to be applied and accept/deny for instance.
-
-        4. Doesn’t have to deal with any version skew between the Operator image tag/version and the CLI version
-
-        5. Doesn’t have to define an API (CRD or the like) between the client and the Operator
-
-    2. Cons:
-
-        6. Maybe not as reusable as an Operator inside the cluster would be
-
-2. Build an Operator
-
-    3. Pros:
-
-        7. The idea is that it would be generic and could be re-used by others
-
-        8. Other operators are already handling complex upgrades successfully, and we could even standardise patterns
-
-    4. Cons:
-
-        9. Has to deal with any version skew between the controller and the CLI
-
-        10. Has to deal with pre-pulling the image to a specific node in the case of no internet connection
-
-        11. Has to define an API (CRD or the like) between the client and the Operator
+[kubeadm upgrade apply output]
+```
+
+## Upgrade planning
+
+In order for the user to know whether the cluster may be upgraded or not; the `kubeadm upgrade plan` command was written.
+The command:
+
+1. Checks if the cluster is healthy
+  - Does the API server `/healthz` endpoint return `ok`?
+  - Are all nodes in the cluster in the `Ready` state?
+  - (If Static Pods are used) Do all required Static Pod manifests exist on disk?
+  - (If cluster is self-hosted) Are all control plane DaemonSets healthy?
+1. Builds an internal configuration object to apply to the cluster
+  - The `--config` file takes precedence; otherwise the current configuration stored in a ConfigMap in the cluster is used.
+  - The `KubernetesVersion` field is set to the desired version.
+  - The built configuration object is optionally printed to STDOUT if `--print-config` is `true`.
+1. Information about what releases are available are downloaded from the Kubernetes Release & CI GCS buckets.
+  - The `dl.k8s.io/release/stable.txt` endpoint (and optionally `.../stable-1.X.txt`) is queried for the latest stable version to display.
+  - The API Server, kubeadm CLI, and all kubelets' versions are taken into account when computing the possible upgrades.
+  - The command may show zero to four upgrade possibilities.
+  - The information is nicely printed to the user.
+
+
+## Upgrade implementation
+
+On a high level, this is what `kubeadm upgrade apply [version]` does:
+
+1. Checks if the cluster is healthy
+  - Does the API server `/healthz` endpoint return `ok`?
+  - Are all nodes in the cluster in the `Ready` state?
+  - (If Static Pods are used) Do all required Static Pod manifests exist on disk?
+  - (If cluster is self-hosted) Are all control plane DaemonSets healthy?
+1. Builds an internal configuration object to apply to the cluster
+  - The `--config` file takes precedence; otherwise the current configuration stored in a ConfigMap in the cluster is used.
+  - The `KubernetesVersion` field is set to the desired version.
+  - The built configuration object is optionally printed to STDOUT if `--print-config` is `true`.
+1. Enforces the version policies highlighted above in [Pre-upgrade policies](#pre-upgrade-policies)
+1. Asks the user for a `[Y|n]` answer whether to proceed with the upgrade or not (if the session is interactive)
+1. Performs a method of ensuring that all necessary control plane images are available locally to the master(s), aka. "pre-pulling"
+  - Due to lack of an API to the kubelet that would make it possible to say "make sure this image X is available locally"; we have to
+    implement the prepulling in a slightly worse, but still acceptable and pretty straightforward way.
+  - One dummy DaemonSet per control plane component is created; and when all control plane components are running a dummy "sleep 3600" command
+    kubeadm can for sure know that the new container image was successfully pulled or already cached locally; and the upgrade can then proceed.
+1. Performs the actual upgrade. The implementation here depends on how the control plane was pulled, see the chapters below for more details.
+1. Performs post-upgrade tasks like applying the new kube-dns and kube-proxy manifests and version-specific upgrade steps like upgrading Bootstrap Tokens from alpha in v1.7 to beta in v1.8. 
+
+### Architectural upgrade implementation options
+
+**Upgrade code in the CLI tool vs controller running in-cluster:**
+
+On a high level, the upgrade could be implemented in two primary ways:
+
+1. As synchronous code executing client-side in the kubeadm CLI binary.
+1. As an asynchronous controller that handles the upgrade implementation; with the kubeadm CLI just invoking the upgrade
+
+The historical preference was to build a reusable Operator that does the upgrading for us.
+An important note here is that in *either way we would deliver the exact same 'kubeadm upgrade' UX.*
+
+A head-to-head breakdown of pros/cons for the two methods outlined:
+
+1. Build the upgrading code into the `kubeadm` CLI command
+ -  Pros:
+   - *Simplicity*; Easier and simpler to implement. A `kubeadm upgrade` command will be built in any case.
+   - The [kubeadm v1.6 -> v1.7 alpha upgrade method](#TODO) used this option successfully
+   - Being able to easily have an interactive flow where the user can inspect the changes that are about to be applied and accept/deny for instance.
+   - No need to deal with version skew between the Operator image tag/version and the kubeadm CLI version
+   - No need to define an API (CRD or the like) between the client and the Operator
+ - Cons:
+   - Maybe not as reusable as an Operator inside the cluster would be
+
+1. Build an Operator
+ - Pros:
+   - The idea is that it would be generic and could be re-used by others
+   - Other operators are already handling complex upgrades successfully, and we could even standardise patterns
+ - Cons:
+   - Would have to deal with version skew between the controller and the CLI
+   - Would have to deal with pre-pulling the image to a specific node in the case of no internet connection
+   - Would have to define an API (CRD or the like) between the client and the Operator (more time-consuming to get right)
 
 **Decision**: Keep the logic inside of the kubeadm CLI (option 1) for the implementation in v1.8.0.
 
-We *might* build an upgrade operator in future kubeadm versions.
+We *might* revisit this and build an upgrade operator in future, either before GA of this functionality or after, in v2.
 
-Upgrade a Static Pod-hosted cluster to a self-hosted one
-
-The first thing `kubeadm upgrade` would have to do when upgrading from v1.7 to v1.8 would be to make the static-pod-hosted v1.7 cluster self-hosted. This can easily be done thanks to the recent refactoring of self-hosting into an atomically invoked phase. 
-`kubeadm upgrade plan` will inform the user about the Static Pod => self-hosted switch in the case of an v1.7.x to v1.8.x upgrade. It will also be possible to convert a Static Pod-hosted control plane to a self-hosted one with another command like `kubeadm phase selfhosting apply`.
-
-Keeping user customizations between releases
-
-One of the hardest parts with implementing the upgrade will be to respect customizations made by the user at `kubeadm init` time. The proposed solution would be to store the kubeadm configuration given at `init`-time in the API as a ConfigMap, and then retrieve that configuration at upgrade time, parse it using the API machinery and use it for the upgrade.
-
-This highlights a very important point: **We have to get the kubeadm configuration API group to Beta (v1beta1) in time for v1.8.**
-
-By declaring Beta status on kubeadm’s configuration, we can be sure that kubeadm CLI v1.9 can read it and be able to upgrade from v1.8 to v1.9.
-
-### Alternative considered
+**Rewrite manifests completely from config object or mutate existing manifest:**
 
 Instead of generating new manifests from a versioned configuration object, we could try to add "filters" to the existing manifests and apply different filters depending on what the upgrade looks like. This approach, to modify existing manifests in various ways depending on the version bump has some pros (modularity, simple mutating functions), but the matrix of functions and different policies would grow just too big for this kind of system, so we voted against this alternative in favor for the solution above.
 
-"Upgrading" without bumping the version number
 
-One interesting use-case for `kubeadm upgrade` will be to modify other configuration in the cluster. If we assume the configuration file options from `kubeadm init` will be fetchable from a ConfigMap inside of the cluster at any time, it would be possible to fetch the current state, compare it to the desired state (from `kubeadm apply --config`) and build a patch of it. Kubeadm would validate the fields changed in that patch and allow/deny "upgrading" those values.
+### Static Pod-hosted or Self-hosted control plane?
+
+A control plane can be set up in a couple of ways:
+
+ - Running the control plane components standalone; as systemd services for instance.
+   - kubeadm **does not** support handling any such cluster
+ - Running the control plane components in containers with kubelet as the babysitter; using Static Pods
+   - [Static Pods](#TODO) is a way to run standalone Pods on a node by dropping Pod manifests in a specific path.
+   - In kubeadm v1.4 to v1.8, this is the default way of setting up the control plane
+ - Running the control plane in Kubernetes-hosted containers as DaemonSets; aka. [Self-Hosting](#TODO)
+   - When creating a self-hosted cluster; kubeadm first creates a Static Pod-hosted cluster and then pivots to the self-hosted control plane.
+   - This is the default way to deploy the control plane since v1.9; but the user can opt-out if it and stick with the Static Pod-hosted cluster. 
+
+#### Static Pod-hosted control plane
+
+When the upgrade functionality is introduced in v1.8; the default way to set up the control plane is by using Static Pods.
+
+When the control plane is hosted using Static Pods, the actual upgrade flow looks like this:
+ - Gets the Mirror Pod manifests from the API Server (`kubectl -n kube-system get pod ${component}-${nodename} -ojson`), and sha256-hashes the JSON content.
+ - Writes new Static Pod manifests to a **temporary directory** (with the prefix `/etc/kubernetes/tmp/kubeadm-upgraded-manifests*`) based on the new configuration object built internally earlier.
+ - Creates a **backup directory** with the prefix `/etc/kubernetes/tmp/kubeadm-backup-manifests*`.
+   - Q: Why `/etc/kubernetes/tmp`?
+   - A: Possibly not very likely, but we concluded that there may be an attack area for computers where `/tmp` is shared and writable by all users.
+     We wouldn't want anyone to mock with the new Static Pod manifests being applied to the clusters. Hence we chose `/etc/kubernetes/tmp`, which is
+     root-only owned.
+ - In a loop for all control plane components:
+   - Moves the **current manifest** (in `/etc/kubernetes/manifests`) to the **backup directory** (`/etc/kubernetes/tmp/kubeadm-backup-manifests*/`)
+   - Moves the **upgraded manifest** (in `/etc/kubernetes/tmp/kubeadm-upgraded-manifests*`) to the **Static Pod manifest folder** (`/etc/kubernetes/manifests`)
+     - => kubelet notices that the Static Pod on disk changed, kills the old Pod and creates the new one.
+   - kubeadm waits for the API server to come up, executes `kubectl -n kube-system get pod ${component}-${nodename} -ojson`, sha256-hashes the response,
+     and compares it to the pre-upgrade hash. If the hash has changed, kubeadm proceeds with the process.
+     - _Race condition warning_: If the Pod manifest hashing wouldn't be performed, there is a very common case where kubeadm upgrades the Static Pod manifest
+       on disk, but proceeds too quickly (before the kubelet has actually restarted the Pod), and falsely checks that the old component is running.
+   - kubeadm waits for the Static Pod's Mirror Pod to register itself with the API Server; just as an extra security measure
+ - In order to not leak directories on the host, kubeadm deletes the **backup** and **temporary directory**.
+   - If there are user requests, we might make it possible to opt-out of the "always delete old manifests"-policy.
+
+##### Rollbacks
+
+In case any of these operations fail, kubeadm will rollback the earlier manifests to the previous state. Hence the backup directory is important.
+For instance, if the scheduler doesn't come up cleanly; kubeadm will rollback the previously (successfully upgraded) API server, controller manager
+manifests as well as the scheduler manifest.
+
+#### Self-hosted control plane
+
+You can read more about how kubeadm creates self-hosted clusters in detail in the [kubeadm self-hosting](kubeadm-selfhosting.md) document.
+
+On a high level, each master component (kube-apiserver, kube-controller-manager and kube-scheduler) is deployed as a DaemonSet.
+When a self-hosted cluster should be upgraded, the key advantage is that only access to the API server should technically be required.
+
+In practice, access to the master's filesystem for disaster recovery via the Static Pod mechanism doesn't hurt.
+
+Although we're aiming and planning to start supporting to create and upgrade clusters with multiple masters (HA clusters), that functionality didn't
+make it into the v1.8 timeframe. Supporting to upgrade self-hosted, "single masters" is a definite requirement that would be a prereq in any case.
+
+Upgrading self-hosted "single masters" is a bit tricky.
+When modifying the DaemonSet specification, the `daemonset` controller in the controller-manager will kick in and remove the currently running Pod and
+later create an upgraded Pod. We call the current behavior "delete first, then add".
+
+This becomes problematic in the one-master case, as the `daemonset` controller will delete the only running replica of the component :(
+
+There are three main ways to approach this problem:
+ - Create a new DaemonSet upgrade strategy that would "add first, then delete"
+   - This was SIG Cluster Lifecycle's preferred approach during the v1.8 timeframe, but the request got declined in the last minute, didn't make v1.8,
+     and eventually was punted on in favor for graduating the current DaemonSet API to GA in v1.9 (which is fair anyway).
+   - Pros:
+     - foo
+   - Cons:
+     - bar
+ - Create a temporary, duplicated DaemonSet of the component in question that will kick in while the "real" DaemonSet Pod is deleted and recreated.
+   - This approach was implemented in the meantime for the `kubeadm upgrade` command in v1.8
+   - Pros:
+     - foo
+   - Cons:
+     - bar
+ - Use Static Pods as the recovery mechanism while the DaemonSet is being upgraded for this "corner case"
+   - Pros:
+     - foo
+   - Cons:
+     - bar
+
+## Various other notes
+
+### Keeping user customizations between releases
+
+One of the most important parts with implementing an upgrade is to respect customizations made by the user at `kubeadm init` time.
+
+The proposed and implemented solution is to store the kubeadm configuration given at `init`-time in the API as a ConfigMap (can be seen with
+`kubectl -n kube-system get configmap kubeadm-config -oyaml`), and later retrieve that configuration when upgrading. While that is the default
+solution, the user may still explicitely pass a configuration file to use for the new desired state of the cluster.
+
+### "Upgrading" without bumping the version number (runtime reconfiguration)
+
+One interesting use-case for `kubeadm upgrade` is to modify the cluster configuration without bumping the version number.
+
+As we have access to the current (in kubeadm's PoV) state of the cluster via the `kubeadm-config` ConfigMap; it would be possible to build a patch of the new changes and validate that patch... TODO
+
+
+assume the configuration file options from `kubeadm init` will be fetchable from a ConfigMap inside of the cluster at any time, it would be possible to fetch the current state, compare it to the desired state (from `kubeadm apply --config`) and build a patch of it. Kubeadm would validate the fields changed in that patch and allow/deny "upgrading" those values.
 
 This is a stretch goal for v1.8, but not a strictly necessary feature.
 
-Pre-pulling of images/ensuring the upgrade doesn’t take too long
+### Pre-pulling of images/ensuring the upgrade doesn’t take too long
 
 One tricky part of the upgrade flow is that it will require new images to be run on a given node; and that image might not exist locally. When upgrading, the kubelet will start to pull the image (which is fine), but it might take a while. We don’t want the scenario of a poor internet connection when everything is proceeding fine but slow and `kubeadm upgrade` times out before the image is pulled.
 
 We plan to solve this by having a separate `prepull` task in the beginning of the upgrade to minimize service outage. What it will basically do is to create a DaemonSet for all the control plane components, but instead of running the component, it executes `sleep 3600` or a similar command.
 
-Upgrading etcd
+### Upgrading etcd
 
-In v1.7 and v1.8, etcd runs in a Static Pod on the master. In v1.7, the default etcd version for Kubernetes is v3.0.17 and in k8s v1.8 the recommended version will be something like v3.1.10. In the v1.7->v1.8 upgrade path, we could offer upgrading etcd as well as an opt-in*. *This only applies to minor versions and 100% backwards-compatible upgrades like v3.0.x->v3.1.y, not backwards-incompatible upgrades like etcdv2 -> etcdv3.
+In v1.7 and v1.8, etcd runs in a Static Pod on the master. In v1.7, the default etcd version for Kubernetes is v3.0.17 and in k8s v1.8 the recommended version will be something like v3.1.10. In the v1.7->v1.8 upgrade path, we could offer upgrading etcd as well as an opt-in*. *This only applies to minor versions and 100% backwards-compatible upgrades like v3.0.x->v3.1.y, not backwards-incompatible upgrades like etcdv2 -> etcdv3.*
+
 
 The easiest way of achieving an etcd upgrade is probably to create a Job (with `.replicas=<masters>`, Pod Anti-Affinity and `.spec.parallellism=1`) of some kind that would upgrade the etcd Static Pod manifest on disk by writing a new manifest, waiting for it to restart cleanly or rollback, etc.
 
-Verbose upgrading mode
+### Verbose upgrading mode
 
 Currently it is not possible to specify a `--v` flag to `kubeadm init`. In time for v1.8 that should be possible, as it is needed for `kubeadm upgrade` as well. Upgrading a cluster is a task that has to be handled carefully, and often the user wants to know what happens under the hood in order to trust the component that automates that work away.
 
-Network Plugins
+### Network Plugins
 
 As CNI network providers are crucial to the health of the cluster, we have to somehow ensure that the network plugin continues to work after a minor release upgrade.
 
@@ -401,52 +334,17 @@ The "real" solution to this problem would be to implement an “[Addon Manager](
 
 One proposed method of dealing with this is to have a `--cni-network-manifests` flag to `kubeadm upgrade apply`. The flag would be optional for patch upgrades but semi-required with minor upgrades (skippable with `--force` or similar)
 
-Interactive vs non-interactive mode
+### Interactive vs non-interactive mode
 
 By default, kubeadm should tell the user what it is doing in a way that is verbose enough to satisfy the most users (but doesn’t print out a wall of text). Also see the verbosity section.
 
-`kubeadm upgrade apply` implementation flow
 
-1. Validate the version given and configuration. Fail fast if the configuration is missing or invalid. Fail fast if the user is trying to upgrade to a version that is not supported.
-
-2. Make sure the cluster is healthy
-
-    1. Make sure the API Server’s `/healthz` endpoint returns `ok`
-
-    2. Makes sure all Nodes return `Ready` status
-
-    3. Makes sure all desired self-hosting Pods for the control plane are Running and Ready
-
-3. (Upgrade the cluster to use self-hosting if static pods are used currently)
-
-    4. Might require some extra flags, etc
-
-4. Parse the control plane arguments into `map[string]string`, traverse them and create a new alternative.
-
-5. Upgrade the API Server, Controller-manager and Scheduler in turn
-
-    5. This will result in a very short API Server outage (will post here with information about how many milliseconds) if you have a single master (which is the case with v1.7)
-
-    6. If any of them don’t come up cleanly, kubeadm will rollback.
-
-6. Modify resources in the API as needed (e.g. RBAC rules)
-
-7. Upgrade kube-proxy and kube-dns
-
-8. Apply the network manifest if specified
-
-9. Update the ConfigMap with the new config file that was used
-
-Possible failures, timeouts/deadlocks and rollback policy
+### Possible failures, timeouts/deadlocks and rollback policy
 
 By default, kubeadm should have a (configurable) timeout value; if a given task takes longer than; kubeadm will automatically try to rollback.
 
-# HA design
 
-Note: HA being fully implemented and on by default for v1.8 is a *non-goal*.
+### Upgrading the kubelets
 
-Design docs are available:
+Foo
 
-* [Kubeadm (HA) - @timothysc](https://docs.google.com/document/d/1lH9OKkFZMSqXCApmSXemEDuy9qlINdm5MfWWGrK3JYc/edit#)
-
-* [kubeadm HA implementation plan - @luxas](https://docs.google.com/document/d/1ff70as-CXWeRov8MCUO7UwT-MwIQ_2A0gNNDKpF39U4/edit#)
