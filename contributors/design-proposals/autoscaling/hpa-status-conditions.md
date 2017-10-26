@@ -2,7 +2,7 @@ Horizontal Pod Autoscaler Status Conditions
 ===========================================
 
 Currently, the HPA status conveys the last scale time, current and desired
-replaces, and the last-retrieved values of the metrics used to autoscale.
+replicas, and the last-retrieved values of the metrics used to autoscale.
 
 However, the status field conveys no information about whether or not the
 HPA controller encountered difficulties while attempting to fetch metrics,
