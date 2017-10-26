@@ -35,7 +35,7 @@ That part will be addressed by [#476](https://github.com/kubernetes/community/pu
 
 ### API Change
 
-If a merge key has multiple fields, it will be a string of merge key fields seperated by ",", i.e. `patchMergeKey:"<key1>,<key2>,<key3>"`.
+If a merge key has multiple fields, it will be a string of merge key fields separated by ",", i.e. `patchMergeKey:"<key1>,<key2>,<key3>"`.
 
 If a merge key only has one field, it will be the same as before, i.e. `patchMergeKey:"<key1>"`.
 
