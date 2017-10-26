@@ -1,8 +1,12 @@
-# Build with Bazel
+# Build and test with Bazel
 
-Building with Bazel is currently experimental. Automanaged `BUILD` rules have the
-tag "automanaged" and are maintained by
-[gazel](https://github.com/mikedanese/gazel). Instructions for installing Bazel
+Building and testing Kubernetes with  Bazel is supported but not yet default.
+
+Go rules are managed by the [`gazelle`](https://github.com/bazelbuild/rules_go/tree/master/go/tools/gazelle)
+tool, with some additional rules managed by the [`kazel`](https://github.com/kubernetes/repo-infra/tree/master/kazel) tool.
+These tools are called via the `hack/update-bazel.sh` script.
+
+Instructions for installing Bazel
 can be found [here](https://www.bazel.io/versions/master/docs/install.html).
 
 Several `make` rules have been created for common operations:
@@ -20,25 +24,40 @@ tests, run
 $ bazel test //pkg/kubectl/...
 ```
 
+## Planter
+If you don't want to install Bazel, you can instead try using the unofficial
+[Planter](https://github.com/kubernetes/test-infra/tree/master/planter) tool,
+which runs Bazel inside a Docker container.
+
+For example, you can run
+```console
+$ ../test-infra/planter/planter.sh make bazel-test
+$ ../test-infra/planter/planter.sh bazel build //cmd/kubectl
+```
+
 ## Continuous Integration
 
-The [Bazel CI job](http://k8s-testgrid.appspot.com/google-unit#bazel) runs
-`make bazel-build`, `make bazel-test`, and (transitively) `make bazel-release`.
-A similar job is run on all PRs.
+There are several bazel CI jobs:
+* [ci-kubernetes-bazel-build](http://k8s-testgrid.appspot.com/google-unit#bazel-build): builds everything
+  with Bazel
+* [ci-kubernetes-bazel-test](http://k8s-testgrid.appspot.com/google-unit#bazel-test): runs unit tests in
+  with Bazel
 
-Many steps are cached, so the Bazel job usually executes fairly quickly.
+Similar jobs are run on all PRs; additionally, several of the e2e jobs use
+Bazel-built binaries when launching and testing Kubernetes clusters.
 
 ## Known issues
 
 [Cross-compilation is not currently supported](https://github.com/bazelbuild/rules_go/issues/70),
-so all binaries will be built for the host architecture running Bazel.
-Additionally, Go build tags are not supported. This means that builds on macOS may not work.
+so all binaries will be built for the host OS and architecture running Bazel.
+(For example, you can't currently target linux/amd64 from macOS or linux/s390x
+from an amd64 machine.)
 
-[Binaries produced by Bazel are not statically linked](https://github.com/bazelbuild/rules_go/issues/161),
-and they are not currently tagged with version information.
+Additionally, native macOS support is still a work in progress. Using Planter is
+a possible workaround in the interim.
 
 [Bazel does not validate build environment](https://github.com/kubernetes/kubernetes/issues/51623), thus make sure that needed
-tools and development packages are installed in the system. Bazel builds require presense of `make`, `gcc`, `g++`, `glibc and libstdc++ development headers` and `glibc static development libraries`. Please check your distribution for exact names of the packages. Examples for some commonly used distributions are below:
+tools and development packages are installed in the system. Bazel builds require presence of `make`, `gcc`, `g++`, `glibc and libstdc++ development headers` and `glibc static development libraries`. Please check your distribution for exact names of the packages. Examples for some commonly used distributions are below:
 
 |     Dependency        | Debian/Ubuntu                 | CentOS                         | OpenSuSE                                |
 |:---------------------:|-------------------------------|--------------------------------|-----------------------------------------|
@@ -55,10 +74,15 @@ To update `BUILD` files, run:
 $ ./hack/update-bazel.sh
 ```
 
-**NOTE**: `update-bazel.sh` only works if check out directory of Kubernetes is `$GOPATH/src/k8s.io/kubernetes`.
+To prevent Go rules from being updated, consult the [gazelle
+documentation](https://github.com/bazelbuild/rules_go/tree/master/go/tools/gazelle).
 
-Only rules which are automanaged will be updated, but all rules will be
-auto-formatted.
+Note that much like Go files and `gofmt`, BUILD files have standardized,
+opinionated style rules, and running `hack/update-bazel.sh` will format them for you.
+
+If you want to auto-format BUILD files in your editor, using something like
+[Buildifier](https://github.com/bazelbuild/buildtools/blob/master/buildifier/README.md)
+is recommended.
 
 Updating the `BUILD` file for a package will be required when:
 * Files are added to or removed from a package
@@ -66,6 +90,9 @@ Updating the `BUILD` file for a package will be required when:
 * A `BUILD` file has been updated and needs to be reformatted
 * A new `BUILD` file has been added (parent `BUILD` files will be updated)
 
+## Contacts
+For help or discussion, join the [#bazel](https://kubernetes.slack.com/messages/bazel)
+channel on Kubernetes Slack.
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/bazel.md?pixel)]()
 <!-- END MUNGE: GENERATED_ANALYTICS -->
