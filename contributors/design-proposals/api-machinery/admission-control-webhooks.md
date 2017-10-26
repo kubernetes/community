@@ -9,9 +9,6 @@ Thanks to: {@dbsmith,  @smarterclayton, @deads2k, @cheftako, @jpbetz, @mbohlool,
 [TOC]
 
 
-**Discussion and Decision for this Beta plan desired at 11 October SIG-API-Machinery meeting, due to short release cycle in 1.9.**
-
-
 # Summary 
 
 This document proposes a detailed plan for bringing Webhooks to Beta. Highlights include (incomplete, see rest of doc for complete list) :
@@ -38,6 +35,8 @@ This plan is compatible with the [original design doc]( https://github.com/kuber
 **Validating Webhook**: synonym for Non-Mutating Webhook
 
 **Static Admission Controller**: Compiled-in Admission Controllers, (in plugin/pkg/admission).
+
+**Webhook Host**: a process / binary hosting a webhook.
 
 # Naming 
 
@@ -71,23 +70,12 @@ Not in scope:
 
 *   Initializers remains Alpha for 1.9.  (See [Comparison of Webhooks and Initializers](#comparison-of-webhooks-and-initializers) section).  No changes to it.  Will revisit its status post-1.9.
 *   Converting static admission controllers is out of scope (but some investigation has been done, see Moving Built-in Admission Controllers section).
-*   Internal Go interface refactor (e.g. along the lines suggested  #[1137](https://github.com/kubernetes/community/pull/1137)).  Nice-to-have but not gating beta.   
 
 
 ## Work Items 
 
-
-
-*   Add API for registering mutating webhooks.  See 
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>  GDC alert: undefined internal link (link text: "API Changes"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>> </span></p>
-
-[API Changes](#heading=h.5xu31klaqsa0)
-*   Copy the non-mutating webhook admission controller code and rename it to be for mutating. (Splitting into two registration APIs make ordering clear.) Add changes to handle mutating responses.  See 
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>  GDC alert: undefined internal link (link text: "Responses for Mutations"). Did you generate a TOC? </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>> </span></p>
-
-[Responses for Mutations](#heading=h.a9rxps4ka8y3).
+*   Add API for registering mutating webhooks.  See [API Changes](#api-changes)
+*   Copy the non-mutating webhook admission controller code and rename it to be for mutating. (Splitting into two registration APIs make ordering clear.) Add changes to handle mutating responses.  See [Responses for Mutations](#responses-for-mutations).
 *   Document recommended flag order for admission plugins.  See [Order of Admission](#order-of-admission).
 *   In kube-up.sh and other installers, change flag per previous item. 
 *   Ensure able to monitor latency and rejection from webhooks. See [Monitorability](#monitorability).
@@ -96,6 +84,7 @@ Not in scope:
 *   Good Error Messages	.  See [Good Error Messages](#good-error-messages)	
 *   Conversion logic in GenericWebhook to send converted resource to webhook.  See [Conversion](#conversion) and [#49733](https://github.com/kubernetes/kubernetes/issues/49733).
 *   Schedule discussion around resiliency to down webhooks and bootstrapping
+*   Internal Go interface refactor (e.g. along the lines suggested  #[1137](https://github.com/kubernetes/community/pull/1137)).
 
 
 # Design Discussion 
@@ -112,13 +101,13 @@ We will do webhooks beta before initializers beta because:
 1.  **API Consistency**: Prefer completing one related pair of interfaces (both kinds of webhooks) at the same time.
 
 
-## Why Support Mutation for Beta
+## Why Support Mutation for Beta 
 
 Based on experience and feedback from the alpha phase of both Webhooks and Initializers, we believe Webhooks Beta should support mutation because:  
 
 
 
-1.   we have lots of use cases to inform this (both from Initializers, and Admission Controllers) to ensure we have needed features
+1.  We have lots of use cases to inform this (both from Initializers, and Admission Controllers) to ensure we have needed features
 1.  We have experience with Webhooks API already to give confidence in the API.  The registration API will be quite similar except in the responses.
 1.  There is a strong community demand for something that satisfies a mutating case.
 
@@ -134,7 +123,9 @@ After the release of 1.9, we will advise users who currently use initializers to
 
 We will continue to support Initializers as an Alpha API in 1.9.
 
-We will point out https://github.com/caesarxuchao/example-webhook-admission-controller and extend it to support mutating webhooks, and as that Initializer docs point to it (e.g. https://github.com/kelseyhightower/kubernetes-initializer-tutorial)
+We will make a user guide and extensively document these webhooks. We will update some existing examples, maybe https://github.com/caesarxuchao/example-webhook-admission-controller (since the initializer docs point to it, e.g. https://github.com/kelseyhightower/kubernetes-initializer-tutorial), or maybe https://github.com/openshift/generic-admission-server.
+
+We will clearly document the reasons for each and how users should decide which to use.
 
 
 ## Monitorability 
@@ -150,12 +141,12 @@ There should be prometheus variables to show:
     *   Overall
     *   By webhook name.
 
-Adding a webhook dynamically adds a key to a map-valued prometheus metric.
+Adding a webhook dynamically adds a key to a map-valued prometheus metric. Webhook host process authors should consider how to make their webhook host monitorable: while eventually we hope to offer a set of best practices around this, for the initial release we won't have requirements here.
 
 
 ## API Changes 
 
-GenericAdmissionWebhook Admission Controller is duplicated.
+GenericAdmissionWebhook Admission Controller is split and renamed.
 
 
 
@@ -163,7 +154,7 @@ GenericAdmissionWebhook Admission Controller is duplicated.
 *   The other is called `ValidatingAdmissionWebhook`
 *   Splitting them allows them to appear in different places in the `--admission-control` flag's order.
 
-ExternalAdmissionHookConfiguration API is duplicated.
+ExternalAdmissionHookConfiguration API is split and renamed.
 
 
 
@@ -186,16 +177,14 @@ InitializerConfiguration and ExternalAdmissionHookConfiguration.
 
 InitializerConfiguration will not join `admissionregistration.k8s.io/v1beta1` at this time.
 
-Any webhooks that register with v1alpha1 may or may not be surprised when they start getting Versioned data.  But we don't make any promises for Alpha, and detecting which API was used to register is too complex.
+Any webhooks that register with v1alpha1 may or may not be surprised when they start getting versioned data.  But we don't make any promises for Alpha, and this is a very important bug to fix.
 
 
 ## Order of Admission 
 
-The recommended order on kubernetes.io for `--admission-control` will be: `MutatingAdmissionWebhook,NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,ValidatingAdmissionWebhook,ResourceQuota`
+At kubernetes.io, we will document the ordering requirements or just recommend a particular order for `--admission-control`. A starting point might be `MutatingAdmissionWebhook,NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,ValidatingAdmissionWebhook,ResourceQuota`.
 
- This order has the following properties:
-
-
+ There might be other ordering dependencies that we will document clearly, but some important properties of a valid ordering:
 
 *   ResourceQuota comes last, so that if prior ones reject a request, it won't increment quota.
 *   All other Static ones are in the order recommended by [the docs](https://kubernetes.io/docs/admin/admission-controllers/#is-there-a-recommended-set-of-plug-ins-to-use).  (which variously do mutation and validation) Preserves the behavior when there are no webhooks.
@@ -203,14 +192,18 @@ The recommended order on kubernetes.io for `--admission-control` will be: `Mutat
 *   Ensures dynamic validations happen after all mutations.
 *   Users don't need to reason about the static ones, just the ones they add.
 
+System administrators will likely need to know something about the webhooks they
+intend to run in order to make the best ordering, but we will try to document a
+good "first guess".
+
 Validation continues to happen after all the admission controllers (e.g. after mutating webhooks, static admission controllers, and non-mutating admission controllers.)
 
-**TODO**: we should move ResourceQuota after Validation, e.g. as described in #1137.  However, this is a longstanding bug and likely a larger change than can be done in 1.9, and should be revisted along with a larger quota redesign.  Therefore, it is not a requirement for Beta,
+**TODO**: we should move ResourceQuota after Validation, e.g. as described in #1137.  However, this is a longstanding bug and likely a larger change than can be done in 1.9--a larger quota redesign is out of scope. But we will likely make an improvement in the current ordering.
 
 
 ## Parallel vs Serial 
 
-The main reason for parallel is reducing latency due to round trip and converstion.  We think this can often mitigated by consolidating multiple webhooks shared by the same project into one.
+The main reason for parallel is reducing latency due to round trip and conversion.  We think this can often mitigated by consolidating multiple webhooks shared by the same project into one.
 
 Reasons not to allow parallel are complexity of reasoning about concurrent patches, and CRD not supporting PATCH.
 
@@ -220,8 +213,7 @@ Reasons not to allow parallel are complexity of reasoning about concurrent patch
 
 The order is the sort order of all the WebhookConfigs, by name, and by index within the Webhooks list.  
 
-If a strong need arises for parallel mutating webhooks, the API will allow adding a partial order later as follows:  Add a "parallelStage" field to WebhookConfig object.  Any objects for which this field is unset all run in serial first.  Then ones which have the phase set are run.  All the ones with the same value run in parallel, and different ones in the order based on the numeric (or lexicographical) order by values).
-
+We don't plan to make mutating webhooks parallel at this time, but we will revisit the question in the future and decide before going to GA.
 
 ## Good Error Messages	 
 
@@ -230,37 +222,43 @@ When a webhook is persistently failing to allow e.g. pods to be created, then th
 When a core controller, e.g. ReplicaSet, fails to make a resources, it must send a helpful event that is visible in `kubectl describe` for the controlling resources, saying the reason create failed.
 
 
-## Conversion 
+## Conversion and Versioning
 
-The apiserver will send versioned objects to the webhook to avoid churns in the webhook code. The current registration API has an Rule.[APIVersions](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/admissionregistration/types.go#L86) field, which is used to match against the version in the endpoint url, and only matching requests will be forwarded to the webhook. The current API isn't able to specify what version the APIServer should convert the request body to before forwarding the it to the webhook. So we propose two ways to modify the API.
+We need to make it possible to upgrade the control plane of operating clusters.
+To that end, we will make sure the communication between apiserver and webhook
+is versioned. A separate document will work out these details. Currently:
+https://docs.google.com/document/d/1BT8mZaT42jVxtC6l14YMXpUq0vZc6V5MPf_jnzDMMcg/edit
 
-Plan A:
+It is possible that two different webhooks want to access the same
+stored-resource via different GVKs.  In this case there could be extra
+conversions.  Conversion does take some CPU.  However, we don't expect this to be
+a significant issue for beta because:
 
-We change the semantic of the APIVersions field. The field means the external versions the webhooks is able to decode. The APIServer forwards the webhook any requests that are stored at the same etcd path as the one appears in the registration API.
-
-Plan B:
-
-The semantic of the APIVersions field is unchanged. We add a ConvertToGroup and ConvertToVersion field to express the versions the webhooks understand. A straw-man design is [here](https://docs.google.com/document/d/1CPcRQ12dIxIE1_T8BYx41V2w5WEGP0vHAWCa7HpqsVg/edit#heading=h.8emrnnxujf1k).
-
-It's TBD if we go with Plan A or B. 
-
-It is possible that two different webhooks want to access the same stored-resource via different GVKs.  In this case there could be extra conversions.  Conversion do take some CPU.  However, we don't expect this to be a significant issue for beta because:
-
-
-
-*   Pods are by far the most common core object to webhook, based on the  [Use Cases](#use-cases-detailed-descriptions), and pods do not have multiple versions.  Most or all other resources we know we plan to Webhook also do not have multiple versions.  So extra conversion is not needed in practice.
+*   Pods are by far the most common core object to webhook, based on the  [Use Cases](#use-cases-detailed-descriptions), and pods do not have multiple versions.  Most or all other resources we know we plan to Webhook also do not have multiple versions.  So extra conversions will likely not, in practice, be performed for the majority of webhook calls.
 *   Reads are ~10x more common that writes in a typical cluster, so any increase in compute cost for writes to multi-version objects is significantly mitigated.
 
 If the administrator chooses to install webhooks that all use the same GVKs for a given internal type, then it will be more efficient, since the apiserver may not need to convert every time: it just needs to patch the json, and then send it back out again without converting to internal.  
 
-For `MutatingAdmissionWebhook`, if there is a "*" match then the apiserver is allowed to send whatever GVK it wants.  The webhook needs to handle any type.  For star-match, we think the webhook will usually only be looking at the metadata (e.g. the gc admission controller), or looking at event only (e.g. object count quota).  
+## Registering for all possible representations of the same object
+
+Some Kubernetes resources are mounted in the api type system at multiple places
+(e.g., during a move between groups). Additionally, some resources have multiple
+active versions. There's not currently a way to easily tell which of the exposed
+resources map to the same "storage location". We will not try to solve that
+problem at the moment: if the system administrator wishes to hook all
+deployments, they must (e.g.) make sure their hook is registered for both
+deployments.v1beta1.extensions AND deployments.v1.apps.
+
+This is likely to be error-prone, especially over upgrades. For GA, we may
+consider mechanisms to make this easier. We expect to gather user feedback
+before designing this.
+
+
 
 
 ## Mutations 
 
 The Response for  `MutatingAdmissionWebhook`  must have content-type, and it must be one of:
-
-
 
 *   `application/json`
 *   `application/protobuf`
@@ -275,9 +273,10 @@ We encourage the use of patch to avoid the "old clients dropping new fields" pro
 
 ## Bootstrapping 
 
-We will add a WebhookConfig.Webhooks.exemptNamespace (or  an WebhookConfig.Webhooks.Rule.exemptNamespace?  This can exempt  some namespaces from webhooks (See #51290) for bootstrapping.
-
-TODO: detail the bootstrapping procedure for a webhook that is not released with Kubernetes core.  Using a special namespace that is exempt from initializers.
+Bootstrapping (both turning on a cluster for the first time and making sure a
+cluster can boot from a cold start) is made more difficult by having webhooks,
+which are a dependency of the control plane. This is covered in its [own design
+doc](./admission-webhook-bootstrapping.md).
 
 
 ## Support for Custom Resources 
@@ -287,13 +286,15 @@ Webhooks should work with Custom Resources created by CRDs.
 They are particularly needed for Custom Resources, where they can supplement the validation and defaulting provided by OpenAPI.  Therefore, the webhooks will be moved or copied to genericapiserver for 1.9.
 
 
-## Support for Aggregated API Servers
+## Support for Aggregated API Servers 
 
 Webhooks should work with Custom Resources on Aggregated API Servers.
 
 Aggregated API Servers should watch apiregistraton on the main APIserver, and should identify webhooks with rules that match any of their resources, and call those webhooks.
 
 For example a user might install a WEbhook that adds a certain annotation to every single object.  Aggregated APIs need to support this use case.
+
+We will build the dynamic admission stack into the generic apiserver layer to support this use case.
 
 
 ## Moving Built-in Admission Controllers 
@@ -302,17 +303,17 @@ This section summarizes recommendations for Posting static admission controllers
 
 See also [Details of Porting Admission Controllers](#details-of-porting-admission-controllers) and this [Backup Document](https://docs.google.com/spreadsheets/d/1zyCABnIzE7GiGensn-KXneWrkSJ6zfeJWeLaUY-ZmM4/edit#gid=0).
 
-Here is an estimate of how each kind of admission controller would be moved (or not).
+Here is an estimate of how each kind of admission controller would be moved (or not). This is to see if we can cover the use cases we currently have, not necessarily a promise that all of these will or should be move into another process.
 
 
 
 *   Leave static:
     *   OwnerReferencesPermissionEnforcement 
-        *   GC is a core feature of Kubernetes.  Move to required.
+        *   GC is a core feature of Kubernetes. Move to required.
     *   ResourceQuota 
         *   May [redesign](https://github.com/kubernetes/kubernetes/issues/51820)
         *   Original design doc says it remains static.
-*   Divide into Mutating and non-mutating  Webhooks
+*   Divide into Mutating and non-mutating Webhooks
     *   PodSecurityPolicy
     *   NamespaceLifecycle
 *   Use Mutating Webhook
