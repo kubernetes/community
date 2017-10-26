@@ -142,7 +142,7 @@ compiled in printer exist for a type?
 
 Client doesn't find the open-api extensions.  Fallback on 1.5 behavior.
 
-In the future, this will provide stronger backwards / forwards compability
+In the future, this will provide stronger backwards / forwards compatibility
 as it will allow clients to print objects
 
 #### Newer server
