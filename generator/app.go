@@ -29,7 +29,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-var (
+const (
 	readmeTemplate = "readme.tmpl"
 	listTemplate   = "list.tmpl"
 	headerTemplate = "header.tmpl"
@@ -37,11 +37,16 @@ var (
 	sigsYamlFile  = "sigs.yaml"
 	sigListOutput = "sig-list.md"
 	indexFilename = "README.md"
-	baseOutputDir = "generated"
+
+	beginMarker = "<!-- BEGIN CUSTOM CONTENT -->"
+	endMarker   = "<!-- END CUSTOM CONTENT -->"
+)
+
+var (
+	baseGeneratorDir = ""
+	templateDir      = "generator"
 
 	githubTeamNames = []string{"misc", "test-failures", "bugs", "feature-requests", "proposals", "pr-reviews", "api-reviews"}
-	beginMarker     = "<!-- BEGIN CUSTOM CONTENT -->"
-	endMarker       = "<!-- END CUSTOM CONTENT -->"
 )
 
 // Lead represents a lead engineer for a particular group. There are usually
@@ -150,7 +155,7 @@ func getExistingContent(path string) (string, error) {
 
 func writeTemplate(templatePath, outputPath string, data interface{}) error {
 	// set up template
-	t, err := template.ParseFiles(templatePath, headerTemplate)
+	t, err := template.ParseFiles(templatePath, filepath.Join(baseGeneratorDir, templateDir, headerTemplate))
 	if err != nil {
 		return err
 	}
@@ -215,7 +220,7 @@ func createGroupReadme(groups []Group, prefix string) error {
 
 		fmt.Printf("Generating %s/README.md\n", group.Dir)
 
-		outputDir := filepath.Join(baseOutputDir, group.Dir)
+		outputDir := filepath.Join(baseGeneratorDir, group.Dir)
 		if err := createDirIfNotExists(outputDir); err != nil {
 			return err
 		}
@@ -223,7 +228,7 @@ func createGroupReadme(groups []Group, prefix string) error {
 		group.SetupGitHubTeams(prefix)
 
 		outputPath := filepath.Join(outputDir, indexFilename)
-		readmePath := fmt.Sprintf("%s_%s", prefix, readmeTemplate)
+		readmePath := filepath.Join(baseGeneratorDir, templateDir, fmt.Sprintf("%s_%s", prefix, readmeTemplate))
 		if err := writeTemplate(readmePath, outputPath, group); err != nil {
 			return err
 		}
@@ -233,7 +238,7 @@ func createGroupReadme(groups []Group, prefix string) error {
 }
 
 func main() {
-	yamlData, err := ioutil.ReadFile(filepath.Join(baseOutputDir, sigsYamlFile))
+	yamlData, err := ioutil.ReadFile(filepath.Join(baseGeneratorDir, sigsYamlFile))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -263,8 +268,8 @@ func main() {
 	}
 
 	fmt.Println("Generating sig-list.md")
-	outputPath := filepath.Join(baseOutputDir, sigListOutput)
-	err = writeTemplate(listTemplate, outputPath, ctx)
+	outputPath := filepath.Join(baseGeneratorDir, sigListOutput)
+	err = writeTemplate(filepath.Join(baseGeneratorDir, templateDir, listTemplate), outputPath, ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
