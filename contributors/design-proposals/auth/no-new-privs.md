@@ -24,7 +24,7 @@ is inherited across `fork`, `clone` and `execve` and can not be unset. With
 that could not have been done without the `execve` call.
 
 For more details about `no_new_privs`, please check the
-[Linux kernel documention](https://www.kernel.org/doc/Documentation/prctl/no_new_privs.txt).
+[Linux kernel documentation](https://www.kernel.org/doc/Documentation/prctl/no_new_privs.txt).
 
 This is different from `NOSUID` in that `no_new_privs`can give permission to
 the container process to further restrict child processes with seccomp. This
