@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 -->
 # Contributor Experience SIG
 
-Developing and sustaining a healthy community of contributors is critical to scaling the project and growing the ecosystem. We need to ensure our contributors are happy and productive, we need to break the commit-rate ceiling we hit in July 2015, and we need to get the monotonically growing PR merge latency and numbers of open PRs and issues under control.
+Developing and sustaining an amazing community of contributors is critical to scaling the project and growing the ecosystem. We need to ensure our contributors are happy and productive, we need to break the commit-rate ceiling we hit in July 2015, and we need to get the monotonically growing PR merge latency and numbers of open PRs and issues under control.
 
 ## Meetings
 * [Wednesdays at 16:30 UTC](https://zoom.us/j/7658488911) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
