@@ -222,7 +222,7 @@ the problem that the feature addresses.
 
 Working on a feature without getting approval for the user experience
 and software design often results in wasted time and effort due to
-decisions around flag-names, command names, and specific command
+decisions around flag names, command names, and specific command
 behavior.
 
 To minimize wasted work and improve communication across efforts,
@@ -242,7 +242,7 @@ any PRs are sent for code review.
    - docs are completed,
    - feature is designated _alpha_, _beta_ or _GA_.
 6. Implement the code per discussion in [bug lifecycle][bug].
-7. Update [kubectl concept docs].
+7. Update [kubectl docs].
 8. Wait for your feature to appear in the next Kubernetes release!
 
 
@@ -281,7 +281,7 @@ constrained. Community members are free to say
 - This is desirable but we need help on these other existing issues before tackling this.
 - No, this problem should be solved in another way.
 
-The proposal can be merged into the [design repo] after [lead][leads]
+The proposal can be merged into the [design repo] after [leads][leads]
 approval and discussion as a meeting [agenda] item.
 
 Then coding can begin.
@@ -413,10 +413,10 @@ See the sig-cli [community page] for points of contact and meeting times:
 [`PTAL`]: https://en.wiktionary.org/wiki/PTAL
 [agenda]: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit
 [bug]: #bug-lifecycle
-[communication]:  https://github.com/kubernetes/community/tree/master/sig-cli#communication
+[communication]:  https://github.com/kubernetes/community/tree/master/sig-cli#contact
 [community page]: https://github.com/kubernetes/community/tree/master/sig-cli
 [design proposal]: #design-proposals
-[design repo]: https://github.com/kubernetes/community/tree/master/contributors/design-proposals/sig-cli
+[design repo]: https://github.com/kubernetes/community/tree/master/contributors/design-proposals/cli
 [design template]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/sig-cli/template.md
 [development guide]: https://github.com/kubernetes/community/blob/master/contributors/devel/development.md
 [existing issue]: #adopt-an-issue
