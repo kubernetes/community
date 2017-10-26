@@ -77,7 +77,7 @@ entirely.
 - *FailedRescale*: a scale update was needed and the HPA controller was
   unable to actually update the scale subresource of the target scalable.
 
-- *SuccesfulRescale*: a scale update was needed and everything went
+- *SuccessfulRescale*: a scale update was needed and everything went
   properly.
 
 - *FailedUpdateStatus*: the HPA controller failed to update the status of
