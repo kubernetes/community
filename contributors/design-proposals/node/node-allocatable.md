@@ -4,7 +4,7 @@
 
 ## Overview
 
-Kubernetes nodes typically run many OS system daemons in addition to kubernetes daemons like kubelet, runtime, etc. and user pods.
+Kubernetes nodes typically run many OS system daemons in addition to kubernetes daemons like kubelet, runtime, and user pods, etc.
 Kubernetes assumes that all the compute resources available, referred to as `Capacity`, in a node are available for user pods.
 In reality, system daemons use non-trivial amount of resources and their availability is critical for the stability of the system.
 To address this issue, this proposal introduces the concept of `Allocatable` which identifies the amount of compute resources available to user pods.
