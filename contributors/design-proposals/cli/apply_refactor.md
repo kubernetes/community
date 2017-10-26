@@ -150,7 +150,7 @@ Because of the way diff is implemented with 2-way diffs, a simple bit of logic
 is also executed to compare last-applied to local, but with the local argument differing in location.
 To compare local to remote means understanding what will happen when the same code is executed
 comparing last-applied to local, and then putting in the appropriate guards to short-circuit the
-logic in one context or the other as needed.  last-appied and remote are not compared directly, and instead
+logic in one context or the other as needed.  last-applied and remote are not compared directly, and instead
 are only compared indirectly when the 2 diff results are merged.  Information that is redundant or
 should be checked for consistency across all 3 sources (e.g. checking for conflicts) is spread across
 3 logic locations - the first 2-way diff, the second 2-way diff and the merge of the 2 diffs.
