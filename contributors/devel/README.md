@@ -18,8 +18,6 @@ Guide](http://kubernetes.io/docs/admin/).
 
 * **Pull Request Process** ([pull-requests.md](pull-requests.md)): When and why pull requests are closed.
 
-* **Kubernetes On-Call Rotations** ([on-call-rotations.md](on-call-rotations.md)): Descriptions of on-call rotations for build and end-user support.
-
 * **Getting Recent Builds** ([getting-builds.md](getting-builds.md)): How to get recent builds including the latest builds that pass CI.
 
 * **Automated Tools** ([automation.md](automation.md)): Descriptions of the automation that is running on our github repository.
