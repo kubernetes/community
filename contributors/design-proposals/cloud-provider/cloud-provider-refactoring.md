@@ -133,7 +133,7 @@ This is the only step that is different in the upgrade process. In order to comp
 kubectl apply -f cloud-controller-manager.yml
 ```
 
-This will start the cloud specific controller manager in your kuberentes setup.
+This will start the cloud specific controller manager in your kubernetes setup.
 
 The downgrade steps are also the same as before for all the components except the cloud-controller-manager. In case of the cloud-controller-manager, the deployment should be deleted using
 
