@@ -576,7 +576,7 @@ The auto-generated code resides with each versioned API:
 To regenerate them run:
 
 ```sh
-hack/update-codecgen.sh
+hack/update-generated-protobuf.sh
 ```
 
 ## Making a new API Version
