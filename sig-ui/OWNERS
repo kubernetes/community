@@ -1,6 +1,6 @@
 reviewers:
-  - danielromlein
-  - bryk
+  - sig-ui-leads
 approvers:
-  - danielromlein
-  - bryk
+  - sig-ui-leads
+labels:
+  - sig/ui

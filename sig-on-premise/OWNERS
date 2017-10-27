@@ -1,8 +1,6 @@
 reviewers:
-  - zen
-  - marcoceppi
-  - dghubble
+  - sig-on-premise-leads
 approvers:
-  - zen
-  - marcoceppi
-  - dghubble
+  - sig-on-premise-leads
+labels:
+  - sig/onprem

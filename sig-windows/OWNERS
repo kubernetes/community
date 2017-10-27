@@ -1,4 +1,6 @@
 reviewers:
-  - michmike
+  - sig-windows-leads
 approvers:
-  - michmike
+  - sig-windows-leads
+labels:
+  - sig/windows

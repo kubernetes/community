@@ -1,6 +1,6 @@
 reviewers:
-  - saad-ali
-  - childsb
+  - sig-storage-leads
 approvers:
-  - saad-ali
-  - childsb
+  - sig-storage-leads
+labels:
+  - sig/storage
