@@ -1,8 +1,4 @@
 reviewers:
-  - kris-nova
-  - pipejakob
-  - roberthbailey
+  - wg-cluster-api-leads
 approvers:
-  - kris-nova
-  - pipejakob
-  - roberthbailey
+  - wg-cluster-api-leads

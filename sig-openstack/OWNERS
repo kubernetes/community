@@ -1,6 +1,6 @@
 reviewers:
-  - idvoretskyi
-  - xsgordon
+  - sig-openstack-leads
 approvers:
-  - idvoretskyi
-  - xsgordon
+  - sig-openstack-leads
+labels:
+  - sig/openstack

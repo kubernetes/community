@@ -1,6 +1,6 @@
 reviewers:
-  - grodrigues3
-  - Phillels 
+  - sig-contributor-experience-leads
 approvers:
-  - grodrigues3
-  - Phillels 
+  - sig-contributor-experience-leads
+labels:
+  - sig/contributor-experience

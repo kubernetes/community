@@ -1,8 +1,6 @@
 reviewers:
-  - pwittrock
-  - AdoHe
-  - fabianofranz
+  - sig-cli-leads
 approvers:
-  - pwittrock
-  - AdoHe
-  - fabianofranz
+  - sig-cli-leads
+labels:
+  - sig/cli
