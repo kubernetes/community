@@ -235,37 +235,28 @@ The status of a Debug Container is reported in a new field in `v1.PodStatus`:
 ```
 type PodStatus struct {
         ...
-        DebugStatuses []DebugStatus
-}
-
-type DebugStatus struct {
-        Name string
-        Command []string
-        Args []string
-        // Set only for Debug Containers
-        DebugContainerStatus v1.ContainerStatus
+        EphemeralContainerStatuses []v1.ContainerStatus
 }
 ```
 
-Initially this will be populated only for Debug Containers, but there's interest
-in tracking status for traditional exec in a similar manner. Ideally we can
-report both types of user intervention into a container with a single new type.
+This status is only populated for Debug Containers, but there's interest in
+tracking status for traditional exec in a similar manner.
 
-Note that `Command` and `Args` must be tracked in the status object because
-there is no spec for Debug Containers or exec. These must either be made
+Note that `Command` and `Args` would have to be tracked in the status object
+because there is no spec for Debug Containers or exec. These must either be made
 available by the runtime or tracked by the kubelet. For Debug Containers this
 could be stored as runtime labels, but the kubelet currently has no method of
 storing state across restarts for exec. Solving this problem for exec is out of
 scope for Debug Containers, but we will look for a solution as we implement this
 feature.
 
-`DebugStatuses` is populated by the kubelet in the same way as regular and init
-container statuses. This is sent to the API server and displayed by `kubectl
-describe pod`.
+`EphemeralContainerStatuses` is populated by the kubelet in the same way as
+regular and init container statuses. This is sent to the API server and
+displayed by `kubectl describe pod`.
 
 ### Creating Debug Containers
 
-1.  `kubectl` invokes the debug API as described in the preceding section.
+1.  `kubectl` invokes the exec API as described in the preceding section.
 1.  The API server checks for name collisions with existing containers, performs
     admission control and proxies the connection to the kubelet's
     `/exec/$NS/$POD_NAME/$CONTAINER_NAME` endpoint.
@@ -287,9 +278,10 @@ implicit attach maintains consistent semantics across `/exec` rather than
 varying behavior based on parameters.
 
 The apiserver detects container name collisions with both containers in the pod
-spec and other running Debug Containers by checking `DebugStatuses`. In a race
-to create two Debug Containers with the same name, the API server will pass both
-requests and the kubelet must return an error to all but one request.
+spec and other running Debug Containers by checking
+`EphemeralContainerStatuses`. In a race to create two Debug Containers with the
+same name, the API server will pass both requests and the kubelet must return an
+error to all but one request.
 
 There are no limits on the number of Debug Containers that can be created in a
 pod, but exceeding a pod's resource allocation may cause the pod to be evicted.
@@ -325,7 +317,8 @@ are necessary in the kubelet:
     is not useful. Debug Containers are not automatically started in the new
     sandbox.
 1.  `convertStatusToAPIStatus()` must sort Debug Containers status into
-    `DebugStatuses` similar to as it does for `InitContainerStatuses`
+    `EphemeralContainerStatuses` similar to as it does for
+    `InitContainerStatuses`
 1.  The kubelet must preserve `ContainerStatus` on debug containers for
     reporting.
 1.  Debug Containers must be excluded from calculation of pod phase and
@@ -336,7 +329,7 @@ It's worth noting some things that do not change:
 1.  `KillPod()` already operates on all running containers returned by the
     runtime.
 1.  Containers created prior to this feature being enabled will have a
-    `containerType` of `""`. Since this does not match `"DEBUG"` the special
+    `containerType` of `""`. Since this does not match `"EPHEMERAL"` the special
     handling of Debug Containers is backwards compatible.
 
 ### Security Considerations
@@ -417,7 +410,7 @@ to distinguish Debug Containers from regular containers.
 `startContainer()` will be updated to write a new label
 `io.kubernetes.container.type` to the runtime. Existing containers will be
 started with a type of `REGULAR` or `INIT`. When added in a subsequent step,
-Debug Containers will start with with the type `DEBUG`.
+Debug Containers will start with with the type `EPHEMERAL`.
 
 ##### Step 2: Creation and Handling of Debug Containers
 
@@ -441,10 +434,11 @@ The kubelet exposes the new functionality in its existing `/exec/` endpoint.
 `ServeExec()` constructs a `v1.Container` based on `PodExecOptions`, calls
 `RunDebugContainer()`, and performs the attach.
 
-##### Step 4: Reporting DebugStatus
+##### Step 4: Reporting EphemeralContainerStatus
 
-The last major change to the kubelet is to populate v1.`PodStatus.DebugStatuses`
-based on the `kubecontainer.ContainerStatus` for the Debug Container.
+The last major change to the kubelet is to populate
+v1.`PodStatus.EphemeralContainerStatuses` based on the
+`kubecontainer.ContainerStatus` for the Debug Container.
 
 #### Kubernetes API Changes
 
@@ -465,8 +459,9 @@ debug` to invoke Debug Containers. `kubectl` does not use feature gates, so
 `kubectl alpha debug` will be visible by default in `kubectl` 1.9 and return an
 error when used on a cluster with the feature disabled.
 
-`kubectl describe pod` will report the contents of `DebugStatuses` when not
-empty as it means the feature is enabled. The field will be hidden when empty.
+`kubectl describe pod` will report the contents of `EphemeralContainerStatuses`
+when not empty as it means the feature is enabled. The field will be hidden when
+empty.
 
 ## Appendices
 
@@ -603,7 +598,7 @@ already exist to intercept `exec` and `attach` calls, but extending this to
 support `debug` has not yet been scoped.
 
 **Allow introspection of pod state using existing tools**. The list of
-`DebugContainerStatuses` is never truncated. If a debug container has run in
+`EphemeralContainerStatuses` is never truncated. If a debug container has run in
 this pod it will appear here.
 
 **Support arbitrary runtimes via the CRI**. This proposal is implemented
