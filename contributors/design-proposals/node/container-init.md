@@ -426,7 +426,7 @@ container status `reason` and `message` fields while the pod is in the
               - mountPath: /var/run/docker.sock
                 volumeName: dockersocket
 
-## Backwards compatibilty implications
+## Backwards compatibility implications
 
 Since this is a net new feature in the API and Kubelet, new API servers during upgrade may not
 be able to rely on Kubelets implementing init containers. The management of feature skew between
