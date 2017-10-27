@@ -1,6 +1,6 @@
 reviewers:
-  - jdumars
-  - zehicle
+  - sig-cluster-ops-leads
 approvers:
-  - jdumars
-  - zehicle
+  - sig-cluster-ops-leads
+labels:
+  - sig/cluster-ops

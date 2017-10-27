@@ -1,4 +1,6 @@
 reviewers:
-  - foxish
+  - sig-big-data-leads
 approvers:
-  - foxish
+  - sig-big-data-leads
+labels:
+  - sig/big-data
