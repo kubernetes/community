@@ -1,4 +1,6 @@
 reviewers:
-  - pwittrock
+  - sig-cli-leads
 approvers:
-  - pwittrock
+  - sig-cli-leads
+labels:
+  - sig/cli

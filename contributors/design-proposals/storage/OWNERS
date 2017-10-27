@@ -1,12 +1,6 @@
 reviewers:
-  - childsb
-  - gnufied
-  - jingxu97
-  - jsafrane
-  - msau42
-  - rootfs
-  - saad-ali
+  - sig-storage-leads
 approvers:
-  - childsb
-  - jsafrane
-  - saad-ali
+  - sig-storage-leads
+labels:
+  - sig/storage

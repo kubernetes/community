@@ -1,6 +1,6 @@
 reviewers:
-  - jaredbhatti
-  - devin-donnelly
+  - sig-docs-leads
 approvers:
-  - jaredbhatti
-  - devin-donnelly
+  - sig-docs-leads
+labels:
+  - sig/docs

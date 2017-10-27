@@ -1,8 +1,6 @@
 reviewers:
-  - colemickens
-  - slack
-  - jdumars
+  - sig-azure-leads
 approvers:
-  - colemickens
-  - slack
-  - jdumars
+  - sig-azure-leads
+labels:
+  - sig/azure
