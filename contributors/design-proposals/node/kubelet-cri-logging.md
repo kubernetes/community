@@ -59,7 +59,7 @@ the format and the metadata (i.e., timestamps) of the logs. In the current
 implementation, kubelet calls `docker logs` with parameters to return the log
 content. As of now, docker only supports `log` operations for the “journal” and
 “json-file” drivers [2]. In other words, *the support of `kubectl logs` is not
-universal in all kuernetes deployments*.
+universal in all kubernetes deployments*.
 
 **Cluster logging support**
 
