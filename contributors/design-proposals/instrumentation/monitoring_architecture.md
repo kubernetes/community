@@ -98,7 +98,7 @@ These sources are scraped by a component we call *metrics-server* which is like 
 version of today's Heapster. metrics-server stores locally only latest values and has no sinks.
 metrics-server exposes the master metrics API. (The configuration described here is similar
 to the current Heapster in “standalone” mode.)
-[Discovery summarizer](aggregated-api-servers.md)
+[Discovery summarizer](../api-machinery/aggregated-api-servers.md)
 makes the master metrics API available to external clients such that from the client's perspective
 it looks the same as talking to the API server.
 
