@@ -257,7 +257,7 @@ Relationship to HPA v2
 ----------------------
 
 The URL paths in this API are designed to correspond to different source
-types in the [HPA v2](hpa-v2.md).  Specifially, the `pods` source type
+types in the [HPA v2](hpa-v2.md).  Specifically, the `pods` source type
 corresponds to a URL of the form
 `/namespaces/$NS/pods/*/$METRIC_NAME?labelSelector=foo`, while the
 `object` source type corresponds to a URL of the form
