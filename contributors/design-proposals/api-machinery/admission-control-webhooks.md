@@ -169,6 +169,9 @@ The `ValidatingAdmissionWebhookConfiguration` stays the same as `ExternalAdmissi
 
 The `MutatingAdmissionWebhookConfiguration` is the same API as `ValidatingAdmissionWebhookConfiguration`.  It is only visible via the v1beta1 version.
 
+We will change from having a Kubernetes service object to just accepting a DNS
+name for the location of the webhook.
+
 The Group/Version called 
 
 `admissionregistration.k8s.io/v1alpha1` with kinds
@@ -221,24 +224,6 @@ When a webhook is persistently failing to allow e.g. pods to be created, then th
 
 When a core controller, e.g. ReplicaSet, fails to make a resources, it must send a helpful event that is visible in `kubectl describe` for the controlling resources, saying the reason create failed.
 
-
-## Conversion and Versioning
-
-We need to make it possible to upgrade the control plane of operating clusters.
-To that end, we will make sure the communication between apiserver and webhook
-is versioned. A separate document will work out these details. Currently:
-https://docs.google.com/document/d/1BT8mZaT42jVxtC6l14YMXpUq0vZc6V5MPf_jnzDMMcg/edit
-
-It is possible that two different webhooks want to access the same
-stored-resource via different GVKs.  In this case there could be extra
-conversions.  Conversion does take some CPU.  However, we don't expect this to be
-a significant issue for beta because:
-
-*   Pods are by far the most common core object to webhook, based on the  [Use Cases](#use-cases-detailed-descriptions), and pods do not have multiple versions.  Most or all other resources we know we plan to Webhook also do not have multiple versions.  So extra conversions will likely not, in practice, be performed for the majority of webhook calls.
-*   Reads are ~10x more common that writes in a typical cluster, so any increase in compute cost for writes to multi-version objects is significantly mitigated.
-
-If the administrator chooses to install webhooks that all use the same GVKs for a given internal type, then it will be more efficient, since the apiserver may not need to convert every time: it just needs to patch the json, and then send it back out again without converting to internal.  
-
 ## Registering for all possible representations of the same object
 
 Some Kubernetes resources are mounted in the api type system at multiple places
@@ -254,6 +239,24 @@ consider mechanisms to make this easier. We expect to gather user feedback
 before designing this.
 
 
+## Conversion and Versioning
+
+Webhooks will recieve the admission review subject in the exact version which
+the user sent it to the control plane. This may require the webhook to
+understand multiple versions of those types.
+
+All communication to webhooks will be JSON formatted. We will likely change that
+for GA.
+
+We need to make it possible to know whether an apiserver is safe to upgrade.
+`kube-apiserver` will set the X-Kubernetes-Version header when making any calls
+to a webhook. If the webhook is security-critical, it MUST reject any calls with
+a version greater (as compared by semver) than the most recent one it
+understands. Extension apiservers should also set the X-Kubernetes-Version, to
+be the version of Kubernetes libraries they were built with/from.
+
+This is sort of the minimum we could possibly do here; a design for the next
+steps is here: https://docs.google.com/document/d/1BT8mZaT42jVxtC6l14YMXpUq0vZc6V5MPf_jnzDMMcg/edit
 
 
 ## Mutations 
@@ -278,6 +281,34 @@ cluster can boot from a cold start) is made more difficult by having webhooks,
 which are a dependency of the control plane. This is covered in its [own design
 doc](./admission-webhook-bootstrapping.md).
 
+## Upgrading the control plane
+
+There are two categories of webhooks: security critical (e.g., scan images for
+vulnerabilities) and nice-to-have (set labels).
+
+Security critical webhooks cannot work with Kubernetes types they don't have
+built-in knowledge of, because they can't know if e.g. Kubernetes 1.11 adds a
+backwards-compatible `v1.Pod.EvilField` which will defeat their functionality.
+Therefore these webhooks are required to check the `X-Kubernetes-Version` header
+and return 400 Bad Request if they do not understand the version.
+
+They therefore need to be updated before any apiserver. It is the responsibility
+of the author of such a webhook to release new versions in response to new
+Kubernetes versions in a timely manner. Webhooks must support two consecutive
+Kubernetes versions so that rollback/forward is possible. When/if Kubernetes
+introduces LTS versions, webhook authors will have to also support two
+consecutive LTS versions.
+
+Non-security-critical webhooks can either be turned off to perform an upgrade,
+or can just continue running the old webhook version as long as a completely new
+version of an object they want to hook is not added. If they are metadata-only
+hooks, then they should be able to run until we deprecate meta/v1. Such webhooks
+may freely ignore the X-Kubernetes-Version header.
+
+It is expected that webhook authors will distribute config for each Kubernetes
+version that registers their webhook for all the necessary types, since it would
+be unreasonable to make system administrators understand all of the webhooks
+they run to that level of detail.
 
 ## Support for Custom Resources 
 
