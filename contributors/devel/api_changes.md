@@ -595,7 +595,7 @@ Due to the fast changing nature of the project, the following content is probabl
 * You must add the new version to
   [hack/lib/init.sh#KUBE_AVAILABLE_GROUP_VERSIONS](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/hack/lib/init.sh#L53).
 * You must add the new version  to
-  [staging/src/k8s.io/kube-gen/cmd/go-to-protobuf/protobuf/cmd.go](https://github.com/kubernetes/kubernetes/blob/2e6be8583d00916f1896d2b53e550162f1558ccf/staging/src/k8s.io/kube-gen/cmd/go-to-protobuf/protobuf/cmd.go#L64)
+  [hack/update-generated-protobuf-dockerized.sh](https://github.com/kubernetes/kubernetes/blob/v1.8.2/hack/update-generated-protobuf-dockerized.sh#L44)
   to generate protobuf IDL and marshallers.
 * You must add the new version  to
   [cmd/kube-apiserver/app#apiVersionPriorities](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/cmd/kube-apiserver/app/aggregator.go#L172)
