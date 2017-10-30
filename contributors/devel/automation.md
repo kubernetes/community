@@ -42,8 +42,11 @@ Please visit that page for more details.
 
 ### Merge process
 
+The `testsAreStable()` call of the above pseudo-code makes sure tests are
+passing on the master branch *without* the PR in question.
 If the PR has the `retest-not-required` label, it is simply merged. If the PR does
-not have this label, the aforementioned required tests are re-run.
+not have this label, the aforementioned required tests are re-run on the
+codebase *including* the PR in question by `retestPR()` in the pseudo-code above.
 If these tests pass a second time, the PR will be merged when this PR finishes retesting.
 
 ## Github Munger
