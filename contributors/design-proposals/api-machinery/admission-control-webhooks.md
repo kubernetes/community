@@ -3,7 +3,7 @@
 
 ## PUBLIC
 Authors: @erictune, @caesarxuchao, @enisoc
-Thanks to: {@dbsmith,  @smarterclayton, @deads2k, @cheftaco, @jpbetz, @mbohlool, @mml, @janetkuo} for comments, data, prior designs, etc.  
+Thanks to: {@dbsmith,  @smarterclayton, @deads2k, @cheftako, @jpbetz, @mbohlool, @mml, @janetkuo} for comments, data, prior designs, etc.  
 
 
 [TOC]
@@ -38,6 +38,25 @@ This plan is compatible with the [original design doc]( https://github.com/kuber
 **Validating Webhook**: synonym for Non-Mutating Webhook
 
 **Static Admission Controller**: Compiled-in Admission Controllers, (in plugin/pkg/admission).
+
+# Naming 
+
+Many names were considered before settling on mutating. None of the names
+considered were completely satisfactory. The following are the names which were
+considered and a brief explanation of the perspectives on each.
+
+* Mutating: Well defined meaning related to mutable and immutable. Some
+  negative connotations related to genetic mutation. Might be too specifically
+  as CS term.
+* Defaulting: Clearly indicates a create use case. However implies a lack of
+  functionality for the update use case.
+* Modifying: Similar issues to mutating but not as well defined.
+* Revising: Less clear what it does. Does it imply it works only on updates?
+* Transforming: Some concern that it might have more to do with changing the
+  type or shape of the related object.
+* Adjusting: Same general perspective as modifying.
+* Updating: Nice clear meaning. However it seems to easy to confuse update with
+  the update operation and intuit it does not apply to the create operation.  
 
 
 # Development Plan 
