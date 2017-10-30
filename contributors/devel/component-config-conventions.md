@@ -1,6 +1,4 @@
-# Component Configuration Convetions
-
-Author: Mike Danese (@mikedanese)
+# Component Configuration Conventions
 
 # Objective
 
@@ -20,10 +18,8 @@ flags. Command line driven configuration poses certain problems which are
 discussed below. Attempts to improve component configuration as a whole have
 been slow to make progress and have petered out (ref componentconfig api group,
 configmap driven config issues). Some component owners have made use case
-specific improvements on a per-need basis (ref @mtaufen kubelet configuration,
-@bsalamat scheduling policy configuration). Various comments in issues
-recommend subsets of best design practice but no coherent, complete story
-exists.
+specific improvements on a per-need basis. Various comments in issues recommend
+subsets of best design practice but no coherent, complete story exists.
 
 ## Pain Points of Current Configuration
 
@@ -110,14 +106,17 @@ whether alternatives might be a better fit.
 
 ### Versioning Configuration
 
-We create configuration API groups per component that live in the source tree
-of the component. Each component has its own API group for configuration.
+We create configuration API groups per component that live in the source tree of
+the component. Each component has its own API group for configuration.
 Components will use the same API machinery that we use for other API groups.
 Configuration API serialization doesn't have the same performance requirements
 as other APIs so much of the codegen can be avoided (e.g. ugorji, generated
-conversions) and we can instead fallback to the reflection based
-implementations where they exist.
+conversions) and we can instead fallback to the reflection based implementations
+where they exist.
 
+Configuration API groups for component config should be named according to the
+scheme `<component>.config.k8s.io`. The `.config.k8s.io` suffix serves to
+disambiguate types of config API groups from served APIs.
 
 ### Retrieving Configuration
 
@@ -136,7 +135,7 @@ Group related options into distinct objects and subobjects. Instead of writing:
 
 ```yaml
 kind: KubeProxyConfiguration
-apiVersion: kubeproxy/v1beta3
+apiVersion: kubeproxy.config.k8s.io/v1beta3
 ipTablesSyncPeriod: 2
 ipTablesConntrackHashSize: 2
 ipTablesConntrackTableSize: 2
@@ -146,7 +145,7 @@ Write:
 
 ```yaml
 kind: KubeProxyConfiguration
-apiVersion: kubeproxy/v1beta3
+apiVersion: kubeproxy.config.k8s.io/v1beta3
 ipTables:
   syncPeriod: 2
   conntrack:
