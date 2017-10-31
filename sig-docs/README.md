@@ -23,6 +23,7 @@ Meeting recordings can be found [here](https://www.youtube.com/playlist?list=PL6
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-docs)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fdocs)
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals

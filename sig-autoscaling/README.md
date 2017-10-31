@@ -14,7 +14,7 @@ Covers autoscaling of clusters, horizontal and vertical autoscaling of pods, set
 * [Mondays at 14:00 UTC](https://zoom.us/my/k8s.sig.autoscaling) (biweekly/triweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit).
-Meeting recordings can be found [here]().
+
 
 ## Leads
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
@@ -23,6 +23,7 @@ Meeting recordings can be found [here]().
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-autoscaling)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fautoscaling)
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Concerns

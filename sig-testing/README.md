@@ -24,6 +24,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=BbFjuxe3N
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-testing)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-testing)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Ftesting)
 
 <!-- BEGIN CUSTOM CONTENT -->
 
