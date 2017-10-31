@@ -25,6 +25,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=ukPj1sFFk
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-service-catalog)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fservice-catalog)
 
 <!-- BEGIN CUSTOM CONTENT -->
 

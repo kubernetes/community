@@ -23,6 +23,7 @@ Meeting recordings can be found [here](https://docs.google.com/document/d/1pnF38
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-big-data)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-big-data)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fbig-data)
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals

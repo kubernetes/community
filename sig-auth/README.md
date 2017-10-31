@@ -24,6 +24,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=DJDuDNALc
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-auth)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-auth)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fauth)
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals

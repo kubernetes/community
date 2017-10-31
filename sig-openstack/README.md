@@ -23,6 +23,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=iCfUx7ilh
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-openstack)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fopenstack)
 
 ## GitHub Teams
 * [@sig-openstack-misc](https://github.com/kubernetes/teams/sig-openstack-misc)

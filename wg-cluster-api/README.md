@@ -13,7 +13,7 @@ Define a portable API that represents a Kubernetes cluster. The API will contain
 ## Meetings
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit).
-Meeting recordings can be found [here]().
+
 
 ## Organizers
 * Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Microsoft
