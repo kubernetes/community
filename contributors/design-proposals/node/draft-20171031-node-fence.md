@@ -93,6 +93,13 @@ data:
 3. Executor runs over FenceMethodConfig, creates agents related to each of them and executes agents following the executionPolicy specified in the Fencing object.
 4. When done, Executor change the status in the Fencing object.
 
+The internal operation performs the fence execution using Fence Agents.
+List of agents implementations:
+- https://github.com/ClusterLabs/fence-agents/tree/master/fence/agents/aws
+- https://github.com/ClusterLabs/fence-agents
+- https://github.com/ClusterLabs/fence-agents/tree/master/fence/agents/vmware_soap
+- https://github.com/ClusterLabs/fence-agents/tree/master/fence/agents/rhevm
+
 #### Executor Fail Handling
 On fencing fail status will change to Error and another Executor in cluster will be picked it up and continue the process.
 - Active passive method in executor to prevent re-run on failed executor (possibilities: jobs or active/active or with active/passive way to mark current node as passive)
