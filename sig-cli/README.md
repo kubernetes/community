@@ -24,6 +24,7 @@ Meeting recordings can be found [here](https://www.youtube.com/playlist?list=PL6
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cli)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcli)
 
 <!-- BEGIN CUSTOM CONTENT -->
 

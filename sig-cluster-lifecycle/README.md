@@ -25,6 +25,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=ljK5dgSA7
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcluster-lifecycle)
 
 ## GitHub Teams
 * [@sig-cluster-lifecycle-misc](https://github.com/kubernetes/teams/sig-cluster-lifecycle-misc)

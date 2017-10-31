@@ -22,6 +22,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=FbKOI9-x9
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-node)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-node)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnode)
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals

@@ -24,6 +24,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=yQLeUKi_d
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-azure)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-azure)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fazure)
 
 <!-- BEGIN CUSTOM CONTENT -->
 

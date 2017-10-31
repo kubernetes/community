@@ -22,6 +22,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=I0KbWz8MT
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-release)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-release)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Frelease)
 
 <!-- BEGIN CUSTOM CONTENT -->
 [SIG Release][] has moved!
