@@ -245,18 +245,19 @@ Webhooks will recieve the admission review subject in the exact version which
 the user sent it to the control plane. This may require the webhook to
 understand multiple versions of those types.
 
-All communication to webhooks will be JSON formatted. We will likely change that
-for GA.
+All communication to webhooks will be JSON formatted, with a request body of
+type admission.k8s.io/v1beta1. For GA, we will likely also allow proto, via a
+TBD mechanism.
 
-We need to make it possible to know whether an apiserver is safe to upgrade.
-`kube-apiserver` will set the X-Kubernetes-Version header when making any calls
-to a webhook. If the webhook is security-critical, it MUST reject any calls with
-a version greater (as compared by semver) than the most recent one it
-understands. Extension apiservers should also set the X-Kubernetes-Version, to
-be the version of Kubernetes libraries they were built with/from.
+We will not take any particular steps to make it possible to know whether an
+apiserver is safe to upgrade, given the webhooks it is running. System
+administrators must understand the stack of webhooks they are running, watch the
+Kubernetes release notes, and look to the webhook authors for guidance about
+whether the webhook supports Kubernetes version N. We may choose to address this
+deficency in future betas.
 
-This is sort of the minimum we could possibly do here; a design for the next
-steps is here: https://docs.google.com/document/d/1BT8mZaT42jVxtC6l14YMXpUq0vZc6V5MPf_jnzDMMcg/edit
+To follow the debate that got us to this position, you can look at this
+potential design for the next steps: https://docs.google.com/document/d/1BT8mZaT42jVxtC6l14YMXpUq0vZc6V5MPf_jnzDMMcg/edit
 
 
 ## Mutations 
@@ -289,8 +290,6 @@ vulnerabilities) and nice-to-have (set labels).
 Security critical webhooks cannot work with Kubernetes types they don't have
 built-in knowledge of, because they can't know if e.g. Kubernetes 1.11 adds a
 backwards-compatible `v1.Pod.EvilField` which will defeat their functionality.
-Therefore these webhooks are required to check the `X-Kubernetes-Version` header
-and return 400 Bad Request if they do not understand the version.
 
 They therefore need to be updated before any apiserver. It is the responsibility
 of the author of such a webhook to release new versions in response to new
@@ -303,7 +302,9 @@ Non-security-critical webhooks can either be turned off to perform an upgrade,
 or can just continue running the old webhook version as long as a completely new
 version of an object they want to hook is not added. If they are metadata-only
 hooks, then they should be able to run until we deprecate meta/v1. Such webhooks
-may freely ignore the X-Kubernetes-Version header.
+should document that they don't consider themselves security critical, aren't
+obligated to follow the above requirements for security-critical webhooks, and
+therefore do not guarantee to be updated for every Kubernetes release.
 
 It is expected that webhook authors will distribute config for each Kubernetes
 version that registers their webhook for all the necessary types, since it would
