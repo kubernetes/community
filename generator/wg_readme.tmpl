@@ -22,6 +22,9 @@ Meeting recordings can be found [here]({{.MeetingRecordingsURL}}).
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})
 * [Mailing list]({{.Contact.MailingList}})
+{{- if .Label }}
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2F{{.Label}})
+{{- end }}
 {{if .Contact.FullGitHubTeams}}
 ## GitHub Teams
 {{range .Contact.GithubTeamNames -}}
