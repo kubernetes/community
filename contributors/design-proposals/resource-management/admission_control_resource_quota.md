@@ -206,9 +206,27 @@ secrets                  1         10
 services                 0         5
 ```
 
+Simple object count quotas supported on all standard resources using`count/<resource>.<group>` syntax.
+
+For example:
+```console
+$  kubectl create quota test --hard=count/deployments.extensions=2,count/replicasets.extensions=4,count/pods=3,count/secrets=4
+resourcequota "test" created
+$ kubectl run nginx --image=nginx --replicas=2
+$ kubectl describe quota
+Name:                         test
+Namespace:                    default
+Resource                      Used  Hard
+--------                      ----  ----
+count/deployments.extensions  1     2
+count/pods                    2     3
+count/replicasets.extensions  1     4
+count/secrets                 1     4
+```
+
 ## More information
 
-See [resource quota document](../admin/resource-quota.md) and the [example of Resource Quota](../admin/resourcequota/) for more information.
+See [resource quota document](https://kubernetes.io/docs/concepts/policy/resource-quotas/) and the [example of Resource Quota](https://kubernetes.io/docs/tasks/administer-cluster/quota-api-object/) for more information.
 
 <!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/admission_control_resource_quota.md?pixel)]()
