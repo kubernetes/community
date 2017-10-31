@@ -135,7 +135,7 @@ type CertificateSigningRequestList struct {
 
 ## Certificate Request Process
 
-### Node intialization
+### Node initialization
 
 When the kubelet executes it checks a location on disk for TLS assets
 (currently `/var/run/kubernetes/kubelet.{key,crt}` by default). If it finds
