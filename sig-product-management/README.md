@@ -27,6 +27,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=VcdjaZAol
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/kubernetes-pm)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-pm)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnone)
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Common activities

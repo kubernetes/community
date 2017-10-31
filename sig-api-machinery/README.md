@@ -23,6 +23,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=Lj1ScbXpn
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-api-machinery)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fapi-machinery)
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Additional links

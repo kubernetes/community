@@ -14,7 +14,7 @@ Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
 * [Fridays at 16:00 UTC](https://zoom.us/my/k8ssigaws) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit).
-Meeting recordings can be found [here]().
+
 
 ## Leads
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
@@ -25,6 +25,7 @@ Meeting recordings can be found [here]().
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-aws)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-aws)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Faws)
 
 <!-- BEGIN CUSTOM CONTENT -->
 

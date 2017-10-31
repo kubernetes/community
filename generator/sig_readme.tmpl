@@ -7,8 +7,12 @@
 * [{{.Day}}s at {{.UTC}} UTC]({{$.MeetingURL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.UTC}}&tz=UTC).
 {{- end }}
 
+{{ if .MeetingArchiveURL -}}
 Meeting notes and Agenda can be found [here]({{.MeetingArchiveURL}}).
+{{- end }}
+{{ if .MeetingRecordingsURL -}}
 Meeting recordings can be found [here]({{.MeetingRecordingsURL}}).
+{{- end }}
 
 ## Leads
 {{- range .Leads }}
@@ -18,6 +22,9 @@ Meeting recordings can be found [here]({{.MeetingRecordingsURL}}).
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})
 * [Mailing list]({{.Contact.MailingList}})
+{{- if .Label }}
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2F{{.Label}})
+{{- end }}
 {{if .Contact.FullGitHubTeams}}
 ## GitHub Teams
 {{range .Contact.GithubTeamNames -}}

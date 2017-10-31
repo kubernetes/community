@@ -22,6 +22,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=7zawb3KT9
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-windows)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-windows)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fwindows)
 
 <!-- BEGIN CUSTOM CONTENT -->
 * Recorded Meetings Playlist on Youtube: https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4&jct=LZ9EIvD4DGrhr2h4r0ItaBmco7gTgw
