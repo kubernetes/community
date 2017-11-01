@@ -60,26 +60,26 @@ We propose that:
 3.  An api object will be incubated in storage.k8s.io/v1beta1 to hold the a `StorageClass`
     API resource. Each StorageClass object contains parameters required by the provisioner to provision volumes of that class.  These parameters are opaque to the user.
 
-4.  `PersistentVolume.Spec.Class` attribute is added to volumes. This attribute
+4.  `PersistentVolume.Spec.StorageClassName` attribute is added to volumes. This attribute
     is optional and specifies which `StorageClass` instance represents
     storage characteristics of a particular PV.
 
-    During incubation, `Class` is an annotation and not
+    During incubation, `StorageClassName` is an annotation and not
     actual attribute.
 
 5.  `PersistentVolume` instances do not require labels by the provisioner.
 
-6.  `PersistentVolumeClaim.Spec.Class` attribute is added to claims. This
+6.  `PersistentVolumeClaim.Spec.StorageClassName` attribute is added to claims. This
     attribute specifies that only a volume with equal
-    `PersistentVolume.Spec.Class` value can satisfy a claim.
+    `PersistentVolume.Spec.StorageClassName` value can satisfy a claim.
 
-    During incubation, `Class` is just an annotation and not
+    During incubation, `StorageClassName` is just an annotation and not
     actual attribute.
 
 7.  The existing provisioner plugin implementations be modified to accept
     parameters as specified via `StorageClass`.
 
-8.  The persistent volume controller modified to invoke provisioners using `StorageClass` configuration and bind claims with `PersistentVolumeClaim.Spec.Class` to volumes with equivalent `PersistentVolume.Spec.Class`
+8.  The persistent volume controller modified to invoke provisioners using `StorageClass` configuration and bind claims with `PersistentVolumeClaim.Spec.StorageClassName` to volumes with equivalent `PersistentVolume.Spec.StorageClassName`
 
 9.  The existing alpha dynamic provisioning feature be phased out in the
     next release.
@@ -89,24 +89,24 @@ We propose that:
 0. Kubernetes administator can configure name of a default StorageClass. This
    StorageClass instance is then used when user requests a dynamically
    provisioned volume, but does not specify a StorageClass. In other words,
-   `claim.Spec.Class == ""`
+   `claim.Spec.StorageClassName == ""`
    (or annotation `volume.beta.kubernetes.io/storage-class == ""`).
 
 1.  When a new claim is submitted, the controller attempts to find an existing
     volume that will fulfill the claim.
 
-    1. If the claim has non-empty `claim.Spec.Class`, only PVs with the same
-        `pv.Spec.Class` are considered.
+    1. If the claim has non-empty `claim.Spec.StorageClassName`, only PVs with the same
+        `pv.Spec.StorageClassName` are considered.
 
-    2. If the claim has empty `claim.Spec.Class`, only PVs with an unset `pv.Spec.Class` are considered.
+    2. If the claim has empty `claim.Spec.StorageClassName`, only PVs with an unset `pv.Spec.StorageClassName` are considered.
 
     All "considered" volumes are evaluated and the
     smallest matching volume is bound to the claim.
 
-2.  If no volume is found for the claim and `claim.Spec.Class` is not set or is
+2.  If no volume is found for the claim and `claim.Spec.StorageClassName` is not set or is
     empty string dynamic provisioning is disabled.
 
-3.  If `claim.Spec.Class` is set the controller tries to find instance of StorageClass with this name.  If no
+3.  If `claim.Spec.StorageClassName` is set the controller tries to find instance of StorageClass with this name.  If no
     such StorageClass is found, the controller goes back to step 1. and
     periodically retries finding a matching volume or storage class again until
     a match is found. The claim is `Pending` during this period.
@@ -130,7 +130,7 @@ We propose that:
       periodically.
 
   8.  If `Provision` returns no error, the controller creates the returned
-      `api.PersistentVolume`, fills its `Class` attribute with `claim.Spec.Class`
+      `api.PersistentVolume`, fills its `StorageClassName` attribute with `claim.Spec.StorageClassName`
       and makes it already bound to the claim
 
     1.  If the create operation for the `api.PersistentVolume` fails, it is
@@ -141,7 +141,7 @@ We propose that:
         on the claim
 
 Existing behavior is unchanged for claims that do not specify
-`claim.Spec.Class`.
+`claim.Spec.StorageClassName`.
 
 * **Out of tree provisioning**
 
@@ -171,7 +171,8 @@ Existing behavior is unchanged for claims that do not specify
   claim creation or update, it implements these steps:
 
   1. The provisioner inspects if
-     `claim.Annotations["volume.beta.kubernetes.io/storage-provisioner"] == <provisioner name>`.
+     `claim.Annotations["volume.beta.kubernetes.io/storage-provisioner"] == <provisioner name>` or
+     `claim.Annotations["volume.kubernetes.io/storage-provisioner"] == <provisioner name>`
      All other claims MUST be ignored.
 
   2. The provisioner MUST check that the claim is unbound, i.e. its
@@ -182,9 +183,10 @@ Existing behavior is unchanged for claims that do not specify
      just created by admin is discussed below.*
 
   3. It tries to find a StorageClass instance referenced by annotation
-     `claim.Annotations["volume.beta.kubernetes.io/storage-class"]`. If not
-     found, it SHOULD report an error (by sending an event to the claim) and it
-     SHOULD retry periodically with step i.
+     `claim.Annotations["volume.beta.kubernetes.io/storage-class"]` or
+     `claim.Spec.StorageClassName`. If not found, it SHOULD report an error (by
+     sending an event to the claim) and it SHOULD retry periodically with step
+     i.
 
   4. The provisioner MUST parse arguments in the `StorageClass` and
      `claim.Spec.Selector` and provisions appropriate storage asset that matches
@@ -205,7 +207,15 @@ Existing behavior is unchanged for claims that do not specify
      }
      ```
 
-  5. When the volume is provisioned, the provisioner MUST create a new PV
+  5. The provisioner MUST parse
+     `claim.Annotations["volume.kubernetes.io/external-provisioning-version"]`
+     and check that it supports at least the version of this protocol requested
+     there. It SHOULD report an error and it MUST NOT provision a volume when
+     the annotation value is higher than the version known to the provisioner.
+
+     Table of protocol versions is available below.
+
+  6. When the volume is provisioned, the provisioner MUST create a new PV
      representing  the storage asset and save it in Kubernetes. When this fails,
      it SHOULD retry creating the PV again few times. If all attempts fail, it
      MUST delete the storage asset. All errors SHOULD be sent as events to the
@@ -415,22 +425,22 @@ type StorageClass struct {
 
 ```
 
-`PersistentVolumeClaimSpec` and `PersistentVolumeSpec` both get Class attribute
+`PersistentVolumeClaimSpec` and `PersistentVolumeSpec` both get StorageClassName attribute
 (the existing annotation is used during incubation):
 
 ```go
 type PersistentVolumeClaimSpec struct {
     // Name of requested storage class. If non-empty, only PVs with this
-    // pv.Spec.Class will be considered for binding and if no such PV is
+    // pv.Spec.StorageClassName will be considered for binding and if no such PV is
     // available, StorageClass with this name will be used to dynamically
     // provision the volume.
-    Class string
+    StorageClassName string
 ...
 }
 
 type PersistentVolumeSpec struct {
     // Name of StorageClass instance that this volume belongs to.
-    Class string
+    StorageClassName string
 ...
 }
 ```
@@ -450,6 +460,38 @@ With the scheme outlined above the provisioner creates PVs using parameters spec
 will be extended to contain StorageClass.Parameters.
 
 The existing provisioner implementations will be modified to accept the StorageClass configuration object.
+
+### External provisioner interface changes
+
+Sometimes PersistentVolume, PersistentVolumeClaim or StorageClass objects get
+new fields and/or different behavior is expected from an external provisioner.
+Old provisioner that don't know about these new fields must not provision PVCs
+that expect the provisioner knows about them.
+
+As an example, in 1.8 we introduced `StorageClass.MountOptions` and
+`StorageClass.ReclaimPolicy`. Each provisioner must copy these fields from
+`StorageClass` to created PV during provisioning. Old provisioners do not know
+about this requirement and Kubernetes should not allow them to provision a PVC
+whose `StorageClass.MountOptions` or `ReclaimPolicy` is set.
+
+* When no extra feature (i.e. Kubernetes 1.7 and below behavior is expected), Kubernetes adds these three annotations to a PVC:
+* `volume.beta.kubernetes.io/storage-provisioner` - to keep the old provisioners running.
+  * `volume.kubernetes.io/storage-provisioner` - to keep the new provisioners running.
+  * `volume.kubernetes.io/external-provisioning-version = "1.7"` - to explicitly state that no extra features/behavior is expected.
+
+* When behavior corresponding to Kubernetes 1.8 is expected (i.e. `StorageClass.MountOptions` or `StorageClass.ReclaimPolicy` is set), Kubernetes adds only these two annotations to a PVC:
+  * `volume.kubernetes.io/storage-provisioner` - to keep the new provisioners running.
+  * `volume.kubernetes.io/external-provisioning-version = "1.8"` - to explicitly state that the provisioner must know about `StorageClass.MountOptions` and how to deal with it.
+  * As no beta annotation is set, this PVC is invisible to old provisioners that support only 1.7.
+
+In future, when we add e.g. block device support, Kubernetes will set `external-provisioning-version = "1.9"` when a block volume is requested or `"1.8"` when filesystem volume with `MountOptions` or `ReclaimPolicy` is requested or even `"1.7"` when nothing special is required.
+
+#### Table of protocol versions
+
+| Version | Required features |
+|---------|-------------------|
+| 1.7     | None, standard provisionig that was working in 1.4 - 1.7 is expected |
+| 1.8     | Provisioner must interpret `StorageClass.MountOptions` and `StorageClass.ReclaimPolicy` when it's set |
 
 ### PV Controller Changes
 
@@ -487,9 +529,9 @@ parameters:
 
 # Additional Implementation Details
 
-0. Annotation `volume.alpha.kubernetes.io/storage-class` is used instead of `claim.Spec.Class` and `volume.Spec.Class` during incubation.
+0. Annotation `volume.alpha.kubernetes.io/storage-class` is used instead of `claim.Spec.StorageClassName` and `volume.Spec.StorageClassName` during incubation.
 
-1. `claim.Spec.Selector` and `claim.Spec.Class` are mutually exclusive for now (1.4). User can either match existing volumes with `Selector` XOR match existing volumes with `Class` and get dynamic provisioning by using `Class`. This simplifies initial PR and also provisioners. This limitation may be lifted in future releases.
+1. `claim.Spec.Selector` and `claim.Spec.StorageClassName` are mutually exclusive for now (1.4). User can either match existing volumes with `Selector` XOR match existing volumes with `StorageClassName` and get dynamic provisioning by using `StorageClassName`. This simplifies initial PR and also provisioners. This limitation may be lifted in future releases.
 
 # Cloud Providers
 
