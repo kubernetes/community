@@ -83,7 +83,7 @@ and reference particular entities across operations.
 A *Namespace* provides an authorization scope for accessing content associated
 with the *Namespace*.
 
-See [Authorization plugins](../auth/access.md)
+See [Authorization plugins](https://kubernetes.io/docs/admin/authorization/)
 
 ### Limit Resource Consumption
 
