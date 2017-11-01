@@ -80,7 +80,7 @@ There are two configurations in which it makes sense to run `kube-aggregator`.
   `api.mycompany.com/v1/grobinators` from different apiservers. This restriction
   allows us to limit the scope of `kube-aggregator` to a manageable level.
 * Follow API conventions: APIs exposed by every API server should adhere to [kubernetes API
-  conventions](../devel/api-conventions.md).
+  conventions](../../devel/api-conventions.md).
 * Support discovery API: Each API server should support the kubernetes discovery API
   (list the supported groupVersions at `/apis` and list the supported resources
   at `/apis/<groupVersion>/`)
