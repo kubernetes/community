@@ -361,7 +361,7 @@ sigs:
     contact:
       slack: sig-multicluster
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster
-  - name: Google Cloud Platform
+  - name: GCP
     dir: sig-gcp
     mission_statement: >
       A Special Interest Group for building, deploying, maintaining,
