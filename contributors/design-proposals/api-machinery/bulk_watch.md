@@ -180,7 +180,7 @@ websockets protocol.
 watch requests (in addition to regular http requests), so for the purpose of
 bulk watch we will be extending websocket support.
 
- The the high level, the propocol will look:
+ The the high level, the protocol will look:
 1. client opens a new websocket connection to a bulk watch endpoint to the
 server via ghttp GET
 1. this results in creating a single channel that is used only to handle
@@ -344,7 +344,7 @@ aggregator, which is crucial requirement here.
 NOTE: For watch requests, as an initial step we can consider implementing
 this API only in aggregator and simply start an individual watch for any
 subrequest. With http2 we shouldn't get rid of descriptors and it can be
-enough as a prrof of concept. However, with such approach there will be
+enough as a proof of concept. However, with such approach there will be
 difference between sending a given request to aggregator and apiserver
 so we need to implement it properly in apiserver before entering alpha
 anyway. This would just give us early results faster.
