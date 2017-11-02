@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 A Special Interest Group for building, deploying, maintaining, supporting, and using Kubernetes on the Google Cloud Platform.
 
 ## Meetings
-* [Thursdays at 16:00 UTC](https://zoom.us/j/761149873) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+* [Thursdays at 16:00 UTC](https://zoom.us/j/761149873) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit).
 
