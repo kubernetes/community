@@ -81,7 +81,7 @@ Not in scope:
 *   Ensure able to monitor latency and rejection from webhooks. See [Monitorability](#monitorability).
 *   Don't send internal objects.   See [#49733](https://github.com/kubernetes/kubernetes/issues/49733)
 *   Serialize mutating Webhooks into order in the apiregistration. Leave non-mutating in parallel.
-*   Good Error Messages	.  See [Good Error Messages](#good-error-messages)	
+*   Good Error Messages.  See [Good Error Messages](#good-error-messages)	
 *   Conversion logic in GenericWebhook to send converted resource to webhook.  See [Conversion](#conversion) and [#49733](https://github.com/kubernetes/kubernetes/issues/49733).
 *   Schedule discussion around resiliency to down webhooks and bootstrapping
 *   Internal Go interface refactor (e.g. along the lines suggested  #[1137](https://github.com/kubernetes/community/pull/1137)).
@@ -241,7 +241,7 @@ before designing this.
 
 ## Conversion and Versioning
 
-Webhooks will recieve the admission review subject in the exact version which
+Webhooks will receive the admission review subject in the exact version which
 the user sent it to the control plane. This may require the webhook to
 understand multiple versions of those types.
 
@@ -324,7 +324,7 @@ Webhooks should work with Custom Resources on Aggregated API Servers.
 
 Aggregated API Servers should watch apiregistraton on the main APIserver, and should identify webhooks with rules that match any of their resources, and call those webhooks.
 
-For example a user might install a WEbhook that adds a certain annotation to every single object.  Aggregated APIs need to support this use case.
+For example a user might install a Webhook that adds a certain annotation to every single object.  Aggregated APIs need to support this use case.
 
 We will build the dynamic admission stack into the generic apiserver layer to support this use case.
 
@@ -887,7 +887,7 @@ Don't let controllers that depend on services see the service before it is ready
 
  <li>Apiserver uses a go routine
  <li>TCP connection open
- <li>Should be very low latecny</li> </ul>
+ <li>Should be very low latency</li> </ul>
 </li> </ul>
 
    </td>
