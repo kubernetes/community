@@ -373,7 +373,7 @@ sigs:
     meetings:
     - day: Thursday
       utc: "16:00"
-      frequency: monthly
+      frequency: biweekly
     meeting_url: https://zoom.us/j/761149873
     meeting_archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
     contact:
