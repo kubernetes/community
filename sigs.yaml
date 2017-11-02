@@ -361,6 +361,24 @@ sigs:
     contact:
       slack: sig-multicluster
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster
+  - name: GCP
+    dir: sig-gcp
+    mission_statement: >
+      A Special Interest Group for building, deploying, maintaining,
+      supporting, and using Kubernetes on the Google Cloud Platform.
+    leads:
+    - name: Adam Worrall
+      github: abgworrall
+      company: Google
+    meetings:
+    - day: Thursday
+      utc: "16:00"
+      frequency: biweekly
+    meeting_url: https://zoom.us/j/761149873
+    meeting_archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
+    contact:
+      slack: sig-gcp
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-gcp
   - name: Instrumentation
     dir: sig-instrumentation
     mission_statement: >
