@@ -202,7 +202,7 @@ For each pending DaemonSet updates, it will:
      - The history will be labeled with `DefaultDaemonSetUniqueLabelKey`.
      - DaemonSet controller will add a ControllerRef in the history
        `.ownerReferences`.
-   - Current history should have the largest `.revision` number amonst all
+   - Current history should have the largest `.revision` number amongst all
      existing history. Update `.revision` if it's not (e.g. after a rollback.)
    - If more than one current history is found, remove duplicates and relabel
      their pods' `DefaultDaemonSetUniqueLabelKey`.
