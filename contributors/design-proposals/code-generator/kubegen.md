@@ -14,10 +14,10 @@ There are 2 methods for running kubegen
 ## Kubernetes API conventions
 
 kubegen will run the full set of Kubernetes code generators for all APIs it finds in the project.
-kubegen looks for API groups defined under `pkg/apis/<group>/<version>` where *group* and *version* match the following
-patterns.
+kubegen looks for API groups directories defined under `pkg/apis/<group>/<version>` where *group* and *version*
+match the patterns following Kubernetes API conventions.
 
-- **group pattern**: ^[a-z]+$
+- **group pattern**: ^[a-z0-9]+$
 - **version pattern**: ^v\\d+(alpha\\d+|beta\\d+)?$
 
 By default, kubegen will run code generators for both external types defined under `pkg/apis/<group>/<version>` and
@@ -56,8 +56,7 @@ generators against all API group/versions defined in the project.
 kubegen
 ```
 
-- run all code generators against discovered APIs
-  - run for both internal and external types
+- run code generators against discovered API type definitions
 - prepend license to generated files
   - wrap the contents of the LICENSE in comments
   - exit non-zero if the LICENSE file is missing
@@ -70,8 +69,7 @@ The copyright owners for the license can be defined with the `--copyright` flag
 kubegen --copyright "The Kubernetes Authors."
 ```
 
-- run all code generators against discovered APIs
-  - run for both internal and external types
+- run code generators against discovered API type definitions
 - prepend license to generated files
   - wrap the contents of the LICENSE in comments
   - start license with "Copyright <current year> <copyright>" e.g. *Copyright 2018 The Kubernetes Authors.*
@@ -86,12 +84,13 @@ The license file can be overridden from the LICENSE file using the `--license-fi
 kubegen --license-file "boilerplate.go.txt"
 ```
 
-- run all code generators against discovered APIs
-  - run for both internal and external types
+- run code generators against discovered API type definitions
 - prepend license to generated files
-  - use the contents from boilerplate.go.txt
+  - use the contents from the boilerplate.go.txt file instead of LICENSE
   - if boilerplate.go.txt is already in comments then use it verbatim, otherwise wrap it in comments
   - exit non-zero if boilerplate.go.txt is missing
+  
+**Note**: This passes the `--go-header-file` to each of the code generators
 
 #### Specifying a license type
 
@@ -101,85 +100,62 @@ The license can be overridden from the LICENSE file using the `--license` flag
 kubegen --license "Apache 2.0"
 ```
 
-- run all code generators against discovered APIs
-  - run for both internal and external types
+- run code generators against discovered API type definitions
 - prepend license to generated files
   - use an *Apache 2.0* license
-  
-#### Generating for external types only
 
-Generating code for internal types can be skipped using the `generate-internal` flag
-
-```sh
-kubegen --generate-internal=false
-```
-
-- run all code generators against discovered APIs
-  - run for external types only
-- prepend license to generated files
-  - wrap the contents of the LICENSE in comments
-  - exit non-zero if the LICENSE file is missing
-
-#### Generating for internal types only
-
-Generating code for internal types can be skipped using the `generate-internal` flag
-
-```sh
-kubegen --generate-external=false
-```
-
-- run all code generators against discovered APIs
-  - run for external types only
-- prepend license to generated files
-  - wrap the contents of the LICENSE in comments
-  - exit non-zero if the LICENSE file is missing
-
-#### Specifying API versions
+#### Specifying external API versions
 
 Generating code only for specific API group versions can be performed by providing the API
-group versions as positional arguments.
+group versions as positional arguments.  When manually specifying the API group versions,
+neither internal nor external API types are automatically discovered.
 
 ```sh
 kubegen apps/v1 apps/v1beta1 extensions/v1beta1
 ```
 
 - run all code generators against the apps/v1 apps/v1beta1 extensions/v1beta1 API groups versions
-  - run for both internal and external types
+  - only run against external types, do not run against internal types
 - prepend license to generated files
-  - wrap the contents of the LICENSE in comments
-  - exit non-zero if the LICENSE file is missing
 
-#### Specifying API groups
+#### Specifying internal API groups
 
-Generating code only for specific API group versions can be performed by providing the API
-group versions as positional arguments.
+Generating code only for specific API groups can be performed by providing the API
+groups as positional arguments.  When manually specifying the API groups,
+neither internal nor external API types are automatically discovered.
 
 ```sh
 kubegen apps extensions
 ```
 
 - run all code generators against the apps extensions API groups
-  - run for both internal and external types
+  - only run against internal types, do not run against external types
 - prepend license to generated files
-  - wrap the contents of the LICENSE in comments
-  - exit non-zero if the LICENSE file is missing
 
+#### Specifying both internal API groups and external API versions
 
-#### Specifying generators
-
-Generating code using only a specific set of generators can be performed using the
-`--generator` flag.  This flag may be provided multiple times to run multiple
-generators.
+To generate code for both manually specified internal and external types
+provide both as positional arguments.
 
 ```sh
-kubegen --generator client-gen --generator lister-gen
+kubegen apps apps/v1 apps/v1beta1 extensions extensions/v1beta1
 ```
 
-- run only the client-gen and lister-gen code generators
-  - run for both internal and external types
+- run all code generators against the provided API groups and versions
+  - generate internal types for apps and extensions groups
+  - generate external types for apps/v1 apps/v1beta1 extensions/v1beta1 versions
 - prepend license to generated files
-  - wrap the contents of the LICENSE in comments
-  - exit non-zero if the LICENSE file is missing
+
+#### Running in dry-run
+
+To verify the output without writing actual files use the `--dry-run` flag
+
+```sh
+kubegen --dry-run
+```
+
+**Note**: This passes the `--verify-only` flag to each of the code generators
+
   
 #### Specifying where to search for APIs
 
@@ -234,6 +210,12 @@ bazel run //:kubegen
 
 ## FAQ
 
+> I want to only generate *external* or only generate *internal* types.  How can I do this?
+
+kubegen only generates code for the types it finds.  If you do not have any external types
+under the locations defined by `--apis-dir`, or do not have any internal types
+under the locations defined by `--internal-apis-dir`, then code for them will not be generated.
+
 > How does kubegen invoke the other code generators without me having to download them?
 
 kubegen statically compiles the logic for all code generators
@@ -262,4 +244,26 @@ kubegen --apis-dir path/to/external --generate-internal=false apps/v1beta1 apps/
 
 kubegen tries to present the simplest possible interface for using the code generators.  since
 most GitHub projects already have a LICENSE file created that should be used, this flag more
-accurately reflects what its value should be
+accurately reflects what its value should be.  likewise `--dry-run` is a more common name than `--verify-only`.
+
+> I want to specify a code generator flag that isn't exposed in kubegen, how do I do this?
+
+kubegen tries to identify the correct value for most flag.  If there is a flag you want
+exposed, file and issue with the context, and we will work fix it either by changing how its value
+is automatically set, or by exposing it.
+
+Please file an issue if your use case is not supported.
+
+> How can I use a different pattern for groups or versions?
+
+We can expose this as a feature if we discover it is necessary by adding the
+`--group-pattern` and `--version-pattern` flags to override the regular expressions.
+
+Please file an issue if your use case is not supported.
+
+> How can I specify only certain code generators are run
+
+Currently all code generators are run automatically based off the struct comments present on the API
+type definitions in the go files.  e.g. Specifying `//+genclient` before the struct definition.
+
+Please file an issue if your use case is not supported.+
