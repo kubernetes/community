@@ -8,7 +8,6 @@
 
 This document proposes a design for the set of metrics included in an eventual Core Metrics Pipeline.
 
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Core Metrics in kubelet](#core-metrics-in-kubelet)
   - [Introduction](#introduction)
@@ -23,7 +22,6 @@ This document proposes a design for the set of metrics included in an eventual C
     - [On-Demand Design:](#on-demand-design)
   - [Future Work](#future-work)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## Introduction
 

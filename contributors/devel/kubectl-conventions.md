@@ -3,7 +3,6 @@
 Updated: 3/23/2017
 
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Kubectl Conventions](#kubectl-conventions)
   - [Principles](#principles)
@@ -18,7 +17,6 @@ Updated: 3/23/2017
   - [Exit code conventions](#exit-code-conventions)
   - [Generators](#generators)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## Principles
 

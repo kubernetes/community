@@ -2,7 +2,6 @@
 
 *This document is oriented at developers who want to use Gubernator to debug while developing for Kubernetes.*
 
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Gubernator](#gubernator)
   - [What is Gubernator?](#what-is-gubernator)
@@ -12,7 +11,6 @@
     - [Gubernator for Local Tests](#gubernator-for-local-tests)
   - [Future Work](#future-work)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## What is Gubernator?
 

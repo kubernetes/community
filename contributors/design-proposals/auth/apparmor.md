@@ -1,5 +1,3 @@
-<!-- BEGIN MUNGE: GENERATED_TOC -->
-
 - [Overview](#overview)
   - [Motivation](#motivation)
   - [Related work](#related-work)
@@ -21,8 +19,6 @@
   - [Alerting](#alerting)
   - [Profile authoring](#profile-authoring)
 - [Appendix](#appendix)
-
-<!-- END MUNGE: GENERATED_TOC -->
 
 # Overview
 

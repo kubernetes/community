@@ -1,5 +1,3 @@
-<!-- BEGIN MUNGE: GENERATED_TOC -->
-
 - [Overview](#overview)
   - [Motivation](#motivation)
 - [Alpha Design](#alpha-design)
@@ -27,7 +25,6 @@
 - [Future work](#future-work)
 - [Appendix](#appendix)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 # Overview
 

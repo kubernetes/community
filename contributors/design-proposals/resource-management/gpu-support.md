@@ -1,5 +1,3 @@
-<!-- BEGIN MUNGE: GENERATED_TOC -->
-
 - [GPU support](#gpu-support)
   - [Objective](#objective)
   - [Background](#background)
@@ -22,7 +20,6 @@
     - [Undetermined](#undetermined)
   - [Security considerations](#security-considerations)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 # GPU support
 
