@@ -33,19 +33,6 @@ The scripts for munging documents are called mungers, see the
 [mungers section](#what-are-mungers) below if you're curious about how mungers
 are implemented or if you want to write one.
 
-## How to Get a Table of Contents
-
-Instead of writing table of contents by hand, insert the following code in your
-md file:
-
-```
-<!-- BEGIN MUNGE: GENERATED_TOC -->
-<!-- END MUNGE: GENERATED_TOC -->
-```
-
-After running `hack/update-munge-docs.sh`, you'll see a table of contents
-generated for you, layered based on the headings.
-
 ## How to Write Links
 
 It's important to follow the rules when writing links. It helps us correctly
