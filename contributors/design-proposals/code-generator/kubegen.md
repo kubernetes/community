@@ -21,112 +21,122 @@ Some conventions may overridden through specifying specific flags.
 
 - Download the latest kubegen release from the code-generators release page.
 - Extract the tar and add the `kubegen` binary to the PATH
-- Run `kubegen version` to list the version
-  - Will correspond to a Kubernetes release
+- Run `kubegen version` to display the version
+  - Will correspond to a Kubernetes release - e.g. 1.8, 1.9
+
+## Generation for Versioned vs Internal types
+
+Code generation comes in 2 modes:
+
+- Generating clients and libraries for versioned APIs used by controllers, clis, and other clients.
+- Generating infrastructure for Kubernetes apiserver machinery to implement and expose API types internally
+
+If you are using CRDs for type definitions, then you should ignore internal types, and use the
+*versioned* commands.
+
+If *are* building an API directly into a Kubernetes API server or
+Kubernetes extension apiserver, then
+you will need to use the *internal* commands.  You may also want to use the *versioned*
+commands to publish libraries for your types externally - e.g. `k8s.io/client-go`
 
 ### Running the command line
 
-#### Use defaults
+#### Generate clients and related libraries for versioned (external) types
 
 ```sh
-kubegen
+kubegen versioned
 ```
 
 - run code generators against discovered API type definitions
 - prepend LICENSE to generated files (wrapping in comments)
 
-#### Specifying copyright owners
+#### Generate clients and related libraries for internal types
 
-The copyright owners for the license can be defined with the `--copyright` flag
+**Note:** This will *also* generate libraries for versioned types as internal types require
+versioned types to be useful.
 
 ```sh
-kubegen --copyright "The Kubernetes Authors."
+kubegen internal
 ```
 
 - run code generators against discovered API type definitions
-- prepend the LICENSE file to generated files
-  - wrap the contents of the LICENSE in comments
-  - start license with "Copyright <current year> <copyright>" e.g. *Copyright 2018 The Kubernetes Authors.*
-  - exit non-zero if the LICENSE file is missing
+- prepend LICENSE to generated files (wrapping in comments)
 
+### Options
 
-#### Specifying the license file
+A number of options can be specified to override the default behavior
 
-The license file can be overridden from the LICENSE file using the `--license-file` flag
+#### Define copyright owners
+
+The copyright owners for the license can be defined with the `--copyright` flag.
+This will prepend the license header at the top of generated files with a copyright string.
+e.g. *Copyright 2018 The Kubernetes Authors.*
+
 
 ```sh
-kubegen --license-file "boilerplate.go.txt"
+kubegen versioned --copyright "The Kubernetes Authors."
 ```
 
-- run code generators against discovered API type definitions
-- prepend license to generated files
-  - use the contents from the boilerplate.go.txt file instead of LICENSE
-  - if boilerplate.go.txt is already in comments then use it verbatim, otherwise wrap it in comments
-  - exit non-zero if boilerplate.go.txt is missing
-  
+#### Define the license file
+
+The license file can be overridden from the LICENSE file using the `--license-file` flag.
+This will use the contents from the boilerplate.go.txt file instead of LICENSE.
+If boilerplate.go.txt is already in comments then use it verbatim, otherwise wrap it in comments.
+
+
 **Note**: This passes the `--go-header-file` to each of the code generators
 
-#### Specifying a license type
-
-The license can be overridden from the LICENSE file using the `--license` flag
-
 ```sh
-kubegen --license "Apache 2.0"
+kubegen versioned --license-file "boilerplate.go.txt"
 ```
 
-- run code generators against discovered API type definitions
-- prepend license to generated files
-  - use an *Apache 2.0* license
+#### Define the license type
 
-#### Specifying API versions
-
-Generating code only for specific API group versions can be performed by providing the
-`--api-version` flag.  When manually specifying the API group versions,
-neither internal nor external API types are automatically discovered.
+If no license file exists, one may be specified on the using the `--license` flag.
 
 ```sh
-kubegen --api-version apps/v1 --api-version apps/v1beta1 --api-version extensions/v1beta1
+kubegen versioned --license "Apache 2.0"
 ```
 
-- run code generators against the apps/v1 apps/v1beta1 extensions/v1beta1 API groups versions
-  - only run against external types, do not run against internal types
-- prepend license to generated files
+Options:
 
-#### Specifying API groups
+- "Apache 2.0"
+- "None"
 
-Generating code only for specific API groups can be performed by providing the
-`--api-group` flag.  This will discover API versions only under the specified
-groups.  When manually specifying the API groups,
-neither internal nor external API types are automatically discovered.
+#### Define API groups and versions
+
+The set of APIs code generation is performed for can be explicitly defined instead of
+implicitly determined using the `--api-version` and `--api-group` flags.  When these
+flags are provided, API groups will not be implicitly discovered.  Only API versions
+for groups specified with `--api-group` will be discovered.
 
 ```sh
-kubegen --api-group apps --api-group extensions
+kubegen versioned --api-version apps/v1 --api-version apps/v1beta1 --api-version extensions/v1beta1
 ```
 
-- run all code generators against the apps extensions API groups
-  - only run against external types, do not run against internal types
-- prepend license to generated files
+#### Manually specifying the output for the versioned client packages
 
-#### Specifying internal API groups
+By default versioned client related libraries are output to the following locations:
 
-To generate code for both manually specified internal types use the
-`--internal-api-group` flag.
+- client: `pkg/client/clientset_generated/clientset`
+- informers: `pkg/client/informers_generated/externalversions`
+- listers: `pkg/client/listers_generated`
+
+These locations can be changed using the flags `--client-output`, ``--informer-output` and `--listers-output`.
+This is useful if generating a client for external consumption.
+
+**Note**: These flags also work with `kubegen internal` since that runs generators on versioned types.
 
 ```sh
-kubegen --internal-api-group extensions --api-group extensions
+kubegen versioned --client-output kubernetes --informers-output informers --listers-output listers
 ```
-
-- run code generators against the provided API groups
-  - generate internal types for extensions groups
-  - generate external types for versions under the extensions group
-- prepend license to generated files
 
 #### Running in dry-run
 
 To verify the output without writing actual files use the `--dry-run` flag
 
 ```sh
-kubegen --dry-run
+kubegen versioned --dry-run
 ```
 
 **Note**: This passes the `--verify-only` flag to each of the code generators
@@ -141,11 +151,8 @@ the `--apis-dir` flag.  This flag may be provided multiple times to search multi
 directories.
 
 ```sh
-kubegen --apis-dir notpkg/apis --apis-dir pkg/notapis
+kubegen versioned --apis-dir notpkg/apis --apis-dir pkg/notapis
 ```
-
-- run code generators against discovered APIs
-  - search for API group versions under notpkg/apis and pkg/notapis instead of pkg/apis  
 
 ## Running via Bazel
 
@@ -168,6 +175,7 @@ load("@io_k8s_rules_go//go:def.bzl", "code-generator")
 
 kubegen(
     name = "kubegen",
+    cmd = "versioned",
 )
 ```
 
@@ -179,9 +187,14 @@ bazel run //:kubegen
 
 ### Bazel options
 
-- *license*: same behavior as *license* flag for cli
-- *license-file*: same behavior as *license-file* flag for cli
-- *copyright*: same behavior as *copyright* flag for cli
+- *license*: same behavior as the flag
+- *license-file*: same behavior as the flag
+- *copyright*: same behavior as the flag
+- *cmd*: controls sub command - either internal or versioned
+- *client-output*: same behavior as the flag
+- *informers-output*: same behavior as the flag
+- *listers-output*: same behavior as the flag
+
 
 ## Kubernetes API and directory structure conventions
 
@@ -192,16 +205,8 @@ match the patterns following Kubernetes API conventions.
 - **group-pattern**: ^[a-z0-9\.]+$
 - **version-pattern**: ^v\\d+(alpha\\d+|beta\\d+)?$
 
-By default, kubegen will run code generators for both external types defined under `pkg/apis/<group>/<version>` and
+By default, kubegen will run code generators for both versioned types defined under `pkg/apis/<group>/<version>` and
 internal types defined under `pkg/apis/<group>`.  The location kubegen searches can be overridden.
-
-### Generation for External vs Internal types
-
-If you *are not* writing a Kubernetes API server or Kubernetes extension apiserver, and
-instead using CRDs for type definitions, then you can ignore internal types.
-
-If *are* writing a Kubernetes API server or Kubernetes extension apiserver, then
-you will need to generate code for internal types.
 
 ### Specifying copyright and license headers
 
@@ -209,10 +214,9 @@ kubegen will prepend all generated files with license comments using the LICENSE
 
 ### Code generator list
 
-By default, the kubegen binary runs the set of code generators for which the project
-supports.  Support for each code generator is as follows...
+The kubegen binary runs the following set of code generators.
 
-#### External API code generators
+#### Versioned API code generators
 
 **Generators**:
 
@@ -222,7 +226,7 @@ supports.  Support for each code generator is as follows...
 - informer-gen
 - lister-gen
 
-Support defined by union of (||):
+Requires one of:
 
 - presence of files matching `<api-dir>/<group-pattern>/<version-pattern>/*types.go`
 - presence of `--api-group` flags
@@ -232,57 +236,44 @@ Support defined by union of (||):
 
 - go-to-protobuf
 
-Support defined by:
+Requires:
 
-- TODO(sttts): What is the answer?
-
-**Generators**:
-
-- openapi-gen (external only)
-
-Support defined by:
-
-- presence of `pkg/openapi/doc.go`
+- Proto tags to be defined on versioned types
 
 #### Internal API code generators
 
 **Generators**:
 
+- *conversion-gen*
 - client-gen
 - deepcopy-gen
 - defaulter-gen
 - informer-gen
 - lister-gen
 
-Support defined by union of (||):
+Requires one of:
 
-- presence of files matching `<api-dir>/<group-pattern>/*types.go`
-- presence of `--internal-api-group` flags
+- presence of files matching `<api-dir>/<group-pattern>/<version-pattern>/*types.go`
+- presence of `--api-group` flags
+- presence of `--api-version` flags
 
 **Generators**:
 
 - go-to-protobuf
 
-Support defined by:
+Requires:
 
-- TODO(sttts): What is the answer?
-
-#### Internal+External API code generators
+- Proto tags to be defined on versioned types
 
 **Generators**:
 
-- conversion-gen
+- openapi-gen (runs on versioned types only)
 
-Support defined by intersection of (&&):
+Support defined by:
 
-- Internal code generators
-- External code generators
+- presence of `pkg/openapi/doc.go`
 
 ## FAQ
-
-> I want to only generate *external* or only generate *internal* types.  How can I do this?
-
-You can restrict the generated APIs to a manually specified list with `--internal-api-group` and `--api-group`
 
 > How does kubegen invoke the other code generators without me having to download them?
 
@@ -293,37 +284,34 @@ kubegen statically compiles the logic for all code generators
 kubegen will include any vendored API groups found under `vendor/k8s.io/api/`.  Additional inputs can
 be provided with `--vendor-api-dir`.
 
-> How can Kubernetes APIs be generated when the external and internal packages live in different repos?
+> How can Kubernetes APIs be generated when the versioned and internal packages live in different repos?
 
-This works out of the box based on the discovered *types.go files.
+This works out of the box based on the discovered directories and structure.
 
 > Why are the kubegen flags different than the flags passed to the code generators e.g. --license-file vs --boilerplate-header-file?
 
 kubegen tries to present the simplest possible interface for using the code generators.  since
-most GitHub projects already have a LICENSE file created that should be used, this flag more
-accurately reflects what its value should be.  likewise `--dry-run` is a more common name than `--verify-only`.
+most GitHub projects already have a LICENSE file created that should be used in most cases, this flag more
+accurately reflects what the value should be.  likewise `--dry-run` is a more common name than `--verify-only`.
 
 > I want to specify a code generator flag that isn't exposed in kubegen, how do I do this?
-
-kubegen tries to identify the correct value for most flag.  If there is a flag you want
-exposed, file and issue with the context, and we will work fix it either by changing how its value
-is automatically set, or by exposing it.
 
 Please file an issue if your use case is not supported.
 
 > How can I use a different pattern for groups or versions?
 
-We can expose this as a feature if we discover it is necessary by adding the
+We could expose this as a feature if we discover it is necessary by adding the
 `--group-pattern` and `--version-pattern` flags to override the regular expressions.
 
 Please file an issue if your use case is not supported.
 
 > How can I specify only certain code generators are run
 
-Currently all code generators are run automatically based off the struct comments present on the API
+Currently all code generators are run automatically, and they generate
+output based off the struct comments present on the API
 type definitions in the go files.  e.g. Specifying `//+genclient` before the struct definition.
 
-Please file an issue if your use case is not supported.+
+Please file an issue if your use case is not supported.
 
 > What happens if I don't have a LICENSE file
 
@@ -332,4 +320,4 @@ If you don't have a LICENSE file, you must either provide the `--license` flag o
 
 > My LICENSE file isn't in go comments, so how to you prepend it to go files?
 
-We wrap it in comments if it is not already.
+We make sure it is wrapped it in comments when it is prepended.
