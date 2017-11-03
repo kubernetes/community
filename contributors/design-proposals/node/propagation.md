@@ -309,7 +309,3 @@ These concerns are valid and we decide to limit the propagation mode to HostPath
 volume only, in HostPath, we expect any runtime should NOT perform any additional
 actions (such as clean up). This behavior is also consistent with current HostPath
 logic: kube does not take care of the content in HostPath either.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/propagation.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

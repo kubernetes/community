@@ -154,8 +154,3 @@ minikube -> docker -> localkube
 - The latest version of Minikube is guaranteed to support the latest release of Kubernetes, including documentation.
 - The Google Cloud SDK will package minikube and provide utilities for configuring kubectl to use it, but will not in any other way wrap minikube.
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/local-cluster-ux.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

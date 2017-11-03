@@ -513,7 +513,3 @@ state, and apply changes to the underlying kubernetes clusters accordingly. They
 also have the anti-entropy mechanism for reconciling Cluster Federation "desired desired"
 state against kubernetes "actual desired" state.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/federated-services.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

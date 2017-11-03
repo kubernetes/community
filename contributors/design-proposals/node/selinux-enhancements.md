@@ -203,7 +203,3 @@ ensure things work as expected under rkt.
 
 The `VolumeHost` abstraction is used in a couple of PV controllers as NOP
 implementations.  These should be altered to no longer include `GetRootContext`.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/selinux-enhancements.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

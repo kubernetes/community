@@ -527,6 +527,3 @@ The 30th of November 2015, a tracking issue about making Kubernetes run on ARM w
 
 The 27th of April 2016, Kubernetes `v1.3.0-alpha.3` was released, and it became the first release that was able to run the [docker getting started guide](http://kubernetes.io/docs/getting-started-guides/docker/) on `linux/amd64`, `linux/arm`, `linux/arm64` and `linux/ppc64le` without any modification.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/multi-platform.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

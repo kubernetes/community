@@ -333,7 +333,3 @@ Below are the possible future extensions to the Job controller:
   happening in [#18827](https://issues.k8s.io/18827).
 * Be able to specify more general template in `.spec` field, to create arbitrary
   types of resources. This relates to the work happening in [#18215](https://issues.k8s.io/18215).
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/cronjob.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

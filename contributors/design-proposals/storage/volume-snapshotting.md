@@ -516,8 +516,3 @@ spec:
 
     * POST https://www.googleapis.com/compute/v1/projects/example-project/zones/us-central1-f/disks/example-disk/createSnapshot
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/volume-snapshotting.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -161,8 +161,3 @@ Release 1.9: All of the legacy cloud providers will be completely removed in thi
 *  Cloud specific operations will be moved out of kube-apiserver using the external admission controller pattern mentioned above. 
 * All cloud specific volume controller loops (attach, detach, provision operation controllers) will be switched to using flex volumes. Flex volumes do not need in-tree cloud specific calls. 
 * As the final step, all of the cloud provider specific code will be moved out of tree. 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/cloud-provider-refactoring.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

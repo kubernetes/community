@@ -97,7 +97,3 @@ In the future, some of these decisions are expected to be changed such that rkt 
 5. Revendor rktlet into `pkg/kubelet/rktshim`, and start deprecating the `pkg/kubelet/rkt` package.
 6. Eventually replace the current `pkg/kubelet/rkt` package.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/kubelet-rkt-runtime.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

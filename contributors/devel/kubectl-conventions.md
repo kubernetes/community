@@ -456,7 +456,3 @@ method which configures the generated namespace that callers of the generator
 * `--dry-run` should output the resource that would be created, without
 creating it.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/kubectl-conventions.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

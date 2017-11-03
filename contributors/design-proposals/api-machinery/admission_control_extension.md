@@ -633,8 +633,3 @@ Some options:
 It should be easy for a novice Kubernetes administrator to apply simple policy rules to the cluster. In
 the future it is desirable to have many such policy engines enabled via extension to enable quick policy 
 customization to meet specific needs.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/admission_control_extension.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

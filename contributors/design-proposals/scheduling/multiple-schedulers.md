@@ -133,6 +133,3 @@ randomly among the top N nodes instead of the one with the highest score.
 - [#16845](https://github.com/kubernetes/kubernetes/issues/16845): scheduling groups of pods
 - [#17208](https://github.com/kubernetes/kubernetes/issues/17208): guide to writing a new scheduler
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/multiple-schedulers.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

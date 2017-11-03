@@ -214,7 +214,3 @@ Phase 2:
 Further improvements will require adding more authentication providers, and
 adapting existing plugins to take advantage of challenge based authentication.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/kubectl-login.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

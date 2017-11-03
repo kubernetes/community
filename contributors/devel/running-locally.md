@@ -170,7 +170,3 @@ KUBE_DNS_DOMAIN="cluster.local"
 ```
 
 To know more on DNS service you can check out the [docs](http://kubernetes.io/docs/admin/dns/).
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/running-locally.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

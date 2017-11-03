@@ -438,7 +438,3 @@ master and Kubelet is tracked in issue [#4855](https://github.com/kubernetes/kub
 * Unify pod QoS class with init containers
 * Implement container / image volumes to make composition of runtime from images efficient
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/container-init.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

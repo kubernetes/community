@@ -327,7 +327,3 @@ Another phenomenon of open-source projects (where anyone can comment on any issu
 
 No document can take the place of common sense and good taste. Use your best judgment, while you put
 a bit of thought into how your work can be made easier to review. If you do these things your PRs will get merged with less friction.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/pull-requests.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -271,6 +271,3 @@ or roles to schedule GPU workloads. Overcommitting or sharing the same device
 across different pods is not considered safe. It should be possible to segregate
 such GPU-sharing pods by user, namespace or a combination thereof.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/gpu-support.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

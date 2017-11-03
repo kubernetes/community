@@ -506,8 +506,3 @@ target cluster, to watch changes in every target cluster etcd
 regarding the posted LRS's and if any violation from the scheduled
 number of replicase is detected the scheduling code is re-called for
 re-scheduling purposes.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/federated-replicasets.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

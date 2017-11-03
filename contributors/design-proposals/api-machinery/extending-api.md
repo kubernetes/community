@@ -196,8 +196,3 @@ Thus, listing a third-party resource can be achieved by listing the directory:
 ```
 ${standard-k8s-prefix}/third-party-resources/${third-party-resource-namespace}/${third-party-resource-name}/${resource-namespace}/
 ```
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/extending-api.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

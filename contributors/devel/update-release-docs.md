@@ -106,7 +106,3 @@ docs go away.
 
 If the change added or deleted a doc, then update the corresponding `_includes/nav_vX.Y.html` file as well.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/update-release-docs.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

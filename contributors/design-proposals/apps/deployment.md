@@ -257,8 +257,3 @@ Apart from the above, we want to add support for the following:
 
 - https://github.com/kubernetes/kubernetes/issues/1743 has most of the
   discussion that resulted in this proposal.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/deployment.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

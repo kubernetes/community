@@ -128,8 +128,3 @@ register itself with a given taint when it first contacts the API server. Given
 that, a kubelet could register itself with a given taint such as
 “component=kubelet”, and a kubelet pod could exist that has a toleration to that
 taint, ensuring it is the only pod the “bootstrap” kubelet runs.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/self-hosted-kubelet.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -494,7 +494,3 @@ parameters:
 # Cloud Providers
 
 Since the `volume.alpha.kubernetes.io/storage-class` is in use a `StorageClass` must be defined to support provisioning.  No default is assumed as before.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/volume-provisioning.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

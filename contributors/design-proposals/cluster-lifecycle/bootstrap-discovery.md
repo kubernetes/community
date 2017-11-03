@@ -242,7 +242,3 @@ The binding of the `system:bootstrappers` (or similar) group to the ability to s
  - Initial proposal ([@jbeda](https://github.com/jbeda)): [link](https://github.com/kubernetes/community/blob/cb9f198a0763e0a7540cdcc9db912a403ab1acab/contributors/design-proposals/bootstrap-discovery.md)
  - v1.6 updates ([@jbeda](https://github.com/jbeda)): [link](https://github.com/kubernetes/community/blob/d8ce9e91b0099795318bb06c13f00d9dad41ac26/contributors/design-proposals/bootstrap-discovery.md)
  - v1.8 updates ([@luxas](https://github.com/luxas))
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/super-simple-discovery-api.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

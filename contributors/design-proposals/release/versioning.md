@@ -126,7 +126,3 @@ to go from 1.x to 1.x+y before they go to 2.x.
 There is a separate question of how to track the capabilities of a kubelet to
 facilitate rolling upgrades. That is not addressed here.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/versioning.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

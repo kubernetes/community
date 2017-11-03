@@ -297,8 +297,3 @@ spec:
 ## References
 
 - https://github.com/kubernetes/kubernetes/issues/22469 tracks network policy in kubernetes.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/network-policy.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

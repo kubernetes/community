@@ -310,8 +310,3 @@ to manage labels individually.
 This allows the volume plugins to determine when they do and don't want this type of support from
 the Kubelet, and allows the criteria each plugin uses to evolve without changing the Kubelet.
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/selinux.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

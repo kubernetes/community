@@ -219,7 +219,3 @@ version and the watch cache test is skipped.
 ## End-to-End tests
 
 Please refer to [End-to-End Testing in Kubernetes](e2e-tests.md).
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/testing.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

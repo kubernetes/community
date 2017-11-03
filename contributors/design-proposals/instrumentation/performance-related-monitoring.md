@@ -110,7 +110,3 @@ We should monitor other aspects of the system, which may indicate saturation of 
 Basic ideas:
 - queue length for queues in the system,
 - wait time for WaitGroups.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/performance-related-monitoring.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

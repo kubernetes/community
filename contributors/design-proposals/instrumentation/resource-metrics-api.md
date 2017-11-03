@@ -146,6 +146,3 @@ Depending on the further requirements the following features may be added:
 - possibility to query for window sizes and aggregation functions (though single window size/aggregation function per request)
 - cluster level metrics
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/resource-metrics-api.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

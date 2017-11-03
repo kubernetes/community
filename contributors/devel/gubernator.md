@@ -134,7 +134,3 @@ How to contribute (see https://github.com/kubernetes/test-infra/blob/master/gube
 * Improve UI
 	* Have separate folders of logs in rows instead of in one long column
 	* Improve interface for adding additional features (maybe instead of textbox and checkbox, have chips)
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/gubernator.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

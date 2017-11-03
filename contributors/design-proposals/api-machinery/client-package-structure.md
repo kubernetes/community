@@ -307,7 +307,3 @@ that client will not have to change their code until they are deliberately
 upgrading their import. We probably will want to generate some sort of stub test
 with a clientset, to ensure that we don't change the interface.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/client-package-structure.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->
