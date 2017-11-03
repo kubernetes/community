@@ -1,5 +1,3 @@
-<!-- BEGIN MUNGE: GENERATED_TOC -->
-
 - [Deploy through CLI](#deploy-through-cli)
   - [Motivation](#motivation)
   - [Requirements](#requirements)
@@ -16,7 +14,6 @@
     - [Pause Deployments](#pause-deployments)
     - [Perm-failed Deployments](#perm-failed-deployments)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 # Deploy through CLI
 

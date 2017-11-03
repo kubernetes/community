@@ -1,7 +1,6 @@
 # Testing guide
 
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Testing guide](#testing-guide)
   - [Unit tests](#unit-tests)
@@ -19,7 +18,6 @@
     - [Run a specific integration test](#run-a-specific-integration-test)
   - [End-to-End tests](#end-to-end-tests)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 This assumes you already read the [development guide](development.md) to
 install go, godeps, and configure your git client.  All command examples are

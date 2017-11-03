@@ -1,7 +1,5 @@
 # Table of Contents
 
-<!-- BEGIN MUNGE: GENERATED_TOC -->
-
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Adding a new docs collection for a release](#adding-a-new-docs-collection-for-a-release)
@@ -10,7 +8,6 @@
   - [Updating docs in release branch](#updating-docs-in-release-branch)
   - [Updating docs in gh-pages branch](#updating-docs-in-gh-pages-branch)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 # Overview
 

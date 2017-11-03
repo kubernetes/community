@@ -4,7 +4,6 @@
 [djmm@google.com](mailto:djmm@google.com)<BR>
 Last Updated: 2016-04-06
 
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Kubernetes Release Notes](#kubernetes-release-notes)
   - [Objective](#objective)
@@ -22,7 +21,6 @@ Last Updated: 2016-04-06
   - [Work estimates](#work-estimates)
   - [Caveats / Considerations](#caveats--considerations)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## Objective
 

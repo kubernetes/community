@@ -3,7 +3,6 @@
 Updated: 5/3/2016
 
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Coding Conventions](#coding-conventions)
   - [Code conventions](#code-conventions)
@@ -11,7 +10,6 @@ Updated: 5/3/2016
   - [Directory and file conventions](#directory-and-file-conventions)
   - [Coding advice](#coding-advice)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## Code conventions
 

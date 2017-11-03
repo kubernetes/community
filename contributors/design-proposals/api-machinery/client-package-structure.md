@@ -1,5 +1,3 @@
-<!-- BEGIN MUNGE: GENERATED_TOC -->
-
 - [Client: layering and package structure](#client-layering-and-package-structure)
   - [Desired layers](#desired-layers)
     - [Transport](#transport)
@@ -12,7 +10,6 @@
   - [Package Structure](#package-structure)
   - [Client Guarantees (and testing)](#client-guarantees-and-testing)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 # Client: layering and package structure
 

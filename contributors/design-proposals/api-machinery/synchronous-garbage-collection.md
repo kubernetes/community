@@ -1,5 +1,4 @@
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Overview](#overview)
 - [API Design](#api-design)
@@ -14,7 +13,6 @@
 - [Unhandled cases](#unhandled-cases)
 - [Implications to existing clients](#implications-to-existing-clients)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 # Overview
 
