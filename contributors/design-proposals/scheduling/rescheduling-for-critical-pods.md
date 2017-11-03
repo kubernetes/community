@@ -82,7 +82,3 @@ The rescheduler control loop will be as follow:
   * wait until scheduler will schedule the critical addon
 * if there is no more critical addons for which we can help, ensure there is no node with the taint
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/rescheduling-for-critical-pods.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

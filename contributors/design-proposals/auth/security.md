@@ -212,7 +212,3 @@ a separate component that can delete bindings but not create them). The
 scheduler may need read access to user or project-container information to
 determine preferential location (underspecified at this time).
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/security.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

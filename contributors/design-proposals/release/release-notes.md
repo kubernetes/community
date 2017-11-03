@@ -186,7 +186,3 @@ Other notable changes
   * For now contributors should simply use the first PR that enables a new
     feature by default.  We'll revisit if this does not work well.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/release-notes.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

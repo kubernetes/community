@@ -415,7 +415,3 @@ Summary of significant revisions to this document:
     * Specify ControllerRef-related behavior changes upon upgrade/downgrade.
   * [Implementation](#implementation)
     * List all work to be done and mark items already completed as of this edit.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/controller-ref.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

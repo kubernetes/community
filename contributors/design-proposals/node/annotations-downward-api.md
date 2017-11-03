@@ -62,6 +62,3 @@ env:
 In general, this environment downward API part will be implemented in the same
 place as the other metadata - as a label conversion function.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/annotations-downward-api.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

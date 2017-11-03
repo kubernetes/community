@@ -26,7 +26,3 @@ and tips that our developers have found useful.
 - Consider making a separate Go tree for each project, which can make overlapping dependency management much easier. Remember to set the `$GOPATH` correctly! Consider [scripting](https://gist.github.com/timstclair/17ca792a20e0d83b06dddef7d77b1ea0) this.
 - Emacs users - setup [go-mode](https://github.com/dominikh/go-mode.el).
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/go-code.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -154,8 +154,3 @@ result in a failure during server certificate validation. This is acknowledged
 and left for future consideration. For the time being, users and administrators
 might need to ensure that the server certificates also mentions the Kubernetes
 name as an alternate host name.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/service-external-name.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

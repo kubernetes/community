@@ -334,8 +334,3 @@ according to `KubeReserved`.
 The community should be notified that an update to schedulers is recommended, but if a scheduler is
 not updated it falls under the above case of "scheduler is not allocatable-resources aware".
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/node-allocatable.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

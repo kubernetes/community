@@ -260,8 +260,3 @@ can potentially become a very thin daemon.
 
  * Metrics: [#27097](https://issues.k8s.io/27097)
  * Log management: [#24677](https://issues.k8s.io/24677)
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/container-runtime-interface-v1.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

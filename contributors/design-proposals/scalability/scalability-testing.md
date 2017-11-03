@@ -66,7 +66,3 @@ as not to collide.
 
 Complications may currently exist around container tracking and ownership in docker.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/scalability-testing.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

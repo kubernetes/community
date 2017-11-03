@@ -90,7 +90,3 @@ The simplest way is to comment `/retest`.
 
 Any pushes of new code to the PR will automatically trigger a new test. No human
 interraction is required. Note that if the PR has a `lgtm` label, it will be removed after the pushes.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/automation.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

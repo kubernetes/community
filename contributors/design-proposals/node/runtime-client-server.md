@@ -200,7 +200,3 @@ This proposal is first filed by [@brendandburns](https://github.com/brendandburn
 * [kubernetes/13709](https://github.com/kubernetes/kubernetes/pull/13079)
 * [New container runtime interface](https://github.com/kubernetes/kubernetes/pull/25899)
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/runtime-client-server.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

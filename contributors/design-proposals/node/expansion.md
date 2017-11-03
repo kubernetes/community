@@ -410,8 +410,3 @@ spec:
           value: "http://gitserver.$(POD_NAMESPACE):$(SERVICE_PORT)"
   restartPolicy: Never
 ```
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/expansion.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

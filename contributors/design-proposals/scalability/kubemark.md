@@ -151,7 +151,3 @@ In the future we want to add following capabilities to the Kubemark system:
 - replaying real traffic reconstructed from the recorded Events stream,
 - simulating scraping things running on Nodes through Master proxy.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/kubemark.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

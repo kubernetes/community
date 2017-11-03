@@ -286,7 +286,3 @@ reference from the PV and change the PVs status to 'Released'.
 Admins can script the recycling of released volumes. Future dynamic provisioners
 will understand how a volume should be recycled.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/persistent-storage.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -70,8 +70,3 @@ to disable the shared PID namespace in the subsequent release.
 
 
 [1]: https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/pod-pid-namespace.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

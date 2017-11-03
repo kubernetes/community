@@ -137,8 +137,3 @@ the same time, we can introduce an additional etcd event type: EtcdResync
   However, this might turn out to be unnecessary optimization if apiserver
   will always keep up (which is possible in the new design). We will work
   out all necessary details at that point.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/apiserver-watch.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

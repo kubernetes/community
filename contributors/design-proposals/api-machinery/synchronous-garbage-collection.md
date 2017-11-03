@@ -167,7 +167,3 @@ To make the new kubectl compatible with the 1.4 and earlier masters, kubectl nee
 1.4 `kubectl delete rc/rs` uses `DeleteOptions.OrphanDependents=true`, which is going to be converted to `DeletePropagationBackground` (see [API Design](#api-changes)) by a 1.5 master, so its behavior keeps the same.
 
 Pre 1.4 `kubectl delete` uses `DeleteOptions.OrphanDependents=nil`, so does the 1.4 `kubectl delete` for resources other than rc and rs. The option is going to be converted to `DeletePropagationDefault` (see [API Design](#api-changes)) by a 1.5 master, so these commands behave the same as when working with a 1.4 master.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/synchronous-garbage-collection.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

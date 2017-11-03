@@ -29,7 +29,3 @@ If you have the fswatch utility installed, you can have it monitor the file
 system and automatically rebuild when files have changed. Just do a
 `make watch`.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/clustering/README.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

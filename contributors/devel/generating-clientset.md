@@ -43,8 +43,3 @@ If you are contributing code to k8s.io/kubernetes, try to use the generated clie
 If you need a stable Go client to build your own project, please refer to the [client-go repository](https://github.com/kubernetes/client-go).
 
 We are migrating k8s.io/kubernetes to use client-go as well, see issue [#35159](https://github.com/kubernetes/kubernetes/issues/35159).
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/generating-clientset.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -165,7 +165,3 @@ this by distributing deployment scripts via a docker image so that user will run
 
 ```docker run gcr.io/google_containers/deploy_kubernetes:v1.2 up --num-nodes=3 --provider=aws```
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/cluster-deployment.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

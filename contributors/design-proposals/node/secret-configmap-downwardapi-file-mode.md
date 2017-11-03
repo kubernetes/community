@@ -180,7 +180,3 @@ The are two downside:
    the file permissions will be the same on all. This is already the case for
    Key mappings and doesn't seem like a big issue either.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/secret-configmap-downwarapi-file-mode.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -363,8 +363,3 @@ storage.
 
 At this point, all content associated with that Namespace, and the Namespace
 itself are gone.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/namespaces.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

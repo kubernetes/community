@@ -349,9 +349,3 @@ In case the garbage collector is mistakenly deleting objects, we should provide 
     * Before an object is deleted from the registry, the API server clears fields like DeletionTimestamp, then creates the object in /archive and sets a TTL.
     * Add a `kubectl restore` command, which takes a resource/name pair as input, creates the object with the spec stored in the /archive, and deletes the archived object.
 
-
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/garbage-collection.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -194,8 +194,3 @@ redundant syncs.
     * Instruct pod workers to set up a wake-up call if syncing failed, so that
       it can retry.
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/pod-lifecycle-event-generator.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

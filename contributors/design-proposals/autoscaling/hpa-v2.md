@@ -285,7 +285,3 @@ come from the [custom metrics API](custom-metrics-api.md), which is
 an adapter API which sources metrics directly from the monitoring
 pipeline.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/hpa-v2.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

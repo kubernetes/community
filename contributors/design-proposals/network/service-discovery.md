@@ -60,10 +60,3 @@ The fragment below is taken from the service section of the kubernetes.json were
 
 Five service annotations are proposed as a standard way to describe a service endpoint. These five annotation are promoted as a Kubernetes standard, so that services can be discovered and a service catalog can be build to facilitate service consumers.
 
-
-
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/service-discovery.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

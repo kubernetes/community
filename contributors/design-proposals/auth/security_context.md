@@ -186,7 +186,3 @@ privileged. Contexts that attempt to define a UID or SELinux options will be
 denied by default. In the future the admission plugin will base this decision
 upon configurable policies that reside within the [service account](http://pr.k8s.io/2297).
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/security_context.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -227,7 +227,3 @@ The PR builder runs tests against the images listed in [jenkins-pull.properties]
 
 The post submit tests run against the images listed in [jenkins-ci.properties](https://github.com/kubernetes/kubernetes/tree/master/test/e2e_node/jenkins/jenkins-ci.properties)
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/e2e-node-tests.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

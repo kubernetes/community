@@ -210,9 +210,3 @@ Mesos is described [here](https://www.usenix.org/legacy/event/nsdi11/tech/full_p
 Omega is described [here](http://research.google.com/pubs/pub41684.html).
 Borg is described [here](http://research.google.com/pubs/pub43438.html).
 
-
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/mesos-style.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

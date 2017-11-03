@@ -580,8 +580,3 @@ Capacity in MB = 1638400 * 512 * 128 bytes = 100 GB
 
 * If you use a non-default location for docker storage, change `/var/lib/docker` in the examples to your storage location.
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/disk-accounting.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -204,7 +204,3 @@ issues are work we would merge into the release if it gets done, but we wouldn't
 block the release on it. A few days before release, we will probably move all
 `priority/important-soon` and `priority/important-longterm` bugs out of
 that milestone in bulk.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/issues.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

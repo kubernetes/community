@@ -93,6 +93,3 @@ Updating the `BUILD` file for a package will be required when:
 ## Contacts
 For help or discussion, join the [#bazel](https://kubernetes.slack.com/messages/bazel)
 channel on Kubernetes Slack.
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/bazel.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

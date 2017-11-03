@@ -231,6 +231,3 @@ will be in the same version.
 * Apiserver talks only to a local etcd replica which will be in a compatible version
 * We assume we will introduce this setup after we upgrade to etcd v3 so we don't need to cover upgrading database.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/ha_master.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

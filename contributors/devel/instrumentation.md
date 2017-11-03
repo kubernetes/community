@@ -213,8 +213,3 @@ metric could look as follows:
 kube_pod_restarts and on(namespace, pod) kube_pod_info{uuid=”ABC”}
 ```
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/instrumentation.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

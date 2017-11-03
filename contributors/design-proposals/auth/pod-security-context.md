@@ -368,7 +368,3 @@ E2E test cases will be added to test the correct determination of the security c
 1.  The Kubelet will use the new fields on the `PodSecurityContext` for host namespace control
 2.  The Kubelet will be modified to correctly implement the backward compatibility and effective
     security context determination defined here
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/pod-security-context.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

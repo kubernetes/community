@@ -401,7 +401,3 @@ Some OS distributions will fix this bug in versions of docker <= 1.0.9, so opera
 be aware of how their version of `docker` was packaged when using this feature.
 
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/kubelet-systemd.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

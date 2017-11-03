@@ -195,7 +195,3 @@ Initially therefore, the GCE changes will be to:
 1. change the kubernetes cloud provider to iterate through relevant zones when resolving items
 1. tag GCE PD volumes with the appropriate zone information
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/federation-lite.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

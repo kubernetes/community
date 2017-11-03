@@ -894,7 +894,3 @@ is verbose.  For StatefulSet, this is less of a problem.
 This differs from StatefulSet in that StatefulSet uses names and not indexes. StatefulSet is
 intended to support ones to tens of things.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/indexed-job.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

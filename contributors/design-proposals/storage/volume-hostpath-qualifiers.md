@@ -144,7 +144,3 @@ I don't think this problem is severe enough that we need to push to solve it;
 rather I think we can simply accept this minor race, and if runtimes eventually
 allow this we can begin to leverage them.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/volume-hostpath-qualifiers.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

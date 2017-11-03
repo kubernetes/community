@@ -374,7 +374,3 @@ Below are the possible future extensions to the auditing mechanism:
 * Define how filters work. They should enable dropping sensitive fields from the request/response/storage objects.
 * Allow setting a unique identifier which allows matching audit events across apiserver and federated servers.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/sysctl.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

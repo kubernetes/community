@@ -229,7 +229,3 @@ Unreachable nodes are evacuated and then repopulated upon rejoining [Disruptive]
 Note that opening issues for specific better tooling is welcome, and
 code implementing that tooling is even more welcome :-).
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/writing-good-e2e-tests.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

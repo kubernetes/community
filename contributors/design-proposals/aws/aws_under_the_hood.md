@@ -303,8 +303,3 @@ These scripts are responsible for mounting and formatting volumes, downloading
 Salt and Kubernetes from the S3 bucket, and then triggering Salt to actually
 install Kubernetes.
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/aws_under_the_hood.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->
