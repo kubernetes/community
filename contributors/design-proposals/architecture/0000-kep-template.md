@@ -115,7 +115,7 @@ within the wider Kubernetes community.
 Merging a change to source control is a crucial, but not final, milestone in
 the implementation of a KEP. Enhancements need to be explained to the Kubernetes
 community. The `Guide-level Explaination` section should be used to explain a
-KEP to another Kubernaut after implementation. Excellent guidance can be
+KEP to another Kubernetes after implementation. Excellent guidance can be
 found in the Rust RFC [guide-level explanation][] instructions.
 
 
