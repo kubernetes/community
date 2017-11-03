@@ -66,8 +66,7 @@ This document defines the cluster registry API. It is an evolution of the
 [current Federation cluster API](https://github.com/kubernetes/kubernetes/blob/master/federation/apis/federation/types.go#L99),
 and is designed more specifically for the "cluster registry" use case in
 contrast to the Federation `Cluster` object, which was made for the
-active-control-plane Federation. All the names in the API are tentative and
-subject to change if we find better alternatives to describe those entities.
+active-control-plane Federation.
 
 The API is a Kubernetes-style REST API that supports the following operations:
 
