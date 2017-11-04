@@ -186,7 +186,7 @@ The recommended order on kubernetes.io for `--admission-control` will be: `Mutat
 
 Validation continues to happen after all the admission controllers (e.g. after mutating webhooks, static admission controllers, and non-mutating admission controllers.)
 
-**TODO**: we should move ResourceQuota after Validation, e.g. as described in #1137.  However, this is a longstanding bug and likely a larger change than can be done in 1.9, and should be revisted along with a larger quota redesign.  Therefore, it is not a requirement for Beta,
+**TODO**: we should move ResourceQuota after Validation, e.g. as described in #1137.  However, this is a longstanding bug and likely a larger change than can be done in 1.9, and should be revisited along with a larger quota redesign.  Therefore, it is not a requirement for Beta.
 
 
 ## Parallel vs Serial 
