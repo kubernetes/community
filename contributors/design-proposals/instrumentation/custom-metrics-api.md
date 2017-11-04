@@ -307,7 +307,7 @@ repository will most likely also house other metrics-related APIs for
 Kubernetes (e.g. historical metrics API definitions, the resource metrics
 API definitions, etc).
 
-Note that there will not be a canonical implemenation of the custom
+Note that there will not be a canonical implementation of the custom
 metrics API under Kubernetes, just the types and clients.  Implementations
 will be left up to the monitoring pipelines.
 
