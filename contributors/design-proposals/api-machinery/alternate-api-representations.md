@@ -80,7 +80,7 @@ a real API group.
 * We wish to support retrieving object representations in multiple schemas - JSON for
   simple clients and Protobuf for clients concerned with efficiency.
 * Most clients will wish to retrieve a newer format, but for older servers will desire
-  to fall back to the implict resource represented by the endpoint.
+  to fall back to the implicit resource represented by the endpoint.
   * Over time, clients may need to request results in multiple API group versions
     because of breaking changes (when we introduce v2, clients that know v2 will want
     to ask for v2, then v1)
