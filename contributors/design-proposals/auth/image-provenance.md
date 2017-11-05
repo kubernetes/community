@@ -179,7 +179,7 @@ to changes in policy, versus keeping existing services running.  The two models 
   images.
 - change a policy and assume that transition to new image happens faster than the existing pods decay.
 
-## Ubernetes
+## Kubernetes
 
 If two clusters share an image policy backend, then they will have the same policies.
 
