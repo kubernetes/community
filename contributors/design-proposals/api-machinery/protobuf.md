@@ -426,7 +426,7 @@ in other languages to generate easily.
 
 Any errors in the generation process are considered fatal and must be resolved
 early (being unable to identify a field type for conversion, duplicate fields,
-duplicate tags, protoc errors, etc). The conversion fuzzer is used to ensure
+duplicate tags, protoc errors, etc). The conversion fuzzifier is used to ensure
 that a Go struct can be round-tripped to protobuf and back, as we do for JSON
 and conversion testing.
 
