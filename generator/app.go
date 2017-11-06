@@ -20,6 +20,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"net/url"
 	"os"
 	"path/filepath"
 	"sort"
@@ -60,8 +61,8 @@ type Lead struct {
 // Meeting represents a regular meeting for a group.
 type Meeting struct {
 	Day       string
-	UTC       string
-	PST       string
+	Time      string
+	TZ        string `yaml:"tz"`
 	Frequency string
 }
 
@@ -153,9 +154,22 @@ func getExistingContent(path string) (string, error) {
 	return strings.Join(captured, "\n"), nil
 }
 
+var funcMap template.FuncMap = template.FuncMap{
+	"tzUrlEncode": tzUrlEncode,
+}
+
+// tzUrlEncode returns an url encoded string without the + shortcut. This is
+// required as the timezone conversion site we are using doesn't recognize + as
+// a valid url escape character.
+func tzUrlEncode(tz string) string {
+	return strings.Replace(url.QueryEscape(tz), "+", "%20", -1)
+}
+
 func writeTemplate(templatePath, outputPath string, data interface{}) error {
 	// set up template
-	t, err := template.ParseFiles(templatePath, filepath.Join(baseGeneratorDir, templateDir, headerTemplate))
+	t, err := template.New(filepath.Base(templatePath)).
+		Funcs(funcMap).
+		ParseFiles(templatePath, filepath.Join(baseGeneratorDir, templateDir, headerTemplate))
 	if err != nil {
 		return err
 	}

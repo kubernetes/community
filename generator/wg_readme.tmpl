@@ -4,7 +4,7 @@
 {{ .MissionStatement }}
 ## Meetings
 {{- range .Meetings }}
-* [{{.Day}}s at {{.UTC}} UTC]({{$.MeetingURL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.UTC}}&tz=UTC).
+* [{{.Day}}s at {{.Time}} {{.TZ}}]({{$.MeetingURL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.Time}}&tz={{.TZ | tzUrlEncode}}).
 {{- end }}
 
 {{ if .MeetingArchiveURL -}}
