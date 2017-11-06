@@ -26,7 +26,7 @@ but will not allow tests to be run against their PRs automatically nor allow the
 ### Requirements for outside collaborators
 
 - Working on some contribution to the project that would benefit from
-  the abillity to have PRs or Issues to be assigned to the contributor
+  the ability to have PRs or Issues to be assigned to the contributor
 - Have the support of 1 member
   - Find a member who will sponsor you
   - Send an email to kubernetes-membership@googlegroups.com
