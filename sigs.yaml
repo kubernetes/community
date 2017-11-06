@@ -16,8 +16,8 @@ sigs:
       github: deads2k
     meetings:
     - day: Wednesday
-      time: "18:00"
-      tz: "UTC"
+      time: "11:00"
+      tz: "PT (Pacific Time)"
       frequency: biweekly
     meeting_url: https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig
     meeting_archive_url: https://goo.gl/x5nWrF
