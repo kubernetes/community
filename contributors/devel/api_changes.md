@@ -544,6 +544,10 @@ Once you added the annotations, generate the client with
 hack/update-codegen.sh
 ```
 
+Note that you can use the optional `// +groupGoName=` to specify a CamelCase
+custom Golang identifier to de-conflict e.g. `policy.authorization.k8s.io` and
+`policy.k8s.io`. These two would both map to `Policy()` in clientsets.
+
 client-gen is flexible. See [this document](generating-clientset.md) if you need
 client-gen for non-kubernetes API.
 
