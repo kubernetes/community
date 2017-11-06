@@ -1,5 +1,15 @@
 # Kubernetes Code Generators
 
+## Background
+
+Original issue:
+
+- https://github.com/kubernetes/kubernetes/issues/53524
+
+Existing bash script for running some code generators:
+
+- https://github.com/kubernetes/kubernetes/pull/52186
+
 Kubernetes provides a collection of code generators to assist with developing APIs.  These code generators generate
 useful libraries such as clients, openapi definitions, copying go structs, etc.
 
