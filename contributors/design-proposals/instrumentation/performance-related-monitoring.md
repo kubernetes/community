@@ -43,7 +43,7 @@ Basic ideas:
 - number of Pods/ReplicationControllers/Services in the cluster
 - number of running replicas of master components (if they are replicated)
 - current elected master of ectd cluster (if running distributed version)
-- nuber of master component restarts
+- number of master component restarts
 - number of lost Nodes
 
 ### Logging monitoring
