@@ -100,43 +100,45 @@ integration are necessary.  The remaining areas can be handled in beta and GA
 phases.
 
 ### User-facing API
-This new binding behavior will apply to all unbound PVCs and can be controlled
-through install-time configuration passed to the scheduler and controller-manager.
+In alpha, this feature is controlled by a feature gate, VolumeScheduling, and
+must be configured in the kube-scheduler and kube-controller-manager.
 
-In alpha, this configuration can be controlled by a feature gate,
-`VolumeTopologyScheduling`.
-
-#### Alternative
-An alternative approach is to only trigger the new behavior only for volumes that
-have topology constraints.  A new annotation can be added to the StorageClass to
-indicate that its volumes have constraints and will need to use the new
-topology-aware scheduling logic.  The PV controller checks for this annotation
-every time it handles an unbound PVC, and will delay binding if it's set.
+A new StorageClass field will be added to control the volume binding behavior.
 
 ```
-// Value is “true” or “false”.  Default is false.
-const AlphaVolumeTopologySchedulingAnnotation = “volume.alpha.kubernetes.io/topology-scheduling”
+type StorageClass struct {
+    ...
+
+    VolumeBindingMode *VolumeBindingMode
+}
+
+type VolumeBindingMode string
+
+const (
+    VolumeBindingImmediate VolumeBindingMode = "Immediate"
+    VolumeBindingWaitForFirstConsumer VolumeBindingMode = "WaitForFirstConsumer"
+)
 ```
 
-While this approach can let us introduce the new behavior gradually, it has a
-few downsides:
-* StorageClass will be required to use this new logic, even if dynamic
+`VolumeBindingImmediate`  is the default and current binding method.
+
+This approach allows us to introduce the new binding behavior gradually and to
+be able to maintain backwards compatibility without deprecation of previous
+behavior.  However, it has a few downsides:
+* StorageClass will be required to get the new binding behavior, even if dynamic
 provisioning is not used (in the case of local storage).
 * We have to maintain two different paths for volume binding.
 * We will be depending on the storage admin to correctly configure the
-StorageClasses.
-
-For those reasons, we prefer to switch the behavior for all unbound PVCs and
-clearly communicate these changes to the community before changing the behavior
-by default in GA.
+StorageClasses for the volume types that need the new binding behavior.
+* User experience can be confusing because PVCs could have different binding
+behavior depending on the StorageClass configuration.  We will mitigate this by
+adding a new PVC event to indicate if binding will follow the new behavior.
 
 ### Integrating binding with scheduling
 For the alpha phase, the focus is on static provisioning of PVs to support
 persistent local storage.
 
-TODO: flow chart
-
-The proposed new workflow for volume binding is:
+For the new volume binding mode, the proposed new workflow is:
 1. Admin statically creates PVs and/or StorageClasses.
 2. User creates unbound PVC and there are no prebound PVs for it.
 3. **NEW:** PVC binding and provisioning is delayed until a pod is created that
@@ -158,12 +160,14 @@ mark the PVs with the chosen PVCs.
 9. **NEW:** If PVC binding or provisioning is required, we do NOT AssumePod.
 Instead, a new bind function, BindPVCs, will be called asynchronously, passing
 in the selected node.  The bind function will prebind the PV to the PVC, or
-trigger dynamic provisioning, and then wait until the PVCs are bound
-successfully or encounter failure.  Then, it always sends the Pod through the
+trigger dynamic provisioning.  Then, it always sends the Pod through the
 scheduler again for reasons explained later.
 10. When a Pod makes a successful scheduler pass once all PVCs are bound, the
 scheduler assumes and binds the Pod to a Node.
 11. Kubelet starts the Pod.
+
+This diagram depicts the new additions to the default scheduler:
+![alt text](volume-topology-scheduling.png)
 
 This new workflow will have the scheduler handle unbound PVCs by choosing PVs
 and prebinding them to the PVCs.  The PV controller completes the binding
@@ -171,30 +175,32 @@ transaction, handling it as a prebound PV scenario.
 
 Prebound PVCs and PVs will still immediately be bound by the PV controller.
 
-One important point to note is that for the alpha phase, manual recovery is
-required in following error conditions:
+Manual recovery by the user will be required in following error conditions:
 * A Pod has multiple PVCs, and only a subset of them successfully bind.
-* The scheduler chose a PV and prebound it, but the PVC could not be bound.
 
-In both of these scenarios, the primary cause for these errors is if a user
-prebinds other PVCs to a PV that the scheduler chose.  Some workarounds to
+The primary cause for these errors is if a user or external entity
+binds a PV between the time that the scheduler chose the PV and when the
+scheduler actually made the API update.  Some workarounds to
 avoid these error conditions are to:
 * Prebind the PV instead.
 * Separate out volumes that the user prebinds from the volumes that are
 available for the system to choose from by StorageClass.
 
 #### PV Controller Changes
-When the feature gate is enabled, the PV controller needs to skip binding and
-provisioning all unbound PVCs that don’t have prebound PVs, and let it come
-through the scheduler path.  This is the block in `syncUnboundClaim` where
-`claim.Spec.VolumeName == “”` and there is no PV that is prebound to the PVC.
+When the feature gate is enabled, the PV controller needs to skip binding
+unbound PVCs with VolumBindingWaitForFirstConsumer and no prebound PVs
+to let it come through the scheduler path.
+
+Dynamic provisioning will also be skipped if
+VolumBindingWaitForFirstConsumer is set.  The scheduler will signal to
+the PV controller to start dynamic provisioning by setting the
+`annStorageProvisioner` annotation in the PVC.
 
 No other state machine changes are required.  The PV controller continues to
 handle the remaining scenarios without any change.
 
-The methods to find matching PVs for a claim, prebind PVs, and to invoke and
-handle dynamic provisioning need to be refactored for use by the new scheduler
-functions.
+The methods to find matching PVs for a claim and prebind PVs need to be
+refactored for use by the new scheduler functions.
 
 #### Scheduler Changes
 
@@ -210,7 +216,7 @@ MatchUnboundPVCs(pod *v1.Pod, node *v1.Node) (canBeBound bool, err error)
 decreasing requested capacity.
 3. Walk through all the PVs.
 4. Find best matching PV for the PVC where PV topology is satisfied by the Node.
-5. Temporarily cache this PV in the PVC object, keyed by Node, for fast
+5. Temporarily cache this PV choice for the PVC per Node, for fast
 processing later in the priority and bind functions.
 6. Return true if all PVCs are matched.
 7. If there are still unmatched PVCs, check if dynamic provisioning is possible.
@@ -218,8 +224,6 @@ For this alpha phase, the provisioner is not topology aware, so the predicate
 will just return true if there is a provisioner specified in the StorageClass
 (internal or external).
 8. Otherwise return false.
-
-TODO: caching format and details
 
 ##### Priority
 After all the predicates run, there is a reduced set of Nodes that can fit a
@@ -256,10 +260,10 @@ AssumePVCs(pod *v1.Pod, node *v1.Node) (pvcBindingRequired bool, err error)
     1. Get the cached matching PVs for the PVCs on that Node.
     2. Validate the actual PV state.
     3. Mark PV.ClaimRef in the PV cache.
+    4. Cache the PVs that need binding in the Pod object.
 3. For in-tree and external dynamic provisioning:
-    1. Nothing.
+    1. Cache the PVCs that need provisioning in the Pod object.
 4. Return true.
-
 
 ##### Bind
 If AssumePVCs returns pvcBindingRequired, then the BindPVCs function is called
@@ -276,30 +280,20 @@ BindUnboundPVCs(pod *v1.Pod, node *v1.Node) (err error)
 1. For static PV binding:
     1. Prebind the PV by updating the `PersistentVolume.ClaimRef` field.
     2. If the prebind fails, revert the cache updates.
-    3. Otherwise, wait for the PVCs to be bound, PVC/PV object is deleted, or
-PV.ClaimRef field is cleared
-2. For in-tree dynamic provisioning:
-    1. Make the provision call, which will create a new PV object that is
-prebound to the PVC.
-    2. If provisioning is successful, wait for the PVCs to be bound, PVC/PV
-object is deleted, or PV.ClaimRef field is cleared
-3. For external provisioning:
-    1. Set the annotation for external provisioners.
-4. Send Pod back through scheduling, regardless of success or failure.
+2. For in-tree and external dynamic provisioning:
+    1. Set `annStorageProvisioner` on the PVC.
+3. Send Pod back through scheduling, regardless of success or failure.
     1. In the case of success, we need one more pass through the scheduler in
 order to evaluate other volume predicates that require the PVC to be bound, as
 described below.
     2. In the case of failure, we want to retry binding/provisioning.
 
-Note that for external provisioning, we do not wait for the PVCs to be bound, so
-the Pod will be sent through scheduling repeatedly until the PVCs are bound.
-This is because there is no function call for external provisioning, so if we
-did wait, we could be waiting forever for the PVC to bind.  It’s possible that
-in the meantime, a user could create a PV that satisfies the PVC and doesn’t
-need the external provisioner anymore.
-
 TODO: pv controller has a high resync frequency, do we need something similar
 for the scheduler too
+
+##### Access Control
+Scheduler will need PV update permissions for prebinding static PVs, and PVC
+modify permissions for triggering dynamic provisioning.
 
 ##### Pod preemption considerations
 The MatchUnboundPVs predicate does not need to be re-evaluated for pod
@@ -344,6 +338,33 @@ This is a new predicate added in 1.7 to handle the new PV node affinity.  It
 evaluates the node affinity against the node’s labels to determine if the pod
 can be scheduled on that node.  If the volume is not bound, this predicate can
 be ignored, as the binding logic will take into account the PV node affinity.
+
+##### Caching
+There are two new caches needed in the scheduler.
+
+The first cache is for handling the PV/PVC API binding updates occurring
+asynchronously with the main scheduler loop.  `AssumePVCs` needs to store
+the updated API objects before `BindUnboundPVCs` makes the API update, so
+that future binding decisions will not choose any assumed PVs.  In addition,
+if the API update fails, the cached updates need to be reverted and restored
+with the actual API object.  The cache will return either the cached-only
+object, or the informer object, whichever one is latest.  Informer updates
+will always override the cached-only object.  The new predicate and priority
+functions must get the objects from this cache intead of from the informer cache.
+This cache only stores pointers to objects and most of the time will only
+point to the informer object, so the memory footprint per object is small.
+
+The second cache is for storing temporary state as the Pod goes from
+predicates to priorities and then assume.  This all happens serially, so
+the cache can be cleared at the beginning of each pod scheduling loop.  This
+cache is used for:
+* Indicating if all the PVCs are already bound at the beginning of the pod
+scheduling loop.  This is to handle situations where volumes may have become
+bound in the middle of processing the predicates.  We need to ensure that
+all the volume predicates are fully run once all PVCs are bound.
+* Caching PV matches per node decisions that the predicate had made.  This is
+an optimization to avoid walking through all the PVs again in priority and
+assume functions.
 
 #### Performance and Optimizations
 Let:
@@ -415,40 +436,31 @@ Kubernetes.
 With all this complexity, the library approach is the most feasible in a single
 release time frame, and aligns better with the current Kubernetes architecture.
 
-#### Downsides/Problems
+#### Downsides
 
-##### Expanding Scheduler Scope
-This approach expands the role of the Kubernetes default scheduler to also
-schedule PVCs, and not just Pods.  This breaks some fundamental design
-assumptions in the scheduler, primarily that if `Pod.Spec.NodeName`
-is set, then the Pod is scheduled.  Users can set the `NodeName` field directly,
-and controllers like DaemonSets also currently bypass the scheduler.
+##### Unsupported Use Cases
+The following use cases will not be supported for PVCs with a StorageClass with
+VolumeBindingWaitForFirstConsumer:
+* Directly setting Pod.Spec.NodeName
+* DaemonSets
 
-For this approach to be fully functional, we need to change the scheduling
-criteria to also include unbound PVCs.
+These two use cases will bypass the default scheduler and thus will not
+trigger PV binding.
 
-TODO: details
+##### Custom Schedulers
+Custom schedulers, controllers and operators that handle pod scheduling and want
+to support this new volume binding mode will also need to handle the volume
+binding decision.
 
-A general extension mechanism is needed to support scheduling and binding other
-objects in the future.
-
-##### Impact on Custom Schedulers
-This approach is going to make it harder to run custom schedulers, controllers and
-operators if you use PVCs and PVs. This adds a requirement to schedulers
-that they also need to make the PV binding decision.
-
-There are a few ways to mitigate the impact:
+There are a few ways to take advantage of this feature:
 * Custom schedulers could be implemented through the scheduler extender
 interface.  This allows the default scheduler to be run in addition to the
 custom scheduling logic.
 * The new code for this implementation will be packaged as a library to make it
 easier for custom schedulers to include in their own implementation.
-* Ample notice of feature/behavioral deprecation will be given, with at least
-the amount of time defined in the Kubernetes deprecation policy.
 
 In general, many advanced scheduling features have been added into the default
-scheduler, such that it is becoming more difficult to run custom schedulers with
-the new features.
+scheduler, such that it is becoming more difficult to run without it.
 
 ##### HA Master Upgrades
 HA masters adds a bit of complexity to this design because the active scheduler
@@ -468,9 +480,7 @@ TODO: One way to solve this is to have some new mechanism to feature gate system
 components based on versions.  That way, the new feature is not turned on until
 all dependencies are at the required versions.
 
-For alpha, this is not concerning, but it needs to be solved by GA when the new
-functionality is enabled by default.
-
+For alpha, this is not concerning, but it needs to be solved by GA.
 
 #### Other Alternatives Considered
 
@@ -508,8 +518,8 @@ chosen Node.  A new scheduling predicate is still needed to filter and match
 the PVs (but not actually bind).
 
 The advantages are:
-* Existing scenarios where scheduler is bypassed will work the same way.
-* Custom schedulers will continue to work the same way.
+* Existing scenarios where scheduler is bypassed will work.
+* Custom schedulers will continue to work without any changes.
 * Most of the PV logic is still contained in the PV controller, simplifying HA
 upgrades.
 
@@ -548,45 +558,31 @@ In addition, the sub-scheduler is just a thought at this point, and there are no
 concrete proposals in this area yet.
 
 ### Binding multiple PVCs in one transaction
-TODO (beta): More details
+There are no plans to handle this, but a possible solution is presented here if the
+need arises in the future.  Since the scheduler is serialized, a partial binding
+failure should be a rare occurrence and would only be caused if there is a user or
+other external entity also trying to bind the same volumes.
 
-For the alpha phase, this is not required.  Since the scheduler is serialized, a
-partial binding failure should be a rare occurrence.  Manual recovery will need
-to be done for those rare failures.
+One possible approach to handle this is to rollback previously bound PVCs on
+error.  However, volume binding cannot be blindly rolled back because there could
+be user's data on the volumes.
 
-One approach to handle this is to rollback previously bound PVCs using PV taints
-and tolerations.  The details will be handled as a separate feature.
-
-For rollback, PersistentVolumes will have a new status to indicate if it's clean
-or dirty.  For backwards compatibility, a nil value is defaulted to dirty.  The
-PV controller will set the status to clean if the PV is Available and unbound.
+For rollback, PersistentVolumeClaims will have a new status to indicate if it's
+clean or dirty.  For backwards compatibility, a nil value is defaulted to dirty.
+The PV controller will set the status to clean if the PV is Available and unbound.
 Kubelet will set the PV status to dirty during Pod admission, before adding the
 volume to the desired state.
 
-Two new PV taints are available for the scheduler to use:
-* ScheduleFailClean, with a short default toleration.
-* ScheduleFailDirty, with an infinite default toleration.
-
-If scheduling fails, update all bound PVs and add the appropriate taint
-depending on if the PV is clean or dirty.  Then retry scheduling.  It could be
-that the reason for the scheduling failure clears within the toleration period
-and the PVCs are able to be bound and scheduled.
-
-If all PVs are bound, and have a ScheduleFail taint, but the toleration has not
-been exceeded, then remove the ScheduleFail taints.
-
-If all PVs are bound, and none have ScheduleFail taints, then continue to
-schedule the pod.
+If scheduling fails, update all bound PVCs with an annotation,
+"pv.kubernetes.io/rollback".  The PV controller will only unbind PVCs that
+are clean.  Scheduler and kubelet needs to reject pods with PVCs that are
+undergoing rollback.
 
 ### Recovering from kubelet rejection of pod
-TODO (beta): More details
-
-Again, for alpha phase, manual intervention will be required.
-
-For beta, we can use the same rollback mechanism as above to handle this case.
+We can use the same rollback mechanism as above to handle this case.
 If kubelet rejects a pod, it will go back to scheduling.  If the scheduler
 cannot find a node for the pod, then it will encounter scheduling failure and
-taint the PVs with the ScheduleFail taint.
+initiate the rollback.
 
 ### Making dynamic provisioning topology aware
 TODO (beta): Design details
@@ -615,11 +611,6 @@ parameter.
     * Positive: Enough local PVs available on a single node
     * Negative: Not enough local PVs available on a single node
 * Fallback to dynamic provisioning if unsuitable static PVs
-* Existing PV tests need to be modified, if alpha, to check for PVC bound after
-pod has started.
-* Existing dynamic provisioning tests may need to be disabled for alpha if they
-don’t launch pods.  Or extended to launch pods.
-* Existing prebinding tests should still work.
 
 ### Unit tests
 * All PVCs found a match on first node.  Verify match is best suited based on
@@ -636,20 +627,19 @@ capacity.
 
 ### Alpha
 * New feature gate for volume topology scheduling
+* StorageClass API change
 * Refactor PV controller methods into a common library
-* PV controller: Disable binding unbound PVCs if feature gate is set
+* PV controller: Delay binding and provisioning unbound PVCs
 * Predicate: Filter nodes and find matching PVs
 * Predicate: Check if provisioner exists for dynamic provisioning
 * Update existing predicates to skip unbound PVC
 * Bind: Trigger PV binding
 * Bind: Trigger dynamic provisioning
-* Tests: Refactor all the tests that expect a PVC to be bound before scheduling
 a Pod (only if alpha is enabled)
 
 ### Beta
 * Scheduler cache: Optimizations for no PV node affinity
 * Priority: capacity match score
-* Bind: Handle partial binding failure
 * Plugins: Convert all zonal volume plugins to use new PV node affinity (GCE PD,
 AWS EBS, what else?)
 * Make dynamic provisioning topology aware
@@ -657,7 +647,6 @@ AWS EBS, what else?)
 ### GA
 * Predicate: Handle max PD per node limit
 * Scheduler cache: Optimizations for PV node affinity
-* Handle kubelet rejection of pod
 
 
 ## Open Issues
