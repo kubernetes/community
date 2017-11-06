@@ -531,7 +531,7 @@ duration in seconds before the object should be deleted. Individual kinds may
 declare fields which provide a default grace period, and different kinds may
 have differing kind-wide default grace periods. A user provided grace period
 overrides a default grace period, including the zero grace period ("now").
-* PUT /&lt;resourceNamePlural&gt;/&lt;name&gt; - Update or create the resource
+* PUT /&lt;resourceNamePlural&gt;/&lt;name&gt; - Update the resource
 with the given name with the JSON object provided by the client.
 * PATCH /&lt;resourceNamePlural&gt;/&lt;name&gt; - Selectively modify the
 specified fields of the resource. See more information [below](#patch-operations).
