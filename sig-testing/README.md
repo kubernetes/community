@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Interested in how we can most effectively test Kubernetes. We're interested specifically in making it easier for the community to run tests and contribute test results, to ensure Kubernetes is stable across a variety of cluster configurations and cloud providers.
 
 ## Meetings
-* [Tuesdays at 20:00 UTC](https://zoom.us/j/2419653117) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+* [Tuesdays at 21:00 UTC](https://zoom.us/j/2419653117) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=21:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1z8MQpr_jTwhmjLMUaqQyBk1EYG_Y_3D4y4YdMJ7V1Kk).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=BbFjuxe3N4w&list=PL69nYSiGNLP0ofY51bEooJ4TKuQtUSizR).
