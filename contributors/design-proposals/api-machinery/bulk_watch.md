@@ -124,7 +124,7 @@ websocket /apis/bulk.k8s.io/v1/bulkgetoperations?watch=1
 handling LIST requests, where first client sends a filter definition over the
 channel and then server sends back the response, but we dropped this for now.*
 
-*Note: We aso considered implementing the POST-based watch handler that doesn't
+*Note: We also considered implementing the POST-based watch handler that doesn't
 allow for altering subscriptions, which should be very simple once we have list
 implemented. But since websocket API is needed anyway, we also dropped it.*
 
