@@ -1,5 +1,5 @@
 # Controlled Rescheduling in Kubernetes
-
+decomissioning
 ## Overview
 
 Although the Kubernetes scheduler(s) try to make good placement decisions for pods,
@@ -45,7 +45,7 @@ Example use cases for rescheduling are
   * moving a pod onto an under-utilized node
   * moving a pod onto a node that meets more of the pod's affinity/anti-affinity preferences
 * moving a running pod off of a node in anticipation of a known or speculated future event
-  * draining a node in preparation for maintenance, decomissioning, auto-scale-down, etc.
+  * draining a node in preparation for maintenance, decommissioning, auto-scale-down, etc.
   * "preempting" a running pod to make room for a pending pod to schedule
   * proactively/speculatively make room for large and/or exclusive pods to facilitate
     fast scheduling in the future (often called "defragmentation")
