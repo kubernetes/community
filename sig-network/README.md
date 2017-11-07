@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Covers networking in Kubernetes.
 
 ## Meetings
-* [Thursdays at 21:00 UTC](https://zoom.us/j/5806599998) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=21:00&tz=UTC).
+* [Thursdays at 14:00 PT (Pacific Time)](https://zoom.us/j/5806599998) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
