@@ -145,6 +145,19 @@ calculate which deps are needed, and rebuild the database.  It will also
 regenerate other metadata files which the project needs, such as BUILD files and
 the LICENSE database.
 
+## Saving deps in staging repos
+
+Kubernetes stores some code in a directory called `staging` which is handled
+specially, and is not covered by the above.  If you modified any code under
+staging, or if you changed a dependency of code under staging (even
+transitively), you'll also need to update deps there:
+
+```sh
+./hack/update-staging-godeps.sh
+```
+
+## Sanity checking
+
 After all of this is done, `git status` should show you what files have been
 modified and added/removed.  Make sure to sanity-check them with `git diff`, and
 to `git add` and `git rm` them, as needed.  It is commonly advised to make one
@@ -152,8 +165,6 @@ to `git add` and `git rm` them, as needed.  It is commonly advised to make one
 another `git commit` that includes changes to Kubernetes code to use (or stop
 using) the new/updated/removed dependency.  These commits can go into a single
 pull request.
-
-## Sanity checking
 
 Before sending your PR, it's a good idea to sanity check that your
 Godeps.json file and the contents of `vendor/ `are ok:
