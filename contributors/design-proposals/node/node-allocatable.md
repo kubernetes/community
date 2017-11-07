@@ -90,7 +90,7 @@ Together, evictions and node allocatable help improve node stability.
 
 As of v1.5, evictions are based on overall node usage relative to `Capacity`.
 Kubelet evicts pods based on QoS and user configured eviction thresholds.
-More deails in [this doc](./kubelet-eviction.md#enforce-node-allocatable)
+More details in [this doc](./kubelet-eviction.md#enforce-node-allocatable)
 
 From v1.6, if `Allocatable` is enforced by default across all pods on a node using cgroups, pods cannot exceed `Allocatable`.
 Memory and CPU limits are enforced using cgroups, but there exists no easy means to enforce storage limits though. 
