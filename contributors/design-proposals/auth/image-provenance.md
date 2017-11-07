@@ -322,7 +322,7 @@ It will not be a generic webhook. A generic webhook would need a lot more discus
 Additionally, just sending all the fields of just the Pod kind also has problems:
 - it exposes our whole API to a webhook backend without giving us (the project) any chance to review or understand how it is being used.
 - because we do not know which fields of an object are inspected by the backend, caching of decisions is not effective. Sending fewer fields allows caching.
-- sending fewer fields makes it possible to rev the version of the webhook request slower than the version of our internal obejcts (e.g. pod v2 could still use imageReview v1.)
+- sending fewer fields makes it possible to rev the version of the webhook request slower than the version of our internal objects (e.g. pod v2 could still use imageReview v1.)
 probably lots more reasons.
 
 

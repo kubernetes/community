@@ -172,7 +172,7 @@ Metadata items:
     pre-acceptance KEPs.
   * On acceptance a sequential dense number will be assigned.  This will be done
     by the editor and will be done in such a way as to minimize the chances of
-    conficts.  The final number for a KEP will have no prefix.
+    conflicts.  The final number for a KEP will have no prefix.
 * **title** Required
   * The title of the KEP in plain language.  The title will also be used in the
     KEP filename.  See the template for instructions and details.
@@ -188,7 +188,7 @@ Metadata items:
 * **owning-sig** Required
   * The SIG that is most closely associated with this KEP. If there is code or
     other artifacts that will result from this KEP, then it is expected that
-    this SIG will take responsiblity for the bulk of those artificats.
+    this SIG will take responsiblity for the bulk of those artifacts.
   * Sigs are listed as `sig-abc-def` where the name matches up with the
     directory in the `kubernetes/community` repo.
 * **participating-sigs** Optional
@@ -219,10 +219,10 @@ Metadata items:
   * In the form `KEP-123`
 * **replaces** Optional
   * A list of KEPs that this KEP replaces.  Those KEPs should list this KEP in
-    their `superceded-by`.
+    their `superseded-by`.
   * In the form `KEP-123`
 * **superseded-by**
-  * A list of KEPs that superced this KEP. Use of this should be paired with
+  * A list of KEPs that supersede this KEP. Use of this should be paired with
     this KEP moving into the `Replaced` status.
   * In the form `KEP-123`
 
@@ -289,7 +289,7 @@ with the following example structure
 │   └── retired
 ├── sig-node
 │   ├── deferred
-│   ├── kublet
+│   ├── kubelet
 │   ├── orphaned
 │   └── retired
 ├── sig-release

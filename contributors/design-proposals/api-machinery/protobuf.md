@@ -301,7 +301,7 @@ that the returned value is not in the known type.
 We add the `contentEncoding` field here to preserve room for future
 optimizations like encryption-at-rest or compression of the nested content.
 Clients should error when receiving an encoding they do not support.
-Negotioting encoding is not defined here, but introducing new encodings
+Negotiating encoding is not defined here, but introducing new encodings
 is similar to introducing a schema change or new API version.
 
 A client should use the `kind` and `apiVersion` fields to identify the

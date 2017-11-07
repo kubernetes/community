@@ -132,7 +132,9 @@ development environment, please [set one up](http://golang.org/doc/code.html).
 | 1.0 - 1.2      | 1.4.2       |
 | 1.3, 1.4       | 1.6         |
 | 1.5, 1.6       | 1.7 - 1.7.5 |
-| 1.7+           | 1.8.1       |
+| 1.7            | 1.8.1       |
+| 1.8            | 1.8.3       |
+| 1.9+           | 1.9.1       |
 
 Ensure your GOPATH and PATH have been configured in accordance with the Go
 environment instructions.
@@ -144,9 +146,8 @@ images.
 
 - The image for cross compiling in [build/build-image/cross].
   The `VERSION` file and `Dockerfile`.
-- Update [dockerized-e2e-runner.sh] to run a kubekins-e2e with the desired Go
-  version. This requires pushing the [e2e][e2e-image] and [test][test-image]
-  images that are `FROM` the desired Go version.
+- Update the desired Go version in Dockerfile for the [e2e][e2e-image] and [test][test-image].
+  This requires pushing the [e2e][e2e-image] and [test][test-image] images that are `FROM` the desired Go version.
 - The cross tag `KUBE_BUILD_IMAGE_CROSS_TAG` in [build/common.sh].
 
 
@@ -344,7 +345,8 @@ git push -f ${your_remote_name} myfeature
 
 1. Visit your fork at https://github.com/$user/kubernetes
 2. Click the `Compare & Pull Request` button next to your `myfeature` branch.
-3. Check out the pull request [process](pull-requests.md) for more details.
+3. Check out the pull request [process](pull-requests.md) for more details and
+   advice.
 
 _If you have upstream write access_, please refrain from using the GitHub UI for
 creating PRs, because GitHub will create the PR branch inside the main
@@ -365,10 +367,6 @@ At the assigned reviewer's discretion, a PR may be switched to use
 [Reviewable](https://reviewable.k8s.io) instead.  Once a PR is switched to
 Reviewable, please ONLY send or reply to comments through Reviewable.  Mixing
 code review tools can be very confusing.
-
-See [Faster Reviews](faster_reviews.md) for some thoughts on how to streamline
-the review process.
-
 
 #### Squash and Merge
 
@@ -405,7 +403,6 @@ masse. This makes reviews easier.
 [OS X GNU tools]: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x
 [build/build-image/cross]: https://github.com/kubernetes/kubernetes/blob/master/build/build-image/cross
 [build/common.sh]: https://github.com/kubernetes/kubernetes/blob/master/build/common.sh
-[dockerized-e2e-runner.sh]: https://github.com/kubernetes/test-infra/blob/master/jenkins/dockerized-e2e-runner.sh
 [e2e-image]: https://github.com/kubernetes/test-infra/tree/master/jenkins/e2e-image
 [etcd-latest]: https://coreos.com/etcd/docs/latest
 [etcd-install]: testing.md#install-etcd-dependency

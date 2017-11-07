@@ -18,17 +18,23 @@ In order to standardize Special Interest Group efforts, create maximum transpare
   variety of roles are represented
 - **SIG Lead**: SIG organizer
 
-## SIG creation procedure
+## SIG creation and maintenance procedure
 
 ### Prerequisites
 
 * Propose the new SIG publicly, including a brief mission statement, by emailing kubernetes-dev@googlegroups.com and kubernetes-users@googlegroups.com, then wait a couple of days for feedback
 * Ask a repo maintainer to create a github label, if one doesn't already exist: sig/foo
-* Request a new [kubernetes.slack.com](http://kubernetes.slack.com) channel (#sig-foo) from **@sarahnovotny**.  New users can join at [slack.kubernetes.io](http://slack.kubernetes.io).
+* Request a new [kubernetes.slack.com](http://kubernetes.slack.com) channel (#sig-foo) from [@parispittman](https://github.com/parispittman) or [@castrojo](https://github.com/castrojo).  New users can join at [slack.kubernetes.io](http://slack.kubernetes.io).
 * Slack activity is archived at [kubernetes.slackarchive.io](http://kubernetes.slackarchive.io).  To start archiving a new channel invite the slackarchive bot to the channel via `/invite @slackarchive`
 * Organize video meetings as needed. No need to wait for the [Weekly Community Video Conference](community/README.md) to discuss. Please report summary of SIG activities there.
- * Request a Zoom account from pyao@linuxfoundation.org cc'ing sarahnovotny@google.com.
- * Add the meeting to the community meeting calendar by inviting cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com.
+ * Request a Zoom account by emailing Paris Pittman(`parispittman@google.com`) and Jorge Castro(`jorge@heptio.com`). You must set up a google group (see below) for the SIG leads so that all the SIG leads have the ability to reset the password if necessary.
+ * Read [how to use YouTube](https://github.com/kubernetes/community/blob/master/community/K8sYoutubeCollaboration.md) for publishing your videos to the Kubernetes channel. 
+ * Calendars
+   1. Create a calendar on your own account. Make it public.
+   2. Share it with all SIG leads with full ownership of the calendar - they can edit, rename, or even delete it.
+   3. Share it with `sc1@kubernetes.io`, `sc2@kubernetes.io`, `sc3@kubernetes.io`, with full ownership. This is just in case SIG leads ever disappear.
+   4. Share it with the SIG mailing list, lowest priviledges.
+   5. Share it with `cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com` to publish on the universal calendar.
 * Use existing proposal and PR process (to be documented)
 * Announce new SIG on kubernetes-dev@googlegroups.com 
 * Submit a PR to add a row for the SIG to the table in the kubernetes/community README.md file, to create a kubernetes/community directory, and to add any SIG-related docs, schedules, roadmaps, etc. to your new kubernetes/community/SIG-foo directory.
@@ -52,6 +58,7 @@ Create Google Groups at [https://groups.google.com/forum/#!creategroup](https://
 Name convention:
 
 * kubernetes-sig-foo (the discussion group)
+* kubernetes-sig-foo-leads (list for the leads, to be used with Zoom and Calendars)
 * kubernetes-sig-foo-misc
 * kubernetes-sig-foo-test-failures
 * kubernetes-sig-foo-bugs

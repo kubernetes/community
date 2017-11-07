@@ -16,7 +16,8 @@ sigs:
       github: deads2k
     meetings:
     - day: Wednesday
-      utc: "18:00"
+      time: "11:00"
+      tz: "PT (Pacific Time)"
       frequency: biweekly
     meeting_url: https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig
     meeting_archive_url: https://goo.gl/x5nWrF
@@ -45,7 +46,8 @@ sigs:
       company: Bitnami
     meetings:
     - day: Monday
-      utc: "16:00"
+      time: "16:00"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://zoom.us/my/sig.apps
     meeting_archive_url: https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#
@@ -68,7 +70,8 @@ sigs:
       company: Microsoft
     meetings:
     - day: Thursday
-      utc: "15:30"
+      time: "15:30"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://zoom.us/j/2018742972
     meeting_archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
@@ -94,7 +97,8 @@ sigs:
       company: Red Hat
     meetings:
     - day: Wednesday
-      utc: "18:00"
+      time: "18:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/my/k8s.sig.auth
     meeting_archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
@@ -118,9 +122,10 @@ sigs:
       company: Red Hat
     meetings:
     - day: Monday
-      utc: "14:00"
+      time: "14:00"
+      tz: "UTC"
       frequency: biweekly/triweekly
-    meeting_url: https://zoom.us/j/176352399
+    meeting_url: https://zoom.us/my/k8s.sig.autoscaling
     meeting_archive_url: https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit
     meeting_recordings_url:
     contact:
@@ -144,7 +149,8 @@ sigs:
       company: Redspread
     meetings:
     - day: Friday
-      utc: "16:00" # Actually 9AM Pacific, but timezone support issue is https://github.com/kubernetes/community/issues/841
+      time: "16:00" # Actually 9AM Pacific, but timezone support issue is https://github.com/kubernetes/community/issues/841
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/my/k8ssigaws
     meeting_archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
@@ -170,7 +176,8 @@ sigs:
       company: Microsoft
     meetings:
     - day: Wednesday
-      utc: "16:00"
+      time: "16:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://deis.zoom.us/j/2018742972
     meeting_archive_url: https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit
@@ -194,7 +201,8 @@ sigs:
       company: Red Hat
     meetings:
     - day: Wednesday
-      utc: "17:00"
+      time: "17:00"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://zoom.us/my/sig.big.data
     meeting_archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
@@ -223,7 +231,8 @@ sigs:
       company: Alibaba
     meetings:
     - day: Wednesday
-      utc: "16:00"
+      time: "16:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/my/sigcli
     meeting_archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
@@ -252,7 +261,8 @@ sigs:
       company: Luxas Labs (occasionally contracting for Weaveworks)
     meetings:
     - day: Tuesday
-      utc: "16:00"
+      time: "09:00"
+      tz: "PT (Pacific Time)"
       frequency: weekly
     meeting_url: https://zoom.us/j/166836%E2%80%8B624
     meeting_archive_url: https://docs.google.com/a/weave.works/document/d/1deJYPIF4LmhGjDVaqrswErIrV7mtwJgovtLnPCDxP7U/edit
@@ -278,7 +288,8 @@ sigs:
       company: Microsoft
     meetings:
     - day: Thursday
-      utc: "20:00"
+      time: "20:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/j/297937771
     meeting_archive_url: https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#
@@ -304,7 +315,8 @@ sigs:
       company: CoreOS
     meetings:
     - day: Wednesday
-      utc: "16:30"
+      time: "16:30"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/j/7658488911
     meeting_archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
@@ -326,7 +338,8 @@ sigs:
       company: Google
     meetings:
     - day: Tuesday
-      utc: "17:30"
+      time: "17:30"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://zoom.us/j/678394311
     meeting_archive_url: https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit
@@ -353,14 +366,34 @@ sigs:
       company: Huawei
     meetings:
     - day: Tuesday
-      utc: "16:30"
+      time: "16:30"
+      tz: "UTC"
       frequency: biweekly
-    meeting_url: https://plus.google.com/hangouts/_/google.com/k8s-mc
+    meeting_url: https://zoom.us/my/k8s.mc
     meeting_archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
     meeting_recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
     contact:
       slack: sig-multicluster
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster
+  - name: GCP
+    dir: sig-gcp
+    mission_statement: >
+      A Special Interest Group for building, deploying, maintaining,
+      supporting, and using Kubernetes on the Google Cloud Platform.
+    leads:
+    - name: Adam Worrall
+      github: abgworrall
+      company: Google
+    meetings:
+    - day: Thursday
+      time: "16:00"
+      tz: "UTC"
+      frequency: biweekly
+    meeting_url: https://zoom.us/j/761149873
+    meeting_archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
+    contact:
+      slack: sig-gcp
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-gcp
   - name: Instrumentation
     dir: sig-instrumentation
     mission_statement: >
@@ -377,7 +410,8 @@ sigs:
       company: CoreOS
     meetings:
     - day: Thursday
-      utc: "16:30"
+      time: "16:30"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://zoom.us/j/5342565819
     meeting_archive_url: https://docs.google.com/document/d/1gWuAATtlmI7XJILXd31nA4kMq6U9u63L70382Y3xcbM/edit
@@ -402,7 +436,8 @@ sigs:
       company: Tigera
     meetings:
     - day: Thursday
-      utc: "21:00"
+      time: "14:00"
+      tz: "PT (Pacific Time)"
       frequency: biweekly
     meeting_url: https://zoom.us/j/5806599998
     meeting_archive_url: https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit
@@ -423,7 +458,8 @@ sigs:
       company: Red Hat
     meetings:
     - day: Tuesday
-      utc: "17:00"
+      time: "17:00"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://plus.google.com/hangouts/_/google.com/sig-node-meetup?authuser=0
     meeting_archive_url: https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing
@@ -447,7 +483,8 @@ sigs:
       company: CoreOS
     meetings:
     - day: Wednesday
-      utc: "16:00"
+      time: "16:00"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://zoom.us/my/k8s.sig.onprem
     meeting_archive_url: https://docs.google.com/document/d/1AHF1a8ni7iMOpUgDMcPKrLQCML5EMZUAwP4rro3P6sk/edit#
@@ -475,7 +512,8 @@ sigs:
       company: Red Hat
     meetings:
     - day: Wednesday
-      utc: "15:00"
+      time: "15:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/j/417251241
     meeting_archive_url: https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f
@@ -518,7 +556,8 @@ sigs:
       company: CoreOS
     meetings:
     - day: Tuesday
-      utc: "15:00"
+      time: "15:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/j/845373595
     meeting_archive_url: https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing
@@ -538,7 +577,8 @@ sigs:
       company: CoreOS
     meetings:
     - day: Tuesday
-      utc: "21:00"
+      time: "21:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/j/664772523
     meeting_archive_url: https://docs.google.com/document/d/1vhsixdT58iJFfoGZbpmvI_xnK59XyAjtadu3h6hHPpY/edit?usp=sharing
@@ -571,7 +611,8 @@ sigs:
       company: Heptio
     meetings:
     - day: Thursday
-      utc: "16:00"
+      time: "16:00"
+      tz: "UTC"
       frequency: bi-weekly
     meeting_url: https://zoom.us/j/989573207
     meeting_archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
@@ -592,10 +633,12 @@ sigs:
       company: Red Hat
     meetings:
     - day: Monday
-      utc: "20:00"
+      time: "20:00"
+      tz: "UTC"
       frequency: biweekly
     - day: Wednesday
-      utc: "07:30"
+      time: "07:30"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/zoomconference?m=rN2RrBUYxXgXY4EMiWWgQP6Vslgcsn86
     meeting_archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
@@ -624,7 +667,8 @@ sigs:
       company: IBM
     meetings:
     - day: Monday
-      utc: "20:00"
+      time: "20:00"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://zoom.us/j/7201225346
     meeting_archive_url: https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit
@@ -646,7 +690,8 @@ sigs:
       company: Red Hat
     meetings:
     - day: Thursday
-      utc: "16:00"
+      time: "16:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/j/614261834
     meeting_archive_url: https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing
@@ -674,7 +719,8 @@ sigs:
       company: Heptio
     meetings:
     - day: Tuesday
-      utc: "20:00"
+      time: "13:00"
+      tz: "PT (Pacific Time)"
       frequency: weekly
     meeting_url: https://zoom.us/j/2419653117
     meeting_archive_url: https://docs.google.com/document/d/1z8MQpr_jTwhmjLMUaqQyBk1EYG_Y_3D4y4YdMJ7V1Kk
@@ -699,7 +745,8 @@ sigs:
       company: Fujitsu
     meetings:
     - day: Thursday
-      utc: "16:00"
+      time: "16:00"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
     meeting_archive_url: https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing
@@ -718,7 +765,8 @@ sigs:
       company: Apprenda
     meetings:
     - day: Tuesday
-      utc: "16:30"
+      time: "16:30"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://zoom.us/my/sigwindows
     meeting_archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
@@ -740,7 +788,8 @@ workinggroups:
       company: Red Hat
     meetings:
     - day: Wednesday
-      utc: "18:00"
+      time: "18:00"
+      tz: "UTC"
       frequency: weekly (On demand)
     meeting_url: https://zoom.us/j/4799874685
     meeting_archive_url: https://docs.google.com/document/d/1j3vrG6BgE0hUDs2e-1ZUegKN4W4Adb1B6oJ6j-4kyPU
@@ -761,7 +810,8 @@ workinggroups:
       company: Google
     meetings:
     - day: Tuesday
-      utc: "15:00"
+      time: "15:00"
+      tz: "UTC"
       frequency: bi-weekly (On demand)
     meeting_url: TBD
     meeting_archive_url: https://docs.google.com/document/d/1uH60pNr1-jBn7N2pEcddk6-6NTnmV5qepwKUJe9tMRo/edit
@@ -769,7 +819,7 @@ workinggroups:
     contact:
       slack: wg-container-identity
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-container-identity
-  - name: kubeadm adoption
+  - name: Kubeadm Adoption
     dir: wg-kubeadm-adoption
     mission_statement: >
       Boost adoption of the kubeadm tool. kubeadm is a tool for creating new Kubernetes clusters easily for new users, but can also be used as a toolbox for higher-level deployment
@@ -782,7 +832,8 @@ workinggroups:
       github: justinsb
     meetings:
     - day: Tuesday
-      utc: "18:00"
+      time: "18:00"
+      tz: "UTC"
       frequency: bi-weekly
     meeting_url: https://zoom.us/j/166836%E2%80%8B624
     meeting_archive_url: https://docs.google.com/document/d/1KdXsLYiJYJdiRbtgZsx6qbHF4g_K-gAScB9Zs4avgzg/edit
@@ -790,7 +841,7 @@ workinggroups:
     contact:
       slack: sig-cluster-lifecycle
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
-  - name: cluster api
+  - name: Cluster API
     dir: wg-cluster-api
     mission_statement: >
       Define a portable API that represents a Kubernetes cluster. The API will contain the control plane and its configuration and the underlying infrastructure (nodes, node pools, etc).
@@ -815,7 +866,7 @@ workinggroups:
       understand the needs of other parts of the ecosystem on this layer, and improve the interoperability
       of application management tools through better separation of concerns, common conventions,
       and common principles.
-        
+
       Charter can be found [here](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#)
     leads:
     - name: Antoine Legrand
@@ -826,9 +877,11 @@ workinggroups:
       company: Bitnami
     meetings:
     - day: Wednesday
-      utc: "16:00"
+      time: "16:00"
+      tz: "UTC"
       frequency: bi-weekly
-    meeting_archive_url: hhttps://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit
+    meeting_url: https://zoom.us/j/748123863
+    meeting_archive_url: https://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit
     contact:
       slack: wg-app-def
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-app-def

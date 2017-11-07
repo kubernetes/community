@@ -179,7 +179,7 @@ A new controller (`bootstrapsigner`) is introduced that will watch for both new/
 
 Another controller (`tokencleaner`) is introduced that deletes tokens that are past their expiration time.
 
-Logically these controllers could run as a separate component in the control plane.  But, for the sake of efficiency, they are bundeled as part of the Kubernetes controller-manager.
+Logically these controllers could run as a separate component in the control plane.  But, for the sake of efficiency, they are bundled as part of the Kubernetes controller-manager.
 
 ## `kubeadm` UX
 

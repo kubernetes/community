@@ -1,0 +1,116 @@
+aliases:
+  sig-api-machinery-leads:
+    - lavalamp
+    - deads2k
+  sig-apps-leads:
+    - michelleN
+    - mattfarina
+    - prydonius
+  sig-architecture-leads:
+    - bgrant0607
+    - jdumars
+  sig-auth-leads:
+    - ericchiang
+    - liggitt
+    - deads2k
+  sig-autoscaling-leads:
+    - mwielgus
+    - directxman12
+  sig-aws-leads:
+    - justinsb
+    - kris-nova
+    - chrislovecnm
+    - mfburnett
+  sig-azure-leads:
+    - slack
+    - colemickens
+    - jdumars
+  sig-big-data-leads:
+    - foxish
+    - erikerlandson
+  sig-cli-leads:
+    - fabianofranz
+    - pwittrock
+    - AdoHe
+  sig-cluster-lifecycle-leads:
+    - lukemarsden
+    - jbeda
+    - roberthbailey
+    - luxas
+  sig-cluster-ops-leads:
+    - zehicle
+    - jdumars
+  sig-contributor-experience-leads:
+    - grodrigues3
+    - Phillels
+  sig-docs-leads:
+    - devin-donnelly
+    - jaredbhatti
+  sig-gcp-leads:
+    - abgworrall
+  sig-multicluster-leads:
+    - csbell
+    - quinton-hoole
+  sig-instrumentation-leads:
+    - piosz
+    - fabxc
+  sig-network-leads:
+    - thockin
+    - dcbw
+    - caseydavenport
+  sig-node-leads:
+    - dchen1107
+    - derekwaynecarr
+  sig-on-premise-leads:
+    - marcoceppi
+    - dghubble
+  sig-openstack-leads:
+    - idvoretskyi
+    - xsgordon
+  sig-product-management-leads:
+    - apsinha
+    - idvoretskyi
+    - calebamiles
+  sig-release-leads:
+    - pwittrock
+    - calebamiles
+  sig-scalability-leads:
+    - wojtek-t
+    - countspongebob
+    - jbeda
+  sig-scheduling-leads:
+    - davidopp
+    - timothysc
+  sig-service-catalog-leads:
+    - pmorie
+    - arschles
+    - vaikas-google
+    - duglin
+  sig-storage-leads:
+    - saad-ali
+    - childsb
+  sig-testing-leads:
+    - spiffxp
+    - fejta
+    - timothysc
+  sig-ui-leads:
+    - danielromlein
+    - floreks
+  sig-windows-leads:
+    - michmike
+  wg-resource-management-leads:
+    - vishh
+    - derekwaynecarr
+  wg-container-identity-leads:
+    - smarterclayton
+    - destijl
+  wg-kubeadm-adoption-leads:
+    - luxas
+    - justinsb
+  wg-cluster-api-leads:
+    - kris-nova
+    - pipejakob
+    - roberthbailey
+  wg-app-def-leads:
+    - ant31
+    - sebgoa

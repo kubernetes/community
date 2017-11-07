@@ -77,7 +77,7 @@ superseded-by:
 ## Table of Contents
 
 A table of contents is helpful for quickly jumping to sections of a KEP and for
-highlighting any addtional information provided beyond the standard KEP
+highlighting any additional information provided beyond the standard KEP
 template. [Tools for generating][] a table of contents from markdown are
 available.
 
@@ -165,7 +165,7 @@ Major milestones in the life cycle of a KEP should be tracked in
   design
 - the date implementation started
 - the first Kubernetes release where an initial version of the KEP was available
-- the version of Kubneretes where the KEP graduated to general availability
+- the version of Kubernetes where the KEP graduated to general availability
 - when the KEP was retired or superseded
 
 ## Drawbacks [optional]

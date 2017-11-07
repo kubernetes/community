@@ -123,6 +123,7 @@ to serve the purpose outside of GCE.
     overlay network, primarily aiming at Docker integration.
   - [Calico](https://github.com/Metaswitch/calico) uses BGP to enable real
     container IPs.
+  - [Cilium](https://github.com/cilium/cilium) supports Overlay Network mode (IPv4/IPv6) and Direct Routing model (IPv6)
 
 ## Pod to service
 

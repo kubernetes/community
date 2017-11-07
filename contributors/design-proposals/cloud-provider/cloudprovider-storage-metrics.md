@@ -13,7 +13,7 @@ we will implement metrics for:
 * AWS
 
 We will also implement metrics only for storage API calls for now. This feature
-does introduces hooks into kubernetes code which can be used to add additonal metrics
+does introduces hooks into kubernetes code which can be used to add additional metrics
 but we only focus on storage API calls here.
 
 ## Motivation
@@ -50,7 +50,7 @@ the external Cloud Provider - we will use [Histogram](https://prometheus.io/docs
 emitting these metrics.
 
 We will be using `HistogramVec` type so as we can attach dimensions at runtime. All metrics will contain API action
-being taken as a dimension. The cloudprovider maintainer may choose to add additonal dimensions as needed. If a
+being taken as a dimension. The cloudprovider maintainer may choose to add additional dimensions as needed. If a
 dimension is not available at point of emission sentinel value `<n/a>` should be emitted as a placeholder.
 
 We are also interested in counter of cloudprovider API errors. `NewCounterVec` type will be used for keeping

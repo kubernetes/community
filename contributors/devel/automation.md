@@ -11,7 +11,7 @@ processes.
 
 In an effort to
    * reduce load on core developers
-   * maintain e2e stability
+   * maintain end-to-end test stability
    * load test github's label feature
 
 We have added an automated [submit-queue](https://github.com/kubernetes/test-infra/tree/master/mungegithub/submit-queue)
@@ -35,10 +35,9 @@ The status of the submit-queue is [online.](http://submit-queue.k8s.io/)
 
 ### Ready to merge status
 
-The submit-queue lists what it believes are required on the [merge requirements tab](http://submit-queue.k8s.io/#/info) of the info page. That may be more up to date.
-
 A PR is considered "ready for merging" by the submit queue if it matches the set
-of conditions listed in the merge requirements tab mentioned above.
+of conditions listed in the [merge requirements tab](http://submit-queue.k8s.io/#/info)
+of the info page.
 Please visit that page for more details.
 
 ### Merge process
@@ -51,8 +50,8 @@ If these tests pass a second time, the PR will be merged when this PR finishes r
 
 We run [github "mungers"](https://github.com/kubernetes/test-infra/tree/master/mungegithub).
 
-This runs repeatedly over github pulls and issues and runs modular "mungers"
-similar to "mungedocs". The mungers include the "submit-queue" referenced above along
+This runs repeatedly over github pulls and issues and runs modular "mungers".
+The mungers include the "submit-queue" referenced above along
 with numerous other functions. See the README in the link above.
 
 Please feel free to unleash your creativity on this tool, send us new mungers

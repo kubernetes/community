@@ -80,7 +80,7 @@ When implementing audit logging there are basically two options:
 1. put a logging proxy in front of the apiserver
 2. integrate audit logging into the apiserver itself
 
-Both approaches have advantages and disadvanteges:
+Both approaches have advantages and disadvantages:
 - **pro proxy**:
   + keeps complexity out of the apiserver
   + reuses existing solutions

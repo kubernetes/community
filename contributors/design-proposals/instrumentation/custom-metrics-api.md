@@ -257,7 +257,7 @@ Relationship to HPA v2
 ----------------------
 
 The URL paths in this API are designed to correspond to different source
-types in the [HPA v2](hpa-v2.md).  Specifially, the `pods` source type
+types in the [HPA v2](hpa-v2.md).  Specifically, the `pods` source type
 corresponds to a URL of the form
 `/namespaces/$NS/pods/*/$METRIC_NAME?labelSelector=foo`, while the
 `object` source type corresponds to a URL of the form
@@ -307,7 +307,7 @@ repository will most likely also house other metrics-related APIs for
 Kubernetes (e.g. historical metrics API definitions, the resource metrics
 API definitions, etc).
 
-Note that there will not be a canonical implemenation of the custom
+Note that there will not be a canonical implementation of the custom
 metrics API under Kubernetes, just the types and clients.  Implementations
 will be left up to the monitoring pipelines.
 
@@ -323,7 +323,7 @@ overhead, but makes the API line up nicely with other Kubernetes APIs.
 
 ### Labeled Metrics ###
 
-Many metric systems support labeled metrics, allowing for dimenisionality
+Many metric systems support labeled metrics, allowing for dimensionality
 beyond the Kubernetes object hierarchy.  Since the HPA currently doesn't
 support specifying metric labels, this is not supported via this API.  We
 may wish to explore this in the future.

@@ -18,10 +18,6 @@ Guide](http://kubernetes.io/docs/admin/).
 
 * **Pull Request Process** ([pull-requests.md](pull-requests.md)): When and why pull requests are closed.
 
-* **Kubernetes On-Call Rotations** ([on-call-rotations.md](on-call-rotations.md)): Descriptions of on-call rotations for build and end-user support.
-
-* **Faster PR reviews** ([faster_reviews.md](faster_reviews.md)): How to get faster PR reviews.
-
 * **Getting Recent Builds** ([getting-builds.md](getting-builds.md)): How to get recent builds including the latest builds that pass CI.
 
 * **Automated Tools** ([automation.md](automation.md)): Descriptions of the automation that is running on our github repository.
@@ -73,7 +69,7 @@ Guide](http://kubernetes.io/docs/admin/).
 * **Authentication** ([Authentication](http://kubernetes.io/docs/admin/authentication/)):
   The current and planned states of authentication tokens.
 
-* **Authorization Plugins** ([Authorization](http://kubernetes.github.io/docs/admin/authorization/)):
+* **Authorization Plugins** ([Authorization](http://kubernetes.io/docs/admin/authorization/)):
   Authorization applies to all HTTP requests on the main apiserver port.
   This doc explains the available authorization implementations.
 

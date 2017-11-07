@@ -5,7 +5,7 @@ and set them before the container is run. This document describes design of the 
 
 ## Motivation
 
-Since we want to make Kubernetes as simple as possible for its users we don't want to require setting [Resources](../design/resource-qos.md) for container by its owner.
+Since we want to make Kubernetes as simple as possible for its users we don't want to require setting [Resources](../node/resource-qos.md) for container by its owner.
 On the other hand having Resources filled is critical for scheduling decisions.
 Current solution to set up Resources to hardcoded value has obvious drawbacks.
 We need to implement a component which will set initial Resources to a reasonable value.
@@ -18,7 +18,7 @@ For every container without Resources specified it will try to predict amount of
 So that a pod without specified resources will be treated as
 .
 
-InitialResources will set only [request](../design/resource-qos.md#requests-and-limits) (independently for each resource type: cpu, memory) field in the first version to avoid killing containers due to OOM (however the container still may be killed if exceeds requested resources).
+InitialResources will set only [request](../node/resource-qos.md#requests-and-limits) (independently for each resource type: cpu, memory) field in the first version to avoid killing containers due to OOM (however the container still may be killed if exceeds requested resources).
 To make the component work with LimitRanger the estimated value will be capped by min and max possible values if defined.
 It will prevent from situation when the pod is rejected due to too low or too high estimation.
 

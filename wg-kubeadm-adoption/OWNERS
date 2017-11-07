@@ -1,6 +1,4 @@
 reviewers:
-  - luxas
-  - justinsb
+  - wg-kubeadm-adoption-leads
 approvers:
-  - luxas
-  - justinsb
+  - wg-kubeadm-adoption-leads

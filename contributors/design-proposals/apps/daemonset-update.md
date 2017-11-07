@@ -132,7 +132,7 @@ type DaemonSetSpec struct {
 
 // DaemonSetStatus represents the current status of a daemon set.
 type DaemonSetStatus struct {
-	// Note: Existing fields, including CurrentNumberScheduled, NumberMissscheduled,
+	// Note: Existing fields, including CurrentNumberScheduled, NumberMisscheduled,
 	// DesiredNumberScheduled, NumberReady, and ObservedGeneration are omitted in
 	// this proposal.
 
@@ -202,7 +202,7 @@ For each pending DaemonSet updates, it will:
      - The history will be labeled with `DefaultDaemonSetUniqueLabelKey`.
      - DaemonSet controller will add a ControllerRef in the history
        `.ownerReferences`.
-   - Current history should have the largest `.revision` number amonst all
+   - Current history should have the largest `.revision` number amongst all
      existing history. Update `.revision` if it's not (e.g. after a rollback.)
    - If more than one current history is found, remove duplicates and relabel
      their pods' `DefaultDaemonSetUniqueLabelKey`.
@@ -250,7 +250,7 @@ In DaemonSet strategy (pkg/registry/extensions/daemonset/strategy.go#PrepareForU
 increase DaemonSet's `.spec.templateGeneration` by 1 if any changes is made to
 DaemonSet's `.spec.template`.
 
-This was originally implmeneted in 1.6, and kept in 1.7 for backward compatibility.
+This was originally implemented in 1.6, and kept in 1.7 for backward compatibility.
 
 ### kubectl 
 

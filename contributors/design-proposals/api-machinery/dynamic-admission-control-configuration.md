@@ -211,7 +211,7 @@ Notes:
   in the beta version.
 
 * We excluded `Retry` as a FailurePolicy, because we want to expose the
-  flakeness of an admission controller; and admission controllers like the quota
+  flakiness of an admission controller; and admission controllers like the quota
   controller are not idempotent.
 
 * There are multiple ways to compose `Rules []Rule` to achieve the same effect.

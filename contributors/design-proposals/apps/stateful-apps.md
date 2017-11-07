@@ -181,7 +181,7 @@ status, back-off (like a scheduler or replication controller), and try again lat
 by a StatefulSet controller must have a set of labels that match the selector, support orphaning, and have a
 controller back reference annotation identifying the owning StatefulSet by name and UID.
 
-When a StatefulSet is scaled down, the pod for the removed indentity should be deleted. It is less clear what the
+When a StatefulSet is scaled down, the pod for the removed identity should be deleted. It is less clear what the
 controller should do to supporting resources. If every pod requires a PV, and a user accidentally scales
 up to N=200 and then back down to N=3, leaving 197 PVs lying around may be undesirable (potential for
 abuse). On the other hand, a cluster of 5 that is accidentally scaled down to 3 might irreparably destroy
@@ -346,7 +346,7 @@ Requested features:
 
 * Jobs can be used to perform a run-once initialization of the cluster
 * Init containers can be used to prime PVs and config with the identity of the pod.
-* Templates and how fields are overriden in the resulting object should have broad alignment
+* Templates and how fields are overridden in the resulting object should have broad alignment
 * DaemonSet defines the core model for how new controllers sit alongside replication controller and
   how upgrades can be implemented outside of Deployment objects.
 

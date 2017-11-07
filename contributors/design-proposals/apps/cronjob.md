@@ -207,7 +207,7 @@ but old ones still satisfy the schedule and are not re-run just because the temp
 
 If you delete and replace a CronJob with one of the same name, it will:
 - not use any old Status.Active, and not consider any existing running or terminated jobs from the previous
-  CronJob (with a different UID) at all when determining coflicts, what needs to be started, etc.
+  CronJob (with a different UID) at all when determining conflicts, what needs to be started, etc.
 - If there is an existing Job with the same time-based hash in its name (see below), then
   new instances of that job will not be able to be created.  So, delete it if you want to re-run.
 with the same name as conflicts.

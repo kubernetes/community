@@ -194,14 +194,13 @@ to do three things:
 <li>allocate a new node (not necessary if running etcd as a pod, in
 which case specific measures are required to prevent user pods from
 interfering with system pods, for example using node selectors as
-described in <A HREF="),
+described in <A HREF="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector">nodeSelector</A>),
 <li>start an etcd replica on that new node, and
 <li>have the new replica recover the etcd state.
 </ol>
 In the case of local disk (which fails in concert with the machine), the etcd
 state must be recovered from the other replicas. This is called
-<A HREF="https://github.com/coreos/etcd/blob/master/Documentation/runtime-configuration.md#add-a-new-member">
-dynamic member addition</A>.
+<A HREF="https://github.com/coreos/etcd/blob/master/Documentation/op-guide/runtime-configuration.md#add-a-new-member">dynamic member addition</A>.
 
 In the case of remote persistent disk, the etcd state can be recovered by
 attaching the remote persistent disk to the replacement node, thus the state is
@@ -210,8 +209,7 @@ recoverable even if all other replicas are down.
 There are also significant performance differences between local disks and remote
 persistent disks. For example, the
 <A HREF="https://cloud.google.com/compute/docs/disks/#comparison_of_disk_types">
-sustained throughput local disks in GCE is approximately 20x that of remote
-disks</A>.
+sustained throughput local disks in GCE is approximately 20x that of remote disks</A>.
 
 Hence we suggest that self-healing be provided by remotely mounted persistent
 disks in non-performance critical, single-zone cloud deployments. For

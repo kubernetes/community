@@ -37,8 +37,7 @@ found at [API Conventions](api-conventions.md).
 Before attempting a change to the API, you should familiarize yourself with a
 number of existing API types and with the [API conventions](api-conventions.md).
 If creating a new API type/resource, we also recommend that you first send a PR
-containing just a proposal for the new API types, and that you initially target
-the extensions API (pkg/apis/extensions).
+containing just a proposal for the new API types.
 
 The Kubernetes API has two major components - the internal structures and
 the versioned APIs. The versioned APIs are intended to be stable, while the
@@ -322,14 +321,10 @@ If you found that your change accidentally broke clients, it should be reverted.
 
 In short, the expected API evolution is as follows:
 
-* `extensions/v1alpha1` ->
 * `newapigroup/v1alpha1` -> ... -> `newapigroup/v1alphaN` ->
 * `newapigroup/v1beta1` -> ... -> `newapigroup/v1betaN` ->
 * `newapigroup/v1` ->
 * `newapigroup/v2alpha1` -> ...
-
-While in extensions we have no obligation to move forward with the API at all
-and may delete or break it at any time.
 
 While in alpha we expect to move forward with it, but may break it.
 
@@ -581,7 +576,7 @@ The auto-generated code resides with each versioned API:
 To regenerate them run:
 
 ```sh
-hack/update-codecgen.sh
+hack/update-generated-protobuf.sh
 ```
 
 ## Making a new API Version
@@ -600,7 +595,7 @@ Due to the fast changing nature of the project, the following content is probabl
 * You must add the new version to
   [hack/lib/init.sh#KUBE_AVAILABLE_GROUP_VERSIONS](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/hack/lib/init.sh#L53).
 * You must add the new version  to
-  [staging/src/k8s.io/kube-gen/cmd/go-to-protobuf/protobuf/cmd.go](https://github.com/kubernetes/kubernetes/blob/2e6be8583d00916f1896d2b53e550162f1558ccf/staging/src/k8s.io/kube-gen/cmd/go-to-protobuf/protobuf/cmd.go#L64)
+  [hack/update-generated-protobuf-dockerized.sh](https://github.com/kubernetes/kubernetes/blob/v1.8.2/hack/update-generated-protobuf-dockerized.sh#L44)
   to generate protobuf IDL and marshallers.
 * You must add the new version  to
   [cmd/kube-apiserver/app#apiVersionPriorities](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/cmd/kube-apiserver/app/aggregator.go#L172)

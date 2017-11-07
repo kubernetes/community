@@ -40,11 +40,57 @@ and this document will cover the basic ones.
 
 Sometimes users ask for support requests in issues; these are usually requests
 from people who need help configuring some aspect of Kubernetes. These should be
-directed to our [support structures](https://github.com/kubernetes/community/blob/master/contributors/devel/on-call-user-support.md) and then closed. Also, if the issue is clearly abandoned or in
-the wrong place, it should be closed. Keep in mind that only issue reporter,
-assignees and component organization members can close issue. If you do not
-have such privilege, just comment your findings. Otherwise, first `/assign`
-issue to yourself and then `/close`.
+directed to our support structures (see below) and then closed. Also, if the issue 
+is clearly abandoned or in the wrong place, it should be closed. Keep in mind that 
+only issue reporter, assignees and component organization members can close issue. 
+If you do not have such privilege, just comment your findings. Otherwise, first
+`/assign` issue to yourself and then `/close`.
+
+### Support Structures
+
+Support requests should be directed to the following:
+
+* [User documentation](https://kubernetes.io/docs/) and
+[troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
+
+* [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes) and
+[ServerFault](http://serverfault.com/questions/tagged/google-kubernetes)
+
+* [Slack](https://kubernetes.slack.com) ([registration](http://slack.k8s.io))
+  * Check out the [Slack Archive](http://kubernetes.slackarchive.io/) first.
+
+* [Email/Groups](https://groups.google.com/forum/#!forum/kubernetes-users)
+
+### User support response example
+
+If you see support questions on kubernetes-dev@googlegroups.com or issues asking for 
+support try to redirect them to Stack Overflow. Example response:
+
+```code
+Please re-post your question to [Stack Overflow]
+(http://stackoverflow.com/questions/tagged/kubernetes).
+
+We are trying to consolidate the channels to which questions for help/support
+are posted so that we can improve our efficiency in responding to your requests,
+and to make it easier for you to find answers to frequently asked questions and
+how to address common use cases.
+
+We regularly see messages posted in multiple forums, with the full response
+thread only in one place or, worse, spread across multiple forums. Also, the
+large volume of support issues on github is making it difficult for us to use
+issues to identify real bugs.
+
+Members of the Kubernetes community use Stack Overflow to field support
+requests. Before posting a new question, please search Stack Overflow for answers 
+to similar questions, and also familiarize yourself with:
+
+  * [user documentation](http://kubernetes.io/docs/)
+  * [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
+
+Again, thanks for using Kubernetes.
+
+The Kubernetes Team
+```
 
 ## Find the right SIG(s)
 Components are divided among [Special Interest Groups (SIGs)](https://github.com/kubernetes/community/blob/master/sig-list.md). Find a proper SIG for the ownership of the issue using the bot:

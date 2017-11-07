@@ -1,83 +1,213 @@
 # Contributing
 
-The process for contributing code to Kubernetes via the sig-cli [community][community page].
+The process for contributing code to Kubernetes via SIG-cli [community][community page].
 
-## TL;DR
+**Note**: This page is focused on helping new contributors become active
+members of the community through sustained contributions.
 
-- The sig-cli [community page] lists sig-cli [leads],
-  channels of [communication], and group [meeting] times.
-- New contributors: please start by adopting an [existing issue].
-- Request a feature by making an [issue] and mentioning
-  `@kubernetes/sig-cli-feature-requests`.
-- Write a [design proposal] before starting work on a new feature.
-- Write [tests]!
-
-## Before You Begin
+## Introduction
 
 Welcome to the Kubernetes sig-cli contributing guide.  We are excited
 about the prospect of you joining our [community][community page]!
+Mentoring and on-boarding new contributors is critical to the success
+of the project.
 
-Please understand that all contributions to Kubernetes require time
-and commitment from the project maintainers to review the ux, software
-design, and code.  Mentoring and on-boarding new contributors is done
-in addition to many other responsibilities.
+Please be aware that all contributions to Kubernetes require time
+and commitment from project maintainers to direct and review work.
+This is done in additional to many other maintainer responsibilities, and
+direct engagement from maintainers is a finite resource.
 
-### Understand the big picture
+## Pick your track
 
-- Complete the [Kubernetes Basics Tutorial].
-- Be familiar with [kubectl user facing documentation ][kubectl docs].
-- Read the concept guides starting with the [management overview].
+Determine in what capacity you are looking to contribute:
 
-### Modify your own `kubectl` fork
+### Guided
 
-Make sure you are ready to immediately get started once you have been
-assigned a piece of work.  Do this right away.
+**Who is this for?**
 
-- Setup your [development environment][development guide].
-- Look at code:
-  - [kubernetes/cmd/kubectl] is the entry point
-  - [kubernetes/pkg/kubectl] is the implementation
-  - Look at how some of the other commands are implemented
-- Add a new command to do something simple:
-  - Add `kubectl hello-world`: print "Hello World"
-  - Add `kubectl hello-kubernetes -f file`: Print "Hello \<kind of resource\> \<name of resource\>"
-  - Add `kubectl hello-kubernetes type/name`: Print "Hello \<kind of resource\> \<name of resource\> \<creation time\>"
+Contributors looking to engage with the SIG cli community for
+a sustained period of time and looking to build working relationships
+with existing members.  Route to becoming a SIG cli member as
+a reviewer or approver.
+
+**How does it work?**
+
+Work items come from a backlog of groomed items provided by SIG cli community members.
+Each items has a stake holder willing to provide limited direction to contributors
+working on it.  Contributors typically need to put in 10x the time per-issue as the
+maintainers providing direction.  Contributors are expected to learn and do research
+to complete the task independently with only periodic direction (~weekly).
+
+**What is expected of contributors?**
+
+Contributors are expected to make progress on items weekly and
+provide periodic updates to any issue they are working on.
+Contributors are expected exercise ownership of their code by fixing bugs
+that are discovered.
+
+### Self service
+
+**Who is this for?**
+
+Contributors that are looking to contribute only 1 or 2 items, or
+have a specific issue they would like to like resolve and are willing
+to contribute the solution.
+
+**How does it work?**
+
+Contributors are free to pick up any work items that they like.  Maintainers
+will be focused on directing contributors working on Guided items, so contributors
+picking up non-Guided items will have almost no direction or support from maintainers.
+
+**What is expected of contributors?**
+
+Contributions must be relatively small, simple, well documented and well tested.
+Since maintainers will need to own any code for these contributions, these should
+be very limited in scope and contain minimal risk
+(e.g. simple regression fixes, improved documentation, improved testing).
+
+## Before You Begin
+
+**Note**: Complete the following steps before reaching out to cli community members.
 
 ### Agree to contribution rules
 
 Follow the [CLA signup instructions](../CLA.md).
 
+### Learn a bit about the kubectl cli
+
+This is important.
+
+- Learn about using kubectl with Kubernetes in the [Kubernetes Basics Tutorial].
+- Learn about managing configuration in the [kubectl docs].
+
+### Modify your own `kubectl` fork
+
+Make sure you are ready to immediately get started before you claim any piece of
+work.
+
+- Setup your [development environment][development guide].
+  - This is hard.  Sorry.  We want to make this easier.
+- Familiarize yourself with the code:
+  - [kubernetes/cmd/kubectl] is the entry point
+  - [kubernetes/pkg/kubectl] is the implementation
+  - Look at how some of the other commands are implemented
+- Try adding a new command to do something simple:
+  - Add `kubectl hello-world`: print "Hello World"
+  - Add `kubectl hello-kubernetes -f file`: Print "Hello \<kind of resource\> \<name of resource\>"
+  - Add `kubectl hello-kubernetes type/name`: Print "Hello \<kind of resource\> \<name of resource\> \<creation time\>"
+
+**Note:** Consider publishing your command to a fork so a maintainer can look at it.
+
+## Your first contribution
+
 ### Adopt an issue
 
-New contributors can try the following to work on an existing [bug] or [approved design][design repo]:
+Pick up an [issue] from the backlog by commenting on the issue that you would like to work on it.
+Be sure to mention the author of the issue as well as the SIG cli members `@seans3` and `@mengqiy`.
+
+Using the following comment will make it easier for us to search for issues folks want to have
+assigned to them:
+
+`cc @seans3 @mengqiy I would like to take this`
+
+**Note:** Don't do this unless you will start work on the issue within a few days of being assigned.
+
+**Note:** GitHub only allows issues to be assigned to GitHub accounts that are part
+of the organization or listed as outside collaborators.  In order to become an outside
+collaborator, contributors have to have shown commitment to the issue by performing some
+work.  Once you have begun, reach out to the issue author and show them your progress
+(e.g. in a fork).
+
+**Picking your first issue**
+
+For your first issue, we recommend picking an issue labeled with "good first issue" from the [issue] backlog.
+
+**Picking the right size of issue** 
+
+Be sure to pick up an issue that is appropriate to the time you are able to commit.
+We recommend first time contributors start with small or medium issues.
+
+Following are very rough estimates, but are best effort only.  They assume you have a
+development environment already set up and are able to build a kubectl binary and
+use it against a cluster.  These estimates assume some knowledge of Go.
+
+- `size/S`
+  - 4-10 hours
+- `size/M`
+  - 10-20 hours
+- `size/L`
+  - 20+ hours
+- `size/XL`
+  - 40-80 hours
+
+Meta/Umbrella issues may have multiple components.  By signing up for a Meta/Umbrella issue,
+you are only committing to one piece of it.  Let the issue author know when you have completed
+some piece of it, and if you would like to continue working on it, or have it unassigned.
+
+**Picking the right kind of issue**
+
+Guided issues have a *type* defining the type of work to be done.  Pick up an
+issue that fits your experience level and interest.  Documentation and
+test-coverage issues typically are smaller in scope and easier to complete than
+features and cleanup issues. 
+
+- `type/code-cleanup`
+  - Usually some refactoring or small rewrites of code.
+- `type/code-documentation`
+  - Write `doc.go` with package overview and examples or add code comments to document
+    existing types and functions.
+- `type/code-feature`
+  - Usually a new go package / library for some functionality that is requested.
+    Should be encapsulated in its own interfaces with thorough unit tests for the new library.
+- `type/code-test-coverage`
+  - Audit tests for a package.  Run coverage tools and also manually look at what functions
+    are missing unit or integration tests.  Write tests for these functions.
+
+**Provide periodic status updates**
+
+Once you have requested an issue and it has been accepted, you will be expected
+to provide periodic updates to it.  Do update the issue with your status at least every
+week, and publish your work to a fork so the community can see your progress and
+provide early feedback.
+
+If you find the issue is too challenging, time consuming, or you are no longer able to work on it,
+this is perfectly acceptable and please let the issue author know.
+If you like, you may pick up a different issue immediately or sometime in the future.
+
+**Summary**:
+
+- Don't pick up an issue until you are ready to start working on it
+- When you want to pick up an issue, be sure to comment `@seans3` and `@mengqiy`.
+  Expect a response within 2 days.
+- Update the issue every week with your progress so we know it is being actively worked on.
+- There is an expectation that some time will be committed to working on the issue each
+  week until it is completed, or you are blocked on a maintainer.
+
+### Meet the community
+
+Engage with the SIG cli community!  Let us know who you are and how things are going!
+
+- Fill out the [about me form] so we know a bit about you and can direct your work accordingly.
+  - **Note:** After filling out the form, reach out via slack or the googlegroup and let us know.
+
+- Message the [cli mentors] googlegroup and let them know you filled out the form
+  and are looking to get started.
 
 - In [slack][slack-messages] (signup [here][slack-signup]),
-  @mention a [lead][leads] and ask if there are any issues you could pick up.
-  Leads can recommend issues that have enough priority to receive PR review bandwidth.
-  We also maintain a list of [CLI issues where help is wanted][cli_help_wanted_issues].
-  Most of them are not very complex, so that's probably a good starting point.
-- Send an email to the _kubernetes-sig-cli@googlegroups.com_ [group]
+  @mention a [lead][leads] and ask if there are any issues you could pick up, or
+  let them know what you are working on.
 
-  > Subject: New sig-cli contributor _${yourName}_
-  >
-  > Body: Hello, my name is _${yourName}_.  I would like to get involved in
-  > contributing to the Kubernetes project.  I have read all of the
-  > user documentation listed on the community contributing page.
-  > What should I do next to get started?
+- Attend a sig-cli [meeting] and introduce yourself and what you are working on.
 
-- Attend a sig-cli [meeting] and introduce yourself as looking to get started.
+- The sig-cli [community page] lists sig-cli [leads], channels of [communication],
+and group [meeting] times.
 
-### Bug lifecycle
+## Information about how Features are developed
 
-1. An [issue] is filed that
-  - includes steps to reproduce the issue including client / server version,
-  - mentions `@kubernetes/sig-cli-bugs`.
-2. A [PR] fixing the issue is implemented that
-  - __includes unit and test-cmd tests__,
-  - incorporates review feedback,
-  - description includes `Closes #<Issue Number>` or `Fixes #<Issue Number>`,
-  - description or comment @mentions `@kubernetes/sig-cli-pr-reviews`.
-3. Fix appears in the next Kubernetes release!
+Once you have made several contributions, you may want to start developing
+features that you come up with.  This section is about how to propose new
+features and get them accepted.
 
 ## Feature requests
 
@@ -92,7 +222,7 @@ the problem that the feature addresses.
 
 Working on a feature without getting approval for the user experience
 and software design often results in wasted time and effort due to
-decisions around flag-names, command names, and specific command
+decisions around flag names, command names, and specific command
 behavior.
 
 To minimize wasted work and improve communication across efforts,
@@ -112,7 +242,7 @@ any PRs are sent for code review.
    - docs are completed,
    - feature is designated _alpha_, _beta_ or _GA_.
 6. Implement the code per discussion in [bug lifecycle][bug].
-7. Update [kubectl concept docs].
+7. Update [kubectl docs].
 8. Wait for your feature to appear in the next Kubernetes release!
 
 
@@ -151,7 +281,7 @@ constrained. Community members are free to say
 - This is desirable but we need help on these other existing issues before tackling this.
 - No, this problem should be solved in another way.
 
-The proposal can be merged into the [design repo] after [lead][leads]
+The proposal can be merged into the [design repo] after [leads][leads]
 approval and discussion as a meeting [agenda] item.
 
 Then coding can begin.
@@ -283,10 +413,10 @@ See the sig-cli [community page] for points of contact and meeting times:
 [`PTAL`]: https://en.wiktionary.org/wiki/PTAL
 [agenda]: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit
 [bug]: #bug-lifecycle
-[communication]:  https://github.com/kubernetes/community/tree/master/sig-cli#communication
+[communication]:  https://github.com/kubernetes/community/tree/master/sig-cli#contact
 [community page]: https://github.com/kubernetes/community/tree/master/sig-cli
 [design proposal]: #design-proposals
-[design repo]: https://github.com/kubernetes/community/tree/master/contributors/design-proposals/sig-cli
+[design repo]: https://github.com/kubernetes/community/tree/master/contributors/design-proposals/cli
 [design template]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/sig-cli/template.md
 [development guide]: https://github.com/kubernetes/community/blob/master/contributors/devel/development.md
 [existing issue]: #adopt-an-issue
@@ -294,10 +424,8 @@ See the sig-cli [community page] for points of contact and meeting times:
 [feature request]: #feature-requests
 [feature]: https://github.com/kubernetes/features
 [group]: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
-[issue]: https://github.com/kubernetes/kubernetes/issues
-[cli_help_wanted_issues]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Asig%2Fcli+label%3Ahelp-wanted
-[kubectl concept docs]: https://github.com/kubernetes/kubernetes.github.io/tree/master/docs/concepts/tools/kubectl
-[kubectl docs]: https://kubernetes.io/docs/user-guide/kubectl-overview
+[issue]: https://github.com/kubernetes/kubectl/projects/3
+[kubectl docs]: https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/
 [kubernetes/cmd/kubectl]: https://github.com/kubernetes/kubernetes/tree/master/cmd/kubectl
 [kubernetes/pkg/kubectl]: https://github.com/kubernetes/kubernetes/tree/master/pkg/kubectl
 [leads]: https://github.com/kubernetes/community/tree/master/sig-cli#leads
@@ -307,3 +435,5 @@ See the sig-cli [community page] for points of contact and meeting times:
 [slack-messages]: https://kubernetes.slack.com/messages/sig-cli
 [slack-signup]: http://slack.k8s.io/
 [tests]: https://github.com/kubernetes/community/blob/master/contributors/devel/testing.md
+[cli mentors]: https://groups.google.com/a/google.com/forum/#!forum/kubernetes-sig-cli-mentors
+[about me form]: https://docs.google.com/forms/d/1ID6DX1abiDr9Z9_sXXC0DsMwuyHb_NeFdB3xeRa4Vf0
