@@ -224,6 +224,7 @@ Each element of options will be copied unmodified as an options line.
 
 The follow configurations will result in an invalid Pod spec:
 
+* Invalid number of nameservers (more than three).
 *  An invalid domain name/substitution appears in `searchPaths`.
 *  `dnsParams` is MUST be empty unless `dnsPolicy: Custom` is used.
 *   Number of final search paths exceeds 5 (glibc limit).
