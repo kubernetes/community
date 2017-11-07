@@ -323,7 +323,7 @@ overhead, but makes the API line up nicely with other Kubernetes APIs.
 
 ### Labeled Metrics ###
 
-Many metric systems support labeled metrics, allowing for dimenisionality
+Many metric systems support labeled metrics, allowing for dimensionality
 beyond the Kubernetes object hierarchy.  Since the HPA currently doesn't
 support specifying metric labels, this is not supported via this API.  We
 may wish to explore this in the future.
