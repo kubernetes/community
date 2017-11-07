@@ -186,7 +186,7 @@ redundant syncs.
   to provide all necessary information to detect container state changes
   in `GetPods()` (#13571).
 
-- Benchmark docker to adjust relising frequency.
+- Benchmark docker to adjust relisting frequency.
 
 - Fix/adapt features that rely on frequent, periodic pod syncing.
     * Liveness/Readiness probing: Create a separate probing manager using
