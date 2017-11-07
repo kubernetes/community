@@ -222,7 +222,7 @@ resource reservation model as is provided via [node allocatable](node-allocatabl
 for system and kubernetes daemons.
 
 For operators that have this concern, the `kubelet` with opt-in configuration
-will attempt to limit the abilty for a pod in a lower QoS tier to burst utilization
+will attempt to limit the ability for a pod in a lower QoS tier to burst utilization
 of a compressible resource that was requested by a pod in a higher QoS tier.
 
 The `kubelet` will support a flag `experimental-qos-reserved` that
