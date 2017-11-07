@@ -38,7 +38,7 @@ Additionally, Go build tags are not supported. This means that builds on macOS m
 and they are not currently tagged with version information.
 
 [Bazel does not validate build environment](https://github.com/kubernetes/kubernetes/issues/51623), thus make sure that needed
-tools and development packages are installed in the system. Bazel builds require presense of `make`, `gcc`, `g++`, `glibc and libstdc++ development headers` and `glibc static development libraries`. Please check your distribution for exact names of the packages. Examples for some commonly used distributions are below:
+tools and development packages are installed in the system. Bazel builds require presence of `make`, `gcc`, `g++`, `glibc and libstdc++ development headers` and `glibc static development libraries`. Please check your distribution for exact names of the packages. Examples for some commonly used distributions are below:
 
 |     Dependency        | Debian/Ubuntu                 | CentOS                         | OpenSuSE                                |
 |:---------------------:|-------------------------------|--------------------------------|-----------------------------------------|
