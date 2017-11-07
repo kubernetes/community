@@ -498,7 +498,7 @@ spec:
     requests:
       storage: 50Gi
 ```
-* User creates a Pod yaml which will utilitze both block and filesystem storage by its containers.
+* User creates a Pod yaml which will utilize both block and filesystem storage by its containers.
 
 ```
 apiVersion: v1
