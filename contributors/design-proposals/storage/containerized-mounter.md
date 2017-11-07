@@ -1,5 +1,5 @@
 # Containerized Mounter with Chroot for Container-Optimized OS
-
+exited
 ## Goal
 
 Due security and management overhead, our new Container-Optimized OS used by GKE
@@ -26,7 +26,7 @@ and share the mount with the host.
 
 * In the first version of containerized mounter, we use rkt fly to dynamically
   start a container during mount. When mount command finishes, the container is 
-  normally exited and will be garbage-collected. However, in case the glusterfs
+  normally excited and will be garbage-collected. However, in case the glusterfs
   mount, because a gluster daemon is running after command mount finishes util
   glusterfs unmount, the container started for mount will continue to run until 
   glusterfs client finishes. The container cannot be garbage-collected right away
