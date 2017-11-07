@@ -137,7 +137,7 @@ Because kubelet determines where the logs are stores and can access them
 directly, this meets requirement (1). As for requirement (2), the log collector
 can easily extract basic pod metadata (e.g., pod UID, container name) from
 the paths, and watch the directly for any changes. In the future, we can
-extend this by maintaining a metada file in the pod directory.
+extend this by maintaining a metadata file in the pod directory.
 
 **Log format**
 
