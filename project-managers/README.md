@@ -36,7 +36,7 @@ The following is the provisional process for adding people to the group:
 1. Any official management or leadership responsibilities you may have (e.g., manager of a team that includes the following contributors: ….).
 1. What you plan to do with the powers, including specific labels, SIGs, system components, github teams, etc.
 1. How long you think you need the powers.
-1. Any questions you have about appropriate application of the powers (e.g., policy for assigning priorities to issues, policy for assigning and unassigned issues, which parts of the system are covered by which teams).
+1. Any questions you have about appropriate application of the powers (e.g., policy for assigning priorities to issues, policy for assigning and unassigning issues, which parts of the system are covered by which teams).
 
 
 The Contributor Experience working-group leads or Brian Grant (@bgrant0607) will approve or deny your request.
