@@ -50,8 +50,9 @@ Add a new `pod.dnsPolicy: Custom` that allows for user customization of
 
 ## Pod API example
 
-In the example below, the user wishes to add the pod namespace and a custom
-expansion to the search path, as they do not use the other name aliases:
+In the example below, the user wishes to use their own DNS resolver and add the
+pod namespace and a custom expansion to the search path, as they do not use the
+other name aliases:
 
 ```yaml
 # Pod spec
@@ -67,12 +68,14 @@ spec:
   dnsPolicy: Custom
   dnsParams:
     custom:
+      nameservers:
+      - 1.2.3.4
       search:
       - $(NAMESPACE).svc.$(CLUSTER)
       - my.dns.search.suffix
-      - $(HOST)
       options:
       - "ndots:2"
+      
 ```
 
 Given the following host `/etc/resolv.conf`:
@@ -91,7 +94,7 @@ nameserver 10.240.0.10
 #
 #      $(NAMESPACE).svc.$CLUSTER
 #      |                     my.dns.search.suffix
-#      |                     |                    $(HOST)
+#      |                     |                    [from host]
 #      |                     |                    |
 #      V                     V                    V
 search ns1.svc.cluster.local my.dns.search.suffix foo.com bar.com
@@ -106,48 +109,49 @@ The following is a Pod dnsParams that only contains the host search paths:
 ```yaml
 dnsParams:
   custom:
-    searchPaths:
-    - $HOST
 ```
 
-Override `ndots` and add custom search path. Note that overriding the ndot may
-break the functionality of some of the search paths the
+Override `ndots` and add custom search path and do not include host search
+paths. Note that overriding the ndot may break the functionality of some of the
+search paths.
 
 ```yaml
 dnsParams:
   custom:
     searchPaths:
     - my.custom.suffix
-    - $HOST
     options:
     - "ndots:3"
+    excludeHostSearchPaths: true
 ```
+
+
 
 # API changes
 
 ```go
 type PodSpec struct {
-	...
-	DNSPolicy string
-	DNSParams *PodDNSParams
+    ...
+    DNSPolicy string
+    DNSParams *PodDNSParams
     ...
 }
 
 type PodDNSParams struct {
- 	Custom PodDNSParamsCustom
+    Custom PodDNSParamsCustom
 }
 
 type PodDNSParamsCustom struct {
-	Search []string
- 	Options []string
+    Search []string
+    Options []string
+    ExcludeHostSearchPaths bool
 }
 
 // This will not appear in types.go but is here for explication purposes.
 type DNSParamsSubstitution string
 const (
-	DNSParamsSearchPathNamespace = "$(NAMESPACE)"
-	DNSParamsSearchPathClusterDomain = "$(CLUSTER)"
-	DNSParamsSearchPathHostPaths = "$(HOST)"
+    DNSParamsSearchPathNamespace DNSParamsSubstitution     = "$(NAMESPACE)"
+    DNSParamsSearchPathClusterDomain DNSParamsSubstitution = "$(CLUSTER)"
 )
 ```
 
@@ -162,7 +166,7 @@ the entries listed in `dnsParams.custom.search`:
 func SearchPath(params *PodDNSParams) []string {
 	var searchPaths []string
 	for _, entry := range params.SearchPaths {
-		if entry == "$HOST" {
+		if !params.ExcludeHostSearchPaths {
 			searchPaths = append(searchPaths, HostSearchPaths...)
 			break
 		}
@@ -202,7 +206,6 @@ namespace is `my-ns`, `abc$(NAMESPACE)1234` will NOT be expanded to
 | ----   | ---- |
 | `$(NAMESPACE)` | Namespace of the Pod |
 | `$(CLUSTER)` | Kubernetes cluster domain (e.g. `cluster.local`) |
-| `$(HOST)` | Host search paths. This is a special substitution that MUST ONLY appear at the end of the `searchPaths` list |
 
 ### options
 
@@ -215,7 +218,6 @@ The follow configurations will result in an invalid Pod spec:
 *  An invalid domain name/substitution appears in `searchPaths`.
 *  `dnsParams` is MUST be empty unless `dnsPolicy: Custom` is used.
 *   Number of final search paths exceeds 5 (glibc limit).
-*  `$HOST` is not the last item in `searchPaths`.
 *  `ndots` is greater than 15 (glibc limit).
 
 # References
