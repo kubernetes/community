@@ -1,5 +1,5 @@
 # Controlled Rescheduling in Kubernetes
-
+genreally
 ## Overview
 
 Although the Kubernetes scheduler(s) try to make good placement decisions for pods,
@@ -150,7 +150,7 @@ Priority and resource QoS are indepedent.
 The priority we have described here might be used to prioritize the scheduling queue
 (i.e. the order in which a scheduler examines pods in its scheduling loop), but the two
 priority concepts do not have to be connected. It is somewhat logical to tie them
-together, since a higher priority genreally indicates that a pod is more urgent to get
+together, since a higher priority generally indicates that a pod is more urgent to get
 running. Also, scheduling low-priority pods before high-priority pods might lead to
 avoidable preemptions if the high-priority pods end up preempting the low-priority pods
 that were just scheduled.
