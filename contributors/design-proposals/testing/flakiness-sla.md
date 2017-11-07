@@ -1,5 +1,5 @@
 # Kubernetes Testing Flakiness SLA
-
+responsibile
 This document captures the expectations of the community about flakiness in
 our tests and our test infrastructure. It sets out an SLA (Service Level 
 Agreement) for flakiness in our tests, as well as actions that we will
@@ -67,7 +67,7 @@ may chose to update our flakiness SLA.
 
 ### Monitoring and enforcement infrastructure
 SIG-Testing are currently responsible for the submit-queue infrastructure
-and will be responsibile for designing, implementing and deploying the
+and will be responsible for designing, implementing and deploying the
 relevant monitoring and enforcement mechanisms for this proposal.
 
 ### Assessing success
