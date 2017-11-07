@@ -71,7 +71,7 @@ spec:
       nameservers:
       - 1.2.3.4
       search:
-      - $(NAMESPACE).svc.$(CLUSTER)
+      - $(NAMESPACE).svc.$(CLUSTER_SUBDOMAIN)
       - my.dns.search.suffix
       options:
       - "ndots:2"
@@ -92,7 +92,7 @@ The pod will get the following `/etc/resolv.conf`:
 nameserver 10.240.0.10
 # Comments only for explication purposes.
 #
-#      $(NAMESPACE).svc.$CLUSTER
+#      $(NAMESPACE).svc.$(CLUSTER_SUBDOMAIN)
 #      |                     my.dns.search.suffix
 #      |                     |                    [from host]
 #      |                     |                    |
@@ -111,9 +111,20 @@ dnsParams:
   custom:
 ```
 
-Override `ndots` and add custom search path and do not include host search
-paths. Note that overriding the ndot may break the functionality of some of the
-search paths.
+Don't include host search paths, override the nameservers. Note: this will for
+all intents and purposes disable Kubernetes DNS.
+
+```yaml
+dnsParams:
+  custom:
+    nameservers:
+    - 1.2.3.4
+    - 1.2.3.5
+    excludeHostSearchPaths: true
+```
+
+Override `ndots` and add custom search path. Note that overriding the ndot may
+break the functionality of some of the search paths.
 
 ```yaml
 dnsParams:
@@ -122,10 +133,7 @@ dnsParams:
     - my.custom.suffix
     options:
     - "ndots:3"
-    excludeHostSearchPaths: true
 ```
-
-
 
 # API changes
 
@@ -142,8 +150,9 @@ type PodDNSParams struct {
 }
 
 type PodDNSParamsCustom struct {
-    Search []string
-    Options []string
+    Namerservers           []string
+    Search                 []string
+    Options                []string
     ExcludeHostSearchPaths bool
 }
 
@@ -151,7 +160,7 @@ type PodDNSParamsCustom struct {
 type DNSParamsSubstitution string
 const (
     DNSParamsSearchPathNamespace DNSParamsSubstitution     = "$(NAMESPACE)"
-    DNSParamsSearchPathClusterDomain DNSParamsSubstitution = "$(CLUSTER)"
+    DNSParamsSearchPathClusterDomain DNSParamsSubstitution = "$(CLUSTER_SUBDOMAIN)"
 )
 ```
 
@@ -205,7 +214,7 @@ namespace is `my-ns`, `abc$(NAMESPACE)1234` will NOT be expanded to
 | Substitution | Description |
 | ----   | ---- |
 | `$(NAMESPACE)` | Namespace of the Pod |
-| `$(CLUSTER)` | Kubernetes cluster domain (e.g. `cluster.local`) |
+| `$(CLUSTER_SUBDOMAIN)` | Kubernetes cluster domain (e.g. `cluster.local`) |
 
 ### options
 
