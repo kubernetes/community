@@ -1,5 +1,5 @@
 # Controlled Rescheduling in Kubernetes
-
+indepedent
 ## Overview
 
 Although the Kubernetes scheduler(s) try to make good placement decisions for pods,
@@ -145,7 +145,7 @@ it allows the API server to do validation (e.g. to catch mis-spelling).
 In the future, which priorities are usable for a given namespace and pods with certain
 attributes may be configurable, similar to ResourceQuota, LimitRange, or security policy.
 
-Priority and resource QoS are indepedent.
+Priority and resource QoS are independent.
 
 The priority we have described here might be used to prioritize the scheduling queue
 (i.e. the order in which a scheduler examines pods in its scheduling loop), but the two
