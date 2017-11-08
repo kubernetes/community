@@ -341,7 +341,7 @@ we are not enabling this function by default, but would like operators
 that want to value resource priority over resource utilization to gather
 real-world feedback on its utility.
 
-As a best practice, oeprators that want to provide a similar resource
+As a best practice, operators that want to provide a similar resource
 reservation model for Guaranteed pods as we offer via enforcement of
 node allocatable are encouraged to schedule their Guaranteed pods first
 as it will ensure the Burstable and BestEffort tiers have had their QoS
