@@ -172,7 +172,7 @@ pod<UID>/cpu.shares = 2
 ## QoS level cgroups
 
 The `kubelet` defines a `--cgroup-root` flag that is used to specify the `ROOT`
-node in the cgroup hierarchy below which the `kubelet` should manange individual
+node in the cgroup hierarchy below which the `kubelet` should manage individual
 cgroup sandboxes.  It is strongly recommended that users keep the default
 value for `--cgroup-root` as `/` in order to avoid deep cgroup hierarchies.  The
 `kubelet` creates a cgroup sandbox under the specified path `ROOT/kubepods` per
