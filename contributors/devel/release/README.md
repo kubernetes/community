@@ -87,7 +87,7 @@ The Release Management Team Lead is the person ultimately responsible for ensuri
 
 ## Individual Contributors
 
-Release responsiblites of indvidual contributors to the Kubernetes project are captured below.
+Release responsibilities of indvidual contributors to the Kubernetes project are captured below.
 
 ### Patch Release
 

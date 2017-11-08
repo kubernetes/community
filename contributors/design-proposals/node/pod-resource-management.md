@@ -222,7 +222,7 @@ resource reservation model as is provided via [node allocatable](node-allocatabl
 for system and kubernetes daemons.
 
 For operators that have this concern, the `kubelet` with opt-in configuration
-will attempt to limit the abilty for a pod in a lower QoS tier to burst utilization
+will attempt to limit the ability for a pod in a lower QoS tier to burst utilization
 of a compressible resource that was requested by a pod in a higher QoS tier.
 
 The `kubelet` will support a flag `experimental-qos-reserved` that
@@ -341,7 +341,7 @@ we are not enabling this function by default, but would like operators
 that want to value resource priority over resource utilization to gather
 real-world feedback on its utility.
 
-As a best practice, oeprators that want to provide a similar resource
+As a best practice, operators that want to provide a similar resource
 reservation model for Guaranteed pods as we offer via enforcement of
 node allocatable are encouraged to schedule their Guaranteed pods first
 as it will ensure the Burstable and BestEffort tiers have had their QoS
