@@ -690,7 +690,7 @@ sigs:
       company: Red Hat
     meetings:
     - day: Thursday
-      time: "10:00"
+      time: "9:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
     meeting_url: https://zoom.us/j/614261834
