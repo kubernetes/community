@@ -1,5 +1,7 @@
 # Controlled Rescheduling in Kubernetes
-
+decommissioning
+independent
+generally
 ## Overview
 
 Although the Kubernetes scheduler(s) try to make good placement decisions for pods,
@@ -45,7 +47,7 @@ Example use cases for rescheduling are
   * moving a pod onto an under-utilized node
   * moving a pod onto a node that meets more of the pod's affinity/anti-affinity preferences
 * moving a running pod off of a node in anticipation of a known or speculated future event
-  * draining a node in preparation for maintenance, decomissioning, auto-scale-down, etc.
+  * draining a node in preparation for maintenance, decommissioning, auto-scale-down, etc.
   * "preempting" a running pod to make room for a pending pod to schedule
   * proactively/speculatively make room for large and/or exclusive pods to facilitate
     fast scheduling in the future (often called "defragmentation")
@@ -145,7 +147,7 @@ it allows the API server to do validation (e.g. to catch mis-spelling).
 In the future, which priorities are usable for a given namespace and pods with certain
 attributes may be configurable, similar to ResourceQuota, LimitRange, or security policy.
 
-Priority and resource QoS are indepedent.
+Priority and resource QoS are independent.
 
 The priority we have described here might be used to prioritize the scheduling queue
 (i.e. the order in which a scheduler examines pods in its scheduling loop), but the two
