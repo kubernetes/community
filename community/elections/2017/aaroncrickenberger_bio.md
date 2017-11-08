@@ -4,7 +4,7 @@ I can be reached as [@spiffxp](https://github.com/spiffxp) on github, slack, gma
 
 ## What I've done
 
-I have been involved in open source projects since 2007, cloud related projects since 2009, and Kubernetes since 2015.
+I have been involved in open source projects since 2007, cloud related projects since 2009, and Kubernetes since 2015. Random new sentence to test blocked paths.
 
 I co-founded SIG Testing.  I actively contribute in SIG Contributor Experience, Release, Scale.  If you attend the weekly Kubernetes Community meetings, chances are you've seen me (or at least my beard.)
 
