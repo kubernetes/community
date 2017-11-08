@@ -1,6 +1,6 @@
 # Pod Termination Reason
 
-**Author**: kow3ns@ yguo0905@
+**Author**: kow3ns@ yguo0905@ krmayankk@
 
 **Status**: Proposal
 
@@ -175,7 +175,7 @@ used to convey a termination reason signaled by a DeletionReason.
 
 ```golang
 // DeleteExecAction describes a "run in container" action that will be invoked
-// invoked inside of a container prior to sending the TERM signal to the 
+// inside of a container prior to sending the TERM signal to the 
 // container's entry point.
 type DeleteExecAction struct {
 	// Command is the command line to execute inside the container, the working directory for the
@@ -211,7 +211,7 @@ type DeleteHTTPGetAction struct {
 	// +optional
 	HTTPHeaders []HTTPHeader
 	// ReasonHeader is the header that will be set to the reason for a 
-	// deletion. This header defaults to "KUBE-DELETE-REASON"
+	// deletion. This header defaults to "Kube-Delete-Reason"
 	ReasonHeader string
 }
 ```
@@ -227,7 +227,7 @@ type PreStopHandler struct {
    	// One and only one of the following should be specified.
    	// Exec specifies the action to take.
    	// +optional
-   	Exec *DeleteExecAction
+   	Exec    *DeleteExecAction
    	// HTTPGet specifies the http request to perform.
    	// +optional
    	HTTPGet *DeleteHTTPGetAction
