@@ -440,15 +440,6 @@ from placing new best effort pods on the node since they will be rejected by the
 On the other hand, the `DiskPressure` condition if true should dissuade the scheduler from
 placing **any** new pods on the node since they will be rejected by the `kubelet` in admission.
 
-## Enforcing Node Allocatable
-
-To enforce [Node Allocatable](./node-allocatable.md), Kubelet primarily uses cgroups.
-However `storage` cannot be enforced using cgroups.
-
-Once Kubelet supports `storage` as an `Allocatable` resource, Kubelet will perform evictions whenever the total storage usage by pods exceed node allocatable.
-
-If a pod cannot tolerate evictions, then ensure that requests is set and it will not exceed `requests`.
-
 ## Best Practices
 
 ### DaemonSet
