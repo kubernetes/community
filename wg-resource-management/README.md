@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Designing and shepherding cross-cutting features around compute resource isolation and utilization.
 
 ## Meetings
-* [Wednesdays at 18:00 UTC](https://zoom.us/j/4799874685) (weekly (On demand)). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
+* [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly (On demand)). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1j3vrG6BgE0hUDs2e-1ZUegKN4W4Adb1B6oJ6j-4kyPU).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=FUUJeWIEej0&list=PL69nYSiGNLP2uTrVwZCFtdEvLQvsbG2w4).

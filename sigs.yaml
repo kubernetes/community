@@ -458,8 +458,8 @@ sigs:
       company: Red Hat
     meetings:
     - day: Tuesday
-      time: "17:00"
-      tz: "UTC"
+      time: "10:00"
+      tz: "PT (Pacific Time)"
       frequency: weekly
     meeting_url: https://plus.google.com/hangouts/_/google.com/sig-node-meetup?authuser=0
     meeting_archive_url: https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing
@@ -788,8 +788,8 @@ workinggroups:
       company: Red Hat
     meetings:
     - day: Wednesday
-      time: "18:00"
-      tz: "UTC"
+      time: "11:00"
+      tz: "PT (Pacific Time)"
       frequency: weekly (On demand)
     meeting_url: https://zoom.us/j/4799874685
     meeting_archive_url: https://docs.google.com/document/d/1j3vrG6BgE0hUDs2e-1ZUegKN4W4Adb1B6oJ6j-4kyPU
