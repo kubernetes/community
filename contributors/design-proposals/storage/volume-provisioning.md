@@ -383,7 +383,7 @@ StorageClass and it MUST NOT be copied around the system e.g. in annotations
 of PVs. See issue #34822.
 
 * External provisioners running in pod should have appropriate credentials
-mouted as Secret inside pods that run the provisioner. Namespace with the pods
+mounted as Secret inside pods that run the provisioner. Namespace with the pods
 and Secret instance should be well secured.
 
 ### `StorageClass` API
