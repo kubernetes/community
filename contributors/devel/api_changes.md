@@ -526,7 +526,7 @@ run it several times to ensure there are no incompletely calculated fields.
 
 `client-gen` is a tool to generate clientsets for top-level API objects.
 
-`client-gen` requires the `// +genclient=true` annotation on each
+`client-gen` requires the `// +genclient` annotation on each
 exported type in both the internal `pkg/apis/<group>/types.go` as well as each
 specifically versioned `staging/src/k8s.io/api/<group>/<version>/types.go`.
 
@@ -554,7 +554,7 @@ client-gen for non-kubernetes API.
 ### Generate Listers
 
 `lister-gen` is a tool to generate listers for a client. It reuses the
-`//+genclient=true` and the `// +groupName=` annotations, so you do not need to
+`//+genclient` and the `// +groupName=` annotations, so you do not need to
 specify extra annotations.
 
 Your previous run of `hack/update-codegen.sh` has invoked `lister-gen`.
@@ -562,7 +562,7 @@ Your previous run of `hack/update-codegen.sh` has invoked `lister-gen`.
 ### Generate Informers
 
 `informer-gen` generates the very useful Informers which watch API
-resources for changes. It reuses the `//+genclient=true` and the
+resources for changes. It reuses the `//+genclient` and the
 `//+groupName=` annotations, so you do not need to specify extra annotations.
 
 Your previous run of `hack/update-codegen.sh` has invoked `informer-gen`.
