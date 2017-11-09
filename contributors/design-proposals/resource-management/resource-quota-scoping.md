@@ -326,8 +326,3 @@ Appropriate unit and e2e testing will be authored.
 
 Existing resource quota documentation and examples will be updated.
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/resource-quota-scoping.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

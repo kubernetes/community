@@ -28,7 +28,6 @@ for namespaced kernel parameters (sysctls) set for each pod.
 
 ## Table of Contents
 
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Setting Sysctls on the Pod Level](#setting-sysctls-on-the-pod-level)
   - [Roadmap](#roadmap)
@@ -63,7 +62,6 @@ for namespaced kernel parameters (sysctls) set for each pod.
     - [Use in a pod](#use-in-a-pod)
     - [Allowing only certain sysctls](#allowing-only-certain-sysctls)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## Abstract
 

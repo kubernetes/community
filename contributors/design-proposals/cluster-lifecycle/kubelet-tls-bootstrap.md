@@ -237,7 +237,3 @@ auth.
 - supplemental policy (e.g. cluster CA only issues 30-day certs for hostnames *.k8s.example.com, each new cert must have fresh keys, ...)
 - fully automated provisioning (using a handshake protocol or external list of authorized machines)
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/kubelet-tls-bootstrap.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -228,6 +228,3 @@ count/secrets                 1     4
 
 See [resource quota document](https://kubernetes.io/docs/concepts/policy/resource-quotas/) and the [example of Resource Quota](https://kubernetes.io/docs/tasks/administer-cluster/quota-api-object/) for more information.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/admission_control_resource_quota.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

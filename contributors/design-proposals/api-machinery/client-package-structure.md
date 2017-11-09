@@ -1,5 +1,3 @@
-<!-- BEGIN MUNGE: GENERATED_TOC -->
-
 - [Client: layering and package structure](#client-layering-and-package-structure)
   - [Desired layers](#desired-layers)
     - [Transport](#transport)
@@ -12,7 +10,6 @@
   - [Package Structure](#package-structure)
   - [Client Guarantees (and testing)](#client-guarantees-and-testing)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 # Client: layering and package structure
 
@@ -310,7 +307,3 @@ that client will not have to change their code until they are deliberately
 upgrading their import. We probably will want to generate some sort of stub test
 with a clientset, to ensure that we don't change the interface.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/client-package-structure.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

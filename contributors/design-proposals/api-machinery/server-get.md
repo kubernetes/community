@@ -177,7 +177,3 @@ fall back to client side functions.
 Server side code would reuse the existing display functions but replace TabWriter with either a structured writer
 or the tabular form.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/server-get.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -196,8 +196,3 @@ Prometheus format.
 
 ![Architecture Diagram](monitoring_architecture.png?raw=true "Architecture overview")
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/monitoring_architecture.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

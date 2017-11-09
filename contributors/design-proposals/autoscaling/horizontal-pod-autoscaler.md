@@ -254,10 +254,3 @@ autoscaler to create a new pod.  Discussed in issue [#3247](https://github.com/k
 * *[future]* **When scaling down, make more educated decision which pods to
 kill.** E.g.: if two or more pods from the same replication controller are on
 the same node, kill one of them. Discussed in issue [#4301](https://github.com/kubernetes/kubernetes/issues/4301).
-
-
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/horizontal-pod-autoscaler.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

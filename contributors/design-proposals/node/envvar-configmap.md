@@ -182,7 +182,3 @@ cm2_key2="b"
 
 Add similar support for Secrets.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/envvar-configmap.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

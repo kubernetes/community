@@ -79,9 +79,3 @@ Many thanks in advance to everyone who contributes their time and effort to
 making Kubernetes both a successful system as well as a successful community.
 The strength of our software shines in the strengths of each individual
 community member.  Thanks!
-
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/community-expectations.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

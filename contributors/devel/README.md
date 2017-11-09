@@ -79,7 +79,3 @@ Guide](http://kubernetes.io/docs/admin/).
 ## Building releases
 
 See the [kubernetes/release](https://github.com/kubernetes/release) repository for details on creating releases and related tools and helper scripts.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/README.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

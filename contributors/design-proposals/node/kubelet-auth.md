@@ -101,6 +101,3 @@ This mode allows any authenticated request.
 
 * Add support for CRL revocation for x509 client certificate authentication (http://issue.k8s.io/18982)
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/kubelet-auth.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

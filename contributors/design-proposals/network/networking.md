@@ -186,7 +186,3 @@ AWS started rolling out basic
 but direct ipv6 assignment to instances doesn't appear to be supported by other 
 major cloud providers (e.g. GCE) yet. We'd happily take pull requests from people 
 running Kubernetes on bare metal, though. :-)
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/networking.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

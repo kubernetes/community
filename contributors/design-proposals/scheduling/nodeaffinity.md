@@ -240,7 +240,3 @@ The main related issue is [#341](https://github.com/kubernetes/kubernetes/issues
 Issue [#367](https://github.com/kubernetes/kubernetes/issues/367) is also related.
 Those issues reference other related issues.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/nodeaffinity.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

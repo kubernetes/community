@@ -3,7 +3,6 @@
 Updated: 3/23/2017
 
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Kubectl Conventions](#kubectl-conventions)
   - [Principles](#principles)
@@ -18,7 +17,6 @@ Updated: 3/23/2017
   - [Exit code conventions](#exit-code-conventions)
   - [Generators](#generators)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## Principles
 
@@ -458,7 +456,3 @@ method which configures the generated namespace that callers of the generator
 * `--dry-run` should output the resource that would be created, without
 creating it.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/kubectl-conventions.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

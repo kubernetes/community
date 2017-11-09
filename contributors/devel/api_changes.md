@@ -3,7 +3,6 @@ A set of API conventions, which applies to new APIs and to changes, can be
 found at [API Conventions](api-conventions.md).
 
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [So you want to change the API?](#so-you-want-to-change-the-api)
   - [Operational overview](#operational-overview)
@@ -30,7 +29,6 @@ found at [API Conventions](api-conventions.md).
   - [Alpha, Beta, and Stable Versions](#alpha-beta-and-stable-versions)
     - [Adding Unstable Features to Stable Versions](#adding-unstable-features-to-stable-versions)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 # So you want to change the API?
 

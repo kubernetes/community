@@ -201,7 +201,3 @@ restartPolicy set to Always.
 
 - Should work similarly to [Deployment](http://issues.k8s.io/1743).
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/daemon.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

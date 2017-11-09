@@ -1,5 +1,3 @@
-<!-- BEGIN MUNGE: GENERATED_TOC -->
-
 - [Overview](#overview)
   - [Motivation](#motivation)
   - [Related work](#related-work)
@@ -21,8 +19,6 @@
   - [Alerting](#alerting)
   - [Profile authoring](#profile-authoring)
 - [Appendix](#appendix)
-
-<!-- END MUNGE: GENERATED_TOC -->
 
 # Overview
 
@@ -304,7 +300,3 @@ documentation for following this process in a Kubernetes environment.
   ```
   $ apparmor_parser --remove /path/to/profile
   ```
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/apparmor.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

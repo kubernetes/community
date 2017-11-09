@@ -174,7 +174,3 @@ Docs will be edited to show examples without a `job.spec.selector`.
 We probably want as much as possible the same behavior for Job and
 ReplicationController.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/selector-generation.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

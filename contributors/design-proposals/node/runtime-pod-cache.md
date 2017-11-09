@@ -167,7 +167,3 @@ by such periods and should improve Kubelet's perceived responsiveness.
 
  - Deprecate the old runtime cache.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/runtime-pod-cache.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

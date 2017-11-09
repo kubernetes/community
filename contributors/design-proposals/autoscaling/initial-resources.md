@@ -70,6 +70,3 @@ and should be introduced shortly after the first version is done:
 * add estimation as annotations for those containers that already has resources set
 * support for other data sources like [Hawkular](http://www.hawkular.org/)
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/initial-resources.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

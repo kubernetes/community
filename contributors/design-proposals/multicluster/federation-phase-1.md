@@ -400,8 +400,3 @@ This part has been included in the section “Federated Service” of
 document
 “[Federated Cross-cluster Load Balancing and Service Discovery Requirements and System Design](federated-services.md))”.
 Please refer to that document for details.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/federation-phase-1.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

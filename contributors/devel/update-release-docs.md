@@ -1,7 +1,5 @@
 # Table of Contents
 
-<!-- BEGIN MUNGE: GENERATED_TOC -->
-
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Adding a new docs collection for a release](#adding-a-new-docs-collection-for-a-release)
@@ -10,7 +8,6 @@
   - [Updating docs in release branch](#updating-docs-in-release-branch)
   - [Updating docs in gh-pages branch](#updating-docs-in-gh-pages-branch)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 # Overview
 
@@ -109,7 +106,3 @@ docs go away.
 
 If the change added or deleted a doc, then update the corresponding `_includes/nav_vX.Y.html` file as well.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/update-release-docs.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

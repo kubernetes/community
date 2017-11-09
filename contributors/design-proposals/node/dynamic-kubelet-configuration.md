@@ -308,6 +308,3 @@ There is discussion in [#10179](https://github.com/kubernetes/kubernetes/issues/
     + Reconciling configuration with objects added after the completion of a rollout, e.g. new `Nodes`.
     + Pausing/resuming a rollout.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/dynamic-kubelet-settings.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

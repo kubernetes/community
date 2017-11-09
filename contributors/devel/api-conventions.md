@@ -8,7 +8,7 @@ Kubernetes API structure, and developers wanting to extend the Kubernetes API.
 An introduction to using resources with kubectl can be found in [the object management overview](https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/).*
 
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
+
 
   - [Types (Kinds)](#types-kinds)
     - [Resources](#resources)
@@ -45,7 +45,6 @@ An introduction to using resources with kubectl can be found in [the object mana
   - [WebSockets and SPDY](#websockets-and-spdy)
   - [Validation](#validation)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 The conventions of the [Kubernetes API](https://kubernetes.io/docs/api/) (and related APIs in the
 ecosystem) are intended to ease client development and ensure that configuration
@@ -1317,6 +1316,3 @@ be less than 256", "must be greater than or equal to 0".  Do not use words
 like "larger than", "bigger than", "more than", "higher than", etc.
 * When specifying numeric ranges, use inclusive ranges when possible.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/api-conventions.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

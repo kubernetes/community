@@ -268,8 +268,3 @@ There were other alternatives that we had discussed.
   providing a centralised authentication and authorization service which all of
   the servers can use.
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/aggregated-api-servers.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

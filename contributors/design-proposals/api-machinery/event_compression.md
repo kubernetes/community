@@ -162,8 +162,3 @@ compressing multiple recurring events in to a single event.
 single event to optimize etcd storage.
  * PR [#4444](http://pr.k8s.io/4444): Switch events history to use LRU cache
 instead of map.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/event_compression.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

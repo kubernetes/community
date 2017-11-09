@@ -283,9 +283,3 @@ The relationship between taints and node drains is discussed in [#1574](https://
 
 The concepts of taints and tolerations were originally developed as part of the
 Omega project at Google.
-
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/taint-toleration-dedicated.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

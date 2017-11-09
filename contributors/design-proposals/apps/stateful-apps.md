@@ -355,9 +355,3 @@ Requested features:
 
 StatefulSets were formerly known as PetSets and were renamed to be less "cutesy" and more descriptive as a
 prerequisite to moving to beta. No animals were harmed in the making of this proposal.
-
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/stateful-apps.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

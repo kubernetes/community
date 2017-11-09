@@ -134,7 +134,3 @@ default in Kubelet**.
   - Email: sig-node (kubernetes-sig-node@googlegroups.com)
   - Slack: https://kubernetes.slack.com/messages/sig-node
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/container-runtime-interface.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

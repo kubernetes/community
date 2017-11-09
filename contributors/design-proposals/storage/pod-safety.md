@@ -400,8 +400,3 @@ and unambiguous way to end users.
     force deleting them.
   * Decision: YES - captured above.
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/pod-safety.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

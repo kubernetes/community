@@ -260,9 +260,3 @@ spec:
       ebs-volume-type: gp-ssd
       aws-availability-zone: us-east-1
 ```
-
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/volume-selectors.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->
