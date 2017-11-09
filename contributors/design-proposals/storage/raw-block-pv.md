@@ -528,6 +528,37 @@ spec:
         name: my-nginx-data 
 	readOnly: false
 ```
+## UC9:
+
+DESCRIPTION:
+* A user wishes to read data from a read-only raw block device, an example might be a database for analytics processing. 
+
+USER:
+* User creates pod and specifies 'readOnly' as a parameter in the persistent volume claim to indicate they would
+like to be bound to a PV with this setting enabled.
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-block-001
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      ports:
+      - containerPort: 80
+      volumeDevices:
+        - name: data
+          devicePath: /dev/xvda
+  volumes:
+    - name: data
+      persistentVolumeClaim:
+        claimName: block-pvc001
+        readOnly: true #flag indicating read-only for container runtime
+```
+*** Note: the readOnly field already exists in the PersistentVolumeClaimVolumeSource above and will dictate the values set by the container runtime options ***
+
 
 # Container Runtime considerations
 It is important the values that are passed to the container runtimes are valid and support the current implementation of these various runtimes. Listed below are a table of various runtime and the mapping of their values to what is passed from the kubelet.
