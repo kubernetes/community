@@ -20,6 +20,11 @@ In some cases you want to generate non-standard verbs (eg. for sub-resources). T
 
 - `// +genclient:method=Scale,verb=update,subresource=scale,input=k8s.io/api/extensions/v1beta1.Scale,result=k8s.io/api/extensions/v1beta1.Scale` - in this case a new function `Scale(string, *v1beta.Scale) *v1beta.Scale` will be added to the default client and the body of the function will be based on the *update* verb. The optional *subresource* argument will make the generated client function use subresource `scale`. Using the optional *input* and *result* arguments you can override the default type with a custom type. If the import path is not given, the generator will assume the type exists in the same package.
 
+In addition, the following optional tags influence the client generation:
+
+- `// +groupName=policy.authorization.k8s.io` – used in the fake client as the full group name (defaults to the package name),
+- `// +groupGoName=AuthorizationPolicy` – a CamelCase Golang identifier to de-conflict groups with non-unique prefixes like `policy.authorization.k8s.io` and `policy.k8s.io`. These would lead to two `Policy()` methods in the clientset otherwise (defaults to the upper-case first segement of the group name).
+
 **2a.** If you are developing in the k8s.io/kubernetes repository, you just need to run hack/update-codegen.sh.
 
 **2b.** If you are running client-gen outside of k8s.io/kubernetes, you need to use the command line argument `--input` to specify the groups and versions of the APIs you want to generate clients for, client-gen will then look into `pkg/apis/${GROUP}/${VERSION}/types.go` and generate clients for the types you have marked with the `genclient` tags. For example, to generated a clientset named "my_release" including clients for api/v1 objects and extensions/v1beta1 objects, you need to run:
