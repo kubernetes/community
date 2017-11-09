@@ -1,45 +1,4 @@
-# Title
-
-This is the title of the KEP.  Keep it simple and descriptive. A good title can
-help communicate what the KEP is and should be considered as part of any review.
-
-The *filename* for the KEP should include the KEP number along with the title.
-The title should be lowercased and spaces/punctuation should be replaced with
-`-`. As the KEP is approved and an official KEP number is allocated, the file
-should be renamed.
-
-To get started with this template:
-* Make a copy in the appropriate directory.  Name it `draft-YYYYMMDD-my-title.md`.
-* Create a PR in the
-  [`kubernetes/community`](https://github.com/kubernetes/community) repo.
-* Check in early.  Do this once the document holds together and general
-  direction is understood by many in the sponsoring SIG. View anything marked as
-  a draft as a working document.  Aim for single topic PRs to keep discussions
-  focused. If you disagree with what is already in a document, open a new PR
-  with suggested changes.
-* As a KEP is approved, rename the file yet again with the final KEP number.
-
-The canonical place for the latest set of instructions (and the likely source of
-this file) is
-[here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/0000-kep-template.md).
-
-## Metadata
-
-The `Metadata` section is intended to support the creation of tooling around the
-KEP process.  This will be a YAML section that is fenced as a code block.
-
-See the KEP process for details on each of these items.  This is here for easy
-copy/pasting.
-
-TODO(jbeda): Do we want to move this to the front the doc with a delimiter
-(`---`) so it is easier to parse.  Many static site generators use this and call
-it "front matter".
-
-TODO(jbeda): Do we want to have a "people database" to reduce the amount of
-duplication on naming people here?  This would be a simple map of github ID to
-name and contact info.
-
-```yaml
+---
 kep-number: draft-XXX
 title: My First KEP
 authors:
@@ -72,7 +31,44 @@ replaces:
   - KEP-3
 superseded-by:
   - KEP-100
-```
+---
+
+# Title
+
+This is the title of the KEP.  Keep it simple and descriptive. A good title can
+help communicate what the KEP is and should be considered as part of any review.
+
+The *filename* for the KEP should include the KEP number along with the title.
+The title should be lowercased and spaces/punctuation should be replaced with
+`-`. As the KEP is approved and an official KEP number is allocated, the file
+should be renamed.
+
+To get started with this template:
+* Make a copy in the appropriate directory.  Name it `draft-YYYYMMDD-my-title.md`.
+* Create a PR in the
+  [`kubernetes/community`](https://github.com/kubernetes/community) repo.
+* Check in early.  Do this once the document holds together and general
+  direction is understood by many in the sponsoring SIG. View anything marked as
+  a draft as a working document.  Aim for single topic PRs to keep discussions
+  focused. If you disagree with what is already in a document, open a new PR
+  with suggested changes.
+* As a KEP is approved, rename the file yet again with the final KEP number.
+
+The canonical place for the latest set of instructions (and the likely source of
+this file) is
+[here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/0000-kep-template.md).
+
+## Metadata
+
+The `Metadata` section is intended to support the creation of tooling around the
+KEP process.  This will be a YAML header section, seen at the top of this file.
+
+See the KEP process for details on each of these items.  This is here for easy
+copy/pasting.
+
+TODO(jbeda): Do we want to have a "people database" to reduce the amount of
+duplication on naming people here?  This would be a simple map of github ID to
+name and contact info.
 
 ## Table of Contents
 

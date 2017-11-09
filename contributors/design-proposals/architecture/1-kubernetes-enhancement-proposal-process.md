@@ -1,7 +1,3 @@
-# Kubernetes Enhancement Proposal Process
-
-## Metadata
-```
 ---
 kep-number: 1
 title: Kubernetes Enhancement Proposal Process
@@ -15,7 +11,7 @@ authors:
     slack: jbeda
 owning-sig: sig-architecture
 participating-sigs:
-  - `kubernetes-wide`
+  - kubernetes-wide
 reviewers:
   - name: TBD
 approvers:
@@ -24,7 +20,9 @@ editor:
   name: TBD
 creation-date: 2017-08-22
 status: draft
-```
+---
+
+# Kubernetes Enhancement Proposal Process
 
 ## Table of Contents
 
