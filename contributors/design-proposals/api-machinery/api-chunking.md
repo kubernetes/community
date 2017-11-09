@@ -175,8 +175,3 @@ The initial chunking implementation would focus on consistent listing on server 
 For the initial alpha release, chunking would be behind a feature flag and attempts to provide the `continue` or `limit` flags should be ignored. While disabled, a `continue` token should never be returned by the server as part of a list.
 
 Future work might offer more options for clients to page in an inconsistent fashion, or allow clients to directly specify the parts of the namespace / name keyspace they wish to range over (paging).
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/server-get.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

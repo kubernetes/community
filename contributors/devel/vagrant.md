@@ -427,6 +427,3 @@ provider, which uses nfs by default. For example:
 export KUBERNETES_VAGRANT_USE_NFS=true
 ```
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/developer-guides/vagrant.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

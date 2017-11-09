@@ -88,7 +88,3 @@ However, the choice of policies can be overridden by passing the command-line fl
 config file. (Note that the config file format is versioned; the API is defined in [plugin/pkg/scheduler/api](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/api/)).
 Thus to add a new scheduling policy, you should modify  [plugin/pkg/scheduler/algorithm/predicates/predicates.go](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/algorithm/predicates/predicates.go) or add to the directory  [plugin/pkg/scheduler/algorithm/priorities](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/algorithm/priorities/), and either register the policy in `defaultPredicates()` or `defaultPriorities()`, or use a policy config file.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/scheduler.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -130,8 +130,3 @@ single scheduler, as opposed to choosing a scheduler, a desire mentioned in
 `MetadataPolicy` could be used. Issue #17324 proposes to create a generalized
 API for matching "claims" to "service classes"; matching a pod to a scheduler
 would be one use for such an API.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/metadata-policy.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

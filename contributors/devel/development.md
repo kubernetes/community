@@ -396,9 +396,6 @@ For mass automated fixups (e.g. automated doc formatting), use one or more
 commits for the changes to tooling and a final commit to apply the fixup en
 masse. This makes reviews easier.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/development.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->
 
 [OS X GNU tools]: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x
 [build/build-image/cross]: https://github.com/kubernetes/kubernetes/blob/master/build/build-image/cross

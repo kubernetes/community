@@ -616,7 +616,3 @@ and
 
 export GOMAXPROCS=$(CPU_LIMIT)"
 ```
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/downward_api_resources_limits_requests.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

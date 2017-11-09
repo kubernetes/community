@@ -45,7 +45,3 @@ Maintainers can assign reviews to other maintainers, when appropriate. The
 assignee becomes the shepherd for that PR and is responsible for merging the PR
 once they are satisfied with it or else closing it. The assignee might request
 reviews from non-maintainers.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/collab.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

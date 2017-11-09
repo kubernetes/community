@@ -190,7 +190,3 @@ instead of by the configuration.
 4. Verify the last-applied-config has been updated
   - `kubectl apply view-last-applied -f deployment_nginx.yaml`
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/configmap.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

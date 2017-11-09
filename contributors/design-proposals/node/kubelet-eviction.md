@@ -463,8 +463,3 @@ for eviction. Instead `DaemonSet` should ideally include Guaranteed pods only.
 
 The pod eviction may evict more pods than needed due to stats collection timing gap. This can be mitigated by adding
 the ability to get root container stats on an on-demand basis (https://github.com/google/cadvisor/issues/1247) in the future.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/kubelet-eviction.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

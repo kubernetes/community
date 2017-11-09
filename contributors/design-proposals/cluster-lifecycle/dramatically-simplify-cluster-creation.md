@@ -259,8 +259,3 @@ It also doesn't require kubelet to do TLS bootstrapping - kubeadm handles that.
 ## See also
 
 * [Joe Beda's "K8s the hard way easier"](https://docs.google.com/document/d/1lJ26LmCP-I_zMuqs6uloTgAnHPcuT7kOYtQ7XSgYLMA/edit#heading=h.ilgrv18sg5t) which combines Kelsey's "Kubernetes the hard way" with history of proposed UX at the end (scroll all the way down to the bottom).
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/dramatically-simplify-cluster-creation.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

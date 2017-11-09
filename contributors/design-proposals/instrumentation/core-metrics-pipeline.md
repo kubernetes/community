@@ -8,7 +8,6 @@
 
 This document proposes a design for the set of metrics included in an eventual Core Metrics Pipeline.
 
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Core Metrics in kubelet](#core-metrics-in-kubelet)
   - [Introduction](#introduction)
@@ -23,7 +22,6 @@ This document proposes a design for the set of metrics included in an eventual C
     - [On-Demand Design:](#on-demand-design)
   - [Future Work](#future-work)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## Introduction
 
@@ -150,7 +148,3 @@ Suggested, tentative future work, which may be covered by future proposals:
  - Decide on the format, name, and kubelet endpoint for publishing these metrics.
  - Integrate with the CRI to allow compatibility with a greater number of runtimes, and to create a better runtime abstraction.   
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/core-metrics-pipeline.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

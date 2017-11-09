@@ -121,8 +121,3 @@ the `queue` policy defined above. This manual intervention could be replaced by
 code that can verify the signing requests via other means.
 
 ![Dynamic Sequence Diagram](clustering/dynamic.png)
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/clustering.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

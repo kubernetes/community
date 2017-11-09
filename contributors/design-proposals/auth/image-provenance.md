@@ -324,8 +324,3 @@ Additionally, just sending all the fields of just the Pod kind also has problems
 - because we do not know which fields of an object are inspected by the backend, caching of decisions is not effective. Sending fewer fields allows caching.
 - sending fewer fields makes it possible to rev the version of the webhook request slower than the version of our internal objects (e.g. pod v2 could still use imageReview v1.)
 probably lots more reasons.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/image-provenance.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

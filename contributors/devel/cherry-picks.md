@@ -56,7 +56,3 @@ status of PRs labeled as `cherrypick-candidate`.
 considered implicit for all code within cherry-pick pull requests, ***unless
 there is a large conflict***.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/cherry-picks.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

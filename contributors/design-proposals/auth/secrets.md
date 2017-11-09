@@ -622,7 +622,3 @@ on their filesystems:
     /etc/secret-volume/username
     /etc/secret-volume/password
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/secrets.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

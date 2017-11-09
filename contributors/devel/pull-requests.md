@@ -2,7 +2,6 @@
 
 This doc explains the process and best practices for submitting a PR to the [Kubernetes project](https://github.com/kubernetes/kubernetes). It should serve as a reference for all contributors, and be useful especially to new and infrequent submitters.
 
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 - [Before You Submit a PR](#before-you-submit-a-pr)
   * [Run Local Verifications](#run-local-verifications)
   * [Sign the CLA](#sign-the-cla)
@@ -26,7 +25,7 @@ This doc explains the process and best practices for submitting a PR to the [Kub
   * [7. KISS, YAGNI, MVP, etc.](#7-kiss-yagni-mvp-etc)
   * [8. It's OK to Push Back](#8-its-ok-to-push-back)
   * [9. Common Sense and Courtesy](#9-common-sense-and-courtesy)
-<!-- END MUNGE: GENERATED_TOC -->
+
 
 # Before You Submit a PR
 
@@ -328,7 +327,3 @@ Another phenomenon of open-source projects (where anyone can comment on any issu
 
 No document can take the place of common sense and good taste. Use your best judgment, while you put
 a bit of thought into how your work can be made easier to review. If you do these things your PRs will get merged with less friction.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/pull-requests.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

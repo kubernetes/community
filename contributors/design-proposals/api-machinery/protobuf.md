@@ -473,8 +473,3 @@ The generated protobuf will be checked with a verify script before merging.
 ## Open Questions
 
 * Is supporting stored protobuf files on disk in the kubectl client worth it?
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/protobuf.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

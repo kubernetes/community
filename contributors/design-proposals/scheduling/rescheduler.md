@@ -118,6 +118,3 @@ For scaling up the cluster, a reasonable workflow might be:
 1. rescheduler triggers cluster auto-scaler to add a node of the appropriate type for the PENDING Pod
 1. the PENDING Pod schedules onto the new node (and possibly the rescheduler also moves other Pods onto that node)
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/rescheduler.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

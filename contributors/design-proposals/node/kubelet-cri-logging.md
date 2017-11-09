@@ -233,8 +233,3 @@ evolves.
 
 [4] rkt support: https://github.com/systemd/systemd/pull/4179
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/kubelet-cri-logging.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

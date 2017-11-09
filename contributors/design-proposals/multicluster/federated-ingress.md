@@ -188,7 +188,3 @@ Assuming that GCP-only (see above) is complete:
 In theory the same approach as "Cross-cloud via GCP" above could be used, except that AWS infrastructure would be used to get traffic first to an AWS cluster, and then proxied onwards to non-AWS and/or on-prem clusters.
 Detail docs TBD.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/federated-ingress.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

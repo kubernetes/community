@@ -294,7 +294,3 @@ spec:
 
 In the future, we may add the ability to specify an init-container that can
 watch the volume contents for updates and respond to changes when they occur.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/configmap.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

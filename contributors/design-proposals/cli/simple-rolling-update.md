@@ -124,8 +124,3 @@ rollout with the old version
       * Set `desired-replicas` annotation on `foo` to match the annotation on
 `foo-next`
       * Goto Rollout with `foo` and `foo-next` trading places.
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/simple-rolling-update.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

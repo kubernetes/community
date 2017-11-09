@@ -254,7 +254,3 @@ We currently plan to extend kubemark along the following directions:
   to logs.
 - Create a Dashboard that lets easy viewing and comparison of these metrics across tests.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/kubemark-guide.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

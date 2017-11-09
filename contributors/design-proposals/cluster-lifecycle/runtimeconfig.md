@@ -64,6 +64,3 @@ APIs and not flags ([#12245](https://issues.k8s.io/12245)). When that is added, 
 could be handled by versioned component config and the component flags
 deprecated.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/runtimeconfig.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

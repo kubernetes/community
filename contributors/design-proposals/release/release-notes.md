@@ -4,7 +4,6 @@
 [djmm@google.com](mailto:djmm@google.com)<BR>
 Last Updated: 2016-04-06
 
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Kubernetes Release Notes](#kubernetes-release-notes)
   - [Objective](#objective)
@@ -22,7 +21,6 @@ Last Updated: 2016-04-06
   - [Work estimates](#work-estimates)
   - [Caveats / Considerations](#caveats--considerations)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## Objective
 
@@ -188,7 +186,3 @@ Other notable changes
   * For now contributors should simply use the first PR that enables a new
     feature by default.  We'll revisit if this does not work well.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/release-notes.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

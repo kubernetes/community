@@ -38,7 +38,3 @@ Currently, Kubernetes scheduler provides some practical priority functions, incl
 
 The details of the above priority functions can be found in [plugin/pkg/scheduler/algorithm/priorities](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/algorithm/priorities/). Kubernetes uses some, but not all, of these priority functions by default. You can see which ones are used by default in [plugin/pkg/scheduler/algorithmprovider/defaults/defaults.go](http://releases.k8s.io/HEAD/plugin/pkg/scheduler/algorithmprovider/defaults/defaults.go). Similar as predicates, you can combine the above priority functions and assign weight factors (positive number) to them as you want (check [scheduler.md](scheduler.md) for how to customize).
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/scheduler_algorithm.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -3,7 +3,6 @@
 Updated: 5/3/2016
 
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [End-to-End Testing in Kubernetes](#end-to-end-testing-in-kubernetes)
   - [Overview](#overview)
@@ -40,7 +39,6 @@ Updated: 5/3/2016
   - [Performance Evaluation](#performance-evaluation)
   - [One More Thing](#one-more-thing)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## Overview
 
@@ -806,8 +804,3 @@ You should also know the [testing conventions](coding-conventions.md#testing-con
 
 **HAPPY TESTING!**
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/e2e-tests.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

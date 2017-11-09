@@ -1,7 +1,6 @@
 # Testing guide
 
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Testing guide](#testing-guide)
   - [Unit tests](#unit-tests)
@@ -19,7 +18,6 @@
     - [Run a specific integration test](#run-a-specific-integration-test)
   - [End-to-End tests](#end-to-end-tests)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 This assumes you already read the [development guide](development.md) to
 install go, godeps, and configure your git client.  All command examples are
@@ -221,7 +219,3 @@ version and the watch cache test is skipped.
 ## End-to-End tests
 
 Please refer to [End-to-End Testing in Kubernetes](e2e-tests.md).
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/testing.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

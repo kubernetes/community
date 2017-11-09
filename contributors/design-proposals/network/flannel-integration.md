@@ -126,7 +126,3 @@ This proposal is really just a call for community help in writing a Kubernetes x
 * Investigate flannel server running on every node (as done in the reference implementation mentioned above)
 * Use flannel reservation mode to support node controller podcidr allocation
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/flannel-integration.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

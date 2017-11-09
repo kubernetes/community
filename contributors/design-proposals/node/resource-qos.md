@@ -213,6 +213,3 @@ A strict hierarchy of user-specified numerical priorities is not desirable becau
 1. Achieved behavior would be emergent based on how users assigned priorities to their pods. No particular SLO could be delivered by the system, and usage would be subject to gaming if not restricted administratively
 2. Changes to desired priority bands would require changes to all user pod configurations.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/design/resource-qos.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->
