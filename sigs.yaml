@@ -231,8 +231,8 @@ sigs:
       company: Alibaba
     meetings:
     - day: Wednesday
-      time: "16:00"
-      tz: "UTC"
+      time: "09:00"
+      tz: "PT (Pacific Time)"
       frequency: biweekly
     meeting_url: https://zoom.us/my/sigcli
     meeting_archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
