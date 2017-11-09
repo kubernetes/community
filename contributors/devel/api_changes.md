@@ -498,7 +498,7 @@ top of the generated file and should be checked with the
 [`repo-infra/verify/verify-boilerplane.sh`](https://github.com/kubernetes/repo-infra/blob/master/verify/verify-boilerplate.sh)
 script at a later stage of the build.
 
-To invoke these generators, you can run `make generated`, which runs a bunch of
+To invoke these generators, you can run `make update`, which runs a bunch of
 [scripts](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/hack/update-all.sh#L63-L78).
 Please continue to read the next a few sections, because some generators have
 prerequisites, also because they introduce how to invoke the generators
