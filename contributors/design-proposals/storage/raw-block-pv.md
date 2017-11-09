@@ -533,9 +533,6 @@ spec:
 DESCRIPTION:
 * A user wishes to read data from a read-only raw block device, an example might be a database for analytics processing. 
 
-ADMIN:
-* Admin creates a 1 block devices and with the intention consumption of read-only.
-
 USER:
 * User creates pod and specifies 'readOnly' as a parameter in the persistent volume claim to indicate they would
 like to be bound to a PV with this setting enabled.
