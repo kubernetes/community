@@ -161,7 +161,7 @@ EventSeriesStateOngoing = "Ongoing"
 | ----------| -------| -------| --------------------|---------| 
 | Node X | BecameUnreachable | HeartbeatTooOld | kubernetes.io/node-ctrl | <nil> |
 | Node Y | FailedToAttachVolume | Unknown | kubernetes.io/pv-attach-ctrl | PVC X |
-| ReplicaSet X | FailedToInstantiantePod | QuotaExceeded | kubernetes.io/replica-set-ctrl | <nil> |
+| ReplicaSet X | FailedToInstantiatePod | QuotaExceeded | kubernetes.io/replica-set-ctrl | <nil> |
 | ReplicaSet X | InstantiatedPod | | kubernetes.io/replica-set-ctrl | Pod Y |
 | Ingress X | CreatedLoadBalancer | | kubernetes.io/ingress-ctrl | <nil> |
 | Pod X | ScheduledOn | | kubernetes.io/scheduler | Node Y |
