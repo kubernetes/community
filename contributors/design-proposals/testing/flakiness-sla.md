@@ -67,7 +67,7 @@ may chose to update our flakiness SLA.
 
 ### Monitoring and enforcement infrastructure
 SIG-Testing are currently responsible for the submit-queue infrastructure
-and will be responsibile for designing, implementing and deploying the
+and will be responsible for designing, implementing and deploying the
 relevant monitoring and enforcement mechanisms for this proposal.
 
 ### Assessing success
