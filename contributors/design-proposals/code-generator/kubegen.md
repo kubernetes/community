@@ -120,6 +120,9 @@ implicitly determined using the `--api-version` and `--api-group` flags.  When t
 flags are provided, API groups will not be implicitly discovered.  Only API versions
 for groups specified with `--api-group` will be discovered.
 
+- `--api-version`: generate for this API version
+- `--api-group`: generate for all API versions in this group
+
 ```sh
 kubegen versioned --api-version apps/v1 --api-version apps/v1beta1 --api-version extensions/v1beta1
 ```
@@ -331,3 +334,8 @@ If you don't have a LICENSE file, you must either provide the `--license` flag o
 > My LICENSE file isn't in go comments, so how to you prepend it to go files?
 
 We make sure it is wrapped it in comments when it is prepended.
+
+> Will the Bazel rules selectively regenerate files based on what is changed instead
+  of always generating everything?
+
+Not in the mvp.  This would be a great feature to add.
