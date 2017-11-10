@@ -199,7 +199,7 @@ clients attaching as well.
 
 There are ad-hoc solutions/discussions that addresses one or two of the
 requirements, but no comprehensive solution for CRI specifically has been
-proposed so far (with the excpetion of @tmrtfs's proposal
+proposed so far (with the exception of @tmrtfs's proposal
 [#33111](https://github.com/kubernetes/kubernetes/pull/33111), which has a much
 wider scope). It has come up in discussions that kubelet can delegate all the
 logging management to the runtime to allow maximum flexibility. However, it is
