@@ -20,7 +20,7 @@ Use cases which are not listed below are out of the scope of MVP version of Reso
 
 HPA uses the latest value of cpu usage as an average aggregated across 1 minute
 (the window may change in the future). The data for a given set of pods
-(defined either by pod list or label selector) should be accesible in one request
+(defined either by pod list or label selector) should be accessible in one request
 due to performance issues.
 
 #### Scheduler
