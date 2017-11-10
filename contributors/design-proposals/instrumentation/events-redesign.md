@@ -100,13 +100,13 @@ We'd like to propose following structure in Events object in the new events API 
 
 ```golang
 type Event struct {
-// <type and object metadata>
+	// <type and object metadata>
 
 	// Time when this Event was first observed.
 	EventTime metav1.MicroTime
 
 	// Data about the Event series this event represents or nil if it's
-// a singleton Event.
+	// a singleton Event.
 	// +optional
 	Series *EventSeries
 
@@ -123,7 +123,7 @@ type Event struct {
 	Reason string
 
 	// The object this Event is “about”. In most cases it's the object that the
-// given controller implements.
+	// given controller implements.
 	// +optional
 	Regarding ObjectReference
 
@@ -132,24 +132,24 @@ type Event struct {
 	Related *ObjectReference
 
 	// Human readable description of the Event. Possibly discarded when and
-// Event series is being deduplicated.
+	// Event series is being deduplicated.
 	// +optional
 	Note string
 
 	// Type of this event (Normal, Warning), new types could be added in the
-// future.
-// +optional
-Type string
+	// future.
+	// +optional
+	Type string
 }
 
 type EventSeries struct {
-Count int32
-LastObservedTime MicroTime
-State EventSeriesState		
+	Count int32
+	LastObservedTime MicroTime
+	State EventSeriesState		
 }
 
 const (
-EventSeriesStateOngoing = "Ongoing"
+	EventSeriesStateOngoing = "Ongoing"
 	EventSeriesStateFinished = "Finished"
 	EventSeriesStateUnknown = "Unknown"
 )
@@ -161,7 +161,7 @@ EventSeriesStateOngoing = "Ongoing"
 | ----------| -------| -------| --------------------|---------| 
 | Node X | BecameUnreachable | HeartbeatTooOld | kubernetes.io/node-ctrl | <nil> |
 | Node Y | FailedToAttachVolume | Unknown | kubernetes.io/pv-attach-ctrl | PVC X |
-| ReplicaSet X | FailedToInstantiantePod | QuotaExceeded | kubernetes.io/replica-set-ctrl | <nil> |
+| ReplicaSet X | FailedToInstantiatePod | QuotaExceeded | kubernetes.io/replica-set-ctrl | <nil> |
 | ReplicaSet X | InstantiatedPod | | kubernetes.io/replica-set-ctrl | Pod Y |
 | Ingress X | CreatedLoadBalancer | | kubernetes.io/ingress-ctrl | <nil> |
 | Pod X | ScheduledOn | | kubernetes.io/scheduler | Node Y |

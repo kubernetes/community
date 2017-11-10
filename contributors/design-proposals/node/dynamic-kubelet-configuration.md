@@ -75,7 +75,7 @@ There are two types of configuration that are stored on disk:
 - cached configurations from a remote source, e.g. `ConfigMaps` from etcd.
 - the local "init" configuration, e.g. the set of config files the node is provisioned with.
 
-The Kubelet should accept a `--dynamic-config-dir` flag, which specifies a directory for storing all of the information necessary for dynamic configuraiton from remote sources; e.g. the cached configurations, which configuration is currently in use, which configurations are known to be bad, etc.
+The Kubelet should accept a `--dynamic-config-dir` flag, which specifies a directory for storing all of the information necessary for dynamic configuration from remote sources; e.g. the cached configurations, which configuration is currently in use, which configurations are known to be bad, etc.
 - When the Kubelet downloads a `ConfigMap`, it will checkpoint a serialization of the `ConfigMap` object to a file at `{dynamic-config-dir}/checkpoints/{UID}`.
 - We checkpoint the entire object, rather than unpacking the contents to disk, because the former is less complex and reduces chance for errors during the checkpoint process.
 
