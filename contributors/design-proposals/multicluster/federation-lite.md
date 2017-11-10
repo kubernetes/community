@@ -86,7 +86,7 @@ service of type LoadBalancer.  The native cloud load-balancers on both AWS &
 GCE are region-level, and support load-balancing across instances in multiple
 zones (in the same region).  For both clouds, the behaviour of the native cloud
 load-balancer is reasonable in the face of failures (indeed, this is why clouds
-provide load-balancing as a primitve).
+provide load-balancing as a primitive).
 
 For multi-AZ clusters we will therefore simply rely on the native cloud provider
 load balancer behaviour, and we do not anticipate substantial code changes.
@@ -170,8 +170,8 @@ GCE.  If you had two volumes both named `myvolume` in two different GCE zones,
 this would not be ambiguous when Kubernetes is operating only in a single zone.
 But, when operating a cluster across multiple zones, `myvolume` is no longer
 sufficient to specify a volume uniquely.  Worse, the fact that a volume happens
-to be unambigious at a particular time is no guarantee that it will continue to
-be unambigious in future, because a volume with the same name could
+to be unambiguous at a particular time is no guarantee that it will continue to
+be unambiguous in future, because a volume with the same name could
 subsequently be created in a second zone.  While perhaps unlikely in practice,
 we cannot automatically enable multi-AZ clusters for GCE users if this then causes
 volume mounts to stop working.
