@@ -74,7 +74,7 @@ In addition, the rkt cli has historically been the primary interface to the rkt 
 
 The initial integration will execute the rkt binary directly for app creation/start/stop/removal, as well as image pulling/removal.
 
-The creation of pod sanbox is also done via rkt command line, but it will run under `systemd-run` so it's monitored by the init process.
+The creation of pod sandbox is also done via rkt command line, but it will run under `systemd-run` so it's monitored by the init process.
 
 In the future, some of these decisions are expected to be changed such that rkt is vendored as a library dependency for all operations, and other init systems will be supported as well.
 

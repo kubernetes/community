@@ -32,7 +32,7 @@ how careful we need to be.
 ### Huge number of handshakes slows down API server
 
 It was a long standing issue for performance and is/was an important bottleneck for scalability (https://github.com/kubernetes/kubernetes/issues/13671). The bug directly
-causing this problem was incorrect (from the golangs standpoint) handling of TCP connections. Secondary issue was that elliptic curve encryption (only one available in go 1.4)
+causing this problem was incorrect (from the golang's standpoint) handling of TCP connections. Secondary issue was that elliptic curve encryption (only one available in go 1.4)
 is unbelievably slow.
 
 ## Proposed metrics/statistics to gather/compute to avoid problems
@@ -42,7 +42,7 @@ is unbelievably slow.
 Basic ideas:
 - number of Pods/ReplicationControllers/Services in the cluster
 - number of running replicas of master components (if they are replicated)
-- current elected master of ectd cluster (if running distributed version)
+- current elected master of etcd cluster (if running distributed version)
 - number of master component restarts
 - number of lost Nodes
 
