@@ -162,7 +162,7 @@ For the 1.4 release, this feature will be implemented for the GCE cloud provider
 
 - Node: On the node, we expect to see the real source IP of the client. Destination IP will be the Service Virtual External IP.
 
-- Pod: For processes running inside the Pod network namepsace, the source IP will be the real client source IP. The destination address will the be Pod IP.
+- Pod: For processes running inside the Pod network namespace, the source IP will be the real client source IP. The destination address will the be Pod IP.
 
 #### GCE Expected Packet Destination IP (HealthCheck path)
 
