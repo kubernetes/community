@@ -49,18 +49,32 @@ To get started with this template:
 
 The canonical place for the latest set of instructions (and the likely source of this file) is [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/0000-kep-template.md).
 
-## Metadata (remove this)
-
-The `Metadata` section is intended to support the creation of tooling around the KEP process.
+The `Metadata` section above is intended to support the creation of tooling around the KEP process.
 This will be a YAML section that is fenced as a code block.
-
 See the KEP process for details on each of these items.
-This is here for easy copy/pasting.
 
 ## Table of Contents
 
 A table of contents is helpful for quickly jumping to sections of a KEP and for highlighting any additional information provided beyond the standard KEP template.
 [Tools for generating][] a table of contents from markdown are available.
+
+
+* [Table of Contents](#table-of-contents)
+* [Summary](#summary)
+* [Motivation](#motivation)
+    * [Goals](#goals)
+    * [Non-Goals](#non-goals)
+* [Proposal](#proposal)
+    * [User Stories [optional]](#user-stories-optional)
+      * [Story 1](#story-1)
+      * [Story 2](#story-2)
+    * [Implementation Details/Notes/Constraints [optional]](#implementation-detailsnotesconstraints-optional)
+    * [Security Considerations](#security-considerations)
+* [Graduation Criteria](#graduation-criteria)
+* [Implementation History](#implementation-history)
+* [Drawbacks [optional]](#drawbacks-optional)
+* [Alternatives [optional]](#alternatives-optional)
+
 
 [Tools for generating]: https://github.com/ekalinin/github-markdown-toc
 
@@ -74,44 +88,50 @@ A good summary is probably at least a paragraph in length.
 
 ## Motivation
 
-The `Motivation` section should describe
-
-- why we believe this change is important
-- what benefits are expected to be realized from the change
-- the high level design goals
-
-The `Motivation` section is important for getting all responsible parties to understand the intention behind a change.
+This section is for explicitly listing the motivation, goals and non-goals of this KEP.
+Describe why the change is important and the benefits to users.
 The motivation section can optionally provide links to [experience reports][] to demonstrate the interest in a KEP within the wider Kubernetes community.
 
 [experience reports]: https://github.com/golang/go/wiki/ExperienceReports
 
-## Guide-level Explanation [optional]
+### Goals
 
-Merging a change to source control is a crucial, but not final, milestone in the implementation of a KEP.
-Enhancements need to be explained to the Kubernetes community.
-The `Guide-level Explaination` section should be used to explain a KEP to another Kubernaut after implementation.
-Excellent guidance can be found in the Rust RFC [guide-level explanation][] instructions.
+List the specific goals of the KEP.
+How will we know that this has succeeded?
 
-[guide-level explanation]: https://github.com/rust-lang/rfcs/blob/master/0000-template.md#guide-level-explanation
+### Non-Goals
 
-## Reference-level explanation
+What is out of scope for his KEP?
+Listing non-goals helps to focus discussion and make progress.
 
-Before submitting a detailed implementation plan, a KEP author might begin the `Reference-level Explaination` by sketching high level design goals and any mandatory requirements.
+## Proposal
 
-Communicating dependencies across multiple SIGs is an important use for KEPs.
-Explaining how a KEP interacts with other KEPs and existing Kubernetes functionality should be included in this section.
+This is where we get down to the nitty gritty of what the proposal actually is.
 
-The `Reference-level explaination` section should ideally contain enough information for someone besides the author to begin working on an implementation of the KEP.
-In a similar manner to the guidance on [implementing an RFC][] from the Rust community, not all KEPs must be implemented immediately.
-Associating each KEP with one or more issues filed against Kubernetes repositories allows interested community members to track implementation.
+### User Stories [optional]
 
-Excellent guidance can be found in the Rust RFC [reference-level explanation][] instructions.
+Detail the things that people will be able to do if this KEP is implemented.
+Include as much detail as possible so that people can understand the "how" of the system.
+The goal here is to make this feel real for users without getting bogged down.
 
-[reference-level explaination]: https://github.com/rust-lang/rfcs/blob/master/0000-template.md#reference-level-explanation
-[implementing an RFC]: https://github.com/rust-lang/rfcs/blob/master/README.md#implementing-an-rfc
+#### Story 1
+
+#### Story 2
+
+### Implementation Details/Notes/Constraints [optional]
+
+What are the caveats to the implementation?
+What are some important details that didn't come across above.
+Go in to as much detail as necessary here.
+This might be a good place to talk about core concepts and how they releate.
+
+### Security Considerations
+
+Make sure that you consider the impact of this feature from the point of view of Security.
 
 ## Graduation Criteria
 
+How will we know that this has succeeded?
 Gathering user feedback is crucial for building high quality experiences and SIGs have the important responsibility of setting milestones for stability and completeness.
 Hopefully the content previously contained in [umbrella issues][] will be tracked in the `Graduation Criteria` section.
 
@@ -123,7 +143,7 @@ Major milestones in the life cycle of a KEP should be tracked in `Implementation
 Major milestones might include
 
 - the `Summary` and `Motivation` sections being merged signaling SIG acceptance
-- the `Detailed Design` section being merged signaling agreement on a proposed design
+- the `Proposal` section being merged signaling agreement on a proposed design
 - the date implementation started
 - the first Kubernetes release where an initial version of the KEP was available
 - the version of Kubernetes where the KEP graduated to general availability
@@ -136,12 +156,3 @@ Why should this KEP _not_ be implemented.
 ## Alternatives [optional]
 
 Similar to the `Drawbacks` section the `Alternatives` section is used to highlight and record other possible approaches to delivering the value proposed by a KEP.
-
-## Unresolved Questions [optional]
-
-The `Unresolved Questions` section is used to parking lot issues not ready to be addressed before implementation begins.
-
-## Mentors [optional]
-
-Mentors who can help a community member implement a KEP which follows its `Detailed Design` are crucial to scaling the Kubernetes project.
-Potential mentors can list their contact information using their preferred contact information in the `Mentors` section.
