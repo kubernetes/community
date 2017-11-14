@@ -299,7 +299,7 @@ Each field present in the request will be merged with the live config.
 
 There are 2 reasons of avoiding this logic:
 - Using `$patch` as directive key will break backward compatibility.
-But can easily fixed by using a different key, e.g. `retainKeys: true`.
+But can easily be fixed by using a different key, e.g. `retainKeys: true`.
 Reason is that `$patch` has been used in earlier releases.
 If we add new value to this directive,
 the old server will reject the new patch due to not knowing the new value.
