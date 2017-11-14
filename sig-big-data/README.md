@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 -->
 # Big Data SIG
 
-Covers deploying and operating big data applications (Spark, Kafka, Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integrations with big data applications and architecting the best ways to run them on Kubernetes.
+Covers deploying and operating big data applications (Spark, Kafka, Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integration with big data applications and architecting the best ways to run them on Kubernetes.
 
 ## Meetings
 * [Wednesdays at 17:00 UTC](https://zoom.us/my/sig.big.data) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
