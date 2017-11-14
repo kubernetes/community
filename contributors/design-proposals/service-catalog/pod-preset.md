@@ -25,7 +25,7 @@
 
 Describes a policy resource that allows for the loose coupling of a Pod's
 definition from additional runtime requirements for that Pod. For example,
-mounting of Secrets, or setting additional environment variables,
+mounting of Secrets, or setting additional enviornment variables,
 may not be known at Pod deployment time, but may be required at Pod creation
 time.
 
