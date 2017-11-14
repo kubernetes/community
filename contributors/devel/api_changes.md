@@ -217,7 +217,7 @@ from a hand-written configuration -- clients can write either field and read
 either field, but what about creation or update from the output of GET, or
 update via PATCH (see
 [In-place updates](https://kubernetes.io/docs/user-guide/managing-deployments/#in-place-updates-of-resources))?
-In this case, the two fields will conflict, because only one field would be
+In this case, the two fields will be conflicted, because only one field would be
 updated in the case of an old client that was only aware of the old field (e.g.,
 `height`).
 
