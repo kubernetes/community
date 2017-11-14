@@ -44,11 +44,40 @@ which increases the applications security surface area.
 
 # Proposal sketch
 
-Add a new `pod.dnsPolicy: Custom` that allows for user customization of
-`resolv.conf`.
+This proposal gives users a way to overlay tweaks into the existing
+`DnsPolicy`. A new PodSpec field `dnsParams` will contains fields that are
+merged with the settings currently selected with `DnsPolicy`.
 
+The fields of `DnsParams` are:
 
-## Pod API example
+* `nameservers` is a list of additional nameservers to use for resolution. On
+  `resolv.conf` platforms, these are entries to `nameserver`.
+* `search` is a list of additional search path subdomains. On `resolv.conf`
+  platforms, these are entries to the `search` setting. These domains will be
+  appended to the existing search path.
+* `options` that are an OS-dependent list of options. For containers that use
+  `/etc/resolv.conf` style configuration, these correspond to the parameters
+  passed to the `option` lines. Options will override if their names coincide,
+  i.e, if the `DnsPolicy` sets `ndots:5` and `ndots:1` appears in the `Spec`,
+  then the final value will be `ndots:1`.
+
+For users that want to completely customize their resolution configuration, we
+add a new `DnsPolicy: Custom` that does not define any settings. This is
+essentially an empty `resolv.conf` with no fields defined.
+
+## Pod API examples
+
+### Host `/etc/resolv.conf`
+
+Assume in the examples below that the host has the following `/etc/resolv.conf`:
+
+```bash
+nameserver 10.1.1.10
+search foo.com
+options ndots:1
+```
+
+### Override DNS server and search paths
 
 In the example below, the user wishes to use their own DNS resolver and add the
 pod namespace and a custom expansion to the search path, as they do not use the
@@ -58,81 +87,42 @@ other name aliases:
 # Pod spec
 apiVersion: v1
 kind: Pod
-metadata:
-  namespace: ns1
-  name: example
+metadata: {"namespace": "ns1", "name": "example"}
 spec:
-  containers:
-  - name: example
-    image: example
+  ...
   dnsPolicy: Custom
   dnsParams:
-    custom:
-      nameservers:
-      - 1.2.3.4
-      search:
-      - $(NAMESPACE).svc.$(CLUSTER_SUBDOMAIN)
-      - my.dns.search.suffix
-      options:
-      - "ndots:2"
-      
-```
-
-Given the following host `/etc/resolv.conf`:
-
-```bash
-nameserver 1.2.3.4
-search foo.com bar.com
-options ndots:1
+    nameservers: ["1.2.3.4"]
+    search:
+    - ns1.svc.cluster.local
+    - my.dns.search.suffix
+    options: ["ndots:2"]
 ```
 
 The pod will get the following `/etc/resolv.conf`:
 
 ```bash
-nameserver 10.240.0.10
-# Comments only for explication purposes.
-#
-#      $(NAMESPACE).svc.$(CLUSTER_SUBDOMAIN)
-#      |                     my.dns.search.suffix
-#      |                     |                    [from host]
-#      |                     |                    |
-#      V                     V                    V
-search ns1.svc.cluster.local my.dns.search.suffix foo.com bar.com
-# Populated from custom.options
+nameserver 1.2.3.4
+search ns1.svc.cluster.local my.dns.search.suffix
 options ndots:2
 ```
 
-## More examples
+## Overriding `ndots`
 
-The following is a Pod dnsParams that only contains the host search paths:
+Override `ndots:5` in `ClusterFirst` with `ndots:1`. This keeps all of the
+settings intact:
 
 ```yaml
-dnsParams:
-  custom:
+dnsPolicy: ClusterFirst
+dnsParams: {"options": "ndots:1"}
 ```
 
-Don't include host search paths, override the nameservers. Note: this will for
-all intents and purposes disable Kubernetes DNS.
+Resulting `resolv.conf`:
 
-```yaml
-dnsParams:
-  custom:
-    nameservers:
-    - 1.2.3.4
-    - 1.2.3.5
-    excludeHostSearchPaths: true
-```
-
-Override `ndots` and add custom search path. Note that overriding the ndot may
-break the functionality of some of the search paths.
-
-```yaml
-dnsParams:
-  custom:
-    searchPaths:
-    - my.custom.suffix
-    options:
-    - "ndots:3"
+```bash
+nameserver 10.0.0.10
+search default.svc.cluster.local svc.cluster.local cluster.local foo.com
+options ndots:1
 ```
 
 # API changes
@@ -146,89 +136,60 @@ type PodSpec struct {
 }
 
 type PodDNSParams struct {
-    Custom PodDNSParamsCustom
+    Nameservers []string
+    Search      []string
+    Options     []string
 }
-
-type PodDNSParamsCustom struct {
-    Namerservers           []string
-    Search                 []string
-    Options                []string
-    ExcludeHostSearchPaths bool
-}
-
-// This will not appear in types.go but is here for explication purposes.
-type DNSParamsSubstitution string
-const (
-    DNSParamsSearchPathNamespace DNSParamsSubstitution     = "$(NAMESPACE)"
-    DNSParamsSearchPathClusterDomain DNSParamsSubstitution = "$(CLUSTER_SUBDOMAIN)"
-)
 ```
 
 ## Semantics
-### searchPath
 
-If `dnsPolicy: Custom` is used, then the `search` line will be constructed from
-the entries listed in `dnsParams.custom.search`:
+Let the following be the Go representation of the `resolv.conf`:
 
 ```go
-// Note: pseudocode does not include input validation.
-func SearchPath(params *PodDNSParams) []string {
-	var searchPaths []string
-	for _, entry := range params.SearchPaths {
-		if !params.ExcludeHostSearchPaths {
-			searchPaths = append(searchPaths, HostSearchPaths...)
-			break
-		}
-		searchPaths = append(searchPaths, expand(entry))
-	}
-	return searchPaths
-}
-
-func expand(s string) string {
-	labels := strings.Split(s, ".")
-	for i := range labels {
-		if labels[0] == "$" {
-			labels[i] = Substitute(labels[i])
-		}
-	}
-	return strings.Join(labels, ".")
-}
-
-var LabelSubstitutions map[string]string
-
-func Substitute(l label) string {
-  if s, ok := LabelSubstitutions[l]; ok {
-    return s
-  }
-  return l
+type ResolvConf struct {
+  Nameserver []string // "nameserver" entries
+  Search     []string // "search" entries
+  Options    []string // "options" entries
 }
 ```
 
-#### Substitutions
+Let `var HostResolvConf ResolvConf` be the host `resolv.conf`.
 
-`Substitute` will replace DNS labels that begin with `$` with values for the
-given Pod. Note: the DNS label MUST be an EXACT string match. E.g. if the pod
-namespace is `my-ns`, `abc$(NAMESPACE)1234` will NOT be expanded to
-`abcmy-ns1234`, but will be an invalid configuration.
+Then the final Pod `resolv.conf` will be:
 
-| Substitution | Description |
-| ----   | ---- |
-| `$(NAMESPACE)` | Namespace of the Pod |
-| `$(CLUSTER_SUBDOMAIN)` | Kubernetes cluster domain (e.g. `cluster.local`) |
+```go
+func podResolvConf() ResolvConf {
+    var podResolv ResolvConf
 
-### options
+    switch (pod.DNSPolicy) {
+    case "Default":
+        podResolv = HostResolvConf
+    case "ClusterFirst:
+        podResolv.Nameservers = []string{ KubeDNSClusterIP }
+        podResolv.Search = ... // populate with ns.svc.suffix, svc.suffix, suffix, host entries...
+        podResolv.Options = []string{ "ndots:5" }
+    case "Custom": // start with empty `resolv.conf`
+        break
+    }
 
-Each element of options will be copied unmodified as an options line.
+    // Append the additional nameservers.
+    podResolv.Nameservers = append(Nameservers, pod.DNSParams.Nameservers...)
+    // Append the additional search paths.
+    podResolv.Search = append(Search, pod.DNSParams.Search...)
+    // Overlay the DnsParams.Options with the default options.
+    podResolv.Options = mergeOptions(pod.Options, pod.DNSParams.Options)
+
+    return podResolv
+}
+```
 
 ### Invalid configurations
 
 The follow configurations will result in an invalid Pod spec:
 
-* Invalid number of nameservers (more than three).
-*  An invalid domain name/substitution appears in `searchPaths`.
-*  `dnsParams` is MUST be empty unless `dnsPolicy: Custom` is used.
-*   Number of final search paths exceeds 5 (glibc limit).
-*  `ndots` is greater than 15 (glibc limit).
+* nameservers or search paths exceed system limits. (Three nameservers, six
+  search paths, 256 characters for `glibc`).
 
 # References
 
