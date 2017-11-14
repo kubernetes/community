@@ -50,6 +50,9 @@ Development announcements and discussions appear on the Google group
 Users trade notes on the Google group
 [kubernetes-users] (send mail to `kubernetes-users@googlegroups.com`).
 
+## Office Hours
+
+Office hours are held once a month. Please refer to [this document](community/office-hours.md) to learn more. 
 
 ## Weekly Meeting
 
