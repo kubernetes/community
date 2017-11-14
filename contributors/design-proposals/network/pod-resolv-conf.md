@@ -55,8 +55,10 @@ The fields of `DnsParams` are:
 * `search` is a list of additional search path subdomains. On `resolv.conf`
   platforms, these are entries to the `search` setting. These domains will be
   appended to the existing search path.
-* `options` that are an OS-dependent list of options. For containers that use
-  `/etc/resolv.conf` style configuration, these correspond to the parameters
+
+* `options` that are an OS-dependent list of (name, value) options. These values
+  are NOT expected to be generally portable across platforms. For containers that
+  use `/etc/resolv.conf` style configuration, these correspond to the parameters
   passed to the `option` lines. Options will override if their names coincide,
   i.e, if the `DnsPolicy` sets `ndots:5` and `ndots:1` appears in the `Spec`,
   then the final value will be `ndots:1`.
@@ -96,7 +98,10 @@ spec:
     search:
     - ns1.svc.cluster.local
     - my.dns.search.suffix
-    options: ["ndots:2"]
+    options:
+    - name: ndots
+      value: 2
+    - name: edns0
 ```
 
 The pod will get the following `/etc/resolv.conf`:
@@ -105,6 +110,7 @@ The pod will get the following `/etc/resolv.conf`:
 nameserver 1.2.3.4
 search ns1.svc.cluster.local my.dns.search.suffix
 options ndots:2
+options edns0
 ```
 
 ## Overriding `ndots`
@@ -114,7 +120,10 @@ settings intact:
 
 ```yaml
 dnsPolicy: ClusterFirst
-dnsParams: {"options": "ndots:1"}
+dnsParams:
+- options:
+  - name: ndots
+  - value: 1
 ```
 
 Resulting `resolv.conf`:
@@ -130,15 +139,20 @@ options ndots:1
 ```go
 type PodSpec struct {
     ...
-    DNSPolicy string
-    DNSParams *PodDNSParams
+    DNSPolicy string        `json:"dnsPolicy,omitempty"`
+    DNSParams *PodDNSParams `json:"dnsParams,omitempty"`
     ...
 }
 
 type PodDNSParams struct {
-    Nameservers []string
-    Search      []string
-    Options     []string
+    Nameservers []string             `json:"nameservers,omitempty"`
+    Search      []string             `json:"search,omitempty"`
+    Options     []PodDNSParamsOption `json:"options,omitempty" patchStrategy:"merge" patchMergeKey:"name"`
+}
+
+type PodDNSParamsOption struct {
+    Name   string  `json:"name"`
+    Value *string `json:"value,omitempty"`
 }
 ```
 
@@ -150,7 +164,7 @@ Let the following be the Go representation of the `resolv.conf`:
 type ResolvConf struct {
   Nameserver []string // "nameserver" entries
   Search     []string // "search" entries
-  Options    []string // "options" entries
+  Options    []PodDNSParamsOption  // "options" entries
 }
 ```
 
@@ -168,7 +182,7 @@ func podResolvConf() ResolvConf {
     case "ClusterFirst:
         podResolv.Nameservers = []string{ KubeDNSClusterIP }
         podResolv.Search = ... // populate with ns.svc.suffix, svc.suffix, suffix, host entries...
-        podResolv.Options = []string{ "ndots:5" }
+        podResolv.Options = []PodDNSParamsOption{{"ndots","5" }}
     case "Custom": // start with empty `resolv.conf`
         break
     }
@@ -177,7 +191,7 @@ func podResolvConf() ResolvConf {
     podResolv.Nameservers = append(Nameservers, pod.DNSParams.Nameservers...)
     // Append the additional search paths.
     podResolv.Search = append(Search, pod.DNSParams.Search...)
-    // Overlay the DnsParams.Options with the default options.
+    // Merge the DnsParams.Options with the options derived from the given DNSPolicy.
     podResolv.Options = mergeOptions(pod.Options, pod.DNSParams.Options)
 
     return podResolv
@@ -188,8 +202,9 @@ func podResolvConf() ResolvConf {
 
 The follow configurations will result in an invalid Pod spec:
 
-* nameservers or search paths exceed system limits. (Three nameservers, six
+* Nameservers or search paths exceed system limits. (Three nameservers, six
   search paths, 256 characters for `glibc`).
+* Invalid option appears for the given platform.
 
 # References
 
