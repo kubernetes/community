@@ -294,7 +294,7 @@ may not propagate back to the host, depending of ordering of mount operations)
 1. limitations this imposes on runtimes (RO-remounting may now affects the host,
 is it on purpose or a dangerous side-effect?)
 
-1. A shared mount target imposes some costraints on its parent subtree (generally,
+1. A shared mount target imposes some constraints on its parent subtree (generally,
 it has to be shared as well), which in turn prevents some mount operations when
 preparing a pod (eg. MS_MOVE).
 
