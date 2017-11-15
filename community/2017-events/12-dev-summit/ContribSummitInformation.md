@@ -8,7 +8,14 @@ In some sense, the summit is a real-life extension of the community meetings and
 ## When:
 * December 5th, 2017 (before KubeCon)
 * All day event with happy hour reception to close  
-Exact times TBU
+
+**Agenda:**  
+Times in CST 
+8am - Registration and light breakfast  
+9am - Welcome and start of content  
+12pm - Lunch provided  
+1pm - Sessions resume  
+430pm - Happy Hour onsite  
 
 ## Where:
 Austin Convention Center  
