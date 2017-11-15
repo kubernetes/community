@@ -170,7 +170,7 @@ Kubernetes supports user-provided schedulers and multiple concurrent cluster sch
 using the shared-state approach pioneered by 
 [Omega](https://research.google.com/pubs/pub41684.html). In addition to the disadvantages of
 pessimistic concurrency described by the Omega paper, 
-[two-level scheduling models](http://mesos.berkeley.edu/mesos_tech_report.pdf) that hide information from the upper-level
+[two-level scheduling models](https://amplab.cs.berkeley.edu/wp-content/uploads/2011/06/Mesos-A-Platform-for-Fine-Grained-Resource-Sharing-in-the-Data-Center.pdf) that hide information from the upper-level
 schedulers need to implement all of the same features in the lower-level scheduler as required by
 all upper-layer schedulers in order to ensure that their scheduling requests can be satisfied by
 available desired resources.
