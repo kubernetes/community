@@ -212,7 +212,7 @@ Engine `project`.  It provides a namespace for objects created by a group of
 people co-operating together, preventing name collisions with non-cooperating
 groups. It also serves as a reference point for authorization policies.
 
-Namespaces are described in [namespaces.md](namespaces.md).
+Namespaces are described in [namespaces](../architecture/namespaces.md).
 
 In the Enterprise Profile:
    - a `userAccount` may have permission to access several `namespace`s.
@@ -223,7 +223,7 @@ In the Simple Profile:
 Namespaces versus userAccount vs. Labels:
 - `userAccount`s are intended for audit logging (both name and UID should be
 logged), and to define who has access to `namespace`s.
-- `labels` (see [docs/user-guide/labels.md](../../docs/user-guide/labels.md))
+- `labels` (see [labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/))
 should be used to distinguish pods, users, and other objects that cooperate
 towards a common goal but are different in some way, such as version, or
 responsibilities.
@@ -326,7 +326,7 @@ namespaces, or to make a K8s User into a K8s Project Admin.)
 
 The API should have a `quota` concept (see http://issue.k8s.io/442). A quota
 object relates a namespace (and optionally a label selector) to a maximum
-quantity of resources that may be used (see [resources design doc](resources.md)).
+quantity of resources that may be used (see [resources design doc](../scheduling/resources.md)).
 
 Initially:
 - A `quota` object is immutable.
