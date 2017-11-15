@@ -1,9 +1,9 @@
 ## Abstract
 
-A proposal for the distribution of [secrets](../user-guide/secrets.md)
+A proposal for the distribution of [secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
 (passwords, keys, etc) to the Kubelet and to containers inside Kubernetes using
-a custom [volume](../user-guide/volumes.md#secrets) type. See the
-[secrets example](../user-guide/secrets/) for more information.
+a custom [volume](https://kubernetes.io/docs/concepts/storage/volumes/#secret) type. See the
+[secrets example](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets) for more information.
 
 ## Motivation
 
