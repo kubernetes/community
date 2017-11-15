@@ -15,7 +15,7 @@ In this document, we address the following process-related problems wrt scale te
 
 ## Non-Goals
 
-We do not intend to:
+This document does not intend to:
 
 - Define the set of tests that comprise scalability and correctness suite
 - Define SLIs/SLOs (that’s discussed [here]) and thresholds for the tests
@@ -40,7 +40,7 @@ We need to run them on 5k-node clusters, but they’re:
 - Expensive (tens of thousands of core hours per run)
 - Blocking other large tests (quota limitations + only one large test project available viz. 'kubernetes-scale')
 
-So we don’t want to run them too frequently. On the other hand, running them too infrequently means late identification and piling up of regressions. So we choose the following middleground:  
+So we don’t want to run them too frequently. On the other hand, running them too infrequently means late identification and piling up of regressions. So we choose the following middleground:
 (B = release-blocking, NB = not release-blocking)
 
 - Performance tests on 2k-node cluster in GCE/GKE alternatingly each week (NB)
@@ -77,7 +77,7 @@ Google is currently using a single project for scalability testing, on both GCE 
 
 ### Concretely define test configuration
 
-This is a relatively minor issue but it is important that we clearly define the test configuration we use for the release. E.g. there was a confusion this time around testing k8s services, machine-type and no. of the nodes we used (we tested 4k instead of 5k due to a CIDR-setup problem). For ref - [#47344] [#47865]. To solve this, we need to document it using the below template in a file named scalability-validation-report.md placed under kubernetes/features/release-<N>. And this file should be linked from under the scalability section in the release's CHANGELOG.md.
+This is a relatively minor issue but it is important that we clearly define the test configuration we use for the release. E.g. there was a confusion this time around testing k8s services, machine-type and no. of the nodes we used (we tested 4k instead of 5k due to a CIDR-setup problem). For ref - [#47344] [#47865]. To solve this, we need to document it using the below template in a file named scalability-validation-report.md placed under kubernetes/features/release-&gt;N&lt;. And this file should be linked from under the scalability section in the release's CHANGELOG.md.
 
 ```
 Validated large cluster performance under the following configuration:
