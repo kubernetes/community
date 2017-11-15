@@ -27,5 +27,7 @@ Meeting recordings can be found [here](https://www.youtube.com/playlist?list=PL6
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcli)
 
 <!-- BEGIN CUSTOM CONTENT -->
+_New contributors:_ please read the sibling document [CONTRIBUTING](CONTRIBUTING.md).
 
+Check out the [SIG-cli test grid](https://k8s-testgrid.appspot.com/sig-cli-master)!
 <!-- END CUSTOM CONTENT -->

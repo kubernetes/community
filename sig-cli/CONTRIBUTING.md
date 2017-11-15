@@ -1,21 +1,14 @@
 # Contributing
 
-The process for contributing code to Kubernetes via SIG-cli [community][community page].
+_Welcome to the Kubernetes SIG-cli contributing guide._
 
-**Note**: This page is focused on helping new contributors become active
-members of the community through sustained contributions.
+This guide is meant to help people become active members of the
+SIG-cli [community][community page] through sustained contributions.
 
-## Introduction
-
-Welcome to the Kubernetes sig-cli contributing guide.  We are excited
-about the prospect of you joining our [community][community page]!
+We are excited by the prospect of you joining our
+[community][community page]!
 Mentoring and on-boarding new contributors is critical to the success
 of the project.
-
-Please be aware that all contributions to Kubernetes require time
-and commitment from project maintainers to direct and review work.
-This is done in additional to many other maintainer responsibilities, and
-direct engagement from maintainers is a finite resource.
 
 ## Pick your track
 
@@ -25,14 +18,14 @@ Determine in what capacity you are looking to contribute:
 
 **Who is this for?**
 
-Contributors looking to engage with the SIG cli community for
+Contributors looking to engage with the SIG-cli community for
 a sustained period of time and looking to build working relationships
-with existing members.  Route to becoming a SIG cli member as
+with existing members.  Route to becoming a SIG-cli member as
 a reviewer or approver.
 
 **How does it work?**
 
-Work items come from a backlog of groomed items provided by SIG cli community members.
+Work items come from a backlog of groomed items provided by SIG-cli community members.
 Each items has a stake holder willing to provide limited direction to contributors
 working on it.  Contributors typically need to put in 10x the time per-issue as the
 maintainers providing direction.  Contributors are expected to learn and do research
@@ -68,7 +61,7 @@ be very limited in scope and contain minimal risk
 
 ## Before You Begin
 
-**Note**: Complete the following steps before reaching out to cli community members.
+_Please complete the following steps before reaching out to sig-cli community members._
 
 ### Agree to contribution rules
 
@@ -83,7 +76,7 @@ This is important.
 
 ### Modify your own `kubectl` fork
 
-Make sure you are ready to immediately get started before you claim any piece of
+Make sure you are ready to immediately start before you claim any piece of
 work.
 
 - Setup your [development environment][development guide].
@@ -97,35 +90,20 @@ work.
   - Add `kubectl hello-kubernetes -f file`: Print "Hello \<kind of resource\> \<name of resource\>"
   - Add `kubectl hello-kubernetes type/name`: Print "Hello \<kind of resource\> \<name of resource\> \<creation time\>"
 
-**Note:** Consider publishing your command to a fork so a maintainer can look at it.
+Push your branch to your github fork (`git push -f origin
+{branchName}`) so a maintainer can look at it.
 
 ## Your first contribution
 
 ### Adopt an issue
 
-Pick up an [issue] from the backlog by commenting on the issue that you would like to work on it.
-Be sure to mention the author of the issue as well as the SIG cli members `@seans3` and `@mengqiy`.
+Browse the [issues] for something you'd like to work on.
+The label "[good first issue]" has been applied to
+issues that might be more appropriate for newcomers.
 
-Using the following comment will make it easier for us to search for issues folks want to have
-assigned to them:
+#### Pick the right size of issue
 
-`cc @seans3 @mengqiy I would like to take this`
-
-**Note:** Don't do this unless you will start work on the issue within a few days of being assigned.
-
-**Note:** GitHub only allows issues to be assigned to GitHub accounts that are part
-of the organization or listed as outside collaborators.  In order to become an outside
-collaborator, contributors have to have shown commitment to the issue by performing some
-work.  Once you have begun, reach out to the issue author and show them your progress
-(e.g. in a fork).
-
-**Picking your first issue**
-
-For your first issue, we recommend picking an issue labeled with "good first issue" from the [issue] backlog.
-
-**Picking the right size of issue** 
-
-Be sure to pick up an issue that is appropriate to the time you are able to commit.
+Pick an issue that is appropriate to the time you are able to commit.
 We recommend first time contributors start with small or medium issues.
 
 Following are very rough estimates, but are best effort only.  They assume you have a
@@ -145,12 +123,12 @@ Meta/Umbrella issues may have multiple components.  By signing up for a Meta/Umb
 you are only committing to one piece of it.  Let the issue author know when you have completed
 some piece of it, and if you would like to continue working on it, or have it unassigned.
 
-**Picking the right kind of issue**
+#### Pick the right kind of issue
 
 Guided issues have a *type* defining the type of work to be done.  Pick up an
 issue that fits your experience level and interest.  Documentation and
 test-coverage issues typically are smaller in scope and easier to complete than
-features and cleanup issues. 
+features and cleanup issues.
 
 - `type/code-cleanup`
   - Usually some refactoring or small rewrites of code.
@@ -164,32 +142,58 @@ features and cleanup issues.
   - Audit tests for a package.  Run coverage tools and also manually look at what functions
     are missing unit or integration tests.  Write tests for these functions.
 
-**Provide periodic status updates**
+#### When you are ready to begin
+
+Comment on the issue, and @-mention the
+author of the issue as well as the SIG-cli members
+`@seans3` and `@mengqiy`.
+
+Example:
+
+> `cc @seans3 @mengqiy I would like to take this`
+
+GitHub only allows issues to be assigned to GitHub
+accounts that are part of the organization or listed as
+outside collaborators.
+
+In order to become an outside collaborator,
+contributors have to have shown commitment to the issue
+by performing some work.  Once you have begun, reach
+out to the issue author and show them your progress
+in a branch you've pushed to your github fork.
+
+Please be aware that new contributions to Kubernetes
+require time and commitment from project maintainers to
+direct and review work.  Such work is done in addition
+to other responsibilities.  Direct engagement from
+maintainers is a finite resource.
+
+
+#### Provide weekly status updates
 
 Once you have requested an issue and it has been accepted, you will be expected
-to provide periodic updates to it.  Do update the issue with your status at least every
-week, and publish your work to a fork so the community can see your progress and
-provide early feedback.
+to provide weekly updates, ideally by pushing to your github fork.
 
 If you find the issue is too challenging, time consuming, or you are no longer able to work on it,
 this is perfectly acceptable and please let the issue author know.
+
 If you like, you may pick up a different issue immediately or sometime in the future.
 
-**Summary**:
+#### Summary
 
-- Don't pick up an issue until you are ready to start working on it
-- When you want to pick up an issue, be sure to comment `@seans3` and `@mengqiy`.
+- Don't comment on an issue until you are ready to start working on it.
+- When ready to start, comment `@seans3` and `@mengqiy`.
   Expect a response within 2 days.
-- Update the issue every week with your progress so we know it is being actively worked on.
+- Update the issue weekly to let people know it is being worked on.
 - There is an expectation that some time will be committed to working on the issue each
   week until it is completed, or you are blocked on a maintainer.
 
 ### Meet the community
 
-Engage with the SIG cli community!  Let us know who you are and how things are going!
+Engage with the SIG-cli community!  Let us know who you are and how things are going!
 
 - Fill out the [about me form] so we know a bit about you and can direct your work accordingly.
-  - **Note:** After filling out the form, reach out via slack or the googlegroup and let us know.
+  - _After filling out the form, reach out via slack or the googlegroup and let us know._
 
 - Message the [cli mentors] googlegroup and let them know you filled out the form
   and are looking to get started.
@@ -388,7 +392,7 @@ escalate to sig [leads] by mentioning them.
 It may happen that your design doc gets stuck without getting merged
 or additional feedback. If you believe that your design is important
 and has been dropped, or it is not moving forward, please add it to
-the sig cli bi-weekly meeting [agenda] and mail the [group] saying
+the SIG-cli bi-weekly meeting [agenda] and mail the [group] saying
 you'd like to discuss it.
 
 ### General escalation instructions
@@ -423,8 +427,10 @@ See the sig-cli [community page] for points of contact and meeting times:
 [feature repo]: https://github.com/kubernetes/features
 [feature request]: #feature-requests
 [feature]: https://github.com/kubernetes/features
+[good first issue]: https://github.com/kubernetes/kubectl/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22
 [group]: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
 [issue]: https://github.com/kubernetes/kubectl/projects/3
+[issues]: https://github.com/kubernetes/kubectl/projects/3
 [kubectl docs]: https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/
 [kubernetes/cmd/kubectl]: https://github.com/kubernetes/kubernetes/tree/master/cmd/kubectl
 [kubernetes/pkg/kubectl]: https://github.com/kubernetes/kubernetes/tree/master/pkg/kubectl
