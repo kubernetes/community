@@ -139,7 +139,9 @@ Kubernetes is open source, but many of the people working on it do so as their d
 
 As a potential contributor, your changes and ideas are welcome at any hour of the day or night, weekdays, weekends, and holidays. Please do not ever hesitate to ask a question or send a PR.
 
-Our community guiding principles on how to create great code as a big group are found [here](https://github.com/kubernetes/community/blob/master/contributors/devel/collab.md).
+Our community guiding principles on how to create great code as a big group are found [here](https://github.com/kubernetes/community/blob/master/contributors/devel/collab.md#code-reviews).
+
+If you haven't done so already make sure you have found the correct SIG for your contribution. This will ensure faster responses and a streamlined code review. (see above)
 
 _Improvements needed_ 
 
@@ -147,16 +149,9 @@ _Improvements needed_
 
 ### Communication
 
-_Improvements needed_ 
+It is best to contact your SIG for issues related to the SIG's topic. Your SIG will be able to help you much more quickly than a general question would. Each SIG has a kubernetes slack channel that you can join as well.
 
-* link to how to contact the correct people
-
-* Communicating link: [https://github.com/kubernetes/community/blob/master/communication.md](https://github.com/kubernetes/community/blob/master/communication.md)
-
-* or perhaps link to [https://kubernetes.io/community/](https://kubernetes.io/community/)
-
-* add content of [Office Hours](https://github.com/kubernetes/community/blob/master/community/office-hours.md) to either of the above contents.
-
+For questions and troubleshooting, please feel free to use any of the methods of communication listed [here] (https://github.com/kubernetes/community/blob/master/communication.md). The [kubernetes website](https://kubernetes.io/community/) also lists this information.
 
 ## GitHub workflow
 
@@ -175,31 +170,30 @@ PR workflow is described here:
 
 ## Code Review
 
-TODO:
-Include some of the explanations from here: [https://github.com/kubernetes/community/blob/master/contributors/devel/owners.md#code-review-process](https://github.com/kubernetes/community/blob/master/contributors/devel/owners.md#code-review-process)
+_Improvements needed_
+* Clarify and streamline some of the explanations from [here:] (https://github.com/kubernetes/community/blob/master/contributors/devel/owners.md#code-review-process)
 
-TODO:
-Explain OWNERS files and process (also found in above link)
+* Explain OWNERS files and process (also found in above link)
 
 ## Testing
 
-TODO:
-- link to testing process
-
-- walkthrough of where to find what in the tests 
+_Improvements needed_
+* link to testing process 
+* walkthrough of where to find what in the tests (how to use, how to debug)
 
 ## Security
 
-TODO: elaborate
+_Improvements needed_
+* Please help write this section.
 
 ## Documentation
 
-TODO: elaborate
+_Improvements needed_
+* Please help write this section.
 
 # Community
 
-To find out more about our community structure, different levels of membership and code contributors, please explore here:  [https://github.com/kubernetes/community/blob/master/community-membership.md](https://github.com/kubernetes/community/blob/master/community-membership.md)
-We depend on new people becoming members and regular code contributors, so please come join us.
+If you haven't noticed by now, we have a large, lively, and friendly open-source community. We depend on new people becoming members and regular code contributors, so we would like you to come join us. To find out more about our community structure, different levels of membership and code contributors, please [explore here](https://github.com/kubernetes/community/blob/master/community-membership.md).
 
 ## Events
 
@@ -207,9 +201,17 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 
 ### Meetups
 
+__Improvements needed_
+* include link to meetups
+* information on CNCF support for founding a Meetup
+
 ### Kubecon
+
+_Improvements needed_
+* write friendly blurb about KubeCon, and include links
 
 ## Mentorship
 
-[Link and mini description for Kubernetes Pilots should go here].
+_Improvements needed_
+* Link and mini description for Kubernetes Pilots should go here.
 
