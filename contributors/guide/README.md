@@ -110,13 +110,13 @@ Here is how (_information needed_)
 _Improvements needed_ 
 * Clarify how someone would find the correct SIG, and what to do with that information. Link to those SIGs.
 
-* [This paragraph](https://github.com/kubernetes/community/blob/master/contributors/devel/issues.md#find-the-right-sigs) helps to find the SIG for an existing issue; what about an "unprompted" PR?
+* [This paragraph](https://github.com/kubernetes/community/blob/master/contributors/devel/issues.md#find-the-right-sigs) helps to find the SIG for an existing issue; what about a PR not associated with an open issue?
 
 * Make people aware of “extra” contributing guidelines on a SIG.
 
-* File issues with all the SIGs to not have duplicate things in their CONTRIBUTING.md. Keep it light, keep it clean, have only one source of truth. 
+* At the same time, file issues with all the SIGs to not have duplicate things in their CONTRIBUTING.md. Keep it light, keep it clean, have only one source of truth. 
 
-* Do not overload people with the entirety of the SIG structure; it is very intimidating
+* Do not overload people with the entirety of the SIG structure; it is very intimidating to a newcomer
 
 * Possible text to elaborate on (the sig list should remain in its current place however):
 
@@ -128,22 +128,26 @@ Not ready to contribute code, but see something that needs work? While we encour
 Again, there are multiple repositories within the community, and each will have its own Issues.
 For example, here is where you file an Issue to [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes/issues/new). Please make sure to adhere to the prompted submission guidelines.
 
-Improvements needed_ 
+_Improvements needed_ 
 * clarify there are many k/subrepos where you can file issues. Refer to "how to find and appropriate SIG" document to find out which.
 
 # Contributing
 
-(From:[here](https://github.com/kubernetes/community/blob/38fef055486c29e0b4d2639560c628f04504de21/contributors/devel/collab.md))
+(From:[here](https://github.com/kubernetes/community/blob/master/contributors/devel/collab.md))
 
 Kubernetes is open source, but many of the people working on it do so as their day job. In order to avoid forcing people to be "at work" effectively 24/7, we want to establish some semi-formal protocols around development. Hopefully these rules make things go more smoothly. If you find that this is not the case, please complain loudly.
 
-### Patches welcome
+As a potential contributor, your changes and ideas are welcome at any hour of the day or night, weekdays, weekends, and holidays. Please do not ever hesitate to ask a question or send a PR.
 
-Again, as a potential contributor, your changes and ideas are welcome at any hour of the day or night, weekdays, weekends, and holidays. Please do not ever hesitate to ask a question or send a PR.
+Our community guiding principles on how to create great code as a big group are found [here](https://github.com/kubernetes/community/blob/master/contributors/devel/collab.md).
+
+_Improvements needed_ 
+
+* the linked text is awfully similar to the section on [Code Review](https://github.com/kubernetes/community/blob/master/contributors/devel/community-expectations.md#code-review), linked above. Consolidate, and decide on _one place_ in this document where it fits best. It might even be important enough to include at top level in this document(no links).
 
 ### Communication
 
-TODO:
+_Improvements needed_ 
 
 * link to how to contact the correct people
 
@@ -153,13 +157,15 @@ TODO:
 
 * add content of [Office Hours](https://github.com/kubernetes/community/blob/master/community/office-hours.md) to either of the above contents.
 
+
 ## GitHub workflow
 
-(from [https://github.com/kubernetes/community/blob/master/contributors/devel/development.md](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md))
+To check out code to work on, please refer to the following guide:
+(from [here](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#workflow))
 
-## Collaborative Development
+_Improvements needed_ 
 
-[https://github.com/kubernetes/community/blob/master/contributors/devel/collab.md](https://github.com/kubernetes/community/blob/master/contributors/devel/collab.md)
+* move github workflow into its own file in this folder.
 
 ## Open a PR
 
@@ -168,10 +174,6 @@ PR workflow is described here:
 [https://github.com/kubernetes/community/blob/master/contributors/devel/pull-requests.md#the-testing-and-merge-workflow](https://github.com/kubernetes/community/blob/master/contributors/devel/pull-requests.md#the-testing-and-merge-workflow)
 
 ## Code Review
-
-Our general code review ideals are outlined in our [Collaborative development outline.](https://github.com/kubernetes/community/blob/master/contributors/devel/collab.md)
-
-### Code Review Process
 
 TODO:
 Include some of the explanations from here: [https://github.com/kubernetes/community/blob/master/contributors/devel/owners.md#code-review-process](https://github.com/kubernetes/community/blob/master/contributors/devel/owners.md#code-review-process)
