@@ -192,8 +192,7 @@ _Improvements needed_
 * The top level k/community/README.md should be a good starting point for what the community is and does. (see above instructions on rewriting this file)
 
 ## Events
-
-Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Europe and winter in North America. Information about these and other community events is available on the CNCF [events](https://www.cncf.io/events/) pages.
+Kubernetes is the main focus of CloudNativeCon/KubeCon, held twice per year in EMEA and in North America. Information about these and other community events is available on the CNCF [events](https://www.cncf.io/events/) pages.
 
 ### Meetups
 
@@ -201,7 +200,7 @@ __Improvements needed_
 * include link to meetups
 * information on CNCF support for founding a Meetup
 
-### Kubecon
+### KubeCon
 
 _Improvements needed_
 * write friendly blurb about KubeCon, and include links
