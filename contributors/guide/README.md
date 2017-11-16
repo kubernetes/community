@@ -63,7 +63,7 @@ For a brief description of the importance of code review, please read [On Code R
 
 _Improvements needed_
 * edit above link to only provide code review section.
-* decide whether this is something that belongs in this section, or should be combined with code review instructions below.
+* decide whether this is something that belongs in this section, or should be combined with Contributing instructions [below](https://github.com/guineveresaenger/community/tree/contributor-guide/contributors/guide#contributing).
 
 ### Thanks
 
@@ -78,7 +78,7 @@ Have you ever wanted to contribute to the coolest cloud technology? We will help
 If you have questions about the development process, feel free to jump into our [Slack Channel](http://slack.k8s.io/) or join our [mailing list](https://groups.google.com/forum/#!forum/kubernetes-dev).
 
 _Improvements needed_
-* The doc linked is being reinvented in this README. All relevant information should be ported to a logical place in this document/foler, and the original document deleted.
+* The doc linked [above](https://github.com/kubernetes/community/blob/master/contributors/devel/welcome-to-kubernetes-new-developer-guide.md#introduction) is being reinvented in this README. All relevant information should be ported to a logical place in this document/folder, and the original document deleted.
 
 ## Find something to work on
 
@@ -146,12 +146,11 @@ _Improvements needed_
 
 It is best to contact your SIG for issues related to the SIG's topic. Your SIG will be able to help you much more quickly than a general question would. Each SIG has a kubernetes slack channel that you can join as well.
 
-For questions and troubleshooting, please feel free to use any of the methods of communication listed [here] (https://github.com/kubernetes/community/blob/master/communication.md). The [kubernetes website](https://kubernetes.io/community/) also lists this information.
+For questions and troubleshooting, please feel free to use any of the methods of communication listed [here](https://github.com/kubernetes/community/blob/master/communication.md). The [kubernetes website](https://kubernetes.io/community/) also lists this information.
 
 ## GitHub workflow
 
-To check out code to work on, please refer to the following guide:
-(from [here](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#workflow))
+To check out code to work on, please refer to [this guide](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#workflow).
 
 _Improvements needed_ 
 
@@ -164,7 +163,7 @@ PR workflow is described [here](https://github.com/kubernetes/community/blob/mas
 ## Code Review
 
 _Improvements needed_
-* Clarify and streamline some of the explanations from [here:] (https://github.com/kubernetes/community/blob/master/contributors/devel/owners.md#code-review-process)
+* Clarify and streamline some of the explanations from [here](https://github.com/kubernetes/community/blob/master/contributors/devel/owners.md#code-review-process).
 
 * Explain OWNERS files and process (also found in above link)
 
@@ -187,6 +186,10 @@ _Improvements needed_
 # Community
 
 If you haven't noticed by now, we have a large, lively, and friendly open-source community. We depend on new people becoming members and regular code contributors, so we would like you to come join us. To find out more about our community structure, different levels of membership and code contributors, please [explore here](https://github.com/kubernetes/community/blob/master/community-membership.md).
+
+_Improvements needed_
+
+* The top level k/community/README.md should be a good starting point for what the community is and does. (see above instructions on rewriting this file)
 
 ## Events
 
