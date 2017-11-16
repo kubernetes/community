@@ -9,11 +9,12 @@ Hello! This is the starting point for our brand new contributor guide, currently
 Many of the links below should lead to relevant documents scattered across the community repository. Often, the linked instructions need to be updated or cleaned up. 
 
 * If you do so, please port the relevant file from its previous location to come live in the community/contributors/guide folder, and delete its previous location.
-* Ultimately, all contributor guide related files will live in this folder.
+* Ultimately, all contributor guide specific files will live in this folder.
 
 Please find _Improvements needed_ sections below and help us out.
 
 For example:
+
 _Improvements needed_
 * kubernetes/kubernetes/contributing.md -> point to this guide
 
@@ -24,12 +25,6 @@ _Improvements needed_
 * Individual SIG contributing documents -> add a link to this guide
 
 * Generate ToC for the section below 
-
-* Double check the outline of this document is complete
-
-[[TOC]]
-
-[[TOC]]
 
 # Welcome
 
@@ -43,7 +38,7 @@ Before you can contribute, you will need to sign the [Contributor License Agreem
 
 ## Setting up your development environment
 
-If you haven’t set up your environment, please find resources [here](https://github.com/kubernetes/community/tree/master/contributors/devel). These resources are not well organized as of currently.
+If you haven’t set up your environment, please find resources [here](https://github.com/kubernetes/community/tree/master/contributors/devel). These resources are not well organized currently; please have patience as we are working on it.
 
 _Improvements needed_
 * A new developer guide will be created and linked to in this section.
