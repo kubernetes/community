@@ -164,9 +164,7 @@ _Improvements needed_
 
 ## Open a PR
 
-PR workflow is described here:
-
-[https://github.com/kubernetes/community/blob/master/contributors/devel/pull-requests.md#the-testing-and-merge-workflow](https://github.com/kubernetes/community/blob/master/contributors/devel/pull-requests.md#the-testing-and-merge-workflow)
+PR workflow is described [here](https://github.com/kubernetes/community/blob/master/contributors/devel/pull-requests.md#the-testing-and-merge-workflow).
 
 ## Code Review
 
