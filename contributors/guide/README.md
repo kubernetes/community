@@ -9,6 +9,7 @@ Hello! This is the starting point for our brand new contributor guide, currently
 Many of the links below should lead to relevant documents scattered across the community repository. Often, the linked instructions need to be updated or cleaned up. 
 
 * If you do so, please port the relevant file from its previous location to come live in the community/contributors/guide folder, and delete its previous location.
+* Ultimately, all contributor guide related files will live in this folder.
 
 Please find _Improvements needed_ sections below and help us out.
 
@@ -22,11 +23,9 @@ _Improvements needed_
 
 * Individual SIG contributing documents -> add a link to this guide
 
-* A new developer guide will be referenced of the contributor guide as an item
-
-    * RyanJ from Red Hat is working on this
-
 * Generate ToC for the section below 
+
+* Double check the outline of this document is complete
 
 [[TOC]]
 
@@ -40,12 +39,16 @@ Welcome to Kubernetes! This document is the single source of truth for how to co
 
 ## Sign the CLA
 
-Link to [https://github.com/kubernetes/community/blob/master/CLA.md](https://github.com/kubernetes/community/blob/master/CLA.md)
+Before you can contribute, you will need to sign the [Contributor License Agreement](https://github.com/kubernetes/community/blob/master/CLA.md).
 
 ## Setting up your development environment
 
-If you haven’t set up your environment, please find instructions here:
-[https://github.com/kubernetes/community/blob/master/contributors/devel/welcome-to-kubernetes-new-developer-guide.md#downloading-building-and-testing-kubernetes](https://github.com/kubernetes/community/blob/master/contributors/devel/welcome-to-kubernetes-new-developer-guide.md#downloading-building-and-testing-kubernetes)
+If you haven’t set up your environment, please find resources [here](https://github.com/kubernetes/community/tree/master/contributors/devel). These resources are not well organized as of currently.
+
+_Improvements needed_
+* A new developer guide will be created and linked to in this section.
+
+    * RyanJ from Red Hat is working on this
 
 ## Community Expectations 
 
@@ -57,15 +60,15 @@ We therefore describe the expectations for members of the Kubernetes community. 
 
 ### Code of Conduct
 
-Please make sure to read and observe our Code of Conduct:
-
-[https://github.com/cncf/foundation/blob/master/code-of-conduct.md](https://github.com/cncf/foundation/blob/master/code-of-conduct.md)
+Please make sure to read and observe our [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md)
 
 ### Code Review
 
-[https://github.com/kubernetes/community/blob/master/contributors/devel/community-expectations.md#code-review](https://github.com/kubernetes/community/blob/master/contributors/devel/community-expectations.md#code-review)
+For a brief description of the importance of code review, please read [On Code Review](https://github.com/kubernetes/community/blob/master/contributors/devel/community-expectations.md#code-review).
 
-TODO: edit above link to only provide code review section.
+_Improvements needed_
+* edit above link to only provide code review section.
+* decide whether this is something that belongs in this section, or should be combined with code review instructions below.
 
 ### Thanks
 
@@ -73,65 +76,70 @@ Many thanks in advance to everyone who contributes their time and effort to maki
 
 # Your First Contribution
 
-(modified from [https://github.com/kubernetes/community/blob/master/contributors/devel/welcome-to-kubernetes-new-developer-guide.md#downloading-building-and-testing-kubernetes](https://github.com/kubernetes/community/blob/master/contributors/devel/welcome-to-kubernetes-new-developer-guide.md#downloading-building-and-testing-kubernetes))
+(from [here](https://github.com/kubernetes/community/blob/master/contributors/devel/welcome-to-kubernetes-new-developer-guide.md#introduction))
 
 Have you ever wanted to contribute to the coolest cloud technology? We will help you understand the organization of the Kubernetes project and direct you to the best places to get started. You'll be able to pick up issues, write code to fix them, and get your work reviewed and merged.
 
 If you have questions about the development process, feel free to jump into our [Slack Channel](http://slack.k8s.io/) or join our [mailing list](https://groups.google.com/forum/#!forum/kubernetes-dev).
 
+_Improvements needed_
+* The doc linked is being reinvented in this README. All relevant information should be ported to a logical place in this document/foler, and the original document deleted.
+
 ## Find something to work on
 
-TODO: clean up this paragraph’s flow
-Help is always welcome!
-
-Documentation (like the text you are reading now) can always use improvement!
-
-To dig deeper, read a design doc, e.g. [architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/architecture.md).
-
-There's always code that can be clarified and variables or functions that can be renamed or commented.
-
-There's always a need for more test coverage.
+Help is always welcome! For example, documentation (like the text you are reading now) can always use improvement. There's always code that can be clarified and variables or functions that can be renamed or commented. There's always a need for more test coverage.
+You get the idea - if you ever see something you think should be fixed, you should own it. Here is how you get started.
 
 ### Find a good first topic
 
-There's a [semi-curated list of issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted) that should not need deep knowledge of the system.
-TODO: Clarify help-wanted issues also exist on projects other than k/kubernetes, e.g. k/kubectl.
+Each repository in the Kubernetes organization has beginner-friendly issues that provide a good first issue. For example, [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) has [help-wanted issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted) that should not need deep knowledge of the system.
+Another good strategy is to find a documentation improvement, such as a missing/broken link, which will give you exposure to the code submission/review process without the added complication of technical depth.
+
+_Improvements needed_
+* Clarify help-wanted issues also exist on projects other than k/kubernetes, e.g. k/kubectl.
 
 ### Find a SIG that is related to your contribution
 
-After finding something to contribute, you should find a SIG.
+You may have noticed that some repositories in the Kubernetes Organizaion are owned by Special Interest Groups, or SIGs. We organize the Kubernetes community into SIGs in order to improve our workflow and more easily manage what is a very large community project.
+SIGs also have their own CONTRIBUTING.md files, which may contain extra information or guidelines in addition to these general ones.
 
-TODO: 
-- this needs work, how do I find the correct SIG? Example: I have a bugfix for kubectl, I’ve found the repo, 
+After finding something to contribute, you should find the appropriate SIG, which you will need in order to have your pull request approved for testing and merging.
 
-- [This paragraph](https://github.com/kubernetes/community/blob/master/contributors/devel/issues.md#find-the-right-sigs) helps to find the SIG for an existing issue; what about an "unprompted" PR?
-- Make people aware of “extra” contributing guidelines on a SIG.
+Here is how (_information needed_)
 
-- File issues with all the SIGs to not have duplicate things in their CONTRIBUTING.md
+_Improvements needed_ 
+* Clarify how someone would find the correct SIG, and what to do with that information. Link to those SIGs.
 
-- Do not overload people with the entirety of the SIG structure; it is very intimidating
+* [This paragraph](https://github.com/kubernetes/community/blob/master/contributors/devel/issues.md#find-the-right-sigs) helps to find the SIG for an existing issue; what about an "unprompted" PR?
 
-Possible text to elaborate on:
+* Make people aware of “extra” contributing guidelines on a SIG.
 
-([Pick a SIG](https://github.com/kubernetes/community/blob/master/sig-list.md), peruse its associated [cmd](https://github.com/kubernetes/kubernetes/tree/master/cmd) directory, find a main() and read code until you find something you want to fix.)
+* File issues with all the SIGs to not have duplicate things in their CONTRIBUTING.md. Keep it light, keep it clean, have only one source of truth. 
 
-### File an issue
+* Do not overload people with the entirety of the SIG structure; it is very intimidating
 
-TODO: clarify there are many k/subrepos where you can file.
+* Possible text to elaborate on (the sig list should remain in its current place however):
 
-Not ready to contribute code, but see something that needs work? While we encourage everyone to contribute code, we also appreciate it when someone finds a problem. For example, here is where you file an issue to kubernetes/kubernetes: [https://github.com/kubernetes/kubernetes/issues/new](https://github.com/kubernetes/kubernetes/issues/new). Please make sure to adhere to the prompted submission guidelines.
+    * ([Pick a SIG](https://github.com/kubernetes/community/blob/master/sig-list.md), peruse its associated [cmd](https://github.com/kubernetes/kubernetes/tree/master/cmd) directory, find a main() and read code until you find something you want to fix.)
+
+### File an Issue
+
+Not ready to contribute code, but see something that needs work? While we encourage everyone to contribute code, we also appreciate it when someone finds a problem.
+Again, there are multiple repositories within the community, and each will have its own Issues.
+For example, here is where you file an Issue to [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes/issues/new). Please make sure to adhere to the prompted submission guidelines.
+
+Improvements needed_ 
+* clarify there are many k/subrepos where you can file issues. Refer to "how to find and appropriate SIG" document to find out which.
 
 # Contributing
 
-(From:
-
-[https://github.com/kubernetes/community/blob/38fef055486c29e0b4d2639560c628f04504de21/contributors/devel/collab.md](https://github.com/kubernetes/community/blob/38fef055486c29e0b4d2639560c628f04504de21/contributors/devel/collab.md))
+(From:[here](https://github.com/kubernetes/community/blob/38fef055486c29e0b4d2639560c628f04504de21/contributors/devel/collab.md))
 
 Kubernetes is open source, but many of the people working on it do so as their day job. In order to avoid forcing people to be "at work" effectively 24/7, we want to establish some semi-formal protocols around development. Hopefully these rules make things go more smoothly. If you find that this is not the case, please complain loudly.
 
 ### Patches welcome
 
-First and foremost: as a potential contributor, your changes and ideas are welcome at any hour of the day or night, weekdays, weekends, and holidays. Please do not ever hesitate to ask a question or send a PR. (
+Again, as a potential contributor, your changes and ideas are welcome at any hour of the day or night, weekdays, weekends, and holidays. Please do not ever hesitate to ask a question or send a PR.
 
 ### Communication
 
