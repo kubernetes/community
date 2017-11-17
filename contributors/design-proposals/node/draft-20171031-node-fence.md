@@ -37,9 +37,8 @@ To address this we propose the addition of the fence controller which, in the ev
 This functionality, if configured by the admin, applies exclusively to nodes running StatefulSets as they are currently the only construct that provides at-most-one semantics for its members.  In the absence of this feature, an end-user has no ability to safely or reliably allow StatefulSets to be recovered and as such end-users will not be provided with a mechanism to enable/disable this functionality on a set-by-set basis.
 
 Depending on the deployment, the fencing controller will have capabilities such as:
-- power fencing: powering off or rebooting a node, 
-- storage fencing: disconnection from specific storage to prevent multiple writers), and
-- network fencing: disconnection from specific networks to prevent the node from taking work items off queues and/or communicating with peers
+- Power management fencing: powering off or rebooting a node, 
+- Storage fencing: disconnection from specific storage to prevent multiple writers), and
 
 Once the node has been made safe by using one or more of the fencing mechanisms listed above, we can know that either the pods are not running anymore or are not accessing shared resources (storage or network) and we can safely delete their objects from the api server to allow the scheduler to initiate new instance.
 
