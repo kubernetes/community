@@ -55,7 +55,6 @@ The fields of `DnsParams` are:
 * `search` is a list of additional search path subdomains. On `resolv.conf`
   platforms, these are entries to the `search` setting. These domains will be
   appended to the existing search path.
-
 * `options` that are an OS-dependent list of (name, value) options. These values
   are NOT expected to be generally portable across platforms. For containers that
   use `/etc/resolv.conf` style configuration, these correspond to the parameters
@@ -109,8 +108,7 @@ The pod will get the following `/etc/resolv.conf`:
 ```bash
 nameserver 1.2.3.4
 search ns1.svc.cluster.local my.dns.search.suffix
-options ndots:2
-options edns0
+options ndots:2 edns0
 ```
 
 ## Overriding `ndots`
