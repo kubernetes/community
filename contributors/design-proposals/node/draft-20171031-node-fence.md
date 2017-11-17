@@ -67,7 +67,7 @@ node_name=xxx
 isolation=[method-storage-iso1]]
 power_managment=[method-pm1, method-kdump]
 recovery=[method1,method2,method3]
-	execution_policy=[seq\cun]
+execution_policy=[seq\cun]
 ```
 Notes:
 - Each configmap we relate a node name - this should be unique, and in the properties we set order for stages’ names.
@@ -124,15 +124,14 @@ Executor is k8s Job that is created in cluster by Fence Controller once the cont
 - On fail will modify to status:fail and controller will handle the cleanup of the job and retriggering new one to handle the fence request again.
 
 The internal operation performs the fence execution using Fence Agents.
-List of agents implementations:
-| Agent name | Info |
-| ---- |
-| Cluster fence operation | E.g: 1) cordon node - this should be defined more specifically 2) cleaning resources - deleting pods from apiserver |
-| https://github.com/ClusterLabs/fence-agents/tree/master/fence/agents/aws | Cloud provider agent for rebooting ec2 machines |
-| https://github.com/ClusterLabs/fence-agents | Scripts for executing pm devices |
-| https://github.com/ClusterLabs/fence-agents/blob/master/fence/agents/compute/fence_compute.py | Fence agent for the automatic resurrection of OpenStack compute instances |
-| https://github.com/ClusterLabs/fence-agents/tree/master/fence/agents/vmware_soap | Cloud provider agent for rebooting vmware machines |
-| https://github.com/ClusterLabs/fence-agents/tree/master/fence/agents/rhevm | Cloud provider agent for rebooting oVirt hosts |
+
+Follwing is a list of agents we will integrate with:
+- Cluster fence operation - E.g: 1) cordon node 2) cleaning resources - deleting pods from apiserver.
+- https://github.com/ClusterLabs/fence-agents/tree/master/fence/agents/aws - Cloud provider agent for rebooting ec2 machines.
+- https://github.com/ClusterLabs/fence-agents - Scripts for executing pm devices.
+- https://github.com/ClusterLabs/fence-agents/blob/master/fence/agents/compute/fence_compute.py - Fence agent for the automatic resurrection of OpenStack compute instances.
+- https://github.com/ClusterLabs/fence-agents/tree/master/fence/agents/vmware_soap - Cloud provider agent for rebooting vmware machines.
+- https://github.com/ClusterLabs/fence-agents/tree/master/fence/agents/rhevm - Cloud provider agent for rebooting oVirt hosts.
 
 Cloud provider allows us to implement fencing agents that perform power management reboot. In k8s autoscaler implementation the concept of cloud provider is already implemented - we will integrate with that code to support PM operations over AWS and GCE.
 
