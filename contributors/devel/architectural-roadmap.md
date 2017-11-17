@@ -35,17 +35,49 @@ Intended audience: Kubernetes contributors
 
 ## Summary/TL;DR
 
-TBD - for those who want an overview, but don't want to read a 20 page document.
+This document describes the ongoing architectural development of the Kubernetes system, and the
+motivations behind it. System developers wanting to extend or customize
+Kubernetes should use this document as a guide to inform where and how best to implement these
+enhancements. Application developers wanting to develop large, portable and/or future-proof
+Kubernetes applications may refer to this document for guidance on which parts of Kubernetes they
+can rely on being present now and in the future.
+
+The layers of the architecture are named and described (see the diagram below). Distinctions are
+drawn between what exists today and what we plan to provide in future, and why.
+
+Succinctly, the layers comprise:
+
+1. **_The Nucleus_** which provides standardized API and execution machinery, including basic REST
+   mechanics, security, individual Pod, container, network interface and storage volume management,
+   all of which are extensible via well-defined interfaces.  The Nucleus is non-optional and
+   expected to be the most stable part of the system.
+
+2. **_The Application Management Layer_** which provides basic deployment and routing, including
+   self-healing, scaling, service discovery, load balancing and traffic routing.  This is
+   often referred to as orchestration and the service fabric. Default implementations of all
+   functions are provided, but conformant replacements are permitted.
+
+3. **_The Governance Layer_** which provides higher level automation and policy enforcement,
+   including single- and multi-tenancy, metrics, intelligent autoscaling and provisioning, and
+   schemes for authorization, quota, network, and storage policy expression and enforcement. These
+   are optional, and achievable via other solutions.
+   
+4. **_The Interface Layer_** which provides commonly used libraries, tools, UI's and systems used to
+   interact with the Kubernetes API.
+   
+5. **_The Ecosystem_** which includes everything else associated with Kubernetes, and is not really
+   "part of" Kubernetes at all.  This is where most of the development happens, and includes CI/CD,
+   middleware, logging, monitoring, data processing, PaaS, serverless/FaaS systems, workflow,
+   container runtimes, image registries, node and cloud provider management, and many others.
+
 
 ## Background
 
-Kubernetes is a platform for deploying and managing containers. For
-more information about the mission, scope, and design of Kubernetes,
-see [What Is Kubernetes](http://kubernetes.io/docs/whatisk8s/) and the
-[architectural
+Kubernetes is a platform for deploying and managing containers. For more information about the
+mission, scope, and design of Kubernetes, see [What Is
+Kubernetes](http://kubernetes.io/docs/whatisk8s/) and the [architectural
 overview](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/architecture.md). The
-latter also describes the current breakdown of the system into
-components/processes.
+latter also describes the current breakdown of the system into components/processes.
 
 Contributors to Kubernetes need to know what functionality they can
 rely upon when adding new features to different parts of the system.
