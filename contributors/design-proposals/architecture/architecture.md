@@ -1,5 +1,8 @@
 # Kubernetes Design and Architecture
 
+A much more detailed and updated [Architectural
+Roadmap](contributors/devel/architectural-roadmap.md) is also available.
+
 ## Overview
 
 Kubernetes is a production-grade, open-source infrastructure for the deployment, scaling,
