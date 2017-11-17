@@ -45,6 +45,32 @@ Once the node has been made safe by using one or more of the fencing mechanisms 
 The design and implementation acknowledge that other entities, such as the autoscaler, are likely to be present and performing similar monitoring and recovery actions. Therefore it is critical that the fencing controller not create or be susceptible to race conditions.
 
 ## User experience
+The loss of a worker node should be transparent to user's of
+StatefulSets.  Recovery time for affected Pods should be bounded and
+short, allowing scale up/down events to proceed as normal afterwards.
+
+In the absence of this feature, an end-user has no ability to safely
+or reliably allow StatefulSets to be recovered and as such end-users
+will not be provided with a mechanism to enable/disable this
+functionality on a set-by-set basis.
+
+### Use Cases
+1. In a bare metal Kubernetes deployment, StatefulSets should not
+   require admin intervention in order to restore capacity when a
+   member Pod was active on a lost worker
+
+1. In a bare metal Kubernetes deployment, StatefulSets should not
+   require admin intervention in order to scale up or down when a
+   member Pod was active on a lost worker
+
+1. In a Cloud Kubernetes deployment, StatefulSets without an
+   autoscaler should not require admin intervention in order to scale
+   up or down when a member Pod was active on a lost worker
+
+In other words, the failure of a worker node should not represent a
+single point of failure for StatefulSets.
+
+## Admin experience
 ### Configurations required:
 - How to trigger fence devices/apis - general template parameters (e.g. cluster UPS address and credentials) and overrides values per node for specific fields (e.g. ports related to node)
 - How to run a fence flow for each node (each node can be attached to several fence devices\apis and the fence flow can defer)
@@ -440,6 +466,41 @@ Some ways to prevent fencing storms:
 When kdump enabled is set in NodeFenceConfig the controller will check for kdump notifications once node becomes not ready. Once dumping is recognized, we can delete all pods.
 In parallel to wait for kernel dumping the controller will start to execute fence stage normally (admin should take care to configure PM method to run after enough timeout to let the dumping finish).
 Kernel dumping is done by booting up node to kdump kernel that starts dumping to hard-coded fqdn  reachable in cluster that save the dumping data.
+
+### Alternatives considered
+1. Create a new Cloud Provider allowing the autoscaler to function for
+   bare metal deployments.
+   
+   This was considered however the existing APIs are load balancer
+   centric and hard to map to the concept of powering on and off nodes.
+   
+   If the Cloud Provider API evolves in a compatible direction, it
+   might be advisable to persue a Bare Metal provider and have it be
+   responsible for much of the fencing configuration.
+
+1. A solution that focused exclusively on power fencing.
+   
+   While this would dramatically simplify the configuration required,
+   many admins see power fencing as a last resort and would prefer
+   less destructive way to isolate a misbehaving node, such as network
+   and/or disk fencing.
+   
+   We also see a desire from admins to use tools such as `kdump` to
+   obtain additional diagnostics, when possible, prior to powering off
+   the node.
+
+1. Attaching fencing configuration to nodes.
+   
+   While it is tempting to add details on how to fence a node to the
+   kubernetes Node objects, this scales poorly from a maintenance
+   perspective, preventing nodes from sharing common methods (such as
+   `kdump`).
+   
+   This is especially true for cloud deployments where all nodes are
+   controlled with the same credentials. However, even on bare metal
+   the only point of differention is often the the IP addresses of the
+   IPMI device, or the port number for a network switch, and it would
+   be advantageous to manage the rest in one place.
 
 ### RBAC rules
 ### Open questions
