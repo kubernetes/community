@@ -10,12 +10,13 @@ Authors: Brian Grant, Tim Hockin, and Clayton Coleman
 
 Intended audience: Kubernetes contributors
 
-Let’s start as ordinary doc text and export to markdown later.
-
 * * *
 
-
 [[TOC]]
+
+## Summary/TL;DR
+
+TBD - for those who want an overview, but don't want to read a 20 page document.
 
 ## Background
 
@@ -60,6 +61,8 @@ should be allowed and which should not.
 
 Kubernetes APIs, concepts, and functionality can be sorted into the
 following layers.
+
+![Architectural Layers](arch-roadmap-1.png)
 
 ### The Nucleus: API and Execution
 
@@ -147,7 +150,7 @@ Kubernetes cannot function without this basic API machinery and semantics, inclu
         * [Lack of
           guarantees](https://github.com/kubernetes/kubernetes/issues/30698)
         * [Orchestration
-          support](https://github.com/kubernetes/kubernetes/issues/34363)\
+          support](https://github.com/kubernetes/kubernetes/issues/34363)
         * [Support for event-driven
           automation](https://github.com/kubernetes/kubernetes/issues/3692)
         * [Clean
