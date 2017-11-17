@@ -12,7 +12,26 @@ Intended audience: Kubernetes contributors
 
 * * *
 
-[[TOC]]
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Kubernetes Architectural Roadmap](#kubernetes-architectural-roadmap)
+    - [Summary/TL;DR](#summarytldr)
+    - [Background](#background)
+    - [System Layers](#system-layers)
+        - [The Nucleus: API and Execution](#the-nucleus-api-and-execution)
+            - [The API and cluster control plane](#the-api-and-cluster-control-plane)
+            - [Execution](#execution)
+        - [The Application Layer: Deployment and Routing](#the-application-layer-deployment-and-routing)
+        - [The Governance Layer: Automation and Policy Enforcement](#the-governance-layer-automation-and-policy-enforcement)
+        - [The Interface Layer: Libraries and Tools](#the-interface-layer-libraries-and-tools)
+        - [The Ecosystem](#the-ecosystem)
+    - [Managing the matrix](#managing-the-matrix)
+    - [Layering of the system as it relates to security](#layering-of-the-system-as-it-relates-to-security)
+    - [Next Steps](#next-steps)
+
+<!-- markdown-toc end -->
+
 
 ## Summary/TL;DR
 
