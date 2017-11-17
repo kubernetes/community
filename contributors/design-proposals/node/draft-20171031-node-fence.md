@@ -166,6 +166,7 @@ After 5min (configurable) if node is still “not ready” controller will chang
 
 #### Pods treatment
 Pod treatment is done by “cluster fence agents” which will be run as part of a node fence treatment.
+
 Kubernetes follows taint-based-evictions. Taints and tolerations are ways to steer pods from nodes or evict pods that should stop.
 Pods states are changed once fence flow starts. Therefore, manual status change needs to be done:
 Fence pods treatment rules:
