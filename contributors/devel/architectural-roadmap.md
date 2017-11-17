@@ -2,7 +2,7 @@
 
 **Shared with the community**
 
-Status: First draft (not ready for detailed editing yet)
+Status: First draft
 
 Last update: 4/20/2017
 
