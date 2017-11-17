@@ -3,7 +3,7 @@ Status: Pending
 
 Version: Alpha
 
-Implementation Owner: TBD
+Implementation Owner: Yaniv Bronhaim (ybronhei@redhat.com)
 
 ## Overview
 Rationale and architecture for the addition of a fencing mechanism in Kubernetes clusters.
