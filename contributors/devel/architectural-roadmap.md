@@ -43,7 +43,7 @@ Kubernetes is a platform for deploying and managing containers. For
 more information about the mission, scope, and design of Kubernetes,
 see [What Is Kubernetes](http://kubernetes.io/docs/whatisk8s/) and the
 [architectural
-overview](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture.md). The
+overview](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/architecture.md). The
 latter also describes the current breakdown of the system into
 components/processes.
 
@@ -64,9 +64,10 @@ decisions.
 
 This document, which was inspired by [similar efforts from the
 community](https://docs.google.com/document/d/1J6yCsPtggsSx_yfqNenb3xxBK22k43c5XZkVQmS38Mk/edit),
-aims to clarify the intentions of Kubernetes’s lead architects. It is
-currently somewhat aspirational, and is intended to be a blueprint for
-ongoing and future development. NIY marks items not yet implemented.
+aims to clarify the intentions of the Kubernetes’s architecture
+SIG. It is currently somewhat aspirational, and is intended to be a
+blueprint for ongoing and future development. NIY marks items not yet
+implemented as of the lated updated date at the head of this document.
 
 [Presentation version](https://docs.google.com/presentation/d/1oPZ4rznkBe86O4rPwD2CWgqgMuaSXguIBHIE7Y0TKVc/edit#slide=id.p)
 
