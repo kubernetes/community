@@ -170,13 +170,19 @@ In the following the controller created new fence request for node1
 ```yaml
 kind: Fence
 apiVersion: 1.0
+metadata:
+ - namespace: ..
+ - name: ..
+ - uid: ..
+ ...
 spec: 
-node: node1
-step: iosolation
-start_timestep: 19:24:23
-status: running
-resources_cleaned: no
-executor: pod1.dev-8.executor1
+ - node: node1
+ - step: iosolation
+ - start_timestep: 19:24:23
+ - status: running
+ - reources_cleaned: no
+ - executor: pod1.dev-8.executor1
+status: ..
 ```
 - step is isolation or power_managment or recover - this refer to the set of method configured in the NodeFenceConfig.
 - start_timestep allows the executor to know how long operation takes and how to proceed with the fence. 
