@@ -104,31 +104,30 @@ Represents the fence method parameters. This is done by configuring a “templat
 - For each template the admin can create specific method config with different properties’ values.
 The template allows to reuse parameters for common devices and agents
 ```yaml
-kind: FenceMethodConfig
-apiVersion: 1.0
+kind: ConfigMap
+apiVersion: v1
 metadata:
-version: 1.0
-cluster_name: cluster1
-spec: 
-Name: node1_iscsi_pm_uenf324
-template: fence_method_template1
-parameters: 
-template_param1_name: value
-template_param2_name: value
-template_param3_name: value
-…
+ - name: fence_method_config
+data: 
+ - method.properties: | 
+node=node1_iscsi_pm_uenf324
+template=fence_method_template1
+template_param1_name=value1
+template_param2_name=value2
+..
 
-kind: FenceMethodTemplate
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
-version: 1.0
-spec: 
-Method_template_name: ipmilan_pm_device
-agent_name: fence_ipmilan
-must_success: Yes\No
-parameters*: (default values) 
-port:
-address:
+ - name: fence_template_config
+ - version: 1.0
+data: 
+ - method_template.properties: |
+name=ipmilan_pm_device
+agent_name=fence_ipmilan
+must_success=Yes\No
+template_param1_name=value1
+template_param2_name=value2
 ...
 ```
 
@@ -216,31 +215,33 @@ Brocade template:
 kind: FenceMethodTemplate
 apiVersion: 1.0
 metadata:
-  - version: 1.0
-spec:
-  - Method_template_name: fc_switch_brocade
-  - agent_name: fence_brocade
-  - parameters:
-     - ipaddr: 192.168.1.2
-     - password: brocade_password
-     - username: brocade_admin
+ - name: fence_method_template 
+ - version: 1.0
+data:
+ - method.properties: |
+method_template_name=fc_switch_brocade
+agent_name=fence_brocade
+ipaddr=192.168.1.2
+password=brocade_password
+username=brocade_admin
 ```
 
 APC template:
 
 ```
-kind: FenceMethodTemplate
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
+  - name: fence_method_template
   - version: 1.0
-spec:
-  - Method_template_name: apc_pdu
-  - agent_name: fence_apc_snmp
-  - must_sucess: yes
-  - parameters:
-     - ipaddr: 192.168.1.3
-     - password: apc_password
-     - username: apc_admin
+data:
+  - method_template.properties: |
+name=apc_pdu
+agent_name=fence_apc_snmp
+must_sucess=yes
+ipaddr=192.168.1.3
+password=apc_password
+username=apc_admin
 ```
 
 Eaton template:
@@ -248,110 +249,119 @@ Eaton template:
 kind: FenceMethodTemplate
 apiVersion: 1.0
 metadata:
+  - name fence_method_template
   - version: 1.0
-spec:
-  - Method_template_name: eaton_pdu
-  - agent_name: fence_eaton_snmp
-  - must_sucess: yes
-  - parameters:
-     - ipaddr: 192.168.1.4
-     - password: eaton_password
-     - username: eaton_admin
-     - snmp-priv-prot: AES
-     - snmp-priv-passwd: eaton_snmp_passwd
-     - snmp-sec-level: authPriv
-     - inet4-only
+data:
+  - method_template.properties: |
+name=eaton_pdu
+agent_name=fence_eaton_snmp
+must_sucess=yes
+ipaddr=192.168.1.4
+password=eaton_password
+username=eaton_admin
+snmp-priv-prot=AES
+snmp-priv-passwd=eaton_snmp_passwd
+snmp-sec-level=authPriv
+inet4-only
 ```
 
 Method for enable and disable of brocade for node A:
 
 ```
-kind: FenceMethodConfig
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
+  - name: fence_method_config
   - version: 1.0
-spec:
-  - Name: NodeA_fc_off
-  - template: fc_switch_brocade
-  - parameters:
-     - plug: 1
+data:
+ - method.properties: |
+name=nodeA_fc_off
+template=fc_switch_brocade
+plug=1
 ```
 
 ```
-kind: FenceMethodConfig
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
+  - name: fence_method_config
   - version: 1.0
-spec:
-  - Name: NodeA_fc_on
-  - template: fc_switch_brocade
-  - parameters:
-     - plug: 1
-     - action: on
+data:
+ - method.properties: |
+name=nodeA_fc_on
+template=fc_switch_brocade
+plug=1
+action=on
 ```
 
 Method for enable and disable of brocade for node B:
 
 ```
-kind: FenceMethodConfig
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
+  - name: fence_method_config
   - version: 1.0
 spec:
-  - Name: NodeB_fc_on
-  - template: fc_switch_brocade
-  - parameters:
-     - plug: 2
+ - method.properties: |
+name=nodeB_fc_on
+template=fc_switch_brocade
+plug=2
 ```
 
 ```
-kind: FenceMethodConfig
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
+  - name: fence_method_config
   - version: 1.0
 spec:
-  - Name: NodeB_fc_off
-  - template: fc_switch_brocade
-  - parameters:
-     - plug: 2
-     - action: on
+ - method.properties: |
+name=nodeB_fc_off
+template=fc_switch_brocade
+plug=2
+action=on
 ```
 
 Methods for on/off APC (both nodes):
 
 ```
-kind: FenceMethodConfig
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
+  - name: fence_method_config
   - version: 1.0
-spec:
-  - Name: NodeA_apc_off
-  - template: apc_pdu
-  - parameters:
-     - plug: 1
-     - action: off
+data:
+ - method.properties: |
+name=nodeA_apc_off
+template=apc_pdu
+plug=1
+action=off
 ```
 
 ```
-kind: FenceMethodConfig
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
+  - name: fence_method_config
   - version: 1.0
-spec:
-  - Name: NodeB_apc_off
-  - template: apc_pdu
-  - parameters:
-     - plug: 2
-     - action: off
+data:
+ - method.properties: |
+name=nodeB_apc_off
+template=apc_pdu
+plug=2
+action=off
 ```
 
 ```
-kind: FenceMethodConfig
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
+  - name: fence_method_config
   - version: 1.0
-spec:
-  - Name: NodeA_apc_on
+data:
+ - method.properties: |
+  - name=nodeA_apc_on
   - template: apc_pdu
   - parameters:
      - plug: 1
