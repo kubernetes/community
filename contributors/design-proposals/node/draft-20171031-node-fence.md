@@ -384,66 +384,69 @@ spec:
 Method for on/off eaton (both nodes)
 
 ```
-kind: FenceMethodConfig
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
+  - name: fence_method_config
   - version: 1.0
-spec:
-  - Name: NodeA_eaton_off
-  - template: eaton_pdu
-  - parameters:
-     - plug: 1
-     - action: off
+data:
+ - method.properties: |
+Name=nodeA_eaton_off
+template=eaton_pdu
+plug=1
+action=off
 ```
 
 ```
-kind: FenceMethodConfig
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
+  - name: fence_method_config
   - version: 1.0
-spec:
-  - Name: NodeA_eaton_off
-  - template: eaton_pdu
-  - parameters:
-     - plug: 2
-     - action: off
+data:
+ - method.properties: |
+name=NodeA_eaton_off  
+template=eaton_pdu  
+plug=2
+action=off
 ```
 
 ```
-kind: FenceMethodConfig
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
+  - name: fence_method_config
   - version: 1.0
-spec:
-  - Name: NodeA_eaton_on
-  - template: eaton_pdu
-  - parameters:
-     - plug: 1
-     - action: on
+data:
+  - method.properties: |
+name=nodeA_eaton_on
+template=eaton_pdu 
+plug=1
+action=on
 ```
 
 ```
-kind: FenceMethodConfig
+kind: ConfigMap
 apiVersion: 1.0
 metadata:
+  - name: fence_mothod_config
   - version: 1.0
-spec:
-  - Name: NodeA_eaton_on
-  - template: eaton_pdu
-  - parameters:
-     - plug: 2
-     - action: on
+data:
+  - method.properties: |
+name=nodeA_eaton_on
+template=eaton_pdu  
+plug=2
+action=on
 ```
 
 Finally fence configs:
 
 ```
-kind: ConfigMap
+kind: NodeFenceConfig
 apiVersion: v1
 metadata:
   - name: nodeA_fence_config
 data:
-  node_fence.properties:
     - node_name: NodeA
     - isolation: NodeA_fc_off
     - power_management: [NodeA_apc_off, NodeA_eaton_off, nodeA_eaton_on, nodeA_apc_on]
@@ -451,12 +454,11 @@ data:
 ```
 
 ```
-kind: ConfigMap
+kind: NodeFenceConfig
 apiVersion: v1
 metadata:
   - name: nodeA_fence_config
 data:
-  node_fence.properties:
     - node_name: NodeB
     - isolation: NodeB_fc_off
     - power_management: [NodeB_apc_off, NodeB_eaton_off, nodeB_eaton_on, nodeB_apc_on]
@@ -519,7 +521,8 @@ Kernel dumping is done by booting up node to kdump kernel that starts dumping to
    be advantageous to manage the rest in one place.
 
 ### RBAC rules
+Not defined yet explicitly.
+
 ### Open questions
 - Using https://github.com/kubernetes/node-problem-detector in extend to only check readness by the controller.
-### Related proposals
-
+- https://github.com/kubernetes/community/blob/master/contributors/design-proposals/cloud-provider/cloud-provider-refactoring.md
