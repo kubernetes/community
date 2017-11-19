@@ -71,13 +71,13 @@ In other words, the failure of a worker node should not represent a
 single point of failure for StatefulSets.
 
 ## Admin experience
-### Configurations required:
+### Configurations required
 - How to trigger fence devices/apis - general template parameters (e.g. cluster UPS address and credentials) and overrides values per node for specific fields (e.g. ports related to node)
 - How to run a fence flow for each node (each node can be attached to several fence devices\apis and the fence flow can defer)
 
 The following is done by `ConfigMap` objects:
 
-#### NodeFenceConfig
+#### Node Fence Config
 For each node that supports fencing we will configure NodeFenceConfig - This object is needed to centralize the information about “how” the node can be “fenced” from the cluster - we will have 3 steps for fence “isolation”, “power-management”, “recovery”. In each we will have a list of methods to perform.
 
 Note: to keep those fence configuration we had two options - Adding attributes in metadata section to the existing node object or create ConfigMap that describe this information for each node with fencing options.
