@@ -1,15 +1,14 @@
 **OWNER:**
 
-SIG-ContribX
+sid-contributor-experience
 
-
-# WARNING
+## Disclaimer
 Hello! This is the starting point for our brand new contributor guide, currently underway as per [-issue#6102](https://github.com/kubernetes/website/issues/6102) and in need of help. Please be patient, or fix a section below that needs improvement, and submit a pull request!
 
 Many of the links below should lead to relevant documents scattered across the community repository. Often, the linked instructions need to be updated or cleaned up. 
 
-* If you do so, please port the relevant file from its previous location to come live in the community/contributors/guide folder, and delete its previous location.
-* Ultimately, all contributor guide specific files will live in this folder.
+* If you do so, please move the relevant file from its previous location to the community/contributors/guide folder, and delete its previous location.
+* Our goal is that all contributor guide specific files live in this folder.
 
 Please find _Improvements needed_ sections below and help us out.
 
@@ -34,7 +33,7 @@ Welcome to Kubernetes! This document is the single source of truth for how to co
 
 ## Sign the CLA
 
-Before you can contribute, you will need to sign the [Contributor License Agreement](https://github.com/kubernetes/community/blob/master/CLA.md).
+Before you can contribute, you will need to sign the [Contributor License Agreement](https://git.k8s.io/community/CLA.md).
 
 ## Setting up your development environment
 
@@ -63,7 +62,7 @@ For a brief description of the importance of code review, please read [On Code R
 
 _Improvements needed_
 * edit above link to only provide code review section.
-* decide whether this is something that belongs in this section, or should be combined with Contributing instructions [below](https://github.com/guineveresaenger/community/tree/contributor-guide/contributors/guide#contributing).
+* decide whether this is something that belongs in this section, or should be combined with Contributing instructions [below](/contributor-guide/contributors/guide#contributing).
 
 ### Thanks
 
@@ -115,42 +114,42 @@ _Improvements needed_
 
 * Possible text to elaborate on (the sig list should remain in its current place however):
 
-    * ([Pick a SIG](https://github.com/kubernetes/community/blob/master/sig-list.md), peruse its associated [cmd](https://github.com/kubernetes/kubernetes/tree/master/cmd) directory, find a main() and read code until you find something you want to fix.)
+    * ([Pick a SIG](https://git.k8s.io/community/sig-list.md), peruse its associated [cmd](https://git.k8s.io/kubernetes/cmd) directory, find a main() and read code until you find something you want to fix.)
 
 ### File an Issue
 
 Not ready to contribute code, but see something that needs work? While we encourage everyone to contribute code, we also appreciate it when someone finds a problem.
 Again, there are multiple repositories within the community, and each will have its own Issues.
-For example, here is where you file an Issue to [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes/issues/new). Please make sure to adhere to the prompted submission guidelines.
+For example, here is where you file an Issue to [kubernetes/kubernetes](https://git.k8s.io/kubernetes/issues/new). Please make sure to adhere to the prompted submission guidelines.
 
 _Improvements needed_ 
 * clarify there are many k/subrepos where you can file issues. Refer to "how to find and appropriate SIG" document to find out which.
 
 # Contributing
 
-(From:[here](https://github.com/kubernetes/community/blob/master/contributors/devel/collab.md))
+(From:[here](https://git.k8s.io/community/contributors/devel/collab.md))
 
 Kubernetes is open source, but many of the people working on it do so as their day job. In order to avoid forcing people to be "at work" effectively 24/7, we want to establish some semi-formal protocols around development. Hopefully these rules make things go more smoothly. If you find that this is not the case, please complain loudly.
 
 As a potential contributor, your changes and ideas are welcome at any hour of the day or night, weekdays, weekends, and holidays. Please do not ever hesitate to ask a question or send a PR.
 
-Our community guiding principles on how to create great code as a big group are found [here](https://github.com/kubernetes/community/blob/master/contributors/devel/collab.md#code-reviews).
+Our community guiding principles on how to create great code as a big group are found [here](https://git.k8s.io/community/contributors/devel/collab.md#code-reviews).
 
 If you haven't done so already make sure you have found the correct SIG for your contribution. This will ensure faster responses and a streamlined code review. (see above)
 
 _Improvements needed_ 
 
-* the linked text is awfully similar to the section on [Code Review](https://github.com/kubernetes/community/blob/master/contributors/devel/community-expectations.md#code-review), linked above. Consolidate, and decide on _one place_ in this document where it fits best. It might even be important enough to include at top level in this document(no links).
+* the linked text is awfully similar to the section on [Code Review](https://git.k8s.io/community/contributors/devel/community-expectations.md#code-review), linked above. Consolidate, and decide on _one place_ in this document where it fits best. It might even be important enough to include at top level in this document(no links).
 
 ### Communication
 
 It is best to contact your SIG for issues related to the SIG's topic. Your SIG will be able to help you much more quickly than a general question would. Each SIG has a kubernetes slack channel that you can join as well.
 
-For questions and troubleshooting, please feel free to use any of the methods of communication listed [here](https://github.com/kubernetes/community/blob/master/communication.md). The [kubernetes website](https://kubernetes.io/community/) also lists this information.
+For questions and troubleshooting, please feel free to use any of the methods of communication listed [here](https://git.k8s.io/community/communication.md). The [kubernetes website](https://kubernetes.io/community/) also lists this information.
 
 ## GitHub workflow
 
-To check out code to work on, please refer to [this guide](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#workflow).
+To check out code to work on, please refer to [this guide](https://git.k8s.io/community/contributors/devel/development.md#workflow).
 
 _Improvements needed_ 
 
@@ -158,12 +157,12 @@ _Improvements needed_
 
 ## Open a PR
 
-PR workflow is described [here](https://github.com/kubernetes/community/blob/master/contributors/devel/pull-requests.md#the-testing-and-merge-workflow).
+PR workflow is described [here](https://git.k8s.io/community/contributors/devel/pull-requests.md#the-testing-and-merge-workflow).
 
 ## Code Review
 
 _Improvements needed_
-* Clarify and streamline some of the explanations from [here](https://github.com/kubernetes/community/blob/master/contributors/devel/owners.md#code-review-process).
+* Clarify and streamline some of the explanations from [here](https://git.k8s.io/community/contributors/devel/owners.md#code-review-process).
 
 * Explain OWNERS files and process (also found in above link)
 
@@ -185,7 +184,7 @@ _Improvements needed_
 
 # Community
 
-If you haven't noticed by now, we have a large, lively, and friendly open-source community. We depend on new people becoming members and regular code contributors, so we would like you to come join us. To find out more about our community structure, different levels of membership and code contributors, please [explore here](https://github.com/kubernetes/community/blob/master/community-membership.md).
+If you haven't noticed by now, we have a large, lively, and friendly open-source community. We depend on new people becoming members and regular code contributors, so we would like you to come join us. To find out more about our community structure, different levels of membership and code contributors, please [explore here](https://git.k8s.io/community/community-membership.md).
 
 _Improvements needed_
 
@@ -196,7 +195,7 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held twice per year in E
 
 ### Meetups
 
-__Improvements needed_
+_Improvements needed_
 * include link to meetups
 * information on CNCF support for founding a Meetup
 
