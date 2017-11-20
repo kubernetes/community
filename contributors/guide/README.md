@@ -58,7 +58,7 @@ Please make sure to read and observe our [Code of Conduct](https://github.com/cn
 
 ### Code Review
 
-For a brief description of the importance of code review, please read [On Code Review](https://github.com/kubernetes/community/blob/master/contributors/devel/community-expectations.md#code-review).
+For a brief description of the importance of code review, please read [On Code Review](https://git.k8s.io/community/contributors/devel/community-expectations.md#code-review).
 
 _Improvements needed_
 * edit above link to only provide code review section.
@@ -70,14 +70,14 @@ Many thanks in advance to everyone who contributes their time and effort to maki
 
 # Your First Contribution
 
-(from [here](https://github.com/kubernetes/community/blob/master/contributors/devel/welcome-to-kubernetes-new-developer-guide.md#introduction))
+(from [here](https://git.k8s.io/community/contributors/devel/welcome-to-kubernetes-new-developer-guide.md#introduction))
 
 Have you ever wanted to contribute to the coolest cloud technology? We will help you understand the organization of the Kubernetes project and direct you to the best places to get started. You'll be able to pick up issues, write code to fix them, and get your work reviewed and merged.
 
 If you have questions about the development process, feel free to jump into our [Slack Channel](http://slack.k8s.io/) or join our [mailing list](https://groups.google.com/forum/#!forum/kubernetes-dev).
 
 _Improvements needed_
-* The doc linked [above](https://github.com/kubernetes/community/blob/master/contributors/devel/welcome-to-kubernetes-new-developer-guide.md#introduction) is being reinvented in this README. All relevant information should be ported to a logical place in this document/folder, and the original document deleted.
+* The doc linked [above](https://git.k8s.io/community/contributors/devel/welcome-to-kubernetes-new-developer-guide.md#introduction) is being reinvented in this README. All relevant information should be ported to a logical place in this document/folder, and the original document deleted.
 
 ## Find something to work on
 
@@ -104,7 +104,7 @@ Here is how (_information needed_)
 _Improvements needed_ 
 * Clarify how someone would find the correct SIG, and what to do with that information. Link to those SIGs.
 
-* [This paragraph](https://github.com/kubernetes/community/blob/master/contributors/devel/issues.md#find-the-right-sigs) helps to find the SIG for an existing issue; what about a PR not associated with an open issue?
+* [This paragraph](https://git.k8s.io/community/contributors/devel/issues.md#find-the-right-sigs) helps to find the SIG for an existing issue; what about a PR not associated with an open issue?
 
 * Make people aware of “extra” contributing guidelines on a SIG.
 
