@@ -49,7 +49,7 @@ The Release Management Team Lead is the person ultimately responsible for ensuri
   * If the build breaks, or any CI for the release branch becomes unhealthy due to a bad merge or infrastructure issue, ensures that actions are taken ASAP to bring it back to a healthy state.
 * Initiates automatic fast-forwards of the release branch to pick up all changes from master branch, when appropriate.
 * Reviews and approves [cherry picks](https://github.com/kubernetes/community/blob/master/contributors/devel/cherry-picks.md) to the release branch.
-  * Ensures onlyl bug/security fixes (but no new features) are cherry-picked after code complete unless approved by the [exception process](https://github.com/kubernetes/features/blob/master/EXCEPTIONS.md).
+  * Ensures only bug/security fixes (but no new features) are cherry-picked after code complete unless approved by the [exception process](https://github.com/kubernetes/features/blob/master/EXCEPTIONS.md).
   * Ensures that cherry-picks do not destabilize the branch by either giving the PR enough time to stabilize in master or giving it enough time to stabilize in the release branch before cutting the release.
 * Cuts the actual [release](https://github.com/kubernetes/kubernetes/releases).
 
@@ -87,7 +87,7 @@ The Release Management Team Lead is the person ultimately responsible for ensuri
 
 ## Individual Contributors
 
-Release responsibilities of indvidual contributors to the Kubernetes project are captured below.
+Release responsibilities of individual contributors to the Kubernetes project are captured below.
 
 ### Patch Release
 
@@ -111,7 +111,7 @@ During the code freeze period, fix any bugs discovered with you feature, and wri
 1. Make sure your feature for the upcoming release is on the release tracking board (e.g. [link](https://docs.google.com/spreadsheets/d/1AFksRDgAt6BGA3OjRNIiO3IyKmA-GU7CXaxbihy48ns/edit?usp=sharing) for 1.8).
 2. Create a PR with documentation for your feature in the [documents repo](https://github.com/kubernetes/kubernetes.github.io).
     * **Your PR should target the release branch (e.g. [`release-1.8`](https://github.com/kubernetes/kubernetes.github.io/tree/release-1.8)), not the [`master`](https://github.com/kubernetes/kubernetes.github.io/tree/master) branch.**
-      * Any changes to the master branch become live on https://kubernetes.io/docs/ as soon as they are merged, and for releases we do not want docuemntation to go live until the release is cut.
+      * Any changes to the master branch become live on https://kubernetes.io/docs/ as soon as they are merged, and for releases we do not want documentation to go live until the release is cut.
 3. Add link to your docs PR in the release tracking board, and notify the docs lead for the release (e.g. [Steve Perry](https://github.com/steveperry-53) for 1.8).
 4. The docs lead will review your PR and give you feedback.
 5. Once approved, the docs lead will merge your PR into the release branch.
