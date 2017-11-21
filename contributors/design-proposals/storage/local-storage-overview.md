@@ -332,7 +332,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
   spec:
     <snip>
     nodeTolerations:
-      - key: node.alpha.kubernetes.io/notReady
+      - key: node.alpha.kubernetes.io/not-ready
         operator: TolerationOpExists
         tolerationSeconds: 600
       - key: node.alpha.kubernetes.io/unreachable
