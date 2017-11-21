@@ -1,9 +1,9 @@
 **OWNER:**
 
-sid-contributor-experience
+sig-contributor-experience
 
 ## Disclaimer
-Hello! This is the starting point for our brand new contributor guide, currently underway as per [-issue#6102](https://github.com/kubernetes/website/issues/6102) and in need of help. Please be patient, or fix a section below that needs improvement, and submit a pull request!
+Hello! This is the starting point for our brand new contributor guide, currently underway as per [issue#6102](https://github.com/kubernetes/website/issues/6102) and in need of help. Please be patient, or fix a section below that needs improvement, and submit a pull request!
 
 Many of the links below should lead to relevant documents scattered across the community repository. Often, the linked instructions need to be updated or cleaned up. 
 
@@ -94,7 +94,7 @@ _Improvements needed_
 
 ### Find a SIG that is related to your contribution
 
-You may have noticed that some repositories in the Kubernetes Organizaion are owned by Special Interest Groups, or SIGs. We organize the Kubernetes community into SIGs in order to improve our workflow and more easily manage what is a very large community project.
+You may have noticed that some repositories in the Kubernetes Organization are owned by Special Interest Groups, or SIGs. We organize the Kubernetes community into SIGs in order to improve our workflow and more easily manage what is a very large community project.
 SIGs also have their own CONTRIBUTING.md files, which may contain extra information or guidelines in addition to these general ones.
 
 After finding something to contribute, you should find the appropriate SIG, which you will need in order to have your pull request approved for testing and merging.
