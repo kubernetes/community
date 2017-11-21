@@ -189,7 +189,7 @@ Opinion against this:
 1. It's not possible to validate a pod + mount propagation. Mount propagation
    is stored in a HostPath PersistentVolume object, while privileged mode is
    stored in Pod object. Validator sees only one object and we don't do
-   cross-object validation and can't reject non-provileged pod that uses a PV
+   cross-object validation and can't reject non-privileged pod that uses a PV
    with shared mount propagation.
 
 ### Make HostPath shared for privileged containers, slave for non-privileged.
