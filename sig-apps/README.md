@@ -27,24 +27,27 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=hn23Z-vL_
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fapps)
 
 <!-- BEGIN CUSTOM CONTENT -->
+
 ## Goals
-* Discuss running applications in k8s
-* Discuss how to define and run apps in k8s (APIs, CLIs, SDKs, package management tools, etc.)
-* Suggest k8s features where we see friction
-* Be the voice of the people running applications into the k8s development (developers and devops)
-* Help people get involved in the kubernetes community
+
+* Discuss running and defining applications in Kubernetes (e.g., APIs, SDKs, Controllers, package management tools, etc.)
+* Work on improvements to the Workload API
+* Suggest Kubernetes features where we see friction
+* Be the voice of the people running applications in Kubernetes (developers and devops)
+* Help people get involved in the Kubernetes community
 * Show early features/demos of tools that make running apps easier
 
 ## Non-goals
-* Our job is not to go implement stacks. We're helping people to help themselves. We will help connect people to the right folks * but we do not want to own a set of examples (as a group)
-* Do not endorse one particular tool
-* Do not pick which apps to run on top of the platform
-* Do not recommend one way to do things
+
+* Do not endorse one particular ecosystem tool
+* Do not pick which apps to run on top of Kubernetes
+* Do not recommend one way to do things (e.g., picking a template language)
 
 ## [Helm](https://helm.sh) and [Charts](https://github.com/kubernetes/charts)
+
 Helm and Charts each have their own regular meetings.
 
-* The Helm Developer call is [Thursday at 16:15 UTC](https://zoom.us/j/4526666954). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:15&tz=UTC). Meeting notes and agenda can be found [here](https://docs.google.com/document/d/1elWRfvH3AkHdr8pOaqyPbqSZ6ONR-l1Sb9_gapqh8ZA/edit).
-* Charts Chat is [Thursday at 18:00 UTC](https://zoom.us/j/166909412). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:15&tz=UTC). Meeting notes and agenda can be found [here](https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3).
+* The Helm Developer call is [Thursday at 9:30 PT (Pacific Time)](https://zoom.us/j/4526666954). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29). Meeting notes and agenda can be found [here](https://docs.google.com/document/d/1elWRfvH3AkHdr8pOaqyPbqSZ6ONR-l1Sb9_gapqh8ZA/edit).
+* Charts Chat is every other [Thursday at 11:00 PT](https://zoom.us/j/166909412). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20(Pacific%20Time)). Meeting notes and agenda can be found [here](https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3).
 
 <!-- END CUSTOM CONTENT -->
