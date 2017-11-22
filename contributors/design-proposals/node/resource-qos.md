@@ -20,11 +20,11 @@ Borg increased utilization by about 20% when it started allowing use of such non
 
 ## Requests and Limits
 
-For each resource, containers can specify a resource request and limit, `0 <= request <= `[`Node Allocatable`](../design-proposals/node/node-allocatable.md) & `request <= limit <= Infinity`.
+For each resource, containers can specify a resource request and limit, `0 <= request <= `[`Node Allocatable`](node-allocatable.md) & `request <= limit <= Infinity`.
 If a pod is successfully scheduled, the container is guaranteed the amount of resources requested.
 Scheduling is based on `requests` and not `limits`.
 The pods and its containers will not be allowed to exceed the specified limit.
-How the request and limit are enforced depends on whether the resource is [compressible or incompressible](resources.md).
+How the request and limit are enforced depends on whether the resource is [compressible or incompressible](../scheduling/resources.md).
 
 ### Compressible Resource Guarantees
 
@@ -41,7 +41,7 @@ How the request and limit are enforced depends on whether the resource is [compr
 
 ### Admission/Scheduling Policy
 
-- Pods will be admitted by Kubelet & scheduled by the scheduler based on the sum of requests of its containers. The scheduler & kubelet will ensure that sum of requests of all containers is within the node's [allocatable](../proposals/node-allocatable.md) capacity (for both memory and CPU).
+- Pods will be admitted by Kubelet & scheduled by the scheduler based on the sum of requests of its containers. The scheduler & kubelet will ensure that sum of requests of all containers is within the node's [allocatable](node-allocatable.md) capacity (for both memory and CPU).
 
 ## QoS Classes
 
