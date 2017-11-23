@@ -69,7 +69,7 @@ information into every pod spec where it is needed.
 2. Database Administrator creates secrets for the cluster containing the
    database name, username, and password.
 3. Database Administrator creates a `PodPreset`  defining the database
-   port as an enviornment variable, as well as the secrets. See
+   port as an environment variable, as well as the secrets. See
    [Examples](#examples) below for various examples.
 4. Developer of an application can now label their pod with the specified
    `Selector` the Database Administrator tells them, and consume the MySQL
