@@ -1,4 +1,5 @@
-# 2017 Kubernetes Contributor Summit Information 
+# 2017 Kubernetes Contributor Summit Information  
+fka DevSummit
 
 ## What:
 The Contributor Summit provides an avenue for Kubernetes contributors to connect face to face and mindshare about future community development and community governance endeavors.
@@ -6,16 +7,18 @@ The Contributor Summit provides an avenue for Kubernetes contributors to connect
 In some sense, the summit is a real-life extension of the community meetings and SIG meetings.
 
 ## When:
-* December 5th, 2017 (before KubeCon)
-* All day event with happy hour reception to close  
+December 5th, 2017 (before KubeCon)  
+All day event with happy hour reception to close  
 
 **Agenda:**  
 Times in CST   
-8am - Registration and light breakfast  
-9am - Welcome and start of content  
-12pm - Lunch provided  
-1pm - Sessions resume  
-430pm - Happy Hour onsite  
+08:00am - Registration and light breakfast  
+09:00am - Welcome and start of content  
+12:00pm - Lunch provided  
+01:00pm - Sessions resume  
+04:30pm - Happy Hour onsite  
+
+Complete session schedule to be posted here before the event and on signs in the venue
 
 ## Where:
 Austin Convention Center  
@@ -23,24 +26,35 @@ Austin Convention Center
 Austin, TX 78701  
 (same location as KubeCon)
 
+**Registration:**  
+You'll pick up your summit badge at the same registration tables as KubeCon.*  
+Level 1, near Hall 1 
+
+**Breakfast:**  
+Level 3, Outside of Meeting Room 5  
+
+**Sessions:**  
+Meeting Room 5 - Welcome @ 9am  
+Meeting Room 4, Meeting Room 6a, Meeting Room 6b - Breakout session rooms
+
+*_Note-Your summit registration is NOT your KubeCon registration. Tickets are almost sold out for KubeCon, please purchase those separately from the [event page](http://events.linuxfoundation.org/events/kubecon-and-cloudnativecon-north-america/attend/register)._
+
 ## Invitations:
 Selected attendees are Kubernetes upstream contributors including SIG members and lottery winners from a [members of standing](https://github.com/kubernetes/community/blob/master/community-membership.md) pool.
 We realize that this is not the best approach now that our community is growing in exponential ways. In 2018, we will be unfolding a new strategy for bringing our contributors together so all voices can be heard. 
 
-Invitees went out on October 19th.
+Invites went out on October 19th. There are ten spots left. Please reach out to parispittman@google.com to claim one. 
 
 ## Format:
-"loosely-structured unconference"
+"loosely-structured unconference"  
 Rather than speakers and presentations, we will have moderators/facilitators and discussion topics, alongside all-day completely unstructured hacking.
 
 The discussion sessions will be in an open fishbowl format — rings of chairs, with inner rings driving the discussion — where anyone can contribute. The various sessions will be proposed and voted on by the community in the weeks leading up to the event. This allows the community to motivate the events of the day without dedicating precious day-of time to choosing the sessions and making a schedule.
 
-There will be 2 rooms dedicated to these sessions running in parallel all day. Each session should last between 45 minutes and an hour.
-
-Then, there will be a smaller room for hacking / unstructured discussion all day. 
+There will be 2 rooms dedicated to these sessions running in parallel all day. Each session should last between 45 minutes and an hour. There will be a smaller room available for unstructured discussion all day. 
 
 ## Call for Topics
-Call for topics is now closed. All attendees should have recieved a CIVS voters ballot on November 20th to the email that they registered with. Please follow instructions on the ballot. We will publish the schedule by Thursday, November 30th. Reach out to jorge@heptio.com and parispittman@google.com if you have not received the ballot. 
+Call for topics is now closed. All attendees should have recieved a CIVS voters ballot on November 20th to the email that they registered with. Please follow instructions on the ballot. We will publish the schedule by Thursday, November 30th. Reach out to jorge@heptio.com and parispittman@google.com if you have not received the CIVS poll. 
 
 ## Desired Outcomes
 * Generate notes from the sessions to feed the project's documentation and knowledge base, and also to keep non-attendees plugged in
