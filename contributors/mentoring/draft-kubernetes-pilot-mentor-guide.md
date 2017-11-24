@@ -44,7 +44,11 @@ superseded-by:
       * [Goal Setting](#goal-setting)
       * [Building Confidence](#building-confidence)
       * [Developing Trust](#developing-trust)
-      * [Learning Styles](#learning-styles)
+   * [Learning Styles](#learning-styles)
+      * [Auditory](#auditory)
+      * [Kinesthetic](#kinesthetic)
+      * [Visual](#visual)
+      * [Credit](#credit)
    * [Community Culture Element to Impart](#community-culture-element-to-impart)
    * [Time Expectations](#time-expectations)
    * [When to ask for help](#when-to-ask-for-help)
@@ -135,8 +139,8 @@ acquire, but again it is an art form.  If you have a habit of interrupting those
 you interact with, take a beat, start talking when a person is done with there
 communication.
 
-Once a person has completed what they have said, our job is then understand what
-they actually said.  We are all different people, with diverse background, often
+Once a person has completed what they have said, our job is then to understand
+what they said.  We are all different people, with diverse backgrounds, often
 from different countries, and cultures.  We may have heard the words that a
 person related, but 80% of communication is nonverbal, and the words of one
 person, may not the words of another.  Ask clarifying questions during the
@@ -257,15 +261,93 @@ If you have any doubts that goal setting is critical see this Google
 set goals, but the goals must be written, with a timeline, measurable, and
 reachable.
 
-### Learning Styles
+## Learning Styles
 
- TODO
-- written
-- visual
-- verbal
-- keno
+There are three prodominate learning styles; Visual, Auditory, and Kinesthetic
+Learning Styles. People tend to have a primary learning type and a secondary
+style. If a mentor and a mentee can identity there perfer learning styles, it
+can increase productivity and accelerate the success of the mentoring
+relationship.
 
-## Community Culture Element to Imparti
+### Auditory
+
+Auditory learners often talk to themselves. They also may move their lips and
+read out loud. They may have difficulty with reading and writing tasks. They
+often do better talking to a colleague or a tape recorder and hearing what was
+said. To integrate this style into the learning environment:
+
+- Begin new material with a brief explanation of what is coming. Conclude with a
+  summary of what has been covered. This is the old adage of "tell them what
+  they are going to lean, teach them, and tell them what they have learned."
+- Use the Socratic method of lecturing by questioning learners to draw as much
+  information from them as possible and then fill in the gaps with you own
+  expertise.
+- Include auditory activities, such as brainstorming, buzz groups, or Jeopardy.
+ Leave plenty of time to debrief activities. This allows them to make
+ connections of what they leaned and how it applies to their situation.
+- Have the learners verbalize the questions.
+- Develop an internal dialogue between yourself and the learners.
+
+### Kinesthetic
+
+Kinesthetic learners do best while touching and moving. It also has two
+sub-channels: kinesthetic (movement) and tactile (touch). They tend to lose
+concentration if there is little or no external stimulation or movement. When
+listening to lectures they may want to take notes for the sake of moving their
+hands. When reading, they like to scan the material first, and then focus in on
+the details (get the big picture first). They typically use color high lighters
+and take notes by drawing pictures, diagrams, or doodling. To integrate this
+style into the learning environment:
+
+- Use activities that get the learners up and moving.
+- Play music, when appropriate, during activities.
+- Use colored markers to emphasize key points on flip charts or white boards.
+- Give frequent stretch breaks (brain breaks).
+- Provide encourage toys such as Koosh balls and Play-Dough to give them
+ something to do with their hands.
+- To highlight a point, provide gum, candy, scents, etc. which provides a cross
+ link of scent (aroma) to the topic at hand (scent can be a powerful cue).
+- Provide high lighters, colored pens and/or pencils.
+- Guide learners through a visualization of complex tasks.
+- Have them transfer information from the text to another medium such as a
+  keyboard or a tablet.
+
+### Visual
+
+Visual learners have two sub-channels—linguistic and spatial. Learners who are
+visual-linguistic like to learn through written language, such as reading and
+writing tasks. They remember what has been written down, even if they do not
+read it more than once. They like to write down directions and pay better
+attention to lectures if they watch them. Learners who are visual-spatial
+usually have difficulty with the written language and do better with charts,
+demonstrations, videos, and other visual materials. They easily visualize faces
+and places by using their imagination and seldom get lost in new surroundings.
+To integrate this style into the learning environment:
+
+- Use graphs, charts, illustrations, or other visual aids.
+- Include outlines, concept maps, agendas, handouts, etc. for reading and
+  taking notes.
+- Include plenty of content in handouts to reread after the learning session.
+- Leave white space in handouts for note-taking.
+- Invite questions to help them stay alert in auditory environments.
+- Post flip charts to show what will come and what has been presented.
+- Emphasize key points to cue when to takes notes.
+- Eliminate potential distractions.
+- Supplement textual information with illustrations whenever possible.
+- Have them draw pictures in the margins.
+- Have the learners envision the topic or have them act out the subject matter.
+
+### Credit
+
+This section includes work based on.
+Clark, D.R. (2004). Visual, Auditory, and Kinesthetic Learning Styles (VAK)
+[http://www.nwlink.com/~donclark/hrd/styles/vakt.html](http://www.nwlink.com/~donclark/hrd/styles/vakt.html).
+
+Work has been used with permission of the author.
+
+TODO should we include this [survey]( http://www.nwlink.com/~donclark/hrd/styles/vak.html).
+
+## Community Culture Element to Impart
 
 TODO
 
