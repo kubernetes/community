@@ -16,8 +16,10 @@ able to pick up issues, write code to fix them, and get your work reviewed and
 merged.
 
 If you have questions about the development process, feel free to jump into our
-[Slack Channel](http://slack.k8s.io/) or join our [mailing
-list](https://groups.google.com/forum/#!forum/kubernetes-dev).
+[Slack workspace](http://slack.k8s.io/) or join our [mailing
+list](https://groups.google.com/forum/#!forum/kubernetes-dev). If you join the
+Slack workspace it is recommended to set your Slack display name to your GitHub
+account handle.
 
 Special Interest Groups
 -----------------------
