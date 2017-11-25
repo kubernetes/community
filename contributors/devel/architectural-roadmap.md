@@ -76,7 +76,7 @@ Succinctly, the layers comprise:
 Kubernetes is a platform for deploying and managing containers. For more information about the
 mission, scope, and design of Kubernetes, see [What Is
 Kubernetes](http://kubernetes.io/docs/whatisk8s/) and the [architectural
-overview](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/architecture.md). The
+overview](/contributors/design-proposals/architecture/architecture.md). The
 latter also describes the current breakdown of the system into components/processes.
 
 Contributors to Kubernetes need to know what functionality they can
@@ -275,13 +275,13 @@ Kubernetes cannot function without this basic API machinery and semantics, inclu
   /portforward APIs.
 
 * TBD: The
-  [CertificateSigningRequest](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/kubelet-tls-bootstrap.md)
+  [CertificateSigningRequest](/contributors/design-proposals/cluster-lifecycle/kubelet-tls-bootstrap.md)
   API, to enable credential generation, in particular to mint Kubelet
   credentials
 
 Ideally, this nuclear API server would only support the minimum
 required APIs, and additional functionality would be added via
-[aggregation](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/aggregated-api-servers.md),
+[aggregation](/contributors/design-proposals/api-machinery/aggregated-api-servers.md),
 hooks, initializers, and other extension mechanisms.
 
 Note that the centralized asynchronous controllers, such as garbage
@@ -415,7 +415,7 @@ The Controller Manager and Kubelet currently call out to a "cloud
 provider" interface to query information from the infrastructure layer
 and/or to manage infrastructure resources. However, [we’re working to
 extract those
-touchpoints](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/cloud-provider-refactoring.md)
+touchpoints](/contributors/design-proposals/cloud-provider/cloud-provider-refactoring.md)
 ([issue](https://github.com/kubernetes/kubernetes/issues/2770)) into
 external components. The intended model is that unsatisfiable
 application/container/OS-level requests (e.g., Pods,
@@ -478,7 +478,7 @@ routing APIs and functions include:
   as a separate process, on or outside the cluster.
 
 * NIY: A
-  [rescheduler](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/rescheduling.md),
+  [rescheduler](/contributors/design-proposals/scheduling/rescheduling.md),
   to reactively and proactively delete scheduled pods so that they can
   be replaced and rescheduled to other nodes.
 
@@ -613,7 +613,7 @@ Automation APIs and functions:
 * Dynamic load-balancer provisioning
 
 * NIY: The
-  [PodPreset](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/pod-preset.md)
+  [PodPreset](/contributors/design-proposals/service-catalog/pod-preset.md)
   API
 
 * NIY: The [service
@@ -621,7 +621,7 @@ Automation APIs and functions:
   APIs
 
 * NIY: The
-  [Template](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/templates.md)
+  [Template](/contributors/design-proposals/apps/OBSOLETE_templates.md)
   and TemplateInstance APIs
 
 Policy APIs and functions:
@@ -829,9 +829,9 @@ therefore wouldn’t be considered to be part of Kubernetes.
       a spectrum of possible solutions, each with different
       tradeoffs. That said, common building blocks (e.g., [secure
       Kubelet
-      registration](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/kubelet-tls-bootstrap.md))
+      registration](/contributors/design-proposals/cluster-lifecycle/kubelet-tls-bootstrap.md))
       and approaches (in particular,
-      [self-hosting](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/self-hosted-kubernetes.md#what-is-self-hosted))
+      [self-hosting](/contributors/design-proposals/cluster-lifecycle/self-hosted-kubernetes.md#what-is-self-hosted))
       would reduce the amount of custom orchestration needed in such
       tools.
 
@@ -913,7 +913,7 @@ discovering the following:
 * Initializers and finalizers
 
 * [Scheduler
-  extensions](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduler_extender.md)
+  extensions](/contributors/design-proposals/scheduling/scheduler_extender.md)
 
 * Node labels and [cluster
   topology](https://github.com/kubernetes/kubernetes/issues/41442)
@@ -935,7 +935,7 @@ features could be addressed by the following mechanisms:
   out into its own configuration
   object(s).](https://github.com/kubernetes/kubernetes/issues/19831)
   This should include the [feature-gate
-  mechanism](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/runtimeconfig.md).
+  mechanism](/contributors/design-proposals/cluster-lifecycle/runtimeconfig.md).
 
 * An API should be added for semantically meaningful settings, such as
   the default length of time to wait before deleting pods on
