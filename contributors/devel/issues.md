@@ -54,7 +54,7 @@ Support requests should be directed to the following:
 [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
 
 * [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes) and
-[ServerFault](http://serverfault.com/questions/tagged/google-kubernetes)
+[ServerFault](http://serverfault.com/questions/tagged/kubernetes)
 
 * [Slack](https://kubernetes.slack.com) ([registration](http://slack.k8s.io))
   * Check out the [Slack Archive](http://kubernetes.slackarchive.io/) first.
