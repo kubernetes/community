@@ -2,13 +2,13 @@
 ## Background
 
 The extensible admission control
-[proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/admission_control_extension.md)
+[proposal](admission_control_extension.md)
 proposed making admission control extensible. In the proposal, the `initializer
 admission controller` and the `generic webhook admission controller` are the two
 controllers that set default initializers and external admission hooks for
 resources newly created. These two admission controllers are in the same binary
 as the apiserver. This
-[section](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/admission_control_extension.md#dynamic-configuration)
+[section](admission_control_extension.md#dynamic-configuration)
 gave a preliminary design of the dynamic configuration of the list of the
 default admission controls. This document hashes out the implementation details.
 
@@ -28,7 +28,7 @@ default admission controls. This document hashes out the implementation details.
 
 We assume initializers could be "fail open". We need to update the extensible
 admission control
-[proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control_extension.md)
+[proposal](admission_control_extension.md)
 if this is accepted.
 
 The schema is evolved from the prototype in
@@ -248,7 +248,7 @@ See [Considered but REJECTED alternatives](#considered-but-rejected-alternatives
 
 ## Handling fail-open initializers
 
-The original [proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control_extension.md) assumed initializers always failed closed. It is dangerous since crashed 
+The original [proposal](admission_control_extension.md) assumed initializers always failed closed. It is dangerous since crashed 
 initializers can block the whole cluster. We propose to allow initializers to 
 fail open, and in 1.7, let all initializers fail open.
 
@@ -282,7 +282,7 @@ See [Considered but REJECTED alternatives](#considered-but-rejected-alternatives
 2. #1 will allow parallel initializers as well.
 
 3. implement the fail closed initializers according to
-   [proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control_extension.md#initializers).
+   [proposal](admission_control_extension.md#initializers).
 
 4. more efficient check of AdmissionControlConfiguration changes. Currently we
    do periodic consistent read every second.
