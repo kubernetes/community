@@ -25,6 +25,21 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=Lj1ScbXpn
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fapi-machinery)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-api-machinery-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-api-machinery-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-api-machinery-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-feature-requests) | Feature Requests |
+| @kubernetes/sig-api-machinery-misc | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-misc) | General Discussion |
+| @kubernetes/sig-api-machinery-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-pr-reviews) | PR Reviews |
+| @kubernetes/sig-api-machinery-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-proposals) | Design Proposals |
+| @kubernetes/sig-api-machinery-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 ## Additional links
 

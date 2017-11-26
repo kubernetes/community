@@ -26,6 +26,22 @@ Meeting recordings can be found [here](https://www.youtube.com/playlist?list=PL6
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcli)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-cli-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cli-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-cli-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-cli-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-cli-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-cli-feature-requests) | Feature Requests |
+| @kubernetes/sig-cli-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-cli-maintainers) | CLI Maintainers |
+| @kubernetes/sig-cli-misc | [link](https://github.com/orgs/kubernetes/teams/sig-cli-misc) | General Discussion |
+| @kubernetes/sig-cli-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cli-pr-reviews) | PR Reviews |
+| @kubernetes/sig-cli-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-cli-proposals) | Design Proposals |
+| @kubernetes/sig-cli-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-cli-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

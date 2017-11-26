@@ -46,8 +46,6 @@ const (
 var (
 	baseGeneratorDir = ""
 	templateDir      = "generator"
-
-	githubTeamNames = []string{"misc", "test-failures", "bugs", "feature-requests", "proposals", "pr-reviews", "api-reviews"}
 )
 
 // Lead represents a lead engineer for a particular group. There are usually
@@ -68,11 +66,15 @@ type Meeting struct {
 
 // Contact represents the various contact points for a group.
 type Contact struct {
-	Slack            string
-	MailingList      string `yaml:"mailing_list"`
-	FullGitHubTeams  bool   `yaml:"full_github_teams"`
-	GithubTeamPrefix string `yaml:"github_team_prefix"`
-	GithubTeamNames  []string
+	Slack       string
+	MailingList string        `yaml:"mailing_list"`
+	GithubTeams []GithubTeams `yaml:"teams"`
+}
+
+// GithubTeams represents a specific Github Team.
+type GithubTeams struct {
+	Name        string
+	Description string
 }
 
 // Group represents either a Special Interest Group (SIG) or a Working Group (WG)
@@ -94,20 +96,6 @@ type Group struct {
 // and a formatted version of the group's name (in kebab case).
 func (e *Group) DirName(prefix string) string {
 	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.Replace(e.Name, " ", "-", -1)))
-}
-
-// SetupGitHubTeams will iterate over all the possible teams available to a
-// group (these are defined by the Kubernetes organization) and populate a
-// list using the group's prefix.
-func (e *Group) SetupGitHubTeams(prefix string) {
-	ghPrefix := e.Contact.GithubTeamPrefix
-	if ghPrefix == "" {
-		ghPrefix = e.DirName(prefix)
-	}
-
-	for _, gtn := range githubTeamNames {
-		e.Contact.GithubTeamNames = append(e.Contact.GithubTeamNames, fmt.Sprintf("%s-%s", ghPrefix, gtn))
-	}
 }
 
 // Context is the context for the sigs.yaml file.
@@ -238,8 +226,6 @@ func createGroupReadme(groups []Group, prefix string) error {
 		if err := createDirIfNotExists(outputDir); err != nil {
 			return err
 		}
-
-		group.SetupGitHubTeams(prefix)
 
 		outputPath := filepath.Join(outputDir, indexFilename)
 		readmePath := filepath.Join(baseGeneratorDir, templateDir, fmt.Sprintf("%s_%s", prefix, readmeTemplate))

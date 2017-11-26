@@ -28,14 +28,19 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=ljK5dgSA7
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcluster-lifecycle)
 
 ## GitHub Teams
-* [@sig-cluster-lifecycle-misc](https://github.com/kubernetes/teams/sig-cluster-lifecycle-misc)
-* [@sig-cluster-lifecycle-test-failures](https://github.com/kubernetes/teams/sig-cluster-lifecycle-test-failures)
-* [@sig-cluster-lifecycle-bugs](https://github.com/kubernetes/teams/sig-cluster-lifecycle-bugs)
-* [@sig-cluster-lifecycle-feature-requests](https://github.com/kubernetes/teams/sig-cluster-lifecycle-feature-requests)
-* [@sig-cluster-lifecycle-proposals](https://github.com/kubernetes/teams/sig-cluster-lifecycle-proposals)
-* [@sig-cluster-lifecycle-pr-reviews](https://github.com/kubernetes/teams/sig-cluster-lifecycle-pr-reviews)
-* [@sig-cluster-lifecycle-api-reviews](https://github.com/kubernetes/teams/sig-cluster-lifecycle-api-reviews)
 
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-cluster-lifecycle-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-cluster-lifecycle-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-cluster-lifecycle-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle-feature-requests) | Feature Requests |
+| @kubernetes/sig-cluster-lifecycle-misc | [link](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle-misc) | General Discussion |
+| @kubernetes/sig-cluster-lifecycle-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle-pr-reviews) | PR Reviews |
+| @kubernetes/sig-cluster-lifecycle-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle-proposals) | Design Proposals |
+| @kubernetes/sig-cluster-lifecycle-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

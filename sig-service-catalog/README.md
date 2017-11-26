@@ -27,6 +27,21 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=ukPj1sFFk
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fservice-catalog)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-service-catalog-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-service-catalog-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-service-catalog-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-feature-requests) | Feature Requests |
+| @kubernetes/sig-service-catalog-misc | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-misc) | General Discussion |
+| @kubernetes/sig-service-catalog-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-pr-reviews) | PR Reviews |
+| @kubernetes/sig-service-catalog-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-proposals) | Design Proposals |
+| @kubernetes/sig-service-catalog-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

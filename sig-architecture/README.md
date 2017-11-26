@@ -25,6 +25,21 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=d5ERqm3oH
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-architecture)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Farchitecture)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-architecture-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-architecture-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-architecture-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-feature-requests) | Feature Requests |
+| @kubernetes/sig-architecture-misc-use-only-as-a-last-resort | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-misc-use-only-as-a-last-resort) | General Discussion |
+| @kubernetes/sig-architecture-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-pr-reviews) | PR Reviews |
+| @kubernetes/sig-architecture-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-proposals) | Design Proposals |
+| @kubernetes/sig-architecture-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Additional materials
