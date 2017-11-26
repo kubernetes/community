@@ -17,11 +17,9 @@ limitations under the License.
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
-	"reflect"
 	"strings"
 	"testing"
 )
@@ -147,34 +145,6 @@ func TestGroupDirName(t *testing.T) {
 	group := Group{Name: "Foo Bar"}
 	if group.DirName("sig") != "sig-foo-bar" {
 		t.Fatal("DirName incorrect")
-	}
-}
-
-func TestSetupGithubTeams(t *testing.T) {
-	group := Group{Name: "Foo Bar"}
-	group.SetupGitHubTeams("sig")
-
-	var expected []string
-	for _, ght := range githubTeamNames {
-		expected = append(expected, fmt.Sprintf("sig-foo-bar-%s", ght))
-	}
-
-	if !reflect.DeepEqual(group.Contact.GithubTeamNames, expected) {
-		t.Fatalf("%v does not match %v", group.Contact.GithubTeamNames, expected)
-	}
-}
-
-func TestCustomPrefixSetupGithubTeams(t *testing.T) {
-	group := Group{Contact: Contact{GithubTeamPrefix: "foo"}}
-	group.SetupGitHubTeams("")
-
-	var expected []string
-	for _, ght := range githubTeamNames {
-		expected = append(expected, fmt.Sprintf("foo-%s", ght))
-	}
-
-	if !reflect.DeepEqual(group.Contact.GithubTeamNames, expected) {
-		t.Fatalf("%v does not match %v", group.Contact.GithubTeamNames, expected)
 	}
 }
 
