@@ -24,6 +24,23 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=I0KbWz8MT
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-release)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Frelease)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-release-admins | [link](https://github.com/orgs/kubernetes/teams/sig-release-admins) | Release Team Admins |
+| @kubernetes/sig-release-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-release-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-release-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-release-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-release-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-release-feature-requests) | Feature Requests |
+| @kubernetes/sig-release-members | [link](https://github.com/orgs/kubernetes/teams/sig-release-members) | Release Team Members |
+| @kubernetes/sig-release-misc | [link](https://github.com/orgs/kubernetes/teams/sig-release-misc) | General Discussion |
+| @kubernetes/sig-release-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-release-pr-reviews) | PR Reviews |
+| @kubernetes/sig-release-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-release-proposals) | Design Proposals |
+| @kubernetes/sig-release-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-release-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 [SIG Release][] has moved!
 

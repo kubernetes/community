@@ -25,6 +25,21 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=PweKj6SU7
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fscheduling)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-scheduling-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-scheduling-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-scheduling-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-feature-requests) | Feature Requests |
+| @kubernetes/sig-scheduling-misc | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-misc) | General Discussion |
+| @kubernetes/sig-scheduling-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-pr-reviews) | PR Reviews |
+| @kubernetes/sig-scheduling-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-proposals) | Design Proposals |
+| @kubernetes/sig-scheduling-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

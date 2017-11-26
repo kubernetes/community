@@ -27,6 +27,15 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-aws)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Faws)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-aws-misc | [link](https://github.com/orgs/kubernetes/teams/sig-aws-misc) | General Discussion |
+
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

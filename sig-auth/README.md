@@ -26,6 +26,21 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=DJDuDNALc
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-auth)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fauth)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-auth-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-auth-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-auth-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-auth-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-auth-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-auth-feature-requests) | Feature Requests |
+| @kubernetes/sig-auth-misc | [link](https://github.com/orgs/kubernetes/teams/sig-auth-misc) | General Discussion |
+| @kubernetes/sig-auth-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-auth-pr-reviews) | PR Reviews |
+| @kubernetes/sig-auth-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-auth-proposals) | Design Proposals |
+| @kubernetes/sig-auth-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-auth-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
 * Discuss improvements Kubernetes Authorization and Authentication, and cluster security policy.

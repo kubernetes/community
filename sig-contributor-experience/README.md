@@ -25,6 +25,20 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=EMGUdOKwS
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-contribex)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcontributor-experience)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-contributor-experience-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-contributor-experience-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-feature-requests) | Feature Requests |
+| @kubernetes/sig-contributor-experience-misc-use-only-as-a-last-resort | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-misc-use-only-as-a-last-resort) | General Discussion |
+| @kubernetes/sig-contributor-experience-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-pr-reviews) | PR Reviews |
+| @kubernetes/sig-contributor-experience-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-proposals) | Design Proposals |
+| @kubernetes/sig-contributor-experience-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

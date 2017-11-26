@@ -25,9 +25,15 @@ Meeting recordings can be found [here]({{.MeetingRecordingsURL}}).
 {{- if .Label }}
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2F{{.Label}})
 {{- end }}
-{{if .Contact.FullGitHubTeams}}
+{{ if .Contact.GithubTeams }}
 ## GitHub Teams
-{{range .Contact.GithubTeamNames -}}
-* [@{{.}}](https://github.com/kubernetes/teams/{{.}})
-{{end}}
-{{end}}
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+{{- range .Contact.GithubTeams }}
+| @kubernetes/{{.Name}} | [link](https://github.com/orgs/kubernetes/teams/{{.Name}}) | {{.Description}} |
+{{- end }}
+{{  end }}

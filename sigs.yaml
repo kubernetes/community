@@ -25,6 +25,21 @@ sigs:
     contact:
       slack: sig-api-machinery
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery
+      teams:
+      - name: sig-api-machinery-api-reviews
+        description: API Changes and Reviews
+      - name: sig-api-machinery-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-api-machinery-feature-requests
+        description: Feature Requests
+      - name: sig-api-machinery-misc
+        description: General Discussion
+      - name: sig-api-machinery-pr-reviews
+        description: PR Reviews
+      - name: sig-api-machinery-proposals
+        description: Design Proposals
+      - name: sig-api-machinery-test-failures
+        description: Test Failures and Triage
   - name: Apps
     dir: sig-apps
     mission_statement: >
@@ -55,6 +70,21 @@ sigs:
     contact:
       slack: sig-apps
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-apps
+      teams:
+      - name: sig-apps-api-reviews
+        description: API Changes and Reviews
+      - name: sig-apps-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-apps-feature-requests
+        description: Feature Requests
+      - name: sig-apps-misc
+        description: General Discussion
+      - name: sig-apps-pr-reviews
+        description: PR Reviews
+      - name: sig-apps-proposals
+        description: Design Proposals
+      - name: sig-apps-test-failures
+        description: Test Failures and Triage
   - name: Architecture
     dir: sig-architecture
     mission_statement: >
@@ -79,6 +109,21 @@ sigs:
     contact:
       slack: sig-architecture
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-architecture
+      teams:
+      - name: sig-architecture-api-reviews
+        description: API Changes and Reviews
+      - name: sig-architecture-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-architecture-feature-requests
+        description: Feature Requests
+      - name: sig-architecture-misc-use-only-as-a-last-resort
+        description: General Discussion
+      - name: sig-architecture-pr-reviews
+        description: PR Reviews
+      - name: sig-architecture-proposals
+        description: Design Proposals
+      - name: sig-architecture-test-failures
+        description: Test Failures and Triage
   - name: Auth
     dir: sig-auth
     mission_statement: >
@@ -106,6 +151,21 @@ sigs:
     contact:
       slack: sig-auth
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-auth
+      teams:
+      - name: sig-auth-api-reviews
+        description: API Changes and Reviews
+      - name: sig-auth-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-auth-feature-requests
+        description: Feature Requests
+      - name: sig-auth-misc
+        description: General Discussion
+      - name: sig-auth-pr-reviews
+        description: PR Reviews
+      - name: sig-auth-proposals
+        description: Design Proposals
+      - name: sig-auth-test-failures
+        description: Test Failures and Triage
   - name: Autoscaling
     dir: sig-autoscaling
     mission_statement: >
@@ -131,6 +191,21 @@ sigs:
     contact:
       slack: sig-autoscaling
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling
+      teams:
+      - name: sig-autoscaling-api-reviews
+        description: API Changes and Reviews
+      - name: sig-autoscaling-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-autoscaling-feature-requests
+        description: Feature Requests
+      - name: sig-autoscaling-misc
+        description: General Discussion
+      - name: sig-autoscaling-pr-reviews
+        description: PR Reviews
+      - name: sig-autoscaling-proposals
+        description: Design Proposals
+      - name: sig-autoscaling-test-failures
+        description: Test Failures and Triage
   - name: AWS
     dir: sig-aws
     mission_statement: >
@@ -158,6 +233,9 @@ sigs:
     contact:
       slack: sig-aws
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-aws
+      teams:
+      - name: sig-aws-misc
+        description: General Discussion
   - name: Azure
     dir: sig-azure
     mission_statement: >
@@ -185,6 +263,9 @@ sigs:
     contact:
       slack: sig-azure
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-azure
+      teams:
+      - name: sig-azure-misc
+        description: General Discussion
   - name: Big Data
     dir: sig-big-data
     mission_statement: >
@@ -210,6 +291,21 @@ sigs:
     contact:
       slack: sig-big-data
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-big-data
+      teams:
+      - name: sig-big-data-api-reviews
+        description: API Changes and Reviews
+      - name: sig-big-data-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-big-data-feature-requests
+        description: Feature Requests
+      - name: sig-big-data-misc
+        description: General Discussion
+      - name: sig-big-data-pr-reviews
+        description: PR Reviews
+      - name: sig-big-data-proposals
+        description: Design Proposals
+      - name: sig-big-data-test-failures
+        description: Test Failures and Triage
   - name: CLI
     dir: sig-cli
     mission_statement: >
@@ -240,6 +336,23 @@ sigs:
     contact:
       slack: sig-cli
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
+      teams:
+      - name: sig-cli-api-reviews
+        description: API Changes and Reviews
+      - name: sig-cli-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-cli-feature-requests
+        description: Feature Requests
+      - name: sig-cli-maintainers
+        description: CLI Maintainers
+      - name: sig-cli-misc
+        description: General Discussion
+      - name: sig-cli-pr-reviews
+        description: PR Reviews
+      - name: sig-cli-proposals
+        description: Design Proposals
+      - name: sig-cli-test-failures
+        description: Test Failures and Triage
   - name: Cluster Lifecycle
     dir: sig-cluster-lifecycle
     mission_statement: >
@@ -269,8 +382,22 @@ sigs:
     meeting_recordings_url: https://www.youtube.com/watch?v=ljK5dgSA7vc&list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
     contact:
       slack: sig-cluster-lifecycle
-      full_github_teams: true
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      teams:
+      - name: sig-cluster-lifecycle-api-reviews
+        description: API Changes and Reviews
+      - name: sig-cluster-lifecycle-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-cluster-lifecycle-feature-requests
+        description: Feature Requests
+      - name: sig-cluster-lifecycle-misc
+        description: General Discussion
+      - name: sig-cluster-lifecycle-pr-reviews
+        description: PR Reviews
+      - name: sig-cluster-lifecycle-proposals
+        description: Design Proposals
+      - name: sig-cluster-lifecycle-test-failures
+        description: Test Failures and Triage
   - name: Cluster Ops
     dir: sig-cluster-ops
     mission_statement: >
@@ -324,6 +451,19 @@ sigs:
     contact:
       slack: sig-contribex
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-contribex
+      teams:
+      - name: sig-contributor-experience-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-contributor-experience-feature-requests
+        description: Feature Requests
+      - name: sig-contributor-experience-misc-use-only-as-a-last-resort
+        description: General Discussion
+      - name: sig-contributor-experience-pr-reviews
+        description: PR Reviews
+      - name: sig-contributor-experience-proposals
+        description: Design Proposals
+      - name: sig-contributor-experience-test-failures
+        description: Test Failures and Triage
   - name: Docs
     dir: sig-docs
     mission_statement: >
@@ -347,6 +487,83 @@ sigs:
     contact:
       slack: sig-docs
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
+      teams:
+      - name: sig-docs-maintainers
+        description: Documentation Maintainers
+  - name: GCP
+    dir: sig-gcp
+    mission_statement: >
+      A Special Interest Group for building, deploying, maintaining,
+      supporting, and using Kubernetes on the Google Cloud Platform.
+    leads:
+    - name: Adam Worrall
+      github: abgworrall
+      company: Google
+    meetings:
+    - day: Thursday
+      time: "16:00"
+      tz: "UTC"
+      frequency: biweekly
+    meeting_url: https://zoom.us/j/761149873
+    meeting_archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
+    contact:
+      slack: sig-gcp
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-gcp
+      teams:
+      - name: sig-gcp-api-reviews
+        description: API Changes and Reviews
+      - name: sig-gcp-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-gcp-feature-requests
+        description: Feature Requests
+      - name: sig-gcp-misc
+        description: General Discussion
+      - name: sig-gcp-pr-reviews
+        description: PR Reviews
+      - name: sig-gcp-proposals
+        description: Design Proposals
+      - name: sig-gcp-test-failures
+        description: Test Failures and Triage
+  - name: Instrumentation
+    dir: sig-instrumentation
+    mission_statement: >
+      Covers best practices for cluster observability through metrics, logging, and events across all
+      Kubernetes components and development of relevant components such as Heapster and kube-state-metrics.
+      Coordinates metric requirements of different SIGs for other components through finding common APIs.
+    label: instrumentation
+    leads:
+    - name: Piotr Szczesniak
+      github: piosz
+      company: Google
+    - name: Fabian Reinartz
+      github: fabxc
+      company: CoreOS
+    meetings:
+    - day: Thursday
+      time: "16:30"
+      tz: "UTC"
+      frequency: weekly
+    meeting_url: https://zoom.us/j/5342565819
+    meeting_archive_url: https://docs.google.com/document/d/1gWuAATtlmI7XJILXd31nA4kMq6U9u63L70382Y3xcbM/edit
+    meeting_recordings_url:
+    contact:
+      slack: sig-instrumentation
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation
+      teams:
+      - name: sig-instrumentation-api-reviews
+        description: API Changes and Reviews
+      - name: sig-instrumentation-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-instrumentation-feature-requests
+        description: Feature Requests
+      - name: sig-instrumentation-misc
+        description: General Discussion
+      - name: sig-instrumentation-pr-reviews
+        description: PR Reviews
+      - name: sig-instrumentation-proposals
+        description: Design Proposals
+      - name: sig-instrumentation-test-failures
+        description: Test Failures and Triage
   - name: Multicluster
     dir: sig-multicluster
     mission_statement: >
@@ -375,50 +592,21 @@ sigs:
     contact:
       slack: sig-multicluster
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster
-  - name: GCP
-    dir: sig-gcp
-    mission_statement: >
-      A Special Interest Group for building, deploying, maintaining,
-      supporting, and using Kubernetes on the Google Cloud Platform.
-    leads:
-    - name: Adam Worrall
-      github: abgworrall
-      company: Google
-    meetings:
-    - day: Thursday
-      time: "16:00"
-      tz: "UTC"
-      frequency: biweekly
-    meeting_url: https://zoom.us/j/761149873
-    meeting_archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
-    contact:
-      slack: sig-gcp
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-gcp
-  - name: Instrumentation
-    dir: sig-instrumentation
-    mission_statement: >
-      Covers best practices for cluster observability through metrics, logging, and events across all
-      Kubernetes components and development of relevant components such as Heapster and kube-state-metrics.
-      Coordinates metric requirements of different SIGs for other components through finding common APIs.
-    label: instrumentation
-    leads:
-    - name: Piotr Szczesniak
-      github: piosz
-      company: Google
-    - name: Fabian Reinartz
-      github: fabxc
-      company: CoreOS
-    meetings:
-    - day: Thursday
-      time: "16:30"
-      tz: "UTC"
-      frequency: weekly
-    meeting_url: https://zoom.us/j/5342565819
-    meeting_archive_url: https://docs.google.com/document/d/1gWuAATtlmI7XJILXd31nA4kMq6U9u63L70382Y3xcbM/edit
-    meeting_recordings_url:
-    contact:
-      slack: sig-instrumentation
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation
+      teams:
+      - name: sig-multicluster-api-reviews
+        description: API Changes and Reviews
+      - name: sig-multicluster-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-multicluster-feature-requests
+        description: Feature Requests
+      - name: sig-multicluster-misc
+        description: General Discussion
+      - name: sig-multicluster-pr-reviews
+        description: PR Reviews
+      - name: sig-multicluster-test-failures
+        description: Test Failures and Triage
+      - name: sig-mutlicluster-proposals
+        description: Design Proposals
   - name: Network
     dir: sig-network
     mission_statement: >
@@ -445,6 +633,21 @@ sigs:
     contact:
       slack: sig-network
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-network
+      teams:
+      - name: sig-network-api-reviews
+        description: API Changes and Reviews
+      - name: sig-network-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-network-feature-requests
+        description: Feature Requests
+      - name: sig-network-misc
+        description: General Discussion
+      - name: sig-network-pr-reviews
+        description: PR Reviews
+      - name: sig-network-proposals
+        description: Design Proposals
+      - name: sig-network-test-failures
+        description: Test Failures and Triage
   - name: Node
     dir: sig-node
     mission_statement: >
@@ -467,6 +670,19 @@ sigs:
     contact:
       slack: sig-node
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-node
+      teams:
+      - name: sig-node-api-reviews
+        description: API Changes and Reviews
+      - name: sig-node-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-node-feature-requests
+        description: Feature Requests
+      - name: sig-node-pr-reviews
+        description: PR Reviews
+      - name: sig-node-proposals
+        description: Design Proposals
+      - name: sig-node-test-failures
+        description: Test Failures and Triage
   - name: On Premise
     dir: sig-on-premise
     mission_statement: >
@@ -492,8 +708,21 @@ sigs:
     contact:
       slack: sig-onprem
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-on-prem
-      full_github_teams: true
-      github_team_prefix: onprem
+      teams:
+      - name: sig-onprem-api-reviews
+        description: API Changes and Reviews
+      - name: sig-onprem-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-onprem-feature-requests
+        description: Feature Requests
+      - name: sig-onprem-misc
+        description: General Discussion
+      - name: sig-onprem-pr-reviews
+        description: PR Reviews
+      - name: sig-onprem-proposals
+        description: Design Proposals
+      - name: sig-onprem-test-failures
+        description: Test Failures and Triage
   - name: OpenStack
     dir: sig-openstack
     mission_statement: >
@@ -521,7 +750,21 @@ sigs:
     contact:
       slack: sig-openstack
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-openstack
-      full_github_teams: true
+      teams:
+      - name: sig-openstack-api-reviews
+        description: API Changes and Reviews
+      - name: sig-openstack-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-openstack-feature-requests
+        description: Feature Requests
+      - name: sig-openstack-misc
+        description: General Discussion
+      - name: sig-openstack-pr-reviews
+        description: PR Reviews
+      - name: sig-openstack-proposals
+        description: Design Proposals
+      - name: sig-openstack-test-failures
+        description: Test Failures and Triage
   - name: Product Management
     dir: sig-product-management
     mission_statement: >
@@ -586,6 +829,25 @@ sigs:
     contact:
       slack: sig-release
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-release
+      teams:
+      - name: sig-release-admins
+        description: Release Team Admins
+      - name: sig-release-api-reviews
+        description: API Changes and Reviews
+      - name: sig-release-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-release-feature-requests
+        description: Feature Requests
+      - name: sig-release-members
+        description: Release Team Members
+      - name: sig-release-misc
+        description: General Discussion
+      - name: sig-release-pr-reviews
+        description: PR Reviews
+      - name: sig-release-proposals
+        description: Design Proposals
+      - name: sig-release-test-failures
+        description: Test Failures and Triage
   - name: Scalability
     dir: sig-scalability
     mission_statement: >
@@ -620,6 +882,21 @@ sigs:
     contact:
       slack: sig-scalability
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scale
+      teams:
+      - name: sig-scalability-api-reviews
+        description: API Changes and Reviews
+      - name: sig-scalability-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-scalability-feature-requests
+        description: Feature Requests
+      - name: sig-scalability-misc
+        description: General Discussion
+      - name: sig-scalability-pr-reviews
+        description: PR Reviews
+      - name: sig-scalability-proprosals
+        description: Design Proposals
+      - name: sig-scalability-test-failures
+        description: Test Failures and Triage
   - name: Scheduling
     dir: sig-scheduling
     mission_statement: >
@@ -646,6 +923,21 @@ sigs:
     contact:
       slack: sig-scheduling
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling
+      teams:
+      - name: sig-scheduling-api-reviews
+        description: API Changes and Reviews
+      - name: sig-scheduling-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-scheduling-feature-requests
+        description: Feature Requests
+      - name: sig-scheduling-misc
+        description: General Discussion
+      - name: sig-scheduling-pr-reviews
+        description: PR Reviews
+      - name: sig-scheduling-proposals
+        description: Design Proposals
+      - name: sig-scheduling-test-failures
+        description: Test Failures and Triage
   - name: Service Catalog
     dir: sig-service-catalog
     mission_statement: >
@@ -676,6 +968,21 @@ sigs:
     contact:
       slack: sig-service-catalog
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog
+      teams:
+      - name: sig-service-catalog-api-reviews
+        description: API Changes and Reviews
+      - name: sig-service-catalog-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-service-catalog-feature-requests
+        description: Feature Requests
+      - name: sig-service-catalog-misc
+        description: General Discussion
+      - name: sig-service-catalog-pr-reviews
+        description: PR Reviews
+      - name: sig-service-catalog-proposals
+        description: Design Proposals
+      - name: sig-service-catalog-test-failures
+        description: Test Failures and Triage
   - name: Storage
     dir: sig-storage
     mission_statement: >
@@ -699,6 +1006,21 @@ sigs:
     contact:
       slack: sig-storage
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-storage
+      teams:
+      - name: sig-storage-api-reviews
+        description: API Changes and Reviews
+      - name: sig-storage-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-storage-feature-requests
+        description: Feature Requests
+      - name: sig-storage-misc
+        description: General Discussion
+      - name: sig-storage-pr-reviews
+        description: PR Reviews
+      - name: sig-storage-proposals
+        description: Design Proposals
+      - name: sig-storage-test-failures
+        description: Test Failures and Triage
   - name: Testing
     dir: sig-testing
     mission_statement: >
@@ -728,6 +1050,21 @@ sigs:
     contact:
       slack: sig-testing
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-testing
+      teams:
+      - name: sig-testing-api-reviews
+        description: API Changes and Reviews
+      - name: sig-testing-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-testing-feature-requests
+        description: Feature Requests
+      - name: sig-testing-misc
+        description: General Discussion
+      - name: sig-testing-pr-reviews
+        description: PR Reviews
+      - name: sig-testing-proposals
+        description: Design Proposals
+      - name: sig-testing-test-failures
+        description: Test Failures and Triage
   - name: UI
     dir: sig-ui
     mission_statement: >
@@ -774,6 +1111,13 @@ sigs:
     contact:
       slack: sig-windows
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-windows
+      teams:
+      - name: sig-windows-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-windows-feature-requests
+        description: Feature Requests
+      - name: sig-windows-misc
+        description: General Discussion
 workinggroups:
   - name: Resource Management
     dir: wg-resource-management

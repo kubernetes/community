@@ -25,6 +25,21 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=Eh7Qa7KOL
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-storage)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fstorage)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-storage-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-storage-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-storage-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-storage-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-storage-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-storage-feature-requests) | Feature Requests |
+| @kubernetes/sig-storage-misc | [link](https://github.com/orgs/kubernetes/teams/sig-storage-misc) | General Discussion |
+| @kubernetes/sig-storage-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-storage-pr-reviews) | PR Reviews |
+| @kubernetes/sig-storage-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-storage-proposals) | Design Proposals |
+| @kubernetes/sig-storage-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-storage-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Details
