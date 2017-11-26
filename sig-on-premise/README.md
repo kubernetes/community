@@ -26,14 +26,19 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=dyUWqqNYU
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fonprem)
 
 ## GitHub Teams
-* [@onprem-misc](https://github.com/kubernetes/teams/onprem-misc)
-* [@onprem-test-failures](https://github.com/kubernetes/teams/onprem-test-failures)
-* [@onprem-bugs](https://github.com/kubernetes/teams/onprem-bugs)
-* [@onprem-feature-requests](https://github.com/kubernetes/teams/onprem-feature-requests)
-* [@onprem-proposals](https://github.com/kubernetes/teams/onprem-proposals)
-* [@onprem-pr-reviews](https://github.com/kubernetes/teams/onprem-pr-reviews)
-* [@onprem-api-reviews](https://github.com/kubernetes/teams/onprem-api-reviews)
 
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-onprem-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-onprem-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-onprem-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-feature-requests) | Feature Requests |
+| @kubernetes/sig-onprem-misc | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-misc) | General Discussion |
+| @kubernetes/sig-onprem-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-pr-reviews) | PR Reviews |
+| @kubernetes/sig-onprem-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-proposals) | Design Proposals |
+| @kubernetes/sig-onprem-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

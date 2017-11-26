@@ -25,6 +25,15 @@ Meeting recordings can be found [here](https://www.youtube.com/playlist?list=PL6
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fdocs)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation Maintainers |
+
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
 * Discuss documentation and docs issues for kubernetes.io

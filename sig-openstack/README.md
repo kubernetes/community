@@ -26,14 +26,19 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=iCfUx7ilh
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fopenstack)
 
 ## GitHub Teams
-* [@sig-openstack-misc](https://github.com/kubernetes/teams/sig-openstack-misc)
-* [@sig-openstack-test-failures](https://github.com/kubernetes/teams/sig-openstack-test-failures)
-* [@sig-openstack-bugs](https://github.com/kubernetes/teams/sig-openstack-bugs)
-* [@sig-openstack-feature-requests](https://github.com/kubernetes/teams/sig-openstack-feature-requests)
-* [@sig-openstack-proposals](https://github.com/kubernetes/teams/sig-openstack-proposals)
-* [@sig-openstack-pr-reviews](https://github.com/kubernetes/teams/sig-openstack-pr-reviews)
-* [@sig-openstack-api-reviews](https://github.com/kubernetes/teams/sig-openstack-api-reviews)
 
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-openstack-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-openstack-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-openstack-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-feature-requests) | Feature Requests |
+| @kubernetes/sig-openstack-misc | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-misc) | General Discussion |
+| @kubernetes/sig-openstack-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-pr-reviews) | PR Reviews |
+| @kubernetes/sig-openstack-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-proposals) | Design Proposals |
+| @kubernetes/sig-openstack-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

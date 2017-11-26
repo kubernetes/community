@@ -24,6 +24,20 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=FbKOI9-x9
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-node)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnode)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-node-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-node-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-node-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-node-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-node-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-node-feature-requests) | Feature Requests |
+| @kubernetes/sig-node-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-node-pr-reviews) | PR Reviews |
+| @kubernetes/sig-node-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-node-proposals) | Design Proposals |
+| @kubernetes/sig-node-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-node-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
 

@@ -26,6 +26,15 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=yQLeUKi_d
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-azure)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fazure)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-azure-misc | [link](https://github.com/orgs/kubernetes/teams/sig-azure-misc) | General Discussion |
+
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
