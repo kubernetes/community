@@ -24,6 +24,17 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=7zawb3KT9
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-windows)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fwindows)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-windows-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-windows-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-windows-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-windows-feature-requests) | Feature Requests |
+| @kubernetes/sig-windows-misc | [link](https://github.com/orgs/kubernetes/teams/sig-windows-misc) | General Discussion |
+
 <!-- BEGIN CUSTOM CONTENT -->
 * Recorded Meetings Playlist on Youtube: https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4&jct=LZ9EIvD4DGrhr2h4r0ItaBmco7gTgw
 

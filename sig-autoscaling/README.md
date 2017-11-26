@@ -25,6 +25,21 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fautoscaling)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-autoscaling-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-autoscaling-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-autoscaling-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-feature-requests) | Feature Requests |
+| @kubernetes/sig-autoscaling-misc | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-misc) | General Discussion |
+| @kubernetes/sig-autoscaling-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-pr-reviews) | PR Reviews |
+| @kubernetes/sig-autoscaling-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-proposals) | Design Proposals |
+| @kubernetes/sig-autoscaling-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 ## Concerns
 * autoscaling of clusters,

@@ -25,6 +25,21 @@ Meeting recordings can be found [here](https://docs.google.com/document/d/1pnF38
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-big-data)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fbig-data)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-big-data-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-big-data-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-big-data-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-big-data-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-big-data-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-big-data-feature-requests) | Feature Requests |
+| @kubernetes/sig-big-data-misc | [link](https://github.com/orgs/kubernetes/teams/sig-big-data-misc) | General Discussion |
+| @kubernetes/sig-big-data-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-big-data-pr-reviews) | PR Reviews |
+| @kubernetes/sig-big-data-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-big-data-proposals) | Design Proposals |
+| @kubernetes/sig-big-data-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-big-data-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
 * Design and architect ways to run big data applications effectively on Kubernetes

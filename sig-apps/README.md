@@ -26,6 +26,21 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=hn23Z-vL_
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-apps)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fapps)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-apps-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-apps-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-apps-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-apps-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-apps-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-apps-feature-requests) | Feature Requests |
+| @kubernetes/sig-apps-misc | [link](https://github.com/orgs/kubernetes/teams/sig-apps-misc) | General Discussion |
+| @kubernetes/sig-apps-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-apps-pr-reviews) | PR Reviews |
+| @kubernetes/sig-apps-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-apps-proposals) | Design Proposals |
+| @kubernetes/sig-apps-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-apps-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
 * Discuss running applications in k8s

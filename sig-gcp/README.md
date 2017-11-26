@@ -23,6 +23,21 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 * [Slack](https://kubernetes.slack.com/messages/sig-gcp)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-gcp)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-gcp-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-gcp-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-gcp-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-feature-requests) | Feature Requests |
+| @kubernetes/sig-gcp-misc | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-misc) | General Discussion |
+| @kubernetes/sig-gcp-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-pr-reviews) | PR Reviews |
+| @kubernetes/sig-gcp-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-proposals) | Design Proposals |
+| @kubernetes/sig-gcp-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

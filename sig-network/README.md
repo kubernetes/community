@@ -26,6 +26,21 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=phCA5-vWk
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnetwork)
 
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-network-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-network-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-network-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-network-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-network-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-network-feature-requests) | Feature Requests |
+| @kubernetes/sig-network-misc | [link](https://github.com/orgs/kubernetes/teams/sig-network-misc) | General Discussion |
+| @kubernetes/sig-network-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-network-pr-reviews) | PR Reviews |
+| @kubernetes/sig-network-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-network-proposals) | Design Proposals |
+| @kubernetes/sig-network-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-network-test-failures) | Test Failures and Triage |
+
 <!-- BEGIN CUSTOM CONTENT -->
 ## Areas of Responsibility
 
