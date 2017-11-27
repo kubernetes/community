@@ -53,12 +53,19 @@ The discussion sessions will be in an open fishbowl format — rings of chairs, 
 
 There will be 2 rooms dedicated to these sessions running in parallel all day. Each session should last between 45 minutes and an hour. There will be a smaller room available for unstructured discussion all day. 
 
-## Call for Topics
+## Call for Topics:
 Call for topics is now closed. All attendees should have recieved a CIVS voters ballot on November 20th to the email that they registered with. Please follow instructions on the ballot. We will publish the schedule by Thursday, November 30th. Reach out to jorge@heptio.com and parispittman@google.com if you have not received the CIVS poll. 
 
-## Desired Outcomes
+You can view the complete list of topics and abstracts [here](https://docs.google.com/spreadsheets/d/1miMinwk3Cp_4KV0xj36gIT3XdN4JtDcnAhkLZxG-qCQ/edit?usp=sharing)
+
+## Desired Outcomes:
 * Generate notes from the sessions to feed the project's documentation and knowledge base, and also to keep non-attendees plugged in
 * Make (and document) recommendations and decisions for the near-term and mid-term future of the project
 * Come up with upcoming action items, as well as leaders for those action items, for the various topics that we discuss
+
+
+## Misc:
+
+A photographer and videographer will be onsite collecting b-roll and other shots for KubeCon. If you would rather not be involved, please reach out to an organizer on the day of so we may accomodate you.  
 
 Further details to be updated on this doc. Please check back for a complete guide. 
