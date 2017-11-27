@@ -345,8 +345,7 @@ as shorthand for "RequiredDuringSchedulingScheduling pod affinity" and
 "SoftPodAffinity" as shorthand for "PreferredDuringScheduling pod affinity."
 Analogously for "HardPodAntiAffinity" and "SoftPodAntiAffinity."
 
-** TODO: Update this algorithm to take weight for SoftPod{Affinity,AntiAffinity}
-into account; currently it assumes all terms have weight 1. **
+**TODO: Update this algorithm to take weight for SoftPod{Affinity,AntiAffinity} into account; currently it assumes all terms have weight 1.**
 
 ```
 Z = the pod you are scheduling
@@ -664,5 +663,5 @@ This proposal is to satisfy [#14816](https://github.com/kubernetes/kubernetes/is
 
 ## Related work
 
-** TODO: cite references **
+**TODO: cite references**
 
