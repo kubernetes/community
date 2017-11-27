@@ -1126,7 +1126,7 @@ answer:
           feature (by asking the user what cloud provider they have,
           or in the future a feature discovery API).
 
-* **Kubernetes Security Models **
+* **Kubernetes Security Models**
 
     * Audience: hosters, distributors, custom cluster builders
 
