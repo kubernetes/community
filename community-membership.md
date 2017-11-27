@@ -64,7 +64,7 @@ Members are expected to remain active contributors to the community.
 - Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
     - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating on issues, etc.
     - Sponsors must be reviewers or approvers in at least 1 OWNERS file (in any repo in the Kubernetes GitHub organization)
-    - Not a requirement, but having sponsorship from a reviewer from another company is encouraged (you get a gold star).
+    - Sponsors must be from multiple member companies to demonstrate integration across community.
 - Send an email to *kubernetes-membership@googlegroups.com* with:
    - CC: your sponsors on the message
    - Subject: `REQUEST: New membership for <your-GH-handle>`
