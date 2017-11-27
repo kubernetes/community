@@ -571,7 +571,7 @@ breaking changes, it does *not* block the merge-queue, and thus should run in
 some separate test suites owned by the feature owner(s)
 (see [Continuous Integration](#continuous-integration) below).
 
-Every test should be owned by a [SIG](https://github.com/kubernetes/community/blob/master/sig-list.md), 
+Every test should be owned by a [SIG](https://github.com/kubernetes/community/blob/master/sig-list.md),
 and have a corresponding `[sig-<name>]` label.
 
 ### Viper configuration and hierarchichal test parameters.
@@ -715,7 +715,7 @@ the existing suite as a guide.
 TODO(#20357): Create a self-documented example which has been disabled, but can
 be copied to create new tests and outlines the capabilities and libraries used.
 
-When writing a test, consult #kinds_of_tests above to determine how your test
+When writing a test, consult #kinds-of-tests above to determine how your test
 should be marked, (e.g. `[Slow]`, `[Serial]`; remember, by default we assume a
 test can run in parallel with other tests!).
 
@@ -803,4 +803,3 @@ metrics that kubernetes provides.
 You should also know the [testing conventions](coding-conventions.md#testing-conventions).
 
 **HAPPY TESTING!**
-
