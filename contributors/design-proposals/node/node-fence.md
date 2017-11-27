@@ -4,6 +4,7 @@ Status: Pending
 Version: Alpha
 
 Implementation Owner: Yaniv Bronhaim (ybronhei@redhat.com)
+
 Current Repository: https://github.com/rootfs/node-fencing
 
 ## Overview
@@ -82,21 +83,19 @@ For each node that supports fencing we will configure NodeFenceConfig - This obj
 
 Note: to keep those fence configuration we had two options - Adding attributes in metadata section to the existing node object or create ConfigMap that describe this information for each node with fencing options.
 ```yaml
-kind: ConfigMap
-apiVersion: v1
-metadata:
-name: node_fence_config
-data: 
-  node_fence.properties: | 
-node_name=xxx
-isolation=[method-storage-iso1]]
-power_managment=[method-pm1, method-kdump]
-recovery=[method1,method2,method3]
-execution_policy=[seq\cun]
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+   name: fence-config-host1
+  data:
+   config.properties: |-
+    node_name=host
+    isolation=fc-off
+    power_management=eaton-off eaton-on
+    recovery=fc-on
 ```
 Notes:
 - Each configmap we relate a node name - this should be unique, and in the properties we set order for stages’ names.
-- execution_policy means: In list of method we might want to run all methods until all finish, or until only one finishes successfully (useful for sequential pm actions). 
 - Isolation\power_managment\recovery are parameters with list value which represent the method to run in each step of the fencing.
 #### Fence Method Config ###
 Represents the fence method parameters. This is done by configuring a “template” and specific config if needed with overloaded parameters.
@@ -104,31 +103,28 @@ Represents the fence method parameters. This is done by configuring a “templat
 - For each template the admin can create specific method config with different properties’ values.
 The template allows to reuse parameters for common devices and agents
 ```yaml
-kind: ConfigMap
-apiVersion: v1
-metadata:
- - name: fence_method_config
-data: 
- - method.properties: | 
-node=node1_iscsi_pm_uenf324
-template=fence_method_template1
-template_param1_name=value1
-template_param2_name=value2
-..
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+   name: fence-method-fc-on-host0
+   namespace: default
+  data:
+   method.properties: |-
+          template=fence-method-template-fc-switch-brocade
+          plug=2
 
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
- - name: fence_template_config
- - version: 1.0
-data: 
- - method_template.properties: |
-name=ipmilan_pm_device
-agent_name=fence_ipmilan
-must_success=Yes\No
-template_param1_name=value1
-template_param2_name=value2
-...
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+   name: fence-method-template-fc-switch-brocade
+   namespace: default
+  data:
+   template.properties: |-
+          name=fc_switch_brocade
+          agent_name=fence_brocade
+          ipaddr=192.168.1.2
+          password=brocade_password
+          username=brocade_admin
 ```
 
 ### Implementation
@@ -210,261 +206,143 @@ In power management fencing we usually expect the machine to come up again and r
 Note: A fencing method can be also to remove the node from the cluster using the cloud provider api.
 
 ## Example configuration
-2 node cluster (nodeA - 192.168.1.11, nodeB - 192.168.1.12) with two distinct PDUs (192.168.1.3 - apc, 192.168.1.4 - eaton) using brocade FC switch (192.168.1.2).
+2 node cluster (host0 - 192.168.1.11, host1 - 192.168.1.12) with two distinct PDUs (192.168.1.3 - apc, 192.168.1.4 - eaton) using brocade FC switch (192.168.1.2) for storage isolation.
 
 Brocade template:
 ```
-kind: FenceMethodTemplate
-apiVersion: 1.0
-metadata:
- - name: fence_method_template 
- - version: 1.0
-data:
- - method.properties: |
-method_template_name=fc_switch_brocade
-agent_name=fence_brocade
-ipaddr=192.168.1.2
-password=brocade_password
-username=brocade_admin
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+   name: fence-method-template-fc-switch-brocade
+   namespace: default
+  data:
+   template.properties: |-
+          name=fc_switch_brocade
+          agent_name=fence_brocade
+          ipaddr=192.168.1.2
+          password=brocade_password
+          username=brocade_admin
 ```
 
 APC template:
 
 ```
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
-  - name: fence_method_template
-  - version: 1.0
-data:
-  - method_template.properties: |
-name=apc_pdu
-agent_name=fence_apc_snmp
-must_sucess=yes
-ipaddr=192.168.1.3
-password=apc_password
-username=apc_admin
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+   name: fence-method-template-apc-pdu
+   namespace: default
+  data:
+   template.properties: |-
+          name=apc_pdu
+          agent_name=fence_apc_snmp
+          must_sucess=yes
+          ipaddr=192.168.1.3
+          password=apc_password
+          username=apc_admin
+
 ```
 
 Eaton template:
 ```
-kind: FenceMethodTemplate
-apiVersion: 1.0
-metadata:
-  - name fence_method_template
-  - version: 1.0
-data:
-  - method_template.properties: |
-name=eaton_pdu
-agent_name=fence_eaton_snmp
-must_sucess=yes
-ipaddr=192.168.1.4
-password=eaton_password
-username=eaton_admin
-snmp-priv-prot=AES
-snmp-priv-passwd=eaton_snmp_passwd
-snmp-sec-level=authPriv
-inet4-only
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+   name: fence-method-template-eaton-pdu
+   namespace: default
+  data:
+   template.properties: |-
+          name=eaton_pdu
+          agent_name=fence_eaton_snmp
+          must_sucess=yes
+          ipaddr=192.168.1.4
+          password=eaton_password
+          username=eaton_admin
+          snmp-priv-prot=AES
+          snmp-priv-passwd=eaton_snmp_passwd
+          snmp-sec-level=authPriv
+          inet4-only=true
 ```
 
-Method for enable and disable of brocade for node A:
+Method for enable and disable of brocade for host0:
 
 ```
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
-  - name: fence_method_config
-  - version: 1.0
-data:
- - method.properties: |
-name=nodeA_fc_off
-template=fc_switch_brocade
-plug=1
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+   name: fence-method-eaton-off-host0
+   namespace: default
+  data:
+   method.properties: |-
+        template=fence-method-template-eaton-pdu
+        plug=1
+        action=off
+
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+   name: fence-method-eaton-on-host0
+   namespace: default
+  data:
+   method.properties: |-
+        template=fence-method-template-eaton-pdu
+        plug=1
+        action=on
 ```
 
-```
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
-  - name: fence_method_config
-  - version: 1.0
-data:
- - method.properties: |
-name=nodeA_fc_on
-template=fc_switch_brocade
-plug=1
-action=on
-```
-
-Method for enable and disable of brocade for node B:
+Method for enable and disable of eaton for host1:
 
 ```
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
-  - name: fence_method_config
-  - version: 1.0
-spec:
- - method.properties: |
-name=nodeB_fc_on
-template=fc_switch_brocade
-plug=2
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+   name: fence-method-eaton-off-host1
+   namespace: default
+  data:
+   method.properties: |-
+        template=fence-method-template-eaton-pdu
+        plug=2
+        action=off
+
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+   name: fence-method-eaton-on-host1
+   namespace: default
+  data:
+   method.properties: |-
+        template=fence-method-template-eaton-pdu
+        plug=2
+        action=on
 ```
 
-```
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
-  - name: fence_method_config
-  - version: 1.0
-spec:
- - method.properties: |
-name=nodeB_fc_off
-template=fc_switch_brocade
-plug=2
-action=on
-```
-
-Methods for on/off APC (both nodes):
-
-```
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
-  - name: fence_method_config
-  - version: 1.0
-data:
- - method.properties: |
-name=nodeA_apc_off
-template=apc_pdu
-plug=1
-action=off
-```
-
-```
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
-  - name: fence_method_config
-  - version: 1.0
-data:
- - method.properties: |
-name=nodeB_apc_off
-template=apc_pdu
-plug=2
-action=off
-```
-
-```
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
-  - name: fence_method_config
-  - version: 1.0
-data:
- - method.properties: |
-  - name=nodeA_apc_on
-  - template: apc_pdu
-  - parameters:
-     - plug: 1
-     - action: on
-```
-
-```
-kind: FenceMethodConfig
-apiVersion: 1.0
-metadata:
-  - version: 1.0
-spec:
-  - Name: NodeB_apc_on
-  - template: apc_pdu
-  - parameters:
-     - plug: 2
-     - action: on
-```
-
-Method for on/off eaton (both nodes)
-
-```
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
-  - name: fence_method_config
-  - version: 1.0
-data:
- - method.properties: |
-Name=nodeA_eaton_off
-template=eaton_pdu
-plug=1
-action=off
-```
-
-```
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
-  - name: fence_method_config
-  - version: 1.0
-data:
- - method.properties: |
-name=NodeA_eaton_off  
-template=eaton_pdu  
-plug=2
-action=off
-```
-
-```
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
-  - name: fence_method_config
-  - version: 1.0
-data:
-  - method.properties: |
-name=nodeA_eaton_on
-template=eaton_pdu 
-plug=1
-action=on
-```
-
-```
-kind: ConfigMap
-apiVersion: 1.0
-metadata:
-  - name: fence_mothod_config
-  - version: 1.0
-data:
-  - method.properties: |
-name=nodeA_eaton_on
-template=eaton_pdu  
-plug=2
-action=on
-```
+Same can be defined APC and eaton for both nodes.
 
 Finally fence configs:
 
 ```
-kind: NodeFenceConfig
-apiVersion: v1
-metadata:
-  - name: nodeA_fence_config
-data:
-    - node_name: NodeA
-    - isolation: NodeA_fc_off
-    - power_management: [NodeA_apc_off, NodeA_eaton_off, nodeA_eaton_on, nodeA_apc_on]
-    - recovery: NodeA_fc_on
-```
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+   name: fence-config-lago-kube-host0
+   namespace: default
+  data:
+   config.properties: |-
+    node_name=lago-kube-host0
+    isolation=fc-off
+    power_management=eaton-off eaton-on
+    recovery=fc-on
 
-```
-kind: NodeFenceConfig
-apiVersion: v1
-metadata:
-  - name: nodeA_fence_config
-data:
-    - node_name: NodeB
-    - isolation: NodeB_fc_off
-    - power_management: [NodeB_apc_off, NodeB_eaton_off, nodeB_eaton_on, nodeB_apc_on]
-    - recovery: NodeB_fc_on
+- kind: ConfigMap
+  apiVersion: v1
+  metadata:
+   name: fence-config-host1
+  data:
+   config.properties: |-
+    node_name=host
+    isolation=fc-off
+    power_management=eaton-off eaton-on
+    recovery=fc-on
 ```
 
 
