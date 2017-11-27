@@ -144,7 +144,7 @@ Hopefully this won't cause too much confusion.
 
 ## Examples
 
-** TODO: fill in this section **
+**TODO: fill in this section**
 
 * Run this pod on a node with an Intel or AMD CPU
 

@@ -423,7 +423,7 @@ Spec:
   gcePersistentDisk:
     pdName: "gce-disk-1"
 ```
-***Since the PVC object is passed to the provisioner, it will be responsible for validating and handling whether or not it supports the volumeMode being passed ***
+**Since the PVC object is passed to the provisioner, it will be responsible for validating and handling whether or not it supports the volumeMode being passed**
 
 ## UC8:
 
@@ -557,7 +557,7 @@ spec:
         claimName: block-pvc001
         readOnly: true #flag indicating read-only for container runtime
 ```
-*** Note: the readOnly field already exists in the PersistentVolumeClaimVolumeSource above and will dictate the values set by the container runtime options ***
+**Note: the readOnly field already exists in the PersistentVolumeClaimVolumeSource above and will dictate the values set by the container runtime options**
 
 
 # Container Runtime considerations
