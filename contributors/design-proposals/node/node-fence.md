@@ -4,9 +4,10 @@ Status: Pending
 Version: Alpha
 
 Implementation Owner: Yaniv Bronhaim (ybronhei@redhat.com)
+Current Repository: https://github.com/rootfs/node-fencing
 
 ## Overview
-Rationale and architecture for the addition of a fencing mechanism in Kubernetes clusters.
+Rationale and architecture for the addition of a fencing mechanism in Kubernetes clusters. In [pod-safety](https://github.com/kubernetes/community/blob/16f88595883a7461010b6708fb0e0bf1b046cf33/contributors/design-proposals/pod-safety.md) proposal we describe the need and desire solutions for unrecoverable cluster partition. In the following we define motivations and flows to provide fence actions using fence controller and executor to free the partitioned entities and recover the workload as quick as possible.
 
 ### Motivation
 In Kubernetes a cluster can get into a network partition state between nodes to the api server running on the master node (e.g. network device failure). When that happens their nodes’ status is changed to “not ready” by the node controller and the scheduler cannot know the status of pods running on that node without reaching the nodes’ kubelet service. From such scenario, k8s (since 1.8) defines an eviction timeout (forced by the node controller) such that after 5 minutes pods will enter a termination state in the api server and will try to shutdown gracefully when possible (this happens only if the connectivity returns).
@@ -14,13 +15,12 @@ In Kubernetes a cluster can get into a network partition state between nodes to 
 If the pod belongs to a ReplicaSet, once the termination state is set, the ReplicaSet controller will immediately start another instance of that pod.  However when the pod is part of a StatefulSet, the StatefulSet controller won’t start new instance of that pod until the kubelet responds with the pod’s status. This is because there is a permanent association between a StatefulSet member and its storage.  Not waiting would potentially result in multiple copies of a member, all writing to the same volume (leading to corruption or worse).
 
 ### Cloud deployments
-When k8s is deployed on a cloud such as AWS or GCE, the autoscaler uses the Cloud Provider APIs to remove failed nodes (Failure detection and allowing recovery of StatefulSets is more of a side effect of the autoscaler which is more focused on using the Cloud Provider APIs to monitor load and trigger scale up/down events), effectively bounding the amount of time the node will stay in the “not ready” state and how long the scheduler will need to wait before it can safely start the pod elsewhere.  However in the case of bare metal, no such mechanism exists and recovery will be blocked until an admin intervenes.
-
+When k8s is deployed on a cloud such as AWS or GCE, the autoscaler uses the Cloud Provider APIs to recognize unhealth nodes and effectively bounding the amount of time the node will stay in the “not ready” state until the node-controller removes the node (if possible, kerenel panic can't be handled that way), and how long the scheduler will need to wait before it can safely start the pod elsewhere.
+This treatment is not immediate and not covered in bare metal deployments. Also, there is no mechanism to recover quicker, but only to downscale the partitioned nodes. This leads to admin intervention which we can avoid using automate fence controller.
 This is particularly problematic because all StatefulSet scaling events (up and down) block until existing failures have been recovered.  From some perspectives, it could be considered that each node hosting a StatefulSet member has become a single point of failure for that set.
 
 ### Scope of this proposal
-Managing HA entities in cluster can relate to nodes and applications. In this scope we cover “node isolation” actions while node is not responsive until it becomes responsive again. Node isolation can be done by power management action (rebooting the node’s machine), storage fencing (preventing node from accessing), and cluster-wide isolation actions.
-
+We cover isolation (storage-fence, cluster isolation) and power-management (rebooting the node’s machine) actions while node is partitioned from cluster until it becomes responsive again.
 We don’t cover:
 - HA applications
 - Collaborative storage based fencing (e.g. sanlock)
@@ -133,7 +133,9 @@ template_param2_name=value2
 
 ### Implementation
 #### Fence Controller
-The fence controller is a stateless pod instance running in cluster that supports fence. The controller contains two main loop: 1) identifies unresponsive nodes. 2) following fence crds.
+The fence controller is a stateless pod instance running in cluster that supports fence. The controller contains two main loop: 
+1. Identifies unresponsive nodes.
+1. Following fence crds.
 
 First controller will trigger one executor job to live in cluster.
 
