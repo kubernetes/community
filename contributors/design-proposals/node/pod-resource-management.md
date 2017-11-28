@@ -16,7 +16,7 @@ to Kubernetes. It outlines the implementation and associated rollout plan.
 ## Introduction
 
 Kubernetes supports container level isolation by allowing users
-to specify [compute resource requirements](resources.md) via requests and
+to specify [compute resource requirements](/contributors/design-proposals/scheduling/resources.md) via requests and
 limits on individual containers.  The `kubelet` delegates creation of a
 cgroup sandbox for each container to its associated container runtime.
 
