@@ -63,6 +63,8 @@ Note that the links to display team membership will only work if you are a membe
 Helm and Charts each have their own regular meetings.
 
 * The Helm Developer call is [Thursday at 9:30 PT (Pacific Time)](https://zoom.us/j/4526666954). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29). Meeting notes and agenda can be found [here](https://docs.google.com/document/d/1elWRfvH3AkHdr8pOaqyPbqSZ6ONR-l1Sb9_gapqh8ZA/edit).
-* Charts Chat is every other [Thursday at 11:00 PT](https://zoom.us/j/166909412). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20(Pacific%20Time)). Meeting notes and agenda can be found [here](https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3).
+* Charts Chat is every other [Tuesday at 09:00 PT](https://zoom.us/j/166909412). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20(Pacific%20Time)). Meeting notes and agenda can be found [here](https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3).
+
+[Meetings can be found on the SIG Apps calendar.](https://calendar.google.com/calendar/embed?src=phfni1v25vnmi4q06m851230so%40group.calendar.google.com&ctz=America%2FNew_York)
 
 <!-- END CUSTOM CONTENT -->
