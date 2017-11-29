@@ -182,6 +182,10 @@ _Improvements needed_
 _Improvements needed_
 * Please help write this section.
 
+## Issues Management or Triage
+
+Have you ever noticed the total number of [open issues](https://github.com/kubernetes/kubernetes/issues)? This number at any given time is typically high. Helping to manage or triage these open issues can be a great contribution to the Kubernetes project. This is also a great opportunity to learn about the various areas of the project. Refer to the [Kubernetes Issue Triage Guidelines](https://github.com/kubernetes/community/blob/master/contributors/devel/issues.md) for more information.
+
 # Community
 
 If you haven't noticed by now, we have a large, lively, and friendly open-source community. We depend on new people becoming members and regular code contributors, so we would like you to come join us. To find out more about our community structure, different levels of membership and code contributors, please [explore here](https://git.k8s.io/community/community-membership.md).
