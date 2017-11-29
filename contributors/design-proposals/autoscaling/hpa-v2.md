@@ -280,8 +280,8 @@ Mechanical Concerns
 
 The HPA will derive metrics from two sources: resource metrics (i.e. CPU
 request percentage) will come from the
-[master metrics API](resource-metrics-api.md), while other metrics will
-come from the [custom metrics API](custom-metrics-api.md), which is
+[master metrics API](../instrumentation/resource-metrics-api.md), while other metrics will
+come from the [custom metrics API](../instrumentation/custom-metrics-api.md), which is
 an adapter API which sources metrics directly from the monitoring
 pipeline.
 
