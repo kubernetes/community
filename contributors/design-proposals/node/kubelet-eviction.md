@@ -198,7 +198,6 @@ it will use cgroup events on the memory.usage_in_bytes file in order to trigger 
 With the addition of on-demand metrics, this permits the `kubelet` to trigger the eviction manager,
 collect metrics, and respond with evictions much quicker than using the sync loop alone.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 However, a current issue with this is that the cgroup notifications trigger based on memory.usage_in_bytes,
 but the eviction manager determines memory pressure based on the working set, which is (memory.usage_in_bytes - memory.total_inactive_file).
 For example:
@@ -230,8 +229,6 @@ For example, the eviction manager could start collecting observations every seco
 10 seconds after the threshold is crossed.  This means that even though the cgroup event and eviction
 manager are not completely in-sync, the threshold can help the eviction manager to respond faster than
 it otherwise would.  After a short period, it would resume the standard interval of sync loop calls.
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Disk
 
