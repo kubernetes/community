@@ -15,7 +15,7 @@
       * [PodPreset Exclude Annotation](#podpreset-exclude-annotation)
   * [Examples](#examples)
     * [Simple Pod Spec Example](#simple-pod-spec-example)
-    * [Pod Spec with `ConfigMap` Example](#pod-spec-with-`configmap`-example)
+    * [Pod Spec with `ConfigMap` Example](#pod-spec-with-configmap-example)
     * [ReplicaSet with Pod Spec Example](#replicaset-with-pod-spec-example)
     * [Multiple PodPreset Example](#multiple-podpreset-example)
     * [Conflict Example](#conflict-example)
