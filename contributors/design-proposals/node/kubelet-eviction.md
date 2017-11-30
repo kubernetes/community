@@ -191,6 +191,48 @@ signal.  If that signal is observed as being satisfied for longer than the
 specified period, the `kubelet` will initiate eviction to attempt to
 reclaim the resource that has met its eviction threshold.
 
+### Memory CGroup Notifications
+
+When the `kubelet` is started with `--experimental-kernel-memcg-notification=true`, 
+it will use cgroup events on the memory.usage_in_bytes file in order to trigger the eviction manager.
+With the addition of on-demand metrics, this permits the `kubelet` to trigger the eviction manager,
+collect metrics, and respond with evictions much quicker than using the sync loop alone.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+However, a current issue with this is that the cgroup notifications trigger based on memory.usage_in_bytes,
+but the eviction manager determines memory pressure based on the working set, which is (memory.usage_in_bytes - memory.total_inactive_file).
+For example:
+```
+capacity = 1Gi
+--eviction-hard=memory.available<250Mi
+assume memory.total_inactive_file=10Mi
+```
+When the cgroup event is triggered, `memory.usage_in_bytes = 750Mi`.
+The eviction manager observes
+`working_set = memory.usage_in_bytes - memory.total_inactive_file = 740Mi`
+Signal: `memory.available = capacity - working_set = 260Mi`
+Therefore, no memory pressure.  This will occur as long as memory.total_inactive_file is non-zero.
+
+### Proposed solutions:
+1. Set the cgroup event at `threshold*fraction`.
+For example, if `--eviction-hard=memory.available<200Mi`, set the cgroup event at `100Mi`.
+This way, when the eviction manager is triggered, it will likely observe memory pressure.
+This is not guaranteed to always work, but should prevent OOMs in most cases.
+
+2. Use Usage instead of Working Set to determine memory pressure
+This would mean that the eviction manager and cgroup notifications use the same metric,
+and thus the response is ideal: the eviction manager is triggered exactly when memory pressure occurs.
+However, the eviction manager may often evict unneccessarily if there are large quantities of memory
+the kernel has not yet reclaimed.
+
+3. Increase the syncloop interval after the threshold is crossed
+For example, the eviction manager could start collecting observations every second instead of every
+10 seconds after the threshold is crossed.  This means that even though the cgroup event and eviction
+manager are not completely in-sync, the threshold can help the eviction manager to respond faster than
+it otherwise would.  After a short period, it would resume the standard interval of sync loop calls.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ### Disk
 
 Let's assume the operator started the `kubelet` with the following:
@@ -457,9 +499,3 @@ In general, it should be strongly recommended that `DaemonSet` not
 create `BestEffort` pods to avoid being identified as a candidate pod
 for eviction. Instead `DaemonSet` should ideally include Guaranteed pods only.
 
-## Known issues
-
-### kubelet may evict more pods than needed
-
-The pod eviction may evict more pods than needed due to stats collection timing gap. This can be mitigated by adding
-the ability to get root container stats on an on-demand basis (https://github.com/google/cadvisor/issues/1247) in the future.
