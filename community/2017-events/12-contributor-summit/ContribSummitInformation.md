@@ -18,7 +18,7 @@ Times in CST
 01:00pm - Sessions resume  
 04:30pm - Happy Hour onsite  
 
-View the complete session schedule [here](/kubernetes/community/community/2017-events/schedule).  
+View the complete session schedule [here](/community/community/2017-events/12-contributor-summit/schedule.png).  
 Session schedule will be available onsite in print as well as on TVs.
 
 ## Where:
