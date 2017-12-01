@@ -1,18 +1,21 @@
 reviewers:
-  - sarahnovotny
-  - idvoretskyi
   - calebamiles
+  - castrojo
+  - cblecker
   - grodrigues3
+  - idvoretskyi
+  - sarahnovotny
 approvers:
-  - sarahnovotny
-  - idvoretskyi
-  - calebamiles
-  - grodrigues3
   - brendandburns
+  - calebamiles
+  - castrojo
+  - cblecker
   - dchen1107
+  - grodrigues3
+  - idvoretskyi
   - jbeda
   - lavalamp
+  - sarahnovotny
   - smarterclayton
   - thockin
   - wojtek-t
-
