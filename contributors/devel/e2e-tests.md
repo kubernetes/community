@@ -1,7 +1,5 @@
 # End-to-End Testing in Kubernetes
 
-Updated: 5/3/2016
-
 **Table of Contents**
 
 - [End-to-End Testing in Kubernetes](#end-to-end-testing-in-kubernetes)
@@ -336,7 +334,7 @@ Next, specify the docker repository where your ci images will be pushed.
 * Push the federation container images
 
   ```sh
-  $ build/push-federation-images.sh
+  $ federation/develop/push-federation-images.sh
   ```
 
 #### Deploy federation control plane
@@ -387,8 +385,8 @@ to gather logs.
 This script requires that the cluster provider supports ssh. Assuming it does,
 running:
 
-```
-cluster/log-dump.sh <directory>
+```sh
+$ federation/cluster/log-dump.sh <directory>
 ```
 
 will ssh to the master and all nodes and download a variety of useful logs to
