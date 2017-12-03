@@ -1,6 +1,6 @@
 **Note: this is a design doc, which describes features that have not been
 completely implemented. User documentation of the current state is
-[here](../user-guide/compute-resources.md). The tracking issue for
+[here](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/). The tracking issue for
 implementation of this model is [#168](http://issue.k8s.io/168). Currently, both
 limits and requests of memory and cpu on containers (not pods) are supported.
 "memory" is in bytes and "cpu" is in milli-cores.**
@@ -281,7 +281,7 @@ to encourage comments.
 Because resource usage and related metrics change continuously, need to be
 tracked over time (i.e., historically), can be characterized in a variety of
 ways, and are fairly voluminous, we will not include usage in core API objects,
-such as [Pods](../user-guide/pods.md) and Nodes, but will provide separate APIs
+such as [Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod/) and Nodes, but will provide separate APIs
 for accessing and managing that data. See the Appendix for possible
 representations of usage data, but the representation we'll use is TBD.
 

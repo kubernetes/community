@@ -127,7 +127,7 @@ to serve the purpose outside of GCE.
 
 ## Pod to service
 
-The [service](../user-guide/services.md) abstraction provides a way to group pods under a
+The [service](https://kubernetes.io/docs/concepts/services-networking/service/) abstraction provides a way to group pods under a
 common access policy (e.g. load-balanced). The implementation of this creates a
 virtual IP which clients can access and which is transparently proxied to the
 pods in a Service. Each node runs a kube-proxy process which programs

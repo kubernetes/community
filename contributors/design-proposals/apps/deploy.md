@@ -19,7 +19,7 @@
 
 ## Motivation
 
-Users can use [Deployments](../user-guide/deployments.md) or [`kubectl rolling-update`](../user-guide/kubectl/kubectl_rolling-update.md) to deploy in their Kubernetes clusters. A Deployment provides declarative update for Pods and ReplicationControllers, whereas `rolling-update` allows the users to update their earlier deployment without worrying about schemas and configurations. Users need a way that's similar to `rolling-update` to manage their Deployments more easily.
+Users can use [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) or [`kubectl rolling-update`](https://kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/) to deploy in their Kubernetes clusters. A Deployment provides declarative update for Pods and ReplicationControllers, whereas `rolling-update` allows the users to update their earlier deployment without worrying about schemas and configurations. Users need a way that's similar to `rolling-update` to manage their Deployments more easily.
 
 `rolling-update` expects ReplicationController as the only resource type it deals with. It's not trivial to support exactly the same behavior with Deployment, which requires:
 - Print out scaling up/down events.
