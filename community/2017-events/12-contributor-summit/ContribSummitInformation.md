@@ -12,11 +12,11 @@ All day event with happy hour reception to close
 
 **Agenda:**  
 Times in CST   
-08:00am - Registration and light breakfast  
-09:00am - Welcome and start of content  
-12:00pm - Lunch provided  
-01:00pm - Sessions resume  
-04:30pm - Happy Hour onsite  
+- 08:00 am - Registration and light breakfast  
+- 09:00 am - Welcome and start of content  
+- 12:00 pm - Lunch provided  
+- 01:00 pm - Sessions resume  
+- 05:00 pm - Happy Hour onsite  
 
 View the complete session schedule [here](https://github.com/kubernetes/community/blob/master/community/2017-events/12-contributor-summit/schedule.png).  
 Session schedule will be available onsite in print as well as on TVs.
@@ -35,8 +35,8 @@ Level 1, near Hall 1
 Level 3, Outside of Meeting Room 5  
 
 **Sessions:**  
-Meeting Room 5 - Welcome @ 9am  
-Meeting Room 4, Meeting Room 6a, Meeting Room 6b - Breakout session rooms
+Level 3, Meeting Room 5 - Welcome @ 9am  
+Level 3, Meeting Room 4, Meeting Room 6a, Meeting Room 6b - Breakout session rooms
 
 *_Note-Your summit registration is NOT your KubeCon registration. Tickets are almost sold out for KubeCon, please purchase those separately from the [event page](http://events.linuxfoundation.org/events/kubecon-and-cloudnativecon-north-america/attend/register)._
 
