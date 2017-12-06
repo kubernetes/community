@@ -57,7 +57,9 @@ Additionally, native macOS support is still a work in progress. Using Planter is
 a possible workaround in the interim.
 
 [Bazel does not validate build environment](https://github.com/kubernetes/kubernetes/issues/51623), thus make sure that needed
-tools and development packages are installed in the system. Bazel builds require presence of `make`, `gcc`, `g++`, `glibc and libstdc++ development headers` and `glibc static development libraries`. Please check your distribution for exact names of the packages. Examples for some commonly used distributions are below:
+tools and development packages are installed in the system. Bazel builds require presence of `make`, `gcc`, `g++`, `glibc and libstdc++ development headers`, 
+`glibc static development libraries` and `kernel development libraries`. Please check your distribution for exact names of the packages. Examples for some 
+commonly used distributions are below:
 
 |     Dependency        | Debian/Ubuntu                 | CentOS                         | OpenSuSE                                |
 |:---------------------:|-------------------------------|--------------------------------|-----------------------------------------|
