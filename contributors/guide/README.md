@@ -168,9 +168,19 @@ _Improvements needed_
 
 ## Testing
 
-_Improvements needed_
-* link to testing process 
-* walkthrough of where to find what in the tests (how to use, how to debug)
+Testing is the responsibility of all contributors and is in part owned by all sigs, but is also coordinated by [sig-testing](/sig-testing).
+
+The main testing overview document is [here](/contributors/devel/testing.md).
+
+There are three types of test in kubernetes.  The location of the test code varies with type, as does the specifics of the environment needed to successfully run the test:
+
+* Unit: These confirm that a particular function behaves as intended.  Golang includes native ability for unit testing via the [testing](https://golang.org/pkg/testing/) package.  Unit test source code can be found adjacent to the corresponding source code within a given package.  For example: functions defined in [kubernetes/cmd/kubeadm/app/util/version.go](https://git.k8s.io/kubernetes/cmd/kubeadm/app/util/version.go) will have unit tests in [kubernetes/cmd/kubeadm/app/util/version_test.go](https://git.k8s.io/kubernetes/cmd/kubeadm/app/util/version_test.go).  These are easily run locally be any developer on any OS.
+* Integration: These tests cover interactions of package components or interactions between kubernetes components and some other non-kubernetes system resource (eg: etcd).  An example would be testing whether a piece of code can correctly store data to or retrieve data from etcd.  Integration tests are stored in [kubernetes/test/integration/](https://git.k8s.io/kubernetes/test/integration).  Running these can require the developer set up additional functionality on their development system.
+* End-to-end ("e2e"): These are broad tests of overall kubernetes system behavior and coherence.  These are more complicated as they require a functional kubernetes cluster built from the sources to be tested.  A separate document [here](/contributors/devel/e2e-tests.md) details e2e testing and test cases themselves can be found in [kubernetes/test/e2e/](https://git.k8s.io/kubernetes/test/e2e).
+
+Continuous integration will run these tests either as pre-submits on PRs, post-submits against master/release branches, or both.  The results appear on [testgrid](https://testgrid.k8s.io).
+
+sig-testing is responsible for that official infrastructure and CI.  The associated automation is tracked in the [test-infra repo](https://git.k8s.io/test-infra).  If you're looking to run e2e tests on your own infrastructure, [kubetest](https://git.k8s.io/test-infra/kubetest) is the mechanism.
 
 ## Security
 
