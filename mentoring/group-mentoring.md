@@ -2,10 +2,10 @@
 *This is a work in progress*
 
 ## Summary
-This is an experimental group mentoring program where individuals will work self-paced in a semi-structured learning environment over the course of three months. Want to get `/lgtm` rights? Be a decision maker in an OWNERS file? This could be a great way to get the knowledge you need, some accountability to do it.  Through this program you will get the opportunity to interact with active contributors who may be on the same path as you as well  very experienced Kubernetes contributors (Pilots). 
+This is an experimental group mentoring program where individuals will work self-paced in a semi-structured learning environment over the course of three months. Want to get `/lgtm` rights? Be a decision maker in an OWNERS file? This could be a great way to get the knowledge you need, some accountability to do it.  Through this program you will get the opportunity to interact with active contributors who may be on the same path as you as well very experienced Kubernetes contributors (Pilots). 
 
 ## How This Works
-This program is built around our [community membership guidelines](https://github.com/kubernetes/community/blob/master/community-membership.md). This doc shows how you can grow through the project in different roles and provides the requirements to get to each rung on our ladder.
+This program is built around our [community membership guidelines](/community/community-membership.md). This doc shows how you can grow through the project in different roles and provides the requirements to get to each level on our ladder.
 
 A cohort will consist of 8-10 individuals aiming to achieve the same goal - the next stage on the contributor ladder - with the help of 3 Pilots representing 3 different projects. For example, our first test cohort is Member -> Reviewer in SIG Apps, SIG Cluster Lifecycle, and SIG AWS. The semi-structured learning element will happen in bi-weekly standups/workshops over zoom with various development areas targeted. 
 
