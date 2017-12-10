@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Covers all things UI related. Efforts are centered around Kubernetes Dashboard: a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
 
 ## Meetings
-* [Thursdays at 16:00 UTC](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+* [Thursdays at 17:00 UTC](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing).
 
