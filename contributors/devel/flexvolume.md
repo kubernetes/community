@@ -1,8 +1,8 @@
 # Flexvolume
 
-Flexvolume enables users to write their own drivers and add support for their volumes in Kubernetes. Vendor drivers should be installed in the volume plugin path on every Kubelet node and on master node(s) if `--enable-controller-attach-detach` Kubelet option is enabled. 
+Flexvolume enables users to write their own drivers and add support for their volumes in Kubernetes. Vendor drivers should be installed in the volume plugin path on every Kubelet node and on master node(s) if `--enable-controller-attach-detach` Kubelet option is enabled.
 
-*Note: Flexvolume is an alpha feature and is most likely to change in future*
+Flexvolume is a GA feature from Kubernetes 1.8 release onwards.
 
 ## Prerequisites
 
