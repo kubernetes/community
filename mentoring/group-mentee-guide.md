@@ -2,7 +2,7 @@
 This doc is a work in progress
 
 ## Welcome and Summary
-Welcome prospective mentee! This is an experimental group mentoring program where individuals will work self paced in a semi-structured learning environment over the course of three months. Want to get lgtm rights? Be a decision maker in an OWNERS file? This could be great way to get the knowledge you need, some accountability to do it, and interact with active contributors who may on the same path as you and our experienced Kubernetes developers. 
+Welcome prospective mentee! This is an experimental group mentoring program where individuals will work self-paced in a semi-structured learning environment over the course of three months. Want to get lgtm rights? Be a decision maker in an OWNERS file? This could be a great way to get the knowledge you need, some accountability to do it, and interact with active contributors who may on the same path as you and our experienced Kubernetes developers. 
 
 During the three month period, you will work on a path to the next level of membership which will take some work along with peers who have the same goal. This cohort will include mentors who are at least the level that you are targeting with ample experience in the project. These mentors will counsel but not provide answers to the problem or the solution itself. Think of them as true pilots of the sea - navigational experts - only to our codebase. At the end of the three month period, with open communication, the decision to accept or not proceed with the advancement should not be a surprise. 
 
