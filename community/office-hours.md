@@ -1,5 +1,7 @@
 # Kubernetes Community Office Hours
 
+## UPDATE: NO OFFICE HOURS UNTIL 2018, Happy Holidays!
+
 Office Hours is a live stream where we answer live questions about Kubernetes from **users** on the [YouTube channel](https://www.youtube.com/c/KubernetesCommunity/). Office hours are a regularly scheduled meeting where people can bring topics to discuss with the greater community. They are great for answering questions, getting feedback on how you’re using Kubernetes, or to just passively learn by following along. 
 
 **Special Pilot Edition - Contributor Office Hours**  
