@@ -30,5 +30,5 @@ Our founding cohort is a predetermined set of mentees and Pilots. Our main goal 
 
 ## Important Links
 [Mentor Guide]  - to be updated  
-[Mentee Guide](/mentoring/mentee-guide.md)
+[Mentee Guide](/mentoring/group-mentee-guide.md)
 
