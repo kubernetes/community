@@ -1036,6 +1036,9 @@ sigs:
     - name: Erick Feja
       github: fejta
       company: Google
+    - name: Steve Kuznetsov
+      github: stevekuznetsov
+      company: Red Hat
     - name: Timothy St. Clair
       github: timothysc
       company: Heptio
