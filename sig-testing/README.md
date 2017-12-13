@@ -19,6 +19,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=BbFjuxe3N
 ## Leads
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Samsung SDS
 * Erick Feja (**[@fejta](https://github.com/fejta)**), Google
+* Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Heptio
 
 ## Contact
