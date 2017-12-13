@@ -118,12 +118,13 @@ _Improvements needed_
 
 ### File an Issue
 
-Not ready to contribute code, but see something that needs work? While we encourage everyone to contribute code, we also appreciate it when someone finds a problem.
-Again, there are multiple repositories within the community, and each will have its own Issues.
-For example, here is where you file an Issue to [kubernetes/kubernetes](https://git.k8s.io/kubernetes/issues/new). Please make sure to adhere to the prompted submission guidelines.
+Not ready to contribute code, but see something that needs work? While the community encourages everyone to contribute code, it is also appreciated when someone reports an issue (aka problem).
+There are multiple repositories within the Kubernetes community  and a full list of repositories can be found [here](https://github.com/kubernetes/).
+Issue should be reported to an appropriate repository instead of always reporting to the [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes/issues) repository. For example, a documentation issue should be opened to [kubernetes/website](https://github.com/kubernetes/website/issues). Make sure to adhere to the prompted submission guidelines while opening an issue.
 
-_Improvements needed_ 
-* clarify there are many k/subrepos where you can file issues. Refer to "how to find and appropriate SIG" document to find out which.
+Note that, you should not open issue for a question. While you are learning or playing with Kubernetes you may run into questions.
+Opening an issue for a question unnecessarily increases the total numbers of issues and creates load on the triage team.
+Ask question on [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes), [ServerFault](https://stackoverflow.com/questions/tagged/kubernetes) or on the appropriate Kubernetes [Slack Channel](http://slack.k8s.io/).
 
 # Contributing
 
