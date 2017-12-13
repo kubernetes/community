@@ -1250,3 +1250,17 @@ workinggroups:
     contact:
       slack: wg-cloud-provider
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-cloud-provider
+  - name: Multitenancy
+    dir: wg-multitenancy
+    mission_statement: >
+      Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
+    leads:
+    - name: David Oppenheimer
+      github: davidopp
+      company: Google
+    - name: Jessie Frazelle
+      github: jessfraz
+      company: Microsoft
+    contact:
+      slack: wg-multitenancy
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy
