@@ -118,7 +118,7 @@ _Improvements needed_
 
 ### File an Issue
 
-Not ready to contribute code, but see something that needs work? While the community encourage everyone to contribute code, it also appreciate when someone report a issue (aka problem).
+Not ready to contribute code, but see something that needs work? While the community encourages everyone to contribute code, it is also appreciated when someone reports an issue (aka problem).
 There are multiple repositories within the Kubernetes community  and a full list of repositories can be found [here](https://github.com/kubernetes/).
 Issue should be reported to an appropriate repository instead of always reporting to the [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes/issues) repository. For example, a documentation issue should be opened to [kubernetes/website](https://github.com/kubernetes/website/issues). Make sure to adhere to the prompted submission guidelines while opening an issue.
 
