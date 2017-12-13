@@ -417,7 +417,7 @@ See the sig-cli [community page] for points of contact and meeting times:
 [community page]: https://github.com/kubernetes/community/tree/master/sig-cli
 [design proposal]: #design-proposals
 [design repo]: https://github.com/kubernetes/community/tree/master/contributors/design-proposals/cli
-[design template]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/sig-cli/template.md
+[design template]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/Design_Proposal_TEMPLATE.md
 [development guide]: https://github.com/kubernetes/community/blob/master/contributors/devel/development.md
 [existing issue]: #adopt-an-issue
 [feature repo]: https://github.com/kubernetes/features
