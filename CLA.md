@@ -18,7 +18,7 @@ This policy does not apply to [third_party] and [vendor].
 
 Click
   * [Individual signup] to sign up as an individual or as an employee of a signed organization. 
-  * [Corp signup] to sign as a corporation representative and manage signups from your organization.
+  * [Corporation signup] to sign as a corporation representative and manage signups from your organization.
 
 Either signup form looks like this:
 
@@ -26,13 +26,25 @@ Either signup form looks like this:
 
 #### 3. Enter the correct E-mail address to validate!
 
+Your github email address __must match__ the same address you use when signing the CLA.
+
 The address entered in the form must meet two constraints:
  
  * It __must match__ your  [git email] (the output of `git config user.email`)
    or your PRs will not be approved!
 
+ * Use `git config user.name "Mona Lisa"` and `git config user.email "mona@example.com"`
+   to ensure you've set this properly.
+
  * It must be your official `person@organization.com` address if you signed up
    as an employee of said organization.
+
+ * If you've already submitted a PR you can correct your user.name and user.email 
+   and then use use `git commit --ammend --reset-author` and then `git push` to 
+   correct the PR.  
+
+ * Github has [documentation] on setting email addresses. 
+    
 
 ![CNCFCLA2](http://i.imgur.com/t3WAtrz.png)
 
@@ -53,18 +65,16 @@ Once you have this, the CLA authorizer bot will authorize your PRs.
 
 ## Troubleshooting
 
-If you have signup trouble, please explain your case on
-the [CLA signing issue] and we (@sarahnovotny and @foxish), 
-along with the [CNCF] will help sort it out.
+If you are having problems with signed the CLA send a mail to: `helpdesk@rt.linuxfoundation.org`.
 
-Another option: ask for help at `helpdesk@rt.linuxfoundation.org`.
+Someone from the CNCF will respond to your ticket to help. 
 
 [CNCF]: https://www.cncf.io/community
-[CLA signing issue]: https://github.com/kubernetes/kubernetes/issues/27796
 [CLA for individuals]: https://github.com/cncf/cla/blob/master/individual-cla.pdf
 [CLA for corporations]: https://github.com/cncf/cla/blob/master/corporate-cla.pdf
-[Corp signup]: https://identity.linuxfoundation.org/node/285/organization-signup
+[Corporation signup]: https://identity.linuxfoundation.org/node/285/organization-signup
 [Individual signup]: https://identity.linuxfoundation.org/projects/cncf
 [git email]: https://help.github.com/articles/setting-your-email-in-git
 [third_party]: https://github.com/kubernetes/kubernetes/tree/master/third_party
 [vendor]: https://github.com/kubernetes/kubernetes/tree/master/vendor
+[documentation]: https://help.github.com/articles/setting-your-commit-email-address-on-github/
