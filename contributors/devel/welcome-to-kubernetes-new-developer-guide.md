@@ -1,3 +1,3 @@
 This page has moved to:
 
-https://github.com/kubernetes/community/contributors/guide/
+https://git.k8s.io/community/contributors/guide/
