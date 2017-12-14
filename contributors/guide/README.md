@@ -82,9 +82,6 @@ There are multiple repositories within the Kubernetes community and a full list 
 Each repository in the Kubernetes organization has beginner-friendly issues that provide a good first issue. For example, [kubernetes/kubernetes](https://git.k8s.io/kubernetes) has [help-wanted issues](https://issues.k8s.io/?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted) that should not need deep knowledge of the system.
 Another good strategy is to find a documentation improvement, such as a missing/broken link, which will give you exposure to the code submission/review process without the added complication of technical depth.
 
-_Improvements needed_
-* Clarify help-wanted issues also exist on projects other than k/kubernetes, e.g. k/kubectl.
-
 ### Find a SIG that is related to your contribution
 
 You may have noticed that some repositories in the Kubernetes Organization are owned by Special Interest Groups, or SIGs. We organize the Kubernetes community into SIGs in order to improve our workflow and more easily manage what is a very large community project.
@@ -102,7 +99,7 @@ Follow the link in the SIG name column to reach each SIGs README. Most SIGs will
 
 _Improvements needed_ 
 
-* File pull requests with all applicable SIGs to not have duplicate things in their CONTRIBUTING.md and instead link here. Keep it light, keep it clean, have only one source of truth. 
+* Open pull requests with all applicable SIGs to not have duplicate information in their CONTRIBUTING.md and instead link here. Keep it light, keep it clean, have only one source of truth. 
 
 ### File an Issue
 
