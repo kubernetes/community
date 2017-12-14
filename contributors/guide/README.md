@@ -78,6 +78,7 @@ You get the idea - if you ever see something you think should be fixed, you shou
 
 ### Find a good first topic
 
+There are multiple repositories within the Kubernetes community and a full list of repositories can be found [here](https://github.com/kubernetes/).
 Each repository in the Kubernetes organization has beginner-friendly issues that provide a good first issue. For example, [kubernetes/kubernetes](https://git.k8s.io/kubernetes) has [help-wanted issues](https://issues.k8s.io/?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted) that should not need deep knowledge of the system.
 Another good strategy is to find a documentation improvement, such as a missing/broken link, which will give you exposure to the code submission/review process without the added complication of technical depth.
 
@@ -93,21 +94,26 @@ Finding the appropriate SIG for your contribution will help you ask questions in
 
 For Pull Requests, the automatically assigned reviewer will add a SIG label if you haven't done so. See [Open A Pull Request](#open-a-pull-request) below. 
 
-For Issues we are still working on a more automated workflow. Since SIGs do not directly map onto Kubernetes subrepositories, it may be difficult to find which SIG your contribution belongs in. Here is the [list of SIGs](/sig-list.md). Determine which is most likely related to your contribution. *Example:* if you have a cni contribution, you should choose SIG-networking. Follow the link in the SIG name column to reach each SIGs README. Most SIGs will have a set of GitHub Teams with tags that can be mentioned on issues and pull requests for higher visibility. If you are not sure about the correct SIG for an issue, you can try SIG-contributor-experience [here](/sig-contributor-experience#github-teams).
+For Issues we are still working on a more automated workflow. Since SIGs do not directly map onto Kubernetes subrepositories, it may be difficult to find which SIG your contribution belongs in. Here is the [list of SIGs](/sig-list.md). Determine which is most likely related to your contribution. 
+
+*Example:* if you have a cni contribution, you should choose SIG-networking. 
+
+Follow the link in the SIG name column to reach each SIGs README. Most SIGs will have a set of GitHub Teams with tags that can be mentioned on issues and pull requests for higher visibility. If you are not sure about the correct SIG for an issue, you can try SIG-contributor-experience [here](/sig-contributor-experience#github-teams).
 
 _Improvements needed_ 
 
-* File issues with all the SIGs to not have duplicate things in their CONTRIBUTING.md. Keep it light, keep it clean, have only one source of truth.
+* File pull requests with all applicable SIGs to not have duplicate things in their CONTRIBUTING.md and instead link here. Keep it light, keep it clean, have only one source of truth. 
 
 ### File an Issue
 
-Not ready to contribute code, but see something that needs work? While the community encourages everyone to contribute code, it is also appreciated when someone reports an issue (aka problem).
-There are multiple repositories within the Kubernetes community  and a full list of repositories can be found [here](https://github.com/kubernetes/).
-Issue should be reported to an appropriate repository instead of always reporting to the [kubernetes/kubernetes](https://issues.k8s.io/new) repository. For example, a documentation issue should be opened to [kubernetes/website](https://github.com/kubernetes/website/issues). Make sure to adhere to the prompted submission guidelines while opening an issue.
+Not ready to contribute code, but see something that needs work? While the community encourages everyone to contribute code, it is also appreciated when someone reports an issue (aka problem). Issues should be filed under the appropriate repository. 
 
-Note that, you should not open issue for a question. While you are learning or playing with Kubernetes you may run into questions.
-Opening an issue for a question unnecessarily increases the total numbers of issues and creates load on the triage team.
-Ask question on [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes), [ServerFault](https://stackoverflow.com/questions/tagged/kubernetes) or on the appropriate Kubernetes [Slack Channel](http://slack.k8s.io/).
+*Example:* a documentation issue should be opened to [kubernetes/website](https://github.com/kubernetes/website/issues). 
+
+Make sure to adhere to the prompted submission guidelines while opening an issue.
+
+*A note on questions*
+ Our triage team has many issues to triage. Please do not file an issue if you are learning Kubernetes and have a question. Questions should be asked on [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes), [ServerFault](https://serverfault.com/questions/tagged/kubernetes), or on the appropriate Kubernetes [Slack Channel](http://slack.k8s.io/). We also have [Kubernetes Office Hours](/office-hours.md) once a month.
 
 # Contributing
 
