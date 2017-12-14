@@ -1088,8 +1088,8 @@ sigs:
       company: Fujitsu
     meetings:
     - day: Thursday
-      time: "16:00"
-      tz: "UTC"
+      time: "18:00"
+      tz: "CET (Central European Time)"
       frequency: weekly
     meeting_url: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
     meeting_archive_url: https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing
