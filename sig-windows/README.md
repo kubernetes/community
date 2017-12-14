@@ -36,8 +36,24 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-windows-misc | [link](https://github.com/orgs/kubernetes/teams/sig-windows-misc) | General Discussion |
 
 <!-- BEGIN CUSTOM CONTENT -->
-* Recorded Meetings Playlist on Youtube: https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4&jct=LZ9EIvD4DGrhr2h4r0ItaBmco7gTgw
+## Getting Started
 
-* Give it a try as demonstrated at Google Cloud Next '17 https://github.com/apprenda/kubernetes-ovn-heterogeneous-cluster
+If you're new to running containers on Windows, you can get started at http://aka.ms/windowscontainers . 
+
+
+The documenation for Kubernetes on Windows is in a state of flux until v1.9 is released. At 1.9, the [Getting Started Guide on kubernetes.io](https://kubernetes.io/docs/getting-started-guides/windows/) originally written for v1.5 will be replaced with updated steps. Until then, multiple guides are available for setting up Kubernetes nodes on Windows:
+
+* (draft) [v1.9 Getting Started guide](https://deploy-preview-5978--kubernetes-io-master-staging.netlify.com/docs/getting-started-guides/windows/)
+* Using host gateway: https://docs.microsoft.com/en-us/virtualization/windowscontainers/kubernetes/getting-started-kubernetes-windows 
+* Using OVN as demonstrated at Google Cloud Next '17: https://github.com/apprenda/kubernetes-ovn-heterogeneous-cluster
+
+
+## Contributing
+
+If you'd like to fix open bugs, comment on proposals or just track the project, please check  [Open Code Issues and PRs for SIG/Windows](https://github.com/kubernetes/kubernetes/labels/sig%2Fwindows) on GitHub.
+
+## Meeting Recordings
+
+Past meetings are in the [Recorded Meetings Playlist on Youtube](https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4&jct=LZ9EIvD4DGrhr2h4r0ItaBmco7gTgw)
 
 <!-- END CUSTOM CONTENT -->
