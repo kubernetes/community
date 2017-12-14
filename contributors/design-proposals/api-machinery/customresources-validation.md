@@ -20,8 +20,8 @@ Authors: @nikhita, @sttts, some ideas integrated from @xiao-zhou’s proposal<su
     3. [Client-Side Validation](#client-side-validation)
     4. [Comparison between server-side and client-side Validation](#comparison-between-server-side-and-client-side-Validation)
     5. [Existing Instances and changing the Schema](#existing-instances-and-changing-the-schema)
-    6. [Outlook to Status Sub-Resources](#outlook-to-status-sub-resources)
-    7. [Outlook Admission Webhook](#outlook-admission-webhook)
+    6. [Admission Webhook](#admission-webhook)
+    7. [Outlook to Status Sub-Resources](#outlook-to-status-sub-resources)
 5. [Implementation Plan](#implementation-plan)
 6. [Appendix](#appendix)
     1. [Expressiveness of JSON-Schema](#expressiveness-of-json-schema)
@@ -381,6 +381,35 @@ Note:
 
 2. For migration of CRDs with no validation to CRDs with validation, we can create a controller that will validate and annotate invalid CRs once the spec changes, so that the custom controller can choose to delete them (this is also essentially the status condition of the CRD). This can be achieved, but it is not part of the proposal.
 
+### Admission Webhook
+
+Custom resource definitions use the the same REST endpoint as built-in Kubernetes API objects. Consequently standard
+[dynamic web-hook admission controllers](https://kubernetes.io/docs/admin/extensible-admission-controllers/#external-admission-webhooks) 
+can be used for validation of custom resource definitions in addition to built-in resources.
+
+However, because the creation of admission controllers is a fairly high-privilege activity,
+and in many cases the creator of a `CustomResourceDefinition` is third-party extension code
+(e.g. an instance of the _operator pattern_) which should not have the ability to
+create arbitrary admission controllers, it is necessary to have an alternate solution for
+adding web-hook validation to custom resource definitions.
+
+The solution is that the `CustomResourceDefinition` itself has two arrays of webhooks in the
+definition itself. The arrays will be of type `admissionregistration.Webhook`.
+One array will contain non-mutating admission controllers for things like
+validation, and one will have mutating admission controllers for the purposes of defaulting.
+The custom resource definition controller (a piece of trusted code), will register
+these webhooks, _exclusively_ to be triggered for instances of the specific custom resource.
+This ensures that third-party extension code can not register admission controllers for
+arbitrary API objects.
+
+When the custom resource is deleted, the admission controller(s) is likewise deleted.
+
+For now, it is expected that the user will manage the authentication certificates used
+to authenticate and encrypt traffic from the api server to the webhook. Eventually,
+a better general mechanism may be created, but because the `CustomResourceDefinition`
+uses the existing `admissionregistration.Webhook` type, it will simply inherit these
+improvements.
+
 ### Outlook to Status Sub-Resources
 
 As another most-wanted feature, a Status sub-resource might be proposed and implemented for CRDs. The JSON-Schema proposed here might as well cover the Status field of a CR. For now this is not handled or validated in a particular way.
@@ -391,14 +420,6 @@ When the Status sub-resource exists some day, the /status endpoint will receive 
 {"type":"object", "properties":{"status": ..., "a": ..., "b": ...}}
 ```
 Then we can validate the status against the sub-schema easily. Hence, this proposal will be compatible with a later sub-resource extension.
-
-### Outlook Admission Webhook
-
-Apiextensions-apiserver uses the normal REST endpoint implementation and only customizes the registry and the codecs. The admission plugins are inherited from the kube-apiserver (when running inside of it via apiserver delegation) and therefore they are supposed to apply to CRs as well.
-
-It is [verified](https://github.com/kubernetes/kubernetes/pull/47252) that CRDs work well with initializers. It is also expected that webhook admission prototyped at https://github.com/kubernetes/kubernetes/pull/46316 will work with CRs out of the box. Hence, for more advanced validation webhook admission is an option as well (when it is merged).
-
-JSON-Schema based validation does not preclude implementation of other validation methods. Hence, advanced webhook-based validation can also be implemented in the future.
 
 ## Implementation Plan
 
