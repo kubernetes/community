@@ -9,7 +9,7 @@ Guide](http://kubernetes.io/docs/admin/).
 ## The process of developing and contributing code to the Kubernetes project
 
 * **Contributor Guide**
-  ([Please start here](/guide/README)) to learn about how to contribute to Kuberenetes
+  ([Please start here](/contributors/guide/README)) to learn about how to contribute to Kuberenetes
 
 * **GitHub Issues** ([issues.md](issues.md)): How incoming issues are triaged.
 
