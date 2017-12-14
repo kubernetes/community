@@ -87,19 +87,17 @@ _Improvements needed_
 ### Find a SIG that is related to your contribution
 
 You may have noticed that some repositories in the Kubernetes Organization are owned by Special Interest Groups, or SIGs. We organize the Kubernetes community into SIGs in order to improve our workflow and more easily manage what is a very large community project.
-SIGs also have their own CONTRIBUTING.md files, which may contain extra information or guidelines in addition to these general ones.  These are located in the SIG specific community documentation directories, for example: sig-docs' is in the kubernetes/community repo's [/sig-docs/CONTRIBUTING.md](/sig-docs/CONTRIBUTING.md) file and similarly for other SIGs.
+SIGs also have their own CONTRIBUTING.md files, which may contain extra information or guidelines in addition to these general ones. These are located in the SIG specific community documentation directories, for example: sig-docs' is in the kubernetes/community repo's [/sig-docs/CONTRIBUTING.md](/sig-docs/CONTRIBUTING.md) file and similarly for other SIGs.
 
-After finding something to contribute, you should find the appropriate SIG, which you will need in order to have your pull request approved for testing and merging.  See [Open A Pull Request](#open-a-pull-request) below.
+Finding the appropriate SIG for your contribution will help you ask questions in the correct place and give your contribution higher visibility and a faster community response.
+
+For Pull Requests, the automatically assigned reviewer will add a SIG label if you haven't done so. See [Open A Pull Request](#open-a-pull-request) below. 
+
+For Issues we are still working on a more automated workflow. Since SIGs do not directly map onto Kubernetes subrepositories, it may be difficult to find which SIG your contribution belongs in. Here is the [list of SIGs](/sig-list.md). Determine which is most likely related to your contribution. *Example:* if you have a cni contribution, you should choose SIG-networking. Follow the link in the SIG name column to reach each SIGs README. Most SIGs will have a set of GitHub Teams with tags that can be mentioned on issues and pull requests for higher visibility. If you are not sure about the correct SIG for an issue, you can try SIG-contributor-experience [here](/sig-contributor-experience#github-teams).
 
 _Improvements needed_ 
 
 * File issues with all the SIGs to not have duplicate things in their CONTRIBUTING.md. Keep it light, keep it clean, have only one source of truth.
-
-* Do not overload people with the entirety of the SIG structure; it is very intimidating to a newcomer
-
-* Possible text to elaborate on (the sig list should remain in its current place however):
-
-    * ([Pick a SIG](/sig-list.md), peruse its associated [cmd](https://git.k8s.io/kubernetes/cmd) directory, find a main() and read code until you find something you want to fix.)
 
 ### File an Issue
 
