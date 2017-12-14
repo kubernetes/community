@@ -23,11 +23,36 @@ _Improvements needed_
 
 * Individual SIG contributing documents -> add a link to this guide
 
-* Generate ToC for the section below 
-
 # Welcome
 
 Welcome to Kubernetes! This document is the single source of truth for how to contribute to the code base. Please leave comments / suggestions if you find something is missing or incorrect.
+
+-   [Before you get started](#before-you-get-started)
+    -   [Sign the CLA](#sign-the-cla)
+    -   [Setting up your development
+        environment](#setting-up-your-development-environment)
+    -   [Community Expectations](#community-expectations)
+        -   [Code of Conduct](#code-of-conduct)
+        -   [Thanks](#thanks)
+-   [Your First Contribution](#your-first-contribution)
+    -   [Find something to work on](#find-something-to-work-on)
+        -   [Find a good first topic](#find-a-good-first-topic)
+        -   [Learn about SIGs](#learn-about-sigs)
+        -   [File an Issue](#file-an-issue)
+-   [Contributing](#contributing)
+    -   [Communication](#communication)
+    -   [GitHub workflow](#github-workflow)
+    -   [Open a Pull Request](#open-a-pull-request)
+    -   [Code Review](#code-review)
+    -   [Testing](#testing)
+    -   [Security](#security)
+    -   [Documentation](#documentation)
+    -   [Issues Management or Triage](#issues-management-or-triage)
+-   [Community](#community)
+    -   [Events](#events)
+        -   [Meetups](#meetups)
+        -   [KubeCon](#kubecon)
+    -   [Mentorship](#mentorship)
 
 # Before you get started
 
