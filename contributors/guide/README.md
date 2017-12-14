@@ -62,14 +62,9 @@ Many thanks in advance to everyone who contributes their time and effort to maki
 
 # Your First Contribution
 
-(from [here](/contributors/devel/welcome-to-kubernetes-new-developer-guide.md#introduction))
-
 Have you ever wanted to contribute to the coolest cloud technology? We will help you understand the organization of the Kubernetes project and direct you to the best places to get started. You'll be able to pick up issues, write code to fix them, and get your work reviewed and merged.
 
-If you have questions about the development process, feel free to jump into our [Slack Channel](http://slack.k8s.io/) or join our [mailing list](https://groups.google.com/forum/#!forum/kubernetes-dev).
-
-_Improvements needed_
-* The doc linked [above](/contributors/devel/welcome-to-kubernetes-new-developer-guide.md#introduction) is being reinvented in this README. All relevant information should be ported to a logical place in this document/folder, and the original document deleted.
+Please be aware that due to the large number of issues our triage team deals with, we cannot offer technical support in GitHub issues. If you have questions about the development process, feel free to jump into our [Slack Channel](http://slack.k8s.io/) or join our [mailing list](https://groups.google.com/forum/#!forum/kubernetes-dev). You can also ask questions on [ServerFault](https://serverfault.com/questions/tagged/kubernetes) or [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes). The Kubernetes team scans Stack Overflow on a regular basis, and will try to ensure your questions don't go unanswered.
 
 ## Find something to work on
 
@@ -78,38 +73,46 @@ You get the idea - if you ever see something you think should be fixed, you shou
 
 ### Find a good first topic
 
+There are multiple repositories within the Kubernetes community and a full list of repositories can be found [here](https://github.com/kubernetes/).
 Each repository in the Kubernetes organization has beginner-friendly issues that provide a good first issue. For example, [kubernetes/kubernetes](https://git.k8s.io/kubernetes) has [help-wanted issues](https://issues.k8s.io/?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted) that should not need deep knowledge of the system.
-Another good strategy is to find a documentation improvement, such as a missing/broken link, which will give you exposure to the code submission/review process without the added complication of technical depth.
+Another good strategy is to find a documentation improvement, such as a missing/broken link, which will give you exposure to the code submission/review process without the added complication of technical depth. Please see [Contributing](#Contributing) below for the workflow.
 
-_Improvements needed_
-* Clarify help-wanted issues also exist on projects other than k/kubernetes, e.g. k/kubectl.
+### Learn about SIGs
 
-### Find a SIG that is related to your contribution
+#### Sig structure
 
-You may have noticed that some repositories in the Kubernetes Organization are owned by Special Interest Groups, or SIGs. We organize the Kubernetes community into SIGs in order to improve our workflow and more easily manage what is a very large community project.
-SIGs also have their own CONTRIBUTING.md files, which may contain extra information or guidelines in addition to these general ones.  These are located in the SIG specific community documentation directories, for example: sig-docs' is in the kubernetes/community repo's [/sig-docs/CONTRIBUTING.md](/sig-docs/CONTRIBUTING.md) file and similarly for other SIGs.
+You may have noticed that some repositories in the Kubernetes Organization are owned by Special Interest Groups, or SIGs. We organize the Kubernetes community into SIGs in order to improve our workflow and more easily manage what is a very large community project. The developers within each SIG have autonomy and ownership over that SIG's part of Kubernetes.
+SIGs also have their own CONTRIBUTING.md files, which may contain extra information or guidelines in addition to these general ones. These are located in the SIG specific community documentation directories, for example: sig-docs' is in the kubernetes/community repo's [/sig-docs/CONTRIBUTING.md](/sig-docs/CONTRIBUTING.md) file and similarly for other SIGs.
 
-After finding something to contribute, you should find the appropriate SIG, which you will need in order to have your pull request approved for testing and merging.  See [Open A Pull Request](#open-a-pull-request) below.
+Like everything else in Kubernetes, a SIG is an open, community, effort. Anybody is welcome to jump into a SIG and begin fixing issues, critiquing design proposals and reviewing code. SIGs have regular [video meetings](https://kubernetes.io/community/) which everyone is welcome to. Each SIG has a kubernetes slack channel that you can join as well.
+
+There is an entire SIG ([sig-contributor-experience](../../sig-contributor-experience/README.md)) devoted to improving your experience as a contributor. 
+Contributing to Kubernetes should be easy. If you find a rough edge, let us know! Better yet, help us fix it by joining the SIG; just
+show up to one of the [bi-weekly meetings](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit).
+
+#### Find a SIG that is related to your contribution
+
+Finding the appropriate SIG for your contribution will help you ask questions in the correct place and give your contribution higher visibility and a faster community response.
+
+For Pull Requests, the automatically assigned reviewer will add a SIG label if you haven't done so. See [Open A Pull Request](#open-a-pull-request) below. 
+
+For Issues we are still working on a more automated workflow. Since SIGs do not directly map onto Kubernetes subrepositories, it may be difficult to find which SIG your contribution belongs in. Here is the [list of SIGs](/sig-list.md). Determine which is most likely related to your contribution. 
+
+*Example:* if you are filing a cni issue, you should choose SIG-networking. 
+
+Follow the link in the SIG name column to reach each SIGs README. Most SIGs will have a set of GitHub Teams with tags that can be mentioned in a comment on issues and pull requests for higher visibility. If you are not sure about the correct SIG for an issue, you can try SIG-contributor-experience [here](/sig-contributor-experience#github-teams), or [ask in Slack](http://slack.k8s.io/).
 
 _Improvements needed_ 
 
-* File issues with all the SIGs to not have duplicate things in their CONTRIBUTING.md. Keep it light, keep it clean, have only one source of truth.
-
-* Do not overload people with the entirety of the SIG structure; it is very intimidating to a newcomer
-
-* Possible text to elaborate on (the sig list should remain in its current place however):
-
-    * ([Pick a SIG](/sig-list.md), peruse its associated [cmd](https://git.k8s.io/kubernetes/cmd) directory, find a main() and read code until you find something you want to fix.)
+* Open pull requests with all applicable SIGs to not have duplicate information in their CONTRIBUTING.md and instead link here. Keep it light, keep it clean, have only one source of truth. 
 
 ### File an Issue
 
-Not ready to contribute code, but see something that needs work? While the community encourages everyone to contribute code, it is also appreciated when someone reports an issue (aka problem).
-There are multiple repositories within the Kubernetes community  and a full list of repositories can be found [here](https://github.com/kubernetes/).
-Issue should be reported to an appropriate repository instead of always reporting to the [kubernetes/kubernetes](https://issues.k8s.io/new) repository. For example, a documentation issue should be opened to [kubernetes/website](https://github.com/kubernetes/website/issues). Make sure to adhere to the prompted submission guidelines while opening an issue.
+Not ready to contribute code, but see something that needs work? While the community encourages everyone to contribute code, it is also appreciated when someone reports an issue (aka problem). Issues should be filed under the appropriate Kubernetes subrepository. 
 
-Note that, you should not open issue for a question. While you are learning or playing with Kubernetes you may run into questions.
-Opening an issue for a question unnecessarily increases the total numbers of issues and creates load on the triage team.
-Ask question on [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes), [ServerFault](https://stackoverflow.com/questions/tagged/kubernetes) or on the appropriate Kubernetes [Slack Channel](http://slack.k8s.io/).
+*Example:* a documentation issue should be opened to [kubernetes/website](https://github.com/kubernetes/website/issues). 
+
+Make sure to adhere to the prompted submission guidelines while opening an issue.
 
 # Contributing
 
@@ -119,13 +122,13 @@ Kubernetes is open source, but many of the people working on it do so as their d
 
 As a potential contributor, your changes and ideas are welcome at any hour of the day or night, weekdays, weekends, and holidays. Please do not ever hesitate to ask a question or send a pull request.
 
-Our community guiding principles on how to create great code as a big group are found [here](/contributors/devel/collab.md).  Beginner focused information can be found below in [Open a Pull Request](#open-a-pull-request) and [Code Review](#code-review).
+Our community guiding principles on how to create great code as a big group are found [here](/contributors/devel/collab.md). Beginner focused information can be found below in [Open a Pull Request](#open-a-pull-request) and [Code Review](#code-review).
 
 ### Communication
 
-It is best to contact your SIG for issues related to the SIG's topic. Your SIG will be able to help you much more quickly than a general question would. Each SIG has a kubernetes slack channel that you can join as well.
+It is best to contact your [SIG](#learn-about-sigs) for issues related to the SIG's topic. Your SIG will be able to help you much more quickly than a general question would.
 
-For questions and troubleshooting, please feel free to use any of the methods of communication listed [here](/communication.md). The [kubernetes website](https://kubernetes.io/community/) also lists this information.
+For questions and troubleshooting, please feel free to use any of the methods of communication listed [here](/communication.md). The [kubernetes website](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/) also lists this information.
 
 ## GitHub workflow
 
