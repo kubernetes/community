@@ -59,6 +59,9 @@ sigs:
     - name: Adnan Abdulhussein
       github: prydonius
       company: Bitnami
+    - name: Kenneth Owens
+      github: kow3ns
+      company: Google
     meetings:
     - day: Monday
       time: "9:00"

@@ -20,6 +20,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=hn23Z-vL_
 * Michelle Noorali (**[@michelleN](https://github.com/michelleN)**), Microsoft
 * Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
 * Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), Bitnami
+* Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-apps)
