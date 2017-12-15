@@ -74,12 +74,47 @@ Overall, your controller should look something like this:
 
 ```go
 type Controller struct {
-	// podLister is secondary cache of pods which is used for object lookups
-	podLister cache.StoreToPodLister
+	// pods gives cached access to pods.
+	pods informers.PodLister
+	podsSynced cache.InformerSynced
 
 	// queue is where incoming work is placed to de-dup and to allow "easy"
 	// rate limited requeues on errors
 	queue workqueue.RateLimitingInterface
+}
+
+func NewController(pods informers.PodInformer) *Controller {
+	c := &Controller{
+		pods: pods.Lister(),
+		podsSynced pods.Informer().HasSynced,
+		queue: workqueue.NewNamedRateLimitingQueue(workqueue.DefaultControllerRateLimiter(), "controller-name"),
+	}
+	
+	// register event handlers to fill the queue with pod creations, updates and deletions
+	pods.Informer().AddEventHandler(cache.ResourceEventHandlerFuncs{
+		AddFunc: func(obj interface{}) {
+			key, err := cache.MetaNamespaceKeyFunc(obj)
+			if err == nil {
+				c.queue.Add(key)
+			}
+		},
+		UpdateFunc: func(old interface{}, new interface{}) {
+			key, err := cache.MetaNamespaceKeyFunc(new)
+			if err == nil {
+				c.queue.Add(key)
+			}
+		},
+		DeleteFunc: func(obj interface{}) {
+			// IndexerInformer uses a delta nodeQueue, therefore for deletes we have to use this
+			// key function.
+			key, err := cache.DeletionHandlingMetaNamespaceKeyFunc(obj)
+			if err == nil {
+				c.queue.Add(key)
+			}
+		},
+	},)
+	
+	return c
 }
 
 func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
@@ -91,7 +126,7 @@ func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
 	glog.Infof("Starting <NAME> controller")
 
 	// wait for your secondary caches to fill before starting your work
-	if !framework.WaitForCacheSync(stopCh, c.podStoreSynced) {
+	if !cache.WaitForCacheSync(stopCh, c.podsSynced) {
 		return
 	}
 
@@ -153,5 +188,4 @@ func (c *Controller) processNextWorkItem() bool {
 
 	return true
 }
-
 ```
