@@ -30,7 +30,7 @@ please follow [these instructions](./generator) that detail how our docs are aut
 Documentation (like the text you are reading now) can
 always use improvement!
 
-There's a [semi-curated list of issues][help-wanted]
+There's a [semi-curated list of issues][help wanted]
 that should not need deep knowledge of the system. 
 
 To dig deeper, read a design doc, e.g. [architecture].
@@ -57,7 +57,7 @@ lead to many relevant topics, including
 We recommend that you work on an existing issue before attempting
 to [develop a new feature]. 
 
-Start by finding an existing issue with the [help-wanted] label; 
+Start by finding an existing issue with the [help wanted] label; 
 these issues we've deemed are well suited for new contributors.
 Alternatively, if there is a specific area you are interested in, 
 ask a [SIG lead](sig-list.md) for suggestions), and respond on the
@@ -85,7 +85,7 @@ If you want to work on a new idea of relatively small scope:
 [Developer's Guide]: contributors/devel/development.md
 [develop a new feature]: https://github.com/kubernetes/features
 [expectations]: contributors/devel/community-expectations.md
-[help-wanted]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted
+[help wanted]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22help%20wanted%22
 [pull request]: contributors/devel/pull-requests.md
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/CONTRIBUTING.md?pixel)]()
