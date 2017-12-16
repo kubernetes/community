@@ -79,7 +79,7 @@ pod scheduling.
 
 
 ## Background
-In 1.7, we added alpha support for [local PVs](local-storage-pv) with node affinity.
+In 1.7, we added alpha support for [local PVs](local-storage-pv.md) with node affinity.
 You can specify a PV object with node affinity, and if a pod is using such a PV,
 the scheduler will evaluate the PV node affinity in addition to the other
 scheduling predicates.  So far, the PV node affinity only influences pod
