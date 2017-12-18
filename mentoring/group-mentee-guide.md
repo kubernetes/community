@@ -8,15 +8,15 @@ During the three month period, you will work on a path to the next level of memb
 
 Familiarize yourself with the [community membership requirements doc](/community-membership.md) including the requirements needed for your specific journey. You’ll receive sponsorship from the mentors and other people you've worked on issues/PRs with upon successful completion of the program. 
 
-## Expectations  
-You understand the requirements to become $member_role (ex: member->reviewer) 
-Good standing throughout the program and uphold our code of conduct
-Attend two bi-weekly standups a month
-The program is at your pace but these meetings will discuss your wins and blocks
-These meetings will also cover development area topics, suggested activities, and groomed issues
-Be helpful to your peers in the cohort
-Give back and be a mentor in a future cohort
-Mutual respect from mentors and peers who are in the cohort with you
+## Expectations    
+* You understand the requirements to become $member_role (ex: member->reviewer) 
+* Good standing throughout the program and uphold our code of conduct
+* Attend two bi-weekly standups/workshops a month (1 hour each)
+* The program is at your pace but these meetings will discuss your wins and blocks
+* These meetings will also cover development area topics, suggested activities, and groomed issues
+* Be helpful to your peers in the cohort
+* Give back and be a mentor in a future cohort
+* Mutual respect from mentors and peers who are in the cohort with you
 
 ## Development Areas & Activities
 These topics will be covered during bi-weekly standups/workshops. The suggested activities will be covered in the mentee's normal day to day. Know something that should be added? Start a convo/add a PR - your comments are appreciated.
@@ -25,16 +25,18 @@ These topics will be covered during bi-weekly standups/workshops. The suggested 
 * How to communicate in the Kubernetes ecosystem
 * Governance
 * Issue grooming / Identifying issues to work on
+* [need three more]
 
 Suggested Activity
 * Scrub XS and typo fixes into branches they maintain for occasional quick bulk review/approval with mentors
 * Help to review docs
 
 ### Current Reviewer Cohort
-* Code Reviews the Kubernetes Way (i.e.- best practices, 
+* Code Reviews the Kubernetes Way (i.e.- best practices)
 * Analyzing if the solution is good for the project as a whole and not just that codebase
 * How to groom issues for new members
 * Communication effectively as a leader
+* [need at least two more]
 
 Suggested Activity
 * Be a tech reviewer for docs 
@@ -42,7 +44,7 @@ SIG Docs to come in and do a quick ‘what it means to be a tech reviewer’ and
 
 ### Current Approver Cohort
 * Communication  
-(more soon)
+* [need 5 more]
 
 
 
@@ -50,7 +52,7 @@ SIG Docs to come in and do a quick ‘what it means to be a tech reviewer’ and
 - slack
 	- #kubernetes-dev
 	- your respective sig or other sigs that could help 
-		- complete SIG list here 
+		- [SIG List](/sig-list.md) 
 		- #sig-contribex
 	- #kubernetes-teachers
 - mailing lists
