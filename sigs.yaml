@@ -183,7 +183,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/history/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/job/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replicaset/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS 
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/apps/OWNERS
@@ -826,14 +826,14 @@ sigs:
   - name: Multicluster
     dir: sig-multicluster
     mission_statement: >
-      A Special Interest Group focussed on solving common challenges related to the 
+      A Special Interest Group focussed on solving common challenges related to the
       management of multiple Kubernetes clusters, and applications that exist therein.
-      The SIG will be responsible for designing, discussing, implementing and maintaining 
-      API’s, tools and documentation related to multi-cluster administration and application 
-      management. This includes not only active automated approaches such as Cluster 
-      Federation, but also those that employ batch workflow-style continuous deployment 
-      systems like Spinnaker and others.  Standalone building blocks for these and other 
-      similar systems (for example a cluster registry), and proposed changes to kubernetes 
+      The SIG will be responsible for designing, discussing, implementing and maintaining
+      API’s, tools and documentation related to multi-cluster administration and application
+      management. This includes not only active automated approaches such as Cluster
+      Federation, but also those that employ batch workflow-style continuous deployment
+      systems like Spinnaker and others.  Standalone building blocks for these and other
+      similar systems (for example a cluster registry), and proposed changes to kubernetes
       core where appropriate will also be in scope.
     label: multicluster
     leads:
@@ -1457,7 +1457,7 @@ sigs:
     - name: testing-commons
       description: "The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project."
       owners:
-      - https://raw.githubusercontent.com/kubernetes-sig-testing/frameworks/master/OWNERS 
+      - https://raw.githubusercontent.com/kubernetes-sig-testing/frameworks/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
       meetings:
       - description: Testing Commons
@@ -1666,7 +1666,7 @@ workinggroups:
   - name: Multitenancy
     dir: wg-multitenancy
     mission_statement: >
-      Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
+      Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments. Charter can be found [here](https://docs.google.com/document/d/1SkVdOPR4jozYDT8ro51hU3yrf1sHS8Gez73xM3PCsVo/edit#)
     leads:
     - name: David Oppenheimer
       github: davidopp
@@ -1674,6 +1674,14 @@ workinggroups:
     - name: Jessie Frazelle
       github: jessfraz
       company: Microsoft
+    meetings:
+    - day: Wednesday
+      time: "19:00"
+      tz: "UTC"
+      frequency: biweekly, opposite weeks of sig-auth
+    meeting_url: https://zoom.us/my/k8s.sig.auth
+    meeting_archive_url: https://docs.google.com/document/d/1fj3yzmeU2eU8ZNBCUJG97dk_wC7228-e_MmdcmTNrZY/edit#
+    meeting_recordings_url: https://www.youtube.com/watch?v=DJDuDNALcMo&list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
     contact:
       slack: wg-multitenancy
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy

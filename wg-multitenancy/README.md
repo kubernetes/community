@@ -8,7 +8,10 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 -->
 # Multitenancy Working Group
 
-Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
+Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments. Charter can be found [here](https://docs.google.com/document/d/1SkVdOPR4jozYDT8ro51hU3yrf1sHS8Gez73xM3PCsVo/edit#)
+
+## Meetings
+* : [Wednesdays at 19:00 UTC]() (biweekly, opposite weeks of sig-auth). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC).
 
 ## Organizers
 * David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google
