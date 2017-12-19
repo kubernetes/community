@@ -58,7 +58,6 @@ See the KEP process for details on each of these items.
 A table of contents is helpful for quickly jumping to sections of a KEP and for highlighting any additional information provided beyond the standard KEP template.
 [Tools for generating][] a table of contents from markdown are available.
 
-
 * [Table of Contents](#table-of-contents)
 * [Summary](#summary)
 * [Motivation](#motivation)
@@ -69,12 +68,11 @@ A table of contents is helpful for quickly jumping to sections of a KEP and for 
       * [Story 1](#story-1)
       * [Story 2](#story-2)
     * [Implementation Details/Notes/Constraints [optional]](#implementation-detailsnotesconstraints-optional)
-    * [Security Considerations](#security-considerations)
+    * [Risks and Mitigations](#risks-and-mitigations)
 * [Graduation Criteria](#graduation-criteria)
 * [Implementation History](#implementation-history)
 * [Drawbacks [optional]](#drawbacks-optional)
 * [Alternatives [optional]](#alternatives-optional)
-
 
 [Tools for generating]: https://github.com/ekalinin/github-markdown-toc
 
@@ -125,9 +123,11 @@ What are some important details that didn't come across above.
 Go in to as much detail as necessary here.
 This might be a good place to talk about core concepts and how they releate.
 
-### Security Considerations
+### Risks and Mitigations
 
-Make sure that you consider the impact of this feature from the point of view of Security.
+What are the risks of this proposal and how do we mitigate.
+Think broadly.
+For example, consider both security security and how this will impact the larger kubernetes ecosystem.
 
 ## Graduation Criteria
 
