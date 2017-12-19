@@ -4,7 +4,7 @@ Status: Pending
 
 Version: N/A
 
-Implementation Owner: TBD
+Implementation Owners: @totherme @hoegaarden and @apelisse
 
 ## Motivation: Why do we need a new repo?
 
@@ -47,7 +47,12 @@ for example `k8s.io/test-frameworks`.
 
 The consensus in [this email
 thread](https://groups.google.com/a/kubernetes.io/d/msg/steering/LA9WiFnl6PI/os48-c3HCgAJ)
-seems to be that sig-testing are the natural owners.
+seems to be that in the context of SIGs needing to own all things, sig-testing
+are the natural owners.
+
+In the context of day-to-day looking after the integration test framework which
+would initially live in this repo: @apelisse, @totherme, and @hoegaarden are
+currently doing this in the kubectl repo, and are happy to keep doing so here.
 
 ## Alternatives considered
 
