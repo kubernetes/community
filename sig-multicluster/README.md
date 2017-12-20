@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 -->
 # Multicluster SIG
 
-Covers multi-cluster Kubernetes use cases and tooling. This includes: application resiliency against availability zone outages; hybrid clouds; spanning of multiple could providers; application migration from private to public clouds (and vice versa); and other similar subjects. This SIG was formerly called sig-federation and focused on the Federation project, but expanded its charter to all multi-cluster concerns in August 2017.
+A Special Interest Group focussed on solving common challenges related to the  management of multiple Kubernetes clusters, and applications that exist therein. The SIG will be responsible for designing, discussing, implementing and maintaining  API’s, tools and documentation related to multi-cluster administration and application  management. This includes not only active automated approaches such as Cluster  Federation, but also those that employ batch workflow-style continuous deployment  systems like Spinnaker and others.  Standalone building blocks for these and other  similar systems (for example a cluster registry), and proposed changes to kubernetes  core where appropriate will also be in scope.
 
 ## Meetings
 * [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/my/k8s.mc) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
