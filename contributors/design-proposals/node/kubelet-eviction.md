@@ -214,7 +214,7 @@ Therefore, no memory pressure.  This will occur as long as memory.total_inactive
 
 ### Proposed solutions:
 1. Set the cgroup event at `threshold*fraction`.
-For example, if `--eviction-hard=memory.available<200Mi`, use `fraction=1/2` set the cgroup event at `100Mi`.
+For example, if `--eviction-hard=memory.available<200Mi`, use `fraction=1/2` and set the cgroup event at `100Mi` (`200Mi*1/2`).
 This way, when the eviction manager is triggered, it will likely observe memory pressure.
 This is not guaranteed to always work, but should prevent OOMs in most cases, and is simple to implement.
 
