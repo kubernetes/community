@@ -38,5 +38,5 @@ Note that the links to display team membership will only work if you are a membe
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Participate
-Get more Informations how to participate in this community. ([Contribution guidelines for this project](CONTRIBUTING.md))
+For information on how to participate in this community, read our [contribution guidelines](CONTRIBUTING.md).
 <!-- END CUSTOM CONTENT -->
