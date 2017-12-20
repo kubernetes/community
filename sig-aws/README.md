@@ -37,5 +37,6 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-aws-misc | [link](https://github.com/orgs/kubernetes/teams/sig-aws-misc) | General Discussion |
 
 <!-- BEGIN CUSTOM CONTENT -->
-
+## Participate
+For information on how to participate in this community, read our [contribution guidelines](CONTRIBUTING.md).
 <!-- END CUSTOM CONTENT -->
