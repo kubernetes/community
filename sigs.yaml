@@ -1050,9 +1050,9 @@ sigs:
       time: "13:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-    meeting_url: https://zoom.us/j/2419653117
-    meeting_archive_url: https://docs.google.com/document/d/1z8MQpr_jTwhmjLMUaqQyBk1EYG_Y_3D4y4YdMJ7V1Kk
-    meeting_recordings_url: https://www.youtube.com/watch?v=BbFjuxe3N4w&list=PL69nYSiGNLP0ofY51bEooJ4TKuQtUSizR
+    meeting_url: https://zoom.us/my/k8s.sig.testing
+    meeting_archive_url: https://bit.ly/k8s-sig-testing-notes
+    meeting_recordings_url: https://bit.ly/k8s-sig-testing-videos
     contact:
       slack: sig-testing
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-testing
