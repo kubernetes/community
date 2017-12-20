@@ -214,15 +214,15 @@ Therefore, no memory pressure.  This will occur as long as memory.total_inactive
 
 ### Proposed solutions:
 1. Set the cgroup event at `threshold*fraction`.
-For example, if `--eviction-hard=memory.available<200Mi`, set the cgroup event at `100Mi`.
+For example, if `--eviction-hard=memory.available<200Mi`, use `fraction=1/2` set the cgroup event at `100Mi`.
 This way, when the eviction manager is triggered, it will likely observe memory pressure.
-This is not guaranteed to always work, but should prevent OOMs in most cases.
+This is not guaranteed to always work, but should prevent OOMs in most cases, and is simple to implement.
 
-2. Use Usage instead of Working Set to determine memory pressure
+~~2. Use Usage instead of Working Set to determine memory pressure
 This would mean that the eviction manager and cgroup notifications use the same metric,
 and thus the response is ideal: the eviction manager is triggered exactly when memory pressure occurs.
 However, the eviction manager may often evict unneccessarily if there are large quantities of memory
-the kernel has not yet reclaimed.
+the kernel has not yet reclaimed.~~
 
 3. Increase the syncloop interval after the threshold is crossed
 For example, the eviction manager could start collecting observations every second instead of every
