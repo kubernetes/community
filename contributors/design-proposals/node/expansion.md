@@ -381,7 +381,7 @@ metadata:
 spec:
   containers:
     - name: test-container
-      image: gcr.io/google_containers/busybox
+      image: k8s.gcr.io/busybox
       command: [ "/bin/sh", "-c", "env" ]
       env:
         - name: PUBLIC_URL
@@ -399,7 +399,7 @@ metadata:
 spec:
   containers:
     - name: test-container
-      image: gcr.io/google_containers/busybox
+      image: k8s.gcr.io/busybox
       command: [ "/bin/sh", "-c", "env" ]
       env:
         - name: POD_NAMESPACE

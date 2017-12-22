@@ -461,7 +461,7 @@ spec:
     spec:
       containers:
       - name: provisioner
-        image: "gcr.io/google_containers/local-storage-provisioner:v1.0"
+        image: "k8s.gcr.io/local-storage-provisioner:v1.0"
         imagePullPolicy: Always
         volumeMounts:
         - name: vol1

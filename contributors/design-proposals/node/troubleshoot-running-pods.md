@@ -569,7 +569,7 @@ application image is constructed. When someone asks for help, Roy's first step
 is to run his team's autodiagnose script:
 
 ```
-% kubectl debug --image=gcr.io/google_containers/autodiagnose nginx-pod-1234
+% kubectl debug --image=k8s.gcr.io/autodiagnose nginx-pod-1234
 ```
 
 ### Appendix 2: Requirements Analysis

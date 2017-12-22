@@ -30,7 +30,7 @@ running the Kubelet intentionally is using a chroot and is neither a container n
 The kubelet chroot will essentially operate as follows:
 
 ```
-container-download-and-extract gcr.io/google_containers/hyperkube:v1.4.0 /path/to/chroot
+container-download-and-extract k8s.gcr.io/hyperkube:v1.4.0 /path/to/chroot
 mount --make-shared /var/lib/kubelet
 mount --rbind /var/lib/kubelet /path/to/chroot/var/lib/kubelet
 # And many more mounts, omitted
@@ -65,7 +65,7 @@ This work will also only initially target the GCE provider and `kube-up` method 
 
 #### Hyperkube Image Packaging
 
-The Hyperkube image is distributed as part of an official release to the `gcr.io/google_containers` registry, but is not included along with the `kube-up` artifacts used for deployment.
+The Hyperkube image is distributed as part of an official release to the `k8s.gcr.io` registry, but is not included along with the `kube-up` artifacts used for deployment.
 
 This will need to be remediated in order to complete this proposal.
 

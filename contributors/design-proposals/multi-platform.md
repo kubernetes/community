@@ -121,7 +121,7 @@ For reference see [docker/docker#24739](https://github.com/docker/docker/issues/
 
 This has been debated quite a lot about; how we should name non-amd64 docker images that are pushed to `gcr.io`. See [#23059](https://github.com/kubernetes/kubernetes/pull/23059) and [#23009](https://github.com/kubernetes/kubernetes/pull/23009).
 
-This means that the naming `gcr.io/google_containers/${binary}:${version}` should contain a _manifest list_ for future tags.
+This means that the naming `k8s.gcr.io/${binary}:${version}` should contain a _manifest list_ for future tags.
 The manifest list thereby becomes a wrapper that is pointing to the `-${arch}` images.
 This requires `docker-1.10` or newer, which probably means Kubernetes v1.4 and higher.
 
@@ -471,7 +471,7 @@ CMD ["/usr/local/bin/kube-apiserver"]
 ```console
 $ file kube-apiserver
 kube-apiserver: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, not stripped
-$ docker build -t gcr.io/google_containers/kube-apiserver-arm:v1.x.y .
+$ docker build -t k8s.gcr.io/kube-apiserver-arm:v1.x.y .
 Step 1 : FROM armel/busybox
  ---> 9bb1e6d4f824
 Step 2 : ENV kubernetes true
