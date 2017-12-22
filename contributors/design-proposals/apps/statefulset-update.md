@@ -479,7 +479,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: gcr.io/google_containers/nginx-slim:0.8
+        image: k8s.gcr.io/nginx-slim:0.8
         ports:
         - containerPort: 80
           name: web
@@ -530,7 +530,7 @@ spec:
         type: RollingUpdate
       containers:
       - name: nginx
-        image: gcr.io/google_containers/nginx-slim:0.9
+        image: k8s.gcr.io/nginx-slim:0.9
         ports:
         - containerPort: 80
           name: web
@@ -582,7 +582,7 @@ spec:
           ordinal: 2
       containers:
       - name: nginx
-        image: gcr.io/google_containers/nginx-slim:0.9
+        image: k8s.gcr.io/nginx-slim:0.9
         ports:
         - containerPort: 80
           name: web
@@ -626,7 +626,7 @@ spec:
           ordinal: 3
       containers:
       - name: nginx
-        image: gcr.io/google_containers/nginx-slim:0.9
+        image: k8s.gcr.io/nginx-slim:0.9
         ports:
         - containerPort: 80
           name: web
@@ -670,7 +670,7 @@ spec:
           ordinal: 2
       containers:
       - name: nginx
-        image: gcr.io/google_containers/nginx-slim:0.9
+        image: k8s.gcr.io/nginx-slim:0.9
         ports:
         - containerPort: 80
           name: web
@@ -714,7 +714,7 @@ spec:
           ordinal: 1
       containers:
       - name: nginx
-        image: gcr.io/google_containers/nginx-slim:0.9
+        image: k8s.gcr.io/nginx-slim:0.9
         ports:
         - containerPort: 80
           name: web
