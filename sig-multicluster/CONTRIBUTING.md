@@ -56,7 +56,7 @@ New contributors can try the following to work on an existing bug or approved de
 1. An [issue] is filed that
   - includes steps to reproduce the issue including client / server version,
   - mentions `@kubernetes/sig-multicluster-bugs`.
-  
+
 #### Sending a fix
 
 2. A [PR] fixing the issue is implemented that
@@ -280,7 +280,7 @@ See the sig-multicluster [community page] for points of contact and meeting time
 [feature]: https://github.com/kubernetes/features
 [group]: https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster
 [issue]: https://github.com/kubernetes/kubernetes/issues
-[multicluster_help_wanted_issues]: https://github.com/kubernetes/kubernetes/issues?utf8=%E2%9C%93&q=is%3Aopen%20is%3Aissue%20label%3Ahelp-wanted%20label%3Asig%2Fmulticluster
+[multicluster_help_wanted_issues]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A"help+wanted"+label%3Asig%2Fmulticluster
 [kubectl concept docs]: https://github.com/kubernetes/kubernetes.github.io/tree/master/docs/concepts/tools/kubectl
 [kubectl docs]: https://kubernetes.io/docs/user-guide/kubectl-overview
 [kubernetes/cmd/kubectl]: https://github.com/kubernetes/kubernetes/tree/master/cmd/kubectl

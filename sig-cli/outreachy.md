@@ -1,6 +1,6 @@
 # Outreachy
 
-Kubernetes, specifically the SIG-CLI, is happy to announce our participation in the Outreachy program, running from December 2017 to March 2018. 
+Kubernetes, specifically the SIG-CLI, is happy to announce our participation in the Outreachy program, running from December 2017 to March 2018.
 Please see the [main program page](https://www.outreachy.org/) for the general information about the program,
 such as its purpose, timeline, eligibility requirements, and how to apply.
 
@@ -37,9 +37,9 @@ Similar to contacting the coordinators, the mentors can be contacted at any time
 As part of the application process, the Outreachy program recommends that candidates make small contributions to the project they intend to apply for.
 To start working on the project, make sure to fill out the CLA and check if you have the right environment with this guide. The README in the [community repo](https://github.com/kubernetes/community) details these things and more.
 
-Check out these specific resources for how to contribute to CLI: 
+Check out these specific resources for how to contribute to CLI:
 * SIG-CLI - [How to Contribute](https://github.com/kubernetes/community/blob/master/sig-cli/CONTRIBUTING.md)
-* Filter issue search for: `is:open is:issue label:sig/cli label:help-wanted` (or `label:for-new-contributors`)  
+* Filter issue search for: `is:open is:issue label:sig/cli label:"help wanted"`
 * Hand picked issues for outreachy applications: https://github.com/kubernetes/kubectl/projects/3
 
 ## Available tasks

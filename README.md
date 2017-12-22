@@ -14,15 +14,15 @@ For more specific topics, try a SIG.
 ## SIGs
 
 Kubernetes is a set of projects, each shepherded by a special interest group (SIG).
- 
+
 A first step to contributing is to pick from the [list of kubernetes SIGs](sig-list.md).
 
-A SIG can have its own policy for contribution, 
+A SIG can have its own policy for contribution,
 described in a `README` or `CONTRIBUTING` file in the SIG
 folder in this repo (e.g. [sig-cli/CONTRIBUTING](sig-cli/CONTRIBUTING.md)),
 and its own mailing list, slack channel, etc.
 
-If you want to edit details about a SIG (e.g. its weekly meeting time or its leads), 
+If you want to edit details about a SIG (e.g. its weekly meeting time or its leads),
 please follow [these instructions](./generator) that detail how our docs are auto-generated.
 
 ## How Can I Help?
@@ -31,7 +31,7 @@ Documentation (like the text you are reading now) can
 always use improvement!
 
 There's a [semi-curated list of issues][help wanted]
-that should not need deep knowledge of the system. 
+that should not need deep knowledge of the system.
 
 To dig deeper, read a design doc, e.g. [architecture].
 
@@ -55,14 +55,14 @@ lead to many relevant topics, including
 ## Your First Contribution
 
 We recommend that you work on an existing issue before attempting
-to [develop a new feature]. 
+to [develop a new feature].
 
-Start by finding an existing issue with the [help wanted] label; 
+Start by finding an existing issue with the [help wanted] label;
 these issues we've deemed are well suited for new contributors.
-Alternatively, if there is a specific area you are interested in, 
+Alternatively, if there is a specific area you are interested in,
 ask a [SIG lead](sig-list.md) for suggestions), and respond on the
-issue thread expressing interest in working on it. 
- 
+issue thread expressing interest in working on it.
+
 This helps other people know that the issue is active, and
 hopefully prevents duplicated efforts.
 
@@ -85,8 +85,7 @@ If you want to work on a new idea of relatively small scope:
 [Developer's Guide]: contributors/devel/development.md
 [develop a new feature]: https://github.com/kubernetes/features
 [expectations]: contributors/devel/community-expectations.md
-[help wanted]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22help%20wanted%22
+[help wanted]: https://go.k8s.io/help-wanted
 [pull request]: contributors/devel/pull-requests.md
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/CONTRIBUTING.md?pixel)]()
-
