@@ -111,7 +111,7 @@ SIGs also have their own CONTRIBUTING.md files, which may contain extra informat
 
 Like everything else in Kubernetes, a SIG is an open, community, effort. Anybody is welcome to jump into a SIG and begin fixing issues, critiquing design proposals and reviewing code. SIGs have regular [video meetings](https://kubernetes.io/community/) which everyone is welcome to. Each SIG has a kubernetes slack channel that you can join as well.
 
-There is an entire SIG ([sig-contributor-experience](../../sig-contributor-experience/README.md)) devoted to improving your experience as a contributor.
+There is an entire SIG ([sig-contributor-experience](/sig-contributor-experience/README.md)) devoted to improving your experience as a contributor.
 Contributing to Kubernetes should be easy. If you find a rough edge, let us know! Better yet, help us fix it by joining the SIG; just
 show up to one of the [bi-weekly meetings](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit).
 
