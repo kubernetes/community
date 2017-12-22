@@ -2,7 +2,7 @@
 
 `kubectl` is the Kubernetes CLI.
 
-If you'd like to contribute, please read the [conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/kubectl-conventions.md) and familiarize yourself with [existing commands](http://kubernetes.io/docs/user-guide/kubectl-overview/).
+If you'd like to contribute, please read the [conventions](/contributors/devel/kubectl-conventions.md) and familiarize yourself with [existing commands](http://kubernetes.io/docs/user-guide/kubectl-overview/).
 
 **Owner:** @kubernetes/kubectl
 
@@ -30,28 +30,28 @@ If you'd like to contribute, please read the [conventions](https://github.com/ku
   * [Make `kubectl run --restart=Never` creates Pods (instead of Jobs)](https://github.com/kubernetes/kubernetes/issues/24533)
 * Create commands/flags for common get + template patterns (e.g. getting service IP address)
 * [Implement `kubectl cp`](https://github.com/kubernetes/kubernetes/issues/13776) to copy files between containers and local for debugging
-* `kubectl rollout` 
+* `kubectl rollout`
   * [Add `kubectl rollout start` to show how to start a rollout](https://github.com/kubernetes/kubernetes/issues/25142)
   * [Add `kubectl rollout status`](https://github.com/kubernetes/kubernetes/issues/25235)
 * Scripting support
   * [wait](https://github.com/kubernetes/kubernetes/issues/1899)
   * [watch / IFTTT](https://github.com/kubernetes/kubernetes/issues/5164)
-* [Add `kubectl top`](https://github.com/kubernetes/kubernetes/issues/11382) which lists resource metrics. 
+* [Add `kubectl top`](https://github.com/kubernetes/kubernetes/issues/11382) which lists resource metrics.
 
 ### Alternative interfaces
 
 * Create a terminal based console, ref [docker console](https://github.com/dustinlacewell/console) ([video](https://www.youtube.com/watch?v=wSzZxbDYgtY))
 * [Add `kubectl sh`, an interactive shell](https://github.com/kubernetes/kubernetes/issues/25385), or make a kubectlshell in contrib and make bash completion part of it (ref [pythonshell](https://gist.github.com/bprashanth/9a3c8dfbba443698ddd960b8087107bf))
-* Think about how/whether to invoke generation commands such as `kubectl run` or `kubectl create configmap` in bulk, declaratively, such as part of the `apply` flow. 
+* Think about how/whether to invoke generation commands such as `kubectl run` or `kubectl create configmap` in bulk, declaratively, such as part of the `apply` flow.
 * [ChatOps](https://www.pagerduty.com/blog/what-is-chatops/) bot -- such as [kubebot](https://github.com/harbur/kubebot) (add to tools documentation)
 
-### Improve help / error messages / output 
+### Improve help / error messages / output
 * Make kubectl functionality more discoverable
   * [Overhaul kubectl help](https://github.com/kubernetes/kubernetes/issues/16089)
     * ~~[Print "Usage" at the bottom](https://github.com/kubernetes/kubernetes/issues/7496)~~
-    * Add keywords (critical words) to help 
-    * List valid resources for each command 
-    * Make short description of each command more concrete; use the same language for each command 
+    * Add keywords (critical words) to help
+    * List valid resources for each command
+    * Make short description of each command more concrete; use the same language for each command
     * Link to docs ([kubernetes.io/docs](http://kubernetes.io/docs))
     * [Update `kubectl help` descriptions and examples from docs](https://github.com/kubernetes/kubernetes/issues/25290)
     * Embed formatting and post-process for different media (terminal, man, github, etc.)
@@ -96,7 +96,7 @@ If you'd like to contribute, please read the [conventions](https://github.com/ku
 ### Installation / Release
 * `gcloud` should enable kubectl bash completion when installing `kubectl`
 * [Pipe-to-sh to install kubectl](https://github.com/kubernetes/kubernetes/issues/25386)
-* [Static build of kubectl for containers](https://github.com/kubernetes/kubernetes/issues/23708) ([we have it](https://github.com/kubernetes/kubernetes/tree/master/examples/kubectl-container), but it's not part of the release)
+* [Static build of kubectl for containers](https://github.com/kubernetes/kubernetes/issues/23708) ([we have it](https://git.k8s.io/kubernetes/examples/kubectl-container), but it's not part of the release)
 
 ### Others
 * [Move functionality to server](https://github.com/kubernetes/kubernetes/issues/12143)

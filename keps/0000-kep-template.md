@@ -47,7 +47,7 @@ To get started with this template:
   If you disagree with what is already in a document, open a new PR with suggested changes.
 * As a KEP is approved, rename the file yet again with the final KEP number.
 
-The canonical place for the latest set of instructions (and the likely source of this file) is [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/0000-kep-template.md).
+The canonical place for the latest set of instructions (and the likely source of this file) is [here](/contributors/design-proposals/architecture/0000-kep-template.md).
 
 The `Metadata` section above is intended to support the creation of tooling around the KEP process.
 This will be a YAML section that is fenced as a code block.

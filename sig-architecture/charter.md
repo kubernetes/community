@@ -21,7 +21,7 @@ Specific areas of focus include:
 * Establishing and documenting design principles
   * [Design principles](../contributors/design-proposals/architecture/principles.md)
 * Establishing and documenting conventions for system and user-facing APIs
-  * [API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md)
+  * [API conventions](/contributors/devel/api-conventions.md)
 * Developing necessary technical review processes, such as the proposal and API review processes
 * Driving improvement of overall code organization, including github orgs and repositories
 * Educating approvers/owners of other SIGs (e.g., by holding office hours)
@@ -29,7 +29,7 @@ Specific areas of focus include:
 Out of scope:
 * Issues specific to a particular component or functional area, which would be the purview
   of some other SIG, except where they deviate from project-wide principles and conventions.
-* [Release support policy](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/release/versioning.md)
+* [Release support policy](/contributors/design-proposals/release/versioning.md)
   is owned by SIG Release
 
 TODO:

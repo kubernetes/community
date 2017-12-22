@@ -5,7 +5,7 @@ Resource Metrics API is an effort to provide a first-class Kubernetes API
 (stable, versioned, discoverable, available through apiserver and with client support)
 that serves resource usage metrics for pods and nodes. The use cases were discussed
 and the API was proposed a while ago in
-[another proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/resource-metrics-api.md).
+[another proposal](/contributors/design-proposals/instrumentation/resource-metrics-api.md).
 This document describes the architecture and the design of the second part of this effort:
 making the mentioned API available in the same way as the other Kubernetes APIs.
 
@@ -43,18 +43,18 @@ Previously metrics server was blocked on this dependency.
 
 ### Design ###
 Metrics server will be implemented in line with
-[Kubernetes monitoring architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/monitoring_architecture.md)
+[Kubernetes monitoring architecture](/contributors/design-proposals/instrumentation/monitoring_architecture.md)
 and inspired by [Heapster](https://github.com/kubernetes/heapster).
 It will be a cluster level component which periodically scrapes metrics from all Kubernetes nodes
 served by Kubelet through Summary API. Then metrics will be aggregated, 
 stored in memory (see Scalability limitations) and served in
-[Metrics API](https://github.com/kubernetes/metrics/blob/master/pkg/apis/metrics/v1alpha1/types.go) format.
+[Metrics API](https://git.k8s.io/metrics/pkg/apis/metrics/v1alpha1/types.go) format.
  
 Metrics server will use apiserver library to implement http server functionality.
 The library offers common Kubernetes functionality like authorization/authentication,
 versioning, support for auto-generated client. To store data in memory we will replace
 the default storage layer (etcd) by introducing in-memory store which will implement
-[Storage interface](https://github.com/kubernetes/apiserver/blob/master/pkg/registry/rest/rest.go).
+[Storage interface](https://git.k8s.io/apiserver/pkg/registry/rest/rest.go).
  
 Only the most recent value of each metric will be remembered. If a user needs an access
 to historical data they should either use 3rd party monitoring solution or
@@ -71,13 +71,13 @@ due to security reasons (our policy allows only connection in the opposite direc
  
 There will be only one instance of metrics server running in each cluster. In order to handle
 high metrics volume, metrics server will be vertically autoscaled by
-[addon-resizer](https://github.com/kubernetes/contrib/tree/master/addon-resizer).
+[addon-resizer](https://git.k8s.io/contrib/addon-resizer).
 We will measure its resource usage characteristic. Our experience from profiling Heapster shows
 that it scales vertically effectively. If we hit performance limits we will consider scaling it 
 horizontally, though it’s rather complicated and is out of the scope of this doc.
  
 Metrics server will be Kubernetes addon, create by kube-up script and managed by
-[addon-manager](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/addon-manager).
+[addon-manager](https://git.k8s.io/kubernetes/cluster/addons/addon-manager).
 Since there is a number of dependant components, it will be marked as a critical addon.
 In the future when the priority/preemption feature is introduced we will migrate to use this
 proper mechanism for marking it as a high-priority, system component.

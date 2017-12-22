@@ -413,12 +413,12 @@ See the sig-cli [community page] for points of contact and meeting times:
 [`PTAL`]: https://en.wiktionary.org/wiki/PTAL
 [agenda]: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit
 [bug]: #bug-lifecycle
-[communication]:  https://github.com/kubernetes/community/tree/master/sig-cli#contact
-[community page]: https://github.com/kubernetes/community/tree/master/sig-cli
+[communication]:  /sig-cli#contact
+[community page]: /sig-cli
 [design proposal]: #design-proposals
-[design repo]: https://github.com/kubernetes/community/tree/master/contributors/design-proposals/cli
-[design template]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/Design_Proposal_TEMPLATE.md
-[development guide]: https://github.com/kubernetes/community/blob/master/contributors/devel/development.md
+[design repo]: /contributors/design-proposals/cli
+[design template]: /contributors/design-proposals/Design_Proposal_TEMPLATE.md
+[development guide]: /contributors/devel/development.md
 [existing issue]: #adopt-an-issue
 [feature repo]: https://github.com/kubernetes/features
 [feature request]: #feature-requests
@@ -426,14 +426,14 @@ See the sig-cli [community page] for points of contact and meeting times:
 [group]: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
 [issue]: https://github.com/kubernetes/kubectl/projects/3
 [kubectl docs]: https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/
-[kubernetes/cmd/kubectl]: https://github.com/kubernetes/kubernetes/tree/master/cmd/kubectl
-[kubernetes/pkg/kubectl]: https://github.com/kubernetes/kubernetes/tree/master/pkg/kubectl
-[leads]: https://github.com/kubernetes/community/tree/master/sig-cli#leads
+[kubernetes/cmd/kubectl]: https://git.k8s.io/kubernetes/cmd/kubectl
+[kubernetes/pkg/kubectl]: https://git.k8s.io/kubernetes/pkg/kubectl
+[leads]: /sig-cli#leads
 [management overview]: https://kubernetes.io/docs/concepts/tools/kubectl/object-management-overview
-[meeting]: https://github.com/kubernetes/community/tree/master/sig-cli#meetings
+[meeting]: /sig-cli#meetings
 [release]: #release
 [slack-messages]: https://kubernetes.slack.com/messages/sig-cli
 [slack-signup]: http://slack.k8s.io/
-[tests]: https://github.com/kubernetes/community/blob/master/contributors/devel/testing.md
+[tests]: /contributors/devel/testing.md
 [cli mentors]: https://groups.google.com/a/google.com/forum/#!forum/kubernetes-sig-cli-mentors
 [about me form]: https://docs.google.com/forms/d/1ID6DX1abiDr9Z9_sXXC0DsMwuyHb_NeFdB3xeRa4Vf0

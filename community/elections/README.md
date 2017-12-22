@@ -1,6 +1,6 @@
 ## Kubernetes Elections 
 
-This document will outline how to conduct a Kubernetes Steering Committee Election. See the [Steering Committee Charter](https://github.com/kubernetes/steering/blob/master/charter.md) for more information of how the committee decides when to have an election, the method, and the maximal representation. 
+This document will outline how to conduct a Kubernetes Steering Committee Election. See the [Steering Committee Charter](https://git.k8s.io/steering/charter.md) for more information of how the committee decides when to have an election, the method, and the maximal representation. 
 
 ## Steering Committee chooses Election Deadlines and Officers
 

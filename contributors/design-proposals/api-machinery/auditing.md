@@ -94,7 +94,7 @@ In the following, the second approach is described without a proxy.  At which po
 1. as one of the REST handlers (as in [#27087](https://github.com/kubernetes/kubernetes/pull/27087)),
 2. as an admission controller.
 
-The former approach (currently implemented) was picked over the other one, due to the need to be able to get information about both the user submitting the request and the impersonated user (and group), which is being overridden inside the [impersonation filter](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/endpoints/filters/impersonation.go).  Additionally admission controller does not have access to the response and runs after authorization which will prevent logging failed authorization.  All of that resulted in continuing the solution started in [#27087](https://github.com/kubernetes/kubernetes/pull/27087), which implements auditing as one of the REST handlers
+The former approach (currently implemented) was picked over the other one, due to the need to be able to get information about both the user submitting the request and the impersonated user (and group), which is being overridden inside the [impersonation filter](https://git.k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/endpoints/filters/impersonation.go).  Additionally admission controller does not have access to the response and runs after authorization which will prevent logging failed authorization.  All of that resulted in continuing the solution started in [#27087](https://github.com/kubernetes/kubernetes/pull/27087), which implements auditing as one of the REST handlers
 after authentication, but before impersonation and authorization.
 
 ## Proposed Design

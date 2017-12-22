@@ -229,7 +229,7 @@ TODO: Determine if this role is outdated and needs to be redefined or merged int
 - Primary reviewer for 20 substantial PRs
 - Reviewed or merged at least 50 PRs
 - Apply to [`kubernetes-maintainers`](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers), with:
-  - A [Champion](https://github.com/kubernetes/community/blob/master/incubator.md#faq) from the existing
+  - A [Champion](/incubator.md#faq) from the existing
     kubernetes-maintainers members
   - A Sponsor from Project Approvers
   - Summary of contributions to the project

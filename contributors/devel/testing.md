@@ -159,7 +159,7 @@ See `go help test` and `go help testflag` for additional info.
 is [table driven testing](https://github.com/golang/go/wiki/TableDrivenTests)
   - Example: [TestNamespaceAuthorization](https://git.k8s.io/kubernetes/test/integration/auth/auth_test.go)
 * Each test should create its own master, httpserver and config.
-  - Example: [TestPodUpdateActiveDeadlineSeconds](https://github.com/kubernetes/kubernetes/blob/master/test/integration/pods/pods_test.go)
+  - Example: [TestPodUpdateActiveDeadlineSeconds](https://git.k8s.io/kubernetes/test/integration/pods/pods_test.go)
 * See [coding conventions](coding-conventions.md).
 
 ### Install etcd dependency
@@ -201,7 +201,7 @@ make test-integration  # Run all integration tests.
 ```
 
 This script runs the golang tests in package
-[`test/integration`](https://github.com/kubernetes/kubernetes/tree/master/test/integration).
+[`test/integration`](https://git.k8s.io/kubernetes/test/integration).
 
 ### Run a specific integration test
 

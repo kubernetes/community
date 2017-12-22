@@ -146,7 +146,7 @@ go run hack/e2e.go -- -v --down
 
 The logic in `e2e.go` moved out of the main kubernetes repo to test-infra.
 The remaining code in `hack/e2e.go` installs `kubetest` and sends it flags.
-It now lives in [kubernetes/test-infra/kubetest](https://github.com/kubernetes/test-infra/tree/master/kubetest).
+It now lives in [kubernetes/test-infra/kubetest](https://git.k8s.io/test-infra/kubetest).
 By default `hack/e2e.go` updates and installs `kubetest` once per day.
 Control the updater behavior with the `--get` and `--old` flags:
 The `--` flag separates updater and kubetest flags (kubetest flags on the right).
@@ -446,7 +446,7 @@ similarly enough to older versions.  The general strategy is to cover the follow
    same version (e.g. a cluster upgraded to v1.3 passes the same v1.3 tests as
    a newly-created v1.3 cluster).
 
-[hack/e2e-runner.sh](https://github.com/kubernetes/test-infra/blob/master/jenkins/e2e-image/e2e-runner.sh) is
+[hack/e2e-runner.sh](https://git.k8s.io/test-infra/jenkins/e2e-image/e2e-runner.sh) is
 the authoritative source on how to run version-skewed tests, but below is a
 quick-and-dirty tutorial.
 
@@ -569,7 +569,7 @@ breaking changes, it does *not* block the merge-queue, and thus should run in
 some separate test suites owned by the feature owner(s)
 (see [Continuous Integration](#continuous-integration) below).
 
-Every test should be owned by a [SIG](https://github.com/kubernetes/community/blob/master/sig-list.md),
+Every test should be owned by a [SIG](/sig-list.md),
 and have a corresponding `[sig-<name>]` label.
 
 ### Viper configuration and hierarchichal test parameters.
@@ -582,7 +582,7 @@ To use viper, rather than flags, to configure your tests:
 
 - Just add "e2e.json" to the current directory you are in, and define parameters in it... i.e. `"kubeconfig":"/tmp/x"`.
 
-Note that advanced testing parameters, and hierarchichally defined parameters, are only defined in viper, to see what they are, you can dive into [TestContextType](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/framework/test_context.go).
+Note that advanced testing parameters, and hierarchichally defined parameters, are only defined in viper, to see what they are, you can dive into [TestContextType](https://git.k8s.io/kubernetes/test/e2e/framework/test_context.go).
 
 In time, it is our intent to add or autogenerate a sample viper configuration that includes all e2e parameters, to ship with kubernetes.
 
@@ -656,7 +656,7 @@ A quick overview of how we run e2e CI on Kubernetes.
 We run a battery of `e2e` tests against `HEAD` of the master branch on a
 continuous basis, and block merges via the [submit
 queue](http://submit-queue.k8s.io/) on a subset of those tests if they fail (the
-subset is defined in the [munger config](https://github.com/kubernetes/test-infra/tree/master/mungegithub/mungers/submit-queue.go)
+subset is defined in the [munger config](https://git.k8s.io/test-infra/mungegithub/mungers/submit-queue.go)
 via the `jenkins-jobs` flag; note we also block on	`kubernetes-build` and
 `kubernetes-test-go` jobs for build and unit and integration tests).
 
@@ -732,7 +732,7 @@ label, and will be incorporated into our core suites. If tests are not expected
 to pass by default, (e.g. they require a special environment such as added
 quota,) they should remain with the `[Feature:.+]` label, and the suites that
 run them should be incorporated into the
-[munger config](https://github.com/kubernetes/test-infra/tree/master/mungegithub/mungers/submit-queue.go)
+[munger config](https://git.k8s.io/test-infra/mungegithub/mungers/submit-queue.go)
 via the `jenkins-jobs` flag.
 
 Occasionally, we'll want to add tests to better exercise features that are

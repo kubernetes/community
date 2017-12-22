@@ -34,7 +34,7 @@ Carrying forward the examples from above...
 
 ## Design
 
-The proposed design uses a ClusterSelector annotation that has a value that is parsed into a struct definition that follows the same design as the [NodeSelector type used w/ nodeAffinity](https://github.com/kubernetes/kubernetes/blob/master/pkg/api/types.go#L1972) and will also use the [Matches function](https://github.com/kubernetes/apimachinery/blob/master/pkg/labels/selector.go#L172) of the apimachinery project to determine if an object should be sent on to federated clusters or not.
+The proposed design uses a ClusterSelector annotation that has a value that is parsed into a struct definition that follows the same design as the [NodeSelector type used w/ nodeAffinity](https://git.k8s.io/kubernetes/pkg/api/types.go#L1972) and will also use the [Matches function](https://git.k8s.io/apimachinery/pkg/labels/selector.go#L172) of the apimachinery project to determine if an object should be sent on to federated clusters or not.
 
 In situations where objects are not to be forwarded to federated clusters, instead a delete api call will be made using the object definition. If the object does not exist it will be ignored.
 

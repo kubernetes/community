@@ -16,7 +16,7 @@ of OWNERS files
 ## OWNERS spec
 
 The [mungegithub gitrepos
-feature](https://github.com/kubernetes/test-infra/blob/master/mungegithub/features/repo-updates.go)
+feature](https://git.k8s.io/test-infra/mungegithub/features/repo-updates.go)
 is the main consumer of OWNERS files.  If this page is out of date, look there.
 
 Each directory that contains a unit of independent code or content may also contain an OWNERS file.
@@ -72,7 +72,7 @@ GitHub usernames and aliases listed in OWNERS files are case-insensitive.
 ## Code Review Process
 
 This is a simplified description of our [full PR testing and merge
-workflow](https://github.com/kubernetes/community/blob/master/contributors/devel/pull-requests.md#the-testing-and-merge-workflow)
+workflow](/contributors/devel/pull-requests.md#the-testing-and-merge-workflow)
 that conveniently forgets about the existence of tests, to focus solely on the roles driven by
 OWNERS files.
 
@@ -158,13 +158,13 @@ is the state of today.
 
 ## Implementation
 
-### [`mungegithub`](https://github.com/kubernetes/test-infra/tree/master/mungegithub)
+### [`mungegithub`](https://git.k8s.io/test-infra/mungegithub)
 
 Mungegithub polls GitHub, and "munges" things it finds, including issues and pull requests. It is
 stateful, in that restarting it means it loses track of which things it has munged at what time.
 
 - [feature:
-  gitrepos](https://github.com/kubernetes/test-infra/blob/master/mungegithub/features/repo-updates.go)
+  gitrepos](https://git.k8s.io/test-infra/mungegithub/features/repo-updates.go)
   - responsible for parsing OWNERS and OWNERS_ALIAS files
   - if its `use-reviewers` flag is set to false, **approvers** will also be **reviewers**
   - if its `enable-md-yaml` flag is set, `.md` files will also be parsed to see if they have
@@ -172,14 +172,14 @@ stateful, in that restarting it means it loses track of which things it has mung
 [kubernetes.github.io](https://github.com/kubernetes/kubernetes.github.io/))
   - used by other mungers to get the set of **reviewers** or **approvers** for a given path
 - [munger:
-  blunderbuss](https://github.com/kubernetes/test-infra/blob/master/mungegithub/mungers/blunderbuss.go)
+  blunderbuss](https://git.k8s.io/test-infra/mungegithub/mungers/blunderbuss.go)
   - responsible for determining **reviewers** and assigning to them
   - chooses from people in the deepest/closest OWNERS files to the code being changed
   - weights its choice based on the magnitude of lines changed for each file
   - randomly chooses to ensure the same people aren't chosen every time
   - if its `blunderbuss-number-assignees` flag is unset, it will default to 2 assignees
 - [munger:
-  approval-handler](https://github.com/kubernetes/test-infra/blob/master/mungegithub/mungers/approval-handler.go)
+  approval-handler](https://git.k8s.io/test-infra/mungegithub/mungers/approval-handler.go)
   - responsible for adding the  `approved` label once an **approver** for each of the required
     OWNERS files has `/approve`'d
   - responsible for commenting as required OWNERS files are satisfied
@@ -187,19 +187,19 @@ stateful, in that restarting it means it loses track of which things it has mung
   - [full description of the
     algorithm](https://github.com/kubernetes/test-infra/blob/6f5df70c29528db89d07106a8156411068518cbc/mungegithub/mungers/approval-handler.go#L99-L111)
 - [munger:
-  submit-queue](https://github.com/kubernetes/test-infra/blob/master/mungegithub/mungers/submit-queue.go)
+  submit-queue](https://git.k8s.io/test-infra/mungegithub/mungers/submit-queue.go)
   - responsible for merging PR's
   - responsible for updating a GitHub status check explaining why a PR can't be merged (eg: a
     missing `lgtm` or `approved` label)
 
-### [`prow`](https://github.com/kubernetes/test-infra/tree/master/prow)
+### [`prow`](https://git.k8s.io/test-infra/prow)
 
 Prow receives events from GitHub, and reacts to them. It is effectively stateless.
 
-- [plugin: lgtm](https://github.com/kubernetes/test-infra/tree/master/prow/plugins/lgtm)
+- [plugin: lgtm](https://git.k8s.io/test-infra/prow/plugins/lgtm)
   - responsible for adding the `lgtm` label when a **reviewer** comments `/lgtm` on a PR
   - the **PR author** may not `/lgtm` their own PR
-- [plugin: assign](https://github.com/kubernetes/test-infra/tree/master/prow/plugins/assign)
+- [plugin: assign](https://git.k8s.io/test-infra/prow/plugins/assign)
   - responsible for assigning GitHub users in response to `/assign` comments on a PR
   - responsible for unassigning GitHub users in response to `/unassign` comments on a PR
 

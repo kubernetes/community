@@ -6,13 +6,13 @@ Support multi-fields merge key in Strategic Merge Patch.
 
 ## Background
 
-Strategic Merge Patch is covered in this [doc](https://github.com/kubernetes/community/blob/master/contributors/devel/strategic-merge-patch.md).
+Strategic Merge Patch is covered in this [doc](/contributors/devel/strategic-merge-patch.md).
 In Strategic Merge Patch, we use Merge Key to identify the entries in the list of non-primitive types.
 It must always be present and unique to perform the merge on the list of non-primitive types,
 and will be preserved.
 
 The merge key exists in the struct tag (e.g. in [types.go](https://github.com/kubernetes/kubernetes/blob/5a9759b0b41d5e9bbd90d5a8f3a4e0a6c0b23b47/pkg/api/v1/types.go#L2831))
-and the [OpenAPI spec](https://github.com/kubernetes/kubernetes/blob/master/api/openapi-spec/swagger.json).
+and the [OpenAPI spec](https://git.k8s.io/kubernetes/api/openapi-spec/swagger.json).
 
 ## Motivation
 

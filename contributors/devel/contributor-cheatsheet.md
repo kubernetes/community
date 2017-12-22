@@ -13,14 +13,14 @@ A list of common resources when contributing to Kubernetes.
 - [Gubernator Dashboard - k8s.reviews](https://k8s-gubernator.appspot.com/pr)
 - [reviewable.kubernetes.io](https://reviewable.kubernetes.io/reviews#-)
 - [Submit Queue](https://submit-queue.k8s.io)
-- [Bot commands](https://github.com/kubernetes/test-infra/blob/master/commands.md)
+- [Bot commands](https://git.k8s.io/test-infra/commands.md)
 - [Release Buckets](http://gcsweb.k8s.io/gcs/kubernetes-release/)
 - Developer Guide
-  - [Cherry Picking Guide](https://github.com/kubernetes/community/blob/master/contributors/devel/cherry-picks.md) - [Queue](http://cherrypick.k8s.io/#/queue)
+  - [Cherry Picking Guide](/contributors/devel/cherry-picks.md) - [Queue](http://cherrypick.k8s.io/#/queue)
 
 ## SIGs and Working Groups
 
-- [Master SIG list](https://github.com/kubernetes/community/blob/master/sig-list.md#master-sig-list)
+- [Master SIG list](/sig-list.md#master-sig-list)
 
 ## Community
 

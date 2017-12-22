@@ -44,7 +44,7 @@ pass or fail of continuous integration.
 
 ## Sign the CLA
 
-You must sign the CLA before your first contribution. [Read more about the CLA.](https://github.com/kubernetes/community/blob/master/CLA.md)
+You must sign the CLA before your first contribution. [Read more about the CLA.](/CLA.md)
 
 If you haven't signed the Contributor License Agreement (CLA) before making a PR,
 the `@k8s-ci-robot` will leave a comment with instructions on how to sign the CLA.
@@ -92,7 +92,7 @@ For PRs that don't need to be mentioned at release time, just write "NONE" (case
 
 The `/release-note-none` comment command can still be used as an alternative to writing "NONE" in the release-note block if it is left empty.
 
-To see how to format your release notes, view the [PR template](https://github.com/kubernetes/kubernetes/blob/master/.github/PULL_REQUEST_TEMPLATE.md) for a brief example. PR titles and body comments can be modified at any time prior to the release to make them friendly for release notes.
+To see how to format your release notes, view the [PR template](https://git.k8s.io/kubernetes/.github/PULL_REQUEST_TEMPLATE.md) for a brief example. PR titles and body comments can be modified at any time prior to the release to make them friendly for release notes.
 
 Release notes apply to PRs on the master branch. For cherry-pick PRs, see the [cherry-pick instructions](cherry-picks.md). The only exception to these rules is when a PR is not a cherry-pick and is targeted directly to the non-master branch.  In this case, a `release-note-*` label is required for that non-master PR.
 
@@ -127,7 +127,7 @@ If you are a member, or a member comments `/ok-to-test`, the PR will be consider
 
 Once the tests pass, all failures are commented as flakes, or the reviewer adds the labels `lgtm` and `approved`, the PR enters the final merge queue. The merge queue is needed to make sure no incompatible changes have been introduced by other PRs since the tests were last run on your PR.
 
-Either the [on call contributor](on-call-rotations.md) will manage the merge queue manually, or the [GitHub "munger"](https://github.com/kubernetes/test-infra/tree/master/mungegithub) submit-queue plugin will manage the merge queue automatically.
+Either the [on call contributor](on-call-rotations.md) will manage the merge queue manually, or the [GitHub "munger"](https://git.k8s.io/test-infra/mungegithub) submit-queue plugin will manage the merge queue automatically.
 
 1. The PR enters the merge queue ([http://submit-queue.k8s.io](http://submit-queue.k8s.io))
 1. The merge queue triggers a test re-run with the comment `/test all [submit-queue is verifying that this PR is safe to merge]`
@@ -151,7 +151,7 @@ The GitHub robots will add and remove the `do-not-merge/hold` label as you use t
 
 ## Comment Commands Reference
 
-[The commands doc](https://github.com/kubernetes/test-infra/blob/master/commands.md) contains a reference for all comment commands.
+[The commands doc](https://git.k8s.io/test-infra/commands.md) contains a reference for all comment commands.
 
 ## Automation
 
@@ -220,8 +220,8 @@ Are you sure Feature-X is something the Kubernetes team wants or will accept? Is
 
 It's better to get confirmation beforehand. There are two ways to do this:
 
-- Make a proposal doc (in docs/proposals; for example [the QoS proposal](http://prs.k8s.io/11713)), or reach out to the affected special interest group (SIG). Here's a [list of SIGs](https://github.com/kubernetes/community/blob/master/sig-list.md)
-- Coordinate your effort with [SIG Docs](https://github.com/kubernetes/community/tree/master/sig-docs) ahead of time
+- Make a proposal doc (in docs/proposals; for example [the QoS proposal](http://prs.k8s.io/11713)), or reach out to the affected special interest group (SIG). Here's a [list of SIGs](/sig-list.md)
+- Coordinate your effort with [SIG Docs](/sig-docs) ahead of time
 - Make a sketch PR (e.g., just the API or Go interface). Write or code up just enough to express the idea and the design and why you made those choices
 
 Or, do all of the above.

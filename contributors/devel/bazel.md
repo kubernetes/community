@@ -3,7 +3,7 @@
 Building and testing Kubernetes with  Bazel is supported but not yet default.
 
 Go rules are managed by the [`gazelle`](https://github.com/bazelbuild/rules_go/tree/master/go/tools/gazelle)
-tool, with some additional rules managed by the [`kazel`](https://github.com/kubernetes/repo-infra/tree/master/kazel) tool.
+tool, with some additional rules managed by the [`kazel`](https://git.k8s.io/repo-infra/kazel) tool.
 These tools are called via the `hack/update-bazel.sh` script.
 
 Instructions for installing Bazel
@@ -26,7 +26,7 @@ $ bazel test //pkg/kubectl/...
 
 ## Planter
 If you don't want to install Bazel, you can instead try using the unofficial
-[Planter](https://github.com/kubernetes/test-infra/tree/master/planter) tool,
+[Planter](https://git.k8s.io/test-infra/planter) tool,
 which runs Bazel inside a Docker container.
 
 For example, you can run

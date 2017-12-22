@@ -293,13 +293,13 @@ make test
 make test WHAT=./pkg/api/helper GOFLAGS=-v
 
 # Run integration tests, requires etcd
-# For more info, visit https://github.com/kubernetes/community/blob/master/contributors/devel/testing.md#integration-tests
+# For more info, visit https://git.k8s.io/community/contributors/devel/testing.md#integration-tests
 make test-integration
 
 # Run e2e tests by building test binaries, turn up a test cluster, run all tests, and tear the cluster down
 # Equivalent to: go run hack/e2e.go -- -v --build --up --test --down
 # Note: running all e2e tests takes a LONG time! To run specific e2e tests, visit:
-# https://github.com/kubernetes/community/blob/master/contributors/devel/e2e-tests.md#building-kubernetes-and-running-the-tests
+# https://git.k8s.io/community/contributors/devel/e2e-tests.md#building-kubernetes-and-running-the-tests
 make test-e2e
 ```
 
@@ -398,9 +398,9 @@ masse. This makes reviews easier.
 
 
 [OS X GNU tools]: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x
-[build/build-image/cross]: https://github.com/kubernetes/kubernetes/blob/master/build/build-image/cross
-[build/common.sh]: https://github.com/kubernetes/kubernetes/blob/master/build/common.sh
-[e2e-image]: https://github.com/kubernetes/test-infra/tree/master/jenkins/e2e-image
+[build/build-image/cross]: https://git.k8s.io/kubernetes/build/build-image/cross
+[build/common.sh]: https://git.k8s.io/kubernetes/build/common.sh
+[e2e-image]: https://git.k8s.io/test-infra/jenkins/e2e-image
 [etcd-latest]: https://coreos.com/etcd/docs/latest
 [etcd-install]: testing.md#install-etcd-dependency
 <!-- https://github.com/coreos/etcd/releases -->
@@ -409,5 +409,5 @@ masse. This makes reviews easier.
 [kubectl user guide]: https://kubernetes.io/docs/user-guide/kubectl
 [kubernetes.io]: https://kubernetes.io
 [mercurial]: http://mercurial.selenic.com/wiki/Download
-[test-image]: https://github.com/kubernetes/test-infra/tree/master/jenkins/test-image
+[test-image]: https://git.k8s.io/test-infra/jenkins/test-image
 [Build with Bazel]: bazel.md

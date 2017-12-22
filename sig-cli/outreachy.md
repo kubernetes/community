@@ -18,7 +18,7 @@ It groups containers that make up an application into logical units for easy man
 [kubernetes.io](https://kubernetes.io/)
 
 ## What are SIGs / What is SIG-CLI?
-Kubernetes is a set of projects, each shepherded by a special interest group (SIG). To get a grasp of the projects that we work on, check out the complete [list of SIGs](https://github.com/kubernetes/community/blob/master/sig-list.md).
+Kubernetes is a set of projects, each shepherded by a special interest group (SIG). To get a grasp of the projects that we work on, check out the complete [list of SIGs](/sig-list.md).
 
 SIG-CLI Covers kubectl and related tools. We focus on the development and standardization of the CLI framework and its dependencies, the establishment of conventions for writing CLI commands, POSIX compliance, and improving the command line tools from a developer and devops user experience and usability perspective.  
 
@@ -38,7 +38,7 @@ As part of the application process, the Outreachy program recommends that candid
 To start working on the project, make sure to fill out the CLA and check if you have the right environment with this guide. The README in the [community repo](https://github.com/kubernetes/community) details these things and more.
 
 Check out these specific resources for how to contribute to CLI:
-* SIG-CLI - [How to Contribute](https://github.com/kubernetes/community/blob/master/sig-cli/CONTRIBUTING.md)
+* SIG-CLI - [How to Contribute](/sig-cli/CONTRIBUTING.md)
 * Filter issue search for: `is:open is:issue label:sig/cli label:"help wanted"`
 * Hand picked issues for outreachy applications: https://github.com/kubernetes/kubectl/projects/3
 

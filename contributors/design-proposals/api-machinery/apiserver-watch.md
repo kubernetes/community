@@ -132,7 +132,7 @@ the same time, we can introduce an additional etcd event type: EtcdResync
   Thus, we need to create the EtcdResync event, extend watch.Interface and
   its implementations to support it and handle those events appropriately
   in places like
-  [Reflector](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/tools/cache/reflector.go)
+  [Reflector](https://git.k8s.io/kubernetes/staging/src/k8s.io/client-go/tools/cache/reflector.go)
 
   However, this might turn out to be unnecessary optimization if apiserver
   will always keep up (which is possible in the new design). We will work

@@ -57,7 +57,7 @@ Basic ideas:
 ### REST call monitoring
 
 We do measure REST call duration in the Density test, but we need an API server monitoring as well, to avoid false failures caused e.g. by the network traffic. We already have
-some metrics in place (https://github.com/kubernetes/kubernetes/blob/master/pkg/apiserver/metrics/metrics.go), but we need to revisit the list and add some more.
+some metrics in place (https://git.k8s.io/kubernetes/pkg/apiserver/metrics/metrics.go), but we need to revisit the list and add some more.
 
 Basic ideas:
 - number of calls per verb, client, resource type

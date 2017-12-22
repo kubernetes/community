@@ -44,7 +44,7 @@ that does not contain a discriminator.
 |---|---|
 | non-inlined non-discriminated union | Yes |
 | non-inlined discriminated union | Yes |
-| inlined union with [patchMergeKey](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#strategic-merge-patch) only | Yes |
+| inlined union with [patchMergeKey](/contributors/devel/api-conventions.md#strategic-merge-patch) only | Yes |
 | other inlined union | No |
 
 For the inlined union with patchMergeKey, we move the tag to the parent struct's instead of

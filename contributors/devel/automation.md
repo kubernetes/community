@@ -14,9 +14,9 @@ In an effort to
    * maintain end-to-end test stability
    * load test github's label feature
 
-We have added an automated [submit-queue](https://github.com/kubernetes/test-infra/tree/master/mungegithub/submit-queue)
+We have added an automated [submit-queue](https://git.k8s.io/test-infra/mungegithub/submit-queue)
 to the
-[github "munger"](https://github.com/kubernetes/test-infra/tree/master/mungegithub)
+[github "munger"](https://git.k8s.io/test-infra/mungegithub)
 for kubernetes.
 
 The submit-queue does the following:
@@ -48,7 +48,7 @@ If these tests pass a second time, the PR will be merged when this PR finishes r
 
 ## Github Munger
 
-We run [github "mungers"](https://github.com/kubernetes/test-infra/tree/master/mungegithub).
+We run [github "mungers"](https://git.k8s.io/test-infra/mungegithub).
 
 This runs repeatedly over github pulls and issues and runs modular "mungers".
 The mungers include the "submit-queue" referenced above along

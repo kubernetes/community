@@ -120,7 +120,7 @@ for SIGs to deliberate.
 [tell a story]: https://blog.rust-lang.org/2017/08/31/Rust-1.20.html
 [road to Go 2]: https://blog.golang.org/toward-go2
 [survey data]: http://opensourcesurvey.org/2017/
-[design proposals]: https://github.com/kubernetes/community/tree/master/contributors/design-proposals
+[design proposals]: /contributors/design-proposals
 
 
 ## Reference-level explanation
@@ -397,7 +397,7 @@ required in the [features issue template][] may be a heavy burden for non native
 English speakers and here the role of the KEP editor combined with kindness and
 empathy will be crucial to making the process successful.
 
-[features issue template]: https://github.com/kubernetes/features/blob/master/ISSUE_TEMPLATE.md
+[features issue template]: https://git.k8s.io/features/ISSUE_TEMPLATE.md
 
 ## Alternatives
 

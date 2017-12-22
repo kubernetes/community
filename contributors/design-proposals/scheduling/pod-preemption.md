@@ -75,7 +75,7 @@ When scheduling a pending pod, scheduler tries to place the pod on a node that d
 
 #### Important notes
 
--  When ordering the pods from lowest to highest priority for considering which pod(s) to preempt, among pods with equal priority the pods are ordered by their [QoS class](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md#qos-classes): Best Effort, Burstable, Guaranteed.
+-  When ordering the pods from lowest to highest priority for considering which pod(s) to preempt, among pods with equal priority the pods are ordered by their [QoS class](/contributors/design-proposals/node/resource-qos.md#qos-classes): Best Effort, Burstable, Guaranteed.
 -  Scheduler respects pods' disruption budget when considering them for preemption.
 -  Scheduler will try to minimize the number of preempted pods. As a result, it may preempt a pod while leaving lower priority pods running if preemption of those lower priority pods is not enough to schedule the pending pod while preemption of the higher priority pod(s) is enough to schedule the pending pod. For example, if node capacity is 10, and pending pod is priority 10 and requires 5 units of resource, and the running pods are {priority 0 request 3, priority 1 request 1, priority 2 request 5, priority 3 request 1}, scheduler will preempt the priority 2 pod only and leaves priority 1 and priority 0 running.
 -  Scheduler does not have the knowledge of resource usage of pods. It makes scheduling decisions based on the requested resources ("requests") of the pods and when it considers a pod for preemption, it assumes the "requests" to be freed on the node.
@@ -183,6 +183,6 @@ To solve the problem, the user might try running his web server as Guaranteed, b
 
 # References
 
--  [Controlled Rescheduling in Kubernetes](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/rescheduling.md)
+-  [Controlled Rescheduling in Kubernetes](/contributors/design-proposals/scheduling/rescheduling.md)
 -  [Resource sharing architecture for batch and serving workloads in Kubernetes](https://docs.google.com/document/d/1-H2hnZap7gQivcSU-9j4ZrJ8wE_WwcfOkTeAGjzUyLA)
 -  [Design proposal for adding priority to Kubernetes API](https://github.com/kubernetes/community/pull/604/files)

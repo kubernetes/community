@@ -21,7 +21,7 @@ This document proposes a detailed plan for bringing Webhooks to Beta. Highlights
 *   Versioned rather than Internal data sent on hook
 *   Ordering behavior within webhooks, and with other admission phases, is better defined
 
-This plan is compatible with the [original design doc]( https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/admission_control_extension.md).
+This plan is compatible with the [original design doc](/contributors/design-proposals/api-machinery/admission_control_extension.md).
 
 
 # Definitions 
@@ -391,12 +391,12 @@ Specific Use cases:
 
 *   Kubernetes static Admission Controllers
     *   Documented [here](https://kubernetes.io/docs/admin/admission-controllers/)
-    *   Discussed [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/admission_control_extension.md)
+    *   Discussed [here](/contributors/design-proposals/api-machinery/admission_control_extension.md)
     *   All are highly reliable.  Most are simple.  No external deps.
     *   Many need update checks.
     *   Can be separated into mutation and validate phases.
 *   OpenShift static Admission Controllers
-    *   Discussed [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/admission_control_extension.md)
+    *   Discussed [here](/contributors/design-proposals/api-machinery/admission_control_extension.md)
     *   Similar to Kubernetes ones.
 *   Istio, Case 1: Add Container to all Pods.
     *   Currently uses Initializer but can use Mutating Webhook.
@@ -411,7 +411,7 @@ Specific Use cases:
     *   Simple, can be highly reliable and fast. No external deps.
     *   No current use case for updates.
 
-Good further discussion of use cases [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/admission_control_extension.md)
+Good further discussion of use cases [here](/contributors/design-proposals/api-machinery/admission_control_extension.md)
 
 
 ## Details of Porting Admission Controllers 

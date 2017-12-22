@@ -242,7 +242,7 @@ the `kubelet` will select a subsequent pod.
 ## Eviction Strategy
 
 The `kubelet` will implement an eviction strategy oriented around
-[Priority](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/pod-priority-api.md)
+[Priority](/contributors/design-proposals/scheduling/pod-priority-api.md)
 and pod usage relative to requests.  It will target pods that are the lowest
 Priority, and are the largest consumers of the starved resource relative to
 their scheduling request.

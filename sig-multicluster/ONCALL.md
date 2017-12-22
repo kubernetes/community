@@ -10,8 +10,8 @@ follows:
     most common failure scenarios and suggest improvements. Its up to the sig or
     individuals to prioritize and take up those tasks.
 
-Oncall playbook:
-https://github.com/kubernetes/community/blob/master/contributors/devel/on-call-federation-build-cop.md
+The on-call playbook is available
+[here](/contributors/devel/on-call-federation-build-cop.md)
 
 # Joining the rotation
 

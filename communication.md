@@ -77,8 +77,8 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [blog]: http://blog.kubernetes.io
 [calendar.google.com]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles
 [CNCF code of conduct]: https://github.com/cncf/foundation/blob/master/code-of-conduct.md
-[communication]: https://github.com/kubernetes/community/blob/master/communication.md
-[community meeting]: https://github.com/kubernetes/community/blob/master/communication.md#weekly-meeting
+[communication]: /communication.md
+[community meeting]: /communication.md#weekly-meeting
 [events]: https://www.cncf.io/events/
 [file an issue]: https://github.com/kubernetes/kubernetes/issues/new
 [Google+]: https://plus.google.com/u/0/b/116512812300813784482/116512812300813784482
@@ -89,7 +89,7 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [kubernetes-users]: https://groups.google.com/forum/#!forum/kubernetes-users
 [kubernetes.slackarchive.io]: http://kubernetes.slackarchive.io
 [kubernetes.slack.com]: http://kubernetes.slack.com
-[Special Interest Group]: https://github.com/kubernetes/community/blob/master/README.md#SIGs
+[Special Interest Group]: /README.md#SIGs
 [slack.k8s.io]: http://slack.k8s.io
 [Stack Overflow]: http://stackoverflow.com/questions/tagged/kubernetes
 [timezone table]: https://www.google.com/search?q=1000+am+in+pst

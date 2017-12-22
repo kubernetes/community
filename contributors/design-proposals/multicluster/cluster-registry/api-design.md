@@ -63,7 +63,7 @@ use cases.
 ## API
 
 This document defines the cluster registry API. It is an evolution of the
-[current Federation cluster API](https://github.com/kubernetes/federation/blob/master/apis/federation/types.go#L99),
+[current Federation cluster API](https://git.k8s.io/federation/apis/federation/types.go#L99),
 and is designed more specifically for the "cluster registry" use case in
 contrast to the Federation `Cluster` object, which was made for the
 active-control-plane Federation.
@@ -84,7 +84,7 @@ Optional API operations:
     support WATCH for this API. Implementations can choose to support or not
     support this operation. An implementation that does not support the
     operation should return HTTP error 405, StatusMethodNotAllowed, per the
-    [relevant Kubernetes API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#error-codes).
+    [relevant Kubernetes API conventions](/contributors/devel/api-conventions.md#error-codes).
 
 We also intend to support a use case where the server returns a file that can be
 stored for later use. We expect this to be doable with the standard API
@@ -92,7 +92,7 @@ machinery; and if the API is implemented not using the Kubernetes API machinery,
 that the returned file must be interoperable with the response from a Kubernetes
 API server.
 
-[The API](https://github.com/kubernetes/cluster-registry/blob/master/pkg/apis/clusterregistry/v1alpha1/types.go)
+[The API](https://git.k8s.io/cluster-registry/pkg/apis/clusterregistry/v1alpha1/types.go)
 is defined in the cluster registry repo, and is not replicated here in order to
 avoid mismatches.
 
@@ -107,7 +107,7 @@ objects that contain a value for the `ClusterName` field. The `Cluster` object's
 of namespace scoped.
 
 The `Cluster` object will have `Spec` and `Status` fields, following the
-[Kubernetes API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status).
+[Kubernetes API conventions](/contributors/devel/api-conventions.md#spec-and-status).
 There was argument in favor of a `State` field instead of `Spec` and `Status`
 fields, since the `Cluster` in the registry does not necessarily hold a user's
 intent about the cluster being represented, but instead may hold descriptive
@@ -141,7 +141,7 @@ extended appropriately.
 The cluster registry API will not provide strongly-typed objects for returning
 auth info. Instead, it will provide a generic type that clients can use as they
 see fit. This is intended to mirror what `kubectl` does with its
-[AuthProviderConfig](https://github.com/kubernetes/client-go/blob/master/tools/clientcmd/api/types.go#L144).
+[AuthProviderConfig](https://git.k8s.io/client-go/tools/clientcmd/api/types.go#L144).
 As open standards are developed for cluster auth, the API can be extended to
 provide first-class support for these. We want to avoid baking non-open
 standards into the API, and so having to support potentially a multiplicity of

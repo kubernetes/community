@@ -10,7 +10,7 @@ Implementation Owner: @johnbelamaric
 
 CoreDNS is another CNCF project and is the successor to SkyDNS, which kube-dns is based on. It is a flexible, extensible
 authoritative DNS server and directly integrates with the Kubernetes API. It can serve as cluster DNS,
-complying with the [dns spec](https://github.com/kubernetes/dns/blob/master/docs/specification.md). 
+complying with the [dns spec](https://git.k8s.io/dns/docs/specification.md). 
 
 CoreDNS has fewer moving parts than kube-dns, since it is a single executable and single process. It is written in Go so
 it is memory-safe (kube-dns includes dnsmasq which is not). It supports a number of use cases that kube-dns does not
@@ -80,7 +80,7 @@ of the lines within `{ }` represent individual plugins:
   * `cache 30` enables [caching](https://coredns.io/plugins/cache/) of positive and negative responses for 30 seconds
   * `health` opens an HTTP port to allow [health checks](https://coredns.io/plugins/health) from Kubernetes
   * `prometheus` enables Prometheus [metrics](https://coredns.io/plugins/metrics)
-  * `kubernetes 10.0.0.0/8 cluster.local` connects to the Kubernetes API and [serves records](https://coredns.io/plugins/kubernetes/) for the `cluster.local` domain and reverse DNS for 10.0.0.0/8 per the [spec](https://github.com/kubernetes/dns/blob/master/docs/specification.md)
+  * `kubernetes 10.0.0.0/8 cluster.local` connects to the Kubernetes API and [serves records](https://coredns.io/plugins/kubernetes/) for the `cluster.local` domain and reverse DNS for 10.0.0.0/8 per the [spec](https://git.k8s.io/dns/docs/specification.md)
   * `proxy . /etc/resolv.conf` [forwards](https://coredns.io/plugins/proxy) any queries not handled by other plugins (the `.` means the root domain) to the nameservers configured in `/etc/resolv.conf`
 
 ### Configuring Stub Domains

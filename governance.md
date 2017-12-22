@@ -14,9 +14,9 @@ The Kubernetes community abides by the CNCF [code of conduct](https://github.com
 
 _As contributors and maintainers of this project, and in the interest of fostering an open and welcoming community, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities._
 
-As a member of the Kubernetes project, you represent the project and your fellow contributors. 
+As a member of the Kubernetes project, you represent the project and your fellow contributors.
 We value our community tremendously and we'd like to keep cultivating a friendly and collaborative
-environment for our contributors and users. We want everyone in the community to have 
+environment for our contributors and users. We want everyone in the community to have
 [positive experiences](https://www.cncf.io/blog/2016/12/14/diversity-scholarship-series-one-software-engineers-unexpected-cloudnativecon-kubecon-experience).
 
 # Community membership
@@ -44,7 +44,7 @@ and code ownership, as well as providing focused forums for getting
 work done, making decisions, and onboarding new contributors. Every
 identifiable subpart of the project (e.g., github org, repository,
 subdirectory, API, test, issue, PR) is intended to be owned by some
-SIG. 
+SIG.
 
 Areas covered by SIGs may be vertically focused on particular
 components or functions, cross-cutting/horizontal, spanning many/all
@@ -73,7 +73,7 @@ relatively free to customize or change how they operate, within some
 broad guidelines and constraints imposed by cross-SIG processes (e.g.,
 the release process) and assets (e.g., the kubernetes repo).
 
-A primary reason that SIGs exist is as forums for collaboration. 
+A primary reason that SIGs exist is as forums for collaboration.
 Much work in a SIG should stay local within that SIG. However, SIGs
 must communicate in the open, ensure other SIGs and community members
 can find notes of meetings, discussions, designs, and decisions, and
@@ -137,7 +137,7 @@ community meeting.
 All repositories under Kubernetes github orgs, such as kubernetes and kubernetes-incubator,
 should follow the procedures outlined in the [incubator document](incubator.md). All code projects
 use the [Apache Licence version 2.0](LICENSE). Documentation repositories should use the
-[Creative Commons License version 4.0](https://github.com/kubernetes/kubernetes.github.io/blob/master/LICENSE).
+[Creative Commons License version 4.0](https://git.k8s.io/website/LICENSE).
 
 # Incubator process
 
