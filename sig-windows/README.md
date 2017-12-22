@@ -38,15 +38,14 @@ Note that the links to display team membership will only work if you are a membe
 <!-- BEGIN CUSTOM CONTENT -->
 ## Getting Started
 
-If you're new to running containers on Windows, you can get started at http://aka.ms/windowscontainers . 
+If you're looking for information on building and running containers on Windows, you can get started at http://aka.ms/windowscontainers .
 
+Kubernetes 1.9 includes beta support for Windows Server containers and has an up-to-date [Getting Started Guide for Windows](https://kubernetes.io/docs/getting-started-guides/windows/) .
 
-The documenation for Kubernetes on Windows is in a state of flux until v1.9 is released. At 1.9, the [Getting Started Guide on kubernetes.io](https://kubernetes.io/docs/getting-started-guides/windows/) originally written for v1.5 will be replaced with updated steps. Until then, multiple guides are available for setting up Kubernetes nodes on Windows:
+Some additional guides are available, but may refer to older releases:
 
-* (draft) [v1.9 Getting Started guide](https://deploy-preview-5978--kubernetes-io-master-staging.netlify.com/docs/getting-started-guides/windows/)
-* Using host gateway: https://docs.microsoft.com/en-us/virtualization/windowscontainers/kubernetes/getting-started-kubernetes-windows 
+* Using host gateway networking: https://docs.microsoft.com/en-us/virtualization/windowscontainers/kubernetes/getting-started-kubernetes-windows 
 * Using OVN as demonstrated at Google Cloud Next '17: https://github.com/apprenda/kubernetes-ovn-heterogeneous-cluster
-
 
 ## Contributing
 
