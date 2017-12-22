@@ -56,7 +56,7 @@ New contributors can try the following to work on an existing bug or approved de
 1. An [issue] is filed that
   - includes steps to reproduce the issue including client / server version,
   - mentions `@kubernetes/sig-multicluster-bugs`.
-  
+
 #### Sending a fix
 
 2. A [PR] fixing the issue is implemented that
@@ -269,26 +269,26 @@ See the sig-multicluster [community page] for points of contact and meeting time
 [`PTAL`]: https://en.wiktionary.org/wiki/PTAL
 [agenda]: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
 [bug]: #bug-lifecycle
-[community page]: https://github.com/kubernetes/community/tree/master/sig-multicluster
+[community page]: /sig-multicluster
 [design proposal]: #design-proposals
-[design repo]: https://github.com/kubernetes/community/tree/master/contributors/design-proposals/sig-multicluster
-[design template]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/sig-multicluster/template.md
-[development guide]: https://github.com/kubernetes/community/blob/master/contributors/devel/development.md
+[design repo]: /contributors/design-proposals/sig-multicluster
+[design template]: /contributors/design-proposals/sig-multicluster/template.md
+[development guide]: /contributors/devel/development.md
 [existing issue]: #adopt-an-issue
 [feature repo]: https://github.com/kubernetes/features
 [feature request]: #feature-requests
 [feature]: https://github.com/kubernetes/features
 [group]: https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster
 [issue]: https://github.com/kubernetes/kubernetes/issues
-[multicluster_help_wanted_issues]: https://github.com/kubernetes/kubernetes/issues?utf8=%E2%9C%93&q=is%3Aopen%20is%3Aissue%20label%3Ahelp-wanted%20label%3Asig%2Fmulticluster
-[kubectl concept docs]: https://github.com/kubernetes/kubernetes.github.io/tree/master/docs/concepts/tools/kubectl
+[multicluster_help_wanted_issues]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A"help+wanted"+label%3Asig%2Fmulticluster
+[kubectl concept docs]: https://git.k8s.io/kubernetes.github.io/docs/concepts/tools/kubectl
 [kubectl docs]: https://kubernetes.io/docs/user-guide/kubectl-overview
-[kubernetes/cmd/kubectl]: https://github.com/kubernetes/kubernetes/tree/master/cmd/kubectl
-[kubernetes/pkg/kubectl]: https://github.com/kubernetes/kubernetes/tree/master/pkg/kubectl
-[leads]: https://github.com/kubernetes/community/tree/master/sig-multicluster#leads
+[kubernetes/cmd/kubectl]: https://git.k8s.io/kubernetes/cmd/kubectl
+[kubernetes/pkg/kubectl]: https://git.k8s.io/kubernetes/pkg/kubectl
+[leads]: /sig-multicluster#leads
 [management overview]: https://kubernetes.io/docs/concepts/tools/kubectl/object-management-overview
-[meeting]: https://github.com/kubernetes/community/tree/master/sig-multicluster#meetings
+[meeting]: /sig-multicluster#meetings
 [release]: #release
 [slack-messages]: https://kubernetes.slack.com/messages/sig-multicluster
 [slack-signup]: http://slack.k8s.io/
-[tests]: https://github.com/kubernetes/community/blob/master/contributors/devel/testing.md
+[tests]: /contributors/devel/testing.md

@@ -73,7 +73,7 @@ This is a fairly long topic. If you're interested how to cross-compile, see [det
 
 The easiest way of running Kubernetes on another architecture at the time of writing is probably by using the docker-multinode deployment. Of course, you may choose whatever deployment you want, the binaries are easily downloadable from the URL above.
 
-[docker-multinode](https://github.com/kubernetes/kube-deploy/tree/master/docker-multinode) is intended to be a "kick-the-tires" multi-platform solution with Docker as the only real dependency (but it's not production ready)
+[docker-multinode](https://git.k8s.io/kube-deploy/docker-multinode) is intended to be a "kick-the-tires" multi-platform solution with Docker as the only real dependency (but it's not production ready)
 
 But when we (`sig-cluster-lifecycle`) have standardized the deployments to about three and made them production ready; at least one deployment should support **all platforms**.
 
@@ -377,7 +377,7 @@ In order to dynamically compile a go binary with `cgo`, we need `gcc` installed 
 
 The only Kubernetes binary that is using C code is the `kubelet`, or in fact `cAdvisor` on which `kubelet` depends. `hyperkube` is also dynamically linked as long as `kubelet` is. We should aim to make `kubelet` statically linked.
 
-The normal `x86_64-linux-gnu` can't cross-compile binaries, so we have to install gcc cross-compilers for every platform. We do this in the [`kube-cross`](https://github.com/kubernetes/kubernetes/blob/master/build/build-image/cross/Dockerfile) image,
+The normal `x86_64-linux-gnu` can't cross-compile binaries, so we have to install gcc cross-compilers for every platform. We do this in the [`kube-cross`](https://git.k8s.io/kubernetes/build/build-image/cross/Dockerfile) image,
 and depend on the [`emdebian.org` repository](https://wiki.debian.org/CrossToolchains). Depending on `emdebian` isn't ideal, so we should consider using the latest `gcc` cross-compiler packages from the `ubuntu` main repositories in the future.
 
 Here's an example when cross-compiling plain C code:

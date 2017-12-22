@@ -14,10 +14,10 @@ The vendor and driver names must match flexVolume.driver in the volume spec, wit
 
 ## Dynamic Plugin Discovery
 Beginning in v1.8, Flexvolume supports the ability to detect drivers on the fly. Instead of requiring drivers to exist at system initialization time or having to restart kubelet or controller manager, drivers can be installed, upgraded/downgraded, and uninstalled while the system is running.
-For more information, please refer to the [design document](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/flexvolume-deployment.md).
+For more information, please refer to the [design document](/contributors/design-proposals/storage/flexvolume-deployment.md).
 
 ## Automated Plugin Installation/Upgrade
-One possible way to install and upgrade your Flexvolume drivers is by using a DaemonSet. See [Recommended Driver Deployment Method](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/flexvolume-deployment.md#recommended-driver-deployment-method) for details.
+One possible way to install and upgrade your Flexvolume drivers is by using a DaemonSet. See [Recommended Driver Deployment Method](/contributors/design-proposals/storage/flexvolume-deployment.md#recommended-driver-deployment-method) for details.
 
 ## Plugin details
 The plugin expects the following call-outs are implemented for the backend drivers. Some call-outs are optional. Call-outs are invoked from the Kubelet & the Controller manager nodes.
@@ -50,7 +50,7 @@ Detach the volume from the Kubelet node. Nodename param is only valid/relevant i
 ```
 
 #### Wait for attach:
-Wait for the volume to be attached on the remote node. On success, the path to the device is returned. Called from both Kubelet & Controller manager. The timeout should be 10m (based on https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/volumemanager/volume_manager.go#L88 )
+Wait for the volume to be attached on the remote node. On success, the path to the device is returned. Called from both Kubelet & Controller manager. The timeout should be 10m (based on https://git.k8s.io/kubernetes/pkg/kubelet/volumemanager/volume_manager.go#L88 )
 
 ```
 <driver executable> waitforattach <mount device> <json options>
@@ -132,7 +132,7 @@ Note: Secrets are passed only to "mount/unmount" call-outs.
 See [nginx.yaml] & [nginx-nfs.yaml] for a quick example on how to use Flexvolume in a pod.
 
 
-[lvm]: https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/lvm
-[nfs]: https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/nfs
-[nginx.yaml]: https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/nginx.yaml
-[nginx-nfs.yaml]: https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/nginx-nfs.yaml
+[lvm]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/lvm
+[nfs]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/nfs
+[nginx.yaml]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/nginx.yaml
+[nginx-nfs.yaml]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/nginx-nfs.yaml

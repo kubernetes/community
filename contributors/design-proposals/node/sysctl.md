@@ -124,7 +124,7 @@ Some real-world examples for the use of sysctls:
 - a containerized IPv6 routing daemon requires e.g. `/proc/sys/net/ipv6/conf/all/forwarding` and
   `/proc/sys/net/ipv6/conf/all/accept_redirects` (compare
   [docker#4717](https://github.com/docker/docker/issues/4717#issuecomment-98653017))
-- the [nginx ingress controller in kubernetes/contrib](https://github.com/kubernetes/contrib/blob/master/ingress/controllers/nginx/examples/sysctl/change-proc-values-rc.yaml#L80)
+- the [nginx ingress controller in kubernetes/contrib](https://git.k8s.io/contrib/ingress/controllers/nginx/examples/sysctl/change-proc-values-rc.yaml#L80)
   uses a privileged sidekick container to set `net.core.somaxconn` and `net.ipv4.ip_local_port_range`.
 - a huge software-as-a-service provider uses shared memory (`kernel.shm*`) and message queues (`kernel.msg*`) to
   communicate between containers of their web-serving pods, configuring up to 20 GB of shared memory.
@@ -251,7 +251,7 @@ Issues:
 ## Design Alternatives and Considerations
 
 - Each pod has its own network stack that is shared among its containers.
-  A privileged side-kick or init container (compare https://github.com/kubernetes/contrib/blob/master/ingress/controllers/nginx/examples/sysctl/change-proc-values-rc.yaml#L80)
+  A privileged side-kick or init container (compare https://git.k8s.io/contrib/ingress/controllers/nginx/examples/sysctl/change-proc-values-rc.yaml#L80)
   is able to set `net.*` sysctls.
 
   Clearly, this is completely uncontrolled by the kubelet, but is a usable work-around if privileged

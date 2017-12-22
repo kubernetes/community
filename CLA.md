@@ -75,6 +75,6 @@ Someone from the CNCF will respond to your ticket to help.
 [Corporation signup]: https://identity.linuxfoundation.org/node/285/organization-signup
 [Individual signup]: https://identity.linuxfoundation.org/projects/cncf
 [git email]: https://help.github.com/articles/setting-your-email-in-git
-[third_party]: https://github.com/kubernetes/kubernetes/tree/master/third_party
-[vendor]: https://github.com/kubernetes/kubernetes/tree/master/vendor
+[third_party]: https://git.k8s.io/kubernetes/third_party
+[vendor]: https://git.k8s.io/kubernetes/vendor
 [documentation]: https://help.github.com/articles/setting-your-commit-email-address-on-github/

@@ -6,7 +6,7 @@ Kubernetes Dashboard UX breakout session 12.5.17, led by Rahul Dhide ([rahuldhid
 
     * Dashboard [User Types and Use Cases](https://docs.google.com/document/d/1urAlgRP7AbcdsOMQ_piQQ6O1XTDIum_LmOUe8xsC4pE/edit)
 
-    * [SIG UI weekly](https://github.com/kubernetes/community/tree/master/sig-ui)
+    * [SIG UI weekly](/sig-ui)
 
 * **Notes**
 

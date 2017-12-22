@@ -221,7 +221,7 @@ Only one of `--discovery-file` or `--discovery-token` can be set.  If more than 
 
 Our documentations (and output from `kubeadm`) should stress to users that when the token is configured for authentication and used for TLS bootstrap is a pretty powerful credential due to that any person with access to it can claim to be a node.
 The highest risk regarding being able to claim a credential in the `system:nodes` group is that it can read all Secrets in the cluster, which may compromise the cluster.
-The [Node Authorizer](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/kubelet-authorizer.md) locks this down a bit, but an untrusted person could still try to
+The [Node Authorizer](/contributors/design-proposals/node/kubelet-authorizer.md) locks this down a bit, but an untrusted person could still try to
 guess a node's name, get such a credential, guess the name of the Secret and be able to get that.
 
 Users should set a TTL on the token to limit the above mentioned risk. `kubeadm` sets a 24h TTL on the node bootstrap token by default in v1.8.

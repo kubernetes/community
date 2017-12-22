@@ -862,7 +862,7 @@ sigs:
       control system reasonably consume?
 
       For more details about our objectives please review our
-      [Scaling And Performance Goals](https://github.com/kubernetes/community/blob/master/sig-scalability/goals.md)
+      [Scaling And Performance Goals](https://git.k8s.io/community/sig-scalability/goals.md)
     label: scalability
     leads:
     - name: Wojciech Tyczynski

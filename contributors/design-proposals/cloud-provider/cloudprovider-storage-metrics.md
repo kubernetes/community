@@ -29,7 +29,7 @@ but we only focus on storage API calls here.
 ### Metric format and collection
 
 Metrics emitted from cloud provider will fall under category of service metrics
-as defined in [Kubernetes Monitoring Architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/monitoring_architecture.md).
+as defined in [Kubernetes Monitoring Architecture](/contributors/design-proposals/instrumentation/monitoring_architecture.md).
 
 
 The metrics will be emitted using [Prometheus format](https://prometheus.io/docs/instrumenting/exposition_formats/) and available for collection
@@ -40,7 +40,7 @@ metrics on `/metrics` HTTP endpoint. This proposal merely extends available metr
 Any collector which can parse Prometheus metric format should be able to collect
 metrics from these endpoints.
 
-A more detailed description of monitoring pipeline can be found in [Monitoring architecture] (https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/monitoring_architecture.md#monitoring-pipeline) document.
+A more detailed description of monitoring pipeline can be found in [Monitoring architecture] (/contributors/design-proposals/instrumentation/monitoring_architecture.md#monitoring-pipeline) document.
 
 
 #### Metric Types

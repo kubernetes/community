@@ -146,7 +146,7 @@ Questions:
 
     * Vision is that writing KEPs, know from them what the roadmap is; can write the blog post based on the value articulated in the KEPs.
 
-    * Right now they are [buried in community repo](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/0000-kep-template.md) 3 levels deep: a lot of great feedback so far. Joe wouldn't object to making it more discoverable.
+    * Right now they are [buried in community repo](/contributors/design-proposals/architecture/0000-kep-template.md) 3 levels deep: a lot of great feedback so far. Joe wouldn't object to making it more discoverable.
 
         * Kep.k8s.io for rendered versions?
 

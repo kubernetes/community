@@ -135,7 +135,7 @@ The `kubelet` should associate node bootstrapping semantics to the configured
 ### Node allocatable
 
 The proposal makes no changes to the definition as presented here:
-https://github.com/kubernetes/kubernetes/blob/master/docs/proposals/node-allocatable.md
+https://git.k8s.io/kubernetes/docs/proposals/node-allocatable.md
 
 The node will report a set of allocatable compute resources defined as follows:
 

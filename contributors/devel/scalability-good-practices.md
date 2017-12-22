@@ -108,7 +108,7 @@ This looks fine-ish if you don't know that LIST are very expensive calls. Object
 
 `Informer` is our library that provides a read interface of the store - it's a read-only cache that provides you a local copy of the store that will contain only object that you're interested in (matching given selector). From it you can GET, LIST, or do whatever read operations you want. `Informer` also allows you to register functions that will be called when an object is created, modified or deleted, which is what most people want.
  
-The magic behind `Informers` is that they are populated by the WATCH, so they don't stress API server too much. Code for Informer is [here](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/tools/cache/shared_informer.go).
+The magic behind `Informers` is that they are populated by the WATCH, so they don't stress API server too much. Code for Informer is [here](https://git.k8s.io/kubernetes/staging/src/k8s.io/client-go/tools/cache/shared_informer.go).
  
 In general: use `Informers` - if we were able to rewrite most vanilla controllers to them, you'll be able to do it as well. If you don't you may dramatically increase CPU requirements of the API server which will starve it and make it too slow to meet our SLOs.
 

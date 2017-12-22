@@ -15,7 +15,7 @@ depending on the point in the release cycle.
    to set the same label to confirm that no release note is needed.
 1. `release-note` labeled PRs generate a release note using the PR title by
    default OR the release-note block in the PR template if filled in.
-  * See the [PR template](https://github.com/kubernetes/kubernetes/blob/master/.github/PULL_REQUEST_TEMPLATE.md) for more details.
+  * See the [PR template](https://git.k8s.io/kubernetes/.github/PULL_REQUEST_TEMPLATE.md) for more details.
   * PR titles and body comments are mutable and can be modified at any time
     prior to the release to reflect a release note friendly message.
 

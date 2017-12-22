@@ -495,7 +495,7 @@ The generators that create go code have a `--go-header-file` flag
 which should be a file that contains the header that should be
 included. This header is the copyright that should be present at the
 top of the generated file and should be checked with the
-[`repo-infra/verify/verify-boilerplane.sh`](https://github.com/kubernetes/repo-infra/blob/master/verify/verify-boilerplate.sh)
+[`repo-infra/verify/verify-boilerplane.sh`](https://git.k8s.io/repo-infra/verify/verify-boilerplate.sh)
 script at a later stage of the build.
 
 To invoke these generators, you can run `make update`, which runs a bunch of
@@ -829,7 +829,7 @@ The preferred approach adds an alpha field to the existing object, and ensures i
 
 1. Add a feature gate to the API server to control enablement of the new field (and associated function):
 
-    In [staging/src/k8s.io/apiserver/pkg/features/kube_features.go](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/features/kube_features.go):
+    In [staging/src/k8s.io/apiserver/pkg/features/kube_features.go](https://git.k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/features/kube_features.go):
 
     ```go
     // owner: @you

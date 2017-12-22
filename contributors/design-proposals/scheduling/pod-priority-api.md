@@ -233,7 +233,7 @@ absolutely needed. Changing priority classes has the following disadvantages:
 ### Priority and QoS classes 
 
 Kubernetes has [three QoS
-classes](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/resource-qos.md#qos-classes)
+classes](/contributors/design-proposals/node/resource-qos.md#qos-classes)
 which are derived from request and limit of pods. Priority is introduced as an
 independent concept; meaning that any QoS class may have any valid priority.
 When a node is out of resources and pods needs to be preempted, we give

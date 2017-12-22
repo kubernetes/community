@@ -120,7 +120,7 @@ proposed</td>
 
 * Leader election results are non-deterministic on on a typical cluster, and a config would be best served to be configured as worst-case. Not presently known whether there are performance impacts resulting from leader election resulting in either co-location or distribution of those components.
 
-* Improving the cluster performance loading to match production deployment scenarios is critical on-going work, especially clusterloader: [https://github.com/kubernetes/perf-tests/tree/master/clusterloader](https://github.com/kubernetes/perf-tests/tree/master/clusterloader)
+* Improving the cluster performance loading to match production deployment scenarios is critical on-going work, especially clusterloader: [https://git.k8s.io/perf-tests/clusterloader](https://git.k8s.io/perf-tests/clusterloader)
 
 * Multi-zone / multi-az deployments are often used to manage large clusters, but for testing/scalability efforts the target is intentionally a single Availability Zone. This keeps greater consistency between environments that do and don’t support AZ-based deployments. Failures during scalability testing are outside the SIG charter. Protecting against network partitioning and improving total cluster availability (one of the key benefits to a multi-AZ strategy) are currently out scope for the Scalability SIG efforts.
 

@@ -206,5 +206,5 @@ The follow configurations will result in an invalid Pod spec:
 
 # References
 
-*   [Kubernetes DNS name specification](https://github.com/kubernetes/dns/blob/master/docs/specification.md)
+*   [Kubernetes DNS name specification](https://git.k8s.io/dns/docs/specification.md)
 *   [`/etc/resolv.conf manpage`](http://manpages.ubuntu.com/manpages/zesty/man5/resolv.conf.5.html)

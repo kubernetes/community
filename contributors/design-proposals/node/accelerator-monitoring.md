@@ -83,7 +83,7 @@ From the summary API, they will flow to heapster and stackdriver.
 - Performance/Utilization testing: impact on cAdvisor/kubelet resource usage. Impact on GPU performance when we collect metrics.
 
 ## Alternatives Rejected
-Why collect GPU metrics in cAdvisor? Why not collect them in [device plugins](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-management/device-plugin.md)? The path forward if we collected GPU metrics in device plugin is not clear and may take a lot of time to get finalized.
+Why collect GPU metrics in cAdvisor? Why not collect them in [device plugins](/contributors/design-proposals/resource-management/device-plugin.md)? The path forward if we collected GPU metrics in device plugin is not clear and may take a lot of time to get finalized.
 
 Here’s a rough sketch of how things could work:
 

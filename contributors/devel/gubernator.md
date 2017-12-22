@@ -113,7 +113,7 @@ k8s-gubernator.appspot.com/build/yourusername-g8r-logs/logs/e2e-node/timestamp
 Gubernator provides a framework for debugging failures and introduces useful features.
 There is still a lot of room for more features and growth to make the debugging process more efficient.
 
-How to contribute (see https://github.com/kubernetes/test-infra/blob/master/gubernator/README.md)
+How to contribute (see https://git.k8s.io/test-infra/gubernator/README.md)
 
 * Extend GUBERNATOR flag to all local tests
 

@@ -10,7 +10,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Responsible for answering scalability related questions such as:
 What size clusters do we think that we should support with Kubernetes in the short to medium term? How performant do we think that the control system should be at scale? What resource overhead should the Kubernetes control system reasonably consume?
-For more details about our objectives please review our [Scaling And Performance Goals](https://github.com/kubernetes/community/blob/master/sig-scalability/goals.md)
+For more details about our objectives please review our [Scaling And Performance Goals](https://git.k8s.io/community/sig-scalability/goals.md)
 
 ## Meetings
 * [Thursdays at 16:00 UTC](https://zoom.us/j/989573207) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).

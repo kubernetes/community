@@ -33,7 +33,7 @@ for other github repositories related to Kubernetes is TBD.
 Most people can leave comments and open issues. They don't have the ability to
 set labels, change milestones and close other peoples issues. For that we use
 a bot to manage labelling and triaging. The bot has a set of
-[commands and permissions](https://github.com/kubernetes/test-infra/blob/master/commands.md)
+[commands and permissions](https://git.k8s.io/test-infra/commands.md)
 and this document will cover the basic ones.
 
 ## Determine if it’s a support request
@@ -93,7 +93,7 @@ The Kubernetes Team
 ```
 
 ## Find the right SIG(s)
-Components are divided among [Special Interest Groups (SIGs)](https://github.com/kubernetes/community/blob/master/sig-list.md). Find a proper SIG for the ownership of the issue using the bot:
+Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). Find a proper SIG for the ownership of the issue using the bot:
 
 * Typing `/sig network` in a comment should add the sig/network label, for
 example.

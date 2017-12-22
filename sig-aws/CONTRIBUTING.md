@@ -31,7 +31,7 @@ This is important.
 
 - Play around with Kubernetes [Kubernetes Basics Tutorial].
 - Get to know possibilities to set up Kubernetes on AWS https://kubernetes.io/docs/getting-started-guides/aws/
-- Understand how Kubernetes on aws differs from other installations of Kubernetes [https://github.com/kubernetes/community/blob/master/contributors/design-proposals/aws/aws_under_the_hood.md]
+- Understand how Kubernetes on aws differs from other installations of Kubernetes [/contributors/design-proposals/aws/aws_under_the_hood.md]
 
 
 ## Adopt an issue
@@ -71,15 +71,15 @@ and group [meeting] times.
 [Kubernetes Basics Tutorial]: https://kubernetes.io/docs/tutorials/kubernetes-basics
 [PR]: https://help.github.com/articles/creating-a-pull-request
 [agenda]: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
-[communication]:  https://github.com/kubernetes/community/tree/master/sig-aws#contact
-[community page]: https://github.com/kubernetes/community/tree/master/sig-aws
-[design repo]: https://github.com/kubernetes/community/tree/master/contributors/design-proposals/aws
-[development guide]: https://github.com/kubernetes/community/blob/master/contributors/devel/development.md
+[communication]:  /sig-aws#contact
+[community page]: /sig-aws
+[design repo]: /contributors/design-proposals/aws
+[development guide]: /contributors/devel/development.md
 [group]: https://groups.google.com/forum/#!forum/kubernetes-sig-aws
-[kops]: https://github.com/kubernetes/kops/tree/master/
-[leads]: https://github.com/kubernetes/community/tree/master/sig-aws#leads
+[kops]: https://git.k8s.io/kops/
+[leads]: /sig-aws#leads
 [management overview]: https://kubernetes.io/docs/concepts/tools/kubectl/object-management-overview
-[meeting]: https://github.com/kubernetes/community/tree/master/sig-aws#meetings
+[meeting]: /sig-aws#meetings
 [slack-messages]: https://kubernetes.slack.com/messages/sig-aws
 [slack-signup]: http://slack.k8s.io/
 [kube-aws-tools]: kubernetes-on-aws.md

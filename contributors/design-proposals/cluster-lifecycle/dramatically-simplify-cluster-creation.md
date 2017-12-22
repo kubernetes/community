@@ -3,7 +3,7 @@
 > ***Please note: this proposal doesn't reflect final implementation, it's here for the purpose of capturing the original ideas.***
 > ***You should probably [read `kubeadm` docs](http://kubernetes.io/docs/getting-started-guides/kubeadm/), to understand the end-result of this effor.***
 
-Luke Marsden & many others in [SIG-cluster-lifecycle](https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle).
+Luke Marsden & many others in [SIG-cluster-lifecycle](/sig-cluster-lifecycle).
 
 17th August 2016
 

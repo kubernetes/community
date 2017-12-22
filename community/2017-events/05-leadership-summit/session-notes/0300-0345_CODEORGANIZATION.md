@@ -39,7 +39,7 @@ Ideally, code would be divided along lines of ownership, by SIG and subproject, 
 Next up:
 * [kubeadm](https://github.com/kubernetes/kubernetes/issues/35314)
 * Federation
-* [cloudprovider](https://github.com/kubernetes/kubernetes/blob/master/pkg/cloudprovider/README.md) and [cluster](https://github.com/kubernetes/kubernetes/blob/master/cluster/README.md)
+* [cloudprovider](https://git.k8s.io/kubernetes/pkg/cloudprovider/README.md) and [cluster](https://git.k8s.io/kubernetes/cluster/README.md)
 * Scheduler
 * [Kubelet](https://github.com/kubernetes/kubernetes/issues/444)
 

@@ -36,4 +36,4 @@ Edits in SIG sub-directories should follow any additional guidelines described
 by the respective SIG leads in the sub-directory's `CONTRIBUTING` file
 (e.g. [sig-cli/CONTRIBUTING](sig-cli/CONTRIBUTING.md)).
 
-Attending a [SIG meeting](https://github.com/kubernetes/community/blob/master/sig-list.md) or posting on their mailing list might be prudent if you want to make extensive contributions.
+Attending a [SIG meeting](/sig-list.md) or posting on their mailing list might be prudent if you want to make extensive contributions.

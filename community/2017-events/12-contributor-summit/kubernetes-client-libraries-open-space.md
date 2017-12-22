@@ -8,7 +8,7 @@ Three high-level topics:
 
 Early shout-out for the [Common LISP client](https://github.com/brendandburns/cl-k8s) :)
 
-Currently Java, Python, .Net, Javascript clients are all silver. Reference to the [badge and capabilities descriptions](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/csi-new-client-library-procedure.md#client-capabilities)
+Currently Java, Python, .Net, Javascript clients are all silver. Reference to the [badge and capabilities descriptions](/contributors/design-proposals/api-machinery/csi-new-client-library-procedure.md#client-capabilities)
 Python still outside the [clients org](https://github.com/kubernetes-client/) - should this move from incubator?
 
 Lots of code in client libraries to handle limitations in OpenAPI 2, some of which is fixed in 3. What is required/should we move to OpenAPI 3?

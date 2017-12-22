@@ -18,7 +18,7 @@ Times in CST
 - 01:00 pm - Sessions resume  
 - 05:00 pm - Happy Hour onsite  
 
-View the complete session schedule [here](https://github.com/kubernetes/community/blob/master/community/2017-events/12-contributor-summit/schedule.png).  
+View the complete session schedule [here](/community/2017-events/12-contributor-summit/schedule.png).  
 Session schedule will be available onsite in print as well as on TVs.
 
 ## Where:
@@ -41,7 +41,7 @@ Level 3, Meeting Room 4, Meeting Room 6a, Meeting Room 6b - Breakout session roo
 *_Note-Your summit registration is NOT your KubeCon registration. Tickets are almost sold out for KubeCon, please purchase those separately from the [event page](http://events.linuxfoundation.org/events/kubecon-and-cloudnativecon-north-america/attend/register)._
 
 ## Invitations:
-Selected attendees are Kubernetes upstream contributors including SIG members and lottery winners from a [members of standing](https://github.com/kubernetes/community/blob/master/community-membership.md) pool.
+Selected attendees are Kubernetes upstream contributors including SIG members and lottery winners from a [members of standing](/community-membership.md) pool.
 We realize that this is not the best approach now that our community is growing in exponential ways. In 2018, we will be unfolding a new strategy for bringing our contributors together so all voices can be heard.
 
 Invites went out on October 19th. There are ten spots left. Please reach out to parispittman@google.com to claim one.

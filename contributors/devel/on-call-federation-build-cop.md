@@ -24,10 +24,10 @@ Federation CI e2e job names are as below:
 
 Search for the above job names in various configuration files as below:
 
-* Prow config: https://github.com/kubernetes/test-infra/blob/master/prow/config.yaml
-* Test job/bootstrap config: https://github.com/kubernetes/test-infra/blob/master/jobs/config.json
-* Test grid config: https://github.com/kubernetes/test-infra/blob/master/testgrid/config/config.yaml
-* Job specific config: https://github.com/kubernetes/test-infra/tree/master/jobs/env
+* Prow config: https://git.k8s.io/test-infra/prow/config.yaml
+* Test job/bootstrap config: https://git.k8s.io/test-infra/jobs/config.json
+* Test grid config: https://git.k8s.io/test-infra/testgrid/config/config.yaml
+* Job specific config: https://git.k8s.io/test-infra/jobs/env
 
 ### Results
 
@@ -73,10 +73,10 @@ Federation pre-submit jobs have following names.
 
 Search for the above job names in various configuration files as below:
 
-* Prow config: https://github.com/kubernetes/test-infra/blob/master/prow/config.yaml
-* Test job/bootstrap config: https://github.com/kubernetes/test-infra/blob/master/jobs/config.json
-* Test grid config: https://github.com/kubernetes/test-infra/blob/master/testgrid/config/config.yaml
-* Job specific config: https://github.com/kubernetes/test-infra/tree/master/jobs/env
+* Prow config: https://git.k8s.io/test-infra/prow/config.yaml
+* Test job/bootstrap config: https://git.k8s.io/test-infra/jobs/config.json
+* Test grid config: https://git.k8s.io/test-infra/testgrid/config/config.yaml
+* Job specific config: https://git.k8s.io/test-infra/jobs/env
 
 ### Results
 
@@ -91,7 +91,7 @@ We track the flakiness metrics of all the pre-submit jobs and
 individual tests that run against PRs in
 [kubernetes/federation](https://github.com/kubernetes/federation).
 
-* The metrics that we track are documented in https://github.com/kubernetes/test-infra/blob/master/metrics/README.md#metrics.
+* The metrics that we track are documented in https://git.k8s.io/test-infra/metrics/README.md#metrics.
 * Job-level metrics are available in http://storage.googleapis.com/k8s-metrics/job-flakes-latest.json.
 
 ### Playbook

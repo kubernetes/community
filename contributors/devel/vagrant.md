@@ -227,7 +227,7 @@ my-nginx   3         3         3            3           1m
 
 We did not start any Services, hence there are none listed. But we see three
 replicas displayed properly. Check the
-[guestbook](https://github.com/kubernetes/examples/tree/master/guestbook)
+[guestbook](https://git.k8s.io/examples/guestbook)
 application to learn how to create a Service. You can already play with scaling
 the replicas with:
 

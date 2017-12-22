@@ -252,7 +252,7 @@ Kubernetes cannot function without this basic API machinery and semantics, inclu
   factor out functionality from existing components in running
   clusters. At its core would be a pull-based declarative reconciler,
   as provided by the [current add-on
-  manager](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/addon-manager)
+  manager](https://git.k8s.io/kubernetes/cluster/addons/addon-manager)
   and as described in the [whitebox app management
   doc](https://docs.google.com/document/d/1S3l2F40LCwFKg6WG0srR6056IiZJBwDmDvzHWRffTWk/edit#heading=h.gh6cf96u8mlr). This
   would be easier once we have [apply support in the
@@ -528,7 +528,7 @@ routing APIs and functions include:
       (NIY)
 
     * Service DNS. DNS, using the [official Kubernetes
-      schema](https://github.com/kubernetes/dns/blob/master/docs/specification.md),
+      schema](https://git.k8s.io/dns/docs/specification.md),
       is required.
 
 The application layer may depend on:
@@ -601,7 +601,7 @@ Automation APIs and functions:
 * NIY: The vertical pod autoscaling API(s)
 
 * [Cluster autoscaling and/or node
-  provisioning](https://github.com/kubernetes/contrib/tree/master/cluster-autoscaler)
+  provisioning](https://git.k8s.io/contrib/cluster-autoscaler)
 
 * The PodDisruptionBudget API
 
@@ -649,7 +649,7 @@ The management layer may depend on:
 * Replacement and/or additional horizontal and vertical pod
   autoscalers
 
-* [Cluster autoscaler and/or node provisioner](https://github.com/kubernetes/contrib/tree/master/cluster-autoscaler)
+* [Cluster autoscaler and/or node provisioner](https://git.k8s.io/contrib/cluster-autoscaler)
 
 * Dynamic volume provisioners
 
@@ -880,7 +880,7 @@ LoadBalancer API is present.
 
 Extensions and their options should be registered via FooClass
 resources, similar to
-[StorageClass](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/storage/v1beta1/types.go#L31),
+[StorageClass](https://git.k8s.io/kubernetes/pkg/apis/storage/v1beta1/types.go#L31),
 but with parameter descriptions, types (e.g., integer vs string),
 constraints (e.g., range or regexp) for validation, and default
 values, with a reference to fooClassName from the extended API. These

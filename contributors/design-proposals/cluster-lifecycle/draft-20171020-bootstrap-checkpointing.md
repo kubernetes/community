@@ -140,7 +140,7 @@ Testing of this feature will occur in three parts.
  
 * None at this time.  
 
-[0]: https://github.com/kubernetes/community/blob/master/contributors/design-proposals/cluster-lifecycle/self-hosted-kubernetes.md
+[0]: /contributors/design-proposals/cluster-lifecycle/self-hosted-kubernetes.md
 [1]: https://github.com/kubernetes/community/pull/825
 [2]: https://docs.google.com/document/d/1hhrCa_nv0Sg4O_zJYOnelE8a5ClieyewEsQM6c7-5-o/edit?ts=5988fba8#
 [3]: https://docs.google.com/document/d/1qmK0Iq4fqxnd8COBFZHpip27fT-qSPkOgy1x2QqjYaQ/edit?ts=599b797c#

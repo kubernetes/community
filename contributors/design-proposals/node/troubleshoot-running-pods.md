@@ -730,7 +730,7 @@ coupling it with container images.
 *   [CRI Tracking Issue](https://issues.k8s.io/28789)
 *   [CRI: expose optional runtime features](https://issues.k8s.io/32803)
 *   [Resource QoS in
-    Kubernetes](https://github.com/kubernetes/kubernetes/blob/master/docs/design/resource-qos.md)
+    Kubernetes](https://git.k8s.io/kubernetes/docs/design/resource-qos.md)
 *   Related Features
     *   [#1615](https://issues.k8s.io/1615) - Shared PID Namespace across
         containers in a pod

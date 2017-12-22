@@ -56,9 +56,9 @@ For simplicity, users shouldn't need to install/launch more than one component o
 Once we have this, we should delete out-of-date, untested "getting-started guides" ([example broken cluster debugging thread](https://github.com/kubernetes/dashboard/issues/971)).
 
 See also:
-* [Summary proposal](https://github.com/kubernetes/kubernetes-anywhere/blob/master/PROPOSAL.md)
+* [Summary proposal](https://git.k8s.io/kubernetes-anywhere/PROPOSAL.md)
 * [kubernetes-anywhere umbrella issue](https://github.com/kubernetes/kubernetes-anywhere/issues/127)
-* https://github.com/kubernetes/kubernetes/blob/master/docs/proposals/cluster-deployment.md
+* https://git.k8s.io/kubernetes/docs/proposals/cluster-deployment.md
 * [Bootstrap API](https://github.com/kubernetes/kubernetes/issues/5754)
 * [jbeda's simple setup sketch](https://gist.github.com/jbeda/7e66965a23c40a91521cf6bbc3ebf007)
 
@@ -154,7 +154,7 @@ Examples:
 * [Kube-AWS](https://github.com/coreos/coreos-kubernetes/tree/master/multi-node/aws)
 * [kops](https://github.com/kubernetes/kops)
 * [Kargo](https://github.com/kubespray/kargo)
-  * (is https://github.com/kubernetes/contrib/tree/master/ansible still needed?)
+  * (is https://git.k8s.io/contrib/ansible still needed?)
 * [kompose8](https://github.com/digitalrebar/kompos8)
 * [Tectonic](https://tectonic.com/)
 * [Kraken](https://github.com/samsung-cnct/kraken)

@@ -28,7 +28,7 @@ pod cache, we can further improve Kubelet's CPU usage by
     need to inspect containers with no state changes.
 
 ***Don't we already have a [container runtime cache]
-(https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/container/runtime_cache.go)?***
+(https://git.k8s.io/kubernetes/pkg/kubelet/container/runtime_cache.go)?***
 
 The runtime cache is an optimization that reduces the number of `GetPods()`
 calls from the workers. However,
