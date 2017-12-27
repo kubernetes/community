@@ -19,19 +19,16 @@ and meetings devoted to Kubernetes.
 
 ## Social Media
 
-* [Twitter]
-* [Google+]
-* [blog]
-* Pose questions and help answer them on [Slack][slack.k8s.io] or [Stack Overflow].
+* [Twitter](https://twitter.com/kubernetesio)
+* [Blog](http://blog.kubernetes.io/)
+* Pose questions and help answer them on [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes).
+* [Slack](slack.k8s.io) - sign up  
 
-Most real time discussion happens at [kubernetes.slack.com];
-you can sign up at [slack.k8s.io].
- 
+Real time discussion at kubernetes.slack.io:   
 Discussions on most channels are archived at [kubernetes.slackarchive.io].
 Start archiving by inviting the _slackarchive_ bot to a
 channel via `/invite @slackarchive`.
-To add new channels, contact one of the admins
-(briangrant, goltermann, jbeda, sarahnovotny and thockin).
+To add new channels, contact one of the [admins] in the #slack-admins channel. Our guidelines are [here](/communication/slack-guidelines.md).
 
 ## Issues
 
@@ -52,11 +49,11 @@ Users trade notes on the Google group
 
 ## Office Hours
 
-Office hours are held once a month. Please refer to [this document](community/office-hours.md) to learn more. 
+Office hours are held once a month. Please refer to [this document](community/office-hours.md) to learn more.
 
 ## Weekly Meeting
 
-We have PUBLIC and RECORDED [weekly meeting] every Thursday at 10am US Pacific Time.
+We have PUBLIC and RECORDED [weekly meeting] every Thursday at 10am US Pacific Time over Zoom.
 
 Map that to your local time with this [timezone table].
 
