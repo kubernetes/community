@@ -35,7 +35,7 @@ Today, ephemeral local storage is exposed to pods via the container’s writable
 Distributed filesystems and databases are the primary use cases for persistent local storage due to the following factors:
 
 * Performance: On cloud providers, local SSDs give better performance than remote disks.
-* Cost: On baremetal, in addition to performance, local storage is typically cheaper and using it is a necessity to provision distributed filesystems.
+* Cost: On bare metal, in addition to performance, local storage is typically cheaper and using it is a necessity to provision distributed filesystems.
 
 Distributed systems often use replication to provide fault tolerance, and can therefore tolerate node failures. However, data gravity is preferred for reducing replication traffic and cold startup latencies.
 
@@ -87,7 +87,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
 
     ```yaml
     apiVersion: v1
-    kind: pod
+    kind: Pod
     metadata:
      name: foo
     spec:
@@ -122,7 +122,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
 
     ```yaml
     apiVersion: v1
-    kind: pod
+    kind: Pod
     metadata:
      name: foo
      namespace: myns
@@ -158,7 +158,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
 
     ```yaml
     apiVersion: v1
-    kind: pod
+    kind: Pod
     metadata:
      name: foo
     spec:
@@ -182,7 +182,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
 
   ```yaml
   apiVersion: v1
-  kind: pod
+  kind: Pod
   metadata:
    name: foo
   spec:
@@ -374,7 +374,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
 3. Whenever a pod experiences I/O issues with it's EmptyDir volume, Phippy reconfigures those pods to use an inline Persistent Volume, whose lifetime is tied to the pod.
     ```yaml
     apiVersion: v1
-    kind: pod
+    kind: Pod
     metadata:
      name: foo
     spec:
@@ -402,7 +402,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
 
     ```yaml
     apiVersion: v1
-    kind: pod
+    kind: Pod
     metadata:
      name: foo
     spec:
@@ -444,7 +444,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
 
     ```yaml
     apiVersion: v1
-    kind: pod
+    kind: Pod
     metadata:
      name: foo
     spec:
