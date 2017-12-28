@@ -20,18 +20,15 @@ and meetings devoted to Kubernetes.
 ## Social Media
 
 * [Twitter]
-* [Google+]
-* [blog]
-* Pose questions and help answer them on [Slack][slack.k8s.io] or [Stack Overflow].
+* [Blog]
+* Pose questions and help answer them on [Stack Overflow].
+* [Slack] - sign up  
 
-Most real time discussion happens at [kubernetes.slack.com];
-you can sign up at [slack.k8s.io].
- 
+Real time discussion at kubernetes.slack.io:   
 Discussions on most channels are archived at [kubernetes.slackarchive.io].
 Start archiving by inviting the _slackarchive_ bot to a
 channel via `/invite @slackarchive`.
-To add new channels, contact one of the admins
-(briangrant, goltermann, jbeda, sarahnovotny and thockin).
+To add new channels, contact one of the admins in the #slack-admins channel. Our guidelines are [here](/communication/slack-guidelines.md).
 
 ## Issues
 
@@ -52,11 +49,11 @@ Users trade notes on the Google group
 
 ## Office Hours
 
-Office hours are held once a month. Please refer to [this document](community/office-hours.md) to learn more. 
+Office hours are held once a month. Please refer to [this document](events/office-hours.md) to learn more.
 
 ## Weekly Meeting
 
-We have PUBLIC and RECORDED [weekly meeting] every Thursday at 10am US Pacific Time.
+We have PUBLIC and RECORDED [weekly meeting] every Thursday at 10am US Pacific Time over Zoom.
 
 Map that to your local time with this [timezone table].
 
@@ -74,7 +71,7 @@ please propose a specific date on the [Kubernetes Community Meeting Agenda].
 Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Europe and winter in North America. Information about these and other community events is available on the CNCF [events] pages.
 
 
-[blog]: http://blog.kubernetes.io
+[Blog]: http://blog.kubernetes.io
 [calendar.google.com]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles
 [CNCF code of conduct]: https://github.com/cncf/foundation/blob/master/code-of-conduct.md
 [communication]: /communication.md
@@ -87,10 +84,10 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [kubernetes-community-video-chat]: https://groups.google.com/forum/#!forum/kubernetes-community-video-chat
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [kubernetes-users]: https://groups.google.com/forum/#!forum/kubernetes-users
-[kubernetes.slackarchive.io]: http://kubernetes.slackarchive.io
-[kubernetes.slack.com]: http://kubernetes.slack.com
+[kubernetes.slackarchive.io]: https://kubernetes.slackarchive.io
+[kubernetes.slack.com]: https://kubernetes.slack.com
+[Slack]: slack.k8s.io
 [Special Interest Group]: /README.md#SIGs
-[slack.k8s.io]: http://slack.k8s.io
 [Stack Overflow]: http://stackoverflow.com/questions/tagged/kubernetes
 [timezone table]: https://www.google.com/search?q=1000+am+in+pst
 [troubleshooting guide]: http://kubernetes.io/docs/troubleshooting
