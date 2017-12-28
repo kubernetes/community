@@ -1,0 +1,9 @@
+reviewers:
+  - parispittman
+  - castrojo
+approvers:
+  - parispittman
+  - castrojo
+  - sig-contributor-experience-leads
+labels:
+  - sig/contributor-experience
