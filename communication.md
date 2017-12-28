@@ -19,16 +19,16 @@ and meetings devoted to Kubernetes.
 
 ## Social Media
 
-* [Twitter](https://twitter.com/kubernetesio)
-* [Blog](http://blog.kubernetes.io/)
-* Pose questions and help answer them on [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes).
-* [Slack](slack.k8s.io) - sign up  
+* [Twitter]
+* [Blog]
+* Pose questions and help answer them on [Stack Overflow].
+* [Slack] - sign up  
 
 Real time discussion at kubernetes.slack.io:   
 Discussions on most channels are archived at [kubernetes.slackarchive.io].
 Start archiving by inviting the _slackarchive_ bot to a
 channel via `/invite @slackarchive`.
-To add new channels, contact one of the [admins] in the #slack-admins channel. Our guidelines are [here](/communication/slack-guidelines.md).
+To add new channels, contact one of the admins in the #slack-admins channel. Our guidelines are [here](/communication/slack-guidelines.md).
 
 ## Issues
 
@@ -71,7 +71,7 @@ please propose a specific date on the [Kubernetes Community Meeting Agenda].
 Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Europe and winter in North America. Information about these and other community events is available on the CNCF [events] pages.
 
 
-[blog]: http://blog.kubernetes.io
+[Blog]: http://blog.kubernetes.io
 [calendar.google.com]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles
 [CNCF code of conduct]: https://github.com/cncf/foundation/blob/master/code-of-conduct.md
 [communication]: /communication.md
@@ -86,8 +86,8 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [kubernetes-users]: https://groups.google.com/forum/#!forum/kubernetes-users
 [kubernetes.slackarchive.io]: http://kubernetes.slackarchive.io
 [kubernetes.slack.com]: http://kubernetes.slack.com
+[Slack]: slack.k8s.io
 [Special Interest Group]: /README.md#SIGs
-[slack.k8s.io]: http://slack.k8s.io
 [Stack Overflow]: http://stackoverflow.com/questions/tagged/kubernetes
 [timezone table]: https://www.google.com/search?q=1000+am+in+pst
 [troubleshooting guide]: http://kubernetes.io/docs/troubleshooting
