@@ -15,8 +15,6 @@ Please find _Improvements needed_ sections below and help us out.
 For example:
 
 _Improvements needed_
-* kubernetes/kubernetes/contributing.md -> point to this guide
-
 * kubernetes/community/CONTRIBUTING.md -> Needs a rewrite
 
 * kubernetes/community/README.md -> Needs a rewrite
@@ -157,11 +155,7 @@ For questions and troubleshooting, please feel free to use any of the methods of
 
 ## GitHub workflow
 
-To check out code to work on, please refer to [this guide](/contributors/devel/development.md#workflow).
-
-_Improvements needed_
-
-* move github workflow into its own file in this folder.
+To check out code to work on, please refer to [this guide](/github-workflow.md).
 
 ## Open a Pull Request
 
