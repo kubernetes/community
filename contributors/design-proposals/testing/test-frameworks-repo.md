@@ -36,6 +36,17 @@ desire](https://groups.google.com/a/kubernetes.io/d/msg/steering/LA9WiFnl6PI/os4
 to get `kubernetes/test/e2e/framework` out into a more reusable place. It could
 live in `k8s.io/testframeworks/e2e`
 
+### What repos can be imported (and hence vendored) into this repo?
+
+No kubernetes repos other than [utils](https://github.com/kubernetes/utils)
+should be imported (and hence vendored) by any code in this repo.
+
+This means that any testing framework in this repo which interacts with any
+part of kubernetes has to do so through some CLI. The [CLI integration testing
+framework](https://github.com/kubernetes/kubectl/tree/master/pkg/framework/test)
+which originally motivated this repo certainly does not have any kubernetes
+dependencies.
+
 ### Other naming concerns
 
 We would like the name of the repo to be a reasonable [golang package
