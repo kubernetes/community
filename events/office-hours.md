@@ -1,21 +1,6 @@
 # Kubernetes Community Office Hours
 
-## UPDATE: NO OFFICE HOURS UNTIL 2018, Happy Holidays!
-
 Office Hours is a live stream where we answer live questions about Kubernetes from **users** on the [YouTube channel](https://www.youtube.com/c/KubernetesCommunity/). Office hours are a regularly scheduled meeting where people can bring topics to discuss with the greater community. They are great for answering questions, getting feedback on how you’re using Kubernetes, or to just passively learn by following along. 
-
-**Special Pilot Edition - Contributor Office Hours**  
-This special office hours pilot will cater to upstream Kubernetes contributors with one off questions being answered from current members of standing with the project. 
-
-Example Questions:   
-What SIG do I join?   
-What to do when there is a lot of back and forth on an issue?  
-What's going on with the tests?   
-...bring these questions live or to the #office-hours slack channel  
-
-Pilot will take place:  
-Nov 29th, 2017 at 9am PST / 17:00 UTC on Zoom: https://zoom.us/j/921352437  
-If the pilot does well, we will update this with further information including the regular schedule of sessions.
 
 ### When and Where
 
