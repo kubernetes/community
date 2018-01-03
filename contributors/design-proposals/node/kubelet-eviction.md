@@ -230,6 +230,11 @@ For example, the eviction manager could start collecting observations every seco
 manager are not completely in-sync, the threshold can help the eviction manager to respond faster than
 it otherwise would.  After a short period, it would resume the standard interval of sync loop calls.
 
+4. Periodically adjust the memory cgroup threshold based on total_inactive_file
+For example, the eviction manager would set the threshold for usage_in_bytes to mem_capacity - eviction_hard + 
+total_inactive_file.  This would mean that the threshold is crossed when usage_in_bytes - total_inactive_file 
+= mem_capacity - eviction_hard.  As long as total_inactive_file changes slowly, this would be fairly accurate.
+
 ### Disk
 
 Let's assume the operator started the `kubelet` with the following:
