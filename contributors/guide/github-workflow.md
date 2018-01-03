@@ -135,7 +135,7 @@ make test-integration
 make test-e2e
 ```
 
-See the [testing guide](testing.md) and [end-to-end tests](e2e-tests.md)
+See the [testing guide](/contributors/devel/testing.md) and [end-to-end tests](/contributors/devel/e2e-tests.md)
 for additional information and scenarios.
 
 Run `make help` for additional information on these make targets.
@@ -177,7 +177,7 @@ git push -f ${your_remote_name} myfeature
 
 1. Visit your fork at https://github.com/$user/kubernetes
 2. Click the `Compare & Pull Request` button next to your `myfeature` branch.
-3. Check out the pull request [process](pull-requests.md) for more details and
+3. Check out the pull request [process](/contributors/devel/pull-requests.md) for more details and
    advice.
 
 _If you have upstream write access_, please refrain from using the GitHub UI for
