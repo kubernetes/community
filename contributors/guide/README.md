@@ -155,7 +155,7 @@ For questions and troubleshooting, please feel free to use any of the methods of
 
 ## GitHub workflow
 
-To check out code to work on, please refer to [this guide](/github-workflow.md).
+To check out code to work on, please refer to [this guide](./github-workflow.md).
 
 ## Open a Pull Request
 
