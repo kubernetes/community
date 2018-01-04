@@ -33,6 +33,7 @@ Note that the links to display team membership will only work if you are a membe
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
 | @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation Maintainers |
+| @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR Reviewers |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
