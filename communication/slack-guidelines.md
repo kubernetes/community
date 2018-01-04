@@ -2,12 +2,12 @@
 
 Slack is the main communication platform for Kubernetes outside of our mailing lists. It’s important that conversation stays on topic in each channel, and that everyone abides by the Code of Conduct. We have over 30,000 members who should all expect to have a positive experience.
 
-Chat is searchable and public. Do not make comments that you would not say on a video recording or in another public space. Please be courtesy to others.
+Chat is searchable and public. Do not make comments that you would not say on a video recording or in another public space. Please be courteous to others.
 
 `@here` and `@channel` should be used rarely. Members will receive notifications from these commands and we are a global project - please be kind. Note: `@all` is only to be used by admins.
 
 ## CODE OF CONDUCT
-Kubernetes adheres to Cloud Native Compute Foundation's [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) throughout the project including on all communication mediums.
+Kubernetes adheres to Cloud Native Compute Foundation's [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) throughout the project, and includes all communication mediums.
 
 ## ADMINS
 (by Slack ID and timezone)
@@ -58,6 +58,7 @@ If it’s a code of conduct issue, please send an email to steering-private@kube
 Bots, tokens, and webhooks are reviewed on a case-by-case basis with most requests being rejected due to security, privacy, and usability concerns.. Bots and the like tend to make a lot of noise in channels. Our Slack instance has over 30,000 people and we want everyone to have a great experience. Please join #Slack-admins and have a discussion about your request before requesting the access. GitHub workflow alerts into certain channels and requests from CNCF are typically OK.
 
 ## ADMIN MODERATION
+
 Be mindful of how you handle communication during stressful interactions.  Administrators act as direct representatives of the community, and need to maintain a very high level of professionalism at all times. If you feel too involved in the situation to maintain impartiality or professionalism, that’s a great time to enlist the help of another admin.
 
 Try to take any situations that involve upset or angry members to DM or video chat. Please document these interactions for other Slack admins to review.
