@@ -493,6 +493,8 @@ sigs:
       teams:
       - name: sig-docs-maintainers
         description: Documentation Maintainers
+      - name: sig-docs-pr-reviews
+        description: Documentation PR Reviewers
   - name: GCP
     dir: sig-gcp
     mission_statement: >
