@@ -50,7 +50,7 @@ Primary partitions are shared partitions that can provide ephemeral local storag
 This partition holds the kubelet’s root directory (`/var/lib/kubelet` by default) and `/var/log` directory. This partition may be shared between user pods, OS and Kubernetes system daemons. This partition can be consumed by pods via EmptyDir volumes, container logs, image layers and container writable layers. Kubelet will manage shared access and isolation of this partition. This partition is “ephemeral” and applications cannot expect any performance SLAs (Disk IOPS for example) from this partition.
 
 ### Runtime
-This is an optional partition which runtimes can use for overlay filesystems. Kubelet will attempt to identify and provide shared access along with isolation to this partition. Container image layers and writable later is stored here. If the runtime partition exists, `root` parition will not hold any image layer or writable layers.
+This is an optional partition which runtimes can use for overlay filesystems. Kubelet will attempt to identify and provide shared access along with isolation to this partition. Container image layers and writable later is stored here. If the runtime partition exists, `root` partition will not hold any image layer or writable layers.
 
 ## Secondary Partitions
 All other partitions are exposed as local persistent volumes. The PV interface allows for varying storage configurations to be supported, while hiding specific configuration details to the pod.  All the local PVs can be queried and viewed from a cluster level using the existing PV object.  Applications can continue to use their existing PVC specifications with minimal changes to request local storage.
@@ -59,7 +59,7 @@ The local PVs can be precreated by an addon DaemonSet that discovers all the sec
 
 Local PVs can only provide semi-persistence, and are only suitable for specific use cases that need performance, data gravity and can tolerate data loss.  If the node or PV fails, then either the pod cannot run, or the pod has to give up on the local PV and find a new one.  Failure scenarios can be handled by unbinding the PVC from the local PV, and forcing the pod to reschedule and find a new PV.
 
-Since local PVs are only accessible from specific nodes, the scheduler needs to take into account a PV's node constraint when placing pods.  This can be generalized to a storage toplogy constraint, which can also work with zones, and in the future: racks, clusters, etc.
+Since local PVs are only accessible from specific nodes, the scheduler needs to take into account a PV's node constraint when placing pods.  This can be generalized to a storage topology constraint, which can also work with zones, and in the future: racks, clusters, etc.
 
 The term `Partitions` are used here to describe the main use cases for local storage. However, the proposal doesn't require a local volume to be an entire disk or a partition - it supports arbitrary directory.  This implies that cluster administrator can create multiple local volumes in one partition, each has the capacity of the partition, or even create local volume under primary partitions. Unless strictly required, e.g. if you have only one partition in your host, this is strongly discouraged.  For this reason, following description will use `partition` or `mount point` exclusively.
 
@@ -520,7 +520,7 @@ Note: Block access will be considered as a separate feature because it can work 
           storage: 80Gi
     ```
 
-4. It is also possible for a PVC that requests `volumeType: block` to also use file-based bolume.  In this situation, the block device would get formatted with the filesystem type specified in the PVC spec.  And when the PVC gets destroyed, then the filesystem also gets destroyed to return back to the original block state.
+4. It is also possible for a PVC that requests `volumeType: block` to also use file-based volume.  In this situation, the block device would get formatted with the filesystem type specified in the PVC spec.  And when the PVC gets destroyed, then the filesystem also gets destroyed to return back to the original block state.
 
     ```yaml
     kind: PersistentVolumeClaim
@@ -575,7 +575,7 @@ Note: Block access will be considered as a separate feature because it can work 
 
 ### Why is the kubelet managing logs?
 
-Kubelet is managing access to shared storage on the node. Container logs outputted via it's stdout and stderr ends up on the shared storage that kubelet is managing. So, kubelet needs direct control over the log data to keep the containers running (by rotating logs), store them long enough for break glass situations and apply different storage policies in a multi-tenent cluster. All of these features are not easily expressible through external logging agents like journald for example.
+Kubelet is managing access to shared storage on the node. Container logs outputted via it's stdout and stderr ends up on the shared storage that kubelet is managing. So, kubelet needs direct control over the log data to keep the containers running (by rotating logs), store them long enough for break glass situations and apply different storage policies in a multi-tenant cluster. All of these features are not easily expressible through external logging agents like journald for example.
 
 
 ### Master are upgraded prior to nodes. How should storage as a new compute resource be rolled out on to existing clusters?
@@ -591,7 +591,7 @@ Kubelet will attempt to enforce capacity limits on a best effort basis. If the u
 
 ### Are LocalStorage PVs required to be a whole partition?
 
-No, but it is the recommended way to ensure capacity and performance isolation.  For HDDs, a whole disk is recommended for performance isolation.  In some environments, multiple storage partitions are not available, so the only option is to share the same filesystem.  In that case, directories in the same filesystem can be specified, and the adminstrator could configure group quota to provide capacity isolation.
+No, but it is the recommended way to ensure capacity and performance isolation.  For HDDs, a whole disk is recommended for performance isolation.  In some environments, multiple storage partitions are not available, so the only option is to share the same filesystem.  In that case, directories in the same filesystem can be specified, and the administrator could configure group quota to provide capacity isolation.
 
 # Features & Milestones
 
