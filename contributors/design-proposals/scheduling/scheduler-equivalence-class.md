@@ -167,7 +167,7 @@ During the implementation, we need to consider all the cases which may affect th
 - **Scope**: 
     - the cache of which node should be invalidated, or all nodes.
 
-Please note with the change of predicates in subsequent development, this doc will become out-of-date, while you can always check the latest e-class cache update process in `plugin/pkg/scheduler/factory/factory.go`.
+Please note with the change of predicates in subsequent development, this doc will become out-of-date, while you can always check the latest e-class cache update process in `pkg/scheduler/factory/factory.go`.
 
 ### 3.1 Persistent Volume
 
