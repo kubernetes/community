@@ -13,7 +13,7 @@ so this document will be extended for each new release as we add more features.
 * Allow pods to mount dedicated local disks, or channeled partitions as volumes for
 IOPS isolation.
 * Allow pods do access local volumes without root privileges.
-* Allow pods to access local volumes without needing to undestand the storage
+* Allow pods to access local volumes without needing to understand the storage
 layout on every node.
 * Persist local volumes and provide data gravity for pods.  Any pod
 using the local volume will be scheduled to the same node that the local volume
@@ -191,7 +191,7 @@ providing persistent local storage should be considered.
 ## Feature Plan
 
 A detailed implementation plan can be found in the
-[Storage SIG planning spreadhseet](https://docs.google.com/spreadsheets/d/1t4z5DYKjX2ZDlkTpCnp18icRAQqOE85C1T1r2gqJVck/view#gid=1566770776).
+[Storage SIG planning spreadsheet](https://docs.google.com/spreadsheets/d/1t4z5DYKjX2ZDlkTpCnp18icRAQqOE85C1T1r2gqJVck/view#gid=1566770776).
 The following is a high level summary of the goals in each phase.
 
 ### Phase 1
@@ -567,8 +567,8 @@ specific nodes.
 
 ##### PV node affinity unit tests
 
-* Nil or empty node affinity evalutes to true for any node
-* Node affinity specifying existing node labels evalutes to true
+* Nil or empty node affinity evaluates to true for any node
+* Node affinity specifying existing node labels evaluates to true
 * Node affinity specifying non-existing node label keys evaluates to false
 * Node affinity specifying non-existing node label values evaluates to false
 
@@ -611,7 +611,7 @@ and can mount, read, and write
 and verify that PVs are created and a Pod can mount, read, and write.
 * After destroying a PVC managed by the local volume provisioner, it should cleanup
 the volume and recreate a new PV.
-* Pod using a Local PV with non-existant path fails to mount
+* Pod using a Local PV with non-existent path fails to mount
 * Pod that sets nodeName to a different node than the PV node affinity cannot schedule.
 
 
@@ -624,7 +624,7 @@ type of volume that imposes topology constraints, such as local storage and zona
 
 Because this problem affects more than just local volumes, it will be treated as a
 separate feature with a separate proposal.  Once that feature is implemented, then the
-limitations outlined above wil be fixed.
+limitations outlined above will be fixed.
 
 #### Block devices and raw partitions
 

@@ -73,7 +73,7 @@ new controller will be:
 * Watch for pvc update requests and add pvc to controller's work queue if a increase in volume size was requested. Once PVC is added to
   controller's work queue - `pvc.Status.Conditions` will be updated with `ResizeStarted: True`.
 * For unbound or pending PVCs - resize will trigger no action in `volume_expand_controller`.
-* If `pv.Spec.Capacity` already is of size greater or equal than requested size, similarly no action will be perfomed by the controller.
+* If `pv.Spec.Capacity` already is of size greater or equal than requested size, similarly no action will be performed by the controller.
 * A separate goroutine will read work queue and perform corresponding volume resize operation. If there is a resize operation in progress
   for same volume then resize request will be pending and retried once previous resize request has completed.
 * Controller resize in effect will be level based rather than edge based. If there are more than one pending resize request for same PVC then
@@ -110,7 +110,7 @@ func (og *operationGenerator) GenerateExpandVolumeFunc(
             return expandErr
         }
 
-        // CloudProvider resize succeded - lets mark api objects as resized
+        // CloudProvider resize succeeded - lets mark api objects as resized
         if expanderPlugin.RequiresFSResize() {
             err := resizeMap.MarkForFileSystemResize(pvcWithResizeRequest)
             if err != nil {
@@ -180,7 +180,7 @@ This can be done by checking `pvc.Status.Conditions` during force detach. `Attac
 #### Reduce coupling between resize operation and file system type
 
 A file system resize in general requires presence of tools such as `resize2fs` or `xfs_growfs` on the host where kubelet is running. There is a concern
-that open coding call to different resize tools direclty in Kubernetes will result in coupling between file system and resize operation. To solve this problem
+that open coding call to different resize tools directly in Kubernetes will result in coupling between file system and resize operation. To solve this problem
 we have considered following options:
 
 1. Write a library that abstracts away various file system operations, such as - resizing, formatting etc.
@@ -203,7 +203,7 @@ we have considered following options:
 
 
 Of all options - #3 is our best bet but we are not quite there yet. Hence, I would like to propose that we ship with support for
-most common file systems in curent release and we revisit this coupling and solve it in next release.
+most common file systems in current release and we revisit this coupling and solve it in next release.
 
 ## API and UI Design
 

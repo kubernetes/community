@@ -105,7 +105,7 @@ Deleting a pod with grace period 0 is called **force deletion** and will
 update the pod with a `deletionGracePeriodSeconds` of 0, and then immediately
 remove the pod from etcd. Because all communication is asynchronous,
 force deleting a pod means that the pod processes may continue
-to run for an arbitary amount of time. If a higher level component like the
+to run for an arbitrary amount of time. If a higher level component like the
 StatefulSet controller treats the existence of the pod API object as a strongly
 consistent entity, deleting the pod in this fashion will violate the
 at-most-one guarantee we wish to offer for pet sets.
