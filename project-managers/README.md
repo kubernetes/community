@@ -3,7 +3,7 @@
 kubernetes-pm is a github team that will help to manage and maintain the project in ways other than just writing code.  Specifically, members of the kubernetes-pm team are
 expected to:
 
-* Add/change routing labels to issues ([sig/, area/](https://github.com/kubernetes/kubernetes/wiki))
+* Add/change routing labels to issues (eg: area/foo, kind/foo, priority/foo, sig/foo)
 * Apply release-note labels to PRs (until that is automated or eliminated)
 * Set the milestone on a PR or issue
 * Assign issues to the correct people for immediate triage/work
