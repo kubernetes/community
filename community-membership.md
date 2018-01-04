@@ -8,6 +8,7 @@ scoped by these sub-areas.
 
 | Role | Responsibilities | Requirements | Defined by |
 | -----| ---------------- | ------------ | -------|
+| outside collaborator | new active contributor to the community | sponsored by 1 member.  existing contributions to the project. | Kubernetes GitHub org member. |
 | member | active contributor in the community | sponsored by 2 reviewers.  multiple contributions to the project. | Kubernetes GitHub org member. |
 | reviewer | review contribution from other members | history of review and authorship in an area | OWNERS file reviewer entry. |
 | approver | approve accepting contributions | highly experienced and active reviewer + contributor to an area | OWNERS file approver entry|
