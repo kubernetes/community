@@ -1,7 +1,7 @@
 API Conventions
 ===============
 
-Updated: 3/7/2017
+Updated: 8/7/2017
 
 *This document is oriented at users who want a deeper understanding of the
 Kubernetes API structure, and developers wanting to extend the Kubernetes API.
@@ -274,7 +274,7 @@ desired state.
 
 The PUT and POST verbs on objects MUST ignore the "status" values, to avoid
 accidentally overwriting the status in read-modify-write scenarios. A `/status`
-subresource MUST be provided to enable system components to update statuses of
+subresource MUST be provided to enable system components to update statuses and metadata of
 resources they manage.
 
 Otherwise, PUT expects the whole object to be specified. Therefore, if a field
