@@ -873,9 +873,6 @@ sigs:
     - name: Bob Wise
       github: countspongebob
       company: Samsung SDS
-    - name: Joe Beda
-      github: jbeda
-      company: Heptio
     meetings:
     - day: Thursday
       time: "16:00"
