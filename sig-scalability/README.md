@@ -21,7 +21,6 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=NDP1uYyom
 ## Leads
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
 * Bob Wise (**[@countspongebob](https://github.com/countspongebob)**), Samsung SDS
-* Joe Beda (**[@jbeda](https://github.com/jbeda)**), Heptio
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-scalability)
