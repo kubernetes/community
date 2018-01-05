@@ -745,8 +745,8 @@ sigs:
       github: xsgordon
       company: Red Hat
     meetings:
-    - day: Wednesday
-      time: "15:00"
+    - day: Thursday
+      time: "00:00"
       tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/j/417251241
