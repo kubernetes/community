@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Coordinates the cross-community efforts of the OpenStack and Kubernetes communities. This includes OpenStack-related contributions to Kubernetes projects with OpenStack as: a deployment platform for Kubernetes; a service provider for Kubernetes; a collection of applications to run on Kubernetes.
 
 ## Meetings
-* [Wednesdays at 15:00 UTC](https://zoom.us/j/417251241) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+* [Thursdays at 00:00 UTC](https://zoom.us/j/417251241) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=00:00&tz=UTC).
 
 Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f).
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax).
