@@ -1,4 +1,4 @@
----
+```
 kep-number: draft-20171127
 title: Cloud Provider Controller Manager
 authors:
@@ -21,6 +21,7 @@ status: draft
 see-also:
 replaces:
   - contributors/design-proposals/cloud-provider/cloud-provider-refactoring.md
+```
 
 # Remove Cloud Provider Code From Kubernetes Core
 
