@@ -1,5 +1,5 @@
 This is an announcement for the 2017 Kubernetes Leadership Summit, which will occur on June 2nd, 2017 in San Jose, CA. 
-This event will be similar to the [Kubernetes Developer's Summit](/community/2016-events/developer-summit-2016/Kubernetes_Dev_Summit.md) in November 
+This event will be similar to the [Kubernetes Developer's Summit](/events/2016/developer-summit-2016/Kubernetes_Dev_Summit.md) in November
 2016, but involving a smaller smaller audience comprised solely of leaders and influencers of the community. These leaders and
 influences include the SIG leads, release managers, and representatives from several companies, including (but not limited to)
 Google, Red Hat, CoreOS, WeaveWorks, Deis, and Mirantis.
