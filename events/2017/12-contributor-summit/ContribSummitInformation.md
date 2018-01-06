@@ -18,7 +18,7 @@ Times in CST
 - 01:00 pm - Sessions resume  
 - 05:00 pm - Happy Hour onsite  
 
-View the complete session schedule [here](/community/2017-events/12-contributor-summit/schedule.png).  
+View the complete session schedule [here](schedule.png).
 Session schedule will be available onsite in print as well as on TVs.
 
 ## Where:
