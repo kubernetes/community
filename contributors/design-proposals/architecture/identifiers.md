@@ -55,8 +55,8 @@ suffix) to create a unique Name. For situations where generating a name is
 impractical, some or all objects may support a param to auto-generate a name.
 Generating random names will defeat idempotency.
    * Examples: "guestbook.user", "backend-x4eb1"
-2. When an object is created via an API, a Namespace string (a DNS_SUBDOMAIN?
-format TBD via #1114) may be specified. Depending on the API receiver,
+2. When an object is created via an API, a Namespace string (a DNS_LABEL)
+may be specified. Depending on the API receiver,
 namespaces might be validated (e.g. apiserver might ensure that the namespace
 actually exists). If a namespace is not specified, one will be assigned by the
 API receiver. This assignment policy might vary across API receivers (e.g.
