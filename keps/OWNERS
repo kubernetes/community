@@ -1,8 +1,16 @@
 reviewers:
   - sig-architecture-leads
   - jbeda
+  - bgrant0607
+  - jdumars
+  - calebamiles
+  - idvoretskyi
 approvers:
   - sig-architecture-leads
   - jbeda
+  - bgrant0607
+  - jdumars
+  - calebamiles
+  - idvoretskyi
 labels:
   - sig/architecture
