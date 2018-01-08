@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 -->
 # Cluster Lifecycle SIG
 
-The Cluster Lifecycle SIG is responsible for building the user experience for deploying and upgrading Kubernetes clusters.
+The Cluster Lifecycle SIG examines how we should change Kubernetes to make it easier to manage and operate with a focus on cluster deployment and upgrades.
 
 ## Meetings
 * [Tuesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/166836%E2%80%8B624) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
