@@ -116,7 +116,7 @@ Provisioning and deletion operations are handled using the existing [external pr
 
 In short, to dynamically provision a new CSI volume, a cluster admin would create a `StorageClass` with the provisioner corresponding to the name of the external provisioner handling provisioning requests on behalf of the CSI volume driver.
 
-To provision a new CSI volume, an end user would create a `PersistentVolumeClaim` object referencing this `StorageClass`. The external provisioner will react to the creation of the PVC and issue the `CreateVolume` call against the CSI volume driver to provision the volume. The `CreateVolume` name will be auto-generated as it is for other dynamically provisioned volumes. The `CreateVolume` capacity will be take from the `PersistentVolumeClaim` object. The `CreateVolume` parameters will be passed through from the `StorageClass` parameters (opaque to Kubernetes). Once the operation completes successfully, the external provisioner creates a `PersistentVolume` object to represent the volume using the information returned in the `CreateVolume` response. The `PersistentVolume` object is bound to the `PersistentVolumeClaim` and available for use.
+To provision a new CSI volume, an end user would create a `PersistentVolumeClaim` object referencing this `StorageClass`. The external provisioner will react to the creation of the PVC and issue the `CreateVolume` call against the CSI volume driver to provision the volume. The `CreateVolume` name will be auto-generated as it is for other dynamically provisioned volumes. The `CreateVolume` capacity will be taken from the `PersistentVolumeClaim` object. The `CreateVolume` parameters will be passed through from the `StorageClass` parameters (opaque to Kubernetes). Once the operation completes successfully, the external provisioner creates a `PersistentVolume` object to represent the volume using the information returned in the `CreateVolume` response. The `PersistentVolume` object is bound to the `PersistentVolumeClaim` and available for use.
 
 To delete a CSI volume, an end user would delete the corresponding `PersistentVolumeClaim` object. The external provisioner will react to the deletion of the PVC and based on its reclamation policy it will issue the `DeleteVolume` call against the CSI volume driver commands to delete the volume. It will then delete the `PersistentVolume` object.
 
@@ -136,7 +136,7 @@ Once the following conditions are true, the external-attacher should call `Contr
 
 Before starting the `ControllerPublishVolume` operation, the external-attacher should add these finalizers to these Kubernetes API objects:
 
-* To the `VolumeAttachment` so that when the object is deleted, the external-attacher has an opportunity to detach the volume first. External attacher removes this finalized once the volume is fully detached from the node.
+* To the `VolumeAttachment` so that when the object is deleted, the external-attacher has an opportunity to detach the volume first. External attacher removes this finalizer once the volume is fully detached from the node.
 * To the `PersistentVolume` referenced by `VolumeAttachment` so the the PV cannot be deleted while the volume is attached. External attacher needs information from the PV to perform detach operation. The attacher will remove the finalizer once all `VolumeAttachment` objects that refer to the PV are deleted, i.e. the volume is detached from all nodes.
 
 If the operation completes successfully, the external-attacher will:
@@ -209,7 +209,7 @@ type VolumeAttachmentSpec struct {
 }
 
 // VolumeAttachmentSource represents a volume that should be attached.
-// Right now only PersistenVolumes can be attached via external attacher,
+// Right now only PersistentVolumes can be attached via external attacher,
 // in future we may allow also inline volumes in pods.
 // Exactly one member can be set.
 type AttachedVolumeSource struct {
@@ -255,7 +255,7 @@ type VolumeError struct {
 	Time metav1.Time `json:"time,omitempty" protobuf:"bytes,1,opt,name=time"`
 
 	// String detailing the error encountered during Attach or Detach operation.
-	// This string maybe logged, so it should not contain sensitive
+	// This string may be logged, so it should not contain sensitive
 	// information.
 	// +optional
 	Message string `json:"message,omitempty" protobuf:"bytes,2,opt,name=message"`
@@ -383,7 +383,7 @@ To deploy a containerized third-party CSI volume driver, it is recommended that 
           * Expose `/var/lib/kubelet/plugins/[SanitizedCSIDriverName]/` from the host as `hostPath.type = "DirectoryOrCreate"`.
           * Mount inside “CSI volume driver” container at the path the CSI gRPC socket will be created.
           * This is the primary means of communication between Kubelet and the “CSI volume driver” container (gRPC over UDS).
-  * Have cluster admins deploy the above `StatefulSet` and `DaemonSet` to aded support for the storage system in their Kubernetes cluster.
+  * Have cluster admins deploy the above `StatefulSet` and `DaemonSet` to add support for the storage system in their Kubernetes cluster.
 
 Alternatively, deployment could be simplified by having all components (including external-provisioner and external-attacher) in the same pod (DaemonSet). Doing so, however, would consume more resources, and require a leader election protocol (likely https://git.k8s.io/contrib/election) in the `external-provisioner` and `external-attacher` components.
 
@@ -414,8 +414,8 @@ Alternatively, deployment could be simplified by having all components (includin
 1. The Kubernetes attach/detach controller, running as part of the `kube-controller-manager` binary on the master, sees that a pod referencing a CSI volume plugin is scheduled to a node, so it calls the in-tree CSI volume plugin’s attach method.
 2. The in-tree volume plugin creates a new `VolumeAttachment` object in the kubernetes API and waits for its status to change to completed or error.
 3. The external-attacher sees the `VolumeAttachment` object and triggers a `ControllerPublish` against the CSI volume driver container to fulfil it (meaning the external-attacher container issues a gRPC call via underlying UNIX domain socket to the CSI driver container).
-4. Upon successful completion of the `ControllerPublish` call the external-attacher updates the status of the `VolumeAttachment` object to indicate the volume is successful attached.
-5. The in-tree volume plugin watching the status of the `VolumeAttachment` object in the kubernetes API, sees the `Attached` field set to true indicating the volume is attached, so It updates the attach/detach controller’s internal state to indicate the volume is attached.
+4. Upon successful completion of the `ControllerPublish` call the external-attacher updates the status of the `VolumeAttachment` object to indicate the volume is successfully attached.
+5. The in-tree volume plugin watching the status of the `VolumeAttachment` object in the Kubernetes API, sees the `Attached` field set to true indicating the volume is attached, so it updates the attach/detach controller’s internal state to indicate the volume is attached.
 
 #### Detaching Volumes
 
@@ -477,7 +477,7 @@ Because the kubelet would be responsible for fetching and passing the mount secr
 
 ### Extending PersistentVolume Object
 
-Instead of creating a new `VolumeAttachment` object, another option we considered was extending the exiting `PersistentVolume` object.
+Instead of creating a new `VolumeAttachment` object, another option we considered was extending the existing `PersistentVolume` object.
 
 `PersistentVolumeSpec` would be extended to include:
 * List of nodes to attach the volume to (initially empty).
