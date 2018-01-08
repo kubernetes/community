@@ -35,9 +35,9 @@ container lists to merge together based on the `name` field.
 
 To solve this problem, Strategic Merge Patch uses the go struct tag of the API
 objects to determine what lists should be merged and which ones should not.
-Currently the metadata is available as struct tags on the API objects
-themselves, but will become available to clients as Swagger annotations in the
-future. In the above example, the `patchStrategy` metadata for the `containers`
+The metadata is available as struct tags on the API objects
+themselves and also available to clients as [OpenAPI annotations](https://github.com/kubernetes/kubernetes/blob/master/api/openapi-spec/README.md#x-kubernetes-patch-strategy-and-x-kubernetes-patch-merge-key).
+In the above example, the `patchStrategy` metadata for the `containers`
 field would be `merge` and the `patchMergeKey` would be `name`.
 
 
