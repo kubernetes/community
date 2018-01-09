@@ -8,7 +8,7 @@ Implementation Owner: Yaniv Bronhaim (ybronhei@redhat.com)
 Current Repository: https://github.com/rootfs/node-fencing
 
 ## Overview
-Rationale and architecture for the addition of a fencing mechanism in Kubernetes clusters. In [pod-safety](https://github.com/kubernetes/community/blob/16f88595883a7461010b6708fb0e0bf1b046cf33/contributors/design-proposals/pod-safety.md) proposal we describe the need and desire solutions for unrecoverable cluster partition. In the following we define motivations and flows to provide fence actions using fence controller and executor to free the partitioned entities and recover the workload by isolation and power management operations.
+Rationale and architecture for the addition of a fencing mechanism in Kubernetes clusters. In [pod-safety](https://github.com/kubernetes/community/blob/16f88595883a7461010b6708fb0e0bf1b046cf33/contributors/design-proposals/pod-safety.md) proposal we describe the need and desire solutions for unrecoverable cluster partition. In the following we define motivations and flows to provide fence actions using fence controller to free the partitioned entities and recover the workload by isolation and power management operations.
 
 ### Motivation
 Kubernetes cluster can get into a network partition state between nodes to the api server running on the master node (e.g. network device failure). When that happens their nodes’ status is changed to “not ready” by the node controller and the scheduler cannot know the status of pods running on that node without reaching the nodes’ kubelet service. From such scenario, k8s (since 1.8) defines an eviction timeout (forced by the node controller) such that after 5 minutes pods will enter a termination state in the api server and will try to shutdown gracefully when possible (this happens only if the connectivity returns).
@@ -123,19 +123,19 @@ The template allows to reuse parameters for common devices and agents
 
 ### Implementation
 #### Fence Controller
-- The fence controller is a stateless pod instance running in cluster that supports fence.
-- The controller will identify unresponsive node by check their apiserver object, once node becomes “not ready” a fence treatment will be triggered by posting crd for fence to initiate fence flow by Fence Executor.
-- The controller also follow fence processes by following and updating fencenode crds status: The controller will check iteratively all fence objects and validate their execution (base on their status and state in stage). If execution is recognized as stuck or failed, the controller will handle the running job and run a new one on different resource to handle the request. Also, the controller is responsible to move to next “step” when node is still not ready, crd already exists, and the step is running for a configured amount of time.
+The fence controller is a stateless controller that can be deployed as pod in cluster or process running outside the cluster. The controller identifies unresponsive node by getting events from the apiserver, once node becomes “not ready” the controller posts crd for fence to initiate fence flows.
 
-#### Fence Executor
-Executor is k8s Job that is created in cluster by Fence Controller once the controller starts up. The executor will fetch “nodefence” crd objects to handle by the following:
-- If status:new- executor reads node’s fence config and specifically the step’s method list, and then start running fence agents using the methods’ config values.
-- Any other status means - another executor already process the request, we already fail or success.
-- On fail will modify to status:fail and controller will handle the cleanup of the job and retriggering new one to handle the fence request again.
+The controller proidically polls fencenode crds and manage them as follow:
+- status:new - Controller creates job objects for each method in step, move to status:running and update jobs list in nodefence object.
+- status:running - Poll running jobs and check if all done successfully. Set status:done or status:error based on jobs condition.
+- status:done - Check node readiness, if node is ready move to step:recovery. If node still unresponsive, move to step:power-management. If on step:power-management already and not ready move to status:error (move to error after configurable number of pollings before changing status - see cluster-fence-config)
+- status:error - Delete all related jobs and move to status:new to retrigger jobs on different nodes.
 
-The internal operation performs the fence execution using Fence Agents.
+Job creation gets the authenticatoin parameters to execute fence agent - This is parsed by the controller from the configmaps as described above. On init the controller reads all fence agents' meta-data to perform parameters extraction for creating the job command. New fence-scripts can be dynamically added by dropping scripts to fence-agents folder and rebuilt the agent image.
 
-Follwing is a list of agents we will integrate with:
+#### Executor Job
+Executor is k8s Job that is posted to cluster by the controller. The job is based on centos image including all fence scripts that are available in cluster. The job only executes one command and returns the exit status. The job is monitored and mantained by the controller as described in Fence Controller section.
+Follwing is a list of agents we will integrate using fence scripts:
 - Cluster fence operation - E.g: 1) cordon node 2) cleaning resources - deleting pods from apiserver.
 - https://github.com/ClusterLabs/fence-agents/tree/master/fence/agents/aws - Cloud provider agent for rebooting ec2 machines.
 - https://github.com/ClusterLabs/fence-agents - Scripts for executing pm devices.
@@ -148,35 +148,35 @@ Cloud provider allows us to implement fencing agents that perform power manageme
 #### Fence CRD
 This is new proposed crd object in k8s cluster API server. The idea behind it is: 
 1. to allow the fence controller to be “stateless” - means that the crd will hold the fence operation state and if controller was restarted all the info to continue fence operation will be specified in those objects.
-1. to allow triggering executors to perform actions and sign if they finished successfully or failed.
+1. to allow triggering jobs to perform actions and sign if they finished successfully or failed.
 
 ```yaml
 apiVersion: ha.k8s.io/v1
-clean_resources: true
+jobs:
+- gcloud-reset-inst-9cf8f46e-f44b-11e7-8977-68f728ac95ea
+- clean-pods-9d0b1321-f44b-11e7-8977-68f728ac95ea
 kind: NodeFence
 metadata:
   clusterName: ""
-  creationTimestamp: 2017-12-04T14:20:25Z
-  deletionGracePeriodSeconds: null
-  deletionTimestamp: null
-  name: nodefence-example0
+  creationTimestamp: 2018-01-08T08:11:03Z
+  generation: 0
+  name: node-fence-k8s-cluster-host1.usersys.redhat.com
   namespace: ""
-  resourceVersion: "33604"
-  selfLink: /apis/ha.k8s.io/v1/nodefence-example0
-  uid: 4553e14e-d8fe-11e7-86cf-5452c0a8c802
-node: host0
-status: New
-step: isolation
+  resourceVersion: "163898"
+  selfLink: /apis/ha.k8s.io/v1/node-fence-k8s-cluster-host1.usersys.redhat.com
+  uid: 77fdb386-f44b-11e7-bec9-001a4a16015a
+node: k8s-cluster-host1.usersys.redhat.com
+retries: 2
+status: Done
+step: Power-Management
 ```
 - step can be isolation\power_managment\recover - this refer to the set of method configured in the NodeFenceConfig.
-- status is "running" while executor starts working, and when it finishes its either fail or success. Before executor picks it the controller creates the object with status:new.
-- resources_cleaned points on the status of the pods cleanup by the controller - if fence is done and resource should be cleaned.
+- status is new, done, running or error - see Fence Controller management for each status.
 
-Flow example: controller saw non-response node and created new crd to fence the new, this initialized to “step: isolation” and current timestep. Executor picks this and change status to running. Meanwhile controller check if status was changed to success or failed. 
-- If failed will run new executor job to try it
-- If node becomes “ready” in cluster, controller will change the crd to step:recovery and let executor to perform recovery action until done
+Flow example: controller saw non-response node and created new crd to fence the new, this initialized to “step: isolation” and current timestep. The controller create jobs related to the step and move status to running.
+- If node becomes “ready” in cluster, controller will change the crd to step:recovery and start triggering recovery jobs.
 
-After 5min (configurable) if node is still “not ready” controller will change to step:power_managment and status:new to let executor pick it up again.
+After 5min (configurable) if node is still “not ready” controller will change to step:power_managment and status:new to start triggering pm jobs.
 
 #### Pods treatment
 Pod treatment is done by “cluster fence agents” which will be run as part of a node fence treatment.
