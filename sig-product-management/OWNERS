@@ -1,8 +1,6 @@
 reviewers:
-  - apsinha
-  - idvoretskyi
-  - calebamiles
+  - sig-product-management-leads
 approvers:
-  - apsinha
-  - idvoretskyi
-  - calebamiles
+  - sig-product-management-leads
+labels:
+  - sig/pm

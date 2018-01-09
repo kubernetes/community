@@ -3,7 +3,6 @@
 Updated: 3/23/2017
 
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Kubectl Conventions](#kubectl-conventions)
   - [Principles](#principles)
@@ -15,9 +14,9 @@ Updated: 3/23/2017
   - [Documentation conventions](#documentation-conventions)
   - [kubectl Factory conventions](#kubectl-Factory-conventions)
   - [Command implementation conventions](#command-implementation-conventions)
+  - [Exit code conventions](#exit-code-conventions)
   - [Generators](#generators)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## Principles
 
@@ -173,7 +172,7 @@ generation, etc., and display the output
 * `--output-version=...`: Convert the output to a different API group/version
 
 * `--short`: Output a compact summary of normal output; the format is subject
-to change and is optimizied for reading not parsing.
+to change and is optimized for reading not parsing.
 
 * `--validate`: Validate the resource schema
 
@@ -256,10 +255,8 @@ input, output, commonly used flags, etc.
 
   * Example should contain examples
     * A comment should precede each example command. Comment should start with
-      an uppercase letter and terminate with a period
-    * Start commands with `$`
-
-
+      an uppercase letter
+    * Command examples should not include a `$` prefix
 
 * Use "FILENAME" for filenames
 
@@ -375,7 +372,22 @@ and as noted in [command conventions](#command-conventions), ideally that logic
 should exist server-side so any client could take advantage of it. Notice that
 this is not a mandatory structure and not every command is implemented this way,
 but this is a nice convention so try to be compliant with it. As an example,
-have a look at how [kubectl logs](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubectl/cmd/logs.go) is implemented.
+have a look at how [kubectl logs](https://git.k8s.io/kubernetes/pkg/kubectl/cmd/logs.go) is implemented.
+
+## Exit code conventions
+
+Generally, for all the command exit code, result of `zero` means success and `non-zero` means errors.
+
+For idempotent ("make-it-so") commands, we should return `zero` when success even if no changes were provided, user can request treating "make-it-so" as "already-so" via flag `--error-unchanged` to make it return `non-zero` exit code.
+
+For non-idempotent ("already-so") commands, we should return `non-zero` by default, user can request treating "already-so" as "make-it-so" via flag `--ignore-unchanged` to make it return `zero` exit code.
+
+
+| Exit Code Number | Meaning | Enable |
+| :---             | :---    | :---    |
+| 0                | Command exited success  | By default, By flag `--ignore-unchanged` |
+| 1                | Command exited for general errors  | By default |
+| 3                | Command was successful, but the user requested a distinct exit code when no change was made | By flag `--error-unchanged`|
 
 ## Generators
 
@@ -444,7 +456,3 @@ method which configures the generated namespace that callers of the generator
 * `--dry-run` should output the resource that would be created, without
 creating it.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/kubectl-conventions.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

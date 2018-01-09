@@ -1,16 +1,23 @@
 # Flexvolume
 
-Flexvolume enables users to write their own drivers and add support for their volumes in Kubernetes. Vendor drivers should be installed in the volume plugin path on every Kubelet node and on master node(s) if "--enable-controller-attach-detach" Kubelet option is enabled. 
+Flexvolume enables users to write their own drivers and add support for their volumes in Kubernetes. Vendor drivers should be installed in the volume plugin path on every Kubelet node and on master node(s) if `--enable-controller-attach-detach` Kubelet option is enabled.
 
-*Note: Flexvolume is an alpha feature and is most likely to change in future*
+Flexvolume is a GA feature from Kubernetes 1.8 release onwards.
 
 ## Prerequisites
 
-Install the vendor driver on all nodes (also on master nodes if "--enable-controller-attach-detach" Kubelet option is enabled) in the plugin path. Path for installing the plugin: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/\<vendor~driver\>/\<driver\>
+Install the vendor driver on all nodes (also on master nodes if "--enable-controller-attach-detach" Kubelet option is enabled) in the plugin path. Path for installing the plugin: `<plugindir>/<vendor~driver>/<driver>`. The default plugin directory is `/usr/libexec/kubernetes/kubelet-plugins/volume/exec/`. It can be changed in kubelet via the `--volume-plugin-dir` flag, and in controller manager via the `--flex-volume-plugin-dir` flag.
 
-For example to add a 'cifs' driver, by vendor 'foo' install the driver at: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/\<foo~cifs\>/cifs
+For example to add a `cifs` driver, by vendor `foo` install the driver at: `/usr/libexec/kubernetes/kubelet-plugins/volume/exec/foo~cifs/cifs`
 
-The vendor and driver names must match flexVolume.driver in the volume spec, with '~' replaced with '/'. For example, if flexVolume.driver is set to "foo/cifs", then the vendor is "foo", and driver is "cifs".
+The vendor and driver names must match flexVolume.driver in the volume spec, with '~' replaced with '/'. For example, if `flexVolume.driver` is set to `foo/cifs`, then the vendor is `foo`, and driver is `cifs`.
+
+## Dynamic Plugin Discovery
+Beginning in v1.8, Flexvolume supports the ability to detect drivers on the fly. Instead of requiring drivers to exist at system initialization time or having to restart kubelet or controller manager, drivers can be installed, upgraded/downgraded, and uninstalled while the system is running.
+For more information, please refer to the [design document](/contributors/design-proposals/storage/flexvolume-deployment.md).
+
+## Automated Plugin Installation/Upgrade
+One possible way to install and upgrade your Flexvolume drivers is by using a DaemonSet. See [Recommended Driver Deployment Method](/contributors/design-proposals/storage/flexvolume-deployment.md#recommended-driver-deployment-method) for details.
 
 ## Plugin details
 The plugin expects the following call-outs are implemented for the backend drivers. Some call-outs are optional. Call-outs are invoked from the Kubelet & the Controller manager nodes.
@@ -25,13 +32,6 @@ Current capabilities:
 See [Driver output](#driver-output) for the capabilities map format.
 ```
 <driver executable> init
-```
-
-#### Get volume name:
-Get a cluster wide unique volume name for the volume. Called from both Kubelet & Controller manager.
-
-```
-<driver executable> getvolumename <json options>
 ```
 
 #### Attach:
@@ -50,7 +50,7 @@ Detach the volume from the Kubelet node. Nodename param is only valid/relevant i
 ```
 
 #### Wait for attach:
-Wait for the volume to be attached on the remote node. On success, the path to the device is returned. Called from both Kubelet & Controller manager.
+Wait for the volume to be attached on the remote node. On success, the path to the device is returned. Called from both Kubelet & Controller manager. The timeout should be 10m (based on https://git.k8s.io/kubernetes/pkg/kubelet/volumemanager/volume_manager.go#L88 )
 
 ```
 <driver executable> waitforattach <mount device> <json options>
@@ -131,11 +131,8 @@ Note: Secrets are passed only to "mount/unmount" call-outs.
 
 See [nginx.yaml] & [nginx-nfs.yaml] for a quick example on how to use Flexvolume in a pod.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/volumes/flexvolume/README.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->
 
-[lvm]: https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/lvm
-[nfs]: https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/nfs
-[nginx.yaml]: https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/nginx.yaml
-[nginx-nfs.yaml]: https://github.com/kubernetes/kubernetes/blob/master/examples/volumes/flexvolume/nginx-nfs.yaml
+[lvm]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/lvm
+[nfs]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/nfs
+[nginx.yaml]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/nginx.yaml
+[nginx-nfs.yaml]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/nginx-nfs.yaml

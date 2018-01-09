@@ -73,11 +73,11 @@ _Note, the [minutes and agenda have moved to Google Docs](https://docs.google.co
 ## May 31, 2016
 * Canceled in honor of a short week
 
-## May 25, 2016 [[notes & video](https://github.com/kubernetes/community/blob/master/sig-apps/minutes/2016-05-25.md)]
+## May 25, 2016 [[notes & video](/sig-apps/minutes/2016-05-25.md)]
 * Intro
 * Mike Metral of Rackspace will demo how to recursively process configuration files with the -R flag
 
-## May 18, 2016 [[notes](https://github.com/kubernetes/community/blob/master/sig-apps/minutes/2016-05-18.md)]
+## May 18, 2016 [[notes](/sig-apps/minutes/2016-05-18.md)]
 * Intro
 * Discussion on the future of SIG-Apps
 * Pranshanth B. of Google will demo PetSet

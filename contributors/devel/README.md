@@ -8,19 +8,12 @@ Guide](http://kubernetes.io/docs/admin/).
 
 ## The process of developing and contributing code to the Kubernetes project
 
-* **Welcome to Kubernetes (New Developer Guide)**
-  ([welcome-to-kubernetes-new-developer-guide.md](welcome-to-kubernetes-new-developer-guide.md)):
-  An introductory guide to contributing to K8s.
-
-* **On Collaborative Development** ([collab.md](collab.md)): Info on pull requests and code reviews.
+* **Contributor Guide**
+  ([Please start here](/contributors/guide/README.md)) to learn about how to contribute to Kubernetes
 
 * **GitHub Issues** ([issues.md](issues.md)): How incoming issues are triaged.
 
 * **Pull Request Process** ([pull-requests.md](pull-requests.md)): When and why pull requests are closed.
-
-* **Kubernetes On-Call Rotations** ([on-call-rotations.md](on-call-rotations.md)): Descriptions of on-call rotations for build and end-user support.
-
-* **Faster PR reviews** ([faster_reviews.md](faster_reviews.md)): How to get faster PR reviews.
 
 * **Getting Recent Builds** ([getting-builds.md](getting-builds.md)): How to get recent builds including the latest builds that pass CI.
 
@@ -73,17 +66,13 @@ Guide](http://kubernetes.io/docs/admin/).
 * **Authentication** ([Authentication](http://kubernetes.io/docs/admin/authentication/)):
   The current and planned states of authentication tokens.
 
-* **Authorization Plugins** ([Authorization](http://kubernetes.github.io/docs/admin/authorization/)):
+* **Authorization Plugins** ([Authorization](http://kubernetes.io/docs/admin/authorization/)):
   Authorization applies to all HTTP requests on the main apiserver port.
   This doc explains the available authorization implementations.
 
-* **Admission Control Plugins** ([admission_control](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/admission_control.md))
+* **Admission Control Plugins** ([admission_control](/contributors/design-proposals/api-machinery/admission_control.md))
 
 
 ## Building releases
 
 See the [kubernetes/release](https://github.com/kubernetes/release) repository for details on creating releases and related tools and helper scripts.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/README.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

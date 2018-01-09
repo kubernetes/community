@@ -33,27 +33,73 @@ for other github repositories related to Kubernetes is TBD.
 Most people can leave comments and open issues. They don't have the ability to
 set labels, change milestones and close other peoples issues. For that we use
 a bot to manage labelling and triaging. The bot has a set of
-[commands and permissions](https://github.com/kubernetes/test-infra/blob/master/commands.md)
+[commands and permissions](https://git.k8s.io/test-infra/commands.md)
 and this document will cover the basic ones.
 
 ## Determine if it’s a support request
 
 Sometimes users ask for support requests in issues; these are usually requests
 from people who need help configuring some aspect of Kubernetes. These should be
-directed to our [support structures](https://github.com/kubernetes/community/blob/master/contributors/devel/on-call-user-support.md) and then closed. Also, if the issue is clearly abandoned or in
-the wrong place, it should be closed. Keep in mind that only issue reporter,
-assignees and component organization members can close issue. If you do not
-have such privilege, just comment your findings. Otherwise, first `/assign`
-issue to yourself and then `/close`.
+directed to our support structures (see below) and then closed. Also, if the issue 
+is clearly abandoned or in the wrong place, it should be closed. Keep in mind that 
+only issue reporter, assignees and component organization members can close issue. 
+If you do not have such privilege, just comment your findings. Otherwise, first
+`/assign` issue to yourself and then `/close`.
+
+### Support Structures
+
+Support requests should be directed to the following:
+
+* [User documentation](https://kubernetes.io/docs/) and
+[troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
+
+* [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes) and
+[ServerFault](http://serverfault.com/questions/tagged/kubernetes)
+
+* [Slack](https://kubernetes.slack.com) ([registration](http://slack.k8s.io))
+  * Check out the [Slack Archive](http://kubernetes.slackarchive.io/) first.
+
+* [Email/Groups](https://groups.google.com/forum/#!forum/kubernetes-users)
+
+### User support response example
+
+If you see support questions on kubernetes-dev@googlegroups.com or issues asking for 
+support try to redirect them to Stack Overflow. Example response:
+
+```code
+Please re-post your question to [Stack Overflow]
+(http://stackoverflow.com/questions/tagged/kubernetes).
+
+We are trying to consolidate the channels to which questions for help/support
+are posted so that we can improve our efficiency in responding to your requests,
+and to make it easier for you to find answers to frequently asked questions and
+how to address common use cases.
+
+We regularly see messages posted in multiple forums, with the full response
+thread only in one place or, worse, spread across multiple forums. Also, the
+large volume of support issues on github is making it difficult for us to use
+issues to identify real bugs.
+
+Members of the Kubernetes community use Stack Overflow to field support
+requests. Before posting a new question, please search Stack Overflow for answers 
+to similar questions, and also familiarize yourself with:
+
+  * [user documentation](http://kubernetes.io/docs/)
+  * [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
+
+Again, thanks for using Kubernetes.
+
+The Kubernetes Team
+```
 
 ## Find the right SIG(s)
-Components are divided among [Special Interest Groups (SIGs)](https://github.com/kubernetes/community/blob/master/sig-list.md). Find a proper SIG for the ownership of the issue using the bot:
+Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). Find a proper SIG for the ownership of the issue using the bot:
 
 * Typing `/sig network` in a comment should add the sig/network label, for
 example.
 * Multiword SIGs use dashes, for example `/sig cluster-lifecycle`.
 
-Keep in mind that these commands must be on its own and at the front of the
+Keep in mind that these commands must be on its own line and at the front of the
 comment.
 
 ## Validate if the issue is bug
@@ -158,7 +204,3 @@ issues are work we would merge into the release if it gets done, but we wouldn't
 block the release on it. A few days before release, we will probably move all
 `priority/important-soon` and `priority/important-longterm` bugs out of
 that milestone in bulk.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/issues.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

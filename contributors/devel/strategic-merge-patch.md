@@ -35,9 +35,9 @@ container lists to merge together based on the `name` field.
 
 To solve this problem, Strategic Merge Patch uses the go struct tag of the API
 objects to determine what lists should be merged and which ones should not.
-Currently the metadata is available as struct tags on the API objects
-themselves, but will become available to clients as Swagger annotations in the
-future. In the above example, the `patchStrategy` metadata for the `containers`
+The metadata is available as struct tags on the API objects
+themselves and also available to clients as [OpenAPI annotations](https://github.com/kubernetes/kubernetes/blob/master/api/openapi-spec/README.md#x-kubernetes-patch-strategy-and-x-kubernetes-patch-merge-key).
+In the above example, the `patchStrategy` metadata for the `containers`
 field would be `merge` and the `patchMergeKey` would be `name`.
 
 
@@ -216,7 +216,7 @@ item that has duplicates will delete all matching items.
 
 `setElementOrder` directive provides a way to specify the order of a list.
 The relative order specified in this directive will be retained.
-Please refer to [proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/preserve-order-in-strategic-merge-patch.md) for more information.
+Please refer to [proposal](/contributors/design-proposals/cli/preserve-order-in-strategic-merge-patch.md) for more information.
 
 ### Syntax
 
@@ -295,7 +295,7 @@ containers:
 
 `retainKeys` directive provides a mechanism for union types to clear mutual exclusive fields.
 When this directive is present in the patch, all the fields not in this directive will be cleared.
-Please refer to [proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/add-new-patchStrategy-to-clear-fields-not-present-in-patch.md) for more information.
+Please refer to [proposal](/contributors/design-proposals/api-machinery/add-new-patchStrategy-to-clear-fields-not-present-in-patch.md) for more information.
 
 ### Syntax
 

@@ -9,13 +9,13 @@ depending on the point in the release cycle.
 1. Cherrypicks are [managed with labels and milestones](pull-requests.md#write-release-notes-if-needed)
 1. To get a PR merged to the release branch, first ensure the following labels
    are on the original **master** branch PR:
-  * An appropriate milestone (e.g. v1.3)
+  * The milestone for the branch that you want to cherry-pick to (e.g. v1.7 if you want to backport your change in 1.7 branch)
   * The `cherrypick-candidate` label
 1. If `release-note-none` is set on the master PR, the cherrypick PR will need
    to set the same label to confirm that no release note is needed.
 1. `release-note` labeled PRs generate a release note using the PR title by
    default OR the release-note block in the PR template if filled in.
-  * See the [PR template](https://github.com/kubernetes/kubernetes/blob/master/.github/PULL_REQUEST_TEMPLATE.md) for more details.
+  * See the [PR template](https://git.k8s.io/kubernetes/.github/PULL_REQUEST_TEMPLATE.md) for more details.
   * PR titles and body comments are mutable and can be modified at any time
     prior to the release to reflect a release note friendly message.
 
@@ -33,8 +33,8 @@ label and lose the `cherrypick-candidate` label.
 to the remote branch `upstream/release-3.14`:
 `hack/cherry_pick_pull.sh upstream/release-3.14 98765`
   * Your cherrypick PR (targeted to the branch) will immediately get the
-`do-not-merge` label. The branch owner will triage PRs targeted to
-the branch and label the ones to be merged by applying the `lgtm`
+`do-not-merge/cherry-pick-not-approved` label. The branch owner will triage PRs
+targeted to the branch and label the ones to be merged by applying the `lgtm`
 label.
 
 There is an [issue](https://github.com/kubernetes/kubernetes/issues/23347) open
@@ -56,7 +56,3 @@ status of PRs labeled as `cherrypick-candidate`.
 considered implicit for all code within cherry-pick pull requests, ***unless
 there is a large conflict***.
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/cherry-picks.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

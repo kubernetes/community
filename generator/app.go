@@ -20,6 +20,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"net/url"
 	"os"
 	"path/filepath"
 	"sort"
@@ -29,7 +30,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-var (
+const (
 	readmeTemplate = "readme.tmpl"
 	listTemplate   = "list.tmpl"
 	headerTemplate = "header.tmpl"
@@ -37,11 +38,14 @@ var (
 	sigsYamlFile  = "sigs.yaml"
 	sigListOutput = "sig-list.md"
 	indexFilename = "README.md"
-	baseOutputDir = "generated"
 
-	githubTeamNames = []string{"misc", "test-failures", "bugs", "feature-requests", "proposals", "pr-reviews", "api-reviews"}
-	beginMarker     = "<!-- BEGIN CUSTOM CONTENT -->"
-	endMarker       = "<!-- END CUSTOM CONTENT -->"
+	beginMarker = "<!-- BEGIN CUSTOM CONTENT -->"
+	endMarker   = "<!-- END CUSTOM CONTENT -->"
+)
+
+var (
+	baseGeneratorDir = ""
+	templateDir      = "generator"
 )
 
 // Lead represents a lead engineer for a particular group. There are usually
@@ -55,18 +59,22 @@ type Lead struct {
 // Meeting represents a regular meeting for a group.
 type Meeting struct {
 	Day       string
-	UTC       string
-	PST       string
+	Time      string
+	TZ        string `yaml:"tz"`
 	Frequency string
 }
 
 // Contact represents the various contact points for a group.
 type Contact struct {
-	Slack            string
-	MailingList      string `yaml:"mailing_list"`
-	FullGitHubTeams  bool   `yaml:"full_github_teams"`
-	GithubTeamPrefix string `yaml:"github_team_prefix"`
-	GithubTeamNames  []string
+	Slack       string
+	MailingList string        `yaml:"mailing_list"`
+	GithubTeams []GithubTeams `yaml:"teams"`
+}
+
+// GithubTeams represents a specific Github Team.
+type GithubTeams struct {
+	Name        string
+	Description string
 }
 
 // Group represents either a Special Interest Group (SIG) or a Working Group (WG)
@@ -74,6 +82,7 @@ type Group struct {
 	Name                 string
 	Dir                  string
 	MissionStatement     string `yaml:"mission_statement"`
+	Label                string
 	Leads                []Lead
 	Meetings             []Meeting
 	MeetingURL           string `yaml:"meeting_url"`
@@ -87,20 +96,6 @@ type Group struct {
 // and a formatted version of the group's name (in kebab case).
 func (e *Group) DirName(prefix string) string {
 	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.Replace(e.Name, " ", "-", -1)))
-}
-
-// SetupGitHubTeams will iterate over all the possible teams available to a
-// group (these are defined by the Kubernetes organisation) and populate a
-// list using the group's prefix.
-func (e *Group) SetupGitHubTeams(prefix string) {
-	ghPrefix := e.Contact.GithubTeamPrefix
-	if ghPrefix == "" {
-		ghPrefix = e.DirName(prefix)
-	}
-
-	for _, gtn := range githubTeamNames {
-		e.Contact.GithubTeamNames = append(e.Contact.GithubTeamNames, fmt.Sprintf("%s-%s", ghPrefix, gtn))
-	}
 }
 
 // Context is the context for the sigs.yaml file.
@@ -147,9 +142,22 @@ func getExistingContent(path string) (string, error) {
 	return strings.Join(captured, "\n"), nil
 }
 
+var funcMap template.FuncMap = template.FuncMap{
+	"tzUrlEncode": tzUrlEncode,
+}
+
+// tzUrlEncode returns an url encoded string without the + shortcut. This is
+// required as the timezone conversion site we are using doesn't recognize + as
+// a valid url escape character.
+func tzUrlEncode(tz string) string {
+	return strings.Replace(url.QueryEscape(tz), "+", "%20", -1)
+}
+
 func writeTemplate(templatePath, outputPath string, data interface{}) error {
 	// set up template
-	t, err := template.ParseFiles(templatePath, headerTemplate)
+	t, err := template.New(filepath.Base(templatePath)).
+		Funcs(funcMap).
+		ParseFiles(templatePath, filepath.Join(baseGeneratorDir, templateDir, headerTemplate))
 	if err != nil {
 		return err
 	}
@@ -200,29 +208,27 @@ func writeCustomContentBlock(f *os.File, content string) {
 func createGroupReadme(groups []Group, prefix string) error {
 	// figure out if the user wants to generate one group
 	var selectedGroupName *string
-	if envVal, ok := os.LookupEnv(strings.ToUpper(prefix)); ok {
+	if envVal, ok := os.LookupEnv("WHAT"); ok {
 		selectedGroupName = &envVal
 	}
 
 	for _, group := range groups {
 		group.Dir = group.DirName(prefix)
 		// skip generation if the user specified only one group
-		if selectedGroupName != nil && *selectedGroupName != group.Dir {
+		if selectedGroupName != nil && strings.HasSuffix(group.Dir, *selectedGroupName) == false {
 			fmt.Printf("Skipping %s/README.md\n", group.Dir)
 			continue
 		}
 
 		fmt.Printf("Generating %s/README.md\n", group.Dir)
 
-		outputDir := filepath.Join(baseOutputDir, group.Dir)
+		outputDir := filepath.Join(baseGeneratorDir, group.Dir)
 		if err := createDirIfNotExists(outputDir); err != nil {
 			return err
 		}
 
-		group.SetupGitHubTeams(prefix)
-
 		outputPath := filepath.Join(outputDir, indexFilename)
-		readmePath := fmt.Sprintf("%s_%s", prefix, readmeTemplate)
+		readmePath := filepath.Join(baseGeneratorDir, templateDir, fmt.Sprintf("%s_%s", prefix, readmeTemplate))
 		if err := writeTemplate(readmePath, outputPath, group); err != nil {
 			return err
 		}
@@ -232,7 +238,7 @@ func createGroupReadme(groups []Group, prefix string) error {
 }
 
 func main() {
-	yamlData, err := ioutil.ReadFile(filepath.Join(baseOutputDir, sigsYamlFile))
+	yamlData, err := ioutil.ReadFile(filepath.Join(baseGeneratorDir, sigsYamlFile))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -262,8 +268,8 @@ func main() {
 	}
 
 	fmt.Println("Generating sig-list.md")
-	outputPath := filepath.Join(baseOutputDir, sigListOutput)
-	err = writeTemplate(listTemplate, outputPath, ctx)
+	outputPath := filepath.Join(baseGeneratorDir, sigListOutput)
+	err = writeTemplate(filepath.Join(baseGeneratorDir, templateDir, listTemplate), outputPath, ctx)
 	if err != nil {
 		log.Fatal(err)
 	}

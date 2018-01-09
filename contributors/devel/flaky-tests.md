@@ -35,7 +35,7 @@ discoverable from the issue.
    link is nice but strictly optional: not only does it expire more quickly,
    it's not accessible to non-Googlers.
 
-## Finding filed flaky test cases
+## Finding failed flaky test cases
 
 Find flaky tests issues on GitHub under the [kind/flake issue label][flake].
 There are significant numbers of flaky tests reported on a regular basis and P2
@@ -188,7 +188,3 @@ exited -1, since that's what happens when you stop the replication controller.
 
 Happy flake hunting!
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/flaky-tests.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

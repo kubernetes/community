@@ -3,10 +3,6 @@ reviewers:
   - pwittrock
   - steveperry-53
   - chenopis
-  - sig-release
+  - spiffxp
 approvers:
-  - saad-ali
-  - pwittrock
-  - steveperry-53
-  - chenopis
-  - sig-release
+  - sig-release-leads

@@ -1,7 +1,7 @@
 # Container Runtime Interface: Container Metrics
 
 [Container runtime interface
-(CRI)](https://github.com/kubernetes/community/blob/master/contributors/devel/container-runtime-interface.md)
+(CRI)](/contributors/devel/container-runtime-interface.md)
 provides an abstraction for container runtimes to integrate with Kubernetes.
 CRI expects the runtime to provide resource usage statistics for the
 containers.
@@ -12,7 +12,7 @@ Historically Kubelet relied on the [cAdvisor](https://github.com/google/cadvisor
 library, an open-source project hosted in a separate repository, to retrieve
 container metrics such as CPU and memory usage. These metrics are then aggregated
 and exposed through Kubelet's [Summary
-API](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/apis/stats/v1alpha1/types.go)
+API](https://git.k8s.io/kubernetes/pkg/kubelet/apis/stats/v1alpha1/types.go)
 for the monitoring pipeline (and other components) to consume. Any container
 runtime (e.g., Docker and Rkt) integrated with Kubernetes needed to add a
 corresponding package in cAdvisor to support tracking container and image file
@@ -23,9 +23,9 @@ progression to augment CRI to serve container metrics to eliminate a separate
 integration point.
 
 *See the [core metrics design
-proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/core-metrics-pipeline.md)
+proposal](/contributors/design-proposals/instrumentation/core-metrics-pipeline.md)
 for more information on metrics exposed by Kubelet, and [monitoring
-architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/monitoring_architecture.md)
+architecture](/contributors/design-proposals/instrumentation/monitoring_architecture.md)
 for the evolving monitoring pipeline in Kubernetes.*
 
 # Container Metrics

@@ -6,6 +6,7 @@ sigs:
       API CRUD semantics, admission control, encoding/decoding, conversion,
       defaulting, persistence layer (etcd), OpenAPI, third-party resource,
       garbage collection, and client libraries.
+    label: api-machinery
     leads:
     - name: Daniel Smith
       company: Google
@@ -15,7 +16,8 @@ sigs:
       github: deads2k
     meetings:
     - day: Wednesday
-      utc: "18:00"
+      time: "11:00"
+      tz: "PT (Pacific Time)"
       frequency: biweekly
     meeting_url: https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig
     meeting_archive_url: https://goo.gl/x5nWrF
@@ -23,6 +25,21 @@ sigs:
     contact:
       slack: sig-api-machinery
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery
+      teams:
+      - name: sig-api-machinery-api-reviews
+        description: API Changes and Reviews
+      - name: sig-api-machinery-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-api-machinery-feature-requests
+        description: Feature Requests
+      - name: sig-api-machinery-misc
+        description: General Discussion
+      - name: sig-api-machinery-pr-reviews
+        description: PR Reviews
+      - name: sig-api-machinery-proposals
+        description: Design Proposals
+      - name: sig-api-machinery-test-failures
+        description: Test Failures and Triage
   - name: Apps
     dir: sig-apps
     mission_statement: >
@@ -31,6 +48,7 @@ sigs:
       We discuss how to define and run apps in Kubernetes, demo relevant tools
       and projects, and discuss areas of friction that can lead to suggesting
       improvements or feature requests.
+    label: apps
     leads:
     - name: Michelle Noorali
       github: michelleN
@@ -41,21 +59,41 @@ sigs:
     - name: Adnan Abdulhussein
       github: prydonius
       company: Bitnami
+    - name: Kenneth Owens
+      github: kow3ns
+      company: Google
     meetings:
     - day: Monday
-      utc: "16:00"
+      time: "9:00"
+      tz: "PT (Pacific Time)"
       frequency: weekly
-    meeting_url: https://zoom.us/j/4526666954
+    meeting_url: https://zoom.us/my/sig.apps
     meeting_archive_url: https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#
     meeting_recordings_url: https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3
     contact:
       slack: sig-apps
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-apps
+      teams:
+      - name: sig-apps-api-reviews
+        description: API Changes and Reviews
+      - name: sig-apps-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-apps-feature-requests
+        description: Feature Requests
+      - name: sig-apps-misc
+        description: General Discussion
+      - name: sig-apps-pr-reviews
+        description: PR Reviews
+      - name: sig-apps-proposals
+        description: Design Proposals
+      - name: sig-apps-test-failures
+        description: Test Failures and Triage
   - name: Architecture
     dir: sig-architecture
     mission_statement: >
       The Architecture SIG maintains and evolves the design principles of Kubernetes, and provides a consistent
       body of expertise necessary to ensure architectural consistency over time.
+    label: architecture
     leads:
     - name: Brian Grant
       github: bgrant0607
@@ -64,20 +102,37 @@ sigs:
       github: jdumars
       company: Microsoft
     meetings:
-    - day: Monday
-      utc: "17:00"
-      frequency: biweekly
+    - day: Thursday
+      time: "15:30"
+      tz: "UTC"
+      frequency: weekly
     meeting_url: https://zoom.us/j/2018742972
     meeting_archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
     meeting_recordings_url: https://www.youtube.com/watch?v=d5ERqm3oHN0&list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
     contact:
       slack: sig-architecture
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-architecture
+      teams:
+      - name: sig-architecture-api-reviews
+        description: API Changes and Reviews
+      - name: sig-architecture-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-architecture-feature-requests
+        description: Feature Requests
+      - name: sig-architecture-misc-use-only-as-a-last-resort
+        description: General Discussion
+      - name: sig-architecture-pr-reviews
+        description: PR Reviews
+      - name: sig-architecture-proposals
+        description: Design Proposals
+      - name: sig-architecture-test-failures
+        description: Test Failures and Triage
   - name: Auth
     dir: sig-auth
     mission_statement: >
       Covers improvements to Kubernetes authorization, authentication, and
       cluster security policy.
+    label: auth
     leads:
     - name: Eric Chiang
       github: ericchiang
@@ -90,7 +145,8 @@ sigs:
       company: Red Hat
     meetings:
     - day: Wednesday
-      utc: "18:00"
+      time: "18:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/my/k8s.sig.auth
     meeting_archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
@@ -98,12 +154,28 @@ sigs:
     contact:
       slack: sig-auth
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-auth
+      teams:
+      - name: sig-auth-api-reviews
+        description: API Changes and Reviews
+      - name: sig-auth-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-auth-feature-requests
+        description: Feature Requests
+      - name: sig-auth-misc
+        description: General Discussion
+      - name: sig-auth-pr-reviews
+        description: PR Reviews
+      - name: sig-auth-proposals
+        description: Design Proposals
+      - name: sig-auth-test-failures
+        description: Test Failures and Triage
   - name: Autoscaling
     dir: sig-autoscaling
     mission_statement: >
       Covers autoscaling of clusters, horizontal and vertical autoscaling of pods,
       setting initial resources for pods, topics related to monitoring pods and
       gathering their metrics (e.g.: Heapster)
+    label: autoscaling
     leads:
     - name: Marcin Wielgus
       github: mwielgus
@@ -112,19 +184,36 @@ sigs:
       github: directxman12
       company: Red Hat
     meetings:
-    - day: Thursday
-      utc: "15:30"
+    - day: Monday
+      time: "14:00"
+      tz: "UTC"
       frequency: biweekly/triweekly
-    meeting_url: https://zoom.us/j/176352399
+    meeting_url: https://zoom.us/my/k8s.sig.autoscaling
     meeting_archive_url: https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit
     meeting_recordings_url:
     contact:
       slack: sig-autoscaling
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling
+      teams:
+      - name: sig-autoscaling-api-reviews
+        description: API Changes and Reviews
+      - name: sig-autoscaling-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-autoscaling-feature-requests
+        description: Feature Requests
+      - name: sig-autoscaling-misc
+        description: General Discussion
+      - name: sig-autoscaling-pr-reviews
+        description: PR Reviews
+      - name: sig-autoscaling-proposals
+        description: Design Proposals
+      - name: sig-autoscaling-test-failures
+        description: Test Failures and Triage
   - name: AWS
     dir: sig-aws
     mission_statement: >
       Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
+    label: aws
     leads:
     - name: Justin Santa Barbara
       github: justinsb
@@ -138,7 +227,8 @@ sigs:
       company: Redspread
     meetings:
     - day: Friday
-      utc: "17:00"
+      time: "9:00" # Actually 9AM Pacific, but timezone support issue is https://github.com/kubernetes/community/issues/841
+      tz: "PT (Pacific Time)"
       frequency: biweekly
     meeting_url: https://zoom.us/my/k8ssigaws
     meeting_archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
@@ -146,11 +236,15 @@ sigs:
     contact:
       slack: sig-aws
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-aws
+      teams:
+      - name: sig-aws-misc
+        description: General Discussion
   - name: Azure
     dir: sig-azure
     mission_statement: >
       A Special Interest Group for building, deploying, maintaining, supporting,
       and using Kubernetes on Azure Container Service.
+    label: azure
     leads:
     - name: Jason Hansen
       github: slack
@@ -163,7 +257,8 @@ sigs:
       company: Microsoft
     meetings:
     - day: Wednesday
-      utc: "16:00"
+      time: "16:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://deis.zoom.us/j/2018742972
     meeting_archive_url: https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit
@@ -171,26 +266,49 @@ sigs:
     contact:
       slack: sig-azure
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-azure
+      teams:
+      - name: sig-azure-misc
+        description: General Discussion
   - name: Big Data
     dir: sig-big-data
     mission_statement: >
       Covers deploying and operating big data applications (Spark, Kafka,
       Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integrations with
       big data applications and architecting the best ways to run them on Kubernetes.
+    label: big-data
     leads:
     - name: Anirudh Ramanathan
       github: foxish
       company: Google
+    - name: Erik Erlandson
+      github: erikerlandson
+      company: Red Hat
     meetings:
     - day: Wednesday
-      utc: "17:00"
+      time: "17:00"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://zoom.us/my/sig.big.data
     meeting_archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
-    meeting_recordings_url:
+    meeting_recordings_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
     contact:
       slack: sig-big-data
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-big-data
+      teams:
+      - name: sig-big-data-api-reviews
+        description: API Changes and Reviews
+      - name: sig-big-data-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-big-data-feature-requests
+        description: Feature Requests
+      - name: sig-big-data-misc
+        description: General Discussion
+      - name: sig-big-data-pr-reviews
+        description: PR Reviews
+      - name: sig-big-data-proposals
+        description: Design Proposals
+      - name: sig-big-data-test-failures
+        description: Test Failures and Triage
   - name: CLI
     dir: sig-cli
     mission_statement: >
@@ -199,6 +317,7 @@ sigs:
       establishment of conventions for writing CLI commands, POSIX compliance,
       and improving the command line tools from a developer and devops user
       experience and usability perspective.
+    label: cli
     leads:
     - name: Fabiano Franz
       github: fabianofranz
@@ -211,19 +330,38 @@ sigs:
       company: Alibaba
     meetings:
     - day: Wednesday
-      utc: "16:00"
+      time: "09:00"
+      tz: "PT (Pacific Time)"
       frequency: biweekly
     meeting_url: https://zoom.us/my/sigcli
     meeting_archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
-    meeting_recordings_url: https://www.youtube.com/watch?v=X29sffrQJU4&list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
+    meeting_recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
     contact:
       slack: sig-cli
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
+      teams:
+      - name: sig-cli-api-reviews
+        description: API Changes and Reviews
+      - name: sig-cli-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-cli-feature-requests
+        description: Feature Requests
+      - name: sig-cli-maintainers
+        description: CLI Maintainers
+      - name: sig-cli-misc
+        description: General Discussion
+      - name: sig-cli-pr-reviews
+        description: PR Reviews
+      - name: sig-cli-proposals
+        description: Design Proposals
+      - name: sig-cli-test-failures
+        description: Test Failures and Triage
   - name: Cluster Lifecycle
     dir: sig-cluster-lifecycle
     mission_statement: >
       The Cluster Lifecycle SIG is responsible for building the user experience
       for deploying and upgrading Kubernetes clusters.
+    label: cluster-lifecycle
     leads:
     - name: Luke Marsden
       github: lukemarsden
@@ -234,17 +372,35 @@ sigs:
     - name: Robert Bailey
       github: roberthbailey
       company: Google
+    - name: Lucas Käldström
+      github: luxas
+      company: Luxas Labs (occasionally contracting for Weaveworks)
     meetings:
     - day: Tuesday
-      utc: "16:00"
+      time: "09:00"
+      tz: "PT (Pacific Time)"
       frequency: weekly
     meeting_url: https://zoom.us/j/166836%E2%80%8B624
     meeting_archive_url: https://docs.google.com/a/weave.works/document/d/1deJYPIF4LmhGjDVaqrswErIrV7mtwJgovtLnPCDxP7U/edit
     meeting_recordings_url: https://www.youtube.com/watch?v=ljK5dgSA7vc&list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
     contact:
       slack: sig-cluster-lifecycle
-      full_github_teams: true
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      teams:
+      - name: sig-cluster-lifecycle-api-reviews
+        description: API Changes and Reviews
+      - name: sig-cluster-lifecycle-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-cluster-lifecycle-feature-requests
+        description: Feature Requests
+      - name: sig-cluster-lifecycle-misc
+        description: General Discussion
+      - name: sig-cluster-lifecycle-pr-reviews
+        description: PR Reviews
+      - name: sig-cluster-lifecycle-proposals
+        description: Design Proposals
+      - name: sig-cluster-lifecycle-test-failures
+        description: Test Failures and Triage
   - name: Cluster Ops
     dir: sig-cluster-ops
     mission_statement: >
@@ -252,6 +408,7 @@ sigs:
       focus on shared operations practices for Kubernetes clusters with a goal
       to make Kubernetes broadly accessible with a common baseline reference.
       We also organize operators as a sounding board and advocacy group.
+    label: cluster-ops
     leads:
     - name: Rob Hirschfeld
       github: zehicle
@@ -261,7 +418,8 @@ sigs:
       company: Microsoft
     meetings:
     - day: Thursday
-      utc: "20:00"
+      time: "20:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/j/297937771
     meeting_archive_url: https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#
@@ -277,6 +435,7 @@ sigs:
       contributors are happy and productive, we need to break the commit-rate
       ceiling we hit in July 2015, and we need to get the monotonically growing
       PR merge latency and numbers of open PRs and issues under control.
+    label: contributor-experience
     leads:
     - name: Garrett Rodrigues
       github: grodrigues3
@@ -286,7 +445,8 @@ sigs:
       company: CoreOS
     meetings:
     - day: Wednesday
-      utc: "16:30"
+      time: "9:30"
+      tz: "PT (Pacific Time)"
       frequency: biweekly
     meeting_url: https://zoom.us/j/7658488911
     meeting_archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
@@ -294,10 +454,24 @@ sigs:
     contact:
       slack: sig-contribex
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-contribex
+      teams:
+      - name: sig-contributor-experience-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-contributor-experience-feature-requests
+        description: Feature Requests
+      - name: sig-contributor-experience-misc-use-only-as-a-last-resort
+        description: General Discussion
+      - name: sig-contributor-experience-pr-reviews
+        description: PR Reviews
+      - name: sig-contributor-experience-proposals
+        description: Design Proposals
+      - name: sig-contributor-experience-test-failures
+        description: Test Failures and Triage
   - name: Docs
     dir: sig-docs
     mission_statement: >
       Covers documentation, doc processes, and doc publishing for Kubernetes.
+    label: docs
     leads:
     - name: Devin Donnelly
       github: devin-donnelly
@@ -307,45 +481,61 @@ sigs:
       company: Google
     meetings:
     - day: Tuesday
-      utc: "17:30"
-      frequency: biweekly
+      time: "17:30"
+      tz: "UTC"
+      frequency: weekly
     meeting_url: https://zoom.us/j/678394311
     meeting_archive_url: https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit
-    meeting_recordings_url:
+    meeting_recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
     contact:
       slack: sig-docs
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
-  - name: Federation
-    dir: sig-federation
+      teams:
+      - name: sig-docs-maintainers
+        description: Documentation Maintainers
+      - name: sig-docs-pr-reviews
+        description: Documentation PR Reviewers
+  - name: GCP
+    dir: sig-gcp
     mission_statement: >
-      Covers the Federation of Kubernetes Clusters and related
-      topics. This includes: application resiliency against availability zone
-      outages; hybrid clouds; spanning of multiple could providers; application
-      migration from private to public clouds (and vice versa); and other
-      similar subjects.
+      A Special Interest Group for building, deploying, maintaining,
+      supporting, and using Kubernetes on the Google Cloud Platform.
     leads:
-    - name: Christian Bell
-      github: csbell
+    - name: Adam Worrall
+      github: abgworrall
       company: Google
-    - name: Quinton Hoole
-      github: quinton-hoole
-      company: Huawei
     meetings:
-    - day: Tuesday
-      utc: "16:30"
+    - day: Thursday
+      time: "16:00"
+      tz: "UTC"
       frequency: biweekly
-    meeting_url: https://plus.google.com/hangouts/_/google.com/k8s-federation
-    meeting_archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
-    meeting_recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
+    meeting_url: https://zoom.us/j/761149873
+    meeting_archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
     contact:
-      slack: sig-federation
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-federation
+      slack: sig-gcp
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-gcp
+      teams:
+      - name: sig-gcp-api-reviews
+        description: API Changes and Reviews
+      - name: sig-gcp-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-gcp-feature-requests
+        description: Feature Requests
+      - name: sig-gcp-misc
+        description: General Discussion
+      - name: sig-gcp-pr-reviews
+        description: PR Reviews
+      - name: sig-gcp-proposals
+        description: Design Proposals
+      - name: sig-gcp-test-failures
+        description: Test Failures and Triage
   - name: Instrumentation
     dir: sig-instrumentation
     mission_statement: >
       Covers best practices for cluster observability through metrics, logging, and events across all
       Kubernetes components and development of relevant components such as Heapster and kube-state-metrics.
       Coordinates metric requirements of different SIGs for other components through finding common APIs.
+    label: instrumentation
     leads:
     - name: Piotr Szczesniak
       github: piosz
@@ -355,7 +545,8 @@ sigs:
       company: CoreOS
     meetings:
     - day: Thursday
-      utc: "16:30"
+      time: "16:30"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://zoom.us/j/5342565819
     meeting_archive_url: https://docs.google.com/document/d/1gWuAATtlmI7XJILXd31nA4kMq6U9u63L70382Y3xcbM/edit
@@ -363,10 +554,69 @@ sigs:
     contact:
       slack: sig-instrumentation
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation
+      teams:
+      - name: sig-instrumentation-api-reviews
+        description: API Changes and Reviews
+      - name: sig-instrumentation-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-instrumentation-feature-requests
+        description: Feature Requests
+      - name: sig-instrumentation-misc
+        description: General Discussion
+      - name: sig-instrumentation-pr-reviews
+        description: PR Reviews
+      - name: sig-instrumentation-proposals
+        description: Design Proposals
+      - name: sig-instrumentation-test-failures
+        description: Test Failures and Triage
+  - name: Multicluster
+    dir: sig-multicluster
+    mission_statement: >
+      Covers multi-cluster Kubernetes use cases and tooling. This includes:
+      application resiliency against availability zone outages; hybrid clouds;
+      spanning of multiple could providers; application migration from private
+      to public clouds (and vice versa); and other similar subjects. This SIG
+      was formerly called sig-federation and focused on the Federation project,
+      but expanded its charter to all multi-cluster concerns in August 2017.
+    label: multicluster
+    leads:
+    - name: Christian Bell
+      github: csbell
+      company: Google
+    - name: Quinton Hoole
+      github: quinton-hoole
+      company: Huawei
+    meetings:
+    - day: Tuesday
+      time: "9:30"
+      tz: "PT (Pacific Time)"
+      frequency: biweekly
+    meeting_url: https://zoom.us/my/k8s.mc
+    meeting_archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
+    meeting_recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
+    contact:
+      slack: sig-multicluster
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster
+      teams:
+      - name: sig-multicluster-api-reviews
+        description: API Changes and Reviews
+      - name: sig-multicluster-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-multicluster-feature-requests
+        description: Feature Requests
+      - name: sig-multicluster-misc
+        description: General Discussion
+      - name: sig-multicluster-pr-reviews
+        description: PR Reviews
+      - name: sig-multicluster-test-failures
+        description: Test Failures and Triage
+      - name: sig-mutlicluster-proposals
+        description: Design Proposals
   - name: Network
     dir: sig-network
     mission_statement: >
       Covers networking in Kubernetes.
+    label: network
     leads:
     - name: Tim Hockin
       github: thockin
@@ -379,7 +629,8 @@ sigs:
       company: Tigera
     meetings:
     - day: Thursday
-      utc: "21:00"
+      time: "14:00"
+      tz: "PT (Pacific Time)"
       frequency: biweekly
     meeting_url: https://zoom.us/j/5806599998
     meeting_archive_url: https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit
@@ -387,9 +638,25 @@ sigs:
     contact:
       slack: sig-network
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-network
+      teams:
+      - name: sig-network-api-reviews
+        description: API Changes and Reviews
+      - name: sig-network-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-network-feature-requests
+        description: Feature Requests
+      - name: sig-network-misc
+        description: General Discussion
+      - name: sig-network-pr-reviews
+        description: PR Reviews
+      - name: sig-network-proposals
+        description: Design Proposals
+      - name: sig-network-test-failures
+        description: Test Failures and Triage
   - name: Node
     dir: sig-node
     mission_statement: >
+    label: node
     leads:
     - name: Dawn Chen
       github: dchen1107
@@ -399,7 +666,8 @@ sigs:
       company: Red Hat
     meetings:
     - day: Tuesday
-      utc: "17:00"
+      time: "10:00"
+      tz: "PT (Pacific Time)"
       frequency: weekly
     meeting_url: https://plus.google.com/hangouts/_/google.com/sig-node-meetup?authuser=0
     meeting_archive_url: https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing
@@ -407,16 +675,27 @@ sigs:
     contact:
       slack: sig-node
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-node
+      teams:
+      - name: sig-node-api-reviews
+        description: API Changes and Reviews
+      - name: sig-node-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-node-feature-requests
+        description: Feature Requests
+      - name: sig-node-pr-reviews
+        description: PR Reviews
+      - name: sig-node-proposals
+        description: Design Proposals
+      - name: sig-node-test-failures
+        description: Test Failures and Triage
   - name: On Premise
     dir: sig-on-premise
     mission_statement: >
       Brings together member of Kubernetes community interested in running
       Kubernetes on premise, on bare metal or more generally beyond cloud
       providers.
+    label: onprem
     leads:
-    - name: Tomasz Napierala
-      github: zen
-      company: Mirantis
     - name: Marco Ceppi
       github: marcoceppi
       company: Canonical
@@ -425,7 +704,8 @@ sigs:
       company: CoreOS
     meetings:
     - day: Wednesday
-      utc: "16:00"
+      time: "16:00"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://zoom.us/my/k8s.sig.onprem
     meeting_archive_url: https://docs.google.com/document/d/1AHF1a8ni7iMOpUgDMcPKrLQCML5EMZUAwP4rro3P6sk/edit#
@@ -433,8 +713,21 @@ sigs:
     contact:
       slack: sig-onprem
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-on-prem
-      full_github_teams: true
-      github_team_prefix: onprem
+      teams:
+      - name: sig-onprem-api-reviews
+        description: API Changes and Reviews
+      - name: sig-onprem-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-onprem-feature-requests
+        description: Feature Requests
+      - name: sig-onprem-misc
+        description: General Discussion
+      - name: sig-onprem-pr-reviews
+        description: PR Reviews
+      - name: sig-onprem-proposals
+        description: Design Proposals
+      - name: sig-onprem-test-failures
+        description: Test Failures and Triage
   - name: OpenStack
     dir: sig-openstack
     mission_statement: >
@@ -443,16 +736,18 @@ sigs:
       projects with OpenStack as: a deployment platform for Kubernetes; a
       service provider for Kubernetes; a collection of applications to run on
       Kubernetes.
+    label: openstack
     leads:
     - name: Ihor Dvoretskyi
       github: idvoretskyi
-      company: Mirantis
+      company: CNCF
     - name: Steve Gordon
       github: xsgordon
       company: Red Hat
     meetings:
-    - day: Wednesday
-      utc: "15:00"
+    - day: Thursday
+      time: "00:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/j/417251241
     meeting_archive_url: https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f
@@ -460,7 +755,21 @@ sigs:
     contact:
       slack: sig-openstack
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-openstack
-      full_github_teams: true
+      teams:
+      - name: sig-openstack-api-reviews
+        description: API Changes and Reviews
+      - name: sig-openstack-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-openstack-feature-requests
+        description: Feature Requests
+      - name: sig-openstack-misc
+        description: General Discussion
+      - name: sig-openstack-pr-reviews
+        description: PR Reviews
+      - name: sig-openstack-proposals
+        description: Design Proposals
+      - name: sig-openstack-test-failures
+        description: Test Failures and Triage
   - name: Product Management
     dir: sig-product-management
     mission_statement: >
@@ -482,19 +791,21 @@ sigs:
       source project is very new and largely unscoped for a project as large
       as Kubernetes; we are learning too and we are excited to learn how we
       can best serve the community of users and contributors.
+    label: none
     leads:
     - name: Aparna Sinha
       github: apsinha
       company: Google
     - name: Ihor Dvoretskyi
       github: idvoretskyi
-      company: Mirantis
+      company: CNCF
     - name: Caleb Miles
       github: calebamiles
       company: CoreOS
     meetings:
     - day: Tuesday
-      utc: "15:00"
+      time: "15:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/j/845373595
     meeting_archive_url: https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing
@@ -504,6 +815,7 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-pm
   - name: Release
     dir: sig-release
+    label: release
     leads:
     - name: Phillip Wittrock
       github: pwittrock
@@ -513,7 +825,8 @@ sigs:
       company: CoreOS
     meetings:
     - day: Tuesday
-      utc: "21:00"
+      time: "21:00"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/j/664772523
     meeting_archive_url: https://docs.google.com/document/d/1vhsixdT58iJFfoGZbpmvI_xnK59XyAjtadu3h6hHPpY/edit?usp=sharing
@@ -521,6 +834,25 @@ sigs:
     contact:
       slack: sig-release
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-release
+      teams:
+      - name: sig-release-admins
+        description: Release Team Admins
+      - name: sig-release-api-reviews
+        description: API Changes and Reviews
+      - name: sig-release-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-release-feature-requests
+        description: Feature Requests
+      - name: sig-release-members
+        description: Release Team Members
+      - name: sig-release-misc
+        description: General Discussion
+      - name: sig-release-pr-reviews
+        description: PR Reviews
+      - name: sig-release-proposals
+        description: Design Proposals
+      - name: sig-release-test-failures
+        description: Test Failures and Triage
   - name: Scalability
     dir: sig-scalability
     mission_statement: >
@@ -532,7 +864,8 @@ sigs:
       control system reasonably consume?
 
       For more details about our objectives please review our
-      [Scaling And Performance Goals](https://github.com/kubernetes/community/blob/master/sig-scalability/goals.md)
+      [Scaling And Performance Goals](https://git.k8s.io/community/sig-scalability/goals.md)
+    label: scalability
     leads:
     - name: Wojciech Tyczynski
       github: wojtek-t
@@ -540,22 +873,36 @@ sigs:
     - name: Bob Wise
       github: countspongebob
       company: Samsung SDS
-    - name: Joe Beda
-      github: jbeda
-      company: Heptio
     meetings:
     - day: Thursday
-      utc: "16:00"
-      frequency: weekly
+      time: "16:00"
+      tz: "UTC"
+      frequency: bi-weekly
     meeting_url: https://zoom.us/j/989573207
     meeting_archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
     meeting_recordings_url: https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL
     contact:
       slack: sig-scalability
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scale
+      teams:
+      - name: sig-scalability-api-reviews
+        description: API Changes and Reviews
+      - name: sig-scalability-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-scalability-feature-requests
+        description: Feature Requests
+      - name: sig-scalability-misc
+        description: General Discussion
+      - name: sig-scalability-pr-reviews
+        description: PR Reviews
+      - name: sig-scalability-proprosals
+        description: Design Proposals
+      - name: sig-scalability-test-failures
+        description: Test Failures and Triage
   - name: Scheduling
     dir: sig-scheduling
     mission_statement: >
+    label: scheduling
     leads:
     - name: David Oppenheimer
       github: davidopp
@@ -565,10 +912,12 @@ sigs:
       company: Red Hat
     meetings:
     - day: Monday
-      utc: "20:00"
+      time: "20:00"
+      tz: "UTC"
       frequency: biweekly
     - day: Wednesday
-      utc: "07:30"
+      time: "07:30"
+      tz: "UTC"
       frequency: biweekly
     meeting_url: https://zoom.us/zoomconference?m=rN2RrBUYxXgXY4EMiWWgQP6Vslgcsn86
     meeting_archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
@@ -576,11 +925,27 @@ sigs:
     contact:
       slack: sig-scheduling
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling
+      teams:
+      - name: sig-scheduling-api-reviews
+        description: API Changes and Reviews
+      - name: sig-scheduling-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-scheduling-feature-requests
+        description: Feature Requests
+      - name: sig-scheduling-misc
+        description: General Discussion
+      - name: sig-scheduling-pr-reviews
+        description: PR Reviews
+      - name: sig-scheduling-proposals
+        description: Design Proposals
+      - name: sig-scheduling-test-failures
+        description: Test Failures and Triage
   - name: Service Catalog
     dir: sig-service-catalog
     mission_statement: >
       To develop a Kubernetes API for the CNCF service broker and Kubernetes
       broker implementation.
+    label: service-catalog
     leads:
     - name: Paul Morie
       github: pmorie
@@ -596,18 +961,35 @@ sigs:
       company: IBM
     meetings:
     - day: Monday
-      utc: "20:00"
+      time: "20:00"
+      tz: "UTC"
       frequency: weekly
     meeting_url: https://zoom.us/j/7201225346
-    meeting_archive_url: http://goo.gl/A0m24V
+    meeting_archive_url: https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit
     meeting_recordings_url: https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs
     contact:
       slack: sig-service-catalog
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog
+      teams:
+      - name: sig-service-catalog-api-reviews
+        description: API Changes and Reviews
+      - name: sig-service-catalog-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-service-catalog-feature-requests
+        description: Feature Requests
+      - name: sig-service-catalog-misc
+        description: General Discussion
+      - name: sig-service-catalog-pr-reviews
+        description: PR Reviews
+      - name: sig-service-catalog-proposals
+        description: Design Proposals
+      - name: sig-service-catalog-test-failures
+        description: Test Failures and Triage
   - name: Storage
     dir: sig-storage
     mission_statement: >
       Covers storage and volume plugins.
+    label: storage
     leads:
     - name: Saad Ali
       github: saad-ali
@@ -617,7 +999,8 @@ sigs:
       company: Red Hat
     meetings:
     - day: Thursday
-      utc: "16:00"
+      time: "9:00"
+      tz: "PT (Pacific Time)"
       frequency: biweekly
     meeting_url: https://zoom.us/j/614261834
     meeting_archive_url: https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing
@@ -625,6 +1008,21 @@ sigs:
     contact:
       slack: sig-storage
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-storage
+      teams:
+      - name: sig-storage-api-reviews
+        description: API Changes and Reviews
+      - name: sig-storage-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-storage-feature-requests
+        description: Feature Requests
+      - name: sig-storage-misc
+        description: General Discussion
+      - name: sig-storage-pr-reviews
+        description: PR Reviews
+      - name: sig-storage-proposals
+        description: Design Proposals
+      - name: sig-storage-test-failures
+        description: Test Failures and Triage
   - name: Testing
     dir: sig-testing
     mission_statement: >
@@ -632,6 +1030,7 @@ sigs:
       interested specifically in making it easier for the community to run
       tests and contribute test results, to ensure Kubernetes is stable across
       a variety of cluster configurations and cloud providers.
+    label: testing
     leads:
     - name: Aaron Crickenberger
       github: spiffxp
@@ -639,19 +1038,38 @@ sigs:
     - name: Erick Feja
       github: fejta
       company: Google
+    - name: Steve Kuznetsov
+      github: stevekuznetsov
+      company: Red Hat
     - name: Timothy St. Clair
       github: timothysc
       company: Heptio
     meetings:
     - day: Tuesday
-      utc: "20:00"
+      time: "13:00"
+      tz: "PT (Pacific Time)"
       frequency: weekly
-    meeting_url: https://zoom.us/j/2419653117
-    meeting_archive_url: https://docs.google.com/document/d/1z8MQpr_jTwhmjLMUaqQyBk1EYG_Y_3D4y4YdMJ7V1Kk
-    meeting_recordings_url: https://www.youtube.com/watch?v=BbFjuxe3N4w&list=PL69nYSiGNLP0ofY51bEooJ4TKuQtUSizR
+    meeting_url: https://zoom.us/my/k8s.sig.testing
+    meeting_archive_url: https://bit.ly/k8s-sig-testing-notes
+    meeting_recordings_url: https://bit.ly/k8s-sig-testing-videos
     contact:
       slack: sig-testing
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-testing
+      teams:
+      - name: sig-testing-api-reviews
+        description: API Changes and Reviews
+      - name: sig-testing-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-testing-feature-requests
+        description: Feature Requests
+      - name: sig-testing-misc
+        description: General Discussion
+      - name: sig-testing-pr-reviews
+        description: PR Reviews
+      - name: sig-testing-proposals
+        description: Design Proposals
+      - name: sig-testing-test-failures
+        description: Test Failures and Triage
   - name: UI
     dir: sig-ui
     mission_statement: >
@@ -659,16 +1077,18 @@ sigs:
       Dashboard: a general purpose, web-based UI for Kubernetes clusters. It
       allows users to manage applications running in the cluster and
       troubleshoot them, as well as manage the cluster itself.
+    label: ui
     leads:
     - name: Dan Romlein
       github: danielromlein
-      company: Apprenda
+      company: Google
     - name: Sebastian Florek
       github: floreks
       company: Fujitsu
     meetings:
     - day: Thursday
-      utc: "16:00"
+      time: "18:00"
+      tz: "CET (Central European Time)"
       frequency: weekly
     meeting_url: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
     meeting_archive_url: https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing
@@ -680,20 +1100,29 @@ sigs:
     dir: sig-windows
     mission_statement: >
       Focuses on supporting Windows Server Containers for Kubernetes.
+    label: windows
     leads:
     - name: Michael Michael
       github: michmike
       company: Apprenda
     meetings:
     - day: Tuesday
-      utc: "16:30"
-      frequency: weekly
+      time: "12:30"
+      tz: "Eastern Standard Time (EST)"
+      frequency: bi-weekly
     meeting_url: https://zoom.us/my/sigwindows
     meeting_archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
     meeting_recordings_url: https://www.youtube.com/watch?v=7zawb3KT9Xk&list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4
     contact:
       slack: sig-windows
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-windows
+      teams:
+      - name: sig-windows-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-windows-feature-requests
+        description: Feature Requests
+      - name: sig-windows-misc
+        description: General Discussion
 workinggroups:
   - name: Resource Management
     dir: wg-resource-management
@@ -707,8 +1136,9 @@ workinggroups:
       github: derekwaynecarr
       company: Red Hat
     meetings:
-    - day: Tuesday
-      utc: "18:00"
+    - day: Wednesday
+      time: "11:00"
+      tz: "PT (Pacific Time)"
       frequency: weekly (On demand)
     meeting_url: https://zoom.us/j/4799874685
     meeting_archive_url: https://docs.google.com/document/d/1j3vrG6BgE0hUDs2e-1ZUegKN4W4Adb1B6oJ6j-4kyPU
@@ -729,11 +1159,113 @@ workinggroups:
       company: Google
     meetings:
     - day: Tuesday
-      utc: "15:00"
+      time: "15:00"
+      tz: "UTC"
       frequency: bi-weekly (On demand)
     meeting_url: TBD
-    meeting_archive_url: https://docs.google.com/document/d/1bCK-1_Zy2WfsrMBJkdaV72d2hidaxZBhS5YQHAgscPI/edit
+    meeting_archive_url: https://docs.google.com/document/d/1uH60pNr1-jBn7N2pEcddk6-6NTnmV5qepwKUJe9tMRo/edit
     meeting_recordings_url:
     contact:
       slack: wg-container-identity
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-container-identity
+  - name: Kubeadm Adoption
+    dir: wg-kubeadm-adoption
+    mission_statement: >
+      Boost adoption of the kubeadm tool. kubeadm is a tool for creating new Kubernetes clusters easily for new users, but can also be used as a toolbox for higher-level deployment
+      solutions. This working group makes sure kubeadm meets the extensibility requirements of those higher-level Kubernetes installers.
+    leads:
+    - name: Lucas Käldström
+      github: luxas
+      company: Luxas Labs (occasionally contracting for Weaveworks)
+    - name: Justin Santa Barbara
+      github: justinsb
+    meetings:
+    - day: Tuesday
+      time: "18:00"
+      tz: "UTC"
+      frequency: bi-weekly
+    meeting_url: https://zoom.us/j/166836%E2%80%8B624
+    meeting_archive_url: https://docs.google.com/document/d/1KdXsLYiJYJdiRbtgZsx6qbHF4g_K-gAScB9Zs4avgzg/edit
+    meeting_recordings_url: https://www.youtube.com/watch?v=-Xlcrm5iT80&list=PLPgAK4Icr0ehh93BiMC3djAc5KoW7WIkl
+    contact:
+      slack: sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+  - name: Cluster API
+    dir: wg-cluster-api
+    mission_statement: >
+      Define a portable API that represents a Kubernetes cluster. The API will contain the control plane and its configuration and the underlying infrastructure (nodes, node pools, etc).
+    leads:
+    - name: Kris Nova
+      github: kris-nova
+      company: Microsoft
+    - name: Jacob Beacham
+      github: pipejakob
+      company: Google
+    - name: Robert Bailey
+      github: roberthbailey
+      company: Google
+    meeting_archive_url: https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit
+    contact:
+      slack: sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+  - name: App Def
+    dir: wg-app-def
+    mission_statement: >
+      Improve UX of declarative primitives in the API and/or primary client libraries and tools,
+      understand the needs of other parts of the ecosystem on this layer, and improve the interoperability
+      of application management tools through better separation of concerns, common conventions,
+      and common principles.
+
+      Charter can be found [here](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#)
+    leads:
+    - name: Antoine Legrand
+      github: ant31
+      company: CoreOS
+    - name: Sebastien Goasguen
+      github: sebgoa
+      company: Bitnami
+    meetings:
+    - day: Wednesday
+      time: "16:00"
+      tz: "UTC"
+      frequency: bi-weekly
+    meeting_url: https://zoom.us/j/748123863
+    meeting_archive_url: https://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit
+    contact:
+      slack: wg-app-def
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-app-def
+  - name: Cloud Provider
+    dir: wg-cloud-provider
+    mission_statement: >
+      Charter can be found [here](https://docs.google.com/document/d/1m4Kvnh_u_9cENEE9n1ifYowQEFSgiHnbw43urGJMB64/edit#)
+    leads:
+    - name: Sidhartha Mani
+      github: wlan0
+      company: Caascade Labs
+    - name: Jago Macleod
+      github: jagosan
+      company: Google
+    meetings:
+    - day: Wednesday
+      time: "10:00"
+      tz: "PT (Pacific Time)"
+      frequency: weekly
+    meeting_url: https://zoom.us/my/cloudprovider
+    meeting_archive_url: https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp
+    contact:
+      slack: wg-cloud-provider
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-cloud-provider
+  - name: Multitenancy
+    dir: wg-multitenancy
+    mission_statement: >
+      Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
+    leads:
+    - name: David Oppenheimer
+      github: davidopp
+      company: Google
+    - name: Jessie Frazelle
+      github: jessfraz
+      company: Microsoft
+    contact:
+      slack: wg-multitenancy
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy

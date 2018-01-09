@@ -26,7 +26,7 @@ Heapster will hide the performance cost of serving those stats in the Kubelet.
 
 Disabling addons is simple. Just ssh into the Kubernetes master and move the
 addon from `/etc/kubernetes/addons/` to a backup location. More details
-[here](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/).
+[here](https://git.k8s.io/kubernetes/cluster/addons/).
 
 ### Which / how many pods?
 
@@ -57,7 +57,7 @@ sampling.
 ## E2E Performance Test
 
 There is an end-to-end test for collecting overall resource usage of node
-components: [kubelet_perf.go](https://github.com/kubernetes/kubernetes/tree/master/test/e2e/kubelet_perf.go). To
+components: [kubelet_perf.go](https://git.k8s.io/kubernetes/test/e2e/node/kubelet_perf.go). To
 run the test, simply make sure you have an e2e cluster running (`go run
 hack/e2e.go -- -up`) and [set up](#cluster-set-up) correctly.
 
@@ -119,8 +119,3 @@ More details on benchmarking [here](https://golang.org/pkg/testing/).
 - (yujuhong) Measuring memory usage
 - Add section on monitoring kubelet metrics (e.g. with prometheus)
 
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/node-performance-testing.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

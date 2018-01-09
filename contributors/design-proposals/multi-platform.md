@@ -73,7 +73,7 @@ This is a fairly long topic. If you're interested how to cross-compile, see [det
 
 The easiest way of running Kubernetes on another architecture at the time of writing is probably by using the docker-multinode deployment. Of course, you may choose whatever deployment you want, the binaries are easily downloadable from the URL above.
 
-[docker-multinode](https://github.com/kubernetes/kube-deploy/tree/master/docker-multinode) is intended to be a "kick-the-tires" multi-platform solution with Docker as the only real dependency (but it's not production ready)
+[docker-multinode](https://git.k8s.io/kube-deploy/docker-multinode) is intended to be a "kick-the-tires" multi-platform solution with Docker as the only real dependency (but it's not production ready)
 
 But when we (`sig-cluster-lifecycle`) have standardized the deployments to about three and made them production ready; at least one deployment should support **all platforms**.
 
@@ -100,7 +100,7 @@ When it's possible to test Kubernetes using Kubernetes; volunteers should be giv
 ### Official support level
 
 When all e2e tests are passing for a given platform; the platform should be officially supported by the Kubernetes team.
-At the time of writing, `amd64` is in the officially supported category category.
+At the time of writing, `amd64` is in the officially supported category.
 
 When a platform is building and it's possible to set up a cluster with the core functionality, the platform is supported on a "best-effort" and experimental basis.
 At the time of writing, `arm`, `arm64` and `ppc64le` are in the experimental category; the e2e tests aren't cross-platform yet.
@@ -121,7 +121,7 @@ For reference see [docker/docker#24739](https://github.com/docker/docker/issues/
 
 This has been debated quite a lot about; how we should name non-amd64 docker images that are pushed to `gcr.io`. See [#23059](https://github.com/kubernetes/kubernetes/pull/23059) and [#23009](https://github.com/kubernetes/kubernetes/pull/23009).
 
-This means that the naming `gcr.io/google_containers/${binary}:${version}` should contain a _manifest list_ for future tags.
+This means that the naming `k8s.gcr.io/${binary}:${version}` should contain a _manifest list_ for future tags.
 The manifest list thereby becomes a wrapper that is pointing to the `-${arch}` images.
 This requires `docker-1.10` or newer, which probably means Kubernetes v1.4 and higher.
 
@@ -140,7 +140,7 @@ Also, [the apiserver now exposes](https://github.com/kubernetes/kubernetes/pull/
 ### Standardize all image Makefiles to follow the same pattern
 
 All Makefiles should push for all platforms when doing `make push`, and build for all platforms when doing `make build`.
-Under the hood; they should compile binaries in a container for reproducability, and use QEMU for emulating Dockerfile `RUN` commands if necessary.
+Under the hood; they should compile binaries in a container for reproducibility, and use QEMU for emulating Dockerfile `RUN` commands if necessary.
 
 ### Remove linux/amd64 hard-codings from the codebase
 
@@ -215,7 +215,7 @@ Go 1.5 introduced many changes. To name a few that are relevant to Kubernetes:
 
 All release notes for Go 1.5 [are here](https://golang.org/doc/go1.5)
 
-Go 1.6 didn't introduce as many changes as Go 1.5 did, but here are some of note:
+Go 1.6 didn't introduce as many changes as Go 1.5 did, but here are some of notes:
  - It should perform a little bit better than Go 1.5.
  - `linux/mips64` and `linux/mips64le` were added as new ports.
  - Go < 1.6.2 for `ppc64le` had [bugs in it](https://github.com/kubernetes/kubernetes/issues/24922).
@@ -377,7 +377,7 @@ In order to dynamically compile a go binary with `cgo`, we need `gcc` installed 
 
 The only Kubernetes binary that is using C code is the `kubelet`, or in fact `cAdvisor` on which `kubelet` depends. `hyperkube` is also dynamically linked as long as `kubelet` is. We should aim to make `kubelet` statically linked.
 
-The normal `x86_64-linux-gnu` can't cross-compile binaries, so we have to install gcc cross-compilers for every platform. We do this in the [`kube-cross`](https://github.com/kubernetes/kubernetes/blob/master/build/build-image/cross/Dockerfile) image,
+The normal `x86_64-linux-gnu` can't cross-compile binaries, so we have to install gcc cross-compilers for every platform. We do this in the [`kube-cross`](https://git.k8s.io/kubernetes/build/build-image/cross/Dockerfile) image,
 and depend on the [`emdebian.org` repository](https://wiki.debian.org/CrossToolchains). Depending on `emdebian` isn't ideal, so we should consider using the latest `gcc` cross-compiler packages from the `ubuntu` main repositories in the future.
 
 Here's an example when cross-compiling plain C code:
@@ -471,7 +471,7 @@ CMD ["/usr/local/bin/kube-apiserver"]
 ```console
 $ file kube-apiserver
 kube-apiserver: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, not stripped
-$ docker build -t gcr.io/google_containers/kube-apiserver-arm:v1.x.y .
+$ docker build -t k8s.gcr.io/kube-apiserver-arm:v1.x.y .
 Step 1 : FROM armel/busybox
  ---> 9bb1e6d4f824
 Step 2 : ENV kubernetes true
@@ -527,6 +527,3 @@ The 30th of November 2015, a tracking issue about making Kubernetes run on ARM w
 
 The 27th of April 2016, Kubernetes `v1.3.0-alpha.3` was released, and it became the first release that was able to run the [docker getting started guide](http://kubernetes.io/docs/getting-started-guides/docker/) on `linux/amd64`, `linux/arm`, `linux/arm64` and `linux/ppc64le` without any modification.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/proposals/multi-platform.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

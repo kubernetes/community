@@ -70,7 +70,3 @@ Anyone making user facing changes to kubernetes.  This is especially important f
 * Include screen shots or pictures in documents for GUIs
 * *TODO once we have a standard widget set we are happy with* - include diagrams to help describe complex ideas (not required yet)
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/updating-docs-for-feature-changes.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

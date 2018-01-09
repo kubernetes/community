@@ -137,7 +137,7 @@ make test-e2e-node REMOTE=true IMAGE_PROJECT="<name-of-project-with-images>" IMA
 ```
 
 Setting up your own host image may require additional steps such as installing etcd or docker.  See
-[setup_host.sh](https://github.com/kubernetes/kubernetes/tree/master/test/e2e_node/environment/setup_host.sh) for common steps to setup hosts to run node tests.
+[setup_host.sh](https://git.k8s.io/kubernetes/test/e2e_node/environment/setup_host.sh) for common steps to setup hosts to run node tests.
 
 ## Create instances using a different instance name prefix
 
@@ -210,10 +210,10 @@ make test-e2e-node TEST_ARGS='--kubelet-flags="--network-plugin= --network-plugi
 
 ## Additional QoS Cgroups Hierarchy level testing
 
-For testing with the QoS Cgroup Hierarchy enabled, you can pass --experimental-cgroups-per-qos flag as an argument into Ginkgo using TEST_ARGS
+For testing with the QoS Cgroup Hierarchy enabled, you can pass --cgroups-per-qos flag as an argument into Ginkgo using TEST_ARGS
 
 ```sh
-make test_e2e_node TEST_ARGS="--experimental-cgroups-per-qos=true"
+make test_e2e_node TEST_ARGS="--cgroups-per-qos=true"
 ```
 
 # Notes on tests run by the Kubernetes project during pre-, post- submit.
@@ -223,11 +223,7 @@ the bottom of the comments section.  To re-run just the node e2e tests from the 
 `@k8s-bot node e2e test this issue: #<Flake-Issue-Number or IGNORE>` and **include a link to the test
 failure logs if caused by a flake.**
 
-The PR builder runs tests against the images listed in [jenkins-pull.properties](https://github.com/kubernetes/kubernetes/tree/master/test/e2e_node/jenkins/jenkins-pull.properties)
+The PR builder runs tests against the images listed in [jenkins-pull.properties](https://git.k8s.io/kubernetes/test/e2e_node/jenkins/jenkins-pull.properties)
 
-The post submit tests run against the images listed in [jenkins-ci.properties](https://github.com/kubernetes/kubernetes/tree/master/test/e2e_node/jenkins/jenkins-ci.properties)
+The post submit tests run against the images listed in [jenkins-ci.properties](https://git.k8s.io/kubernetes/test/e2e_node/jenkins/jenkins-ci.properties)
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/e2e-node-tests.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

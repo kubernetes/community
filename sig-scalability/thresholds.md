@@ -20,7 +20,7 @@ future or not.
 ## Kubernetes thresholds
 
 We start with explicit definition of quantities and thresholds we assume are
-satisfied in the cluster. This is followed by an explanations for some of those.
+satisfied in the cluster. This is followed by an explanation for some of those.
 Important notes about the numbers:
 1. In most cases, exceeding these thresholds doesn’t mean that the cluster
    fails over - it just means that its overall performance degrades.
@@ -42,7 +42,7 @@ Important notes about the numbers:
 | Total number of all objects         | 250000         |             | 1000000        |
 | Number of nodes                     | 5000           |             | 5000           |
 | Number of pods                      | 150000         |             | 500000         |
-| Number of pods per node<sup>1</sup> | 100            |             | 100            |
+| Number of pods per node<sup>1</sup> | 110            |             | 500            |
 | Number of pods per core<sup>1</sup> | 10             |             | 10             |
 | Number of namespaces (ns)           | 10000          |             | 100000         |
 | Number of pods per ns               | 15000          |             | 50000          |

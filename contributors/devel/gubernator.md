@@ -2,7 +2,6 @@
 
 *This document is oriented at developers who want to use Gubernator to debug while developing for Kubernetes.*
 
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Gubernator](#gubernator)
   - [What is Gubernator?](#what-is-gubernator)
@@ -12,7 +11,6 @@
     - [Gubernator for Local Tests](#gubernator-for-local-tests)
   - [Future Work](#future-work)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## What is Gubernator?
 
@@ -115,7 +113,7 @@ k8s-gubernator.appspot.com/build/yourusername-g8r-logs/logs/e2e-node/timestamp
 Gubernator provides a framework for debugging failures and introduces useful features.
 There is still a lot of room for more features and growth to make the debugging process more efficient.
 
-How to contribute (see https://github.com/kubernetes/test-infra/blob/master/gubernator/README.md)
+How to contribute (see https://git.k8s.io/test-infra/gubernator/README.md)
 
 * Extend GUBERNATOR flag to all local tests
 
@@ -136,7 +134,3 @@ How to contribute (see https://github.com/kubernetes/test-infra/blob/master/gube
 * Improve UI
 	* Have separate folders of logs in rows instead of in one long column
 	* Improve interface for adding additional features (maybe instead of textbox and checkbox, have chips)
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/gubernator.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -3,9 +3,9 @@
 ## What is CRI?
 
 CRI (_Container Runtime Interface_) consists of a
-[protobuf API](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/apis/cri/v1alpha1/runtime/api.proto),
+[protobuf API](https://git.k8s.io/kubernetes/pkg/kubelet/apis/cri/v1alpha1/runtime/api.proto),
 specifications/requirements (to-be-added),
-and [libraries](https://github.com/kubernetes/kubernetes/tree/master/pkg/kubelet/server/streaming)
+and [libraries](https://git.k8s.io/kubernetes/pkg/kubelet/server/streaming)
 for container runtimes to integrate with kubelet on a node. CRI is currently in Alpha.
 
 In the future, we plan to add more developer tools such as the CRI validation
@@ -59,8 +59,8 @@ Below is a mixed list of CRI specifications/requirements, design docs and
 proposals. We are working on adding more documentation for the API.
 
   - [Original proposal](https://github.com/kubernetes/kubernetes/blob/release-1.5/docs/proposals/container-runtime-interface-v1.md)
-  - [Networking](https://github.com/kubernetes/community/blob/master/contributors/devel/kubelet-cri-networking.md)
-  - [Container metrics](https://github.com/kubernetes/community/blob/master/contributors/devel/cri-container-stats.md)
+  - [Networking](/contributors/devel/kubelet-cri-networking.md)
+  - [Container metrics](/contributors/devel/cri-container-stats.md)
   - [Exec/attach/port-forward streaming requests](https://docs.google.com/document/d/1OE_QoInPlVCK9rMAx9aybRmgFiVjHpJCHI9LrfdNM_s/edit?usp=sharing)
   - [Container stdout/stderr logs](https://github.com/kubernetes/kubernetes/blob/release-1.5/docs/proposals/kubelet-cri-logging.md)
 
@@ -134,7 +134,3 @@ default in Kubelet**.
   - Email: sig-node (kubernetes-sig-node@googlegroups.com)
   - Slack: https://kubernetes.slack.com/messages/sig-node
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/container-runtime-interface.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

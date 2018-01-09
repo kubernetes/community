@@ -146,7 +146,7 @@ right thing.
 
 Here are a few pointers:
 
-+ [E2e Framework](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/framework/framework.go):
++ [E2e Framework](https://git.k8s.io/kubernetes/test/e2e/framework/framework.go):
    Familiarise yourself with this test framework and how to use it.
    Amongst others, it automatically creates uniquely named namespaces
    within which your tests can run to avoid name clashes, and reliably
@@ -160,7 +160,7 @@ Here are a few pointers:
    should always use this framework.  Trying other home-grown
    approaches to avoiding name clashes and resource leaks has proven
    to be a very bad idea.
-+ [E2e utils library](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/framework/util.go):
++ [E2e utils library](https://git.k8s.io/kubernetes/test/e2e/framework/util.go):
    This handy library provides tons of reusable code for a host of
    commonly needed test functionality, including waiting for resources
    to enter specified states, safely and consistently retrying failed
@@ -178,9 +178,9 @@ Here are a few pointers:
 + **Follow the examples of stable, well-written tests:** Some of our
    existing end-to-end tests are better written and more reliable than
    others.  A few examples of well-written tests include:
-   [Replication Controllers](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/rc.go),
-   [Services](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/service.go),
-   [Reboot](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/reboot.go).
+   [Replication Controllers](https://git.k8s.io/kubernetes/test/e2e/apps/rc.go),
+   [Services](https://git.k8s.io/kubernetes/test/e2e/network/service.go),
+   [Reboot](https://git.k8s.io/kubernetes/test/e2e/lifecycle/reboot.go).
 + [Ginkgo Test Framework](https://github.com/onsi/ginkgo): This is the
    test library and runner upon which our e2e tests are built.  Before
    you write or refactor a test, read the docs and make sure that you
@@ -229,7 +229,3 @@ Unreachable nodes are evacuated and then repopulated upon rejoining [Disruptive]
 Note that opening issues for specific better tooling is welcome, and
 code implementing that tooling is even more welcome :-).
 
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/writing-good-e2e-tests.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

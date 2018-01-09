@@ -26,7 +26,7 @@ but will not allow tests to be run against their PRs automatically nor allow the
 ### Requirements for outside collaborators
 
 - Working on some contribution to the project that would benefit from
-  the abillity to have PRs or Issues to be assigned to the contributor
+  the ability to have PRs or Issues to be assigned to the contributor
 - Have the support of 1 member
   - Find a member who will sponsor you
   - Send an email to kubernetes-membership@googlegroups.com
@@ -64,7 +64,7 @@ Members are expected to remain active contributors to the community.
 - Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
     - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating on issues, etc.
     - Sponsors must be reviewers or approvers in at least 1 OWNERS file (in any repo in the Kubernetes GitHub organization)
-    - Not a requirement, but having sponsorship from a reviewer from another company is encouraged (you get a gold star).
+    - Sponsors must be from multiple member companies to demonstrate integration across community.
 - Send an email to *kubernetes-membership@googlegroups.com* with:
    - CC: your sponsors on the message
    - Subject: `REQUEST: New membership for <your-GH-handle>`
@@ -229,7 +229,7 @@ TODO: Determine if this role is outdated and needs to be redefined or merged int
 - Primary reviewer for 20 substantial PRs
 - Reviewed or merged at least 50 PRs
 - Apply to [`kubernetes-maintainers`](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers), with:
-  - A [Champion](https://github.com/kubernetes/community/blob/master/incubator.md#faq) from the existing
+  - A [Champion](/incubator.md#faq) from the existing
     kubernetes-maintainers members
   - A Sponsor from Project Approvers
   - Summary of contributions to the project

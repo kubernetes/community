@@ -1,0 +1,6 @@
+reviewers:
+  - sig-multicluster-leads
+approvers:
+  - sig-multicluster-leads
+labels:
+  - sig/multicluster

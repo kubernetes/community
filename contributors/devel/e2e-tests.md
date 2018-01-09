@@ -1,13 +1,10 @@
 # End-to-End Testing in Kubernetes
 
-Updated: 5/3/2016
-
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [End-to-End Testing in Kubernetes](#end-to-end-testing-in-kubernetes)
   - [Overview](#overview)
-  - [Building and Running the Tests](#building-and-running-the-tests)
+  - [Building Kubernetes and Running the Tests](#building-kubernetes-and-running-the-tests)
     - [Cleaning up](#cleaning-up)
   - [Advanced testing](#advanced-testing)
     - [Installing/updating kubetest](#installingupdating-kubetest)
@@ -40,7 +37,6 @@ Updated: 5/3/2016
   - [Performance Evaluation](#performance-evaluation)
   - [One More Thing](#one-more-thing)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 ## Overview
 
@@ -150,7 +146,7 @@ go run hack/e2e.go -- -v --down
 
 The logic in `e2e.go` moved out of the main kubernetes repo to test-infra.
 The remaining code in `hack/e2e.go` installs `kubetest` and sends it flags.
-It now lives in [kubernetes/test-infra/kubetest](https://github.com/kubernetes/test-infra/tree/master/kubetest).
+It now lives in [kubernetes/test-infra/kubetest](https://git.k8s.io/test-infra/kubetest).
 By default `hack/e2e.go` updates and installs `kubetest` once per day.
 Control the updater behavior with the `--get` and `--old` flags:
 The `--` flag separates updater and kubetest flags (kubetest flags on the right).
@@ -228,10 +224,6 @@ when a failure occurs
 --host="": The host, or api-server, to connect to
 
 --kubeconfig="": Path to kubeconfig containing embedded authinfo.
-
---prom-push-gateway="": The URL to prometheus gateway, so that metrics can be
-pushed during e2es and scraped by prometheus. Typically something like
-127.0.0.1:9091.
 
 --provider="": The name of the Kubernetes provider (gce, gke, local, vagrant,
 etc.)
@@ -342,7 +334,7 @@ Next, specify the docker repository where your ci images will be pushed.
 * Push the federation container images
 
   ```sh
-  $ build/push-federation-images.sh
+  $ federation/develop/push-federation-images.sh
   ```
 
 #### Deploy federation control plane
@@ -393,8 +385,8 @@ to gather logs.
 This script requires that the cluster provider supports ssh. Assuming it does,
 running:
 
-```
-cluster/log-dump.sh <directory>
+```sh
+$ federation/cluster/log-dump.sh <directory>
 ```
 
 will ssh to the master and all nodes and download a variety of useful logs to
@@ -454,7 +446,7 @@ similarly enough to older versions.  The general strategy is to cover the follow
    same version (e.g. a cluster upgraded to v1.3 passes the same v1.3 tests as
    a newly-created v1.3 cluster).
 
-[hack/e2e-runner.sh](https://github.com/kubernetes/test-infra/blob/master/jenkins/e2e-image/e2e-runner.sh) is
+[hack/e2e-runner.sh](https://git.k8s.io/test-infra/jenkins/e2e-image/e2e-runner.sh) is
 the authoritative source on how to run version-skewed tests, but below is a
 quick-and-dirty tutorial.
 
@@ -577,7 +569,7 @@ breaking changes, it does *not* block the merge-queue, and thus should run in
 some separate test suites owned by the feature owner(s)
 (see [Continuous Integration](#continuous-integration) below).
 
-Every test should be owned by a [SIG](https://github.com/kubernetes/community/blob/master/sig-list.md), 
+Every test should be owned by a [SIG](/sig-list.md),
 and have a corresponding `[sig-<name>]` label.
 
 ### Viper configuration and hierarchichal test parameters.
@@ -590,7 +582,7 @@ To use viper, rather than flags, to configure your tests:
 
 - Just add "e2e.json" to the current directory you are in, and define parameters in it... i.e. `"kubeconfig":"/tmp/x"`.
 
-Note that advanced testing parameters, and hierarchichally defined parameters, are only defined in viper, to see what they are, you can dive into [TestContextType](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/framework/test_context.go).
+Note that advanced testing parameters, and hierarchichally defined parameters, are only defined in viper, to see what they are, you can dive into [TestContextType](https://git.k8s.io/kubernetes/test/e2e/framework/test_context.go).
 
 In time, it is our intent to add or autogenerate a sample viper configuration that includes all e2e parameters, to ship with kubernetes.
 
@@ -664,7 +656,7 @@ A quick overview of how we run e2e CI on Kubernetes.
 We run a battery of `e2e` tests against `HEAD` of the master branch on a
 continuous basis, and block merges via the [submit
 queue](http://submit-queue.k8s.io/) on a subset of those tests if they fail (the
-subset is defined in the [munger config](https://github.com/kubernetes/test-infra/tree/master/mungegithub/mungers/submit-queue.go)
+subset is defined in the [munger config](https://git.k8s.io/test-infra/mungegithub/mungers/submit-queue.go)
 via the `jenkins-jobs` flag; note we also block on	`kubernetes-build` and
 `kubernetes-test-go` jobs for build and unit and integration tests).
 
@@ -721,7 +713,7 @@ the existing suite as a guide.
 TODO(#20357): Create a self-documented example which has been disabled, but can
 be copied to create new tests and outlines the capabilities and libraries used.
 
-When writing a test, consult #kinds_of_tests above to determine how your test
+When writing a test, consult #kinds-of-tests above to determine how your test
 should be marked, (e.g. `[Slow]`, `[Serial]`; remember, by default we assume a
 test can run in parallel with other tests!).
 
@@ -740,7 +732,7 @@ label, and will be incorporated into our core suites. If tests are not expected
 to pass by default, (e.g. they require a special environment such as added
 quota,) they should remain with the `[Feature:.+]` label, and the suites that
 run them should be incorporated into the
-[munger config](https://github.com/kubernetes/test-infra/tree/master/mungegithub/mungers/submit-queue.go)
+[munger config](https://git.k8s.io/test-infra/mungegithub/mungers/submit-queue.go)
 via the `jenkins-jobs` flag.
 
 Occasionally, we'll want to add tests to better exercise features that are
@@ -809,9 +801,3 @@ metrics that kubernetes provides.
 You should also know the [testing conventions](coding-conventions.md#testing-conventions).
 
 **HAPPY TESTING!**
-
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/e2e-tests.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

@@ -46,7 +46,3 @@ Example installation:
 $ curl -sSL https://storage.googleapis.com/pub/gsutil.tar.gz | sudo tar -xz -C /usr/local/src
 $ sudo ln -s /usr/local/src/gsutil/gsutil /usr/bin/gsutil
 ```
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/getting-builds.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

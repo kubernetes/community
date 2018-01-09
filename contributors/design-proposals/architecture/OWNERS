@@ -1,0 +1,8 @@
+reviewers:
+  - sig-architecture-leads
+  - jbeda
+approvers:
+  - sig-architecture-leads
+  - jbeda
+labels:
+  - sig/architecture

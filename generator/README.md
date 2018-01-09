@@ -5,40 +5,55 @@ different Special Interest Groups (SIGs) of Kubernetes. The authoritative
 source for SIG information is the `sigs.yaml` file in the project root. All
 updates must be done there.
 
+The schema for this file should be self explanatory. However, if you need to see all the options check out the generator code in `app.go`.
+
+**Time Zone gotcha**:
+Time zones make everything complicated.
+And Daylight Savings time makes it even more complicated.
+Meetings are specified with a time zone and we generate a link to http://www.thetimezoneconverter.com/ so that people can easily convert it to their local time zone.
+To make this work you need to specify the time zone in a way that that web site recognizes.
+Practically, that means US pacific time must be `PT (Pacific Time)`.
+`PT` isn't good enough, unfortunately.
+
 When an update happens to the this file, the next step is generate the
 accompanying documentation. This takes the format of two types of doc file:
 
 ```
-./sig-<sig-name>/README.md
-./wg-<working-group-name>/README.md
-./sig-list.md
+sig-<sig-name>/README.md
+wg-<working-group-name>/README.md
+sig-list.md
 ```
 
 For example, if a contributor has updated `sig-cluster-lifecycle`, the
 following files will be generated:
 
 ```
-./sig-cluster-lifecycle/README.md
-./sig-list.md
+sig-cluster-lifecycle/README.md
+sig-list.md
 ```
 
 ## How to use
 
-To (re)build documentation for all the SIGs, run these commands:
+To (re)build documentation for all the SIGs in a go environment, run:
 
 ```bash
-make all
+make generate
+```
+or to run this inside a docker container:
+```bash
+make generate-dockerized
 ```
 
-To build docs for one SIG, run these commands:
+To build docs for one SIG, run one of these commands:
 
 ```bash
-make SIG=sig-apps gen-docs
-make SIG=sig-testing gen-docs
-make WG=resource-management gen-docs
+make WHAT=sig-apps
+make WHAT=cluster-lifecycle
+make WHAT=wg-resource-management
+make WHAT=container-identity
 ```
 
-where the `SIG` or `WG` var refers to the directory being built.
+where the `WHAT` var refers to the directory being built.
 
 ## Adding custom content to your README
 

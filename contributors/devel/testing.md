@@ -1,9 +1,6 @@
 # Testing guide
 
-Updated: 5/21/2016
-
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
 
 - [Testing guide](#testing-guide)
   - [Unit tests](#unit-tests)
@@ -21,7 +18,6 @@ Updated: 5/21/2016
     - [Run a specific integration test](#run-a-specific-integration-test)
   - [End-to-End tests](#end-to-end-tests)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 This assumes you already read the [development guide](development.md) to
 install go, godeps, and configure your git client.  All command examples are
@@ -163,7 +159,7 @@ See `go help test` and `go help testflag` for additional info.
 is [table driven testing](https://github.com/golang/go/wiki/TableDrivenTests)
   - Example: [TestNamespaceAuthorization](https://git.k8s.io/kubernetes/test/integration/auth/auth_test.go)
 * Each test should create its own master, httpserver and config.
-  - Example: [TestPodUpdateActiveDeadlineSeconds](https://github.com/kubernetes/kubernetes/blob/master/test/integration/pods/pods_test.go)
+  - Example: [TestPodUpdateActiveDeadlineSeconds](https://git.k8s.io/kubernetes/test/integration/pods/pods_test.go)
 * See [coding conventions](coding-conventions.md).
 
 ### Install etcd dependency
@@ -205,7 +201,7 @@ make test-integration  # Run all integration tests.
 ```
 
 This script runs the golang tests in package
-[`test/integration`](https://github.com/kubernetes/kubernetes/tree/master/test/integration).
+[`test/integration`](https://git.k8s.io/kubernetes/test/integration).
 
 ### Run a specific integration test
 
@@ -223,7 +219,3 @@ version and the watch cache test is skipped.
 ## End-to-End tests
 
 Please refer to [End-to-End Testing in Kubernetes](e2e-tests.md).
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/testing.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

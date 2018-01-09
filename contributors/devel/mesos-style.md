@@ -61,7 +61,7 @@ machine manages the collection during their lifetimes
 
 Out-of-the-box Kubernetes has *workload-specific* abstractions (ReplicaSet, Job,
 DaemonSet, etc.) and corresponding controllers, and in the future may have
-[workload-specific schedulers](../design-proposals/multiple-schedulers.md),
+[workload-specific schedulers](../design-proposals/scheduling/multiple-schedulers.md),
 e.g. different schedulers for long-running services vs. short-running batch. But
 these abstractions, controllers, and schedulers are not *application-specific*.
 
@@ -210,9 +210,3 @@ Mesos is described [here](https://www.usenix.org/legacy/event/nsdi11/tech/full_p
 Omega is described [here](http://research.google.com/pubs/pub41684.html).
 Borg is described [here](http://research.google.com/pubs/pub43438.html).
 
-
-
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/mesos-style.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

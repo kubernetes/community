@@ -8,7 +8,7 @@ Kubernetes API structure, and developers wanting to extend the Kubernetes API.
 An introduction to using resources with kubectl can be found in [the object management overview](https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/).*
 
 **Table of Contents**
-<!-- BEGIN MUNGE: GENERATED_TOC -->
+
 
   - [Types (Kinds)](#types-kinds)
     - [Resources](#resources)
@@ -45,7 +45,6 @@ An introduction to using resources with kubectl can be found in [the object mana
   - [WebSockets and SPDY](#websockets-and-spdy)
   - [Validation](#validation)
 
-<!-- END MUNGE: GENERATED_TOC -->
 
 The conventions of the [Kubernetes API](https://kubernetes.io/docs/api/) (and related APIs in the
 ecosystem) are intended to ease client development and ensure that configuration
@@ -225,9 +224,12 @@ an object was created
 after which this resource will be deleted. This field is set by the server when
 a graceful deletion is requested by the user, and is not directly settable by a
 client. The resource will be deleted (no longer visible from resource lists, and
-not reachable by name) after the time in this field. Once set, this value may
-not be unset or be set further into the future, although it may be shortened or
-the resource may be deleted prior to this time.
+not reachable by name) after the time in this field except when the object has
+a finalizer set. In case the finalizer is set the deletion of the object is
+postponed at least until the finalizer is removed.
+Once the deletionTimestamp is set, this value may not be unset or be set further
+into the future, although it may be shortened or the resource may be deleted
+prior to this time.
 * labels: a map of string keys and values that can be used to organize and
 categorize objects (see [the labels docs](https://kubernetes.io/docs/user-guide/labels/))
 * annotations: a map of string keys and values that can be used by external
@@ -350,7 +352,7 @@ Some resources in the v1 API contain fields called **`phase`**, and associated
 `message`, `reason`, and other status fields. The pattern of using `phase` is
 deprecated. Newer API types should use conditions instead. Phase was essentially
 a state-machine enumeration field, that contradicted
-[system-design principles](../design-proposals/principles.md#control-logic) and hampered
+[system-design principles](../design-proposals/architecture/principles.md#control-logic) and hampered
 evolution, since [adding new enum values breaks backward
 compatibility](api_changes.md). Rather than encouraging clients to infer
 implicit properties from phases, we intend to explicitly expose the conditions
@@ -374,7 +376,7 @@ only provided with reasonable effort, and is not guaranteed to not be lost.
 Status information that may be large (especially proportional in size to
 collections of other resources, such as lists of references to other objects --
 see below) and/or rapidly changing, such as
-[resource usage](../design-proposals/resources.md#usage-data), should be put into separate
+[resource usage](../design-proposals/scheduling/resources.md#usage-data), should be put into separate
 objects, with possibly a reference from the original object. This helps to
 ensure that GETs and watch remain reasonably efficient for the majority of
 clients, which may not need that data.
@@ -1228,10 +1230,11 @@ policy field. The "name" portion of the annotation should follow the below
 conventions for annotations. When an annotation gets promoted to a field, the
 name transformation should then be mechanical: `foo-bar` becomes `fooBar`.
 
-Other advice regarding use of labels, annotations, and other generic map keys by
+Other advice regarding use of labels, annotations, taints, and other generic map keys by
 Kubernetes components and tools:
-  - Key names should be all lowercase, with words separated by dashes, such as
-`desired-replicas`
+  - Key names should be all lowercase, with words separated by dashes instead of camelCase
+    - For instance, prefer `foo.kubernetes.io/foo-bar over` `foo.kubernetes.io/fooBar`, prefer
+    `desired-replicas` over `DesiredReplicas`
   - Prefix the key with `kubernetes.io/` or `foo.kubernetes.io/`, preferably the
 latter if the label/annotation is specific to `foo`
     - For instance, prefer `service-account.kubernetes.io/name` over
@@ -1240,7 +1243,6 @@ latter if the label/annotation is specific to `foo`
 the resource doesn't need to know about, experimental fields that aren't
 intended to be generally used API fields, etc. Beware that annotations aren't
 automatically handled by the API conversion machinery.
-
 
 ## WebSockets and SPDY
 
@@ -1314,6 +1316,3 @@ be less than 256", "must be greater than or equal to 0".  Do not use words
 like "larger than", "bigger than", "more than", "higher than", etc.
 * When specifying numeric ranges, use inclusive ranges when possible.
 
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/docs/devel/api-conventions.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->

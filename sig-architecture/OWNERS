@@ -1,6 +1,6 @@
 reviewers:
-  - jdumars
-  - bgrant0607
+  - sig-architecture-leads
 approvers:
-  - jdumars
-  - bgrant0607
+  - sig-architecture-leads
+labels:
+  - sig/architecture
