@@ -13,7 +13,7 @@ reviewers:
   - "@wlan0"
   - "@calebamiles"
 approvers:
-  - TBD
+  - "@thockin"
 editor: TBD
 status: approved
 replaces:
