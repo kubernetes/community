@@ -1,21 +1,11 @@
-# Kubernetes Enhancement Proposal Process
-
-## Metadata
-```
 ---
 kep-number: 1
 title: Kubernetes Enhancement Proposal Process
 authors:
-  - name: Caleb Miles
-    github: calebamiles
-    slack: calebamiles
-  - name: Joe Beda
-    github: jbeda
-    email: joe@heptio.com
-    slack: jbeda
+  - "@calebamiles"
+  - "@jbeda"
 owning-sig: sig-architecture
-participating-sigs:
-  - `kubernetes-wide`
+participating-sigs: []
 reviewers:
   - name: TBD
 approvers:
@@ -24,7 +14,9 @@ editor:
   name: TBD
 creation-date: 2017-08-22
 status: draft
-```
+---
+
+# Kubernetes Enhancement Proposal Process
 
 ## Table of Contents
 
