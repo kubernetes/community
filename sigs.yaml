@@ -145,8 +145,8 @@ sigs:
       company: Red Hat
     meetings:
     - day: Wednesday
-      time: "18:00"
-      tz: "UTC"
+      time: "11:00"
+      tz: "PT (Pacific Time)"
       frequency: biweekly
     meeting_url: https://zoom.us/my/k8s.sig.auth
     meeting_archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
