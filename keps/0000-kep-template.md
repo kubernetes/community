@@ -16,7 +16,7 @@ approvers:
 editor: TBD
 creation-date: yyyy-mm-dd
 last-updated: yyyy-mm-dd
-status: draft
+status: accepted
 see-also:
   - KEP-1
   - KEP-2
@@ -37,7 +37,7 @@ The title should be lowercased and spaces/punctuation should be replaced with `-
 As the KEP is approved and an official KEP number is allocated, the file should be renamed.
 
 To get started with this template:
-* Make a copy in the appropriate directory.
+* Make a copy of this template.
   Name it `draft-YYYYMMDD-my-title.md`.
 * Create a PR in the [`kubernetes/community`](https://github.com/kubernetes/community) repo.
 * Check in early.
@@ -45,7 +45,8 @@ To get started with this template:
   View anything marked as a draft as a working document.
   Aim for single topic PRs to keep discussions focused.
   If you disagree with what is already in a document, open a new PR with suggested changes.
-* As a KEP is approved, rename the file yet again with the final KEP number.
+* A KEP number can be assigned at any time by (even in the first PR) (a) taking the next number in the NEXT_KEP_NUMBER file and (b) incrementing that number.
+  These PRs should be approved quickly to minimize merge conflicts.
 
 The canonical place for the latest set of instructions (and the likely source of this file) is [here](/keps/0000-kep-template.md).
 
