@@ -17,8 +17,9 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 Meeting recordings can be found [here](https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax).
 
 ## Leads
-* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
-* Steve Gordon (**[@xsgordon](https://github.com/xsgordon)**), Red Hat
+* Chris Hoge (**[@hogepodge](https://github.com/hogepodge)**), OpenStack Foundation
+* David Lyle (**[@dklyle](https://github.com/dklyle)**), Intel
+* Robert Morse (**[@rjmorse](https://github.com/rjmorse)**), Ticketmaster
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-openstack)

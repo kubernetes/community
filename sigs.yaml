@@ -738,12 +738,15 @@ sigs:
       Kubernetes.
     label: openstack
     leads:
-    - name: Ihor Dvoretskyi
-      github: idvoretskyi
-      company: CNCF
-    - name: Steve Gordon
-      github: xsgordon
-      company: Red Hat
+    - name: Chris Hoge
+      github: hogepodge
+      company: OpenStack Foundation
+    - name: David Lyle
+      github: dklyle
+      company: Intel
+    - name: Robert Morse
+      github: rjmorse
+      company: Ticketmaster
     meetings:
     - day: Thursday
       time: "00:00"
