@@ -28,6 +28,13 @@ It is also important to remember that the role of managing an open source projec
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-pm)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnone)
 
+## Subprojects
+
+The following subprojects are owned by this SIG:
+- **features**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/features/master/OWNERS
+
 <!-- BEGIN CUSTOM CONTENT -->
 ## Common activities
 - Collecting and generalizing user feedback to help drive project direction and priorities: delivering on user needs while enforcing vendor neutrality

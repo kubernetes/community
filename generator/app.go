@@ -83,6 +83,14 @@ type GithubTeams struct {
 	Description string
 }
 
+// Subproject represenst a specific subproject owned by the group
+type Subproject struct {
+	Name        string
+	Description string
+	Owners      []string
+	Meetings    []Meeting
+}
+
 // Group represents either a Special Interest Group (SIG) or a Working Group (WG)
 type Group struct {
 	Name             string
@@ -92,6 +100,7 @@ type Group struct {
 	Leads            []Lead
 	Meetings         []Meeting
 	Contact          Contact
+	Subprojects      []Subproject
 }
 
 // DirName returns the directory that a group's documentation will be

@@ -23,6 +23,16 @@ Covers autoscaling of clusters, horizontal and vertical autoscaling of pods, set
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fautoscaling)
 
+## Subprojects
+
+The following subprojects are owned by this SIG:
+- **autoscaler**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+- **metrics**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.

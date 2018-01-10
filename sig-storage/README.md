@@ -24,6 +24,19 @@ Covers storage and volume plugins.
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-storage)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fstorage)
 
+## Subprojects
+
+The following subprojects are owned by this SIG:
+- **external-storage**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
+- **git-sync**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/git-sync/master/OWNERS
+- **nfs-provisioner**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.

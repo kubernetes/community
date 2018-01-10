@@ -23,6 +23,13 @@ Focuses on supporting Windows Server Containers for Kubernetes.
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-windows)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fwindows)
 
+## Subprojects
+
+The following subprojects are owned by this SIG:
+- **dashboard**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.

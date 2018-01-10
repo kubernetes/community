@@ -26,6 +26,13 @@ To develop a Kubernetes API for the CNCF service broker and Kubernetes broker im
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fservice-catalog)
 
+## Subprojects
+
+The following subprojects are owned by this SIG:
+- **service-catalog**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/service-catalog/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
