@@ -9,7 +9,7 @@ such as  - `nfs`, `glusterfs` or `aws-ebs` etc.
 
 We currently support network filesystems: NFS, Glusterfs, Ceph FS, SMB (Azure file), Quobytes, and local filesystems such as ext[3|4] and XFS.
 
-Mount time options that are operationally important and have no security implications should be suppported. Examples are NFS's TCP mode, versions, lock mode, caching mode; Glusterfs's caching mode; SMB's version, locking, id mapping; and more.
+Mount time options that are operationally important and have no security implications should be supported. Examples are NFS's TCP mode, versions, lock mode, caching mode; Glusterfs's caching mode; SMB's version, locking, id mapping; and more.
 
 ## Design
 

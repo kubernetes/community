@@ -78,7 +78,7 @@ new controller will be:
   for same volume then resize request will be pending and retried once previous resize request has completed.
 * Controller resize in effect will be level based rather than edge based. If there are more than one pending resize request for same PVC then
   new resize requests for same PVC will replace older pending request.
-* Resize will be performed via volume plugin interface, executed inside a goroutine spawned by `operation_exectutor`.
+* Resize will be performed via volume plugin interface, executed inside a goroutine spawned by `operation_executor`.
 * A new plugin interface called `volume.Expander` will be added to volume plugin interface. The `Expander` interface
   will also define if volume requires a file system resize:
 

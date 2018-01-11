@@ -506,7 +506,7 @@ The boostrapper requires the following permissions:
 * Create ClusterRoleBindings
 * Create DaemonSet
 
-Since the boostrapper generates the DaemonSet spec, the ConfigMap can be simplifed to just specify the
+Since the boostrapper generates the DaemonSet spec, the ConfigMap can be simplified to just specify the
 host directories:
 
 ```

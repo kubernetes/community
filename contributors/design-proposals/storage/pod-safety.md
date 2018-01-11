@@ -1,4 +1,4 @@
-# Pod Safety, Consistency Guarantees, and Storage Implicitions
+# Pod Safety, Consistency Guarantees, and Storage Implications
 
 @smarterclayton @bprashanth
 
