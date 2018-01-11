@@ -149,7 +149,8 @@ The head of the queue will always be the highest priority pending pod.
 1.  If the pod is not schedulable, run preemption for the pod.
 1.  Move the pod to the list of unschedulable pods.
 1.  If a node was chosen to preempt pods, set the node name as an annotation with
- the "NomindatedNodeName" key to the pod.
+ the "scheduler.kubernetes.io/nominated-node-name" key to the pod. This key is referred to as
+ "NominatedNodeName" in this doc for brevity.
 1.  When any pod is terminated, a node is added/removed, or when
 pods or nodes updated, remove all the pods from the unschedulable pods
 list and add them to the scheduling queue. (Scheduler should keep its existing rate
@@ -396,7 +397,7 @@ money by not scaling up the cluster for such a pod.
 
 In order to address these cases:
 1. Cluster Autoscaler will not scale up the cluster for pods with
-`NominatedNodeName` annotation.
+`scheduler.kubernetes.io/nominated-node-name` annotation.
 1. Cluster Autoscaler ignores all the pods whose priority is below a certain value.
 This value may be configured by a command line flag and will be zero by default.
 
