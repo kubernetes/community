@@ -1112,7 +1112,7 @@ sigs:
     - day: Tuesday
       time: "12:30"
       tz: "Eastern Standard Time (EST)"
-      frequency: bi-weekly
+      frequency: weekly
     meeting_url: https://zoom.us/my/sigwindows
     meeting_archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
     meeting_recordings_url: https://www.youtube.com/watch?v=7zawb3KT9Xk&list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4
