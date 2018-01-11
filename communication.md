@@ -86,7 +86,7 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [kubernetes-users]: https://groups.google.com/forum/#!forum/kubernetes-users
 [kubernetes.slackarchive.io]: https://kubernetes.slackarchive.io
 [kubernetes.slack.com]: https://kubernetes.slack.com
-[Slack]: slack.k8s.io
+[Slack]: http://slack.k8s.io
 [Special Interest Group]: /README.md#SIGs
 [Stack Overflow]: http://stackoverflow.com/questions/tagged/kubernetes
 [timezone table]: https://www.google.com/search?q=1000+am+in+pst
