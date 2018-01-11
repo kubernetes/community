@@ -105,7 +105,8 @@ Another good strategy is to find a documentation improvement, such as a missing/
 #### Sig structure
 
 You may have noticed that some repositories in the Kubernetes Organization are owned by Special Interest Groups, or SIGs. We organize the Kubernetes community into SIGs in order to improve our workflow and more easily manage what is a very large community project. The developers within each SIG have autonomy and ownership over that SIG's part of Kubernetes.
-SIGs also have their own CONTRIBUTING.md files, which may contain extra information or guidelines in addition to these general ones. These are located in the SIG specific community documentation directories, for example: sig-docs' is in the kubernetes/community repo's [/sig-docs/CONTRIBUTING.md](/sig-docs/CONTRIBUTING.md) file and similarly for other SIGs.
+
+Some SIGs also have their own `CONTRIBUTING.md` files, which may contain extra information or guidelines in addition to these general ones. These are located in the SIG-specific community directories. For example: the contributor's guide for SIG CLI is located in the *kubernetes/community* repo, as [`/sig-cli/CONTRIBUTING.md`](/sig-cli/CONTRIBUTING.md).
 
 Like everything else in Kubernetes, a SIG is an open, community, effort. Anybody is welcome to jump into a SIG and begin fixing issues, critiquing design proposals and reviewing code. SIGs have regular [video meetings](https://kubernetes.io/community/) which everyone is welcome to. Each SIG has a kubernetes slack channel that you can join as well.
 
