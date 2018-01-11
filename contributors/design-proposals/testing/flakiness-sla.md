@@ -6,11 +6,11 @@ Agreement) for flakiness in our tests, as well as actions that we will
 take when we are out of SLA.
 
 ## Definition of "We"
+
 Throughout the document the term _we_ is used. This is intended to refer
 to the Kubernetes project as a whole, and any governance structures the
 project puts in place. It is not intended to refer to any specific group
 of individuals.
-
 
 ## Definition of a "Flake"
 

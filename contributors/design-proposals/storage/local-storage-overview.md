@@ -213,7 +213,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
     apiVersion: storage.k8s.io/v1
     metadata:
       name: local-fast
-    toplogyKey: kubernetes.io/hostname
+    topologyKey: kubernetes.io/hostname
     ```
     ```yaml
     kind: PersistentVolume
@@ -388,7 +388,7 @@ The term `Partitions` are used here to describe the main use cases for local sto
        - name: myEphemeralPersistentVolume
          mountPath: /mnt/tmpdata
      volumes:
-     - name: myEphemeralPeristentVolume
+     - name: myEphemeralPersistentVolume
        inline:
          spec:
            accessModes: [ "ReadWriteOnce" ]
