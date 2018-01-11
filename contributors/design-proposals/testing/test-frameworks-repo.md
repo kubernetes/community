@@ -4,7 +4,7 @@ Status: Pending
 
 Version: N/A
 
-Implementation Owners: @totherme @hoegaarden and @apelisse
+Implementation Owners: @totherme, @hoegaarden, @apelisse, and @spiffxp
 
 ## Motivation: Why do we need a new repo?
 
@@ -22,19 +22,21 @@ frameworks. The intent is that this repo could be vendored anywhere.
 
 ## Proposal
 
-We propose a new git repository named `k8s.io/testframeworks`. This would be
-backed by a github repository `github.com/kubernetes/testframeworks`.
+We propose a new git repository named `testing.k8s.io/frameworks`. This would be
+backed by a github repository `github.com/kubernetes-sig-testing/frameworks`.
 
 ### What should live in it?
 
 The [integration testing
 framework](https://github.com/kubernetes/kubectl/tree/master/pkg/framework/test)
-should live in `k8s.io/testframeworks/integration`.
+should live in `testing.k8s.io/frameworks/integration`.
 
 There also [seems to be a
 desire](https://groups.google.com/a/kubernetes.io/d/msg/steering/LA9WiFnl6PI/os48-c3HCgAJ)
 to get `kubernetes/test/e2e/framework` out into a more reusable place. It could
-live in `k8s.io/testframeworks/e2e`
+live in `testing.k8s.io/frameworks/e2e`. However, to make this happen we'll
+need to do a lot of work to remove some of the less necessary dependencies of
+the existing e2e framework.
 
 ### What repos can be imported (and hence vendored) into this repo?
 
@@ -46,6 +48,11 @@ part of kubernetes has to do so through some CLI. The [CLI integration testing
 framework](https://github.com/kubernetes/kubectl/tree/master/pkg/framework/test)
 which originally motivated this repo certainly does not have any kubernetes
 dependencies.
+
+We might revisit this decision in future, for example to potentially allow the
+usage of a client library if that turns out to both:
+- Be necessary for some important framework (such as e2e)
+- Not harm the existing usage of other frameworks in the repo
 
 ### Other naming concerns
 
@@ -69,10 +76,16 @@ currently doing this in the kubectl repo, and are happy to keep doing so here.
 
 In [this email
 thread](https://groups.google.com/a/kubernetes.io/forum/?utm_medium=email&utm_source=footer#!msg/steering/LA9WiFnl6PI/DjiPaN-2CgAJ)
+and in [the sig-architecture meeting on
+2018-01-04](https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit#heading=h.dm9wr8ympgj8)
 the following alternatives have been considered and found to be unpopular:
 
-- Create a new github org for new repos (such as this one) to exist in.
-   + The consensus seems to be that this involves more organisational overhead than it's worth.
+- Create this repo in the `kubernetes` github org.
+  + There is already a proposal to create one org per sig
+  + @spiffxp from sig-testing expressed an interest in supporting this repo
+    from sig-testing
+  + it was decided to create an org for sig-testing to trial the whole
+    one-org-per-sig concept, with this repo
 - Create a new repo which only contains the integration testing framework, and
   cannot also be used to house the e2e framework.
    + The consensus seems to be that this leads to ugly package names
