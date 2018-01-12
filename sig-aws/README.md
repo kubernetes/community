@@ -18,7 +18,7 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 
 ## Leads
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
-* Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Microsoft
+* Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Heptio
 * Chris Love (**[@chrislovecnm](https://github.com/chrislovecnm)**)
 * Mackenzie Burnett (**[@mfburnett](https://github.com/mfburnett)**), Redspread
 
