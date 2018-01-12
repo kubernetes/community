@@ -13,12 +13,9 @@ reviewers:
   - "@wlan0"
   - "@calebamiles"
 approvers:
-  - TBD
+  - "@thockin"
 editor: TBD
-creation-date: 2017-11-27
-last-updated: 2017-11-27
-status: draft
-see-also:
+status: approved
 replaces:
   - contributors/design-proposals/cloud-provider/cloud-provider-refactoring.md
 ```
