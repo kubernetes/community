@@ -219,7 +219,7 @@ sigs:
       github: justinsb
     - name: Kris Nova
       github: kris-nova
-      company: Microsoft
+      company: Heptio
     - name: Chris Love
       github: chrislovecnm
     - name: Mackenzie Burnett
@@ -1200,7 +1200,7 @@ workinggroups:
     leads:
     - name: Kris Nova
       github: kris-nova
-      company: Microsoft
+      company: Heptio
     - name: Jacob Beacham
       github: pipejakob
       company: Google
