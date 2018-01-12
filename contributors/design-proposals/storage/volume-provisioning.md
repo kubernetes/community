@@ -246,6 +246,16 @@ Existing behavior is unchanged for claims that do not specify
        access mode and PV size. The provisioned volume size MUST NOT be smaller
        than size requested in the claim, however it MAY be larger.
 
+     * Kubernetes v1.9 or later have functionality to deploy raw block volume
+       instead of filesystem volume as a new feature. To support the feature,
+       we added `volumeMode` parameter which takes values `Filesystem` and
+       `Block` to `pv.Spec` and `pvc.Spec`. In order to deploy block volume
+       via external provisioner, following conditions are REQUIRED.
+       * A storage has ability to create raw block type of volume
+       * Block volume feature has been supported by the volume plugin
+       * External-provisioner MUST set `volumeMode` which matches requirements
+         in `claim.Spec` into `pv.Spec`.
+
        *So the created PV matches the claim.*
 
      * `pv.Spec.PersistentVolumeSource` MUST be set to point to the created
@@ -259,7 +269,7 @@ Existing behavior is unchanged for claims that do not specify
        provision a PV for the same claim, however external provisioners can use
        any mechanism to generate an unique PV name.
 
-  Example of a claim that is to be provisioned by an external provisioner for
+  Example 1) a claim that is to be provisioned by an external provisioner for
   `foo.org/foo-volume`:
 
   ```yaml
@@ -276,13 +286,14 @@ Existing behavior is unchanged for claims that do not specify
   spec:
     accessModes:
     - ReadWriteOnce
+    volumeMode: Filesystem
     resources:
       requests:
         storage: 4Gi
   #  volumeName: must be empty!
   ```
 
-  Example of the created PV:
+  Example 1) the created PV:
 
   ```yaml
   apiVersion: v1
@@ -298,6 +309,7 @@ Existing behavior is unchanged for claims that do not specify
   spec:
     accessModes:
     - ReadWriteOnce
+    volumeMode: Filesystem
     awsElasticBlockStore:
       fsType: ext4
       volumeID: aws://us-east-1d/vol-de401a79
@@ -312,6 +324,44 @@ Existing behavior is unchanged for claims that do not specify
       uid: 5a294561-7e5b-11e6-a20e-0eb6048532a3
     persistentVolumeReclaimPolicy: Delete
   ```
+
+  Example 2) a claim that provisions `volumeMode: Block` volume:
+
+  ```yaml
+  apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    ...
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    volumeMode: Block
+    resources:
+      requests:
+        storage: 4Gi
+  #  volumeName: must be empty!
+  ```
+
+  Example 2) the created PV:
+
+  ```yaml
+  apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    ...
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    volumeMode: Block
+    awsElasticBlockStore:
+      volumeID: aws://us-east-1d/vol-de401a79
+    capacity:
+      storage: 4Gi
+    claimRef:
+      ...
+    persistentVolumeReclaimPolicy: Delete
+  ```
+
 
   As result, Kubernetes has a PV that represents the storage asset and is bound
   to the claim. When everything went well, Kubernetes completed binding of the
