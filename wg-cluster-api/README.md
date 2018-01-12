@@ -16,8 +16,7 @@ Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/
 
 
 ## Organizers
-* Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Microsoft
-* Jacob Beacham (**[@pipejakob](https://github.com/pipejakob)**), Google
+* Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Heptio
 * Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
 
 ## Contact
