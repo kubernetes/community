@@ -1,0 +1,94 @@
+# New Design Volume Reconstruction
+
+**Author**: Jing Xu (@jingxu97)
+
+**Last Updated**: 1/11/2018
+
+**Status**: Proposal
+
+This document describes the new design of volume reconstruction in Kubelet
+volume manager running on cluster nodes.
+
+## Background and Motivation
+
+Today, kubelet volume manager uses desired/actual states to store some volume
+and pod information for reconciler to work upon. When kubelet restarts, all
+states become empty. Desired state populator will recover the desired states by
+getting the existing pods information from pod manager. Reconciler can then
+recover actual state through reconcile loop. 
+
+The problem is that if pod is deleted during kubelet restarts, desired state
+no longer has this pod and volume information so as the actual state. But the
+actual mount points and direcotries are still exist on the disk. In order to
+clean up those left over mounts and directories, we propose a volume
+reconstruction process. The basic idea is to scan pod directories and recover
+volume information (such as volume spec) from the mount path and device mount
+path which will be updated into the actual state. With this reconstructure
+process, actual state can match the real world and reconciler will tear down
+volumes accordingly. 
+
+However, this reconstruction design has issues for some plugins such as ()
+because there is not enough information to reconstruct volume spec correctly.
+For those volume plugins, volume tear down will fail.
+
+## Possible solution
+
+In searching of the solutions, we first need to understand why we need to reconstruct volume spec. 
+Volume spec is an internal representation of a volume.  All API volume types translate to Spec.
+type Spec struct {
+	Volume           *v1.Volume                // for inline volume use case
+	PersistentVolume *v1.PersistentVolume      // for pvc use case
+	ReadOnly         bool
+}
+Both Volume and PersistentVolume has a name and volume source. Different volume plugins have different representation of their sources. 
+Volume spec is constructed when adding pod volume information into desired state.
+The main use of this spec is to get the volume source name to construct unique volume name (which typicall includes plugin name and volume source name). 
+The unique volume name is used as a key in actual/desired state. The volume source name is also used on construct global mount path (device mount path)
+for volume mounter. When volume is teared down, unmounter uses the same function to construct the mount path from the spec again.
+Different from global mount path, the bind mount path uses plugin name and spec name (not the volume source name). 
+
+So look more closely, you can see for only the purpose of volume tear down, if we have a record of those mount paths (bind and global) in actual state, there is no need to 
+construct those paths from the volume spec again. In case of kubelet restarts, those mount paths could be scanned from the mount lists left on the disk. (bind mount path has
+a path structure which can be easily idenetified and global mount path could be obtained from the mount reference of the bind mount path). This observation leads to our first
+possible solution.
+
+1. Remove the dependency of volume spec. 
+Modify the data structure in actual state to keep a record of the mount paths so that volume tear down process (unmount) can use those records instead of reconstructing them
+directly from volume spec. In case the kubelet restarts, reconstruction process just need to find out the left mounting paths and mark them into the actual state. Even if the
+volume spec cannot be reconstructed correctly, volume tear down process can still work. 
+
+But this solution still has an issue. Because some plugins cannot reconstruct volume spec correctly, which means the generated unique volume name might not match with the real one.
+In case another new pod is added to use the same volume, two volume operations on the same device might happen concurrently and cause race condition because they have different
+unique volume names.
+
+2. Cleanup mounts directly without reconstruction.
+This approach will try to clean up mounts that are no longer needed before reconciler starts to work. It scanns the pod volume directories when kubelet restarts to find the mount
+paths (bind and global). If the pod volume is no longer exist in desired state, clean up the mounts. To avoid long delay or mount hanging problem, we can use operation executor to
+start a new routine. 
+
+The potentical issue of this approach is that cleanup process might fail and
+reconciler will not try to do this process again.
+
+## Proposal
+
+The current proposal is trying to take the advantages from the two possible
+solutions mentioned above. 
+1. If volume plugins can support reconstruction well (i.e., volume spec can
+   be fully recovered), reconciler will update this information into the states
+   and reconciler will take care of volume cleanup. Reconciler can retry if
+   cleanup fails.
+2. If volume plugins cannot support reconstruction, reconciler clean up the
+   mounts directly with a go routine (operation executor) to avoid delay. If it
+   fails, reconciler will not retry.
+
+There are a number of monitoring options supported by Kubernetes
+ - Resource Metrics API (Alpha feature in progress [Resource Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-metrics-api.md)
+ - Collect metrics in Heapster. (metrics has to exposed by Kubelet in Summary API)
+ - Export metrics through StackDriver 
+ - Kubectl Command (kubectl top, kubectl describe)
+
+All the storage metrics mentioned in Background are collected by Kubelet Summary API so that it could be integrated with the above monitoring system. However, pod volume metrics is provided in PodStat object’s VolumeStat and VolumeStat only has volume name specified in pod specification. There is no direct way of checking volume usage information by PVC name, which is more preferable by users.
+
+## Implementation Timeline:
+The work is targeted for kubernetes v1.10
+
