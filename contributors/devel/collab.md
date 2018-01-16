@@ -1,17 +1,5 @@
 # On Collaborative Development
 
-Kubernetes is open source, but many of the people working on it do so as their
-day job. In order to avoid forcing people to be "at work" effectively 24/7, we
-want to establish some semi-formal protocols around development. Hopefully these
-rules make things go more smoothly. If you find that this is not the case,
-please complain loudly.
-
-## Patches welcome
-
-First and foremost: as a potential contributor, your changes and ideas are
-welcome at any hour of the day or night, weekdays, weekends, and holidays.
-Please do not ever hesitate to ask a question or send a PR.
-
 ## Code reviews
 
 All changes must be code reviewed. For non-maintainers this is obvious, since
