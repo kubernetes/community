@@ -140,13 +140,15 @@ Make sure to adhere to the prompted submission guidelines while opening an issue
 
 # Contributing
 
-(From:[here](/contributors/devel/collab.md))
-
 Kubernetes is open source, but many of the people working on it do so as their day job. In order to avoid forcing people to be "at work" effectively 24/7, we want to establish some semi-formal protocols around development. Hopefully these rules make things go more smoothly. If you find that this is not the case, please complain loudly.
 
 As a potential contributor, your changes and ideas are welcome at any hour of the day or night, weekdays, weekends, and holidays. Please do not ever hesitate to ask a question or send a pull request.
 
-Our community guiding principles on how to create great code as a big group are found [here](/contributors/devel/collab.md). Beginner focused information can be found below in [Open a Pull Request](#open-a-pull-request) and [Code Review](#code-review).
+Our community guiding principles on how to create great code as a big group are found [here](/contributors/devel/collab.md). 
+
+Beginner focused information can be found below in [Open a Pull Request](#open-a-pull-request) and [Code Review](#code-review).
+
+For quick reference on contributor resources, we have a handy [contributor cheatsheet](./contributor-cheatsheet.md)
 
 ### Communication
 
