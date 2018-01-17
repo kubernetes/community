@@ -176,7 +176,7 @@ hack/install-etcd.sh  # Installs in ./third_party/etcd
 echo export PATH="\$PATH:$(pwd)/third_party/etcd" >> ~/.profile  # Add to PATH
 
 # Option b) install manually
-grep -E "image.*etcd" cluster/saltbase/salt/etcd/etcd.manifest  # Find version
+grep -E "image.*etcd" cluster/gce/manifests/etcd.manifest  # Find version
 # Install that version using yum/apt-get/etc
 echo export PATH="\$PATH:<LOCATION>" >> ~/.profile  # Add to PATH
 ```
