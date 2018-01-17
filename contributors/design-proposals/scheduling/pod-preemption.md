@@ -151,6 +151,8 @@ The head of the queue will always be the highest priority pending pod.
 1.  If a node was chosen to preempt pods, set the node name as an annotation with
  the "scheduler.kubernetes.io/nominated-node-name" key to the pod. This key is referred to as
  "NominatedNodeName" in this doc for brevity.
+ When this annotation exists, scheduler knows that the pod is destined to run on the 
+ given node and takes it into account when making scheduling decisions for other pods.
 1.  When any pod is terminated, a node is added/removed, or when
 pods or nodes updated, remove all the pods from the unschedulable pods
 list and add them to the scheduling queue. (Scheduler should keep its existing rate
