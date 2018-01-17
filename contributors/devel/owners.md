@@ -15,9 +15,10 @@ of OWNERS files
 
 ## OWNERS spec
 
-The [mungegithub gitrepos
-feature](https://git.k8s.io/test-infra/mungegithub/features/repo-updates.go)
+The [k8s.io/test-infra/prow/repowners package](https://git.k8s.io/test-infra/prow/repoowners/repoowners.go)
 is the main consumer of OWNERS files.  If this page is out of date, look there.
+
+### OWNERS
 
 Each directory that contains a unit of independent code or content may also contain an OWNERS file.
 This file applies to everything within the directory, including the OWNERS file itself, sibling
@@ -26,9 +27,9 @@ files, and child directories.
 OWNERS files are in YAML format and support the following keys:
 
 - `approvers`: a list of GitHub usernames or aliases that can `/approve` a PR
-- [DEPRECATED] `assignees`: do not use, equivalent to `approvers`
-  ([kubernetes/test-infra#3851](https://github.com/kubernetes/test-infra/issues/3851))
 - `labels`: a list of GitHub labels to automatically apply to a PR
+- `options`: a map of options for how to interpret this OWNERS file, currently only one:
+  - `no_parent_owners`: defaults to `false` if not present; if `true`, exclude parent OWNERS
 - `reviewers`: a list of GitHub usernames or aliases that are good candidates to `/lgtm` a PR
 
 All users are expected to be assignable. In GitHub terms, this means they are either collaborators
@@ -45,6 +46,8 @@ reviewers:
   - carol   # this is another comment
   - sig-foo # this is an alias
 ```
+
+### OWNERS_ALIASES
 
 Each repo may contain at its root an OWNERS_ALIAS file.
 
@@ -69,46 +72,46 @@ aliases:
 
 GitHub usernames and aliases listed in OWNERS files are case-insensitive.
 
-## Code Review Process
+## Code Review using OWNERS files
 
 This is a simplified description of our [full PR testing and merge
 workflow](/contributors/devel/pull-requests.md#the-testing-and-merge-workflow)
 that conveniently forgets about the existence of tests, to focus solely on the roles driven by
 OWNERS files.
 
+### The Code Review Process
+
 - The **author** submits a PR
-- Phase 0: Automation determines **reviewers** and **approvers** for the PR
+- Phase 0: Automation suggests **reviewers** and **approvers** for the PR
   - Determine the set of OWNERS files nearest to the code being changed
-  - Choose two **reviewers**, and assign them to the PR (choose more than one to avoid assigning to
-    an inactive / unavailable reviewer)
+  - Choose two **reviewers**, and request their reviews on the PR (choose more than one to avoid
+    assigning to an inactive / unavailable reviewer)
   - Choose suggested **approvers**, one from each OWNERS file, and list them in a comment on the PR
 - Phase 1: Humans review the PR
   - **Reviewers** look for general code quality, correctness, sane software engineering, style, etc.
   - The PR **author** cannot be their own **reviewer**
   - If the code changes look good to them, a **reviewer** types `/lgtm` in a PR comment or review;
     if they change their mind, they `/lgtm cancel`
-  - Once a **reviewer** has `/lgtm`'ed, `prow` ([@k8s-ci-robot](https://github.com/k8s-ci-robot/))
-    applies an `lgtm` label to the PR
+  - Once a **reviewer** has `/lgtm`'ed, [prow](https://prow.k8s.io)
+    ([@k8s-ci-robot](https://github.com/k8s-ci-robot/)) applies an `lgtm` label to the PR
 - Phase 2: Humans approve the PR
   - The PR **author** `/assign`'s all suggested **approvers** to the PR, and optionally notifies
     them (eg: "pinging @foo for approval")
-  - The PR **author** can be their own **approver** (assuming they are listed in the appropriate
-    OWNERS files)
   - **Approvers** look for holistic acceptance criteria, including dependencies with other features,
     forwards/backwards compatibility, API and flag definitions, etc
   - If the code changes look good to them, an **approver** types `/approve` in a PR comment or
     review; if they change their mind, they `/approve cancel`
-  - `mungegithub` ([@k8s-merge-robot](https://github.com/k8s-merge-robot/)) updates its comment in
-    the PR to indicate which **approvers** still need to approve
+  - [prow](https://prow.k8s.io) ([@k8s-ci-robot](https://github.com/k8s-ci-robot/)) updates its
+    comment in the PR to indicate which **approvers** still need to approve
   - Once all **approvers** (one from each of the previously identified OWNERS files) have approved,
-    `mungegithub` ([@k8s-merge-robot](https://github.com/k8s-merge-robot/)) applies an `approved`
-label
+    [prow](https://prow.k8s.io) ([@k8s-ci-robot](https://github.com/k8s-ci-robot/)) applies an
+    `approved` label
 - Phase 3: Automation merges the PR
   - All required labels are present (eg: `lgtm`, `approved`)
   - All required status checks for the PR are verified as green
   - The PR is merged
 
-## Quirks of the Process
+### Quirks of the Process
 
 There are a number of behaviors we've observed that while _possible_ are discouraged, as they go
 against the intent of this review process.  Some of these could be prevented in the future, but this
@@ -120,7 +123,7 @@ is the state of today.
   - Instead, explicitly write out `/lgtm` and `/approve` to help observers, or save the `/lgtm` for
     a **reviewer**
   - This goes against the idea of having at least two sets of eyes on a PR, and may be a sign that
-    there are too few **reviewers** (who aren't also **approves)
+    there are too few **reviewers** (who aren't also **approver**)
 - An **approver** can `/approve no-issue` to bypass the requirement that PR's must have linked
   issues
   - There is disagreement within the community over whether requiring every PR to have a linked
@@ -156,36 +159,20 @@ is the state of today.
   - Instead, close PR's that are untouched after too long (we currently have a bot do this after 90
     days)
 
-## Implementation
+## Automation using OWNERS files
 
-### [`mungegithub`](https://git.k8s.io/test-infra/mungegithub)
+### ~[`mungegithub`](https://git.k8s.io/test-infra/mungegithub)~ is deprecated
 
-Mungegithub polls GitHub, and "munges" things it finds, including issues and pull requests. It is
-stateful, in that restarting it means it loses track of which things it has munged at what time.
+Mungegithub's blunderbuss and submit-queue mungers are currently used for kubernetes/kubernetes. Their
+equivalents are the prow blunderbuss plugin, and prow's tide cmd.  These docs will be removed once
+kubernetes/kubernetes has transitioned over to tide.
 
-- [feature:
-  gitrepos](https://git.k8s.io/test-infra/mungegithub/features/repo-updates.go)
-  - responsible for parsing OWNERS and OWNERS_ALIAS files
-  - if its `use-reviewers` flag is set to false, **approvers** will also be **reviewers**
-  - if its `enable-md-yaml` flag is set, `.md` files will also be parsed to see if they have
-    embedded OWNERS content (this is only used by
-[kubernetes.github.io](https://github.com/kubernetes/kubernetes.github.io/))
-  - used by other mungers to get the set of **reviewers** or **approvers** for a given path
-- [munger:
-  blunderbuss](https://git.k8s.io/test-infra/mungegithub/mungers/blunderbuss.go)
-  - responsible for determining **reviewers** and assigning to them
-  - chooses from people in the deepest/closest OWNERS files to the code being changed
-  - weights its choice based on the magnitude of lines changed for each file
-  - randomly chooses to ensure the same people aren't chosen every time
-  - if its `blunderbuss-number-assignees` flag is unset, it will default to 2 assignees
-- [munger:
-  approval-handler](https://git.k8s.io/test-infra/mungegithub/mungers/approval-handler.go)
-  - responsible for adding the  `approved` label once an **approver** for each of the required
-    OWNERS files has `/approve`'d
-  - responsible for commenting as required OWNERS files are satisfied
-  - responsible for removing outdated approval status comments
-  - [full description of the
-    algorithm](https://github.com/kubernetes/test-infra/blob/6f5df70c29528db89d07106a8156411068518cbc/mungegithub/mungers/approval-handler.go#L99-L111)
+~Mungegithub polls GitHub, and "munges" things it finds, including issues and pull requests. It is
+stateful, in that restarting it means it loses track of which things it has munged at what time.~
+
+- ~[munger:
+  blunderbuss](https://git.k8s.io/test-infra/mungegithub/mungers/blunderbuss.go)~
+  - ~responsible for determining **reviewers** and assigning to them~
 - [munger:
   submit-queue](https://git.k8s.io/test-infra/mungegithub/mungers/submit-queue.go)
   - responsible for merging PR's
@@ -194,30 +181,35 @@ stateful, in that restarting it means it loses track of which things it has mung
 
 ### [`prow`](https://git.k8s.io/test-infra/prow)
 
-Prow receives events from GitHub, and reacts to them. It is effectively stateless.
+Prow receives events from GitHub, and reacts to them. It is effectively stateless. The following
+pieces of prow are used to implement the code review process above.
 
-- [plugin: lgtm](https://git.k8s.io/test-infra/prow/plugins/lgtm)
-  - responsible for adding the `lgtm` label when a **reviewer** comments `/lgtm` on a PR
-  - the **PR author** may not `/lgtm` their own PR
+- [cmd: tide](https://git.k8s.io/test-infra/prow/cmd/tide)
+  - merges PR's once they have the appropriate labels, and don't have any
+    labels that would prevent merge (eg: `do-not-merge/hold`)
 - [plugin: assign](https://git.k8s.io/test-infra/prow/plugins/assign)
-  - responsible for assigning GitHub users in response to `/assign` comments on a PR
-  - responsible for unassigning GitHub users in response to `/unassign` comments on a PR
+  - assigns GitHub users in response to `/assign` comments on a PR
+  - unassigns GitHub users in response to `/unassign` comments on a PR
+- [plugin: approve](https://git.k8s.io/test-infra/prow/plugins/assign)
+  - adds the  `approved` label once an **approver** for each of the required
+    OWNERS files has `/approve`'d
+  - comments as required OWNERS files are satisfied
+  - removes outdated approval status comments
+- [plugin: blunderbuss](https://git.k8s.io/test-infra/prow/plugins/assign)
+  - determines **reviewers** and requests their reviews on PR's
+- [plugin: lgtm](https://git.k8s.io/test-infra/prow/plugins/lgtm)
+  - adds the `lgtm` label when a **reviewer** comments `/lgtm` on a PR
+  - the **PR author** may not `/lgtm` their own PR
+- [pkg: k8s.io/test-infra/prow/repowners](https://git.k8s.io/test-infra/prow/repoowners/repoowners.go)
+  - parses OWNERS and OWNERS_ALIAS files
+  - if the `no_parent_owners` option is encountered, parent owners are excluded from having
+    any influence over files adjacent to or underneath of the current OWNERS file
 
-### GitHub
-
-GitHub provides a few integration points for our automation:
-
-- [Status Checks](https://help.github.com/articles/about-required-status-checks/): our tests and
-  submit queue use these to communicate whether a commit is OK
-- [Protected Branches](https://help.github.com/articles/about-protected-branches/): ensure that a
-  branch cannot be merged unless all status checks are green
-- [Merge Button](https://developer.github.com/v3/pulls/#merge-a-pull-request-merge-button): the
-  submit queue effectively uses an API driven click of this button
-
-
-## Updating OWNERS
+## Maintaining OWNERS files
 
 OWNERS files should be regularly maintained.
+
+We're still not doing the greatest job here. Generally people self-nominate or self-remove from OWNERS files via PR's.
 
 We should strive to:
 
