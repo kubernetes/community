@@ -43,6 +43,7 @@ The following fields are retrieved as part of the `GetWorkerStatus()` call:
 
 ### Master
 The master provisioner exposes the following RPC:
+
 | RPC                           | Description |
 | --- | --- |
 | `ProvisionerStatusReady()`             | Notifies master that there is a status update. Also called on worker initialization. |
@@ -183,6 +184,7 @@ If there is a network failure, the gRPC call will fail and the watcher retries w
 ### Master
 Master exposes the same RPC calls as Design 1 to enable discovery notifications.
 The master provisioner exposes the following RPC:
+
 | RPC                           | Description |
 | --- | --- |
 | `LocalVolumeReady()`             | Notifies master that there are new local volumes. Also called on watcher initialization. |
@@ -199,6 +201,21 @@ To ensure the provisioner system has up-to-date state on initialization, the fol
 * Master has perfect knowledge of which Job runs on which node, so if any worker is compromised, the damage is contained within the node the worker is scheduled on.
 
 * Instead of writing local volumes to a file, a worker can send them back to master through gRPC. However, this requires encryption and retry + exponential backoff.
+
+## Security Requirements
+Ideally we'd like to remove the need for a centralized master or proxy altogether and only run the provisioner as a DaemonSet, as it is today. The main reason why we wanted to have a separate trusted component is that each worker (run in a DaemonSet) has access to all PVs, not just local PVs it manages. For this, we need each worker to only have access to PVs it creates.
+
+If this is not possible and we do need a trusted component, the communication between it and the workers must be secure. In RPC designs, this means the communication of messages must be protected against MITM attacks and spoofing by other workers. In CRD designs, where one resource object represents one worker (i.e. one resource object per node), this means each worker can only modify that resource object associated with itself.
+
+The last implicit requirement is that the effort for users to set up the solution, amortized, should be low.
+
+In summary, the requirements are:
+1. A pod only has write access to resource objects it creates
+1. The communication between a pod in a DaemonSet and another trusted pod is protected against MITM attacks and spoofing by other workers.
+1. When an API resource is designed to have one object per node, a pod in a DaemonSet only has write access to the resource object associated with the node it’s scheduled on.
+1. Ease of use
+
+A solution to (1) is ideal. Otherwise, satisfying either (2) or (3) is sufficient. (4) encompasses all solutions.
 
 ## Conclusion
 Design 5 provides the security guarantees the local volume provisioner needs without additional overhead. It provides visibility of discovery and deletion statuses with API server resources and container logs. Each pod in the DaemonSet is also smaller in size and actual workers are spawned only as needed. Thus Design 5 is the preferred solution.
