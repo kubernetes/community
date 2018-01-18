@@ -32,15 +32,19 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=NDP1uYyom
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
 
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-scalability-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-scalability-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-scalability-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-feature-requests) | Feature Requests |
-| @kubernetes/sig-scalability-misc | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-misc) | General Discussion |
-| @kubernetes/sig-scalability-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-pr-reviews) | PR Reviews |
-| @kubernetes/sig-scalability-proprosals | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-proprosals) | Design Proposals |
-| @kubernetes/sig-scalability-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-test-failures) | Test Failures and Triage |
+The google groups contain the archive of Github team notifications.
+Mentioning a team on Github will CC its group.
+Monitor these for Github activity if you are not a member of the team.
+
+| Team Name | Details | Google Groups | Description |
+| --------- |:-------:|:-------------:|  ----------- |
+| @kubernetes/sig-scalability-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scalability-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-scalability-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scalability-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-scalability-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scalability-feature-requests) | Feature Requests |
+| @kubernetes/sig-scalability-misc | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scalability-misc) | General Discussion |
+| @kubernetes/sig-scalability-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scalability-pr-reviews) | PR Reviews |
+| @kubernetes/sig-scalability-proprosals | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-proprosals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scalability-proprosals) | Design Proposals |
+| @kubernetes/sig-scalability-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scalability-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Remaining 2017 Meeting Dates

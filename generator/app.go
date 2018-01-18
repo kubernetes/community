@@ -142,7 +142,7 @@ func getExistingContent(path string) (string, error) {
 	return strings.Join(captured, "\n"), nil
 }
 
-var funcMap template.FuncMap = template.FuncMap{
+var funcMap = template.FuncMap{
 	"tzUrlEncode": tzUrlEncode,
 }
 

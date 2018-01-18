@@ -30,15 +30,19 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=Eh7Qa7KOL
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
 
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-storage-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-storage-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-storage-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-storage-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-storage-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-storage-feature-requests) | Feature Requests |
-| @kubernetes/sig-storage-misc | [link](https://github.com/orgs/kubernetes/teams/sig-storage-misc) | General Discussion |
-| @kubernetes/sig-storage-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-storage-pr-reviews) | PR Reviews |
-| @kubernetes/sig-storage-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-storage-proposals) | Design Proposals |
-| @kubernetes/sig-storage-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-storage-test-failures) | Test Failures and Triage |
+The google groups contain the archive of Github team notifications.
+Mentioning a team on Github will CC its group.
+Monitor these for Github activity if you are not a member of the team.
+
+| Team Name | Details | Google Groups | Description |
+| --------- |:-------:|:-------------:|  ----------- |
+| @kubernetes/sig-storage-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-storage-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-storage-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-storage-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-storage-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-storage-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-feature-requests) | Feature Requests |
+| @kubernetes/sig-storage-misc | [link](https://github.com/orgs/kubernetes/teams/sig-storage-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-misc) | General Discussion |
+| @kubernetes/sig-storage-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-storage-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-pr-reviews) | PR Reviews |
+| @kubernetes/sig-storage-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-storage-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-proposals) | Design Proposals |
+| @kubernetes/sig-storage-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-storage-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 
@@ -59,17 +63,6 @@ Interested in contributing to storage features in Kubernetes? [Please read our g
 * Public Slack Channel: https://kubernetes.slack.com/messages/sig-storage/details/
   * Get invite to join here: http://slack.k8s.io/
   * Our channel is `sig-storage`
-* Google Groups
-  * General storage SIG related discussions (join to participate).
-    * [kubernetes-sig-storage](https://groups.google.com/forum/#!forum/kubernetes-sig-storage)
-  * Archive of Github team notifications (Monitor these for Github activity, you don't have to join them):
-    * [kubernetes-sig-storage-api-reviews](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-api-reviews) - On GitHub  `@kubernetes/sig-storage-api-reviews` will CC this group.
-    * [kubernetes-sig-storage-bugs](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-bugs) - On GitHub metioning `@kubernetes/sig-storage-bugs` will CC this group.
-    * [kubernetes-sig-storage-feature-requests](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-feature-requests) - On GitHub metioning `@kubernetes/sig-storage-feature-requests` will CC this group.
-    * [kubernetes-sig-storage-misc](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-misc) - On GitHub metioning `@kubernetes/sig-storage-misc` will CC this group.
-    * [kubernetes-sig-storage-pr-reviews](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-pr-reviews) - On GitHub metioning `@kubernetes/sig-storage-pr-reviews` will CC this group.
-    * [kubernetes-sig-storage-proposals](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-proposals) - On GitHub metioning `@kubernetes/sig-storage-proposals` will CC this group.
-    * [kubernetes-sig-storage-test-failures](https://groups.google.com/forum/#!forum/kubernetes-sig-storage-test-failures) - On GitHub metioning `@kubernetes/sig-storage-test-failures` will CC this group.
 * Github Issues
   * [link](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Asig%2Fstorage)
 * Documentation for currently supported volume plugins: https://kubernetes.io/docs/concepts/storage/volumes/

@@ -29,14 +29,18 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=FbKOI9-x9
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
 
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-node-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-node-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-node-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-node-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-node-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-node-feature-requests) | Feature Requests |
-| @kubernetes/sig-node-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-node-pr-reviews) | PR Reviews |
-| @kubernetes/sig-node-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-node-proposals) | Design Proposals |
-| @kubernetes/sig-node-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-node-test-failures) | Test Failures and Triage |
+The google groups contain the archive of Github team notifications.
+Mentioning a team on Github will CC its group.
+Monitor these for Github activity if you are not a member of the team.
+
+| Team Name | Details | Google Groups | Description |
+| --------- |:-------:|:-------------:|  ----------- |
+| @kubernetes/sig-node-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-node-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-node-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-node-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-node-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-node-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-node-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-node-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-node-feature-requests) | Feature Requests |
+| @kubernetes/sig-node-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-node-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-node-pr-reviews) | PR Reviews |
+| @kubernetes/sig-node-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-node-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-node-proposals) | Design Proposals |
+| @kubernetes/sig-node-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-node-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-node-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals

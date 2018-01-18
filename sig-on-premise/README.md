@@ -30,15 +30,19 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=dyUWqqNYU
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
 
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-onprem-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-onprem-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-onprem-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-feature-requests) | Feature Requests |
-| @kubernetes/sig-onprem-misc | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-misc) | General Discussion |
-| @kubernetes/sig-onprem-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-pr-reviews) | PR Reviews |
-| @kubernetes/sig-onprem-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-proposals) | Design Proposals |
-| @kubernetes/sig-onprem-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-test-failures) | Test Failures and Triage |
+The google groups contain the archive of Github team notifications.
+Mentioning a team on Github will CC its group.
+Monitor these for Github activity if you are not a member of the team.
+
+| Team Name | Details | Google Groups | Description |
+| --------- |:-------:|:-------------:|  ----------- |
+| @kubernetes/sig-onprem-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-onprem-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-onprem-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-onprem-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-onprem-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-onprem-feature-requests) | Feature Requests |
+| @kubernetes/sig-onprem-misc | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-onprem-misc) | General Discussion |
+| @kubernetes/sig-onprem-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-onprem-pr-reviews) | PR Reviews |
+| @kubernetes/sig-onprem-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-onprem-proposals) | Design Proposals |
+| @kubernetes/sig-onprem-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-onprem-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-onprem-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

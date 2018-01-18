@@ -2,10 +2,17 @@
 
 This folder contains scripts to automatically generate documentation about the
 different Special Interest Groups (SIGs) of Kubernetes. The authoritative
-source for SIG information is the `sigs.yaml` file in the project root. All
-updates must be done there.
+source for SIG information is the [`sigs.yaml`](/sigs.yaml) file in the project root.
+All updates must be done there.
 
 The schema for this file should be self explanatory. However, if you need to see all the options check out the generator code in `app.go`.
+
+The documentation follows a template and uses the values from [`sigs.yaml`](/sigs.yaml):
+
+- Header: [`header.tmpl`](header.tmpl)
+- List: [`list.tmpl`](list.tmpl)
+- SIG README: [`sig_readme.tmpl`](sig_readme.tmpl)
+- WG README: [`wg_readme.tmpl`](wg_readme.tmpl)
 
 **Time Zone gotcha**:
 Time zones make everything complicated.
@@ -16,7 +23,7 @@ Practically, that means US pacific time must be `PT (Pacific Time)`.
 `PT` isn't good enough, unfortunately.
 
 When an update happens to the this file, the next step is generate the
-accompanying documentation. This takes the format of two types of doc file:
+accompanying documentation. This takes the format of three types of doc files:
 
 ```
 sig-<sig-name>/README.md
