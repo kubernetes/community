@@ -1,7 +1,7 @@
 Kubernetes Snapshotting Proposal
 ================================
 
-**Authors:** [Cindy Wang](https://github.com/ciwang)
+**Authors:** [Cindy Wang](https://github.com/ciwang), [Jing Xu](https://github.com/jinxu97),[Tomas Smetana](https://github.com/tsmetana), [Huamin Chen ](https://github.com/rootfs), [Xing Yang] (https://github.com/xing-yang)
 
 ## Background
 
@@ -13,6 +13,10 @@ An application developer using a storage may want to create a snapshot before an
 
 Existing solutions for scheduled snapshotting include [cron jobs](https://forums.aws.amazon.com/message.jspa?messageID=570265) and [external storage drivers](http://rancher.com/introducing-convoy-a-docker-volume-driver-for-backup-and-recovery-of-persistent-data/). Some cloud storage volumes can be configured to take automatic snapshots, but this is specified on the volumes themselves.
 
+As the initial effort to support snapshot in Kubernetes, an external controller and provisioner (i.e. two separate binaries) have been added (https://github.com/kubernetes-incubator/external-storage/tree/master/snapshot).
+
+To continue that effort, this design is proposed to move the Kubernetes snapshot support in-tree by providing snapshot API and controller in-tree.
+
 ## Objectives
 
 For the first version of snapshotting support in Kubernetes, only on-demand snapshots will be supported. Features listed in the roadmap for future versions are also nongoals.
@@ -21,27 +25,57 @@ For the first version of snapshotting support in Kubernetes, only on-demand snap
 
     * Nongoal: Enable *automatic* periodic snapshotting for direct volumes in pods.
 
-* Goal 2: Expose standardized snapshotting operations Create and List in Kubernetes REST API.
+* Goal 2: Expose standardized snapshotting operations to create, list and delete snapshots in Kubernetes REST API.
 
-    * Nongoal: Support Delete and Restore snapshot operations in API.
+* Goal 3: Implement snapshotting interface for Amazon EBS.
 
-* Goal 3: Implement snapshotting interface for GCE PDs.
-
-    * Nongoal: Implement snapshotting interface for non GCE PD volumes.
+* Goal 4: Implement snapshotting interface for GCE PDs.
 
 ### Feature Roadmap
 
-Major features, in order of priority (bold features are priorities for v1):
+Major features, planned for the first version:
 
-* **On demand snapshots**
+* On demand snapshots
 
-    * **API to create new snapshots and list existing snapshots**
+    * API to create new snapshots
 
-    * API to restore a disk from a snapshot and delete old snapshots
+    * API to list snapshots available to the user
 
-* Scheduled snapshots
+    * API to delete existing snapshots
 
-* Support snapshots for non-cloud storage volumes (i.e. plugins that require actions to be triggered from the node)
+    * API to create a new persistent volume with persistent volume claim from a snapshot
+
+### Future Features
+
+The features that are not planned for the first version of the API but should be considered in future versions:
+
+* Creating snapshots
+
+    * Scheduled and periodic snapshots
+
+    * Application initiated on-demand snapshot creation
+
+    * Support snapshot per PVC, pod or StatefulSet
+
+    * Support application-consistent snapshots (coordinate distributed snapshots across multiple volumes)
+
+    * Enable to create a pod/statefulsets with snapshots
+
+* List snapshots
+
+    * Enable to get the list of all snapshots for a specified persistent volume
+
+    * Enable to get the list of all snapshots for a pod/StatefulSet
+
+* Delete snapshots
+
+    * Enable to automatic garbage collect older snapshots when storage is limited
+
+* Quota management
+
+    * Enable to set quota for limiting how many snapshots could be taken and saved
+
+    * When quota is exceeded, delete the oldest snapshots automatically
 
 ## Requirements
 
@@ -49,7 +83,7 @@ Major features, in order of priority (bold features are priorities for v1):
 
 * Time SLA from issuing a snapshot to completion:
 
-* The period we are interested is the time between the scheduled snapshot time and the time the snapshot is finishes uploading to its storage location.
+* The period we are interested in is the time between the scheduled snapshot time, the time the snapshot is cut (it is safe to write to the snapshotted volume again) and the time the snapshot is finished uploading to its storage location.
 
 * This should be on the order of a few minutes.
 
@@ -57,7 +91,7 @@ Major features, in order of priority (bold features are priorities for v1):
 
 * Data corruption
 
-    * Though it is generally recommended to stop application writes before executing the snapshot command, we will not do this for several reasons:
+    * Though it is generally recommended to stop application writes before executing the snapshot command, we will not do this automatically for several reasons:
 
         * GCE and Amazon can create snapshots while the application is running.
 
@@ -65,454 +99,455 @@ Major features, in order of priority (bold features are priorities for v1):
 
         * Most file systems and server applications are (and should be) able to restore inconsistent snapshots the same way as a disk that underwent an unclean shutdown.
 
+    * The data consistency would be best-effort only: e.g., call fsfreeze prior to the snapshot on filesystems that support it.
+
+    * There are several proposed solutions that would enable the users to specify the action to perform prior to/after the
+    snapshots: e.g. use pod annotations.
+
 * Snapshot failure
 
     * Case: Failure during external process, such as during API call or upload
 
-        * Log error, retry until success (indefinitely)
+        * Log error, do not attempt to retry
 
     * Case: Failure within Kubernetes, such as controller restarts
 
-        *  If the master restarts in the middle of a snapshot operation, then the controller does not know whether or not the operation succeeded. However, since the annotation has not been deleted, the controller will retry, which may result in a crash loop if the first operation has not yet completed. This issue will not be addressed in the alpha version, but future versions will need to address it by persisting state.
+        *  If the master restarts in the middle of a snapshot operation, then the controller will find a snapshot request in pending state and should be able to successfully finish the operation.
 
 ## Solution Overview
 
-Snapshot operations will be triggered by [annotations](http://kubernetes.io/docs/user-guide/annotations/) on PVC API objects.
+There are a few uniqueness related to snapshots:
+
+* Both users and admins might create snapshots. Users should only get access to the snapshots belonging to their namespaces. For this aspect, snapshot objects should be in user namespace. Admins might want to choose to expose the snapshots they created to some users who have access to those volumes.
+
+* After snapshots are taken, users might use them to create new volumes or restore the existing volumes back to the time when the snapshot is taken.
+
+* There are use cases that data from snapshots taken from one namespace need to be accessible by users in another namespace.
+
+* For security purpose, if a snapshot object is created by a user, kubernetes should prevent other users duplicating this object in a different namespace if they happen to get the snapshot name.
+
+* There might be some existing snapshots taken by admins/users and they want to use those snapshots through kubernetes API interface.
 
 * **Create:**
 
-    * Key: create.snapshot.volume.alpha.kubernetes.io
+    1. The user creates a `VolumeSnapshot` referencing a persistent volume claim bound to a persistent volume
 
-    * Value: [snapshot name]
+    2. The controller fulfils the `VolumeSnapshot` by creating a snapshot using the volume plugins.
+
+    3. A new object `VolumeSnapshotData` is created to represent the actual snapshot binding the `VolumeSnapshot` with
+       the on-disk snapshot.
 
 * **List:**
 
-    * Key: snapshot.volume.alpha.kubernetes.io/[snapshot name]
+    1. The user is able to list all the `VolumeSnapshot` objects in the namespace
 
-    * Value: [snapshot timestamp]
+* **Delete:**
 
-A new controller responsible solely for snapshot operations will be added to the controllermanager on the master. This controller will watch the API server for new annotations on PVCs. When a create snapshot annotation is added, it will trigger the appropriate snapshot creation logic for the underlying persistent volume type. The list annotation will be populated by the controller and only identify all snapshots created for that PVC by Kubernetes.
+    1. The user deletes the `VolumeSnapshot`
 
-The snapshot operation is a no-op for volume plugins that do not support snapshots via an API call (i.e. non-cloud storage).
+    2. The controller removes the on-disk snapshot. Note: snapshots have no notion of "reclaim policy" - there is
+       no way to recover the deleted snapshot.
 
-## Detailed Design
+    3. The controller removes the `VolumeSnapshotData` object.
+
+* **Promote snapshot to PV:**
+
+    1. The user creates a persistent volume claim referencing the snapshot object in the annotation.
+       Note: The special annotation might get replaced by a dedicated attribute of the
+       `PersistentVolumeClaim` in the future.
+
+    2. The controller will use the `VolumeSnapshotData` object to create a persistent volume using the corresponding
+       volume snapshot plugin.
+
+    3. The PVC is bound to the newly created PV containing the data from the snapshot.
+
 
 ### API
 
-* Create snapshot
+* The `VolumeSnapshot` object
 
-    * Usage:
+```
+// The volume snapshot object accessible to the user. Upon succesful creation of the actual
+// snapshot by the volume provider it is bound to the corresponding VolumeSnapshotData through
+// the VolumeSnapshotSpec
+type VolumeSnapshot struct {
+	metav1.TypeMeta `json:",inline"`
+	Metadata        metav1.ObjectMeta `json:"metadata"`
 
-        * Users create annotation with key "create.snapshot.volume.alpha.kubernetes.io", value does not matter
+	// Spec represents the desired state of the snapshot
+	// +optional
+	Spec VolumeSnapshotSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 
-        * When the annotation is deleted, the operation has succeeded. The snapshot will be listed in the value of snapshot-list.
+	// Status represents the latest observer state of the snapshot
+	// +optional
+	Status VolumeSnapshotStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+}
 
-        * API is declarative and guarantees only that it will begin attempting to create the snapshot once the annotation is created and will complete eventually.
+type VolumeSnapshotList struct {
+	metav1.TypeMeta `json:",inline"`
+	Metadata        metav1.ListMeta  `json:"metadata"`
+	Items           []VolumeSnapshot `json:"items"`
+}
 
-    * PVC control loop in master
+// VolumeSnapshotSpec is the desired state of the volume snapshot
+type VolumeSnapshotSpec struct {
+        // PersistentVolumeClaimName is the name of the PVC being snapshotted
+        // +optional
+        PersistentVolumeClaimName string `json:"persistentVolumeClaimName" protobuf:"bytes,1,opt,name=persistentVolumeClaimName"`
 
-        * If annotation on new PVC, search for PV of volume type that implements SnapshottableVolumePlugin. If one is available, use it. Otherwise, reject the claim and post an event to the PV.
+        // SnapshotDataName binds the VolumeSnapshot object with the VolumeSnapshotData
+        // +optional
+        SnapshotDataName string `json:"snapshotDataName" protobuf:"bytes,2,opt,name=snapshotDataName"`
+}
 
-        * If annotation on existing PVC, if PV type implements SnapshottableVolumePlugin, continue to SnapshotController logic. Otherwise, delete the annotation and post an event to the PV.
+type VolumeSnapshotStatus struct {
+	// The time the snapshot was successfully created
+	// +optional
+	CreationTimestamp metav1.Time `json:"creationTimestamp" protobuf:"bytes,1,opt,name=creationTimestamp"`
 
-* List existing snapshots
+	// Representes the lates available observations about the volume snapshot
+	Conditions []VolumeSnapshotCondition `json:"conditions" protobuf:"bytes,2,rep,name=conditions"`
+}
 
-    * Only displayed as annotations on PVC object.
+type VolumeSnapshotConditionType string
 
-    * Only lists unique names and timestamps of snapshots taken using the Kubernetes API.
+// These are valid conditions of a volume snapshot.
+const (
+        // VolumeSnapshotConditionPending means the snapshot is cut and the application
+        // can resume accessing data if core_v1.ConditionStatus is True. It corresponds
+        // to "Uploading" in GCE PD or "Pending" in AWS and core_v1.ConditionStatus is True.
+        // It also corresponds to "Creating" in OpenStack Cinder and core_v1.ConditionStatus
+        // is Unknown.
+        VolumeSnapshotConditionPending VolumeSnapshotConditionType = "Pending"
+        // VolumeSnapshotConditionReady is added when the snapshot has been successfully created and is ready to be used.
+        VolumeSnapshotConditionReady VolumeSnapshotConditionType = "Ready"
+        // VolumeSnapshotConditionError means an error occurred during snapshot creation.
+        VolumeSnapshotConditionError VolumeSnapshotConditionType = "Error"
+)
 
-    * Usage:
+// VolumeSnapshot Condition describes the state of a volume snapshot at a certain point.
+type VolumeSnapshotCondition struct {
+	// Type of replication controller condition.
+	Type VolumeSnapshotConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=VolumeSnapshotConditionType"`
+	// Status of the condition, one of True, False, Unknown.
+	Status core_v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=ConditionStatus"`
+	// The last time the condition transitioned from one status to another.
+	// +optional
+	LastTransitionTime metav1.Time `json:"lastTransitionTime" protobuf:"bytes,3,opt,name=lastTransitionTime"`
+	// The reason for the condition's last transition.
+	// +optional
+	Reason string `json:"reason" protobuf:"bytes,4,opt,name=reason"`
+	// A human readable message indicating details about the transition.
+	// +optional
+	Message string `json:"message" protobuf:"bytes,5,opt,name=message"`
+}
+```
 
-        * Get the PVC object
+* The `VolumeSnapshotData` object
 
-        * Snapshots are listed as key-value pairs within the PVC annotations
+```
+// +genclient=true
+// +nonNamespaced=true
 
-### SnapshotController
+// VolumeSnapshotData represents the actual "on-disk" snapshot object
+type VolumeSnapshotData struct {
+	metav1.TypeMeta `json:",inline"`
+	// +optional
+	Metadata metav1.ObjectMeta `json:"metadata"`
 
-![Snapshot Controller Diagram](volume-snapshotting.png?raw=true "Snapshot controller diagram")
+	// Spec represents the desired state of the snapshot
+	// +optional
+	Spec VolumeSnapshotDataSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 
-**PVC Informer:** A shared informer that stores (references to) PVC objects, populated by the API server. The annotations on the PVC objects are used to add items to SnapshotRequests.
+	// Status represents the latest observed state of the snapshot
+	// +optional
+	Status VolumeSnapshotDataStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+}
 
-**SnapshotRequests:** An in-memory cache of incomplete snapshot requests that is populated by the PVC informer. This maps unique volume IDs to PVC objects. Volumes are added when the create snapshot annotation is added, and deleted when snapshot requests are completed successfully.
+// VolumeSnapshotDataList is a list of VolumeSnapshotData objects
+type VolumeSnapshotDataList struct {
+        metav1.TypeMeta `json:",inline"`
+        Metadata        metav1.ListMeta      `json:"metadata"`
+        Items           []VolumeSnapshotData `json:"items"`
+}
 
-**Reconciler:** Simple loop that triggers asynchronous snapshots via the OperationExecutor. Deletes create snapshot annotation if successful.
+// The desired state of the volume snapshot
+type VolumeSnapshotDataSpec struct {
+	// Source represents the location and type of the volume snapshot
+	VolumeSnapshotDataSource `json:",inline" protobuf:"bytes,1,opt,name=volumeSnapshotDataSource"`
 
-The controller will have a loop that does the following:
+	// VolumeSnapshotRef is part of bi-directional binding between VolumeSnapshot
+	// and VolumeSnapshotData
+	// +optional
+	VolumeSnapshotRef *core_v1.ObjectReference `json:"volumeSnapshotRef" protobuf:"bytes,2,opt,name=volumeSnapshotRef"`
 
-* Fetch State
+	// PersistentVolumeRef represents the PersistentVolume that the snapshot has been
+	// taken from
+	// +optional
+	PersistentVolumeRef *core_v1.ObjectReference `json:"persistentVolumeRef" protobuf:"bytes,3,opt,name=persistentVolumeRef"`
+}
 
-    * Fetch all PVC objects from the API server.
+// VolumeSnapshotDataStatus is the actual state of the volume snapshot
+type VolumeSnapshotDataStatus struct {
+        // The time the snapshot was successfully created
+        // +optional
+        CreationTimestamp metav1.Time `json:"creationTimestamp" protobuf:"bytes,1,opt,name=creationTimestamp"`
 
-* Act
+        // Representes the lates available observations about the volume snapshot
+        Conditions []VolumeSnapshotDataCondition `json:"conditions" protobuf:"bytes,2,rep,name=conditions"`
+}
 
-    * Trigger snapshot:
+// VolumeSnapshotDataConditionType is the type of the VolumeSnapshotData condition
+type VolumeSnapshotDataConditionType string
 
-        * Loop through SnapshotRequests and trigger create snapshot logic (see below) for any PVCs that have the create snapshot annotation.
+// These are valid conditions of a volume snapshot.
+const (
+        // VolumeSnapshotDataReady is added when the on-disk snapshot has been successfully created.
+        VolumeSnapshotDataConditionReady VolumeSnapshotDataConditionType = "Ready"
+        // VolumeSnapshotDataPending is added when the on-disk snapshot has been successfully created but is not available to use.
+        VolumeSnapshotDataConditionPending VolumeSnapshotDataConditionType = "Pending"        // VolumeSnapshotDataError is added but the on-disk snapshot is failed to created
+        VolumeSnapshotDataConditionError VolumeSnapshotDataConditionType = "Error"
+)
 
-* Persist State
+// VolumeSnapshotDataCondition describes the state of a volume snapshot  at a certain point.
+type VolumeSnapshotDataCondition struct {
+        // Type of volume snapshot condition.
+        Type VolumeSnapshotDataConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=VolumeSnapshotDataConditionType"`
+        // Status of the condition, one of True, False, Unknown.
+        Status core_v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=ConditionStatus"`
+        // The last time the condition transitioned from one status to another.
+        // +optional
+        LastTransitionTime metav1.Time `json:"lastTransitionTime" protobuf:"bytes,3,opt,name=lastTransitionTime"`
+        // The reason for the condition's last transition.
+        // +optional
+        Reason string `json:"reason" protobuf:"bytes,4,opt,name=reason"`
+        // A human readable message indicating details about the transition.
+        // +optional
+        Message string `json:"message" protobuf:"bytes,5,opt,name=message"`
+}
 
-    * Once a snapshot operation completes, write the snapshot ID/timestamp to the PVC Annotations and delete the create snapshot annotation in the PVC object via the API server.
+// Represents the actual location and type of the snapshot. Only one of its members may be specified.
+type VolumeSnapshotDataSource struct {
+	// HostPath represents a directory on the host.
+	// Provisioned by a developer or tester.
+	// This is useful for single-node development and testing only!
+	// On-host storage is not supported in any way and WILL NOT WORK in a multi-node cluster.
+	// More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath
+	// +optional
+	HostPath *HostPathVolumeSnapshotSource `json:"hostPath,omitempty"`
+	// AWSElasticBlockStore represents an AWS Disk resource that is attached to a
+	// kubelet's host machine and then exposed to the pod.
+	// More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
+	// +optional
+	AWSElasticBlockStore *AWSElasticBlockStoreVolumeSnapshotSource `json:"awsElasticBlockStore,omitempty"`
 
-Snapshot operations can take a long time to complete, so the primary controller loop should not block on these operations. Instead the reconciler should spawn separate threads for these operations via the operation executor.
+    // ... etc. for other snapshot types
+}
+```
 
-The controller will reject snapshot requests if the unique volume ID already exists in the SnapshotRequests. Concurrent operations on the same volume will be prevented by the operation executor.
+An example of the `VolumeSnapshotDataSource` for Amazon EBS snapshots:
+
+```
+// AWS EBS volume snapshot source
+type AWSElasticBlockStoreVolumeSnapshotSource struct {
+	// Unique id of the persistent disk snapshot resource. Used to identify the disk snapshot in AWS
+	SnapshotID string `json:"snapshotId"`
+}
+```
+
+### Event loop in controller
+
+The volume snapshot controller maintains two data structures (ActualStateOfWorld and DesiredStateOfWorld) and
+periodically reconciles the two. The data structures are being update by the API sever event handlers.
+
+* If a new `VolumeSnapshot` is added, the *add* handler adds it to the DesiredStateOfWorld (DSW)
+
+* If a `VolumeSnapshot` is deleted, the *delete* handler removes it from the DSW.
+
+* Reconciliation loop in the controller
+
+    * For every `VolumeSnapshot` in the ActualStateOfWorld (ASW) find the corresponding `VolumeSnapshot` in the DSW.
+    If such a snapshot does not exist, start a snapshot deletion operation:
+
+        * Determine the correct volume snapshot plugin to use from the `VolumeSnapshotData` referenced by the
+        `VolumeSnapshot`
+
+        * Create a delete operation: only one such operation is allowed to exist for the given `VolumeSnapshot` and
+        `VolumeSnapshotData` pair
+
+        * The operation is an asynchronous function using the volume plugin to delete the actual snapshot in the back-end.
+
+        * When the plugin finishes deleting the snapshot, delete the `VolumeSnapshotData` referencing it and remove the
+        `VolumeSnapshot` reference from the ASW
+
+    * For every `VolumeSnapshot` in the DSW find the corresponding `VolumeSnapshot` in the ASW. If such a snapshot
+    does not exist, start a snapshot creation operation:
+
+        * Determine the correct volume snapshot plugin to use from the `VolumeSnapshotData` referenced by the
+        `VolumeSnapshot`
+
+        * Create a volume snapshot creation operation: only one such operation is allowed to exist for the given
+        `VolumeSnapshot` and `VolumeSnapshotData` pair.
+
+        * The operation is an asynchronous function using the volume plugin to create the actual snapshot in the back-end.
+
+        * When the plugin finishes creating the snapshot a new `VolumeSnapshotData` is created holding a reference to
+        the actual volume snapshot.
+
+    * For every snapshot present in the ASW and DSW find its `VolumeSnapshotData` and verify the bi-directional
+    binding is correct: if not, update the `VolumeSnapshotData` reference.
+
 
 ### Create Snapshot Logic
 
 To create a snapshot:
 
-* Acquire operation lock for volume so that no other attach or detach operations can be started for volume.
+* Acquire operation lock for volume so that only one snapshot creation operation is running for the specified volume
 
-    * Abort if there is already a pending operation for the specified volume (main loop will retry, if needed).
+    * Abort if there is already a pending operation (reconciliation loop will retry, if needed).
 
 * Spawn a new thread:
 
-    * Execute the volume-specific logic to create a snapshot of the persistent volume reference by the PVC.
+    * Execute the volume-specific logic to create a snapshot of the persistent volume referenced by the PVC.
 
-    * For any errors, log the error, and terminate the thread (the main controller will retry as needed).
+    * For any errors, log the error, send it as an event on the corresponding `VolumeSnapshot`, and terminate the thread (the main controller will retry as needed).
 
     * Once a snapshot is created successfully:
 
-        * Make a call to the API server to delete the create snapshot annotation in the PVC object.
+        * Make a call to the API server to add the new snapshot ID/timestamp to the `VolumeSnapshotData` API object, update its
+        status.
 
-        * Make a call to the API server to add the new snapshot ID/timestamp to the PVC Annotations.
+### Snapshot to PV promotion logic
 
-*Brainstorming notes below, read at your own risk!*
+For the `PersistentVolumeClaim` used to restore the snapshot:
 
-* * *
+* Check the `PeristentVolumeClaim` annotation and get the `VolumeSnapshot` name.
 
+* Retrieve the `VolumeSnapshot` object from the API server:
 
-Open questions:
+    * Verify both the `VolumeSnapshot` and `PersistentVolumeClaim` belong to the same namespace.
 
-* What has more value: scheduled snapshotting or exposing snapshotting/backups as a standardized API?
+    * Verify the `VolumeSnapshotData` referenced by the `VolumeSnapshot` exists and that its `VolumeSnapshot` reference points "back" to the given `VolumeSnapshot` object.
 
-    * It seems that the API route is a bit more feasible in implementation and can also be fully utilized.
+* Find the correct plugin to use to create a `PersistentVolume` bound to the given PVC.
 
-        * Can the API call methods on VolumePlugins? Yeah via controller
+## Example Use Case
 
-    * The scheduler gives users functionality that doesn't already exist, but required adding an entirely new controller
+### Alice wants to backup her MySQL database data
 
-* Should the list and restore operations be part of v1?
+Alice is a DB admin who runs a MySQL database and needs to backup the data on a remote server prior to the database
+upgrade. She has a short maintenance window dedicated to the operation that allows her to pause the dabase only for
+a short while. Alice will therefore stop the database, create a snapshot of the data, re-start the database and after
+that start time-consuming network transfer to the backup server.
 
-* Do we call them snapshots or backups?
-
-    * From the SIG email: "The snapshot should not be suggested to be a backup in any documentation, because in practice is is necessary, but not sufficient, when conducting a backup of a stateful application."
-
-* At what minimum granularity should snapshots be allowed?
-
-* How do we store information about the most recent snapshot in case the controller restarts?
-
-* In case of error, do we err on the side of fewer or more snapshots?
-
-Snapshot Scheduler
-
-1. PVC API Object
-
-A new field, backupSchedule, will be added to the PVC API Object. The value of this field must be a cron expression.
-
-* CRUD operations on snapshot schedules
-
-    * Create: Specify a snapshot within a PVC spec as a [cron expression](http://crontab-generator.org/)
-
-        * The cron expression provides flexibility to decrease the interval between snapshots in future versions
-
-    * Read: Display snapshot schedule to user via kubectl get pvc
-
-    * Update: Do not support changing the snapshot schedule for an existing PVC
-
-    * Delete: Do not support deleting the snapshot schedule for an existing PVC
-
-        * In v1, the snapshot schedule is tied to the lifecycle of the PVC. Update and delete operations are therefore not supported. In future versions, this may be done using kubectl edit pvc/name
-
-* Validation
-
-    * Cron expressions must have a 0 in the minutes place and use exact, not interval syntax
-
-        * [EBS](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/TakeScheduledSnapshot.html) appears to be able to take snapshots at the granularity of minutes, GCE PD takes at most minutes. Therefore for v1, we ensure that snapshots are taken at most hourly and at exact times (rather than at time intervals).
-
-    * If Kubernetes cannot find a PV that supports snapshotting via its API, reject the PVC and display an error message to the user
-
- Objective
-
-Goal: Enable automatic periodic snapshotting (NOTE:  A snapshot is a read-only copy of a disk.)  for all kubernetes volume plugins.
-
-Goal: Implement snapshotting interface for GCE PDs.
-
-Goal: Protect against data loss by allowing users to restore snapshots of their disks.
-
-Nongoal: Implement snapshotting support on Kubernetes for non GCE PD volumes.
-
-Nongoal: Use snapshotting to provide additional features such as migration.
-
- Background
-
-Many storage systems (GCE PD, Amazon EBS, NFS, etc.) provide the ability to create "snapshots" of a persistent volumes to protect against data loss. Snapshots can be used in place of a traditional backup system to back up and restore primary and critical data. Snapshots allow for quick data backup (for example, it takes a fraction of a second to create a GCE PD snapshot) and offer fast recovery time objectives (RTOs) and recovery point objectives (RPOs).
-
-Currently, no container orchestration software (i.e. Kubernetes and its competitors) provide snapshot scheduling for application storage.
-
-Existing solutions for automatic snapshotting include [cron jobs](https://forums.aws.amazon.com/message.jspa?messageID=570265)/shell scripts. Some volumes can be configured to take automatic snapshots, but this is specified on the volumes themselves, not via their associated applications. Snapshotting support gives Kubernetes clear competitive advantage for users who want automatic snapshotting on their volumes, and particularly those who want to configure application-specific schedules.
-
- what is the value case? Who wants this? What do we enable by implementing this?
-
-I think it introduces a lot of complexity, so what is the pay off? That should be clear in the document.  Do mesos, or swarm or our competition implement this? AWS? Just curious.
-
-Requirements
-
-Functionality
-
-Should this support PVs, direct volumes, or both?
-
-Should we support deletion?
-
-Should we support restores?
-
-Automated schedule -- times or intervals? Before major event?
-
-Performance
-
-Snapshots are supposed to provide timely state freezing. What is the SLA from issuing one to it completing?
-
-* GCE: The snapshot operation takes [a fraction of a second](https://cloudplatform.googleblog.com/2013/10/persistent-disk-backups-using-snapshots.html). If file writes can be paused, they should be paused until the snapshot is created (but can be restarted while it is pending). If file writes cannot be paused, the volume should be unmounted before snapshotting then remounted afterwards.
-
-    * Pending = uploading to GCE
-
-* EBS is the same, but if the volume is the root device the instance should be stopped before snapshotting
-
-Reliability
-
-How do we ascertain that deletions happen when we want them to?
-
-For the same reasons that Kubernetes should not expose a direct create-snapshot command, it should also not allow users to delete snapshots for arbitrary volumes from Kubernetes.
-
-We may, however, want to allow users to set a snapshotExpiryPeriod and delete snapshots once they have reached certain age. At this point we do not see an immediate need to implement automatic deletion (re:Saad) but may want to revisit this.
-
-What happens when the snapshot fails as these are async operations?
-
-Retry (for some time period? indefinitely?) and log the error
-
-Other
-
-What is the UI for seeing the list of snapshots?
-
-In the case of GCE PD, the snapshots are uploaded to cloud storage. They are visible and manageable from the GCE console. The same applies for other cloud storage providers (i.e. Amazon). Otherwise, users may need to ssh into the device and access a ./snapshot or similar directory. In other words, users will continue to access snapshots in the same way as they have been while creating manual snapshots.
-
-Overview
-
-There are several design options for the design of each layer of implementation as follows.
-
-1. **Public API:**
-
-Users will specify a snapshotting schedule for particular volumes, which Kubernetes will then execute automatically. There are several options for where this specification can happen. In order from most to least invasive:
-
-    1. New Volume API object
-
-        1. Currently, pods, PVs, and PVCs are API objects, but Volume is not. A volume is represented as a field within pod/PV objects and its details are lost upon destruction of its enclosing object.
-
-        2. We define Volume to be a brand new API object, with a snapshot schedule attribute that specifies the time at which Kubernetes should call out to the volume plugin to create a snapshot.
-
-        3. The Volume API object will be referenced by the pod/PV API objects. The new Volume object exists entirely independently of the Pod object.
-
-        4. Pros
-
-            1. Snapshot schedule conflicts: Since a single Volume API object ideally refers to a single volume, each volume has a single unique snapshot schedule. In the case where the same underlying PD is used by different pods which specify different snapshot schedules, we have a straightforward way of identifying and resolving the conflicts. Instead of using extra space to create duplicate snapshots, we can decide to, for example, use the most frequent snapshot schedule.
-
-        5. Cons
-
-            2. Heavyweight codewise; involves changing and touching a lot of existing code.
-
-            3. Potentially bad UX: How is the Volume API object created?
-
-                1. By the user independently of the pod (i.e. with something like my-volume.yaml). In order to create 1 pod with a volume, the user needs to create 2 yaml files and run 2 commands.
-
-                2. When a unique volume is specified in a pod or PV spec.
-
-    2. Directly in volume definition in the pod/PV object
-
-        6. When specifying a volume as part of the pod or PV spec, users have the option to include an extra attribute, e.g. ssTimes, to denote the snapshot schedule.
-
-        7. Pros
-
-            4. Easy for users to implement and understand
-
-        8. Cons
-
-            5. The same underlying PD may be used by different pods. In this case, we need to resolve when and how often to take snapshots. If two pods specify the same snapshot time for the same PD, we should not perform two snapshots at that time. However, there is no unique global identifier for a volume defined in a pod definition--its identifying details are particular to the volume plugin used.
-
-            6. Replica sets have the same pod spec and support needs to be added so that underlying volume used does not create new snapshots for each member of the set.
-
-    3. Only in PV object
-
-        9. When specifying a volume as part of the PV spec, users have the option to include an extra attribute, e.g. ssTimes, to denote the snapshot schedule.
-
-        10. Pros
-
-            7. Slightly cleaner than (b). It logically makes more sense to specify snapshotting at the time of the persistent volume definition (as opposed to in the pod definition) since the snapshot schedule is a volume property.
-
-        11. Cons
-
-            8. No support for direct volumes
-
-            9. Only useful for PVs that do not already have automatic snapshotting tools (e.g. Schedule Snapshot Wizard for iSCSI) -- many do and the same can be achieved with a simple cron job
-
-            10. Same problems as (b) with respect to non-unique resources. We may have 2 PV API objects for the same underlying disk and need to resolve conflicting/duplicated schedules.
-
-    4. Annotations: key value pairs on API object
-
-        12. User experience is the same as (b)
-
-        13. Instead of storing the snapshot attribute on the pod/PV API object, save this information in an annotation. For instance, if we define a pod with two volumes we might have {"ssTimes-vol1": [1,5], “ssTimes-vol2”: [2,17]} where the values are slices of integer values representing UTC hours.
-
-        14. Pros
-
-            11. Less invasive to the codebase than (a-c)
-
-        15. Cons
-
-            12. Same problems as (b-c) with non-unique resources. The only difference here is the API object representation.
-
-2. **Business logic:**
-
-    5. Does this go on the master, node, or both?
-
-        16. Where the snapshot is stored
-
-            13. GCE, Amazon: cloud storage
-
-            14. Others stored on volume itself (gluster) or external drive (iSCSI)
-
-        17. Requirements for snapshot operation
-
-            15. Application flush, sync, and fsfreeze before creating snapshot
-
-    6. Suggestion:
-
-        18. New SnapshotController on master
-
-            16. Controller keeps a list of active pods/volumes, schedule for each, last snapshot
-
-            17. If controller restarts and we miss a snapshot in the process, just skip it
-
-                3. Alternatively, try creating the snapshot up to the time + retryPeriod (see 5)
-
-            18. If snapshotting call fails, retry for an amount of time specified in retryPeriod
-
-            19. Timekeeping mechanism: something similar to [cron](http://stackoverflow.com/questions/3982957/how-does-cron-internally-schedule-jobs); keep list of snapshot times, calculate time until next snapshot, and sleep for that period
-
-        19. Logic to prepare the disk for snapshotting on node
-
-            20. Application I/Os need to be flushed and the filesystem should be frozen before snapshotting (on GCE PD)
-
-    7. Alternatives: login entirely on node
-
-        20. Problems:
-
-            21. If pod moves from one node to another
-
-                4. A different node is in now in charge of snapshotting
-
-                5. If the volume plugin requires external memory for snapshots, we need to move the existing data
-
-            22. If the same pod exists on two different nodes, which node is in charge
-
-3. **Volume plugin interface/internal API:**
-
-    8. Allow VolumePlugins to implement the SnapshottableVolumePlugin interface (structure similar to AttachableVolumePlugin)
-
-    9. When logic is triggered for a snapshot by the SnapshotController, the SnapshottableVolumePlugin calls out to volume plugin API to create snapshot
-
-    10. Similar to volume.attach call
-
-4. **Other questions:**
-
-    11. Snapshot period
-
-    12. Time or period
-
-    13. What is our SLO around time accuracy?
-
-        21. Best effort, but no guarantees (depends on time or period) -- if going with time.
-
-    14. What if we miss a snapshot?
-
-        22. We will retry (assuming this means that we failed) -- take at the nearest next opportunity
-
-    15. Will we know when an operation has failed?  How do we report that?
-
-        23. Get response from volume plugin API, log in kubelet log, generate Kube event in success and failure cases
-
-    16. Will we be responsible for GCing old snapshots?
-
-        24. Maybe this can be explicit non-goal, in the future can automate garbage collection
-
-    17. If the pod dies do we continue creating snapshots?
-
-    18. How to communicate errors (PD doesn't support snapshotting, time period unsupported)
-
-    19. Off schedule snapshotting like before an application upgrade
-
-    20. We may want to take snapshots of encrypted disks. For instance, for GCE PDs, the encryption key must be passed to gcloud to snapshot an encrypted disk. Should Kubernetes handle this?
-
-Options, pros, cons, suggestion/recommendation
-
-Example 1b
-
-During pod creation, a user can specify a pod definition in a yaml file. As part of this specification, users should be able to denote a [list of] times at which an existing snapshot command can be executed on the pod's associated volume.
-
-For a simple example, take the definition of a [pod using a GCE PD](http://kubernetes.io/docs/user-guide/volumes/#example-pod-2):
-
+The database is running in a pod with the data stored on a persistent volume:
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
-  name: test-pd
+  name: mysql
+  labels:
+    name: mysql
 spec:
   containers:
-  - image: k8s.gcr.io/test-webserver
-    name: test-container
-    volumeMounts:
-    - mountPath: /test-pd
-      name: test-volume
+    - resources:
+        limits :
+          cpu: 0.5
+      image: openshift/mysql-55-centos7
+      name: mysql
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: rootpassword
+        - name: MYSQL_USER
+          value: wp_user
+        - name: MYSQL_PASSWORD
+          value: wp_pass
+        - name: MYSQL_DATABASE
+          value: wp_db
+      ports:
+        - containerPort: 3306
+          name: mysql
+      volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql/data
   volumes:
-  - name: test-volume
-    # This GCE PD must already exist.
-    gcePersistentDisk:
-      pdName: my-data-disk
-      fsType: ext4
+    - name: mysql-persistent-storage
+      persistentVolumeClaim:
+      claimName: claim-mysql
+```
 
-Introduce a new field into the volume spec:
-
+The persistent volume is bound to the `claim-mysql` PVC which needs to be snapshotted. Since Alice has some downtime
+allowed she may lock the database tables for a moment to ensure the backup would be consistent:
+```
+mysql> FLUSH TABLES WITH READ LOCK;
+```
+Now she is ready to create a snapshot of the `claim-mysql` PVC. She creates a vs.yaml:
+```yaml
 apiVersion: v1
-kind: Pod
+kind: VolumeSnapshot
 metadata:
-  name: test-pd
+  name: mysql-snapshot
+  namespace: default
 spec:
-  containers:
-  - image: k8s.gcr.io/test-webserver
-    name: test-container
-    volumeMounts:
-    - mountPath: /test-pd
-      name: test-volume
+  persistentVolumeClaim: claim-mysql
+```
+
+```
+$ kubectl create -f vs.yaml
+```
+
+This will result in a new snapshot being created by the controller. Alice would wait until the snapshot is complete:
+```
+$ kubectl get volumesnapshots
+
+NAME             STATUS
+mysql-snapshot   ready
+```
+Now it's OK to unlock the database tables and the database may return to normal operation:
+```
+mysql> UNLOCK TABLES;
+```
+Alice can now get to the snapshotted data and start syncing them to the remote server. First she needs to promote the
+snapshot to a PV by creating a new PVC. Alice can create the PVC referencing the snapshot in the annotations.
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: snapshot-data-claim
+annotations:
+    snapshot.alpha.kubernetes.io/snapshot: mysql-snapshot
+spec:
+  accessModes:
+    - ReadWriteOnce
+```
+Once the claim is bound to a persistent volume Alice creates a job to sync the data with a remote backup server:
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mysql-sync
+spec:
+  template:
+    metadata:
+      name: mysql-sync
+    spec:
+      containers:
+      - name: mysql-sync
+        image: rsync
+        command: "rsync -av /mnt/data alice@backup.example.com:mysql_backups"
+      restartPolicy: Never
+      volumeMounts:
+        - name: snapshot-data
+          mountPath: /mnt/data
   volumes:
-  - name: test-volume
-    # This GCE PD must already exist.
-    gcePersistentDisk:
-      pdName: my-data-disk
-      fsType: ext4
+    - name: snapshot-data
+      persistentVolumeClaim:
+      claimName: snapshot-data-claim
+```
 
-**    ssTimes: ****[1, 5]**
-
- Caveats
-
-* Snapshotting should not be exposed to the user through the Kubernetes API (via an operation such as create-snapshot) because
-
-    * this does not provide value to the user and only adds an extra layer of indirection/complexity.
-
-    * ?
-
- Dependencies
-
-* Kubernetes
-
-* Persistent volume snapshot support through API
-
-    * POST https://www.googleapis.com/compute/v1/projects/example-project/zones/us-central1-f/disks/example-disk/createSnapshot
-
+Alice will wait for the job to finish and then may delete both the `snapshot-data-claim` PVC as well as `mysql-snapshot`
+request (which will delete also the snapshot object):
+```
+$ kubectl delete pvc snapshot-data-claim
+$ kubectl delete volumesnapshot mysql-snapshot
+```
