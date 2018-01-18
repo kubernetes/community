@@ -14,7 +14,7 @@ approvers:
 editor:
   name: "@jbeda"
 creation-date: 2017-08-22
-status: accepted
+status: implementable
 ---
 
 # Kubernetes Enhancement Proposal Process
