@@ -30,15 +30,19 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=PweKj6SU7
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
 
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-scheduling-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-scheduling-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-scheduling-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-feature-requests) | Feature Requests |
-| @kubernetes/sig-scheduling-misc | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-misc) | General Discussion |
-| @kubernetes/sig-scheduling-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-pr-reviews) | PR Reviews |
-| @kubernetes/sig-scheduling-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-proposals) | Design Proposals |
-| @kubernetes/sig-scheduling-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-test-failures) | Test Failures and Triage |
+The google groups contain the archive of Github team notifications.
+Mentioning a team on Github will CC its group.
+Monitor these for Github activity if you are not a member of the team.
+
+| Team Name | Details | Google Groups | Description |
+| --------- |:-------:|:-------------:|  ----------- |
+| @kubernetes/sig-scheduling-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-scheduling-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-scheduling-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling-feature-requests) | Feature Requests |
+| @kubernetes/sig-scheduling-misc | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling-misc) | General Discussion |
+| @kubernetes/sig-scheduling-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling-pr-reviews) | PR Reviews |
+| @kubernetes/sig-scheduling-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling-proposals) | Design Proposals |
+| @kubernetes/sig-scheduling-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 
