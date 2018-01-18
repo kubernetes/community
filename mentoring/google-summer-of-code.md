@@ -62,7 +62,7 @@ Please see the tasks listed for Kubernetes in the [`cncf/soc`](https://github.co
 
 ## Coordination
 
-* Ihor Dvoretskyi - ihor@linux.com
+* Ihor Dvoretskyi - ihor@cncf.io
 * Nikhita Raghunath - nikitaraghunath@gmail.com
 * Paris Pittman - parispittman@google.com
 
