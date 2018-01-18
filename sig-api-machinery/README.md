@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 -->
 # API Machinery SIG
 
-Covers all aspects of API server, API registration and discovery, generic API CRUD semantics, admission control, encoding/decoding, conversion, defaulting, persistence layer (etcd), OpenAPI, third-party resource, garbage collection, and client libraries.
+Covers all aspects of API server, API registration and discovery, generic API CRUD semantics, admission control, encoding/decoding, conversion, defaulting, persistence layer (etcd), OpenAPI, CustomResourceDefinition, garbage collection, and client libraries.
 
 ## Meetings
 * [Wednesdays at 11:00 PT (Pacific Time)](https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
@@ -49,6 +49,4 @@ Monitor these for Github activity if you are not a member of the team.
 
 * [YouTube Playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R) - find meeting recordings here
 
-## Areas
-apiserver, api registration and discovery, generic API CRUD semantics, admission control, encoding/decoding, conversion, defaulting, persistence layer (etcd), OpenAPI, third-party resource, garbage collection, client libraries
 <!-- END CUSTOM CONTENT -->

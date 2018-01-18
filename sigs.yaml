@@ -4,7 +4,7 @@ sigs:
     mission_statement: >
       Covers all aspects of API server, API registration and discovery, generic
       API CRUD semantics, admission control, encoding/decoding, conversion,
-      defaulting, persistence layer (etcd), OpenAPI, third-party resource,
+      defaulting, persistence layer (etcd), OpenAPI, CustomResourceDefinition,
       garbage collection, and client libraries.
     label: api-machinery
     leads:
