@@ -29,7 +29,9 @@ OWNERS files are in YAML format and support the following keys:
 - `approvers`: a list of GitHub usernames or aliases that can `/approve` a PR
 - `labels`: a list of GitHub labels to automatically apply to a PR
 - `options`: a map of options for how to interpret this OWNERS file, currently only one:
-  - `no_parent_owners`: defaults to `false` if not present; if `true`, exclude parent OWNERS
+  - `no_parent_owners`: defaults to `false` if not present; if `true`, exclude parent OWNERS files.
+    Allows the use case where `a/deep/nested/OWNERS` file prevents `a/OWNERS` file from having any
+    effect on `a/deep/nested/bit/of/code`
 - `reviewers`: a list of GitHub usernames or aliases that are good candidates to `/lgtm` a PR
 
 All users are expected to be assignable. In GitHub terms, this means they are either collaborators
@@ -77,19 +79,21 @@ GitHub usernames and aliases listed in OWNERS files are case-insensitive.
 This is a simplified description of our [full PR testing and merge
 workflow](/contributors/devel/pull-requests.md#the-testing-and-merge-workflow)
 that conveniently forgets about the existence of tests, to focus solely on the roles driven by
-OWNERS files.
+OWNERS files.  Please see [below](#automation-using-owners-files) for details on how specific
+aspects of this process may be configured on a per-repo basis.
 
 ### The Code Review Process
 
 - The **author** submits a PR
 - Phase 0: Automation suggests **reviewers** and **approvers** for the PR
   - Determine the set of OWNERS files nearest to the code being changed
-  - Choose two **reviewers**, and request their reviews on the PR (choose more than one to avoid
-    assigning to an inactive / unavailable reviewer)
+  - Choose at least two suggested **reviewers**, trying to find a unique reviwer for every leaf
+    OWNERS file, and request their reviews on the PR
   - Choose suggested **approvers**, one from each OWNERS file, and list them in a comment on the PR
 - Phase 1: Humans review the PR
   - **Reviewers** look for general code quality, correctness, sane software engineering, style, etc.
-  - The PR **author** cannot be their own **reviewer**
+  - Anyone in the organization can act as a **reviewer** with the exception of the individual who
+    opened the PR
   - If the code changes look good to them, a **reviewer** types `/lgtm` in a PR comment or review;
     if they change their mind, they `/lgtm cancel`
   - Once a **reviewer** has `/lgtm`'ed, [prow](https://prow.k8s.io)
@@ -97,6 +101,8 @@ OWNERS files.
 - Phase 2: Humans approve the PR
   - The PR **author** `/assign`'s all suggested **approvers** to the PR, and optionally notifies
     them (eg: "pinging @foo for approval")
+  - Only people listed in the relevant OWNERS files, either directly or through an alias, can act
+    as **approvers**, including the individual who opened the PR
   - **Approvers** look for holistic acceptance criteria, including dependencies with other features,
     forwards/backwards compatibility, API and flag definitions, etc
   - If the code changes look good to them, an **approver** types `/approve` in a PR comment or
@@ -106,10 +112,15 @@ OWNERS files.
   - Once all **approvers** (one from each of the previously identified OWNERS files) have approved,
     [prow](https://prow.k8s.io) ([@k8s-ci-robot](https://github.com/k8s-ci-robot/)) applies an
     `approved` label
-- Phase 3: Automation merges the PR
-  - All required labels are present (eg: `lgtm`, `approved`)
-  - All required status checks for the PR are verified as green
-  - The PR is merged
+- Phase 3: Automation merges the PR:
+  - If all of the following are true:
+    - All required labels are present (eg: `lgtm`, `approved`)
+    - Any blocking labels are missing (eg: there is no `do-not-merge/hold`, `needs-rebase`)
+  - And if any of the following are true:
+    - there are no presubmit prow jobs configured for this repo
+    - there are presubmit prow jobs copnfigured for this repo, and they all pass after automatically
+      being re-run one last time
+  - Then the PR will automatically be merged
 
 ### Quirks of the Process
 
@@ -185,12 +196,26 @@ Prow receives events from GitHub, and reacts to them. It is effectively stateles
 pieces of prow are used to implement the code review process above.
 
 - [cmd: tide](https://git.k8s.io/test-infra/prow/cmd/tide)
-  - merges PR's once they have the appropriate labels, and don't have any
-    labels that would prevent merge (eg: `do-not-merge/hold`)
+  - per-repo configuration:
+    - `labels`: list of labels required to be present for merge (eg: `lgtm`)
+    - `missingLabels`: list of labels required to be missing for merge (eg: `do-not-merge/hold`)
+    - `reviewApprovedRequired`: defaults to `false`; when true, require that there must be at least
+      one [approved pull request review](https://help.github.com/articles/about-pull-request-reviews/)
+      present for merge
+    - `merge_method`: defaults to `merge`; when `squash` or `rebase`, use that merge method instead
+      when clicking a PR's merge button
+  - merges PR's once they meet the appropriate criteria as configured above
+  - if there are any presubmit prow jobs for the repo the PR is against, they will be re-run one
+    final time just prior to merge
 - [plugin: assign](https://git.k8s.io/test-infra/prow/plugins/assign)
   - assigns GitHub users in response to `/assign` comments on a PR
   - unassigns GitHub users in response to `/unassign` comments on a PR
 - [plugin: approve](https://git.k8s.io/test-infra/prow/plugins/assign)
+  - per-repo configuration:
+    - `issue_required`: defaults to `false`; when `true`, require that the PR description link to
+      an issue, or that at least one **approver** issues a `/approve no-isse`
+    - `implicit_self_approve`: defaults to `false`; when `true`, if the PR author is in relevant
+      OWNERS files, act as if they have implicitly `/approve`'d
   - adds the  `approved` label once an **approver** for each of the required
     OWNERS files has `/approve`'d
   - comments as required OWNERS files are satisfied
@@ -209,7 +234,7 @@ pieces of prow are used to implement the code review process above.
 
 OWNERS files should be regularly maintained.
 
-We're still not doing the greatest job here. Generally people self-nominate or self-remove from OWNERS files via PR's.
+We encourage people to self-nominate or self-remove from OWNERS files via PR's. Ideally in the future we could use metrics-driven automation to assist in this process.
 
 We should strive to:
 
