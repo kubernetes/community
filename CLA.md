@@ -81,3 +81,9 @@ Once you have this, the CLA authorizer bot will authorize your PRs.
 If you are having problems with signed the CLA send a mail to: `helpdesk@rt.linuxfoundation.org`.
 
 Someone from the CNCF will respond to your ticket to help.
+
+## Setting up the CNCF CLA check
+
+If you are a Kubernetes GitHub organization or repo owner, and would like to setup
+the Linux Foundation CNCF CLA check for your repositories, please 
+[read the docs on setting up the CNCF CLA check](/setting-up-cla-check.md)
