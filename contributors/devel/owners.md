@@ -87,7 +87,7 @@ aspects of this process may be configured on a per-repo basis.
 - The **author** submits a PR
 - Phase 0: Automation suggests **reviewers** and **approvers** for the PR
   - Determine the set of OWNERS files nearest to the code being changed
-  - Choose at least two suggested **reviewers**, trying to find a unique reviwer for every leaf
+  - Choose at least two suggested **reviewers**, trying to find a unique reviewer for every leaf
     OWNERS file, and request their reviews on the PR
   - Choose suggested **approvers**, one from each OWNERS file, and list them in a comment on the PR
 - Phase 1: Humans review the PR
@@ -118,7 +118,7 @@ aspects of this process may be configured on a per-repo basis.
     - Any blocking labels are missing (eg: there is no `do-not-merge/hold`, `needs-rebase`)
   - And if any of the following are true:
     - there are no presubmit prow jobs configured for this repo
-    - there are presubmit prow jobs copnfigured for this repo, and they all pass after automatically
+    - there are presubmit prow jobs configured for this repo, and they all pass after automatically
       being re-run one last time
   - Then the PR will automatically be merged
 
