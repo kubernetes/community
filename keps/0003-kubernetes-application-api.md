@@ -327,60 +327,60 @@ type ApplicationStatus struct {
     
     // Installed is used by the Application Controller ot report the installed Components and Dependencies of  
     // an Application.
-	Installed []string `json:"installed,omitempty" protobuf:"bytes,2,opt,name=installed"`
-	
-	// Ready is used to report the readiness of an Application. If an Application contains an ApplicationHealthCheck, 
-	// this field corresponds directly to the Readiness of the Pod generated from that health check. If the 
-	// Application does not contain an ApplicationHealthCheck, this field is set to Unknown.
-	Ready ConditionStatus json:`"ready,omitempty" protobuf:"bytes,3,opt,name=ready"`
+    Installed []string `json:"installed,omitempty" protobuf:"bytes,2,opt,name=installed"`
+    
+    // Ready is used to report the readiness of an Application. If an Application contains an ApplicationHealthCheck, 
+    // this field corresponds directly to the Readiness of the Pod generated from that health check. If the 
+    // Application does not contain an ApplicationHealthCheck, this field is set to Unknown.
+    Ready ConditionStatus json:`"ready,omitempty" protobuf:"bytes,3,opt,name=ready"`
 }
 
 // ApplicationHealthCheck contains a template for a Pod that performs an Application health check. The readiness 
 // of the Pod decides the readiness of the Application.
 type ApplicationHealthCheck struct {
-
-   // Template is used to specify a Pod whose readiness will be used to determine the readiness of an Application.
-   Template v1.PodTemplateSpec
+    
+    // Template is used to specify a Pod whose readiness will be used to determine the readiness of an Application.
+    Template v1.PodTemplateSpec
 }
 // ApplicationSpec is the specification object for an Application. It specifies the Application's components, 
 // dependencies, and an optional health check. Its selector can be used to select application components.
 type ApplicationSpec struct {
     // Type is the type of the application (e.g. WordPress, MySQL, Cassandra).
     Type string `json:"type" protobuf:"bytes,1,name=type"`
-
-	// Components is a map of the applications components to the kinds created by the application (e.g. Pods, Services, 
-	// Deployments, CRDS, etc)
-	Components map [string]metav1.GroupVersionKind `json:"components,omitempty" protobuf:"bytes,2,opt,name=components"`
-	
-	// Dependencies is a list of other Applications that this Application depends on.
-	Dependencies []sting `json:"dependencies" protobuf:"bytes,3,opt,name=dependencies"`
-
-	// selector is a label query over kinds that created by the application. It must match the component objects' labels.
-	// More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
-	Selector *metav1.LabelSelector `json:"selector" protobuf:"bytes,4,opt,name=selector"`
-	
-	// HealthCheck is an optional application level health check.
-	HealthCheck* ApplicationHealthCheck `json:"healthCheck" protobuf:"bytes,5,opt,name=healthCheck"`
-
-	// Version is an optional version indicator for the application.
-	Version string `json:"version,omitempty" protobuf:"bytes,6,opt,name=version"`
-	
-	// AboutURL is a URL pointing to any additional information about the application.
+    
+    // Components is a map of the applications components to the kinds created by the application (e.g. Pods, Services, 
+    // Deployments, CRDS, etc)
+    Components map [string]metav1.GroupVersionKind `json:"components,omitempty" protobuf:"bytes,2,opt,name=components"`
+    
+    // Dependencies is a list of other Applications that this Application depends on.
+    Dependencies []sting `json:"dependencies" protobuf:"bytes,3,opt,name=dependencies"`
+    
+    // selector is a label query over kinds that created by the application. It must match the component objects' labels.
+    // More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
+    Selector *metav1.LabelSelector `json:"selector" protobuf:"bytes,4,opt,name=selector"`
+    
+    // HealthCheck is an optional application level health check.
+    HealthCheck* ApplicationHealthCheck `json:"healthCheck" protobuf:"bytes,5,opt,name=healthCheck"`
+    
+    // Version is an optional version indicator for the application.
+    Version string `json:"version,omitempty" protobuf:"bytes,6,opt,name=version"`
+    
+    // AboutURL is a URL pointing to any additional information about the application.
     AboutURL string `json:"url,omitempty" protobuf:"bytes,7,opt,name=url"`
-	
-	// Description is a brief string description of the application.
+    
+    // Description is a brief string description of the application.
     Description string `json:"description,omitempty" protobuf:"bytes,8,opt,name=description"`
-	
-	// Maintainers is an optional list of maintainers of the application
-	Maintainers []string `json:"maintainers,omitempty" protobuf:"bytes,9,opt,name=maintainers"`
-	
-	// Keywords is an optional list of key words associated with the application (e.g. MySQL, RDBMS, database).
-	Keywords []string `json:"keywords,omitempty" protobuf:"bytes,10,opt,name=keywords"`
-	
-	// LicenseURL is a an optional URL pointing to any licensing information for the application.
-	LicenseURL string `json:"license,omitempty" protobuf:"bytes,11,opt,name=license"`
-	
-	// DashboardURL is a an optional URL pointing to the applications dashboard.
+    
+    // Maintainers is an optional list of maintainers of the application
+    Maintainers []string `json:"maintainers,omitempty" protobuf:"bytes,9,opt,name=maintainers"`
+    
+    // Keywords is an optional list of key words associated with the application (e.g. MySQL, RDBMS, database).
+    Keywords []string `json:"keywords,omitempty" protobuf:"bytes,10,opt,name=keywords"`
+    
+    // LicenseURL is a an optional URL pointing to any licensing information for the application.
+    LicenseURL string `json:"license,omitempty" protobuf:"bytes,11,opt,name=license"`
+    
+    // DashboardURL is a an optional URL pointing to the applications dashboard.
     DashboardURL string `json:"dashboard,omitempty" protobuf:"bytes,12,opt,name=dashboard"`
 	
 }
@@ -391,14 +391,14 @@ type ApplicationSpec struct {
 // Application should be labeled such the Application's Selector matches. An Applications Spec.Dependencies indicate 
 // the other Applications on which the Application depends.
 type Application struct {
-	metav1.TypeMeta `json:",inline"`
-	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
-	
-	// Spec contains the specification for the Application
-	Spec ApplicationSpec `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
-	
-	// Status contains the Status of the application with respect to the installed components.
-	Status ApplicationStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
+    metav1.TypeMeta `json:",inline"`
+    metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+    
+    // Spec contains the specification for the Application
+    Spec ApplicationSpec `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
+    
+    // Status contains the Status of the application with respect to the installed components.
+    Status ApplicationStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 ```
 
