@@ -1,25 +1,10 @@
-**OWNER:**
-
-sig-contributor-experience
+# Kubernetes Contributor Guide
 
 ## Disclaimer
-Hello! This is the starting point for our brand new contributor guide, currently underway as per [issue#6102](https://github.com/kubernetes/website/issues/6102) and in need of help. Please be patient, or fix a section below that needs improvement, and submit a pull request!
 
-Many of the links below should lead to relevant documents scattered across the community repository. Often, the linked instructions need to be updated or cleaned up.
+Hello! This is the starting point for our brand new contributor guide, currently underway as per [issue#6102](https://github.com/kubernetes/website/issues/6102) and is in need of help. 
+Please be patient, or fix a section below that needs improvement, and submit a pull request! Feel free to browse the [open issues](https://github.com/kubernetes/community/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fcontributor-guide) and file new ones, all feedback welcome! 
 
-* If you do so, please move the relevant file from its previous location to the community/contributors/guide folder, and delete its previous location.
-* Our goal is that all contributor guide specific files live in this folder.
-
-Please find _Improvements needed_ sections below and help us out.
-
-For example:
-
-_Improvements needed_
-* kubernetes/community/CONTRIBUTING.md -> Needs a rewrite
-
-* kubernetes/community/README.md -> Needs a rewrite
-
-* Individual SIG contributing documents -> add a link to this guide
 
 # Welcome
 
@@ -62,10 +47,6 @@ Before you can contribute, you will need to sign the [Contributor License Agreem
 
 If you haven’t set up your environment, please find resources [here](/contributors/devel). These resources are not well organized currently; please have patience as we are working on it.
 
-_Improvements needed_
-* A new developer guide will be created and linked to in this section.
-
-    * RyanJ from Red Hat is working on this
 
 ## Community Expectations
 
@@ -125,10 +106,6 @@ For Issues we are still working on a more automated workflow. Since SIGs do not 
 *Example:* if you are filing a cni issue, you should choose SIG-networking.
 
 Follow the link in the SIG name column to reach each SIGs README. Most SIGs will have a set of GitHub Teams with tags that can be mentioned in a comment on issues and pull requests for higher visibility. If you are not sure about the correct SIG for an issue, you can try SIG-contributor-experience [here](/sig-contributor-experience#github-teams), or [ask in Slack](http://slack.k8s.io/).
-
-_Improvements needed_
-
-* Open pull requests with all applicable SIGs to not have duplicate information in their CONTRIBUTING.md and instead link here. Keep it light, keep it clean, have only one source of truth.
 
 ### File an Issue
 
@@ -210,12 +187,12 @@ sig-testing is responsible for that official infrastructure and CI.  The associa
 
 ## Security
 
-_Improvements needed_
+
 * Please help write this section.
 
 ## Documentation
 
-_Improvements needed_
+
 * Please help write this section.
 
 ## Issues Management or Triage
@@ -226,25 +203,17 @@ Have you ever noticed the total number of [open issues](https://issues.k8s.io)? 
 
 If you haven't noticed by now, we have a large, lively, and friendly open-source community. We depend on new people becoming members and regular code contributors, so we would like you to come join us. To find out more about our community structure, different levels of membership and code contributors, please [explore here](/community-membership.md).
 
-_Improvements needed_
-
-* The top level k/community/README.md should be a good starting point for what the community is and does. (see above instructions on rewriting this file)
 
 ## Events
+
 Kubernetes is the main focus of CloudNativeCon/KubeCon, held twice per year in EMEA and in North America. Information about these and other community events is available on the CNCF [events](https://www.cncf.io/events/) pages.
 
 ### Meetups
 
-_Improvements needed_
-* include link to meetups
-* information on CNCF support for founding a Meetup
+* Please help write this section.
 
 ### KubeCon
 
-_Improvements needed_
-* write friendly blurb about KubeCon, and include links
-
 ## Mentorship
 
-_Improvements needed_
-* Link and mini description for Kubernetes Pilots should go here.
+* Please help write this section.
