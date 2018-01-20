@@ -1,0 +1,6 @@
+reviewers:
+  - sig-apps-leads
+approvers:
+  - sig-apps-leads
+labels:
+  - sig/apps
