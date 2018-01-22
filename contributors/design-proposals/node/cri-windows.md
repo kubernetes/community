@@ -71,4 +71,4 @@ To implement resource controls for Windows containers, refer to [this MSDN docum
 
 ## Future work
 
-Windows [storage resource controls](https://github.com/opencontainers/runtime-spec/blob/master/config-windows.md#storage) and pod resource controls (analog to LinuxPodSandboxConfig.cgroup_parent already in CRI) are under investigation and would be handled in separate propsals. They will supplement and not replace the fields in `WindowsContainerResources` from this proposal.
+Windows [storage resource controls](https://github.com/opencontainers/runtime-spec/blob/master/config-windows.md#storage), security context (analog to SELinux, Apparmor, readOnlyRootFilesystem, etc.) and pod resource controls (analog to LinuxPodSandboxConfig.cgroup_parent already in CRI) are under investigation and would be handled in separate propsals. They will supplement and not replace the fields in `WindowsContainerResources` from this proposal.
