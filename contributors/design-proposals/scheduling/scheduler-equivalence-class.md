@@ -61,10 +61,18 @@ When scheduling a new pod, check to see if the predicate result for an equivalen
 
 There are two options were proposed.
 
-Option 1: use the attributes of Pod API object to decide if given pods are equivalent, the attributes include labels, some annotations, affinity, resource limit etc.
+**Option 1:** use the attributes of Pod API object to decide if given pods are equivalent, the attributes include labels, some annotations, affinity, resource limit etc.
 
-Option 2: use controller reference, i.e. simply consider pods belonging to same controller reference
-to be equivalent.
+**Option 2:** use controller reference, i.e. simply consider pods belonging to same controller reference
+to be equivalent. Please note that we also need to add PVC set of Pod as part of equivalence class calculation, so `StatefulSet` can be rightly handled instead of reusing cached `CheckVolumeBinding` predicate.
+
+```go
+// EquivalencePod is a group of pod attributes which can be reused as equivalence to schedule other pods.
+type EquivalencePod struct {
+  ControllerRef metav1.OwnerReference // OwnerReference of these pods should be same.
+  PVCSet        sets.String // Set of PVC UID of these pods should be same.
+}
+```
 
 Regarding first option - The biggest concern in this approach is that if someone will add dependency on some new field at some point, we don't have good way to test it and ensure that equivalence pod will be updated at that point too.
 
@@ -72,9 +80,11 @@ Regarding second option - In detail, using the "ControllerRef" which is defined 
 
 For example, two pods created by the same `ReplicaSets` will be considered as equivalent since they will have exactly the same resource requirements from one pod template. On the other hand, two pods created by two `ReplicaSets` will not be considered as equivalent regardless of whether they have same resource requirements or not.
 
-**Conclusion:**
+And also, two pods created by same `StatefulSet` with PVC defined will not be considered as equivalent since they have different PVC UID. They will be scheduled properly based on fresh predicate results and find their own corresponding volume binds. While in the future, we may consider refactoring this to a fine grained way, e.g. only invalidate PV related predicates instead of bypass the whole `StatefulSet`.
 
-Choose option 2. And we will calculate a unique `uint64` hash for pods belonging to same equivalence class which known as `equivalenceHash`.
+#### Conclusion
+
+Choose **option 2**. And we will calculate a unique `uint64` hash for pods belonging to same equivalence class which known as `equivalenceHash`.
 
 ## 2. Equivalence class in predicate phase
 
@@ -176,7 +186,8 @@ Please note with the change of predicates in subsequent development, this doc wi
 
 - **Invalid predicates**:
 
-    - `MaxEBSVolumeCount`, `MaxGCEPDVolumeCount`, `MaxAzureDiskVolumeCount` (only if the added/deleted PV is one of them)
+    - `MaxEBSVolumeCount`, `MaxGCEPDVolumeCount`, `MaxAzureDiskVolumeCount` (Only if the added/deleted PV is one of them).
+    - `NoVolumeZoneConflict` (If this PV has zone label).
 
 - **Scope**:
 
@@ -190,7 +201,9 @@ Please note with the change of predicates in subsequent development, this doc wi
 
 - **Invalid predicates:**
 
-    - `MaxPDVolumeCountPredicate` (only if the added/deleted PVC as a binded volume so it drops to the PV change case, otherwise it should not affect scheduler).
+    - PVC has the similar scheduling logic of PV, but for PVC we don't know the details of its bound PV.
+    - `MaxEBSVolumeCount`, `MaxGCEPDVolumeCount`, `MaxAzureDiskVolumeCount` (All three will be needed since we don't know the type of its bound PV).
+    - `NoVolumeZoneConflict`  (This will be always needed since we don't know the bound PV's label)
 
 - **Scope:**
     - All nodes (we don't know which node this PV will be attached to).
@@ -229,14 +242,16 @@ Please note with the change of predicates in subsequent development, this doc wi
 - **Invalid predicates:**
     - `GeneralPredicates`. This invalidate should be done during `scheduler.assume(...)` because binding can be asynchronous. So we just optimistically invalidate predicate cached result there, and if later this pod failed to bind, the following pods will go through normal predicate functions and nothing breaks.
 
-    - No `MatchInterPodAffinity`: the scheduler will make sure newly binded pod will not break the existing inter pod affinity. So we does not need to invalidate MatchInterPodAffinity when pod added. But when a pod is deleted, existing inter pod affinity may become invalid. (e.g. this pod was preferred by some else, or vice versa).
+    - For Pod with volumes. It's same case with PV/PVC added, expect we only need invalidate predicates on the bound node. So: `MaxEBSVolumeCount`, `MaxGCEPDVolumeCount`, `MaxAzureDiskVolumeCount` (if volume is in one of them) and `NoVolumeZoneConflict`.
+
+    - No `MatchInterPodAffinity`: the scheduler will make sure newly bound pod will not break the existing inter pod affinity. So we does not need to invalidate MatchInterPodAffinity when pod added. But when a pod is deleted, existing inter pod affinity may become invalid. (e.g. this pod was preferred by some else, or vice versa).
 
         - NOTE: assumptions above **will not** stand when we implemented features like `RequiredDuringSchedulingRequiredDuringExecution`.
 
     - No `NoDiskConflict`: the newly scheduled pod fits to existing pods on this node, it will also fits to equivalence class of existing pods.
 
 - **Scope:** 
-    - The node which the pod was binded with.
+    - The node which the pod was bound with.
 
 
 
@@ -252,7 +267,7 @@ Please note with the change of predicates in subsequent development, this doc wi
     - `MatchInterPodAffinity` if the pod's labels are updated.
 
 - **Scope:**
-    - The node which the pod was binded with
+    - The node which the pod was bound with
 
 
 
@@ -267,10 +282,11 @@ Please note with the change of predicates in subsequent development, this doc wi
 
 - **Invalid predicates:**
 
+    - For Pod with volumes. It's same case with Pod added, So: `MaxEBSVolumeCount`, `MaxGCEPDVolumeCount`, `MaxAzureDiskVolumeCount` (if volume is in one of them) and `NoVolumeZoneConflict`.
     - `NoDiskConflict` if the pod has special volume like `RBD`, `ISCSI`, `GCEPersistentDisk` etc.
 
 - **Scope:**
-    - The node which the pod was binded with.
+    - The node which the pod was bound with.
 
 
 ### 3.5 Node
