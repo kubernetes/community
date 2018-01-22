@@ -17,7 +17,7 @@ Meeting recordings can be found [here](https://www.youtube.com/watch?v=I0KbWz8MT
 
 ## Leads
 * Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
-* Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), CoreOS
+* Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-release)
