@@ -1,0 +1,6 @@
+reviewers:
+  - sig-cluster-lifecycle-leads
+approvers:
+  - sig-cluster-lifecycle-leads
+labels:
+  - sig/cluster-lifecycle
