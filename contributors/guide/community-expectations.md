@@ -1,4 +1,4 @@
-## Community Expectations
+# Community Expectations
 
 Kubernetes is a community project. Consequently, it is wholly dependent on
 its community to provide a productive, friendly and collaborative environment.
@@ -16,16 +16,9 @@ that shapes the rest of the project.  It currently covers the expectations
 of conduct that govern all members of the community as well as the expectations
 around code review that govern all active contributors to Kubernetes.
 
-### Code of Conduct
+## Code review
 
-The most important expectation of the Kubernetes community is that all members
-abide by the Kubernetes [community code of conduct](../../governance.md#code-of-conduct).
-Only by respecting each other can we develop a productive, collaborative
-community.
-
-### Code review
-
-As a community we believe in the [value of code review for all contributions](collab.md).
+As a community we believe in the value of code review for all contributions.
 Code review increases both the quality and readability of our codebase, which
 in turn produces high quality software.
 
@@ -33,36 +26,46 @@ However, the code review process can also introduce latency for contributors
 and additional work for reviewers that can frustrate both parties.
 
 Consequently, as a community we expect that all active participants in the
-community will also be active reviewers.
+community will also be active reviewers. The 
+[community membership](../community-membership.md) outlines the responsibilities
+of the different contributor roles. 
 
-We ask that active contributors to the project participate in the code review process
-in areas where that contributor has expertise. Active
-contributors are considered to be anyone who meets any of the following criteria:
-   * Sent more than two pull requests (PRs) in the previous one month, or more
-   than 20 PRs in the previous year.
-   * Filed more than three issues in the previous month, or more than 30 issues in
-   the previous 12 months.
-   * Commented on more than five pull requests in the previous month, or
-   more than 50 pull requests in the previous 12 months.
-   * Marked any PR as LGTM in the previous month.
-   * Have *collaborator* permissions in the Kubernetes github project.
+All changes must be code reviewed. For non-maintainers this is obvious, since
+you can't commit anyway. But even for maintainers, we want all changes to get at
+least one review, preferably (for non-trivial changes obligatorily) from someone
+who knows the areas the change touches. For non-trivial changes we may want two
+reviewers. The primary reviewer will make this decision and nominate a second
+reviewer, if needed. Except for trivial changes, PRs should not be committed
+until relevant parties (e.g. owners of the subsystem affected by the PR) have
+had a reasonable chance to look at PR in their local business hours.
 
-In addition to these community expectations, any community member who wants to
-be an active reviewer can also add their name to an *active reviewer* file
-(location tbd) which will make them an active reviewer for as long as they
-are included in the file.
+Most PRs will find reviewers organically. If a maintainer intends to be the
+primary reviewer of a PR they should set themselves as the assignee on GitHub
+and say so in a reply to the PR. Only the primary reviewer of a change should
+actually do the merge, except in rare cases (e.g. they are unavailable in a
+reasonable timeframe).
 
-#### Expectations of reviewers: Review comments
+If a PR has gone 2 work days without an owner emerging, please poke the PR
+thread and ask for a reviewer to be assigned.
+
+Except for rare cases, such as trivial changes (e.g. typos, comments) or
+emergencies (e.g. broken builds), maintainers should not merge their own
+changes.
+
+Expect reviewers to request that you avoid [common go style
+mistakes](https://github.com/golang/go/wiki/CodeReviewComments) in your PRs.
+
+## Expectations of reviewers: Review comments
 
 Because reviewers are often the first points of contact between new members of
 the community and can significantly impact the first impression of the
 Kubernetes community, reviewers are especially important in shaping the
 Kubernetes community.  Reviewers are highly encouraged to review the
-[code of conduct](../../governance.md#code-of-conduct) and are strongly encouraged to go above
-and beyond the code of conduct to promote a collaborative, respectful
-Kubernetes community.
+[code of conduct](../../governance.md#code-of-conduct) and are strongly 
+encouraged to go above and beyond the code of conduct to promote a collaborative, 
+respectful Kubernetes community.
 
-#### Expectations of reviewers: Review latency
+## Expectations of reviewers: Review latency
 
 Reviewers are expected to respond in a timely fashion to PRs that are assigned
 to them.  Reviewers are expected to respond to an *active* PRs with reasonable

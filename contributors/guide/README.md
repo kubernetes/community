@@ -43,24 +43,21 @@ Welcome to Kubernetes! This document is the single source of truth for how to co
 
 Before you can contribute, you will need to sign the [Contributor License Agreement](/CLA.md).
 
+## Code of Conduct
+
+Please make sure to read and observe our [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md).
+
 ## Setting up your development environment
 
-If you haven’t set up your environment, please find resources [here](/contributors/devel). These resources are not well organized currently; please have patience as we are working on it.
-
+If you haven’t set up your environment, please find resources [here](/contributors/devel).
 
 ## Community Expectations
 
 Kubernetes is a community project. Consequently, it is wholly dependent on its community to provide a productive, friendly and collaborative environment.
 
-The first and foremost goal of the Kubernetes community to develop orchestration technology that radically simplifies the process of creating reliable distributed systems. However a second, equally important goal is the creation of a community that fosters easy, agile development of such orchestration systems.
+Read and review the [Community Expectations](/community-expectations.md) for an understand of code and review expectations. 
 
-We therefore describe the expectations for members of the Kubernetes community. This document is intended to be a living one that evolves as the community evolves via the same pull request and code review process that shapes the rest of the project. It currently covers the expectations of conduct that govern all members of the community as well as the expectations around code review that govern all active contributors to Kubernetes.
-
-### Code of Conduct
-
-Please make sure to read and observe our [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md)
-
-### Thanks
+## Thanks
 
 Many thanks in advance to everyone who contributes their time and effort to making Kubernetes both a successful system as well as a successful community. The strength of our software shines in the strengths of each individual community member. Thanks!
 
