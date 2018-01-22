@@ -820,9 +820,9 @@ sigs:
     dir: sig-release
     label: release
     leads:
-    - name: Phillip Wittrock
-      github: pwittrock
-      company: Google
+    - name: Jaice Singer DuMars 
+      github: jdumars
+      company: Microsoft
     - name: Caleb Miles
       github: calebamiles
       company: Google
