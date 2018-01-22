@@ -804,7 +804,7 @@ sigs:
       company: CNCF
     - name: Caleb Miles
       github: calebamiles
-      company: CoreOS
+      company: Google
     meetings:
     - day: Tuesday
       time: "15:00"
@@ -825,7 +825,7 @@ sigs:
       company: Google
     - name: Caleb Miles
       github: calebamiles
-      company: CoreOS
+      company: Google
     meetings:
     - day: Tuesday
       time: "21:00"
