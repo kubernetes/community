@@ -820,7 +820,7 @@ sigs:
     dir: sig-release
     label: release
     leads:
-    - name: Jaice Singer Dumars 
+    - name: Jaice Singer DuMars 
       github: jdumars
       company: Microsoft
     - name: Caleb Miles
