@@ -1,6 +1,6 @@
 # Flexvolume
 
-Flexvolume enables users to write their own drivers and add support for their volumes in Kubernetes. Vendor drivers should be installed in the volume plugin path on every Kubelet node and on master node(s) if `--enable-controller-attach-detach` Kubelet option is enabled.
+Flexvolume enables users to write their own drivers and add support for their volumes in Kubernetes. Vendor drivers should be installed in the volume plugin path on every node, and on master if the driver requires attach capability (unless `--enable-controller-attach-detach` Kubelet option is set to false, but this is highly discouraged because it is a legacy mode of operation).
 
 Flexvolume is a GA feature from Kubernetes 1.8 release onwards.
 
@@ -17,11 +17,10 @@ Beginning in v1.8, Flexvolume supports the ability to detect drivers on the fly.
 For more information, please refer to the [design document](/contributors/design-proposals/storage/flexvolume-deployment.md).
 
 ## Automated Plugin Installation/Upgrade
-One possible way to install and upgrade your Flexvolume drivers is by using a DaemonSet. See [Recommended Driver Deployment Method](/contributors/design-proposals/storage/flexvolume-deployment.md#recommended-driver-deployment-method) for details.
+One possible way to install and upgrade your Flexvolume drivers is by using a DaemonSet. See [Recommended Driver Deployment Method](/contributors/design-proposals/storage/flexvolume-deployment.md#recommended-driver-deployment-method) for details, and see [here](https://git.k8s.io/examples/staging/volumes/flexvolume/deploy/) for an example.
 
 ## Plugin details
-The plugin expects the following call-outs are implemented for the backend drivers. Some call-outs are optional. Call-outs are invoked from the Kubelet & the Controller manager nodes.
-Call-outs are invoked from Controller-manager only when "--enable-controller-attach-detach" Kubelet option is enabled.
+The plugin expects the following call-outs are implemented for the backend drivers. Some call-outs are optional. Call-outs are invoked from Kubelet and Controller Manager.
 
 ### Driver invocation model:
 
@@ -35,7 +34,7 @@ See [Driver output](#driver-output) for the capabilities map format.
 ```
 
 #### Attach:
-Attach the volume specified by the given spec on the given host. On success, returns the device path where the device is attached on the node. Nodename param is only valid/relevant if "--enable-controller-attach-detach" Kubelet option is enabled. Called from both Kubelet & Controller manager.
+Attach the volume specified by the given spec on the given node. On success, returns the device path where the device is attached on the node. Called from Controller Manager.
 
 This call-out does not pass "secrets" specified in Flexvolume spec. If your driver requires secrets, do not implement this call-out and instead use "mount" call-out and implement attach and mount in that call-out.
 
@@ -44,20 +43,20 @@ This call-out does not pass "secrets" specified in Flexvolume spec. If your driv
 ```
 
 #### Detach:
-Detach the volume from the Kubelet node. Nodename param is only valid/relevant if "--enable-controller-attach-detach" Kubelet option is enabled. Called from both Kubelet & Controller manager.
+Detach the volume from the node. Called from Controller Manager.
 ```
 <driver executable> detach <mount device> <node name>
 ```
 
 #### Wait for attach:
-Wait for the volume to be attached on the remote node. On success, the path to the device is returned. Called from both Kubelet & Controller manager. The timeout should be 10m (based on https://git.k8s.io/kubernetes/pkg/kubelet/volumemanager/volume_manager.go#L88 )
+Wait for the volume to be attached on the remote node. On success, the path to the device is returned. Called from Controller Manager. The timeout should be 10m (based on https://git.k8s.io/kubernetes/pkg/kubelet/volumemanager/volume_manager.go#L88 )
 
 ```
 <driver executable> waitforattach <mount device> <json options>
 ```
 
 #### Volume is Attached:
-Check the volume is attached on the node. Called from both Kubelet & Controller manager.
+Check the volume is attached on the node. Called from Controller Manager.
 
 ```
 <driver executable> isattached <json options> <node name>
@@ -77,6 +76,14 @@ Unmounts the global mount for the device. This is called once all bind mounts ha
 
 ```
 <driver executable> unmountdevice <mount device>
+```
+In addition to the user-specified options and [default JSON options](#default-json-options), the following options capturing information about the pod are passed through and generated automatically.
+
+```
+kubernetes.io/pod.name
+kubernetes.io/pod.namespace
+kubernetes.io/pod.uid
+kubernetes.io/serviceAccount.name
 ```
 
 #### Mount:
@@ -116,12 +123,14 @@ following format.
 
 ### Default Json options
 
-In addition to the flags specified by the user in the Options field of the FlexVolumeSource, the following flags are also passed to the executable.
+In addition to the flags specified by the user in the Options field of the FlexVolumeSource, the following flags (set through their corresponding FlexVolumeSource fields) are also passed to the executable.
 Note: Secrets are passed only to "mount/unmount" call-outs.
 
 ```
 "kubernetes.io/fsType":"<FS type>",
 "kubernetes.io/readwrite":"<rw>",
+"kubernetes.io/fsGroup":"<FS group>",
+"kubernetes.io/pvOrVolumeName":"<Volume name if the volume is in-line in the pod spec; PV name if the volume is a PV>"
 "kubernetes.io/secret/key1":"<secret1>"
 ...
 "kubernetes.io/secret/keyN":"<secretN>"
@@ -129,10 +138,11 @@ Note: Secrets are passed only to "mount/unmount" call-outs.
 
 ### Example of Flexvolume
 
-See [nginx-lvm.yaml] & [nginx-nfs.yaml] for a quick example on how to use Flexvolume in a pod.
+Please refer to the [Flexvolume example directory]. See [nginx-lvm.yaml] & [nginx-nfs.yaml] for a quick example on how to use Flexvolume in a pod.
 
 
 [lvm]: https://git.k8s.io/examples/staging/volumes/flexvolume/lvm
 [nfs]: https://git.k8s.io/examples/staging/volumes/flexvolume/nfs
 [nginx-lvm.yaml]: https://git.k8s.io/examples/staging/volumes/flexvolume/nginx-lvm.yaml
 [nginx-nfs.yaml]: https://git.k8s.io/examples/staging/volumes/flexvolume/nginx-nfs.yaml
+[Flexvolume example directory]: https://git.k8s.io/examples/staging/volumes/flexvolume/
