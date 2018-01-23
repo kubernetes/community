@@ -53,7 +53,12 @@ Some additional guides are available, but may refer to older releases:
 
 ## Contributing
 
-If you'd like to fix open bugs, comment on proposals or just track the project, please check  [Open Code Issues and PRs for SIG/Windows](https://github.com/kubernetes/kubernetes/labels/sig%2Fwindows) on GitHub.
+We're currently using a public [Trello board](https://trello.com/b/rjTqrwjl/windows-k8s-roadmap) in the weekly SIG-Windows meeting to track items with active progress for each release. That's a great place to start to get the most up-to-date status, then feel free to join us on the Slack channel anytime with questions.
+
+As always, you can also find the active list of open issues and proposals [Open Code Issues and PRs for SIG/Windows](https://github.com/kubernetes/kubernetes/labels/sig%2Fwindows) on GitHub.
+
+## API tracking
+We also have an [API tracking](https://github.com/kubernetes/community/blob/master/sig-windows/api-tracking.md) document that we're building out to track areas where the APIs may not be implemented or need to change for Windows.
 
 ## Meeting Recordings
 
