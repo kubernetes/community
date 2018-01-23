@@ -11,20 +11,26 @@ We understand that everyone has different learning styles and we want to support
 A pilot is a Kubernetes mentor helping new and current members navigate the seas of our repos.
 
 ## Current mentoring activities:
-All are currently in an incubation phase. Please reach out to Paris Pittman (parispittman@google.com or Paris on Kubernetes slack channel) for more information on how to get involved. The preliminary deck for mentoring strategies is [here](https://docs.google.com/presentation/d/1bRjDEPEn3autWzaEFirbLfHagbZV04Q9kTCalYmnnXw/edit?usp=sharing0).
+All are currently in an incubation phase. Please reach out to Paris Pittman (parispittman@google.com or Paris on Kubernetes slack channel) for more information on how to get involved. 
 
-* [Contributor Office Hours](/events/office-hours.md)
+Mentors On Demand  
+* [Meet Our Contributors](/mentoring/meet-our-contributors.md)
+
+Long Term Contributor Ladder Growth
 * [Group Mentoring Cohorts](/mentoring/group-mentoring.md)
+
+Students
 * [Outreachy](/sig-cli/outreachy.md)
 * [Google Summer of Code](google-summer-of-code.md)
 
 #### Inspiration and Thanks
 This is not an out of the box program but was largely inspired by the following:  
 * [Ada Developer Academy](https://adadevelopersacademy.org/)  
+* [Apache Mentoring Programme](https://community.apache.org/mentoringprogramme.html) 
+* [exercism.io](https://github.com/OperationCode/exercism-io-mentoring) 
 * [Google Summer of Code](https://developers.google.com/open-source/gsoc/)  
-* [exercism.io](https://github.com/OperationCode/exercism-io-mentoring)  
-* [OpenStack Mentoring](https://wiki.openstack.org/wiki/Mentoring)  
-* [Apache Mentoring Programme](https://community.apache.org/mentoringprogramme.html)  
+* [Outreachy](https://www.outreachy.org/)
+* [OpenStack Mentoring](https://wiki.openstack.org/wiki/Mentoring) 
 
 Thanks to:  
 * the many contributors who reviewed and participated in brainstorming,  
