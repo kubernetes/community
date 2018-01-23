@@ -1269,3 +1269,15 @@ workinggroups:
     contact:
       slack: wg-multitenancy
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy
+  - name: Virtual Kubelet
+    dir: wg-virtual-kubelet
+    mission_statement: >
+      Discuss the Virtual Kubelet's design and implementation details. Allow providers to discuss adding support and use cases surrounding their providers. Create good development practices around Virtual Kubelet and continue maintaining the project. 
+    leads:
+    - name: Ria Bhatia
+      github: rbitia
+      company: Microsoft
+    contact:
+      slack: wg-virtual-kubelet
+      mailing_list: https://groups.google.com/d/forum/kubernetes-wg-virtual-kubelet
+
