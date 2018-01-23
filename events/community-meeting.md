@@ -21,6 +21,12 @@ Quick links:
 The Kubernetes community meeting is intended to provide a holistic overview of community activities, critical release information, and governance updates. 
 It also provides a forum for discussion of project-level concerns that might need a wider audience than a single special interest group (SIG).
 
+## Notetaker(s)
+
+Notes from the meeting are published to the [Kubernetes dev](https://groups.google.com/forum/#!forum/kubernetes-dev) list. 
+A good notetaker is important to help get the information out to people who cannot attend. 
+Volunteers are always welcome to either add their notes directly to the document, or inform the host that they would like to help take notes at the beginning of the call.
+
 ## Meeting Agenda
 
 If you have a topic you'd like to present or would like to see discussed,
@@ -61,8 +67,6 @@ Also, if you are doing a live coding demo, please make sure it has a reasonable 
 - The use of a headset or other high-quality audio equipment is strongly encouraged. Typing on a laptop while using the system microphone is distracting, so please insulate your microphone from key noises.
 - Ensure you are presenting from a quiet environment.
 - If you run out of time while performing your demo, you may ask the audience if they would like a follow-up at a subsequent meeting. If there is enthusiastic support, the community team will help schedule a continuation.
-
-
 
 ## SIG Updates 
 
