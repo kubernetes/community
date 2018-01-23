@@ -1,6 +1,6 @@
 # CRI: Windows Container Configuration
 
-**Authors**: Jiangtian Li (@JiangtianLi), Pengfei Ni (@feiskyer)
+**Authors**: Jiangtian Li (@JiangtianLi), Pengfei Ni (@feiskyer), Patrick Lang(@PatrickLang)
 
 **Status**: Proposed
 
