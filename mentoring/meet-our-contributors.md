@@ -21,7 +21,7 @@ Tune into the [Kubernetes YouTube Channel](https://www.youtube.com/c/KubernetesC
 * Testing 
 
 ## What’s off-topic:
-* End-user questions (Check out [#office-hours](https://kubernetes.slack.com/messages/office-hours) on slack and details [here](/events/officehours.md))
+* End-user questions (Check out [#office-hours](https://kubernetes.slack.com/messages/office-hours) on slack and details [here](/events/office-hours.md))
 
 ## Submitting a question:
 * Day of on twitter - use the hashtag [#k8smoc](https://twitter.com/hashtag/k8smoc) after your question   
