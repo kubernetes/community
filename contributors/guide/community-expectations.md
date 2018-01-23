@@ -22,7 +22,7 @@ As a community we believe in the value of code review for all contributions.
 Code review increases both the quality and readability of our codebase, which
 in turn produces high quality software.
 
-See the [pull request documentation](/devel/pull-requests.md) for more information
+See the [pull request documentation](/contributors/devel/pull-requests.md) for more information
 on code review.
 
 Consequently, as a community we expect that all active participants in the
