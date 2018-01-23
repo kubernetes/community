@@ -13,21 +13,20 @@ All meetings are archived on the [Youtube Channel](https://www.youtube.com/watch
 
 Quick links:
 
-- [Agenda document](https://k8s.devstats.cncf.io/)
+- [Agenda document](http://bit.ly/k8scommunity)
 - [Zoom meeting link](https://zoom.us/my/kubernetescommunity)
 
 ## Purpose
 
-The purpose of the community meeting is the dissemination of information throughout the project. 
-Large changes in an area of Kubernetes that affect groups of people should be mentioned here. 
-
+The Kubernetes community meeting is intended to provide a holistic overview of community activities, critical release information, and governance updates. 
+It also provides a forum for discussion of project-level concerns that might need a wider audience than a single special interest group (SIG).
 
 ## Meeting Agenda
 
 If you have a topic you'd like to present or would like to see discussed,
-please propose a specific date on the [Kubernetes Community Meeting Agenda](https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#).
+please propose a specific date on the [Kubernetes Community Meeting Agenda](http://bit.ly/k8scommunity).
 
-General speaking the meeting is structured like this:
+General speaking the meeting is structured as follows:
 
 - Introduction by Host (~3 minutes)
 - Community Demo (~10 minutes)
@@ -52,14 +51,18 @@ Demo submissions MUST follow the the requirements listed below.
 
 ### Requirements
 
-This meeting is the largest meeting in the community, and is attended by many people, therefore we ask that you _prepare ahead of time_ and not waste this opportunity.
+This meeting has a large number of attendees. 
+Out of respect for their time, we ask that you be fully prepared for your demo. Make sure slides are clear if applicable, and the link to them is posted in the meeting agenda. 
+Also, if you are doing a live coding demo, please make sure it has a reasonable chance of completing within the allotted time box.
 
-- Your demo MUST NOT be a commercial pitch and MUST be related to Kubernetes. Commercial software and services can be demo'ed but _keep it classy_ and relevant to the audience.
-- You MUST show up to the community meeting _10 minutes_ prior to the start to test your audio and screensharing with the hosts. If you are not present on time, you will _lose your spot_ and be kicked back to the end of the demo queue. 
-- You MUST also commit to being available the week before your demo date in case there is an issue with that week's demo. 
-- The use of a headset or other high quality gear is _strongly_ recommended, typing from the same laptop you are speaking into is distracting
+- Your demo should provide clear, valuable information to the community without being commercial in nature. Typical sales pitches are not permitted, and could potentially alienate your audience. Commercial software and services can be demo'ed, but a prior discussion with the community team is advised to ensure a positive experience.
+- You are required to show up 10 minutes before the meeting to verify your audio and screensharing capabilities with the hosts. If you cannot make and keep this commitment, you will not be allowed to proceed with your demo until such time you can.
+- You also required to commit to being available the week before your demo date in case there is an issue with that week's demo.
+- The use of a headset or other high-quality audio equipment is strongly encouraged. Typing on a laptop while using the system microphone is distracting, so please insulate your microphone from key noises.
 - Ensure you are presenting from a quiet environment.
-- If you run out of time and your demo is a smashing hit we encourage you to schedule follow on events. 
+- If you run out of time while performing your demo, you may ask the audience if they would like a follow-up at a subsequent meeting. If there is enthusiastic support, the community team will help schedule a continuation.
+
+
 
 ## SIG Updates 
 
