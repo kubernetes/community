@@ -545,9 +545,9 @@ sigs:
       company: CoreOS
     meetings:
     - day: Thursday
-      time: "16:30"
+      time: "17:30"
       tz: "UTC"
-      frequency: weekly
+      frequency: biweekly
     meeting_url: https://zoom.us/j/5342565819
     meeting_archive_url: https://docs.google.com/document/d/1gWuAATtlmI7XJILXd31nA4kMq6U9u63L70382Y3xcbM/edit
     meeting_recordings_url:
