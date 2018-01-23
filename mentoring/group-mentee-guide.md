@@ -22,29 +22,31 @@ Familiarize yourself with the [community membership requirements doc](/community
 These topics will be covered during bi-weekly standups/workshops. The suggested activities will be covered in the mentee's normal day to day. Know something that should be added? Start a convo/add a PR - your comments are appreciated.
 
 ### Current Member Cohort
-* How to communicate in the Kubernetes ecosystem
-* Governance
-* Issue grooming / Identifying issues to work on
-* [need three more]
+* Communicating in our ecosystem
+* Kubernetes Governance 101 (what's a SIG?, OWNERS files, steering committee, etc.)
+* Identifying issues to work on
+* Testing (current state of automation)
+* [need 3-4 more]
 
 Suggested Activity
 * Scrub XS and typo fixes into branches they maintain for occasional quick bulk review/approval with mentors
 * Help to review docs
 
 ### Current Reviewer Cohort
-* Code Reviews the Kubernetes Way (i.e.- best practices)
-* Analyzing if the solution is good for the project as a whole and not just that codebase
+* Code Reviews the Kubernetes Way (i.e. best practices)
 * How to groom issues for new members
-* Communication effectively as a leader
-* [need at least two more]
+* Communicating effectively as a leader (on GH and throughout project)
+* The value in / how to tech reviewing for docs
+* Kubernetes Governance 201 (SIG deep dive, proposals, 
+* Testing (what should be an e2e test, how to write S, M, L, tests) 
 
 Suggested Activity
 * Be a tech reviewer for docs 
-SIG Docs to come in and do a quick ‘what it means to be a tech reviewer’ and ‘good qualities’
 
 ### Current Approver Cohort
-* Communication  
-* [need 5 more]
+* Communicating effectively as a leader (on GH and throughout project)
+* How to write better docs (release notes, etc.)
+* [need 4-5 more]
 
 
 
@@ -70,7 +72,7 @@ SIG Docs to come in and do a quick ‘what it means to be a tech reviewer’ and
 
 ### Test Cohort Special Circumstances & Notes  
 * This is a group of current members working towards reviewership. If you are a current member and would like to participate, reach out to Paris on slack.
-* Since this is a predetermined group, the program may last two months instead of three. Expected completion date: end of February 
+* Since this is a predetermined group, the program may last two months instead of three. Expected completion date: end of February   
 
 
 Thank you to both mentees and mentors for taking on this new, unchartered territory! We will be building documentation around you and appreciate your guidance as a founding member of this program!
