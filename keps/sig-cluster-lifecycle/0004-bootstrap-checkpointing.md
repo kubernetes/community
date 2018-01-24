@@ -1,29 +1,28 @@
 # Kubernetes Bootstrap Checkpointing Proposal
 
 ## Metadata
-
-```yaml
-kep-number: draft-20171029-boostrap-checkpointing.md
+```
+---
+kep-number: 4
 title: Kubernetes Bootstrap Checkpointing Proposal
+status: implemented
 authors:
-  - name: Timothy St. Clair
-    github: @timothysc
-    email: timothysc@gmail.com
+  - "@timothysc"
 owning-sig: sig-cluster-lifecycle 
-participating-sigs:
+participating-sigs: 
   - sig-node
 reviewers:
-  - @yujuhong 
-  - @luxas 
-  - @roberthbailey
+  - "@yujuhong"
+  - "@luxas" 
+  - "@roberthbailey"
 approvers:
-  - @yujuhong
-  - @roberthbailey
+  - "@yujuhong"
+  - "@roberthbailey"
 editor:
   name: @timothysc
 creation-date: 2017-10-20
-last-updated: 2017-10-20
-status: final-review
+last-updated: 2018-01-23
+
 ```
 
 ## Table of Contents
@@ -133,8 +132,8 @@ Testing of this feature will occur in three parts.
 ## Implementation History
 
 - 20171020 - 1.9 draft proposal 
-- ? - accepted proposal 
-- ? - alpha implementation code complete
+- 20171101 - 1.9 accepted proposal 
+- 20171114 - 1.9 alpha implementation code complete
 
 ## Unresolved Questions
  
