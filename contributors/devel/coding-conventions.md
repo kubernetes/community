@@ -1,6 +1,6 @@
 # Coding Conventions
 
-Updated: 5/3/2016
+Updated: 1/24/2018
 
 **Table of Contents**
 
@@ -8,8 +8,6 @@ Updated: 5/3/2016
   - [Code conventions](#code-conventions)
   - [Testing conventions](#testing-conventions)
   - [Directory and file conventions](#directory-and-file-conventions)
-  - [Coding advice](#coding-advice)
-
 
 ## Code conventions
 
@@ -27,15 +25,15 @@ Comments](https://github.com/golang/go/wiki/CodeReviewComments)
 
     - [Effective Go](https://golang.org/doc/effective_go.html)
 
+    - Know and avoid [Go landmines](https://gist.github.com/lavalamp/4bd23295a9f32706a48f)
+
     - Comment your code.
       - [Go's commenting
 conventions](http://blog.golang.org/godoc-documenting-go-code)
       - If reviewers ask questions about why the code is the way it is, that's a
 sign that comments might be helpful.
 
-
     - Command-line flags should use dashes, not underscores
-
 
     - Naming
       - Please consider package name when selecting an interface name, and avoid
@@ -130,9 +128,3 @@ using the system](https://kubernetes.io/docs/user-guide/config-best-practices/)
     - Third-party code must include licenses
 
     - This includes modified third-party code and excerpts, as well
-
-## Coding advice
-
-  - Go
-
-    - [Go landmines](https://gist.github.com/lavalamp/4bd23295a9f32706a48f)
