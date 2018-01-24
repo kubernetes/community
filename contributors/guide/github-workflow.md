@@ -12,6 +12,8 @@
 Per Go's [workspace instructions][go-workspace], place Kubernetes' code on your
 `GOPATH` using the following cloning procedure.
 
+[go-workspace]: https://golang.org/doc/code.html#Workspaces
+
 Define a local working directory:
 
 ```sh
