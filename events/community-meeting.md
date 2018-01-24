@@ -70,7 +70,7 @@ Also, if you are doing a live coding demo, please make sure it has a reasonable 
 
 ## SIG Updates 
 
-SIGs will give a community update at least once per release cycle per the [schedule](TBD). 
+SIGs will give a community update at least once per release cycle per the [schedule](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k). 
 
 ## Archives
 
