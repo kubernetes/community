@@ -11,10 +11,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Interested in how we can most effectively test Kubernetes. We're interested specifically in making it easier for the community to run tests and contribute test results, to ensure Kubernetes is stable across a variety of cluster configurations and cloud providers.
 
 ## Meetings
-* [Tuesdays at 13:00 PT (Pacific Time)](https://zoom.us/my/k8s.sig.testing) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
-
-Meeting notes and Agenda can be found [here](https://bit.ly/k8s-sig-testing-notes).
-Meeting recordings can be found [here](https://bit.ly/k8s-sig-testing-videos).
+* Regular SIG Meeting: [Tuesdays at 13:00 PT (Pacific Time)](https://zoom.us/my/k8s.sig.testing) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://bit.ly/k8s-sig-testing-notes).
+  * [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
 
 ## Leads
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Samsung SDS

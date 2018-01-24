@@ -11,10 +11,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Promote operability and interoperability of Kubernetes clusters. We focus on shared operations practices for Kubernetes clusters with a goal to make Kubernetes broadly accessible with a common baseline reference. We also organize operators as a sounding board and advocacy group.
 
 ## Meetings
-* [Thursdays at 20:00 UTC](https://zoom.us/j/297937771) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
-
-Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#).
-Meeting recordings can be found [here](https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR).
+* Regular SIG Meeting: [Thursdays at 20:00 UTC](https://zoom.us/j/297937771) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#).
+  * [Meeting recordings](https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR).
 
 ## Leads
 * Rob Hirschfeld (**[@zehicle](https://github.com/zehicle)**), RackN

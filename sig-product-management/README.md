@@ -14,10 +14,9 @@ Members of the Kubernetes PM Group can assume certain additional responsibilitie
 It is also important to remember that the role of managing an open source project is very new and largely unscoped for a project as large as Kubernetes; we are learning too and we are excited to learn how we can best serve the community of users and contributors.
 
 ## Meetings
-* [Tuesdays at 15:00 UTC](https://zoom.us/j/845373595) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
-
-Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing).
-Meeting recordings can be found [here](https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ).
+* Regular SIG Meeting: [Tuesdays at 15:00 UTC](https://zoom.us/j/845373595) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing).
+  * [Meeting recordings](https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ).
 
 ## Leads
 * Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google

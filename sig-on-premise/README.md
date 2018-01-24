@@ -11,10 +11,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Brings together member of Kubernetes community interested in running Kubernetes on premise, on bare metal or more generally beyond cloud providers.
 
 ## Meetings
-* [Wednesdays at 16:00 UTC](https://zoom.us/my/k8s.sig.onprem) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
-
-Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1AHF1a8ni7iMOpUgDMcPKrLQCML5EMZUAwP4rro3P6sk/edit#).
-Meeting recordings can be found [here](https://www.youtube.com/watch?v=dyUWqqNYUio&list=PL69nYSiGNLP2MvqC6NeegrgtOl5s1KlYa).
+* Regular SIG Meeting: [Wednesdays at 16:00 UTC](https://zoom.us/my/k8s.sig.onprem) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1AHF1a8ni7iMOpUgDMcPKrLQCML5EMZUAwP4rro3P6sk/edit#).
+  * [Meeting recordings](https://www.youtube.com/watch?v=dyUWqqNYUio&list=PL69nYSiGNLP2MvqC6NeegrgtOl5s1KlYa).
 
 ## Leads
 * Marco Ceppi (**[@marcoceppi](https://github.com/marcoceppi)**), Canonical

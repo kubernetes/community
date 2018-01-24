@@ -10,11 +10,6 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Define a portable API that represents a Kubernetes cluster. The API will contain the control plane and its configuration and the underlying infrastructure (nodes, node pools, etc).
 
-## Meetings
-
-Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit).
-
-
 ## Organizers
 * Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Heptio
 * Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google

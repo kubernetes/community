@@ -11,10 +11,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 A Special Interest Group for building, deploying, maintaining, supporting, and using Kubernetes on Azure Container Service.
 
 ## Meetings
-* [Wednesdays at 16:00 UTC](https://deis.zoom.us/j/2018742972) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
-
-Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
-Meeting recordings can be found [here](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
+* Regular SIG Meeting: [Wednesdays at 16:00 UTC](https://deis.zoom.us/j/2018742972) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
+  * [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
 
 ## Leads
 * Jason Hansen (**[@slack](https://github.com/slack)**), Microsoft

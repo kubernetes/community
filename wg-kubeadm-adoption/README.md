@@ -11,10 +11,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Boost adoption of the kubeadm tool. kubeadm is a tool for creating new Kubernetes clusters easily for new users, but can also be used as a toolbox for higher-level deployment solutions. This working group makes sure kubeadm meets the extensibility requirements of those higher-level Kubernetes installers.
 
 ## Meetings
-* [Tuesdays at 18:00 UTC](https://zoom.us/j/166836%E2%80%8B624) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
-
-Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1KdXsLYiJYJdiRbtgZsx6qbHF4g_K-gAScB9Zs4avgzg/edit).
-Meeting recordings can be found [here](https://www.youtube.com/watch?v=-Xlcrm5iT80&list=PLPgAK4Icr0ehh93BiMC3djAc5KoW7WIkl).
+* Regular WG Meeting: [Tuesdays at 18:00 UTC](https://zoom.us/j/166836%E2%80%8B624) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1KdXsLYiJYJdiRbtgZsx6qbHF4g_K-gAScB9Zs4avgzg/edit).
+  * [Meeting recordings](https://www.youtube.com/watch?v=-Xlcrm5iT80&list=PLPgAK4Icr0ehh93BiMC3djAc5KoW7WIkl).
 
 ## Organizers
 * Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)
