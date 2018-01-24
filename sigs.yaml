@@ -511,6 +511,7 @@ sigs:
     mission_statement: >
       A Special Interest Group for building, deploying, maintaining,
       supporting, and using Kubernetes on the Google Cloud Platform.
+    label: gcp
     leads:
     - name: Adam Worrall
       github: abgworrall
