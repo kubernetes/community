@@ -15,13 +15,14 @@ sigs:
       company: Red Hat
       github: deads2k
     meetings:
-    - day: Wednesday
+    - description: Regular SIG Meeting
+      day: Wednesday
       time: "11:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-    meeting_url: https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig
-    meeting_archive_url: https://goo.gl/x5nWrF
-    meeting_recordings_url: https://www.youtube.com/watch?v=Lj1ScbXpnpY&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R
+      url: https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig
+      archive_url: https://goo.gl/x5nWrF
+      recordings_url: https://www.youtube.com/watch?v=Lj1ScbXpnpY&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R
     contact:
       slack: sig-api-machinery
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery
@@ -63,13 +64,14 @@ sigs:
       github: kow3ns
       company: Google
     meetings:
-    - day: Monday
+    - description: Regular SIG Meeting
+      day: Monday
       time: "9:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-    meeting_url: https://zoom.us/my/sig.apps
-    meeting_archive_url: https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#
-    meeting_recordings_url: https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3
+      url: https://zoom.us/my/sig.apps
+      archive_url: https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#
+      recordings_url: https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3
     contact:
       slack: sig-apps
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-apps
@@ -102,13 +104,14 @@ sigs:
       github: jdumars
       company: Microsoft
     meetings:
-    - day: Thursday
+    - description: Regular SIG Meeting
+      day: Thursday
       time: "15:30"
       tz: "UTC"
       frequency: weekly
-    meeting_url: https://zoom.us/j/2018742972
-    meeting_archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
-    meeting_recordings_url: https://www.youtube.com/watch?v=d5ERqm3oHN0&list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
+      url: https://zoom.us/j/2018742972
+      archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
+      recordings_url: https://www.youtube.com/watch?v=d5ERqm3oHN0&list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
     contact:
       slack: sig-architecture
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-architecture
@@ -144,13 +147,14 @@ sigs:
       github: deads2k
       company: Red Hat
     meetings:
-    - day: Wednesday
+    - description: Regular SIG Meeting
+      day: Wednesday
       time: "11:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-    meeting_url: https://zoom.us/my/k8s.sig.auth
-    meeting_archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
-    meeting_recordings_url: https://www.youtube.com/watch?v=DJDuDNALcMo&list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
+      url: https://zoom.us/my/k8s.sig.auth
+      archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
+      recordings_url: https://www.youtube.com/watch?v=DJDuDNALcMo&list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
     contact:
       slack: sig-auth
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-auth
@@ -184,13 +188,13 @@ sigs:
       github: directxman12
       company: Red Hat
     meetings:
-    - day: Monday
+    - description: Regular SIG Meeting
+      day: Monday
       time: "14:00"
       tz: "UTC"
       frequency: biweekly/triweekly
-    meeting_url: https://zoom.us/my/k8s.sig.autoscaling
-    meeting_archive_url: https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit
-    meeting_recordings_url:
+      url: https://zoom.us/my/k8s.sig.autoscaling
+      archive_url: https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit
     contact:
       slack: sig-autoscaling
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling
@@ -226,13 +230,13 @@ sigs:
       github: mfburnett
       company: Redspread
     meetings:
-    - day: Friday
-      time: "9:00" # Actually 9AM Pacific, but timezone support issue is https://github.com/kubernetes/community/issues/841
+    - description: Regular SIG Meeting
+      day: Friday
+      time: "9:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-    meeting_url: https://zoom.us/my/k8ssigaws
-    meeting_archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
-    meeting_recordings_url:
+      url: https://zoom.us/my/k8ssigaws
+      archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
     contact:
       slack: sig-aws
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-aws
@@ -256,13 +260,14 @@ sigs:
       github: jdumars
       company: Microsoft
     meetings:
-    - day: Wednesday
+    - description: Regular SIG Meeting
+      day: Wednesday
       time: "16:00"
       tz: "UTC"
       frequency: biweekly
-    meeting_url: https://deis.zoom.us/j/2018742972
-    meeting_archive_url: https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit
-    meeting_recordings_url: https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4
+      url: https://deis.zoom.us/j/2018742972
+      archive_url: https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit
+      recordings_url: https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4
     contact:
       slack: sig-azure
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-azure
@@ -284,13 +289,14 @@ sigs:
       github: erikerlandson
       company: Red Hat
     meetings:
-    - day: Wednesday
+    - description: Regular SIG Meeting
+      day: Wednesday
       time: "17:00"
       tz: "UTC"
       frequency: weekly
-    meeting_url: https://zoom.us/my/sig.big.data
-    meeting_archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
-    meeting_recordings_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
+      url: https://zoom.us/my/sig.big.data
+      archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
+      recordings_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
     contact:
       slack: sig-big-data
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-big-data
@@ -329,13 +335,14 @@ sigs:
       github: AdoHe
       company: Alibaba
     meetings:
-    - day: Wednesday
+    - description: Regular SIG Meeting
+      day: Wednesday
       time: "09:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-    meeting_url: https://zoom.us/my/sigcli
-    meeting_archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
-    meeting_recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
+      url: https://zoom.us/my/sigcli
+      archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
     contact:
       slack: sig-cli
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
@@ -376,13 +383,14 @@ sigs:
       github: luxas
       company: Luxas Labs (occasionally contracting for Weaveworks)
     meetings:
-    - day: Tuesday
+    - description: Regular SIG Meeting
+      day: Tuesday
       time: "09:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-    meeting_url: https://zoom.us/j/166836%E2%80%8B624
-    meeting_archive_url: https://docs.google.com/a/weave.works/document/d/1deJYPIF4LmhGjDVaqrswErIrV7mtwJgovtLnPCDxP7U/edit
-    meeting_recordings_url: https://www.youtube.com/watch?v=ljK5dgSA7vc&list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+      url: https://zoom.us/j/166836%E2%80%8B624
+      archive_url: https://docs.google.com/a/weave.works/document/d/1deJYPIF4LmhGjDVaqrswErIrV7mtwJgovtLnPCDxP7U/edit
+      recordings_url: https://www.youtube.com/watch?v=ljK5dgSA7vc&list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
     contact:
       slack: sig-cluster-lifecycle
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
@@ -417,13 +425,14 @@ sigs:
       github: jdumars
       company: Microsoft
     meetings:
-    - day: Thursday
+    - description: Regular SIG Meeting
+      day: Thursday
       time: "20:00"
       tz: "UTC"
       frequency: biweekly
-    meeting_url: https://zoom.us/j/297937771
-    meeting_archive_url: https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#
-    meeting_recordings_url: https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR
+      url: https://zoom.us/j/297937771
+      archive_url: https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#
+      recordings_url: https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR
     contact:
       slack: sig-cluster-ops
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-ops
@@ -444,13 +453,14 @@ sigs:
       github: Phillels
       company: CoreOS
     meetings:
-    - day: Wednesday
+    - description: Regular SIG Meeting
+      day: Wednesday
       time: "9:30"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-    meeting_url: https://zoom.us/j/7658488911
-    meeting_archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
-    meeting_recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
+      url: https://zoom.us/j/7658488911
+      archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
+      recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
     contact:
       slack: sig-contribex
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-contribex
@@ -480,13 +490,14 @@ sigs:
       github: jaredbhatti
       company: Google
     meetings:
-    - day: Tuesday
+    - description: Regular SIG Meeting
+      day: Tuesday
       time: "17:30"
       tz: "UTC"
       frequency: weekly
-    meeting_url: https://zoom.us/j/678394311
-    meeting_archive_url: https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit
-    meeting_recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
+      url: https://zoom.us/j/678394311
+      archive_url: https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
     contact:
       slack: sig-docs
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
@@ -500,17 +511,19 @@ sigs:
     mission_statement: >
       A Special Interest Group for building, deploying, maintaining,
       supporting, and using Kubernetes on the Google Cloud Platform.
+    label: gcp
     leads:
     - name: Adam Worrall
       github: abgworrall
       company: Google
     meetings:
-    - day: Thursday
+    - description: Regular SIG Meeting
+      day: Thursday
       time: "16:00"
       tz: "UTC"
       frequency: biweekly
-    meeting_url: https://zoom.us/j/761149873
-    meeting_archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
+      url: https://zoom.us/j/761149873
+      archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
     contact:
       slack: sig-gcp
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-gcp
@@ -544,13 +557,13 @@ sigs:
       github: fabxc
       company: CoreOS
     meetings:
-    - day: Thursday
+    - description: Regular SIG Meeting
+      day: Thursday
       time: "17:30"
       tz: "UTC"
       frequency: biweekly
-    meeting_url: https://zoom.us/j/5342565819
-    meeting_archive_url: https://docs.google.com/document/d/1gWuAATtlmI7XJILXd31nA4kMq6U9u63L70382Y3xcbM/edit
-    meeting_recordings_url:
+      url: https://zoom.us/j/5342565819
+      archive_url: https://docs.google.com/document/d/1gWuAATtlmI7XJILXd31nA4kMq6U9u63L70382Y3xcbM/edit
     contact:
       slack: sig-instrumentation
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation
@@ -587,13 +600,14 @@ sigs:
       github: quinton-hoole
       company: Huawei
     meetings:
-    - day: Tuesday
+    - description: Regular SIG Meeting
+      day: Tuesday
       time: "9:30"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-    meeting_url: https://zoom.us/my/k8s.mc
-    meeting_archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
-    meeting_recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
+      url: https://zoom.us/my/k8s.mc
+      archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
+      recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
     contact:
       slack: sig-multicluster
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster
@@ -628,13 +642,14 @@ sigs:
       github: caseydavenport
       company: Tigera
     meetings:
-    - day: Thursday
+    - description: Regular SIG Meeting
+      day: Thursday
       time: "14:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-    meeting_url: https://zoom.us/j/5806599998
-    meeting_archive_url: https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit
-    meeting_recordings_url: https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb
+      url: https://zoom.us/j/5806599998
+      archive_url: https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit
+      recordings_url: https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb
     contact:
       slack: sig-network
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-network
@@ -665,13 +680,14 @@ sigs:
       github: derekwaynecarr
       company: Red Hat
     meetings:
-    - day: Tuesday
+    - description: Regular SIG Meeting
+      day: Tuesday
       time: "10:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-    meeting_url: https://plus.google.com/hangouts/_/google.com/sig-node-meetup?authuser=0
-    meeting_archive_url: https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing
-    meeting_recordings_url: https://www.youtube.com/watch?v=FbKOI9-x9hI&list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG
+      url: https://plus.google.com/hangouts/_/google.com/sig-node-meetup?authuser=0
+      archive_url: https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing
+      recordings_url: https://www.youtube.com/watch?v=FbKOI9-x9hI&list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG
     contact:
       slack: sig-node
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-node
@@ -703,13 +719,14 @@ sigs:
       github: dghubble
       company: CoreOS
     meetings:
-    - day: Wednesday
+    - description: Regular SIG Meeting
+      day: Wednesday
       time: "16:00"
       tz: "UTC"
       frequency: weekly
-    meeting_url: https://zoom.us/my/k8s.sig.onprem
-    meeting_archive_url: https://docs.google.com/document/d/1AHF1a8ni7iMOpUgDMcPKrLQCML5EMZUAwP4rro3P6sk/edit#
-    meeting_recordings_url: https://www.youtube.com/watch?v=dyUWqqNYUio&list=PL69nYSiGNLP2MvqC6NeegrgtOl5s1KlYa
+      url: https://zoom.us/my/k8s.sig.onprem
+      archive_url: https://docs.google.com/document/d/1AHF1a8ni7iMOpUgDMcPKrLQCML5EMZUAwP4rro3P6sk/edit#
+      recordings_url: https://www.youtube.com/watch?v=dyUWqqNYUio&list=PL69nYSiGNLP2MvqC6NeegrgtOl5s1KlYa
     contact:
       slack: sig-onprem
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-on-prem
@@ -748,13 +765,14 @@ sigs:
       github: rjmorse
       company: Ticketmaster
     meetings:
-    - day: Thursday
+    - description: Regular SIG Meeting
+      day: Thursday
       time: "00:00"
       tz: "UTC"
       frequency: biweekly
-    meeting_url: https://zoom.us/j/417251241
-    meeting_archive_url: https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f
-    meeting_recordings_url: https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax
+      url: https://zoom.us/j/417251241
+      archive_url: https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f
+      recordings_url: https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax
     contact:
       slack: sig-openstack
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-openstack
@@ -806,13 +824,14 @@ sigs:
       github: calebamiles
       company: Google
     meetings:
-    - day: Tuesday
+    - description: Regular SIG Meeting
+      day: Tuesday
       time: "15:00"
       tz: "UTC"
       frequency: biweekly
-    meeting_url: https://zoom.us/j/845373595
-    meeting_archive_url: https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing
-    meeting_recordings_url: https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ
+      url: https://zoom.us/j/845373595
+      archive_url: https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing
+      recordings_url: https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ
     contact:
       slack: kubernetes-pm
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-pm
@@ -820,20 +839,21 @@ sigs:
     dir: sig-release
     label: release
     leads:
-    - name: Jaice Singer DuMars 
+    - name: Jaice Singer DuMars
       github: jdumars
       company: Microsoft
     - name: Caleb Miles
       github: calebamiles
       company: Google
     meetings:
-    - day: Tuesday
+    - description: Regular SIG Meeting
+      day: Tuesday
       time: "21:00"
       tz: "UTC"
       frequency: biweekly
-    meeting_url: https://zoom.us/j/664772523
-    meeting_archive_url: https://docs.google.com/document/d/1vhsixdT58iJFfoGZbpmvI_xnK59XyAjtadu3h6hHPpY/edit?usp=sharing
-    meeting_recordings_url: https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ
+      url: https://zoom.us/j/664772523
+      archive_url: https://docs.google.com/document/d/1vhsixdT58iJFfoGZbpmvI_xnK59XyAjtadu3h6hHPpY/edit?usp=sharing
+      recordings_url: https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ
     contact:
       slack: sig-release
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-release
@@ -877,13 +897,14 @@ sigs:
       github: countspongebob
       company: Samsung SDS
     meetings:
-    - day: Thursday
+    - description: Regular SIG Meeting
+      day: Thursday
       time: "16:00"
       tz: "UTC"
       frequency: bi-weekly
-    meeting_url: https://zoom.us/j/989573207
-    meeting_archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
-    meeting_recordings_url: https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL
+      url: https://zoom.us/j/989573207
+      archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
+      recordings_url: https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL
     contact:
       slack: sig-scalability
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scale
@@ -914,7 +935,8 @@ sigs:
       github: timothysc
       company: Red Hat
     meetings:
-    - day: Monday
+    - description: Regular SIG Meeting
+      day: Monday
       time: "20:00"
       tz: "UTC"
       frequency: biweekly
@@ -922,9 +944,9 @@ sigs:
       time: "07:30"
       tz: "UTC"
       frequency: biweekly
-    meeting_url: https://zoom.us/zoomconference?m=rN2RrBUYxXgXY4EMiWWgQP6Vslgcsn86
-    meeting_archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
-    meeting_recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
+      url: https://zoom.us/zoomconference?m=rN2RrBUYxXgXY4EMiWWgQP6Vslgcsn86
+      archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
+      recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
     contact:
       slack: sig-scheduling
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling
@@ -963,13 +985,14 @@ sigs:
       github: duglin
       company: IBM
     meetings:
-    - day: Monday
+    - description: Regular SIG Meeting
+      day: Monday
       time: "20:00"
       tz: "UTC"
       frequency: weekly
-    meeting_url: https://zoom.us/j/7201225346
-    meeting_archive_url: https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit
-    meeting_recordings_url: https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs
+      url: https://zoom.us/j/7201225346
+      archive_url: https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit
+      recordings_url: https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs
     contact:
       slack: sig-service-catalog
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog
@@ -1001,13 +1024,14 @@ sigs:
       github: childsb
       company: Red Hat
     meetings:
-    - day: Thursday
+    - description: Regular SIG Meeting
+      day: Thursday
       time: "9:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-    meeting_url: https://zoom.us/j/614261834
-    meeting_archive_url: https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing
-    meeting_recordings_url: https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq
+      url: https://zoom.us/j/614261834
+      archive_url: https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing
+      recordings_url: https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq
     contact:
       slack: sig-storage
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-storage
@@ -1048,13 +1072,14 @@ sigs:
       github: timothysc
       company: Heptio
     meetings:
-    - day: Tuesday
+    - description: Regular SIG Meeting
+      day: Tuesday
       time: "13:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-    meeting_url: https://zoom.us/my/k8s.sig.testing
-    meeting_archive_url: https://bit.ly/k8s-sig-testing-notes
-    meeting_recordings_url: https://bit.ly/k8s-sig-testing-videos
+      url: https://zoom.us/my/k8s.sig.testing
+      archive_url: https://bit.ly/k8s-sig-testing-notes
+      recordings_url: https://bit.ly/k8s-sig-testing-videos
     contact:
       slack: sig-testing
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-testing
@@ -1089,13 +1114,14 @@ sigs:
       github: floreks
       company: Fujitsu
     meetings:
-    - day: Thursday
+    - description: Regular SIG Meeting
+      day: Thursday
       time: "18:00"
       tz: "CET (Central European Time)"
       frequency: weekly
-    meeting_url: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
-    meeting_archive_url: https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing
-    meeting_recordings_url:
+      url: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
+      archive_url: https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing
+      recordings_url:
     contact:
       slack: sig-ui
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
@@ -1109,13 +1135,14 @@ sigs:
       github: michmike
       company: Apprenda
     meetings:
-    - day: Tuesday
+    - description: Regular SIG Meeting
+      day: Tuesday
       time: "12:30"
       tz: "Eastern Standard Time (EST)"
       frequency: weekly
-    meeting_url: https://zoom.us/my/sigwindows
-    meeting_archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
-    meeting_recordings_url: https://www.youtube.com/watch?v=7zawb3KT9Xk&list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4
+      url: https://zoom.us/my/sigwindows
+      archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
+      recordings_url: https://www.youtube.com/watch?v=7zawb3KT9Xk&list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4
     contact:
       slack: sig-windows
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-windows
@@ -1139,13 +1166,14 @@ workinggroups:
       github: derekwaynecarr
       company: Red Hat
     meetings:
-    - day: Wednesday
+    - description: Regular WG Meeting
+      day: Wednesday
       time: "11:00"
       tz: "PT (Pacific Time)"
       frequency: weekly (On demand)
-    meeting_url: https://zoom.us/j/4799874685
-    meeting_archive_url: https://docs.google.com/document/d/1j3vrG6BgE0hUDs2e-1ZUegKN4W4Adb1B6oJ6j-4kyPU
-    meeting_recordings_url: https://www.youtube.com/watch?v=FUUJeWIEej0&list=PL69nYSiGNLP2uTrVwZCFtdEvLQvsbG2w4
+      url: https://zoom.us/j/4799874685
+      archive_url: https://docs.google.com/document/d/1j3vrG6BgE0hUDs2e-1ZUegKN4W4Adb1B6oJ6j-4kyPU
+      recordings_url: https://www.youtube.com/watch?v=FUUJeWIEej0&list=PL69nYSiGNLP2uTrVwZCFtdEvLQvsbG2w4
     contact:
       slack: wg-resource-mgmt
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-resource-management
@@ -1161,13 +1189,14 @@ workinggroups:
       github: destijl
       company: Google
     meetings:
-    - day: Tuesday
+    - description: Regular WG Meeting
+      day: Tuesday
       time: "15:00"
       tz: "UTC"
       frequency: bi-weekly (On demand)
-    meeting_url: TBD
-    meeting_archive_url: https://docs.google.com/document/d/1uH60pNr1-jBn7N2pEcddk6-6NTnmV5qepwKUJe9tMRo/edit
-    meeting_recordings_url:
+      url: TBD
+      archive_url: https://docs.google.com/document/d/1uH60pNr1-jBn7N2pEcddk6-6NTnmV5qepwKUJe9tMRo/edit
+      recordings_url:
     contact:
       slack: wg-container-identity
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-container-identity
@@ -1183,13 +1212,14 @@ workinggroups:
     - name: Justin Santa Barbara
       github: justinsb
     meetings:
-    - day: Tuesday
+    - description: Regular WG Meeting
+      day: Tuesday
       time: "18:00"
       tz: "UTC"
       frequency: bi-weekly
-    meeting_url: https://zoom.us/j/166836%E2%80%8B624
-    meeting_archive_url: https://docs.google.com/document/d/1KdXsLYiJYJdiRbtgZsx6qbHF4g_K-gAScB9Zs4avgzg/edit
-    meeting_recordings_url: https://www.youtube.com/watch?v=-Xlcrm5iT80&list=PLPgAK4Icr0ehh93BiMC3djAc5KoW7WIkl
+      url: https://zoom.us/j/166836%E2%80%8B624
+      archive_url: https://docs.google.com/document/d/1KdXsLYiJYJdiRbtgZsx6qbHF4g_K-gAScB9Zs4avgzg/edit
+      recordings_url: https://www.youtube.com/watch?v=-Xlcrm5iT80&list=PLPgAK4Icr0ehh93BiMC3djAc5KoW7WIkl
     contact:
       slack: sig-cluster-lifecycle
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
@@ -1204,7 +1234,7 @@ workinggroups:
     - name: Robert Bailey
       github: roberthbailey
       company: Google
-    meeting_archive_url: https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit
+      archive_url: https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit
     contact:
       slack: sig-cluster-lifecycle
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
@@ -1225,12 +1255,13 @@ workinggroups:
       github: sebgoa
       company: Bitnami
     meetings:
-    - day: Wednesday
+    - description: Regular WG Meeting
+      day: Wednesday
       time: "16:00"
       tz: "UTC"
       frequency: bi-weekly
-    meeting_url: https://zoom.us/j/748123863
-    meeting_archive_url: https://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit
+      url: https://zoom.us/j/748123863
+      archive_url: https://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit
     contact:
       slack: wg-app-def
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-app-def
@@ -1246,12 +1277,13 @@ workinggroups:
       github: jagosan
       company: Google
     meetings:
-    - day: Wednesday
+    - description: Regular WG Meeting
+      day: Wednesday
       time: "10:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-    meeting_url: https://zoom.us/my/cloudprovider
-    meeting_archive_url: https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp
+      url: https://zoom.us/my/cloudprovider
+      archive_url: https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp
     contact:
       slack: wg-cloud-provider
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-cloud-provider

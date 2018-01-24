@@ -10,11 +10,6 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
 
-## Meetings
-
-
-
-
 ## Organizers
 * David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google
 * Jessie Frazelle (**[@jessfraz](https://github.com/jessfraz)**), Microsoft

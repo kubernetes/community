@@ -11,10 +11,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Covers multi-cluster Kubernetes use cases and tooling. This includes: application resiliency against availability zone outages; hybrid clouds; spanning of multiple could providers; application migration from private to public clouds (and vice versa); and other similar subjects. This SIG was formerly called sig-federation and focused on the Federation project, but expanded its charter to all multi-cluster concerns in August 2017.
 
 ## Meetings
-* [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/my/k8s.mc) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
-
-Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit).
-Meeting recordings can be found [here](https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
+* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/my/k8s.mc) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit).
+  * [Meeting recordings](https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
 
 ## Leads
 * Christian Bell (**[@csbell](https://github.com/csbell)**), Google

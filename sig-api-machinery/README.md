@@ -11,10 +11,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Covers all aspects of API server, API registration and discovery, generic API CRUD semantics, admission control, encoding/decoding, conversion, defaulting, persistence layer (etcd), OpenAPI, CustomResourceDefinition, garbage collection, and client libraries.
 
 ## Meetings
-* [Wednesdays at 11:00 PT (Pacific Time)](https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
-
-Meeting notes and Agenda can be found [here](https://goo.gl/x5nWrF).
-Meeting recordings can be found [here](https://www.youtube.com/watch?v=Lj1ScbXpnpY&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R).
+* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://goo.gl/x5nWrF).
+  * [Meeting recordings](https://www.youtube.com/watch?v=Lj1ScbXpnpY&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R).
 
 ## Leads
 * Daniel Smith (**[@lavalamp](https://github.com/lavalamp)**), Google

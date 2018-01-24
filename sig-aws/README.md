@@ -11,10 +11,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
 
 ## Meetings
-* [Fridays at 9:00 PT (Pacific Time)](https://zoom.us/my/k8ssigaws) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
-
-Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit).
-
+* Regular SIG Meeting: [Fridays at 9:00 PT (Pacific Time)](https://zoom.us/my/k8ssigaws) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit).
 
 ## Leads
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)

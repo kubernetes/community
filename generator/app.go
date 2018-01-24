@@ -58,10 +58,14 @@ type Lead struct {
 
 // Meeting represents a regular meeting for a group.
 type Meeting struct {
-	Day       string
-	Time      string
-	TZ        string `yaml:"tz"`
-	Frequency string
+	Description   string
+	Day           string
+	Time          string
+	TZ            string
+	Frequency     string
+	URL           string
+	ArchiveURL    string `yaml:"archive_url"`
+	RecordingsURL string `yaml:"recordings_url"`
 }
 
 // Contact represents the various contact points for a group.
@@ -79,16 +83,13 @@ type GithubTeams struct {
 
 // Group represents either a Special Interest Group (SIG) or a Working Group (WG)
 type Group struct {
-	Name                 string
-	Dir                  string
-	MissionStatement     string `yaml:"mission_statement"`
-	Label                string
-	Leads                []Lead
-	Meetings             []Meeting
-	MeetingURL           string `yaml:"meeting_url"`
-	MeetingArchiveURL    string `yaml:"meeting_archive_url"`
-	MeetingRecordingsURL string `yaml:"meeting_recordings_url"`
-	Contact              Contact
+	Name             string
+	Dir              string
+	MissionStatement string `yaml:"mission_statement"`
+	Label            string
+	Leads            []Lead
+	Meetings         []Meeting
+	Contact          Contact
 }
 
 // DirName returns the directory that a group's documentation will be
