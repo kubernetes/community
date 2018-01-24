@@ -119,11 +119,12 @@ using the system](https://kubernetes.io/docs/user-guide/config-best-practices/)
   - Third-party code
 
     - Go code for normal third-party dependencies is managed using
-[Godeps](https://github.com/tools/godep)
+[Godeps](https://github.com/tools/godep) and is described in the kubernetes
+[godep guide](godep.md)
 
     - Other third-party code belongs in `/third_party`
       - forked third party Go code goes in `/third_party/forked`
-      - forked _golang stdlib_ code goes in `/third_party/golang`
+      - forked _golang stdlib_ code goes in `/third_party/forked/golang`
 
     - Third-party code must include licenses
 
