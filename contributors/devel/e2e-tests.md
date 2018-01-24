@@ -798,6 +798,6 @@ metrics that kubernetes provides.
 
 ## One More Thing
 
-You should also know the [testing conventions](coding-conventions.md#testing-conventions).
+You should also know the [testing conventions](../guide/coding-conventions.md#testing-conventions).
 
 **HAPPY TESTING!**

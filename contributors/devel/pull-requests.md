@@ -210,7 +210,7 @@ Let's talk about best practices so your PR gets reviewed quickly.
 ## 0. Familiarize yourself with project conventions
 
 * [Development guide](development.md)
-* [Coding conventions](coding-conventions.md)
+* [Coding conventions](../guide/coding-conventions.md)
 * [API conventions](api-conventions.md)
 * [Kubectl conventions](kubectl-conventions.md)
 
