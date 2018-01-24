@@ -20,7 +20,6 @@ Covers deploying and operating applications in Kubernetes. We focus on the devel
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3).
 
 ## Leads
-* Michelle Noorali (**[@michelleN](https://github.com/michelleN)**), Microsoft
 * Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
 * Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), Bitnami
 * Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Google

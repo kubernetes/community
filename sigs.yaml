@@ -51,9 +51,6 @@ sigs:
       improvements or feature requests.
     label: apps
     leads:
-    - name: Michelle Noorali
-      github: michelleN
-      company: Microsoft
     - name: Matt Farina
       github: mattfarina
       company: Samsung SDS
