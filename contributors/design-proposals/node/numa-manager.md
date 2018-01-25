@@ -40,7 +40,8 @@ high performance environment.
 
 In order to extract the best performance, optimizations related to CPU
 isolation and memory and device locality are required. However, in
-Kubernetes, these optimizations are handled by disjoint components.
+Kubernetes, these optimizations are handled by a disjoint set of
+components.
 
 This proposal provides a mechanism to coordinate fine-grained hardware
 resource assignments for different components in Kubernetes.
@@ -51,17 +52,17 @@ resource assignments for different components in Kubernetes.
 Multiple components in the Kubelet make decisions about system
 topology-related assignments:
 
-- CPU manager.
+- CPU manager
   - The CPU manager makes decisions about the set of CPUs a container is
 allowed to run on. The only implemented policy as of v1.8 is the static
 one, which does not change assignments for the lifetime of a container.
-- Device manager.
+- Device manager
   - The device manager makes concrete device assignments to satisfy
 container resource requirements. Generally devices are attached to one
 peripheral interconnect. If the device manager and the CPU manager are
 misaligned, all communication between the CPU and the device can incur
 an additional hop over the processor interconnect fabric.
-- Container network interface
+- Container Network Interface (CNI)
   - NICs including SR-IOV Virtual Functions have affinity to one NUMA node,
 with measurable performance ramifications.
 
@@ -76,7 +77,7 @@ Note that all of these concerns pertain only to multi-socket systems.
 
 ## Goals
 
-- Allow CPU manager and device plugin subsystem to agree on preferred
+- Allow CPU manager and Device Manager to agree on preferred
   NUMA node affinity for containers.
 - Provide an internal interface and pattern to integrate additional
   topology-aware Kubelet components.
@@ -86,9 +87,9 @@ Note that all of these concerns pertain only to multi-socket systems.
 - _Inter-device connectivity:_ Decide device assignments based on direct
   device interconnects. This issue can be separated from NUMA node
   locality. Inter-device topology can be considered entirely within the
-  scope of the device plugin subsystem, after which it can emit possible
-  NUMNA affinities. The policy to reach that decision can start simple
-  and iterate toward support for arbitrary inter-device graphs.
+  scope of the Device Manager, after which it can emit possible
+  NUMA affinities. The policy to reach that decision can start simple
+  and iterate to include support for arbitrary inter-device graphs.
 - _HugePages:_ This proposal assumes that pre-allocated HugePages are
   spread among the available NUMA nodes in the system. We further assume
   the operating system provides best-effort local page allocation for
@@ -138,12 +139,11 @@ interface and participates in Kubelet pod admission. When the `Admit()`
 function is called, the NUMA manager collects NUMA hints from from other
 Kubelet components.
 
-If the NUMA hints do are not compatible, the NUMA
-manager could choose to reject the pod. The details of what to do in
-this situation needs more discussion. For example, the NUMA manager
-could enforce strict NUMA alignment for Guaranteed QoS pods.
-Alternatively, the NUMA manager could simply provide best-effort NUMA
-alignment for all pods.
+If the NUMA hints are not compatible, the NUMA manager could choose to
+reject the pod. The details of what to do in this situation needs more
+discussion. For example, the NUMA manager could enforce strict NUMA
+alignment for Guaranteed QoS pods. Alternatively, the NUMA manager could
+simply provide best-effort NUMA alignment for all pods.
 
 The NUMA Manager component will be disabled behind a feature gate until
 graduation from alpha to beta.
