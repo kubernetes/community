@@ -3,7 +3,10 @@
 The process for contributing code to Kubernetes via SIG-aws [community][community page].
 
 **Note**: This page is focused on helping new contributors become active
-members of the community through sustained contributions.
+members of the community through sustained contributions. 
+
+If you are interested in contributing to Kubernetes as a whole there is a top level 
+[contributor's guide][contributor guide]. 
 
 ## Introduction
 
@@ -73,6 +76,7 @@ and group [meeting] times.
 [agenda]: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
 [communication]:  /sig-aws#contact
 [community page]: /sig-aws
+[contributor guide]: /contributors/guide
 [design repo]: /contributors/design-proposals/aws
 [development guide]: /contributors/devel/development.md
 [group]: https://groups.google.com/forum/#!forum/kubernetes-sig-aws
