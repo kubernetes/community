@@ -53,18 +53,7 @@ Office hours are held once a month. Please refer to [this document](events/offic
 
 ## Weekly Meeting
 
-We have PUBLIC and RECORDED [weekly meeting] every Thursday at 10am US Pacific Time over Zoom.
-
-Map that to your local time with this [timezone table].
-
-See it on the web at [calendar.google.com], or paste this [iCal url] into any iCal client.
-
-To be added to the calendar items, join the Google group
-[kubernetes-community-video-chat] for further instructions.
-
-If you have a topic you'd like to present or would like to see discussed,
-please propose a specific date on the [Kubernetes Community Meeting Agenda].
-
+Refer to the [community meeting document](events/community-meeting.md) for information on our weekly meeting. 
 
 ## Conferences
 
