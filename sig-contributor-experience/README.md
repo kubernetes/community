@@ -18,6 +18,7 @@ Developing and sustaining a healthy community of contributors is critical to sca
 ## Leads
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**), Google
 * Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), CoreOS
+* Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-contribex)
