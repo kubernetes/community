@@ -48,12 +48,12 @@ aliases:
     - jaredbhatti
   sig-gcp-leads:
     - abgworrall
-  sig-multicluster-leads:
-    - csbell
-    - quinton-hoole
   sig-instrumentation-leads:
     - piosz
     - fabxc
+  sig-multicluster-leads:
+    - csbell
+    - quinton-hoole
   sig-network-leads:
     - thockin
     - dcbw
@@ -65,19 +65,19 @@ aliases:
     - marcoceppi
     - dghubble
   sig-openstack-leads:
-    - idvoretskyi
-    - xsgordon
+    - hogepodge
+    - dklyle
+    - rjmorse
   sig-product-management-leads:
     - apsinha
     - idvoretskyi
     - calebamiles
   sig-release-leads:
-    - pwittrock
+    - jdumars
     - calebamiles
   sig-scalability-leads:
     - wojtek-t
     - countspongebob
-    - jbeda
   sig-scheduling-leads:
     - davidopp
     - timothysc
@@ -99,19 +99,24 @@ aliases:
     - floreks
   sig-windows-leads:
     - michmike
-  wg-resource-management-leads:
-    - vishh
-    - derekwaynecarr
+  wg-app-def-leads:
+    - ant31
+    - sebgoa
+  wg-cloud-provider-leads:
+    - wlan0
+    - jagosan
+  wg-cluster-api-leads:
+    - kris-nova
+    - roberthbailey
   wg-container-identity-leads:
     - smarterclayton
     - destijl
   wg-kubeadm-adoption-leads:
     - luxas
     - justinsb
-  wg-cluster-api-leads:
-    - kris-nova
-    - pipejakob
-    - roberthbailey
-  wg-app-def-leads:
-    - ant31
-    - sebgoa
+  wg-multitenancy-leads:
+    - davidopp
+    - jessfraz
+  wg-resource-management-leads:
+    - vishh
+    - derekwaynecarr
