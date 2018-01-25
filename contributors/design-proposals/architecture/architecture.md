@@ -110,7 +110,7 @@ including default values, and observed state (status).
 
 Controllers work continuously to drive the actual state towards the desired state, while reporting back the currently observed state for users and for other controllers. 
 
-While the controllers are [level-based](http://gengnosis.blogspot.com/2007/01/level-triggered-and-edge-triggered.html)
+While the controllers are level-based (as described [here](http://gengnosis.blogspot.com/2007/01/level-triggered-and-edge-triggered.html) and [here](https://hackernoon.com/level-triggering-and-reconciliation-in-kubernetes-1f17fe30333d))
 to maximize fault
 tolerance, they typically `watch` for changes to relevant resources in order to minimize reaction
 latency and redundant work. This enables decentralized and decoupled
