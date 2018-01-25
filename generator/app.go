@@ -255,11 +255,11 @@ func main() {
 	}
 
 	sort.Slice(ctx.Sigs, func(i, j int) bool {
-		return ctx.Sigs[i].Name <= ctx.Sigs[j].Name
+		return strings.ToLower(ctx.Sigs[i].Name) <= strings.ToLower(ctx.Sigs[j].Name)
 	})
 
 	sort.Slice(ctx.WorkingGroups, func(i, j int) bool {
-		return ctx.WorkingGroups[i].Name <= ctx.WorkingGroups[j].Name
+		return strings.ToLower(ctx.WorkingGroups[i].Name) <= strings.ToLower(ctx.WorkingGroups[j].Name)
 	})
 
 	err = createGroupReadme(ctx.Sigs, "sig")
