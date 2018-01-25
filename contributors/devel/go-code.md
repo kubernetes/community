@@ -1,28 +1,3 @@
-# Kubernetes Go Tools and Tips
+This document's content has been rolled into https://git.k8s.io/community/contributors/guide/coding-conventions.md
 
-Kubernetes is one of the largest open source Go projects. Good tooling and a solid understanding of
-Go is critical to Kubernetes development. This document provides a collection of resources, tools,
-and tips that our developers have found useful.
-
-## Recommended Reading
-
-- [Kubernetes Go development environment](development.md#go-development-environment)
-- [The Go Spec](https://golang.org/ref/spec) - The Go Programming Language
-  Specification.
-- [Go Tour](https://tour.golang.org/welcome/2) - Official Go tutorial.
-- [Effective Go](https://golang.org/doc/effective_go.html) - A good collection of Go advice.
-- [Kubernetes Code conventions](coding-conventions.md) - Style guide for Kubernetes code.
-- [Three Go Landmines](https://gist.github.com/lavalamp/4bd23295a9f32706a48f) - Surprising behavior in the Go language. These have caused real bugs!
-
-## Recommended Tools
-
-- [godep](https://github.com/tools/godep) - Used for Kubernetes dependency management. See also [Kubernetes godep and dependency management](development.md#godep-and-dependency-management).
-- [Go Version Manager](https://github.com/moovweb/gvm) - A handy tool for managing Go versions.
-- [godepq](https://github.com/google/godepq) - A tool for analyzing go import trees.
-
-## Go Tips
-
-- [Godoc bookmarklet](https://gist.github.com/timstclair/c891fb8aeb24d663026371d91dcdb3fc) - Navigate from a github page to the corresponding godoc page.
-- Consider making a separate Go tree for each project, which can make overlapping dependency management much easier. Remember to set the `$GOPATH` correctly! Consider [scripting](https://gist.github.com/timstclair/17ca792a20e0d83b06dddef7d77b1ea0) this.
-- Emacs users - setup [go-mode](https://github.com/dominikh/go-mode.el).
-
+This file is a placeholder to preserve links.  Please remove after 3 months or the release of kubernetes 1.10, whichever comes first.
