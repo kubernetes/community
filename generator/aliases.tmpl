@@ -1,0 +1,13 @@
+aliases:
+  {{- range .Sigs}}
+  {{.Dir}}-leads:
+    {{- range .Leads}}
+    - {{.GitHub}}
+    {{- end}}
+  {{- end}}
+  {{- range .WorkingGroups}}
+  {{.Dir}}-leads:
+    {{- range .Leads}}
+    - {{.GitHub}}
+    {{- end}}
+  {{- end}}

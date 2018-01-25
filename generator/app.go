@@ -31,12 +31,14 @@ import (
 )
 
 const (
-	readmeTemplate = "readme.tmpl"
-	listTemplate   = "list.tmpl"
-	headerTemplate = "header.tmpl"
+	readmeTemplate  = "readme.tmpl"
+	listTemplate    = "list.tmpl"
+	aliasesTemplate = "aliases.tmpl"
+	headerTemplate  = "header.tmpl"
 
 	sigsYamlFile  = "sigs.yaml"
 	sigListOutput = "sig-list.md"
+	aliasesOutput = "OWNERS_ALIASES"
 	indexFilename = "README.md"
 
 	beginMarker = "<!-- BEGIN CUSTOM CONTENT -->"
@@ -154,7 +156,7 @@ func tzUrlEncode(tz string) string {
 	return strings.Replace(url.QueryEscape(tz), "+", "%20", -1)
 }
 
-func writeTemplate(templatePath, outputPath string, data interface{}) error {
+func writeTemplate(templatePath, outputPath string, customContent bool, data interface{}) error {
 	// set up template
 	t, err := template.New(filepath.Base(templatePath)).
 		Funcs(funcMap).
@@ -194,7 +196,9 @@ func writeTemplate(templatePath, outputPath string, data interface{}) error {
 	}
 
 	// custom content block
-	writeCustomContentBlock(f, content)
+	if customContent {
+		writeCustomContentBlock(f, content)
+	}
 
 	return nil
 }
@@ -230,7 +234,7 @@ func createGroupReadme(groups []Group, prefix string) error {
 
 		outputPath := filepath.Join(outputDir, indexFilename)
 		readmePath := filepath.Join(baseGeneratorDir, templateDir, fmt.Sprintf("%s_%s", prefix, readmeTemplate))
-		if err := writeTemplate(readmePath, outputPath, group); err != nil {
+		if err := writeTemplate(readmePath, outputPath, true, group); err != nil {
 			return err
 		}
 	}
@@ -270,7 +274,14 @@ func main() {
 
 	fmt.Println("Generating sig-list.md")
 	outputPath := filepath.Join(baseGeneratorDir, sigListOutput)
-	err = writeTemplate(filepath.Join(baseGeneratorDir, templateDir, listTemplate), outputPath, ctx)
+	err = writeTemplate(filepath.Join(baseGeneratorDir, templateDir, listTemplate), outputPath, true, ctx)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("Generating OWNERS_ALIASES")
+	outputPath = filepath.Join(baseGeneratorDir, aliasesOutput)
+	err = writeTemplate(filepath.Join(baseGeneratorDir, templateDir, aliasesTemplate), outputPath, false, ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
