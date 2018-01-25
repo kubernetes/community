@@ -1233,7 +1233,7 @@ name transformation should then be mechanical: `foo-bar` becomes `fooBar`.
 Other advice regarding use of labels, annotations, taints, and other generic map keys by
 Kubernetes components and tools:
   - Key names should be all lowercase, with words separated by dashes instead of camelCase
-    - For instance, prefer `foo.kubernetes.io/foo-bar over` `foo.kubernetes.io/fooBar`, prefer
+    - For instance, prefer `foo.kubernetes.io/foo-bar` over `foo.kubernetes.io/fooBar`, prefer
     `desired-replicas` over `DesiredReplicas`
   - Prefix the key with `kubernetes.io/` or `foo.kubernetes.io/`, preferably the
 latter if the label/annotation is specific to `foo`
