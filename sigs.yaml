@@ -463,6 +463,9 @@ sigs:
     - name: Elsie Phillips
       github: Phillels
       company: CoreOS
+    - name: Paris Pittman
+      github: parispittman
+      company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
