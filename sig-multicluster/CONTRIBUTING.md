@@ -21,6 +21,9 @@ and commitment from the project maintainers to review the ux, software
 design, and code.  Mentoring and on-boarding new contributors is done
 in addition to many other responsibilities.
 
+If you are interested in contributing to Kubernetes as a whole there is
+a top level [contributor's guide][contributors guide] 
+
 ### Understand the big picture
 
 - Complete the [Kubernetes Basics Tutorial].
@@ -270,6 +273,7 @@ See the sig-multicluster [community page] for points of contact and meeting time
 [agenda]: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
 [bug]: #bug-lifecycle
 [community page]: /sig-multicluster
+[contributors guide]: /contributors/guide
 [design proposal]: #design-proposals
 [design repo]: /contributors/design-proposals/sig-multicluster
 [design template]: /contributors/design-proposals/sig-multicluster/template.md

@@ -18,7 +18,7 @@ Keep in mind that these artifacts reflect the state of the art at the time they 
 
 ### How to help
 
-We love having folks help in any capacity! We recommend you start by reading the overall [Kubernetes contributors guide](https://github.com/GoogleCloudPlatform/continuous-deployment-on-kubernetes/blob/master/CONTRIBUTING.md)
+We love having folks help in any capacity! We recommend you start by reading the overall [Kubernetes contributor's guide](/contributors/guide)
 
 ### Helping with Features
 If you have a feature idea, please submit a feature proposal PR first and put it on the [Storage SIG Meeting Agenda](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit#heading=h.bag869lp4lyz). 
