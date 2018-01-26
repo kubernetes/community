@@ -49,7 +49,7 @@ Links in [contributors/devel/README.md](contributors/devel/README.md)
 lead to many relevant topics, including
  * [Developer's Guide] - how to start a build/test cycle
  * [Collaboration Guide] - how to work together
- * [expectations] - what the community expects
+ * [expectations](contributors/guide/community-expectations) - what the community expects
  * [pull request] policy - how to prepare a pull request
 
 ## Your First Contribution

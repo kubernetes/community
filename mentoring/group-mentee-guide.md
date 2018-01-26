@@ -64,7 +64,7 @@ SIG Docs to come in and do a quick ‘what it means to be a tech reviewer’ and
 - the docs
 	- k/community is your friend for upstream workflows, processes, and information around contributing
 	- This repo includes the community/devel folder which will be extra helpful that includes docs such as:
-    - [Code Review Expectations](/contributors/devel/community-expectations.md)
+    - [Code Review Expectations](/contributors/guide/community-expectations.md)
     - [Collaboration on k8s](/contributors/devel/collab.md)
 
 

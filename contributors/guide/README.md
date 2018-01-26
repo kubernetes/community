@@ -178,7 +178,7 @@ The pull request workflow is described in detail [here](/contributors/devel/pull
 
 ## Code Review
 
-For a brief description of the importance of code review, please read [On Code Review](/contributors/devel/community-expectations.md#code-review).  There are two aspects of code review: giving and receiving.
+For a brief description of the importance of code review, please read [On Code Review](/contributors/guide/community-expectations.md#code-review).  There are two aspects of code review: giving and receiving.
 
 To make it easier for your PR to receive reviews, consider the reviewers will need you to:
 
