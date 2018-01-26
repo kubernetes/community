@@ -185,7 +185,7 @@ The following apply to the part of codebase for which one would be an approver i
 - Demonstrate sound technical judgement
 - Responsible for project quality control via [code reviews](contributors/devel/collab.md)
   - Focus on holistic acceptance of contribution such as dependencies with other features, backwards / forwards compatibility, API and flag definitions, etc
-- Expected to be responsive to review requests as per [community expectations](contributors/devel/community-expectations.md);
+- Expected to be responsive to review requests as per [community expectations](contributors/guide/community-expectations.md);
 - Mentor contributors and reviewers
 - May approve code contributions for acceptance
 
