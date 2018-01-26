@@ -107,6 +107,7 @@ Follow the link in the SIG name column to reach each SIGs README. Most SIGs will
 ### File an Issue
 
 Not ready to contribute code, but see something that needs work? While the community encourages everyone to contribute code, it is also appreciated when someone reports an issue (aka problem). Issues should be filed under the appropriate Kubernetes subrepository.
+Check the [issue triage guide](./issue-triage.md) for more information. 
 
 *Example:* a documentation issue should be opened to [kubernetes/website](https://github.com/kubernetes/website/issues).
 
