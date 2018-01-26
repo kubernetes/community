@@ -18,20 +18,23 @@ Mount time options that are operationally important and have no security implica
 Mount options can be specified as a field on PVs. For example:
 
 ``` yaml
- apiVersion: v1
-  kind: PersistentVolume
-  metadata:
-    name: pv0003
-  spec:
-    capacity:
-      storage: 5Gi
-    accessModes:
-      - ReadWriteOnce
-    persistentVolumeReclaimPolicy: Recycle
-    mountOptions: "hard,nolock,nfsvers=3"
-    nfs:
-      path: /tmp
-      server: 172.17.0.2
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv0003
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  mountOptions:
+    - hard
+    - nolock
+    - nfsvers=3
+  nfs:
+    path: /tmp
+    server: 172.17.0.2
 ```
 
 
@@ -40,21 +43,21 @@ and deprecated in future.
 
 
 ``` yaml
- apiVersion: v1
-  kind: PersistentVolume
-  metadata:
-    name: pv0003
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv0003
   annotations:
     volume.beta.kubernetes.io/mount-options: "hard,nolock,nfsvers=3"
-  spec:
-    capacity:
-      storage: 5Gi
-    accessModes:
-      - ReadWriteOnce
-    persistentVolumeReclaimPolicy: Recycle
-    nfs:
-      path: /tmp
-      server: 172.17.0.2
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  nfs:
+    path: /tmp
+    server: 172.17.0.2
 ```
 
 ### Mount option support in Storage Classes
