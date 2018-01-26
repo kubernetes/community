@@ -50,7 +50,7 @@ lead to many relevant topics, including
  * [Developer's Guide] - how to start a build/test cycle
  * [Collaboration Guide] - how to work together
  * [Expectations] - what the community expects
- * [Pull Request] policy - how to prepare a pull request
+ * [Pull Request Process] - how to prepare a pull request
 
 ## Your First Contribution
 
