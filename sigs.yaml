@@ -1333,3 +1333,34 @@ workinggroups:
     contact:
       slack: wg-multitenancy
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy
+  - name: Policy
+    dir: wg-policy
+    mission_statement: >
+      Provide an overall architecture that describes both the current policy related implementations as well as future policy related proposals in Kubernetes. Through a collaborative method, we want to present both dev and end user a universal view of policy architecture in Kubernetes.
+    leads:
+    - name: Howard Huang
+      github: hannibalhuang
+      company: Huawei
+    - name: Torin Sandall
+      github: tsandall
+      company: Google
+    - name: David Oppenheimer
+      github: davidopp
+      company: Google
+    - name: Clayton Coleman
+      github: smarterclayton
+      company: Red Hat
+    - name: Xuan Jia
+      github: xuanjia
+      company: China Mobile
+    meetings:
+    - description: Regular WG Meeting
+      day: Thursday
+      time: "17:00"
+      tz: "PT (Pacific Time)"
+      frequency: weekly
+      url: https://zoom.us/j/421702434
+      archive_url: https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing
+    contact:
+      slack: wg-policy
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-policy
