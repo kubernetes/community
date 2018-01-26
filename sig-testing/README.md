@@ -14,6 +14,8 @@ Interested in how we can most effectively test Kubernetes. We're interested spec
 * Regular SIG Meeting: [Tuesdays at 13:00 PT (Pacific Time)](https://zoom.us/my/k8s.sig.testing) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-testing-notes).
   * [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
+* Testing Commons: [Wednesdays at 07:30 PT (Pacific Time)](https://zoom.us/my/k8s.sig.testing) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o).
 
 ## Leads
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Samsung SDS
