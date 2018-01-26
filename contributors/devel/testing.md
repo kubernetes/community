@@ -41,7 +41,7 @@ passing, so it is often a good idea to make sure the e2e tests work as well.
   - Tests using linux-specific features must be skipped or compiled out.
   - Skipped is better, compiled out is required when it won't compile.
 * Concurrent unit test runs must pass.
-* See [coding conventions](coding-conventions.md).
+* See [coding conventions](../guide/coding-conventions.md).
 
 ### Run all unit tests
 

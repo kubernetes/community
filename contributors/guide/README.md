@@ -156,6 +156,7 @@ For a brief description of the importance of code review, please read [On Code R
 
 To make it easier for your PR to receive reviews, consider the reviewers will need you to:
 
+* follow the project [coding conventions](coding-conventions.md)
 * write [good commit messages](https://chris.beams.io/posts/git-commit/)
 * break large changes into a logical series of smaller patches which individually make easily understandable changes, and in aggregate solve a broader issue
 * label PRs with appropriate SIGs and reviewers: to do this read the messages the bot sends you to guide you through the PR process

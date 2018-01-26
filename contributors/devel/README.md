@@ -37,7 +37,7 @@ Guide](http://kubernetes.io/docs/admin/).
   ([instrumentation.md](instrumentation.md)): How to add a new metrics to the
   Kubernetes code base.
 
-* **Coding Conventions** ([coding-conventions.md](coding-conventions.md)):
+* **Coding Conventions** ([coding-conventions.md](../guide/coding-conventions.md)):
   Coding style advice for contributors.
 
 * **Document Conventions** ([how-to-doc.md](how-to-doc.md))
