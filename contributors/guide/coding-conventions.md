@@ -55,13 +55,13 @@ the name of the directory in which the .go file exists.
 sync.Mutex`). When multiple locks are present, give each lock a distinct name
 following Go conventions - `stateLock`, `mapLock` etc.
 
-    - [API changes](api_changes.md)
+    - [API changes](/contributors/devel/api_changes.md)
 
-    - [API conventions](api-conventions.md)
+    - [API conventions](/contributors/devel/api-conventions.md)
 
-    - [Kubectl conventions](kubectl-conventions.md)
+    - [Kubectl conventions](/contributors/devel/kubectl-conventions.md)
 
-    - [Logging conventions](logging.md)
+    - [Logging conventions](/contributors/devel/logging.md)
 
 ## Testing conventions
 
@@ -72,7 +72,7 @@ tests
 example, see [TestNamespaceAuthorization](https://git.k8s.io/kubernetes/test/integration/auth/auth_test.go)
 
   - Significant features should come with integration (test/integration) and/or
-[end-to-end (test/e2e) tests](e2e-tests.md)
+[end-to-end (test/e2e) tests](/contributors/devel/e2e-tests.md)
     - Including new kubectl commands and major features of existing commands
 
   - Unit tests must pass on OS X and Windows platforms - if you use Linux
@@ -86,7 +86,7 @@ required when your code does not compile on Windows).
 asynchronous thing to happen (e.g. wait for 1 seconds and expect a Pod to be
 running). Wait and retry instead.
 
-  - See the [testing guide](testing.md) for additional testing advice.
+  - See the [testing guide](/contributors/devel/testing.md) for additional testing advice.
 
 ## Directory and file conventions
 
@@ -113,14 +113,13 @@ subdirectories).
 /docs/user-guide or /docs/admin, depending on whether it is a feature primarily
 intended for users that deploy applications or cluster administrators,
 respectively. Actual application examples belong in /examples.
-    - Examples should also illustrate [best practices for configuration and
-using the system](https://kubernetes.io/docs/user-guide/config-best-practices/)
+    - Examples should also illustrate [best practices for configuration and using the system](https://kubernetes.io/docs/user-guide/config-best-practices/)
 
   - Third-party code
 
     - Go code for normal third-party dependencies is managed using
-[Godeps](https://github.com/tools/godep) and is described in the kubernetes
-[godep guide](godep.md)
+[Godep](https://github.com/tools/godep) and is described in the kubernetes
+[godep guide](/contributors/devel/godep.md)
 
     - Other third-party code belongs in `/third_party`
       - forked third party Go code goes in `/third_party/forked`
