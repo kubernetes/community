@@ -39,4 +39,4 @@ A list of common resources when contributing to Kubernetes.
 
 ## Other
 
-- [Developer Statistics](https://devstats.k8s.io)
+- [Developer Statistics](https://k8s.devstats.cncf.io)
