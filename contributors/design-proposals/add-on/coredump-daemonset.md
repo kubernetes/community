@@ -9,13 +9,15 @@ This proposal aims at managing coredump files generated in cluster containers.
 ## Motivation and Goals
 
 Application coredump is one of required feature for enterprise systems. In Kubernetes, we need to take "multi-tenancy" and "security" into account. Technically, under Linux, each server’s coredump can be controlled via [/proc/sys/kernel/core_pattern](http://man7.org/linux/man-pages/man5/core.5.html) of the host. By this, an application coredump can be passed into host’s special file or special program. We need to build API to specify
-- Where coredumps should be stored and access control to them
+  - Where coredumps should be stored and access control to them
   - typically, namespaced persistent storage rather than host’s file system
   - list/get/delete coredump metadata
   - access control to dumped data
   - quota for coredump for each namespace
   - no core dump label for specific environment (such as development environ)
 
+## Non-Goals
+This project amis to support access control to coredump files generated from local Linux namespace isolated container runtimes, like docker, rkt. Hypervisor-based container runtime like frakti and container runtimes use other implementations for pod isolation are not considered.
 
 ## Community Work
 
@@ -42,7 +44,7 @@ override /proc/sys/kernel/core_pattern kernel parameter in kubelet node.
 When coredump happens, linux kernel will call coredump-detector and give core
 dump file as standard input to coredump-detector.
 coredump-detector will:
-* access the docker api and distinguish where(which container) the core dump comes from
+* access the container runtime service and distinguish where(which container) the core dump comes from
 * access the kubernetes cluster and distinguish which namespace this pod belongs to
 * register the coredump metadata to api-server
 * save core dump file to local host cache
