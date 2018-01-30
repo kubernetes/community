@@ -65,7 +65,7 @@ Many thanks in advance to everyone who contributes their time and effort to maki
 
 Have you ever wanted to contribute to the coolest cloud technology? We will help you understand the organization of the Kubernetes project and direct you to the best places to get started. You'll be able to pick up issues, write code to fix them, and get your work reviewed and merged.
 
-Please be aware that due to the large number of issues our triage team deals with, we cannot offer technical support in GitHub issues. If you have questions about the development process, feel free to jump into our [Slack Channel](http://slack.k8s.io/) or join our [mailing list](https://groups.google.com/forum/#!forum/kubernetes-dev). You can also ask questions on [ServerFault](https://serverfault.com/questions/tagged/kubernetes) or [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes). The Kubernetes team scans Stack Overflow on a regular basis, and will try to ensure your questions don't go unanswered.
+Please be aware that due to the large number of issues our triage team deals with, we cannot offer technical support in GitHub issues. If you have questions about the development process, feel free to jump into our [Slack Channel](http://slack.k8s.io/) or join our [mailing list](https://groups.google.com/forum/#!forum/kubernetes-dev). You can also ask questions on [ServerFault](https://serverfault.com/questions/tagged/kubernetes) or [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes). The Kubernetes team scans Stack Overflow on a regular basis and will try to ensure your questions don't go unanswered.
 
 ## Find something to work on
 
@@ -98,7 +98,7 @@ Finding the appropriate SIG for your contribution will help you ask questions in
 
 For Pull Requests, the automatically assigned reviewer will add a SIG label if you haven't done so. See [Open A Pull Request](#open-a-pull-request) below.
 
-For Issues we are still working on a more automated workflow. Since SIGs do not directly map onto Kubernetes subrepositories, it may be difficult to find which SIG your contribution belongs in. Here is the [list of SIGs](/sig-list.md). Determine which is most likely related to your contribution.
+For Issues, we are still working on a more automated workflow. Since SIGs do not directly map onto Kubernetes subrepositories, it may be difficult to find which SIG your contribution belongs in. Here is the [list of SIGs](/sig-list.md). Determine which is most likely related to your contribution.
 
 *Example:* if you are filing a cni issue, you should choose SIG-networking.
 
@@ -114,7 +114,7 @@ Make sure to adhere to the prompted submission guidelines while opening an issue
 
 # Contributing
 
-Kubernetes is open source, but many of the people working on it do so as their day job. In order to avoid forcing people to be "at work" effectively 24/7, we want to establish some semi-formal protocols around development. Hopefully these rules make things go more smoothly. If you find that this is not the case, please complain loudly.
+Kubernetes is open source, but many of the people working on it do so as their day job. In order to avoid forcing people to be "at work" effectively 24/7, we want to establish some semi-formal protocols around development. Hopefully, these rules make things go more smoothly. If you find that this is not the case, please complain loudly.
 
 As a potential contributor, your changes and ideas are welcome at any hour of the day or night, weekdays, weekends, and holidays. Please do not ever hesitate to ask a question or send a pull request.
 
@@ -161,7 +161,7 @@ To make it easier for your PR to receive reviews, consider the reviewers will ne
 * break large changes into a logical series of smaller patches which individually make easily understandable changes, and in aggregate solve a broader issue
 * label PRs with appropriate SIGs and reviewers: to do this read the messages the bot sends you to guide you through the PR process
 
-Reviewers, the people giving review, are highly encouraged to revisit the [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) and must go above and beyond to promote a collaborative, respectful Kubernetes community.  When reviewing PRs from others [The Gentle Art of Patch Review](http://sage.thesharps.us/2014/09/01/the-gentle-art-of-patch-review/) suggests an iterative series of focuses which is designed to lead new contributors to positive collaboration without inundating them initially with nuances:
+Reviewers, the people giving the review, are highly encouraged to revisit the [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) and must go above and beyond to promote a collaborative, respectful Kubernetes community.  When reviewing PRs from others [The Gentle Art of Patch Review](http://sage.thesharps.us/2014/09/01/the-gentle-art-of-patch-review/) suggests an iterative series of focuses which is designed to lead new contributors to positive collaboration without inundating them initially with nuances:
 
 * Is the idea behind the contribution sound?
 * Is the contribution architected correctly?
@@ -175,7 +175,7 @@ The main testing overview document is [here](/contributors/devel/testing.md).
 
 There are three types of test in kubernetes.  The location of the test code varies with type, as does the specifics of the environment needed to successfully run the test:
 
-* Unit: These confirm that a particular function behaves as intended.  Golang includes native ability for unit testing via the [testing](https://golang.org/pkg/testing/) package.  Unit test source code can be found adjacent to the corresponding source code within a given package.  For example: functions defined in [kubernetes/cmd/kubeadm/app/util/version.go](https://git.k8s.io/kubernetes/cmd/kubeadm/app/util/version.go) will have unit tests in [kubernetes/cmd/kubeadm/app/util/version_test.go](https://git.k8s.io/kubernetes/cmd/kubeadm/app/util/version_test.go).  These are easily run locally be any developer on any OS.
+* Unit: These confirm that a particular function behaves as intended.  Golang includes a native ability for unit testing via the [testing](https://golang.org/pkg/testing/) package.  Unit test source code can be found adjacent to the corresponding source code within a given package.  For example: functions defined in [kubernetes/cmd/kubeadm/app/util/version.go](https://git.k8s.io/kubernetes/cmd/kubeadm/app/util/version.go) will have unit tests in [kubernetes/cmd/kubeadm/app/util/version_test.go](https://git.k8s.io/kubernetes/cmd/kubeadm/app/util/version_test.go).  These are easily run locally by any developer on any OS.
 * Integration: These tests cover interactions of package components or interactions between kubernetes components and some other non-kubernetes system resource (eg: etcd).  An example would be testing whether a piece of code can correctly store data to or retrieve data from etcd.  Integration tests are stored in [kubernetes/test/integration/](https://git.k8s.io/kubernetes/test/integration).  Running these can require the developer set up additional functionality on their development system.
 * End-to-end ("e2e"): These are broad tests of overall kubernetes system behavior and coherence.  These are more complicated as they require a functional kubernetes cluster built from the sources to be tested.  A separate document [here](/contributors/devel/e2e-tests.md) details e2e testing and test cases themselves can be found in [kubernetes/test/e2e/](https://git.k8s.io/kubernetes/test/e2e).
 
