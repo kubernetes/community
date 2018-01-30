@@ -10,14 +10,13 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 
 ## Meetings
-* Regular SIG Meeting: [Mondays at 20:00 UTC]() (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
-* : [Wednesdays at 07:30 UTC](https://zoom.us/zoomconference?m=rN2RrBUYxXgXY4EMiWWgQP6Vslgcsn86) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 20:00 UTC](https://zoom.us/j/7767391691) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
 
 ## Leads
-* David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google
-* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Red Hat
+* Bobby (Babak) Salamat (**[@bsalamat](https://github.com/bsalamat)**), Google
+* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Heptio
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-scheduling)

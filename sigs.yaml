@@ -953,23 +953,19 @@ sigs:
     mission_statement: >
     label: scheduling
     leads:
-    - name: David Oppenheimer
-      github: davidopp
+    - name: Bobby (Babak) Salamat
+      github: bsalamat
       company: Google
     - name: Timothy St. Clair
       github: timothysc
-      company: Red Hat
+      company: Heptio
     meetings:
     - description: Regular SIG Meeting
-      day: Monday
+      day: Thursday
       time: "20:00"
       tz: "UTC"
       frequency: biweekly
-    - day: Wednesday
-      time: "07:30"
-      tz: "UTC"
-      frequency: biweekly
-      url: https://zoom.us/zoomconference?m=rN2RrBUYxXgXY4EMiWWgQP6Vslgcsn86
+      url: https://zoom.us/j/7767391691
       archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
       recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
     contact:
