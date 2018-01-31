@@ -19,24 +19,6 @@ scoped by these sub-areas.
 [**New contributors**](https://github.com/kubernetes/contrib/issues/1090) should be welcomed to the community
 by existing members, helped with PR workflow, and directed to relevant documentation and communication channels.
 
-**Note:** Individuals may be added as an outside collaborator (with READ access) to a repo in the Kubernetes GitHub
-organization without becoming a member.  This will allow them to be assigned issues and PRs until they become a member,
-but will not allow tests to be run against their PRs automatically nor allow them to interact with the PR bot.
-
-### Requirements for outside collaborators
-
-- Working on some contribution to the project that would benefit from
-  the ability to have PRs or Issues to be assigned to the contributor
-- Have the support of 1 member
-  - Find a member who will sponsor you
-  - Send an email to kubernetes-membership@googlegroups.com
-    - CC: your sponsor
-    - Subject: `REQUEST: New outside collaborator for <your-GH-handle>`
-    - Body: GitHub handle of sponsor
-    - Body: Justification - any contributions or what you will be working on
-  - Have your sponsoring member reply confirmation of sponsorship: `+1`
-  - Wait for response to the message
-
 ## Established community members
 
 Established community members are expected to demonstrate their adherence to the principles in this
