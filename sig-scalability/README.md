@@ -13,7 +13,7 @@ What size clusters do we think that we should support with Kubernetes in the sho
 For more details about our objectives please review our [Scaling And Performance Goals](https://git.k8s.io/community/sig-scalability/goals.md)
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 16:00 UTC](https://zoom.us/j/989573207) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 16:30 UTC](https://zoom.us/j/989573207) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
   * [Meeting recordings](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
 
@@ -46,14 +46,19 @@ Monitor these for Github activity if you are not a member of the team.
 | @kubernetes/sig-scalability-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-scalability-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
-## Remaining 2017 Meeting Dates
-   * 10/5
-   * 10/19
-   * 11/2
-   * 11/16
-   * 11/30
-   * 12/14
-   * 12/28 - no meeting
+## Upcoming 2018 Meeting Dates
+   * 1/18
+   * 2/1
+   * 2/15
+   * 3/1
+   * 3/15
+   * 3/29
+   * 4/12
+   * 4/26
+   * 5/10
+   * 5/24
+   * 6/7
+   * 6/21
 
 ## Scalability SLOs
 

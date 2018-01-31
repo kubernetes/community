@@ -924,7 +924,7 @@ sigs:
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
-      time: "16:00"
+      time: "16:30"
       tz: "UTC"
       frequency: bi-weekly
       url: https://zoom.us/j/989573207
