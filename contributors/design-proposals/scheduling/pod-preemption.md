@@ -34,7 +34,7 @@ _Author: @bsalamat_
 -  Define the interaction between scheduler preemption and Kubelet evictions.
 -  Define mechanics of preemption.
 -  Propose new changes to the scheduling algorithms.
--  Propose new changes to the cluster aut-scaler.
+-  Propose new changes to the cluster auto-scaler.
 
 ## Non-Goals
 
