@@ -497,7 +497,7 @@ The boostrapper accepts the following optional arguments:
 "quay.io/external_storage/local-volume-provisioner:latest")
 * -volume-config: Name of the local volume configuration configmap. The configmap must reside in the same
 namespace as the bootstrapper. (default "local-volume-default-config")
-* -serviceaccount: Name of the service accout for local volume provisioner (default "local-storage-admin")
+* -serviceaccount: Name of the service account for local volume provisioner (default "local-storage-admin")
 
 The boostrapper requires the following permissions:
 
