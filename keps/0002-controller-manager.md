@@ -267,9 +267,52 @@ Hopefully the content previously contained in [umbrella issues][] will be tracke
 
 [umbrella issues]: https://github.com/kubernetes/kubernetes/issues/42752
 
+### Graduation to Beta
 
+As part of the graduation to `stable` or General Availability (GA), we have set
+both process and technical goals.
 
+#### Process Goals
 
+- 
+
+We propose the following repository structure for the cloud providers which
+currently live in `kubernetes/pkg/cloudprovider/providers/*`
+
+```
+git@github.com:kubernetes/wg-cloud-provider
+git@github.com:kubernetes/aws-cloud-provider
+git@github.com:kubernetes/azure-cloud-provider
+git@github.com:kubernetes/cloudstack-cloud-provider
+git@github.com:kubernetes/gce-cloud-provider
+git@github.com:kubernetes/openstack-cloud-provider
+git@github.com:kubernetes/ovirt-cloud-provider
+git@github.com:kubernetes/photon-cloud-provider
+git@github.com:kubernetes/vsphere-cloud-provider
+```
+
+We propose this structure in order to obtain
+
+- ease of contributor on boarding and off boarding by creating repositories under
+  the existing `kubernetes` GitHub organization
+- ease of automation turn up using existing tooling
+- unambiguous ownership of assets by the CNCF
+
+The use of a tracking repository `git@github.com:kubernetes/wg-cloud-provider`
+is proposed to
+
+- create an index of all cloud providers which WG Cloud Provider believes
+  should be highlighted based on defined criteria for quality, usage, and other
+  requirements deemed necessary by the working group
+- serve as a location for tracking issues which affect all Cloud Providers
+- serve as a repository for user experience reports related to Cloud Providers
+  which live within the Kubernetes GitHub organization or desire to do so
+
+The ultimate intention of WG Cloud Provider is to prevent multiple classes
+of software purporting to be an implementation of the Cloud Provider interface
+from fracturing the Kubernetes Community while also ensuring that new Cloud
+Providers adhere to standards of quality and whose management follow Kubernetes
+Community norms.
 
 ## Alternatives
 
