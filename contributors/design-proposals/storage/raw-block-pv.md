@@ -41,7 +41,7 @@ This document presents a proposal for managing raw block storage in Kubernetes u
     as bootstrapping 
   * A user wishes to utilize block storage to fully realize the performance of an application tuned to using block devices
   * A user wishes to read from a block storage device and write to a filesystem (big data analytics processing)
-  Future use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the 
+  Also use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the
   foundation for more fully developing these methods. 
 
  
@@ -68,7 +68,7 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   
   It is important to note that when a PV is bound, it is either bound as a raw block device or formatted with a filesystem. Therefore, 
   the PVC drives the request and intended usage of the device by specifying the volumeMode as part of the API. This design lends itself
-  to future support of dynamic provisioning by also letting the request initiate from the PVC defining the role for the PV. It also 
+  to support of dynamic provisioning by also letting the request initiate from the PVC defining the role for the PV. It also
   allows flexibility in the implementation and storage plugins to determine their support of this feature. Acceptable values for 
   volumeMode are 'Block' and 'Filesystem'. Where 'Filesystem' is the default value today and not required to be set in the PV/PVC.
   
@@ -355,7 +355,7 @@ spec:
  local:
     path: /dev/xvdc
 ```
-## [FUTURE] UC5: 
+## UC5:
 
 DESCRIPTION: StorageClass with dynamically created volumes 
 
@@ -374,9 +374,7 @@ provisioner: kubernetes.io/local-block-ssd
 parameters:
 ```
 
-***This has implementation details that have yet to be determined. It is included in this proposal for completeness of design ****
-
-## UC6: 
+## UC6:
 
 DESCRIPTION: The developer wishes to request a block device via a Storage Class.
 
@@ -398,6 +396,8 @@ spec:
    requests:
      storage: 10Gi
 ```  
+
+**Since the PVC object is passed to the provisioner, it will be responsible for validating and handling whether or not it supports the volumeMode being passed**
 
 ## UC7: 
 
@@ -423,7 +423,6 @@ Spec:
   gcePersistentDisk:
     pdName: "gce-disk-1"
 ```
-**Since the PVC object is passed to the provisioner, it will be responsible for validating and handling whether or not it supports the volumeMode being passed**
 
 ## UC8:
 
@@ -729,7 +728,90 @@ The usage of pod device map path is;
 
 
 
-* unspecified defaults to 'file/ext4' today for backwards compatibility and in mount_linux.go  
+* unspecified defaults to 'file/ext4' today for backwards compatibility and in mount_linux.go
+
+# Dynamically provisioning
+
+Using dynamic provisioning, user is able to create block volume via provisioners. Currently,
+we have two types of provisioners, internal provisioner and external provisioner.
+During volume creation via dynamic provisioner, user passes persistent volume claim which
+contains `volumeMode` parameter, then the persistent volume claim object is passed to
+provisioners. Therefore, in order to create block volume, provisioners need to support
+`volumeMode` and then create persistent volume with `volumeMode`.
+
+If a storage and plugin don't have an ability to create raw block type of volume,
+then `both internal and external provisioner don't need any update` to support `volumeMode`
+because `volumeMode` in PV and PVC are automatically set to `Filesystem` as a default when
+these volume object are created.
+However, there is a case that use specifies `volumeMode` as `Block` even if both plugin and
+provisioner don't support. As a result, PVC will be created, PV will be provisioned
+but both of them will stuck Pending status since `volumeMode` between them don't match.
+For this situation, we will add error propagation into persistent volume controller to make
+it more clear to the user what's wrong.
+
+If admin provides external provisioner to provision both filesystem and block volume,
+admin have to carefully prepare Kubernetes environment for their users because both
+Kubernetes itself and external provisioner have to support block volume functionality.
+This means Kubernetes v1.9 or later must be used to provide block volume with external
+provisioner which supports block volume.
+
+Regardless of the volumeMode, provisioner can set `FSType` into the plugin's volumeSource
+but the value will be ignored at the volume plugin side if `volumeMode` is `Block`.
+
+## Internal provisioner
+
+If internal plugin has own provisioner, the plugin needs to support `volumeMode` to provision
+block volume. This is the example implementation of `volumeMode` support for GCE PD plugin.
+
+```
+// Obtain volumeMode from PVC Spec VolumeMode
+var volumeMode v1.PersistentVolumeMode
+if options.PVC.Spec.VolumeMode != nil {
+  volumeMode = *options.PVC.Spec.VolumeMode
+}
+
+// Set volumeMode into PersistentVolumeSpec
+pv := &v1.PersistentVolume{
+  Spec: v1.PersistentVolumeSpec{
+    VolumeMode: &volumeMode,
+    PersistentVolumeSource: v1.PersistentVolumeSource{
+      GCEPersistentDisk: &v1.GCEPersistentDiskVolumeSource{
+        PDName:      options.Parameters["pdName"],
+        FSType:      options.Parameters["fsType"],
+        ...
+      },
+    },
+  },
+}
+```
+
+
+## External provisioner
+
+We have a "protocol" to allow dynamic provisioning by external software called external provisioner.
+In order to support block volume via external provisioner, external provisioner needs to support
+`volumeMode` and then create persistent volume with `volumeMode`. This is the example implementation
+of `volumeMode` support for external provisioner of Local volume plugin.
+
+```
+// Obtain volumeMode from PVC Spec VolumeMode
+var volumeMode v1.PersistentVolumeMode
+if options.PVC.Spec.VolumeMode != nil {
+  volumeMode = *options.PVC.Spec.VolumeMode
+}
+
+// Set volumeMode into PersistentVolumeSpec
+pv := &v1.PersistentVolume{
+  Spec: v1.PersistentVolumeSpec{
+    VolumeMode: &volumeMode,
+    PersistentVolumeSource: v1.PersistentVolumeSource{
+      Local: &v1.LocalVolumeSource{
+        Path:      options.Parameters["Path"],
+      },
+    },
+  },
+}
+```
 
 
 # Volume binding considerations for dynamically provisioned volumes:
@@ -754,15 +836,9 @@ Feature: Pre-provisioned PVs to precreated devices
 
                Milestone 7: Initial Plugin changes (FC & Local storage)
 
-               Milestone 8: Disabling of provisioning where volumeMode == Block is not supported
-
 Phase 2:  v1.10
 Feature: Discovery of block devices
 
                 Milestone 1: Dynamically provisioned PVs to dynamically allocated devices
 
-                Milestone 2: Privileged container concerns
-
-                Milestone 3: Plugin changes with dynamic provisioning support (GCE, AWS & GlusterFS)
-
-                Milestone 4: Flex volume update
+                Milestone 2: Plugin changes with dynamic provisioning support (RBD, iSCSI, GCE, AWS & GlusterFS)
