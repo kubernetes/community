@@ -254,8 +254,6 @@ In case of the cloud-controller-manager, the deployment should be deleted using
 kubectl delete -f cloud-controller-manager.yml
 ```
 
-### Implementation Details/Notes/Constraints [optional]
-
 ### Security Considerations
 
 Make sure that you consider the impact of this feature from the point of view of Security.
@@ -269,20 +267,11 @@ Hopefully the content previously contained in [umbrella issues][] will be tracke
 
 [umbrella issues]: https://github.com/kubernetes/kubernetes/issues/42752
 
-## Implementation History
-
-Major milestones in the life cycle of a KEP should be tracked in `Implementation History`.
-Major milestones might include
-
-- the `Summary` and `Motivation` sections being merged signaling SIG acceptance
-- the `Proposal` section being merged signaling agreement on a proposed design
-- the date implementation started
-- the first Kubernetes release where an initial version of the KEP was available
-- the version of Kubernetes where the KEP graduated to general availability
-- when the KEP was retired or superseded
 
 
-## Alternatives [optional]
+
+
+## Alternatives
 
 One alternate to consider is the use of a side-car. The cloud-interface in tree could then be a [GRPC](https://github.com/grpc/grpc-go)
 call out to that side-car. We could then leave the Kube API Server, Kube Controller Manager and Kubelet pretty much as is.
