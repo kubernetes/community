@@ -180,7 +180,7 @@ websockets protocol.
 watch requests (in addition to regular http requests), so for the purpose of
 bulk watch we will be extending websocket support.
 
- The the high level, the protocol will look:
+ The high level, the protocol will look:
 1. client opens a new websocket connection to a bulk watch endpoint to the
 server via ghttp GET
 1. this results in creating a single channel that is used only to handle
@@ -197,7 +197,7 @@ ch1, ch2 ... .*
 1. once subscribed, all objects matching a given selector will be send over
 the newly created channel
 1. to stop watching for a given (set of) objects, user sends `CloseWatch`
-object over the the channel; in response the corresponding watch is broken and
+object over the channel; in response the corresponding watch is broken and
 corresponding channel within websocket is closed
 1. once done, user should close the whole websocket connection (this results in
 breaking all still opened channels and corresponding watches).
