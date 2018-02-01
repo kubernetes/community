@@ -46,5 +46,7 @@ Monitor these for Github activity if you are not a member of the team.
 | @kubernetes/sig-cli-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-cli-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-cli-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
+_New contributors:_ please read the sibling document [CONTRIBUTING](CONTRIBUTING.md).
 
+Check out the [SIG-cli test grid](https://k8s-testgrid.appspot.com/sig-cli-master)!
 <!-- END CUSTOM CONTENT -->
