@@ -38,7 +38,7 @@ SCHEDULE GOES HERE:
 
 Open to Kubecon attendees who are interested in becoming developers.
 
-Abstract: We would ask existing leads to provide one morning's worth of new contributor content. Stuff like "your first patch", "a tour of the code base". Stuff like that, I've put some examples in the sheet. This track would be open to whoever is interested in attending. We would encourage general Kubecon attendees to sit in on this. First come, first serve, when we run out of seats, sorry! We would explicitly tell organizations that attend Kubecon that they should send a tech lead to this event, and that they will have access to developers so that when they go home they can arm their existing teams with contributor knowledge. 
+Abstract: We would ask existing leads to provide one morning's worth of new contributor content. Stuff like "your first patch", "a tour of the code base". This track would be open to whoever is interested in attending. We would encourage general Kubecon attendees to sit in on this. First come, first serve, when we run out of seats, sorry! We would explicitly tell organizations that attend Kubecon that they should send a tech lead to this event, and that they will have access to developers so that when they go home they can arm their existing teams with contributor knowledge. 
 
 ### Existing contributor track
 
