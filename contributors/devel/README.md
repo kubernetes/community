@@ -1,3 +1,7 @@
+---
+Title: Kubernetes Developer Guide
+---
+
 # Kubernetes Developer Guide
 
 The developer guide is for anyone wanting to either write code which directly accesses the
