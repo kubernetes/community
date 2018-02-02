@@ -84,7 +84,7 @@ If you want to work on a new idea of relatively small scope:
 [Collaboration Guide]: contributors/devel/collab.md
 [Developer's Guide]: contributors/devel/development.md
 [develop a new feature]: https://github.com/kubernetes/features
-[expectations]: contributors/devel/community-expectations.md
+[expectations]: contributors/guide/community-expectations.md
 [help wanted]: https://go.k8s.io/help-wanted
 [pull request]: contributors/devel/pull-requests.md
 
