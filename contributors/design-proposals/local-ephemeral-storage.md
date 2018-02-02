@@ -16,7 +16,7 @@ capacity isolation for local ephemeral storage.
 * Provide storage usage isolation for non-shared partitions.
 * Support for I/O isolation using CFS & blkio cgroups.
   * IOPS isn't safe to be a schedulable resource. IOPS on rotational media is very limited compared to other resources like CPU and Memory. This leads to severe resource stranding.
-  * Blkio cgroup + CFS based I/O isolation doesn't provide deterministic behavior compared to memory and cpu cgroups. Years of experience at Google with Borg has taught that relying on blkio or I/O scheduler isn't suitable for multi-tenancy.
+  * Blkio cgroup + CFS (Completely Fair Scheduler) based I/O isolation doesn't provide deterministic behavior compared to memory and cpu cgroups. Years of experience at Google with Borg has taught that relying on blkio or I/O scheduler isn't suitable for multi-tenancy.
   * Blkio cgroup based I/O isolation isn't suitable for SSDs. Turning on CFQ on SSDs will hamper performance. Its better to statically partition SSDs and share them instead of using CFS.
   * I/O isolation can be achieved by using a combination of static partitioning and remote storage. This proposal recommends this approach with illustrations below.
 
@@ -27,6 +27,7 @@ Today, ephemeral local storage is exposed to pods via the container’s writable
 * Pods cannot request “guaranteed” local storage.
 * Local storage is a “best-effort” resource.
 * Pods can get evicted due to other pods filling up the local storage, after which no new pods will be admitted until sufficient storage has been reclaimed.
+* There is no quota control for local ephemeral storage.
 
 # Backgroud
 ## Local Storage Configuration
@@ -42,7 +43,7 @@ This partition holds the kubelet’s root directory (`/var/lib/kubelet` by defau
 This is an optional partition which runtimes can use for overlay filesystems. This feature will not attempt to provide resource garantee and isolation to this partition.
 
 ## Secondary Partitions
-All other partitions are exposed as local persistent volumes which are not covered in this feature. The term `Partitions` are used here to describe the main use cases for local storage. However, the proposal doesn't require a local volume to be an entire disk or a partition - it supports arbitrary directory.  This implies that cluster administrator can create multiple local volumes in one partition, each has the capacity of the partition, or even create local volume under primary partitions. Unless strictly required, e.g. if you have only one partition in your host, this is strongly discouraged.  For this reason, following description will use `partition` or `mount point` exclusively.
+All other partitions are exposed as local persistent volumes which are not covered in this feature.
 
 ## Resource Management Solution for CPU and Memory
 Currently kubernetes provides different levels of resource management for CPU and memory resource types. 
@@ -74,12 +75,11 @@ When scheduler admits pods, it sums up the storage requests from each container 
 
 ## Resource Quota
 Add two more resource quotas for storage. The request and limit set constraints on the total requests/limits of all containers’ in a namespace 
-ResourceRequestsStorageScratch
-ResourceLimitStorageScratch
+* ResourceRequestsEphemeralStorage
+* ResourceLimitsEphemeralStorage
 
 ## LimitRange
 Similar to CPU and memory, admin could use LimitRange to set default container’s local storage request/limit, and/or minimum/maximum resource constraints for a namespace. 
-
 
 
 # User Workflows
@@ -198,182 +198,20 @@ Similar to CPU and memory, admin could use LimitRange to set default container�
    - name: fooc
      resources:
        requests:
-         storage.kubernetes.io/logs: 500Mi
-         storage.kubernetes.io/overlay: 500Mi
+         ephemeral-storage: 10Gi
+       limits:
+         ephemeral-storage: 10Gi
      volumeMounts:
      - name: myEmptyDir
        mountPath: /mnt/data
    volumes:
    - name: myEmptyDir
      emptyDir:
-       sizeLimit: 2Gi
+       sizeLimit: 5Gi
   ```
 
 6. It is recommended to require `limits` to be specified for `storage` in all pods. `storage` will not affect the `QoS` Class of a pod since no SLA is intended to be provided for storage capacity isolation. It is recommended to use Persistent Volumes as much as possible and avoid primary partitions.
 
-### Alice manages a Database which needs access to “durable” and fast scratch space
-
-1. Cluster administrator provisions machines with local SSDs and brings up the cluster
-2. When a new node instance starts up, an addon DaemonSet discovers local “secondary” partitions which are mounted at a well known location and creates Local PVs for them if one doesn’t exist already. The PVs will include a path to the secondary device mount points, and a node affinity ties the volume to a specific node.  The node affinity specification tells the scheduler to filter PVs with the same affinity key/value on the node.  For the local storage case, the key is `kubernetes.io/hostname`, but the same mechanism could be used for zone constraints as well.
-
-    ```yaml
-    kind: StorageClass
-    apiVersion: storage.k8s.io/v1
-    metadata:
-      name: local-fast
-    toplogyKey: kubernetes.io/hostname
-    ```
-    ```yaml
-    kind: PersistentVolume
-    apiVersion: v1
-    metadata:
-      name: local-pv-1
-    spec:
-      nodeAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          nodeSelectorTerms:
-          - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-              - node-1
-      capacity:
-        storage: 100Gi
-      local:
-        path: /var/lib/kubelet/storage-partitions/local-pv-1
-      accessModes:
-        - ReadWriteOnce
-      persistentVolumeReclaimPolicy: Delete
-      storageClassName: local-fast
-    ```
-    ```
-    $ kubectl get pv
-    NAME       CAPACITY ACCESSMODES RECLAIMPOLICY STATUS    CLAIM … NODE
-    local-pv-1 100Gi    RWO         Delete        Available         node-1
-    local-pv-2 10Gi     RWO         Delete        Available         node-1
-    local-pv-1 100Gi    RWO         Delete        Available         node-2
-    local-pv-2 10Gi     RWO         Delete        Available         node-2
-    local-pv-1 100Gi    RWO         Delete        Available         node-3
-    local-pv-2 10Gi     RWO         Delete        Available         node-3
-    ```
-3. Alice creates a StatefulSet that requests local storage from StorageClass "local-fast".  The PVC will only be bound to PVs that match the StorageClass name.
-
-    ```yaml
-    apiVersion: apps/v1beta1
-    kind: StatefulSet
-    metadata:
-      name: web
-    spec:
-      serviceName: "nginx"
-      replicas: 3
-      template:
-        metadata:
-          labels:
-            app: nginx
-        spec:
-          terminationGracePeriodSeconds: 10
-          containers:
-          - name: nginx
-            image: gcr.io/google_containers/nginx-slim:0.8
-            ports:
-            - containerPort: 80
-              name: web
-            volumeMounts:
-            - name: www
-              mountPath: /usr/share/nginx/html
-            - name: log
-              mountPath: /var/log/nginx
-      volumeClaimTemplates:
-      - metadata:
-          name: www
-        spec:
-          accessModes: [ "ReadWriteOnce" ]
-          storageClassName: local-fast
-          resources:
-            requests:
-              storage: 100Gi
-      - metadata:
-          name: log
-        spec:
-          accessModes: [ "ReadWriteOnce" ]
-          storageClassName: local-slow
-          resources:
-            requests:
-              storage: 1Gi
-    ```
-
-4. The scheduler identifies nodes for each pod that can satisfy all the existing predicates.
-5. The nodes list is further filtered by looking at the PVC's StorageClass, and checking if there is available PV of the same StorageClass on a node.
-6. The scheduler chooses a node for the pod based on a ranking algorithm.
-7. Once the pod is assigned to a node, then the pod’s local PVCs get bound to specific local PVs on the node.
-
-    ```
-    $ kubectl get pvc
-    NAME            STATUS VOLUME     CAPACITY ACCESSMODES … NODE
-    www-local-pvc-1 Bound  local-pv-1 100Gi    RWO           node-1
-    www-local-pvc-2 Bound  local-pv-1 100Gi    RWO           node-2
-    www-local-pvc-3 Bound  local-pv-1 100Gi    RWO           node-3
-    log-local-pvc-1 Bound  local-pv-2 10Gi     RWO           node-1
-    log-local-pvc-2 Bound  local-pv-2 10Gi     RWO           node-2
-    log-local-pvc-3 Bound  local-pv-2 10Gi     RWO           node-3
-    ```
-    ```
-    $ kubectl get pv
-    NAME       CAPACITY … STATUS    CLAIM           NODE
-    local-pv-1 100Gi      Bound     www-local-pvc-1 node-1
-    local-pv-2 10Gi       Bound     log-local-pvc-1 node-1
-    local-pv-1 100Gi      Bound     www-local-pvc-2 node-2
-    local-pv-2 10Gi       Bound     log-local-pvc-2 node-2
-    local-pv-1 100Gi      Bound     www-local-pvc-3 node-3
-    local-pv-2 10Gi       Bound     log-local-pvc-3 node-3
-    ```
-
-8. If a pod dies and is replaced by a new one that reuses existing PVCs, the pod will be placed on the same node where the corresponding PVs exist. Stateful Pods are expected to have a high enough priority which will result in such pods preempting other low priority pods if necessary to run on a specific node.
-9. Forgiveness policies can be specified as tolerations in the pod spec for each failure scenario.  No toleration specified means that the failure is not tolerated.  In that case, the PVC will immediately be unbound, and the pod will be rescheduled to obtain a new PV.  If a toleration is set, by default, it will be tolerated forever.  `tolerationSeconds` can be specified to allow for a timeout period before the PVC gets unbound.
-
-  Node taints already exist today.  Pod scheduling failures are specified separately as a timeout.
-  ```yaml
-  apiVersion: v1
-  kind: Pod
-  metadata:
-    name: foo
-  spec:
-    <snip>
-    nodeTolerations:
-      - key: node.alpha.kubernetes.io/notReady
-        operator: TolerationOpExists
-        tolerationSeconds: 600
-      - key: node.alpha.kubernetes.io/unreachable
-        operator: TolerationOpExists
-        tolerationSeconds: 1200
-    schedulingFailureTimeoutSeconds: 600
-  ```
-
-  A new PV taint will be introduced to handle unhealthy volumes.  The addon or another external entity can monitor the volumes and add a taint when it detects that it is unhealthy.
-  ```yaml
-  apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata:
-    name: foo
-  spec:
-    <snip>
-    pvTolerations:
-      - key: storage.kubernetes.io/pvUnhealthy
-        operator: TolerationOpExists
-  ```
-10. Once Alice decides to delete the database, she destroys the StatefulSet, and then destroys the PVCs.  The PVs will then get deleted and cleaned up according to the reclaim policy, and the addon adds it back to the cluster.
-
-### Bob manages a distributed filesystem which needs access to all available storage on each node
-
-1. The cluster that Bob is using is provisioned with nodes that contain one or more secondary partitions
-2. The cluster administrator runs a DaemonSet addon that discovers secondary partitions across all nodes and creates corresponding PVs for them.
-3. The addon will monitor the health of secondary partitions and mark PVs as unhealthy whenever the backing local storage devices have failed.
-4. Bob creates a specialized controller (Operator) for his distributed filesystem and deploys it.
-5. The operator will identify all the nodes that it can schedule pods onto and discovers the PVs available on each of those nodes. The operator has a label selector that identifies the specific PVs that it can use (this helps preserve fast PVs for Databases for example).
-6. The operator will then create PVCs and manually bind to individual local PVs across all its nodes.
-7. It will then create pods, manually place them on specific nodes (similar to a DaemonSet) with high enough priority and have them use all the PVCs created by the Operator on those nodes.
-8. If a pod dies, it will get replaced with a new pod that uses the same set of PVCs that the old pod had used.
-9. If a PV gets marked as unhealthy, the Operator is expected to delete pods if they cannot tolerate device failures
 
 # FAQ
 
