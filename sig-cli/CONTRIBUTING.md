@@ -114,16 +114,13 @@ assigned to them:
 **Note:** Don't do this unless you will start work on the issue within a few days of being assigned.
 
 **Note:** GitHub only allows issues to be assigned to GitHub accounts that are part
-of the organization or listed as outside collaborators.  In order to become an outside
-collaborator, contributors have to have shown commitment to the issue by performing some
-work.  Once you have begun, reach out to the issue author and show them your progress
-(e.g. in a fork).
+of the organization.
 
 **Picking your first issue**
 
 For your first issue, we recommend picking an issue labeled with "good first issue" from the [issue] backlog.
 
-**Picking the right size of issue** 
+**Picking the right size of issue**
 
 Be sure to pick up an issue that is appropriate to the time you are able to commit.
 We recommend first time contributors start with small or medium issues.
@@ -150,7 +147,7 @@ some piece of it, and if you would like to continue working on it, or have it un
 Guided issues have a *type* defining the type of work to be done.  Pick up an
 issue that fits your experience level and interest.  Documentation and
 test-coverage issues typically are smaller in scope and easier to complete than
-features and cleanup issues. 
+features and cleanup issues.
 
 - `type/code-cleanup`
   - Usually some refactoring or small rewrites of code.
