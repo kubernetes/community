@@ -78,16 +78,158 @@ pod placement, volume binding and provisioning should be more tightly coupled wi
 pod scheduling.
 
 
-## Background
-In 1.7, we added alpha support for [local PVs](local-storage-pv.md) with node affinity.
-You can specify a PV object with node affinity, and if a pod is using such a PV,
-the scheduler will evaluate the PV node affinity in addition to the other
-scheduling predicates.  So far, the PV node affinity only influences pod
-scheduling once the PVC is already bound.  The initial PVC binding decision was
-unchanged.  This proposal addresses the initial PVC binding decision.
+## New Volume Topology Specification
+To specify a volume's topology constraints in Kubernetes, the PersistentVolume
+object will be extended with a new NodeAffinity field that specifies the
+constraints.  It will closely mirror the existing NodeAffinity type used by
+Pods, but we will use a new type so that we will not be bound by existing and
+future Pod NodeAffinity semantics.
+
+```
+type PersistentVolumeSpec struct {
+    ...
+
+    NodeAffinity *VolumeNodeAffinity
+}
+
+type VolumeNodeAffinity struct {
+    // The PersistentVolume can only be accessed by Nodes that meet
+    // these required constraints
+    Required *NodeSelector
+}
+```
+
+The `Required` field is a hard constraint and indicates that the PersistentVolume
+can only be accessed from Nodes that satisfy the NodeSelector.
+
+In the future, a `Preferred` field can be added to handle soft node contraints with
+weights, but will not be included in the initial implementation.
+
+The advantages of this NodeAffinity field vs the existing method of using zone labels
+on the PV are:
+* We don't need to expose first-class labels for every topology domain.
+* Implementation does not need to be updated every time a new topology domain
+  is added to the cluster.
+* NodeSelector is able to express more complex topology with ANDs and ORs.
+
+Some downsides include:
+* You can have a proliferation of Node labels if you are running many different
+  kinds of volume plugins, each with their own topology labeling scheme.
 
 
-## Design
+### Example PVs with NodeAffinity
+#### Local Volume
+```
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  Name: local-volume-1
+spec:
+  capacity:
+    storage: 100Gi
+  storageClassName: my-class
+  local:
+    path: /mnt/disks/ssd1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node-1
+```
+
+#### Zonal Volume
+```
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  Name: zonal-volume-1
+spec:
+  capacity:
+    storage: 100Gi
+  storageClassName: my-class
+  gcePersistentDisk:
+    diskName: my-disk
+    fsType: ext4
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: failure-domain.beta.kubernetes.io/zone
+          operator: In
+          values:
+          - us-central1-a
+```
+
+#### Multi-Zonal Volume
+```
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  Name: multi-zonal-volume-1
+spec:
+  capacity:
+    storage: 100Gi
+  storageClassName: my-class
+  gcePersistentDisk:
+    diskName: my-disk
+    fsType: ext4
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: failure-domain.beta.kubernetes.io/zone
+          operator: In
+          values:
+          - us-central1-a
+          - us-central1-b
+```
+
+### Default Specification
+Existing admission controllers and dynamic provisioners for zonal volumes
+will be updated to specify PV NodeAffinity in addition to the existing zone
+and region labels.  This will handle newly created PV objects.
+
+Existing PV objects will have to be upgraded to use the new NodeAffinity field.
+This does not have to occur instantaneously, and can be updated within the
+deprecation period.
+
+TODO: This can be done through one of the following methods:
+- Manual updates/scripts
+- cluster/update-storage-objects.sh?
+- A new PV update controller
+
+### Bound PVC Enforcement
+For PVCs that are already bound to a PV with NodeAffinity, enforcement is
+simple and will be done at two places:
+* Scheduler predicate: if a Pod references a PVC that is bound to a PV with
+NodeAffinity, the predicate will evaluate the `Required` NodeSelector against
+the Node's labels to filter the nodes that the Pod can be schedule to.  The
+existing VolumeZone scheduling predicate will coexist with this new predicate
+for several releases until PV NodeAffinity becomes GA and we can deprecate the
+old predicate.
+* Kubelet: PV NodeAffinity is verified against the Node when mounting PVs.
+
+### Unbound PVC Binding
+As mentioned in the problem statement, volume binding occurs without any input
+about a Pod's scheduling constraints.  To fix this, we will delay volume binding
+and provisioning until a Pod is created.  This behavior change will be opt-in as a
+new StorageClass parameter.
+
+Both binding decisions of:
+* Selecting a precreated PV with NodeAffinity
+* Dynamically provisioning a PV with NodeAffinity
+
+will be considered by the scheduler, so that all of a Pod's scheduling
+constraints can be evaluated at once.
+
+The rest of this document describes the detailed design for implementing this
+new volume binding behavior.
+
+
+## New Volume Binding Design
 The design can be broken up into a few areas:
 * User-facing API to invoke new behavior
 * Integrating PV binding with pod scheduling
