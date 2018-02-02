@@ -202,6 +202,9 @@ Have you ever noticed the total number of [open issues](https://issues.k8s.io)? 
 
 If you haven't noticed by now, we have a large, lively, and friendly open-source community. We depend on new people becoming members and regular code contributors, so we would like you to come join us. To find out more about our community structure, different levels of membership and code contributors, please [explore here](/community-membership.md).
 
+## Communication
+
+- [General Information](/communication) 
 
 ## Events
 
