@@ -1,5 +1,7 @@
 # MetadataPolicy and its use in choosing the scheduler in a multi-scheduler system
 
+Status: Not Implemented
+
 ## Introduction
 
 This document describes a new API resource, `MetadataPolicy`, that configures an
