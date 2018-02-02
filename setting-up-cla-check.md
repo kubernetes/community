@@ -15,7 +15,7 @@ the Linux Foundation CNCF CLA check for your repositories, please read on.
       - `comment=no` specifies that our system should not post help comments into the pull request (since the Kubernetes mungebot does this).
       - `target=https://identity.linuxfoundation.org/projects/cncf` specifies what will be used for the "Details" link in Github for this status check.
     - Content Type: application/json
-    - Secret: Please contact one of [@idvoretskyi](https://github.com/idvoretskyi) <ihor@linux.com> or [@caniszczyk](https://github.com/caniszczyk) <caniszczyk@linuxfoundation.org>
+    - Secret: Please contact one of [@idvoretskyi](https://github.com/idvoretskyi) <ihor@cncf.io> or [@caniszczyk](https://github.com/caniszczyk) <caniszczyk@linuxfoundation.org>
     - Events: Let me select individual events
       - Push: **unchecked**
       - Pull request: checked
