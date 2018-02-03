@@ -38,7 +38,7 @@ Specific questions about Kubernetes as pertaining to the topic. Since this is a 
 
 #### What’s Offtopic
 
-Developer/Contributor questions: This event is for end users and operators, there is a seperate livestream called [Meet our Contributors](/mentoring/meet-our-contributors.md)) where you can ask questions about getting started contributing, participating in peer reviews, and other development topics.
+Developer/Contributor questions: This event is for end users and operators, there is a seperate livestream called [Meet our Contributors](/mentoring/meet-our-contributors.md) where you can ask questions about getting started contributing, participating in peer reviews, and other development topics.
 
 Local installation and debugging: The participants don’t have access to your network or your hardware. The host can/should help the user transform a vague question into something answerable and reusable. 
 
