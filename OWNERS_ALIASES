@@ -118,6 +118,12 @@ aliases:
   wg-multitenancy-leads:
     - davidopp
     - jessfraz
+  wg-policy-leads:
+    - hannibalhuang
+    - tsandall
+    - davidopp
+    - smarterclayton
+    - xuanjia
   wg-resource-management-leads:
     - vishh
     - derekwaynecarr
