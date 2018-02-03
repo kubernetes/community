@@ -1,3 +1,7 @@
+---
+title: Kubernetes Contributor Guide
+---
+
 # Kubernetes Contributor Guide
 
 ## Disclaimer
