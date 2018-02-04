@@ -165,7 +165,7 @@ type PriorityClass struct {
   metav1.ObjectMeta
   
   // The value of this priority class. This is the actual priority that pods
-  // recieve when they have the above name in their pod spec.
+  // receive when they have the above name in their pod spec.
   Value        int32
   GlobalDefault     bool
   Description       string

@@ -5,7 +5,7 @@
 In addition to Kubernetes core components like api-server, scheduler, controller-manager running on a master machine
 there is a bunch of addons which due to various reasons have to run on a regular cluster node, not the master.
 Some of them are critical to have fully functional cluster: Heapster, DNS, UI. Users can break their cluster
-by evicting a critical addon (either manually or as a side effect of an other operation like upgrade)
+by evicting a critical addon (either manually or as a side effect of another operation like upgrade)
 which possibly can become pending (for example when the cluster is highly utilized).
 To avoid such situation we want to have a mechanism which guarantees that
 critical addons are scheduled assuming the cluster is big enough.

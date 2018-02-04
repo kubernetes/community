@@ -38,13 +38,13 @@ to Kubelet and monitor them without writing custom Kubernetes code.
 We also want to provide a consistent and portable solution for users to
 consume hardware devices across k8s clusters.
 
-This document describes a vendor independant solution to:
+This document describes a vendor independent solution to:
   * Discovering and representing external devices
   * Making these devices available to the containers, using these devices,
     scrubbing and securely sharing these devices.
   * Health Check of these devices
 
-Because devices are vendor dependant and have their own sets of problems
+Because devices are vendor dependent and have their own sets of problems
 and mechanisms, the solution we describe is a plugin mechanism that may run
 in a container deployed through the DaemonSets mechanism or in bare metal mode.
 
@@ -187,7 +187,7 @@ sockets and follow this simple pattern:
    gRPC request)
 2. Kubelet answers to the `RegisterRequest` with a `RegisterResponse`
    containing any error Kubelet might have encountered
-3. The device plugin start it's gRPC server if it did not recieve an
+3. The device plugin start it's gRPC server if it did not receive an
    error
 
 ## Unix Socket
@@ -242,7 +242,7 @@ service Registration {
 // DevicePlugin is the service advertised by Device Plugins
 service DevicePlugin {
 	// ListAndWatch returns a stream of List of Devices
-	// Whenever a Device state change or a Device disapears, ListAndWatch
+	// Whenever a Device state change or a Device disappears, ListAndWatch
 	// returns the new list
 	rpc ListAndWatch(Empty) returns (stream ListAndWatchResponse) {}
 
@@ -282,7 +282,7 @@ message AllocateResponse {
 }
 
 // ListAndWatch returns a stream of List of Devices
-// Whenever a Device state change or a Device disapears, ListAndWatch
+// Whenever a Device state change or a Device disappears, ListAndWatch
 // returns the new list
 message ListAndWatchResponse {
 	repeated Device devices = 1;
@@ -485,7 +485,7 @@ spec:
 Currently we require exact version match between Kubelet and Device Plugin.
 API version is expected to be increased only upon incompatible API changes.
 
-Follow protobuf guidelines on versionning:
+Follow protobuf guidelines on versioning:
   * Do not change ordering
   * Do not remove fields or change types
   * Add optional fields

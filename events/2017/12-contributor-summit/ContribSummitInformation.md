@@ -65,6 +65,6 @@ Call for topics and voting is now closed. You can view the complete list of prop
 
 ## Misc:
 
-A photographer and videographer will be onsite collecting b-roll and other shots for KubeCon. If you would rather not be involved, please reach out to an organizer on the day of so we may accomodate you.  
+A photographer and videographer will be onsite collecting b-roll and other shots for KubeCon. If you would rather not be involved, please reach out to an organizer on the day of so we may accommodate you.  
 
 Further details to be updated on this doc. Please check back for a complete guide.

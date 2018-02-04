@@ -77,7 +77,7 @@ Q: (maru) you’re still going to have to rebase feature branches the way that y
 - A (jago) the difference is that a whole team could work on a feature branch
 - I like the idea of trying a few projects and then reporting back
 - I think roughly the level of granularity of having a branch per KEP sounds about right
-- Multiple feature branches affecting the same area of code would be a very useful place to get some infromation
+- Multiple feature branches affecting the same area of code would be a very useful place to get some information
 
 Q (???) if someone needs to rebase on a feature branch, could it instead be resolved by a merge commit instead?
 

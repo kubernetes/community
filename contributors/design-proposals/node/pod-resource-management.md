@@ -118,7 +118,7 @@ The following formula is used to convert CPU in millicores to cgroup values:
 The `kubelet` will create a cgroup sandbox for each pod.
 
 The naming convention for the cgroup sandbox is `pod<pod.UID>`.  It enables
-the `kubelet` to associate a particular cgroup on the host filesytem
+the `kubelet` to associate a particular cgroup on the host filesystem
 with a corresponding pod without managing any additional state.  This is useful
 when the `kubelet` restarts and needs to verify the cgroup filesystem.
 
@@ -433,7 +433,7 @@ eviction decisions for the unbounded QoS tiers (Burstable, BestEffort).
 The following describes the cgroup representation of a node with pods
 across multiple QoS classes.
 
-### Cgroup Hierachy
+### Cgroup Hierarchy
 
 The following identifies a sample hierarchy based on the described design.
 

@@ -336,7 +336,7 @@ type VerticalPodAutoscalerStatus {
 	StatusMessage string
 }
 
-// UpdateMode controls when autoscaler applies changes to the pod resoures.
+// UpdateMode controls when autoscaler applies changes to the pod resources.
 type UpdateMode string
 const (
 	// UpdateModeOff means that autoscaler never changes Pod resources.
@@ -354,7 +354,7 @@ const (
 
 // PodUpdatePolicy describes the rules on how changes are applied to the pods.
 type PodUpdatePolicy struct {
-	// Controls when autoscaler applies changes to the pod resoures.
+	// Controls when autoscaler applies changes to the pod resources.
 	// +optional
 	UpdateMode UpdateMode
 }

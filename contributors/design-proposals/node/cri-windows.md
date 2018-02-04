@@ -5,7 +5,7 @@
 **Status**: Proposed
 
 ## Background
-Container Runtime Interface (CRI) defines [APIs and configuration types](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/apis/cri/v1alpha1/runtime/api.proto) for kubelet to integrate various container runtimes. The Open Container Initiative (OCI) Runtime Specification defines [platform specific configuration](https://github.com/opencontainers/runtime-spec/blob/master/config.md#platform-specific-configuration), including Linux, Windows, and Solaris. Currently CRI only suppports Linux container configuration.  This proposal is to bring the Memory & CPU resource restrictions already specified in OCI for Windows to CRI.
+Container Runtime Interface (CRI) defines [APIs and configuration types](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/apis/cri/v1alpha1/runtime/api.proto) for kubelet to integrate various container runtimes. The Open Container Initiative (OCI) Runtime Specification defines [platform specific configuration](https://github.com/opencontainers/runtime-spec/blob/master/config.md#platform-specific-configuration), including Linux, Windows, and Solaris. Currently CRI only supports Linux container configuration.  This proposal is to bring the Memory & CPU resource restrictions already specified in OCI for Windows to CRI.
 
 The Linux & Windows schedulers differ in design and the units used, but can accomplish the same goal of limiting resource consumption of individual containers.
 

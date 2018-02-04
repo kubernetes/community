@@ -102,7 +102,7 @@ type VolumeNodeAffinity struct {
 The `Required` field is a hard constraint and indicates that the PersistentVolume
 can only be accessed from Nodes that satisfy the NodeSelector.
 
-In the future, a `Preferred` field can be added to handle soft node contraints with
+In the future, a `Preferred` field can be added to handle soft node constraints with
 weights, but will not be included in the initial implementation.
 
 The advantages of this NodeAffinity field vs the existing method of using zone labels
@@ -492,7 +492,7 @@ if the API update fails, the cached updates need to be reverted and restored
 with the actual API object.  The cache will return either the cached-only
 object, or the informer object, whichever one is latest.  Informer updates
 will always override the cached-only object.  The new predicate and priority
-functions must get the objects from this cache intead of from the informer cache.
+functions must get the objects from this cache instead of from the informer cache.
 This cache only stores pointers to objects and most of the time will only
 point to the informer object, so the memory footprint per object is small.
 

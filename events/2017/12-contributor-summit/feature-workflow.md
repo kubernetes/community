@@ -28,7 +28,7 @@ TSC: The KEP has owners, you could have a reviewer field and designate a reviewe
 
 Dhawal: many SIG meetings aren't really traceable because they're video meetings.  Stuff in Issues/PRs are much more referencable for new contributors.  If the feature is not searchable, then it's not available for anyone to check.  If it is going to a SIG, then you need to update the issue, and summarize the discussions in the SIG.
 
-TSC: Just because a feature is assigned to a SIG doesn't mean they'll acutally look at it.  SIGs have their own priorities.  There's so many issues in the backlog, nobody can deal with it.  My search for sig/scheduling is 10 different searches to find all of the sig/scheduling issues.  SIG labels aren't always applied.  And then you have to prioritize the list.
+TSC: Just because a feature is assigned to a SIG doesn't mean they'll actually look at it.  SIGs have their own priorities.  There's so many issues in the backlog, nobody can deal with it.  My search for sig/scheduling is 10 different searches to find all of the sig/scheduling issues.  SIG labels aren't always applied.  And then you have to prioritize the list.
 
 ???: Test plans also seem to be late in the game.  This could be part of the KEP process.  And user-facing-documentation.
 

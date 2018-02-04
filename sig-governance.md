@@ -33,7 +33,7 @@ In order to standardize Special Interest Group efforts, create maximum transpare
    1. Create a calendar on your own account. Make it public.
    2. Share it with all SIG leads with full ownership of the calendar - they can edit, rename, or even delete it.
    3. Share it with `sc1@kubernetes.io`, `sc2@kubernetes.io`, `sc3@kubernetes.io`, with full ownership. This is just in case SIG leads ever disappear.
-   4. Share it with the SIG mailing list, lowest priviledges.
+   4. Share it with the SIG mailing list, lowest privileges.
    5. Share individual events with `cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com` to publish on the universal calendar.
 * Use existing proposal and PR process (to be documented)
 * Announce new SIG on kubernetes-dev@googlegroups.com 

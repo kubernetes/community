@@ -77,5 +77,5 @@ The logic to determine if an object is sent to a Federated Cluster will have two
 
 ## Open Questions
 
-1. Should there be any special considerations for when dependant resources would not be forwarded together to a Federated Cluster.
+1. Should there be any special considerations for when dependent resources would not be forwarded together to a Federated Cluster.
 1. How to improve usability of this feature long term. It will certainly help to give first class API support but easier ways to map labels or requirements to objects may be required.

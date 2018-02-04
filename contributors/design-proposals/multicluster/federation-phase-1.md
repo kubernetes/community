@@ -335,7 +335,7 @@ only supports a simple list of acceptable clusters. Workloads will be
 evenly distributed on these acceptable clusters in phase one. After
 phase one we will define syntax to represent more advanced
 constraints, like cluster preference ordering, desired number of
-splitted workloads, desired ratio of workloads spread on different
+split workloads, desired ratio of workloads spread on different
 clusters, etc.
 
 Besides this explicit “clusterSelector” filter, a workload may have
