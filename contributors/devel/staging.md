@@ -12,7 +12,7 @@ At the time of this writing, this includes the branches
 - release-1.8 / release-5.0,
 - and release-1.9 / release-6.0
 
-of the follwing staging repos in the k8s.io org:
+of the following staging repos in the k8s.io org:
 
 - api
 - apiextensions-apiserver
