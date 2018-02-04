@@ -25,7 +25,7 @@ This document presents a proposal for managing raw block storage in Kubernetes u
 # Value add to Kubernetes
   
   By extending the API for volumes to specifically request a raw block device, we provide an explicit method for volume consumption,
-  whereas previously any request for storage was always fulfilled with a formatted fileystem, even when the underlying storage was 
+  whereas previously any request for storage was always fulfilled with a formatted filesystem, even when the underlying storage was 
   block. In addition, the ability to use a raw block device without a filesystem will allow
   Kubernetes better support of high performance applications that can utilize raw block devices directly for their storage. 
   Block volumes are critical to applications like databases (MongoDB, Cassandra) that require consistent I/O performance
@@ -113,7 +113,7 @@ spec:
 
 ## Persistent Volume API Changes:
 For static provisioning the admin creates the volume and also is intentional about how the volume should be consumed. For backwards
-compatibility, the absence of volumeMode will default to filesystem which is how volumes work today, which are formatted with a filesystem depending on the plug-in chosen. Recycling will not be a supported reclaim policy as it has been deprecated. The path value in the local PV definition would be overloaded to define the path of the raw block device rather than the fileystem path.
+compatibility, the absence of volumeMode will default to filesystem which is how volumes work today, which are formatted with a filesystem depending on the plug-in chosen. Recycling will not be a supported reclaim policy as it has been deprecated. The path value in the local PV definition would be overloaded to define the path of the raw block device rather than the filesystem path.
 ```
 kind: PersistentVolume
 apiVersion: v1

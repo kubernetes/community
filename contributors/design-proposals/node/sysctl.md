@@ -115,7 +115,7 @@ supports setting a number of whitelisted sysctls during the container creation p
 Some real-world examples for the use of sysctls:
 
 - PostgreSQL requires `kernel.shmmax` and `kernel.shmall` (among others) to be
-  set to reasonable high values (compare [PostgresSQL Manual 17.4.1. Shared Memory
+  set to reasonable high values (compare [PostgreSQL Manual 17.4.1. Shared Memory
   and Semaphores](http://www.postgresql.org/docs/9.1/static/kernel-resources.html)).
   The default of 32 MB for shared memory is not reasonable for a database.
 - RabbitMQ proposes a number of sysctl settings to optimize networking: https://www.rabbitmq.com/networking.html.
@@ -342,7 +342,7 @@ Issues:
     * [x] **namespaced** in net ns
     * [ ] **might have application influence** for high values as it limits the socket queue length
     * [?] **No real evidence found until now for accounting**. The limit is checked by `sk_acceptq_is_full` at http://lxr.free-electrons.com/source/net/ipv4/tcp_ipv4.c#L1276. After that a new socket is created. Probably, the tcp socket buffer sysctls apply then, with their accounting, see below.
-    * [ ] **very unreliable** tcp memory accounting. There have a been a number of attemps to drop that from the kernel completely, e.g. https://lkml.org/lkml/2014/9/12/401. On Fedora 24 (4.6.3) tcp accounting did not work at all, on Ubuntu 16.06 (4.4) it kind of worked in the root-cg, but in containers only values copied from the root-cg appeared.
+    * [ ] **very unreliable** tcp memory accounting. There have a been a number of attempts to drop that from the kernel completely, e.g. https://lkml.org/lkml/2014/9/12/401. On Fedora 24 (4.6.3) tcp accounting did not work at all, on Ubuntu 16.06 (4.4) it kind of worked in the root-cg, but in containers only values copied from the root-cg appeared.
 e  - `net.ipv4.tcp_wmem`/`net.ipv4.tcp_wmem`/`net.core.rmem_max`/`net.core.wmem_max`: socket buffer sizes
     * [ ] **not namespaced in net ns**, and they are not even available under `/sys/net`
   - `net.ipv4.ip_local_port_range`: local tcp/udp port range

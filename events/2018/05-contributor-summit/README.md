@@ -53,6 +53,6 @@ Combined social function 5-7pm so the two groups can comingle. Hard cut off at 7
 
 ## Misc:
 
-A photographer and videographer will be onsite collecting b-roll and other shots for KubeCon. If you would rather not be involved, please reach out to an organizer on the day of so we may accomodate you.  
+A photographer and videographer will be onsite collecting b-roll and other shots for KubeCon. If you would rather not be involved, please reach out to an organizer on the day of so we may accommodate you.  
 
 Further details to be updated on this doc. Please check back for a complete guide.

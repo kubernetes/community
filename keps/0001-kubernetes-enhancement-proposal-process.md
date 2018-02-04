@@ -172,7 +172,7 @@ Metadata items:
 * **owning-sig** Required
   * The SIG that is most closely associated with this KEP. If there is code or
     other artifacts that will result from this KEP, then it is expected that
-    this SIG will take responsiblity for the bulk of those artifacts.
+    this SIG will take responsibility for the bulk of those artifacts.
   * Sigs are listed as `sig-abc-def` where the name matches up with the
     directory in the `kubernetes/community` repo.
 * **participating-sigs** Optional

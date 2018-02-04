@@ -160,7 +160,7 @@ type ExecAuthProviderConfig struct {
     // to pass argument to the plugin.
     Env []ExecEnvVar `json:"env"`
 
-    // Prefered input version of the ExecInfo. The returned ExecCredentials MUST use
+    // Preferred input version of the ExecInfo. The returned ExecCredentials MUST use
     // the same encoding version as the input.
     APIVersion string `json:"apiVersion,omitempty"`
 

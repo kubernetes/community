@@ -130,7 +130,7 @@ GET /api/v1/pods?limit=500&continue=DEF...
 
 Some clients may wish to follow a failed paged list with a full list attempt.
 
-The 5 minute default compaction interval for etcd3 bounds how long a list can run.  Since clients may wish to perform processing over very large sets, increasing that timeout may make sense for large clusters. It should be possible to alter the interval at which compaction runs to accomodate larger clusters.
+The 5 minute default compaction interval for etcd3 bounds how long a list can run.  Since clients may wish to perform processing over very large sets, increasing that timeout may make sense for large clusters. It should be possible to alter the interval at which compaction runs to accommodate larger clusters.
 
 
 #### Types of clients and impact

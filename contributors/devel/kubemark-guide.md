@@ -124,7 +124,7 @@ and Scheduler talk with API server using insecure port 8080.</sub>
      (We use gcr.io/ as our remote docker repository in GCE, should be different for other providers)
   3. [One-off] Create and upload a Docker image for NodeProblemDetector (see kubernetes/node-problem-detector repo),
      which is one of the containers in the HollowNode pod, besides HollowKubelet and HollowProxy. However we
-     use it with a hollow config that esentially has an empty set of rules and conditions to be detected.
+     use it with a hollow config that essentially has an empty set of rules and conditions to be detected.
      This step is required only for other cloud providers, as the docker image for GCE already exists on GCR.
   4. Create secret which stores kubeconfig for use by HollowKubelet/HollowProxy, addons, and configMaps
      for the HollowNode and the HollowNodeProblemDetector.
