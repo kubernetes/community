@@ -4,9 +4,9 @@
 
 #### Meeting Playlists
 #### 
-The [Kubernetes Youtube Channel](https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg) has separate playlists for each SIG’s meeting recordings, as well as recordings for other meetings (i.e. Cloud Native, Kubernetes Community meetings). 
+The [Kubernetes Youtube Channel](https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg) has separate playlists for each SIG’s meeting recordings, as well as recordings of other meetings (i.e. Cloud Native, Kubernetes Community meetings). 
 
-To better serve the community, we have setup [collaboration](https://support.google.com/youtube/answer/6109639) on these playlists, so that anyone with the appropriate link to the particular playlist can upload videos *to that particular playlist* (links & playlists are 1:1).
+To better serve the community, we have set up [collaboration](https://support.google.com/youtube/answer/6109639) on these playlists, so that anyone with the appropriate link to the particular playlist can upload videos *to that particular playlist* (links & playlists are 1:1).
 
 Each SIG playlist’s link will be shared with the SIG’s leadership, and other playlists' links (i.e. Cloud Native) will be shared with the appropriate point(s) of contact. The SIG playlist links will be sent to the official SIG lead Google Groups. 
 
