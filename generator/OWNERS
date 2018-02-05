@@ -4,3 +4,5 @@ reviewers:
 approvers:
   - vishh
   - cblecker
+labels:
+  - sig/contributor-experience
