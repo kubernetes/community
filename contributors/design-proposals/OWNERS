@@ -16,3 +16,5 @@ approvers:
   - thockin
   - wojtek-t
   - bgrant0607
+labels:
+  - kind/design
