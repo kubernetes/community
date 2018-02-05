@@ -221,5 +221,4 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held twice per year in E
 ### KubeCon
 
 ## Mentorship
-
-* Please help write this section.
+Please learn about our mentoring initiatives [here](http://git.k8s.io/community/mentoring/README.md).
