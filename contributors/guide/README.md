@@ -218,7 +218,6 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held twice per year in E
 
 We follow the general [Cloud Native Computing Foundation guidelines](https://github.com/cncf/meetups) for Meetups. You may also contact Paris Pittman via direct message on Kubernetes Slack (@paris) or by email (parispittman@google.com)
 
-### KubeCon
-
 ## Mentorship
+
 Please learn about our mentoring initiatives [here](http://git.k8s.io/community/mentoring/README.md).
