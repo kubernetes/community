@@ -595,7 +595,7 @@ any other labels.
 As each new release of Kubernetes providers new functionality, the subset of
 tests necessary to demonstrate conformance grows with each release. Conformance
 is thus considered versioned, with the same backwards compatibility guarantees
-as laid out in [our versioning policy](../design-proposals/release/versioning.md#supported-releases).
+as laid out in [our versioning policy](/contributors/design-proposals/release/versioning.md#supported-releases-and-component-skew).
 Conformance tests for a given version should be run off of the release branch
 that corresponds to that version. Thus `v1.2` conformance tests would be run
 from the head of the `release-1.2` branch. eg:
