@@ -20,8 +20,8 @@ sigs:
       time: "11:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://staging.talkgadget.google.com/hangouts/_/google.com/kubernetes-sig
-      archive_url: https://goo.gl/x5nWrF
+      url: https://zoom.us/my/apimachinery
+      archive_url: https://goo.gl/0lbiM9
       recordings_url: https://www.youtube.com/watch?v=Lj1ScbXpnpY&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R
     contact:
       slack: sig-api-machinery
