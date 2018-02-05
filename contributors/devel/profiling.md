@@ -1,6 +1,6 @@
 # Profiling Kubernetes
 
-This document explain how to plug in profiler and how to profile Kubernetes services.
+This document explain how to plug in profiler and how to profile Kubernetes services. To get familiar with the tools mentioned below, it is strongly recommended to read [Profiling Go Programs](https://blog.golang.org/profiling-go-programs).
 
 ## Profiling library
 
@@ -16,7 +16,7 @@ m.mux.HandleFunc("/debug/pprof/profile", pprof.Profile)
 m.mux.HandleFunc("/debug/pprof/symbol", pprof.Symbol)
 ```
 
-to the init(c *Config) method in 'pkg/master/master.go' and import 'net/http/pprof' package.
+to the `init(c *Config)` method in 'pkg/master/master.go' and import 'net/http/pprof' package.
 
 In most use cases to use profiler service it's enough to do 'import _ net/http/pprof', which automatically registers a handler in the default http.Server. Slight inconvenience is that APIserver uses default server for intra-cluster communication, so plugging profiler to it is not really useful. In 'pkg/kubelet/server/server.go' more servers are created and started as separate goroutines. The one that is usually serving external traffic is secureServer. The handler for this traffic is defined in 'pkg/master/master.go' and stored in Handler variable. It is created from HTTP multiplexer, so the only thing that needs to be done is adding profiler handler functions to this multiplexer. This is exactly what lines after TL;DR do.
 
@@ -40,3 +40,37 @@ to get 30 sec. CPU profile.
 
 To enable contention profiling you need to add line `rt.SetBlockProfileRate(1)` in addition to `m.mux.HandleFunc(...)` added before (`rt` stands for `runtime` in `master.go`). This enables 'debug/pprof/block' subpage, which can be used as an input to `go tool pprof`.
 
+## Profiling in tests
+
+To gather a profile from a test, the HTTP interface is probably not suitable. Instead, you can add the `-cpuprofile` flag to your KUBE_TEST_ARGS, e.g.
+
+```sh
+make test-integration WHAT="./test/integration/scheduler" KUBE_TEST_ARGS="-cpuprofile cpu.out"
+go tool pprof cpu.out
+```
+
+See the ['go test' flags](https://golang.org/cmd/go/#hdr-Description_of_testing_flags) for how to capture other types of profiles.
+
+## Profiling in a benchmark test
+
+Gathering a profile from a benchmark test works in the same way as regular tests, but sometimes there may be expensive setup that you want excluded from the profile. (i.e. any time you would use `b.ResetTimer()`)
+
+To solve this problem, you can explicitly start the profile in your test code like so.
+
+```go
+func BenchmarkMyFeature(b *testing.B) {
+  // Expensive test setup...
+  b.ResetTimer()
+  f, err := os.Create("bench_profile.out")
+  if err != nil {
+    log.Fatal("could not create profile file: ", err)
+  }
+  if err := pprof.StartCPUProfile(f); err != nil {
+    log.Fatal("could not start CPU profile: ", err)
+  }
+  defer pprof.StopCPUProfile()
+  // Rest of the test...
+}
+```
+
+> Note: Code added to a test to gather CPU profiles should not be merged. It is meant to be temporary while you create an analyze profiles.
