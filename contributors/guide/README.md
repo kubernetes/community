@@ -98,13 +98,16 @@ show up to one of the [bi-weekly meetings](https://docs.google.com/document/d/1q
 
 #### Find a SIG that is related to your contribution
 
-Finding the appropriate SIG for your contribution will help you ask questions in the correct place and give your contribution higher visibility and a faster community response.
+Finding the appropriate SIG for your contribution and adding a SIG label will help you ask questions in the correct place and give your contribution higher visibility and a faster community response.
 
 For Pull Requests, the automatically assigned reviewer will add a SIG label if you haven't done so. See [Open A Pull Request](#open-a-pull-request) below.
 
 For Issues, we are still working on a more automated workflow. Since SIGs do not directly map onto Kubernetes subrepositories, it may be difficult to find which SIG your contribution belongs in. Here is the [list of SIGs](/sig-list.md). Determine which is most likely related to your contribution.
 
-*Example:* if you are filing a cni issue, you should choose SIG-networking.
+*Example:* if you are filing a cni issue, you should choose the [Network SIG](http://git.k8s.io/community/sig-network). Add the SIG label in a comment like so:
+```
+/sig network
+```
 
 Follow the link in the SIG name column to reach each SIGs README. Most SIGs will have a set of GitHub Teams with tags that can be mentioned in a comment on issues and pull requests for higher visibility. If you are not sure about the correct SIG for an issue, you can try SIG-contributor-experience [here](/sig-contributor-experience#github-teams), or [ask in Slack](http://slack.k8s.io/).
 
