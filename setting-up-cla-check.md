@@ -14,8 +14,8 @@ the Linux Foundation CNCF CLA check for your repositories, please read on.
       - `group=284` specifies the ID of the CNCF project authorized committers group in our CLA system.
       - `comment=no` specifies that our system should not post help comments into the pull request (since the Kubernetes mungebot does this).
       - `target=https://identity.linuxfoundation.org/projects/cncf` specifies what will be used for the "Details" link in Github for this status check.
-    - Content Type: application/json
-    - Secret: Please contact one of [@idvoretskyi](https://github.com/idvoretskyi) <ihor@cncf.io> or [@caniszczyk](https://github.com/caniszczyk) <caniszczyk@linuxfoundation.org>
+    - Content Type: 'application/json'
+    - Secret: Please contact [@idvoretskyi](mailto:ihor@cncf.io), and [@caniszczyk](mailto:caniszczyk@linuxfoundation.org).
     - Events: Let me select individual events
       - Push: **unchecked**
       - Pull request: checked
@@ -23,9 +23,7 @@ the Linux Foundation CNCF CLA check for your repositories, please read on.
       - Active: checked
 1. Add the [@linuxfoundation](https://github.com/linuxfoundation) GitHub user as an **Owner**
    to your organization or repo to ensure the CLA status can be applied on PR's
-1. After you send an invite, contact the Linux Foundation (Chris Aniszczyk
-   <caniszczyk@linuxfoundation.org>, or Eric Searcy <eric@linuxfoundation.org>), or email the
-   helpdesk at helpdesk@rt.linuxfoundation.org to ensure that the invite gets accepted.
+1. After you send an invite, contact the [Linux Foundation](mailto:helpdesk@rt.linuxfoundation.org); and cc [Chris Aniszczyk](mailto:caniszczyk@linuxfoundation.org), [Ihor Dvoretskyi](mailto:ihor@cncf.io), [Eric Searcy](mailto:eric@linuxfoundation.org) (to ensure that the invite gets accepted).
 1. Finally, open up a test PR to check that:
     1. webhooks are delivered correctly, which can be monitored in the “settings” for your org
     1. the PR gets the cla/linuxfoundation status
