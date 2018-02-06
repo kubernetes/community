@@ -16,10 +16,10 @@ Welcome to Kubernetes! This document is the single source of truth for how to co
 
 -   [Before you get started](#before-you-get-started)
     -   [Sign the CLA](#sign-the-cla)
+    -   [Code of Conduct](#code-of-conduct)
     -   [Setting up your development
         environment](#setting-up-your-development-environment)
     -   [Community Expectations](#community-expectations)
-        -   [Code of Conduct](#code-of-conduct)
         -   [Thanks](#thanks)
 -   [Your First Contribution](#your-first-contribution)
     -   [Find something to work on](#find-something-to-work-on)
@@ -36,9 +36,9 @@ Welcome to Kubernetes! This document is the single source of truth for how to co
     -   [Documentation](#documentation)
     -   [Issues Management or Triage](#issues-management-or-triage)
 -   [Community](#community)
+    -   [Communication](#communication-1)
     -   [Events](#events)
         -   [Meetups](#meetups)
-        -   [KubeCon](#kubecon)
     -   [Mentorship](#mentorship)
 
 # Before you get started
