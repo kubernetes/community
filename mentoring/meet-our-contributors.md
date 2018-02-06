@@ -32,7 +32,8 @@ Tune into the [Kubernetes YouTube Channel](https://www.youtube.com/c/KubernetesC
 
 Questions will be on a first-come, first-served basis. First half will be dedicated to questions for contributors and the second half, we will pick a problem (in advance) for peer code review. Problems will be picked based on time commitment needed, skills of the reviewer, and if a large amount are submitted, need for the project. 
 
-
+## Call for Volunteers:
+Contributors - [sign up to answer questions!](https://goo.gl/uhEJ33) 
 
 
 ### TODO
