@@ -25,7 +25,7 @@ versions of the existing content and are not intended to support arbitrary param
 Also, the server today contains a number of objects which are common across multiple groups,
 but which clients must be able to deal with in a generic fashion. These objects - Status,
 ListMeta, ObjectMeta, List, ListOptions, ExportOptions, and Scale - are embedded into each
-group version but are actually part of a a shared API group. It must be possible for a naive
+group version but are actually part of a shared API group. It must be possible for a naive
 client to translate the Scale response returned by two different API group versions.
 
 
