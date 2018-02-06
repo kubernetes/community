@@ -105,7 +105,7 @@ Kube-apiserver uses the cloud provider for two purposes
 
 ### 5. Strategy for refactoring Volumes
 
-Volumes need cloud providers, but they only need SPECIFIC cloud providers. The majority of volume management logic resides in the controller manager. These controller loops need to be moved into the cloud-controller manager. The cloud controller manager also needs a mechanism to read parameters for initilization from cloud config. This can be done via config maps. 
+Volumes need cloud providers, but they only need SPECIFIC cloud providers. The majority of volume management logic resides in the controller manager. These controller loops need to be moved into the cloud-controller manager. The cloud controller manager also needs a mechanism to read parameters for initialization from cloud config. This can be done via config maps.
 
 There is an entirely different approach to refactoring volumes - Flex Volumes. There is an undergoing effort to move all of the volume logic from the controller-manager into plugins called Flex Volumes. In the Flex volumes world, all of the vendor specific code will be packaged in a separate binary as a plugin. After discussing with @thockin, this was decidedly the best approach to remove all cloud provider dependency for volumes out of kubernetes core.
 
