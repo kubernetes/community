@@ -28,7 +28,7 @@ Interested in how we can most effectively test Kubernetes. We're interested spec
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-testing:
 - **test-infra**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS

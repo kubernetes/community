@@ -26,10 +26,7 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
-- **k8s.io**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
+The following subprojects are owned by sig-architecture:
 - **kubernetes-template-project**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS

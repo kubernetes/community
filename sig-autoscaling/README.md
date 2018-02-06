@@ -25,7 +25,7 @@ Covers autoscaling of clusters, horizontal and vertical autoscaling of pods, set
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-autoscaling:
 - **autoscaler**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS

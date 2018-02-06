@@ -36,7 +36,7 @@ The Cluster Lifecycle SIG examines how we should change Kubernetes to make it ea
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-cluster-lifecycle:
 - **bootkube**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
@@ -55,9 +55,13 @@ The following subprojects are owned by this SIG:
 - **kube-deploy**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
+- **kube-up**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
 - **kubeadm**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
 - **kubernetes-anywhere**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS

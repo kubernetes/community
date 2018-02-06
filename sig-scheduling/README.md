@@ -25,7 +25,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-scheduling:
 - **cluster-capacity**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/cluster-capacity/master/OWNERS
@@ -35,6 +35,10 @@ The following subprojects are owned by this SIG:
 - **kube-arbitrator**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/kube-arbitrator/master/OWNERS
+- **scheduler**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kube-scheduler/OWNERS
 
 ## GitHub Teams
 

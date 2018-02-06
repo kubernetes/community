@@ -27,7 +27,7 @@ Covers deploying and operating applications in Kubernetes. We focus on the devel
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-apps:
 - **chart-testing**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-helm/chart-testing/master/OWNERS
@@ -37,21 +37,17 @@ The following subprojects are owned by this SIG:
 - **charts**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/charts/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-helm/charts-tooling/master/OWNERS
   - Meetings:
     - Charts Chat: [Tuesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/166909412) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
       - [Meeting notes and Agenda](https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3).
-- **charts-tooling**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-helm/charts-tooling/master/OWNERS
-- **community**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-helm/community/master/OWNERS
 - **examples**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/examples/master/OWNERS
 - **helm**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/helm/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-helm/community/master/OWNERS
   - Meetings:
     - Helm Developer call: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/4526666954) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
       - [Meeting notes and Agenda](https://docs.google.com/document/d/1elWRfvH3AkHdr8pOaqyPbqSZ6ONR-l1Sb9_gapqh8ZA/edit).
@@ -65,14 +61,17 @@ The following subprojects are owned by this SIG:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-helm/rudder-federation/master/OWNERS
 - **workloads-api**
-  - Description: The core workloads API, which is composed of the DaemonSet, Deployment, ReplicaSet, and StatefulSet kinds
+  - Description: The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, and StatefulSet kinds
   - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cronjob/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/daemon/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/deployment/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/history/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/job/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replicaset/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/apps/OWNERS
 
 ## GitHub Teams

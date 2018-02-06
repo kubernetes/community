@@ -25,7 +25,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-node:
 - **cri-containerd**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/cri-containerd/master/OWNERS
@@ -38,6 +38,10 @@ The following subprojects are owned by this SIG:
 - **frakti**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/frakti/master/OWNERS
+- **kubelet**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubelet/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
 - **node-feature-discovery**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/node-feature-discovery/master/OWNERS

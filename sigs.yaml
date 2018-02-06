@@ -45,75 +45,43 @@ sigs:
     - name: api
       owners:
       - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
-    - name: apiextensions-apiserver
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/apiextensions-apiserver/master/OWNERS
-    - name: apimachinery
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/apimachinery/master/OWNERS
     - name: apiserver
       owners:
       - https://raw.githubusercontent.com/kubernetes/apiserver/master/OWNERS
-    - name: apiserver-builder
-      owners:
+      - https://raw.githubusercontent.com/kubernetes/apimachinery/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder/master/OWNERS
-    - name: client-go
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/client-go/master/OWNERS
-    - name: client-python
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/client-python/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/sample-apiserver/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/sample-controller/master/OWNERS
     - name: code-generator
       owners:
       - https://raw.githubusercontent.com/kubernetes/code-generator/master/OWNERS
-    - name: community
+    - name: crd
       owners:
-      - https://raw.githubusercontent.com/kubernetes-client/community/master/OWNERS
-    - name: csharp
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-client/csharp/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/apiextensions-apiserver/master/OWNERS
     - name: gen
       owners:
-      - https://raw.githubusercontent.com/kubernetes-client/gen/master/OWNERS
-    - name: gengo
+    - name: IDL
       owners:
       - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS
-    - name: go
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-client/go/master/OWNERS
-    - name: go-base
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-client/go-base/master/OWNERS
-    - name: haskell
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-client/haskell/master/OWNERS
-    - name: java
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-client/java/master/OWNERS
-    - name: javascript
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-client/javascript/master/OWNERS
-    - name: kube-aggregator
+    - name: api-aggregation
       owners:
       - https://raw.githubusercontent.com/kubernetes/kube-aggregator/master/OWNERS
-    - name: kube-openapi
+    - name: kubernetes-client-library
       owners:
-      - https://raw.githubusercontent.com/kubernetes/kube-openapi/master/OWNERS
-    - name: python-base
-      owners:
+      - https://raw.githubusercontent.com/kubernetes-client/community/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/csharp/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/gen/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/go-base/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/go/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/haskell/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/java/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/javascript/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-client/python-base/master/OWNERS
-    - name: ruby
-      owners:
       - https://raw.githubusercontent.com/kubernetes-client/ruby/master/OWNERS
-    - name: sample-apiserver
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/sample-apiserver/master/OWNERS
-    - name: sample-controller
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/sample-controller/master/OWNERS
-    - name: typescript
-      owners:
       - https://raw.githubusercontent.com/kubernetes-client/typescript/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-incubator/client-python/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/client-go/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kube-openapi/master/OWNERS
     - name: utils
       owners:
       - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
@@ -181,12 +149,7 @@ sigs:
         archive_url: https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3
       owners:
       - https://raw.githubusercontent.com/kubernetes/charts/master/OWNERS
-    - name: charts-tooling
-      owners:
       - https://raw.githubusercontent.com/kubernetes-helm/charts-tooling/master/OWNERS
-    - name: community
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-helm/community/master/OWNERS
     - name: examples
       owners:
       - https://raw.githubusercontent.com/kubernetes/examples/master/OWNERS
@@ -201,6 +164,7 @@ sigs:
         archive_url: https://docs.google.com/document/d/1elWRfvH3AkHdr8pOaqyPbqSZ6ONR-l1Sb9_gapqh8ZA/edit
       owners:
       - https://raw.githubusercontent.com/kubernetes/helm/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-helm/community/master/OWNERS
     - name: kompose
       owners:
       - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
@@ -211,14 +175,17 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes-helm/rudder-federation/master/OWNERS
     - name: workloads-api
-      description: The core workloads API, which is composed of the DaemonSet, Deployment, ReplicaSet, and StatefulSet kinds
+      description: The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, and StatefulSet kinds
       owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cronjob/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/daemon/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/deployment/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/history/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/job/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replicaset/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS 
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/apps/OWNERS
   - name: Architecture
     dir: sig-architecture
@@ -261,9 +228,6 @@ sigs:
       - name: sig-architecture-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: k8s.io
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
     - name: kubernetes-template-project
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
@@ -520,6 +484,7 @@ sigs:
     - name: kubectl
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
   - name: Cluster Lifecycle
     dir: sig-cluster-lifecycle
     mission_statement: >
@@ -608,9 +573,13 @@ sigs:
     - name: kube-deploy
       owners:
       - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
+    - name: kube-up
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
     - name: kubeadm
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
     - name: kubernetes-anywhere
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
@@ -710,6 +679,9 @@ sigs:
     - name: contributors-guide
       owners:
       - https://raw.githubusercontent.comkubernetes/community/blob/master/contributors/guide/OWNERS
+    - name: k8s.io
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
     - name: repo-infra
       owners:
       - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
@@ -941,21 +913,29 @@ sigs:
       - name: sig-network-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: dns
+    - name: services
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cmd/kube-proxy/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/pkg/proxy/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/pkg/controller/endpoint/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/pkg/controller/service/OWNERS
+    - name: kube-dns
       owners:
       - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
     - name: external-dns
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/external-dns/master/OWNERS
-    - name: ingress-gce
+    - name: ingress
       owners:
       - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
-    - name: ingress-nginx
-      owners:
       - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
-    - name: ip-masq-agent
+    - name: pod-networking
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/ip-masq-agent/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
+    - name: network-policy
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/api/networking/OWNERS
   - name: Node
     dir: sig-node
     mission_statement: >
@@ -1005,6 +985,10 @@ sigs:
     - name: frakti
       owners:
       - https://raw.githubusercontent.com/kubernetes/frakti/master/OWNERS
+    - name: kubelet
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubelet/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
     - name: node-feature-discovery
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/node-feature-discovery/master/OWNERS
@@ -1191,6 +1175,11 @@ sigs:
       - name: sig-release-test-failures
         description: Test Failures and Triage
     subprojects:
+    - name: hyperkube
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
     - name: release
       owners:
       - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
@@ -1245,6 +1234,10 @@ sigs:
       - name: sig-scalability-test-failures
         description: Test Failures and Triage
     subprojects:
+    - name: kubemark
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubemark/master/cmd/kubemark/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubemark/master/pkg/kubemark/OWNERS
     - name: perf-tests
       owners:
       - https://raw.githubusercontent.com/kubernetes/perf-tests/master/OWNERS
@@ -1296,6 +1289,10 @@ sigs:
     - name: kube-arbitrator
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/kube-arbitrator/master/OWNERS
+    - name: scheduler
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kube-scheduler/OWNERS
   - name: Service Catalog
     dir: sig-service-catalog
     mission_statement: >
@@ -1395,6 +1392,9 @@ sigs:
     - name: nfs-provisioner
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
+    - name: volumes
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volumes/OWNERS
   - name: Testing
     dir: sig-testing
     mission_statement: >
@@ -1487,6 +1487,10 @@ sigs:
     contact:
       slack: sig-ui
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
+    subprojects:
+    - name: dashboard
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
   - name: Windows
     dir: sig-windows
     mission_statement: >
@@ -1515,10 +1519,6 @@ sigs:
         description: Feature Requests
       - name: sig-windows-misc
         description: General Discussion
-    subprojects:
-    - name: dashboard
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
 workinggroups:
   - name: Resource Management
     dir: wg-resource-management

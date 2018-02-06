@@ -26,7 +26,7 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-docs:
 - **kubernetes-bootcamp**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes-bootcamp/master/OWNERS

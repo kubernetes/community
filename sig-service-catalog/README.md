@@ -28,7 +28,7 @@ To develop a Kubernetes API for the CNCF service broker and Kubernetes broker im
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-service-catalog:
 - **service-catalog**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/service-catalog/master/OWNERS

@@ -23,6 +23,13 @@ Covers all things UI related. Efforts are centered around Kubernetes Dashboard: 
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fui)
 
+## Subprojects
+
+The following subprojects are owned by sig-ui:
+- **dashboard**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

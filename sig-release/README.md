@@ -25,7 +25,12 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-release:
+- **hyperkube**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
 - **release**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS

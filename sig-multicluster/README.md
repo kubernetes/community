@@ -26,7 +26,7 @@ A Special Interest Group focussed on solving common challenges related to the  m
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-multicluster:
 - **cluster-registry**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cluster-registry/master/OWNERS

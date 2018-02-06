@@ -27,22 +27,30 @@ Covers networking in Kubernetes.
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
-- **dns**
+The following subprojects are owned by sig-network:
+- **services**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/cmd/kube-proxy/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/pkg/proxy/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/pkg/controller/endpoint/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/pkg/controller/service/OWNERS
+- **kube-dns**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
 - **external-dns**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/external-dns/master/OWNERS
-- **ingress-gce**
+- **ingress**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
-- **ingress-nginx**
-  - Owners:
     - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
-- **ip-masq-agent**
+- **pod-networking**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/ip-masq-agent/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
+- **network-policy**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/api/networking/OWNERS
 
 ## GitHub Teams
 

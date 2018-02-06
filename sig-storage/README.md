@@ -26,7 +26,7 @@ Covers storage and volume plugins.
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-storage:
 - **external-storage**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
@@ -36,6 +36,9 @@ The following subprojects are owned by this SIG:
 - **nfs-provisioner**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
+- **volumes**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volumes/OWNERS
 
 ## GitHub Teams
 

@@ -27,13 +27,14 @@ Covers kubectl and related tools. We focus on the development and standardizatio
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-cli:
 - **common**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/common/master/OWNERS
 - **kubectl**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
 
 ## GitHub Teams
 

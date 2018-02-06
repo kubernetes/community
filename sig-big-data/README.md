@@ -24,13 +24,6 @@ Covers deploying and operating big data applications (Spark, Kafka, Hadoop, Flin
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-big-data)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fbig-data)
 
-## Subprojects
-
-The following subprojects are owned by this SIG:
-- **application-images**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/application-images/master/OWNERS
-
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.

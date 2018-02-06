@@ -25,7 +25,7 @@ Covers best practices for cluster observability through metrics, logging, and ev
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-instrumentation:
 - **custom-metrics-apiserver**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/custom-metrics-apiserver/master/OWNERS

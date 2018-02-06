@@ -28,7 +28,11 @@ For more details about our objectives please review our [Scaling And Performance
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-scalability:
+- **kubemark**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubemark/master/cmd/kubemark/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubemark/master/pkg/kubemark/OWNERS
 - **perf-tests**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/perf-tests/master/OWNERS

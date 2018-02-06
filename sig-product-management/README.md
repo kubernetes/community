@@ -30,7 +30,7 @@ It is also important to remember that the role of managing an open source projec
 
 ## Subprojects
 
-The following subprojects are owned by this SIG:
+The following subprojects are owned by sig-none:
 - **features**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/features/master/OWNERS
