@@ -25,6 +25,35 @@
 {{- if .Label }}
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2F{{.Label}})
 {{- end }}
+{{- if .Subprojects }}
+
+## Subprojects
+
+The following subprojects are owned by sig-{{.Label}}:
+
+{{- range .Subprojects }}
+- **{{.Name}}**
+{{- if .Description }}
+  - Description: {{ .Description }}
+{{- end }}
+  - Owners:
+{{- range .Owners }}
+    - {{.}}
+{{- end }}
+{{- if .Meetings }}
+  - Meetings:
+{{- range .Meetings }}
+    - {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}}]({{.URL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.Time}}&tz={{.TZ | tzUrlEncode}}).
+{{- if .ArchiveURL }}
+      - [Meeting notes and Agenda]({{.ArchiveURL}}).
+{{- end }}
+{{- if .RecordingsURL }}
+      - [Meeting recordings]({{.RecordingsURL}}).
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
 {{ if .Contact.GithubTeams }}
 ## GitHub Teams
 

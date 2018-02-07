@@ -41,6 +41,50 @@ sigs:
         description: Design Proposals
       - name: sig-api-machinery-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: api
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
+    - name: apiserver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/apiserver/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/apimachinery/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/sample-apiserver/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/sample-controller/master/OWNERS
+    - name: code-generator
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/code-generator/master/OWNERS
+    - name: crd
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/apiextensions-apiserver/master/OWNERS
+    - name: gen
+      owners:
+    - name: IDL
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS
+    - name: api-aggregation
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kube-aggregator/master/OWNERS
+    - name: kubernetes-client-library
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-client/community/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/csharp/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/gen/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/go-base/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/go/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/haskell/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/java/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/javascript/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/python-base/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/ruby/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-client/typescript/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-incubator/client-python/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/client-go/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kube-openapi/master/OWNERS
+    - name: utils
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
   - name: Apps
     dir: sig-apps
     mission_statement: >
@@ -69,20 +113,6 @@ sigs:
       url: https://zoom.us/my/sig.apps
       archive_url: https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#
       recordings_url: https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3
-    - description: Helm Developer call
-      day: Thursday
-      time: "9:30"
-      tz: "PT (Pacific Time)"
-      frequency: weekly
-      url: https://zoom.us/j/4526666954
-      archive_url: https://docs.google.com/document/d/1d-6xJEx0C78csIYSPKJzRPeWaHG_8W1Hjl72OJggwdc/edit
-    - description: Charts Chat
-      day: Tuesday
-      time: "9:00"
-      tz: "PT (Pacific Time)"
-      frequency: biweekly
-      url: https://zoom.us/j/166909412
-      archive_url: https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3
     contact:
       slack: sig-apps
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-apps
@@ -101,6 +131,62 @@ sigs:
         description: Design Proposals
       - name: sig-apps-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: chart-testing
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-helm/chart-testing/master/OWNERS
+    - name: chartmuseum
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-helm/chartmuseum/master/OWNERS
+    - name: charts
+      meetings:
+      - description: Charts Chat
+        day: Tuesday
+        time: "9:00"
+        tz: "PT (Pacific Time)"
+        frequency: biweekly
+        url: https://zoom.us/j/166909412
+        archive_url: https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/charts/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-helm/charts-tooling/master/OWNERS
+    - name: examples
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/examples/master/OWNERS
+    - name: helm
+      meetings:
+      - description: Helm Developer call
+        day: Thursday
+        time: "9:30"
+        tz: "PT (Pacific Time)"
+        frequency: weekly
+        url: https://zoom.us/j/4526666954
+        archive_url: https://docs.google.com/document/d/1elWRfvH3AkHdr8pOaqyPbqSZ6ONR-l1Sb9_gapqh8ZA/edit
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/helm/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-helm/community/master/OWNERS
+    - name: kompose
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
+    - name: monocular
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-helm/monocular/master/OWNERS
+    - name: rudder-federation
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-helm/rudder-federation/master/OWNERS
+    - name: workloads-api
+      description: The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, and StatefulSet kinds
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cronjob/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/daemon/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/deployment/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/history/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/job/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replicaset/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS 
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/apps/OWNERS
   - name: Architecture
     dir: sig-architecture
     mission_statement: >
@@ -141,6 +227,16 @@ sigs:
         description: Design Proposals
       - name: sig-architecture-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: kubernetes-template-project
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
+    - name: spartakus
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+    - name: steering
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
   - name: Auth
     dir: sig-auth
     mission_statement: >
@@ -224,6 +320,13 @@ sigs:
         description: Design Proposals
       - name: sig-autoscaling-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: autoscaler
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+    - name: metrics
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
   - name: AWS
     dir: sig-aws
     mission_statement: >
@@ -374,6 +477,14 @@ sigs:
         description: Design Proposals
       - name: sig-cli-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: common
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/common/master/OWNERS
+    - name: kubectl
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
   - name: Cluster Lifecycle
     dir: sig-cluster-lifecycle
     mission_statement: >
@@ -443,6 +554,41 @@ sigs:
         description: Design Proposals
       - name: sig-cluster-lifecycle-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: bootkube
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
+    - name: cluster-proportional-autoscaler
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
+    - name: cluster-proportional-vertical-autoscaler
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
+    - name: kops
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
+    - name: kube-aws
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
+    - name: kube-deploy
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
+    - name: kube-up
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
+    - name: kubeadm
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+    - name: kubernetes-anywhere
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
+    - name: kubespray
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/kubespray/master/OWNERS
+    - name: minikube
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
   - name: Cluster Ops
     dir: sig-cluster-ops
     mission_statement: >
@@ -522,6 +668,23 @@ sigs:
         description: Design Proposals
       - name: sig-contributor-experience-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: community
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/community/master/OWNERS
+    - name: community-management
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
+        https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
+    - name: contributors-guide
+      owners:
+      - https://raw.githubusercontent.comkubernetes/community/blob/master/contributors/guide/OWNERS
+    - name: k8s.io
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
+    - name: repo-infra
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
   - name: Docs
     dir: sig-docs
     mission_statement: >
@@ -551,6 +714,19 @@ sigs:
         description: Documentation Maintainers
       - name: sig-docs-pr-reviews
         description: Documentation PR Reviewers
+    subprojects:
+    - name: kubernetes-bootcamp
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-bootcamp/master/OWNERS
+    - name: kubernetes-docs-cn
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-cn/master/OWNERS
+    - name: reference-docs
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
+    - name: website
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
   - name: GCP
     dir: sig-gcp
     mission_statement: >
@@ -627,6 +803,19 @@ sigs:
         description: Design Proposals
       - name: sig-instrumentation-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: custom-metrics-apiserver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/custom-metrics-apiserver/master/OWNERS
+    - name: heapster
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
+    - name: kube-state-metrics
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS
+    - name: metrics-server
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/OWNERS
   - name: Multicluster
     dir: sig-multicluster
     mission_statement: >
@@ -674,6 +863,13 @@ sigs:
         description: Test Failures and Triage
       - name: sig-mutlicluster-proposals
         description: Design Proposals
+    subprojects:
+    - name: cluster-registry
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cluster-registry/master/OWNERS
+    - name: federation
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/federation/master/OWNERS
   - name: Network
     dir: sig-network
     mission_statement: >
@@ -716,6 +912,30 @@ sigs:
         description: Design Proposals
       - name: sig-network-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: services
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cmd/kube-proxy/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/pkg/proxy/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/pkg/controller/endpoint/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/pkg/controller/service/OWNERS
+    - name: kube-dns
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
+    - name: external-dns
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/external-dns/master/OWNERS
+    - name: ingress
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
+    - name: pod-networking
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/ip-masq-agent/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
+    - name: network-policy
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/api/networking/OWNERS
   - name: Node
     dir: sig-node
     mission_statement: >
@@ -752,6 +972,32 @@ sigs:
         description: Design Proposals
       - name: sig-node-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: cri-containerd
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/cri-containerd/master/OWNERS
+    - name: cri-o
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/cri-o/master/OWNERS
+    - name: cri-tools
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/cri-tools/master/OWNERS
+    - name: frakti
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/frakti/master/OWNERS
+    - name: kubelet
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubelet/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
+    - name: node-feature-discovery
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/node-feature-discovery/master/OWNERS
+    - name: node-problem-detector
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
+    - name: rktlet
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/rktlet/master/OWNERS
   - name: On Premise
     dir: sig-on-premise
     mission_statement: >
@@ -883,6 +1129,10 @@ sigs:
     contact:
       slack: kubernetes-pm
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-pm
+    subprojects:
+    - name: features
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/features/master/OWNERS
   - name: Release
     dir: sig-release
     label: release
@@ -924,6 +1174,18 @@ sigs:
         description: Design Proposals
       - name: sig-release-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: hyperkube
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
+    - name: release
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
+    - name: sig-release
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/sig-release/master/OWNERS
   - name: Scalability
     dir: sig-scalability
     mission_statement: >
@@ -971,6 +1233,14 @@ sigs:
         description: Design Proposals
       - name: sig-scalability-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: kubemark
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubemark/master/cmd/kubemark/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubemark/master/pkg/kubemark/OWNERS
+    - name: perf-tests
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/perf-tests/master/OWNERS
   - name: Scheduling
     dir: sig-scheduling
     mission_statement: >
@@ -1009,6 +1279,20 @@ sigs:
         description: Design Proposals
       - name: sig-scheduling-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: cluster-capacity
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/cluster-capacity/master/OWNERS
+    - name: descheduler
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/descheduler/master/OWNERS
+    - name: kube-arbitrator
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/kube-arbitrator/master/OWNERS
+    - name: scheduler
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kube-scheduler/OWNERS
   - name: Service Catalog
     dir: sig-service-catalog
     mission_statement: >
@@ -1055,6 +1339,10 @@ sigs:
         description: Design Proposals
       - name: sig-service-catalog-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: service-catalog
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/service-catalog/master/OWNERS
   - name: Storage
     dir: sig-storage
     mission_statement: >
@@ -1094,6 +1382,19 @@ sigs:
         description: Design Proposals
       - name: sig-storage-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: external-storage
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
+    - name: git-sync
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/git-sync/master/OWNERS
+    - name: nfs-provisioner
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
+    - name: volumes
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volumes/OWNERS
   - name: Testing
     dir: sig-testing
     mission_statement: >
@@ -1124,13 +1425,6 @@ sigs:
       url: https://zoom.us/my/k8s.sig.testing
       archive_url: https://bit.ly/k8s-sig-testing-notes
       recordings_url: https://bit.ly/k8s-sig-testing-videos
-    - description: Testing Commons
-      day: Wednesday
-      time: "07:30"
-      tz: "PT (Pacific Time)"
-      frequency: bi-weekly
-      url: https://zoom.us/my/k8s.sig.testing
-      archive_url: https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o
     contact:
       slack: sig-testing
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-testing
@@ -1149,6 +1443,23 @@ sigs:
         description: Design Proposals
       - name: sig-testing-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: test-infra
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
+    - name: testing-commons
+      description: "The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project."
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sig-testing/frameworks/master/OWNERS 
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
+      meetings:
+      - description: Testing Commons
+        day: Wednesday
+        time: "07:30"
+        tz: "PT (Pacific Time)"
+        frequency: bi-weekly
+        url: https://zoom.us/my/k8s.sig.testing
+        archive_url: https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o
   - name: UI
     dir: sig-ui
     mission_statement: >
@@ -1176,6 +1487,10 @@ sigs:
     contact:
       slack: sig-ui
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
+    subprojects:
+    - name: dashboard
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
   - name: Windows
     dir: sig-windows
     mission_statement: >

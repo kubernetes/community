@@ -24,6 +24,53 @@ Covers all aspects of API server, API registration and discovery, generic API CR
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fapi-machinery)
 
+## Subprojects
+
+The following subprojects are owned by sig-api-machinery:
+- **api**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
+- **apiserver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/apiserver/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/apimachinery/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/sample-apiserver/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/sample-controller/master/OWNERS
+- **code-generator**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/code-generator/master/OWNERS
+- **crd**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/apiextensions-apiserver/master/OWNERS
+- **gen**
+  - Owners:
+- **IDL**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS
+- **api-aggregation**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kube-aggregator/master/OWNERS
+- **kubernetes-client-library**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-client/community/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-client/csharp/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-client/gen/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-client/go-base/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-client/go/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-client/haskell/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-client/java/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-client/javascript/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-client/python-base/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-client/ruby/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-client/typescript/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-incubator/client-python/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/client-go/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kube-openapi/master/OWNERS
+- **utils**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.

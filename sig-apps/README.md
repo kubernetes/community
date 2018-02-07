@@ -14,10 +14,6 @@ Covers deploying and operating applications in Kubernetes. We focus on the devel
 * Regular SIG Meeting: [Mondays at 9:00 PT (Pacific Time)](https://zoom.us/my/sig.apps) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#).
   * [Meeting recordings](https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3).
-* Helm Developer call: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/4526666954) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1d-6xJEx0C78csIYSPKJzRPeWaHG_8W1Hjl72OJggwdc/edit).
-* Charts Chat: [Tuesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/166909412) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3).
 
 ## Leads
 * Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
@@ -28,6 +24,55 @@ Covers deploying and operating applications in Kubernetes. We focus on the devel
 * [Slack](https://kubernetes.slack.com/messages/sig-apps)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-apps)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fapps)
+
+## Subprojects
+
+The following subprojects are owned by sig-apps:
+- **chart-testing**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-helm/chart-testing/master/OWNERS
+- **chartmuseum**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-helm/chartmuseum/master/OWNERS
+- **charts**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/charts/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-helm/charts-tooling/master/OWNERS
+  - Meetings:
+    - Charts Chat: [Tuesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/166909412) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+      - [Meeting notes and Agenda](https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3).
+- **examples**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/examples/master/OWNERS
+- **helm**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/helm/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-helm/community/master/OWNERS
+  - Meetings:
+    - Helm Developer call: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/4526666954) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+      - [Meeting notes and Agenda](https://docs.google.com/document/d/1elWRfvH3AkHdr8pOaqyPbqSZ6ONR-l1Sb9_gapqh8ZA/edit).
+- **kompose**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
+- **monocular**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-helm/monocular/master/OWNERS
+- **rudder-federation**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-helm/rudder-federation/master/OWNERS
+- **workloads-api**
+  - Description: The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, and StatefulSet kinds
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cronjob/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/daemon/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/deployment/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/history/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/job/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replicaset/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/apps/OWNERS
 
 ## GitHub Teams
 

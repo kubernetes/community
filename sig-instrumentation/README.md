@@ -23,6 +23,22 @@ Covers best practices for cluster observability through metrics, logging, and ev
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Finstrumentation)
 
+## Subprojects
+
+The following subprojects are owned by sig-instrumentation:
+- **custom-metrics-apiserver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/custom-metrics-apiserver/master/OWNERS
+- **heapster**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
+- **kube-state-metrics**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS
+- **metrics-server**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.

@@ -16,7 +16,15 @@ When the need arises, a [new SIG can be created](sig-creation-procedure.md)
 | Name | Label | Leads | Contact | Meetings |
 |------|--------|-------|---------|----------|
 {{- range .Sigs}}
-|[{{.Name}}]({{.Dir}}/README.md)|{{.Label}}|{{range .Leads}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{ $save := . }}{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
+|[{{.Name}}]({{.Dir}}/README.md)|{{.Label}}|{{range .Leads}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{- range .Meetings -}}
+  * {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>
+{{- end -}}
+{{- range .Subprojects -}}
+  {{ $name := .Name }}
+  {{- range .Meetings -}}
+    * ({{ $name }}) {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>
+  {{- end -}}
+{{- end -}}
 {{- end }}
 
 ### Master Working Group List
@@ -24,5 +32,5 @@ When the need arises, a [new SIG can be created](sig-creation-procedure.md)
 | Name | Organizers | Contact | Meetings |
 |------|------------|---------|----------|
 {{- range .WorkingGroups}}
-|[{{.Name}}]({{.Dir}}/README.md)|{{range .Leads}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{ $save := . }}{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
+|[{{.Name}}]({{.Dir}}/README.md)|{{range .Leads}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
 {{- end }}

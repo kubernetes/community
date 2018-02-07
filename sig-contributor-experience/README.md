@@ -28,6 +28,25 @@ Developing and sustaining a healthy community of contributors is critical to sca
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-contribex)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcontributor-experience)
 
+## Subprojects
+
+The following subprojects are owned by sig-contributor-experience:
+- **community**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/OWNERS
+- **community-management**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
+- **contributors-guide**
+  - Owners:
+    - https://raw.githubusercontent.comkubernetes/community/blob/master/contributors/guide/OWNERS
+- **k8s.io**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
+- **repo-infra**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.

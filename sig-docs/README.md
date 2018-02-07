@@ -24,6 +24,22 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fdocs)
 
+## Subprojects
+
+The following subprojects are owned by sig-docs:
+- **kubernetes-bootcamp**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes-bootcamp/master/OWNERS
+- **kubernetes-docs-cn**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-cn/master/OWNERS
+- **reference-docs**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
+- **website**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.

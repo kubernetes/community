@@ -34,6 +34,44 @@ The Cluster Lifecycle SIG examines how we should change Kubernetes to make it ea
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcluster-lifecycle)
 
+## Subprojects
+
+The following subprojects are owned by sig-cluster-lifecycle:
+- **bootkube**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
+- **cluster-proportional-autoscaler**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
+- **cluster-proportional-vertical-autoscaler**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
+- **kops**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
+- **kube-aws**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
+- **kube-deploy**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
+- **kube-up**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
+- **kubeadm**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+- **kubernetes-anywhere**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
+- **kubespray**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/kubespray/master/OWNERS
+- **minikube**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
