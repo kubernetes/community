@@ -36,6 +36,27 @@ assigned after you.
 # Current Oncall schedule
 
 ```
+
+2018-02-05 - 2018-02-11 : Shashidhara (https://github.com/shashidharatd)
+2018-02-12 - 2018-02-18 : Christian (https://github.com/csbell)
+2018-02-19 - 2018-02-25 : Nikhil Jindal (https://github.com/nikhiljindal)
+2018-02-26 - 2018-03-04 : Irfan (https://github.com/irfanurrehman)
+2018-03-05 - 2018-03-11 : Maru (https://github.com/marun)
+2018-03-12 - 2018-03-18 : Jonathan (https://github.com/perotinus)
+2018-03-19 - 2018-03-25 : Shashidhara (https://github.com/shashidharatd)
+2018-03-26 - 2018-04-01 : Christian (https://github.com/csbell)
+2018-04-02 - 2018-04-08 : Nikhil Jindal (https://github.com/nikhiljindal)
+2018-04-09 - 2018-04-15 : Irfan (https://github.com/irfanurrehman)
+2018-04-16 - 2018-04-22 : Maru (https://github.com/marun)
+2018-04-23 - 2018-04-29 : Jonathan (https://github.com/perotinus)
+```
+
+# Past 5 rotation cycles
+
+
+```
+13-November 2017 - February 4: It seems nobody was assigned to be oncall. 
+
 25 September - 1 October: Madhu (https://github.com/madhusudancs)
 2 October - 8 October: Shashidhara (https://github.com/shashidharatd)
 9 October - 15 October: Christian (https://github.com/csbell)
@@ -44,11 +65,7 @@ assigned after you.
 30 October - 5 November: Maru (https://github.com/marun)
 6 November - 12 November: Jonathan (https://github.com/perotinus)
 (Madhu to be removed from next rotation)
-```
 
-# Past 5 rotation cycles
-
-```
 (Adding Irfan)
 7 August - 13 August: Nikhil Jindal (https://github.com/nikhiljindal)
 14 August - 20 August: Shashidhara (https://github.com/shashidharatd)
