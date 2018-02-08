@@ -57,6 +57,10 @@ runtimes, organized as follows.
 sig-node -> sig-node-{Kubernetes-version} -> sig-node-{runtime-name} -> [page containing all test jobs]
 ```
 
+The `sig-node` tab only lists up to three most recent Kubernetes versions,
+including the master branch for the current release cycle, e.g.,
+`sig-node-master, sig-node-1.9, sig-node-1.8`.
+
 ## Test job maintenance
 
 Tests are required to run at least nightly.
@@ -106,3 +110,9 @@ document. Please contact the relevant SIGs for assistance.
  *4. How can I change the test-grid to publish the test results?*
 
 Please contact SIG-Node for the detailed instructions.
+
+ *5. How does this policy apply to Windows containers?*
+
+Windows containers are still in the early development phase and the features
+they support change rapidly. Therefore, it is suggested to treat it as a
+feature with select, whitelisted tests to run.
