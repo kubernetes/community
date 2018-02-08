@@ -155,7 +155,7 @@ Existing behavior is unchanged for claims that do not specify
 
   External provisioner must have these features:
 
-  * It MUST have a distinct name, following Kubernetenes plugin naming scheme
+  * It MUST have a distinct name, following Kubernetes plugin naming scheme
     `<vendor name>/<provisioner name>`, e.g. `gluster.org/gluster-volume`.
 
   * The provisioner SHOULD send events on a claim to report any errors

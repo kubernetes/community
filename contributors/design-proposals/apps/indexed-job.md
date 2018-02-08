@@ -653,7 +653,7 @@ kubectl run say-fruit --image=busybox \
 will all run 3 pods in parallel. Index 0 pod will log:
 
 ```
-Have a nice grenn apple
+Have a nice green apple
 ```
 
 and so on.

@@ -133,7 +133,7 @@ This level of the Cluster Management API describes the global configuration of a
 
 Given the recent efforts of SIG Cluster Lifecycle to make kubeadm the de facto standard toolkit for cloud- and vendor-agnostic cluster initialization, and because kubeadm has [an existing API](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubeadm/app/apis/kubeadm/v1alpha1/types.go) to define the global configuration for a cluster, it makes sense to coalesce the global portion of the Cluster API with the API used by “kubeadm init” to configure a cluster master.
 
-A current goal is to make these APIs as cloud-agnostic as possible, so that the entire definition of a Cluster could remain reasonably in-sync across different deployments potentially in different cloud providers, which would help enable hybrid usecases where it’s desirable to have key configuration stay in sync across different clusters potentially in different clouds/environments. However, this goal is balanced against making the APIs coherent and useable, which strict separation may harm.
+A current goal is to make these APIs as cloud-agnostic as possible, so that the entire definition of a Cluster could remain reasonably in-sync across different deployments potentially in different cloud providers, which would help enable hybrid usecases where it’s desirable to have key configuration stay in sync across different clusters potentially in different clouds/environments. However, this goal is balanced against making the APIs coherent and usable, which strict separation may harm.
 
 The full types for this API can be seen and were initially discussed in [kube-deploy#306](https://github.com/kubernetes/kube-deploy/pull/306).
 
