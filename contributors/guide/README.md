@@ -198,8 +198,7 @@ sig-testing is responsible for that official infrastructure and CI.  The associa
 
 ## Documentation
 
-
-* Please help write this section.
+- [Contributing to Documentation](https://kubernetes.io/editdocs/)
 
 ## Issues Management or Triage
 
@@ -224,3 +223,9 @@ We follow the general [Cloud Native Computing Foundation guidelines](https://git
 ## Mentorship
 
 Please learn about our mentoring initiatives [here](http://git.k8s.io/community/mentoring/README.md).
+
+# Advanced Topics
+
+This section includes things that need to be documented, but typical contributors do not need to interact with regularly.
+
+- [OWNERS files](owners.md) - The Kubernetes organizations are managed with OWNERS files, which outline which parts of the code are owned by what groups. 
