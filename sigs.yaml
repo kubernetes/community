@@ -1315,8 +1315,8 @@ sigs:
     meetings:
     - description: Regular SIG Meeting
       day: Monday
-      time: "20:00"
-      tz: "UTC"
+      time: "13:00"
+      tz: "PT (Pacific Time)"
       frequency: weekly
       url: https://zoom.us/j/7201225346
       archive_url: https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit
