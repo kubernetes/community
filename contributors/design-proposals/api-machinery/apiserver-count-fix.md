@@ -66,7 +66,7 @@ updates could be overly chatty.
 
 By porting OpenShift's
 [LeaseEndpointReconciler](https://github.com/openshift/origin/blob/master/pkg/cmd/server/election/lease_endpoint_reconciler.go)
-to Kubernetes we can use use the Storage API directly to store Endpoints
+to Kubernetes we can use the Storage API directly to store Endpoints
 dynamically within the system.
 
 ### Alternate Proposals

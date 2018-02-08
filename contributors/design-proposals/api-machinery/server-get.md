@@ -157,7 +157,7 @@ show-kind | Implement client-side by using the discovery info associated with th
 template | Implement client-side, bypass receiving table output and get raw objects
 watch | Request Table output via the watch endpoint
 export | Implement client-side, bypass receiving table output and get exported object
-wide | Server should indicate which columns are "additional" via a field on on the header column - client then shows those columns if it wants to
+wide | Server should indicate which columns are "additional" via a field on the header column - client then shows those columns if it wants to
 color (proposed) | Rows which should be highlighted should have a semantic field on the row - e.g. `alert: [{type: Warning, message: "This pod has been deleted"}]`.  Cells could be selected by adding an additional field `alert: [{type: Warning, ..., cells: [0, 1]}]`.
 
 
