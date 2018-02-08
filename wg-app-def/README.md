@@ -17,7 +17,8 @@ Charter can be found [here](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fi
 
 ## Organizers
 * Antoine Legrand (**[@ant31](https://github.com/ant31)**), CoreOS
-* Sebastien Goasguen (**[@sebgoa](https://github.com/sebgoa)**), Bitnami
+* Bryan Liles (**[@bryanl](https://github.com/bryanl)**), Heptio
+* Gareth Rushgrove (**[@garethr](https://github.com/garethr)**), Docker
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-app-def)
