@@ -470,7 +470,7 @@ be send multiple times, once over each channel, here it would be send once)
 - we would have to introduce a dedicate "BulkWatchEvent" type to incorporate
 resource type. This would make those two incompatible even at the output format.
 
- With all of those in mind, even though the implementation would be much much
+ With all of those in mind, even though the implementation would be much
 simpler (and could potentially be a first step and would probably solve the
 original "kubelet watching secrets" problem good enough), we decided not to
 proceed with it at all.
