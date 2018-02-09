@@ -345,11 +345,9 @@ sigs:
     - name: Kris Nova
       github: kris-nova
       company: Heptio
-    - name: Chris Love
-      github: chrislovecnm
-    - name: Mackenzie Burnett
-      github: mfburnett
-      company: Redspread
+    - name: Bob Wise
+      github: countspongebob
+      company: Amazon
     meetings:
     - description: Regular SIG Meeting
       day: Friday
