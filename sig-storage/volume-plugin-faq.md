@@ -16,7 +16,7 @@ There are three methods to implement a volume plugin:
 2. Out-of-tree FlexVolume driver
 3. Out-of-tree CSI driver
 
-The Kubernetes Storage SIG, which is responsible for all volume code in the Kubernetes core repository, is no longer accepting new in-tree volume plugins. Instead, the SIG recommends storage vendors develop plugins as either Flex or CSI drivers.
+The Kubernetes Storage SIG, which is responsible for all volume code in the Kubernetes core repository, is no longer accepting new in-tree volume plugins. Instead, the SIG recommends storage vendors develop plugins as either FlexVolume or CSI drivers.
 
 **What is an in-tree vs out-of-tree volume plugin?**
 
