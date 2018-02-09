@@ -504,7 +504,7 @@ Overlayfs works similar to Aufs. The path to the writable directory for containe
 
 Usage of Linux Quota should be possible for the purposes of volumes and log files.
 
-Devicemapper storage driver in docker uses ["thin targets"](https://www.kernel.org/doc/Documentation/device-mapper/thin-provisioning.txt). Underneath there are two block devices devices - “data” and “metadata”, using which more block devices are created for containers. More information [here](http://www.projectatomic.io/docs/filesystems/).
+Devicemapper storage driver in docker uses ["thin targets"](https://www.kernel.org/doc/Documentation/device-mapper/thin-provisioning.txt). Underneath there are two block devices - “data” and “metadata”, using which more block devices are created for containers. More information [here](http://www.projectatomic.io/docs/filesystems/).
 
 These devices can be loopback or real storage devices.
 
