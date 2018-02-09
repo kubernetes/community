@@ -16,7 +16,7 @@ Provide an overall architecture that describes both the current policy related i
 
 ## Organizers
 * Howard Huang (**[@hannibalhuang](https://github.com/hannibalhuang)**), Huawei
-* Torin Sandall (**[@tsandall](https://github.com/tsandall)**), Google
+* Torin Sandall (**[@tsandall](https://github.com/tsandall)**), Styra
 * David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google
 * Clayton Coleman (**[@smarterclayton](https://github.com/smarterclayton)**), Red Hat
 * Xuan Jia (**[@xuanjia](https://github.com/xuanjia)**), China Mobile
