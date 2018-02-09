@@ -13,14 +13,14 @@ A *Kubernetes Volume plugin* extends the Kubernetes volume interface to support 
 
 There are three methods to implement a volume plugin:
 1. In-tree volume plugin
-2. Out-of-tree Flex driver
+2. Out-of-tree FlexVolume driver
 3. Out-of-tree CSI driver
 
 The Kubernetes Storage SIG, which is responsible for all volume code in the Kubernetes core repository, is no longer accepting new in-tree volume plugins. Instead, the SIG recommends storage vendors develop plugins as either Flex or CSI drivers.
 
 **What is an in-tree vs out-of-tree volume plugin?**
 
-Before the introduction of the Container Storage Interface (CSI) and FlexVolume, all volume plugins were *in-tree* meaning they were built, linked, compiled, and shipped with the core kubernetes binaries and extend the core Kubernetes API. This meant that adding a new storage system to Kubernetes (a volume plugin) required checking code into the core Kubernetes code repository.
+Before the introduction of the Container Storage Interface (CSI) and FlexVolume, all volume plugins were *in-tree* meaning they were built, linked, compiled, and shipped with the core Kubernetes binaries and extend the core Kubernetes API. This meant that adding a new storage system to Kubernetes (a volume plugin) required checking code into the core Kubernetes code repository.
 
 *Out-of-tree* volume plugins are developed independently of the Kubernetes code base, and are deployed (installed) on Kubernetes clusters as extensions.
 
@@ -47,7 +47,7 @@ One of the goals of SIG Storage is to eventually have a CSI-compatible plugin fo
 
 **What is the Container Storage Interface (CSI)?**
 
-Container Storage Interface (CSI) is a standardized mechanism for Container Orchestration Systems (COs), including Kubernetes, to expose arbitrary storage systems to containerized workloads. CSI is planned as the primary volume plugin system for Kubernetes. It was introduced in Kubernetes 1.9 as alpha. There are plans to promote it to beta in the 1.10 to 1.11 timeframe.
+Container Storage Interface (CSI) is a standardized mechanism for Container Orchestration Systems (COs), including Kubernetes, to expose arbitrary storage systems to containerized workloads. CSI is planned to become the primary volume plugin system for Kubernetes. It was introduced in Kubernetes 1.9 as alpha. There are plans to promote it to beta in the 1.10 to 1.11 timeframe.
 
 For more information about CSI, see:
 
