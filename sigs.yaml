@@ -1617,9 +1617,12 @@ workinggroups:
     - name: Antoine Legrand
       github: ant31
       company: CoreOS
-    - name: Sebastien Goasguen
-      github: sebgoa
-      company: Bitnami
+    - name: Bryan Liles
+      github: bryanl
+      company: Heptio
+    - name: Gareth Rushgrove
+      github: garethr
+      company: Docker
     meetings:
     - description: Regular WG Meeting
       day: Wednesday
