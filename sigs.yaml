@@ -342,12 +342,11 @@ sigs:
     leads:
     - name: Justin Santa Barbara
       github: justinsb
-    - name: Kris Nova
-      github: kris-nova
-      company: Heptio
-    - name: Bob Wise
-      github: countspongebob
-      company: Amazon
+    - name: Chris Love
+      github: chrislovecnm
+    - name: Mackenzie Burnett
+      github: mfburnett
+      company: Redspread
     meetings:
     - description: Regular SIG Meeting
       day: Friday
