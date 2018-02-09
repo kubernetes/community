@@ -77,7 +77,7 @@ In summary, all of [GCE L7 Load Balancer](https://cloud.google.com/compute/docs/
 
 An alternative implementation approach involves lifting the current
 Federated Ingress Controller functionality up into the Federation
-control plane.  This alternative is not considered any any further
+control plane.  This alternative is not considered any further
 detail in this document.
 
 ### Outstanding work Items
