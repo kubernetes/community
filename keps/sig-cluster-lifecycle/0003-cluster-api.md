@@ -5,7 +5,7 @@
 ---
 kep-number: 3
 title: Kubernetes Cluster Management API
-status: accepted
+status: draft
 authors:
     - "@roberthbailey"
     - "@pipejakob"
