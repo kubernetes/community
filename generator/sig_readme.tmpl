@@ -18,6 +18,13 @@
 {{- range .Leads }}
 * {{.Name}} (**[@{{.GitHub}}](https://github.com/{{.GitHub}})**){{if .Company}}, {{.Company}}{{end}}
 {{- end }}
+{{- if .EmeritusLeads }}
+
+## Emeritus Leads
+{{- range .EmeritusLeads }}
+* {{.Name}} (**[@{{.GitHub}}](https://github.com/{{.GitHub}})**){{if .Company}}, {{.Company}}{{end}}
+{{- end }}
+{{- end }}
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})

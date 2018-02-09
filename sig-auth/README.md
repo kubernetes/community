@@ -13,11 +13,15 @@ Covers improvements to Kubernetes authorization, authentication, and cluster sec
 ## Meetings
 * Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/my/k8s.sig.auth) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#).
-  * [Meeting recordings](https://www.youtube.com/watch?v=DJDuDNALcMo&list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw).
 
 ## Leads
 * Eric Chiang (**[@ericchiang](https://github.com/ericchiang)**), CoreOS
 * Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Red Hat
+* Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Google
+
+## Emeritus Leads
+* Eric Tune (**[@erictune](https://github.com/erictune)**), Google
 * David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
 
 ## Contact

@@ -250,6 +250,13 @@ sigs:
     - name: Jordan Liggitt
       github: liggitt
       company: Red Hat
+    - name: Tim Allclair
+      github: tallclair
+      company: Google
+    emeritus_leads:
+    - name: Eric Tune
+      github: erictune
+      company: Google
     - name: David Eads
       github: deads2k
       company: Red Hat
@@ -261,7 +268,7 @@ sigs:
       frequency: biweekly
       url: https://zoom.us/my/k8s.sig.auth
       archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
-      recordings_url: https://www.youtube.com/watch?v=DJDuDNALcMo&list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
     contact:
       slack: sig-auth
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-auth
