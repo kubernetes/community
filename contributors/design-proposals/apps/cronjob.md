@@ -266,7 +266,7 @@ We can solve this in several ways:
 
 1. with three-phase protocol, e.g.:
   1. controller creates a "suspended" job.
-  1. controller writes writes an annotation in the SJ saying that it created a job for this time.
+  1. controller writes an annotation in the SJ saying that it created a job for this time.
   1. controller unsuspends that job.
 1. by picking a deterministic name, so that at most one object create can succeed.
 
