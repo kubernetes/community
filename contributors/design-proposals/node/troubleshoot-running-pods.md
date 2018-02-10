@@ -410,7 +410,7 @@ to distinguish Debug Containers from regular containers.
 `startContainer()` will be updated to write a new label
 `io.kubernetes.container.type` to the runtime. Existing containers will be
 started with a type of `REGULAR` or `INIT`. When added in a subsequent step,
-Debug Containers will start with with the type `EPHEMERAL`.
+Debug Containers will start with the type `EPHEMERAL`.
 
 ##### Step 2: Creation and Handling of Debug Containers
 
