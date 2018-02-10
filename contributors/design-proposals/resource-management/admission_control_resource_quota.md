@@ -191,7 +191,7 @@ $ kubectl create -f test/fixtures/doc-yaml/admin/resourcequota/namespace.yaml
 namespace "quota-example" created
 $ kubectl create -f test/fixtures/doc-yaml/admin/resourcequota/quota.yaml --namespace=quota-example
 resourcequota "quota" created
-$ kubectl describe quota quota --namespace=quota-example
+$ kubectl describe quota --namespace=quota-example
 Name:                    quota
 Namespace:               quota-example
 Resource                 Used      Hard
