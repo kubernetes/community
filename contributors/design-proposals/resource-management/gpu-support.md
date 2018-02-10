@@ -75,7 +75,7 @@ Before any scheduling can occur, we need to know what's available out there. In
 v0, we'll hardcode capacity detected by the kubelet based on a flag,
 `--experimental-nvidia-gpu`. This will result in the user-defined resource
 `alpha.kubernetes.io/nvidia-gpu` to be reported for `NodeCapacity` and
-`NodeAllocatable`, as well as as a node label.
+`NodeAllocatable`, as well as a node label.
 
 ### Scheduling
 
