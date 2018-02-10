@@ -98,6 +98,7 @@ type Group struct {
 	MissionStatement string `yaml:"mission_statement"`
 	Label            string
 	Leads            []Lead
+	EmeritusLeads    []Lead `yaml:"emeritus_leads"`
 	Meetings         []Meeting
 	Contact          Contact
 	Subprojects      []Subproject
