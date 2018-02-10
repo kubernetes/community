@@ -151,7 +151,7 @@ The GitHub robots will add and remove the `do-not-merge/hold` label as you use t
 
 ## Comment Commands Reference
 
-[The commands doc](https://git.k8s.io/test-infra/commands.md) contains a reference for all comment commands.
+[The commands doc](https://go.k8s.io/bot-commands) contains a reference for all comment commands.
 
 ## Automation
 
