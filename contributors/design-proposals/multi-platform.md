@@ -175,7 +175,7 @@ If someone tries to add a dependency that doesn't satisfy these requirements; th
 
 ### kubectl should be released for all platforms that are relevant
 
-kubectl is released for more platforms than the proposed server platforms, if you want to check out an up-to-date list of them, [see here](../../hack/lib/golang.sh).
+kubectl is released for more platforms than the proposed server platforms, if you want to check out an up-to-date list of them, [see here](https://git.k8s.io/kubernetes/hack/lib/golang.sh).
 
 kubectl is trivial to cross-compile, so if there's interest in adding a new platform for it, it may be as easy as appending the platform to the list linked above.
 
