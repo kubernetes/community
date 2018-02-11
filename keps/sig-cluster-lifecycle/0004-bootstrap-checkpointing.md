@@ -119,7 +119,7 @@ Graduating this feature is a responsibility of sig-cluster-lifecycle and
 sig-node to determine over the course of the 1.10 and 1.11 releases.  History 
 has taught us that initial implementations often have a tendency overlook use 
 cases and require refinement.  It is the goal of this proposal to have an 
-initial alpha implementation of of bootstrap checkpoining in the 1.9 cycle, 
+initial alpha implementation of bootstrap checkpoining in the 1.9 cycle, 
 and further refinement will occur after we have validated it across several 
 deployments. 
 
