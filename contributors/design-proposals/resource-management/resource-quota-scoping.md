@@ -197,7 +197,7 @@ For example, a quota could do the following:
 
 Theoretically, it would enable support for fine-grained tracking
 on a variety of resource types.  While extremely flexible, there
-are cons to to this approach that make it premature to pursue
+are cons to this approach that make it premature to pursue
 at this time.
 
 * Generic field selectors are not yet settled art
