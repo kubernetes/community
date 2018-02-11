@@ -363,7 +363,7 @@ graceful termination period
 assuming all pods that are in their graceful termination period are gone and that
 all pods that are in the waiting state (see (4)) are running.
 4. If (3) fails, then the new pod is rejected. If (3) passes, then Kubelet holds the
-new pod in a waiting state, and does not run it until the pod passes passes the
+new pod in a waiting state, and does not run it until the pod passes the
 admission checks using the set of actually running pods.
 
 Note that there are a lot of details to be figured out here; above is just a very
