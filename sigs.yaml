@@ -1299,7 +1299,7 @@ sigs:
     - name: scheduler
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kube-scheduler/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
   - name: Service Catalog
     dir: sig-service-catalog
     mission_statement: >
