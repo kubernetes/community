@@ -61,10 +61,6 @@ Kubernetes is a community project. Consequently, it is wholly dependent on its c
 
 Read and review the [Community Expectations](community-expectations.md) for an understand of code and review expectations. 
 
-## Thanks
-
-Many thanks in advance to everyone who contributes their time and effort to making Kubernetes both a successful system as well as a successful community. The strength of our software shines in the strengths of each individual community member. Thanks!
-
 # Your First Contribution
 
 Have you ever wanted to contribute to the coolest cloud technology? We will help you understand the organization of the Kubernetes project and direct you to the best places to get started. You'll be able to pick up issues, write code to fix them, and get your work reviewed and merged.
