@@ -1,14 +1,14 @@
 ## Kubernetes Repositories
 
 
-This document attempts to describe a process for creating and associating github repositories with the Kubernetes project.
+This document attempts to outline a structure for creating and associating github repositories with the Kubernetes project.
 
 The document presents a tiered system of repositories with increasingly strict requirements in an attempt to provide the right level of oversight and flexibility for a variety of different projects.
 
 
 ### Associated Repositories
 
-Associated repositories conform to the Kubernetes community standards for a repository, but otherwise have no restrictions. Associated repositories exist solely for the purpose of making it easier for the Kubernetes community to work together. There is no implication of support or endorsement of any kind by the Kubernetes project, the goals are purely logistical. 
+Associated repositories conform to the Kubernetes community standards for a repository, but otherwise have no restrictions. Associated repositories exist solely for the purpose of making it easier for the Kubernetes community to work together. There is no implication of support or endorsement of any kind by the Kubernetes project, the goals are purely logistical.
 
 #### Goals
 
@@ -18,7 +18,7 @@ To facilitate contributions and collaboration from the broader Kubernetes commun
 #### Rules
 
    * Must adopt the Kubernetes Code of Conduct statement in their repo.
-   * All code projects use the Apache License version 2.0. Documentation repositories should use the Creative Commons License version 4.0.
+   * All code projects use the Apache License version 2.0. Documentation repositories must use the Creative Commons License version 4.0.
    * Must adopt the CNCF CLA bot automation for pull requests.
 
 
@@ -32,13 +32,13 @@ To provide a place for SIGs to collaborate on projects endorsed by and actively 
 
 #### Rules
 
-   * For now all repos will live in github.com/kubernetes-sigs/<sig-name>-<project-name>, this may change in the future as we see how things work.
+   * For now all repos will live in github.com/kubernetes-sigs/\<sig-name\>_\<project-name\>, this may change in the future as we see how things work.
    * Must adopt the Kubernetes Code of Conduct
-   * All code projects use the Apache License version 2.0. Documentation repositories should use the Creative Commons License version 4.0.
+   * All code projects use the Apache License version 2.0. Documentation repositories must use the Creative Commons License version 4.0.
    * Must adopt the CNCF CLA bot, merge bot and Kubernetes PR commands/bots.
    * All OWNERS of the project must also be active SIG members. 
    * SIG membership must vote using lazy consensus to create a new repository
-
+   * SIG must already have identified all of their existing subprojects and code, with valid OWNERS files, in (sigs.yaml)[https://github.com/kubernetes/community/blob/master/sigs.yaml]
 
 ### Core Repositories
 
@@ -49,9 +49,9 @@ Create a broader base of repositories than the existing gh/kubernetes/kubernetes
 
 #### Rules
 
-   * Must live under github.com/kubernetes/<project-name>
+   * Must live under `github.com/kubernetes/<project-name>`
    * Must adopt the Kubernetes Code of Conduct
-   * All code projects use the Apache Licence version 2.0. Documentation repositories should use the Creative Commons License version 4.0.
+   * All code projects use the Apache Licence version 2.0. Documentation repositories must use the Creative Commons License version 4.0.
    * Must adopt the CNCF CLA bot
    * Must adopt all Kubernetes automation (e.g. /lgtm, etc)
    * All OWNERS must be members of standing as defined by ability to vote in Kubernetes steering committee elections. in the Kubernetes community
