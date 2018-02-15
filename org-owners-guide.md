@@ -47,6 +47,35 @@ Note, this list is subject to change.
 There are more organization names that we are squatting on with possible future
 intentions. [For more details please see community issue #1407](https://github.com/kubernetes/community/issues/1407).
 
+## Team Guidance
+
+Each organization should have the following teams:
+
+- teams for each repo `foo`
+  - `foo-admins`: granted admin access to the `foo` repo
+  - `foo-maintainers`: granted write access to the `foo` repo
+  - `foo-reviewers`: granted read access to the `foo` repo; intended to be used as
+    a notification mechanism for interested/active contributors for the `foo` repo
+- a `bots` team
+  - should contain bots such as @k8s-ci-robot and @linuxfoundation that are
+    neccessary for org and repo automation
+- an `owners` team
+  - should be populated by everyone who has `owner` privileges to the org
+  - gives users the opportunity to ping owners as a group rather than having to
+    search for individuals
+
+**NB**: Not all organizations in use today currently follow this team guidance.
+We are looking to coalesce existing teams towards this model, and use this model
+for all orgs going forward.  Notable discrepancies at the moment:
+
+- `foo-reviewers` teams are considered a historical subset of
+  `kubernetes-sig-foo-pr-reviews` teams and are intended mostly as a fallback
+  notification mechanism when requested reviewers are being unresponsive.  Ideally
+  OWNERS files can be used in lieu of these teams.
+- `admins-foo` and `maintainers-foo` teams as used by the kubernetes-incubator
+  org. This was a mistake that swapped the usual convention, and we would like
+  to rename the team
+
 ## Repository Guidance
 
 Repositories have additional guidelines and requirements, such as the use of
