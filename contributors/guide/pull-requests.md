@@ -1,24 +1,22 @@
 # Pull Request Process
 
-This doc explains the process and best practices for submitting a PR to the [Kubernetes project](https://github.com/kubernetes/kubernetes). It should serve as a reference for all contributors, and be useful especially to new and infrequent submitters.
+This doc explains the process and best practices for submitting a pull request to the [Kubernetes project](https://github.com/kubernetes/kubernetes) and its associated subrepositories. It should serve as a reference for all contributors, and be useful especially to new and infrequent submitters.
 
-- [Before You Submit a PR](#before-you-submit-a-pr)
+- [Before You Submit a Pull Request](#before-you-submit-a-pr)
   * [Run Local Verifications](#run-local-verifications)
-  * [Sign the CLA](#sign-the-cla)
-- [The PR Submit Process](#the-pr-submit-process)
-  * [Write Release Notes if Needed](#write-release-notes-if-needed)
+- [The Pull Request Submit Process](#the-pr-submit-process)
   * [The Testing and Merge Workflow](#the-testing-and-merge-workflow)
   * [Marking Unfinished Pull Requests](#marking-unfinished-pull-requests)
   * [Comment Commands Reference](#comment-commands-reference)
   * [Automation](#automation)
   * [How the e2e Tests Work](#how-the-e2e-tests-work)
-- [Why was my PR closed?](#why-was-my-pr-closed)
-- [Why is my PR not getting reviewed?](#why-is-my-pr-not-getting-reviewed)
+- [Why was my pull request closed?](#why-was-my-pr-closed)
+- [Why is my pull request not getting reviewed?](#why-is-my-pr-not-getting-reviewed)
 - [Best Practices for Faster Reviews](#best-practices-for-faster-reviews)
   * [0. Familiarize yourself with project conventions](#0-familiarize-yourself-with-project-conventions)
-  * [1. Is the feature wanted? Make a Design Doc or Sketch PR](#1-is-the-feature-wanted-make-a-design-doc-or-sketch-pr)
-  * [2. Smaller Is Better: Small Commits, Small PRs](#2-smaller-is-better-small-commits-small-prs)
-  * [3. Open a Different PR for Fixes and Generic Features](#3-open-a-different-pr-for-fixes-and-generic-features)
+  * [1. Is the feature wanted? Make a Design Doc or Sketch pull request](#1-is-the-feature-wanted-make-a-design-doc-or-sketch-pr)
+  * [2. Smaller Is Better: Small Commits, Small pull requests](#2-smaller-is-better-small-commits-small-prs)
+  * [3. Open a Different Pull Request for Fixes and Generic Features](#3-open-a-different-pr-for-fixes-and-generic-features)
   * [4. Comments Matter](#4-comments-matter)
   * [5. Test](#5-test)
   * [6. Squashing and Commit Titles](#6-squashing-and-commit-titles)
@@ -26,118 +24,77 @@ This doc explains the process and best practices for submitting a PR to the [Kub
   * [8. It's OK to Push Back](#8-its-ok-to-push-back)
   * [9. Common Sense and Courtesy](#9-common-sense-and-courtesy)
 
+# Before You Submit a Pull Request
 
-# Before You Submit a PR
+This guide is for contributors who already have a pull request to submit. If you're looking for information on setting up your developer environment and creating code to contribute to Kubernetes, see the [development guide](/contributors/devel/development.md).
 
-This guide is for contributors who already have a PR to submit. If you're looking for information on setting up your developer environment and creating code to contribute to Kubernetes, see the [development guide](development.md).
+First time contributors should head to the [Contributor Guide](/contributors/guide/README.md) to get started.
 
-**Make sure your PR adheres to our best practices. These include following project conventions, making small PRs, and commenting thoroughly. Please read the more detailed section on [Best Practices for Faster Reviews](#best-practices-for-faster-reviews) at the end of this doc.**
+**Make sure your pull request adheres to our best practices. These include following project conventions, making small pull requests, and commenting thoroughly. Please read the more detailed section on [Best Practices for Faster Reviews](#best-practices-for-faster-reviews) at the end of this doc.**
 
 ## Run Local Verifications
 
-You can run these local verifications before you submit your PR to predict the
+You can run these local verifications before you submit your pull request to predict the
 pass or fail of continuous integration.
 
 * Run and pass `make verify` (can take 30-40 minutes)
 * Run and pass `make test`
 * Run and pass `make test-integration`
 
-## Sign the CLA
+# The Pull Request Submit Process
 
-You must sign the CLA before your first contribution. [Read more about the CLA.](/CLA.md)
+Merging a pull request requires the following steps to be completed before the pull request will be merged automatically.
 
-If you haven't signed the Contributor License Agreement (CLA) before making a PR,
-the `@k8s-ci-robot` will leave a comment with instructions on how to sign the CLA.
-
-# The PR Submit Process
-
-Merging a PR requires the following steps to be completed before the PR will be merged automatically. For details about each step, see the [The Testing and Merge Workflow](#the-testing-and-merge-workflow) section below.
-
-- Sign the CLA (prerequisite)
-- Make the PR
-- Release notes - do one of the following:
-  - Add notes in the release notes block, or
-  - Update the release note label
+- [Sign the CLA](https://git.k8s.io/community/CLA.md) (prerequisite)
+- [Open a pull request](https://help.github.com/articles/about-pull-requests/)
+  - *For kubernetes/kubernetes repository only:* Add [release notes](/contributors/guide/release-notes.md) if needed.
 - Pass all e2e tests
-- Get a `/lgtm` from a reviewer
-- Get approval from an owner
-
-If your PR meets all of the steps above, it will enter the submit queue to be merged. When it is next in line to be merged, the e2e tests will run a second time. If all tests pass, the PR will be merged automatically.
-
-## Write Release Notes if Needed
-
-Release notes are required for any PR with user-visible changes, such as bug-fixes, feature additions, and output format changes.
-
-If you don't add release notes in the PR template, the `do-not-merge/release-note-label-needed` label is added to your PR automatically after you create it. There are a few ways to update it.
-
-To add a release-note section to the PR description:
-
-For PRs with a release note:
-
-    ```release-note
-    Your release note here
-    ```
-
-For PRs that require additional action from users switching to the new release, include the string "action required" (case insensitive) in the release note:
-
-    ```release-note
-    action required: your release note here
-    ```
-
-For PRs that don't need to be mentioned at release time, just write "NONE" (case insensitive):
-
-    ```release-note
-    NONE
-    ```
-
-The `/release-note-none` comment command can still be used as an alternative to writing "NONE" in the release-note block if it is left empty.
-
-To see how to format your release notes, view the [PR template](https://git.k8s.io/kubernetes/.github/PULL_REQUEST_TEMPLATE.md) for a brief example. PR titles and body comments can be modified at any time prior to the release to make them friendly for release notes.
-
-Release notes apply to PRs on the master branch. For cherry-pick PRs, see the [cherry-pick instructions](cherry-picks.md). The only exception to these rules is when a PR is not a cherry-pick and is targeted directly to the non-master branch.  In this case, a `release-note-*` label is required for that non-master PR.
-
-Now that your release notes are in shape, let's look at how the PR gets tested and merged.
+- Get all necessary approvals from reviewers and code owners 
 
 ## The Testing and Merge Workflow
 
-The Kubernetes merge workflow uses comments to run tests and labels for merging PRs.
-NOTE: For pull requests that are in progress but not ready for review,
-prefix the PR title with `WIP` or `[WIP]` and track any remaining TODOs
-in a checklist in the pull request description.
+The Kubernetes merge workflow uses labels, applied by [commands](https://prow.k8s.io/command-help) via comments. These will trigger actions on your pull request. Different Kubernetes repositories may require different labels on the path to approval. A generic explanation of how labels are used in pull requests can be found [here](/contributors/guide/owners.md#code-review-using-owners-files). The pull request bot will also automatically apply and/or suggest labels.
 
-Here's the process the PR goes through on its way from submission to merging:
+_Example:_ To apply a SIG label, you would type in a comment:
+```
+/sig aws
+```
+
+*NOTE: For pull requests that are in progress but not ready for review,
+prefix the pull request title with `WIP` or `[WIP]` and track any remaining TODOs
+in a checklist in the pull request description.*
+
+Here's the process the pull request goes through on its way from submission to merging:
 
 1. Make the pull request
 1. `@k8s-merge-robot` assigns reviewers
 
-If you're **not** a member of the Kubernetes organization:
+1. If you're **not** a member of the Kubernetes organization, a Reviewer/Kubernetes Member checks that the pull request is safe to test. If so, they comment `/ok-to-test`. Pull requests by Kubernetes organization [members](/community-membership.md) do not need this step. Now the pull request is considered to be trusted, and the pre-submit tests will run:
 
-1. Reviewer/Kubernetes Member checks that the PR is safe to test. If so, they comment `/ok-to-test`
+    1. Automatic tests run. See the current list of tests on the [MERGE REQUIREMENTS tab, at this link](https://submit-queue.k8s.io/#/info)
+    1. If tests fail, resolve issues by pushing edits to your pull request branch
+    1. If the failure is a flake, anyone on trusted pull requests can comment `/retest` to rerun failed tests
+
 1. Reviewer suggests edits
-1. Push edits to your PR branch
-1. Repeat the prior two steps as needed
+1. Push edits to your pull request branch
+1. Repeat the prior two steps as needed until reviewer(s) add `/lgtm` label
 1. (Optional) Some reviewers prefer that you squash commits at this step
-1. Owner is assigned and will add the `/approve` label to the PR
+1. Follow the bot suggestions to assign an OWNER who will add the `/approve` label to the pull request
 
-If you are a member, or a member comments `/ok-to-test`, the PR will be considered to be trusted. Then the pre-submit tests will run:
+Once the tests pass, all failures are commented as flakes, or the reviewer adds the labels `/lgtm` and `/approved`, the pull request enters the final merge queue. The merge queue is needed to make sure no incompatible changes have been introduced by other pull requests since the tests were last run on your pull request.
+<!-- TODO: create parallel instructions for reviewers -->
 
-1. Automatic tests run. See the current list of tests on the [MERGE REQUIREMENTS tab, at this link](https://submit-queue.k8s.io/#/info)
-1. If tests fail, resolve issues by pushing edits to your PR branch
-1. If the failure is a flake, anyone on trusted PRs can comment `/retest` to rerun failed tests
+The [GitHub "munger"](https://git.k8s.io/test-infra/mungegithub) submit-queue plugin will manage the merge queue automatically.
 
-Once the tests pass, all failures are commented as flakes, or the reviewer adds the labels `lgtm` and `approved`, the PR enters the final merge queue. The merge queue is needed to make sure no incompatible changes have been introduced by other PRs since the tests were last run on your PR.
-
-Either the [on call contributor](on-call-rotations.md) will manage the merge queue manually, or the [GitHub "munger"](https://git.k8s.io/test-infra/mungegithub) submit-queue plugin will manage the merge queue automatically.
-
-1. The PR enters the merge queue ([http://submit-queue.k8s.io](http://submit-queue.k8s.io))
-1. The merge queue triggers a test re-run with the comment `/test all [submit-queue is verifying that this PR is safe to merge]`
-    1. Author has signed the CLA (`cncf-cla: yes` label added to PR)
+1. The pull request enters the merge queue ([http://submit-queue.k8s.io](http://submit-queue.k8s.io))
+1. The merge queue triggers a test re-run with the comment `/test all [submit-queue is verifying that this pull request is safe to merge]`
+    1. Author has signed the CLA (`cncf-cla: yes` label added to pull request)
     1. No changes made since last `lgtm` label applied
-1. If tests fail, resolve issues by pushing edits to your PR branch
-1. If the failure is a flake, anyone can comment `/retest` if the PR is trusted
-1. If tests pass, the merge queue automatically merges the PR
+1. If tests fail, resolve issues by pushing edits to your pull request branch
+1. If the failure is a flake, anyone can comment `/retest` if the pull request is trusted
+1. If tests pass, the merge queue automatically merges the pull request
 
-That's the last step. Your PR is now merged.
+That's the last step. Your pull request is now merged.
 
 ## Marking Unfinished Pull Requests
 
@@ -148,46 +105,47 @@ If you want to solicit reviews before the implementation of your pull request is
 
 The GitHub robots will add and remove the `do-not-merge/hold` label as you use the comment commands and the `do-not-merge/work-in-progress` label as you edit your title. While either label is present, your pull request will not be considered for merging.
 
-
 ## Comment Commands Reference
 
-[The commands doc](https://go.k8s.io/bot-commands) contains a reference for all comment commands.
+[The commands doc](https://prow.k8s.io/command-help.html) contains a reference for all comment commands.
 
 ## Automation
 
-The Kubernetes developer community uses a variety of automation to manage pull requests.  This automation is described in detail [in the automation doc](automation.md).
+The Kubernetes developer community uses a variety of automation to manage pull requests.  This automation is described in detail [in the automation doc](/contributors/devel/automation.md).
 
 ## How the e2e Tests Work
 
-The end-to-end tests will post the status results to the PR. If an e2e test fails,
-`@k8s-ci-robot` will comment on the PR with the test history and the
+The end-to-end tests will post the status results to the pull request. If an e2e test fails,
+`@k8s-ci-robot` will comment on the pull request with the test history and the
 comment-command to re-run that test. e.g.
 
 > The following tests failed, say /retest to rerun them all.
 
-# Why was my PR closed?
+# Why was my pull request closed?
+<!-- TODO: update this information to accurately reflect lifecycle:stale label -->
 
-Pull requests older than 90 days will be closed. Exceptions can be made for PRs that have active review comments, or that are awaiting other dependent PRs. Closed pull requests are easy to recreate, and little work is lost by closing a pull request that subsequently needs to be reopened. We want to limit the total number of PRs in flight to:
+Pull requests older than 90 days will be closed. Exceptions can be made for pull requests that have active review comments, or that are awaiting other dependent pull requests. Closed pull requests are easy to recreate, and little work is lost by closing a pull request that subsequently needs to be reopened. We want to limit the total number of pull requests in flight to:
 * Maintain a clean project
-* Remove old PRs that would be difficult to rebase as the underlying code has changed over time
+* Remove old pull requests that would be difficult to rebase as the underlying code has changed over time
 * Encourage code velocity
 
-# Why is my PR not getting reviewed?
+# Why is my pull request not getting reviewed?
 
-A few factors affect how long your PR might wait for review.
+A few factors affect how long your pull request might wait for review.
 
 If it's the last few weeks of a milestone, we need to reduce churn and stabilize.
 
-Or, it could be related to best practices. One common issue is that the PR is too big to review. Let's say you've touched 39 files and have 8657 insertions. When your would-be reviewers pull up the diffs, they run away - this PR is going to take 4 hours to review and they don't have 4 hours right now. They'll get to it later, just as soon as they have more free time (ha!).
+Or, it could be related to best practices. One common issue is that the pull request is too big to review. Let's say you've touched 39 files and have 8657 insertions. When your would-be reviewers pull up the diffs, they run away - this pull request is going to take 4 hours to review and they don't have 4 hours right now. They'll get to it later, just as soon as they have more free time (ha!).
 
-There is a detailed rundown of best practices, including how to avoid too-lengthy PRs, in the next section.
+There is a detailed rundown of best practices, including how to avoid too-lengthy pull requests, in the next section.
 
-But, if you've already followed the best practices and you still aren't getting any PR love, here are some
+But, if you've already followed the best practices and you still aren't getting any pull request love, here are some
 things you can do to move the process along:
 
-   * Make sure that your PR has an assigned reviewer (assignee in GitHub). If not, reply to the PR comment stream asking for a reviewer to be assigned.
+   * Make sure that your pull request has an assigned reviewer (assignee in GitHub). If not, reply to the pull request comment stream asking for a reviewer to be assigned.
+   <!-- TODO: example -->
 
-   * Ping the assignee (@username) on the PR comment stream, and ask for an estimate of when they can get to the review.
+   * Ping the assignee (@username) on the pull request comment stream, and ask for an estimate of when they can get to the review.
 
    * Ping the assignee on [Slack](http://slack.kubernetes.io). Remember that a person's GitHub username might not be the same as their Slack username.
 
@@ -201,79 +159,73 @@ Read on to learn more about how to get faster reviews by following best practice
 
 # Best Practices for Faster Reviews
 
-Most of this section is not specific to Kubernetes, but it's good to keep these best practices in mind when you're making a PR.
+Most of this section is not specific to Kubernetes, but it's good to keep these best practices in mind when you're making a pull request.
 
-You've just had a brilliant idea on how to make Kubernetes better. Let's call that idea Feature-X. Feature-X is not even that complicated. You have a pretty good idea of how to implement it. You jump in and implement it, fixing a bunch of stuff along the way. You send your PR - this is awesome! And it sits. And sits. A week goes by and nobody reviews it. Finally, someone offers a few comments, which you fix up and wait for more review. And you wait. Another week or two go by. This is horrible.
+You've just had a brilliant idea on how to make Kubernetes better. Let's call that idea Feature-X. Feature-X is not even that complicated. You have a pretty good idea of how to implement it. You jump in and implement it, fixing a bunch of stuff along the way. You send your pull request - this is awesome! And it sits. And sits. A week goes by and nobody reviews it. Finally, someone offers a few comments, which you fix up and wait for more review. And you wait. Another week or two go by. This is horrible.
 
-Let's talk about best practices so your PR gets reviewed quickly.
+Let's talk about best practices so your pull request gets reviewed quickly.
 
 ## 0. Familiarize yourself with project conventions
 
-* [Development guide](development.md)
+* [Development guide](/contributors/devel/development.md)
 * [Coding conventions](../guide/coding-conventions.md)
-* [API conventions](api-conventions.md)
-* [Kubectl conventions](kubectl-conventions.md)
+* [API conventions](/contributors/devel/api-conventions.md)
+* [Kubectl conventions](/contributors/devel/kubectl-conventions.md)
 
-## 1. Is the feature wanted? Make a Design Doc or Sketch PR
-
+## 1. Is the feature wanted? File a Kubernetes Enhancement Proposal
 Are you sure Feature-X is something the Kubernetes team wants or will accept? Is it implemented to fit with other changes in flight? Are you willing to bet a few days or weeks of work on it?
 
-It's better to get confirmation beforehand. There are two ways to do this:
+It's better to get confirmation beforehand.
 
-- Make a proposal doc (in docs/proposals; for example [the QoS proposal](http://prs.k8s.io/11713)), or reach out to the affected special interest group (SIG). Here's a [list of SIGs](/sig-list.md)
-- Coordinate your effort with [SIG Docs](/sig-docs) ahead of time
-- Make a sketch PR (e.g., just the API or Go interface). Write or code up just enough to express the idea and the design and why you made those choices
+When you want to make a large or otherwise significant change, you should follow the [Kubernetes Enhancement Proposal process](/keps/0001-kubernetes-enhancement-proposal-process.md).
 
-Or, do all of the above.
+Even for small changes, it is often a good idea to gather feedback on an issue you filed, or even simply ask in the appropriate SIG's Slack channel to invite discussion and feedback from code owners. Here's a [list of SIGs](/sig-list.md).
 
-Be clear about what type of feedback you are asking for when you submit a proposal doc or sketch PR.
 
-Now, if we ask you to change the design, you won't have to re-write it all.
+## 2. Smaller Is Better: Small Commits, Small Pull Requests
 
-## 2. Smaller Is Better: Small Commits, Small PRs
+Small commits and small pull requests get reviewed faster and are more likely to be correct than big ones.
 
-Small commits and small PRs get reviewed faster and are more likely to be correct than big ones.
-
-Attention is a scarce resource. If your PR takes 60 minutes to review, the reviewer's eye for detail is not as keen in the last 30 minutes as it was in the first. It might not get reviewed at all if it requires a large continuous block of time from the reviewer.
+Attention is a scarce resource. If your pull request takes 60 minutes to review, the reviewer's eye for detail is not as keen in the last 30 minutes as it was in the first. It might not get reviewed at all if it requires a large continuous block of time from the reviewer.
 
 **Breaking up commits**
 
-Break up your PR into multiple commits, at logical break points.
+Break up your pull request into multiple commits, at logical break points.
 
 Making a series of discrete commits is a powerful way to express the evolution of an idea or the
 different ideas that make up a single feature. Strive to group logically distinct ideas into separate commits.
 
 For example, if you found that Feature-X needed some prefactoring to fit in, make a commit that JUST does that prefactoring. Then make a new commit for Feature-X.
 
-Strike a balance with the number of commits. A PR with 25 commits is still very cumbersome to review, so use
+Strike a balance with the number of commits. A pull request with 25 commits is still very cumbersome to review, so use
 judgment.
 
-**Breaking up PRs**
+**Breaking up Pull Requests**
 
-Or, going back to our prefactoring example, you could also fork a new branch, do the prefactoring there and send a PR for that. If you can extract whole ideas from your PR and send those as PRs of their own, you can avoid the painful problem of continually rebasing.
+Or, going back to our prefactoring example, you could also fork a new branch, do the prefactoring there and send a pull request for that. If you can extract whole ideas from your pull request and send those as pull requests of their own, you can avoid the painful problem of continually rebasing.
 
-Kubernetes is a fast-moving codebase - lock in your changes ASAP with your small PR, and make merges be someone else's problem.
+Kubernetes is a fast-moving codebase - lock in your changes ASAP with your small pull request, and make merges be someone else's problem.
 
-Multiple small PRs are often better than multiple commits. Don't worry about flooding us with PRs. We'd rather have 100 small, obvious PRs than 10 unreviewable monoliths.
+Multiple small pull requests are often better than multiple commits. Don't worry about flooding us with pull requests. We'd rather have 100 small, obvious pull requests than 10 unreviewable monoliths.
 
-We want every PR to be useful on its own, so use your best judgment on what should be a PR vs. a commit.
+We want every pull request to be useful on its own, so use your best judgment on what should be a pull request vs. a commit.
 
-As a rule of thumb, if your PR is directly related to Feature-X and nothing else, it should probably be part of the Feature-X PR. If you can explain why you are doing seemingly no-op work ("it makes the Feature-X change easier, I promise") we'll probably be OK with it. If you can imagine someone finding value independently of Feature-X, try it as a PR. (Do not link pull requests by `#` in a commit description, because GitHub creates lots of spam. Instead, reference other PRs via the PR your commit is in.)
+As a rule of thumb, if your pull request is directly related to Feature-X and nothing else, it should probably be part of the Feature-X pull request. If you can explain why you are doing seemingly no-op work ("it makes the Feature-X change easier, I promise") we'll probably be OK with it. If you can imagine someone finding value independently of Feature-X, try it as a pull request. (Do not link pull requests by `#` in a commit description, because GitHub creates lots of spam. Instead, reference other pull requests via the pull request your commit is in.)
 
-## 3. Open a Different PR for Fixes and Generic Features
+## 3. Open a Different pull request for Fixes and Generic Features
 
-**Put changes that are unrelated to your feature into a different PR.**
+**Put changes that are unrelated to your feature into a different pull request.**
 
 Often, as you are implementing Feature-X, you will find bad comments, poorly named functions, bad structure, weak type-safety, etc.
 
-You absolutely should fix those things (or at least file issues, please) - but not in the same PR as your feature. Otherwise, your diff will have way too many changes, and your reviewer won't see the forest for the trees.
+You absolutely should fix those things (or at least file issues, please) - but not in the same pull request as your feature. Otherwise, your diff will have way too many changes, and your reviewer won't see the forest for the trees.
 
 **Look for opportunities to pull out generic features.**
 
 For example, if you find yourself touching a lot of modules, think about the dependencies you are introducing between packages. Can some of what you're doing be made more generic and moved up and out of the Feature-X package? Do you need to use a function or type from an otherwise unrelated package? If so, promote! We have places for hosting more generic code.
 
 Likewise, if Feature-X is similar in form to Feature-W which was checked in last month, and you're duplicating some tricky stuff from Feature-W, consider prefactoring the core logic out and using it in both Feature-W and
-Feature-X. (Do that in its own commit or PR, please.)
+Feature-X. (Do that in its own commit or pull request, please.)
 
 ## 4. Comments Matter
 
@@ -285,7 +237,7 @@ Read up on [GoDoc](https://blog.golang.org/godoc-documenting-go-code) - follow t
 
 ## 5. Test
 
-Nothing is more frustrating than starting a review, only to find that the tests are inadequate or absent. Very few PRs can touch code and NOT touch tests.
+Nothing is more frustrating than starting a review, only to find that the tests are inadequate or absent. Very few pull requests can touch code and NOT touch tests.
 
 If you don't know how to test Feature-X, please ask!  We'll be happy to help you design things for easy testing or to suggest appropriate test cases.
 
@@ -295,7 +247,7 @@ Your reviewer has finally sent you feedback on Feature-X.
 
 Make the fixups, and don't squash yet. Put them in a new commit, and re-push. That way your reviewer can look at the new commit on its own, which is much faster than starting over.
 
-We might still ask you to clean up your commits at the very end for the sake of a more readable history, but don't do this until asked: typically at the point where the PR would otherwise be tagged `LGTM`.
+We might still ask you to clean up your commits at the very end for the sake of a more readable history, but don't do this until asked: typically at the point where the pull request would otherwise be tagged `LGTM`.
 
 Each commit should have a good title line (<70 characters) and include an additional description paragraph describing in more detail the change intended.
 
@@ -303,11 +255,11 @@ Each commit should have a good title line (<70 characters) and include an additi
 
 * Sausage => squash
 
- Do squash when there are several commits to fix bugs in the original commit(s), address reviewer feedback, etc. Really we only want to see the end state and commit message for the whole PR.
+ Do squash when there are several commits to fix bugs in the original commit(s), address reviewer feedback, etc. Really we only want to see the end state and commit message for the whole pull request.
 
 * Layers => don't squash
 
- Don't squash when there are independent changes layered to achieve a single goal. For instance, writing a code munger could be one commit, applying it could be another, and adding a precommit check could be a third. One could argue they should be separate PRs, but there's really no way to test/review the munger without seeing it applied, and there needs to be a precommit check to ensure the munged output doesn't immediately get out of date.
+ Don't squash when there are independent changes layered to achieve a single goal. For instance, writing a code munger could be one commit, applying it could be another, and adding a precommit check could be a third. One could argue they should be separate pull requests, but there's really no way to test/review the munger without seeing it applied, and there needs to be a precommit check to ensure the munged output doesn't immediately get out of date.
 
 A commit, as much as possible, should be a single logical change.
 
@@ -321,9 +273,9 @@ Sometimes reviewers make mistakes. It's OK to push back on changes your reviewer
 
 You might be overruled, but you might also prevail. We're pretty reasonable people. Mostly.
 
-Another phenomenon of open-source projects (where anyone can comment on any issue) is the dog-pile - your PR gets so many comments from so many people it becomes hard to follow. In this situation, you can ask the primary reviewer (assignee) whether they want you to fork a new PR to clear out all the comments. You don't HAVE to fix every issue raised by every person who feels like commenting, but you should answer reasonable comments with an explanation.
+Another phenomenon of open-source projects (where anyone can comment on any issue) is the dog-pile - your pull request gets so many comments from so many people it becomes hard to follow. In this situation, you can ask the primary reviewer (assignee) whether they want you to fork a new pull request to clear out all the comments. You don't HAVE to fix every issue raised by every person who feels like commenting, but you should answer reasonable comments with an explanation.
 
 ## 9. Common Sense and Courtesy
 
 No document can take the place of common sense and good taste. Use your best judgment, while you put
-a bit of thought into how your work can be made easier to review. If you do these things your PRs will get merged with less friction.
+a bit of thought into how your work can be made easier to review. If you do these things your pull requests will get merged with less friction.
