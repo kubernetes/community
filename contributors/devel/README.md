@@ -17,7 +17,7 @@ Guide](http://kubernetes.io/docs/admin/).
 
 * **GitHub Issues** ([issues.md](issues.md)): How incoming issues are triaged.
 
-* **Pull Request Process** ([pull-requests.md](pull-requests.md)): When and why pull requests are closed.
+* **Pull Request Process** ([/contributors/guide/pull-requests.md](/contributors/guide/pull-requests.md)): When and why pull requests are closed.
 
 * **Getting Recent Builds** ([getting-builds.md](getting-builds.md)): How to get recent builds including the latest builds that pass CI.
 
