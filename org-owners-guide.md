@@ -54,6 +54,8 @@ Each organization should have the following teams:
 - teams for each repo `foo`
   - `foo-admins`: granted admin access to the `foo` repo
   - `foo-maintainers`: granted write access to the `foo` repo
+  - `foo-reviewers`: granted read access to the `foo` repo; intended to be used as
+    a notification mechanism for interested/active contributors for the `foo` repo
 - a `bots` team
   - should contain bots such as @k8s-ci-robot and @linuxfoundation that are
     neccessary for org and repo automation
@@ -66,11 +68,10 @@ Each organization should have the following teams:
 We are looking to coalesce existing teams towards this model, and use this model
 for all orgs going forward.  Notable discrepancies at the moment:
 
-- `foo-reviewers` teams that grant read access to each `foo` repo haven't
-  proven themselves useful.  Reviews are now requested from sigs via
-  @sig-foo-pr-reviews teams, and read access is already granted to the public
-  at large.  These don't need to be created going forward, and can be removed
-  if they're not actively being used.
+- `foo-reviewers` teams are considered a historical subset of
+  `kubernetes-sig-foo-pr-reviews` teams and are intended mostly as a fallback
+  notification mechanism when requested reviewers are being unresponsive.  Ideally
+  OWNERS files can be used in lieu of these teams.
 - `admins-foo` and `maintainers-foo` teams as used by the kubernetes-incubator
   org. This was a mistake that swapped the usual convention, and we would like
   to rename the team
