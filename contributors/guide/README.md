@@ -59,7 +59,7 @@ If you haven’t set up your environment, please find resources [here](/contribu
 
 Kubernetes is a community project. Consequently, it is wholly dependent on its community to provide a productive, friendly and collaborative environment.
 
-Read and review the [Community Expectations](community-expectations.md) for an understand of code and review expectations. 
+Read and review the [Community Expectations](community-expectations.md) for an understanding of code and review expectations.
 
 ## Thanks
 
