@@ -32,7 +32,7 @@ To provide a place for SIGs to collaborate on projects endorsed by and actively 
 
 #### Rules
 
-   * For now all repos will live in github.com/kubernetes-sigs/\<sig-name\>_\<project-name\>, this may change in the future as we see how things work.
+   * For now all repos will live in github.com/kubernetes-sigs/\<sig-name\>\_\<project-name\>, this may change in the future as we see how things work.
    * Must adopt the Kubernetes Code of Conduct
    * All code projects use the Apache License version 2.0. Documentation repositories must use the Creative Commons License version 4.0.
    * Must adopt the CNCF CLA bot, merge bot and Kubernetes PR commands/bots.
