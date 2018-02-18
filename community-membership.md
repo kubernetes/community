@@ -16,7 +16,7 @@ scoped by these sub-areas.
 
 ## New contributors
 
-[**New contributors**](https://github.com/kubernetes/contrib/issues/1090) should be welcomed to the community
+[**New contributors**](https://github.com/kubernetes/community/blob/master/CONTRIBUTING.md) should be welcomed to the community
 by existing members, helped with PR workflow, and directed to relevant documentation and communication channels.
 
 ## Established community members
