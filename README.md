@@ -2,7 +2,9 @@
 
 Welcome to the Kubernetes community!
 
-This is the starting point for becoming a contributor - improving docs, improving code, giving talks etc.
+This is the starting point for joining and contributing to the Kubernetes community - improving docs, improving code, giving talks etc.
+
+To learn more about the project structure and organization, please refer to [Project Governance] information.
 
 ## Communicating
 
@@ -25,67 +27,32 @@ and its own mailing list, slack channel, etc.
 If you want to edit details about a SIG (e.g. its weekly meeting time or its leads),
 please follow [these instructions](./generator) that detail how our docs are auto-generated.
 
-## How Can I Help?
-
-Documentation (like the text you are reading now) can
-always use improvement!
-
-There's a [semi-curated list of issues][help wanted]
-that should not need deep knowledge of the system.
-
-To dig deeper, read a design doc, e.g. [architecture].
-
-[Pick a SIG](sig-list.md), peruse its associated [cmd] directory,
-find a `main()` and read code until you find something you want to fix.
-
-There's always code that can be clarified and variables
-or functions that can be renamed or commented.
-
-There's always a need for more test coverage.
-
 ## Learn to Build
 
 Links in [contributors/devel/README.md](contributors/devel/README.md)
-lead to many relevant topics, including
- * [Developer's Guide] - how to start a build/test cycle
- * [Collaboration Guide] - how to work together
- * [Expectations] - what the community expects
- * [Pull Request Process] - how to prepare a pull request
+lead to many relevant technical topics.
 
-## Your First Contribution
+## Contribute
 
-We recommend that you work on an existing issue before attempting
-to [develop a new feature].
+The [Contributor Guide](contributors/guide/README.md) provides detailed instruction on how to get your ideas and bug fixes seen and accepted, including:
+1. How to [file an issue]
+1. How to [find something to work on]
+1. How to [open a pull request]
 
-Start by finding an existing issue with the [help wanted] label;
-these issues we've deemed are well suited for new contributors.
-Alternatively, if there is a specific area you are interested in,
-ask a [SIG lead](sig-list.md) for suggestions), and respond on the
-issue thread expressing interest in working on it.
+## Membership
 
-This helps other people know that the issue is active, and
-hopefully prevents duplicated efforts.
+We encourage all contributors to become members. We aim to grow an active, healthy community of contributors, reviewers, and code owners. Learn more about requirements and responsibilities of memebership in our [Community Membership] page.
 
-Before submitting a pull request, sign the [CLA].
-
-If you want to work on a new idea of relatively small scope:
-
-  1. Submit an issue describing your proposed change to the repo in question.
-  1. The repo owners will respond to your issue promptly.
-  1. If your proposed change is accepted,
-     sign the [CLA],
-     and start work in your fork.
-  1. Submit a [pull request] containing a tested change.
-
-
-[architecture]: /contributors/design-proposals/architecture/architecture.md
-[cmd]: https://git.k8s.io/kubernetes/cmd
-[CLA]: CLA.md
-[Collaboration Guide]: contributors/devel/collab.md
+[Project Governance]:/governance.md
 [Developer's Guide]: contributors/devel/development.md
-[develop a new feature]: https://github.com/kubernetes/features
-[expectations]: contributors/guide/community-expectations.md
-[help wanted]: https://go.k8s.io/help-wanted
-[pull request]: contributors/devel/pull-requests.md
+[Contributor Guide]:
+contributors/guide/README.md
+[file an issue]:
+/contributors/guide/README.md#file-an-issue
+[find something to work on]:
+contributors/guide/README.md#find-something-to-work-on
+[open a pull request]:
+contributors/guide/README.md#open-a-pull-request
+[Community Membership]:/community-membership.md
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/CONTRIBUTING.md?pixel)]()
