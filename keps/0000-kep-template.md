@@ -1,5 +1,5 @@
 ---
-kep-number: draft-YYYYMMDD
+kep-number: 0
 title: My First KEP
 authors:
   - "@janedoe"
@@ -16,7 +16,7 @@ approvers:
 editor: TBD
 creation-date: yyyy-mm-dd
 last-updated: yyyy-mm-dd
-status: accepted
+status: provisional
 see-also:
   - KEP-1
   - KEP-2
@@ -37,16 +37,25 @@ The title should be lowercased and spaces/punctuation should be replaced with `-
 As the KEP is approved and an official KEP number is allocated, the file should be renamed.
 
 To get started with this template:
-* Make a copy of this template.
-  Name it `draft-YYYYMMDD-my-title.md`.
-* Create a PR in the [`kubernetes/community`](https://github.com/kubernetes/community) repo.
-* Check in early.
-  Do this once the document holds together and general direction is understood by many in the sponsoring SIG.
-  View anything marked as a draft as a working document.
+1. **Pick a hosting SIG.**
+  Make sure that the problem space is something the SIG is interested in taking up.
+  KEPs should not be checked in without a sponsoring SIG.
+1. **Allocate a KEP number.**
+  Do this by (a) taking the next number in the `NEXT_KEP_NUMBER` file and (b) incrementing that number.
+  Include the updated `NEXT_KEP_NUMBER` file in your PR.
+1. **Make a copy of this template.**
+  Name it `NNNN-YYYYMMDD-my-title.md` where `NNNN` is the KEP number that was allocated.
+1. **Fill out the "overview" sections.**
+  This includes the Summary and Motivation sections.
+  These should be easy if you've preflighted the idea of the KEP with the appropriate SIG.
+1. **Create a PR.**
+  Assign it to folks in the SIG that are sponsoring this process.
+1. **Merge early.**
+  Avoid getting hung up on specific details and instead aim to get the goal of the KEP merged quickly.
+  The best way to do this is to just start with the "Overview" sections and fill out details incrementally in follow on PRs.
+  View anything marked as a `provisional` as a working document.
   Aim for single topic PRs to keep discussions focused.
   If you disagree with what is already in a document, open a new PR with suggested changes.
-* A KEP number can be assigned at any time by (even in the first PR) (a) taking the next number in the NEXT_KEP_NUMBER file and (b) incrementing that number.
-  These PRs should be approved quickly to minimize merge conflicts.
 
 The canonical place for the latest set of instructions (and the likely source of this file) is [here](/keps/0000-kep-template.md).
 
