@@ -15,7 +15,7 @@ reviewers:
 approvers:
   - "@thockin"
 editor: TBD
-status: approved
+status: draft
 replaces:
   - contributors/design-proposals/cloud-provider/cloud-provider-refactoring.md
 ```
