@@ -38,7 +38,7 @@ The following subprojects are owned by sig-storage:
     - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
 - **volumes**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volumes/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volume/OWNERS
 
 ## GitHub Teams
 
