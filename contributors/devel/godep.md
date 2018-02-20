@@ -187,3 +187,25 @@ paths to coexist in the same git repo.
 
 The verifiers, including `hack/verify-godeps.sh` *must* pass for every pull
 request.
+
+## Reviewing and approving dependency changes
+
+Particular attention to detail should be exercised when reviewing and approving
+PRs that add/remove/update dependencies. Importing a new dependency should bring
+a certain degree of value as there is a maintenance overhead for maintaining
+dependencies into the future.
+
+When importing a new dependency, be sure to keep an eye out for the following:
+- Is the dependency maintained?
+- Does the dependency bring value to the project? Could this be done without
+  adding a new dependency?
+- Is the target dependency the original source, or a fork?
+- Is there already a dependency in the project that does something similar?
+- Does the dependency have a license that is compatible with the Kubernetes
+  project?
+
+All new dependency licenses should be reviewed by either Tim Hockin (@thockin)
+or the Steering Committee (@kubernetes/steering-committee) to ensure that they
+are compatible with the Kubernetes project license. It is also important to note
+and flag if a license has changed when updating a dependency, so that these can
+also be reviewed.
