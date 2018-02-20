@@ -51,20 +51,26 @@ Furthermore, this documentation is often duplicated and out of date.
 The fact that it isn't collected in one place and presented as a whole leads to fragmentation.
 Often times documentation will be duplicated because the authors themselves can't find the relevant docs.
 
+This site will also serve as a starting point for those that are looking to contribute.
+This site (and the contributor guide) can provide a soft introduction to the main processes and groups.
+
+
 Finally, some simple domain specific indexing could go a long way to make it easier to discover and cross link information.
 Specifically, building a site that can take advantage of the KEP metadata will both make KEPs more discoverable and encourage those in the community to publish information in a way that *can* be discovered.
 
 ### Goals
 
-* Provide a new site (`community.kubernetes.io`).
+* Provide a new site (`community.kubernetes.io`? `contrib.kubernetes.io`?).
 * Publish information that is currently in the [community repo](https://github.com/kubernetes/community).
 * Build some simple tools to enhance discoverability within the site.
   This could include features such as automatically linking KEP and SIG names.
+* Over time, add an index of events, meetups, and other forums for those that are actively contributing to k8s.
 
 ### Non-Goals
 
 * Discover and bring together information from multiple orgs/repos.
 * Create a super dynamic back end.  This is most likely served best with a static site.
+* Other extended community functions like a job board or a list of vendors.
 
 ## Proposal
 
