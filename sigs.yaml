@@ -1401,7 +1401,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
     - name: volumes
       owners:
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volumes/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volume/OWNERS
   - name: Testing
     dir: sig-testing
     mission_statement: >
