@@ -15,7 +15,9 @@ This process is still in a _beta_ state and is opt-in for those that want to pro
 
 ### Do I have to use the KEP process?
 
-Generally, no!
+No... but we hope that you will.
+Over time having a rich set of KEPs in one place will make it easier for people to track what is going in the community and find a structured historic record.
+
 KEPs are only required when the changes are wide ranging and impact most of the project.
 These changes are usually coordinated through SIG-Architecture.
 It is up to any specific SIG if they want to use the KEP process and when.
@@ -25,7 +27,13 @@ The process is available to SIGs to use but not required.
 
 Our aim with KEPs is to clearly communicate new efforts to the Kubernetes contributor community.
 As such, we want to build a well curated set of clear proposals in a common format with useful metadata.
-Over time we'll be building on this to make KEPs findable (SEO) and cross indexed.
+
+Benefits to KEP users (in the limit):
+* Exposure on a kubernetes blessed web site that is findable via web search engines.
+* Cross indexing of KEPs so that users can find connections and the current status of any KEP.
+* A clear process with approvers and reviewers for making decisions.
+  This will lead to more structured decisions that stick as there is a discoverable record around the decisions.
+
 We are inspired by IETF RFCs, Pyton PEPs and Rust RFCs.
 See [KEP-1](0001-kubernetes-enhancement-proposal-process.md) for more details.
 
@@ -34,6 +42,15 @@ See [KEP-1](0001-kubernetes-enhancement-proposal-process.md) for more details.
 If the KEP is mainly restricted to one SIG's purview then it should be in a KEP directory for that SIG.
 If the KEP is widely impacting much of Kubernetes, it should be put at the root of this directory.
 If in doubt ask [SIG-Architecture](../sig-architecture/README.md) and they can advise.
+
+### What will it take for KEPs to "graduate" out of "beta"?
+
+Things we'd like to see happen to consider KEPs well on their way:
+* A set of KEPs that show healthy process around describing an effort and recording decisions in a reasonable amount of time.
+* KEPs exposed on a searchable and indexable web site.
+* Presubmit checks for KEPs around metadata format and markdown validity.
+
+Even so, the process can evolve. As we find new techniques we can improve our processes.
 
 ### My FAQ isn't answered here!
 

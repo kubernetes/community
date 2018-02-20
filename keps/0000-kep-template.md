@@ -53,7 +53,7 @@ To get started with this template:
 1. **Merge early.**
   Avoid getting hung up on specific details and instead aim to get the goal of the KEP merged quickly.
   The best way to do this is to just start with the "Overview" sections and fill out details incrementally in follow on PRs.
-  View anything marked as a `provisional` as a working document.
+  View anything marked as a `provisional` as a working document and subject to change.
   Aim for single topic PRs to keep discussions focused.
   If you disagree with what is already in a document, open a new PR with suggested changes.
 
