@@ -183,7 +183,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/history/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/job/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replicaset/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS 
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/apps/OWNERS
@@ -826,14 +826,14 @@ sigs:
   - name: Multicluster
     dir: sig-multicluster
     mission_statement: >
-      A Special Interest Group focussed on solving common challenges related to the 
+      A Special Interest Group focussed on solving common challenges related to the
       management of multiple Kubernetes clusters, and applications that exist therein.
-      The SIG will be responsible for designing, discussing, implementing and maintaining 
-      API’s, tools and documentation related to multi-cluster administration and application 
-      management. This includes not only active automated approaches such as Cluster 
-      Federation, but also those that employ batch workflow-style continuous deployment 
-      systems like Spinnaker and others.  Standalone building blocks for these and other 
-      similar systems (for example a cluster registry), and proposed changes to kubernetes 
+      The SIG will be responsible for designing, discussing, implementing and maintaining
+      API’s, tools and documentation related to multi-cluster administration and application
+      management. This includes not only active automated approaches such as Cluster
+      Federation, but also those that employ batch workflow-style continuous deployment
+      systems like Spinnaker and others.  Standalone building blocks for these and other
+      similar systems (for example a cluster registry), and proposed changes to kubernetes
       core where appropriate will also be in scope.
     label: multicluster
     leads:
@@ -1457,7 +1457,7 @@ sigs:
     - name: testing-commons
       description: "The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project."
       owners:
-      - https://raw.githubusercontent.com/kubernetes-sig-testing/frameworks/master/OWNERS 
+      - https://raw.githubusercontent.com/kubernetes-sig-testing/frameworks/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
       meetings:
       - description: Testing Commons
