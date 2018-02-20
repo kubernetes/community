@@ -441,37 +441,143 @@ Alternatively, deployment could be simplified by having all components (includin
 
 ### CSI Credentials
 
-This part of proposal is not going to be implemented in alpha release.
+CSI allows specifying credentials in CreateVolume/DeleteVolume, ControllerPublishVolume/ControllerUnpublishVolume, NodeStageVolume/NodeUnstageVolume, and NodePublishVolume/NodeUnpublishVolume operations.
 
-#### End user credentials
-CSI allows specifying *end user credentials* in all operations. Kubernetes does not have facility to configure a Secret per *user*, we usually track objects per *namespace*. Therefore we decided to postpone implementation of these credentials and wait until CSI is clarified.
+Kubernetes will enable cluster admins and users deploying workloads on the cluster to specify these credentials by referencing Kubernetes secret object(s). Kubernetes (either the core components or helper containers) will fetch the secret(s) and pass them to the CSI volume plugin.
 
-#### Volume specific credentials
-Some storage technologies (e.g. iSCSI with CHAP) require credentials tied to the volume (iSCSI LUN) that must be used during `NodePublish` request. It is expected that these credentials will be provided during dynamic provisioning of the volume, however CSI `CreateVolume` response does not provide any. In case it gets fixed soon external provisioner can save the secrets in a dedicated namespace and make them available to external attacher and internal CSI volume plugin using these `CSIPersistentVolumeSource` fields:
+If a secret object contains more than one secret, all secrets are passed.
 
-// ...
+#### Secret to CSI Credential Encoding
+
+CSI accepts credentials for all the operations specified above as a map of string to string (e.g. `map<string, string> controller_create_credentials`).
+
+Kubernetes, however, defines secrets as a map of string to byte-array (e.g. `Data map[string][]byte`). It also allows specifying text secret data in string form via a write-only convenience field `StringData` which is a map of string to string.
+
+Therefore, before passing secret data to CSI, Kubernetes (either the core components or helper containers) will convert the secret data from bytes to string (Kubernetes does not specify the character encoding, but Kubernetes internally uses golang to cast from string to byte and vice versa which assumes UTF-8 character set).
+
+Although CSI only accepts string data, a plugin MAY dictate in its documentation that a specific secret contain binary data and specify a binary-to-text encoding to use (base64, quoted-printable, etc.) to encode the binary data and allow it to be passed in as a string. It is the responsibility of the entity (cluster admin, user, etc.) that creates the secret to ensure its content is what the plugin expects and is encoded in the format the plugin expects.
+
+#### CreateVolume/DeleteVolume Credentials
+
+The CSI CreateVolume/DeleteVolume calls are responsible for creating and deleting volumes.
+These calls are executed by the CSI external-provisioner.
+Credentials for these calls will be specified in the Kubernetes `StorageClass` object.
+
+```yaml
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: fast-storage
+provisioner: com.example.team.csi-driver
+parameters:
+  type: pd-ssd
+  csiProvisionerSecretName: mysecret
+  csiProvisionerSecretNamespace: mynamespaace
+```
+
+The CSI external-provisioner will reserve the parameter keys `csiProvisionerSecretName` and `csiProvisionerSecretNamespace`. If specified, the CSI Provisioner will fetch the secret `csiProvisionerSecretName` in the Kubernetes namespace `csiProvisionerSecretNamespace` and pass it to:
+1. The CSI `CreateVolumeRequest` in the `controller_create_credentials` field.
+2. The CSI `DeleteVolumeRequest` in the `controller_delete_credentials` field.
+
+See "Secret to CSI Credential Encoding" section above for details on how secrets will be mapped to CSI credentials.
+
+It is assumed that since `StorageClass` is a non-namespaced field, only trusted users (e.g. cluster administrators) should be able to create a `StorageClass` and, thus, specify which secret to fetch.
+
+The only Kubernetes component that needs access to this secret is the CSI external-provisioner, which would fetch this secret. The permissions for the external-provisioner may be limited to the specified (external-provisioner specific) namespace to prevent a compromised provisioner from gaining access to other secrets.
+
+#### ControllerPublishVolume/ControllerUnpublishVolume Credentials
+
+The CSI ControllerPublishVolume/ControllerUnpublishVolume calls are responsible for attaching and detaching volumes.
+These calls are executed by the CSI external-attacher.
+Credentials for these calls will be specified in the Kubernetes `CSIPersistentVolumeSource` object.
+
 ```go
 type CSIPersistentVolumeSource struct {
 
-    // Optional: MountSecretRef is a reference to the secret object containing
-    // sensitive information to pass to the CSI driver during NodePublish.
-    // This may be empty if no secret is required. If the secret object contains
-    // more than one secret, all secrets are passed.
-    // +optional
-    MountSecretRef *SecretReference `json:"mountSecretRef,omitempty" protobuf:"bytes,3,opt,name=mountSecretRef"`
-
-    // Optional: AttachSecretRef is a reference to the secret object containing
-    // sensitive information to pass to the CSI driver during ControllerPublish.
-    // This may be empty if no secret is required. If the secret object contains
-    // more than one secret, all secrets are passed.
-    // +optional
-    AttachSecretRef *SecretReference `json:"attachSecretRef,omitempty" protobuf:"bytes,4,opt,name=attachSecretRef"`
+  // ControllerPublishSecretRef is a reference to the secret object containing
+  // sensitive information to pass to the CSI driver to complete the CSI
+  // ControllerPublishVolume and ControllerUnpublishVolume calls.
+  // This secret will be fetched by the external-attacher.
+  // This field is optional, and  may be empty if no secret is required. If the
+  // secret object contains more than one secret, all secrets are passed.
+  // +optional
+  ControllerPublishSecretRef *SecretReference
 }
 ```
 
-Note that a malicious provisioner could obtain an arbitrary secret by setting the mount secret in PV object to whatever secret it wants. It is assumed that cluster admins will only run trusted provisioners.
+If specified, the CSI external-attacher will fetch the Kubernetes secret referenced by `ControllerPublishSecretRef` and pass it to:
+1. The CSI `ControllerPublishVolume` in the `controller_publish_credentials` field.
+2. The CSI `ControllerUnpublishVolume` in the `controller_unpublish_credentials` field.
 
-Because the kubelet would be responsible for fetching and passing the mount secret to the CSI driver,the Kubernetes NodeAuthorizer must be updated to allow kubelet read access to mount secrets.
+See "Secret to CSI Credential Encoding" section above for details on how secrets will be mapped to CSI credentials.
+
+It is assumed that since `PersistentVolume` objects are non-namespaced and `CSIPersistentVolumeSource` can only be referenced via a `PersistentVolume`, only trusted users (e.g. cluster administrators) should be able to create a `PersistentVolume` objects and, thus, specify which secret to fetch.
+
+The only Kubernetes component that needs access to this secret is the CSI external-attacher, which would fetch this secret. The permissions for the external-attacher may be limited to the specified (external-attacher specific) namespace to prevent a compromised attacher from gaining access to other secrets.
+
+#### NodeStageVolume/NodeUnstageVolume Credentials
+
+The CSI NodeStageVolume/NodeUnstageVolume calls are responsible for mounting (setup) and unmounting (teardown) volumes.
+These calls are executed by the Kubernetes node agent (kubelet).
+Credentials for these calls will be specified in the Kubernetes `CSIPersistentVolumeSource` object.
+
+```go
+type CSIPersistentVolumeSource struct {
+
+  // NodeStageSecretRef is a reference to the secret object containing sensitive
+  // information to pass to the CSI driver to complete the CSI NodeStageVolume
+  // and NodeStageVolume and NodeUnstageVolume calls.
+  // This secret will be fetched by the kubelet.
+  // This field is optional, and  may be empty if no secret is required. If the
+  // secret object contains more than one secret, all secrets are passed.
+  // +optional
+  NodeStageSecretRef *SecretReference
+}
+```
+
+If specified, the kubelet will fetch the Kubernetes secret referenced by `NodeStageSecretRef` and pass it to:
+1. The CSI `NodeStageVolume` in the `node_stage_credentials` field.
+2. The CSI `NodeUnstageVolume` in the `node_unstage_credentials` field.
+
+See "Secret to CSI Credential Encoding" section above for details on how secrets will be mapped to CSI credentials.
+
+It is assumed that since `PersistentVolume` objects are non-namespaced and `CSIPersistentVolumeSource` can only be referenced via a `PersistentVolume`, only trusted users (e.g. cluster administrators) should be able to create a `PersistentVolume` objects and, thus, specify which secret to fetch.
+
+The only Kubernetes component that needs access to this secret is the kubelet, which would fetch this secret. The permissions for the kubelet may be limited to the specified (kubelet specific) namespace to prevent a compromised attacher from gaining access to other secrets.
+
+The Kubernetes API server's node authorizer must be updated to allow kubelet to access the secrets referenced by `CSIPersistentVolumeSource.NodeStageSecretRef`.
+
+#### NodePublishVolume/NodeUnpublishVolume Credentials
+
+The CSI NodePublishVolume/NodeUnpublishVolume calls are responsible for mounting (setup) and unmounting (teardown) volumes.
+These calls are executed by the Kubernetes node agent (kubelet).
+Credentials for these calls will be specified in the Kubernetes `CSIPersistentVolumeSource` object.
+
+```go
+type CSIPersistentVolumeSource struct {
+
+  // NodePublishSecretRef is a reference to the secret object containing
+  // sensitive information to pass to the CSI driver to complete the CSI
+  // NodePublishVolume and NodeUnpublishVolume calls.
+  // This secret will be fetched by the kubelet.
+  // This field is optional, and  may be empty if no secret is required. If the
+  // secret object contains more than one secret, all secrets are passed.
+  // +optional
+  NodePublishSecretRef *SecretReference
+}
+```
+
+If specified, the kubelet will fetch the Kubernetes secret referenced by `NodePublishSecretRef` and pass it to:
+1. The CSI `NodePublishVolume` in the `node_publish_credentials` field.
+2. The CSI `NodeUnpublishVolume` in the `node_unpublish_credentials` field.
+
+See "Secret to CSI Credential Encoding" section above for details on how secrets will be mapped to CSI credentials.
+
+It is assumed that since `PersistentVolume` objects are non-namespaced and `CSIPersistentVolumeSource` can only be referenced via a `PersistentVolume`, only trusted users (e.g. cluster administrators) should be able to create a `PersistentVolume` objects and, thus, specify which secret to fetch.
+
+The only Kubernetes component that needs access to this secret is the kubelet, which would fetch this secret. The permissions for the kubelet may be limited to the specified (kubelet specific) namespace to prevent a compromised attacher from gaining access to other secrets.
+
+The Kubernetes API server's node authorizer must be updated to allow kubelet to access the secrets referenced by `CSIPersistentVolumeSource.NodePublishSecretRef`.
 
 ## Alternatives Considered
 
