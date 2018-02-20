@@ -8,16 +8,16 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 -->
 # Azure SIG
 
-A Special Interest Group for building, deploying, maintaining, supporting, and using Kubernetes on Azure Container Service.
+A Special Interest Group for building, deploying, maintaining, supporting, and using Kubernetes on Azure.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 16:00 UTC](https://deis.zoom.us/j/2018742972) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+* Regular SIG Meeting: [Wednesdays at 16:00 UTC](https://zoom.us/j/2015551212) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
 
 ## Leads
 * Jason Hansen (**[@slack](https://github.com/slack)**), Microsoft
-* Cole Mickens (**[@colemickens](https://github.com/colemickens)**), Microsoft
+* Cole Mickens (**[@colemickens](https://github.com/colemickens)**), Red Hat
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Microsoft
 
 ## Contact
