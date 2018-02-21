@@ -103,7 +103,13 @@ make cross
 #### Install etcd
 
 ```sh
+cd $working_dir/kubernetes
+
+# Installs in ./third_party/etcd
 hack/install-etcd.sh
+
+# Add to PATH
+echo export PATH="\$PATH:$working_dir/kubernetes/third_party/etcd" >> ~/.profile
 ```
 
 #### Test
