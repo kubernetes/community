@@ -4,7 +4,7 @@ We have PUBLIC and RECORDED [weekly meeting](https://zoom.us/my/kubernetescommun
  
 Map that to your local time with this [timezone table](https://www.google.com/search?q=1800+in+utc)
 
-See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any iCal client.
+See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any [iCal client](https://en.wikipedia.org/wiki/ICalendar).
 
 All meetings are archived on the [Youtube Channel](https://www.youtube.com/watch?v=onlFHICYB4Q&list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ)
 
