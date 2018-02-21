@@ -1,3 +1,5 @@
+# Adding Release Notes
+
 On the kubernetes/kubernetes repository, release notes are required for any pull request with user-visible changes, such as bug-fixes, feature additions, and output format changes.
 
 To meet this requirement, do one of the following:
@@ -28,8 +30,6 @@ For pull requests that don't need to be mentioned at release time, just write "N
 
 The `/release-note-none` comment command can still be used as an alternative to writing "NONE" in the release-note block if it is left empty.
 
-To see how to format your release notes, view the kubernetes/kubernetes[pull request template](https://git.k8s.io/kubernetes/.github/PULL_REQUEST_TEMPLATE.md) for a brief example. pull request titles and body comments can be modified at any time prior to the release to make them friendly for release notes.
+To see how to format your release notes, view the kubernetes/kubernetes [pull request template](https://git.k8s.io/kubernetes/.github/PULL_REQUEST_TEMPLATE.md) for a brief example. pull request titles and body comments can be modified at any time prior to the release to make them friendly for release notes.
 
 Release notes apply to pull requests on the master branch. For cherry-pick pull requests, see the [cherry-pick instructions](contributors/devel/cherry-picks.md). The only exception to these rules is when a pull request is not a cherry-pick and is targeted directly to the non-master branch.  In this case, a `release-note-*` label is required for that non-master pull request.
-
-Now that your release notes are in shape, let's look at how the pull request gets tested and merged.

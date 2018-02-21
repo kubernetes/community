@@ -107,7 +107,7 @@ The GitHub robots will add and remove the `do-not-merge/hold` label as you use t
 
 ## Comment Commands Reference
 
-[The commands doc](https://prow.k8s.io/command-help.html) contains a reference for all comment commands.
+[The commands doc](https://go.k8s.io/bot-commands) contains a reference for all comment commands.
 
 ## Automation
 
@@ -122,7 +122,6 @@ comment-command to re-run that test. e.g.
 > The following tests failed, say /retest to rerun them all.
 
 # Why was my pull request closed?
-<!-- TODO: update this information to accurately reflect lifecycle:stale label -->
 
 Pull requests older than 90 days will be closed. Exceptions can be made for pull requests that have active review comments, or that are awaiting other dependent pull requests. Closed pull requests are easy to recreate, and little work is lost by closing a pull request that subsequently needs to be reopened. We want to limit the total number of pull requests in flight to:
 * Maintain a clean project
