@@ -1643,6 +1643,7 @@ workinggroups:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-app-def
   - name: Cloud Provider
     dir: wg-cloud-provider
+    label: cloud-provider
     mission_statement: >
       Charter can be found [here](https://docs.google.com/document/d/1m4Kvnh_u_9cENEE9n1ifYowQEFSgiHnbw43urGJMB64/edit#)
     leads:
@@ -1663,6 +1664,31 @@ workinggroups:
     contact:
       slack: wg-cloud-provider
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-cloud-provider
+    subprojects:
+    - name: aws-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/aws-cloud-provider/master/OWNERS
+    - name: azure-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/azure-cloud-provider/master/OWNERS
+    - name: cloudstack-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cloudstack-cloud-provider/master/OWNERS
+    - name: gcp-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/gcp-cloud-provider/master/OWNERS
+    - name: openstack-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/openstack-cloud-provider/master/OWNERS
+    - name: ovirt-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/ovirt-cloud-provider/master/OWNERS
+    - name: photon-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/photon-cloud-provider/master/OWNERS
+    - name: vsphere-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/vsphere-cloud-provider/master/OWNERS
   - name: Multitenancy
     dir: wg-multitenancy
     mission_statement: >
