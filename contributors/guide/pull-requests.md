@@ -142,8 +142,7 @@ There is a detailed rundown of best practices, including how to avoid too-length
 But, if you've already followed the best practices and you still aren't getting any pull request love, here are some
 things you can do to move the process along:
 
-   * Make sure that your pull request has an assigned reviewer (assignee in GitHub). If not, reply to the pull request comment stream asking for a reviewer to be assigned.
-   <!-- TODO: example -->
+   * Make sure that your pull request has an assigned reviewer (assignee in GitHub). If not, reply to the pull request comment stream asking for a reviewer to be assigned. This is done via a [bot command](https://prow.k8s.io/command-help) (the bot may have suggestions for this) and looks like this: `/assign @username`.
 
    * Ping the assignee (@username) on the pull request comment stream, and ask for an estimate of when they can get to the review.
 
