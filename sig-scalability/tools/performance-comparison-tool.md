@@ -1,5 +1,7 @@
 # Performance Comparison Tool
 
+_by Shyam JVS, Google Inc (reviewed by Marek Grabowski & Wojciech Tyczysnki)_
+
 ## BACKGROUND
 
 Kubemark is a performance testing tool which we use to run simulated kubernetes clusters. The primary use case is scalability testing, as creating simulated clusters is faster and requires less resources than creating real ones. For more information about kubemark, take a look into the [doc](https://github.com/kubernetes/community/blob/master/contributors/devel/kubemark-guide.md).
