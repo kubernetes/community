@@ -6,9 +6,6 @@ Map that to your local time with this [timezone table](https://www.google.com/se
 
 See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any iCal client.
 
-To be added to the calendar items, join the Google group
-[kubernetes-community-video-chat](https://groups.google.com/forum/#!forum/kubernetes-community-video-chat) for further instructions.
-
 All meetings are archived on the [Youtube Channel](https://www.youtube.com/watch?v=onlFHICYB4Q&list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ)
 
 Quick links:
