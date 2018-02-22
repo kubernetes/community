@@ -1,11 +1,7 @@
-# Kubernetes Cluster Management API
-
-## Metadata
-```
 ---
 kep-number: 3
 title: Kubernetes Cluster Management API
-status: accepted
+status: provisional
 authors:
     - "@roberthbailey"
     - "@pipejakob"
@@ -14,12 +10,13 @@ reviewers:
   - "@thockin"
 approvers:
   - "@roberthbailey"
-editor: 
+editor:
   - "@roberthbailey"
 creation-date: 2018-01-19
 last-updated: 2018-01-22
+---
 
-```
+# Kubernetes Cluster Management API
 
 ## Table of Contents
 
@@ -48,16 +45,16 @@ last-updated: 2018-01-22
 
 ## Summary
 
-We are building a set of Kubernetes cluster management APIs to enable common cluster lifecycle operations (install, upgrade, repair, delete) across disparate environments. 
-We represent nodes and other infrastructure in Kubernetes-style APIs to enable higher level controllers to update the desired state of the cluster (e.g. the autoscaling controller requesting additional machines) and reconcile the world with that state (e.g. communicating with cloud providers to create or delete virtual machines). 
+We are building a set of Kubernetes cluster management APIs to enable common cluster lifecycle operations (install, upgrade, repair, delete) across disparate environments.
+We represent nodes and other infrastructure in Kubernetes-style APIs to enable higher level controllers to update the desired state of the cluster (e.g. the autoscaling controller requesting additional machines) and reconcile the world with that state (e.g. communicating with cloud providers to create or delete virtual machines).
 With the full state of the cluster represented as API objects, Kubernetes installers can use them as a common configuration language, and more sophisticated tooling can be built in an environment-agnostic way.
 
 ## Motivation
 
-Kubernetes has a common set of APIs (see the [Kubernetes API Conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md)) to orchestrate containers regardless of deployment mechanism or cloud provider. 
-Kubernetes also has APIs for handling some infrastructure, like load-balancers, ingress rules, or persistent volumes, but not for creating new machines. 
+Kubernetes has a common set of APIs (see the [Kubernetes API Conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md)) to orchestrate containers regardless of deployment mechanism or cloud provider.
+Kubernetes also has APIs for handling some infrastructure, like load-balancers, ingress rules, or persistent volumes, but not for creating new machines.
 As a result, the deployment mechanisms that manage Kubernetes clusters each have unique APIs and implementations for how to handle lifecycle events like cluster creation or deletion, master upgrades, and node upgrades.
-Additionally, the cluster-autoscaler is responsible not only for determining when the cluster should be scaled, but also responsible for adding capacity to the cluster by interacting directly with the cloud provider to perform the scaling. 
+Additionally, the cluster-autoscaler is responsible not only for determining when the cluster should be scaled, but also responsible for adding capacity to the cluster by interacting directly with the cloud provider to perform the scaling.
 When another component needs to create or destroy virtual machines, like the node auto provisioner, it would similarly need to reimplement the logic for interacting with the supported cloud providers (or reuse the same code to prevent duplication).
 
 ### Goals
@@ -81,7 +78,7 @@ When another component needs to create or destroy virtual machines, like the nod
 * Should a single Kubernetes cluster only house definitions for itself?
    * If so, that removes the ability to have a single cluster control the reconciliation of infrastructure for other clusters.
    * However, with the concurrent [Cluster Registry](https://docs.google.com/a/google.com/document/d/1Oi9EO3Jwtp69obakl-9YpLkP764GZzsz95XJlX1a960/edit) project, a good separation of responsibilities would be that the Cluster Registry API is responsible for indexing multiple clusters, each of which would only have to know about itself. In order to achieve cross-cluster reconciliation, a controller would need to integrate with a Cluster Registry for discovery.
-* Should a cluster’s control plane definition should be housed within that same cluster. 
+* Should a cluster’s control plane definition should be housed within that same cluster.
    * If the control plane becomes unhealthy, then it won’t be able to rectify itself without external intervention. If the control plane configuration lives elsewhere, and the controllers reconciling its state are able to act in the face of control plane failure, then this API could be used to fix a misconfigured control plane that is unresponsive.
 * Should our representation of Nodes allow declarative versioning of non-Kubernetes packages, like the container runtime, the Linux kernel, etc.?
    * It potentially enables the use case of smaller, in-place upgrades to nodes without changing the node image.

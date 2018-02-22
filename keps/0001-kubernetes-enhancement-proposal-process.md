@@ -164,7 +164,7 @@ Metadata items:
     KEP filename.  See the template for instructions and details.
 * **status** Required
   * The current state of the KEP.
-  * Must be one of `accepted`, `implementable`, `implemented`, `deferred`, `rejected`, `withdrawn`, or `replaced`.
+  * Must be one of `provisional`, `implementable`, `implemented`, `deferred`, `rejected`, `withdrawn`, or `replaced`.
 * **authors** Required
   * A list of authors for the KEP.
     This is simply the github ID.
@@ -222,7 +222,7 @@ Metadata items:
 
 A KEP has the following states
 
-- `accepted`: The KEP has been proposed and is actively being defined.
+- `provisional`: The KEP has been proposed and is actively being defined.
   This is the starting state while the KEP is being fleshed out and actively defined and discussed.
   The owning SIG has accepted that this is work that needs to be done.
 - `implementable`: The approvers have approved this KEP for implementation.
