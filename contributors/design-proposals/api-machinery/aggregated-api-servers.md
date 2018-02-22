@@ -20,7 +20,7 @@ aggregated servers.
   unblock these APIs.
 * Place for staging experimental APIs: New APIs can be developed in separate
   aggregated servers, and installed only by those willing to take the risk of
-  installing an experimental API. One they are stable, it is then easy to
+  installing an experimental API. Once they are stable, it is then easy to
   package them up for installation in other clusters.
 * Ensure that new APIs follow kubernetes conventions: Without the mechanism
   proposed here, community members might be forced to roll their own thing which
