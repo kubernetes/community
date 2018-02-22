@@ -51,6 +51,10 @@ All day event with a happy hour reception to close
   - 2 slides per SIG, focused on cross-SIG issues, not internal SIG discussions (those are for Kubecon)
   - Identify potential issues that might affect multiple SIGs across the project
   - One-to-many announcements about changes a SIG expects that might affect others 
+- Track Leads
+  - New Contributor Workshop - Josh Berkus
+  - Current Contributor Workshop - Paris Pittman
+  - SIG Updates - Jorge Castro
 
 ## Misc:
 
