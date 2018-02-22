@@ -185,7 +185,7 @@ git push -f ${your_remote_name} myfeature
 
 1. Visit your fork at https://github.com/$user/kubernetes
 2. Click the `Compare & Pull Request` button next to your `myfeature` branch.
-3. Check out the pull request [process](/contributors/devel/pull-requests.md) for more details and
+3. Check out the pull request [process](/contributors/guide/pull-requests.md) for more details and
    advice.
 
 _If you have upstream write access_, please refrain from using the GitHub UI for
