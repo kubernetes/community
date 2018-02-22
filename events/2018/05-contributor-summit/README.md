@@ -20,36 +20,37 @@ All day event with a happy hour reception to close
 
 ## Agenda 
 
-## Morning 
+### Morning
 
-- Intros and a quick steering committee update
+| Time        | Track One                       | Track Two                     | Track Three    |
+| ----------- | ------------------------------- |  ---------------------------- | -------------- | 
+| 8:00        | Registration and Breakfast      |                               |                |
+| 9:00-9:15   | Welcome and Introduction        |                               |                |                   
+| 9:15-9:30   | Steering Committee Update       |                               |                |
+|             |                                 |                               |                |
+|             | New Contributor Workshop        | Current Contributor Workshop  | Docs Sprint    |
+|             |                                 |                               |                |
+| 9:30-10:00  | Session                         | Unconference                  |                |
+| 10:00-10:50 | Session                         | Unconference                  |                |
+| 10:50-11:00 | B R E A K                       | B R E A K                     |                |
+| 11:00-12:00 | Session                         | Unconference                  |                |
+| 12:00-1:00  | Session                         | Unconference                  |                |
+| 1:00-2:00   | Lunch (Provided)                | Lunch (Provided)              |                |
+
+### Afternoon
+
+| Time        | Track One                       | Track Two                    |  
+| ----------- | ------------------------------- | ---------------------------- |
+| 2:00-3:50   | SIG Updates                     | Docs Sprint                  |   
+| 3:50-4:00   | B R E A K                       |                              |
+| 4:00-5:30   | SIG Updates                     | Docs Sprint                  |   
+| 5:30-7:00   | Contributor Happy Hour          |                              | 
+| 7:00        | EmpowerHER event (offsite)      |                              |                                 
+
 - SIG Updates (~5 minutes per SIG)
   - 2 slides per SIG, focused on cross-SIG issues, not internal SIG discussions (those are for Kubecon)
   - Identify potential issues that might affect multiple SIGs across the project
   - One-to-many announcements about changes a SIG expects that might affect others 
-
-## Afternoon
-
-Two concurrent tracks, a new contributor track, and an existing contributor track
-
-### New contributor track 
-
-SCHEDULE GOES HERE:
-
-Open to Kubecon attendees who are interested in becoming developers.
-
-Abstract: We would ask existing leads to provide one morning's worth of new contributor content. Stuff like "your first patch", "a tour of the code base". This track would be open to whoever is interested in attending. We would encourage general Kubecon attendees to sit in on this. First come, first serve, when we run out of seats, sorry! We would explicitly tell organizations that attend Kubecon that they should send a tech lead to this event, and that they will have access to developers so that when they go home they can arm their existing teams with contributor knowledge. 
-
-### Existing contributor track
-
-SCHEDULE GOES HERE:
-
-Abstract: Existing contributors only: tstclair had a great idea that the existing developers should have an explicit goal of "leveling up". We would ask existing senior devs to prepare content for existing leads and devs, with the goal of getting everyone who attends this track to level up. So if you are a reviewer, you would learn how to become an approver. This track would be for anyone who is already an existing contributor, so for example if SIGs have contributors who they feel are ready to move up, they would encourage them to attend here. SIG leads could share and swap tips on running more effective meetings, etc. 
-
-## Early Evening
-
-Combined social function 5-7pm so the two groups can comingle. Hard cut off at 7 so people can then attend empowerHER.
-
 
 ## Misc:
 
