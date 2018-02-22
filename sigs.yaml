@@ -685,7 +685,7 @@ sigs:
         https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
     - name: contributors-guide
       owners:
-      - https://raw.githubusercontent.comkubernetes/community/blob/master/contributors/guide/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
     - name: k8s.io
       owners:
       - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS

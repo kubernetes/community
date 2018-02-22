@@ -39,7 +39,7 @@ The following subprojects are owned by sig-contributor-experience:
     - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
 - **contributors-guide**
   - Owners:
-    - https://raw.githubusercontent.comkubernetes/community/blob/master/contributors/guide/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
 - **k8s.io**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
