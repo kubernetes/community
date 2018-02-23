@@ -36,7 +36,7 @@ syntax = "proto3";
 
 package envelope;
 
-service KMSService {
+service KeyManagementService {
     // Version returns the runtime name and runtime version.
     rpc Version(VersionRequest) returns (VersionResponse) {}
     rpc Decrypt(DecryptRequest) returns (DecryptResponse) {}
