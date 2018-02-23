@@ -1,8 +1,4 @@
----
-Title: Kubernetes Developer Guide
----
-
-# Kubernetes Developer Guide
+# Table of Contents
 
 The developer guide is for anyone wanting to either write code which directly accesses the
 Kubernetes API, or to contribute directly to the Kubernetes project.
