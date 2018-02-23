@@ -19,7 +19,7 @@ Welcome to Kubernetes! This document is the single source of truth for how to co
     -   [Code of Conduct](#code-of-conduct)
     -   [Setting up your development
         environment](#setting-up-your-development-environment)
-    -   [Community Expectations and Roles](#community-expectations)
+    -   [Community Expectations and Roles](#community-expectations-and-roles)
         -   [Thanks](#thanks)
 -   [Your First Contribution](#your-first-contribution)
     -   [Find something to work on](#find-something-to-work-on)
