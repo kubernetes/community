@@ -59,7 +59,7 @@ subscribes to that list.
 
 ## Office Hours
 
-Office hours are held once a month. Please refer to [this document](events/office-hours.md) to learn more.
+Office hours are held once a month. Please refer to [this document](/events/office-hours.md) to learn more.
 
 ## Weekly Meeting
 
