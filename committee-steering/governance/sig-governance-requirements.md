@@ -31,22 +31,26 @@ any subarea of the Kubernetes project.
 - *MAY* define process for new community members to contribute to the area
   - e.g. read a contributing guide, show up at SIG meeting, message the google group
 
+- *MUST* define how subprojects are managed
+  - When and how new subprojects are created
+  - Subprojects *MUST* define roles (and membership) within subprojects
+
 ### Project management
 
-- *MUST* define how subprojects are managed if at all
-  - When and how new subprojects are created
-  - Roles within subprojects
+The following checklist applies to both SIGs and subprojects of SIGs as appropriate:
+
 - *MUST* define how milestones / releases are set
   - How target dates for milestones / releases are proposed and accepted
   - What priorities are targeted for milestones
   - The process for publishing a release
+
 - *SHOULD* define how priorities / commitments are managed
   - How priorities are determined
   - How priorities are staffed
 
 ### Technical processes
 
-For areas owning technical assets only.
+All technical assets *MUST* be owned by exactly 1 SIG subproject.  The following checklist applies to subprojects:
 
 - *MUST* define how technical decisions are communicated and made within the SIG or project
   - Process for proposal, where and how it is published and discussed, when and how a decision is made
