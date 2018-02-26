@@ -30,7 +30,6 @@ Covers networking in Kubernetes.
 The following subprojects are owned by sig-network:
 - **services**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cmd/kube-proxy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/pkg/proxy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/pkg/controller/endpoint/OWNERS
     - https://raw.githubusercontent.com/kubernetes/pkg/controller/service/OWNERS
@@ -50,7 +49,7 @@ The following subprojects are owned by sig-network:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
 - **network-policy**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/api/networking/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
 
 ## GitHub Teams
 

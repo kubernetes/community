@@ -922,7 +922,6 @@ sigs:
     subprojects:
     - name: services
       owners:
-      - https://raw.githubusercontent.com/kubernetes/cmd/kube-proxy/OWNERS
       - https://raw.githubusercontent.com/kubernetes/pkg/proxy/OWNERS
       - https://raw.githubusercontent.com/kubernetes/pkg/controller/endpoint/OWNERS
       - https://raw.githubusercontent.com/kubernetes/pkg/controller/service/OWNERS
@@ -942,7 +941,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
     - name: network-policy
       owners:
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/api/networking/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
   - name: Node
     dir: sig-node
     mission_statement: >
