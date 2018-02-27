@@ -3,21 +3,20 @@
 **Note:** This document is in progress
 
 This doc outlines the various responsibilities of contributor roles in Kubernetes.  The Kubernetes
-project is subdivided into various sub-areas.  Responsibilities for many contributor roles are
-scoped by these sub-areas.
+project is subdivided into various sub-areas.  Responsibilities for most roles is scoped to these sub-areas.
 
 | Role | Responsibilities | Requirements | Defined by |
 | -----| ---------------- | ------------ | -------|
 | member | active contributor in the community | sponsored by 2 reviewers.  multiple contributions to the project. | Kubernetes GitHub org member. |
-| reviewer | review contribution from other members | history of review and authorship in an area | OWNERS file reviewer entry. |
-| approver | approve accepting contributions | highly experienced and active reviewer + contributor to an area | OWNERS file approver entry|
-| owner | set priorities and approve proposals | demonstrated responsibility and good judgement for entire area | OWNERS file approver entries for entire area.  "# owner" comment next to entry. |
-| maintainer | cross area ownership of project health | highly experienced contributor active in multiple areas and roles. | GitHub repo write access |
+| reviewer | review contributions from other members | history of review and authorship in an area | [OWNERS] file reviewer entry. |
+| approver | approve accepting contributions | highly experienced and active reviewer + contributor to an area | [OWNERS] file approver entry|
+| owner | set direction and priorities for a subarea of the project | demonstrated responsibility and excellent technical judgement for the area | [sigs.yaml] subproject [OWNERS] file *owners* entry |
 
 ## New contributors
 
-[**New contributors**](https://github.com/kubernetes/community/blob/master/CONTRIBUTING.md) should be welcomed to the community
-by existing members, helped with PR workflow, and directed to relevant documentation and communication channels.
+[New contributors] should be welcomed to the
+community by existing members, helped with PR workflow, and directed to relevant documentation and communication
+channels.
 
 ## Established community members
 
@@ -36,12 +35,12 @@ Members are expected to remain active contributors to the community.
 
 ### Requirements
 
-- Enabled [two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/) on their GitHub account
+- Enabled [two-factor authentication] on their GitHub account
 - Have made multiple contributions to the project or community.  Contribution may include, but is not limited to:
     - Authoring or reviewing PRs on GitHub
     - Filing or commenting on issues on GitHub
     - Contributing to SIG or community discussions (e.g. meetings, Slack, email discussion forums, Stack Overflow)
-- Subscribed to [`kubernetes-dev@googlegroups.com`](https://groups.google.com/forum/#!forum/kubernetes-dev)
+- Subscribed to [kubernetes-dev@googlegroups.com]
 - Are actively contributing to 1 or more areas.
 - Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
     - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating on issues, etc.
@@ -55,7 +54,7 @@ Members are expected to remain active contributors to the community.
    - Body: List of contributions (PRs authored / reviewed, Issues responded to, etc)
 - Have your sponsoring reviewers reply confirmation of sponsorship: `+1`
 - Wait for response to the message
-- Have read the [developer guide](contributors/devel/README.md)
+- Have read the [developer guide]
 
 Example message:
 
@@ -97,7 +96,7 @@ becoming a primary *reviewer* for the area that they are active in.
 Reviewers are able to review code for quality and correctness on some part of the project.
 They are knowledgeable about both the codebase and software engineering principles.
 
-**Defined by:** *reviewer* entry in an OWNERS file in the Kubernetes codebase.
+**Defined by:** *reviewers* entry in an OWNERS file in the Kubernetes codebase.
 
 Reviewer status is scoped to a part of the codebase.
 
@@ -105,8 +104,8 @@ Reviewer status is scoped to a part of the codebase.
 
 ### Requirements
 
-The following apply to the part of codebase for which one would be a reviewer in an
-[OWNERS](contributors/devel/owners.md) file (for repos using the bot).
+The following apply to the part of codebase for which one would be a reviewer in an [OWNERS] file
+(for repos using the bot).
 
 - member for at least 3 months
 - Primary reviewer for at least 5 PRs to the codebase
@@ -119,18 +118,18 @@ The following apply to the part of codebase for which one would be a reviewer in
 
 ### Responsibilities and privileges
 
-The following apply to the part of codebase for which one would be a reviewer in an
-[OWNERS](contributors/devel/owners.md) file (for repos using the bot).
+The following apply to the part of codebase for which one would be a reviewer in an [OWNERS] file
+(for repos using the bot).
 
 - Tests are automatically run for PullRequests from members of the Kubernetes GitHub organization
 - Code reviewer status may be a precondition to accepting large code contributions
-- Responsible for project quality control via [code reviews](contributors/devel/collab.md)
+- Responsible for project quality control via [code reviews]
   - Focus on code quality and correctness, including testing and factoring
   - May also review for more holistic issues, but not a requirement
-- Expected to be responsive to review requests as per [community expectations](contributors/devel/community-expectations.md)
+- Expected to be responsive to review requests as per [community expectations]
 - Assigned PRs to review related to area of expertise
 - Assigned test bugs related to area of expertise
-- Added to [`kubernetes-reviewers`](https://github.com/orgs/kubernetes/teams/kubernetes-reviewers)
+- Added to [kubernetes-reviewers]
 - Granted "read access" to kubernetes repo
 - Can champion incubator repos
 - May get a badge on PR and issue comments
@@ -142,14 +141,14 @@ code quality and correctness, approval is focused on holistic acceptance of a co
 backwards / forwards compatibility, adhering to API and flag conventions, subtle performance and correctness issues,
 interactions with other parts of the system, etc.
 
-**Defined by:** *approver* entry in an OWNERS file in the kubernetes codebase
+**Defined by:** *approvers* entry in an OWNERS file in the kubernetes codebase
 
 Approver status is scoped to a part of the codebase.
 
 ### Requirements
 
-The following apply to the part of codebase for which one would be an approver in an
-[OWNERS](contributors/devel/owners.md) file (for repos using the bot).
+The following apply to the part of codebase for which one would be an approver in an [OWNERS] file
+(for repos using the bot).
 
 - Reviewer of the codebase for at least 3 months
 - Primary reviewer for at least 10 substantial PRs to the codebase
@@ -160,73 +159,63 @@ The following apply to the part of codebase for which one would be an approver i
 
 ### Responsibilities and privileges
 
-The following apply to the part of codebase for which one would be an approver in an
-[OWNERS](contributors/devel/owners.md) file (for repos using the bot).
+The following apply to the part of codebase for which one would be an approver in an [OWNERS] file
+(for repos using the bot).
 
 - Approver status may be a precondition to accepting large code contributions
 - Demonstrate sound technical judgement
-- Responsible for project quality control via [code reviews](contributors/devel/collab.md)
-  - Focus on holistic acceptance of contribution such as dependencies with other features, backwards / forwards compatibility, API and flag definitions, etc
-- Expected to be responsive to review requests as per [community expectations](contributors/guide/community-expectations.md);
+- Responsible for project quality control via [code reviews]
+  - Focus on holistic acceptance of contribution such as dependencies with other features, backwards / forwards
+    compatibility, API and flag definitions, etc
+- Expected to be responsive to review requests as per [community expectations]
 - Mentor contributors and reviewers
 - May approve code contributions for acceptance
 
 ## Owner
 
-Owners of an area / component are approvers of an entire area that have demonstrated good judgement and
-responsibility.  Owners accept design proposals and approve design decisions for their area of ownership.
+Owners of an area / component the technical authority of a sub area of the Kubernetes project who have demonstrated
+both good judgement and responsibility towards the health of the area.  Owners set technical direction and make
+or approve design decisions for their area of ownership.
 
-**Defined by:** *approver* entry in the top-level OWNERS file for the area in the kubernetes codebase.
-May have a comment (e.g. `# owner`) next to the approver entry indicating that the individual is an owner.
+**Defined by:** *owners* entry in subproject [OWNERS] files as defined by [sigs.yaml]  *subproject.owners*
 
 ### Requirements
 
 The following apply to the area / component for which one would be an owner.
 
-- Originally authored or contributed major functionality to an area
-- An approver in the **top-level** [OWNERS](contributors/devel/owners.md) files
+- Deep understanding of the technical goals and direction of the area
+- Deep understanding of the technical domain of the area
+- Sustained contributions to design and direction by doing all of:
+  - Authoring and reviewing proposals
+  - Initiating, contributing and resolving discussions (emails, GitHub issues, meetings)
+  - Identifying subtle or complex issues in designs and implementation PRs
+- Directly contributed to the area through either implementation or review
 
 ### Responsibilities and privileges
 
 The following apply to the area / component for which one would be an owner.
 
-- Owner status may be a precondition to accepting a new component or piece of major functionality
-- Design/proposal approval authority over the area / component, though escalation to [`kubernetes-maintainers`](https://groups.google.com/forum/#!forum/kubernetes-maintainers) is possible.
-- Mentor and guide approvers, reviewers, and members.
+- Make and approve technical design decisions for the area.
+- Set technical direction and priorities for the area.
+- Define milestones and releases.
+- Mentor and guide approvers, reviewers, and contributors to the area.
+- Ensure continued health of area
+  - Adequate test coverage to confidently release
+  - Tests are passing or are fixed when they fail
+- Ensure a healthy process for discussion and decision making is in place.
 
-## Maintainer
+## ~~Maintainer~~
 
-[**Kubernetes project maintainers**](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers) work holistically
-across the project to maintain its health and success.  They are typically involved in multiple different areas, and
-have made substantial contributions both through code and broader organizational efforts.
+**Status:** Removed
 
-**Defined by:** *write* access to the kubernetes GitHub repo
+The Maintainer role has been removed and replaced with a greater focus on [owner](#owner)s.
 
-TODO: Determine if this role is outdated and needs to be redefined or merged into owner role.
-
-### Requirements
-
-- Approver for some part of the codebase for at least 3 months
-- Member for at least 1 year
-- Primary reviewer for 20 substantial PRs
-- Reviewed or merged at least 50 PRs
-- Apply to [`kubernetes-maintainers`](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers), with:
-  - A [Champion](/incubator.md#faq) from the existing
-    kubernetes-maintainers members
-  - A Sponsor from Project Approvers
-  - Summary of contributions to the project
-  - Current project responsibilities
-  - Links to merged and assigned PRs
-- At least 3 of the maintainers must approve the application, with no objections
-- Application expires after 2 weeks if not enough approvals are granted
-
-### Responsibilities and privileges
-
-- Write access to repo (assign issues/PRs, add/remove labels and milestones, edit issues and PRs, edit wiki, create/delete labels and milestones)
-- Capable of directly applying lgtm + approve labels for any PR, causing it to be merged by the submit queue - but permitted only in rare instances
-   - Expected to respect OWNERS files approvals and use standard procedure for merging code
-- Expected to work to holistically maintain the health of the project through:
-  - Reviewing PRs
-  - Fixing bugs
-  - Providing user support
-  - Mentoring and guiding approvers, reviewers, and other contributors
+[code reviews]: contributors/devel/collab.md
+[community expectations]: contributors/devel/community-expectations.md
+[developer guide]: contributors/devel/README.md
+[two-factor authentication]: https://help.github.com/articles/about-two-factor-authentication
+[kubernetes-dev@googlegroups.com]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[kubernetes-reviewers]: https://github.com/orgs/kubernetes/teams/kubernetes-reviewers
+[sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
+[New contributors]: https://github.com/kubernetes/community/blob/master/CONTRIBUTING.md
+[OWNERS]: contributors/guide/owners.md
