@@ -198,42 +198,10 @@ it will use cgroup events on the memory.usage_in_bytes file in order to trigger 
 With the addition of on-demand metrics, this permits the `kubelet` to trigger the eviction manager,
 collect metrics, and respond with evictions much quicker than using the sync loop alone.
 
-However, a current issue with this is that the cgroup notifications trigger based on memory.usage_in_bytes,
-but the eviction manager determines memory pressure based on the working set, which is (memory.usage_in_bytes - memory.total_inactive_file).
-For example:
-```
-capacity = 1Gi
---eviction-hard=memory.available<250Mi
-assume memory.total_inactive_file=10Mi
-```
-When the cgroup event is triggered, `memory.usage_in_bytes = 750Mi`.
-The eviction manager observes
-`working_set = memory.usage_in_bytes - memory.total_inactive_file = 740Mi`
-Signal: `memory.available = capacity - working_set = 260Mi`
-Therefore, no memory pressure.  This will occur as long as memory.total_inactive_file is non-zero.
-
-### Proposed solutions:
-1. Set the cgroup event at `threshold*fraction`.
-For example, if `--eviction-hard=memory.available<200Mi`, use `fraction=1/2` and set the cgroup event at `100Mi` (`200Mi*1/2`).
-This way, when the eviction manager is triggered, it will likely observe memory pressure.
-This is not guaranteed to always work, but should prevent OOMs in most cases, and is simple to implement.
-
-~~2. Use Usage instead of Working Set to determine memory pressure
-This would mean that the eviction manager and cgroup notifications use the same metric,
-and thus the response is ideal: the eviction manager is triggered exactly when memory pressure occurs.
-However, the eviction manager may often evict unneccessarily if there are large quantities of memory
-the kernel has not yet reclaimed.~~
-
-3. Increase the syncloop interval after the threshold is crossed
-For example, the eviction manager could start collecting observations every second instead of every
-10 seconds after the threshold is crossed.  This means that even though the cgroup event and eviction
-manager are not completely in-sync, the threshold can help the eviction manager to respond faster than
-it otherwise would.  After a short period, it would resume the standard interval of sync loop calls.
-
-4. Periodically adjust the memory cgroup threshold based on total_inactive_file
-For example, the eviction manager would set the threshold for usage_in_bytes to mem_capacity - eviction_hard + 
-total_inactive_file.  This would mean that the threshold is crossed when usage_in_bytes - total_inactive_file 
-= mem_capacity - eviction_hard.  As long as total_inactive_file changes slowly, this would be fairly accurate.
+To do this, we periodically adjust the memory cgroup threshold based on total_inactive_file.  The eviction manager 
+periodically measures total_inactive_file, and sets the threshold for usage_in_bytes to mem_capacity - eviction_hard + 
+total_inactive_file.  This means that the threshold is crossed when usage_in_bytes - total_inactive_file 
+= mem_capacity - eviction_hard.
 
 ### Disk
 
