@@ -3,20 +3,19 @@
 **Note:** This document is in progress
 
 This doc outlines the various responsibilities of contributor roles in Kubernetes.  The Kubernetes
-project is subdivided into various sub-areas.  Responsibilities for most roles is scoped to these sub-areas.
+project is subdivided into subprojects under SIGs.  Responsibilities for most roles is scoped to these subprojects.
 
 | Role | Responsibilities | Requirements | Defined by |
 | -----| ---------------- | ------------ | -------|
 | member | active contributor in the community | sponsored by 2 reviewers.  multiple contributions to the project. | Kubernetes GitHub org member. |
-| reviewer | review contributions from other members | history of review and authorship in an area | [OWNERS] file reviewer entry. |
-| approver | approve accepting contributions | highly experienced and active reviewer + contributor to an area | [OWNERS] file approver entry|
-| owner | set direction and priorities for a subarea of the project | demonstrated responsibility and excellent technical judgement for the area | [sigs.yaml] subproject [OWNERS] file *owners* entry |
+| reviewer | review contributions from other members | history of review and authorship in a subproject | [OWNERS] file reviewer entry. |
+| approver | approve accepting contributions | highly experienced and active reviewer + contributor to a subproject | [OWNERS] file approver entry|
+| subproject owner | set direction and priorities for a subproject | demonstrated responsibility and excellent technical judgement for the subproject | [sigs.yaml] subproject [OWNERS] file *owners* entry |
 
 ## New contributors
 
-[New contributors] should be welcomed to the
-community by existing members, helped with PR workflow, and directed to relevant documentation and communication
-channels.
+[New contributors] should be welcomed to the community by existing members, helped with PR workflow, and directed to
+relevant documentation and communication channels.
 
 ## Established community members
 
@@ -39,17 +38,21 @@ Members are expected to remain active contributors to the community.
 - Have made multiple contributions to the project or community.  Contribution may include, but is not limited to:
     - Authoring or reviewing PRs on GitHub
     - Filing or commenting on issues on GitHub
-    - Contributing to SIG or community discussions (e.g. meetings, Slack, email discussion forums, Stack Overflow)
+    - Contributing to SIG, subproject, or community discussions (e.g. meetings, Slack, email discussion
+      forums, Stack Overflow)
 - Subscribed to [kubernetes-dev@googlegroups.com]
-- Are actively contributing to 1 or more areas.
+- Actively contributing to 1 or more subprojects.
 - Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
-    - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating on issues, etc.
-    - Sponsors must be reviewers or approvers in at least 1 OWNERS file (in any repo in the Kubernetes GitHub organization)
+    - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating
+      on issues, etc.
+    - Sponsors must be reviewers or approvers in at least 1 OWNERS file (in any repo in the Kubernetes GitHub
+      organization)
     - Sponsors must be from multiple member companies to demonstrate integration across community.
 - Send an email to *kubernetes-membership@googlegroups.com* with:
    - CC: your sponsors on the message
    - Subject: `REQUEST: New membership for <your-GH-handle>`
-   - Body: Confirm that you have joined kubernetes-dev@googlegroups.com (e.g. `I have joined kubernetes-dev@googlegroups.com`)
+   - Body: Confirm that you have joined kubernetes-dev@googlegroups.com (e.g. `I have joined
+     kubernetes-dev@googlegroups.com`)
    - Body: GitHub handles of sponsors
    - Body: List of contributions (PRs authored / reviewed, Issues responded to, etc)
 - Have your sponsoring reviewers reply confirmation of sponsorship: `+1`
@@ -89,14 +92,14 @@ List of contributions:
   - Addresses bugs or issues discovered after code is accepted
 
 **Note:** members who frequently contribute code are expected to proactively perform code reviews and work towards
-becoming a primary *reviewer* for the area that they are active in.
+becoming a primary *reviewer* for the subproject that they are active in.
 
 ## Reviewer
 
-Reviewers are able to review code for quality and correctness on some part of the project.
+Reviewers are able to review code for quality and correctness on some part of a subproject.
 They are knowledgeable about both the codebase and software engineering principles.
 
-**Defined by:** *reviewers* entry in an OWNERS file in the Kubernetes codebase.
+**Defined by:** *reviewers* entry in an OWNERS file in a repo owned by the Kubernetes project.
 
 Reviewer status is scoped to a part of the codebase.
 
@@ -111,10 +114,10 @@ The following apply to the part of codebase for which one would be a reviewer in
 - Primary reviewer for at least 5 PRs to the codebase
 - Reviewed or merged at least 20 substantial PRs to the codebase
 - Knowledgeable about the codebase
-- Sponsored by an area approver
+- Sponsored by a subproject approver
   - With no objections from other approvers
   - Done through PR to update the OWNERS file
-- May either self-nominate, be nominated by an approver in this area, or be nominated by a robot
+- May either self-nominate, be nominated by an approver in this subproject, or be nominated by a robot
 
 ### Responsibilities and privileges
 
@@ -127,11 +130,9 @@ The following apply to the part of codebase for which one would be a reviewer in
   - Focus on code quality and correctness, including testing and factoring
   - May also review for more holistic issues, but not a requirement
 - Expected to be responsive to review requests as per [community expectations]
-- Assigned PRs to review related to area of expertise
-- Assigned test bugs related to area of expertise
-- Added to [kubernetes-reviewers]
+- Assigned PRs to review related to subproject of expertise
+- Assigned test bugs related to subproject of expertise
 - Granted "read access" to kubernetes repo
-- Can champion incubator repos
 - May get a badge on PR and issue comments
 
 ## Approver
@@ -141,7 +142,7 @@ code quality and correctness, approval is focused on holistic acceptance of a co
 backwards / forwards compatibility, adhering to API and flag conventions, subtle performance and correctness issues,
 interactions with other parts of the system, etc.
 
-**Defined by:** *approvers* entry in an OWNERS file in the kubernetes codebase
+**Defined by:** *approvers* entry in an OWNERS file in a repo owned by the Kubernetes project.
 
 Approver status is scoped to a part of the codebase.
 
@@ -153,8 +154,8 @@ The following apply to the part of codebase for which one would be an approver i
 - Reviewer of the codebase for at least 3 months
 - Primary reviewer for at least 10 substantial PRs to the codebase
 - Reviewed or merged at least 30 PRs to the codebase
-- Nominated by an area/component owner
-  - With no objections from other owners
+- Nominated by a subproject owner
+  - With no objections from other subproject owners
   - Done through PR to update the top-level OWNERS file
 
 ### Responsibilities and privileges
@@ -171,37 +172,45 @@ The following apply to the part of codebase for which one would be an approver i
 - Mentor contributors and reviewers
 - May approve code contributions for acceptance
 
-## Owner
+## Subproject Owner
 
-Owners of an area / component the technical authority of a sub area of the Kubernetes project who have demonstrated
-both good judgement and responsibility towards the health of the area.  Owners set technical direction and make
-or approve design decisions for their area of ownership.
+**Note:** This is a generalized high-level description of the role, and the specifics of the subproject owner role's
+responsibilities and related processes *MUST* be defined for individual SIGs or subprojects.
+
+Subproject Owners are the technical authority for a subproject in the Kubernetes project.  They *MUST* have demonstrated
+both good judgement and responsibility towards the health of that subproject.  Subproject Owners *MUST* set technical
+direction and make or approve design decisions for their subproject - either directly or through delegation
+of these responsibilities.
 
 **Defined by:** *owners* entry in subproject [OWNERS] files as defined by [sigs.yaml]  *subproject.owners*
 
 ### Requirements
 
-The following apply to the area / component for which one would be an owner.
+The process for becoming an subproject Owner should be defined in the SIG charter of the SIG owning
+the subproject.  Unlike the roles outlined above, the Owners of a subproject are typically limited
+to a relatively small group of decision makers and updated as fits the needs of the subproject.
 
-- Deep understanding of the technical goals and direction of the area
-- Deep understanding of the technical domain of the area
+The following apply to the subproject for which one would be an owner.
+
+- Deep understanding of the technical goals and direction of the subproject
+- Deep understanding of the technical domain of the subproject
 - Sustained contributions to design and direction by doing all of:
   - Authoring and reviewing proposals
   - Initiating, contributing and resolving discussions (emails, GitHub issues, meetings)
   - Identifying subtle or complex issues in designs and implementation PRs
-- Directly contributed to the area through either implementation or review
+- Directly contributed to the subproject through implementation and / or review
 
 ### Responsibilities and privileges
 
-The following apply to the area / component for which one would be an owner.
+The following apply to the subproject for which one would be an owner.
 
-- Make and approve technical design decisions for the area.
-- Set technical direction and priorities for the area.
+- Make and approve technical design decisions for the subproject.
+- Set technical direction and priorities for the subproject.
 - Define milestones and releases.
-- Mentor and guide approvers, reviewers, and contributors to the area.
-- Ensure continued health of area
+- Mentor and guide approvers, reviewers, and contributors to the subproject.
+- Ensure continued health of subproject
   - Adequate test coverage to confidently release
-  - Tests are passing or are fixed when they fail
+  - Tests are passing reliably (i.e. not flaky) and are fixed when they fail
 - Ensure a healthy process for discussion and decision making is in place.
 
 ## ~~Maintainer~~
@@ -215,7 +224,6 @@ The Maintainer role has been removed and replaced with a greater focus on [owner
 [developer guide]: contributors/devel/README.md
 [two-factor authentication]: https://help.github.com/articles/about-two-factor-authentication
 [kubernetes-dev@googlegroups.com]: https://groups.google.com/forum/#!forum/kubernetes-dev
-[kubernetes-reviewers]: https://github.com/orgs/kubernetes/teams/kubernetes-reviewers
-[sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
+[sigs.yaml]: community/sigs.yaml
 [New contributors]: https://github.com/kubernetes/community/blob/master/CONTRIBUTING.md
 [OWNERS]: contributors/guide/owners.md
