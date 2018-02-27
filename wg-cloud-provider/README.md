@@ -23,34 +23,6 @@ Charter can be found [here](https://docs.google.com/document/d/1m4Kvnh_u_9cENEE9
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-cloud-provider)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fcloud-provider)
 
-## Subprojects
-
-The following subprojects are owned by wg-cloud-provider:
-- **aws-cloud-provider**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/aws-cloud-provider/master/OWNERS
-- **azure-cloud-provider**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/azure-cloud-provider/master/OWNERS
-- **cloudstack-cloud-provider**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cloudstack-cloud-provider/master/OWNERS
-- **gcp-cloud-provider**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/gcp-cloud-provider/master/OWNERS
-- **openstack-cloud-provider**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/openstack-cloud-provider/master/OWNERS
-- **ovirt-cloud-provider**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/ovirt-cloud-provider/master/OWNERS
-- **photon-cloud-provider**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/photon-cloud-provider/master/OWNERS
-- **vsphere-cloud-provider**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/vsphere-cloud-provider/master/OWNERS
-
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

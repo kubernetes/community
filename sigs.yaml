@@ -364,6 +364,11 @@ sigs:
       teams:
       - name: sig-aws-misc
         description: General Discussion
+    subprojects:
+    - name: aws-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/aws-cloud-provider/master/OWNERS
+
   - name: Azure
     dir: sig-azure
     mission_statement: >
@@ -395,6 +400,11 @@ sigs:
       teams:
       - name: sig-azure-misc
         description: General Discussion
+    subprojects:
+    - name: azure-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/azure-cloud-provider/master/OWNERS
+
   - name: Big Data
     dir: sig-big-data
     mission_statement: >
@@ -770,6 +780,11 @@ sigs:
         description: Design Proposals
       - name: sig-gcp-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: gcp-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/gcp-cloud-provider/master/OWNERS
+
   - name: Instrumentation
     dir: sig-instrumentation
     mission_statement: >
@@ -1093,6 +1108,11 @@ sigs:
         description: Design Proposals
       - name: sig-openstack-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: openstack-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/openstack-cloud-provider/master/OWNERS
+
   - name: Product Management
     dir: sig-product-management
     mission_statement: >
@@ -1665,31 +1685,7 @@ workinggroups:
     contact:
       slack: wg-cloud-provider
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-cloud-provider
-    subprojects:
-    - name: aws-cloud-provider
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/aws-cloud-provider/master/OWNERS
-    - name: azure-cloud-provider
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/azure-cloud-provider/master/OWNERS
-    - name: cloudstack-cloud-provider
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/cloudstack-cloud-provider/master/OWNERS
-    - name: gcp-cloud-provider
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/gcp-cloud-provider/master/OWNERS
-    - name: openstack-cloud-provider
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/openstack-cloud-provider/master/OWNERS
-    - name: ovirt-cloud-provider
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/ovirt-cloud-provider/master/OWNERS
-    - name: photon-cloud-provider
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/photon-cloud-provider/master/OWNERS
-    - name: vsphere-cloud-provider
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/vsphere-cloud-provider/master/OWNERS
+
   - name: Multitenancy
     dir: wg-multitenancy
     mission_statement: >
