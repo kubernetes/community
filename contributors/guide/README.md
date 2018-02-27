@@ -101,7 +101,7 @@ For Pull Requests, the automatically assigned reviewer will add a SIG label if y
 
 For Issues, we are still working on a more automated workflow. Since SIGs do not directly map onto Kubernetes subrepositories, it may be difficult to find which SIG your contribution belongs in. Here is the [list of SIGs](/sig-list.md). Determine which is most likely related to your contribution.
 
-*Example:* if you are filing a cni issue, you should choose the [Network SIG](http://git.k8s.io/community/sig-network). Add the SIG label in a comment like so:
+*Example:* if you are filing a CNI issue (that's [Container Networking Interface](https://github.com/containernetworking/cni)), you should choose the [Network SIG](http://git.k8s.io/community/sig-network). Add the SIG label in a comment like so:
 ```
 /sig network
 ```

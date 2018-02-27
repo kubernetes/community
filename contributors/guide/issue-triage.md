@@ -36,7 +36,7 @@ a bot to manage labelling and triaging. The bot has a set of
 [commands and permissions](https://git.k8s.io/test-infra/commands.md)
 and this document will cover the basic ones.
 
-## Determine if it?s a support request
+## Determine if it's a support request
 
 Sometimes users ask for support requests in issues; these are usually requests
 from people who need help configuring some aspect of Kubernetes. These should be
