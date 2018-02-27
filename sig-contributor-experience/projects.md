@@ -66,7 +66,8 @@ KubeCon ContribEx Update and Deep Dive | @parispittman, leads | Run the 30 min u
 
 ## FUTURE
 This projects do not have an owner and have not started yet; however, we would like to get them on the slate for sometime this year. 
+
 Project | Description 
----|---
+---|--- 
 Automation of new membership | Current process is emailing a googlegroup and an org owner adds person to GH org
 Audit schedule | Create an audit schedule to make sure all communication pipelines are up and running smoothly eg: check that google group mailing lists have back up owners/maintainers, make sure meetings are following the calendar process, etc.
