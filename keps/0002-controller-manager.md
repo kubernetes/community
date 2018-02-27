@@ -6,9 +6,13 @@ authors:
   - "@calebamiles"
 owning-sig: sig-apimachinery
 participating-sigs:
-  - sig-storage
   - sig-apps
+  - sig-aws
+  - sig-azure
+  - sig-gcp
   - sig-network
+  - sig-openstack
+  - sig-storage
 reviewers:
   - "@wlan0"
   - "@calebamiles"
@@ -280,15 +284,11 @@ We propose the following repository structure for the cloud providers which
 currently live in `kubernetes/pkg/cloudprovider/providers/*`
 
 ```
-git@github.com:kubernetes/wg-cloud-provider
-git@github.com:kubernetes/aws-cloud-provider
-git@github.com:kubernetes/azure-cloud-provider
-git@github.com:kubernetes/cloudstack-cloud-provider
-git@github.com:kubernetes/gce-cloud-provider
-git@github.com:kubernetes/openstack-cloud-provider
-git@github.com:kubernetes/ovirt-cloud-provider
-git@github.com:kubernetes/photon-cloud-provider
-git@github.com:kubernetes/vsphere-cloud-provider
+git@github.com:kubernetes/cloud-provider-wg
+git@github.com:kubernetes/cloud-provider-aws
+git@github.com:kubernetes/cloud-provider-azure
+git@github.com:kubernetes/cloud-provider-gcp
+git@github.com:kubernetes/cloud-provider-openstack
 ```
 
 We propose this structure in order to obtain
