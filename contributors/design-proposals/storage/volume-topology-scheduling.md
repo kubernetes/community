@@ -1,33 +1,24 @@
 # Volume Topology-aware Scheduling
 
-Authors: @msau42, @lichuqiang
+Authors: @msau42
 
 This document presents a detailed design for making the default Kubernetes
 scheduler aware of volume topology constraints, and making the
 PersistentVolumeClaim (PVC) binding aware of scheduling decisions.
 
-## Definitions
-* Topology: Rules to describe accessibility of an object with respect to
-  location in a cluster.
-* Domain: A grouping of locations within a cluster. For example, 'node1',
-  'rack10', 'zone5'.
-* Topology Key: A description of a general class of domains. For example,
-  'node', 'rack', 'zone'.
-* Hierarchical domain: Domain that can be fully encompassed in a larger domain.
-  For example, the 'zone1' domain can be fully encompassed in the 'region1'
-  domain.
-* Failover domain: A domain that a workload intends to run in at a later time.
 
 ## Goals
-* Allow a Pod to request one or more Persistent Volumes (PV) with topology that
-  are compatible with the Pod's other scheduling constraints, such as resource
-  requirements and affinity/anti-affinity policies.
-* Support arbitrary PV topology domains (i.e. node, rack, zone, foo, bar).
-* Support topology for statically created PVs and dynamically provisioned PVs.
+* Allow a Pod to request one or more topology-constrained Persistent
+Volumes (PV) that are compatible with the Pod's other scheduling
+constraints, such as resource requirements and affinity/anti-affinity
+policies.
+* Support arbitrary PV topology constraints (i.e. node,
+rack, zone, foo, bar).
+* Support topology constraints for statically created PVs and dynamically
+provisioned PVs.
 * No scheduling latency performance regression for Pods that do not use
-  PVs with topology.
-* Allow administrators to restrict allowed topologies per StorageClass.
-* Allow storage providers to report capacity limits per topology domain.
+topology-constrained PVs.
+
 
 ## Non Goals
 * Fitting a pod after the initial PVC binding has been completed.
@@ -45,34 +36,13 @@ operator to schedule them together.  Another alternative is to merge the two
 pods into one.
     * For two+ pods non-simultaneously sharing a PVC, this scenario could be
 handled by pod priorities and preemption.
-* Provisioning multi-domain volumes where all the domains will be able to run
-  the workload. For example, provisioning a multi-zonal volume and making sure
-  the pod can run in all zones.
-    * Scheduler cannot make decisions based off of future resource requirements,
-      especially if those resources can fluctuate over time. For applications that
-      use such multi-domain storage, the best practice is to either:
-        * Configure cluster autoscaling with enough resources to accomodate
-          failing over the workload to any of the other failover domains.
-        * Manually configure and overprovision the failover domains to
-          accomodate the resource requirements of the workload.
-* Scheduler supporting volume topologies that are independent of the node's
-  topologies.
-    * The Kubernetes scheduler only handles topologies with respect to the
-      workload and the nodes it runs on. If a storage system is deployed on an
-      independent topology, it will be up to provisioner to correctly spread the
-      volumes for a workload. This could be facilitated as a separate feature
-      by:
-        * Passing the Pod's OwnerRef to the provisioner, and the provisioner
-          spreading volumes for Pods with the same OwnerRef
-        * Adding Volume Anti-Affinity policies, and passing those to the
-          provisioner.
 
 
 ## Problem
 Volumes can have topology constraints that restrict the set of nodes that the
 volume can be accessed on.  For example, a GCE PD can only be accessed from a
 single zone, and a local disk can only be accessed from a single node.  In the
-future, there could be other topology domains, such as rack or region.
+future, there could be other topology constraints, such as rack or region.
 
 A pod that uses such a volume must be scheduled to a node that fits within the
 volume’s topology constraints.  In addition, a pod can have further constraints
@@ -100,21 +70,16 @@ binding happens without considering if multiple PVCs are related, it is very lik
 for the two PVCs to be bound to local disks on different nodes, making the pod
 unschedulable.
 * For multizone clusters and deployments requesting multiple dynamically provisioned
-zonal PVs, each PVC is provisioned independently, and is likely to provision each PV
-in different zones, making the pod unschedulable.
+zonal PVs, each PVC Is provisioned independently, and is likely to provision each PV
+In different zones, making the pod unschedulable.
 
 To solve the issue of initial volume binding and provisioning causing an impossible
 pod placement, volume binding and provisioning should be more tightly coupled with
 pod scheduling.
 
 
-## Volume Topology Specification
-First, volumes need a way to express topology constraints against nodes. Today, it
-is done for zonal volumes by having explicit logic to process zone labels on the
-PersistentVolume. However, this is not easily extendable for volumes with other
-topology keys.
-
-Instead, to support a generic specification, the PersistentVolume
+## New Volume Topology Specification
+To specify a volume's topology constraints in Kubernetes, the PersistentVolume
 object will be extended with a new NodeAffinity field that specifies the
 constraints.  It will closely mirror the existing NodeAffinity type used by
 Pods, but we will use a new type so that we will not be bound by existing and
@@ -142,27 +107,18 @@ weights, but will not be included in the initial implementation.
 
 The advantages of this NodeAffinity field vs the existing method of using zone labels
 on the PV are:
-* We don't need to expose first-class labels for every topology key.
-* Implementation does not need to be updated every time a new topology key
+* We don't need to expose first-class labels for every topology domain.
+* Implementation does not need to be updated every time a new topology domain
   is added to the cluster.
 * NodeSelector is able to express more complex topology with ANDs and ORs.
-* NodeAffinity aligns with how topology is represented with other Kubernetes
-  resources.
 
 Some downsides include:
 * You can have a proliferation of Node labels if you are running many different
   kinds of volume plugins, each with their own topology labeling scheme.
-* The NodeSelector is more expressive than what most storage providers will
-  need. Most storage providers only need a single topology key with
-  one or more domains.  Non-hierarchical domains may present implementation
-  challenges, and it will be difficult to express all the functionality
-  of a NodeSelector in a non-Kubernetes specification like CSI.
 
 
 ### Example PVs with NodeAffinity
 #### Local Volume
-In this example, the volume can only be accessed from nodes that have the
-label key `kubernetes.io/hostname` and label value `node-1`.
 ```
 apiVersion: v1
 kind: PersistentVolume
@@ -185,9 +141,6 @@ spec:
 ```
 
 #### Zonal Volume
-In this example, the volume can only be accessed from nodes that have the
-label key `failure-domain.beta.kubernetes.io/zone' and label value
-`us-central1-a`.
 ```
 apiVersion: v1
 kind: PersistentVolume
@@ -211,9 +164,6 @@ spec:
 ```
 
 #### Multi-Zonal Volume
-In this example, the volume can only be accessed from nodes that have the
-label key `failure-domain.beta.kubernetes.io/zone' and label value
-`us-central1-a` OR 'us-central1-b.
 ```
 apiVersion: v1
 kind: PersistentVolume
@@ -244,11 +194,12 @@ and region labels.  This will handle newly created PV objects.
 
 Existing PV objects will have to be upgraded to use the new NodeAffinity field.
 This does not have to occur instantaneously, and can be updated within the
-deprecation period.  This can be done through a new PV update controller that
-will take existing zone labels on PVs and translate that into PV.NodeAffinity.
+deprecation period.
 
-An admission controller can validate that the labels and PV.NodeAffinity for
-this existing zonal volume types are kept in sync.
+TODO: This can be done through one of the following methods:
+- Manual updates/scripts
+- cluster/update-storage-objects.sh?
+- A new PV update controller
 
 ### Bound PVC Enforcement
 For PVCs that are already bound to a PV with NodeAffinity, enforcement is
@@ -274,16 +225,27 @@ Both binding decisions of:
 will be considered by the scheduler, so that all of a Pod's scheduling
 constraints can be evaluated at once.
 
-The detailed design for implementing this new volume binding behavior will be
-described later in the scheduler integration section.
+The rest of this document describes the detailed design for implementing this
+new volume binding behavior.
 
-## Delayed Volume Binding
-Today, volume binding occurs immediately once a PersistentVolumeClaim is
-created. In order for volume binding to take into account all of a pod's other scheduling
-constraints, volume binding must be delayed until a Pod is being scheduled.
 
-A new StorageClass field `VolumeBindingMode` will be added to control the volume
-binding behavior.
+## New Volume Binding Design
+The design can be broken up into a few areas:
+* User-facing API to invoke new behavior
+* Integrating PV binding with pod scheduling
+* Binding multiple PVCs as a single transaction
+* Recovery from kubelet rejection of pod
+* Making dynamic provisioning topology-aware
+
+For the alpha phase, only the user-facing API and PV binding and scheduler
+integration are necessary.  The remaining areas can be handled in beta and GA
+phases.
+
+### User-facing API
+In alpha, this feature is controlled by a feature gate, VolumeScheduling, and
+must be configured in the kube-scheduler and kube-controller-manager.
+
+A new StorageClass field will be added to control the volume binding behavior.
 
 ```
 type StorageClass struct {
@@ -304,306 +266,20 @@ const (
 
 This approach allows us to introduce the new binding behavior gradually and to
 be able to maintain backwards compatibility without deprecation of previous
-behavior. However, it has a few downsides:
+behavior.  However, it has a few downsides:
 * StorageClass will be required to get the new binding behavior, even if dynamic
 provisioning is not used (in the case of local storage).
-* We have to maintain two different code paths for volume binding.
+* We have to maintain two different paths for volume binding.
 * We will be depending on the storage admin to correctly configure the
 StorageClasses for the volume types that need the new binding behavior.
 * User experience can be confusing because PVCs could have different binding
 behavior depending on the StorageClass configuration.  We will mitigate this by
 adding a new PVC event to indicate if binding will follow the new behavior.
 
+### Integrating binding with scheduling
+For the alpha phase, the focus is on static provisioning of PVs to support
+persistent local storage.
 
-## Dynamic Provisioning with Topology
-To make dynamic provisioning aware of pod scheduling decisions, delayed volume
-binding must also be enabled. The scheduler will pass its selected node to the
-dynamic provisioner, and the provisioner will create a volume in the topology
-domain that the selected node is part of. The domain depends on the volume
-plugin. Zonal volume plugins will create the volume in the zone where the
-selected node is in. The local volume plugin will create the volume on the
-selected node.
-
-### End to End Zonal Example
-This is an example of the most common use case for provisioning zonal volumes.
-For this use case, the user's specs are unchanged. Only one change
-to the StorageClass is needed to enable delayed volume binding.
-
-1. Admin sets up StorageClass, setting up delayed volume binding.
-```
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: standard
-provisioner: kubernetes.io/gce-pd
-volumeBindingMode: WaitForFirstConsumer
-parameters:
-  type: pd-standard
-```
-2. Admin launches provisioner.  For in-tree plugins, nothing needs to be done.
-3. User creates PVC. Nothing changes in the spec, although now the PVC won't be
-   immediately bound.
-```
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: my-pvc
-spec:
-  storageClassName: standard
-  accessModes:
-  - ReadWriteOnce
-  resources:
-    requests:
-      storage: 100Gi
-```
-4. User creates Pod. Nothing changes in the spec.
-```
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-pod
-spec:
-  containers:
-  ...
-  volumes:
-  - name: my-vol
-    persistentVolumeClaim:
-      claimName: my-pvc
-```
-5. Scheduler picks a node that can satisfy the Pod and passes it to the
-   provisioner.
-6. Provisioner dynamically provisions a PV that can be accessed from
-   that node.
-```
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  Name: volume-1
-spec:
-  capacity:
-    storage: 100Gi
-  storageClassName: standard
-  gcePersistentDisk:
-    diskName: my-disk
-    fsType: ext4
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: failure-domain.beta.kubernetes.io/zone
-          operator: In
-          values:
-          - us-central1-a
-```
-7. Pod gets scheduled to the node.
-
-
-### Restricting Topology
-For the common use case, volumes will be provisioned in whatever topology domain
-the scheduler has decided is best to run the workload. Users may impose further
-restrictions by setting label/node selectors, and pod affinity/anti-affinity
-policies on their Pods. All those policies will be taken into account when
-dynamically provisioning a volume.
-
-While less common, administrators may want to further restrict what topology
-domains are available to a StorageClass. To support these administrator
-policies, a VolumeProvisioningTopology field can also be specified in the
-StorageClass to restrict the allowed topology domains for dynamic provisioning.
-This is not expected to be a common use case, and there are some caveats,
-described below.
-
-```
-type StorageClass struct {
-    ...
-
-    AllowedTopology *VolumeProvisioningTopology
-}
-
-type VolumeProvisioningTopology struct {
-    Required map[string]VolumeTopologyValues
-}
-
-type VolumeTopologyValues struct{
-    Values []string
-}
-```
-
-A nil value means there are no topology restrictions. A scheduler predicate
-will evaluate a non-nil value when considering dynamic provisioning for a node.
-When evaluating the specified topology against a node, the node must have a
-label for each topology key specified and one of its allowed values. For
-example, a topology specified with "zone: [us-central1-a, us-central1-b]" means
-that the node must have the label "zone: us-central1-a" or "zone:
-us-central1-b".
-
-A StorageClass update controller can be provided to convert existing topology
-restrictions specified under plugin-specific parameters to the new AllowedTopology
-field.
-
-The AllowedTopology will also be provided to provisioners as a new field, detailed in
-the provisioner section.  Provisioners can use the allowed topology information
-in the following scenarios:
-* StorageClass is using the default immediate binding mode. This is the
-  legacy topology-unaware behavior. In this scenario, the volume could be
-  provisioned in a domain that cannot run the Pod since it doesn't take any
-  scheduler input.
-* For volumes that span multiple domains, the AllowedTopology can restrict those
-  additional domains.  However, special care must be taken to avoid specifying
-  conflicting topology constraints in the Pod. For example, the administrator could
-  restrict a multi-zonal volume to zones 'zone1' and 'zone2', but the Pod could have
-  constraints that restrict it to 'zone1' and 'zone3'.  If 'zone1'
-  fails, the Pod cannot be scheduled to the intended failover zone.
-
-Kubernetes will leave validation and enforcement of the AllowedTopology content up
-to the provisioner.
-
-TODO: would this be better represented as part of StorageClass quota since that
-is where admins currently specify policies?
-However, ResourceQuota currently only supports quantity, and topology
-restrictions have to be evaluated during scheduling, not admission.
-
-#### Zonal Example
-This example restricts the volumes provisioned to zones us-central1-a and
-us-central1-b.
-```
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  Name: zonal-class
-provisioner: kubernetes.io/gce-pd
-parameters:
-  type: pd-standard
-allowedTopology:
-  required:
-    failure-domain.beta.kubernetes.io/zone:
-      values:
-      - us-central1-a
-      - us-central1-b
-```
-
-#### Multi-Zonal Example
-This example restricts the volume's primary and failover zones
-to us-central1-a and us-central1-b. Topologies that are incompatible with the
-storage provider parameters will be enforced by the provisioner.
-```
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  Name: multi-zonal-class
-provisioner: kubernetes.io/gce-pd
-parameters:
-  type: pd-standard
-  replicas: 2
-allowedTopology:
-  required:
-    failure-domain.beta.kubernetes.io/zone:
-      values:
-      - us-central1-a
-      - us-central1-b
-```
-
-### Storage Provider Capacity Reporting
-Some volume types have capacity limitations per topology domain. For example,
-local volumes have limited capacity per node. Provisioners for these volume
-types can report these capacity limitations through a new StorageClass status
-field.
-
-```
-type StorageClass struct {
-    ...
-
-    Status *StorageClassStatus
-}
-
-type StorageClassStatus struct {
-    Capacity *StorageClassCapacity
-}
-
-type StorageClassCapacity struct {
-    TopologyKey string
-    Capacities map[string]resource.Quantity
-}
-```
-
-If no StorageClassCapacity is specified, then there are no capacity
-limitations.
-
-Capacity reporting is limited to a single topology key. `TopologyKey`
-specifies the label key that represents that domain. Capacities is
-a map with key equal to the label value, and value is the capacity for that
-specific domain. Capacity is the total capacity available, including
-capacity that has already been provisioned. A missing map entry for a topology
-domain will be treated as zero capacity.
-
-A scheduler predicate will use the reported capacity to determine if dynamic
-provisioning is possible for a given node, taking into account already
-provisioned capacity.
-
-Downsides of this approach include:
-* Multiple topology keys is not supported for capacity reporting. We have not
-seen such use cases so far.
-* There is no common mechanism to report capacity. Each provisioner has to
-update their own fields in the StorageClass if necessary. CSI could potentially
-address this.
-
-#### Local Volume Example
-This example specifies that node1 has 100Gi, and node2 has 200Gi available
-for dynamic provisioning. All other nodes have 0Gi available for dynamic
-provisioning.
-```
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: standard
-...
-status:
-  capacity:
-    topologyKey: kubernetes.io/hostname
-    capacities:
-      node1: 100Gi
-      node2: 200Gi
-```
-
-TODO: should this be in the local volume spec instead?
-Some downsides specific to the local volume implementation:
-* StorageClass object size can be big for large clusters. Assuming that
-  each node entry in the Capacities map could take up around 100 bytes
-  (size of node name + resource.Quantity), a 1000 node cluster that uses
-  dynamic provisioning of local volumes could add 100Ki to the StorageClass
-  object.
-* If each node has a local volume provisioner, there can be many
-  StorageClass update conflicts if many try to update their capacity at the
-  same time.
-* A security concern is that each local volume provsioner could potentially
-  modify the capacity reported by another node. This could cause
-  provisioning to fail if a node does not have enough capacity, or it could
-  cause the scheduler to skip nodes due to no capacity.
-
-
-#### Relationship to StorageClassQuota
-Although both the new StorageClassCapacity field and existing StorageClassQuota
-manage storage consumption, they address different use cases.
-
-The StorageClassCapacity field is actual available capacity per topology domain
-reported by the storage system, while the StorageClassQuota represents policies
-set by the cluster admin and does not take into account topology domain.
-
-For example, a storage system is configured to support 200Gi in zone1 for a
-StorageClass that is shared by multiple users.  An administrator can use
-StorageClassQuota to restrict capacity usage for each user.
-
-
-## Feature Gates
-PersistentVolume.NodeAffinity and StorageClas.VolumeBindingMode fields will be
-controlled by the VolumeScheduling feature gate, and must be configured in the
-kube-scheduler, kube-controller-manager, and all kubelets.
-
-StorageClass.AllowedTopology and StorageClassCapacity fields will be controlled
-by the DynamicProvisioningScheduling feature gate, and must be configured in the
-kube-scheduler and kube-controller-manager.
-
-
-## Integrating volume binding with pod scheduling
 For the new volume binding mode, the proposed new workflow is:
 1. Admin statically creates PVs and/or StorageClasses.
 2. User creates unbound PVC and there are no prebound PVs for it.
@@ -611,22 +287,20 @@ For the new volume binding mode, the proposed new workflow is:
 references it.
 4. User creates a pod that uses the PVC.
 5. Pod starts to get processed by the scheduler.
-6. **NEW:** A new predicate function, called CheckVolumeBinding, will process
-both bound and unbound PVCs of the Pod.  It will validate the VolumeNodeAffinity
-for bound PVCs.  For unbound PVCs, it will try to find matching PVs for that node
-based on the PV NodeAffinity.  If there are no matching PVs, then it checks if
-dynamic provisioning is possible for that node based on StorageClass
-AllowedTopologies and Capacity.
+6. **NEW:** A new predicate function, called MatchUnboundPVCs, will look at all of
+a Pod’s unbound PVCs, and try to find matching PVs for that node based on the
+PV topology.  If there are no matching PVs, then it checks if dynamic
+provisioning is possible for that node.
 7. **NEW:** The scheduler continues to evaluate priorities.  A new priority
-function, called PrioritizeVolumes, will get the PV matches per PVC per
+function, called PrioritizeUnboundPVCs, will get the PV matches per PVC per
 node, and compute a priority score based on various factors.
 8. **NEW:** After evaluating all the existing predicates and priorities, the
-scheduler will pick a node, and call a new assume function, AssumeVolumes,
+scheduler will pick a node, and call a new assume function, AssumePVCs,
 passing in the Node.  The assume function will check if any binding or
 provisioning operations need to be done.  If so, it will update the PV cache to
-mark the PVs with the chosen PVCs and queue the Pod for volume binding.
+mark the PVs with the chosen PVCs.
 9. **NEW:** If PVC binding or provisioning is required, we do NOT AssumePod.
-Instead, a new bind function, BindVolumes, will be called asynchronously, passing
+Instead, a new bind function, BindPVCs, will be called asynchronously, passing
 in the selected node.  The bind function will prebind the PV to the PVC, or
 trigger dynamic provisioning.  Then, it always sends the Pod through the
 scheduler again for reasons explained later.
@@ -654,17 +328,15 @@ avoid these error conditions are to:
 * Separate out volumes that the user prebinds from the volumes that are
 available for the system to choose from by StorageClass.
 
-### PV Controller Changes
+#### PV Controller Changes
 When the feature gate is enabled, the PV controller needs to skip binding
 unbound PVCs with VolumBindingWaitForFirstConsumer and no prebound PVs
 to let it come through the scheduler path.
 
 Dynamic provisioning will also be skipped if
-VolumBindingWaitForFirstConsumer is set. The scheduler will signal to
+VolumBindingWaitForFirstConsumer is set.  The scheduler will signal to
 the PV controller to start dynamic provisioning by setting the
-`annSelectedNode` annotation in the PVC. If provisioning fails, the PV
-controller can signal back to the scheduler to retry dynamic provisioning by
-removing the `annSelectedNode` annotation.
+`annStorageProvisioner` annotation in the PVC.
 
 No other state machine changes are required.  The PV controller continues to
 handle the remaining scenarios without any change.
@@ -672,36 +344,14 @@ handle the remaining scenarios without any change.
 The methods to find matching PVs for a claim and prebind PVs need to be
 refactored for use by the new scheduler functions.
 
-### Dynamic Provisioning interface changes
-The dynamic provisioning interfaces will be updated to pass in:
-* selectedNode, when late binding is enabled on the StorageClass
-* allowedTopologies, when it is set in the StorageClass
+#### Scheduler Changes
 
-If selectedNode is set, the provisioner should get its appropriate topology
-labels from the Node object, and provision a volume based on those topology
-values. In the common use case for a volume supporting a single topology domain,
-if nodeName is set, then allowedTopologies can be ignored.
-
-In-tree provisioners:
-```
-Provision(selectedNode *string, allowedTopologies *storagev1.VolumeProvisioningTopology) (*v1.PersistentVolume, error)
-```
-
-External provisioners:
-* selectedNode will be represented by the PVC annotation "volume.alpha.kubernetes.io/selectedNode"
-* allowedTopologies must be obtained by looking at the StorageClass for the PVC.
-
-#### New Permissions
-Provisioners will need to be able to get Node and StorageClass objects.
-
-### Scheduler Changes
-
-#### Predicate
+##### Predicate
 A new predicate function checks all of a Pod's unbound PVCs can be satisfied
 by existing PVs or dynamically provisioned PVs that are
 topologically-constrained to the Node.
 ```
-CheckVolumeBinding(pod *v1.Pod, node *v1.Node) (canBeBound bool, err error)
+MatchUnboundPVCs(pod *v1.Pod, node *v1.Node) (canBeBound bool, err error)
 ```
 1. If all the Pod’s PVCs are bound, return true.
 2. Otherwise try to find matching PVs for all of the unbound PVCs in order of
@@ -711,17 +361,18 @@ decreasing requested capacity.
 5. Temporarily cache this PV choice for the PVC per Node, for fast
 processing later in the priority and bind functions.
 6. Return true if all PVCs are matched.
-7. If there are still unmatched PVCs, check if dynamic provisioning is possible,
-   by evaluating StorageClass.AllowedTopology, and StorageClassCapacity.  If so,
-   temporarily cache this decision in the PVC per Node.
+7. If there are still unmatched PVCs, check if dynamic provisioning is possible.
+For this alpha phase, the provisioner is not topology aware, so the predicate
+will just return true if there is a provisioner specified in the StorageClass
+(internal or external).
 8. Otherwise return false.
 
-#### Priority
+##### Priority
 After all the predicates run, there is a reduced set of Nodes that can fit a
 Pod. A new priority function will rank the remaining nodes based on the
 unbound PVCs and their matching PVs.
 ```
-PrioritizeVolumes(pod *v1.Pod, filteredNodes HostPriorityList) (rankedNodes HostPriorityList, err error)
+PrioritizeUnboundPVCs(pod *v1.Pod, filteredNodes HostPriorityList) (rankedNodes HostPriorityList, err error)
 ```
 1. For each Node, get the cached PV matches for the Pod’s PVCs.
 2. Compute a priority score for the Node using the following factors:
@@ -732,19 +383,19 @@ PrioritizeVolumes(pod *v1.Pod, filteredNodes HostPriorityList) (rankedNodes Host
 
 TODO (beta): figure out weights and exact calculation
 
-#### Assume
+##### Assume
 Once all the predicates and priorities have run, then the scheduler picks a
 Node.  Then we can bind or provision PVCs for that Node.  For better scheduler
 performance, we’ll assume that the binding will likely succeed, and update the
-PV and PVC caches first.  Then the actual binding API update will be made
+PV cache first.  Then the actual binding API update will be made
 asynchronously, and the scheduler can continue processing other Pods.
 
-For the alpha phase, the AssumeVolumes function will be directly called by the
+For the alpha phase, the AssumePVCs function will be directly called by the
 scheduler.  We’ll consider creating a generic scheduler interface in a
 subsequent phase.
 
 ```
-AssumeVolumes(pod *v1.pod, node *v1.node) (pvcbindingrequired bool, err error)
+AssumePVCs(pod *v1.Pod, node *v1.Node) (pvcBindingRequired bool, err error)
 ```
 1. If all the Pod’s PVCs are bound, return false.
 2. For static PV binding:
@@ -753,30 +404,26 @@ AssumeVolumes(pod *v1.pod, node *v1.node) (pvcbindingrequired bool, err error)
     3. Mark PV.ClaimRef in the PV cache.
     4. Cache the PVs that need binding in the Pod object.
 3. For in-tree and external dynamic provisioning:
-    1. Mark the PVC annSelectedNode in the PVC cache.
-    2. If the StorageClass has reported capacity limits, cache the topologyKey
-       value in the PVC annProvisionedTopology, and update the StorageClass
-       capacity cache.
-    3. Cache the PVCs that need provisioning in the Pod object.
+    1. Cache the PVCs that need provisioning in the Pod object.
 4. Return true.
 
-#### Bind
-If AssumeVolumes returns pvcBindingRequired, then the BindPVCs function is called
+##### Bind
+If AssumePVCs returns pvcBindingRequired, then the BindPVCs function is called
 as a go routine.  Otherwise, we can continue with assuming and binding the Pod
 to the Node.
 
-For the alpha phase, the BindVolumes function will be directly called by the
+For the alpha phase, the BindUnboundPVCs function will be directly called by the
 scheduler.  We’ll consider creating a generic scheduler interface in a subsequent
 phase.
 
 ```
-BindVolumes(pod *v1.Pod, node *v1.Node) (err error)
+BindUnboundPVCs(pod *v1.Pod, node *v1.Node) (err error)
 ```
 1. For static PV binding:
     1. Prebind the PV by updating the `PersistentVolume.ClaimRef` field.
     2. If the prebind fails, revert the cache updates.
 2. For in-tree and external dynamic provisioning:
-    1. Set `annScheduledNode` on the PVC.
+    1. Set `annStorageProvisioner` on the PVC.
 3. Send Pod back through scheduling, regardless of success or failure.
     1. In the case of success, we need one more pass through the scheduler in
 order to evaluate other volume predicates that require the PVC to be bound, as
@@ -786,16 +433,16 @@ described below.
 TODO: pv controller has a high resync frequency, do we need something similar
 for the scheduler too
 
-#### Access Control
+##### Access Control
 Scheduler will need PV update permissions for prebinding static PVs, and PVC
-update permissions for triggering dynamic provisioning.
+modify permissions for triggering dynamic provisioning.
 
-#### Pod preemption considerations
-The CheckVolumeBinding predicate does not need to be re-evaluated for pod
+##### Pod preemption considerations
+The MatchUnboundPVs predicate does not need to be re-evaluated for pod
 preemption.  Preempting a pod that uses a PV will not free up capacity on that
 node because the PV lifecycle is independent of the Pod’s lifecycle.
 
-#### Other scheduler predicates
+##### Other scheduler predicates
 Currently, there are a few existing scheduler predicates that require the PVC
 to be bound.  The bound assumption needs to be changed in order to work with
 this new workflow.
@@ -805,7 +452,7 @@ running predicates?  One possible way is to mark at the beginning of scheduling
 a Pod if all PVCs were bound.  Then we can check if a second scheduler pass is
 needed.
 
-##### Max PD Volume Count Predicate
+###### Max PD Volume Count Predicate
 This predicate checks the maximum number of PDs per node is not exceeded.  It
 needs to be integrated into the binding decision so that we don’t bind or
 provision a PV if it’s going to cause the node to exceed the max PD limit.  But
@@ -813,7 +460,7 @@ until it is integrated, we need to make one more pass in the scheduler after all
 the PVCs are bound.  The current copy of the predicate in the default scheduler
 has to remain to account for the already-bound volumes.
 
-##### Volume Zone Predicate
+###### Volume Zone Predicate
 This predicate makes sure that the zone label on a PV matches the zone label of
 the node.  If the volume is not bound, this predicate can be ignored, as the
 binding logic will take into account zone constraints on the PV.
@@ -828,18 +475,18 @@ This predicate needs to remain in the default scheduler to handle the
 already-bound volumes using the old zonal labeling.  It can be removed once that
 mechanism is deprecated and unsupported.
 
-##### Volume Node Predicate
+###### Volume Node Predicate
 This is a new predicate added in 1.7 to handle the new PV node affinity.  It
 evaluates the node affinity against the node’s labels to determine if the pod
 can be scheduled on that node.  If the volume is not bound, this predicate can
 be ignored, as the binding logic will take into account the PV node affinity.
 
-#### Caching
-There are three new caches needed in the scheduler.
+##### Caching
+There are two new caches needed in the scheduler.
 
 The first cache is for handling the PV/PVC API binding updates occurring
-asynchronously with the main scheduler loop.  `AssumeVolumes` needs to store
-the updated API objects before `BindVolumes` makes the API update, so
+asynchronously with the main scheduler loop.  `AssumePVCs` needs to store
+the updated API objects before `BindUnboundPVCs` makes the API update, so
 that future binding decisions will not choose any assumed PVs.  In addition,
 if the API update fails, the cached updates need to be reverted and restored
 with the actual API object.  The cache will return either the cached-only
@@ -860,16 +507,6 @@ all the volume predicates are fully run once all PVCs are bound.
 * Caching PV matches per node decisions that the predicate had made.  This is
 an optimization to avoid walking through all the PVs again in priority and
 assume functions.
-* Caching PVC dynamic provisioning decisions per node that the predicate had
-  made.
-
-The third cache is for storing provisioned capacity per topology domain for
-those StorageClasses that report capacity limits. Since the capacity reported in
-the StorageClass is total capacity, we need to calculate used capacity by adding
-up the capacities of all the PVCs provisioned for that StorageClass in each
-domain.  We can cache these used capacities so we don't have to recalculate them
-every time in the predicate.
-
 
 #### Performance and Optimizations
 Let:
@@ -904,7 +541,7 @@ match against the PVs in the node’s PV map instead of the cluster-wide PV list
 For the alpha phase, the optimizations are not required.  However, they should
 be required for beta and GA.
 
-### Packaging
+#### Packaging
 The new bind logic that is invoked by the scheduler can be packaged in a few
 ways:
 * As a library to be directly called in the default scheduler
@@ -919,7 +556,7 @@ for more race conditions due to the caches being out of sync.
 because the scheduler’s cache and PV controller’s cache have different interfaces
 and private methods.
 
-#### Extender cons
+##### Extender cons
 However, the cons of the extender approach outweighs the cons of the library
 approach.
 
@@ -941,9 +578,9 @@ Kubernetes.
 With all this complexity, the library approach is the most feasible in a single
 release time frame, and aligns better with the current Kubernetes architecture.
 
-### Downsides
+#### Downsides
 
-#### Unsupported Use Cases
+##### Unsupported Use Cases
 The following use cases will not be supported for PVCs with a StorageClass with
 VolumeBindingWaitForFirstConsumer:
 * Directly setting Pod.Spec.NodeName
@@ -952,7 +589,7 @@ VolumeBindingWaitForFirstConsumer:
 These two use cases will bypass the default scheduler and thus will not
 trigger PV binding.
 
-#### Custom Schedulers
+##### Custom Schedulers
 Custom schedulers, controllers and operators that handle pod scheduling and want
 to support this new volume binding mode will also need to handle the volume
 binding decision.
@@ -967,7 +604,7 @@ easier for custom schedulers to include in their own implementation.
 In general, many advanced scheduling features have been added into the default
 scheduler, such that it is becoming more difficult to run without it.
 
-#### HA Master Upgrades
+##### HA Master Upgrades
 HA masters adds a bit of complexity to this design because the active scheduler
 process and active controller-manager (PV controller) process can be on different
 nodes.  That means during an HA master upgrade, the scheduler and controller-manager
@@ -987,9 +624,9 @@ all dependencies are at the required versions.
 
 For alpha, this is not concerning, but it needs to be solved by GA.
 
-### Other Alternatives Considered
+#### Other Alternatives Considered
 
-#### One scheduler function
+##### One scheduler function
 An alternative design considered was to do the predicate, priority and bind
 functions all in one function at the end right before Pod binding, in order to
 reduce the number of passes we have to make over all the PVs.  However, this
@@ -1004,7 +641,7 @@ on a Node that the higher priority pod still cannot run on due to PVC
 requirements.  For that reason, the PVC binding decision needs to be have its
 predicate function separated out and evaluated with the rest of the predicates.
 
-#### Pull entire PVC binding into the scheduler
+##### Pull entire PVC binding into the scheduler
 The proposed design only has the scheduler initiating the binding transaction
 by prebinding the PV.  An alternative is to pull the whole two-way binding
 transaction into the scheduler, but there are some complex scenarios that
@@ -1016,7 +653,7 @@ scheduler’s Pod sync loop cannot handle:
 Handling these scenarios in the scheduler’s Pod sync loop is not possible, so
 they have to remain in the PV controller.
 
-#### Keep all PVC binding in the PV controller
+##### Keep all PVC binding in the PV controller
 Instead of initiating PV binding in the scheduler, have the PV controller wait
 until the Pod has been scheduled to a Node, and then try to bind based on the
 chosen Node.  A new scheduling predicate is still needed to filter and match
@@ -1048,7 +685,7 @@ can make a lot of wrong decisions after the restart.
 evaluated.  To solve this, all the volume predicates need to also be built into
 the PV controller when matching possible PVs.
 
-#### Move PVC binding to kubelet
+##### Move PVC binding to kubelet
 Looking into the future, with the potential for NUMA-aware scheduling, you could
 have a sub-scheduler on each node to handle the pod scheduling within a node.  It
 could make sense to have the volume binding as part of this sub-scheduler, to make
@@ -1062,7 +699,7 @@ to just that node, but for zonal storage, it could see all the PVs in that zone.
 In addition, the sub-scheduler is just a thought at this point, and there are no
 concrete proposals in this area yet.
 
-## Binding multiple PVCs in one transaction
+### Binding multiple PVCs in one transaction
 There are no plans to handle this, but a possible solution is presented here if the
 need arises in the future.  Since the scheduler is serialized, a partial binding
 failure should be a rare occurrence and would only be caused if there is a user or
@@ -1083,11 +720,24 @@ If scheduling fails, update all bound PVCs with an annotation,
 are clean.  Scheduler and kubelet needs to reject pods with PVCs that are
 undergoing rollback.
 
-## Recovering from kubelet rejection of pod
+### Recovering from kubelet rejection of pod
 We can use the same rollback mechanism as above to handle this case.
 If kubelet rejects a pod, it will go back to scheduling.  If the scheduler
 cannot find a node for the pod, then it will encounter scheduling failure and
 initiate the rollback.
+
+### Making dynamic provisioning topology aware
+TODO (beta): Design details
+
+For alpha, we are not focusing on this use case.  But it should be able to
+follow the new workflow closely with some modifications.
+* The FindUnboundPVCs predicate function needs to get provisionable capacity per
+topology dimension from the provisioner somehow.
+* The PrioritizeUnboundPVCs priority function can add a new priority score factor
+based on available capacity per node.
+* The BindUnboundPVCs bind function needs to pass in the node to the provisioner.
+The internal and external provisioning APIs need to be updated to take in a node
+parameter.
 
 
 ## Testing
