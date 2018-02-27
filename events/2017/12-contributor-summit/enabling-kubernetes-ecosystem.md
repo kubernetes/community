@@ -72,7 +72,7 @@ Notes by @directxman12
 
     * Need to look at human-consumable media, not necessarily machine-consumable
 
-* Question: do we currate
+* Question: do we curate
 
     * Do we require "discoverable" things to be maintained/use a CLA/etc?
 

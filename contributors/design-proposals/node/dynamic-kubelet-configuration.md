@@ -180,7 +180,7 @@ Regarding (1), the Kubelet will check the "bad configs" file on startup. It will
 
 Regarding (3), the Kubelet should report via the `Node`'s status:
 - That it is using LKG.
-- The configuration LKG referrs to.
+- The configuration LKG refers to.
 - The supposedly bad configuration that the Kubelet decided to avoid.
 - The reason it thinks the configuration is bad.
 

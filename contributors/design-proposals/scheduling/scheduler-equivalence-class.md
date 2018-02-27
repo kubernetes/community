@@ -144,7 +144,7 @@ func (ec *EquivalenceCache) PredicateWithECache(
 }
 ```
 
-One thing to note is, if the `hostPredicate` is not present in the logic above, it will be considered as `invalid`. That means although this pod has equivalence class, it does not have cached predicate result yet, or the cached data is not valid. It needs to go through normal predicate process and write the result into equivalence clas cache.
+One thing to note is, if the `hostPredicate` is not present in the logic above, it will be considered as `invalid`. That means although this pod has equivalence class, it does not have cached predicate result yet, or the cached data is not valid. It needs to go through normal predicate process and write the result into equivalence class cache.
 
 ### 2.3 What if no equivalence class is found for pod?
 

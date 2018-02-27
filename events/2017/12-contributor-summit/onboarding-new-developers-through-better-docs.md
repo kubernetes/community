@@ -148,7 +148,7 @@ Note: the focus is on documentation, so we won’t be able to act on suggestions
 
     * Templates/guidelines mentioned above may be helpful
 
-    * Talk to SIG docs (SIG docs wants to try and send delagates to SIG, but for now, come to meetings)
+    * Talk to SIG docs (SIG docs wants to try and send delegates to SIG, but for now, come to meetings)
 
 * Question: should there even *be* a split between user and contributor docs?
 

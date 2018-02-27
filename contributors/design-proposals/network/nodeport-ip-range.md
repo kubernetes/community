@@ -58,7 +58,7 @@ However, if IP address of `eth0` changes from `172.10.1.2` to `192.168.3.4`
 
 When refer to DHCP user case, network administrator usually reserves a RANGE of IP addresses for the DHCP server. So, IP address change will always fall in an IP range in DHCP scenario. That's to say an IP address of a interface will not change from `172.10.1.2` to `192.168.3.4` in our example.
 
-## Kube-proxy implementation suport
+## Kube-proxy implementation support
 
 The implementation is simple.
 
@@ -74,7 +74,7 @@ Same as iptables.
 
 ### ipvs
 
-Create IPVS virutal services one by one according to provided node IPs, which is almost same as current behaviour(fetch all IPs from host).
+Create IPVS virtual services one by one according to provided node IPs, which is almost same as current behaviour(fetch all IPs from host).
 
 ### Window userspace
 

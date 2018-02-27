@@ -8,7 +8,7 @@ Joe wants to redefine the session
 Power and role of sig leads is defined in how we pick these people. Voting?  Membership? What do we do for governance in general
 
 
-Paul: Roles that are valuable that are not sig lead. Svc cat, moderator of discussions and took notes. Secratary of committee. 
+Paul: Roles that are valuable that are not sig lead. Svc cat, moderator of discussions and took notes. Secretary of committee. 
 
 Back to joe; what does the sig think. Each leader doesn’t know. Who shows up to a meeting isn’t helpful as not everyone can attend. What does the lead thing? Allows too much personal power. Decision maker or tech lead? 
 
@@ -31,7 +31,7 @@ Joe -need someone who cares
 Eric chang - every sig needs a person doing X,Y, Z. docs, tests, etc. fundamental goals. Sig lead has too much to do. Formalize roles and fill them with people, especially different people for each role. 
 Large sigs have more people to allocate to alt roles.
 
-Jessie - Can’t have the person who facilitates be unbiased techincally. Best solution vs alternative monetary gain.
+Jessie - Can’t have the person who facilitates be unbiased technically. Best solution vs alternative monetary gain.
 
 Joe -  people as sig leads in name only to game the system as being important
 

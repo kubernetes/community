@@ -28,12 +28,12 @@ files if the ConfigMap exists.
 A container can specify an entire ConfigMap to be populated as environment
 variables via `EnvFrom`. When required, the container fails to start if the
 ConfigMap does not exist. If the ConfigMap is optional, the container will
-skip the non-existant ConfigMap and proceed as normal.
+skip the non-existent ConfigMap and proceed as normal.
 
 A container may also specify a single environment variable to retrieve its
 value from a ConfigMap via `Env`. If the key does not exist in the ConfigMap
 during container start, the container will fail to start. If however, the
-ConfigMap is marked optional, during container start, a non-existant ConfigMap
+ConfigMap is marked optional, during container start, a non-existent ConfigMap
 or a missing key in the ConfigMap will not prevent the container from
 starting. Any previous value for the given key will be used.
 

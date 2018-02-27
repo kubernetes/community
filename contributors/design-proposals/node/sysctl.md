@@ -313,7 +313,7 @@ Issues:
     uses [Resizable virtual memory filesystem](https://github.com/torvalds/linux/blob/master/mm/shmem.c)
   * [x] hence **safe to customize**
   * [x] **no application influence** with high values
-  * **defaults to** [unlimited pages, unlimited size, 4096 segments on today's kernels](https://github.com/torvalds/linux/blob/0e06f5c0deeef0332a5da2ecb8f1fcf3e024d958/include/uapi/linux/shm.h#L20). This makes **customization practically unneccessary**, at least for the segment sizes. IBM's DB2 suggests `256*GB of RAM` for `kernel.shmmni` (compare http://www.ibm.com/support/knowledgecenter/SSEPGG_10.1.0/com.ibm.db2.luw.qb.server.doc/doc/c0057140.html), exceeding the kernel defaults for machines with >16GB of RAM.
+  * **defaults to** [unlimited pages, unlimited size, 4096 segments on today's kernels](https://github.com/torvalds/linux/blob/0e06f5c0deeef0332a5da2ecb8f1fcf3e024d958/include/uapi/linux/shm.h#L20). This makes **customization practically unnecessary**, at least for the segment sizes. IBM's DB2 suggests `256*GB of RAM` for `kernel.shmmni` (compare http://www.ibm.com/support/knowledgecenter/SSEPGG_10.1.0/com.ibm.db2.luw.qb.server.doc/doc/c0057140.html), exceeding the kernel defaults for machines with >16GB of RAM.
 - `kernel.shm_rmid_forced`: enforce removal of shared memory segments on process shutdown
   * [x] **namespaced** in ipc ns
 - `kernel.msgmax`, `kernel.msgmnb`, `kernel.msgmni`: configure System V messages
@@ -634,7 +634,7 @@ Alternative 1 or 2 has to be chosen for the external API once the feature is pro
 Finally, the container runtime will interpret `pod.spec.securityPolicy.sysctls`,
 e.g. in the case of Docker the `DockerManager` will apply the given sysctls to the infra container in `createPodInfraContainer`.
 
-In a later implementation of a container runtime interface (compare https://github.com/kubernetes/kubernetes/pull/25899), sysctls will be part of `LinuxPodSandboxConfig` (compare https://github.com/kubernetes/kubernetes/pull/25899#discussion_r64867763) and to be applied by the runtime implementaiton to the `PodSandbox` by the `PodSandboxManager` implementation.
+In a later implementation of a container runtime interface (compare https://github.com/kubernetes/kubernetes/pull/25899), sysctls will be part of `LinuxPodSandboxConfig` (compare https://github.com/kubernetes/kubernetes/pull/25899#discussion_r64867763) and to be applied by the runtime implementation to the `PodSandbox` by the `PodSandboxManager` implementation.
 
 ## Examples
 
