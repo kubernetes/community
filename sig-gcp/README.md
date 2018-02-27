@@ -25,9 +25,9 @@ A Special Interest Group for building, deploying, maintaining, supporting, and u
 ## Subprojects
 
 The following subprojects are owned by sig-gcp:
-- **gcp-cloud-provider**
+- **cloud-provider-gcp**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/gcp-cloud-provider/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
 
 ## GitHub Teams
 

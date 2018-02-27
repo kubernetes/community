@@ -28,9 +28,9 @@ Coordinates the cross-community efforts of the OpenStack and Kubernetes communit
 ## Subprojects
 
 The following subprojects are owned by sig-openstack:
-- **openstack-cloud-provider**
+- **cloud-provider-openstack**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/openstack-cloud-provider/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
 
 ## GitHub Teams
 

@@ -365,9 +365,9 @@ sigs:
       - name: sig-aws-misc
         description: General Discussion
     subprojects:
-    - name: aws-cloud-provider
+    - name: cloud-provider-aws
       owners:
-      - https://raw.githubusercontent.com/kubernetes/aws-cloud-provider/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
 
   - name: Azure
     dir: sig-azure
@@ -401,9 +401,9 @@ sigs:
       - name: sig-azure-misc
         description: General Discussion
     subprojects:
-    - name: azure-cloud-provider
+    - name: cloud-provider-azure
       owners:
-      - https://raw.githubusercontent.com/kubernetes/azure-cloud-provider/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
 
   - name: Big Data
     dir: sig-big-data
@@ -781,9 +781,9 @@ sigs:
       - name: sig-gcp-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: gcp-cloud-provider
+    - name: cloud-provider-gcp
       owners:
-      - https://raw.githubusercontent.com/kubernetes/gcp-cloud-provider/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
 
   - name: Instrumentation
     dir: sig-instrumentation
@@ -1109,9 +1109,9 @@ sigs:
       - name: sig-openstack-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: openstack-cloud-provider
+    - name: cloud-provider-openstack
       owners:
-      - https://raw.githubusercontent.com/kubernetes/openstack-cloud-provider/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
 
   - name: Product Management
     dir: sig-product-management

@@ -28,9 +28,9 @@ Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
 ## Subprojects
 
 The following subprojects are owned by sig-aws:
-- **aws-cloud-provider**
+- **cloud-provider-aws**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/aws-cloud-provider/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
 
 ## GitHub Teams
 

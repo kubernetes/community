@@ -28,9 +28,9 @@ A Special Interest Group for building, deploying, maintaining, supporting, and u
 ## Subprojects
 
 The following subprojects are owned by sig-azure:
-- **azure-cloud-provider**
+- **cloud-provider-azure**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/azure-cloud-provider/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
 
 ## GitHub Teams
 
