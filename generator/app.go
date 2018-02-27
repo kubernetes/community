@@ -41,8 +41,10 @@ const (
 	aliasesOutput = "OWNERS_ALIASES"
 	indexFilename = "README.md"
 
-	beginMarker = "<!-- BEGIN CUSTOM CONTENT -->"
-	endMarker   = "<!-- END CUSTOM CONTENT -->"
+	beginCustomMarkdown = "<!-- BEGIN CUSTOM CONTENT -->"
+	endCustomMarkdown   = "<!-- END CUSTOM CONTENT -->"
+	beginCustomYaml     = "## BEGIN CUSTOM CONTENT"
+	endCustomYaml       = "## END CUSTOM CONTENT"
 )
 
 var (
@@ -129,9 +131,22 @@ func createDirIfNotExists(path string) error {
 	return nil
 }
 
-func getExistingContent(path string) (string, error) {
+func getExistingContent(path string, fileFormat string) (string, error) {
 	capture := false
 	var captured []string
+
+	beginMarker := ""
+	endMarker := ""
+	switch fileFormat {
+	case "markdown":
+		beginMarker = beginCustomMarkdown
+		endMarker = endCustomMarkdown
+	case "yaml":
+		beginMarker = beginCustomYaml
+		endMarker = endCustomYaml
+	case "":
+		return "", nil
+	}
 
 	// NOTE: For some reason using bufio.Scanner with existing file pointer prepends
 	// a bunch of null ^@ characters, so using to ioutil.ReadFile instead.
@@ -166,7 +181,7 @@ func tzUrlEncode(tz string) string {
 	return strings.Replace(url.QueryEscape(tz), "+", "%20", -1)
 }
 
-func writeTemplate(templatePath, outputPath string, customContent bool, data interface{}) error {
+func writeTemplate(templatePath, outputPath string, fileFormat string, data interface{}) error {
 	// set up template
 	t, err := template.New(filepath.Base(templatePath)).
 		Funcs(funcMap).
@@ -191,7 +206,7 @@ func writeTemplate(templatePath, outputPath string, customContent bool, data int
 	defer f.Close()
 
 	// get any existing content
-	content, err := getExistingContent(outputPath)
+	content, err := getExistingContent(outputPath, fileFormat)
 	if err != nil {
 		return err
 	}
@@ -205,15 +220,25 @@ func writeTemplate(templatePath, outputPath string, customContent bool, data int
 		return err
 	}
 
-	// custom content block
-	if customContent {
-		writeCustomContentBlock(f, content)
-	}
+	writeCustomContentBlock(f, content, fileFormat)
 
 	return nil
 }
 
-func writeCustomContentBlock(f *os.File, content string) {
+func writeCustomContentBlock(f *os.File, content string, fileFormat string) {
+	beginMarker := ""
+	endMarker := ""
+	switch fileFormat {
+	case "markdown":
+		beginMarker = beginCustomMarkdown
+		endMarker = endCustomMarkdown
+	case "yaml":
+		beginMarker = beginCustomYaml
+		endMarker = endCustomYaml
+	case "":
+		return
+	}
+
 	lines := []string{beginMarker, "\n", content, "\n", endMarker, "\n"}
 	for _, line := range lines {
 		f.Write([]byte(line))
@@ -244,7 +269,7 @@ func createGroupReadme(groups []Group, prefix string) error {
 
 		outputPath := filepath.Join(outputDir, indexFilename)
 		readmePath := filepath.Join(baseGeneratorDir, templateDir, fmt.Sprintf("%s_%s", prefix, readmeTemplate))
-		if err := writeTemplate(readmePath, outputPath, true, group); err != nil {
+		if err := writeTemplate(readmePath, outputPath, "markdown", group); err != nil {
 			return err
 		}
 	}
@@ -284,14 +309,14 @@ func main() {
 
 	fmt.Println("Generating sig-list.md")
 	outputPath := filepath.Join(baseGeneratorDir, sigListOutput)
-	err = writeTemplate(filepath.Join(baseGeneratorDir, templateDir, listTemplate), outputPath, true, ctx)
+	err = writeTemplate(filepath.Join(baseGeneratorDir, templateDir, listTemplate), outputPath, "markdown", ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	fmt.Println("Generating OWNERS_ALIASES")
 	outputPath = filepath.Join(baseGeneratorDir, aliasesOutput)
-	err = writeTemplate(filepath.Join(baseGeneratorDir, templateDir, aliasesTemplate), outputPath, false, ctx)
+	err = writeTemplate(filepath.Join(baseGeneratorDir, templateDir, aliasesTemplate), outputPath, "yaml", ctx)
 	if err != nil {
 		log.Fatal(err)
 	}

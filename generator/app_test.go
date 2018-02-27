@@ -67,7 +67,7 @@ func TestGetExistingData(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		content, err := getExistingContent(c.path)
+		content, err := getExistingContent(c.path, "markdown")
 		if err != nil && c.expectErr == false {
 			t.Fatalf("Received unexpected error for %s: %v", c.path, err)
 		}
@@ -94,38 +94,38 @@ content!
 `
 
 	cases := []struct {
-		templatePath  string
-		outputPath    string
-		data          map[string]string
-		expectErr     bool
-		customContent bool
-		expected      string
+		templatePath string
+		outputPath   string
+		data         map[string]string
+		expectErr    bool
+		fileFormat   string
+		expected     string
 	}{
 		{
-			templatePath:  "./testdata/non_existent_template.tmpl",
-			expectErr:     true,
-			customContent: true,
+			templatePath: "./testdata/non_existent_template.tmpl",
+			expectErr:    true,
+			fileFormat:   "markdown",
 		},
 		{
-			templatePath:  "./testdata/example.tmpl",
-			outputPath:    "/tmp/non_existing_path.md",
-			expectErr:     false,
-			customContent: true,
-			data:          map[string]string{"Message": "Hello!"},
-			expected:      "Hello!",
+			templatePath: "./testdata/example.tmpl",
+			outputPath:   "/tmp/non_existing_path.md",
+			expectErr:    false,
+			fileFormat:   "markdown",
+			data:         map[string]string{"Message": "Hello!"},
+			expected:     "Hello!",
 		},
 		{
-			templatePath:  "./testdata/example.tmpl",
-			outputPath:    "./testdata/example.md",
-			expectErr:     false,
-			customContent: true,
-			data:          map[string]string{"Message": "Hello!"},
-			expected:      customContent,
+			templatePath: "./testdata/example.tmpl",
+			outputPath:   "./testdata/example.md",
+			expectErr:    false,
+			fileFormat:   "markdown",
+			data:         map[string]string{"Message": "Hello!"},
+			expected:     customContent,
 		},
 	}
 
 	for _, c := range cases {
-		err := writeTemplate(c.templatePath, c.outputPath, c.customContent, c.data)
+		err := writeTemplate(c.templatePath, c.outputPath, c.fileFormat, c.data)
 		if err != nil && c.expectErr == false {
 			t.Fatalf("Received unexpected error for %s: %v", c.templatePath, err)
 		}
