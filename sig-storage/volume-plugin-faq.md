@@ -7,7 +7,7 @@ Last Updated: 02/08/2018
 
 A *Kubernetes Volume plugin* extends the Kubernetes volume interface to support a block and/or file storage system.
 
-## In-tree vs Out-of-Tree Volume Plugins
+## In-tree vs. Out-of-Tree Volume Plugins
 
 **How do I implement a Volume plugin?**
 
@@ -18,7 +18,7 @@ There are three methods to implement a volume plugin:
 
 The Kubernetes Storage SIG, which is responsible for all volume code in the Kubernetes core repository, is no longer accepting new in-tree volume plugins. Instead, the SIG recommends storage vendors develop plugins as either FlexVolume or CSI drivers.
 
-**What is an in-tree vs out-of-tree volume plugin?**
+**What is an in-tree vs. out-of-tree volume plugin?**
 
 Before the introduction of the Container Storage Interface (CSI) and FlexVolume, all volume plugins were *in-tree* meaning they were built, linked, compiled, and shipped with the core Kubernetes binaries and extend the core Kubernetes API. This meant that adding a new storage system to Kubernetes (a volume plugin) required checking code into the core Kubernetes code repository.
 
@@ -74,6 +74,8 @@ For more information about Flex, see:
 
 *   FlexVolume requires root access on host machine to install FlexVolume driver files.
 *   FlexVolume drivers assume all volume mount dependencies, e.g. mount and filesystem tools, are available on the host OS. Installing these dependencies also require root access.
+
+## Working with Out-of-Tree Volume Plugin Options
 
 **Should I use CSI or FlexVolume?**
 
