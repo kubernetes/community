@@ -342,9 +342,6 @@ sigs:
     leads:
     - name: Justin Santa Barbara
       github: justinsb
-    - name: Kris Nova
-      github: kris-nova
-      company: Heptio
     - name: Chris Love
       github: chrislovecnm
     - name: Mackenzie Burnett
