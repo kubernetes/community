@@ -1693,7 +1693,7 @@ workinggroups:
   - name: Multitenancy
     dir: wg-multitenancy
     mission_statement: >
-      Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
+      Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments. Charter can be found [here](https://docs.google.com/document/d/1SkVdOPR4jozYDT8ro51hU3yrf1sHS8Gez73xM3PCsVo/edit#)
     leads:
     - name: David Oppenheimer
       github: davidopp
@@ -1701,6 +1701,14 @@ workinggroups:
     - name: Jessie Frazelle
       github: jessfraz
       company: Microsoft
+    meetings:
+    - day: Wednesday
+      time: "19:00"
+      tz: "UTC"
+      frequency: biweekly, opposite weeks of sig-auth
+    meeting_url: https://zoom.us/my/k8s.sig.auth
+    meeting_archive_url: https://docs.google.com/document/d/1fj3yzmeU2eU8ZNBCUJG97dk_wC7228-e_MmdcmTNrZY/edit#
+    meeting_recordings_url: https://www.youtube.com/watch?v=DJDuDNALcMo&list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
     contact:
       slack: wg-multitenancy
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy
