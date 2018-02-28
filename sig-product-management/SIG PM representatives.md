@@ -26,7 +26,7 @@ SIG PM responsibilities:
 |  Docs | N/A |  |  |  |
 |  Federation | David Aronchick | aronchick | aronchick@google.com |  |
 |  Instrumentation | Piotr Szczesniak | piosz | pszczesniak@google.com | Patrick Christopher (pat.christopher@gmail.com) |
-|  Network | Dan Williams | dcbw | dcbw@redhat.com | Christopher M Luciano, @cmluciano, cmluciano@us.ibm.com |
+|  Network | Dan Williams | dcbw | dcbw@redhat.com | Christopher M Luciano, @cmluciano, cmluciano@us.ibm.com, Du Jun, @m1093782566, dujun5@huawei.com |
 |  Node | Caleb Miles | calebamiles | caleb.miles@coreos.com |  |
 |  On-Premises | Tomasz Napierala | zen | tnapierala@mirantis.com |  |
 |  OpenStack | Ihor Dvoretskyi | idvoretskyi | ihor@dvoretskyi.com |  |
