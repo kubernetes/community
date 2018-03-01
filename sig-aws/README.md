@@ -17,8 +17,6 @@ Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
 ## Leads
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
 * Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Heptio
-* Chris Love (**[@chrislovecnm](https://github.com/chrislovecnm)**)
-* Mackenzie Burnett (**[@mfburnett](https://github.com/mfburnett)**), Redspread
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-aws)
