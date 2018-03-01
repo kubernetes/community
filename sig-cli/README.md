@@ -16,6 +16,7 @@ Covers kubectl and related tools. We focus on the development and standardizatio
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
 
 ## Leads
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 * Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
 * Tony Ado (**[@AdoHe](https://github.com/AdoHe)**), Alibaba
 
@@ -30,9 +31,6 @@ Covers kubectl and related tools. We focus on the development and standardizatio
 ## Subprojects
 
 The following subprojects are owned by sig-cli:
-- **common**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/common/master/OWNERS
 - **kubectl**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS

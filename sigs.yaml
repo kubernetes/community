@@ -457,6 +457,9 @@ sigs:
       experience and usability perspective.
     label: cli
     leads:
+    - name: Maciej Szulik
+      github: soltysh
+      company: Red Hat
     - name: Phillip Wittrock
       github: pwittrock
       company: Google
@@ -497,9 +500,6 @@ sigs:
       - name: sig-cli-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: common
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/common/master/OWNERS
     - name: kubectl
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
