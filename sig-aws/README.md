@@ -31,6 +31,22 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-aws:
+- **aws-cloudprovider**
+  - Description: Cloudprovider implementation for AWS
+  - Owners:
+    - https://github.com/kubernetes/kubernetes/blob/master/pkg/cloudprovider/providers/aws/OWNERS
+- **aws-docker-credentialprovider**
+  - Description: Credential provider implementation for AWS (for ECR)
+  - Owners:
+    - https://github.com/kubernetes/kubernetes/blob/master/pkg/credentialprovider/aws/OWNERS
+- **aws-ebs**
+  - Description: Support for EBS volumes
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volume/aws_ebs/OWNERS
+- **aws-encryption-provider**
+  - Description: Implements apiserver encryption, backed by AWS KMS
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
 - **cloud-provider-aws**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS

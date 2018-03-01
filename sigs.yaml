@@ -402,6 +402,22 @@ sigs:
       - name: sig-aws-misc
         description: General Discussion
     subprojects:
+    - name: aws-cloudprovider
+      description: Cloudprovider implementation for AWS
+      owners:
+      - https://github.com/kubernetes/kubernetes/blob/master/pkg/cloudprovider/providers/aws/OWNERS
+    - name: aws-docker-credentialprovider
+      description: Credential provider implementation for AWS (for ECR)
+      owners:
+      - https://github.com/kubernetes/kubernetes/blob/master/pkg/credentialprovider/aws/OWNERS
+    - name: aws-ebs
+      description: Support for EBS volumes
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volume/aws_ebs/OWNERS
+    - name: aws-encryption-provider
+      description: Implements apiserver encryption, backed by AWS KMS
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
     - name: cloud-provider-aws
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
