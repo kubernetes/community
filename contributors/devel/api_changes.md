@@ -766,7 +766,9 @@ feedback
   - Object Versioning: API version `vX` where `X` is an integer (e.g. `v1`)
   - Availability: in official Kubernetes releases, and enabled by default
   - Audience: all users
-  - Completeness: same as beta
+  - Completeness: must have conformance tests, approved by SIG Architecture,
+in the appropriate conformance profile (e.g., non-portable and/or optional
+features may not be in the default profile)
   - Upgradeability: only [strictly compatible](#on-compatibility) changes
 allowed in subsequent software releases
   - Cluster Reliability: high
