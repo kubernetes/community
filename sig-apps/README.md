@@ -61,18 +61,31 @@ The following subprojects are owned by sig-apps:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-helm/rudder-federation/master/OWNERS
 - **workloads-api**
-  - Description: The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, and StatefulSet kinds
+  - Description: The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, and StatefulSet kinds
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cronjob/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/daemon/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/deployment/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/disruption/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/history/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/job/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replicaset/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replication/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/core/v1/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/extensions/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/apps/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/batch/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/extensions/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/apps/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/core/v1/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/batch/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/extensions/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/apps/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/daemonset/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/deployment/OWNERS
 
 ## GitHub Teams
 
