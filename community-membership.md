@@ -212,6 +212,7 @@ The following apply to the subproject for which one would be an owner.
   - Adequate test coverage to confidently release
   - Tests are passing reliably (i.e. not flaky) and are fixed when they fail
 - Ensure a healthy process for discussion and decision making is in place.
+- Work with other subproject owners to maintain the project's overall health and success holistically
 
 ## ~~Maintainer~~
 
