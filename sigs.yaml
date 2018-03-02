@@ -358,11 +358,6 @@ sigs:
     - name: Kris Nova
       github: kris-nova
       company: Heptio
-    - name: Chris Love
-      github: chrislovecnm
-    - name: Mackenzie Burnett
-      github: mfburnett
-      company: Redspread
     meetings:
     - description: Regular SIG Meeting
       day: Friday
