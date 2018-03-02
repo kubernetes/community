@@ -4,7 +4,7 @@
 
 ## Leads:
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**)
-* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**
+* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**)
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**) 
 
 ## Processes and Responsibilities
@@ -26,7 +26,7 @@
     * GitHub service teams
 * We ensure communication platforms are a safe environment for discourse and maintain them and in some cases in conjunction with CNCF/LF. Depending on the situation, we will warn first and then report to Steering Committee. Platforms may include Slack, Kubernetes weekly meetings, Zoom, YouTube, etc.
 * Provide guidance and mediation between SIGs and WGs that are having contributor experience issues. For example, consolidation around a certain workflow 
-* Solicit feedback from other SIGs and contributors throughout the project and continuously improve contribution workflow.
+* Solicit feedback from other SIGs, project areas, and contributors formally twice a year (mid and end) about our performance and how we can improve the contributor experience
 * We encourage and determine where automation makes sense for the contributor workflow.
 * We own no code outside of the kubernetes/community repo although we may collaborate with other OWNERs of repos and SIG and WG leads
 * Drives consistent automation surrounding the PR workflow and issue triaging, and collaborates with other groups on implementing our design  
@@ -45,13 +45,17 @@
 * Process change communication:	
   * Socialize on kubernetes-wg-contribex@googlegroups.com and on our weekly update calls 
   * If the change impacts a small number (<4) of SIGs, WGs, or repos, we will go to each lead, their mailing lists, slack channel, and/or their update meetings and ask for feedback and a lazy consensus process. We will follow up with a post to kubernetes-dev@googlegroups.com mailing list 
-  * In cases of impacts across a large number and/or project wide, we will post to the kubernetes-dev@googlegroups.com mailing list and waiting for a lazy consensus period of five days. Followed up by a reminder 24 hours beforehand if no feedback has come through 
+  * In cases of impacts across a large number of areas and/or project wide, we will:
+    *  Lazy consensus with a time box of at least 72 hours to the following mailing lists with the GitHub issue link including the subject [NOTICE]: foobar to the following mailing lists:
+       * kubernetes-dev@
+       * sig-leads@
+       * kubernetes-wg-contribex@
+    * Announce at weekly Kubernetes Community Meeting on Thursdays
 
 
 
 ## TODO:
 * Next iteration needs a breakdown of responsibilities by each leader
-* How do we take in and ask for feedback re: how we’re doing - both leads and the group as a whole?
 * Provide some guidance, like a super lightweight proposal template. Or at least ask those making a proposal to consider things like: "Who does this change impact, and how? What can/will cease working as part of this change, and how does the proposer plan to help mitigate that?"
 * Add KEP proposal process info^?
 
