@@ -29,7 +29,7 @@ SIG PM responsibilities:
 |  Network | Dan Williams | dcbw | dcbw@redhat.com | Christopher M Luciano, @cmluciano, cmluciano@us.ibm.com, Du Jun, @m1093782566, dujun5@huawei.com |
 |  Node | Caleb Miles | calebamiles | caleb.miles@coreos.com |  |
 |  On-Premises | Tomasz Napierala | zen | tnapierala@mirantis.com |  |
-|  OpenStack | Ihor Dvoretskyi | idvoretskyi | ihor@dvoretskyi.com |  |
+|  OpenStack | Chris Hoge | hogepodge | chris@openstack.org |  |
 |  rktnetes | Covered by SIG-Node |  |  |  |
 |  Scalability | Bob Wise | countspongebob | bob@bobsplanet.com | bob.wise@samsung.com |
 |  Scheduling | Tim St. Clair | timothysc | timothysc@gmail.com | David Oppenheimer (@davidopp) |
