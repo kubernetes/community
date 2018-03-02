@@ -11,7 +11,7 @@ and Deployment Objects, and the corresponding controllers attempt to transition
 the current state of the system to the new declared target state. 
 
 To facilitate update and rollback for these controllers, and to provide a 
-primitive that third party controllers can build on, we propose a mechanism 
+primitive that third-party controllers can build on, we propose a mechanism 
 that allows controllers to manage a bounded history of revisions to the declared 
 target state of their generated Objects.
 
@@ -276,7 +276,7 @@ state version represented by the ControllerRevision as its owners.
    - A revision is considered to be live while any generated Object that owns 
    it is live.
    - This method allows for the implementation of generic garbage collection.
-   - The primary drawback with this method is that the book keeping is complex, 
+   - The primary drawback of this method is that the book keeping is complex, 
    and deciding if a generated Object corresponds to a particular revision 
    will require testing each Object for membership in the `OwnerReferences` 
    of all ControllerRevisions.
@@ -285,7 +285,7 @@ Note that, since we are labeling the generated Objects to indicate their
 provenance with respect to the version of the controller's target Object state, 
 we are susceptible to downstream mutations by other controllers changing the 
 controller's product. The best we can do is guarantee that our product meets 
-the specification at the time of creation. If a third party mutates the product 
+the specification at the time of creation. If a third-party mutates the product 
 downstream (as long as it does so in a consistent and intentional way), we 
 don't want to recall it and make it conform to the original specification. This 
 would cause the controllers to "fight" indefinitely. 
@@ -319,7 +319,7 @@ equality.
 
 We propose that two ControllerRevisions can be considered equal if their 
 `.Data` is equivalent, but that it is not sufficient to compare the serialized 
-representation of the their `.Data`. Consider that the addition of new fields 
+representation of their `.Data`. Consider that the addition of new fields 
 to the Objects that represent the target Object state may cause the serialized 
 representation of those Objects to be unequal even when they are semantically 
 equivalent.
@@ -327,7 +327,7 @@ equivalent.
 The controller should deserialize the values of the ControllerRevisions 
 representing their target Object state and perform a deep, semantic equality 
 test. Here all differences that do not constitute a mutation to the target 
-Object state are disregarded during the equivalence test.
+Object state is disregarded during the equivalence test.
     
 ### Target Object State Reconciliation
 There are three ways for a controller to reconcile a generated Object with the 
