@@ -454,15 +454,16 @@ sigs:
       experience and usability perspective.
     label: cli
     leads:
-    - name: Fabiano Franz
-      github: fabianofranz
-      company: Red Hat
     - name: Phillip Wittrock
       github: pwittrock
       company: Google
     - name: Tony Ado
       github: AdoHe
       company: Alibaba
+    emeritus_leads:
+    - name: Fabiano Franz
+      github: fabianofranz
+      company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday

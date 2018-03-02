@@ -16,9 +16,11 @@ Covers kubectl and related tools. We focus on the development and standardizatio
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
 
 ## Leads
-* Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**), Red Hat
 * Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
 * Tony Ado (**[@AdoHe](https://github.com/AdoHe)**), Alibaba
+
+## Emeritus Leads
+* Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cli)

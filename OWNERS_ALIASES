@@ -27,7 +27,6 @@ aliases:
     - foxish
     - erikerlandson
   sig-cli-leads:
-    - fabianofranz
     - pwittrock
     - AdoHe
   sig-cluster-lifecycle-leads:
