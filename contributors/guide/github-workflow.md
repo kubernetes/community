@@ -251,3 +251,47 @@ git rebase -i upstream/master
 For mass automated fixups (e.g. automated doc formatting), use one or more
 commits for the changes to tooling and a final commit to apply the fixup en
 masse. This makes reviews easier.
+
+### Reverting a commit
+
+In case you wish to revert a commit, use the following instructions.
+
+_If you have upstream write access_, please refrain from using the
+`Revert` button in the GitHub UI for creating the PR, because GitHub
+will create the PR branch inside the main repository rather than inside your fork.
+
+1. Create a branch and sync it with upstream.
+
+```sh
+# create a branch
+git checkout -b myrevert
+
+# sync the branch with upstream
+git fetch upstream
+git rebase upstream/master
+```
+
+2. If the commit you wish to revert is a:
+
+- merge commit:
+
+```sh
+# SHA is the hash of the merge commit you wish to revert
+git revert -m 1 SHA
+```
+
+- single commit:
+
+```sh
+# SHA is the hash of the single commit you wish to revert
+git revert SHA
+```
+
+3. This will create a new commit reverting the changes.
+Push this new commit to your remote.
+
+```sh
+git push ${your_remote_name} myrevert
+```
+
+4. [Create a Pull Request](#7-create-a-pull-request) using this branch.
