@@ -76,6 +76,6 @@ All technical assets *MUST* be owned by exactly 1 SIG subproject.  The following
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote
 [warnocks-dilemma]: http://communitymgt.wikia.com/wiki/Warnock%27s_Dilemma
 [slo]: https://en.wikipedia.org/wiki/Service_level_objective
-[steering-commitee]: https://github.com/kubernetes/steering#contact
+[steering-committee]: https://github.com/kubernetes/steering#contact
 [business-operations]: http://www.businessdictionary.com/definition/business-operation.html
 [KEP]: https://kubernetes.io/docs/imported/community/keps/

@@ -37,7 +37,7 @@ the Kubernetes community. I think it's important that we uphold these values
 when defining and practicing a Code of Coduct and refining the contributor
 experience.
 
-Another area of the Steering Commitee I'm interested in is furthering the
+Another area of the Steering Committee I'm interested in is furthering the
 transparency and accountability for SIGs. I believe improving the communication
 and enabling more knowledge sharing will empower both community and consumers.
 
