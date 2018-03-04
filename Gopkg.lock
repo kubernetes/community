@@ -2,6 +2,15 @@
 
 
 [[projects]]
+  name = "github.com/client9/misspell"
+  packages = [
+    ".",
+    "cmd/misspell"
+  ]
+  revision = "59894abde931a32630d4e884a09c682ed20c5c7c"
+  version = "v0.3.0"
+
+[[projects]]
   branch = "v2"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
@@ -10,6 +19,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c39e9119cc91080f9178c39214d6ca06156205351dec2523319554ee3669537e"
+  inputs-digest = "15876bcf5bae26a3d8ca6af5a0463be3842912808256ce8818c2f34e0b3859fd"
   solver-name = "gps-cdcl"
   solver-version = 1
