@@ -1074,11 +1074,11 @@ sigs:
     - name: rktlet
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/rktlet/master/OWNERS
-  - name: On Premise
-    dir: sig-on-premise
+  - name: On Premises
+    dir: sig-on-premises
     mission_statement: >
       Brings together member of Kubernetes community interested in running
-      Kubernetes on premise, on bare metal or more generally beyond cloud
+      Kubernetes on premises, on bare metal or more generally beyond cloud
       providers.
     label: onprem
     leadership:

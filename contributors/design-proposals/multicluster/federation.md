@@ -15,7 +15,7 @@ Updated slides: [tinyurl.com/ubernetes-whereto](http://tinyurl.com/ubernetes-whe
 ## Introduction
 
 Today, each Kubernetes cluster is a relatively self-contained unit,
-which typically runs in a single "on-premise" data centre or single
+which typically runs in a single "on-premises" data centre or single
 availability zone of a cloud provider (Google's GCE, Amazon's AWS,
 etc).
 
@@ -24,12 +24,12 @@ expressed a keen interest in tying together ("federating") multiple
 clusters in some sensible way in order to enable the following kinds
 of use cases (intentionally vague):
 
-1. _"Preferentially run my workloads in my on-premise cluster(s), but
+1. _"Preferentially run my workloads in my on-premises cluster(s), but
    automatically overflow to my cloud-hosted cluster(s) if I run out
-   of on-premise capacity"_.
+   of on-premises capacity"_.
 1. _"Most of my workloads should run in my preferred cloud-hosted
    cluster(s), but some are privacy-sensitive, and should be
-   automatically diverted to run in my secure, on-premise
+   automatically diverted to run in my secure, on-premises
    cluster(s)"_.
 1. _"I want to avoid vendor lock-in, so I want my workloads to run
    across multiple cloud providers all the time.  I change my set of
@@ -51,7 +51,7 @@ informally become known as _"Ubernetes"_.
 Four primary customer-driven use cases are explored in more detail.
 The two highest priority ones relate to High Availability and
 Application Portability (between cloud providers, and between
-on-premise and cloud providers).
+on-premises and cloud providers).
 
 Four primary federation primitives are identified (location affinity,
 cross-cluster scheduling, service discovery and application
@@ -98,7 +98,7 @@ Let's name a few concrete use cases to aid the discussion:
 
 ## 1.Capacity Overflow
 
-_"I want to preferentially run my workloads in my on-premise cluster(s), but automatically "overflow" to my cloud-hosted cluster(s) when I run out of on-premise capacity."_
+_"I want to preferentially run my workloads in my on-premises cluster(s), but automatically "overflow" to my cloud-hosted cluster(s) when I run out of on-premises capacity."_
 
 This idea is known in some circles as "[cloudbursting](http://searchcloudcomputing.techtarget.com/definition/cloud-bursting)".
 
@@ -114,8 +114,8 @@ This idea is known in some circles as "[cloudbursting](http://searchcloudcomputi
   dynamically migrated between clusters based on fluctuating available
   capacity?  If so, what is the desired behaviour, and how is it
   achieved?  How, if at all, does this relate to quota enforcement
-  (e.g. if we run out of on-premise capacity, can all or only some
-  quotas transfer to other, potentially more expensive off-premise
+  (e.g. if we run out of on-premises capacity, can all or only some
+  quotas transfer to other, potentially more expensive off-premises
   capacity?)
 
 It seems that most of this boils down to:
@@ -139,7 +139,7 @@ It seems that most of this boils down to:
 
 _"I want most of my workloads to run in my preferred cloud-hosted
 cluster(s), but some are privacy-sensitive, and should be
-automatically diverted to run in my secure, on-premise cluster(s). The
+automatically diverted to run in my secure, on-premises cluster(s). The
 list of privacy-sensitive workloads changes over time, and they're
 subject to external auditing."_
 

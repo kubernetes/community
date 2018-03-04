@@ -146,7 +146,7 @@ Route53](https://github.com/kubernetes/contrib/pull/841).
 1. Load-based overflow
 1. Real load balancing (same caveats as for GCP above).
 1. L7 SSL connection termination.
-1. Seems it can be made to work for hybrid with on-premise (using VPC).  More research required.
+1. Seems it can be made to work for hybrid with on-premises (using VPC).  More research required.
 
 ### Cons
 
