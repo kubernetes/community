@@ -58,7 +58,7 @@ Each organization should have the following teams:
     a notification mechanism for interested/active contributors for the `foo` repo
 - a `bots` team
   - should contain bots such as @k8s-ci-robot and @linuxfoundation that are
-    neccessary for org and repo automation
+    necessary for org and repo automation
 - an `owners` team
   - should be populated by everyone who has `owner` privileges to the org
   - gives users the opportunity to ping owners as a group rather than having to

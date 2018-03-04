@@ -113,7 +113,7 @@ Each container and each image gets own block device. Since this driver works at 
 
 Image layers and writable layers are stored under `/var/lib/docker/overlay/<id>`.
 
-Identical files are hardlinked between images.
+Identical files are hard-linked between images.
 
 The image layers contain all their data under a `root` subdirectory.
 
@@ -579,4 +579,3 @@ Capacity in MB = 1638400 * 512 * 128 bytes = 100 GB
 * Overlay storage driver needs kernels >= 3.18. I used Ubuntu 15.10 to test Overlayfs.
 
 * If you use a non-default location for docker storage, change `/var/lib/docker` in the examples to your storage location.
-

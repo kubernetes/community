@@ -36,7 +36,7 @@ To provide a place for SIGs to collaborate on projects endorsed by and actively 
    * Must adopt the Kubernetes Code of Conduct
    * All code projects use the Apache License version 2.0. Documentation repositories must use the Creative Commons License version 4.0.
    * Must adopt the CNCF CLA bot, merge bot and Kubernetes PR commands/bots.
-   * All OWNERS of the project must also be active SIG members. 
+   * All OWNERS of the project must also be active SIG members.
    * SIG membership must vote using lazy consensus to create a new repository
    * SIG must already have identified all of their existing subprojects and code, with valid OWNERS files, in [`sigs.yaml`](https://github.com/kubernetes/community/blob/master/sigs.yaml)
 
@@ -97,10 +97,6 @@ We suggest starting with the kubernetes-template-project to ensure you have the 
 
 
 
-*Much of the things needed (e.g. CLA Bot integration) is missing to support associated projects. Many things seem vague. Halp!*
+*Much of the things needed (e.g. CLA Bot integration) is missing to support associated projects. Many things seem vague. Help!*
 
 True, we need to improve these things. For now, do the best you can to conform to the spirit of the proposal (e.g. post the code of conduct, etc)
-
-
-
-
