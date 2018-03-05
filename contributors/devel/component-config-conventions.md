@@ -36,7 +36,7 @@ Configuration in general has poor qualities such as:
 
 1.  Configuration changes have the same forward/backward compatibility requirements as releases but rollout/rollback of configuration largely untested. Examples of configuration changes that might break a cluster: kubelet CNI plugin, etcd storage version.
 1.  Configuration options often exist only to test a specific feature where the default is reasonable for all real use cases. Examples: many sync periods.
-1.  Configuration options often exist to defer a "hard" design decision and to pay forward the "TODO(someonelse): think critically".
+1.  Configuration options often exist to defer a "hard" design decision and to pay forward the "TODO(someone-else): think critically".
 1.  Configuration options are often used to workaround deficiencies of the API. For example `--register-with-labels` and `--register-with-taints` could be solved with a node initializer, if initializers existed.
 1.  Configuration options often exist to take testing shortcuts. There is a mentality that because a feature is opt-in, it can be released as a flag without robust testing.
 1.  Configuration accumulates new knobs, knobs accumulate new behaviors, knobs are forgotten and bitrot reducing code quality over time.
