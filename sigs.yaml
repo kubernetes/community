@@ -936,9 +936,9 @@ sigs:
     subprojects:
     - name: services
       owners:
-      - https://raw.githubusercontent.com/kubernetes/pkg/proxy/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/pkg/controller/endpoint/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/pkg/controller/service/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/pkg/kubernetes/master/controller/endpoint/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/pkg/kubernetes/master/controller/service/OWNERS
     - name: kube-dns
       owners:
       - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
