@@ -21,7 +21,7 @@ Welcome to Kubernetes! This document is the single source of truth for how to co
         environment](#setting-up-your-development-environment)
     -   [Community Expectations and Roles](#community-expectations-and-roles)
         -   [Thanks](#thanks)
--   [Your First Contribution](#your-first-contribution)
+-   [Your First Contribution](#your-first-contribution-)
     -   [Find something to work on](#find-something-to-work-on)
         -   [Find a good first topic](#find-a-good-first-topic)
         -   [Learn about SIGs](#learn-about-sigs)
@@ -62,11 +62,13 @@ Kubernetes is a community project. Consequently, it is wholly dependent on its c
 - Read and review the [Community Expectations](community-expectations.md) for an understanding of code and review expectations. 
 - See [Community Membership](/community-membership.md) for a list the various responsibilities of contributor roles. You are encouraged to move up this contributor ladder as you gain experience.  
 
-# Your First Contribution
+# Your First Contribution [![Open Source Helpers](https://www.codetriage.com/kubernetes/kubernetes/badges/users.svg)](https://www.codetriage.com/kubernetes/kubernetes)
 
 Have you ever wanted to contribute to the coolest cloud technology? We will help you understand the organization of the Kubernetes project and direct you to the best places to get started. You'll be able to pick up issues, write code to fix them, and get your work reviewed and merged.
 
 Please be aware that due to the large number of issues our triage team deals with, we cannot offer technical support in GitHub issues. If you have questions about the development process, feel free to jump into our [Slack Channel](http://slack.k8s.io/) or join our [mailing list](https://groups.google.com/forum/#!forum/kubernetes-dev). You can also ask questions on [ServerFault](https://serverfault.com/questions/tagged/kubernetes) or [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes). The Kubernetes team scans Stack Overflow on a regular basis and will try to ensure your questions don't go unanswered.
+
+You can help triage issues which may include reproducing bug reports or asking for vital information, such as version numbers or reproduction instructions. If you would like to start triaging issues, one easy way to get started is to [subscribe to Kubernetes on CodeTriage](https://www.codetriage.com/Kubernetes/Kubernetes).
 
 ## Find something to work on
 
