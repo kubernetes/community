@@ -16,7 +16,8 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 
 ## Leads
-* Devin Donnelly (**[@devin-donnelly](https://github.com/devin-donnelly)**), Google
+* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
+* Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
 * Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**), Google
 
 ## Contact
