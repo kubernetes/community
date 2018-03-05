@@ -427,7 +427,7 @@ go run hack/e2e.go -- --provider=local -v --test
 To control the tests that are run:
 
 ```sh
-go run hack/e2e.go -- -v --test --test_args="--ginkgo.focus=\"Secrets\""
+go run hack/e2e.go -- --provider=local -v --test --test_args="--ginkgo.focus=Secrets"
 ```
 
 ### Version-skewed and upgrade testing
