@@ -137,7 +137,7 @@ func (og *operationGenerator) GenerateExpandVolumeFunc(
 * Depending on volume type next steps would be:
 
     * If volume is of type that does not require file system resize, then `pvc.status.capacity` will be immediately updated to reflect new size. This would conclude the volume expand operation. Also `pvc.Status.Conditions` will be updated with `Ready: True`.
-    * If volume if of type that requires file system resize then a file system resize will be performed on kubelet. Read below for steps that will be performed for file system resize.
+    * If volume is of type that requires file system resize then a file system resize will be performed on kubelet. Read below for steps that will be performed for file system resize.
 
 * If volume plugin is of type that can not do resizing of attached volumes (such as `Cinder`) then `ExpandVolumeDevice` can return error by checking for
   volume status with its own API (such as by making Openstack Cinder API call in this case). Controller will keep trying to resize the volume until it is
