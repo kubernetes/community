@@ -1,8 +1,6 @@
 # Support port ranges in services
 
-* Status: pending
-* Version: alpha
-* Implementation owner: @m1093782566
+Authors: @m1093782566
 
 ## Background & Motivations
 
@@ -25,19 +23,15 @@ Doing above for 500 ports is not pretty. Can we have a way to allow port ranges 
 
 ## Objective
 
-This proposal builds off of earlier requests to [Support port ranges in services](https://github.com/kubernetes/kubernetes/issues/23864) and aims to document all the requirements of supporting port ranges in services.
+This proposal builds off of earlier requests to [Support port ranges in services](https://github.com/kubernetes/kubernetes/issues/23864) and aims to document all the requirements of supporting port ranges in services. Each port range is a single port or single contiguous port range, ranging from low to high, for which this forwarding rule matches. Packets of the specified protocol sent to these ports will be forwarded on to the appropriate target instances.
 
 ## Goals
 
-A server side solution.
-
-Support multiple port ranges.
+A server side solution to support single or multiple contiguous port range.
 
 ## Non-goal
 
 Target port remapping in ranges.
-
-NodePort on ranges.
 
 Pod port ranges.
 
@@ -53,7 +47,7 @@ This proposal builds off earlier feature requrest to [Support port ranges in ser
 
 ### Service API changes
 
-Create a new filed `PortRange` in `ServicePort`.
+Create a new filed `portRangeSize` in `ServicePort`.
 
 
 ```go
@@ -62,14 +56,13 @@ type ServiceSpec struct {
 }
 
 type ServicePort struct {
-  // portRange is the port range that are exposed by this service. Service can expose multiple port ranges and each port range should not be overlapped.
-  // Service port range does not support target port remapping, which means target port ranges are equal to service port ranges and targetPort should not be specified.
-  // Each port range is in the format of `X-Y` and non-negative nuimber X should be <= Y. A port range with single port X can be expressed by `X-X`
-  // port should not be specified when portRange is not empty and port should not be fall in any other port ranges.
-  // portRange should be not specified for NodePort and ExternalIPs Service.
+  // portRangeSize is the contiguous ports number that are exposed by this service. Given port = 80 and portRangeSize = 100, it means ports 80-179, 100 ports in total, will be exposed. In this case, port means the starting port of a range.
+  // portRangeSize is default to be 1 for compatibility.
+  // If nodePort is specified, then nodePort is the starting port of range and nodePort+portRangeSize-1 is the ending port of range.
+  // A service can expose multiple port ranges and each port range should not be overlapped.
+  // Service port range does not support target port remapping, it implies that targetPort should not be specified or should be equal to service port.
   // +optional
-  PortRange string `json: "portRange,omitempty"`
-  ...
+  PortRangeSize int `json: "portRangeSize,omitempty"`
 }
 ```
 
@@ -83,18 +76,15 @@ metadata:
   namespace: default
 spec:
   ports:
-  - name: http
-    port: 8080
-    protocol: TCP
-    targetPort: 80
   - name: range1
-    portRange: 1000-2000
+    port: 90
+    protocol: TCP
+    portRangeSize: 100
     protocol: UDP
   - name: range2
-    portRange: 3000-4000
+    port: 200
+    portRange: 300
     protocol: TCP
-  selector:
-    app: foo
 ```
 
 ### Kube-proxy implementation limitations
@@ -103,15 +93,23 @@ NodePort and ExternalIPs Services don't support port ranges since kube-proxy wil
 
 Target port remapping is not supported since both iptables and ipvs does not do port translations in the mean time of doing port ranges.
 
+Userspace proxy mode in both linux and windows platform does not work with port ranges. Kube-proxy running in these modes will log error message if people create a service with `portRangeSize` > 1.
+
 #### iptables mode
 
-iptables `multiport` modules support specifying multiple ports in a single line. Suppose service VIP is `1.2.3.4` and port ranges are `1000-2000` and `3000-4000`, then iptables rules will looks like
+iptables `multiport` modules support specifying multiple ports in a single line. Suppose service VIP is `1.2.3.4` and port ranges are `1000-2000` and `3000-4000`, then iptables rules might looks like,
 
 ```shell
 iptables -A KUBE-SERVICES -d 1.2.3.4/32 -p tcp -m multiport --dports 1000:2000,3000:4000 -j KUBE-SVC-FOO
 ```
 
-#### ipvs mode
+Given a nodeport type service and port range is `1000-2000`, the iptables rule might looks like,
+
+```shell
+iptables -A NODE-SERVICES -p tcp -m multiport --dports 1000:2000 --dst-type LOCAL -j KUBE-NODEPORTS
+```
+
+#### IPVS mode
 
 IPVS + FWMARK can do port ranges. For example,
 
