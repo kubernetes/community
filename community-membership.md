@@ -88,6 +88,10 @@ List of contributions:
   - Code is well tested
   - Tests consistently pass
   - Addresses bugs or issues discovered after code is accepted
+- Members can do `/lgtm` on open PRs.
+- They can be assigned to issues and PRs, and people can ask members for reviews with a `/cc @username`.
+- Tests can be run against their PRs automatically. No `/ok-to-test` needed.
+- Members can do `/ok-to-test` for PRs that have a `needs-ok-to-test` label, and use commands like `/close` to close PRs as well.
 
 **Note:** members who frequently contribute code are expected to proactively perform code reviews and work towards
 becoming a primary *reviewer* for the area that they are active in.
