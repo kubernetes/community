@@ -20,18 +20,18 @@ set -o pipefail
 
 CRT_DIR=$(pwd)
 VERIFY_TEMP=$(mktemp -d 2>/dev/null || mktemp -d -t k8s-community.XXXXXX)
-WORKING_DIR=${VERIFY_TEMP}/src/testgendocs
-GOPATH=${VERIFY_TEMP}
-mkdir -p ${WORKING_DIR}
+WORKING_DIR="${VERIFY_TEMP}/src/testgendocs"
+GOPATH="${VERIFY_TEMP}"
+mkdir -p "${WORKING_DIR}"
 
 function cleanup {
   rm -rf "${VERIFY_TEMP}"
 }
 trap cleanup EXIT
 
-cp -r sigs.yaml sig-* wg-* Makefile generator vendor ${WORKING_DIR}/
+git archive --format=tar "$(git write-tree)" | (cd "${WORKING_DIR}" && tar xf -)
 
-cd ${WORKING_DIR}
+cd "${WORKING_DIR}"
 make 1>/dev/null
 
 mismatches=0
@@ -45,9 +45,9 @@ for file in $(ls ${CRT_DIR}/sig-*/README.md ${CRT_DIR}/wg-*/README.md ${CRT_DIR}
   fi;
 done
 
-if [ ${mismatches} -gt "0" ]; then
+if [[ ${mismatches} -gt "0" ]]; then
   echo ""
-  echo ${break}
+  echo "${break}"
   noun="mismatch was"
   if [ ${mismatches} -gt "0" ]; then
     noun="mismatches were"
@@ -55,7 +55,7 @@ if [ ${mismatches} -gt "0" ]; then
   echo "${mismatches} ${noun} detected."
   echo "Do not manually edit sig-list.md or README.md files inside the sig folders."
   echo "Instead make your changes to sigs.yaml and then run \`make\`.";
-  echo ${break}
+  echo "${break}"
   exit 1;
 fi
 
