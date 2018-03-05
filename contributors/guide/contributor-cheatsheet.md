@@ -13,7 +13,7 @@ A list of common resources when contributing to Kubernetes.
 - [Gubernator Dashboard - k8s.reviews](https://k8s-gubernator.appspot.com/pr)
 - [reviewable.kubernetes.io](https://reviewable.kubernetes.io/reviews#-)
 - [Submit Queue](https://submit-queue.k8s.io)
-- [Bot commands](https://git.k8s.io/test-infra/commands.md)
+- [Bot commands](https://go.k8s.io/bot-commands)
 - [Release Buckets](http://gcsweb.k8s.io/gcs/kubernetes-release/)
 - Developer Guide
   - [Cherry Picking Guide](/contributors/devel/cherry-picks.md) - [Queue](http://cherrypick.k8s.io/#/queue)
