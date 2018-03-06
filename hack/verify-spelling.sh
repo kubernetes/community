@@ -33,5 +33,5 @@ fi
 # Spell checking
 # All the skipping files are defined in hack/.spelling_failures
 skipping_file="${KUBE_ROOT}/hack/.spelling_failures"
-failing_packages=$(echo `cat hack/.spelling_failures` | sed "s| | -e |g")
-git ls-files | grep -v -e ${failing_packages} | xargs misspell -i "Creater,creater,ect" -error -o stderr
+failing_packages=$(echo `cat ${skipping_file}` | sed "s| | -e |g")
+git ls-files | grep -v -e ${failing_packages} | xargs misspell -i "" -error -o stderr
