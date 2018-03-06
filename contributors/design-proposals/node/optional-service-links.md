@@ -26,24 +26,24 @@ Make it possible for a user to disable injection of service links into container
 
 ### Use Cases
 
-* As a user, I want to be able to disable service link injection since the injected environment variables interfer with a Docker image that I am trying to run on Kubernetes
+* As a user, I want to be able to disable service link injection since the injected environment variables interfere with a Docker image that I am trying to run on Kubernetes
 * As a user, I want to be able to disable service link injection since I don't need it and it takes increasingly longer time to start pods as services are added to the namespace.
 
 ## Implementation
 
-`PodSpec` is extended with an additional field, `disableServiceLinks` of type boolean. Default value is false.
+`PodSpec` is extended with an additional field, `enableServiceLinks`. The field should be a pointer to a boolean and default to true if nil.
 
-In `kubelet_pods.go`, the value of that field is passed along to the function `getServiceEnvVarMap` where it is used to decide which selector should be used for the `serviceLister`. Current behavior is `labels.Everything()`. In case `disableServiceLinks` is true then only the `kubernetes` service in the `kl.masterServiceNamespace` should be injected.
+In `kubelet_pods.go`, the value of that field is passed along to the function `getServiceEnvVarMap` where it is used to decide which selector should be used for the `serviceLister`. Current behavior is `labels.Everything()`. In case `enableServiceLinks` is false then only the `kubernetes` service in the `kl.masterServiceNamespace` should be injected. The latter is needed in order to preserve Kubernetes variables such as `KUBERNETES_SERVICE_HOST` since a lot of code depends on it.
 
 ```
-func (kl *Kubelet) getServiceEnvVarMap(ns string, disableServiceLinks bool) (map[string]string, error) {
+func (kl *Kubelet) getServiceEnvVarMap(ns string, enableServiceLinks *bool) (map[string]string, error) {
   ...decide on selector
 }
 ```
 
 ### Client/Server Backwards/Forwards compatibility
 
-Pods that do not have the field set will assume a value of false.
+Pods that do not have the field set will assume a value of true.
 
 ## Alternatives considered
 
