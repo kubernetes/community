@@ -710,8 +710,11 @@ sigs:
       Covers documentation, doc processes, and doc publishing for Kubernetes.
     label: docs
     leads:
-    - name: Devin Donnelly
-      github: devin-donnelly
+    - name: Zach Corleissen
+      github: zacharysarah
+      company: Linux Foundation
+    - name: Andrew Chen
+      github: chenopis
       company: Google
     - name: Jared Bhatti
       github: jaredbhatti
