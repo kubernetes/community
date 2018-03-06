@@ -21,8 +21,8 @@ Specific attention has been given to:
 
 ## How to use the templates
 
-When developing or modifying a SIG governance doc, the intention is for SIGs to use the templates (*forthcoming*) as
-a common set of options SIGs may choose to incorporate into their own governance structure.  It is recommended that
+When developing or modifying a SIG governance doc, the intention is for SIGs to use the templates (*under development*)
+as a common set of options SIGs may choose to incorporate into their own governance structure.  It is recommended that
 SIGs start by looking at the [Recommendations and requirements] for SIG governance docs and consider what structure
 they think will work best for them before pulling items from the templates.
 
@@ -31,5 +31,9 @@ and project.
 
 - [Recommendations and requirements]
 
-[Recommendations and requirements]: sig-governance-requirements.md
+## Templates
 
+- [Short Template]
+
+[Recommendations and requirements]: sig-governance-requirements.md
+[Short Template]: sig-governance-template-short.md
