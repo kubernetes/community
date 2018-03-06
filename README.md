@@ -1,5 +1,7 @@
 # Kubernetes Community
 
+Hi everyone! Welcome to SCALE16x!
+
 Welcome to the Kubernetes community!
 
 This is the starting point for joining and contributing to the Kubernetes community - improving docs, improving code, giving talks etc.
