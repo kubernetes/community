@@ -6,13 +6,14 @@ authors:
 owning-sig: sig-contributor-experience
 participating-sigs:
   - sig-architecture
+  - sig-docs
 reviewers:
-  - TBD
+  - "@castrojo"
 approvers:
-  - TBD
+  - "@parispittman"
 editor: TBD
 creation-date: "2018-02-19"
-last-updated: "2018-02-19"
+last-updated: "2018-03-07"
 status: provisional
 ---
 
