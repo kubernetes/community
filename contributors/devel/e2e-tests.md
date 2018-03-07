@@ -82,33 +82,33 @@ you can do so via `make WHAT=test/e2e/e2e.test`, and then re-running the ginkgo 
 To build Kubernetes, up a cluster, run tests, and tear everything down, use:
 
 ```sh
-go run hack/e2e.go -- -v --build --up --test --down
+go run hack/e2e.go -- --build --up --test --down
 ```
 
 If you'd like to just perform one of these steps, here are some examples:
 
 ```sh
 # Build binaries for testing
-go run hack/e2e.go -- -v --build
+go run hack/e2e.go -- --build
 
 # Create a fresh cluster.  Deletes a cluster first, if it exists
-go run hack/e2e.go -- -v --up
+go run hack/e2e.go -- --up
 
 # Run all tests
-go run hack/e2e.go -- -v --test
+go run hack/e2e.go -- --test
 
 # Run tests matching the regex "\[Feature:Performance\]" against a local cluster
 # Specify "--provider=local" flag when running the tests locally
-go run hack/e2e.go -- -v --test --test_args="--ginkgo.focus=\[Feature:Performance\]" --provider=local
+go run hack/e2e.go -- --test --test_args="--ginkgo.focus=\[Feature:Performance\]" --provider=local
 
 # Conversely, exclude tests that match the regex "Pods.*env"
-go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=Pods.*env"
+go run hack/e2e.go -- --test --test_args="--ginkgo.skip=Pods.*env"
 
 # Run tests in parallel, skip any that must be run serially
-GINKGO_PARALLEL=y go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=\[Serial\]"
+GINKGO_PARALLEL=y go run hack/e2e.go -- --test --test_args="--ginkgo.skip=\[Serial\]"
 
 # Run tests in parallel, skip any that must be run serially and keep the test namespace if test failed
-GINKGO_PARALLEL=y go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=\[Serial\] --delete-namespace-on-failure=false"
+GINKGO_PARALLEL=y go run hack/e2e.go -- --test --test_args="--ginkgo.skip=\[Serial\] --delete-namespace-on-failure=false"
 
 # Flags can be combined, and their actions will take place in this order:
 # --build, --up, --test, --down
@@ -116,13 +116,13 @@ GINKGO_PARALLEL=y go run hack/e2e.go -- -v --test --test_args="--ginkgo.skip=\[S
 # You can also specify an alternative provider, such as 'aws'
 #
 # e.g.:
-go run hack/e2e.go -- --provider=aws -v --build --up --test --down
+go run hack/e2e.go -- --provider=aws --build --up --test --down
 
 # -ctl can be used to quickly call kubectl against your e2e cluster. Useful for
-# cleaning up after a failed test or viewing logs. Use -v to avoid suppressing
-# kubectl output.
-go run hack/e2e.go -- -v -ctl='get events'
-go run hack/e2e.go -- -v -ctl='delete pod foobar'
+# cleaning up after a failed test or viewing logs. 
+# kubectl output is default on, you can use --verbose-commands=false to suppress output.
+go run hack/e2e.go -- -ctl='get events'
+go run hack/e2e.go -- -ctl='delete pod foobar'
 ```
 
 The tests are built into a single binary which can be run used to deploy a
@@ -137,7 +137,7 @@ something goes wrong and you still have some VMs running you can force a cleanup
 with this command:
 
 ```sh
-go run hack/e2e.go -- -v --down
+go run hack/e2e.go -- --down
 ```
 
 ## Advanced testing
@@ -200,7 +200,7 @@ brevity, we will look at a subset of the options, which are listed below:
 
 ```
 --ginkgo.dryRun=false: If set, ginkgo will walk the test hierarchy without
-actually running anything. Best paired with -v.
+actually running anything.
 
 --ginkgo.failFast=false: If set, ginkgo will stop running a test suite after a
 failure occurs.
@@ -328,7 +328,7 @@ Next, specify the docker repository where your ci images will be pushed.
 * Compile the binaries and build container images:
 
   ```sh
-  $ KUBE_RELEASE_RUN_TESTS=n KUBE_FASTBUILD=true go run hack/e2e.go -- -v -build
+  $ KUBE_RELEASE_RUN_TESTS=n KUBE_FASTBUILD=true go run hack/e2e.go -- -build
   ```
 
 * Push the federation container images
@@ -343,7 +343,7 @@ The following command will create the underlying Kubernetes clusters in each of 
 federation control plane in the cluster occupying the last zone in the `E2E_ZONES` list.
 
 ```sh
-$ go run hack/e2e.go -- -v --up
+$ go run hack/e2e.go -- --up
 ```
 
 #### Run the Tests
@@ -351,13 +351,13 @@ $ go run hack/e2e.go -- -v --up
 This will run only the `Feature:Federation` e2e tests. You can omit the `ginkgo.focus` argument to run the entire e2e suite.
 
 ```sh
-$ go run hack/e2e.go -- -v --test --test_args="--ginkgo.focus=\[Feature:Federation\]"
+$ go run hack/e2e.go -- --test --test_args="--ginkgo.focus=\[Feature:Federation\]"
 ```
 
 #### Teardown
 
 ```sh
-$ go run hack/e2e.go -- -v --down
+$ go run hack/e2e.go -- --down
 ```
 
 #### Shortcuts for test developers
@@ -421,13 +421,13 @@ at a custom host directly:
 export KUBECONFIG=/path/to/kubeconfig
 export KUBE_MASTER_IP="127.0.0.1:<PORT>"
 export KUBE_MASTER=local
-go run hack/e2e.go -- --provider=local -v --test
+go run hack/e2e.go -- --provider=local --test
 ```
 
 To control the tests that are run:
 
 ```sh
-go run hack/e2e.go -- --provider=local -v --test --test_args="--ginkgo.focus=Secrets"
+go run hack/e2e.go -- --provider=local --test --test_args="--ginkgo.focus=Secrets"
 ```
 
 ### Version-skewed and upgrade testing
@@ -459,7 +459,7 @@ export CLUSTER_API_VERSION=${OLD_VERSION}
 
 # Deploy a cluster at the old version; see above for more details
 cd ./kubernetes_old
-go run ./hack/e2e.go -- -v --up
+go run ./hack/e2e.go -- --up
 
 # Upgrade the cluster to the new version
 #
@@ -467,11 +467,11 @@ go run ./hack/e2e.go -- -v --up
 #
 # You can target Feature:MasterUpgrade or Feature:ClusterUpgrade
 cd ../kubernetes
-go run ./hack/e2e.go -- --provider=gke -v --test --check-version-skew=false --test_args="--ginkgo.focus=\[Feature:MasterUpgrade\]"
+go run ./hack/e2e.go -- --provider=gke --test --check-version-skew=false --test_args="--ginkgo.focus=\[Feature:MasterUpgrade\]"
 
 # Run old tests with new kubectl
 cd ../kubernetes_old
-go run ./hack/e2e.go -- --provider=gke -v --test --test_args="--kubectl-path=$(pwd)/../kubernetes/cluster/kubectl.sh"
+go run ./hack/e2e.go -- --provider=gke --test --test_args="--kubectl-path=$(pwd)/../kubernetes/cluster/kubectl.sh"
 ```
 
 If you are just testing version-skew, you may want to just deploy at one
@@ -483,14 +483,14 @@ upgrade process:
 
 # Deploy a cluster at the new version
 cd ./kubernetes
-go run ./hack/e2e.go -- -v --up
+go run ./hack/e2e.go -- --up
 
 # Run new tests with old kubectl
-go run ./hack/e2e.go -- -v --test --test_args="--kubectl-path=$(pwd)/../kubernetes_old/cluster/kubectl.sh"
+go run ./hack/e2e.go -- --test --test_args="--kubectl-path=$(pwd)/../kubernetes_old/cluster/kubectl.sh"
 
 # Run old tests with new kubectl
 cd ../kubernetes_old
-go run ./hack/e2e.go -- -v --test --test_args="--kubectl-path=$(pwd)/../kubernetes/cluster/kubectl.sh"
+go run ./hack/e2e.go -- --test --test_args="--kubectl-path=$(pwd)/../kubernetes/cluster/kubectl.sh"
 ```
 
 #### Test jobs naming convention
@@ -618,13 +618,13 @@ export KUBECONFIG=/path/to/kubeconfig
 export KUBERNETES_CONFORMANCE_TEST=y
 
 # run all conformance tests
-go run hack/e2e.go -- --provider=skeleton -v --test --test_args="--ginkgo.focus=\[Conformance\]"
+go run hack/e2e.go -- --provider=skeleton --test --test_args="--ginkgo.focus=\[Conformance\]"
 
 # run all parallel-safe conformance tests in parallel
-GINKGO_PARALLEL=y go run hack/e2e.go -- --provider=skeleton -v --test --test_args="--ginkgo.focus=\[Conformance\] --ginkgo.skip=\[Serial\]"
+GINKGO_PARALLEL=y go run hack/e2e.go -- --provider=skeleton --test --test_args="--ginkgo.focus=\[Conformance\] --ginkgo.skip=\[Serial\]"
 
 # ... and finish up with remaining tests in serial
-go run hack/e2e.go -- --provider=skeleton -v --test --test_args="--ginkgo.focus=\[Serial\].*\[Conformance\]"
+go run hack/e2e.go -- --provider=skeleton --test --test_args="--ginkgo.focus=\[Serial\].*\[Conformance\]"
 ```
 
 ### Defining Conformance Subset
