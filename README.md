@@ -15,7 +15,7 @@ For more specific topics, try a SIG.
 
 ## SIGs
 
-Kubernetes is a set of projects, each shepherded by a special interest group (SIG).
+Kubernetes is a set of subprojects, each shepherded by a Special Interest Group (SIG).
 
 A first step to contributing is to pick from the [list of kubernetes SIGs](sig-list.md).
 
