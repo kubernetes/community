@@ -191,6 +191,18 @@ signal.  If that signal is observed as being satisfied for longer than the
 specified period, the `kubelet` will initiate eviction to attempt to
 reclaim the resource that has met its eviction threshold.
 
+### Memory CGroup Notifications
+
+When the `kubelet` is started with `--experimental-kernel-memcg-notification=true`, 
+it will use cgroup events on the memory.usage_in_bytes file in order to trigger the eviction manager.
+With the addition of on-demand metrics, this permits the `kubelet` to trigger the eviction manager,
+collect metrics, and respond with evictions much quicker than using the sync loop alone.
+
+To do this, we periodically adjust the memory cgroup threshold based on total_inactive_file.  The eviction manager 
+periodically measures total_inactive_file, and sets the threshold for usage_in_bytes to mem_capacity - eviction_hard + 
+total_inactive_file.  This means that the threshold is crossed when usage_in_bytes - total_inactive_file 
+= mem_capacity - eviction_hard.
+
 ### Disk
 
 Let's assume the operator started the `kubelet` with the following:
@@ -457,9 +469,3 @@ In general, it should be strongly recommended that `DaemonSet` not
 create `BestEffort` pods to avoid being identified as a candidate pod
 for eviction. Instead `DaemonSet` should ideally include Guaranteed pods only.
 
-## Known issues
-
-### kubelet may evict more pods than needed
-
-The pod eviction may evict more pods than needed due to stats collection timing gap. This can be mitigated by adding
-the ability to get root container stats on an on-demand basis (https://github.com/google/cadvisor/issues/1247) in the future.
