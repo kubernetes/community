@@ -61,15 +61,16 @@ responsible for the operation of the SIG and for communication and
 coordination with the other SIGs, the Steering Committee, and the
 broader community.
 
-Each SIG must havea charter that
-specifies its scope (topics, subsystems, code repos and directories),
-responsibilities, areas of authority, how members and roles of
-authority/leadership are selected/granted, how decisions are made, and
-how conflicts are resolved. A template for intra-SIG governance is
-being developed in order to simplify SIG creation, but SIGs should be
-relatively free to customize or change how they operate, within some
-broad guidelines and constraints imposed by cross-SIG processes (e.g.,
-the release process) and assets (e.g., the kubernetes repo).
+Each SIG must have a charter that specifies its scope (topics,
+subsystems, code repos and directories), responsibilities, areas of
+authority, how members and roles of authority/leadership are
+selected/granted, how decisions are made, and how conflicts are
+resolved. A [short template] for intra-SIG governance has been
+developed in order to simplify SIG creation, and additional templates
+are being developed, but SIGs should be relatively free to customize
+or change how they operate, within some broad guidelines and
+constraints imposed by cross-SIG processes (e.g., the release process)
+and assets (e.g., the kubernetes repo).
 
 A primary reason that SIGs exist is as forums for collaboration.
 Much work in a SIG should stay local within that SIG. However, SIGs
@@ -87,8 +88,7 @@ Specific work efforts within SIGs are divided into **subprojects**.
 Every part of the Kubernetes code and documentation must be owned by
 some subproject. Some SIGs may have a single subproject, but many SIGs
 have multiple significant subprojects with distinct (though sometimes
-overlapping) sets of contributors and
-[owners](community-membership.md#subproject-owner), who act as
+overlapping) sets of contributors and [owners], who act as
 subproject’s technical leaders: responsible for vision and direction
 and overall design, choose/approve change proposal (KEP) approvers,
 field technical escalations, etc.
@@ -154,16 +154,13 @@ should follow the procedures outlined in the [incubator document](incubator.md).
 use the [Apache Licence version 2.0](LICENSE). Documentation repositories should use the
 [Creative Commons License version 4.0](https://git.k8s.io/website/LICENSE).
 
-# Incubator process
-
-See [incubator process]
-
 # CLA
 
 All contributors must sign the CNCF CLA, as described [here](CLA.md).
 
 [community membership]: /community-membership.md
 [sig governance]: /sig-governance.md
-[incubator process]: /incubator.md
+[owners]: community-membership.md#subproject-owner
+[short template]: committee-steering/governance/sig-governance-template-short.md
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/governance.md?pixel)]()
