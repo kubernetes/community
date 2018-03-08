@@ -35,5 +35,10 @@ and project.
 
 - [Short Template]
 
+## FAQ
+
+See [frequently asked questions]
+
 [Recommendations and requirements]: sig-governance-requirements.md
 [Short Template]: sig-governance-template-short.md
+[frequently asked questions]: FAQ.md
