@@ -93,11 +93,13 @@ subproject’s technical leaders: responsible for vision and direction
 and overall design, choose/approve change proposal (KEP) approvers,
 field technical escalations, etc.
 
-For example, SIG Network potentially is comprised of multiple
-subprojects: pod networking (CNI, etc.), Service and kube-proxy,
-Ingress and Ingress controllers, DNS, and Network policy. SIG Apps has
-the workload APIs, Helm, and Kompose. SIG Cluster Lifecycle has
-kubeadm, kops, kubespray, minikube, etc. 
+Example subprojects for a few SIGs:
+* SIG Network: pod networking (CNI, etc.), Service (incl. kube-proxy),
+Ingress, DNS, and Network policy
+* SIG Apps: workload APIs, Helm, Kompose, ...
+* SIG Cluster Lifecycle: kubeadm, kops, kubespray, minikube, ...
+
+Subprojects for each SIG are documented in [sigs.yaml](sigs.yaml).
 
 ## Working Groups
 
