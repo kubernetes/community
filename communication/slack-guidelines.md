@@ -12,7 +12,7 @@ Kubernetes adheres to Cloud Native Compute Foundation's [Code of Conduct](https:
 ## ADMINS
 (by Slack ID and timezone)
 * caniszczyk - CT
-* ihor - CET
+* idvoretskyi - CET
 * jdumars - ET
 * jorge - CT
 * paris - PT
