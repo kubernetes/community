@@ -514,15 +514,15 @@ sigs:
     - name: Luke Marsden
       github: lukemarsden
       company: Weave
-    - name: Joe Beda
-      github: jbeda
-      company: Heptio
     - name: Robert Bailey
       github: roberthbailey
       company: Google
     - name: Lucas Käldström
       github: luxas
       company: Luxas Labs (occasionally contracting for Weaveworks)
+    - name: Timothy St. Clair
+      github: timothysc
+      company: Heptio
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -577,12 +577,6 @@ sigs:
     - name: bootkube
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
-    - name: cluster-proportional-autoscaler
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
-    - name: cluster-proportional-vertical-autoscaler
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
     - name: kops
       owners:
       - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
@@ -1625,7 +1619,7 @@ workinggroups:
       company: Google
       archive_url: https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit
     contact:
-      slack: sig-cluster-lifecycle
+      slack: cluster-api
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
   - name: App Def
     dir: wg-app-def

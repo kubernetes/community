@@ -25,9 +25,9 @@ The Cluster Lifecycle SIG examines how we should change Kubernetes to make it ea
 
 ## Leads
 * Luke Marsden (**[@lukemarsden](https://github.com/lukemarsden)**), Weave
-* Joe Beda (**[@jbeda](https://github.com/jbeda)**), Heptio
 * Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
 * Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)
+* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Heptio
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
@@ -40,12 +40,6 @@ The following subprojects are owned by sig-cluster-lifecycle:
 - **bootkube**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
-- **cluster-proportional-autoscaler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
-- **cluster-proportional-vertical-autoscaler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
 - **kops**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
