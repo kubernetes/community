@@ -25,10 +25,11 @@ See [community membership]
 
 # Community groups
 
-The project has 3 main types of groups:
+The project has 4 main types of groups:
 1. Special Interest Groups, SIGs
-2. Working Groups, WGs
-3. Committees
+2. Subprojects
+3. Working Groups, WGs
+4. Committees
 
 Note that the project is also in the process of forming a Steering
 Committee, details of which will be documented soon.
@@ -60,15 +61,12 @@ responsible for the operation of the SIG and for communication and
 coordination with the other SIGs, the Steering Committee, and the
 broader community.
 
-We still have work to do to unify people organization via SIGs and
-code organization using [OWNERS](contributors/devel/owners.md), and to
-find homes for all subparts of the project, such as the build
-system. We also need to create a charter for each SIG to more clearly
-specify its scope (topics, subsystems, code repos and directories),
+Each SIG must havea charter that
+specifies its scope (topics, subsystems, code repos and directories),
 responsibilities, areas of authority, how members and roles of
 authority/leadership are selected/granted, how decisions are made, and
-how conflicts are resolved. A template for intra-SIG governance should
-be developed in order to simplify SIG creation, but SIGs should be
+how conflicts are resolved. A template for intra-SIG governance is
+being developed in order to simplify SIG creation, but SIGs should be
 relatively free to customize or change how they operate, within some
 broad guidelines and constraints imposed by cross-SIG processes (e.g.,
 the release process) and assets (e.g., the kubernetes repo).
@@ -83,14 +81,31 @@ community.
 See [sig governance] for more details about current SIG operating
 mechanics, such as mailing lists, meeting times, etc.
 
+## Subprojects
+
+Specific work efforts within SIGs are divided into **subprojects**.
+Every part of the Kubernetes code and documentation must be owned by
+some subproject. Some SIGs may have a single subproject, but many SIGs
+have multiple significant subprojects with distinct (though sometimes
+overlapping) sets of contributors and
+[owners](community-membership.md#subproject-owner), who act as
+subproject’s technical leaders: responsible for vision and direction
+and overall design, choose/approve change proposal (KEP) approvers,
+field technical escalations, etc.
+
+For example, SIG Network potentially is comprised of multiple
+subprojects: pod networking (CNI, etc.), Service and kube-proxy,
+Ingress and Ingress controllers, DNS, and Network policy. SIG Apps has
+the workload APIs, Helm, and Kompose. SIG Cluster Lifecycle has
+kubeadm, kops, kubespray, minikube, etc. 
+
 ## Working Groups
 
 We need community rallying points to facilitate discussions/work
-regarding topics that are too young/short-lived, or narrow/small, or
-decoupled from specific efforts to be tied to ownership as SIGs or
-Committees are, this is the purpose of Working Groups (WG). The intent
-is to make Working Groups relatively easy to create and to deprecate,
-once inactive.
+regarding topics that are short-lived or that span multiple SIGs.
+This is the purpose of Working Groups (WG). The intent is to make
+Working Groups relatively easy to create and to deprecate, once
+inactive.
 
 ## Committees
 
