@@ -1,6 +1,6 @@
 # Local Storage Persistent Volumes
 
-Authors: @msau42, @vishh, @dhirajh, @ianchakeres
+Authors: @msau42, @vishh, @dhirajh, @ianchakeres, @lichuqiang
 
 This document presents a detailed design for supporting persistent local storage,
 as outlined in [Local Storage Overview](local-storage-overview.md).
@@ -207,12 +207,12 @@ such as pod affinity/anti-affinity, and requesting multiple local volumes
 
 ### Phase 3
 
-* Support common partitioning patterns
-* Volume taints and tolerations for unbinding volumes in error conditions
+* Dynamic provisioning
 
 ### Phase 4
 
-* Dynamic provisioning
+* Support common partitioning patterns
+* Volume taints and tolerations for unbinding volumes in error conditions
 
 ## Design
 
@@ -761,3 +761,213 @@ The central manager will poll each worker for their discovered volumes and creat
 them.  When a PV is released, then it will send the cleanup request to the worker.
 
 Detailed design TBD
+
+
+### Phase 3: 1.11 Alpha
+
+#### Dynamic Provisioning
+
+The local volume provisioner will be enhanced to support dynamic provisioning of local storage,
+which depends on the newly introduced changes in [Volume Topology-aware Scheduling](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/volume-topology-scheduling.md),
+that is:
+
+1. When the feature gate `DynamicProvisioningScheduling` is enabled,
+the scheduler will verify a pod's volume requirements,
+and set an annotation `annSelectedNode` on PVCs that need provisioning.
+2. New fields `Capacity` will be added in `Status` of `StorageClass` to
+allow storage providers to report capacity limits per topology domain.
+
+The local volume provisioner needs to be updated in several areas to support dynamic provisioning.
+
+##### Backend Storage Management
+
+Mechanisms to manage local storage sources are varied.
+In addition to current `populator`, `deletor` and `discoverer`, a new component named
+`storageManager` will be introduced in the plugin, to manage the backend storage.
+
+`storageManager` is a general interface, each kind of storage should have its own implementation.
+LVM StorageManager will be introduced in alpha phase, acting as the default StorageManager.
+During start-up, two new environment variables are needed for the provisioner DaemonSet:
+
+* `STORAGE_BACKEND` to determine which StorageManager instance to start
+* `PROVISIONER_NAME` to specify the name of the provisioner, its value matches the Provisioner
+specified in the StorageClass.
+
+**Note:** Currently we already have a `provisionerName` in `RuntimeConfig` of the plugin,
+which is in format of `local-volume-provisioner-${NODE_NAME}-${NODE_ID}`, it is annotated
+in PVs with `AnnProvisionedBy`, to indicate which PVs are up to a certain node.
+To distinguish it from the new env `PROVISIONER_NAME`, we will rename it to `provisionerTag`.
+
+A StorageManager instance is responsible for:
+
+1. Monit available capacity for provisioning, and update the capacity in StorageClass if
+there is a change.
+2. Provide the ability to create volumes, detailed in the volume creation section.
+
+A new field `storageSources` will be added into the configuration ConfigMap, to illustrate available
+storage source for provisioning.
+
+```
+kind: ConfigMap
+metadata:
+  name: local-volume-config
+  namespace: kube-system
+data:
+ storageClassMap: |
+    local-static:
+      hostDir: "/mnt/ssds"
+      mountDir: "/local-ssds"
+    local_dynamic:
+      storageSources:
+        - "volumeGroup1"
+      blockCleanerCommand: "/scripts/lv_release.sh"
+```
+For example for an LVM StorageManager, the list of storageSource could contain volume groups.
+For other StorageManagers, the list could contain other storage sources (e.g. unpartitioned disks).
+Each StorageManager should know the scope and what to do with the input.
+
+##### Reconcile Capacity
+
+The StorageManager is expected to reconcile capacity of StorageClasses in its local
+`storageClassMap` regularly. Particularly, LVM StorageManager behaviors as follows:
+
+1. Walks through classes in its `storageClassMap` regularly
+2. Fetch VGs (volume groups) of each class if `storageSources` is specified
+3. Sum up the `VG size`, and compare it with the capacity in StorageClass API object
+4. Update the capacity in StorageClass object if there is a difference
+
+**Note:** For the alpha phase, thinly-provisioned VGs (overcommit) is not supported,
+We'll consider it in a subsequent phase.
+
+Though a list of VGs can be configured as storage source, it's not recommend to
+pass in more than one VG. We may suffer from some edge-cases:
+
+Suppose we have two VGs on a node for provisioning, VG1 and VG2, and they each has 10GB available,
+then the reported capacity would be 20GB, but a pod with storage request of 15GB could not
+be satisfied indeed.
+
+##### Change in Populator
+
+In addition to PV, the `populator` will also be extended to watch StorageClasses and PVC objects of all namespaces.
+
+It stores latest StorageClass objects in cache, they are used:
+
+* To reconcile capacity, the StorageManager need to compare actual capacity with that recorded
+in StorageClass objects
+* During volume creation, some opitions (e.g. fsType for `mkfs`) are specified in StorageClasses
+as Parameters
+
+And for PVCs, when the `populator` finds:
+
+1. An unbound PVC is annotated with `annSelectedNode`, and its node name match the value
+of the annotation
+2. Value of the `annStorageProvisioner` on the PVC matches the name of the provisioner
+
+It then trigger volume provsioning, detailed in the volume creation section.
+
+For these purposes, the following permissions are required:
+
+* list/get PersistentVolumeClaims
+* list/get/update StorageClasses
+
+##### Volume Creation
+
+During start-up of the provisioner, a new channel `provisionChan` will be created,
+and passed into both `populator` and `storageManager`:
+
+```
+provisionChan chan *v1.PersistentVolumeClaim
+```
+When it finds a PVC is in need of privsioning, as desicribed above,
+the `populator` will pass it into the channel to trigger volume privisioning;
+`StorageManager` will be the consumer, it will watch the channel and
+manage provisioning when new input received, that is:
+
+1. Create volumes behind a PV accordingly
+2. Create a PV object that is pre-bound to the PVC
+
+For LVM, the proposed workflow is:
+
+1. Check if there is already a PV pre-bound to the PVC, if so, return directly
+(This can happen when a volume has already been provisioned for a PVC,
+but has not been bound to the PVC by the controller yet).
+2. Check if Storage Class of the PVC is in record of its storageClass map.
+If not, return error.
+3. Check if the class is available for dynamic provisioning (i.e. has an input of `storageSources`).
+If not, return error.
+4. Check if there is a VG under the class, whose `Free Size` can satisfy the
+capacity requested in the PVC. If not, return error; otherwise, choose a VG for provisioning.
+5. Create `logical volume (LV)` object in the chosen VG.
+6. Initialize its file system with `mkfs`. FsType and other potential options
+for FS creation can be specified in StorageClass as Parameters
+7. Create a PV API object that is pre-bound to the PVC, and the path
+of local storage in the PV is the path of the LV created above.
+
+##### Cleanup after Release
+
+Currently we already have a component `deleter` to cleanup volumes/PVs of static local volume,
+detail cleanup actions are managed via custom scripts/binaries that specified in `blockCleanerCommand`.
+
+The behavior is extensible enough to support cleanup task of provsioned volumes too.
+So nothing new will be introduced here in the provisioner, but the difference lies
+in the cleanup script/binary itself.
+
+Existing script `quick_reset.sh` calls `mkfs -F` and `wipefs` to cleanup a block,
+For dynamic privisioned volumes, the logical volume in LVM also need to be deleted after that.
+
+##### Expansion of LocalVolumeSource
+
+Currently, the path in `LocalVolumeSource` must be a directory. Thus, for dynamic
+provisioned volumes, the provisioner need to mount the LV to a host path first, to allow
+kubelet for another mount. It increases the probability of failure to mount twice.
+
+Therefore, new field `Type` will be introduced into `LocalVolumeSource`, to support both
+directory and block as a source of mount:
+
+```
+type LocalVolumeSource struct {
+	// The full path to the volume on the node
+	// For alpha, this path must be a directory
+	// Once block as a source is supported, then this path can point to a block device
+	Path string
+	// Type of the volume source, default to Directory
+	Type *LocalVolumeType
+}
+
+type LocalVolumeType string
+
+const (
+	// A directory must exist at the given path
+	LocalVolumeDirectory LocalVolumeType = "Directory"
+	// A block device must exist at the given path
+	LocalVolumeBlockDev LocalVolumeType = "BlockDevice"
+)
+```
+
+And the mounter of local volume will manage the mount task basing on the type in `LocalVolumeSource`.
+
+##### Alternatives
+
+###### Take Disk Partitions as Storage Source of LVM
+
+Instead of existing volume groups, we can take disk partitions as storage source.
+This way, the provisioner is in charge of underlying storage.
+
+**Advances**:
+
+Cluster admins do not need to make extra preparations and maintenance work.
+The only thing needed is to prepare the disks for provisioning, and configure their paths
+in storage sources.
+
+**Downsides**:
+
+1. The plugin will need to manage the life cycle of the storage resources behind the LVM.
+When some disks are added, removed or failed, the plugin need to process and recover accordingly.
+In addition, the underlying storage resources are varied, they may be  physical disks,
+RAIDs, and so on, so it's hard to cover all the scenes.
+2. As provisioners running on all nodes shall a same configuration ConfigMap,
+disk partitions of their nodes are required to be named the same.
+
+##### Testing
+
+TBD
