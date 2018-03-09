@@ -32,6 +32,9 @@ The following subprojects are owned by sig-testing:
 - **test-infra**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
+- **repo-publishing**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
 - **testing-commons**
   - Description: The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project.
   - Owners:
