@@ -25,6 +25,13 @@ Coordinates the cross-community efforts of the OpenStack and Kubernetes communit
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fopenstack)
 
+## Subprojects
+
+The following subprojects are owned by sig-openstack:
+- **cloud-provider-openstack**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
