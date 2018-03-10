@@ -5,24 +5,21 @@ about the prospect of you joining our [community][community page]!
 
 ## Before You Begin
 
-We strongly recommend you to understand the main [Kubernetes Contributor Guide](http://git.k8s.io/community/contributors/guide) and adhere to the contribution rules. 
+We strongly recommend you to understand the main [Kubernetes Contributor Guide](http://git.k8s.io/community/contributors/guide) and adhere to the contribution rules (specially signing the CLA). 
 
 You can also check the [Contributor Cheat Sheet](https://git.k8s.io/community/contributors/guide/contributor-cheatsheet.md), with common resources for existing developers.
 
-The process for contributing code to Kubernetes via SIG-cli [community][community page].
+The process for contributing code to Kubernetes via SIG-CLI [community][community page].
 
-Please be aware that all contributions to Kubernetes require time
-
-and commitment from project maintainers to direct and review work.
-This is done in additional to many other maintainer responsibilities, and
-direct engagement from maintainers is a finite resource.
+Please be aware that all contributions to Kubernetes require time and commitment from project maintainers to direct and review work. This is done in additional to many other maintainer responsibilities, and direct engagement from maintainers is a finite resource.
 
 ### Learn a bit about the kubectl cli
 
 This is important.
 
-- Learn about using kubectl with Kubernetes in the [Kubernetes Basics Tutorial].
-- Learn about managing configuration in the [kubectl docs].
+Learn about using kubectl with Kubernetes in the [Kubernetes Basics Tutorial].
+
+Learn about managing configuration in the [kubectl docs].
 
 ## Pick your track
 
