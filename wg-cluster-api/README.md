@@ -15,7 +15,7 @@ Define a portable API that represents a Kubernetes cluster. The API will contain
 * Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
+* [Slack](https://kubernetes.slack.com/messages/cluster-api)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 
 <!-- BEGIN CUSTOM CONTENT -->

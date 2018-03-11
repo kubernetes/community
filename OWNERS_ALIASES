@@ -33,9 +33,9 @@ aliases:
     - AdoHe
   sig-cluster-lifecycle-leads:
     - lukemarsden
-    - jbeda
     - roberthbailey
     - luxas
+    - timothysc
   sig-cluster-ops-leads:
     - zehicle
     - jdumars
