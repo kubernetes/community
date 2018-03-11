@@ -70,7 +70,6 @@ Since maintainers will need to own any code for these contributions, these shoul
 be very limited in scope and contain minimal risk
 (e.g. simple regression fixes, improved documentation, improved testing).
 
-- ​
 
 ### Modify your own `kubectl` fork
 
