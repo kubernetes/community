@@ -1,4 +1,4 @@
-# Kubernetes Community
+# Hello SCALE!
 
 Welcome to the Kubernetes community!
 
