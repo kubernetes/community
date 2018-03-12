@@ -16,7 +16,7 @@ Covers best practices for cluster observability through metrics, logging, and ev
 
 ## Leads
 * Piotr Szczesniak (**[@piosz](https://github.com/piosz)**), Google
-* Fabian Reinartz (**[@fabxc](https://github.com/fabxc)**), CoreOS
+* Frederic Branczyk (**[@brancz](https://github.com/brancz)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-instrumentation)
