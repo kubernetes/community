@@ -37,8 +37,18 @@ project:
 * [kubernetes-graveyard](https://github.com/kubernetes-graveyard) †
 * [kubernetes-helm](https://github.com/kubernetes-helm)
 * [kubernetes-incubator](https://github.com/kubernetes-incubator)
+* [kubernetes-incubator-retired](https://github.com/kubernetes-incubator-retired)
 * [kubernetes-retired](https://github.com/kubernetes-retired)
 * [kubernetes-security](https://github.com/kubernetes-security)
+* [kubernetes-sig-testing](https://github.com/kubernetes-sig-testing)
+* [kubernetes-providers](https://github.com/kubernetes-providers)
+* [kubernetes-addons](https://github.com/kubernetes-addons)
+* [kubernetes-charts](https://github.com/kubernetes-charts)
+* [kubernetes-extensions](https://github.com/kubernetes-extensions)
+* [kubernetes-federation](https://github.com/kubernetes-federation)
+* [kubernetes-sidecars](https://github.com/kubernetes-sidecars)
+* [kubernetes-tools](https://github.com/kubernetes-tools)
+* [kubernetes-test](https://github.com/kubernetes-test)
 
 † kubernetes-retired should be used instead of kubernetes-graveyard going forward.
 
