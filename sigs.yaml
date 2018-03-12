@@ -825,9 +825,9 @@ sigs:
     - name: Piotr Szczesniak
       github: piosz
       company: Google
-    - name: Fabian Reinartz
-      github: fabxc
-      company: CoreOS
+    - name: Frederic Branczyk
+      github: brancz
+      company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
