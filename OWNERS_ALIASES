@@ -116,6 +116,9 @@ aliases:
   wg-kubeadm-adoption-leads:
     - luxas
     - justinsb
+  wg-machine-learning-leads:
+    - vishh
+    - kow3ns
   wg-multitenancy-leads:
     - davidopp
     - jessfraz
