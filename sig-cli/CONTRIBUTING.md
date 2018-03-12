@@ -1,21 +1,25 @@
 # Contributing
 
-The process for contributing code to Kubernetes via SIG-cli [community][community page].
-
-**Note**: This page is focused on helping new contributors become active
-members of the community through sustained contributions.
-
-## Introduction
-
 Welcome to the Kubernetes sig-cli contributing guide.  We are excited
 about the prospect of you joining our [community][community page]!
-Mentoring and on-boarding new contributors is critical to the success
-of the project.
 
-Please be aware that all contributions to Kubernetes require time
-and commitment from project maintainers to direct and review work.
-This is done in additional to many other maintainer responsibilities, and
-direct engagement from maintainers is a finite resource.
+## Before You Begin
+
+We strongly recommend you to understand the main [Kubernetes Contributor Guide](http://git.k8s.io/community/contributors/guide) and adhere to the contribution rules (specially signing the CLA). 
+
+You can also check the [Contributor Cheat Sheet](https://git.k8s.io/community/contributors/guide/contributor-cheatsheet.md), with common resources for existing developers.
+
+The process for contributing code to Kubernetes via SIG-CLI [community][community page].
+
+Please be aware that all contributions to Kubernetes require time and commitment from project maintainers to direct and review work. This is done in additional to many other maintainer responsibilities, and direct engagement from maintainers is a finite resource.
+
+### Learn a bit about the kubectl cli
+
+This is important.
+
+Learn about using kubectl with Kubernetes in the [Kubernetes Basics Tutorial].
+
+Learn about managing configuration in the [kubectl docs].
 
 ## Pick your track
 
@@ -66,20 +70,6 @@ Since maintainers will need to own any code for these contributions, these shoul
 be very limited in scope and contain minimal risk
 (e.g. simple regression fixes, improved documentation, improved testing).
 
-## Before You Begin
-
-**Note**: Complete the following steps before reaching out to cli community members.
-
-### Agree to contribution rules
-
-Follow the [CLA signup instructions](../CLA.md).
-
-### Learn a bit about the kubectl cli
-
-This is important.
-
-- Learn about using kubectl with Kubernetes in the [Kubernetes Basics Tutorial].
-- Learn about managing configuration in the [kubectl docs].
 
 ### Modify your own `kubectl` fork
 
