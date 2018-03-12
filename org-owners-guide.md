@@ -31,14 +31,27 @@ transfer in existing code.
 The following organizations are currently known to be part of the Kubernetes
 project:
 
+### Actively used GitHub Organizations:
 * [kubernetes](https://github.com/kubernetes)
 * [kubernetes-client](https://github.com/kubernetes-client)
 * [kubernetes-csi](https://github.com/kubernetes-csi)
-* [kubernetes-graveyard](https://github.com/kubernetes-graveyard) †
-* [kubernetes-helm](https://github.com/kubernetes-helm)
 * [kubernetes-incubator](https://github.com/kubernetes-incubator)
 * [kubernetes-retired](https://github.com/kubernetes-retired)
 * [kubernetes-security](https://github.com/kubernetes-security)
+* [kubernetes-sig-testing](https://github.com/kubernetes-sig-testing)
+* [kubernetes-sigs](https://github.com/kubernetes-sigs)
+
+### Non-actively used GitHub Organizations:
+* [kubernetes-addons](https://github.com/kubernetes-addons)
+* [kubernetes-charts](https://github.com/kubernetes-charts)
+* [kubernetes-extensions](https://github.com/kubernetes-extensions)
+* [kubernetes-federation](https://github.com/kubernetes-federation)
+* [kubernetes-graveyard](https://github.com/kubernetes-graveyard) †
+* [kubernetes-incubator-retired](https://github.com/kubernetes-incubator-retired)
+* [kubernetes-providers](https://github.com/kubernetes-providers)
+* [kubernetes-sidecars](https://github.com/kubernetes-sidecars)
+* [kubernetes-test](https://github.com/kubernetes-test)
+* [kubernetes-tools](https://github.com/kubernetes-tools)
 
 † kubernetes-retired should be used instead of kubernetes-graveyard going forward.
 
