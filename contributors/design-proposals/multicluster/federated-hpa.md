@@ -240,7 +240,7 @@ In Design Alternative 1 the autoscaling of replicas will continue, even if a giv
 cluster gets disconnected from federation or in case of the federation control plane
 outage. This would happen because the local HPAs with the last know maxreplica and
 minreplicas would exist in the local clusters. Additionally in this alternative there
-is no need of collection and processing of the pod metrices for the target object from
+is no need of collection and processing of the pod metrics for the target object from
 each individual cluster.
 This document proposes to use ***design alternative 1*** as the preferred implementation.
 
