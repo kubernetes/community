@@ -30,7 +30,7 @@ Gubernator runs on Google App Engine and fetches logs stored on Google Cloud Sto
 
 ### Test Failures list
 
-Issues made by k8s-merge-robot will post a link to a page listing the failed tests.
+Comments made by k8s-ci-robot will post a link to a page listing the failed tests.
 Each failed test comes with the corresponding error log from a junit file and a link
 to filter logs for that test.
 
