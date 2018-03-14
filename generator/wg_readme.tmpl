@@ -13,10 +13,15 @@
 {{- end }}
 {{- end }}
 
-{{ end -}}
+{{- end }}
+{{- if .Leadership }}
+{{- if .Leadership.Chairs }}
+
 ## Organizers
-{{- range .Leads }}
+{{ range .Leadership.Chairs }}
 * {{.Name}} (**[@{{.GitHub}}](https://github.com/{{.GitHub}})**){{if .Company}}, {{.Company}}{{end}}
+{{- end }}
+{{- end }}
 {{- end }}
 
 ## Contact

@@ -52,9 +52,8 @@ var (
 	templateDir      = "generator"
 )
 
-// Lead represents a lead engineer for a particular group. There are usually
-// 2 per group.
-type Lead struct {
+// Person represents an individual person holding a role in a group.
+type Person struct {
 	Name    string
 	Company string
 	GitHub  string
@@ -85,12 +84,19 @@ type GithubTeams struct {
 	Description string
 }
 
-// Subproject represenst a specific subproject owned by the group
+// Subproject represents a specific subproject owned by the group
 type Subproject struct {
 	Name        string
 	Description string
 	Owners      []string
 	Meetings    []Meeting
+}
+
+// LeadershipGroup represents the different groups of leaders within a group
+type LeadershipGroup struct {
+	Chairs         []Person
+	TechnicalLeads []Person `yaml:"tech_leads"`
+	EmeritusLeads  []Person `yaml:"emeritus_leads"`
 }
 
 // Group represents either a Special Interest Group (SIG) or a Working Group (WG)
@@ -99,8 +105,7 @@ type Group struct {
 	Dir              string
 	MissionStatement string `yaml:"mission_statement"`
 	Label            string
-	Leads            []Lead
-	EmeritusLeads    []Lead `yaml:"emeritus_leads"`
+	Leadership       LeadershipGroup `yaml:"leadership"`
 	Meetings         []Meeting
 	Contact          Contact
 	Subprojects      []Subproject
