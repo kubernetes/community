@@ -225,10 +225,10 @@ The following apply to the subproject for which one would be an owner.
 The Maintainer role has been removed and replaced with a greater focus on [owner](#owner)s.
 
 [code reviews]: contributors/devel/collab.md
-[community expectations]: contributors/devel/community-expectations.md
+[community expectations]: contributors/guide/community-expectations.md
 [developer guide]: contributors/devel/README.md
 [two-factor authentication]: https://help.github.com/articles/about-two-factor-authentication
 [kubernetes-dev@googlegroups.com]: https://groups.google.com/forum/#!forum/kubernetes-dev
-[sigs.yaml]: community/sigs.yaml
+[sigs.yaml]: sigs.yaml
 [New contributors]: https://github.com/kubernetes/community/blob/master/CONTRIBUTING.md
 [OWNERS]: contributors/guide/owners.md
