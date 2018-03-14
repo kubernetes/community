@@ -8,7 +8,7 @@ To learn more about the project structure and organization, please refer to [Pro
 
 ## Communicating
 
-The [communication](communication.md) page lists communication channels like chat,
+The [communication](communication/) page lists communication channels like chat,
 issues, mailing lists, conferences, etc.
 
 For more specific topics, try a SIG.
@@ -41,7 +41,7 @@ The [Contributor Guide](contributors/guide/README.md) provides detailed instruct
 
 ## Membership
 
-We encourage all contributors to become members. We aim to grow an active, healthy community of contributors, reviewers, and code owners. Learn more about requirements and responsibilities of memebership in our [Community Membership] page.
+We encourage all contributors to become members. We aim to grow an active, healthy community of contributors, reviewers, and code owners. Learn more about requirements and responsibilities of membership in our [Community Membership] page.
 
 [Project Governance]:/governance.md
 [Developer's Guide]: contributors/devel/development.md
