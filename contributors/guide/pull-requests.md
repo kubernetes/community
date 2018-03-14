@@ -67,7 +67,7 @@ in a checklist in the pull request description.*
 Here's the process the pull request goes through on its way from submission to merging:
 
 1. Make the pull request
-1. `@k8s-merge-robot` assigns reviewers
+1. `@k8s-ci-robot` assigns reviewers
 
 1. If you're **not** a member of the Kubernetes organization, a Reviewer/Kubernetes Member checks that the pull request is safe to test. If so, they comment `/ok-to-test`. Pull requests by Kubernetes organization [members](/community-membership.md) do not need this step. Now the pull request is considered to be trusted, and the pre-submit tests will run:
 
