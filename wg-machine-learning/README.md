@@ -15,6 +15,7 @@ Identify and fix gaps in Kubernetes to better support Machine Learning applicati
   * [Meeting notes and Agenda](https://goo.gl/gBCdt1).
 
 ## Organizers
+
 * Vishnu Kannan (**[@vishh](https://github.com/vishh)**), Google
 * Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Google
 

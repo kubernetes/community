@@ -15,6 +15,7 @@ Provide an overall architecture that describes both the current policy related i
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing).
 
 ## Organizers
+
 * Howard Huang (**[@hannibalhuang](https://github.com/hannibalhuang)**), Huawei
 * Torin Sandall (**[@tsandall](https://github.com/tsandall)**), Styra
 * David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google

@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# API Machinery SIG
+# API Machinery Special Interest Group
 
 Covers all aspects of API server, API registration and discovery, generic API CRUD semantics, admission control, encoding/decoding, conversion, defaulting, persistence layer (etcd), OpenAPI, CustomResourceDefinition, garbage collection, and client libraries.
 
@@ -15,7 +15,11 @@ Covers all aspects of API server, API registration and discovery, generic API CR
   * [Meeting notes and Agenda](https://goo.gl/0lbiM9).
   * [Meeting recordings](https://www.youtube.com/watch?v=Lj1ScbXpnpY&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Daniel Smith (**[@lavalamp](https://github.com/lavalamp)**), Google
 * David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
 

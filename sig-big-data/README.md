@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Big Data SIG
+# Big Data Special Interest Group
 
 Covers deploying and operating big data applications (Spark, Kafka, Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integrations with big data applications and architecting the best ways to run them on Kubernetes.
 
@@ -15,7 +15,11 @@ Covers deploying and operating big data applications (Spark, Kafka, Hadoop, Flin
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit).
   * [Meeting recordings](https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Anirudh Ramanathan (**[@foxish](https://github.com/foxish)**), Google
 * Erik Erlandson (**[@erikerlandson](https://github.com/erikerlandson)**), Red Hat
 

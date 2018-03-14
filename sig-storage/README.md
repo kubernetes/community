@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Storage SIG
+# Storage Special Interest Group
 
 Covers storage and volume plugins.
 
@@ -15,7 +15,11 @@ Covers storage and volume plugins.
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Saad Ali (**[@saad-ali](https://github.com/saad-ali)**), Google
 * Bradley Childs (**[@childsb](https://github.com/childsb)**), Red Hat
 

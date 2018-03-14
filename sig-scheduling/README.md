@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Scheduling SIG
+# Scheduling Special Interest Group
 
 
 ## Meetings
@@ -14,7 +14,11 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
   * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Bobby (Babak) Salamat (**[@bsalamat](https://github.com/bsalamat)**), Google
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Heptio
 

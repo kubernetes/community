@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Network SIG
+# Network Special Interest Group
 
 Covers networking in Kubernetes.
 
@@ -15,7 +15,11 @@ Covers networking in Kubernetes.
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
 * Dan Williams (**[@dcbw](https://github.com/dcbw)**), Red Hat
 * Casey Davenport (**[@caseydavenport](https://github.com/caseydavenport)**), Tigera

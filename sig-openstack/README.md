@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# OpenStack SIG
+# OpenStack Special Interest Group
 
 Coordinates the cross-community efforts of the OpenStack and Kubernetes communities. This includes OpenStack-related contributions to Kubernetes projects with OpenStack as: a deployment platform for Kubernetes; a service provider for Kubernetes; a collection of applications to run on Kubernetes.
 
@@ -15,7 +15,11 @@ Coordinates the cross-community efforts of the OpenStack and Kubernetes communit
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f).
   * [Meeting recordings](https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Chris Hoge (**[@hogepodge](https://github.com/hogepodge)**), OpenStack Foundation
 * David Lyle (**[@dklyle](https://github.com/dklyle)**), Intel
 * Robert Morse (**[@rjmorse](https://github.com/rjmorse)**), Ticketmaster

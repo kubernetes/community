@@ -16,6 +16,7 @@ Boost adoption of the kubeadm tool. kubeadm is a tool for creating new Kubernete
   * [Meeting recordings](https://www.youtube.com/watch?v=-Xlcrm5iT80&list=PLPgAK4Icr0ehh93BiMC3djAc5KoW7WIkl).
 
 ## Organizers
+
 * Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
 

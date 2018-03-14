@@ -15,6 +15,7 @@ Charter can be found [here](https://docs.google.com/document/d/1m4Kvnh_u_9cENEE9
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp).
 
 ## Organizers
+
 * Sidhartha Mani (**[@wlan0](https://github.com/wlan0)**), Caascade Labs
 * Jago Macleod (**[@jagosan](https://github.com/jagosan)**), Google
 

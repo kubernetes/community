@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Autoscaling SIG
+# Autoscaling Special Interest Group
 
 Covers autoscaling of clusters, horizontal and vertical autoscaling of pods, setting initial resources for pods, topics related to monitoring pods and gathering their metrics (e.g.: Heapster)
 
@@ -14,7 +14,11 @@ Covers autoscaling of clusters, horizontal and vertical autoscaling of pods, set
 * Regular SIG Meeting: [Mondays at 14:00 UTC](https://zoom.us/my/k8s.sig.autoscaling) (biweekly/triweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
 * Solly Ross (**[@directxman12](https://github.com/directxman12)**), Red Hat
 

@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Release SIG
+# Release Special Interest Group
 
 
 ## Meetings
@@ -14,7 +14,11 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1vhsixdT58iJFfoGZbpmvI_xnK59XyAjtadu3h6hHPpY/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Microsoft
 * Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), Google
 

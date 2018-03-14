@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Docs SIG
+# Docs Special Interest Group
 
 Covers documentation, doc processes, and doc publishing for Kubernetes.
 
@@ -15,7 +15,11 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
 * Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
 * Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**), Google

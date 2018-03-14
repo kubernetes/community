@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Scalability SIG
+# Scalability Special Interest Group
 
 Responsible for answering scalability related questions such as:
 What size clusters do we think that we should support with Kubernetes in the short to medium term? How performant do we think that the control system should be at scale? What resource overhead should the Kubernetes control system reasonably consume?
@@ -17,7 +17,11 @@ For more details about our objectives please review our [Scaling And Performance
   * [Meeting notes and Agenda](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
   * [Meeting recordings](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
 * Bob Wise (**[@countspongebob](https://github.com/countspongebob)**), Samsung SDS
 
