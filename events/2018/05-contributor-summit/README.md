@@ -10,6 +10,11 @@ In some sense, the summit is a real-life extension of the community meetings and
 - Grow the number of new developers
 - Make existing developers better
 
+## Registration
+
+- [Sign the CLA](/community/CLA.md) if you have not done so already.
+- [Fill out this Google Form](https://goo.gl/forms/TgoUiqbqZLkyZSZw1)
+
 ## When and Where
 
 - May 1, 2018 (before Kubecon EU)
