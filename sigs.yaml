@@ -283,7 +283,7 @@ sigs:
       chairs:
       - name: Eric Chiang
         github: ericchiang
-        company: CoreOS
+        company: Red Hat
       - name: Jordan Liggitt
         github: liggitt
         company: Red Hat
