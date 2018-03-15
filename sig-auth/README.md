@@ -20,7 +20,7 @@ Covers improvements to Kubernetes authorization, authentication, and cluster sec
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Eric Chiang (**[@ericchiang](https://github.com/ericchiang)**), CoreOS
+* Eric Chiang (**[@ericchiang](https://github.com/ericchiang)**), Red Hat
 * Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Red Hat
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Google
 
