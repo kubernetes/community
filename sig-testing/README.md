@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Testing SIG
+# Testing Special Interest Group
 
 Interested in how we can most effectively test Kubernetes. We're interested specifically in making it easier for the community to run tests and contribute test results, to ensure Kubernetes is stable across a variety of cluster configurations and cloud providers.
 
@@ -15,7 +15,11 @@ Interested in how we can most effectively test Kubernetes. We're interested spec
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-testing-notes).
   * [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Samsung SDS
 * Erick Feja (**[@fejta](https://github.com/fejta)**), Google
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat

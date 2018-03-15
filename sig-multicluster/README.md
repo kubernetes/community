@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Multicluster SIG
+# Multicluster Special Interest Group
 
 A Special Interest Group focussed on solving common challenges related to the management of multiple Kubernetes clusters, and applications that exist therein. The SIG will be responsible for designing, discussing, implementing and maintaining API’s, tools and documentation related to multi-cluster administration and application management. This includes not only active automated approaches such as Cluster Federation, but also those that employ batch workflow-style continuous deployment systems like Spinnaker and others.  Standalone building blocks for these and other similar systems (for example a cluster registry), and proposed changes to kubernetes core where appropriate will also be in scope.
 
@@ -18,7 +18,11 @@ A Special Interest Group focussed on solving common challenges related to the ma
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3iKP5EzMbtNT2zOZv6RCrX).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Christian Bell (**[@csbell](https://github.com/csbell)**), Google
 * Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei
 

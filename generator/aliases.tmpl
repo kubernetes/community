@@ -1,13 +1,16 @@
 aliases:
   {{- range .Sigs}}
   {{.Dir}}-leads:
-    {{- range .Leads}}
+    {{- range .Leadership.Chairs}}
+    - {{.GitHub}}
+    {{- end}}
+    {{- range .Leadership.TechnicalLeads}}
     - {{.GitHub}}
     {{- end}}
   {{- end}}
   {{- range .WorkingGroups}}
   {{.Dir}}-leads:
-    {{- range .Leads}}
+    {{- range .Leadership.Chairs}}
     - {{.GitHub}}
     {{- end}}
   {{- end}}

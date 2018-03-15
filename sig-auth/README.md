@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Auth SIG
+# Auth Special Interest Group
 
 Covers improvements to Kubernetes authorization, authentication, and cluster security policy.
 
@@ -15,12 +15,17 @@ Covers improvements to Kubernetes authorization, authentication, and cluster sec
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Eric Chiang (**[@ericchiang](https://github.com/ericchiang)**), CoreOS
 * Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Red Hat
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Google
 
 ## Emeritus Leads
+
 * Eric Tune (**[@erictune](https://github.com/erictune)**), Google
 * David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
 

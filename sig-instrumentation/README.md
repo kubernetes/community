@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Instrumentation SIG
+# Instrumentation Special Interest Group
 
 Covers best practices for cluster observability through metrics, logging, and events across all Kubernetes components and development of relevant components such as Heapster and kube-state-metrics. Coordinates metric requirements of different SIGs for other components through finding common APIs.
 
@@ -14,7 +14,11 @@ Covers best practices for cluster observability through metrics, logging, and ev
 * Regular SIG Meeting: [Thursdays at 17:30 UTC](https://zoom.us/j/5342565819) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1gWuAATtlmI7XJILXd31nA4kMq6U9u63L70382Y3xcbM/edit).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Piotr Szczesniak (**[@piosz](https://github.com/piosz)**), Google
 * Frederic Branczyk (**[@brancz](https://github.com/brancz)**), Red Hat
 

@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# UI SIG
+# UI Special Interest Group
 
 Covers all things UI related. Efforts are centered around Kubernetes Dashboard: a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
 
@@ -14,7 +14,11 @@ Covers all things UI related. Efforts are centered around Kubernetes Dashboard: 
 * Regular SIG Meeting: [Thursdays at 18:00 CET (Central European Time)](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=CET%20%28Central%20European%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Dan Romlein (**[@danielromlein](https://github.com/danielromlein)**), Google
 * Sebastian Florek (**[@floreks](https://github.com/floreks)**), Fujitsu
 

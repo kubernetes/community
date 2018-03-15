@@ -15,6 +15,7 @@ Define the models of multitenancy that Kubernetes will support. Discuss and exec
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1fj3yzmeU2eU8ZNBCUJG97dk_wC7228-e_MmdcmTNrZY/edit?usp=sharing).
 
 ## Organizers
+
 * David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google
 * Jessie Frazelle (**[@jessfraz](https://github.com/jessfraz)**), Microsoft
 

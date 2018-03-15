@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Cluster Ops SIG
+# Cluster Ops Special Interest Group
 
 Promote operability and interoperability of Kubernetes clusters. We focus on shared operations practices for Kubernetes clusters with a goal to make Kubernetes broadly accessible with a common baseline reference. We also organize operators as a sounding board and advocacy group.
 
@@ -15,7 +15,11 @@ Promote operability and interoperability of Kubernetes clusters. We focus on sha
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#).
   * [Meeting recordings](https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Rob Hirschfeld (**[@zehicle](https://github.com/zehicle)**), RackN
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Microsoft
 

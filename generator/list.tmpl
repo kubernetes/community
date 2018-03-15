@@ -13,10 +13,10 @@ When the need arises, a [new SIG can be created](sig-creation-procedure.md)
 
 ### Master SIG List
 
-| Name | Label | Leads | Contact | Meetings |
-|------|--------|-------|---------|----------|
+| Name | Label | Chairs | Contact | Meetings |
+|------|-------|--------|---------|----------|
 {{- range .Sigs}}
-|[{{.Name}}]({{.Dir}}/README.md)|{{.Label}}|{{range .Leads}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{- range .Meetings -}}
+|[{{.Name}}]({{.Dir}}/README.md)|{{.Label}}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{- range .Meetings -}}
   * {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>
 {{- end -}}
 {{- range .Subprojects -}}
@@ -32,5 +32,5 @@ When the need arises, a [new SIG can be created](sig-creation-procedure.md)
 | Name | Organizers | Contact | Meetings |
 |------|------------|---------|----------|
 {{- range .WorkingGroups}}
-|[{{.Name}}]({{.Dir}}/README.md)|{{range .Leads}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
+|[{{.Name}}]({{.Dir}}/README.md)|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
 {{- end }}

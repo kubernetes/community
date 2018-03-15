@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Azure SIG
+# Azure Special Interest Group
 
 A Special Interest Group for building, deploying, maintaining, supporting, and using Kubernetes on Azure.
 
@@ -15,7 +15,11 @@ A Special Interest Group for building, deploying, maintaining, supporting, and u
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Jason Hansen (**[@slack](https://github.com/slack)**), Microsoft
 * Cole Mickens (**[@colemickens](https://github.com/colemickens)**), Red Hat
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Microsoft

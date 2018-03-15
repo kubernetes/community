@@ -7,13 +7,14 @@ sigs:
       defaulting, persistence layer (etcd), OpenAPI, CustomResourceDefinition,
       garbage collection, and client libraries.
     label: api-machinery
-    leads:
-    - name: Daniel Smith
-      company: Google
-      github: lavalamp
-    - name: David Eads
-      company: Red Hat
-      github: deads2k
+    leadership:
+      chairs:
+      - name: Daniel Smith
+        company: Google
+        github: lavalamp
+      - name: David Eads
+        company: Red Hat
+        github: deads2k
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -114,16 +115,17 @@ sigs:
       and projects, and discuss areas of friction that can lead to suggesting
       improvements or feature requests.
     label: apps
-    leads:
-    - name: Matt Farina
-      github: mattfarina
-      company: Samsung SDS
-    - name: Adnan Abdulhussein
-      github: prydonius
-      company: Bitnami
-    - name: Kenneth Owens
-      github: kow3ns
-      company: Google
+    leadership:
+      chairs:
+      - name: Matt Farina
+        github: mattfarina
+        company: Samsung SDS
+      - name: Adnan Abdulhussein
+        github: prydonius
+        company: Bitnami
+      - name: Kenneth Owens
+        github: kow3ns
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Monday
@@ -226,13 +228,14 @@ sigs:
       The Architecture SIG maintains and evolves the design principles of Kubernetes, and provides a consistent
       body of expertise necessary to ensure architectural consistency over time.
     label: architecture
-    leads:
-    - name: Brian Grant
-      github: bgrant0607
-      company: Google
-    - name: Jaice Singer DuMars
-      github: jdumars
-      company: Microsoft
+    leadership:
+      chairs:
+      - name: Brian Grant
+        github: bgrant0607
+        company: Google
+      - name: Jaice Singer DuMars
+        github: jdumars
+        company: Microsoft
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -276,23 +279,24 @@ sigs:
       Covers improvements to Kubernetes authorization, authentication, and
       cluster security policy.
     label: auth
-    leads:
-    - name: Eric Chiang
-      github: ericchiang
-      company: CoreOS
-    - name: Jordan Liggitt
-      github: liggitt
-      company: Red Hat
-    - name: Tim Allclair
-      github: tallclair
-      company: Google
-    emeritus_leads:
-    - name: Eric Tune
-      github: erictune
-      company: Google
-    - name: David Eads
-      github: deads2k
-      company: Red Hat
+    leadership:
+      chairs:
+      - name: Eric Chiang
+        github: ericchiang
+        company: CoreOS
+      - name: Jordan Liggitt
+        github: liggitt
+        company: Red Hat
+      - name: Tim Allclair
+        github: tallclair
+        company: Google
+      emeritus_leads:
+      - name: Eric Tune
+        github: erictune
+        company: Google
+      - name: David Eads
+        github: deads2k
+        company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -327,13 +331,14 @@ sigs:
       setting initial resources for pods, topics related to monitoring pods and
       gathering their metrics (e.g.: Heapster)
     label: autoscaling
-    leads:
-    - name: Marcin Wielgus
-      github: mwielgus
-      company: Google
-    - name: Solly Ross
-      github: directxman12
-      company: Red Hat
+    leadership:
+      chairs:
+      - name: Marcin Wielgus
+        github: mwielgus
+        company: Google
+      - name: Solly Ross
+        github: directxman12
+        company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Monday
@@ -372,15 +377,16 @@ sigs:
     mission_statement: >
       Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
     label: aws
-    leads:
-    - name: Justin Santa Barbara
-      github: justinsb
-    - name: Kris Nova
-      github: kris-nova
-      company: Heptio
-    - name: Bob Wise
-      github: countspongebob
-      company: AWS
+    leadership:
+      chairs:
+      - name: Justin Santa Barbara
+        github: justinsb
+      - name: Kris Nova
+        github: kris-nova
+        company: Heptio
+      - name: Bob Wise
+        github: countspongebob
+        company: AWS
     meetings:
     - description: Regular SIG Meeting
       day: Friday
@@ -399,23 +405,23 @@ sigs:
     - name: cloud-provider-aws
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
-
   - name: Azure
     dir: sig-azure
     mission_statement: >
       A Special Interest Group for building, deploying, maintaining, supporting,
       and using Kubernetes on Azure.
     label: azure
-    leads:
-    - name: Jason Hansen
-      github: slack
-      company: Microsoft
-    - name: Cole Mickens
-      github: colemickens
-      company: Red Hat
-    - name: Jaice Singer DuMars
-      github: jdumars
-      company: Microsoft
+    leadership:
+      chairs:
+      - name: Jason Hansen
+        github: slack
+        company: Microsoft
+      - name: Cole Mickens
+        github: colemickens
+        company: Red Hat
+      - name: Jaice Singer DuMars
+        github: jdumars
+        company: Microsoft
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -435,7 +441,6 @@ sigs:
     - name: cloud-provider-azure
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
-
   - name: Big Data
     dir: sig-big-data
     mission_statement: >
@@ -443,13 +448,14 @@ sigs:
       Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integrations with
       big data applications and architecting the best ways to run them on Kubernetes.
     label: big-data
-    leads:
-    - name: Anirudh Ramanathan
-      github: foxish
-      company: Google
-    - name: Erik Erlandson
-      github: erikerlandson
-      company: Red Hat
+    leadership:
+      chairs:
+      - name: Anirudh Ramanathan
+        github: foxish
+        company: Google
+      - name: Erik Erlandson
+        github: erikerlandson
+        company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -486,20 +492,21 @@ sigs:
       and improving the command line tools from a developer and devops user
       experience and usability perspective.
     label: cli
-    leads:
-    - name: Maciej Szulik
-      github: soltysh
-      company: Red Hat
-    - name: Phillip Wittrock
-      github: pwittrock
-      company: Google
-    - name: Tony Ado
-      github: AdoHe
-      company: Alibaba
-    emeritus_leads:
-    - name: Fabiano Franz
-      github: fabianofranz
-      company: Red Hat
+    leadership:
+      chairs:
+      - name: Maciej Szulik
+        github: soltysh
+        company: Red Hat
+      - name: Phillip Wittrock
+        github: pwittrock
+        company: Google
+      - name: Tony Ado
+        github: AdoHe
+        company: Alibaba
+      emeritus_leads:
+      - name: Fabiano Franz
+        github: fabianofranz
+        company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -540,19 +547,20 @@ sigs:
       The Cluster Lifecycle SIG examines how we should change Kubernetes to make it
       easier to manage and operate with a focus on cluster deployment and upgrades.
     label: cluster-lifecycle
-    leads:
-    - name: Luke Marsden
-      github: lukemarsden
-      company: Weave
-    - name: Robert Bailey
-      github: roberthbailey
-      company: Google
-    - name: Lucas Käldström
-      github: luxas
-      company: Luxas Labs (occasionally contracting for Weaveworks)
-    - name: Timothy St. Clair
-      github: timothysc
-      company: Heptio
+    leadership:
+      chairs:
+      - name: Luke Marsden
+        github: lukemarsden
+        company: Weave
+      - name: Robert Bailey
+        github: roberthbailey
+        company: Google
+      - name: Lucas Käldström
+        github: luxas
+        company: Luxas Labs (occasionally contracting for Weaveworks)
+      - name: Timothy St. Clair
+        github: timothysc
+        company: Heptio
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -640,13 +648,14 @@ sigs:
       to make Kubernetes broadly accessible with a common baseline reference.
       We also organize operators as a sounding board and advocacy group.
     label: cluster-ops
-    leads:
-    - name: Rob Hirschfeld
-      github: zehicle
-      company: RackN
-    - name: Jaice Singer DuMars
-      github: jdumars
-      company: Microsoft
+    leadership:
+      chairs:
+      - name: Rob Hirschfeld
+        github: zehicle
+        company: RackN
+      - name: Jaice Singer DuMars
+        github: jdumars
+        company: Microsoft
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -668,16 +677,17 @@ sigs:
       ceiling we hit in July 2015, and we need to get the monotonically growing
       PR merge latency and numbers of open PRs and issues under control.
     label: contributor-experience
-    leads:
-    - name: Garrett Rodrigues
-      github: grodrigues3
-      company: Google
-    - name: Elsie Phillips
-      github: Phillels
-      company: CoreOS
-    - name: Paris Pittman
-      github: parispittman
-      company: Google
+    leadership:
+      chairs:
+      - name: Garrett Rodrigues
+        github: grodrigues3
+        company: Google
+      - name: Elsie Phillips
+        github: Phillels
+        company: CoreOS
+      - name: Paris Pittman
+        github: parispittman
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -733,16 +743,17 @@ sigs:
     mission_statement: >
       Covers documentation, doc processes, and doc publishing for Kubernetes.
     label: docs
-    leads:
-    - name: Zach Corleissen
-      github: zacharysarah
-      company: Linux Foundation
-    - name: Andrew Chen
-      github: chenopis
-      company: Google
-    - name: Jared Bhatti
-      github: jaredbhatti
-      company: Google
+    leadership:
+      chairs:
+      - name: Zach Corleissen
+        github: zacharysarah
+        company: Linux Foundation
+      - name: Andrew Chen
+        github: chenopis
+        company: Google
+      - name: Jared Bhatti
+        github: jaredbhatti
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -779,10 +790,11 @@ sigs:
       A Special Interest Group for building, deploying, maintaining,
       supporting, and using Kubernetes on the Google Cloud Platform.
     label: gcp
-    leads:
-    - name: Adam Worrall
-      github: abgworrall
-      company: Google
+    leadership:
+      chairs:
+      - name: Adam Worrall
+        github: abgworrall
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -821,13 +833,14 @@ sigs:
       Kubernetes components and development of relevant components such as Heapster and kube-state-metrics.
       Coordinates metric requirements of different SIGs for other components through finding common APIs.
     label: instrumentation
-    leads:
-    - name: Piotr Szczesniak
-      github: piosz
-      company: Google
-    - name: Frederic Branczyk
-      github: brancz
-      company: Red Hat
+    leadership:
+      chairs:
+      - name: Piotr Szczesniak
+        github: piosz
+        company: Google
+      - name: Frederic Branczyk
+        github: brancz
+        company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -880,13 +893,14 @@ sigs:
       similar systems (for example a cluster registry), and proposed changes to kubernetes
       core where appropriate will also be in scope.
     label: multicluster
-    leads:
-    - name: Christian Bell
-      github: csbell
-      company: Google
-    - name: Quinton Hoole
-      github: quinton-hoole
-      company: Huawei
+    leadership:
+      chairs:
+      - name: Christian Bell
+        github: csbell
+        company: Google
+      - name: Quinton Hoole
+        github: quinton-hoole
+        company: Huawei
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -922,22 +936,22 @@ sigs:
         description: Test Failures and Triage
       - name: sig-mutlicluster-proposals
         description: Design Proposals
-#    subprojects: (Kept in custom header)
   - name: Network
     dir: sig-network
     mission_statement: >
       Covers networking in Kubernetes.
     label: network
-    leads:
-    - name: Tim Hockin
-      github: thockin
-      company: Google
-    - name: Dan Williams
-      github: dcbw
-      company: Red Hat
-    - name: Casey Davenport
-      github: caseydavenport
-      company: Tigera
+    leadership:
+      chairs:
+      - name: Tim Hockin
+        github: thockin
+        company: Google
+      - name: Dan Williams
+        github: dcbw
+        company: Red Hat
+      - name: Casey Davenport
+        github: caseydavenport
+        company: Tigera
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -992,13 +1006,14 @@ sigs:
     dir: sig-node
     mission_statement: >
     label: node
-    leads:
-    - name: Dawn Chen
-      github: dchen1107
-      company: Google
-    - name: Derek Carr
-      github: derekwaynecarr
-      company: Red Hat
+    leadership:
+      chairs:
+      - name: Dawn Chen
+        github: dchen1107
+        company: Google
+      - name: Derek Carr
+        github: derekwaynecarr
+        company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -1057,13 +1072,14 @@ sigs:
       Kubernetes on premise, on bare metal or more generally beyond cloud
       providers.
     label: onprem
-    leads:
-    - name: Marco Ceppi
-      github: marcoceppi
-      company: Canonical
-    - name: Dalton Hubble
-      github: dghubble
-      company: CoreOS
+    leadership:
+      chairs:
+      - name: Marco Ceppi
+        github: marcoceppi
+        company: Canonical
+      - name: Dalton Hubble
+        github: dghubble
+        company: CoreOS
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -1100,16 +1116,17 @@ sigs:
       service provider for Kubernetes; a collection of applications to run on
       Kubernetes.
     label: openstack
-    leads:
-    - name: Chris Hoge
-      github: hogepodge
-      company: OpenStack Foundation
-    - name: David Lyle
-      github: dklyle
-      company: Intel
-    - name: Robert Morse
-      github: rjmorse
-      company: Ticketmaster
+    leadership:
+      chairs:
+      - name: Chris Hoge
+        github: hogepodge
+        company: OpenStack Foundation
+      - name: David Lyle
+        github: dklyle
+        company: Intel
+      - name: Robert Morse
+        github: rjmorse
+        company: Ticketmaster
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -1141,7 +1158,6 @@ sigs:
     - name: cloud-provider-openstack
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
-
   - name: Product Management
     dir: sig-product-management
     mission_statement: >
@@ -1164,16 +1180,17 @@ sigs:
       as Kubernetes; we are learning too and we are excited to learn how we
       can best serve the community of users and contributors.
     label: none
-    leads:
-    - name: Aparna Sinha
-      github: apsinha
-      company: Google
-    - name: Ihor Dvoretskyi
-      github: idvoretskyi
-      company: CNCF
-    - name: Caleb Miles
-      github: calebamiles
-      company: Google
+    leadership:
+      chairs:
+      - name: Aparna Sinha
+        github: apsinha
+        company: Google
+      - name: Ihor Dvoretskyi
+        github: idvoretskyi
+        company: CNCF
+      - name: Caleb Miles
+        github: calebamiles
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -1193,13 +1210,14 @@ sigs:
   - name: Release
     dir: sig-release
     label: release
-    leads:
-    - name: Jaice Singer DuMars
-      github: jdumars
-      company: Microsoft
-    - name: Caleb Miles
-      github: calebamiles
-      company: Google
+    leadership:
+      chairs:
+      - name: Jaice Singer DuMars
+        github: jdumars
+        company: Microsoft
+      - name: Caleb Miles
+        github: calebamiles
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -1256,13 +1274,14 @@ sigs:
       For more details about our objectives please review our
       [Scaling And Performance Goals](https://git.k8s.io/community/sig-scalability/goals.md)
     label: scalability
-    leads:
-    - name: Wojciech Tyczynski
-      github: wojtek-t
-      company: Google
-    - name: Bob Wise
-      github: countspongebob
-      company: Samsung SDS
+    leadership:
+      chairs:
+      - name: Wojciech Tyczynski
+        github: wojtek-t
+        company: Google
+      - name: Bob Wise
+        github: countspongebob
+        company: Samsung SDS
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -1302,13 +1321,14 @@ sigs:
     dir: sig-scheduling
     mission_statement: >
     label: scheduling
-    leads:
-    - name: Bobby (Babak) Salamat
-      github: bsalamat
-      company: Google
-    - name: Timothy St. Clair
-      github: timothysc
-      company: Heptio
+    leadership:
+      chairs:
+      - name: Bobby (Babak) Salamat
+        github: bsalamat
+        company: Google
+      - name: Timothy St. Clair
+        github: timothysc
+        company: Heptio
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -1356,19 +1376,20 @@ sigs:
       To develop a Kubernetes API for the CNCF service broker and Kubernetes
       broker implementation.
     label: service-catalog
-    leads:
-    - name: Paul Morie
-      github: pmorie
-      company: Red Hat
-    - name: Aaron Schlesinger
-      github: arschles
-      company: Microsoft
-    - name: Ville Aikas
-      github: vaikas-google
-      company: Google
-    - name: Doug Davis
-      github: duglin
-      company: IBM
+    leadership:
+      chairs:
+      - name: Paul Morie
+        github: pmorie
+        company: Red Hat
+      - name: Aaron Schlesinger
+        github: arschles
+        company: Microsoft
+      - name: Ville Aikas
+        github: vaikas-google
+        company: Google
+      - name: Doug Davis
+        github: duglin
+        company: IBM
     meetings:
     - description: Regular SIG Meeting
       day: Monday
@@ -1405,13 +1426,14 @@ sigs:
     mission_statement: >
       Covers storage and volume plugins.
     label: storage
-    leads:
-    - name: Saad Ali
-      github: saad-ali
-      company: Google
-    - name: Bradley Childs
-      github: childsb
-      company: Red Hat
+    leadership:
+      chairs:
+      - name: Saad Ali
+        github: saad-ali
+        company: Google
+      - name: Bradley Childs
+        github: childsb
+        company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -1460,19 +1482,20 @@ sigs:
       tests and contribute test results, to ensure Kubernetes is stable across
       a variety of cluster configurations and cloud providers.
     label: testing
-    leads:
-    - name: Aaron Crickenberger
-      github: spiffxp
-      company: Samsung SDS
-    - name: Erick Feja
-      github: fejta
-      company: Google
-    - name: Steve Kuznetsov
-      github: stevekuznetsov
-      company: Red Hat
-    - name: Timothy St. Clair
-      github: timothysc
-      company: Heptio
+    leadership:
+      chairs:
+      - name: Aaron Crickenberger
+        github: spiffxp
+        company: Samsung SDS
+      - name: Erick Feja
+        github: fejta
+        company: Google
+      - name: Steve Kuznetsov
+        github: stevekuznetsov
+        company: Red Hat
+      - name: Timothy St. Clair
+        github: timothysc
+        company: Heptio
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -1528,13 +1551,14 @@ sigs:
       allows users to manage applications running in the cluster and
       troubleshoot them, as well as manage the cluster itself.
     label: ui
-    leads:
-    - name: Dan Romlein
-      github: danielromlein
-      company: Google
-    - name: Sebastian Florek
-      github: floreks
-      company: Fujitsu
+    leadership:
+      chairs:
+      - name: Dan Romlein
+        github: danielromlein
+        company: Google
+      - name: Sebastian Florek
+        github: floreks
+        company: Fujitsu
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -1556,10 +1580,11 @@ sigs:
     mission_statement: >
       Focuses on supporting Windows Server Containers for Kubernetes.
     label: windows
-    leads:
-    - name: Michael Michael
-      github: michmike
-      company: Apprenda
+    leadership:
+      chairs:
+      - name: Michael Michael
+        github: michmike
+        company: Apprenda
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -1584,13 +1609,14 @@ workinggroups:
     dir: wg-resource-management
     mission_statement: >
       Designing and shepherding cross-cutting features around compute resource isolation and utilization.
-    leads:
-    - name: Vishnu Kannan
-      github: vishh
-      company: Google
-    - name: Derek Carr
-      github: derekwaynecarr
-      company: Red Hat
+    leadership:
+      chairs:
+      - name: Vishnu Kannan
+        github: vishh
+        company: Google
+      - name: Derek Carr
+        github: derekwaynecarr
+        company: Red Hat
     meetings:
     - description: Regular WG Meeting
       day: Wednesday
@@ -1607,13 +1633,14 @@ workinggroups:
     dir: wg-container-identity
     mission_statement: >
       Ensure containers are able to interact with external systems and acquire secure identities for communication, integrating with external solutions as necessary.
-    leads:
-    - name: Clayton Coleman
-      github: smarterclayton
-      company: Red Hat
-    - name: Greg Gastle
-      github: destijl
-      company: Google
+    leadership:
+      chairs:
+      - name: Clayton Coleman
+        github: smarterclayton
+        company: Red Hat
+      - name: Greg Gastle
+        github: destijl
+        company: Google
     meetings:
     - description: Regular WG Meeting
       day: Tuesday
@@ -1631,12 +1658,13 @@ workinggroups:
     mission_statement: >
       Boost adoption of the kubeadm tool. kubeadm is a tool for creating new Kubernetes clusters easily for new users, but can also be used as a toolbox for higher-level deployment
       solutions. This working group makes sure kubeadm meets the extensibility requirements of those higher-level Kubernetes installers.
-    leads:
-    - name: Lucas Käldström
-      github: luxas
-      company: Luxas Labs (occasionally contracting for Weaveworks)
-    - name: Justin Santa Barbara
-      github: justinsb
+    leadership:
+      chairs:
+      - name: Lucas Käldström
+        github: luxas
+        company: Luxas Labs (occasionally contracting for Weaveworks)
+      - name: Justin Santa Barbara
+        github: justinsb
     meetings:
     - description: Regular WG Meeting
       day: Tuesday
@@ -1653,13 +1681,16 @@ workinggroups:
     dir: wg-cluster-api
     mission_statement: >
       Define a portable API that represents a Kubernetes cluster. The API will contain the control plane and its configuration and the underlying infrastructure (nodes, node pools, etc).
-    leads:
-    - name: Kris Nova
-      github: kris-nova
-      company: Heptio
-    - name: Robert Bailey
-      github: roberthbailey
-      company: Google
+    leadership:
+      chairs:
+      - name: Kris Nova
+        github: kris-nova
+        company: Heptio
+      - name: Robert Bailey
+        github: roberthbailey
+        company: Google
+    meetings:
+    - description: Regular WG Meeting
       archive_url: https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit
     contact:
       slack: cluster-api
@@ -1673,16 +1704,17 @@ workinggroups:
       and common principles.
 
       Charter can be found [here](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#)
-    leads:
-    - name: Antoine Legrand
-      github: ant31
-      company: CoreOS
-    - name: Bryan Liles
-      github: bryanl
-      company: Heptio
-    - name: Gareth Rushgrove
-      github: garethr
-      company: Docker
+    leadership:
+      chairs:
+      - name: Antoine Legrand
+        github: ant31
+        company: CoreOS
+      - name: Bryan Liles
+        github: bryanl
+        company: Heptio
+      - name: Gareth Rushgrove
+        github: garethr
+        company: Docker
     meetings:
     - description: Regular WG Meeting
       day: Wednesday
@@ -1699,13 +1731,14 @@ workinggroups:
     label: cloud-provider
     mission_statement: >
       Charter can be found [here](https://docs.google.com/document/d/1m4Kvnh_u_9cENEE9n1ifYowQEFSgiHnbw43urGJMB64/edit#)
-    leads:
-    - name: Sidhartha Mani
-      github: wlan0
-      company: Caascade Labs
-    - name: Jago Macleod
-      github: jagosan
-      company: Google
+    leadership:
+      chairs:
+      - name: Sidhartha Mani
+        github: wlan0
+        company: Caascade Labs
+      - name: Jago Macleod
+        github: jagosan
+        company: Google
     meetings:
     - description: Regular WG Meeting
       day: Wednesday
@@ -1717,18 +1750,18 @@ workinggroups:
     contact:
       slack: wg-cloud-provider
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-cloud-provider
-
   - name: Multitenancy
     dir: wg-multitenancy
     mission_statement: >
       Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
-    leads:
-    - name: David Oppenheimer
-      github: davidopp
-      company: Google
-    - name: Jessie Frazelle
-      github: jessfraz
-      company: Microsoft
+    leadership:
+      chairs:
+      - name: David Oppenheimer
+        github: davidopp
+        company: Google
+      - name: Jessie Frazelle
+        github: jessfraz
+        company: Microsoft
     meetings:
     - description: Regular WG Meeting
       day: Wednesday
@@ -1744,22 +1777,23 @@ workinggroups:
     dir: wg-policy
     mission_statement: >
       Provide an overall architecture that describes both the current policy related implementations as well as future policy related proposals in Kubernetes. Through a collaborative method, we want to present both dev and end user a universal view of policy architecture in Kubernetes.
-    leads:
-    - name: Howard Huang
-      github: hannibalhuang
-      company: Huawei
-    - name: Torin Sandall
-      github: tsandall
-      company: Styra
-    - name: David Oppenheimer
-      github: davidopp
-      company: Google
-    - name: Clayton Coleman
-      github: smarterclayton
-      company: Red Hat
-    - name: Xuan Jia
-      github: xuanjia
-      company: China Mobile
+    leadership:
+      chairs:
+      - name: Howard Huang
+        github: hannibalhuang
+        company: Huawei
+      - name: Torin Sandall
+        github: tsandall
+        company: Styra
+      - name: David Oppenheimer
+        github: davidopp
+        company: Google
+      - name: Clayton Coleman
+        github: smarterclayton
+        company: Red Hat
+      - name: Xuan Jia
+        github: xuanjia
+        company: China Mobile
     meetings:
     - description: Regular WG Meeting
       day: Thursday
@@ -1775,13 +1809,14 @@ workinggroups:
     dir: wg-machine-learning
     mission_statement: >
       Identify and fix gaps in Kubernetes to better support Machine Learning applications
-    leads:
-    - name: Vishnu Kannan
-      github: vishh
-      company: Google
-    - name: Kenneth Owens
-      github: kow3ns
-      company: Google
+    leadership:
+      chairs:
+      - name: Vishnu Kannan
+        github: vishh
+        company: Google
+      - name: Kenneth Owens
+        github: kow3ns
+        company: Google
     meetings:
     - description: Regular WG Meeting
       day: Thursday

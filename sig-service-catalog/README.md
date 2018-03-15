@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Service Catalog SIG
+# Service Catalog Special Interest Group
 
 To develop a Kubernetes API for the CNCF service broker and Kubernetes broker implementation.
 
@@ -15,7 +15,11 @@ To develop a Kubernetes API for the CNCF service broker and Kubernetes broker im
   * [Meeting notes and Agenda](https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
 * Aaron Schlesinger (**[@arschles](https://github.com/arschles)**), Microsoft
 * Ville Aikas (**[@vaikas-google](https://github.com/vaikas-google)**), Google

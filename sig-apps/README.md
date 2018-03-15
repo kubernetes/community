@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Apps SIG
+# Apps Special Interest Group
 
 Covers deploying and operating applications in Kubernetes. We focus on the developer and devops experience of running applications in Kubernetes. We discuss how to define and run apps in Kubernetes, demo relevant tools and projects, and discuss areas of friction that can lead to suggesting improvements or feature requests.
 
@@ -15,7 +15,11 @@ Covers deploying and operating applications in Kubernetes. We focus on the devel
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#).
   * [Meeting recordings](https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
 * Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), Bitnami
 * Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Google

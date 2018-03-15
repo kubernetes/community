@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Cluster Lifecycle SIG
+# Cluster Lifecycle Special Interest Group
 
 The Cluster Lifecycle SIG examines how we should change Kubernetes to make it easier to manage and operate with a focus on cluster deployment and upgrades.
 
@@ -23,7 +23,11 @@ The Cluster Lifecycle SIG examines how we should change Kubernetes to make it ea
 * kops Office Hours: [Fridays at 09:00 PT (Pacific Time)](https://zoom.us/my/k8ssigaws) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Luke Marsden (**[@lukemarsden](https://github.com/lukemarsden)**), Weave
 * Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
 * Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)

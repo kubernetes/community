@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Contributor Experience SIG
+# Contributor Experience Special Interest Group
 
 Developing and sustaining a healthy community of contributors is critical to scaling the project and growing the ecosystem. We need to ensure our contributors are happy and productive, we need to break the commit-rate ceiling we hit in July 2015, and we need to get the monotonically growing PR merge latency and numbers of open PRs and issues under control.
 
@@ -18,7 +18,11 @@ Developing and sustaining a healthy community of contributors is critical to sca
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
   * [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**), Google
 * Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), CoreOS
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google

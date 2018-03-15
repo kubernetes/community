@@ -16,6 +16,7 @@ Designing and shepherding cross-cutting features around compute resource isolati
   * [Meeting recordings](https://www.youtube.com/watch?v=FUUJeWIEej0&list=PL69nYSiGNLP2uTrVwZCFtdEvLQvsbG2w4).
 
 ## Organizers
+
 * Vishnu Kannan (**[@vishh](https://github.com/vishh)**), Google
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
 

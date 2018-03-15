@@ -1,5 +1,5 @@
 {{- template "header" }}
-# {{.Name}} SIG
+# {{.Name}} Special Interest Group
 
 {{ .MissionStatement }}
 {{ if .Meetings }}## Meetings
@@ -13,16 +13,33 @@
 {{- end }}
 {{- end }}
 
-{{ end -}}
-## Leads
-{{- range .Leads }}
+{{- end }}
+{{- if .Leadership }}
+
+## Leadership
+{{- if .Leadership.Chairs }}
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+{{ range .Leadership.Chairs }}
 * {{.Name}} (**[@{{.GitHub}}](https://github.com/{{.GitHub}})**){{if .Company}}, {{.Company}}{{end}}
 {{- end }}
-{{- if .EmeritusLeads }}
+{{- end }}
+{{- if .Leadership.TechnicalLeads }}
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+{{ range .Leadership.TechnicalLeads }}
+* {{.Name}} (**[@{{.GitHub}}](https://github.com/{{.GitHub}})**){{if .Company}}, {{.Company}}{{end}}
+{{- end }}
+{{- end }}
+{{- if .Leadership.EmeritusLeads }}
 
 ## Emeritus Leads
-{{- range .EmeritusLeads }}
+{{ range .Leadership.EmeritusLeads }}
 * {{.Name}} (**[@{{.GitHub}}](https://github.com/{{.GitHub}})**){{if .Company}}, {{.Company}}{{end}}
+{{- end }}
 {{- end }}
 {{- end }}
 

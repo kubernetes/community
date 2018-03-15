@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 -->
-# Node SIG
+# Node Special Interest Group
 
 
 ## Meetings
@@ -14,7 +14,11 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/watch?v=FbKOI9-x9hI&list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
 
-## Leads
+## Leadership
+
+### Chairs
+The Chairs of the SIG run operations and processes governing the SIG.
+
 * Dawn Chen (**[@dchen1107](https://github.com/dchen1107)**), Google
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
 

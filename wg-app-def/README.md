@@ -16,6 +16,7 @@ Charter can be found [here](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fi
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit).
 
 ## Organizers
+
 * Antoine Legrand (**[@ant31](https://github.com/ant31)**), CoreOS
 * Bryan Liles (**[@bryanl](https://github.com/bryanl)**), Heptio
 * Gareth Rushgrove (**[@garethr](https://github.com/garethr)**), Docker
