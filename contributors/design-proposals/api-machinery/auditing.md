@@ -141,7 +141,7 @@ const (
     AuditNone AuditLevel = "None"
     // AuditMetadata provides basic level of auditing, logging data at HTTP level
     AuditMetadata AuditLevel   = "Metadata"
-    // AuditRequestBody provides Header level of auditing, and additionally
+    // AuditRequestBody provides Metadata level of auditing, and additionally
     // logs unstructured request body
     AuditRequestBody AuditLevel = "RequestBody"
     // AuditResponseBody provides Request level of auditing, and additionally
