@@ -101,14 +101,12 @@ The current generation scripts in the community repo haven't proven to be too mu
 
 ## Graduation Criteria
 
+This effort will have succeeded if:
 
-<!--
-How will we know that this has succeeded?
-Gathering user feedback is crucial for building high quality experiences and SIGs have the important responsibility of setting milestones for stability and completeness.
-Hopefully the content previously contained in [umbrella issues][] will be tracked in the `Graduation Criteria` section.
-
-[umbrella issues]: https://github.com/kubernetes/kubernetes/issues/42752
--->
+* The contributor site becomes the de-facto way to publish information for the community.
+* People consistently refer to the contributor site when answering questions about "how do I do X" or "what is the status of X".
+* The amount of confusion over where to find information is reduced.
+* Others in the contributor community actively look to expand the information on the contributor site and move information from islands to this site.
 
 ## Implementation History
 
