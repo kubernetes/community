@@ -27,15 +27,11 @@ status: provisional
     * [Goals](#goals)
     * [Non-Goals](#non-goals)
 * [Proposal](#proposal)
-    * [User Stories [optional]](#user-stories-optional)
-      * [Story 1](#story-1)
-      * [Story 2](#story-2)
-    * [Implementation Details/Notes/Constraints [optional]](#implementation-detailsnotesconstraints-optional)
     * [Risks and Mitigations](#risks-and-mitigations)
 * [Graduation Criteria](#graduation-criteria)
 * [Implementation History](#implementation-history)
-* [Drawbacks [optional]](#drawbacks-optional)
-* [Alternatives [optional]](#alternatives-optional)
+* [Drawbacks](#drawbacks)
+* [Alternatives](#alternatives)
 
 ## Summary
 
@@ -105,6 +101,7 @@ The current generation scripts in the community repo haven't proven to be too mu
 
 ## Graduation Criteria
 
+
 <!--
 How will we know that this has succeeded?
 Gathering user feedback is crucial for building high quality experiences and SIGs have the important responsibility of setting milestones for stability and completeness.
@@ -139,9 +136,6 @@ This is not preferred for a variety of reasons.
 * **Quality standards.** The bar for the user facing site is higher than that of the contributor site.
   Speed and openness of communication dominates for the contributor facing site.
   Our bar here is the current pile of Markdown.
-* **Versioning and branching.** Much of the main user facing site is lined up on Kubernetes releases.
-  This includes archived versions and branches as we lock down a release.
-  None of this applies to the evergreen contributor facing site.
 * **Different tooling.** We may want to create specialized preprocessors as part of the contributor site build process.
   This could include integrating our current expansion of sigs.yaml into Markdown files.
   It may also include recognizing specific patterns (KEP-N) and creating automatic linkages.
