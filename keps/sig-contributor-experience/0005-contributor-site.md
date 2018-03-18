@@ -40,7 +40,7 @@ status: provisional
 ## Summary
 
 We need a way to organize and publish information targeted at contributors.
-In order to continue to scale the Kubernetes community we need a convenient, scalable and findable way to publish information.
+In order to continue to scale the Kubernetes contributor community we need a convenient, scalable and findable way to publish information.
 
 ## Motivation
 
@@ -61,8 +61,8 @@ Specifically, building a site that can take advantage of the KEP metadata will b
 
 ### Goals
 
-* A community facing portal to collect information for those actively working on upstream Kubernetes.
-* An easy to remember URL. (`community.kubernetes.io`? `contrib.kubernetes.io`?)
+* A contributor community facing portal to collect information for those actively working on upstream Kubernetes.
+* An easy to remember URL. (`contrib.kubernetes.io`? `contributors.kubernetes.io`? `c.kubernetes.io`?)
 * A streamlined process to update and share this information.
   Ownership should be delegated using the existing OWNERS mechanisms.
 * A site that will be indexed well on Google to collect markdown files from the smattering of repos that we currently have.
@@ -75,7 +75,7 @@ Specifically, building a site that can take advantage of the KEP metadata will b
 ### Non-Goals
 
 * Actively migrate information from multiple orgs/repos.
-  This should be a place that people in the community choose to use to communicate vs. being forced.
+  This should be a place that people in the contributor community choose to use to communicate vs. being forced.
 * Create a super dynamic back end.  This is most likely served best with a static site.
 * Other extended community functions like a job board or a list of vendors.
 
@@ -127,7 +127,7 @@ This is a strength as the information is close to the code but also a big disadv
 ## Alternatives
 
 One alternative is to do nothing.
-However, the smattering of markdown through many repos is not scaling and is not discoverable via Google or for other members of the community.
+However, the smattering of markdown through many repos is not scaling and is not discoverable via Google or for other members of the contributor community.
 
 The main alternative here is to build something that is integrated into the user facing kubernetes.io site.
 This is not preferred for a variety of reasons.
@@ -136,13 +136,13 @@ This is not preferred for a variety of reasons.
   That process involves approval from someone on SIG-Docs from an editorial point of view along with approval for technical accuracy.
   The two stage approval slows down contributions and creates a much larger barrier than the current markdown based flow.
   In addition, SIG-Docs is already stretched thin dealing with the (more important) user facing content that is their main charter.
-* **Quality standards.** The bar for the user facing site is higher than that of the community site.
-  Speed and openness of communication dominates for the community facing site.
+* **Quality standards.** The bar for the user facing site is higher than that of the contributor site.
+  Speed and openness of communication dominates for the contributor facing site.
   Our bar here is the current pile of Markdown.
 * **Versioning and branching.** Much of the main user facing site is lined up on Kubernetes releases.
   This includes archived versions and branches as we lock down a release.
-  None of this applies to the evergreen community facing site.
-* **Different tooling.** We may want to create specialized preprocessors as part of the community site build process.
+  None of this applies to the evergreen contributor facing site.
+* **Different tooling.** We may want to create specialized preprocessors as part of the contributor site build process.
   This could include integrating our current expansion of sigs.yaml into Markdown files.
   It may also include recognizing specific patterns (KEP-N) and creating automatic linkages.
   Applying these to a part of a site or validating them across a larger site will slow creation of these tools.
