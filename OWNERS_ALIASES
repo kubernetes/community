@@ -134,16 +134,16 @@ aliases:
 ## BEGIN CUSTOM CONTENT
   steering-committee:
     - bgrant0607
+    - brendanburns
+    - derekwaynecarr
+    - jbeda
+    - michelleN
     - philips
-    - thockin
+    - pwittrock
+    - quinton-hoole
     - sarahnovotny
     - smarterclayton
-    - jbeda
-    - brendanburns
-    - timothysc
-    - quinton-hoole
     - spiffxp
-    - pwittrock
-    - michelleN
-    - derekwaynecarr
+    - thockin
+    - timothysc
 ## END CUSTOM CONTENT
