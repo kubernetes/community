@@ -679,15 +679,18 @@ sigs:
     label: contributor-experience
     leadership:
       chairs:
-      - name: Garrett Rodrigues
-        github: grodrigues3
-        company: Google
       - name: Elsie Phillips
         github: Phillels
         company: CoreOS
       - name: Paris Pittman
         github: parispittman
         company: Google
+      tech_leads:
+        - name: Garrett Rodrigues
+          github: grodrigues3
+          company: Google
+        - name: Christoph Blecker
+          github: cblecker
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
