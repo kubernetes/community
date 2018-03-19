@@ -3,10 +3,9 @@ reviewers:
   - castrojo
   - jdumars
   - idvoretskyi
-  - cblecker
 approvers:
-  - cblecker
   - castrojo
+  - parispittman
   - sig-contributor-experience-leads
 labels:
   - sig/contributor-experience
