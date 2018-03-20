@@ -19,7 +19,7 @@
 ## Who should read this document and what is in it?
 This document is targeted at developers of "vanilla Kubernetes" who do not want their changes rolled-back or blocked because they cause performance regressions. It contains some of the knowledge and experience gathered by the scalability team over more than two years.
  
-It is presented as a set of real, or close-to-real examples from the past which broke scalability tests, followed by some explanations and general suggestions on how to avoid causing similar problems.
+It is presented as a set of examples from the past which broke scalability tests, followed by some explanations and general suggestions on how to avoid causing similar problems.
 
 ## TL;DR:
 1. To write fast code with efficient memory management, you must understand how Golang manages memory. This would seem obvious, but we have spent a considerable amount of time removing various bad patterns. In particular:
@@ -27,7 +27,7 @@ wherever it is correct, pass arguments by pointers
 avoid unnecessary copying of data (especially slices and maps)
 avoid unnecessary allocations (pre-size slices, reuse buffers, be aware of anonymous function definitions with variable captures, etc.)
 
-2. Wherever you want to write client.Sth().List(..), consider using Informer (client-go/tools/cache/shared_informer.go). If you are going to List(..) resources, be very sure you need to do so <sup>[1](#1)</sup>.
+2. Wherever you want to write client.Sth().List(..), consider using Informer (client-go/tools/cache/shared_informer.go). If you are going to List() resources, be very sure you need to do so <sup>[1](#1)</sup>.
  
 3. Be careful when adding new API calls. Estimate how many QPS your change will add to the API server. If the number is large, you need to find a different way of doing it.
 In particular, be aware of “runs on every node” components, and the fan-in that can cause on the API server
@@ -100,18 +100,18 @@ func (c *ControllerX) Run() {
 }
 ```
 
-This may look OK, but List(..) calls are expensive. Objects can have sizes of a few kilobytes, and there can be 150,000 of those. This means List(..) would need to send hundreds of megabytes through the network, not to mention the API server would need to do conversions of all this data along the way. It is not the end of the world, but it needs to be minimized. The solution is simple (quoting Clayton):
+This may look OK, but List() calls are expensive. Objects can have sizes of a few kilobytes, and there can be 150,000 of those. This means List() would need to send hundreds of megabytes through the network, not to mention the API server would need to do conversions of all this data along the way. It is not the end of the world, but it needs to be minimized. The solution is simple (quoting Clayton):
 
 >As a rule, use Informer. If using Informer, use shared Informers. If your use case does not look like an Informer, look harder. If at the very end of that it still does not look like an Informer, consider using something else after talking to someone. But probably use Informer.
 
-`Informer` is our library which provides a read interface to the store - it is a read-only cache that provides you with a local copy of the store that contains only the object you are interested in (matching given selector). From it you can GET, LIST, or do whatever read operations you desire. `Informer` also allows you to register functions that will be called when an object is created, modified or deleted.
+`Informer` is our library which provides a read interface to the store - it is a read-only cache that provides you with a local copy of the store that contains only the object you are interested in (matching given selector). From it you can Get(), List() or whatever read operations you desire. `Informer` also allows you to register functions that will be called when an object is created, modified or deleted.
  
 The magic behind `Informers` is that they are populated by the WATCH, so they create minimal stress on the API server. Code for Informer is [here](https://git.k8s.io/kubernetes/staging/src/k8s.io/client-go/tools/cache/shared_informer.go).
  
 In general: use `Informers` - if we were able to rewrite most vanilla controllers to use them, you should be able to do so as well. Otherwise, you may dramatically increase the CPU requirements of the API server which will starve it and make it too slow to meet our SLOs.
 
 ### Superfluous API calls
-One past regression was caused by `Secret` refreshing logic in Kubelet. By contract we want to update values of `Secrets` (update env variables, contents of `Secret` volume) when the contents of `Secret` are updated in the API server. Normally we would use `Informer` (see above), but there is an additional security constraint; Kubelet should know only `Secrets` that are attached to `Pods` scheduled on the corresponding `Node`, so there should be no watching of all `Secret` updates (which is how `Informers` work). We already know that LIST calls are also bad (not to mention that they have the same security problem as WATCH), so the only way we can read `Secrets` is through GET.
+One past regression was caused by `Secret` refreshing logic in Kubelet. By contract we want to update values of `Secrets` (update env variables, contents of `Secret` volume) when the contents of `Secret` are updated in the API server. Normally we would use `Informer` (see above), but there is an additional security constraint; Kubelet should know only `Secrets` that are attached to `Pods` scheduled on the corresponding `Node`, so there should be no watching of all `Secret` updates (which is how `Informers` work). We already know that List() calls are also bad (not to mention that they have the same security problem as WATCH), so the only way we can read `Secrets` is through GET.
  
 For each `Secret` we were periodically GETting its value and updating underlying variables/volumes as necessary. We have the same logic for `ConfigMaps`. Everything was great until we turned on the `ServiceAccount` admission controller in our performance tests. Then everything went wrong for a very simple reason; the `ServiceAccount` admission controller creates a `Secret` that it attaches to every `Pod` (a different one in every Namespace, but this does not change anything). Multiply this behavior by 150,000 and, given a refresh period of 60 seconds, an additional 2.5k QPS were being sent to the API server, which of course caused it to fail.
  
@@ -133,7 +133,7 @@ This example illustrates how many problems in this area can be much more complex
 ### Big dependency changes
 Kubernetes depends on pretty much the whole universe. From time to time we need to update some dependencies (Godeps, etcd, go version). This can break us in many ways, as has already happened a couple of times. We skipped one version of Golang (1.5) precisely because it broke our performance. As this is being written, we are working with the Golang team to try to understand why Golang version 1.8 negatively affects Kubernetes performance.
  
-If you are changing a large and important dependency, there is no way of knowing what performance impact it will have. We can only run test and check.
+If you are changing a large and important dependency, the only way to know what performance impact it will have is to run test and check.
 Where to look to get data?
 If you want to check the impact of your changes there are a number of places to look:
 Density and load tests output quite a lot of data either to test logs, or files inside 'ReportDir' - both of them include API call latencies, and density tests also include pod e2e startup latency information.
@@ -144,7 +144,7 @@ to profile a component create an ssh tunnel to the machine running it, and run `
 ## Summary
 To summarize, when writing code you should:
 - understand how Golang manages memory and use it wisely,
-- not LIST from the API server,
+- not List() from the API server,
 - run performance tests when making large systemwide changes (e.g. updating big dependencies),
 
 When designing new features or thinking about refactoring you should:
@@ -156,6 +156,6 @@ We know that thinking about the performance impact of changes is hard. This is e
 
 * * *
 
-<a name="1">1</a>: If you are using LIST in tight loops, it is common to do so on a subset of a list (field, label, or namespace). Most Informers have indices on namespaces, but you may end up needing another index if profile shows the need.
+<a name="1">1</a>: If you are using List() in tight loops, it is common to do so on a subset of a list (field, label, or namespace). Most Informers have indices on namespaces, but you may end up needing another index if profile shows the need.
 
 <a name="2">2</a>: We are working on adding new SLOs and improving the system to meet them.
