@@ -2,7 +2,7 @@
 
 _Status: Draft_
 
-_Author: @arnaudmz, @yastij_
+_Authors: @arnaudmz, @yastij_
 
 _Reviewers: @bsalamat, @liggitt_
 
@@ -430,6 +430,8 @@ spec:
 In this example, only nodeAffinities (required and preferred) are allowed but no podAffinities nor podAntiAffinities.
 
 ## Multiple SchedulingPolicies considerations
+
+NOTE: here a merge is the set of resulting authorizations after going through the available policies (i.e. we do not aggregate policies into a newly created `SchedulingPolicy`)
 
 several merging strategies are being considered.
 
