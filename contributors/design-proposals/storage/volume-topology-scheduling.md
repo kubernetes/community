@@ -287,21 +287,22 @@ For the new volume binding mode, the proposed new workflow is:
 references it.
 4. User creates a pod that uses the PVC.
 5. Pod starts to get processed by the scheduler.
-6. **NEW:** A new predicate function, called MatchUnboundPVCs, will look at all of
-a Pod’s unbound PVCs, and try to find matching PVs for that node based on the
-PV topology.  If there are no matching PVs, then it checks if dynamic
-provisioning is possible for that node.
+6. **NEW:** A new predicate function, called FindPodVolumes, will look at all of
+a Pod’s unbound PVCs
+    * It checks if the PV's NodeAffinity matches the Node If a PVC is bound.
+    * Otherwise, it try to find an available PV to bind to the PVC.
+It returns true if there are matching PVs that can satisfy all of the Pod's PVCs, and returns true if bound volumes satisfy the PV NodeAffinity.
 7. **NEW:** The scheduler continues to evaluate priorities.  A new priority
 function, called PrioritizeUnboundPVCs, will get the PV matches per PVC per
 node, and compute a priority score based on various factors.
 8. **NEW:** After evaluating all the existing predicates and priorities, the
-scheduler will pick a node, and call a new assume function, AssumePVCs,
+scheduler will pick a node, and call a new assume function, AssumePodVolumes,
 passing in the Node.  The assume function will check if any binding or
 provisioning operations need to be done.  If so, it will update the PV cache to
 mark the PVs with the chosen PVCs.
 9. **NEW:** If PVC binding or provisioning is required, we do NOT AssumePod.
-Instead, a new bind function, BindPVCs, will be called asynchronously, passing
-in the selected node.  The bind function will prebind the PV to the PVC, or
+Instead, a new bind function, BindPodVolumes, will be called asynchronously, passing
+in the pod (including selected node).  The bind function will prebind the matching PVs in podBindingCache to the PVC, or
 trigger dynamic provisioning.  Then, it always sends the Pod through the
 scheduler again for reasons explained later.
 10. When a Pod makes a successful scheduler pass once all PVCs are bound, the
@@ -351,7 +352,7 @@ A new predicate function checks all of a Pod's unbound PVCs can be satisfied
 by existing PVs or dynamically provisioned PVs that are
 topologically-constrained to the Node.
 ```
-MatchUnboundPVCs(pod *v1.Pod, node *v1.Node) (canBeBound bool, err error)
+FindPodVolumes(pod *v1.Pod, node *v1.Node) (canBeBound bool, err error)
 ```
 1. If all the Pod’s PVCs are bound, return true.
 2. Otherwise try to find matching PVs for all of the unbound PVCs in order of
@@ -395,7 +396,7 @@ scheduler.  We’ll consider creating a generic scheduler interface in a
 subsequent phase.
 
 ```
-AssumePVCs(pod *v1.Pod, node *v1.Node) (pvcBindingRequired bool, err error)
+AssumePodVolumes(assumedPod *v1.Pod, nodeName string) (allFullyBound, bindingRequired bool, err error)
 ```
 1. If all the Pod’s PVCs are bound, return false.
 2. For static PV binding:
@@ -417,7 +418,7 @@ scheduler.  We’ll consider creating a generic scheduler interface in a subsequ
 phase.
 
 ```
-BindUnboundPVCs(pod *v1.Pod, node *v1.Node) (err error)
+BindPodVolumes(pod *v1.Pod) (err error)
 ```
 1. For static PV binding:
     1. Prebind the PV by updating the `PersistentVolume.ClaimRef` field.
