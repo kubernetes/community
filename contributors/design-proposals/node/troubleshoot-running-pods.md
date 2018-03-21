@@ -1,6 +1,6 @@
 # Troubleshoot Running Pods
 
-*   Status: Pending
+*   Status: Pending Implementation
 *   Version: Alpha
 *   Implementation Owner: @verb
 
@@ -102,33 +102,22 @@ subsequently be used to reattach and is reported by `kubectl describe`.
 ### Kubernetes API Changes
 
 There has been much discussion about how this fits best into the Kubernetes API.
-The consensus is for an imperative "debug this pod" action that's implemented
-mostly in the kubelet. In order to avoid new dependencies in the kubelet, this
-will be implemented in the Core API. Three possible implementations follow, and
-additional implementations that were evaluated and dismissed are at the end of
-this document.
+The consensus is for an imperative "debug this pod" action whereby Kubernetes
+creates a new, temporary container in a pod on command. In order to avoid new
+dependencies in the kubelet, this will be implemented in the Core API. Three
+possible implementations follow, and additional implementations that were
+evaluated and dismissed are at the end of this document.
 
 All of the proposed solutions implement the user-level concept of a _Debug
 Container_ using the API-level concept of an _Ephemeral Container_. The API
 doesn't prescribe how an Ephemeral Container is used. It could conceivably see
 use other than Debug Containers, but we don't currently have other use cases.
 
-#### Chosen Solution: POST to an Existing Pod
+#### Chosen Solution: Subresource to Update PodStatus
 
-We're modifying an existing pod, so this fits as a subresource of the target
-pod. We will create a new top-level object that contains a `v1.Container` and
-`POST` to the subresource to create the Debug Container. Since this is a `POST`,
-we cannot upgrade the connection to streaming if we want to continue supporting
-web socket clients.
-
-Rather than using an existing subresource like `/exec` and conditionally stream
-based on `PodExecOptions`, we will create a new subresource with consistent
-streaming behavior. A new subresource has the added benefit of being able to
-entirely hide interface entirely behind a feature flag by conditionally
-registering the new subresource.
-
-A `v1.Container` by itself lacks type and object metadata, so we will create a
-new type:
+An Ephemeral Container is not part of the pod specification as it's not part of
+the intended state of the pod, but we describe it using the same primitives as
+`PodSpec`. An `EphemeralContainer` contains a Spec, a Status and a Target:
 
 ```
 // EphemeralContainer describes a container to attach to a running pod for troubleshooting.
@@ -152,26 +141,37 @@ type EphemeralContainer struct {
 }
 ```
 
+All Ephemeral Containers that have been created in a pod are listed in the pod's
+status:
+
+```
+type PodStatus struct {
+        ...
+        // List of user-initiated ephemeral containers that have been run in this pod.
+        // +optional
+        EphemeralContainers []EphemeralContainer `json:"commands,omitempty" protobuf:"bytes,11,rep,name=ephemeralContainers"`
+
+}
+```
+
+To create a new Ephemeral Container, one appends a new `EphemeralContainer` with
+the desired `v1.Container` as `Spec` in `Pod.Status` and updates the `Pod` in
+the API. This is accomplished via a new subresource, `/ephemeralcontainers`,
+which enforces the append-only semantics and authorization. This is similar to
+the `/status` subresource used by the kubelet to modify pod status.
+
 **Note that Ephemeral Containers are not regular containers and should not be
 used to build services.** They lack guarantees for resources or execution, and
 many of the fields of `v1.Container` will not be allowed for Debug Containers. A
-request will be rejected if any field is set other than the following
+pod update will fail validation if any field is set other than the following
 whitelisted fields: `Name`, `Image`, `Command`, `Args`, `WorkingDir`, `Env`,
 `EnvFrom`, `ImagePullPolicy`, `SecurityContext`. `TTY` and `Stdin` are always
 enabled for Debug Containers and will be ignored.
 
-The new `/ephemeralcontainers` subresource allows the following:
-
-1.  A `POST` of a `EphemeralContainer` to
-    `/api/v1/namespaces/$NS/pods/$POD_NAME/ephemeralcontainers` to create an
-    Ephemeral Container running in pod `$POD_NAME`.
-1.  Support for stopping an Ephemeral Container **could be supported in the
-    future** by a `DELETE` of
-    `/api/v1/namespaces/$NS/pods/$POD_NAME/ephemeralcontainers/$NAME`.
-
-Once created, it is the responsibility of the client to watch for the
-`EphemeralContainer` to appear in the `PodStatus` and then attach to the console
-of a debug container using the existing attach endpoint,
+Once the pod object is updated, the kubelet worker watching this pod will launch
+the Ephemeral Container and update its status. The client is expected to watch
+for the creation of the container status and then attach to the console of a
+debug container using the existing attach endpoint,
 `/api/v1/namespaces/$NS/pods/$POD_NAME/attach`. Note that any output of the new
 container between its creation and subsequent attach will not be replayed and
 can only be viewed using `kubectl log`.
@@ -211,7 +211,7 @@ exec`. To kill an Ephemeral Container one would `attach` and exit the process
 interactively or create a new Ephemeral Container to send a signal with
 `kill(1)` to the original process.
 
-#### Alternative 2: Declarative Configuration
+#### Alternative 2: Ephemeral Container Controller
 
 Using subresources is an imperative style API where the client instructs the
 kubelet to perform an action, but in general Kubernetes prefers declarative APIs
@@ -244,31 +244,16 @@ enforce, and SIG Node strongly prefers to minimize kubelet complexity.
 
 ### Ephemeral Container Status
 
-`EphemeralContainer` is included in a new field in `PodStatus`:
-
-```
-type PodStatus struct {
-        ...
-        // List of user-initiated ephemeral containers that have been run in this pod.
-        // +optional
-        EphemeralContainers []EphemeralContainer `json:"commands,omitempty" protobuf:"bytes,11,rep,name=ephemeralContainers"`
-
-}
-```
-
-The kubelet should be able to construct a complete `PodStatus` with no prior
-state using information stored in the container runtime.
-`EphemeralContainer.Status` introduces no new data, but the kubelet must also
-now populate `EphemeralContainer.Spec` &
-`EphemeralContainer.TargetContainerName`.
-
-The kubelet already persists container metadata as CRI
+We wish for the kubelet to be able to construct `PodStatus` without relying on
+prior state, so we will store `EphemeralContainer.Spec` &
+`EphemeralContainer.TargetContainerName` as runtime metadata. The kubelet
+currently persists container metadata as CRI
 [labels](https://github.com/kubernetes/kubernetes/blob/v1.10.0-alpha.0/pkg/kubelet/apis/cri/v1alpha1/runtime/api.proto#L606)
 and
 [annotations](https://github.com/kubernetes/kubernetes/blob/v1.10.0-alpha.0/pkg/kubelet/apis/cri/v1alpha1/runtime/api.proto#L613).
 The entire v1.Container used in the request will be serialized and stored as a
 runtime annotation. The value of `TargetContainerName` will be stored as a
-runtime label. Persisting this data in the runtime means it will survive kubelet
+runtime label. Persisting this data in the runtime means it survives kubelet
 restarts.
 
 At least for the Docker runtime, this is [an intended use of docker
@@ -279,62 +264,35 @@ size. Because the container spec may be examined in security sensitive contexts
 like admission control, we will conservatively limit the size of the spec to 32K
 and add a 32K minimum label length test to runtime qualification.
 
-`EphemeralContainer` is populated by the kubelet in the same way as regular
-container statuses. This is sent to the API server and displayed by `kubectl
-describe pod`.
+`EphemeralContainer.Status` is populated by the kubelet in the same way as
+regular container statuses. This is sent to the API server and displayed by
+`kubectl describe pod`.
 
 ### Creating Debug Containers
 
-1.  `kubectl` invokes the new API as described in the preceding section.
-1.  The API server checks for name collisions with existing running containers
-    (in both `PodSpec` and `PodStatus.EphemeralContainers`), performs
-    validation, admission control and proxies the connection to the kubelet's
-    `/ephemeralContainers/$NS/$POD_NAME` endpoint.
-    1.  Since a name collision could happen in the interval between container
-        creation and PodStatus being published to the API server, the kubelet
-        will perform an additional check for name collision.
-    1.  It is permissible to replace an exited container with one of the same
-        name.
-1.  The kubelet request handler opens an error channel and signals the pod's
-    sync worker with `UpdatePodOptions` that include the `EphemeralContainer` in
-    a new field and a callback in the existing
-    `UpdatePodOptions.OnCompleteFunc`.
-    1.  The pod sync worker runs the existing `syncPod()` with a new
-        `SyncPodType` of `SyncPodDebug`.
-    1.  The request handler blocks (with timeout) on receiving an error from
-        `syncPod()` via the callback. During this time, `syncPod()` starts the
-        ephemeral container, including fetching an image if necessary, and
-        publishes a new `PodStatus`.
-    1.  Timeout is configured by the cluster administrator and defaults to 2
-        minutes.
-1.  `syncPod()` again checks for container name collision and starts an
-    ephemeral container via the new `kuberuntime.StartEphemeralContainer()`.
-    1.  `StartEphemeralContainer()` call uses the existing `startContainer()`
-        method, which gains support for targeting the namespaces of a container
-        by name.
-    1.  `syncPod()` runs only from a dedicated pod worker, resolving any races
-        for container creation.
+1.  `kubectl` constructs `EphemeralContainer.Spec` and
+    `EphemeralContainer.TargetContainerName` based on command line arguments. It
+    `PUT`s the modified pod to the pod's `/ephemeralcontainers`.
+1.  The apiserver discards changes to fields other than
+    `Pod.Status.EphemeralContainers` and validates the pod update.
+    1.  Update validation fails if existing Ephemeral Containers are removed or
+        changed, or if the new Ephemeral Container has a non-empty status.
+    1.  Pod validation fails if container spec contains fields disallowed for
+        Ephemeral Containers, has the same name as a container in the spec, or
+        has the same name as another running Ephemeral Container. (see below)
+    1.  API resource versioning resolves update races.
+1.  The kubelet's pod watcher notices the update and triggers a `syncPod()`.
+    During the sync, the kubelet calls `kuberuntime.StartEphemeralContainer()`
+    for any Ephemeral Container with an empty status.
+    1.  `StartEphemeralContainer()` uses the existing `startContainer()` method,
+        which gains support for targeting the namespaces of a container by name.
     1.  After initial creation, future invocations of `syncPod()` will publish
         its ContainerStatus but otherwise ignore the Ephemeral Container. It
         will exist for the life of the pod sandbox or it exits and is garbage
         collected. In no event will it be restarted.
-1.  `syncPod()` then finishes a regular sync, publishing an updated PodStatus
-    (which includes the new `EphemeralContainer`) by its normal, existing means.
-    The pod worker sends its exit status to the request worker.
-1.  The request worker receives a (hopefully `nil`) `error` and returns it to
-    the client.
-    1.  `OnCompleteFunc` is not guaranteed to be called, so if the request
-        worker times out it will check the pod's `PodStatus` to see if the Debug
-        Container was started prior to returning an error. If this happens the
-        `EphemeralContainer.Spec` must be compared to verify it was the same one
-        as requested.
+1.  `syncPod()` finishes a regular sync, publishing an updated PodStatus (which
+    includes the new `EphemeralContainer`) by its normal, existing means.
 1.  The client performs an attach to the debug container's console.
-
-The apiserver detects container name collisions with both containers in the pod
-spec and other running Debug Containers by checking
-`PodStatus.EphemeralContainers`. In a race to create two Debug Containers with
-the same name, the API server will pass both requests and the kubelet will
-reject one in the synchronized pod worker.
 
 There are no limits on the number of Debug Containers that can be created in a
 pod, but exceeding a pod's resource allocation may cause the pod to be evicted.
@@ -342,9 +300,9 @@ pod, but exceeding a pod's resource allocation may cause the pod to be evicted.
 ### Restarting and Reattaching Debug Containers
 
 Debug Containers will never be restarted automatically. It is possible to
-replace a Debug Container that has exited by re-using a Debug Container name. It
-is an error to attempt to replace a Debug Container that is still running, which
-is detected by both the API server and the kubelet.
+"restart" a Debug Container by by re-using the name of a Debug Container that
+has exited. It is an error to re-use the name of a Debug Container that is still
+running, which is detected by API server validation.
 
 One can reattach to a Debug Container using `kubectl attach`. When supported by
 a runtime, multiple clients can attach to a single debug container and share the
@@ -352,7 +310,7 @@ terminal. This is supported by Docker.
 
 ### Killing Debug Containers
 
-Debug containers will not be killed automatically until the pod (specifically,
+Debug containers will not be killed automatically unless the pod (specifically,
 the pod sandbox) is destroyed. Debug Containers will stop when their command
 exits, such as exiting a shell. Unlike `kubectl exec`, processes in Debug
 Containers will not receive an EOF if their connection is interrupted.
@@ -367,23 +325,16 @@ are necessary in the kubelet:
     the pod spec.
 1.  As an exception to the above, `SyncPod()` will kill Debug Containers when
     the pod sandbox changes since a lone Debug Container in an abandoned sandbox
-    is not useful. Debug Containers are not automatically started in the new
+    is not useful. Debug Containers are not started automatically in the new
     sandbox.
 1.  `convertStatusToAPIStatus()` must sort Debug Containers status into
-    `EphemeralContainerStatuses` similar to as it does for
+    `EphemeralContainer.Status` similar to as it does for
     `InitContainerStatuses`
-1.  The kubelet must preserve `ContainerStatus` on debug containers for
-    reporting.
 1.  Debug Containers must be excluded from calculation of pod phase and
     condition
 
-It's worth noting some things that do not change:
-
-1.  `KillPod()` already operates on all running containers returned by the
-    runtime.
-1.  Containers created prior to this feature being enabled will have a
-    `containerType` of `""`. Since this does not match `"EPHEMERAL"` the special
-    handling of Debug Containers is backwards compatible.
+`KillPod()` already operates on all running containers returned by the runtime
+and requires no changes
 
 ### Security Considerations
 
@@ -392,10 +343,8 @@ Debug Containers have no additional privileges above what is available to any
 spec except that it is created on demand.
 
 Admission plugins must be updated to guard `/ephemeralcontainers`. In
-particular, they should enforce the same container image policy on the `Image`
-parameter as is enforced for regular containers. During the alpha phase we will
-additionally support a container image whitelist as a kubelet flag to allow
-cluster administrators to easily constrain debug container images.
+particular, they should enforce the same container image policy on the
+`EphemeralContainer.Spec` parameter as is enforced for regular containers.
 
 ### Additional Consideration
 
@@ -421,7 +370,7 @@ cluster administrators to easily constrain debug container images.
 
 #### Goals and Non-Goals for Alpha Release
 
-We're targeting an alpha release in Kubernetes 1.10 that includes the following
+We're targeting an alpha release in Kubernetes 1.11 that includes the following
 basic functionality:
 
 *   Support in the kubelet for creating debug containers in a running pod
@@ -429,14 +378,15 @@ basic functionality:
 *   `kubectl describe pod` will list status of debug containers running in a pod
 
 Functionality will be hidden behind an alpha feature flag and disabled by
-default. The following are explicitly out of scope for the alpha release, but
-must be resolved prior to beta release:
+default.
 
-*   There's no guarantee that exited Debug Containers won't be garbage collected
-    as regular containers, so they may disappear from the list of
-    `EphemeralContainers`.
-*   We could improve reliability of `UpdatePodOptions.OnCompleteFunc` by
-    prioritizing based on `SyncPodType`.
+Since the kubelet stores Debug Container metadata as runtime labels, it's lost
+when Debug Containers are garbage collected. For the alpha release we will rely
+on the apiserver to store the `EphemeralContainer` for garbage collected
+containers. The kubelet will preserve any `EphemeralContainer` it doesn't
+recognize when updating status. In the event that a `PodStatus` is lost and we
+need to regenerate it from scratch, `EphemeralContainers` will only contain
+Debug Containers that have not been garbage collected.
 
 #### Kubernetes API Changes
 
@@ -444,8 +394,7 @@ The following changes must be implemented in the API:
 
 1.  `v1.EphemeralContainer` will be added and `v1.PodStatus` will be extended as
     described above.
-1.  The new subresource will be added to the pods API, validation added and
-    proxied to the kubelet.
+1.  The new subresource will be added to the pods API.
 1.  The API server must check for Ephemeral Containers when validating `attach`.
 
 #### kubelet Implementation
@@ -462,19 +411,16 @@ following steps:
     be identified as a debug container.
 1.  `kuberuntimemanager` gains a new `StartEphemeralContainer()` which calls the
     existing `startContainer()`.
-1.  The kubelet gains a `RunDebugContainer()` method which accepts a
-    `v1.EphemeralContainer` and triggers a pod sync to create the debug
-    container. The existing `generateAPIPodStatus()` will be update to also
-    populate `EphemeralContainers`.
-1.  The kubelet API gains the new `/ephemeralContainers/` endpoint to create the
-    Debug Container.
+1.  `syncPod()` will call `StartEphemeralContainer()` to start the Debug
+    Container. The existing `generateAPIPodStatus()` will be updated to also
+    populate `EphemeralContainers.Status`.
 
 #### kubectl changes
 
 In anticipation of this change, [#46151](https://pr.k8s.io/46151) added a
 `kubectl alpha` command to contain alpha features. We will add `kubectl alpha
 debug` to invoke Debug Containers. `kubectl` does not use feature gates, so
-`kubectl alpha debug` will be visible by default in `kubectl` 1.10 and return an
+`kubectl alpha debug` will be visible by default in `kubectl` 1.11 and return an
 error when used on a cluster with the feature disabled.
 
 `kubectl describe pod` will report the contents of `EphemeralContainers` when
