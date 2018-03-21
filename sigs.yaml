@@ -1138,9 +1138,9 @@ sigs:
         company: Ticketmaster
     meetings:
     - description: Regular SIG Meeting
-      day: Thursday
-      time: "00:00"
-      tz: "UTC"
+      day: Wednesday
+      time: "16:00"
+      tz: "PT (Pacific Time)"
       frequency: biweekly
       url: https://zoom.us/j/417251241
       archive_url: https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f
