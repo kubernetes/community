@@ -1,6 +1,6 @@
 # Staging Directory and Publishing
 
-The [staging/ directory](https://git.k8s.io/kubernetes/staging) of Kubernetes contains a number of pseudo repositories ("staging repos"). They are symlinked into Kubernetes' [vendor/ directory](https://git.k8s.io/kubernetes/vendor/k8s.io) for Golang to pick them up.
+The [staging/directory](https://git.k8s.io/kubernetes/staging) of Kubernetes contains a number of pseudo repositories ("staging repos"). They are symlinked into Kubernetes' [vendor/directory](https://git.k8s.io/kubernetes/vendor/k8s.io) for Golang to pick them up.
 
 We publish the staging repos using the [publishing bot](https://git.k8s.io/publishing-bot). It uses `git filter-branch` essentially to [cut the staging directories into separate git trees](https://de.slideshare.net/sttts/cutting-the-kubernetes-monorepo-in-pieces-never-learnt-more-about-git) and pushing the new commits to the corresponding real repositories in the [kubernetes organization on Github](https://github.com/kubernetes).
 
