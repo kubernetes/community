@@ -73,7 +73,7 @@ const (
     // Deletes the object from the key-value store, the garbage collector will delete the dependents in the background.
     DeletePropagationBackground DeletePropagationPolicy = "DeletePropagationBackground"
     // The object exists in the key-value store until the garbage collector deletes all the dependents whose ownerReference.blockOwnerDeletion=true from the key-value store.
-    // API sever will put the "DeletingDependents" finalizer on the object, and sets its deletionTimestamp.
+    // API server will put the "DeletingDependents" finalizer on the object, and sets its deletionTimestamp.
     // This policy is cascading, i.e., the dependents will be deleted with GarbageCollectionSynchronous.
     DeletePropagationForeground DeletePropagationPolicy = "DeletePropagationForeground"
 )
