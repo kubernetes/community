@@ -28,6 +28,7 @@ This design should:
 *  be container-runtime agnostic
 *  allow use of custom profiles
 *  facilitate containerized applications that link directly to libseccomp
+*  enable a default seccomp profile for containers
 
 ## Use Cases
 
@@ -40,6 +41,8 @@ This design should:
     unmediated by Kubernetes
 4.  As a user, I want to be able to use a custom seccomp profile and use
     it with my containers
+5.  As a user and administrator I want kubernetes to apply a sane default
+    seccomp profile to containers unless I otherwise specify.
 
 ### Use Case: Administrator access control
 
@@ -47,7 +50,7 @@ Controlling access to seccomp profiles is a cluster administrator
 concern. It should be possible for an administrator to control which users
 have access to which profiles.
 
-The [pod security policy](https://github.com/kubernetes/kubernetes/pull/7893)
+The [Pod Security Policy](https://github.com/kubernetes/kubernetes/pull/7893)
 API extension governs the ability of users to make requests that affect pod
 and container security contexts.  The proposed design should deal with
 required changes to control access to new functionality.
@@ -101,9 +104,7 @@ implement a sandbox for user-provided code, such as
 
 ## Community Work
 
-### Container runtime support for seccomp
-
-#### Docker / opencontainers
+### Docker / OCI
 
 Docker supports the open container initiative's API for
 seccomp, which is very close to the libseccomp API.  It allows full
@@ -112,14 +113,21 @@ specification of seccomp filters, with arguments, operators, and actions.
 Docker allows the specification of a single seccomp filter.  There are
 community requests for:
 
-Issues:
-
 * [docker/22109](https://github.com/docker/docker/issues/22109): composable
   seccomp filters
 * [docker/21105](https://github.com/docker/docker/issues/22105): custom
   seccomp filters for builds
 
-#### rkt / appcontainers
+Implementation details:
+
+* [docker/17989](https://github.com/moby/moby/pull/17989): initial
+  implementation
+* [docker/18780](https://github.com/moby/moby/pull/18780): default blacklist
+  profile
+* [docker/18979](https://github.com/moby/moby/pull/18979): default whitelist
+  profile
+
+### rkt / appcontainers
 
 The `rkt` runtime delegates to systemd for seccomp support; there is an open
 issue to add support once `appc` supports it.  The `appc` project has an open
@@ -133,22 +141,22 @@ Issues:
 * [appc/529](https://github.com/appc/spec/issues/529)
 * [rkt/1614](https://github.com/coreos/rkt/issues/1614)
 
-#### HyperContainer
+### HyperContainer
 
 [HyperContainer](https://hypercontainer.io) does not support seccomp.
 
-### Other platforms and seccomp-like capabilities
-
-FreeBSD has a seccomp/capability-like facility called
-[Capsicum](https://www.freebsd.org/cgi/man.cgi?query=capsicum&sektion=4).
-
-#### lxd
+### lxd
 
 [`lxd`](http://www.ubuntu.com/cloud/lxd) constrains containers using a default profile.
 
 Issues:
 
 * [lxd/1084](https://github.com/lxc/lxd/issues/1084): add knobs for seccomp
+
+### Other platforms and seccomp-like capabilities
+
+FreeBSD has a seccomp/capability-like facility called
+[Capsicum](https://www.freebsd.org/cgi/man.cgi?query=capsicum&sektion=4).
 
 ## Proposed Design
 
@@ -167,8 +175,6 @@ the future.
 Instead of implementing a new API resource, we propose that pods be able to
 reference seccomp profiles by name.  Since this is an alpha feature, we will
 use annotations instead of extending the API with new fields.
-
-### API changes?
 
 In the alpha version of this feature we will use annotations to store the
 names of seccomp profiles.  The keys will be:
@@ -191,7 +197,8 @@ profiles to be opaque to kubernetes for now.
 
 The following format is scoped as follows:
 
-1.  `docker/default` - the default profile for the container runtime
+1.  `docker/default` - the default profile for the container runtime, can be
+    overwritten by the following two.
 2.  `unconfined` - unconfined profile, ie, no seccomp sandboxing
 3.  `localhost/<profile-name>` - the profile installed to the node's local seccomp profile root
 
