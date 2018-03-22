@@ -125,7 +125,7 @@ go run hack/e2e.go -- -ctl='get events'
 go run hack/e2e.go -- -ctl='delete pod foobar'
 ```
 
-The tests are built into a single binary which can be run used to deploy a
+The tests are built into a single binary which can be used to deploy a
 Kubernetes system or run tests against an already-deployed Kubernetes system.
 See `go run hack/e2e.go --help` (or the flag definitions in `hack/e2e.go`) for
 more options, such as reusing an existing cluster.
