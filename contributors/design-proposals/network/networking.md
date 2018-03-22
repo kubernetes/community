@@ -185,4 +185,4 @@ AWS started rolling out basic
 [ipv6 support](https://aws.amazon.com/about-aws/whats-new/2016/12/announcing-internet-protocol-version-6-support-for-ec2-instances-in-amazon-virtual-private-cloud/),
 but direct ipv6 assignment to instances doesn't appear to be supported by other 
 major cloud providers (e.g. GCE) yet. We'd happily take pull requests from people 
-running Kubernetes on bare metal, though. :-)
+running Kubernetes on bare metal, though.
