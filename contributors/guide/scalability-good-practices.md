@@ -23,9 +23,9 @@ It is presented as a set of examples from the past which broke scalability tests
 
 ## TL;DR:
 1. To write fast code with efficient memory management, you must understand how Golang manages memory. This would seem obvious, but we have spent a considerable amount of time removing various bad patterns. In particular:
-wherever it is correct, pass arguments by pointers
-avoid unnecessary copying of data (especially slices and maps)
-avoid unnecessary allocations (pre-size slices, reuse buffers, be aware of anonymous function definitions with variable captures, etc.)
+- Wherever it is correct, pass arguments by pointers
+- Avoid unnecessary copying of data (especially slices and maps)
+- Avoid unnecessary allocations (pre-size slices, reuse buffers, be aware of anonymous function definitions with variable captures, etc.)
 
 2. Wherever you want to write client.Sth().List(..), consider using Informer (client-go/tools/cache/shared_informer.go). If you are going to List() resources, be very sure you need to do so <sup>[1](#1)</sup>.
  
@@ -132,13 +132,15 @@ This example illustrates how many problems in this area can be much more complex
 
 ### Big dependency changes
 Kubernetes depends on pretty much the whole universe. From time to time we need to update some dependencies (Godeps, etcd, go version). This can break us in many ways, as has already happened a couple of times. We skipped one version of Golang (1.5) precisely because it broke our performance. As this is being written, we are working with the Golang team to try to understand why Golang version 1.8 negatively affects Kubernetes performance.
- 
+
 If you are changing a large and important dependency, the only way to know what performance impact it will have is to run test and check.
-Where to look to get data?
-If you want to check the impact of your changes there are a number of places to look:
-Density and load tests output quite a lot of data either to test logs, or files inside 'ReportDir' - both of them include API call latencies, and density tests also include pod e2e startup latency information.
-For resource usage you can either use monitoring tools (heapster + Grafana, but note that at the time of writing, this stops working at around 100 Nodes), or just plain 'top' on the control plane (which scales as much as you want),
-More data is available on the `/metrics` endpoint of all our components (e.g. the one for the API server contains API call latencies),
+
+#### Where to look to get data?
+
+If you want to check the impact of your changes there are a number of places to look.
+- Density and load tests output quite a lot of data either to test logs, or files inside 'ReportDir' - both of them include API call latencies, and density tests also include pod e2e startup latency information.
+- For resource usage you can either use monitoring tools (heapster + Grafana, but note that at the time of writing, this stops working at around 100 Nodes), or just plain 'top' on the control plane (which scales as much as you want),
+- More data is available on the `/metrics` endpoint of all our components (e.g. the one for the API server contains API call latencies),
 to profile a component create an ssh tunnel to the machine running it, and run `go tool pprof localhost:<your_tunnel_port>` locally
 
 ## Summary
