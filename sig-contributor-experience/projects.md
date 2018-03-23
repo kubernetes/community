@@ -1,5 +1,7 @@
 # Projects and Goals
 
+*note - this is a temporary file until we can figure out a better project management solution.* 
+
 This is a list of the projects and goals currently underway with Contributor Experience. Please submit a PR if you are adding your project to this list. To introduce a new project, attend a weekly meeting or drop a note to us on the mailing list - details can be found on our [README](README.md). 
 
 Want to contribute? Take a look at this list and the "future" at the bottom. Thank you to all of our contributors for your hard work!
@@ -29,8 +31,8 @@ Ensure the contribution process is well documented, discoverable, and consistent
 Project | Owner(s)/Lead(s) | Description | Q1, Q2, Later
 ---|---|---|---
 [Contributor Guide](/contributors/guide) | @castrojo | Make contributor onboarding easier; first version | Q1
-Developer Guide | needs owner | a comprehensive guide for upstream developers to be a part of the Contributor Guide | Q2
-[New Community/Contributor Website](https://github.com/kubernetes/community/issues/1819) | @castrojo | A new home for all things community -documentation, KEPs, Mentoring, + more | Q2 - ongoing
+[Developer Guide](https://github.com/kubernetes/community/issues/1919) | @ryanj | a comprehensive guide for upstream developers to be a part of the Contributor Guide | Q2
+[New Contributor Website](https://github.com/kubernetes/community/issues/1819) | @castrojo | A new home for all things community -documentation, KEPs, Mentoring, + more | Q2 - ongoing
 [Label Documentation](https://gist.github.com/spiffxp/24937d8478853054c088ffc298021214) | @spiffxp | GitHub is rolling out a label description feature in the future; this is to document the label descriptions for contributors | Q1
 Issue Hygeine | @spzala | Produce clear understanding and documentation of issue hygeine | Q1
 
@@ -51,7 +53,7 @@ Project | Owner(s)/Lead(s) | Description | Q1, Q2, Later
 [Slack Admin Guidelines](/communication/slack-guidelines.md) | @parispittman | First iteration of guidelines to administer slack for 30k+ users | Q1
 [Weekly K8s Community Meeting](/events/community-meeting.md) | @castrojo, @parispittman | Smooth out weekly community meeting and make adjustments | Ongoing
 Roadshow | @parispittman | ContribEx to visit all SIG/WG meetings to deliver messages and collect feedback | Ongoing
-[Documentation](/communication/README.md) | @parispittman, @castrojo | Create new communication directory and include all information about our communication channels | Q1, Q2
+[Communication Documentation](/communication/README.md) | @parispittman, @castrojo | Create new communication directory and include all information about our communication channels | Q1, Q2
 
 ## DevStats
 https://k8s.devstats.cncf.io; work devstats into making it the one stop shop for all things upstream Kubernetes data. @phillels is the product owner.
