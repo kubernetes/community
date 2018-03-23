@@ -1,0 +1,6 @@
+reviewers:
+  - sig-vmware-leads
+approvers:
+  - sig-vmware-leads
+labels:
+  - sig/vmware

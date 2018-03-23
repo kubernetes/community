@@ -1584,6 +1584,32 @@ sigs:
     - name: dashboard
       owners:
       - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+  - name: VMware
+    dir: sig-vmware
+    mission_statement: >
+      Bring together members of the VMware and Kubernetes community to maintain,
+      support and run Kubernetes on VMware platforms.
+    label: vmware
+    leadership:
+      chairs:
+      - name: Fabio Rapposelli
+        github: frapposelli
+        company: VMware
+      - name: Steve Wong
+        github: cantbewong
+        company: VMware
+    meetings:
+    - description: Regular SIG Meeting
+      day: Thursday
+      time: "18:00"
+      tz: "UTC"
+      frequency: bi-weekly
+      url: https://VMware.zoom.us/j/181493332
+      archive_url: https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing
+      recordings_url:
+    contact:
+      slack: sig-vmware
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-vmware
   - name: Windows
     dir: sig-windows
     mission_statement: >

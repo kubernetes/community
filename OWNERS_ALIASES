@@ -99,6 +99,9 @@ aliases:
   sig-ui-leads:
     - danielromlein
     - floreks
+  sig-vmware-leads:
+    - frapposelli
+    - cantbewong
   sig-windows-leads:
     - michmike
   wg-app-def-leads:
