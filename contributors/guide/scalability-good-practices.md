@@ -4,8 +4,7 @@
 
 **Table of Contents**
 
-- [Who should read this document and what's in it?](#who-should-read-this-document-and-whats-in-it)
-- [TL;DR:](#tldr)
+- [Who should read this document and what's in it?](#who-should-read-this-document-and-what-is-in-it)
 - [What does it mean to "break scalability"?](#what-does-it-mean-to-break-scalability)
 - [Examples](#examples)
   - [Inefficient use of memory](#inefficient-use-of-memory)
@@ -20,21 +19,6 @@
 This document is targeted at developers of "vanilla Kubernetes" who do not want their changes rolled-back or blocked because they cause performance regressions. It contains some of the knowledge and experience gathered by the scalability team over more than two years.
  
 It is presented as a set of examples from the past which broke scalability tests, followed by some explanations and general suggestions on how to avoid causing similar problems.
-
-## TL;DR:
-1. To write fast code with efficient memory management, you must understand how Golang manages memory. This would seem obvious, but we have spent a considerable amount of time removing various bad patterns. In particular:
-- Wherever it is correct, pass arguments by pointers
-- Avoid unnecessary copying of data (especially slices and maps)
-- Avoid unnecessary allocations (pre-size slices, reuse buffers, be aware of anonymous function definitions with variable captures, etc.)
-
-2. Wherever you want to write client.Sth().List(..), consider using Informer (client-go/tools/cache/shared_informer.go). If you are going to List() resources, be very sure you need to do so <sup>[1](#1)</sup>.
- 
-3. Be careful when adding new API calls. Estimate how many QPS your change will add to the API server. If the number is large, you need to find a different way of doing it.
-In particular, be aware of “runs on every node” components, and the fan-in that can cause on the API server
- 
-4. From time to time you may need to add very complex logic to the system, one computation of which may take a long time to execute in big clusters. Do not add this on a critical path of any of the standard flows.
- 
-5. When updating large dependencies (especially etcd or Golang version), you must run large scale tests to verify the bump does not break Kubernetes' performance.
 
 ## What does it mean to "break scalability"?
 "Breaking scalability" means causing performance SLO violations in one of our performance tests. Performance SLOs for Kubernetes are <sup>[2](#2)</sup>:
