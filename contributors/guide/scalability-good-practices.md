@@ -4,7 +4,7 @@
 
 **Table of Contents**
 
-- [Who should read this document and what's in it?](#who-should-read-this-document-and-what-is-in-it)
+- [Who should read this document and what is in it?](#who-should-read-this-document-and-what-is-in-it)
 - [What does it mean to "break scalability"?](#what-does-it-mean-to-break-scalability)
 - [Examples](#examples)
   - [Inefficient use of memory](#inefficient-use-of-memory)
