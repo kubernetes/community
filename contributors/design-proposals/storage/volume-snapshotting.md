@@ -196,7 +196,7 @@ Open questions:
 
 * Do we call them snapshots or backups?
 
-    * From the SIG email: "The snapshot should not be suggested to be a backup in any documentation, because in practice is is necessary, but not sufficient, when conducting a backup of a stateful application."
+    * From the SIG email: "The snapshot should not be suggested to be a backup in any documentation, because in practice is necessary, but not sufficient, when conducting a backup of a stateful application."
 
 * At what minimum granularity should snapshots be allowed?
 
