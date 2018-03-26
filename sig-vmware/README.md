@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Bring together members of the VMware and Kubernetes community to maintain, support and run Kubernetes on VMware platforms.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 18:00 UTC](https://VMware.zoom.us/j/181493332) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 18:00 UTC](https://zoom.us/j/183662780) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing).
 
 ## Leadership
