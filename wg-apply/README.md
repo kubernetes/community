@@ -11,7 +11,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Improve the state of declarative object management by fixing `kubectl apply`, moving the logic from the client to the server. This move also enables new/fixed features included in the scope of this working-group: diff, dry-run and prune.
 Resources can be found in [this Google drive folder](https://drive.google.com/drive/folders/1wlpgkS2gFZXdp4x2WlRsfUBxkFlt2Gx0)
 
-
+## Meetings
+* Regular WG Meeting: [Tuesdays at 9:30 PT (Pacific Time)]() (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
 
 ## Organizers
 
