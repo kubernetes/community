@@ -797,9 +797,8 @@ which is in format of `local-volume-provisioner-${NODE_NAME}-${NODE_ID}`, it is 
 in PVs with `AnnProvisionedBy`, to indicate which PVs are up to a certain node.
 To distinguish it from the new env `PROVISIONER_NAME`, we will rename it to `provisionerTag`.
 
-New field `storageBackend` will be added into the configuration ConfigMap, to specify the backend,
-and only lvm is supported for alpha phase; Field `volumeGroup` will also be added to illustrate
-available volume group for lvm.
+New field will be added into the configuration ConfigMap, to specify available
+volume group for lvm:
 
 ```
 kind: ConfigMap
@@ -812,15 +811,16 @@ data:
       hostDir: "/mnt/ssds"
       mountDir: "/local-ssds"
     local-dynamic:
-      storageBackend: "lvm"
-      volumeGroup: "volumeGroup1"
+      lvm:
+        volumeGroup: "volumeGroup1"
 ```
 
 A StorageManager instance is responsible for:
 
-1. Monit available capacity for provisioning, and update the capacity in StorageClass if
+1. Monitor available capacity for provisioning, and update the capacity in StorageClass if
 there is a change.
-2. Provide the ability to create volumes, detailed in the volume creation section.
+2. Implement interface `CreateLocalVolume(*v1.PersistentVolumeClaim) *v1.PersistentVolume`
+to create PVs and the local volumes behind them.
 3. Implement interface `DeleteLocalVolume(string) error` to clean up the local volume behind a PV.
 
 ##### Reconcile Capacity
@@ -844,8 +844,7 @@ It stores latest StorageClass objects in cache, they are used:
 
 * To reconcile capacity, the StorageManager need to compare actual capacity with that recorded
 in StorageClass objects
-* During volume creation, some opitions (e.g. fsType for `mkfs`) are specified in StorageClasses
-as Parameters
+* During volume creation, some opitions (e.g. fsType for `mkfs`) are specified in StorageClasses as Parameters
 
 And for PVCs, when the `populator` finds:
 
@@ -871,7 +870,7 @@ provisionChan chan *v1.PersistentVolumeClaim
 When it finds a PVC is in need of privsioning, as desicribed above,
 the `populator` will pass it into the channel to trigger volume privisioning;
 `StorageManager` will be the consumer, it will watch the channel and
-manage provisioning when new input received, that is:
+call its `CreateLocalVolume` function to:
 
 1. Create volumes behind a PV accordingly
 2. Create a PV object that is pre-bound to the PVC
@@ -903,7 +902,7 @@ and for dynamic privisioned volumes, the deleting process should be:
 2. Call `volumeDeleteFunc` to recycle the volume behind the PV (e.g. delete the LV for lvm).
 3. Delete the PV object.
 
-##### Expansion of LocalVolumeSource
+##### Expansion of Local Volume Plugin
 
 Currently, the path in `LocalVolumeSource` must be a directory. Thus, for dynamic
 provisioned volumes, the provisioner need to mount the LV to a host path first,
