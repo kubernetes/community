@@ -1777,7 +1777,11 @@ workinggroups:
         github: lavalamp
         company: Google
     meetings:
-    # TBD: No regular meetings are scheduled yet.
+    - description: Regular WG Meeting
+      day: Tuesday
+      time: "9:30"
+      tz: "PT (Pacific Time)"
+      frequency: weekly
     contact:
       slack: wg-apply
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-apply
