@@ -1,44 +1,34 @@
 # Overview
 
-This document explains how cherry picks are managed on release branches within the
-Kubernetes projects.  Patches are either applied in batches or individually
-depending on the point in the release cycle.
+This document explains how cherry picks are managed on release
+branches within the Kubernetes projects.
 
-## Propose a Cherry Pick
+## Prerequisites
+ * [Contributor License Agreement](http://git.k8s.io/community/CLA.md)
+   is considered implicit for all code within cherry-pick pull requests,
+   ***unless there is a large conflict***.
+ * A pull request merged against the master branch.
+ * [Release branch](https://git.k8s.io/release/docs/branching.md) exists.
+ * The normal git and GitHub configured shell environment for pushing
+   to your kubernetes `origin` fork on GitHub and making a pull request
+   against a configured remote `upstream` that tracks
+   "https://github.com/kubernetes/kubernetes.git", including
+   `GITHUB_USER`.
+ * Have `hub` installed, which is most easily installed via `go get
+   github.com/github/hub` assuming you have a standard golang development
+   environment.
 
-1. Cherrypicks are [managed with labels and milestones](/contributors/guide/release-notes.md)
-1. To get a PR merged to the release branch, first ensure the following labels
-   are on the original **master** branch PR:
-  * The milestone for the branch that you want to cherry-pick to (e.g. v1.7 if you want to backport your change in 1.7 branch)
-  * The `cherrypick-candidate` label
-1. If `release-note-none` is set on the master PR, the cherrypick PR will need
-   to set the same label to confirm that no release note is needed.
-1. `release-note` labeled PRs generate a release note using the PR title by
-   default OR the release-note block in the PR template if filled in.
-  * See the [PR template](https://git.k8s.io/kubernetes/.github/PULL_REQUEST_TEMPLATE.md) for more details.
-  * PR titles and body comments are mutable and can be modified at any time
-    prior to the release to reflect a release note friendly message.
-
-### How do cherrypick-candidates make it to the release branch?
-
-1. **BATCHING:** After a branch is first created and before the X.Y.0 release
-  * Branch owners review the list of `cherrypick-candidate` labeled PRs.
-  * PRs batched up and merged to the release branch get a `cherrypick-approved`
-label and lose the `cherrypick-candidate` label.
-  * PRs that won't be merged to the release branch, lose the
-`cherrypick-candidate` label.
-
-1. **INDIVIDUAL CHERRYPICKS:** After the first X.Y.0 on a branch
-  * Run the cherry pick script. This example applies a master branch PR #98765
-to the remote branch `upstream/release-3.14`:
-`hack/cherry_pick_pull.sh upstream/release-3.14 98765`
-  * Your cherrypick PR (targeted to the branch) will immediately get the
-`do-not-merge/cherry-pick-not-approved` label. The branch owner will triage PRs
-targeted to the branch and label the ones to be merged by applying the `lgtm`
-label.
-
-There is an [issue](https://github.com/kubernetes/kubernetes/issues/23347) open
-tracking the tool to automate the batching procedure.
+## Initiate a Cherry Pick
+ * Run the [cherry pick script](https://git.k8s.io/kubernetes/hack/cherry_pick_pull.sh).
+   This example applies a master branch PR #98765 to the remote branch
+   `upstream/release-3.14`: `hack/cherry_pick_pull.sh upstream/release-3.14
+   98765`
+ * Your cherrypick PR targeted to the release branch will immediately get the
+   `do-not-merge/cherry-pick-not-approved` label. The release branch owner
+   will triage PRs targeted to the branch.  Normal rules apply for code merge.
+   * Reviewers `/lgtm` and owners `/approve` as they deem appropriate.
+   * The approving release branch owner is responsible for applying the
+     `cherrypick-approved` label.
 
 ## Cherry Pick Review
 
@@ -51,8 +41,3 @@ requested - this should not be the norm, but it may happen.
 
 See the [cherrypick queue dashboard](http://cherrypick.k8s.io/#/queue) for
 status of PRs labeled as `cherrypick-candidate`.
-
-[Contributor License Agreements](http://releases.k8s.io/HEAD/CONTRIBUTING.md) is
-considered implicit for all code within cherry-pick pull requests, ***unless
-there is a large conflict***.
-
