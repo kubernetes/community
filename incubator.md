@@ -1,3 +1,10 @@
+# IMPORTANT - The Kubernetes Incubator process is now deprecated and has been superseded by Kubernetes subprojects
+
+For information on creating a repository for a subproject see: [kubernetes-repositories](kubernetes-repositories.md)
+
+Each SIG should define the process for sponsoring new subprojects in its charter.  For information on SIG governance
+and charters see: [SIG governance](committee-steering/governance/README.md)
+
 # Kubernetes Incubator Process
 
 **Authors:** Brandon Philips <brandon.philips@coreos.com>, Sarah Novotny <sarahnovotny@google.com>, Brian Grant <briangrant@google.com>
