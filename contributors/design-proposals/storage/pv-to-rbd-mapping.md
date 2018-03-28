@@ -69,6 +69,18 @@ and hence can accommodate any pvc names and namespaces which are stored as arbit
 It also leaves room for storing any other metadata about the PVC.
 
 
+### Upgrade/Downgrade Behavior
+
+#### Upgrading from a K8s version without this metadata to a version with this metadata
+The metadata for image is populated on CreateImage. After an upgrade, existing RBD Images will not have that
+metadata set. When the next AttachDisk happens, we can check if the metadata is not set, set it. Cluster
+administrators could also run a one time script to set this manually. For all newly created RBD images,
+the rbd image metadata will be set properly.
+
+#### Downgrade from a K8s version with this metadata to a version without this metadata
+After a downgrade, all existing RBD images will have the metadata set. New RBD images created after the 
+downgrade will not have this metadata. 
+
 ## Proposal 1
 
 Make the RBD Image name as base64 encoded PVC name(namespace+name)
