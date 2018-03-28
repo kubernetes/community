@@ -28,25 +28,24 @@ replaces:
 
 ## Table of Contents
 
-* [Remove Cloud Provider Code From Kubernetes Core](#remove-cloud-provider-code-from-kubernetes-core)
-   * [Table of Contents](#table-of-contents)
-   * [Summary](#summary)
-   * [Motivation](#motivation)
-      * [Goals](#goals)
-      * [Intermediary Goals](#intermediary-goals)
-      * [Non-Goals](#non-goals)
-   * [Proposal](#proposal)
-      * [Controller Manager Changes](#controller-manager-changes)
-      * [Kubelet Changes](#kubelet-changes)
-      * [API Server Changes](#api-server-changes)
-      * [Volume Managent Changes](#volume-managent-changes)
-      * [Deployment Changes](#deployment-changes)
-      * [Implementation Details/Notes/Constraints [optional]](#implementation-detailsnotesconstraints-optional)
-      * [Security Considerations](#security-considerations)
-   * [Graduation Criteria](#graduation-criteria)
-   * [Implementation History](#implementation-history)
-   * [Drawbacks [optional]](#drawbacks-optional)
-   * [Alternatives [optional]](#alternatives-optional)
+- [Remove Cloud Provider Code From Kubernetes Core](#remove-cloud-provider-code-from-kubernetes-core)
+   - [Table of Contents](#table-of-contents)
+   - [Summary](#summary)
+   - [Motivation](#motivation)
+      - [Goals](#goals)
+      - [Intermediary Goals](#intermediary-goals)
+      - [Non-Goals](#non-goals)
+   - [Proposal](#proposal)
+      - [Controller Manager Changes](#controller-manager-changes)
+      - [Kubelet Changes](#kubelet-changes)
+      - [API Server Changes](#api-server-changes)
+      - [Volume Management Changes](#volume-management-changes)
+      - [Deployment Changes](#deployment-changes)
+      - [Security Considerations](#security-considerations)
+   - [Graduation Criteria](#graduation-criteria)
+      - [Graduation to Beta](#graduation-to-beta)
+         - [Process Goals](#process-goals)
+   - [Alternatives](#alternatives)
 
 ## Summary
 
@@ -217,7 +216,7 @@ Kube-apiserver uses the cloud provider for two purposes
 1. Distribute SSH Keys - This can be moved to the cloud dependent controller manager
 2. Admission Controller for PV - This can be refactored using the taints approach used in Kubelet
 
-### Volume Managent Changes
+### Volume Management Changes
 
 Volumes need cloud providers, but they only need **specific** cloud providers. The majority of volume management logic
 resides in the controller manager. These controller loops need to be moved into the cloud-controller manager. The cloud
