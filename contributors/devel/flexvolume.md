@@ -122,6 +122,12 @@ Note: Secrets are passed only to "mount/unmount" call-outs.
 ```
 "kubernetes.io/fsType":"<FS type>",
 "kubernetes.io/readwrite":"<rw>",
+
+"kubernetes.io/pod.name": <string>,
+"kubernetes.io/pod.namespace": <string>,
+"kubernetes.io/serviceAccount.name": <string>,
+"kubernetes.io/pod.uid": <string>,
+
 "kubernetes.io/secret/key1":"<secret1>"
 ...
 "kubernetes.io/secret/keyN":"<secretN>"
