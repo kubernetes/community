@@ -46,7 +46,6 @@ components.
 This proposal provides a mechanism to coordinate fine-grained hardware
 resource assignments for different components in Kubernetes.
 
-
 # Motivation
 
 Multiple components in the Kubelet make decisions about system
@@ -73,12 +72,17 @@ with measurable performance ramifications.
 - [Support VF interrupt binding to specified CPU][sriov-issue-10]
 - [Proposal: CPU Affinity and NUMA Topology Awareness][proposal-affinity]
 
-Note that all of these concerns pertain only to multi-socket systems.
+Note that all of these concerns pertain only to multi-socket systems. Correct
+behavior requires that the kernel receive accurate topology information from
+the underlying hardware (typically via the SLIT table). See section 5.2.16
+and 5.2.17 of the
+[ACPI Specification](http://www.acpi.info/DOWNLOADS/ACPIspec50.pdf) for more
+information.
 
 ## Goals
 
-- Allow CPU manager and Device Manager to agree on preferred
-  NUMA node affinity for containers.
+- Arbitrate preferred NUMA node affinity for containers based on input from
+  CPU manager and Device Manager.
 - Provide an internal interface and pattern to integrate additional
   topology-aware Kubelet components.
 
@@ -98,7 +102,7 @@ Note that all of these concerns pertain only to multi-socket systems.
 - _CNI:_ Changing the Container Networking Interface is out of scope for
   this proposal. However, this design should be extensible enough to
   accommodate network interface locality if the CNI adds support in the
-  future. This limitation is potentially mitigated by the possiblity to
+  future. This limitation is potentially mitigated by the possibility to
   use the device plugin API as a stopgap solution for specialized
   networking requirements.
 
@@ -136,14 +140,15 @@ affinity.
 This proposal is focused on a new component in the Kubelet called the
 NUMA Manager. The NUMA Manager implements the pod admit handler
 interface and participates in Kubelet pod admission. When the `Admit()`
-function is called, the NUMA manager collects NUMA hints from from other
+function is called, the NUMA manager collects NUMA hints from other
 Kubelet components.
 
 If the NUMA hints are not compatible, the NUMA manager could choose to
 reject the pod. The details of what to do in this situation needs more
 discussion. For example, the NUMA manager could enforce strict NUMA
 alignment for Guaranteed QoS pods. Alternatively, the NUMA manager could
-simply provide best-effort NUMA alignment for all pods.
+simply provide best-effort NUMA alignment for all pods. The NUMA manager could
+use `softAdmitHandler` to keep the pod in `Pending` state.
 
 The NUMA Manager component will be disabled behind a feature gate until
 graduation from alpha to beta.
@@ -161,6 +166,10 @@ present in all lists. Here is a sketch:
    bitwise-and over the masks in each permutation.
 1. Store the first non-empty result and break out early.
 1. If no non-empty result exists, return an error.
+
+The behavior when a match does not exist should be configurable. The Kubelet
+could support a config option to require strict NUMA assignment when set to
+`true`. A `false` value would mean best-effort NUMA alignment.
 
 #### New Interfaces
 
@@ -190,7 +199,9 @@ type Store interface {
 // NUMA-related resource assignments. The NUMA manager consults each
 // hint provider at pod admission time.
 type HintProvider interface {
-  GetNUMAHints(pod v1.Pod, containerName string) []NUMAMask
+  // Returns a mask if this hint provider has a preference; otherwise
+  // returns `_, false` to indicate "don't care".
+  GetNUMAHints(pod v1.Pod, containerName string) ([]NUMAMask, bool)
 }
 ```
 
@@ -220,7 +231,8 @@ _NUMA Manager instantiation and inclusion in pod admit lifecycle._
        interface. Plugins should be able to determine the NUMA node
        easily when enumerating supported devices. For example, Linux
        exposes the node ID in sysfs for PCI devices:
-       `/sys/devices/pci*/*/numa_node`.
+       `/sys/devices/pci*/*/numa_node`. NOTE: this is `-1` on many
+       public cloud instances and single-node machines.
     1. Device Manager calls `GetAffinity()` method of NUMA manager when
        deciding device allocation.
 
