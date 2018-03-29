@@ -28,7 +28,19 @@ superseded-by:
 
 ## Table of Contents
 
-TODO: generate from: https://github.com/ekalinin/github-markdown-toc
+- [Apply](#apply)
+   - [Table of Contents](#table-of-contents)
+   - [Summary](#summary)
+   - [Motivation](#motivation)
+      - [Goals](#goals)
+      - [Non-Goals](#non-goals)
+   - [Proposal](#proposal)
+      - [Implementation Details/Notes/Constraints [optional]](#implementation-detailsnotesconstraints-optional)
+      - [Risks and Mitigations](#risks-and-mitigations)
+   - [Graduation Criteria](#graduation-criteria)
+   - [Implementation History](#implementation-history)
+   - [Drawbacks](#drawbacks)
+   - [Alternatives](#alternatives)
 
 ## Summary
 
