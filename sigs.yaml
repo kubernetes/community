@@ -1335,9 +1335,9 @@ sigs:
       - name: Bobby (Babak) Salamat
         github: bsalamat
         company: Google
-      - name: Timothy St. Clair
-        github: timothysc
-        company: Heptio
+      - name: Klaus Ma
+        github: k82cn
+        company: IBM
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
