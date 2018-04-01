@@ -26,10 +26,10 @@ See [community membership]
 # Community groups
 
 The project has 4 main types of groups:
-1. Special Interest Groups, SIGs
-2. Subprojects
-3. Working Groups, WGs
-4. Committees
+* Special Interest Groups, SIGs
+  * Subprojects
+* Working Groups, WGs
+* Committees
 
 ## SIGs
 
@@ -52,8 +52,8 @@ itself. Examples:
 * Horizontal: Scalability, Architecture
 * Project: Testing, Release, Docs, PM, Contributor Experience
 
-SIGs must have at least one and ideally two SIG leads at any given
-time. SIG leads are intended to be organizers and facilitators,
+SIGs must have at least one and ideally two SIG chairs at any given
+time. SIG chairs are intended to be organizers and facilitators,
 responsible for the operation of the SIG and for communication and
 coordination with the other SIGs, the Steering Committee, and the
 broader community.
@@ -62,7 +62,8 @@ Each SIG must have a charter that specifies its scope (topics,
 subsystems, code repos and directories), responsibilities, areas of
 authority, how members and roles of authority/leadership are
 selected/granted, how decisions are made, and how conflicts are
-resolved. A [short template] for intra-SIG governance has been
+resolved. See the [SIG charter process] for details on how charters are managed.
+A [short template] for intra-SIG governance has been
 developed in order to simplify SIG creation, and additional templates
 are being developed, but SIGs should be relatively free to customize
 or change how they operate, within some broad guidelines and
@@ -79,7 +80,7 @@ community.
 See [sig governance] for more details about current SIG operating
 mechanics, such as mailing lists, meeting times, etc.
 
-## Subprojects
+### Subprojects
 
 Specific work efforts within SIGs are divided into **subprojects**.
 Every part of the Kubernetes code and documentation must be owned by
@@ -106,15 +107,28 @@ This is the purpose of Working Groups (WG). The intent is to make
 Working Groups relatively easy to create and to deprecate, once
 inactive.
 
-To propose a new working group, first find a SIG to sponsor the group. 
-Next, send a proposal to kubernetes-dev@googlegroups.com and also include
-any potentially interested SIGs. Wait for public comment. If there's 
-enough interest, a new Working Group should be formed. 
+Working groups do not own any code or subprojects. Instead, they are a place for
+people to discuss topics that cross SIG boundaries.
 
-Create a new mailing list in the from of kubernetes-wg-group-name. Working 
+Working groups are primarily used to facilitate topics of discussion that are in
+scope for Kubernetes but that cross SIG lines. If a set of folks in the
+community want to get together and discuss a topic, they can do so without
+forming a Working Group. As a community we will be looking for other ways to
+highlight and encourage a larger ecosystem (with things like slack channels)
+without offering any official endorsement.
+
+To propose a new working group, first find a SIG to sponsor the group.
+Next, send a proposal to kubernetes-dev@googlegroups.com and also include
+any potentially interested SIGs. Wait for public comment. If there's
+enough interest, a new Working Group should be formed.
+
+Create a new mailing list in the from of kubernetes-wg-group-name. Working
 groups typically have a Slack channel as well as regular meetings on zoom.
 It's encouraged to keep a clear record of all accomplishments that's publicly
-accessible.
+accessible.  Like SIGs, working group communications and meetings should be
+open and be recorded for later viewing.
+
+Working groups are documented in [sigs.yaml](sigs.yaml).
 
 ## Committees
 
@@ -124,7 +138,7 @@ open and anyone can join, Committees do not have open membership and do
 not always operate in the open.  The steering committee can form
 committees as needed, for bounded or unbounded duration.  Membership
 of a committee is decided by the steering committee.  Like a SIG, a
-committee has a charter and a lead, and will report to the steering
+committee has a charter and a chair, and will report to the steering
 committee periodically, and to the community as makes sense, given the
 charter.
 
@@ -151,17 +165,15 @@ to its charter, will own the decision. In the case of extended debate
 or deadlock, decisions may be escalated to the Steering Committee,
 which is expected to be uncommon.
 
-The exact processes and guidelines for such cross-project
-communication have yet to be formalized, but when in doubt, use
-kubernetes-dev@googlegroups.com and make an announcement at the
-community meeting.
+The [KEP process] is being developed as a way to facilitate definition, agreement and communication of efforts that cross SIG boundaries.
+SIGs are encouraged to use this process for larger efforts.
+This process is also available for smaller efforts within a SIG.
 
 # Repository guidelines
 
-All repositories under Kubernetes github orgs, such as kubernetes and kubernetes-incubator,
-should follow the procedures outlined in the [incubator document](incubator.md). All code projects
-use the [Apache License version 2.0](LICENSE). Documentation repositories should use the
-[Creative Commons License version 4.0](https://git.k8s.io/website/LICENSE).
+All new repositories under Kubernetes github orgs should follow the process outlined in the [kubernetes repository guidelines].
+
+Note that "Kubernetes incubator" process has been deprecated in favor of the new guidelines.
 
 # CLA
 
@@ -170,6 +182,8 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 [community membership]: /community-membership.md
 [sig governance]: /sig-governance.md
 [owners]: community-membership.md#subproject-owner
-[short template]: committee-steering/governance/sig-charter-template.md
+[sig charter process]: committee-steering/governance/README.md
+[short template]: committee-steering/governance/sig-governance-template-short.md
+[kubernetes repository guidelines]: kubernetes-repositories.md
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/governance.md?pixel)]()

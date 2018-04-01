@@ -13,16 +13,27 @@ issues, mailing lists, conferences, etc.
 
 For more specific topics, try a SIG.
 
-## SIGs
+## Governance
 
-Kubernetes is a set of subprojects, each shepherded by a Special Interest Group (SIG).
+Kubernetes has three types of groups that are officially supported:
 
-A first step to contributing is to pick from the [list of kubernetes SIGs](sig-list.md).
+* **Committees** are named sets of people that are chartered to take on sensitive topics.
+  This group is encouraged to be as open as possible while achieving its mission but, because of the nature of the topics discussed, private communications are allowed.
+  Examples of committees include the steering committee and things like security or code of conduct.
+* **Special Interest Groups (SIGs)** are persistent open groups that focus on a part of the project.
+  SIGs must have open and transparent proceedings.
+  Anyone is welcome to participate and contribute provided they follow the Kubernetes Code of Conduct.
+  The purpose of a SIG is to own and develop a set of **subprojects**.
+  * **Subprojects** Each SIG can have a set of subprojects.
+    These are smaller groups that can work independently.
+    Some subprojects will be part of the main Kubernetes deliverables while others will be more speculative and live in the `kubernetes-sigs` github org.
+* **Working Groups** are temporary groups that are formed to address issues that cross SIG boundaries.
+  Working groups do not own any code or other long term artifacts.
+  Working groups can report back and act through involved SIGs.
 
-A SIG can have its own policy for contribution,
-described in a `README` or `CONTRIBUTING` file in the SIG
-folder in this repo (e.g. [sig-cli/CONTRIBUTING](sig-cli/CONTRIBUTING.md)),
-and its own mailing list, slack channel, etc.
+See the [full governance doc](governance.md) for more details on these groups.
+
+A SIG can have its own policy for contribution, described in a `README` or `CONTRIBUTING` file in the SIG folder in this repo (e.g. [sig-cli/CONTRIBUTING.md](sig-cli/CONTRIBUTING.md)), and its own mailing list, slack channel, etc.
 
 If you want to edit details about a SIG (e.g. its weekly meeting time or its leads),
 please follow [these instructions](./generator) that detail how our docs are auto-generated.
@@ -34,7 +45,11 @@ lead to many relevant technical topics.
 
 ## Contribute
 
-The [Contributor Guide](contributors/guide/README.md) provides detailed instructions on how to get your ideas and bug fixes seen and accepted, including:
+A first step to contributing is to pick from the [list of kubernetes SIGs](sig-list.md).
+Start attending SIG meetings, join the slack channel and subscribe to the mailing list.
+SIGs will often have a set of "help wanted" issues that can help new contributors get involved.
+
+The [Contributor Guide](contributors/guide/README.md) provides detailed instruction on how to get your ideas and bug fixes seen and accepted, including:
 1. How to [file an issue]
 1. How to [find something to work on]
 1. How to [open a pull request]
