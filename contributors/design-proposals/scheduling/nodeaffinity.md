@@ -45,17 +45,21 @@ described [here](https://github.com/kubernetes/kubernetes/pull/18265).
 ```go
 // A node selector represents the union of the results of one or more label queries
 // over a set of nodes; that is, it represents the OR of the selectors represented
-// by the nodeSelectorTerms.
+// by the node selector terms.
 type NodeSelector struct {
-	// nodeSelectorTerms is a list of node selector terms. The terms are ORed.
+	//Required. A list of node selector terms. The terms are ORed.
 	NodeSelectorTerms []NodeSelectorTerm `json:"nodeSelectorTerms,omitempty"`
 }
 
-// An empty node selector term matches all objects. A null node selector term
-// matches no objects.
+// A null or empty node selector term matches no objects. The requirements of
+// them are ANDed.
+// The TopologySelectorTerm type implements a subset of the NodeSelectorTerm.
 type NodeSelectorTerm struct {
-	// matchExpressions is a list of node selector requirements. The requirements are ANDed.
+	// A list of node selector requirements by node's labels.
 	MatchExpressions []NodeSelectorRequirement `json:"matchExpressions,omitempty"`
+
+    // A list of node selector requirements by node's fields.
+	MatchFields []NodeSelectorRequirement `json:"matchFields,omitempty"`
 }
 
 // A node selector requirement is a selector that contains values, a key, and an operator
