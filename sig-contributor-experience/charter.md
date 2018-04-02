@@ -46,13 +46,13 @@ Can be found on our [README](README.md)
 
 ## Leadership Composition
   * Two (2) Chairs and Two (2) Technical Leads unless group decides that more is needed
-  * Each Chair and Technical Lead will be responsible for a sub-group in addition to assisting with the processes outlined here. 
+  * Each Chair and Technical Lead will be responsible for a sub-group in addition to assisting with the processes outlined here 
   * Lazy Consensus within the SIG to make final decision 
 * Changing leadership
   * Candidates are nominated through the mailing list and confirmed at SIG meeting; self nomination is fine. Candidate needs two +1’s from folks representing different companies or independent/freelancers in the community to be considered a nominee 
   * Chair/TL may step down at any time for any reason and propose a replacement that is already an active contributing member of Contributor Experience. They will make the change to the OWNERs file
   * A Chair/TL may be asked to step down if one of the following occurs:
-    * Inactivity as determined by the governance of the project or as specifically described in the ask to SIG leadership.
+    * Inactivity as determined by the governance of the project or as specifically described in the ask to SIG leadership
     * Inappropriate behavior or code of conduct issues
     * For other reasons as determined by the Chair/TLs at that time but also discussed in conjunction with the lead in question
     * Chair/TLs may appoint a temporary replacement if a leave of absence is desired, called a delegate that is already an active contributing member of Contributor Experience  
