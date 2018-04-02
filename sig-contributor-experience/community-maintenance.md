@@ -59,6 +59,15 @@ If you find that any one person is in charge of a resource it is your responsibi
     - Brendan Burns (@brendandburns)
     - Tim Hockin (@thockin)
 
+### Community Meeting
+
+- [ ] Generate an archive of the [communtiy meeting notes](https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#heading=h.2gp5yf2snwg5) for the quarter if necessary
+  - [ ] Ensure the retrospective section has links to the retrospective for the releases
+  - [ ] Ensure the demo section is filled out and demos are assigned dates
+  - [ ] Ensure the [agenda template and hosting guide](https://docs.google.com/document/d/1g7fR5cvCGFq15SJ4iQMclbj0QIeREKu_QP8ftnSaJ4o/edit) are up to date 
+- [ ] Ensure the [SIG Schedule](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=1543199895) have SIGs assigned for the next few months
+  - [ ] Ensure the assigned SIGs in this sheet match the actual SIGs in sigs.yaml. Double check that a SIG hasn't missed an update this past cycle and if they have schedule them for an upcoming meeting
+
 ### Properties Managed by the CNCF
 
 The CNCF provides support to Kubernetes for the following properties, you do not need to check them, however members of SIG Contributor Experience should have a working relationship with the administrators of the following properties:
