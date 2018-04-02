@@ -34,7 +34,7 @@ Project | Owner(s)/Lead(s) | Description | Q1, Q2, Later
 [Developer Guide](https://github.com/kubernetes/community/issues/1919) | @ryanj | a comprehensive guide for upstream developers to be a part of the Contributor Guide | Q2
 [New Contributor Website](https://github.com/kubernetes/community/issues/1819) | @castrojo | A new home for all things community -documentation, KEPs, Mentoring, + more | Q2 - ongoing
 [Label Documentation](https://gist.github.com/spiffxp/24937d8478853054c088ffc298021214) | @spiffxp | GitHub is rolling out a label description feature in the future; this is to document the label descriptions for contributors | Q1
-Issue hygiene | @spzala | Produce clear understanding and documentation of issue hygeine | Q1
+Issue hygiene | @spzala | Produce clear understanding and documentation of issue hygiene | Q1
 
 
 ## Contributor Workflow and Automation
