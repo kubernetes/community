@@ -945,6 +945,19 @@ sigs:
         description: Test Failures and Triage
       - name: sig-mutlicluster-proposals
         description: Design Proposals
+    subprojects:
+    - name: federation-v1
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/federation/master/OWNERS
+    - name: federation-v2
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/federation-v2/master/OWNERS
+    - name: cluster-registry
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cluster-registry/master/OWNERS
+    - name: kubemci
+      owners:
+      - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
   - name: Network
     dir: sig-network
     mission_statement: >

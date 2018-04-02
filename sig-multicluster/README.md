@@ -31,6 +31,22 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fmulticluster)
 
+## Subprojects
+
+The following subprojects are owned by sig-multicluster:
+- **federation-v1**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/federation/master/OWNERS
+- **federation-v2**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/federation-v2/master/OWNERS
+- **cluster-registry**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/cluster-registry/master/OWNERS
+- **kubemci**
+  - Owners:
+    - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
