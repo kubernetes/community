@@ -3,7 +3,7 @@
 **Note:** This document is in progress
 
 This doc outlines the various responsibilities of contributor roles in Kubernetes.  The Kubernetes
-project is subdivided into subprojects under SIGs.  Responsibilities for most roles is scoped to these subprojects.
+project is subdivided into subprojects under SIGs.  Responsibilities for most roles are scoped to these subprojects.
 
 | Role | Responsibilities | Requirements | Defined by |
 | -----| ---------------- | ------------ | -------|
