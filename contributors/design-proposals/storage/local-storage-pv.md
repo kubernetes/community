@@ -785,8 +785,16 @@ Mechanisms to manage local storage sources are varied.
 In addition to current `populator`, `deletor` and `discoverer`, a new component named
 `storageManager` will be introduced in the plugin, to manage the backend storage.
 
-`storageManager` is a general interface, each kind of storage should have its own implementation.
-LVM StorageManager will be introduced in alpha phase, acting as the default StorageManager.
+According to the input of classes in the configuration, there will be a list of `wrappers`
+under the manager, to communicate with backend storage. `wrapper` is a general interface,
+each kind of storage should have its own implementation. storageManager store the wrappers
+according to storage classes, wrappers of different classes can be different.
+LVM wrapper will be introduced in alpha phase.
+
+```
+Wrappers map[string]wrapper.LocalVolumeWrapper
+```
+
 During start-up, a new environment variable is needed for the provisioner DaemonSet:
 
 * `PROVISIONER_NAME` to specify the name of the provisioner, its value matches the Provisioner
@@ -819,14 +827,15 @@ A StorageManager instance is responsible for:
 
 1. Monitor available capacity for provisioning, and update the capacity in StorageClass if
 there is a change.
-2. Implement interface `CreateLocalVolume(*v1.PersistentVolumeClaim) *v1.PersistentVolume`
+2. Implement interface `CreateLocalVolume(claim *v1.PersistentVolumeClaim) error`
 to create PVs and the local volumes behind them.
-3. Implement interface `DeleteLocalVolume(string) error` to clean up the local volume behind a PV.
+3. Implement interface `DeleteLocalVolume(pv *v1.PersistentVolume) error` to
+clean up the local volume behind a PV.
 
 ##### Reconcile Capacity
 
 The StorageManager is expected to reconcile capacity of StorageClasses in its local
-`storageClassMap` regularly. Particularly, LVM StorageManager behaviors as follows:
+`storageClassMap` regularly. Particularly, for LVM, the proposed workflow is:
 
 1. Walks through classes in its `storageClassMap` regularly
 2. Fetch the VG of each class if `volumeGroup` is specified
@@ -838,19 +847,12 @@ We'll consider it in a subsequent phase.
 
 ##### Change in Populator
 
-In addition to PV, the `populator` will also be extended to watch StorageClasses and PVC objects of all namespaces.
-
-It stores latest StorageClass objects in cache, they are used:
-
-* To reconcile capacity, the StorageManager need to compare actual capacity with that recorded
-in StorageClass objects
-* During volume creation, some opitions (e.g. fsType for `mkfs`) are specified in StorageClasses as Parameters
-
-And for PVCs, when the `populator` finds:
+In addition to PV, the `populator` will also be extended to watch PVC objects of all namespaces.
+When the `populator` finds:
 
 1. An unbound PVC is annotated with `annSelectedNode`, and its node name match the value
-of the annotation
-2. Value of the `annStorageProvisioner` on the PVC matches the name of the provisioner
+of the annotation.
+2. Value of the `annStorageProvisioner` on the PVC matches the name of the provisioner.
 
 It then trigger volume provsioning, detailed in the volume creation section.
 
@@ -861,15 +863,15 @@ For these purposes, the following permissions are required:
 
 ##### Volume Creation
 
-During start-up of the provisioner, a new channel `provisionChan` will be created,
+During start-up of the provisioner, a new work queue `ProvisionQueue` will be created,
 and passed into both `populator` and `storageManager`:
 
 ```
-provisionChan chan *v1.PersistentVolumeClaim
+ProvisionQueue *workqueue.Type
 ```
 When it finds a PVC is in need of privsioning, as desicribed above,
-the `populator` will pass it into the channel to trigger volume privisioning;
-`StorageManager` will be the consumer, it will watch the channel and
+the `populator` will pass it into the queue to trigger volume privisioning;
+`StorageManager` will be the consumer, it will watch the queue and
 call its `CreateLocalVolume` function to:
 
 1. Create volumes behind a PV accordingly
@@ -880,15 +882,20 @@ For LVM, the proposed workflow is:
 1. Check if there is already a PV pre-bound to the PVC, if so, return directly
 (This can happen when a volume has already been provisioned for a PVC,
 but has not been bound to the PVC by the controller yet).
-2. Check if Storage Class of the PVC is in record of its storageClass map.
+2. Check if the its capacity has been initialized in the StorageClass.
 If not, return error.
 3. Check if the class is available for dynamic provisioning (i.e. has an input of `volumeGroup`).
 If not, return error.
-4. Check if `Free Size` of the VG under the class can satisfy the capacity requested
-in the PVC. If not, return error.
-5. Create `logical volume (LV)` object in the VG.
-6. Create a PV API object that is pre-bound to the PVC, and the path
+4. Create `logical volume (LV)` object in the VG.
+5. Create a PV API object that is pre-bound to the PVC, and the path
 of local storage in the PV should be the path of the LV created above.
+
+**Note:** As it describes in [Volume Topology-aware Scheduling](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/volume-topology-scheduling.md),
+in whichever step it fails, the provisioner will signal back to the scheduler
+to retry dynamic provisioning by removing the "annSelectedNode" annotation of
+the PVC.
+
+For the purpose, it requires the permission to update PersistentVolumeClaims.
 
 ##### Cleanup after Release
 
