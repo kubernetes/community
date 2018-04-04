@@ -1,18 +1,6 @@
 reviewers:
-  - bgrant0607
-  - philips
-  - thockin
-  - sarahnovotny
-  - smarterclayton
-  - jbeda
-  - brendanburns
+  - steering-committee
 approvers:
-  - bgrant0607
-  - philips
-  - thockin
-  - sarahnovotny
-  - smarterclayton
-  - jbeda
-  - brendanburns
+  - steering-committee
 labels:
   - committee/steering

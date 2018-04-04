@@ -1,8 +1,11 @@
 reviewers:
-  - vishh
   - cblecker
+  - grodrigues3
+  - jamiehannaford
+  - spiffxp
 approvers:
-  - vishh
   - cblecker
+  - grodrigues3
+  - spiffxp
 labels:
   - sig/contributor-experience

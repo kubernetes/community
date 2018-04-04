@@ -125,7 +125,7 @@ the container by the dockertools library.
 
 ### Event flow
 
-This is what happens before and after an user schedules a GPU pod.
+This is what happens before and after a user schedules a GPU pod.
 
 1. Administrator installs a number of Kubernetes nodes with GPUs. The correct
 kernel modules and device nodes under `/dev/` are present.

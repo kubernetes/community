@@ -66,7 +66,7 @@ The monitoring architecture should
   master API (today the master metrics API), such that core Kubernetes features do not
   depend on non-core components
   * requires Kubelet to only export a limited set of metrics, namely those required for
-  core Kubernetes components to correctly operate (this is related to #18770)
+  core Kubernetes components to correctly operate (this is related to [#18770](https://github.com/kubernetes/kubernetes/issues/18770))
   * can scale up to at least 5000 nodes
   * is small enough that we can require that all of its components be running in all deployment
   configurations

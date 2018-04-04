@@ -23,9 +23,15 @@ Developing and sustaining a healthy community of contributors is critical to sca
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**), Google
 * Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), CoreOS
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**), Google
+* Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-contribex)
@@ -44,9 +50,15 @@ The following subprojects are owned by sig-contributor-experience:
 - **contributors-guide**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
+- **devstats**
+  - Owners:
+    - Phillels
 - **k8s.io**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
+- **mentoring**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
 - **repo-infra**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS

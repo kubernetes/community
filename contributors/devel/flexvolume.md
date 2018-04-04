@@ -129,10 +129,10 @@ Note: Secrets are passed only to "mount/unmount" call-outs.
 
 ### Example of Flexvolume
 
-See [nginx.yaml] & [nginx-nfs.yaml] for a quick example on how to use Flexvolume in a pod.
+See [nginx-lvm.yaml] & [nginx-nfs.yaml] for a quick example on how to use Flexvolume in a pod.
 
 
 [lvm]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/lvm
 [nfs]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/nfs
-[nginx.yaml]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/nginx.yaml
+[nginx-lvm.yaml]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/nginx-lvm.yaml
 [nginx-nfs.yaml]: https://git.k8s.io/kubernetes/examples/volumes/flexvolume/nginx-nfs.yaml

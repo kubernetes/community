@@ -6,9 +6,13 @@ authors:
   - "@calebamiles"
 owning-sig: sig-apimachinery
 participating-sigs:
-  - sig-storage
   - sig-apps
+  - sig-aws
+  - sig-azure
+  - sig-gcp
   - sig-network
+  - sig-openstack
+  - sig-storage
 reviewers:
   - "@wlan0"
   - "@calebamiles"
@@ -24,25 +28,24 @@ replaces:
 
 ## Table of Contents
 
-   * [Remove Cloud Provider Code From Kubernetes Core](#remove-cloud-provider-code-from-kubernetes-core)
-      * [Table of Contents](#table-of-contents)
-      * [Summary](#summary)
-      * [Motivation](#motivation)
-         * [Goals](#goals)
-         * [Intermediary Goals](#intermediary-goals)
-         * [Non-Goals](#non-goals)
-      * [Proposal](#proposal)
-         * [Controller Manager Changes](#controller-manager-changes)
-         * [Kubelet Changes](#kubelet-changes)
-         * [API Server Changes](#api-server-changes)
-         * [Volume Managent Changes](#volume-managent-changes)
-         * [Deployment Changes](#deployment-changes)
-         * [Implementation Details/Notes/Constraints [optional]](#implementation-detailsnotesconstraints-optional)
-         * [Security Considerations](#security-considerations)
-      * [Graduation Criteria](#graduation-criteria)
-      * [Implementation History](#implementation-history)
-      * [Drawbacks [optional]](#drawbacks-optional)
-      * [Alternatives [optional]](#alternatives-optional)
+- [Remove Cloud Provider Code From Kubernetes Core](#remove-cloud-provider-code-from-kubernetes-core)
+   - [Table of Contents](#table-of-contents)
+   - [Summary](#summary)
+   - [Motivation](#motivation)
+      - [Goals](#goals)
+      - [Intermediary Goals](#intermediary-goals)
+      - [Non-Goals](#non-goals)
+   - [Proposal](#proposal)
+      - [Controller Manager Changes](#controller-manager-changes)
+      - [Kubelet Changes](#kubelet-changes)
+      - [API Server Changes](#api-server-changes)
+      - [Volume Management Changes](#volume-management-changes)
+      - [Deployment Changes](#deployment-changes)
+      - [Security Considerations](#security-considerations)
+   - [Graduation Criteria](#graduation-criteria)
+      - [Graduation to Beta](#graduation-to-beta)
+         - [Process Goals](#process-goals)
+   - [Alternatives](#alternatives)
 
 ## Summary
 
@@ -213,7 +216,7 @@ Kube-apiserver uses the cloud provider for two purposes
 1. Distribute SSH Keys - This can be moved to the cloud dependent controller manager
 2. Admission Controller for PV - This can be refactored using the taints approach used in Kubelet
 
-### Volume Managent Changes
+### Volume Management Changes
 
 Volumes need cloud providers, but they only need **specific** cloud providers. The majority of volume management logic
 resides in the controller manager. These controller loops need to be moved into the cloud-controller manager. The cloud
@@ -254,8 +257,6 @@ In case of the cloud-controller-manager, the deployment should be deleted using
 kubectl delete -f cloud-controller-manager.yml
 ```
 
-### Implementation Details/Notes/Constraints [optional]
-
 ### Security Considerations
 
 Make sure that you consider the impact of this feature from the point of view of Security.
@@ -269,20 +270,50 @@ Hopefully the content previously contained in [umbrella issues][] will be tracke
 
 [umbrella issues]: https://github.com/kubernetes/kubernetes/issues/42752
 
-## Implementation History
+### Graduation to Beta
 
-Major milestones in the life cycle of a KEP should be tracked in `Implementation History`.
-Major milestones might include
+As part of the graduation to `stable` or General Availability (GA), we have set
+both process and technical goals.
 
-- the `Summary` and `Motivation` sections being merged signaling SIG acceptance
-- the `Proposal` section being merged signaling agreement on a proposed design
-- the date implementation started
-- the first Kubernetes release where an initial version of the KEP was available
-- the version of Kubernetes where the KEP graduated to general availability
-- when the KEP was retired or superseded
+#### Process Goals
 
+- 
 
-## Alternatives [optional]
+We propose the following repository structure for the cloud providers which
+currently live in `kubernetes/pkg/cloudprovider/providers/*`
+
+```
+git@github.com:kubernetes/cloud-provider-wg
+git@github.com:kubernetes/cloud-provider-aws
+git@github.com:kubernetes/cloud-provider-azure
+git@github.com:kubernetes/cloud-provider-gcp
+git@github.com:kubernetes/cloud-provider-openstack
+```
+
+We propose this structure in order to obtain
+
+- ease of contributor on boarding and off boarding by creating repositories under
+  the existing `kubernetes` GitHub organization
+- ease of automation turn up using existing tooling
+- unambiguous ownership of assets by the CNCF
+
+The use of a tracking repository `git@github.com:kubernetes/wg-cloud-provider`
+is proposed to
+
+- create an index of all cloud providers which WG Cloud Provider believes
+  should be highlighted based on defined criteria for quality, usage, and other
+  requirements deemed necessary by the working group
+- serve as a location for tracking issues which affect all Cloud Providers
+- serve as a repository for user experience reports related to Cloud Providers
+  which live within the Kubernetes GitHub organization or desire to do so
+
+The ultimate intention of WG Cloud Provider is to prevent multiple classes
+of software purporting to be an implementation of the Cloud Provider interface
+from fracturing the Kubernetes Community while also ensuring that new Cloud
+Providers adhere to standards of quality and whose management follow Kubernetes
+Community norms.
+
+## Alternatives
 
 One alternate to consider is the use of a side-car. The cloud-interface in tree could then be a [GRPC](https://github.com/grpc/grpc-go)
 call out to that side-car. We could then leave the Kube API Server, Kube Controller Manager and Kubelet pretty much as is.

@@ -40,9 +40,10 @@ aliases:
     - zehicle
     - jdumars
   sig-contributor-experience-leads:
-    - grodrigues3
     - Phillels
     - parispittman
+    - grodrigues3
+    - cblecker
   sig-docs-leads:
     - zacharysarah
     - chenopis
@@ -81,7 +82,7 @@ aliases:
     - countspongebob
   sig-scheduling-leads:
     - bsalamat
-    - timothysc
+    - k82cn
   sig-service-catalog-leads:
     - pmorie
     - arschles
@@ -98,12 +99,17 @@ aliases:
   sig-ui-leads:
     - danielromlein
     - floreks
+  sig-vmware-leads:
+    - frapposelli
+    - cantbewong
   sig-windows-leads:
     - michmike
   wg-app-def-leads:
     - ant31
     - bryanl
     - garethr
+  wg-apply-leads:
+    - lavalamp
   wg-cloud-provider-leads:
     - wlan0
     - jagosan
@@ -132,5 +138,18 @@ aliases:
     - vishh
     - derekwaynecarr
 ## BEGIN CUSTOM CONTENT
-
+  steering-committee:
+    - bgrant0607
+    - brendanburns
+    - derekwaynecarr
+    - jbeda
+    - michelleN
+    - philips
+    - pwittrock
+    - quinton-hoole
+    - sarahnovotny
+    - smarterclayton
+    - spiffxp
+    - thockin
+    - timothysc
 ## END CUSTOM CONTENT

@@ -183,7 +183,7 @@ sigs:
         tz: "PT (Pacific Time)"
         frequency: weekly
         url: https://zoom.us/j/4526666954
-        archive_url: https://docs.google.com/document/d/1elWRfvH3AkHdr8pOaqyPbqSZ6ONR-l1Sb9_gapqh8ZA/edit
+        archive_url: https://docs.google.com/document/d/1d-6xJEx0C78csIYSPKJzRPeWaHG_8W1Hjl72OJggwdc/edit#
       owners:
       - https://raw.githubusercontent.com/kubernetes/helm/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-helm/community/master/OWNERS
@@ -242,7 +242,7 @@ sigs:
       time: "15:30"
       tz: "UTC"
       frequency: weekly
-      url: https://zoom.us/j/2018742972
+      url: https://zoom.us/j/9690526922
       archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
       recordings_url: https://www.youtube.com/watch?v=d5ERqm3oHN0&list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
     contact:
@@ -679,15 +679,18 @@ sigs:
     label: contributor-experience
     leadership:
       chairs:
-      - name: Garrett Rodrigues
-        github: grodrigues3
-        company: Google
       - name: Elsie Phillips
         github: Phillels
         company: CoreOS
       - name: Paris Pittman
         github: parispittman
         company: Google
+      tech_leads:
+        - name: Garrett Rodrigues
+          github: grodrigues3
+          company: Google
+        - name: Christoph Blecker
+          github: cblecker
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -732,9 +735,15 @@ sigs:
     - name: contributors-guide
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
+    - name: devstats
+      owners:
+      - Phillels
     - name: k8s.io
       owners:
       - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
+    - name: mentoring
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
     - name: repo-infra
       owners:
       - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
@@ -936,6 +945,19 @@ sigs:
         description: Test Failures and Triage
       - name: sig-mutlicluster-proposals
         description: Design Proposals
+    subprojects:
+    - name: federation-v1
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/federation/master/OWNERS
+    - name: federation-v2
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/federation-v2/master/OWNERS
+    - name: cluster-registry
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cluster-registry/master/OWNERS
+    - name: kubemci
+      owners:
+      - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
   - name: Network
     dir: sig-network
     mission_statement: >
@@ -1129,9 +1151,9 @@ sigs:
         company: Ticketmaster
     meetings:
     - description: Regular SIG Meeting
-      day: Thursday
-      time: "00:00"
-      tz: "UTC"
+      day: Wednesday
+      time: "16:00"
+      tz: "PT (Pacific Time)"
       frequency: biweekly
       url: https://zoom.us/j/417251241
       archive_url: https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f
@@ -1326,9 +1348,9 @@ sigs:
       - name: Bobby (Babak) Salamat
         github: bsalamat
         company: Google
-      - name: Timothy St. Clair
-        github: timothysc
-        company: Heptio
+      - name: Klaus Ma
+        github: k82cn
+        company: IBM
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -1575,6 +1597,32 @@ sigs:
     - name: dashboard
       owners:
       - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+  - name: VMware
+    dir: sig-vmware
+    mission_statement: >
+      Bring together members of the VMware and Kubernetes community to maintain,
+      support and run Kubernetes on VMware platforms.
+    label: vmware
+    leadership:
+      chairs:
+      - name: Fabio Rapposelli
+        github: frapposelli
+        company: VMware
+      - name: Steve Wong
+        github: cantbewong
+        company: VMware
+    meetings:
+    - description: Regular SIG Meeting
+      day: Thursday
+      time: "18:00"
+      tz: "UTC"
+      frequency: bi-weekly
+      url: https://zoom.us/j/183662780
+      archive_url: https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing
+      recordings_url:
+    contact:
+      slack: sig-vmware
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-vmware
   - name: Windows
     dir: sig-windows
     mission_statement: >
@@ -1726,6 +1774,30 @@ workinggroups:
     contact:
       slack: wg-app-def
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-app-def
+  - name: Apply
+    dir: wg-apply
+    # We might want to create a charter here.
+    mission_statement: >
+      Improve the state of declarative object management by fixing `kubectl apply`,
+      moving the logic from the client to the server. This move also enables new/fixed
+      features included in the scope of this working-group: diff, dry-run and prune.
+
+      Resources can be found in [this Google drive folder](https://drive.google.com/drive/folders/1wlpgkS2gFZXdp4x2WlRsfUBxkFlt2Gx0)
+    leadership:
+      chairs:
+      # TBD: We probably need more people here?
+      - name: Daniel Smith
+        github: lavalamp
+        company: Google
+    meetings:
+    - description: Regular WG Meeting
+      day: Tuesday
+      time: "9:30"
+      tz: "PT (Pacific Time)"
+      frequency: weekly
+    contact:
+      slack: wg-apply
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-apply
   - name: Cloud Provider
     dir: wg-cloud-provider
     label: cloud-provider

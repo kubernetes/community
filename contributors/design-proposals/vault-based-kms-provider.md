@@ -219,7 +219,7 @@ Here's a sample ``vault-config.yaml`` configuration with ``client-cert``:
 ```
 
 ###### Vault token based authentication
-1. ``token`` : limited access vault token required by kubernetes API sever to
+1. ``token`` : limited access vault token required by kubernetes API server to
 authenticate itself while making requests to vault eg:
 8dad1053-4a4e-f359-2eab-d57968eb277f
 

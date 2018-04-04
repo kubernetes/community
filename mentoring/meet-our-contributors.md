@@ -5,9 +5,9 @@ When Slack seems like it’s going too fast, and you just need a quick answer fr
 Meet Our Contributors gives you a monthly one-hour opportunity to ask questions about our upstream community, watch interviews with our contributors, and participate in peer code reviews.
 
 ## When:
-Every first Wednesday of the month at the following times -
-* 03:30pm UTC [calendar link](https://calendar.google.com/event?action=TEMPLATE&tmeid=MGw2OHM5bGRranJwZjI3OHN1MTk2Y2pjYjggcGFyaXNwaXR0bWFuQGdvb2dsZS5jb20&tmsrc=parispittman%40google.com)
-* 09:00pm UTC [calendar link](https://calendar.google.com/event?action=TEMPLATE&tmeid=N3M4dnZ0dGZwYTZzdXBuM3FndHRybGY0MTlfMjAxODAyMDdUMjEwMDAwWiBwYXJpc3BpdHRtYW5AZ29vZ2xlLmNvbQ&tmsrc=parispittman%40google.com&scp=ALL)
+Every first Wednesday of the month at the following times. Grab a copy of the calendar to yours from [kubernetes.io/community](https://kubernetes.io/community/)
+* 03:30pm UTC 
+* 09:00pm UTC 
 
 Tune into the [Kubernetes YouTube Channel](https://www.youtube.com/c/KubernetesCommunity/live) to follow along with video and [#meet-our-contributors](https://kubernetes.slack.com/messages/meet-our-contributors) on Slack for questions and discourse. 
 
@@ -39,9 +39,9 @@ Problems will be picked based on time commitment needed, skills of the reviewer,
 Contributors - [sign up to answer questions!](https://goo.gl/uhEJ33) 
 
 Expectations of volunteers:
-* Be on 5 mins early
-* Be prepared to give advice on contribution process, membership, navigating the kubernetes seas, testing, and general questions about you and your path to open source/kubernetes.
-* We will be using video chat (zoom but live streaming through YouTube) but voice only is fine if you are more comfortable with that
+* Be on 5 mins early. You can look at questions in the queue by joining the #meet-our-contributors slack channel to give yourself some prep.
+* Expect questions about the contribution process, membership, navigating the kubernetes seas, testing, and general questions about you and your path to open source/kubernetes. It's ok if you don't know the answer!
+* We will be using video chat (zoom but live streaming through YouTube) but voice only is fine if you are more comfortable with that.
 * Be willing to provide suggestions and feedback to make this better!
 
 
