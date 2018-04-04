@@ -179,7 +179,7 @@ var funcMap = template.FuncMap{
 	"tzUrlEncode": tzUrlEncode,
 }
 
-// tzUrlEncode returns an url encoded string without the + shortcut. This is
+// tzUrlEncode returns a url encoded string without the + shortcut. This is
 // required as the timezone conversion site we are using doesn't recognize + as
 // a valid url escape character.
 func tzUrlEncode(tz string) string {
