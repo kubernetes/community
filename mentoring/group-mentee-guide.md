@@ -17,38 +17,41 @@ Familiarize yourself with the [community membership requirements doc](/community
 * Be helpful to your peers in the cohort
 * Give back and be a mentor in a future cohort
 * Mutual respect from mentors and peers who are in the cohort with you
+* Adhere to the Kubernetes Community Guidelines
 
 ## Development Areas & Activities
 These topics will be covered during bi-weekly standups/workshops. The suggested activities will be covered in the mentee's normal day to day. Know something that should be added? Start a convo/add a PR - your comments are appreciated.
 
-### Current Member Cohort
-* Communicating in our ecosystem
+### Current Member Cohort Topics
+* Effective communication in our our ecosystem
 * Kubernetes Governance 101 (what's a SIG?, OWNERS files, steering committee, etc.)
-* Identifying issues to work on
-* Testing (current state of automation)
+* Identifying & understanding issue backlog and prioritization
+* Contibuting to testing (how to run tests and create new ones)
 * [need 3-4 more]
 
 Suggested Activity
 * Scrub XS and typo fixes into branches they maintain for occasional quick bulk review/approval with mentors
-* Help to review docs
+* Help review docs
+* Setup feature and run tests or examples and fix documentation if needed
+* Create new content in community based on feedback from wider community
+
 
 ### Current Reviewer Cohort
 * Code Reviews the Kubernetes Way (i.e. best practices)
 * How to groom issues for new members
 * Communicating effectively as a leader (on GH and throughout project)
-* The value in / how to tech reviewing for docs
-* Kubernetes Governance 201 (SIG deep dive, proposals, 
+* The value in / how to tech review docs
+* Kubernetes Governance 201 (SIG deep dive, proposals)
 * Testing (what should be an e2e test, how to write S, M, L, tests) 
 
 Suggested Activity
 * Be a tech reviewer for docs 
+* Write an E2E test
 
 ### Current Approver Cohort
 * Communicating effectively as a leader (on GH and throughout project)
 * How to write better docs (release notes, etc.)
-* [need 4-5 more]
-
-
+* How to propose a new feature (features, design proposals)
 
 ### Other Help Resources
 - slack
