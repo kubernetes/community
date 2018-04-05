@@ -20,7 +20,7 @@ A list of common resources when contributing to Kubernetes.
 - [Release Buckets](http://gcsweb.k8s.io/gcs/kubernetes-release/)
 - Developer Guide
   - [Cherry Picking Guide](/contributors/devel/cherry-picks.md) - [Queue](http://cherrypick.k8s.io/#/queue)
-- [https://k8s-code.appspot.com/](https://k8s-code.appspot.com/) - Kubernetes Code Search
+- [https://k8s-code.appspot.com/](https://k8s-code.appspot.com/) - Kubernetes Code Search, maintained by @dims
 
 
 ## SIGs and Working Groups
