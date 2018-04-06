@@ -16,7 +16,7 @@ Updated: 1/24/2018
     - https://google.github.io/styleguide/shell.xml
 
     - Ensure that build, release, test, and cluster-management scripts run on
-OS X
+macOS
 
   - Go
 
@@ -75,7 +75,7 @@ example, see [TestNamespaceAuthorization](https://git.k8s.io/kubernetes/test/int
 [end-to-end (test/e2e) tests](/contributors/devel/e2e-tests.md)
     - Including new kubectl commands and major features of existing commands
 
-  - Unit tests must pass on OS X and Windows platforms - if you use Linux
+  - Unit tests must pass on macOS and Windows platforms - if you use Linux
 specific features, your test case must either be skipped on windows or compiled
 out (skipped is better when running Linux specific commands, compiled out is
 required when your code does not compile on Windows).
