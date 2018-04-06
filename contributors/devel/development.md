@@ -79,7 +79,7 @@ document the improvement with data):
 - Parallelizing a calculation that needs to run on a large set of node/pod
   objects.
 
-These issues should always be submitted with (in decreasing order or value):
+These issues should always be submitted with (in decreasing order of value):
 
 - A golang Benchmark test.
 - A visual depiction of reduced metric load on a cluster (measurable using
