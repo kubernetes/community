@@ -112,7 +112,7 @@ instructions](http://releases.k8s.io/HEAD/build/README.md).
 Kubernetes development helper scripts assume an up-to-date GNU tools
 environment. Recent Linux distros should work out-of-the-box.
 
-Mac OS X ships with outdated BSD-based tools. We recommend installing [OS X GNU
+macOS ships with outdated BSD-based tools. We recommend installing [macOS GNU
 tools].
 
 ### etcd
@@ -171,7 +171,7 @@ see [Build with Bazel].
 To check out code to work on, please refer to [this guide](/contributors/guide/github-workflow.md).
 
 
-[OS X GNU tools]: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x
+[macOS GNU tools]: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x
 [build/build-image/cross]: https://git.k8s.io/kubernetes/build/build-image/cross
 [build/common.sh]: https://git.k8s.io/kubernetes/build/common.sh
 [e2e-image]: https://git.k8s.io/test-infra/jenkins/e2e-image
