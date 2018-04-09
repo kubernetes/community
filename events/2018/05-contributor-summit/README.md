@@ -44,13 +44,13 @@ All day event with a happy hour reception to close
 
 ### Afternoon
 
-| Time        | Track One                       | Track Two                    |  
-| ----------- | ------------------------------- | ---------------------------- |
-| 2:00-3:50   | SIG Updates                     | Docs Sprint                  |   
-| 3:50-4:00   | B R E A K                       |                              |
-| 4:00-5:30   | SIG Updates                     | Docs Sprint                  |   
-| 5:30-7:00   | Contributor Happy Hour          |                              | 
-| 7:00        | EmpowerHER event (offsite)      |                              |                                 
+| Time        | Track One                       |
+| ----------- | ------------------------------- |
+| 2:00-3:50   | SIG Updates                     |
+| 3:50-4:00   | B R E A K                       |
+| 4:00-5:30   | SIG Updates                     |
+| 5:30-7:00   | Contributor Happy Hour          |
+| 7:00        | EmpowerHER event (offsite)      |                                 
 
 - SIG Updates (~5 minutes per SIG)
   - 2 slides per SIG, focused on cross-SIG issues, not internal SIG discussions (those are for Kubecon)
