@@ -18,6 +18,8 @@ Identify and fix gaps in Kubernetes to better support Machine Learning applicati
 
 * Vishnu Kannan (**[@vishh](https://github.com/vishh)**), Google
 * Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Google
+* Balaji Subramaniam (**[@balajismaniam](https://github.com/balajismaniam)**), Intel
+* Connor Doyle (**[@ConnorDoyle](https://github.com/ConnorDoyle)**), Intel
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-machine-learning)

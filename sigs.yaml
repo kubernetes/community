@@ -1881,6 +1881,12 @@ workinggroups:
       - name: Kenneth Owens
         github: kow3ns
         company: Google
+      - name: Balaji Subramaniam
+        github: balajismaniam
+        company: Intel
+      - name: Connor Doyle
+        github: ConnorDoyle
+        company: Intel
     meetings:
     - description: Regular WG Meeting
       day: Thursday
