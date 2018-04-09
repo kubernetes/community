@@ -141,12 +141,12 @@ kind: AdmissionConfiguration
 plugins:
 - name: "ResourceQuota"
   configuration:
-  apiVersion: resourcequota.admission.k8s.io/v1alpha1
-  kind: Configuration
-  limitedResources:
-  - resource: pods
-    matchScopes:
-    - "ResourceQuotaScopePriorityClassNameIn:cluster-services"
+    apiVersion: resourcequota.admission.k8s.io/v1alpha1
+    kind: Configuration
+    limitedResources:
+    - resource: pods
+      matchScopes:
+      - "ResourceQuotaScopePriorityClassNameIn:cluster-services"
 ```
 
 2. Admin will then create a corresponding resource quota object in `kube-system` namespace:
@@ -172,12 +172,12 @@ kind: AdmissionConfiguration
 plugins:
 - name: "ResourceQuota"
   configuration:
-  apiVersion: resourcequota.admission.k8s.io/v1alpha1
-  kind: Configuration
-  limitedResources:
-  - resource: pods
-    matchScopes:
-    - "ResourceQuotaScopePriorityClassNameExists"
+    apiVersion: resourcequota.admission.k8s.io/v1alpha1
+    kind: Configuration
+    limitedResources:
+    - resource: pods
+      matchScopes:
+      - "ResourceQuotaScopePriorityClassNameExists"
 ```
 
 2. Create resource quota to match all pods where there is priority set
