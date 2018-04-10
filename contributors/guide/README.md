@@ -196,7 +196,7 @@ sig-testing is responsible for that official infrastructure and CI.  The associa
 
 ## Issues Management or Triage
 
-Have you ever noticed the total number of [open issues](https://issues.k8s.io)? This number at any given time is typically high. Helping to manage or triage these open issues can be a great contribution to the Kubernetes project. This is also a great opportunity to learn about the various areas of the project. Refer to the [Kubernetes Issue Triage Guidelines](/contributors/devel/issues.md) for more information.
+Have you ever noticed the total number of [open issues](https://issues.k8s.io)? This number at any given time is typically high. Helping to manage or triage these open issues can be a great contribution to the Kubernetes project. This is also a great opportunity to learn about the various areas of the project. Refer to the [Kubernetes Issue Triage Guidelines](/contributors/guide/issue-triage.md) for more information.
 
 # Community
 
