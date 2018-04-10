@@ -8,15 +8,20 @@ A list of common resources when contributing to Kubernetes.
 | [Community](https://github.com/kubernetes/community) | [PRs](https://github.com/kubernetes/community/pulls) | [Issues](https://github.com/kubernetes/community/issues) |
 | [Docs](https://github.com/kubernetes/website) | [PRs](https://github.com/kubernetes/website/pulls) | [Issues](https://github.com/kubernetes/website/issues)
 
+## Getting Started
+
+- [Contributor Guide](https://github.com/kubernetes/community/blob/master/contributors/guide/README.md) 
+
 ## Workflow
 
 - [Gubernator Dashboard - k8s.reviews](https://k8s-gubernator.appspot.com/pr)
-- [reviewable.kubernetes.io](https://reviewable.kubernetes.io/reviews#-)
 - [Submit Queue](https://submit-queue.k8s.io)
 - [Bot commands](https://go.k8s.io/bot-commands)
 - [Release Buckets](http://gcsweb.k8s.io/gcs/kubernetes-release/)
 - Developer Guide
   - [Cherry Picking Guide](/contributors/devel/cherry-picks.md) - [Queue](http://cherrypick.k8s.io/#/queue)
+- [https://k8s-code.appspot.com/](https://k8s-code.appspot.com/) - Kubernetes Code Search, maintained by [@dims](https://github.com/dims)
+
 
 ## SIGs and Working Groups
 
