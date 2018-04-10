@@ -61,43 +61,64 @@ the following simple steps:
 
 # Use Cases
 
- * I want to use a particular device type (GPU, InfiniBand, FPGA, etc.)
-   in my pod.
- * I should be able to use that device without writing custom Kubernetes code.
+ * As a cluster admin I want my cluster to be aware of the devices on my nodes:
+    * My nodes should report what devices are present.
+    * My users should be able to request "device aware containers" (GPU,
+      InfiniBand, FPGA, etc...).
+    * My monitoring tool should be able to report device metrics.
+
+ * I should be able to enable my cluster to be aware of a device without
+   writing custom Kubernetes code.
  * I want a consistent and portable solution to consume hardware devices
    across k8s clusters.
 
 # Objectives
 
-1. Add support for vendor specific Devices in kubelet:
+* Add support for vendor specific Devices in kubelet:
     * Through an extension mechanism.
     * Which allows discovery and health check of devices.
-    * Which allows hooking the runtime to make devices available in containers
-      and cleaning them up.
-2. Define a deployment mechanism for this new API.
-3. Define a versioning mechanism for this new API.
+    * Which allows hooking the lifecycle of pods and containers to make devices
+      available in containers requesting these devices.
+* Define a deployment mechanism for this new API.
+* Define a versioning mechanism for this new API.
 
 # Non Objectives
 
-1. Handling heterogeneous nodes and topology related problems
-2. Collecting metrics is not part of this proposal. We will only solve
-   Health Check.
+* Handling heterogeneous nodes is not part of this proposal.
+* Handling topology is not part of this proposal.
+* Collecting metrics is not part of this proposal.
+* Sharing devices is not part of this proposal.
 
 # TLDR
 
-At their core, device plugins are simple gRPC servers that may run in a
-container deployed through the pod mechanism or in bare metal mode.
+At its core a device plugin is a pod which runs on every device node.
+It's a daemonset which communicates with Kubelet through a gRPC interface.
 
-These servers implement the gRPC interface defined later in this design
-document and once the device plugin makes itself known to kubelet, kubelet
-will interact with the device through two simple functions:
-  1. A `ListAndWatch` function for the kubelet to Discover the devices and
-     their properties as well as notify of any status change (device
-     became unhealthy).
-  2. An `Allocate` function which is called before creating a user container
-     consuming any exported devices
+The plugins are gRPC servers which allows them to make kubelet and more
+generally the kubernetes cluster "device" aware.
+This "awareness" allows:
+* The node (i.e: kubelet) to advertise it's number of devices
+  * The `Capacity` field in the node status advertises the total
+    number of devices on the node
+* The node to know when a device is unhealthy
+  * The `Allocatable` field in the node status advertises the total
+    number of healthy devices on the node
+* The node to create containers consuming that device
+* In the future, the cluster to collect metrics for type of device
 
 ![Process](device-plugin-overview.png)
+
+# Naming
+In this document and in the community, we use the following names:
+* "Device Plugin": The pod running on each node which allows kubelet and
+                   kubernetes to be device aware
+* "Device Plugin API": The gRPC API which allows kubelet and the device plugins
+  to communicate. 
+* "Device Plugin API Container": The container which communicates with kubelet
+  through the Device Plugin API
+* "device manager": The part of Kubelet in charge of managing the device plugins
+
+![naming](device-plugin-naming.png)
 
 # Vendor story
 
@@ -105,7 +126,7 @@ Kubernetes provides to vendors a mechanism called device plugins to:
   * advertise devices.
   * monitor devices (currently perform health checks).
   * hook into the runtime to execute device specific instructions
-    (e.g: Clean GPU memory) and 
+    (e.g: Clean GPU memory) and instruct kubelet of the actions
     to take in order to make the device available in the container.
 
 ```go
@@ -133,12 +154,17 @@ on the different machines and therefore can select what devices to enable.
 
 The cluster admin knows his cluster has NVIDIA GPUs therefore he deploys
 the NVIDIA device plugin through:
-`kubectl create -f nvidia.io/device-plugin.yml`
+`kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v1.10/nvidia-device-plugin.yml`
 
 The device plugin lands on all the nodes of the cluster and if it detects that
-there are no GPUs it terminates (assuming `restart: OnFailure`). However, when
-there are GPUs it reports them to Kubelet and starts it's gRPC server to
-monitor devices and hook into the container creation process.
+there are no GPUs it terminates.
+
+However, when there are GPUs it starts it's gRPC server in order to:
+* advertise devices to kubelet
+* monitor devices and notify kubelet in case of an unhealthy state
+* hook into the container and pod lifecycle to:
+  * enable containers consuming these devices
+  * execute device specific operations
 
 Devices reported by Device Plugins are advertised as Extended resources of
 the shape `vendor-domain/vendor-device`.
@@ -158,7 +184,7 @@ to have limits == requests.
 
 When receiving a pod which requests Devices kubelet is in charge of:
   * deciding which device to assign to the pod's containers 
-  * Calling the `Allocate` function with the list of devices
+  * calling the `Allocate` function with the list of devices
 
 The scheduler is still in charge of filtering the nodes which cannot
 satisfy the resource requests.
@@ -170,11 +196,14 @@ satisfy the resource requests.
 The device plugin is structured in 3 parts:
 1. Registration: The device plugin advertises it's presence to Kubelet
 2. ListAndWatch: The device plugin advertises a list of Devices to Kubelet
-   and sends it again if the state of a Device changes
-3. Allocate: When creating containers, Kubelet calls the device plugin's
+   and sends it again if the state of a device changes
+3. Allocate: When admitting the pod, Kubelet calls the device plugin's
    `Allocate` function so that it can run device specific instructions (gpu
-    cleanup, QRNG initialization, ...) and instruct Kubelet how to make the
-    device available in the container.
+   cleanup, QRNG initialization, ...) and instruct Kubelet how to make the
+   device available in the container.
+4. PreStart: The device plugin has the option to request a container prestart
+   call in order to setup the device or check that the device is always in the
+   same state.
 
 ## Registration
 
@@ -210,7 +239,7 @@ When first registering themselves against Kubelet, the device plugin
 will send:
   * The name of their unix socket
   * [The API version against which they were built](#versioning).
-  * Their `ResourceName` they want to advertise
+  * The `ResourceName` they want to advertise
 
 Kubelet answers with whether or not there was an error.
 The errors may include (but not limited to):
@@ -221,7 +250,8 @@ After successful registration, Kubelet will interact with the plugin through
 the following functions:
   * ListAndWatch: The device plugin advertises a list of Devices to Kubelet
     and sends it again if the state of a Device changes
-  * `Allocate`: Called when creating a container with a list of devices
+  * `Allocate`: Called during pod admission, this call sends the list of device
+    for each container (a list of list of devices).
 
 ![Process](device-plugin.png)
 
@@ -239,17 +269,9 @@ service Registration {
 	rpc Register(RegisterRequest) returns (Empty) {}
 }
 
-// DevicePlugin is the service advertised by Device Plugins
-service DevicePlugin {
-	// ListAndWatch returns a stream of List of Devices
-	// Whenever a Device state change or a Device disappears, ListAndWatch
-	// returns the new list
-	rpc ListAndWatch(Empty) returns (stream ListAndWatchResponse) {}
-
-	// Allocate is called during container creation so that the Device
-	// Plugin can run device specific operations and instruct Kubelet
-	// of the steps to make the Device available in the container
-	rpc Allocate(AllocateRequest) returns (AllocateResponse) {}
+message DevicePluginOptions {
+	// Indicates if PreStartContainer call is required before each container start
+	bool pre_start_required = 1;
 }
 
 message RegisterRequest {
@@ -258,8 +280,68 @@ message RegisterRequest {
 	// Name of the unix socket the device plugin is listening on
 	// PATH = path.Join(DevicePluginPath, endpoint)
 	string endpoint = 2;
-	// Schedulable resource name
+	// Schedulable resource name. As of now it's expected to be a DNS Label
 	string resource_name = 3;
+	// Options to be communicated with Device Manager
+	DevicePluginOptions options = 4;
+}
+
+message Empty {
+}
+
+// DevicePlugin is the service advertised by Device Plugins
+service DevicePlugin {
+	// GetDevicePluginOptions returns options to be communicated with Device
+	// Manager
+	rpc GetDevicePluginOptions(Empty) returns (DevicePluginOptions) {}
+
+	// ListAndWatch returns a stream of List of Devices
+	// Whenever a Device state change or a Device disapears, ListAndWatch
+	// returns the new list
+	rpc ListAndWatch(Empty) returns (stream ListAndWatchResponse) {}
+
+	// Allocate is called during container creation so that the Device
+	// Plugin can run device specific operations and instruct Kubelet
+	// of the steps to make the Device available in the container
+	rpc Allocate(AllocateRequest) returns (AllocateResponse) {}
+
+	// PreStartContainer is called, if indicated by Device Plugin during registeration phase,
+	// before each container start. Device plugin can run device specific operations
+	// such as reseting the device before making devices available to the container
+	rpc PreStartContainer(PreStartContainerRequest) returns (PreStartContainerResponse) {}
+}
+
+// ListAndWatch returns a stream of List of Devices
+// Whenever a Device state change or a Device disapears, ListAndWatch
+// returns the new list
+message ListAndWatchResponse {
+	repeated Device devices = 1;
+}
+
+/* E.g:
+* struct Device {
+*    ID: "GPU-fef8089b-4820-abfc-e83e-94318197576e",
+*    State: "Healthy",
+*} */
+message Device {
+	// A unique ID assigned by the device plugin used
+	// to identify devices during the communication
+	// Max length of this field is 63 characters
+	string ID = 1;
+	// Health of the device, can be healthy or unhealthy, see constants.go
+	string health = 2;
+}
+
+// - PreStartContainer is expected to be called before each container start if indicated by plugin during registration phase.
+// - PreStartContainer allows kubelet to pass reinitialized devices to containers.
+// - PreStartContainer allows Device Plugin to run device specific operations on
+//   the Devices requested
+message PreStartContainerRequest {
+        repeated string devicesIDs = 1;
+}
+
+// PreStartContainerResponse will be send by plugin in response to PreStartContainerRequest
+message PreStartContainerResponse {
 }
 
 // - Allocate is expected to be called during pod creation since allocation
@@ -269,35 +351,45 @@ message RegisterRequest {
 // - Allocate allows Device Plugin to run device specific operations on
 //   the Devices requested
 message AllocateRequest {
+	repeated ContainerAllocateRequest container_requests = 1;
+}
+
+message ContainerAllocateRequest {
 	repeated string devicesIDs = 1;
 }
 
+// AllocateResponse includes the artifacts that needs to be injected into
+// a container for accessing 'deviceIDs' that were mentioned as part of
+// 'AllocateRequest'.
 // Failure Handling:
 // if Kubelet sends an allocation request for dev1 and dev2.
 // Allocation on dev1 succeeds but allocation on dev2 fails.
 // The Device plugin should send a ListAndWatch update and fail the
 // Allocation request
 message AllocateResponse {
-	repeated DeviceRuntimeSpec spec = 1;
+	repeated ContainerAllocateResponse container_responses = 1;
 }
 
-// ListAndWatch returns a stream of List of Devices
-// Whenever a Device state change or a Device disappears, ListAndWatch
-// returns the new list
-message ListAndWatchResponse {
-	repeated Device devices = 1;
-}
-
-// The list to be added to the CRI spec
-message DeviceRuntimeSpec {
-	string ID = 1;
-
-	// List of environment variable to set in the container.
-	map<string, string> envs = 2;
+message ContainerAllocateResponse {
+	// List of environment variable to be set in the container to access one of more devices.
+	map<string, string> envs = 1;
 	// Mounts for the container.
-	repeated Mount mounts = 3;
-	// Devices for the container
-	repeated DeviceSpec devices = 4;
+	repeated Mount mounts = 2;
+	// Devices for the container.
+	repeated DeviceSpec devices = 3;
+	// Container annotations to pass to the container runtime
+	map<string, string> annotations = 4;
+}
+
+// Mount specifies a host volume to mount into a container.
+// where device library or tools are installed on host and container
+message Mount {
+	// Path of the mount within the container.
+	string container_path = 1;
+	// Path of the mount on the host.
+	string host_path = 2;
+	// If set, the mount is read-only.
+	bool read_only = 3;
 }
 
 // DeviceSpec specifies a host device to mount into a container.
@@ -311,27 +403,6 @@ message DeviceSpec {
     // * w - allows container to write to the specified device.
     // * m - allows container to create device files that do not yet exist.
     string permissions = 3;
-}
-
-// Mount specifies a host volume to mount into a container.
-// where device library or tools are installed on host and container
-message Mount {
-	// Path of the mount on the host.
-	string host_path = 1;
-	// Path of the mount within the container.
-	string mount_path = 2;
-	// If set, the mount is read-only.
-	bool read_only = 3;
-}
-
-// E.g:
-// struct Device {
-//    ID: "GPU-fef8089b-4820-abfc-e83e-94318197576e",
-//    State: "Healthy",
-//}
-message Device {
-	string ID = 2;
-	string health = 3;
 }
 ```
 
@@ -417,7 +488,6 @@ the Device Plugin too.
 *Future:*
 When the Device Plugin API becomes a stable feature, versioning should be
 backward compatible and even if Kubelet has a different Device Plugin API,
-
 it should not require a Device Plugin upgrade.
 
 Refer to the versioning section for versioning scheme compatibility.
