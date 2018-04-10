@@ -77,19 +77,20 @@ Monitor these for Github activity if you are not a member of the team.
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
 
-Topics include, but are not limited to:
+The following topics fall under scope of this SIG.
 
 * Kubelet related features (e.g. Pod lifecycle)
 * Node level performance and scalability (with [sig-scalability](../sig-scalability))
-* Node reliability
+* Node reliability (prooblem detection and remediation)
 * Node lifecycle management (with [sig-cluster-lifecycle](../sig-cluster-lifecycle))
-* Container runtimes: docker, [rkt](../sig-rktnetes), etc.
+* Container runtimes
+* Device management
 * Images, package management
-* Resource management (with [sig-scheduling](../sig-scheduling))
-* Issues related to monitoring (with [sig-instrumentation](../sig-instrumentation))
+* Host resource management (with [sig-scheduling](../sig-scheduling))
+* Hardware discovery
+* Issues related to node, pod, container monitoring (with [sig-instrumentation](../sig-instrumentation))
 * Node level security and Pod isolation (with [sig-auth](../sig-auth))
-* Kernel interactions (to a limited extent)
-* ...
+* Host OS and/or kernel interactions (to a limited extent)
 
 We also work closely with [sig-storage](../sig-storage) and [sig-network](../sig-network). As you can see, this is a very cross-functional team!
 <!-- END CUSTOM CONTENT -->
