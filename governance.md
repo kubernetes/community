@@ -109,6 +109,16 @@ This is the purpose of Working Groups (WG). The intent is to make
 Working Groups relatively easy to create and to deprecate, once
 inactive.
 
+To propose a new working group, first find a SIG to sponsor the group. 
+Next, send a proposal to kubernetes-dev@googlegroups.com and also include
+any potentially interested SIGs. Wait for public comment. If there's 
+enough interest, a new Working Group should be formed. 
+
+Create a new mailing list in the from of kubernetes-wg-group-name. Working 
+groups typically have a Slack channel as well as regular meetings on zoom.
+It's encouraged to keep a clear record of all accomplishments that's publicly
+accessible.
+
 ## Committees
 
 Some topics, such as Security or Code of Conduct, require
