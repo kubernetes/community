@@ -1,4 +1,4 @@
-Live and In-place Vertical Scaling Proposal
+Live and In-Place Vertical Scaling Proposal
 ================
 
 _Authors:_
@@ -43,23 +43,36 @@ So we need the means to express and implement the best approach for resizing for
 1. Enable live and in-place resource resizing on a pod.
 2. Add support for live and in-place resource resizing in `StatefulSet` controller.
 
+# Limitations
+
+There are some limitations. The details will be described at the end of this doc.
+
+1. QoS class change by resize is not supported.
+2. Memory-resizing to change a request value might not take effect for Burstable pods.
+3. Memory-resizing to decrease its limit may fail on the Kubelet in some circumstances.
+
 # API and Usage
 
 To express the policy for resizing in a pod spec, we introduce resource attribute `resizePolicy` with the following choices for value:
 * RestartOnly. (the current behavior, default)
+* ContainerRestart
 * LiveResizeable.
 
-This attribute will be available per resource (such as cpu, memory) and so is adequate to indicate whether the workload can handle and prefer a change in each resource’s allocation for it without restarting.
-With potentially multiple containers and multiple resizeable resources for each in a Pod, the response to an update of the pod spec will be determined by the a precedence order among the attribute values with RestartOnly dominating LiveResizeable, i.e., if two resources have been resized in the update to the spec and one of them has a policy of RestartOnly then the pod would be restarted to realize both updates.
+This attribute will be available per resource (such as cpu, memory) and so is adequate to indicate in which way the workload can handle a change in each resource’s allocation for it without restarting a pod.
+With potentially multiple containers and multiple resizeable resources for each in a Pod, the response to an update of the pod spec will be determined by the a precedence order among the attribute values with RestartOnly dominating ContainerRestartOnly and LiveResizeable and ContainerRestartOnly dominating LiveResizeable, i.e., if two resources have been resized in the update to the spec and one of them has a policy of RestartOnly then the pod would be restarted to realize both updates.
 
 We can optionally introduce an action annotation `resizeAction` with following choices for value:
-* Restart. (default)
-* LiveResize.
-* LiveResizePreferred.
+* Restart
+* InPlaceResize
+* InPlaceResizePreferred
 
-If used, this would be included as part of the patch or appropriate update command providing the spec update for the resize.
-It would indicate the preference of user at the time of resize.
-Specifically, Restart for `resizeAction` would indicate the pod be restarted for the corresponding resizing of resource(s), LiveResize would indicate the pod not be restarted the resize be realized live, and LiveResizePreferred would indicate that the resize be realized preferrably live but if that fails for any reason to accomplish it with a restart.
+This new annotation would indicate an user's preference on a way in which resource resizing is executed and its main purpose is to express a fallback option when the attempt to resize in-place fails for some reasons.
+If used, it would be included as part of the patch or appropriate update command providing the spec update for the resize
+
+Specifically, `InPlaceResizePreferred` indicates that the resize would be realized preferably without pod restart, but if the in-place resizing (which is executed live or with container restart) fails for any reason (e.g. the resized pod isn't fit to the current node), the resizing request would be accomplished with a pod restart.
+`InPlaceResize` indicates that the pod won't be restarted if the resize cannot be realized in the in-place manner.
+So, the pod would remain in the failure status (e.g. `ResizeRejected`) and an user may take additional actions in order to resolve this. 
+Restart for `resizeAction` indicates that the pod would be restarted for resizing of resource(s) regardless of whether the resource(s)/workload is possible to resize live or with container restart, or not. 
 
 An example of the usage of resizePolicy attribute in a pod spec:
 
@@ -97,7 +110,7 @@ resources:
 // after the change
 ```yaml
 annotation:
-resizeAction: LiveResizePreferred
+resizeAction: InPlaceResizePreferred
 ...
 resources:
     requests:
@@ -120,8 +133,10 @@ In the table below we propose how the resource resizing directives for vertical 
 |resizePolicy (resizeAction)|OnDelete|RollingUpdate|
 |---|---|---|
 |RestartOnly (or Action=Restart)|Resize resource with restart (with delete command)|Resize resource with restart (with allowed spec update commands)|
-|LiveResizeable (and Action=LiveResize)|Resize resource live only (with allowed spec update commands)|Resize resource live only (with allowed spec update commands)|
-LiveResizeable (and Action=LiveResizePreferred or no Action specified)|Resize resource with live resize preferred (with allowed spec update commands), i.e., resize resource with restart (with delete command) if not able to resize live.|Resize resource with live resize preferred (with allowed spec update commands), i.e., resize resource with restart (managed by controller) if not able to resize live.|
+|LiveResizeable (and Action=InPlaceResize)|Resize resource live only (with allowed spec update commands)|Resize resource live only (with allowed spec update commands)|
+LiveResizeable (and Action=InPlaceResizePreferred or no Action specified)|Resize resource with live resize preferred (with allowed spec update commands), i.e., resize resource with restart (with delete command) if not able to resize live.|Resize resource with live resize preferred (with allowed spec update commands), i.e., resize resource with restart (managed by controller) if not able to resize live.|
+|ContainerRestartOnly (and Action=InPlaceResize)|Resize resource only with container restart (with allowed spec update commands)|Resize resource only with container restart (with allowed spec update commands)|
+ContainerRestartOnly (and Action=InPlaceResizePreferred or no Action specified)|Resize resource with container restart preferred (with allowed spec update commands), i.e., resize resource with restart (with delete command) if not able to resize in place.|Resize resource with container restart preferred (with allowed spec update commands), i.e., resize resource with restart (managed by controller) if not able to resize in place.|
 
 ## Desired Approach
 
@@ -150,38 +165,43 @@ const (
     ResizeRequested ResizeStatus = "Requested"
     ResizeAccepted ResizeStatus = “Accepted”
     ResizeRejected ResizeStatus = “Rejected”
+    ResizeDone     ResizeStatus = "Done"
     ResizeNone      ResizeStatus = "None"
 )
 
 type ResizeRequest struct {
     RequestStatus ResizeStatus
-    NewResources  []ResourceRequirements // indexed by containers’ index
+    NewResources  map[string]ResourceRequirements // indexed by containers’ name
 }
 
 Type PodSpec {
-    …
+    ...
     ResizeRequest ResizeRequest
     ...
 }
 ```
 
-ResizeRequest has two variables, RequestStatus and NewResources.
-RequestStatus represents the status of a resource resizing request.
-ResizeRequested indicates resource resizing for a pod is requested.
-ResizedAccepted and ResizedRejected means that the requested resource resizing is accepted and rejected, respectively, by the Scheduler.
-The NewResources is an array indexed by a container’s index and its each entry holds new resource requirements of a container that needs to resize.
+`ResizeRequest` has two variables, which are `RequestStatus` and `NewResources`.
+`RequestStatus` represents the status of a resource resizing request.
+`ResizeRequested` indicates that resource resizing is requested.
+`ResizeAccepted` and `ResizeRejected` means that the requested resource resizing is accepted and rejected, respectively, by the Scheduler.
+`ResizeDone` indicates that the Kubelet has resized the pod with cgroup updates or container restart and the API server has achknowledged it, then updated the pod spec on ETCD with the new resource requirement.
+`NewResources` is a map indexed by a container’s name and its each entry holds new resource requirements of a container that needs to resize.
 
-Given a new PodSpec with new resource requirements from a client, first the 'API server' validates it.
-If it is valid, the 'API server' sets the RequestStatus to ResizedRequested and copies the new resource requirements of each container into the NewResources.
+Given a new PodSpec with new resource requirements from a client, first the API server validates it.
+If it is valid, the 'API server' sets `RequestStatus` to `ResizedRequested` and copies the new resource requirements of each container into `NewResources`.
 Also, the 'API server' restores the resource requirements of each container of the PodSpec to the original and writes the revised PodSpec to ETCD to communicate with the Scheduler.
 This is because at this moment the PodSpec on ETCD shouldn’t be updated with new resource requirements.
 
-For a pod with ResizeRequested, the 'Scheduler' checks if the node on which the pod currently runs has enough resources to resize the pod.
-The Scheduler notify the 'API server' of the result via 'Resizing' API operation, which will be describe below.
+For a pod with `ResizeRequested`, the Scheduler checks if the node on which the pod currently is running fits to resize the pod.
+The Scheduler notify the 'API server' of the result via `Resizing` API operation, which will be describe below.
+
+For a pod with `ResizeAccepted`, according to the new resource requirements, the Kubelet updates cgroup values of desired containers when the policy is LiveResizeable, or restarts desired containers with new cgroup values when the policy is ContainerRestartOnly.
+Then, if the Kubelet acknowledges that the cgroup updates or container restarts has been successfully completed, then notifies the API server of it via `Resizing` API operation.
 
 * **Resizing**
 
-A new API, Resizing, for the 'scheduler' is introduced:
+A new API, Resizing, for the Scheduler is introduced:
 
 ```go
 // Resizing resizes the resources allocated to a pod
@@ -192,13 +212,13 @@ type Resizing struct {
 }
 ```
 
-Resizing has the metadata of a pod to resize and a value of ResizeRequest that holds the status of a resizing request, which indicates whether the resizing is feasible or not, and new resource requirements of the pod.
+`Resizing` has (the copy of) the metadata of a pod to resize and a value of `ResizeRequest` that holds the status of a resizing request, for example, which indicates whether the resizing is feasible or not, and new resource requirements of the pod.
 
-Once the 'Scheduler' determine whether a resource resizing on a pod is feasible, or not, it notifies to the API server via this Resizing API.
-ObjectMeta.Namespace/Name are set to the Namespace and Name of the pod to resize and ResizeRequest is set with new resource requirements.
+Once the Scheduler determines whether resizing is feasible, or not, it notifies of the feasibility to the API server via this Resizing API.
+`ObjectMeta.Namespace/Name` are set to the Namespace and Name of a pod to resize and `ResizeRequest` is set with new resource requirements.
 
-Given a Resizing API operation, the ResizeStatus of the PodSpec of a Pod is updated according to that of the Resizing operation.
-If the ResizeStatus is ResizeAccepted, the API server updates the ResourceRequirement of each container of a pod with new resource requirements on ETCD.
+Given a Resizing API operation, `ResizeStatus` of the PodSpec of a Pod is updated according to that of the Resizing operation.
+Additionally, if `ResizeStatus` is `ResizeDone`, the API server updates the `ResourceRequirement` of each container of a pod with new resource requirements on ETCD.
 
 * **PodResized**
 
@@ -270,16 +290,15 @@ This describes the sequence of a pod-level vertical scaling example to resize th
 
 4. The Scheduler checks if the resizing is feasible and, if so, issues a Resizing API operation with the ResizeRequest of the “Accepted” status.
 
-5. The API server updates the PodSpec with the new resource requirement on etcd and also modifies the ResizeRequest of the PodSpec to “Accepted”.
+5. The API server updates the ResizeRequest of the PodSpec to “Accepted”.
 
 6., 7. The Kubelet updates the PodResized condition to “Accepted”.
 
-8. The Kubelet detects the change of resource requirements on the container and updates the cgroup configuration of the container via UpdateContainerResources CRI interface.
+8. The Kubelet acknowledges that the resizing request for the pod is accepted, then resizes the allocated resources to the pod either by cgroup updates or with container restart, according to its resize policy.
 
-9. The Kubelet modifies the status of the PodResized condition to Done after every update on the cgroup configuration of all containers to resize is done. 
+9. After confirming that the cgroup updates are done, or the containers are successfully restarted, the Kubelet modifies the status of the PodResized condition to Done, then issues a Resizing API operation with ResizeRequest of the "Done" status.
 
-10. It completes to resize the pod to have 2 CPUs.
-
+10. The API server updates the ResourceRequirements of the PodSpec with new resource configurations. Now, it completes to resize the pod to have 2 CPUs.
 
 ## Implementation Phases
 
