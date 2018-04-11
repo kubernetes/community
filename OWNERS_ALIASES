@@ -63,9 +63,6 @@ aliases:
   sig-node-leads:
     - dchen1107
     - derekwaynecarr
-  sig-on-premise-leads:
-    - marcoceppi
-    - dghubble
   sig-openstack-leads:
     - hogepodge
     - dklyle
