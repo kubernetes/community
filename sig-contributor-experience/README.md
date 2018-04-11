@@ -32,7 +32,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-contribex)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-contribex)
+* [Mailing list]()
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcontributor-experience)
 
 ## Subprojects
