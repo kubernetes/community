@@ -1,6 +1,6 @@
 reviewers:
-  - sig-on-premise-leads
+  - sig-on-premises-leads
 approvers:
-  - sig-on-premise-leads
+  - sig-on-premises-leads
 labels:
   - sig/onprem

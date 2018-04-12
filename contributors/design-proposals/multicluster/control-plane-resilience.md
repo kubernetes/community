@@ -125,7 +125,7 @@ well-bounded time period.
    automated self-healing, but it's somewhat more complex, and
    requires additional resources (e.g. redundant API servers and etcd
    quorum members).  In environments where cloud-assisted automatic
-   self-healing might be infeasible (e.g. on-premise bare-metal
+   self-healing might be infeasible (e.g. on-premises bare-metal
    deployments), it also gives cluster administrators more time to
    respond (e.g. replace/repair failed machines) without incurring
    system downtime.

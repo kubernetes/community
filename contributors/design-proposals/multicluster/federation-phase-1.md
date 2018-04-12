@@ -124,7 +124,7 @@ and post them back to `etcd` storage.
 One subtlety worth noting here is that the scheduling decision is arrived at by
 combining the application-specific request from the user (which might
 include, for example, placement constraints), and the global policy specified
-by the federation administrator (for example, "prefer on-premise
+by the federation administrator (for example, "prefer on-premises
 clusters over AWS clusters" or "spread load equally across clusters").
 
 ## Ubernetes Cluster Controller

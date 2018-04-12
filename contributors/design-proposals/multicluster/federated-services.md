@@ -81,12 +81,12 @@ the following environments:
    Compute Engine, GCE).
 1. A single Kubernetes Cluster on a different cloud provider
    (e.g. Amazon Web Services, AWS).
-1. A single Kubernetes Cluster on a non-cloud, on-premise data center
+1. A single Kubernetes Cluster on a non-cloud, on-premises data center
 1. A Federation of Kubernetes Clusters all on the same cloud provider
    (e.g. GCE).
 1. A Federation of Kubernetes Clusters across multiple different cloud
-   providers and/or on-premise data centers (e.g. one cluster on
-   GCE/GKE, one on AWS, and one on-premise).
+   providers and/or on-premises data centers (e.g. one cluster on
+   GCE/GKE, one on AWS, and one on-premises).
 
 ### Trading Portability for Optimization
 
@@ -109,7 +109,7 @@ environments. More specifically, for example:
    within a single region.
    [Google Cloud DNS](https://cloud.google.com/dns) can be used to
    route traffic between regions (and between different cloud
-   providers and on-premise clusters, as it's plain DNS, IP only).
+   providers and on-premises clusters, as it's plain DNS, IP only).
 1. For applications running on AWS-only Federations,
    [AWS Elastic Load Balancers (ELB's)](https://aws.amazon.com/elasticloadbalancing/details/)
    should be usable. These provide both L7 (HTTP(S)) and L4 load
@@ -137,7 +137,7 @@ Cross-cluster Federated load balancing is built on top of the following:
    programmable DNS service, like
    [CloudFlare](http://www.cloudflare.com) can be used to route
    traffic between regions (and between different cloud providers and
-   on-premise clusters, as it's plain DNS, IP only). Google Cloud DNS
+   on-premises clusters, as it's plain DNS, IP only). Google Cloud DNS
    doesn't provide any built-in geo-DNS, latency-based routing, health
    checking, weighted round robin or other advanced capabilities.
    It's plain old DNS. We would need to build all the aforementioned
