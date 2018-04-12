@@ -30,7 +30,7 @@ Abuse and misuse will result in prompt removal from the Project Managers group a
 
 The following is the provisional process for adding people to the group:
 
-1. Join kubernetes-wg-contribex at googlegroups.com. Send a message to that group that states:
+1. Join kubernetes-sig-contribex at googlegroups.com. Send a message to that group that states:
 1. Your github id.
 1. What you are working on with respect to the project.
 1. Any official management or leadership responsibilities you may have (e.g., manager of a team that includes the following contributors: ….).

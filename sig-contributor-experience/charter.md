@@ -18,7 +18,7 @@ Can be found on our [README](README.md)
 * Members run and organize the weekly [Kubernetes Community Meeting](/events/community-meeting.md)
 * This SIG will act as owners and maintainers of [kubernetes/community](https://github.com/kubernetes/community)
 * We participate in [lazy consensus](http://en.osswiki.info/concepts/lazy_consensus) for our decisions and the [KEP](/keps) process for major features and enhancements
-  * Idea and/or solution is proposed via the kubernetes-wg-contribex@googlegroups.com mailing list. Link(s) to GitHub issue proposal is a nice to have but not required
+  * Idea and/or solution is proposed via the kubernetes-sig-contribex@googlegroups.com mailing list. Link(s) to GitHub issue proposal is a nice to have but not required
   * Author will give a time period of no less than 3 working days being cognizant of popular observed world holidays to respond with questions, issues, or hold from a Chair/TL(s) for more information/research needed
   * Author will participate in implementation of the proposed idea and/or solution
 * We are responsible for community growth and management of Kubernetes and its ecosystem.  We support this growth by creating programs for SIGs, WGs and subprojects to address mentoring, learning and development, contributors, and GitHub workflows.
@@ -35,13 +35,13 @@ Can be found on our [README](README.md)
 * We own no code outside of the kubernetes/community repo although we may collaborate with other OWNERs of repos and SIG and WG leads
 * Drives consistent automation surrounding the PR workflow and issue triaging, and collaborates with other groups on implementing our design  
 * Process change communication: 
-  * Socialize on kubernetes-wg-contribex@googlegroups.com and on our weekly update calls 
+  * Socialize on kubernetes-sig-contribex@googlegroups.com and on our weekly update calls 
   * If the change impacts a small number (<4) of SIGs, WGs, or repos, we will go to each lead, their mailing lists, slack channel, and/or their update meetings and ask for feedback and a lazy consensus process. We will follow up with a post to kubernetes-dev@googlegroups.com mailing list 
   * In cases of impacts across a large number of areas and/or project wide, we will:
     *  Lazy consensus with a time box of at least 72 hours to the following mailing lists with the GitHub issue link including the subject [NOTICE]: foobar to the following mailing lists:
        * kubernetes-dev@
        * sig-leads@
-       * kubernetes-wg-contribex@
+       * kubernetes-sig-contribex@
     * Announce at weekly Kubernetes Community Meeting on Thursdays
 
 ## Leadership Composition
