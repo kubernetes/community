@@ -114,7 +114,17 @@ Provisioning and deletion operations are handled using the existing [external pr
 
 In short, to dynamically provision a new CSI volume, a cluster admin would create a `StorageClass` with the provisioner corresponding to the name of the external provisioner handling provisioning requests on behalf of the CSI volume driver.
 
-To provision a new CSI volume, an end user would create a `PersistentVolumeClaim` object referencing this `StorageClass`. The external provisioner will react to the creation of the PVC and issue the `CreateVolume` call against the CSI volume driver to provision the volume. The `CreateVolume` name will be auto-generated as it is for other dynamically provisioned volumes. The `CreateVolume` capacity will be taken from the `PersistentVolumeClaim` object. The `CreateVolume` parameters will be passed through from the `StorageClass` parameters (opaque to Kubernetes). If the `PersistentVolumeClaim` has the `selectedNode` annotation set (TODO verult update to actual annotation name) (only added if delayed volume binding is enabled in the `StorageClass`), the provisioner will get relevant topology labels from the corresponding `Node` and pass them to the `CreateVolume` call as preferred topology. `AllowedTopologies`from the `StorageClass` is passed through as permitted topology. Once the operation completes successfully, the external provisioner creates a `PersistentVolume` object to represent the volume using the information returned in the `CreateVolume` response. The topology of the returned volume is translated to the `PersistentVolume` `NodeAffinity` field. The `PersistentVolume` object is then bound to the `PersistentVolumeClaim` and available for use.
+To provision a new CSI volume, an end user would create a `PersistentVolumeClaim` object referencing this `StorageClass`. The external provisioner will react to the creation of the PVC and issue the `CreateVolume` call against the CSI volume driver to provision the volume. The `CreateVolume` name will be auto-generated as it is for other dynamically provisioned volumes. The `CreateVolume` capacity will be taken from the `PersistentVolumeClaim` object. The `CreateVolume` parameters will be passed through from the `StorageClass` parameters (opaque to Kubernetes). If the `PersistentVolumeClaim` has the `selectedNode` annotation set (TODO verult update to actual annotation name) (only added if delayed volume binding is enabled in the `StorageClass`), the provisioner will get relevant topology labels from the corresponding `Node` and pass them to the `CreateVolume` call as preferred topology. `AllowedTopologies` from the `StorageClass` is passed through as permitted topology. Once the operation completes successfully, the external provisioner creates a `PersistentVolume` object to represent the volume using the information returned in the `CreateVolume` response. The topology of the returned volume is translated to the `PersistentVolume` `NodeAffinity` field. The `PersistentVolume` object is then bound to the `PersistentVolumeClaim` and available for use.
+
+The format of topology key/value pairs is defined by the user and must match among the following locations:
+* `Node` topology labels
+* `PersistentVolume` `NodeAffinity` field
+* `StorageClass` `AllowedTopologies` field
+When a `StorageClass` has delayed volume binding enabled, the scheduler uses the topology information of a `Node` in the following ways:
+  1. During dynamic provisioning, the scheduler selects a candidate node for the provisioner by comparing each `Node`'s topology with the `AllowedTopologies` in the `StorageClass`. (TODO verult Link to volume scheduling design doc)
+  1. During volume binding and pod scheduling, the scheduler selects a candidate node for the pod by comparing `Node` topology with `VolumeNodeAffinity` in `PersistentVolume`s. (TODO verult Link to volume scheduling design doc).
+
+A more detailed description can be found in the [topology-aware volume scheduling design doc](#TODO link). See [Topology Representation in Node Objects](#topology-representation-in-node-objects) for the format used by the recommended deployment approach.
 
 To delete a CSI volume, an end user would delete the corresponding `PersistentVolumeClaim` object. The external provisioner will react to the deletion of the PVC and based on its reclamation policy it will issue the `DeleteVolume` call against the CSI volume driver commands to delete the volume. It will then delete the `PersistentVolume` object.
 
@@ -393,16 +403,16 @@ Topology information will be represented as labels.
 Requirements:
 * Must adhere to the [label format](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set).
 * Must support different drivers on the same node.
-* The format of each key/value pair must match those in `PersistentVolume` and `StorageClass` objects. When a `StorageClass` has delayed volume binding enabled, the scheduler uses the topology information of a `Node` in the following ways:
-  1. During dynamic provisioning, the scheduler selects a candidate node for the provisioner by comparing each `Node`'s topology with the `AllowedTopology` in the `StorageClass`. (TODO verult Link to volume scheduling design doc)
-  1. During volume binding and pod scheduling, the scheduler selects a candidate node for the pod by comparing `Node` topology with `VolumeNodeAffinity` in `PersistentVolume`s. (TODO verult Link to volume scheduling design doc)
-* Must avoid collision with topology specified from sources other than CSI.
+* The format of each key/value pair must match those in `PersistentVolume` and `StorageClass` objects, as described in the [Provisioning and Deleting](#provisioning-and-deleting) section.
+* Must avoid collision with labels specified from sources other than CSI.
 
 Proposal: `"csi.kubernetes.io.csi-driver.example.com/rack": "rack1"`
 
 Alternative: `"csi.kubernetes.io/com.example.csi-driver.rack": "rack1"`
 
 The alternative is invalid because the driver name could be up to 63 characters long, but the label name (after `/`) must be no longer than 63 characters.
+
+Because CSI topology values only contain the topology name (`rack`) and topology value (`rack1`), the driver name and the constant prefix must be prepended to the label as part of the provisioner's topology translation step.
 
 ### Example Walkthrough
 
