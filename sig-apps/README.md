@@ -8,7 +8,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 -->
 # Apps Special Interest Group
 
-Covers deploying and operating applications in Kubernetes. We focus on the developer and devops experience of running applications in Kubernetes. We discuss how to define and run apps in Kubernetes, demo relevant tools and projects, and discuss areas of friction that can lead to suggesting improvements or feature requests.
+SIG Apps Covers deploying and operating applications in Kubernetes with a focus on the application developer and application operator experience.
+For more information on the scope and processes for SIG Apps please see the [charter](https://github.com/kubernetes/community/blob/master/sig-apps/Charter.md).
 
 ## Meetings
 * Regular SIG Meeting: [Mondays at 9:00 PT (Pacific Time)](https://zoom.us/my/sig.apps) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
@@ -85,21 +86,6 @@ Monitor these for Github activity if you are not a member of the team.
 | @kubernetes/sig-apps-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-apps-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-apps-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
-
-## Goals
-
-* Discuss running and defining applications in Kubernetes (e.g., APIs, SDKs, Controllers, package management tools, etc.)
-* Work on improvements to the Workload API
-* Suggest Kubernetes features where we see friction
-* Be the voice of the people running applications in Kubernetes (developers and devops)
-* Help people get involved in the Kubernetes community
-* Show early features/demos of tools that make running apps easier
-
-## Non-goals
-
-* Do not endorse one particular ecosystem tool
-* Do not pick which apps to run on top of Kubernetes
-* Do not recommend one way to do things (e.g., picking a template language)
 
 ## [Helm](https://helm.sh) and [Charts](https://github.com/kubernetes/charts)
 
