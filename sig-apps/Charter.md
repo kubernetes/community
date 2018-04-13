@@ -4,9 +4,9 @@
 
 SIG Apps Covers deploying and operating applications in Kubernetes with a focus on the application developer and application operator experience.
 
-This includes but is not limited to:
+For example, this includes:
 
-* Discussions on all levels from application development, testing environments, and production
+* Discussions on all levels from application development, application testing environments, and applications running in production
 * Discussion of how to define and run apps in Kubernetes
 * Demos of relevant tools and projects
 * Discussion on areas of friction that can lead to suggesting improvements or feature requests
