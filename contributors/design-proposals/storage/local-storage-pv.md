@@ -785,14 +785,14 @@ Mechanisms to manage local storage sources are varied.
 In addition to current `populator`, `deletor` and `discoverer`, a new component named
 `storageManager` will be introduced in the plugin, to manage the backend storage.
 
-According to the input of classes in the configuration, there will be a list of `wrappers`
-under the manager, to communicate with backend storage. `wrapper` is a general interface,
-each kind of storage should have its own implementation. storageManager store the wrappers
-according to storage classes, wrappers of different classes can be different.
-LVM wrapper will be introduced in alpha phase.
+According to the input of classes in the configuration, there will be a list of `backends`
+under the manager, to communicate with backend storage. `backend` is a general interface,
+each kind of storage should have its own implementation. storageManager store the backends
+according to storage classes, backends of different classes can be different.
+LVM backend will be introduced in alpha phase.
 
 ```
-Wrappers map[string]wrapper.LocalVolumeWrapper
+Backends map[string]backend.DynamicProvisioningBackend
 ```
 
 During start-up, a new environment variable is needed for the provisioner DaemonSet:
@@ -806,7 +806,7 @@ in PVs with `AnnProvisionedBy`, to indicate which PVs are up to a certain node.
 To distinguish it from the new env `PROVISIONER_NAME`, we will rename it to `provisionerTag`.
 
 New field will be added into the configuration ConfigMap, to specify available
-volume group for lvm:
+volume group for lvm, the group should be created by the admin in advance:
 
 ```
 kind: ConfigMap
@@ -821,6 +821,9 @@ data:
     local-dynamic:
       lvm:
         volumeGroup: "volumeGroup1"
+      blockCleanerCommand:
+        - "/scripts/dd_zero.sh"
+        - "2"
 ```
 
 A StorageManager instance is responsible for:
@@ -877,18 +880,19 @@ call its `CreateLocalVolume` function to:
 1. Create volumes behind a PV accordingly
 2. Create a PV object that is pre-bound to the PVC
 
-For LVM, the proposed workflow is:
+The proposed workflow is:
 
 1. Check if there is already a PV pre-bound to the PVC, if so, return directly
 (This can happen when a volume has already been provisioned for a PVC,
 but has not been bound to the PVC by the controller yet).
-2. Check if the its capacity has been initialized in the StorageClass.
-If not, return error.
-3. Check if the class is available for dynamic provisioning (i.e. has an input of `volumeGroup`).
-If not, return error.
-4. Create `logical volume (LV)` object in the VG.
-5. Create a PV API object that is pre-bound to the PVC, and the path
-of local storage in the PV should be the path of the LV created above.
+2. Check if `annProvisionerTopology` is set on the PVC. If not, then it means
+that the scheduler made a provisioning decision before the capacity initialized
+in StorageClasses. Return error.
+3. Check if the class is available for dynamic provisioning
+(e.g. has an input of `volumeGroup` for LVM). If not, return error.
+4. Create volumes behind a PV (e.g. for LVM, Create `logical volume (LV)`
+object in the VG).
+5. Create a PV API object that is pre-bound to the PVC.
 
 **Note:** As it describes in [Volume Topology-aware Scheduling](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/volume-topology-scheduling.md),
 in whichever step it fails, the provisioner will signal back to the scheduler
@@ -911,28 +915,38 @@ and for dynamic privisioned volumes, the deleting process should be:
 
 ##### Expansion of Local Volume Plugin
 
-Currently, the path in `LocalVolumeSource` must be a directory. Thus, for dynamic
-provisioned volumes, the provisioner need to mount the LV to a host path first,
+Currently, Intended `VolumeMode` of a local volume is determined by the state of
+the input path. If a user need a local volume whose `VolumeMode` is filesystem,
+the path provided in `LocalVolumeSource` must be a directory. Thus, for dynamic
+provisioned volumes, the provisioner need to mount the LV to a global path first,
 to allow kubelet for another mount. It increases the complexity of the plugin.
 
 Therefore, in-tree local storage plugin will be updated to support both directory
-and block as a source of mount. The mount process would be:
-1. Detect if given path in volumeSource is mounted or not, if mounted,
-continue to work in the existing way.
-2. If not, Check if global path `{pluginDir}/mounts/{volumeID}` exists.
-and create the directory if not.
-3. Check if the global path is of mount point, if not, mount given path to
-the global path.
-4. Manage `mkfs` for the global path if it is newly created or mounted.
-5. Mount the global path to the path in pods.
+and block as volume source.
+Specifically, we will implement the following interfaces, to manage the global mount
+when volume source is of block:
 
-New field `FSType` will be added in `LocalVolumeSource` to support `mkfs` in the mounter.
+* GetDeviceMountPath(spec *Spec) (string, error)
+* MountDevice(spec *Spec, devicePath string, deviceMountPath string) error
+* UnmountDevice(deviceMountPath string) error
+
+1. GetDeviceMountPath: Detect if given path in volumeSource is a directory,
+if so, then it means the path is already of filesystem, return it as global
+path directly; if not, return global path `{pluginDir}/mounts/{volumeID}`.
+2. MountDevice: if given path is of filesystem, return without doing anything;
+if it's of block, check if global path exist, if not, create the path; check
+if the global path is of mount point, if not, try to format and mount given path
+to the global path.
+3. UnmountDevice: if the mount path is in format of `{pluginDir}/mounts/...`,
+unmount it; otherwise return directly.
+
+New field `FSType` will be added in LocalVolumeSource, to indicate the filesystem
+type when formating a disk input path:
 
 ```
 type LocalVolumeSource struct {
 	// The full path to the volume on the node
-	// For alpha, this path must be a directory
-	// Once block as a source is supported, then this path can point to a block device
+	// The path can be a directory or point to a block device
 	Path string
 	// Filesystem type to mount.
 	// Must be a filesystem type supported by the host operating system.
@@ -941,9 +955,30 @@ type LocalVolumeSource struct {
 	FSType string
 }
 ```
+And on the provisioner side, new field `volumeMode` will be added into the config,
+to indicate intended volume mode of statically discovered volumes:
 
-**Note:** The change will only work on PersistentVolumes whose volumeMode are "Filesystem",
-PVs of "Block" mode are not affected.
+```
+kind: ConfigMap
+metadata:
+  name: local-volume-config
+  namespace: kube-system
+data:
+ storageClassMap: |
+    local-static:
+      hostDir: "/mnt/ssds"
+      mountDir: "/local-ssds"
+      volumeMode: "Filesystem"
+    local-dynamic:
+      lvm:
+        volumeGroup: "volumeGroup1"
+      blockCleanerCommand:
+        - "/scripts/dd_zero.sh"
+        - "2"
+```
+
+**Note:** `VolumeModes` of dynamically provisioned volumes are determined by the volume mode
+in their claims.
 
 ##### Alternatives
 
@@ -964,5 +999,5 @@ in storage sources.
 When some disks are added, removed or failed, the plugin need to process and recover accordingly.
 In addition, the underlying storage resources are varied, they may be  physical disks,
 RAIDs, and so on, so it's hard to cover all the scenes.
-2. As provisioners running on all nodes shall a same configuration ConfigMap,
+2. As provisioners running on all nodes share a same configuration ConfigMap,
 disk partitions of their nodes are required to be named the same.
