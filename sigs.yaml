@@ -1189,6 +1189,9 @@ sigs:
       - name: Phillip Wittrock
         company: Google
         github: pwittrock
+      - name: Stefan Schimanski
+        company: Red Hat
+        github: sttts
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
