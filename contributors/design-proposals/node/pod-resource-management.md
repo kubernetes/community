@@ -228,7 +228,7 @@ of a compressible resource that was requested by a pod in a higher QoS tier.
 The `kubelet` will support a flag `experimental-qos-reserved` that
 takes a set of percentages per incompressible resource that controls how the
 QoS cgroup sandbox attempts to reserve resources for its tier.  It attempts
-to reserve requested resources to exclude pods from lower OoS classes from
+to reserve requested resources to exclude pods from lower QoS classes from
 using resources requested by higher QoS classes. The flag will accept values
 in a range from 0-100%, where a value of `0%` instructs the `kubelet` to attempt
 no reservation, and a value of `100%` will instruct the `kubelet` to attempt to
@@ -564,10 +564,10 @@ Pod3 and Pod4 are both classified as Burstable and are hence nested under
 the Burstable cgroup.
 
 ```
-/ROOT/burstable/cpu.shares = 30m
+/ROOT/burstable/cpu.shares = 130m
 /ROOT/burstable/memory.limit_in_bytes = Allocatable - 5Gi
 /ROOT/burstable/Pod3/cpu.quota = 150m
-/ROOT/burstable/Pod3/cpu.shares = 20m
+/ROOT/burstable/Pod3/cpu.shares = 120m
 /ROOT/burstable/Pod3/memory.limit_in_bytes = 3Gi
 /ROOT/burstable/Pod4/cpu.quota = 20m
 /ROOT/burstable/Pod4/cpu.shares = 10m
