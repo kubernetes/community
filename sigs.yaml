@@ -1179,6 +1179,9 @@ sigs:
       - name: Anthony Yeh
         company: Google
         github: enisoc
+      - name: Stefan Schimanski
+        company: Red Hat
+        github: sttts
       tech_leads:
       - name: Jimmy Zelinskie
         company: Red Hat
