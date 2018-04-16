@@ -39,12 +39,13 @@ and this document will cover the basic ones.
 ## Determine if it's a support request
 
 Sometimes users ask for support requests in issues; these are usually requests
-from people who need help configuring some aspect of Kubernetes. These issues should be
-labeled with `kind/support`, directed to our support structures (see below) and then closed. Also, if the issue
-is clearly abandoned or in the wrong place, it should be closed. Keep in mind that
-only issue reporter, assignees and component organization members can close issue.
-If you do not have such privilege, just comment your findings. Otherwise, first
-`/assign` issue to yourself and then `/close`.
+from people who need help configuring some aspect of Kubernetes. These issues
+should be labeled with `kind/support`, directed to our support structures
+(see below) and then closed. Also, if the issue is clearly abandoned or in the
+wrong place, it should be closed. Keep in mind that only issue reporter,
+assignees and component organization members can close issue. If you do not
+have such privilege, just comment your findings. Otherwise, first `/assign`
+issue to yourself and then `/close`.
 
 ### Support Structures
 
@@ -104,20 +105,21 @@ comment.
 
 ## Validate if the issue is bug
 
-Validate if the problem is a bug by reproducing it. If reproducible, move to the
-next step of defining priority. You may need to contact the issue reporter in
-the following cases:
-* Do a quick duplicate search to see if the issue has been reported already. If
-a duplicate is found, let the issue reporter know it by marking it duplicate. Label
-such issues as `triage/duplicate`.
+Validate if the problem is a bug by reproducing it. If reproducible, move to
+the next step of defining priority. You may need to contact the issue reporter
+in the following cases:
+* Do a quick duplicate search to see if the issue has been reported already.
+If a duplicate is found, let the issue reporter know it by marking it
+duplicate. Label such issues as `triage/duplicate`.
 * If you can not reproduce the issue, label it as a `triage/not-reproducible`.
-Contact the issue reporter with your findings and close the issue if both the parties
-agree that it could not be reproduced.
-* If you need more information to further work on the issue, let the reporter know it
-by adding an issue comment followed by label `triage/needs-information`.
+Contact the issue reporter with your findings and close the issue if both the
+parties agree that it could not be reproduced.
+* If you need more information to further work on the issue, let the reporter
+know it by adding an issue comment followed by label
+`triage/needs-information`.
 
-In all cases, if you do not get a response in 20 days then close the issue with
-an appropriate comment.
+In all cases, if you do not get a response in 20 days then close the issue
+with an appropriate comment.
 
 ## Define priority
 
@@ -208,16 +210,19 @@ block the release on it. A few days before release, we will probably move all
 that milestone in bulk.
 
 ## Closing issues
-Issues that are identified as a support request, duplicate, not-reproducible or
-lacks enough information from reporter should be closed following guidelines explained
-in this file. Also, any issues that can not be resolved because of any particular reason
-should be closed. These issues should have one or more of following self-readable
-labels:
-* `kind/support`
-* `triage/duplicate`
-* `triage/not-reproducible`
-* `triage/needs-information`
-* `triage/unresolved`
+Issues that are identified as a support request, duplicate, not-reproducible
+or lacks enough information from reporter should be closed following guidelines
+explained in this file. Also, any issues that can not be resolved because of
+any particular reason should be closed. These issues should have one or more
+of following self-readable labels:
+* `kind/support`: Indicates an issues is not a bug but a support request.
+* `triage/duplicate`: Indicates an issue is a duplicate of other open issue.
+* `triage/not-reproducible`: Indicates an issue can not be reproduced as
+described.
+* `triage/needs-information`: Indicates an issue needs more information in
+order to work on it.
+* `triage/unresolved`: Indicates an issue that can not be resolved.
 
-A triage engineer should add these labels appropriately. Kubernetees GitHub Org members can
-search issues per these labels to find ones that can be quickly closed.
+A triage engineer should add these labels appropriately. Kubernetees GitHub
+Org members can search [open issues per these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%93&q=triage%2F+kind%2Fsupport+is%3Aopen) to find ones that can be
+quickly closed.
