@@ -20,6 +20,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Jimmy Zelinskie (**[@jzelinskie](https://github.com/jzelinskie)**), Red Hat
 * Anthony Yeh (**[@enisoc](https://github.com/enisoc)**), Google
+* Stefan Schimanski (**[@sttts](https://github.com/sttts)**), Red Hat
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
