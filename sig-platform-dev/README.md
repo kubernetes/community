@@ -28,6 +28,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Jimmy Zelinskie (**[@jzelinskie](https://github.com/jzelinskie)**), Red Hat
 * Anthony Yeh (**[@enisoc](https://github.com/enisoc)**), Google
 * Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
+* Stefan Schimanski (**[@sttts](https://github.com/sttts)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-platform-dev)
