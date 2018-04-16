@@ -54,7 +54,7 @@ cd kubernetes
 make test  # Run all unit tests.
 ```
 
-if any unit test fails with a timeout panic (see #1594) on the testing package. you can increase the KUBE_TIMEOUT value as shown below.
+If any unit test fails with a timeout panic (see [#1594](https://github.com/kubernetes/community/issues/1594)) on the testing package, you can increase the `KUBE_TIMEOUT` value as shown below.
 
 ```sh
 make test KUBE_TIMEOUT=-timeout 300s
