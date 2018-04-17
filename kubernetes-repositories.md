@@ -30,7 +30,7 @@ SIG repositories serve as temporary homes for SIG-sponsored experimental project
 
 To provide a place for SIGs to collaborate on projects endorsed by and actively worked on by members of the SIG. SIGs should be able to approve and create new repositories for SIG-sponsored projects without requiring higher level approval from a central body (e.g. steering committee or sig-architecture)
 
-#### Rules
+#### Rules for new repositories
 
    * For now all repos will live in github.com/kubernetes-sigs/\<project-name\>.
    * Must contain the topic for the sponsoring SIG - e.g. `k8s-sig-api-machinery`.  (Added through the *Manage topics* link on the repo page.)
@@ -40,6 +40,21 @@ To provide a place for SIGs to collaborate on projects endorsed by and actively 
    * All OWNERS of the project must also be active SIG members.
    * SIG membership must vote using lazy consensus to create a new repository
    * SIG must already have identified all of their existing subprojects and code, with valid OWNERS files, in [`sigs.yaml`](https://github.com/kubernetes/community/blob/master/sigs.yaml)
+
+#### Rules for donated repositories
+
+The `kubernetes-sigs` organization is primarily intended to house net-new
+projects originally created in that organization. However, projects that a SIG
+adopts may also be donated.
+
+In addition to the requirements for new repositories, donated repositories must demonstrate that:
+
+   * All contributors must have signed the [CNCF Individual CLA](https://github.com/cncf/cla/blob/master/individual-cla.pdf)
+   or [CNCF Corporate CLA](https://github.com/cncf/cla/blob/master/corporate-cla.pdf)
+   * If (a) contributor(s) have not signed the CLA and could not be reached, a NOTICE
+   file should be added referencing section 7 of the CLA with a list of the developers who could not be reached
+   * Licenses of dependencies are acceptable; project owners can ping [@caniszczyk](https://github.com/caniszczyk) for review of third party deps
+   * Boilerplate text across all files should attribute copyright as follows: `"Copyright <Project Authors>"` if no CLA was in place prior to donation
 
 ### Core Repositories
 
