@@ -15,13 +15,11 @@ approvers:
   
 editor: TBD
 creation-date: 2018-04-03
-last-updated: 2018-04-03
+last-updated: 2018-04-17
 status: provisional
 ---
 
 # A community forum for Kubernetes
-
-(This is a draft and not PRed or proposed yet)
 
 ## Table of Contents
 
@@ -97,8 +95,6 @@ The site would be forum.k8s.io, and would be linked to from the homepage and maj
 
 ### User Stories
 
-(This is a bullet list right now, needs to be fleshed out)
-
 - A place for open ended discussion. For example "What CI/CD tools is everyone using?"
   - This would be closed as offtopic on StackOverflow, but would be perfect for a forum.
 - Post announcements about kubernetes core that are important for end users
@@ -161,6 +157,16 @@ The site would be forum.k8s.io, and would be linked to from the homepage and maj
 - [GDPR Compliance](https://www.eugdpr.org/)
   - Lots of data retention options in Discourse. 
   - We'd need to engage with upstream on their plans for this, we would want to avoid having to manage this ourselves. 
+
+#### References from other projects
+
+- [Chef RFC](https://github.com/chef/chef-rfc/blob/master/rfc028-mailing-list-migration.md)
+  - [Blog post](https://coderanger.net/chef-mailing-list/) from a community member - good mailing list and community feedback here. 
+- [Swift's Plan](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20170206/031657.html) - Long discussion, worth reading
+- [HTM Forum](https://discourse.numenta.org/t/guidelines-for-using-discourse-via-email/314)
+- [Julia](https://discourse.julialang.org/t/discourse-as-a-mailing-list/57) - It might be useful for us to investigate pregenerating the mail addresses?
+- [How's Discourse working out for Ghost](https://forum.ghost.org/t/hows-discourse-working-out-for-ghost/947) - We asked them for some direct feedback on their progress so far 
+
 
 ## Graduation Criteria
 
