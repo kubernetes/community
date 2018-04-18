@@ -828,12 +828,61 @@ data:
 
 A manager instance is responsible for:
 
-1. Implement interface `GetCapacity(storageClass string) int64` to report capacity of
+1. Implement function `GetCapacity(storageClass string) int64` to report capacity of
 certain class.
-2. Implement interface `CreateLocalVolume(claim *v1.PersistentVolumeClaim) error`
+2. Implement function `CreateLocalVolume(claim *v1.PersistentVolumeClaim) error`
 to create PVs and the local volumes behind them.
-3. Implement interface `DeleteLocalVolume(pv *v1.PersistentVolume) error` to
+3. Implement function `DeleteLocalVolume(pv *v1.PersistentVolume) error` to
 clean up the local volume behind a PV.
+
+##### LVM Backend Details
+
+LVM backend will be introduced in alpha phase. Here are some details about it.
+
+###### Required Paths
+
+As the provisioner plugin runs as a container, we'll need to mount the root path of LVM into
+the container. The path is default to "/dev". Theoretically, the LVM root path can be modified
+to other paths, but we haven't see practical use cases so far. Besides, if a user decide to
+mount it to another path, he/she will have to modify the config of LVM and udev in the
+provisioner image manually. So for the first phase, we'll hard code the paths to "/dev",
+and make it configurable in later releases if the need ever arises.
+
+###### Parameters To Initialize a Backend
+
+Volume group name and the root path of LVM (default to "/dev") are needed to initialize
+a `LvmBackend`:
+
+```
+NewLvmBackend(volumeGroup, rootPath string) *LvmBackend
+```
+
+###### Responsibility
+
+The backend is responsible for creating and deleting volumes (LVs) when it's called by
+the `dynamicProvisioningManager`. To create a volume, the manager will need to pass
+volume name and volume size into the backend; and volume name is needed to delete a LV.
+
+The name of a volume will be same to its PV object. Thus, the path of a created LV will be:
+
+```
+/dev/{volumeGroupName}/{pvName}
+```
+
+Besides, In order to report the capacity, the backend should also be able to fetch `VG Size`
+from its group.
+
+###### Recovery On Reboot/Failure
+
+We'll expose the path of the created LV as the local volume path, without any formating or
+mounting, and leave the part to in-tree plugin. Thus, on reboot, the provisioner does not
+need to do any formating/remount for recovery.
+
+The only thing to be concerned about is when the etcd experienced a data backup and recovery,
+there might be an inconsistency between stored PVs and existing LVs on the node. We may need to
+reconcile the PVs and existing volumes periodically.
+
+However, it is thought to be rare corner case, and we'll not cover in the first phase.
 
 ##### Reconcile Capacity
 
