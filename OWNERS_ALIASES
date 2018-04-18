@@ -50,6 +50,10 @@ aliases:
     - jaredbhatti
   sig-gcp-leads:
     - abgworrall
+  sig-ibmcloud-leads:
+    - khahmed
+    - rtheis
+    - spzala
   sig-instrumentation-leads:
     - piosz
     - brancz

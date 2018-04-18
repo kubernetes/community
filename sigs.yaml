@@ -826,7 +826,37 @@ sigs:
     - name: cloud-provider-gcp
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
-
+  - name: IBMCloud
+    dir: sig-ibmcloud
+    mission_statement: >
+      A Special Interest Group (SIG) for building, deploying, maintaining, supporting,
+      and using Kubernetes on IBM Public and Private Clouds.
+    label: ibmcloud
+    leadership:
+      chairs:
+      - name: Khalid Ahmed
+        github: khahmed
+        company: IBM
+      - name: Richard Theis
+        github: rtheis
+        company: IBM
+      - name: Sahdev Zala
+        github: spzala
+        company: IBM
+    meetings:
+    - description: Regular SIG Meeting
+      day: Wednesday
+      time: "14:00"
+      tz: "EST"
+      frequency: biweekly
+      url: https://zoom.us/j/9392903494
+      archive_url: https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit
+    contact:
+      slack: sig-ibmcloud
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-ibmcloud
+      teams:
+      - name: sig-ibmcloud-misc
+        description: General Discussion
   - name: Instrumentation
     dir: sig-instrumentation
     mission_statement: >
