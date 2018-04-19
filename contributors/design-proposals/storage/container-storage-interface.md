@@ -414,6 +414,97 @@ The alternative is invalid because the driver name could be up to 63 characters 
 
 Because CSI topology values only contain the topology name (`rack`) and topology value (`rack1`), the driver name and the constant prefix must be prepended to the label as part of the provisioner's topology translation step.
 
+#### Topology Representation in PersistentVolume Objects
+There exists multiple ways to represent a single topology as NodeAffinity. For example, suppose a `CreateVolumeResponse` contains the following accessible topology:
+
+```yaml
+- zone: "a"
+  rack: "1"
+- zone: "b"
+  rack: "1"
+- zone: "b"
+  rack: "2"
+```
+
+There are at least 3 ways to represent this in NodeAffinity (excluding `nodeAffinity`, `required`, and `nodeSelectorTerms` for simplicity):
+
+Form 1 - `values` contain exactly 1 element.
+```yaml
+- matchExpressions:
+  - key: zone
+    operator: In
+    values:
+    - "a"
+  - key: rack
+    operator: In
+    values:
+    - "1"
+- matchExpressions:
+  - key: zone
+    operator: In
+    values:
+    - "b"
+  - key: rack
+    operator: In
+    values:
+    - "1"
+- matchExpressions:
+  - key: zone
+    operator: In
+    values:
+    - "b"
+  - key: rack
+    operator: In
+    values:
+    - "2"
+```
+
+Form 2 - Reduced by `rack`.
+```yaml
+- matchExpressions:
+  - key: zone
+    operator: In
+    values:
+    - "a"
+    - "b"
+  - key: rack
+    operator: In
+    values:
+    - "1"
+- matchExpressions:
+  - key: zone
+    operator: In
+    values:
+    - "b"
+  - key: rack
+    operator: In
+    values:
+    - "2"
+```
+Form 3 - Reduced by `zone`.
+```yaml
+- matchExpressions:
+  - key: zone
+    operator: In
+    values:
+    - "a"
+  - key: rack
+    operator: In
+    values:
+    - "1"
+- matchExpressions:
+  - key: zone
+    operator: In
+    values:
+    - "b"
+  - key: rack
+    operator: In
+    values:
+    - "1"
+    - "2"
+```
+The provisioner will always choose Form 1, i.e. all `values` will have at most 1 element. Reduction logic could be added in future versions to arbitrarily choose a valid and simpler form like Forms 2 & 3.
+
 ### Example Walkthrough
 
 #### Provisioning Volumes
