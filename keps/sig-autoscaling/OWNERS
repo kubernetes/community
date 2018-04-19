@@ -1,0 +1,6 @@
+reviewers:
+  - sig-autoscaling-leads
+approvers:
+  - sig-autoscaling-leads
+labels:
+  - sig/autoscaling
