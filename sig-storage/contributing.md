@@ -31,7 +31,7 @@ what you are proposing. We are really trying to improve our test coverage and do
 and documentation in your implementation PR.
 
 ### Helping with Issues
-A great way to get involved is to pick an issue and help address it. We would love help here. Storage related issues are [listed here](https://github.com/kubernetes/kubernetes/labels/sig%2Fstorage)
+A great way to get involved is to pick an issue and help address it. We would love help here. Storage related issues are [listed here](https://github.com/kubernetes/kubernetes/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Asig%2Fstorage+).
 
 ### Adding support for a new storage platform in Kubernetes
 For folks looking to add support for a new storage platform in Kubernetes, you have several options:
