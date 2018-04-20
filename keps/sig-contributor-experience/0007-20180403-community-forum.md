@@ -178,6 +178,7 @@ After a _three month_ prototyping period SIG Contributor Experience will:
   - There is a strong desire that this would replace an existing support venue, SIG Contributor Experience will weigh the options.  
 - If this solution is not better than what we have, and we don't want to support yet another tool we we would shut the project down.
 - If we don't have enough information to draw a conclusion, we may decide to extend the evaluation period.
+- Site should have a moderation and administrative policies written down.
 
 
 ## Implementation History
