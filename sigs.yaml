@@ -415,10 +415,10 @@ sigs:
       chairs:
       - name: Stephen Augustus
         github: justaugustus
-        Company: Red Hat
+        company: Red Hat
       - name: Shubheksha Jalan
         github: shubheksha
-        Company: Microsoft
+        company: Microsoft
       tech_leads:
       - name: Kal Khenidak
         github: khenidak

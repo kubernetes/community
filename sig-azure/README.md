@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 A Special Interest Group for building, deploying, maintaining, supporting, and using Kubernetes on Azure.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 16:00 UTC](https://zoom.us/j/2015551212) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+* Regular SIG Meeting: [Wednesdays at 16:00 UTC](https://zoom.us/j/2015551212) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
 
@@ -20,9 +20,15 @@ A Special Interest Group for building, deploying, maintaining, supporting, and u
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Jason Hansen (**[@slack](https://github.com/slack)**), Microsoft
+* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Red Hat
+* Shubheksha Jalan (**[@shubheksha](https://github.com/shubheksha)**), Microsoft
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Kal Khenidak (**[@khenidak](https://github.com/khenidak)**), Microsoft
 * Cole Mickens (**[@colemickens](https://github.com/colemickens)**), Red Hat
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Microsoft
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-azure)
@@ -47,7 +53,13 @@ Monitor these for Github activity if you are not a member of the team.
 
 | Team Name | Details | Google Groups | Description |
 | --------- |:-------:|:-------------:|  ----------- |
+| @kubernetes/sig-azure-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-azure-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-azure-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-azure-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-azure-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-azure-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-feature-requests) | Feature Requests |
 | @kubernetes/sig-azure-misc | [link](https://github.com/orgs/kubernetes/teams/sig-azure-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-misc) | General Discussion |
+| @kubernetes/sig-azure-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-azure-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-pr-reviews) | PR Reviews |
+| @kubernetes/sig-azure-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-azure-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-proposals) | Design Proposals |
+| @kubernetes/sig-azure-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-azure-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

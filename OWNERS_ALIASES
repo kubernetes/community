@@ -21,9 +21,10 @@ aliases:
     - kris-nova
     - countspongebob
   sig-azure-leads:
-    - slack
+    - justaugustus
+    - shubheksha
+    - khenidak
     - colemickens
-    - jdumars
   sig-big-data-leads:
     - foxish
     - erikerlandson
