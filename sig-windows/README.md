@@ -21,6 +21,7 @@ Focuses on supporting Windows Server Containers for Kubernetes.
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Michael Michael (**[@michmike](https://github.com/michmike)**), Apprenda
+* Patrick Lang (**[@patricklang](https://github.com/patricklang)**), Microsoft
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-windows)

@@ -1613,6 +1613,9 @@ sigs:
       - name: Michael Michael
         github: michmike
         company: Apprenda
+      - name: Patrick Lang
+        github: patricklang
+        company: Microsoft
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
