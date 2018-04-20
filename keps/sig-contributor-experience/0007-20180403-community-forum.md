@@ -41,7 +41,7 @@ status: provisional
 
 ## Summary
 
-Kubernetes is large enough that we should take a more active role in growing our community. We need a place to call our own that can encompass users, contributors, meetups, and other groups in the community. Is need for something between email and real time chat that can fulfill this? The primary purpose of this KEP is to determine whether we can provide a better community forum experience and perhaps improve our mailing list workflow. 
+Kubernetes is large enough that we should take a more active role in growing our community. We need a place to call our own that can encompass users, contributors, meetups, and other groups in the community. Is there a need for something between email and real time chat that can fulfill this? The primary purpose of this KEP is to determine whether we can provide a better community forum experience and perhaps improve our mailing list workflow. 
 
 The site would be forum.k8s.io, and would be linked to from the homepage and major properties. [See KEP005](https://github.com/kubernetes/community/blob/master/keps/sig-contributor-experience/0005-contributor-site.md) for related information on a contributor website. 
 
@@ -65,7 +65,7 @@ The site would be forum.k8s.io, and would be linked to from the homepage and maj
 
 ### Goals
 
-- Set up a prototype at forum.k8s.io
+- Set up a prototype at discuss.k8s.io/discuss.kubernetes.io
   - Determine if the mailing list feature is robust enough to replace our google groups
   - References: [Mailing list roadmap](https://meta.discourse.org/t/moss-roadmap-mailing-lists/36432), [Discourse and email lists](https://meta.discourse.org/t/discourse-and-email-lists-like-google-groups/39915)
 - Heavy user engagement within 6 months.
@@ -170,7 +170,15 @@ The site would be forum.k8s.io, and would be linked to from the homepage and maj
 
 ## Graduation Criteria
 
-There will be a feedback subforum where users can directly give us feedback on what they'd like to see. Metrics and site usage should determine if this will be viable in the long term. 
+There will be a feedback subforum where users can directly give us feedback on what they'd like to see. Metrics and site usage should determine if this will be viable in the long term.
+
+After a _three month_ prototyping period SIG Contributor Experience will:
+
+- Determine if this is a better solution than what we have, and figure out where this would fit in the ecosystem
+  - There is a strong desire that this would replace an existing support venue, SIG Contributor Experience will weigh the options.  
+- If this solution is not better than what we have, and we don't want to support yet another tool we we would shut the project down.
+- If we don't have enough information to draw a conclusion, we may decide to extend the evaluation period.
+
 
 ## Implementation History
 
