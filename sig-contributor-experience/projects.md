@@ -60,7 +60,7 @@ https://k8s.devstats.cncf.io; work devstats into making it the one stop shop for
 
 Project | Owner(s)/Lead(s) | Description | Q1, Q2, Later
 ---|---|---|---
-Graph of the Week | @castrojo, @phillels | Present at least two graphs a month with explanation about why we care to the community meeting | Ongoing
+Graph of the Week | @phillels | Present at least two graphs a month with explanation about why we care to the community meeting | Ongoing
 [User Guide](https://github.com/cncf/devstats/issues/35) | @jberkus, @parispittman, @tpepper | Create a v1 README for DevStats that explains each chart | Q2
 Data validation | @jberkus | Ensure that the data that running through the tool is accurate and aggregating the right information | ongoing
 
