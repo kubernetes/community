@@ -1,0 +1,48 @@
+# Moderation on Kubernetes Communications Channels
+
+This page describes the rules and best practices for people chosen to moderate Kubernetes communications channels, such as Slack and the mailing lists.
+
+## Roles and Responsibilities
+
+As part of volunteering to become a moderator you are now representative of the Kubernetes community and it is your responsibility to remain aware of your contributions in this space. 
+These responsibilities apply to all Kubernetes official channels. 
+
+Moderators _MUST_:   
+
+- Take action as specified by these Kubernetes Moderator Guidelines.
+- Agree to abide by the documented tasks and actions required of moderators.
+- Ensure that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) is in effect on all official Kubernetes communication channels. 
+- Take care of spam as soon as possible, which may mean taking action by  removing a member from that resource.
+- Fostering a safe and productive environment by being aware of potential multiple cultural differences between Kubernetes community members.
+- Understand that you might be contacted by moderators, community managers, and other users via private email. 
+- Report egregious behavior to steering@k8s.io.
+
+Moderators _SHOULD_: 
+
+- Understand that compassion and empathy is a trait I should display when communicating and collaborating with other community members.
+- Be an example and role model to others in the community.
+- Remember to check and recognize if you need take a break when you become frustrated or find yourself in a heated debate.
+- Help your colleagues if you recognize them in one of the [stages of burnout](https://opensource.com/business/15/12/avoid-burnout-live-happy).
+- Be helpful and have fun! 
+
+## Specific Guidelines
+
+These guidelines are for tool-specific policies that don't fit under a general umbrella. 
+
+### Mailing Lists
+
+
+### Slack
+
+
+### References and Resources
+
+Thanks to the following projects for making their moderation guidelines public, allowing us to build on the shoulders of giants.
+Moderators are encouraged to learn how other projects moderate and learn from them in order to improve our guidelines:
+
+- Mozilla's [Forum Moderation Guidelines](https://support.mozilla.org/en-US/kb/moderation-guidelines)
+- OASIS [How to Moderate a Mailing List](https://www.oasis-open.org/khelp/kmlm/user_help/html/mailing_list_moderation.html)
+- Community Spark's [How to effectively moderate forums](http://www.communityspark.com/how-to-effectively-moderate-forums/)
+- [5 tips for more effective community moderation](https://www.socialmediatoday.com/social-business/5-tips-more-effective-community-moderation)
+- [8 Helpful Moderation Tips for Community Managers](https://sproutsocial.com/insights/tips-community-managers/)
+- [Setting Up Community Guidelines for Moderation](https://www.getopensocial.com/blog/community-management/setting-community-guidelines-moderation)
