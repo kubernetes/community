@@ -2,27 +2,17 @@
 
 ## Scope
 
-SIG Apps Covers deploying and operating applications in Kubernetes with a focus on the application developer and application operator experience.
-
-For example, this includes:
-
-* Discussions on all levels from application development, application testing environments, and applications running in production
-* Discussion of how to define and run apps in Kubernetes
-* Demos of relevant tools and projects
-* Discussion on areas of friction that can lead to suggesting improvements or feature requests
-* Development of Kubernetes primitives (e.g., Workloads API) to enable the application developers and operators. Note, most new types should be created as CRDs during their development phase and may always be ecosystem projects
-* Creation of documentation to enable application developers and operators
-* Development and maintenance of the sub-projects of Helm, Charts, and Kompose. Note, these projects are grandfathered and treated as part of the ecosystem but owned by SIG Apps. New projects are expected to stay in the ecosystem.
+SIG Apps Covers developing, deploying, and operating applications on Kubernetes with a focus on the application developer and application operator experience.
 
 ### Goals
 
-* Discuss running and defining applications in Kubernetes (e.g., APIs, SDKs, Controllers, package management tools, etc.)
-* Share common patterns and practices
-* Work on improvements to the Workload API
-* Suggest and sometimes develop Kubernetes features where we see friction
-* Be the voice of the people running applications in Kubernetes (application developers and operators)
-* Help people get involved in the Kubernetes community
-* Show early features/demos of tools that make running apps easier
+* Discussion of how to define, develop, and run applications in Kubernetes. This is in order better understand needs, improve on Kubernetes solutions, and share lessons to grow the number of applications running on Kubernetes
+* Foster an ecosystem of tools to aid in developing, deploying, and operating applications on Kubernetes
+* Be the voice of the people running applications in Kubernetes. This includes providing input on Kuberentes features, suggesting new features, and sharing the perspective of application developers and operators in the development of Kubernetes
+* Enable varying workloads (e.g., databases, web services, machine learning) to run on Kubernetes through development of the Workloads API
+* Develop subprojects that foster interoperability between tools used to develop, deploy, and operate applications
+* Create documentation to enable application developers, application operators, and supporting tool developers to leverage Kubernetes
+* Develop and maintain Kubernetes subprojects that aid in the development, deployment, and operation of applications on Kubernetes
 
 ### Non-goals
 
@@ -104,7 +94,7 @@ Subprojects must define how releases are performed and milestones are set.  Exam
 #### Subproject retirement
 
 Subprojects may be retired, where they are archived to the GitHub kubernetes-retired organization, when they are
-no longer supported cased on the following criteria.
+no longer supported based on the following criteria.
 
 - A subproject is no longer supported when there are no active owners with activity on the project for the following time:
   - Subprojects with no known users can be retired after being unsupported for > 3 months
