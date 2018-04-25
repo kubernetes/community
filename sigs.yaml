@@ -1778,6 +1778,7 @@ workinggroups:
       time: "9:30"
       tz: "PT (Pacific Time)"
       frequency: weekly
+      url: https://zoom.us/my/apimachinery
     contact:
       slack: wg-apply
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-apply
