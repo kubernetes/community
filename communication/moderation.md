@@ -1,6 +1,7 @@
 # Moderation on Kubernetes Communications Channels
 
-This page describes the rules and best practices for people chosen to moderate Kubernetes communications channels, such as Slack and the mailing lists.
+This page describes the rules and best practices for people chosen to moderate Kubernetes communications channels. 
+This includes, Slack and the mailing lists and _any communication tool_ used in an official manner by the project. 
 
 ## Roles and Responsibilities
 
@@ -10,16 +11,18 @@ These responsibilities apply to all Kubernetes official channels.
 Moderators _MUST_:   
 
 - Take action as specified by these Kubernetes Moderator Guidelines.
-- Agree to abide by the documented tasks and actions required of moderators.
-- Ensure that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) is in effect on all official Kubernetes communication channels. 
-- Take care of spam as soon as possible, which may mean taking action by  removing a member from that resource.
-- Fostering a safe and productive environment by being aware of potential multiple cultural differences between Kubernetes community members.
-- Understand that you might be contacted by moderators, community managers, and other users via private email. 
+- Abide by the documented tasks and actions required of moderators.
+- Ensure that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) is in effect on all official Kubernetes communication channels.
+- Become familiar with the [Kubernetes Community Values](https://github.com/kubernetes/steering/blob/master/values.md).
+- Take care of spam as soon as possible, which may mean taking action by removing a member from that resource.
+- Foster a safe and productive environment by being aware of potential multiple cultural differences between Kubernetes community members.
+- Understand that you might be contacted by moderators, community managers, and other users via private email or a direct message. 
 - Report egregious behavior to steering@k8s.io.
 
 Moderators _SHOULD_: 
 
-- Understand that compassion and empathy is a trait I should display when communicating and collaborating with other community members.
+- Exercise compassion and empathy when communicating and collaborating with other community members.
+- Understand the difference between a user abusing the resource or just having difficulty expressing comments and questions in English.
 - Be an example and role model to others in the community.
 - Remember to check and recognize if you need take a break when you become frustrated or find yourself in a heated debate.
 - Help your colleagues if you recognize them in one of the [stages of burnout](https://opensource.com/business/15/12/avoid-burnout-live-happy).
@@ -33,6 +36,8 @@ These guidelines are for tool-specific policies that don't fit under a general u
 
 
 ### Slack
+
+- [Slack Guidelines](./slack-guidelines.md)
 
 
 ### References and Resources
