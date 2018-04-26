@@ -1,8 +1,23 @@
-# SIG Governance Template (Short Version)
+# SIG YOURSIG Charter
+
+This charter adheres to the conventions described in the [Kubernetes Charter README].
+
+## Scope
+
+This section defines the scope of things that would fall under ownership by this SIG.
+It must be used when determining whether subprojects should fall into this SIG.
+
+### In scope
+
+Outline of what falls into the scope of this SIG
+
+### Out of scope
+
+Outline of things that could be confused as falling into this SIG but don't
 
 ## Roles
 
-Membership for roles tracked in: <link to OWNERS file>
+Membership for roles tracked in: [sigs.yaml]
 
 - Chair
   - Run operations and processes governing the SIG
@@ -39,7 +54,7 @@ Membership for roles tracked in: <link to OWNERS file>
   - *MAY* select additional subproject owners through a [super-majority] vote amongst subproject owners.  This
     *SHOULD* be supported by a majority of subproject contributors (through [lazy-consensus] with fallback on voting).
   - Number: 3-5
-  - Defined in [sigs.yaml] [OWNERS] files
+  - Defined in [OWNERS] files that are specified in [sigs.yaml]
 
 - Members
   - *MUST* maintain health of at least one subproject or the health of the SIG
@@ -120,3 +135,4 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [KEP]: https://github.com/kubernetes/community/blob/master/keps/0000-kep-template.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1454
 [OWNERS]: contributors/devel/owners.md
+[Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
