@@ -20,28 +20,30 @@ In some sense, the summit is a real-life extension of the community meetings and
 - Tuesday, May 1, 2018 (before Kubecon EU)
 - Bella Center
 - Copenhagen, Denmark
-- There is also a [Slack channel](https://kubernetes.slack.com/messages/contributor-summit) for you to use during the summit itself to pass URLs, etc. 
+- There is also a [Slack channel](https://kubernetes.slack.com/messages/contributor-summit) for you to use during the summit itself to pass URLs, etc.
 
 All day event with a happy hour reception to close.
 
-## Agenda 
+## Agenda
 
 ### Morning
 
 | Time        | Track One                       | Track Two                     | Track Three    |
-| ----------- | ------------------------------- |  ---------------------------- | -------------- | 
+| ----------- | ------------------------------- |  ---------------------------- | -------------- |
 | 8:00        | Registration and Breakfast      |                               |                |
 | 9:00-9:15   | Welcome and Introduction        |                               |                |                   
 | 9:15-9:30   | Steering Committee Update       |                               |                |
 |             |                                 |                               |                |
-|             | New Contributor Workshop        | Current Contributor Workshop  | Docs Sprint    |
+|             | [New Contributor Workshop](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit/new-contributor-workshop.md)        | Current Contributor Workshop  | Docs Sprint    |
 |             |                                 |                               |                |
-| 9:30-10:00  | Session                         | Unconference                  |                |
-| 10:00-10:50 | Session                         | Unconference                  |                |
+| 9:30-10:00  | Part 1                         | Unconference                  |                |
+| 10:00-10:50 | Part 2                         | Unconference                  |                |
 | 10:50-11:00 | B R E A K                       | B R E A K                     |                |
-| 11:00-12:00 | Session                         | Unconference                  |                |
-| 12:00-1:00  | Session                         | Unconference                  |                |
+| 11:00-12:00 | Part 3                         | Unconference                  |                |
+| 12:00-1:00  | Part 4                         | Unconference                  |                |
 | 1:00-2:00   | Lunch (Provided)                | Lunch (Provided)              |                |
+
+*Note: The New Contributor Workshop will be a single continuous training, rather than being divided into sessions as the Current Contributor track is.  New contributors should plan to stay for the whole 3 hours.  [Outline here](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit/new-contributor-workshop.md).*
 
 ### Afternoon
 
@@ -56,9 +58,9 @@ All day event with a happy hour reception to close.
 - SIG Updates (~5 minutes per SIG)
   - 2 slides per SIG, focused on cross-SIG issues, not internal SIG discussions (those are for Kubecon)
   - Identify potential issues that might affect multiple SIGs across the project
-  - One-to-many announcements about changes a SIG expects that might affect others 
+  - One-to-many announcements about changes a SIG expects that might affect others
 - Track Leads
-  - New Contributor Workshop - Josh Berkus
+  - New Contributor Workshop - Josh Berkus, Guinevere Saenger, Ilya Dmitrichenko
   - Current Contributor Workshop - Paris Pittman
   - SIG Updates - Jorge Castro
 
