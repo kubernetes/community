@@ -20,8 +20,9 @@ In some sense, the summit is a real-life extension of the community meetings and
 - Tuesday, May 1, 2018 (before Kubecon EU)
 - Bella Center
 - Copenhagen, Denmark
+- There is also a [Slack channel](https://kubernetes.slack.com/messages/contributor-summit) for you to use during the summit itself to pass URLs, etc. 
 
-All day event with a happy hour reception to close
+All day event with a happy hour reception to close.
 
 ## Agenda 
 
