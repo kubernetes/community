@@ -19,8 +19,8 @@ In addition to this, with taint-based-eviction, the Node Controller already tain
 | ------------------ | ------------------ | ------------ | -------- |
 |Ready               |True                | -            | |
 |                    |False               | NoExecute    | node.kubernetes.io/not-ready           |
-|                    |Unknown             | NoExecute    | node.kubernetes.io/unreachable        |
-|OutOfDisk           |True                | NoSchedule   | node.kubernetes.io/out-of-disk          |
+|                    |Unknown             | NoExecute    | node.kubernetes.io/unreachable         |
+|OutOfDisk           |True                | NoSchedule   | node.kubernetes.io/out-of-disk         |
 |                    |False               | -            | |
 |                    |Unknown             | -            | |
 |MemoryPressure      |True                | NoSchedule   | node.kubernetes.io/memory-pressure     |
@@ -30,6 +30,9 @@ In addition to this, with taint-based-eviction, the Node Controller already tain
 |                    |False               | -            | |
 |                    |Unknown             | -            | |
 |NetworkUnavailable  |True                | NoSchedule   | node.kubernetes.io/network-unavailable |
+|                    |False               | -            | |
+|                    |Unknown             | -            | |
+|PIDPressure         |True                | NoSchedule   | node.kubernetes.io/pid-pressure        |
 |                    |False               | -            | |
 |                    |Unknown             | -            | |
 
