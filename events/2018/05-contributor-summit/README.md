@@ -34,7 +34,7 @@ All day event with a happy hour reception to close.
 | 9:00-9:15   | Welcome and Introduction        |                               |                |                   
 | 9:15-9:30   | Steering Committee Update       |                               |                |
 |             |                                 |                               |                |
-|             | [New Contributor Workshop](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit/new-contributor-workshop.md)        | Current Contributor Workshop  | Docs Sprint    |
+|             | [New Contributor Workshop](/events/2018/05-contributor-summit/new-contributor-workshop.md)        | Current Contributor Workshop  | Docs Sprint    |
 |             |                                 |                               |                |
 | 9:30-10:00  | Part 1                         | Unconference                  |                |
 | 10:00-10:50 | Part 2                         | Unconference                  |                |
@@ -43,7 +43,7 @@ All day event with a happy hour reception to close.
 | 12:00-1:00  | Part 4                         | Unconference                  |                |
 | 1:00-2:00   | Lunch (Provided)                | Lunch (Provided)              |                |
 
-*Note: The New Contributor Workshop will be a single continuous training, rather than being divided into sessions as the Current Contributor track is.  New contributors should plan to stay for the whole 3 hours.  [Outline here](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit/new-contributor-workshop.md).*
+*Note: The New Contributor Workshop will be a single continuous training, rather than being divided into sessions as the Current Contributor track is.  New contributors should plan to stay for the whole 3 hours.  [Outline here](/events/2018/05-contributor-summit/new-contributor-workshop.md).*
 
 ### Afternoon
 
