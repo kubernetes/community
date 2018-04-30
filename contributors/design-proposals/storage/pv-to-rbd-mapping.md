@@ -55,7 +55,7 @@ the RBD image.
 ### Pros
 - Simple to implement
 - Does not cause regression in RBD image names, which remains same as earlier.
-- The metada information is not immediately visible to RBD admins
+- The metadata information is not immediately visible to RBD admins
 
 ### Cons
 - NA
