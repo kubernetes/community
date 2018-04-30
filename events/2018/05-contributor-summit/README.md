@@ -23,7 +23,7 @@ In some sense, the summit is a real-life extension of the community meetings and
 - Happy hour reception onsite to close at 5:30pm
 
 
-There is a [Slack channel](https://kubernetes.slack.com/messages/contributor-summit)(#contributor-summit) for you to use during the summit to pass URLs, notes, reserve the hallway track room, etc.
+There is a [Slack channel](https://kubernetes.slack.com/messages/contributor-summit) (#contributor-summit) for you to use during the summit to pass URLs, notes, reserve the hallway track room, etc.
 
 
 ## Agenda
