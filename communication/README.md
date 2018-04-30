@@ -10,7 +10,7 @@ The Kubernetes community abides by the [CNCF code of conduct].  Here is an excer
 
 ## SIGs
 
-Kubernetes encompasses many projects, organized into [SIGs](sig-list.md).
+Kubernetes encompasses many projects, organized into [SIGs](/sig-list.md).
 Some communication has moved into SIG-specific channels - see
 a given SIG subdirectory for details.
 
@@ -41,11 +41,15 @@ please [file an issue].
 
 ## Mailing lists
 
-Development announcements and discussions appear on the Google group
-[kubernetes-dev] (send mail to `kubernetes-dev@googlegroups.com`).
+Kubernetes mailing lists are hosted through Google Groups.  To
+receive these lists' emails,
+[join](https://support.google.com/groups/answer/1067205) the groups
+relevant to you, as you would any other Google Group.
 
-Users trade notes on the Google group
-[kubernetes-users] (send mail to `kubernetes-users@googlegroups.com`).
+* [kubernetes-announce] broadcasts major project announcements such as releases and security issues
+* [kubernetes-dev] hosts development announcements and discussions around developing kubernetes itself
+* [kubernetes-users] is where kubernetes users trade notes
+* Additional Google groups exist and can be joined for discussion related to each SIG and Working Group.  These are linked from the [SIG list](/sig-list.md).
 
 ## Accessing community documents
 
@@ -92,6 +96,7 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [iCal url]: https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics
 [Kubernetes Community Meeting Agenda]: https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#
 [kubernetes-community-video-chat]: https://groups.google.com/forum/#!forum/kubernetes-community-video-chat
+[kubernetes-announce]: https://groups.google.com/forum/#!forum/kubernetes-announce
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [kubernetes-users]: https://groups.google.com/forum/#!forum/kubernetes-users
 [kubernetes.slackarchive.io]: https://kubernetes.slackarchive.io
