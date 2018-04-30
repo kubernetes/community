@@ -1,0 +1,14 @@
+reviewers:
+  - parispittman
+  - guineveresaenger
+  - jberkus
+  - errordeveloper
+  - tpepper
+  - spiffxp
+approvers:
+  - parispittman
+  - guineveresaenger
+  - jberkus
+  - errordeveloper
+labels:
+  - area/new-contributor-track
