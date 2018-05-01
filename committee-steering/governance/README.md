@@ -33,7 +33,7 @@ and project.
 
 ## Templates
 
-- [Short Template]
+- [Short Template] - template for a SIG governance document
 
 ## FAQ
 

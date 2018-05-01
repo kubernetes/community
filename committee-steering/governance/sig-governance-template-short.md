@@ -1,5 +1,20 @@
 # SIG Governance Template (Short Version)
 
+Each SIG must document its [governance](sig-governance-requirements.md) rules. This is a simple template that can be used as the basis of a SIG's rules.
+
+Copy this template into your SIG's directory; it should be in a file called
+`governance.md` or `charter.md`.
+
+## Mission
+
+<Mission statement here>
+
+## Scope and subprojects
+
+<Statement of scope here>
+
+<List of subprojects here>
+
 ## Roles
 
 Membership for roles tracked in: <link to OWNERS file>
