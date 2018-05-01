@@ -1,1 +1,2 @@
-Hello everyone, I'm glad to see all of you. Enjoy the event!
+Hello everyone, people of my table are glad to see all of you. Enjoy the event!
+
