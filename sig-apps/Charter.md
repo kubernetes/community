@@ -2,11 +2,11 @@
 
 ## Scope
 
-SIG Apps Covers developing, deploying, and operating applications on Kubernetes with a focus on the application developer and application operator experience.
+SIG Apps covers developing, deploying, and operating applications on Kubernetes with a focus on the application developer and application operator experience.
 
 ### Goals
 
-* Discussion of how to define, develop, and run applications in Kubernetes. This is in order better understand needs, improve on Kubernetes solutions, and share lessons to grow the number of applications running on Kubernetes
+* Discussion of how to define, develop, and run applications in Kubernetes. This is in order to better understand needs, improve on Kubernetes solutions, and share lessons to grow the number of applications running on Kubernetes
 * Foster an ecosystem of tools to aid in developing, deploying, and operating applications on Kubernetes
 * Be the voice of the people running applications in Kubernetes. This includes providing input on Kuberentes features, suggesting new features, and sharing the perspective of application developers and operators in the development of Kubernetes
 * Enable varying workloads (e.g., databases, web services, machine learning) to run on Kubernetes through development of the Workloads API
@@ -126,6 +126,3 @@ Issues impacting multiple subprojects in the SIG should be resolved by SIG Chair
 [KEP]: https://github.com/kubernetes/community/blob/master/keps/0000-kep-template.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1454
 [OWNERS]: contributors/devel/owners.md
-
-
-
