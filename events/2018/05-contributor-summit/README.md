@@ -33,9 +33,9 @@ There is a [Slack channel](https://kubernetes.slack.com/messages/contributor-sum
 | Time        | Track One  - Room: C1-M1              | Track Two - Room: C1-M2                    | Track Three - Room: B4-M5   |
 | ----------- | ------------------------------- |  ---------------------------- | -------------- |
 | 8:00        | Registration and Breakfast - <b>Room: C1-M0</b>      |                               |                |
-| 9:00-9:15   | Welcome and Introduction        |                               |                |                   
-| 9:15-9:30   | Steering Committee Update        |                               |                |
-|             |                                 |                               |                |
+| 9:00-9:15   |                                 | Welcome and Introduction     |                |                   
+| 9:15-9:30   |                                 | Steering Committee Update    |                |
+|             |                                 |                              |                |
 |             | [New Contributor Workshop](/events/2018/05-contributor-summit/new-contributor-workshop.md)        | Current Contributor Workshop  | Docs Sprint    |
 |             |                                 |                               |                |
 | 9:30-10:00  | Part 1                         | What's next in networking? Lead: thockin                  |                |
