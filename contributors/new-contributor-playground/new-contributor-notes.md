@@ -1,10 +1,10 @@
-# New kubernetes contributor workshop
+# Kubernetes New Contributor Workshop - KubeCon EU 2018 - Notes
 
 Joining in the beginning was onboarding on a yacht
-Now is more onboarding a BIG --Paquebot
+Now is more onboarding a BIG cruise ship.
 
 Will be a Hard schedule, and let's hope we can achieve everything
-Sig-contributor-experience -> from Non-member contributores to Owner
+Sig-contributor-experience -> from Non-member contributors to Owner
 
 ## SIG presentation
 
@@ -19,7 +19,7 @@ Table exercise: Introduce yourself and give a tip on where you want to contribut
 
 ## Communication in the community
 
-Kubernetes community is like a Capybara: community members are really cool with everyone and they are from a lot of diffrenet horizons.
+Kubernetes community is like a Capybara: community members are really cool with everyone and they are from a lot of different horizons.
 
 - Tech question on Slack and Stack Overflow, not on Github
 - A lot of discussion will be involve when GH issues and PR are opened. Don't be frustrated
@@ -81,15 +81,13 @@ Semi-autonomous teams:
 5. Docs
     - sig-docs: for documentation and website
 
-## Working groups and Subproject
+## Working groups and "Subproject"
 
-From working group to subproject. 
+From working group to "subproject". 
 
-for stuff really specific. Eg. `Helm` Belong to *SIG-apps* but dedicated subporject
+For specific: tools (ex. Helm), goals (ex. Resource Management) or areas (ex. Machine Learning).
 
-**=> Tools, Goals or Area**
-
-Move faster than SIG 
+Working groups change around more frequently than SIGs, and some might be temporary.
 
 - wg-app-def
 - wg-apply
@@ -97,6 +95,11 @@ Move faster than SIG
 - wg-cluster-api
 - wg-container-identity
 - ...
+
+### Picking the right SIG:
+1. Figure out which area you would like to contribute to
+2. Find out which SIG / WG / subproject covers that (tip: ask on #sig-contribex Slack channel)
+3. Join that SIG / WG / subproject (you should also join the main SIG when joining a WG / subproject)
 
 ## Tour des repositories
 
@@ -183,7 +186,8 @@ Those repositories can have their own rules:
 
 ```
 
-### Issue for specification
+ ### Issues as specifications
+
 
 Most of k8s change start with an issue:
 
@@ -315,7 +319,7 @@ Anyone can contribute to docs.
 ### Working with docs
 
 Docs use `k8s-ci-robot`. Approval process is the same as for any k8s repo
-In docs, `master` branch is the current version of the docs. So always branch from `master`. It's continous deployment
+In docs, `master` branch is the current version of the docs. So always branch from `master`. It's continuous deployment
 For a specific release docs, branch from `release-1.X`.
 
 ## Local build and Test
