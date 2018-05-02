@@ -51,7 +51,6 @@ The following subprojects are owned by sig-apps:
 - **helm**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/helm/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-helm/community/master/OWNERS
   - Meetings:
     - Helm Developer call: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/4526666954) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
       - [Meeting notes and Agenda](https://docs.google.com/document/d/1d-6xJEx0C78csIYSPKJzRPeWaHG_8W1Hjl72OJggwdc/edit#).
