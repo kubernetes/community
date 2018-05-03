@@ -50,7 +50,7 @@ replaces:
 ## Summary
 
 We want to remove any cloud provider specific logic from the kubernetes/kubernetes repo. We want to restructure the code
-to make is easy for any cloud provider to extend the kubernetes core in a consistent manner for their cloud. New cloud
+to make it easy for any cloud provider to extend the kubernetes core in a consistent manner for their cloud. New cloud
 providers should look at the [Creating a Custom Cluster from Scratch](https://kubernetes.io/docs/getting-started-guides/scratch/#cloud-provider)
 and the [cloud provider interface](https://github.com/kubernetes/kubernetes/blob/master/pkg/cloudprovider/cloud.go#L31)
 which will need to be implemented.
@@ -220,7 +220,7 @@ Kube-apiserver uses the cloud provider for two purposes
 
 Volumes need cloud providers, but they only need **specific** cloud providers. The majority of volume management logic
 resides in the controller manager. These controller loops need to be moved into the cloud-controller manager. The cloud
-controller manager also needs a mechanism to read parameters for initilization from cloud config. This can be done via
+controller manager also needs a mechanism to read parameters for initialization from cloud config. This can be done via
 config maps.
 
 There are two entirely different approach to refactoring volumes -
