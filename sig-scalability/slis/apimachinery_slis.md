@@ -68,7 +68,7 @@ in Kubernetes, so this metric is a building block for less trivial SLIs and
 SLOs.
 
 Other notes:
-- The SLO has to be satisfied independently from from the used encoding. This
+- The SLO has to be satisfied independently from the used encoding. This
 makes the mix of client important while testing. However, we assume that all
 `core` components communicate with apiserver with protocol buffers (otherwise
 the SLO doesn’t have to be satisfied).
