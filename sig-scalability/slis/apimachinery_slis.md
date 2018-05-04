@@ -18,12 +18,12 @@ satisfied. As a result, while in the future we would like to block the release
 when we are violating SLOs, we first need to understand where exactly we are
 now, define and implement proper tests and potentially improve the system.
 Only once this is done, we may try to introduce a policy of blocking the
-release on SLO violation. But this is out of scope of this doc.
+release on SLO violation. But this is beyond the scope of this doc.
 
 
 ### SLIs and SLOs proposal
 
-Below we introduce all SLIs and SLOs we would like to have in the api-machinery
+Below we introduce all SLIs and SLOs we would like to have in the API-machinery
 area. A bunch of those are not easy to understand for users, as they are
 designed for developers or performance tracking of higher level
 user-understandable SLOs. The user-oriented one (which we want to publicly
