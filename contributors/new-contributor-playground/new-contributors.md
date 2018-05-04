@@ -1,3 +1,2 @@
-# Hello everyone!
+Hello everyone, people of my table are glad to see all of you. Enjoy the event!
 
-Please feel free to talk amongst yourselves or ask questions if you need help
