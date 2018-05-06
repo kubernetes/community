@@ -16,7 +16,7 @@ We need the 80% case, Fabric8 is a good example of this.  We need a good set of 
 
 We also need to look at how to get developer feedback on this so that we're building what they need.  Pradeepto did a comparison of Kompose vs. Docker Compose for simplicity/usability.
 
-One of the things we're discussing the Kompose API.  We want to get rid of this and supply something which people can use directly with kuberntes.  A bunch of shops only have developers.  Someone asked though what's so complicated with Kube definitions.  Have we identified what gives people trouble with this?  We push too many concepts on developers too quickly.  We want some high-level abstract types which represent the 95% use case.  Then we could decompose these to the real types.
+One of the things we're discussing the Kompose API.  We want to get rid of this and supply something which people can use directly with kubernetes.  A bunch of shops only have developers.  Someone asked though what's so complicated with Kube definitions.  Have we identified what gives people trouble with this?  We push too many concepts on developers too quickly.  We want some high-level abstract types which represent the 95% use case.  Then we could decompose these to the real types.
 
 What's the gap between compose files and the goal?  As an example, say you want to run a webserver pod.  You have to deal with ingress, and service, and replication controller, and a bunch of other things.  What's the equivalent of "docker run" which is easy to get. The critical thing is how fast you can learn it.
 
