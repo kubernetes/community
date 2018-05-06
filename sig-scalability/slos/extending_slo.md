@@ -7,7 +7,7 @@ The goal of this effort is to extend SLOs which Kubernetes cluster has to meet t
 which are enough to guarantee that cluster doesn't feel completely dead, but not enough to guarantee that it satisfies user's needs.
 
 We're going to define more SLOs based on most important indicators, and standardize the format in which we speak about our objectives. Our SLOs need to have two properties:
-- They need to be testable, i.e. we need to have a benchmark to measure if it's met,
+- They need to be testable, i.e. we need to have a benchmark to measure if it's met.
 - They need to be expressed in a way that's possible to understand by a user not intimately familiar with the system internals, i.e. formulation can't depend on some arcane knowledge.
 
 On the other hand we do not require that:

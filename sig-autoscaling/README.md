@@ -58,8 +58,8 @@ Monitor these for Github activity if you are not a member of the team.
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Concerns
-* autoscaling of clusters,
-* horizontal and vertical autoscaling of pods,
-* setting initial resources for pods,
-* topics related to monitoring pods and gathering their metrics (e.g.: Heapster)
+* autoscaling of clusters.
+* horizontal and vertical autoscaling of pods.
+* setting initial resources for pods.
+* topics related to monitoring pods and gathering their metrics (e.g.: Heapster).
 <!-- END CUSTOM CONTENT -->
