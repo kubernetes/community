@@ -306,7 +306,7 @@ This describes the sequence of a pod-level vertical scaling example to resize th
 
 Status: In progress, a working prototype implemented originally in the master branch (v1.10-alpha)
 
-The working code is available at [https://github.com/YoungjaeLee/kubernetes](https://github.com/YoungjaeLee/kubernetes) (the qos-master branch)
+The working code is available at [https://github.com/k8sresmgmt/kubernetes](https://github.com/k8sresmgmt/kubernetes) (the qos-master branch)
 
 * Phase 2 - Adding support for live and in-place vertical scaling in StatefulSet
 
