@@ -31,7 +31,6 @@ aliases:
   sig-cli-leads:
     - soltysh
     - pwittrock
-    - AdoHe
   sig-cluster-lifecycle-leads:
     - lukemarsden
     - roberthbailey
