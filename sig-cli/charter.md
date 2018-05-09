@@ -34,7 +34,7 @@ libraries to interface with Kubernetes API's.
   * *MUST* be an escalation point for technical discussions and decisions in the
    subproject.
   * *MUST* set milestone priorities for subproject or delegate this responsibility.
-  * *MUST* remain active in the role. A Subproject Owner Will be automatically
+  * *MUST* remain active in the role. A Subproject Owner will be automatically
  removed from the position if he/she is unresponsive for > 3 months.
   * *MAY* be removed if not proactively working with other Subproject Owners to
    fulfill responsibilities.
@@ -69,7 +69,7 @@ libraries to interface with Kubernetes API's.
   * *MUST* be enumerated in an OWNERS file within a directory under the
    **reviewers** label.
 
-* Test Health Maintainers
+* Test Health Maintainer
   * *MUST* contribute to SIG CLI by maintaining test health.
   * *MUST* have successfully completed at least one test on-call rotation within the
    last six months as shown in on-call schedule of [Test Playbook].
@@ -105,7 +105,8 @@ The result *SHOULD* be supported by the majority of SIG Members.
 * SIG CLI meetings
   * *SHOULD* be facilitated by Chairs unless delegated to specific Members.
   * *SHOULD* be held bi-weekly on [Zoom](https://zoom.us/my/sigcli) video 
- conference every other Wednesday at 9am PST.
+ conference every other Wednesday at 9am PST. Convert to your
+ [timezone](https://www.timeanddate.com/worldclock/converter.html?iso=20180509T160000&p1=900).
   * Proposed topics and meeting agenda *SHOULD* be stored at the [Meeting Notes]
   * Meetings *SHOULD* be recorded and uploaded to the [Meeting Archive]
   * Meetings *SHOULD* contain a test health update from the on-call Member.
