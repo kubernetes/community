@@ -390,7 +390,7 @@ the following command.
 
 ### Rollback
 
-For future work, `kubeclt rollout undo` can be implemented in the general case 
+For future work, `kubectl rollout undo` can be implemented in the general case 
 as an extension of the [above](#viewing-history ).
 
 ```bash
