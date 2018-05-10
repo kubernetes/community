@@ -20,7 +20,7 @@ Interested in how we can most effectively test Kubernetes. We're interested spec
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Samsung SDS
+* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**)
 * Erick Feja (**[@fejta](https://github.com/fejta)**), Google
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Heptio
