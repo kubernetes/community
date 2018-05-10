@@ -28,6 +28,10 @@ Moderators _SHOULD_:
 - Help your colleagues if you recognize them in one of the [stages of burnout](https://opensource.com/business/15/12/avoid-burnout-live-happy).
 - Be helpful and have fun! 
 
+## Violations
+
+The Kubernetes [Steering Committee](https://github.com/kubernetes/steering) will have the final authority regarding escalated moderation matters.  Violations of the Code of Conduct will be handled on a case by case basis. Depending on severity this can range up to and including removal of the person from the community, though this is extremely rare. 
+
 ## Specific Guidelines
 
 These guidelines are for tool-specific policies that don't fit under a general umbrella. 
