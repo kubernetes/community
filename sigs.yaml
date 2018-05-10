@@ -1299,7 +1299,7 @@ sigs:
         company: Google
       - name: Bob Wise
         github: countspongebob
-        company: Samsung SDS
+        company: AWS
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -1504,7 +1504,6 @@ sigs:
       chairs:
       - name: Aaron Crickenberger
         github: spiffxp
-        company: Samsung SDS
       - name: Erick Feja
         github: fejta
         company: Google
