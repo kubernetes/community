@@ -48,7 +48,7 @@ You need [OpenSSL](https://www.openssl.org/) installed.  If you do not have the 
 
 #### CFSSL
 
-The [CFSSL](https://cfssl.org/) binaries (cfssl, cfssljson) must be installed and available on your ``$PATH``.
+The [CFSSL](https://github.com/cloudflare/cfssl/) binaries (cfssl, cfssljson) must be installed and available on your ``$PATH``.
 
 The easiest way to get it is something similar to the following:
 
