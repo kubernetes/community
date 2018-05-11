@@ -601,7 +601,6 @@ Due to the fast changing nature of the project, the following content is probabl
   to generate protobuf IDL and marshallers.
 * You must add the new version  to
   [cmd/kube-apiserver/app#apiVersionPriorities](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/cmd/kube-apiserver/app/aggregator.go#L172)
-  to let the aggregator list it. This list will be removed before release 1.8.
 * You must setup storage for the new version in
   [pkg/registry/group_name/rest](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/registry/authentication/rest/storage_authentication.go)
 
