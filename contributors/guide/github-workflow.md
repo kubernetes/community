@@ -74,6 +74,22 @@ git checkout -b myfeature
 Then edit code on the `myfeature` branch.
 
 #### Build
+The following section is a quick start on how to build Kubernetes locally, for more detailed information you can see [kubernetes/build](https://git.k8s.io/kubernetes/build/README.md).
+The best way to validate your current setup is to build a small part of Kubernetes. This way you can address issues without waiting for the full build to complete. To build a specific part of Kubernetes use the `WHAT` environment variable to let the build scripts know you want to build only a certain package/executable.
+
+```sh
+make WHAT=cmd/{$package_you_want}
+```
+
+*Note:* This applies to all top level folders under kubernetes/cmd.
+
+So for the cli, you can run:
+
+```sh
+make WHAT=cmd/kubectl
+```
+
+If everything checks out you will have an executable in the `_output/bin` directory to play around with.
 
 *Note:* If you are using `CDPATH`, you must either start it with a leading colon, or unset the variable. The make rules and scripts to build require the current directory to come first on the CD search path in order to properly navigate between directories.
 
