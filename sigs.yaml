@@ -557,6 +557,10 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
+    - name: kustomize
+      owners:
+      # "owners" entry
+      - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
   - name: Cluster Lifecycle
     dir: sig-cluster-lifecycle
     mission_statement: >
