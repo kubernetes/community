@@ -930,7 +930,7 @@ sigs:
   - name: Multicluster
     dir: sig-multicluster
     mission_statement: >
-      A Special Interest Group focussed on solving common challenges related to the
+      A Special Interest Group focused on solving common challenges related to the
       management of multiple Kubernetes clusters, and applications that exist therein.
       The SIG will be responsible for designing, discussing, implementing and maintaining
       API’s, tools and documentation related to multi-cluster administration and application
