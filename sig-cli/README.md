@@ -21,12 +21,18 @@ Covers kubectl and related tools. We focus on the development and standardizatio
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
-* Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
-* Tony Ado (**[@AdoHe](https://github.com/AdoHe)**), Alibaba
+* Sean Sullivan (**[@seans3](https://github.com/seans3)**), Google
 
-## Emeritus Leads
+### Technical Leads
+The technical leads of the SIG provide the technical leadership for the SIG.
+
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+* Philip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
+
+### Emeritus Leads
 
 * Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**), Red Hat
+* Tony Ado (**[@AdoHe](https://github.com/AdoHe)**), Alibaba
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cli)
@@ -39,7 +45,6 @@ The following subprojects are owned by sig-cli:
 - **kubectl**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
 
 ## GitHub Teams
 

@@ -513,16 +513,23 @@ sigs:
       - name: Maciej Szulik
         github: soltysh
         company: Red Hat
+      - name: Sean Sullivan
+        github: seans3
+        company: Google
+      leads:
+      - name: Maciej Szulik
+        github: soltysh
+        company: Red Hat
       - name: Phillip Wittrock
         github: pwittrock
-        company: Google
-      - name: Tony Ado
-        github: AdoHe
-        company: Alibaba
+        company: Google        
       emeritus_leads:
       - name: Fabiano Franz
         github: fabianofranz
         company: Red Hat
+      - name: Tony Ado
+        github: AdoHe
+        company: Alibaba
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -556,7 +563,6 @@ sigs:
     - name: kubectl
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
   - name: Cluster Lifecycle
     dir: sig-cluster-lifecycle
     mission_statement: >
