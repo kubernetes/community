@@ -314,7 +314,7 @@ The attach/detach controller,running as part of the kube-controller-manager bina
 When the controller decides to attach a CSI volume, it will call the in-tree CSI volume plugin’s attach method. The in-tree CSI volume plugin’s attach method will do the following:
 
 1. Create a new `VolumeAttachment` object (defined in the “Communication Channels” section) to attach the volume.
-    * The name of the of the `VolumeAttachment` object will be `pv-<SHA256(PVName+NodeName)>`.
+    * The name of the `VolumeAttachment` object will be `pv-<SHA256(PVName+NodeName)>`.
       * `pv-` prefix is used to allow using other scheme(s) for inline volumes in the future, with their own prefix.
       * SHA256 hash is to reduce length of `PVName` plus `NodeName` string, each of which could be max allowed name length (hexadecimal representation of SHA256 is 64 characters).
       * `PVName` is `PV.name` of the attached PersistentVolume.
