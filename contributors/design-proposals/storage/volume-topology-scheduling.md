@@ -281,37 +281,44 @@ Today, volume binding occurs immediately once a PersistentVolumeClaim is
 created. In order for volume binding to take into account all of a pod's other scheduling
 constraints, volume binding must be delayed until a Pod is being scheduled.
 
-A new StorageClass field `VolumeBindingMode` will be added to control the volume
+A new StorageClass field `BindingMode` will be added to control the volume
 binding behavior.
 
 ```
 type StorageClass struct {
     ...
 
-    VolumeBindingMode *VolumeBindingMode
+    BindingMode *BindingMode
 }
 
-type VolumeBindingMode string
+type BindingMode string
 
 const (
-    VolumeBindingImmediate VolumeBindingMode = "Immediate"
-    VolumeBindingWaitForFirstConsumer VolumeBindingMode = "WaitForFirstConsumer"
+    BindingImmediate BindingMode = "Immediate"
+    BindingWaitForFirstConsumer BindingMode = "WaitForFirstConsumer"
 )
 ```
 
-`VolumeBindingImmediate`  is the default and current binding method.
+`BindingImmediate`  is the default and current binding method.
 
-This approach allows us to introduce the new binding behavior gradually and to
-be able to maintain backwards compatibility without deprecation of previous
-behavior. However, it has a few downsides:
+This approach allows us to:
+* Introduce the new binding behavior gradually.
+* Maintain backwards compatibility without deprecation of previous
+  behavior. Any automation that waits for PVCs to be bound before scheduling Pods
+  will not break.
+* Support scenarios where volume provisioning for globally-accessible volume
+  types could take a long time, where volume provisioning is a planned
+  event well in advance of workload deployment.
+
+However, it has a few downsides:
 * StorageClass will be required to get the new binding behavior, even if dynamic
-provisioning is not used (in the case of local storage).
+  provisioning is not used (in the case of local storage).
 * We have to maintain two different code paths for volume binding.
 * We will be depending on the storage admin to correctly configure the
-StorageClasses for the volume types that need the new binding behavior.
+  StorageClasses for the volume types that need the new binding behavior.
 * User experience can be confusing because PVCs could have different binding
-behavior depending on the StorageClass configuration.  We will mitigate this by
-adding a new PVC event to indicate if binding will follow the new behavior.
+  behavior depending on the StorageClass configuration.  We will mitigate this by
+  adding a new PVC event to indicate if binding will follow the new behavior.
 
 
 ## Dynamic Provisioning with Topology
@@ -335,7 +342,7 @@ kind: StorageClass
 metadata:
   name: standard
 provisioner: kubernetes.io/gce-pd
-volumeBindingMode: WaitForFirstConsumer
+bindingMode: WaitForFirstConsumer
 parameters:
   type: pd-standard
 ```
@@ -415,27 +422,30 @@ described below.
 type StorageClass struct {
     ...
 
-    AllowedTopologies *VolumeProvisioningTopologies
+    // Restrict the node topologies where volumes can be dynamically provisioned.
+    // Each volume plugin defines its own supported topology specifications.
+    // Each entry in AllowedTopologies is ORed.
+    AllowedTopologies *[]TopologySelector
 }
 
-type VolumeProvisioningTopologies struct {
-    // Volume must be provisioned from one of the required topologies.
-    // These VolumeTopology requirements are ORed.
-    RequiredTopologies []VolumeTopology
+type TopologySelector struct {
+    // Topology must meet all of the TopologySelectorLabelRequirements
+    // These requirements are ANDed.
+    MatchLabelExpressions []TopologySelectorLabelRequirement
 }
 
-type VolumeTopology struct{
-    // The provisioned volume must support all the specified node labels.
-    // Each entry in the map is ANDed.
-    MatchNodeLabels map[string]string
+// Topology requirement expressed as Node labels.
+type TopologySelectorLabelRequirement struct{
+    // Topology label key
+    Key string
+    // Topology must match at least one of the label Values for the given label Key.
+    // Each entry in Values is ORed.
+    Values []string
 }
 ```
 
 A nil value means there are no topology restrictions. A scheduler predicate
 will evaluate a non-nil value when considering dynamic provisioning for a node.
-When evaluating the allowed topology against a node, the node needs to have
-labels matching everything specified in a VolumeTopology for one of the
-RequiredTopologies.
 
 A StorageClass update controller can be provided to convert existing topology
 restrictions specified under plugin-specific parameters to the new AllowedTopologies
@@ -459,12 +469,13 @@ Kubernetes will leave validation and enforcement of the AllowedTopologies conten
 to the provisioner.
 
 ##### Alternatives
-VolumeNodeAffinity is not reused here because the provisioning operation requires
+A new restricted TopologySelector is used here instead of reusing
+VolumeNodeAffinity because the provisioning operation requires
 allowed topologies to be explicitly enumerated, while NodeAffinity and
 NodeSelectors allow for non-explicit expressions of topology values (i.e.,
-operators NotIn, Exists, DoesNotExist, Gt, Lt). The provisioning operation also
-does not operate against Nodes (unlike pod scheduling), so NodeAffinity cannot
-be easily evaluated by the provisioner.
+operators NotIn, Exists, DoesNotExist, Gt, Lt). It would be difficult for
+provisioners to evaluate all the expressions without having to enumerate all the
+Nodes in the cluster.
 
 Another alternative is to expand ResourceQuota to support topology constraints.
 However, ResourceQuota is currently only evaluated during admission, and not
@@ -477,37 +488,52 @@ us-central1-b.
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  Name: zonal-class
+  name: zonal-class
 provisioner: kubernetes.io/gce-pd
 parameters:
   type: pd-standard
 allowedTopologies:
-  requiredToplogies:
-  - matchNodeLabels:
-      failure-domain.beta.kubernetes.io/zone: us-central1-a
-  - matchNodeLabels:
-      failure-domain.beta.kubernetes.io/zone: us-central1-b
+- matchLabelExpressions:
+  - key: failure-domain.beta.kubernetes.io/zone
+    values: us-central1-a, us-central1-b
 ```
 
 #### Multi-Zonal Example
 This example restricts the volume's primary and failover zones
-to us-central1-a and us-central1-b. Topologies that are incompatible with the
-storage provider parameters will be enforced by the provisioner.
+to us-central1-a, us-central1-b and us-central1-c. The regional PD
+provisioner will pick two out of the three zones to provision in.
 ```
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  Name: multi-zonal-class
+  name: multi-zonal-class
 provisioner: kubernetes.io/gce-pd
 parameters:
   type: pd-standard
   replication-type: regional-pd
 allowedTopologies:
-  requiredToplogies:
-  - matchNodeLabels:
-      failure-domain.beta.kubernetes.io/zone: us-central1-a
-  - matchNodeLabels:
-      failure-domain.beta.kubernetes.io/zone: us-central1-b
+- matchLabelExpressions:
+  - key: failure-domain.beta.kubernetes.io/zone
+    values: us-central1-a, us-central1-b, us-central1-c
+```
+
+Topologies that are incompatible with the storage provider parameters
+will be enforced by the provisioner. For example, dynamic provisioning
+of regional PDs will fail if provisioning is restricted to fewer than
+two zones in all regions. This configuration will cause provisioning to fail:
+```
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: multi-zonal-class
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+  replication-type: regional-pd
+allowedTopologies:
+- matchLabelExpressions:
+  - key: failure-domain.beta.kubernetes.io/zone
+    values: us-central1-a
 ```
 
 #### Multi Label Example
@@ -522,20 +548,20 @@ have the following labels:
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  Name: something-fancy
+  name: something-fancy
 provisioner: rack-based-provisioner
 parameters:
 allowedTopologies:
-  requiredTopologies:
-  - matchNodeLabels:
-      zone: us-central1-a
-      rack: rack1
-  - matchNodeLabels:
-      zone: us-central1-b
-      rack: rack1
-  - matchNodeLabels:
-      zone: us-central1-b
-      rack: rack2
+- matchLabelExpressions:
+  - key: zone
+    values: us-central1-a
+  - key: rack
+    values: rack1
+- matchLabelExpressions:
+  - key: zone
+    values: us-central1-b
+  - key: rack
+    values: rack1, rack2
 ```
 
 ## API Upgrades
@@ -685,7 +711,7 @@ metadata:
 ```
 
 ## Feature Gates
-PersistentVolume.NodeAffinity and StorageClas.VolumeBindingMode fields will be
+PersistentVolume.NodeAffinity and StorageClas.BindingMode fields will be
 controlled by the VolumeScheduling feature gate, and must be configured in the
 kube-scheduler, kube-controller-manager, and all kubelets.
 
@@ -1032,7 +1058,7 @@ release time frame, and aligns better with the current Kubernetes architecture.
 
 #### Unsupported Use Cases
 The following use cases will not be supported for PVCs with a StorageClass with
-VolumeBindingWaitForFirstConsumer:
+BindingWaitForFirstConsumer:
 * Directly setting Pod.Spec.NodeName
 * DaemonSets
 
