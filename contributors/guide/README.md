@@ -208,7 +208,7 @@ If you haven't noticed by now, we have a large, lively, and friendly open-source
 
 ## Events
 
-Kubernetes is the main focus of CloudNativeCon/KubeCon, held twice per year in EMEA and in North America. Information about these and other community events is available on the CNCF [events](https://www.cncf.io/events/) pages.
+Kubernetes is the main focus of KubeCon + CloudNativeCon, held three times per year in China, Europe and in North America. Information about these and other community events is available on the CNCF [events](https://www.cncf.io/events/) pages.
 
 ### Meetups
 
