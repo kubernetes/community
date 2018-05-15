@@ -5,6 +5,8 @@ We recommend the following presentations, docs, and videos to help get familiar 
 | Date | Title | Link | Description |
 | --- | --- | --- | --- |
 | - | Persistent Volume Framework | [Doc](http://kubernetes.io/docs/user-guide/persistent-volumes/) | Public user docs for Kubenretes Persistent Volume framework.
+| 2018 May 03 | SIG Storage Intro | [Video](https://www.youtube.com/watch?v=GvrTl2T-Tts&list=PLj6h78yzYM2N8GdbjmhVU65KYm_68qBmo&index=164&t=0s) | An overview of SIG Storage By Saad Ali at Kubecon EU 2018. |
+| 2018 May 04 | Kubernetes Storage Lingo 101 | [Video](https://www.youtube.com/watch?v=uSxlgK1bCuA&t=0s&index=300&list=PLj6h78yzYM2N8GdbjmhVU65KYm_68qBmo) | An overview of various terms used in Kubernetes storage and what they mean by Saad Ali at Kubecon EU 2018.|
 | 2017 May 18 | Storage Classes & Dynamic Provisioning in Kubernetes |[Video](https://youtu.be/qktFhjJmFhg)| Intro to the basic Kubernetes storage concepts for users (direct volume reference, PV/PVC, and dynamic provisioning). |
 | 2017 March 29 | Dynamic Provisioning and Storage Classes in Kubernetes |[Blog post](http://blog.kubernetes.io/2017/03/dynamic-provisioning-and-storage-classes-kubernetes.html)| Overview of Dynamic Provisioning and Storage Classes in Kubernetes at GA. |
 | 2017 March 29 | How Kubernetes Storage Works | [Slides](https://docs.google.com/presentation/d/1Yl5JKifcncn0gSZf3e1dWspd8iFaWObLm9LxCaXZJIk/edit?usp=sharing) | Overview for developers on how Kubernetes storage works for KubeCon EU 2017 by Saad Ali
