@@ -1,7 +1,10 @@
 Kubernetes Summit: New Contributor Workshop
 
-*This will be presented as one continuous 3-hour training with a break.  Please plan to stay for the entire workshop.  To participate in some of the exercises, please bring a laptop with git installed.*
+*This was presented as one continuous 3-hour training with a break. For purposes of live coding exercises, participants were asked to bring a laptop with git installed.*
 
+This course was captured on video, and the playlist can be found [here](https://www.youtube.com/playlist?list=PL69nYSiGNLP3M5X7stuD7N4r3uP2PZQUx).
+
+*Course Playlist [Part One](https://www.youtube.com/watch?v=obyAKf39H38&list=PL69nYSiGNLP3M5X7stuD7N4r3uP2PZQUx&t=0s&index=1):*
 * Opening
   * Welcome contributors
   * Who this is for
@@ -48,6 +51,8 @@ Kubernetes Summit: New Contributor Workshop
   * Owners files
   * Repo membership
 * BREAK (20min)
+
+*Course Playlist [Part Two](https://www.youtube.com/watch?v=PERboIaNdcI&list=PL69nYSiGNLP3M5X7stuD7N4r3uP2PZQUx&t=0s&index=2):*
 * Contributing by Issue: Josh (15 min) (1:42)
   * Finding the right repo
   * What makes a good issue
@@ -70,6 +75,9 @@ Kubernetes Summit: New Contributor Workshop
   * Upcoming changes to docs
   * Building docs locally
   * Doc review process
+  
+*Course Playlist [Part Three](https://www.youtube.com/watch?v=Z3pLlp6nckI&list=PL69nYSiGNLP3M5X7stuD7N4r3uP2PZQUx&t=0s&index=3):*
+
 * Code Contributions: Build and Test
   * Local core kubernetes build
   * Running unit tests
