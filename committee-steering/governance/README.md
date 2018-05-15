@@ -72,4 +72,4 @@ See [frequently asked questions]
 [Short Template]: sig-governance-template-short.md
 [frequently asked questions]: FAQ.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
-[sig-architecture example]: ../../sig-architecture/charter.md)
+[sig-architecture example]: ../../sig-architecture/charter.md
