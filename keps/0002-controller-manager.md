@@ -4,6 +4,7 @@ title: Cloud Provider Controller Manager
 authors:
   - "@cheftako"
   - "@calebamiles"
+  - "@hogepodge"
 owning-sig: sig-apimachinery
 participating-sigs:
   - sig-apps
@@ -41,10 +42,15 @@ replaces:
       - [API Server Changes](#api-server-changes)
       - [Volume Management Changes](#volume-management-changes)
       - [Deployment Changes](#deployment-changes)
+      - [Implementation Details/Notes/Constraints](#implementation-detailsnotesconstraints)
+          - [Repository Requirements](#repository-requirements)
+              - [Notes for Repository Requirements](#notes-for-repository-requirements)
+              - [Repository Timeline](#repository-timeline)
       - [Security Considerations](#security-considerations)
    - [Graduation Criteria](#graduation-criteria)
       - [Graduation to Beta](#graduation-to-beta)
          - [Process Goals](#process-goals)
+   - [Implementation History](#implementation-history)
    - [Alternatives](#alternatives)
 
 ## Summary
@@ -208,8 +214,8 @@ taints.
 
 ### API Server Changes
 
-Finally, in the kube-apiserver, the cloud provider is used for transferring SSH keys to all of the nodes, and within an a
-dmission controller for setting labels on persistent volumes.
+Finally, in the kube-apiserver, the cloud provider is used for transferring SSH keys to all of the nodes, and within an
+admission controller for setting labels on persistent volumes.
 
 Kube-apiserver uses the cloud provider for two purposes
 
@@ -256,6 +262,102 @@ In case of the cloud-controller-manager, the deployment should be deleted using
 ```
 kubectl delete -f cloud-controller-manager.yml
 ```
+
+### Implementation Details/Notes/Constraints
+
+#### Repository Requirements
+
+**This is a proposed structure, and may change during the 1.11 release cycle.
+WG-Cloud-Provider will work with individual sigs to refine these requirements
+to maintain consistency while meeting the technical needs of the provider
+maintainers**
+
+Each cloud provider hosted within the `kubernetes` organization shall have a
+single repository named `kubernetes/cloud-provider-<provider_name>`. Those
+repositories shall have the following structure:
+
+* A `cloud-controller-manager` subdirectory that contains the implementation
+  of the provider-specific cloud controller.
+* A `docs` subdirectory.
+* A `docs/cloud-controller-manager.md` file that describes the options and
+  usage of the cloud controller manager code.
+* A `docs/testing.md` file that describes how the provider code is tested.
+* A `Makefile` with a `test` entrypoint to run the provider tests.
+
+Additionally, the repository should have:
+
+* A `docs/getting-started.md` file that describes the installation and basic
+  operation of the cloud controller manager code.
+
+Where the provider has additional capabilities, the repository should have
+the following subdirectories that contain the common features:
+
+* `dns` for DNS provider code.
+* `cni` for the Container Network Interface (CNI) driver.
+* `csi` for the Container Storage Interface (CSI) driver.
+* `flex` for the Flex Volume driver.
+* `installer` for custom installer code.
+
+Each repository may have additional directories and files that are used for
+additional feature that include but are not limited to:
+
+* Other provider specific testing.
+* Additional documentation, including examples and developer documentation.
+* Dependencies on provider-hosted or other external code.
+
+
+##### Notes for Repository Requirements
+
+This purpose of these requirements is to define a common structure for the
+cloud provider repositories owned by current and future cloud provider SIGs.
+In accordance with the 
+[WG-Cloud-Provider Charter](https://docs.google.com/document/d/1m4Kvnh_u_9cENEE9n1ifYowQEFSgiHnbw43urGJMB64/edit#)
+to "define a set of common expected behaviors across cloud providers", this
+proposal defines the location and structure of commonly expected code.
+
+As each provider can and will have additional features that go beyond expected
+common code, requirements only apply to the location of the
+following code:
+
+* Cloud Controller Manager implementations.
+* Documentation.
+
+This document may be amended with additional locations that relate to enabling
+consistent upstream testing, independent storage drivers, and other code with
+common integration hooks may be added
+
+The development of the 
+[Cloud Controller Manager](https://github.com/kubernetes/kubernetes/tree/master/cmd/cloud-controller-manager)
+and
+[Cloud Provider Interface](https://github.com/kubernetes/kubernetes/blob/master/pkg/cloudprovider/cloud.go)
+has enabled the provider SIGs to develop external providers that
+capture the core functionality of the upstream providers. By defining the
+expected locations and naming conventions of where the external provider code
+is, we will create a consistent experience for:
+
+* Users of the providers, who will have easily understandable conventions for
+  discovering and using all of the providers.
+* SIG-Docs, who will have a common hook for building or linking to externally
+  managed documentation
+* SIG-Testing, who will be able to use common entry points for enabling
+  provider-specific e2e testing.
+* Future cloud provider authors, who will have a common framework and examples
+  from which to build and share their code base.
+
+##### Repository Timeline
+
+To facilitate community development, providers named in the 
+[Makes SIGs responsible for implementations of `CloudProvider`](https://github.com/kubernetes/community/pull/1862)
+patch can immediately migrate their external provider work into their named
+repositories.
+
+Each provider will work to implement the required structure during the
+Kubernetes 1.11 development cycle, with conformance by the 1.11 release.
+WG-Cloud-Provider may actively change repository requirements during the
+1.11 release cycle to respond to collective SIG technical needs.
+
+After the 1.11 release all current and new provider implementations must
+conform with the requirements outlined in this document.
 
 ### Security Considerations
 
@@ -306,6 +408,20 @@ is proposed to
 - serve as a location for tracking issues which affect all Cloud Providers
 - serve as a repository for user experience reports related to Cloud Providers
   which live within the Kubernetes GitHub organization or desire to do so
+
+Major milestones:
+
+- March 18, 2018: Accepted proposal for repository requirements.
+
+*Major milestones in the life cycle of a KEP should be tracked in `Implementation History`.
+Major milestones might include
+
+- the `Summary` and `Motivation` sections being merged signaling SIG acceptance
+- the `Proposal` section being merged signaling agreement on a proposed design
+- the date implementation started
+- the first Kubernetes release where an initial version of the KEP was available
+- the version of Kubernetes where the KEP graduated to general availability
+- when the KEP was retired or superseded*
 
 The ultimate intention of WG Cloud Provider is to prevent multiple classes
 of software purporting to be an implementation of the Cloud Provider interface
