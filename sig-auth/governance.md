@@ -8,7 +8,8 @@ Membership for roles tracked in: [OWNERS]
   - Run operations and processes governing the SIG
   - Chairs *MUST* remain active in the role and are automatically removed from the position if they
     are unresponsive for > 3 months and *MAY* be removed if not proactively working with other
-    chairs to fulfill responsibilities.
+    chairs to fulfill responsibilities. Chairs *MAY* arrange a short-term (<6 months) leave of
+    absence with coordinated coverage of responsibilities.
   - Chairs *SHOULD* represent a diverse set of organizations.  This is predicated on interest in the
     role from multiple organizations with qualified candidates.
   - Chairs *MAY* decide to step down at any time and propose a replacement.  Use lazy consensus
@@ -36,7 +37,8 @@ Membership for roles tracked in: [OWNERS]
     [lazy-consensus].
   - Technical Leads *MUST* remain active in the role and are automatically removed from the position
     if they are unresponsive for > 3 months and *MAY* be removed if not proactively working with
-    other technical leads to fulfill responsibilities.
+    other technical leads to fulfill responsibilities. Technical leads *MAY* arrange a short-term
+    (<6 months) leave of absence with coordinated coverage of responsibilities.
   - Technical Leads *SHOULD* represent a diverse set of organizations.  This is predicated on
     interest in the role from multiple organizations with qualified candidates.
   - *SHOULD* have a record of consistent solid technical judgement and leadership over a sustained
@@ -57,7 +59,8 @@ Membership for roles tracked in: [OWNERS]
     projects, this *SHOULD* include maintaining test health and ensuring compatibility with new
     features.
   - *MUST* remain active in the role and are automatically removed from the position if they are
-    unresponsive for > 3 months.
+    unresponsive for > 3 months. Subproject owners *MAY* arrange a short-term (<6 months) leave of
+    absence with coordinated coverage of responsibilities.
   - *SHOULD* have a record of consistent solid technical judgement over a sustained period,
     especially over areas for which they are the owner
   - *MAY* be removed if not proactively working with other Subproject Owners to fulfill
