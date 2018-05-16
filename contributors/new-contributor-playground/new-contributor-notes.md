@@ -301,7 +301,7 @@ At the end of a PR there is a bunch of test.
   - not required: Needed in specific condition (eg. modifying on ly specific part of code)
 
 If something failed, click on `details` and check the test failure logs to see what happened. 
-There is `junit-XX.log` with the list of test excuted and `e2e-xxxxx` folder with all the component logs.
+There is `junit-XX.log` with the list of test executed and `e2e-xxxxx` folder with all the component logs.
 To check if the test failed because of your PR or another one, you can click on the **TOP** `pull-request-xxx` link and you will see the test-grid and check if your failing test is failing in other PR too.
 
 If you want to retrigger the test manually, you can comment the PR with `/retest` and `k8s-ci-robot` will retrigger the tests.
@@ -318,7 +318,7 @@ Anyone can contribute to docs.
 
 ### Working with docs
 
-Docs use `k8s-ci-robot`. Approval process is the same as for any k8s repo
+Docs use `k8s-ci-robot`. Approval process is the same as for any k8s repo.
 In docs, `master` branch is the current version of the docs. So always branch from `master`. It's continuous deployment
 For a specific release docs, branch from `release-1.X`.
 
@@ -344,7 +344,7 @@ You need:
 - To build variant: `make WHAT="kubectl"`
 - Building kubectl on Mac for linux: `KUBE_*_PLATFORM="linux/amd64" make WHAT "kubectl"`
 
-there is `build` documentation there: https://git.k8s.io/kubernetes/build
+There is `build` documentation there: https://git.k8s.io/kubernetes/build
 
 ### Testing
-there is `test` documentation there: https://git.k8s.io/community/contributor/guide
+There is `test` documentation there: https://git.k8s.io/community/contributor/guide
