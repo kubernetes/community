@@ -7,7 +7,7 @@ Author: @mengqiy
 Background of the Strategic Merge Patch is covered [here](../devel/strategic-merge-patch.md).
 
 The Kubernetes API may apply semantic meaning to the ordering of items within a list,
-however the strategic merge patch does not keeping the ordering of elements.
+however the strategic merge patch does not keep the ordering of elements.
 Ordering has semantic meaning for Environment variables,
 as later environment variables may reference earlier environment variables,
 but not the other way around.
@@ -228,7 +228,7 @@ If an old kubectl sends a old patch to a new server,
 the server will honor the order in the list as mentioned above.
 The behavior is a little different from before but is not a breaking change.
 
-If a new kubectl sends a new patch to an old server, the server doesn't recognise the parallel list and will drop it.
+If a new kubectl sends a new patch to an old server, the server doesn't recognize the parallel list and will drop it.
 So it will behave the same as before.
 
 ## Example
