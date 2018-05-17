@@ -1,6 +1,6 @@
 # Kubernetes Weekly Community Meeting
 
-We have PUBLIC and RECORDED [weekly meeting](https://zoom.us/my/kubernetescommunity) every Thursday at 6pm UTC (1pm EST / 10am PST)
+We have PUBLIC and RECORDED [weekly meeting](https://zoom.us/my/kubernetescommunity) every Thursday at [5pm UTC](https://www.google.com/search?q=5pm+UTC).
  
 Map that to your local time with this [timezone table](https://www.google.com/search?q=1800+in+utc)
 
