@@ -50,6 +50,14 @@ Membership for roles tracked in: <link to OWNERS file>
   - *MAY* participate in decision making for the subprojects they hold roles in
   - Includes all reviewers and approvers in [OWNERS] files for subprojects
 
+- Security Contact
+  - *MUST* be a contact point for the Product Security Team to reach out to for
+    triaging and handling of incoming issues
+  - *MUST* accept the [Embargo Policy](https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#embargo-policy)
+  - Defined in `SECURITY_CONTACTS` files, this is only relevant to the root file in
+    the repository, there is a template
+    [here](https://github.com/kubernetes/kubernetes-template-project/blob/master/SECURITY_CONTACTS)
+
 ## Organizational management
 
 - SIG meets bi-weekly on zoom with agenda in meeting notes
