@@ -92,11 +92,11 @@ Kustomize addresses a number of long standing issues in kubectl.
 - Declarative enumeration of multiple files [kubernetes/kubernetes#24649](https://github.com/kubernetes/kubernetes/issues/24649)
 - Declarative configmap and secret creation: [kubernetes/kubernetes#24744](https://github.com/kubernetes/kubernetes/issues/24744), [kubernetes/kubernetes#30337](https://github.com/kubernetes/kubernetes/issues/30337)
 - Configmap rollouts: [kubernetes/kubernetes#22368](https://github.com/kubernetes/kubernetes/issues/22368)
-  - [Example in kustomize](https://github.com/kubernetes/kubectl/blob/master/cmd/kustomize/demos/helloWorld.md#how-this-works-with-kustomize)
+  - [Example in kustomize](https://github.com/kubernetes-sigs/kustomize/tree/master/demos/helloWorld#how-this-works-with-kustomize)
 - Name/label scoping and safer pruning: [kubernetes/kubernetes#1698](https://github.com/kubernetes/kubernetes/issues/1698)
-  - [Example in kustomize](https://github.com/kubernetes/kubectl/blob/master/cmd/kustomize/demos/breakfast.md#demo-configure-breakfast)
+  - [Example in kustomize](https://github.com/kubernetes-sigs/kustomize/blob/master/demos/breakfast.md#demo-configure-breakfast)
 - Template-free add-on customization: [kubernetes/kubernetes#23233](https://github.com/kubernetes/kubernetes/issues/23233)
-  - [Example in kustomize](https://github.com/kubernetes/kubectl/blob/master/cmd/kustomize/demos/helloWorld.md#staging-kustomization)
+  - [Example in kustomize](https://github.com/kubernetes-sigs/kustomize/tree/master/demos/helloWorld#staging-kustomization)
 
 ### Goals
 
