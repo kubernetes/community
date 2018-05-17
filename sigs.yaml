@@ -1622,6 +1622,27 @@ sigs:
     contact:
       slack: sig-vmware
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-vmware
+      teams:
+      - name: sig-vmware-api-reviews
+        description: API Changes and Reviews
+      - name: sig-vmware-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-vmware-feature-requests
+        description: Feature Requests
+      - name: sig-vmware-members
+        description: Release Team Members
+      - name: sig-vmware-misc
+        description: General Discussion
+      - name: sig-vmware-pr-reviews
+        description: PR Reviews
+      - name: sig-vmware-proposals
+        description: Design Proposals
+      - name: sig-vmware-test-failures
+        description: Test Failures and Triage
+    subprojects:
+    - name: cloud-provider-vsphere
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS      
   - name: Windows
     dir: sig-windows
     mission_statement: >
