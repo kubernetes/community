@@ -118,7 +118,7 @@ Policies may have overlapping rules, to handle this policies are computed in the
 they should also obey to the following rules:
 
 - everything that is required is by definition allowed.
-- everything that is not denied is not automatically allowed: to be allowed a rule must not be denied AND must be allowed.
+- everything that is not denied is not automatically allowed.
 
 
 # Detailed Design
