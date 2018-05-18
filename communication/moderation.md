@@ -45,6 +45,10 @@ These guidelines are for tool-specific policies that don't fit under a general u
 
 - [Slack Guidelines](./slack-guidelines.md)
 
+### Zoom 
+
+- [Zoom Guidelines](./zoom-guidelines.md)
+
 
 ### References and Resources
 
