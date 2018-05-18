@@ -228,7 +228,7 @@ If an old kubectl sends a old patch to a new server,
 the server will honor the order in the list as mentioned above.
 The behavior is a little different from before but is not a breaking change.
 
-If a new kubectl sends a new patch to an old server, the server doesn't recognize the parallel list and will drop it.
+If a new kubectl sends a new patch to an old server, the server doesn't recognise the parallel list and will drop it.
 So it will behave the same as before.
 
 ## Example
