@@ -11,6 +11,8 @@ These responsibilities apply to all Kubernetes official channels.
 Moderators _MUST_:   
 
 - Take action as specified by these Kubernetes Moderator Guidelines.
+  - You are empowered to take _immediate action_ when there is a violation. You do not need to wait for review or approval if an egregious violation has occurred. Make a judgement call based on our Code of Conduct and Values (see below). 
+  - Removing a bad actor or content from the medium is preferable to letting it sit there. 
 - Abide by the documented tasks and actions required of moderators.
 - Ensure that the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) is in effect on all official Kubernetes communication channels.
 - Become familiar with the [Kubernetes Community Values](https://github.com/kubernetes/steering/blob/master/values.md).
@@ -30,7 +32,7 @@ Moderators _SHOULD_:
 
 ## Violations
 
-The Kubernetes [Steering Committee](https://github.com/kubernetes/steering) will have the final authority regarding escalated moderation matters.  Violations of the Code of Conduct will be handled on a case by case basis. Depending on severity this can range up to and including removal of the person from the community, though this is extremely rare. 
+The Kubernetes [Steering Committee](https://github.com/kubernetes/steering) will have the final authority regarding escalated moderation matters.  Violations of the Code of Conduct will be handled on a case by case basis. Depending on severity this can range up to and including removal of the person from the community, though this is extremely rare.
 
 ## Specific Guidelines
 
@@ -42,6 +44,10 @@ These guidelines are for tool-specific policies that don't fit under a general u
 ### Slack
 
 - [Slack Guidelines](./slack-guidelines.md)
+
+### Zoom 
+
+- [Zoom Guidelines](./zoom-guidelines.md)
 
 
 ### References and Resources
