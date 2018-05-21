@@ -105,7 +105,7 @@ The following are nice-to-haves, but not primary goals:
 ## Proposal
 
 We propose introducing a new `Lease` built-in API in the newly create API group
-`coordination.k8s.io`). To make it easily reusable for other purposes it will
+`coordination.k8s.io`. To make it easily reusable for other purposes it will
 be namespaced. Its schema will be as following:
 
 ```
