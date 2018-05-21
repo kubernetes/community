@@ -14,6 +14,7 @@ participating-sigs:
   - sig-network
   - sig-openstack
   - sig-storage
+  - sig-vmware
 reviewers:
   - "@wlan0"
   - "@calebamiles"
