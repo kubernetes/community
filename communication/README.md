@@ -88,8 +88,6 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [Blog]: http://blog.kubernetes.io
 [calendar.google.com]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles
 [CNCF code of conduct]: https://github.com/cncf/foundation/blob/master/code-of-conduct.md
-[communication]: /communication.md
-[community meeting]: /communication.md#weekly-meeting
 [events]: https://www.cncf.io/events/
 [file an issue]: https://github.com/kubernetes/kubernetes/issues/new
 [Google+]: https://plus.google.com/u/0/b/116512812300813784482/116512812300813784482

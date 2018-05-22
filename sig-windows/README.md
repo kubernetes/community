@@ -62,7 +62,7 @@ We're currently using a public [Trello board](https://trello.com/b/rjTqrwjl/wind
 As always, you can also find the active list of open issues and proposals [Open Code Issues and PRs for SIG/Windows](https://github.com/kubernetes/kubernetes/labels/sig%2Fwindows) on GitHub.
 
 ## API tracking
-We also have an [API tracking](https://github.com/kubernetes/community/blob/master/sig-windows/api-tracking.md) document that we're building out to track areas where the APIs may not be implemented or need to change for Windows.
+We also have an [API tracking](api-tracking.md) document that we're building out to track areas where the APIs may not be implemented or need to change for Windows.
 
 ## Meeting Recordings
 

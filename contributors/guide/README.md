@@ -133,7 +133,7 @@ For quick reference on contributor resources, we have a handy [contributor cheat
 
 It is best to contact your [SIG](#learn-about-sigs) for issues related to the SIG's topic. Your SIG will be able to help you much more quickly than a general question would.
 
-For general questions and troubleshooting, use the [kubernetes standard lines of communication](/communication.md) and work through the [kubernetes troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/).
+For general questions and troubleshooting, use the [kubernetes standard lines of communication](/communication/README.md) and work through the [kubernetes troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/).
 
 ## GitHub workflow
 

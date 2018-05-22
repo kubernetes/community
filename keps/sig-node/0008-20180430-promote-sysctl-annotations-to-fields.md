@@ -82,11 +82,11 @@ in the following way:
     ...
   ```
 
-The `sysctl` design document with more details and rationals is available at [design-proposals/node/sysctl.md](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/sysctl.md#pod-api-changes)
+The `sysctl` design document with more details and rationals is available at [`design-proposals/node/sysctl.md`](/contributors/design-proposals/node/sysctl.md#pod-api-changes).
 
 ## Motivation
 
-As mentioned in [contributors/devel/api_changes.md#alpha-field-in-existing-api-version](https://github.com/kubernetes/community/blob/master/contributors/devel/api_changes.md#alpha-field-in-existing-api-version):
+As mentioned in [`contributors/devel/api_changes.md#alpha-field-in-existing-api-version`](/contributors/devel/api_changes.md#alpha-field-in-existing-api-version):
 
 > Previously, annotations were used for experimental alpha features, but are no longer recommended for several reasons:
 >
@@ -129,7 +129,7 @@ of the feature.
     - net.*
   ```
 
-  More examples at [design-proposals/node/sysctl.md#allowing-only-certain-sysctls](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node/sysctl.md#allowing-only-certain-sysctls)
+  More examples at [`design-proposals/node/sysctl.md#allowing-only-certain-sysctls`](/contributors/design-proposals/node/sysctl.md#allowing-only-certain-sysctls)
 
 ### Promote `--experimental-allowed-unsafe-sysctls` kubelet flag to kubelet config api option
 
@@ -201,7 +201,7 @@ type PodSecurityPolicySpec struct {
 }
 ```
 
-Following steps in [devel/api_changes.md#alpha-field-in-existing-api-version](https://github.com/kubernetes/community/blob/master/contributors/devel/api_changes.md#alpha-field-in-existing-api-version)
+Following steps in [`contributors/devel/api_changes.md#alpha-field-in-existing-api-version`](/contributors/devel/api_changes.md#alpha-field-in-existing-api-version)
 during implemention.
 
 Validation checks implemented as part of [#27180](https://github.com/kubernetes/kubernetes/pull/27180).

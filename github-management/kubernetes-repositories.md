@@ -38,7 +38,7 @@ To provide a place for SIGs to collaborate on projects endorsed by and actively 
    * Must adopt the CNCF CLA bot, merge bot and Kubernetes PR commands/bots.
    * All OWNERS of the project must also be active SIG members.
    * SIG membership must vote using lazy consensus to create a new repository
-   * SIG must already have identified all of their existing subprojects and code, with valid OWNERS files, in [`sigs.yaml`](https://github.com/kubernetes/community/blob/master/sigs.yaml)
+   * SIG must already have identified all of their existing subprojects and code, with valid OWNERS files, in [`sigs.yaml`](sigs.yaml).
 
 #### Rules for donated repositories
 

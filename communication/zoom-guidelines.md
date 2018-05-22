@@ -1,7 +1,7 @@
 # Zoom Guidelines
 
 Zoom is the main video communication platform for Kubernetes. 
-It is used for running the [community meeting](https://github.com/kubernetes/community/blob/master/events/community-meeting.md) and SIG meetings. 
+It is used for running the [community meeting](/events/community-meeting.md) and SIG meetings.
 Since the Zoom meetings are open to the general public, a Zoom host has to moderate a meeting if a person is in violation of the code of conduct. 
 
 These guidelines are meant as a tool to help Kubernetes members manage their Zoom resources. 
@@ -36,7 +36,7 @@ Contact [SIG Contributor Experience](https://github.com/kubernetes/community/tre
 - @castrojo
 
 Each SIG should have at least one person with a paid Zoom account. 
-See the [SIG Creation procedure](https://github.com/kubernetes/community/blob/master/sig-governance.md#sig-creation-procedure) document on how to set up an initial account. 
+See the [SIG Creation procedure](/sig-governance.md#sig-creation-and-maintenance-procedure) document on how to set up an initial account.
 
 The Zoom licenses are managed by the [CNCF Service Desk](https://github.com/cncf/servicedesk). 
 

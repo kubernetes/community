@@ -67,8 +67,7 @@ For more information on how to write and deploy a CSI Driver on Kubernetes, see 
 
 FlexVolume is an out-of-tree plugin interface that has existed in Kubernetes since version 1.2 (before CSI). It uses an exec-based model to interface with drivers. FlexVolume driver binaries must be installed on host machines. Kubernetes performs volume operations by executing pre-defined commands in the FlexVolume API against the driver on the host. FlexVolume is GA as of Kubernetes 1.8.
 
-For more information about Flex, see:
-*   https://github.com/kubernetes/community/blob/master/contributors/devel/flexvolume.md
+For more information about Flex, see [the FlexVolume docs](/contributors/devel/flexvolume.md).
 
 **What are the limitations of FlexVolume?**
 

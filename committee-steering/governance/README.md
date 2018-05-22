@@ -71,5 +71,5 @@ See [frequently asked questions]
 [Recommendations and requirements]: sig-governance-requirements.md
 [Short Template]: sig-governance-template-short.md
 [frequently asked questions]: FAQ.md
-[sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
-[sig-architecture example]: ../../sig-architecture/charter.md
+[sigs.yaml]: /sigs.yaml
+[sig-architecture example]: /sig-architecture/charter.md

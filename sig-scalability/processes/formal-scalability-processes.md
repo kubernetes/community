@@ -65,7 +65,7 @@ These are scalability jobs that would run against the PR at the head of the subm
 - Kubemark-500 (time to run: [~50m](https://k8s-gubernator.appspot.com/builds/kubernetes-jenkins/logs/ci-kubernetes-kubemark-500-gce?before=10000), flakiness: [0%](https://k8s-gubernator.appspot.com/builds/kubernetes-jenkins/logs/ci-kubernetes-kubemark-500-gce?before=11251) in last 100 runs (as of 15/1/18)
 - GCE-100 (time to run: [~40m](https://k8s-gubernator.appspot.com/builds/kubernetes-jenkins/logs/ci-kubernetes-e2e-gci-gce-scalability?before=8366), flakiness: [1%](https://k8s-gubernator.appspot.com/builds/kubernetes-jenkins/logs/ci-kubernetes-e2e-gci-gce-scalability?before=9970) in last 100 runs (as of 15/1/18)
 
-About 60% of scalability regressions are caught by these medium-scale jobs ([source](https://github.com/kubernetes/community/blob/master/sig-scalability/blogs/scalability-regressions-case-studies.md)) and having them run as presubmits will greatly help by preventing those from entering.
+About 60% of scalability regressions are caught by these medium-scale jobs ([source](/sig-scalability/blogs/scalability-regressions-case-studies.md)) and having them run as presubmits will greatly help by preventing those from entering.
 
 ### Testing / Post-submit phase
 

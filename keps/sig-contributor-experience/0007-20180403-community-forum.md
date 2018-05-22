@@ -43,7 +43,7 @@ status: provisional
 
 Kubernetes is large enough that we should take a more active role in growing our community. We need a place to call our own that can encompass users, contributors, meetups, and other groups in the community. Is there a need for something between email and real time chat that can fulfill this? The primary purpose of this KEP is to determine whether we can provide a better community forum experience and perhaps improve our mailing list workflow. 
 
-The site would be forum.k8s.io, and would be linked to from the homepage and major properties. [See KEP005](https://github.com/kubernetes/community/blob/master/keps/sig-contributor-experience/0005-contributor-site.md) for related information on a contributor website. 
+The site would be forum.k8s.io, and would be linked to from the homepage and major properties. [See KEP005](0005-contributor-site.md) for related information on a contributor website.
 
 ## Motivation
 
