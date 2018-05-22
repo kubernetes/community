@@ -18,7 +18,7 @@ approvers:
 editor: TBD
 creation-date: 2018-04-27
 last-updated: 2018-04-27
-status: provisional
+status: implementable
 see-also:
   - https://github.com/kubernetes/kubernetes/issues/14733
   - https://github.com/kubernetes/kubernetes/pull/14735
@@ -181,6 +181,8 @@ Once all the code changes are done, we will:
 1. start updating `Lease` object every 10s by default, at the same time
    reducing frequency of NodeStatus updates initially to 40s by default.
    We will reduce it further later.
+   Note that it doesn't reduce frequency by which Kubelet sends "meaningful"
+   changes - it only impacts the frequency of "lastHeartbeatTime" changes.
    <br> TODO: That still results in higher average QPS. It should be acceptable but
    needs to be verified.
 1. announce that we are going to reduce frequency of NodeStatus updates further
