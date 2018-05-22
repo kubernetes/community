@@ -151,7 +151,7 @@ to a built-in API if we ran into a performance or any other problems.
 As a result, we decided to proceed with built-in API.
 
 
-We this new API in place, we will change Kubelet so that:
+With this new API in place, we will change Kubelet so that:
 
 1. Kubelet is periodically computing NodeStatus every 10s (at it is now), but that will
    be independent from reporting status
