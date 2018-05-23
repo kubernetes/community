@@ -46,16 +46,15 @@ superseded-by:
 
 ## Summary
 
-Alice, an experienced CLI Dev (see Key Personas in [the linked
-document][the_doc]), finds that she can’t easily onboard new contributors like
-Bob (see Key Personas in [the linked document][the_doc]), in part because her
-CLI and tests are too tightly coupled with heavyweight infrastructure in
-`k8s.io/kubernetes`. To solve this problem, Alice sponsors the development of a
-new lightweight testing infrastructure outside `k8s.io/kubernetes`.
+Alice, an experienced CLI Dev (see [Key Personas][alice]), finds that she can’t
+easily onboard new contributors like Bob (see [Key Personas][bob]), in part
+because her CLI and tests are too tightly coupled with heavyweight
+infrastructure in `k8s.io/kubernetes`. To solve this problem, Alice sponsors
+the development of a new lightweight testing infrastructure outside
+`k8s.io/kubernetes`.
 
-Meanwhile, Carol, an API/Controller dev (see Key Personas in [the linked
-document][the_doc]), is frustrated that there are already too many ways to spin
-up test clusters.
+Meanwhile, Carol, an API/Controller dev (see [Key Personas][carol]), is
+frustrated that there are already too many ways to spin up test clusters.
 
 There is a clear tension between Alice and Carol’s frustrations. Left to their
 own devices, Alice is likely to contribute to the proliferation of test
@@ -67,6 +66,10 @@ Most of the content of this KEP has already [been worked on and fleshed
 out][the_doc] mostly by people from sig-testing, more specifically people
 working on the [testing-commons subproject][testing_commons_notes].
 
+[key_personas]: https://docs.google.com/document/d/13bMjmWpsdkgbY-JayrcU-e_QNwRJCP-rHjtqdeeoQHo/edit#heading=h.czu8o1uor9qk
+[alice]: https://docs.google.com/document/d/13bMjmWpsdkgbY-JayrcU-e_QNwRJCP-rHjtqdeeoQHo/edit#heading=h.17sl3t5a8nu
+[bob]: https://docs.google.com/document/d/13bMjmWpsdkgbY-JayrcU-e_QNwRJCP-rHjtqdeeoQHo/edit#heading=h.mecveaw12b4d
+[carol]: https://docs.google.com/document/d/13bMjmWpsdkgbY-JayrcU-e_QNwRJCP-rHjtqdeeoQHo/edit#heading=h.4i5imqvwxv3a
 [testing_commons_notes]: https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#
 [the_doc]: https://docs.google.com/document/d/13bMjmWpsdkgbY-JayrcU-e_QNwRJCP-rHjtqdeeoQHo/edit#
 
