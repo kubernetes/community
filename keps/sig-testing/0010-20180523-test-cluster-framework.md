@@ -18,7 +18,7 @@ editor: TBD
 creation-date: 2018-05-23
 last-updated: 2018-05-23
 status: provisional
-see-also: https://docs.google.com/document/d/13bMjmWpsdkgbY-JayrcU-e_QNwRJCP-rHjtqdeeoQHo/edit#
+see-also:
 replaces:
 superseded-by:
 ---
