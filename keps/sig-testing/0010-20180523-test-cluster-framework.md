@@ -53,14 +53,14 @@ way to spin up and configure clusters they can test against. This abstraction
 is targeted mainly to the needs of the following personas and should work
 equally well used interactively and non-interactively / automated.
 
-Alice, an experienced CLI Dev (see [Key Personas][alice]), finds that she can’t
-easily onboard new contributors like Bob (see [Key Personas][bob]), in part
+Alice, an experienced CLI Dev (see [Key Persona Alice][alice]), finds that she can’t
+easily onboard new contributors like Bob (see [Key Persona Bob][bob]), in part
 because her CLI and tests are too tightly coupled with heavyweight
 infrastructure in `k8s.io/kubernetes`. To solve this problem, Alice sponsors
 the development of a new lightweight testing infrastructure outside
 `k8s.io/kubernetes`.
 
-Meanwhile, Carol, an API/Controller dev (see [Key Personas][carol]), is
+Meanwhile, Carol, an API/Controller dev (see [Key Persona Carol][carol]), is
 frustrated that there are already too many ways to spin up test clusters.
 
 There is a clear tension between Alice and Carol’s frustrations. Left to their
