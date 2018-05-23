@@ -118,6 +118,13 @@ TODO: Add note that we did interviews and talked to different people, noted in
 - [Newcomer-friendly lightweight bootstrapping](https://docs.google.com/document/d/13bMjmWpsdkgbY-JayrcU-e_QNwRJCP-rHjtqdeeoQHo/edit#heading=h.19lu9pyt334a)
 - [Proper debugging support](https://docs.google.com/document/d/13bMjmWpsdkgbY-JayrcU-e_QNwRJCP-rHjtqdeeoQHo/edit#heading=h.mzdpiav3x5tz)
 
+There are more [user stories][additional_userstories] and
+[personas][additional_personas] which are probably out of scope for this KEP
+but paint a potential future direction we could imagine for this test cluster
+framework.
+
+[additional_personas]: https://docs.google.com/document/d/13bMjmWpsdkgbY-JayrcU-e_QNwRJCP-rHjtqdeeoQHo/edit#heading=h.7k68eja3mgiu
+[additional_userstories]: https://docs.google.com/document/d/13bMjmWpsdkgbY-JayrcU-e_QNwRJCP-rHjtqdeeoQHo/edit#heading=h.egbobak5q21m
 
 ### Implementation Details/Notes/Constraints
 
