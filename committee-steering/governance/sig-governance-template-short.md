@@ -17,13 +17,14 @@ Outline of things that could be confused as falling into this SIG but don't
 
 ## Roles
 
-Membership for roles tracked in: [sigs.yaml]
+### SIG roles
 
-- Chair
+SIG roles are tracked in [`sigs.yaml`][sigs.yaml] under `leadership`:
+
+- Chair (`chairs` in [`sigs.yaml`][sigs.yaml])
   - Run operations and processes governing the SIG
-  - Seed members established at SIG founding
-  - Chairs *MAY* decide to step down at anytime and propose a replacement.  Use lazy consensus amongst
-    chairs with fallback on majority vote to accept proposal.  This *SHOULD* be supported by a majority of
+  - Chairs *MAY* decide to step down at anytime and propose a replacement.  Use [lazy-consensus] amongst
+    chairs with fallback on majority vote to accept the proposal.  This *SHOULD* be supported by a majority of
     SIG Members.
   - Chairs *MAY* select additional chairs through a [super-majority] vote amongst chairs.  This
     *SHOULD* be supported by a majority of SIG Members.
@@ -31,47 +32,51 @@ Membership for roles tracked in: [sigs.yaml]
     unresponsive for > 3 months and *MAY* be removed if not proactively working with other chairs to fulfill
     responsibilities.
   - Number: 2-3
-  - Defined in [sigs.yaml]
 
-
-- *Optional Role*: SIG Technical Leads
+- *Optional Role*: SIG Technical Lead (`tech_leads` in [`sigs.yaml`][sigs.yaml])
   - Establish new subprojects
   - Decommission existing subprojects
   - Resolve X-Subproject technical issues and decisions
 
+- *Member*: (`subprojects` in [`sigs.yaml`][sigs.yaml])
+  - People holding a role in the SIG or in any subproject.
 
-- Subproject Owners
-  - Scoped to a subproject defined in [sigs.yaml]
-  - Seed members established at subproject founding
+### Subprojects
+
+Subprojects are tracked in [`sigs.yaml`][sigs.yaml] under
+`subprojects`.  The [`sigs.yaml`][sigs.yaml] entry contains an
+`owners` array linking one or more [`OWNERS`][OWNERS] files, each of
+which tracks approvers and reviewers associated with that subproject.
+Security contacts are tracked in separate `SECURITY_CONTACTS` files as
+discussed below.
+
+- Approver (`approvers` in [`OWNERS`][OWNERS])
+  - Scoped to a subproject defined in [`sigs.yaml`][sigs.yaml]
   - *MUST* be an escalation point for technical discussions and decisions in the subproject
   - *MUST* set milestone priorities or delegate this responsibility
   - *MUST* remain active in the role and are automatically removed from the position if they are unresponsive
     for > 3 months.
-  - *MAY* be removed if not proactively working with other Subproject Owners to fulfill responsibilities.
-  - *MAY* decide to step down at anytime and propose a replacement.  Use [lazy-consensus] amongst subproject owners
+  - *MAY* be removed if not proactively working with other approvers to fulfill responsibilities.
+  - *MAY* decide to step down at anytime and propose a replacement.  Use [lazy-consensus] amongst approvers
     with fallback on majority vote to accept proposal.  This *SHOULD* be supported by a majority of subproject
-    contributors (those having some role in the subproject).
-  - *MAY* select additional subproject owners through a [super-majority] vote amongst subproject owners.  This
-    *SHOULD* be supported by a majority of subproject contributors (through [lazy-consensus] with fallback on voting).
+    members.
+  - *MAY* alter their own [`OWNERS`][OWNERS] through a [super-majority] vote amongst approvers.  This
+    *SHOULD* be supported by a majority of subproject members (through [lazy-consensus] with fallback on voting).
   - Number: 3-5
-  - Defined in [OWNERS] files that are specified in [sigs.yaml]
 
-- Members
-  - *MUST* maintain health of at least one subproject or the health of the SIG
-  - *MUST* show sustained contributions to at least one subproject or to the SIG
-  - *SHOULD* hold some documented role or responsibility in the SIG and / or at least one subproject
-    (e.g. reviewer, approver, etc)
-  - *MAY* build new functionality for subprojects
-  - *MAY* participate in decision making for the subprojects they hold roles in
-  - Includes all reviewers and approvers in [OWNERS] files for subprojects
+- *Optional Role*: Reviewer (`reviewers` in [`OWNERS`][OWNERS])
+  - Scoping is defined in [`OWNERS`][OWNERS], respecting `no_parent_owners`.
+  - Look for general code quality, correctness, sane software engineering, style, etc.
 
-- Security Contact
+- Security Contact (tracked in `SECURITY_CONTACTS` in the root of any repository containing an `OWNERS` file)
   - *MUST* be a contact point for the Product Security Team to reach out to for
     triaging and handling of incoming issues
   - *MUST* accept the [Embargo Policy](https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#embargo-policy)
-  - Defined in `SECURITY_CONTACTS` files, this is only relevant to the root file in
-    the repository, there is a template
+  - There is a template
     [here](https://github.com/kubernetes/kubernetes-template-project/blob/master/SECURITY_CONTACTS)
+
+- Member
+  - Includes all reviewers and approvers in the subproject's [`OWNERS`][OWNERS] file(s) as well as the security contacts from associated `SECURITY_CONTACTS` file(s).
 
 ## Organizational management
 
@@ -92,19 +97,21 @@ Option 1: by SIG Technical Leads
 
 - Subprojects may be created by [KEP] proposal and accepted by [lazy-consensus] with fallback on majority vote of
   SIG Technical Leads.  The result *SHOULD* be supported by the majority of SIG members.
-  - KEP *MUST* establish subproject owners
-  - [sigs.yaml] *MUST* be updated to include subproject information and [OWNERS] files with subproject owners
+  - KEP *MUST* establish subproject approvers.
+  - KEP *SHOULD* establish security contacts for each new repository being created.
+  - [`sigs.yaml`][sigs.yaml] *MUST* be updated to include subproject information and [`OWNERS`][OWNERS] references.
   - Where subprojects processes differ from the SIG governance, they must document how
-    - e.g. if subprojects release separately - they must document how release and planning is performed
+    - e.g. if subprojects release separately - they must document how release and planning is performed.
 
 Option 2: by federation of subprojects
 
 - Subprojects may be created by [KEP] proposal and accepted by [lazy-consensus] with fallback on majority vote of
-  subproject owners in the SIG.  The result *SHOULD* be supported by the majority of members.
-  - KEP *MUST* establish subproject owners
-  - [sigs.yaml] *MUST* be updated to include subproject information and [OWNERS] files with subproject owners
+  subproject approvers in the SIG.  The result *SHOULD* be supported by the majority of SIG members.
+  - KEP *MUST* establish subproject approvers.
+  - KEP *SHOULD* establish security contacts for each new repository being created.
+  - [`sigs.yaml`][sigs.yaml] *MUST* be updated to include subproject information and [`OWNERS`][OWNERS] references.
   - Where subprojects processes differ from the SIG governance, they must document how
-    - e.g. if subprojects release separately - they must document how release and planning is performed
+    - e.g. if subprojects release separately - they must document how release and planning is performed.
 
 ---
 
@@ -136,7 +143,7 @@ they have defined.
 Issues impacting multiple subprojects in the SIG should be resolved by either:
 
 - Option 1: SIG Technical Leads
-- Option 2: Federation of Subproject Owners
+- Option 2: Federation of Subproject Approvers
 
 [lazy-consensus]: http://communitymgt.wikia.com/wiki/Lazy_consensus
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote
