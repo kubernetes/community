@@ -4,8 +4,8 @@ title: Test Cluster Framework
 authors:
   - "@timothysc"  # Timothy St. Clair
   - "@marun"      # Maru Newby
-  - "Liz Frost"
-  - "@frankgreco" # Frank B Greco Jr,
+  - "@liztio"     # Liz Frost
+  - "@frankgreco" # Frank B Greco Jr
   - "@hoegaarden" # Hannes Hoerl
   - "@totherme"   # Gareth Smith
 owning-sig: sig-testing
