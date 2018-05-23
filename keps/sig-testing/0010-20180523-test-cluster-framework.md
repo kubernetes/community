@@ -2,8 +2,12 @@
 kep-number: 10
 title: Test Cluster Framework
 authors:
-  - "@hoegaarden"
-  - "@totherme"
+  - "@timothysc"  # Timothy St. Clair
+  - "@marun"      # Maru Newby
+  - "Liz Frost"
+  - "@frankgreco" # Frank B Greco Jr,
+  - "@hoegaarden" # Hannes Hoerl
+  - "@totherme"   # Gareth Smith
 owning-sig: sig-testing
 participating-sigs:
 reviewers:
