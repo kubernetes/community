@@ -46,6 +46,13 @@ superseded-by:
 
 ## Summary
 
+> Making testing with clusters consistent
+
+We propose an abstraction so that users and tools (e.g. CI) have a consistent
+way to spin up and configure clusters they can test against. This abstraction
+is targeted mainly to the needs of the following personas and should work
+equally well used interactively and non-interactively / automated.
+
 Alice, an experienced CLI Dev (see [Key Personas][alice]), finds that she can’t
 easily onboard new contributors like Bob (see [Key Personas][bob]), in part
 because her CLI and tests are too tightly coupled with heavyweight
