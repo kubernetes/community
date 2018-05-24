@@ -70,7 +70,7 @@ Each organization should have the following teams:
   - `foo-reviewers`: granted read access to the `foo` repo; intended to be used as
     a notification mechanism for interested/active contributors for the `foo` repo
 - a `bots` team
-  - should contain bots such as @k8s-ci-robot and @linuxfoundation that are
+  - should contain bots such as @k8s-ci-robot and @thelinuxfoundation that are
     necessary for org and repo automation
 - an `owners` team
   - should be populated by everyone who has `owner` privileges to the org
