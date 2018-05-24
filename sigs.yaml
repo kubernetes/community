@@ -235,7 +235,7 @@ sigs:
         company: Google
       - name: Jaice Singer DuMars
         github: jdumars
-        company: Microsoft
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -675,7 +675,7 @@ sigs:
         company: RackN
       - name: Jaice Singer DuMars
         github: jdumars
-        company: Microsoft
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -1236,7 +1236,7 @@ sigs:
       chairs:
       - name: Jaice Singer DuMars
         github: jdumars
-        company: Microsoft
+        company: Google
       - name: Caleb Miles
         github: calebamiles
         company: Google

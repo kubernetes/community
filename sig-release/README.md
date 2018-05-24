@@ -19,7 +19,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Microsoft
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
 * Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), Google
 
 ## Contact
