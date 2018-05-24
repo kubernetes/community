@@ -21,7 +21,7 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Brian Grant (**[@bgrant0607](https://github.com/bgrant0607)**), Google
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Microsoft
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-architecture)
