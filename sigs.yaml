@@ -1618,7 +1618,15 @@ sigs:
       frequency: bi-weekly
       url: https://zoom.us/j/183662780
       archive_url: https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing
-      recordings_url:
+      recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y
+    - description: Cloud Provider vSphere weekly syncup
+      day: Wednesday
+      time: "16:30"
+      tz: "UTC"
+      frequency: weekly
+      url: https://zoom.us/j/584244729
+      archive_url: https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing
+      recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR
     contact:
       slack: sig-vmware
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-vmware
