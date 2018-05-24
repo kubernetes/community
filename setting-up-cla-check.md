@@ -21,7 +21,7 @@ the Linux Foundation CNCF CLA check for your repositories, please read on.
       - Pull request: checked
       - Issue comment: checked
       - Active: checked
-1. Add the [@linuxfoundation](https://github.com/linuxfoundation) GitHub user as an **Owner**
+1. Add the [@thelinuxfoundation](https://github.com/thelinuxfoundation) GitHub user as an **Owner**
    to your organization or repo to ensure the CLA status can be applied on PR's
 1. After you send an invite, contact the [Linux Foundation](mailto:helpdesk@rt.linuxfoundation.org); and cc [Chris Aniszczyk](mailto:caniszczyk@linuxfoundation.org), [Ihor Dvoretskyi](mailto:ihor@cncf.io), [Eric Searcy](mailto:eric@linuxfoundation.org) (to ensure that the invite gets accepted).
 1. Finally, open up a test PR to check that:
