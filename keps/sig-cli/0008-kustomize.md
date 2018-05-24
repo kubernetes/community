@@ -10,10 +10,10 @@ participating-sigs:
 reviewers:
   - "@droot"
 approvers:
-  - "@maciej"
+  - "@soltysh"
 editor: "@droot"
-creation-date: 2018-05-5
-last-updated: 2018-05-5
+creation-date: 2018-05-05
+last-updated: 2018-05-23
 status: implemented
 see-also:
   - n/a
@@ -48,9 +48,9 @@ superseded-by:
 Declarative specification of Kubernetes objects is the recommended way to manage Kubernetes
 production workloads, however gaps in the kubectl tooling force users to write their own scripting and
 tooling to augment the declarative tools with preprocessing transformations.
-While most of theser transformations already exist as imperative kubectl commands, they are not natively accessible
+While most of these transformations already exist as imperative kubectl commands, they are not natively accessible
 from a declarative workflow.
- 
+
 This KEP describes how `kustomize` addresses this problem by providing a declarative format for users to access
 the imperative kubectl commands they are already familiar natively from declarative workflows.
 
@@ -59,7 +59,7 @@ the imperative kubectl commands they are already familiar natively from declarat
 The kubectl command provides a cli for:
 
 - accessing the Kubernetes apis through json or yaml configuration
-- porcelain commands for generating and transforming configuration off of commandline flags.
+- porcelain commands for generating and transforming configuration off of command line flags.
 
 Examples:
 
@@ -70,7 +70,7 @@ Examples:
 - Create or update fields that cut across other fields and objects
   - `kubectl label`, `kubectl annotate`
   - Users can add and update labels for all objects composing an application
-  
+
 - Transform an existing declarative configuration without forking it
   - `kubectl patch`
   - Users may generate multiple variations of the same workload
