@@ -92,13 +92,39 @@ of the cases.
 We are looking into extending the set of SLIs/SLOs to cover more parts of
 Kubernetes.
 
+```
+Prerequisite: Kubernetes cluster is available and serving.
+```
+
 ### Steady state SLIs/SLOs
 
 | Status | SLI | SLO | User stories, test scenarios, ... |
 | --- | --- | --- | --- |
+| __Official__ | Latency<sup>[1](#footnote1)</sup> of mutating<sup>[2](#footnote2)</sup> API calls for single objects for every (resource, verb) pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, verb) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day<sup>[3](#footnote3)</sup> <= 1s | [Details](./api_call_latency.md) |
+| __Official__ | Latency<sup>[1](#footnote1)</sup> of non-streaming read-only<sup>[4](#footnote3)</sup> API calls for every (resource, scope<sup>[5](#footnote4)</sup>) pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, scope) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day (a) <= 1s if `scope=resource` (b) <= 5s if `scope=namespace` (c) <= 30s if `scope=cluster` | [Details](./api_call_latency.md) |
+
+<a name="footnote1">\[1\]</a>By latency of API call in this doc we mean time
+from the moment when apiserver gets the request to last byte of response sent
+to the user.
+
+<a name="footnote2">\[2\]</a>By mutating API calls we mean POST, PUT, DELETE
+and PATCH.
+
+<a name="footnote3">\[3\]</a> For the purpose of visualization it will be a
+sliding window. However, for the purpose of reporting the SLO, it means one
+point per day (whether SLO was satisfied on a given day or not).
+
+<a name="footnote4">\[4\]</a>By non-streaming read-only API calls we mean GET
+requests without `watch=true` option set. (Note that in Kubernetes internally
+it translates to both GET and LIST calls).
+
+<a name="footnote5">\[5\]</a>A scope of a request can be either (a) `resource`
+if the request is about a single object, (b) `namespace` if it is about objects
+from a single namespace or (c) `cluster` if it spawns objects from multiple
+namespaces.
+
 
 __TODO: Migrate existing SLIs/SLOs here:__
-- __API-machinery ones__
 - __Pod startup time__
 
 ### Burst SLIs/SLOs
@@ -106,3 +132,13 @@ __TODO: Migrate existing SLIs/SLOs here:__
 | Status | SLI | SLO | User stories, test scenarios, ... |
 | --- | --- | --- | --- |
 | WIP | Time to start 30\*#nodes pods, measured from test scenario start until observing last Pod as ready | Benchmark: when all images present on all Nodes, 99th percentile <= X minutes | [Details](./system_throughput.md) |
+
+### Other SLIs
+
+| Status | SLI | User stories, ... |
+| --- | --- | --- |
+| WIP | Watch latency for every resource, (from the moment when object is stored in database to when it's ready to be sent to all watchers), measured as 99th percentile over last 5 minutes | TODO |
+| WIP | Admission latency for each admission plugin type, measured as 99th percentile over last 5 minutes | [Details](./api_extensions_latency.md) |
+| WIP | Webhook call latency for each webhook type, measured as 99th percentile over last 5 minutes | [Details](./api_extensions_latency.md) |
+| WIP | Initializer latency for each initializer, measured as 99th percentile over last 5 minutes | [Details](./api_extensions_latency.md) |
+
