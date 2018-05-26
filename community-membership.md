@@ -222,7 +222,7 @@ The following apply to the subproject for which one would be an owner.
 
 **Status:** Removed
 
-The Maintainer role has been removed and replaced with a greater focus on [owner](#owner)s.
+The Maintainer role has been removed and replaced with a greater focus on [OWNERS].
 
 [code reviews]: contributors/devel/collab.md
 [community expectations]: contributors/guide/community-expectations.md
