@@ -72,18 +72,8 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/kube-aggregator/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/kube-aggregator/master/OWNERS
-    - name: server-sdk
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/sample-apiserver/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/sample-apiserver/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/sample-controller/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/sample-controller/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder/master/OWNERS
     - name: idl-schema-client-pipeline
       owners:
-      - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS # possibly should be totally separate
-      - https://raw.githubusercontent.com/kubernetes/code-generator/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/code-generator/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kube-openapi/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/api/master/OWNERS
@@ -1180,6 +1170,85 @@ sigs:
     - name: cloud-provider-openstack
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
+  - name: Platform Dev
+    dir: sig-platform-dev
+    mission_statement: >
+      SIG Platform Dev (SIG-PD) is a cross-cutting SIG whose mission is to
+      design, build, and maintain a cohesive, first-party Platform Development
+      Kit (PDK) for developers who want to extend the Kubernetes platform by
+      adding new APIs or enhancing existing APIs, as well as to advocate on
+      behalf of such developers by driving feedback into other SIGs.
+    label: platform-dev
+    leadership:
+      chairs:
+      - name: Jimmy Zelinskie
+        company: Red Hat
+        github: jzelinskie
+      - name: Anthony Yeh
+        company: Google
+        github: enisoc
+      - name: Stefan Schimanski
+        company: Red Hat
+        github: sttts
+      tech_leads:
+      - name: Jimmy Zelinskie
+        company: Red Hat
+        github: jzelinskie
+      - name: Anthony Yeh
+        company: Google
+        github: enisoc
+      - name: Phillip Wittrock
+        company: Google
+        github: pwittrock
+      - name: Stefan Schimanski
+        company: Red Hat
+        github: sttts
+    meetings:
+    - description: Regular SIG Meeting
+      day: Tuesday
+      time: "10:00"
+      tz: "PT (Pacific Time)"
+      frequency: biweekly
+    contact:
+      slack: sig-platform-dev
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-platform-dev
+      teams:
+      - name: sig-platform-dev-api-reviews
+        description: API Changes and Reviews
+      - name: sig-platform-dev-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-platform-dev-feature-requests
+        description: Feature Requests
+      - name: sig-platform-dev-misc
+        description: General Discussion
+      - name: sig-platform-dev-pr-reviews
+        description: PR Reviews
+      - name: sig-platform-dev-proposals
+        description: Design Proposals
+      - name: sig-platform-dev-test-failures
+        description: Test Failures and Triage
+    subprojects:
+    - name: pdk-roadmap
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/pdk-roadmap/master/OWNERS
+    - name: sample-apiserver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/sample-apiserver/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/sample-apiserver/master/OWNERS
+    - name: sample-controller
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/sample-controller/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/sample-controller/master/OWNERS
+    - name: gengo
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS
+    - name: code-generator
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/code-generator/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/code-generator/master/OWNERS
+    - name: apiserver-builder
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder/master/OWNERS
   - name: Product Management
     dir: sig-product-management
     mission_statement: >
