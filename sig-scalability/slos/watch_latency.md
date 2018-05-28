@@ -1,7 +1,7 @@
 ## Watch latency SLI details
 
 ### User stories
-- As an aministrator, if Kubernetes is slow, I would like to know if the root
+- As an administrator, if Kubernetes is slow, I would like to know if the root
 cause of it is slow api-machinery (slow watch) or something farther the path
 (lack of network bandwidth, slow or cpu-starved controllers, ...)
 

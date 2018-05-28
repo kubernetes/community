@@ -23,7 +23,7 @@ in Kubernetes, so this metric is a building block for less trivial SLIs and
 SLOs.
 - The SLO for latency for read-only API calls of a given type may have significant
 buffer in threshold. In fact, the latency of the request should be proportional to
-the amount of work to do (which is number of objects og a given type in a given
+the amount of work to do (which is number of objects of a given type in a given
 scope) plus some constant overhead. For better tracking of performance, we
 may want to define purely internal SLI of "latency per object". But that
 isn't in near term plans.
@@ -36,6 +36,11 @@ that all `core` components communicate with apiserver using protocol buffers.
 stale data (being served from cache) and the SLO again has to be satisfied
 independently of that. This makes the careful choice of requests in tests
 important.
+
+### TODOs
+- We may consider treating `non-namespaced` resources as a separate bucket in
+the future. However, it may not make sense if the number of those may be
+comparable with `namespaced` ones.
 
 ### Test scenario
 
