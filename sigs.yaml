@@ -1392,6 +1392,9 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
+    - name: poseidon
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
   - name: Service Catalog
     dir: sig-service-catalog
     mission_statement: >
