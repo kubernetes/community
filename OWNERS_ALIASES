@@ -32,6 +32,10 @@ aliases:
     - soltysh
     - pwittrock
     - AdoHe
+  sig-cloud-provider-leads:
+    - andrewsykim
+    - hogepodge
+    - jagosan
   sig-cluster-lifecycle-leads:
     - lukemarsden
     - roberthbailey

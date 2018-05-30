@@ -561,6 +561,72 @@ sigs:
       owners:
       # "owners" entry
       - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
+  - name: Cloud Provider
+    dir: sig-cloud-provider
+    mission_statement: >
+      Ensures that the Kubernetes ecosystem is evolving in a way that is neutral to all
+      (public and private) cloud providers. It will be responsible for establishing
+      standards and requirements that must be met by all providers to ensure optimal
+      integration with Kubernetes.
+    label: cloud-provider
+    leadership:
+      chairs:
+      - name: Andrew Sy Kim
+        github: andrewsykim
+        company: DigitalOcean
+      - name: Chris Hoge
+        github: hogepodge
+        company: OpenStack Foundation
+      - name: Jago Macleod
+        github: jagosan
+        company: Google
+    meetings:
+    - description: Regular SIG Meeting
+      day: Wednesday
+      time: "10:00"
+      tz: "PT (Pacific Time)"
+      frequency: biweekly
+      url: https://zoom.us/my/sigcloudprovider
+      archive_url: TODO
+      recordings_url: TODO
+    contact:
+      slack: sig-cloud-provider
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cloud-provider
+      teams:
+      - name: sig-cloud-provider-api-reviews
+        description: API Changes and Reviews
+      - name: sig-cloud-provider-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-cloud-provider-feature-requests
+        description: Feature Requests
+      - name: sig-cloud-provider-maintainers
+        description: Cloud Providers Maintainers
+      - name: sig-cloud-providers-misc
+        description: General Discussion
+      - name: sig-cloud-provider-pr-reviews
+        description: PR Reviews
+      - name: sig-cloud-provider-proposals
+        description: Design Proposals
+      - name: sig-cloud-provider-test-failures
+        description: Test Failures and Triage
+    subprojects:
+    - name: kubernetes-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/cloudprovider/OWNERS
+    - name: cloud-provider-azure
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
+    - name: cloud-provider-gcp
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
+    - name: cloud-provider-openstack
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
+    - name: cloud-provider-vsphere
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
   - name: Cluster Lifecycle
     dir: sig-cluster-lifecycle
     mission_statement: >
@@ -1653,7 +1719,7 @@ sigs:
     subprojects:
     - name: cloud-provider-vsphere
       owners:
-      - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS      
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
   - name: Windows
     dir: sig-windows
     mission_statement: >
