@@ -18,4 +18,6 @@ This page lists different options, in alphabetic order, of starting a Kubernetes
 * Stackpoint.io: https://stackpoint.io
 * Tack: https://github.com/kz8s/tack
 * Tectonic: http://github.com/coreos/tectonic-installer
-* Weaveworks AMI: https://github.com/weaveworks/kubernetes-ami
+* Weaveworks guides
+  - [Kubernetes on AWS: Tutorial and Best Practices for Deployment](https://www.weave.works/technologies/kubernetes-on-aws/)
+  - [Kubernetes Custom Cluster: Building Your Own](https://www.weave.works/technologies/kubernetes-installation-options/)
