@@ -122,6 +122,8 @@ aliases:
   wg-container-identity-leads:
     - smarterclayton
     - destijl
+  wg-iot-edge-leads:
+    - dejanb
   wg-kubeadm-adoption-leads:
     - luxas
     - justinsb
