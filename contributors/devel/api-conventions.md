@@ -123,9 +123,12 @@ filtering (see [the labels documentation](https://kubernetes.io/docs/user-guide/
 lists should support filtering by fields.
 
    Examples: PodLists, ServiceLists, NodeLists
-
-   TODO: Describe field filtering below or in a separate doc.
-
+   
+   *Equality-based filtering by label keys and values.*
+   ``` NodeLists != DaemonSet-foo ```  
+   
+    *Set-based filtering keys according to a set of values* 
+   ``` DaemonSet-bar in (PodLists, ServiceLists) ```
 3. **Simple** kinds are used for specific actions on objects and for
 non-persistent entities.
 
