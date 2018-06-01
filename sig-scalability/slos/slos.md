@@ -102,6 +102,7 @@ Prerequisite: Kubernetes cluster is available and serving.
 | --- | --- | --- | --- |
 | __Official__ | Latency<sup>[1](#footnote1)</sup> of mutating<sup>[2](#footnote2)</sup> API calls for single objects for every (resource, verb) pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, verb) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day<sup>[3](#footnote3)</sup> <= 1s | [Details](./api_call_latency.md) |
 | __Official__ | Latency<sup>[1](#footnote1)</sup> of non-streaming read-only<sup>[4](#footnote3)</sup> API calls for every (resource, scope<sup>[5](#footnote4)</sup>) pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, scope) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day (a) <= 1s if `scope=resource` (b) <= 5s if `scope=namespace` (c) <= 30s if `scope=cluster` | [Details](./api_call_latency.md) |
+| __Official__ | Startup latency of stateless<sup>[6](#footnode6)</sup> and schedulable<sup>[7](#footnote7)</sup> pods, excluding time to pull images and run init containers, measured from pod creation timestamp to when all its containers are reported as started and observed via watch, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile per cluster-day <= 5s | [Details](./pod_startup_latency.md) |
 
 <a name="footnote1">\[1\]</a>By latency of API call in this doc we mean time
 from the moment when apiserver gets the request to last byte of response sent
@@ -123,9 +124,12 @@ if the request is about a single object, (b) `namespace` if it is about objects
 from a single namespace or (c) `cluster` if it spawns objects from multiple
 namespaces.
 
+<a name="footnode6">[6\]</a>A `stateless pod` is defined as a pod that doesn't
+mount volumes with sources other than secrets, config maps, downward API and
+empty dir.
 
-__TODO: Migrate existing SLIs/SLOs here:__
-- __Pod startup time__
+<a name="footnode7">[7\]</a>By schedulable pod we mean a pod that can be
+scheduled in the cluster without causing any preemption.
 
 ### Burst SLIs/SLOs
 
