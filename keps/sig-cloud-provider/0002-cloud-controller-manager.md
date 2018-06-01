@@ -10,13 +10,16 @@ participating-sigs:
   - sig-apps
   - sig-aws
   - sig-azure
+  - sig-cloud-provider
   - sig-gcp
   - sig-network
   - sig-openstack
   - sig-storage
 reviewers:
-  - "@wlan0"
+  - "@andrewsykim"
   - "@calebamiles"
+  - "@hogepodge"
+  - "@jagosan"
 approvers:
   - "@thockin"
 editor: TBD
