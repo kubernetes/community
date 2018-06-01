@@ -30,9 +30,17 @@ A working group dedicated towards making Kubernetes work best for Machine Learni
 
 The charter for this working group as [proposed](https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!msg/kubernetes-dev/lOeMjOLilxI/wuQayFDvCQAJ) is as follows:
 
-    * Assess the state of the art for ML workloads on K8s
-    * Identify pain points users currently have with ML on k8s
-    * Identify, prioritize and execute on improving k8s to better support ML workloads in the near, medium, and long term.
+ -  Assess the state of the art for ML workloads on K8s
+ -  Identify pain points users currently have with ML on k8s
+ -  Identify, prioritize and execute on improving k8s to better support ML workloads in the near, medium, and long term.
 
-TODO: Finalize and update the charter after the initial kick off meeting on 3/1/2018.
+## Goals:
+
+Topics include, but are not limited to:
+
+ - Ease source changes to execution workflows, as they are a common barrier to entry.
+ - Scheduler enhancements such as improved bin packing for accelerators, job queueing, fair sharing and gang scheduling.
+ - Runtime enhancements such as job data loading (common data set sizes in the tens of gigabytes to terabytes), accelerator support, persisting job output (ML workloads can run for days and rely heavily on checkpointing) and multi-tenancy and job isolation (dealing with potential sensitive data sets).
+ - Job management such as experiment tracking (including enabling hyperparameter tuning systems) and scaling and deployment aspects of inference workloads.
+
 <!-- END CUSTOM CONTENT -->
