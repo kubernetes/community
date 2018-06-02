@@ -30,6 +30,8 @@ Table of Contents
             * [Update](#update)
             * [Rollback](#rollback)
          * [Alternatives](#alternatives)
+            * [Alternative 1](#alternative-1)
+            * [Alternative 2](#alternative-2)
             
 ## Summary
 We propose a new update strategy for deployment controller to do rolling update without tearing down the pods, i.e. in-place update.
@@ -91,16 +93,15 @@ const(
 +	InPlaceUpdateDeploymentStrategyType DeploymentStrategyType = "InPlaceUpdate"
 )
 
-// Spec to control the desired behavior of in-place update
+// Spec to control the desired behavior of in-place update. This is gated by readiness.
 + type InPlaceUpdateDeployment struct {
-+	 // The number of pods to be updated in each batch.
++	 // The maximum number of pods that can be unavailable during the update.
 +	 // Value can be an absolute number (ex: 5) or a percentage of total pods at the start of update (ex: 10%).
 +	 // Absolute number is calculated from percentage by rounding down.
-+	 BatchSize intstr.IntOrString
++	 MaxUnavailable intstr.IntOrString
 + }
 ```
 
-User specifies the new update strategy type in the spec and issue the request
 
 ### Deployment Controller
 
@@ -113,20 +114,28 @@ Wait until expected number of pods created, when deployment controller receives 
     ...
 
     // Find all old pods and update the unhealthy(failed, pending, not ready) pods first with the new spec from new ReplicaSet and then the running pods,
-    // BatchSize is the number of pods to update at each round.
-    podsToUpdate = getPodsToUpdate(oldPods, BatchSize)
+    // MaxUnavailable is the maximum number of pods that can be unavailable during the update.
+    podsToUpdate = getPodsToUpdate(oldPods, MaxUnavailable)
     for pod range(podsToUpdate)
         update(pod, newSpec)
 
-    // swap oldReplicaSet and newReplicaSet information such as spec, revision, annotation etc.
-    copyInfo = oldReplicaSet // write into etcd, in case the controller failed that may cause oldReplicaSet lost
+    // swap oldReplicaSet and newReplicaSet information such as spec, revision, annotation, timestamp etc.
+    
+    // add oldReplicaSet as an annotation of newReplicaSet which also gets persisted into etcd, in case the controller failed that may cause oldReplicaSet lost. 
+    addAnnotationToNewReplicaSet(oldReplicaSet)
+    
+    // replace old ReplcaSet with the new ReplicaSet info. Since there are two ReplicaSet exists in the system, 
+    // we need to make sure that functions such as FindNewReplicaSet retrieves the right ReplicaSet. 
+    // we may also need to swap the timestamp too, to make sure the current ReplicaSet has the latest timestamp. 
     oldReplicaSet = newReplicaSet
-    newReplicaSet = copyInfo
+    
+    // retrieve back the annotation for oldReplicaSet and replace newReplicaSet with the oldReplicaSet info.
+    // The oldReplicaSet info serves as a historic ReplicaSet for the purpose of rollback.
+    newReplicaSet = getAnnotation(oldReplicaSet)
+        
 ```
 In essence, this approach replaces the current ReplicaSet with the new ReplicaSet info. The pods are always managed by 
 the same ReplicaSet object, but just its content gets swapped.
-
-We propose not updating the creationTimeStamp of the ReplicaSet, since pods are not re-created and creation-timestamp also stays the same.
 
 #### Rollback
 Rollback will be supported in a similar fashion as the existing rollback strategy. It first checkout the old ReplicaSet and then do update.
@@ -134,12 +143,13 @@ To do the update,  it'll use the same steps as above to update the pods in-place
 
 ### Alternatives
 
+#### Alternative 1
 ```
     newReplicaSet created with 0 replica
     ...
 
     // Find all old pods and update the unhealthy(failed, pending, not ready) pods first with the new spec from new ReplicaSet and then the running pods,
-    podsToUpdate = getPodsToUpdate(oldPods, BatchSize)
+    podsToUpdate = getPodsToUpdate(oldPods, MaxUnavailable)
     for pod range(podsToUpdate)
         update(pod, newSpec)
     
@@ -147,16 +157,42 @@ To do the update,  it'll use the same steps as above to update the pods in-place
     // that oldReplicaSet may kill the pods prematurely.
     pause(oldReplicaSet)
     
-    // Reduce oldReplicaSet by the BatchSize
-    scaleDown(oldReplicaSet, replicas - BatchSize)
+    // Reduce oldReplicaSet by the MaxUnavailable
+    scaleDown(oldReplicaSet, replicas - MaxUnavailable)
     
     // update pod controllerRef to the new ReplicaSet
     for pod range(podsToUpdate)
         update(pod, newReplicaSet-controllerRef)
 
-    // Increase newReplicaSet by BatchSize
-    scaleUp(newReplicaSet, replicas + BatchSize)
+    // Increase newReplicaSet by MaxUnavailable
+    scaleUp(newReplicaSet, replicas + MaxUnavailable)
 
 ```
 This approach requires some changes in ReplicaSet controller to support pause semantics. Another way is to pass certain information into ReplicaSet and prevent it from prematurely killing
-the pods while updating the pods' controllerRef and ReplicaSet's replicas. Or make Kubernetes support transactions which is another big effort.
+the pods while updating the pods' controllerRef and ReplicaSet's replicas. 
+ 
+#### Alternative 2
+Make Kubernetes support transactions and transactionally update 1) pods' controllerRef to the new replicaSet, 2) scaleDown old ReplicaSet, 3) scaleUp new ReplicaSet.
+This way we don't need to introduce pause semantics to ReplicaSet. 
+
+```
+      newReplicaSet created with 0 replica
+      ...
+
+      // Find all old pods and update the unhealthy(failed, pending, not ready) pods first with the new spec from new ReplicaSet and then the running pods,
+      podsToUpdate = getPodsToUpdate(oldPods, MaxUnavailable)
+      for pod range(podsToUpdate)
+        update(pod, newSpec)
+    
+      // Perform below step 1,2,3 transctionally.
+      // Reduce oldReplicaSet by the MaxUnavailable
+1)    scaleDown(oldReplicaSet, replicas - MaxUnavailable)
+    
+      // update pod controllerRef to the new ReplicaSet
+2)    for pod range(podsToUpdate)
+        update(pod, newReplicaSet-controllerRef)
+
+      // Increase newReplicaSet by MaxUnavailable
+3)    scaleUp(newReplicaSet, replicas + MaxUnavailable)
+
+```
