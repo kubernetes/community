@@ -747,7 +747,7 @@ kubectl rollout undo statefulset web
 ### Rolling Forward
 Rolling back is usually the safest, and often the fastest, strategy to mitigate
 deployment failure, but rolling forward is sometimes the only practical solution 
-for stateful applications (e.g. A users has a minor configuration error but has 
+for stateful applications (e.g. A user has a minor configuration error but has 
 already modified the storage format for the application). Users can use 
 sequential `kubectl apply`'s to update the StatefulSet's current 
 [target state](#target-state). The StatefulSet's `.Spec.GenerationPartition` 
