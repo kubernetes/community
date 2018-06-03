@@ -5,7 +5,7 @@ authors:
   - "@jian-he"
 owning-sig: sig-apps
 reviewers:
-  - @janetkuo, @kargakis
+  - @janetkuo, @kargakis, @smarterclayton
 approvers:
   - TBD
 editor: "@jian-he"
@@ -106,33 +106,39 @@ const(
 ### Deployment Controller
 
 #### Update
-Below is the proposed approach for in-place update.
-Wait until expected number of pods created, when deployment controller receives the in-place update request
+Below is the proposed approach for in-place update:
+
+The API-server should first validate that if it's a valid in-place update request, e.g. it should not allow changing container resource or adding a new container if DeploymentStrategy is InPlaceUpdate
+Then wait until expected number of pods created, when deployment controller receives the in-place update request.
 
 ```
     newReplicaSet created with 0 replica
     ...
 
+    // If existing newReplicaSet(i.e. current ReplicaSet) is not the same as current deployment spec, swap the most recent oldReplicaSet and newReplicaSet info (newReplicaSet is basically the current deployment spec) 
+    If newReplicaSet-info != deploymentSepc-info:
+    
+        // Swap oldReplicaSet and newReplicaSet information such as spec, revision, annotation, timestamp etc.    
+        // add oldReplicaSet as an annotation of newReplicaSet which also gets persisted into etcd, in case the controller failed that may cause oldReplicaSet lost. 
+        addAnnotationToNewReplicaSet(oldReplicaSet)
+        
+        // replace old ReplcaSet with the new ReplicaSet info. Since there are two ReplicaSet exists in the system, 
+        // we need to make sure that functions such as FindNewReplicaSet retrieves the right ReplicaSet. 
+        // we may also need to swap the timestamp too, to make sure the current ReplicaSet has the latest timestamp. 
+        oldReplicaSet = newReplicaSet
+        
+        // retrieve back the annotation for oldReplicaSet and replace newReplicaSet with the oldReplicaSet info.
+        // The oldReplicaSet info serves as a historic ReplicaSet for the purpose of rollback.
+        newReplicaSet = getAnnotation(oldReplicaSet)
+    
     // Find all old pods and update the unhealthy(failed, pending, not ready) pods first with the new spec from new ReplicaSet and then the running pods,
     // MaxUnavailable is the maximum number of pods that can be unavailable during the update.
     podsToUpdate = getPodsToUpdate(oldPods, MaxUnavailable)
+    
+    if len(podsToUpdate == 0):
+        return
     for pod range(podsToUpdate)
         update(pod, newSpec)
-
-    // swap oldReplicaSet and newReplicaSet information such as spec, revision, annotation, timestamp etc.
-    
-    // add oldReplicaSet as an annotation of newReplicaSet which also gets persisted into etcd, in case the controller failed that may cause oldReplicaSet lost. 
-    addAnnotationToNewReplicaSet(oldReplicaSet)
-    
-    // replace old ReplcaSet with the new ReplicaSet info. Since there are two ReplicaSet exists in the system, 
-    // we need to make sure that functions such as FindNewReplicaSet retrieves the right ReplicaSet. 
-    // we may also need to swap the timestamp too, to make sure the current ReplicaSet has the latest timestamp. 
-    oldReplicaSet = newReplicaSet
-    
-    // retrieve back the annotation for oldReplicaSet and replace newReplicaSet with the oldReplicaSet info.
-    // The oldReplicaSet info serves as a historic ReplicaSet for the purpose of rollback.
-    newReplicaSet = getAnnotation(oldReplicaSet)
-        
 ```
 In essence, this approach replaces the current ReplicaSet with the new ReplicaSet info. The pods are always managed by 
 the same ReplicaSet object, but just its content gets swapped.
