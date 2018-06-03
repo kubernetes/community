@@ -101,7 +101,7 @@ be overlooked. Requirement (2) stems from the fact that disk is managed by
 kubelet as a node-level resource (not per-pod) today, hence it is difficult to
 delegate to the runtime by enforcing per-pod disk quota policy. In addition,
 container disk quota is not well supported yet, and such limitation may not
-even be well-perceived by users. Requirement (1) is crucial to the kubernetes'
+even be well-perceived by users. Requirement (3) is crucial to the kubernetes'
 extensibility and usability across all deployments.
 
 ## Proposed solution
@@ -117,7 +117,7 @@ This proposal intends to satisfy the requirements by
 **Log directories and structures**
 
 Kubelet will be configured with a root directory (e.g., `/var/log/pods` or
-`/var/lib/kubelet/logs/) to store all container logs. Below is an example of a
+`/var/lib/kubelet/logs/`) to store all container logs. Below is an example of a
 path to the log of a container in a pod.
 
 ```
@@ -133,10 +133,10 @@ PodSandboxConfig.LogDirectory: /var/log/pods/<podUID>/
 ContainerConfig.LogPath: <containerName>_<instance#>.log
 ```
 
-Because kubelet determines where the logs are stores and can access them
-directly, this meets requirement (1). As for requirement (2), the log collector
+Because kubelet determines where the logs are stored and can access them
+directly, this meets requirement (2). As for requirement (3), the log collector
 can easily extract basic pod metadata (e.g., pod UID, container name) from
-the paths, and watch the directly for any changes. In the future, we can
+the paths, and watch the directory for any changes. In the future, we can
 extend this by maintaining a metadata file in the pod directory.
 
 **Log format**
@@ -161,7 +161,7 @@ For example,
 ```
 
 With the knowledge, kubelet can parses the logs and serve them for `kubectl
-logs` requests. This meets requirement (3). Note that the format is defined
+logs` requests. This meets requirement (1). Note that the format is defined
 deliberately simple to provide only information necessary to serve the requests.
 We do not intend for kubelet to host various logging plugins. It is also worth
 mentioning again that the scope of this proposal is restricted to stdout/stderr
