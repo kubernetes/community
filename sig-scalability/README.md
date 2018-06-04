@@ -62,32 +62,17 @@ Monitor these for Github activity if you are not a member of the team.
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Upcoming 2018 Meeting Dates
-   * 1/18
-   * 2/1
-   * 2/15
-   * 3/1
-   * 3/15
-   * 3/29
-   * 4/12
-   * 4/26
-   * 5/10
-   * 5/24
    * 6/7
    * 6/21
+   * 7/5
+   * 7/19
+   * 8/2
+   * 8/16
+   * 8/30
+   * 9/13
+   * 9/27
 
-## Scalability SLOs
+## Scalability/performance SLIs and SLOs
 
-We officially support two different SLOs:
-
-1. "API-responsiveness":
-   99% of all API calls return in less than 1s
-
-1. "Pod startup time:
-   99% of pods (with pre-pulled images) start within 5s
-
-This should be valid on appropriate hardware up to a 5000 node cluster with 30 pods/node.  We eventually want to expand that to 100 pods/node.
-
-For more details how do we measure those, you can look at: http://blog.kubernetes.io/2015_09_01_archive.html
-
-We are working on refining existing SLOs and defining more for other areas of the system.
+Check out [SLIs/SLOs page](./slos/slos.md).
 <!-- END CUSTOM CONTENT -->
