@@ -2007,3 +2007,26 @@ workinggroups:
     contact:
       slack: wg-machine-learning
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-machine-learning
+  - name: Nodeless
+    dir: wg-nodeless
+    mission_statement: >
+      Create and design a nodeless kubernetes implementation, while also making Kubernetes extensible to containers as a service platforms.
+    leadership:
+      chairs:
+      - name: Ria Bhatia
+        github: rbitia
+        company: Microsoft
+      - name: Ben Corrie
+        github: corrieb
+        company: VMWare
+    meetings:
+    - description: Regular WG Meeting
+      day: Wednesday 
+      time: "14:00"
+      tz: "PT (Pacific Time)"
+      frequency: weekly
+      url: https://zoom.us/j/588409652
+      archive_url: TBA
+    contact:
+      slack: wg-nodeless
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-nodeless

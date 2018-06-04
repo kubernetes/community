@@ -137,6 +137,9 @@ aliases:
   wg-multitenancy-leads:
     - davidopp
     - jessfraz
+  wg-nodeless-leads:
+    - rbitia
+    - corrieb
   wg-policy-leads:
     - hannibalhuang
     - tsandall
