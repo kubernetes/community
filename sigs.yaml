@@ -2010,7 +2010,7 @@ workinggroups:
   - name: Nodeless
     dir: wg-nodeless
     mission_statement: >
-      Create and design a nodeless kubernetes implementation, while also making Kubernetes extensible to containers as a service platforms.
+      Create and design a nodeless kubernetes implementation, while also proposing changes to make Kubernetes extensible to containers as a service platforms.
     leadership:
       chairs:
       - name: Ria Bhatia
