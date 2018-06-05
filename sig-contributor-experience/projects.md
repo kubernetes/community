@@ -23,7 +23,7 @@ Project | Owner(s)/Lead(s) | Description | Q1, Q2, Later
 [Meet Our Contributors](/mentoring/meet-our-contributors.md) | @parispittman | Monthly web series similar to user office hours that allows anyone to ask new and current contributors questions about our process, ecosystem, or their stories in open source  | Q1 - ongoing
 [Outreachy](/mentoring/README.md) | @parispittman | Document new features, create new conceptual content, create new user paths | Q1
 [Google Summer of Code](/mentoring/google-summer-of-code.md) | @nikhita | Kubernetes participation in Google Summer of Code for students | Q1 - ongoing
-["Buddy" Program](https://github.com/kubernetes/community/issues/1803) | @parispittman, @chrisshort | 1 hour 1:1 sessions for new and current contributors to have dedicated time; meet our contributors but personal | Q2
+["Buddy" Program](https://github.com/kubernetes/community/issues/1803) | @parispittman, @chris-short | 1 hour 1:1 sessions for new and current contributors to have dedicated time; meet our contributors but personal | Q2
 
 ## Contributor Documentation
 Ensure the contribution process is well documented, discoverable, and consistent across repos to deliver the best contributor experience. 

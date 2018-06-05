@@ -64,7 +64,7 @@ All technical assets *MUST* be owned by exactly 1 SIG subproject.  The following
   - *SHOULD* define a level of commitment for decisions that have gone through the formal process
     (e.g. when is a decision revisited or reversed)
 
-- *MUST* How technical assets of project remain healthy and can be released
+- *MUST* define how technical assets of project remain healthy and can be released
   - Publicly published signals used to determine if code is in a healthy and releasable state
   - Commitment and process to *only* release when signals say code is releasable
   - Commitment and process to ensure assets are in a releasable state for milestones / releases

@@ -142,11 +142,22 @@ extend this by maintaining a metadata file in the pod directory.
 **Log format**
 
 The runtime should decorate each log entry with a RFC 3339Nano timestamp
-prefix, the stream type (i.e., "stdout" or "stderr"), and ends with a newline.
+prefix, the stream type (i.e., "stdout" or "stderr"), the tags of the log
+entry, the log content that ends with a newline.
 
+The `tags` fields can support multiple tags, delimited by `:`. Currently, only
+one tag is defined in CRI to support multi-line log entries: partial or full.
+Partial (`P`) is used when a log entry is split into multiple lines by the
+runtime, and the entry has not ended yet. Full (`F`) indicates that the log
+entry is completed -- it is either a single-line entry, or this is the last
+line of the muiltple-line entry.
+
+For example,
 ```
-2016-10-06T00:17:09.669794202Z stdout The content of the log entry 1
-2016-10-06T00:17:10.113242941Z stderr The content of the log entry 2
+2016-10-06T00:17:09.669794202Z stdout F The content of the log entry 1
+2016-10-06T00:17:09.669794202Z stdout P First line of log entry 2
+2016-10-06T00:17:09.669794202Z stdout P Second line of the log entry 2
+2016-10-06T00:17:10.113242941Z stderr F Last line of the log entry 2
 ```
 
 With the knowledge, kubelet can parses the logs and serve them for `kubectl

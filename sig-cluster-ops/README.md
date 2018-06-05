@@ -21,7 +21,7 @@ Promote operability and interoperability of Kubernetes clusters. We focus on sha
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Rob Hirschfeld (**[@zehicle](https://github.com/zehicle)**), RackN
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Microsoft
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cluster-ops)

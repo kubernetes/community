@@ -84,7 +84,7 @@ scheduling policies to apply, and can add new ones.
 The policies that are applied when scheduling can be chosen in one of two ways.
 The default policies used are selected by the functions `defaultPredicates()` and `defaultPriorities()` in
 [pkg/scheduler/algorithmprovider/defaults/defaults.go](http://releases.k8s.io/HEAD/pkg/scheduler/algorithmprovider/defaults/defaults.go).
-However, the choice of policies can be overridden by passing the command-line flag `--policy-config-file` to the scheduler, pointing to a JSON file specifying which scheduling policies to use. See [examples/scheduler-policy-config.json](http://releases.k8s.io/HEAD/examples/scheduler-policy-config.json) for an example
+However, the choice of policies can be overridden by passing the command-line flag `--policy-config-file` to the scheduler, pointing to a JSON file specifying which scheduling policies to use. See [examples/scheduler-policy-config.json](https://git.k8s.io/examples/staging/scheduler-policy-config.json) for an example
 config file. (Note that the config file format is versioned; the API is defined in [pkg/scheduler/api](http://releases.k8s.io/HEAD/pkg/scheduler/api/)).
 Thus to add a new scheduling policy, you should modify  [pkg/scheduler/algorithm/predicates/predicates.go](http://releases.k8s.io/HEAD/pkg/scheduler/algorithm/predicates/predicates.go) or add to the directory  [pkg/scheduler/algorithm/priorities](http://releases.k8s.io/HEAD/pkg/scheduler/algorithm/priorities/), and either register the policy in `defaultPredicates()` or `defaultPriorities()`, or use a policy config file.
 

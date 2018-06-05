@@ -1,3 +1,4 @@
+// The misspell command corrects commonly misspelled English words in source files.
 package main
 
 import (

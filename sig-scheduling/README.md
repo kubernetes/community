@@ -43,6 +43,9 @@ The following subprojects are owned by sig-scheduling:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
+- **poseidon**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
 
 ## GitHub Teams
 

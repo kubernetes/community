@@ -13,6 +13,10 @@ Bring together members of the VMware and Kubernetes community to maintain, suppo
 ## Meetings
 * Regular SIG Meeting: [Thursdays at 18:00 UTC](https://zoom.us/j/183662780) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y).
+* Cloud Provider vSphere weekly syncup: [Wednesdays at 16:30 UTC](https://zoom.us/j/584244729) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR).
 
 ## Leadership
 
@@ -26,6 +30,33 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * [Slack](https://kubernetes.slack.com/messages/sig-vmware)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-vmware)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fvmware)
+
+## Subprojects
+
+The following subprojects are owned by sig-vmware:
+- **cloud-provider-vsphere**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
+
+## GitHub Teams
+
+The below teams can be mentioned on issues and PRs in order to get attention from the right people.
+Note that the links to display team membership will only work if you are a member of the org.
+
+The google groups contain the archive of Github team notifications.
+Mentioning a team on Github will CC its group.
+Monitor these for Github activity if you are not a member of the team.
+
+| Team Name | Details | Google Groups | Description |
+| --------- |:-------:|:-------------:|  ----------- |
+| @kubernetes/sig-vmware-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-vmware-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-vmware-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-vmware-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-vmware-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-vmware-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-vmware-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-vmware-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-vmware-feature-requests) | Feature Requests |
+| @kubernetes/sig-vmware-members | [link](https://github.com/orgs/kubernetes/teams/sig-vmware-members) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-vmware-members) | Release Team Members |
+| @kubernetes/sig-vmware-misc | [link](https://github.com/orgs/kubernetes/teams/sig-vmware-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-vmware-misc) | General Discussion |
+| @kubernetes/sig-vmware-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-vmware-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-vmware-pr-reviews) | PR Reviews |
+| @kubernetes/sig-vmware-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-vmware-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-vmware-proposals) | Design Proposals |
+| @kubernetes/sig-vmware-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-vmware-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-vmware-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

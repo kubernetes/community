@@ -85,7 +85,7 @@ The implementation will mainly be in two parts:
 
 In both parts, we need to implement:
 * Fork code for Windows from Linux.
-* Convert from Resources.Requests and Resources.Limits to Windows configuration in CRI, and convert from Windows configration in CRI to container configuration.
+* Convert from Resources.Requests and Resources.Limits to Windows configuration in CRI, and convert from Windows configuration in CRI to container configuration.
 
 To implement resource controls for Windows containers, refer to [this MSDN documentation](https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/resource-controls) and [Docker's conversion to OCI spec](https://github.com/moby/moby/blob/master/daemon/oci_windows.go).
 

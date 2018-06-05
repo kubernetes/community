@@ -37,4 +37,4 @@ This document is a compilation of some interesting scalability/performance regre
 - On many occasions our scalability tests caught critical/risky bugs which were missed by most other tests. If not caught, those could've seriously jeopardized production-readiness of k8s.
 - SIG-Scalability has caught/fixed several important issues that span across various components, features and SIGs.
 - Around 60% of times (possibly even more), we catch scalability regressions with just our medium-scale (and fast) tests, i.e gce-100 and kubemark-500. Making them run as presubmits should act as a strong shield against regressions.
-- Majority of the remaining ones are caught by our large-scale (and slow) tests, i.e kubemark-5k and gce-2k. Making them as post-submit blokcers (given they're "usually" quite healthy) should act as a second layer of protection against regressions.
+- Majority of the remaining ones are caught by our large-scale (and slow) tests, i.e kubemark-5k and gce-2k. Making them as post-submit blockers (given they're "usually" quite healthy) should act as a second layer of protection against regressions.

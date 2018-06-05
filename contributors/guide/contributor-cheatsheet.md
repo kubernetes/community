@@ -17,10 +17,11 @@ A list of common resources when contributing to Kubernetes.
 - [Gubernator Dashboard - k8s.reviews](https://k8s-gubernator.appspot.com/pr)
 - [Submit Queue](https://submit-queue.k8s.io)
 - [Bot commands](https://go.k8s.io/bot-commands)
-- [Release Buckets](http://gcsweb.k8s.io/gcs/kubernetes-release/)
+- [GitHub labels](https://go.k8s.io/github-labels)
+- [Release Buckets](https://gcsweb.k8s.io/gcs/kubernetes-release/)
 - Developer Guide
-  - [Cherry Picking Guide](/contributors/devel/cherry-picks.md) - [Queue](http://cherrypick.k8s.io/#/queue)
-- [https://k8s-code.appspot.com/](https://k8s-code.appspot.com/) - Kubernetes Code Search, maintained by [@dims](https://github.com/dims)
+  - [Cherry Picking Guide](/contributors/devel/cherry-picks.md) - [Queue](https://cherrypick.k8s.io/#/queue)
+- [Kubernetes Code Search](https://cs.k8s.io/), maintained by [@dims](https://github.com/dims)
 
 
 ## SIGs and Working Groups
@@ -39,8 +40,10 @@ A list of common resources when contributing to Kubernetes.
 ## Tests
 
 - [Current Test Status](https://prow.k8s.io/)
-- [Aggregated Failures](https://storage.googleapis.com/k8s-gubernator/triage/index.html)
-- [Test Grid](https://k8s-testgrid.appspot.com/)
+- [Aggregated Failures](https://go.k8s.io/triage)
+- [Test Grid](https://testgrid.k8s.io)
+- [Test Health](https://go.k8s.io/test-health)
+- [Test History](https://go.k8s.io/test-history)
 
 ## Other
 

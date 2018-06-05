@@ -17,7 +17,7 @@ Ensure containers are able to interact with external systems and acquire secure 
 ## Organizers
 
 * Clayton Coleman (**[@smarterclayton](https://github.com/smarterclayton)**), Red Hat
-* Greg Gastle (**[@destijl](https://github.com/destijl)**), Google
+* Greg Castle (**[@destijl](https://github.com/destijl)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-container-identity)

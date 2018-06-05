@@ -365,10 +365,14 @@ being required otherwise.
 ### Edit defaults.go
 
 If your change includes new fields for which you will need default values, you
-need to add cases to `pkg/apis/<group>/<version>/defaults.go` (the core v1 API
-is special, its defaults.go is at `pkg/api/v1/defaults.go`. For simplicity, we
-will not mention this special case in the rest of the article). Of course, since
-you have added code, you have to add a test:
+need to add cases to `pkg/apis/<group>/<version>/defaults.go`
+
+*Note:* In the past the core v1 API
+was special. Its `defaults.go` used to live at `pkg/api/v1/defaults.go`.
+If you see code referencing that path, you can be sure its outdated. Now the core v1 api lives at
+`pkg/apis/core/v1/defaults.go` which follows the above convention.
+
+Of course, since you have added code, you have to add a test:
 `pkg/apis/<group>/<version>/defaults_test.go`.
 
 Do use pointers to scalars when you need to distinguish between an unset value
@@ -601,7 +605,6 @@ Due to the fast changing nature of the project, the following content is probabl
   to generate protobuf IDL and marshallers.
 * You must add the new version  to
   [cmd/kube-apiserver/app#apiVersionPriorities](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/cmd/kube-apiserver/app/aggregator.go#L172)
-  to let the aggregator list it. This list will be removed before release 1.8.
 * You must setup storage for the new version in
   [pkg/registry/group_name/rest](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/registry/authentication/rest/storage_authentication.go)
 

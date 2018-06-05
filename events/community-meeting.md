@@ -1,12 +1,10 @@
 # Kubernetes Weekly Community Meeting
 
-We have PUBLIC and RECORDED [weekly meeting](https://zoom.us/my/kubernetescommunity) every Thursday at 6pm UTC (1pm EST / 10am PST)
+We have PUBLIC and RECORDED [weekly meeting](https://zoom.us/my/kubernetescommunity) every Thursday at [5pm UTC](https://www.google.com/search?q=5pm+UTC).
  
-Map that to your local time with this [timezone table](https://www.google.com/search?q=1800+in+utc)
+See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any [iCal client](https://en.wikipedia.org/wiki/ICalendar). Do NOT copy the meetings over to a your personal calendar, you will miss meeting updates. Instead use your client's calendaring feature to say you are attending the meeting so that any changes made to meetings will be reflected on your personal calendar. 
 
-See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any [iCal client](https://en.wikipedia.org/wiki/ICalendar). Do NOT copy the meetings over to a your perosnal calendar, you will miss meeting updates. Instead use your client's calendaring feature to say you are attending the meeting so that any changes made to meetings will be reflected on your personal calendar. 
-
-All meetings are archived on the [Youtube Channel](https://www.youtube.com/watch?v=onlFHICYB4Q&list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ)
+All meetings are archived on the [Youtube Channel](https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ).
 
 Quick links:
 

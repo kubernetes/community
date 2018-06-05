@@ -40,6 +40,9 @@ The following subprojects are owned by sig-cli:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
+- **kustomize**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
 
 ## GitHub Teams
 

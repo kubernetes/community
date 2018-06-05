@@ -59,34 +59,34 @@ sigs:
     - name: universal-machinery # i.e., both client and server
       owners:
       - https://raw.githubusercontent.com/kubernetes/apimachinery/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/apimachinery/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apimachinery/OWNERS
     - name: server-frameworks
       owners:
       - https://raw.githubusercontent.com/kubernetes/apiserver/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/apiserver/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/OWNERS
     - name: server-crd
       owners:
       - https://raw.githubusercontent.com/kubernetes/apiextensions-apiserver/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/apiextensions-apiserver/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiextensions-apiserver/OWNERS
     - name: server-api-aggregation
       owners:
       - https://raw.githubusercontent.com/kubernetes/kube-aggregator/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/kube-aggregator/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/kube-aggregator/OWNERS
     - name: server-sdk
       owners:
       - https://raw.githubusercontent.com/kubernetes/sample-apiserver/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/sample-apiserver/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-apiserver/OWNERS
       - https://raw.githubusercontent.com/kubernetes/sample-controller/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/sample-controller/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-controller/OWNERS
       - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder/master/OWNERS
     - name: idl-schema-client-pipeline
       owners:
       - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS # possibly should be totally separate
       - https://raw.githubusercontent.com/kubernetes/code-generator/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/code-generator/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/code-generator/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kube-openapi/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/api/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
       - https://raw.githubusercontent.com/kubernetes-client/gen/master/OWNERS
     - name: kubernetes-clients
       owners:
@@ -102,7 +102,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes-client/typescript/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-incubator/client-python/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/client-go/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes/staging/src/k8s.io/client-go/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/OWNERS
     - name: universal-utils # There is no reason why this is in api-machinery
       owners:
       - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
@@ -235,7 +235,7 @@ sigs:
         company: Google
       - name: Jaice Singer DuMars
         github: jdumars
-        company: Microsoft
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -413,21 +413,25 @@ sigs:
     label: azure
     leadership:
       chairs:
-      - name: Jason Hansen
-        github: slack
+      - name: Stephen Augustus
+        github: justaugustus
+        company: Red Hat
+      - name: Shubheksha Jalan
+        github: shubheksha
+        company: Microsoft
+      tech_leads:
+      - name: Kal Khenidak
+        github: khenidak
         company: Microsoft
       - name: Cole Mickens
         github: colemickens
         company: Red Hat
-      - name: Jaice Singer DuMars
-        github: jdumars
-        company: Microsoft
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
       time: "16:00"
       tz: "UTC"
-      frequency: weekly
+      frequency: biweekly
       url: https://zoom.us/j/2015551212
       archive_url: https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit
       recordings_url: https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4
@@ -435,8 +439,20 @@ sigs:
       slack: sig-azure
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-azure
       teams:
+      - name: sig-azure-api-reviews
+        description: API Changes and Reviews
+      - name: sig-azure-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-azure-feature-requests
+        description: Feature Requests
       - name: sig-azure-misc
         description: General Discussion
+      - name: sig-azure-pr-reviews
+        description: PR Reviews
+      - name: sig-azure-proposals
+        description: Design Proposals
+      - name: sig-azure-test-failures
+        description: Test Failures and Triage
     subprojects:
     - name: cloud-provider-azure
       owners:
@@ -541,6 +557,76 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
+    - name: kustomize
+      owners:
+      # "owners" entry
+      - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
+  - name: Cloud Provider
+    dir: sig-cloud-provider
+    mission_statement: >
+      Ensures that the Kubernetes ecosystem is evolving in a way that is neutral to all
+      (public and private) cloud providers. It will be responsible for establishing
+      standards and requirements that must be met by all providers to ensure optimal
+      integration with Kubernetes.
+    label: cloud-provider
+    leadership:
+      chairs:
+      - name: Andrew Sy Kim
+        github: andrewsykim
+        company: DigitalOcean
+      - name: Chris Hoge
+        github: hogepodge
+        company: OpenStack Foundation
+      - name: Jago Macleod
+        github: jagosan
+        company: Google
+    meetings:
+    - description: Regular SIG Meeting
+      day: Wednesday
+      time: "10:00"
+      tz: "PT (Pacific Time)"
+      frequency: biweekly
+      url: https://zoom.us/my/sigcloudprovider
+      archive_url: TODO
+      recordings_url: TODO
+    contact:
+      slack: sig-cloud-provider
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cloud-provider
+      teams:
+      - name: sig-cloud-provider-api-reviews
+        description: API Changes and Reviews
+      - name: sig-cloud-provider-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-cloud-provider-feature-requests
+        description: Feature Requests
+      - name: sig-cloud-provider-maintainers
+        description: Cloud Providers Maintainers
+      - name: sig-cloud-providers-misc
+        description: General Discussion
+      - name: sig-cloud-provider-pr-reviews
+        description: PR Reviews
+      - name: sig-cloud-provider-proposals
+        description: Design Proposals
+      - name: sig-cloud-provider-test-failures
+        description: Test Failures and Triage
+    subprojects:
+    - name: kubernetes-cloud-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/cloudprovider/OWNERS
+    - name: cloud-provider-azure
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
+    - name: cloud-provider-gcp
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
+    - name: cloud-provider-openstack
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
+    - name: cloud-provider-vsphere
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
   - name: Cluster Lifecycle
     dir: sig-cluster-lifecycle
     mission_statement: >
@@ -655,7 +741,7 @@ sigs:
         company: RackN
       - name: Jaice Singer DuMars
         github: jdumars
-        company: Microsoft
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -914,7 +1000,7 @@ sigs:
   - name: Multicluster
     dir: sig-multicluster
     mission_statement: >
-      A Special Interest Group focussed on solving common challenges related to the
+      A Special Interest Group focused on solving common challenges related to the
       management of multiple Kubernetes clusters, and applications that exist therein.
       The SIG will be responsible for designing, discussing, implementing and maintaining
       API’s, tools and documentation related to multi-cluster administration and application
@@ -1216,7 +1302,7 @@ sigs:
       chairs:
       - name: Jaice Singer DuMars
         github: jdumars
-        company: Microsoft
+        company: Google
       - name: Caleb Miles
         github: calebamiles
         company: Google
@@ -1283,7 +1369,7 @@ sigs:
         company: Google
       - name: Bob Wise
         github: countspongebob
-        company: Samsung SDS
+        company: AWS
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -1372,6 +1458,9 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
+    - name: poseidon
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
   - name: Service Catalog
     dir: sig-service-catalog
     mission_statement: >
@@ -1488,7 +1577,6 @@ sigs:
       chairs:
       - name: Aaron Crickenberger
         github: spiffxp
-        company: Samsung SDS
       - name: Erick Feja
         github: fejta
         company: Google
@@ -1599,10 +1687,39 @@ sigs:
       frequency: bi-weekly
       url: https://zoom.us/j/183662780
       archive_url: https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing
-      recordings_url:
+      recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y
+    - description: Cloud Provider vSphere weekly syncup
+      day: Wednesday
+      time: "16:30"
+      tz: "UTC"
+      frequency: weekly
+      url: https://zoom.us/j/584244729
+      archive_url: https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing
+      recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR
     contact:
       slack: sig-vmware
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-vmware
+      teams:
+      - name: sig-vmware-api-reviews
+        description: API Changes and Reviews
+      - name: sig-vmware-bugs
+        description: Bug Triage and Troubleshooting
+      - name: sig-vmware-feature-requests
+        description: Feature Requests
+      - name: sig-vmware-members
+        description: Release Team Members
+      - name: sig-vmware-misc
+        description: General Discussion
+      - name: sig-vmware-pr-reviews
+        description: PR Reviews
+      - name: sig-vmware-proposals
+        description: Design Proposals
+      - name: sig-vmware-test-failures
+        description: Test Failures and Triage
+    subprojects:
+    - name: cloud-provider-vsphere
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
   - name: Windows
     dir: sig-windows
     mission_statement: >
@@ -1669,7 +1786,7 @@ workinggroups:
       - name: Clayton Coleman
         github: smarterclayton
         company: Red Hat
-      - name: Greg Gastle
+      - name: Greg Castle
         github: destijl
         company: Google
     meetings:
@@ -1778,6 +1895,7 @@ workinggroups:
       time: "9:30"
       tz: "PT (Pacific Time)"
       frequency: weekly
+      url: https://zoom.us/my/apimachinery
     contact:
       slack: wg-apply
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-apply

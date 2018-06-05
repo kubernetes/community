@@ -28,7 +28,7 @@ implied. However, describing the process as "moving" the pod is approximately ac
 and easier to understand, so we will use this terminology in the document.
 
 We use the term "rescheduling" to describe any action the system takes to move an
-already-running pod. The decision may be made and executed by any component; we wil
+already-running pod. The decision may be made and executed by any component; we will
 introduce the concept of a "rescheduler" component later, but it is not the only
 component that can do rescheduling.
 
