@@ -558,7 +558,7 @@ VPA controls the request (memory and CPU) of containers. In MVP it always sets
 the limit to infinity. It is not yet clear whether there is a use-case for VPA
 setting the limit.
 
-The request is calculated based on analysis of the current and revious runs of
+The request is calculated based on analysis of the current and previous runs of
 the container and other containers with similar properties (name, image,
 command, args).
 The recommendation model (MVP) assumes that the memory and CPU consumption are
