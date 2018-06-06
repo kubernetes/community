@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Contributor Experience Special Interest Group
 
-Developing and sustaining a healthy community of contributors is critical to scaling the project and growing the ecosystem. We need to ensure our contributors are happy and productive, we need to break the commit-rate ceiling we hit in July 2015, and we need to get the monotonically growing PR merge latency and numbers of open PRs and issues under control.
+Developing and sustaining a healthy community of contributors is critical to scaling the project and growing the ecosystem. We need to ensure our contributors are happy and productive, and that there are not bottlenecks hindering the project in, for example: feature velocity, community scaling, pull request latency, and absolute numbers of open pull requests and open issues.
 
 The [charter](charter.md) defines the scope and governance of the Contributor Experience Special Interest Group.
 
