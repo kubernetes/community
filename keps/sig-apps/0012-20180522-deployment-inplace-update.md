@@ -24,6 +24,7 @@ Table of Contents
       * [Summary](#summary)
       * [Motivation](#motivation)
       * [Goals](#goals)
+      * [Non-Goals](#non-goals)
       * [Proposal](#proposal)
          * [API Change](#api-change)
          * [Deployment Controller](#deployment-controller)
@@ -32,29 +33,36 @@ Table of Contents
          * [Alternatives](#alternatives)
             * [Alternative 1](#alternative-1)
             * [Alternative 2](#alternative-2)
+      * [Graduation Criteria](#graduation-criteria)
             
 ## Summary
-We propose a new update strategy for deployment controller to do rolling update without tearing down the pods, i.e. in-place update.
+We propose a new update strategy for deployment controller to do rolling update images and/or commands of containers without tearing down the pods, i.e. in-place update. 
 
 
 ## Motivation
-Today, Deployment controller, while doing rolling update, will teardown all the pods and then recreate all the pods.
+Today, Deployment controller, while doing rolling update, will teardown all the pods and then recreate all the pods. In essence, it reshuffles all the pods.
 This approach works in most cases but has several limitations:
-* The re-created pod may be allocated onto different nodes, but certain pods depend on local state on the node. 
-
-    For example: some pods have persistent state in local storage. 
-    Especially when we do high pressure with very large scale testing, we may go through several rounds of upgrades. If the pods randomly run on any nodes, 
-    the network environment is not consistent, it becomes hard to guarantee a stable result.
-* The new pod may not be allocated due to resources taken by other pods. Preemption can mitigate this situation, but this 
-introduces an extra scheduling loop that can be avoided.
-* The IP address may be changed due to the pod is re-created, but we want fixed IP across container upgrades. 
-
-    It is true that pods in Kubernetes don't have sticky IPs by default. In the scenario where the node fails, 
-    we implemented a CNI plugin to ensure that the new pod allocated still get the same ip address.
+* we have thousands of pods running super critical user-facing online services with high availability guarantee. Re-shuffling all the pods over thousands of machines to do the upgrade is problematic:
+    1) Since pods are reshuffled, network topology for all the pods become indeterministic every time we do upgrade and this can cause inconsistent network performance.
+    It may also cause inconsistent runtime performance due to host hardware are different. This breaks user experience.
+    2) Certain container images are very large, re-shuffling all the pods means re-downloading the images onto the hosts if the image is not present. 
+    This again can cause high network traffic and high latency during upgrade or even interfere other running services.
+ 
+* In some large clusters where we run a large number of pods, the rolling-upgrade process may be hung because there isn't enough resources left to create the new version of pod.
+ Preemption can mitigate this issue, but most of our pods are online service, unlike batch jobs, and cannot be preempted. And doing in-place update also avoids additional scheduling loop to reallocate containers.
+* Similarly, in few small cluster, some pods eat large memory(e.g. 64GB), all resources are taken by current version of pods, no resource left to create newer version of pod, 
+resulting in a kind of deadlock situation: Old pods waiting for the newer pods to be created, but newer pods waiting for old pods to be terminated to release enough resources.
+ 
+* By doing in-place update, we can also avoid re-instantiating the network stack, re-allocating the IP address. 
+At our scale, re-instantiating the network stack for tens of thousands of pods is a very expensive operation.
 
 
 ## Goals
-Enable deployment controller to update the containers inside the pods (such as container image, cmd etc.) without tearing down the pods
+Enable deployment controller to update image and/or command of the containers inside the pods without tearing down the pods.
+
+## Non-Goals
+* This proposal only supports updating image and/or commands of containers and does not support any other form of in-place update, such as updating resource requirements of containers or add a new container into the pod.
+* This proposal does not support running both rolling-update and in-place update for a single deployment.
 
 ## Proposal
 
@@ -202,3 +210,6 @@ This way we don't need to introduce pause semantics to ReplicaSet.
 3)    scaleUp(newReplicaSet, replicas + MaxUnavailable)
 
 ```
+## Graduation Criteria 
+* Enable users to perform container updates without tearing down the pods.
+* This feature should be opt-in. There should be no impact to existing functionality if not explicitly enabled by user.
