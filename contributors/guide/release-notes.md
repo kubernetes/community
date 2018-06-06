@@ -3,7 +3,7 @@
 On the kubernetes/kubernetes repository, release notes are required for any pull request with user-visible changes, such as bug-fixes, feature additions, and output format changes.
 
 To meet this requirement, do one of the following:
-- Add notes in the release notes block, or
+- Add notes in the release notes block
 - Update the release note label
 
 If you don't add release notes in the pull request template, the `do-not-merge/release-note-label-needed` label is added to your pull request automatically after you create it. There are a few ways to update it.
