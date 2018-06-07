@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Interested in how we can most effectively test Kubernetes. We're interested specifically in making it easier for the community to run tests and contribute test results, to ensure Kubernetes is stable across a variety of cluster configurations and cloud providers.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 13:00 PT (Pacific Time)](https://zoom.us/my/k8s.sig.testing) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Tuesdays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-testing-notes).
   * [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
 
@@ -45,7 +45,7 @@ The following subprojects are owned by sig-testing:
     - https://raw.githubusercontent.com/kubernetes-sig-testing/frameworks/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
   - Meetings:
-    - Testing Commons: [Wednesdays at 07:30 PT (Pacific Time)](https://zoom.us/my/k8s.sig.testing) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29).
+    - Testing Commons: [Wednesdays at 07:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29).
       - [Meeting notes and Agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o).
 
 ## GitHub Teams

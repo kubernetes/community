@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Covers improvements to Kubernetes authorization, authentication, and cluster security policy.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/my/k8s.sig.auth) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw).
 

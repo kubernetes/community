@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Ensures that the Kubernetes ecosystem is evolving in a way that is neutral to all (public and private) cloud providers. It will be responsible for establishing standards and requirements that must be met by all providers to ensure optimal integration with Kubernetes.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/my/sigcloudprovider) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](TODO).
   * [Meeting recordings](TODO).
 

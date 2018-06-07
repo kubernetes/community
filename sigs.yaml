@@ -21,7 +21,7 @@ sigs:
       time: "11:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://zoom.us/my/apimachinery
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://goo.gl/0lbiM9
       recordings_url: https://www.youtube.com/watch?v=Lj1ScbXpnpY&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R
     contact:
@@ -132,7 +132,7 @@ sigs:
       time: "9:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://zoom.us/my/sig.apps
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#
       recordings_url: https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3
     contact:
@@ -167,7 +167,7 @@ sigs:
         time: "9:00"
         tz: "PT (Pacific Time)"
         frequency: biweekly
-        url: https://zoom.us/j/166909412
+        url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
         archive_url: https://docs.google.com/document/d/1h6UTTuNRbFI81higrN3JUV2XxyzqqVjZET4Xz4WTR-8/edit#heading=h.57pbxthvt6k3
       owners:
       - https://raw.githubusercontent.com/kubernetes/charts/master/OWNERS
@@ -182,7 +182,7 @@ sigs:
         time: "9:30"
         tz: "PT (Pacific Time)"
         frequency: weekly
-        url: https://zoom.us/j/4526666954
+        url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
         archive_url: https://docs.google.com/document/d/1d-6xJEx0C78csIYSPKJzRPeWaHG_8W1Hjl72OJggwdc/edit#
       owners:
       - https://raw.githubusercontent.com/kubernetes/helm/master/OWNERS
@@ -242,7 +242,7 @@ sigs:
       time: "15:30"
       tz: "UTC"
       frequency: weekly
-      url: https://zoom.us/j/9690526922
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
       recordings_url: https://www.youtube.com/watch?v=d5ERqm3oHN0&list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
     contact:
@@ -303,7 +303,7 @@ sigs:
       time: "11:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://zoom.us/my/k8s.sig.auth
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
     contact:
@@ -345,7 +345,7 @@ sigs:
       time: "14:00"
       tz: "UTC"
       frequency: biweekly/triweekly
-      url: https://zoom.us/my/k8s.sig.autoscaling
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit
     contact:
       slack: sig-autoscaling
@@ -393,7 +393,7 @@ sigs:
       time: "9:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://zoom.us/my/k8ssigaws
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
     contact:
       slack: sig-aws
@@ -432,7 +432,7 @@ sigs:
       time: "16:00"
       tz: "UTC"
       frequency: biweekly
-      url: https://zoom.us/j/2015551212
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit
       recordings_url: https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4
     contact:
@@ -478,7 +478,7 @@ sigs:
       time: "17:00"
       tz: "UTC"
       frequency: weekly
-      url: https://zoom.us/my/sig.big.data
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
       recordings_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
     contact:
@@ -529,7 +529,7 @@ sigs:
       time: "09:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://zoom.us/my/sigcli
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
     contact:
@@ -586,7 +586,7 @@ sigs:
       time: "10:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://zoom.us/my/sigcloudprovider
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: TODO
       recordings_url: TODO
     contact:
@@ -653,7 +653,7 @@ sigs:
       time: "09:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://zoom.us/j/166836%E2%80%8B624
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/a/weave.works/document/d/1deJYPIF4LmhGjDVaqrswErIrV7mtwJgovtLnPCDxP7U/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
     - description: kubeadm Office Hours
@@ -661,7 +661,7 @@ sigs:
       time: "09:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://zoom.us/j/166836%E2%80%8B624
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/130_kiXjG7graFNSnIAgtMS1G8zPDwpkshgfRYS0nggo/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
     - description: Cluster API working group
@@ -669,7 +669,7 @@ sigs:
       time: "10:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://zoom.us/j/166836%E2%80%8B624
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit#
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
     - description: kops Office Hours
@@ -677,7 +677,7 @@ sigs:
       time: "09:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://zoom.us/my/k8ssigaws
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
     contact:
       slack: sig-cluster-lifecycle
@@ -748,7 +748,7 @@ sigs:
       time: "20:00"
       tz: "UTC"
       frequency: biweekly
-      url: https://zoom.us/j/297937771
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#
       recordings_url: https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR
     contact:
@@ -783,7 +783,7 @@ sigs:
       time: "9:30"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://zoom.us/j/7658488911
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
       recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
     contact:
@@ -847,7 +847,7 @@ sigs:
       time: "17:30"
       tz: "UTC"
       frequency: weekly
-      url: https://zoom.us/j/678394311
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
     contact:
@@ -888,7 +888,7 @@ sigs:
       time: "16:00"
       tz: "UTC"
       frequency: biweekly
-      url: https://zoom.us/j/761149873
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
     contact:
       slack: sig-gcp
@@ -935,7 +935,7 @@ sigs:
       time: "14:00"
       tz: "EST"
       frequency: biweekly
-      url: https://zoom.us/j/9392903494
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit
     contact:
       slack: sig-ibmcloud
@@ -964,7 +964,7 @@ sigs:
       time: "17:30"
       tz: "UTC"
       frequency: biweekly
-      url: https://zoom.us/j/5342565819
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1gWuAATtlmI7XJILXd31nA4kMq6U9u63L70382Y3xcbM/edit
     contact:
       slack: sig-instrumentation
@@ -1024,7 +1024,7 @@ sigs:
       time: "9:30"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://zoom.us/my/k8s.mc
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
       recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
     - description: Federation v2 Working Group
@@ -1032,7 +1032,7 @@ sigs:
       time: "9:30"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://zoom.us/my/k8s.mc
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3iKP5EzMbtNT2zOZv6RCrX
     contact:
@@ -1088,7 +1088,7 @@ sigs:
       time: "14:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://zoom.us/j/5806599998
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit
       recordings_url: https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb
     contact:
@@ -1150,7 +1150,7 @@ sigs:
       time: "10:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://zoom.us/j/4799874685
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing
       recordings_url: https://www.youtube.com/watch?v=FbKOI9-x9hI&list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG
     contact:
@@ -1221,7 +1221,7 @@ sigs:
       time: "16:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://zoom.us/j/417251241
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f
       recordings_url: https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax
     contact:
@@ -1285,7 +1285,7 @@ sigs:
       time: "16:00"
       tz: "UTC"
       frequency: biweekly
-      url: https://zoom.us/j/845373595
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing
       recordings_url: https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ
     contact:
@@ -1312,7 +1312,7 @@ sigs:
       time: "21:00"
       tz: "UTC"
       frequency: biweekly
-      url: https://zoom.us/j/664772523
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1vhsixdT58iJFfoGZbpmvI_xnK59XyAjtadu3h6hHPpY/edit?usp=sharing
       recordings_url: https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ
     contact:
@@ -1376,7 +1376,7 @@ sigs:
       time: "16:30"
       tz: "UTC"
       frequency: bi-weekly
-      url: https://zoom.us/j/989573207
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
       recordings_url: https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL
     contact:
@@ -1423,7 +1423,7 @@ sigs:
       time: "20:00"
       tz: "UTC"
       frequency: biweekly
-      url: https://zoom.us/j/7767391691
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
       recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
     contact:
@@ -1487,7 +1487,7 @@ sigs:
       time: "13:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://zoom.us/j/7201225346
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit
       recordings_url: https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs
     contact:
@@ -1531,7 +1531,7 @@ sigs:
       time: "9:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://zoom.us/j/614261834
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing
       recordings_url: https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq
     contact:
@@ -1592,7 +1592,7 @@ sigs:
       time: "13:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://zoom.us/my/k8s.sig.testing
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://bit.ly/k8s-sig-testing-notes
       recordings_url: https://bit.ly/k8s-sig-testing-videos
     contact:
@@ -1631,7 +1631,7 @@ sigs:
         time: "07:30"
         tz: "PT (Pacific Time)"
         frequency: bi-weekly
-        url: https://zoom.us/my/k8s.sig.testing
+        url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
         archive_url: https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o
   - name: UI
     dir: sig-ui
@@ -1685,7 +1685,7 @@ sigs:
       time: "18:00"
       tz: "UTC"
       frequency: bi-weekly
-      url: https://zoom.us/j/183662780
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y
     - description: Cloud Provider vSphere weekly syncup
@@ -1693,7 +1693,7 @@ sigs:
       time: "16:30"
       tz: "UTC"
       frequency: weekly
-      url: https://zoom.us/j/584244729
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR
     contact:
@@ -1739,7 +1739,7 @@ sigs:
       time: "12:30"
       tz: "Eastern Standard Time (EST)"
       frequency: weekly
-      url: https://zoom.us/my/sigwindows
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
       recordings_url: https://www.youtube.com/watch?v=7zawb3KT9Xk&list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4
     contact:
@@ -1771,7 +1771,7 @@ workinggroups:
       time: "11:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly (On demand)
-      url: https://zoom.us/j/4799874685
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1j3vrG6BgE0hUDs2e-1ZUegKN4W4Adb1B6oJ6j-4kyPU
       recordings_url: https://www.youtube.com/watch?v=FUUJeWIEej0&list=PL69nYSiGNLP2uTrVwZCFtdEvLQvsbG2w4
     contact:
@@ -1819,7 +1819,7 @@ workinggroups:
       time: "18:00"
       tz: "UTC"
       frequency: bi-weekly
-      url: https://zoom.us/j/166836%E2%80%8B624
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1KdXsLYiJYJdiRbtgZsx6qbHF4g_K-gAScB9Zs4avgzg/edit
       recordings_url: https://www.youtube.com/watch?v=-Xlcrm5iT80&list=PLPgAK4Icr0ehh93BiMC3djAc5KoW7WIkl
     contact:
@@ -1869,7 +1869,7 @@ workinggroups:
       time: "16:00"
       tz: "UTC"
       frequency: bi-weekly
-      url: https://zoom.us/j/748123863
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit
     contact:
       slack: wg-app-def
@@ -1895,7 +1895,7 @@ workinggroups:
       time: "9:30"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://zoom.us/my/apimachinery
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
     contact:
       slack: wg-apply
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-apply
@@ -1918,7 +1918,7 @@ workinggroups:
       time: "10:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://zoom.us/my/cloudprovider
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp
     contact:
       slack: wg-cloud-provider
@@ -1941,7 +1941,7 @@ workinggroups:
       time: "11:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://zoom.us/my/k8s.sig.auth
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1fj3yzmeU2eU8ZNBCUJG97dk_wC7228-e_MmdcmTNrZY/edit?usp=sharing
     contact:
       slack: wg-multitenancy
@@ -1973,7 +1973,7 @@ workinggroups:
       time: "17:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://zoom.us/j/421702434
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing
     contact:
       slack: wg-policy
@@ -2002,7 +2002,7 @@ workinggroups:
       time: "13:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
-      url: https://zoom.us/j/4799874685
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://goo.gl/gBCdt1
     contact:
       slack: wg-machine-learning

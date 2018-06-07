@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Covers autoscaling of clusters, horizontal and vertical autoscaling of pods, setting initial resources for pods, topics related to monitoring pods and gathering their metrics (e.g.: Heapster)
 
 ## Meetings
-* Regular SIG Meeting: [Mondays at 14:00 UTC](https://zoom.us/my/k8s.sig.autoscaling) (biweekly/triweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
+* Regular SIG Meeting: [Mondays at 14:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly/triweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit).
 
 ## Leadership

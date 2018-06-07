@@ -12,7 +12,7 @@ Improve UX of declarative primitives in the API and/or primary client libraries 
 Charter can be found [here](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#)
 
 ## Meetings
-* Regular WG Meeting: [Wednesdays at 16:00 UTC](https://zoom.us/j/748123863) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+* Regular WG Meeting: [Wednesdays at 16:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit).
 
 ## Organizers
