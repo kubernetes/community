@@ -47,6 +47,7 @@ Important notes about the numbers:
 | Number of namespaces (ns)           | 10000          |             | 100000         |
 | Number of pods per ns               | 15000          |             | 50000          |
 | Number of services                  | 10000          |             | 100000         |
+| Number of services per ns           | 5000           |             | 5000           |
 | Number of all services backends     | TBD            |             | 500000         |
 | Number of backends per service      | 5000           |             | 5000           |
 | Number of deployments per ns        | 20000          |             | 10000          |
