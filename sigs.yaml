@@ -79,6 +79,8 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/sample-controller/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-controller/OWNERS
       - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder/master/OWNERS
     - name: idl-schema-client-pipeline
       owners:
       - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS # possibly should be totally separate
