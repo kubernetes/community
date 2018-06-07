@@ -39,10 +39,12 @@ potentially conventions for namespaces that are replicated between clusters (for
 example, to support a global cluster list that is replicated to all clusters
 that are contained in the list).
 
-## Conventions for reserved namesp[aces
+## Conventions for reserved namespaces
 
 By convention, resources in these namespaces are local to the clusters in which
-they exist and will not be replicated to other clusters.
+they exist and will not be replicated to other clusters. In other words, these
+namespaces are private to the clusters they are in, and multicluster operations
+must not replicate them or their resources into other clusters.
 
 [1] Tools are by no means compelled to look in this namespace for clusters, and
 can choose to reference Cluster objects from other namespaces as is suitable to
