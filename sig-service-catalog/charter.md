@@ -34,6 +34,12 @@ The following, non-exhaustive, items are out of scope:
   - A chair does not have more rights, or votes, than a maintainer.
   - Responsible for reporting the SIG’s status to the appropriate Kubernetes leadership teams.
 
+- Security Contacts
+  - MUST be a contact point for the Product Security Team to reach out to for triaging and handling of incoming issues.
+  - MUST be a maintainer.
+  - MUST accept the Kubernetes [Embargo Policy](https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#embargo-policy).
+  - Defined in [SECURITY_CONTACTS](https://github.com/kubernetes-incubator/service-catalog/blob/master/SECURITY_CONTACTS) file.
+
 ## Organizational management
 
 - SIG meets every week on Zoom at 1 PM PST on Mondays
