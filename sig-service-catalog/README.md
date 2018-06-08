@@ -8,7 +8,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 -->
 # Service Catalog Special Interest Group
 
-To develop a Kubernetes API for the CNCF service broker and Kubernetes broker implementation.
+Service Catalog is a Kubernetes extension project that implements the [Open Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI). It allows application developers the ability to provision and consume cloud services natively from within Kubernetes.
+
+The [charter](https://github.com/kubernetes/community/blob/master/sig-service-catalog/charter.md) defines the scope and governance of the Service Catalog Special Interest Group.
 
 ## Meetings
 * Regular SIG Meeting: [Mondays at 13:00 PT (Pacific Time)](https://zoom.us/j/7201225346) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).

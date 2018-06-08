@@ -1501,9 +1501,10 @@ sigs:
   - name: Service Catalog
     dir: sig-service-catalog
     mission_statement: >
-      To develop a Kubernetes API for the CNCF service broker and Kubernetes
-      broker implementation.
-    charter_link:
+      Service Catalog is a Kubernetes extension project that
+      implements the [Open Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI).
+      It allows application developers the ability to provision and consume cloud services natively from within Kubernetes.
+    charter_link: https://github.com/kubernetes/community/blob/master/sig-service-catalog/charter.md
     label: service-catalog
     leadership:
       chairs:
