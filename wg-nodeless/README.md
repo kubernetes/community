@@ -8,11 +8,11 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 -->
 # Nodeless Working Group
 
-Create and design a nodeless kubernetes implementation, while also making Kubernetes extensible to containers as a service platforms.
+Explore and ultimately propose a nodeless design that can extend a kubernetes cluster to enable pods running on other service platforms.
 
 ## Meetings
 * Regular WG Meeting: [Wednesdays at 14:00 PT (Pacific Time)](https://zoom.us/j/588409652) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](TBA).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/13gt9aUokqueOYHzA94D0UXFkXSP0rJEED9TxNEXZZMM/edit?usp=sharing).
 
 ## Organizers
 
@@ -24,5 +24,5 @@ Create and design a nodeless kubernetes implementation, while also making Kubern
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-nodeless)
 
 <!-- BEGIN CUSTOM CONTENT -->
-
+The proposal and goals for the nodeless working group are outlined [here](https://docs.google.com/document/d/1Y1GEKOIB1u5P06YeQJYl9WVaUqxrq3fO8GZ7K6MUGms/edit)
 <!-- END CUSTOM CONTENT -->
