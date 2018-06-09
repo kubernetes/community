@@ -108,14 +108,14 @@ via CURL.)
 
 Some highlights of things we intend to change:
 
-* Apply will be moved to the control plane: [overall design](goo.gl/UbCRuf).
+* Apply will be moved to the control plane: [overall design](https://goo.gl/UbCRuf).
   * It will be invoked by sending a certain Content-Type with the verb PATCH.
 * The last-applied annotation will be promoted to a first-class citizen under
   metadata. Multiple appliers will be allowed.
 * Apply will have user-targeted and controller-targeted variants.
-* The Go IDL will be fixed: [design](goo.gl/EBGu2V). OpenAPI data models will be fixed. Result: 2-way and
+* The Go IDL will be fixed: [design](https://goo.gl/EBGu2V). OpenAPI data models will be fixed. Result: 2-way and
   3-way merges can be implemented correctly.
-* 2-way and 3-way merges will be implemented correctly: [design](goo.gl/nRZVWL).
+* 2-way and 3-way merges will be implemented correctly: [design](https://goo.gl/nRZVWL).
 * Dry-run will be implemented on control plane verbs (POST and PUT).
   * Admission webhooks will have their API appended accordingly.
 * The defaulting and conversion stack will be solidified to allow converting
