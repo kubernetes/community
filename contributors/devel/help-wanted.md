@@ -53,7 +53,7 @@ contributors_. It indicates that members will keep an eye out for these pull
 requests and shepherd it through our processes.
 
 **New contributors should not be left to find an approver, ping for reviews,
-*decipher prow commands, or identify that their build failed due to a flake.**
+decipher prow commands, or identify that their build failed due to a flake.**
 This makes new contributors feel welcome, valued, and assures them that they
 will have an extra level of help with their first contribution.
 
@@ -128,7 +128,8 @@ contributions are helpful and appreciated... they will stick around! 🌈
 - Give credit to new contributors so that others get to know them, _"Hey, would
   someone help give a second LGTM on @newperson's first PR on chocolate
   bunnies?"_. Mention them in the SIG channel/meeting, thank them on twitter or
-  #shoutouts. - Use all the emoji in your approve or lgtm comment. 💖 🚀
+  #shoutouts.
+- Use all the emoji in your approve or lgtm comment. 💖 🚀
 - Let them know that their `good first issue` is getting extra attention to make
   the first one easier and help them find a follow-up issue.
 - Suggest a related `help wanted` so that can build up experience in an area.
