@@ -12,7 +12,7 @@ Improve the state of declarative object management by fixing `kubectl apply`, mo
 Resources can be found in [this Google drive folder](https://drive.google.com/drive/folders/1wlpgkS2gFZXdp4x2WlRsfUBxkFlt2Gx0)
 
 ## Meetings
-* Regular WG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/my/apimachinery) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
 
 ## Organizers
 

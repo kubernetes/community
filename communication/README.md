@@ -107,5 +107,5 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [timezone table]: https://www.google.com/search?q=1000+am+in+pst
 [troubleshooting guide]: http://kubernetes.io/docs/troubleshooting
 [Twitter]: https://twitter.com/kubernetesio
-[weekly meeting]: https://zoom.us/my/kubernetescommunity
+[weekly meeting]: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
 

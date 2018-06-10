@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 To develop a Kubernetes API for the CNCF service broker and Kubernetes broker implementation.
 
 ## Meetings
-* Regular SIG Meeting: [Mondays at 13:00 PT (Pacific Time)](https://zoom.us/j/7201225346) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Mondays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs).
 
