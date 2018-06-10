@@ -470,10 +470,13 @@ sigs:
       chairs:
       - name: Anirudh Ramanathan
         github: foxish
-        company: Google
+        company: Rockset
       - name: Erik Erlandson
         github: erikerlandson
         company: Red Hat
+      - name: Yinan Li
+        github: liyinan926
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
