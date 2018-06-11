@@ -47,7 +47,7 @@ The following, non-exhaustive, items are out of scope:
     lazy two-thirds resolution amongst the chairs.
 
 - Emeritus Chairs ([Inspired by the Helm Project](http://technosophos.com/2018/01/11/introducing-helm-emeritus-core-maintainers.html))
-  - A chair who steps down may be given the title of Emeritus Chair. This title confers
+  - A chair who steps down may choose to take an Emeritus Chair title. This confers
     honor on the recipient and allows them to remain associated with the SIG in acknowledgement
     of their significant contributions.
   - Those who attain this title are no longer expected to attend the weekly meetings,
