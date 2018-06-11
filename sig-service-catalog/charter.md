@@ -42,7 +42,7 @@ The following, non-exhaustive, items are out of scope:
     fallback on majority vote.
 
 - Emeritus Chairs ([Inspired by the Helm Project](http://technosophos.com/2018/01/11/introducing-helm-emeritus-core-maintainers.html))
-  - A chair who step down MAY be given the title of Emeritus Chair. This title confers
+  - A chair who steps down may be given the title of Emeritus Chair. This title confers
     honor on the recipient and allows them to remain associated with the SIG in acknowledgement
     of their significant contributions.
   - Those who attain this title are no longer expected to attend the weekly meetings,
@@ -51,9 +51,9 @@ The following, non-exhaustive, items are out of scope:
     them to participate in related events, such as KubeCon.
 
 - Security Contacts
-  - MUST be a contact point for the Product Security Team to reach out to for triaging and handling of incoming issues.
-  - MUST be a maintainer.
-  - MUST accept the Kubernetes [Embargo Policy](https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#embargo-policy).
+  - Are a contact point for the Product Security Team to reach out to for triaging and handling of incoming issues.
+  - Must be a maintainer.
+  - Must accept the Kubernetes [Embargo Policy](https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#embargo-policy).
   - Defined in [SECURITY_CONTACTS](https://github.com/kubernetes-incubator/service-catalog/blob/master/SECURITY_CONTACTS) file.
 
 ## Organizational management
