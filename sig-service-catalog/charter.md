@@ -67,7 +67,7 @@ The following, non-exhaustive, items are out of scope:
 - [Working groups](https://docs.google.com/document/d/1fghxARW-doHrNmBYCijhODsGoIFawpeU4X0end-XnUI/edit#) can be initiated by any member. To create a new one, add the topic
   to the weekly call’s agenda for discussion.
   - These are not the same as cross-SIG working groups.
-  - Working groups exist for an undefined period of time, so that interested members
+  - Working groups exist for an unspecified period of time, so that interested members
     can meet to discuss and solve problems for our SIG.
 
 ### Project management
