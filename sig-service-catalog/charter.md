@@ -122,7 +122,7 @@ The following, non-exhaustive, items are out of scope:
   - Canary builds are published on pushes to master.
   - Release builds (and latest) are published on tags.
   - Files hosted on Azure blob storage.
-  - Azure account managed by Carolyn Van Slyck (Microsoft) and Aaron Schelsinger (Microsoft).
+  - Azure account managed by Carolyn Van Slyck (Microsoft) and Aaron Schlesinger (Microsoft).
 - [Travis](https://travis-ci.org/kubernetes-incubator/service-catalog)
   - Runs the CI builds.
   - Maintainers have access.
