@@ -35,9 +35,7 @@ The following, non-exhaustive, items are out of scope:
   - Responsible for reporting the SIG’s status to the appropriate Kubernetes leadership teams.
   - Chairs MAY decide to step down at anytime and MAY propose a replacement, ideally from existing
     maintainers. Use lazy consensus amongst chairs with fallback on majority vote to accept proposal.
-    This SHOULD be supported by a majority of SIG members.
   - Chairs MAY select additional chairs through a super-majority vote amongst chairs.
-    This SHOULD be supported by a majority of SIG members.
   - Chairs MUST remain active in the role and MAY removed from the position
     if they are unresponsive for > 3 months or are not proactively working
     with other chairs to fulfill responsibilities. Use lazy consensus amongst chairs with
