@@ -28,6 +28,9 @@ The following, non-exhaustive, items are out of scope:
     resolution amongst the chairs.
   - Maintainers may be nominated for removal from their position by a chair,
     to accepted via lazy two-thirds resolution amongst the chairs.
+  - Maintainers may propose changes to this charter at any time, by submitting a
+    pull request and then notifying the SIG mailing list, to be accepted via
+    lazy two-thirds resolution amongst the chairs.
 
 - Chairs
   - All maintainer’s roles.
@@ -43,8 +46,6 @@ The following, non-exhaustive, items are out of scope:
   - Chairs must remain active in the role and may be removed from the position
     via lazy two-thirds resolution amongst the chairs, if they are unresponsive
     for > 3 months or are not proactively working with other chairs to fulfill responsibilities.
-  - Chairs may propose changes to this charter at any time, to be accepted via
-    lazy two-thirds resolution amongst the chairs.
 
 - Emeritus Chairs ([Inspired by the Helm Project](http://technosophos.com/2018/01/11/introducing-helm-emeritus-core-maintainers.html))
   - A chair who steps down may choose to take an Emeritus Chair title. This confers
