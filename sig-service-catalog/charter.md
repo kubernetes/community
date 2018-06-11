@@ -40,6 +40,7 @@ The following, non-exhaustive, items are out of scope:
     if they are unresponsive for > 3 months or are not proactively working
     with other chairs to fulfill responsibilities. Use lazy consensus amongst chairs with
     fallback on majority vote.
+  - Chairs may propose changes to this charter at any time.
 
 - Emeritus Chairs ([Inspired by the Helm Project](http://technosophos.com/2018/01/11/introducing-helm-emeritus-core-maintainers.html))
   - A chair who steps down may be given the title of Emeritus Chair. This title confers
