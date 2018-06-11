@@ -24,8 +24,10 @@ The following, non-exhaustive, items are out of scope:
 - Maintainers
   - Responsible for approving, and reviewing, pull requests.
   - Responsible for technical planning and stewardship of the project.
-  - New maintainers are nominated by a chair and require unanimous consent by all chairs.
-  - Maintainers can be “retired” at the suggestion of a chair, and approved unanimously by the other chairs.
+  - New maintainers may be nominated by a chair, to accepted via lazy two-thirds
+    resolution amongst the chairs.
+  - Maintainers may be nominated for removal from their position by a chair,
+    to accepted via lazy two-thirds resolution amongst the chairs.
 
 - Chairs
   - All maintainer’s roles.
@@ -33,14 +35,16 @@ The following, non-exhaustive, items are out of scope:
     in nature, such as organizing the weekly meetings.
   - A chair does not have more rights, or votes, than a maintainer.
   - Responsible for reporting the SIG’s status to the appropriate Kubernetes leadership teams.
-  - Chairs MAY decide to step down at anytime and MAY propose a replacement, ideally from existing
-    maintainers. Use lazy consensus amongst chairs with fallback on majority vote to accept proposal.
-  - Chairs MAY select additional chairs through a super-majority vote amongst chairs.
-  - Chairs MUST remain active in the role and MAY removed from the position
-    if they are unresponsive for > 3 months or are not proactively working
-    with other chairs to fulfill responsibilities. Use lazy consensus amongst chairs with
-    fallback on majority vote.
-  - Chairs may propose changes to this charter at any time.
+  - All decisions amongst chairs are made using lazy consensus with a fallback to a 2/3 majority vote (lazy two-thirds resolution).
+    This process is used for all decisions, such as changing chairs/maintainers or modifying this charter.
+  - Chairs may nominate a new chair at any time, to be accepted via lazy two-thirds resolution amongst the chairs.
+  - Chairs may decide to step down at any time. Before stepping down, the chair
+    may propose and vote on their replacement via lazy two-thirds resolution amongst the chairs.
+  - Chairs must remain active in the role and may be removed from the position
+    via lazy two-thirds resolution amongst the chairs, if they are unresponsive
+    for > 3 months or are not proactively working with other chairs to fulfill responsibilities.
+  - Chairs may propose changes to this charter at any time, to be accepted via
+    lazy two-thirds resolution amongst the chairs.
 
 - Emeritus Chairs ([Inspired by the Helm Project](http://technosophos.com/2018/01/11/introducing-helm-emeritus-core-maintainers.html))
   - A chair who steps down may be given the title of Emeritus Chair. This title confers
