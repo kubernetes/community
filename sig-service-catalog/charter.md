@@ -34,6 +34,7 @@ The following, non-exhaustive, items are out of scope:
 
 - Chairs
   - All maintainer’s roles.
+  - Chairs are listed in our [SIG definition](https://github.com/kubernetes/community/tree/master/sig-service-catalog#chairs).
   - Responsible for project administration activities within the SIG and are non-technical
     in nature, such as organizing the weekly meetings.
   - A chair does not have more rights, or votes, than a maintainer.
