@@ -11,7 +11,7 @@ This charter adheres to the conventions described in the [Kubernetes Charter REA
 This SIG’s main goals are:
 - Support, and adhere to, the Platform requirements of the OSBAPI specification.
 - Provide a UX for Kubernetes users that is consistent with both the OSB API specification and traditional Kubernetes user interactions.
-- Align with the OSBAPI specification as changes are made.
+- Align with the [OSBAPI specification](https://github.com/openservicebrokerapi/servicebroker/blob/master/spec.md) as changes are made.
 - Provide feedback (bugs or feature requests) to the OSBAPI WG.
 
 ### Out of scope
