@@ -7,25 +7,27 @@ Kubernetes Volume Snapshot Proposal
 
 Many storage systems (GCE PD, Amazon EBS, etc.) provide the ability to create "snapshots" of persistent volumes to protect against data loss. Snapshots can be used in place of a traditional backup system to back up and restore primary and critical data. Snapshots allow for quick data backup (for example, it takes a fraction of a second to create a GCE PD snapshot) and offer fast recovery time objectives (RTOs) and recovery point objectives (RPOs). Snapshots can also be used for data replication, distribution and migration. 
 
-As the initial effort to support snapshot in Kubernetes,  volume snapshotting has been released as a prototype in Kubernetes 1.8. An external controller and provisioner (i.e. two separate binaries) have been added in the external storage repo. (https://github.com/kubernetes-incubator/external-storage/tree/master/snapshot). The prototype currently supports GCE PD, AWS EBS, OpenStack Cinder and Kubernetes hostPath volumes. Volume snapshtos APIs are using [CRD](https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/)
+As the initial effort to support snapshot in Kubernetes,  volume snapshotting has been released as a prototype in Kubernetes 1.8. An external controller and provisioner (i.e. two separate binaries) have been added in the [external storage repo](https://github.com/kubernetes-incubator/external-storage/tree/master/snapshot). The prototype currently supports GCE PD, AWS EBS, OpenStack Cinder and Kubernetes hostPath volumes. Volume snapshtos APIs are using [CRD](https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/)
 
-To continue that effort, this design is proposed to move the Kubernetes snapshot support in-tree by providing snapshot API and snapshot controller in-tree. The snapshot feature will support both in-tree and out-of-tree CSI volume drivers. To be consistent with the existing CSI volume driver support documented [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/container-storage-interface.md), a sidecar "Kubernetes to CSI" proxy container called "external-snapshotter" will be provided to watch the Kubernetes API on behalf of the external CSI volume driver and trigger the appropriate operations (i.e., create snapshot and delete snapshot) against the "CSI volume driver" container. The CSI snapshot spec is proposed [here](https://github.com/container-storage-interface/spec/pull/224).
+To continue that effort, this design is proposed to move the Kubernetes volume snapshot support in-tree by providing snapshot API and snapshot controller in-tree. The volume snapshot feature will support both in-tree and out-of-tree CSI volume drivers. To be consistent with the existing CSI volume driver support documented [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/container-storage-interface.md), a sidecar "Kubernetes to CSI" proxy container called "external-snapshotter" will be provided to watch the Kubernetes API on behalf of the external CSI volume driver and trigger the appropriate operations (i.e., create snapshot and delete snapshot) against the "CSI volume driver" container. The CSI snapshot spec is proposed [here](https://github.com/container-storage-interface/spec/pull/224).
 
 ## Objectives
 
-For the first version of snapshotting support in Kubernetes, only on-demand snapshots will be supported. Features listed in the roadmap for future versions are also nongoals.
+The main goal of this feature is to offer a standardized snapshot API for creating, listing, deleting, and restoring snapshots on an arbitrary volume. For the first version of volume snapshot support in Kubernetes, only on-demand snapshots will be supported. Features listed in the roadmap for future versions are nongoals.
 
-* Goal 1: Enable *on-demand* snapshots of Kubernetes persistent volumes by application developers.
+* Goal 1: Enable *on-demand* snapshots of Kubernetes persistent volumes by application developers. Expose standardized snapshotting operations to create, list and delete snapshots in Kubernetes REST API.
 
-    * Nongoal: Enable *automatic* periodic snapshotting for direct volumes in pods.
+    * Nongoal: Enable *automatic* periodic snapshotting for volumes. 
+    
+* Goal 2: Implement volume snapshotting interface for in-tree plugins including Amazon EBS, GCE PDs, OpenStack Cinder etc.
 
-* Goal 2: Expose standardized snapshotting operations to create, list and delete snapshots in Kubernetes REST API.
+* Goal 3: Add CSI volume snapshot support
 
-* Goal 3: Implement snapshotting interface for Amazon EBS.
+* Goal 4: Offer application-consistent snapshot by providing pre/post snapshot hooks to freeze/unfreeze applications and/or unmount/mount file system.
 
-* Goal 4: Implement snapshotting interface for GCE PDs.
+* Goal 5: Provide a convenient way of creating new and restoring existing volumes from snapshots.
 
-* Goal 5: Implement snapshotting interface for OpenStack Cinder.
+* Goal 6: Provide higher-level management of backing up and restoring a pod and statefulSet.
 
 ### Feature Roadmap
 
@@ -47,13 +49,13 @@ The features that are not planned for the first version of the API but should be
 
 * Creating snapshots
 
+    * Support application-consistent snapshots (provide pre/post snapshot hooks)
+
     * Scheduled and periodic snapshots
+    
+    * coordinate distributed snapshots across multiple volumes
 
-    * Application initiated on-demand snapshot creation
-
-    * Support snapshot per Pod or StatefulSet
-
-    * Support application-consistent snapshots (coordinate distributed snapshots across multiple volumes)
+    * Support snapshot per pod or StatefulSet
 
     * Enable to create a pod/statefulsets with snapshots
 
@@ -66,6 +68,10 @@ The features that are not planned for the first version of the API but should be
 * Delete snapshots
 
     * Enable to automatic garbage collect older snapshots when storage is limited
+
+* In-place restore
+    
+    * Enable to restore snapshot to a volume that is represented by an existing PVC (PersistentVolumeClaim)
 
 * Quota management
 
@@ -93,12 +99,12 @@ The features that are not planned for the first version of the API but should be
 
         * Stopping application writes cannot be done from the master and varies by application, so doing so will introduce unnecessary complexity and permission issues in the code.
 
-        * Most file systems and server applications are (and should be) able to restore inconsistent snapshots the same way as a disk that underwent an unclean shutdown.
+        * Some file systems and server applications are (and should be) able to restore inconsistent snapshots the same way as a disk that underwent an unclean shutdown.
 
     * The data consistency would be best-effort only: e.g., call fsfreeze prior to the snapshot on filesystems that support it.
 
     * There are several proposed solutions that would enable the users to specify the action to perform prior to/after the
-    snapshots: e.g. use pod annotations. Using pod annotations will be part of this proposal.
+    snapshots: e.g. use pod annotations. This will be addressed in a different design proposal.
 
 * Snapshot failure
 
@@ -112,34 +118,24 @@ The features that are not planned for the first version of the API but should be
 
 ## Solution Overview
 
-There are a few uniqueness related to snapshots:
-
-* Both users and admins might create snapshots. Users should only get access to the snapshots belonging to their namespaces. For this aspect, snapshot objects should be in user namespace. Admins might want to choose to expose the snapshots they created to some users who have access to those volumes.
-
-* After snapshots are taken, users might use them to create new volumes or restore the existing volumes back to the time when the snapshot is taken.
-
-* There are use cases that data from snapshots taken from one namespace need to be accessible by users in another namespace.
-
-* For security purpose, if a snapshot object is created by a user, kubernetes should prevent other users duplicating this object in a different namespace if they happen to get the snapshot name.
-
-* There might be some existing snapshots taken by admins/users and they want to use those snapshots through kubernetes API interface.
+The following lists the basic volume snapshot functions that will be supported. 
 
 * **Create:**
 
     1. The user creates a `VolumeSnapshot` referencing a persistent volume claim bound to a persistent volume.
 
-    2. Through pre-snapshot annotation, application can be quiesced.
+    2. Through pre-snapshot hook, application can be quiesced and file system can be freezed and unmounted. (This will be supported in the next version)
 
     3. The controller fulfils the `VolumeSnapshot` by creating a snapshot using the volume plugins.
 
-    4. Through post-snapshot annotation, application can be resumed.
-
+    4. Through post-snapshot hook, application can be resumed and file system will be unfreezed and mounted. (This will be supported in the next version)
+    
     5. A new object `VolumeSnapshotData` is created to represent the actual snapshot binding the `VolumeSnapshot` with
        the on-disk snapshot.
 
 * **List:**
 
-    1. The user is able to list all the `VolumeSnapshot` objects in the namespace
+    1. The user is able to list all the `VolumeSnapshot` objects in the namespace.
 
 * **Delete:**
 
@@ -162,19 +158,21 @@ There are a few uniqueness related to snapshots:
     3. The PVC is bound to the newly created PV containing the data from the snapshot.
 
 
-### API
+There are a few uniqueness related to snapshots:
 
-* Add `SnapshotParameters` to the `StorageClass` object
+* Both users and admins might create snapshots. Users should only get access to the snapshots belonging to their namespaces. For this aspect, snapshot objects should be in user namespace. Admins might want to choose to expose the snapshots they created to some users who have access to those volumes.
 
-type StorageClass struct {
-        // SnapshotParameters holds parameters for creating a snapshot.
-        // These values are opaque to the system and are passed directly
-        // to the provisioner.  The only validation done on keys is that they are
-        // not empty.  The maximum number of parameters is
-        // 512, with a cumulative max size of 256K
-        // +optional
-        SnapshotParameters map[string]string
-}
+* After snapshots are taken, users might use them to create new volumes or restore the existing volumes back to the time when the snapshot is taken.
+
+* There are use cases that data from snapshots taken from one namespace need to be accessible by users in another namespace.
+
+* For security purpose, if a snapshot object is created by a user, kubernetes should prevent other users duplicating this object in a different namespace if they happen to get the snapshot name.
+
+* There might be some existing snapshots taken by admins/users and they want to use those snapshots through kubernetes API interface.
+
+
+
+## API Design
 
 * The `VolumeSnapshot` object
 
@@ -215,6 +213,7 @@ type VolumeSnapshotSpec struct {
         // StorageClass can be the same as or different from the one used in
         // the source persistent volume claim. If not specified, the StorageClass
         // in the persistent volume claim will be used for creating the snapshot.
+	// If persistent volume claim does not have a StorageClass, this field is required.
         // +optional
         StorageClassName string `json:"storageClassName" protobuf:"bytes,3,opt,name=storageClassName"`
 }
@@ -369,20 +368,6 @@ type VolumeSnapshotDataSource struct {
 }
 ```
 
-* Add `PreSnapshotAnnotation` and `PostSnapshotAnnotation` in `Pod` API
-
-```
-const (
-        // PreSnapshotAnnotation defines annotation used before taking a volume snapshot.
-        // It can be an exec command to freeze the application.
-        PreSnapshotAnnotation = “snapshot.alpha.kubernetes.io/pre-snapshot-command”
-
-        // PostSnapshotAnnotation defines annotation used after taking a volume snapshot.
-        // It can be an exec command to thaw the application.
-        PostSnapshotAnnotation = “snapshot.alpha.kubernetes.io/post-snapshot-command”
-)
-```
-
 An example of the `VolumeSnapshotDataSource` for Amazon EBS snapshots:
 
 ```
@@ -416,15 +401,31 @@ type CSIVolumeSnapshotSource struct {
 }
 ```
 
-### Snapshot controller
+
+* Add `SnapshotParameters` to the `StorageClass` object
+
+```
+type StorageClass struct {
+        // SnapshotParameters holds parameters for creating a snapshot.
+        // These values are opaque to the system and are passed directly
+        // to the provisioner.  The only validation done on keys is that they are
+        // not empty.  The maximum number of parameters is
+        // 512, with a cumulative max size of 256K
+        // +optional
+        SnapshotParameters map[string]string
+}
+```
+
+## Snapshot Controller Design
 
 The in-tree snapshot controller will be watching the add/delete `VolumeSnapshot` events. If an add `VolumeSnapshot` event is received, it compares the `Provisioner` specified in the `StorageClass` in the `VolumeSnapshot` object with the one specified in the `PersistentVolumeClaim` object. If they are different, abort the operation.
 
 It also checks if the PersistentVolumeSource in the PersistentVolumeSpec contains CSI.  If so, the creating/deleting snapshot operation will be handled by the out-of-tree snapshot controller `external-snapshotter`; otherwise it will be handled by the in-tree snapshot controller.
 
+The in-tree snapshot controller binds the `VolumeSnapshot` and `VolumeSnapshotData` API objects after the snapshot is created successfully.
+
 `External-snapshotter` follows [controller](https://github.com/kubernetes/community/blob/master/contributors/devel/controllers.md) pattern and uses informers to watch for `VolumeSnapshot` create/update/delete events. It filters out `VolumeSnapshot` instances with `Snapshotter==<CSI driver name>` and processes these events in workqueues with exponential backoff. The `external-snapshotter` creates `CreateSnapshotRequest` and calls `CreateSnapshot` through the CSI `ControllerClient`. It gets `CreateSnapshotResponse` from the CSI plugin and creates a `VolumeSnapshotData` API object with `VolumeSnapshotDataSource`.
 
-The in-tree snapshot controller binds the `VolumeSnapshot` and `VolumeSnapshotData` API objects after the snapshot is created successfully.
 
 ### Create Snapshot Logic
 
@@ -442,8 +443,7 @@ To create a snapshot:
 
     * Once a snapshot is created successfully:
 
-        * Make a call to the API server to add the new snapshot ID/timestamp to the `VolumeSnapshotData` API object, update its
-        status.
+        * Make a call to the API server to add the new snapshot ID/timestamp to the `VolumeSnapshotData` API object, update its status.
 
 ### Snapshot to PV promotion logic
 
