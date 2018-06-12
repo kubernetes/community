@@ -6,7 +6,7 @@ response from an API call.
 - As an administrator of Kubernetes cluster, if I know characteristics of my
 external dependencies of apiserver (e.g custom admission plugins, webhooks and
 initializers) I want to be able to provide guarantees for API calls latency to
-users of my cluster
+users of my cluster.
 
 ### Other notes
 - We obviously can’t give any guarantee in general, because cluster
@@ -44,4 +44,4 @@ comparable with `namespaced` ones.
 
 ### Test scenario
 
-__TODO: Descibe test scenario.__
+__TODO: Describe test scenario.__
