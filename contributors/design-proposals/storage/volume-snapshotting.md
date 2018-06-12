@@ -1,19 +1,13 @@
-Kubernetes Snapshotting Proposal
+Kubernetes Volume Snapshot Proposal
 ================================
 
-**Authors:** [Cindy Wang](https://github.com/ciwang), [Jing Xu](https://github.com/jinxu97),[Tomas Smetana](https://github.com/tsmetana), [Huamin Chen ](https://github.com/rootfs), [Xing Yang](https://github.com/xing-yang)
+**Authors:** [Jing Xu](https://github.com/jingxu97),[Tomas Smetana](https://github.com/tsmetana), [Huamin Chen ](https://github.com/rootfs), [Xing Yang](https://github.com/xing-yang), [Cindy Wang](https://github.com/ciwang), 
 
 ## Background
 
-Many storage systems (GCE PD, Amazon EBS, etc.) provide the ability to create "snapshots" of persistent volumes to protect against data loss. Snapshots can be used in place of a traditional backup system to back up and restore primary and critical data. Snapshots allow for quick data backup (for example, it takes a fraction of a second to create a GCE PD snapshot) and offer fast recovery time objectives (RTOs) and recovery point objectives (RPOs).
+Many storage systems (GCE PD, Amazon EBS, etc.) provide the ability to create "snapshots" of persistent volumes to protect against data loss. Snapshots can be used in place of a traditional backup system to back up and restore primary and critical data. Snapshots allow for quick data backup (for example, it takes a fraction of a second to create a GCE PD snapshot) and offer fast recovery time objectives (RTOs) and recovery point objectives (RPOs). Snapshots can also be used for data replication, distribution and migration. 
 
-Typical existing backup solutions offer on demand or scheduled snapshots.
-
-An application developer using a storage may want to create a snapshot before an update or other major event. Kubernetes does not currently offer a standardized snapshot API for creating, listing, deleting, and restoring snapshots on an arbitrary volume.
-
-Existing solutions for scheduled snapshotting include [cron jobs](https://forums.aws.amazon.com/message.jspa?messageID=570265) and [external storage drivers](http://rancher.com/introducing-convoy-a-docker-volume-driver-for-backup-and-recovery-of-persistent-data/). Some cloud storage volumes can be configured to take automatic snapshots, but this is specified on the volumes themselves.
-
-As the initial effort to support snapshot in Kubernetes, an external controller and provisioner (i.e. two separate binaries) have been added (https://github.com/kubernetes-incubator/external-storage/tree/master/snapshot).
+As the initial effort to support snapshot in Kubernetes,  volume snapshotting has been released as a prototype in Kubernetes 1.8. An external controller and provisioner (i.e. two separate binaries) have been added in the external storage repo. (https://github.com/kubernetes-incubator/external-storage/tree/master/snapshot). The prototype currently supports GCE PD, AWS EBS, OpenStack Cinder and Kubernetes hostPath volumes. Volume snapshtos APIs are using [CRD](https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions/)
 
 To continue that effort, this design is proposed to move the Kubernetes snapshot support in-tree by providing snapshot API and snapshot controller in-tree. The snapshot feature will support both in-tree and out-of-tree CSI volume drivers. To be consistent with the existing CSI volume driver support documented [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/container-storage-interface.md), a sidecar "Kubernetes to CSI" proxy container called "external-snapshotter" will be provided to watch the Kubernetes API on behalf of the external CSI volume driver and trigger the appropriate operations (i.e., create snapshot and delete snapshot) against the "CSI volume driver" container. The CSI snapshot spec is proposed [here](https://github.com/container-storage-interface/spec/pull/224).
 
