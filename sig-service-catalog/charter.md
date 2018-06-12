@@ -43,8 +43,7 @@ The following, non-exhaustive, items are out of scope:
   - All decisions amongst chairs are made using lazy consensus with a fallback to a 2/3 majority vote (lazy two-thirds resolution).
     This process is used for all decisions, such as changing chairs/maintainers or modifying this charter.
   - Chairs may nominate a new chair at any time, to be accepted via lazy two-thirds resolution amongst the chairs.
-  - Chairs may decide to step down at any time. Before stepping down, the chair
-    may propose and vote on their replacement via lazy two-thirds resolution amongst the chairs.
+  - Chairs may decide to step down at any time.
   - Chairs must remain active in the role and may be removed from the position
     via lazy two-thirds resolution amongst the chairs, if they are unresponsive
     for > 3 months or are not proactively working with other chairs to fulfill responsibilities.
