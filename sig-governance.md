@@ -37,7 +37,7 @@ In order to standardize Special Interest Group efforts, create maximum transpare
    5. Share individual events with `cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com` to publish on the universal calendar.
 * Use existing proposal and PR process (to be documented)
 * Announce new SIG on kubernetes-dev@googlegroups.com 
-* Leads should [subcribe to the kubernetes-sig-leads mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-leads)
+* Leads should [subscribe to the kubernetes-sig-leads mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-leads)
 * Submit a PR to add a row for the SIG to the table in the kubernetes/community README.md file, to create a kubernetes/community directory, and to add any SIG-related docs, schedules, roadmaps, etc. to your new kubernetes/community/SIG-foo directory.
 
 ### **Creating service accounts for the SIG**

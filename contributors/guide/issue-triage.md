@@ -33,7 +33,7 @@ for other github repositories related to Kubernetes is TBD.
 Most people can leave comments and open issues. They don't have the ability to
 set labels, change milestones and close other peoples issues. For that we use
 a bot to manage labelling and triaging. The bot has a set of
-[commands and permissions](https://git.k8s.io/test-infra/commands.md)
+[commands and permissions](https://go.k8s.io/bot-commands)
 and this document will cover the basic ones.
 
 ## Determine if it's a support request

@@ -1,10 +1,10 @@
 ## Kubernetes Repositories
 
 
-This document attempts to outline a structure for creating and associating github repositories with the Kubernetes project.
+This document attempts to outline a structure for creating and associating github repositories with the Kubernetes project. It also describes how and when
+repositories are removed.
 
 The document presents a tiered system of repositories with increasingly strict requirements in an attempt to provide the right level of oversight and flexibility for a variety of different projects.
-
 
 ### Associated Repositories
 
@@ -72,6 +72,45 @@ Create a broader base of repositories than the existing gh/kubernetes/kubernetes
    * Must adopt all Kubernetes automation (e.g. /lgtm, etc)
    * All OWNERS must be members of standing as defined by ability to vote in Kubernetes steering committee elections. in the Kubernetes community
    * Repository must be approved by SIG-Architecture
+
+### Removing Repositories
+
+As important as it is to add new repositories, it is equally important to
+prune old repositories that are no longer relevant or useful.
+
+It is in the best interests of everyone involved in the Kubernetes community
+that our various projects and repositories are active and healthy. This
+ensures that repositories are kept up to date with the latest Kubernetes
+wide processes, it ensures a rapid response to potential required fixes
+(e.g. critical security problems) and (most importantly) it ensures that
+contributors and users receive quick feedback on their issues and 
+contributions.
+
+#### Grounds for removal
+SIG repositories and core repositories may be removed from the project if they
+are deemed _inactive_. Inactive repositories are those that meet any of the
+following criteria:
+
+   * There are no longer any active maintainers for the project and no 
+replacements can be found.
+   * All PRs or Issues have gone un-addressed for longer than six months.
+   * There have been no new commits or other changes in more than a year.
+
+Associated repositories are much more loosely associated with the Kubernetes
+project and are generally not subject to removal, except under exceptional
+circumstances (e.g. a code of conduct violation).
+
+
+#### Procedure for removal
+When a repository is set for removal, it is moved into the 
+[kubernetes-retired](https://github.com/kubernetes-retired) organization. 
+This maintains the
+complete record of issues, PRs and other contributions, but makes it clear
+that the repository should be considered archival, not active. We will also
+use the [github archive feature](https://help.github.com/articles/archiving-a-github-repository/) to mark the repository as archival and read-only.
+
+The decision to archive a repository will be made by SIG architecture and
+announced on the Kubernetes dev mailing list and community meeting.
 
 ### FAQ
 
