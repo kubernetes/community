@@ -1251,8 +1251,8 @@ sigs:
     - name: cloud-provider-openstack
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
-  - name: Product Management
-    dir: sig-product-management
+  - name: PM
+    dir: sig-pm
     mission_statement: >
       Focuses on aspects of product management, such as the qualification and
       successful management of user requests, and aspects of project and
@@ -1272,7 +1272,7 @@ sigs:
       source project is very new and largely unscoped for a project as large
       as Kubernetes; we are learning too and we are excited to learn how we
       can best serve the community of users and contributors.
-    label: none
+    label: pm
     leadership:
       chairs:
       - name: Aparna Sinha
@@ -1287,7 +1287,7 @@ sigs:
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
-      time: "16:00"
+      time: "18:30"
       tz: "UTC"
       frequency: biweekly
       url: https://zoom.us/j/845373595
