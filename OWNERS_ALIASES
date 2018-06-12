@@ -117,9 +117,6 @@ aliases:
     - garethr
   wg-apply-leads:
     - lavalamp
-  wg-cloud-provider-leads:
-    - wlan0
-    - jagosan
   wg-cluster-api-leads:
     - kris-nova
     - roberthbailey
