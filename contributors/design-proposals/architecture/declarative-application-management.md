@@ -171,6 +171,7 @@ A non-exhaustive list of tools built by the Kubernetes community (see [spreadshe
 * [envsubst](https://github.com/fabric8io/envsubst)
 * [Jinja](https://github.com/tensorflow/ecosystem/tree/master/kubernetes)
 * [spiff](https://github.com/cloudfoundry-incubator/spiff)
+* [Puccini](https://github.com/tliron/puccini)
 
 Additionally, a number of continuous deployment systems use their own formats and/or schemas.
 
