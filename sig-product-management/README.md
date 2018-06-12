@@ -30,11 +30,11 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/kubernetes-pm)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-pm)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnone)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fpm)
 
 ## Subprojects
 
-The following subprojects are owned by sig-none:
+The following subprojects are owned by sig-pm:
 - **features**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/features/master/OWNERS

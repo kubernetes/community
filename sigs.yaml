@@ -1272,7 +1272,7 @@ sigs:
       source project is very new and largely unscoped for a project as large
       as Kubernetes; we are learning too and we are excited to learn how we
       can best serve the community of users and contributors.
-    label: none
+    label: pm
     leadership:
       chairs:
       - name: Aparna Sinha
