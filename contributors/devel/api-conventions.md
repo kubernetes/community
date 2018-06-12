@@ -755,6 +755,9 @@ must be specified as part of the value (e.g., `resource.Quantity`). Which
 approach is preferred is TBD, though currently we use the `fooSeconds`
 convention for durations.
 
+Duration fields must be represented as integer fields with units being
+part of the field name (e.g. `leaseDurationSeconds`). We don't use Duration
+in the API since that would require clients to implement go-compatible parsing.
 
 ## Selecting Fields
 
