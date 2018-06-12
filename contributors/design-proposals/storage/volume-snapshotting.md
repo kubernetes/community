@@ -1,7 +1,7 @@
 Kubernetes Volume Snapshot Proposal
 ================================
 
-**Authors:** [Jing Xu](https://github.com/jingxu97),[Tomas Smetana](https://github.com/tsmetana), [Huamin Chen ](https://github.com/rootfs), [Xing Yang](https://github.com/xing-yang), [Cindy Wang](https://github.com/ciwang), 
+**Authors:** [Jing Xu](https://github.com/jingxu97), [Xing Yang](https://github.com/xing-yang), [Tomas Smetana](https://github.com/tsmetana), [Huamin Chen ](https://github.com/rootfs), [Cindy Wang](https://github.com/ciwang), 
 
 ## Background
 
