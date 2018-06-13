@@ -1904,30 +1904,6 @@ workinggroups:
     contact:
       slack: wg-apply
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-apply
-  - name: Cloud Provider
-    dir: wg-cloud-provider
-    label: cloud-provider
-    mission_statement: >
-      Charter can be found [here](https://docs.google.com/document/d/1m4Kvnh_u_9cENEE9n1ifYowQEFSgiHnbw43urGJMB64/edit#)
-    leadership:
-      chairs:
-      - name: Sidhartha Mani
-        github: wlan0
-        company: Caascade Labs
-      - name: Jago Macleod
-        github: jagosan
-        company: Google
-    meetings:
-    - description: Regular WG Meeting
-      day: Wednesday
-      time: "10:00"
-      tz: "PT (Pacific Time)"
-      frequency: weekly
-      url: https://zoom.us/my/cloudprovider
-      archive_url: https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp
-    contact:
-      slack: wg-cloud-provider
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-cloud-provider
   - name: Multitenancy
     dir: wg-multitenancy
     mission_statement: >
