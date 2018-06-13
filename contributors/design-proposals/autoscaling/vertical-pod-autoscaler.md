@@ -81,8 +81,7 @@ on historical utilization. It is designed to only kick in on Pod creation.
 VPA is intended to supersede this feature.
 
 #### In-place updates ####
-In-place Pod updates ([#5774]
-(https://github.com/kubernetes/kubernetes/issues/5774)) is a planned feature to
+In-place Pod updates ([#5774](https://github.com/kubernetes/kubernetes/issues/5774)) is a planned feature to
 allow changing resources (request/limit) of existing containers without killing them, assuming sufficient free resources available on the node.
 Vertical Pod Autoscaler will greatly benefit from this ability, however it is
 not considered a blocker for the MVP.
