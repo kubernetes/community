@@ -55,4 +55,4 @@ contributors/guide/README.md#find-something-to-work-on
 contributors/guide/README.md#open-a-pull-request
 [Community Membership]:/community-membership.md
 
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/CONTRIBUTING.md?pixel)]()
+![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/CONTRIBUTING.md?pixel)
