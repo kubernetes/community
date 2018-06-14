@@ -23,6 +23,10 @@ A Working Group dedicated to discussing, designing and documenting using Kuberne
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge)
 
 <!-- BEGIN CUSTOM CONTENT -->
+This working group is a cross-SIG effort currently sponsored by _sig-networking_ and _sig-multicluster_ with
+a focus on improving Kubernetes IoT and Edge deployments. Community members are encouraged to share their ideas in this working group to reach broad consensus across the SIGs. Once consensus is reached, the enhancements
+are then managed by the appropriate SIGs based on impacted areas of code.
+
 ## Goals
 
 * Provide reference architectures for various IoT/Edge environments.
@@ -31,5 +35,7 @@ A Working Group dedicated to discussing, designing and documenting using Kuberne
 * Evaluate and possibly extend k8s federation and network infrastructure to better suite IoT/Edge use cases over bandwidth constrained and unreliable WAN interconnects.
 * Evaluate and possibly improve connectivity and data ingestion options to better support various field protocols.
 * Evaluate and extend existing CLI tools to manage k8s clusters running in remote edge locations.
+
+It is an open and active working group, and we always welcome new additions!
 
 <!-- END CUSTOM CONTENT -->
