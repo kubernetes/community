@@ -103,7 +103,8 @@ type LeadershipGroup struct {
 type Group struct {
 	Name             string
 	Dir              string
-	MissionStatement string `yaml:"mission_statement"`
+	MissionStatement string `yaml:"mission_statement,omitempty"`
+	CharterLink      string `yaml:"charter_link,omitempty"`
 	Label            string
 	Leadership       LeadershipGroup `yaml:"leadership"`
 	Meetings         []Meeting

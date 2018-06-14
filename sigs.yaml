@@ -6,6 +6,7 @@ sigs:
       API CRUD semantics, admission control, encoding/decoding, conversion,
       defaulting, persistence layer (etcd), OpenAPI, CustomResourceDefinition,
       garbage collection, and client libraries.
+    charter_link:
     label: api-machinery
     leadership:
       chairs:
@@ -116,6 +117,7 @@ sigs:
       We discuss how to define and run apps in Kubernetes, demo relevant tools
       and projects, and discuss areas of friction that can lead to suggesting
       improvements or feature requests.
+    charter_link:
     label: apps
     leadership:
       chairs:
@@ -229,6 +231,7 @@ sigs:
     mission_statement: >
       The Architecture SIG maintains and evolves the design principles of Kubernetes, and provides a consistent
       body of expertise necessary to ensure architectural consistency over time.
+    charter_link:
     label: architecture
     leadership:
       chairs:
@@ -280,6 +283,7 @@ sigs:
     mission_statement: >
       Covers improvements to Kubernetes authorization, authentication, and
       cluster security policy.
+    charter_link:
     label: auth
     leadership:
       chairs:
@@ -332,6 +336,7 @@ sigs:
       Covers autoscaling of clusters, horizontal and vertical autoscaling of pods,
       setting initial resources for pods, topics related to monitoring pods and
       gathering their metrics (e.g.: Heapster)
+    charter_link:
     label: autoscaling
     leadership:
       chairs:
@@ -378,6 +383,7 @@ sigs:
     dir: sig-aws
     mission_statement: >
       Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
+    charter_link:
     label: aws
     leadership:
       chairs:
@@ -412,6 +418,7 @@ sigs:
     mission_statement: >
       A Special Interest Group for building, deploying, maintaining, supporting,
       and using Kubernetes on Azure.
+    charter_link:
     label: azure
     leadership:
       chairs:
@@ -465,6 +472,7 @@ sigs:
       Covers deploying and operating big data applications (Spark, Kafka,
       Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integrations with
       big data applications and architecting the best ways to run them on Kubernetes.
+    charter_link:
     label: big-data
     leadership:
       chairs:
@@ -512,6 +520,7 @@ sigs:
       establishment of conventions for writing CLI commands, POSIX compliance,
       and improving the command line tools from a developer and devops user
       experience and usability perspective.
+    charter_link:
     label: cli
     leadership:
       chairs:
@@ -573,6 +582,7 @@ sigs:
       (public and private) cloud providers. It will be responsible for establishing
       standards and requirements that must be met by all providers to ensure optimal
       integration with Kubernetes.
+    charter_link:
     label: cloud-provider
     leadership:
       chairs:
@@ -637,6 +647,7 @@ sigs:
     mission_statement: >
       The Cluster Lifecycle SIG examines how we should change Kubernetes to make it
       easier to manage and operate with a focus on cluster deployment and upgrades.
+    charter_link:
     label: cluster-lifecycle
     leadership:
       chairs:
@@ -738,6 +749,7 @@ sigs:
       focus on shared operations practices for Kubernetes clusters with a goal
       to make Kubernetes broadly accessible with a common baseline reference.
       We also organize operators as a sounding board and advocacy group.
+    charter_link:
     label: cluster-ops
     leadership:
       chairs:
@@ -767,6 +779,7 @@ sigs:
       contributors are happy and productive, we need to break the commit-rate
       ceiling we hit in July 2015, and we need to get the monotonically growing
       PR merge latency and numbers of open PRs and issues under control.
+    charter_link:
     label: contributor-experience
     leadership:
       chairs:
@@ -834,6 +847,7 @@ sigs:
     dir: sig-docs
     mission_statement: >
       Covers documentation, doc processes, and doc publishing for Kubernetes.
+    charter_link:
     label: docs
     leadership:
       chairs:
@@ -881,6 +895,7 @@ sigs:
     mission_statement: >
       A Special Interest Group for building, deploying, maintaining,
       supporting, and using Kubernetes on the Google Cloud Platform.
+    charter_link:
     label: gcp
     leadership:
       chairs:
@@ -922,6 +937,7 @@ sigs:
     mission_statement: >
       A Special Interest Group (SIG) for building, deploying, maintaining, supporting,
       and using Kubernetes on IBM Public and Private Clouds.
+    charter_link:
     label: ibmcloud
     leadership:
       chairs:
@@ -954,6 +970,7 @@ sigs:
       Covers best practices for cluster observability through metrics, logging, and events across all
       Kubernetes components and development of relevant components such as Heapster and kube-state-metrics.
       Coordinates metric requirements of different SIGs for other components through finding common APIs.
+    charter_link:
     label: instrumentation
     leadership:
       chairs:
@@ -1014,6 +1031,7 @@ sigs:
       systems like Spinnaker and others.  Standalone building blocks for these and other
       similar systems (for example a cluster registry), and proposed changes to kubernetes
       core where appropriate will also be in scope.
+    charter_link:
     label: multicluster
     leadership:
       chairs:
@@ -1075,6 +1093,7 @@ sigs:
     dir: sig-network
     mission_statement: >
       Covers networking in Kubernetes.
+    charter_link:
     label: network
     leadership:
       chairs:
@@ -1140,6 +1159,7 @@ sigs:
   - name: Node
     dir: sig-node
     mission_statement: >
+    charter_link:
     label: node
     leadership:
       chairs:
@@ -1208,6 +1228,7 @@ sigs:
       projects with OpenStack as: a deployment platform for Kubernetes; a
       service provider for Kubernetes; a collection of applications to run on
       Kubernetes.
+    charter_link:
     label: openstack
     leadership:
       chairs:
@@ -1272,6 +1293,7 @@ sigs:
       source project is very new and largely unscoped for a project as large
       as Kubernetes; we are learning too and we are excited to learn how we
       can best serve the community of users and contributors.
+    charter_link:
     label: pm
     leadership:
       chairs:
@@ -1302,6 +1324,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/features/master/OWNERS
   - name: Release
     dir: sig-release
+    charter_link:
     label: release
     leadership:
       chairs:
@@ -1366,6 +1389,7 @@ sigs:
 
       For more details about our objectives please review our
       [Scaling And Performance Goals](https://git.k8s.io/community/sig-scalability/goals.md)
+    charter_link:
     label: scalability
     leadership:
       chairs:
@@ -1413,6 +1437,7 @@ sigs:
   - name: Scheduling
     dir: sig-scheduling
     mission_statement: >
+    charter_link:
     label: scheduling
     leadership:
       chairs:
@@ -1477,6 +1502,7 @@ sigs:
     mission_statement: >
       To develop a Kubernetes API for the CNCF service broker and Kubernetes
       broker implementation.
+    charter_link:
     label: service-catalog
     leadership:
       chairs:
@@ -1527,6 +1553,7 @@ sigs:
     dir: sig-storage
     mission_statement: >
       Covers storage and volume plugins.
+    charter_link:
     label: storage
     leadership:
       chairs:
@@ -1583,6 +1610,7 @@ sigs:
       interested specifically in making it easier for the community to run
       tests and contribute test results, to ensure Kubernetes is stable across
       a variety of cluster configurations and cloud providers.
+    charter_link:
     label: testing
     leadership:
       chairs:
@@ -1651,6 +1679,7 @@ sigs:
       Dashboard: a general purpose, web-based UI for Kubernetes clusters. It
       allows users to manage applications running in the cluster and
       troubleshoot them, as well as manage the cluster itself.
+    charter_link:
     label: ui
     leadership:
       chairs:
@@ -1681,6 +1710,7 @@ sigs:
     mission_statement: >
       Bring together members of the VMware and Kubernetes community to maintain,
       support and run Kubernetes on VMware platforms.
+    charter_link:
     label: vmware
     leadership:
       chairs:
@@ -1735,6 +1765,7 @@ sigs:
     dir: sig-windows
     mission_statement: >
       Focuses on supporting Windows Server Containers for Kubernetes.
+    charter_link:
     label: windows
     leadership:
       chairs:
@@ -1768,6 +1799,7 @@ workinggroups:
     dir: wg-resource-management
     mission_statement: >
       Designing and shepherding cross-cutting features around compute resource isolation and utilization.
+    charter_link:
     leadership:
       chairs:
       - name: Vishnu Kannan
@@ -1792,6 +1824,7 @@ workinggroups:
     dir: wg-container-identity
     mission_statement: >
       Ensure containers are able to interact with external systems and acquire secure identities for communication, integrating with external solutions as necessary.
+    charter_link:
     leadership:
       chairs:
       - name: Clayton Coleman
@@ -1817,6 +1850,7 @@ workinggroups:
     mission_statement: >
       Boost adoption of the kubeadm tool. kubeadm is a tool for creating new Kubernetes clusters easily for new users, but can also be used as a toolbox for higher-level deployment
       solutions. This working group makes sure kubeadm meets the extensibility requirements of those higher-level Kubernetes installers.
+    charter_link:
     leadership:
       chairs:
       - name: Lucas Käldström
@@ -1840,6 +1874,7 @@ workinggroups:
     dir: wg-cluster-api
     mission_statement: >
       Define a portable API that represents a Kubernetes cluster. The API will contain the control plane and its configuration and the underlying infrastructure (nodes, node pools, etc).
+    charter_link:
     leadership:
       chairs:
       - name: Kris Nova
@@ -1863,6 +1898,7 @@ workinggroups:
       and common principles.
 
       Charter can be found [here](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#)
+    charter_link:
     leadership:
       chairs:
       - name: Antoine Legrand
@@ -1894,6 +1930,7 @@ workinggroups:
       features included in the scope of this working-group: diff, dry-run and prune.
 
       Resources can be found in [this Google drive folder](https://drive.google.com/drive/folders/1wlpgkS2gFZXdp4x2WlRsfUBxkFlt2Gx0)
+    charter_link:
     leadership:
       chairs:
       # TBD: We probably need more people here?
@@ -1914,6 +1951,7 @@ workinggroups:
     dir: wg-multitenancy
     mission_statement: >
       Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
+    charter_link:
     leadership:
       chairs:
       - name: David Oppenheimer
@@ -1937,6 +1975,7 @@ workinggroups:
     dir: wg-policy
     mission_statement: >
       Provide an overall architecture that describes both the current policy related implementations as well as future policy related proposals in Kubernetes. Through a collaborative method, we want to present both dev and end user a universal view of policy architecture in Kubernetes.
+    charter_link:
     leadership:
       chairs:
       - name: Howard Huang
@@ -1969,6 +2008,7 @@ workinggroups:
     dir: wg-machine-learning
     mission_statement: >
       Identify and fix gaps in Kubernetes to better support Machine Learning applications
+    charter_link:
     leadership:
       chairs:
       - name: Vishnu Kannan
