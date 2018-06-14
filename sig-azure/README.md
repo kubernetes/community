@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 A Special Interest Group for building, deploying, maintaining, supporting, and using Kubernetes on Azure.
 
+The [charter](charter.md) defines the scope and governance of the Azure Special Interest Group.
+
 ## Meetings
 * Regular SIG Meeting: [Wednesdays at 16:00 UTC](https://zoom.us/j/2015551212) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).

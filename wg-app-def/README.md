@@ -9,7 +9,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 # App Def Working Group
 
 Improve UX of declarative primitives in the API and/or primary client libraries and tools, understand the needs of other parts of the ecosystem on this layer, and improve the interoperability of application management tools through better separation of concerns, common conventions, and common principles.
-Charter can be found [here](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#)
+
+The [charter](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#) defines the scope and governance of the App Def Working Group.
 
 ## Meetings
 * Regular WG Meeting: [Wednesdays at 16:00 UTC](https://zoom.us/j/748123863) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
