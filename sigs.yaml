@@ -1423,11 +1423,17 @@ sigs:
         github: k82cn
         company: IBM
     meetings:
-    - description: Regular SIG Meeting
+    - description: 10AM PT Meeting
       day: Thursday
-      time: "20:00"
+      time: "17:00"
       tz: "UTC"
-      frequency: biweekly
+      frequency: biweekly starting Thursday June 7, 2018
+      url: https://zoom.us/j/7767391691
+    - description: 5PM PT Meeting
+      day: Thursday
+      time: "24:00"
+      tz: "UTC"
+      frequency: biweekly starting Thursday June 14, 2018
       url: https://zoom.us/j/7767391691
       archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
       recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
