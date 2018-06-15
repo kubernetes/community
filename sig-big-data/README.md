@@ -20,8 +20,9 @@ Covers deploying and operating big data applications (Spark, Kafka, Hadoop, Flin
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Anirudh Ramanathan (**[@foxish](https://github.com/foxish)**), Google
+* Anirudh Ramanathan (**[@foxish](https://github.com/foxish)**), Rockset
 * Erik Erlandson (**[@erikerlandson](https://github.com/erikerlandson)**), Red Hat
+* Yinan Li (**[@liyinan926](https://github.com/liyinan926)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-big-data)

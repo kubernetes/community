@@ -52,7 +52,7 @@ Mentees will be asked to take responsibility for their growth and improvement as
   * Discuss their path so far and ask for input/feedback.
   * Code base tour of a certain area
   * Or a mix - it’s up to the mentee with how they’d like to spend the time and your skills/experience.
-* You'll fill out a form once a month to list your availibility.
+* You'll fill out a form once a month to list your availability.
 
 *[Outreachy](https://www.outreachy.org)*
 * Being a mentor can take anywhere from 2-5 hours a week depending on the scope of the project that the intern(s) work on. 

@@ -280,7 +280,7 @@ existing `kubeadm join` flow:
       in `kube-system` namespace.
 
       > This requires to grant access to the above configMap for
-      `system:node-bootstrapper` group (or to provide the same information
+      `system:bootstrappers` group (or to provide the same information
       provided in a file like in 1.).
 
    2. Check if the cluster is ready for joining a new master node:
