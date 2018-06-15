@@ -48,13 +48,15 @@ Thus, we decide to reuse the existing `Scopes` of `ResourceQuotaSpec` to provide
 
 ## Overview
 
-This design doc introduces how to define a group of priority class scopes for the quota to match with and explains how quota enforcement logic is changed to apply the quota to pods with the given priority classes.
+This design doc introduces how to define a priority class scope and scope selectors for the quota to match with and explains how quota enforcement logic is changed to apply the quota to pods with the given priority classes.
 
 ## Detailed Design
 
 ### Changes in ResourceQuota
 
 ResourceQuotaSpec contains an array of filters, `Scopes`, that if mentioned, must match each object tracked by a ResourceQuota.
+
+A new field `scopeSelector` will be introduced.
 ```go
 // ResourceQuotaSpec defines the desired hard limits to enforce for Quota
 type ResourceQuotaSpec struct {
@@ -64,22 +66,56 @@ type ResourceQuotaSpec struct {
         // If not specified, the quota matches all objects.
         // +optional
         Scopes []ResourceQuotaScope
+        // ScopeSelector is also a collection of filters like Scopes that must match each object tracked by a quota
+        // but expressed using ScopeSelectorOperator in combination with possible values.
+        // +optional
+        ScopeSelector *ScopeSelector
 }
+
+// A scope selector represents the AND of the selectors represented
+// by the scoped-resource selector terms.
+type ScopeSelector struct {
+        // A list of scope selector requirements by scope of the resources.
+        // +optional
+        MatchExpressions []ScopedResourceSelectorRequirement
+}
+
+// A scoped-resource selector requirement is a selector that contains values, a scope name, and an operator
+// that relates the scope name and values.
+type ScopedResourceSelectorRequirement struct {
+        // The name of the scope that the selector applies to.
+        ScopeName ResourceQuotaScope
+        // Represents a scope's relationship to a set of values.
+        // Valid operators are In, NotIn, Exists, DoesNotExist.
+        Operator ScopeSelectorOperator
+        // An array of string values. If the operator is In or NotIn,
+        // the values array must be non-empty. If the operator is Exists or DoesNotExist,
+        // the values array must be empty.
+        // This array is replaced during a strategic merge patch.
+        // +optional
+        Values []string
+}
+
+// A scope selector operator is the set of operators that can be used in
+// a scope selector requirement.
+type ScopeSelectorOperator string
+
+const (
+        ScopeSelectorOpIn           ScopeSelectorOperator = "In"
+        ScopeSelectorOpNotIn        ScopeSelectorOperator = "NotIn"
+        ScopeSelectorOpExists       ScopeSelectorOperator = "Exists"
+        ScopeSelectorOpDoesNotExist ScopeSelectorOperator = "DoesNotExist"
+)
 ```
-Four new `ResourceQuotaScope` will be defined for matching pods based on priority class names.
+A new `ResourceQuotaScope` will be defined for matching pods based on priority class names.
+
 ```go
 // A ResourceQuotaScope defines a filter that must match each object tracked by a quota
 type ResourceQuotaScope string
 
 const (
         ...
-        ResourceQuotaScopePriorityClassNameExists ResourceQuotaScope = "PriorityClassNameExists"
-        // Match all pod objects that do not have any priority class mentioned
-        ResourceQuotaScopePriorityClassNameNotExists ResourceQuotaScope = "PriorityClassNameNotExists"
-        // Match all pod objects that have priority class from the set
-        ResourceQuotaScopePriorityClassNameIn ResourceQuotaScope = "PriorityClassNameIn"
-        // Match all pod objects that do not have priority class from the set
-        ResourceQuotaScopePriorityClassNameNotIn ResourceQuotaScope = "PriorityClassNameNotIn"
+        ResourceQuotaScopePriorityClass ResourceQuotaScope = "PriorityClass"
 )
 ```
 
@@ -99,17 +135,15 @@ type Configuration struct {
 // its consumption.
 type LimitedResource struct {
         ...
-
-        // MatchScopes is a collection of filters based on priority classes.
-        // If the object in the intercepted request matches these rules,
-        // quota system will ensure that corresponding quota MUST have
-        // priority based Scopes matching the object in request. 
-        //
-        // If MatchScopes has matched on an object, request for the resource will be denied 
-        // if there is no quota with matching Scopes. In this case, matching priority class based Scopes
-        // will be an additional requirement for any quota to qualified as covering quota.
+        // For each intercepted request, the quota system will figure out if the input object
+        // satisfies a scope which is present in this listing, then
+        // quota system will ensure that there is a covering quota.  In the
+        // absence of a covering quota, the quota system will deny the request.
+        // For example, if an administrator wants to globally enforce that
+        // a quota must exist to create a pod with "cluster-services" priorityclass
+        // the list would include "scopeName=PriorityClass, Operator=In, Value=cluster-services"
         // +optional
-        MatchScopes []string `json:"matchScopes,omitempty"`
+        MatchScopes []v1.ScopedResourceSelectorRequirement `json:"matchScopes,omitempty"`
 }
 ```
 
@@ -146,19 +180,37 @@ plugins:
     limitedResources:
     - resource: pods
       matchScopes:
-      - "ResourceQuotaScopePriorityClassNameIn:cluster-services"
+      - scopeName: PriorityClass
+        operator: In
+        values: ["cluster-services"]
 ```
 
 2. Admin will then create a corresponding resource quota object in `kube-system` namespace:
 
-    `$ kubectl create quota critical --hard=count/pods=10 --scopes=ResourceQuotaScopePriorityClassNameIn:cluster-services -n kube-system`
+```shell
+$ cat ./quota.yml
+- apiVersion: v1
+  kind: ResourceQuota
+  metadata:
+    name: pods-cluster-services
+  spec:
+    hard:
+      pods: "10"
+    scopeSelector:
+      matchExpressions:
+      - operator : In
+        scopeName: PriorityClass
+        values: ["cluster-services"]
+
+$ kubectl create -f ./quota.yml -n kube-system`
+```
 
 In this case, a pod creation will be allowed if:
 1. Pod has no priority class and created in any namespace.
-2. Pod has priority class other than `cluster-service` and created in any namespace.
-3. Pod has priority class `cluster-service` and created in `kube-system` namespace, and passed resource quota check.
+2. Pod has priority class other than `cluster-services` and created in any namespace.
+3. Pod has priority class `cluster-services` and created in `kube-system` namespace, and passed resource quota check.
 
-Pod creation will be rejected if pod has priority class `cluster-service` and created in namespace other than `kube-system`
+Pod creation will be rejected if pod has priority class `cluster-services` and created in namespace other than `kube-system`
 
 
 #### Sample User Story 2
@@ -177,10 +229,26 @@ plugins:
     limitedResources:
     - resource: pods
       matchScopes:
-      - "ResourceQuotaScopePriorityClassNameExists"
+      - operator : Exists
+        scopeName: PriorityClass
 ```
 
 2. Create resource quota to match all pods where there is priority set
 
-    `$ kubectl create quota example --hard=count/pods=10 --scopes=ResourceQuotaScopePriorityClassNameExists`
+```shell
+$ cat ./quota.yml
+- apiVersion: v1
+  kind: ResourceQuota
+  metadata:
+    name: pods-cluster-services
+  spec:
+    hard:
+      pods: "10"
+    scopeSelector:
+      matchExpressions:
+      - operator : In
+        scopeName: PriorityClass
+        values: ["cluster-services"]
 
+$ kubectl create -f ./quota.yml -n kube-system`
+```
