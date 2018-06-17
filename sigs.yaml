@@ -336,7 +336,7 @@ sigs:
     mission_statement: >
       Covers autoscaling of clusters, horizontal and vertical autoscaling of pods,
       setting initial resources for pods, topics related to monitoring pods and
-      gathering their metrics (e.g.: Heapster)
+      gathering their metrics (e.g. Heapster)
     charter_link:
     label: autoscaling
     leadership:
