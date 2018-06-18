@@ -25,10 +25,10 @@ The following, non-exhaustive, items are out of scope:
   - Maintainer is equivalent to the standard Kubernetes definition of Approver.
   - Responsible for approving, and reviewing, pull requests.
   - Responsible for technical planning and stewardship of the project.
-  - New maintainers may be nominated by a chair, to accepted via lazy two-thirds
+  - New maintainers may be nominated by a chair, and accepted via lazy two-thirds
     resolution amongst the chairs.
   - Maintainers may be nominated for removal from their position by a chair,
-    to accepted via lazy two-thirds resolution amongst the chairs.
+    and accepted via lazy two-thirds resolution amongst the chairs.
   - Maintainers may propose changes to this charter at any time, by submitting a
     pull request and then notifying the SIG mailing list, to be accepted via
     lazy two-thirds resolution amongst the chairs.
