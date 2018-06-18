@@ -111,9 +111,38 @@ type VolumeAttachmentSource struct {
 * Using whole `VolumeSource` allows us to re-use `VolumeAttachment` for any other in-line volume in the future. We provide validation that this `VolumeSource` contains only `CSIVolumeSource` to clearly state that only CSI is supported now.
 	* TBD: `CSIVolumeSource` would be enough...
 * External CSI attacher must be extended to  process either `PersistentVolumeName` or `VolumeSource`.
-* Since in-line volume in a pod can refer to a secret in the same namespace as the pod, **external attacher must get permissions to read any Secrets in any namespace**.
+* Since in-line volume in a pod can refer to a secret in the same namespace as the pod, **external attacher may need permissions to read any Secrets in any namespace**.
 * CSI `ControllerUnpublishVolume` call (~ volume detach) requires the Secrets to be available at detach time. Current CSI attacher implementation simply expects that the Secrets are available at detach time. Secrets for PVs are "global", out of user's namespace, so this assumption is probably OK. For in-line volumes, **we can either expect that the Secrets are available too (and volume is not detached if user deletes them) or external attacher must cache them somewhere, probably directly in `VolumeAttachment` object itself.**
 	* None of existing Kubernetes volume plugins needed credentials for `Detach`, however those that needed it for `TearDown` either required the Secret to be present (e.g. ScaleIO and StorageOS) or stored them in a json in `/var/lib/kubelet/plugins/<plugin name>/<volume name>/file.json` (e.g. iSCSI).
 
 ### Kubelet (MountDevice/SetUp/TearDown/UnmountDevice)
 In-tree CSI volume plugin calls in kubelet get universal `volume.Spec`, which contains either `v1.VolumeSource` from Pod (for in-line volumes) or `v1.PersistentVolume`. We need to modify CSI volume plugin to check for presence of `VolumeSource` or `PersistentVolume` and read NodeStage/NodePublish secrets from appropriate source. Kubelet does not need any new permissions, it already can read secrets for pods that it handles. These secrets are needed only for `MountDevice/SetUp` calls and don't need to be cached until `TearDown`/`UnmountDevice`.
+
+
+### Security considerations
+
+* As written above, external attacher may requrie permissions to read Secrets in any namespace. It is up to CSI driver author to document if the driver needs such permission (i.e. access to Secrets at attach/detach time) and up to cluster admin to deploy the driver with these permissions or restrict external attacher to access secrets only in some namespaces.
+* PodSecurityPolicy must be enhanced to limit pods in using in-line CSI volumes. It will be modeled following existing Flex volume policy:
+  ```go
+  type PodSecurityPolicySpec struct {
+	// <snip>
+
+	// AllowedFlexVolumes is a whitelist of allowed Flexvolumes.  Empty or nil indicates that all
+	// Flexvolumes may be used.  This parameter is effective only when the usage of the Flexvolumes
+	// is allowed in the "Volumes" field.
+	// +optional
+	AllowedFlexVolumes []AllowedFlexVolume
+
+	// AllowedCSIVolumes is a whitelist of allowed CSI volumes.  Empty or nil indicates that all
+	// CSI volumes may be used.  This parameter is effective only when the usage of the CSI volumes
+	// is allowed in the "Volumes" field.
+	// +optional
+	AllowedCSIVolumes []AllowedCSIVolume
+  }
+
+  // AllowedCSIVolume represents a single CSI volume that is allowed to be used.
+  type AllowedCSIVolume struct {
+	// Driver is the name of the CSI volume driver.
+	Driver string
+  }
+  ```
