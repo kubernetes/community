@@ -1314,7 +1314,7 @@ sigs:
       tz: "UTC"
       frequency: biweekly
       url: https://zoom.us/j/845373595
-      archive_url: https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing
+      archive_url: https://docs.google.com/document/d/13uHgcLf-hcR4a5QbV888fhnVsF3djBEpN8HolwS0kWM/edit?usp=sharing
       recordings_url: https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ
     contact:
       slack: kubernetes-pm
@@ -1342,7 +1342,7 @@ sigs:
       tz: "UTC"
       frequency: biweekly
       url: https://zoom.us/j/664772523
-      archive_url: https://docs.google.com/document/d/1vhsixdT58iJFfoGZbpmvI_xnK59XyAjtadu3h6hHPpY/edit?usp=sharing
+      archive_url: https://docs.google.com/document/d/1Fu6HxXQu8wl6TwloGUEOXVzZ1rwZ72IAhglnaAMCPqA/edit?usp=sharing
       recordings_url: https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ
     contact:
       slack: sig-release

@@ -15,7 +15,7 @@ It is also important to remember that the role of managing an open source projec
 
 ## Meetings
 * Regular SIG Meeting: [Tuesdays at 18:30 UTC](https://zoom.us/j/845373595) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:30&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/13uHgcLf-hcR4a5QbV888fhnVsF3djBEpN8HolwS0kWM/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ).
 
 ## Leadership
