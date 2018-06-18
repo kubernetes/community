@@ -1,16 +1,21 @@
 # SIG Service Catalog Charter
-Service Catalog is a Kubernetes extension project that implements the [Open Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI).
-It allows application developers the ability to provision and consume cloud services natively from within Kubernetes.
+Service Catalog is a Kubernetes extension project that implements the [Open
+Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI). It allows
+application developers the ability to provision and consume cloud services
+natively from within Kubernetes.
 
-This charter adheres to the conventions described in the [Kubernetes Charter README](https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md).
+This charter adheres to the conventions described in the [Kubernetes Charter
+README](https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md).
 
 ## Scope
 
 ### In scope
 
 This SIG’s main goals are:
-- Support, and adhere to, the Platform requirements of the [OSBAPI specification](https://github.com/openservicebrokerapi/servicebroker/blob/master/spec.md).
-- Provide a UX for Kubernetes users that is consistent with both the OSB API specification and traditional Kubernetes user interactions.
+- Support, and adhere to, the Platform requirements of the [OSBAPI
+  specification](https://github.com/openservicebrokerapi/servicebroker/blob/master/spec.md).
+- Provide a UX for Kubernetes users that is consistent with both the OSB API
+  specification and traditional Kubernetes user interactions.
 - Align with the OSBAPI specification as changes are made.
 - Provide feedback (bugs or feature requests) to the OSBAPI WG.
 
@@ -25,8 +30,8 @@ The following, non-exhaustive, items are out of scope:
   - Maintainer is equivalent to the standard Kubernetes definition of Approver.
   - Responsible for approving, and reviewing, pull requests.
   - Responsible for technical planning and stewardship of the project.
-  - New maintainers may be nominated by a chair, and accepted via lazy two-thirds
-    resolution amongst the chairs.
+  - New maintainers may be nominated by a chair, and accepted via lazy
+    two-thirds resolution amongst the chairs.
   - Maintainers may be nominated for removal from their position by a chair,
     and accepted via lazy two-thirds resolution amongst the chairs.
   - Maintainers may propose changes to this charter at any time, by submitting a
@@ -35,72 +40,91 @@ The following, non-exhaustive, items are out of scope:
 
 - Chairs
   - All maintainer’s roles.
-  - Chairs are listed in our [SIG definition](https://github.com/kubernetes/community/tree/master/sig-service-catalog#chairs).
-  - Responsible for project administration activities within the SIG and are non-technical
-    in nature, such as organizing the weekly meetings.
+  - Chairs are listed in our [SIG
+    definition](https://github.com/kubernetes/community/tree/master/sig-service-catalog#chairs).
+  - Responsible for project administration activities within the SIG and are
+    non-technical in nature, such as organizing the weekly meetings.
   - A chair does not have more rights, or votes, than a maintainer.
-  - Responsible for reporting the SIG’s status to the appropriate Kubernetes leadership teams.
-  - All decisions amongst chairs are made using lazy consensus with a fallback to a 2/3 majority vote (lazy two-thirds resolution).
-    This process is used for all decisions, such as changing chairs/maintainers or modifying this charter.
-  - Chairs may nominate a new chair at any time, to be accepted via lazy two-thirds resolution amongst the chairs.
+  - Responsible for reporting the SIG’s status to the appropriate Kubernetes
+    leadership teams.
+  - All decisions amongst chairs are made using lazy consensus with a fallback
+    to a 2/3 majority vote (lazy two-thirds resolution).
+    This process is used for all decisions, such as changing chairs/maintainers
+    or modifying this charter.
+  - Chairs may nominate a new chair at any time, to be accepted via lazy
+    two-thirds resolution amongst the chairs.
   - Chairs may decide to step down at any time.
   - Chairs must remain active in the role and may be removed from the position
     via lazy two-thirds resolution amongst the chairs, if they are unresponsive
-    for > 3 months or are not proactively working with other chairs to fulfill responsibilities.
+    for > 3 months or are not proactively working with other chairs to fulfill
+    responsibilities.
 
-- Emeritus Chairs ([Inspired by the Helm Project](http://technosophos.com/2018/01/11/introducing-helm-emeritus-core-maintainers.html))
-  - A chair who steps down may choose to take an Emeritus Chair title. This confers
-    honor on the recipient and allows them to remain associated with the SIG in acknowledgement
-    of their significant contributions.
-  - Those who attain this title are no longer expected to attend the weekly meetings,
-    share in the issue queue triage rotation, vote on policy or architectural issues, or review pull requests.
-  - They are listed in our documentation as Emeritus Chairs, and we will continue to invite
-    them to participate in related events, such as KubeCon.
+- Emeritus Chairs ([Inspired by the Helm
+  Project](http://technosophos.com/2018/01/11/introducing-helm-emeritus-core-maintainers.html))
+  - A chair who steps down may choose to take an Emeritus Chair title. This
+    confers honor on the recipient and allows them to remain associated with the
+    SIG in acknowledgement of their significant contributions.
+  - Those who attain this title are no longer expected to attend the weekly
+    meetings, share in the issue queue triage rotation, vote on policy or
+    architectural issues, or review pull requests.
+  - They are listed in our documentation as Emeritus Chairs, and we will
+    continue to invite them to participate in related events, such as KubeCon.
 
 - Security Contacts
-  - Are a contact point for the Product Security Team to reach out to for triaging and handling of incoming issues.
+  - Are a contact point for the Product Security Team to reach out to for
+    triaging and handling of incoming issues.
   - Must be a maintainer.
-  - Must accept the Kubernetes [Embargo Policy](https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#embargo-policy).
-  - Defined in [SECURITY_CONTACTS](https://github.com/kubernetes-incubator/service-catalog/blob/master/SECURITY_CONTACTS) file.
+  - Must accept the Kubernetes [Embargo
+    Policy](https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#embargo-policy).
+  - Defined in
+    [SECURITY_CONTACTS](https://github.com/kubernetes-incubator/service-catalog/blob/master/SECURITY_CONTACTS)
+    file.
 
 ## Organizational management
 
 - SIG meets every week on Zoom at 1 PM PST on Mondays
-    - Agenda [here](https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit#).
+    - Agenda
+      [here](https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit#).
     - Anyone is free to add new agenda items to the doc.
     - Recordings of the calls are made available [here](https://goo.gl/ZmLNX9).
-- SIG members explicitly representing the group at conferences (SIG progress reports, deep dives, etc.)
-  should make their slides available for perusal and feedback at least 2 week in advance.
-- [Working groups](https://docs.google.com/document/d/1fghxARW-doHrNmBYCijhODsGoIFawpeU4X0end-XnUI/edit#) can be initiated by any member. To create a new one, add the topic
-  to the weekly call’s agenda for discussion.
+- SIG members explicitly representing the group at conferences (SIG progress
+  reports, deep dives, etc.) should make their slides available for perusal and
+  feedback at least 2 week in advance.
+- [Working
+  groups](https://docs.google.com/document/d/1fghxARW-doHrNmBYCijhODsGoIFawpeU4X0end-XnUI/edit#)
+  can be initiated by any member. To create a new one, add the topic to the
+  weekly call’s agenda for discussion.
   - These are not the same as cross-SIG working groups.
-  - Working groups exist for an unspecified period of time, so that interested members
-    can meet to discuss and solve problems for our SIG.
+  - Working groups exist for an unspecified period of time, so that interested
+    members can meet to discuss and solve problems for our SIG.
 
 ### Project management
 - Milestones are defined by SIG maintainers.
 - Anyone is free to request for a discussion of the milestones/plans during
   a weekly call.
 - Weekly releases are typically done on Thursdays, and any member who has
-  maintainer rights is free to initiate it. _Friday releases are strongly discouraged._
-- Major releases are planned and discussed among the SIG members during
-  regular weekly calls.
-- The release process is defined [here](https://github.com/kubernetes-incubator/service-catalog/wiki/Release-Process).
+  maintainer rights is free to initiate it. _Friday releases are strongly
+  discouraged._
+- Major releases are planned and discussed among the SIG members during regular
+  weekly calls.
+- The release process is defined
+  [here](https://github.com/kubernetes-incubator/service-catalog/wiki/Release-Process).
 - Anyone can request to work on an issue by commenting on it with `#dibs`.
 
 
 ### Technical processes
 - All technical decisions are made either through issues, pull requests or
-  discussions during the weekly SIG meeting. Major decisions should be documented
-  in an issue or pull request.
+  discussions during the weekly SIG meeting. Major decisions should be
+  documented in an issue or pull request.
 - There is no requirement that all pull requests have an associated issue.
   However, if the PR represents a significant design decision then it is
-  recommended that it be discussed among the group to avoid unnecessary
-  coding that might not be accepted.
-- While everyone is encouraged to contribute to the discussion of
-  any topic, ultimately any changes made to the codebase must be
-  approved by the maintainers.
-- Pull requests are required to have at least 2 maintainers approve them using the `LGTM 1` and `LGTM 2` labels.
+  recommended that it be discussed among the group to avoid unnecessary coding
+  that might not be accepted.
+- While everyone is encouraged to contribute to the discussion of any topic,
+  ultimately any changes made to the codebase must be approved by the
+  maintainers.
+- Pull requests are required to have at least 2 maintainers approve them using
+  the `LGTM 1` and `LGTM 2` labels.
 - Pull requests that are labeled with `do-not-merge/hold` or have an on-going
   discussion must not be merged until all concerns are addressed.
 - Disagreements are mainly resolved via consensus. In the event that a common
@@ -124,7 +148,8 @@ The following, non-exhaustive, items are out of scope:
   - Canary builds are published on pushes to master.
   - Release builds (and latest) are published on tags.
   - Files hosted on Azure blob storage.
-  - Azure account managed by Carolyn Van Slyck (Microsoft) and Aaron Schlesinger (Microsoft).
+  - Azure account managed by Carolyn Van Slyck (Microsoft) and Aaron Schlesinger
+    (Microsoft).
 - [Travis](https://travis-ci.org/kubernetes-incubator/service-catalog)
   - Runs the CI builds.
   - Maintainers have access.
