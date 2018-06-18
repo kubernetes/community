@@ -82,8 +82,9 @@ aliases:
     - idvoretskyi
     - calebamiles
   sig-release-leads:
-    - jdumars
     - calebamiles
+    - justaugustus
+    - tpepper
   sig-scalability-leads:
     - wojtek-t
     - countspongebob

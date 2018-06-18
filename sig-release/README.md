@@ -19,8 +19,13 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
 * Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), Google
+* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Red Hat
+* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
+
+## Emeritus Leads
+
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-release)
@@ -60,7 +65,7 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-release-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-release-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
-[SIG Release][] has moved!
+[SIG Release] has moved!
 
 [SIG Release]: https://github.com/kubernetes/sig-release
 <!-- END CUSTOM CONTENT -->
