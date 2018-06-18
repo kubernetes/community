@@ -239,10 +239,10 @@ sigs:
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
-      time: "15:30"
+      time: "19:00"
       tz: "UTC"
       frequency: weekly
-      url: https://zoom.us/j/9690526922
+      url: https://zoom.us/j/845605479
       archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
       recordings_url: https://www.youtube.com/watch?v=d5ERqm3oHN0&list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
     contact:
