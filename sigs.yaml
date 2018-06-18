@@ -583,12 +583,12 @@ sigs:
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
-      time: "10:00"
+      time: "1:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
       url: https://zoom.us/my/sigcloudprovider
-      archive_url: TODO
-      recordings_url: TODO
+      archive_url: https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3dXLcYbRKCbpPCN-8CDFAB
     contact:
       slack: sig-cloud-provider
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cloud-provider
