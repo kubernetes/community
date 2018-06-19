@@ -1,6 +1,12 @@
 reviewers:
   - sig-service-catalog-leads
+  - pmorie
+  - duglin
+  - arschles
 approvers:
   - sig-service-catalog-leads
+  - pmorie
+  - duglin
+  - arschles
 labels:
   - sig/service-catalog
