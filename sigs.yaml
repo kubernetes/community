@@ -2012,7 +2012,7 @@ workinggroups:
   - name: Nodeless
     dir: wg-nodeless
     mission_statement: >
-      Explore and ultimately propose a nodeless design that can extend a kubernetes cluster to enable pods running on other service platforms.
+      To propose a set of changes to Kubernetes which de-emphasizes the concept of nodes, for users that do not need to be aware of them, and to explore an architectual design for those users.
     leadership:
       chairs:
       - name: Ria Bhatia

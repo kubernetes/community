@@ -24,5 +24,17 @@ Explore and ultimately propose a nodeless design that can extend a kubernetes cl
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-nodeless)
 
 <!-- BEGIN CUSTOM CONTENT -->
-The proposal and goals for the nodeless working group are outlined [here](https://docs.google.com/document/d/1Y1GEKOIB1u5P06YeQJYl9WVaUqxrq3fO8GZ7K6MUGms/edit)
+The goals for the working group are as follows: 
+Phase 1
+1. Define what nodeless Kubernetes means to users, by exploring the realm of use cases 
+2. Design a user experience around nodeless 
+3. Create reference architectures for a nodeless Kubernetes and define clear behaviors for how a nodeless Kubernetes should act
+
+Phase 2
+4. Propose upstream API changes to make Kubernetes more extensible to containers as a service platforms
+5. Define a clear list of limitations and user impact of nodeless from a user’s point of view 
+6. Propose conformance tests for nodeless kubernetes 
+7. Define a standardized 'nodeless' API/capabilities that we expect nodeless container providers to implement for integration with Kubernetes
+
+
 <!-- END CUSTOM CONTENT -->
