@@ -414,8 +414,14 @@ end of aforementioned script.
 
 #### Testing against local clusters
 
-In order to run an E2E test against a locally running cluster, point the tests
-at a custom host directly:
+In order to run an E2E test against a locally running cluster, first make sure
+to have a local build of the tests:
+
+```sh
+go run hack/e2e.go -- --build
+```
+
+Then point the tests at a custom host directly:
 
 ```sh
 export KUBECONFIG=/path/to/kubeconfig
@@ -428,6 +434,14 @@ To control the tests that are run:
 
 ```sh
 go run hack/e2e.go -- --provider=local --test --test_args="--ginkgo.focus=Secrets"
+```
+
+You will also likely need to specify `minStartupPods` to match the number of
+nodes in your cluster. If you're testing against a cluster set up by
+`local-up-cluster.sh`, you will need to do the following:
+
+```sh
+go run hack/e2e.go -- --provider=local --test --test_args="--minStartupPods=1 --ginkgo.focus=Secrets"
 ```
 
 ### Version-skewed and upgrade testing

@@ -28,6 +28,7 @@ aliases:
   sig-big-data-leads:
     - foxish
     - erikerlandson
+    - liyinan926
   sig-cli-leads:
     - soltysh
     - pwittrock
@@ -76,7 +77,7 @@ aliases:
     - hogepodge
     - dklyle
     - rjmorse
-  sig-product-management-leads:
+  sig-pm-leads:
     - apsinha
     - idvoretskyi
     - calebamiles
@@ -117,15 +118,14 @@ aliases:
     - garethr
   wg-apply-leads:
     - lavalamp
-  wg-cloud-provider-leads:
-    - wlan0
-    - jagosan
   wg-cluster-api-leads:
     - kris-nova
     - roberthbailey
   wg-container-identity-leads:
     - smarterclayton
     - destijl
+  wg-iot-edge-leads:
+    - dejanb
   wg-kubeadm-adoption-leads:
     - luxas
     - justinsb

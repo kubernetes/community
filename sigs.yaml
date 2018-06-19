@@ -6,6 +6,7 @@ sigs:
       API CRUD semantics, admission control, encoding/decoding, conversion,
       defaulting, persistence layer (etcd), OpenAPI, CustomResourceDefinition,
       garbage collection, and client libraries.
+    charter_link:
     label: api-machinery
     leadership:
       chairs:
@@ -80,6 +81,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-controller/OWNERS
       - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/controller-tools/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder/master/OWNERS
     - name: idl-schema-client-pipeline
       owners:
@@ -116,6 +118,7 @@ sigs:
       We discuss how to define and run apps in Kubernetes, demo relevant tools
       and projects, and discuss areas of friction that can lead to suggesting
       improvements or feature requests.
+    charter_link:
     label: apps
     leadership:
       chairs:
@@ -229,6 +232,7 @@ sigs:
     mission_statement: >
       The Architecture SIG maintains and evolves the design principles of Kubernetes, and provides a consistent
       body of expertise necessary to ensure architectural consistency over time.
+    charter_link: charter.md
     label: architecture
     leadership:
       chairs:
@@ -241,10 +245,10 @@ sigs:
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
-      time: "15:30"
+      time: "19:00"
       tz: "UTC"
       frequency: weekly
-      url: https://zoom.us/j/9690526922
+      url: https://zoom.us/j/845605479
       archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
       recordings_url: https://www.youtube.com/watch?v=d5ERqm3oHN0&list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
     contact:
@@ -280,6 +284,7 @@ sigs:
     mission_statement: >
       Covers improvements to Kubernetes authorization, authentication, and
       cluster security policy.
+    charter_link:
     label: auth
     leadership:
       chairs:
@@ -331,7 +336,8 @@ sigs:
     mission_statement: >
       Covers autoscaling of clusters, horizontal and vertical autoscaling of pods,
       setting initial resources for pods, topics related to monitoring pods and
-      gathering their metrics (e.g.: Heapster)
+      gathering their metrics (e.g. Heapster)
+    charter_link:
     label: autoscaling
     leadership:
       chairs:
@@ -378,6 +384,7 @@ sigs:
     dir: sig-aws
     mission_statement: >
       Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
+    charter_link:
     label: aws
     leadership:
       chairs:
@@ -412,6 +419,7 @@ sigs:
     mission_statement: >
       A Special Interest Group for building, deploying, maintaining, supporting,
       and using Kubernetes on Azure.
+    charter_link: charter.md
     label: azure
     leadership:
       chairs:
@@ -465,15 +473,19 @@ sigs:
       Covers deploying and operating big data applications (Spark, Kafka,
       Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integrations with
       big data applications and architecting the best ways to run them on Kubernetes.
+    charter_link:
     label: big-data
     leadership:
       chairs:
       - name: Anirudh Ramanathan
         github: foxish
-        company: Google
+        company: Rockset
       - name: Erik Erlandson
         github: erikerlandson
         company: Red Hat
+      - name: Yinan Li
+        github: liyinan926
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -509,6 +521,7 @@ sigs:
       establishment of conventions for writing CLI commands, POSIX compliance,
       and improving the command line tools from a developer and devops user
       experience and usability perspective.
+    charter_link:
     label: cli
     leadership:
       chairs:
@@ -570,6 +583,7 @@ sigs:
       (public and private) cloud providers. It will be responsible for establishing
       standards and requirements that must be met by all providers to ensure optimal
       integration with Kubernetes.
+    charter_link: CHARTER.md
     label: cloud-provider
     leadership:
       chairs:
@@ -585,12 +599,12 @@ sigs:
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
-      time: "10:00"
+      time: "1:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
       url: https://zoom.us/my/sigcloudprovider
-      archive_url: TODO
-      recordings_url: TODO
+      archive_url: https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3dXLcYbRKCbpPCN-8CDFAB
     contact:
       slack: sig-cloud-provider
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cloud-provider
@@ -634,6 +648,7 @@ sigs:
     mission_statement: >
       The Cluster Lifecycle SIG examines how we should change Kubernetes to make it
       easier to manage and operate with a focus on cluster deployment and upgrades.
+    charter_link:
     label: cluster-lifecycle
     leadership:
       chairs:
@@ -735,6 +750,7 @@ sigs:
       focus on shared operations practices for Kubernetes clusters with a goal
       to make Kubernetes broadly accessible with a common baseline reference.
       We also organize operators as a sounding board and advocacy group.
+    charter_link:
     label: cluster-ops
     leadership:
       chairs:
@@ -764,6 +780,7 @@ sigs:
       contributors are happy and productive, we need to break the commit-rate
       ceiling we hit in July 2015, and we need to get the monotonically growing
       PR merge latency and numbers of open PRs and issues under control.
+    charter_link: charter.md
     label: contributor-experience
     leadership:
       chairs:
@@ -831,6 +848,7 @@ sigs:
     dir: sig-docs
     mission_statement: >
       Covers documentation, doc processes, and doc publishing for Kubernetes.
+    charter_link:
     label: docs
     leadership:
       chairs:
@@ -878,6 +896,7 @@ sigs:
     mission_statement: >
       A Special Interest Group for building, deploying, maintaining,
       supporting, and using Kubernetes on the Google Cloud Platform.
+    charter_link:
     label: gcp
     leadership:
       chairs:
@@ -919,6 +938,7 @@ sigs:
     mission_statement: >
       A Special Interest Group (SIG) for building, deploying, maintaining, supporting,
       and using Kubernetes on IBM Public and Private Clouds.
+    charter_link:
     label: ibmcloud
     leadership:
       chairs:
@@ -951,6 +971,7 @@ sigs:
       Covers best practices for cluster observability through metrics, logging, and events across all
       Kubernetes components and development of relevant components such as Heapster and kube-state-metrics.
       Coordinates metric requirements of different SIGs for other components through finding common APIs.
+    charter_link:
     label: instrumentation
     leadership:
       chairs:
@@ -1011,6 +1032,7 @@ sigs:
       systems like Spinnaker and others.  Standalone building blocks for these and other
       similar systems (for example a cluster registry), and proposed changes to kubernetes
       core where appropriate will also be in scope.
+    charter_link:
     label: multicluster
     leadership:
       chairs:
@@ -1072,6 +1094,7 @@ sigs:
     dir: sig-network
     mission_statement: >
       Covers networking in Kubernetes.
+    charter_link:
     label: network
     leadership:
       chairs:
@@ -1137,6 +1160,7 @@ sigs:
   - name: Node
     dir: sig-node
     mission_statement: >
+    charter_link:
     label: node
     leadership:
       chairs:
@@ -1205,6 +1229,7 @@ sigs:
       projects with OpenStack as: a deployment platform for Kubernetes; a
       service provider for Kubernetes; a collection of applications to run on
       Kubernetes.
+    charter_link:
     label: openstack
     leadership:
       chairs:
@@ -1248,8 +1273,8 @@ sigs:
     - name: cloud-provider-openstack
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
-  - name: Product Management
-    dir: sig-product-management
+  - name: PM
+    dir: sig-pm
     mission_statement: >
       Focuses on aspects of product management, such as the qualification and
       successful management of user requests, and aspects of project and
@@ -1269,7 +1294,8 @@ sigs:
       source project is very new and largely unscoped for a project as large
       as Kubernetes; we are learning too and we are excited to learn how we
       can best serve the community of users and contributors.
-    label: none
+    charter_link:
+    label: pm
     leadership:
       chairs:
       - name: Aparna Sinha
@@ -1284,11 +1310,11 @@ sigs:
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
-      time: "16:00"
+      time: "18:30"
       tz: "UTC"
       frequency: biweekly
       url: https://zoom.us/j/845373595
-      archive_url: https://docs.google.com/document/d/1YqIpyjz4mV1jjvzhLx9JYy8LAduedzaoBMjpUKGUJQo/edit?usp=sharing
+      archive_url: https://docs.google.com/document/d/13uHgcLf-hcR4a5QbV888fhnVsF3djBEpN8HolwS0kWM/edit?usp=sharing
       recordings_url: https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ
     contact:
       slack: kubernetes-pm
@@ -1299,6 +1325,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/features/master/OWNERS
   - name: Release
     dir: sig-release
+    charter_link:
     label: release
     leadership:
       chairs:
@@ -1315,7 +1342,7 @@ sigs:
       tz: "UTC"
       frequency: biweekly
       url: https://zoom.us/j/664772523
-      archive_url: https://docs.google.com/document/d/1vhsixdT58iJFfoGZbpmvI_xnK59XyAjtadu3h6hHPpY/edit?usp=sharing
+      archive_url: https://docs.google.com/document/d/1Fu6HxXQu8wl6TwloGUEOXVzZ1rwZ72IAhglnaAMCPqA/edit?usp=sharing
       recordings_url: https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ
     contact:
       slack: sig-release
@@ -1363,6 +1390,7 @@ sigs:
 
       For more details about our objectives please review our
       [Scaling And Performance Goals](https://git.k8s.io/community/sig-scalability/goals.md)
+    charter_link:
     label: scalability
     leadership:
       chairs:
@@ -1410,6 +1438,7 @@ sigs:
   - name: Scheduling
     dir: sig-scheduling
     mission_statement: >
+    charter_link:
     label: scheduling
     leadership:
       chairs:
@@ -1420,11 +1449,17 @@ sigs:
         github: k82cn
         company: IBM
     meetings:
-    - description: Regular SIG Meeting
+    - description: 10AM PT Meeting
       day: Thursday
-      time: "20:00"
+      time: "17:00"
       tz: "UTC"
-      frequency: biweekly
+      frequency: biweekly starting Thursday June 7, 2018
+      url: https://zoom.us/j/7767391691
+    - description: 5PM PT Meeting
+      day: Thursday
+      time: "24:00"
+      tz: "UTC"
+      frequency: biweekly starting Thursday June 14, 2018
       url: https://zoom.us/j/7767391691
       archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
       recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
@@ -1468,6 +1503,7 @@ sigs:
     mission_statement: >
       To develop a Kubernetes API for the CNCF service broker and Kubernetes
       broker implementation.
+    charter_link:
     label: service-catalog
     leadership:
       chairs:
@@ -1518,6 +1554,7 @@ sigs:
     dir: sig-storage
     mission_statement: >
       Covers storage and volume plugins.
+    charter_link:
     label: storage
     leadership:
       chairs:
@@ -1574,6 +1611,7 @@ sigs:
       interested specifically in making it easier for the community to run
       tests and contribute test results, to ensure Kubernetes is stable across
       a variety of cluster configurations and cloud providers.
+    charter_link:
     label: testing
     leadership:
       chairs:
@@ -1642,6 +1680,7 @@ sigs:
       Dashboard: a general purpose, web-based UI for Kubernetes clusters. It
       allows users to manage applications running in the cluster and
       troubleshoot them, as well as manage the cluster itself.
+    charter_link:
     label: ui
     leadership:
       chairs:
@@ -1672,6 +1711,7 @@ sigs:
     mission_statement: >
       Bring together members of the VMware and Kubernetes community to maintain,
       support and run Kubernetes on VMware platforms.
+    charter_link:
     label: vmware
     leadership:
       chairs:
@@ -1692,9 +1732,9 @@ sigs:
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y
     - description: Cloud Provider vSphere weekly syncup
       day: Wednesday
-      time: "16:30"
+      time: "21:00"
       tz: "UTC"
-      frequency: weekly
+      frequency: bi-weekly
       url: https://zoom.us/j/584244729
       archive_url: https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR
@@ -1726,6 +1766,7 @@ sigs:
     dir: sig-windows
     mission_statement: >
       Focuses on supporting Windows Server Containers for Kubernetes.
+    charter_link:
     label: windows
     leadership:
       chairs:
@@ -1759,6 +1800,7 @@ workinggroups:
     dir: wg-resource-management
     mission_statement: >
       Designing and shepherding cross-cutting features around compute resource isolation and utilization.
+    charter_link:
     leadership:
       chairs:
       - name: Vishnu Kannan
@@ -1783,6 +1825,7 @@ workinggroups:
     dir: wg-container-identity
     mission_statement: >
       Ensure containers are able to interact with external systems and acquire secure identities for communication, integrating with external solutions as necessary.
+    charter_link:
     leadership:
       chairs:
       - name: Clayton Coleman
@@ -1808,6 +1851,7 @@ workinggroups:
     mission_statement: >
       Boost adoption of the kubeadm tool. kubeadm is a tool for creating new Kubernetes clusters easily for new users, but can also be used as a toolbox for higher-level deployment
       solutions. This working group makes sure kubeadm meets the extensibility requirements of those higher-level Kubernetes installers.
+    charter_link:
     leadership:
       chairs:
       - name: Lucas Käldström
@@ -1831,6 +1875,7 @@ workinggroups:
     dir: wg-cluster-api
     mission_statement: >
       Define a portable API that represents a Kubernetes cluster. The API will contain the control plane and its configuration and the underlying infrastructure (nodes, node pools, etc).
+    charter_link:
     leadership:
       chairs:
       - name: Kris Nova
@@ -1852,8 +1897,7 @@ workinggroups:
       understand the needs of other parts of the ecosystem on this layer, and improve the interoperability
       of application management tools through better separation of concerns, common conventions,
       and common principles.
-
-      Charter can be found [here](https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#)
+    charter_link: https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#
     leadership:
       chairs:
       - name: Antoine Legrand
@@ -1885,6 +1929,7 @@ workinggroups:
       features included in the scope of this working-group: diff, dry-run and prune.
 
       Resources can be found in [this Google drive folder](https://drive.google.com/drive/folders/1wlpgkS2gFZXdp4x2WlRsfUBxkFlt2Gx0)
+    charter_link:
     leadership:
       chairs:
       # TBD: We probably need more people here?
@@ -1901,34 +1946,11 @@ workinggroups:
     contact:
       slack: wg-apply
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-apply
-  - name: Cloud Provider
-    dir: wg-cloud-provider
-    label: cloud-provider
-    mission_statement: >
-      Charter can be found [here](https://docs.google.com/document/d/1m4Kvnh_u_9cENEE9n1ifYowQEFSgiHnbw43urGJMB64/edit#)
-    leadership:
-      chairs:
-      - name: Sidhartha Mani
-        github: wlan0
-        company: Caascade Labs
-      - name: Jago Macleod
-        github: jagosan
-        company: Google
-    meetings:
-    - description: Regular WG Meeting
-      day: Wednesday
-      time: "10:00"
-      tz: "PT (Pacific Time)"
-      frequency: weekly
-      url: https://zoom.us/my/cloudprovider
-      archive_url: https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp
-    contact:
-      slack: wg-cloud-provider
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-cloud-provider
   - name: Multitenancy
     dir: wg-multitenancy
     mission_statement: >
       Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
+    charter_link:
     leadership:
       chairs:
       - name: David Oppenheimer
@@ -1952,6 +1974,7 @@ workinggroups:
     dir: wg-policy
     mission_statement: >
       Provide an overall architecture that describes both the current policy related implementations as well as future policy related proposals in Kubernetes. Through a collaborative method, we want to present both dev and end user a universal view of policy architecture in Kubernetes.
+    charter_link:
     leadership:
       chairs:
       - name: Howard Huang
@@ -1984,6 +2007,7 @@ workinggroups:
     dir: wg-machine-learning
     mission_statement: >
       Identify and fix gaps in Kubernetes to better support Machine Learning applications
+    charter_link:
     leadership:
       chairs:
       - name: Vishnu Kannan
@@ -2032,3 +2056,23 @@ workinggroups:
     contact:
       slack: wg-nodeless
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-nodeless
+  - name: IoT Edge
+    dir: wg-iot-edge
+    mission_statement: >
+       A Working Group dedicated to discussing, designing and documenting using Kubernetes for developing and deploying IoT and Edge specific applications
+    leadership:
+      chairs:
+      - name: Dejan Bosanac	
+        github: dejanb
+        company: Red Hat
+    meetings:
+    - description: Regular WG Meeting
+      day: Friday
+      time: "15:00"
+      tz: "UTC"
+      frequency: bi-weekly
+      url: https://zoom.us/j/760932414
+      archive_url: TBC
+    contact:
+      slack: wg-iot-edge
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge

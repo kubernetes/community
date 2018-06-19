@@ -2,7 +2,11 @@
 # {{.Name}} Working Group
 
 {{ .MissionStatement }}
-{{ if .Meetings }}## Meetings
+{{- if .CharterLink }}
+The [charter]({{.CharterLink}}) defines the scope and governance of the {{.Name}} Working Group.
+{{ end }}
+{{ if .Meetings -}}
+## Meetings
 {{- range .Meetings }}
 * {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}}]({{.URL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.Time}}&tz={{.TZ | tzUrlEncode}}).
 {{- if .ArchiveURL }}
