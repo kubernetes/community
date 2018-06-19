@@ -13,9 +13,9 @@ Ensures that the Kubernetes ecosystem is evolving in a way that is neutral to al
 The [charter](CHARTER.md) defines the scope and governance of the Cloud Provider Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/my/sigcloudprovider) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](TODO).
-  * [Meeting recordings](TODO).
+* Regular SIG Meeting: [Wednesdays at 1:00 PT (Pacific Time)](https://zoom.us/my/sigcloudprovider) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=1:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3dXLcYbRKCbpPCN-8CDFAB).
 
 ## Leadership
 
