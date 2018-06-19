@@ -2033,7 +2033,6 @@ workinggroups:
     contact:
       slack: wg-machine-learning
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-machine-learning
-<<<<<<< HEAD
   - name: Nodeless
     dir: wg-nodeless
     mission_statement: >
@@ -2057,14 +2056,13 @@ workinggroups:
     contact:
       slack: wg-nodeless
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-nodeless
-=======
   - name: IoT Edge
     dir: wg-iot-edge
     mission_statement: >
        A Working Group dedicated to discussing, designing and documenting using Kubernetes for developing and deploying IoT and Edge specific applications
     leadership:
       chairs:
-      - name: Dejan Bosanac	
+      - name: Dejan Bosanac
         github: dejanb
         company: Red Hat
     meetings:
@@ -2078,4 +2076,4 @@ workinggroups:
     contact:
       slack: wg-iot-edge
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge
->>>>>>> 6304514b8abdeace9e5046e419a0aa1c8336da31
+
