@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 -->
 # Nodeless Working Group
 
-Explore and ultimately propose a nodeless design that can extend a kubernetes cluster to enable pods running on other service platforms.
+To propose a set of changes to Kubernetes which de-emphasizes the concept of nodes, for users that do not need to be aware of them, and to explore an architectual design for those users.
 
 ## Meetings
 * Regular WG Meeting: [Wednesdays at 14:00 PT (Pacific Time)](https://zoom.us/j/588409652) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
