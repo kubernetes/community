@@ -156,6 +156,22 @@ transitively), you'll also need to update deps there:
 ./hack/update-staging-godeps.sh
 ```
 
+## Commit messages
+
+Terse messages like "Update foo.org/bar to 0.42" are problematic
+for maintainability.  Please include in your commit message the
+detailed reason why the dependencies were modified.
+
+Too commonly dependency changes have a ripple effect where something
+else breaks unexpectedly.  The first instinct during issue triage
+is to revert a change.  If the change was made to fix some other
+issue and that issue was not documented, then a revert simply
+continues the ripple by fixing one issue and reintroducing another
+which then needs refixed.  This can needlessly span multiple days
+as CI results bubble in and subsequent patches fix and refix and
+rerefix issues.  This may be avoided if the original modifications
+recorded artifacts of the change rationale.
+
 ## Sanity checking
 
 After all of this is done, `git status` should show you what files have been

@@ -742,7 +742,9 @@ APIs may return alternative representations of any resource in response to an
 Accept header or under alternative endpoints, but the default serialization for
 input and output of API responses MUST be JSON.
 
-Protobuf serialization of API objects are currently **EXPERIMENTAL** and will change without notice.
+A protobuf encoding is also accepted for built-in resources. As proto is not
+self-describing, there is an envelope wrapper which describes the type of
+the contents.
 
 All dates should be serialized as RFC3339 strings.
 

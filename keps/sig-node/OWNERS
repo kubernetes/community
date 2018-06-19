@@ -1,0 +1,6 @@
+reviewers:
+  - sig-node-leads
+approvers:
+  - sig-node-leads
+labels:
+  - sig/node
