@@ -11,12 +11,18 @@ In order to standardize Special Interest Group efforts, create maximum transpare
 * Participate in release planning meetings and retrospectives, and burndown meetings, as needed
 * Ensure related work happens in a project-owned github org and repository, with code and tests explicitly owned and supported by the SIG, including issue triage, PR reviews, test-failure response, bug fixes, etc. 
 * Use the above forums as the primary means of working, communicating, and collaborating, as opposed to private emails and meetings
-* Represent the SIG for the PM group - see [PM SIG representatives](/sig-product-management/SIG%20PM%20representatives.md).
 
-## SIG roles
-- **SIG Participant**: active in one or more areas of the project; wide 
-  variety of roles are represented
-- **SIG Lead**: SIG organizer
+In addition, SIGs have the following responsibilities to SIG PM:
+* identify SIG annual roadmap
+* identify all SIG features in the current release
+* actively track / maintain SIG features within [k/features](https://github.com/kubernetes/features)
+* attend [SIG PM](/sig-pm/README.md) meetings, as needed / requested
+
+## SIG Roles
+
+Defining SIG Roles is a function of the SIG Charter.  
+Guidelines for drafting a SIG Charter can be found [here](/committee-steering/governance/README.md).
+
 
 ## SIG creation and maintenance procedure
 
