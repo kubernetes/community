@@ -1,5 +1,5 @@
 ---
-kep-number: 10
+kep-number: 14
 title: Test Cluster Framework
 authors:
   - "@timothysc"   # Timothy St. Clair
@@ -17,7 +17,7 @@ approvers:
   - TBD
 editor: TBD
 creation-date: 2018-05-23
-last-updated: 2018-05-23
+last-updated: 2018-06-19
 status: provisional
 see-also:
 replaces:
