@@ -81,7 +81,7 @@ Chairs:
 
 	-	Jaice Singer DuMars (Google); Area: Program Management & Release
 	-	Dustin Kirkland (Google); Area: Product Management
-    -   Stephen Augustus (Red Hat); Area: Product Management
+	-	Stephen Augustus (Red Hat); Area: Product Management
 	-	Natasha Woods & Kaitlyn Barnard (CNCF); Area: Marketing  
 
 Key Roles:
