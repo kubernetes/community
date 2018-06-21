@@ -59,4 +59,4 @@ for all orgs going forward.  Notable discrepancies at the moment:
 
 Repositories have additional guidelines and requirements, such as the use of
 CLA checking on all contributions. For more details on those please see the
-[Kubernetes Template Project](https://github.com/kubernetes/kubernetes-template-project).
+[Kubernetes Template Project](https://github.com/kubernetes/kubernetes-template-project), and the [Repository Guidelines](kubernetes-repositories.md)
