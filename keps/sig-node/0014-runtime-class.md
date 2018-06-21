@@ -141,7 +141,7 @@ controller for performing validation & defaulting.
 
 There are 3 categories of fields that may be included in the `RuntimeClassSpec`:
 
-1. **Runtime parameters** - These fields control the behavior of the runtime in some way,
+1. **Runtime setup** - These fields control the behavior of the runtime in some way,
    including configuring arbitrary options in the runtime (`Parameters`), and eventually specifying
    resource overhead. This is the focus of this initial proposal.
 2. **Compatibility validation** - These fields declare support for various features, and pods are
@@ -200,7 +200,55 @@ const (
 An unspecified RuntimeClassName `""` is equivalent to the `legacy` RuntimeClass, though the field is
 not defaulted to `legacy` (to leave room for configurable defaults in a future update).
 
-#### CRI API Specification
+#### Runtime Parameters
+
+Runtime parameters are provided as a mechanism for passing non-portable runtime-specific arguments
+that are generally static for the RuntimeClass, but dynamically interpreted by the runtime. They
+provide a way of specifying options that are tightly coupled with the class of runtime, but should
+not be used to enumerate general pod options as this would lead to a combinatorial explosion of
+RuntimeClass definitions.
+
+Examples of runtime parameters include:
+
+```
+// Decide which underlying OCI runtime should be used. This replaces the
+// annotations used by CRI-o, containerd & frakti to select between sandboxed
+// runtimes.
+"oci-runtime": "runsc"
+
+// Change the default set of capabilities used by the runtime. This is a good
+// way of surfacing behaviors that were previously implicit in docker but not
+// well defined in Kubernetes.
+"default-capabilities": "[]"
+
+// Set the infrastructure container image. More generally, configuring options
+// not otherwise exposed in the Kubrenetes API.
+"infra-image": "example.com/self-monitoring-pod:v2"
+```
+
+_Note: RuntimeClass is intended to be consumed by a single runtime implementation, so parameter keys
+do not need to be "namespaced"._
+
+In contrast, the following are examples of parameters that are better left to annotations or other
+extension mechanisms:
+
+```
+// Configuring the smack LSM for a runtime that adds support. This is an example
+// of a feature that will typically have multiple valid configurations, and is
+// better left to a pod-scoped mechanism like annotations.
+"smack-profile": "foo-bar"
+
+// Propagate Kubelet version information to the runtime. Tight coupling of a
+// RuntimeClass to nodes should generally be avoided. This will create churn
+// during upgrades.
+"kubelet-version": "1.2.3"
+```
+
+Minimal validation is done on parameters (copied from StorageClass):
+
+1. Keys must not be empty.
+2. A maximum of 512 parameters may be specified.
+3. Total size of keys+values must be less than 256K
 
 The runtime parameters are passed to the CRI as part of the `RunPodSandboxRequest`:
 
