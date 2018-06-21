@@ -263,17 +263,15 @@ message RunPodSandboxRequest {
 
 ### Versioning, Updates, and Rollouts
 
-_Axiom: Rerunning a pod on a different node in the same cluster with the same RuntimeClassName should
-not change its behavior._
+Getting upgrades and rollouts right is a very nuanced and complicated problem. For the initial alpha
+implementation, we will kick the can down the road by making the `RuntimeClassSpec` **immutable**,
+thereby requiring changes to be pushed as a newly named RuntimeClass instance. This means that pods
+must be updated to reference the new RuntimeClass, and comes with the advantage of native support
+for rolling updates through the same mechanisms as any other application update.
 
-This means that if a runtime is updated in a fully backwards-compatible way, then the RuntimeClass
-does not _need_ to change. It also means that if the updated runtime breaks backwards compatibility,
-then it **MUST** be renamed. RuntimeClass does not provide a predefined versioning or naming scheme,
-so versioned upgrades are left to the cluster operator to handle.
-
-Since breaking runtime changes require a new RuntimeClass definition, it means that pods must be
-updated to reference the new RuntimeClass. This comes with the advantage of native support for
-rolling updates through the same mechanisms as any other application update.
+This conservative approach is preferred since it's much easier to relax constraints in a backwards
+compatible way than tighten them. We should revisit this decision prior to graduating RuntimeClass
+to beta.
 
 ### Implementation Details
 
@@ -327,7 +325,8 @@ Beta:
 
 - Major runtimes support RuntimeClass
 - RuntimeClasses are configured in the E2E environment with test coverage of a non-legacy RuntimeClass
-- TBD
+- The update & upgrade story is revisited, and a longer-term approach is implemented as necessary.
+- Additional requirements TBD
 
 ## Implementation History
 
