@@ -1,7 +1,4 @@
 # Agenda
-~~Join us for sig-apps on Wednesdays at 9am PDT on Zoom: zoom.us/my/sig.apps~~
-
-SIG-Apps meetings are now on **Mondays at 9am PDT** on Zoom: https://zoom.us/my/sig.apps
 
 _Note, the [minutes and agenda have moved to Google Docs](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#)._
 

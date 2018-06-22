@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 A Working Group dedicated to discussing, designing and documenting using Kubernetes for developing and deploying IoT and Edge specific applications
 
 ## Meetings
-* Regular WG Meeting: [Fridays at 15:00 UTC](https://zoom.us/j/760932414) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+* Regular WG Meeting: [Fridays at 15:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
   * [Meeting notes and Agenda](TBC).
 
 ## Organizers
