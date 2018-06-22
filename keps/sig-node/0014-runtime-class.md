@@ -56,7 +56,7 @@ such as AppArmor are checked for support, but on failure the pod is just held in
 to avoid the churn of recreating the rejected pod. Still other features maybe be applied in slightly
 different configurations, as is the case with capabilities today (the default set is not
 well-defined), and `privileged` containers. By raising these properties to the control plane errors
-can be surfaced much earlier, and configuration can be made explicit.
+can be surfaced much earlier (admission), and configuration can be made explicit.
 
 The second problem that RuntimeClass addresses is supporting multiple runtimes in a cluster, or even
 on the same node. [Sandboxes][] are the primary motivator for this right now, with both Kata
@@ -127,7 +127,7 @@ The initial design includes:
 - `RuntimeClass` API resource definition
 - `RuntimeClass` pod field for specifying the RuntimeClass the pod should be run with
 - Kubelet implementation for fetching & interpreting the RuntimeClass
-- CRI API & implementation for passing along the RuntimeClass definition
+- CRI API & implementation for passing along the RuntimeClass parameters
 
 A subsequent update will include the API for describing supported features and an admission
 controller for performing validation & defaulting.
@@ -171,7 +171,8 @@ type RuntimeClassSpec struct {
 }
 ```
 
-The runtime is selected by the pod by specifying the RuntimeClass in the PodSpec:
+The runtime is selected by the pod by specifying the RuntimeClass in the PodSpec. Once the pod is
+scheduled, the RuntimeClass cannot be changed.
 
 ```go
 type PodSpec struct {
