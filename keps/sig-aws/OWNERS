@@ -1,0 +1,6 @@
+reviewers:
+  - sig-aws-leads
+approvers:
+  - sig-aws-leads
+labels:
+  - sig/aws
