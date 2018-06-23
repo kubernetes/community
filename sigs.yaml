@@ -378,6 +378,9 @@ sigs:
     - name: cloud-provider-aws
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
+    - name: aws-alb-ingress-controller
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/master/OWNERS
   - name: Azure
     dir: sig-azure
     mission_statement: >

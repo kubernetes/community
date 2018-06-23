@@ -34,6 +34,9 @@ The following subprojects are owned by sig-aws:
 - **cloud-provider-aws**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
+- **aws-alb-ingress-controller**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/master/OWNERS
 
 ## GitHub Teams
 
