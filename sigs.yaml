@@ -191,6 +191,10 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/apps/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/daemonset/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/deployment/OWNERS
+    - name: application
+      description: Application metadata descriptor CRD
+      owners:
+      - https://github.com/kubernetes-sigs/application/blob/master/OWNERS
   - name: Architecture
     dir: sig-architecture
     mission_statement: >
