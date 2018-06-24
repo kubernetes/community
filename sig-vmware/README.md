@@ -11,10 +11,10 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Bring together members of the VMware and Kubernetes community to maintain, support and run Kubernetes on VMware platforms.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 18:00 UTC](https://zoom.us/j/183662780) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 18:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y).
-* Cloud Provider vSphere weekly syncup: [Wednesdays at 21:00 UTC](https://zoom.us/j/584244729) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=21:00&tz=UTC).
+* Cloud Provider vSphere weekly syncup: [Wednesdays at 21:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=21:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR).
 

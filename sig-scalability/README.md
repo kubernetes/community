@@ -13,7 +13,7 @@ What size clusters do we think that we should support with Kubernetes in the sho
 For more details about our objectives please review our [Scaling And Performance Goals](https://git.k8s.io/community/sig-scalability/goals.md)
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 16:30 UTC](https://zoom.us/j/989573207) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 16:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
   * [Meeting recordings](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
 
