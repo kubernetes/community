@@ -1,0 +1,6 @@
+reviewers:
+  - sig-cloud-provider-leads
+approvers:
+  - sig-cloud-provider-leads
+labels:
+  - sig/cloud-provider
