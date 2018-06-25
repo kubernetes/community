@@ -1,5 +1,5 @@
 ---
-kep-number: 14
+kep-number: 14 FIXME(13)
 title: Runtime Class
 authors:
   - "@tallclair"
@@ -107,7 +107,9 @@ iteration:
 - As a cluster operator, I want to provide multiple runtime options to support a wide variety of
   workloads. Examples include native linux containers, "sandboxed" containers, and windows
   containers.
-- As a cluster operator, I want to provide stable rolling upgrades of nodes.
+- As a cluster operator, I want to provide stable rolling upgrades of nodes or runtimes. For
+  example, rolling out an update with backwards incompatible changes or previously unsupported
+  features.
 - As an application developer, I want to select the runtime that best fits my workload.
 - As an application developer, I don't want to study the nitty-gritty details of different runtime
   implementations.
