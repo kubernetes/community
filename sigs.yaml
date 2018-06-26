@@ -837,7 +837,7 @@ sigs:
       day: Tuesday
       time: "17:30"
       tz: "UTC"
-      frequency: weekly
+      frequency: weekly - except fourth Tuesday every month
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
@@ -845,7 +845,7 @@ sigs:
       day: Wednesday
       time: "02:00"
       tz: "UTC"
-      frequency: monthly - fourth Wednesday
+      frequency: monthly - fourth Wednesday every month
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
