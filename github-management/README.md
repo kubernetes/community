@@ -13,6 +13,7 @@ enforcement of these policies.
 - [Organization Owners Guide](org-owners-guide.md)
 - [Repository Creation Guidelines](kubernetes-repositories.md)
 - [Setting up the CNCF CLA Check](setting-up-cla-check.md)
+- [GitHub Permissions](permissions.md)
 
 ## Project Owned Organizations
 
