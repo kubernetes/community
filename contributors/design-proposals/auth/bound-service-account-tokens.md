@@ -213,6 +213,67 @@ The token payload will be:
 }
 ```
 
+### Add Service Account signing key retrieval API
+
+A non-resource API will be added to the apiserver that will expose an [OIDC
+discovery](https://openid.net/specs/openid-connect-discovery-1_0.html)
+compatible configuration. This will allow clients to retrieve a list of
+currently valid signing keys as an array of JWKs. For example, if the service
+account issuer is configured with the name `https://dev.cluster.internal`, the
+apiserver could expose the following configuration:
+
+```
+> GET /.well-known/openid-configuration
+{
+  "issuer": "https://dev.cluster.internal",
+  "jwks_uri": "https://dev.cluster.internal/serviceaccountkeys/v1",
+  "authorization_endpoint": "urn:kubernetes:programmatic_authorization",
+  "response_types_supported": [
+    "id_token"
+  ],
+  "subject_types_supported": [
+    "public"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256",
+    "ES256"
+  ],
+  "claims_supported": [
+    "sub",
+    "iss"
+  ]
+}
+> GET /serviceaccountkeys/v1
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "alg": "RS256",
+      "use": "sig",
+      "kid": "ccab4acb107920dc284c96c6205b313270672039",
+      "n": "wWGfvdCEjJJy7CQpGcTq6GghmqWLi9H4SNHNTtFMfIDPsv-aWj1e_iSO22505BlC9UcL9LvlSyVH8HmQUy5916YNqxCbhPFPabBAv0a-CpVuzbbyhpDNP3RkRIJgxlzPDh_dB11cbPTQ3yz0A0JARX3QNZfIQ8LFiZ1vh0iZAIm-I3eZeI4QZigImNDviZstSoHB2Ny1tsRmpZn-neYZCxYq717buFctnCVvot4iCwcQpeaGdniqYNDxzN4KlQwwDeCVJm-K0rG9nkiqZ_rq8SgCxi_l7NyF2ZURNTTzZyDwYfBR7jZUhbmjxIDoDZalsa1Tzzy1vzqBfxkFD5Z03w",
+      "e": "AQAB"
+    },
+    {
+      "kty": "RSA",
+      "alg": "RS256",
+      "use": "sig",
+      "kid": "8770f6158b125040b98e50a1e0e6790ff2f9ea09",
+      "n": "vpgsIIPqDO3A3dEuRCIZvQinyfME0BjH_RbeyLAAvrQx-Sv08ryFPjplqxm5t9mC0yULrhOmaIZCVfIuYn5n_dOblZNhpIpoy89bP0qNwV7gxsNv-0Tdu9nj4ymxeoaby6SFiv_c8P2JZ0CSqif_qXgj-o0TqU20FEv1hkizzQWDzFsKZ__IABAkdKfpGqQTOBTylFG9HFLV1tdh9AAdhVRf40982rksaOSDWvN_sfxiz6midGPgG0OOnMnwKAW-3BBNNd_uUrD9baSXZPFA8zo9dlkhQhfrFgg_U6ke4M5DPyFiPKOVitBzpL1Kth_patVZvnBGXtq2frbReF-6pw",
+      "e": "AQAB"
+    },
+    {
+      "kty": "RSA",
+      "alg": "RS256",
+      "use": "sig",
+      "kid": "68241231bbf0df8f9123d018cf9e601e2aa3673a",
+      "n": "rHozcxeim9flTWQxqC1ObpGP0EjpkUHVHpHNX8WGHHnMcVi63_9PaHn2cJeFuPF9qkI1dMPXeoX0m33N0tgM9-KOSmTg1oGbyJGoUYMFI-A7tdxoobb91LGjeNWJC0la0gLOGPcQ6zQLEU5RGftCZT0wElxMuwEH7FZoVBn5i8Ddvc2ADd4bFW0f_FckwFYN1rIU1uLf6coku_1xBfae3b_JiBq38QOGXPdPgxfPzmJEvIz_LB2WOIcwhl97DY32BQU7l_lNLYz6wMg9HeCKolypPIFEGNxLj1TcuOhwP5-BnSja-PvrB-1FN1JyzlL3nh__uJv8SoKPn0CoBPueWw",
+      "e": "AQAB"
+    }
+  ]
+}
+```
+
 ## Service Account Authenticator Modification
 
 The service account token authenticator will be extended to support validation
