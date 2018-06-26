@@ -13,7 +13,7 @@ the Linux Foundation CNCF CLA check for your repositories, please read on.
     - Payload URL: https://identity.linuxfoundation.org/lfcla/github/postreceive?group=284&comment=no&target=https://identity.linuxfoundation.org/projects/cncf
       - `group=284` specifies the ID of the CNCF project authorized committers group in our CLA system.
       - `comment=no` specifies that our system should not post help comments into the pull request (since the Kubernetes mungebot does this).
-      - `target=https://identity.linuxfoundation.org/projects/cncf` specifies what will be used for the "Details" link in Github for this status check.
+      - `target=https://identity.linuxfoundation.org/projects/cncf` specifies what will be used for the "Details" link in GitHub for this status check.
     - Content Type: 'application/json'
     - Secret: Please contact [@idvoretskyi](mailto:ihor@cncf.io), and [@caniszczyk](mailto:caniszczyk@linuxfoundation.org).
     - Events: Let me select individual events
@@ -56,5 +56,5 @@ the same org/repo, to ensure that it can add labels `cncf-cla: yes` and `cncf-cl
 on the status published by the Linux Foundation webhook.
 
 The label automation may not be essential for your repository, if you’re not using merge
-automation. For repos with maintainers doing manual merges, github protected branches may
+automation. For repos with maintainers doing manual merges, GitHub protected branches may
 suffice.
