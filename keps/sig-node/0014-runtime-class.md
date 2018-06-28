@@ -270,7 +270,8 @@ Getting upgrades and rollouts right is a very nuanced and complicated problem. F
 implementation, we will kick the can down the road by making the `RuntimeClassSpec` **immutable**,
 thereby requiring changes to be pushed as a newly named RuntimeClass instance. This means that pods
 must be updated to reference the new RuntimeClass, and comes with the advantage of native support
-for rolling updates through the same mechanisms as any other application update.
+for rolling updates through the same mechanisms as any other application update. The
+`RuntimeClassName` pod field is also immutable post scheduling.
 
 This conservative approach is preferred since it's much easier to relax constraints in a backwards
 compatible way than tighten them. We should revisit this decision prior to graduating RuntimeClass
@@ -283,6 +284,11 @@ added, the Kubelet resolves the Pod's RuntimeClass against the local RuntimeClas
 resolved, a subset of its fields are passed to the CRI as part of the [`RunPodSandboxRequest`][]. At
 that point, the interpretation of the parameters is left to the CRI implementation, but they should
 be cached if needed for subsequent calls.
+
+If the RuntimeClass cannot be resolved (e.g. doesn't exist) at Pod creation, then the request will
+be rejected in admission (controller to be detailed in a following update). If the RuntimeClass
+cannot be resolved by the Kubelet when `RunPodSandbox` should be called, then the Kubelet will fail
+the Pod. The admission check on a replica recreation will prevent the scheduler from thrashing.
 
 [RunPodSandboxRequest]: https://github.com/kubernetes/kubernetes/blob/b05a61e299777c2030fbcf27a396aff21b35f01b/pkg/kubelet/apis/cri/runtime/v1alpha2/api.proto#L344
 
