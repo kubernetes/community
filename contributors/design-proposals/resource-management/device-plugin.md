@@ -59,14 +59,6 @@ the following simple steps:
     status as `vendor-domain/vendor-device`. Note: naming
     convention is discussed in PR [#844](https://github.com/kubernetes/community/pull/844)
 
-# Use Cases
-
- * I want to use a particular device type (GPU, InfiniBand, FPGA, etc.)
-   in my pod.
- * I should be able to use that device without writing custom Kubernetes code.
- * I want a consistent and portable solution to consume hardware devices
-   across k8s clusters.
-
 # Objectives
 
 1. Add support for vendor specific Devices in kubelet:
@@ -131,22 +123,22 @@ through the gRPC apis.
 When setting up the cluster the admin knows what kind of devices are present
 on the different machines and therefore can select what devices to enable.
 
-The cluster admin knows his cluster has NVIDIA GPUs therefore he deploys
+For example, the cluster admin knows the cluster has NVIDIA GPUs and deploys
 the NVIDIA device plugin through:
 `kubectl create -f nvidia.io/device-plugin.yml`
 
 The device plugin lands on all the nodes of the cluster and if it detects that
 there are no GPUs it terminates (assuming `restart: OnFailure`). However, when
-there are GPUs it reports them to Kubelet and starts it's gRPC server to
+there are GPUs it reports them to Kubelet and starts its gRPC server to
 monitor devices and hook into the container creation process.
 
-Devices reported by Device Plugins are advertised as Extended resources of
-the shape `vendor-domain/vendor-device`.
-E.g., Nvidia GPUs are advertised as `nvidia.com/gpu`
+Devices reported by Device Plugins are advertised as [Extended resources](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#extended-resources)
+of the shape `vendor-domain/vendor-device`.
+For example, Nvidia GPUs are advertised as `nvidia.com/gpu`
+After that, devices can be selected using with the advertised resource name in the container spec.
 
-Devices can be selected using the same process as for OIRs in the pod spec.
-Devices have no impact on QOS. However, for the alpha, we expect the request
-to have limits == requests.
+As of now, extended resources are supported only as integer resources and must have
+`limit` equal to `request` in the Container specification.
 
 1. A user submits a pod spec requesting X GPUs (or devices) through
    `vendor-domain/vendor-device`
@@ -278,7 +270,12 @@ message AllocateRequest {
 // The Device plugin should send a ListAndWatch update and fail the
 // Allocation request
 message AllocateResponse {
-	repeated DeviceRuntimeSpec spec = 1;
+        // List of environment variable to be set in the container to access one of more devices.
+        map<string, string> envs = 1;
+        // Mounts for the container.
+        repeated Mount mounts = 2;
+        // Devices for the container.
+        repeated DeviceSpec devices = 3;
 }
 
 // ListAndWatch returns a stream of List of Devices
@@ -286,18 +283,6 @@ message AllocateResponse {
 // returns the new list
 message ListAndWatchResponse {
 	repeated Device devices = 1;
-}
-
-// The list to be added to the CRI spec
-message DeviceRuntimeSpec {
-	string ID = 1;
-
-	// List of environment variable to set in the container.
-	map<string, string> envs = 2;
-	// Mounts for the container.
-	repeated Mount mounts = 3;
-	// Devices for the container
-	repeated DeviceSpec devices = 4;
 }
 
 // DeviceSpec specifies a host device to mount into a container.
@@ -327,7 +312,7 @@ message Mount {
 // E.g:
 // struct Device {
 //    ID: "GPU-fef8089b-4820-abfc-e83e-94318197576e",
-//    State: "Healthy",
+//    Health: "Healthy",
 //}
 message Device {
 	string ID = 2;
@@ -340,37 +325,43 @@ message Device {
 We want Kubelet as well as the Device Plugins to recover from failures
 that may happen on any side of this protocol.
 
-At the communication level, gRPC is a very strong piece of software and
-is able to ensure that if failure happens it will try it's best to recover
-through exponential backoff reconnection and Keep Alive checks.
-
 The proposed mechanism intends to replace any device specific handling in
-Kubelet. Therefore in general, device plugin failure or upgrade means that
-Kubelet is not able to accept any pod requesting a Device until the upgrade
-or failure finishes.
+Kubelet. Therefore, in general, device plugin failure means that
+Kubelet is not able to accept any new pod requesting a Device until the
+device plugin failure is resolved.
 
 If a device fails, the Device Plugin should signal that through the
-`ListAndWatch` gRPC stream. We then expect Kubelet to fail the Pod.
+`ListAndWatch` gRPC stream. The Kubelet will then update the resource allocatable
+in its node status with the number of failed devices removed.
+Then both the scheduler and the Kubelet will avoid scheduling pods on the failed device.
 
 If any Device Plugin fails the behavior we expect depends on the task Kubelet
 is performing:
-* In general we expect Kubelet to remove any devices that are owned by the failed
-  device plugin from the node capacity. We also expect node allocatable to be
-  equal to node capacity.
-* We however do not expect Kubelet to fail or restart any pods or containers
-  running that are using these devices.
+* Kubelet will remove any devices that are owned by the failed
+  device plugin from the node capacity and allocatable. This will prevent future pods from being scheduled on the node.
+* However, we do not expect Kubelet to fail or restart any running pods or containers
+  that are using these devices. This is supported through two mechanisms:
+  First, Kubelet caches and checkpoints device runtime information to avoid calling device plugin Allocate for devices already allocated to a Pod.
+  Second, we expose a PluginResourceUpdater from ContainerManager and pass it to lifecycle.NewPredicateAdmitHandler().
+  predicateAdmitHandler calls this function after it gets nodeInfo and before calling GeneralPredicates.
+  In PluginResourceUpdater, we use the cached device allocation information to update NodeInfo.allocatableResource
+  to at least equal to in-use capacity. This avoids predicateAdmit failure due to allocatable device plugin
+  resource dropping to zero. Note that the updated NodeInfo referred here is a local data structure used by predicateAdmitHandler.
+  The resource capacity and allocatable reported through node status still reflect the device plugin
+  failure state, which prevents future pods requesting this resource from being scheduled on the node,
+  even after the container currently using these devices terminates.
 * If Kubelet is in the process of allocating a device, then it should fail
   the container process.
 
-If the Kubelet fails or restarts, we expect the Device Plugins to know about
-it through gRPC's Keep alive feature and try to reconnect to Kubelet.
+If the Kubelet fails or restarts, we expect the Device Plugins to notice this
+and re-register with the new Kubelet instance.
+In the current implementation, a new kubelet instance cleans up all the existing Unix sockets
+under `/var/lib/kubelet/device-plugins` when it starts. A device plugin can monitor the deletion
+of its Unix socket and re-register itself upon such an event.
 
-When Kubelet fails or restarts it should know what are the devices that are
-owned by the different containers and be able to rebuild a list of available
-devices.
-We are expecting to implement this through a checkpointing mechanism that Kubelet
-would write and read from.
-
+Kubelet currently maintains local checkpoints on registered device plugins,
+as well as device to container allocation information, so that it can
+rebuild device allocation states after its failure.
 
 ## API Changes
 
@@ -412,12 +403,17 @@ As mentioned in the Versioning section, we currently expect the Device Plugin's
 API version to match exactly the Kubelet's Device Plugin API version.
 Therefore if the Device Plugin API version change then you will have to change
 the Device Plugin too.
-
+We recommend device plugin developers to watch
+for device plugin API version change in the future releases and support multiple versions of API
+for backward/forward compatibility. If some nodes in a cluster have DevicePlugins feature enabled and
+are running some device plugins with versionX, and it needs to upgrade to a Kubernetes version that
+uses device plugin versionY, we recommend users to upgrade their device plugins to support both
+versions before upgrading these nodes to ensure the continuous functioning of device allocations
+during the upgrade.
 
 *Future:*
 When the Device Plugin API becomes a stable feature, versioning should be
 backward compatible and even if Kubelet has a different Device Plugin API,
-
 it should not require a Device Plugin upgrade.
 
 Refer to the versioning section for versioning scheme compatibility.
@@ -490,7 +486,7 @@ Follow protobuf guidelines on versioning:
   * Do not remove fields or change types
   * Add optional fields
   * Introducing new fields with proper default values
-  * Freeze the package name to `apis/device-plugin/v1alpha1`
+  * Freeze the package name to `apis/device-plugin/v1alpha`
   * Have kubelet and the Device Plugin negotiate versions if we do break the API
 
 # References
