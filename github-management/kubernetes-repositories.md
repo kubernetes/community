@@ -1,7 +1,6 @@
-## Kubernetes Repositories
+## Kubernetes Repository Guidelines
 
-
-This document attempts to outline a structure for creating and associating github repositories with the Kubernetes project. It also describes how and when
+This document attempts to outline a structure for creating and associating GitHub repositories with the Kubernetes project. It also describes how and when
 repositories are removed.
 
 The document presents a tiered system of repositories with increasingly strict requirements in an attempt to provide the right level of oversight and flexibility for a variety of different projects.
@@ -83,7 +82,7 @@ that our various projects and repositories are active and healthy. This
 ensures that repositories are kept up to date with the latest Kubernetes
 wide processes, it ensures a rapid response to potential required fixes
 (e.g. critical security problems) and (most importantly) it ensures that
-contributors and users receive quick feedback on their issues and 
+contributors and users receive quick feedback on their issues and
 contributions.
 
 #### Grounds for removal
@@ -91,7 +90,7 @@ SIG repositories and core repositories may be removed from the project if they
 are deemed _inactive_. Inactive repositories are those that meet any of the
 following criteria:
 
-   * There are no longer any active maintainers for the project and no 
+   * There are no longer any active maintainers for the project and no
 replacements can be found.
    * All PRs or Issues have gone un-addressed for longer than six months.
    * There have been no new commits or other changes in more than a year.
@@ -102,8 +101,8 @@ circumstances (e.g. a code of conduct violation).
 
 
 #### Procedure for removal
-When a repository is set for removal, it is moved into the 
-[kubernetes-retired](https://github.com/kubernetes-retired) organization. 
+When a repository is set for removal, it is moved into the
+[kubernetes-retired](https://github.com/kubernetes-retired) organization.
 This maintains the
 complete record of issues, PRs and other contributions, but makes it clear
 that the repository should be considered archival, not active. We will also
