@@ -40,8 +40,7 @@ status: provisional
 
 `RuntimeClass` is a new cluster-scoped resource that surfaces container runtime properties to the
 control plane. RuntimeClasses are assigned to pods through a `runtimeClass` field on the
-`PodSpec`. This provides a new mechanism for supporting multiple runtimes in the cluster and on the
-nodes.
+`PodSpec`. This provides a new mechanism for supporting multiple runtimes in a cluster and/or node.
 
 ## Motivation
 
@@ -107,7 +106,7 @@ iteration:
 - As a cluster operator, I want to provide multiple runtime options to support a wide variety of
   workloads. Examples include native linux containers, "sandboxed" containers, and windows
   containers.
-- As a cluster operator, I want to provide stable rolling upgrades of nodes or runtimes. For
+- As a cluster operator, I want to provide stable rolling upgrades or runtimes. For
   example, rolling out an update with backwards incompatible changes or previously unsupported
   features.
 - As an application developer, I want to select the runtime that best fits my workload.
@@ -355,7 +354,7 @@ Beta:
   limited to linux. As we build out Windows container support, we'll need to add windows-specific
   features as well.
 - Host namespaces (Network,PID,IPC) may not be supported by virtualization-based runtimes
-  (e.g. Kata-containers & visor).
+  (e.g. Kata-containers & gVisor).
 - Per-pod and Per-container resource overhead varies by runtime.
 - Device support (e.g. GPUs) varies wildly by runtime & nodes.
 - Supported volume types varies by node - it remains TBD whether this information belongs in
