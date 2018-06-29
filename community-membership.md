@@ -53,6 +53,7 @@ Members are expected to remain active contributors to the community.
    - Subject: `REQUEST: New membership for <your-GH-handle>`
    - Body: Confirm that you have joined kubernetes-dev@googlegroups.com (e.g. `I have joined
      kubernetes-dev@googlegroups.com`)
+   - Body: Your GitHub handle
    - Body: GitHub handles of sponsors
    - Body: List of contributions (PRs authored / reviewed, Issues responded to, etc)
 - Have your sponsoring reviewers reply confirmation of sponsorship: `+1`
@@ -68,6 +69,9 @@ Subject: REQUEST: New membership for <your-GH-handle>
 Body:
 
 I have joined kubernetes-dev@googlegroups.com.
+
+My GitHub handle:
+- <GH handle>
 
 Sponsors:
 - <GH handle> / <email>
