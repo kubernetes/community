@@ -54,7 +54,8 @@ if [[ ${mismatches} -gt "0" ]]; then
   fi
   echo "${mismatches} ${noun} detected."
   echo "Do not manually edit sig-list.md or README.md files inside the sig folders."
-  echo "Instead make your changes to sigs.yaml and then run \`make\`.";
+  echo "Instead make your changes to sigs.yaml, then run \`make\`, and then"
+  echo "commit your changes to sigs.yaml and any generated docs.";
   echo "${break}"
   exit 1;
 fi
