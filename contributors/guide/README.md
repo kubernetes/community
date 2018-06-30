@@ -226,4 +226,4 @@ Please learn about our mentoring initiatives [here](http://git.k8s.io/community/
 
 This section includes things that need to be documented, but typical contributors do not need to interact with regularly.
 
-- [OWNERS files](owners.md) - The Kubernetes organizations are managed with OWNERS files, which outline which parts of the code are owned by what groups. 
+- [OWNERS files](owners.md) - The Kubernetes organizations are managed with OWNERS files, which outline which parts of the code are owned by what groups.  
