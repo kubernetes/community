@@ -51,13 +51,13 @@ To address such scenarios, this proposal introduces a new pod `restartPolicy` ca
 
 ## Motivation
 
-The `OnFailure` and `Always` [restart polices](rp) efficiently manage the life-cycle of the containers of a pod. The support for multiple containers in a pod also enable better modularity and seperation of concerns between different containers. It also promotes looser coupling between components.
+The `OnFailure` and `Always` [restart polices][rp] efficiently manage the life-cycle of the containers of a pod. The support for multiple containers in a pod also enable better modularity and seperation of concerns between different containers. It also promotes looser coupling between components.
 
 [Init containers] provide some additional support for modularity and looser coupling for the functionality of initialization of the pod. They make it possible to separete the initialization from the rest of the pod to enhance both modularity as well as security.
 
 But both the `OnFailure` as well as the `Always` restart policies restart the individual containers in question and not the whole pod. This is, for the most part, desirable, even optimal.
 
-However, there are scenarios (some documented in [this issue](issue)) where the many containers in the pod (including init containers) might be interlinked or inter-dependent in such a way as to require closer co-ordination when any one of its containers are restarted.
+However, there are scenarios (some documented in [this issue][issue]) where the many containers in the pod (including init containers) might be interlinked or inter-dependent in such a way as to require closer co-ordination when any one of its containers are restarted.
 
 ### Goal
 
@@ -67,7 +67,7 @@ This can simplify many scenarios requiring close co-ordination of containers of 
 
 For example, if init containers are used to verify, initialize and if necessary restore from backup the data for some persistent services, then restarting the pod when any of its regular containers crash or restart would make sure that the data is always consistent and ready before the regular containers are started or restarted. This can make the services more self-managed. It can also enhance the reach of the init containers into many other use-cases where they cannot be used right now.
 
-Many other use-cases are documented in the [upstream issue](issue).
+Many other use-cases are documented in the [upstream issue][issue].
 
 ## Proposal
 
