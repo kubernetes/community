@@ -45,7 +45,7 @@ superseded-by:
 
 In a pod with multiple containers, if one of the containers terminates and if the restart policy mandates that it be restarted (as in [`restartPolicy`][rp] of `OnFailure` or `Always`) then the kubelet restarts only the terminated container. The other containers are left as they are.
 
-This behaviour, while generally desirable, makes some scenarios such as the ones involving initContainers[issue] or some complex interaction between the containers of the pod cumbersome to implement.
+This behaviour, while generally desirable, makes some scenarios such as the ones involving [initContainers][issue] or some complex interaction between the containers of the pod cumbersome to implement.
 
 To address such scenarios, this proposal introduces a new pod `restartPolicy` called `AlwaysPod` to make it possible to restart the whole pod (including the initContainers) whenever the `restartPolicy` `Always` would have restarted just one of the containers of the pod.
 
