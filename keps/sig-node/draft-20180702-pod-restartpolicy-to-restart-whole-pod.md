@@ -51,9 +51,9 @@ To address such scenarios, this proposal introduces a new pod `restartPolicy` ca
 
 ## Motivation
 
-The `OnFailure` and `Always` [restart polices][rp] efficiently manage the life-cycle of the containers of a pod. The support for multiple containers in a pod also enable better modularity and seperation of concerns between different containers. It also promotes looser coupling between components.
+The `OnFailure` and `Always` [restart polices][rp] efficiently manage the life-cycle of the containers of a pod. The support for multiple containers in a pod also enable better modularity and separation of concerns between different containers. It also promotes looser coupling between components.
 
-[Init containers] provide some additional support for modularity and looser coupling for the functionality of initialization of the pod. They make it possible to separete the initialization from the rest of the pod to enhance both modularity as well as security.
+[Init containers] provide some additional support for modularity and looser coupling for the functionality of initialization of the pod. They make it possible to separate the initialization from the rest of the pod to enhance both modularity as well as security.
 
 But both the `OnFailure` as well as the `Always` restart policies restart the individual containers in question and not the whole pod. This is, for the most part, desirable, even optimal.
 
