@@ -13,8 +13,8 @@ approvers:
   - "@liggitt"
   - "@derekwaynecarr"
 editor:
-creation-date: 2018-07-03
-last-updated: 2018-07-03
+creation-date: 2018-07-04
+last-updated: 2018-07-04
 status: provisional
 see-also:
 replaces:
@@ -77,7 +77,7 @@ Introduce a new value (`AlwaysPod`) for `restartPolicy` which works almost exact
 
 #### Recreate Pod Sandbox
 
-We can trigger the pod restart by triggering the recreation of the pod sandbox.
+We can trigger the pod restart by triggering the recreation of the [pod sandbox][sandbox].
 
 ##### Pros
   * This approach as the benefit of having only a small amount of change to the existing code-base.
@@ -87,7 +87,7 @@ We can trigger the pod restart by triggering the recreation of the pod sandbox.
 
 #### Re-use Pod Sandbox
 
-We can think of re-using the existing pod sandbox and merely restart the existing container instances in the right order. This is made a bit more challenging by the fact that the kublet currently optimizes by deleting the container instances of successfully executed init containers.
+We can think of re-using the existing pod sandbox and merely restart the existing container instances in the right order. This is made a bit more challenging by the fact that the kublet currently optimizes by [pruning][prune] the container instances of successfully executed init containers.
 
 ##### Pros
   * This approach is more optimal.
@@ -106,3 +106,5 @@ The `restartPolicy` or `AlwaysPod` would be a new value for an existing field in
 [rp]: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy 
 [issue]: https://github.com/kubernetes/kubernetes/issues/52345
 [ic]: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
+[sandbox]: https://github.com/kubernetes/kubernetes/blob/e3fa9133af250ee8abfc84b200c6495612114c08/pkg/kubelet/kuberuntime/kuberuntime_manager.go#L383
+[prune]: https://github.com/kubernetes/kubernetes/blob/e3fa9133af250ee8abfc84b200c6495612114c08/pkg/kubelet/kuberuntime/kuberuntime_container.go#L621
