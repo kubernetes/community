@@ -2,7 +2,7 @@
 
 These icons are a way to standardize Kubernetes architecture diagrams for presentation. Having uniform architecture diagrams improve understandibility.
 
-# Generate png icons from svg
+## Generate png icons from svg
 
 ```shell
 ./tools/rasterize.sh
@@ -45,3 +45,10 @@ There is icons for each layers of a complete Kubernetes Architecture
 
 #### Exposed Pod with 3 replicas
 ![](./doc/k8s-exposed-pod.png)
+
+## License
+The Kubernetes Icons Set is licensed under a choice of either Apache-2.0
+or CC-BY-4.0 (Creative Commons Attribution 4.0 International). The
+Kubernetes logo is a registered trademark of The Linux Foundation, and use
+of it as a trademark is subject to The Linux Foundation's Trademark Usage
+Guidelines at https://www.linuxfoundation.org/trademark-usage/.
