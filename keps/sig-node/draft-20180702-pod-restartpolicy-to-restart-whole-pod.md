@@ -77,7 +77,7 @@ Introduce a new value (`AlwaysPod`) for `restartPolicy` which works almost exact
 
 #### Recreate Pod Sandbox
 
-We can trigger the pod restart by triggering the recreation of the [pod sandbox][sandbox].
+We can trigger the pod restart by triggering the recreation of the [pod sandbox][sandbox]. A work-in-progress implementation of this approach can be found [in this pull request][pr].
 
 ##### Pros
   * This approach as the benefit of having only a small amount of change to the existing code-base.
@@ -107,4 +107,5 @@ The `restartPolicy` or `AlwaysPod` would be a new value for an existing field in
 [issue]: https://github.com/kubernetes/kubernetes/issues/52345
 [ic]: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
 [sandbox]: https://github.com/kubernetes/kubernetes/blob/e3fa9133af250ee8abfc84b200c6495612114c08/pkg/kubelet/kuberuntime/kuberuntime_manager.go#L383
+[pr]: https://github.com/kubernetes/kubernetes/pull/65619
 [prune]: https://github.com/kubernetes/kubernetes/blob/e3fa9133af250ee8abfc84b200c6495612114c08/pkg/kubelet/kuberuntime/kuberuntime_container.go#L621
