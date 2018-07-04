@@ -87,7 +87,7 @@
        pointer-events="none"
        d="m 9.260865,7.145339 c -0.39389,0.0014 -0.71305,0.317896 -0.71305,0.707987 V 8.14969 h 1.42737 V 7.848262 c -0.004,-0.388828 -0.3217,-0.701659 -0.71432,-0.702923 z"
        inkscape:connector-curvature="0"
-       style="fill:#eeeeee;fill-opacity:1;stroke:none;stroke-width:0.12665248" />
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.12665248" />
     <ellipse
        id="ellipse8478"
        pointer-events="none"
@@ -95,13 +95,13 @@
        rx="0.50633514"
        cy="9.4681444"
        cx="9.1861477"
-       style="fill:#eeeeee;fill-opacity:1;stroke:none;stroke-width:0.12665248" />
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.12665248" />
     <path
        id="path8480"
        pointer-events="none"
        d="m 9.246935,5.395002 -3.10805,1.374181 v 2.050501 c 0,1.901056 1.32478,3.677988 3.10805,4.109873 1.78073,-0.431885 3.10678,-2.208817 3.10678,-4.109873 V 6.769183 Z m 1.64522,5.518246 h -3.2917 V 8.14969 h 0.47241 V 7.848262 c 0,-0.650995 0.53194,-1.17914 1.18927,-1.17914 0.65732,0 1.18926,0.528145 1.18926,1.17914 V 8.14969 h 0.44076 z"
        inkscape:connector-curvature="0"
-       style="fill:#eeeeee;fill-opacity:1;stroke:none;stroke-width:0.12665248" />
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.12665248" />
     <rect
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#eeeeee;stroke-width:0.40000001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.8, 0.4;stroke-dashoffset:4;stroke-opacity:1"
        id="rect8484"

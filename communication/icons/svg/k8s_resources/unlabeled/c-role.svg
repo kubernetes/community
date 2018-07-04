@@ -83,13 +83,13 @@
        inkscape:connector-curvature="0"
        style="fill:#326ce5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332;stroke-linecap:square;stroke-miterlimit:10" />
     <path
-       style="fill:#eeeeee;fill-opacity:1;stroke:none;stroke-width:0.12665248"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.12665248"
        inkscape:connector-curvature="0"
        d="M 9.103021,6.969136 C 8.709132,6.970536 8.389968,7.287032 8.389968,7.677123 V 7.973487 H 9.817342 V 7.672059 C 9.813542,7.283231 9.495644,6.9704 9.103021,6.969136 Z"
        pointer-events="none"
        id="path7836-7" />
     <ellipse
-       style="fill:#eeeeee;fill-opacity:1;stroke:none;stroke-width:0.12665248"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.12665248"
        cx="9.0282974"
        cy="9.2919416"
        rx="0.50633514"
@@ -97,7 +97,7 @@
        pointer-events="none"
        id="ellipse7838-2" />
     <path
-       style="fill:#eeeeee;fill-opacity:1;stroke:none;stroke-width:0.12665248"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.12665248"
        inkscape:connector-curvature="0"
        d="M 9.089089,5.218799 5.981038,6.59298 v 2.050501 c 0,1.901056 1.324784,3.677988 3.108051,4.109873 1.780734,-0.431885 3.106786,-2.208817 3.106786,-4.109873 V 6.59298 Z m 1.645216,5.518246 H 7.442607 V 7.973487 H 7.915021 V 7.672059 c 0,-0.650995 0.53194,-1.17914 1.189266,-1.17914 0.657327,0 1.189267,0.528145 1.189267,1.17914 v 0.301428 h 0.440751 z"
        pointer-events="none"

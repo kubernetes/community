@@ -66,15 +66,15 @@
        id="text8353"
        y="16.32472"
        x="9.8938179"
-       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:6.61458302px;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#eeeeee;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:6.61458302px;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222223px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#eeeeee;fill-opacity:1;stroke-width:0.26458332px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222223px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.26458332px"
          y="16.32472"
          x="9.8938179"
          id="tspan8351"
          sodipodi:role="line">user</tspan></text>
     <path
-       style="opacity:1;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.20154004;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.40308009, 0.20154004;stroke-dashoffset:5.01860619;stroke-opacity:1"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.20154004;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.40308009, 0.20154004;stroke-dashoffset:5.01860619;stroke-opacity:1"
        d="m 6.08185,4.562828 c -0.47453,0 -0.85677,0.381949 -0.85677,0.856475 v 7.285213 c 0,0.474526 0.38224,0.856764 0.85677,0.856764 h 7.68524 c 0.47452,0 0.85648,-0.382238 0.85648,-0.856764 V 5.419303 c 0,-0.474526 -0.38196,-0.856475 -0.85648,-0.856475 z m 3.84261,1.421701 c 0.72979,0 1.31436,0.589172 1.31436,1.318961 0,0.729785 -0.58457,1.31867 -1.31436,1.31867 -0.72978,1e-6 -1.31895,-0.588885 -1.31895,-1.31867 0,-0.729789 0.58917,-1.318961 1.31895,-1.318961 z m 0,3.517131 c 1.02435,-2e-6 3.07738,0.514206 3.07738,1.538545 v 1.099086 H 6.8468 v -1.099086 c 0,-1.024339 2.05333,-1.538545 3.07766,-1.538545 z"
        id="rect8339"
        inkscape:connector-curvature="0" />
