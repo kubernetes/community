@@ -28,7 +28,8 @@ superseded-by:
   * [Table of Contents](#table-of-contents)
   * [Summary](#summary)
   * [Motivation](#motivation)
-    * [Goal](#goal)
+    * [Goals](#goals)
+    * [Non\-Goals](#non-goals)
   * [Proposal](#proposal)
     * [Implementation Details/Notes/Constraints](#implementation-detailsnotesconstraints)
       * [Recreate Pod Sandbox](#recreate-pod-sandbox)
@@ -40,6 +41,7 @@ superseded-by:
     * [Risks and Mitigations](#risks-and-mitigations)
   * [Graduation Criteria](#graduation-criteria)
   * [Implementation History](#implementation-history)
+  * [Alternatives](#alternatives)
 
 ## Summary
 
@@ -59,15 +61,20 @@ But both the `OnFailure` as well as the `Always` restart policies restart the in
 
 However, there are scenarios (some documented in [this issue][issue]) where the many containers in the pod (including init containers) might be interlinked or inter-dependent in such a way as to require closer co-ordination when any one of its containers are restarted.
 
-### Goal
+### Goals
 
-Make it possible to declaratively specify that the whole pod should be restarted if any container is going to be restarted.
+Make it possible to declaratively specify that the whole pod (including the init containers) should be restarted if any container is going to be restarted.
 
 This can simplify many scenarios requiring close co-ordination of containers of a pod during individual container restart.
 
 For example, if init containers are used to verify, initialize and if necessary restore from backup the data for some persistent services, then restarting the pod when any of its regular containers crash or restart would make sure that the data is always consistent and ready before the regular containers are started or restarted. This can make the services more self-managed. It can also enhance the reach of the init containers into many other use-cases where they cannot be used right now.
 
 Many other use-cases are documented in the [upstream issue][issue].
+
+### Non-Goals
+
+It is not a goal of this proposal to address all possible ways to co-ordinate between the containers of the same pod.
+The only goal is to address the only co-ordination of restarting of containers of the same pod.
 
 ## Proposal
 
@@ -102,6 +109,13 @@ The `restartPolicy` or `AlwaysPod` would be a new value for an existing field in
 ## Graduation Criteria
 
 ## Implementation History
+
+## Alternatives
+
+Co-ordination between containers can be achieved by baking in some mechanism into the individual containers of the pod. 
+But this has the limitations that the some customisation would be required in the source code or at least the image of the individual containers. Such customisations may not always be possible or desirable.
+
+The init containers already address this need for some custom behaviour without modifying the individual container images. But the scope of init containers is somewhat limited by the current behaviour during container restart.
 
 [rp]: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy 
 [issue]: https://github.com/kubernetes/kubernetes/issues/52345
