@@ -2,8 +2,8 @@
 
 ## Disclaimer
 
-Hello! This is the starting point for our brand new contributor guide, currently underway as per [issue#6102](https://github.com/kubernetes/website/issues/6102) and is in need of help. 
-Please be patient, or fix a section below that needs improvement, and submit a pull request! Feel free to browse the [open issues](https://github.com/kubernetes/community/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fcontributor-guide) and file new ones, all feedback welcome! 
+Hello! This is the starting point for our brand new contributor guide, currently underway as per [issue#6102](https://github.com/kubernetes/website/issues/6102) and is in need of help.
+Please be patient, or fix a section below that needs improvement, and submit a pull request! Feel free to browse the [open issues](https://github.com/kubernetes/community/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fcontributor-guide) and file new ones, all feedback welcome!
 
 
 # Welcome
@@ -55,7 +55,7 @@ If you haven’t set up your environment, please find resources [here](/contribu
 
 Kubernetes is a community project. Consequently, it is wholly dependent on its community to provide a productive, friendly and collaborative environment.
 
-- Read and review the [Community Expectations](community-expectations.md) for an understanding of code and review expectations. 
+- Read and review the [Community Expectations](community-expectations.md) for an understanding of code and review expectations.
 - See [Community Membership](/community-membership.md) for a list the various responsibilities of contributor roles. You are encouraged to move up this contributor ladder as you gain experience.  
 
 # Your First Contribution
@@ -115,7 +115,7 @@ Follow the link in the SIG name column to reach each SIGs README. Most SIGs will
 ### File an Issue
 
 Not ready to contribute code, but see something that needs work? While the community encourages everyone to contribute code, it is also appreciated when someone reports an issue (aka problem). Issues should be filed under the appropriate Kubernetes subrepository.
-Check the [issue triage guide](./issue-triage.md) for more information. 
+Check the [issue triage guide](./issue-triage.md) for more information.
 
 *Example:* a documentation issue should be opened to [kubernetes/website](https://github.com/kubernetes/website/issues).
 
@@ -127,7 +127,7 @@ Kubernetes is open source, but many of the people working on it do so as their d
 
 As a potential contributor, your changes and ideas are welcome at any hour of the day or night, weekdays, weekends, and holidays. Please do not ever hesitate to ask a question or send a pull request.
 
-Our community guiding principles on how to create great code as a big group are found [here](/contributors/devel/collab.md). 
+Our community guiding principles on how to create great code as a big group are found [here](/contributors/devel/collab.md).
 
 Beginner focused information can be found below in [Open a Pull Request](#open-a-pull-request) and [Code Review](#code-review).
 
@@ -156,7 +156,7 @@ The bot may also make some helpful suggestions for commands to run in your PR to
 Common new contributor PR issues are:
 
 * not having correctly signed the CLA ahead of your first PR (see [Sign the CLA](#sign-the-cla) section)
-* finding the right SIG or reviewer(s) for the PR (see [Code Review](#code-review) section) and following any SIG specific contributing guidelines
+* finding the right SIG or reviewer(s) for the PR (see [Code Review](#code-review) section) and following any SIG or repository specific contributing guidelines (see [Learn about SIGs](#learn-about-sigs) section)
 * dealing with test cases which fail on your PR, unrelated to the changes you introduce (see [Test Flakes](http://velodrome.k8s.io/dashboard/db/bigquery-metrics?orgId=1))
 * Not following [scalability good practices](scalability-good-practices.md)
 
@@ -213,7 +213,7 @@ If you haven't noticed by now, we have a large, lively, and friendly open-source
 
 ## Communication
 
-- [General Information](/communication) 
+- [General Information](/communication)
 
 ## Events
 
