@@ -81,7 +81,7 @@ Another good strategy is to find a documentation improvement, such as a missing/
 
 #### Issue Assignment in Github
 
-Often, new contributors ask to be assigned an issue they are willing to take on. Unfortunately, due to GitHub limitations we can only assign issues to [org members](#community) or repo collaborators. Instead, a code owner will remove any `help-wanted` or `good-first-issue` flags and verbally state in an issue comment that it is yours to work on.
+Often, new contributors ask to be assigned an issue they are willing to take on. Unfortunately, due to GitHub limitations we can only assign issues to [org members](#community) or repo collaborators. Instead, please state in a comment that you intend to work on this issue and it will be assumed to be yours.
 
 ### Learn about SIGs
 
