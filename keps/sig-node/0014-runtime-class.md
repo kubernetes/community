@@ -106,7 +106,7 @@ iteration:
 - As a cluster operator, I want to provide multiple runtime options to support a wide variety of
   workloads. Examples include native linux containers, "sandboxed" containers, and windows
   containers.
-- As a cluster operator, I want to provide stable rolling upgrades or runtimes. For
+- As a cluster operator, I want to provide stable rolling upgrades of runtimes. For
   example, rolling out an update with backwards incompatible changes or previously unsupported
   features.
 - As an application developer, I want to select the runtime that best fits my workload.
@@ -222,10 +222,6 @@ Examples of runtime parameters include:
 // way of surfacing behaviors that were previously implicit in docker but not
 // well defined in Kubernetes.
 "default-capabilities": "[]"
-
-// Set the infrastructure container image. More generally, configuring options
-// not otherwise exposed in the Kubrenetes API.
-"infra-image": "example.com/self-monitoring-pod:v2"
 ```
 
 _Note: RuntimeClass is intended to be consumed by a single runtime implementation, so parameter keys
