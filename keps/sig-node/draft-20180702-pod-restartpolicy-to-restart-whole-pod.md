@@ -74,7 +74,7 @@ Many other use-cases are documented in the [upstream issue][issue].
 ### Non-Goals
 
 It is not a goal of this proposal to address all possible ways to co-ordinate between the containers of the same pod.
-The only goal is to address the only co-ordination of restarting of containers of the same pod.
+The only goal is to address the co-ordination of restarting of containers of the same pod.
 
 ## Proposal
 
