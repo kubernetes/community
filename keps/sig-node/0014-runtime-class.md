@@ -26,8 +26,7 @@ status: provisional
   * [User Stories](#user-stories)
 * [Proposal](#proposal)
   * [API](#api)
-    * [API Specification](#api-specification)
-    * [CRI API Specification](#cri-api-specification)
+    * [Runtime Handler](#runtime-handler)
   * [Versioning, Updates, and Rollouts](#versioning-updates-and-rollouts)
   * [Implementation Details](#implementation-details)
   * [Risks and Mitigations](#risks-and-mitigations)
@@ -61,8 +60,8 @@ The second problem that RuntimeClass addresses is supporting multiple runtimes i
 on the same node. [Sandboxes][] are the primary motivator for this right now, with both Kata
 containers and gVisor looking to integrate with Kubernetes. Other runtime models such as Windows
 containers or even remote runtimes will also require support in the future. RuntimeClass provides a
-way to configure different runtimes in the cluster, surface their properties (both to the cluster &
-the user), and provides a mechanism for pods to select a runtime.
+way to select between different runtimes configured in the cluster and surface their properties (both
+to the cluster & the user).
 
 [Sandboxes]: https://docs.google.com/document/d/1QQ5u1RBDLXWvC8K3pscTtTRThsOeBSts_imYEoRyw8A/edit
 
@@ -74,7 +73,8 @@ the user), and provides a mechanism for pods to select a runtime.
 
 ### Non-Goals
 
-- RuntimeClass is NOT a general policy mechanism
+- RuntimeClass is NOT RuntimeComponentConfig.
+- RuntimeClass is NOT a general policy mechanism.
 - RuntimeClass is NOT "NodeClass". Although different nodes may run different runtimes, in general
   RuntimeClass should not be a cross product of runtime properties and node properties.
 
@@ -128,7 +128,7 @@ The initial design includes:
 - `RuntimeClass` API resource definition
 - `RuntimeClass` pod field for specifying the RuntimeClass the pod should be run with
 - Kubelet implementation for fetching & interpreting the RuntimeClass
-- CRI API & implementation for passing along the RuntimeClass parameters
+- CRI API & implementation for passing along the [RuntimeHandler](#runtime-handler).
 
 A subsequent update will include the API for describing supported features and an admission
 controller for performing validation & defaulting.
@@ -139,20 +139,6 @@ controller for performing validation & defaulting.
 
 > _The `node.k8s.io` API group would eventually hold the Node resource when `core` is retired.
 > Alternatives considered: `runtime.k8s.io`, `cluster.k8s.io`_
-
-There are 3 categories of fields that may be included in the `RuntimeClassSpec`:
-
-1. **Runtime setup** - These fields control the behavior of the runtime in some way,
-   including configuring arbitrary options in the runtime (`Parameters`), and eventually specifying
-   resource overhead. This is the focus of this initial proposal.
-2. **Compatibility validation** - These fields declare support for various features, and pods are
-   validated against them in admission. This category, along with the admission controller, will be
-   addressed in a subsequent update to this proposal.
-3. **Informational** - These fields surface semantic properties of the runtime to guide runtime
-   selection. Examples could include hardware virtualization, stability, and I/O performance
-   class. These fields are out-of-scope for the initial proposal.
-
-#### API Specification
 
 _(This is a simplified declaration, syntactic details will be covered in the API PR review)_
 
@@ -167,8 +153,11 @@ type RuntimeClass struct {
 }
 
 type RuntimeClassSpec struct {
-    // Parameters holds opaque parameters that are interpreted by the runtime (CRI implementation).
-    Parameters map[string]string
+    // RuntimeHandler specifies the underlying runtime the CRI calls to handle pod and/or container
+    // creation. The possible values are specific to a given configuration & CRI implementation.
+    // The empty string is equivalent to the default behavior.
+    // +optional
+    RuntimeHandler string
 }
 ```
 
@@ -187,13 +176,13 @@ type PodSpec struct {
 ```
 
 The `legacy` RuntimeClass name is reserved. The legacy RuntimeClass is defined to be fully backwards
-compatible with current Kubernetes. This means that the legacy runtime does not specify any runtime
-parameters or perform any feature validation (all features are "supported").
+compatible with current Kubernetes. This means that the legacy runtime does not specify any
+RuntimeHandler or perform any feature validation (all features are "supported").
 
 ```go
 const (
     // RuntimeClassNameLegacy is a reserved RuntimeClass name. The legacy
-    // RuntimeClass does not specify any runtime parameters or perform any
+    // RuntimeClass does not specify a runtime handler or perform any
     // feature validation.
     RuntimeClassNameLegacy = "legacy"
 )
@@ -202,62 +191,45 @@ const (
 An unspecified RuntimeClassName `""` is equivalent to the `legacy` RuntimeClass, though the field is
 not defaulted to `legacy` (to leave room for configurable defaults in a future update).
 
-#### Runtime Parameters
+#### Runtime Handler
 
-Runtime parameters are provided as a mechanism for passing non-portable runtime-specific arguments
-that are generally static for the RuntimeClass, but dynamically interpreted by the runtime. They
-provide a way of specifying options that are tightly coupled with the class of runtime, but should
-not be used to enumerate general pod options as this would lead to a combinatorial explosion of
-RuntimeClass definitions.
-
-Examples of runtime parameters include:
-
-```
-// Decide which underlying OCI runtime should be used. This replaces the
-// annotations used by CRI-o, containerd & frakti to select between sandboxed
-// runtimes.
-"oci-runtime": "runsc"
-
-// Change the default set of capabilities used by the runtime. This is a good
-// way of surfacing behaviors that were previously implicit in docker but not
-// well defined in Kubernetes.
-"default-capabilities": "[]"
-```
-
-_Note: RuntimeClass is intended to be consumed by a single runtime implementation, so parameter keys
-do not need to be "namespaced"._
-
-In contrast, the following are examples of parameters that are better left to annotations or other
-extension mechanisms:
-
-```
-// Configuring the smack LSM for a runtime that adds support. This is an example
-// of a feature that will typically have multiple valid configurations, and is
-// better left to a pod-scoped mechanism like annotations.
-"smack-profile": "foo-bar"
-
-// Propagate Kubelet version information to the runtime. Tight coupling of a
-// RuntimeClass to nodes should generally be avoided. This will create churn
-// during upgrades.
-"kubelet-version": "1.2.3"
-```
-
-Minimal validation is done on parameters (copied from StorageClass):
-
-1. Keys must not be empty.
-2. A maximum of 512 parameters may be specified.
-3. Total size of keys+values must be less than 256K
-
-The runtime parameters are passed to the CRI as part of the `RunPodSandboxRequest`:
+The `RuntimeHandler` is passed to the CRI as part of the `RunPodSandboxRequest`:
 
 ```proto
 message RunPodSandboxRequest {
     // Configuration for creating a PodSandbox.
     PodSandboxConfig config = 1;
-    // Configuration for the runtime.
-    map<string, string> RuntimeParameters = 2;
+    // Named runtime configuration to use for this PodSandbox.
+    string RuntimeHandler = 2;
 }
 ```
+
+The RuntimeHandler is provided as a mechanism for CRI implementations to select between different
+predetermined configurations. The initial use case is replacing the experimental pod annotations
+currently used for selecting a sandboxed runtime by various CRI implementations:
+
+| CRI Runtime | Pod Annotation                                              |
+| ------------|-------------------------------------------------------------|
+| CRIO        | io.kubernetes.cri-o.TrustedSandbox: "false"                 |
+| containerd  | io.kubernetes.cri.untrusted-workload: "true"                |
+| frakti      | runtime.frakti.alpha.kubernetes.io/OSContainer: "true"<br>runtime.frakti.alpha.kubernetes.io/Unikernel: "true" |
+| windows     | experimental.windows.kubernetes.io/isolation-type: "hyperv" |
+
+These implementations could stick with scheme ("trusted" and "untrusted"), but the preferred
+approach is a non-binary one wherein arbitrary handlers can be configured with a name that can be
+matched against the specified RuntimeHandler. For example, containerd might have a configuration
+corresponding to a "kata-runtime" handler:
+
+```
+[plugins.cri.containerd.kata-runtime]
+    runtime_type = "io.containerd.runtime.v1.linux"
+    runtime_engine = "/opt/kata/bin/kata-runtime"
+    runtime_root = ""
+```
+
+This non-binary approach is more flexible: it can still map to a binary RuntimeClass selection
+(e.g. `sandboxed` or `untrusted` RuntimeClasses), but can also support multiple parallel sandbox
+types (e.g. `kata-containers` or `gvisor` RuntimeClasses).
 
 ### Versioning, Updates, and Rollouts
 
@@ -276,9 +248,9 @@ to beta.
 
 The Kubelet uses an Informer to keep a local cache of all RuntimeClass objects. When a new pod is
 added, the Kubelet resolves the Pod's RuntimeClass against the local RuntimeClass cache.  Once
-resolved, a subset of its fields are passed to the CRI as part of the [`RunPodSandboxRequest`][]. At
-that point, the interpretation of the parameters is left to the CRI implementation, but they should
-be cached if needed for subsequent calls.
+resolved, the RuntimeHandler field is passed to the CRI as part of the
+[`RunPodSandboxRequest`][]. At that point, the interpretation of the RuntimeHandler is left to the
+CRI implementation, but it should be cached if needed for subsequent calls.
 
 If the RuntimeClass cannot be resolved (e.g. doesn't exist) at Pod creation, then the request will
 be rejected in admission (controller to be detailed in a following update). If the RuntimeClass
@@ -292,9 +264,7 @@ the Pod. The admission check on a replica recreation will prevent the scheduler 
 **Scope creep.** RuntimeClass has a fairly broad charter, but it should not become a default
 dumping ground for every new feature exposed by the node. For each feature, careful consideration
 should be made about whether it belongs on the Pod, Node, RuntimeClass, or some other resource. The
-[non-goals](#non-goals) should be kept in mind when considering RuntimeClass features. Features that
-are too specific to a single runtime implementation should use `Parameters` rather than expanding
-the `RuntimeClassSpec`.
+[non-goals](#non-goals) should be kept in mind when considering RuntimeClass features.
 
 **Becoming a general policy mechanism.** RuntimeClass should not be used a replacement for
 PodSecurityPolicy. The use cases for defining multiple RuntimeClasses for the same underlying
