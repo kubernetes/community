@@ -86,7 +86,7 @@ type Controller struct {
 func NewController(pods informers.PodInformer) *Controller {
 	c := &Controller{
 		pods: pods.Lister(),
-		podsSynced pods.Informer().HasSynced,
+		podsSynced: pods.Informer().HasSynced,
 		queue: workqueue.NewNamedRateLimitingQueue(workqueue.DefaultControllerRateLimiter(), "controller-name"),
 	}
 	
