@@ -25,11 +25,12 @@ Membership for roles tracked in: [sigs.yaml]
   - Chairs *MAY* decide to step down at anytime and propose a replacement.  Use lazy consensus amongst
     chairs with fallback on majority vote to accept proposal.  This *SHOULD* be supported by a majority of
     SIG Members.
-  - Chairs *MAY* select additional chairs through a [super-majority] vote amongst chairs.  This
+  - Chairs *MAY* select additional chairs through a [super-majority] vote amongst chairs. This
     *SHOULD* be supported by a majority of SIG Members.
   - Chairs *MUST* remain active in the role and are automatically removed from the position if they are
     unresponsive for > 3 months and *MAY* be removed if not proactively working with other chairs to fulfill
-    responsibilities.
+    responsibilities.  Removal of a chair can be done either through a voluntary step down as outlined
+    above OR by a consensus of other chairs and SIG subproject owners.
   - Number: 2-3
   - Defined in [sigs.yaml]
 
