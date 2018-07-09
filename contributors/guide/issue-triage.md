@@ -51,7 +51,7 @@ issue to yourself and then `/close`.
 
 Support requests should be directed to the following:
 
-* [User documentation](https://kubernetes.io/docs/) and
+* [User documentation](https://kubernetes.io/docs/home/) and
 [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
 
 * [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes) and
@@ -85,7 +85,7 @@ Members of the Kubernetes community use Stack Overflow to field support
 requests. Before posting a new question, please search Stack Overflow for answers 
 to similar questions, and also familiarize yourself with:
 
-  * [user documentation](http://kubernetes.io/docs/)
+  * [user documentation](https://kubernetes.io/docs/home/)
   * [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
 
 Again, thanks for using Kubernetes.
