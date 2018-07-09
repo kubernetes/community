@@ -1,6 +1,7 @@
 # SIG YOURSIG Charter
 
-This charter adheres to the conventions described in the [Kubernetes Charter README].
+This charter adheres to the conventions described in the [Kubernetes Charter README] and uses
+the Roles and Organization Management outlined in [sig-governance].
 
 ## Scope
 
@@ -34,7 +35,7 @@ Outline of things that could be confused as falling into this SIG but don't or d
 
 ## Roles and Organization Management
 
-This sig follows adheres to the Roles and Organization Management outline in [sig-governance]
+This sig follows adheres to the Roles and Organization Management outlined in [sig-governance]
 and opts-in to updates and modifications to [sig-governance].
 
 ### Additional responsibilities of Chairs
