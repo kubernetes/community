@@ -393,7 +393,7 @@ Port:			http	3080/TCP
 Endpoints:		10.244.0.235:8080
 Session Affinity:	None
 
-#### Only bind Cluter IP to dummy interface
+#### Only bind Cluster IP to dummy interface
 # ip addr
 ...
 73: kube-ipvs0: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN qlen 1000
