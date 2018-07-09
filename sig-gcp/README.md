@@ -32,6 +32,12 @@ The following subprojects are owned by sig-gcp:
 - **cloud-provider-gcp**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
+- **gcp-compute-persistent-disk-csi-driver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/master/OWNERS
+- **gcp-filestore-csi-driver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/gcp-filestore-csi-driver/master/OWNERS
 
 ## GitHub Teams
 
