@@ -9,28 +9,28 @@ This document will be updated as needed to meet the current needs of the Kuberne
 ### Notes on Roles
 
 Unless otherwise stated, individuals are expected to be responsive and active within
-their roles.  Within this section member refers to a member of a Chair, Tech Lead or
-Subproject Owner Role, **not** a SIG or Organization member.
+their roles.  Within this section "member" refers to a member of a Chair, Tech Lead or
+Subproject Owner Role.  (this different from a SIG or Organization Member).
 
 - Initial members are defined at the founding of the SIG or Subproject as part of the acceptance
   of that SIG or Subproject.
-- Members *SHOULD* be active and responsive in their Roles.
+- Members *SHOULD* remain active and responsive in their Roles.
 - Members taking an extended leave of 1 or more months *SHOULD*
-  coordinate with other members sharing the Role to ensure the
+  coordinate with other members to ensure the
   role is adequately staffed during the leave.
 - Members going on leave for 1-3 months *MAY* work with other
-  members to identify a temporary replacement if need be.
+  members to identify a temporary replacement.
 - Members of a role *SHOULD* remove any other members that have not communicated a 
   leave of absence and either cannot be reached for more than 1 month or are not
   fulfilling their documented responsibilities for more than 1 month.
   This may be done through a [super-majority] vote of members, or if there are not
   enough *active* members to get a super-majority of votes cast, then removal may occur
-  through a [super-majority] vote between Chairs, Tech Leads and Subproject Owners
+  through a [super-majority] vote between Chairs, Tech Leads and Subproject Owners.
 - Membership disagreements may be escalated to the SIG Chairs.  SIG Chair membership
   disagreements may be escalated to the Steering Committee.
 
 - Members *MAY* decide to step down at anytime and propose a replacement.  Use lazy consensus amongst
-  other members with fallback on majority vote to accept proposal.  The candidate *SHOULD* be supported by a a
+  other members with fallback on majority vote to accept proposal.  The candidate *SHOULD* be supported by a
   majority of SIG Members or Subproject Contributors (as applicable).
 - Members *MAY* select additional members through a [super-majority] vote amongst members. This
   *SHOULD* be supported by a majority of SIG Members or Subproject Contributors (as applicable).
