@@ -133,6 +133,7 @@ The following, non-exhaustive, items are out of scope:
 
 ### Assets
 - [Source Repository](https://github.com/kubernetes-incubator/service-catalog)
+  - See [OWNERS](https://raw.githubusercontent.com/kubernetes-incubator/service-catalog/master/OWNERS) for who has access.
 - [Image Repository](https://quay.io/organization/kubernetes-service-catalog)
   - Canary builds are published on pushes to master.
   - Release builds (and latest) are published on tags.
