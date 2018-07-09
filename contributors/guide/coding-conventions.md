@@ -113,7 +113,7 @@ subdirectories).
 /docs/user-guide or /docs/admin, depending on whether it is a feature primarily
 intended for users that deploy applications or cluster administrators,
 respectively. Actual application examples belong in /examples.
-    - Examples should also illustrate [best practices for configuration and using the system](https://kubernetes.io/docs/user-guide/config-best-practices/)
+    - Examples should also illustrate [best practices for configuration and using the system](https://kubernetes.io/docs/concepts/configuration/overview/)
 
   - Third-party code
 
