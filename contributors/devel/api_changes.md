@@ -791,9 +791,9 @@ For example, consider the following object:
 // API v6.
 type Frobber struct {
   // height ...
-  Height *int32 `json:"height" protobuf:"varint,1,opt,name=height"`
+  Height *int32 `json:"height"
   // param ...
-  Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
+  Param  string `json:"param"
 }
 ```
 
@@ -803,11 +803,11 @@ A developer is considering adding a new `Width` parameter, like this:
 // API v6.
 type Frobber struct {
   // height ...
-  Height *int32 `json:"height" protobuf:"varint,1,opt,name=height"`
+  Height *int32 `json:"height"
   // param ...
-  Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
+  Param  string `json:"param"
   // width ...
-  Width  *int32 `json:"width,omitempty" protobuf:"varint,3,opt,name=width"`
+  Width  *int32 `json:"width,omitempty"
 }
 ```
 
@@ -861,13 +861,13 @@ The preferred approach adds an alpha field to the existing object, and ensures i
     // API v6.
     type Frobber struct {
       // height ...
-      Height int32  `json:"height" protobuf:"varint,1,opt,name=height"`
+      Height int32  `json:"height"`
       // param ...
-      Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
+      Param  string `json:"param"`
       // width indicates how wide the object is.
       // This field is alpha-level and is only honored by servers that enable the Frobber2D feature.
       // +optional
-      Width  *int32 `json:"width,omitempty" protobuf:"varint,3,opt,name=width"`
+      Width  *int32 `json:"width,omitempty"`
     }
     ```
 
@@ -934,15 +934,15 @@ In future Kubernetes versions:
 Another option is to introduce a new type with an new `alpha` or `beta` version
 designator, like this:
 
-```
+```go
 // API v7alpha1
 type Frobber struct {
   // height ...
-  Height *int32 `json:"height" protobuf:"varint,1,opt,name=height"`
+  Height *int32 `json:"height"`
   // param ...
-  Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
+  Param  string `json:"param"`
   // width ...
-  Width  *int32 `json:"width,omitempty" protobuf:"varint,3,opt,name=width"`
+  Width  *int32 `json:"width,omitempty"`
 }
 ```
 
