@@ -1,78 +1,86 @@
-# SIG YOURSIG Charter
+# SIG Roles and Organizational Governance
 
 This charter adheres to the conventions described in the [Kubernetes Charter README].
 
-## Scope
-
-This section defines the scope of things that would fall under ownership by this SIG.
-It must be used when determining whether subprojects should fall into this SIG.
-
-### In scope
-
-Outline of what falls into the scope of this SIG
-
-### Out of scope
-
-Outline of things that could be confused as falling into this SIG but don't
+This document will be updated as needed to meet the current needs of the Kubernetes project.
 
 ## Roles
 
-Membership for roles tracked in: [sigs.yaml]
+### Notes on Roles
+
+Unless otherwise stated, individuals are expected to be responsive and active within
+their roles.  Within this section member refers to a member of a Chair, Tech Lead or
+Subproject Owner Role, **not** a SIG or Organization member.
+
+- Initial members are defined at the founding of the SIG or Subproject as part of the acceptance
+  of that SIG or Subproject.
+- Members *SHOULD* be active and responsive in their Roles.
+- Members taking an extended leave of 1 or more months *SHOULD*
+  coordinate with other members sharing the Role to ensure the
+  role is adequately staffed during the leave.
+- Members going on leave for 1-3 months *MAY* work with other
+  members to identify a temporary replacement if need be.
+- Members of a role *SHOULD* remove any other members that have not communicated a 
+  leave of absence and either cannot be reached for more than 1 month or are not
+  fulfilling their documented responsibilities for more than 1 month.
+  This may be done through a [super-majority] vote of members, or if there are not
+  enough *active* members to get a super-majority of votes cast, then removal may occur
+  through a [super-majority] vote between Chairs, Tech Leads and Subproject Owners
+- Membership disagreements may be escalated to the SIG Chairs.  SIG Chair membership
+  disagreements may be escalated to the Steering Committee.
+
+- Members *MAY* decide to step down at anytime and propose a replacement.  Use lazy consensus amongst
+  other members with fallback on majority vote to accept proposal.  The candidate *SHOULD* be supported by a a
+  majority of SIG Members or Subproject Contributors (as applicable).
+- Members *MAY* select additional members through a [super-majority] vote amongst members. This
+  *SHOULD* be supported by a majority of SIG Members or Subproject Contributors (as applicable).
+
+
+### Chair
 
 - Chair
   - Run operations and processes governing the SIG
-  - Seed members established at SIG founding
-  - Chairs *MAY* decide to step down at anytime and propose a replacement.  Use lazy consensus amongst
-    chairs with fallback on majority vote to accept proposal.  This *SHOULD* be supported by a majority of
-    SIG Members.
-  - Chairs *MAY* select additional chairs through a [super-majority] vote amongst chairs. This
-    *SHOULD* be supported by a majority of SIG Members.
-  - Chairs *MUST* remain active in the role and are automatically removed from the position if they are
-    unresponsive for > 3 months and *MAY* be removed if not proactively working with other chairs to fulfill
-    responsibilities.  Removal of a chair can be done either through a voluntary step down as outlined
-    above OR by a consensus of other chairs and SIG subproject owners.
   - Number: 2-3
-  - Defined in [sigs.yaml]
+  - Membership tracked in [sigs.yaml]
 
+### Tech Lead
 
 - *Optional Role*: SIG Technical Leads
   - Establish new subprojects
   - Decommission existing subprojects
   - Resolve X-Subproject technical issues and decisions
-
+  - Number: 2-3
+  - Membership tracked in [sigs.yaml]
+  
+### Subproject Owner
 
 - Subproject Owners
   - Scoped to a subproject defined in [sigs.yaml]
   - Seed members established at subproject founding
-  - *MUST* be an escalation point for technical discussions and decisions in the subproject
-  - *MUST* set milestone priorities or delegate this responsibility
-  - *MUST* remain active in the role and are automatically removed from the position if they are unresponsive
-    for > 3 months.
-  - *MAY* be removed if not proactively working with other Subproject Owners to fulfill responsibilities.
-  - *MAY* decide to step down at anytime and propose a replacement.  Use [lazy-consensus] amongst subproject owners
-    with fallback on majority vote to accept proposal.  This *SHOULD* be supported by a majority of subproject
-    contributors (those having some role in the subproject).
-  - *MAY* select additional subproject owners through a [super-majority] vote amongst subproject owners.  This
-    *SHOULD* be supported by a majority of subproject contributors (through [lazy-consensus] with fallback on voting).
-  - Number: 3-5
-  - Defined in [OWNERS] files that are specified in [sigs.yaml]
+  - *SHOULD* be an escalation point for technical discussions and decisions in the subproject
+  - *SHOULD* set milestone priorities or delegate this responsibility
+  - Number: 2-3
+  - Membership tracked in [sigs.yaml]
+
+### Member
 
 - Members
-  - *MUST* maintain health of at least one subproject or the health of the SIG
-  - *MUST* show sustained contributions to at least one subproject or to the SIG
+  - *SHOULD* maintain health of at least one subproject or the health of the SIG
+  - *SHOULD* show sustained contributions to at least one subproject or to the SIG
   - *SHOULD* hold some documented role or responsibility in the SIG and / or at least one subproject
     (e.g. reviewer, approver, etc)
   - *MAY* build new functionality for subprojects
   - *MAY* participate in decision making for the subprojects they hold roles in
   - Includes all reviewers and approvers in [OWNERS] files for subprojects
 
+### Security Contact
+
 - Security Contact
   - *MUST* be a contact point for the Product Security Team to reach out to for
     triaging and handling of incoming issues
-  - *MUST* accept the [Embargo Policy](https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#embargo-policy)
+  - *MUST* accept the [Embargo Policy]
   - Defined in `SECURITY_CONTACTS` files, this is only relevant to the root file in
-    the repository, there is a template
-    [here](https://github.com/kubernetes/kubernetes-template-project/blob/master/SECURITY_CONTACTS)
+    the repository. Template [SECURITY_CONTACTS]
 
 ## Organizational management
 
@@ -98,7 +106,7 @@ Option 1: by SIG Technical Leads
   - Where subprojects processes differ from the SIG governance, they must document how
     - e.g. if subprojects release separately - they must document how release and planning is performed
 
-Option 2: by federation of subprojects
+Option 2: by Federation of Subprojects
 
 - Subprojects may be created by [KEP] proposal and accepted by [lazy-consensus] with fallback on majority vote of
   subproject owners in the SIG.  The result *SHOULD* be supported by the majority of members.
@@ -106,6 +114,8 @@ Option 2: by federation of subprojects
   - [sigs.yaml] *MUST* be updated to include subproject information and [OWNERS] files with subproject owners
   - Where subprojects processes differ from the SIG governance, they must document how
     - e.g. if subprojects release separately - they must document how release and planning is performed
+    
+Subprojects may create repos under *github.com/kubernetes-sigs* through [lazy-consensus] of subproject owners.
 
 ---
 
@@ -145,3 +155,5 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1454
 [OWNERS]: contributors/devel/owners.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
+[Embargo Policy]: https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#embargo-policy
+[SECURITY_CONTACTS]: https://github.com/kubernetes/kubernetes-template-project/blob/master/SECURITY_CONTACTS

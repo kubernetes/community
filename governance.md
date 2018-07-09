@@ -173,6 +173,6 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 [community membership]: /community-membership.md
 [sig governance]: /sig-governance.md
 [owners]: community-membership.md#subproject-owner
-[short template]: committee-steering/governance/sig-governance-template-short.md
+[short template]: committee-steering/governance/sig-charter-template.md
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/governance.md?pixel)]()
