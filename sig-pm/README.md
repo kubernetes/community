@@ -28,7 +28,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/kubernetes-pm)
+* [Slack](https://kubernetes.slack.com/messages/sig-pm)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-pm)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fpm)
 
