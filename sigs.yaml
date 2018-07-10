@@ -256,16 +256,19 @@ sigs:
     label: auth
     leadership:
       chairs:
-      - name: Eric Chiang
-        github: ericchiang
-        company: Red Hat
       - name: Jordan Liggitt
         github: liggitt
         company: Red Hat
+      - name: Mike Danese
+        github: mikedanese
+        company: Google
       - name: Tim Allclair
         github: tallclair
         company: Google
       emeritus_leads:
+      - name: Eric Chiang
+        github: ericchiang
+        company: Red Hat
       - name: Eric Tune
         github: erictune
         company: Google

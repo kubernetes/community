@@ -10,8 +10,8 @@ aliases:
     - bgrant0607
     - jdumars
   sig-auth-leads:
-    - ericchiang
     - liggitt
+    - mikedanese
     - tallclair
   sig-autoscaling-leads:
     - mwielgus
