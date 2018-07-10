@@ -15,6 +15,7 @@ reviewers:
   - "@vishh"
 approvers:
   - "@sig-node-leads"
+  - "@sig-scheduling-leads"
 editor: "@vikaschoudhary16"
 creation-date: "2018-06-14"
 last-updated: "2018-06-14"
@@ -51,10 +52,13 @@ The device plugin support added in Kubernetes 1.8 makes it easy for vendors to d
 ### As a cluster operator:
 - Nodes in my cluster has GPU HW from different generations. I want to classify GPU nodes into one of the three categories, silver, gold and platinum depending upon the launch timeline of the GPU family eg: Kepler K20, K80, Pascal P40, P100, Volta V100. I want to charge each of the three categories differently. I want to offer my clients 3 GPU rates/classes to choose from.<br/>
 **Motivation:** As time progresses in a cluster lifecycle, new advanced, high performance, expensive variants of GPUs gets added to the cluster nodes. At the same time older variants also co-exist. There are workloads which strictly wants latest GPUs and also there are workloads which are fine with older GPUs. But since there is a wide range of types, it will be hard to manage and confusing at the same time to have granularity at each GPU type. Grouping into few broad categories will be convenient to manage.<br/>
-**Can this be solved without resource classes:** A unique taint can be used to represent a category like silver. Nodes can be tainted accordingly depending upon the type of GPUs availability. User pods can use tolerations to steer workloads to the appropriate nodes. But problem is how to restrict a user pod from not using the toleration that it should not be using?<br/>
+**Can this be solved without resource classes:** A unique taint can be used to represent a category like silver. Nodes can be tainted accordingly depending upon the type of GPUs availability. User pods can use tolerations to steer workloads to the appropriate nodes. Now there are two problems. First, access control on tolerations and second, mechanism to quota resources. Though a new feature, [Pod Scheduling Policy][], is under design that can address first problem of access control on tolerations, there is no solution for second problem i.e quota control.  <br/>
+
+[Pod Scheduling Policy]: https://github.com/kubernetes/community/pull/1937
+
 **How Resource classes can solve this:** I, operator/admin, creates three resource classes: GPU-Platinum, GPU-Gold, GPU-Silver. Now since resource classes are quota controlled, end-user will be able to request resource classes only if quota is allocated.
 
-- I want a mechanism where it is possible to offer a group of devices, which are co-located on a single node and shares a common property, as a single resource that can be requested in pod container spec. Example, N GPU units interconnected by NVLink or N cpu cores on same NUMA node.<br/>
+- I want a mechanism where it is possible to offer a group of devices, which are co-located on a single node and share a common property, as a single resource that can be requested in pod container spec. Example, N GPU units interconnected by NVLink or N cpu cores on same NUMA node.<br/>
 **Motivation:** Increased performance because of local access. Local access also helps better use of cache<br/>
 **How Resource classes can solve this:**  Property/attribute which forms the grouping can be advertised in the device attributes and then a resource can be created to form a grouped super-resource based on that property.<br/>
 **Can this be solved without resource classes:** No
@@ -64,10 +68,11 @@ The device plugin support added in Kubernetes 1.8 makes it easy for vendors to d
 **How Resource classes can solve this:** Quota will be supported on resource class objects and by allowing resource request in user pods via resource class, charging policy can be linked with resource consumption.<br/>
 **Can this be solved without resource classes:** No
 
-- In my cluster, I have many different classes (different capabilities) of a device type (ex: NICs). End user’s expectations are met as long as device has a very small subset of these capabilities. I want a mechanism where end user can request devices which satisfies their minimum expectation.
+- In my cluster, I have many different classes (different capabilities shown as different resource attributes) of a device type (ex: NICs). End user’s expectations are met as long as device has a very small subset of these capabilities. I want a mechanism where end user can request devices which satisfies their minimum expectation.
 Few nodes are connected to data network over 40 Gig NICs and others are connected over normal 1 Gig NICs. I want end user pods to be able to request
 data network connectivity with high network performance while
 in default case, data network connectivity is offered via normal 1 Gbps NICs.<br/>
+Another example is FPGA NICs with different capabilities. For example, some might have embedded sdn control plane functionality, some might have embedded crypto logic. One workload may want a subset of these FPGA functionalities advertised as resource attributes.<br/>
 **Motivation:** If some workloads demand higher network bandwidth, it should be possible to run these workloads on selected nodes.<br/>
 **Can this be solved without resource classes:** Taints and tolerations can help in steering pods but the problem in that there is no way today to have access control over use of tolerations and therefore if multiple users are there, it is not possible to have control on allowed tolerations.<br/>
 **How Resource classes can solve this:** I can define a ResourceClass for the high-performance NIC with minimum bandwidth requirements, and makes sure only users with proper quota can use such resources.
@@ -125,7 +130,7 @@ Vendors can use DevicePlugin API to propagate new hardware features, and provide
 ## Objectives
 Essentially, a ResourceClass object maps a non-native compute resource with a specific set of properties to a portable name. Cluster admins can create different ResourceClass objects with the same generic name on different clusters to match the underlying hardware configuration. Users can then use the portable names to consume the matching compute resources. Through this extra abstraction layer, we are hoping to achieve the following goals:
 - **Allows workloads to request compute resources with wide range of properties in simple and standard way.** We propose to introduce a new `ComputeResource` API and a field, `ComputeResources` in the `Node.Status` to store a list of `ComputeResource` objects. Kubelet can use a `ComputeResource` object to encapsulate the resource metadata information associated with its underlying physical compute resources and propagate this information to the scheduler by appending it to the `ComputeResources` list in the `Node.Status`. With the resource metadata information, the Kubernetes scheduler can determine the fitness of a node for a container resource request expressed through ResourceClass name by evaluating whether the node has enough unallocated units of a ComputeResource matching the property constraints specified in the ResourceClass. This allows the Kubernetes scheduler to take resource property into account to schedule pods on the right node whose hardware configuration meets the specific resource metadata constraints.
-- **Allows cluster admins to configure and manage different kinds of non-native compute resources in flexible and simple ways.** A cluster admin creates a ResourceClass object that specifies a portable ResourceClass name (e.g., `fast-nic-gold`), and list of property matching constraints (e.g., `resourceName in (solarflare.com/fast-nic, intel.com/fast-nic)`, or `type=XtremeScale-8000`, or `bandwidth=100G`, or `zone in (us-west1-b, us-west1-c)`). The property matching constraints follow the generic LabelSelector format, which allows us to cover a wide range of resource specific properties. The cluster admin can then define and manage resource quota with the created ResourceClass object.
+- **Allows cluster admins to configure and manage different kinds of non-native compute resources in flexible and simple ways.** A cluster admin creates a ResourceClass object that specifies a portable ResourceClass name (e.g., `fast-nic-gold`), and list of property matching constraints (e.g., `resourceName in (solarflare.com/fast-nic, intel.com/fast-nic)`, or `type=XtremeScale-8000`, or `bandwidth=100). The property matching constraints follow the generic LabelSelector format, which allows us to cover a wide range of resource specific properties. The cluster admin can then define and manage resource quota with the created ResourceClass object.
 - **Allows vendors to export their resources on Kubernetes more easily.** The device plugin that a vendor needs to implement to make their resource available on Kubernetes lives outside Kubernetes core repository. The device plugin API will be extended to pass device properties from device plugin to Kubelet. Kubelet will propagate this information to the scheduler through ComputeResource and the scheduler will match a ComputeResource with certain properties to the best matching ResourceClass, and support resource requests expressed through ResourceClass name. The device plugin only needs to retrieve device properties through some device-specific API or tool, without needing to watch or understand either ComputeResource objects or ResourceClass objects.
 - **Provides a unified interface to interpret compute resources across various system components such as Quota and Container Resource Spec.** By introducing ResourceClass as a first-class API object, we provide a built-in solution for users to define their special resource constraints through this API, to request such resources through the existing Container Resource Spec, to limit access for such resources through the existing resource Quota component and to ensure their Pods land on the nodes with the matching physical resources through the default Kubernetes scheduling.
 - **Supports node-level resources as well as cluster-level resources.** Certain types of compute resources are tied to single nodes and are only accessible locally on those nodes. On the other hand, some types of compute resources such as network attached resources, can be dynamically bound to a chosen node that doesn’t have the resource available till the binding finishes. For such resources, the metadata constraints specified through ResourceClass can be consumed by a standalone controller or a scheduler extender during their resource provisioning or scheduler filtering so that the resource can be provisioned properly to meet the specified metadata constraints.
@@ -153,6 +158,8 @@ type ResourceClass struct {
 }
 
 type ResourceClassSpec struct {
+        // raw resource name. E.g.: nvidia.com/gpu
+        ResourceName string
         // defines general resource property matching constraints.
         // e.g.: zone in { us-west1-b, us-west1-c }; type: k80
         MetadataRequirements metav1.LabelSelector
@@ -168,16 +175,13 @@ kind: ResourceClass
 metadata:
   name: nvidia.high.mem
 spec:
+  resourceName: "nvidia.com/nvidia-gpu"
   labelSelector:
     - matchExpressions:
-        - key: "Kind"
-          operator: "In"
-          values:
-            - "nvidia-gpu"
         - key: "memory"
           operator: "GtEq"
           values:
-            - "30G"
+            - "15G"
 
 kind: Pod
 metadata:
@@ -199,12 +203,9 @@ kind: ResourceClass
 metadata:
   name: fast.nic
 spec:
+  resourceName: "sfc.com/smartNIC"
   labelSelector:
     - matchExpressions:
-        - key: "Kind"
-          operator: "In"
-          values:
-            - "nic"
         - key: "speed"
           operator: "GtEq"
           values:
@@ -226,18 +227,21 @@ Above resource class will select all the NICs with speed greater than equal to
 ### Kubelet Extension
 On node level, extended resources can be exported automatically by a third-party plugin through the Device Plugin API. We propose to extend the current Device Plugin API that allows device plugins to send to the Kubelet per-device properties during device listing. Exporting device properties at per-device level instead of per-resource level allows a device plugin to manage devices with heterogeneous properties.
 
-After receiving device availability and property information from a device plugin, Kubelet needs to propagate this information to the scheduler so that scheduler can take resource metadata into account when it is making the scheduling decision. We propose to add a new `ComputeResources` array field in NodeStatus API to represent a list of the `ComputeResource` instances where each represent a device resource and the associated resource properties. Once a node is configured to support ComputeResource API and the underlying resource is exported as a ComputeResource, its quantity should NOT be included in the conventional NodeStatus Capacity/Allocatable fields to avoid resource multiple counting. During the initial phase, we plan to start with exporting extended resources through the ComputeResource API but leaves primary resources in its current exporting model. We can extend the ComputeResource model to support primary resources later after getting more experience through the initial phase. Kubelet will update ComputeResources field upon any resource availability or property change for node-level resources.
+After receiving device availability and property information from a device plugin, Kubelet needs to propagate this information to the scheduler so that scheduler can take resource metadata into account when it is making the scheduling decision. We propose to add a new `ComputeResourceCapacity` and `ComputeResourceAllocatable`array fields in NodeStatus API. Each will represent a list of the `ComputeResource` instances where each instance in the list represents a device resource and the associated resource properties. Once a node is configured to support ComputeResource API and the underlying resource is exported as a ComputeResource, its quantity should NOT be included in the conventional NodeStatus Capacity/Allocatable fields to avoid resource multiple counting. During the initial phase, we plan to start with exporting extended resources through the ComputeResource API but leaves primary resources in its current exporting model. We can extend the ComputeResource model to support primary resources later after getting more experience through the initial phase. Kubelet will update ComputeResources field upon any resource availability or property change for node-level resources.
 
 We propose to start with the following struct definition:
 
 ```golang
 type NodeStatus struct {
         …
-        ComputeResources []ComputeResource
+        ComputeResourceCapacity []ComputeResource
+        ComputeResourceAllocatable []ComputeResource
         …
 }
 type ComputeResource struct {
-        // raw resource name. E.g.: nvidia.com/gpu
+        // unique and deterministically generated. “nodeName-resourceName-propertyHash” naming convention, where propertyHash is generated by calculating a hash over all resource properties
+        Name string
+        // raw resource name. E.g.: nvidia.com/nvidia-gpu
         ResourceName string
         // resource metadata received from device plugin.
         // e.g., gpuType: k80, zone: us-west1-b
@@ -247,6 +251,10 @@ type ComputeResource struct {
         Devices []string
 }
 ```
+The ComputeResource name needs to be unique and deterministically generated. We propose to use “nodeName-resourceName-propertyHash” naming convention for node level resources, where propertyHash is generated by calculating a hash over all resource properties. The properties of a physical resource may change, e.g., through a driver or node upgrade. When this happens, Kubelet will need to create a new ComputeResource object and delete the old one. However, some pods may already be scheduled on the node and allocated with the old ComputeResource, and it is hard for the scheduler to do its bookkeeping when such pods are still running on the node while the associated ComputeResource is removed. We have a few options to handle this situation.
+- First, we may document that to change or remove a device resource, the node has to be drained. This requirement however will complicate device plugin upgrade process.
+- Another option is that Kubelet can evict the pods that are allocated with an unexisting ComputeResource. Although simple, this approach may disturb long-running workloads during device plugin upgrade.
+- To support a less disruptive model, upon resource property change, Kubelet can still export capacity at old ComputeResource name for the devices used by active pods, and exports capacity at new matching ComputeResource name for devices not in use. Only when those pods finish running, that particular node finishes its transition. This approach avoids resource multiple counting and simplifies the scheduler resource accounting. One potential downside is that the transition may take quite long process if there are long running pods using the resource on the nodes. In that case, cluster admins can still drain the node at convenient time to speed up the transition. Note that this approach does add certain code complexity on Kubelet DeviceManager component.
 
 Possible fields we may consider to add later include:
 - `DeviceUnits resource.Quantity`. This field can be used to support fractional
@@ -268,30 +276,20 @@ The scheduler needs to watch for NodeStatus ComputeResources field changes and R
 
 A natural question is how we should define the matching behavior. Suppose there are two ResourceClass objects. ResourceClass RC1 has metadata matching constraint “property1 = value1”, and ResourceClass RC2 has metadata matching constraint “property2 = value2”. Suppose a ComputeResource has both “property1: value1” and “property2: value2” properties, and so match both ResourceClasses. Now should the scheduler consider this ComputeResource as qualified for both ResourceClasses RC1 and RC2, or only one of them?
 
-We feel the desired answer to this question may vary across different types of resources, properties and use cases. To illustrate this, lets consider the following example: A GPU device plugin in a cluster with different types of GPUs may be configured to export a single property, "Type", at the beginning. To support per GPU type resource quota, cluster admins may define the following ResourceClasses:
+We feel the desired answer to this question may vary across different types of resources, properties and use cases. To illustrate this, lets consider the following example: A GPU device plugin in a cluster with different types of GPUs may be configured to advertise under a common ResourceName as "nvidia.com/nvidia-tesla-k80", at the beginning. To support per GPU type resource quota, cluster admins may define the following ResourceClasses:
 
 ```yaml
 kind: ResourceClass
 metadata:
   name: nvidia-k80
 spec:
-  labelSelector:
-    - matchExpressions:
-        - key: "Type"
-          operator: "Eq"
-          values:
-            - "nvidia-tesla-k80"
+  resourceName: "nvidia.com/nvidia-tesla-k80"
 
 kind: ResourceClass
 metadata:
   name: nvidia-p100
 spec:
-  labelSelector:
-    - matchExpressions:
-        - key: "Type"
-          operator: "Eq"
-          values:
-            - "nvidia-tesla-p100"
+  resourceName: "nvidia.com/nvidia-tesla-p100"
 ```
 
 Later on, suppose the cluster admins add a new GPU node group with a new version of GPU device plugin that exports another resource property "Nvlink" which will be set true for nvidia-tesla-p100 GPUs connected through nvlinks. To utilize this new feature, the cluster admins define the following new ResourceClass with nvlink constraints:
@@ -301,12 +299,8 @@ kind: ResourceClass
 metadata:
   name: nvidia-p100-nvlink
 spec:
+  resourceName: "nvidia.com/nvidia-tesla-p100"
   labelSelector:
-    - matchExpressions:
-        - key: "Type"
-          operator: "Eq"
-          values:
-            - "nvidia-tesla-p100"
         - key: "Nvlink"
           operator: "Eq"
           values:
@@ -330,7 +324,7 @@ By default, the value of this field is set to zero, but cluster admins can set
 it to a higher value, which would prevent its matching compute resources from
 being matched by lower priority ResourceClasses. i.e.,
 when a ComputeResource matches multiple ResourceClasses with different Priority values, the scheduler will choose those with the highest Priority.
-Supporting multiple ResourceClass matching also makes it easy to ensure that existing pods requesting resources through raw resource name can continue to be scheduled properly when administrators add ResourceClass in a cluster. To guarantee this, the scheduler may just consider raw resource as a special ResourceClass with empty resource metadata constraints.
+Supporting multiple ResourceClass matching also makes it easy to ensure that existing pods requesting resources through raw resource name can continue to be scheduled properly when administrators add ResourceClass in a cluster. To guarantee this, the scheduler may just consider raw resource as a special ResourceClass with empty resource metadata constraints and priority higher than any resource class.
 
 Because a ComputeResource can match multiple ResourceClasses, Scheduler and Kubelet need to ensure a consistent view on ComputeResource to ResourceClass request binding. Let us consider an example to illustrate this problem. Suppose a node has two ComputeResources, CR1 and CR2, that have the same raw resource name but different sets of properties. Suppose they both satisfy the property constraints of ResourceClass RC1, but only CR2 satisfies the property constraints of another ResourceClass RC2. Suppose a Pod requesting RC1 is scheduled first. Because the RC1 resource request can be satisfied by either CR1 or CR2, it is important for the scheduler to record the binding information and propagate it to Kubelet, and Kubelet should honor this binding instead of making its own binding decision. This way, when another Pod comes in that requests RC2, the scheduler can determine whether Pod can fit on the node or not, depending on whether the previous RC1 request is bound to CR1 or CR2.
 
