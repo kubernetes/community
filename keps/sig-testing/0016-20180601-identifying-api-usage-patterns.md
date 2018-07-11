@@ -3,10 +3,10 @@ kep-number: 16
 title: Identifying API usage patterns with Applied Anthropology
 authors:
   - "@hh"
-owning-sig: sig-architecture
+owning-sig: sig-testing
 participating-sigs:
-  - sig-architecture
   - sig-testing
+  - sig-architecture
   - sig-apps
 reviewers:
   - "@spiffxp"
