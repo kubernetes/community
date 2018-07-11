@@ -1,14 +1,15 @@
 ---
 kep-number: 16
-title: APISnoop / cluster-wide api usage logging
+title: Identifying API usage patterns with Applied Anthropology
 authors:
   - "@hh"
-owning-sig: sig-apps
+owning-sig: sig-architecture
 participating-sigs:
-  - sig-apps
-  - sig-testing
   - sig-architecture
+  - sig-testing
+  - sig-apps
 reviewers:
+  - "@spiffxp"
   - "@AishSundar"
 approvers:
   - "@WilliamDenniss"
@@ -20,7 +21,7 @@ see-also:
   - KEP-15
 ---
 
-# API Call Signature Auditing
+# Identifying API usage patterns with Applied Anthropology
 
 ## Table of Contents
 
@@ -42,60 +43,163 @@ see-also:
 * [Drawbacks [optional]](#drawbacks-optional)
 * [Alternatives [optional]](#alternatives-optional)
 
-[Tools for generating]: https://github.com/ekalinin/github-markdown-toc
+[Tools for generating**: https://github.com/ekalinin/github-markdown-toc
 
 ## Summary
 
-The `Summary` section is incredibly important for producing high quality user focused documentation such as release notes or a development road map.
-It should be possible to collect this information before implementation begins in order to avoid requiring implementors to split their attention between writing release notes and implementing the feature itself.
-KEP editors, SIG Docs, and SIG PM should help to ensure that the tone and content of the `Summary` section is useful for a wide audience.
+Who are you? Why are you here?
 
-A good summary is probably at least a paragraph in length.
+Let’s enable any application, using our official Kubernetes libraries, to include the answer to these questions for each interaction with the APIServer.
+
+The aggregated clusterwide correlation of identity and journey with each API request/response would provide the raw metadata necessary explore the unseen, yet interwoven patterns of real-world user journeys within the Kubernetes community.
 
 ## Motivation
 
-This section is for explicitly listing the motivation, goals and non-goals of this KEP.
-Describe why the change is important and the benefits to users.
-The motivation section can optionally provide links to [experience reports][] to demonstrate the interest in a KEP within the wider Kubernetes community.
+We need an atlas of the invisible and undefined tribal patterns within our ecosystem that we create within our community.
 
-[experience reports]: https://github.com/golang/go/wiki/ExperienceReports
+This map would augmenting our existing approaches on the course of development, testing, and conformance based on how kubernetes actually usage.
 
 ### Goals
 
-List the specific goals of the KEP.
-How will we know that this has succeeded?
+* Simply enable communication of ‘Who are you? Why are you here?’ for any application within kubernetes using official protocols and libraries.
+
+* Cluster wide enablement and aggregation of this meta-data centrally.
+
+#### Collateral APISnoop Goals
+
+* Easily usable/curated community wide aggregation point
+
+* A curated dataset for public analysis
+
+* A community set of insights using the public datasets
+  * Endpoint mappings to projects / source code / functions that use them
+    * Including e2e tests / steps within tests
+    * Historical endpoint/function usage patterns over time
+  * Common Patterns of real world use across API endpoints
+    * How does the community use/do X?
+  * Machine Learning
+    * What are the unseen yet common patterns?
+    * What projects are using similar techniques?
 
 ### Non-Goals
 
-What is out of scope for his KEP?
-Listing non-goals helps to focus discussion and make progress.
+* Create a Rube Goldberg machine of complexity just to enable community insight
+* Any of the Collateral APISnoop Goals
+  * Not part of this KEP, but they are the underlying motivations and the main end-benefits to the community
 
 ## Proposal
 
-This is where we get down to the nitty gritty of what the proposal actually is.
+To aggregation of identity and purpose at the time of API interactions, we need to:
 
-### User Stories [optional]
+1. Define ‘identity’ and ‘purpose’
+  * The who and why
+2. Enable generation at time of interaction
+  * Instant introspection to answer the above
+3. Collectively record the individually evolving ‘identity and purpose’
+  * Sharing this information for all Kubernetes applications within a cluster
 
-Detail the things that people will be able to do if this KEP is implemented.
-Include as much detail as possible so that people can understand the "how" of the system.
-The goal here is to make this feel real for users without getting bogged down.
+### API interaction Identity (Who are you?)
+
+Current API interaction ‘identity’ is static and usually set in client-go via user-agent to something like:
+
+```
+e2e.test/v1.12.0 (linux/amd64) kubernetes/b143093
+kube-apiserver/v1.12.0 (linux/amd64) kubernetes/b143093
+kube-controller-manager/v1.12.0 (linux/amd64) kubernetes/b143093
+kubectl/v1.12.0 (linux/amd64) kubernetes/b143093
+kubelet/v1.12.0 (linux/amd64) kubernetes/b143093
+kube-scheduler/v1.12.0 (linux/amd64) kubernetes/b143093
+```
+
+Ideally our revised ‘identity’ should tie an application back to particular src commit, though some programs (like kernel info via uname) also show compile time info like timestamp or build user/machine:
+
+```
+$ uname -a
+Darwin Roadrunner.local 10.3.0 Darwin Kernel Version 10.3.0: Fri Feb 26 11:58:09 PST 2010; root:xnu-1504.3.12~1/RELEASE_I386 i386
+```
+
+### API interaction Purpose (Why are you here?)
+We must define a simple to implement, but contextually significant, answer to the question: Why are you here? It’s difficult to glean the purpose of an application interaction by external inspection without asking this obvious question.
+
+At the moment of making the API call, the application has access it’s own stack and history of source code location/lines and functions that brought it to make a request of an external API. Disabled by default, it could be enabled by setting a variable such as KUBE_CLIENT_SUBMIT_PURPOSE.
+
+Allowing the application to supply this ‘mental snapshot of purpose’ could be as simple as providing space in our protocol for including source and method callstacks.
+
+### Self Identification and Purpose (What does introspection tell you?)
+
+Introspection is available in many of the languages that have official Kubernetes client libraries. Go, Python, and Java all provide the ability to inspect the runtime and stack programmatically, and include source paths and line numbers.
+
+It may help to provide an example introspection:
+
+```json
+"introspection": {
+  "self-identity": "kube-apiserver/v1.12.0 (linux/amd64) kubernetes/b143093",
+  "current-purpose": [
+    "k8s.io/client-go/rest.(*Request).Do()",
+    "k8s.io/client-go/kubernetes/typed/admissionregistration/v1alpha1.(*initializerConfigurations).List()",
+    "k8s.io/apiserver/pkg/admission/configuration.NewInitializerConfigurationManager.func1()",
+    "k8s.io/apiserver/pkg/admission/configuration.(*poller).sync()",
+    "k8s.io/apiserver/pkg/admission/configuration.sync)-fm()",
+    "k8s.io/apimachinery/pkg/util/wait.JitterUntil.func1()",
+    "k8s.io/apimachinery/pkg/util/wait.JitterUntil()",
+    "k8s.io/apimachinery/pkg/util/wait.Until()",
+    "runtime.goexit()"
+  ],
+  "current-reasoning": [
+    "k8s.io/client-go/rest/request.go:807",
+    "k8s.io/client-go/kubernetes/typed/admissionregistration/v1alpha1/initializerconfiguration.go:79",
+    "k8s.io/apiserver/pkg/admission/configuration/initializer_manager.go:42",
+    "k8s.io/apiserver/pkg/admission/configuration/configuration_manager.go:155",
+    "k8s.io/apiserver/pkg/admission/configuration/configuration_manager.go:151",
+    "k8s.io/apimachinery/pkg/util/wait/wait.go:133",
+    "k8s.io/apimachinery/pkg/util/wait/wait.go:134",
+    "k8s.io/apimachinery/pkg/util/wait/wait.go:88",
+    "runtime/asm_amd64.s:2361"
+  ],
+}
+
+```
+
+### How do we communicate these larger concepts of identity and purpose?
+
+Currently the freeform concept of identity is limited what can fit within the user-agent field. 
+Support for recording the [user-agent field in our audit-events](https://github.com/kubernetes/kubernetes/pull/64812) was recently added, but our initial explorations depend on that field allowing up to ?k.
+
+We need to explore alternatives for conveying identity and purpose.
+  * use different channels
+  * compress the information to fit in 1k
+  * raise the user-agent size limit to ?k to include this approach.
+
+### Tying it all together: (How do I turn this on?)
+
+If all applications are compiled against a client-go (or other supported library) and support the env var `KUBE_CLIENT_SUBMIT_PURPOSE`, then deploying kubernetes itself with it set should enable all kubernetes components to begin transmitting identity and purpose.
+
+Setting this variable on all pods could be accomplished with an admission or initialization controller would allow all other applications in the cluster to do the same.
+
+Currently this data is transmitted via user-agent, so configuring an audit-logging webhook, dynamic or otherwise, would allow centralized aggregation.
+
+
+### User Stories
 
 #### Story 1
 
 #### Story 2
 
-### Implementation Details/Notes/Constraints [optional]
+### Implementation Details/Notes/Constraints
 
-What are the caveats to the implementation?
-What are some important details that didn't come across above.
-Go in to as much detail as necessary here.
-This might be a good place to talk about core concepts and how they releate.
+
+Audit-logging is not yet dynamically configurable, but is being discussed in the Dynamic Audit Configuration KEP.
+
+User-Agent is may not the field to use, considering the current expectation of what it might contain, both size and content wise.
+
+The data is interesting, because you get to see the callstacks for all the components in kubernetes, identifying the functions and line numbers making the calls.
 
 ### Risks and Mitigations
 
-What are the risks of this proposal and how do we mitigate.
-Think broadly.
-For example, consider both security and how this will impact the larger kubernetes ecosystem.
+Leaking callstacks from applications that don’t want to have the ability to be enabled.
+The default would need to be off, only when configured to do so via a KUBE_CALLSTACK_HASH style env var.
+
+To limit exposing local path names and source, client-go could instead generate a hash of the data (generalized, so it's just the paths+linums under $GOPATH), however this would either reduce the data to, "I'm here for the same reason as last time, can't tell you what it is." While useful, it definately reduces our insight, or adds some complexity to map the hashes back to their full context.
 
 ## Graduation Criteria
 
@@ -119,8 +223,15 @@ Major milestones might include
 
 ## Drawbacks [optional]
 
-Why should this KEP _not_ be implemented.
+Some feel this level of client ‘debugging’ doesn't belong in server-side logs. 
 
 ## Alternatives [optional]
 
-Similar to the `Drawbacks` section the `Alternatives` section is used to highlight and record other possible approaches to delivering the value proposed by a KEP.
+Log sufficient information in the client-side logs to correlate the request with the audit logs.
+The two sets of logs could then be combined programmatically as needed.
+
+The best way to do this would be to log the audit-id header that is returned on the api response, and can be used to uniquely identify the corresponding audit logs.
+
+Other projects that collect cluster-usage data:
+ - https://github.com/kubernetes-incubator/spartakus
+ - https://github.com/heptio/sonobuoy
