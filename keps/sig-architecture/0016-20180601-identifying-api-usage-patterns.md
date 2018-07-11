@@ -15,7 +15,7 @@ approvers:
   - "@WilliamDenniss"
 editor: TBD
 creation-date: 2018-06-27
-last-updated: 2018-06-27
+last-updated: 2018-07-10
 status: provisional
 see-also:
   - KEP-15
