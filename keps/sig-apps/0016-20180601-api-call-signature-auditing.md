@@ -134,7 +134,7 @@ It may help to provide an example introspection:
 
 ```json
 "introspection": {
-  "self-identity": "kube-apiserver/v1.12.0 (linux/amd64) kubernetes/b143093",
+  "self-identity": "kube-apiserver/v1.12.0 (linux/amd64) b143093 compiled by CNCF Fri Feb 26 11:58:09 PST 2010",
   "current-purpose": [
     "k8s.io/client-go/rest.(*Request).Do()",
     "k8s.io/client-go/kubernetes/typed/admissionregistration/v1alpha1.(*initializerConfigurations).List()",
