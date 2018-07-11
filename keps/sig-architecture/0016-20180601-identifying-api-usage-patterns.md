@@ -216,7 +216,7 @@ The data is interesting, because you get to see the callstacks for all the compo
 Leaking callstacks from applications that don’t want to have the ability to be enabled.
 The default would need to be off, only when configured to do so via a KUBE_CALLSTACK_HASH style env var.
 
-To limit exposing local path names and source, client-go could instead generate a hash of the data (generalized, so it's just the paths+linums under $GOPATH), however this would either reduce the data to, "I'm here for the same reason as last time, can't tell you what it is." While useful, it definately reduces our insight, or adds some complexity to map the hashes back to their full context.
+To limit exposing local path names and source, client-go could instead generate a hash of the data (generalized, so it's just the paths+linums under $GOPATH), however this would either reduce the data to, "I'm here for the same reason as last time, can't tell you what it is." While useful, it definitely reduces our insight, or adds some complexity to map the hashes back to their full context.
 
 ## Graduation Criteria
 
