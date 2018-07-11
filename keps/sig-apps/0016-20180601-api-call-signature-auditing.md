@@ -95,12 +95,9 @@ This map would help chart our course of development, testing, and conformance ba
 
 To aggregation of identity and purpose at the time of API interactions, we need to:
 
-1. Define ‘identity’ and ‘purpose’
-  * The who and why
-2. Enable generation at time of interaction
-  * Instant introspection to answer the above
-3. Collectively record the individually evolving ‘identity and purpose’
-  * Sharing this information for all Kubernetes applications within a cluster
+1. Define ‘identity’ and ‘purpose’ _The who and why_
+2. Enable generation at time of interaction: _Instant introspection to answer the above_
+3. Collectively record the individually evolving ‘identity and purpose’ _Sharing this information for all Kubernetes applications within a cluster_
 
 ### API interaction Identity (Who are you?)
 
