@@ -30,7 +30,7 @@ see-also:
       * [Summary](#summary)
       * [Motivation](#motivation)
          * [Goals](#goals)
-            * [Collateral APISnoop Goals](#collateral-apisnoop-goals)
+            * [APISnoop Goals](#apisnoop-goals)
          * [Non-Goals](#non-goals)
       * [Proposal](#proposal)
          * [API interaction Identity (Who are you?)](#api-interaction-identity-who-are-you)
@@ -73,7 +73,7 @@ This map would help _**chart our course of development, testing, and conformance
   - cluster wide
   - community wide
 
-#### Collateral APISnoop Goals
+#### APISnoop Goals
 
 * Easily usable/curated community wide aggregation point
 
@@ -92,7 +92,7 @@ This map would help _**chart our course of development, testing, and conformance
 ### Non-Goals
 
 * Create a Rube Goldberg machine of complexity just to enable community insight
-* Any of the Collateral APISnoop Goals
+* Any of the APISnoop Goals
   * Not part of this KEP, but they are the underlying motivations and the main end-benefits to the community
 
 ## Proposal
