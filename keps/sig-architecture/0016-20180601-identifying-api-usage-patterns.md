@@ -25,7 +25,6 @@ see-also:
 
 ## Table of Contents
 
-   * [Identifying API usage patterns with Applied Anthropology](#identifying-api-usage-patterns-with-applied-anthropology)
       * [Table of Contents](#table-of-contents)
       * [Summary](#summary)
       * [Motivation](#motivation)
@@ -67,7 +66,7 @@ This map would help _**chart our course of development, testing, and conformance
 
 * Enable communication of _'Who are you?'_ and _'Why are you here?'_
   - for any application using kubernetes API
-  - via the _official protocols and libraries__
+  - via the _official protocols and libraries_
 
 * Simple aggregation of this metadata
   - cluster wide
@@ -97,15 +96,15 @@ This map would help _**chart our course of development, testing, and conformance
 
 ## Proposal
 
-To aggregation of identity and purpose at the time of API interactions, we need to:
+To aggregate identity and purpose at the time of API interactions, we need to:
 
-1. Define ‘identity’ and ‘purpose’ _*The who and why*_
+1. Define ‘identity’ and ‘purpose’: _*The who and why*_
 2. Enable generation at time of interaction: _*Instant introspection to answer the above*_
-3. Collectively record the individually evolving ‘identity and purpose’ _*Sharing this information for all Kubernetes applications within a cluster*_
+3. Collecting this evolving ‘identity and purpose’: _*For the cluster itself, and the apps interacting with it*_
 
 ### API interaction Identity (Who are you?)
 
-Current API interaction ‘identity’ is static and usually set in client-go via user-agent to something like:
+Current API interaction client-‘identity’ is static and usually set in client-go via user-agent to something like:
 
 ```
 e2e.test/v1.12.0 (linux/amd64) kubernetes/b143093
@@ -116,11 +115,17 @@ kubelet/v1.12.0 (linux/amd64) kubernetes/b143093
 kube-scheduler/v1.12.0 (linux/amd64) kubernetes/b143093
 ```
 
-Ideally our revised ‘identity’ should tie an application back to particular src commit, though some programs (like kernel info via uname) also show compile time info like timestamp or build user/machine:
+Ideally our base ‘identity’ should tie an application back to particular src commit, though some programs (like kernel info via uname) also show compile time info like timestamp or build user/machine:
 
 ```
 $ uname -a
-Darwin Roadrunner.local 10.3.0 Darwin Kernel Version 10.3.0: Fri Feb 26 11:58:09 PST 2010; root:xnu-1504.3.12~1/RELEASE_I386 i386
+Darwin ii.local 10.3.0 Darwin Kernel Version 10.3.0: Fri Feb 26 11:58:09 PST 1985; root:xnu-1504.3.12~1/RELEASE_I386 i386
+```
+
+Possibly something like:
+
+```
+kubelet/v1.12.0 (linux/amd64) k8s.io/kubelet b143093 built by test-infra@buildbot-10 02/03/85 23:44
 ```
 
 ### API interaction Purpose (Why are you here?)
