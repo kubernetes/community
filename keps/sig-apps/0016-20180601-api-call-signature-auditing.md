@@ -51,19 +51,23 @@ Who are you? Why are you here?
 
 Let’s enable any application, using our official Kubernetes libraries, to include the answer to these questions for each interaction with the APIServer.
 
-The aggregated clusterwide correlation of identity and journey with each API request/response would provide the raw metadata necessary explore the unseen, yet interwoven patterns of real-world user journeys within the Kubernetes community.
+The aggregated clusterwide correlation of identity and user journey with each API request/response would provide the raw metadata necessary explore the unseen, yet interwoven patterns of real-world user journeys within the Kubernetes community.
 
 ## Motivation
 
 We need an atlas of the invisible and undefined tribal patterns within our ecosystem that we create within our community.
 
-This map would augmenting our existing approaches on the course of development, testing, and conformance based on how kubernetes actually usage.
+This map would help chart our course of development, testing, and conformance based on how kubernetes actually usage.
 
 ### Goals
 
-* Simply enable communication of ‘Who are you? Why are you here?’ for any application within kubernetes using official protocols and libraries.
+* Enable communication of ‘Who are you? Why are you here?’
+  - for any application using kubernetes API
+  - via the official protocols and libraries.
 
-* Cluster wide enablement and aggregation of this meta-data centrally.
+* Simple aggregation of this metadata
+  - cluster wide
+  - community wide
 
 #### Collateral APISnoop Goals
 
