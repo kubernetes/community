@@ -25,25 +25,29 @@ see-also:
 
 ## Table of Contents
 
-[Tools for generating][] a table of contents from markdown are available.
-
-* [Table of Contents](#table-of-contents)
-* [Summary](#summary)
-* [Motivation](#motivation)
-    * [Goals](#goals)
-    * [Non-Goals](#non-goals)
-* [Proposal](#proposal)
-    * [User Stories [optional]](#user-stories-optional)
-      * [Story 1](#story-1)
-      * [Story 2](#story-2)
-    * [Implementation Details/Notes/Constraints [optional]](#implementation-detailsnotesconstraints-optional)
-    * [Risks and Mitigations](#risks-and-mitigations)
-* [Graduation Criteria](#graduation-criteria)
-* [Implementation History](#implementation-history)
-* [Drawbacks [optional]](#drawbacks-optional)
-* [Alternatives [optional]](#alternatives-optional)
-
-[Tools for generating**: https://github.com/ekalinin/github-markdown-toc
+   * [Identifying API usage patterns with Applied Anthropology](#identifying-api-usage-patterns-with-applied-anthropology)
+      * [Table of Contents](#table-of-contents)
+      * [Summary](#summary)
+      * [Motivation](#motivation)
+         * [Goals](#goals)
+            * [Collateral APISnoop Goals](#collateral-apisnoop-goals)
+         * [Non-Goals](#non-goals)
+      * [Proposal](#proposal)
+         * [API interaction Identity (Who are you?)](#api-interaction-identity-who-are-you)
+         * [API interaction Purpose (Why are you here?)](#api-interaction-purpose-why-are-you-here)
+         * [Self Identification and Purpose (What does introspection tell you?)](#self-identification-and-purpose-what-does-introspection-tell-you)
+         * [How do we communicate these larger concepts of identity and purpose?](#how-do-we-communicate-these-larger-concepts-of-identity-and-purpose)
+         * [Tying it all together: (How do I turn this on?)](#tying-it-all-together-how-do-i-turn-this-on)
+         * [User Stories](#user-stories)
+            * [Story 1](#story-1)
+            * [Story 2](#story-2)
+            * [Story 3](#story-3)
+         * [Implementation Details/Notes/Constraints](#implementation-detailsnotesconstraints)
+         * [Risks and Mitigations](#risks-and-mitigations)
+      * [Graduation Criteria](#graduation-criteria)
+      * [Implementation History](#implementation-history)
+      * [Drawbacks [optional]](#drawbacks-optional)
+      * [Alternatives [optional]](#alternatives-optional)
 
 ## Summary
 
@@ -55,15 +59,15 @@ The aggregated clusterwide correlation of identity and user journey with each AP
 
 ## Motivation
 
-We need an _**atlas of the invisible and undefined tribal patterns**_ within our ecosystem that we create within our community.
+We need an _**atlas of the invisible and undefined tribal patterns**_ within the ecosystem of our community.
 
 This map would help _**chart our course of development, testing, and conformance**_ based on actual Kubernetes usage patterns.
 
 ### Goals
 
-* Enable communication of ‘Who are you? Why are you here?’
+* Enable communication of _'Who are you?'_ and _'Why are you here?'_
   - for any application using kubernetes API
-  - via the official protocols and libraries.
+  - via the _official protocols and libraries__
 
 * Simple aggregation of this metadata
   - cluster wide
@@ -212,11 +216,7 @@ To limit exposing local path names and source, client-go could instead generate 
 
 ## Graduation Criteria
 
-How will we know that this has succeeded?
-Gathering user feedback is crucial for building high quality experiences and SIGs have the important responsibility of setting milestones for stability and completeness.
-Hopefully the content previously contained in [umbrella issues][] will be tracked in the `Graduation Criteria` section.
-
-[umbrella issues]: https://github.com/kubernetes/kubernetes/issues/42752
+- [ ] TBD
 
 ## Implementation History
 
