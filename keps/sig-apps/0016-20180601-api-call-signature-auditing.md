@@ -95,9 +95,9 @@ This map would help chart our course of development, testing, and conformance ba
 
 To aggregation of identity and purpose at the time of API interactions, we need to:
 
-1. Define ‘identity’ and ‘purpose’ _The who and why_
-2. Enable generation at time of interaction: _Instant introspection to answer the above_
-3. Collectively record the individually evolving ‘identity and purpose’ _Sharing this information for all Kubernetes applications within a cluster_
+1. Define ‘identity’ and ‘purpose’ _*The who and why*_
+2. Enable generation at time of interaction: _*Instant introspection to answer the above*_
+3. Collectively record the individually evolving ‘identity and purpose’ _*Sharing this information for all Kubernetes applications within a cluster*_
 
 ### API interaction Identity (Who are you?)
 
@@ -120,11 +120,11 @@ Darwin Roadrunner.local 10.3.0 Darwin Kernel Version 10.3.0: Fri Feb 26 11:58:09
 ```
 
 ### API interaction Purpose (Why are you here?)
-We must define a simple to implement, but contextually significant, answer to the question: Why are you here? It’s difficult to glean the purpose of an application interaction by external inspection without asking this obvious question.
+We must define a simple to implement, but contextually significant, answer to the question: *Why are you here?* It’s difficult to glean the purpose of an application interaction by external inspection without asking this obvious question.
 
-At the moment of making the API call, the application has access it’s own stack and history of source code location/lines and functions that brought it to make a request of an external API. Disabled by default, it could be enabled by setting a variable such as KUBE_CLIENT_SUBMIT_PURPOSE.
+At the moment of making the API call, the application has access it’s own stack and history of source code location/lines and functions that brought it to make a request of an external API. Disabled by default, it could be enabled by setting a variable such as `KUBE_CLIENT_SUBMIT_PURPOSE`.
 
-Allowing the application to supply this ‘mental snapshot of purpose’ could be as simple as providing space in our protocol for including source and method callstacks.
+Allowing the application to supply this _‘mental snapshot of purpose’_ could be as simple as providing space in our protocol for including source and method callstacks.
 
 ### Self Identification and Purpose (What does introspection tell you?)
 
