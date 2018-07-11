@@ -460,7 +460,7 @@ similarly enough to older versions.  The general strategy is to cover the follow
    same version (e.g. a cluster upgraded to v1.3 passes the same v1.3 tests as
    a newly-created v1.3 cluster).
 
-[hack/e2e-runner.sh](https://git.k8s.io/test-infra/jenkins/e2e-image/e2e-runner.sh) is
+[kubetest](https://git.k8s.io/test-infra/kubetest) is
 the authoritative source on how to run version-skewed tests, but below is a
 quick-and-dirty tutorial.
 
