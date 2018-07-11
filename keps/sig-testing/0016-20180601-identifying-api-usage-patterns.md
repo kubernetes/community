@@ -47,7 +47,7 @@ see-also:
 
 ## Summary
 
-_*Who are you?*_ _*Why are you here?*_
+_**Who are you?**_ _**Why are you here?**_
 
 Let’s enable any application, using our official Kubernetes libraries, to include the answer to these questions for each interaction with the APIServer.
 
@@ -55,7 +55,7 @@ The aggregated clusterwide correlation of identity and user journey with each AP
 
 ## Motivation
 
-We need an _atlas of the invisible and undefined tribal patterns_ within our ecosystem that we create within our community.
+We need an __atlas of the invisible and undefined tribal patterns__ within our ecosystem that we create within our community.
 
 This map would help chart our course of development, testing, and conformance based on actual Kubernetes usage patterns.
 
