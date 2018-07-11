@@ -211,15 +211,8 @@ Hopefully the content previously contained in [umbrella issues][] will be tracke
 
 ## Implementation History
 
-Major milestones in the life cycle of a KEP should be tracked in `Implementation History`.
-Major milestones might include
-
-- the `Summary` and `Motivation` sections being merged signaling SIG acceptance
-- the `Proposal` section being merged signaling agreement on a proposed design
-- the date implementation started
-- the first Kubernetes release where an initial version of the KEP was available
-- the version of Kubernetes where the KEP graduated to general availability
-- when the KEP was retired or superseded
+- 06/27/2018: initial design via google doc
+- 07/11/2018: submission of KEP
 
 ## Drawbacks [optional]
 
