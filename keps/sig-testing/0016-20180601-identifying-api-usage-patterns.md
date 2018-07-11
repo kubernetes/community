@@ -55,9 +55,9 @@ The aggregated clusterwide correlation of identity and user journey with each AP
 
 ## Motivation
 
-We need an __atlas of the invisible and undefined tribal patterns__ within our ecosystem that we create within our community.
+We need an _**atlas of the invisible and undefined tribal patterns**_ within our ecosystem that we create within our community.
 
-This map would help chart our course of development, testing, and conformance based on actual Kubernetes usage patterns.
+This map would help _**chart our course of development, testing, and conformance**_ based on actual Kubernetes usage patterns.
 
 ### Goals
 
