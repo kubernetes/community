@@ -184,7 +184,15 @@ Currently this data is transmitted via user-agent, so configuring an audit-loggi
 
 #### Story 1
 
+As a SIG member, who uses the components we curate and what are they doing with them?
+
 #### Story 2
+
+As a SIG member choosing test to write/upgrade to conformance tests, what patterns and endpoints occur within our community vs what we currently test for.
+
+#### Story 3
+
+As a developer creating ginko tests, I'd like to know the existing tests and applications that have similar patterns or hit the endpoints I'm interested in.
 
 ### Implementation Details/Notes/Constraints
 
