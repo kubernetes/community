@@ -25,7 +25,6 @@ see-also:
 
 ## Table of Contents
 
-* [Table of Contents](#table-of-contents)
   * [Summary](#summary)
     * [Motivation](#motivation)
        * [Goals](#goals)
