@@ -2050,12 +2050,13 @@ workinggroups:
       chairs:
       - name: Ed Warnicke
         github: edwarnicke
-        company: Cisco systems
+        company: Cisco Systems
       - name: Frederick Kautz
         github: fkautz
         company: RedHat
       - name: Kyle Mestery
         github: mestery
+        company: Cisco Systems
     meetings:
     - description: Regular WG Meeting
       day: Friday

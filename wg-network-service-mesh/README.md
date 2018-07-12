@@ -16,9 +16,9 @@ A Working Group dedicated to discussing, designing and documenting Network Servi
 
 ## Organizers
 
-* Ed Warnicke (**[@edwarnicke](https://github.com/edwarnicke)**), Cisco systems
+* Ed Warnicke (**[@edwarnicke](https://github.com/edwarnicke)**), Cisco Systems
 * Frederick Kautz (**[@fkautz](https://github.com/fkautz)**), RedHat
-* Kyle Mestery (**[@mestery](https://github.com/mestery)**)
+* Kyle Mestery (**[@mestery](https://github.com/mestery)**), Cisco Systems
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/)
