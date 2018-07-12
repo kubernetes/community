@@ -49,6 +49,23 @@ see-also:
 
 ## Summary
 
+The cultural concepts of mihi and whakapapa are the foundation of this KEP.
+The application of these concepts within our community ecosystem
+deserves a shout out to the Māori of Aoteroa, Land of the Long White Cloud.
+
+New Zealand hasn’t been populated for very long compared to the rest of the world.
+The first people (Māori) arrived on waka (canoes) around the 15th century.
+For Maori people today, the name of the specific waka that their ancestors arrived on,
+combined with their own genealogical journey defines who they are
+(in a very meaningful specific way). When mihi (formal introductions) are made,
+they include their own parental lineage back to the name of the waka their ancestors arrived in.
+The knowledge and communication of this history often leads to newly introduced people
+becoming cognitive of familial historic connections between them.
+This concrete and relational definition of identity is called their whakapapa.
+
+Te Reo/Māori: He mea nui ki a tātau ō tātau whakapapa (HP 1991:1).
+English: Our genealogies are important to us.
+
 _**Who are you?**_ _**Why are you here?**_
 
 Let’s enable any application, using our official Kubernetes libraries, to include the answer to these questions for each interaction with the APIServer.
