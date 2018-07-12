@@ -2066,5 +2066,5 @@ workinggroups:
       url: https://docs.google.com/document/d/1C9NKjo0PWNWypROEO9-Y6haw5h9Xmurvl14SXpciz2Y/edit#heading=h.rc9df0a6n3ng
       archive_url: https://docs.google.com/document/d/1C9NKjo0PWNWypROEO9-Y6haw5h9Xmurvl14SXpciz2Y/edit#heading=h.rc9df0a6n3ng
     contact:
-      irc: #networkservicemesh
+      slack: wg-network-service-mesh
       mailing_list: https://groups.google.com/forum/#!forum/networkservicemesh

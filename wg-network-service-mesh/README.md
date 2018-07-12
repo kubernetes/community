@@ -21,7 +21,7 @@ A Working Group dedicated to discussing, designing and documenting Network Servi
 * Kyle Mestery (**[@mestery](https://github.com/mestery)**), Cisco Systems
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/)
+* [Slack](https://kubernetes.slack.com/messages/wg-network-service-mesh)
 * [Mailing list](https://groups.google.com/forum/#!forum/networkservicemesh)
 
 <!-- BEGIN CUSTOM CONTENT -->
