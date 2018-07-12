@@ -112,11 +112,11 @@ This map would help _**chart our course of development, testing, and conformance
 
 ## Proposal
 
-To aggregate identity and purpose at the time of API interactions, we need to:
+To aggregate identity and purpose _*at the time of API interactions*_, we need:
 
-1. Define ‘identity’ and ‘purpose’: _*The who and why*_
-2. Enable generation at time of interaction: _*Instant introspection to answer the above*_
-3. Collecting this evolving ‘identity and purpose’: _*For the cluster itself, and the apps interacting with it*_
+1. _*The who and why*_ : Define ‘identity’ and ‘purpose’
+2. _*App introspection*_ : generated at time of interaction:
+3. _*For all apps and the cluster itself*_ : allowing 'global' src, function, and API call mapping
 
 ### API interaction Identity (Who are you?)
 
@@ -138,7 +138,7 @@ like timestamp or build user/machine:
 
 ```
 $ uname -a
-Darwin ii.local 10.3.0 Darwin Kernel Version 10.3.0: Fri Feb 26 11:58:09 PST 1985; root:xnu-1504.3.12~1/RELEASE_I386 i386
+Darwin ii.local 10.3.0 Darwin Kernel Version 10.3.0: Fri Oct 26 1:21:00 NZT 1985; root:xnu-1504.3.12~1/RELEASE_I386 i386
 ```
 
 Possibly something like:
@@ -150,7 +150,7 @@ kubelet/v1.12.0 (linux/amd64) k8s.io/kubelet b143093 built by test-infra@buildbo
 ### API interaction Purpose (Why are you here?)
 We must define a simple to implement, but contextually significant, answer to the question:
 *Why are you here?*
-Its difficult to glean the purpose of an application interaction by external inspection without asking this obvious question.
+Its difficult to glean the purpose of an application interaction by external inspection without making room for this question.
 
 At the moment of making the API call, the application has access its own
 stack and history of source code location/lines and functions
