@@ -255,7 +255,9 @@ CRI implementation, but it should be cached if needed for subsequent calls.
 If the RuntimeClass cannot be resolved (e.g. doesn't exist) at Pod creation, then the request will
 be rejected in admission (controller to be detailed in a following update). If the RuntimeClass
 cannot be resolved by the Kubelet when `RunPodSandbox` should be called, then the Kubelet will fail
-the Pod. The admission check on a replica recreation will prevent the scheduler from thrashing.
+the Pod. The admission check on a replica recreation will prevent the scheduler from thrashing. If
+the `RuntimeHandler` is not recognized by the CRI implementation, then `RunPodSandbox` will return
+an error.
 
 [RunPodSandboxRequest]: https://github.com/kubernetes/kubernetes/blob/b05a61e299777c2030fbcf27a396aff21b35f01b/pkg/kubelet/apis/cri/runtime/v1alpha2/api.proto#L344
 
@@ -294,6 +296,9 @@ Alpha:
 
 - Everything described in the current proposal
 - Supported features and associated admission controller
+- [CRI validation test][cri-validation]
+
+[cri-validation]: https://github.com/kubernetes-incubator/cri-tools/blob/master/docs/validation.md
 
 Beta:
 
