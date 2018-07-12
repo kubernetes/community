@@ -137,6 +137,10 @@ aliases:
   wg-multitenancy-leads:
     - davidopp
     - jessfraz
+  wg-network-service-mesh-leads:
+    - edwarnicke
+    - fkautz
+    - mestery
   wg-policy-leads:
     - hannibalhuang
     - tsandall

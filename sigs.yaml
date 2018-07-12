@@ -2037,3 +2037,33 @@ workinggroups:
     contact:
       slack: wg-iot-edge
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge
+  - name: Network Service Mesh
+    dir: wg-network-service-mesh
+    mission_statement: >
+       A Working Group dedicated to discussing, designing and documenting
+       Network Service Mesh.  Network Service Mesh is a novel approach to
+       solving the more complicated L2/L3 use cases in Kubernetes that are
+       tricky to address with the existing Kubernetes Network Model by taking
+       inspiration from the work in Istio Service Mesh and mapping them to
+       L2/L3 payloads.
+    leadership:
+      chairs:
+      - name: Ed Warnicke
+        github: edwarnicke
+        company: Cisco systems
+      - name: Frederick Kautz
+        github: fkautz
+        company: RedHat
+      - name: Kyle Mestery
+        github: mestery
+    meetings:
+    - description: Regular WG Meeting
+      day: Friday
+      time: "08:00"
+      tz: "PDT"
+      frequency: weekly
+      url: https://docs.google.com/document/d/1C9NKjo0PWNWypROEO9-Y6haw5h9Xmurvl14SXpciz2Y/edit#heading=h.rc9df0a6n3ng
+      archive_url: https://docs.google.com/document/d/1C9NKjo0PWNWypROEO9-Y6haw5h9Xmurvl14SXpciz2Y/edit#heading=h.rc9df0a6n3ng
+    contact:
+      irc: #networkservicemesh
+      mailing_list: https://groups.google.com/forum/#!forum/networkservicemesh
