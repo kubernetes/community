@@ -145,9 +145,11 @@ kubelet/v1.12.0 (linux/amd64) k8s.io/kubelet b143093 built by test-infra@buildbo
 ```
 
 ### API interaction Purpose (Why are you here?)
-We must define a simple to implement, but contextually significant, answer to the question: *Why are you here?* It’s difficult to glean the purpose of an application interaction by external inspection without asking this obvious question.
+We must define a simple to implement, but contextually significant, answer to the question:
+*Why are you here?*
+Its difficult to glean the purpose of an application interaction by external inspection without asking this obvious question.
 
-At the moment of making the API call, the application has access it’s own stack and history of source code location/lines and functions that brought it to make a request of an external API. Disabled by default, it could be enabled by setting a variable such as `KUBE_CLIENT_SUBMIT_PURPOSE`.
+At the moment of making the API call, the application has access its own stack and history of source code location/lines and functions that brought it to make a request of an external API. Disabled by default, it could be enabled by setting a variable such as `KUBE_CLIENT_SUBMIT_PURPOSE`.
 
 Allowing the application to supply this _‘mental snapshot of purpose’_ could be as simple as providing space in our protocol for including source and method callstacks.
 
