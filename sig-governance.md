@@ -34,7 +34,7 @@ Guidelines for drafting a SIG Charter can be found [here](/committee-steering/go
 * Slack activity is archived at [kubernetes.slackarchive.io](http://kubernetes.slackarchive.io).  To start archiving a new channel invite the slackarchive bot to the channel via `/invite @slackarchive`
 * Organize video meetings as needed. No need to wait for the [Weekly Community Video Conference](community/README.md) to discuss. Please report summary of SIG activities there.
  * Request a Zoom account by emailing Paris Pittman(`parispittman@google.com`) and Jorge Castro(`jorge@heptio.com`). You must set up a google group (see below) for the SIG leads so that all the SIG leads have the ability to reset the password if necessary.
- * Read [how to use YouTube](/community/K8sYoutubeCollaboration.md) for publishing your videos to the Kubernetes channel. 
+ * Read [how to use YouTube](/communication/K8sYoutubeCollaboration.md) for publishing your videos to the Kubernetes channel.
  * Calendars
    1. Create a calendar on your own account. Make it public.
    2. Share it with all SIG leads with full ownership of the calendar - they can edit, rename, or even delete it.
