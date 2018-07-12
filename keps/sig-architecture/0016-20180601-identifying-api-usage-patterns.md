@@ -120,7 +120,8 @@ To aggregate identity and purpose at the time of API interactions, we need to:
 
 ### API interaction Identity (Who are you?)
 
-Current API interaction client-‘identity’ is static and usually set in client-go via user-agent to something like:
+Current API interaction client-‘identity’ is static and usually set in client-go
+via user-agent to something like:
 
 ```
 e2e.test/v1.12.0 (linux/amd64) kubernetes/b143093
@@ -131,7 +132,9 @@ kubelet/v1.12.0 (linux/amd64) kubernetes/b143093
 kube-scheduler/v1.12.0 (linux/amd64) kubernetes/b143093
 ```
 
-Ideally our base ‘identity’ should tie an application back to particular src commit, though some programs (like kernel info via uname) also show compile time info like timestamp or build user/machine:
+Ideally our base ‘identity’ should tie an application back to particular src commit,
+though some programs (like kernel info via uname) also show compile time info
+like timestamp or build user/machine:
 
 ```
 $ uname -a
@@ -149,13 +152,20 @@ We must define a simple to implement, but contextually significant, answer to th
 *Why are you here?*
 Its difficult to glean the purpose of an application interaction by external inspection without asking this obvious question.
 
-At the moment of making the API call, the application has access its own stack and history of source code location/lines and functions that brought it to make a request of an external API. Disabled by default, it could be enabled by setting a variable such as `KUBE_CLIENT_SUBMIT_PURPOSE`.
+At the moment of making the API call, the application has access its own
+stack and history of source code location/lines and functions
+that brought it to make a request of an external API.
+Disabled by default, it could be enabled by setting a variable such as `KUBE_CLIENT_SUBMIT_PURPOSE`.
 
-Allowing the application to supply this _‘mental snapshot of purpose’_ could be as simple as providing space in our protocol for including source and method callstacks.
+Allowing the application to supply this _‘mental snapshot of purpose’_ could be as simple
+as providing space in our protocol for including source and method callstacks.
 
 ### Self Identification and Purpose (What does introspection tell you?)
 
-Introspection is available in many of the languages that have official Kubernetes client libraries. Go, Python, and Java all provide the ability to inspect the runtime and stack programmatically, and include source paths and line numbers.
+Introspection is available in many of the languages that have
+official Kubernetes client libraries.
+Go, Python, and Java all provide the ability to inspect the 
+runtime and stack programmatically, and include source paths and line numbers.
 
 It may help to provide an example introspection:
 
@@ -200,42 +210,61 @@ We need to explore alternatives for conveying identity and purpose.
 
 ### Tying it all together: (How do I turn this on?)
 
-If all applications are compiled against a client-go (or other supported library) and support the env var `KUBE_CLIENT_SUBMIT_PURPOSE`, then deploying kubernetes itself with it set should enable all kubernetes components to begin transmitting identity and purpose.
+If all applications are compiled against a client-go (or other supported library)
+and support the env var `KUBE_CLIENT_SUBMIT_PURPOSE`,
+then deploying kubernetes itself with it set should
+enable all kubernetes components to begin transmitting identity and purpose.
 
-Setting this variable on all pods could be accomplished with an admission or initialization controller would allow all other applications in the cluster to do the same.
+Setting this variable on all pods could be accomplished with
+an admission or initialization controller allowng all other 
+applications within the cluster to do the same.
 
-Currently this data is transmitted via user-agent, so configuring an audit-logging webhook, dynamic or otherwise, would allow centralized aggregation.
-
+Currently this data is transmitted via user-agent,
+so configuring an audit-logging webhook,
+dynamic or otherwise, would allow centralized aggregation.
 
 ### User Stories
 
-#### Story 1
+#### SIG Component 'end-user' identification and usage patterns
 
 As a SIG member, who uses the components we curate and what are they doing with them?
 
-#### Story 2
+#### SIG informed test writing / conformance patterns
 
-As a SIG member choosing test to write/upgrade to conformance tests, what patterns and endpoints occur within our community vs what we currently test for.
+As a SIG member choosing test to write/upgrade to conformance tests,
+what patterns and endpoints occur within our community vs what we currently test for.
 
-#### Story 3
+#### Developer with a relational / community view
 
-As a developer creating ginko tests, I'd like to know the existing tests and applications that have similar patterns or hit the endpoints I'm interested in.
+As a developer, I'd like to know the existing tests and applications
+that have similar patterns or hit the endpoints I'm interested in.
 
 ### Implementation Details/Notes/Constraints
 
 
-Audit-logging is not yet dynamically configurable, but is being discussed in the Dynamic Audit Configuration KEP.
+Audit-logging is not yet dynamically configurable,
+but is being discussed in the Dynamic Audit Configuration KEP.
 
-User-Agent is may not the field to use, considering the current expectation of what it might contain, both size and content wise.
+User-Agent is may not the field to use,
+considering the current expectation of what it might contain,
+both size and content wise.
 
-The data is interesting, because you get to see the callstacks for all the components in kubernetes, identifying the functions and line numbers making the calls.
+The data is interesting,
+because you get to see the callstacks for all the components in kubernetes,
+identifying the functions and line numbers making the calls.
 
 ### Risks and Mitigations
 
 Leaking callstacks from applications that don’t want to have the ability to be enabled.
 The default would need to be off, only when configured to do so via a KUBE_CALLSTACK_HASH style env var.
 
-To limit exposing local path names and source, client-go could instead generate a hash of the data (generalized, so its just the paths+linums under $GOPATH), however this would either reduce the data to, "I'm here for the same reason as last time, can't tell you what it is." While useful, it definitely reduces our insight, or adds some complexity to map the hashes back to their full context.
+To limit exposing local path names and source,
+client-go could instead generate a hash of the data
+(generalized, so its just the paths+linums under $GOPATH),
+however this would either reduce the data to,
+"I'm here for the same reason as last time, can't tell you what it is."
+While useful, it definitely reduces our insight,
+or adds some complexity if we need to map the hashes back to their full context.
 
 ## Graduation Criteria
 
