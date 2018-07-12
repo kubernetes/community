@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 A Working Group dedicated to discussing, designing and documenting Network Service Mesh.  Network Service Mesh is a novel approach to solving the more complicated L2/L3 use cases in Kubernetes that are tricky to address with the existing Kubernetes Network Model by taking inspiration from the work in Istio Service Mesh and mapping them to L2/L3 payloads.
 
 ## Meetings
-* Regular WG Meeting: [Fridays at 08:00 PDT](https://docs.google.com/document/d/1C9NKjo0PWNWypROEO9-Y6haw5h9Xmurvl14SXpciz2Y/edit#heading=h.rc9df0a6n3ng) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PDT).
+* Regular WG Meeting: [Fridays at 08:00 PT](https://docs.google.com/document/d/1C9NKjo0PWNWypROEO9-Y6haw5h9Xmurvl14SXpciz2Y/edit#heading=h.rc9df0a6n3ng) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1C9NKjo0PWNWypROEO9-Y6haw5h9Xmurvl14SXpciz2Y/edit#heading=h.rc9df0a6n3ng).
 
 ## Organizers

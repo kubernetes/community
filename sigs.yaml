@@ -2061,7 +2061,7 @@ workinggroups:
     - description: Regular WG Meeting
       day: Friday
       time: "08:00"
-      tz: "PDT"
+      tz: "PT"
       frequency: weekly
       url: https://docs.google.com/document/d/1C9NKjo0PWNWypROEO9-Y6haw5h9Xmurvl14SXpciz2Y/edit#heading=h.rc9df0a6n3ng
       archive_url: https://docs.google.com/document/d/1C9NKjo0PWNWypROEO9-Y6haw5h9Xmurvl14SXpciz2Y/edit#heading=h.rc9df0a6n3ng
