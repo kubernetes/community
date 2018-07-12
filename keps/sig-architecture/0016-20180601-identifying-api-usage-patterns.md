@@ -274,6 +274,7 @@ or adds some complexity if we need to map the hashes back to their full context.
 
 - 06/27/2018: initial design via google doc
 - 07/11/2018: submission of KEP
+- 07/??/2018: sponsorship by sig-????
 
 ## Drawbacks [optional]
 
