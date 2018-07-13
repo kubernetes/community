@@ -42,7 +42,7 @@ The following, non-exhaustive, items are out of scope:
     lazy two-thirds resolution amongst the chairs.
 
 - Chairs
-  - All maintainer’s roles.
+  - Chairs are expected to perform the role of maintainer, in addition to their chair responsibilities.
   - Chairs are listed in our [SIG
     definition](https://github.com/kubernetes/community/tree/master/sig-service-catalog#chairs).
   - Responsible for project administration activities within the SIG and are
