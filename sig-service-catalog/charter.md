@@ -78,7 +78,7 @@ The following, non-exhaustive, items are out of scope:
   - Are a contact point for the Product Security Team to reach out to for
     triaging and handling of incoming issues.
   - Must be a maintainer.
-  - Must accept the Kubernetes [Embargo
+  - Must accept and adhere to the Kubernetes [Embargo
     Policy](https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#embargo-policy).
   - Defined in
     [SECURITY_CONTACTS](https://github.com/kubernetes-incubator/service-catalog/blob/master/SECURITY_CONTACTS)
