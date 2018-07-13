@@ -132,7 +132,7 @@ The following, non-exhaustive, items are out of scope:
   the `LGTM 1` and `LGTM 2` labels.
 - Pull requests that are labeled with `do-not-merge/hold` or have an on-going
   discussion must not be merged until all concerns are addressed.
-- Disagreements are mainly resolved via consensus. In the event that a common
+- Disagreements are resolved via lazy consensus. In the event that a common
   decision cannot be made, then a vote among the maintainers will be taken.
   Simple majority (>50%) wins.
 
