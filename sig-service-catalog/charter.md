@@ -61,6 +61,7 @@ The following, non-exhaustive, items are out of scope:
     via lazy two-thirds resolution amongst the chairs, if they are unresponsive
     for > 3 months or are not proactively working with other chairs to fulfill
     responsibilities.
+  - There is no set number of Chairs.
 
 - Emeritus Chairs ([Inspired by the Helm
   Project](http://technosophos.com/2018/01/11/introducing-helm-emeritus-core-maintainers.html))
