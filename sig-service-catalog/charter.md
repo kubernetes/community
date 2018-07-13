@@ -26,6 +26,34 @@ This SIG’s main goals are:
 The following, non-exhaustive, items are out of scope:
 - Operation of OSBAPI Service Brokers.
 
+### Code, Binaries and services
+
+- [Source Repository](https://github.com/kubernetes-incubator/service-catalog)
+  - See [OWNERS](https://raw.githubusercontent.com/kubernetes-incubator/service-catalog/master/OWNERS) for who has access.
+- [Image Repository](https://quay.io/organization/kubernetes-service-catalog)
+  - Canary builds are published on pushes to master.
+  - Release builds (and latest) are published on tags.
+  - Chairs have access to manage this repository.
+- [Helm Repository](https://svc-catalog-charts.storage.googleapis.com)
+  - Charts are manually published after each release.
+  - Managed by Vic Iglesias (Google), @viglesias on the kubernetes slack.
+- [svc-cat.io](https://svc-cat.io)
+  - Published on pushes to master.
+  - Site hosted with [Netlify](https://app.netlify.com/sites/svc-cat/overview).
+  - Chairs and interested maintainers have access to manage this site.
+- [CLI Binary Hosting](https://svc-cat.io/docs/install/#manual)
+  - Canary builds are published on pushes to master.
+  - Release builds (and latest) are published on tags.
+  - Files hosted on Azure blob storage.
+  - Azure account managed by Carolyn Van Slyck (Microsoft) and Aaron Schlesinger
+    (Microsoft).
+- [Travis](https://travis-ci.org/kubernetes-incubator/service-catalog)
+  - Runs the CI builds.
+  - Maintainers have access.
+- [Jenkins](https://service-catalog-jenkins.appspot.com/)
+  - Runs end-to-end tests on a live cluster.
+  - Server managed by Michael Kibbe (Google).
+
 ## Roles
 
 - Maintainers
@@ -135,30 +163,3 @@ The following, non-exhaustive, items are out of scope:
 - Disagreements are resolved via lazy consensus. In the event that a common
   decision cannot be made, then a vote among the maintainers will be taken.
   Simple majority (>50%) wins.
-
-### Assets
-- [Source Repository](https://github.com/kubernetes-incubator/service-catalog)
-  - See [OWNERS](https://raw.githubusercontent.com/kubernetes-incubator/service-catalog/master/OWNERS) for who has access.
-- [Image Repository](https://quay.io/organization/kubernetes-service-catalog)
-  - Canary builds are published on pushes to master.
-  - Release builds (and latest) are published on tags.
-  - Chairs have access to manage this repository.
-- [Helm Repository](https://svc-catalog-charts.storage.googleapis.com)
-  - Charts are manually published after each release.
-  - Managed by Vic Iglesias (Google), @viglesias on the kubernetes slack.
-- [svc-cat.io](https://svc-cat.io)
-  - Published on pushes to master.
-  - Site hosted with [Netlify](https://app.netlify.com/sites/svc-cat/overview).
-  - Chairs and interested maintainers have access to manage this site.
-- [CLI Binary Hosting](https://svc-cat.io/docs/install/#manual)
-  - Canary builds are published on pushes to master.
-  - Release builds (and latest) are published on tags.
-  - Files hosted on Azure blob storage.
-  - Azure account managed by Carolyn Van Slyck (Microsoft) and Aaron Schlesinger
-    (Microsoft).
-- [Travis](https://travis-ci.org/kubernetes-incubator/service-catalog)
-  - Runs the CI builds.
-  - Maintainers have access.
-- [Jenkins](https://service-catalog-jenkins.appspot.com/)
-  - Runs end-to-end tests on a live cluster.
-  - Server managed by Michael Kibbe (Google).
