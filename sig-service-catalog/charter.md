@@ -29,8 +29,9 @@ The following, non-exhaustive, items are out of scope:
 ## Roles
 
 - Maintainers
-  - Maintainer is equivalent to the standard Kubernetes definition of Approver.
-  - Responsible for approving, and reviewing, pull requests.
+  - Maintainer is equivalent to the standard [Kubernetes definition of
+    Approver](https://github.com/kubernetes/community/blob/master/community-membership.md#approver).
+  - Responsible for reviewing pull requests, and approving pull requests for merge.
   - Responsible for technical planning and stewardship of the project.
   - New maintainers may be nominated by a chair, and accepted via lazy
     two-thirds resolution amongst the chairs.
