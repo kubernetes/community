@@ -9,6 +9,8 @@ README](https://github.com/kubernetes/community/blob/master/committee-steering/g
 
 ## Scope
 
+See the [service-catalog entry in sigs.yaml](https://github.com/kubernetes/community/blob/master/sigs.yaml#L1485).
+
 ### In scope
 
 This SIG’s main goals are:
