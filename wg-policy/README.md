@@ -11,16 +11,16 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Provide an overall architecture that describes both the current policy related implementations as well as future policy related proposals in Kubernetes. Through a collaborative method, we want to present both dev and end user a universal view of policy architecture in Kubernetes.
 
 ## Meetings
-* Regular WG Meeting: [Thursdays at 17:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Wednesdays at 16:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing).
 
 ## Organizers
 
 * Howard Huang (**[@hannibalhuang](https://github.com/hannibalhuang)**), Huawei
 * Torin Sandall (**[@tsandall](https://github.com/tsandall)**), Styra
-* David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google
-* Clayton Coleman (**[@smarterclayton](https://github.com/smarterclayton)**), Red Hat
-* Xuan Jia (**[@xuanjia](https://github.com/xuanjia)**), China Mobile
+* Yisui Hu (**[@easeway](https://github.com/easeway)**), Google
+* Erica von Buelow (**[@ericavonb](https://github.com/ericavonb)**), Red Hat
+* Michael Elder (**[@mdelder](https://github.com/mdelder)**), IBM
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-policy)
