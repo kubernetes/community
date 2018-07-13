@@ -45,6 +45,14 @@ A list of common resources when contributing to Kubernetes.
 - [Test Health](https://go.k8s.io/test-health)
 - [Test History](https://go.k8s.io/test-history)
 
+## Email Aliases
+
+- community@kubernetes.io - Mail someone on the community team (SIG Contributor Experience) about a community issue.
+- social@cncf.io - Contact the CNCF social team; blog, twitter account, and other social properties.
+- steering@kubernetes.io - Mail the steering committee. Public address with public archive.
+- steering-private@kubernetes.io - Mail the steering committee privately, for sensitive items.
+- helpdesk@rt.linuxfoundation.org - Mail the LF helpdesk for help with CLA issues.
+
 ## Other
 
 - [Developer Statistics](https://k8s.devstats.cncf.io)
