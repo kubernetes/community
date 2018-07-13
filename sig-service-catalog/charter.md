@@ -103,7 +103,8 @@ The following, non-exhaustive, items are out of scope:
     members can meet to discuss and solve problems for our SIG.
 
 ### Project management
-- Milestones are defined by SIG maintainers.
+- [Milestones](https://github.com/kubernetes-incubator/service-catalog/milestones)
+  are defined by SIG maintainers.
 - Anyone is free to request for a discussion of the milestones/plans during
   a weekly call.
 - Weekly releases are typically done on Thursdays, and any member who has
