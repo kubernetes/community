@@ -11,7 +11,7 @@ Guide](http://kubernetes.io/docs/admin/).
 * **Contributor Guide**
   ([Please start here](/contributors/guide/README.md)) to learn about how to contribute to Kubernetes
 
-* **GitHub Issues** ([issues.md](issues.md)): How incoming issues are triaged.
+* **GitHub Issues** ([/contributors/guide/issue-triage.md](/contributors/guide/issue-triage.md)): How incoming issues are triaged.
 
 * **Pull Request Process** ([/contributors/guide/pull-requests.md](/contributors/guide/pull-requests.md)): When and why pull requests are closed.
 

@@ -692,6 +692,12 @@ sigs:
     - name: bootkube
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
+    - name: cluster-api
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
+    - name: cluster-api-provider-openstack
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
     - name: kops
       owners:
       - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS

@@ -44,6 +44,12 @@ The following subprojects are owned by sig-cluster-lifecycle:
 - **bootkube**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
+- **cluster-api**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
+- **cluster-api-provider-openstack**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
 - **kops**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS

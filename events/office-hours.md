@@ -25,7 +25,7 @@ Questions that aren’t addressed or need work can be punted to the next week or
 
 The hosts will do a shout out of thanks to the [current leaderboard](https://stackoverflow.com/tags/kubernetes/topusers) of SO answerers each meeting so the people helping answer questions can get some recognition. 
 
-#### What’s Ontopic
+#### What’s on topic?
 
 Specific questions about Kubernetes as pertaining to the topic. Since this is a Q&A format, we’d like questions that can be answered generally. So for example:
 
@@ -36,7 +36,7 @@ Specific questions about Kubernetes as pertaining to the topic. Since this is a 
 - Bad: My pods aren’t coming up on a node. (Vague)
 - Good: My pods aren’t coming up or misbehaving, what are the debugging steps to find out the root cause? (Helps us communicate the thought process for debugging to a general audience) 
 
-#### What’s Offtopic
+#### What’s off topic?
 
 Developer/Contributor questions: This event is for end users and operators, there is a separate livestream called [Meet our Contributors](/mentoring/meet-our-contributors.md) where you can ask questions about getting started contributing, participating in peer reviews, and other development topics.
 
