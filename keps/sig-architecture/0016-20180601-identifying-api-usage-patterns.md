@@ -216,8 +216,8 @@ then deploying kubernetes itself with it set should
 enable all kubernetes components to begin transmitting identity and purpose.
 
 Setting this variable on all pods could be accomplished with
-an admission or initialization controller allowng all other 
-applications within the cluster to do the same.
+an admission or initialization controller allowing every binary
+run on and within the cluster to do the same.
 
 Currently this data is transmitted via user-agent,
 so configuring an audit-logging webhook,
