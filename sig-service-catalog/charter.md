@@ -123,7 +123,7 @@ The following, non-exhaustive, items are out of scope:
   reports, deep dives, etc.) should make their slides available for perusal and
   feedback at least 2 week in advance.
 - [Working
-  groups](https://docs.google.com/document/d/1fghxARW-doHrNmBYCijhODsGoIFawpeU4X0end-XnUI/edit#)
+  groups](https://github.com/kubernetes-incubator/service-catalog/wiki/Working-Groups)
   can be initiated by any member. To create a new one, add the topic to the
   weekly call’s agenda for discussion.
   - These are not the same as cross-SIG working groups.
