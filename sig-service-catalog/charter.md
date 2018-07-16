@@ -133,7 +133,7 @@ The following, non-exhaustive, items are out of scope:
 ### Project management
 - [Milestones](https://github.com/kubernetes-incubator/service-catalog/milestones)
   are defined by SIG maintainers.
-- Anyone is free to request for a discussion of the milestones/plans during
+- Anyone is free to request a discussion of the milestones/plans during
   a weekly call.
 - Weekly releases are typically done on Thursdays, and any member who has
   maintainer rights is free to initiate it. _Friday releases are strongly
