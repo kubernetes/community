@@ -19,7 +19,7 @@ This SIG’s main goals are:
 - Provide a UX for Kubernetes users that is consistent with both the OSB API
   specification and traditional Kubernetes user interactions.
 - Align with the OSBAPI specification as changes are made.
-- Provide feedback (bugs or feature requests) to the OSBAPI WG.
+- Provide feedback (bugs or feature requests) to the [OSBAPI WG]](https://www.openservicebrokerapi.org/).
 
 ### Out of scope
 
