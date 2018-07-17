@@ -61,7 +61,7 @@ The following, non-exhaustive, items are out of scope:
     Approver](https://github.com/kubernetes/community/blob/master/community-membership.md#approver).
   - Responsible for reviewing pull requests, and approving pull requests for merge.
   - Responsible for technical planning and stewardship of the project.
-  - New maintainers may be nominated by a chair, and accepted via lazy
+  - New maintainers may be nominated by another maintainer, and accepted via lazy
     two-thirds resolution amongst the chairs.
   - Maintainers may be nominated for removal from their position by a chair,
     and accepted via lazy two-thirds resolution amongst the chairs.
