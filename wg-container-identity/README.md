@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Ensure containers are able to interact with external systems and acquire secure identities for communication, integrating with external solutions as necessary.
 
 ## Meetings
-* Regular WG Meeting: [Tuesdays at 15:00 UTC](TBD) (bi-weekly (On demand)). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+* Regular WG Meeting: [Wednesdays at 10:00 PDT](https://zoom.us/my/k8s.sig.auth) (bi-weekly (On demand)). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PDT).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1uH60pNr1-jBn7N2pEcddk6-6NTnmV5qepwKUJe9tMRo/edit).
 
 ## Organizers
