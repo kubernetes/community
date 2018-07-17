@@ -99,8 +99,9 @@ The following, non-exhaustive, items are out of scope:
   - Those who attain this title are no longer expected to attend the weekly
     meetings, share in the issue queue triage rotation, vote on policy or
     architectural issues, or review pull requests.
-  - They are listed in our documentation as Emeritus Chairs, and we will
-    continue to invite them to participate in related events, such as KubeCon.
+  - They are [listed in our documentation](https://svc-cat.io/community/#leadership)
+    as Emeritus Chairs, and we will continue to invite them to participate in
+    related events, such as KubeCon.
 
 - Security Contacts
   - Are a contact point for the Product Security Team to reach out to for
