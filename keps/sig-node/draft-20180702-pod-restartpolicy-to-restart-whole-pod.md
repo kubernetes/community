@@ -113,7 +113,7 @@ The `restartPolicy` or `AlwaysPod` would be a new value for an existing field in
 ## Alternatives
 
 Co-ordination between containers can be achieved by baking in some mechanism into the individual containers of the pod. 
-But this has the limitations that the some customisation would be required in the source code or at least the image of the individual containers. Such customisations may not always be possible or desirable.
+But this has the limitations that some customisation would be required in the source code or at least the image of the individual containers. Such customisations may not always be possible or desirable.
 
 The init containers already address this need for some custom behaviour without modifying the individual container images. But the scope of init containers is somewhat limited by the current behaviour during container restart.
 
