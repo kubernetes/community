@@ -1152,6 +1152,13 @@ be ambiguous and they are not specified by the value or value type.
 * The name of a field expressing a boolean property called 'fooable' should be
 called `Fooable`, not `IsFooable`.
 
+### Namespace Names
+* The name of a namespace must be a
+[DNS_LABEL](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/identifiers.md).
+* The `kube-` prefix is reserved for Kubernetes system namespaces, e.g. `kube-system` and `kube-public`.
+* See
+[the namespace docs](https://kubernetes.io/docs/user-guide/namespaces/) for more information.
+
 ## Label, selector, and annotation conventions
 
 Labels are the domain of users. They are intended to facilitate organization and
