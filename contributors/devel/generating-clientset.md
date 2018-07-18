@@ -1,6 +1,6 @@
 # Generation and release cycle of clientset
 
-Client-gen is an automatic tool that generates [clientset](../design-proposals/api-machinery/client-package-structure.md#high-level-client-sets) based on API types. This doc introduces the use the client-gen, and the release cycle of the generated clientsets.
+Client-gen is an automatic tool that generates [clientset](../design-proposals/api-machinery/client-package-structure.md#high-level-client-sets) based on API types. This doc introduces the use of the client-gen, and the release cycle of the generated clientsets.
 
 ## Using client-gen
 
