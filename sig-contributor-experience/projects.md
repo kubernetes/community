@@ -1,8 +1,8 @@
 # Projects and Goals
 
-*note - this is a temporary file until we can figure out a better project management solution.* 
+*note - this is a temporary file until we can figure out a better project management solution.*
 
-This is a list of the projects and goals currently underway with Contributor Experience. Please submit a PR if you are adding your project to this list. To introduce a new project, attend a weekly meeting or drop a note to us on the mailing list - details can be found on our [README](README.md). 
+This is a list of the projects and goals currently underway with Contributor Experience. Please submit a PR if you are adding your project to this list. To introduce a new project, attend a weekly meeting or drop a note to us on the mailing list - details can be found on our [README](README.md).
 
 Want to contribute? Take a look at this list and the "future" at the bottom. Thank you to all of our contributors for your hard work!
 
@@ -14,7 +14,7 @@ Project | Owner(s)/Lead(s) | Description | Q1, Q2, Later
 Projects and Goals (this doc) | @parispittman | Create projects.md | Q1
 de-SPOF Community Management | @castrojo | eg: YouTube management | Ongoing
 
-## Mentoring 
+## Mentoring
 Launch a multi-tier strategy test that promote all levels of the [contributor ladder](/community-membership.md) and diversity throughout the project.
 
 Project | Owner(s)/Lead(s) | Description | Q1, Q2, Later
@@ -26,7 +26,7 @@ Project | Owner(s)/Lead(s) | Description | Q1, Q2, Later
 ["Buddy" Program](https://github.com/kubernetes/community/issues/1803) | @parispittman, @chris-short | 1 hour 1:1 sessions for new and current contributors to have dedicated time; meet our contributors but personal | Q2
 
 ## Contributor Documentation
-Ensure the contribution process is well documented, discoverable, and consistent across repos to deliver the best contributor experience. 
+Ensure the contribution process is well documented, discoverable, and consistent across repos to deliver the best contributor experience.
 
 Project | Owner(s)/Lead(s) | Description | Q1, Q2, Later
 ---|---|---|---
@@ -36,7 +36,6 @@ Project | Owner(s)/Lead(s) | Description | Q1, Q2, Later
 [Label Documentation](https://gist.github.com/spiffxp/24937d8478853054c088ffc298021214) | @spiffxp | GitHub is rolling out a label description feature in the future; this is to document the label descriptions for contributors | Q1
 Issue hygiene | @spzala | Produce clear understanding and documentation of issue hygiene | Q1
 
-
 ## Contributor Workflow and Automation
 Ensure contributors have a smooth and similar process across repos to deliver the best contributor experience. Provide sufficient automation so that direct write access to repos is no longer required.
 
@@ -44,6 +43,13 @@ Project | Owner(s)/Lead(s) | Description | Q1, Q2, Later
 ---|---|---|---
 Cherry Pick Process | @spiffxp | Design and Prototype | Q2
 PR Descriptions | @grodrigues3, @spiffxp | Automation allowing people to edit pr descriptions for tldr or correct issue / pr; release notes based (design).  Define remaining work to be done. | Q1 - ongoing
+
+## GitHub Management
+Set polices and procedures to handle management GitHub settings, permissions, security, and process.
+
+Project | Owner(s)/Lead(s) | Description | Q1, Q2, Later
+---|---|---|---
+Establish GitHub Management Subproject | @cblecker | | Q3
 
 ## Project-wide Communication Channels
 Build, curate, moderate, and make project wide communication channels accessible.
@@ -74,9 +80,9 @@ KubeCon ContribEx Update and Deep Dive | @parispittman, leads | Run the 30 min u
 
 
 ## FUTURE
-These projects do not have an owner and have not started yet; however, we would like to get them on the slate for sometime this year. 
+These projects do not have an owner and have not started yet; however, we would like to get them on the slate for sometime this year.
 
-Project | Description 
----|--- 
+Project | Description
+---|---
 Automation of new membership | Current process is emailing a googlegroup and an org owner adds person to GH org
 Audit schedule | Create an audit schedule to make sure all communication pipelines are up and running smoothly eg: check that google group mailing lists have back up owners/maintainers, make sure meetings are following the calendar process, etc.
