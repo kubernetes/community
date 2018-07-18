@@ -12,7 +12,7 @@ approvers:
   - TBD
 editor: TBD
 creation-date: 2018-06-11
-last-updated: 2018-06-11
+last-updated: 2018-07-18
 status: provisional
 see-also:
   - n/a
@@ -26,112 +26,79 @@ superseded-by:
 # Pull based audit events stream
 
 ## Table of Contents
-
 * [Pull based audit events stream](#pull-based-audit-events-stream)
-* [Summary](#summary)
-* [Motivation](#motivation)
-    * [Goals](#goals)
-    * [Non-Goals](#non-goals)
-* [Proposal](#proposal)
-    * [Make audit backends dynamicly registerable](#make-audit-backends-dynamicly-registerable)
-    * [endpoints and query parameters](#endpoints-and-query-parameters)
-    * [Bandwidth limit Configuration](#bandwidth-limit-configuration)
-    * [User Stories](#user-stories)
+   * [Table of Contents](#table-of-contents)
+   * [Summary](#summary)
+   * [Motivation](#motivation)
+      * [Goals](#goals)
+      * [Non-Goals](#non-goals)
+   * [User Stories](#user-stories)
       * [Story 1](#story-1)
       * [Story 2](#story-2)
-    * [Risks and Mitigations](#risks-and-mitigations)
-* [Graduation Criteria](#graduation-criteria)
-* [Implementation History](#implementation-history)
-* [Drawbacks [optional]](#drawbacks-optional)
-* [Alternatives [optional]](#alternatives-optional)
-
-[Tools for generating]: https://github.com/ekalinin/github-markdown-toc
+   * [Proposal](#proposal)
+      * [new resource endpoints](#new-resource-endpoints)
+      * [Field Selector for subset of audit events](#field-selector-for-subset-of-audit-events)
+      * [Bandwidth limit Configuration](#bandwidth-limit-configuration)
+      * [Risks and Mitigations](#risks-and-mitigations)
+   * [Graduation Criteria](#graduation-criteria)
+   * [Implementation History](#implementation-history)
+   * [Alternatives](#alternatives)
 
 ## Summary
 
-This proposal aims at providing a pull-based stream for audit logging. This would look similar to a watch request to the API server, and provide stream of audit events. The stream does not return any previous events (i.e. no associated storage), it would only stream events that occurred after the stream was opened. Two non resource-url endpoints are installed to provide the stream. '/audits/' for all audit events generated in the API server, and '/audits/{namespace}' for audits events in the specified namespace. And query parameters could be used to get subset of audit events.
+This proposal aims at providing a pull-based stream for audit logging. This would look similar to a watch request to the API server, and provide stream of audit events. The stream does not return any previous events (i.e. no associated storage), it would only stream events that occurred after the stream was opened. Two new resource endpoints is installed to provide the stream: '/apis/audit.k8s.io/v1beta1/events' and '/apis/audit.k8s.io/v1alpha1/namespaces/{namespace}/namespacedevents'. These endpoints would only support the WATCH verb in the first.
 
 ## Motivation
-The current audit backends (log & webhook) require very high privileges (file access to the master) or prior configuration (webhook). There are a number of use cases for dynamic and unprivileged access to the audit logs. Examples include:
-- allow tenants to get audit events in their own namespace
+This endpoint provides a good way for short-term debugging. Both tenants and cluster administrator could use this endpoint to get event stream without any changes to the cluster. Examples include:
+- allow tenants to get audit events in their own namespaces
 - provide a subset of audit events, so it will be easier to query and analyze (e.g. https://github.com/kubernetes/kubernetes/issues/56683)
 
 
 ### Goals
 - Provide a new pull based audit event stream, which returns events that occurred after the stream was opened.
 - Allow users go get a subset of audit events.
-- Access control. Allow unprivileged users to get audits in their own namespace.
+- Access control. Allow cluster administrator to get all events in cluster, allow namespace administrators to get all events in their own namespace.
 - Bandwidth limit in server scope or per-namespace.
 
 ### Non-Goals
-- Access control at user/group level(e.g. allow user A to only get audits events from users A,B,C)
+- Access control beyond namespace granularity(e.g. allow user A to only get audits events from users A,B,C or allow user A to only get audit events of resource foo)
+- Provide a custom per-stream policies. The audit stream should be based on the cluster-wide audit policy.
 
+## User Stories
+
+### Story 1
+As a tenant, I will be able to known all things happened to my own namespace. When problem happens, I can use the audit events for trouble shooting.
+
+### Story 2
+As a developer, I will easily be able to get a subset of audit events. This will save a lot of time for debugging. I don't need to grep audit events from a couple of audit files.
 
 ## Proposal
 
-### Make audit backends dynamicly registerable
+### new resource endpoints
+Two new resource endpoint '/apis/audit.k8s.io/v1beta1/events' and '/apis/audit.k8s.io/v1alpha1/namespaces/{namespace}/namespacedevents' are installed.
+Unlike other resource endpoints which usually serve resource objects from key-value storage, these endpoints read events from a audit backend and only support the WATCH verb. '/apis/audit.k8s.io/v1beta1/events' provides a stream of all audit events in the cluster. '/apis/audit.k8s.io/v1alpha1/namespaces/{namespace}/namespacedevents' provides a stream of all audit events in the namespace. A new API object NamespacedEvent is introduced for the namespaced endpoint. NamespacedEvent has the same definition with the audit Event object which we already have, but `metadata.namespace` element is required for it.
 
-```golang
-// Registry is a decorator for the audit backend, it allows caller to dynamicly register/unregister new backends to it.
-type Registry interface {
-       Backend
+The audit events returned to users are the events generated according to the audit policy file. If an event is omitted by the audit policy file, the event would not be sent to user by these endpoints. For aggregated API servers, those endpoints only supports metadata-level, because kube-apiserver only record these events at metadata level.
 
-       // Register register a new Backend to the registry.
-       Register(Backend)
+To implement these watch endpoints, a new audit backend is introduced. This new backend will provide [watch.Interface](https://github.com/kubernetes/kubernetes/blob/release-1.11/staging/src/k8s.io/apimachinery/pkg/watch/watch.go#L28) to apimachinery. And apimachinery use this watch.Interface to implement the watch endpoint.
 
-       // UnRegister remove the Backend from registry.
-       UnRegister(Backend)
-}
-```
-When a request comes, a new backend is registered to the registry. Audit Events sent to this backend will be sent to users in the end.
-
-### endpoints and query parameters
-
-|endpoint            |definition                                  |supported paramsters                                 |
-|--------------------|--------------------------------------------|-----------------------------------------------------|
-|/audits             |all audit events generated in the API server|username, group, namespace, apiGroup, resource, verbs|
-|/audits/{namespaces}|audits events in the specified namespace    |username, group, apiGroup, resource, verbs           |
-
-definition of query parameters
-```golang
-type queryParm struct {
-       // username in the audit event.
-       // optional
-       username string
-       // groups in the audit event, if all specified groups exist in the audit event, then it will be sent to user.
-       // optional
-       groups []string
-       // namespace of the audit event, <none> for cluster scoped request, empty string for all namespaces.
-       // only supported for /audits endpoint.
-       // optional
-       namespace string
-       // apiGroup in the audit event, <core> for the core api group.
-       // optional
-       apiGroup string
-       // resource in the audit event, for example: pods.
-       // optional
-       resource string
-       // verb in the audit event, for example: create, put. If the verbs contains the verb of audit event, then
-       // the audit event will be sent to user.
-       // optional
-       verbs []string
-}
-```
+### Field Selector for subset of audit events
+Some field selector would be supported for users to get a subset of audit events. (e.g. objectRef.namespace, user.username)
 
 ### Bandwidth limit Configuration
+
 ```golang
 // LimitType is the type of the limit.
 type LimitType string
 
 const (
 	// ServerLimitType is a type of limit where there is one bucket shared by
-	// all of the audit events sent by the API Server, including '/audits' and
-	// 'audits/{namespace}' endpoints.
+	// all of the audit events sent by the API Server, including cluster-scoped and
+	// namespaced endpoints.
 	ServerLimitType LimitType = "server"
 
 	// NamespaceLimitType is a type of limit where there is one bucket used by
-	// each namespace. When the namespace is set to empty string, it limit the
-	// bandwidth of all requests to '/audits' endpoint.
+	// each namespace.
 	NamespaceLimitType LimitType = "namespace"
 )
 
@@ -166,21 +133,13 @@ type Limit struct {
 }
 ```
 
-When the sent bytes exceeds the bandwidth, API server will try to truncate the audit event, and check the limit again. If bandwidth limit is still exceeded, the event would be droped.
+When the sent bytes exceed the bandwidth, API server will try to truncate the audit event, and check the limit again. If bandwidth limit is still exceeded, the event would be dropped.
 
-
-### User Stories
-
-#### Story 1
-As a tenant, I will be able to known all things happened to my own namespace. When problem happens, I can use the audit events for trouble shooting.
-
-#### Story 2
-As a developer, I will easily be able to get a subset of audit events. This will save a lot of time for debugging. I don't need to grep audit events from a couple of audit files.
 
 ### Risks and Mitigations
-We have bandwidth limit to prevent potential performance impact to API server. That means audit events could be dropped silently.
+These endpoints should be treated as debugging & development endpoints, not for actual secure audit logging.
 This change introduces two new endpoints which expose sensitive information. The cluster admin should should configure the authorization module and set access control to them.
-The access control is supported at namespace level. Only namespace admin should be able to read audit events from endpoint `/audits/{namespace}/`.
+The access control is supported at namespace level. Only namespace admin should be able to read audit events from endpoint `/apis/audit.k8s.io/v1alpha1/namespaces/{namespace}/namespacedevents`.
 
 ## Graduation Criteria
 Success will be determined by stability of the provided pull based streams and ease of understanding for the end user.
@@ -193,7 +152,8 @@ Success will be determined by stability of the provided pull based streams and e
 ## Implementation History
 
 - 06/11/2018: initial design
+- 07/18/2018: update
 
-## Alternatives [optional]
+## Alternatives
 
 Cluster admin deploy another application to implement multi-tenant support. (e.g. https://kubernetes.io/docs/tasks/debug-application-cluster/audit/#log-collector-examples)
