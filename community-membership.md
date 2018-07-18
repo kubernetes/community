@@ -86,6 +86,14 @@ List of contributions:
 
 ```
 
+### Kubernetes Ecosystem
+
+There are related Kubernetes GitHub organizations, such as [kubernetes-sigs]. We are currently working on
+automation that would transfer membership in the Kubernetes organization to any related orgs automatically,
+but such is not the case currently. If you are a Kubernetes org member, you are implicitly eligible for
+membership in related orgs, and can request membership when it becomes relevant, by sending an email to
+*kubernetes-membership@googlegroups.com*, as outlined above.
+
 ### Responsibilities and privileges
 
 - Responsive to issues and PRs assigned to them
@@ -236,3 +244,4 @@ The Maintainer role has been removed and replaced with a greater focus on [OWNER
 [sigs.yaml]: sigs.yaml
 [New contributors]: https://github.com/kubernetes/community/blob/master/CONTRIBUTING.md
 [OWNERS]: contributors/guide/owners.md
+[kubernetes-sigs]: https://github.com/kubernetes-sigs
