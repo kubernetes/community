@@ -8,14 +8,13 @@ All Kubernetes SIGs must define a charter defining the scope and governance of t
 
 ## Steps to create a SIG charter
 
-1. Copy the template into a new file under community/sig-*YOURSIG*/charter.md ([sig-architecture example])
+1. Copy the [SIG charter template](sig-charter-template.md) into a new file under community/sig-*YOURSIG*/charter.md ([sig-architecture example])
 2. Read the [Recommendations and requirements] so you have context for the template
 3. Customize your copy of the template for your SIG.  Feel free to make adjustments as needed.
 4. Update [sigs.yaml] with the individuals holding the roles as defined in the template.
 5. Add subprojects owned by your SIG to the [sigs.yaml]
-5. Create a pull request with a draft of your charter.md and sigs.yaml changes.  Communicate it within your SIG
-   and get feedback as needed.
-6. Send the SIG Charter out for review to steering@kubernetes.io.  Include the subject "SIG Charter Proposal: YOURSIG"
+5. Create a pull request with a draft of your charter.md and sigs.yaml changes.  Communicate it within your SIG and get feedback as needed.
+6. Send an email with a link to the SIG Charter pull request out for review to steering@kubernetes.io.  Include the subject "SIG Charter Proposal: YOURSIG"
    and a link to the PR in the body.
 7. Typically expect feedback within a week of sending your draft.  Expect longer time if it falls over an
    event such as Kubecon or holidays.  Make any necessary changes.
