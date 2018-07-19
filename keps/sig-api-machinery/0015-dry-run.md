@@ -46,17 +46,69 @@ finer-grained mechanism later, if necessary.
 ## Admission controllers
 
 Admission controllers need to be modified to understand that the request is a
-“dry-run” request. While admission controllers are not supposed to have
-side-effects when triggered, some of them still do. Quotas for example uses the
-current request values to change the available quotas. Providing a parameter,
-either as an argument for built-in admission plugins or through a dryRun
-query-parameter for dynamic webhooks, will give them a chance not to have any
-side-effect.
+“dry-run” request. Admission controllers are allowed to have side-effects
+when triggered, as long as there is a reconciliation system, because it is not
+guaranteed that subsequent validating will permit the request to finish.
+Quotas for example uses the current request values to change the available quotas.
+The ```admission.Attributes``` interface will be edited like this, to inform the
+built-in admission controllers if a request is a dry-run:
+```golang
+type Attributes interface {
+	...
+	// IsDryRun indicates that modifications will definitely not be persisted for this request. This is to prevent
+	// admission controllers with side effects and a method of reconciliation from being overwhelmed.
+	// However, a value of false for this does not mean that the modification will be persisted, because it
+	// could still be rejected by a subsequent validation step.
+	IsDryRun() bool
+	...
+}
+```
 
-All admission controllers will have to be verified and changed. A new flag will
-be added so that webhooks can explicitly register with dry-run support. If
-dry-run is requested on a non-supported webhook, the request will be completely
-rejected.
+All built-in admission controllers will then have to be checked, and the ones with side
+effects will have to be changed to handle the dry-run case correctly. Some examples of
+built-in admission controllers with the possibility for side-effects are:
+- ResourceQuota
+- EventRateLimit
+- NamespaceAutoProvision
+- (Valid|Mut)atingAdmissionWebhook
+
+To address the possibility of webhook authors [relying on side effects](https://github.com/kubernetes/website/blame/836629cb118e0f74545cc7d6d97aa6b9edfa1a16/content/en/docs/reference/access-authn-authz/admission-controllers.md#L582-L584), a new field
+will be added to ```admissionregistration.k8s.io/v1beta1.ValidatingWebhookConfiguration``` and
+```admissionregistration.k8s.io/v1beta1.MutatingWebhookConfiguration``` so that webhooks
+can explicitly register as having dry-run support.
+If dry-run is requested on a non-supported webhook, the request will be completely rejected,
+as a 400: Bad Request. This field will be defaulted to true and deprecated in v1, and completely removed in v2.
+All webhooks registered with v2 will be assumed to support dry run. The [api conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md) advise
+against bool fields because "many ideas start as boolean but eventually trend towards a small set
+of mutually exclusive options" but in this case, we plan to remove the field in a future version.
+```golang
+// admissionregistration.k8s.io/v1beta1
+...
+type Webhook struct {
+	...
+	// DryRunnable defines whether this webhook will correctly handle dryRun requests.
+	// If false, any dryRun requests to resources/subresources this webhook applies to
+	// will be completely rejected and the webhook will not be called.
+	// Defaults to false.
+	// +optional
+	DryRunnable *bool `json:"dryRunnable,omitempty" protobuf:"varint,6,number,opt,name=dryRunnable"`
+}
+```
+
+Additionally, a new field will be added to ```admission.k8s.io/v1beta1.AdmissionReview```
+API object to reflect the changes to the ```admission.Attributes``` interface, indicating
+whether or not the request being reviewed is for a dry-run:
+```golang
+// admission.k8s.io/v1beta1
+...
+type AdmissionRequest struct {
+	...
+	// DryRun indicates that modifications will definitely not be persisted for this request.
+	// Defaults to false.
+	// +optional
+	DryRun *bool `json:"dryRun,omitempty" protobuf:"varint,11,number,opt,name=dryRun"`
+}
+```
 
 ## Storage
 
