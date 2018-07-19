@@ -1607,6 +1607,7 @@ sigs:
       chairs:
       - name: Aaron Crickenberger
         github: spiffxp
+        company: Google
       - name: Erick Feja
         github: fejta
         company: Google
@@ -2029,7 +2030,7 @@ workinggroups:
        A Working Group dedicated to discussing, designing and documenting using Kubernetes for developing and deploying IoT and Edge specific applications
     leadership:
       chairs:
-      - name: Dejan Bosanac	
+      - name: Dejan Bosanac
         github: dejanb
         company: Red Hat
     meetings:
