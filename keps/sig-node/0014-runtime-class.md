@@ -43,25 +43,17 @@ control plane. RuntimeClasses are assigned to pods through a `runtimeClass` fiel
 
 ## Motivation
 
-RuntimeClasses address two distinct problems: surfacing support and configuration of optional
-features, and supporting multiple runtimes.
+There is growing interest in using different runtimes within a cluster. [Sandboxes][] are the
+primary motivator for this right now, with both Kata containers and gVisor looking to integrate with
+Kubernetes. Other runtime models such as Windows containers or even remote runtimes will also
+require support in the future. RuntimeClass provides a way to select between different runtimes
+configured in the cluster and surface their properties (both to the cluster & the user).
 
-Today's runtimes have varying support for features that are expressible through the PodSpec (see
-[examples of runtime variation](#examples-of-runtime-variation) below). In some cases such as
-SELinux, features are silently ignored when they aren't supported. This is problematic from a
-security perspective since it makes it difficult to audit actual runtime options. Other features
-such as AppArmor are checked for support, but on failure the pod is just held in a "Blocked" state
-to avoid the churn of recreating the rejected pod. Still other features maybe be applied in slightly
-different configurations, as is the case with capabilities today (the default set is not
-well-defined), and `privileged` containers. By raising these properties to the control plane errors
-can be surfaced much earlier (admission), and configuration can be made explicit.
-
-The second problem that RuntimeClass addresses is supporting multiple runtimes in a cluster, or even
-on the same node. [Sandboxes][] are the primary motivator for this right now, with both Kata
-containers and gVisor looking to integrate with Kubernetes. Other runtime models such as Windows
-containers or even remote runtimes will also require support in the future. RuntimeClass provides a
-way to select between different runtimes configured in the cluster and surface their properties (both
-to the cluster & the user).
+In addition to selecting the runtime to use, supporting multiple runtimes raises other problems to
+the control plane level, including: accounting for runtime overhead, scheduling to nodes that
+support the runtime, and surfacing which optional features are supported by different
+runtimes. Although these problems are not tackled by this initial proposal, RuntimeClass provides a
+cluster-scoped resource tied to the runtime that can help solve these problems in a future update.
 
 [Sandboxes]: https://docs.google.com/document/d/1QQ5u1RBDLXWvC8K3pscTtTRThsOeBSts_imYEoRyw8A/edit
 
@@ -81,6 +73,8 @@ to the cluster & the user).
 The following goals are out-of-scope for the initial implementation, but may be explored in a future
 iteration:
 
+- Surfacing support for optional features by runtimes, and surfacing errors caused by
+  incompatible features & runtimes earlier.
 - Automatic runtime or feature discovery - initially RuntimeClasses are manually defined (by the
   cluster admin or provider), and are asserted to be an accurate representation of the runtime.
 - Scheduling in heterogeneous clusters - it is possible to operate a heterogeneous cluster
@@ -111,15 +105,9 @@ iteration:
   features.
 - As an application developer, I want to select the runtime that best fits my workload.
 - As an application developer, I don't want to study the nitty-gritty details of different runtime
-  implementations.
+  implementations, but rather choose from pre-configured classes.
 - As an application developer, I want my application to be portable across clusters that use similar
   but different variants of a "class" of runtimes.
-- As an application operator, I want to know precisely how the application is running, and which
-  features are being used.
-- As an application operator, I want pods to fail fast when trying to use an optional feature that
-  isn't supported by the chosen runtime.
-- As a security operator, I want to ensure that pods are running with the security features they
-  claim.
 
 ## Proposal
 
@@ -129,9 +117,6 @@ The initial design includes:
 - `RuntimeClass` pod field for specifying the RuntimeClass the pod should be run with
 - Kubelet implementation for fetching & interpreting the RuntimeClass
 - CRI API & implementation for passing along the [RuntimeHandler](#runtime-handler).
-
-A subsequent update will include the API for describing supported features and an admission
-controller for performing validation & defaulting.
 
 ### API
 
@@ -284,9 +269,10 @@ it is still something I hope we can address in a future iteration through the co
 or "conformant" RuntimeClasses.
 
 **Non-portability.** We are already in a world of non-portability for many features (see [examples
-of runtime variation](#examples-of-runtime-variation). RuntimeClasses actually address this issue by
-formally declaring supported features. Another issue is that pods need to refer to a RuntimeClass by
-name, which may not be defined in every cluster. This is something that can be addressed through
+of runtime variation](#examples-of-runtime-variation). Future improvements to RuntimeClass can help
+address this issue by formally declaring supported features, or matching the runtime that supports a
+given workload automitaclly. Another issue is that pods need to refer to a RuntimeClass by name,
+which may not be defined in every cluster. This is something that can be addressed through
 pre-defined runtime classes (see previous risk), and/or by "fitting" pod requirements to compatible
 RuntimeClasses.
 
@@ -295,7 +281,6 @@ RuntimeClasses.
 Alpha:
 
 - Everything described in the current proposal
-- Supported features and associated admission controller
 - [CRI validation test][cri-validation]
 
 [cri-validation]: https://github.com/kubernetes-incubator/cri-tools/blob/master/docs/validation.md
@@ -305,6 +290,7 @@ Beta:
 - Major runtimes support RuntimeClass
 - RuntimeClasses are configured in the E2E environment with test coverage of a non-legacy RuntimeClass
 - The update & upgrade story is revisited, and a longer-term approach is implemented as necessary.
+- The cluster admin can choose which RuntimeClass is the default in a cluster.
 - Additional requirements TBD
 
 ## Implementation History
