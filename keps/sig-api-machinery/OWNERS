@@ -1,0 +1,6 @@
+reviewers:
+  - sig-api-machinery-leads
+approvers:
+  - sig-api-machinery-leads
+labels:
+  - sig/api-machinery
