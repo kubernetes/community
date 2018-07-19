@@ -8,11 +8,11 @@ All Kubernetes SIGs must define a charter defining the scope and governance of t
 
 ## Steps to create a SIG charter
 
-1. Copy the template into a new file under community/sig-*YOURSIG*/charter.md ([sig-architecture example])
+1. Copy [the template][Short Template] into a new file under community/sig-*YOURSIG*/charter.md ([sig-architecture example])
 2. Read the [Recommendations and requirements] so you have context for the template
-3. Customize your copy of the template for your SIG.  Feel free to make adjustments as needed.
+3. Fill out the template for your SIG
 4. Update [sigs.yaml] with the individuals holding the roles as defined in the template.
-5. Add subprojects owned by your SIG to the [sigs.yaml]
+5. Add subprojects owned by your SIG in the [sigs.yaml]
 5. Create a pull request with a draft of your charter.md and sigs.yaml changes.  Communicate it within your SIG
    and get feedback as needed.
 6. Send the SIG Charter out for review to steering@kubernetes.io.  Include the subject "SIG Charter Proposal: YOURSIG"
@@ -30,45 +30,19 @@ All Kubernetes SIGs must define a charter defining the scope and governance of t
 
 ## How to use the templates
 
-When developing or modifying a SIG governance doc, the intention is for SIGs to use the templates (*under development*)
-as a common set of options SIGs may choose to incorporate into their own governance structure.  It is recommended that
-SIGs start by looking at the [Recommendations and requirements] for SIG governance docs and consider what structure
-they think will work best for them before pulling items from the templates.
+SIGs should use [the template][Short Template] as a starting point. This document links to the recommended [SIG Governance][sig-governance] but SIGs may optionally record deviations from these defaults in their charter.
 
-The expectation is that SIGs will pull and adapt the options in the templates to best meet the needs of the both the SIG
-and project.
-
-- [Recommendations and requirements]
-
-## Templates
-
-- [Short Template]
 
 ## Goals
 
-The following documents outline recommendations and requirements for SIG charters and provide
-template documents for SIGs to adapt.  The goals are to define the baseline needs for SIGs to
-self govern and exercise ownership over an area of the Kubernetes project.
-
-The documents are focused on:
-
-- Defining SIG scope
-- Outlining organizational responsibilities
-- Outlining organizational roles
-- Outlining processes and tools
-
-Specific attention has been given to:
-
-- The role of technical leadership
-- The role of operational leadership
-- Process for agreeing upon technical decisions
-- Process for ensuring technical assets remain healthy
+The primary goal of the charters is to define the scope of the SIG within Kubernetes and how the SIG leaders exercise ownership of these areas by taking care of their responsibilities. A majority of the effort should be spent on these concerns.
 
 ## FAQ
 
 See [frequently asked questions]
 
 [Recommendations and requirements]: sig-governance-requirements.md
+[sig-governance]: sig-governance.md
 [Short Template]: sig-charter-template.md
 [frequently asked questions]: FAQ.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
