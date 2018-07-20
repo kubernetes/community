@@ -1500,11 +1500,11 @@ sigs:
       - name: Paul Morie
         github: pmorie
         company: Red Hat
-      - name: Aaron Schlesinger
-        github: arschles
+      - name: Carolyn Van Slyck
+        github: carolynvs
         company: Microsoft
-      - name: Ville Aikas
-        github: vaikas-google
+      - name: Michael Kibbe
+        github: kibbles-n-bytes
         company: Google
       - name: Doug Davis
         github: duglin
