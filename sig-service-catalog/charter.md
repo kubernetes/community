@@ -56,6 +56,9 @@ The following, non-exhaustive, items are out of scope:
 - Operation of OSBAPI Service Brokers.
 
 ## Roles
+This SIG's charter deviates from the
+[sig-governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md)
+roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair role.
 
 - Maintainers
   - Maintainer is equivalent to the standard [Kubernetes definition of
