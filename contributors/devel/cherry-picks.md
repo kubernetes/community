@@ -1,7 +1,8 @@
 # Overview
 
 This document explains how cherry picks are managed on release
-branches within the Kubernetes projects.
+branches within the Kubernetes projects. A common use case for this
+task is for backporting PRs from master to release branches.
 
 ## Prerequisites
  * [Contributor License Agreement](http://git.k8s.io/community/CLA.md)
