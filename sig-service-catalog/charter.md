@@ -161,8 +161,7 @@ roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair rol
 - While everyone is encouraged to contribute to the discussion of any topic,
   ultimately any changes made to the codebase must be approved by the
   maintainers.
-- Pull requests are required to have at least 2 maintainers approve them using
-  the `LGTM 1` and `LGTM 2` labels.
+- Pull requests are required to have at least 2 maintainers approve them.
 - Pull requests that are labeled with `do-not-merge/hold` or have an on-going
   discussion must not be merged until all concerns are addressed.
 - Disagreements are resolved via lazy consensus. In the event that a common
