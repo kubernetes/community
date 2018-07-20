@@ -1,17 +1,18 @@
 # SIG Service Catalog Charter
-Service Catalog is a Kubernetes extension project that implements the [Open
-Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI). It allows
-application developers the ability to provision and consume cloud services
-natively from within Kubernetes.
 
 This charter adheres to the conventions described in the [Kubernetes Charter
 README](https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md).
 
 ## Scope
 
-See the [service-catalog SIG definition](https://github.com/kubernetes/community/tree/master/sig-service-catalog).
+Service Catalog is a Kubernetes extension project that implements the [Open
+Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI). It allows
+application developers to provision and consume cloud services natively from
+within Kubernetes.
 
 ### In scope
+
+See the [service-catalog SIG entry](https://github.com/kubernetes/community/tree/master/sig-service-catalog).
 
 This SIG’s main goals are:
 - Support, and adhere to, the Platform requirements of the [OSBAPI
@@ -20,11 +21,6 @@ This SIG’s main goals are:
   specification and traditional Kubernetes user interactions.
 - Align with the OSBAPI specification as changes are made.
 - Provide feedback (bugs or feature requests) to the [OSBAPI WG]](https://www.openservicebrokerapi.org/).
-
-### Out of scope
-
-The following, non-exhaustive, items are out of scope:
-- Operation of OSBAPI Service Brokers.
 
 ### Code, Binaries and services
 
@@ -53,6 +49,11 @@ The following, non-exhaustive, items are out of scope:
 - [Jenkins](https://service-catalog-jenkins.appspot.com/)
   - Runs end-to-end tests on a live cluster.
   - Server managed by Michael Kibbe (Google).
+
+### Out of scope
+
+The following, non-exhaustive, items are out of scope:
+- Operation of OSBAPI Service Brokers.
 
 ## Roles
 
