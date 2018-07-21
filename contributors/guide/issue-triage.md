@@ -226,3 +226,11 @@ order to work on it.
 A triage engineer should add these labels appropriately. Kubernetees GitHub
 Org members can search [open issues per these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%93&q=triage%2F+kind%2Fsupport+is%3Aopen) to find ones that can be
 quickly closed.
+
+Also note that, `fejta-bot` will add `lifecycle/stale` label to issues with no
+activity for 90 days. Such issues will be eventually auto closed if the label is
+not removed with the `/remove-lifecycle stale` label or prevented with the
+`/lifecycle frozen` label. Refer to the `fejta-bot` added comments in the issue
+for more details. It is fine to add any of the `triage/*` labels described in
+this issue triage guidelines to issues triaged by the `fejta-bot` for a better
+understanding of the issue and closing of it.
