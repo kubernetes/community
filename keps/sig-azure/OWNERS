@@ -1,0 +1,6 @@
+reviewers:
+  - sig-azure-leads
+approvers:
+  - sig-azure-leads
+labels:
+  - sig/azure
