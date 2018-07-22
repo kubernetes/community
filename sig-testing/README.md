@@ -45,7 +45,7 @@ The following subprojects are owned by sig-testing:
     - https://raw.githubusercontent.com/kubernetes-sig-testing/frameworks/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
   - Meetings:
-    - Testing Commons: [Wednesdays at 07:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29).
+    - Testing Commons Meeting: [Wednesdays at 07:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29).
       - [Meeting notes and Agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o).
 
 ## GitHub Teams

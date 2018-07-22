@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Define a portable API that represents a Kubernetes cluster. The API will contain the control plane and its configuration and the underlying infrastructure (nodes, node pools, etc).
 
 ## Meetings
-* Regular WG Meeting: [s at  ]() (). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=&tz=).
+* Regular WG Meeting: [Wednesdays at 10:00 PT (Pacific Time)]() (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit).
 
 ## Organizers

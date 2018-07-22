@@ -655,7 +655,7 @@ sigs:
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/130_kiXjG7graFNSnIAgtMS1G8zPDwpkshgfRYS0nggo/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
-    - description: Cluster API working group
+    - description: Cluster API WG Meeting
       day: Wednesday
       time: "10:00"
       tz: "PT (Pacific Time)"
@@ -1041,7 +1041,7 @@ sigs:
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
       recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
-    - description: Federation v2 Working Group
+    - description: Federation v2 WG Meeting
       day: Wednesday
       time: "9:30"
       tz: "PT (Pacific Time)"
@@ -1657,7 +1657,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes-sig-testing/frameworks/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
       meetings:
-      - description: Testing Commons
+      - description: Testing Commons Meeting
         day: Wednesday
         time: "07:30"
         tz: "PT (Pacific Time)"
@@ -1721,7 +1721,7 @@ sigs:
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y
-    - description: Cloud Provider vSphere weekly syncup
+    - description: Cloud Provider vSphere Weekly Syncup
       day: Wednesday
       time: "21:00"
       tz: "UTC"
@@ -1877,6 +1877,10 @@ workinggroups:
         company: Google
     meetings:
     - description: Regular WG Meeting
+      day: Wednesday
+      time: "10:00"
+      tz: "PT (Pacific Time)"
+      frequency: weekly
       archive_url: https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit
     contact:
       slack: cluster-api

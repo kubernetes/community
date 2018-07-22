@@ -1,36 +1,129 @@
-{{- template "header" }}
-# SIGs and Working Groups
+{{- template "header" -}}
+# SIGs and WGs
 
 Most community activity is organized into Special Interest Groups (SIGs),
-time bounded Working Groups, and the [community meeting](communication.md#weekly-meeting).
+time bounded Working Groups (WGs), and the [community meeting](communication.md#weekly-meeting).
 
 SIGs follow these [guidelines](governance.md) although each of these groups may operate a little differently
 depending on their needs and workflow.
 
 Each group's material is in its subdirectory in this project.
 
-When the need arises, a [new SIG can be created](sig-creation-procedure.md)
+When the need arises, a [new SIG can be created](sig-creation-procedure.md).
 
 ### Master SIG List
 
-| Name | Label | Chairs | Contact | Meetings |
-|------|-------|--------|---------|----------|
-{{- range .Sigs}}
-|[{{.Name}}]({{.Dir}}/README.md)|{{.Label}}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{- range .Meetings -}}
-  * {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>
-{{- end -}}
-{{- range .Subprojects -}}
-  {{ $name := .Name }}
-  {{- range .Meetings -}}
-    * ({{ $name }}) {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>
-  {{- end -}}
-{{- end -}}
-{{- end }}
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Label</th>
+      <th>Chairs</th>
+      <th>Contact</th>
+      <th>Meetings</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{- range .Sigs -}}
+      <tr>
+        <td>
+          <a href="{{.Dir}}/README.md">{{.Name}}</a>
+        </td>
+        <td>{{.Label}}</td>
+        <td>
+          <ul>
+            {{- range .Leadership.Chairs -}}
+              <li>
+                <a href="https://github.com/{{.GitHub}}">{{.Name}}</a>
+                {{- if .Company -}}, {{.Company}}{{- end -}}
+              </li>
+            {{- end -}}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>
+              <a href="https://kubernetes.slack.com/messages/{{.Contact.Slack}}">Slack</a>
+            </li>
+            <li>
+              <a href="{{.Contact.MailingList}}">Mailing List</a>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {{- range .Meetings -}}
+              <li>
+                {{.Description}}:
+                <a href="{{.URL}}">{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})</a>
+              </li>
+            {{- end -}}
+          </ul>
+          {{- range .Subprojects -}}
+            {{- $name := .Name -}}
+            <ul>
+              {{- range .Meetings -}}
+                <li>
+                  ({{ $name }}) {{.Description}}:
+                  <a href="{{.URL}}">{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}}</a>
+                </li>
+              {{- end -}}
+            </ul>
+          {{- end -}}
+        </td>
+      </tr>
+    {{- end -}}
+  </tbody>
+</table>
 
 ### Master Working Group List
 
-| Name | Organizers | Contact | Meetings |
-|------|------------|---------|----------|
-{{- range .WorkingGroups}}
-|[{{.Name}}]({{.Dir}}/README.md)|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
-{{- end }}
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Organizers</th>
+      <th>Contact</th>
+      <th>Meetings</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{- range .WorkingGroups -}}
+      <tr>
+        <td>
+          <a href="{{.Dir}}/README.md">{{.Name}}</a>
+        </td>
+        <td>
+          <ul>
+            {{- range .Leadership.Chairs -}}
+              <li>
+                <a href="https://github.com/{{.GitHub}}">{{.Name}}</a>
+                {{- if .Company -}}, {{.Company}}{{- end -}}
+              </li>
+            {{- end -}}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>
+              <a href="https://kubernetes.slack.com/messages/{{.Contact.Slack}}">Slack</a>
+            </li>
+            <li>
+              <a href="{{.Contact.MailingList}}">Mailing List</a>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {{- range .Meetings -}}
+              <li>
+                {{.Description}}:
+                <a href="{{.URL}}">{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})</a>
+              </li>
+            {{- end -}}
+          </ul>
+        </td>
+      </tr>
+    {{- end }}
+  </tbody>
+</table>
