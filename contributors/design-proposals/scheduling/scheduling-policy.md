@@ -4,7 +4,7 @@ _Status: Draft_
 
 _Authors: @arnaudmz, @yastij_
 
-_Reviewers: @bsalamat, @liggitt_
+_Reviewers: @bsalamat, @tallclair, @liggitt_
 
 # Objectives
 
@@ -31,13 +31,11 @@ Identified use-cases aim to ensure that administrators have a way to restrict us
 -  require that a pods under a namespace run on dedicated nodes
 -  Restrict usage of some `PriorityClass`
 -  Restrict usage to a specific set of schedulers.
--  placing pods on specific nodes (master roles for instance).
--  using specific priority classes.
--  expressing pod affinity or anti-affinity rules.
+-  enforcing pod affinity or anti-affinity rules on some particular namespace.
 
-Also Mandatory (and optionally default) values must also be enforced by scheduling policies in case of:
+Also Mandatory values must also be enforced by scheduling policies in case of:
 
--  mutli-arch (amd64, arm64) of multi-os (Linux, Windows) clusters
+-  mutli-arch (amd64, arm64) of multi-os (Linux, Windows) clusters (will also be handled later by the [RuntimeClass]() KEP)
 -  multi-az / region / failure domain clusters
 
 # Overview
@@ -50,75 +48,75 @@ kind: <POLICY_KIND>
 metadata:
   name: <POLICY_NAME>
 spec:
-  bindingMode: <BINDING_MODE>            # Describes a bindingMode (any or all)
-  namespaces:                            # a list of namespaces that the policy targets (optional)
-    - ns1
-    - ns1
-  namespaceSelector:                     # a selector to match a set of namespaces (optional)
-    key: value
+  priority: <exception,cluster,user,default>
+  namespaces:
+    matchNames:
+      - ns1
+      - ns2
+    matchLabels:
+      key: value
+  action:                            # Describes the action that should be taken (allowed, denied or required)      
   rules:                                 # rules that must be satisfied (optional)
     fieldA:                              # name of the field (optional)
       - match:                             # Describes how the rule is matched (required)
         - elt1                           # elements here could be objects like tolerations or strings like SchedulerName
-        action:                            # Describes the action that should be taken (allowed, denied or required)
 
 ```
 
-### policy composition
 
-`bindingMode` Describes how policies should be composed:
+### empty match and unset fields:
 
-- any: any policy that has its rules satisfied
-- all: all policies MUST have its rules satisfied
-
-if we have a heterogenous bindingMode across policies (i.e. some policies with any and others with all).
-Then the most restrictive one (i.e the all bindingMode) is applied.
+if a field is set to empty in the policy, except when the action is `required`, it should match everything then the corresponding action will apply.
 
 ### unset fields:
 
-if a field was not specified in the policy no rule should apply (i.e. everything is allowed).
-
-### empty match:
-
-Usually policies should distinguish between empty matches, since it depends on the action:
-
-- require/deny: no rule apply.
-- allow: allows everything.
-
+When a field is not specified it is automatically allowed. This makes it easy to rollout the feature for existing clusters, as it makes everything allowed in the cluster when no policy is created.
 
 ### inside the matches:
 
-The match field can express pretty much any structure you want to, but there's some things that should be considered:
+At the policy level, the match field can express pretty much any structure you want to, but there's some things that should be considered:
 
 - the structure should match as much as possible what you try to take action on.
-- match elements are ANDed.
-- the `*` wildcard is usually needed in the allow section. It should be represented with an empty value (e.g. empty array).
+- match elements are combined.
+
+example :
+
+```
+- match:
+  - keys: ["projectA-dedicated","projectB-dedicated"]
+    operators: ["Exists"]
+    effects: []
+```
+
+- This matches the structure of toleration
+- This match means the following : t
+   - The toleration `projectA-dedicated` with the operator `Exists`
+   - The toleration `projectB-dedicated` with the operator `Exists`
+
+### policy composition and conflict handling
+
+Policies are composed by ANDing them, note that rules of policies from a lower priority are superseded by ones from a higher priority if there is a conflict.
+
+There is two kinds of conflict to handle in policies of the same priority level: Structural and semantical conflicts.
 
 
-### conflict handling for policies
-
-There is two kinds of conflict in policies:
-
-- structural conflicts: these exists when any rule has the same matchingExpression and opposed actions (deny and require)
-
-- semantical conflicts: these exists due to semantic of the fields (e.g. require a NodeSelector `master=true` and also require `master=false`)
+Structural conflicts must handled at creation time as much as possible, on the other hand, semantical conflicts should be handled at runtime: detect that there's a conflict and emit an event stating that policies couldn't be satisfied due to a conflict.
 
 
-Structural conflicts must handled at creation time, on the other hand, semantical conflicts should be handled at runtime: detect that there's a conflict and emit an event stating that policies couldn't be satisfied due to a conflict.
-
-
-### required vs allowed vs denied
+### how policies are computed
 
 Policies may have overlapping rules, to handle this policies are computed in the following order:
 
-- compute what is denied.
-- compute what is required.
-- compute what was allowed.
+- compute policies at `exception` priority.
+- compute policies at `cluster` priority.
+- compute policies at `user` priority.
+- compute policies at `default` priority.
+
+If a policy doesn't specify a priority the default priority applies.
 
 they should also obey to the following rules:
 
 - everything that is required is by definition allowed.
-- everything that is not denied is not automatically allowed.
 
 
 # Detailed Design
@@ -139,31 +137,29 @@ kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
+  priority: <exception,cluster,user,default>
   namespaces:
-    - default
+    matchNames:
+      - ns1
+      - ns2
+    matchLabels:
+      key: value
+  action:  <required,allowed,denied>     
   rules:
     schedulerNames:
-      - match: []
-        action:
+       match: []
     priorityClassNames:
-      - match: []
-        action:
+       match: []
     tolerations:
-      - match: []
-        action:
+       match: []
     nodeSelectors:
-      - match: []
-        action:
+       match: []
     nodeAffinities:
-      - match: []
-        action:
+       match: []
     podAntiAffinities:
-      - match: []
-        action:
+       match: []
     podAffinities:
-      - match: []
-        action:
+       match: []
 ```
 
 
@@ -190,13 +186,13 @@ kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
   namespaces:
-    - default
+    matchNames:
+      - default
+  action: required     
   rules:
     schedulerNames:
-      - match: ["green-scheduler","my-scheduler"]
-        action: required
+       match: ["green-scheduler","my-scheduler"]
 ```
 
 An empty list of schedulerNames has no effect, as pod use the `defaultScheduler` if no scheduler is specified:
@@ -207,18 +203,18 @@ kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
   namespaces:
-    - default
+    matchNames:
+      - default
+  action: required     
   rules:
     schedulerNames:
-      - match: []
-        action: required
+       match: []
 ```
 
 
 #### allowed
-Allow pods to use either the green-scheduler (which is used by specifying `spec.schedulerName` in pod definition) or the `my-scheduler` scheduler (by specifying `spec.schedulerName: "my-scheduler"`) in the namespace `default`:
+Allow pods to use either the `green-scheduler` (which is used by specifying `spec.schedulerName` in pod definition) or the `my-scheduler` scheduler (by specifying `spec.schedulerName: "my-scheduler"`) in the namespace `default`:
 
 ```yaml
 apiVersion: policy/v1alpha1
@@ -226,13 +222,13 @@ kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
   namespaces:
-    - default
+    matchNames:
+      - default
+  action: allowed     
   rules:
     schedulerNames:
-      - match: ["green-scheduler","my-scheduler"]
-        action: allowed
+       match: ["green-scheduler","my-scheduler"]
 ```
 
 An empty list of schedulerNames will allow usage of all schedulers:
@@ -243,15 +239,16 @@ kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
   namespaces:
-    - default
+    matchNames:
+      - default
+  action: allowed     
   rules:
     schedulerNames:
-      - match: []
-        action: allowed
+       match: []
 ```
 
+note: this policy has no effect as we allow all when no policy is set.
 
 ### Tolerations
 
@@ -259,11 +256,10 @@ Toleration usage can be regulated using fine-grain rules with `tolerations` fiel
 
 #### required
 
-This allows to require toleration in the following forms of:
+This requires toleration in the following forms of:
 
 - tolerations that tolerates taints with key named `projectA-dedicated` with all effects.
-
-##### Fine-grain allowed tolerations
+- tolerations that tolerates taints with key named `node-misc` with `NoSchedule` effect.
 
 ```yaml
 apiVersion: policy/v1alpha1
@@ -271,19 +267,22 @@ kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
   namespaces:
-    - projectA
+    matchNames:
+      - projectA
+  action: required     
   rules:
     tolerations:
-      - match:
+      match:
         - keys: ["projectA-dedicated"]
           operators: ["Exists"]
           effects: []
-        action: required
+        - keys: ["node-misc"]
+          operators: ["Exists"]
+          effects: ["NoSchedule"]
 ```
 
- an empty list of matches has no effect (i.e. do not require anything).
+ note: an empty list of matches has no effect (i.e. do not require anything).
 
 #### Allowed
 
@@ -291,20 +290,19 @@ This allows requires tolerations in the following forms:
 - tolerations that tolerates taints with key named `mykey` that has a value `value` and with a `NoSchedule` effect.
 - tolerations that tolerates taints with key `other_key` that has a `NoExecute` effect.
 
-##### Fine-grain allowed tolerations
-
 ```yaml
 apiVersion: policy/v1alpha1
 kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
   namespaces:
-    - default
+    matchNames:
+      - projectA
+  action: allowed   
   rules:
     tolerations:
-      - match:
+       match:
         - keys: ["mykey"]
           operators: ["Equal"]
           values: ["value"]
@@ -312,7 +310,6 @@ spec:
         - keys: ["other_key"]
           operators: ["Exists"]
           effects: ["NoExecute"]
-        action: allowed
 ```
 
 Here we allow tolerations in the following forms:
@@ -331,13 +328,13 @@ kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
   namespaces:
-    - default
+    matchNames:
+      - projectA
+  action: allowed   
   rules:
     tolerations:
-      - match: []
-        action: allowed
+      match: []
 ```
 
 Which is equivalent to:
@@ -349,17 +346,17 @@ kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
   namespaces:
-    - default
+    matchNames:
+      - projectA
+  action: allowed   
   rules:
     tolerations:
-      - match:
+       match:
         - keys: []
           operators: []
           values: []
           effects: []
-        action: allowed
 ```
 
 
@@ -378,13 +375,13 @@ kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
   namespaces:
-    - default
+    matchNames:
+      - default
+  action: required   
   rules:
     priorityClasseNames:
-      - match: ["high-priority","critical-job"]
-        action: required
+       match: ["high-priority","critical-job"]
 ```
 
 
@@ -400,13 +397,13 @@ kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
   namespaces:
-    - default
+    matchNames:
+      - default
+  action: allowed   
   rules:
     priorityClasseNames:
       - match: ["critical-priority"]
-        action: allowed
 ```
 
 
@@ -426,28 +423,19 @@ kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
   namespaces:
-    - default
+    matchNames:
+      - default
+  action: required   
   rules:
     nodeSelectors:
-      - match:
-        - beta.kubernetes.io/arch: ["amd64", "arm64"]
-        - team: []
-        action: required
-      - match:
-        - failure-domain.beta.kubernetes.io/region: []
-        - disk: ["ssd", "hdd"]
-        action: allowed
-
+      match:
+        - failure-domain.beta.kubernetes.io/region: ["northeurope"]
+        - disk: ["ssd", "premium"]
 ```
 
 
-In this example, pods can be scheduled if they match the two following:
--  a nodeSelector `beta.kubernetes.io/arch=amd64` or `beta.kubernetes.io/arch=arm64`.
-- a nodeSelector with the key `team`.
-
-They can also optionally specify:
+In this example, pods cannot be scheduled if they match one of the following:
 -  `disk: ssd` nodeSelector,
 -  `disk: hdd` nodeSelector,
 -  `failure-domain.beta.kubernetes.io/region` nodeSelector with any value.
@@ -473,40 +461,29 @@ kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
 spec:
-  bindingMode: all
   namespaces:
-    - default
+    matchNames:
+      - default
+  action: required   
   rules:
     nodeAffinities:
-      - match:
-        - keys: ["failure-domain.beta.kubernetes.io/region","authorized-region"]
-          operators: ["In","NotIn"]
-          values: ["eu-2", "us-1"]
-          type: "requiredDuringSchedulingIgnoredDuringExecution"
-        action: allowed
-      - match:
-        - keys: ["beta.kubernetes.io/arch"]
-          operators: ["In"]
-          values: ["amd64", "arm64"]
-          type: "requiredDuringSchedulingIgnoredDuringExecution"
-        action: required
-    podAntiAffinities:
-      - match: []
-        action: allowed
+      requiredDuringSchedulingIgnoredDuringExecution:
+         match:
+          - keys: ["failure-domain.beta.kubernetes.io/region","authorized-region"]
+            operator: "NotIn"
+            values: ["eu-2", "us-1"]
+          - keys: ["PCI-region"]
+            operator: "Exists"
+            values: []          
+      preferredDuringSchedulingIgnoredDuringExecution:
+         match:
+          - keys: ["flavor"]
+            operator: In
+            values: ["m1.small", "m1.medium"]
 
 ```
 
-In this example, we allow:
-- hard NodeAffinity based on
-  -  `beta.kubernetes.io/arch` if value is `amd64` or `arm64`.
-  -  any combination of <keys, operators, values> specified in `allowed` rule.
-- All podAntiAffinities
-- No podAffinities
-
-
-##### By default behavior
-
-by default no `SchedulingPolicy` is created, so any workload will be running as expected (i.e. no restriction apply).
+In this example, we require pods to use nodeAffinity to select nodes having `failure-domain.beta.kubernetes.io/region` or `authorized-region` without `eu-1` or `us-1` values, or nodes having `PCI-region` label set. On those filtered nodes we require the pod to prefer nodes with the lowest compute capabilities (`m1.small` or `m1.medium`)
 
 
 # References
