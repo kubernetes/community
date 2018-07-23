@@ -63,6 +63,13 @@ simply `make clean` or `rm -rf _output`, and run it again.
 
 Now you should have a clean copy of all of the Kubernetes dependencies.
 
+Downloading dependencies might take a while, so if you want to see progress
+information use the `-v` flag:
+
+```sh
+hack/run-in-gopath.sh hack/godep-restore.sh -v
+```
+
 ## Making changes
 
 The most common things people need to do with deps are add and update them.
