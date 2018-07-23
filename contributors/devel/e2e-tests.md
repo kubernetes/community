@@ -26,7 +26,6 @@
   - [Kinds of tests](#kinds-of-tests)
     - [Viper configuration and hierarchichal test parameters.](#viper-configuration-and-hierarchichal-test-parameters)
     - [Conformance tests](#conformance-tests)
-    - [Defining Conformance Subset](#defining-conformance-subset)
   - [Continuous Integration](#continuous-integration)
     - [What is CI?](#what-is-ci)
     - [What runs in CI?](#what-runs-in-ci)
@@ -606,60 +605,7 @@ Finally, `[Conformance]` tests represent a subset of the e2e-tests we expect to
 pass on **any** Kubernetes cluster. The `[Conformance]` label does not supersede
 any other labels.
 
-As each new release of Kubernetes providers new functionality, the subset of
-tests necessary to demonstrate conformance grows with each release. Conformance
-is thus considered versioned, with the same backwards compatibility guarantees
-as laid out in [our versioning policy](/contributors/design-proposals/release/versioning.md#supported-releases-and-component-skew).
-Conformance tests for a given version should be run off of the release branch
-that corresponds to that version. Thus `v1.2` conformance tests would be run
-from the head of the `release-1.2` branch. eg:
-
- - A v1.3 development cluster should pass v1.1, v1.2 conformance tests
-
- - A v1.2 cluster should pass v1.1, v1.2 conformance tests
-
- - A v1.1 cluster should pass v1.0, v1.1 conformance tests, and fail v1.2
-conformance tests
-
-Conformance tests are designed to be run with no cloud provider configured.
-Conformance tests can be run against clusters that have not been created with
-`hack/e2e.go`, just provide a kubeconfig with the appropriate endpoint and
-credentials.
-
-```sh
-# setup for conformance tests
-export KUBECONFIG=/path/to/kubeconfig
-export KUBERNETES_CONFORMANCE_TEST=y
-
-# run all conformance tests
-go run hack/e2e.go -- --provider=skeleton --test --test_args="--ginkgo.focus=\[Conformance\]"
-
-# run all parallel-safe conformance tests in parallel
-GINKGO_PARALLEL=y go run hack/e2e.go -- --provider=skeleton --test --test_args="--ginkgo.focus=\[Conformance\] --ginkgo.skip=\[Serial\]"
-
-# ... and finish up with remaining tests in serial
-go run hack/e2e.go -- --provider=skeleton --test --test_args="--ginkgo.focus=\[Serial\].*\[Conformance\]"
-```
-
-### Defining Conformance Subset
-
-It is impossible to define the entire space of Conformance tests without knowing
-the future, so instead, we define the compliment of conformance tests, below
-(`Please update this with companion PRs as necessary`):
-
-  - A conformance test cannot test cloud provider specific features (i.e. GCE
-monitoring, S3 Bucketing, ...)
-
-  - A conformance test cannot rely on any particular non-standard file system
-permissions granted to containers or users (i.e. sharing writable host /tmp with
-a container)
-
-  - A conformance test cannot rely on any binaries that are not required for the
-linux kernel or for a kubelet to run (i.e. git)
-
-  - A conformance test cannot test a feature which obviously cannot be supported
-on a broad range of platforms (i.e. testing of multiple disk mounts, GPUs, high
-density)
+For more information on Conformance tests please see the [Conformance Testing](conformance-tests.md)
 
 ## Continuous Integration
 
