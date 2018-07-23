@@ -40,7 +40,7 @@ and this document will cover the basic ones.
 
 Sometimes users ask for support requests in issues; these are usually requests
 from people who need help configuring some aspect of Kubernetes. These issues
-should be labeled with `kind/support`, directed to our support structures
+should be labeled with `triage/support`, directed to our support structures
 (see below) and then closed. Also, if the issue is clearly abandoned or in the
 wrong place, it should be closed. Keep in mind that only issue reporter,
 assignees and component organization members can close issue. If you do not
@@ -215,7 +215,7 @@ or lacks enough information from reporter should be closed following guidelines
 explained in this file. Also, any issues that can not be resolved because of
 any particular reason should be closed. These issues should have one or more
 of following self-readable labels:
-* `kind/support`: Indicates an issues is not a bug but a support request.
+* `triage/support`: Indicates an issues is not a bug but a support request.
 * `triage/duplicate`: Indicates an issue is a duplicate of other open issue.
 * `triage/not-reproducible`: Indicates an issue can not be reproduced as
 described.
