@@ -6,9 +6,10 @@ README](https://github.com/kubernetes/community/blob/master/committee-steering/g
 ## Scope
 
 Service Catalog is a Kubernetes extension project that implements the [Open
-Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI). It allows
-application developers to provision and consume cloud services natively from
-within Kubernetes.
+Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI). It enables
+application developers to provision cloud services from within Kubernetes and
+integrates configuration and discovery of those services into Kubernetes
+resources.
 
 ### In scope
 
