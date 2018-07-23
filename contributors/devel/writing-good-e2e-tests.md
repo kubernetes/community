@@ -26,7 +26,7 @@ time, and delayed merges.
 #### Debuggability ####
 
 If your test fails, it should provide as detailed as possible reasons
-for the failure in it's output. "Timeout" is not a useful error
+for the failure in its output. "Timeout" is not a useful error
 message. "Timed out after 60 seconds waiting for pod xxx to enter
 running state, still in pending state" is much more useful to someone
 trying to figure out why your test failed and what to do about it.
@@ -65,7 +65,7 @@ assuming that that will increase the count of pods in the system
 namespace by one is not safe, as some other test might be creating or
 deleting pods in the system namespace at the same time as your test.
 If you do legitimately need to write a test like that, make sure to
-label it ["\[Serial\]"](e2e-tests.md#kinds_of_tests) so that it's easy
+label it ["\[Serial\]"](e2e-tests.md#kinds-of-tests) so that it's easy
 to identify, and not run in parallel with any other tests.
 1. You should avoid doing things to the cluster that make it difficult
 for other tests to reliably do what they're trying to do, at the same
@@ -74,7 +74,7 @@ or upgrading cluster software as part of your test is likely to
 violate the assumptions that other tests might have made about a
 reasonably stable cluster environment.  If you need to write such
 tests, please label them as
-["\[Disruptive\]"](e2e-tests.md#kinds_of_tests) so that it's easy to
+["\[Disruptive\]"](e2e-tests.md#kinds-of-tests) so that it's easy to
 identify them, and not run them in parallel with other tests.
 1. You should avoid making assumptions about the Kubernetes API that
 are not part of the API specification, as your tests will break as
@@ -101,7 +101,7 @@ usually takes 10 seconds").  If you do have a truly legitimate reason
 for waiting longer than that, or writing a test which takes longer
 than 2 minutes to run, comment very clearly in the code why this is
 necessary, and label the test as
-["\[Slow\]"](e2e-tests.md#kinds_of_tests), so that it's easy to
+["\[Slow\]"](e2e-tests.md#kinds-of-tests), so that it's easy to
 identify and avoid in test runs that are required to complete
 timeously (for example those that are run against every code
 submission before it is allowed to be merged).
@@ -139,7 +139,7 @@ retry mechanisms provided in the libraries detailed below.
 
 Obviously most of the above goals apply to many tests, not just yours.
 So we've developed a set of reusable test infrastructure, libraries
-and best practises to help you to do the right thing, or at least do
+and best practices to help you to do the right thing, or at least do
 the same thing as other tests, so that if that turns out to be the
 wrong thing, it can be fixed in one place, not hundreds, to be the
 right thing.
@@ -186,7 +186,7 @@ Here are a few pointers:
    you write or refactor a test, read the docs and make sure that you
    understand how it works.  In particular be aware that every test is
    uniquely identified and described (e.g. in test reports) by the
-   concatenation of it's `Describe` clause and nested `It` clauses.
+   concatenation of its `Describe` clause and nested `It` clauses.
    So for example `Describe("Pods",...).... It(""should be scheduled
    with cpu and memory limits")` produces a sane test identifier and
    descriptor `Pods should be scheduled with cpu and memory limits`,
