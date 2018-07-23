@@ -45,21 +45,20 @@ This option is to leverage NodeAffinity feature to avoid introducing schedulerâ€
 
 1. DS controller filter nodes by nodeSelector, but does NOT check against schedulerâ€™s predicates (e.g. PodFitHostResources)
 2. For each node, DS controller creates a Pod for it with the following NodeAffinity
+    ```yaml
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - nodeSelectorTerms:
+          matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: in
+            values:
+            - dest_hostname
+    ```
 3. When sync Pods, DS controller will map nodes and pods by this NodeAffinity to check whether Pods are started for nodes
 4. In scheduler, DaemonSet Pods will stay pending if scheduling predicates fail. To avoid this, an appropriate priority must
  be set to all critical DaemonSet Pods. Scheduler will preempt other pods to ensure critical pods were scheduled even when
  the cluster is under resource pressure.
-
-```yaml
-nodeAffinity:
-  requiredDuringSchedulingIgnoredDuringExecution:
-  - nodeSelectorTerms:
-      matchExpressions:
-      - key: kubernetes.io/hostname
-        operator: in
-        values:
-        - dest_hostname
-```
 
 ## Reference
 
