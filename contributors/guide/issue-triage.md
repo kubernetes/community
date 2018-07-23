@@ -64,7 +64,7 @@ Support requests should be directed to the following:
 
 ### User support response example
 
-If you see support questions on kubernetes-dev@googlegroups.com or issues asking for 
+If you see support questions on kubernetes-dev@googlegroups.com or issues asking for
 support try to redirect them to Stack Overflow. Example response:
 
 ```code
@@ -82,7 +82,7 @@ large volume of support issues on github is making it difficult for us to use
 issues to identify real bugs.
 
 Members of the Kubernetes community use Stack Overflow to field support
-requests. Before posting a new question, please search Stack Overflow for answers 
+requests. Before posting a new question, please search Stack Overflow for answers
 to similar questions, and also familiarize yourself with:
 
   * [user documentation](https://kubernetes.io/docs/home/)
@@ -137,9 +137,6 @@ leaders are responsible for making sure that all the issues, labeled with this
 priority, in their area are being actively worked on. Examples include
 user-visible bugs in core features, broken builds or tests and critical
 security issues.
-
-- **priority/failing-test**: Automatically filed frequently failing test. Needs
-to be investigated.
 
 - **priority/important-soon**: Must be staffed and worked on either currently,
 or very soon, ideally in time for the next release.
@@ -201,8 +198,8 @@ bug shouldn't be in this milestone for more than a day or two towards the end of
 a milestone. It should be triaged either into vX.Y, or moved out of the release
 milestones.
 
-The above [priority](#define-priority) scheme still applies. The `priority/critical-urgent`
-and `priority/failing-test` issues are work we feel must get done before
+The above [priority](#define-priority) scheme still applies. The
+`priority/critical-urgent` issues are work we feel must get done before
 release.  The `priority/important-soon` and `priority/important-longterm`
 issues are work we would merge into the release if it gets done, but we wouldn't
 block the release on it. A few days before release, we will probably move all
