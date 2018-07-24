@@ -61,7 +61,7 @@ This SIG's charter deviates from the
 [sig-governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md)
 roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair role.
 
-- Maintainers
+- [Maintainers](https://github.com/orgs/kubernetes-incubator/teams/maintainers-service-catalog/members)
   - Maintainer is equivalent to the standard [Kubernetes definition of
     Approver](https://github.com/kubernetes/community/blob/master/community-membership.md#approver).
   - Responsible for reviewing pull requests, and approving pull requests for merge.
