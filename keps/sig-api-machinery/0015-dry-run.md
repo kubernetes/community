@@ -110,9 +110,32 @@ type AdmissionRequest struct {
 }
 ```
 
+## Generated values
+
+Some values of the object are typically generated before the object is persisted:
+- generateName can be used to assign a unique random name to the object,
+- creationTimeStamp records the time of creation,
+- UID uniquely identifies the object and is randomly generated (non-deterministic),
+- resourceVersion tracks the persisted version of the object.
+
+Most of these values are not useful in the context of dry-run, and could create
+some confusion. The UID and the generated name would have a different value in a
+dry-run and non-dry-run creation. These values will be left empty when
+performing a dry-run.
+
+CreationTimeStamp is also generated on creation, but there are less ways to
+abuse it so it will be generated as it would for a regular request.
+
+ResourceVersion will also be left empty on creation.
+
 ## Storage
 
 The storage layer will be modified, so that it can know if request is dry-run,
 most likely by looking for the field in the “Options” structure (missing for
 some handlers, to be added). If it is, it will NOT store the object, but return
 success. That success can be forwarded back to the user.
+
+A dry-run request should behave as close as possible to regular
+request. Attempting to dry-run create en existing object will result in an
+`AlreadyExists` error to be returned. Similarly, if an dr-run update is
+performed on a non-existing object, a `NotFound` error will be returned.
