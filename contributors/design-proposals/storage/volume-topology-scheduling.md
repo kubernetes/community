@@ -553,7 +553,7 @@ dynamically provisioning a volume.
 
 While less common, administrators may want to further restrict what topology
 domains are available to a StorageClass. To support these administrator
-policies, an AllowedTopology field can also be specified in the
+policies, an AllowedTopologies field can also be specified in the
 StorageClass to restrict the topology domains for dynamic provisioning.
 This is not expected to be a common use case, and there are some caveats,
 described below.
@@ -740,7 +740,7 @@ PersistentVolume.NodeAffinity and StorageClas.BindingMode fields will be
 controlled by the VolumeScheduling feature gate, and must be configured in the
 kube-scheduler, kube-controller-manager, and all kubelets.
 
-The StorageClass.AllowedTopology field will be controlled
+The StorageClass.AllowedTopologies field will be controlled
 by the DynamicProvisioningScheduling feature gate, and must be configured in the
 kube-scheduler and kube-controller-manager.
 
@@ -858,7 +858,7 @@ decreasing requested capacity.
 processing later in the priority and bind functions.
 6. Return true if all PVCs are matched.
 7. If there are still unmatched PVCs, check if dynamic provisioning is possible,
-   by evaluating StorageClass.AllowedTopology.  If so,
+   by evaluating StorageClass.AllowedTopologies.  If so,
    temporarily cache this decision in the PVC per Node.
 8. Otherwise return false.
 
@@ -885,7 +885,7 @@ performance, we’ll assume that the binding will likely succeed, and update the
 PV and PVC caches first.  Then the actual binding API update will be made
 asynchronously, and the scheduler can continue processing other Pods.
 
-For the alpha phase, the AssumeVolumes function will be directly called by the
+For the alpha phase, the AssumePodVolumes function will be directly called by the
 scheduler.  We’ll consider creating a generic scheduler interface in a
 subsequent phase.
 
@@ -911,7 +911,7 @@ call the BindPodVolumes function.
 Otherwise, we can continue with assuming and binding the Pod
 to the Node.
 
-For the alpha phase, the BindVolumes function will be directly called by the
+For the alpha phase, the BindPodVolumes function will be directly called by the
 scheduler.  We’ll consider creating a generic scheduler interface in a subsequent
 phase.
 
@@ -984,8 +984,8 @@ be ignored, as the binding logic will take into account the PV node affinity.
 There are two new caches needed in the scheduler.
 
 The first cache is for handling the PV/PVC API binding updates occurring
-asynchronously with the main scheduler loop.  `AssumeVolumes` needs to store
-the updated API objects before `BindVolumes` makes the API update, so
+asynchronously with the main scheduler loop.  `AssumePodVolumes` needs to store
+the updated API objects before `BindPodVolumes` makes the API update, so
 that future binding decisions will not choose any assumed PVs.  In addition,
 if the API update fails, the cached updates need to be reverted and restored
 with the actual API object.  The cache will return either the cached-only
