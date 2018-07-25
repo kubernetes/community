@@ -143,6 +143,7 @@ types of the core components’ ComponentConfig in a top-level `config/` package
       make the command support loading configuration files.
     * The new repo can reuse the generic types from the to-be-created, `k8s.io/controller-manager` repo eventually.
     * Meanwhile, the cloud-controller-manager will reference the parts it needs from the main repo, and live privately in `cmd/cloud-controller-manager`
+* Add further defaulting for the external types. The defaulting strategy decision is post-poned, outside of this KEP.
 
 ### Related proposals and further references
 
@@ -174,20 +175,22 @@ types of the core components’ ComponentConfig in a top-level `config/` package
     * For the move to a staging repo to be possible, the external API package must not depend on the core repo.
         * Hence, all non-staging repo dependencies need to be removed/resolved before the package move.
     * Conversions from the external type to the internal type will be kept in `{internal_api_path}/{external_version}`, like for `k8s.io/api`
-        * Defaulting code will be kept in this package, next to the conversions
+        * Defaulting code will be kept in this package, next to the conversions, if it already exists. We keep the decision about the destiny of defaulting open in this KEP.
 * Create a "shared types"-package with structs generic to all or many componentconfig API groups, in the `k8s.io/apimachinery`, `k8s.io/apiserver` and `k8s.io/controller-manager` repos, depending on the struct.
     * Location: `k8s.io/{apimachinery,apiserver,controller-manager}/pkg/apis/config/{,v1alpha1}`
     * These aren’t "real" API groups, but have both internal and external versions
-    * Defaulting, conversion and internal types are published to the staging repo.
+    * Conversions and internal types are published to the staging repo.
+    * Defaults are moved into the leaf groups using them as much as possible.
 * Remove the monolithic `componentconfig/v1alpha1` API group
 * Enable the staging bot to create the Github repos
+* We do not add further defaulting, but merely keep the minimum defaulting in-place to keep the current behaviour, but remove those defaulting funcs which are not used today.
 
 ### Migration strategy per component or k8s.io repo
 
 #### k8s.io/apimachinery changes
 
 * **Not a "real" API group, instead shared packages only with both external and internal types.**
-* **External Package with defaulting & conversions**: `k8s.io/apimachinery/pkg/apis/config/v1alpha1/types.go`
+* **External Package with defaulting (where absolutely necessary) & conversions**: `k8s.io/apimachinery/pkg/apis/config/v1alpha1/types.go`
 * **Internal Package**: `k8s.io/apimachinery/pkg/apis/config/types.go`
 * Structs to be hosted:
     * ClientConnectionConfiguration
@@ -196,7 +199,7 @@ types of the core components’ ComponentConfig in a top-level `config/` package
 #### k8s.io/apiserver changes
 
 * **Not a "real" API group, instead shared packages only with both external and internal types.**
-* **External Package with defaulting & conversions**: `k8s.io/apiserver/pkg/apis/config/v1alpha1/types.go`
+* **External Package with defaulting (where absolutely necessary) & conversions**: `k8s.io/apiserver/pkg/apis/config/v1alpha1/types.go`
 * **Internal Package**: `k8s.io/apiserver/pkg/apis/config/types.go`
 * Structs to be hosted:
     * LeaderElectionConfiguration
@@ -210,7 +213,7 @@ types of the core components’ ComponentConfig in a top-level `config/` package
 * **External Package:** `k8s.io/kubelet/config/v1beta1/types.go`
 * **Internal Package:** `k8s.io/kubernetes/pkg/kubelet/apis/config/types.go`
 * **Internal Scheme:** `k8s.io/kubernetes/pkg/kubelet/apis/config/scheme/scheme.go`
-* **Conversions & defaulting Package:** `k8s.io/kubernetes/pkg/kubelet/apis/config/v1beta1`
+* **Conversions & defaulting (where absolutely necessary) Package:** `k8s.io/kubernetes/pkg/kubelet/apis/config/v1beta1`
 * **Future Internal Package:** `k8s.io/kubelet/pkg/apis/config/types.go`
 * Assignee: @mtaufen
 
@@ -220,7 +223,7 @@ types of the core components’ ComponentConfig in a top-level `config/` package
 * **External Package**: `k8s.io/kube-proxy/config/v1alpha1/types.go`
 * **Internal Package**: `k8s.io/kubernetes/pkg/proxy/apis/config/types.go`
 * **Internal Scheme**: `k8s.io/kubernetes/pkg/proxy/apis/config/scheme/scheme.go`
-* **Conversions & defaulting Package:** `k8s.io/kubernetes/pkg/proxy/apis/config/v1alpha1`
+* **Conversions & defaulting (where absolutely necessary) Package:** `k8s.io/kubernetes/pkg/proxy/apis/config/v1alpha1`
 * **Future Internal Package:** `k8s.io/kube-proxy/pkg/apis/config/types.go`
 * Start referencing `ClientConnectionConfiguration` from the generic ComponentConfig packages
 * Assignee: @m1093782566
@@ -231,7 +234,7 @@ types of the core components’ ComponentConfig in a top-level `config/` package
 * **External Package**: `k8s.io/kube-scheduler/config/v1alpha1/types.go`
 * **Internal Package**: `k8s.io/kubernetes/pkg/scheduler/apis/config/types.go`
 * **Internal Scheme**: `k8s.io/kubernetes/pkg/scheduler/apis/config/scheme/scheme.go`
-* **Conversions & defaulting Package:** `k8s.io/kubernetes/pkg/scheduler/apis/config/v1alpha1`
+* **Conversions & defaulting (where absolutely necessary) Package:** `k8s.io/kubernetes/pkg/scheduler/apis/config/v1alpha1`
 * **Future Internal Package:** `k8s.io/kube-scheduler/pkg/apis/config/types.go`
 * Start referencing `ClientConnectionConfiguration` & `LeaderElectionConfiguration` from the generic ComponentConfig packages
 * Assignee: @dixudx
@@ -239,7 +242,7 @@ types of the core components’ ComponentConfig in a top-level `config/` package
 #### k8s.io/controller-manager changes
 
 * **Not a "real" API group, instead shared packages only with both external and internal types.**
-* **External Package with defaulting & conversions**: `k8s.io/controller-manager/pkg/apis/config/v1alpha1/types.go`
+* **External Package with defaulting (where absolutely necessary) & conversions**: `k8s.io/controller-manager/pkg/apis/config/v1alpha1/types.go`
 * **Internal Package**: `k8s.io/controller-manager/pkg/apis/config/types.go`
 * Will host structs:
     * GenericComponentConfiguration (should be renamed to GenericControllerManagerConfiguration at the same time)
@@ -251,7 +254,7 @@ types of the core components’ ComponentConfig in a top-level `config/` package
 * **External Package**: `k8s.io/kube-controller-manager/config/v1alpha1/types.go`
 * **Internal Package**: `k8s.io/kubernetes/pkg/controller/apis/config/types.go`
 * **Internal Scheme**: `k8s.io/kubernetes/pkg/controller/apis/config/scheme/scheme.go`
-* **Conversions & defaulting Package:** `k8s.io/kubernetes/pkg/controller/apis/config/v1alpha1`
+* **Conversions & defaulting (where absolutely necessary) Package:** `k8s.io/kubernetes/pkg/controller/apis/config/v1alpha1`
 * **Future Internal Package:** `k8s.io/kube-controller-manager/pkg/apis/config/types.go`
 * Start referencing `ClientConnectionConfiguration` & `LeaderElectionConfiguration` from the generic ComponentConfig packages
 * Assignee: @stewart-yu
