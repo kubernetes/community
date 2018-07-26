@@ -305,10 +305,10 @@ sigs:
   - name: Autoscaling
     dir: sig-autoscaling
     mission_statement: >
-      Covers autoscaling of clusters, horizontal and vertical autoscaling of pods,
-      setting initial resources for pods, topics related to monitoring pods and
-      gathering their metrics (e.g. Heapster)
-    charter_link:
+      Covers development and maintenance of componets for automated scaling in
+      Kubernetes.  This includes automated vertical and horizontal pod
+      autoscaling, initial resource estimation, cluster-proportional system
+      component autoscaling, and autoscaling of Kubernetes clusters themselves.
     label: autoscaling
     leadership:
       chairs:
@@ -345,12 +345,28 @@ sigs:
       - name: sig-autoscaling-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: autoscaler
+    - name: scale-client
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/client-go/master/scale/OWNERS # doesn't exist yet
+    - name: cluster-autoscaler
       owners:
       - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
-    - name: metrics
+    - name: vertical-pod-autoscaler
       owners:
-      - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+    - name: horizontal-pod-autoscaler
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
+    - name: cluster-proportional-vertical-autoscaler
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
+    - name: cluster-proportional-autoscaler
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
+    - name: addon-resizer
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/autoscaler/master/addon-resizer/OWNERS
   - name: AWS
     dir: sig-aws
     mission_statement: >
@@ -1010,6 +1026,9 @@ sigs:
     - name: metrics-server
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/OWNERS
+    - name: metrics
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
   - name: Multicluster
     dir: sig-multicluster
     mission_statement: >

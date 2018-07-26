@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Autoscaling Special Interest Group
 
-Covers autoscaling of clusters, horizontal and vertical autoscaling of pods, setting initial resources for pods, topics related to monitoring pods and gathering their metrics (e.g. Heapster)
+Covers development and maintenance of componets for automated scaling in Kubernetes.  This includes automated vertical and horizontal pod autoscaling, initial resource estimation, cluster-proportional system component autoscaling, and autoscaling of Kubernetes clusters themselves.
 
 ## Meetings
 * Regular SIG Meeting: [Mondays at 14:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly/triweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
@@ -30,12 +30,28 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-autoscaling:
-- **autoscaler**
+- **scale-client**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/client-go/master/scale/OWNERS
+- **cluster-autoscaler**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
-- **metrics**
+- **vertical-pod-autoscaler**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+- **horizontal-pod-autoscaler**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
+- **cluster-proportional-vertical-autoscaler**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
+- **cluster-proportional-autoscaler**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
+- **addon-resizer**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/addon-resizer/OWNERS
 
 ## GitHub Teams
 
