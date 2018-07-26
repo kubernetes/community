@@ -61,6 +61,6 @@ Pick one:
 1. SIG Technical Leads
 2. Federation of Subprojects
 
-[sig-governance]: sig-governance.md
+[sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1454
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
