@@ -698,6 +698,9 @@ sigs:
     - name: cluster-api-provider-gcp
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
+    - name: cluster-api-provider-aws
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
     - name: cluster-api-provider-openstack
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS

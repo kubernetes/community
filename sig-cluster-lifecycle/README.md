@@ -50,6 +50,9 @@ The following subprojects are owned by sig-cluster-lifecycle:
 - **cluster-api-provider-gcp**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
+- **cluster-api-provider-aws**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
 - **cluster-api-provider-openstack**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
