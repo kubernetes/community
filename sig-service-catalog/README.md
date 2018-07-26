@@ -21,8 +21,8 @@ To develop a Kubernetes API for the CNCF service broker and Kubernetes broker im
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
-* Aaron Schlesinger (**[@arschles](https://github.com/arschles)**), Microsoft
-* Ville Aikas (**[@vaikas-google](https://github.com/vaikas-google)**), Google
+* Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**), Microsoft
+* Michael Kibbe (**[@kibbles-n-bytes](https://github.com/kibbles-n-bytes)**), Google
 * Doug Davis (**[@duglin](https://github.com/duglin)**), IBM
 
 ## Contact
