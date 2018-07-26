@@ -34,6 +34,7 @@ especially in the Nucleus or Application layers as described
 (example: the default list of admission plugins should not have to be tweaked for passing conformance).
 - cannot rely on any binaries that are not required for the
 linux kernel or for a kubelet to run (i.e. git)
+- any container images used in the test must support all architectures for which kubernetes releases are built
 
 ### Conformance Test Version Skew Policy
 
