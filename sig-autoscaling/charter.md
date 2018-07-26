@@ -5,9 +5,9 @@ the Roles and Organization Management outlined in [sig-governance].
 
 ## Scope
 
-Covers development and maintenance of components for automated scaling in
-Kubernetes.  This includes automated vertical and horizontal pod
-autoscaling, initial resource estimation, cluster-proportional system
+Covers development and maintenance of Kubernetes components for automated
+scaling in Kubernetes.  This includes automated vertical and horizontal
+pod autoscaling, initial resource estimation, cluster-proportional system
 component autoscaling, and autoscaling of Kubernetes clusters themselves.
 
 ### In scope
@@ -19,8 +19,8 @@ component autoscaling, and autoscaling of Kubernetes clusters themselves.
   single-component scaling tools (e.g. pod-nanny), and
   cluster-proportional scaling tools
 
-- Ensuring API interfaces (the scale subresource) are availble and usable
-  to enable other SIG to write autoscalable objects, and enable people to
+- Ensuring API interfaces (the scale subresource) are available and usable
+  to enable other SIGs to write autoscalable objects, and enable people to
   interact with those interfaces.
 
 [Link to SIG section in sigs.yaml][sigs.yaml]
@@ -28,13 +28,14 @@ component autoscaling, and autoscaling of Kubernetes clusters themselves.
 #### Code, Binaries and Services
 
 - Components and utilities that take automated action to scale a component
-  on the cluster
+  on the cluster (e.g. the horizontal-pod-autoscaler or addon-resizer
+  subproject)
 
 - Components and utilities that take automated action to scale the cluster
-  itself
+  itself (e.g. the cluster-autoscaler subproject)
 
 - Special parts of client-go for interacting with with the scaling
-  interfaces used by the HPA (e.g. the polymorphic scale client).
+  interfaces used by the HPA (e.g. the scale-client subproject)
 
 #### Cross-cutting and Externally Facing Processes
 
@@ -44,8 +45,14 @@ component autoscaling, and autoscaling of Kubernetes clusters themselves.
 - Coordinating with SIG Instrumentation to ensure that metrics APIs are
   suitable for autoscaling on.
 
-- Coordinating with SIG Scheduling to make sure scheduling descisions can
+- Coordinating with SIG Scheduling to make sure scheduling decisions can
   interact well with the cluster autoscaler
+
+- Coordinating with SIG Cluster Lifecycle on integration between the
+  cluster autoscaler and cluster API
+
+- Coordinating with SIG Node around Kubelet requirements for vertical
+  scaling of pods
 
 ### Out of scope
 
@@ -53,7 +60,7 @@ component autoscaling, and autoscaling of Kubernetes clusters themselves.
   purview of [SIG Scalability]).
 
 - Owning metrics APIs (this falls under the purview of [SIG
-  Instrumentation].  SIG Autoscaling should collaborate with [SIG
+  Instrumentation]).  SIG Autoscaling should collaborate with [SIG
   Instrumentation] to ensure that metrics APIs are suitable for using in
   autoscaling.
 

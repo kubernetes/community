@@ -425,6 +425,7 @@ sigs:
       Kubernetes.  This includes automated vertical and horizontal pod
       autoscaling, initial resource estimation, cluster-proportional system
       component autoscaling, and autoscaling of Kubernetes clusters themselves.
+    charter_link: charter.md
     label: autoscaling
     leadership:
       chairs:
@@ -433,7 +434,7 @@ sigs:
         company: Google
       - name: Solly Ross
         github: directxman12
-        company: Red Hat
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Monday

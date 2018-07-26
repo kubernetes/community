@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Covers development and maintenance of components for automated scaling in Kubernetes.  This includes automated vertical and horizontal pod autoscaling, initial resource estimation, cluster-proportional system component autoscaling, and autoscaling of Kubernetes clusters themselves.
 
+The [charter](charter.md) defines the scope and governance of the Autoscaling Special Interest Group.
+
 ## Meetings
 * Regular SIG Meeting: [Mondays at 14:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly/triweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit).
@@ -20,7 +22,7 @@ Covers development and maintenance of components for automated scaling in Kubern
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
-* Solly Ross (**[@directxman12](https://github.com/directxman12)**), Red Hat
+* Solly Ross (**[@directxman12](https://github.com/directxman12)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-autoscaling)
