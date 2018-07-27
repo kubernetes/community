@@ -407,9 +407,6 @@ sigs:
       - name: Kal Khenidak
         github: khenidak
         company: Microsoft
-      - name: Cole Mickens
-        github: colemickens
-        company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday

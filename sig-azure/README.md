@@ -30,7 +30,6 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Kal Khenidak (**[@khenidak](https://github.com/khenidak)**), Microsoft
-* Cole Mickens (**[@colemickens](https://github.com/colemickens)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-azure)
