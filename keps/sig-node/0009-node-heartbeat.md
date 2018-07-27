@@ -158,7 +158,7 @@ With this new API in place, we will change Kubelet so that:
 1. Kubelet is reporting NodeStatus if:
    - there was a meaningful change in it (initially we can probably assume that every
      change is meaningful, including e.g. images on the node)
-   - or it didn’t report it over last `node-status-update-period` seconds
+   - or it didn’t report it over last `node-status-update-frequency` seconds
 1. Kubelet creates and periodically updates its own Lease object and frequency
    of those updates is independent from NodeStatus update frequency.
 
