@@ -206,6 +206,9 @@ block the release on it. A few days before release, we will probably move all
 `priority/important-soon` and `priority/important-longterm` bugs out of
 that milestone in bulk.
 
+More information can be found in the developer guide section for
+[targeting issues and PRs to a milestone release](/contributors/devel/issues.md).
+
 ## Closing issues
 Issues that are identified as a support request, duplicate, not-reproducible
 or lacks enough information from reporter should be closed following guidelines
