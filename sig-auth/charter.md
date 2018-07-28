@@ -7,8 +7,8 @@ the Roles and Organization Management outlined in [sig-governance].
 
 SIG Auth is responsible for the design, implementation, and maintenance of features in
 Kubernetes that control and protect access to the API and other core components. This includes
-authentication and authorization, but also encompasses features like auditing and some policy
-(see below).
+authentication and authorization, but also encompasses features like auditing and some security
+policy (see below).
 
 ### In scope
 
@@ -16,7 +16,8 @@ Link to SIG section in [sigs.yaml]
 
 #### Code, Binaries and Services
 
-- Kubernetes authentication, authorization, audit and policy features. Examples include:
+- Kubernetes authentication, authorization, audit and security policy features. Examples
+  include:
     - Authentication, authorization and audit interfaces and extension points
     - Authentication implementations (service accounts, OIDC, authenticating proxy, webhook,
       ...)
