@@ -1,13 +1,14 @@
-# SIG YOURSIG Charter
+# SIG Auth Charter
 
 This charter adheres to the conventions described in the [Kubernetes Charter README] and uses
 the Roles and Organization Management outlined in [sig-governance].
 
 ## Scope
 
-Include a 2-3 sentence summary of what work SIG TODO does. Imagine trying to
-explain your work to a colleague who is familiar with Kubernetes but not
-necessarily all of the internals.
+SIG Auth is responsible for the design, implementation, and maintenance of features in
+Kubernetes that control and protect access to the API and other core components. This includes
+authentication and authorization, but also encompasses features like auditing and some policy
+(see below).
 
 ### In scope
 
@@ -15,52 +16,53 @@ Link to SIG section in [sigs.yaml]
 
 #### Code, Binaries and Services
 
-- list of what qualifies a piece of code, binary or service
-- as falling into the scope of this SIG
-- e.g. *clis for working with Kubernetes APIs*, 
-- *CI for kubernetes repos*, etc
-- **This is NOT** a list of specific code locations,
-- or projects those go in [sigs.yaml]
+- Kubernetes authentication, authorization, audit and policy features. Examples include:
+    - Authentication, authorization and audit interfaces and extension points
+    - Authentication implementations (service accounts, OIDC, authenticating proxy, webhook,
+      ...)
+    - Authorizer implementations (RBAC + default policy, Node + default policy, webhook, ...)
+    - Security-related admission plugins (NodeRestriction, ServiceAccount, PodSecurityPolicy,
+      ImagePolicy, etc)
+- The mechanisms to protect confidentiality/integrity of API data. Examples include:
+    - Capability for encryption at rest
+    - Capability for secure communication between components
+    - Ensuring users and components can operate with appropriately scoped permissions
 
 #### Cross-cutting and Externally Facing Processes
 
-- list of the non-internal processes
-- that are owned by this SIG
-- e.g. qualifying and cutting a Kubernetes release,
-- organizing mentorship programs, etc
+- Consult with other SIGs and the community on how to apply mechanisms owned by SIG
+  Auth. Examples include:
+    - Review privilege escalation implications of feature and API designs
+    - Core component authentication & authorization (apiserver, kubelet, controller-manager,
+      and scheduler)
+    - Local-storage volume deployment authentication
+    - Cloud provider authorization policy
+    - Container runtime streaming (exec/attach/port-forward) authentication
+    - Best practices for hardening add-ons or other external integrations
 
 ### Out of scope
 
-Outline of things that could be confused as falling into this SIG but don't or don't right now.
+- Reporting of specific vulnerabilities in Kubernetes. Please report using these instructions:
+  https://kubernetes.io/security/
+- General security discussion. Examples of topics that are out of scope for SIG-auth include:
+  - Protection of volume data, container ephemeral data, and other non-API data (prefer: sig-storage
+    and sig-node)
+  - Container isolation (prefer: sig-node and sig-networking)
+  - Bug bounty (prefer: product security team)
+  - Resource quota (prefer: sig-scheduling)
+  - Resource availability / DOS protection (prefer: sig-apimachinery, sig-network, sig-node)
 
 ## Roles and Organization Management
 
 This sig follows adheres to the Roles and Organization Management outlined in [sig-governance]
 and opts-in to updates and modifications to [sig-governance].
 
-### Additional responsibilities of Chairs
-
-- list of any additional responsibilities
-- of Chairs
-
-### Additional responsibilities of Tech Leads
-
-- list of any additional responsibilities
-- of Tech Leads
-
-### Deviations from [sig-governance]
-
-- list of other ways this SIG's roles and governance differ from
-- the outline
-- **If the SIG doesn't have either Chairs or Tech Leads specify that here.**
-
 ### Subproject Creation
 
-Pick one:
+SIG Auth delegates subproject approval to Technical Leads. See [Subproject creation - Option 1].
 
-1. SIG Technical Leads
-2. Federation of Subprojects
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
-[sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1454
+[sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L250
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
+[Subproject creation - Option 1]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md#subproject-creation
