@@ -105,6 +105,12 @@ If you want to solicit reviews before the implementation of your pull request is
 
 The GitHub robots will add and remove the `do-not-merge/hold` label as you use the comment commands and the `do-not-merge/work-in-progress` label as you edit your title. While either label is present, your pull request will not be considered for merging.
 
+## Pull Requests and the Release Cycle
+
+If a pull request has been reviewed, but held or not approved, it might be due to the current phase in the [Release Cycle](https://git.k8s.io/sig-release/ephemera). Occasionally, a SIG may freeze their own code base when working towards a specific feature or goal that could impact other development. During this time, your pull request could remain unmerged while their release work is completed. 
+
+If you feel your pull request is in this state, contact the appropriate [SIG](https://git.k8s.io/community/sig-list.md) or [SIG-Release](https://git.k8s.io/sig-release) for clarification.
+
 ## Comment Commands Reference
 
 [The commands doc](https://go.k8s.io/bot-commands) contains a reference for all comment commands.
