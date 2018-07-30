@@ -38,15 +38,6 @@ Because expert reviewer bandwidth is extremely limited, the process provides a c
 
 ![image alt text](image_0.png)
 
-## Example Repository (work in progress)
-
-Sample [Repository](https://github.com/jdumars/api-reviews)
-
-Sample [Issue](https://github.com/jdumars/api-reviews/issues/1)
-
-Sample [Project Board](https://github.com/jdumars/api-reviews/projects/1)
-
-Possible [review template](https://github.com/pwittrock/community/blob/7e828ea7bed7287dfcd31f6aebdba955d1678a62/contributors/design-proposals/api-proposal-design-template.md)
 
 ## Intake Pre-review Checklist
 
@@ -122,7 +113,7 @@ To begin the process, the proposer must produce:
 
 ## Information to be provided from the reviewer(s)
 
-If **approved****/reviewed**:
+If **approved**/**reviewed**:
 
 * Any non-blocking or nit suggestions should be documented in the review document that will be stored in the repository
 
@@ -194,7 +185,7 @@ As aspiring reviewers gain proficiency, they may pair with an approver on time-s
 
 Aspiring reviewers should reach out the the moderator on slack.  The moderator will add them to the list of aspiring reviewers and assign training reviews as they become available. 
 
-## Aspirations
+## Aspirations for future iterations of this process
 
 * Make a video on this process as guidance for contributors
 
