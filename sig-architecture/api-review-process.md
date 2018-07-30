@@ -1,6 +1,6 @@
 # Kubernetes API Review Process
 
-[API Approvers](mailto:kubernetes-api-reviewers@googlegroups.com): Clayton Coleman, Jordan Liggitt, Tim Hockin, Brian Grant, Eric Tune
+[API Approvers](mailto:kubernetes-api-reviewers@googlegroups.com): [Clayton Coleman](https://github.com/smarterclayton), [Jordan Liggitt](https://github.com/liggitt), [Tim Hockin](https://github.com/thockin), [Brian Grant](https://github.com/bgrant0607), [Eric Tune](https://github.com/erictune)
 
 # Process Overview and Motivations
 
