@@ -252,7 +252,7 @@ sigs:
     mission_statement: >
       Covers improvements to Kubernetes authorization, authentication, and
       cluster security policy.
-    charter_link:
+    charter_link: charter.md
     label: auth
     leadership:
       chairs:
