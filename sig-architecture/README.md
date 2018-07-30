@@ -67,6 +67,13 @@ Monitor these for Github activity if you are not a member of the team.
 ## Additional materials
 
 * [Charter](charter.md)
-* [Backlog](backlog.md)
+
+## Processes owned and tracked by the SIG
+
+[Architecture Tracking Repository](https://github.com/kubernetes-sigs/architecture-tracking/)
+
+[API Reviews](https://github.com/kubernetes-sigs/architecture-tracking/projects/3)
+[KEP Reviews](https://github.com/kubernetes-sigs/architecture-tracking/projects/2)
+[Conformance Test Review](https://github.com/kubernetes-sigs/architecture-tracking/projects/1)
 
 <!-- END CUSTOM CONTENT -->
