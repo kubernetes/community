@@ -1,6 +1,4 @@
-Kubernetes API Review Process - Proposal
-
-Draft 1.0 // Jaice Singer DuMars // June, 2018
+# Kubernetes API Review Process
 
 [API Approvers](mailto:kubernetes-api-reviewers@googlegroups.com): Clayton Coleman, Jordan Liggitt, Tim Hockin, Brian Grant, Eric Tune
 
