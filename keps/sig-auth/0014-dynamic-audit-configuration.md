@@ -17,8 +17,8 @@ approvers:
   - "@yliaog"
 editor: TBD
 creation-date: 2018-05-18
-last-updated: 2018-07-13
-status: provisional
+last-updated: 2018-07-25
+status: implementable
 ---
 
 # Dynamic Audit Control
@@ -193,6 +193,7 @@ Success will be determined by stability of the provided mechanisms and ease of u
 
 - 05/18/2018: initial design
 - 06/13/2018: updated design
+- 07/25/2018: marked as implementable
 
 ## Alternatives
 
