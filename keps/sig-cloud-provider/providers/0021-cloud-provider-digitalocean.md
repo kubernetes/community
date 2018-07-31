@@ -1,5 +1,5 @@
 ---
-kep-number: 17
+kep-number: 21
 title: Cloud Provider DigitalOcean
 authors:
   - "@andrewsykim"

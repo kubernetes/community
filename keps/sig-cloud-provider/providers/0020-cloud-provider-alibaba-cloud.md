@@ -1,14 +1,11 @@
 ---
-kep-number: 5
+kep-number: 20
 title: Cloud Provider for Alibaba Cloud
 authors:
   - "@aoxn"
 owning-sig: sig-cloud-provider
-participating-sigs:
-  - nil
 reviewers:
-  - TBD
-  - "@alicedoe"
+  - "@andrewsykim"
 approvers:
   - "@andrewsykim"
   - "@hogepodge"
@@ -17,13 +14,7 @@ editor: TBD
 creation-date: 2018-06-20
 last-updated: 2018-06-20
 status: provisional
-see-also:
-  - KEP-2
-  - KEP-4
-replaces:
-  - KEP-3
-superseded-by:
-  - KEP-100
+
 ---
 
 # Cloud Provider for Alibaba Cloud
