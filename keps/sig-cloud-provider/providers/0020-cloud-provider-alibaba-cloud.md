@@ -45,13 +45,13 @@ Cloud Provider of Alibaba Cloud  implements interoperability between Kubernetes 
 
 - Help on the improvement for decoupling cloud provider specifics from Kubernetes implementation.
 
-   
+
 
 ### Non-Goals
 
-The networking and storage support of Alibaba Cloud for Kubernetes will be provided by other projects. 
+The networking and storage support of Alibaba Cloud for Kubernetes will be provided by other projects.
 
-E.g. 
+E.g.
 
 * [Flannel network for Alibaba Cloud VPC](https://github.com/coreos/flannel)
 * [FlexVolume for Alibaba Cloud](https://github.com/AliyunContainerService/flexvolume)
@@ -59,7 +59,7 @@ E.g.
 
 ## Prerequisites
 
-1. The VPC network is supported in this project. The support for classic network or none ECS environment will be out-of-scope. 
+1. The VPC network is supported in this project. The support for classic network or none ECS environment will be out-of-scope.
 2. When using the instance profile for authentication, an instance role is required to attach to the ECS instance firstly.
 3. Kubernetes version v1.7 or higher
 
@@ -72,6 +72,22 @@ The repo requirements is mainly a copy from [cloudprovider KEP](https://github.c
 ### User Experience Reports
 As a CNCF Platinum member, Alibaba Cloud is dedicated in providing users with highly secure , stable and efficient cloud service.
 Usage of aliyun container services can be seen from github issues in the existing alicloud controller manager repo: https://github.com/AliyunContainerService/alicloud-controller-manager/issues
+
+### Testgrid Integration
+
+TODO
+
+### CNCF Certified Kubernetes
+
+TODO
+
+### Documentation
+
+TODO
+
+### Technical Leads are members of the Kubernetes Organization
+
+TODO
 
 ## Proposal
 
