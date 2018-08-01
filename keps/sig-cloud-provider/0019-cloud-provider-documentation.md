@@ -44,7 +44,7 @@ status: provisional
 * [Alternatives [optional]](#alternatives)
 
 ### Summary
-This KEP describes the documentation requirements for both in-tree and out-of-tree cloud controller managers. 
+This KEP describes the documentation requirements for both in-tree and out-of-tree cloud controller managers.
 These requirements are meant to capture critical usage documentation that is common between providers, set requirements for individual documentation, and create consistent standards across provider documentation. The scope of this document is limited to in-tree code that interfaces with kube-controller-manager, and out-of-tree code that interfaces with cloud-controller-manager
 
 ### Motivation
@@ -66,12 +66,12 @@ SIG-Docs is not expected to produce or maintain any of this documentation.
 
 ### Proposal
 
-#### Goal 1: 
+#### Goal 1:
 Produce a common document that describes how to configure any in-tree cloud provider that can be reused by tools such as kubeadm, to create minimum viable Kubernetes clusters.
 
-Kubernetes documentation lists details of current cloud-provider [here](https://kubernetes.io/docs/concepts/cluster-administration/cloud-providers/). Additional documentation [(1),](https://kubernetes.io/docs/concepts/services-networking/service/) [(2)](https://kubernetes.io/docs/tasks/administer-cluster/developing-cloud-controller-manager/) that link to cloud-provider code currently remains detached and poorly maintained. 
+Kubernetes documentation lists details of current cloud-provider [here](https://kubernetes.io/docs/concepts/cluster-administration/cloud-providers/). Additional documentation [(1),](https://kubernetes.io/docs/concepts/services-networking/service/) [(2)](https://kubernetes.io/docs/tasks/administer-cluster/developing-cloud-controller-manager/) that link to cloud-provider code currently remains detached and poorly maintained.
 
-#### Requirement 1: 
+#### Requirement 1:
 Provide validated manifests for kube-controller-manager, kubelet and kube-apiserver by cloud-provider to enable a Kubernetes administrator to run cloud-provider=<providername> in-tree with kube-controller-manager as is feasible today. This is only relevant to environments where a Kubernetes administrator/user has (or) wants access to the control plane. Environments such as Amazon EKS, Google’s GKE, Azure’s AKS and other such platforms are out of context here.
 
 * Add --cloud-provider=<providername> to the kube-apiserver, kube-controller-manager and every kubelet. These manifests should be regularly updated and listed at this location: https://github.com/kubernetes/kubernetes/tree/master/pkg/cloudprovider/providers/aws/docs/
@@ -80,7 +80,7 @@ Provide validated manifests for kube-controller-manager, kubelet and kube-apiser
   * Example of a [systemd service for kubelet](https://gist.github.com/d-nishi/289cb82367580eb0cb129c9f967d903d) and [kubelet config](https://gist.github.com/d-nishi/d7f9a1b59c0441d476646dc7cce7e811)
 * Run in-tree cloud-controller-manager as a [daemon-set](https://gist.github.com/d-nishi/38e3b7051029b5d1a1772f3862f62ce9)/deployment/replicaset/static pod on the cluster.
 
-#### Requirement 2: 
+#### Requirement 2:
 Provide validated/tested descriptions with examples of controller features (annotations or tags) that are cloud-provider dependent that can be reused by any Kubernetes administrator to run `cloud-provider-<providername>` in-tree with `kube-controller-manager` as is described in the code <cloudprovider.go> Example: aws.go
 These manifests should be regularly tested and updated post testing in the relevant provider location E.g.: https://github.com/kubernetes/kubernetes/tree/master/pkg/cloudprovider/providers/aws/docs/
 * Node Controller (or) NodeName
@@ -88,17 +88,21 @@ These manifests should be regularly tested and updated post testing in the relev
 * Volume Controller (or) persistent volume labels controller
 * Other provider-specific-Controller e.g. Route controller for GCP.
 
-#### Goal 2: 
-Provide a common document that describes how to configure any out-of-tree cloud-controller-manager by provider.
+#### Goal 2:
+Provide a common document that describes how to configure a Kubernetes cluster on any out-of-tree cloud provider.
 
-#### Requirement 1:  
-Provide validated manifests for kube-controller-manager, kubelet and kube-apiserver by cloud-provider to enable a Kubernetes administrator to run out-of-tree cloud-controller-manager.
-* Remove --cloud-provider flag from kube-apiserver and kube-controller-manager. Remove this flag from the manifest when the flag is deprecated in a future release. Run kubelet with --cloud-provider=external.
+#### Requirement 1:
+Provide validated manifests for kube-controller-manager, kubelet, kube-apiserver and cloud-controller-manager by cloud-provider. The following examples are from provisioning a cluster on DigitalOcean using kops.
+* Set --cloud-provider=external flag from kube-apiserver, kube-controller-manager and kubelet. Remove this flag from the manifest when the flag is deprecated in a future release.
+  * Example of [apiserver manifest](https://gist.github.com/andrewsykim/a7938e185d45e1c0ef760c375005fdef)
+  * Example of [kube-controller-manager manifest](https://gist.github.com/andrewsykim/56ee2da95ade8386d3123e982d72aca9)
+  * Example of [kubelet manifest](https://gist.github.com/andrewsykim/ac954b1657eb0e6a2e95af516594e2bd)
 * Run out-of-tree cloud-controller-manager as a daemon-set/deployment/replicaset/static pod on the cluster.
+  * Example of [cloud controller manager DaemonSet](https://gist.github.com/andrewsykim/26e22e36471c1774e3626a70d2b7465f)
 
-#### Requirement 2: 
+#### Requirement 2:
 List out the latest annotations or tags that are cloud-provider dependent and will be used by the Kubernetes administrator to run `cloud-provider-<providername>` in-tree with `kube-controller-manager` as is described in the code <cloudprovider.go> Eg. aws.go
-These manifests should be regularly tested and updated in the relevant provider location E.g.: https://github.com/kubernetes/kubernetes/tree/master/pkg/cloudprovider/providers/aws/docs/
+These manifests should be regularly tested and updated in the relevant provider location E.g.: https://github.com/kubernetes/cloud-provider-aws/docs/
 * Node Controller (or) NodeName
 * Service Controller (or) LoadBalancer
 * Volume Controller (or) persistent volume labels controller
