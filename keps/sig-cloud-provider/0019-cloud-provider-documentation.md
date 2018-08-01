@@ -1,5 +1,5 @@
 ---
-kep-number: 4
+kep-number: 0019
 title: Cloud Provider Documentation
 authors:
   - "@d-nishi"
@@ -19,7 +19,9 @@ reviewers:
   - "@hogepodge"
   - "@jagosan"
 approvers:
-  - "@thockin"
+  - "@andrewsykim"
+  - "@hogepodge"
+  - "@jagosan"
 editor: TBD
 status: provisional
 ---

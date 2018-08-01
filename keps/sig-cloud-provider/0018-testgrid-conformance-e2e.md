@@ -1,5 +1,5 @@
 ---
-kep-number: 003
+kep-number: 0018
 title: Reporting Conformance Test Results to Testgrid
 authors:
   - "@andrewsykim"

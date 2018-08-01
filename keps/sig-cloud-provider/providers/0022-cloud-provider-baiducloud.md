@@ -1,3 +1,21 @@
+---
+kep-number: 22
+title: Cloud Provider BaiduCloud
+authors:
+  - "@tizhou86"
+owning-sig: sig-cloud-provider
+reviewers:
+  - "@andrewsykim"
+approvers:
+  - "@andrewsykim"
+  - "@hogepodge"
+  - "@jagosan"
+editor: TBD
+creation-date: 2018-07-23
+last-updated: 2018-07-23
+status: provisional
+
+---
 # Cloud Provider BaiduCloud
 
 ## Table of Contents
