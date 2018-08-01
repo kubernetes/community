@@ -467,9 +467,9 @@ In https://github.com/kubernetes/kubernetes/pull/64907 a ratcheting mechanism du
 Ratcheting does not work well with arbitrary propositional OpenAPI validation schemata because propositions in negative positions (under `not` or `oneOf`) that are weakened via ratcheting will make the whole validation stricter instead of weaker (compare https://github.com/kubernetes/kubernetes/pull/64907#issuecomment-396526377).
 
 We have multiple options to restrict the use of ratcheting (which could be the property of certain OpenAPI validation schemata constructs):
-Allow ratcheting only in the skeleton schema. Everything in the skeleton schema is positive.
-Disallow ratcheting under `not` and under `oneOf`, but allow it everywhere else.
-Disallow ratcheting in negative positions. This implies that it is disallowed under `oneOf`, but is allowed e.g. under `not: {not: ….}`.
+1. Allow ratcheting only in the skeleton schema. Everything in the skeleton schema is positive.
+2. Disallow ratcheting under `not` and under `oneOf`, but allow it everywhere else.
+3. Disallow ratcheting in negative positions. This implies that it is disallowed under `oneOf`, but is allowed e.g. under `not: {not: ….}`.
 The first is the most strict one, the last is the most relaxed one. On the other hand, 1 is the simplest to reason about.
 
 **Question:** which of the options do we want?
