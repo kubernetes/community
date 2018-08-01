@@ -149,7 +149,7 @@ Even worse: forcing onto another branch might make more defaults applicable. In 
 
 **We propose to allow defaults only outside of `anyOf`, `allOf`, `oneOf`, `not`.**
 
-Without that, we would get ambiguous defaulting semantics::
+Without that, we would get ambiguous defaulting semantics:
 
 #### Example 4:
 
@@ -182,8 +182,9 @@ Without that, we would get ambiguous defaulting semantics::
 >
 > But what about the object `{"a": "12", "b":"foo", "c":"bar"}`? Both patterns apply. With pruning option 1 we keep `"b"` and `"c"`. But what about the default? Should we default to `1` or `2`?
 
-
 Clearly, we can make the algorithm deterministic by choosing one, e.g. the first matching branch. This choice is arbitrary, hard to understand, and gets even more confusing with even more nested `allOf`, `anyOf` or even `not`.
+
+We can later become less restrictive about the allowed positions of default values in the scheme. I.e. the restriction of only allowing default outside of `allOf`, `anyOf`, `oneOf` and `not` is a starting point with a way forward if necessary.
 
 ### Mixing of Schema and Value Validation
 
@@ -361,8 +362,7 @@ In native types, we have custom unmarshallers for date / timestamps. In OpenAPI 
 >
 > In the CRD validation, we reject OpenAPI validation schemata like `skel(s)` with `properties` and one of `additionalProperties` or  `patternProperties` being defined at the same time. Having `additionalProperties` or `patternProperties` defined there means to have a `map[string]T` like field where we don’t want to prune the unknown "keys". 
 > 
-> The schema `s` above means to either have a `map[string]int64` or a `struct` with `a` of type string. This is a special case of polymorphism because for the same JSON path is typed with two different types in the Golang sense (struct and `map[string]T`), but same types in the JSON sense `JSON object).
-
+> The schema `s` above means to either have a `map[string]int64` or a `struct` with `a` of type string. This is a special case of polymorphism because for the same JSON path is typed with two different types in the Golang sense (struct and `map[string]T`), but same types in the JSON sense (JSON object).
 
 Hence, we have to add the following restriction to OpenAPI validation schemata:
 
@@ -483,4 +483,4 @@ The first is the most strict one, the last is the most relaxed one. On the other
 
 ## Alternatives Considered
 
-* we have explored pruning option 4 in the [GDoc which preceeded this KEP](https://docs.google.com/document/d/1rBn6SZM7NsWxzBN41J2kO2Odf07PeGPygatM_1RwofY/edit#heading=h.4qdisqud6z3t), but decided against it as it put a lot of burden on the CRD author. The approach shown in this KEP leads to the same final outcome, but derives the skeleton automatically.
+* we have explored pruning option 4 in the [GDoc which preceded this KEP](https://docs.google.com/document/d/1rBn6SZM7NsWxzBN41J2kO2Odf07PeGPygatM_1RwofY/edit#heading=h.4qdisqud6z3t), but decided against it as it put a lot of burden on the CRD author. The approach shown in this KEP leads to the same final outcome, but derives the skeleton automatically.
