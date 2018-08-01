@@ -47,7 +47,7 @@ Because expert reviewer bandwidth is extremely limited, the process provides a c
 
     * Any new version of a stable API
 
-    * Any major new functionality added to a stable API as defined by SIG Architecture and the API Reviewers
+    * Any new functionality added to a stable API as defined by SIG Architecture and the API Reviewers
 
 ## What APIs need to be reviewed?
 
@@ -61,11 +61,13 @@ Because expert reviewer bandwidth is extremely limited, the process provides a c
 
     * github.com/kubernetes/kubernetes, and any kubernetes-* org projects it depends on are required to be reviewed.   (mandatory)
 
+    * Any kubernetes-style API that uses a *.k8s.io or *.kubernetes.io name, e.g. "storage.k8s.io" (mandatory)
+
+    * "Critical" or other “highly-integrated” APIs, such as our extension points in the node, apiserver, and controllers as defined by SIG Architecture [TBD].  (mandatory)
+
     * any other github projects in the kubernetes-* orgs (informational, for now - may make mandatory in future)
 
     * Any projects that produce APIs (including CRDs) that are intended to work with kubectl and/or kube-apiserver. (informational - intent is to ensure consistent user experience across the Kubernetes ecosystem)
-
-    * "Critical" or other “highly-integrated” APIs, such as our extension points in the node, apiserver, and controllers as defined by SIG Architecture [TBD].  (mandatory)
 
 * All API implementations (including alpha versions) that are part of kubernetes must be reviewed, including CRDs, so user experience across the Kubernetes ecosystem is consistent.
 
@@ -91,11 +93,11 @@ The API review process can result in multiple outcomes depending on the content 
 
 As much as possible, we will automate the detection of PRs that require API reviews.  Significant changes should be reviewed BEFORE they reach the PR stage, but this is the backstop for anything that gets missed.  Such automation may miss cases, so any PR can be flagged as "needs API review", which triggers this process.
 
-To begin the process, the proposer must produce:
+To begin the process:
 
 * Create an issue in the kubernetes-sigs/architecture-tracking repository that links to the relevant KEP or documentation
 
-* The KEPs/documentation should include A clear and thoroughly-researched justification on why the change or addition is needed, including, upgrade/downgrade considerations, and alternatives considered.
+* The KEPs/documentation should include a clear and thoroughly-researched justification on why the change or addition is needed, including, upgrade/downgrade considerations, and alternatives considered.
 
 * The proposer may follow one of two paths:
 
