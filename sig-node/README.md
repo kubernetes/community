@@ -79,18 +79,21 @@ Monitor these for Github activity if you are not a member of the team.
 
 The following topics fall under scope of this SIG.
 
-* Kubelet related features (e.g. Pod lifecycle)
-* Node level performance and scalability (with [sig-scalability](../sig-scalability))
-* Node reliability (prooblem detection and remediation)
-* Node lifecycle management (with [sig-cluster-lifecycle](../sig-cluster-lifecycle))
-* Container runtimes
-* Device management
-* Images, package management
-* Host resource management (with [sig-scheduling](../sig-scheduling))
-* Hardware discovery
-* Issues related to node, pod, container monitoring (with [sig-instrumentation](../sig-instrumentation))
-* Node level security and Pod isolation (with [sig-auth](../sig-auth))
-* Host OS and/or kernel interactions (to a limited extent)
+- Kubelet and its features
+- Pod API and Pod behaviors (with [sig-architecture](../sig-architecture))
+- Node API (with [sig-architecture](../sig-architecture))
+- Node controller
+- Node level performance and scalability (with [sig-scalability](../sig-scalability))
+- Node reliability (problem detection and remediation)
+- Node lifecycle management (with [sig-cluster-lifecycle](../sig-cluster-lifecycle))
+- Container runtimes
+- Device management
+- Image management
+- Node-level resource management (with [sig-scheduling](../sig-scheduling))
+- Hardware discovery
+- Issues related to node, pod, container monitoring (with [sig-instrumentation](../sig-instrumentation))
+- Node level security and Pod isolation (with [sig-auth](../sig-auth))
+- Host OS and/or kernel interactions (to a limited extent)
 
 We also work closely with [sig-storage](../sig-storage) and [sig-network](../sig-network). As you can see, this is a very cross-functional team!
 <!-- END CUSTOM CONTENT -->
