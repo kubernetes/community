@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Covers kubectl and related tools. We focus on the development and standardization of the CLI framework and its dependencies, the establishment of conventions for writing CLI commands, POSIX compliance, and improving the command line tools from a developer and devops user experience and usability perspective.
 
+The [charter](charter.md) defines the scope and governance of the CLI Special Interest Group.
+
 ## Meetings
 * Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
@@ -21,12 +23,18 @@ Covers kubectl and related tools. We focus on the development and standardizatio
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+* Sean Sullivan (**[@seans3](https://github.com/seans3)**), Google
+
+### Technical Leads
+The technical leads provide the technical vision and leadership for the SIG.
+
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 * Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
-* Tony Ado (**[@AdoHe](https://github.com/AdoHe)**), Alibaba
 
 ## Emeritus Leads
 
 * Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**), Red Hat
+* Tony Ado (**[@AdoHe](https://github.com/AdoHe)**), Alibaba
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cli)
