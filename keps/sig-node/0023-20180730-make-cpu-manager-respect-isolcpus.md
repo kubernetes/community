@@ -1,5 +1,5 @@
 ---
-kep-number: 0018
+kep-number: 0023
 title: Make CPU Manager respect "isolcpus"
 authors:
   - "@Levovar"
@@ -10,12 +10,12 @@ reviewers:
   - "@jeremyeder"
   - "@ConnorDoyle"
   - "@bgrant0607"
-  - "@dchen1107" 
+  - "@dchen1107"
 approvers:
   - TBD
 editor: TBD
 creation-date: 2018-07-30
-last-updated: 2018-07-31
+last-updated: 2018-08-02
 status: provisional
 see-also:
   - N/A
@@ -51,17 +51,18 @@ superseded-by:
 "Isolcpus" is a boot-time Linux kernel parameter, which can be used to isolate CPU cores from the generic Linux scheduler.
 This kernel setting is routinely used within the Linux community to manually isolate, and then assign CPUs to specialized workloads.
 The CPU Manager implemented within kubelet currently ignores this kernel setting when creating cpusets for Pods.
-This KEP proposes that CPU Manager should respects this kernel setting when assigning Pods to cpusets, through whichever supported CPU management policy.
+This KEP proposes that CPU Manager should respects this kernel setting when assigning Pods to cpusets, regardless the configured management policy.
+Inter-working with the isolcpus kernel parameter should be a node-wide, policy-agnostic setting.
 
 ## Motivation
 
-The CPU Manager always assumes that it is the alpha and omega on a node, when it comes to managing the CPU resources of the host.
+Kubelet's in-built CPU Manager always assumes that it is the primary, and the only software managing the CPU resources of the host.
 However, in certain infrastructures this might not always be the case.
-While it is already possible to effectively take-away CPU cores from the CPU manager via the kube-reserved and system-reserved kubelet flags, this implicit way of expressing isolation needs is not dynamic enough to cover all use-cases.
+While it is already possible to effectively take-away CPU cores from the Kubernetes managed workloads via the kube-reserved and system-reserved kubelet flags, this implicit way is not flexible enough to cover all use-cases.
 
 Therefore, the need arises to enhance existing CPU manager with a method of explicitly defining a discontinuous pool of CPUs it can manage.
 Making kubelet respect the isolcpus kernel setting fulfills exactly that need, while also doing it in a de-facto standard way.
- 
+
 If Kubernetes' CPU manager would support this more granular node configuration, it would enable infrastructure administrators to make multiple "CPU managers" seamlessly inter-work on the same node.
 For example:
 - outsourcing the management of a subset of specialized, or optimized CPUs to an external CPU manager without any (other) change in Kubelet's CPU manager
