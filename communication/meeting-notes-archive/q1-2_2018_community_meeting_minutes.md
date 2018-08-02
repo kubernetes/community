@@ -51,7 +51,7 @@
     *   Look over if you are involved in developing the Kube components, or have tooling that sets up the various components
 *   **SIG Updates**
     *   Auth - Jordan Liggitt - Confirmed
-        *   [https://docs.google.com/presentation/d/1MAIypro-bcLC7wNEnIazYqmCL6ILBN69uUWIBw7QBIY/edit?usp=sharing](https://docs.google.com/presentation/d/1MAIypro-bcLC7wNEnIazYqmCL6ILBN69uUWIBw7QBIY/edit?usp=sharing) 
+        *   [https://docs.google.com/presentation/d/1MAIypro-bcLC7wNEnIazYqmCL6ILBN69uUWIBw7QBIY/edit?usp=sharing](https://docs.google.com/presentation/d/1MAIypro-bcLC7wNEnIazYqmCL6ILBN69uUWIBw7QBIY/edit?usp=sharing)
         *   Usability
             *   Multiple Authorizers (e.g. GKE)
                 *   Now honor superuser permissions from other authorizers, so if you're a superuser, you can create policy without first explicitly granting yourself those permissions
@@ -74,7 +74,7 @@
             *   Chime in if you maintain a device plugin or node component
         *   Metrics-server rework ([https://github.com/kubernetes-incubator/metrics-server/pull/65](https://github.com/kubernetes-incubator/metrics-server/pull/65))
             *   call for testing in non-production servers, should make things more stable, has several fixes to communication with nodes
-        *   k8s-prometheus-adapter advance configuration merged	
+        *   k8s-prometheus-adapter advance configuration merged
             *   Allows more precisely controlling how metrics in the custom metrics API map to Prometheus queries, and how metrics show up in the custom metrics API
         *   A number of third party service involving e2e tests have been put behind a feature flag in the test infrastructure
             *   should improve flaking tests from sig-instrumentation, especially around components that we can't control
@@ -136,7 +136,7 @@
                 *   Making sure to be level triggered and not edge triggers
             *   Removing some hacks with init containers
         *   Spark ([link](https://issues.apache.org/jira/issues/?jql=project+%3D+SPARK+AND+component+%3D+Kubernetes))
-            *   Working towards 2.4 release. 
+            *   Working towards 2.4 release.
             *   2.4 code freeze and branch cut on 8/1
             *   Major features
                 *   PySpark support
@@ -194,14 +194,14 @@
                 *   Cluster registry vs cluster API?
                     *   Cluster API is to create clusters, cluster registry is for using already-existing clusters
                     *   Maybe could disambiguate the terms better, manage overlap
-    *   SIG Scheduling (Bobby Salamat, confirmed) 
+    *   SIG Scheduling (Bobby Salamat, confirmed)
         *   1.11 Update
             *   Pod Priority and Preemption to beta, available by default
                 *   Improved the feature, restricted a bit to avoid allowing untrusted users to create high-prio pods, only allow super-high-priority pods in kube-system namespace
             *   DaemonSet scheduling in default scheduler (alpha)
         *   1.12 Update
             *   Focus on performance
-                *   Improved equivalence cache (pod with similar spec probably fits on same node unless the node has changed) 
+                *   Improved equivalence cache (pod with similar spec probably fits on same node unless the node has changed)
                     *   3x performance improvement now
                     *   Helps with scheduling large replica sets, etc
             *   Working on proposal for gang scheduling [link here]
@@ -236,7 +236,7 @@
             *   Schedule: [https://git.k8s.io/sig-release/releases/release-1.12/release-1.12.md](https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgit.k8s.io%2Fsig-release%2Freleases%2Frelease-1.12%2Frelease-1.12.md&data=02%7C01%7Ctpepper%40vmware.com%7C89885a0f477d469ddcb308d5e6ba8e88%7Cb39138ca3cee4b4aa4d6cd83d9dd62f0%7C1%7C0%7C636668611291506201&sdata=ZzUn8hRsKf3E1poF2i5%2BVgmpm0UYnM3rZh1iiy%2Br1QM%3D&reserved=0)
         *   Features collection is happening now, see:
             *   [https://github.com/kubernetes/features/issues?q=is%3Aopen+is%3Aissue+milestone%3Av1.12](https://github.com/kubernetes/features/issues?q=is%3Aopen+is%3Aissue+milestone%3Av1.12)
-            *   [https://groups.google.com/forum/#!topic/kubernetes-dev/T-kIHtgS5J4/discussion](https://groups.google.com/forum/#!topic/kubernetes-dev/T-kIHtgS5J4/discussion) 
+            *   [https://groups.google.com/forum/#!topic/kubernetes-dev/T-kIHtgS5J4/discussion](https://groups.google.com/forum/#!topic/kubernetes-dev/T-kIHtgS5J4/discussion)
         *   Key dates:
             *   Feature freeze:             	July 31, 2018
             *   Begin code slush:         	Aug. 28, 2018
@@ -320,7 +320,7 @@
             *   More modern calendar
             *   Prototype up, check it out (link from slides)
             *   goal to launch in 90 days
-        *   Community Management 
+        *   Community Management
             *   All talking all the time, it's time consuming
             *   Contributor summits, first one (run by contribex) in Copenhagen
                 *   Rolling out new contributor workshop + playground
@@ -379,7 +379,7 @@
     *   SIG IBMCloud, Autoscaling, and GCP will be updating in August
     *   Github Groups [Jorge Castro]
         *   [https://github.com/kubernetes/community/issues/2323](https://github.com/kubernetes/community/issues/2323)  working to make current 303 groups in the org easier to manage
-    *   Shoutouts this week (Check in #shoutouts on slack) 
+    *   Shoutouts this week (Check in #shoutouts on slack)
         *   jberkus: To Jordan Liggitt for diagnosing & fixing the controller performance issue that has haunted us since last August, and  to Julia Evans for reporting the original issue.
             *   Maulion: And another to @liggitt for always helping anyone with a auth question in all the channels with kindness
         *   jdumars: @paris - thank you for all of your work helping to keep our community safe and inclusive! I know that you've spent countless hours refining our Zoom usage, documenting, testing, and generally being super proactive on this.
@@ -404,7 +404,7 @@
 
 
 
-*   [Stackoverflow Top Users](https://stackoverflow.com/tags/kubernetes/topusers) for June 2018, thanks for helping out! 
+*   [Stackoverflow Top Users](https://stackoverflow.com/tags/kubernetes/topusers) for June 2018, thanks for helping out!
         *   [Matthew L Daniel](https://stackoverflow.com/users/225016/matthew-l-daniel)
         *   s[uren](https://stackoverflow.com/users/5564578/suren)
         *   [Janos Lenart](https://stackoverflow.com/users/371954/janos-lenart)
@@ -417,7 +417,7 @@
 
 
 *   **Moderators**:  Arun Gupta [Amazon / SIG-AWS]
-*   **Note Taker**: Chris Short and Jorge Castro [SIG Contrib Ex] 
+*   **Note Taker**: Chris Short and Jorge Castro [SIG Contrib Ex]
 *   [ 0:00 ]**  Demo **-- Agones - Dedicated Game Server Hosting and Scaling for Multiplayer Games on Kubernetes [Mark Mandel, markmandel@google.com] (confirmed)
     *   [https://github.com/GoogleCloudPlatform/agones](https://github.com/GoogleCloudPlatform/agones)
 *   [ 0:00 ]** Release Updates**
@@ -425,7 +425,7 @@
         *   Code Thaw on Tuesday, held changes from Code Freeze have now cleared the queue.
             *   All 1.11 changes now need to be cherrypicked.
         *   RC1 was released yesterday, please test!
-        *   Status is currently uncertain.  Probability of a release delay is 50%, will make call at Burndown meeting 10am tommorrow.
+        *   Status is currently uncertain.  Probability of a release delay is 50%, will make call at Burndown meeting 10am tomorrow.
         *   CI Signal Issues:
             *   GKE appears to have pushed a [change breaking tests](https://github.com/kubernetes/kubernetes/issues/65311) at midnight last night, currently sorting whether that's just a GKE problem.
             *   [Upgrade tests are still very flaky](https://k8s-testgrid.appspot.com/sig-release-master-upgrade),  this seems to be an artifact of the tests and not of code.  GCE/GKE staff have given the go-ahead to release without clean signal as they will not be fixing the tests.
@@ -456,7 +456,7 @@
     *   Please pin your SIG meeting info and agenda doc in your SIG slack channel.  Now that the main calendar is not on [https://kubernetes.io/community/](https://kubernetes.io/community/) meeting info is less discoverable without these links.
         *   **SIG Chairs/TLs - please check your email (sent to k-sig-leads@). New zoom settings and moderation controls. Let's keep our meetings safe and transparent. **
     *   All SIGs - please take time to look at the "help wanted" and "good first issue" labels, available across all Kubernetes repositories. They're meant to highlight opportunities for new contributors. Please ensure that they're being used appropriately (the "good-first-issue" especially has fairly specific requirements for the issue author): [https://github.com/kubernetes/community/blob/master/contributors/devel/help-wanted.md](https://github.com/kubernetes/community/blob/master/contributors/devel/help-wanted.md)
-    *   Shoutouts this week (Check in #shoutouts on slack) 
+    *   Shoutouts this week (Check in #shoutouts on slack)
         *   Jason DeTiberus: @neolit123 (Lubomir Ivanov) for all of the docs contributions for kubeadm v1.11
         *   Jason DeTiberus: @jrondeau (Jennifer Rondeau) for the relentless work on improving our docs and helping bring some more structure to the docs process for sig-cluster-lifecycle
         *   @neolit123 (Lubomir Ivanov): @jdetiber (Jason DeTiberus), @liz (Liz Frost), @cha (Chuck Ha), @timothysc (Timothy St. Clair) and @luxas (Lucas Kladstrom) for the relentless grind trough kubeadm 1.11 backlog potentially making it the best release thus far.
@@ -478,7 +478,7 @@
 *   **Note Taker**: Jorge Castro [Heptio/SIG Contribex] and Solly Ross [Red Hat/SIG Autoscaling]
 *   [ 0:00 ]**  Demo **-- Building Images in Kubernetes [Priya Wadhwa, priyawadhwa@google.com] (confirmed)
     *   [https://github.com/GoogleContainerTools/kaniko](https://github.com/GoogleContainerTools/kaniko)
-    *   [https://docs.google.com/presentation/d/1ZoiQ3cuQNJJciKq_JvqTty_tcoaRKNyYRzgCBbTumsE/edit?usp=sharing](https://docs.google.com/presentation/d/1ZoiQ3cuQNJJciKq_JvqTty_tcoaRKNyYRzgCBbTumsE/edit?usp=sharing) 
+    *   [https://docs.google.com/presentation/d/1ZoiQ3cuQNJJciKq_JvqTty_tcoaRKNyYRzgCBbTumsE/edit?usp=sharing](https://docs.google.com/presentation/d/1ZoiQ3cuQNJJciKq_JvqTty_tcoaRKNyYRzgCBbTumsE/edit?usp=sharing)
     *   Tool for building container images without needing to mount in Docker socket
         *   Extracts base image to file system
         *   Downloads build context tarball from storage (e.g. S3, more on the way)
@@ -495,18 +495,18 @@
             *   Working on a PR right now to support other solutions
         *   Feature parity with docker build?
             *   Yes
-    *   Link to slides. 
+    *   Link to slides.
 *   [ 0:00 ]** Release Updates**
     *   1.11  [Josh Berkus - Release Lead]
         *   **_Next Deadline: RC1 and branch on June 20th_**
-        *   Less than a week of code freeze left! 
+        *   Less than a week of code freeze left!
         *   **Docs are due** and overdue; if you have a feature in 1.11,_ you should have already submitted final docs_. Contact the docs team.
         *   CI signal is good, a few tests being flaky, especially alpha-features.
         *   Only 2 issues and 6 PRs open; currently more stable than we've ever been! Thanks so much to everyone for working to get stuff in the release early.
     *   1.12 [Tim Pepper - 1.12 Release Lead]
         *   Tim Pepper as Lead
         *   Almost finished building 1.12 team, contact @tpepper on Slack to join.
-            *   Needed: 
+            *   Needed:
                 *   PR triage (tentatively adding role separate from issue triage)
                 *   Branch manager
     *   Patch Release Updates
@@ -519,9 +519,9 @@
             *   Improving testing of cloud providers
         *   KEP is basically "Why we want conformance tests reported by the cloud providers"
             *   We didn't have a formal way to do this without KEP
-            *   SIG Testing infra wasn't available back then, so now we have testgrid and a way to report tests, etc. Gives providers instructions to follow to contribute results. 
+            *   SIG Testing infra wasn't available back then, so now we have testgrid and a way to report tests, etc. Gives providers instructions to follow to contribute results.
             *   SIG Openstack has been pioneering this work
-            *   We want all providers to do this eventually, we'll be reaching out to all the cloud providers to give them visibility that this KEP exists. 
+            *   We want all providers to do this eventually, we'll be reaching out to all the cloud providers to give them visibility that this KEP exists.
             *   Still missing some details, will address those as more experience is developed in how to do better test
         *   Q:
             *   Coverage is listed as out of scope, but is a benefit, will coverage improvements be a follow-on KEP?
@@ -534,7 +534,7 @@
         *   [Trello board](https://trello.com/b/rjTqrwjl/windows-k8s-roadmap) - maps K8s features to Windows release needed
         *   Releasing twice a year in the Windows Server Semi Annual Channel
             *   Like 18.03, 17.09, etc.
-            *   We've had to make changes to Windows Server to make Kubernetes work well. For example, symbolic links in Windows v. Unix. 
+            *   We've had to make changes to Windows Server to make Kubernetes work well. For example, symbolic links in Windows v. Unix.
             *   Board is tagged with the right version of Windows to use to get a particular Kubernetes feature working, but in general, use the latest release if possible
         *   Kube 1.11
             *   Lots of features with Windows, e.g. Kubelet stats
@@ -567,12 +567,12 @@
         *   Decentralized charts repo coming
         *   Skaffold:  kustomize support
         *   Workloads API
-            *   Need to stabilize Job 
+            *   Need to stabilize Job
             *   Want really make sure cron jobs are stable before moving cronjobs out of beta
             *   Job [first class sidecar container KEP](https://github.com/kubernetes/community/issues/2148) discussion ongoing
         *   Questions:
             *   Why didn't charts go with Helm to a separate CNCF project
-                *   Current Status: Charts are listed as a subproject of SIG Apps. 
+                *   Current Status: Charts are listed as a subproject of SIG Apps.
                 *   Chart maintainers aren't necessarily Helm maintainers
                 *   Trying to figure out the right model for maintainership
                 *   Is the charts tooling part of the charts subproject, or Helm?
@@ -582,20 +582,20 @@
         *   1 minutes Jennifer update
             *   We're making great progress on fixes for the hugo migration, we've plowed through a bunch, thanks to all the new contributors who have been diving in.
             *   Thanks to all of you who have submitting 1.11 docs
-            *   **If you're behind on 1.11 docs, please submit them asap!** 
+            *   **If you're behind on 1.11 docs, please submit them asap!**
 *   [ 0:00 ] **Announcements**
     *   [K8s Office Hours](https://github.com/kubernetes/community/blob/master/events/office-hours.md) Next Week, Wednesday 6/20
         *   Volunteers always sought, ping @jorge or @mrbobbytables on slack
         *   Users who participate will be entered in a raffle to win a k8s shirt!
-    *   SIG Leads, if you haven't uploaded your meeting videos to the youtube channel recently, please try to catch up. Ping @jorge if you need help. 
+    *   SIG Leads, if you haven't uploaded your meeting videos to the youtube channel recently, please try to catch up. Ping @jorge if you need help.
     *   SIG Architecture has a new meeting time at 11PST every other Thursday after this meeting. Also, there is a new Zoom link you can get from joining the mailing list. Check out the[ SIG Arch readme for more information](https://github.com/kubernetes/community/tree/master/sig-architecture).
-    *   Shoutouts this week (Check in #shoutouts on slack) 
+    *   Shoutouts this week (Check in #shoutouts on slack)
         *   (Josh Berkus) @liggitt and @dims for pitching in and doing a ton of work on PRs for 1.11, across all of Kubernetes.
         *   (Jennifer Rondeau) @misty for stepping in to help with ALL things docs no matter how crazy they get or how much else she has on her plate :tada:
         *   (Aish Sundar) @justaugustus for giving us a huge head start and herding all the cats to get a stellar 1.12 release team already in place. Thanks a lot!
         *   (Misty Stanley-Jones + Aish Sundar) @jberkus for herding 1.11 release cats! :cat:
         *   To echo what @misty said, HUGE shoutout to @jberkus for being an awesome patient leader throughout 1.11 cycle. It was such a learning experience seeing him work through issues calmly, all the while encouraging the RT team to lead in our own little way.
-        *   Jason DeTiberius 
+        *   Jason DeTiberius
             *   @neolit123 (Lubomir Ivanov) for all of the docs contributions for kubeadm v1.11
             *   @jrondeau (Jennifer Rondeau) for the relentless work on improving our docs and helping bring some more structure to the docs process for sig-cluster-lifecycle
     *   
@@ -612,7 +612,7 @@
         *   GitHub:[ https://github.com/YugaByte/yugabyte-db](https://github.com/YugaByte/yugabyte-db)
         *   Docs:[ https://docs.yugabyte.com/](https://docs.yugabyte.com/)
         *   Slides: https://www.slideshare.net/YugaByte
-        *   Yugabyte is a database focusing on, planet scale, transactional and high availability. It implements many common database apis making it a drop in replacement for those DBs. Can run as a StatefulSet  on k8s. Multiple db api paradigms can be used for one database. 
+        *   Yugabyte is a database focusing on, planet scale, transactional and high availability. It implements many common database apis making it a drop in replacement for those DBs. Can run as a StatefulSet  on k8s. Multiple db api paradigms can be used for one database.
         *   No Kubernetes operator yet, but it's in progress.
     *   Answers from Q&A:
         *   @jberkus - For q1 - YB is optimized for small reads and writes, but can also perform batch reads and writes efficiently - mostly oriented towards modern OLTP/user-facing applications. Example is using spark or presto on top for use-cases like iot, fraud detection, alerting, user-personalization, etc.
@@ -635,7 +635,7 @@
             *   Still using the old Milestone Munger, so expect the same annoying behavior, sorry.
                 *   Particularly: can't take back-branch PRs.
             *   <span style="text-decoration:underline;">No New Features/Cleanups Now, please</span>
-                *   All new features have draft documentation, however, there are lots of small patches **not big enough** to be a feature but we don't know if we have documentation for those. 
+                *   All new features have draft documentation, however, there are lots of small patches **not big enough** to be a feature but we don't know if we have documentation for those.
                 *   **Please make sure your 1.11 small patches have documentation.**
             *   Code freeze ends June 19th.
             *   Docs need to be complete by June 11th
@@ -655,7 +655,7 @@
     *   overall process: [https://github.com/kubernetes/community/tree/master/keps ](https://github.com/kubernetes/community/tree/master/keps)
         *   Kustomize
             *   Kustomize is a way for us to provide a declarative way to update resources in kubernetes. This allows us to version control changes to k8s configs and resources and so forth.
-            *   Sig cli is sponsoring this project. 
+            *   Sig cli is sponsoring this project.
             *   **[PR](https://github.com/kubernetes/community/pull/2132)** for the KEP - commentary important
             *   **final committed KEP - **[https://github.com/kubernetes/community/blob/master/keps/sig-cli/0008-kustomize.md](https://github.com/kubernetes/community/blob/master/keps/sig-cli/0008-kustomize.md)
             *   **<span style="text-decoration:underline;">actual resulting repo: [github.com/kubernetes-sigs/kustomize](https://github.com/kubernetes-sigs/kustomize)</span>**
@@ -663,17 +663,17 @@
             *   We have a GitHub project that helps keep track of Kep project lifecycles. See it here [https://github.com/kubernetes/community/projects](https://github.com/kubernetes/community/projects)
 *   [ 0:00 ] **SIG Updates**
     *   **Multicluster **- Quinton Hoole (confirmed)
-        *   Sig Intro 
-            *   Focused on solving challenges with running multiple clusters and applications therein. 
+        *   Sig Intro
+            *   Focused on solving challenges with running multiple clusters and applications therein.
             *   Working on Cluster Federation, Cluster Registry(cluster registry for k8s for cluster reuse) and Multi cluster ingress.
         *   FederationStatus
-            *   Development has split between federation v1 and v2. 
-            *   Federation v1 is a POC and no further development planned, users showed they needed something different. 
-            *   Moving forward Federation v2 will focus on reusable components, federation specific apis and implementations of higher level apis and federation controllers. 
+            *   Development has split between federation v1 and v2.
+            *   Federation v1 is a POC and no further development planned, users showed they needed something different.
+            *   Moving forward Federation v2 will focus on reusable components, federation specific apis and implementations of higher level apis and federation controllers.
             *   v2 Alpha is planned for June.
             *   Behind the effort is RedHat and Huawei.
         *   Cluster Registry Status
-            *   Grew out of Federation v1. Allows reusable clusters and discovery. Google Cloud is supported for now, but more coming. Implementation is based on CRDS. 
+            *   Grew out of Federation v1. Allows reusable clusters and discovery. Google Cloud is supported for now, but more coming. Implementation is based on CRDS.
             *   Apis/CRDS in beta.
         *   [Link to slides](https://docs.google.com/presentation/d/1mdIgFkSr7dxsoTcDZCaW0nMVLLHwn5sEOyFzBhzUgD4/edit?usp=sharing)
     *   Network - Tim Hockin - (confirmed) (or dc
@@ -691,13 +691,13 @@
         *   We are working on test flakes, we don't have a fix yet but HELP WANTED
     *   **VMware** - Steve Wong (confirmed)
         *   Vmware Cloud Provider
-            *   The target is 1.12. 
+            *   The target is 1.12.
             *   Working through some process level things. This project is retained as a SubProject.
             *   Creating a working group to handle testing
-        *   [Link to deck](https://docs.google.com/presentation/d/1GUrqhEpVkMb4ypCcoXs3WZGkRtYylXCNRiLSAmhc-zs/edit?usp=sharing), 4 slides, estimated 5 min: 
+        *   [Link to deck](https://docs.google.com/presentation/d/1GUrqhEpVkMb4ypCcoXs3WZGkRtYylXCNRiLSAmhc-zs/edit?usp=sharing), 4 slides, estimated 5 min:
 *   [ 0:00 ] **Announcements**
     *   **Happy birthday, Kubernetes!**
-    *   **Shoutouts -** _powered by slack #shoutouts _- if you see someone doing great work give them a shoutout in the slack channel so we mention those here! 
+    *   **Shoutouts -** _powered by slack #shoutouts _- if you see someone doing great work give them a shoutout in the slack channel so we mention those here!
         *    "@jrondeau for working on the weekend to get 1.11 doc builds working again!!" -mistyhacks
         *   "@andrewsykim for all the effort in getting SIG Cloud Provider off the ground!" -fabio
         *   "@neolit123 for really stepping up lately to help with user facing issues for the kubeadm 1.11 release. we really appreciate your contributions to the sig" -stealthybox
@@ -714,7 +714,7 @@
 
 *   **Moderators**:  Jorge Castro [SIG Contributor Experience]
 *   **Note Taker**: First Last [Company/SIG]
-*   [ 0:00 ]**  Demo **-- [Aptomi](https://github.com/Aptomi/aptomi/) - application delivery engine for K8S [Roman Alekseenkov] 
+*   [ 0:00 ]**  Demo **-- [Aptomi](https://github.com/Aptomi/aptomi/) - application delivery engine for K8S [Roman Alekseenkov]
     *   framework on top of helm charts, for composition into services
     *   showed charts (hdfs, kafka, spark, zookeper), that together show twitter status
     *   Link to slides: [https://docs.google.com/presentation/d/1HQQ_hScOyfIt8SAYPRu6fUuLJCv7b7e6bUyosd38ir8/edit?usp=sharing](https://docs.google.com/presentation/d/1HQQ_hScOyfIt8SAYPRu6fUuLJCv7b7e6bUyosd38ir8/edit?usp=sharing)
@@ -723,14 +723,14 @@
     *   [Description & Blog Post](https://superuser.openstack.org/articles/aptomi-application-delivery-engine-k8s/)
 *   [ 0:13 ]** Release Updates**
     *   1.11  [Josh Berkus - Release Lead]
-        *   **_Next Deadline: Draft doc PRs due June 4th._** 
+        *   **_Next Deadline: Draft doc PRs due June 4th._**
         *   Currently in Code Slush.  Requiring milestones, sorry for lack of warning on that.
             *   Were not able to move to Prow milestone maintainer or Tide for this release.
         *   Code Freeze Starts Tuesday, June 5th
         *   If your feature won't be ready, now is the time to update your issue in the Features repo.
             *   [Feature tracking spreadsheet](https://docs.google.com/spreadsheets/d/16N9KSlxWwxUA2gV6jvuW9N8tPRHzNhu1-RYY4Y0RZLs/edit#gid=2053885135) has been reformatted with lots of new information.
-        *   CI Signal - 
-            *   Almost green, last few fixes merged. 
+        *   CI Signal -
+            *   Almost green, last few fixes merged.
             *   1 open tracking issue - [Scale Density test for 30 pods](https://github.com/kubernetes/kubernetes/issues/63030)
             *   Conformance tests results (GCE and OpenStack) now in Release blocking dashboard
             *   @misty on slack for release docs issues
@@ -742,12 +742,12 @@
     *   tracking how decisions are made: identify the problem + find a sig for motivation agreement + documenting it for everyone
     *   [Slides](https://docs.google.com/a/google.com/presentation/d/e/2PACX-1vQ0KX1TuXC9VeXPRZhxZxNILoFzL7oEpLO1szMGCYCThxTstpK7VH7s_EJ4axseJVkJ6kkYDvhFJmsC/pub?start=false&loop=false&delayms=3000)
 *   [ 0:00 ] **SIG Updates**
-    *   SIG OpenStack  [David Lyle and Chris Hoge] 
+    *   SIG OpenStack  [David Lyle and Chris Hoge]
         *   [https://docs.google.com/presentation/d/1BGdbMQnSzrYOTLxW8VZswSwMwQ2HPlegVJszITYFv6c/edit?usp=sharing](https://docs.google.com/presentation/d/1BGdbMQnSzrYOTLxW8VZswSwMwQ2HPlegVJszITYFv6c/edit?usp=sharing)
         *   expanded testing of provided code
         *   driver testing added
         *   whitepaper
-    *   SIG Node [Dawn Chen] 
+    *   SIG Node [Dawn Chen]
         *   Made a steady progress on all 5 areas in Q2: 1) node management including Windows, 2) application / workload management, 3) security, 4) resource management and 5) monitoring, logging and debuggability.
         *   On node management
             *   Promoted dynamic kubelet config to beta
@@ -755,7 +755,7 @@
             *   Proposed a probe-based mechanism for kubelet plugins: device, csi, etc.
             *   Proposed a design to address the scalability issue caused by large node object and approved by the community. Had a short-term workaround in v.11, and plan to work on the long term solution in v1.12.
         *   Together with sig-windows, we made many progress on Windows support which including stats, node e2e for Windows Container Image. More works on SecurityContext, storage and network in next release.
-        *   Both CRI-O and containerd are GA in this release. 
+        *   Both CRI-O and containerd are GA in this release.
             *   More enhancements on CRI for container logs
             *   Many enhancements to crictl, the tool for all CRI-compliant runtimes. Expecting to be GA in v1.12
             *   Announced CRI testing policy to the community, and introduced node exclusive tags to e2e.
@@ -769,11 +769,11 @@
         *   On the logistics side
             *   Sig-node holds weekly meeting on Tuesday, 10am (Pacific Time)
             *   Please join kubernetes-sig-node googlegroup to have access to all design docs, roadmap and emails.
-            *   Derek and I are working on sig-node charter, which is still under review and discussion. 
+            *   Derek and I are working on sig-node charter, which is still under review and discussion.
 *   [ 0:00 ] **Announcements**
     *   [Deprecation Policy Update](https://groups.google.com/forum/#!topic/kubernetes-dev/pNcskHXAD-k) (Important!)
-    *   SIG Leads - check the top of this document for a link to the SIG Update schedule. 
-    *   Shoutouts - Someone going above and beyond? Mention them in #shoutouts on slack to thank them. 
+    *   SIG Leads - check the top of this document for a link to the SIG Update schedule.
+    *   Shoutouts - Someone going above and beyond? Mention them in #shoutouts on slack to thank them.
         *   Aish Sundar - Shoutout to @dims and OpenStack team for quickly getting their 1.11 Conformance results piped to CI runs and contributing results to Conformance dashboard!
         *   Aish Sundar - Shoutout to Benjamin Elder for adding Conformance test results to all Sig-release dashboards - master-blocking and all release branches.
         *   Josh Berkus and Stephen Augustus -  To Misty Stanley-Jones for aggressively and doggedly pursuing 1.11 documentation deadlines, which both gives folks earlier warning about docs needs and lets us bounce incomplete features earlier
@@ -783,7 +783,7 @@
     *   Meet Our Contributors (mentors on demand)
         *   June 6th at 230p and 8pm **UTC** [https://git.k8s.io/community/mentoring/meet-our-contributors.md](https://git.k8s.io/community/mentoring/meet-our-contributors.md)
         *   Want to know the paths of some of our approvers? Confused about what a SIG is? Anything that you'd ask a mentor - ask in #meet-our-contributors on slack or DM @paris with an anonymous question
-    *   [Stackoverflow Top Users](https://stackoverflow.com/tags/kubernetes/topusers) 
+    *   [Stackoverflow Top Users](https://stackoverflow.com/tags/kubernetes/topusers)
         *   [Const](https://stackoverflow.com/users/9663586/const)
         *   [VAS](https://stackoverflow.com/users/9521610/vas)
         *   [Alexandr Lurye](https://stackoverflow.com/users/9611623/alexandr-lurye)
@@ -798,9 +798,9 @@
 
 *   **Moderators**:  Josh Berkus  [SIG-Release]
 *   **Note Taker**: Tim Pepper [VMware/SIGs Release & ContribX]
-*   [ 0:00 ]**  Demo **--  Workflows as CRD [ Jesse Suen (Jesse_Suen@intuit.com)] 
+*   [ 0:00 ]**  Demo **--  Workflows as CRD [ Jesse Suen (Jesse_Suen@intuit.com)]
     *   Link to slides: [https://drive.google.com/file/d/1Z5TMIr6r4hC7N5KeVqajC3c3NcYqK4_z/view?usp=sharing](https://drive.google.com/file/d/1Z5TMIr6r4hC7N5KeVqajC3c3NcYqK4_z/view?usp=sharing)
-    *   Link to repositories: [https://github.com/argoproj/argo](https://github.com/argoproj/argo) 
+    *   Link to repositories: [https://github.com/argoproj/argo](https://github.com/argoproj/argo)
     *   Argo: a fancy job controller for workflows, DAGs implemented as CRD.  Originally intended for CI/CD pipelines, but is seeing usage for other workflows like machine learning.
     *   Used with kubeflow
     *   Component architecture interfacing wsith k8s api server and leveraging sidecars in pods for workload artifact management
@@ -830,12 +830,12 @@
             *   Generic Broker & Instance Actions
             *   GUIDs as Kube "name" is problematic
         *   SIG has recently been actively mentoring and onboarding newcomers
-    *   SIG Auth [Tim Allclair](confirmed) 
+    *   SIG Auth [Tim Allclair](confirmed)
         *   Pod TokenRequest API and ServiceAccountTokenProjection improving for 1.11
         *   Client-go gaining support for x509 credentials and externalizing currently in-tree credential providers
         *   Scheduling policy design thinking happening ahead of 1.12
         *   Audit Logging: improved annotation metadata coming around auth and admission for logs
-        *   Node Isolation:  nodes no longer able to update their own taints (eg: exploit to attract sensitive pod/data to a compromised node) 
+        *   Node Isolation:  nodes no longer able to update their own taints (eg: exploit to attract sensitive pod/data to a compromised node)
         *   Conformance: [KEP PR open on security related conformance](https://github.com/kubernetes/community/pull/2081) testing to give better assurance that best practices are in use or validate a hardened profile is active.  Likely not 1.11 rather 1.12.
         *   Bug bounty is WIP
     *   SIG Storage [Brad Childs](confirmed) [Slides](https://docs.google.com/presentation/d/1HkCHC5xkxt2TXOLS1riXUeIRRejtX-82tOf5x42F4w8/edit?usp=sharing)
@@ -851,13 +851,13 @@
         *   API Throttling: api quota exhaustion at cloud provider and api server are frequently causing storage issues.  Looking at ways to streamline.
         *   External projects:  SIG has something like 20 projects and is breaking them apart, looking for owners and out of tree locations for them to better live.  Projects should move to CSI, a kubernetes-sigs/* repo, a utility library, or EOL
 *   [ 0:00 ] **Announcements**
-    *   <span style="text-decoration:underline;">Shoutouts this week</span> (Check in #shoutouts on slack) 
+    *   <span style="text-decoration:underline;">Shoutouts this week</span> (Check in #shoutouts on slack)
         *   Big shoutout to @carolynvs for being welcoming and encouraging to newcomers, to @paris for all the community energy and dedication, and to all the panelists from the recent Kubecon diversity lunch for sharing their experiences.
         *   Big shoutout to @mike.splain for running the Boston Kubernetes meetup (9 so far!)
         *   everyone at svcat is awesome and patient especially @carolynvs, @Jeremy Rickard & @jpeeler who all took time to help me when I hit some bumps on my first PR.
     *   <span style="text-decoration:underline;">Help Wanted</span>
         *   SIG UI is looking for new contributors. Check out their issue log to jump in; also listen to their SIG UI call today where they explained more and answered questions. #sig-ui in slack for on-ramp help. [Notes from the call ](https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing)
-        *   Looking for more mentors as we kick off our contributor mentoring programs. [Fill out this form ](https://goo.gl/forms/uKbzNsv51JUVkC0g1)(works for looking for mentorship, too). Pardon the dust as we do a mentor recruiting drive. 
+        *   Looking for more mentors as we kick off our contributor mentoring programs. [Fill out this form ](https://goo.gl/forms/uKbzNsv51JUVkC0g1)(works for looking for mentorship, too). Pardon the dust as we do a mentor recruiting drive.
 
 
 ## May 17, 2018 - ([recording](https://youtu.be/DpFTcTnBxbM))
@@ -888,7 +888,7 @@
         *   A: used internally, but still in development
     *   Q: baremetal support?
         *   If there's an infra API that can be used to control baremetal, then that can be used
-    *   Detailed Blog describing Gardener's architecture: [https://kubernetes.io/blog/2018/05/17/gardener/](https://kubernetes.io/blog/2018/05/17/gardener/) 
+    *   Detailed Blog describing Gardener's architecture: [https://kubernetes.io/blog/2018/05/17/gardener/](https://kubernetes.io/blog/2018/05/17/gardener/)
 *   **Release Updates:**
     *   **1.11 **[Josh Berkus, RT Lead / Aish Sundar CI Signal Lead] (Week 7)
         *   **_Next Deadline: Docs, Open Placeholder PRs Required, May 25th_**
@@ -958,14 +958,14 @@
         *   shoutout to @liggitt, master wrangler of e2e test bugs. Jordan has fixed many ["fun" bugs](https://github.com/kubernetes/kubernetes/issues/63731#issuecomment-388529120). Thanks for helping keep things green! :smile: - bentheelder
         *   As a new contributor, I can 100% endorse @carolynvs for being REALLY GOOD at bringing in new contributors, and dedicating a lot of time and effort to make sure they are successful. -teague_cole
     *   **Help Wanted!**
-        *   SIG UI looking for new contributors to go up the ladder to maintainers. Start with an open issue and reach out to the mailing list and slack channel. 
+        *   SIG UI looking for new contributors to go up the ladder to maintainers. Start with an open issue and reach out to the mailing list and slack channel.
         *   SIG Scalability is looking for contributors!
-        *   We need more contributor mentors! [Fill this out.](https://goo.gl/forms/17Fzwdm5V2TVWiwy2) 
-            *   The next Meet Our Contributors (mentors on demand!) will be on June 6th. Check out kubernetes.io/community for time slots and to copy to your calendar. 
+        *   We need more contributor mentors! [Fill this out.](https://goo.gl/forms/17Fzwdm5V2TVWiwy2)
+            *   The next Meet Our Contributors (mentors on demand!) will be on June 6th. Check out kubernetes.io/community for time slots and to copy to your calendar.
     *   **Kubecon Follow Ups**
-        *   Videos and slides: [https://github.com/cloudyuga/kubecon18-eu](https://github.com/cloudyuga/kubecon18-eu) Thanks CloudYuga for this! 
+        *   Videos and slides: [https://github.com/cloudyuga/kubecon18-eu](https://github.com/cloudyuga/kubecon18-eu) Thanks CloudYuga for this!
     *   **Other**
-        *   Don't forget to check out [discuss.kubernetes.io](https://discuss.kubernetes.io/)! 
+        *   Don't forget to check out [discuss.kubernetes.io](https://discuss.kubernetes.io/)!
         *   DockerCon Kubernetes Contributor AMA during Community Day - June 13th. 3 hour window; specific time TBA
 
 
@@ -975,7 +975,7 @@
 
 *   **Moderators**: Tim Pepper [SIG Contributor Experience, SIG Release]
 *   **Note Taker**: Jorge Castro / Christian Roy
-*   **Demo:** Ambassador API Gateway built on Envoy/K8S ([https://www.getambassador.io](https://www.getambassador.io))  ([richard@datawire.io](mailto:richard@datawire.io)) 
+*   **Demo:** Ambassador API Gateway built on Envoy/K8S ([https://www.getambassador.io](https://www.getambassador.io))  ([richard@datawire.io](mailto:richard@datawire.io))
     *   [https://github.com/datawire/ambassador](https://github.com/datawire/ambassador)
     *   Link to [slides](https://www.slideshare.net/datawire/ambassador-kubernetesnative-api-gateway)
     *   Kubernetes only, simple architecture
@@ -983,7 +983,7 @@
         *   Declarative configuration via kubernetes annotations
         *   Built on Envoy - designed for machine configuration
         *   Operates as a sidecar to envoy, async notified of config changes and configures envoy accordingly
-        *   Concept of shadowing traffic - takes all the incoming requests and sends it to another service but filters the responses, good for debugging in production. 
+        *   Concept of shadowing traffic - takes all the incoming requests and sends it to another service but filters the responses, good for debugging in production.
 *   **Release Updates:**
     *   **1.11 **[Josh Berkus, RT Lead / Aish Sundar CI Signal Lead] (Week 6)
         *   _Next Deadline: Beta0, May 15th. Tests must be passing by then!_
@@ -991,7 +991,7 @@
         *   _Some top level failing tests generate failures across other groups_
         *   _SIGs are responding responsibly on the failures_
         *   [43 Tracking Features](http://bit.ly/k8s111-features)
-        *   CI Signal Test report - [https://docs.google.com/spreadsheets/d/1j2K8cxraSp8jZR2S-kJUT6GNjtXYU9hocNRiVUGZWvc/edit#gid=127492362](https://docs.google.com/spreadsheets/d/1j2K8cxraSp8jZR2S-kJUT6GNjtXYU9hocNRiVUGZWvc/edit#gid=127492362) 
+        *   CI Signal Test report - [https://docs.google.com/spreadsheets/d/1j2K8cxraSp8jZR2S-kJUT6GNjtXYU9hocNRiVUGZWvc/edit#gid=127492362](https://docs.google.com/spreadsheets/d/1j2K8cxraSp8jZR2S-kJUT6GNjtXYU9hocNRiVUGZWvc/edit#gid=127492362)
     *   **1.10** [Maciek Pytel, PRM]
         *   1.10.3 release planned Monday May 21st
 *   **SIG Updates:**
@@ -1000,15 +1000,15 @@
             *   Improving conformance tests
             *   Provide technical expertise/advice/overview across SIGs
             *   Formalizing proposal processes into KEPs, more structure, make it more obvious
-            *   API review process. Used to be informal, we want to formalize that. 
+            *   API review process. Used to be informal, we want to formalize that.
         *   Weekly meeting with alternating full meeting (decisions) and office hours (discussions)
-            *   Office hours are available for people who want to ask questions on how to best implement incoming ideas (API review, etc.) 
+            *   Office hours are available for people who want to ask questions on how to best implement incoming ideas (API review, etc.)
         *   [Meeting and note information](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md)
     *   **Contributor Experience [Paris Pittman]**
-        *   [Contributor site](https://github.com/kubernetes/community/blob/master/keps/sig-contributor-experience/0005-contributor-site.md) KEP underway 
-        *   Discourse is up and ready to test! 
-            *   [Discuss.kubernetes.io](http://discuss.kubernetes.io/) - please post content, announcements, meetup reminders, or just [introduce yourself](https://discuss.kubernetes.io/t/introduce-yourself-here/56)! 
-        *   [Looking for mentors!](https://goo.gl/forms/3ISrNbTkYqExWzKw1) 
+        *   [Contributor site](https://github.com/kubernetes/community/blob/master/keps/sig-contributor-experience/0005-contributor-site.md) KEP underway
+        *   Discourse is up and ready to test!
+            *   [Discuss.kubernetes.io](http://discuss.kubernetes.io/) - please post content, announcements, meetup reminders, or just [introduce yourself](https://discuss.kubernetes.io/t/introduce-yourself-here/56)!
+        *   [Looking for mentors!](https://goo.gl/forms/3ISrNbTkYqExWzKw1)
             *   Register for [Meet Our Contributors monthly YT series](https://youtu.be/EVsXi3Zhlo0) (first Weds of the month; link on kubernetes.io/community) with this form and all other mentoring activities
         *   Contributor Experience survey to go out in June
             *   Communication platform
@@ -1021,30 +1021,30 @@
         *   Ihor Dvoretskyi thanks @justaugustus, who made a GREAT job as a Kubernetes 1.11 release features shadow
         *   Josh Berkus to Aish Sundar for doing a truly phenomenal job as CI signal lead on the 1.11 release team
         *   Tim Pepper to Aaron Crickenberger for being such a great leader on the project during recent months
-        *   Chuck Ha shouts out to the doc team - "Working on the website is such a good experience now that it's on hugo. Page rebuild time went from ~20 seconds to 60ms" :heart emoji: 
-        *   Jason de Tiber would like to thank Leigh Capili (@stealthybox) for the hard work and long hours helping to fix kubeadm upgrade issues. (2nd shoutout in a row for Leigh! -ed) 
+        *   Chuck Ha shouts out to the doc team - "Working on the website is such a good experience now that it's on hugo. Page rebuild time went from ~20 seconds to 60ms" :heart emoji:
+        *   Jason de Tiber would like to thank Leigh Capili (@stealthybox) for the hard work and long hours helping to fix kubeadm upgrade issues. (2nd shoutout in a row for Leigh! -ed)
         *   Jorge Castro and Paris Pittman would like to thank Vanessa Heric and the rest of the CNCF/Linux Foundation personnel that helped us pull off another great Contributor Summit and Kubecon
         *   [Top Stackoverflow Users](https://stackoverflow.com/tags/kubernetes/topusers) in the Kubernetes Tag for the month
             *   Anton Kostenko, Nicola Ben, Maruf Tuhin, Jonah Benton, Const
     *   Message from the docs team re: hugo transition:
         *   We've successfully migrated kubernetes.io from a Jekyll site framework to Hugo. Any open pull requests for k/website need to be revised to incorporate the repo's new content structure. (Changes in `docs/` must now change `content/en/docs/`.)
-        *   More about the framework change: [https://kubernetes.io/blog/2018/05/05/hugo-migration/](https://kubernetes.io/blog/2018/05/05/hugo-migration/) 
+        *   More about the framework change: [https://kubernetes.io/blog/2018/05/05/hugo-migration/](https://kubernetes.io/blog/2018/05/05/hugo-migration/)
     *   KEP Section for the Community Meeting? [Jorge Castro]
         *   Lots of KEPs coming in via PR, should we have current KEPs in flight as a standing agenda item in the community meeting?  
         *   When starting a KEP, send an email FYI to the appropriate SIGs and Arch as github notifications are noisy and missed.
-        *   Would be good to help us bootstrap the KEP processes for people if we got some visibility on them, but still need a site of KEPs 
+        *   Would be good to help us bootstrap the KEP processes for people if we got some visibility on them, but still need a site of KEPs
     *   Kubernetes Application Survey results [Matt Farina] WG
         *   [Raw results](https://docs.google.com/spreadsheets/d/12ilRCly2eHKPuicv1P_BD6z__PXAqpiaR-tDYe2eudE/edit)
         *   [Deck on results](https://docs.google.com/presentation/d/1utT0K-u1nl2apXRo29GaBvRV1x7mFLeQSgpw8mI_nGM/edit?usp=sharing) (Slides)
         *   [Blog post about it](https://kubernetes.io/blog/2018/04/24/kubernetes-application-survey-results-2018/)
-        *   Developers, check it out, people took a lot of time to give us lots of good information, take the time to get information from it. 
+        *   Developers, check it out, people took a lot of time to give us lots of good information, take the time to get information from it.
 
         **Help Wanted?**
 
         *   [SIG UI](https://github.com/kubernetes/community/blob/master/sig-ui/README.md) is looking for additional contributors (with javascript and/or go knowledge) and maintainers
-            *   [Piotr](https://github.com/bryk) and and [Konrad](https://github.com/konryd) from google have offered to bring folks up to speed. 
-            *   Take a look at open issues to get started or reach out to their slack channel, mailing list, or next meeting. 
-            *   SIG UI mailing list: [https://groups.google.com/forum/#!forum/kubernetes-sig-ui](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) 
+            *   [Piotr](https://github.com/bryk) and and [Konrad](https://github.com/konryd) from google have offered to bring folks up to speed.
+            *   Take a look at open issues to get started or reach out to their slack channel, mailing list, or next meeting.
+            *   SIG UI mailing list: [https://groups.google.com/forum/#!forum/kubernetes-sig-ui](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)
 
 
 ## April 26, 2018 - (recording)
@@ -1052,7 +1052,7 @@
 
 
 *   **Moderators**: Jorge Castro [SIG Contributor Experience]
-*   **Note Taker**: Christian Roy 
+*   **Note Taker**: Christian Roy
 *   **Demo:** [Gitkustabe](https://github.com/hasura/gitkube): Build and deploy docker images to Kubernetes using git push (<span style="text-decoration:underline;">shahidh@hasura.io</span>, [tiru@hasura.io](mailto:tiru@hasura.io))
     *   [https://github.com/hasura/gitkube](https://github.com/hasura/gitkube)
     *   Git push to a url in your k8s cluster
@@ -1066,7 +1066,7 @@
             *   Master-blocking: 5 out of 26 jobs failing
             *   [Issues filed](https://docs.google.com/spreadsheets/d/1j2K8cxraSp8jZR2S-kJUT6GNjtXYU9hocNRiVUGZWvc/edit#gid=2128913655)
                 *   Some SIGs not responding to issues
-                *   SIG responsible to debug why test failing, please look at your issues and start to prioritize them! 
+                *   SIG responsible to debug why test failing, please look at your issues and start to prioritize them!
         *   Next Deadline: [Beta Release May 15th](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.11/release-1.11.md)
             *   Will currently be blocked by failing tests.
     *   1.10 [Maciek Pytel, PRM]
@@ -1078,24 +1078,24 @@
 *   **SIG Updates:**
     *   **Thanks to test infra  folks for labels**
     *   **Cluster Lifecycle [Tim St. Clair]**
-        *   Kubeadm 
+        *   Kubeadm
             *   Steadily burning down against 1.11
-            *   Found+Fixed some thorny upgrade issues in 1.10 
+            *   Found+Fixed some thorny upgrade issues in 1.10
                 *   Tests are still broken
             *   Working on proposal
-                *   HA 
-                    *   Master join 
+                *   HA
+                    *   Master join
                 *   UX
-                    *   Phases rework 
-                *   Upgrade 
-                    *   Config changes 
-                    *   Self hosting 
-        *   ClusterAPI [kris nova] 
+                    *   Phases rework
+                *   Upgrade
+                    *   Config changes
+                    *   Self hosting
+        *   ClusterAPI [kris nova]
             *   There is a new repo: https://github.com/kubernetes-sigs/cluster-api
             *   Aiming to keep cloud provider logic OUT of the repo (common logic only)
-            *   Aiming for a (api only) alpha release 1.11 
-                *   Configurable machine setup proposal in progress 
-                *   [https://docs.google.com/document/d/1OfykBDOXP_t6QEtiYBA-Ax7nSpqohFofyX-wOxrQrnw/edit?ts=5ae0b27a#heading=h.xgjl2srtytjt](https://docs.google.com/document/d/1OfykBDOXP_t6QEtiYBA-Ax7nSpqohFofyX-wOxrQrnw/edit?ts=5ae0b27a#heading=h.xgjl2srtytjt) 
+            *   Aiming for a (api only) alpha release 1.11
+                *   Configurable machine setup proposal in progress
+                *   [https://docs.google.com/document/d/1OfykBDOXP_t6QEtiYBA-Ax7nSpqohFofyX-wOxrQrnw/edit?ts=5ae0b27a#heading=h.xgjl2srtytjt](https://docs.google.com/document/d/1OfykBDOXP_t6QEtiYBA-Ax7nSpqohFofyX-wOxrQrnw/edit?ts=5ae0b27a#heading=h.xgjl2srtytjt)
     *   **Autoscaling [Solly Ross]**
         *   HPA v2 improvements ([https://github.com/kubernetes/community/pull/2055](https://github.com/kubernetes/community/pull/2055))
             *   Label selectors for metrics
@@ -1121,8 +1121,8 @@
         *   SIGs, remember to [put yourself down on the SIG Update sheet](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=1543199895) to give your 5 minute update that afternoon.
     *   **Shoutouts!**
         *   See someone doing something great in the community? Mention them in #shoutouts on slack and we'll mention them during the community meeting:
-        *   Timothy St. Clair would like to thank Peter Zhao (@xiangpengzhao) for "steadfast PR-review and contributions to SIG Cluster Lifecycle" 
-        *   Chuck Ha would like to thank Leigh Capilo (@stealthybox) for "being welcoming to new folks in SIG Cluster Lifecycle. You are welcoming and helpful and it keeps our community healthy. Thank You!" 
+        *   Timothy St. Clair would like to thank Peter Zhao (@xiangpengzhao) for "steadfast PR-review and contributions to SIG Cluster Lifecycle"
+        *   Chuck Ha would like to thank Leigh Capilo (@stealthybox) for "being welcoming to new folks in SIG Cluster Lifecycle. You are welcoming and helpful and it keeps our community healthy. Thank You!"
     *   [Normalization of Kind Labels](https://github.com/kubernetes/community/issues/2032) [Josh Berkus]
         *   Updating list of kind labels, how they are used
     *   Cloud Foundry wants to welcome folks to their Summit [on May 1st](http://sched.co/Dun0) (day before KubeCon/CloudNativeCon)
@@ -1148,13 +1148,13 @@
         *   Pinned to 1.10, have integration testing but not version skew
         *   Want to follow the Kubernetes support process of ~2 releases
     *   Q: Why would this not be in CNCF/part of k8s?
-        *   Trying to keep it unopinionated 
+        *   Trying to keep it unopinionated
         *   If a community project makes sense, we will examine that
-        *   MFarina: Ecosystem projects are the preference to avoid contention 
+        *   MFarina: Ecosystem projects are the preference to avoid contention
     *   Q: So what are the non docker image formats this tool supports?
-        *   Only supports bazel 
+        *   Only supports bazel
         *   Working on java support
-        *   This is the other build tool we're working on integrating next for skaffold. [https://github.com/google/jib](https://github.com/google/jib) 
+        *   This is the other build tool we're working on integrating next for skaffold. [https://github.com/google/jib](https://github.com/google/jib)
         *   Minimal arbitrary support, but requires a file to query and parse to determine SC dependencies, currently in-tree but might move to a plugin model
 *   [0:14]** Release Updates**
     *   1.11 [Josh Berkus ~ Release Lead] (confirmed)
@@ -1167,7 +1167,7 @@
         *   Release notes doc will be up later today, watch kubernetes-dev
     *   Patch Release Updates
 *   [0:00]** Graph o' the Week**
-    *   YouTube Channel Stats! 
+    *   YouTube Channel Stats!
         *   ~7000 subscribers and growing
         *   Old videos and high engagement videos get the most attention
         *   SIG recordings are typically used as a sleep aid
@@ -1179,7 +1179,7 @@
     *   **CLI **(Maciej Szulik - confirmed)
         *   Printing of objects being moved to server - currently in beta, in 1.10 users were able to opt in to it
             *   You can opt out via flag, but it is on by default in 1.11
-            *   No user-facing impact, but if there are, contact sig-cli 
+            *   No user-facing impact, but if there are, contact sig-cli
         *   Different patterns across the repo, and trying to unify by providing identical flags and output
             *   unified flag handling will unify the code base, ux, and simplify the code base
     *   **AWS **(Justin SB - Confirmed)
@@ -1200,8 +1200,8 @@
         *   @maciekpytel for providing some nuance and clarity around node autoscaler
         *   @cblecker for fielding so many issues and PRs.
     *   <span style="text-decoration:underline;">Help Wanted?</span>
-        *   SIG UI is looking for more active contributors to revitalize the dashboard. Please join their [communication channels](https://github.com/kubernetes/community/blob/master/sig-ui/README.md) and attend the next meeting to announce your interest. 
-    *   <span style="text-decoration:underline;">KubeCon EU Update</span>	
+        *   SIG UI is looking for more active contributors to revitalize the dashboard. Please join their [communication channels](https://github.com/kubernetes/community/blob/master/sig-ui/README.md) and attend the next meeting to announce your interest.
+    *   <span style="text-decoration:underline;">KubeCon EU Update</span>
         *   Current contributor track session voting will be emailed to attendees today!C
         *   RSVP for Contributor Summit [[here]](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit)
         *   SIG Leads, please do your updates for the 5 minute updates
@@ -1253,7 +1253,7 @@
             *   No info
 *   [ 10:24 ] **Graph o' the Week **[Aaron Crickenberger](confirmed)
     *   devstats.k8s.io - PRs labels repository groups
-    *   [https://k8s.devstats.cncf.io/d/47/prs-labels-repository-groups?orgId=1](https://k8s.devstats.cncf.io/d/47/prs-labels-repository-groups?orgId=1) 
+    *   [https://k8s.devstats.cncf.io/d/47/prs-labels-repository-groups?orgId=1](https://k8s.devstats.cncf.io/d/47/prs-labels-repository-groups?orgId=1)
         *   needs-rebase - trend over time shows abandoned pull requests
         *   [https://github.com/kubernetes/test-infra/tree/master/label_sync](https://github.com/kubernetes/test-infra/tree/master/label_sync)
         *   need-ok-to-test - shows pull requests need help to get through process
@@ -1261,7 +1261,7 @@
                 *   [https://github.com/kubernetes/community/blob/master/community-membership.md](https://github.com/kubernetes/community/blob/master/community-membership.md)
                 *   Requirements have changed - Demonstrate intent and dedication to the project
     *   Number of PR's that have a given label applied over time
-    *   [http://not.oktotest.com](http://not.oktotest.com) 
+    *   [http://not.oktotest.com](http://not.oktotest.com)
     *   need-rebase
 *   [ 10:32 ] **SIG Updates**
     *   SIG-VMware [Steve Wong](confirmed)
@@ -1269,7 +1269,7 @@
         *   31 google group members, 11 people on first meeting, 50 slack members
         *   Support kubernetes users who are deploying at scale on VMware platforms, support development relating to cloud providers
             *   Working on aligning cloud provider to cloud provider WG strategy
-    *   SIG-Windows  [Michael Michael](confirmed) 
+    *   SIG-Windows  [Michael Michael](confirmed)
         *   Busy since 1.9 on getting people using and deploying windows containers
         *   Been fixing bugs
         *   Added support
@@ -1299,8 +1299,8 @@
         *   Explain to SIGs what sub-projects are and how they can be used
         *   Split SIGs among steering committee members
         *   6 charters in flight working on charter, then going to other SIGs
-    *   [r/kubernetes: Ask Me Anything](https://www.reddit.com/r/kubernetes/comments/8b7f0x/we_are_kubernetes_developers_ask_us_anything/) - thanks everyone for participating, lots of user feedback, please have a look. 
-        *   We'll likely do more of these in the future. 
+    *   [r/kubernetes: Ask Me Anything](https://www.reddit.com/r/kubernetes/comments/8b7f0x/we_are_kubernetes_developers_ask_us_anything/) - thanks everyone for participating, lots of user feedback, please have a look.
+        *   We'll likely do more of these in the future.
     *   [Kubernetes Contributor Summit @ Kubecon](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit) - May 1 (jb)
         *   You need to register for this even if you already registered for Kubecon! Link to the form in the link above.
         *   New contributor/on-going contrib in morning and general tracks in afternoon
@@ -1328,7 +1328,7 @@
             *   Free only has maven support, is open source, commercial supports everything (including Kubernetes-related technologies, like Helm)
         *   Is HTTP basic auth the default
             *   Yes, but other auth schemes are supported
-            *   Use of the API key in the jfrog cli documented [https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory](https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory) 
+            *   Use of the API key in the jfrog cli documented [https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory](https://www.jfrog.com/confluence/display/CLI/CLI+for+JFrog+Artifactory)
 *   **Release Team**
     *   1.11 [Josh Berkus, Release Lead]
         *   We are in Week 1
@@ -1337,7 +1337,7 @@
         *   [Schedule posted](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.11/release-1.11.md) (last chance to raise issues is _right now_)
             *   Feature Freeze: April 24
             *   Code slush: May 22
-            *   Code Freeze: May 28 
+            *   Code Freeze: May 28
             *   Doc Deadline: June 11
             *   Release: June 26 (yes, we know it's right before July 4th, there's not a good way around it)
         *   Feature Gathering has started
@@ -1375,7 +1375,7 @@
             *   We're still exploring, seeing what people think, are these helpful to people?
             *   Join #devstats if you're interested in collaborating, discussing
             *   Need to find charts that are actually useful vs just shiny
-*   **SIG Updates** 
+*   **SIG Updates**
     *   SIG Cluster Ops - Rob H.
         *   Updated Mission - more focused on building operator community
         *   We have been having trouble with quorum and need some help
@@ -1385,7 +1385,7 @@
             *   Consolidate with OnPrem?
                 *   Sure!
                 *   It's good to consolidate SIGs if it's relevant
-    *   SIG Docs - Zach 
+    *   SIG Docs - Zach
         *   2 new maintainers, 5 new contributors
         *   Coming soon: improved contribution guidelines: https://kubernetes.io/editdocs/
         *   Migrating the Kubernetes website from Jekyll to Hugo: we've met with the contractor, gotten an initial estimate, and are proceeding with a target completion date of April 30
@@ -1400,11 +1400,11 @@
     *   SIG Service Catalog - bumped to 5/24
 *   **Announcements**
     *   [Kubernetes Contributor Summit @ Kubecon](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit) - May 1 [Jorge Castro]
-        *   You need to register for this even if you already registered for Kubecon! Link to the form in the link above. 
+        *   You need to register for this even if you already registered for Kubecon! Link to the form in the link above.
         *   Current contributor track voting on topics will be emailed to attendees Monday
     *   Reddit r/kubernetes AMA [Jorge Castro]
         *   This next Tuesday: [https://www.reddit.com/r/kubernetes/comments/89gdv0/kubernetes_ama_will_be_on_10_april_tuesday/](https://www.reddit.com/r/kubernetes/comments/89gdv0/kubernetes_ama_will_be_on_10_april_tuesday/)
-        *   If you're a reddit user please contact [jorge@heptio.com](mailto:jorge@heptio.com) so we can coordinate. 
+        *   If you're a reddit user please contact [jorge@heptio.com](mailto:jorge@heptio.com) so we can coordinate.
     *   Roadmaps call - SIG-PM is asking for the roadmap input [https://groups.google.com/forum/#!topic/kubernetes-pm/-jW3bHUbfE8](https://groups.google.com/forum/#!topic/kubernetes-pm/-jW3bHUbfE8) [Ihor/Jaice]
         *   We're trying to assess if there are any long-term, cross-cutting views of the project, or if our planning horizon is only the length of features in process/one release
         *   We want to provide more transparency to the end-user community about what planning exists
@@ -1418,7 +1418,7 @@
         *   Results will be made publicly available
         *   Take the survey, share it with others
         *   Due April 16th
-    *   [http://k8s-code.appspot.com/](http://k8s-code.appspot.com/) (Dims) 
+    *   [http://k8s-code.appspot.com/](http://k8s-code.appspot.com/) (Dims)
         *   Search engine for all github code repositories under kubernetes main org
 *   **Shoutouts**
     *   Thanks to our contributors that joined #meet-our-contributors yesterday for questions! @gsaenger @spiffxp @chrislovecnm @spzala @carolynvs
@@ -1426,7 +1426,7 @@
         *   Considering twice a month - need help with running more! Contact paris@ on slack or parispittman@google.com
 
 
-## March 29, 2018 
+## March 29, 2018
 
 
 
@@ -1443,7 +1443,7 @@
         *   Longer Demo Video [https://www.youtube.com/watch?v=OMm6Oz1NF6I](https://www.youtube.com/watch?v=OMm6Oz1NF6I)
         *   Digital Rebar:[https://github.com/digitalrebar/provision](https://github.com/digitalrebar/provision),
         *   Project Site:  [http://rebar.digital](http://rebar.digital)
-        *   Terraform Provider (referenced at end) [https://github.com/rackn/terraform-provider-drp](https://github.com/rackn/terraform-provider-drp) 
+        *   Terraform Provider (referenced at end) [https://github.com/rackn/terraform-provider-drp](https://github.com/rackn/terraform-provider-drp)
     *   Questions:
         *   Q: Could we drive digital rebar from Kubicorn?
             *   A: Yes, probably
@@ -1519,8 +1519,8 @@
             *   [Core DNS integration](https://github.com/kubernetes/community/pull/1956) replacement for kubeDNS (single binary, better performance)
                 *   [Feature issue](https://github.com/kubernetes/features/issues/427)
         *   IPvs kube-proxy staying in beta - [outstanding issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Aarea%2Fipvs)
-        *   Ingress requirements gathering. 
-            *   Sent survey to ingress users. 
+        *   Ingress requirements gathering.
+            *   Sent survey to ingress users.
             *   Have [results from survey](https://github.com/bowei/k8s-ingress-survey-2018) and starting interpretation
         *   Network plumbing group discussing adding networking interfaces for pods - [specification doc](https://docs.google.com/document/d/1Ny03h6IDVy_e_vmElOqR7UdTPAG_RNydhVE1Kx54kFQ/edit)
         *   Traffic shaping moved to a CNI plugin - [proposal](https://github.com/kubernetes/community/pull/1893)
@@ -1560,13 +1560,13 @@
 *   [ 0:00 ] Graph o' the Week
     *   No graph this week, tune in next time!
 *   [ 0:00 ] SIG Updates
-    *   SIG Auth [Eric Chiang] 
+    *   SIG Auth [Eric Chiang]
         *   Notes: [[link]](https://docs.google.com/document/d/1wyOkDwRDQetjTBeaPbJfkt1M8f_q3nxN5ta5v_OTfzA/edit)
         *   Overview
             *   Betas: PodSecurityPolicy, Auditing
             *   Alphas: TokenRequest API, client-go external credential providers, encryption-at-rest external KMS integration
             *   Considering Bug Bounty for Kubernetes
-    *   SIG Instrumentation [Piotr Szczesniak] 
+    *   SIG Instrumentation [Piotr Szczesniak]
         *   Introduced external metrics API
             *   Metrics will come from other systems other than k8s
             *   Integrates with Prometheus and other monitoring systems with adapter
@@ -1589,13 +1589,13 @@
 *   [ 0:00 ] Announcements
     *   Registration for the Contributor Summit is now live:
         *   See [this page](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/co-located-events/kubernetes-contributor-summit/) for details
-        *   Please register if you're planning on attending, we need this so we have the correct amount of food! 
+        *   Please register if you're planning on attending, we need this so we have the correct amount of food!
         *   Just registering for Kubecon is not enough!
     *   [Office Hours Next Week!](https://github.com/kubernetes/community/blob/master/events/office-hours.md)
         *   Volunteer developers needed to answer questions
-    *   [Helm Summit Videos](https://www.youtube.com/playlist?list=PL69nYSiGNLP3PlhEKrGA0oN4eY8c4oaAH&disable_polymer=true) are up. 
-    *   Shoutouts this week 
-        *   Someone doing great work out there that you'd like to highlight? Let us know in #shoutout on slack and we'll mention them here: 
+    *   [Helm Summit Videos](https://www.youtube.com/playlist?list=PL69nYSiGNLP3PlhEKrGA0oN4eY8c4oaAH&disable_polymer=true) are up.
+    *   Shoutouts this week
+        *   Someone doing great work out there that you'd like to highlight? Let us know in #shoutout on slack and we'll mention them here:
         *   [@shyamjvs](https://github.com/shyamjvs) - diagnosing 2 critical performance problems which could have blocked the 1.10 release
         *   [@verullt](https://github.com/verult) - taking on most of the open storage issues and resolving them as quickly as possible
         *   Quang Huynh for all the shiny new looks he's given prow.k8s.io during his internship!
@@ -1604,8 +1604,8 @@
         *   Stefan Schimanski would like to thank:
             *   Nick Chase ([@nickchase](https://github.com/nickchase)) - for editing down 92 pages of release notes into something consumable by humans!
             *   Mik Vyatskov ([@crassirostris](https://github.com/crassirostris)) - for doing an awesome job driving and owning the auditing feature
-        *   Josh Berkus would like to thank Jordan Liggitt ([@liggitt](https://github.com/liggitt)) 
-        *   And finally congratulations to Brad Topol ([@bradtopol](https://github.com/bradtopol)) for joining the maintainer team on docs. 
+        *   Josh Berkus would like to thank Jordan Liggitt ([@liggitt](https://github.com/liggitt))
+        *   And finally congratulations to Brad Topol ([@bradtopol](https://github.com/bradtopol)) for joining the maintainer team on docs.
 
 
 ## March 8, 2018 - ([recording](https://youtu.be/fySqkBQnJ8I))
@@ -1621,9 +1621,9 @@
     *   1.10 [Jaice Singer DuMars ~ Release lead]
         *   **Week 10 of 12**, the full schedule and some important information is [here](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.10/release-1.10.md)
         *   Release status is yellow, which means there's a chance our release date might slip by a small margin of days ~ we're working on sorting this out and should know more by early next week
-        *   Next week, we will be entering [c](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.10/release-1.10.md#code-slush)runch week for the release, so majority of release activities like documentation and release notes are completed, as well as drafts for blog posts, and FAQs for media. 
+        *   Next week, we will be entering [c](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.10/release-1.10.md#code-slush)runch week for the release, so majority of release activities like documentation and release notes are completed, as well as drafts for blog posts, and FAQs for media.
         *   To meet our release date, the v1.10 branch must be in very good shape by the end of next week, with fixes either en route, or in queue.  
-        *   **Code freeze will end on March 14th at 6PM Pacific time**, after which any additions to the 1.10 release will need to be cherry picked, in close collaboration with the release team. 
+        *   **Code freeze will end on March 14th at 6PM Pacific time**, after which any additions to the 1.10 release will need to be cherry picked, in close collaboration with the release team.
         *   Release team meetings will move to the daily cadence next week. If you join either the [SIG-Release](https://groups.google.com/forum/#!forum/kubernetes-sig-release) or [kubernetes-milestone-burndown](https://groups.google.com/forum/#!forum/kubernetes-milestone-burndown) groups, you should get an invite.
 *   [ 0:00 ] **Graph o' the Week **Zach Corleissen, SIG Docs
     *   Weekly update on data from devstats.k8s.io
@@ -1631,11 +1631,11 @@
     *   Docs folks had vague anxiety (without concrete data) on their response times for issues and PRs.  Devstats shows less than approx. 4 days initial response times during the last year, outside of a few spikes associated with holidays on the calendar and KubeCon.
     *   Introduction of prow into kubernetes/website led to a demonstrable improvement in early 2018
 *   [ 0:00 ] **SIG Updates**
-    *   SIG Apps [Adnan Abdulhussein] (confirmed) 
+    *   SIG Apps [Adnan Abdulhussein] (confirmed)
         *   [https://docs.google.com/presentation/d/1yTM5bi4C2cr_L-Ow1G2W934-vXS3r_z-PayDAaKx73o/edit?usp=sharing](https://docs.google.com/presentation/d/1yTM5bi4C2cr_L-Ow1G2W934-vXS3r_z-PayDAaKx73o/edit?usp=sharing)
     *   SIG OpenStack [Chris Hoge] (confirmed)
         *   [https://docs.google.com/presentation/d/1DtBKFlPhb74v9bXN6-RSNpLagh2wbDs3JJuno7IzgSw/edit?usp=sharing](https://docs.google.com/presentation/d/1DtBKFlPhb74v9bXN6-RSNpLagh2wbDs3JJuno7IzgSw/edit?usp=sharing)
-    *   SIG UI [Sebastian Floreks] (sends regrets) 
+    *   SIG UI [Sebastian Floreks] (sends regrets)
         *   Due to reasons independent from us, me and maciaszczykm have been moved from full-time Dashboard contribution to another project. We will be less active now, but still want to finish the migration and try to be a part of Dashboard project.
         *    We are working only on migration from AngularJS to Angular 5. Around 70% of features have been rewritten. Unfortunately, due to mentioned reasons we can not provide any ETA regarding the end of migration process. Progress and changes can be tracked from: [https://github.com/kubernetes/dashboard/pull/2727](https://github.com/kubernetes/dashboard/pull/2727)
         *   Dashboard is on a soft code freeze until migration is finished. Only critical bugs will be fixed during this time.
@@ -1648,11 +1648,11 @@
         *   [WIP: Subproject Meta](https://docs.google.com/document/d/1FHauGII5LNVM-dZcNfzYZ-6WRs9RoPctQ4bw5dczrkk/edit#heading=h.2nslsje41be1)
         *   [WIP: Charter FAQ (the "Why"s)](https://github.com/kubernetes/community/pull/1908)
     *   Reminder: [Contributor Summit](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit), 1 May, day before Kubecon
-    *   CNCF would like feedback on the draft blog post for 1.10 beta: 
+    *   CNCF would like feedback on the draft blog post for 1.10 beta:
         *   [http://blog.kubernetes.io/2018/03/first-beta-version-of-kubernetes-1-10.html](http://blog.kubernetes.io/2018/03/first-beta-version-of-kubernetes-1-10.html)
         *   Please contact [Natasha Woods](mailto:nwoods@linuxfoundation.org) with your feedback
     *   Shoutouts this week
-        *   See someone doing something great for the community? Mention them in #shoutouts on slack. 
+        *   See someone doing something great for the community? Mention them in #shoutouts on slack.
         *   Maru Newby (@marun) for [https://github.com/kubernetes/test-infra/pull/7083](https://github.com/kubernetes/test-infra/pull/7083) also Cole Wagner (@cjwagner) and Benjamin Elder (@bentheelder) who have all be super helpful getting this release moving forward.
         *   Meet our Contributors (1st weds of the month - AMA kubernetes.io/community for cal invite) - Aaron Crickenberger (@spiffxp), Davanum Srinivas (@dims), Ilya Dmitrichenko (@errordeveloper), Jennifer Rondeau ( @jrondeau), Kris Nova (@kris-nova), Solly Ross (@directxman12), Jeff Grafton (@ixdy) and Jorge Castro (@jorge)
 
@@ -1684,7 +1684,7 @@
         *   Collecting [known issues](https://github.com/kubernetes/kubernetes/issues/59764) in a single place so we can properly document it as part of the release notes
         *   Release notes and user-facing documentation should be close to complete ~ <strong>PRs for docs need to be ready for review by tomorrow (6 PM PT unless otherwise stated)</strong>
     *   1.8.9 should be out today
-    *   1.7.13 is out 
+    *   1.7.13 is out
 *   [ 0:00 ] <strong>Graph o' the Week </strong>[Josh Berkus]
     *   Weekly update on data from devstats.k8s.io
     *   [Issues and PRs by Milestone](https://k8s.devstats.cncf.io/d/IIUa5kezk/open-issues-prs-by-milestone?orgId=1&from=now-7d&to=now&var-sig_name=All&var-sig=all&var-milestone_name=v1.10&var-milestone=v1_10&var-repo_name=kubernetes%2Fkubernetes&var-repo=kubernetes_kubernetes&var-full_name=Kubernetes)
@@ -1696,10 +1696,10 @@
 *   [ 0:00 ] <strong>SIG Updates</strong>
     *   SIG Big Data [Anirudh Ramanathan]
         *   Acting as a bridge to external projects, sometimes work on forks, and then upstream it.
-        *   Apache Spark - (now tracked in [JIRA](https://issues.apache.org/jira/browse/SPARK-23529?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20Kubernetes) & [mailing lists](https://spark.apache.org/community.html)) 
+        *   Apache Spark - (now tracked in [JIRA](https://issues.apache.org/jira/browse/SPARK-23529?jql=project%20%3D%20SPARK%20AND%20component%20%3D%20Kubernetes) & [mailing lists](https://spark.apache.org/community.html))
             *   Graduated from a fork and merged back into project - released as Spark 2.3 yesterday!
             *   Top billed feature - k8s support ([link](https://spark.apache.org/releases/spark-release-2-3-0.html))
-            *   3 new ASF committers from our SIG 
+            *   3 new ASF committers from our SIG
             *   Spark-submit with operator semantics ([WIP](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator))
         *   Apache Airflow ([link](http://incubator.apache.org/projects/airflow.html))
             *   Trying to make a k8s-native DAG scheduler
@@ -1730,12 +1730,12 @@
     *   Reminder: Contributor Summit happens 1 May, day before Kubecon
         *   [https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit)
     *   Kubecon price increase March 9
-        *   [https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/) 
+        *   [https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/)
         *   Copenhagen May 2-4, 2018
     *   [Meet Our Contributors is next Weds!](https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md)
         *   Two times! 330p and 9p UTC
         *   Ask current contributors anything on slack #meet-our-contributors - testing infra, how to make first time contribution, how did they get involved in k8s
-    *   Shoutouts! 
+    *   Shoutouts!
         *   None on slack this week, thank someone in #shoutouts!
         *   Top 5 in the the Kubernetes StackOverflow tag for the week: Radek "Goblin" Pieczonka, aerokite, Vikram Hosakote, Jonah Benton, and fiunchinho
 
@@ -1758,7 +1758,7 @@
                 *   SIG approved and tied to an existing issue
                 *   Bug fixes (critical)
                 *   Test flake fixes (or other release-specific code)
-            *   If you have an exception, please contact @jdumars / [jdumars@gmail.com](mailto:jdumars@gmail.com) 
+            *   If you have an exception, please contact @jdumars / [jdumars@gmail.com](mailto:jdumars@gmail.com)
         *   Release appears on track for 3/21 delivery, but don't count on it
         *   [https://github.com/kubernetes/sig-release/issues/86](https://github.com/kubernetes/sig-release/issues/86)
         *   If a release team member asks for something (e.g. docs), please make your best effort to help them.
@@ -1769,18 +1769,18 @@
         *   Important measure of how "welcoming" a community is.
         *   Also important because we've added a lot of process and need to be sure that's not a major blocker for new contributors.
 *   [ 0:00 ] **SIG Updates**
-    *   SIG Cluster Lifecycle [First Last] 
+    *   SIG Cluster Lifecycle [First Last]
         *   Not happening
 *   [ 0:00 ] **Announcements**
     *   Reminder: Contributor Summit happens 1 May, day before Kubecon
         *   [https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit)
-    *   Shoutouts this week 
+    *   Shoutouts this week
         *   Zhonghu Xu - @hzxuzhonghu for many high quality apiserver APIs PRs
         *   Mario & Ilya Dmitrichenko for helping out with [user office hours](https://github.com/kubernetes/community/blob/master/events/office-hours.md) this week!
-            *   Volunteers still needed! 
+            *   Volunteers still needed!
         *   Someone doing great work? Give them a shoutout in #shoutouts and we'll mention them during the community meeting.
         *   Meet Our Contributors!!
-            *   March 7th at two times 
+            *   March 7th at two times
             *   #meet-our-contributors in slack for questions and more details
             *   We'd like to do live peer code reviews, too!
     *   Need SIG volunteers to say what is new in 1.10 in a webinar. Minimal time investment. -- contact [nchase@mirantis.com](mailto:nchase@mirantis.com) or @nickchase
@@ -1794,7 +1794,7 @@
 *   **Note Taker**: Tim Pepper [VMWare/Contribex]
 *   [ 0:00 ]**  Demo **-- AppZ by Cloudbourne [Rejith Krishnan rkrishnan@cloudbourne.com] (c)
     *   Link to slides: n/a, see live demo in recording
-    *   Youtube channel: [https://www.youtube.com/c/Cloudbourne](https://www.youtube.com/c/Cloudbourne) 
+    *   Youtube channel: [https://www.youtube.com/c/Cloudbourne](https://www.youtube.com/c/Cloudbourne)
     *   [https://github.com/rejith/tomcat-loadgen](https://github.com/rejith/tomcat-loadgen)
     *   Platform integrates SCM (GitHub), build (Maven, Gradle, Jenkins), and deploys/monitors app in k8s.  Builds on demand in response to commits in SCM.
     *   Dev, test, prod would use separate yaml files (example for a synthetic load generator using tomcat in [appz.yml](https://github.com/rejith/tomcat-loadgen/blob/master/appz.yml)), each describing the build/deploy/monitor needs for the app
@@ -1807,10 +1807,10 @@
         *   Next week, we will be entering [code slush](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.10/release-1.10.md#code-slush)  We use this time prior to [Code Freeze](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.10/release-1.10.md#code-freeze) to help reduce issue noise from miscellaneous changes that aren't related to issues that SIGs have approved for the milestone. SIGs are the keepers of this label, not the release team, although we can add the label at the request of a SIG if needed
         *   **All issues in the milestone are considered release-blocking**. That allows any SIG to pull the "stop chain" on the release to prevent defects from impacting our community
         *   **code freeze** begins on** February 26th**
-    *   1.9 
+    *   1.9
         *   1.9.3 is out
         *   1.9.4 in 2 weeks (planned)
-    *   1.8 
+    *   1.8
         *   1.8.8 is out
 *   [ 0:00 ] **SIG Updates**
     *   SIG Testing [Aaron Crickenberger](c)
@@ -1837,7 +1837,7 @@
         *   Misc
             *   [Setting up automation for kubernetes-sigs org](https://github.com/kubernetes/test-infra/pull/6623)
             *   [The label_sync tool](https://github.com/kubernetes/test-infra/tree/master/label_sync)
-    *   SIG Contribex [Paris Pittman](c) 
+    *   SIG Contribex [Paris Pittman](c)
         *   Charter
             *   Draft is being socialized in group now
             *   Using tl;dr template from SC (not approved yet but getting ahead of curve)
@@ -1848,19 +1848,19 @@
         *   [Mentoring](https://github.com/kubernetes/community/tree/master/mentoring)
             *   Focusing on contributor membership growth; very important to reduce possibilities of burnout, learning and development of current contributors, etc
             *   Testing phase and learning a lot - Group Mentoring, Google Summer of Code, Outreachy, Meet Our Contributors, Proposed "Buddy" Guide Program
-            *   Need help! 
+            *   Need help!
                 *   [issue/1753](https://github.com/kubernetes/community/issues/1753), [issue/1803](https://github.com/kubernetes/community/issues/1803); need more outreachy organization sponsors and sig/wg mentors/projects; need more SIGs/WGs interested in group mentoring
-                *   Building skills workshops for group mentoring and future k8s learning and dev. Examples in the [mentee guide](https://github.com/kubernetes/community/blob/master/mentoring/group-mentee-guide.md). 
+                *   Building skills workshops for group mentoring and future k8s learning and dev. Examples in the [mentee guide](https://github.com/kubernetes/community/blob/master/mentoring/group-mentee-guide.md).
                     *   Examples: communication, code review, writing docs/rel notes, testing, etc.
         *   DevStats
             *   Working on User guide -> [https://github.com/cncf/devstats/issues/35](https://github.com/cncf/devstats/issues/35)
             *   Shoutout to docs for adoption and creating SLOs
-            *   What questions do you want answered about the project? 
+            *   What questions do you want answered about the project?
         *   Documenting and improving [communication platforms](https://github.com/kubernetes/community/tree/master/communication)
             *   [Slack guidelines](https://github.com/kubernetes/community/blob/master/communication/slack-guidelines.md)
             *   Working on calendar solutions
         *   Issue Triage and Labels
-            *   Proposed and created [Triage Guidelines](https://github.com/kubernetes/community/blob/master/contributors/guide/issue-triage.md) to quickly close issues and clearly define the scope of triage or issues management 
+            *   Proposed and created [Triage Guidelines](https://github.com/kubernetes/community/blob/master/contributors/guide/issue-triage.md) to quickly close issues and clearly define the scope of triage or issues management
             *   Proposed new labels to identify issues that are candidates for close so that issues can be closed quickly manually or with automation with a reasoning for a clear statistic and measurement triage efforts. It is WIP with positive feedbacks from community.
         *   Misc
             *   Roadshow!
@@ -1874,7 +1874,7 @@
         *   Seeking feedback on webhook mechanism (slack, sig meeting, email to list) and considering some action on it next quarter
         *   Go Contexts: considering addition to go client (recent similar change going into cloud provider).  Should be a very mechanical code change.
 *   [ 0:00 ] **Announcements**
-    *   Office hours next week! 
+    *   Office hours next week!
         *   [https://github.com/kubernetes/community/blob/master/events/office-hours.md](https://github.com/kubernetes/community/blob/master/events/office-hours.md)
     *   Reminder: Contributor Summit will be 1 May, the day before Kubecon EU: [https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit)
     *   /lgtm, /approve and the principle of least surprise
@@ -1939,7 +1939,7 @@
         *   Moved meeting to 30min later, biweekly to not conflict with SIG-Arch
         *   They believe that the "[https://docs.google.com/presentation/d/1QunsQVGe4Ky570dI3hwBPH-BdD65wHkMz-g0S_fPYww/edit#slide=id.p](https://docs.google.com/presentation/d/1QunsQVGe4Ky570dI3hwBPH-BdD65wHkMz-g0S_fPYww/edit#slide=id.p)<span style="text-decoration:underline;"> </span>bigger clusters" problem is not interesting to existing members right now, clusters are big (5000 nodes) and stable.  If you want bigger than that, join the SIG.
         *   Mainly about avoiding regressions now.
-        *   [They have a new charter](https://github.com/kubernetes/community/pull/1607 ): 
+        *   [They have a new charter](https://github.com/kubernetes/community/pull/1607 ):
         *   Primary work on tooling/monitoring to detect & avoid scaling regressions this year.
         *   They have lots of interest from users in running big clusters, not sure that they're explaining things to those users.
     *   SIG Scheduling - [Bobby Salamat]
@@ -1992,7 +1992,7 @@
 
 *   **Moderators**:  Solly Ross  [SIG Autoscaling]
 *   **Note Taker**: First Last [Company/SIG]
-*   [ 0:00 ]**  Demo **--  [generator-kubegen](https://github.com/sesispla/generator-kubegen), a Kubernetes config generation tool - Sergio Sisternes ([ssistern@everis.com](mailto:ssistern@everis.com)) 
+*   [ 0:00 ]**  Demo **--  [generator-kubegen](https://github.com/sesispla/generator-kubegen), a Kubernetes config generation tool - Sergio Sisternes ([ssistern@everis.com](mailto:ssistern@everis.com))
     *   Link to slides
     *   [Link to repositories](https://github.com/sesispla/generator-kubegen)
     *   Yeoman-based wizard for generating Kubernetes YAML
@@ -2013,7 +2013,7 @@
 *   [ 0:00 ] **Graph o' the Week **[Aaron Crickenberger]
     *   Weekly update on data from devstats.k8s.io
     *   Actually a table!  What a twist!
-    *   [https://k8s.devstats.cncf.io/dashboard/db/developers-summary?orgId=1](https://k8s.devstats.cncf.io/dashboard/db/developers-summary?orgId=1) 
+    *   [https://k8s.devstats.cncf.io/dashboard/db/developers-summary?orgId=1](https://k8s.devstats.cncf.io/dashboard/db/developers-summary?orgId=1)
         *   Collects GitHub events (e.g. comments, commits, etc), and associates them with GitHub users
         *   Can break down by releases, time
         *   Not yet broken down by repositories
@@ -2021,7 +2021,7 @@
         *   Does it include incubator
             *   Yes, includes all kubernetes-associated repos (kubernetes, kubernetes-incubator, helm, kube-clients)
 *   [ 0:00 ] **SIG Updates**
-    *   SIG Cluster Ops [Rob Hirschfeld] - [http://bit.ly/k8sclops](http://bit.ly/k8sclops) 
+    *   SIG Cluster Ops [Rob Hirschfeld] - [http://bit.ly/k8sclops](http://bit.ly/k8sclops)
         *   New time!  1 hour earlier (12 am Pacific)
             *   Next meeting one hour from now (every two weeks)
         *   Change in format to be more "meetup" style
@@ -2029,7 +2029,7 @@
         *   Specifically want to hear from operators
         *   Fine w/ longer format vendor demos to get feedback
         *   Want to hear more about different deployment patterns
-    *   SIG Autoscaling [Solly Ross] 
+    *   SIG Autoscaling [Solly Ross]
         *   Work continues on VPA (Vertical Pod Autoscaler)
             *   Follow it at [https://github.com/kubernetes/autoscaler](https://github.com/kubernetes/autoscaler)
         *   Investigating minor additions to HPA v2 to improve flexibility with regards to "standalone"/"unassociated" metrics before graduation
@@ -2040,7 +2040,7 @@
         *   Formalizing subprojects
             *   Part of [proposal from sig architecture](https://docs.google.com/document/d/1FHauGII5LNVM-dZcNfzYZ-6WRs9RoPctQ4bw5dczrkk/edit#heading=h.2nslsje41be1)
             *   Want to make sure everything is owned by some group (SIG or subset thereof), sometimes things are owned by a group within a SIG
-            *   [Issue](https://github.com/kubernetes/community/issues/1673) 
+            *   [Issue](https://github.com/kubernetes/community/issues/1673)
             *   [Initial implementation PR](https://github.com/kubernetes/community/pull/1674 )
                 *   SIG leads should look at PR and sanity check it
             *   This is a non-binding first pass, goal was to make sure every repo had an owning sig, would like help iterating on what subprojects exist and who should own them
@@ -2089,17 +2089,17 @@
         *   Control Plane naming
         *   Feel free to comment offline or on the issue if you have comments
         *   TL;DR: call it the "control plane"
-        *   Issue: [https://github.com/kubernetes/website/issues/6525](https://github.com/kubernetes/website/issues/6525) 
-    *   Contributor Summit for Kubecon EU [Jorge and Paris] 
+        *   Issue: [https://github.com/kubernetes/website/issues/6525](https://github.com/kubernetes/website/issues/6525)
+    *   Contributor Summit for Kubecon EU [Jorge and Paris]
         *   SAVE THE DATE: May 1, 2018
         *   [https://github.com/kubernetes/community/pull/1718](https://github.com/kubernetes/community/pull/1718)
     *   #shoutouts - [Jorge Castro]
         *   New channel in Slack
-        *   Someone do something great for the community? Give them a shoutout here and we'll take the time to thank them for their work at the end of each community meeting. 
+        *   Someone do something great for the community? Give them a shoutout here and we'll take the time to thank them for their work at the end of each community meeting.
     *   
 
 
-## January 25, 2018 - ([recording](https://www.youtube.com/watch?v=hAg6aGAG3bs)) 
+## January 25, 2018 - ([recording](https://www.youtube.com/watch?v=hAg6aGAG3bs))
 
 
 
@@ -2109,9 +2109,9 @@
     *   kube-exec [https://github.com/radu-matei/kube-exec](https://github.com/radu-matei/kube-exec)  - os/exec for remote K8S pods
 *   [ 0:00] **INDEX Conference** [Jeff Borek]
     *   [https://developer.ibm.com/indexconf/](https://developer.ibm.com/indexconf/)
-        *   Offering space at the Moscone on 20 Feb for communities to hold face to face meetings. Attendance on the 20th is COMPLETELY FREE, but you must register, you'll get 50% off the rest of the conference if you want to stay! 
-        *   Please contact **jborek@us.ibm.com** if you're interested in claiming some space for your SIG. 
-        *   "Meet the SIGs" community day will be on the 20th, with Sarah Novotny delivering the keynote. 
+        *   Offering space at the Moscone on 20 Feb for communities to hold face to face meetings. Attendance on the 20th is COMPLETELY FREE, but you must register, you'll get 50% off the rest of the conference if you want to stay!
+        *   Please contact **jborek@us.ibm.com** if you're interested in claiming some space for your SIG.
+        *   "Meet the SIGs" community day will be on the 20th, with Sarah Novotny delivering the keynote.
         *   SIGs interested in participating:
             *   SIG Contributor Experience
             *   SIG Docs
@@ -2126,7 +2126,7 @@
     *   1.8.8 - no ETA
 *   [ 0:00 ] **Graph o' the Week **[Aaron Crickenberger]
     *   Weekly update on data from devstats.k8s.io
-    *   [https://k8s.devstats.cncf.io/dashboard/db/sig-mentions-categories?orgId=1](https://k8s.devstats.cncf.io/dashboard/db/sig-mentions-categories?orgId=1) 
+    *   [https://k8s.devstats.cncf.io/dashboard/db/sig-mentions-categories?orgId=1](https://k8s.devstats.cncf.io/dashboard/db/sig-mentions-categories?orgId=1)
     *   Pick a sig, for example SIG-CLI, look into [https://github.com/kubernetes/community/tree/master/sig-cli](https://github.com/kubernetes/community/tree/master/sig-cli) and there are 8 different github teams for SIG-CLI which can be used issue and PR in mentions.  In the devstats then you can view: [https://k8s.devstats.cncf.io/dashboard/db/sig-mentions-categories?orgId=1](https://k8s.devstats.cncf.io/dashboard/db/sig-mentions-categories?orgId=1) se lecting the SIG at the top an you see the usage of the git teams in mentions for that SIG.  Are all the github teams across all the sigs actually in use?  There's a TONNE of them (30 sigs x 8 teams).  Which does a person use to ping the right set of people?  This devstats graph tunnel down is the current best way to find out.  Alternatively need to discuss if these could be simplified into a smaller number of subteams, or do SIG's find the separation into subteams useful?
 *   [ 0:00 ] **SIG Updates**
     *   SIG Service Catalog [Paul Morie]  (confirmed)
@@ -2174,8 +2174,8 @@
     *   [Approvers](https://k8s.devstats.cncf.io/dashboard/db/approvers?orgId=1&var-period=q&var-repogroups=All)
     *   [Approvers Histogram](https://k8s.devstats.cncf.io/dashboard/db/approvers-histogram?orgId=1&var-period_name=Last%20month&var-period=m&var-repogroup_name=All&var-repogroup=all)
 *   [ 0:20 ] **SIG Updates**
-    *   SIG Docs [Devin Donnelly, Andrew Chen] 
-        *   K8s Docs Structure 
+    *   SIG Docs [Devin Donnelly, Andrew Chen]
+        *   K8s Docs Structure
         *   Link to slides (see video for narrative)
         *   
     *   SIG Network [Dan Williams]
@@ -2187,7 +2187,7 @@
             *   Multiple pod IP addresses (necessary for IPv6 dual-stack)
             *   Continue exploring new Service API
             *   Topology aware ingress and proxies
-        *   Continued work on more flexible pod networking through informal Network Plumbing Working Group 
+        *   Continued work on more flexible pod networking through informal Network Plumbing Working Group
     *   SIG Service Catalog [Paul Morie]
         *   Paul is out sick today and sends his regrets, he'll do an update next week
         *   Feel better Paul! +1
@@ -2219,12 +2219,12 @@
 *   **Chat Transcript**
 *   [ 0:00 ]**  Demo **--01/11 [KQueen](https://github.com/mirantis/KQueen) Kubernetes cluster manager demo:  Jakub Pavlik ( [jpavlik@mirantis.com](mailto:jpavlik@mirantis.com) )
 *   
-    *   Tech issues, we'll reschedule this demo at a later date. 
+    *   Tech issues, we'll reschedule this demo at a later date.
 *   [ 0:00 ]** Release Updates**
     *   1.10 [Jaice Singer DuMars ~ Release lead]
         *   It's week 2 of 12 of the release (full schedule and some important information is [here](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.10/release-1.10.md))
         *   The [release team](http://bit.ly/k8s110-team) is fully staffed!
-        *   we have added a role guide for the [Communications Coordinator](https://github.com/kubernetes/sig-release/blob/master/release-process-documentation/release-team-guides/communications_coordinator.md) 
+        *   we have added a role guide for the [Communications Coordinator](https://github.com/kubernetes/sig-release/blob/master/release-process-documentation/release-team-guides/communications_coordinator.md)
         *   [PR](https://github.com/kubernetes/sig-release/pull/69) out for the Release Leader role documentation
         *   The next major deadline is Feature Freeze on January 22nd [Ihor]
             *   If you're targeting a feature for 1.10 - please, ensure that it's updated in the [Features repo under 1.10 Milestone](https://github.com/kubernetes/features/issues?q=is%3Aopen+is%3Aissue+milestone%3Av1.10);
@@ -2242,7 +2242,7 @@
     *   [Github search: all open kubernetes PR's with label:needs-rebase](https://github.com/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+user%3Akubernetes+label%3Aneeds-rebase+)
     *   [The munger responsible for applying needs-rebase](https://github.com/kubernetes/test-infra/blob/master/mungegithub/mungers/needs_rebase.go)
     *   [We are migrating mungers out of github](https://github.com/kubernetes/test-infra/issues/3331)
-    *   [We've added a prow plugin for needs-rebase](https://github.com/kubernetes/test-infra/pull/6121) 
+    *   [We've added a prow plugin for needs-rebase](https://github.com/kubernetes/test-infra/pull/6121)
     *   [We plan on migrating mungegithub to github.com/kubernetes-retired](https://github.com/kubernetes/test-infra/issues/6104)
 *   [ 0:00 ] **SIG Updates ([List of SIGs](https://github.com/kubernetes/community/blob/master/sig-list.md))**
     *   SIG Azure [Jaice Singer DuMars] (confirmed)
@@ -2253,7 +2253,7 @@
         *   1.10 planning
             *   [https://docs.google.com/document/d/15F3nWPPG3keP0pzxgucPjA7UBj3C31VsFElO7KkDU04/edit?userstoinvite=doug.maceachern@gmail.com&ts=5a579cac](https://docs.google.com/document/d/15F3nWPPG3keP0pzxgucPjA7UBj3C31VsFElO7KkDU04/edit?userstoinvite=doug.maceachern@gmail.com&ts=5a579cac)
 *   What's the latest on combining provider work into a single SIG vs breaking it out?
-    *   Please see [https://github.com/kubernetes/community/tree/master/wg-cloud-provider](https://github.com/kubernetes/community/tree/master/wg-cloud-provider) 
+    *   Please see [https://github.com/kubernetes/community/tree/master/wg-cloud-provider](https://github.com/kubernetes/community/tree/master/wg-cloud-provider)
     *   ([Notes](https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp))
 *   [ 0:00 ] **Announcements**
     *   The final call for [KubeCon/CloudNativeCon EU 2018](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/) CFP submissions! [Ihor]
@@ -2263,7 +2263,7 @@
         *   If your SIG (or a different group of contributors) would like to organize a f2f meeting on February 20 in SF, please reach Ihor Dvoretskyi about the details
     *   Setting up merge automation for all github.com/kubernetes repos [Aaron Crickenberger / @spiffxp]
         *   [https://github.com/kubernetes/test-infra/issues/6227](https://github.com/kubernetes/test-infra/issues/6227)
-        *   [https://groups.google.com/d/msg/kubernetes-dev/h-0hGFJ8x1E/g4UuGr5zDAAJ](https://groups.google.com/d/msg/kubernetes-dev/h-0hGFJ8x1E/g4UuGr5zDAAJ) 
+        *   [https://groups.google.com/d/msg/kubernetes-dev/h-0hGFJ8x1E/g4UuGr5zDAAJ](https://groups.google.com/d/msg/kubernetes-dev/h-0hGFJ8x1E/g4UuGr5zDAAJ)
     *   k8s Office hours this Wednesday! Ping Jorge Castro (@jorge on slack) if you want to volunteer [https://git.k8s.io/community/events/office-hours.md](https://git.k8s.io/community/events/office-hours.md)
 
 
@@ -2274,13 +2274,13 @@
 *   **Moderators**:  Chris Short []
 *   **Note Taker**: Jaice Singer DuMars [SIG-kiwi]
 *   **Chat Transcript**
-*   [ 0:02 ]**  Demo [ 10 minutes ] **--  [kube-arbitrator](https://github.com/kubernetes-incubator/kube-arbitrator) demo: Klaus Ma (@k82cn, [madaxa@cn.ibm.com](mailto:madaxa@cn.ibm.com) / @jinzhejz, [jinzhej@cn.ibm.com](mailto:jinzhej@cn.ibm.com) ) 
+*   [ 0:02 ]**  Demo [ 10 minutes ] **--  [kube-arbitrator](https://github.com/kubernetes-incubator/kube-arbitrator) demo: Klaus Ma (@k82cn, [madaxa@cn.ibm.com](mailto:madaxa@cn.ibm.com) / @jinzhejz, [jinzhej@cn.ibm.com](mailto:jinzhej@cn.ibm.com) )
     *   [design doc](https://docs.google.com/document/d/1-H2hnZap7gQivcSU-9j4ZrJ8wE_WwcfOkTeAGjzUyLA/edit#heading=h.uedqgav5zc53)
     *   [https://github.com/kubernetes-incubator/kube-arbitrator](https://github.com/kubernetes-incubator/kube-arbitrator)
 *   [ 0:10 ]** Release Updates [ 5 minutes ]**
     *   1.10 [Jaice Singer DuMars ~ Release lead]
-        *   [Schedule](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.10/release-1.10.md) is set ([http://bit.ly/k8s110-schedule](http://bit.ly/k8s110-schedule)) 
-        *   [Team](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.10/release_team.md) is forming ([http://bit.ly/k8s110-team](http://bit.ly/k8s110-team)) 
+        *   [Schedule](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.10/release-1.10.md) is set ([http://bit.ly/k8s110-schedule](http://bit.ly/k8s110-schedule))
+        *   [Team](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.10/release_team.md) is forming ([http://bit.ly/k8s110-team](http://bit.ly/k8s110-team))
             *   **Need** CI Signal, Bug Triage shadow, and Branch Manager (Google only)
         *   Key dates:
             *   **release day**, Wednesday, March 21st
@@ -2290,15 +2290,15 @@
 *   [ 0:15 ] **Graph o' the Week **[Aaron Crickenberger / @spiffxp] [** 5 minutes** ]
     *   Weekly update on data from devstats.k8s.io
     *   [https://k8s.devstats.cncf.io/dashboard/db/bot-commands](https://k8s.devstats.cncf.io/dashboard/db/bot-commands)
-    *   Manually updated list of bot commands: [https://go.k8s.io/bot-commands](https://go.k8s.io/bot-commands) 
+    *   Manually updated list of bot commands: [https://go.k8s.io/bot-commands](https://go.k8s.io/bot-commands)
     *   Auto-generated help page with examples: [https://prow.k8s.io/plugin-help.html](https://prow.k8s.io/plugin-help.html)
-    *   Mapping of repository groups: [https://github.com/cncf/devstats/blob/master/scripts/kubernetes/repo_groups.sql](https://github.com/cncf/devstats/blob/master/scripts/kubernetes/repo_groups.sql) 
+    *   Mapping of repository groups: [https://github.com/cncf/devstats/blob/master/scripts/kubernetes/repo_groups.sql](https://github.com/cncf/devstats/blob/master/scripts/kubernetes/repo_groups.sql)
     *   Most used command: /cc (to be used for reviews)
     *   Recent command that's seen growth: /hold
     *   Nit: /lgtm can count as /approve, devstats can't tell the difference
     *   Some recent spikes of interest: /priority, /lifecycle, /close
 *   [ 0:20 ] **SIG Updates [ 5 minutes ] **
-    *   SIG Instrumentation [Frederic Branczyk, CoreOS ] 
+    *   SIG Instrumentation [Frederic Branczyk, CoreOS ]
         *   Presentation link
         *   multiple kube-state-metrics releases - many new metrics, stability, and features ~ making metrics actionable
         *   1.0 has been released
@@ -2315,16 +2315,15 @@
     *   [tstclair] - Socialize proposal to move from 4 -> 3 release cycles a year to reduce
         *   [https://groups.google.com/forum/#!topic/kubernetes-dev/nvEMOYKF8Kk](https://groups.google.com/forum/#!topic/kubernetes-dev/nvEMOYKF8Kk)
     *   Check with your cloud providers wrt. Meltdown/Spectre: [https://meltdownattack.com/](https://meltdownattack.com/)
-        *   (Too much info to cover here) 
+        *   (Too much info to cover here)
     *   Office Hours is back, 17 Jan! [https://git.k8s.io/community/events/office-hours.md](https://git.k8s.io/community/events/office-hours.md)
     *   New slack guidelines -> [https://github.com/kubernetes/community/blob/master/communication/slack-guidelines.md](https://github.com/kubernetes/community/blob/master/communication/slack-guidelines.md)
     *   Group mentoring cohort #1 kicked off today! \o/
         *   Current members to reviewers
         *   [https://goo.gl/forms/nAWxAWpVBdNQbyWy1](https://goo.gl/forms/nAWxAWpVBdNQbyWy1)
         *   Contributor Office Hours (will be renamed) coming at the end of the month - date TBA; doc to be created in the mentoring docs folder -> [https://github.com/kubernetes/community/tree/master/mentoring](https://github.com/kubernetes/community/tree/master/mentoring)
-    *   KubeCon/CloudNativeCon EU 2018 CFP closes on Jan 12 - [https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/) 
+    *   KubeCon/CloudNativeCon EU 2018 CFP closes on Jan 12 - [https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/)
 *   [ 0:00 ] **1.9 Release Retrospective Part 2 [ 30 minutes ] **
     *   NOTE: Please add your retro items to the document below the [ part 2 ] line
     *   The [retro doc](http://bit.ly/kube19retro)
     *   Part One [recording](https://youtu.be/oagLX--fdDs)
-
