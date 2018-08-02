@@ -1,58 +1,83 @@
 # Conformance Testing in Kubernetes
 
-The Kubernetes conformance test suite is a set of testcases, currently a
-subset of the integration/e2e tests, that the Architecture SIG has approved
-to define the core set of interoperable features that all Kubernetes
-deployments must support.
+The Kubernetes Conformance test suite is a subset of e2e tests that 
+SIG Architecture has approved to define the core set of interoperable 
+features that all conformant Kubernetes clusters must support. The 
+tests verify that the expected behavior works as a user might encounter 
+it in the wild.
 
-Contributors must write and submit e2e tests first (approved by owning Sigs). 
-Once the new tests prove to be stable in CI runs, later create a follow up PR 
-to add the test to conformance. This approach also decouples the development 
-of useful tests from their promotion to conformance.
+The process to add new conformance tests is intended to decouple the
+development of useful tests from their promotion to conformance:
 
-A conformance test verifies the expected functionality works as a user might encounter it in the wild, 
+- Contributors write and submit e2e tests, to be approved by owning SIGs
+- Tests are proven to meet the conformance test requirements
+- A follow up PR is submitted to promote the test to conformance
+
 and tests should begin by covering the most important and visible aspects of the function.
 
 ### Conformance Test Requirements
 
-A test is eligible for promotion to conformance if it meets the following requirements:
+Conformance tests test only GA, non-optional features or APIs.  More 
+specifically, a test is eligible for promotion to conformance if:
 
-- testing GA feature (not alpha or beta APIs, nor deprecated features)
-- must be portable (not dependent on provider-specific capabilities or on the public internet)
-- cannot test a feature which obviously cannot be supported on a broad range of platforms 
-(i.e. testing of multiple disk mounts, GPUs, high density)
-- cannot test an optional feature (e.g. not policy enforcement)
-- should be non-privileged (neither root on nodes, network, nor cluster)
-- cannot rely on any particular non-standard file system permissions granted to containers or users 
-(i.e. sharing writable host /tmp with a container)
-- should be stable and run consistently
-- cannot skip providers (there should be no Skip like directives added to the test), 
-especially in the Nucleus or Application layers as described 
-[here](https://github.com/kubernetes/community/blob/master/contributors/devel/architectural-roadmap.md).
-- cannot test cloud provider specific features (i.e. GCE monitoring, S3 Bucketing, ...)
-- should work with default settings for all configuration parameters 
-(example: the default list of admission plugins should not have to be tweaked for passing conformance).
-- cannot rely on any binaries that are not required for the
-linux kernel or for a kubelet to run (i.e. git)
-- any container images used in the test must support all architectures for which kubernetes releases are built
+- it tests only GA, non-optional features or APIs (ie: no alpha or beta endpoints, 
+  no feature flags required, no deprecated features)
+- it works for all providers (ie: no `SkipIfProviderIs`/`SkipUnlessProviderIs` calls)
+- it is non-privileged (ie: no root on nodes, network, nor cluster) ([citation needed] @timothysc what existing tests violate this requirement)
+- it works without access to the public internet
+- it works without non-standard filesystem permissions granted to containers or users
+  (ie: can't assume a writable host /tmp shared with container)
+- it does not rely on any binaries that would not be required for the linux kernel or
+  kubelet to run (ie: can't rely on git)
+- any container images used within the test support all architectures for which
+  kubernetes releases are built
+- it is stable and runs consistently (ie: no flakes)
+
+Examples of features which are not eligible for conformance tests:
+
+- node/platform-reliant features, eg: multiple disk mounts, GPUs, high density, etc.
+- optional features, eg: policy enforcement
+- cloud-provider-specific features, eg: GCE monitoring, S3 Bucketing, etc.
+- anything that requires a non-default admission plugin
+
+Examples of tests which are not eligible for promotion to conformance:
+
+- anything that checks specific Events are generated ([citation needed]
+  @bgrant0607 we don't make guarantee anything about Events)
+- anything that checks optional Condition fields, such as Reason or Message,
+  as these may change over time ([citation needed] @bgrant0607 in some cases 
+  they could be tested to be non-empty however)
+
+Our intent is to refine the above list of requirements over time to the point
+where it is as concrete and complete as possible. Once we reach this point, we
+plan on identifying the appropriate areas to relax these requirements to allow
+for the concept of conformance Profiles that cover optional or additional 
+behaviors.
 
 ### Conformance Test Version Skew Policy
 
 As each new release of Kubernetes provides new functionality, the subset of
 tests necessary to demonstrate conformance grows with each release. Conformance
 is thus considered versioned, with the same backwards compatibility guarantees
-as laid out in [our versioning policy](/contributors/design-proposals/release/versioning.md#supported-releases-and-component-skew).
+as laid out in [the kubernetes versioning policy]
+
+To quote:
+
+> For example, a v1.3 master should work with v1.1, v1.2, and v1.3 nodes, and 
+> should work with v1.2, v1.3, and v1.4 clients.
+
 Conformance tests for a given version should be run off of the release branch
 that corresponds to that version. Thus `v1.2` conformance tests would be run
-from the head of the `release-1.2` branch. eg:
+from the head of the `release-1.2` branch.
 
- - A v1.3 development cluster should pass v1.1, v1.2 conformance tests
+For example, suppose we're in the midst of developing kubernetes v1.3. The
+following clusters must pass conformance tests built from the following branches:
 
- - A v1.2 cluster should pass v1.1, v1.2 conformance tests
-
- - A v1.1 cluster should pass v1.0, v1.1 conformance tests, and fail v1.2
-conformance tests
-
+| cluster version | master | release-1.3 | release-1.2 | release-1.1 |
+| --------------- | -----  | ----------- | ----------- | ----------- |
+| v1.3.0-alpha    | yes    | yes         | yes         | no          |
+| v1.2.x          | no     | no          | yes         | yes         |
+| v1.1.x          | no     | no          | no          | yes         |
 
 ### Running Conformance Tests
 
@@ -92,7 +117,8 @@ the testcase's code directly.
 
 To promote a testcase to the conformance test suite, the following
 steps must be taken:
-- as a prerequisite, the test case is already part of e2e and is not flaky 
+- the test case must already be a part of e2e, and demonstrated to be not flaky
+  ([citation needed] @spiffxp how do we demonstrate the test isn't flaky)
 - the testcase must use the `framework.ConformanceIt()` function rather
   than the `framework.It()` function
 - the testcase must include a comment immediately before the
@@ -102,6 +128,7 @@ steps must be taken:
 - tag your PR with "/area conformance" label
 - send your PR to Sig-Architecture for review by adding "@kubernetes/sig-architecture-pr-reviews" 
 also CC the relevant Sig and Sig-Architecture
+- add your PR to SIG Architecture's [Conformance Test Review board] 
 
 
 ### Test Metadata
@@ -157,3 +184,6 @@ federated [Conformance TestGrid dashboard](https://k8s-testgrid.appspot.com/conf
 If you wish to contribute conformance test results for your provider, 
 please follow this [on-boarding document](https://docs.google.com/document/d/1lGvP89_DdeNO84I86BVAU4qY3h2VCRll45tGrpyx90A/edit#).
 
+
+[the kubernetes versioning policy]: /contributors/design-proposals/release/versioning.md#supported-releases-and-component-skew
+[Conformance Test Review board]: https://github.com/kubernetes-sigs/architecture-tracking/projects/1
