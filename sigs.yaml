@@ -929,6 +929,12 @@ sigs:
     - name: cloud-provider-gcp
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
+    - name: gcp-compute-persistent-disk-csi-driver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/master/OWNERS
+    - name: gcp-filestore-csi-driver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/gcp-filestore-csi-driver/master/OWNERS
   - name: IBMCloud
     dir: sig-ibmcloud
     mission_statement: >
