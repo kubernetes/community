@@ -15,7 +15,7 @@ approvers:
   - TBD
 editor: TBD
 creation-date: 2018-07-30
-last-updated: 2018-08-02
+last-updated: 2018-08-03
 status: provisional
 see-also:
   - N/A
@@ -51,33 +51,33 @@ superseded-by:
 "Isolcpus" is a boot-time Linux kernel parameter, which can be used to isolate CPU cores from the generic Linux scheduler.
 This kernel setting is routinely used within the Linux community to manually isolate, and then assign CPUs to specialized workloads.
 The CPU Manager implemented within kubelet currently ignores this kernel setting when creating cpusets for Pods.
-This KEP proposes that CPU Manager should respects this kernel setting when assigning Pods to cpusets, regardless the configured management policy.
+This KEP proposes that CPU Manager should respect the aformentioned kernel setting when assigning Pods to cpusets. The manager should behave the same irrespective of its configured management policy.
 Inter-working with the isolcpus kernel parameter should be a node-wide, policy-agnostic setting.
 
 ## Motivation
 
-Kubelet's in-built CPU Manager always assumes that it is the primary, and the only software managing the CPU resources of the host.
+Kubelet's in-built CPU Manager always assumes that it is the primary software component managing the CPU cores of the host.
 However, in certain infrastructures this might not always be the case.
-While it is already possible to effectively take-away CPU cores from the Kubernetes managed workloads via the kube-reserved and system-reserved kubelet flags, this implicit way is not flexible enough to cover all use-cases.
+While it is already possible to effectively take-away CPU cores from the Kubernetes managed workloads via the kube-reserved and system-reserved kubelet flags, this implicit way of declaring a Kubernetes managed CPU pool is not flexible enough to cover all use-cases.
 
 Therefore, the need arises to enhance existing CPU manager with a method of explicitly defining a discontinuous pool of CPUs it can manage.
 Making kubelet respect the isolcpus kernel setting fulfills exactly that need, while also doing it in a de-facto standard way.
 
-If Kubernetes' CPU manager would support this more granular node configuration, it would enable infrastructure administrators to make multiple "CPU managers" seamlessly inter-work on the same node.
-For example:
-- outsourcing the management of a subset of specialized, or optimized CPUs to an external CPU manager without any (other) change in Kubelet's CPU manager
+If Kubernetes' CPU manager would support this more granular node configuration, then infrastructure administrators could make multiple "CPU managers" seamlessly inter-work on the same node.
+Such feature could come in handy if one would like to:
+- outsource the management of a subset of specialized, or optimized cores (e.g. real-time enabled CPUs, CPUs with different HT configuration etc.) to an external CPU manager without any (other) change in Kubelet's CPU manager
 - ensure proper resource accounting and separation within a hybrid infrastructure (e.g. Openstack + Kubernetes running on the same node)
 
 ### Goals
 
 The goal is to make any and all Kubernetes supported CPU management policies restrictable to a subset of a nodes' capacity.
-The goal is to make Kubernetes respect an already existing node-level configuration option, which already means exactly that in the Linux community.
+The goal is to make Kubernetes respect an already existing node-level Linux kernel parameter, which carries this exact meaning within the Linux community.
 
 ### Non-Goals
 
-It is outside the scope of this KEP to restrict any other Kubernetes resource manager to a subset of a resource group (like memory, devices, etc.).
-It is also outside the scope of this KEP to enhance the CPU manager itself with more fine-grained management policies, or introduce topology awareness into the CPU manager.
-The aim of this KEP is to continue to let Kubernetes manage some CPU cores however it sees fit, but also let room for "other" managers running on the same host.
+It is outside the scope of this KEP to restrict any other Kubernetes resource manager to a subset of another resource group (like memory, devices, etc.).
+It is also outside the scope of this KEP to enhance kubelet's CPU manager itself with more fine-grained management policies, or introduce topology awareness into the CPU manager as an additional policy.
+The aim of this KEP is to continue to let Kubernetes manage some CPU cores however it sees fit, but at the same time also leave the supervision of truly isolated resources to "other" resource managers.
 
 ## Proposal
 
