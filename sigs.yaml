@@ -1667,7 +1667,7 @@ sigs:
     - name: testing-commons
       description: "The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project."
       owners:
-      - https://raw.githubusercontent.com/kubernetes-sig-testing/frameworks/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
       meetings:
       - description: Testing Commons
