@@ -13,7 +13,7 @@ more efficient use of cluster resources, and/or enforces placement policies.
 
 ### In scope
 
-Link to SIG section in [sigs.yaml]
+SIG [readme]
 
 #### Code, Binaries and Services
 
@@ -22,8 +22,11 @@ Link to SIG section in [sigs.yaml]
 - Kube-scheduler reliability (problem detection and remediation)
 - Pod scheduling APIs (with [sig-api-machinery](../sig-api-machinery))
 - Node resource management (with [sig-node](../sig-node))
-- Cluster resource management (with [wg-resource-management](../wg-resource-management))
-- Pod scheduling policies (with [wg-policy](../wg-poicy))
+- Cluster resource management (with [sig-node](../sig-node))
+- Pod scheduling policies (with [sig-auth](../sig-auth))
+
+**This is NOT** a list of specific code locations,
+  or projects. For those refer to [SIG Subprojects][sig-subprojects].
 
 #### Cross-cutting and Externally Facing Processes
 
@@ -33,6 +36,7 @@ Link to SIG section in [sigs.yaml]
 
 - network management ([sig-network](../sig-network))
 - persistent storage management ([sig-storage](../sig-storage))
+- enforcement of resource quota and other admission policies ([sig-api-machinery](../sig-api-machinery))
 
 ## Roles and Organization Management
 
@@ -53,13 +57,12 @@ None
 
 ### Subproject Creation
 
-Pick one:
+SIG Technical Leads
 
-1. SIG Technical Leads (x)
-2. Federation of Subprojects
 
 [test grid]: https://k8s-testgrid.appspot.com/sig-scheduling#Summary
 [perf dashboard]: http://perf-dash.k8s.io/
+[readme]: https://github.com/kubernetes/community/tree/master/sig-scheduling
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
-[sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1434
+[sig-subprojects]: https://github.com/kubernetes/community/blob/master/sig-scheduling/README.md#subprojects
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
