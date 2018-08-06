@@ -818,9 +818,10 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
       - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
-    - name: contributors-guide
+    - name: contributors-documentation
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
     - name: devstats
       owners:
       - Phillels
