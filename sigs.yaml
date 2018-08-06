@@ -1738,7 +1738,7 @@ sigs:
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y
     - description: Cloud Provider vSphere weekly syncup
       day: Wednesday
-      time: "21:00"
+      time: "16:00"
       tz: "UTC"
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
@@ -1765,9 +1765,9 @@ sigs:
       - name: sig-vmware-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: cloud-provider-vsphere
+    - name: cluster-api-provider-vsphere
       owners:
-      - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
   - name: Windows
     dir: sig-windows
     mission_statement: >

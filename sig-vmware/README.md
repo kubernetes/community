@@ -14,7 +14,7 @@ Bring together members of the VMware and Kubernetes community to maintain, suppo
 * Regular SIG Meeting: [Thursdays at 18:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y).
-* Cloud Provider vSphere weekly syncup: [Wednesdays at 21:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=21:00&tz=UTC).
+* Cloud Provider vSphere weekly syncup: [Wednesdays at 16:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR).
 
@@ -34,9 +34,9 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-vmware:
-- **cloud-provider-vsphere**
+- **cluster-api-provider-vsphere**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
 
 ## GitHub Teams
 
@@ -59,5 +59,8 @@ Monitor these for Github activity if you are not a member of the team.
 | @kubernetes/sig-vmware-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-vmware-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-vmware-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
+
+## About the cloud-provider-vsphere subproject
+The `cloud-provider-vsphere` subproject is now hosted under the new [SIG Cloud Provider](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/README.md).
 
 <!-- END CUSTOM CONTENT -->
