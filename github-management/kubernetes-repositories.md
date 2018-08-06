@@ -1,35 +1,35 @@
-## Kubernetes Repository Guidelines
+# Kubernetes Repository Guidelines
 
 This document attempts to outline a structure for creating and associating GitHub repositories with the Kubernetes project. It also describes how and when
 repositories are removed.
 
 The document presents a tiered system of repositories with increasingly strict requirements in an attempt to provide the right level of oversight and flexibility for a variety of different projects.
 
-### Associated Repositories
+## Associated Repositories
 
 Associated repositories conform to the Kubernetes community standards for a repository, but otherwise have no restrictions. Associated repositories exist solely for the purpose of making it easier for the Kubernetes community to work together. There is no implication of support or endorsement of any kind by the Kubernetes project, the goals are purely logistical.
 
-#### Goals
+### Goals
 
 To facilitate contributions and collaboration from the broader Kubernetes community.  Contributions to random projects with random CLAs (or DCOs) can be logistically difficult, so associated repositories should be easier.
 
 
-#### Rules
+### Rules
 
    * Must adopt the Kubernetes Code of Conduct statement in their repo.
    * All code projects use the Apache License version 2.0. Documentation repositories must use the Creative Commons License version 4.0.
    * Must adopt the CNCF CLA bot automation for pull requests.
 
 
-### SIG repositories
+## SIG repositories
 
 SIG repositories serve as temporary homes for SIG-sponsored experimental projects or prototypes of new core functionality, or as permanent homes for SIG-specific tools.
 
-#### Goals
+### Goals
 
 To provide a place for SIGs to collaborate on projects endorsed by and actively worked on by members of the SIG. SIGs should be able to approve and create new repositories for SIG-sponsored projects without requiring higher level approval from a central body (e.g. steering committee or sig-architecture)
 
-#### Rules for new repositories
+### Rules for new repositories
 
    * For now all repos will live in github.com/kubernetes-sigs/\<project-name\>.
    * Must contain the topic for the sponsoring SIG - e.g. `k8s-sig-api-machinery`.  (Added through the *Manage topics* link on the repo page.)
@@ -40,7 +40,7 @@ To provide a place for SIGs to collaborate on projects endorsed by and actively 
    * SIG membership must vote using lazy consensus to create a new repository
    * SIG must already have identified all of their existing subprojects and code, with valid OWNERS files, in [`sigs.yaml`](https://github.com/kubernetes/community/blob/master/sigs.yaml)
 
-#### Rules for donated repositories
+### Rules for donated repositories
 
 The `kubernetes-sigs` organization is primarily intended to house net-new
 projects originally created in that organization. However, projects that a SIG
@@ -55,14 +55,14 @@ In addition to the requirements for new repositories, donated repositories must 
    * Licenses of dependencies are acceptable; project owners can ping [@caniszczyk](https://github.com/caniszczyk) for review of third party deps
    * Boilerplate text across all files should attribute copyright as follows: `"Copyright <Project Authors>"` if no CLA was in place prior to donation
 
-### Core Repositories
+## Core Repositories
 
 Core repositories are considered core components of Kubernetes. They are utilities, tools, applications, or libraries that are expected to be present in every or nearly every Kubernetes cluster, such as components and tools included in official Kubernetes releases. Additionally, the kubernetes.io website, k8s.io machinery, and other project-wide infrastructure will remain in the kubernetes github organization.
 
-#### Goals
+### Goals
 Create a broader base of repositories than the existing gh/kubernetes/kubernetes so that the project can scale. Present expectations about the centrality and importance of the repository in the Kubernetes ecosystem. Carries the endorsement of the Kubernetes community.
 
-#### Rules
+### Rules
 
    * Must live under `github.com/kubernetes/<project-name>`
    * Must adopt the Kubernetes Code of Conduct
@@ -72,7 +72,7 @@ Create a broader base of repositories than the existing gh/kubernetes/kubernetes
    * All OWNERS must be members of standing as defined by ability to vote in Kubernetes steering committee elections. in the Kubernetes community
    * Repository must be approved by SIG-Architecture
 
-### Removing Repositories
+## Removing Repositories
 
 As important as it is to add new repositories, it is equally important to
 prune old repositories that are no longer relevant or useful.
@@ -85,7 +85,7 @@ wide processes, it ensures a rapid response to potential required fixes
 contributors and users receive quick feedback on their issues and
 contributions.
 
-#### Grounds for removal
+### Grounds for removal
 SIG repositories and core repositories may be removed from the project if they
 are deemed _inactive_. Inactive repositories are those that meet any of the
 following criteria:
@@ -100,7 +100,7 @@ project and are generally not subject to removal, except under exceptional
 circumstances (e.g. a code of conduct violation).
 
 
-#### Procedure for removal
+### Procedure for removal
 When a repository is set for removal, it is moved into the
 [kubernetes-retired](https://github.com/kubernetes-retired) organization.
 This maintains the
@@ -111,7 +111,7 @@ use the [github archive feature](https://help.github.com/articles/archiving-a-gi
 The decision to archive a repository will be made by SIG architecture and
 announced on the Kubernetes dev mailing list and community meeting.
 
-### FAQ
+## FAQ
 
 *My project is currently in kubernetes-incubator, what is going to happen to it?*
 
