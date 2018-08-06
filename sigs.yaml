@@ -1589,6 +1589,17 @@ sigs:
       - name: sig-storage-test-failures
         description: Test Failures and Triage
     subprojects:
+    - name: kubernetes-csi
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-csi/csi-test/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/docs/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/driver-registrar/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/drivers/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi.github.io/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/livenessprobe/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/external-attacher/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS
     - name: external-storage
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
