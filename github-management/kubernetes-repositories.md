@@ -86,71 +86,67 @@ contributors and users receive quick feedback on their issues and
 contributions.
 
 ### Grounds for removal
+
 SIG repositories and core repositories may be removed from the project if they
 are deemed _inactive_. Inactive repositories are those that meet any of the
 following criteria:
 
    * There are no longer any active maintainers for the project and no
-replacements can be found.
+     replacements can be found.
    * All PRs or Issues have gone un-addressed for longer than six months.
    * There have been no new commits or other changes in more than a year.
+   * The contents have been folded into another actively maintained project.
 
 Associated repositories are much more loosely associated with the Kubernetes
 project and are generally not subject to removal, except under exceptional
 circumstances (e.g. a code of conduct violation).
 
-
 ### Procedure for removal
-When a repository is set for removal, it is moved into the
-[kubernetes-retired](https://github.com/kubernetes-retired) organization.
-This maintains the
-complete record of issues, PRs and other contributions, but makes it clear
-that the repository should be considered archival, not active. We will also
-use the [github archive feature](https://help.github.com/articles/archiving-a-github-repository/) to mark the repository as archival and read-only.
 
-The decision to archive a repository will be made by SIG architecture and
-announced on the Kubernetes dev mailing list and community meeting.
+When a repository has been deemed eligible for removal, we take the following steps:
+
+    * Ownership of the repo is transferred to the [kubernetes-retired] GitHub organization
+    * The repo description is edited to start with the phrase "[EOL]"
+    * All open issues and PRs are closed
+    * All external collaborators are removed
+    * All webhooks, apps, integrations or services are removed
+    * GitHub Pages are disabled
+    * The repo is marked as archived using [GitHub's archive feature]
+    * The removal is announced on the kubernetes-dev mailing list and community meeting
+
+This maintains the complete record of issues, PRs and other contributions,
+leaves the repository read-only, and makes it clear that the repository
+should be considered retired and unmaintained.
 
 ## FAQ
 
-*My project is currently in kubernetes-incubator, what is going to happen to it?*
+**My project is currently in kubernetes-incubator, what is going to happen to it?**
 
 Nothing. We’ll grandfather existing projects and they can stay in the incubator org for as long as they want to. We expect/hope that most projects will either move out to ecosystem, or into SIG or Core repositories following the same approval process described below.
 
-
-
-*My project wants to graduate from incubator, how can it do that?*
+**My project wants to graduate from incubator, how can it do that?**
 
 Either approval from a SIG to graduate to a SIG repository, or approval from SIG-Architecture to graduate into the core repository.
 
-
-
-*My incubator project wants to go GA, how can it do that?*
+**My incubator project wants to go GA, how can it do that?**
 
 For now, the project determines if and when it is GA. For the future, we may define a cross Kubernetes notion of GA for core and sig repositories, but that’s not in this proposal.
 
-
-
-*My project is currently in core, but doesn’t seem to fit these guidelines, what’s going to happen?*
+**My project is currently in core, but doesn’t seem to fit these guidelines, what’s going to happen?**
 
 For now, nothing. Eventually, we may redistribute projects, but for now the goal is to adapt the process going forward, not re-legislate past decisions.
 
-
-
-*I’m starting a new project, what should I do?*
+**I’m starting a new project, what should I do?**
 
 Is this a SIG-sponsored project? If so, convince some SIG to host it, take it to the SIG mailing list, meeting and get consensus, then the SIG can create a repo for you in the SIG organization.
 
-
-
 Is this a small-group or personal project? If so, create a repository wherever you’d like, and make it an associated project.
-
-
 
 We suggest starting with the kubernetes-template-project to ensure you have the correct code of conduct, license, etc.
 
-
-
-*Much of the things needed (e.g. CLA Bot integration) is missing to support associated projects. Many things seem vague. Help!*
+**Much of the things needed (e.g. CLA Bot integration) is missing to support associated projects. Many things seem vague. Help!**
 
 True, we need to improve these things. For now, do the best you can to conform to the spirit of the proposal (e.g. post the code of conduct, etc)
+
+[GitHub's archive feature]: https://help.github.com/articles/archiving-a-github-repository/
+[kubernetes-retired]: https://github.com/kubernetes-retired
