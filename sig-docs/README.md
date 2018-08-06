@@ -38,9 +38,15 @@ The following subprojects are owned by sig-docs:
 - **kubernetes-bootcamp**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes-bootcamp/master/OWNERS
-- **kubernetes-docs-cn**
+- **kubernetes-docs-ja**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-cn/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-ja/master/OWNERS
+- **kubernetes-docs-ko**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-ko/master/OWNERS
+- **kubernetes-docs-zh**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-zh/master/OWNERS
 - **reference-docs**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
