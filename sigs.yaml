@@ -880,9 +880,15 @@ sigs:
     - name: kubernetes-bootcamp
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes-bootcamp/master/OWNERS
-    - name: kubernetes-docs-cn
+    - name: kubernetes-docs-ja
       owners:
-      - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-cn/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-ja/master/OWNERS
+    - name: kubernetes-docs-ko
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-ko/master/OWNERS
+    - name: kubernetes-docs-zh
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-zh/master/OWNERS
     - name: reference-docs
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
