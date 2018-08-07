@@ -7,12 +7,14 @@ owning-sig: sig-node
 participating-sigs:
   - sig-architecture
 reviewers:
-  - TBD
+  - dchen1107
+  - derekwaynecarr
+  - yujuhong
 approvers:
-  - TBD
-editor: TBD
+  - dchen1107
+  - derekwaynecarr
 creation-date: 2018-06-19
-status: provisional
+status: implementable
 ---
 
 # Runtime Class
@@ -297,8 +299,8 @@ to beta.
 The Kubelet uses an Informer to keep a local cache of all RuntimeClass objects. When a new pod is
 added, the Kubelet resolves the Pod's RuntimeClass against the local RuntimeClass cache.  Once
 resolved, the RuntimeHandler field is passed to the CRI as part of the
-[`RunPodSandboxRequest`][]. At that point, the interpretation of the RuntimeHandler is left to the
-CRI implementation, but it should be cached if needed for subsequent calls.
+[`RunPodSandboxRequest`][runpodsandbox]. At that point, the interpretation of the RuntimeHandler is
+left to the CRI implementation, but it should be cached if needed for subsequent calls.
 
 If the RuntimeClass cannot be resolved (e.g. doesn't exist) at Pod creation, then the request will
 be rejected in admission (controller to be detailed in a following update). If the RuntimeClass
@@ -307,7 +309,7 @@ the Pod. The admission check on a replica recreation will prevent the scheduler 
 the `RuntimeHandler` is not recognized by the CRI implementation, then `RunPodSandbox` will return
 an error.
 
-[RunPodSandboxRequest]: https://github.com/kubernetes/kubernetes/blob/b05a61e299777c2030fbcf27a396aff21b35f01b/pkg/kubelet/apis/cri/runtime/v1alpha2/api.proto#L344
+[runpodsandbox]: https://github.com/kubernetes/kubernetes/blob/b05a61e299777c2030fbcf27a396aff21b35f01b/pkg/kubelet/apis/cri/runtime/v1alpha2/api.proto#L344
 
 ### Risks and Mitigations
 
