@@ -166,3 +166,9 @@ Why should this KEP _not_ be implemented.
 ## Alternatives [optional]
 
 Similar to the `Drawbacks` section the `Alternatives` section is used to highlight and record other possible approaches to delivering the value proposed by a KEP.
+
+## Infrastructure Needed [optional]
+
+Use this section if you need things from the project/SIG.
+Examples include a new subproject, repos requested, github details.
+Listing these here allows a SIG to get the process for these resources started right away.
