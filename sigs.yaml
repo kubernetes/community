@@ -877,9 +877,6 @@ sigs:
       - name: sig-docs-pr-reviews
         description: Documentation PR Reviewers
     subprojects:
-    - name: kubernetes-bootcamp
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/kubernetes-bootcamp/master/OWNERS
     - name: kubernetes-docs-ja
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-ja/master/OWNERS
