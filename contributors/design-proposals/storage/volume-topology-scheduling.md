@@ -862,6 +862,10 @@ processing later in the priority and bind functions.
    temporarily cache this decision in the PVC per Node.
 8. Otherwise return false.
 
+Note that we should consider all the cases which may affect predicate cached
+results of CheckVolumeBinding and other scheduler predicates, this will be
+explained later.
+
 #### Priority
 After all the predicates run, there is a reduced set of Nodes that can fit a
 Pod. A new priority function will rank the remaining nodes based on the
@@ -971,8 +975,9 @@ topology-unaware, and we need to make one more pass in the scheduler after all
 the PVCs are bound.
 
 This predicate needs to remain in the default scheduler to handle the
-already-bound volumes using the old zonal labeling.  It can be removed once that
-mechanism is deprecated and unsupported.
+already-bound volumes using the old zonal labeling, but must be updated to skip
+unbound PVC if StorageClass binding mode is WaitForFirstConsumer. It can be
+removed once that mechanism is deprecated and unsupported.
 
 ##### Volume Node Predicate
 This is a new predicate added in 1.7 to handle the new PV node affinity.  It
@@ -1008,6 +1013,85 @@ an optimization to avoid walking through all the PVs again in priority and
 assume functions.
 * Caching PVC dynamic provisioning decisions per node that the predicate had
   made.
+
+#### Event handling
+
+##### Move pods into active queue
+When a pod is tried and determined to be unschedulable, it will be placed in
+the unschedulable queue by scheduler. It will not be scheduled until being
+moved to active queue. For volume topology scheduling, we need to move
+pods to active queue in following scenarios:
+
+- on PVC add
+
+  Pod which references nonexistent PVCs is unschedulable for now, we need to
+  move pods to active queue when a PVC is added.
+
+- on PVC update
+
+  The proposed design has the scheduler initiating the binding transaction by
+  prebinding the PV and waiting for PV controller to finish binding and put it
+  back in the schedule queue. To achieve this, we need to move pods to active
+  queue on PVC update.
+
+- on PV add
+
+  Pods created when there are no PVs available will be stuck in unschedulable
+  queue. But unbound PVs created for static provisioning and delay binding
+  storage class are skipped in PV controller dynamic provisioning and binding
+  process, will not trigger events to schedule pod again. So we need to move
+  pods to active queue on PV add for this scenario.
+
+- on PV update
+
+  In scheduler assume process, if volume binding is required, scheduler will
+  put pod to unschedulable queue and wait for asynchronous volume binding
+  updates are made. But binding volumes worker may fail to update assumed pod
+  volume bindings due to conflicts if PVs are updated by PV controller or other
+  entities. So we need to move pods to active queue on PV update for this
+  scenario.
+
+- on Storage Class add
+
+  CheckVolumeBindingPred will fail if pod has unbound immediate PVCs. If these
+  PVCs have specified StorageClass name, creating StorageClass objects with
+  late binding for these PVCs will cause predicates to pass, so we need to move
+  pods to active queue when a StorageClass with WaitForFirstConsumer is added.
+
+##### Invalidate predicate equivalence cache
+Scheduler now have an optional [equivalence
+cache](../scheduling/scheduler-equivalence-class.md#goals) to improve
+scheduler's scalability. We need to invalidate
+CheckVolumeBinding/NoVolumeZoneConflict predicate cached results in following
+scenarios to keep equivalence class cache up to date:
+
+- on PVC add/delete
+
+  When PVCs are created or deleted, available PVs to choose from for volume
+  scheduling may change, we need to invalidate CheckVolumeBinding predicate.
+
+- on PVC update
+
+  PVC volume binding may change on PVC update, we need to invalidate
+  CheckVolumeBinding predicate.
+
+- on PV add/delete
+
+  When PVs are created or deleted, available PVs to choose from for volume
+  scheduling will change, we need to to invalidate CheckVolumeBinding
+  predicate.
+
+- on PV update
+
+  CheckVolumeBinding predicate may cache PVs in pod binding cache. When PV got
+  updated, we should invalidate cache, otherwise assume process will fail
+  with out of sync error.
+
+- on StorageClass delete
+
+  When a StorageClass with WaitForFirstConsumer is deleted, PVCs which references
+  this storage class will be in immediate binding mode. We need to invalidate
+  CheckVolumeBinding and NoVolumeZoneConflict.
 
 #### Performance and Optimizations
 Let:
