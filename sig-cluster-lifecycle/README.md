@@ -47,12 +47,12 @@ The following subprojects are owned by sig-cluster-lifecycle:
 - **cluster-api**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
-- **cluster-api-provider-gcp**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
 - **cluster-api-provider-aws**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
+- **cluster-api-provider-gcp**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
 - **cluster-api-provider-openstack**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
@@ -72,6 +72,9 @@ The following subprojects are owned by sig-cluster-lifecycle:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+- **kubeadm-dind-cluster**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kubeadm-dind-cluster/master/OWNERS
 - **kubernetes-anywhere**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS

@@ -692,12 +692,12 @@ sigs:
     - name: cluster-api
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
-    - name: cluster-api-provider-gcp
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
     - name: cluster-api-provider-aws
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
+    - name: cluster-api-provider-gcp
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
     - name: cluster-api-provider-openstack
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
@@ -717,6 +717,9 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+    - name: kubeadm-dind-cluster
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/kubeadm-dind-cluster/master/OWNERS
     - name: kubernetes-anywhere
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
