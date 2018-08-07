@@ -1,5 +1,5 @@
 ---
-kep-number: 14 FIXME(13)
+kep-number: 14
 title: Runtime Class
 authors:
   - "@tallclair"
@@ -176,6 +176,69 @@ const (
 An unspecified RuntimeClassName `""` is equivalent to the `legacy` RuntimeClass, though the field is
 not defaulted to `legacy` (to leave room for configurable defaults in a future update).
 
+#### Examples
+
+Suppose we operate a cluster that lets users choose between native runc containers, and gvisor and
+kata-container sandboxes. We might create the following runtime classes:
+
+```yaml
+kind: RuntimeClass
+apiVersion: node.k8s.io/v1alpha1
+metadata:
+    name: native  # equivalent to 'legacy' for now
+spec:
+    runtimeHandler: runc
+---
+kind: RuntimeClass
+apiVersion: node.k8s.io/v1alpha1
+metadata:
+    name: gvisor
+spec:
+    runtimeHandler: gvisor
+----
+kind: RuntimeClass
+apiVersion: node.k8s.io/v1alpha1
+metadata:
+    name: kata-containers
+spec:
+    runtimeHandler: kata-containers
+----
+# provides the default sandbox runtime when users don't care about which they're getting.
+kind: RuntimeClass
+apiVersion: node.k8s.io/v1alpha1
+metadata:
+  name: sandboxed
+spec:
+  runtimeHandler: gvisor
+```
+
+Then when a user creates a workload, they can choose the desired runtime class to use (or not, if
+they want the default).
+
+```yaml
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sandboxed-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sandboxed-nginx
+  template:
+    metadata:
+      labels:
+        app: sandboxed-nginx
+    spec:
+      runtimeClassName: sandboxed   #   <----  Reference the desired RuntimeClass
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+          protocol: TCP
+```
+
 #### Runtime Handler
 
 The `RuntimeHandler` is passed to the CRI as part of the `RunPodSandboxRequest`:
@@ -280,14 +343,25 @@ RuntimeClasses.
 
 Alpha:
 
-- Everything described in the current proposal
-- [CRI validation test][cri-validation]
+- Everything described in the current proposal:
+  - Introduce the RuntimeClass API resource
+  - Add a RuntimeClassName field to the PodSpec
+  - Add a RuntimeHandler field to the CRI `RunPodSandboxRequest`
+  - Lookup the RuntimeClass for pods & plumb through the RuntimeHandler in the Kubelet (feature
+    gated)
+- RuntimeClass support in at least one CRI runtime & dockershim
+  - Runtime Handlers can be statically configured by the runtime, and referenced via RuntimeClass
+  - An error is reported when the handler or is unknown or unsupported
+- Testing
+  - [CRI validation tests][cri-validation]
+  - Kubernetes E2E tests (only validating single runtime handler cases)
 
 [cri-validation]: https://github.com/kubernetes-incubator/cri-tools/blob/master/docs/validation.md
 
 Beta:
 
-- Major runtimes support RuntimeClass
+- Most runtimes support RuntimeClass, and the current [untrusted annotations](#runtime-handler) are
+  deprecated.
 - RuntimeClasses are configured in the E2E environment with test coverage of a non-legacy RuntimeClass
 - The update & upgrade story is revisited, and a longer-term approach is implemented as necessary.
 - The cluster admin can choose which RuntimeClass is the default in a cluster.
