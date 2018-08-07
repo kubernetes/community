@@ -25,7 +25,7 @@ Contributors: misterikkit
       - [Scoring](#scoring)
       - [Post-scoring/pre-reservation](#post-scoringpre-reservation)
       - [Reserve](#reserve)
-      - [Admit](#admit)
+      - [Permit](#permit)
          - [Approving a Pod binding](#approving-a-pod-binding)
       - [Reject](#reject)
       - [Pre-Bind](#pre-bind)
@@ -52,7 +52,6 @@ its plugins) will eventually replace the current Kubernetes scheduler.
 
 -  make scheduler more extendable.
 -  Make scheduler core simpler by moving some of its features to plugins.
--   scheduler to be extended easily while having high performance.
 -  Propose extension points in the framework.
 -  Propose a mechanism to receive plugin results and continue or abort based
    on the received results.
@@ -71,7 +70,7 @@ making the code larger and logic more complex. A more complex scheduler is
 harder to maintain, its bugs are harder to find and fix, and those users running
 a custom scheduler have a hard time catching up and integrating new changes.  
 The current Kubernetes scheduler provides
-[webhooks to extend](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/scheduler_extender.md)
+[webhooks to extend](./scheduler_extender.md)
 its functionality. However, these are limited in a few ways:
 
 1. The number of extension points are limited: "Filter" extenders are called
@@ -82,7 +81,7 @@ its functionality. However, these are limited in a few ways:
    extender performs binding instead of the scheduler. Extenders cannot be
    invoked at other points, for example, they cannot be called before running
    predicate functions.
-1. Every call to the extenders involves marshaling and unmarshaling JSON.
+1. Every call to the extenders involves marshaling and unmarshalling JSON.
    Calling a webhook (HTTP request) is also slower than calling native functions.
 1. It is hard to inform an extender that scheduler has aborted scheduling of
    a Pod. For example, if an extender provisions a cluster resource and
@@ -127,20 +126,21 @@ extension points.
 ## Bare bones of scheduling
 
 Pods that are not assigned to any node go to a scheduling queue and sorted by
-order specified by plugins (described [here](#heading=h.dggq0ff44y2y)). The
+order specified by plugins (described [here](#scheduling-queue-sort)). The
 scheduling framework picks the head of the queue and starts a **scheduling
 cycle** to schedule the pod. At the end of the cycle scheduler determines
 whether the pod is schedulable or not. If the pod is not schedulable, its status
 is updated and goes back to the scheduling queue. If the pod is schedulable (one
-or more nodes are found that can run the Pod), scoring process is started. The
-scoring process finds the best node to run the Pod.  a bind go routine is
-started to bind the pod.  
+or more nodes are found that can run the Pod), the scoring process is started.
+The scoring process finds the best node to run the Pod. Once the best node is
+picked, the scheduler updates its cache and then a bind go routine is started to
+bind the pod.  
 The above process is the same as what Kubernetes scheduler v1 does. Some of the
 essential features of scheduler v1, such as leader election, will also be
 transferred to the scheduling framework.  
 In the rest of this section we describe how various plugins are used to enrich
-this basic workflow. In this section, we focus on in-process plugins.
-Out-of-process plugins are discussed later in the doc.
+this basic workflow. This document focuses on in-process plugins.
+Out-of-process plugins are discussed later in a separate doc.
 
 ## Communication and statefulness of plugins
 
@@ -163,19 +163,9 @@ not prevent one plugin from accessing or modifying another plugin's state.
 Plugin registration is done by providing an extension point and a function that
 should be called at that extension point. This step will be something like:
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
+```go
 register("pre-filter", plugin.foo)
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+```
 
 The details of the function signature will be provided later.
 
@@ -261,12 +251,12 @@ reflect that the Node is (partially) reserved for the Pod. The actual assignment
 of the Node to the Pod happens during the "Bind" phase. That is when the API
 server updates the Pod object with the Node information.
 
-### Admit
+### Permit
 
-Admit plugins run in a separate go routine (in parallel). Each plugin can return
-one of the three possible values: 1) "admit", 2) "reject", or 3) "wait". If all
-plugins registered at this extension point return "admit", the pod is sent to
-the next step for binding. If any of the plugins returns "reject", the pod is
+Permit plugins run in a separate go routine (in parallel). Each plugin can return
+one of the three possible values: 1) "permit", 2) "deny", or 3) "wait". If all
+plugins registered at this extension point return "permit", the pod is sent to
+the next step for binding. If any of the plugins returns "deny", the pod is
 rejected and sent back to the scheduling queue. If any of the plugins returns
 "wait", the Pod is kept in reserved state until it is explicitly approved for
 binding. A plugin that returns "wait" must return a "timeout" as well. If the
@@ -275,17 +265,17 @@ timeout expires, the pod is rejected and goes back to the scheduling queue.
 #### Approving a Pod binding
 
 While any plugin can receive the list of reserved Pod from the cache and approve
-them,  we expect only the "Admit" plugins to approve binding of reserved Pods
+them,  we expect only the "Permit" plugins to approve binding of reserved Pods
 that are in "waiting" state. Once a Pod is approved, it is sent to the Bind
 stage.
 
 ### Reject
 
-Plugins called at "Admit" may perform some operations that should be undone if
+Plugins called at "Permit" may perform some operations that should be undone if
 the Pod reservation fails. The "Reject" extension point allows such clean-up
 operations to happen. Plugins registered at this point are called if the
 reservation of the Pod is cancelled. The reservation is cancelled if any of the
-"Admit" plugins returns "reject" or if a Pod reservation, which is in "wait"
+"Permit" plugins returns "reject" or if a Pod reservation, which is in "wait"
 state, times out. 
 
 ### Pre-Bind
@@ -348,9 +338,9 @@ Gang scheduling allows a certain number of Pods to be scheduled simultaneously.
 If all the members of the gang cannot be scheduled at the same time, none of
 them should be scheduled. Gang scheduling may have various other features as
 well, but in this context we are interested in simultaneous scheduling of Pods.  
-Gang scheduling in the scheduling framework can be done with an "Admit" plugin.
+Gang scheduling in the scheduling framework can be done with an "Permit" plugin.
 The main scheduling thread processes pods one by one and reserves nodes for
-them. The gang scheduling plugin at the admit stage is invoked for each pod.
+them. The gang scheduling plugin at the Permit stage is invoked for each pod.
 When it finds that the pod belongs to a gang, it checks the properties of the
 gang. If there are not enough members of the gang which are scheduled or in
 "wait" state, the plugin returns "wait". When the number reaches the desired
