@@ -10,12 +10,8 @@ Chat is searchable and public. Do not make comments that you would not say on a 
 Kubernetes adheres to Cloud Native Compute Foundation's [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) throughout the project, and includes all communication mediums.
 
 ## ADMINS
-(by Slack ID and timezone)
-* caniszczyk - CT
-* idvoretskyi - CET
-* jdumars - ET
-* jorge - CT
-* paris - PT
+
+- Check the [centralized list of administrators](./moderators.md) for contact information.
 
 Slack Admins should make sure to mention this in the “What I do” section of their Slack profile, as well as for which time zone.
 
