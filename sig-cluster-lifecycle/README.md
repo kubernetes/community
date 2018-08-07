@@ -28,7 +28,6 @@ The Cluster Lifecycle SIG examines how we should change Kubernetes to make it ea
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Luke Marsden (**[@lukemarsden](https://github.com/lukemarsden)**), Weave
 * Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
 * Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Heptio
