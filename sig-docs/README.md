@@ -35,9 +35,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-docs:
-- **kubernetes-bootcamp**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-bootcamp/master/OWNERS
 - **kubernetes-docs-ja**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-ja/master/OWNERS
