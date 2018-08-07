@@ -623,9 +623,6 @@ sigs:
     label: cluster-lifecycle
     leadership:
       chairs:
-      - name: Luke Marsden
-        github: lukemarsden
-        company: Weave
       - name: Robert Bailey
         github: roberthbailey
         company: Google
