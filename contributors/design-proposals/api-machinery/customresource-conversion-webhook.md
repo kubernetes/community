@@ -89,21 +89,21 @@ type CustomResourceDefinitionSpec struct {
   Version string
   Names CustomResourceDefinitionNames
   Scope ResourceScope
-  // This optional and correspond to the first version in the versions list
-  Validation *CustomResourceValidation
-  // Optional, correspond to the first version in the versions list 
-  Subresources *CustomResourceSubresources
   Versions []CustomResourceDefinitionVersion
-  // Optional, and correspond to the first version in the versions list  
+
+
+  // These fields are optional and correspond to the first version in the versions list
+  Validation *CustomResourceValidation
   AdditionalPrinterColumns []CustomResourceColumnDefinition
+  Subresources *CustomResourceSubresources
 
   Conversion *CustomResourceConversion
 }
 
 type CustomResourceDefinitionVersion struct {
   Name string
-  Served Boolean
-  Storage Boolean
+  Served bool
+  Storage bool
   // These three fields should not be set for first item in Versions list
   Schema *JSONSchemaProp
   Subresources *CustomResourceSubresources
@@ -111,7 +111,7 @@ type CustomResourceDefinitionVersion struct {
 }
 
 Type CustomResourceConversion struct {
-  // Conversion strategy, either "nop” or "webhook”. If webhook is set, Webhook field is required.
+  // Conversion strategy, either "None” or "Webhook”. If Webhook is set, Webhook field is required.
   Strategy string
 
   // Additional information for external conversion if strategy is set to external
@@ -173,25 +173,36 @@ type ConversionReview struct {
   Response *ConversionResponse
 }
 
+// ConversionRequest describes the conversion request parameters.
 type ConversionRequest struct {
-  // UID is an identifier for the individual request/response. Useful for logging.
-  UID types.UID
-  // The version to convert given object to. E.g. "stable.example.com/v1"
-  APIVersion string
-  // Object is the CRD object to be converted.
-  Object runtime.RawExtension
+  // `uid` is an identifier for the individual request/response. It allows us to distinguish instances of requests which are
+  // otherwise identical (parallel requests, requests when earlier requests did not modify etc)
+  // The UID is meant to track the round trip (request/response) between the KAS and the WebHook, not the user request.
+  // It is suitable for correlating log entries between the webhook and apiserver, for either auditing or debugging.
+  UID types.UID `json:"uid" protobuf:"bytes,1,name=uid"`
+  // `desiredAPIVersion` is the version to convert given objects to. e.g. "myapi.example.com/v1"
+  DesiredAPIVersion string `json:"desiredAPIVersion" protobuf:"bytes,2,name=desiredAPIVersion"`
+  // `objects` is the list of CR objects to be converted.
+  Objects []runtime.RawExtension `json:"objects" protobuf:"bytes,3,rep,name=objects"`
 }
 
+// ConversionResponse describes a conversion response.
 type ConversionResponse struct {
-  // UID is an identifier for the individual request/response.
-  // This should be copied over from the corresponding ConversionRequest.
-  UID types.UID
-  // ConvertedObject is the converted version of request.Object.
-  ConvertedObject runtime.RawExtension
+  // `uid` is an identifier for the individual request/response.
+  // This should be copied over from the corresponding AdmissionRequest.
+  UID types.UID `json:"uid" protobuf:"bytes,1,name=uid"`
+  // `convertedObjects` is the list of converted version of `request.objects` if the `result` is successful otherwise empty.
+  // The webhook is expected to set apiVersion of these objects to the ConversionRequest.desiredAPIVersion. The list
+  // should also has the same size as input list with the same objects (i.e. equal UIDs and object meta)
+  ConvertedObjects []runtime.RawExtension `json:"convertedObjects" protobuf:"bytes,2,rep,name=convertedObjects"`
+  // `result` contains the result of conversion with extra details if the conversion failed. `result.status` determines if
+  // the conversion failed or succeeded. The `result.status` field is required.
+  Result metav1.Status `json:"result" protobuf:"bytes,3,name=result"`
 }
+
 ```
 
-If the conversion is failed, the webhook should fail the HTTP request with a proper error code and message that will be used to create a status error for the original API caller.
+Instead of returning failure HTTP status codes, the preferred way for a webhook to indicate a conversion failure is to fill the result field of the response with an error code and message. Non-200 status return codes will be taken to mean there was a problem with the webhook rather than a problem with the object to be converted.
 
 
 ### Monitorability
@@ -225,7 +236,7 @@ error on server: conversion from stored version v1 to requested version v2 for s
 ```
 
 
-For operations that need more than one conversion (e.g. LIST), no partial result will be returned. Instead the whole operation will fail the same way with detailed error messages. To help debugging these kind of operations, the UID of the first failing conversion will also be included in the error message. 
+For operations that need more than one conversion (e.g. LIST), no partial result will be returned. Instead the whole operation will fail the same way with detailed error message. Also the webhook will receive the whole list to convert instead of items one by one.
 
 
 ### Caching
