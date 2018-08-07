@@ -20,6 +20,9 @@ See our [moderation guidelines](./moderating.md) for policies and recommendation
 - Louis Taylor (@kragniz)- CET
 - Nikhita Raghunath (@nikhita) - IT
 
+## GitHub
+
+- [GitHub Administration Team](https://github.com/kubernetes/community/tree/master/github-management#github-administration-team)
 
 ## discuss.kubernetes.io
 
