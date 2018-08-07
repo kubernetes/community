@@ -32,8 +32,7 @@ Contact [SIG Contributor Experience](https://github.com/kubernetes/community/tre
 
 ## Admins
 
-- @parispittman
-- @castrojo
+- Check the [centralized list of administrators](./moderators.md) for contact information.
 
 Each SIG should have at least one person with a paid Zoom account. 
 See the [SIG Creation procedure](https://github.com/kubernetes/community/blob/master/sig-governance.md#sig-creation-procedure) document on how to set up an initial account. 
