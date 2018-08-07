@@ -356,6 +356,31 @@ in-process plugins.
 We do not plan to build OOPPs in the first version of the scheduling framework.
 So, more details on them is to be determined.
 
+
+# DEVELOPMENT PLAN
+
+Earlier, we wanted to develop the scheduling framework as an independent project
+from scheduler V1. However, that would need much engineering resources.
+It would also be more difficult to roll out a new and not fully-backward
+compatible scheduler in Kubernetes where tens of thousands of users depend on
+the behavior of the scheduler.
+After revisiting the ideas and challenges, we changed our plan and have decided
+to build some of the ideas of the scheduling framework into Scheduler V1 to make
+it more extendable.
+
+As the first step, we would like to build:
+ 1. [Pre-bind plugin point](#pre-bind). This will help us move our existing
+ cluster resource binding code, such as persistent volume binding, to plugins.
+ 1. We will also build
+ [the plugin communication mechanism](#communication-and-statefulness-of-plugins).
+ This will allow us to build more sophisticated plugins that would require
+ communication and also help us clean up existing scheduler's code by removing
+ existing transient cache data.
+ 
+More features of the framework can be added to the Scheduler in the future based
+on the requirements.
+
+<s>
 # CONFIGURING THE SCHEDULING FRAMEWORK
 
 TBD
@@ -393,4 +418,5 @@ alternative to the scheduler v1 by the end of Q1 2019 and start the deprecation
 of scheduler v1. We will make it the default scheduler of Kubernetes in Q2 2019,
 but we will keep the option of using scheduler v1 for at least two more release
 cycles.
+</s>
 
