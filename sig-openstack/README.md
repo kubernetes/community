@@ -45,15 +45,15 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-openstack-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-openstack-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-openstack-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack-feature-requests) | Feature Requests |
-| @kubernetes/sig-openstack-misc | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack-misc) | General Discussion |
-| @kubernetes/sig-openstack-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack-pr-reviews) | PR Reviews |
-| @kubernetes/sig-openstack-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack-proposals) | Design Proposals |
-| @kubernetes/sig-openstack-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-openstack-test-failures) | Test Failures and Triage |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-openstack-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-openstack-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-openstack-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-feature-requests) | Feature Requests |
+| @kubernetes/sig-openstack-misc | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-misc) | General Discussion |
+| @kubernetes/sig-openstack-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-pr-reviews) | PR Reviews |
+| @kubernetes/sig-openstack-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-proposals) | Design Proposals |
+| @kubernetes/sig-openstack-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-openstack-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

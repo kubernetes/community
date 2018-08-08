@@ -52,15 +52,15 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-azure-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-azure-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-azure-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-azure-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-azure-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-azure-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-feature-requests) | Feature Requests |
-| @kubernetes/sig-azure-misc | [link](https://github.com/orgs/kubernetes/teams/sig-azure-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-misc) | General Discussion |
-| @kubernetes/sig-azure-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-azure-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-pr-reviews) | PR Reviews |
-| @kubernetes/sig-azure-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-azure-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-proposals) | Design Proposals |
-| @kubernetes/sig-azure-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-azure-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-azure-test-failures) | Test Failures and Triage |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-azure-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-azure-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-azure-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-azure-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-azure-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-azure-feature-requests) | Feature Requests |
+| @kubernetes/sig-azure-misc | [link](https://github.com/orgs/kubernetes/teams/sig-azure-misc) | General Discussion |
+| @kubernetes/sig-azure-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-azure-pr-reviews) | PR Reviews |
+| @kubernetes/sig-azure-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-azure-proposals) | Design Proposals |
+| @kubernetes/sig-azure-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-azure-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 
