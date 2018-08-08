@@ -67,7 +67,9 @@ tokens will be drop in replacements for the current service account tokens.
 Tokens issued from this API may be bound to a Kubernetes object in the same
 namespace as the service account. The name, group, version, kind and uid of the
 object will be embedded as claims in the issued token. A token bound to an
-object will only be valid for as long as that object exists.
+object will only be valid for as long as that object exists. The token will contain
+which container the request comes from if ContainerName was specified. ContainerName
+will only be valid when BoundObjectReference.Kind is 'Pod'.
 
 Only a subset of object kinds will support object binding. Initially the only
 kinds that will be supported are:
@@ -105,6 +107,10 @@ type TokenRequestSpec struct {
   // BoundObjectRef is a reference to an object that the token will be bound to.
   // The token will only be valid for as long as the bound object exists.
   BoundObjectRef *BoundObjectReference
+
+  // ContainerName indicates which container the request comes from. Valid
+  // when BoundObjectRef is Pod.
+  ContainerName string
 }
 
 type BoundObjectReference struct {
@@ -165,6 +171,7 @@ type TokenReviewSpec struct {
 >       "apiVersion": "v1",
 >       "name": "pod-foo-346acf"
 >     }
+>     "containerName": "foo-container",
 >   }
 > }
 {
@@ -180,6 +187,7 @@ type TokenReviewSpec struct {
       "apiVersion": "v1",
       "name": "pod-foo-346acf"
     }
+    "containerName": "foo-container"
   },
   "status": {
     "token":
@@ -209,6 +217,7 @@ The token payload will be:
       "uid": "a4bb8aa4-0168-11e8-92e5-42010af00002",
       "name": "pod-foo-346acf"
     }
+    "containerName": "foo-container"
   }
 }
 ```
