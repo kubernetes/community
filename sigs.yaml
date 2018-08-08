@@ -1742,7 +1742,7 @@ sigs:
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y
-    - description: Cloud Provider vSphere weekly syncup
+    - description: Cloud Provider vSphere bi-weekly syncup
       day: Wednesday
       time: "16:00"
       tz: "UTC"
@@ -1750,6 +1750,14 @@ sigs:
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR
+    - description: Cluster API Provider vSphere bi-weekly syncup
+      day: Wednesday
+      time: "18:00"
+      tz: "UTC"
+      frequency: bi-weekly
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing
+      recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu
     contact:
       slack: sig-vmware
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-vmware
