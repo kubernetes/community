@@ -56,6 +56,22 @@ The existing repository hosting the [DigitalOcean cloud controller manager](http
 
 DigitalOcean recently announced a [Kubernetes offering](https://www.digitalocean.com/products/kubernetes/). Many users have already signed up for early access. DigitalOcean is also a gold member of the CNCF.
 
+### Testgrid Integration
+
+TODO
+
+### CNCF Certified Kubernetes
+
+TODO
+
+### Documentation
+
+TODO
+
+### Technical Leads are members of the Kubernetes Organization
+
+TODO
+
 ## Proposal
 
 ### Subproject Leads

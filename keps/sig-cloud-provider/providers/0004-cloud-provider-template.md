@@ -67,6 +67,21 @@ For [repository requirements](https://github.com/kubernetes/community/blob/maste
 
 There must be a reasonable amount of user feedback about running Kubernetes for this cloud provider. You may want to link to sources that indicate this such as github issues, product data, customer tesitimonials, etc.
 
+### Testgrid Integration
+
+Your cloud provider is reporting conformance test results to TestGrid as per the [Reporting Conformance Test Results to Testgrid KEP](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0003-testgrid-conformance-e2e.md).
+
+### CNCF Certified Kubernetes
+
+Your cloud provider is accepted as part of the [Certified Kubernetes Conformance Program](https://github.com/cncf/k8s-conformance).
+
+### Documentation
+
+There is documentation on running Kubernetes on your cloud provider as per the [cloud provider documentation KEP](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0004-cloud-provider-documentation.md).
+
+### Technical Leads are members of the Kubernetes Organization
+
+All proposed technical leads for this provider must be members of the Kubernetes organization. Membership is used as a signal for technical ability, commitment to the project, and compliance to the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) which we believe are important traits for subproject technical leads. Learn more about Kubernetes community membership [here](https://github.com/kubernetes/community/blob/master/community-membership.md).
 
 ## Proposal
 
