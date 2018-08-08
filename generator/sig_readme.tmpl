@@ -92,9 +92,9 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
 {{- range .Contact.GithubTeams }}
-| @kubernetes/{{.Name}} | [link](https://github.com/orgs/kubernetes/teams/{{.Name}}) | [link](https://groups.google.com/forum/#!forum/kubernetes-{{.Name}}) | {{.Description}} |
+| @kubernetes/{{.Name}} | [link](https://github.com/orgs/kubernetes/teams/{{.Name}}) | {{.Description}} |
 {{- end }}
 {{  end }}

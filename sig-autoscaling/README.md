@@ -46,15 +46,15 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-autoscaling-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-autoscaling-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-autoscaling-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling-feature-requests) | Feature Requests |
-| @kubernetes/sig-autoscaling-misc | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling-misc) | General Discussion |
-| @kubernetes/sig-autoscaling-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling-pr-reviews) | PR Reviews |
-| @kubernetes/sig-autoscaling-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling-proposals) | Design Proposals |
-| @kubernetes/sig-autoscaling-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling-test-failures) | Test Failures and Triage |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-autoscaling-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-autoscaling-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-autoscaling-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-feature-requests) | Feature Requests |
+| @kubernetes/sig-autoscaling-misc | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-misc) | General Discussion |
+| @kubernetes/sig-autoscaling-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-pr-reviews) | PR Reviews |
+| @kubernetes/sig-autoscaling-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-proposals) | Design Proposals |
+| @kubernetes/sig-autoscaling-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Concerns

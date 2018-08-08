@@ -60,10 +60,10 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-docs-maintainers) | Documentation Maintainers |
-| @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-docs-pr-reviews) | Documentation PR Reviewers |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation Maintainers |
+| @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR Reviewers |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals

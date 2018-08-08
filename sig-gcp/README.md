@@ -48,15 +48,15 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-gcp-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-gcp-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-gcp-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-gcp-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-gcp-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-gcp-feature-requests) | Feature Requests |
-| @kubernetes/sig-gcp-misc | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-gcp-misc) | General Discussion |
-| @kubernetes/sig-gcp-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-gcp-pr-reviews) | PR Reviews |
-| @kubernetes/sig-gcp-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-gcp-proposals) | Design Proposals |
-| @kubernetes/sig-gcp-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-gcp-test-failures) | Test Failures and Triage |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-gcp-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-gcp-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-gcp-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-feature-requests) | Feature Requests |
+| @kubernetes/sig-gcp-misc | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-misc) | General Discussion |
+| @kubernetes/sig-gcp-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-pr-reviews) | PR Reviews |
+| @kubernetes/sig-gcp-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-proposals) | Design Proposals |
+| @kubernetes/sig-gcp-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

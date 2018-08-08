@@ -46,15 +46,15 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-auth-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-auth-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-auth-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-auth-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-auth-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-auth-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-auth-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-auth-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-auth-feature-requests) | Feature Requests |
-| @kubernetes/sig-auth-misc | [link](https://github.com/orgs/kubernetes/teams/sig-auth-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-auth-misc) | General Discussion |
-| @kubernetes/sig-auth-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-auth-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-auth-pr-reviews) | PR Reviews |
-| @kubernetes/sig-auth-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-auth-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-auth-proposals) | Design Proposals |
-| @kubernetes/sig-auth-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-auth-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-auth-test-failures) | Test Failures and Triage |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-auth-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-auth-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-auth-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-auth-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-auth-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-auth-feature-requests) | Feature Requests |
+| @kubernetes/sig-auth-misc | [link](https://github.com/orgs/kubernetes/teams/sig-auth-misc) | General Discussion |
+| @kubernetes/sig-auth-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-auth-pr-reviews) | PR Reviews |
+| @kubernetes/sig-auth-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-auth-proposals) | Design Proposals |
+| @kubernetes/sig-auth-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-auth-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals

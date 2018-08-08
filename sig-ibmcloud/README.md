@@ -37,9 +37,9 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-ibmcloud-misc | [link](https://github.com/orgs/kubernetes/teams/sig-ibmcloud-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-ibmcloud-misc) | General Discussion |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-ibmcloud-misc | [link](https://github.com/orgs/kubernetes/teams/sig-ibmcloud-misc) | General Discussion |
 
 <!-- BEGIN CUSTOM CONTENT -->
 
