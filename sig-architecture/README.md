@@ -42,6 +42,9 @@ The following subprojects are owned by sig-architecture:
 - **steering**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
+- **architecture-tracking**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
 
 ## GitHub Teams
 

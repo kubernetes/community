@@ -247,6 +247,9 @@ sigs:
     - name: steering
       owners:
       - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
+    - name: architecture-tracking
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
   - name: Auth
     dir: sig-auth
     mission_statement: >
