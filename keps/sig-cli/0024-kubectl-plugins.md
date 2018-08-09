@@ -16,7 +16,7 @@ approvers:
   - "@soltysh"
 editor: juanvallejo
 creation-date: 2018-07-24
-last-updated: yyyy-mm-dd
+last-updated: 2018-08-09
 status: provisional
 see-also:
   - n/a
@@ -34,6 +34,7 @@ superseded-by:
 * [Table of Contents](#table-of-contents)
 * [Summary](#summary)
 * [Motivation](#motivation)
+    * [Limitations of the Existing Design](#limitations-of-the-existing-design)
     * [Goals](#goals)
     * [Non-Goals](#non-goals)
 * [Proposal](#proposal)
@@ -55,13 +56,44 @@ This allows plugin binaries to override existing command paths and add custom co
 
 ## Motivation
 
+The main motivation behind a plugin system for `kubectl` stems from being able to provide users with a way to extend
+the functionality of `kubectl`, beyond what is offered by its core commands.
+
+By picturing the core commands provided by `kubectl` as essential building blocks for interacting with a Kubernetes
+cluster, we can begin to think of plugins as a means of using these building blocks to provide more complex functionality.
+A new command, `kubectl set-ns`, for example, could take advantage of the rudimentary functionality already provided by
+the `kubectl config` command, and build on top of it to provide users with a powerful, yet easy-to-use way of switching
+to a new namespace.
+
+For example, the user experience for switching namespaces could go from:
+
+```bash
+kubectl config set-context $(kubectl config current-context) --namespace=mynewnamespace
+```
+
+to:
+
+```
+kubectl set-ns mynewnamespace
+```
+
+where `set-ns` would be a user-provided plugin which would call the initial `kubectl config set-context ...` command
+and set the namespace flag according to the value provided as the plugin's first parameter.
+
+The `set-ns` command above could have multiple variations, or be expanded to support subcommands with relative ease.
+Since plugins would be distributed by their authors, independent from the core Kubernetes repository, plugins could
+release updates and changes at their own pace.
+
+### Limitations of the Existing Design
+
 The existing alpha plugin system in `kubectl` presents a few limitations with its current design. 
 It forces plugin scripts and executables to exist in a pre-determined location, requires a per-plugin metadata file for
 interpretation, and does not provide a clear way to override existing command paths or provide additional subcommands 
 without having to override a top-level command.
 
-A re-design plugins system allows us to implement extensibility requests from users that the current system cannot address
-(See https://github.com/kubernetes/kubernetes/issues/53640 and https://github.com/kubernetes/kubernetes/issues/55708).
+The proposed git-style re-design of the plugin system allows us to implement extensibility requests from users that the
+current system is unable to address.
+See https://github.com/kubernetes/kubernetes/issues/53640 and https://github.com/kubernetes/kubernetes/issues/55708.
 
 ### Goals
 
