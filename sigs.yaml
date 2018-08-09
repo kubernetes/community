@@ -423,7 +423,7 @@ sigs:
       slack: sig-azure
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-azure
       teams:
-      - name: sig-azure-misc
+      - name: sig-azure
         description: General Discussion
     subprojects:
     - name: cloud-provider-azure

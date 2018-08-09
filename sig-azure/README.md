@@ -54,7 +54,7 @@ Monitor these for Github activity if you are not a member of the team.
 
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
-| @kubernetes/sig-azure-misc | [link](https://github.com/orgs/kubernetes/teams/sig-azure-misc) | General Discussion |
+| @kubernetes/sig-azure | [link](https://github.com/orgs/kubernetes/teams/sig-azure) | General Discussion |
 
 <!-- BEGIN CUSTOM CONTENT -->
 
