@@ -54,13 +54,7 @@ Monitor these for Github activity if you are not a member of the team.
 
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
-| @kubernetes/sig-azure-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-azure-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-azure-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-azure-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-azure-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-azure-feature-requests) | Feature Requests |
-| @kubernetes/sig-azure-misc | [link](https://github.com/orgs/kubernetes/teams/sig-azure-misc) | General Discussion |
-| @kubernetes/sig-azure-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-azure-pr-reviews) | PR Reviews |
-| @kubernetes/sig-azure-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-azure-proposals) | Design Proposals |
-| @kubernetes/sig-azure-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-azure-test-failures) | Test Failures and Triage |
+| @kubernetes/sig-azure | [link](https://github.com/orgs/kubernetes/teams/sig-azure) | General Discussion |
 
 <!-- BEGIN CUSTOM CONTENT -->
 
