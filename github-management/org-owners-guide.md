@@ -4,6 +4,26 @@ The Kubernetes project leverages multiple GitHub organizations to store and
 organize code. This guide contains the details on how to run those organizations
 for CNCF compliance and for the guidelines of the community.
 
+## SLOs
+
+The [GitHub Administration Team] will aim to handle requests in the following
+time frames:
+- Organization invites should be handled within 72 hours of all requirements for
+  membership being met (all +1s obtained).
+- Repository creation or migration requests should be responded to within 72
+  hours of the issue being opened. There may be information required or specific
+  requirements that take additional time, but once all requirements are met, the
+  repo should be created within 72 hours.
+- Security or moderation requests should be handled ASAP, and coverage should be
+  provided in multiple time zones and countries.
+- All other requests should be responded to within 72 hours of the issue being
+  opened. The time to resolve these requests will vary depending on the
+  specifics of the request.
+
+If a request is taking longer than the above time frames, or there is a need to
+escalate an urgent request, please mention **[@kubernetes/owners]** on the
+associated issue for assistance.
+
 ## Organization Naming
 
 Kubernetes managed organizations should be in the form of `kubernetes-[thing]`.
@@ -60,3 +80,7 @@ for all orgs going forward.  Notable discrepancies at the moment:
 Repositories have additional guidelines and requirements, such as the use of
 CLA checking on all contributions. For more details on those please see the
 [Kubernetes Template Project](https://github.com/kubernetes/kubernetes-template-project), and the [Repository Guidelines](kubernetes-repositories.md)
+
+
+[GitHub Administration Team]: /github-management/README.md#github-administration-team
+[@kubernetes/owners]: https://github.com/orgs/kubernetes/teams/owners

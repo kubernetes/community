@@ -14,6 +14,7 @@ These polices are overseen by the
 Experience Special Interest Group.
 
 ## Guides
+- [Opening a request for assistance with GitHub](opening-a-request.md)
 - [Organization Owners Guide](org-owners-guide.md)
 - [Repository Creation Guidelines](kubernetes-repositories.md)
 - [Setting up the CNCF CLA Check](setting-up-cla-check.md)
