@@ -50,7 +50,7 @@ last-updated: 2018-07-31
 
 Native Golang based resources do not persist JSON fields which are not part of the Golang structs which are backing them in the API server memory. This artifact of the use of typed Golang structs inside of the REST implementation has turned into an API convention. Major parts of the Kubernetes depend on this to ensure consistency of data persisted to etcd and returned from the REST API. 
 
-Without consistency of data in etcd, objects can suddenly render unaccessible on version upgrade because unexpected data may break decoding. Even if persisted data has correct format and decodes correctly, having it not gone through validation and admission when it was stored can break cluster-wide invariants. For example assume the `privileged: true/false` field is added to a type in Kubernetes version X+1. In version X, there is no security check around this. So every user could set that flag if we didn’t drop unknown fields. When the field is added in X+1, that user suddenly has escalated access (note: on read we do not run admission). This is a serious security risk.
+Without consistency of data in etcd, objects can suddenly render unaccessible on version upgrade because unexpected data may break decoding (e.g. in generated, typed clients which are not based on forgiving `unstructured.Unstructured`). Even if persisted data has correct format and decodes correctly, having it not gone through validation and admission when it was stored can break cluster-wide invariants. For example assume the `privileged: true/false` field is added to a type in Kubernetes version X+1. In version X, there is no security check around this. So every user could set that flag if we didn’t drop unknown fields. When the field is added in X+1, that user suddenly has escalated access (note: on read we do not run admission). This is a serious security risk.
 
 CustomResources are persisted as JSON blobs today (with the exception of `ObjectMeta` which is pruned since Kubernetes 1.11), i.e. we do not drop unknown fields, with the described consequences. This proposal is about adding a decoding step named "pruning" into the decoder from JSON to `unstructured.Unstructured` inside the apiextensions-apiserver. This pruning step will drop fields not specified in the OpenAPI validation spec, leading to the same persistence semantics as for native types.
 
@@ -58,7 +58,7 @@ Algorithmically deeply related to validation and pruning is "defaulting", i.e. t
 
 ## Goals
 
-* Prune unknown fields from CustomResources silently. Unknown means not to be specified in the OpenAPI validation spec.
+* Prune unknown fields from CustomResources silently. Unknown means not specified in the OpenAPI validation spec.
 * Allow to opt-out of pruning via the OpenAPI validation spec for a subtree of the JSON objects.
 * Apply OpenAPI validation schema defaults to CustomResources.
 * Have simple semantics for pruning and defaulting.
@@ -71,7 +71,7 @@ Algorithmically deeply related to validation and pruning is "defaulting", i.e. t
 ### Pruning
 Pruning of a JSON value means to remove "unknown fields". A field (given as a JSON path) is unknown if it is not specified in the OpenAPI validation schema.
 
-A JSON path `<JSON path>.x` is specified in an OpenAPI validation schema if `"x" is a key in a corresponding `properties` field in the schema.
+A JSON path `<JSON path>.x` is specified in an OpenAPI validation schema if `"x"` is a key in a corresponding `properties` field in the schema.
 
 #### Example 1
 
@@ -221,6 +221,10 @@ To avoid these and to get sane semantics, **we propose to split the CRD validati
 During standard generic registry validation phase we validate using the full validation schema.
 
 Because the first step succeeds, also the second step succeeds. So we don’t need error handling during defaulting. The third step will catch wrong types of the used defaults.
+
+Note that defaulting – like for native types – will be done
+1. before conversion of the incoming API objects and of objects read from storage and
+2. after mutating admission webhooks (compare [k8s.io/apiserver/pkg/admission/plugin/webhook/mutating/dispatcher.go](https://github.com/kubernetes/kubernetes/blob/e4c219df42c77ecb8f0588197072bef81bca7429/staging/src/k8s.io/apiserver/pkg/admission/plugin/webhook/mutating/dispatcher.go#L152)).
 
 ## Formal Proposal – following pruning option 1
 
@@ -457,6 +461,26 @@ If we do, the object
 ```
 
 is pruned to  `{"x":{"b": 2, "y":{"z": 42}}}`.
+
+## Opt-in and Opt-out of Pruning on CRD Level
+
+We will add a pruning flag to `CustomResourceDefinitionSpec` of `apiextensions.k8s.io/v1beta1`:
+
+```golang
+type CustomResourceDefinitionSpec struct {
+  ...
+	
+  // Prune enables pruning of unspecified fields. Defaults to false.
+  // Note: this will default to true in version v1.
+  Prune *bool
+}
+```
+
+I.e. for `apiextensions.k8s.io/v1beta1` this will default to `false`.
+
+For `apiextensions.k8s.io/v1` we will change the default to `true` and forbid `false` during creation and updates. In `v1` the only way to opt-out from pruning is via setting `x-kubernetes-no-prune: true` in the schema.
+
+When [CRD conversion](https://github.com/mbohlool/community/blob/master/contributors/design-proposals/api-machinery/customresource-conversion-webhook.md) is implemented before this KEP, we will add the pruning field to `type CustomResourceDefinitionVersion`, in analogy to subresources and `additionalPrinterColumns`.
 
 ## Related Topics
 
