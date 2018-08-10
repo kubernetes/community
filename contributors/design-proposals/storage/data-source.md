@@ -13,15 +13,15 @@ For DataSource, we propose to define a new type “TypedLocalObjectReference”.
 ```
 
 type PersistentVolumeClaimSpec struct {
-        // If specified, volume will be prepopulated with data from the DataSource.
+        // If specified, volume will be pre-populated with data from the specified data source.
         // +optional
         DataSource *TypedLocalObjectReference `json:"dataSource" protobuf:"bytes,2,opt,name=dataSource"`
 }
 
 type PersistentVolumeSpec struct {
-        // If specified, volume will be prepopulated with data from the PVCDataSourceRef.
+        // If specified, volume was pre-populated with data from the specified data source.
         // +optional
-        DataSourceRef *ypedLocalObjectReference `json:"dataSourceRef" protobuf:"bytes,2,opt,name=dataSourceRef"`
+        DataSource *ypedLocalObjectReference `json:"dataSourceRef" protobuf:"bytes,2,opt,name=dataSourceRef"`
 }
 
 // TypedLocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
@@ -35,7 +35,7 @@ type TypedLocalObjectReference struct {
 ```
 
 ## Use cases
-* Use snapshot to backup data: Alice wants to take a snapshot of his Mongo database, and accidentally delete her tables, she wants to restore her volumes from the snapshot.
+* Use snapshot to backup data: Alice wants to take a snapshot of her Mongo database, and accidentally delete her tables, she wants to restore her volumes from the snapshot.
 To create a snapshot for a volume (represented by PVC), use the snapshot.yaml
 
 ```
@@ -46,8 +46,8 @@ metadata:
   namespace: myns
 spec:
   source:
-    Kind: PersistentVolumeClaim
-    Name: podpvc
+    kind: PersistentVolumeClaim
+    name: podpvc
   snapshotClassName: snapshot-class
  
  ```
@@ -64,7 +64,7 @@ spec:
     - ReadWriteOnce
   storageClassName: csi-gce-pd
   dataSource:
-    type: VolumeSnapshot
+    kind: VolumeSnapshot
     name: snapshot-pd-1
   resources:
     requests:
@@ -84,7 +84,7 @@ spec:
     - ReadWriteOnce
   storageClassName: csi-gce-pd
   dataSource:
-    type: PersistentVolumeClaim
+    kind: PersistentVolumeClaim
     name: pvc-1
   resources:
     requests:
