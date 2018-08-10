@@ -57,13 +57,5 @@ Monitor these for Github activity if you are not a member of the team.
 | @kubernetes/sig-auth-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-auth-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
-## Goals
-* Discuss improvements Kubernetes Authorization and Authentication, and cluster security policy.
 
-## Non-goals
-* To report specific vulnerabilities in Kubernetes, please report using these instructions: 
-https://kubernetes.io/security/
-* General discussion of Linux security, or of containers is better directed to a non-Kubernetes mailing list.
-* Proactive or general security discussion about Kubelet should go to kubernetes-sig-node@googlegroups.com.
-* Proactive or general security discussion about the API server should go to kubernetes-sig-api-machinery@googlegroups.com.  
 <!-- END CUSTOM CONTENT -->
