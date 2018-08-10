@@ -1,7 +1,7 @@
 ---
 kep-number: 17
 title: Moving ComponentConfig API types to staging repos
-status: provisional
+status: implementable
 authors:
   - "@luxas"
   - "@sttts"
@@ -25,7 +25,7 @@ approvers:
 editor:
   name: "@luxas"
 creation-date: 2018-07-07
-last-updated: 2018-07-07
+last-updated: 2018-08-10
 ---
 
 # Moving ComponentConfig API types to staging repos
@@ -127,7 +127,7 @@ types of the core components’ ComponentConfig in a top-level `config/` package
 ### Non-goals
 
 * Graduate the API versions
-    * For v1.12, we’re working incrementally and will keep the versions of the existing ComponentConfigs.
+    * For v1.12, we’re working incrementally and will keep the API versions of the existing ComponentConfigs.
 * Do major refactoring of the ComponentConfigs. This PR is about code moves, not about re-defining the structure. We will do the latter in follow-ups.
 * Change the components to support reading a config file, do flag precedence correctly or add e2e testing
     * Further, the "load-versioned-config-from-flag" feature in this proposal *should not* be confused with the
@@ -143,7 +143,14 @@ types of the core components’ ComponentConfig in a top-level `config/` package
       make the command support loading configuration files.
     * The new repo can reuse the generic types from the to-be-created, `k8s.io/controller-manager` repo eventually.
     * Meanwhile, the cloud-controller-manager will reference the parts it needs from the main repo, and live privately in `cmd/cloud-controller-manager`
-* Add further defaulting for the external types. The defaulting strategy decision is post-poned, outside of this KEP.
+* Expose defaulting functions for the external ComponentConfig types in `k8s.io/{component}/config` packages.
+    * Defaulting functions will still live local to the component in e.g. `k8s.io/kubernetes/pkg/{component}/apis/config/{version}` and be
+      registered in the default scheme, but won't be publicly exposed in the `k8s.io/{component}` repo.
+    * The only defaulting functions that are published to non-core repos are for the shared config types, in other words in
+      `k8s.io/{apimachinery,apiserver,controller-manager}/pkg/apis/config/{version}`, but **they are not registered in the scheme by default**
+      (with the normal `SetDefault_Foo` method and the `addDefaultingFunc(scheme *runtime.Scheme) { return RegisterDefaults(scheme) }` function).
+      Instead, there will be `RecommendedDefaultFoo` methods exposed, which the consumer of the shared types may or may not manually run in
+      `SetDefaults_Bar` functions (where `Bar` wraps `Foo` as a field).
 
 ### Related proposals and further references
 
@@ -167,7 +174,7 @@ types of the core components’ ComponentConfig in a top-level `config/` package
             * Like `k8s.io/api`
         * Internal types: `k8s.io/kubernetes/pkg/{component}/apis/config`
             * Alternatives, if applicable
-                * `k8s.io/{component}/pkg/apis/config` (preferred)
+                * `k8s.io/{component}/pkg/apis/config` (preferred, in the future)
                 * `k8s.io/kubernetes/cmd/{component}/app/apis/config`
             * If dependencies allow it, we can move them to `k8s.io/{component}/pkg/apis/config/types.go`. Not having the external types there is intentional because the `pkg/` package tree is considered as "on-your-own-risks / no code compatibility guarantees", while `config/` is considered as a code API.
         * Internal scheme package: `k8s.io/kubernetes/pkg/{component}/apis/config/scheme/scheme.go`
@@ -175,15 +182,22 @@ types of the core components’ ComponentConfig in a top-level `config/` package
     * For the move to a staging repo to be possible, the external API package must not depend on the core repo.
         * Hence, all non-staging repo dependencies need to be removed/resolved before the package move.
     * Conversions from the external type to the internal type will be kept in `{internal_api_path}/{external_version}`, like for `k8s.io/api`
-        * Defaulting code will be kept in this package, next to the conversions, if it already exists. We keep the decision about the destiny of defaulting open in this KEP.
+        * Defaulting code will be kept in this package, besides the conversion functions.
+        * The defaulting code here is specific for the usage of the component, and internal by design. If there are defaulting functions we
+          feel would be generally useful, they might be exposed in `k8s.io/{component}/config/{version}/defaults.go` as `RecommendedDefaultFoo`
+          functions that can be used by various consumers optionally.
+    * Add at least some kind of minimum validation coverage for the types (e.g. ranges for integer values, URL scheme/hostname/port parsing,
+      DNS name/label/domain validation) in the `{internal_api_path}/validation` package, targeting the internal API version. The consequence of
+      these validations targeting the internal type is that they can't be exposed in the `k8s.io/{component}` repo, but publishing more
+      functionality like that is out of scope for this KEP and left as a future task. 
 * Create a "shared types"-package with structs generic to all or many componentconfig API groups, in the `k8s.io/apimachinery`, `k8s.io/apiserver` and `k8s.io/controller-manager` repos, depending on the struct.
     * Location: `k8s.io/{apimachinery,apiserver,controller-manager}/pkg/apis/config/{,v1alpha1}`
-    * These aren’t "real" API groups, but have both internal and external versions
+    * These aren’t "real" API groups, but they have both internal and external versions
     * Conversions and internal types are published to the staging repo.
-    * Defaults are moved into the leaf groups using them as much as possible.
-* Remove the monolithic `componentconfig/v1alpha1` API group
+    * Defaulting functions are of the `RecommendedDefaultFoo` format and opt-ins for consumers. No defaulting functions are registered in the scheme.
+* Remove the monolithic `componentconfig/v1alpha1` API group (`pkg/apis/componentconfig`)
 * Enable the staging bot to create the Github repos
-* We do not add further defaulting, but merely keep the minimum defaulting in-place to keep the current behaviour, but remove those defaulting funcs which are not used today.
+* Add API roundtrip (fuzzing), defaulting, conversion, JSON tag consistency and validation tests.
 
 ### Migration strategy per component or k8s.io repo
 
@@ -192,7 +206,7 @@ types of the core components’ ComponentConfig in a top-level `config/` package
 * **Not a "real" API group, instead shared packages only with both external and internal types.**
 * **External Package with defaulting (where absolutely necessary) & conversions**: `k8s.io/apimachinery/pkg/apis/config/v1alpha1/types.go`
 * **Internal Package**: `k8s.io/apimachinery/pkg/apis/config/types.go`
-* Structs to be hosted:
+* Structs to be hosted initially:
     * ClientConnectionConfiguration
 * Assignee: @hanxiaoshuai
 
@@ -201,9 +215,9 @@ types of the core components’ ComponentConfig in a top-level `config/` package
 * **Not a "real" API group, instead shared packages only with both external and internal types.**
 * **External Package with defaulting (where absolutely necessary) & conversions**: `k8s.io/apiserver/pkg/apis/config/v1alpha1/types.go`
 * **Internal Package**: `k8s.io/apiserver/pkg/apis/config/types.go`
-* Structs to be hosted:
-    * LeaderElectionConfiguration
-    * DebuggingConfiguration
+* Structs to be hosted initially:
+    * `LeaderElectionConfiguration`
+    * `DebuggingConfiguration`
     * later to be created: SecureServingConfiguration, AuthenticationConfiguration, AuthorizationConfiguration, etc.
 * Assignee: @hanxiaoshuai
 
@@ -245,7 +259,7 @@ types of the core components’ ComponentConfig in a top-level `config/` package
 * **External Package with defaulting (where absolutely necessary) & conversions**: `k8s.io/controller-manager/pkg/apis/config/v1alpha1/types.go`
 * **Internal Package**: `k8s.io/controller-manager/pkg/apis/config/types.go`
 * Will host structs:
-    * GenericComponentConfiguration (should be renamed to GenericControllerManagerConfiguration at the same time)
+    * `GenericComponentConfiguration` (which will be renamed to `GenericControllerManagerConfiguration`)
 * Assignee: @stewart-yu
 
 #### kube-controller-manager changes
@@ -304,13 +318,15 @@ Dep supports the import of sub-packages without inheriting dependencies from out
 Objective: Done for v1.12
 
 Implementation order:
-* Start with the apiserver and apimachinery shared config repos, copy over the necessary structs as needed and create the external and internal API packages.
-* Start with the scheduler as the first component.
-* One PR for moving `KubeSchedulerConfiguration` to `staging/src/k8s.io/kube-scheduler/config/v1alpha1/types.go`, and the internal type to `pkg/scheduler/apis/config/types.go`.
-    * Set up the conversion for the external type by creating the package `pkg/scheduler/apis/config/v1alpha1`, without `types.go`, like how `k8s.io/api` is set up.
-    * This should be a pure code move.
+* Start with copying over the necessary structs to the `k8s.io/apiserver` and `k8s.io/apimachinery ` shared config packages, with external and internal API versions. The defaulting pattern for these types are of the `RecommendedDefaultFoo` form, in other words defaulting is not part of the scheme.
+* Remove as many unnecessary references to `pkg/apis/componentconfig` from the rest of the core repo as possible
+* Make the types in `pkg/apis/componentconfig` reuse the newly-created types in `k8s.io/apiserver` and `k8s.io/apimachinery `.
+* Start with the scheduler as the first component to be moved out.
+    * One PR for moving `KubeSchedulerConfiguration` to `staging/src/k8s.io/kube-scheduler/config/v1alpha1/types.go`, and the internal type to `pkg/scheduler/apis/config/types.go`.
+        * Set up the conversion for the external type by creating the package `pkg/scheduler/apis/config/v1alpha1`, without `types.go`, like how `k8s.io/api` is set up.
+        * This should be a pure code move.
 * Set up staging publishing bot (async, non-critical)
-* The kubelet, kube-proxy and controller-manager follow, each one independently.
+* The kubelet, kube-proxy and kube-controller-manager types follow, each one independently.
 
 ### OWNERS files for new packages and repos
 
