@@ -19,7 +19,7 @@ issue. If your request is urgent, please escalate to **[@kubernetes/owners]**.
 If you need help with the following:
 - Bot configuration
 - Automatic merging
-- Label issues
+- Issue labelling
 - Automation feedback and feature requests
 
 Please open an issue against the [kubernetes/test-infra] repository describing
