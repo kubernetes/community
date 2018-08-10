@@ -12,20 +12,21 @@ limits depending on type of node.
 
 ### Prerequisite
 
-* This feature will be protected by an alpha feature gate, so as API and CLI changes needed for it. We are planning to call
+* 1.11 This feature will be protected by an alpha feature gate, so as API and CLI changes needed for it. We are planning to call
   the feature `AttachVolumeLimit`.
+* 1.12 This feature will be behind a beta feature gate and enabled by default.
 
 ### API Changes
 
 There is no API change needed for this feature. However existing `node.Status.Capacity` and `node.Status.Allocatable` will
 be extended to cover volume limits available on the node too.
 
-The key name that will store volume will be start with prefix `storage-attach-limits-`. The volume limit key will respect
+The key name that will store volume will be start with prefix `attachable-volumes-`. The volume limit key will respect
 format restrictions applied to Kubernetes Resource names. Volume limit key for existing plugins might look like:
 
 
-* `storage-attach-limits-aws-ebs`
-* `storage-attach-limits-gce-pd`
+* `attachable-volumes-aws-ebs`
+* `attachable-volumes-gce-pd`
 
 `IsScalarResourceName` check will be extended to cover storage limits:
 
@@ -97,9 +98,48 @@ We do not aim to cover all in-tree volume types. We will support dynamic volume 
 
 We expect to add incremental support for other volume types.
 
-### Phase 2
+### Changes for Kubernetes 1.12
 
-CSI implementation will be done in phase 2. The CSI spec change that reports
-volume limits from CSI plugin has been already merged, however we still need to decide
-what is the best way Kubernetes scheduler can identify individual CSI plugin and compare it against
-limit available from node's allocatable.
+For Kubernetes 1.12, we are adding support for CSI and moving the feature to beta.
+
+#### CSI support
+
+A new function of will be added to `pkg/volume/util/attach_limit.go` which will return CSI attach limit
+resource name.
+
+The interface of function will be:
+
+```go
+const (
+    // CSI attach prefix
+    CSIAttachLimitPrefix = "attachable-volumes-csi-"
+
+    // Resource Name length
+    ResourceNameLengthLimit = 63
+)
+
+func GetCSIAttachLimitKey(driverName string) string {
+    csiPrefixLength := len(CSIAttachLimitPrefix)
+    totalkeyLength := csiPrefixLength + len(driverName)
+    if totalkeyLength >= ResourceNameLengthLimit {
+        charsFromDriverName := driverName[:23]
+        // compute SHA1 of driverName and get first 16 chars
+        return CSIAttachLimitPrefix + charsFromDriverName + hashed
+
+    }
+    return CSIAttachLimitPrefix + driverName
+}
+```
+
+This function will be used both on node and scheduler for determining CSI attach limit key.The value of the
+limit will be retrieved using `GetNodeInfo` CSI RPC call and set if non-zero.
+
+##### Changes to scheduler
+
+To support attachable limit for CSI, a new predicate called `CSIMaxVolumeLimitChecker` will be added. It will use `GetCSIAttachLimitKey`
+function defined above for extracting attach limit resource name.
+
+The predicate will be NOOP if feature gate is not enabled or when attachable limits are not available from node object.
+
+Handling delayed binding is out of scope for this proposal and will be fixed in delayed binding and topology aware dynamic
+provisioning.
