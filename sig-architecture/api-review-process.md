@@ -4,7 +4,7 @@
 
 # Process Overview and Motivations
 
-Due to the importance of preserving usability and consistency in Kubernetes APIs, all changes and additions require expert oversight. The API review process is intended to maintain logical and functional integrity of API implementations over time, the consistency of user experience and the ability of previously written tools to function with new APIs. Wherever possible, the API review process should help change submitters follow [established conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md), and not simply reject without cause. 
+Due to the importance of preserving usability and consistency in Kubernetes APIs, all changes and additions require expert oversight. The API review process is intended to maintain logical and functional integrity of the API over time, the consistency of user experience and the ability of previously written tools to function with new APIs. Wherever possible, the API review process should help change submitters follow [established conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md), and not simply reject without cause. 
 
 Because expert reviewer bandwidth is extremely limited, the process provides a curated backlog with highest priority issues at the top. While this does mean some changes may be delayed in favor of other higher priority ones, this will help maintain critical project velocity, transparency, and equilibrium. Ideally, those whose API review priority is shifted in a release-impacting way will be proactively notified by the reviewers.
 
@@ -101,7 +101,7 @@ To begin the process:
 
 * The proposer may follow one of two paths:
 
-    * Complete the coding of the API change.  Create a PR.  Request an API review on the PR.  (In future, the request will be automated based on detecting API changes). The API reviewer will /approve the PR, assuming the change was satisfactory
+    * Complete the coding of the API change.  Create a PR.  Request an API review on the PR.  (In future, the request will be automated based on detecting API changes). The API reviewer will /approve the PR, assuming the change was satisfactory and at least one LGTM has been given by another reviewer
 
     * Write the KEP/documentation including a detailed description of the API.  Request a review on that.  The API reviewer will note in the API review issue the commit SHA at which the KEP was reviewed.  The reviewee will note the API review issue number.  Later, when the PR is ready to add the API, the reviewee files another review ticket (per above path).  The review is expedited because the reviewer only needs to compare the current PR to what was previously approved.  This two step process allows for automation, and allows for KEPs to get API approval before moving forward.
 
@@ -162,6 +162,16 @@ New APIs (groups or Kinds) or substantial changes require KEPs.  Major changes w
 5. Once the review is completed, the report will be made available to the submitters and one of the three labels applied: APPROVED  REVIEWED or UNAPPROVED These may also be added after face-to-face discussions.
 
 6. Either an appeal happens, or the issue is closed
+
+## Review lifecycle timing
+
+Ideally, reviews will happen asquickly as possible, but it is highly dependent on reviewer availability and bandwidth. In general, the following timeframe can be expected:
+
+- time t: create PR in api-reviews
+- time t+1 week: prioritized and queued
+- time t+3 weeks: first review complete
+- time t+4 weeks: subsequent review complete
+- time t+6 weeks: approved or rejected
 
 ## Expanding the Reviewer and Approver Pool
 
