@@ -42,7 +42,7 @@ The following subprojects are owned by sig-testing:
 - **testing-commons**
   - Description: The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project.
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sig-testing/frameworks/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
   - Meetings:
     - Testing Commons: [Wednesdays at 07:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29).
@@ -57,15 +57,15 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-testing-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-testing-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-testing-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-testing-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-testing-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-testing-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-testing-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-testing-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-testing-feature-requests) | Feature Requests |
-| @kubernetes/sig-testing-misc | [link](https://github.com/orgs/kubernetes/teams/sig-testing-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-testing-misc) | General Discussion |
-| @kubernetes/sig-testing-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-testing-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-testing-pr-reviews) | PR Reviews |
-| @kubernetes/sig-testing-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-testing-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-testing-proposals) | Design Proposals |
-| @kubernetes/sig-testing-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-testing-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-testing-test-failures) | Test Failures and Triage |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-testing-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-testing-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-testing-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-testing-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-testing-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-testing-feature-requests) | Feature Requests |
+| @kubernetes/sig-testing-misc | [link](https://github.com/orgs/kubernetes/teams/sig-testing-misc) | General Discussion |
+| @kubernetes/sig-testing-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-testing-pr-reviews) | PR Reviews |
+| @kubernetes/sig-testing-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-testing-proposals) | Design Proposals |
+| @kubernetes/sig-testing-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-testing-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

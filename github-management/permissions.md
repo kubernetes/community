@@ -36,7 +36,8 @@ There are certain actions that require org owner access:
 - Transfer repositories
 - Approve GitHub application integrations
 
-**// TODO(cblecker):** Define specific roles that need this.
+In the Kubernetes project, this role is held by the
+[GitHub Administration Team].
 
 ### Member
 
@@ -93,6 +94,7 @@ member in the organization.
 
 [bot commands]: https://go.k8s.io/bot-commands
 [community membership]: /community-membership.md
+[GitHub Administration Team]: /github-management/README.md#github-administration-team
 [org permissions]:
 https://help.github.com/articles/permission-levels-for-an-organization/
 [OWNERS]: /contributors/guide/owners.md

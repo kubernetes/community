@@ -8,7 +8,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Service Catalog Special Interest Group
 
-To develop a Kubernetes API for the CNCF service broker and Kubernetes broker implementation.
+Service Catalog is a Kubernetes extension project that implements the [Open Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI). It allows application developers the ability to provision and consume cloud services natively from within Kubernetes.
+
+The [charter](https://github.com/kubernetes/community/blob/master/sig-service-catalog/charter.md) defines the scope and governance of the Service Catalog Special Interest Group.
 
 ## Meetings
 * Regular SIG Meeting: [Mondays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
@@ -46,15 +48,15 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-service-catalog-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-service-catalog-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-service-catalog-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog-feature-requests) | Feature Requests |
-| @kubernetes/sig-service-catalog-misc | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog-misc) | General Discussion |
-| @kubernetes/sig-service-catalog-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog-pr-reviews) | PR Reviews |
-| @kubernetes/sig-service-catalog-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog-proposals) | Design Proposals |
-| @kubernetes/sig-service-catalog-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog-test-failures) | Test Failures and Triage |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-service-catalog-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-service-catalog-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-service-catalog-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-feature-requests) | Feature Requests |
+| @kubernetes/sig-service-catalog-misc | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-misc) | General Discussion |
+| @kubernetes/sig-service-catalog-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-pr-reviews) | PR Reviews |
+| @kubernetes/sig-service-catalog-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-proposals) | Design Proposals |
+| @kubernetes/sig-service-catalog-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

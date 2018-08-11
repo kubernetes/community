@@ -247,12 +247,15 @@ sigs:
     - name: steering
       owners:
       - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
+    - name: architecture-tracking
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
   - name: Auth
     dir: sig-auth
     mission_statement: >
       Covers improvements to Kubernetes authorization, authentication, and
       cluster security policy.
-    charter_link:
+    charter_link: charter.md
     label: auth
     leadership:
       chairs:
@@ -407,9 +410,6 @@ sigs:
       - name: Kal Khenidak
         github: khenidak
         company: Microsoft
-      - name: Cole Mickens
-        github: colemickens
-        company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -423,20 +423,8 @@ sigs:
       slack: sig-azure
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-azure
       teams:
-      - name: sig-azure-api-reviews
-        description: API Changes and Reviews
-      - name: sig-azure-bugs
-        description: Bug Triage and Troubleshooting
-      - name: sig-azure-feature-requests
-        description: Feature Requests
-      - name: sig-azure-misc
+      - name: sig-azure
         description: General Discussion
-      - name: sig-azure-pr-reviews
-        description: PR Reviews
-      - name: sig-azure-proposals
-        description: Design Proposals
-      - name: sig-azure-test-failures
-        description: Test Failures and Triage
     subprojects:
     - name: cloud-provider-azure
       owners:
@@ -626,9 +614,6 @@ sigs:
     label: cluster-lifecycle
     leadership:
       chairs:
-      - name: Luke Marsden
-        github: lukemarsden
-        company: Weave
       - name: Robert Bailey
         github: roberthbailey
         company: Google
@@ -695,12 +680,12 @@ sigs:
     - name: cluster-api
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
-    - name: cluster-api-provider-gcp
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
     - name: cluster-api-provider-aws
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
+    - name: cluster-api-provider-gcp
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
     - name: cluster-api-provider-openstack
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
@@ -720,6 +705,9 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+    - name: kubeadm-dind-cluster
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/kubeadm-dind-cluster/master/OWNERS
     - name: kubernetes-anywhere
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
@@ -820,9 +808,11 @@ sigs:
     - name: github-management
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
-    - name: contributors-guide
+      - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
+    - name: contributors-documentation
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
     - name: devstats
       owners:
       - Phillels
@@ -878,12 +868,15 @@ sigs:
       - name: sig-docs-pr-reviews
         description: Documentation PR Reviewers
     subprojects:
-    - name: kubernetes-bootcamp
+    - name: kubernetes-docs-ja
       owners:
-      - https://raw.githubusercontent.com/kubernetes/kubernetes-bootcamp/master/OWNERS
-    - name: kubernetes-docs-cn
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-ja/master/OWNERS
+    - name: kubernetes-docs-ko
       owners:
-      - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-cn/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-ko/master/OWNERS
+    - name: kubernetes-docs-zh
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-zh/master/OWNERS
     - name: reference-docs
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
@@ -932,6 +925,12 @@ sigs:
     - name: cloud-provider-gcp
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
+    - name: gcp-compute-persistent-disk-csi-driver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/master/OWNERS
+    - name: gcp-filestore-csi-driver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/gcp-filestore-csi-driver/master/OWNERS
   - name: IBMCloud
     dir: sig-ibmcloud
     mission_statement: >
@@ -1052,7 +1051,7 @@ sigs:
       recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
     - description: Federation v2 Working Group
       day: Wednesday
-      time: "9:30"
+      time: "7:30"
       tz: "PT (Pacific Time)"
       frequency: weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
@@ -1500,9 +1499,10 @@ sigs:
   - name: Service Catalog
     dir: sig-service-catalog
     mission_statement: >
-      To develop a Kubernetes API for the CNCF service broker and Kubernetes
-      broker implementation.
-    charter_link:
+      Service Catalog is a Kubernetes extension project that
+      implements the [Open Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI).
+      It allows application developers the ability to provision and consume cloud services natively from within Kubernetes.
+    charter_link: https://github.com/kubernetes/community/blob/master/sig-service-catalog/charter.md
     label: service-catalog
     leadership:
       chairs:
@@ -1663,7 +1663,7 @@ sigs:
     - name: testing-commons
       description: "The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project."
       owners:
-      - https://raw.githubusercontent.com/kubernetes-sig-testing/frameworks/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
       meetings:
       - description: Testing Commons
@@ -1732,7 +1732,7 @@ sigs:
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y
     - description: Cloud Provider vSphere weekly syncup
       day: Wednesday
-      time: "21:00"
+      time: "16:00"
       tz: "UTC"
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
@@ -1759,9 +1759,9 @@ sigs:
       - name: sig-vmware-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: cloud-provider-vsphere
+    - name: cluster-api-provider-vsphere
       owners:
-      - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
   - name: Windows
     dir: sig-windows
     mission_statement: >

@@ -1,7 +1,13 @@
 reviewers:
+  - calebamiles
   - cblecker
+  - fejta
+  - grodrigues3
+  - idvoretskyi
+  - spiffxp
 approvers:
   - cblecker
+  - grodrigues3
 labels:
   - sig/contributor-experience
   - area/github-management

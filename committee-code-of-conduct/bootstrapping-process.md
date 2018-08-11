@@ -5,7 +5,7 @@ This document (created by the Kubernetes Steering Committee) outlines what the C
 ## Objectives of the CoCC
 * Maintain the Code of Conduct (CoC) document and iterate as needed.
   * All CoC revisions must be approved by the Steering Committee.
-  * Currently, we use the CNCF CoC. Any adendums or changes based off learnings in the Kubernetes community should be owned by this body of people, the Kubernetes Code of Conduct Committee (CoCC).
+  * Currently, we use the CNCF CoC. Any addendums or changes based off learnings in the Kubernetes community should be owned by this body of people, the Kubernetes Code of Conduct Committee (CoCC).
 * Determine and make transparent how CoC issues and incidents are reported and handled in the community.
 * Enforce the Code of Conduct within the Kubernetes community.
   * Discuss with parties affected
@@ -16,13 +16,13 @@ This document (created by the Kubernetes Steering Committee) outlines what the C
 ## Formation of the Code of Conduct Committee (CoCC):
 * The CoCC consists of 5 members. In the first election, the top 3 voted people will be appointed 2 year terms and the other 2 members will be appointed for a 1 year term.
   * CoCC members appointed for a 1 year term may be elected again the following year.
-  * The Steering Committee and SIG Chairs are eligble to nominate people for the Code of Conduct Committee (CoCC). _This may change during the next election._
+  * The Steering Committee and SIG Chairs are eligible to nominate people for the Code of Conduct Committee (CoCC). _This may change during the next election._
   * The Steering Committee votes on nominees for the CoCC
 * Characteristics and Guidance for nominating people for the CoCC:
   * Do not have to be part of the Kubernetes or CNCF community
   * Previous experience on an Ethics Committee or Code of Conduct Committee is appreciated
   * Has demonstrated integrity, professionalism, and positive influence within the community
-  * Experience with the tools which we use to communicate (Zoom, Slack, GitHub, etc.) within the Kubernbetes community is appreciated
+  * Experience with the tools which we use to communicate (Zoom, Slack, GitHub, etc.) within the Kubernetes community is appreciated
   * Is generally a responsible human
 * The members of the Code of Conduct Committee (CoCC) will be public so the people who report CoC issues know exactly who they are working with.
 

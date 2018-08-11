@@ -3,6 +3,8 @@
 This page describes the rules and best practices for people chosen to moderate Kubernetes communications channels. 
 This includes, Slack and the mailing lists and _any communication tool_ used in an official manner by the project. 
 
+- Check the [centralized list of administrators](./moderators.md) for contact information.
+
 ## Roles and Responsibilities
 
 As part of volunteering to become a moderator you are now representative of the Kubernetes community and it is your responsibility to remain aware of your contributions in this space. 

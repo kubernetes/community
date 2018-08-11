@@ -11,8 +11,6 @@ necessarily all of the internals.
 
 ### In scope
 
-Link to SIG section in [sigs.yaml]
-
 #### Code, Binaries and Services
 
 - list of what qualifies a piece of code, binary or service
@@ -20,7 +18,7 @@ Link to SIG section in [sigs.yaml]
 - e.g. *clis for working with Kubernetes APIs*, 
 - *CI for kubernetes repos*, etc
 - **This is NOT** a list of specific code locations,
-- or projects those go in [sigs.yaml]
+- or projects those go in [SIG Subprojects][sig-subprojects]
 
 #### Cross-cutting and Externally Facing Processes
 
@@ -62,5 +60,5 @@ Pick one:
 2. Federation of Subprojects
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
-[sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1454
+[sig-subprojects]: https://github.com/kubernetes/community/blob/master/sig-YOURSIG/README.md#subprojects
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md

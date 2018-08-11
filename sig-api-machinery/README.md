@@ -107,15 +107,15 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-api-machinery-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-api-machinery-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-api-machinery-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery-feature-requests) | Feature Requests |
-| @kubernetes/sig-api-machinery-misc | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery-misc) | General Discussion |
-| @kubernetes/sig-api-machinery-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery-pr-reviews) | PR Reviews |
-| @kubernetes/sig-api-machinery-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery-proposals) | Design Proposals |
-| @kubernetes/sig-api-machinery-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery-test-failures) | Test Failures and Triage |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-api-machinery-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-api-machinery-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-api-machinery-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-feature-requests) | Feature Requests |
+| @kubernetes/sig-api-machinery-misc | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-misc) | General Discussion |
+| @kubernetes/sig-api-machinery-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-pr-reviews) | PR Reviews |
+| @kubernetes/sig-api-machinery-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-proposals) | Design Proposals |
+| @kubernetes/sig-api-machinery-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Additional links

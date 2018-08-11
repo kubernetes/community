@@ -49,9 +49,11 @@ The following subprojects are owned by sig-contributor-experience:
 - **github-management**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
-- **contributors-guide**
+    - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
+- **contributors-documentation**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
 - **devstats**
   - Owners:
     - Phillels
@@ -74,14 +76,14 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-contributor-experience-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-contributor-experience-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-contributor-experience-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-contributor-experience-feature-requests) | Feature Requests |
-| @kubernetes/sig-contributor-experience-misc-use-only-as-a-last-resort | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-misc-use-only-as-a-last-resort) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-contributor-experience-misc-use-only-as-a-last-resort) | General Discussion |
-| @kubernetes/sig-contributor-experience-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-contributor-experience-pr-reviews) | PR Reviews |
-| @kubernetes/sig-contributor-experience-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-contributor-experience-proposals) | Design Proposals |
-| @kubernetes/sig-contributor-experience-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-contributor-experience-test-failures) | Test Failures and Triage |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-contributor-experience-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-contributor-experience-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-feature-requests) | Feature Requests |
+| @kubernetes/sig-contributor-experience-misc-use-only-as-a-last-resort | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-misc-use-only-as-a-last-resort) | General Discussion |
+| @kubernetes/sig-contributor-experience-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-pr-reviews) | PR Reviews |
+| @kubernetes/sig-contributor-experience-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-proposals) | Design Proposals |
+| @kubernetes/sig-contributor-experience-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

@@ -1,3 +1,21 @@
+---
+kep-number: 22
+title: Cloud Provider BaiduCloud
+authors:
+  - "@tizhou86"
+owning-sig: sig-cloud-provider
+reviewers:
+  - "@andrewsykim"
+approvers:
+  - "@andrewsykim"
+  - "@hogepodge"
+  - "@jagosan"
+editor: TBD
+creation-date: 2018-07-23
+last-updated: 2018-07-23
+status: provisional
+
+---
 # Cloud Provider BaiduCloud
 
 ## Table of Contents
@@ -20,7 +38,7 @@ Baidu is a gold member of CNCF and we have a large team working on Kubernetes an
 
 - Building, deploying, maintaining, supporting, and using Kubernetes on Baidu Cloud Container Engine(CCE) and Baidu Private Cloud(BPC). Both of the project are built on Kubernetes and related CNCF project.
 
-- Designing, discussing, and maintaining the cloud-provider-baidu repository under Github Kubernetes project. 
+- Designing, discussing, and maintaining the cloud-provider-baidu repository under Github Kubernetes project.
 
 ### Non-Goals
 
@@ -47,6 +65,21 @@ CCE-ticket-2: User want to modify the image repository's username.
 ![CCE-ticket-3](http://agroup-bos.su.bcebos.com/7a4506fcb1fbeeb15c86060cfbb6e69d090c8984)
 CCE-ticket-3: User want to have multi-tenant ability in a shared large CCE cluster.
 
+### Testgrid Integration
+
+TODO
+
+### CNCF Certified Kubernetes
+
+TODO
+
+### Documentation
+
+TODO
+
+### Technical Leads are members of the Kubernetes Organization
+
+TODO
 
 ## Proposal
 

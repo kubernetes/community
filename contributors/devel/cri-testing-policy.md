@@ -50,16 +50,16 @@ To publish tests results, please submit a proposal in the
 briefly explaining your runtime, providing at least two maintainers, and
 assigning the proposal to the leads of SIG-Node.
 
-These test results should be published under the `sig-node` tab, grouped by the
-runtimes, organized as follows.
+These test results should be published under the `sig-node` tab, organized
+as follows.
 
 ```
-sig-node -> sig-node-{Kubernetes-version} -> sig-node-{runtime-name} -> [page containing all test jobs]
+sig-node -> sig-node-cri-{Kubernetes-version} -> [page containing the required jobs]
 ```
 
-The `sig-node` tab only lists up to three most recent Kubernetes versions,
-including the master branch for the current release cycle, e.g.,
-`sig-node-master, sig-node-1.9, sig-node-1.8`.
+Only the last three most recent Kubernetes versions and the master branch are
+kept at any time. This is consistent with the Kubernetes release schedule and
+policy.
 
 ## Test job maintenance
 

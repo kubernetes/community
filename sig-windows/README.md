@@ -37,11 +37,11 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-windows-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-windows-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-windows-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-windows-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-windows-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-windows-feature-requests) | Feature Requests |
-| @kubernetes/sig-windows-misc | [link](https://github.com/orgs/kubernetes/teams/sig-windows-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-windows-misc) | General Discussion |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-windows-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-windows-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-windows-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-windows-feature-requests) | Feature Requests |
+| @kubernetes/sig-windows-misc | [link](https://github.com/orgs/kubernetes/teams/sig-windows-misc) | General Discussion |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Getting Started

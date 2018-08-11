@@ -16,7 +16,7 @@ approvers:
 editor: TBD
 creation-date: 2018-04-03
 last-updated: 2018-04-17
-status: provisional
+status: implemented
 ---
 
 # A community forum for Kubernetes

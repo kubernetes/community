@@ -1,6 +1,6 @@
 ---
 kep-number: draft-20180412
-title: Kubeadm Config Draft
+title: Kubeadm Config versioning
 authors:
   - "@liztio"
 owning-sig: sig-cluster-lifecycle
@@ -18,7 +18,7 @@ replaces: []
 superseded-by: []
 ---
 
-# Kubeadm Config to Beta
+# Kubeadm Config Versioning
 
 ## Table of Contents
 

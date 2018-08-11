@@ -63,9 +63,25 @@ Also, if you are doing a live coding demo, please make sure it has a reasonable 
 - Ensure you are presenting from a quiet environment.
 - If you run out of time while performing your demo, you may ask the audience if they would like a follow-up at a subsequent meeting. If there is enthusiastic support, the community team will help schedule a continuation.
 
-## SIG Updates 
+## SIG Updates
 
-SIGs will give a community update at least once per release cycle per the [schedule](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k). 
+SIGs will give a community update at least once per release cycle per the [schedule](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k).
+The SIG Update should mention:
+
+- Topics where input is being sought from other SIGs
+- Topics that could affect other SIGs
+- Currently active themes and goals in the SIG
+  - Broad description of future themes and goals if possible
+- Status of any notable features that are transitioning across the spectrum of incubation, alpha, beta, stable/GA, or are being deprecated
+- New or deprecated subprojects
+- Leadership position changes or updates
+- Charter status and updates, if any
+- How people can contribute, areas where help is needed
+- Any pending Kubernetes Enhancement Proposals (KEPs) or general big ideas that might warrant outside input
+- Prior 1.X.Y release patches in flight status
+- Current 1.X release targeted feature status
+
+Since you only usually have ~10 minutes generally speaking if something is internal only to your SIG and doesn't affect others it doesn't need to be mentioned, people can always attend your SIG meeting for the details.
 
 ## Archives
 

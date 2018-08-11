@@ -78,15 +78,15 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-apps-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-apps-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-apps-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-apps-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-apps-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-apps-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-apps-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-apps-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-apps-feature-requests) | Feature Requests |
-| @kubernetes/sig-apps-misc | [link](https://github.com/orgs/kubernetes/teams/sig-apps-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-apps-misc) | General Discussion |
-| @kubernetes/sig-apps-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-apps-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-apps-pr-reviews) | PR Reviews |
-| @kubernetes/sig-apps-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-apps-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-apps-proposals) | Design Proposals |
-| @kubernetes/sig-apps-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-apps-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-apps-test-failures) | Test Failures and Triage |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-apps-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-apps-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-apps-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-apps-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-apps-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-apps-feature-requests) | Feature Requests |
+| @kubernetes/sig-apps-misc | [link](https://github.com/orgs/kubernetes/teams/sig-apps-misc) | General Discussion |
+| @kubernetes/sig-apps-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-apps-pr-reviews) | PR Reviews |
+| @kubernetes/sig-apps-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-apps-proposals) | Design Proposals |
+| @kubernetes/sig-apps-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-apps-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

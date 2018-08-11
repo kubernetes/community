@@ -51,17 +51,17 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-release-admins | [link](https://github.com/orgs/kubernetes/teams/sig-release-admins) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-release-admins) | Release Team Admins |
-| @kubernetes/sig-release-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-release-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-release-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-release-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-release-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-release-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-release-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-release-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-release-feature-requests) | Feature Requests |
-| @kubernetes/sig-release-members | [link](https://github.com/orgs/kubernetes/teams/sig-release-members) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-release-members) | Release Team Members |
-| @kubernetes/sig-release-misc | [link](https://github.com/orgs/kubernetes/teams/sig-release-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-release-misc) | General Discussion |
-| @kubernetes/sig-release-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-release-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-release-pr-reviews) | PR Reviews |
-| @kubernetes/sig-release-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-release-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-release-proposals) | Design Proposals |
-| @kubernetes/sig-release-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-release-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-release-test-failures) | Test Failures and Triage |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-release-admins | [link](https://github.com/orgs/kubernetes/teams/sig-release-admins) | Release Team Admins |
+| @kubernetes/sig-release-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-release-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-release-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-release-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-release-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-release-feature-requests) | Feature Requests |
+| @kubernetes/sig-release-members | [link](https://github.com/orgs/kubernetes/teams/sig-release-members) | Release Team Members |
+| @kubernetes/sig-release-misc | [link](https://github.com/orgs/kubernetes/teams/sig-release-misc) | General Discussion |
+| @kubernetes/sig-release-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-release-pr-reviews) | PR Reviews |
+| @kubernetes/sig-release-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-release-proposals) | Design Proposals |
+| @kubernetes/sig-release-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-release-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 [SIG Release][] has moved!

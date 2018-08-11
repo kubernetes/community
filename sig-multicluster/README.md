@@ -14,7 +14,7 @@ A Special Interest Group focused on solving common challenges related to the man
 * Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
-* Federation v2 Working Group: [Wednesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+* Federation v2 Working Group: [Wednesdays at 7:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=7:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3iKP5EzMbtNT2zOZv6RCrX).
 
@@ -56,15 +56,15 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-multicluster-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-multicluster-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-multicluster-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster-feature-requests) | Feature Requests |
-| @kubernetes/sig-multicluster-misc | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster-misc) | General Discussion |
-| @kubernetes/sig-multicluster-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster-pr-reviews) | PR Reviews |
-| @kubernetes/sig-multicluster-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster-test-failures) | Test Failures and Triage |
-| @kubernetes/sig-mutlicluster-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-mutlicluster-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-mutlicluster-proposals) | Design Proposals |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-multicluster-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-multicluster-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-multicluster-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-feature-requests) | Feature Requests |
+| @kubernetes/sig-multicluster-misc | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-misc) | General Discussion |
+| @kubernetes/sig-multicluster-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-pr-reviews) | PR Reviews |
+| @kubernetes/sig-multicluster-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-test-failures) | Test Failures and Triage |
+| @kubernetes/sig-mutlicluster-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-mutlicluster-proposals) | Design Proposals |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Subprojects

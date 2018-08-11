@@ -14,10 +14,35 @@ These polices are overseen by the
 Experience Special Interest Group.
 
 ## Guides
+- [Opening a request for assistance with GitHub](opening-a-request.md)
 - [Organization Owners Guide](org-owners-guide.md)
 - [Repository Creation Guidelines](kubernetes-repositories.md)
 - [Setting up the CNCF CLA Check](setting-up-cla-check.md)
 - [GitHub Permissions](permissions.md)
+
+## GitHub Administration Team
+
+In order to manage the various organizations that the Kubernetes project owns,
+we have a GitHub Administration team that is responsible for carrying out the
+various tasks.
+
+This team (**[@kubernetes/owners](https://github.com/orgs/kubernetes/teams/owners)**) is as follows:
+* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**, US Pacific)
+* Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**, US Pacific)
+* Christoph Blecker (**[@cblecker](https://github.com/cblecker)**, CA Pacific)
+* Erick Fejta (**[@fejta](https://github.com/fejta)**, US Pacific)
+* Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**, US Pacific)
+* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**, UA Eastern European)
+
+This team is responsible for holding Org Owner privileges over all the active
+Kubernetes orgs, and will take action in accordance with our polices and
+procedures. All members of this team are subject to the Kubernetes
+[security embargo policy](https://git.k8s.io/sig-release/security-release-process-documentation/security-release-process.md#embargo-policy).
+
+Nominations to this team will come from the Contributor Experience SIG, and
+require confirmation by the Steering Committee before taking effect. Time zones
+and country of origin should be considered when selecting membership, to ensure
+sufficient after North American business hours and holiday coverage.
 
 ## Project Owned Organizations
 

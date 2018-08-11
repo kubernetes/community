@@ -53,16 +53,16 @@ The google groups contain the archive of Github team notifications.
 Mentioning a team on Github will CC its group.
 Monitor these for Github activity if you are not a member of the team.
 
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
-| @kubernetes/sig-cli-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cli-api-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-cli-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-cli-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-cli-bugs) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-cli-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-cli-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-cli-feature-requests) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-cli-feature-requests) | Feature Requests |
-| @kubernetes/sig-cli-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-cli-maintainers) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-cli-maintainers) | CLI Maintainers |
-| @kubernetes/sig-cli-misc | [link](https://github.com/orgs/kubernetes/teams/sig-cli-misc) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-cli-misc) | General Discussion |
-| @kubernetes/sig-cli-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cli-pr-reviews) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-cli-pr-reviews) | PR Reviews |
-| @kubernetes/sig-cli-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-cli-proposals) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-cli-proposals) | Design Proposals |
-| @kubernetes/sig-cli-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-cli-test-failures) | [link](https://groups.google.com/forum/#!forum/kubernetes-sig-cli-test-failures) | Test Failures and Triage |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
+| @kubernetes/sig-cli-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cli-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-cli-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-cli-bugs) | Bug Triage and Troubleshooting |
+| @kubernetes/sig-cli-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-cli-feature-requests) | Feature Requests |
+| @kubernetes/sig-cli-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-cli-maintainers) | CLI Maintainers |
+| @kubernetes/sig-cli-misc | [link](https://github.com/orgs/kubernetes/teams/sig-cli-misc) | General Discussion |
+| @kubernetes/sig-cli-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cli-pr-reviews) | PR Reviews |
+| @kubernetes/sig-cli-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-cli-proposals) | Design Proposals |
+| @kubernetes/sig-cli-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-cli-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 
