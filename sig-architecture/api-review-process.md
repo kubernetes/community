@@ -165,7 +165,7 @@ New APIs (groups or Kinds) or substantial changes require KEPs.  Major changes w
 
 ## Review lifecycle timing
 
-Ideally, reviews will happen asquickly as possible, but it is highly dependent on reviewer availability and bandwidth. In general, the following timeframe can be expected:
+Ideally, reviews will happen as quickly as possible, but it is highly dependent on reviewer availability and bandwidth. In general, the following timeframe can be expected:
 
 - time t: create PR in api-reviews
 - time t+1 week: prioritized and queued
