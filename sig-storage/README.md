@@ -31,6 +31,17 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-storage:
+- **kubernetes-csi**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-test/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/docs/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/driver-registrar/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/drivers/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi.github.io/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/livenessprobe/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/external-attacher/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS
 - **external-storage**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
