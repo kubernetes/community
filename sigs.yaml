@@ -593,9 +593,6 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/cloudprovider/OWNERS
-    - name: cloud-provider-azure
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
     - name: cloud-provider-gcp
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
@@ -922,9 +919,6 @@ sigs:
       - name: sig-gcp-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: cloud-provider-gcp
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
     - name: gcp-compute-persistent-disk-csi-driver
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/master/OWNERS
@@ -1268,9 +1262,6 @@ sigs:
       - name: sig-openstack-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: cloud-provider-openstack
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
   - name: PM
     dir: sig-pm
     mission_statement: >
