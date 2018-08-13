@@ -41,6 +41,7 @@ Members are expected to remain active contributors to the community.
     - Contributing to SIG, subproject, or community discussions (e.g. meetings, Slack, email discussion
       forums, Stack Overflow)
 - Subscribed to [kubernetes-dev@googlegroups.com]
+- Have read the [contributor guide]
 - Actively contributing to 1 or more subprojects.
 - Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
     - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating
@@ -48,51 +49,16 @@ Members are expected to remain active contributors to the community.
     - Sponsors must be reviewers or approvers in at least 1 OWNERS file (in any repo in the Kubernetes GitHub
       organization)
     - Sponsors must be from multiple member companies to demonstrate integration across community.
-- Send an email to *kubernetes-membership@googlegroups.com* with:
-   - CC: your sponsors on the message
-   - Subject: `REQUEST: New membership for <your-GH-handle>`
-   - Body: Confirm that you have joined kubernetes-dev@googlegroups.com (e.g. `I have joined
-     kubernetes-dev@googlegroups.com`)
-   - Body: Your GitHub handle
-   - Body: GitHub handles of sponsors
-   - Body: List of contributions (PRs authored / reviewed, Issues responded to, etc)
+- **[Open an issue][membership request] against the kubernetes/org repo**
+   - Ensure your sponsors are @mentioned on the issue
+   - Complete every item on the checklist ([preview the current version of the template][membership template])
+   - Make sure that the list of contributions included is representative of your work on the project.
 - Have your sponsoring reviewers reply confirmation of sponsorship: `+1`
-- Wait for response to the message
-- Have read the [developer guide]
-
-Example message:
-
-```
-To: kubernetes-membership@googlegroups.com
-CC: <sponsor1>, <sponsor2>
-Subject: REQUEST: New membership for <your-GH-handle>
-Body:
-
-I have joined kubernetes-dev@googlegroups.com.
-
-My GitHub handle:
-- <GH handle>
-
-Sponsors:
-- <GH handle> / <email>
-- <GH handle> / <email>
-
-List of contributions:
-- <PR reviewed / authored>
-- <PR reviewed / authored>
-- <PR reviewed / authored>
-- <Issue responded to>
-- <Issue responded to>
-
-```
+- Once your sponsors have responded, your request will be reviewed. Any missing information will be requested.
 
 ### Kubernetes Ecosystem
 
-There are related Kubernetes GitHub organizations, such as [kubernetes-sigs]. We are currently working on
-automation that would transfer membership in the Kubernetes organization to any related orgs automatically,
-but such is not the case currently. If you are a Kubernetes org member, you are implicitly eligible for
-membership in related orgs, and can request membership when it becomes relevant, by sending an email to
-*kubernetes-membership@googlegroups.com*, as outlined above.
+There are related [Kubernetes GitHub organizations], such as [kubernetes-sigs]. We are currently working on automation that would transfer membership in the Kubernetes organization to any related orgs automatically, but such is not the case currently. If you are a Kubernetes org member, you are implicitly eligible for membership in related orgs, and can request membership when it becomes relevant, by [opening an issue][membership request] against the kubernetes/org repo, as above.
 
 ### Responsibilities and privileges
 
@@ -236,12 +202,15 @@ The following apply to the subproject for which one would be an owner.
 
 The Maintainer role has been removed and replaced with a greater focus on [OWNERS].
 
-[code reviews]: contributors/devel/collab.md
-[community expectations]: contributors/guide/community-expectations.md
-[developer guide]: contributors/devel/README.md
-[two-factor authentication]: https://help.github.com/articles/about-two-factor-authentication
+[code reviews]: /contributors/devel/collab.md
+[community expectations]: /contributors/guide/community-expectations.md
+[contributor guide]: /contributors/guide/README.md
+[Kubernetes GitHub organizations]: /github-management#actively-used-github-organizations
 [kubernetes-dev@googlegroups.com]: https://groups.google.com/forum/#!forum/kubernetes-dev
-[sigs.yaml]: sigs.yaml
-[New contributors]: https://github.com/kubernetes/community/blob/master/CONTRIBUTING.md
-[OWNERS]: contributors/guide/owners.md
 [kubernetes-sigs]: https://github.com/kubernetes-sigs
+[membership request]: https://github.com/kubernetes/org/issues/new?template=membership.md&title=REQUEST%3A%20New%20membership%20for%20%3Cyour-GH-handle%3E
+[membership template]: https://git.k8s.io/org/.github/ISSUE_TEMPLATE/membership.md
+[New contributors]: /CONTRIBUTING.md
+[OWNERS]: /contributors/guide/owners.md
+[sigs.yaml]: /sigs.yaml
+[two-factor authentication]: https://help.github.com/articles/about-two-factor-authentication
