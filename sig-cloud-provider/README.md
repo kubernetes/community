@@ -39,9 +39,6 @@ The following subprojects are owned by sig-cloud-provider:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/cloudprovider/OWNERS
-- **cloud-provider-azure**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
 - **cloud-provider-gcp**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
