@@ -648,6 +648,20 @@ sigs:
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit#
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+    - description: Cluster API Implementer Monday Office Hours
+      day: Monday
+      time: "09:30"
+      tz: "PT (Pacific Time)"
+      frequency: weekly
+      url: https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit
+      archive_url: https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit
+    - description: Cluster API Implementer Tuesday Office Hours
+      day: Tuesday
+      time: "12:00"
+      tz: "PT (Pacific Time)"
+      frequency: weekly
+      url: https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit
+      archive_url: https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit
     - description: kops Office Hours
       day: Friday
       time: "09:00"
