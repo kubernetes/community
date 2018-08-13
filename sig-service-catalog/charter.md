@@ -167,4 +167,4 @@ roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair rol
   discussion must not be merged until all concerns are addressed.
 - Disagreements are resolved via lazy consensus. In the event that a common
   decision cannot be made, then a vote among the maintainers will be taken.
-  Simple majority (>50%) wins.
+  Simple majority of votes cast (>50%) wins.
