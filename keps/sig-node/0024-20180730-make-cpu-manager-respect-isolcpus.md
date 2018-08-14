@@ -15,7 +15,7 @@ approvers:
   - TBD
 editor: TBD
 creation-date: 2018-07-30
-last-updated: 2018-08-07
+last-updated: 2018-08-14
 status: provisional
 see-also:
   - N/A
@@ -50,7 +50,7 @@ superseded-by:
 "Isolcpus" is a boot-time Linux kernel parameter, which can be used to isolate CPU cores from the generic Linux scheduler.
 This kernel setting is routinely used within the Linux community to manually isolate, and then assign CPUs to specialized workloads.
 The CPU Manager implemented within kubelet currently ignores this kernel setting when creating cpusets for Pods.
-This KEP proposes that CPU Manager should respect the aformentioned kernel setting when assigning Pods to cpusets. The manager should behave the same irrespective of its configured management policy.
+This KEP proposes that CPU Manager should respect the aforementioned kernel setting when assigning Pods to cpusets. The manager should behave the same irrespective of its configured management policy.
 Inter-working with the isolcpus kernel parameter should be a node-wide, policy-agnostic setting.
 
 ## Motivation
@@ -115,6 +115,12 @@ In both cases, the resource manager components of both infrastructures will inev
 The different managers of more mature cloud infrastructures -for example Openstack- can already be configured to manage only a subset of a nodes' resource; isolated from all other process via the isolcpus kernel parameter.
 If Kubernetes would also support the same feature, operators would be able to 1: isolate the common compute CPU pool from the operation system, and 2: manually divide the pool between the infrastructures however they see fit. 
 
+#### User Story 3 - As CI developer running both legacy and micro-service based bare metal applications in my system, I wouldn't like my legacy applications to affect the performance of my Kubernetes based workloads running on the same node
+Kubelet already having system-reserved flag enforces the idea that resource management community already recognized this basic use-case to be valid in today's changing world.
+Not every legacy application was able to transform its architecture to a containerized, micro-service based approach, so both CI administrators, and infrastructure operators all over the world are asked to balance different workloads on their limited amount of physical nodes.
+Kubernetes resource management currently advocates physically separating the clusters running these different applications.
+This feature would increase the administrators' chance to be able to at least manually separate the CPU cores of these workloads by not betting on the legacy applications always consuming the lower numbered cores.
+
 ### Implementation Details/Notes/Constraints
 
 The pure implementation of the feature described in this document would be a fairly simple one. Kubernetes already contains code to remove a couple of CPU cores from the domain of its CPU management policies. The only enhancement needed to be done is to:
@@ -130,6 +136,14 @@ This complexity would only increase with every newly introduced policy, unnecess
 Instead, the proposal is to introduce one, new alpha-level feature gate to the kubelet binary, called "RespectIsolCpus". The type of the newly introduced flag should be boolean.
 If the flag is defined and also set to true, the Node's allocatable CPU pool is decreased as described above, irrespective of which CPU management policy is configured for kubelet.
 If the flag is not defined, or it is explicitly set to false; the configured CPU management policy will continue to work without any changes in its functionality.
+
+Inter-working with existing kubelet configuration parameters already decreasing a Node's allocatable CPU resources has to be considered during the implementation of this feature.
+This KEP proposes maintaining any and all such features in their current format, and simply take away any extra CPUs coming from isolcpus which were not yet subtracted from the allocatable pool.
+For example the following settings:
+- isolcpus: 1,2,12-20
+- system-reserved=cpu=2000
+would result in kubelet having its Node allocatable CPU pool set to [3,11] (on a 20 CPU core system, with hyperthreading disabled).
+So, in short, the KEP proposes isolcpus interaction to be checked last when a Node's allocatable CPU pool is being calculated, after all the similar features have already decreased the available capacity.
 
 ### Risks and Mitigations
 
@@ -159,4 +173,11 @@ Some alternatives were already mentioned throughout the document together with t
 - enhancing kubelet's CPU manager with topology information, and CPU pool management
 - implementing a new isolcpus-respecting variant for each currently supported CPU management policy
 
-Other alternatives were not considered at the time of writing this document.
+Another alternative could be to enhance an already existing kubelet configuration flag so it can explicitly express a list of CPUs to be excluded from kubelet's list of node allocatable CPUs.
+The already existing --system-reserved flag would be a good candidate to be re-used in such a way. By changing its syntax to be reminiscent of how isolcpus defines a list of CPUs, Kubernetes administrators could effectively achieve the purpose proposed in this KEP.
+After the change the following kubelet configuration:
+--system-reserved=cpu=2,5-7
+would mean that CPU cores 2,5,6, and 7 would not be included in any of the CPU sets created by the CPU manager, be it shared, or exclusive.
+The upside of this approach is that no new configuration data is needed to be introduced. The downside is that changing the syntax of an existing flag would be also a backward incompatible change.
+This implementation would also require cluster administrators to manually configure the same setting twice: isolcpus for the system services, and system-reserved flag for specifically for Kubernetes.
+The author's personal feeling is that the depicted alternative would be less flexible than the proposed one; and this is why the KEP proposes for kubelet to respect the isolcpus kernel parameter instead.
