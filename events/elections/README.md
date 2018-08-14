@@ -2,13 +2,13 @@
 
 This document will outline how to conduct a Kubernetes Steering Committee Election. See the [Steering Committee Charter](https://git.k8s.io/steering/charter.md) for more information of how the committee decides when to have an election, the method, and the maximal representation. 
 
-## Steering Committee chooses Election Deadlines and Officers
+## Steering Committee chooses Election Officers
 
 - Steering Committee selects the Election Officers
 - Dates should be in UTC time, use a [world clock service](https://www.timeanddate.com/worldclock/fixedtime.html?msg=Election+Test&iso=20181101T00&p1=%3A&ah=10) in documentation and email announcements so that end users see the correct time and date based on where they live. 
 
 
-### SC Selects the following dates:
+### Election Officers select the following dates:
 
 - Recommend the month of October to not collide with a release or end of a quarter.
 - Nomination and Voter Registration period start
@@ -20,6 +20,7 @@ This document will outline how to conduct a Kubernetes Steering Committee Electi
 - Election period stop
   - CIVS needs to be manually stopped, so an actual person needs to click for the poll to stop, so this needs to be a human friendly time. 
 - Results announcement date
+- Draft dates will then be passed to the Steering Committee for final approval
 
 ## Process
 
@@ -62,9 +63,8 @@ This document will outline how to conduct a Kubernetes Steering Committee Electi
 
 ### Steering Committee
 
-- Select election dates
 - Select Election Officers
-- Select criteria for Kubernetes Members of Standing 
+- Select criteria for who can vote in the upcoming election
 - Must refrain from endorsing or otherwise advocating for any candidate
 - Is allowed to vote in the election
 - Announces results of the election to the community
@@ -72,11 +72,12 @@ This document will outline how to conduct a Kubernetes Steering Committee Electi
 
 ### Election Officers
 
+- Recommend election dates to be approved by the Steering Committee
 - Must be a Kubernetes Member of Standing
 - Cannot be running for office in the current election
-- Cannot be a current member of the steering committee 
+- Cannot be a current member of the steering committee
 - Generates the voter guide
-- Tracks candidates 
+- Tracks candidates
 - Monitors kubernetes-dev for nominations
   - Keeps track of nominees in a spreadsheet
   - Ensures that each nominee has the required nominations from three different employers (as stated in the charter)
