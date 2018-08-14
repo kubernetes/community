@@ -89,14 +89,53 @@ CSI volume drivers should create a socket at the following path on the node mach
 
 `Sanitized CSIDriverName` is CSI driver name that does not contain dangerous character and can be used as annotation name. It can follow the same pattern that we use for [volume plugins](https://git.k8s.io/kubernetes/pkg/util/strings/escape.go#L27). Too long or too ugly driver names can be rejected, i.e. all components described in this document will report an error and won't talk to this CSI driver. Exact sanitization method is implementation detail (SHA in the worst case).
 
-Upon initialization of the external “CSI volume driver”, some external component must call the CSI method `GetNodeId` to get the mapping from Kubernetes Node names to CSI driver NodeID and the associated AccessibleTopology. It must then update the Kubernetes Node API object with the CSI driver NodeID as the `csi.volume.kubernetes.io/nodeid` annotation and AccessibleTopology as labels. The key of the NodeID annotation must be `csi.volume.kubernetes.io/nodeid`. The value of the annotation is a JSON blob, containing key/value pairs for each CSI driver. For example:
-```
-csi.volume.kubernetes.io/nodeid: "{ \"driver1\": \"name1\", \"driver2\": \"name2\" }
-```
+Upon initialization of the external “CSI volume driver”, kubelet must call the CSI method `NodeGetInfo` to get the mapping from Kubernetes Node names to CSI driver NodeID and the associated `accessible_topology`. It must:
 
-This will enable the component that will issue `ControllerPublishVolume` calls to use the annotation as a mapping from cluster node ID to storage node ID. There are no hard restrictions on the label format, but for the format to be used by the recommended setup, please refer to [Topology Representation in Node Objects](#topology-representation-in-node-objects). 
+  * Create/update a new `CSINodeInfo` object instance for the node with the NodeID and topology keys from `accessible_topology`.
+    * This will enable the component that will issue `ControllerPublishVolume` calls to use the `CSINodeInfo` as a mapping from cluster node ID to storage node ID.
+    * This will enable the component that will issue `CreateVolume` to reconstruct `accessible_topology` and provision a volume that is accesible from specific node.
+
+  * Create/update Node API object with the CSI driver NodeID as the `csi.volume.kubernetes.io/nodeid` annotation. The value of the annotation is a JSON blob, containing key/value pairs for each CSI driver. For example:
+    ```
+    csi.volume.kubernetes.io/nodeid: "{ \"driver1\": \"name1\", \"driver2\": \"name2\" }
+    ```
+    This annotation is deprecated and will be removed according to deprecation policy (1 year after deprecation).
+
+  * Create/update Node API object with `accessible_topology` as labels.
+    There are no hard restrictions on the label format, but for the format to be used by the recommended setup, please refer to [Topology Representation in Node Objects](#topology-representation-in-node-objects).
 
 To enable easy deployment of an external containerized CSI volume driver, the Kubernetes team will provide a sidecar "Kubernetes CSI Helper" container that can manage the unix domain socket registration and NodeId initialization. This is detailed in the “Suggested Mechanism for Deploying CSI Drivers on Kubernetes” section below.
+
+The new API object called `CSINodeInfo` will be defined as follows:
+
+```go
+// CSINodeInfo holds information about status of all CSI drivers installed on a node.
+type CSINodeInfo struct {
+    metav1.TypeMeta
+    // ObjectMeta.Name must be node name.
+    metav1.ObjectMeta
+
+    // List of CSI drivers running on the node and their properties.
+    CSIDrivers []CSIDriverInfo
+}
+
+// Information about one CSI driver installed on a node.
+type CSIDriverInfo struct {
+    // CSI driver name.
+    Name string
+
+    // ID of the node from the driver point of view.
+    NodeID string
+
+    // Topology keys reported by the driver on the node.
+    TopologyKeys []string
+}
+```
+
+A new object type `CSINodeInfo` is chosen instead of `Node.Status` field because Node is already big enough and there are issues with its size. `CSINodeInfo` is CRD installed by TODO (jsafrane) on cluster startup and defined in `kubernetes/kubernetes/pkg/apis/storage-csi/v1alpha1/types.go`, so k8s.io/client-go and k8s.io/api are generated automatically. All users of `CSINodeInfo` will tolerate if the CRD is not installed and retry anything they need to do with it with exponential backoff and proper error reporting. Especially kubelet is able to serve its usual duties when the CRD is missing.
+
+Each node must have zero or one `CSINodeInfo` instance. This is ensured by `CSINodeInfo.Name == Node.Name`. TODO: how to validate this? Each `CSINodeInfo` is "owned" by corresponding Node for garbage collection.
+
 
 #### Master to CSI Driver Communication
 
@@ -116,7 +155,7 @@ In short, to dynamically provision a new CSI volume, a cluster admin would creat
 
 To provision a new CSI volume, an end user would create a `PersistentVolumeClaim` object referencing this `StorageClass`. The external provisioner will react to the creation of the PVC and issue the `CreateVolume` call against the CSI volume driver to provision the volume. The `CreateVolume` name will be auto-generated as it is for other dynamically provisioned volumes. The `CreateVolume` capacity will be taken from the `PersistentVolumeClaim` object. The `CreateVolume` parameters will be passed through from the `StorageClass` parameters (opaque to Kubernetes).
 
-If the `PersistentVolumeClaim` has the `selectedNode` annotation set (TODO verult update to actual annotation name) (only added if delayed volume binding is enabled in the `StorageClass`), the provisioner will get relevant topology labels from the corresponding `Node` and pass them to the `CreateVolume` call as preferred topology. `AllowedTopologies` from the `StorageClass` is passed through as permitted topology. Before calling `CreateVolume`, the provisioner will also validate `AllowedTopologies` against a cache of all known topology values in the cluster, where the cache is populated by a Node informer. If `AllowedTopologies` is unspecified, the provisioner will pass in all topology values as permitted topology.
+If the `PersistentVolumeClaim` has the `selectedNode` annotation set (TODO verult update to actual annotation name) (only added if delayed volume binding is enabled in the `StorageClass`), the provisioner will get relevant topology keys from the corresponding `CSINodeInfo` instance and the topology values from `Node` labels and pass them to the `CreateVolume` call as preferred topology. `AllowedTopologies` from the `StorageClass` is passed through as permitted topology. Before calling `CreateVolume`, the provisioner will also validate `AllowedTopologies` against a cache of all known topology values in the cluster, where the cache is populated by a Node informer. If `AllowedTopologies` is unspecified, the provisioner will pass in all topology values as permitted topology.
 
 Once the operation completes successfully, the external provisioner creates a `PersistentVolume` object to represent the volume using the information returned in the `CreateVolume` response. The topology of the returned volume is translated to the `PersistentVolume` `NodeAffinity` field. The `PersistentVolume` object is then bound to the `PersistentVolumeClaim` and available for use.
 
@@ -143,7 +182,8 @@ Once the following conditions are true, the external-attacher should call `Contr
 1. A new `VolumeAttachment` Kubernetes API objects is created by Kubernetes attach/detach controller.
 2. The `VolumeAttachment.Spec.Attacher` value in that object corresponds to the name of the external attacher.
 3. The `VolumeAttachment.Status.Attached` value is not yet set to true.
-4. A Kubernetes Node API object exists with the name matching `VolumeAttachment.Spec.NodeName` and that object contains a `csi.volume.kubernetes.io/nodeid` annotation. This annotation contains a JSON blob, a list of key/value pairs, where one of they keys corresponds with the CSI volume driver name, and the value is the NodeID for that driver. This NodeId mapping can be retrieved and used in the `ControllerPublishVolume` calls.
+4. * Either a Kubernetes Node API object exists with the name matching `VolumeAttachment.Spec.NodeName` and that object contains a `csi.volume.kubernetes.io/nodeid` annotation. This annotation contains a JSON blob, a list of key/value pairs, where one of they keys corresponds with the CSI volume driver name, and the value is the NodeID for that driver. This NodeId mapping can be retrieved and used in the `ControllerPublishVolume` calls.
+   * Or a `CSINodeInfo` API object exists with the name matching `VolumeAttachment.Spec.NodeName` and the object contains `CSIDriverInfo` for the CSI volume driver. The `CSIDriverInfo` contains NodeID for `ControllerPublishVolume` call.
 5. The `VolumeAttachment.Metadata.DeletionTimestamp` is not set.
 
 Before starting the `ControllerPublishVolume` operation, the external-attacher should add these finalizers to these Kubernetes API objects:
