@@ -44,6 +44,105 @@ Specific use cases around cloning are included in the use cases listed below as 
 ## Design Overview
 The proposed design is based on the idea of leveraging well defined concepts for storage in Kubernetes. The cloning will be initiated 
 by creating an annotated PVC to create a new volume using a defined storage class that supports cloning.
-The actual cloning process must be implemented by the provisioning storage and properly understand and react to the annotation to clone.
+The actual cloning process must be implemented by the provisioning storage and properly understand and react to the annotation to clone. In the absence of a storage class that supports cloning a host-assisted clone can also be exected to create the copy. The host-assisted cloning deploys a controller to utlize pod streaming to execute the copy.
 
 ### API
+Leveraging the proposed API change for 'dataSource' the PVC will make a clone request by specifying the storage class and the location of the object it wishes to clone. This this example, we are cloning a pvc. For version 1 of cloning, we will limit cloning of pvcs to the current namespace only.
+
+To create a clonable pvc, the volume that is bound to the pvc must be marked as 'canClone' to indicate cloning of the volume contents is permitted.
+
+** Pre-Request:
+```
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-1
+spec:
+  capacity:
+    storage: 100Gi
+  volumeMode: Filesystem
+annotations:
+    k8s.io/CloneRequest: canClone  
+accessModes:
+    - ReadOnlyMany
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: csi-gce-pd
+```
+```
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-1
+spec:
+  capacity:
+    storage: 100Gi
+```
+
+** Request:
+```
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: clone-pvc
+  Namespace: myns
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: csi-gce-pd
+  dataSource:
+    kind: PersistentVolumeClaim
+    name: pvc-1
+  resources:
+    requests:
+      storage: 10Gi
+```
+
+```
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: csi-gce-pd
+provisioner: kubernetes.io/gce-pd
+parameters:
+  smartclone: "true"
+```
+
+** Result:
+```
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv-2
+  Namespace: myns
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: csi-gce-pd
+  resources:
+    requests:
+      storage: 10Gi
+  annotations:
+    k8s.io/CloneOf: pvc-1
+```
+
+```
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: clone-pvc
+  Namespace: myns
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: csi-gce-pd
+  dataSource:
+    kind: PersistentVolumeClaim
+    name: pvc-1
+  resources:
+    requests:
+      storage: 10Gi
+  annotations:
+    k8s.io/CloneOf: pvc-1
+```   
+   
+      
