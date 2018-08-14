@@ -28,6 +28,13 @@ You will be ranking your choices of the candidates with an option for "no opinio
 
 The election will open for voting on September 19, 2018 at 04:00pm UTC and end two weeks after on October 3, 2018 at 01:00am UTC. You will receive an email to the address on file at the start of the election from Jorge Castro (jorge@heptio), Community Manager, please whitelist if necessary. Detailed voting instructions will be addressed in email and the CIVS polling page.
 
+### Officers
+
+The Steering Committee has selected the following people as [election officers](https://github.com/kubernetes/community/tree/master/events/elections#election-officers):
+- Paris Pittman, @parispittman, Google
+- Ihor Dvoretskyi, @idvoretskyi, CNCF
+- Jorge Castro, @castrojo, Heptio
+
 ### Schedule
 
 August 15 - Announcement of Election
