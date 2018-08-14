@@ -17,13 +17,13 @@ but always provide a full and complete copy.
 
 ## Goals
 * Provide consistent process/annotations to execute cloning for storage technologies both for intree and out of tree plugins
-* Provide governance for security to clone assets between namespaces
 
 ## Non Goals
 * The process should not force storage vendors to implement cloning
 * An admin wishes to clone a volume to give a copy to another user in a different namespace 
 * An admin creates a ‘golden’ image in a restricted namespace and provides copies of that volumes to other namespaces
 * A user wishes to use a promoted snapshot to create a clone of it in a different namespace
+* Provide governance for security to clone assets between namespaces
 
 ## Value add to Kubernetes  
  By providing a consistent process/annotation for cloning, users can leverage the native capability of their storage to quickly create a 
