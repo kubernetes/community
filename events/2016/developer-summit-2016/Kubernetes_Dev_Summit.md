@@ -88,9 +88,9 @@ mid-term future of the project
 
 [//]: # (Reference Links)
    [uncf]: <https://en.wikipedia.org/wiki/Unconference>
-   [mtp]: <http://www.meetup.com/topics/kubernetes/all/>
+   [mtp]: <https://www.meetup.com/topics/kubernetes/all/?_cookie-check=qBoP-s6JaqPZDTYB>
    [lotfrm]: <https://docs.google.com/forms/d/e/1FAIpQLSe8t6pvRjh1OeF6xrXKbXmzHGMhQ4c-MbZ6QUr9APJNjpgAzA/viewform>
    [propfrm]: <https://docs.google.com/forms/d/e/1FAIpQLSf30x18OGCv_Und7qah4y5Zs3Z-0YoBCo964ZsmhtbxBjMzxA/viewform>
-   [civs]: <http://civs.cs.cornell.edu/>
-   [kbc]: <http://events.linuxfoundation.org/events/kubecon>
+   [civs]: <https://civs.cs.cornell.edu/>
+   [kbc]: <https://events.linuxfoundation.org/events/kubecon-cloudnativecon-china-2018/>
    [sher]: <http://www.sheratonseattle.com/>
