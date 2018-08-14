@@ -38,10 +38,11 @@ October 4 - Announcement of Results
 
 ### Eligibility  
 Members of Standing are defined by the union of:
-* SIG Chairs/Leads
-* Approvers and reviewers in any Kubernetes owned repositories
-* Anyone with write access to a Kubernetes owned repository
-* Active [members of our community](https://github.com/kubernetes/community/blob/master/community-membership.md)
+- SIG Chairs/Leads
+- Approvers and reviewers in any Kubernetes owned repositories
+- Anyone with write access to a Kubernetes owned repository
+- Active members of our community with at least [50 contributions to core Kubernetes](https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All)
+  - People who have non-code contributions can submit a [voting exemption form](URL TBD) to account for contributions not measured by devstats.
 
 Candidates must submit a pull request with a biography in this directory with their platform and intent to run. This statement is **limited to 300 words** and must follow the format of `firstnamelastname.md`. See [last year's submissions](https://github.com/kubernetes/community/tree/master/events/elections/2017) for some examples. 
 
