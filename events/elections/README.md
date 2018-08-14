@@ -1,14 +1,15 @@
-## Kubernetes Elections 
+## Kubernetes Elections
 
-This document will outline how to conduct a Kubernetes Steering Committee Election. See the [Steering Committee Charter](https://git.k8s.io/steering/charter.md) for more information of how the committee decides when to have an election, the method, and the maximal representation. 
+This document will outline how to conduct a Kubernetes Steering Committee Election. See the [Steering Committee Charter](https://git.k8s.io/steering/charter.md) for more information of how the committee decides when to have an election, the method, and the maximal representation.
 
 ## Steering Committee chooses Election Officers
 
 - Steering Committee selects the Election Officers
-- Dates should be in UTC time, use a [world clock service](https://www.timeanddate.com/worldclock/fixedtime.html?msg=Election+Test&iso=20181101T00&p1=%3A&ah=10) in documentation and email announcements so that end users see the correct time and date based on where they live. 
+- Dates should be in UTC time, use a [world clock service](https://www.timeanddate.com/worldclock/fixedtime.html?msg=Election+Test&iso=20181101T00&p1=%3A&ah=10) in documentation and email announcements so that end users see the correct time and date based on where they live.
+- The steering committee was structured in a way so that it does not turn over all at once with staggered terms, therefore all new elections are for two(2) year terms.
 
 
-### Election Officers select the following dates:
+### Election Officers select the following dates
 
 - Recommend the month of October to not collide with a release or end of a quarter.
 - Nomination and Voter Registration period start
