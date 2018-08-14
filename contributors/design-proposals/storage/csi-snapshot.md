@@ -106,14 +106,18 @@ type VolumeSnapshotStatus struct {
 	// CreationTime is the time the snapshot was successfully created. If it is set,
 	// it means the snapshot was created; Otherwise the snapshot was not created.
 	// +optional
-	CreationTime *metav1.Time `json:"createdAt" protobuf:"bytes,1,opt,name=createdAt"`
+	CreationTime *metav1.Time `json:"creationTime" protobuf:"bytes,1,opt,name=creationTime"`
 
+	// The size of the snapshot. When restoring volume from the snapshot, the volume size 
+	// should be equal or larger than its snapshot size.
+	Size *resource.Quantity `json:"size" protobuf:"bytes,2,opt,name=size"`
+	
 	// Ready is set to true only if the snapshot is ready to use (e.g., finish uploading if
 	// there is an uploading phase) and also VolumeSnapshot and its VolumeSnapshotContent
 	// bind correctly with each other. If any of the above condition is not true, Ready is
 	// set to false
 	// +optional
-	Ready bool `json:"ready" protobuf:"varint,2,opt,name=ready"`
+	Ready bool `json:"ready" protobuf:"varint,3,opt,name=ready"`
 
 	// The last error encountered during create snapshot operation, if any.
 	// This field must only be set by the entity completing the create snapshot
@@ -197,8 +201,11 @@ type CSIVolumeSnapshotSource struct {
 	// the snapshot is cut. The format of this field should be a Unix nanoseconds
 	// time encoded as an int64. On Unix, the command `date +%s%N` returns
 	// the  current time in nanoseconds since 1970-01-01 00:00:00 UTC.
-	// This field is REQUIRED.
-	CreatedAt int64 `json:"createdAt,omitempty" protobuf:"varint,3,opt,name=createdAt"`
+	CreationTime *int64 `json:"creationTime,omitempty" protobuf:"varint,3,opt,name=creationTime"`
+	
+	// The size of the snapshot. When restoring volume from the snapshot, the volume size 
+	// should be equal or larger than its snapshot size.
+	Size *resource.Quantity `json:"size" protobuf:"bytes,2,opt,name=size"`
 }
 
 ```
