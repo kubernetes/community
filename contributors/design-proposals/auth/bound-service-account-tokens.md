@@ -234,6 +234,6 @@ bound.
     tokens authenticating to the Kubernetes API.
 * The Kubernetes apiserver will identify itself as `kubernetes.default.svc`
   which is the DNS name of the Kubernetes apiserver. When no audience is
-  requested, the audience is defaulted the audience is defaulted to an array
+  requested, the audience is defaulted to an array
   containing only this identifier.
 
