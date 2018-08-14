@@ -91,5 +91,5 @@ Topics include, but are not limited to:
 * Kernel interactions (to a limited extent)
 * ...
 
-We also work closely with [sig-storage](../sig-storage) and [sig-networking](../sig-networking). As you can see, this is a very cross-functional team!
+We also work closely with [sig-storage](../sig-storage) and [sig-network](../sig-network). As you can see, this is a very cross-functional team!
 <!-- END CUSTOM CONTENT -->
