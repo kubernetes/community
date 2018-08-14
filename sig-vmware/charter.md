@@ -22,12 +22,14 @@ In addition to the cloud provider for the vSphere hypervisor, the SIG’s missio
 - Determining and documenting best practices for using common configuration management and orchestration tools for deploying and managing Kubernetes on VMware infrastructure.
 - Discussing bugs and feature requests recorded as Kubernetes or VMware cloud provider issues on GitHub. These issues should be tagged with ``sig/vmware``.
 
-The authoritative source for SIG information is the [sigs.yaml] file.
+A directory of specialized subject area GitHub teams for issues, PRs, and design proposals is defined in [SIG GitHub Teams](https://github.com/kubernetes/community/tree/master/sig-vmware#github-teams).
 
 #### Code, Binaries and Services
 
 - vSphere Cloud Provider
 - vRealize Automation Cluster API Provider
+
+Code locations and projects are defined in [SIG Subprojects](https://github.com/kubernetes/community/tree/master/sig-vmware#subprojects)
 
 #### Cross-cutting and Externally Facing Processes
 
@@ -36,7 +38,6 @@ SIG VMware serves to bring together members of the VMware and Kubernetes communi
 The VMware SIG will provide a forum for hosting related architectural planning and discussion. Associated activities related to development, testing, and documentation will be tracked and reported by the SIG.
 
 - The vSphere platform’s availability and resource management can create pools that extend across Kubernetes worker node, management node, and namespace boundaries. Unique features of the vSphere platform related to high availability, load balancing, and resource management (storage, networking, compute) can supplement existing capabilities of Kubernetes, container runtime, and OS functionality.
-
   - Users can do some of this via configuration today, but opportunities exist to achieve more efficient, predictable, and dependable service through additional new CRDs, plug-ins, and enhancement proposals (KEPs) related to other Kubernetes components.
   - Interaction is expected to cut across multiple aspects of Kubernetes in ways not firmly bounded by existing SIG dividing lines (e.g. node, scheduling, scalability).
 
@@ -51,10 +52,7 @@ and opts-in to updates and modifications to [sig-governance].
 
 ### Subproject Creation
 
-Subprojects associated with this SIG may be created following the procedure described in [sig-governance] as:
-
-> by Federation of Subprojects
+Associated subprojects are created following the Federation of Subprojects procedure described in [sig-governance]
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
-[sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1706
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
