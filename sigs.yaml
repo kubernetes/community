@@ -864,6 +864,8 @@ sigs:
         description: Documentation Maintainers
       - name: sig-docs-pr-reviews
         description: Documentation PR Reviewers
+      - name: sig-docs-ko-owners
+        description: Korean L10n Repository Owners
     subprojects:
     - name: kubernetes-docs-ja
       owners:
