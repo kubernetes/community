@@ -2004,8 +2004,8 @@ workinggroups:
         company: China Mobile
     meetings:
     - description: Regular WG Meeting
-      day: Thursday
-      time: "17:00"
+      day: Wednesday
+      time: "16:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
