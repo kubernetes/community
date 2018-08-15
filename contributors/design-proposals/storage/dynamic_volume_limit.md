@@ -104,7 +104,7 @@ For Kubernetes 1.12, we are adding support for CSI and moving the feature to bet
 
 #### CSI support
 
-A new function of will be added to `pkg/volume/util/attach_limit.go` which will return CSI attach limit
+A new function will be added to `pkg/volume/util/attach_limit.go` which will return CSI attach limit
 resource name.
 
 The interface of function will be:
@@ -133,6 +133,18 @@ func GetCSIAttachLimitKey(driverName string) string {
 
 This function will be used both on node and scheduler for determining CSI attach limit key.The value of the
 limit will be retrieved using `GetNodeInfo` CSI RPC call and set if non-zero.
+
+**Other options**
+
+Alternately we also considered storing attach limit resource name in `CSIDriver` introduced as part
+of https://github.com/kubernetes/community/pull/2514 proposal.
+
+This will work but depends on acceptance of proposal. We can always migrate attach limit resource names to
+values defined in `CSIDriver` object in later release. If `CSIDriver` object is available and has a attach limit key,
+then kubelet could use that key otherwise it will fallback to `GetCSIAttachLimitKey`.
+
+Scheduler can also check presence of `CSIDriver` object and corresponding key in node object, otherwise it will
+fallback to using `GetCSIAttachLimitKey` function.
 
 ##### Changes to scheduler
 
