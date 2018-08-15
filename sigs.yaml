@@ -391,6 +391,12 @@ sigs:
     - name: aws-alb-ingress-controller
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/master/OWNERS
+    - name: aws-iam-authenticator
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/aws-iam-authenticator/master/OWNERS
+    - name: aws-encryption-provider
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
   - name: Azure
     dir: sig-azure
     mission_statement: >
