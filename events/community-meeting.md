@@ -8,7 +8,7 @@ All meetings are archived on the [Youtube Channel](https://www.youtube.com/playl
 
 Quick links:
 
-- [Agenda document](http://bit.ly/k8scommunity)
+- [Agenda document](https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#heading=h.82iqvmivl3kh)
 - [Zoom meeting link](https://zoom.us/my/kubernetescommunity)
 
 ## Purpose
@@ -25,7 +25,7 @@ Volunteers are always welcome to either add their notes directly to the document
 ## Meeting Agenda
 
 If you have a topic you'd like to present or would like to see discussed,
-please propose a specific date on the [Kubernetes Community Meeting Agenda](http://bit.ly/k8scommunity).
+please propose a specific date on the [Kubernetes Community Meeting Agenda](https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#heading=h.en8cy6hno0c6).
 
 General speaking the meeting is structured as follows:
 
