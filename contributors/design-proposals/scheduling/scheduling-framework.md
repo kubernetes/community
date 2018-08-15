@@ -1,6 +1,6 @@
   
 Status: Draft  
-Created: 2018-04-09   /  Last updated: 2018-06-04  
+Created: 2018-04-09   /  Last updated: 2018-08-15
 Author: bsalamat  
 Contributors: misterikkit
 
@@ -244,12 +244,16 @@ of the Pod to this Node and reject the node if needed.
 
 ### Reserve
 
-This is not a plugin point. At this point scheduler updates its cache by
-"reserving" a Node (partially or fully) for the Pod. In scheduler v1 this stage
-is called "assume". At this point, only the scheduler cache is updated to
-reflect that the Node is (partially) reserved for the Pod. The actual assignment
-of the Node to the Pod happens during the "Bind" phase. That is when the API
-server updates the Pod object with the Node information.
+At this point scheduler updates its cache by "reserving" a Node (partially or
+fully) for the Pod. In scheduler v1 this stage is called "assume".
+At this point, only the scheduler cache is updated to
+reflect that the Node is (partially) reserved for the Pod. The scheduling
+framework calls plugins registered at this extension points so that they get a
+chance to perform cache updates or other accounting activities. These plugins
+do not return any value (except errors).
+
+The actual assignment of the Node to the Pod happens during the "Bind" phase.
+That is when the API server updates the Pod object with the Node information.
 
 ### Permit
 
@@ -301,6 +305,15 @@ return false, the Pod is rejected and sent back to the scheduling queue.
 The Post Bind plugins can be useful for housekeeping after a pod is scheduled.
 These plugins do not return any value and are not expected to influence the
 scheduling decision made in the scheduling cycle.
+
+### Informer Events
+
+The scheduling framework, similar to Scheduler v1, will have informers that let
+the framework keep its copy of the state of the cluster up-to-date. The
+informers generate events, such as "PodAdd", "PodUpdate", "PodDelete", etc. The
+framework allows plugins to register their own handlers for any of these events.
+The handlers allow plugins with internal state or caches to keep their state
+updated. 
 
 # USE-CASES
 
@@ -369,8 +382,9 @@ to build some of the ideas of the scheduling framework into Scheduler V1 to make
 it more extendable.
 
 As the first step, we would like to build:
- 1. [Pre-bind plugin point](#pre-bind). This will help us move our existing
- cluster resource binding code, such as persistent volume binding, to plugins.
+ 1. [Pre-bind](#pre-bind) and [Reserve](#reserve)  plugin points. These will
+ help us move our existing cluster resource binding code, such as persistent
+ volume binding, to plugins.
  1. We will also build
  [the plugin communication mechanism](#communication-and-statefulness-of-plugins).
  This will allow us to build more sophisticated plugins that would require
