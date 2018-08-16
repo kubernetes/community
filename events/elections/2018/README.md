@@ -37,11 +37,11 @@ The Steering Committee has selected the following people as [election officers](
 
 ### Schedule
 
-August 15 - Announcement of Election
-September 14 - All candidate bios / statement of intents due. Voting exemption forms due.
-September 19 - Election Begins
-October 3 - Election Closes
-October 4 - Announcement of Results
+- August 15 - Announcement of Election
+- September 14 - All candidate bios / statement of intents due. Voting exemption forms due.
+- September 19 - Election Begins
+- October 3 - Election Closes
+- October 4 - Announcement of Results
 
 ### Eligibility  
 Members of Standing are defined by the union of:
@@ -60,7 +60,16 @@ Following the meeting, the raw voting results and winners will be published on t
 
 For more information, definitions, and/or detailed election process, see full [steering committee charter](https://github.com/kubernetes/steering/blob/master/charter.md).
 
+
 ## Nominees
+
+### Nomination Process
+
+TBD
+
+### Affiliation Requirements
+
+The Steering Committee has [representation](https://github.com/kubernetes/steering/blob/master/elections.md#maximal-representation) requirements in order to ensure diversity. For 2018 this means a company can not have more than four(4) serving people on the steering committee at one time. Nominees are encouraged to [look at the current list of members](https://github.com/kubernetes/steering) to determine if their candidacy is tenable.
 
 Name | Organization/Company | GitHub
 --- | --- | -- |
