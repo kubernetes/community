@@ -62,6 +62,9 @@ Conformance tests can be run against clusters that have not been created with
 credentials.
 
 ```sh
+# build test binaries, ginkgo, and kubectl first:
+make WHAT=test/e2e/e2e.test && make WHAT=ginkgo && make WHAT=cmd/kubectl
+
 # setup for conformance tests
 export KUBECONFIG=/path/to/kubeconfig
 export KUBERNETES_CONFORMANCE_TEST=y
