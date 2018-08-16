@@ -57,6 +57,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/garbagecollector/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/namespace/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/quota/OWNERS # if not us, who?
+      - https://raw.githubusercontent.com/kubernetes-sigs/kube-storage-version-migrator/master/OWNERS
     - name: universal-machinery # i.e., both client and server
       owners:
       - https://raw.githubusercontent.com/kubernetes/apimachinery/master/OWNERS
