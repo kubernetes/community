@@ -42,6 +42,9 @@ The following subprojects are owned by sig-instrumentation:
 - **metrics-server**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/OWNERS
+- **metrics**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
 
 ## GitHub Teams
 
