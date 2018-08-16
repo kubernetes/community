@@ -85,7 +85,7 @@ please propose a specific date on the [Kubernetes Community Meeting Agenda].
 Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Europe and winter in North America. Information about these and other community events is available on the CNCF [events] pages.
 
 
-[Blog]: http://blog.kubernetes.io
+[Blog]: https://kubernetes.io/blog/
 [calendar.google.com]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles
 [CNCF code of conduct]: https://github.com/cncf/foundation/blob/master/code-of-conduct.md
 [communication]: /communication.md
@@ -103,9 +103,9 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [kubernetes.slack.com]: https://kubernetes.slack.com
 [Slack]: http://slack.k8s.io
 [Special Interest Group]: /README.md#SIGs
-[Stack Overflow]: http://stackoverflow.com/questions/tagged/kubernetes
+[Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [timezone table]: https://www.google.com/search?q=1000+am+in+pst
-[troubleshooting guide]: http://kubernetes.io/docs/troubleshooting
+[troubleshooting guide]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
 [Twitter]: https://twitter.com/kubernetesio
 [weekly meeting]: https://zoom.us/my/kubernetescommunity
 
