@@ -4,7 +4,7 @@
 
 The role of this election is to fill out the three (3) seats due for
 reelection this year on the [Kubernetes Steering Committee]. Each elected
-member will serve a two year term.
+member will serve a two (2) year term.
 
 ## Background
 
@@ -37,7 +37,7 @@ Please refer to the [Steering Committee Election Charter] for:
 
 | Date         | Event                    |
 | ------------ | ------------------------ |
-| August 15    | Announcement of Election |
+| August 20    | Announcement of Election |
 | September 14 | All candidate bios / statements of intent due. Voting exemption forms due. |
 | September 19 | Election Begins |
 | October 3    | Election Closes |
@@ -45,10 +45,44 @@ Please refer to the [Steering Committee Election Charter] for:
 
 ## Candidacy Process
 
-Candidates must submit a pull request with a biography in this directory with
-their platform and intent to run. This statement is **limited to 300 words**
-and must follow the format of `firstnamelastname.md`. Please refer to the
-[2017 candidate bios] for examples.
+**Nomination**
+
+If you want to stand for election, send an email to kubernetes-dev@googlegroups.com
+with the subject line "Steering Committee Nomination: Your Name (@yourgithub)".
+
+If you want to nominate someone else, you may do so, but PLEASE talk to them
+first.
+
+If you wish to accept a nomination from someone else, reply to the nomination
+email saying something like "I accept the nomination"
+
+**Endorsement**
+
+Once nominated, you must get the endorsement of three (3) different eligible
+voters from three (3) different employers.  If you are eligible to vote
+yourself, you count as one of the three.
+
+Eligible voters may endorse candidates of their choosing by replying to the
+candidate's nomination email saying something like "I endorse this nominee"
+or "+1".
+
+**Running**
+
+Eligible candidates must submit a pull request with a biography in this
+directory with their platform and intent to run. This statement is
+**limited to 300 words** and must follow the format of `firstnamelastname.md`.
+Please refer to the [2017 candidate bios] for examples.
+
+**Campaigning**
+
+Please refer to the [Steering Committee Election Charter] and understand
+that we care deeply about [limiting corporate campaigning]. The election
+officers and members of the steering committee [pledge to recuse] themselves
+from any form of electioneering.
+
+You should be running as a "brand free" individual, based on your contribution
+to the project as a member of this community, outside of whatever corporate
+roles you may hold.
 
 ## Voting Process
 
@@ -94,11 +128,6 @@ Name | Organization/Company | GitHub
 --- | --- | -- |
 [Jane Container](janecontainer.md) | ContainerCo | [@github](link this) |
 
-<strong>Note:</strong>The steering committee members and election officers have
-recused themselves from any form of electioneering, including campaigning,
-nominating, endorsing, or even asking people to run.
-
-
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
 [current steering committee backlog]: https://github.com/kubernetes/steering/projects/1
@@ -107,6 +136,8 @@ nominating, endorsing, or even asking people to run.
 [Steering Committee Election Charter]: https://git.k8s.io/steering/elections.md
 [eligibility for voting]: https://github.com/kubernetes/steering/blob/master/elections.md#elegibility-for-voting
 [eligibility for candidacy]: https://github.com/kubernetes/steering/blob/master/elections.md#elegibility-for-candidacy
+[limiting corporate campaigning]: https://github.com/kubernetes/steering/blob/master/elections.md#limiting-corporate-campaigning
+[pledge to recuse]: https://github.com/kubernetes/steering/blob/master/elections.md#steering-committee-and-election-officer-recusal
 
 [Condorcet]: https://en.wikipedia.org/wiki/Condorcet_method
 [CIVS]: http://civs.cs.cornell.edu/
