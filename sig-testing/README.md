@@ -59,13 +59,8 @@ Monitor these for Github activity if you are not a member of the team.
 
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
-| @kubernetes/sig-testing-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-testing-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-testing-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-testing-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-testing-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-testing-feature-requests) | Feature Requests |
-| @kubernetes/sig-testing-misc | [link](https://github.com/orgs/kubernetes/teams/sig-testing-misc) | General Discussion |
+| @kubernetes/sig-testing | [link](https://github.com/orgs/kubernetes/teams/sig-testing) | General Discussion |
 | @kubernetes/sig-testing-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-testing-pr-reviews) | PR Reviews |
-| @kubernetes/sig-testing-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-testing-proposals) | Design Proposals |
-| @kubernetes/sig-testing-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-testing-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
 
