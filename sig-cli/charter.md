@@ -16,7 +16,7 @@ SIG CLI section in [sigs.yaml]
 #### Code, Binaries and Services
 
 SIG CLI code include command line tools and binaries for working with Kubernetes
-API's. Examples of these binaries include: kubectl and kustomize.
+API's. Examples of these binaries include: [kubectl and kustomize].
 
 ### Out of scope
 
@@ -47,4 +47,4 @@ Option 1: by [SIG Technical Leads](https://github.com/kubernetes/community/blob/
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L487
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
 [Test Playbook]: https://docs.google.com/document/d/1Z3teqtOLvjAtE-eo0G9tjyZbgNc6bMhYGZmOx76v6oM
-
+[kubectl and kustomize]: https://github.com/kubernetes/community/blob/master/sig-cli/README.md#subprojects
