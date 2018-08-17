@@ -94,9 +94,6 @@ The following subprojects are owned by sig-api-machinery:
     - https://raw.githubusercontent.com/kubernetes-incubator/client-python/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/client-go/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/OWNERS
-- **universal-utils**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
 
 ## GitHub Teams
 
