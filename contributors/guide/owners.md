@@ -101,8 +101,8 @@ aspects of this process may be configured on a per-repo basis.
 - Phase 2: Humans approve the PR
   - The PR **author** `/assign`'s all suggested **approvers** to the PR, and optionally notifies
     them (eg: "pinging @foo for approval")
-  - Only people listed in the relevant OWNERS files, either directly or through an alias, can act
-    as **approvers**, including the individual who opened the PR
+  - Only people listed in the relevant OWNERS files, either directly or through an alias, as [described
+    above](#owners_aliases), can act as **approvers**, including the individual who opened the PR.
   - **Approvers** look for holistic acceptance criteria, including dependencies with other features,
     forwards/backwards compatibility, API and flag definitions, etc
   - If the code changes look good to them, an **approver** types `/approve` in a PR comment or
