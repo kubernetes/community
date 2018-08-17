@@ -16,14 +16,14 @@ but always provide a full and complete copy.
 * Host-Assisted Clone - using a pod to copy data between two persistent volumes
 
 ## Goals
-* Provide consistent process/annotations to execute cloning for storage technologies both for intree and out of tree plugins
+* Provide consistent process to execute cloning for storage technologies both for intree and out of tree plugins
 
 ## Non Goals
 * The process should not force storage vendors to implement cloning
 * Provide governance for security to clone assets between namespaces
 
 ## Value add to Kubernetes  
- By providing a consistent process/annotation for cloning, users can leverage the native capability of their storage to quickly create a 
+ By providing a consistent method for cloning, users can leverage the native capability of their storage to quickly create a 
  copy of their persistent volumes without having to wait for a snapshot object to be created. This is especially desirable for large 
  data volumes. Cloning also is a common use case in disaster recovery and for pre-seeding storage in a virtualized environment that many 
  users accustomed to operating in those environments might find useful. As plug-ins move out of tree, it will be more difficult to 
