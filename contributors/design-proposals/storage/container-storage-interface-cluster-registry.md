@@ -59,9 +59,9 @@ The objective of this document is to document all the requirements for enabling 
 
 ## Design Overview
 
-A new custom resource will be automatically be installed on Kubernetes clusters.
+A new custom resource definition will automatically be installed on Kubernetes clusters.
 
-Upon deployment a driver must create a new custom resource object.
+Upon deployment a driver MAY create a new custom resource object.
 
 ## Design Details
 
@@ -77,28 +77,25 @@ Upon deployment a driver must create a new custom resource object.
 type CSIDriver struct {
     metav1.TypeMeta   `json:",inline"`
 
-	// Standard object metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+    // Standard object metadata.
+    // More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
     metav1.ObjectMeta `json:"metadata"`
 
     // Specification describing the CSI volume driver and any custom
     // configuration for it.
-	Spec CSIDriverSpec `json:"spec"`
-
-	// Status of the CSI volume driver.
-	Status CSIDriverStatus `json:"status,omitempty"`
+    Spec CSIDriverSpec `json:"spec"`
 }
 
 // CSIDriverList is a collection of CSIDriver objects.
 type CSIDriverList struct {
     metav1.TypeMeta `json:",inline"`
     
-	// Standard list metadata
-	// More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
-	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+    // Standard list metadata
+    // More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+    metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
-	// Items is the list of CSIDrivers
-	Items []CSIDriver `json:"items"`
+    // Items is the list of CSIDrivers
+    Items []CSIDriver `json:"items"`
 }
 
 // CSIDriverSpec is the specification of a CSIDriver.
@@ -127,13 +124,6 @@ type CSIDriverSpec struct {
     PodInfoRequiredOnMount *bool `json:"podInfoRequiredOnMount"`
 }
 
-// CSIDriverStatus is the status of a CSIDriver.
-type CSIDriverStatus struct {
-    // Indicates the volume driver has been successfully deployed on the cluster
-    // and is ready to use.
-	Ready bool `json:"ready"`
-}
-
 ```
 
 #### CRD Installation
@@ -152,7 +142,15 @@ The driver may set any optional configuration fields (like `SkipAttach`) as appr
 When the driver is ready to serve, it must set `Ready` in the status to `true`.
 
 #### Upgrade/Downgrade
-TODO
+This change is backwards compatible.
+Existing CSI drivers that are already deployed will not create a `CSIDriver` object.
+And Kubernetes will continue to interact with those drivers as it does today.
+New drivers MAY create a `CSIDriver` object to change how Kubernetes interacts with them.
+
+If a Kubernetes cluster is downgraded to a version that does not support `CSIDriver`, but continues to have a CSI driver deployed on it that creates a `CSIDriver` object and expects non-default behavior, Kubernetes will not be able to interact with it correctly (e.g. it may call attach when driver requests attach not to be called resulting in the volumes not mounting). Therefore, cluster admins must ensure if they downgrade, that they also change the CSI driver, if needed.
 
 ## Alternatives Considered
-TODO
+Kubernetes already has a kubelet plugin registration mechanism.
+So we considered putting this information in the `Node.Status` field.
+We realized that there are some plugin level attributes and forcing them in to node level fields could result in inconsistency.
+Different nodes could report different values for the same plugin attribute (like supports attach or not) for the same driver.
