@@ -14,24 +14,23 @@ We want to skip creation of `VolumeAttachment` objects in A/D controller for CSI
 In order to skip both A/D controller attaching a volume and kubelet waiting for the attachment, both of them need to know if a particular CSI driver is attachable or not. In this document we expect that proposal #2514 is implemented and both A/D controller and kubelet has informer on `CSIDriver` so they can check if a volume is attachable easily.
 
 ## Design
-### Volume plugins
-
-#### CSI volume plugin
-* Rework [`ProbeVolumePlugins`](https://github.com/kubernetes/kubernetes/blob/43f805b7bdda7a5b491d34611f85c249a63d7f97/pkg/volume/csi/csi_plugin.go#L58) to accept informer that watches CSIDriver. The plugin will store the informer for later.
+### CSI volume plugin
+* Rework [`Init`](https://github.com/kubernetes/kubernetes/blob/43f805b7bdda7a5b491d34611f85c249a63d7f97/pkg/volume/csi/csi_plugin.go#L58) to get or create informer to cache CSIDriver instances.
+  * Depending on where the API for CSIDriver ends up, we may:
+    * Rework VolumeHost to either provide the informer. This leaks CSI implementation details to A/D controller and kubelet
+    * Or the CSI volume plugin can create and run CSIDriver informer by itself. No other component in controller-manager or kubelet needs the informer right now, so a non-shared informer is viable option. Depending on when the API for CSIDriver ends up, `VolumeHost` may need to be extended to provide client interface to the API and kubelet and A/D controller may need to be updated to create the interface (somewhere in `cmd/`, where RESTConfig is still available to create new clients ) and pass it to their `VolumeHost` implementations.
 * Rework `Attach`, `Detach`, `VolumesAreAttached` and `WaitForAttach` to check for `CSIDriver` instance using the informer.
 	* If CSIDriver for the driver exists and it's attachable, perform usual logic.
-	* If CSIDriver for the driver exists and it's not attachable, return success immediately (basically NOOP).
+	* If CSIDriver for the driver exists and it's not attachable, return success immediately (basically NOOP). A/D controller will still mark the volume as attached in `Node.Status.VolumesAttached`.
 	* If CSIDriver for the driver does not exist, perform usual logic (i.e. treat the volume as attachable).
 	  * This keeps the behavior the same as in old Kubernetes version without CSIDriver object.
 	  * This also happens when CSIDriver informer has not been quick enough. It is suggested that CSIDriver instance is created **before** any pod that uses corresponding CSI driver can run.
 	    * In case that CSIDriver informer (or user) is too slow, CSI volume plugin `Attach()` will create `VolumeAttachment` instance and wait for (non-existing) external attacher to fulfill it. The CSI plugin shall recover when `CSIDriver` instance is created and skip attach. Any `VolumeAttachment` instance created here will be deleted on `Detach()`, see the next bullet.
 * In addition to the above, `Detach()` removes `VolumeAttachment` instance even if the volume is not attachable. This deletes `VolumeAttachment` instances created by old A/D controller or before `CSIDriver` instance was created.
 
-### A/D controller
-* A/D controller must pass a (shared) informer to watch CSIDriver and pass it to CSI volume plugin in [`ProbeVolumePlugins`](https://github.com/kubernetes/kubernetes/blob/8db5328c4c1f9467ab0d70ccb991a12d4675b6a7/cmd/kube-controller-manager/app/plugins.go#L82).
 
-### Kubelet / VolumeManager
-* Kubelet must create a (shared) informer to watch CSIDriver and pass it to CSI volume plugin in [`ProbeVolumePlugins`](https://github.com/kubernetes/kubernetes/blob/8db5328c4c1f9467ab0d70ccb991a12d4675b6a7/cmd/kubelet/app/plugins.go#L101).
+### Authorization
+* A/D controller and kubelet must be allowed to list+watch CSIDriver instances. Updating RBAC rules should be enough.
 
 ## API
 No API changes.
@@ -49,7 +48,7 @@ For non-attachable volumes, if the volume was attached by "old" Kubernetes (or "
 ## Downgrade
 This chapter covers:
 * Downgrade from new Kubernetes that has `CSISkipAttach` enabled to old Kubernetes with `CSISkipAttach disabled.
-* Update from Kubernetes that has `CSISkipAttach` enabled to the same Kubernetes with `CSISkipAttach` disabled.
+* Update from Kubernetes that has `CSISkipAttach` feature enabled to the same Kubernetes with `CSISkipAttach` disabled.
 * Deletion of CSIDriver instance with non-attachable CSI driver.
 
 In all cases listed above, a non-attachable CSI driver becomes "attachable" (i.e. requires external attacher).  Downgrade does not affect attachable CSI drivers, both "old" and "new" Kubernetes processes them in the same way.
@@ -75,7 +74,7 @@ Expected timeline:
 
 ## Alternatives considered
 A/D controller and kubelet can be easily extended to check if a given volume is attachable. This would make mounting of non-attachable volumes easier, as kubelet would not need to wait for A/D controller to mark the volume as attached. However, there would be issues when upgrading or downgrading Kubernetes (or marking CSIDriver as attachable or non-attachable, which has basically the same handling).
-* On upgrade (i.e. a previously attachable CSI volume becomes non-attachable), A/D controller could discover that an attached volume is not attachable any longer. A/D controller could clean up `Node.Status.VolumesAttached`, but since A/D controller does not know anything about `VolumeAttachment`, we would either need to introduce a new volume plugin call to clean it up in CSI volume plugin, or something else would need to clean it.
-* On downgrade (i.e. a previously non-attachable CSI volume becomes attachable), kubelet must discover that already mounted volume has changed from non-attachable to attachable and put it into `Node.Status.VolumesInUse`. This would race with A/D controller detaching the volume when a pod was deleted at the same time a CSIDriver instance was made attachable.
+* On upgrade (i.e. a previously attachable CSI volume becomes non-attachable, e.g. when user creates CSIDriver instance while corresponding CSI driver is already running), A/D controller could discover that an attached volume is not attachable any longer. A/D controller could clean up `Node.Status.VolumesAttached`, but since A/D controller does not know anything about `VolumeAttachment`, we would either need to introduce a new volume plugin call to clean it up in CSI volume plugin, or something else would need to clean it.
+* On downgrade (i.e. a previously non-attachable CSI volume becomes attachable, e.g. when user deletes CSIDriver instance or downgrades to old Kubernetes without this feature), kubelet must discover that already mounted volume has changed from non-attachable to attachable and put it into `Node.Status.VolumesInUse`. This would race with A/D controller detaching the volume when a pod was deleted at the same time a CSIDriver instance was made attachable.
 
 Passing all volumes through A/D controller saves us from these difficulties and even races.
