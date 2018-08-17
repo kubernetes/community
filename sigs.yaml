@@ -492,30 +492,23 @@ sigs:
       establishment of conventions for writing CLI commands, POSIX compliance,
       and improving the command line tools from a developer and devops user
       experience and usability perspective.
-    charter_link: charter.md
+    charter_link:
     label: cli
     leadership:
       chairs:
       - name: Maciej Szulik
         github: soltysh
         company: Red Hat
-      - name: Sean Sullivan
-        github: seans3
-        company: Google
-      leads:
-      - name: Maciej Szulik
-        github: soltysh
-        company: Red Hat
       - name: Phillip Wittrock
         github: pwittrock
         company: Google
+      - name: Tony Ado
+        github: AdoHe
+        company: Alibaba
       emeritus_leads:
       - name: Fabiano Franz
         github: fabianofranz
         company: Red Hat
-      - name: Tony Ado
-        github: AdoHe
-        company: Alibaba
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
