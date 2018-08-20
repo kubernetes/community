@@ -27,9 +27,9 @@ type TypedLocalObjectReference struct {
 
 ```
 ### Error Handling
-If an external-provisioner does not understand the new DataSource field and cannot populate the data to the volume, we propose to add a PV condition to detect this situation and fail the operation. The idea is simlar to the design of ["Pod Ready++"]https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md
+If an external-provisioner does not understand the new DataSource field and cannot populate the data to the volume, we propose to add a PV condition to detect this situation and fail the operation. The idea is simlar to the design of ["Pod Ready++"](https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md)
 
-First we introduce a condition called "VolumeDataPopulated" into PV. With the feature of snapshot and data source, volume might be created from snapshot source with data populated into the volume instead of an empty one. The external provision needs to understand the data source and also mark the condition "VolumeDataPopualted" to true. The PV controller will check this condition if the data source of PVC is specified. Only if the condition is true, the PVC can be marked as "Bound" phase.
+First we introduce a condition called "VolumeDataPopulated" into PV. With the feature of snapshot and data source, volume might be created from snapshot source with data populated into the volume instead of an empty one. The external provision needs to understand the data source and also mark the condition "VolumeDataPopualted" to true. The PV controller will check this condition if the data source of PVC is specified. Only if the condition is true, the PVC can be marked as "Bound" phase. In case of an old version of provisioner is in use and it cannot recognize the data source field in PVC, an empty Volume will be provisioned. In this situation, since the "VolumeDataPouplated" condition is not set to true by the provisioner, the PV controller will not mark PVC as "Bound" phase so that user cannot use this PVC yet. We can also add this condition into PVC to tell the users that the PVC's data is not populated.
 
 ```
 // PersistentVolumeStatus is the current status of a persistent volume.
