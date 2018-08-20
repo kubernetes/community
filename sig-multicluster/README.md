@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 A Special Interest Group focused on solving common challenges related to the management of multiple Kubernetes clusters, and applications that exist therein. The SIG will be responsible for designing, discussing, implementing and maintaining API’s, tools and documentation related to multi-cluster administration and application management. This includes not only active automated approaches such as Cluster Federation, but also those that employ batch workflow-style continuous deployment systems like Spinnaker and others.  Standalone building blocks for these and other similar systems (for example a cluster registry), and proposed changes to kubernetes core where appropriate will also be in scope.
 
+The [charter](charter.md) defines the scope and governance of the Multicluster Special Interest Group.
+
 ## Meetings
 * Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit).

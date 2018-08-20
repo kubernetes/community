@@ -1090,7 +1090,7 @@ sigs:
       systems like Spinnaker and others.  Standalone building blocks for these and other
       similar systems (for example a cluster registry), and proposed changes to kubernetes
       core where appropriate will also be in scope.
-    charter_link:
+    charter_link: charter.md
     label: multicluster
     leadership:
       chairs:
