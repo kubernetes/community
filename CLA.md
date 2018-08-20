@@ -1,28 +1,19 @@
 # The Contributor License Agreement
 
 The [Cloud Native Computing Foundation](https://www.cncf.io/community) defines
-the legal status of the contributed code in a _Contributor License Agreement_
-(CLA).
+the legal status of the contributed code in two different types of _Contributor License Agreements_
+(CLAs), [individual contributors](https://github.com/cncf/cla/blob/master/individual-cla.pdf) and [corporations](https://github.com/cncf/cla/blob/master/corporate-cla.pdf).
 
-Only original source code from CLA signatories can be accepted into kubernetes.
+Kubernetes can only accept original source code from CLA signatories.
 
 This policy does not apply to [third_party](https://git.k8s.io/kubernetes/third_party)
 and [vendor](https://git.k8s.io/kubernetes/vendor).
-
-## What am I agreeing to?
-
-There are two versions of the CLA:
-
-1. One for [individual contributors](https://github.com/cncf/cla/blob/master/individual-cla.pdf)
-submitting contributions on their own behalf.
-1. One for [corporations](https://github.com/cncf/cla/blob/master/corporate-cla.pdf)
-to sign for contributions submitted by their employees.
 
 It is important to read and understand this legal agreement.
 
 ## How do I sign?
 
-#### 1. Log into the Linux Foundation ID Portal with Github
+#### 1. Log in to the Linux Foundation ID Portal with Github
 
 Click one of:
   * [Individual signup](https://identity.linuxfoundation.org/projects/cncf) to
@@ -46,8 +37,8 @@ person@organization.domain email address in the CNCF account registration page.
 
 #### 3. Complete signing process
 
-Once you have created your account, follow the instructions to complete the
-signing process via Hellosign.
+After creating your account, follow the instructions to complete the
+signing process through Hellosign.
 
 #### 4. Ensure your Github e-mail address matches address used to sign CLA
 
@@ -58,7 +49,7 @@ on setting email addresses.
 You must also set your [git e-mail](https://help.github.com/articles/setting-your-email-in-git)
 to match this e-mail address as well.
 
-If you've already submitted a PR you can correct your user.name and user.email
+If you already submitted a PR you can correct your user.name and user.email
 and then use use `git commit --amend --reset-author` and then `git push --force` to
 correct the PR.
 
@@ -78,12 +69,11 @@ Once you have this, the CLA authorizer bot will authorize your PRs.
 
 ## Troubleshooting
 
-If you are having problems with signed the CLA send a mail to: `helpdesk@rt.linuxfoundation.org`.
+If you have problems signing the CLA, send an email message to: `helpdesk@rt.linuxfoundation.org`.
 
 Someone from the CNCF will respond to your ticket to help.
 
 ## Setting up the CNCF CLA check
 
-If you are a Kubernetes GitHub organization or repo owner, and would like to setup
-the Linux Foundation CNCF CLA check for your repositories, please
-[read the docs on setting up the CNCF CLA check](/github-management/setting-up-cla-check.md)
+If you are a Kubernetes GitHub organization or repo owner and would like to setup
+the Linux Foundation CNCF CLA check for your repositories, [read the docs on setting up the CNCF CLA check](/github-management/setting-up-cla-check.md)
