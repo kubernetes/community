@@ -17,9 +17,7 @@ The documentation follows a template and uses the values from [`sigs.yaml`](/sig
 **Time Zone gotcha**:
 Time zones make everything complicated.
 And Daylight Saving time makes it even more complicated.
-Meetings are specified with a time zone and we generate a link to http://www.thetimezoneconverter.com/ so 
-
-people can easily convert it to their local time zone.
+Meetings are specified with a time zone and we generate a link to http://www.thetimezoneconverter.com/ so people can easily convert it to their local time zone.
 To make this work you need to specify the time zone in a way that the web site recognizes.
 Practically, that means US pacific time must be `PT (Pacific Time)`.
 `PT` isn't good enough, unfortunately.
