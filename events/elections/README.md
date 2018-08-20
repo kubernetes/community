@@ -69,28 +69,27 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 
 - Select Election Officers
 - Select criteria for who can vote in the upcoming election
-- Must refrain from endorsing or otherwise advocating for any candidate
-- Is allowed to vote in the election
+- [Recuses themselves from public election activities][election-recusal]
 - Announces results of the election to the community
 - Commit the results of the election to the Kubernetes Community repository
 
 ### Election Officers
 
 - Recommend election dates to be approved by the Steering Committee
-- Must be a Kubernetes Member of Standing
+- Must be [eligible to vote]
 - Cannot be running for office in the current election
 - Cannot be a current member of the steering committee
 - Generates the voter guide
 - Tracks candidates
-- Monitors kubernetes-dev for nominations
+- Monitors kubernetes-dev for nominations and endorsements
   - Keeps track of nominees in a spreadsheet
-  - Ensures that each nominee has the required nominations from three different employers (as stated in the charter)
-  - All nominations are conducted in the public, so sharing this sheet during the nomination process is encouraged
+  - Ensures that each nominee has the required endorsements from three different employers (as stated in the charter)
+  - All nominations and endorsements are conducted in the public, so sharing this sheet during the nomination process is encouraged
 - Accepts/Reviews pull requests for the candidate platforms
   - The community generally assists in helping with PRs to give the candidates a quick response time
 - Update the community regularly via the community meeting
 - Post on behalf of the steering committee if necessary
-- Posting deadlines and reminders to kubernetes-dev, twitter, and slack.
+- Posting deadlines and reminders to the kubernetes blog, kubernetes-dev, twitter, and slack.
 - Reissues ballots from CIVS to voters who might have not received their ballot.
 - Miscellaneous election related tasks as decided by the steering committee.
 - Must refrain from endorsing or otherwise advocating for any candidate.
@@ -99,3 +98,6 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - It is impossible for the election officers to see the results of the election until the election ends; for purposes of transparency with the community it is encouraged to release some statistics during the election (ie. “65% of the community has voted so far!”)
 - Ensure that the election results are handed over to the steering committee.
 - Is allowed to vote in the election
+
+[eligibile to vote]: https://github.com/kubernetes/steering/blob/master/elections.md#elegibility-for-voting
+[election-recusal]: https://github.com/kubernetes/steering/blob/master/elections.md#steering-committee-and-election-officer-recusal
