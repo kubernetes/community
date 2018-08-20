@@ -1,11 +1,11 @@
 # SIG Doc builder
 
 This folder contains scripts to automatically generate documentation about the
-different Special Interest Groups (SIGs) of Kubernetes. The authoritative
+different Special Interest Groups (SIGs) and Working Groups (WGs)of Kubernetes. The authoritative
 source for SIG information is the [`sigs.yaml`](/sigs.yaml) file in the project root.
 All updates must be done there.
 
-The schema for this file should be self explanatory. However, if you need to see all the options check out the generator code in `app.go`.
+The schema for this file should be self explanatory. However, if you need to see all the options, check out the generator code in `app.go`.
 
 The documentation follows a template and uses the values from [`sigs.yaml`](/sigs.yaml):
 
@@ -18,11 +18,11 @@ The documentation follows a template and uses the values from [`sigs.yaml`](/sig
 Time zones make everything complicated.
 And Daylight Saving time makes it even more complicated.
 Meetings are specified with a time zone and we generate a link to http://www.thetimezoneconverter.com/ so that people can easily convert it to their local time zone.
-To make this work you need to specify the time zone in a way that that web site recognizes.
+To make this work you need to specify the time zone in a way that web site recognizes.
 Practically, that means US pacific time must be `PT (Pacific Time)`.
 `PT` isn't good enough, unfortunately.
 
-When an update happens to the this file, the next step is generate the
+When an update happens to the this file, the next step is to generate the
 accompanying documentation. This takes the format of three types of doc files:
 
 ```
