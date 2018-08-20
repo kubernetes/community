@@ -6,7 +6,7 @@ Note: this proposal is part of [Volume Snapshot](https://github.com/kubernetes/c
 In Volume Snapshot proposal, a snapshot is now represented as first-class CRD objects and an external snapshot controller is responsible for managing its lifecycle. With Snapshot API available, users could provision volumes from snapshot and data will be prepopulated to the volumes. Also considering clone and other possible storage operations, there could be many different types of sources used for populating the data to the volumes. In this proposal, we add a general "DataSource" which could be used to represent different types of data sources.
 
 ## Design
-A new DataSource field is proposed to add to both PVC and PV to represent the source of the data which is prepopulated to the provisioned volume. If an external-provisioner does not understand the new DataSource field and cannot populate the data to the volume, PV/PVC controller should be able to detect that by comparing DataSource field in PV and PVC (i.e., PVC has DataSource but PV does not) and fail the operation. 
+A new DataSource field is proposed to add to PVC to represent the source of the data which is prepopulated to the provisioned volume. If an external-provisioner does not understand the new DataSource field and cannot populate the data to the volume, there is a WIP proposal to use readiness condition to detect this situation and fail the operation. 
 
 For DataSource, we propose to define a new type “TypedLocalObjectReference”. It is similar to “LocalObjectReference” type with additional Kind field in order to support multiple data source types. In the alpha version, this data source is restricted in the same namespace of the PVC. The following are the APIs we propose to add.
 
@@ -16,12 +16,6 @@ type PersistentVolumeClaimSpec struct {
         // If specified, volume will be pre-populated with data from the specified data source.
         // +optional
         DataSource *TypedLocalObjectReference `json:"dataSource" protobuf:"bytes,2,opt,name=dataSource"`
-}
-
-type PersistentVolumeSpec struct {
-        // If specified, volume was pre-populated with data from the specified data source.
-        // +optional
-        DataSource *TypedLocalObjectReference `json:"dataSourceRef" protobuf:"bytes,2,opt,name=dataSourceRef"`
 }
 
 // TypedLocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
