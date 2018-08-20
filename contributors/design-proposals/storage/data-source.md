@@ -21,7 +21,7 @@ type PersistentVolumeClaimSpec struct {
 type PersistentVolumeSpec struct {
         // If specified, volume was pre-populated with data from the specified data source.
         // +optional
-        DataSource *ypedLocalObjectReference `json:"dataSourceRef" protobuf:"bytes,2,opt,name=dataSourceRef"`
+        DataSource *TypedLocalObjectReference `json:"dataSourceRef" protobuf:"bytes,2,opt,name=dataSourceRef"`
 }
 
 // TypedLocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
@@ -43,7 +43,7 @@ apiVersion: snapshot.storage.k8s.io/v1alpha1
 kind: VolumeSnapshot
 metadata:
   name: snapshot-pd-1
-  namespace: myns
+  namespace: mynamespace
 spec:
   source:
     kind: PersistentVolumeClaim
@@ -58,7 +58,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: snapshot-pvc
-  Namespace: myns
+  Namespace: mynamespace
 spec:
   accessModes:
     - ReadWriteOnce
@@ -78,7 +78,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: clone-pvc
-  Namespace: myns
+  Namespace: mynamespace
 spec:
   accessModes:
     - ReadWriteOnce
@@ -98,7 +98,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: clone-pvc
-  Namespace: myns
+  Namespace: mynamespace
 spec:
   accessModes:
     - ReadWriteOnce
