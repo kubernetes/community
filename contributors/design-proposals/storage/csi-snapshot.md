@@ -108,9 +108,11 @@ type VolumeSnapshotStatus struct {
 	// +optional
 	CreationTime *metav1.Time `json:"creationTime" protobuf:"bytes,1,opt,name=creationTime"`
 
-	// The size of the snapshot. When restoring volume from the snapshot, the volume size 
-	// should be equal or larger than its snapshot size.
-	Size *resource.Quantity `json:"size" protobuf:"bytes,2,opt,name=size"`
+	// When restoring volume from the snapshot, the volume size should be equal or 
+	// larger than the Restoresize if it is specified. If RestoreSize is set to nil, it means
+	// that the storage plugin does not have this information avaialble.
+	// +optional
+	RestoreSize *resource.Quantity `json:"restoreSize" protobuf:"bytes,2,opt,name=restoreSize"`
 	
 	// Ready is set to true only if the snapshot is ready to use (e.g., finish uploading if
 	// there is an uploading phase) and also VolumeSnapshot and its VolumeSnapshotContent
@@ -203,9 +205,11 @@ type CSIVolumeSnapshotSource struct {
 	// the  current time in nanoseconds since 1970-01-01 00:00:00 UTC.
 	CreationTime *int64 `json:"creationTime,omitempty" protobuf:"varint,3,opt,name=creationTime"`
 	
-	// The size of the snapshot. When restoring volume from the snapshot, the volume size 
-	// should be equal or larger than its snapshot size.
-	Size *resource.Quantity `json:"size" protobuf:"bytes,2,opt,name=size"`
+	// When restoring volume from the snapshot, the volume size should be equal or 
+	// larger than the Restoresize if it is specified. If RestoreSize is set to nil, it means
+	// that the storage plugin does not have this information avaialble.
+	// +optional
+	RestoreSize *resource.Quantity `json:"restoreSize" protobuf:"bytes,2,opt,name=restoreSize"`
 }
 
 ```
