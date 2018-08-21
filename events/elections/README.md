@@ -33,6 +33,9 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
    - Make github.com/kubernetes/community/elections/$YEAR/README.md, this is the voter’s guide.
      - Copy over the voter’s guide from the previous year. The voter’s guide is the single source of truth for the election that year! All announcements and notices should link to this document.
      - Update with new dates, candidates, and procedures (if necessary).
+   - Make github.com/kubernetes/community/elections/$YEAR/voters.md
+     - Initial list is generated via the [eligibilty for voting requirements][eligibile to vote]
+     - Officers will update this list as voters submit the voting exemption form.
    - Announce to the candidates to submit PRs with their platform statement (if they desire), 300 word limit. Each platform document lives in the elections/$YEAR directory, with the voter’s guide (README.md) acting as the index.
 
 2. Announce voting schedule to community
@@ -71,7 +74,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - Select Election Officers
 - Select criteria for who can vote in the upcoming election
 - Announces results of the election to the community
-- Commit the results of the election to the Kubernetes Community repository
+- Commit the results of the election to the Kubernetes Steering Committee repository
 
 ### Election Officers
 
@@ -87,7 +90,9 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
     - How is $candidate doing so far? (PS - we don't know anyway)
     - Who are your favorite candidates?
 - Recommend election dates to be approved by the Steering Committee
-- Generate the voter guide
+- Generate the voter guide and list of voters according to the criteria for that year's election
+- Generate exemption form for non-code contributors to apply for voting
+  - Review and commit applicants to approved voter's list at least once a week until the election begins
 - Track candidates
 - Monitor kubernetes-dev for nominations and endorsements
   - Keep track of nominees in a spreadsheet
