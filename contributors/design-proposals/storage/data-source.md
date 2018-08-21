@@ -23,6 +23,8 @@ type TypedLocalObjectReference struct {
         Name string
 	// Kind indicates the type of the object reference.
 	Kind string
+	// APIGroup is the group for the resource being referenced
+	APIGroup string
 }
 
 ```
@@ -46,17 +48,15 @@ type PersistentVolumeStatus struct {
 
 type PersistentVolumeConditionType string
 
-// These are valid conditions of Pvc
+// These are valid conditions of PersistentVolume
 const (
 	// An user trigger resize of pvc has been started
-	PersistentVolumeDataPopulated PersistentVolumeConditionType = "dataPopulated"
+	PersistentVolumeDataPopulated PersistentVolumeConditionType = "DataPopulated"
 )
 
 type PersistentVolumeCondition struct {
 	Type   PersistentVolumeConditionType
 	Status ConditionStatus
-	// +optional
-	LastProbeTime metav1.Time
 	// +optional
 	LastTransitionTime metav1.Time
 	// +optional
