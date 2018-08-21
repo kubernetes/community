@@ -30,18 +30,18 @@ previous [governance meeting video] which led to this whole process.
 
 Please refer to the [Steering Committee Election Charter] for:
 
-- [elegibility for candidacy]
-- [eligibility for voting]
+- [eligibility for candidacy]
+- [eligibility for voting] and [eligible voters] list (not in charter)
 
 ### Schedule
 
 | Date         | Event                    |
 | ------------ | ------------------------ |
 | August 21    | Announcement of Election |
-| September 14 | All candidate bios / statements of intent due. Voting exemption forms due. |
+| September 14 | Due by 11:59pm UTC: All candidate bios and voting exception forms due. |
 | September 19 | Election Begins |
 | October 3    | Election Closes |
-| October 4    | Announcement of Results |
+| October 4    | Announcement of Results at Community Meeting |
 
 ## Candidacy Process
 
@@ -62,7 +62,7 @@ Once nominated, you must get the endorsement of three (3) different eligible
 voters from three (3) different employers.  If you are eligible to vote
 yourself, you count as one of the three.
 
-Eligible voters may endorse candidates of their choosing by replying to the
+[Eligible voters] may endorse candidates of their choosing by replying to the
 candidate's nomination email saying something like "I endorse this nominee"
 or "+1".
 
@@ -90,17 +90,15 @@ Elections will be held using time-limited [Condorcet] ranking on [CIVS]
 using the [Schulze method]. The top vote getters will be elected to the open
 seats.
 
-Employer diversity is encouraged, and thus [maximal representation] will be
+Employer diversity is encouraged, and thus maximal representation will be
 enforced as spelled out in the [Steering Committee Election Charter].
 
 You will be ranking your choices of the candidates with an option for
 "no opinion". In the event of a tie, a coin will be flipped.
 
-The election will open for voting on September 19, 2018 at 04:00pm UTC and
+The election will open for voting on September 19, 2018 around 04:00pm UTC and
 end two weeks after on October 3, 2018 at 01:00am UTC. You will receive an
-email to the address on file at the start of the election from Jorge Castro
-(jorge@heptio), Community Manager, please whitelist if necessary. Detailed
-voting instructions will be addressed in email and the CIVS polling page.
+email to the address on file at the start of the election from "Kubernetes (CIVS Poll Supervisor) `<civs@cs.cornell.edu>`, please whitelist if necessary. Detailed voting instructions will be addressed in email and the CIVS polling page.
 
 ### Officers
 
@@ -109,7 +107,7 @@ The Steering Committee has selected the following people as [election officers]:
 - Ihor Dvoretskyi, @idvoretskyi, CNCF
 - Jorge Castro, @castrojo, Heptio
 
-Please direct any questions via email to <elections@k8s.io>.
+Please direct any questions via email to <community@k8s.io>.
 
 ### Decision
 
@@ -147,3 +145,4 @@ Name | Organization/Company | GitHub
 [election officers]: https://github.com/kubernetes/community/tree/master/events/elections#election-officers
 [Kubernetes Community Meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
 [Kubernetes Blog]: http://blog.kubernetes.io/
+[eligible voters]: https://github.com/kubernetes/community/blob/master/events/elections/2018/voters.md
