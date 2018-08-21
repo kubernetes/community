@@ -37,7 +37,7 @@ Please refer to the [Steering Committee Election Charter] for:
 
 | Date         | Event                    |
 | ------------ | ------------------------ |
-| August 20    | Announcement of Election |
+| August 21    | Announcement of Election |
 | September 14 | All candidate bios / statements of intent due. Voting exemption forms due. |
 | September 19 | Election Begins |
 | October 3    | Election Closes |
