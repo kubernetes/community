@@ -83,7 +83,7 @@ spec:
   storageClassName: csi-gce-pd
   dataSource:
     kind: PersistentVolume
-    name: pvc-1
+    name: pv-1
   resources:
     requests:
       storage: 10Gi
