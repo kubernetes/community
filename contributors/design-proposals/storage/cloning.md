@@ -82,7 +82,7 @@ spec:
     - ReadWriteOnce
   storageClassName: csi-gce-pd
   dataSource:
-    kind: PersistentVolumeClaim
+    kind: PersistentVolume
     name: pvc-1
   resources:
     requests:
@@ -154,4 +154,5 @@ message VolumeContentSource {
 
 Care has been taking to ensure this design follows the groundwork laid by the following snapshot proposals:
 https://github.com/container-storage-interface/spec/pull/244 
+
 https://github.com/kubernetes-csi/external-provisioner/pull/123 
