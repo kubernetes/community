@@ -35,8 +35,8 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following subprojects are owned by sig-scalability:
 - **kubemark**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubemark/master/cmd/kubemark/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubemark/master/pkg/kubemark/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubemark/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubemark/OWNERS
 - **perf-tests**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/perf-tests/master/OWNERS

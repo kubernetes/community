@@ -1446,8 +1446,8 @@ sigs:
     subprojects:
     - name: kubemark
       owners:
-      - https://raw.githubusercontent.com/kubernetes/kubemark/master/cmd/kubemark/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubemark/master/pkg/kubemark/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubemark/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubemark/OWNERS
     - name: perf-tests
       owners:
       - https://raw.githubusercontent.com/kubernetes/perf-tests/master/OWNERS
