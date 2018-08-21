@@ -1,7 +1,7 @@
 ## 2018 Steering Committee Election
 ### Eligible Voters List
 
-The eligible voter process can be found in the steering committee [elections.md](https://git.k8s.io/steering/elections.md) doc. 
+The eligible voter process can be found in the steering committee [elections.md](https://git.k8s.io/steering/elections.md) doc. This list was pulled as of August 15, 2018.
 
 **GitHub ID:**
 liggitt
