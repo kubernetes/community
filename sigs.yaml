@@ -30,7 +30,7 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery
       teams:
       - name: sig-api-machinery-api-reviews
-        description: API Changes and Reviews
+        description: API Changes and Reviews (API Machinery APIs, NOT all APIs)
       - name: sig-api-machinery-bugs
         description: Bug Triage and Troubleshooting
       - name: sig-api-machinery-feature-requests
@@ -93,6 +93,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
       - https://raw.githubusercontent.com/kubernetes-client/gen/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/structured-merge-diff/master/OWNERS
     - name: kubernetes-clients
       owners:
       - https://raw.githubusercontent.com/kubernetes-client/community/master/OWNERS
