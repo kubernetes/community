@@ -78,28 +78,26 @@ type CSIVolumeSource struct {
 }
 ```
 
-CSI volume sources, that is `CSIVolumeSource` embedded in a pod specs, will be work differently than existing `CSIPersistentVolumeSource` specified in PVs:
+### Secret references
+CSI volume sources, that is `CSIVolumeSource` embedded in a pod specs, will work differently than existing `CSIPersistentVolumeSource` specified in PVs. For instance,  all secret references in in-line volumes can refer only to secrets in the same namespace where the corresponding pod is running. This is common in all other volume sources that refer to secrets, including Flex.
 
-* All secret references in in-line volumes can refer only to secrets in the same namespace where the corresponding pod is running. This is common in all other volume sources that refer to secrets, incl. Flex.
+### VolumeHandle generation
+The VolumeHandle, for certain CSI drivers, may be omitted by its users for in-line volumes (i.e. secrets, configMaps, etc). When this is the case, the Kubelet will employ a naming strategy to generate the value for the volumeHandle.  The Kubelet will use the [`CSIDriver` configuration object](https://github.com/kubernetes/community/pull/2514) to figure out how to auto-generate a volumeHandle.
 
-### Volume handles
-The VolumeHandle, in in-line volumes, will be optional for certain drivers (i.e. secrets, configMaps):
+The `CSIDriverSpec` type will expose field `VolumeHandleMode` which can have be set to:
 
-* When mounting a volume and the volumeHandle is not specified (think Secrets): 
-  * Internally, CSI will check the driver's configuration object, `CSIInfo`, for the driver type.
-  * If the driver is ephemeral and the `volumeHandle is not specified`, the handle will be completely auto-generated and passed to the external CSI driver.
-  * If the driver is ephemeral and `volumeHandle is provided`, the handle will be prefixed to an auto-generated value that will be the name of the volume.
-  * If the driver is configured as remote/persistent and volumeHandle is not specified, the operation will fail.
+* `AutomaticVolumeHandleGeneration`
+* `NoVolumeHandleGeneration`
 
-The mechanism used to generate the volumeHandle will be configuered using field  `CSIInfo.VolumeHandleGeneratedMode` with supported values: 
-* `PodVolumeHandleGenerated`
-* `NoVolumeHandleGenerated`
+When the driver is configured with `CSIDriverSpec.VolumeHandleMode = AutomaticVolumeHandleGeneration` and the volumeHandle is not specified, the Kubelet will automatically generate the volume handle to be sent to the CSI driver.  The generated value will be a combination of podUID and pod namespace.
 
-See CSIInfo proposal []() for type detail.
+If `CSIdriverSpec.VolumeHandleMode = NoVolumeHandleGeneration` (or if the field is not specified), the Kubelet will expect a volumeHandle value to be provided.
+
+See [CSI Cluster Registry proposal](https://github.com/kubernetes/community/pull/2514), for type detail.
 
 This approach provides several advantages:
-* It makes sure that each pod uses a different volume ID for its ephemeral volumes.  
-* Users don't need to think about VolumeHandles used in other pods in their namespace, as each pod will get an uniquely generated handle, preventing accidental naming conflicts in pods.
+* It makes sure that each pod can use a different volume ID for its ephemeral volumes.  
+* Users don't need to think about VolumeHandles used in other pods in their namespace, as each pod will get a uniquely generated handle, preventing accidental naming conflicts in pods.
 * Each pod created by ReplicaSet, StatefulSet or DaemonSet will get the same copy of a pod template. This makes sure that each pod gets its own unique volume ID and thus can get its own volume instance.
 * Without an auto-generated naming strategy, user could guess volume ID of a secret-like CSI volume of another user and craft a pod with in-line volume referencing it. CSI driver, obeying idempotency, must then give the same volume to this pod. 
 
