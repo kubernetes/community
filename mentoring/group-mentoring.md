@@ -17,6 +17,7 @@ Each cohort will last 2-3 months based on the time requirement in the community 
 * Each mentee is working toward the same goal, cohort has an end date/timeframe  
 * Exposure to multiple areas of the project making well-rounded contributors  
 * Pilots share time commitments and responsibilities  
+* Exposure to multiple mentors in an open and collaborative environment
 
 ## Logistics
 SIGs and other parts of the project will reach out to SIG Contributor Experience with requests for additional roles and provide a Pilot that is not the lead but at the same level they are targeting.
