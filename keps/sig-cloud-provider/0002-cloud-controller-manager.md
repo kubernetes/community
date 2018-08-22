@@ -55,6 +55,27 @@ replaces:
          - [Process Goals](#process-goals)
    - [Implementation History](#implementation-history)
    - [Alternatives](#alternatives)
+   
+## Terms
+
+- **CCM**: Cloud Controller Manager - The controller manager responsible for running cloud provider dependent logic, 
+such as the service and route controllers.
+- **KCM**: Kubernetes Controller Manager - The controller manager responsible for running generic Kubernetes logic, 
+such as job and node_lifecycle controllers.
+- **KAS**: Kubernetes API Server - The core api server responsible for handling all API requests for the Kubernetes 
+control plane. This includes things like namespace, node, pod and job resources.
+- **K8s/K8s**: The core kubernetes github repository.
+- **K8s/cloud-provider**: Any or all of the repos for each cloud provider. Examples include [cloud-provider-gcp](https://github.com/kubernetes/cloud-provider-gcp), 
+[cloud-provider-aws](https://github.com/kubernetes/cloud-provider-aws) and [cloud-provider-azure](https://github.com/kubernetes/cloud-provider-azure). 
+We have created these repos for each of the in-tree cloud providers. This document assumes in various places that the 
+cloud providers will place the relevant code in these repos. Whether this is a long-term solution to which additional 
+cloud providers will be added, or an incremental step toward moving out of the Kubernetes org is out of scope of this 
+document, and merits discussion in a broader forum and input from SIG-Architecture and Steering Committee. 
+- **K8s SIGs/library**: Any SIG owned repository. 
+- **Staging**: Staging: Separate repositories which are currently visible under the K8s/K8s repo, which contain code
+considered to be safe to be vendored outside of the K8s/K8s repo and which should eventually be fully separated from 
+the K8s/K8s repo. Contents of Staging are prevented from depending on code in K8s/K8s which are not in Staging. 
+Controlled by [publishing kubernetes-rules-configmap](https://github.com/kubernetes/publishing-bot/blob/master/configs/kubernetes-rules-configmap.yaml)
 
 ## Summary
 
@@ -154,7 +175,8 @@ easily, therefore, this will be addressed with Flex Volumes (Discussed under a s
 
 The kube-controller-manager has many controller loops. [See NewControllerInitializers](https://github.com/kubernetes/kubernetes/blob/release-1.9/cmd/kube-controller-manager/app/controllermanager.go#L332)
 
- - [nodeController](https://github.com/kubernetes/kubernetes/tree/release-1.9/pkg/controller/node)
+ - [nodeIpamController](https://github.com/kubernetes/kubernetes/tree/release-1.10/pkg/controller/nodeipam)
+ - [nodeLifecycleController](https://github.com/kubernetes/kubernetes/tree/release-1.10/pkg/controller/nodelifecycle)
  - [volumeController](https://github.com/kubernetes/kubernetes/tree/release-1.9/pkg/controller/volume)
  - [routeController](https://github.com/kubernetes/kubernetes/tree/release-1.9/pkg/controller/route)
  - [serviceController](https://github.com/kubernetes/kubernetes/tree/release-1.9/pkg/controller/service)
@@ -167,14 +189,23 @@ The kube-controller-manager has many controller loops. [See NewControllerInitial
 
 Among these controller loops, the following are cloud provider dependent.
 
- - [nodeController](https://github.com/kubernetes/kubernetes/tree/release-1.9/pkg/controller/node)
+ - [nodeIpamController](https://github.com/kubernetes/kubernetes/tree/release-1.10/pkg/controller/nodeipam)
+ - [nodeLifecycleController](https://github.com/kubernetes/kubernetes/tree/release-1.10/pkg/controller/nodelifecycle)
  - [volumeController](https://github.com/kubernetes/kubernetes/tree/release-1.9/pkg/controller/volume)
  - [routeController](https://github.com/kubernetes/kubernetes/tree/release-1.9/pkg/controller/route)
  - [serviceController](https://github.com/kubernetes/kubernetes/tree/release-1.9/pkg/controller/service)
 
-The nodeController uses the cloudprovider to check if a node has been deleted from the cloud. If cloud provider reports
-a node as deleted, then this controller immediately deletes the node from kubernetes. This check removes the need to
-wait for a specific amount of time to conclude that an inactive node is actually dead.
+The nodeIpamController uses the cloudprovider to handle cloud specific CIDR assignment of a node. Currently the only
+cloud provider using this functionality is GCE. So the current plan is to break this functionality out of the common 
+verion of the nodeIpamController. Most cloud providers can just run the default version of this controller. However any
+cloud provider which needs cloud specific version of this functionality and disable the default version running in the 
+KCM and run their own version in the CCM.
+
+The nodeLifecycleController uses the cloudprovider to check if a node has been deleted from/exists in the cloud. 
+If cloud provider reports a node as deleted, then this controller immediately deletes the node from kubernetes. 
+This check removes the need to wait for a specific amount of time to conclude that an inactive node is actually dead.
+The current plan is to move this functionality into its own controller, allowing the nodeIpamController to remain in
+K8s/K8s and the Kube Controller Manager.
 
 The volumeController uses the cloudprovider to create, delete, attach and detach volumes to nodes. For instance, the
 logic for provisioning, attaching, and detaching a EBS volume resides in the AWS cloudprovider. The volumeController
