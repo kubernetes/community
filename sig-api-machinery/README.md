@@ -44,6 +44,7 @@ The following subprojects are owned by sig-api-machinery:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/garbagecollector/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/namespace/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/quota/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/kube-storage-version-migrator/master/OWNERS
 - **universal-machinery**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/apimachinery/master/OWNERS
