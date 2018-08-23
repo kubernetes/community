@@ -98,7 +98,7 @@ type VolumeSnapshotSpec struct {
 	// Name of the VolumeSnapshotClass used by the VolumeSnapshot. If not specified, a default snapshot class will
 	// be used if it is available.
 	// +optional
-	VolumeSnapshotClassName string `json:"snapshotClassName" protobuf:"bytes,3,opt,name=snapshotClassName"`
+	VolumeSnapshotClassName *string `json:"snapshotClassName" protobuf:"bytes,3,opt,name=snapshotClassName"`
 }
 
 // VolumeSnapshotStatus is the status of the VolumeSnapshot
