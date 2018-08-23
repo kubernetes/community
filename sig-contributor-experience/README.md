@@ -63,6 +63,7 @@ The following subprojects are owned by sig-contributor-experience:
 - **mentoring**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
 - **repo-infra**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
