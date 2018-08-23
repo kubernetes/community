@@ -3,7 +3,11 @@
 Note: this proposal is part of [Volume Snapshot](https://github.com/kubernetes/community/pull/2335) feature design, and also relevant to recently proposed Volume Clone feature. 
 
 ## Goal
-In Volume Snapshot proposal, a snapshot is now represented as first-class CRD objects and an external snapshot controller is responsible for managing its lifecycle. With Snapshot API available, users could provision volumes from snapshot and data will be prepopulated to the volumes. Also considering clone and other possible storage operations, there could be many different types of sources used for populating the data to the volumes. In this proposal, we add a general "DataSource" which could be used to represent different types of data sources.
+Currently in Kuberentes, volume plugin only supports to provision an empty volume. With the new storage features (including [Volume Snapshot](https://github.com/kubernetes/community/pull/2335) and [volume clone](https://github.com/erinboyd/community/blob/patch-3/contributors/design-proposals/storage/cloning.md)) being proposed, there is a need to support data population for volume provisioning. For example, volume can be created from a snapshot source, or volume could be cloned from another volume source. Depending on the sources for creating the volume, there are two scenarios
+1. Volume provisioner can recoginize the source and be able to create the volume from the source directly (e.g., restore snapshot to a volume or clone volume).
+2. Volume provisioner does not recognize the volume source, and create an empty volume. Another external component (data populator) could watch the volume creation and implement the logic to populate/import the data to the volume provisioned. Only after data is populated to the volume, the PVC is ready for use.
+
+There could be many different types of sources used for populating the data to the volumes. In this proposal, we propose to add a generic "DataSource" field to PersistentVolumeClaimSpec to represent different types of data sources.
 
 ## Design
 ### API Change
@@ -28,43 +32,12 @@ type TypedLocalObjectReference struct {
 }
 
 ```
-### Error Handling
-If an external-provisioner does not understand the new DataSource field and cannot populate the data to the volume, we propose to add a PV condition to detect this situation and fail the operation. The idea is simlar to the design of ["Pod Ready++"](https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md)
+### Design Details
+In the first Alphal version, we only support data source from Snapshot. So the expected Kind in DataSource has to be "VolumeSnapshot". In this case, provisioner should provision volume and populate data in one step. There is no need for external data populator yet. 
 
-First we introduce a condition called "VolumeDataPopulated" into PV. With the feature of snapshot and data source, volume might be created from snapshot source with data populated into the volume instead of an empty one. The external provision needs to understand the data source and also mark the condition "VolumeDataPopualted" to true. The PV controller will check this condition if the data source of PVC is specified. Only if the condition is true, the PVC can be marked as "Bound" phase. In case of an old version of provisioner is in use and it cannot recognize the data source field in PVC, an empty Volume will be provisioned. In this situation, since the "VolumeDataPouplated" condition is not set to true by the provisioner, the PV controller will not mark PVC as "Bound" phase so that user cannot use this PVC yet. We can also add this condition into PVC to tell the users that the PVC's data is not populated.
+For other types of data sources that require external data populator, volume creation and data population are two seperate steps. Only when data is ready, PVC/PV can be marked as ready (Bound) so that users can start use them. We are working on a seperate proposal to address this using similar idea from ["Pod Ready++"](https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md).
 
-```
-// PersistentVolumeStatus is the current status of a persistent volume.
-type PersistentVolumeStatus struct {
-	// Phase indicates if a volume is available, bound to a claim, or released by a claim.
-	// More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#phase
-	// +optional
-	Phase PersistentVolumePhase `json:"phase,omitempty" protobuf:"bytes,1,opt,name=phase,casttype=PersistentVolumePhase"`
-	...
-	
-	// +optional
-	Conditions []PersistentVolumeCondition
-}
-
-type PersistentVolumeConditionType string
-
-// These are valid conditions of PersistentVolume
-const (
-	// An user trigger resize of pvc has been started
-	PersistentVolumeDataPopulated PersistentVolumeConditionType = "DataPopulated"
-)
-
-type PersistentVolumeCondition struct {
-	Type   PersistentVolumeConditionType
-	Status ConditionStatus
-	// +optional
-	LastTransitionTime metav1.Time
-	// +optional
-	Reason string
-	// +optional
-	Message string
-}
-```
+Note: In order to use this data source feature, user/admin needs to update to the new external provisioner which can recognize snapshot data source. Otherwise, data source will be ignoed and an empty volume will be created
 
 ## Use cases
 * Use snapshot to backup data: Alice wants to take a snapshot of her Mongo database, and accidentally delete her tables, she wants to restore her volumes from the snapshot.
