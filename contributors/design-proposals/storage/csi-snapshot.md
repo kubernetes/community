@@ -110,7 +110,7 @@ type VolumeSnapshotStatus struct {
 
 	// When restoring volume from the snapshot, the volume size should be equal or 
 	// larger than the Restoresize if it is specified. If RestoreSize is set to nil, it means
-	// that the storage plugin does not have this information avaialble.
+	// that the storage plugin does not have this information available.
 	// +optional
 	RestoreSize *resource.Quantity `json:"restoreSize" protobuf:"bytes,2,opt,name=restoreSize"`
 	
@@ -207,7 +207,7 @@ type CSIVolumeSnapshotSource struct {
 	
 	// When restoring volume from the snapshot, the volume size should be equal or 
 	// larger than the Restoresize if it is specified. If RestoreSize is set to nil, it means
-	// that the storage plugin does not have this information avaialble.
+	// that the storage plugin does not have this information available.
 	// +optional
 	RestoreSize *resource.Quantity `json:"restoreSize" protobuf:"bytes,2,opt,name=restoreSize"`
 }
