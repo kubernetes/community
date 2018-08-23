@@ -178,6 +178,10 @@ type VolumeSnapshotContentSpec struct {
 	// taken from. It becomes non-nil when VolumeSnapshot and VolumeSnapshotContent are bound.
 	// +optional
 	PersistentVolumeRef *core_v1.ObjectReference `json:"persistentVolumeRef" protobuf:"bytes,3,opt,name=persistentVolumeRef"`
+	// Name of the VolumeSnapshotClass used by the VolumeSnapshotContent. If not specified, a default snapshot class will
+	// be used if it is available.
+	// +optional
+	VolumeSnapshotClassName *string `json:"snapshotClassName" protobuf:"bytes,4,opt,name=snapshotClassName"`
 }
 
 // VolumeSnapshotSource represents the actual location and type of the snapshot. Only one of its members may be specified.
