@@ -835,6 +835,7 @@ sigs:
     - name: mentoring
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - name: repo-infra
       owners:
       - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
