@@ -65,6 +65,7 @@ Monitor these for Github activity if you are not a member of the team.
 | @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation Maintainers |
 | @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR Reviewers |
 | @kubernetes/sig-docs-ko-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | Korean L10n Repository Owners |
+| @kubernetes/sig-docs-ja-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | Japanese L10n Repository Owners |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
