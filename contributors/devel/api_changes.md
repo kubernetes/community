@@ -297,10 +297,14 @@ was added.
   apiserver doesn't render resources in etcd undecodable after rollback.
 
 * Any field with a default value in one API version must have *non-nil default
-  values* in all API versions. If a new field with a default value is introduced
-  in a new API version, it is required to add a default value semantically
-  equivalent to an unset value in old API versions, to preserve the semantic
-  meaning of the value being unset in previous API versions.
+  values* in all API versions. If a default value is added to a field in one API
+  version, and the field didn't have a default value in previous API versions,
+  it is required to add a default value semantically equivalent to an unset
+  value to the field in previous API versions, to preserve the semantic
+  meaning of the value being unset. This includes:
+  * a new optional field with a default value is introduced in a new API version
+  * an old optional field without a default value (i.e. can be nil) has a
+    default value in a new API version
 
 ## Incompatible API changes
 
@@ -377,10 +381,7 @@ need to add cases to `pkg/apis/<group>/<version>/defaults.go`.
 values in all API versions, instead of leaving new fields unset (e.g. `nil`) in
 old API versions. This is required because defaulting happens whenever a
 serialized version is read (see [#66135]). When possible, pick meaningful values
-as sentinels for unset values. For example,
-`DeploymentSpec.ProgressDeadlineSeconds *int32` can have "max int32" (i.e.
-2^31-1) as its default value, which is semantically equivalent to unset. When
-using max int, be careful not to exceed 2^53-1 (see [#17095]).
+as sentinels for unset values.
 
 In the past the core v1 API
 was special. Its `defaults.go` used to live at `pkg/api/v1/defaults.go`.
@@ -399,7 +400,6 @@ pick a default.
 Don't forget to run the tests!
 
 [#66135]: https://github.com/kubernetes/kubernetes/issues/66135
-[#17095]: https://github.com/kubernetes/kubernetes/issues/17095
 
 ### Edit conversion.go
 
