@@ -102,7 +102,7 @@ An API change is considered forward and backward-compatible if it:
    * adds new functionality that is not required for correct behavior (e.g.,
 does not add a new required field)
    * does not change existing semantics, including:
-     * default values *and behavior*
+     * the semantic meaning of default values *and behavior*
      * interpretation of existing API types, fields, and values
      * which fields are required and which are not
      * mutable fields do not become immutable
@@ -296,6 +296,16 @@ was added.
   release, and do not make it the storage version. The latter is necessary so that a rollback of the
   apiserver doesn't render resources in etcd undecodable after rollback.
 
+* Any field with a default value in one API version must have *non-nil default
+  values* in all API versions. If a default value is added to a field in one API
+  version, and the field didn't have a default value in previous API versions,
+  it is required to add a default value semantically equivalent to an unset
+  value to the field in previous API versions, to preserve the semantic
+  meaning of the value being unset. This includes:
+  * a new optional field with a default value is introduced in a new API version
+  * an old optional field without a default value (i.e. can be nil) has a
+    default value in a new API version
+
 ## Incompatible API changes
 
 There are times when this might be OK, but mostly we want changes that meet this
@@ -365,9 +375,15 @@ being required otherwise.
 ### Edit defaults.go
 
 If your change includes new fields for which you will need default values, you
-need to add cases to `pkg/apis/<group>/<version>/defaults.go`
+need to add cases to `pkg/apis/<group>/<version>/defaults.go`.
 
-*Note:* In the past the core v1 API
+**Note:** When adding default values to new fields, you *must* also add default
+values in all API versions, instead of leaving new fields unset (e.g. `nil`) in
+old API versions. This is required because defaulting happens whenever a
+serialized version is read (see [#66135]). When possible, pick meaningful values
+as sentinels for unset values.
+
+In the past the core v1 API
 was special. Its `defaults.go` used to live at `pkg/api/v1/defaults.go`.
 If you see code referencing that path, you can be sure its outdated. Now the core v1 api lives at
 `pkg/apis/core/v1/defaults.go` which follows the above convention.
@@ -382,6 +398,8 @@ definition.  A zero value means 0 seconds, and a nil value asks the system to
 pick a default.
 
 Don't forget to run the tests!
+
+[#66135]: https://github.com/kubernetes/kubernetes/issues/66135
 
 ### Edit conversion.go
 
