@@ -8,7 +8,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Storage Special Interest Group
 
-Covers storage and volume plugins.
+SIG Storage is responsible for ensuring that different types of file and block storage (whether ephemeral or persistent, local or remote) are available wherever a container is scheduled (including provisioning/creating, attaching, mounting, unmounting, detaching, and deleting of volumes), storage capacity management (container ephemeral storage usage, volume resizing, etc.), influencing scheduling of containers based on storage (data gravity, availability, etc.), and generic operations on storage (snapshoting, etc.).
+
+The [charter](charter.md) defines the scope and governance of the Storage Special Interest Group.
 
 ## Meetings
 * Regular SIG Meeting: [Thursdays at 9:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).

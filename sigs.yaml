@@ -1567,8 +1567,14 @@ sigs:
   - name: Storage
     dir: sig-storage
     mission_statement: >
-      Covers storage and volume plugins.
-    charter_link:
+      SIG Storage is responsible for ensuring that different types of file and
+      block storage (whether ephemeral or persistent, local or remote) are
+      available wherever a container is scheduled (including provisioning/creating,
+      attaching, mounting, unmounting, detaching, and deleting of volumes), storage
+      capacity management (container ephemeral storage usage, volume resizing,
+      etc.), influencing scheduling of containers based on storage (data gravity,
+      availability, etc.), and generic operations on storage (snapshoting, etc.).
+    charter_link: charter.md
     label: storage
     leadership:
       chairs:
