@@ -18,7 +18,6 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - Nomination and Voter Registration period start
 - Nomination period end (At least a two week period)
 - Voter Registration Deadline
-- Link to voter registration process (doesn’t exist yet)
 - Election period start
   - It takes time to create the poll in CIVS, so don’t give a specific hour, instead say “Morning of the 10th” or something vague.
 - Election period stop
@@ -48,7 +47,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - Use [CIVS](http://civs.cs.cornell.edu/civs_create.html) to create the election, which CIVS calls a poll. Once you send out the ballots you cannot UNSEND the emails, ensure everything in the form is correct!
 - Name of the poll - “Kubernetes Steering Committee Election for $YEAR”
 - Name of supervisor - “Kubernetes Steering Committee”
-- Email - elections@kubernetes.io : Googlegroups doesn’t work here. This mail should resolve to members of the steering committee AND the election officers.
+- Email - community@kubernetes.io : Googlegroups doesn’t work here. This mail should resolve to members of the steering committee AND the election officers.
 - Date and Time: Write in the date and time the election will stop. This field is not programmatic, the election is stopped by hand, so you can write this in plain text.
 - Description: This election is to nominate the steering committee for the Kubernetes project. Select the three(3) candidates, by order of preference. Please see the voter's guide for more information.  PLEASE NOTE: "No opinion" is also a voting option if you do not feel comfortable ranking every single candidate.
 - Add the candidate list to the form
@@ -57,7 +56,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
   - Do not release results to all voters.
   - Enable detailed ballot reporting.
   - Allow voters to select “no opinion” for some choices.
-- Click create poll, this will send elections@kubernetes.io an email with instructions.
+- Click create poll, this will send community@kubernetes.io an email with instructions.
 - It will send you a link to “Poll Control”, bookmark this generated page as this is where you will add voters and also resend ballots to people if their ballot gets lost or filtered.
 - This page is where the “Start Poll” and “Stop Poll” buttons are, start the poll.
 - Paste in the registered voters and click add voters.
@@ -78,7 +77,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 
 ### Election Officers
 
-- Must be [eligible to vote]
+- Must be [eligible to vote][eligible to vote]
 - Cannot be running for office in the current election
 - Cannot be a current member of the steering committee
 - [Recuse themselves from public election activities][election-recusal] except those required to run the election
