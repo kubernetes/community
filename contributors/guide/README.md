@@ -79,7 +79,7 @@ There's always code that can be clarified and variables or functions that can be
 There's always a need for more test coverage.
 You get the idea - if you ever see something you think should be fixed, you should own it.
 Here is how you get started.
-If you have no idea what to start on, you can browse the [Contributor Role Board](https://discuss.kubernetes.io/c/contributors/role-board) for to see who is looking for help.
+If you have no idea what to start on, you can browse the [Contributor Role Board](https://discuss.kubernetes.io/c/contributors/role-board) to see who is looking for help.
 
 ### Find a good first topic
 
