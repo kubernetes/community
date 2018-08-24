@@ -11,7 +11,7 @@ There could be many different types of sources used for populating the data to t
 
 ## Design
 ### API Change
-A new DataSource field is proposed to add to PVC to represent the source of the data which is pre-populated to the provisioned volume. For DataSource field, we propose to define a new type “TypedLocalObjectReference”. It is similar to “LocalObjectReference” type with additional Kind field in order to support multiple data source types. In the alpha version, this data source is restricted in the same namespace of the PVC. The following are the APIs we propose to add.
+A new DataSource field is proposed to be added to PVC to represent the source of the data which is pre-populated to the provisioned volume. For DataSource field, we propose to define a new type “TypedLocalObjectReference”. It is similar to “LocalObjectReference” type with additional Kind field in order to support multiple data source types. In the alpha version, this data source is restricted in the same namespace of the PVC. The following are the APIs we propose to add.
 
 ```
 
@@ -33,9 +33,9 @@ type TypedLocalObjectReference struct {
 
 ```
 ### Design Details
-In the first Alphal version, we only support data source from Snapshot. So the expected Kind in DataSource has to be "VolumeSnapshot". In this case, provisioner should provision volume and populate data in one step. There is no need for external data populator yet. 
+In the first alpha version, we only support data source from Snapshot. So the expected Kind in DataSource has to be "VolumeSnapshot". In this case, provisioner should provision volume and populate data in one step. There is no need for external data populator yet. 
 
-For other types of data sources that require external data populator, volume creation and data population are two seperate steps. Only when data is ready, PVC/PV can be marked as ready (Bound) so that users can start to use them. We are working on a seperate proposal to address this using similar idea from ["Pod Ready++"](https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md).
+For other types of data sources that require external data populator, volume creation and data population are two separate steps. Only when data is ready, PVC/PV can be marked as ready (Bound) so that users can start to use them. We are working on a separate proposal to address this using similar idea from ["Pod Ready++"](https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md).
 
 Note: In order to use this data source feature, user/admin needs to update to the new external provisioner which can recognize snapshot data source. Otherwise, data source will be ignored and an empty volume will be created
 
