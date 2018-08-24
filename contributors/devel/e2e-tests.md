@@ -424,8 +424,6 @@ Then point the tests at a custom host directly:
 
 ```sh
 export KUBECONFIG=/path/to/kubeconfig
-export KUBE_MASTER_IP="127.0.0.1:<PORT>"
-export KUBE_MASTER=local
 go run hack/e2e.go -- --provider=local --test
 ```
 
