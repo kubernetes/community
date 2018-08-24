@@ -33,6 +33,10 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-architecture:
+- **api**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
 - **kubernetes-template-project**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
