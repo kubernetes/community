@@ -256,7 +256,7 @@ With Snapshot API available, users could provision volumes from snapshot and dat
 
 #### The `DataSource` Object in PVC
 
-Add a new `DataSource` field into both PVC to represent the source of the data which is populated to the provisioned volume. External-provisioner will check `DataSource` field and try to provision volume from the sources. In the first version, only VolumeSnapshot is the supported `Type` for data source object reference. Other types will be added in a future version. If unsupported `Type` is used, the PV Controller SHALL fail the operation. Please see more details in [here](https://github.com/kubernetes/community/pull/2495)
+Add a new `DataSource` field into PVC to represent the source of the data which is populated to the provisioned volume. External-provisioner will check `DataSource` field and try to provision volume from the sources. In the first version, only VolumeSnapshot is the supported `Type` for data source object reference. Other types will be added in a future version. If unsupported `Type` is used, the PV Controller SHALL fail the operation. Please see more details in [here](https://github.com/kubernetes/community/pull/2495)
 
 Possible `DataSource` types may include the following:
 
@@ -286,9 +286,6 @@ type TypedLocalObjectReference struct {
 
 ```
 
-
-
-
 ### Snapshot Controller Design
 As the figure below shows, the CSI snapshot controller architecture consists of an external snapshotter which talks to out-of-tree CSI Volume Driver over socket (/run/csi/socket by default, configurable by -csi-address). External snapshotter is part of Kubernetes implementation of [Container Storage Interface (CSI)](https://github.com/container-storage-interface/spec). It is an external controller that monitors `VolumeSnapshot` and `VolumeSnapshotContent` objects and creates/deletes snapshot.
 ![CSI Snapshot Diagram](csi-snapshot_diagram.png?raw=true "CSI Snapshot Diagram")
@@ -308,9 +305,7 @@ As the figure below shows, the CSI snapshot controller architecture consists of 
 
 #### Changes in CSI External Provisioner
 
-`DataSource` is available in both `StorageClass` and `PersistentVolumeClaim` to represent the source of the data which is prepopulated to the provisioned volume. If `DataSource` is added to both during volume provisioning, `DataSource` in `PersistentVolumeClaim` will override `DataSource` in `StorageClass`. 
-
-The operation of the provisioning of a volume from a snapshot data source will be handled by the out-of-tree CSI External Provisioner. The in-tree PV Controller will handle the binding of the PV and PVC once they are ready.
+`DataSource` is available in `PersistentVolumeClaim` to represent the source of the data which is prepopulated to the provisioned volume. The operation of the provisioning of a volume from a snapshot data source will be handled by the out-of-tree CSI External Provisioner. The in-tree PV Controller will handle the binding of the PV and PVC once they are ready.
  
 
 #### CSI Volume Driver Snapshot Support
