@@ -77,8 +77,6 @@ The following subprojects are owned by sig-api-machinery:
     - https://raw.githubusercontent.com/kubernetes/code-generator/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/code-generator/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kube-openapi/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
     - https://raw.githubusercontent.com/kubernetes-client/gen/master/OWNERS
 - **kubernetes-clients**
   - Owners:
