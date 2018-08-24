@@ -1,10 +1,10 @@
 # Add DataSource for Volume Operations 
 
-Note: this proposal is part of [Volume Snapshot](https://github.com/kubernetes/community/pull/2335) feature design, and also relevant to recently proposed Volume Clone feature. 
+Note: this proposal is part of [Volume Snapshot](https://github.com/kubernetes/community/pull/2335) feature design, and also relevant to recently proposed [Volume Clone](https://github.com/kubernetes/community/pull/2533) feature. 
 
 ## Goal
-Currently in Kuberentes, volume plugin only supports to provision an empty volume. With the new storage features (including [Volume Snapshot](https://github.com/kubernetes/community/pull/2335) and [volume clone](https://github.com/erinboyd/community/blob/patch-3/contributors/design-proposals/storage/cloning.md)) being proposed, there is a need to support data population for volume provisioning. For example, volume can be created from a snapshot source, or volume could be cloned from another volume source. Depending on the sources for creating the volume, there are two scenarios
-1. Volume provisioner can recoginize the source and be able to create the volume from the source directly (e.g., restore snapshot to a volume or clone volume).
+Currently in Kuberentes, volume plugin only supports to provision an empty volume. With the new storage features (including [Volume Snapshot](https://github.com/kubernetes/community/pull/2335) and [volume clone](https://github.com/kubernetes/community/pull/2533)) being proposed, there is a need to support data population for volume provisioning. For example, volume can be created from a snapshot source, or volume could be cloned from another volume source. Depending on the sources for creating the volume, there are two scenarios
+1. Volume provisioner can recognize the source and be able to create the volume from the source directly (e.g., restore snapshot to a volume or clone volume).
 2. Volume provisioner does not recognize the volume source, and create an empty volume. Another external component (data populator) could watch the volume creation and implement the logic to populate/import the data to the volume provisioned. Only after data is populated to the volume, the PVC is ready for use.
 
 There could be many different types of sources used for populating the data to the volumes. In this proposal, we propose to add a generic "DataSource" field to PersistentVolumeClaimSpec to represent different types of data sources.
@@ -35,9 +35,9 @@ type TypedLocalObjectReference struct {
 ### Design Details
 In the first Alphal version, we only support data source from Snapshot. So the expected Kind in DataSource has to be "VolumeSnapshot". In this case, provisioner should provision volume and populate data in one step. There is no need for external data populator yet. 
 
-For other types of data sources that require external data populator, volume creation and data population are two seperate steps. Only when data is ready, PVC/PV can be marked as ready (Bound) so that users can start use them. We are working on a seperate proposal to address this using similar idea from ["Pod Ready++"](https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md).
+For other types of data sources that require external data populator, volume creation and data population are two seperate steps. Only when data is ready, PVC/PV can be marked as ready (Bound) so that users can start to use them. We are working on a seperate proposal to address this using similar idea from ["Pod Ready++"](https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md).
 
-Note: In order to use this data source feature, user/admin needs to update to the new external provisioner which can recognize snapshot data source. Otherwise, data source will be ignoed and an empty volume will be created
+Note: In order to use this data source feature, user/admin needs to update to the new external provisioner which can recognize snapshot data source. Otherwise, data source will be ignored and an empty volume will be created
 
 ## Use cases
 * Use snapshot to backup data: Alice wants to take a snapshot of her Mongo database, and accidentally delete her tables, she wants to restore her volumes from the snapshot.
