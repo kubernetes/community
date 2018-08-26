@@ -23,6 +23,7 @@ This doc explains the process and best practices for submitting a pull request t
   * [7. KISS, YAGNI, MVP, etc.](#7-kiss-yagni-mvp-etc)
   * [8. It's OK to Push Back](#8-its-ok-to-push-back)
   * [9. Common Sense and Courtesy](#9-common-sense-and-courtesy)
+  * [10. Trivial Edits](#10-trivial-edits)
 
 # Before You Submit a Pull Request
 
@@ -283,3 +284,17 @@ Another phenomenon of open-source projects (where anyone can comment on any issu
 
 No document can take the place of common sense and good taste. Use your best judgment, while you put
 a bit of thought into how your work can be made easier to review. If you do these things your pull requests will get merged with less friction.
+
+## 10. Trivial Edits
+
+Each incoming Pull Request needs to be reviewed, checked, and then merged.
+
+While automation helps with this, each contribution also has an engineering cost. Therefore it is appreciated if you do NOT make trivial edits and fixes, but instead focus on giving the entire file a review.
+
+If you find one grammatical or spelling error, it is likely there are more in that file, you can really make your Pull Request count by checking formatting, checking for broken links, and fixing errors and then submitting all the fixes at once to that file.
+
+**Some questions to consider:**
+
+* Can the file be improved further?
+* Does the trivial edit greatly improve the quality of the content?
+
