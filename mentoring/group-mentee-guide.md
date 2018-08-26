@@ -26,7 +26,7 @@ These topics will be covered during bi-weekly standups/workshops. The suggested 
 * Effective communication in our our ecosystem
 * Kubernetes Governance 101 (what's a SIG?, OWNERS files, steering committee, etc.)
 * Identifying & understanding issue backlog and prioritization
-* Contibuting to testing (how to run tests and create new ones)
+* Contributing to testing (how to run tests and create new ones)
 * [need 3-4 more]
 
 Suggested Activity
