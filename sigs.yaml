@@ -389,8 +389,8 @@ sigs:
       - name: Kris Nova
         github: kris-nova
         company: Heptio
-      - name: Bob Wise
-        github: countspongebob
+      - name: Nishi Davidson 
+        github: d-nishi
         company: AWS
     meetings:
     - description: Regular SIG Meeting

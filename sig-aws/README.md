@@ -21,7 +21,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
 * Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Heptio
-* Bob Wise (**[@countspongebob](https://github.com/countspongebob)**), AWS
+* Nishi Davidson (**[@d-nishi](https://github.com/d-nishi)**), AWS
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-aws)
