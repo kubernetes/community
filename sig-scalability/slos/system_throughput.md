@@ -1,5 +1,11 @@
 ## System throughput SLI/SLO details
 
+### Definition
+
+| Status | SLI | SLO |
+| --- | --- | --- |
+| WIP | Time to start 30\*#nodes pods, measured from test scenario start until observing last Pod as ready | Benchmark: when all images present on all Nodes, 99th percentile <= X minutes |
+
 ### User stories
 - As a user, I want a guarantee that my workload of X pods can be started
   within a given time

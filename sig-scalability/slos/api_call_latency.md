@@ -1,5 +1,28 @@
 ## API call latency SLIs/SLOs details
 
+### Definition
+
+| Status | SLI | SLO |
+| --- | --- | --- |
+| __Official__ | Latency<sup>[1](#footnote1)</sup> of mutating<sup>[2](#footnote2)</sup> API calls for single objects for every (resource, verb) pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, verb) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day <= 1s |
+| __Official__ | Latency<sup>[1](#footnote1)</sup> of non-streaming read-only<sup>[3](#footnote3)</sup> API calls for every (resource, scope<sup>[4](#footnote4)</sup>) pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, scope) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day (a) <= 1s if `scope=resource` (b) <= 5s if `scope=namespace` (c) <= 30s if `scope=cluster` |
+
+<a name="footnote1">\[1\]</a>By latency of API call in this doc we mean time
+from the moment when apiserver gets the request to last byte of response sent
+to the user.
+
+<a name="footnote2">\[2\]</a>By mutating API calls we mean POST, PUT, DELETE
+and PATCH.
+
+<a name="footnote3">\[3\]</a>By non-streaming read-only API calls we mean GET
+requests without `watch=true` option set. (Note that in Kubernetes internally
+it translates to both GET and LIST calls).
+
+<a name="footnote4">\[4\]</a>A scope of a request can be either (a) `resource`
+if the request is about a single object, (b) `namespace` if it is about objects
+from a single namespace or (c) `cluster` if it spawns objects from multiple
+namespaces.
+
 ### User stories
 - As a user of vanilla Kubernetes, I want some guarantee how quickly I get the
 response from an API call.
