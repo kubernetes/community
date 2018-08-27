@@ -1,5 +1,18 @@
 ## Pod startup latency SLI/SLO details
 
+### Definition
+
+| Status | SLI | SLO |
+| --- | --- | --- |
+| __Official__ | Startup latency of stateless<sup>[1](#footnote1)</sup> and schedulable<sup>[2](#footnote2)</sup> pods, excluding time to pull images and run init containers, measured from pod creation timestamp to when all its containers are reported as started and observed via watch, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile per cluster-day <= 5s |
+
+<a name="footnote1">[1\]</a>A `stateless pod` is defined as a pod that doesn't
+mount volumes with sources other than secrets, config maps, downward API and
+empty dir.
+
+<a name="footnote2">[2\]</a>By schedulable pod we mean a pod that can be
+scheduled in the cluster without causing any preemption.
+
 ### User stories
 - As a user of vanilla Kubernetes, I want some guarantee how quickly my pods
 will be started.
