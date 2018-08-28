@@ -34,12 +34,14 @@ OWNERS files are in YAML format and support the following keys:
     effect on `a/deep/nested/bit/of/code`
 - `reviewers`: a list of GitHub usernames or aliases that are good candidates to `/lgtm` a PR
 
+The above keys constitute a *simple OWNERS configuration*.
+
 All users are expected to be assignable. In GitHub terms, this means they are either collaborators
 of the repo, or members of the organization to which the repo belongs.
 
 A typical OWNERS file looks like:
 
-```
+```yaml
 approvers:
   - alice
   - bob     # this is a comment
@@ -48,6 +50,41 @@ reviewers:
   - carol   # this is another comment
   - sig-foo # this is an alias
 ```
+
+#### Filters
+
+An OWNERS file may also include a `filters` key.
+The `filters` key is a map whose keys are [Go regular expressions][go-regex] and whose values are [simple OWNERS configurations](#owners).
+The regular expression keys are matched against paths relative to the OWNERS file in which the keys are declared.
+For example:
+
+```yaml
+filters:
+  ".*":
+    labels:
+    - re/all
+  "\\.go$":
+    labels:
+    - re/go
+```
+
+If you set `filters` you must not set a [simple OWNERS configuration](#owners) outside of `filters`.
+For example:
+
+```yaml
+# WARNING: This use of 'labels' and 'filters' as siblings is invalid.
+labels:
+- re/all
+filters:
+  "\\.go$":
+    labels:
+    - re/go
+```
+
+Instead, set a `.*` key inside `filters` (as shown in the previous example).
+
+**WARNING**: The `approve` plugin [does not currently respect `filters`][test-infra-7690].
+Until that is fixed, `filters` should only be used for the the `labels` key (as shown in the above example).
 
 ### OWNERS_ALIASES
 
@@ -62,7 +99,7 @@ publicly auditable.
 
 A sample OWNERS_ALISES file looks like:
 
-```
+```yaml
 aliases:
   sig-foo:
     - david
@@ -257,3 +294,6 @@ Good examples of OWNERS usage:
 - there are more `reviewers` than `approvers`
 - the `approvers` are not in the `reviewers` section
 - OWNERS files that are regularly updated (at least once per release)
+
+[go-regex]: https://golang.org/pkg/regexp/#pkg-overview
+[test-infra-7690]: https://github.com/kubernetes/test-infra/issues/7690
