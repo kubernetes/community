@@ -49,10 +49,6 @@ The following subprojects are owned by sig-aws:
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
 
-The google groups contain the archive of Github team notifications.
-Mentioning a team on Github will CC its group.
-Monitor these for Github activity if you are not a member of the team.
-
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
 | @kubernetes/sig-aws-misc | [link](https://github.com/orgs/kubernetes/teams/sig-aws-misc) | General Discussion |
