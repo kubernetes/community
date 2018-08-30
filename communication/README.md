@@ -24,7 +24,6 @@ and meetings devoted to Kubernetes.
 * Pose questions and help answer them on [Stack Overflow].
 * [Slack] - sign up  
 
-Real time discussion at kubernetes.slack.io:   
 To add new channels, contact one of the admins in the #slack-admins channel. Our guidelines are [here](/communication/slack-guidelines.md).
 
 ## Issues
@@ -96,7 +95,6 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [kubernetes-announce]: https://groups.google.com/forum/#!forum/kubernetes-announce
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [kubernetes-users]: https://groups.google.com/forum/#!forum/kubernetes-users
-[kubernetes.slackarchive.io]: https://kubernetes.slackarchive.io
 [kubernetes.slack.com]: https://kubernetes.slack.com
 [Slack]: http://slack.k8s.io
 [Special Interest Group]: /README.md#SIGs
