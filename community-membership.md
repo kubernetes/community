@@ -46,7 +46,7 @@ remain active contributors to the community.
       forums, Stack Overflow)
 - Subscribed to [kubernetes-dev@googlegroups.com]
 - Have read the [contributor guide]
-- Actively contributing to 1 or more subprojects.
+- Actively contributing non-trival pulls to 1 or more subprojects.
 - Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
     - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating
       on issues, etc.
