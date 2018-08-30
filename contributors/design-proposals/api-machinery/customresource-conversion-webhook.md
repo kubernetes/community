@@ -29,7 +29,7 @@ No new resources are added; the [CRD resource](https://github.com/kubernetes/kub
 
 **Custom Resource**: In the context of this document, it refers to resources defined as Custom Resource Definition (in contrast with extension API server’s resources).
 
-**CRD Package**: CRD definition, plus associated associated controller deployment, RBAC roles, etc, which is released by a developer who uses CRDs to create new APIs.
+**CRD Package**: CRD definition, plus associated controller deployment, RBAC roles, etc, which is released by a developer who uses CRDs to create new APIs.
 
   
 ## Motivation
