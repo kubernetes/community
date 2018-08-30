@@ -31,7 +31,6 @@ Guidelines for drafting a SIG Charter can be found [here](/committee-steering/go
 * Propose the new SIG publicly, including a brief mission statement, by emailing kubernetes-dev@googlegroups.com and kubernetes-users@googlegroups.com, then wait a couple of days for feedback.
 * Ask a repo maintainer to create a github label, if one doesn't already exist: sig/foo.
 * Request a new [kubernetes.slack.com](http://kubernetes.slack.com) channel (#sig-foo) from the #slack-admins channel.  New users can join at [slack.kubernetes.io](http://slack.kubernetes.io).
-* Slack activity is archived at [kubernetes.slackarchive.io](http://kubernetes.slackarchive.io).  To start archiving a new channel invite the slackarchive bot to the channel via `/invite @slackarchive`
 * Organize video meetings as needed. No need to wait for the [Weekly Community Video Conference](community/README.md) to discuss. Please report summary of SIG activities there.
  * Request a Zoom account by emailing Paris Pittman(`parispittman@google.com`) and Jorge Castro(`jorge@heptio.com`). You must set up a google group (see below) for the SIG leads so that all the SIG leads have the ability to reset the password if necessary.
  * Read [how to use YouTube](/communication/K8sYoutubeCollaboration.md) for publishing your videos to the Kubernetes channel.
