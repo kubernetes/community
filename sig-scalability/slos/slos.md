@@ -11,26 +11,29 @@ in these areas.
 
 ## What do we require from SLIs/SLOs?
 
-We are going to define more SLIs and SLOs based on the most important indicators
-in the system.
+We are in the process of extending the number of SLIs ([Service Level Indicators])
+and SLOs ([Service Level Objectives]) built on top of these SLIs to cover more areas
+of the system and user expectations.
 
-Our SLOs need to have the following properties:
+Our SLIs/SLOs need to have the following properties:
 - <b> They need to be testable </b> <br/>
-  That means that we need to have a benchmark to measure if it's met.
+  Ideally, they (SLIs and SLOs) should be measurable in all running clusters,
+	but if   that isn't possible a benchmark may be enough in some situations.
+  That means that not every SLO may be translatable to SLA ([Service
+  Level Agreement]).
 - <b> They need to be understandable for users </b> <br/>
   In particular, they need to be understandable for people not familiar
   with the system internals, i.e. their formulation can't depend on some
   arcane knowledge.
 
-However, we may introduce some internal (for developers only) SLIs, that
-may be useful for understanding performance characterstic of the system,
-but for which we don't provide any guarantees for users and thus may not
-be fully understandable for users.
+We may also introduce internal(for developers only) SLIs, that may be useful
+for understanding performance characterstic of the system, but for which
+we don't provide any guarantees for users (and thus don't require them to be
+that easily understandable).
 
-On the other hand, we do NOT require that our SLOs:
-- are measurable in a running cluster (though that's desired if possible) <br/>
-  In other words, not SLOs need to be easily translatable to SLAs.
-  Being able to benchmark is enough for us.
+[Service Level Indicators]: https://en.wikipedia.org/wiki/Service_level_indicator
+[Service Level Objectives]: https://en.wikipedia.org/wiki/Service_level_objective
+[Service Level Agreement]: https://en.wikipedia.org/wiki/Service-level_agreement
 
 ## Types of SLOs
 
