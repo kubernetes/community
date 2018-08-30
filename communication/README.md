@@ -25,9 +25,6 @@ and meetings devoted to Kubernetes.
 * [Slack] - sign up  
 
 Real time discussion at kubernetes.slack.io:   
-Discussions on most channels are archived at [kubernetes.slackarchive.io].
-Start archiving by inviting the _slackarchive_ bot to a
-channel via `/invite @slackarchive`.
 To add new channels, contact one of the admins in the #slack-admins channel. Our guidelines are [here](/communication/slack-guidelines.md).
 
 ## Issues
