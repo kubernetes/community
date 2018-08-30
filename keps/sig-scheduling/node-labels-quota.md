@@ -5,7 +5,7 @@ authors:
   - "@vishh"
   - "@bsalamat"
 owning-sig: sig-scheduling
-participating-sigs:
+participating-sigs: sig-architecture
 reviewers:
   - "@derekwaynecarr"
   - "@davidopp"
