@@ -63,7 +63,7 @@ credentials.
 
 ```sh
 # build test binaries, ginkgo, and kubectl first:
-make WHAT=test/e2e/e2e.test && make WHAT=ginkgo && make WHAT=cmd/kubectl
+make WHAT="test/e2e/e2e.test vendor/github.com/onsi/ginkgo/ginkgo cmd/kubectl"
 
 # setup for conformance tests
 export KUBECONFIG=/path/to/kubeconfig
