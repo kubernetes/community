@@ -52,8 +52,8 @@ architectural changes.
 - Improving performance/scalability of features falling into charters of
 individual SIGs.
 
-
 ## What can we do/require from other SIGs
+
 Scalability and performance are horizontal aspects of the system - changes in a
 single place of Kubernetes may affect the whole system. As a result, to
 effectively ensure Kubernetes scales, we need a special cross-SIG privileges.
@@ -62,9 +62,9 @@ effectively ensure Kubernetes scales, we need a special cross-SIG privileges.
   [performance/scalability SLOs] regression (identified by the set of release
   blocking scalability/performance tests). The offending PR should only be
   merged again after proving to pass  tests at scale.
-- In the even of a performance regression, we can block all PRs from being
+- In the event of a performance regression, we can block all PRs from being
   merged into the relevant repos until the cause of the regression is
-	identified and mitigated.
+  identified and mitigated.
   The “Rules of engagement” of pausing merge-queue and rationale for
   necessity of its introduce are explained in [a separate doc](./block_merges.md).
 - We require significant changes (in terms of impact, such as: update of etcd,
