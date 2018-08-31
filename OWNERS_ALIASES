@@ -116,9 +116,6 @@ aliases:
     - garethr
   wg-apply-leads:
     - lavalamp
-  wg-cluster-api-leads:
-    - kris-nova
-    - roberthbailey
   wg-container-identity-leads:
     - smarterclayton
     - destijl

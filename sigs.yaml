@@ -678,7 +678,7 @@ sigs:
       time: "10:00"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://docs.google.com/document/d/10dq54Fd-xa6P5Iy3p46VY1YTFqugGMd1PygDIpuRw6c/edit
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/10dq54Fd-xa6P5Iy3p46VY1YTFqugGMd1PygDIpuRw6c/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
     - description: kops Office Hours
@@ -1911,25 +1911,6 @@ workinggroups:
       recordings_url: https://www.youtube.com/watch?v=-Xlcrm5iT80&list=PLPgAK4Icr0ehh93BiMC3djAc5KoW7WIkl
     contact:
       slack: sig-cluster-lifecycle
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
-  - name: Cluster API
-    dir: wg-cluster-api
-    mission_statement: >
-      Define a portable API that represents a Kubernetes cluster. The API will contain the control plane and its configuration and the underlying infrastructure (nodes, node pools, etc).
-    charter_link:
-    leadership:
-      chairs:
-      - name: Kris Nova
-        github: kris-nova
-        company: Heptio
-      - name: Robert Bailey
-        github: roberthbailey
-        company: Google
-    meetings:
-    - description: Regular WG Meeting
-      archive_url: https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit
-    contact:
-      slack: cluster-api
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
   - name: App Def
     dir: wg-app-def
