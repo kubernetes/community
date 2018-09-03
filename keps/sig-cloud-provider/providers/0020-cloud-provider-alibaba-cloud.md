@@ -74,32 +74,29 @@ As a CNCF Platinum member, Alibaba Cloud is dedicated in providing users with hi
 Usage of aliyun container services can be seen from github issues in the existing alicloud controller manager repo: https://github.com/AliyunContainerService/alicloud-controller-manager/issues
 
 ### Testgrid Integration
-
-TODO
+ Alibaba cloud provider is reporting conformance test results to TestGrid as per the [Reporting Conformance Test Results to Testgrid KEP](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0003-testgrid-conformance-e2e.md).
+ See [report](https://k8s-testgrid.appspot.com/conformance-alibaba-cloud-provider#Alibaba%20Cloud%20Provider,%20v1.10) for more details.
 
 ### CNCF Certified Kubernetes
-
-TODO
+ Alibaba cloud provider is accepted as part of the [Certified Kubernetes Conformance Program](https://github.com/cncf/k8s-conformance).
+ For v1.11 See [https://github.com/cncf/k8s-conformance/tree/master/v1.11/alicloud](https://github.com/cncf/k8s-conformance/tree/master/v1.11/alicloud)
+ For v1.10 See [https://github.com/cncf/k8s-conformance/tree/master/v1.10/alicloud](https://github.com/cncf/k8s-conformance/tree/master/v1.10/alicloud)
+ For v1.9 See [https://github.com/cncf/k8s-conformance/tree/master/v1.9/alicloud](https://github.com/cncf/k8s-conformance/tree/master/v1.9/alicloud)
+ For v1.8 See [https://github.com/cncf/k8s-conformance/tree/master/v1.8/alicloud](https://github.com/cncf/k8s-conformance/tree/master/v1.8/alicloud)
 
 ### Documentation
-
-TODO
-
+ 
+ Alibaba CloudProvider provide users with multiple documentation on build & deploy & utilize CCM. Please refer to [https://github.com/AliyunContainerService/alicloud-controller-manager/tree/master/docs](https://github.com/AliyunContainerService/alicloud-controller-manager/tree/master/docs) for more details.
+ 
 ### Technical Leads are members of the Kubernetes Organization
 
-TODO
+The Leads run operations and processes governing this subproject.
+
+-  @cheyang Special Tech Leader, Alibaba Cloud. Kubernetes Member
 
 ## Proposal
 
 Here we propose a repository from Kubernetes organization to host our cloud provider implementation.  Cloud Provider of Alibaba Cloud would be a subproject under Kubernetes community.
-
-### Subproject Leads
-
-The Leads run operations and processes governing this subproject.
-Leaders:
-- Mark (@denverdino), Alibaba Cloud, Director Engineer
-- Zhimin Tang (@ddbmh), Alibaba Cloud
-- Aoxn (@aoxn), Alibaba Cloud
 
 ### Repositories
 
