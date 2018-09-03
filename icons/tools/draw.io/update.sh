@@ -8,6 +8,8 @@ SIZE=80
 LTOTAL=$(ls -d svg/*/* | wc -l | sed 's/^ *//')
 LCOUNT=1
 for DIR in $(ls -d svg/*/* | cut -b 5-); do
+    # draw.io library names default to the imported file name, so make them
+    # human readable.
     OUTPUT="tools/draw.io/K8S $(echo $DIR | sed -e 's/[_/]/ /g' | awk '{for(i=1;i<=NF;i++){ $i=toupper(substr($i,1,1)) substr($i,2) }}1')"
     LNAME=$(basename "$OUTPUT")
 
@@ -23,7 +25,6 @@ for DIR in $(ls -d svg/*/* | cut -b 5-); do
 
         # Construct JSON obect data.
         BASE64=$(cat "$SVG" | base64 | tr -d \\n)
-        # To-do: scale width based on fixed height.
         DATA="${DATA}{\"data\":\"data:image/svg+xml;base64,${BASE64}\",\"w\":$SIZE,\"h\":$SIZE,\"title\":\"$FNAME\",\"aspect\":\"fixed\"},"
 
         FCOUNT=$((FCOUNT+1))
