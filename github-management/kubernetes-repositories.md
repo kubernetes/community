@@ -23,7 +23,7 @@ To facilitate contributions and collaboration from the broader Kubernetes commun
 
 ## SIG repositories
 
-SIG repositories serve as temporary homes for SIG-sponsored experimental projects or prototypes of new core functionality, or as permanent homes for SIG-specific tools.
+SIG repositories serve as temporary homes for SIG-sponsored experimental projects or prototypes of new core functionality, or as permanent homes for SIG-specific projects and tools.
 
 ### Goals
 
