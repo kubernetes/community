@@ -1,6 +1,6 @@
 ---
 kep-number: 2
-title: Cloud Provider Controller Manager
+title: Cloud Controller Manager
 authors:
   - "@cheftako"
   - "@calebamiles"
@@ -23,16 +23,16 @@ reviewers:
 approvers:
   - "@thockin"
 editor: TBD
-status: provisional
+status: implementable 
 replaces:
   - contributors/design-proposals/cloud-provider/cloud-provider-refactoring.md
 ---
 
-# Remove Cloud Provider Code From Kubernetes Core
+# Cloud Controller Manager 
 
 ## Table of Contents
 
-- [Remove Cloud Provider Code From Kubernetes Core](#remove-cloud-provider-code-from-kubernetes-core)
+- [Cloud Controller Manager](#cloud-controller-manager)
    - [Table of Contents](#table-of-contents)
    - [Summary](#summary)
    - [Motivation](#motivation)
@@ -79,11 +79,8 @@ Controlled by [publishing kubernetes-rules-configmap](https://github.com/kuberne
 
 ## Summary
 
-We want to remove any cloud provider specific logic from the kubernetes/kubernetes repo. We want to restructure the code
-to make it easy for any cloud provider to extend the kubernetes core in a consistent manner for their cloud. New cloud
-providers should look at the [Creating a Custom Cluster from Scratch](https://kubernetes.io/docs/getting-started-guides/scratch/#cloud-provider)
-and the [cloud provider interface](https://github.com/kubernetes/kubernetes/blob/master/pkg/cloudprovider/cloud.go#L31)
-which will need to be implemented.
+This KEP outlines the architectural changes required to run the Cloud Controller Manager. This is part of a long-running effort
+to develop cloud provider specific features outside of Kubernetes core (kuberetes/kubernetes repo). 
 
 ## Motivation
 
@@ -99,30 +96,21 @@ changes in to an official build. The relevant dependencies require changes in th
 - [Kubelet](https://kubernetes.io/docs/reference/generated/kubelet/) - Track usages of [KubeletFlags.CloudProvider](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubelet/app/options/options.go)
 - [How Cloud Provider Functionality is deployed to and enabled in the cluster](https://kubernetes.io/docs/setup/pick-right-solution/#hosted-solutions) - Track usage from [PROVIDER_UTILS](https://github.com/kubernetes/kubernetes/blob/master/cluster/kube-util.sh)
 
-For the cloud providers who are in repo, moving out would allow them to more quickly iterate on their solution and
-decouple cloud provider fixes from open source releases. Moving the cloud provider code out of the open source
+For the cloud providers who are in repo (a.k.a in-tree), moving out would allow them to more quickly iterate on their solution and
+decouple cloud provider fixes from open source releases. Moving the cloud provider code out of the in-tree
 processes means that these processes do not need to load/run unnecessary code for the environment they are in.
-We would like to abstract a core controller manager library so help standardize the behavior of the cloud
+We would like to abstract a core controller manager library to help standardize the behavior of the cloud
 controller managers produced by each cloud provider. We would like to minimize the number and scope of controllers
 running in the cloud controller manager so as to minimize the surface area for per cloud provider deviation.
 
 ### Goals
 
-- Get to a point where we do not load the cloud interface for any of kubernetes core processes.
-- Remove all cloud provider specific code from kubernetes/kubernetes.
 - Have a generic controller manager library available for use by the per cloud provider controller managers.
-- Move the cloud provider specific controller manager logic into repos appropriate for those cloud providers.
-
-### Intermediary Goals
-
-Have a cloud controller manager in the kubernetes main repo which hosts all of
-the controller loops for the in repo cloud providers.
-Do not run any cloud provider logic in the kube controller manager, the kube apiserver or the kubelet.
-At intermediary points we may just move some of the cloud specific controllers out. (Eg. volumes may be later than the rest)
+- Provide a mechanism to run out-of-tree provider that has feature parity to existing in-tree providers.
 
 ### Non-Goals
 
-Forcing cloud providers to use the generic cloud manager.
+- Removing and fully deprecating in-tree cloud provider code. That will be coverd in KEP-0013.
 
 ## Proposal
 
