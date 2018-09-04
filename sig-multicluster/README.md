@@ -70,11 +70,12 @@ Control Plane for newer Multicluster-specific APIs. Discussions are ongoing to f
 
 |  |  |
 | -------------- |:-------|
-| Recommended for Production | No code yet (discussions only). |
-| General Availability | No. Prototypes only at this point. |
+| Recommended for Production | Not yet. |
+| General Availability | Beta by 2018-Q4. GA TBD. |
 | Current Level of Activity | Once to twice weekly discussions as part of Federation working group (most active SIG-Multicluster members). |
 | Owner(s) | Working Group |
-| Where to find it? | Code prototypes in development (one [example here](https://github.com/marun/fnord)). Summary of meetings notes and meeting times [available](https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY). |
+| Where to find it? | https://github.com/kubernetes-sigs/federation-v2 |
+| Meeting Agenda | https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY |
 
 ### Cluster Registry
 Common abstraction for a Registry of Clusters that can store per-Cluster metadata and supports Kubernetes label selection. The Cluster Registry can be deployed as a standalone or an aggregated API server and currently provides a Registry of Clusters without any actively reconciling Kubernetes controller. The API design is documented [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/multicluster/cluster-registry/api-design.md) and is intended to serve as a basis to develop multicluster controllers.
