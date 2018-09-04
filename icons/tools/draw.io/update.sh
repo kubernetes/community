@@ -23,8 +23,9 @@ for DIR in $(ls -d svg/*/* | cut -b 5-); do
         FNAME=$(basename "$SVG" | awk -F'.' '{print $1}')
         echo "- File [$FCOUNT/$FTOTAL] Adding '$FNAME' data"
 
-        # Construct JSON obect data.
-        BASE64=$(cat "$SVG" | base64 | tr -d \\n)
+        # Construct JSON obect data. We remove the first 3 lines to base64 just
+        # the SVG XML object.
+        BASE64=$(tail -n +4 "$SVG" | base64 | tr -d \\n)
         DATA="${DATA}{\"data\":\"data:image/svg+xml;base64,${BASE64}\",\"w\":$SIZE,\"h\":$SIZE,\"title\":\"$FNAME\",\"aspect\":\"fixed\"},"
 
         FCOUNT=$((FCOUNT+1))
