@@ -28,13 +28,11 @@ Subproject Owner Role.  (this different from a SIG or Organization Member).
   through a [super-majority] vote between Chairs, Tech Leads and Subproject Owners.
 - Membership disagreements may be escalated to the SIG Chairs.  SIG Chair membership
   disagreements may be escalated to the Steering Committee.
-
 - Members *MAY* decide to step down at anytime and propose a replacement.  Use lazy consensus amongst
   other members with fallback on majority vote to accept proposal.  The candidate *SHOULD* be supported by a
   majority of SIG Members or Subproject Contributors (as applicable).
 - Members *MAY* select additional members through a [super-majority] vote amongst members. This
   *SHOULD* be supported by a majority of SIG Members or Subproject Contributors (as applicable).
-
 
 ### Chair
 
@@ -82,18 +80,19 @@ Subproject Owner Role.  (this different from a SIG or Organization Member).
   - Defined in `SECURITY_CONTACTS` files, this is only relevant to the root file in
     the repository. Template [SECURITY_CONTACTS]
 
-## Organizational management
+## Organizational Management
 
 - SIG meets bi-weekly on zoom with agenda in meeting notes
   - *SHOULD* be facilitated by chairs unless delegated to specific Members
 - SIG overview and deep-dive sessions organized for Kubecon
   - *SHOULD* be organized by chairs unless delegated to specific Members
-
+- SIG updates to Kubernetes community meeting on a regular basis
+  - *SHOULD* be presented by chairs unless delegated to specific Members
 - Contributing instructions defined in the SIG CONTRIBUTING.md
 
-### Project management
+### Project Management
 
-#### Subproject creation
+#### Subproject Creation
 
 ---
 
@@ -148,6 +147,13 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 
 - Option 1: SIG Technical Leads
 - Option 2: Federation of Subproject Owners
+
+### SIG Retirement
+
+- In the event that the SIG is unable to regularly establish consistent quorum
+  or otherwise fulfill its Organizational Management responsibilities
+  - after 3 or more months it *SHOULD* be retired
+  - after 6 or more months it *MUST* be retired
 
 [lazy-consensus]: http://communitymgt.wikia.com/wiki/Lazy_consensus
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote
