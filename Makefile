@@ -12,6 +12,12 @@ generate:
 generate-dockerized:
 	docker run --rm -e WHAT -v $(shell pwd):/go/src/app:Z $(IMAGE_NAME) make -C /go/src/app generate
 
+generate-icons-drawio:
+	cd icons && ./tools/draw.io/update.sh
+
+generate-icons-drawio-dockerized:
+	docker run --rm -v $(shell pwd):/build -w '/build' alpine sh -c 'cd icons && ./tools/draw.io/update.sh'
+
 verify:
 	@hack/verify.sh
 
@@ -21,4 +27,4 @@ test:
 test-dockerized:
 	docker run --rm -v $(shell pwd):/go/src/app:Z $(IMAGE_NAME) make -C /go/src/app test
 
-.PHONY: default reset-docs generate generate-dockerized verify test test-dockerized
+.PHONY: default reset-docs generate generate-dockerized generate-icons-drawio generate-icons-drawio-dockerized verify test test-dockerized

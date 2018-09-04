@@ -1,7 +1,7 @@
 # ! /bin/sh
 
-# To be run from icons DIR.
-# Or from git root: `docker run --rm -v $(pwd):/build -w='/build' alpine sh -c 'cd icons && ./tools/draw.io/update.sh'`
+# From git root, run:`make generate-icons-drawio` or
+# `generate-icons-drawio-dockerized`.
 
 SIZE=80
 
