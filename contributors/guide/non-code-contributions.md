@@ -50,6 +50,10 @@ These are roles that either span the project as a whole, or span several areas o
   - Recognition of projects and growth efforts
 - Issue Triage
   - Issue triage & labeling
+- Event management
+  - Helping run Contributor Summits
+  - Co-organizing Meetups
+  - Staffing Kubernetes booths at conferences
 
 #### SIG-specific roles
 These are roles that are important to each and every SIG within the Kubernetes project. If you are interested in a specific topic within the project, you can contribute in several different ways for that specific SIG.
@@ -67,6 +71,9 @@ These are roles that are important to each and every SIG within the Kubernetes p
 - Pull requests
   - PR triage & labeling
   - Editing PR text: release note, statement
+- Events
+  - Organizing/helping run Face-to-Face meetings for SIGs/WGs/subprojects
+  - Putting together SIG Intros & Deep-dives for Kubecon
 
 #### Non-Code Tasks in Primarily-Code roles
 These are roles that are not code-based, but require knowledge of either general coding, or specific domain knowledge of the Kubernetes code base.
