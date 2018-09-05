@@ -7,10 +7,10 @@ owning-sig: sig-apps
 participating-sigs:
   - sig-api-machinery
 reviewers:
-  - @enisoc
-  - @tnozicka
+  - "@enisoc"
+  - "@tnozicka"
 approvers:
-  - @kow3ns
+  - "@kow3ns"
 editor: TBD
 creation-date: 2018-08-16
 last-updated: 2018-08-16
