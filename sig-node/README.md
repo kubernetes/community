@@ -30,15 +30,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-node:
-- **cri-containerd**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cri-containerd/master/OWNERS
 - **cri-o**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cri-o/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cri-o/master/OWNERS
 - **cri-tools**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cri-tools/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
 - **frakti**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/frakti/master/OWNERS

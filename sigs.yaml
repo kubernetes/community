@@ -1221,15 +1221,12 @@ sigs:
       - name: sig-node-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: cri-containerd
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/cri-containerd/master/OWNERS
     - name: cri-o
       owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/cri-o/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/cri-o/master/OWNERS
     - name: cri-tools
       owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/cri-tools/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
     - name: frakti
       owners:
       - https://raw.githubusercontent.com/kubernetes/frakti/master/OWNERS
