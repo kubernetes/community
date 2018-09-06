@@ -78,6 +78,7 @@ The following subprojects are owned by sig-api-machinery:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/code-generator/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kube-openapi/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-client/gen/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/structured-merge-diff/master/OWNERS
 - **kubernetes-clients**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-client/csharp/master/OWNERS
@@ -99,7 +100,7 @@ Note that the links to display team membership will only work if you are a membe
 
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
-| @kubernetes/sig-api-machinery-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-api-reviews) | API Changes and Reviews |
+| @kubernetes/sig-api-machinery-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-api-reviews) | API Changes and Reviews (API Machinery APIs, NOT all APIs) |
 | @kubernetes/sig-api-machinery-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-bugs) | Bug Triage and Troubleshooting |
 | @kubernetes/sig-api-machinery-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-feature-requests) | Feature Requests |
 | @kubernetes/sig-api-machinery-misc | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-misc) | General Discussion |
