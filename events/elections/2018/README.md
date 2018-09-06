@@ -124,7 +124,8 @@ the [Steering Committee Election Charter]
 
 Name | Organization/Company | GitHub
 --- | --- | -- |
-[Jane Container](janecontainer.md) | ContainerCo | [@github](link this) |
+[Aaron Crickenberger](aaroncrickenberger.md) | Google | [@spiffxp](https://github.com/spiffxp) |
+[Tim Pepper](timpepper.md) | VMware | [@tpepper](https://github.com/tpepper) |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
