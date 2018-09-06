@@ -43,7 +43,7 @@ You’ll need to be:
 
 Mentees will be asked to take responsibility for their growth and improvement as it's a semi-structured self-paced program; however, you are there to help guide them by sharing your methodologies, resources, tips, and experiences.
 
-*[The 1:1 Hour](the1-on-1.md)*
+*[The 1:1 Hour](the1-on-1hour.md)*
 * Participate in a one hour a month session via zoom video conference; no more than 3 hours/times and that is opt-in.
 * Depending on the activities that you’ve selected as comfortable in helping with, the mentee may ask:
   * To pair program with you.
