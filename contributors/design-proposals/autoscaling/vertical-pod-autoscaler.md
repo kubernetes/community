@@ -189,7 +189,7 @@ Design
 
 ### API ###
 We introduce a new type of API object `VerticalPodAutoscaler`, which
-consists of the Target, that is a [label selector](https://kubernetes.io/docs/api-reference/v1.5/#labelselector-unversioned)
+consists of the Target, that is a [label selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors)
 for matching Pods and two policy sections: the update policy and the resources
 policy.
 Additionally it holds the most recent recommendation computed by VPA.
