@@ -221,7 +221,7 @@ Kubelet does not link in the base container runtime. Instead, we're defining a
 underlying runtime and facilitate pluggability of that layer.
 This decoupling is needed in order to maintain clear component boundaries, facilitate testing, and facilitate pluggability.
 Runtimes supported today, either upstream or by forks, include at least docker (for Linux and Windows), 
-[rkt](https://kubernetes.io/docs/getting-started-guides/rkt/),
+[rkt](https://github.com/rkt/rkt),
 [cri-o](https://github.com/kubernetes-incubator/cri-o), and [frakti](https://github.com/kubernetes/frakti).
 
 #### Kube Proxy
