@@ -45,6 +45,7 @@ The following subprojects are owned by sig-storage:
     - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/csi-api/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
 - **external-storage**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS

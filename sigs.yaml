@@ -1051,6 +1051,7 @@ sigs:
     - name: metrics
       owners:
       - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS
   - name: Multicluster
     dir: sig-multicluster
     mission_statement: >
@@ -1636,6 +1637,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/csi-api/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
     - name: external-storage
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
