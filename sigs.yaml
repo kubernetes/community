@@ -388,7 +388,7 @@ sigs:
       - name: Kris Nova
         github: kris-nova
         company: Heptio
-      - name: Nishi Davidson 
+      - name: Nishi Davidson
         github: d-nishi
         company: AWS
     meetings:
@@ -565,6 +565,12 @@ sigs:
       owners:
       # "owners" entry
       - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
+    - name: cli-sdk
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cli-runtime/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
   - name: Cloud Provider
     dir: sig-cloud-provider
     mission_statement: >

@@ -43,6 +43,12 @@ The following subprojects are owned by sig-cli:
 - **kustomize**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
+- **cli-sdk**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/cli-runtime/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
 
 ## GitHub Teams
 
