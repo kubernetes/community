@@ -356,7 +356,7 @@ Alpha:
   - [CRI validation tests][cri-validation]
   - Kubernetes E2E tests (only validating single runtime handler cases)
 
-[cri-validation]: https://github.com/kubernetes-incubator/cri-tools/blob/master/docs/validation.md
+[cri-validation]: https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/validation.md
 
 Beta:
 

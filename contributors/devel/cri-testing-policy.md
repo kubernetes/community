@@ -13,7 +13,7 @@ because many features require integration of runtime, OS, or even the cloud
 provider. A higher-level integration tests provider better signals on vertical
 stack compatibility to the Kubernetes community. On the other hand, runtime
 developers are strongly encouraged to run low-level
-[CRI validation test suite](https://github.com/kubernetes-incubator/cri-tools/blob/master/docs/validation.md)
+[CRI validation test suite](https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/validation.md)
 for validation as part of their development process.
 
 ## Required and optional tests
