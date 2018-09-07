@@ -40,11 +40,13 @@ Also Mandatory values must also be enforced by scheduling policies in case of:
 
 # Overview
 
-### syntaxic standards
+The schedulingPolicy will live out-of-tree under kubernetes-sigs org. It will use a CRD-based approach.
+
+## syntaxic standards
 
 ### empty match and unset fields:
 
-We follow Kubernetes conventions, an empty field matches everything an unset one matches nothing
+an empty field and an unset one matches everything.
 
 ### how policies are computed
 
@@ -56,7 +58,10 @@ for policy in sortedPolicies:
   if policy matches pod: // all specified policy rules match
     return policy.action
 ```
- note that rules of policies from a lower priority are superseeded by ones from a higher priority if they match.
+ note that:
+- rules of policies with higher priority supersede lower priority rules if they both match.
+- matching is done statically, i.e. we don't interpret logical operators (see nodeAffinity section for more details).
+- matching is considered true if a subset of a set-based field is matched.
 
 
 
@@ -70,7 +75,7 @@ Proposed API group: `policy/v1alpha1`
 
 ### SchedulingPolicy content
 
-SchedulingPolicy spec is composed of optional fields that allow scheduling rules. If a field is absent from a SchedulingPolicy, this `SchedulingPolicy` won't allow any item from the missing field.
+SchedulingPolicy spec is composed of optional fields that allow scheduling rules. If a field is absent from a `SchedulingPolicy` it automatically allowed.
 
 ```yaml
 apiVersion: policy/v1alpha1
@@ -214,7 +219,7 @@ spec:
         operator: Exists
     podSelector: {}
     priorityClasseNames:
-      - match: "critical-priority"
+       match: "critical-priority"
 ```
 
 
@@ -292,7 +297,12 @@ spec:
 
 ```
 
-In this example, we require pods to use nodeAffinity to select nodes having `authorized-region` without `eu-1` or `us-1` values, or nodes having `PCI-region` label set. On those filtered nodes we require the pod to prefer nodes with the lowest compute capabilities (`m1.small` or `m1.medium`)
+In this example, we allow pods that nodeAffinity to select nodes having `authorized-region` without `eu-1` or `us-1` values, or nodes having `PCI-region` label set. On those filtered nodes we require the pod to prefer nodes with the lowest compute capabilities (`m1.small` or `m1.medium`). The matching is done when a pod has:
+
+- All the "required" and "preferred" sections.
+- Each section has the same keys and the same operators.
+- Values must be the same or subset of those of the pod.
+
 
 
 # References
