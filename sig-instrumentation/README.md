@@ -45,6 +45,7 @@ The following subprojects are owned by sig-instrumentation:
 - **metrics**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS
 
 ## GitHub Teams
 
