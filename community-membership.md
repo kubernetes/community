@@ -58,7 +58,7 @@ remain active contributors to the community.
    - Complete every item on the checklist ([preview the current version of the template][membership template])
    - Make sure that the list of contributions included is representative of your work on the project.
 - Have your sponsoring reviewers reply confirmation of sponsorship: `+1`
-- Once your sponsors have responded, your request will be reviewed. Any missing information will be requested.
+- Once your sponsors have responded, your request will be reviewed by the [Kubernetes GitHub Admin team], in accordance with their [SLO]. Any missing information will be requested.
 
 ### Kubernetes Ecosystem
 
@@ -224,6 +224,7 @@ The Maintainer role has been removed and replaced with a greater focus on [OWNER
 [code reviews]: /contributors/devel/collab.md
 [community expectations]: /contributors/guide/community-expectations.md
 [contributor guide]: /contributors/guide/README.md
+[Kubernetes GitHub Admin team]: /github-management/README.md#github-administration-team
 [Kubernetes GitHub organizations]: /github-management#actively-used-github-organizations
 [kubernetes-dev@googlegroups.com]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [kubernetes-sigs]: https://github.com/kubernetes-sigs
@@ -232,4 +233,5 @@ The Maintainer role has been removed and replaced with a greater focus on [OWNER
 [New contributors]: /CONTRIBUTING.md
 [OWNERS]: /contributors/guide/owners.md
 [sigs.yaml]: /sigs.yaml
+[SLO]: /github-management/org-owners-guide.md#slos
 [two-factor authentication]: https://help.github.com/articles/about-two-factor-authentication
