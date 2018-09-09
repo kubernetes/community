@@ -126,6 +126,7 @@ Name | Organization/Company | GitHub
 --- | --- | -- |
 [Aaron Crickenberger](aaroncrickenberger.md) | Google | [@spiffxp](https://github.com/spiffxp) |
 [Quinton Hoole](quintonhoole.md) | Huawei | [@quinton-hoole](https://github.com/quinton-hoole) |
+| [Stephen Augustus](stephenaugustus.md) | Red Hat | [@justaugustus](https://github.com/justaugustus) |
 [Tim Pepper](timpepper.md) | VMware | [@tpepper](https://github.com/tpepper) |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
