@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Covers improvements to Kubernetes authorization, authentication, and cluster security policy.
 
+"All I want is a secure system where it's easy to do anything I want. Is that so much to ask?" - [xkcd](https://xkcd.com/2044 "xkcd")
+
 The [charter](charter.md) defines the scope and governance of the Auth Special Interest Group.
 
 ## Meetings
