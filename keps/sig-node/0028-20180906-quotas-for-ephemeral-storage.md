@@ -35,32 +35,34 @@ KEP and for highlighting any additional information provided beyond
 the standard KEP template.  [Tools for generating][https://github.com/ekalinin/github-markdown-toc] a table of
 contents from markdown are available.
 
-* [Quotas for Ephemeral Storage](#quotas-for-ephemeral-storage)
-  * [Table of Contents](#table-of-contents)
-  * [Summary](#summary)
-  * [Motivation](#motivation)
-	 * [Goals](#goals)
-	 * [Non-Goals](#non-goals)
-  * [Proposal](#proposal)
-	 * [Operation Flow -- Applying a Quota](#operation-flow----applying-a-quota)
-	 * [Operation Flow -- Retrieving Storage Consumption](#operation-flow----retrieving-storage-consumption)
-	 * [Operation Flow -- Removing a Quota.](#operation-flow----removing-a-quota)
-	 * [Operation Notes](#operation-notes)
-		* [Selecting a Project ID](#selecting-a-project-id)
-		* [Determine Whether a Project ID Applies To a Directory](#determine-whether-a-project-id-applies-to-a-directory)
-		* [Return a Project ID To the System](#return-a-project-id-to-the-system)
-	 * [Implementation Details/Notes/Constraints [optional]](#implementation-detailsnotesconstraints-optional)
-		* [Notes on Implementation](#notes-on-implementation)
-		* [Notes on Code Changes](#notes-on-code-changes)
-		* [Testing Strategy](#testing-strategy)
-	 * [Risks and Mitigations](#risks-and-mitigations)
-  * [Graduation Criteria](#graduation-criteria)
-  * [Implementation History](#implementation-history)
-  * [Drawbacks [optional]](#drawbacks-optional)
-  * [Alternatives [optional]](#alternatives-optional)
-	 * [Alternative quota-based implementation](#alternative-quota-based-implementation)
-	 * [Alternative loop filesystem-based implementation](#alternative-loop-filesystem-based-implementation)
-  * [Infrastructure Needed [optional]](#infrastructure-needed-optional)
+   * [Quotas for Ephemeral Storage](#quotas-for-ephemeral-storage)
+      * [Table of Contents](#table-of-contents)
+      * [Summary](#summary)
+         * [Project Quotas](#project-quotas)
+      * [Motivation](#motivation)
+         * [Goals](#goals)
+         * [Non-Goals](#non-goals)
+      * [Proposal](#proposal)
+         * [Operation Flow -- Applying a Quota](#operation-flow----applying-a-quota)
+         * [Operation Flow -- Retrieving Storage Consumption](#operation-flow----retrieving-storage-consumption)
+         * [Operation Flow -- Removing a Quota.](#operation-flow----removing-a-quota)
+         * [Operation Notes](#operation-notes)
+            * [Selecting a Project ID](#selecting-a-project-id)
+            * [Determine Whether a Project ID Applies To a Directory](#determine-whether-a-project-id-applies-to-a-directory)
+            * [Return a Project ID To the System](#return-a-project-id-to-the-system)
+         * [Implementation Details/Notes/Constraints [optional]](#implementation-detailsnotesconstraints-optional)
+            * [Notes on Implementation](#notes-on-implementation)
+            * [Notes on Code Changes](#notes-on-code-changes)
+            * [Testing Strategy](#testing-strategy)
+         * [Risks and Mitigations](#risks-and-mitigations)
+      * [Graduation Criteria](#graduation-criteria)
+      * [Implementation History](#implementation-history)
+      * [Drawbacks [optional]](#drawbacks-optional)
+      * [Alternatives [optional]](#alternatives-optional)
+         * [Alternative quota-based implementation](#alternative-quota-based-implementation)
+         * [Alternative loop filesystem-based implementation](#alternative-loop-filesystem-based-implementation)
+      * [Infrastructure Needed [optional]](#infrastructure-needed-optional)
+
 
 [Tools for generating]: https://github.com/ekalinin/github-markdown-toc
 
@@ -86,6 +88,58 @@ provide monitoring of resource consumption and optionally enforcement
 of limits.  Project quotas, initially in XFS and more recently ported
 to ext4fs, offer a kernel-based means of restricting and monitoring
 filesystem consumption that can be applied to one or more directories.
+
+### Project Quotas
+
+Project quotas are a form of filesystem quota that apply to arbitrary
+groups of files, as opposed to file user or group ownership.  They
+were first implemented in XFS, as described here:
+<http://xfs.org/docs/xfsdocs-xml-dev/XFS_User_Guide/tmp/en-US/html/xfs-quotas.html>.
+
+Project quotas for ext4fs were [proposed in late
+2014](https://lwn.net/Articles/623835/) and added to the Linux kernel
+in early 2016, with
+commit
+[391f2a16b74b95da2f05a607f53213fc8ed24b8e](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=391f2a16b74b95da2f05a607f53213fc8ed24b8e).
+They were designed to be compatible with XFS project quotas.
+
+Each inode contains a 32-bit project ID, to which optionally quotas
+(hard and soft limits for blocks and inodes) may be applied.  The
+total blocks and inodes for all files with the given project ID are
+maintained by the kernel.  Project quotas can be managed from
+userspace by means of the xfs_quota(8) command in foreign filesystem
+(`-f`) mode; the traditional Linux quota tools do not manipulate
+project quotas.  Programmatically, they are managed by the quotactl(2)
+system call, using in part the standard quota commands and in part the
+XFS quota commands; the man page implies incorrectly that the XFS
+quota commands apply only to XFS filesystems.
+
+The project ID applied to a directory is inherited by files created
+under it.  Files cannot be (hard) linked across directories with
+different project IDs.  A file's project ID cannot be changed by a
+non-privileged user, but a privileged user may use the xfs_io(8)
+command to change the project ID of a file.
+
+Filesystems using project quotas may be mounted with quotas either
+enforced or not; the non-enforcing mode tracks usage without enforcing
+it.  A non-enforcing project quota may be implemented on a filesystem
+mounted with enforcing quotas by setting a quota too large to be hit.
+The maximum size that can be set varies with the filesystem; on a
+64-bit filesystem it is 2^63-1 bytes for XFS and 2^58-1 bytes for
+ext4fs.
+
+Conventionally, project quota mappings are stored in /etc/projects and
+/etc/projid; these files exist for user convenience and do not have
+any direct importance to the kernel.  /etc/projects contains a mapping
+from project ID to directory/file; this can be a one to many mapping
+(the same project ID can apply to multiple directories or files, but
+any given directory/file can be assigned only one project ID).
+/etc/projid contains a mapping from named projects to project IDs.
+
+This proposal utilizes hard project quotas.  Soft quotas are of no
+utility; they allow for temporary overage that, after a programmable
+period of time, is converted to the hard quota limit.
+
 
 ## Motivation
 
@@ -145,19 +199,34 @@ multi-tenant environments need these issues addressed.
 
 ### Goals
 
+These goals apply only to local ephemeral storage, as described in
+<https://github.com/kubernetes/features/issues/361>.
+
 * Primary: improve performance of monitoring by using project quotas
   in a non-enforcing way to collect information about storage
-  utilization.
+  utilization of ephemeral volumes.
 * Primary: detect storage used by pods that is concealed by deleted
   files being held open.
 * Primary: this will not interfere with the more common user and group
   quotas.
 * Stretch: enforce limits on per-volume storage consumption by using
   enforced project quotas.  Each volume would be given an enforced
-  quota of the total ephemeral storage limit of the pod.
+  quota of the total ephemeral storage limit of the pod.  _This will
+  only be done if a mechanism is devised to allow quota enforcement on
+  container writable layers; enforcement on emptydir volumes without
+  such on writable layers does not restrict the user._  If we cannot
+  do this, enforcing quotas will either be disabled or enabled by an
+  optional feature gate that is disabled by default.
 
 ### Non-Goals
 
+* Application to storage other than local ephemeral storage.
+* Elimination of eviction as a means of enforcing ephemeral-storage
+  limits.  Pods that hit their ephemeral-storage limit will still be
+  evicted by the kubelet even if their storage has been capped by
+  enforcing quotas.
+* Enforcing node allocatable (limit over the sum of all pod's disk
+  usage, including e. g. images).
 * Enforcing limits on total pod storage consumption by any means, such
   that the pod would be hard restricted to the desired storage limit.
 
