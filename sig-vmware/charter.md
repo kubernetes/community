@@ -12,6 +12,7 @@ In addition to the cloud provider for the vSphere hypervisor, the SIG’s missio
 - NSX and NSX-T, infrastructure components that provide software based networking service, with automated micro-segmentation at application and control plane levels - along with security, monitoring, logging, and features for multi-cluster, multi-site, and cross cloud integration. NSX-T is not vSphere specific, and is supported on other cloud providers (e.g. OpenStack). The scope of NSX and NSX-T interaction with Kubernetes goes beyond the CNI plug-in abstraction.
 - Desktop hypervisors (Fusion for OS X and Workstation for Linux and Windows), as supported by Minikube.
 - vCloud Director, which enables service providers to provision and manage multi tenant clouds, which can host Kubernetes.
+- Hosting architectural planning and discussion related to new CRDs, plug-ins and KEPs that allow the vSphere platform to supplement the existing capabilities of Kubernetes, container runtime, and OS functionality
 
 
 ### In scope
@@ -36,10 +37,12 @@ Code locations and projects are defined in [SIG Subprojects](https://github.com/
 SIG VMware serves to bring together members of the VMware and Kubernetes community to maintain, support and provide guidance for running Kubernetes on VMware platforms.
 
 The VMware SIG will provide a forum for hosting related architectural planning and discussion. Associated activities related to development, testing, and documentation will be tracked and reported by the SIG.
-
 - The vSphere platform’s availability and resource management can create pools that extend across Kubernetes worker node, management node, and namespace boundaries. Unique features of the vSphere platform related to high availability, load balancing, and resource management (storage, networking, compute) can supplement existing capabilities of Kubernetes, container runtime, and OS functionality.
-  - Users can do some of this via configuration today, but opportunities exist to achieve more efficient, predictable, and dependable service through additional new CRDs, plug-ins, and enhancement proposals (KEPs) related to other Kubernetes components.
-  - Interaction is expected to cut across multiple aspects of Kubernetes in ways not firmly bounded by existing SIG dividing lines (e.g. node, scheduling, scalability).
+- We drive changes that cross existing SIG boundaries by collaborating with the appropriate SIGs (eg: node, schedule, scalability, etc.)
+- We co-own vSphere-specific code related to cluster and machine provisioning with sig-cluster-lifecycle and the cluster-api subproject.
+- We co-own the cloud-provider-vsphere code with sig-cloud-provider
+- We define requirements, interfaces, and end-to-end tests related to vSphere-specific storage with sig-storage
+
 
 ### Out of scope
 
