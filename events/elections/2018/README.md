@@ -129,6 +129,7 @@ Name | Organization/Company | GitHub
 | [Stephen Augustus](stephenaugustus.md) | Red Hat | [@justaugustus](https://github.com/justaugustus) |
 [Tim Pepper](timpepper.md) | VMware | [@tpepper](https://github.com/tpepper) |
 [Nikhita Raghunath](nikhitaraghunath.md) | Independent | [@nikhita](https://github.com/nikhita) |
+[Davanum Srinivas](davanumsrinivas.md) | Huawei | [@dims](https://github.com/dims) |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
