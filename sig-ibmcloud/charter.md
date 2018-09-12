@@ -6,27 +6,32 @@ the Roles and Organization Management outlined in [sig-governance].
 ## Scope
 
 The IBMCloud SIG enables activities and discussion around building, deploying, maintaining, supporting,
-and using Kubernetes, and related CNCF projects, on IBM Public and Private Clouds.
+and using Kubernetes on IBM Public and Private Clouds.
 
-The authoritative source for SIG information is the [SIG README] file.
+### In scope
+- Determining and documenting best practices for configuring Kubernetes on IBM Cloud Kubernetes Service (IKS).
+- Determining and documenting best practices for configuring Kubernetes on IBM Cloud Private (ICP).
+- Discussing IKS and ICP tracking of Kubernetes features and releases.
+- Utilizing Kubernetes and related CNCF projects (e.g. Helm, Istio) by IKS and ICP.
+- Discussing bugs and feature requests recorded as Kubernetes upstream issues on GitHub. These issues should be tagged with `sig/ibmcloud`.
+
+#### Code, Binaries and Services
+
+The work to have a cloud provider specific public code repository is in progress. This section will be updated once the work is complete. Kubernetes upstream code that
+is directly related to IKS or ICP issues or features can be discussed.
 
 ### Out of scope
 
-* Discussion around commercial aspects of IBM Public and Private clouds.
+* Internal or commercial aspects of IKS and ICP.
 
 ## Roles and Organization Management
 
 This SIG adheres to the Roles and Organization Management outlined in [sig-governance]
 and opts-in to updates and modifications to [sig-governance], with exception that the SIG only
-has the Chair role at present.
+has the Chair role at present. Chairs must also fulfill all of the responsibilities of the Tech Lead role as outlined in [sig-governance].
 
-- SIG meets every other week on Zoom at 2 PM ET on Wednesday.
-    - Agenda and meeting link
-      [here](https://goo.gl/f9EbvY).
-    - Recordings of the calls are made available
-      [here](https://goo.gl/PSkwBj).
-    - SIG mailing list link
-      [here](https://goo.gl/hUF9eF).
+### Subproject Creation
+Associated subprojects are created following the `by SIG Technical Leads` option procedure described in [sig-governance].
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
