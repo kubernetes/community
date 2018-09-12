@@ -752,7 +752,7 @@ Webhook conversion has less limitation for the authors of APIs using CRD which i
 
     * generating a full Webhook Host from a conversion function.
 
-helping users create tests by writing directories containing sample yamls of an object in various versions.
+    * helping users create tests by writing directories containing sample yamls of an object in various versions.
 
     * using fuzzing to generate random valid objects and checking if they convert.
 
