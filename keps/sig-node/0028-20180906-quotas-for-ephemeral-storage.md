@@ -30,11 +30,6 @@ superseded-by:
 
 ## Table of Contents
 
-A table of contents is helpful for quickly jumping to sections of a
-KEP and for highlighting any additional information provided beyond
-the standard KEP template.  [Tools for generating][https://github.com/ekalinin/github-markdown-toc] a table of
-contents from markdown are available.
-
    * [Quotas for Ephemeral Storage](#quotas-for-ephemeral-storage)
       * [Table of Contents](#table-of-contents)
       * [Summary](#summary)
@@ -88,6 +83,8 @@ provide monitoring of resource consumption and optionally enforcement
 of limits.  Project quotas, initially in XFS and more recently ported
 to ext4fs, offer a kernel-based means of restricting and monitoring
 filesystem consumption that can be applied to one or more directories.
+
+A prototype is in progress; see <https://github.com/kubernetes/kubernetes/pull/66928>.
 
 ### Project Quotas
 
