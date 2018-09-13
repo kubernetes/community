@@ -196,44 +196,66 @@ Both `Create` and `Delete` operations return an error `ErrAlreadyExist` and the 
 The autoscaler allows to either enumerate all node groups (via `--nodes` option)
 or automatically discover all node groups on-the-fly (via `--node-group-auto-discovery`).
 
-## Integration with machine API
+### Integration with machine API
 
 Given the scaling up/down operation corresponds to increasing/decreasing the number
 of nodes in a node group, it's sufficient to "just" change the number of replicas
 of corresponding machine set.
 
-### Node template
+#### Node template
 
 The `machine` object holds all cloud provider specific information under
 `spec.providerConfig` field. Given only the actuator can interpret the provider
-config and there can be multiple actuator implementations for the same cloud provider,
-all information necessary to render the template must be contained in the machine spec (outside
-the provider config). This may lead to data duplication as one needs to provide
-a machine type in the config (e.g. to provision an instance) and cpu, gpu and memory
-requirements of the machine outside the config (e.g. to construct node object
-resource capacity).
+configuration and there can be multiple actuator implementations for the same cloud provider,
+all information necessary to render the template must be contained outside of the machine
+'s provider config. At the same time the `machineset` object works over a set of
+`machines` and has no way of communicating with the machine controller.
 
-Implemented through labels the `machine` spec can look like:
+The node template corresponding to a node group has to be either rendered
+on the cluster autoscaler side or inside the machine controller.
+In the former case the machine (outside of the provider config) needs to contain
+all the information in a generic form to render the template (e.g. through labels)
+or import the actuator code that can interpret the provider config. In the latter,
+the machine controller has to store the rendered node template (that is free
+of cloud provider specifics) into machine object.
 
-```yaml
----
-apiVersion: cluster.k8s.io/v1alpha1
-kind: Machine
-metadata:
-  name: node-group-machine
-  namespace: application
-  labels:
-    sigs.k8s.io/cluster-autoscaler-resource-capacity: "cpu:200m,gpu:1,memory:4GB"
-    sigs.k8s.io/cluster-autoscaler-region: us-west-1
-...
-```
+* **Labels**: Label use case may lead to data duplication as one needs to provide a cpu, gpu
+  and memory requirements (based on instance type) to specify node's allocatable
+  resources. Or other information such as region, availability zones (which may
+  have different representation through different cloud providers).
+  Implemented through labels the `machine` spec can look like:
 
-Other option is to pull all the information from the `spec.providerConfig`.
-Which means the autoscaler needs to import actuator specific code, which forces
-to choose a single implementation of actuator for each cloud provider.
-That can be to restrictive.
+  ```yaml
+  ---
+  apiVersion: cluster.k8s.io/v1alpha1
+  kind: Machine
+  metadata:
+    name: node-group-machine
+    namespace: application
+    labels:
+      sigs.k8s.io/cluster-autoscaler-resource-capacity: "cpu:200m,gpu:1,memory:4GB"
+      sigs.k8s.io/cluster-autoscaler-region: us-west-1
+  ...
+  ```
 
-In both cases, if it can be assumed all machines/nodes in the same node group have the same
+* **Actuator code imports**: Importing the actuator code and pulling all
+  the information from the `spec.providerConfig` forces the cluster autoscaler
+  to choose a single implementation of actuator for each cloud provider.
+  That can be to restrictive.
+
+* **Rendering inside the machine controller**: From the "I only know what I need to know"
+  point of view, this approach encapsulates all the knowledge about provider
+  configuration within the actuator itself. The actuator knows the best how to
+  properly construct the node template. Obviously, the node template is stored
+  in the machine object. Thus, any client querying the machine can then read
+  and consume the template free of any cloud provider. Given the node template
+  can reflect the current state of the underlying machine's instance
+  (e.g. instance tags) the node template can be periodically rendered
+  and published in machine's status.
+
+#### Scaling from 0 
+
+In all cases, if it can be assumed all machines/nodes in the same node group have the same
 system requirements, one can use generic kubelet's configuration discovery to get
 the kubelet's reserved and system requirements from the first machine in a given
 node group (given there is at least one node in the group).
