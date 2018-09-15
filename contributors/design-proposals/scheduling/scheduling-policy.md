@@ -75,7 +75,7 @@ Proposed API group: `policy/v1alpha1`
 
 ### SchedulingPolicy content
 
-SchedulingPolicy spec is composed of optional fields that allow scheduling rules. If a field is absent from a `SchedulingPolicy` it automatically allowed.
+SchedulingPolicy spec is composed of optional fields that allow scheduling rules. If a field is absent from a `SchedulingPolicy` it is automatically allowed.
 
 ```yaml
 apiVersion: policy/v1alpha1
@@ -297,7 +297,7 @@ spec:
 
 ```
 
-In this example, we allow pods that nodeAffinity to select nodes having `authorized-region` without `eu-1` or `us-1` values, or nodes having `PCI-region` label set. On those filtered nodes we require the pod to prefer nodes with the lowest compute capabilities (`m1.small` or `m1.medium`). The matching is done when a pod has:
+In this example, we allow pods with nodeAffinity to select nodes having `authorized-region` without `eu-1` or `us-1` values, or nodes having `PCI-region` label set. On those filtered nodes we require the pod to prefer nodes with the lowest compute capabilities (`m1.small` or `m1.medium`). The matching is done when a pod has:
 
 - All the "required" and "preferred" sections.
 - Each section has the same keys and the same operators.
