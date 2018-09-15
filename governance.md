@@ -31,9 +31,6 @@ The project has 4 main types of groups:
 3. Working Groups, WGs
 4. Committees
 
-Note that the project is also in the process of forming a Steering
-Committee, details of which will be documented soon.
-
 ## SIGs
 
 The Kubernetes project is organized primarily into Special Interest
@@ -163,7 +160,7 @@ community meeting.
 
 All repositories under Kubernetes github orgs, such as kubernetes and kubernetes-incubator,
 should follow the procedures outlined in the [incubator document](incubator.md). All code projects
-use the [Apache Licence version 2.0](LICENSE). Documentation repositories should use the
+use the [Apache License version 2.0](LICENSE). Documentation repositories should use the
 [Creative Commons License version 4.0](https://git.k8s.io/website/LICENSE).
 
 # CLA
