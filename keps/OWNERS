@@ -13,4 +13,6 @@ approvers:
   - calebamiles
   - idvoretskyi
 labels:
+  - kind/kep
   - sig/architecture
+  - sig/pm
