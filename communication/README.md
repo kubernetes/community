@@ -44,7 +44,7 @@ relevant to you, as you would any other Google Group.
 
 * [kubernetes-announce] broadcasts major project announcements such as releases and security issues
 * [kubernetes-dev] hosts development announcements and discussions around developing kubernetes itself
-* [kubernetes-users] is where kubernetes users trade notes
+* [Discuss Kubernetes] is where kubernetes users trade notes
 * Additional Google groups exist and can be joined for discussion related to each SIG and Working Group.  These are linked from the [SIG list](/sig-list.md).
 
 ## Accessing community documents
@@ -94,7 +94,7 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [kubernetes-community-video-chat]: https://groups.google.com/forum/#!forum/kubernetes-community-video-chat
 [kubernetes-announce]: https://groups.google.com/forum/#!forum/kubernetes-announce
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
-[kubernetes-users]: https://groups.google.com/forum/#!forum/kubernetes-users
+[Discuss Kubernetes]: https://discuss.kubernetes.io
 [kubernetes.slack.com]: https://kubernetes.slack.com
 [Slack]: http://slack.k8s.io
 [Special Interest Group]: /README.md#SIGs

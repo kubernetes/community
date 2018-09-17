@@ -32,7 +32,7 @@ A list of common resources when contributing to Kubernetes.
 
 - [Calendar](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com)
 - [kubernetes-dev](https://groups.google.com/forum/#!forum/kubernetes-dev)
-- [kubernetes-users](https://groups.google.com/forum/#!forum/kubernetes-users)
+- [Kubernetes Forums](https://discuss.kubernetes.io)
 - [Slack channels](http://slack.k8s.io/)
 - [StackOverflow](https://stackoverflow.com/questions/tagged/kubernetes)
 - [YouTube Channel](https://www.youtube.com/c/KubernetesCommunity/)

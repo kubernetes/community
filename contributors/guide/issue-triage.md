@@ -59,7 +59,7 @@ Support requests should be directed to the following:
 
 * [Slack](https://kubernetes.slack.com) ([registration](http://slack.k8s.io))
 
-* [Email/Groups](https://groups.google.com/forum/#!forum/kubernetes-users)
+* [Discussion forums](https://discuss.kubernetes.io)
 
 ### User support response example
 
