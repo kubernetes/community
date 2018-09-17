@@ -131,6 +131,7 @@ Name | Organization/Company | GitHub
 [Nikhita Raghunath](nikhitaraghunath.md) | Independent | [@nikhita](https://github.com/nikhita) |
 [Davanum Srinivas](davanumsrinivas.md) | Huawei | [@dims](https://github.com/dims) |
 [Kris Nova](krisnova.md) | Heptio | [@kris-nova](https://github.com/kris-nova) |
+[Timothy St. Clair](timothysc.md) | Heptio | [@timothysc](https://github.com/timothysc) |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
