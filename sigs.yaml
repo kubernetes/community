@@ -1698,14 +1698,20 @@ sigs:
       - name: sig-testing-pr-reviews
         description: PR Reviews
     subprojects:
-    - name: test-infra
+    - name: kind
+      description: >
+        Kubernetes IN Docker. Run Kubernetes test clusters on your local
+        machine using Docker containers as nodes.
       owners:
-      - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
     - name: repo-publishing
       owners:
       - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
     - name: testing-commons
-      description: "The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project."
+      description: >
+        The Testing Commons is a subproject within the Kubernetes sig-testing community
+        interested code structure, layout, and execution of common test code used
+        throughout the kubernetes project
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
@@ -1717,6 +1723,9 @@ sigs:
         frequency: bi-weekly
         url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
         archive_url: https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o
+    - name: test-infra
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
   - name: UI
     dir: sig-ui
     mission_statement: >
