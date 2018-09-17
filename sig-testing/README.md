@@ -33,20 +33,26 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-testing:
-- **test-infra**
+- **kind**
+  - Description: Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
+
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
 - **repo-publishing**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
 - **testing-commons**
-  - Description: The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project.
+  - Description: The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project
+
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
   - Meetings:
     - Testing Commons: [Wednesdays at 07:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29).
       - [Meeting notes and Agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o).
+- **test-infra**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
 
 ## GitHub Teams
 
