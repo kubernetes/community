@@ -1,7 +1,7 @@
 ## 2018 Steering Committee Election
 ### Eligible Voters List
 
-The eligible voter process can be found in the steering committee [elections.md](https://git.k8s.io/steering/elections.md) doc. This list was pulled as of August 15, 2018.
+The eligible voter process can be found in the steering committee [elections.md](https://git.k8s.io/steering/elections.md) doc. This list was pulled as of August 15, 2018 and updated on September 16, 2018 with the first round of exception voting form results. Another update to follow from another round of forms.
 
 **GitHub ID:**
 1. aanm
@@ -129,6 +129,7 @@ The eligible voter process can be found in the steering committee [elections.md]
 1. colemickens
 1. ConnorDoyle
 1. containscafeine
+1. countspongebob
 1. craigbox
 1. crassirostris
 1. crimsonfaith91
@@ -151,6 +152,7 @@ The eligible voter process can be found in the steering committee [elections.md]
 1. dcowden
 1. ddebroy
 1. deads2k
+1. deepak-vij
 1. deitch
 1. dekkagaijin
 1. derekwaynecarr
@@ -371,6 +373,7 @@ The eligible voter process can be found in the steering committee [elections.md]
 1. liubin
 1. Liujingfang1
 1. liyinan926
+1. lizrice
 1. liztio
 1. loburm
 1. losipiuk
@@ -437,12 +440,14 @@ The eligible voter process can be found in the steering committee [elections.md]
 1. mistyhacks
 1. mithrav
 1. mkimuram
+1. mkjelland
 1. mkumatag
 1. mkurylec
 1. mlmhl
 1. mml
 1. mohammedzee1000
 1. monopole
+1. mrbobbytables
 1. mrhillsman
 1. MrHohn
 1. mrIncompetent
@@ -510,6 +515,7 @@ The eligible voter process can be found in the steering committee [elections.md]
 1. pweil-
 1. pwittrock
 1. Q-Lee
+1. qedrakmar
 1. qhuynh96
 1. qingling128
 1. qiujian16
@@ -526,6 +532,7 @@ The eligible voter process can be found in the steering committee [elections.md]
 1. rajatjindal
 1. Random-Liu
 1. ravisantoshgudimetla
+1. rdodev
 1. rdrgmnzs
 1. redbaron
 1. RenaudWasTaken
