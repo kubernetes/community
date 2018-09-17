@@ -28,7 +28,7 @@ Guidelines for drafting a SIG Charter can be found [here](/committee-steering/go
 
 ### Prerequisites
 
-* Propose the new SIG publicly, including a brief mission statement, by emailing kubernetes-dev@googlegroups.com and kubernetes-users@googlegroups.com, then wait a couple of days for feedback.
+* Propose the new SIG publicly, including a brief mission statement, by emailing kubernetes-dev@googlegroups.com and posting to discuss.kubernetes.io, then wait a couple of days for feedback.
 * Ask a repo maintainer to create a github label, if one doesn't already exist: sig/foo.
 * Request a new [kubernetes.slack.com](http://kubernetes.slack.com) channel (#sig-foo) from the #slack-admins channel.  New users can join at [slack.kubernetes.io](http://slack.kubernetes.io).
 * Organize video meetings as needed. No need to wait for the [Weekly Community Video Conference](community/README.md) to discuss. Please report summary of SIG activities there.
