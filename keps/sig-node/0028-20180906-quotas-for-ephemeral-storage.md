@@ -38,6 +38,7 @@ superseded-by:
          * [Goals](#goals)
          * [Non-Goals](#non-goals)
       * [Proposal](#proposal)
+         * [Control over Use of Quotas](#control-over-use-of-quotas)
          * [Operation Flow -- Applying a Quota](#operation-flow----applying-a-quota)
          * [Operation Flow -- Retrieving Storage Consumption](#operation-flow----retrieving-storage-consumption)
          * [Operation Flow -- Removing a Quota.](#operation-flow----removing-a-quota)
@@ -241,6 +242,23 @@ If we elect to use the quota as enforcing, we impose a quota
 consistent with the desired limit.  If we elect to use it as
 non-enforcing, we impose a large quota that in practice cannot be
 exceeded (2^63-1 bytes for XFS, 2^58-1 bytes for ext4fs).
+
+### Control over Use of Quotas
+
+At present, three feature gates control operation of quotas:
+
+* `LocalStorageCapacityIsolation` must be enabled for any use of
+  quotas.
+  
+* `FSQuotaForLSCIMonitoring` must be enabled in addition.  If this is
+  enabled, quotas are used for monitoring, but not enforcement.  At
+  present, this defaults to False, but the intention is that this will
+  default to True by initial release.
+  
+* `FSQuotaForLSCIEnforcement` must be enabled, in addition to
+  `FSQuotaForLSCIMonitoring`, to use quotas for enforcement.  This
+  defaults to False and is expected to remain in that state for
+  initial release.
 
 ### Operation Flow -- Applying a Quota
 
