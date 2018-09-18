@@ -1537,7 +1537,7 @@ sigs:
       Service Catalog is a Kubernetes extension project that
       implements the [Open Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI).
       It allows application developers the ability to provision and consume cloud services natively from within Kubernetes.
-    charter_link: https://github.com/kubernetes/community/blob/master/sig-service-catalog/charter.md
+    charter_link: charter.md
     label: service-catalog
     leadership:
       chairs:
@@ -1939,7 +1939,7 @@ workinggroups:
       understand the needs of other parts of the ecosystem on this layer, and improve the interoperability
       of application management tools through better separation of concerns, common conventions,
       and common principles.
-    charter_link: https://docs.google.com/document/d/1TzRwzWYRulx4o8Fii8k7ToIx4LR4MSncxxLdJ9TkOAs/edit#
+    charter_link:
     leadership:
       chairs:
       - name: Antoine Legrand
