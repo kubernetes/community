@@ -209,7 +209,7 @@ To be considered:
    - In general, we recommend to keep frequencies of NodeStatus reporting in both
      Kubelet and NodeProblemDetector in sync (once all changes will be done) and
      that should be reflected in [NPD documentation][].
-   - Note that reducing frequency to 1 minute already gives us almost 6x improvment.
+   - Note that reducing frequency to 1 minute already gives us almost 6x improvement.
      It seems more than enough for any foreseeable future assuming we won’t
      significantly increase the size of object Node.
      Note that if we keep adding node conditions owned by other components, the
