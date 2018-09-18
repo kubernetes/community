@@ -296,15 +296,14 @@ was added.
   release, and do not make it the storage version. The latter is necessary so that a rollback of the
   apiserver doesn't render resources in etcd undecodable after rollback.
 
-* Any field with a default value in one API version must have *non-nil default
-  values* in all API versions. If a default value is added to a field in one API
-  version, and the field didn't have a default value in previous API versions,
-  it is required to add a default value semantically equivalent to an unset
-  value to the field in previous API versions, to preserve the semantic
-  meaning of the value being unset. This includes:
-  * a new optional field with a default value is introduced in a new API version
-  * an old optional field without a default value (i.e. can be nil) has a
-    default value in a new API version
+* Any field with a default value in one API version must have a *non-nil* default
+  value in all API versions.  This can be split into 2 cases:
+  * Adding a new API version with a default value for an existing non-defaulted
+    field: it is required to add a default value semantically equivalent to
+    being unset in all previous API versions, to preserve the semantic meaning
+    of the value being unset.
+  * Adding a new field with a default value: the default values must be
+    semantically equivalent in all currently supported API versions.
 
 ## Incompatible API changes
 
