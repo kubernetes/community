@@ -246,7 +246,7 @@ _NUMA Manager fetches affinity from hint providers._
 
 # Graduation Criteria
 
-## Alpha (target v1.11)
+## Phase 1: Alpha (target v1.13)
 
 * Feature gate is disabled by default.
 * Alpha-level documentation.
@@ -255,11 +255,12 @@ _NUMA Manager fetches affinity from hint providers._
 * Device plugin interface includes NUMA node ID.
 * Device Manager allocation policy takes NUMA hints into account.
 
-## Beta
+## Phase 2: Beta (later versions)
 
 * Feature gate is enabled by default.
 * Alpha-level documentation.
 * Node e2e tests.
+* Support hugepages alignment.
 * User feedback.
 
 ## GA (stable)
