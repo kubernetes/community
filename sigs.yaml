@@ -1648,6 +1648,7 @@ sigs:
     - name: external-storage
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-lib-external-provisioner/master/OWNERS
     - name: git-sync
       owners:
       - https://raw.githubusercontent.com/kubernetes/git-sync/master/OWNERS

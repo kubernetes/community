@@ -49,6 +49,7 @@ The following subprojects are owned by sig-storage:
 - **external-storage**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-lib-external-provisioner/master/OWNERS
 - **git-sync**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/git-sync/master/OWNERS
