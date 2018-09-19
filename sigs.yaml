@@ -260,6 +260,9 @@ sigs:
     mission_statement: >
       Covers improvements to Kubernetes authorization, authentication, and
       cluster security policy.
+
+
+      "All I want is a secure system where it's easy to do anything I want. Is that so much to ask?" - [xkcd](https://xkcd.com/2044 "xkcd")
     charter_link: charter.md
     label: auth
     leadership:
