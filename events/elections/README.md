@@ -46,7 +46,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 
 - Use [CIVS](http://civs.cs.cornell.edu/civs_create.html) to create the election, which CIVS calls a poll. Once you send out the ballots you cannot UNSEND the emails, ensure everything in the form is correct!
 - Name of the poll - “Kubernetes Steering Committee Election for $YEAR”
-- Name of supervisor - “Kubernetes Steering Committee”
+- Name of supervisor - “Kubernetes Election Officers”
 - Email - community@kubernetes.io : Googlegroups doesn’t work here. This mail should resolve to members of the steering committee AND the election officers.
 - Date and Time: Write in the date and time the election will stop. This field is not programmatic, the election is stopped by hand, so you can write this in plain text.
 - Description: This election is to nominate the steering committee for the Kubernetes project. Select the three(3) candidates, by order of preference. Please see the voter's guide for more information.  PLEASE NOTE: "No opinion" is also a voting option if you do not feel comfortable ranking every single candidate.
