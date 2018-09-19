@@ -105,7 +105,7 @@ Each inode contains a 32-bit project ID, to which optionally quotas
 (hard and soft limits for blocks and inodes) may be applied.  The
 total blocks and inodes for all files with the given project ID are
 maintained by the kernel.  Project quotas can be managed from
-userspace by means of the xfs_quota(8) command in foreign filesystem
+userspace by means of the `xfs_quota(8)` command in foreign filesystem
 (`-f`) mode; the traditional Linux quota tools do not manipulate
 project quotas.  Programmatically, they are managed by the quotactl(2)
 system call, using in part the standard quota commands and in part the
@@ -126,13 +126,13 @@ The maximum size that can be set varies with the filesystem; on a
 64-bit filesystem it is 2^63-1 bytes for XFS and 2^58-1 bytes for
 ext4fs.
 
-Conventionally, project quota mappings are stored in /etc/projects and
-/etc/projid; these files exist for user convenience and do not have
-any direct importance to the kernel.  /etc/projects contains a mapping
+Conventionally, project quota mappings are stored in `/etc/projects` and
+`/etc/projid`; these files exist for user convenience and do not have
+any direct importance to the kernel.  `/etc/projects` contains a mapping
 from project ID to directory/file; this can be a one to many mapping
 (the same project ID can apply to multiple directories or files, but
 any given directory/file can be assigned only one project ID).
-/etc/projid contains a mapping from named projects to project IDs.
+`/etc/projid` contains a mapping from named projects to project IDs.
 
 This proposal utilizes hard project quotas.  Soft quotas are of no
 utility; they allow for temporary overage that, after a programmable
@@ -270,9 +270,9 @@ At present, three feature gates control operation of quotas:
   each quota provider (one per filesystem type) whether it can apply a
   quota to the directory.  If no provider claims the directory, an
   error status is returned to the caller.
-* Select an unused project ID (see [below](#selecting-a-project-id)).
+* Select an unused project ID ([see below](#selecting-a-project-id)).
 * Set the desired limit on the project ID, in a filesystem-dependent
-  manner (see [below](#notes-on-implementation)).
+  manner ([see below](#notes-on-implementation)).
 * Apply the project ID to the directory in question, in a
   filesystem-dependent manner.
 
@@ -288,7 +288,7 @@ simply ignore the error and proceed as today.
   quota code to compute the amount of storage used under the
   directory.
 * Determine whether a quota applies to the directory, in a
-  filesystem-dependent manner (see [below](#notes-on-implementation)).
+  filesystem-dependent manner ([see below](#notes-on-implementation)).
 * If so, determine how much storage or how many inodes are utilized,
   in a filesystem dependent manner.
 
@@ -302,8 +302,8 @@ mechanism (such as the directory walk performed today).
 * Determine whether a project quota applies to the directory.
 * Remove the limit from the project ID associated with the directory.
 * Remove the association between the directory and the project ID.
-* Return the project ID to the system to allow its use elsewhere (see
-  [below](#return-a-project-id-to-the-system).
+* Return the project ID to the system to allow its use elsewhere ([see
+  below](#return-a-project-id-to-the-system)).
 * Caller may delete the directory and its contents (normally it will).
 
 ### Operation Notes
@@ -318,8 +318,8 @@ assigned a unique project ID (unless it is desired to pool the storage
 use of multiple directories).
 
 The canonical mechanism to record persistently that a project ID is
-reserved is to store it in the /etc/projid (projid(5)) and/or
-/etc/projects (projects(5)) files.  However, it is possible to utilize
+reserved is to store it in the `/etc/projid` (projid[5]) and/or
+`/etc/projects` (projects(5)) files.  However, it is possible to utilize
 project IDs without recording them in those files; they exist for
 administrative convenience but neither the kernel nor the filesystem
 is aware of them.  Other ways can be used to determine whether a
@@ -333,26 +333,26 @@ project ID is in active use on a given filesystem:
 The algorithm to be used is as follows:
 
 * Lock this instance of the quota code against re-entrancy.
-* open and flock() the /etc/project and /etc/projid files, so that
+* open and `flock()` the `/etc/project` and `/etc/projid` files, so that
   other uses of this code are excluded.
 * Start from a high number (the prototype uses 1048577).
 * Iterate from there, performing the following tests:
    * Is the ID reserved by this instance of the quota code?
-   * Is the ID present in /etc/projects?
-   * Is the ID present in /etc/projid?
+   * Is the ID present in `/etc/projects`?
+   * Is the ID present in `/etc/projid`?
    * Are the quota values and/or consumption reported by the kernel
      non-zero?  This test is restricted to 128 iterations to ensure
      that a bug here or elsewhere does not result in an infinite loop
      looking for a quota ID.
 * If an ID has been found:
-   * Add it to an in-memory copy of /etc/projects and /etc/projid so
+   * Add it to an in-memory copy of `/etc/projects` and `/etc/projid` so
      that any other uses of project quotas do not reuse it.
-   * Write temporary copies of /etc/projects and /etc/projid that are
-     flock()ed
+   * Write temporary copies of `/etc/projects` and `/etc/projid` that are
+     `flock()`ed
    * If successful, rename the temporary files appropriately (if
      rename of one succeeds but the other fails, we have a problem
      that we cannot recover from, and the files may be inconsistent).
-* Unlock /etc/projid and /etc/projects.
+* Unlock `/etc/projid` and `/etc/projects`.
 * Unlock this instance of the quota code.
 
 A minor variation of this is used if we want to reuse an existing
@@ -361,7 +361,7 @@ quota ID.
 #### Determine Whether a Project ID Applies To a Directory
 
 It is possible to determine whether a directory has a project ID
-applied to it by requesting (via the quotactl(2) system call) the
+applied to it by requesting (via the `quotactl(2)` system call) the
 project ID associated with the directory.  Whie the specifics are
 filesystem-dependent, the basic method is the same for at least XFS
 and ext4fs.
@@ -384,15 +384,15 @@ discussed above.
 The algorithm used to return a project ID to the system is very
 similar to the algorithm used to select a project ID, except of course
 for selecting a project ID.  It performs the same sequence of locking
-/etc/project and /etc/projid, editing a copy of the file, and
+`/etc/project` and `/etc/projid`, editing a copy of the file, and
 restoring it.
 
 If the project ID is applied to multiple directories and the code can
-determine that, it will not remove the project ID from /etc/projid
+determine that, it will not remove the project ID from `/etc/projid`
 until the last reference is removed.  While it is not anticipated in
 this KEP that this mode of operation will be used, at least initially,
 this can be detected even on kubelet restart by looking at the
-reference count in /etc/projects.
+reference count in `/etc/projects`.
 
 
 ### Implementation Details/Notes/Constraints [optional]
@@ -402,7 +402,7 @@ reference count in /etc/projects.
 The primary new interface defined is the quota interface in
 `pkg/volume/util/quota/quota.go`.  This defines five operations:
 
-* Does the specified directory support quotas
+* Does the specified directory support quotas?
 
 * Assign a quota to a directory.  If a non-empty pod UID is provided,
   the quota assigned is that of any other directories under this pod
@@ -437,8 +437,8 @@ code, with two exceptions:
   (that is handled by the provider).
   
 * An additional operation is provided to determine whether a given
-  quota ID is in use within the filesystem (outside of /etc/projects
-  and /etc/projid).
+  quota ID is in use within the filesystem (outside of `/etc/projects`
+  and `/etc/projid`).
   
 The two quota providers in the initial implementation are in
 `pkg/volume/util/quota/extfs` and `pkg/volume/util/quota/xfs`.  While
@@ -470,8 +470,8 @@ required elsewhere:
   `Mounter.SetUp` and `Mounter.SetUpAt` interfaces to take a new
   `MounterArgs` type rather than an `FsGroup` (`*int64`).  This is to
   allow passing the desired size and pod UID (in the event we choose
-  to implement quotas shared between multiple volumes; see
-  [below](#alternative-quota-based-implementation)).  This required
+  to implement quotas shared between multiple volumes; [see
+  below](#alternative-quota-based-implementation)).  This required
   small changes to all volume plugins and their tests, but will in the
   future allow adding additional data without having to change code
   other than that which uses the new information.
@@ -570,7 +570,7 @@ Major milestones in the life cycle of a KEP should be tracked in
 ```
 mkfs.ext4 -O quota,project -Q usrquota,grpquota,prjquota _device_
 ```
-   * An additional option (`prjquota`) must be applied in /etc/fstab
+   * An additional option (`prjquota`) must be applied in `/etc/fstab`
    * If the root filesystem is to be quota-enabled, it must be set in
      the grub options.
 * Use of project quotas for this purpose will preclude future use
@@ -635,10 +635,10 @@ enforce storage utilization, there are a number of possible options:
 
 Another way of isolating storage is to utilize filesystems of
 pre-determined size, using the loop filesystem facility within Linux.
-It is possible to create a file and run mkfs(8) on it, and then to
+It is possible to create a file and run `mkfs(8)` on it, and then to
 mount that filesystem on the desired directory.  This both limits the
 storage available within that directory and enables quick retrieval of
-it via statfs(2).
+it via `statfs(2)`.
 
 Cleanup of such a filesystem involves unmounting it and removing the
 backing file.
@@ -650,11 +650,11 @@ thin provisioning.
 I conducted preliminary investigations into this.  While at first it
 appeared promising, it turned out to have multiple critical flaws:
 
-* If the filesystem is mounted without `discard`, it can grow to the
-  full size of the backing file, negating any possibility of thin
-  provisioning.  If the file is created dense in the first place,
-  there is never any possibility of thin provisioning without use of
-  `discard`.
+* If the filesystem is mounted without the `discard` option, it can
+  grow to the full size of the backing file, negating any possibility
+  of thin provisioning.  If the file is created dense in the first
+  place, there is never any possibility of thin provisioning without
+  use of `discard`.
 
   If the backing file is created densely, it additionally may require
   significant time to create if the ephemeral limit is large.
@@ -679,20 +679,20 @@ appeared promising, it turned out to have multiple critical flaws:
 # mkfs.ext4 /var/tmp/d1/fs2
 # mount -o nosync -t ext4 /var/tmp/d1/fs2 /var/tmp/d2
 # dd if=/dev/zero of=/var/tmp/d2/test bs=4096 count=24576
-  _...will normally succeed..._
+  ...will normally succeed...
 # sync
-  _...fails with I/O error!..._
+  ...fails with I/O error!...
 ```
 
 * If the filesystem is mounted `sync`, all writes to it are
   immediately committed to the backing store, and the _dd_ operation
-  above fails as soon as it fills up _/var/tmp/d1_.  However,
+  above fails as soon as it fills up `/var/tmp/d1`.  However,
   performance is drastically slowed, particularly with small writes;
   with 1K writes, I observed performance degradation in some cases
   exceeding three orders of magnitude.
 
   I performed a test comparing writing 64 MB to a base (partitioned)
-  filesystem, to a loop filesystem without _sync_, and a loop
+  filesystem, to a loop filesystem without `sync`, and a loop
   filesystem with _sync.  Total I/O was sufficient to run for at least
   5 seconds in each case.  All filesystems involved were XFS.  Loop
   filesystems were 128 MB and dense.  Times are in seconds.  The
