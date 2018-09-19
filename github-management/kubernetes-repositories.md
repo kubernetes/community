@@ -5,6 +5,8 @@ repositories are removed.
 
 The document presents a tiered system of repositories with increasingly strict requirements in an attempt to provide the right level of oversight and flexibility for a variety of different projects.
 
+Requests for creating, transferring, modifying, or archiving repositories can be made by [opening a request](https://github.com/kubernetes/org/issues/new/choose) against the kubernetes/org repo.
+
 - [Associated Repositories](#associated-repositories)
   * [Goals](#goals)
   * [Rules](#rules)
