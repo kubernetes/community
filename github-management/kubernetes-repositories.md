@@ -5,6 +5,21 @@ repositories are removed.
 
 The document presents a tiered system of repositories with increasingly strict requirements in an attempt to provide the right level of oversight and flexibility for a variety of different projects.
 
+- [Associated Repositories](#associated-repositories)
+  * [Goals](#goals)
+  * [Rules](#rules)
+- [SIG repositories](#sig-repositories)
+  * [Goals](#goals-1)
+  * [Rules for new repositories](#rules-for-new-repositories)
+  * [Rules for donated repositories](#rules-for-donated-repositories)
+- [Core Repositories](#core-repositories)
+  * [Goals](#goals-2)
+  * [Rules](#rules-1)
+- [Removing Repositories](#removing-repositories)
+  * [Grounds for removal](#grounds-for-removal)
+  * [Procedure for removal](#procedure-for-removal)
+- [FAQ](#faq)
+
 ## Associated Repositories
 
 Associated repositories conform to the Kubernetes community standards for a repository, but otherwise have no restrictions. Associated repositories exist solely for the purpose of making it easier for the Kubernetes community to work together. There is no implication of support or endorsement of any kind by the Kubernetes project, the goals are purely logistical.
