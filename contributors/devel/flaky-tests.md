@@ -15,6 +15,19 @@ what caused the failure.
 Note that flakes can occur in unit tests, integration tests, or end-to-end
 tests, but probably occur most commonly in end-to-end tests.
 
+## Hunting Flakes
+
+You may notice lots of your PRs or ones you watch are having a common
+pre-submit failure, but less frequent issues that are still of concern take
+more analysis over time.  There are metrics recorded and viewable in:
+- [TestGrid](https://k8s-testgrid.appspot.com/presubmits-kubernetes-blocking#Summary)
+- [Velodrome](http://velodrome.k8s.io/dashboard/db/bigquery-metrics?orgId=1)
+
+It is worth noting tests are going to fail in presubmit a lot due
+to unbuildable code, but that wont happen as much on the same commit unless
+there's a true issue in the code or a broader problem like a dep failed to
+pull in.
+
 ## Filing issues for flaky tests
 
 Because flakes may be rare, it's very important that all relevant logs be
