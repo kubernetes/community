@@ -70,7 +70,7 @@ for policy in sortedPolicies:
 
 ## SchedulingPolicy
 
-Proposed API group: `policy/v1alpha1`
+Proposed API group: `policy.k8s.io/v1alpha1`
 
 
 ### SchedulingPolicy content
@@ -78,7 +78,7 @@ Proposed API group: `policy/v1alpha1`
 SchedulingPolicy spec is composed of optional fields that allow scheduling rules. If a field is absent from a `SchedulingPolicy` it is automatically allowed.
 
 ```yaml
-apiVersion: policy/v1alpha1
+apiVersion: policy.k8s.io/v1alpha1
 kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
@@ -120,14 +120,11 @@ Both `spec.namespaceSelector` and `spec.podSelector` are optional. If absent, al
 
 ### Scheduler name
 
-If `schedulerNames` is absent from `allowed`, `default` or `required`, no scheduler is allowed by this specific policy.
-
-
 #### Allowed
 Allow pods to use either the `green-scheduler` (which is used by specifying `spec.schedulerName` in pod definition) or the `my-scheduler` scheduler (by specifying `spec.schedulerName: "my-scheduler"`) in namespaces labeled `team`:
 
 ```yaml
-apiVersion: policy/v1alpha1
+apiVersion: policy.k8s.io/v1alpha1
 kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
@@ -142,10 +139,9 @@ spec:
        match: ["green-scheduler","my-scheduler"]
 ```
 
-An empty list of schedulerNames will allow usage of all schedulers:
 
 ```yaml
-apiVersion: policy/v1alpha1
+apiVersion: policy.k8s.io/v1alpha1
 kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
@@ -174,7 +170,7 @@ This allows pods with tolerations the following:
 - tolerations that tolerates taints with key `other_key` that has a `NoExecute` effect.
 
 ```yaml
-apiVersion: policy/v1alpha1
+apiVersion: policy.k8s.io/v1alpha1
 kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
@@ -207,7 +203,7 @@ In this example, we only allow the `critical-job` priority.
 
 
 ```yaml
-apiVersion: policy/v1alpha1
+apiVersion: policy.k8s.io/v1alpha1
 kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
@@ -232,7 +228,7 @@ The `nodeSelector` field makes it possible to specify what pods are allowed or d
 ##### Complete policy
 
 ```yaml
-apiVersion: policy/v1alpha1
+apiVersion: policy.k8s.io/v1alpha1
 kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
@@ -269,7 +265,7 @@ or `requiredDuringSchedulingIgnoredDuringExecution`).
 
 
 ```yaml
-apiVersion: policy/v1alpha1
+apiVersion: policy.k8s.io/v1alpha1
 kind: SchedulingPolicy
 metadata:
   name: mySchedulingPolicy
