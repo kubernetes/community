@@ -736,7 +736,7 @@ allowedTopologies:
 
 
 ## Feature Gates
-PersistentVolume.NodeAffinity and StorageClas.BindingMode fields will be
+PersistentVolume.NodeAffinity and StorageClass.BindingMode fields will be
 controlled by the VolumeScheduling feature gate, and must be configured in the
 kube-scheduler, kube-controller-manager, and all kubelets.
 
