@@ -8,8 +8,6 @@ expected behavior works as a user might encounter it in the wild.
 The process to add new conformance tests is intended to decouple the development
 of useful tests from their promotion to conformance:
 - Contributors write and submit e2e tests, to be approved by owning SIGs
-  - Tests should begin by covering the most important and visible aspects of the
-    function
 - Tests are proven to meet the [conformance test requirements] by review
   and by accumulation of data on flakiness and reliability
 - A follow up PR is submitted to [promote the test to conformance](#promoting-tests-to-conformance)
@@ -22,7 +20,7 @@ NB: This should be viewed as a living document in a few key areas:
   non-optional features or APIs. The list of requirements will be refined over
   time to the point where it as concrete and complete as possible.
 - There are currently conformance tests that violate some of the requirements
-  (ie: require privileged access), we will be categorizing these tests and
+  (e.g., require privileged access), we will be categorizing these tests and
   deciding what to do once we have a better understanding of the situation
 - Once we resolve the above issues, we plan on identifying the appropriate areas
   to relax requirements to allow for the concept of conformance Profiles that
@@ -33,20 +31,22 @@ NB: This should be viewed as a living document in a few key areas:
 Conformance tests currently test only GA, non-optional features or APIs. More
 specifically, a test is eligible for promotion to conformance if:
 
-- it tests only GA, non-optional features or APIs (ie: no alpha or beta
+- it tests only GA, non-optional features or APIs (e.g., no alpha or beta
   endpoints, no feature flags required, no deprecated features)
-- it works for all providers (ie: no `SkipIfProviderIs`/`SkipUnlessProviderIs`
+- it works for all providers (e.g., no `SkipIfProviderIs`/`SkipUnlessProviderIs`
   calls)
-- it is non-privileged (ie: no root on nodes, network, nor cluster)
-- it works without access to the public internet
+- it is non-privileged (e.g., does not require root on nodes, access to raw
+  network interfaces, or cluster admin permissions)
+- it works without access to the public internet (short of whatever is required
+  to pre-pull images for conformance tests)
 - it works without non-standard filesystem permissions granted to pods
 - it does not rely on any binaries that would not be required for the linux
-  kernel or kubelet to run (ie: can't rely on git)
+  kernel or kubelet to run (e.g., can't rely on git)
 - any container images used within the test support all architectures for which
   kubernetes releases are built
-- it passes against the previous release of kubernetes as well as the current
-  version of kubernetes per the [conformance test version skew policy]
-- it is stable and runs consistently (ie: no flakes)
+- it passes against the appropriate versions of kubernetes as spelled out in
+  the [conformance test version skew policy]
+- it is stable and runs consistently (e.g., no flakes)
 
 Examples of features which are not currently eligible for conformance tests:
 
@@ -63,6 +63,13 @@ Examples of tests which are not eligible for promotion to conformance:
   these may change over time (however it is reasonable to verify these fields
   exist or are non-empty)
 
+Examples of areas we may want to relax these requirements once we have a
+sufficient corpus of tests that define out of the box functionality in all
+reasonable production worthy environments:
+- tests may need to create or set objects or fields that are alpha or beta that
+  bypass policies that are not yet GA, but which may reasonably be enabled on a
+  conformant cluster (e.g., pod security policy, non-GA scheduler annotations)
+
 ## Conformance Test Version Skew Policy
 
 As each new release of Kubernetes provides new functionality, the subset of
@@ -72,16 +79,16 @@ as laid out in the [kubernetes versioning policy]
 
 To quote:
 
-> For example, a v1.3 master should work with v1.1, v1.2, and v1.3 nodes, and 
+> For example, a v1.3 master should work with v1.1, v1.2, and v1.3 nodes, and
 > should work with v1.2, v1.3, and v1.4 clients.
 
 Conformance tests for a given version should be run off of the release branch
 that corresponds to that version. Thus `v1.2` conformance tests would be run
 from the head of the `release-1.2` branch.
 
-For example, suppose we're in the midst of developing kubernetes v1.3. The
-following clusters must pass conformance tests built from the following 
-branches:
+For example, suppose we're in the midst of developing kubernetes v1.3. Clusters
+with the following versions must pass conformance tests built from the
+following branches:
 
 | cluster version | master | release-1.3 | release-1.2 | release-1.1 |
 | --------------- | -----  | ----------- | ----------- | ----------- |
@@ -91,10 +98,14 @@ branches:
 
 ## Running Conformance Tests
 
-Conformance tests are designed to be run with no cloud provider configured.
-Conformance tests must be able to be run against clusters that have not been
-created with `hack/e2e.go`, just provide a kubeconfig with the appropriate
-endpoint and credentials.
+Conformance tests are designed to be run even when there is no cloud provider
+configured. Conformance tests must be able to be run against clusters that have
+not been created with `hack/e2e.go`, just provide a kubeconfig with the
+appropriate endpoint and credentials.
+
+These commands are intended to be run within a kubernetes directory, either
+cloned from source, or extracted from release artifacts such as
+`kubernetes.tar.gz`. They assume you have a valid golang installation.
 
 ```sh
 # ensure kubetest is installed
@@ -127,7 +138,7 @@ having to look through the testcase's code directly.
 ## Promoting Tests to Conformance
 
 To promote a test to the conformance test suite, open a PR as follows:
-- is titled "Promte xxx e2e test to Conformance"
+- is titled "Promote xxx e2e test to Conformance"
 - includes information and metadata in the description as follows:
   - "/area conformance" on a newline
   - "@kubernetes/sig-architecture-pr-reviews @kubernetes/sig-foo-pr-reviews
@@ -136,7 +147,7 @@ To promote a test to the conformance test suite, open a PR as follows:
   - any necessary information in the description to verify that the test meets
     [conformance test requirements], such as links to reports or dashboards that
     prove lack of flakiness
-- modifies code as follows:
+- contains no other modifications to test source code other than the following:
   - modifies the testcase to use the `framework.ConformanceIt()` function rather
     than the `framework.It()` function
   - adds a comment immediately before the `ConformanceIt()` call that includes
@@ -154,7 +165,7 @@ within its associated comment:
   then those releases should be included as well (comma separated)
 - `Testname`: a human readable short name of the test
 - `Description`: a detailed description of the test. This field must describe
-  the required behaviour of the Kubernetes components being tested using 
+  the required behaviour of the Kubernetes components being tested using
   [RFC2119](https://tools.ietf.org/html/rfc2119) keywords. This field
   is meant to be a "specification" of the tested Kubernetes features, as
   such, it must be detailed enough so that readers can fully understand
@@ -184,9 +195,9 @@ The corresponding portion of the Kubernetes Conformance Documentfor this test
 would then look like this:
 
 > ## [Kubelet: log output](https://github.com/kubernetes/kubernetes/tree/release-1.9/test/e2e_node/kubelet_test.go#L47)
-> 
+>
 > Release : v1.9
-> 
+>
 > By default the stdout and stderr from the process being executed in a pod MUST be sent to the pod's logs.
 
 ### Reporting Conformance Test Results

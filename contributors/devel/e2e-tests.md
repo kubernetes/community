@@ -122,7 +122,7 @@ GINKGO_PARALLEL=y kubetest --test --test_args="--ginkgo.skip=\[Serial\] --delete
 kubetest --provider=aws --build --up --test --down
 
 # -ctl can be used to quickly call kubectl against your e2e cluster. Useful for
-# cleaning up after a failed test or viewing logs. 
+# cleaning up after a failed test or viewing logs.
 # kubectl output is default on, you can use --verbose-commands=false to suppress output.
 kubetest -ctl='get events'
 kubetest -ctl='delete pod foobar'
@@ -569,14 +569,14 @@ breaking changes, it does *not* block the merge-queue, and thus should run in
 some separate test suites owned by the feature owner(s)
 (see [Continuous Integration](#continuous-integration) below).
 
-  - `[Conformance]`: Designate that is test is included in the Conformance
+  - `[Conformance]`: Designate that this test is included in the Conformance
 test suite for [Conformance Testing](conformance-tests.md). This test must
 meet a number of [requirements](conformance-tests.md#conformance-test-requirements)
 to be eligible for this tag. This tag does not supersed any other labels.
 
   - The following tags are not considered to be exhaustively applied, but are
 intended to further categorize existing `[Conformance]` tests, or tests that are
-being considered as candidate for promotion to `[Conformance]` as we work to 
+being considered as candidate for promotion to `[Conformance]` as we work to
 refine requirements:
     - `[Privileged]`: This is a test that requires privileged access
     - `[Internet]`: This is a test that assumes access to the public internet
