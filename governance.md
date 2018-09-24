@@ -130,6 +130,9 @@ open and be recorded for later viewing.
 
 Working groups are documented in [sigs.yaml](sigs.yaml).
 
+See [working group governance] for more details about forming and disbanding Working
+Groups.
+
 ## Committees
 
 Some topics, such as Security or Code of Conduct, require
@@ -185,5 +188,6 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 [sig charter process]: committee-steering/governance/README.md
 [short template]: committee-steering/governance/sig-governance-template-short.md
 [kubernetes repository guidelines]: kubernetes-repositories.md
+[working group governance]: committee-steering/governance/wg-governance.md
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/governance.md?pixel)]()
