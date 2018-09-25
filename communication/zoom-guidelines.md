@@ -52,10 +52,17 @@ Zoom has a documentation on how to use their screen sharing feature:
 
 Recommendations:
 
+<<<<<<< HEAD
 - Turn off notification to prevent any interference.
 - Close all sensitive documents and unrelated programs before sharing the screen eg. Emails.
 - Test your presentation before hand to make sure everything goes smoothly.
 - Keep your desktop clean. Make sure there is no offensive or/and distracting background.
+=======
+- Turn off the notification to prevent any interference
+- Close all sensitive documentation and unrelated programs eg. Email before sharing the screen
+- Test your presentation before hand to make sure everything goes smoothly.
+- Keep your desktop clean. Make sure no offensive or/and distracting background.
+>>>>>>> make screen sharing a separate section for visibility
 
 ## Audio/Video Quality Recommendations
 
