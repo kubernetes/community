@@ -44,6 +44,19 @@ The Zoom licenses are managed by the [CNCF Service Desk](https://github.com/cncf
 
 Issues that cannot be handle via normal moderation can be escalated to the [Kubernetes steering committee](https://github.com/kubernetes/steering).
 
+## Screen sharing guidelines and recommendations
+
+Zoom has a documentation on how to use their screen sharing feature:
+
+- https://support.zoom.us/hc/en-us/articles/201362153-How-Do-I-Share-My-Screen-
+
+Recommendations:
+
+- Turn off the notification to prevent any interference
+- Close all sensitive documentation and unrelated programs eg. Email before sharing the screen
+- Test your presentation before hand to make sure everything goes smoothly.
+- Keep your desktop clean. Make sure no offensive or/and distracting background.
+
 ## Audio/Video Quality Recommendations
 
 While video conferencing has been a real boon to productivity there are still [lots of things that can go wrong](https://www.youtube.com/watch?v=JMOOG7rWTPg) during a conference video call.
@@ -63,19 +76,6 @@ What about an integrated headset and microphone? This totally depends on the typ
 ### Hardware we don't Recommend
 
 - Earbuds. Generally speaking they are not ideal, and while they might sound fine to you when 50 people are on a call the ambient noise adds up. Some people join with earbuds and it sounds excellent, some people join and it sounds terrible. Practicing with someone ahead of time can help you determine how well your earbuds work.
-
-### Screen sharing guidelines and recommendations
-
-Zoom has a documentation on how to use their screen sharing feature:
-
-- https://support.zoom.us/hc/en-us/articles/201362153-How-Do-I-Share-My-Screen-
-
-Recommendations:
-
-- Turn off the notification to prevent any interference
-- Close all sensitive documentation and unrelated programs eg. Email before sharing the screen
-- Test your presentation before hand to make sure everything goes smoothly.
-- Keep your desktop clean. Make sure no offensive or/and distracting background.
 
 ### Pro-tips
 
