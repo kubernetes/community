@@ -950,18 +950,36 @@ Currently, there are a few existing scheduler predicates that require the PVC
 to be bound.  The bound assumption needs to be changed in order to work with
 this new workflow.
 
-TODO: how to handle race condition of PVCs becoming bound in the middle of
-running predicates?  One possible way is to mark at the beginning of scheduling
-a Pod if all PVCs were bound.  Then we can check if a second scheduler pass is
-needed.
-
 ##### Max PD Volume Count Predicate
-This predicate checks the maximum number of PDs per node is not exceeded.  It
-needs to be integrated into the binding decision so that we don’t bind or
-provision a PV if it’s going to cause the node to exceed the max PD limit.  But
-until it is integrated, we need to make one more pass in the scheduler after all
-the PVCs are bound.  The current copy of the predicate in the default scheduler
-has to remain to account for the already-bound volumes.
+This predicate checks that the maximum number of PDs per node is not exceeded.  It
+needs to be integrated into the CheckVolumeBinding predicate so that we don’t bind or
+provision a PV if it’s going to cause the node to exceed the max PD limit.
+
+When a PVC is already bound, it counts volume attach limits the same way as today.
+
+When a PVC is not bound, it needs to follow these steps that the
+CheckVolumeBinding predicate already does:
+* Find an available PV
+* Check if provisioning is possible
+
+If any of these steps are successful, one last check is made to see if the
+current node's volume attach limit plus this unbound PVC (count of 1) is valid.
+The attach limit resource name is determined from the StorageClass's provisioner name,
+which must equal the plugin name. This unbound PVC counting also needs to handle the
+scenario of multiple PVCs in a Pod with the same or different volume plugins.
+
+During the CSI migration period where you can have an in-tree plugin and CSI
+plugin using the same underlying resource, the in-tree resource name will be
+translated to use the CSI plugin resource name.
+
+As an optimization, the number of volumes attached per plugin per node can be
+cached, and updated whenever we assume volumes and pods, and whenever a pod is
+deleted. Once cached, this check could also be moved to the beginning of the
+predicate as well.
+
+Advanced scenarios such as a volume using up multiple attach points, or
+consuming other node resources like memory or cpu will not be considered
+initially.
 
 ##### Volume Zone Predicate
 This predicate makes sure that the zone label on a PV matches the zone label of
