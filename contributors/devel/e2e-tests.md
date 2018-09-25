@@ -576,7 +576,7 @@ suite, it receives a `[Feature:.+]` label, e.g. `[Feature:Performance]` or
 `[Feature:Ingress]`. `[Feature:.+]` tests are not run in our core suites,
 instead running in custom suites. If a feature is experimental or alpha and is
 not enabled by default due to being incomplete or potentially subject to
-breaking changes, it does *not* block the merge-queue, and thus should run in
+breaking changes, it does *not* block PR merges, and thus should run in
 some separate test suites owned by the feature owner(s)
 (see [Continuous Integration](#continuous-integration) below).
 
@@ -611,12 +611,10 @@ A quick overview of how we run e2e CI on Kubernetes.
 
 ### What is CI?
 
-We run a battery of `e2e` tests against `HEAD` of the master branch on a
-continuous basis, and block merges via the [submit
-queue](http://submit-queue.k8s.io/) on a subset of those tests if they fail (the
-subset is defined in the [munger config](https://git.k8s.io/test-infra/mungegithub/mungers/submit-queue.go)
-via the `jenkins-jobs` flag; note we also block on	`kubernetes-build` and
-`kubernetes-test-go` jobs for build and unit and integration tests).
+We run a battery of [release-blocking jobs](https://k8s-testgrid.appspot.com/sig-release-master-blocking)
+against `HEAD` of the master branch on a continuous basis, and block merges
+via [Tide](https://git.k8s.io/test-infra/prow/cmd/tide) on a subset of those
+tests if they fail.
 
 CI results can be found at [ci-test.k8s.io](http://ci-test.k8s.io), e.g.
 [ci-test.k8s.io/kubernetes-e2e-gce/10594](http://ci-test.k8s.io/kubernetes-e2e-gce/10594).
@@ -684,14 +682,11 @@ contend for resources; see above about [kinds of tests](#kinds_of_tests).
 
 Generally, a feature starts as `experimental`, and will be run in some suite
 owned by the team developing the feature. If a feature is in beta or GA, it
-*should* block the merge-queue. In moving from experimental to beta or GA, tests
+*should* block PR merges and releases. In moving from experimental to beta or GA, tests
 that are expected to pass by default should simply remove the `[Feature:.+]`
 label, and will be incorporated into our core suites. If tests are not expected
 to pass by default, (e.g. they require a special environment such as added
-quota,) they should remain with the `[Feature:.+]` label, and the suites that
-run them should be incorporated into the
-[munger config](https://git.k8s.io/test-infra/mungegithub/mungers/submit-queue.go)
-via the `jenkins-jobs` flag.
+quota,) they should remain with the `[Feature:.+]` label.
 
 Occasionally, we'll want to add tests to better exercise features that are
 already GA. These tests also shouldn't go straight to CI. They should begin by
