@@ -6,7 +6,7 @@ The Kubernetes community adheres to the following principles:
 * Open: Kubernetes is open source. See repository guidelines and CLA, below.
 * Welcoming and respectful: See Code of Conduct, below.
 * Transparent and accessible: Work and collaboration should be done in public. See SIG governance, below.
-* Merit: Ideas and contributions are accepted according to their technical merit and alignment with project objectives, [scope](http://kubernetes.io/docs/whatisk8s/), and [design principles](contributors/design-proposals/architecture/principles.md).
+* Merit: Ideas and contributions are accepted according to their technical merit and alignment with project objectives, [scope](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/), and [design principles](contributors/design-proposals/architecture/principles.md).
 
 # Code of Conduct
 
