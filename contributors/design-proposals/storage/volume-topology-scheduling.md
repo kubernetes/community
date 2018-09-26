@@ -609,9 +609,8 @@ Kubernetes will leave validation and enforcement of the AllowedTopologies conten
 to the provisioner.
 
 Support in the GCE PD and AWS EBS provisioners for the existing `zone` and `zones`
-parameters will not be deprecated due to the CSI in-tree migration requirement
-of CSI plugins supporting all the previous functionality of in-tree plugins, and
-CSI plugin versioning being independent of Kubernetes versions.
+parameters will be deprecated. CSI in-tree migration will handle translation of
+`zone` and `zones` parameters to CSI topology.
 
 Admins must already create a new StorageClass with delayed volume binding to use
 this feature, so the documentation can encourage use of the AllowedTopologies
@@ -736,14 +735,9 @@ allowedTopologies:
 
 
 ## Feature Gates
-PersistentVolume.NodeAffinity and StorageClass.BindingMode fields will be
-controlled by the VolumeScheduling feature gate, and must be configured in the
+All functionality is controlled by the VolumeScheduling feature gate,
+and must be configured in the
 kube-scheduler, kube-controller-manager, and all kubelets.
-
-The StorageClass.AllowedTopologies field will be controlled
-by the DynamicProvisioningScheduling feature gate, and must be configured in the
-kube-scheduler and kube-controller-manager.
-
 
 ## Integrating volume binding with pod scheduling
 For the new volume binding mode, the proposed new workflow is:
@@ -753,30 +747,34 @@ For the new volume binding mode, the proposed new workflow is:
 references it.
 4. User creates a pod that uses the PVC.
 5. Pod starts to get processed by the scheduler.
-6. **NEW:** A new predicate function, called CheckVolumeBinding, will process
+6. Scheduler processes predicates.
+7. **NEW:** A new predicate function, called CheckVolumeBinding, will process
 both bound and unbound PVCs of the Pod.  It will validate the VolumeNodeAffinity
 for bound PVCs.  For unbound PVCs, it will try to find matching PVs for that node
 based on the PV NodeAffinity.  If there are no matching PVs, then it checks if
 dynamic provisioning is possible for that node based on StorageClass
 AllowedTopologies.
-7. **NEW:** The scheduler continues to evaluate priorities.  A new priority
+8. The scheduler continues to evaluate priority functions
+9. **NEW:** A new priority
 function, called PrioritizeVolumes, will get the PV matches per PVC per
 node, and compute a priority score based on various factors.
-8. **NEW:** After evaluating all the existing predicates and priorities, the
-scheduler will pick a node, and call a new assume function, AssumePodVolumes,
-passing in the Node.  The assume function will check if any binding or
+10. After evaluating all the predicates and priorities, the
+scheduler will pick a node.
+11. **NEW:** A new assume function, AssumePodVolumes, is called by the scheduler.
+The assume function will check if any binding or
 provisioning operations need to be done.  If so, it will update the PV cache to
 mark the PVs with the chosen PVCs and queue the Pod for volume binding.
-9. **NEW:** If PVC binding or provisioning is required, we do NOT AssumePod.
-Instead, a new bind function, BindPodVolumes, will be called asynchronously, passing
+12. AssumePod is done by the scheduler.
+13. **NEW:** If PVC binding or provisioning is required, a new bind function,
+BindPodVolumes, will be called asynchronously, passing
 in the selected node.  The bind function will prebind the PV to the PVC, or
-trigger dynamic provisioning.  Then, it always sends the Pod through the
-scheduler again for reasons explained later.
-10. When a Pod makes a successful scheduler pass once all PVCs are bound, the
-scheduler assumes and binds the Pod to a Node.
-11. Kubelet starts the Pod.
+trigger dynamic provisioning.  Then, it waits for the binding or provisioning
+operation to complete.
+14. In the same async thread, scheduler binds the Pod to a Node.
+15. Kubelet starts the Pod.
 
 This diagram depicts the new additions to the default scheduler:
+
 ![alt text](volume-topology-scheduling.png)
 
 This new workflow will have the scheduler handle unbound PVCs by choosing PVs
@@ -908,12 +906,14 @@ AssumePodVolumes(pod *v1.pod, node *v1.node) (pvcbindingrequired bool, err error
 4. Return true
 
 #### Bind
-If AssumePodVolumes returns pvcBindingRequired, then Pod is queued for volume
-binding and provisioning. A separate go routine will process this queue and
-call the BindPodVolumes function.
+A separate go routine performs the binding operation for the Pod.
 
-Otherwise, we can continue with assuming and binding the Pod
-to the Node.
+If AssumePodVolumes returns pvcBindingRequired, then BindPodVolumes is called
+first in this go routine. It will handle binding and provisioning of PVCs that
+were assumed, and wait for the operations to complete.
+
+Once complete, or if no volumes need to be bound, then the scheduler continues
+binding the Pod to the Node.
 
 For the alpha phase, the BindPodVolumes function will be directly called by the
 scheduler.  We’ll consider creating a generic scheduler interface in a subsequent
@@ -927,11 +927,12 @@ BindPodVolumes(pod *v1.Pod, node *v1.Node) (err error)
     2. If the prebind fails, revert the cache updates.
 2. For in-tree and external dynamic provisioning:
     1. Set `annSelectedNode` on the PVC.
-3. Send Pod back through scheduling, regardless of success or failure.
-    1. In the case of success, we need one more pass through the scheduler in
-order to evaluate other volume predicates that require the PVC to be bound, as
-described below.
-    2. In the case of failure, we want to retry binding/provisioning.
+3. Wait for binding and provisioning to complete.
+    1. In the case of failure, error is returned and the Pod will retry
+       scheduling. Failure scenarios include:
+       * PV or PVC got deleted
+       * PV.ClaimRef got cleared
+       * PVC selectedNode annotation got cleared or is set to the wrong node
 
 TODO: pv controller has a high resync frequency, do we need something similar
 for the scheduler too
