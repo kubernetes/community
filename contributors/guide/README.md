@@ -85,7 +85,7 @@ If you have no idea what to start on, you can browse the [Contributor Role Board
 
 There are [multiple repositories](https://github.com/kubernetes/) within the Kubernetes organization.
 Each repository has beginner-friendly issues that provide a good first issue.
-For example, [kubernetes/kubernetes](https://git.k8s.io/kubernetes) has [help wanted](https://go.k8s.io/help-wanted) and [good first issue](https://github.com/kubernetes/kubernetes/labels/good%20first%20issue) labels for issues that should not need deep knowledge of the system.
+For example, [kubernetes/kubernetes](https://git.k8s.io/kubernetes) has [help wanted](https://go.k8s.io/help-wanted) and [good first issue](https://go.k8s.io/good-first-issue) labels for issues that should not need deep knowledge of the system.
 The `good first issue` label indicates that members have committed to providing [extra assistance](/contributors/devel/help-wanted.md) for new contributors.
 <!-- TODO: review removing this note after 3 months or after the 1.12 release -->
 Please note that while several of the repositories in the Kubernetes community have `good first issue` labels already, they are still being applied throughout the community.
