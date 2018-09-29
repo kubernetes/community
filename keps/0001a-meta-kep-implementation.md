@@ -9,15 +9,17 @@ owning-sig: sig-pm
 participating-sigs:
   - sig-architecture
 reviewers:
+  - "@erictune"
   - "@idvoretskyi"
+  - "@spiffxp"
   - "@timothysc"
 approvers:
   - "@bgrant0607"
   - "@jbeda"
 editor:
 creation-date: 2018-09-08
-last-updated: 2018-09-19
-status: provisional
+last-updated: 2018-09-29
+status: implementable
 see-also:
   - KEP-1
 replaces:
@@ -202,15 +204,17 @@ While graduation criteria has not strictly been defined at this stage, we will d
 - 2018-08-30: SIG Architecture meeting mentioning the need for a clearer KEP process - https://youtu.be/MMJ-zAR_GbI
 - 2018-09-06: SIG Architecture meeting agreeing to move forward with a KEP process improvement effort to be co-led with SIG PM (@justaugustus / @jdumars) - https://youtu.be/fmlXkN4DJy0
 - 2018-09-10: KEP-1a submitted for review
-- YYYY-MM-DD: the `Summary` and `Motivation` sections being merged signaling SIG acceptance
-- YYYY-MM-DD: the `Proposal` section being merged signaling agreement on a proposed design
-- YYYY-MM-DD: the date implementation started
-- YYYY-MM-DD: the first Kubernetes release where an initial version of the KEP was available
-- YYYY-MM-DD: the version of Kubernetes where the KEP graduated to general availability
-
+- 2018-09-25: Rationale discussion in SIG PM meeting
+- 2018-09-28: Merged as `provisional`
+- 2018-09-29: KEP implementation started
+- 2018-09-29: [KEP Implementation Tracking issue] created
+- 2018-09-29: [KEP Implementation Tracking board] created
+- 2018-09-29: Submitted as `implementable`
 
 [DACI]: https://www.atlassian.com/team-playbook/plays/daci
 [KEP-1]: 0001-kubernetes-enhancement-proposal-process.md
+[KEP Implementation Tracking board]: https://github.com/orgs/kubernetes/projects/5
+[KEP Implementation Tracking issue]: https://github.com/kubernetes/features/issues/617
 [KEP numbering races]: https://github.com/kubernetes/community/issues/2245
 [k/community]: http://git.k8s.io/community
 [k/enhancements]: http://git.k8s.io/enhancements
