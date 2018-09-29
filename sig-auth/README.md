@@ -24,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Auth Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Red Hat
+* Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Google
 * Mike Danese (**[@mikedanese](https://github.com/mikedanese)**), Google
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Google
 
