@@ -12,10 +12,11 @@ reviewers:
   - name: "@colemickens"
 approvers:
   - name: "@brendanburns"
-editor: TBD
+editor:
+  - "@feiskyer"
 creation-date: 2018-07-11
-last-updated: 2018-07-11
-status: provisional
+last-updated: 2018-09-29
+status: implementable
 ---
 
 # Azure Availability Zones
@@ -265,6 +266,13 @@ Note that
   - old pods using non-zoned AzureDisks can't be scheduled to zoned nodes
 
 So if users are planning to migrate workloads to zoned nodes, old AzureDisks should be recreated (probably backup first and restore to the new one).
+
+## Implementation History
+
+- [kubernetes#66242](https://github.com/kubernetes/kubernetes/pull/66242): Adds initial availability zones support for Azure nodes.
+- [kubernetes#66553](https://github.com/kubernetes/kubernetes/pull/66553): Adds avaialability zones support for Azure managed disks.
+- [kubernetes#67121](https://github.com/kubernetes/kubernetes/pull/67121): Adds DynamicProvisioningScheduling and VolumeScheduling support for Azure managed disks.
+- [cloud-provider-azure#57](https://github.com/kubernetes/cloud-provider-azure/pull/57): Adds documentation for Azure availability zones.
 
 ## Appendix
 
