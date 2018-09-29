@@ -11,10 +11,11 @@ reviewers:
   - name: "@justaugustus"
 approvers:
   - name: "@brendanburns"
-editor: TBD
+editor: 
+  - "@feiskyer"
 creation-date: 2018-08-09
-last-updated: 2018-08-09
-status: provisional
+last-updated: 2018-09-29
+status: implementable
 ---
 
 # Cross resource group nodes
@@ -164,6 +165,12 @@ spec:
  - key: kubernetes.azure.com/managed
    effect: NoSchedule
 ```
+
+## Implementation History
+
+- [kubernetes#67604](https://github.com/kubernetes/kubernetes/pull/67604): Adds initial support for Azure cross resource group nodes.
+- [kubernetes#67984](https://github.com/kubernetes/kubernetes/pull/67984): Adds unmanaged nodes support for Azure cloud provider.
+- [cloud-provider-azure#58](https://github.com/kubernetes/cloud-provider-azure/pull/58): Adds documentation for Azure cross resource group nodes.
 
 ## Alternatives
 
