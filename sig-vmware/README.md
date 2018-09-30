@@ -8,40 +8,38 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # VMware Special Interest Group
 
+
 Bring together members of the VMware and Kubernetes community to maintain, support and run Kubernetes on VMware platforms.
 
+
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y).
-* Cloud Provider vSphere monthly syncup: [Wednesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly - first Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR).
-* Cluster API Provider vSphere bi-weekly syncup: [Wednesdays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu).
+- Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y)
+- Cloud Provider vSphere monthly syncup: [Wednesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly - first Wednesday every month) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR)
+- Cluster API Provider vSphere bi-weekly syncup: [Wednesdays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Fabio Rapposelli (**[@frapposelli](https://github.com/frapposelli)**), VMware
-* Steve Wong (**[@cantbewong](https://github.com/cantbewong)**), VMware
+- Fabio Rapposelli (**[@frapposelli](https://github.com/frapposelli)**), VMware
+- Steve Wong (**[@cantbewong](https://github.com/cantbewong)**), VMware
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-vmware)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-vmware)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fvmware)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-vmware)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-vmware)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fvmware)
 
-The following subprojects are owned by sig-vmware:
-- **cluster-api-provider-vsphere**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -56,6 +54,14 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-vmware-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-vmware-pr-reviews) | PR Reviews |
 | @kubernetes/sig-vmware-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-vmware-proposals) | Design Proposals |
 | @kubernetes/sig-vmware-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-vmware-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-vmware:
+
+### cluster-api-provider-vsphere
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

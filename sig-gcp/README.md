@@ -8,35 +8,30 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # GCP Special Interest Group
 
+
 A Special Interest Group for building, deploying, maintaining, supporting, and using Kubernetes on the Google Cloud Platform.
 
+
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 16:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit).
+- Regular SIG Meeting: [Thursdays at 16:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Adam Worrall (**[@abgworrall](https://github.com/abgworrall)**), Google
+- Adam Worrall (**[@abgworrall](https://github.com/abgworrall)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-gcp)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-gcp)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fgcp)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-gcp)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-gcp)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fgcp)
 
-The following subprojects are owned by sig-gcp:
-- **gcp-compute-persistent-disk-csi-driver**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/master/OWNERS
-- **gcp-filestore-csi-driver**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/gcp-filestore-csi-driver/master/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -50,6 +45,18 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-gcp-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-pr-reviews) | PR Reviews |
 | @kubernetes/sig-gcp-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-proposals) | Design Proposals |
 | @kubernetes/sig-gcp-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-gcp-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-gcp:
+
+### gcp-compute-persistent-disk-csi-driver
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/master/OWNERS
+
+### gcp-filestore-csi-driver
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/gcp-filestore-csi-driver/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

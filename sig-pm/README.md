@@ -8,36 +8,34 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # PM Special Interest Group
 
+
 Focuses on aspects of product management, such as the qualification and successful management of user requests, and aspects of project and program management such as the continued improvement of the processes used by the Kubernetes community to maintain the Kubernetes Project itself.
 Besides helping to discover both what to build and how to build it, the PM Group also helps to try and keep the wheels on this spaceship we are all building together; bringing together people who think about Kubernetes as both a vibrant community of humans and technical program is another primary focus of this group.
 Members of the Kubernetes PM Group can assume certain additional responsibilities to help maintain the Kubernetes Project itself.
 It is also important to remember that the role of managing an open source project is very new and largely unscoped for a project as large as Kubernetes; we are learning too and we are excited to learn how we can best serve the community of users and contributors.
 
+
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 18:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:30&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/13uHgcLf-hcR4a5QbV888fhnVsF3djBEpN8HolwS0kWM/edit?usp=sharing).
-  * [Meeting recordings](https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ).
+- Regular SIG Meeting: [Tuesdays at 18:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:30&tz=UTC))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/13uHgcLf-hcR4a5QbV888fhnVsF3djBEpN8HolwS0kWM/edit?usp=sharing)
+  - [Meeting recordings](https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google
-* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
-* Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), Google
+- Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google
+- Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
+- Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-pm)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-pm)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fpm)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-pm)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-pm)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fpm)
 
-The following subprojects are owned by sig-pm:
-- **enhancements**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

@@ -8,98 +8,52 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Cluster Lifecycle Special Interest Group
 
+
 The Cluster Lifecycle SIG examines how we should change Kubernetes to make it easier to manage and operate with a focus on cluster deployment and upgrades.
 
+
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
-* kubeadm Office Hours: [Wednesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/130_kiXjG7graFNSnIAgtMS1G8zPDwpkshgfRYS0nggo/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
-* Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit#).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
-* Cluster API Provider Implementers' office hours (EMEA): [Wednesdays at 15:00 CEST (Central European Summer Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=CEST%20%28Central%20European%20Summer%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
-* Cluster API Provider Implementers' office hours (US West Coast): [Tuesdays at 12:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
-* Cluster API (AWS implementation) office hours: [Mondays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/10dq54Fd-xa6P5Iy3p46VY1YTFqugGMd1PygDIpuRw6c/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
-* kops Office Hours: [Fridays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit).
-* Kubespray Office Hours: [Wednesdays at 07:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit).
+- Regular SIG Meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4)
+- kubeadm Office Hours: [Wednesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/130_kiXjG7graFNSnIAgtMS1G8zPDwpkshgfRYS0nggo/edit)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4)
+- Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/16ils69KImmE94RlmzjWDrkmFZysgB2J4lGnYMRN89WM/edit#)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4)
+- Cluster API Provider Implementers' office hours (EMEA): [Wednesdays at 15:00 CEST (Central European Summer Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=CEST%20%28Central%20European%20Summer%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4)
+- Cluster API Provider Implementers' office hours (US West Coast): [Tuesdays at 12:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4)
+- Cluster API (AWS implementation) office hours: [Mondays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/10dq54Fd-xa6P5Iy3p46VY1YTFqugGMd1PygDIpuRw6c/edit)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4)
+- kops Office Hours: [Fridays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit)
+- Kubespray Office Hours: [Wednesdays at 07:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
-* Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)
-* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Heptio
+- Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
+- Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)
+- Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Heptio
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcluster-lifecycle)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fcluster-lifecycle)
 
-The following subprojects are owned by sig-cluster-lifecycle:
-- **bootkube**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
-- **cluster-api**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
-- **cluster-api-provider-aws**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
-- **cluster-api-provider-digitalocean**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
-- **cluster-api-provider-gcp**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
-- **cluster-api-provider-openstack**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
-- **kops**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
-- **kube-aws**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
-- **kube-deploy**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
-- **kube-up**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
-- **kubeadm**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
-- **kubeadm-dind-cluster**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kubeadm-dind-cluster/master/OWNERS
-- **kubernetes-anywhere**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
-- **kubespray**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
-- **minikube**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -108,6 +62,72 @@ Note that the links to display team membership will only work if you are a membe
 | --------- |:-------:| ----------- |
 | @kubernetes/sig-cluster-lifecycle | [link](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle) | Notify group |
 | @kubernetes/sig-cluster-lifecycle-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle-pr-reviews) | PR Reviews |
+
+## Subprojects
+
+The following subprojects are owned by sig-cluster-lifecycle:
+
+### bootkube
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
+
+### cluster-api
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
+
+### cluster-api-provider-aws
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
+
+### cluster-api-provider-digitalocean
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
+
+### cluster-api-provider-gcp
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
+
+### cluster-api-provider-openstack
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
+
+### kops
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
+
+### kube-aws
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
+
+### kube-deploy
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
+
+### kube-up
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
+
+### kubeadm
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
+
+### kubeadm-dind-cluster
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/kubeadm-dind-cluster/master/OWNERS
+
+### kubernetes-anywhere
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
+
+### kubespray
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
+
+### minikube
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

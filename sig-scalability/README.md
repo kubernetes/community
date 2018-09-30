@@ -8,60 +8,35 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Scalability Special Interest Group
 
+
 SIG Scalability is responsible for defining and driving scalability goals for Kubernetes. We also coordinate and contribute to general system-wide scalability and performance improvements (not falling into the charter of other individual SIGs) by driving large architectural changes and finding bottlenecks, as well as provide guidance and consultations about any scalability and performance related aspects of Kubernetes. <br/> We are actively working on finding and removing various scalability bottlenecks which should lead us towards pushing system's scalability higher. This may include going beyond 5k nodes in the future - although that's not our priority as of now, this is very deeply in our area of interest and we are happy to guide and collaborate on any efforts towards that goal as long as they are not sacrificing on overall Kubernetes architecture (by making it non-maintainable, non-understandable, etc.).
+
+
 
 The [charter](charter.md) defines the scope and governance of the Scalability Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 17:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
-  * [Meeting recordings](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
+- Regular SIG Meeting: [Thursdays at 17:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC))
+  - [Meeting notes and Agenda](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web)
+  - [Meeting recordings](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
-* Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), AWS
+- Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
+- Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), AWS
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-scalability)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fscalability)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-scalability)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fscalability)
 
-The following subprojects are owned by sig-scalability:
-- **kubernetes-scalability-definition**
-  - Description: [Described below](#kubernetes-scalability-definition)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/slos/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/configs-and-limits/OWNERS
-- **kubernetes-scalability-governance**
-  - Description: [Described below](#kubernetes-scalability-governance)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/governance/OWNERS
-- **kubernetes-scalability-test-frameworks**
-  - Description: [Described below](#kubernetes-scalability-test-frameworks)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/kubemark/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubemark/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubemark/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/kubemark/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/perf-tests/master/clusterloader2/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/perf-tests/master/OWNERS
-- **kubernetes-scalability-and-performance-tests-and-validation**
-  - Description: [Described below](#kubernetes-scalability-and-performance-tests-and-validation)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/processes/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/scalability/OWNERS
-- **kubernetes-scalability-bottlenecks-detection**
-  - Description: [Described below](#kubernetes-scalability-bottlenecks-detection)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/blogs/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -75,6 +50,42 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-scalability-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-pr-reviews) | PR Reviews |
 | @kubernetes/sig-scalability-proprosals | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-proprosals) | Design Proposals |
 | @kubernetes/sig-scalability-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-scalability:
+
+### kubernetes-scalability-definition
+- Description: [Described below](#kubernetes-scalability-definition)
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/slos/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/configs-and-limits/OWNERS
+
+### kubernetes-scalability-governance
+- Description: [Described below](#kubernetes-scalability-governance)
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/governance/OWNERS
+
+### kubernetes-scalability-test-frameworks
+- Description: [Described below](#kubernetes-scalability-test-frameworks)
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/kubemark/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubemark/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubemark/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/kubemark/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/perf-tests/master/clusterloader2/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/perf-tests/master/OWNERS
+
+### kubernetes-scalability-and-performance-tests-and-validation
+- Description: [Described below](#kubernetes-scalability-and-performance-tests-and-validation)
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/processes/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/scalability/OWNERS
+
+### kubernetes-scalability-bottlenecks-detection
+- Description: [Described below](#kubernetes-scalability-bottlenecks-detection)
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/blogs/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Upcoming 2019 Meeting Dates

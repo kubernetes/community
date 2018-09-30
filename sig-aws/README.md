@@ -8,48 +8,35 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # AWS Special Interest Group
 
+
 Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
+
+
 
 The [charter](charter.md) defines the scope and governance of the AWS Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Fridays at 9:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit).
+- Regular SIG Meeting: [Fridays at 9:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
-* Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Heptio
-* Nishi Davidson (**[@d-nishi](https://github.com/d-nishi)**), AWS
+- Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
+- Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Heptio
+- Nishi Davidson (**[@d-nishi](https://github.com/d-nishi)**), AWS
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-aws)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-aws)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Faws)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-aws)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-aws)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Faws)
 
-The following subprojects are owned by sig-aws:
-- **cloud-provider-aws**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
-- **aws-alb-ingress-controller**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/master/OWNERS
-- **aws-iam-authenticator**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/aws-iam-authenticator/master/OWNERS
-- **aws-encryption-provider**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
-- **aws-ebs-csi-driver**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -57,6 +44,30 @@ Note that the links to display team membership will only work if you are a membe
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
 | @kubernetes/sig-aws-misc | [link](https://github.com/orgs/kubernetes/teams/sig-aws-misc) | General Discussion |
+
+## Subprojects
+
+The following subprojects are owned by sig-aws:
+
+### cloud-provider-aws
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
+
+### aws-alb-ingress-controller
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/master/OWNERS
+
+### aws-iam-authenticator
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/aws-iam-authenticator/master/OWNERS
+
+### aws-encryption-provider
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
+
+### aws-ebs-csi-driver
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Participate

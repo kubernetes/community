@@ -8,47 +8,29 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Scheduling Special Interest Group
 
-
 ## Meetings
-* 10AM PT Meeting: [Thursdays at 17:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly starting Thursday June 7, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
-* 5PM PT Meeting: [Thursdays at 24:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly starting Thursday June 14, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=24:00&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
-  * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
+- 10AM PT Meeting: [Thursdays at 17:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly starting Thursday June 7, 2018) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC))
+- 5PM PT Meeting: [Thursdays at 24:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly starting Thursday June 14, 2018) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=24:00&tz=UTC))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit)
+  - [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Bobby (Babak) Salamat (**[@bsalamat](https://github.com/bsalamat)**), Google
-* Klaus Ma (**[@k82cn](https://github.com/k82cn)**), Huawei
+- Bobby (Babak) Salamat (**[@bsalamat](https://github.com/bsalamat)**), Google
+- Klaus Ma (**[@k82cn](https://github.com/k82cn)**), Huawei
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-scheduling)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fscheduling)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-scheduling)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fscheduling)
 
-The following subprojects are owned by sig-scheduling:
-- **cluster-capacity**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-capacity/master/OWNERS
-- **descheduler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/descheduler/master/OWNERS
-- **kube-batch**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kube-batch/master/OWNERS
-- **scheduler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
-- **poseidon**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -62,6 +44,31 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-scheduling-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-pr-reviews) | PR Reviews |
 | @kubernetes/sig-scheduling-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-proposals) | Design Proposals |
 | @kubernetes/sig-scheduling-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-scheduling:
+
+### cluster-capacity
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-incubator/cluster-capacity/master/OWNERS
+
+### descheduler
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-incubator/descheduler/master/OWNERS
+
+### kube-batch
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/kube-batch/master/OWNERS
+
+### scheduler
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
+
+### poseidon
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

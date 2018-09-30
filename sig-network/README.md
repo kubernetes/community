@@ -8,54 +8,33 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Network Special Interest Group
 
+
 Covers networking in Kubernetes.
 
+
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 14:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
-  * [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
+- Regular SIG Meeting: [Thursdays at 14:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit)
+  - [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
-* Dan Williams (**[@dcbw](https://github.com/dcbw)**), Red Hat
-* Casey Davenport (**[@caseydavenport](https://github.com/caseydavenport)**), Tigera
+- Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
+- Dan Williams (**[@dcbw](https://github.com/dcbw)**), Red Hat
+- Casey Davenport (**[@caseydavenport](https://github.com/caseydavenport)**), Tigera
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-network)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnetwork)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-network)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fnetwork)
 
-The following subprojects are owned by sig-network:
-- **services**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
-- **kube-dns**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
-- **external-dns**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/external-dns/master/OWNERS
-- **ingress**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
-- **pod-networking**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/ip-masq-agent/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
-- **network-policy**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -69,6 +48,38 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-network-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-network-pr-reviews) | PR Reviews |
 | @kubernetes/sig-network-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-network-proposals) | Design Proposals |
 | @kubernetes/sig-network-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-network-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-network:
+
+### services
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
+
+### kube-dns
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
+
+### external-dns
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-incubator/external-dns/master/OWNERS
+
+### ingress
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
+
+### pod-networking
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-incubator/ip-masq-agent/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
+
+### network-policy
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Areas of Responsibility

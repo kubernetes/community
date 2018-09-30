@@ -84,12 +84,23 @@ type GithubTeams struct {
 	Description string
 }
 
+// Repo represents a specific repo or subdirectories owned by the group
+type Repo struct {
+	Name        string
+	Description string
+	URL         string
+	Owners      []string
+}
+
 // Subproject represents a specific subproject owned by the group
 type Subproject struct {
 	Name        string
 	Description string
+	Label       string
+	Repos       []Repo
 	Owners      []string
 	Meetings    []Meeting
+	Contact     *Contact
 }
 
 // LeadershipGroup represents the different groups of leaders within a group
@@ -109,6 +120,7 @@ type Group struct {
 	Leadership       LeadershipGroup `yaml:"leadership"`
 	Meetings         []Meeting
 	Contact          Contact
+	Repos            []Repo
 	Subprojects      []Subproject
 	StakeholderSIGs  []string `yaml:"stakeholder_sigs,omitempty"`
 }

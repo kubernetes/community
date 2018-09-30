@@ -8,44 +8,36 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Docs Special Interest Group
 
+
 Covers documentation, doc processes, and doc publishing for Kubernetes.
 
+
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 17:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly - except fourth Tuesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
-* APAC SIG Meeting: [Wednesdays at 02:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly - fourth Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=02:00&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
+- Regular SIG Meeting: [Tuesdays at 17:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly - except fourth Tuesday every month) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8)
+- APAC SIG Meeting: [Wednesdays at 02:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly - fourth Wednesday every month) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=02:00&tz=UTC))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
-* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
-* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), Heptio
+- Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
+- Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
+- Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), Heptio
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-docs)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fdocs)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-docs)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fdocs)
 
-The following subprojects are owned by sig-docs:
-- **reference-docs**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
-- **website**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
-- **website-metadata**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/website-metadata/master/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -57,6 +49,22 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-docs-ko-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | Korean localization |
 | @kubernetes/sig-docs-ja-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | Japanese localization |
 | @kubernetes/sig-docs-zh-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) | Chinese localization |
+
+## Subprojects
+
+The following subprojects are owned by sig-docs:
+
+### reference-docs
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
+
+### website
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
+
+### website-metadata
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/website-metadata/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals

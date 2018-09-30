@@ -8,71 +8,48 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Contributor Experience Special Interest Group
 
+
 Developing and sustaining a healthy community of contributors is critical to scaling the project and growing the ecosystem. We need to ensure our contributors are happy and productive, and that there are not bottlenecks hindering the project in, for example: feature velocity, community scaling, pull request latency, and absolute numbers of open pull requests and open issues.
+
+
 
 The [charter](charter.md) defines the scope and governance of the Contributor Experience Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
-  * [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
+- Regular SIG Meeting: [Wednesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/)
+  - [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), CoreOS
-* Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google
+- Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), CoreOS
+- Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google
 
 ### Technical Leads
+
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
-* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
+- Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
+- Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
 
 ## Emeritus Leads
 
-* Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**), Google
+
+- Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-contribex)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcontributor-experience)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-contribex)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fcontributor-experience)
 
-The following subprojects are owned by sig-contributor-experience:
-- **community**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/OWNERS
-- **community-management**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
-- **github-management**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
-- **contributors-documentation**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
-- **devstats**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
-- **k8s.io**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
-- **mentoring**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
-- **repo-infra**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -85,6 +62,45 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-contributor-experience-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-pr-reviews) | PR Reviews |
 | @kubernetes/sig-contributor-experience-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-proposals) | Design Proposals |
 | @kubernetes/sig-contributor-experience-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-contributor-experience:
+
+### community
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/OWNERS
+
+### community-management
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
+
+### github-management
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
+
+### contributors-documentation
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
+
+### devstats
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
+
+### k8s.io
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
+
+### mentoring
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
+
+### repo-infra
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

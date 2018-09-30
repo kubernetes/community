@@ -8,70 +8,36 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Apps Special Interest Group
 
+
 Covers deploying and operating applications in Kubernetes. We focus on the developer and devops experience of running applications in Kubernetes. We discuss how to define and run apps in Kubernetes, demo relevant tools and projects, and discuss areas of friction that can lead to suggesting improvements or feature requests.
+
+
 
 The [charter](charter.md) defines the scope and governance of the Apps Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Mondays at 9:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#).
-  * [Meeting recordings](https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3).
+- Regular SIG Meeting: [Mondays at 9:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#)
+  - [Meeting recordings](https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
-* Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), Bitnami
-* Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Google
+- Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
+- Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), Bitnami
+- Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-apps)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-apps)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fapps)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-apps)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-apps)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fapps)
 
-The following subprojects are owned by sig-apps:
-- **examples**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/examples/master/OWNERS
-- **kompose**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
-- **workloads-api**
-  - Description: The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, and StatefulSet kinds
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cronjob/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/daemon/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/deployment/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/disruption/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/history/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/job/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replicaset/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replication/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/core/v1/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/extensions/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/apps/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/batch/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/extensions/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/apps/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/core/v1/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/batch/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/extensions/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/apps/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/daemonset/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/deployment/OWNERS
-- **application**
-  - Description: Application metadata descriptor CRD
-  - Owners:
-    - https://github.com/kubernetes-sigs/application/blob/master/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -85,6 +51,50 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-apps-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-apps-pr-reviews) | PR Reviews |
 | @kubernetes/sig-apps-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-apps-proposals) | Design Proposals |
 | @kubernetes/sig-apps-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-apps-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-apps:
+
+### examples
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/examples/master/OWNERS
+
+### kompose
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
+
+### workloads-api
+- Description: The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, and StatefulSet kinds
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cronjob/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/daemon/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/deployment/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/disruption/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/history/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/job/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replicaset/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replication/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/core/v1/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/extensions/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/apps/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/batch/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/extensions/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/apps/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/core/v1/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/batch/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/extensions/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/apps/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/daemonset/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/deployment/OWNERS
+
+### application
+- Description: Application metadata descriptor CRD
+- OWNERS:
+  - https://github.com/kubernetes-sigs/application/blob/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

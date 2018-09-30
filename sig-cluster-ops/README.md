@@ -8,25 +8,30 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Cluster Ops Special Interest Group
 
+
 Promote operability and interoperability of Kubernetes clusters. We focus on shared operations practices for Kubernetes clusters with a goal to make Kubernetes broadly accessible with a common baseline reference. We also organize operators as a sounding board and advocacy group.
 
+
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 20:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#).
-  * [Meeting recordings](https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR).
+- Regular SIG Meeting: [Thursdays at 20:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#)
+  - [Meeting recordings](https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Rob Hirschfeld (**[@zehicle](https://github.com/zehicle)**), RackN
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
+- Rob Hirschfeld (**[@zehicle](https://github.com/zehicle)**), RackN
+- Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-cluster-ops)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-ops)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcluster-ops)
+
+- [Slack](https://kubernetes.slack.com/messages/sig-cluster-ops)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-ops)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fcluster-ops)
+
 
 <!-- BEGIN CUSTOM CONTENT -->
 

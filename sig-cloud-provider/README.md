@@ -8,58 +8,36 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Cloud Provider Special Interest Group
 
+
 Ensures that the Kubernetes ecosystem is evolving in a way that is neutral to all (public and private) cloud providers. It will be responsible for establishing standards and requirements that must be met by all providers to ensure optimal integration with Kubernetes.
+
+
 
 The [charter](CHARTER.md) defines the scope and governance of the Cloud Provider Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 1:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=1:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3dXLcYbRKCbpPCN-8CDFAB).
+- Regular SIG Meeting: [Wednesdays at 1:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=1:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3dXLcYbRKCbpPCN-8CDFAB)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Andrew Sy Kim (**[@andrewsykim](https://github.com/andrewsykim)**), DigitalOcean
-* Chris Hoge (**[@hogepodge](https://github.com/hogepodge)**), OpenStack Foundation
-* Jago Macleod (**[@jagosan](https://github.com/jagosan)**), Google
+- Andrew Sy Kim (**[@andrewsykim](https://github.com/andrewsykim)**), DigitalOcean
+- Chris Hoge (**[@hogepodge](https://github.com/hogepodge)**), OpenStack Foundation
+- Jago Macleod (**[@jagosan](https://github.com/jagosan)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-cloud-provider)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cloud-provider)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcloud-provider)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-cloud-provider)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cloud-provider)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fcloud-provider)
 
-The following subprojects are owned by sig-cloud-provider:
-- **kubernetes-cloud-provider**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cloud-provider/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/cloudprovider/OWNERS
-- **cloud-provider-alibaba-cloud**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cloud-provider-alibaba-cloud/master/OWNERS
-- **cloud-provider-gcp**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
-- **cloud-provider-openstack**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
-- **cloud-provider-vsphere**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
-- **cloud-provider-extraction**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction/OWNERS
-  - Meetings:
-    - Weekly Sync removing the in-tree cloud providers led by @cheftako and @d-nishi: [Thursdays at 13:30 PT (Pacific Time)](https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:30&tz=PT%20%28Pacific%20Time%29).
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -74,6 +52,40 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-cloud-provider-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-pr-reviews) | PR Reviews |
 | @kubernetes/sig-cloud-provider-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-proposals) | Design Proposals |
 | @kubernetes/sig-cloud-provider-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-cloud-provider:
+
+### kubernetes-cloud-provider
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/cloud-provider/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/cloudprovider/OWNERS
+
+### cloud-provider-alibaba-cloud
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/cloud-provider-alibaba-cloud/master/OWNERS
+
+### cloud-provider-gcp
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
+
+### cloud-provider-openstack
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
+
+### cloud-provider-vsphere
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
+
+### cloud-provider-extraction
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction/OWNERS
+- Meetings:
+  - Weekly Sync removing the in-tree cloud providers led by @cheftako and @d-nishi: [Thursdays at 13:30 PT (Pacific Time)](https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit) (weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:30&tz=PT%20%28Pacific%20Time%29))
 
 <!-- BEGIN CUSTOM CONTENT -->
 

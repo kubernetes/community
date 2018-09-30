@@ -8,45 +8,45 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Service Catalog Special Interest Group
 
+
 Service Catalog is a Kubernetes extension project that implements the [Open Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI). It allows application developers the ability to provision and consume cloud services natively from within Kubernetes.
+
+
 
 The [charter](charter.md) defines the scope and governance of the Service Catalog Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Mondays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit).
-  * [Meeting recordings](https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs).
+- Regular SIG Meeting: [Mondays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit)
+  - [Meeting recordings](https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**), Microsoft
-* Michael Kibbe (**[@kibbles-n-bytes](https://github.com/kibbles-n-bytes)**), Google
-* Jonathan Berkhahn (**[@jberkhahn](https://github.com/jberkhahn)**), IBM
-* Jay Boyd (**[@jboyd01](https://github.com/jboyd01)**), Red Hat
+- Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**), Microsoft
+- Michael Kibbe (**[@kibbles-n-bytes](https://github.com/kibbles-n-bytes)**), Google
+- Jonathan Berkhahn (**[@jberkhahn](https://github.com/jberkhahn)**), IBM
+- Jay Boyd (**[@jboyd01](https://github.com/jboyd01)**), Red Hat
 
 ## Emeritus Leads
 
-* Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
-* Aaron Schlesinger (**[@arschles](https://github.com/arschles)**), Microsoft
-* Ville Aikas (**[@vaikas-google](https://github.com/vaikas-google)**), Google
-* Doug Davis (**[@duglin](https://github.com/duglin)**), IBM
+
+- Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
+- Aaron Schlesinger (**[@arschles](https://github.com/arschles)**), Microsoft
+- Ville Aikas (**[@vaikas-google](https://github.com/vaikas-google)**), Google
+- Doug Davis (**[@duglin](https://github.com/duglin)**), IBM
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-service-catalog)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fservice-catalog)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-service-catalog)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fservice-catalog)
 
-The following subprojects are owned by sig-service-catalog:
-- **service-catalog**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/service-catalog/master/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -60,6 +60,14 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-service-catalog-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-pr-reviews) | PR Reviews |
 | @kubernetes/sig-service-catalog-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-proposals) | Design Proposals |
 | @kubernetes/sig-service-catalog-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-service-catalog-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-service-catalog:
+
+### service-catalog
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-incubator/service-catalog/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

@@ -8,68 +8,36 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Architecture Special Interest Group
 
+
 The Architecture SIG maintains and evolves the design principles of Kubernetes, and provides a consistent body of expertise necessary to ensure architectural consistency over time.
+
+
 
 The [charter](charter.md) defines the scope and governance of the Architecture Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 19:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
+- Regular SIG Meeting: [Thursdays at 19:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Brian Grant (**[@bgrant0607](https://github.com/bgrant0607)**), Google
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
-* Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
+- Brian Grant (**[@bgrant0607](https://github.com/bgrant0607)**), Google
+- Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
+- Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-architecture)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-architecture)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Farchitecture)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-architecture)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-architecture)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Farchitecture)
 
-The following subprojects are owned by sig-architecture:
-- **architecture-and-api-governance**
-  - Description: [Described below](#architecture-and-api-governance)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
-- **conformance-definition**
-  - Description: [Described below](#conformance-definition)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
-- **kep-adoption-and-reviews**
-  - Description: [Described below](#kep-adoption-and-reviews)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/enhancements/master/keps/OWNERS
-- **code-organization**
-  - Description: [Described below](#code-organization)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
-- **klog**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
-- **steering**
-  - Description: Placeholder until sigs.yaml supports committees as first-class groups. These repos are owned by the kubernetes steering committee, which is a wholly separate entity from SIG Architecture
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -83,6 +51,50 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-architecture-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-pr-reviews) | PR Reviews |
 | @kubernetes/sig-architecture-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-proposals) | Design Proposals |
 | @kubernetes/sig-architecture-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-architecture:
+
+### architecture-and-api-governance
+- Description: [Described below](#architecture-and-api-governance)
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
+
+### conformance-definition
+- Description: [Described below](#conformance-definition)
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
+
+### kep-adoption-and-reviews
+- Description: [Described below](#kep-adoption-and-reviews)
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/enhancements/master/keps/OWNERS
+
+### code-organization
+- Description: [Described below](#code-organization)
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
+
+### klog
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
+
+### steering
+- Description: Placeholder until sigs.yaml supports committees as first-class groups. These repos are owned by the kubernetes steering committee, which is a wholly separate entity from SIG Architecture
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

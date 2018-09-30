@@ -8,65 +8,34 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Testing Special Interest Group
 
+
 Interested in how we can most effectively test Kubernetes. We're interested specifically in making it easier for the community to run tests and contribute test results, to ensure Kubernetes is stable across a variety of cluster configurations and cloud providers.
 
+
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://bit.ly/k8s-sig-testing-notes).
-  * [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
+- Regular SIG Meeting: [Tuesdays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://bit.ly/k8s-sig-testing-notes)
+  - [Meeting recordings](https://bit.ly/k8s-sig-testing-videos)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
-* Erick Feja (**[@fejta](https://github.com/fejta)**), Google
-* Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
-* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Heptio
+- Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
+- Erick Feja (**[@fejta](https://github.com/fejta)**), Google
+- Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
+- Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Heptio
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-testing)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-testing)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Ftesting)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-testing)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-testing)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Ftesting)
 
-The following subprojects are owned by sig-testing:
-- **boskos**
-  - Description: Boskos is a resource manager service that handles different kinds of resources and transitions between different states. We use it on the Kubernetes project to manage pools of GCP projects for CI/CD.
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
-- **gopherage**
-  - Description: Gopherage is a tool for manipulating Go coverage files. We use it on the Kubernetes project to report on code coverage due to e2e tests
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/test-infra/master/gopherage/OWNERS
-- **gubernator**
-  - Description: Gubernator is a frontend for displaying Kubernetes test results stored in GCS. See gubernator.k8s.io to see it in action for the Kubernetes project.
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/test-infra/master/gubernator/OWNERS
-- **kind**
-  - Description: Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
-- **prow**
-  - Description: Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action for the Kubernetes project
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
-- **testing-commons**
-  - Description: The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
-  - Meetings:
-    - Testing Commons: [Wednesdays at 07:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29).
-      - [Meeting notes and Agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o).
-- **test-infra**
-  - Description: Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -75,6 +44,49 @@ Note that the links to display team membership will only work if you are a membe
 | --------- |:-------:| ----------- |
 | @kubernetes/sig-testing | [link](https://github.com/orgs/kubernetes/teams/sig-testing) | General Discussion |
 | @kubernetes/sig-testing-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-testing-pr-reviews) | PR Reviews |
+
+## Subprojects
+
+The following subprojects are owned by sig-testing:
+
+### boskos
+- Description: Boskos is a resource manager service that handles different kinds of resources and transitions between different states. We use it on the Kubernetes project to manage pools of GCP projects for CI/CD.
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
+
+### gopherage
+- Description: Gopherage is a tool for manipulating Go coverage files. We use it on the Kubernetes project to report on code coverage due to e2e tests
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/test-infra/master/gopherage/OWNERS
+
+### gubernator
+- Description: Gubernator is a frontend for displaying Kubernetes test results stored in GCS. See gubernator.k8s.io to see it in action for the Kubernetes project.
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/test-infra/master/gubernator/OWNERS
+
+### kind
+- Description: Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
+
+### prow
+- Description: Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action for the Kubernetes project
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
+
+### testing-commons
+- Description: The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
+- Meetings:
+  - Testing Commons: [Wednesdays at 07:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29))
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o)
+
+### test-infra
+- Description: Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

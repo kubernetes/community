@@ -8,27 +8,32 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # IBMCloud Special Interest Group
 
+
 A Special Interest Group (SIG) for building, deploying, maintaining, supporting, and using Kubernetes on IBM Public and Private Clouds.
 
+
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 14:00 EST](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit).
+- Regular SIG Meeting: [Wednesdays at 14:00 EST](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Khalid Ahmed (**[@khahmed](https://github.com/khahmed)**), IBM
-* Richard Theis (**[@rtheis](https://github.com/rtheis)**), IBM
-* Sahdev Zala (**[@spzala](https://github.com/spzala)**), IBM
+- Khalid Ahmed (**[@khahmed](https://github.com/khahmed)**), IBM
+- Richard Theis (**[@rtheis](https://github.com/rtheis)**), IBM
+- Sahdev Zala (**[@spzala](https://github.com/spzala)**), IBM
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-ibmcloud)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-ibmcloud)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fibmcloud)
 
-## GitHub Teams
+- [Slack](https://kubernetes.slack.com/messages/sig-ibmcloud)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-ibmcloud)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fibmcloud)
+
+
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.

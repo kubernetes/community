@@ -8,58 +8,49 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # CLI Special Interest Group
 
+
 Covers kubectl and related tools. We focus on the development and standardization of the CLI framework and its dependencies, the establishment of conventions for writing CLI commands, POSIX compliance, and improving the command line tools from a developer and devops user experience and usability perspective.
+
+
 
 The [charter](charter.md) defines the scope and governance of the CLI Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
+- Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing)
+  - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
-* Sean Sullivan (**[@seans3](https://github.com/seans3)**), Google
+- Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+- Sean Sullivan (**[@seans3](https://github.com/seans3)**), Google
 
 ### Technical Leads
+
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
-* Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
+- Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+- Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
 
 ## Emeritus Leads
 
-* Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**), Red Hat
-* Tony Ado (**[@AdoHe](https://github.com/AdoHe)**), Alibaba
+
+- Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**), Red Hat
+- Tony Ado (**[@AdoHe](https://github.com/AdoHe)**), Alibaba
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-cli)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcli)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-cli)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fcli)
 
-The following subprojects are owned by sig-cli:
-- **kubectl**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
-- **kustomize**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
-- **cli-sdk**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cli-runtime/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -74,6 +65,26 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-cli-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cli-pr-reviews) | PR Reviews |
 | @kubernetes/sig-cli-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-cli-proposals) | Design Proposals |
 | @kubernetes/sig-cli-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-cli-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-cli:
+
+### kubectl
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
+
+### kustomize
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
+
+### cli-sdk
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/cli-runtime/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

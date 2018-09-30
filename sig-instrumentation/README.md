@@ -8,49 +8,31 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Instrumentation Special Interest Group
 
+
 Covers best practices for cluster observability through metrics, logging, and events across all Kubernetes components and development of relevant components such as Heapster and kube-state-metrics. Coordinates metric requirements of different SIGs for other components through finding common APIs.
 
+
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 17:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/17emKiwJeqfrCsv0NZ2FtyDbenXGtTNCsDEiLbPa7x7Y/edit).
+- Regular SIG Meeting: [Thursdays at 17:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/17emKiwJeqfrCsv0NZ2FtyDbenXGtTNCsDEiLbPa7x7Y/edit)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Piotr Szczesniak (**[@piosz](https://github.com/piosz)**), Google
-* Frederic Branczyk (**[@brancz](https://github.com/brancz)**), Red Hat
+- Piotr Szczesniak (**[@piosz](https://github.com/piosz)**), Google
+- Frederic Branczyk (**[@brancz](https://github.com/brancz)**), Red Hat
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-instrumentation)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Finstrumentation)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-instrumentation)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Finstrumentation)
 
-The following subprojects are owned by sig-instrumentation:
-- **custom-metrics-apiserver**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/custom-metrics-apiserver/master/OWNERS
-- **heapster**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
-- **kube-state-metrics**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS
-- **metrics-server**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/OWNERS
-- **metrics**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS
-- **mutating-trace-admission-controller**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -64,6 +46,35 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-instrumentation-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-instrumentation-pr-reviews) | PR Reviews |
 | @kubernetes/sig-instrumentation-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-instrumentation-proposals) | Design Proposals |
 | @kubernetes/sig-instrumentation-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-instrumentation-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-instrumentation:
+
+### custom-metrics-apiserver
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-incubator/custom-metrics-apiserver/master/OWNERS
+
+### heapster
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
+
+### kube-state-metrics
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS
+
+### metrics-server
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/OWNERS
+
+### metrics
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS
+
+### mutating-trace-admission-controller
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

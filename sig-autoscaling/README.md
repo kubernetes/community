@@ -8,53 +8,33 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Autoscaling Special Interest Group
 
+
 Covers development and maintenance of components for automated scaling in Kubernetes.  This includes automated vertical and horizontal pod autoscaling, initial resource estimation, cluster-proportional system component autoscaling, and autoscaling of Kubernetes clusters themselves.
+
+
 
 The [charter](charter.md) defines the scope and governance of the Autoscaling Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Mondays at 14:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly/triweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit).
+- Regular SIG Meeting: [Mondays at 14:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly/triweekly) ([Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC))
+  - [Meeting notes and Agenda](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit)
 
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
+- Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-autoscaling)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fautoscaling)
 
-## Subprojects
+- [Slack](https://kubernetes.slack.com/messages/sig-autoscaling)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling)
+- [Open Issues / PRs](https://github.com/search?q=org%3Akubernetes+org%3Akubernetes-client+org%3Akubernetes-csi+org%3Akubernetes-incubator+org%3Akubernetes-retired+org%3Akubernetes-sigs+is%3Aopen+label%3Asig%2Fautoscaling)
 
-The following subprojects are owned by sig-autoscaling:
-- **scale-client**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/client-go/master/scale/OWNERS
-- **cluster-autoscaler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
-- **vertical-pod-autoscaler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
-- **horizontal-pod-autoscaler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
-- **cluster-proportional-vertical-autoscaler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
-- **cluster-proportional-autoscaler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
-- **addon-resizer**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/addon-resizer/OWNERS
 
-## GitHub Teams
+### GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
@@ -68,6 +48,39 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-autoscaling-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-pr-reviews) | PR Reviews |
 | @kubernetes/sig-autoscaling-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-proposals) | Design Proposals |
 | @kubernetes/sig-autoscaling-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-autoscaling-test-failures) | Test Failures and Triage |
+
+## Subprojects
+
+The following subprojects are owned by sig-autoscaling:
+
+### scale-client
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/client-go/master/scale/OWNERS
+
+### cluster-autoscaler
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+
+### vertical-pod-autoscaler
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+
+### horizontal-pod-autoscaler
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
+
+### cluster-proportional-vertical-autoscaler
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
+
+### cluster-proportional-autoscaler
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
+
+### addon-resizer
+- OWNERS:
+  - https://raw.githubusercontent.com/kubernetes/autoscaler/master/addon-resizer/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Concerns
