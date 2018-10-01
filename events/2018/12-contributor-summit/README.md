@@ -57,7 +57,7 @@ Day 2 - Washington Convention Center
 | 1:50pm | 10 Minute Break |
 | 2:00pm | API Codebase Tour - @sttts | Testrgid tour, docs, membership | | Cluster lifecycle BoF | Release Management | Unconference Slot | Unconference Slot |
 | 2:50pm | 10 Minute Break |
-| 3:00pm | Live API Code Review - @lavalamp | SIG Meet and Greet | | Chair/TL Training | State of Security - @tallclair | Unconference Slot | Unconference Slot |
+| 3:00pm | Live API Code Review - @lavalamp | SIG Meet and Greet | | Chair/TL Training | State of Security - @tallclair | etcd Maintainers Ask Us Anything | Unconference Slot |
 | 3:50pm | 10 Minute Break |
 | 4:00pm | Steering Committee Q+A |
 | 4:45pm | Conlusion and Wrap-Up |
