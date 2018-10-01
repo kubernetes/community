@@ -40,18 +40,27 @@ Day 2 - Washington Convention Center
 - Current Contributor Track -  talks, workshops, birds of a feather, unconference sessions, steering committee updates, and more! 
 - Docs Sprint - Working on a curated list of issues and challenges that SIG Docs is tackling at that time.
 
-To be updated with content by October 5, 2018
+### Schedule (Draft)
 
-- 8AM: Breakfast and registration
-- 9AM (Sharp!) - 12:15PM: Talks
-- 10AM - 2PM: New Contributor Workshop (exact times TBD)
-- 12:15 - 1PM: Lunch
-- 1PM - 5:30PM: Workshops, Birds of a Feather and unconference sessions, Steering Committee, etc.
-
-Day 3, 4, 5 - Washington Convention Center
-
-Various contributor content will be displayed on main tracks of KubeCon. We will highlight those on our schedule, too. 
-
+| Time       | Main Track | New Contributor Summit | Docs Sprint  | Track #1  |  Track #2  |  Track #3 |  Track #4 | Contributor Lounge |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **Room** | 608/609 | 602/603/604  | 613 | 606 | 607  | 605 | 611 | 610 |
+| 8:00am     | Breakfast and Registration, Unconference Voting Board Opens |
+| 9:00am     | Welcome & Details |
+| 10:00am    | Technical Vision for Kubernetes| Where to Contribute | Docs Sprint
+| 10:30am    | State of Networking | Where to Communicate |
+| 10:55am    | 10 minute break
+| 11:05am    | State of KEPs | OWNERS Files |
+| 11:30am    | State of Cluster Lifecycle | Github Workflow
+| 12:00pm    | Lunch + Unconference Voting |
+| 1:00pm     | | Pull Request Practice | Docs Sprint | State of Developer Experience | KEP BoF | Networking BoF | Unconference Slot | 
+| 1:50pm | 10 Minute Break |
+| 2:00pm | API Codebase Tour - @sttts | Testrgid tour, docs, membership | | Cluster lifecycle BoF | Release Management | Unconference Slot | Unconference Slot |
+| 2:50pm | 10 Minute Break |
+| 3:00pm | Live API Code Review - @lavalamp | SIG Meet and Greet | | Chair/TL Training | State of Security - @tallclair | Unconference Slot | Unconference Slot |
+| 3:50pm | 10 Minute Break |
+| 4:00pm | Steering Committee Q+A |
+| 4:45pm | Conlusion and Wrap-Up |
 
 ## Media Policy
 
