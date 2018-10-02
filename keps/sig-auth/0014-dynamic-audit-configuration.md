@@ -87,18 +87,65 @@ A cluster scoped configuration object will be provided that applies to all event
 
 ```golang
 // AuditConfiguration represents a dynamic audit configuration
-type AuditConfiguration struct {
+type AuditSink struct {
     metav1.TypeMeta
 
     v1.ObjectMeta
 
-    // Policy is the current audit v1beta1 Policy object
-    // if undefined it will default to the statically configured cluster policy if available
+    // The Level that all requests are recorded at.
+    // if not provided this will default to Metadata level
     // if neither exist the backend will fail
     Policy *Policy
 
     // Backend to send events
     Backend *Backend
+}
+
+// Level defines the amount of information logged during auditing
+type Level string
+
+// Valid audit levels
+const (
+    // LevelNone disables auditing
+    LevelNone Level = "None"
+    // LevelMetadata provides the basic level of auditing.
+    LevelMetadata Level = "Metadata"
+    // LevelRequest provides Metadata level of auditing, and additionally
+    // logs the request object (does not apply for non-resource requests).
+    LevelRequest Level = "Request"
+    // LevelRequestResponse provides Request level of auditing, and additionally
+    // logs the response object (does not apply for non-resource requests and watches).
+    LevelRequestResponse Level = "RequestResponse"
+)
+
+// Stage defines the stages in request handling during which audit events may be generated.
+type Stage string
+
+// Valid audit stages.
+const (
+    // The stage for events generated after the audit handler receives the request, but before it
+    // is delegated down the handler chain.
+    StageRequestReceived = "RequestReceived"
+    // The stage for events generated after the response headers are sent, but before the response body
+    // is sent. This stage is only generated for long-running requests (e.g. watch).
+    StageResponseStarted = "ResponseStarted"
+    // The stage for events generated after the response body has been completed, and no more bytes
+    // will be sent.
+    StageResponseComplete = "ResponseComplete"
+    // The stage for events generated when a panic occurred.
+    StagePanic = "Panic"
+)
+
+// Policy is a scoped down policy for audit webhooks
+type Policy struct {
+    // The Level that all requests are recorded at.
+    // if not provided this will default to Metadata level
+    // +optional
+    Level *Level
+
+    // OmitStages is a list of stages for which no events are created.
+    // +optional
+    OmitStages []Stage
 }
 
 // Backend holds the configuration for the backend
@@ -151,8 +198,7 @@ kind: AuditConfiguration
 metadata:
   name: <name>
 policy:
-  rules:
-  - level: <level>
+  level: <level>
   omitStages:
   - stage: <stage>
 backend:
@@ -192,11 +238,12 @@ called `withDynamicAudit`. Another conditional clause will be added where the ha
 [provisioned](https://github.com/kubernetes/apiserver/blob/master/pkg/server/config.go#L536) allowing for the proper feature gating.
 
 #### Policy Enforcement
-This addition will move policy enforcement from the main handler to the backends. From the `withDynamicAudit` handler, 
-the full event will be generated and then passed to the backends. Each backend will copy the event and then be required to 
-drop any pieces that do not conform to its policy. A new sink interface will be required for these changes called `EnforcedSink`, 
-this will largely follow suite with the existing sink but take a fully formed event and the authorizer attributes as its 
-parameters. It will then utilize the `LevelAndStages` method in the policy 
+This addition will move policy enforcement from the main handler to the backends. The policy object is a scoped down 
+version of the V1 Policy object, further filtering will be done in a proxy. This has been done because how we handle policy
+may change in the future. From the `withDynamicAudit` handler, the full event will be generated and then passed to the backends. 
+Each backend will copy the event and then be required to drop any pieces that do not conform to its policy. A new sink interface 
+will be required for these changes called `EnforcedSink`, this will largely follow suite with the existing sink but take a 
+fully formed event and the authorizer attributes as its parameters. It will then utilize the `LevelAndStages` method in the policy 
 [checker](https://github.com/kubernetes/apiserver/blob/master/pkg/audit/policy/checker.go) to enforce its policy on the event, 
 and drop any unneeded sections. The new dynamic backend will implement the `EnforcedSink` interface, and update its state 
 based on a shared informer. For the existing backends to comply, a method will be added that implements the `EnforcedSink` interface.
