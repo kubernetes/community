@@ -37,6 +37,7 @@ superseded-by:
       * [Motivation](#motivation)
          * [Goals](#goals)
          * [Non-Goals](#non-goals)
+         * [Future Work](#future-work)
       * [Proposal](#proposal)
          * [Control over Use of Quotas](#control-over-use-of-quotas)
          * [Operation Flow -- Applying a Quota](#operation-flow----applying-a-quota)
@@ -58,11 +59,21 @@ superseded-by:
          * [Alternative quota-based implementation](#alternative-quota-based-implementation)
          * [Alternative loop filesystem-based implementation](#alternative-loop-filesystem-based-implementation)
       * [Infrastructure Needed [optional]](#infrastructure-needed-optional)
-
+      * [References](#references)
+         * [Bugs Opened Against Filesystem Quotas](#bugs-opened-against-filesystem-quotas)
+            * [CVE](#cve)
+            * [Other Security Issues Without CVE](#other-security-issues-without-cve)
+         * [Other Linux Quota-Related Bugs Since 2012](#other-linux-quota-related-bugs-since-2012)
 
 [Tools for generating]: https://github.com/ekalinin/github-markdown-toc
 
 ## Summary
+
+This proposal applies to the use of quotas for ephemeral-storage
+metrics gathering.  Use of quotas for ephemeral-storage limit
+enforcement is a [non-goal](#non-goals), but as the architecture and
+code will be very similar, there are comments interspersed related to
+enforcement.  _These comments will be italicized_.
 
 Local storage capacity isolation, aka ephemeral-storage, was
 introduced into Kubernetes via
@@ -80,9 +91,9 @@ latency (i. e. a pod could consume a lot of storage prior to the
 kubelet being aware of its overage and terminating it).
 
 The mechanism proposed here utilizes filesystem project quotas to
-provide monitoring of resource consumption and optionally enforcement
-of limits.  Project quotas, initially in XFS and more recently ported
-to ext4fs, offer a kernel-based means of restricting and monitoring
+provide monitoring of resource consumption _and optionally enforcement
+of limits._  Project quotas, initially in XFS and more recently ported
+to ext4fs, offer a kernel-based means of monitoring _and restricting_
 filesystem consumption that can be applied to one or more directories.
 
 A prototype is in progress; see <https://github.com/kubernetes/kubernetes/pull/66928>.
@@ -107,7 +118,7 @@ total blocks and inodes for all files with the given project ID are
 maintained by the kernel.  Project quotas can be managed from
 userspace by means of the `xfs_quota(8)` command in foreign filesystem
 (`-f`) mode; the traditional Linux quota tools do not manipulate
-project quotas.  Programmatically, they are managed by the quotactl(2)
+project quotas.  Programmatically, they are managed by the `quotactl(2)`
 system call, using in part the standard quota commands and in part the
 XFS quota commands; the man page implies incorrectly that the XFS
 quota commands apply only to XFS filesystems.
@@ -115,7 +126,7 @@ quota commands apply only to XFS filesystems.
 The project ID applied to a directory is inherited by files created
 under it.  Files cannot be (hard) linked across directories with
 different project IDs.  A file's project ID cannot be changed by a
-non-privileged user, but a privileged user may use the xfs_io(8)
+non-privileged user, but a privileged user may use the `xfs_io(8)`
 command to change the project ID of a file.
 
 Filesystems using project quotas may be mounted with quotas either
@@ -134,9 +145,10 @@ from project ID to directory/file; this can be a one to many mapping
 any given directory/file can be assigned only one project ID).
 `/etc/projid` contains a mapping from named projects to project IDs.
 
-This proposal utilizes hard project quotas.  Soft quotas are of no
-utility; they allow for temporary overage that, after a programmable
-period of time, is converted to the hard quota limit.
+This proposal utilizes hard project quotas for both monitoring _and
+enforcement_.  Soft quotas are of no utility; they allow for temporary
+overage that, after a programmable period of time, is converted to the
+hard quota limit.
 
 
 ## Motivation
@@ -190,7 +202,8 @@ spec:
   more of data before the housekeeping performed once per minute
   catches up to it.  If the primary volume is the root partition, this
   will completely fill the partition, possibly causing serious
-  problems elsewhere on the system.
+  problems elsewhere on the system.  This proposal does not address
+  this issue; _a future enforcing project would_.
 
 In many environments, these issues may not matter, but shared
 multi-tenant environments need these issues addressed.
@@ -207,14 +220,6 @@ These goals apply only to local ephemeral storage, as described in
   files being held open.
 * Primary: this will not interfere with the more common user and group
   quotas.
-* Stretch: enforce limits on per-volume storage consumption by using
-  enforced project quotas.  Each volume would be given an enforced
-  quota of the total ephemeral storage limit of the pod.  _This will
-  only be done if a mechanism is devised to allow quota enforcement on
-  container writable layers; enforcement on emptydir volumes without
-  such on writable layers does not restrict the user._  If we cannot
-  do this, enforcing quotas will either be disabled or enabled by an
-  optional feature gate that is disabled by default.
 
 ### Non-Goals
 
@@ -227,6 +232,11 @@ These goals apply only to local ephemeral storage, as described in
   usage, including e. g. images).
 * Enforcing limits on total pod storage consumption by any means, such
   that the pod would be hard restricted to the desired storage limit.
+  
+### Future Work
+
+* _Enforce limits on per-volume storage consumption by using
+  enforced project quotas._
 
 ## Proposal
 
@@ -238,8 +248,8 @@ and attaching the ID to one or more files.  By default (and as
 utilized herein), if a project ID is attached to a directory, it is
 inherited by any files created under that directory.
 
-If we elect to use the quota as enforcing, we impose a quota
-consistent with the desired limit.  If we elect to use it as
+_If we elect to use the quota as enforcing, we impose a quota
+consistent with the desired limit._  If we elect to use it as
 non-enforcing, we impose a large quota that in practice cannot be
 exceeded (2^63-1 bytes for XFS, 2^58-1 bytes for ext4fs).
 
@@ -258,7 +268,8 @@ At present, three feature gates control operation of quotas:
 * `FSQuotaForLSCIEnforcement` must be enabled, in addition to
   `FSQuotaForLSCIMonitoring`, to use quotas for enforcement.  This
   defaults to False and is expected to remain in that state for
-  initial release.
+  initial release.  _A future project to use quotas for enforcing may
+  change this default to True._
 
 ### Operation Flow -- Applying a Quota
 
@@ -318,8 +329,8 @@ assigned a unique project ID (unless it is desired to pool the storage
 use of multiple directories).
 
 The canonical mechanism to record persistently that a project ID is
-reserved is to store it in the `/etc/projid` (projid[5]) and/or
-`/etc/projects` (projects(5)) files.  However, it is possible to utilize
+reserved is to store it in the `/etc/projid` (`projid[5]`) and/or
+`/etc/projects` (`projects(5)`) files.  However, it is possible to utilize
 project IDs without recording them in those files; they exist for
 administrative convenience but neither the kernel nor the filesystem
 is aware of them.  Other ways can be used to determine whether a
@@ -455,8 +466,8 @@ required elsewhere:
 
 * The operation executor needs to pass the desired size limit to the
   volume plugin where appropriate so that the volume plugin can impose
-  a quota.  The limit is passed as 0 (do not use quotas), positive
-  number (impose an enforcing quota if possible, measured in bytes),
+  a quota.  The limit is passed as 0 (do not use quotas), _positive
+  number (impose an enforcing quota if possible, measured in bytes),_
   or -1 (impose a non-enforcing quota, if possible) on the volume.
   
   This requires changes to
@@ -526,12 +537,8 @@ appropriate end to end tests.
   behavior.  For example, if a quota is incorrectly applied it could
   result in ability to write no data at all to the volume.  This could
   be mitigated by use of non-enforcing quotas.  XFS in particular
-  offers the pqnoenforce mount option that makes all quotas
+  offers the `pqnoenforce` mount option that makes all quotas
   non-enforcing.
-
-  We should offer two feature gates, one to enable quotas at all (on
-  by default) and one to enable enforcing quotas (initially off, but
-  with intention of enabling in the near future).
 
 
 ## Graduation Criteria
@@ -685,7 +692,7 @@ appeared promising, it turned out to have multiple critical flaws:
 ```
 
 * If the filesystem is mounted `sync`, all writes to it are
-  immediately committed to the backing store, and the _dd_ operation
+  immediately committed to the backing store, and the `dd` operation
   above fails as soon as it fills up `/var/tmp/d1`.  However,
   performance is drastically slowed, particularly with small writes;
   with 1K writes, I observed performance degradation in some cases
@@ -693,7 +700,7 @@ appeared promising, it turned out to have multiple critical flaws:
 
   I performed a test comparing writing 64 MB to a base (partitioned)
   filesystem, to a loop filesystem without `sync`, and a loop
-  filesystem with _sync.  Total I/O was sufficient to run for at least
+  filesystem with `sync`.  Total I/O was sufficient to run for at least
   5 seconds in each case.  All filesystems involved were XFS.  Loop
   filesystems were 128 MB and dense.  Times are in seconds.  The
   erratic behavior (e. g. the 65536 case) was involved was observed
@@ -729,3 +736,74 @@ appeared promising, it turned out to have multiple critical flaws:
   types are to be managed by different components, each such component
   needs access to the quota code.  The code is substantial and should
   not be copied; it would more appropriately be vendored.
+
+## References
+
+### Bugs Opened Against Filesystem Quotas
+
+The following is a list of known security issues referencing
+filesystem quotas on Linux, and other bugs referencing filesystem
+quotas in Linux since 2012.  These bugs are not necessarily in the
+quota system.
+
+#### CVE
+
+* *CVE-2012-2133* Use-after-free vulnerability in the Linux kernel
+  before 3.3.6, when huge pages are enabled, allows local users to
+  cause a denial of service (system crash) or possibly gain privileges
+  by interacting with a hugetlbfs filesystem, as demonstrated by a
+  umount operation that triggers improper handling of quota data.
+  
+  The issue is actually related to huge pages, not quotas
+  specifically.  The demonstration of the vulnerability resulted in
+  incorrect handling of quota data.
+  
+* *CVE-2012-3417* The good\_client function in rquotad (rquota\_svc.c)
+  in Linux DiskQuota (aka quota) before 3.17 invokes the hosts\_ctl
+  function the first time without a host name, which might allow
+  remote attackers to bypass TCP Wrappers rules in hosts.deny (related
+  to rpc.rquotad; remote attackers might be able to bypass TCP
+  Wrappers rules).
+  
+  This issue is related to remote quota handling, which is not the use
+  case for the proposal at hand.
+  
+#### Other Security Issues Without CVE
+
+* [Linux Kernel Quota Flaw Lets Local Users Exceed Quota Limits and
+  Create Large Files](https://securitytracker.com/id/1002610)
+  
+  A setuid root binary inheriting file descriptors from an
+  unprivileged user process may write to the file without respecting
+  quota limits.  If this issue is still present, it would allow a
+  setuid process to exceed any enforcing limits, but does not affect
+  the quota accounting (use of quotas for monitoring).
+  
+### Other Linux Quota-Related Bugs Since 2012
+
+* [ext4: report delalloc reserve as non-free in statfs mangled by
+  project quota](https://lore.kernel.org/patchwork/patch/884530/)
+  
+  This bug, fixed in Feb. 2018, properly accounts for reserved but not
+  committed space in project quotas.  At this point I have not
+  determined the impact of this issue.
+  
+* [XFS quota doesn't work after rebooting because of
+  crash](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1461730)
+  
+  This bug resulted in XFS quotas not working after a crash or forced
+  reboot.  Under this proposal, Kubernetes would fall back to du for
+  monitoring should a bug of this nature manifest itself again.
+  
+* [quota can show incorrect filesystem
+  name](https://bugzilla.redhat.com/show_bug.cgi?id=1326527)
+  
+  This issue, which will not be fixed, results in the quota command
+  possibly printing an incorrect filesystem name when used on remote
+  filesystems.  It is a display issue with the quota command, not a
+  quota bug at all, and does not result in incorrect quota information
+  being reported.  As this proposal does not utilize the quota command
+  or rely on filesystem name, or currently use quotas on remote
+  filesystems, it should not be affected by this bug.
+  
+In addition, the e2fsprogs have had numerous fixes over the years.
