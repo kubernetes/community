@@ -259,7 +259,7 @@ exceeded (2^63-1 bytes for XFS, 2^58-1 bytes for ext4fs).
 
 ### Control over Use of Quotas
 
-At present, three feature gates control operation of quotas:
+At present, two feature gates control operation of quotas:
 
 * `LocalStorageCapacityIsolation` must be enabled for any use of
   quotas.
@@ -269,11 +269,8 @@ At present, three feature gates control operation of quotas:
   present, this defaults to False, but the intention is that this will
   default to True by initial release.
   
-* `FSQuotaForLSCIEnforcement` must be enabled, in addition to
-  `FSQuotaForLSCIMonitoring`, to use quotas for enforcement.  This
-  defaults to False and is expected to remain in that state for
-  initial release.  _A future project to use quotas for enforcing may
-  change this default to True._
+* _`FSQuotaForLSCIEnforcement` must be enabled, in addition to
+  `FSQuotaForLSCIMonitoring`, to use quotas for enforcement._
 
 ### Operation Flow -- Applying a Quota
 
@@ -762,8 +759,8 @@ quota system.
   specifically.  The demonstration of the vulnerability resulted in
   incorrect handling of quota data.
   
-* *CVE-2012-3417* The good\_client function in rquotad (rquota\_svc.c)
-  in Linux DiskQuota (aka quota) before 3.17 invokes the hosts\_ctl
+* *CVE-2012-3417* The good_client function in rquotad (rquota_svc.c)
+  in Linux DiskQuota (aka quota) before 3.17 invokes the hosts_ctl
   function the first time without a host name, which might allow
   remote attackers to bypass TCP Wrappers rules in hosts.deny (related
   to rpc.rquotad; remote attackers might be able to bypass TCP
