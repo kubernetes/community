@@ -155,7 +155,7 @@ graduation from alpha to beta.
 #### Computing Preferred Affinity
 
 A topology hint indicates a preference for some well-known local resources.
-Initally, the only supported reference resource is a mask of CPU socket IDs.
+Initially, the only supported reference resource is a mask of CPU socket IDs.
 After collecting hints from all providers, the Topology Manager chooses some
 mask that is present in all lists. Here is a sketch:
 
@@ -273,7 +273,7 @@ _Topology Manager fetches affinity from hint providers._
 * Testing the Topology Manager in a continuous integration environment
   depends on cloud infrastructure to expose multi-node topologies
   to guest virtual machines.
-* Implementing the `GetTopologyHints()` interface may prove challenging.
+* Implementing the `GetHints()` interface may prove challenging.
 
 # Limitations
 
