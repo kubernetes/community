@@ -37,9 +37,9 @@ The following subprojects are owned by sig-scheduling:
 - **descheduler**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/descheduler/master/OWNERS
-- **kube-arbitrator**
+- **kube-batch**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/kube-arbitrator/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/kube-batch/master/OWNERS
 - **scheduler**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
