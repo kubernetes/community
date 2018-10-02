@@ -89,12 +89,12 @@ type CustomResourceDefinitionSpec struct {
   Version string
   Names CustomResourceDefinitionNames
   Scope ResourceScope
-  // This optional and correspond to the first version in the versions list
+  // Optional, can only be provided if per-version schema is not provided.
   Validation *CustomResourceValidation
-  // Optional, correspond to the first version in the versions list 
+  // Optional, can only be provided if per-version subresource is not provided.
   Subresources *CustomResourceSubresources
   Versions []CustomResourceDefinitionVersion
-  // Optional, and correspond to the first version in the versions list  
+  // Optional, can only be provided if per-version additionalPrinterColumns is not provided.  
   AdditionalPrinterColumns []CustomResourceColumnDefinition
 
   Conversion *CustomResourceConversion
@@ -104,9 +104,11 @@ type CustomResourceDefinitionVersion struct {
   Name string
   Served Boolean
   Storage Boolean
-  // These three fields should not be set for first item in Versions list
+  // Optional, can only be provided if top level validation is not provided.
   Schema *JSONSchemaProp
+  // Optional, can only be provided if top level subresource is not provided.
   Subresources *CustomResourceSubresources
+  // Optional, can only be provided if top level additionalPrinterColumns is not provided.  
   AdditionalPrinterColumns []CustomResourceColumnDefinition
 }
 
@@ -125,21 +127,49 @@ type CustomResourceConversionWebhook {
 }
 ```
 
-### Defaulting
+### Top level fields to Per-Version fields
 
-In case that there is no versions list, a single version with values defaulted to top level version will be created. That means a single version with a name set to spec.version.
-All newly added per version fields (schema, additionalPrinterColumns or subresources) will be defaulted to the corresponding top level field except for the first version in the list that will remain empty.
+In *CRD v1beta1* (apiextensions.k8s.io/v1beta1) there are per-version schema, additionalPrinterColumns or subresources (called X in this section) defined and these validation rules will be applied to them:
 
+* Either top level X or per-version X can be set, but not both. This rule applies to individual X’s not the whole set. E.g. top level schema can be set while per-version subresources are set.
+* per-version X cannot be the same. E.g. if all per-version schema are the same, the CRD object will be rejected with an error message asking the user to use the top level schema.
 
-### Validation
+in *CRD v1* (apiextensions.k8s.io/v1), there will be only version list with no top level X. The second validation guarantees a clean moving to v1. These are conversion rules:
 
-To keep backward compatibility, the top level fields (schema, additionalPrinterColumns or subresources) stay the same and source of truth for first (top) version. The first item in the versions list must not set any of those fields. The plan is to use unified version list for v1.
+*v1beta1->v1:*
 
+* If top level X is set in v1beta1, then it will be copied to all versions in v1.
+* If per-version X are set in v1beta1, then they will be used for per-version X in v1.
+
+*v1->v1beta1:*
+
+* If all per-version X are the same in v1, they will be copied to top level X in v1beta1
+* Otherwise, they will be used as per-version X in v1beta1
+
+#### Alternative approaches considered
+
+First a defaulting approach is considered which per-version fields would be defaulted to top level fields. but that breaks backward incompatible change; Quoting from API [guidelines](https://github.com/kubernetes/community/blob/master/contributors/devel/api_changes.md#backward-compatibility-gotchas):
+
+> A single feature/property cannot be represented using multiple spec fields in the same API version simultaneously
+
+Hence the defaulting either implicit or explicit has the potential to break backward compatibility as we have two sets of fields representing the same feature.
+
+There are other solution considered that does not involved defaulting:
+
+* Field Discriminator: Use `Spec.Conversion.Strategy` as discriminator to decide which set of fields to use. This approach would work but the proposed solution is keeping the mutual excusivity in a broader sense and is preferred.
+* Per-version override: If a per-version X is specified, use it otherwise use the top level X if provided. While with careful validation and feature gating, this solution is also backward compatible, the overriding behaviour need to be kept in CRD v1 and that looks too complicated and not clean to keep for a v1 API.
+
+Refer to [this document](http://bit.ly/k8s-crd-per-version-defaulting) for more details and discussions on those solutions.
 
 ### Support Level
 
 The feature will be alpha in the first implementation and will have a feature gate that is defaulted to false. The roll-back story with a feature gate is much more clear. if we have the features as alpha in kubernetes release Y (>X where the feature is missing) and we make it beta in kubernetes release Z, it is not safe to use the feature and downgrade from Y to X but the feature is alpha in Y which is fine. It is safe to downgrade from Z to Y (given that we enable the feature gate in Y) and that is desirable as the feature is beta in Z.
+On downgrading from a Z to Y, stored CRDs can have per-version fields set. While the feature gate can be off on Y (alpha cluster), it is dangerous to disable per-version Schema Validation or Status subresources as it makes the status field mutable and validation on CRs will be disabled. Thus the feature gate in Y only protects adding per-version fields not the actual behaviour. Thus if the feature gate is off in Y:
 
+* Per-version X cannot be set on CRD create (per-version fields are auto-cleared).
+* Per-version X can only be set/changed on CRD update *if* the existing CRD object already has per-version X set.
+
+This way even if we downgrade from Z to Y, per-version validations and subresources will be honored. This will not be the case for webhook conversion itself. The feature gate will also protect the implementation of webhook conversion and alpha cluster with disabled feature gate will return error for CRDs with webhook conversion (that are created with a future version of the cluster).
 
 ### Rollback
 
@@ -153,7 +183,7 @@ Users that need to rollback to version X (but may currently be running version Y
 
 4. If the user rolls forward again, then custom resources will be served again.
 
-If a user does not use the webhook feature but uses the versioned schema, additionalPrinterColumns, and/or subresources and rollback to a version that does not support them per version, any value set per version will be ignored and only values in top level spec.* will be honor.
+If a user does not use the webhook feature but uses the versioned schema, additionalPrinterColumns, and/or subresources and rollback to a version that does not support them per-version, any value set per-version will be ignored and only values in top level spec.* will be honor.
 
 Please note that any of the fields added in this design that is not supported in previous kubernetes releases can be removed on an update operation (e.g. status update). The kubernetes release where defined the types but gate them with an alpha feature gate, however, can keep these fields but ignore there value.
 
@@ -233,10 +263,10 @@ For operations that need more than one conversion (e.g. LIST), no partial result
 No new caching is planned as part of this work, but the API Server may in the future cache webhook POST responses.
 
 Most API operations are reads.  The most common kind of read is a watch.  All watched objects are cached in memory. For CRDs, the cache
-is per version. That is the result of having one [REST store object](https://github.com/kubernetes/kubernetes/blob/3cb771a8662ae7d1f79580e0ea9861fd6ab4ecc0/staging/src/k8s.io/apiextensions-apiserver/pkg/registry/customresource/etcd.go#L72) per version which
+is per-version. That is the result of having one [REST store object](https://github.com/kubernetes/kubernetes/blob/3cb771a8662ae7d1f79580e0ea9861fd6ab4ecc0/staging/src/k8s.io/apiextensions-apiserver/pkg/registry/customresource/etcd.go#L72) per-version which
 was an arbitrary design choice but would be required for better caching with webhook conversion. In this model, each GVK is cached, regardless of whether some GVKs share storage.  Thus, watches do not cause conversion.  So, conversion webhooks will not add overhead to the watch path.  Watch cache is per api server and eventually consistent.
 
-Non-watch reads are also cached (if requested resourceVersion is 0 which is true for generated informers by default, but not for calls like `kubectl get ...`, namespace cleanup, etc). The cached objects are converted and per version (TODO: fact check). So, conversion webhooks will not add overhead here too.
+Non-watch reads are also cached (if requested resourceVersion is 0 which is true for generated informers by default, but not for calls like `kubectl get ...`, namespace cleanup, etc). The cached objects are converted and per-version (TODO: fact check). So, conversion webhooks will not add overhead here too.
 
 If in the future this proves to be a performance problem, we might need to add caching later.  The Authorization and Authentication webhooks already use a simple scheme with APIserver-side caching and a single TTL for expiration.  This has worked fine, so we can repeat this process.  It does not require Webhook hosts to be aware of the caching.
 
