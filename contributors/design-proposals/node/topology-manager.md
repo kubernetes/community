@@ -1,4 +1,4 @@
-# NUMA Manager
+# Node Topology Manager
 
 _Authors:_
 
@@ -16,7 +16,7 @@ _Authors:_
 * [Proposal](#proposal)
   * [User Stories](#user-stories)
   * [Proposed Changes](#proposed-changes)
-    * [New Component: NUMA Manager](#new-component-numa-manager)
+    * [New Component: Topology Manager](#new-component-topology-manager)
       * [Computing Preferred Affinity](#computing-preferred-affinity)
       * [New Interfaces](#new-interfaces)
     * [Changes to Existing Components](#changes-to-existing-components)
@@ -62,7 +62,7 @@ peripheral interconnect. If the device manager and the CPU manager are
 misaligned, all communication between the CPU and the device can incur
 an additional hop over the processor interconnect fabric.
 - Container Network Interface (CNI)
-  - NICs including SR-IOV Virtual Functions have affinity to one NUMA node,
+  - NICs including SR-IOV Virtual Functions have affinity to one socket,
 with measurable performance ramifications.
 
 *Related Issues:*
@@ -81,7 +81,7 @@ information.
 
 ## Goals
 
-- Arbitrate preferred NUMA node affinity for containers based on input from
+- Arbitrate preferred socket affinity for containers based on input from
   CPU manager and Device Manager.
 - Provide an internal interface and pattern to integrate additional
   topology-aware Kubelet components.
@@ -89,10 +89,10 @@ information.
 ## Non-Goals
 
 - _Inter-device connectivity:_ Decide device assignments based on direct
-  device interconnects. This issue can be separated from NUMA node
+  device interconnects. This issue can be separated from socket
   locality. Inter-device topology can be considered entirely within the
   scope of the Device Manager, after which it can emit possible
-  NUMA affinities. The policy to reach that decision can start simple
+  socket affinities. The policy to reach that decision can start simple
   and iterate to include support for arbitrary inter-device graphs.
 - _HugePages:_ This proposal assumes that pre-allocated HugePages are
   spread among the available NUMA nodes in the system. We further assume
@@ -112,52 +112,52 @@ information.
 
 A user asks for a "fast network" and automatically gets all the various
 pieces coordinated (hugepages, cpusets, network device) co-located on a
-NUMA node.
+socket.
 
 *Story 2: Accelerated neural network training*
 
 A user asks for an accelerator device and some number of exclusive CPUs
-in order to get the best training performance, due to NUMA-alignment of
+in order to get the best training performance, due to socket-alignment of
 the assigned CPUs and devices.
 
 # Proposal
 
-*Main idea: Two Phase NUMA coherence protocol*
+*Main idea: Two phase topology coherence protocol*
 
-NUMA affinity is tracked at the container level, similar to devices and
-CPU affinity. At pod admission time, a new component called the NUMA Manager
-collects possible NUMA configurations from the Device Manager and the
-CPU Manager. The NUMA manager acts as an oracle for NUMA node affinity by
+Topology affinity is tracked at the container level, similar to devices and
+CPU affinity. At pod admission time, a new component called the Topology
+Manager collects possible configurations from the Device Manager and the
+CPU Manager. The Topology Manager acts as an oracle for local alignment by
 those same components when they make concrete resource allocations. We
 expect the consulted components to use the inferred QoS class of each
-pod in order to prioritize the importance of fulfilling optimal NUMA
-affinity.
+pod in order to prioritize the importance of fulfilling optimal locality.
 
 ## Proposed Changes
 
-### New Component: NUMA Manager
+### New Component: Topology Manager
 
 This proposal is focused on a new component in the Kubelet called the
-NUMA Manager. The NUMA Manager implements the pod admit handler
+Topology Manager. The Topology Manager implements the pod admit handler
 interface and participates in Kubelet pod admission. When the `Admit()`
-function is called, the NUMA manager collects NUMA hints from other
+function is called, the Topology Manager collects topology hints from other
 Kubelet components.
 
-If the NUMA hints are not compatible, the NUMA manager could choose to
-reject the pod. The details of what to do in this situation needs more
-discussion. For example, the NUMA manager could enforce strict NUMA
-alignment for Guaranteed QoS pods. Alternatively, the NUMA manager could
-simply provide best-effort NUMA alignment for all pods. The NUMA manager could
+If the hints are not compatible, the Topology Manager may choose to
+reject the pod. Behavior in this case depends on a new Kubelet configuration
+value to choose the topology policy. The Topology Manager supports two
+modes: `strict` and `preferred` (default). In `strict` mode, the pod is
+rejected if alignment cannot be satisfied. The Topology Manager could
 use `softAdmitHandler` to keep the pod in `Pending` state.
 
-The NUMA Manager component will be disabled behind a feature gate until
+The Topology Manager component will be disabled behind a feature gate until
 graduation from alpha to beta.
 
 #### Computing Preferred Affinity
 
-A NUMA hint is a list of possible NUMA node masks. After collecting hints
-from all providers, the NUMA Manager must choose some mask that is
-present in all lists. Here is a sketch:
+A topology hint indicates a preference for some well-known local resources.
+Initally, the only supported reference resource is a mask of CPU socket IDs.
+After collecting hints from all providers, the Topology Manager chooses some
+mask that is present in all lists. Here is a sketch:
 
 1. Apply a partial order on each list: number of bits set in the
    mask, ascending. This biases the result to be more precise if
@@ -167,16 +167,15 @@ present in all lists. Here is a sketch:
 1. Store the first non-empty result and break out early.
 1. If no non-empty result exists, return an error.
 
-The behavior when a match does not exist should be configurable. The Kubelet
-could support a config option to require strict NUMA assignment when set to
-`true`. A `false` value would mean best-effort NUMA alignment.
+The behavior when a match does not exist is configurable, as described
+above.
 
 #### New Interfaces
 
 ```go
 package numamanager
 
-// NUMAManager helps to coordinate NUMA-related resource assignments
+// TopologyManager helps to coordinate local resource alignment
 // within the Kubelet.
 type Manager interface {
   lifecycle.PodAdmitHandler
@@ -185,64 +184,66 @@ type Manager interface {
   RemovePod(podName string)
 }
 
-// NUMAMask is a bitmask-like type denoting a subset of available NUMA nodes.
-type NUMAMask struct{} // TBD
+// SocketMask is a bitmask-like type denoting a subset of available sockets.
+type SocketMask struct{} // TBD
 
-// NUMAStore manages state related to the NUMA manager.
+// TopologyHints encodes locality to local resources.
+type TopologyHints struct {
+  Sockets []SocketMask
+}
+
+// HintStore manages state related to the Topology Manager.
 type Store interface {
-  // GetAffinity returns the preferred NUMA affinity for the supplied
+  // GetAffinity returns the preferred affinity for the supplied
   // pod and container.
-  GetAffinity(podName string, containerName string) NUMAMask
+  GetAffinity(podName string, containerName string) TopologyHints
 }
 
 // HintProvider is implemented by Kubelet components that make
-// NUMA-related resource assignments. The NUMA manager consults each
+// topology-related resource assignments. The Topology Manager consults each
 // hint provider at pod admission time.
 type HintProvider interface {
-  // Returns a mask if this hint provider has a preference; otherwise
+  // Returns hints if this hint provider has a preference; otherwise
   // returns `_, false` to indicate "don't care".
-  GetNUMAHints(pod v1.Pod, containerName string) ([]NUMAMask, bool)
+  GetTopologyHints(pod v1.Pod, containerName string) (TopologyHints, bool)
 }
 ```
 
-_NUMA Manager and related interfaces (sketch)._
+_Topology Manager and related interfaces (sketch)._
 
-![numa-manager-components](https://user-images.githubusercontent.com/379372/35370509-13dd9488-0143-11e8-998b-6b5115982842.png)
+![topology-manager-components](https://user-images.githubusercontent.com/379372/35370509-13dd9488-0143-11e8-998b-6b5115982842.png)
 
-_NUMA Manager components._
+_Topology Manager components._
 
 ![numa-manager-instantiation](https://user-images.githubusercontent.com/379372/35370513-17f90f70-0143-11e8-88e3-f199e9717946.png)
 
-_NUMA Manager instantiation and inclusion in pod admit lifecycle._
+_Topology Manager instantiation and inclusion in pod admit lifecycle._
 
 ### Changes to Existing Components
 
-1. Kubelet consults NUMA Manager for pod admission (discussed above.)
-1. Add two implementations of NUMA Manager interface and a feature gate.
-    1. As much NUMA Manager functionality as possible is stubbed when the
+1. Kubelet consults Topology Manager for pod admission (discussed above.)
+1. Add two implementations of Topology Manager interface and a feature gate.
+    1. As much Topology Manager functionality as possible is stubbed when the
        feature gate is disabled.
-    1. Add a functional NUMA manager that queries hint providers in order
-       to compute a preferred NUMA node mask for each container.
-1. Add `GetNUMAHints()` method to CPU Manager.
-    1. CPU Manager static policy calls `GetAffinity()` method of NUMA
-       manager when deciding CPU affinity.
-1. Add `GetNUMAHints()` method to Device Manager.
-    1. Add NUMA Node ID to Device structure in the device plugin
-       interface. Plugins should be able to determine the NUMA node
-       easily when enumerating supported devices. For example, Linux
-       exposes the node ID in sysfs for PCI devices:
-       `/sys/devices/pci*/*/numa_node`. NOTE: this is `-1` on many
-       public cloud instances and single-node machines.
-    1. Device Manager calls `GetAffinity()` method of NUMA manager when
+    1. Add a functional Topology Manager that queries hint providers in order
+       to compute a preferred socket mask for each container.
+1. Add `GetTopologyHints()` method to CPU Manager.
+    1. CPU Manager static policy calls `GetAffinity()` method of
+       Topology Manager when deciding CPU affinity.
+1. Add `GetTopologyHints()` method to Device Manager.
+    1. Add Socket ID to Device structure in the device plugin
+       interface. Plugins should be able to determine the socket
+       when enumerating supported devices.
+    1. Device Manager calls `GetAffinity()` method of Topology Manager when
        deciding device allocation.
 
-![numa-manager-wiring](https://user-images.githubusercontent.com/379372/35370514-1e10fb84-0143-11e8-84d3-99c9ca3af111.png)
+![topology-manager-wiring](https://user-images.githubusercontent.com/379372/35370514-1e10fb84-0143-11e8-84d3-99c9ca3af111.png)
 
-_NUMA Manager hint provider registration._
+_Topology Manager hint provider registration._
 
-![numa-manager-hints](https://user-images.githubusercontent.com/379372/35370517-234a5d34-0143-11e8-845a-80e5c66c7b72.png)
+![topology-manager-hints](https://user-images.githubusercontent.com/379372/35370517-234a5d34-0143-11e8-845a-80e5c66c7b72.png)
 
-_NUMA Manager fetches affinity from hint providers._
+_Topology Manager fetches affinity from hint providers._
 
 # Graduation Criteria
 
@@ -251,9 +252,9 @@ _NUMA Manager fetches affinity from hint providers._
 * Feature gate is disabled by default.
 * Alpha-level documentation.
 * Unit test coverage.
-* CPU Manager allocation policy takes NUMA hints into account.
-* Device plugin interface includes NUMA node ID.
-* Device Manager allocation policy takes NUMA hints into account.
+* CPU Manager allocation policy takes topology hints into account.
+* Device plugin interface includes socket ID.
+* Device Manager allocation policy takes topology hints into account.
 
 ## Phase 2: Beta (later versions)
 
@@ -269,10 +270,10 @@ _NUMA Manager fetches affinity from hint providers._
 
 # Challenges
 
-* Testing the NUMA Manager in a continuous integration environment
-  depends on cloud infrastructure to expose multi-node NUMA topologies
+* Testing the Topology Manager in a continuous integration environment
+  depends on cloud infrastructure to expose multi-node topologies
   to guest virtual machines.
-* Implementing the `GetNUMAHints()` interface may prove challenging.
+* Implementing the `GetTopologyHints()` interface may prove challenging.
 
 # Limitations
 
