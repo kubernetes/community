@@ -30,7 +30,7 @@ issues:
 
 Infrastructure to support on demand token requests will be implemented in the
 core apiserver. Once this API exists, a client of the apiserver will request an
-attenuated token for it's own use. The API will enforce required attenuations,
+attenuated token for its own use. The API will enforce required attenuations,
 e.g. audience and time binding.
 
 ## Token attenuations
@@ -130,9 +130,9 @@ type TokenRequestStatus struct {
 
 ```
 
-This API will be exposed as a subresource under a serviceacccount object. A
+This API will be exposed as a subresource under a serviceaccount object. A
 requestor for a token for a specific service account will `POST` a
-`TokenRequest` to the `/token` subresource of that service account object.
+`TokenRequest` to the `/token` subresource of that serviceaccount object.
 
 ### Modify `tokenreviews.authentication.k8s.io`
 
