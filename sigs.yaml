@@ -1540,9 +1540,9 @@ sigs:
     - name: descheduler
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/descheduler/master/OWNERS
-    - name: kube-arbitrator
+    - name: kube-batch
       owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/kube-arbitrator/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/kube-batch/master/OWNERS
     - name: scheduler
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
