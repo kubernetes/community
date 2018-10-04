@@ -38,7 +38,9 @@ person@organization.domain email address in the CNCF account registration page.
 #### 3. Complete signing process
 
 After creating your account, follow the instructions to complete the
-signing process through Hellosign.
+signing process through HelloSign.
+
+If you did not receive an email from HelloSign, [then request it here](https://identity.linuxfoundation.org/projects/cncf).
 
 #### 4. Ensure your Github e-mail address matches address used to sign CLA
 
