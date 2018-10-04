@@ -267,12 +267,12 @@ sigs:
     label: auth
     leadership:
       chairs:
-      - name: Jordan Liggitt
-        github: liggitt
-        company: Google
       - name: Mike Danese
         github: mikedanese
         company: Google
+      - name: Mo Khan
+        github: enj
+        company: Red Hat
       - name: Tim Allclair
         github: tallclair
         company: Google
@@ -286,6 +286,9 @@ sigs:
       - name: David Eads
         github: deads2k
         company: Red Hat
+      - name: Jordan Liggitt
+        github: liggitt
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
