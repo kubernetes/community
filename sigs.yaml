@@ -294,18 +294,22 @@ sigs:
       - name: Tim Allclair
         github: tallclair
         company: Google
+      tech_leads:
+      - name: David Eads
+        github: deads2k
+        company: Red Hat
+      - name: Jordan Liggitt
+        github: liggitt
+        company: Google
+      - name: Mike Danese
+        github: mikedanese
+        company: Google
       emeritus_leads:
       - name: Eric Chiang
         github: ericchiang
         company: Red Hat
       - name: Eric Tune
         github: erictune
-        company: Google
-      - name: David Eads
-        github: deads2k
-        company: Red Hat
-      - name: Jordan Liggitt
-        github: liggitt
         company: Google
     meetings:
     - description: Regular SIG Meeting
