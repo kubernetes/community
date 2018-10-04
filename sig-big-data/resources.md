@@ -15,10 +15,9 @@ Kubernetes is supported as a mainline Spark scheduler since [release 2.3][https:
 
 ##### Activities 
 
-Work is underway for Spark 2.4 to improve support and integration with HDFS.
-* Design Document [How Spark on Kubernetes will access Secure HDFS][https://docs.google.com/document/d/1RBnXD9jMDjGonOdKJ2bA1lN4AAV_1RwpU_ewFuCNWKg/edit#heading=h.verdza2f4fyd]  
-* [][]  
-* [][]  
+* Work is underway for Spark 2.4 to improve support and integration with HDFS.
+  * Design Document [How Spark on Kubernetes will access Secure HDFS][https://docs.google.com/document/d/1RBnXD9jMDjGonOdKJ2bA1lN4AAV_1RwpU_ewFuCNWKg/edit#heading=h.verdza2f4fyd]  
+* shuffle service design
 
 ### HDFS
 
@@ -77,9 +76,9 @@ Confluent is working on an operator for Kafka.
 
 ##### Status
 
-[Pulsar supports running on Kubernetes][https://pulsar.apache.org/docs/latest/deployment/Kubernetes/] 
+Pulsar supports [running on Kubernetes][https://pulsar.apache.org/docs/latest/deployment/Kubernetes/]. 
 
 ##### Activities
 
-TODO
+No current activities known.
 
