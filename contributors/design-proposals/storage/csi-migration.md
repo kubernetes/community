@@ -59,10 +59,12 @@ Alpha [1.14]
 * Proof of concept migration of at least 2 storage plugins [AWS, GCE]
 * Framework for plugin migration built for Dynamic provisioning, pre-provisioned
   volumes, and in-tree volumes
+* Manual installation of drivers
 
 Beta [Target 1.15]
 * On by default
 * Migrate all of the cloud provider plugins*
+* Plugin installation solved
 
 GA [TBD]
 * Feature on by default, per-plugin toggle on for relevant cloud provider by
@@ -320,6 +322,88 @@ with minimal disruption to users would be:
 
 And at this point users doing their own deployment and not installing the GCE PD
 CSI driver encounter an error.
+
+## Plugin Availability (Installation)
+When Migration goes Beta and is turned on by default we have the issue of how to
+get the drivers on to the clusters. We have to consider what to do with both new
+clusters, as well as existing clusters that may already be using storage. We
+also have to consider what to do with both cloud storage solutions, and all the
+other non-cloud specific drivers.
+
+### New Clusters (Cloud Drivers)
+For new clusters we can modify the `cluster-up` scripts to deploy the cloud
+storage drivers automatically with cluster bring-up depending on which cloud the
+cluster is being brought up on. For example if we `cluster-up` on GCE we would
+just install the GCE PD CSI Driver by default. Each Cloud Provider can also
+provide their own mechanism adding drivers in their own managed solutions.
+
+### Upgraded Clusters (Cloud Drivers)
+For upgraded clusters the respective cloud drivers should be installed on
+upgrade. If there is no good universal hook to install things onto a cluster on
+upgrade then we fallback to the behavior described in the next section "Missing
+Drivers."
+
+### Non-Cloud and Missing Drivers
+For non-cloud and other miscellaneous missing drivers the question of
+installation becomes more nuanced. We have to strike a balance between
+unexpected resource consumption (installing everything would be unnecessary and
+wasteful) and user grief (in-tree drivers no longer work because CSI Drivers are
+not installed). There are a couple options we could take here:
+
+#### Automatic Installation
+One option is to create a tool that installs CSI Drivers automatically based on
+storage classes present. Since the storage classes for in-tree plugins have
+"well known" provisioner names we could concieve of a tool that scans all
+storage classes in the system and installs the drivers present in the storage
+classes on the cluster. This tool could potentially also be run as a controller
+that watches storage classes that acts whenever a storage class is updated,
+created, or deleted.
+
+Pros:
+* All "used" drivers are installed
+* All "unused" drivers can be uninstalled
+* Set it and forget it
+* Does not affect user workloads (all the work and changes happen on the admin
+  side when storage classes change)
+
+Cons:
+* Extra controller watching the Storage Class API
+* Tool has a dependency on CSI Driver Registry to know what drivers are already
+  installed
+
+Another option is to install the driver on first use of the plugin, when we try
+to use an in-tree plugin we check for existence of the driver and install it if
+it doesn't exist. Pros:
+* No manual intervention necessary
+* Drivers installed if and only if they are necessary
+
+Cons:
+* Hard to tell whether driver exists or just in transient failure
+* Resource usage inscreases because of driver deployment at unexpected time
+  (attach of a volume)
+* Latency for first usage of in-tree driver
+
+
+#### Manual Installation
+A manual installation option (that can also be used as fallback if automatic
+installation fails or is not done) also requires some choosing. The main concern
+here is that the controllers should not panic when the drivers do not exist or
+are not responding. The ideal situation is that they print out a nice error
+message such as "Your administrator has turned on the CSI Migration feature, in
+order to continue using this plugin please contact your administrator to install
+the CSI DRIVER (LINK)." This could be enforced as a validating admission webhook
+for new objects, as well as in the operation generator layer for existing
+objects or ones that were not caught by the admission validation (we have CSI
+Driver Registration objects now to see what drivers are installed).
+
+#### Installation Conclusions
+The problem with using a Manual installation option only is that this "breaks
+the in-tree API" that we are trying our hardest not to break. The Manual
+Installation option should be implemented as a backup but should only be
+encountered in a situation where the Automatic Installation method has either
+failed or did not run. Based on the fact that we want to minimize user
+disruption, it seems that the best Automatic Installation method to use is the
+installation tool that runs as a controller.
 
 ## Testing
 ### Standard
