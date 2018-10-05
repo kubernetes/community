@@ -894,9 +894,9 @@ sigs:
       - name: Andrew Chen
         github: chenopis
         company: Google
-      - name: Jared Bhatti
-        github: jaredbhatti
-        company: Google
+      - name: Jennifer Rondeau
+        github: bradamant3
+        company: Heptio
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -927,15 +927,6 @@ sigs:
       - name: sig-docs-ja-owners
         description: Japanese L10n Repository Owners
     subprojects:
-    - name: kubernetes-docs-ja
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-ja/master/OWNERS
-    - name: kubernetes-docs-ko
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-ko/master/OWNERS
-    - name: kubernetes-docs-zh
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-zh/master/OWNERS
     - name: reference-docs
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
