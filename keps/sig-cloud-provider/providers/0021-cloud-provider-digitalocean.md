@@ -54,23 +54,23 @@ The existing repository hosting the [DigitalOcean cloud controller manager](http
 
 ### User Experience Reports
 
-DigitalOcean recently announced a [Kubernetes offering](https://www.digitalocean.com/products/kubernetes/). Many users have already signed up for early access. DigitalOcean is also a gold member of the CNCF.
+DigitalOcean recently announced a [Kubernetes offering](https://www.digitalocean.com/products/kubernetes/). Many users have already signed up for early access.
 
 ### Testgrid Integration
 
-TODO
+DigitalOcean uploads conformance test results for every patch release to testgrid. You can see the results [here](https://k8s-testgrid.appspot.com/conformance-cloud-provider-digitalocean#Summary).
 
 ### CNCF Certified Kubernetes
 
-TODO
+DigitalOcean's Certified Kubernetes offering is underway and several other certified Kubernetes offerings are [deployed on top of DigitalOcean](https://github.com/cncf/k8s-conformance/search?q=digitalocean&unscoped_q=digitalocean).
 
 ### Documentation
 
-TODO
+Documentation for the DigitalOcean provider can be found [here](https://github.com/digitalocean/digitalocean-cloud-controller-manager/tree/master/docs) as per [KEP-19](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0019-cloud-provider-documentation.md).
 
 ### Technical Leads are members of the Kubernetes Organization
 
-TODO
+All subproject leads listed below are members of the Kubernetes organization.
 
 ## Proposal
 
