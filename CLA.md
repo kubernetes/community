@@ -50,7 +50,7 @@ You must also set your [git e-mail](https://help.github.com/articles/setting-you
 to match this e-mail address as well.
 
 If you already submitted a PR you can correct your user.name and user.email
-and then use use `git commit --amend --reset-author` and then `git push --force` to
+and then use `git commit --amend --reset-author` and then `git push --force` to
 correct the PR.
 
 #### 5. Look for an email indicating successful signup.
