@@ -1078,7 +1078,7 @@ scenarios to keep equivalence class cache up to date:
 - on PV add/delete
 
   When PVs are created or deleted, available PVs to choose from for volume
-  scheduling will change, we need to to invalidate CheckVolumeBinding
+  scheduling will change, we need to invalidate CheckVolumeBinding
   predicate.
 
 - on PV update
