@@ -894,9 +894,9 @@ sigs:
       - name: Andrew Chen
         github: chenopis
         company: Google
-      - name: Jared Bhatti
-        github: jaredbhatti
-        company: Google
+      - name: Jennifer Rondeau
+        github: bradamant3
+        company: Heptio
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
