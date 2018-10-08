@@ -56,7 +56,7 @@ If you want your PR to get merged, it needs the following required labels and mi
 <td>Required Labels</td>
 <td>
 <ul>
-<li>/milestone {v1.y}</li>
+<!--Weeks 1-8-->
 <li>/sig {name}</li>
 <li>/kind {type}</li>
 <li>/lgtm</li>
@@ -65,6 +65,7 @@ If you want your PR to get merged, it needs the following required labels and mi
 </td>
 <td>
 <ul>
+<!--Week 9-->
 <li>/milestone {v1.y}</li>
 <li>/sig {name}</li>
 <li>/kind {type}</li>
@@ -75,6 +76,7 @@ If you want your PR to get merged, it needs the following required labels and mi
 </td>
 <td>
 <ul>
+<!--Weeks 10-12-->
 <li>/milestone {v1.y}</li>
 <li>/sig {name}</li>
 <li>/kind {bug, failing-test}</li>
@@ -85,6 +87,7 @@ If you want your PR to get merged, it needs the following required labels and mi
 </td>
 <td>
 <ul>
+<!--Weeks 12+-->
 <li>/milestone {v1.y}</li>
 <li>/sig {name}</li>
 <li>/kind {bug, failing-test}</li>
