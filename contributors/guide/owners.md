@@ -209,21 +209,15 @@ is the state of today.
 
 ## Automation using OWNERS files
 
-### ~[`mungegithub`](https://git.k8s.io/test-infra/mungegithub)~ is deprecated
+Kubernetes uses the Prow Blunderbuss plugin and Tide.
+Tide uses GitHub queries to select PRs into “tide pools”, runs as many in a
+batch as it can (“tide comes in”), and merges them (“tide goes out”).
 
-Mungegithub's blunderbuss and submit-queue mungers are currently used for kubernetes/kubernetes. Their
-equivalents are the prow blunderbuss plugin, and prow's tide cmd.  These docs will be removed once
-kubernetes/kubernetes has transitioned over to tide.
-
-~Mungegithub polls GitHub, and "munges" things it finds, including issues and pull requests. It is
-stateful, in that restarting it means it loses track of which things it has munged at what time.~
-
-- ~[munger:
-  blunderbuss](https://git.k8s.io/test-infra/mungegithub/mungers/blunderbuss.go)~
-  - ~responsible for determining **reviewers** and assigning to them~
-- [munger:
-  submit-queue](https://git.k8s.io/test-infra/mungegithub/mungers/submit-queue.go)
-  - responsible for merging PR's
+- [Blunderbuss plugin](https://git.k8s.io/test-infra/prow/plugins/blunderbuss):
+  - responsible for determining **reviewers**
+- [Tide](https://git.k8s.io/test-infra/prow/cmd/tide):
+  - responsible for automatically running batch tests and merging multiple PRs together whenever possible.
+  - responsible for retriggering stale PR tests.
   - responsible for updating a GitHub status check explaining why a PR can't be merged (eg: a
     missing `lgtm` or `approved` label)
 

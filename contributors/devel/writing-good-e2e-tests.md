@@ -10,7 +10,7 @@ designing, writing and debugging your end-to-end tests.  In
 particular, "flaky" tests, which pass most of the time but fail
 intermittently for difficult-to-diagnose reasons are extremely costly
 in terms of blurring our regression signals and slowing down our
-automated merge queue.  Up-front time and effort designing your test
+automated merge velocity.  Up-front time and effort designing your test
 to be reliable is very well spent.  Bear in mind that we have hundreds
 of tests, each running in dozens of different environments, and if any
 test in any test environment fails, we have to assume that we
