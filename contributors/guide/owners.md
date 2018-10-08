@@ -84,7 +84,7 @@ filters:
 Instead, set a `.*` key inside `filters` (as shown in the previous example).
 
 **WARNING**: The `approve` plugin [does not currently respect `filters`][test-infra-7690].
-Until that is fixed, `filters` should only be used for the the `labels` key (as shown in the above example).
+Until that is fixed, `filters` should only be used for the `labels` key (as shown in the above example).
 
 ### OWNERS_ALIASES
 

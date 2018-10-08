@@ -201,7 +201,7 @@ Once the following conditions are true, the external-attacher should call `Contr
 Before starting the `ControllerPublishVolume` operation, the external-attacher should add these finalizers to these Kubernetes API objects:
 
 * To the `VolumeAttachment` so that when the object is deleted, the external-attacher has an opportunity to detach the volume first. External attacher removes this finalizer once the volume is fully detached from the node.
-* To the `PersistentVolume` referenced by `VolumeAttachment` so the the PV cannot be deleted while the volume is attached. External attacher needs information from the PV to perform detach operation. The attacher will remove the finalizer once all `VolumeAttachment` objects that refer to the PV are deleted, i.e. the volume is detached from all nodes.
+* To the `PersistentVolume` referenced by `VolumeAttachment` so the PV cannot be deleted while the volume is attached. External attacher needs information from the PV to perform detach operation. The attacher will remove the finalizer once all `VolumeAttachment` objects that refer to the PV are deleted, i.e. the volume is detached from all nodes.
 
 If the operation completes successfully, the external-attacher will:
 
@@ -587,7 +587,7 @@ In order to upgrade drivers using the recommended driver deployment mechanism, t
 #### Deleting Volumes
 
 1. A user deletes a `PersistentVolumeClaim` object bound to a CSI volume.
-2. The external-provisioner for the CSI driver sees the the `PersistentVolumeClaim` was deleted and triggers the retention policy:
+2. The external-provisioner for the CSI driver sees the `PersistentVolumeClaim` was deleted and triggers the retention policy:
   1. If the retention policy is `delete`
     1. The external-provisioner triggers volume deletion by issuing a `DeleteVolume` call against the CSI volume plugin container.
     2. Once the volume is successfully deleted, the external-provisioner deletes the corresponding `PersistentVolume` object.

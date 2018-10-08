@@ -286,7 +286,7 @@ enumerated the key idea elements:
    + [E1] Master rejects LRS creation (for known or unknown
       reason). In this case another attempt to create a LRS should be
       attempted in 1m or so. This action can be tied with
-      [[I5]](#heading=h.ififs95k9rng). Until the the LRS is created
+      [[I5]](#heading=h.ififs95k9rng). Until the LRS is created
       the situation is the same as [E5]. If this happens multiple
       times all due replicas should be moved elsewhere and later moved
       back once the LRS is created.

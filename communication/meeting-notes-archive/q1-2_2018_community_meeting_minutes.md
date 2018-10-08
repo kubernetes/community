@@ -1737,7 +1737,7 @@
         *   Ask current contributors anything on slack #meet-our-contributors - testing infra, how to make first time contribution, how did they get involved in k8s
     *   Shoutouts!
         *   None on slack this week, thank someone in #shoutouts!
-        *   Top 5 in the the Kubernetes StackOverflow tag for the week: Radek "Goblin" Pieczonka, aerokite, Vikram Hosakote, Jonah Benton, and fiunchinho
+        *   Top 5 in the Kubernetes StackOverflow tag for the week: Radek "Goblin" Pieczonka, aerokite, Vikram Hosakote, Jonah Benton, and fiunchinho
 
 
 ## February 22, 2018 - ([recording](https://www.youtube.com/watch?v=7pN0xdiFqPE))
