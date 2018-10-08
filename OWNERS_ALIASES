@@ -142,6 +142,10 @@ aliases:
   wg-resource-management-leads:
     - vishh
     - derekwaynecarr
+  wg-security-audit-leads:
+    - jessfraz
+    - aasmall
+    - joelsmith
 ## BEGIN CUSTOM CONTENT
   steering-committee:
     - bgrant0607
