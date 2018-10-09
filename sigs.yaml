@@ -2124,3 +2124,26 @@ workinggroups:
     contact:
       slack: wg-iot-edge
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge
+  - name: Security Audit
+    dir: wg-security-audit
+    mission_statement: >
+      Perform a security audit on k8s with a vendor and produce as artifacts a threat model and whitepaper outlining everything found during the audit.
+    charter_link:
+    leadership:
+      chairs:
+      - name: Jessie Frazelle
+        github: jessfraz
+        company: Microsoft
+      - name: Aaron Small
+        github: aasmall
+        company: Google
+      - name: Joel Smith
+        github: joelsmith
+        company: Red Hat
+    meetings:
+    - description: Regular WG Meeting
+      day: Monday
+      time: "13:00"
+      tz: "PT (Pacific Time)"
+      frequency: weekly
+      url: https://docs.google.com/document/d/1RbC4SBZBlKth7IjYv_NaEpnmLGwMJ0ElpUOmsG-bdRA/edit
