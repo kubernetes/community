@@ -7,7 +7,6 @@
   - [Building Kubernetes and Running the Tests](#building-kubernetes-and-running-the-tests)
     - [Cleaning up](#cleaning-up)
   - [Advanced testing](#advanced-testing)
-    - [Installing/updating kubetest](#installingupdating-kubetest)
     - [Extracting a specific version of kubernetes](#extracting-a-specific-version-of-kubernetes)
     - [Bringing up a cluster for testing](#bringing-up-a-cluster-for-testing)
     - [Federation e2e tests](#federation-e2e-tests)
@@ -66,7 +65,12 @@ should also read [Writing Good e2e Tests](writing-good-e2e-tests.md)
 ## Building Kubernetes and Running the Tests
 
 There are a variety of ways to run e2e tests, but we aim to decrease the number
-of ways to run e2e tests to a canonical way: `hack/e2e.go`.
+of ways to run e2e tests to a canonical way: `kubetest`.
+
+You can install `kubetest` as follows:
+```sh
+go get -u k8s.io/test-infra/kubetest
+```
 
 You can run an end-to-end test which will bring up a master and nodes, perform
 some tests, and then tear everything down. Make sure you have followed the
@@ -81,33 +85,33 @@ you can do so via `make WHAT=test/e2e/e2e.test`, and then re-running the ginkgo 
 To build Kubernetes, up a cluster, run tests, and tear everything down, use:
 
 ```sh
-go run hack/e2e.go -- --build --up --test --down
+kubetest --build --up --test --down
 ```
 
 If you'd like to just perform one of these steps, here are some examples:
 
 ```sh
 # Build binaries for testing
-go run hack/e2e.go -- --build
+kubetest --build
 
 # Create a fresh cluster.  Deletes a cluster first, if it exists
-go run hack/e2e.go -- --up
+kubetest --up
 
 # Run all tests
-go run hack/e2e.go -- --test
+kubetest --test
 
 # Run tests matching the regex "\[Feature:Performance\]" against a local cluster
 # Specify "--provider=local" flag when running the tests locally
-go run hack/e2e.go -- --test --test_args="--ginkgo.focus=\[Feature:Performance\]" --provider=local
+kubetest --test --test_args="--ginkgo.focus=\[Feature:Performance\]" --provider=local
 
 # Conversely, exclude tests that match the regex "Pods.*env"
-go run hack/e2e.go -- --test --test_args="--ginkgo.skip=Pods.*env"
+kubetest --test --test_args="--ginkgo.skip=Pods.*env"
 
 # Run tests in parallel, skip any that must be run serially
-GINKGO_PARALLEL=y go run hack/e2e.go -- --test --test_args="--ginkgo.skip=\[Serial\]"
+GINKGO_PARALLEL=y kubetest --test --test_args="--ginkgo.skip=\[Serial\]"
 
 # Run tests in parallel, skip any that must be run serially and keep the test namespace if test failed
-GINKGO_PARALLEL=y go run hack/e2e.go -- --test --test_args="--ginkgo.skip=\[Serial\] --delete-namespace-on-failure=false"
+GINKGO_PARALLEL=y kubetest --test --test_args="--ginkgo.skip=\[Serial\] --delete-namespace-on-failure=false"
 
 # Flags can be combined, and their actions will take place in this order:
 # --build, --up, --test, --down
@@ -115,18 +119,18 @@ GINKGO_PARALLEL=y go run hack/e2e.go -- --test --test_args="--ginkgo.skip=\[Seri
 # You can also specify an alternative provider, such as 'aws'
 #
 # e.g.:
-go run hack/e2e.go -- --provider=aws --build --up --test --down
+kubetest --provider=aws --build --up --test --down
 
 # -ctl can be used to quickly call kubectl against your e2e cluster. Useful for
-# cleaning up after a failed test or viewing logs. 
+# cleaning up after a failed test or viewing logs.
 # kubectl output is default on, you can use --verbose-commands=false to suppress output.
-go run hack/e2e.go -- -ctl='get events'
-go run hack/e2e.go -- -ctl='delete pod foobar'
+kubetest -ctl='get events'
+kubetest -ctl='delete pod foobar'
 ```
 
 The tests are built into a single binary which can be used to deploy a
 Kubernetes system or run tests against an already-deployed Kubernetes system.
-See `go run hack/e2e.go -- --help` (or the flag definitions in `hack/e2e.go`) for
+See `kubetest --help` (or the flag definitions in `hack/e2e.go`) for
 more options, such as reusing an existing cluster.
 
 ### Cleaning up
@@ -136,26 +140,11 @@ something goes wrong and you still have some VMs running you can force a cleanup
 with this command:
 
 ```sh
-go run hack/e2e.go -- --down
+kubetest --down
 ```
 
 ## Advanced testing
 
-### Installing/updating kubetest
-
-The logic in `e2e.go` moved out of the main kubernetes repo to test-infra.
-The remaining code in `hack/e2e.go` installs `kubetest` and sends it flags.
-It now lives in [kubernetes/test-infra/kubetest](https://git.k8s.io/test-infra/kubetest).
-By default `hack/e2e.go` updates and installs `kubetest` once per day.
-Control the updater behavior with the `--get` and `--old` flags:
-The `--` flag separates updater and kubetest flags (kubetest flags on the right).
-
-```sh
-go run hack/e2e.go --get=true --old=1h -- # Update every hour
-go run hack/e2e.go --get=false -- # Never attempt to install/update.
-go install k8s.io/test-infra/kubetest  # Manually install
-go get -u k8s.io/test-infra/kubetest  # Manually update installation
-```
 ### Extracting a specific version of kubernetes
 
 The `kubetest` binary can download and extract a specific version of kubernetes,
@@ -166,28 +155,28 @@ There are a variety of values to pass this flag:
 
 ```sh
 # Official builds: <ci|release>/<latest|stable>[-N.N]
-go run hack/e2e.go -- --extract=ci/latest --up  # Deploy the latest ci build.
-go run hack/e2e.go -- --extract=ci/latest-1.5 --up  # Deploy the latest 1.5 CI build.
-go run hack/e2e.go -- --extract=release/latest --up  # Deploy the latest RC.
-go run hack/e2e.go -- --extract=release/stable-1.5 --up  # Deploy the 1.5 release.
+kubetest --extract=ci/latest --up  # Deploy the latest ci build.
+kubetest --extract=ci/latest-1.5 --up  # Deploy the latest 1.5 CI build.
+kubetest --extract=release/latest --up  # Deploy the latest RC.
+kubetest --extract=release/stable-1.5 --up  # Deploy the 1.5 release.
 
 # A specific version:
-go run hack/e2e.go -- --extract=v1.5.1 --up  # Deploy 1.5.1
-go run hack/e2e.go -- --extract=v1.5.2-beta.0  --up  # Deploy 1.5.2-beta.0
-go run hack/e2e.go -- --extract=gs://foo/bar  --up  # --stage=gs://foo/bar
+kubetest --extract=v1.5.1 --up  # Deploy 1.5.1
+kubetest --extract=v1.5.2-beta.0  --up  # Deploy 1.5.2-beta.0
+kubetest --extract=gs://foo/bar  --up  # --stage=gs://foo/bar
 
 # Whatever GKE is using (gke, gke-staging, gke-test):
-go run hack/e2e.go -- --extract=gke  --up  # Deploy whatever GKE prod uses
+kubetest --extract=gke  --up  # Deploy whatever GKE prod uses
 
 # Using a GCI version:
-go run hack/e2e.go -- --extract=gci/gci-canary --up  # Deploy the version for next gci release
-go run hack/e2e.go -- --extract=gci/gci-57  # Deploy the version bound to gci m57
-go run hack/e2e.go -- --extract=gci/gci-57/ci/latest  # Deploy the latest CI build using gci m57 for the VM image
+kubetest --extract=gci/gci-canary --up  # Deploy the version for next gci release
+kubetest --extract=gci/gci-57  # Deploy the version bound to gci m57
+kubetest --extract=gci/gci-57/ci/latest  # Deploy the latest CI build using gci m57 for the VM image
 
 # Reuse whatever is already built
-go run hack/e2e.go -- --up  # Most common. Note, no extract flag
-go run hack/e2e.go -- --build --up  # Most common. Note, no extract flag
-go run hack/e2e.go -- --build --stage=gs://foo/bar --extract=local --up  # Extract the staged version
+kubetest --up  # Most common. Note, no extract flag
+kubetest --build --up  # Most common. Note, no extract flag
+kubetest --build --stage=gs://foo/bar --extract=local --up  # Extract the staged version
 ```
 
 ### Bringing up a cluster for testing
@@ -327,7 +316,7 @@ Next, specify the docker repository where your ci images will be pushed.
 * Compile the binaries and build container images:
 
   ```sh
-  $ KUBE_RELEASE_RUN_TESTS=n KUBE_FASTBUILD=true go run hack/e2e.go -- -build
+  $ KUBE_RELEASE_RUN_TESTS=n KUBE_FASTBUILD=true kubetest -build
   ```
 
 * Push the federation container images
@@ -342,7 +331,7 @@ The following command will create the underlying Kubernetes clusters in each of 
 federation control plane in the cluster occupying the last zone in the `E2E_ZONES` list.
 
 ```sh
-$ go run hack/e2e.go -- --up
+$ kubetest --up
 ```
 
 #### Run the Tests
@@ -350,13 +339,13 @@ $ go run hack/e2e.go -- --up
 This will run only the `Feature:Federation` e2e tests. You can omit the `ginkgo.focus` argument to run the entire e2e suite.
 
 ```sh
-$ go run hack/e2e.go -- --test --test_args="--ginkgo.focus=\[Feature:Federation\]"
+$ kubetest --test --test_args="--ginkgo.focus=\[Feature:Federation\]"
 ```
 
 #### Teardown
 
 ```sh
-$ go run hack/e2e.go -- --down
+$ kubetest --down
 ```
 
 #### Shortcuts for test developers
@@ -417,20 +406,20 @@ In order to run an E2E test against a locally running cluster, first make sure
 to have a local build of the tests:
 
 ```sh
-go run hack/e2e.go -- --build
+kubetest --build
 ```
 
 Then point the tests at a custom host directly:
 
 ```sh
 export KUBECONFIG=/path/to/kubeconfig
-go run hack/e2e.go -- --provider=local --test
+kubetest --provider=local --test
 ```
 
 To control the tests that are run:
 
 ```sh
-go run hack/e2e.go -- --provider=local --test --test_args="--ginkgo.focus=Secrets"
+kubetest --provider=local --test --test_args="--ginkgo.focus=Secrets"
 ```
 
 You will also likely need to specify `minStartupPods` to match the number of
@@ -438,7 +427,7 @@ nodes in your cluster. If you're testing against a cluster set up by
 `local-up-cluster.sh`, you will need to do the following:
 
 ```sh
-go run hack/e2e.go -- --provider=local --test --test_args="--minStartupPods=1 --ginkgo.focus=Secrets"
+kubetest --provider=local --test --test_args="--minStartupPods=1 --ginkgo.focus=Secrets"
 ```
 
 ### Version-skewed and upgrade testing
@@ -470,7 +459,7 @@ export CLUSTER_API_VERSION=${OLD_VERSION}
 
 # Deploy a cluster at the old version; see above for more details
 cd ./kubernetes_old
-go run ./hack/e2e.go -- --up
+kubetest --up
 
 # Upgrade the cluster to the new version
 #
@@ -478,11 +467,11 @@ go run ./hack/e2e.go -- --up
 #
 # You can target Feature:MasterUpgrade or Feature:ClusterUpgrade
 cd ../kubernetes
-go run ./hack/e2e.go -- --provider=gke --test --check-version-skew=false --test_args="--ginkgo.focus=\[Feature:MasterUpgrade\]"
+kubetest --provider=gke --test --check-version-skew=false --test_args="--ginkgo.focus=\[Feature:MasterUpgrade\]"
 
 # Run old tests with new kubectl
 cd ../kubernetes_old
-go run ./hack/e2e.go -- --provider=gke --test --test_args="--kubectl-path=$(pwd)/../kubernetes/cluster/kubectl.sh"
+kubetest --provider=gke --test --test_args="--kubectl-path=$(pwd)/../kubernetes/cluster/kubectl.sh"
 ```
 
 If you are just testing version-skew, you may want to just deploy at one
@@ -494,14 +483,14 @@ upgrade process:
 
 # Deploy a cluster at the new version
 cd ./kubernetes
-go run ./hack/e2e.go -- --up
+kubetest --up
 
 # Run new tests with old kubectl
-go run ./hack/e2e.go -- --test --test_args="--kubectl-path=$(pwd)/../kubernetes_old/cluster/kubectl.sh"
+kubetest --test --test_args="--kubectl-path=$(pwd)/../kubernetes_old/cluster/kubectl.sh"
 
 # Run old tests with new kubectl
 cd ../kubernetes_old
-go run ./hack/e2e.go -- --test --test_args="--kubectl-path=$(pwd)/../kubernetes/cluster/kubectl.sh"
+kubetest --test --test_args="--kubectl-path=$(pwd)/../kubernetes/cluster/kubectl.sh"
 ```
 
 #### Test jobs naming convention
@@ -580,6 +569,21 @@ breaking changes, it does *not* block PR merges, and thus should run in
 some separate test suites owned by the feature owner(s)
 (see [Continuous Integration](#continuous-integration) below).
 
+  - `[Conformance]`: Designate that this test is included in the Conformance
+test suite for [Conformance Testing](conformance-tests.md). This test must
+meet a number of [requirements](conformance-tests.md#conformance-test-requirements)
+to be eligible for this tag. This tag does not supersed any other labels.
+
+  - The following tags are not considered to be exhaustively applied, but are
+intended to further categorize existing `[Conformance]` tests, or tests that are
+being considered as candidate for promotion to `[Conformance]` as we work to
+refine requirements:
+    - `[Privileged]`: This is a test that requires privileged access
+    - `[Internet]`: This is a test that assumes access to the public internet
+    - `[Deprecated]`: This is a test that exercises a deprecated feature
+    - `[Alpha]`: This is a test that exercises an alpha feature
+    - `[Beta]`: This is a test that exercises a beta feature
+
 Every test should be owned by a [SIG](/sig-list.md),
 and have a corresponding `[sig-<name>]` label.
 
@@ -598,10 +602,6 @@ Note that advanced testing parameters, and hierarchichally defined parameters, a
 In time, it is our intent to add or autogenerate a sample viper configuration that includes all e2e parameters, to ship with kubernetes.
 
 ### Conformance tests
-
-Finally, `[Conformance]` tests represent a subset of the e2e-tests we expect to
-pass on **any** Kubernetes cluster. The `[Conformance]` label does not supersede
-any other labels.
 
 For more information on Conformance tests please see the [Conformance Testing](conformance-tests.md)
 
