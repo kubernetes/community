@@ -39,9 +39,9 @@ managed by the Kubernetes project or use a different name.
 
 ## Transferring Outside Code Into A Kubernetes Organization
 
-Due to licensing and CLA issues, prior to transferring software into a Kubernetes
-managed organization there is some due diligence that needs to occur. Please
-contact the steering committee and CNCF prior to moving any code in.
+Due to licensing and CLA issues, prior to transferring software into a
+Kubernetes managed organization there is some due diligence that needs to occur.
+Please contact the steering committee and CNCF prior to moving any code in.
 
 It is easier to start new code in a Kubernetes organization than it is to
 transfer in existing code.
@@ -53,8 +53,9 @@ Each organization should have the following teams:
 - teams for each repo `foo`
   - `foo-admins`: granted admin access to the `foo` repo
   - `foo-maintainers`: granted write access to the `foo` repo
-  - `foo-reviewers`: granted read access to the `foo` repo; intended to be used as
-    a notification mechanism for interested/active contributors for the `foo` repo
+  - `foo-reviewers`: granted read access to the `foo` repo; intended to be used
+    as a notification mechanism for interested/active contributors for the `foo`
+    repo
 - a `bots` team
   - should contain bots such as @k8s-ci-robot and @thelinuxfoundation that are
     necessary for org and repo automation
@@ -69,18 +70,20 @@ for all orgs going forward.  Notable discrepancies at the moment:
 
 - `foo-reviewers` teams are considered a historical subset of
   `kubernetes-sig-foo-pr-reviews` teams and are intended mostly as a fallback
-  notification mechanism when requested reviewers are being unresponsive.  Ideally
-  OWNERS files can be used in lieu of these teams.
+  notification mechanism when requested reviewers are being unresponsive.
+  Ideally OWNERS files can be used in lieu of these teams.
 - `admins-foo` and `maintainers-foo` teams as used by the kubernetes-incubator
   org. This was a mistake that swapped the usual convention, and we would like
   to rename the team
 
 ## Repository Guidance
 
-Repositories have additional guidelines and requirements, such as the use of
-CLA checking on all contributions. For more details on those please see the
-[Kubernetes Template Project](https://github.com/kubernetes/kubernetes-template-project), and the [Repository Guidelines](kubernetes-repositories.md)
+Repositories have additional guidelines and requirements, such as the use of CLA
+checking on all contributions. For more details on those please see the
+[Kubernetes Template
+Project](https://github.com/kubernetes/kubernetes-template-project), and the
+[Repository Guidelines](kubernetes-repositories.md)
 
-
-[GitHub Administration Team]: /github-management/README.md#github-administration-team
+[GitHub Administration Team]:
+/github-management/README.md#github-administration-team
 [@kubernetes/owners]: https://github.com/orgs/kubernetes/teams/owners
