@@ -87,7 +87,7 @@ allowed to use that new dedicated node group.
 
 ```go
 // The node this Taint is attached to has the effect "effect" on
-// any pod that that does not tolerate the Taint.
+// any pod that does not tolerate the Taint.
 type Taint struct {
   Key string  `json:"key" patchStrategy:"merge" patchMergeKey:"key"`
   Value string  `json:"value,omitempty"`
