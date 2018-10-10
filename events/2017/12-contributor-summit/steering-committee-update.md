@@ -10,7 +10,7 @@ We had a meeting, and the two big items we'd been pushing on hard were:
 * votining in the proposals in the bootstrap committee
 * how we're going to handle incubator and contrib etc.
 
-Incubator/contrib: one of our big concerns are what the the consequences for projects and ecosystems.
+Incubator/contrib: one of our big concerns are what the consequences for projects and ecosystems.
 We're still discussing it, please be patient.  In the process of solving the incubator process, we have to answer
 what is kubernetes, which is probably SIGs, but what's a SIG, and who decides, and ...  we end up having to examine
 everything.  In terms of deciding what is and isn't kubernetes, we want to have that discussion in the open.

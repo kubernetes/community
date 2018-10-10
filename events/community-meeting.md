@@ -48,7 +48,7 @@ The first 10 minutes of a meeting is dedicated to demonstrations from the commun
 These demos are noted at the top of the community document. 
 There is a hard stop of the demo at 10 minutes, with up to 5 more minutes for questions.
 Feel free to add your demo request to the bottom of the list, then one of the organizers will get back to you to schedule an exact date. 
-Demo submissions MUST follow the the requirements listed below. 
+Demo submissions MUST follow the requirements listed below. 
 
 ### Requirements
 
