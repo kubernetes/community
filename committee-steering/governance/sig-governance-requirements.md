@@ -72,7 +72,7 @@ All technical assets *MUST* be owned by exactly 1 SIG subproject.  The following
   - *SHOULD* define target metrics for health signal (e.g. broken tests fixed within N days)
   - *SHOULD* define process for meeting target metrics (e.g. all tests run as presubmit, build cop, etc)
 
-[lazy-consensus]: http://communitymgt.wikia.com/wiki/Lazy_consensus
+[lazy-consensus]: http://en.osswiki.info/concepts/lazy_consensus
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote
 [warnocks-dilemma]: http://communitymgt.wikia.com/wiki/Warnock%27s_Dilemma
 [slo]: https://en.wikipedia.org/wiki/Service_level_objective
