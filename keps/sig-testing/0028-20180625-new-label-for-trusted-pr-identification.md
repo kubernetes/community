@@ -78,6 +78,11 @@ This label will be added by members of the *trusted organization* for the reposi
    * for all PR without `ok-to-test` or `needs-ok-to-test`
    * if author is not a member of trusted org
    * add `ok-to-test`
+1. documentation updates
+   * edit all documentation references to `needs-ok-to-test`
+1. other cookie crumbs updates
+   * update infra links (eg: redirect https://go.k8s.io/needs-ok-to-test)
+   * update locations where edits are expected (eg: https://github.com/search?q=org%3Akubernetes+needs-ok-to-test&type=Code)
 1. PR: switch to `ok-to-test`
    * remove `needs-ok-to-test` from `missingLabels` in `prow/config.yaml`
    * edit `prow/config/jobs_test.go`
@@ -125,3 +130,6 @@ This would require adding automatically the `ok-to-test` label to member authore
 * 2018-07-09: KEP content LGTM during sig-testing presentation
 * 2018-07-24: KEP updated to keep `needs-ok-to-test` for better UX
 * 2018-09-03: KEP rewritten with template
+* 2018-10-04: KEP merged into master
+* 2018-10-08: start of implementation
+* 2018-10-10: `ok-to-test` label added
