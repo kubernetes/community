@@ -232,7 +232,7 @@ should copy control plane certificates from an existing control plane instance, 
 > in the machine where it is running, so it is not possible to copy automatically
 > certificates from remote locations.
 
-Please note that strictly speaking only ca, front-proxy-ca certificate and and service account key pair
+Please note that strictly speaking only ca, front-proxy-ca certificate and service account key pair
 are required to be equal among all control plane instances. Accordingly:
 
 - `kubeadm join --control-plane` will check for the mandatory certificates and fail fast if
