@@ -1042,7 +1042,7 @@
         **Help Wanted?**
 
         *   [SIG UI](https://github.com/kubernetes/community/blob/master/sig-ui/README.md) is looking for additional contributors (with javascript and/or go knowledge) and maintainers
-            *   [Piotr](https://github.com/bryk) and and [Konrad](https://github.com/konryd) from google have offered to bring folks up to speed.
+            *   [Piotr](https://github.com/bryk) and [Konrad](https://github.com/konryd) from google have offered to bring folks up to speed.
             *   Take a look at open issues to get started or reach out to their slack channel, mailing list, or next meeting.
             *   SIG UI mailing list: [https://groups.google.com/forum/#!forum/kubernetes-sig-ui](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)
 
