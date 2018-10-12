@@ -39,7 +39,7 @@ Subprojects that fall under SIG Cloud Provider may also be features in Kubernete
 
 ## Subproject Retirement
 
-Subprojects representing Kubernetes providers may be retired given they do not satisfy requirements for more than 6 months. Final decisions for retirement should be supported by a majority of SIG members using [lazy consensus](http://communitymgt.wikia.com/wiki/Lazy_consensus). Once retired any code related to that provider will be archived into the kubernetes-retired organization.
+Subprojects representing Kubernetes providers may be retired given they do not satisfy requirements for more than 6 months. Final decisions for retirement should be supported by a majority of SIG members using [lazy consensus](http://en.osswiki.info/concepts/lazy_consensus). Once retired any code related to that provider will be archived into the kubernetes-retired organization.
 
 Subprojects representing Kubernetes features may be retired at any point given a lack of development or a lack of demand. Final decisions for retirement should be supported by a majority of SIG members, ideally from every provider. Once retired, any code related to that subproject will be archived into the kubernetes-retired organization.
 
