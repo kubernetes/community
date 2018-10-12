@@ -433,12 +433,15 @@ sigs:
       - name: Stephen Augustus
         github: justaugustus
         company: Red Hat
-      - name: Shubheksha Jalan
-        github: shubheksha
+      - name: Dave Strebel
+        github: dstrebel
         company: Microsoft
       tech_leads:
       - name: Kal Khenidak
         github: khenidak
+        company: Microsoft
+      - name: Pengfei Ni
+        github: feiskyer
         company: Microsoft
     meetings:
     - description: Regular SIG Meeting
