@@ -763,299 +763,36 @@ them.  When a PV is released, then it will send the cleanup request to the worke
 Detailed design TBD
 
 
-### Phase 3: 1.11 Alpha
+### Phase 3: 1.13 Alpha
 
 #### Dynamic Provisioning
 
-The local volume provisioner will be enhanced to support dynamic provisioning of local storage,
-which depends on the newly introduced changes in [Volume Topology-aware Scheduling](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/volume-topology-scheduling.md),
-that is:
+Note: The origin design that based on existing static discovery plugin is out-of-date. And currently the thing is blocked by the capcity report issue. Here I list the thoughts inflight, to avoid readers being misled by the old information. It's far from a complete deisgn, but more of rough thoughts on which we hope to receive feedback from readers.
 
-1. When the feature gate `DynamicProvisioningScheduling` is enabled,
-the scheduler will verify a pod's volume requirements,
-and set an annotation `annSelectedNode` on PVCs that need provisioning.
-2. New fields `Capacity` will be added in `Status` of `StorageClass` to
-allow storage providers to report capacity limits per topology domain.
+##### Overall Thoughts
 
-The local volume provisioner needs to be updated in several areas to support dynamic provisioning.
+As we'll gradually switch all of the storages to CSI, we plan to construct a CSI driver for local storage, which will also be responsible for dynamically provisioning of local volumes. Users can still use the existing local storage plugin in external-storage repo to maintain local volumes in the "static way". The two plugins are completely independent.
 
-##### Backend Storage Management
+##### CSI Driver Details
 
-Mechanisms to manage local storage sources are varied.
-In addition to current `populator`, `deletor` and `discoverer`, a new component named
-`dynamicProvisioningManager` will be introduced in the plugin, to manage the backend storage.
+Different from other storages, we'll need to deploy a set of CSI provisioner on each of the nodes. We'll rely on feature volumeScheduling as a dependency. For local storage, the provisioner is only responsible for PVCs marked with "related plugin name + selected node annotation". That is, it only privision the pvcs that "scheduled" to its node.
 
-According to the input of classes in the configuration, there will be a list of `storageBackends`
-under the manager, to communicate with backend storages. `StorageBackend` is a general interface,
-each kind of storage should have its own implementation. `dynamicProvisioningManager` stores the
-backends according to storage classes, backends of different classes can be different.
-LVM backend will be introduced in alpha phase.
+###### Should Be Extensible Enough
 
-```
-storageBackends map[string]backend.StorageBackend
-```
+We plan to support lvm as backend for provision in the first stage. But on the other hand, we expect the plugin to be extensible Enough to support other kinds of storage mechanisms as well.
 
-During start-up, a new environment variable is needed for the provisioner DaemonSet:
+We'll introduce a backend layer to decouple underlying storage from the driver interface. The driver will maintain a backend map, keyed by StorageClass. It will initialize its backends according to configs(per StorageClass as well). When received a provision/deletion call for volumes of certain StorageClass, driver just call related backend for processing, but not be aware of its detail.
 
-* `PROVISIONER_NAME` to specify the name of the provisioner, its value matches the Provisioner
-specified in the StorageClass. It will be default to `local-volume-provisioner` if not specified.
+We can even have different backends for a same mechanism. Take lvm as an example, users might expect volume groups of diffrent types of disks (ssd, hhd) to be of different StorageClasses.
 
-**Note:** Currently we already have a `provisionerName` in `RuntimeConfig` of the plugin,
-which is in format of `local-volume-provisioner-${NODE_NAME}-${NODE_ID}`, it is annotated
-in PVs with `AnnProvisionedBy`, to indicate which PVs are up to a certain node.
-To distinguish it from the new env `PROVISIONER_NAME`, we will rename it to `provisionerTag`.
+###### Should Be Reliable Enough
 
-New field will be added into the configuration ConfigMap, to specify available
-volume group for lvm, the group should be created by the admin in advance:
+The call between CSI provisioner and driver is real time, and during volume deletion, it might taks quite a while to cleanup data on a volume. The connection between provisioner and driver for deleting call is likely to timeout. To avoid retrying constantly in driver, we will add a operation queue into our csi driver to disallow multiple operations on the same volume.
 
-```
-kind: ConfigMap
-metadata:
-  name: local-volume-config
-  namespace: kube-system
-data:
- storageClassMap: |
-    local-static:
-      hostDir: "/mnt/ssds"
-      mountDir: "/local-ssds"
-    local-dynamic:
-      lvm:
-        volumeGroup: "volumeGroup1"
-      blockCleanerCommand:
-        - "/scripts/dd_zero.sh"
-        - "2"
-```
+##### The way to report capacity
 
-A manager instance is responsible for:
+For local storage, we'll need a place to report available capacity of each nodes, so that scheduler/controller can be aware of this, and choose the "right" node for provision.
 
-1. Implement function `GetCapacity(storageClass string) int64` to report capacity of
-certain class.
-2. Implement function `CreateLocalVolume(claim *v1.PersistentVolumeClaim) error`
-to create PVs and the local volumes behind them.
-3. Implement function `DeleteLocalVolume(pv *v1.PersistentVolume) error` to
-clean up the local volume behind a PV.
+We've got an internal draft of the design. It is considered a general one, storages can report capacity per storageclass per topology dimension (e.g. per AZ, per region, and for local storage per node). But on the another hand, we're concerned if it's overengineering, as in fact we don't have a strong use case of capacity reporting for other storage types.
 
-##### LVM Backend Details
-
-LVM backend will be introduced in alpha phase. Here are some details about it.
-
-###### Required Paths
-
-As the provisioner plugin runs as a container, we'll need to mount the root path of LVM into
-the container. The path is default to "/dev". Theoretically, the LVM root path can be modified
-to other paths, but we haven't see practical use cases so far. Besides, if a user decide to
-mount it to another path, he/she will have to modify the config of LVM and udev in the
-provisioner image manually. So for the first phase, we'll hard code the paths to "/dev",
-and make it configurable in later releases if the need ever arises.
-
-###### Parameters To Initialize a Backend
-
-Volume group name and the root path of LVM (default to "/dev") are needed to initialize
-a `LvmBackend`:
-
-```
-NewLvmBackend(volumeGroup, rootPath string) *LvmBackend
-```
-
-###### Responsibility
-
-The backend is responsible for creating and deleting volumes (LVs) when it's called by
-the `dynamicProvisioningManager`. To create a volume, the manager will need to pass
-volume name and volume size into the backend; and volume name is needed to delete a LV.
-
-The name of a volume will be same to its PV object. Thus, the path of a created LV will be:
-
-```
-/dev/{volumeGroupName}/{pvName}
-```
-
-Besides, In order to report the capacity, the backend should also be able to fetch `VG Size`
-from its group.
-
-###### Recovery On Reboot/Failure
-
-We'll expose the path of the created LV as the local volume path, without any formating or
-mounting, and leave the part to in-tree plugin. Thus, on reboot, the provisioner does not
-need to do any formating/remount for recovery.
-
-The only thing to be concerned about is when the etcd experienced a data backup and recovery,
-there might be an inconsistency between stored PVs and existing LVs on the node. We may need to
-reconcile the PVs and existing volumes periodically.
-
-However, it is thought to be rare corner case, and we'll not cover in the first phase.
-
-##### Reconcile Capacity
-
-A new component `capacityReconciler` is expected to reconcile capacity of StorageClasses
-in its local `storageClassMap` regularly. Interface `GetCapacity` of `dynamicProvisioningManager`
-will be passed into the reconciler as a hook (`capacityGetFunc`), to fetch capacity of certain
-class.
-
-The proposed workflow is:
-
-1. Walks through classes in its `storageClassMap` regularly
-2. Fetch actual capacity of a class via hook `capacityGetFunc`
-3. Compare the capacity with that in the StorageClass API object
-4. Update the capacity in StorageClass object if there is a difference
-
-**Note:** For the alpha phase, thinly-provisioned VG (overcommit) is not supported,
-We'll consider it in a subsequent phase.
-
-##### Change in Populator
-
-In addition to PV, the `populator` will also be extended to watch PVC objects of all namespaces.
-When the `populator` finds:
-
-1. An unbound PVC is annotated with `annSelectedNode`, and its node name match the value
-of the annotation.
-2. Value of the `annStorageProvisioner` on the PVC matches the name of the provisioner.
-
-It then trigger volume provsioning, detailed in the volume creation section.
-
-For these purposes, the following permissions are required:
-
-* list/get PersistentVolumeClaims
-* list/get/update StorageClasses
-
-##### Volume Creation
-
-During start-up of the provisioner, a new work queue `ProvisionQueue` will be created,
-and passed into both `populator` and `dynamicProvisioningManager`:
-
-```
-ProvisionQueue *workqueue.Type
-```
-When it finds a PVC is in need of provisioning, as described above,
-the `populator` will pass it into the queue to trigger volume privisioning;
-`dynamicProvisioningManager` will be the consumer, it will watch the queue and
-call its `CreateLocalVolume` function to:
-
-1. Create volumes behind a PV accordingly
-2. Create a PV object that is pre-bound to the PVC
-
-The proposed workflow is:
-
-1. Check if there is already a PV pre-bound to the PVC, if so, return directly
-(This can happen when a volume has already been provisioned for a PVC,
-but has not been bound to the PVC by the controller yet).
-2. Check if `annProvisionerTopology` is set on the PVC. If not, then it means
-that the scheduler made a provisioning decision before the capacity initialized
-in StorageClasses. Return error.
-3. Check if the class is available for dynamic provisioning
-(e.g. has an input of `volumeGroup` for LVM). If not, return error.
-4. Call the volume creation funcion of related storageBackend to create volumes
-behind a PV (e.g. for LVM, Create `logical volume (LV)` object in the VG).
-5. Create a PV API object that is pre-bound to the PVC.
-
-**Note:** As it describes in [Volume Topology-aware Scheduling](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/volume-topology-scheduling.md),
-in whichever step it fails, the provisioner will signal back to the scheduler
-to retry dynamic provisioning by removing the "annSelectedNode" annotation of
-the PVC.
-
-For the purpose, it requires the permission to update PersistentVolumeClaims.
-
-##### Cleanup after Release
-
-Currently we already have a component `deleter` to cleanup volumes/PVs of static local volume,
-detail cleanup actions are managed via custom scripts/binaries that specified in `blockCleanerCommand`.
-
-Existing script `quick_reset.sh` calls `mkfs -F` and `wipefs` to cleanup a block.
-In addition to that, a hook named `volumeDeleteFunc` will be added into `deleter`,
-and for dynamic privisioned volumes, the deleting process should be:
-1. Call scripts/binaries in `blockCleanerCommand` to clean up data in the volume.
-2. Call `volumeDeleteFunc` to recycle the volume behind the PV (e.g. delete the LV for lvm).
-3. Delete the PV object.
-
-##### Expansion of Local Volume Plugin
-
-Currently, Intended `VolumeMode` of a local volume is determined by the state of
-the input path. If a user need a local volume whose `VolumeMode` is filesystem,
-the path provided in `LocalVolumeSource` must be a directory. Thus, for dynamic
-provisioned volumes, the provisioner need to mount the LV to a global path first,
-to allow kubelet for another mount. It increases the complexity of the provisioner,
-and makes handling reboot scenarios difficult.
-
-Therefore, in-tree local storage plugin will be updated to support both directory
-and block as volume source. When the specified Path is detected to be a block device
-and the volumeMode is filesystem, the plugin will create the filesystem (on the first
-mount) and globally mount the device to the plugin path. This is similar to how other
-volume plugins handle filesystem on block.
-
-Specifically, we will implement the following interfaces, to manage the global mount
-when volume source is of block:
-
-* GetDeviceMountPath(spec *Spec) (string, error)
-* MountDevice(spec *Spec, devicePath string, deviceMountPath string) error
-* UnmountDevice(deviceMountPath string) error
-
-1. GetDeviceMountPath: Detect if given path in volumeSource is a directory,
-if so, then it means the path is already of filesystem, return it as global
-path directly; if not, return global path `{pluginDir}/mounts/{volumeID}`.
-2. MountDevice: if given path is of filesystem, return without doing anything;
-if it's of block, check if global path exist, if not, create the path; check
-if the global path is of mount point, if not, try to format and mount given path
-to the global path.
-3. UnmountDevice: if the mount path is in format of `{pluginDir}/mounts/...`,
-unmount it; otherwise return directly.
-
-New field `FSType` will be added in LocalVolumeSource, to indicate the filesystem
-type when formating a disk input path:
-
-```
-type LocalVolumeSource struct {
-	// The full path to the volume on the node
-	// The path can be a directory or point to a block device
-	Path string
-	// Filesystem type to mount.
-	// Must be a filesystem type supported by the host operating system.
-	// Ex. "ext4", "xfs", "ntfs". Default is "ext4".
-	// +optional
-	FSType *string
-}
-```
-And on the provisioner side, new field `volumeMode` will be added into the config,
-to indicate intended volume mode of statically discovered volumes:
-
-```
-kind: ConfigMap
-metadata:
-  name: local-volume-config
-  namespace: kube-system
-data:
- storageClassMap: |
-    local-static:
-      hostDir: "/mnt/ssds"
-      mountDir: "/local-ssds"
-      volumeMode: "Filesystem"
-    local-dynamic:
-      lvm:
-        volumeGroup: "volumeGroup1"
-      blockCleanerCommand:
-        - "/scripts/dd_zero.sh"
-        - "2"
-```
-
-**Note:** `VolumeModes` of dynamically provisioned volumes are determined by the volume mode
-in their claims.
-
-##### Alternatives
-
-###### Take Disk Partitions as Storage Source of LVM
-
-Instead of existing volume groups, we can take disk partitions as storage source.
-This way, the provisioner is in charge of underlying storage.
-
-**Advantages:**
-
-Cluster admins do not need to make extra preparations and maintenance work.
-The only thing needed is to prepare the disks for provisioning, and configure their paths
-in storage sources.
-
-**Downsides:**
-
-1. The plugin will need to manage the life cycle of the storage resources behind the LVM.
-When some disks are added, removed or failed, the plugin need to process and recover accordingly.
-In addition, the underlying storage resources are varied, they may be  physical disks,
-RAIDs, and so on, so it's hard to cover all the scenarios.
-2. As provisioners running on all nodes share a same configuration ConfigMap,
-disk partitions of their nodes are required to be named the same.
+Recently, we are looking into a new feature for max attachable capacity per node(an extension on existing Volume attach limits feature). This is meant for cloud volumes types that restrict total attachable capacity, we'd like to see if local storage could piggy back on it. I think the behavior (of reporting capacity in node status) has a natural affinity with local storage.
