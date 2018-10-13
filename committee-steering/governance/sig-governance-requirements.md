@@ -78,4 +78,4 @@ All technical assets *MUST* be owned by exactly 1 SIG subproject.  The following
 [slo]: https://en.wikipedia.org/wiki/Service_level_objective
 [steering-committee]: https://github.com/kubernetes/steering#contact
 [business-operations]: http://www.businessdictionary.com/definition/business-operation.html
-[KEP]: https://kubernetes.io/docs/imported/community/keps/
+[KEP]: https://github.com/kubernetes/community/tree/sig-arch-charter/keps/
