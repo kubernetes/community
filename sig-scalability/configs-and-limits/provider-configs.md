@@ -118,7 +118,7 @@ proposed</td>
 
 ### Areas for Future Work
 
-* Leader election results are non-deterministic on on a typical cluster, and a config would be best served to be configured as worst-case. Not presently known whether there are performance impacts resulting from leader election resulting in either co-location or distribution of those components.
+* Leader election results are non-deterministic on a typical cluster, and a config would be best served to be configured as worst-case. Not presently known whether there are performance impacts resulting from leader election resulting in either co-location or distribution of those components.
 
 * Improving the cluster performance loading to match production deployment scenarios is critical on-going work, especially clusterloader: [https://git.k8s.io/perf-tests/clusterloader](https://git.k8s.io/perf-tests/clusterloader)
 
