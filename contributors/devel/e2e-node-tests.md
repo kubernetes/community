@@ -223,7 +223,7 @@ the bottom of the comments section.  To re-run just the node e2e tests from the 
 `@k8s-bot node e2e test this issue: #<Flake-Issue-Number or IGNORE>` and **include a link to the test
 failure logs if caused by a flake.**
 
-The PR builder runs tests against the images listed in [jenkins-pull.properties](https://git.k8s.io/kubernetes/test/e2e_node/jenkins/jenkins-pull.properties)
+The PR builder runs tests against the images listed in 'jenkins-pull.properties'
 
-The post submit tests run against the images listed in [jenkins-ci.properties](https://git.k8s.io/kubernetes/test/e2e_node/jenkins/jenkins-ci.properties)
+The post submit tests run against the images listed in 'jenkins-ci.properties' 
 
