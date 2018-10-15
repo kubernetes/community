@@ -54,8 +54,8 @@ These guidelines are for tool-specific policies that don't fit under a general u
 
 For more technical help on how to use Google Groups, check the [Groups Help](https://support.google.com/groups/answer/2466386?hl=en&ref_topic=2458761) page.
 
-### New users posting to kubernetes-dev 
-New members who post to the kubernetes-dev group will automatically have their messages put in a queue and be sent the following message automatically: "Since you're a new subscriber you're in a moderation queue, sorry for the inconvenience, a moderator will check your message shortly."
+### New users posting to a SIG/WG list
+New members who post to a group will automatically have their messages put in a queue and be sent the following message automatically: "Since you're a new subscriber you're in a moderation queue, sorry for the inconvenience, a moderator will check your message shortly."
 
 Moderators will receive emails when messages are in this queue and will process them accordingly.
 
