@@ -243,7 +243,7 @@ whether to use the CSI or the in-tree plugin for attach based on 3 criterea:
 2. Plugin Migratable (Implements MigratablePlugin interface)
 3. Node to Attach to has requisite Annotation
 
-Note: All 3 criterea must be satisfied for A/D controller to Attach/Detach with
+Note: All 3 criteria must be satisfied for A/D controller to Attach/Detach with
 CSI instead of in-tree plugin. For example if a Kubelet has feature on and marks
 the annotation, but the A/D Controller does not have the feature gate flipped,
 we consider this user error and will throw some errors.
