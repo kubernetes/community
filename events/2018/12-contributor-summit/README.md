@@ -12,7 +12,7 @@ In some sense, the summit is a real-life extension of the community meetings and
 ## Registration
 
 - [Form to pick tracks and RSVP for the Sunday evening event](https://goo.gl/X8YrRv)
-- If you are planning on attending the New Contributor Track, [Sign the CLA](/CLA.md) if you have not done so already. 
+- If you are planning on attending the New Contributor Track, [Sign the CLA](/CLA.md) if you have not done so already.
 
 This is not your KubeCon/CloudNativeCon ticket. You will need to register for the conference separately.
 
@@ -21,58 +21,119 @@ This is not your KubeCon/CloudNativeCon ticket. You will need to register for th
 - Day 1: Optional pre-summit social
   - Sunday, Dec 9th from 5-8PM
   - Garage, 1130 Broadway Seattle, WA 98122
-- Day 2: Contributor Summit 
+- Day 2: Contributor Summit
   - Monday, Dec 10th, 2018 from 8AM-530PM
   - 6th Floor, Washington State Convention Center, Seattle, WA
     (Signage will be present)
 
-There is a [Slack channel](https://kubernetes.slack.com/messages/contributor-summit) (#contributor-summit) for you to use before and during the summit. Look here for volunteer opportunities and content updates. Feel free to pass URLs, notes, reserve the hallway track room, and connect with the organizers.
-
 ## Agenda
 
-Day 1 - Garage
+Day 1 - [Garage](https://www.garagebilliards.com/)
 
-Dinner will be served. We will update with menu as we get closer to the event. Beer, wine, and nonalcoholic beverages available. 
-Attendees will have access to bowl, play pool/billiards, kubernetes trivia, and socializing with other contributors.
+We will publish the dinner menu two weeks before the event but will have options for vegetarian, vegan, and gluten free. Beer, wine, and nonalcoholic beverages available.
+
+What to expect: Attendees will have access to bowl, play pool/billiards, kubernetes trivia, and socializing with other contributors.
 
 Day 2 - Washington Convention Center
-- New Contributor Track / Workshop - A half day workshop aimed at getting new and first time contributors on boarded and comfortable with working within the Kubernetes Community. Staying for the duration is required; this is not a workshop you can drop into.
-- Current Contributor Track -  talks, workshops, birds of a feather, unconference sessions, steering committee updates, and more! 
-- Docs Sprint - Working on a curated list of issues and challenges that SIG Docs is tackling at that time.
+- New Contributor Track / Workshop - A half day workshop aimed at getting new and first time contributors on boarded and comfortable with working within the Kubernetes Community. Staying for the duration is required; this is not a workshop you can drop into. (Capacity: 100)
+- Current Contributor Track -  talks, workshops, birds of a feather, unconference sessions, steering committee updates, and more!
+- Docs Sprint - Working on a curated list of issues and challenges that SIG Docs is tackling at that time. (Current+Doc Capacity: 300)
 
-### Schedule (Draft)
+### Monday Schedule (Draft)
+
+*Morning*
+
+| Time       | Main Track | New Contributor Summit | Docs Sprint  | Contributor Lounge |
+| --- | :---: | :---: | :---: | :---: |
+| **Room** | 608/609 | 602/603/604  | 613 | 610 |
+| 8:00am     | Breakfast and Registration, Unconference Voting Board Opens | - | -  | Open space  |
+| 9:00am     | Welcome & Details (all tracks) | -  | -  |   &#124;  |
+| 10:00am    | Technical Vision for Kubernetes| Where to Contribute | Docs Sprint | &#124;  |
+| 10:30am    | State of Networking | Where to Communicate | -  |   &#124;  |
+| 10:55am    | 10 minute break | -  | -  |   &#124;  |
+| 11:05am    | State of KEPs | OWNERS Files | -  |   &#124;  |
+| 11:30am    | State of Cluster Lifecycle | Github Workflow | -  |   &#124;  |
+| 12:00pm    | Lunch + Unconference Voting | -   | -  |   v  |
+
+
+*Afternoon*
 
 | Time       | Main Track | New Contributor Summit | Docs Sprint  | Track #1  |  Track #2  |  Track #3 |  Track #4 | Contributor Lounge |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| --- | :---: | :---: | :---: | :---: | :---: |:---: | :---: | :---: |
 | **Room** | 608/609 | 602/603/604  | 613 | 606 | 607  | 605 | 611 | 610 |
-| 8:00am     | Breakfast and Registration, Unconference Voting Board Opens |
-| 9:00am     | Welcome & Details |
-| 10:00am    | Technical Vision for Kubernetes| Where to Contribute | Docs Sprint
-| 10:30am    | State of Networking | Where to Communicate |
-| 10:55am    | 10 minute break
-| 11:05am    | State of KEPs | OWNERS Files |
-| 11:30am    | State of Cluster Lifecycle | Github Workflow
-| 12:00pm    | Lunch + Unconference Voting |
-| 1:00pm     | | Pull Request Practice | Docs Sprint | State of Developer Experience | KEP BoF | Networking BoF | Unconference Slot | 
-| 1:50pm | 10 Minute Break |
-| 2:00pm | API Codebase Tour - @sttts | Testrgid tour, docs, membership | | Cluster lifecycle BoF | Release Management | Unconference Slot | Unconference Slot |
-| 2:50pm | 10 Minute Break |
-| 3:00pm | Live API Code Review - @lavalamp | SIG Meet and Greet | | Chair/TL Training | State of Security - @tallclair | etcd Maintainers Ask Us Anything | Unconference Slot |
-| 3:50pm | 10 Minute Break |
-| 4:00pm | Steering Committee Q+A |
-| 4:45pm | Conlusion and Wrap-Up |
+| 1:00pm     | | Pull Request Practice | Docs Sprint | State of Developer Experience | KEP BoF | Networking BoF | *Unconference Slot | Open Space  |
+| 1:50pm | 10 Minute Break |  -  | -  | -  | -  | -  | -  | &#124; |
+| 2:00pm | API Codebase Tour - @sttts | Testrgid tour, docs, membership | | Cluster lifecycle BoF | Release Management | *Unconference Slot | *Unconference Slot | &#124; |
+| 2:50pm | 10 Minute Break | -  | -  | -  | -  | -  | -  | &#124; |
+| 3:00pm | Live API Code Review - @lavalamp | SIG Meet and Greet | | Chair/TL Training | State of Security - @tallclair | etcd Maintainers Ask Us Anything | *Unconference Slot | &#124; |
+| 3:50pm | 10 Minute Break | -  | -  | -  | -  | -  | -  | &#124; |
+| 4:00pm | Steering Committee Q+A | -  | -  | -  | -  | -  | -  | &#124; |
+| 4:45pm | Conclusion and Wrap-Up |  -  | -  | -  | -  | -  | -  | -  |
+
+* = The unconference slots are generated by you by suggesting a topic and/or voting on another. Instructions on how to participate will be posted here closer to the event.
+
+*Evening*
+
+| Time   |  Speaker & Title   | Room   |
+| --- | :----------: | :----------: |
+|5:10pm | CRDs arent just for add-ons anymore, Tim Hockin |  Ballroom 6ABC |
+| 5:20pm | Kubernetes Release Notes Tips and Tricks, Mike Arpaia | Ballroom 6ABC |
+| 6:40pm | Kubernetes Community, a Story told through emojis and slack data, Paris Pittman | Ballroom 6ABC |
+
+### Tuesday-Thursday Schedule
+Contributor content flows in KubeCon
+
+*Tuesday*
+
+| Time   |  Speaker & Title   | Room  |
+| --- | :----------: | :----------: |
+| 1030a  |  SIG Intros: Apps, Auth, IBMCloud | TBA |
+| 1140a  |  SIG Intros: Cluster Lifecycle, Service Catalog, Storage | TBA |
+| 1140a | Behind Your PR: How Kubernetes Uses Kubernetes to Run Kubernetes CI, Sen Lu and Ben Elder | Ballroom 6C |
+| 1140a | The Future of Your CRDs - Evolving an API, Stefan Schimanski and Mehdy Bohlool | Ballroom 6E |
+| 140p | SIG Intros: Multicluster, Release | TBA |
+| 235p | SIG Intros: Contributor Experience, OpenStack | TBA |
+| 235p | CNCF TOC Live Committee Meeting | 606-609 |
+
+*Wednesday*
+
+| Time   |  Speaker & Title   | Room  |
+| --- | :----------: | :----------: |
+| 1050a | SIG Intros: CLI, PM, Scheduling | TBA |
+| 1140a | Deep Dive: Contributor Experience | TBA |
+| 1140a | SIG Intros: Autoscaling, AWS, Azure | TBA |
+| 145p | Deep Dive: Release | TBA |
+| 145p | SIG Intros: Cloud Provider, Testing | TBA |
+| 145p | Open Source, Open Community, Open Development, Craig McLuckie | Tahoma 1/2 @ TCC |
+|235p | Deep Dive: PM | TBA |
+|235p | SIG Intro: IoT WG | TBA |
+
+
+*Thursday*
+
+| Time   |  Speaker & Title   | Room  |
+| --- | :----------: | :----------: |
+| 1050a | Deep Dives: Auth, CLI, Cloud Provider, Multicluster | TBA |
+| 1140a | Deep Dives: API Machinery, Apps, Policy WG | TBA |
+| 145p | Deep Dives: Autoscaling, Cluster Lifecycle (kubeadm), IBMCloud, Service Catalog | TBA |
+| 235p | Deep Dives: Azure, Cluster Lifecycle (Cluster API), IoT WG | TBA |
+| 340p | Deep Dives: Container Identity WG, Testing, VMWare | TBA |
+| 430p | Deep Dives: Big Data, Scheduling | TBA |
+
+## Chat With Us
+There is a [Slack channel](https://kubernetes.slack.com/messages/contributor-summit) (#contributor-summit) for you to use before and during the summit. Look here for volunteer opportunities and content updates. Feel free to pass URLs, notes, reserve the hallway track room, and connect with the organizers.
 
 ## Media Policy
 
 A photographer and videographer will be onsite recording sessions, collecting b-roll and other shots for KubeCon. If you would rather not be involved, please reach out to an organizer on the day of so we may accommodate you.
 
 
-### Code of Conduct
+## Code of Conduct
 
 This event, like all Kubernetes events, has a [Code of Conduct](/code-of-conduct.md). We will have an onsite rep with contact information to be provided here and posted during the event.
 
 
 ### Misc
-We want to remove as many barriers as possible for you to attend this event. Please contact community@kubernetes.io to see if we can accommodate a request. 
+We want to remove as many barriers as possible for you to attend this event. Please contact community@kubernetes.io to see if we can accommodate a request.
 
 Further details to be updated on this doc. Please check back for a complete guide.
