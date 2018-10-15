@@ -24,10 +24,10 @@ Long Term Contributor Ladder Growth
 * [Group Mentoring Cohorts](/mentoring/group-mentoring.md)
 
 Students
-* [Google Summer of Code](google-summer-of-code.md)
+* [Google Summer of Code](/mentoring/google-summer-of-code.md)
 
 Groups Traditionally Underrepresented in Tech
-* [Outreachy](/sig-cli/outreachy.md)
+* [Outreachy](/mentoring/outreachy.md)
 
 #### Inspiration and Thanks
 This is not an out of the box program but was largely inspired by the following:  
