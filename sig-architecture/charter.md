@@ -50,5 +50,5 @@ and opts-in to updates and modifications to [sig-governance].
 Federation of Subprojects as defined in [sig-governance]
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
-[sig-subprojects]: https://github.com/kubernetes/community/blob/master/sig-YOURSIG/README.md#subprojects
+[sig-subprojects]: https://github.com/kubernetes/community/blob/master/sig-architecture/README.md#subprojects
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
