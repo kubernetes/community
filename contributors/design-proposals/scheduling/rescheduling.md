@@ -177,7 +177,7 @@ topic that is outside the scope of this document. For example, resource fragment
 RequiredDuringScheduling node and pod affinity and anti-affinity means that even if the
 sum of the quotas at the top priority level is less than or equal to the total aggregate
 capacity of the cluster, some pods at the top priority level might still go pending. In
-general, priority provdes a *probabilistic* guarantees of pod schedulability in the face
+general, priority provides a *probabilistic* guarantees of pod schedulability in the face
 of overcommitment, by allowing prioritization of which pods should be allowed to run pods
 when demand for cluster resources exceeds supply.
 
