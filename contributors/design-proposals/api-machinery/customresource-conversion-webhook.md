@@ -128,7 +128,7 @@ type CustomResourceConversionWebhook {
 ### Defaulting
 
 In case that there is no versions list, a single version with values defaulted to top level version will be created. That means a single version with a name set to spec.version.
-All newly added per version fields (schema, additionalPrinterColumns or subresources) will be defaulted to the coresponding top level field except for the first version in the list that will remain empty.
+All newly added per version fields (schema, additionalPrinterColumns or subresources) will be defaulted to the corresponding top level field except for the first version in the list that will remain empty.
 
 
 ### Validation
