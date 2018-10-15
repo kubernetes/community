@@ -8,7 +8,7 @@ I have been involved in open source projects since 2007, cloud related projects 
 
 I co-founded SIG Testing.  I actively contribute in SIG Contributor Experience, Release, Scale.  If you attend the weekly Kubernetes Community meetings, chances are you've seen me (or at least my beard.)
 
-I have participated in every Kubernetes release since v1.4.  I drafted release notes for [v1.4](https://github.com/kubernetes/kubernetes/pull/33410) and [v1.5](https://github.com/kubernetes/features/pull/140).  I am a member of of the [v1.8 release team](https://github.com/kubernetes/features/blob/master/release-1.8/release_team.md).
+I have participated in every Kubernetes release since v1.4.  I drafted release notes for [v1.4](https://github.com/kubernetes/kubernetes/pull/33410) and [v1.5](https://github.com/kubernetes/features/pull/140).  I am a member of the [v1.8 release team](https://github.com/kubernetes/features/blob/master/release-1.8/release_team.md).
 
 I helped found [the kubernetes/community repo](https://github.com/kubernetes/community/pull/3).
 
