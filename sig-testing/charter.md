@@ -6,10 +6,10 @@ outlined in [sig-governance].
 
 ## Scope
 
-SIG Testing is interested in effective testing of Kubernetes. We focus on
-creating and running tools and infrastructure that make it easier for the
-community to write and run tests, and to contribute, analyze and act upon
-test results.
+SIG Testing is interested in effective testing of Kubernetes and automating
+away project toil. We focus on creating and running tools and infrastructure
+that make it easier for the community to write and run tests, and to
+contribute, analyze and act upon test results.
 
 We are not responsible for writing, fixing, nor actively troubleshooting the
 project's tests, as this is the responsibility of the respective test, feature,
@@ -21,7 +21,7 @@ immediate health of the project.
 
 #### Code, Binaries and Services
 
-- Project CI and merge automation via tools such as [prow] and [tide]
+- Project CI and workflow automation via tools such as [prow] and [tide]
 - Infrastructure to support running project CI at scale, including tools
   such as [boskos], [ghproxy] and [greenhouse]
 - Providing a place and schema in which to upload test results for
@@ -31,6 +31,8 @@ immediate health of the project.
   [gubernator], [kettle], [testgrid], [triage] and [velodrome]
 - Configuration management of jobs and ensuring they use a consistent
   process via tools such as [job configs], [kubetest]
+- Tools that facilitate configuration management of github such as
+  [peribolos] and [label_sync]
 - Tools that facilitate local testing of kubernetes such as [greenhouse]
   and [kind]
 - Jobs that automate away project toil via [@fejta-bot]
@@ -44,18 +46,22 @@ immediate health of the project.
 
 #### Cross-cutting and Externally Facing Processes
 
-**Ongoing Support**
+##### Ongoing Support
 
 - The [Release Team test-infra role] is staffed by a member of SIG Testing, as
   such their responsibilities are within the scope of this SIG, including
   the maintenance of release jobs
+- We actively collaborate with SIG Contributor Experience, often producing
+  tooling that they are responsible for using to implement polices and
+  processes that they own, e.g. the Github Administration subproject uses
+  [peribolos] and [label_sync] to reduce the toil involved
 - We reserve the right to halt automation and infrastructure that we own,
   or disable tests that we don't own if the project as a whole is being
   impacted
 - We are actively assisting with the transition of project infrastructure to
   the CNCF and enabling non-Googlers to support this
 
-**Deploying Changes**
+##### Deploying Changes
 
 We aspire to remain agile and deploy quickly, while ensuring a disruption-free
 experience for project contributors. As such, the amount of notice we provide
@@ -81,8 +87,11 @@ time.
 
 ### Out of scope
 
-- We are not resonpsible for troubleshooting or writing tests or jobs for
+- We are not responsible for troubleshooting or writing tests or jobs for
   features or subprojects owned by other SIGs
+- We are not responsible for ongoing maintenance of the project's CI Signal,
+  as this is driven by tests and jobs owned by other SIGs. We do however have
+  an interest in producing tools to help improve the signal.
 
 ## Roles and Organization Management
 
@@ -118,6 +127,8 @@ Subprojects are created by Tech Leads following the process defined in [sig-gove
 [kettle]: https://git.k8s.io/test-infra/kettle
 [kind]: https://github.com/kubernetes-sigs/kind
 [kubetest]: https://git.k8s.io/test-infra/kubetest
+[label_sync]: https://git.k8s.io/test-infra/label_sync
+[peribolos]: https://git.k8s.io/test-infra/prow/cmd/peribolos
 [planter]: https://git.k8s.io/test-infra/planter
 [prow]: https://prow.k8s.io
 [testgrid]: https://testgrid.k8s.io
@@ -128,4 +139,4 @@ Subprojects are created by Tech Leads following the process defined in [sig-gove
 [Release Team test-infra role]: https://git.k8s.io/sig-release/release-team/role-handbooks/test-infra
 [kubernetes-dev@]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [kubernetes-sig-testing@]: https://groups.google.com/forum/#!forum/kubernetes-sig-testing
-
+[kubernetes/test-infra]: https://git.k8s.io/test-infra
