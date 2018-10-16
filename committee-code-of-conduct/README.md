@@ -11,4 +11,4 @@ The members and their terms are as follows:
 
 Please see the [bootstrapping document](./bootstrapping-process.md) for more information on how members are picked, their responsibilities, and how the committee will initially function.
 
-_More information on how to contact this committee and learn about its process to come in the near future. For now, any Code of Conduct or Code of Conduct Committee concerns can be directed to steering-private@kubernetes.io_
+_More information on how to contact this committee and learn about its process to come in the near future. For now, any Code of Conduct or Code of Conduct Committee concerns can be directed to <conduct@kubernetes.io>_.
