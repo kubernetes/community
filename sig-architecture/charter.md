@@ -12,7 +12,7 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 #### Code, Binaries and Services
 
 - *Conformance test definitions*
-- *API changes*
+- *API definitions*
 
 #### Cross-cutting and Externally Facing Processes
 
