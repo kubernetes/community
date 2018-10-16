@@ -198,7 +198,7 @@ manager framework its own K8s/K8s Staging repo.
 It should be generally possible for cloud providers to determine where a controller runs and even over-ride specific 
 controller functionality. Please note that if a cloud provider exercises this possibility it is up to that cloud provider 
 to keep their custom controller conformant to the K8s/K8s standard. This means any controllers may be run in either KCM 
-or CCM. As an example the NodeIpamController, will be shared acrosss K8s/K8s and K8s/cloud-provider-gce, both in the 
+or CCM. As an example the NodeIpamController, will be shared across K8s/K8s and K8s/cloud-provider-gce, both in the 
 short and long term. Currently it needs to take a cloud provider to allow it to do GCE CIDR management. We could handle 
 this by leaving the cloud provider interface with the controller manager framework code. The GCE controller manager could 
 then inject the cloud provider for that controller. For everyone else (especially the KCM) NodeIpamController is 
