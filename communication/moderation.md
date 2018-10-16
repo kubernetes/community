@@ -34,7 +34,7 @@ Moderators _SHOULD_:
 
 ## Violations
 
-The Kubernetes [Code of Conduct Committee](https://github.com/kubernetes/community/tree/master/committee-code-of-conduct) will have the final authority regarding escalated moderation matters.  Violations of the Code of Conduct will be handled on a case by case basis. Depending on severity this can range up to and including removal of the person from the community, though this is extremely rare.
+The Kubernetes [Code of Conduct Committee](https://git.k8s.io/community/committee-code-of-conduct) will have the final authority regarding escalated moderation matters.  Violations of the Code of Conduct will be handled on a case by case basis. Depending on severity this can range up to and including removal of the person from the community, though this is extremely rare.
 
 ## Specific Guidelines
 
