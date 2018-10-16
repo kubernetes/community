@@ -307,16 +307,16 @@ of the issue.
 The issue kind is used to help identify the types of changes going
 into the release over time.  This may allow the release team to
 develop a better understanding of what sorts of issues we would
-miss with a faster release cadence. These labels may also cause escalation to the correct SIG GitHub team.
+miss with a faster release cadence.
 
-For release targeted issues, including pull requests, one of the follow issue kind labels must be
-set:
+For release targeted issues, including pull requests, one of the following 
+issue kind labels must be set:
 
-- `kind/bug`: Fixes a newly discovered bug.
-- `kind/feature`: New functionality.
-- `kind/cleanup`: Adding tests, refactoring, fixing old bugs.
-- `kind/failing-test`: CI test case is failing consistently.
-- `kind/flake`: CI test case is showing intermittent failures.
 - `kind/api-change`: Adds, removes, or changes an API
-- `kind/documentation`: Adds documentation
+- `kind/bug`: Fixes a newly discovered bug.
+- `kind/cleanup`: Adding tests, refactoring, fixing old bugs.
 - `kind/design`: Related to design
+- `kind/documentation`: Adds documentation
+- `kind/failing-test`: CI test case is failing consistently.
+- `kind/feature`: New functionality.
+- `kind/flake`: CI test case is showing intermittent failures.
