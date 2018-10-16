@@ -256,7 +256,7 @@ With the additions needed in the short term to make this work; the Staging area 
 - Sample-Controller
 
 When we complete the cloud provider work, several of the new modules in staging should be moving to their permanent new 
-home in the appropriate K8s/Cloud-provider repoas they will no longer be needed in the K8s/K8s repo. There are however 
+home in the appropriate K8s/Cloud-provider repos they will no longer be needed in the K8s/K8s repo. There are however 
 other new modules we will add which continue to be needed by both K8s/K8s and K8s/Cloud-provider. Those modules will 
 remain in Staging until the Staging initiative completes and they are moved into some other Kubernetes shared code repo.
 - Api
