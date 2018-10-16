@@ -1553,9 +1553,6 @@ sigs:
     label: service-catalog
     leadership:
       chairs:
-      - name: Paul Morie
-        github: pmorie
-        company: Red Hat
       - name: Carolyn Van Slyck
         github: carolynvs
         company: Microsoft
@@ -1565,6 +1562,9 @@ sigs:
       - name: Doug Davis
         github: duglin
         company: IBM
+      - name: Jay Boyd
+        github: jboyd01
+        company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Monday
