@@ -1,7 +1,5 @@
 # Kubernetes Working Group Formation and Disbandment
 
-Draft 1.0 // Jaice Singer DuMars // June, 2018
-
 ## Process Overview and Motivations
 Working Groups provide a formal avenue for disparate groups to collaborate around a common problem, craft a balanced
 position, and disband. Because they represent the interests of multiple groups, they are a vehicle for consensus
@@ -62,8 +60,7 @@ requirements for that are:
 - chair information
 - meeting information
 - contact methods
-- any sig stakeholders
-- any subproject stakeholders
+- any [sig or subproject](sig-governance.md#project-management) stakeholders
 
 The pull request should be labeled with any SIG stakeholders and committee/steering. And since GitHub notifications
 are not a reliable means to contact people, an email should be sent to the mailing lists for the stakeholder SIGs,
@@ -92,7 +89,7 @@ Working Groups will be disbanded if either of the following is true:
   - Zoom
 
 The current Chair may step down at any time.  When they do so, a new Chair may be selected through lazy consensus
-within the Working Group.
+within the Working Group, and [sigs.yaml](../../sigs.yaml) should be updated.
 
 References
 
