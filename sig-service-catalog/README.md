@@ -22,10 +22,10 @@ The [charter](charter.md) defines the scope and governance of the Service Catalo
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
 * Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**), Microsoft
 * Michael Kibbe (**[@kibbles-n-bytes](https://github.com/kibbles-n-bytes)**), Google
 * Doug Davis (**[@duglin](https://github.com/duglin)**), IBM
+* Jay Boyd (**[@jboyd01](https://github.com/jboyd01)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-service-catalog)
