@@ -1,29 +1,23 @@
 ---
 kep-number: 0
-title: My First KEP
+title: Quotas for Ephemeral Storage
 authors:
-  - "@janedoe"
+  - "@RobertKrawitz"
 owning-sig: sig-xxx
 participating-sigs:
-  - sig-aaa
-  - sig-bbb
+  - sig-node
 reviewers:
   - TBD
-  - "@alicedoe"
 approvers:
-  - TBD
-  - "@oscardoe"
+  - "@dchen1107"
+  - "@derekwaynecarr"
 editor: TBD
 creation-date: yyyy-mm-dd
 last-updated: yyyy-mm-dd
 status: provisional
 see-also:
-  - KEP-1
-  - KEP-2
 replaces:
-  - KEP-3
 superseded-by:
-  - KEP-100
 ---
 
 # Quotas for Ephemeral Storage
@@ -228,6 +222,9 @@ These goals apply only to local ephemeral storage, as described in
 ### Non-Goals
 
 * Application to storage other than local ephemeral storage.
+* Application to container copy on write layers.  That will be managed
+  by the container runtime.  For a future project, we should work with
+  the runtimes to use quotas for their monitoring.
 * Elimination of eviction as a means of enforcing ephemeral-storage
   limits.  Pods that hit their ephemeral-storage limit will still be
   evicted by the kubelet even if their storage has been capped by
@@ -264,13 +261,13 @@ At present, two feature gates control operation of quotas:
 * `LocalStorageCapacityIsolation` must be enabled for any use of
   quotas.
   
-* `FSQuotaForLSCIMonitoring` must be enabled in addition.  If this is
+* `LocalStorageCapacityIsolationFSMonitoring` must be enabled in addition.  If this is
   enabled, quotas are used for monitoring, but not enforcement.  At
   present, this defaults to False, but the intention is that this will
   default to True by initial release.
   
-* _`FSQuotaForLSCIEnforcement` must be enabled, in addition to
-  `FSQuotaForLSCIMonitoring`, to use quotas for enforcement._
+* _`LocalStorageCapacityIsolationFSEnforcement` must be enabled, in addition to
+  `LocalStorageCapacityIsolationFSMonitoring`, to use quotas for enforcement._
 
 ### Operation Flow -- Applying a Quota
 
