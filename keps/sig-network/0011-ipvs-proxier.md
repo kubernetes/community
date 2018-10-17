@@ -177,7 +177,7 @@ And, IPVS proxier will maintain 5 kubernetes-specific chains in nat table
 **1. kube-proxy start with --masquerade-all=true**
 
 If kube-proxy starts with `--masquerade-all=true`, the IPVS proxier will masquerade all traffic accessing service ClusterIP, which behaves same as what iptables proxier does.
-Suppose there is a serivice with Cluster IP `10.244.5.1` and port `8080`:
+Suppose there is a service with Cluster IP `10.244.5.1` and port `8080`:
 
 ```shell
 # iptables -t nat -nL
