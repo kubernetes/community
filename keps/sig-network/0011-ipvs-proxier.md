@@ -149,7 +149,7 @@ There are 3 proxy modes in ipvs - NAT (masq), IPIP and DR. Only NAT mode support
 ```shell
 # ipvsadm -ln
 IP Virtual Server version 1.2.1 (size=4096)
-Prot LocalAddress:Port Scheduler Flags
+Port LocalAddress:Port Scheduler Flags
   -> RemoteAddress:Port           Forward Weight ActiveConn InActConn     
 TCP  10.102.128.4:3080 rr
   -> 10.244.0.235:8080            Masq    1      0          0         
