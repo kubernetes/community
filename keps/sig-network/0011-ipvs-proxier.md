@@ -136,7 +136,7 @@ We will create a dummy interface and assign all kubernetes service ClusterIP's t
        valid_lft forever preferred_lft forever
 ```
 
-Note that the relationship between a Kubernetes service and an IPVS service is `1:N`. Consider a Kubernetes service that has more than one access IP. For example, an External IP type service has 2 access IP's (ClusterIP and External IP). Then the IPVS proxies will create 2 IPVS services - one for Cluster IP and the other one for External IP.
+Note that the relationship between a Kubernetes service and an IPVS service is `1:N`. Consider a Kubernetes service that has more than one access IP. For example, an External IP type service has 2 access IP's (ClusterIP and External IP). Then the IPVS proxier will create 2 IPVS services - one for Cluster IP and the other one for External IP.
 
 The relationship between a Kubernetes endpoint and an IPVS destination is `1:1`.
 For instance, deletion of a Kubernetes service will trigger deletion of the corresponding IPVS service and address bound to dummy interface.
