@@ -11,11 +11,10 @@ away project toil. We focus on creating and running tools and infrastructure
 that make it easier for the community to write and run tests, and to
 contribute, analyze and act upon test results.
 
-We are not responsible for writing, fixing, nor actively troubleshooting the
-project's tests, as this is the responsibility of the respective test, feature,
-and subproject owners. We will however act as an escalation point of last
-resort for remediation if it is clear that misbehaving tests are harming the
-immediate health of the project.
+Although we are not responsible for ongoing test maintenance (see
+[Out of Scope] below), we will act as an escalation point of last resort for
+remediation if it is clear that misbehaving tests are harming the immediate
+health of the project.
 
 ### In scope
 
@@ -35,7 +34,8 @@ immediate health of the project.
   [peribolos] and [label_sync]
 - Tools that facilitate local testing of kubernetes such as [greenhouse]
   and [kind]
-- Jobs that automate away project toil via [@fejta-bot]
+- Jobs that automate away project toil, such as [periodic jobs that run as
+  @fejta-bot]
 - Ensuring all of the above is kept running on a best effort basis
 - Tools, frameworks and libraries that make it possible to write tests against
   kubernetes such as e2e\* or integration test frameworks.
@@ -85,10 +85,10 @@ time.
   require a consultation with SIG Contributor Experience, and a lazy consensus
   issue with [kubernetes-dev@] notice.
 
-### Out of scope
+### Out of Scope
 
-- We are not responsible for troubleshooting or writing tests or jobs for
-  features or subprojects owned by other SIGs
+- We are not responsible for writing, fixing nor actively troubleshooting tests
+  for features or subprojects owned by other SIGs
 - We are not responsible for ongoing maintenance of the project's CI Signal,
   as this is driven by tests and jobs owned by other SIGs. We do however have
   an interest in producing tools to help improve the signal.
@@ -118,7 +118,7 @@ Subprojects are created by Tech Leads following the process defined in [sig-gove
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
 [lazy consensus]: http://en.osswiki.info/concepts/lazy_consensus
 
-[@fejta-bot]: https://github.com/fejta-bot
+[periodic jobs that run as @fejta-bot]: https://git.k8s.io/test-infra/config/jobs/kubernetes/test-infra/fejta-bot-periodics.yaml
 [boskos]: https://git.k8s.io/test-infra/boskos
 [ghproxy]: https://git.k8s.io/test-infra/ghproxy
 [greenhouse]: https://git.k8s.io/test-infra/greenhouse
