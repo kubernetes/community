@@ -1,6 +1,6 @@
 # Resources
 
-## Kubernetes Integration status by Big Data product
+## Kubernetes integration status by big data product
 
 ### Spark
 
@@ -14,11 +14,11 @@ in the [apache-spark-on-k8s git repo](https://github.com/apache-spark-on-k8s/spa
 
 ##### Activities 
 
-Enhancements are underway, with a good overview given [in this blog post](https://databricks.com/blog/2018/09/26/whats-new-for-apache-spark-on-kubernetes-in-the-upcoming-apache-spark-2-4-release.html).
+Enhancements are under development, with a good overview given [in this blog post](https://databricks.com/blog/2018/09/26/whats-new-for-apache-spark-on-kubernetes-in-the-upcoming-apache-spark-2-4-release.html).
 
 * Work is underway for Spark 2.4 to improve support and integration with HDFS.
   * Design Document: [How Spark on Kubernetes will access Secure HDFS](https://docs.google.com/document/d/1RBnXD9jMDjGonOdKJ2bA1lN4AAV_1RwpU_ewFuCNWKg/edit#heading=h.verdza2f4fyd)
-* shuffle service design
+* Shuffle service design
   * Design Document [Improving Spark Shuffle Reliability](https://docs.google.com/document/d/1uCkzGGVG17oGC6BJ75TpzLAZNorvrAU3FRd2X-rVHSM/edit)
   * JIRA issue [SPARK-25299: Use remote storage for persisting shuffle data](https://issues.apache.org/jira/browse/SPARK-25299)
 
@@ -33,7 +33,7 @@ TODO, e.g. "No release yet."
 ##### Activities
 
 * [Data Locality Doc](https://docs.google.com/document/d/1TAC6UQDS3M2sin2msFcZ9UBBQFyyz4jFKWw5BM54cQo/edit)
-* [External Repository](https://github.com/apache-spark-on-k8s/kubernetes-HDFS)
+* ["HDFS on Kubernetes" git repository including Helm charts](https://github.com/apache-spark-on-k8s/kubernetes-HDFS)
 
 ### Airflow
 
