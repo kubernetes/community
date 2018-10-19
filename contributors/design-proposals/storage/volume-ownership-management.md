@@ -3,7 +3,7 @@
 Currently, volume plugins have a `SetUp` method which is called in the context of a higher-level
 workflow within the kubelet which has externalized the problem of managing the ownership of volumes.
 This design has a number of drawbacks that can be mitigated by completely internalizing all concerns
-of volume setup behind the volume plugin `SetUp` method.
+of volume setuped behind the volume plugin `SetUp` method.
 
 ### Known issues with current externalized design
 
