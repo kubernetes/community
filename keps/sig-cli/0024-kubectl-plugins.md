@@ -112,7 +112,7 @@ See https://github.com/kubernetes/kubernetes/issues/53640 and https://github.com
 ### Non-Goals
 
 * The new plugin mechanism will not be a "plugin installer" or wizard. It will not have specific or baked-in knowledge 
-  regarding a plugin's location or composition, nor will it it provide a way to download or unpack plugins in a correct 
+  regarding a plugin's location or composition, nor will it provide a way to download or unpack plugins in a correct 
   location.
 * Plugin discovery is not a main focus of this mechanism. As such, it will not attempt to collect data about every 
   plugin that exists in an environment.
