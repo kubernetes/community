@@ -26,7 +26,7 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 ### Out of scope
 
 - KEPs that do not have architectural implications
-- The release features process
+- The release enhancement delivery process
 
 ## Roles and Organization Management
 
