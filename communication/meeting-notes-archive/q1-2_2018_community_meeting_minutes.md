@@ -1649,7 +1649,7 @@
         *   [WIP: Charter FAQ (the "Why"s)](https://github.com/kubernetes/community/pull/1908)
     *   Reminder: [Contributor Summit](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit), 1 May, day before Kubecon
     *   CNCF would like feedback on the draft blog post for 1.10 beta:
-        *   [http://blog.kubernetes.io/2018/03/first-beta-version-of-kubernetes-1-10.html](http://blog.kubernetes.io/2018/03/first-beta-version-of-kubernetes-1-10.html)
+        *   [https://kubernetes.io/blog/2018/03/first-beta-version-of-kubernetes-1-10/](https://kubernetes.io/blog/2018/03/first-beta-version-of-kubernetes-1-10/)
         *   Please contact [Natasha Woods](mailto:nwoods@linuxfoundation.org) with your feedback
     *   Shoutouts this week
         *   See someone doing something great for the community? Mention them in #shoutouts on slack.
