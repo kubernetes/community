@@ -30,7 +30,7 @@ What form should this configuration take in Kubernetes? The requirements are as 
 
 * In particular, it should be straightforward (but not required) to manage declarative intent under **version control**, which is [standard industry best practice](http://martinfowler.com/bliki/InfrastructureAsCode.html) and what Google does internally. Version control facilitates reproducibility, reversibility, and an audit trail. Unlike generated build artifacts, configuration is primary human-authored, or at least it is desirable to be human-readable, and it is typically changed with a human in the loop, as opposed to fully automated processes, such as autoscaling. Version control enables the use of familiar tools and processes for change control, review, and conflict resolution.
 
-* Users need the ability to **customize** off-the-shelf configurations and to instantiate multiple **variants**, without crossing the [line into the ecosystem](https://docs.google.com/presentation/d/1oPZ4rznkBe86O4rPwD2CWgqgMuaSXguIBHIE7Y0TKVc/edit#slide=id.g21b1f16809_5_86) of [configuration domain-specific languages, platform as a service, functions as a service](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/#what-kubernetes-is-not), and so on, though users should be able to [layer such tools/systems on top](http://blog.kubernetes.io/2017/02/caas-the-foundation-for-next-gen-paas.html) of the mechanism, should they choose to do so.
+* Users need the ability to **customize** off-the-shelf configurations and to instantiate multiple **variants**, without crossing the [line into the ecosystem](https://docs.google.com/presentation/d/1oPZ4rznkBe86O4rPwD2CWgqgMuaSXguIBHIE7Y0TKVc/edit#slide=id.g21b1f16809_5_86) of [configuration domain-specific languages, platform as a service, functions as a service](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/#what-kubernetes-is-not), and so on, though users should be able to [layer such tools/systems on top](https://kubernetes.io/blog/2017/02/caas-the-foundation-for-next-gen-paas/) of the mechanism, should they choose to do so.
 
 * We need to develop clear **conventions**, **examples**, and mechanisms that foster **structure**, to help users understand how to combine Kubernetes’s flexible mechanisms in an effective manner.
 
@@ -384,7 +384,7 @@ Consider more automation, such as autoscaling, self-configuration, etc. to reduc
 
 #### What about providing an intentionally restrictive simplified, tailored developer experience to streamline a specific use case, environment, workflow, etc.?
 
-This is essentially a [DIY PaaS](http://blog.kubernetes.io/2017/02/caas-the-foundation-for-next-gen-paas.html). Write a configuration generator, either client-side or using CRDs ([example](https://github.com/pearsontechnology/environment-operator/blob/dev/User_Guide.md)). The effort involved to document the format, validate it, test it, etc. is similar to building a new API, but I could imagine someone eventually building a SDK to make that easier.
+This is essentially a [DIY PaaS](https://kubernetes.io/blog/2017/02/caas-the-foundation-for-next-gen-paas/). Write a configuration generator, either client-side or using CRDs ([example](https://github.com/pearsontechnology/environment-operator/blob/dev/User_Guide.md)). The effort involved to document the format, validate it, test it, etc. is similar to building a new API, but I could imagine someone eventually building a SDK to make that easier.
 
 #### What about more sophisticated deployment orchestration?
 

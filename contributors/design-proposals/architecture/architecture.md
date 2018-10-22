@@ -65,7 +65,7 @@ The project is committed to the following (aspirational) [design ideals](princip
   approach is key to the system’s self-healing and autonomic capabilities. 
 * _Advance the state of the art_. While Kubernetes intends to support non-cloud-native
   applications, it also aspires to advance the cloud-native and DevOps state of the art, such as
-  in the [participation of applications in their own management](http://blog.kubernetes.io/2016/09/cloud-native-application-interfaces.html).
+  in the [participation of applications in their own management](https://kubernetes.io/blog/2016/09/cloud-native-application-interfaces/).
   However, in doing
   so, we strive not to force applications to lock themselves into Kubernetes APIs, which is, for
   example, why we prefer configuration over convention in the [downward API](https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/#the-downward-api).

@@ -710,7 +710,7 @@ system to 30,50,100 pods per/node and measures the different characteristics of
 the system, such as throughput, api-latency, etc.
 
 For a good overview of how we analyze performance data, please read the
-following [post](http://blog.kubernetes.io/2015/09/kubernetes-performance-measurements-and.html)
+following [post](https://kubernetes.io/blog/2015/09/kubernetes-performance-measurements-and/)
 
 For developers who are interested in doing their own performance analysis, we
 recommend setting up [prometheus](http://prometheus.io/) for data collection,

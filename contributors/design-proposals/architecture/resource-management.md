@@ -87,7 +87,7 @@ status:
 
 API groups may be exposed as a unified API surface while being served by distinct [servers](https://kubernetes.io/docs/tasks/access-kubernetes-api/setup-extension-api-server/) using [**aggregation**](https://kubernetes.io/docs/concepts/api-extension/apiserver-aggregation/), which is particularly useful for APIs with special storage needs. However, Kubernetes also supports [**custom resources**](https://kubernetes.io/docs/concepts/api-extension/custom-resources/) (CRDs), which enables users to define new types that fit the standard API conventions without needing to build and run another server. CRDs can be used to make systems declaratively and dynamically configurable in a Kubernetes-compatible manner, without needing another storage system.
 
-Each API server supports a custom [discovery API](https://github.com/kubernetes/client-go/blob/master/discovery/discovery_client.go) to enable clients to discover available API groups, versions, and types, and also [OpenAPI](http://blog.kubernetes.io/2016/12/kubernetes-supports-openapi.html), which can be used to extract documentation and validation information about the resource types.
+Each API server supports a custom [discovery API](https://github.com/kubernetes/client-go/blob/master/discovery/discovery_client.go) to enable clients to discover available API groups, versions, and types, and also [OpenAPI](https://kubernetes.io/blog/2016/12/kubernetes-supports-openapi/), which can be used to extract documentation and validation information about the resource types.
 
 See the [Kubernetes API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md ) for more details.
 
