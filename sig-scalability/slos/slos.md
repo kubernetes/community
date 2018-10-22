@@ -89,7 +89,7 @@ MUST satisfy thresholds defined in [thresholds file][].
 ## Kubernetes SLIs/SLOs
 
 The currently existing SLIs/SLOs are enough to guarantee that cluster isn't
-completely dead. However, the are not enough to satisfy user's needs in most
+completely dead. However, they are not enough to satisfy user's needs in most
 of the cases.
 
 We are looking into extending the set of SLIs/SLOs to cover more parts of
