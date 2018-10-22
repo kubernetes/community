@@ -67,3 +67,26 @@ Each SIG must have two discussion groups with the following settings.
 - Groups should be created as e-mail lists with at least three owners (including parispittman at google.com and ihor.dvoretskyi at gmail.com);
 - To add the owners, visit the Group Settings (drop-down menu on the right side), select Direct Add Members on the left side and add Paris and Ihor via email address (with a suitable welcome message); in Members/All Members select Ihor and Paris and assign to an "owner role"
 - Set "View topics", "Post", "Join the Group" permissions to be "Public";
+
+## SIG/WG Retirement
+
+Sometimes it might be necessary to sunset a SIG or Working Group.
+SIGs/WGs may also merge with an existing SIG/WG if deemed appropriate, and would save project overhead in the long run.
+Working Groups in particular are more ephemeral than SIGs, so this process should be followed when the Working Group has accomplished it's mission.
+
+Retiring a SIG for is covered in the [SIG Governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md)
+Retiring a Working Group is covered in [WG Governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md)
+
+The process for closing a SIG/WG is as follows:
+
+- SIG Chairs agree to disband. This decision should follow the decision making process of the SIG's Charter.
+- 
+- Work with SIG Contributor Experience to:
+  - Archive the mailing list/group
+  - Archive the leads mailing list/group
+  - Archive the slack channel.
+  - Move all appropriate github repositories to an appropriate archive or a repo outside of the Kubernetes org.
+  - Ensure that the YouTube Collaboration links are removed
+- Remove SIG Calendar and events from the community calendar
+- Send a courtesy email to kubernetes-dev to let people know the SIG has either closed or merged with another SIG.
+- Update `sigs.yaml` to reflect the removal of the SIG/WG.
