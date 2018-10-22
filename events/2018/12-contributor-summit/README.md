@@ -61,7 +61,7 @@ Day 2 - Washington Convention Center
 | Time       | Main Track | New Contributor Summit | Docs Sprint  | Track #1  |  Track #2  |  Track #3 |  Track #4 | Contributor Lounge |
 | --- | :---: | :---: | :---: | :---: | :---: |:---: | :---: | :---: |
 | **Room** | 608/609 | 602/603/604  | 613 | 606 | 607  | 605 | 611 | 610 |
-| 1:00pm     | | Pull Request Practice | Docs Sprint | State of Developer Experience | KEP BoF | Networking BoF | *Unconference Slot | Open Space  |
+| 1:00pm     | | Pull Request Practice | Docs Sprint | Automation and CI | KEP BoF | Networking BoF | *Unconference Slot | Open Space  |
 | 1:50pm | 10 Minute Break |  -  | -  | -  | -  | -  | -  | &#124; |
 | 2:00pm | API Codebase Tour - @sttts | Testrgid tour, docs, membership | | Cluster lifecycle BoF | Release Management | *Unconference Slot | *Unconference Slot | &#124; |
 | 2:50pm | 10 Minute Break | -  | -  | -  | -  | -  | -  | &#124; |

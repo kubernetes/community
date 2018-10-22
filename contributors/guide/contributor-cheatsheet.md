@@ -52,6 +52,7 @@ A list of common resources when contributing to Kubernetes.
 - steering@kubernetes.io - Mail the steering committee. Public address with public archive.
 - steering-private@kubernetes.io - Mail the steering committee privately, for sensitive items.
 - helpdesk@rt.linuxfoundation.org - Mail the LF helpdesk for help with CLA issues.
+- conduct@kubernetes.io - Contact the Code of Conduct committee, private mailing list.
 
 ## Other
 

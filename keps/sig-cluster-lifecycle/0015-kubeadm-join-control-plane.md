@@ -143,7 +143,7 @@ capabilities like e.g. kubeadm upgrade for HA clusters.
 
 - This proposal doesn't provide an automated solution for transferring the CA key and other required
   certs from one control-plane instance to the other. More specifically, this proposal doesn't address
-  the ongoing discussion about storage of kubeadm TLS assets in secrets and it it is not planned
+  the ongoing discussion about storage of kubeadm TLS assets in secrets and it is not planned
   to provide support for clusters with TLS stored in secrets (but nothing in this
   proposal should explicitly prevent to reconsider this in future).
 

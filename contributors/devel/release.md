@@ -269,6 +269,8 @@ described above.
 
 ## Other Required Labels
 
+*Note* [Here is the list of labels and their use and purpose.](https://git.k8s.io/test-infra/label_sync/labels.md#labels-that-apply-to-all-repos-for-both-issues-and-prs)
+
 ### SIG Owner Label
 
 The SIG owner label defines the SIG to which we escalate if a
@@ -300,20 +302,21 @@ of the issue.
   - even less urgent / critical than `priority/important-soon`
   - moved out of milestone more aggressively than `priority/important-soon`
 
-### Issue Kind Label
+### Issue/PR Kind Label
 
 The issue kind is used to help identify the types of changes going
 into the release over time.  This may allow the release team to
 develop a better understanding of what sorts of issues we would
 miss with a faster release cadence.
 
-This may also be used to escalate to the correct SIG GitHub team.
-For release targeted issues one of the follow issue types must be
-set (additional may also be set):
+For release targeted issues, including pull requests, one of the following 
+issue kind labels must be set:
 
+- `kind/api-change`: Adds, removes, or changes an API
 - `kind/bug`: Fixes a newly discovered bug.
-  - were not known issues at the start of the development period.
-- `kind/feature`: New functionality.
 - `kind/cleanup`: Adding tests, refactoring, fixing old bugs.
+- `kind/design`: Related to design
+- `kind/documentation`: Adds documentation
 - `kind/failing-test`: CI test case is failing consistently.
+- `kind/feature`: New functionality.
 - `kind/flake`: CI test case is showing intermittent failures.

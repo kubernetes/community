@@ -149,7 +149,7 @@ There are 3 proxy modes in ipvs - NAT (masq), IPIP and DR. Only NAT mode support
 ```shell
 # ipvsadm -ln
 IP Virtual Server version 1.2.1 (size=4096)
-Prot LocalAddress:Port Scheduler Flags
+Port LocalAddress:Port Scheduler Flags
   -> RemoteAddress:Port           Forward Weight ActiveConn InActConn     
 TCP  10.102.128.4:3080 rr
   -> 10.244.0.235:8080            Masq    1      0          0         
@@ -177,7 +177,7 @@ And, IPVS proxier will maintain 5 kubernetes-specific chains in nat table
 **1. kube-proxy start with --masquerade-all=true**
 
 If kube-proxy starts with `--masquerade-all=true`, the IPVS proxier will masquerade all traffic accessing service ClusterIP, which behaves same as what iptables proxier does.
-Suppose there is a serivice with Cluster IP `10.244.5.1` and port `8080`:
+Suppose there is a service with Cluster IP `10.244.5.1` and port `8080`:
 
 ```shell
 # iptables -t nat -nL
