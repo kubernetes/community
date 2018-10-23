@@ -1,19 +1,19 @@
 # Request for Proposal
 
-##  Kubernetes Third Party Security Audit
+## Kubernetes Third Party Security Audit
 
 The Kubernetes Third-Party Audit Working Group (working group, henceforth) is soliciting proposals from select Information Security vendors for a comprehensive security audit of the Kubernetes Project. 
 
 ### Eligible Vendors
 
 Only the following vendors will be permitted to submit proposals:
+
 - NCC Group
 - Trail of Bits
-- Cure53 
-- Bishop Fox 
+- Cure53
+- Bishop Fox
 - Insomnia
 - Atredis Partners
-
 
 ### RPF Process
 
@@ -29,8 +29,6 @@ Proposals must include CVs, resumes, and/or example reports from staff that will
 - 2018/11/05: Question period closes
 - 2018/11/19: RFP Closes
 - 2018/11/26: The working group will announce vendor selection
-
-
 
 ## Audit Scope
 
@@ -62,6 +60,8 @@ The audit should not be treated as a penetration test, or red team exercise. The
 
 The vendor should preform both source code analysis as well as live evaluation of Kubernetes.
 
+The vendor should document the Kubernetes configuration and architecture that the audit was preformed against for the creation of a "audited reference architecture" artifact.
+
 After vendor selection the working group will establish a 60 minute kick-off meeting to answer any initial questions and explain Kubernetes architecture.
 
 The working group will be available weekly to meet with the selected vendor. And provide subject matter experts on requested components.
@@ -77,7 +77,11 @@ All information gathered and artifacts created as a part of the audit must not b
 The audit should result in the following artifacts, which will be made public after any sensitive security issues are mitigated.
 
 - Findings report, including and executive summary
+
+- Audited reference architecture specification
+
 - Formal threat model
+
 - Any proof of concept exploits that we can use to investigate and fix defects
 
 - Retrospective white paper(s) on important security considerations in Kubernetes
@@ -91,5 +95,3 @@ The audit should result in the following artifacts, which will be made public af
 ## Q & A
 
 This section intentionally left empty until the question period opens.
-
- 
