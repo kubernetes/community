@@ -81,7 +81,7 @@ Kubelet would then populate the `runtimeConfig` section of the config when calli
 
 ### Pod Teardown
 
-When we delete a pod, kubelet will bulid the runtime config for calling cni plugin `DelNetwork/DelNetworkList` API, which will remove this pod's bandwidth configuration.
+When we delete a pod, kubelet will build the runtime config for calling cni plugin `DelNetwork/DelNetworkList` API, which will remove this pod's bandwidth configuration.
 
 ## Next step
 
