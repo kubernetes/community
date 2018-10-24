@@ -141,11 +141,11 @@ project is always stable so that individual commits can be
 flagged as having broken something.
 
 With ongoing feature definition through the year, some set of items
-will bubble up as targeting a given release.  The **feature freeze**
+will bubble up as targeting a given release.  The **enhancement freeze**
 starts ~4 weeks into release cycle.  By this point all intended
 feature work for the given release has been defined in suitable
-planning artifacts in conjunction with the Release Team's [features
-lead](https://github.com/kubernetes/sig-release/tree/master/release-team/role-handbooks/features).
+planning artifacts in conjunction with the Release Team's [enhancements
+lead](https://github.com/kubernetes/sig-release/tree/master/release-team/role-handbooks/enhancements).
 
 Implementation and bugfixing is ongoing across the cycle, but
 culminates in a code slush and code freeze period:
@@ -232,11 +232,11 @@ milestone by creating GitHub issues and marking them with the Prow "/milestone"
 command.
 
 For the first ~4 weeks into the release cycle, the release team's
-Features Lead will interact with SIGs and feature owners via GitHub,
+Enhancements Lead will interact with SIGs and feature owners via GitHub,
 Slack, and SIG meetings to capture all required planning artifacts.
 
 If you have a feature to target for an upcoming release milestone, begin a
-conversation with your SIG leadership and with that release's Features
+conversation with your SIG leadership and with that release's Enhancements
 Lead.
 
 ### Issue additions
