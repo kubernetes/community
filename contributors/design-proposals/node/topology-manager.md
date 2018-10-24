@@ -95,9 +95,9 @@ information.
   socket affinities. The policy to reach that decision can start simple
   and iterate to include support for arbitrary inter-device graphs.
 - _HugePages:_ This proposal assumes that pre-allocated HugePages are
-  spread among the available NUMA nodes in the system. We further assume
+  spread among the available memory nodes in the system. We further assume
   the operating system provides best-effort local page allocation for
-  containers (as long as sufficient HugePages are free on the local NUMA
+  containers (as long as sufficient HugePages are free on the local memory
   node.
 - _CNI:_ Changing the Container Networking Interface is out of scope for
   this proposal. However, this design should be extensible enough to
@@ -173,7 +173,7 @@ above.
 #### New Interfaces
 
 ```go
-package numamanager
+package topologymanager
 
 // TopologyManager helps to coordinate local resource alignment
 // within the Kubelet.
@@ -209,15 +209,15 @@ type HintProvider interface {
 }
 ```
 
-_Topology Manager and related interfaces (sketch)._
+_Listing: Topology Manager and related interfaces (sketch)._
 
-![topology-manager-components](https://user-images.githubusercontent.com/379372/35370509-13dd9488-0143-11e8-998b-6b5115982842.png)
+![topology-manager-components](https://user-images.githubusercontent.com/379372/47447523-8efd2b00-d772-11e8-924d-eea5a5e00037.png)
 
-_Topology Manager components._
+_Figure: Topology Manager components._
 
-![numa-manager-instantiation](https://user-images.githubusercontent.com/379372/35370513-17f90f70-0143-11e8-88e3-f199e9717946.png)
+![topology-manager-instantiation](https://user-images.githubusercontent.com/379372/47447526-945a7580-d772-11e8-9761-5213d745e852.png)
 
-_Topology Manager instantiation and inclusion in pod admit lifecycle._
+_Figure: Topology Manager instantiation and inclusion in pod admit lifecycle._
 
 ### Changes to Existing Components
 
@@ -233,17 +233,44 @@ _Topology Manager instantiation and inclusion in pod admit lifecycle._
 1. Add `GetTopologyHints()` method to Device Manager.
     1. Add Socket ID to Device structure in the device plugin
        interface. Plugins should be able to determine the socket
-       when enumerating supported devices.
+       when enumerating supported devices. See the protocol diff below.
     1. Device Manager calls `GetAffinity()` method of Topology Manager when
        deciding device allocation.
 
-![topology-manager-wiring](https://user-images.githubusercontent.com/379372/35370514-1e10fb84-0143-11e8-84d3-99c9ca3af111.png)
+```diff
+diff --git a/pkg/kubelet/apis/deviceplugin/v1beta1/api.proto b/pkg/kubelet/apis/deviceplugin/v1beta1/api.proto
+index efbd72c133..f86a1a5512 100644
+--- a/pkg/kubelet/apis/deviceplugin/v1beta1/api.proto
++++ b/pkg/kubelet/apis/deviceplugin/v1beta1/api.proto
+@@ -73,6 +73,10 @@ message ListAndWatchResponse {
+ 	repeated Device devices = 1;
+ }
 
-_Topology Manager hint provider registration._
++message TopologyInfo {
++  optional int32 socketID = 1 [default = -1];
++}
++
+ /* E.g:
+ * struct Device {
+ *    ID: "GPU-fef8089b-4820-abfc-e83e-94318197576e",
+@@ -85,6 +89,8 @@ message Device {
+ 	string ID = 1;
+ 	// Health of the device, can be healthy or unhealthy, see constants.go
+ 	string health = 2;
++	// Topology details of the device (optional.)
++	optional TopologyInfo topology = 3;
+ }
+```
 
-![topology-manager-hints](https://user-images.githubusercontent.com/379372/35370517-234a5d34-0143-11e8-845a-80e5c66c7b72.png)
+_Listing: Amended device plugin gRPC protocol._
 
-_Topology Manager fetches affinity from hint providers._
+![topology-manager-wiring](https://user-images.githubusercontent.com/379372/47447533-9a505680-d772-11e8-95ca-ef9a8290a46a.png)
+
+_Figure: Topology Manager hint provider registration._
+
+![topology-manager-hints](https://user-images.githubusercontent.com/379372/47447543-a0463780-d772-11e8-8412-8bf4a0571513.png)
+
+_Figure: Topology Manager fetches affinity from hint providers._
 
 # Graduation Criteria
 
