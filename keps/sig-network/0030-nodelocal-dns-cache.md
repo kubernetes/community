@@ -16,7 +16,7 @@ approvers:
   - "@bowei"
 editor: TBD
 creation-date: 2018-10-05
-last-updated: 2018-10-05
+last-updated: 2018-10-30
 status: provisional
 ---
 
@@ -84,17 +84,18 @@ Being able to run a dns caching agent as a Daemonset and get pods to use the loc
 A nodeLocal dns cache runs on all cluster nodes. This is managed as an add-on, runs as a Daemonset. All pods using clusterDNS will now talk to the nodeLocal cache, which will query kube-dns in case of cache misses in cluster's configured DNS suffix and for all reverse lookups(in-addr.arpa and ip6.arpa). User-configured stubDomains will be passed on to this local agent.  
 The node's resolv.conf will be used by this local agent for all other cache misses. One benefit of doing the non-cluster lookups on the nodes from which they are happening, rather than the kube-dns instances, is better use of per-node DNS resources in cloud. For instance, in a 10-node cluster with 3 kube-dns instances, the 3 nodes running kube-dns will end up resolving all external hostnames and can exhaust QPS quota. Spreading the queries across the 10 nodes will help alleviate this.
 
-#### Daemonset, Service, Listen Interface for caching agent
+#### Daemonset and Listen Interface for caching agent
 
-The caching agent daemonset runs in hostNetwork mode in kube-system namespace with a Priority Class of “system-node-critical”. It listens for dns requests on a dummy interface created on the host. A separate ip address is assigned to this dummy interface, so that requests to kube-dns or any other custom service are not incorrectly intercepted by the caching agent. This ip address is obtained by creating a nodelocaldns service, with no endpoints. Kubelet takes the service name as an argument `--localDNS=<namespace>/<svc name>`, looks up the ip address and populates pods' resolv.conf with this value instead of clusterDNS. Each cluster node will have a dummy interface with this service ip assigned to it. This IP will be handled specially because of the NOTRACK rules described in the section below.
+The caching agent daemonset runs in hostNetwork mode in kube-system namespace with a Priority Class of “system-node-critical”. It listens for dns requests on a dummy interface created on the host. A separate ip address is assigned to this dummy interface, so that requests to kube-dns or any other custom service are not incorrectly intercepted by the caching agent. This will be a link-local ip address selected by the user. Each cluster node will have this dummy interface. This ip address will be passed on to kubelet via the --cluster-dns flag, if the feature is enabled.
+
+The selected link-local IP will be handled specially because of the NOTRACK rules described in the section below.
 
 #### iptables NOTRACK
 
-NOTRACK rules are added for connections to and from the nodelocal dns service ip. Additional rules in FILTER table to whitelist these connections, since the INPUT and OUTPUT chains have a default DROP policy.
+NOTRACK rules are added for connections to and from the nodelocal dns ip. Additional rules in FILTER table to whitelist these connections, since the INPUT and OUTPUT chains have a default DROP policy.
 
-A dnscache nanny, similar to the [dnsmasq nanny](https://github.com/kubernetes/dns/tree/master/pkg/dnsmasq) will create the dummy interface and iptables rules. The nanny gets the nodelocal dns service ip address by querying kube-dns for the service name. The Daemonset runs in privileged securityContext since the nanny container needs to create this dummy interface and add iptables rules.
- The nanny will also periodically ensure that the iptables rules are present. The resource usage for periodic iptables check needs to be measured. We can reduce the frequency of the checks by having the nanny query the dns cache and checking/adding rules only if the query fails.
-
+The nodelocal cache process will create the dummy interface and iptables rules . It gets the nodelocal dns ip as a parameter, performs setup and listens for dns requests. The Daemonset runs in privileged securityContext since it needs to create this dummy interface and add iptables rules.
+ The cache process will also periodically ensure that the dummy interface and iptables rules are present, in the background. Rules need to be checked in the raw table and filter table. Rules in these tables do not grow with number of valid services. Services with no endpoints will have rules added in filter table to drop packets destined to these ip. The resource usage for periodic iptables check was measured by creating 2k services with no endpoints and running the nodelocal caching agent. Peak memory usage was 20Mi for the caching agent when it was responding to queries along with the periodic checks. This was measured using `kubectl top` command. More details on the testing are in the following section.
 
 [Proposal presentation](https://docs.google.com/presentation/d/1c43cZqbVhGAlw3dSNQIOGuvQmDfKaA2yiAPRoYpa6iY), also shared at the sig-networking meeting on 2018-10-04
 
@@ -102,29 +103,90 @@ Slide 5 has a diagram showing how the new dns cache fits in.
 
 #### Choice of caching agent
 
-The current plan is to run [Unbound dns server](https://www.nlnetlabs.nl/projects/unbound/about/) by default, based on these benchmark[ tests](https://github.com/kubernetes/perf-tests/tree/master/dns).
+The current plan is to run CoreDNS by default. Benchmark [ tests](https://github.com/kubernetes/perf-tests/tree/master/dns) were run using [Unbound dns server](https://www.nlnetlabs.nl/projects/unbound/about/) and CoreDNS. 2 more tests were added to query for 20 different services and to query several external hostnames.
 
-Will rerun benchmark tests with coreDNS after SO_REUSEPORT support and measure QPS.
+Tests were run on a 1.9.7 cluster with 2 nodes on GCE, using Unbound 1.7.3 and CoreDNS 1.2.3.
+Resource limits for nodelocaldns daemonset was CPU - 50m, Memory 25Mi
 
-Tests were run on a 1.9.7 cluster with 2 nodes, using Unbound 1.7.3 and coreDNS 1.2. Unbound QPS was 3600(caching)/3400(no caching), coreDNS 950(caching)/500(no caching)
+Resource usage and QPS were measured with a nanny process for Unbound/CoreDNS plugin adding iptables rules and ensuring that the rules exist, every minute.
 
+Caching was minimized in Unbound by setting:
+msg-cache-size: 0
+rrset-cache-size: 0
+msg-cache-slabs:1
+rrset-cache-slabs:1
+Previous tests did not set the last 2 and there were quite a few unexpected cache hits.
+
+Caching was disabled in CoreDNS by skipping the cache plugin from Corefile.
+
+These are the results when dnsperf test was run with no QPS limit. In this mode, the tool  sends queries until they start timing out.
+
+| Test Type             | Program | Caching | QPS  |
+|-----------------------|---------|---------|------|
+| Multiple services(20) | CoreDNS | Yes     | 860  |
+| Multiple services(20) | Unbound | Yes     | 3030 |
+|                       |         |         |      |
+| External queries      | CoreDNS | Yes     | 213  |
+| External queries      | Unbound | Yes     | 115  |
+|                       |         |         |      |
+| Single Service        | CoreDNS | Yes     | 834  |
+| Single Service        | Unbound | Yes     | 3287 |
+|                       |         |         |      |
+| Single NXDomain       | CoreDNS | Yes     | 816  |
+| Single NXDomain       | Unbound | Yes     | 3136 |
+|                       |         |         |      |
+| Multiple services(20) | CoreDNS | No      | 859  |
+| Multiple services(20) | Unbound | No      | 1463 |
+|                       |         |         |      |
+| External queries      | CoreDNS | No      | 180  |
+| External queries      | Unbound | No      | 108  |
+|                       |         |         |      |
+| Single Service        | CoreDNS | No      | 818  |
+| Single Service        | Unbound | No      | 2992 |
+|                       |         |         |      |
+| Single NXDomain       | CoreDNS | No      | 827  |
+| Single NXDomain       | Unbound | No      | 2986 |
+
+
+Peak memory usage was ~20 Mi for both Unbound and CoreDNS.
+
+For the single service and single NXDomain query, Unbound still had cache hits since caching could not be completely disabled.
+
+CoreDNS QPS was twice as much as Unbound for external queries. They were mostly unique hostnames from this file - [ftp://ftp.nominum.com/pub/nominum/dnsperf/data/queryfile-example-current.gz](ftp://ftp.nominum.com/pub/nominum/dnsperf/data/queryfile-example-current.gz)
+
+When multiple cluster services were queried with cache misses, Unbound was better(1463 vs 859), but not by a large factor.
+
+Unbound performs much better when all requests are cache hits.
+
+CoreDNS will be the local cache agent in the first release, after considering these reasons:
+
+*  Better QPS numbers for external hostname queries
+*  Single process, no need for a separate nanny process
+*  Prometheus metrics already available, also we can get per zone stats. Unbound gives consolidated stats.
+*  Easier to make changes to the source code
+
+ It is possible to run any program as caching agent by modifying the daemonset and configmap spec. Publishing an image with Unbound DNS can be added as a follow up.
 
 Based on the prototype/test results, these are the recommended defaults: 
 CPU request: 50m
 Memory Limit : 25m  
-Resource usage and QPS to be recomputed after metrics collection has been added.
+
+CPU request can be dropped to a smaller value if QPS needs are lower.
 
 #### Metrics
 
-Unbound metrics can be extracted from the program unbound-control. This can be run from the nanny container.
-Unbound-control-setup is required to setup keys/certs for SSL.
+Per-zone metrics will be available via the metrics/prometheus plugin in CoreDNS.
 
 
 ### Risks and Mitigations
 
-* Having the pods query the nodelocal cache introduces a single point of failure.   
-This is mitigated by assigning a PriorityClass of "system-node-critical", so it is always running. The nanny process will periodically check if the dns agent is running.
-Populating both the nodelocal cache ip address and kube-dns ip address in resolv.conf is not a reliable option. Depending on underlying implementation, this can result in kube-dns being queried only if cache ip does not repond, or both queried simultaneously.
+Having the pods query the nodelocal cache introduces a single point of failure.
+
+* This is mitigated by having a livenessProbe to periodically ensure DNS is working. In case of upgrades, the recommendation is to drain the node before starting to upgrade the local instance. The user can also configure [customPodDNS](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-config) pointing to clusterDNS ip for pods that cannot handle DNS disruption during upgrade.
+
+* The Daemonset is assigned a PriorityClass of "system-node-critical", to ensure it is not evicted.
+
+* Populating both the nodelocal cache ip address and kube-dns ip address in resolv.conf is not a reliable option. Depending on underlying implementation, this can result in kube-dns being queried only if cache ip does not repond, or both queried simultaneously.
 
 
 ## Graduation Criteria
@@ -136,6 +198,7 @@ This feature will be launched with Alpha support in the first release. Master ve
 ## Implementation History
 
 * 2018-10-05 - Creation of the KEP
+* 2018-10-30 - Follow up comments and choice of cache agent
 
 ## Drawbacks [optional]
 
@@ -144,7 +207,9 @@ Additional resource consumption for the Daemonset might not be necessary for clu
 
 ## Alternatives [optional]
 
-The listen ip address for the dns cache could be a link-local ip address, if there is a reliable way to reserve a link-local subnet. This will still require iptables rules for connectivity, in order to skip conntrack.
+* The listen ip address for the dns cache could be a service ip. This ip address is obtained by creating a nodelocaldns service, with same endpoints as the clusterDNS service. Using the same endpoints as clusterDNS helps reduce DNS downtime in case of upgrades/restart. When no other special handling is provided, queries to the nodelocaldns ip will be served by kube-dns/CoreDNS pods. Kubelet takes the service name as an argument `--cluster-dns-svc=<namespace>/<svc name>`, looks up the ip address and populates pods' resolv.conf with this value instead of clusterDNS.
+This approach works only for iptables mode of kube-proxy. This is because kube-proxy creates a dummy interface bound to all service IPs in ipvs mode and ipvs rules are added to load-balance between endpoints. The packet seems to get dropped if there are no endpoints. If there are endpoints, adding iptables rules does not bypass the ipvs loadbalancing rules.
 
+* A nodelocaldns service can be created with a hard requirement of same-node endpoint, once we have [this](https://github.com/kubernetes/community/pull/2846) supported. All the pods in the nodelocaldns daemonset will be endpoints, the one running locally will be selected. iptables rules to NOTRACK connections can still be added, in order to skip DNAT in the iptables kube-proxy implementation.
 
-Instead of just a dns-cache, a full-fledged kube-dns instance can be run on all nodes. This will consume much more resources since each instance will also watch Services and Endpoints.
+* Instead of just a dns-cache, a full-fledged kube-dns instance can be run on all nodes. This will consume much more resources since each instance will also watch Services and Endpoints.
