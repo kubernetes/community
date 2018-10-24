@@ -55,18 +55,18 @@ Create a Google Group at [https://groups.google.com/forum/#!creategroup](https:/
 Each SIG must have two discussion groups with the following settings.
 
 - kubernetes-sig-foo (the discussion group):
-  - Anyone can view content.
-  - Anyone can join.
-  - Anyone can post.
-  - Only members can view the list of members.
+  - Anyone can view content
+  - Anyone can join
+  - Anyone can post
+  - Only members can view the list of members
 - kubernetes-sig-foo-leads (list for the leads, to be used with Zoom and Calendars)
-  - Only members can view group content.
-  - Anyone can apply to join.
-  - Anyone can post.
-  - Only members can view the list of members.
+  - Only members can view group content
+  - Anyone can apply to join
+  - Anyone can post
+  - Only members can view the list of members
 - Groups should be created as e-mail lists with at least three owners (including parispittman at google.com and ihor.dvoretskyi at gmail.com);
 - To add the owners, visit the Group Settings (drop-down menu on the right side), select Direct Add Members on the left side and add Paris and Ihor via email address (with a suitable welcome message); in Members/All Members select Ihor and Paris and assign to an "owner role"
-- Set "View topics", "Post", "Join the Group" permissions to be "Public";
+- Set "View topics", "Post", "Join the Group" permissions to be "Public"
 
 ## SIG/WG Retirement
 
@@ -80,13 +80,13 @@ Retiring a Working Group is covered in [WG Governance](https://github.com/kubern
 The process for closing a SIG/WG is as follows:
 
 - SIG Chairs agree to disband. This decision should follow the decision making process of the SIG's Charter.
-- 
+- Send a email to kubernetes-dev to let people know the SIG has either closed or merged with another SIG. This will let SIG Contributor Experience know that they need to help you archive/deactivate project resources.
 - Work with SIG Contributor Experience to:
   - Archive the mailing list/group
   - Archive the leads mailing list/group
-  - Archive the slack channel.
-  - Move all appropriate github repositories to an appropriate archive or a repo outside of the Kubernetes org.
+  - Archive the slack channel
+  - Deactivate the group's Zoom license
+  - Move all appropriate github repositories to an appropriate archive or a repo outside of the Kubernetes org
   - Ensure that the YouTube Collaboration links are removed
 - Remove SIG Calendar and events from the community calendar
-- Send a courtesy email to kubernetes-dev to let people know the SIG has either closed or merged with another SIG.
 - Update `sigs.yaml` to reflect the removal of the SIG/WG.
