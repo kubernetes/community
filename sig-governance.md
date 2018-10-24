@@ -74,19 +74,22 @@ Sometimes it might be necessary to sunset a SIG or Working Group.
 SIGs/WGs may also merge with an existing SIG/WG if deemed appropriate, and would save project overhead in the long run.
 Working Groups in particular are more ephemeral than SIGs, so this process should be followed when the Working Group has accomplished it's mission.
 
-Retiring a SIG for is covered in the [SIG Governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md)
-Retiring a Working Group is covered in [WG Governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md)
+- Retiring a SIG for is covered in the [SIG Governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md)
+- Retiring a Working Group is covered in [WG Governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md)
 
 The process for closing a SIG/WG is as follows:
 
 - SIG Chairs agree to disband. This decision should follow the decision making process of the SIG's Charter.
 - Send a email to kubernetes-dev to let people know the SIG has either closed or merged with another SIG. This will let SIG Contributor Experience know that they need to help you archive/deactivate project resources.
+  - Consider sending a [closing summary](https://docs.google.com/document/d/1qZcAvuWBznR_oEaPWtwm7U4JNT91m8r9YOUvInU-src/edit#heading=h.jsw0l2t0ra8) to the list. 
 - Work with SIG Contributor Experience to:
   - Archive the mailing list/group
   - Archive the leads mailing list/group
   - Archive the slack channel
   - Deactivate the group's Zoom license
   - Move all appropriate github repositories to an appropriate archive or a repo outside of the Kubernetes org
+  - Clean up and remove all GitHub teams that refer to that SIG/WG
+  - Migrate/Remove/Deprecate any SIG/WG labels in [labels.yaml](https://git.k8s.io/test-infra/label_sync/labels.yaml)
   - Ensure that the YouTube Collaboration links are removed
 - Remove SIG Calendar and events from the community calendar
 - Update `sigs.yaml` to reflect the removal of the SIG/WG.
