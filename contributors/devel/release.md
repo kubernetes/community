@@ -145,7 +145,7 @@ will bubble up as targeting a given release.  The **enhancement freeze**
 starts ~4 weeks into release cycle.  By this point all intended
 feature work for the given release has been defined in suitable
 planning artifacts in conjunction with the Release Team's [enhancements
-lead](https://github.com/kubernetes/sig-release/tree/master/release-team/role-handbooks/enhancements).
+lead](https://git.k8s.io/sig-release/release-team/role-handbooks/enhancements/README.md).
 
 Implementation and bugfixing is ongoing across the cycle, but
 culminates in a code slush and code freeze period:
