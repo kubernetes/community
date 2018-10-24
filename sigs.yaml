@@ -887,7 +887,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
     - name: devstats
       owners:
-      - Phillels
+        - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
     - name: k8s.io
       owners:
       - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
