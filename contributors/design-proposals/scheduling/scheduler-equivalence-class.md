@@ -236,7 +236,7 @@ Please note with the change of predicates in subsequent development, this doc wi
     - No `NoDiskConflict`: the newly scheduled pod fits to existing pods on this node, it will also fits to equivalence class of existing pods.
 
 - **Scope:** 
-    - The node where the pod was bound.
+    - The node where the pod is bound.
 
 
 
@@ -252,7 +252,7 @@ Please note with the change of predicates in subsequent development, this doc wi
     - `MatchInterPodAffinity` if the pod's labels are updated.
 
 - **Scope:**
-    - The node where the pod was bound.
+    - The node where the pod is bound.
 
 
 
@@ -270,7 +270,7 @@ Please note with the change of predicates in subsequent development, this doc wi
     - `NoDiskConflict` if the pod has special volume like `RBD`, `ISCSI`, `GCEPersistentDisk` etc.
 
 - **Scope:**
-    - The node where the pod was bound.
+    - The node where the pod is bound.
 
 
 ### 3.5 Node
