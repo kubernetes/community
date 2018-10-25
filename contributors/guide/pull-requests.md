@@ -78,9 +78,14 @@ Here's the process the pull request goes through on its way from submission to m
 
 1. Reviewer suggests edits
 1. Push edits to your pull request branch
-1. Repeat the prior two steps as needed until reviewer(s) add `/lgtm` label
+1. Repeat the prior two steps as needed until reviewer(s) add `/lgtm` label. The `/lgtm` label, when applied by someone listed as an `reviewer` in the corresponding project `OWNERS` file, is a signal that the code has passed review from one or more trusted reviewers for that project
 1. (Optional) Some reviewers prefer that you squash commits at this step
-1. Follow the bot suggestions to assign an OWNER who will add the `/approve` label to the pull request
+1. Follow the bot suggestions to assign an OWNER who will add the `/approve` label to the pull request. The `/approve` label, when applied by someone listed as an `approver` in the corresponding project `OWNERS`, is a signal that the code has passed final review and is ready to be automatically merged
+
+The behavior of Prow is configurable across projects. You should be aware of the following configurable behaviors.
+
+* If you are listed as an `/approver` in the `OWNERS` file, an implicit `/approve` can be applied to your pull request. This can result in a merge being triggered by a `/lgtm` label. This is the configured behavior in many projects, including `kubernetes/kubernetes`. You can remove the implicit `/approve` with `/approve cancel`
+* `/lgtm` can be configured so that from someone listed as both a `reviewer` and an `approver` will cause both labels to be applied. For `kubernetes/kuebernetes` and many other projects this is _not_ the default behavior, and `/lgtm` is decoupled from `/approve`
 
 Once the tests pass and the reviewer adds the `lgtm` and `approved` labels, the pull request enters the final merge pool. The merge pool is needed to make sure no incompatible changes have been introduced by other pull requests since the tests were last run on your pull request.
 <!-- TODO: create parallel instructions for reviewers -->
