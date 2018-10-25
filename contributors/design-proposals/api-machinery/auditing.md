@@ -243,7 +243,7 @@ type PolicyRule struct {
     // An empty list implies every user.
     Users []string
     // The user groups this rule applies to. If a user is considered matching
-    // if the are a member of any of these groups
+    // if they are a member of any of these groups
     // An empty list implies every user group.
     UserGroups []string
 
