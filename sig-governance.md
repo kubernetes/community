@@ -88,6 +88,11 @@ The process for closing a SIG/WG is as follows:
   - Archive the slack channel
   - Deactivate the group's Zoom license
   - Move all appropriate github repositories to an appropriate archive or a repo outside of the Kubernetes org
+    - Each subproject a SIG owns must transfer ownership to a new SIG, outside the project, or be retired
+    - File an issue with kubernetes/org if multiple repos that need to be retired
+  - Coordinate with SIG Testing on the following topics (if necessary) 
+    - Retire or transfer any test-infra jobs owned by the SIG
+    - Retire or transfer any testgrid dashboards owned by the SIG
   - Clean up and remove all GitHub teams that refer to that SIG/WG
   - Migrate/Remove/Deprecate any SIG/WG labels in [labels.yaml](https://git.k8s.io/test-infra/label_sync/labels.yaml)
   - Ensure that the YouTube Collaboration links are removed
