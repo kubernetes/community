@@ -56,7 +56,7 @@ The following subprojects are owned by sig-contributor-experience:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
 - **devstats**
   - Owners:
-    - Phillels
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
 - **k8s.io**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS

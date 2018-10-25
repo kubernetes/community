@@ -1,0 +1,16 @@
+# see https://go.k8s.io/owners
+
+reviewers:
+  - Phillels
+  - dims
+  - jberkus
+  - nikhita
+  - parispittman
+  - spiffxp
+approvers:
+  - Phillels
+  - lukaszgryglicki
+  - jberkus
+  - spiffxp
+labels:
+  - sig/contributor-experience
