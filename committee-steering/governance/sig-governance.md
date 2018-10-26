@@ -84,7 +84,7 @@ Subproject Owner Role.  (this different from a SIG or Organization Member).
 
 - SIG meets bi-weekly on zoom with agenda in meeting notes
   - *SHOULD* be facilitated by chairs unless delegated to specific Members
-- SIG overview and deep-dive sessions organized for Kubecon
+- SIG overview and deep-dive sessions organized for KubeCon/CloudNativeCon
   - *SHOULD* be organized by chairs unless delegated to specific Members
 - SIG updates to Kubernetes community meeting on a regular basis
   - *SHOULD* be presented by chairs unless delegated to specific Members

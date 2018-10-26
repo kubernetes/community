@@ -53,7 +53,7 @@ _With regards to leadership roles i.e., Chairs, Technical Leads, and Subproject 
 
 - SIG meets bi-weekly on zoom with agenda in meeting notes 
   - SHOULD be facilitated by chairs unless delegated to specific Members 
-- SIG overview and deep-dive sessions organized for Kubecon 
+- SIG overview and deep-dive sessions organized for KubeCon/CloudNativeCon 
   - SHOULD be organized by chairs unless delegated to specific Members 
 - Contributing instructions defined in the SIG CONTRIBUTING.md 
 

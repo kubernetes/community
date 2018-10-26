@@ -17,7 +17,7 @@ In some sense, the summit is a real-life extension of the community meetings and
 
 ## When and Where
 
-- Tuesday, May 1, 2018 (before Kubecon EU)
+- Tuesday, May 1, 2018 (before KubeCon/CloudNativeCon EU)
 - Bella Center, Copenhagen, Denmark
 - Registration and breakfast start at 8am in Room C1-M0
 - Happy hour reception onsite to close at 5:30pm
@@ -58,7 +58,7 @@ There is a [Slack channel](https://kubernetes.slack.com/messages/contributor-sum
 | 7:00        | EmpowerHER event (offsite)      |                                 
 
 - SIG Updates (~5 minutes per SIG)
-  - 2 slides per SIG, focused on cross-SIG issues, not internal SIG discussions (those are for Kubecon)
+  - 2 slides per SIG, focused on cross-SIG issues, not internal SIG discussions (those are for KubeCon/CloudNativeCon)
   - Identify potential issues that might affect multiple SIGs across the project
   - One-to-many announcements about changes a SIG expects that might affect others
 - Track Leads
@@ -68,6 +68,6 @@ There is a [Slack channel](https://kubernetes.slack.com/messages/contributor-sum
 
 ## Misc:
 
-A photographer and videographer will be onsite collecting b-roll and other shots for KubeCon. If you would rather not be involved, please reach out to an organizer on the day of so we may accommodate you.  
+A photographer and videographer will be onsite collecting b-roll and other shots for KubeCon/CloudNativeCon. If you would rather not be involved, please reach out to an organizer on the day of so we may accommodate you.  
 
 Further details to be updated on this doc. Please check back for a complete guide.
