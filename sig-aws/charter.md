@@ -42,55 +42,12 @@ SIG AWS is not for discussing bugs or feature requests outside the scope of Kube
 
 ## Roles and Organization Management
 
-This SIG adheres to the Roles outlined in [sig-governance] and opts-in to updates and modifications to the same.
-
-The following roles are required for the SIG to function properly. In the event that any role is unfilled, the SIG will make a best effort to fill it. Any decisions reliant on a missing role will be postponed until the role is filled.
-
-### Chairs
-
-- 2 or 3 chairs are required
-- Run operations and processes governing the SIG
-- An initial set of chairs was established at the time the SIG was founded.
-- Chairs MAY decide to step down at anytime and propose a replacement, who must be approved by all of the other chairs. This SHOULD be supported by a majority of SIG Members.
-- Chair election must be transparent and should follow the following steps:
-  - initiate the proposal for a new Chair by sending an email to kubernetes-sig-aws@googlegroups.com
-  - propose the new Chair as part of the agenda in the biweekly SIG meeting
-  - gather votes (10+ preferred) from both forums to initiate a PR and change the entry for the lead in [sigs.yaml](https://github.com/kubernetes/community/blob/master/sigs.yaml) 
-- Chairs MAY select additional chairs using the same election process amongst SIG Members.
-- Chairs MUST remain active in the role and are automatically removed from the position if they are unresponsive for > 3 months and MAY be removed by consensus of the other Chairs and members if not proactively working with other Chairs to fulfill responsibilities.
-- Chairs WILL be asked to step down if there is inappropriate behavior or code of conduct issues
-- SIG AWS cannot have more than 1 chair from any one company.
-
-### Subproject/Provider Owners
-
-- There should be at least 1 representative per subproject/provider (though 3 is recommended to avoid deadlock) as specified in the OWNERS file of each cloud provider repository.
-- MUST be an escalation point for technical discussions and decisions in the subproject/provider
-- MUST set milestone priorities or delegate this responsibility
-- MUST remain active in the role and are automatically removed from the position if they are unresponsive for > 3 months and MAY be removed by consensus of other subproject owners and Chairs if not proactively working with other Subproject Owners to fulfill responsibilities.
-- MAY decide to step down at anytime and propose a replacement. This can be done by updating the OWNERS file for any subprojects.
-- MAY select additional subproject owners by updating the OWNERs file.
-- WILL be asked to step down if there is inappropriate behavior or code of conduct issues
-
-### SIG Members
-
-Approvers and reviewers in the OWNERS file of all subprojects under SIG AWS.
-
-## Organization Management
-
-- Six months after this charter is first ratified, it MUST be reviewed and re-approved by the SIG in order to evaluate the assumptions made in its initial drafting
-- SIG meets bi-weekly on zoom with agenda in meeting notes.
-- SHOULD be facilitated by chairs unless delegated to specific Members
-- The SIG MUST make a best effort to provide leadership opportunities to individuals who represent different races, national origins, ethnicities, genders, abilities, sexual preferences, ages, backgrounds, levels of educational achievement, and socioeconomic statuses
+This sig follows adheres to the Roles and Organization Management outlined in [sig-governance]
+and opts-in to updates and modifications to [sig-governance].
 
 ### Subproject Creation
 
-SIG AWS delegates subproject approval to Technical Leads. See [Subproject creation - Option 1].
-
-### Subproject Retirement
-
-SIG AWS subprojects may be retired if they do not satisfy requirements or the renewed scope for more than 6 months. Final decisions for retirement should be supported by a majority of SIG members using [lazy consensus](http://communitymgt.wikia.com/wiki/Lazy_consensus). Once retired any code related to that subproject will be archived into the kubernetes-retired organization.
-
-Subprojects representing may be retired at any point given a lack of development or a lack of demand. Final decisions for retirement should be supported by a majority of SIG members, ideally from active maintainers and members. Once retired, any code related to that subproject will be archived into the kubernetes-retired organization.
+SIG Auth delegates subproject approval to Technical Leads. See [Subproject creation - Option 1].
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [sig-subprojects]: https://github.com/kubernetes/community/blob/master/sig-aws/README.md#subprojects
