@@ -11,7 +11,9 @@ In some sense, the summit is a real-life extension of the community meetings and
 
 ## Registration
 
-- [Form to pick tracks and RSVP for the Sunday evening event](https://goo.gl/X8YrRv)
+The event is now full and is accepting a wait list on the below form. If you are a SIG/WG Chair, Tech Lead, or Subproject Owner, please reach out to community@kubernetes.io after filling out the wait list form. 
+
+- [RSVP/Wait List Form](https://goo.gl/X8YrRv)
 - If you are planning on attending the New Contributor Track, [Sign the CLA](/CLA.md) if you have not done so already.
 
 This is not your KubeCon/CloudNativeCon ticket. You will need to register for the conference separately.
@@ -25,6 +27,14 @@ This is not your KubeCon/CloudNativeCon ticket. You will need to register for th
   - Monday, Dec 10th, 2018 from 8AM-530PM
   - 6th Floor, Washington State Convention Center, Seattle, WA
     (Signage will be present)
+
+### Badge pick up
+If you are not attending KubeCon/CnC but attending this event, please reach out to community@kubernetes.io for a separate process.
+
+You will need your KubeCon/CnC badge to get into Sunday and Monday events. Badge locations:
+- participating hotels (TBA)
+- atrium on the 4th floor of the Washington Convention Center
+- Garage on Sunday night (convenient!)
 
 ## Agenda
 
