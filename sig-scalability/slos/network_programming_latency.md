@@ -60,7 +60,7 @@ this update:
   already present at storage layer, so it won't be hard to propagate that.
 1. The in-cluster load-balancing programmer will export a prometheus metric
 once done with programming. The latency of the operation is defined as
-difference betweem timestamp of then whe operation is done and timestamp
+difference between timestamp of then whe operation is done and timestamp
 recorded in the newly introduced annotation.
 
 #### Caveats
