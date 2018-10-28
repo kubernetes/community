@@ -24,7 +24,7 @@ Kubernetes integrations specific to AWS including:
 - Consult with other SIGs and the community on how to apply mechanisms owned by SIG
   AWS. Examples include:
     - Review escalation implications of feature and API designs as it relates to core Kubernetes components (etcd, kubelet, apiserver, controller manager, scheduler)
-    - CSI, CRI implementation and design
+    - CSI, CNI, CRI implementation and design
     - Cloud provider implementation and design
     - Best practices for hardening add-ons or other external integrations such as KMS, LB, others.
     - Implementing and hardening tests, scale tests and documentation
@@ -42,12 +42,12 @@ SIG AWS is not for discussing bugs or feature requests outside the scope of Kube
 
 ## Roles and Organization Management
 
-This sig follows adheres to the Roles and Organization Management outlined in [sig-governance]
+This SIG adheres to the Roles and Organization Management outlined in [sig-governance]
 and opts-in to updates and modifications to [sig-governance].
 
 ### Subproject Creation
 
-SIG Auth delegates subproject approval to Technical Leads. See [Subproject creation - Option 1].
+SIG AWS delegates subproject approval to Technical Leads. See [Subproject creation - Option 1].
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [sig-subprojects]: https://github.com/kubernetes/community/blob/master/sig-aws/README.md#subprojects
