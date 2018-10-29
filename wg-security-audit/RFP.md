@@ -2,7 +2,7 @@
 
 ## Kubernetes Third Party Security Audit
 
-The Kubernetes Third-Party Audit Working Group (working group, henceforth) is soliciting proposals from select Information Security vendors for a comprehensive security audit of the Kubernetes Project. 
+The Kubernetes Third-Party Audit Working Group (working group, henceforth) is soliciting proposals from select Information Security vendors for a comprehensive security audit of the Kubernetes Project.
 
 ### Eligible Vendors
 
@@ -15,24 +15,26 @@ Only the following vendors will be permitted to submit proposals:
 - Insomnia
 - Atredis Partners
 
-### RPF Process
+If your proposal includes sub-contractors, please include relevant details from their firm such as CVs, past works, etc.
 
-This RFP will be open between 2018/10/22 and 2019/11/18.
+### RFP Process
 
-The working group will answer questions for the first two weeks of this period. 
+This RFP will be open between 2018/10/29 and 2019/11/26.
+
+The working group will answer questions for the first two weeks of this period.
 
 Questions can be submitted [here](https://docs.google.com/forms/d/e/1FAIpQLSd5rXSDYQ0KMjzSEGxv0pkGxInkdW1NEQHvUJpxgX3y0o9IEw/viewform?usp=sf_link). All questions will be answered publicly in this document.
 
 Proposals must include CVs, resumes, and/or example reports from staff that will be working on the project.
 
-- 2018/10/22: RFP Open, Question period open
-- 2018/11/05: Question period closes
-- 2018/11/19: RFP Closes
-- 2018/11/26: The working group will announce vendor selection
+- 2018/10/29: RFP Open, Question period open
+- 2018/11/12: Question period closes
+- 2018/11/26: RFP Closes
+- 2018/12/04: The working group will announce vendor selection
 
 ## Audit Scope
 
-The scope of the audit is the 3 most recent releases (1.10, 1.11, 1.12) of the core [Kubernetes project](https://github.com/kubernetes/kubernetes). 
+The scope of the audit is the most recent release (1.12) of the core [Kubernetes project](https://github.com/kubernetes/kubernetes).
 
 - Findings within the [bug bounty program](https://github.com/kubernetes/community/blob/master/contributors/guide/bug-bounty.md) scope are in scope.
 
