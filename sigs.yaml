@@ -424,6 +424,9 @@ sigs:
     - name: aws-encryption-provider
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
+    - name: aws-ebs-csi-driver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
   - name: Azure
     dir: sig-azure
     mission_statement: >
