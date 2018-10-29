@@ -144,9 +144,9 @@ aliases:
     - vishh
     - derekwaynecarr
   wg-security-audit-leads:
-    - jessfraz
     - aasmall
     - joelsmith
+    - cji
 ## BEGIN CUSTOM CONTENT
   steering-committee:
     - bgrant0607

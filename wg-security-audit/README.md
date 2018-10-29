@@ -15,9 +15,9 @@ Perform a security audit on k8s with a vendor and produce as artifacts a threat 
 
 ## Organizers
 
-* Jessie Frazelle (**[@jessfraz](https://github.com/jessfraz)**), Microsoft
 * Aaron Small (**[@aasmall](https://github.com/aasmall)**), Google
 * Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
+* Craig Ingram (**[@cji](https://github.com/cji)**), Salesforce
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/)
