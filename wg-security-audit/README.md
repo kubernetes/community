@@ -8,21 +8,23 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Security Audit Working Group
 
-Perform a security audit on k8s with a vendor and produce as artifacts a threat model and whitepaper outlining everything found during the audit.
+Perform a security audit on k8s with a vendor and produce as artifacts  a threat model and whitepaper outlining everything found during the audit.
 
 ## Meetings
 * Regular WG Meeting: [Mondays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1RbC4SBZBlKth7IjYv_NaEpnmLGwMJ0ElpUOmsG-bdRA/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
 
 ## Organizers
 
-* Jessie Frazelle (**[@jessfraz](https://github.com/jessfraz)**), Microsoft
 * Aaron Small (**[@aasmall](https://github.com/aasmall)**), Google
 * Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
+* Craig Ingram (**[@cji](https://github.com/cji)**), Salesforce
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/)
 * [Mailing list]()
 
 <!-- BEGIN CUSTOM CONTENT -->
-
+## Request For Proposals
+      
+The RFP will be open between 2018/10/29 and 2019/11/26 and has been published [here](https://github.com/kubernetes/community/blob/master/wg-security-audit/RFP.md).
 <!-- END CUSTOM CONTENT -->
