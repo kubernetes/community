@@ -26,7 +26,7 @@ Search for the above job names in various configuration files as below:
 
 * Prow config: https://git.k8s.io/test-infra/prow/config.yaml
 * Test job/bootstrap config: https://git.k8s.io/test-infra/jobs/config.json
-* Test grid config: https://git.k8s.io/test-infra/testgrid/config/config.yaml
+* Test grid config: https://git.k8s.io/test-infra/testgrid/config.yaml
 * Job specific config: https://git.k8s.io/test-infra/jobs/env
 
 ### Results
@@ -75,7 +75,7 @@ Search for the above job names in various configuration files as below:
 
 * Prow config: https://git.k8s.io/test-infra/prow/config.yaml
 * Test job/bootstrap config: https://git.k8s.io/test-infra/jobs/config.json
-* Test grid config: https://git.k8s.io/test-infra/testgrid/config/config.yaml
+* Test grid config: https://git.k8s.io/test-infra/testgrid/config.yaml
 * Job specific config: https://git.k8s.io/test-infra/jobs/env
 
 ### Results
