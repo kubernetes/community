@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Security Audit Working Group
 
-Perform a security audit on k8s with a vendor and produce as artifacts  a threat model and whitepaper outlining everything found during the audit.
+Perform a security audit on k8s with a vendor and produce as artifacts a threat model and whitepaper outlining everything found during the audit.
 
 ## Meetings
 * Regular WG Meeting: [Mondays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1RbC4SBZBlKth7IjYv_NaEpnmLGwMJ0ElpUOmsG-bdRA/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
