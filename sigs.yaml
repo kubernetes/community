@@ -2147,15 +2147,15 @@ workinggroups:
     charter_link:
     leadership:
       chairs:
-      - name: Jessie Frazelle
-        github: jessfraz
-        company: Microsoft
       - name: Aaron Small
         github: aasmall
         company: Google
       - name: Joel Smith
         github: joelsmith
         company: Red Hat
+      - name: Craig Ingram
+        github: cji
+        company: Salesforce
     meetings:
     - description: Regular WG Meeting
       day: Monday
