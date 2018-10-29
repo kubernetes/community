@@ -25,21 +25,20 @@ status: provisional
     * [Goals](#goals)
 * [Proposal](#proposal)
     * [Algorithm to accept/reject readonly request](#algorithm-to-accept-reject-readonly-request)
-    * [How to store limits config](#how-to-store-limits-config)
     * [How to determinate request weight](#how-to-determinate-request-weight)
 * [Discussionable questions](#discussionable-questions)
     * [How to treat namespace-scoped lists?](#how-to-treat-namespace-scoped-lists)
     * [Should we  make users connect to all apiservers to use their entire allotted qps?](#should-we-make-users-connect-to-all-apiservers)
 
 ## Summary <a name="summary"></a>
-This KEP proposes to implement `readonly_capacity`, `mutating_capacity`, `readonly_limit`, `readonly_request` and `mutating_limit`, `mutating_request`, for readonly & mutating requests accordingly for different user groups, considering different physical resource consumption by particular operations (e.g. get single pod vs. get all pods). `*_limit` limits total inflight request `tokens` from certain group and `*_request` reserves some amount of `tokens` for critical groups.
+This KEP proposes to implement readonly & mutating `capacity` for the apiserver; readonly & mutating `limit` and `request` of requests for different users and groups, considering different physical resource consumption by particular operations (e.g. get single pod vs. get all pods). `limit` limits total inflight request `tokens` from certain user or group and `request` reserves some amount of `tokens` for critical users or groups.
 
 
 ## Motivation <a name="motivation"></a>
 
 Buggy service or malicious user may easily run out of '--max-mutating-requests-inflight' or '--max-requests-inflight' request limit by DOSing the apiserver. It will block actually important users (kubelets, controllers/schedulers), that, potentially, leads to impossibility to stop buggy service or block attacker via k8s.
 
-Using only `limit` to prevent blocking important users isn't enough flexible: to guarantee service availability for this users we should set rigid limits, when, sum of all limits not exceed server capacity (e.g. --max-requests-inflight). It will lead to throttling particular user group even if the server not loaded by other users.
+Using only `limit` to prevent blocking important users isn't enough flexible: to guarantee service availability for this users we should set rigid limits, when, sum of all limits not exceed server capacity (e.g. --max-requests-inflight). It will lead to throttling particular user or group even if the server not loaded by other users.
 
 Combination of `limit` and `request` allows to prevent overreservation of resources for critical users on the one hand, and flexible restrict different parts of the system from overspending resources on the other hand.
 
@@ -49,43 +48,26 @@ account resource consumption more realistic.
 
 ### Goals <a name="goals"></a>
 
-* Implement per-group `limit` and `reserve`
+* Implement per-user and per-group `limit` and `request`
 * Implement request cost estimation
-* Find appropriate resource to store limits & reserves map
 
 ## Proposal <a name="proposal"></a>
 
-Implement weight-based per-group limits instead of current count-based limits.
+Implement weight-based per-user and per-group limits instead of current count-based limits.
 Every request has its own `weight` measured in `tokens`, according to its complexity. Exact algorithm of request cost calculation described below.
 
-Implement following parameters:
-* `readonly_capacity`, `mutating_capacity`: Total `weight` of inflight requests,
-that apiserver could carry.
-* `readonly_limit`,  `mutating_limit`: Limits total requests `weight` across  particular group.
-* `readonly_request`,  `mutating_request`: Reserved `weight` for particular group.
+Implement options `readonly_capacity`, `mutating_capacity`: Total `weight` of inflight requests that apiserver could carry.
 
-**Example**: We have `readonly_capacity` = 1000, `readonly_request` specified for `system:masters` is 50, for `system:node` is 100, so total available `tokens` for users from other groups is 850. In other words, members of `system:masters` in any time have at least 50 `tokens`.
-
-
-### Algorithm to accept/reject readonly request <a name="algorithm-to-accept-reject-readonly-request"></a>
-
-0. Pick group with max `readonly_request` across user's group as `request_group`, pick group with max `readonly_limit` across user's group as `limit_group`.
-1. If $total `weight` of inflight readonly requests of `requestGroup` > `limit_group.readonly_limit`, REJECT inbound request
-2. Else, if total `weight` of inflight readonly requests of `requestGroup` < `request_group.readonly_request`, ACCEPT inbound request
-3. Else, if (sum of `readonly_request` of all groups + total `weight` of all readonly requests, exceedes appropriate `request_group.readonly_request`) < `readonly_capacity`, ACCEPT inbound request
-4. else, REJECT  inbound request
-
-For mutating requests algorithm is the same.
-
-### How to store limits config <a name="how-to-store-limits-config"></a>
-
-Implement new API resource to store group limits and requests:
+Implement new API resource `InflightLimit` to store group limits and requests:
 ```
 apiVersion: extensions/v1beta1
 kind: InflightLimit
 metadata:
-  name: %USER_GROUP_NAME%
+  name: %NAME%
 spec:
+  subjects:
+    kind: %SUBJECT_KIND%
+    name: %SUBJECT_NAME%
   readonly:
     limit: %READONLY_TOKENS_LIMIT%
     request: %READONLY_TOKENS_REQUEST%
@@ -99,19 +81,47 @@ status:
 
 Where:
 
-`%USER_GROUP_NAME%` - The name of appropriate user group
+`%NAME%` - The name of `InflightLimit` resource
 
-`%READONLY_TOKENS_LIMIT%` - `readonly_limit`
+`%SUBJECT_KIND%` - `User` or `Group`, like in `RoleBinding`
 
-`%READONLY_TOKENS_REQUEST%` - `readonly_request`
+`%SUBJECT_NAME%` - User or group name
 
-`%MUTATING_TOKENS_LIMIT%` - `mutating_limit`
+`%READONLY_TOKENS_LIMIT%` - Limits total readonly requests `weight` across  particular user or group
 
-`%MUTATING_TOKENS_REQUEST%` - `mutating_request`
+`%READONLY_TOKENS_REQUEST%` - Reserved (always available) `weight` of readonly requests  for particular user or group
 
-`%CURRENT_READONLY_TOKENS_INFLIGHT%` - Total `weight` of inflight readonly requests from the user group
+`%MUTATING_TOKENS_LIMIT%` - Limits total mutating requests `weight` across  particular user or group.
 
-`%CURRENT_MUTATING_TOKENS_INFLIGHT%` - Total `weight` of inflight mutating requests from the user group
+`%MUTATING_TOKENS_REQUEST%` - Reserved (always available) `weight` of mutating requests  for particular user or group
+
+`%CURRENT_READONLY_TOKENS_INFLIGHT%` - Total `weight` of inflight readonly requests from the user or group
+
+`%CURRENT_MUTATING_TOKENS_INFLIGHT%` - Total `weight` of inflight mutating requests from the user or group
+
+**Example**: We have `readonly_capacity` = 1000. `readonly.request` specified for `system:masters` is 50, for user `node` is 100, so total available readonly request `tokens` for other users is 850. In other words, members of `system:masters` in any time have at least 50 `tokens`, user `node` in any time have at least 100 `tokens`.
+
+
+### Algorithm to accept/reject readonly request <a name="algorithm-to-accept-reject-readonly-request"></a>
+
+0. User $CURRENT_USER made readonly request to apiserver, pick the request `weight` as `$REQUEST_WEIGHT`
+
+1. If $CURRENT_USER has appropriate `InflightLimit` resource, pick it as `$CURRENT_INFLIGHTLIMIT_LIMIT` and `$CURRENT_INFLIGHTLIMIT_REQUEST`
+Otherwise, among groups of the `$CURRENT_USER`, pick `InflightLimit` with max `readonly.limit` as `$CURRENT_INFLIGHTLIMIT_LIMIT` and `InflightLimit` with max `readonly.request` as `$CURRENT_INFLIGHTLIMIT_REQUEST`.
+
+2. If `$CURRENT_INFLIGHTLIMIT_LIMIT.status.readonlyInflightTokens + $REQUEST_WEIGHT > $CURRENT_INFLIGHTLIMIT_LIMIT.spec.readonly.limit`,
+**REJECT** inbound request
+
+3. Else, if `$CURRENT_INFLIGHTLIMIT_REQUEST.status.readonlyInflightTokens + $REQUEST_WEIGHT <= $CURRENT_INFLIGHTLIMIT_REQUEST.spec.readonly.request`,
+ **ACCEPT** inbound request
+
+4. Else, if (sum (`readonlyInflightTokens - readonly.request`) of all `InflightLimit` objects ) + `$REQUEST_WEIGHT`
+<=  `readonly_capacity` - (sum (`readonly.request`) of all `InflightLimit` objects),
+ **ACCEPT** inbound request
+
+5. Else, **REJECT**  inbound request
+
+For mutating requests algorithm is the same.
 
 ### How to determinate request weight<a name="how-to-determinate-request-weight"></a>
 
