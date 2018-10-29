@@ -27,7 +27,7 @@ Our SLIs/SLOs need to have the following properties:
   arcane knowledge.
 
 We may also introduce internal(for developers only) SLIs, that may be useful
-for understanding performance characterstic of the system, but for which
+for understanding performance characteristic of the system, but for which
 we don't provide any guarantees for users (and thus don't require them to be
 that easily understandable).
 
