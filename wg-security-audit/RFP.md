@@ -36,7 +36,7 @@ The scope of the audit is the 3 most recent releases (1.10, 1.11, 1.12) of the c
 
 - Findings within the [bug bounty program](https://github.com/kubernetes/community/blob/master/contributors/guide/bug-bounty.md) scope are in scope.
 
-> We want the focus of the audit to be on bugs on Kubernetes. While Kubernetes relies upon a container runtimes such as Docker and CRI-O, we aren't looking for (for example) container escapes that rely upon bugs in the container runtime (unless, for example, the escape is made possible by a defect in the way that Kubernetes sets up the container).
+ We want the focus of the audit to be on bugs on Kubernetes. While Kubernetes relies upon a container runtimes such as Docker and CRI-O, we aren't looking for (for example) container escapes that rely upon bugs in the container runtime (unless, for example, the escape is made possible by a defect in the way that Kubernetes sets up the container).
 
 ### Focus Areas
 
@@ -46,7 +46,7 @@ The Kubernetes Third-Party Audit Working Group is specifically interested in the
 - Cryptography
 - Authentication & Authorization (including Role Based Access Controls)
 - Secrets management
-- Multi-tenancy isolation along Kubernetes namespace boundaries  
+- Multi-tenancy isolation: Specifically soft (non-hostile co-tenants)
 
 ### Out of Scope
 
@@ -54,17 +54,17 @@ Findings specifically excluded from the [bug bounty program](https://github.com/
 
 ## Methodology
 
-We are allowing 8 weeks for the audit. Artifacts must be supplied to the working group by January 21, 2019.
+We are allowing 8 weeks for the audit, start date can be negioated after vendor selection. We recognize that November and December can be very high utilization periods for security vendors.
 
-The audit should not be treated as a penetration test, or red team exercise. The should be comprehensive and not end with the first successful exploit or critical vulnerability.
+The audit should not be treated as a penetration test, or red team exercise. It should be comprehensive and not end with the first successful exploit or critical vulnerability.
 
-The vendor should preform both source code analysis as well as live evaluation of Kubernetes.
+The vendor should perform both source code analysis as well as live evaluation of Kubernetes.
 
-The vendor should document the Kubernetes configuration and architecture that the audit was preformed against for the creation of a "audited reference architecture" artifact.
+The vendor should document the Kubernetes configuration and architecture that the audit was performed against for the creation of a "audited reference architecture" artifact. The working group must approve this configuration before the audit continues.
 
-After vendor selection the working group will establish a 60 minute kick-off meeting to answer any initial questions and explain Kubernetes architecture.
+The working group will establish a 60 minute kick-off meeting to answer any initial questions and explain Kubernetes architecture.
 
-The working group will be available weekly to meet with the selected vendor. And provide subject matter experts on requested components.
+The working group will be available weekly to meet with the selected vendor, will and provide subject matter experts for requested components.
 
 The vendor must report urgent security issues immediately to both the working group and security@kubernetes.io.
 
@@ -76,9 +76,9 @@ All information gathered and artifacts created as a part of the audit must not b
 
 The audit should result in the following artifacts, which will be made public after any sensitive security issues are mitigated.
 
-- Findings report, including and executive summary
+- Findings report, including an executive summary
 
-- Audited reference architecture specification
+- Audited reference architecture specification. Should take the form of a summary and associated configuration yaml files.
 
 - Formal threat model
 
