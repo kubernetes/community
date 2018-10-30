@@ -52,7 +52,7 @@ Guidelines for drafting a SIG Charter can be found [here](/committee-steering/go
 
 Your SIG needs a place to discuss topics asynchronously. You have two options, a traditional mailing list via Google Groups, or a category on [discuss.kubernetes.io](discuss.kubernetes.io). The main difference is Groups is primarily email-based with a web UI tacked on, and Discuss is primarily a Web UI with email tacked-on. The other difference is that your SIG/WG is responsible for moderating your Google Group; with discuss you just depend on the usual community moderation.
 
-- Working Groups, due to their temporary nature, are strongly encouraged to create a category on discuss.k8s.io, this will reduce your workload.
+- Working Groups, due to their temporary nature, are strongly encouraged to consider using an existing SIG mailing list if appropriate, otherwise use a discuss category for less management overhead.
 - SIGs, due to their usage of calendars, and Zoom accounts, are strongly encouraged to use a traditional mailing list.
 
 Choose one:
