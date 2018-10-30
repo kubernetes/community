@@ -48,7 +48,20 @@ Guidelines for drafting a SIG Charter can be found [here](/committee-steering/go
 * Leads should [subscribe to the kubernetes-sig-leads mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-leads)
 * Submit a PR to add a row for the SIG to the table in the kubernetes/community README.md file, to create a kubernetes/community directory, and to add any SIG-related docs, schedules, roadmaps, etc. to your new kubernetes/community/SIG-foo directory.
 
-#### Creating a mailing list
+### Discussion Platforms
+
+Your SIG needs a place to discuss topics asynchronously. You have two options, a traditional mailing list via Google Groups, or a category on [discuss.kubernetes.io](discuss.kubernetes.io). The main difference is Groups is primarily email-based with a web UI tacked on, and Discuss is primarily a Web UI with email tacked-on. The other difference is that your SIG/WG is responsible for moderating your Google Group; with discuss you just depend on the usual community moderation.
+
+- Working Groups, due to their temporary nature, are strongly encouraged to create a category on discuss.k8s.io, this will reduce your workload.
+- SIGs, due to their usage of calendars, and Zoom accounts, are strongly encouraged to use a traditional mailing list.
+
+Choose one:
+
+#### Create a Category
+
+Post a message asking for a category in the [Site Feedback and Help](https://discuss.kubernetes.io/c/site-feedback) section and a moderator will create your category for you and provide you with a URL and mail address to post to.
+
+#### Creating a Google Group
 
 Create a Google Group at [https://groups.google.com/forum/#!creategroup](https://groups.google.com/forum/#!creategroup), following the procedure:
 
@@ -57,13 +70,16 @@ Each SIG must have two discussion groups with the following settings.
 - kubernetes-sig-foo (the discussion group):
   - Anyone can view content.
   - Anyone can join.
-  - Anyone can post.
+  - Moderate messages from non-members of the group.
   - Only members can view the list of members.
 - kubernetes-sig-foo-leads (list for the leads, to be used with Zoom and Calendars)
   - Only members can view group content.
   - Anyone can apply to join.
-  - Anyone can post.
+  - Moderate messages from non-members of the group.
   - Only members can view the list of members.
-- Groups should be created as e-mail lists with at least three owners (including parispittman at google.com and ihor.dvoretskyi at gmail.com);
-- To add the owners, visit the Group Settings (drop-down menu on the right side), select Direct Add Members on the left side and add Paris and Ihor via email address (with a suitable welcome message); in Members/All Members select Ihor and Paris and assign to an "owner role"
+- Groups should be created as e-mail lists with at least three owners (including parispittman at google.com and jorge@heptio.com and ihor@cncf.io)
+- To add the owners, visit the Group Settings (drop-down menu on the right side), select Direct Add Members on the left side and add Paris, Jorge and Ihor via email address (with a suitable welcome message); in Members/All Members select Paris, Jorge, and Ihor and assign to an "owner role"
 - Set "View topics", "Post", "Join the Group" permissions to be "Public";
+
+Familiarize yourself with the [moderation guidelines](https://github.com/kubernetes/community/blob/master/communication/moderation.md) for the project. Chairs should be cognizant that a new group will require an initial time investment moderation-wise as the group establishes itself.
+
