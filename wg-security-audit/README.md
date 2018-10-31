@@ -26,5 +26,5 @@ Perform a security audit on k8s with a vendor and produce as artifacts a threat 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Request For Proposals
       
-The RFP will be open between 2018/10/29 and 2019/11/26 and has been published [here](https://github.com/kubernetes/community/blob/master/wg-security-audit/RFP.md).
+The RFP will be open between 2018/10/29 and 2018/11/26 and has been published [here](https://github.com/kubernetes/community/blob/master/wg-security-audit/RFP.md).
 <!-- END CUSTOM CONTENT -->
