@@ -43,8 +43,6 @@ and opts-in to updates and modifications to [sig-governance].
 
 ### Deviations from [sig-governance]
 
-- Generic technical leads are not appropriate for this SIG because sub-projects maintain their own documented, accountable processes
-
 ### Subproject Creation
 
 Federation of Subprojects as defined in [sig-governance]
