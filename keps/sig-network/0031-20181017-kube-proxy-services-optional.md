@@ -32,7 +32,6 @@ superseded-by:
       * [Story 1](#story-1)
     * [Implementation Details/Notes/Constraints](#implementation-detailsnotesconstraints)
       * [Design](#design)
-      * [Considerations](#considerations)
       * [Testing](#testing)
     * [Risks and Mitigations](#risks-and-mitigations)
 * [Graduation Criteria](#graduation-criteria)
@@ -71,11 +70,11 @@ As a cluster operator, operating a cluster using a service mesh I want to be abl
 
 #### Overview
 
-It is important for overall scalability that kube-proxy does not watch for service/endpoint changes that it is not going to affect. This can save a lot of load on the apiserver, networking, and kube-proxy itself by never requesting the updates in the first place. As such, annotating the services directly is considered insufficient as the kube-proxy would still have to watch for changed to the service.
+It is important for overall scalability that kube-proxy does not receive data for Service/Endpoints objects that it is not going to affect. This can reduce load on the apiserver, networking, and kube-proxy itself by never receiving the updates in the first place.
 
-The proposal is to make this feature available at the namespace level. We will support a new label for namespaces: `networking.k8s.io/service-proxy=disabled`
+The proposal is to make this feature available by annotating the Service object with this label: `kube-proxy.kubernetes.io/disabled=true`. The associated Endpoints object will automatically inherit that label from the Service object as well.
 
-When this label is set, kube-proxy will behave as if services in that namespace do not exist. None of the functionality that kube-proxy provides will be available for services in that namespace.
+When this label is set, kube-proxy will behave as if that service does not exist. None of the functionality that kube-proxy provides will be available for that service.
 
 It is expected that this feature will mainly be used on large clusters with lots (>1000) of services. Any use of this feature in a smaller cluster will have negligible impact.
 
@@ -83,43 +82,26 @@ The envisioned cluster that will make use of this feature looks something like t
 * Most/all traffic from outside the cluster is handled by gateways, such that each service in the cluster does not need a nodePort
 * These small number of entry points into the cluster are a part of the service mesh
 * There are many micro-services in the cluster, all a part of the service mesh, that are only accessed from inside the service mesh
-  * These services are in a separate namespace from the gateways
 
 #### Design
 
-Currently, when ProxyServer starts up it creates informers for all Service (ServiceConfig) and Endpoints (EndpointsConfig) objects using a single shared informer factory. The new design will make these previous objects be per-namespace, and only listen on namespaces that are not 'disabled'.
+Currently, when ProxyServer starts up it creates informers for all Service (ServiceConfig) and Endpoints (EndpointsConfig) objects using a single shared informer factory.
 
-The ProxyServer type will be updated with the following new methods:
-* func (s *ProxyServer) StartWatchingNamespace(ns string)
-  * Check if namespace is currently watched, if it is then return
-  * Create a shared informer factory configured with the namespace
-  * Create a ServiceConfig and EndpointsConfig object using the shared informer factory
-* func (s *ProxyServer) StopWatchingNamespace(ns string)
-  * Check if namespace is currently watched, if it is not then return
-  * Stop the ServiceConfig and EndpointsConfig for that namespace
-  * Send deletion events for all objects those configs knew about
-  * Delete the config objects
-
-At startup time, ProxyServer will create an informer for all Namespace objects.
-* When a namespace objects is created or updated:
-  * Check for the above label, and if it is not set or is not 'disabled':
-    * StartWatchingNamespace()
-  * Else:
-    * StopWatchingNamespace()
-* When a namespace object is deleted:
-  * StopWatchingNamespace()
-
-#### Considerations
-
-kube-proxy has logic in it right now to not sync rules until the config objects have been synced. Care should be taken to make sure this logic still works, and that the data is only considered synced when the Namespace informer and all ServiceConfig and EndpointsConfig objects are synced.
+The new design will simply add a LabelSelector filter to the shared informer factory, such that objects with the above label are filtered out by the API server:
+```diff
+-       informerFactory := informers.NewSharedInformerFactory(s.Client, s.ConfigSyncPeriod)
++       informerFactory := informers.NewSharedInformerFactoryWithOptions(s.Client, s.ConfigSyncPeriod,
++               informers.WithTweakListOptions(func(options *v1meta.ListOptions) {
++                       options.LabelSelector = "kube-proxy.kubernetes.io/disabled!=true"
++               }))
+```
 
 #### Testing
 
 The following cases should be tested. In each case, make sure that services are added/removed from iptables (or other) as expected:
-* Adding/removing services from namespaces with and without the above label
-* Adding/removing the above label from namespaces with existing services
-* Deleting a namespace with services with and without the above label
-* Having a label value other than 'disabled', which should behave as if the label is not set
+* Adding/removing services/endpoints with and without the above label
+* Adding/removing the above label from existing services/endpoints
+* Having a label value other than 'true', which should behave as if the label is not set
 
 ### Risks and Mitigations
 
