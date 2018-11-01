@@ -666,6 +666,9 @@ If a behavior does not currently have coverage and a developer wishes to add a
 new e2e test, navigate to the ./test/e2e directory and create a new test using
 the existing suite as a guide.
 
+**NOTE:** To build/run with tests in a new directory within ./test/e2e, add the 
+directory to import list in ./test/e2e/e2e_test.go
+
 TODO(#20357): Create a self-documented example which has been disabled, but can
 be copied to create new tests and outlines the capabilities and libraries used.
 
