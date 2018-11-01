@@ -34,7 +34,7 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 
 ## Roles and Organization Management
 
-This sig follows adheres to the Roles and Organization Management outlined in [sig-governance]
+This sig follows and adheres to the Roles and Organization Management outlined in [sig-governance]
 and opts-in to updates and modifications to [sig-governance].
 
 ### Additional responsibilities of Chairs
