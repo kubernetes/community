@@ -83,6 +83,7 @@ The following subprojects are owned by sig-cluster-lifecycle:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
 - **kubeadm-dind-cluster**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubeadm-dind-cluster/master/OWNERS
