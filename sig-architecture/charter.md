@@ -9,18 +9,22 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 
 ### In scope
 
-#### Code, Binaries and Services
+#### Code, Binaries, Docs, and Services
 
 - *Conformance test definitions*
 - *API definitions*
+- *Architectural renderings*
+- *API conventions*
+- *Design principles*
+- *Deprecation policy*
 
 #### Cross-cutting and Externally Facing Processes
 
 - API review process
 - Conformance test review and management
 - The Kubernetes Enhancement Proposal (KEP) process and KEP reviews
-- Design documentation tracking
-- Deprecation policies
+- Design documentation management
+- Deprecation policy management
 - Architectural initiative backlog management
 
 ### Out of scope
