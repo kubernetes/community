@@ -45,9 +45,10 @@ type PodLifeCycleEventType string
 
 const (
     ContainerStarted      PodLifeCycleEventType = "ContainerStarted"
-    ContainerStopped      PodLifeCycleEventType = "ContainerStopped"
-    NetworkSetupCompleted PodLifeCycleEventType = "NetworkSetupCompleted"
-    NetworkFailed         PodLifeCycleEventType = "NetworkFailed"
+    ContainerDied         PodLifeCycleEventType = "ContainerDied"
+    ContainerRemoved      PodLifeCycleEventType = "ContainerRemoved"
+    PodSync               PodLifeCycleEventType = "PodSync"
+    ContainerChanged      PodLifeCycleEventType = "ContainerChanged"
 )
 
 // PodLifecycleEvent is an event reflects the change of the pod state.
