@@ -20,7 +20,7 @@ admission controller that uses code, rather than configuration, to map the
 resource requests and limits of a pod to QoS, and attaches the corresponding
 annotation.)
 
-We anticipate a  number of other uses for `MetadataPolicy`, such as defaulting
+We anticipate a number of other uses for `MetadataPolicy`, such as defaulting
 for labels and annotations, prohibiting/requiring particular labels or
 annotations, or choosing a scheduling policy within a scheduler. We do not
 discuss them in this doc.
