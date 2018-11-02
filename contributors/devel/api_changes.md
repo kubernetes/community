@@ -95,9 +95,11 @@ backward-compatibly.
 
 Before talking about how to make API changes, it is worthwhile to clarify what
 we mean by API compatibility.  Kubernetes considers forwards and backwards
-compatibility of its APIs a top priority.
+compatibility of its APIs a top priority.  Compatibility is *hard*, especially
+handling issues around rollback-safety.  This is something every API change
+must consider.
 
-An API change is considered forward and backward-compatible if it:
+An API change is considered compatible if it:
 
    * adds new functionality that is not required for correct behavior (e.g.,
 does not add a new required field)
@@ -107,24 +109,35 @@ does not add a new required field)
      * which fields are required and which are not
      * mutable fields do not become immutable
      * valid values do not become invalid
+     * explicitly invalid values do not become valid
 
 Put another way:
 
-1. Any API call (e.g. a structure POSTed to a REST endpoint) that worked before
-your change must work the same after your change.
-2. Any API call that uses your change must not cause problems (e.g. crash or
-degrade behavior) when issued against servers that do not include your change.
-3. It must be possible to round-trip your change (convert to different API
+1. Any API call (e.g. a structure POSTed to a REST endpoint) that succeeded
+before your change must succeed after your change.
+2. Any API call that does not use your change must behave the same as it did
+before your change.
+3. Any API call that uses your change must not cause problems (e.g. crash or
+degrade behavior) when issued against an API servers that do not include your
+change.
+4. It must be possible to round-trip your change (convert to different API
 versions and back) with no loss of information.
-4. Existing clients need not be aware of your change in order for them to
-continue to function as they did previously, even when your change is utilized.
+5. Existing clients need not be aware of your change in order for them to
+continue to function as they did previously, even when your change is in use.
+6. It must be possible to rollback to a previous version of API server that
+does not include your change and have no impact on API objects which do not use
+your change.  API objects that use your change will be impacted in case of a
+rollback.
 
-If your change does not meet these criteria, it is not considered strictly
-compatible, and may break older clients, or result in newer clients causing
-undefined behavior.
+If your change does not meet these criteria, it is not considered compatible,
+and may break older clients, or result in newer clients causing undefined
+behavior.  Such changes are generally disallowed, though exceptions have been
+made in extreme cases (e.g. security or obvious bugs).
 
-Let's consider some examples. In a hypothetical API (assume we're at version
-v6), the `Frobber` struct looks something like this:
+Let's consider some examples.
+
+In a hypothetical API (assume we're at version v6), the `Frobber` struct looks
+something like this:
 
 ```go
 // API v6.
@@ -134,7 +147,7 @@ type Frobber struct {
 }
 ```
 
-You want to add a new `Width` field. It is generally safe to add new fields
+You want to add a new `Width` field. It is generally allowed to add new fields
 without changing the API version, so you can simply change it to:
 
 ```go
@@ -146,29 +159,55 @@ type Frobber struct {
 }
 ```
 
-The onus is on you to define a sane default value for `Width` such that rule #1
-above is true - API calls and stored objects that used to work must continue to
-work.
+The onus is on you to define a sane default value for `Width` such that rules
+#1 and #2 above are true - API calls and stored objects that used to work must
+continue to work.
 
 For your next change you want to allow multiple `Param` values. You can not
-simply change `Param string` to `Params []string` (without creating a whole new
-API version) - that fails rules #1 and #2. You can instead do something like:
+simply remove `Param string` and add `Params []string` (without creating a
+whole new API version) - that fails rules #1, #2, #3, and #6.  Nor can you
+simply add `Params []string` and use it instead - that fails #2 and #6.
+
+You must instead define a new field and the relationship between that field and
+the existing field(s).  Start by adding the new plural field:
 
 ```go
-// Still API v6, but kind of clumsy.
+// Still API v6.
 type Frobber struct {
   Height int           `json:"height"`
   Width  int           `json:"width"`
   Param  string        `json:"param"`  // the first param
-  ExtraParams []string `json:"extraParams"` // additional params
+  Params []string      `json:"params"` // all of the params
 }
 ```
 
-Now you can satisfy the rules: API calls that provide the old style `Param`
-will still work, while servers that don't understand `ExtraParams` can ignore
-it. This is somewhat unsatisfying as an API, but it is strictly compatible.
+This new field must be inclusive of the singular field.  In order to satisfy
+the compatibility rules you must handle all the cases of version skew, multiple
+clients, and rollbacks.  This can be handled by defaulting or admission control
+logic linking the fields together with context from the API operation to get as
+close as possible to the user's intentions.
 
-Part of the reason for versioning APIs and for using internal structs that are
+Upon any mutating API operation:
+  * If only the singular field is specified (e.g. an older client), API logic
+    must populate plural[0] from the singular value, and de-dup the plural
+    field.
+  * If only the plural field is specified (e.g. a newer client), API logic must
+    populate the singular value from plural[0].
+  * If both the singular and plural fields are specified, API logic must
+    validate that the singular value matches plural[0].
+  * Any other case is an error and must be rejected.
+
+For this purpose "is specified" means the following:
+  * On a create or patch operation: the field is present in the user-provided input
+  * On an update operation: the field is present and has changed from the
+    current value
+
+Older clients that only know the singular field will continue to succeed and
+produce the same results as before the change.  Newer clients can use your
+change without impacting older clients.  The API server can be rolled back and
+only objects that use your change will be impacted.
+
+Part of the reason for versioning APIs and for using internal types that are
 distinct from any one version is to handle growth like this. The internal
 representation can be implemented as:
 
@@ -181,24 +220,26 @@ type Frobber struct {
 }
 ```
 
-The code that converts to/from versioned APIs can decode this into the somewhat
-uglier (but compatible!) structures. Eventually, a new API version, let's call
-it v7beta1, will be forked and it can use the clean internal structure.
+The code that converts to/from versioned APIs can decode this into the
+compatible structure. Eventually, a new API version, e.g. v7beta1,
+will be forked and it can drop the singular field entirely.
 
-We've seen how to satisfy rules #1 and #2. Rule #3 means that you can not
+We've seen how to satisfy rules #1, #2, and #3. Rule #4 means that you can not
 extend one versioned API without also extending the others. For example, an
 API call might POST an object in API v7beta1 format, which uses the cleaner
 `Params` field, but the API server might store that object in trusty old v6
 form (since v7beta1 is "beta"). When the user reads the object back in the
 v7beta1 API it would be unacceptable to have lost all but `Params[0]`. This
 means that, even though it is ugly, a compatible change must be made to the v6
-API.
+API, as above.
 
-However, this is very challenging to do correctly. It often requires multiple
+For some changes, this can be challenging to do correctly. It may require multiple
 representations of the same information in the same API resource, which need to
-be kept in sync in the event that either is changed. For example, let's say you
-decide to rename a field within the same API version. In this case, you add
-units to `height` and `width`. You implement this by adding duplicate fields:
+be kept in sync should either be changed.
+
+For example, let's say you decide to rename a field within the same API
+version. In this case, you add units to `height` and `width`. You implement
+this by adding new fields:
 
 ```go
 type Frobber struct {
@@ -211,17 +252,17 @@ type Frobber struct {
 
 You convert all of the fields to pointers in order to distinguish between unset
 and set to 0, and then set each corresponding field from the other in the
-defaulting pass (e.g., `heightInInches` from `height`, and vice versa), which
-runs just prior to conversion. That works fine when the user creates a resource
-from a hand-written configuration -- clients can write either field and read
-either field, but what about creation or update from the output of GET, or
-update via PATCH (see
-[In-place updates](https://kubernetes.io/docs/user-guide/managing-deployments/#in-place-updates-of-resources))?
-In this case, the two fields will conflict, because only one field would be
-updated in the case of an old client that was only aware of the old field (e.g.,
-`height`).
+defaulting logic (e.g. `heightInInches` from `height`, and vice versa).  That
+works fine when the user creates a sends a hand-written configuration --
+clients can write either field and read either field.
 
-Say the client creates:
+But what about creation or update from the output of a GET, or update via PATCH
+(see [In-place updates](https://kubernetes.io/docs/user-guide/managing-deployments/#in-place-updates-of-resources))?
+In these cases, the two fields will conflict, because only one field would be
+updated in the case of an old client that was only aware of the old field
+(e.g. `height`).
+
+Suppose the client creates:
 
 ```json
 {
@@ -252,17 +293,16 @@ then PUTs back:
 }
 ```
 
-The update should not fail, because it would have worked before `heightInInches`
-was added.
+As per the compatibility rules, the update must not fail, because it would have
+worked before the change.
 
 ## Backward compatibility gotchas
 
-* A single feature/property cannot be represented using multiple spec fields in the same API version
-  simultaneously, as the example above shows. Only one field can be populated in any resource at a time, and the client
-  needs to be able to specify which field they expect to use (typically via API version),
-  on both mutation and read. Old clients must continue to function properly while only manipulating
-  the old field. New clients must be able to function properly while only manipulating the new
-  field.
+* A single feature/property cannot be represented using multiple spec fields
+  simultaneously within an API version.  Only one representation can be
+  populated at a time, and the client needs to be able to specify which field
+  they expect to use (typically via API version), on both mutation and read. As
+  above, older clients must continue to function properly.
 
 * A new representation, even in a new API version, that is more expressive than an
   old one breaks backward compatibility, since clients that only understood the
@@ -283,7 +323,7 @@ was added.
   be set, it is acceptable to add a new option to the union if the [appropriate
   conventions](api-conventions.md#objects) were followed in the original object.
   Removing an option requires following the [deprecation process](https://kubernetes.io/docs/reference/deprecation-policy/).
-  
+
 * Changing any validation rules always has the potential of breaking some client, since it changes the
   assumptions about part of the API, similar to adding new enum values. Validation rules on spec fields can
   neither be relaxed nor strengthened. Strengthening cannot be permitted because any requests that previously
@@ -291,7 +331,7 @@ was added.
   of the API resource. Status fields whose writers are under our control (e.g., written by non-pluggable
   controllers), may potentially tighten validation, since that would cause a subset of previously valid
   values to be observable by clients.
-  
+
 * Do not add a new API version of an existing resource and make it the preferred version in the same
   release, and do not make it the storage version. The latter is necessary so that a rollback of the
   apiserver doesn't render resources in etcd undecodable after rollback.
@@ -308,16 +348,15 @@ was added.
 
 ## Incompatible API changes
 
-There are times when this might be OK, but mostly we want changes that meet this
-definition. If you think you need to break compatibility, you should talk to the
-Kubernetes team first.
+There are times when incompatible changes might be OK, but mostly we want
+changes that meet the above definitions. If you think you need to break
+compatibility, you should talk to the Kubernetes API reviewers first.
 
 Breaking compatibility of a beta or stable API version, such as v1, is
 unacceptable. Compatibility for experimental or alpha APIs is not strictly
 required, but breaking compatibility should not be done lightly, as it disrupts
-all users of the feature. Experimental APIs may be removed. Alpha and beta API
-versions may be deprecated and eventually removed wholesale, as described in the
-[versioning document](../design-proposals/release/versioning.md).
+all users of the feature. Alpha and beta API versions may be deprecated and
+eventually removed wholesale, as described in the [deprecation policy](https://kubernetes.io/docs/reference/deprecation-policy/).
 
 If your change is going to be backward incompatible or might be a breaking
 change for API consumers, please send an announcement to
