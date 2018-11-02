@@ -233,28 +233,32 @@ sigs:
       - name: sig-architecture-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: api
+    - name: architecture-and-api-governance
       owners:
+      - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
-    - name: kubernetes-template-project
+    - name: conformance-definition
       owners:
-      - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
-    - name: spartakus
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
+      - https://github.com/orgs/kubernetes/teams/cncf-conformance-wg
+    - name: kep-adoption-and-reviews
       owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
+    - name: code-organization
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS # solely to steward moving code _out_ of here to more appropriate places
+      - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
     - name: steering
       owners:
       - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
-    - name: architecture-tracking
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
-    - name: universal-utils
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
-    - name: contrib # solely to steward moving code _out_ of here to more appropriate places
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
+
   - name: Auth
     dir: sig-auth
     mission_statement: >
