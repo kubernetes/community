@@ -1,14 +1,16 @@
 reviewers:
-  - grodrigues3
-  - Phillels
-  - idvoretskyi
   - calebamiles
   - cblecker
+  - grodrigues3
+  - idvoretskyi
+  - Phillels
   - spiffxp
 approvers:
-  - grodrigues3
-  - Phillels
-  - idvoretskyi
   - calebamiles
   - cblecker
+  - grodrigues3
+  - idvoretskyi
+  - lavalamp
+  - Phillels
   - spiffxp
+  - thockin
