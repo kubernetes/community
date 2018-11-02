@@ -244,8 +244,8 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
       - https://github.com/orgs/kubernetes/teams/cncf-conformance-wg
     - name: kep-adoption-and-reviews
-      - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
       owners:
+      - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
     - name: code-organization
       owners:
       - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS # solely to steward moving code _out_ of here to more appropriate places

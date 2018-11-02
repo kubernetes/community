@@ -33,28 +33,31 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-architecture:
-- **api**
+- **architecture-and-api-governance**
   - Owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
-- **kubernetes-template-project**
+- **conformance-definition**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
-- **spartakus**
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
+    - https://github.com/orgs/kubernetes/teams/cncf-conformance-wg
+- **kep-adoption-and-reviews**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
+- **code-organization**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
 - **steering**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
-- **architecture-tracking**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
-- **universal-utils**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
-- **contrib**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
 
 ## GitHub Teams
 
