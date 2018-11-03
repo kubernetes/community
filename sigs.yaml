@@ -1408,11 +1408,18 @@ sigs:
     label: release
     leadership:
       chairs:
-      - name: Jaice Singer DuMars
-        github: jdumars
-        company: Google
       - name: Caleb Miles
         github: calebamiles
+        company: Google
+      - name: Stephen Augustus
+        github: justaugustus
+        company: Red Hat
+      - name: Tim Pepper
+        github: tpepper
+        company: VMware
+      emeritus_leads:
+      - name: Jaice Singer DuMars
+        github: jdumars
         company: Google
     meetings:
     - description: Regular SIG Meeting
