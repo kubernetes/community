@@ -49,4 +49,4 @@ during the original test. It would be good to file flakes as an
 The simplest way is to comment `/retest`.
 
 Any pushes of new code to the PR will automatically trigger a new test. No human
-interraction is required. Note that if the PR has a `lgtm` label, it will be removed after the pushes.
+interaction is required. Note that if the PR has a `lgtm` label, it will be removed after the pushes.
