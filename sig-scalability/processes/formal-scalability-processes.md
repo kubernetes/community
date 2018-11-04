@@ -69,7 +69,7 @@ About 60% of scalability regressions are caught by these medium-scale jobs ([sou
 
 ### Testing / Post-submit phase
 
-This phase constitutes the final layer of protection against regressions before cutting the release. We already have scalability CI jobs in place for this. The spectrum of scale they cover is quite wide, ranging from 100-node to 5000-node clusters (both for kubemark and real clusters). However, what what we need additionally is:
+This phase constitutes the final layer of protection against regressions before cutting the release. We already have scalability CI jobs in place for this. The spectrum of scale they cover is quite wide, ranging from 100-node to 5000-node clusters (both for kubemark and real clusters). However, what we need additionally is:
 
 The ability for crucial scalability jobs to block submit-queue (with manual unblock ability)\
 ([relevant feature request](https://github.com/kubernetes/kubernetes/issues/53255))\

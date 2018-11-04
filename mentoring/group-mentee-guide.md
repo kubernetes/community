@@ -23,7 +23,7 @@ Familiarize yourself with the [community membership requirements doc](/community
 These topics will be covered during bi-weekly standups/workshops. The suggested activities will be covered in the mentee's normal day to day. Know something that should be added? Start a convo/add a PR - your comments are appreciated.
 
 ### Current Member Cohort Topics
-* Effective communication in our our ecosystem
+* Effective communication in our ecosystem
 * Kubernetes Governance 101 (what's a SIG?, OWNERS files, steering committee, etc.)
 * Identifying & understanding issue backlog and prioritization
 * Contributing to testing (how to run tests and create new ones)
