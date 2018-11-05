@@ -51,7 +51,7 @@ Container Storage Interface (CSI) is a standardized mechanism for Container Orch
 
 For more information about CSI, see:
 
-*   http://blog.kubernetes.io/2018/01/introducing-container-storage-interface.html
+*   https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
 *   [kubernetes-csi.github.io/docs](http://kubernetes-csi.github.io/docs)
 
 **What are the limitations of CSI?**

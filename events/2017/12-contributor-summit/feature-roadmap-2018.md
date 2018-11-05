@@ -1,4 +1,4 @@
-Contributor summit - Kubecon 2017
+Contributor summit - KubeCon/CloudNativeCon 2017
 
 **@AUTHORS - CONNOR DOYLE**
 

@@ -38,7 +38,7 @@ is heavily application-dependent (and does't depend on Kubernetes itself).
 not obvious. We decided for the semantic of "when all its containers are
 reported as started and observed via watch", because:
   - we require all containers to be started (not e.g. the first one) to ensure
-    that the pod is started. We need to ensure that pontential regressions like
+    that the pod is started. We need to ensure that potential regressions like
     linearization of container startups within a pod will be catch by this SLI.
   - note that we don't require all container to be running - if some of them
     finished before the last one was started that is also fine. It is just

@@ -42,7 +42,7 @@ containers.
 
 In order to support external integration with shared storage, processes running
 in a Kubernetes cluster should be able to be uniquely identified by their Unix
-UID, such that a chain of  ownership can be established. Processes in pods will
+UID, such that a chain of ownership can be established. Processes in pods will
 need to have consistent UID/GID/SELinux category labels in order to access
 shared disks.
 

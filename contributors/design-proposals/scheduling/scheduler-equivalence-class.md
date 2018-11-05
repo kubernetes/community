@@ -190,7 +190,7 @@ Please note with the change of predicates in subsequent development, this doc wi
 
 - **Invalid predicates:**
 
-    - `MaxPDVolumeCountPredicate` (only if the added/deleted PVC as a binded volume so it drops to the PV change case, otherwise it should not affect scheduler).
+    - `MaxPDVolumeCountPredicate` (only if the added/deleted PVC as a bound volume so it drops to the PV change case, otherwise it should not affect scheduler).
 
 - **Scope:**
     - All nodes (we don't know which node this PV will be attached to).
@@ -229,14 +229,14 @@ Please note with the change of predicates in subsequent development, this doc wi
 - **Invalid predicates:**
     - `GeneralPredicates`. This invalidate should be done during `scheduler.assume(...)` because binding can be asynchronous. So we just optimistically invalidate predicate cached result there, and if later this pod failed to bind, the following pods will go through normal predicate functions and nothing breaks.
 
-    - No `MatchInterPodAffinity`: the scheduler will make sure newly binded pod will not break the existing inter pod affinity. So we does not need to invalidate MatchInterPodAffinity when pod added. But when a pod is deleted, existing inter pod affinity may become invalid. (e.g. this pod was preferred by some else, or vice versa).
+    - No `MatchInterPodAffinity`: the scheduler will make sure newly bound pod will not break the existing inter pod affinity. So we do not need to invalidate MatchInterPodAffinity when pod added. But when a pod is deleted, existing inter pod affinity may become invalid. (e.g. this pod was preferred by some else, or vice versa).
 
         - NOTE: assumptions above **will not** stand when we implemented features like `RequiredDuringSchedulingRequiredDuringExecution`.
 
     - No `NoDiskConflict`: the newly scheduled pod fits to existing pods on this node, it will also fits to equivalence class of existing pods.
 
 - **Scope:** 
-    - The node which the pod was binded with.
+    - The node where the pod is bound.
 
 
 
@@ -252,7 +252,7 @@ Please note with the change of predicates in subsequent development, this doc wi
     - `MatchInterPodAffinity` if the pod's labels are updated.
 
 - **Scope:**
-    - The node which the pod was binded with
+    - The node where the pod is bound.
 
 
 
@@ -270,7 +270,7 @@ Please note with the change of predicates in subsequent development, this doc wi
     - `NoDiskConflict` if the pod has special volume like `RBD`, `ISCSI`, `GCEPersistentDisk` etc.
 
 - **Scope:**
-    - The node which the pod was binded with.
+    - The node where the pod is bound.
 
 
 ### 3.5 Node

@@ -233,28 +233,32 @@ sigs:
       - name: sig-architecture-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: api
+    - name: architecture-and-api-governance
       owners:
+      - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
-    - name: kubernetes-template-project
+    - name: conformance-definition
       owners:
-      - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
-    - name: spartakus
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
+      - https://github.com/orgs/kubernetes/teams/cncf-conformance-wg
+    - name: kep-adoption-and-reviews
       owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
+    - name: code-organization
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS # solely to steward moving code _out_ of here to more appropriate places
+      - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
     - name: steering
       owners:
       - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
-    - name: architecture-tracking
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
-    - name: universal-utils
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
-    - name: contrib # solely to steward moving code _out_ of here to more appropriate places
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
+
   - name: Auth
     dir: sig-auth
     mission_statement: >
@@ -424,6 +428,9 @@ sigs:
     - name: aws-encryption-provider
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
+    - name: aws-ebs-csi-driver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
   - name: Azure
     dir: sig-azure
     mission_statement: >
@@ -436,12 +443,15 @@ sigs:
       - name: Stephen Augustus
         github: justaugustus
         company: Red Hat
-      - name: Shubheksha Jalan
-        github: shubheksha
+      - name: Dave Strebel
+        github: dstrebel
         company: Microsoft
       tech_leads:
       - name: Kal Khenidak
         github: khenidak
+        company: Microsoft
+      - name: Pengfei Ni
+        github: feiskyer
         company: Microsoft
     meetings:
     - description: Regular SIG Meeting
@@ -650,6 +660,16 @@ sigs:
     - name: cloud-provider-vsphere
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
+    - name: cloud-provider-extraction
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction/OWNERS
+      meetings:
+      - description: Weekly Sync removing the in-tree cloud providers led by @cheftako and @d-nishi
+        day: Thursday
+        time: "13:30"
+        tz: "PT (Pacific Time)"
+        frequency: weekly
+        url: https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit
   - name: Cluster Lifecycle
     dir: sig-cluster-lifecycle
     mission_statement: >
@@ -724,6 +744,13 @@ sigs:
       frequency: biweekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
+    - description: Kubespray Office Hours
+      day: Wednesday
+      time: "07:00"
+      tz: "PT (Pacific Time)"
+      frequency: biweekly
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit
     contact:
       slack: sig-cluster-lifecycle
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
@@ -742,6 +769,9 @@ sigs:
     - name: cluster-api-provider-aws
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
+    - name: cluster-api-provider-digitalocean
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
     - name: cluster-api-provider-gcp
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
@@ -764,6 +794,7 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
     - name: kubeadm-dind-cluster
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/kubeadm-dind-cluster/master/OWNERS
@@ -874,7 +905,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
     - name: devstats
       owners:
-      - Phillels
+        - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
     - name: k8s.io
       owners:
       - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
@@ -1086,7 +1117,7 @@ sigs:
       systems like Spinnaker and others.  Standalone building blocks for these and other
       similar systems (for example a cluster registry), and proposed changes to kubernetes
       core where appropriate will also be in scope.
-    charter_link:
+    charter_link: charter.md
     label: multicluster
     leadership:
       chairs:
@@ -1377,11 +1408,18 @@ sigs:
     label: release
     leadership:
       chairs:
-      - name: Jaice Singer DuMars
-        github: jdumars
-        company: Google
       - name: Caleb Miles
         github: calebamiles
+        company: Google
+      - name: Stephen Augustus
+        github: justaugustus
+        company: Red Hat
+      - name: Tim Pepper
+        github: tpepper
+        company: VMware
+      emeritus_leads:
+      - name: Jaice Singer DuMars
+        github: jdumars
         company: Google
     meetings:
     - description: Regular SIG Meeting
@@ -2128,15 +2166,15 @@ workinggroups:
     charter_link:
     leadership:
       chairs:
-      - name: Jessie Frazelle
-        github: jessfraz
-        company: Microsoft
       - name: Aaron Small
         github: aasmall
         company: Google
       - name: Joel Smith
         github: joelsmith
         company: Red Hat
+      - name: Craig Ingram
+        github: cji
+        company: Salesforce
     meetings:
     - description: Regular WG Meeting
       day: Monday

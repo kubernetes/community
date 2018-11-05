@@ -43,6 +43,9 @@ The following subprojects are owned by sig-aws:
 - **aws-encryption-provider**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
+- **aws-ebs-csi-driver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
 
 ## GitHub Teams
 

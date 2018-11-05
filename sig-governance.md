@@ -48,7 +48,20 @@ Guidelines for drafting a SIG Charter can be found [here](/committee-steering/go
 * Leads should [subscribe to the kubernetes-sig-leads mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-leads)
 * Submit a PR to add a row for the SIG to the table in the kubernetes/community README.md file, to create a kubernetes/community directory, and to add any SIG-related docs, schedules, roadmaps, etc. to your new kubernetes/community/SIG-foo directory.
 
-#### Creating a mailing list
+### Discussion Platforms
+
+Your SIG needs a place to discuss topics asynchronously. You have two options, a traditional mailing list via Google Groups, or a category on [discuss.kubernetes.io](discuss.kubernetes.io). The main difference is Groups is primarily email-based with a web UI tacked on, and Discuss is primarily a Web UI with email tacked-on. The other difference is that your SIG/WG is responsible for moderating your Google Group; with discuss you just depend on the usual community moderation.
+
+- Working Groups, due to their temporary nature, are strongly encouraged to consider using an existing SIG mailing list if appropriate, otherwise use a discuss category for less management overhead.
+- SIGs, due to their usage of calendars, and Zoom accounts, are strongly encouraged to use a traditional mailing list.
+
+Choose one:
+
+#### Create a Category
+
+Post a message asking for a category in the [Site Feedback and Help](https://discuss.kubernetes.io/c/site-feedback) section and a moderator will create your category for you and provide you with a URL and mail address to post to.
+
+#### Creating a Google Group
 
 Create a Google Group at [https://groups.google.com/forum/#!creategroup](https://groups.google.com/forum/#!creategroup), following the procedure:
 
@@ -97,4 +110,4 @@ The process for closing a SIG/WG is as follows:
   - Migrate/Remove/Deprecate any SIG/WG labels in [labels.yaml](https://git.k8s.io/test-infra/label_sync/labels.yaml)
   - Ensure that the YouTube Collaboration links are removed
 - Remove SIG Calendar and events from the community calendar
-- Update `sigs.yaml` to reflect the removal of the SIG/WG.
+- Update `sigs.yaml` to reflect the removal of the SIG/WG

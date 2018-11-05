@@ -169,7 +169,7 @@ Adding it there allows the user to change the mode bits of every file in the
 object, so it achieves the goal, while having the option to have a default and
 not specify all files in the object.
 
-The are two downside:
+There are two downsides:
 
  * The files are symlinks pointint to the real file, and the realfile
    permissions are only set. The symlink has the classic symlink permissions.

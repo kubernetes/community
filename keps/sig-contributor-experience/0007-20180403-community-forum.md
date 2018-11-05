@@ -102,7 +102,7 @@ The site would be forum.k8s.io, and would be linked to from the homepage and maj
 - Post announcements about related kubernetes projects
   - Give the ecosystem of tools around k8s a place to go and build communities around all the tools people are building. 
   - "Jill's neat K8s project on github" is too small to have it's own official k8s presence, but it could be a post on a forum. 
-- Events section for meetups and Kubecon
+- Events section for meetups and KubeCon/CloudNativeCon
 - Sub boards for meetup groups
 - Sub boards for non-english speaking community members
 - Developer section can include:
@@ -143,7 +143,7 @@ The site would be forum.k8s.io, and would be linked to from the homepage and maj
 ### Risks and Mitigations
 
 - One more thing to check everyday(tm)
-  - User fatigue with mailing lists, discourse, slack, stackoverflow, youtube channel, kubecon, your local meetup, etc.
+  - User fatigue with mailing lists, discourse, slack, stackoverflow, youtube channel, KubeCon/CloudNativeCon, your local meetup, etc.
   - This is why I am proposing we investigate if we can replace the lists as well, two birds with one stone. 
 - Lack of developer participation
   - The mailing lists work, how suitable is Discourse to replace a mailing list these days? CNCF has tried Discourse in the past. See [@cra's post](https://twitter.com/cra/status/981548716405547008)

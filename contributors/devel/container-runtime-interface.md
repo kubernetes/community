@@ -51,7 +51,7 @@ The old, pre-CRI Docker integration was removed in 1.7.
 
 ## Specifications, design documents and proposals
 
-The Kubernetes 1.5 [blog post on CRI](http://blog.kubernetes.io/2016/12/container-runtime-interface-cri-in-kubernetes.html)
+The Kubernetes 1.5 [blog post on CRI](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)
 serves as a general introduction.
 
 

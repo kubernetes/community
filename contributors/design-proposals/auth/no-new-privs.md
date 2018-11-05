@@ -49,7 +49,7 @@ while creating containers, for example
 `docker run --security-opt=no_new_privs busybox`.
 
 Docker provides via their Go api an object named `ContainerCreateConfig` to
-configure container creation  parameters. In this object, there is a string
+configure container creation parameters. In this object, there is a string
 array `HostConfig.SecurityOpt` to specify the security options. Client can
 utilize this field to specify the arguments for security options while
 creating new containers.

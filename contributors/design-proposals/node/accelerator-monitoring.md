@@ -75,7 +75,7 @@ From the summary API, they will flow to heapster and stackdriver.
 
 ## Caveats
 - As mentioned before, this would add a requirement that cAdvisor and kubelet are dynamically linked.
-- We would need to make sure that kubelet is able to access the nvml libraries. Some existing container based nvidia driver installers install drivers in a special directory. We would need to make sure that that directory is in kubelet’s `LD_LIBRARY_PATH`.
+- We would need to make sure that kubelet is able to access the nvml libraries. Some existing container based nvidia driver installers install drivers in a special directory. We would need to make sure that directory is in kubelet’s `LD_LIBRARY_PATH`.
 
 ## Testing Plan
 - Adding unit tests and e2e tests to cAdvisor for this code.
