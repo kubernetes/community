@@ -348,7 +348,7 @@ to that LRS along with their current status and status change timestamp.
 + [I6] If a cluster is removed from the federation then the situation
    is equal to multiple [E4]. It is assumed that if a connection with
    a cluster is lost completely then the cluster is removed from the
-   the cluster list (or marked accordingly) so
+   cluster list (or marked accordingly) so
    [[E6]](#heading=h.in6ove1c1s8f) and [[E7]](#heading=h.37bnbvwjxeda)
    don't need to be handled.
 
@@ -383,7 +383,7 @@ To calculate the (re)scheduling moves for a given FRS:
 1. For each cluster FRSC calculates the number of replicas that are placed
 (not necessary up and running) in the cluster and the number of replicas that
 failed to be scheduled. Cluster capacity is the difference between the
-the placed and failed to be scheduled.
+placed and failed to be scheduled.
 
 2. Order all clusters by their weight and hash of the name so that every time
 we process the same replica-set we process the clusters in the same order.
