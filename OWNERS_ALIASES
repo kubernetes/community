@@ -123,7 +123,10 @@ aliases:
     - smarterclayton
     - destijl
   wg-iot-edge-leads:
+    - cindyxing
     - dejanb
+    - ptone
+    - cantbewong
   wg-kubeadm-adoption-leads:
     - luxas
     - justinsb
