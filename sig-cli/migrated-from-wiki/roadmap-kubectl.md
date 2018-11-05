@@ -13,7 +13,7 @@ If you'd like to contribute, please read the [conventions](/contributors/devel/k
 ### Add new commands / subcommands / flags
 * [Simplify support for multiple files](https://github.com/kubernetes/kubernetes/issues/24649)
   * Manifest that can specify multiple files / http(s) URLs
-  * [Default manifest manifest](https://github.com/kubernetes/kubernetes/issues/3268) (ala Dockerfile or Makefile)
+  * [Default manifest](https://github.com/kubernetes/kubernetes/issues/3268) (ala Dockerfile or Makefile)
   * Unpack archive (tgz, zip) and then invoke “-f” on that directory
   * URL shortening via default URL prefix
 * [Imperative `set` commands](https://github.com/kubernetes/kubernetes/issues/21648)

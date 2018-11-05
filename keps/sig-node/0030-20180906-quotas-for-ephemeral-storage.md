@@ -519,7 +519,7 @@ appropriate end to end tests.
   reasons for using quotas is indeed to improve performance.  If this
   is a problem in the field, merely turning off quotas (or selectively
   disabling project quotas) on the filesystem in question will avoid
-  the problem.  Against the possibility that that cannot be done
+  the problem.  Against the possibility that cannot be done
   (because project quotas are needed for other purposes), we should
   provide a way to disable use of quotas altogether via a feature
   gate.

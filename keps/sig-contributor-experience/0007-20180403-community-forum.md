@@ -150,7 +150,7 @@ The site would be forum.k8s.io, and would be linked to from the homepage and maj
   - [Discussion on the pros and cons of each](https://meta.discourse.org/t/discourse-vs-email-mailing-lists/54298)
   - We have enough churn and new Working Groups that we could pilot a few, opt-in for SIGs that want to try it? 
 - A community forum is asynchronous, whereas chat is realtime.
-  - This doesn't solve our Slack lock-in concerns, but can be a good first step in being more active in running our own community properties so that we can build out own own resources. 
+  - This doesn't solve our Slack lock-in concerns, but can be a good first step in being more active in running our own community properties so that we can build out own resources. 
   - Ghost have [totally migrated to Discourse](https://twitter.com/johnonolan/status/980872508395188224?s=12) and shut down their Slack.
     - We should keep an eye on this and see what data we can gleam from this. Engage with Ghost community folks to see what lessons they've learned.
     - Not sure if getting rid of realtime chat entirely is a good idea either. 
