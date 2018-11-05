@@ -107,7 +107,7 @@ See https://github.com/kubernetes/kubernetes/issues/53640 and https://github.com
 * Relay all information given to `kubectl` (via command line args) to plugins as-is.
   Plugins receive all arguments and flags provided by users and are responsible for adjusting their behavior
   accordingly.
-* Provide a way to limit which command paths can and cannot be overriddden by plugins in the command tree.
+* Provide a way to limit which command paths can and cannot be overridden by plugins in the command tree.
 
 ### Non-Goals
 

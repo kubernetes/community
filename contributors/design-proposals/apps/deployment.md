@@ -197,7 +197,7 @@ For example, consider the following case:
 Users can pause/cancel a rollout by doing a non-cascading deletion of the Deployment
 before it is complete. Recreating the same Deployment will resume it.
 For example, consider the following case:
-- User creats a Deployment to perform a rolling-update for 10 pods from image:v1 to
+- User creates a Deployment to perform a rolling-update for 10 pods from image:v1 to
  image:v2.
 - User then deletes the Deployment while the old and new RSs are at 5 replicas each.
   User will end up with 2 RSs with 5 replicas each.
