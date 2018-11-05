@@ -61,7 +61,7 @@ making the assumption that your test can run a pod on every node in a
 cluster is not a safe assumption, as some other tests, running at the
 same time as yours, might have saturated one or more nodes in the
 cluster.  Similarly, running a pod in the system namespace, and
-assuming that that will increase the count of pods in the system
+assuming that will increase the count of pods in the system
 namespace by one is not safe, as some other test might be creating or
 deleting pods in the system namespace at the same time as your test.
 If you do legitimately need to write a test like that, make sure to

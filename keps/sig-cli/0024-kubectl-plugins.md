@@ -138,7 +138,7 @@ or case-handling in `kubectl`.
 
 In essence, a plugin binary must be able to run as a standalone process, completely independent of `kubectl`.
 
-* When `kubectl` is executed with a subcommand _foo_ that does not exist exist in the command tree, it will attempt to look
+* When `kubectl` is executed with a subcommand _foo_ that does not exist in the command tree, it will attempt to look
 for a filename `kubectl-foo` (`kubectl-foo.exe` on Windows) in the user's `PATH` and execute it, relaying all arguments given
 as well as all environment variables to the plugin child-process.
 
