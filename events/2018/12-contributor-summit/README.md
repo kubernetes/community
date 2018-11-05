@@ -11,12 +11,12 @@ In some sense, the summit is a real-life extension of the community meetings and
 
 ## Registration
 
-The event is now full and is accepting a wait list on the below form. If you are a SIG/WG Chair, Tech Lead, or Subproject Owner, please reach out to community@kubernetes.io after filling out the wait list form. 
+The event is now full and is accepting a wait list on the below form. If you are a SIG/WG Chair, Tech Lead, or Subproject Owner, please reach out to community@kubernetes.io after filling out the wait list form.
 
 - [RSVP/Wait List Form](https://goo.gl/X8YrRv)
 - If you are planning on attending the New Contributor Track, [Sign the CLA](/CLA.md) if you have not done so already.
 
-This is not your KubeCon/CloudNativeCon ticket. You will need to register for the conference separately.
+This is not your KubeCon/CloudNativeCon ticket. This is a co-located event. KC/CNC is currently sold out; however, you do not need a KC/CNC ticket to attend this event. 
 
 ## When and Where
 
@@ -38,49 +38,62 @@ You will need your KubeCon/CnC badge to get into Sunday and Monday events. Badge
 
 ## Agenda
 
-Day 1 - [Garage](https://www.garagebilliards.com/)
+**Day 1 - [Garage](https://www.garagebilliards.com/)**
 
 We will publish the dinner menu two weeks before the event but will have options for vegetarian, vegan, and gluten free. Beer, wine, and nonalcoholic beverages available.
 
-What to expect: Attendees will have access to bowl, play pool/billiards, kubernetes trivia, and socializing with other contributors.
+What to expect: Attendees will have access to bowl, play pool/billiards, suggest unconference sessions for the next day, and socializing with other contributors.
 
-Day 2 - Washington Convention Center
-- New Contributor Track / Workshop - A half day workshop aimed at getting new and first time contributors on boarded and comfortable with working within the Kubernetes Community. Staying for the duration is required; this is not a workshop you can drop into. (Capacity: 100)
-- Current Contributor Track -  talks, workshops, birds of a feather, unconference sessions, steering committee updates, and more!
-- Docs Sprint - Working on a curated list of issues and challenges that SIG Docs is tackling at that time. (Current+Doc Capacity: 300)
+**Day 2 - Washington Convention Center**
+- New Contributor Track / Workshop -
+  - A half day workshop aimed at getting new and first time contributors on boarded and comfortable with working within the Kubernetes Community. Staying for the duration is required; this is not a workshop you can drop into. (Capacity: 100)
+- Current Contributor Track -  
+  - talks, workshops, birds of a feather, unconference sessions, steering committee updates, and more!
+- Docs Planning Session -
+  - Working on a curated list of issues and challenges that SIG Docs is tackling at that time. (Current+Doc Capacity: 300)
 
-### Monday Schedule (Draft)
+### Monday Schedule
+**The schedule will be posted to the main KubeCon/CloudNativeCon site on Monday, November 26th with more details about each of the sessions, birds of a feather statements, and more.**
 
-*Morning*
+**Morning**
 
-| Time       | Main Track | New Contributor Summit | Docs Sprint  | Contributor Lounge |
+08:00am   
+- Breakfast and Registration   
+- Last chance to turn in unconference voting session card. [pick up a card at the summit registration tables at Garage or 6th floor of Convention Center]  
+- Add your +1 to cards already on the unconference board - start voting!
+
+| Time       | Main Track |  Planning & Training  | Contributor Lounge  | New Contributor Workshop |
 | --- | :---: | :---: | :---: | :---: |
-| **Room** | 608/609 | 602/603/604  | 613 | 610 |
-| 8:00am     | Breakfast and Registration, Unconference Voting Board Opens | - | -  | Open space  |
-| 9:00am     | Welcome & Details (all tracks) | -  | -  |   &#124;  |
-| 10:00am    | Technical Vision for Kubernetes| Where to Contribute | Docs Sprint | &#124;  |
-| 10:30am    | State of Networking | Where to Communicate | -  |   &#124;  |
-| 10:55am    | 10 minute break | -  | -  |   &#124;  |
-| 11:05am    | State of KEPs | OWNERS Files | -  |   &#124;  |
-| 11:30am    | State of Cluster Lifecycle | Github Workflow | -  |   &#124;  |
-| 12:00pm    | Lunch + Unconference Voting | -   | -  |   v  |
+| **Room** | 608/609 |  613 | 610 | 602/603/604  |
+| 08:00am    | -   | - | Open Space**  | -  |
+| 09:00am    | Welcome & Details (all tracks) | -  | &#124;  |   -  |
+| 09:30am    | Technical Vision for Kubernetes w/ Architecture's @bgrant0607 |  - | &#124;  | - |
+| 10:00am    | State of Security w/ Auth's @tallclair @cjcullen | Doc Planning (open to all) | &#124; | Where to Contribute |
+| 10:30am    | State of Networking w/ @thockin|  -  |   &#124;  | Where to Communicate |
+| 10:55am    | 15 minute break | -  | &#124;  |  &#124; |
+| 11:10am    | State of KEPs w/ PM's @justaugustus |  -  |   &#124;  | OWNERS Files |
+| 11:30am    | State of Cluster Lifecycle w/ @timothysc |  -  |   &#124;  | Github Workflow |
+| 12:05pm    | Lunch Break | +   | Last call for Unconference Voting*  |   -  |
 
 
-*Afternoon*
+**Afternoon**
 
-| Time       | Main Track | New Contributor Summit | Docs Sprint  | Track #1  |  Track #2  |  Track #3 |  Track #4 | Contributor Lounge |
+| Time       | Main Track  | Planning & Training  | Track #1  |  Track #2  |  Track #3 |  Track #4 | Contributor Lounge | New Contributor Workshop |
 | --- | :---: | :---: | :---: | :---: | :---: |:---: | :---: | :---: |
-| **Room** | 608/609 | 602/603/604  | 613 | 606 | 607  | 605 | 611 | 610 |
-| 1:00pm     | | Pull Request Practice | Docs Sprint | Automation and CI | KEP BoF | Networking BoF | *Unconference Slot | Open Space  |
-| 1:50pm | 10 Minute Break |  -  | -  | -  | -  | -  | -  | &#124; |
-| 2:00pm | API Codebase Tour - @sttts | Testrgid tour, docs, membership | | Cluster lifecycle BoF | Release Management | *Unconference Slot | *Unconference Slot | &#124; |
-| 2:50pm | 10 Minute Break | -  | -  | -  | -  | -  | -  | &#124; |
-| 3:00pm | Live API Code Review - @lavalamp | SIG Meet and Greet | | Chair/TL Training | State of Security - @tallclair | etcd Maintainers Ask Us Anything | *Unconference Slot | &#124; |
+| **Room** | 608/609 [theater] |  613 [pods] | 606 [fishbowl] | 607 [fishbowl]  | 605 [fishbowl] | 611 [fishbowl] |   610  [pods] | 602/603/604 [round classroom]  |
+| 1:00pm    | Automation and CI w/Testing and ContribEx @spiffxp @cblecker [50 mins] |  Docs Planning [2 hrs; open to all] | Networking BoF [50 mins] | KEP BoF [50 mins] | *Unconference Slot [50 mins] | - | Open Space  | Pull Request Practice |
+| 1:50pm | 10 Minute Break | -  | -  | -  | -  | -  | -  | &#124; |
+| 2:00pm | API Codebase Tour - @sttts [50 mins] | " | Cluster lifecycle BoF [50 mins] | etcd Maintainers Ask Us Anything [50 mins] | - | *Unconference Slot [50 mins] | &#124; | Testrgid tour, docs, membership |
+| 2:30pm | " |  SIG/WG Chair/TL Training [1.5 hrs]  |  "  | "  | -  | " | &#124; | -  |
+| 2:50pm | 10 Minute Break | "  | -  | -  | -  | -  | -  | &#124; |
+| 3:00pm | Live API Code Review - @lavalamp  | " | Release Management w/ @tepper [50 mins] | UI Dashboard Planning Discussion [50 mins] | *Unconference Slot [50 mins] | *Unconference Slot [50 mins] | &#124; | SIG Meet and Greet |
 | 3:50pm | 10 Minute Break | -  | -  | -  | -  | -  | -  | &#124; |
 | 4:00pm | Steering Committee Q+A | -  | -  | -  | -  | -  | -  | &#124; |
-| 4:45pm | Conclusion and Wrap-Up |  -  | -  | -  | -  | -  | -  | -  |
+| 4:45pm | Wrap-Up and Group Pic! |  -  | -  | -  | -  | -  | -  | -  |
 
-* = The unconference slots are generated by you by suggesting a topic and/or voting on another. Instructions on how to participate will be posted here closer to the event.
+`*`= The unconference slots are generated by you by suggesting a topic and/or voting on another. Instructions on how to participate will be posted here closer to the event.  
+** = Want to have a quick SIG meeting? Pair program? Get some work done? Use this space! No reservation required.
+
 
 *Evening*
 
