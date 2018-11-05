@@ -75,7 +75,7 @@ The proposal is to make this feature available by annotating the Service object 
 
 When this label is set, kube-proxy will behave as if that service does not exist. None of the functionality that kube-proxy provides will be available for that service.
 
-kube-proxy will properly implement this label both as object creation and on dynamic addition/removal/updates of this label, either providing functionality or not for the service based on the latest version on the object.
+kube-proxy will properly implement this label both at object creation and on dynamic addition/removal/updates of this label, either providing functionality or not for the service based on the latest version on the object.
 
 It is expected that this feature will mainly be used on large clusters with lots (>1000) of services. Any use of this feature in a smaller cluster will have negligible impact.
 
