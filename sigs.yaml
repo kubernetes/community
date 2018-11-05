@@ -2145,9 +2145,18 @@ workinggroups:
        A Working Group dedicated to discussing, designing and documenting using Kubernetes for developing and deploying IoT and Edge specific applications
     leadership:
       chairs:
+      - name: Cindy Xing
+        github: cindyxing
+        company: Huawei
       - name: Dejan Bosanac
         github: dejanb
         company: Red Hat
+      - name: Preston Holmes
+        github: ptone
+        company: Google
+      - name: Steve Wong
+        github: cantbewong
+        company: VMWare
     meetings:
     - description: Regular WG Meeting
       day: Friday
