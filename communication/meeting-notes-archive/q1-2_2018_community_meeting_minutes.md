@@ -380,7 +380,7 @@
     *   Github Groups [Jorge Castro]
         *   [https://github.com/kubernetes/community/issues/2323](https://github.com/kubernetes/community/issues/2323)  working to make current 303 groups in the org easier to manage
     *   Shoutouts this week (Check in #shoutouts on slack)
-        *   jberkus: To Jordan Liggitt for diagnosing & fixing the controller performance issue that has haunted us since last August, and  to Julia Evans for reporting the original issue.
+        *   jberkus: To Jordan Liggitt for diagnosing & fixing the controller performance issue that has haunted us since last August, and to Julia Evans for reporting the original issue.
             *   Maulion: And another to @liggitt for always helping anyone with a auth question in all the channels with kindness
         *   jdumars: @paris - thank you for all of your work helping to keep our community safe and inclusive! I know that you've spent countless hours refining our Zoom usage, documenting, testing, and generally being super proactive on this.
         *   Nikhita: shoutout to @cblecker for excellent meme skills!
@@ -612,7 +612,7 @@
         *   GitHub:[ https://github.com/YugaByte/yugabyte-db](https://github.com/YugaByte/yugabyte-db)
         *   Docs:[ https://docs.yugabyte.com/](https://docs.yugabyte.com/)
         *   Slides: https://www.slideshare.net/YugaByte
-        *   Yugabyte is a database focusing on, planet scale, transactional and high availability. It implements many common database apis making it a drop in replacement for those DBs. Can run as a StatefulSet  on k8s. Multiple db api paradigms can be used for one database.
+        *   Yugabyte is a database focusing on, planet scale, transactional and high availability. It implements many common database apis making it a drop in replacement for those DBs. Can run as a StatefulSet on k8s. Multiple db api paradigms can be used for one database.
         *   No Kubernetes operator yet, but it's in progress.
     *   Answers from Q&A:
         *   @jberkus - For q1 - YB is optimized for small reads and writes, but can also perform batch reads and writes efficiently - mostly oriented towards modern OLTP/user-facing applications. Example is using spark or presto on top for use-cases like iot, fraud detection, alerting, user-personalization, etc.
@@ -1076,7 +1076,7 @@
         *   35k users with 5k weekly active users
         *   Produced Quarterly
 *   **SIG Updates:**
-    *   **Thanks to test infra  folks for labels**
+    *   **Thanks to test infra folks for labels**
     *   **Cluster Lifecycle [Tim St. Clair]**
         *   Kubeadm
             *   Steadily burning down against 1.11
@@ -1223,7 +1223,7 @@
     *   Support for kubeadm and minikube
     *   Create issues on crio project on github
     *   sig-node does not have plans to choose one yet
-        *   Working on conformance to address implementations which should lead to  choosing default implementation
+        *   Working on conformance to address implementations which should lead to choosing default implementation
         *   Choice is important since it would be used under scalability testing
         *   Test data? Plan to publish results to testgrid, will supply results ASAP
             *   Previously blocked on dashboard issue
@@ -1322,7 +1322,7 @@
         *   creating docker registry and helm repos, pushing helm chart
         *   CLI and web UI
         *   Caching upstream repositories
-    *   Walkthrough  and Example: [https://jfrog.com/blog/control-your-kubernetes-voyage-with-artifactory/](https://jfrog.com/blog/control-your-kubernetes-voyage-with-artifactory/) & [https://github.com/jfrogtraining/kubernetes_example](https://github.com/jfrogtraining/kubernetes_example)
+    *   Walkthrough and Example: [https://jfrog.com/blog/control-your-kubernetes-voyage-with-artifactory/](https://jfrog.com/blog/control-your-kubernetes-voyage-with-artifactory/) & [https://github.com/jfrogtraining/kubernetes_example](https://github.com/jfrogtraining/kubernetes_example)
     *   Questions
         *   Difference between commercial and free (and what's the cost)
             *   Free only has maven support, is open source, commercial supports everything (including Kubernetes-related technologies, like Helm)
@@ -2076,11 +2076,11 @@
             *   contributing tests
             *   cleaning up tests
             *   what things are tested
-            *   e2e  framework
+            *   e2e framework
             *   Conformance
         *   Please come participate
     *   Kubernetes Documentation [User Journeys MVP](https://kubernetes.io/docs/home/) launched [Andrew Chen]
-        *   Please give  SIG Docs for feedback, still adding things later
+        *   Please give SIG Docs for feedback, still adding things later
             *   Can contribute normally (join SIG docs for more information)
         *   New landing page incorporating personas (users, contributors, operators)
         *   Levels of knowledge (foundational, advanced, etc)

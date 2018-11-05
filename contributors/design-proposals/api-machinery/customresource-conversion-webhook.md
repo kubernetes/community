@@ -12,7 +12,7 @@ Thanks: @dbsmith, @deads2k, @sttts, @liggit, @enisoc
 
 ### Summary
 
-This document proposes a detailed plan for adding support for version-conversion of  Kubernetes resources defined via Custom Resource Definitions (CRD).  The API Server is extended to call out to a webhook at appropriate parts of the handler stack for CRDs.  
+This document proposes a detailed plan for adding support for version-conversion of Kubernetes resources defined via Custom Resource Definitions (CRD).  The API Server is extended to call out to a webhook at appropriate parts of the handler stack for CRDs.  
 
 No new resources are added; the [CRD resource](https://github.com/kubernetes/kubernetes/blob/34383aa0a49ab916d74ea897cebc79ce0acfc9dd/staging/src/k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/types.go#L187) is extended to include conversion information as well as multiple schema definitions, one for each apiVersion that is to be served.
 

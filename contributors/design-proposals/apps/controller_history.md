@@ -267,7 +267,7 @@ ControllerRevisions, this approach is reasonable.
     - A revision is considered to be live while any generated Object labeled 
      with its `.Name` is live.
     - This method has the benefit of providing visibility, via the label, to 
-    users with respect to the historical  provenance of a generated Object.
+    users with respect to the historical provenance of a generated Object.
     - The primary drawback is the lack of support for using garbage collection 
     to ensure that only non-live version snapshots are collected.
 1. Controllers may also use the `OwnerReferences` field of the 

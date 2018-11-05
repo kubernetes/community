@@ -35,7 +35,7 @@ while
 
 ## Constraints and Assumptions
 
-* it is not the goal to implement all output formats one can imagine. The  main goal is to be extensible with a clear golang interface. Implementations of e.g. CADF must be possible, but won't be discussed here.
+* it is not the goal to implement all output formats one can imagine. The main goal is to be extensible with a clear golang interface. Implementations of e.g. CADF must be possible, but won't be discussed here.
 * dynamic loading of backends for new output formats are out of scope.
 
 ## Use Cases
