@@ -11,7 +11,7 @@
   - [Audio](#audio)
   - [Text](#text)
   - [Video](#video)
-  - [Miscellaneous](#miscellaneous)
+  - [Learning Resources](#learning-resources)
 
 <!-- vim-markdown-toc -->
 
@@ -23,6 +23,7 @@ The criteria for contributions are simple:
 
 - The resource must be related to Kubernetes.
 - The resource must be free.
+- Avoid undifferentiated search links (e.g. `https://example.com/search?q=kubernetes`), unless you can ensure the most relevant results (e.g. `https://example.com/search?q=kubernetes&category=technology`)
 
 ## Resources
 
@@ -31,10 +32,10 @@ The criteria for contributions are simple:
 - [PodCTL](https://twitter.com/PodCTL)
 - [Kubernetes Podcast](https://kubernetespodcast.com)
 - [The New Stack Podcasts](https://thenewstack.io/podcasts/)
-- [SoundCloud](https://soundcloud.com/search?q=kubernetes)
 
 ### Text
 
+- [Awesome Kubernetes](https://github.com/ramitsurana/awesome-kubernetes)
 - [CNCF Blog](https://www.cncf.io/newsroom/blog/)
 - [Dev.To](https://dev.to/t/kubernetes)
 - [Heptio Blog](https://blog.heptio.com)
@@ -42,13 +43,16 @@ The criteria for contributions are simple:
 - [KubeWeekly](https://twitter.com/kubeweekly)
 - [Kubedex](https://kubedex.com/category/blog/)
 - [Kubernetes Blog](https://kubernetes.io/blog/)
-- [Kubernetes Changelog](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG.md)
 - [Kubernetes Enhancements Repo](https://github.com/kubernetes/enhancements)
 - [Kubernetes Forum](https://discuss.kubernetes.io)
 - [Last Week in Kubernetes Development](http://lwkd.info)
 - [Medium](https://medium.com/tag/kubernetes)
 - [Reddit](https://www.reddit.com/r/kubernetes)
-- [The New Stack Books](https://thenewstack.io/ebooks/)
+- [The New Stack: CI/CD With Kubernetes](https://thenewstack.io/ebooks/kubernetes/ci-cd-with-kubernetes/)
+- [The New Stack: Kubernetes Deployment & Security Patterns](https://thenewstack.io/ebooks/kubernetes/kubernetes-deployment-and-security-patterns/)
+- [The New Stack: Kubernetes Solutions Directory](https://thenewstack.io/ebooks/kubernetes/kubernetes-solutions-directory/)
+- [The New Stack: State of Kubernetes Ecosystem](https://thenewstack.io/ebooks/kubernetes/state-of-kubernetes-ecosystem/)
+- [The New Stack: Use-Cases for Kubernetes](https://thenewstack.io/ebooks/use-cases/use-cases-for-kubernetes/)
 - [Weaveworks Blog](https://www.weave.works/blog/category/kubernetes/)
 
 ### Video
@@ -56,8 +60,6 @@ The criteria for contributions are simple:
 - [BrightTALK Webinars](https://www.brighttalk.com/search/?q=kubernetes)
 - [Ceph YouTube Channel](https://www.youtube.com/channel/UCno-Fry25FJ7B4RycCxOtfw)
 - [CNCF YouTube Channel](https://www.youtube.com/channel/UCvqbFHwN-nwalWPjPUKpvTA)
-- [CoreOS YouTube Channel](https://www.youtube.com/user/coreoslinux)
-- [edx Courses](https://www.edx.org/course?search_query=kubernetes)
 - [Heptio YouTube Channel](https://www.youtube.com/channel/UCjQU5ZI2mHswy7OOsii_URg)
 - [Joe Hobot YouTube Channel](https://www.youtube.com/channel/UCdxEoi9hB617EDLEf8NWzkA)
 - [Kubernetes YouTube Channel](https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg)
@@ -65,18 +67,11 @@ The criteria for contributions are simple:
 - [Rancher YouTube Channel](https://www.youtube.com/channel/UCh5Xtp82q8wjijP8npkVTBA)
 - [Rook YouTube Channel](https://www.youtube.com/channel/UCa7kFUSGO4NNSJV8MJVlJAA)
 - [Tigera YouTube Channel](https://www.youtube.com/channel/UC8uN3yhpeBeerGNwDiQbcgw)
-- [Udacity Course](https://www.udacity.com/course/scalable-microservices-with-kubernetes--ud615)
-- [Udemy Courses](https://www.udemy.com/courses/search/?courseLabel=&sort=relevance&q=kubernetes&price=price-free)
 - [Weaveworks YouTube Channel](https://www.youtube.com/channel/UCmIz9ew1lA3-XDy5FqY-mrA/featured)
 
-### Miscellaneous
+### Learning Resources
 
-- [Awesome Kubernetes](https://github.com/ramitsurana/awesome-kubernetes)
+- [edx Courses](https://www.edx.org/course?search_query=kubernetes)
 - [Katacoda Interactive Tutorials](https://www.katacoda.com)
-- [Kubernetes Community Meetings](https://github.com/kubernetes/community/blob/master/events/community-meeting.md)
-- [Kubernetes Meetups](https://www.meetup.com/topics/kubernetes/all/)
-- [Kubernetes Office Hours](https://github.com/kubernetes/community/blob/master/events/office-hours.md)
-- [Kubernetes SIGs & WGs](https://contributor.kubernetes.io/sigs/)
-- [Kubernetes Slack](https://kubernetes.slack.com)
-- [Kubernetes Tutorials](https://kubernetes.io/docs/tutorials/)
-- [Weave Online User Group](https://www.meetup.com/Weave-User-Group/)
+- [Udacity Course](https://www.udacity.com/course/scalable-microservices-with-kubernetes--ud615)
+- [Udemy Courses](https://www.udemy.com/courses/search/?courseLabel=&sort=relevance&q=kubernetes&price=price-free)
