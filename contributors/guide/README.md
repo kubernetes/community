@@ -247,7 +247,7 @@ If you're looking to run e2e tests on your own infrastructure, [kubetest](https:
 ## Issues Management or Triage
 
 Have you ever noticed the total number of [open issues](https://issues.k8s.io)?
-Helping to manage or triage these open issues can be a great contributionand a great opportunity to learn about the various areas of the project.
+Helping to manage or triage these open issues can be a great contribution and a great opportunity to learn about the various areas of the project.
 Refer to the [Issue Triage Guidelines](/contributors/guide/issue-triage.md) for more information.
 
 # Community
