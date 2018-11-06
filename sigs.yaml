@@ -234,19 +234,23 @@ sigs:
         description: Test Failures and Triage
     subprojects:
     - name: architecture-and-api-governance
+      description: "[Described below](#architecture-and-api-governance)"
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
     - name: conformance-definition
+      description: "[Described below](#conformance-definition)"
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
-      - https://github.com/orgs/kubernetes/teams/cncf-conformance-wg
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
     - name: kep-adoption-and-reviews
+      description: "[Described below](#kep-adoption-and-reviews)"
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
     - name: code-organization
+      description: "[Described below](#code-organization)"
       owners:
       - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS # solely to steward moving code _out_ of here to more appropriate places
       - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
@@ -254,6 +258,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
     - name: steering
+      description: Placeholder until sigs.yaml supports committees as first-class groups. These repos are owned by the kubernetes steering committee, which is a wholly separate entity from SIG Architecture
       owners:
       - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS

@@ -34,19 +34,23 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 The following subprojects are owned by sig-architecture:
 - **architecture-and-api-governance**
+  - Description: [Described below](#architecture-and-api-governance)
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
 - **conformance-definition**
+  - Description: [Described below](#conformance-definition)
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
-    - https://github.com/orgs/kubernetes/teams/cncf-conformance-wg
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
 - **kep-adoption-and-reviews**
+  - Description: [Described below](#kep-adoption-and-reviews)
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
 - **code-organization**
+  - Description: [Described below](#code-organization)
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
@@ -54,6 +58,7 @@ The following subprojects are owned by sig-architecture:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
 - **steering**
+  - Description: Placeholder until sigs.yaml supports committees as first-class groups. These repos are owned by the kubernetes steering committee, which is a wholly separate entity from SIG Architecture
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
