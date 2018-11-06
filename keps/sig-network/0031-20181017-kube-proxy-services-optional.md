@@ -86,6 +86,8 @@ The envisioned cluster that will make use of this feature looks something like t
 * These small number of entry points into the cluster are a part of the service mesh
 * There are many micro-services in the cluster, all a part of the service mesh, that are only accessed from inside the service mesh
 
+Higher level frameworks built on top of service meshes, such as [Knative](https://github.com/knative/docs), will be able to enable this feature by default due to having a more controlled application/service model and being reliant on the service mesh.
+
 #### Design
 
 Currently, when ProxyServer starts up it creates informers for all Service (ServiceConfig) and Endpoints (EndpointsConfig) objects using a single shared informer factory.
