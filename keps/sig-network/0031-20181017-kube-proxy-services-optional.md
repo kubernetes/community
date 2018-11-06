@@ -69,6 +69,8 @@ As a cluster operator, operating a cluster using a service mesh I want to be abl
 
 #### Overview
 
+In a cluster where a service is only accessed via other applications in the service mesh the work that kube-proxy does to program the proxy (e.g. iptables) for that service is duplicated and unused. The service mesh itself handles load balancing for the service VIP. This case is often true in the standard service mesh setup of utilizing ingress/egress gateways, such that services are not directly exposed outside the cluster. In this setup, application services rarely make use of other Service features such as externalIPs, external LB routing, nodePorts, externalTrafficPolicy, healthCheckNodePort, UDP, SCTP. We can optimize this cluster by giving kube-proxy a way to not have to perform the duplicate work for these services.
+
 It is important for overall scalability that kube-proxy does not receive data for Service/Endpoints objects that it is not going to affect. This can reduce load on the kube-proxy and the network by never receiving the updates in the first place.
 
 The proposal is to make this feature available by annotating the Service object with this label: `kube-proxy.kubernetes.io/disabled=true`. The associated Endpoints object will automatically inherit that label from the Service object as well.
