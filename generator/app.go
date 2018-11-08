@@ -178,6 +178,7 @@ func getExistingContent(path string, fileFormat string) (string, error) {
 
 var funcMap = template.FuncMap{
 	"tzUrlEncode": tzUrlEncode,
+	"trimSpace":   strings.TrimSpace,
 }
 
 // tzUrlEncode returns a url encoded string without the + shortcut. This is
