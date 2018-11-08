@@ -64,4 +64,6 @@ Note that the links to display team membership will only work if you are a membe
 
 <!-- BEGIN CUSTOM CONTENT -->
 
+i like monkeys
+
 <!-- END CUSTOM CONTENT -->
