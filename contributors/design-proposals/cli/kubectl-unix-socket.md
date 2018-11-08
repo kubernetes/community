@@ -26,7 +26,7 @@ A new global option to kubectl will be added (--unix-socket)
 
 Issuing commands to any kube api server whereby unix socket is the preferred way to access it.
 
-kubectl --unix-socket ~/.myunixsocket --server https://myserver.com get pods
+kubectl --unix-socket ~/.myunixsocket --server myserver.com get pods
 
 ## Implementation
 
