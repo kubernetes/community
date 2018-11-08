@@ -53,7 +53,7 @@ type AcceleratorStats struct {
         // ID of the accelerator. device minor number? Or UUID?
         ID string `json:"id"`
 
-        // Total acclerator memory.
+        // Total accelerator memory.
         // unit: bytes
         MemoryTotal uint64 `json:"memory_total"`
 
