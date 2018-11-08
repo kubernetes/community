@@ -15,6 +15,19 @@ the tools.
 
 This doc will focus on predictability and reproducibility.
 
+## Justifications for an update
+
+Before you update a dependency, take a moment to consider why it should be 
+updated. Valid reasons include:
+ 1. We need new functionality that is in a later version.
+ 2. New or improved APIs in the dependency significantly improve Kubernetes code.
+ 3. Bugs were fixed that impact Kubernetes.
+ 4. Security issues were fixed even if they don't impact Kubernetes yet.
+ 5. Performance, scale, or efficiency was meaningfully improved.
+ 6. We need dependency A and there is a transitive dependency B.
+ 7. Kubernetes has an older level of a dependency that is precluding being able
+to work with other projects in the ecosystem.
+
 ## Theory of operation
 
 The `go` toolchain assumes a global workspace that hosts all of your Go code.
