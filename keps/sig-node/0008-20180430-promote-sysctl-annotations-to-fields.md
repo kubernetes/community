@@ -202,7 +202,7 @@ type PodSecurityPolicySpec struct {
 ```
 
 Following steps in [devel/api_changes.md#alpha-field-in-existing-api-version](https://github.com/kubernetes/community/blob/master/contributors/devel/api_changes.md#alpha-field-in-existing-api-version)
-during implemention.
+during implementation.
 
 Validation checks implemented as part of [#27180](https://github.com/kubernetes/kubernetes/pull/27180).
 
