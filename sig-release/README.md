@@ -9,6 +9,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 # Release Special Interest Group
 
 
+The [charter](charter.md) defines the scope and governance of the Release Special Interest Group.
+
 ## Meetings
 * Regular SIG Meeting: [Tuesdays at 21:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=21:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Fu6HxXQu8wl6TwloGUEOXVzZ1rwZ72IAhglnaAMCPqA/edit?usp=sharing).
