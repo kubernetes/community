@@ -15,7 +15,7 @@ Link to SIG [subprojects](https://github.com/kubernetes/community/tree/master/si
 Kubernetes integrations specific to AWS including:
 - Integrations, interfaces, libraries and extension points for all AWS services such as IAM, storage, networking, loadbalancers, registry, security, monitoring/logging at the instance or container level
 - Tools for Kubernetes APIs to work with AWS services including Amazon EKS
-- Prow, testgrid, perf dashboard integrations to expand and maintain testing (e2e, jobs) and scale-testing (load, density)
+- Prow, testgrid, perf dashboard integrations to expand and maintain testing (e2e, jobs) and scale-testing (load, density) on AWS and Amazon EKS
 - Support users on their issues and feature requests
 - Documentation for all things Kubernetes on AWS
 
@@ -38,6 +38,7 @@ SIG AWS is not for discussing bugs or feature requests outside the scope of Kube
 - Resource availability (prefer: sig-apimachinery, sig-network, sig-node)
 - Detailed design and scope of tests or tooling to run tests (prefer: sig-testing)
 - Detailed design and scope of scale tests or tooling to run scale tests (prefer: sig-scalability)
+- Troubleshooting and maintenance of test jobs related to kops (prefer: sig-cluster-lifecyle)
 - Reporting specific vulnerabilities in Kubernetes. Please report using these instructions: https://kubernetes.io/security/
 
 ## Roles and Organization Management
@@ -47,7 +48,7 @@ and opts-in to updates and modifications to [sig-governance].
 
 ### Subproject Creation
 
-SIG AWS delegates subproject approval to Technical Leads. See [Subproject creation - Option 1].
+SIG AWS delegates subproject approval to Chairs. Chairs also act as Technical Leads in SIG AWS. See [Subproject creation - Option 1].
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [sig-subprojects]: https://github.com/kubernetes/community/blob/master/sig-aws/README.md#subprojects
