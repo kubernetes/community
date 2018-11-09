@@ -1504,7 +1504,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/features/master/OWNERS
   - name: Release
     dir: sig-release
-    charter_link:
+    charter_link: charter.md
     label: release
     leadership:
       chairs:
