@@ -46,7 +46,7 @@ This proposal aims to improve DNS performance by running a dns caching agent on 
 
 ## Motivation
 
-* With the current DNS achitecture, it is possible that pods with the highest DNS QPS have to reach out to a different node, if there is no local kube-dns instance.  
+* With the current DNS architecture, it is possible that pods with the highest DNS QPS have to reach out to a different node, if there is no local kube-dns instance.  
 Having a local cache will help improve the latency in such scenarios. 
 
 * Skipping iptables DNAT and connection tracking will help reduce [conntrack races](https://github.com/kubernetes/kubernetes/issues/56903) and avoid UDP DNS entries filling up conntrack table.
