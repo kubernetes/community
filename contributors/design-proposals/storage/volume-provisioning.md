@@ -86,7 +86,7 @@ We propose that:
 
 ### Controller workflow for provisioning volumes
 
-0. Kubernetes administator can configure name of a default StorageClass. This
+0. Kubernetes administrator can configure name of a default StorageClass. This
    StorageClass instance is then used when user requests a dynamically
    provisioned volume, but does not specify a StorageClass. In other words,
    `claim.Spec.Class == ""`
