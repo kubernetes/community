@@ -487,7 +487,7 @@ sigs:
     dir: sig-aws
     mission_statement: >
       Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
-    charter_link:
+    charter_link: charter.md
     label: aws
     leadership:
       chairs:
