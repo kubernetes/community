@@ -6,12 +6,12 @@ authors:
 owning-sig: sig-network
 participating-sigs:
 reviewers:
-  - TBD
+  - "@freehan"
 approvers:
-  - TBD
+  - "@thockin"
 editor: "@bradhoekstra"
 creation-date: 2018-10-17
-last-updated: 2018-10-17
+last-updated: 2018-11-12
 status: provisional
 see-also:
 replaces:
@@ -73,7 +73,7 @@ In a cluster where a service is only accessed via other applications in the serv
 
 It is important for overall scalability that kube-proxy does not receive data for Service/Endpoints objects that it is not going to affect. This can reduce load on the kube-proxy and the network by never receiving the updates in the first place.
 
-The proposal is to make this feature available by annotating the Service object with this label: `kube-proxy.kubernetes.io/disabled=true`. The associated Endpoints object will automatically inherit that label from the Service object as well.
+The proposal is to make this feature available by annotating the Service object with this label: `service.kubernetes.io/alternative-service-proxy`. If this label key is set, with any value, the associated Endpoints object will automatically inherit that label from the Service object as well.
 
 When this label is set, kube-proxy will behave as if that service does not exist. None of the functionality that kube-proxy provides will be available for that service.
 
@@ -97,7 +97,7 @@ The new design will simply add a LabelSelector filter to the shared informer fac
 -       informerFactory := informers.NewSharedInformerFactory(s.Client, s.ConfigSyncPeriod)
 +       informerFactory := informers.NewSharedInformerFactoryWithOptions(s.Client, s.ConfigSyncPeriod,
 +               informers.WithTweakListOptions(func(options *v1meta.ListOptions) {
-+                       options.LabelSelector = "kube-proxy.kubernetes.io/disabled!=true"
++                       options.LabelSelector = "!service.kubernetes.io/alternative-service-proxy"
 +               }))
 ```
 
@@ -121,4 +121,4 @@ N/A
 ## Implementation History
 
 - 2018-10-17 - This KEP is created
-- 2018-10-28 - KEP updated
+- 2018-11-12 - KEP updated, including approver/reviewer
