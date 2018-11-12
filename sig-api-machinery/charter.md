@@ -42,9 +42,9 @@ N/A
 
 ### Subproject Creation
 
-1. SIG Technical Leads
+SIG Auth delegates subproject approval to Technical Leads. See [Subproject creation - Option 1.]
 
-
+[Subproject creation - Option 1.]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md#subproject-creation
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [sig-subprojects]: https://github.com/kubernetes/community/blob/master/sig-YOURSIG/README.md#subprojects
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
