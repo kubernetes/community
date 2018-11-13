@@ -2,7 +2,7 @@
 
 > This article was authored by Brian Grant (bgrant0607) on 8/2/2017. The original Google Doc can be found here: [https://goo.gl/T66ZcD](https://goo.gl/T66ZcD)
 
-Most users will deploy a combination of applications they build themselves, also known as **_bespoke_** applications, and **common off-the-shelf (COTS)** components. Bespoke applications are typically stateless application servers, whereas COTS components are typically infrastructure (and frequently stateful) systems, such as databases, key-value stores, caches, and messaging systems.
+Most users will deploy a combination of applications they build themselves, also known as **_bespoke_** applications, and **commercial off-the-shelf (COTS)** components. Bespoke applications are typically stateless application servers, whereas COTS components are typically infrastructure (and frequently stateful) systems, such as databases, key-value stores, caches, and messaging systems.
 
 In the case of the latter, users sometimes have the choice of using hosted SaaS products that are entirely managed by the service provider and are therefore opaque, also known as **_blackbox_** *services*. However, they often run open-source components themselves, and must configure, deploy, scale, secure, monitor, update, and otherwise manage the lifecycles of these **_whitebox_** *COTS applications*.
 
