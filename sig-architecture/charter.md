@@ -51,6 +51,14 @@ and opts-in to updates and modifications to [sig-governance].
 
 Federation of Subprojects as defined in [sig-governance]
 
+### To do
+
+- There remains lack of consensus in this SIG regarding the need for company and other diversity in the leadership of this SIG and it's subprojects, beyond what is contained in [sig-governance]. This still needs to be resolved and documented in this charter. Further details may be found [here].
+
+- It remains unspecified whether and how SIG-Architecture gets involved in resolving technical [conflicts] within and between other SIG's, and this SIG's sub-projects. This still needs to be resolved and documented in this charter.
+
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [sig-subprojects]: https://github.com/kubernetes/community/blob/master/sig-architecture/README.md#subprojects
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
+[here]: https://docs.google.com/document/d/1TTcfvf8T_tBhGDm-wjgg31WrWjYg8IZEmo3b1mpUXh0/edit?usp=sharing
+[conflicts]: https://github.com/kubernetes/community/pull/2074#discussion_r184466503
