@@ -6,7 +6,7 @@ _by Shyam JVS, Google Inc_
 
 ## Introduction
 
-Scalability is a very crucial aspect of kubernetes and has allowed many customers to adopt it with confidence. K8s [started scaling to 5000](http://blog.kubernetes.io/2017/03/scalability-updates-in-kubernetes-1.6.html) nodes beginning from release 1.6. Building and maintaining a performant and scalable system needs conscious efforts from the whole developer community. Lack of solid measures have caused problems (both scalability and release-related) in the past - for e.g during [release-1.7](https://github.com/kubernetes/kubernetes/issues/47344), [release-1.8](https://github.com/kubernetes/kubernetes/issues/53255) and [in general](https://github.com/kubernetes/kubernetes/issues/56062). We need them to ensure that the effort is well-streamlined with proper checks and balances in place. Of course they may evolve over time to suit the community/project’s needs better.
+Scalability is a very crucial aspect of kubernetes and has allowed many customers to adopt it with confidence. K8s [started scaling to 5000](https://kubernetes.io/blog/2017/03/scalability-updates-in-kubernetes-1.6) nodes beginning from release 1.6. Building and maintaining a performant and scalable system needs conscious efforts from the whole developer community. Lack of solid measures have caused problems (both scalability and release-related) in the past - for e.g during [release-1.7](https://github.com/kubernetes/kubernetes/issues/47344), [release-1.8](https://github.com/kubernetes/kubernetes/issues/53255) and [in general](https://github.com/kubernetes/kubernetes/issues/56062). We need them to ensure that the effort is well-streamlined with proper checks and balances in place. Of course they may evolve over time to suit the community/project’s needs better.
 
 ## Goal
 
@@ -69,7 +69,7 @@ About 60% of scalability regressions are caught by these medium-scale jobs ([sou
 
 ### Testing / Post-submit phase
 
-This phase constitutes the final layer of protection against regressions before cutting the release. We already have scalability CI jobs in place for this. The spectrum of scale they cover is quite wide, ranging from 100-node to 5000-node clusters (both for kubemark and real clusters). However, what what we need additionally is:
+This phase constitutes the final layer of protection against regressions before cutting the release. We already have scalability CI jobs in place for this. The spectrum of scale they cover is quite wide, ranging from 100-node to 5000-node clusters (both for kubemark and real clusters). However, what we need additionally is:
 
 The ability for crucial scalability jobs to block submit-queue (with manual unblock ability)\
 ([relevant feature request](https://github.com/kubernetes/kubernetes/issues/53255))\

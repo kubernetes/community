@@ -20,7 +20,7 @@ Because expert reviewer bandwidth is extremely limited, the process provides a c
 
 * Maintain the high standards of the project, including positive user interactions with APIs
 
-* Provide review regardless of method of API defininition (built-in, Extension API Server, or Custom Resource Definition)
+* Provide review regardless of method of API definition (built-in, Extension API Server, or Custom Resource Definition)
 
 * Provide review over both tightly coupled external projects and in-tree API changes.  
 

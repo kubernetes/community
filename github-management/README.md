@@ -44,6 +44,19 @@ require confirmation by the Steering Committee before taking effect. Time zones
 and country of origin should be considered when selecting membership, to ensure
 sufficient after North American business hours and holiday coverage.
 
+### Other roles
+
+#### New Membership Coordinator
+
+New Membership Coordinators help serve as a friendly face to newer, prospective
+community members, guiding them through the
+[process](new-membership-procedure.md) to request membership to a Kubernetes
+GitHub organization.
+
+Our current coordinators are:
+* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**, US Eastern)
+* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**, US Eastern)
+
 ## Project Owned Organizations
 
 The following organizations are currently known to be part of the Kubernetes

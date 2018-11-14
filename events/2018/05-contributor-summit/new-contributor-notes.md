@@ -1,4 +1,4 @@
-# Kubernetes New Contributor Workshop - KubeCon EU 2018 - Notes
+# Kubernetes New Contributor Workshop - KubeCon/CloudNativeCon EU 2018 - Notes
 
 Joining in the beginning was onboarding on a yacht
 Now is more onboarding a BIG cruise ship.
@@ -110,7 +110,7 @@ Everything will be refactored (cleaning, move, merged,...)
 
 ### Project
 
-- [kubernetes/Community](https://github.com/kubernetes/Community): Kubecon, proposition, Code of conduct and Contribution guideline, SIG-list
+- [kubernetes/Community](https://github.com/kubernetes/Community): KubeCon/CloudNativeCon, proposition, Code of conduct and Contribution guideline, SIG-list
 - [kubernetes/Features](https://github.com/kubernetes/Features): Features proposal for future release
 - [kubernetes/Steering](https://github.com/kubernetes/Steering)
 - [kubernetes/Test-Infra](https://github.com/kubernetes/Test-Infra): All related to test except Perf

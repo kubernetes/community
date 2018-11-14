@@ -15,14 +15,16 @@ Perform a security audit on k8s with a vendor and produce as artifacts a threat 
 
 ## Organizers
 
-* Jessie Frazelle (**[@jessfraz](https://github.com/jessfraz)**), Microsoft
 * Aaron Small (**[@aasmall](https://github.com/aasmall)**), Google
 * Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
+* Craig Ingram (**[@cji](https://github.com/cji)**), Salesforce
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/)
 * [Mailing list]()
 
 <!-- BEGIN CUSTOM CONTENT -->
-
+## Request For Proposals
+      
+The RFP will be open between 2018/10/29 and 2018/11/26 and has been published [here](https://github.com/kubernetes/community/blob/master/wg-security-audit/RFP.md).
 <!-- END CUSTOM CONTENT -->

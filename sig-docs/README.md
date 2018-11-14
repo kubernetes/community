@@ -23,8 +23,8 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
 * Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
+* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
 * Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), Heptio
 
 ## Contact
@@ -49,10 +49,11 @@ Note that the links to display team membership will only work if you are a membe
 
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
-| @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation Maintainers |
-| @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR Reviewers |
-| @kubernetes/sig-docs-ko-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | Korean L10n Repository Owners |
-| @kubernetes/sig-docs-ja-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | Japanese L10n Repository Owners |
+| @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation maintainers |
+| @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR reviews |
+| @kubernetes/sig-docs-ko-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | Korean localization |
+| @kubernetes/sig-docs-ja-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | Japanese localization |
+| @kubernetes/sig-docs-zh-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) | Chinese localization |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals

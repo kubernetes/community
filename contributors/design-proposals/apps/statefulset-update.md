@@ -304,7 +304,7 @@ as follows.
     should be consistent with the version indicated by `Status.UpdateRevision`.
     1. If the Pod does not meet either of the prior two conditions, and if 
     ordinal is in the sequence `[0, .Spec.UpdateStrategy.Partition.Ordinal)`, 
-    it should  be consistent with the version indicated by 
+    it should be consistent with the version indicated by 
     `Status.CurrentRevision`.
     1. Otherwise, the Pod should be consistent with the version indicated 
     by `Status.UpdateRevision`.
@@ -446,7 +446,7 @@ object if any of the following conditions are true.
     1. `.Status.UpdateReplicas` is negative or greater than `.Status.Replicas`.
    
 ## Kubectl
-Kubectl will  use the `rollout` command to control and provide the status of 
+Kubectl will use the `rollout` command to control and provide the status of 
 StatefulSet updates.
 
  - `kubectl rollout status statefulset <StatefulSet-Name>`: displays the status 
@@ -648,7 +648,7 @@ spec:
 ### Phased Roll Outs
 Users can create a canary using `kubectl apply`. The only difference between a
  [canary](#canaries) and a phased roll out is that the 
- `.Spec.UpdateStrategy.Partition.Ordinal` is set to  a value less than 
+ `.Spec.UpdateStrategy.Partition.Ordinal` is set to a value less than 
  `.Spec.Replicas-1`.
  
 ```yaml
@@ -810,7 +810,7 @@ intermittent compaction as a form of garbage collection. Applications that use
 log structured merge trees with size tiered compaction (e.g Cassandra) or append 
 only B(+/*) Trees (e.g Couchbase) can temporarily double their storage requirement 
 during compaction. If there is insufficient space for compaction 
-to progress, these applications will either fail or degrade  until 
+to progress, these applications will either fail or degrade until 
 additional capacity is added. While, if the user is using AWS EBS or GCE PD, 
 there are valid manual workarounds to expand the size of a PD, it would be 
 useful to automate the resize via updates to the StatefulSet's 

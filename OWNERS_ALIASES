@@ -22,8 +22,9 @@ aliases:
     - d-nishi
   sig-azure-leads:
     - justaugustus
-    - shubheksha
+    - dstrebel
     - khenidak
+    - feiskyer
   sig-big-data-leads:
     - foxish
     - erikerlandson
@@ -50,8 +51,8 @@ aliases:
     - grodrigues3
     - cblecker
   sig-docs-leads:
-    - zacharysarah
     - chenopis
+    - zacharysarah
     - bradamant3
   sig-gcp-leads:
     - abgworrall
@@ -81,8 +82,9 @@ aliases:
     - idvoretskyi
     - calebamiles
   sig-release-leads:
-    - jdumars
     - calebamiles
+    - justaugustus
+    - tpepper
   sig-scalability-leads:
     - wojtek-t
     - countspongebob
@@ -121,7 +123,10 @@ aliases:
     - smarterclayton
     - destijl
   wg-iot-edge-leads:
+    - cindyxing
     - dejanb
+    - ptone
+    - cantbewong
   wg-kubeadm-adoption-leads:
     - luxas
     - justinsb
@@ -143,9 +148,9 @@ aliases:
     - vishh
     - derekwaynecarr
   wg-security-audit-leads:
-    - jessfraz
     - aasmall
     - joelsmith
+    - cji
 ## BEGIN CUSTOM CONTENT
   steering-committee:
     - bgrant0607

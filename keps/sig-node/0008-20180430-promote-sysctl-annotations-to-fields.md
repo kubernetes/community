@@ -160,7 +160,7 @@ With the `Sysctl` feature enabled, both sysctl fields in `Pod` and `PodSecurityP
 and the whitelist of unsafed sysctls are acknowledged.
 If disabled, the fields and the whitelist are just ignored.
 
-[1] https://kubernetes.io/docs/reference/feature-gates/
+[1] https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/
 
 ## Proposal
 
@@ -202,7 +202,7 @@ type PodSecurityPolicySpec struct {
 ```
 
 Following steps in [devel/api_changes.md#alpha-field-in-existing-api-version](https://github.com/kubernetes/community/blob/master/contributors/devel/api_changes.md#alpha-field-in-existing-api-version)
-during implemention.
+during implementation.
 
 Validation checks implemented as part of [#27180](https://github.com/kubernetes/kubernetes/pull/27180).
 

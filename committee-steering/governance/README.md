@@ -18,7 +18,7 @@ All Kubernetes SIGs must define a charter defining the scope and governance of t
 6. Send the SIG Charter out for review to steering@kubernetes.io.  Include the subject "SIG Charter Proposal: YOURSIG"
    and a link to the PR in the body.
 7. Typically expect feedback within a week of sending your draft.  Expect longer time if it falls over an
-   event such as Kubecon or holidays.  Make any necessary changes.
+   event such as KubeCon/CloudNativeCon or holidays.  Make any necessary changes.
 8. Once accepted, the steering committee will ratify the PR by merging it.
 
 ## Steps to update an existing SIG charter

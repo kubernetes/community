@@ -11,7 +11,9 @@ In some sense, the summit is a real-life extension of the community meetings and
 
 ## Registration
 
-- [Form to pick tracks and RSVP for the Sunday evening event](https://goo.gl/X8YrRv)
+The event is now full and is accepting a wait list on the below form. If you are a SIG/WG Chair, Tech Lead, or Subproject Owner, please reach out to community@kubernetes.io after filling out the wait list form. 
+
+- [RSVP/Wait List Form](https://goo.gl/X8YrRv)
 - If you are planning on attending the New Contributor Track, [Sign the CLA](/CLA.md) if you have not done so already.
 
 This is not your KubeCon/CloudNativeCon ticket. You will need to register for the conference separately.
@@ -25,6 +27,14 @@ This is not your KubeCon/CloudNativeCon ticket. You will need to register for th
   - Monday, Dec 10th, 2018 from 8AM-530PM
   - 6th Floor, Washington State Convention Center, Seattle, WA
     (Signage will be present)
+
+### Badge pick up
+If you are not attending KubeCon/CnC but attending this event, please reach out to community@kubernetes.io for a separate process.
+
+You will need your KubeCon/CnC badge to get into Sunday and Monday events. Badge locations:
+- participating hotels (TBA)
+- atrium on the 4th floor of the Washington Convention Center
+- Garage on Sunday night (convenient!)
 
 ## Agenda
 
@@ -61,7 +71,7 @@ Day 2 - Washington Convention Center
 | Time       | Main Track | New Contributor Summit | Docs Sprint  | Track #1  |  Track #2  |  Track #3 |  Track #4 | Contributor Lounge |
 | --- | :---: | :---: | :---: | :---: | :---: |:---: | :---: | :---: |
 | **Room** | 608/609 | 602/603/604  | 613 | 606 | 607  | 605 | 611 | 610 |
-| 1:00pm     | | Pull Request Practice | Docs Sprint | State of Developer Experience | KEP BoF | Networking BoF | *Unconference Slot | Open Space  |
+| 1:00pm     | | Pull Request Practice | Docs Sprint | Automation and CI | KEP BoF | Networking BoF | *Unconference Slot | Open Space  |
 | 1:50pm | 10 Minute Break |  -  | -  | -  | -  | -  | -  | &#124; |
 | 2:00pm | API Codebase Tour - @sttts | Testrgid tour, docs, membership | | Cluster lifecycle BoF | Release Management | *Unconference Slot | *Unconference Slot | &#124; |
 | 2:50pm | 10 Minute Break | -  | -  | -  | -  | -  | -  | &#124; |

@@ -113,7 +113,7 @@ sigs:
       We discuss how to define and run apps in Kubernetes, demo relevant tools
       and projects, and discuss areas of friction that can lead to suggesting
       improvements or feature requests.
-    charter_link:
+    charter_link: charter.md
     label: apps
     leadership:
       chairs:
@@ -233,28 +233,37 @@ sigs:
       - name: sig-architecture-test-failures
         description: Test Failures and Triage
     subprojects:
-    - name: api
+    - name: architecture-and-api-governance
+      description: "[Described below](#architecture-and-api-governance)"
       owners:
+      - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
-    - name: kubernetes-template-project
+    - name: conformance-definition
+      description: "[Described below](#conformance-definition)"
       owners:
-      - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
-    - name: spartakus
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
+    - name: kep-adoption-and-reviews
+      description: "[Described below](#kep-adoption-and-reviews)"
       owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
+    - name: code-organization
+      description: "[Described below](#code-organization)"
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS # solely to steward moving code _out_ of here to more appropriate places
+      - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
     - name: steering
+      description: Placeholder until sigs.yaml supports committees as first-class groups. These repos are owned by the kubernetes steering committee, which is a wholly separate entity from SIG Architecture
       owners:
       - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
-    - name: architecture-tracking
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
-    - name: universal-utils
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
-    - name: contrib # solely to steward moving code _out_ of here to more appropriate places
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
+
   - name: Auth
     dir: sig-auth
     mission_statement: >
@@ -316,10 +325,103 @@ sigs:
         description: Design Proposals
       - name: sig-auth-test-failures
         description: Test Failures and Triage
+    subprojects:
+    - name: audit-logging
+      description: >
+        Kubernetes API support for audit logging.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/auditregistration/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/apis/audit/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/audit/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/plugin/pkg/audit/OWNERS
+    - name: authenticators
+      description: >
+        Kubernetes API support for authentication.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/authentication/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubeapiserver/authenticator/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/authentication/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/auth/authenticator/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/authentication/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/authentication/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/plugin/pkg/authenticator/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/kubernetes/typed/authentication/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/authentication/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/pkg/apis/clientauthentication/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/plugin/pkg/client/auth/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/tools/auth/OWNERS
+    - name: authorizers
+      description: >
+        Kubernetes API support for authorization.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/authorization/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/rbac/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubeapiserver/authorizer/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/cmd/auth/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/authorization/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/rbac/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/auth/authorizer/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/authorization/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/rbac/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/authorization/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/plugin/pkg/authorizer/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/kubernetes/typed/authorization/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/kubernetes/typed/rbac/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/authorization/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/rbac/OWNERS
+    - name: certificates
+      description: >
+        Certificates APIs and client infrastructure to support PKI.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/certificates/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/certificates/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/certificates/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/authentication/request/x509/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/util/cert/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/util/certificate/OWNERS
+    - name: encryption-at-rest
+      description: >
+        API storage support for storing data encrypted at rest in etcd.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/OWNERS
+    - name: node-identity-and-isolation
+      description: >
+        Node identity management (co-owned with sig-lifecycle), and
+        authorization restrictions for isolating workloads on separate nodes
+        (co-owned with sig-node).
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/certificates/approver/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/certificate/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/noderestriction/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/auth/authorizer/node/OWNERS
+    - name: policy-management
+      description: >
+        API validation and policies enforced during admission, such as
+        PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and
+        Seccomp.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/imagepolicy/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/policy/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/security/podsecuritypolicy/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/policy/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/imagepolicy/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/policy/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/imagepolicy/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/security/podsecuritypolicy/OWNERS
+    - name: service-accounts
+      description: >
+        Infrastructure implementing Kubernetes service account based workload
+        identity.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/serviceaccount/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/token/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/serviceaccount/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/serviceaccount/OWNERS
   - name: Autoscaling
     dir: sig-autoscaling
     mission_statement: >
-      Covers development and maintenance of componets for automated scaling in
+      Covers development and maintenance of components for automated scaling in
       Kubernetes.  This includes automated vertical and horizontal pod
       autoscaling, initial resource estimation, cluster-proportional system
       component autoscaling, and autoscaling of Kubernetes clusters themselves.
@@ -385,7 +487,7 @@ sigs:
     dir: sig-aws
     mission_statement: >
       Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
-    charter_link:
+    charter_link: charter.md
     label: aws
     leadership:
       chairs:
@@ -424,6 +526,9 @@ sigs:
     - name: aws-encryption-provider
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
+    - name: aws-ebs-csi-driver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
   - name: Azure
     dir: sig-azure
     mission_statement: >
@@ -436,12 +541,15 @@ sigs:
       - name: Stephen Augustus
         github: justaugustus
         company: Red Hat
-      - name: Shubheksha Jalan
-        github: shubheksha
+      - name: Dave Strebel
+        github: dstrebel
         company: Microsoft
       tech_leads:
       - name: Kal Khenidak
         github: khenidak
+        company: Microsoft
+      - name: Pengfei Ni
+        github: feiskyer
         company: Microsoft
     meetings:
     - description: Regular SIG Meeting
@@ -650,6 +758,16 @@ sigs:
     - name: cloud-provider-vsphere
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
+    - name: cloud-provider-extraction
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction/OWNERS
+      meetings:
+      - description: Weekly Sync removing the in-tree cloud providers led by @cheftako and @d-nishi
+        day: Thursday
+        time: "13:30"
+        tz: "PT (Pacific Time)"
+        frequency: weekly
+        url: https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit
   - name: Cluster Lifecycle
     dir: sig-cluster-lifecycle
     mission_statement: >
@@ -724,6 +842,13 @@ sigs:
       frequency: biweekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
+    - description: Kubespray Office Hours
+      day: Wednesday
+      time: "07:00"
+      tz: "PT (Pacific Time)"
+      frequency: biweekly
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit
     contact:
       slack: sig-cluster-lifecycle
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
@@ -742,6 +867,9 @@ sigs:
     - name: cluster-api-provider-aws
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
+    - name: cluster-api-provider-digitalocean
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
     - name: cluster-api-provider-gcp
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
@@ -764,6 +892,7 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
     - name: kubeadm-dind-cluster
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/kubeadm-dind-cluster/master/OWNERS
@@ -874,7 +1003,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
     - name: devstats
       owners:
-      - Phillels
+        - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
     - name: k8s.io
       owners:
       - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
@@ -893,12 +1022,12 @@ sigs:
     label: docs
     leadership:
       chairs:
-      - name: Zach Corleissen
-        github: zacharysarah
-        company: Linux Foundation
       - name: Andrew Chen
         github: chenopis
         company: Google
+      - name: Zach Corleissen
+        github: zacharysarah
+        company: Linux Foundation
       - name: Jennifer Rondeau
         github: bradamant3
         company: Heptio
@@ -924,13 +1053,15 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
       teams:
       - name: sig-docs-maintainers
-        description: Documentation Maintainers
+        description: Documentation maintainers
       - name: sig-docs-pr-reviews
-        description: Documentation PR Reviewers
+        description: Documentation PR reviews
       - name: sig-docs-ko-owners
-        description: Korean L10n Repository Owners
+        description: Korean localization
       - name: sig-docs-ja-owners
-        description: Japanese L10n Repository Owners
+        description: Japanese localization
+      - name: sig-docs-zh-owners 
+        description: Chinese localization 
     subprojects:
     - name: reference-docs
       owners:
@@ -1086,7 +1217,7 @@ sigs:
       systems like Spinnaker and others.  Standalone building blocks for these and other
       similar systems (for example a cluster registry), and proposed changes to kubernetes
       core where appropriate will also be in scope.
-    charter_link:
+    charter_link: charter.md
     label: multicluster
     leadership:
       chairs:
@@ -1373,15 +1504,22 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/features/master/OWNERS
   - name: Release
     dir: sig-release
-    charter_link:
+    charter_link: charter.md
     label: release
     leadership:
       chairs:
-      - name: Jaice Singer DuMars
-        github: jdumars
-        company: Google
       - name: Caleb Miles
         github: calebamiles
+        company: Google
+      - name: Stephen Augustus
+        github: justaugustus
+        company: Red Hat
+      - name: Tim Pepper
+        github: tpepper
+        company: VMware
+      emeritus_leads:
+      - name: Jaice Singer DuMars
+        github: jdumars
         company: Google
     meetings:
     - description: Regular SIG Meeting
@@ -1495,7 +1633,7 @@ sigs:
         company: Google
       - name: Klaus Ma
         github: k82cn
-        company: IBM
+        company: Huawei
     meetings:
     - description: 10AM PT Meeting
       day: Thursday
@@ -1802,24 +1940,24 @@ sigs:
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
-      time: "18:00"
-      tz: "UTC"
+      time: "11:00"
+      tz: "PT (Pacific Time)"
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y
     - description: Cloud Provider vSphere monthly syncup
       day: Wednesday
-      time: "16:00"
-      tz: "UTC"
+      time: "09:00"
+      tz: "PT (Pacific Time)"
       frequency: monthly - first Wednesday every month
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR
     - description: Cluster API Provider vSphere bi-weekly syncup
       day: Wednesday
-      time: "18:00"
-      tz: "UTC"
+      time: "13:00"
+      tz: "PT (Pacific Time)"
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing
@@ -2107,9 +2245,18 @@ workinggroups:
        A Working Group dedicated to discussing, designing and documenting using Kubernetes for developing and deploying IoT and Edge specific applications
     leadership:
       chairs:
+      - name: Cindy Xing
+        github: cindyxing
+        company: Huawei
       - name: Dejan Bosanac
         github: dejanb
         company: Red Hat
+      - name: Preston Holmes
+        github: ptone
+        company: Google
+      - name: Steve Wong
+        github: cantbewong
+        company: VMWare
     meetings:
     - description: Regular WG Meeting
       day: Friday
@@ -2128,15 +2275,15 @@ workinggroups:
     charter_link:
     leadership:
       chairs:
-      - name: Jessie Frazelle
-        github: jessfraz
-        company: Microsoft
       - name: Aaron Small
         github: aasmall
         company: Google
       - name: Joel Smith
         github: joelsmith
         company: Red Hat
+      - name: Craig Ingram
+        github: cji
+        company: Salesforce
     meetings:
     - description: Regular WG Meeting
       day: Monday

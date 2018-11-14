@@ -102,7 +102,7 @@ The site would be forum.k8s.io, and would be linked to from the homepage and maj
 - Post announcements about related kubernetes projects
   - Give the ecosystem of tools around k8s a place to go and build communities around all the tools people are building. 
   - "Jill's neat K8s project on github" is too small to have it's own official k8s presence, but it could be a post on a forum. 
-- Events section for meetups and Kubecon
+- Events section for meetups and KubeCon/CloudNativeCon
 - Sub boards for meetup groups
 - Sub boards for non-english speaking community members
 - Developer section can include:
@@ -143,14 +143,14 @@ The site would be forum.k8s.io, and would be linked to from the homepage and maj
 ### Risks and Mitigations
 
 - One more thing to check everyday(tm)
-  - User fatigue with mailing lists, discourse, slack, stackoverflow, youtube channel, kubecon, your local meetup, etc.
+  - User fatigue with mailing lists, discourse, slack, stackoverflow, youtube channel, KubeCon/CloudNativeCon, your local meetup, etc.
   - This is why I am proposing we investigate if we can replace the lists as well, two birds with one stone. 
 - Lack of developer participation
   - The mailing lists work, how suitable is Discourse to replace a mailing list these days? CNCF has tried Discourse in the past. See [@cra's post](https://twitter.com/cra/status/981548716405547008)
   - [Discussion on the pros and cons of each](https://meta.discourse.org/t/discourse-vs-email-mailing-lists/54298)
   - We have enough churn and new Working Groups that we could pilot a few, opt-in for SIGs that want to try it? 
 - A community forum is asynchronous, whereas chat is realtime.
-  - This doesn't solve our Slack lock-in concerns, but can be a good first step in being more active in running our own community properties so that we can build out own own resources. 
+  - This doesn't solve our Slack lock-in concerns, but can be a good first step in being more active in running our own community properties so that we can build out own resources. 
   - Ghost have [totally migrated to Discourse](https://twitter.com/johnonolan/status/980872508395188224?s=12) and shut down their Slack.
     - We should keep an eye on this and see what data we can gleam from this. Engage with Ghost community folks to see what lessons they've learned.
     - Not sure if getting rid of realtime chat entirely is a good idea either. 
@@ -176,7 +176,7 @@ After a _three month_ prototyping period SIG Contributor Experience will:
 
 - Determine if this is a better solution than what we have, and figure out where this would fit in the ecosystem
   - There is a strong desire that this would replace an existing support venue, SIG Contributor Experience will weigh the options.  
-- If this solution is not better than what we have, and we don't want to support yet another tool we we would shut the project down.
+- If this solution is not better than what we have, and we don't want to support yet another tool we would shut the project down.
 - If we don't have enough information to draw a conclusion, we may decide to extend the evaluation period.
 - Site should have a moderation and administrative policies written down.
 

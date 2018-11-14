@@ -209,7 +209,7 @@ Go 1.5 introduced many changes. To name a few that are relevant to Kubernetes:
  - The garbage collector became more efficient (but also [confused our latency test](https://github.com/golang/go/issues/14396)).
  - `linux/arm64` and `linux/ppc64le` were added as new ports.
  - The `GO15VENDOREXPERIMENT` was started. We switched from `Godeps/_workspace` to the native `vendor/` in [this PR](https://github.com/kubernetes/kubernetes/pull/24242).
- - It's not required to pre-build the whole standard library `std` when cross-compliling. [Details](#prebuilding-the-standard-library-std)
+ - It's not required to pre-build the whole standard library `std` when cross-compiling. [Details](#prebuilding-the-standard-library-std)
  - Builds are approximately twice as slow as earlier. That affects the CI. [Details](#releasing)
  - The native Go DNS resolver will suffice in the most situations. This makes static linking much easier.
 

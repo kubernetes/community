@@ -306,34 +306,57 @@ response reduces the complexity of these clients.
 ##### Typical status properties
 
 **Conditions** represent the latest available observations of an object's
-current state. Objects may report multiple conditions, and new types of
-conditions may be added in the future. Therefore, conditions are represented
-using a list/slice, where all have similar structure.
+state.  They are an extension mechanism intended to be used when the details of
+an observation are not a priori known or would not apply to all instances of a
+given Kind.  For observations that are well known and apply to all instances, a
+regular field is preferred.  An example of a Condition that probably should
+have been a regular field is Pod's "Ready" condition - it is managed by core
+controllers, it is well understood, and it applies to all Pods.
+
+Objects may report multiple conditions, and new types of conditions may be
+added in the future or by 3rd party controllers. Therefore, conditions are
+represented using a list/slice, where all have similar structure.
 
 The `FooCondition` type for some resource type `Foo` may include a subset of the
 following fields, but must contain at least `type` and `status` fields:
 
 ```go
-  Type               FooConditionType  `json:"type" description:"type of Foo condition"`
-  Status             ConditionStatus   `json:"status" description:"status of the condition, one of True, False, Unknown"`
+  Type               FooConditionType   `json:"type" description:"type of Foo condition"`
+  Status             ConditionStatus    `json:"status" description:"status of the condition, one of True, False, Unknown"`
+
   // +optional
-  LastHeartbeatTime  unversioned.Time  `json:"lastHeartbeatTime,omitempty" description:"last time we got an update on a given condition"`
+  Reason             *string            `json:"reason,omitempty" description:"one-word CamelCase reason for the condition's last transition"`
   // +optional
-  LastTransitionTime unversioned.Time  `json:"lastTransitionTime,omitempty" description:"last time the condition transit from one status to another"`
+  Message            *string            `json:"message,omitempty" description:"human-readable message indicating details about last transition"`
+
   // +optional
-  Reason             string            `json:"reason,omitempty" description:"one-word CamelCase reason for the condition's last transition"`
+  LastHeartbeatTime  *unversioned.Time  `json:"lastHeartbeatTime,omitempty" description:"last time we got an update on a given condition"`
   // +optional
-  Message            string            `json:"message,omitempty" description:"human-readable message indicating details about last transition"`
+  LastTransitionTime *unversioned.Time  `json:"lastTransitionTime,omitempty" description:"last time the condition transit from one status to another"`
 ```
 
 Additional fields may be added in the future.
 
+Do not use fields that you don't need - simpler is better.
+
+Use of the `Reason` field is encouraged.
+
+Use the `LastHeartbeatTime` with great caution - frequent changes to this field
+can cause a large fan-out effect for some resources.
+
 Conditions should be added to explicitly convey properties that users and
 components care about rather than requiring those properties to be inferred from
-other observations.
+other observations.  Once defined, the meaning of a Condition can not be
+changed arbitrarily - it becomes part of the API, and has the same backwards-
+and forwards-compatibility concerns of any other part of the API.
 
 Condition status values may be `True`, `False`, or `Unknown`. The absence of a
-condition should be interpreted the same as `Unknown`.
+condition should be interpreted the same as `Unknown`.  How controllers handle
+`Unknown` depends on the Condition in question.
+
+Condition types should indicate state in the "abnormal-true" polarity.  For
+example, if the condition indicates when a policy is invalid, the "is valid"
+case is probably the norm, so the condition should be called "Invalid".
 
 In general, condition values may change back and forth, but some condition
 transitions may be monotonic, depending on the resource and condition type.

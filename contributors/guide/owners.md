@@ -241,7 +241,7 @@ pieces of prow are used to implement the code review process above.
 - [plugin: assign](https://git.k8s.io/test-infra/prow/plugins/assign)
   - assigns GitHub users in response to `/assign` comments on a PR
   - unassigns GitHub users in response to `/unassign` comments on a PR
-- [plugin: approve](https://git.k8s.io/test-infra/prow/plugins/assign)
+- [plugin: approve](https://git.k8s.io/test-infra/prow/plugins/approve)
   - per-repo configuration:
     - `issue_required`: defaults to `false`; when `true`, require that the PR description link to
       an issue, or that at least one **approver** issues a `/approve no-isse`
@@ -251,7 +251,7 @@ pieces of prow are used to implement the code review process above.
     OWNERS files has `/approve`'d
   - comments as required OWNERS files are satisfied
   - removes outdated approval status comments
-- [plugin: blunderbuss](https://git.k8s.io/test-infra/prow/plugins/assign)
+- [plugin: blunderbuss](https://git.k8s.io/test-infra/prow/plugins/blunderbuss)
   - determines **reviewers** and requests their reviews on PR's
 - [plugin: lgtm](https://git.k8s.io/test-infra/prow/plugins/lgtm)
   - adds the `lgtm` label when a **reviewer** comments `/lgtm` on a PR
