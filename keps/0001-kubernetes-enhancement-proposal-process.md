@@ -274,7 +274,7 @@ failure of the KEP process are
 - distribution of time a KEP spends in each state
 - KEP rejection rate
 - PRs referencing a KEP merged per week
-- number of issued open which reference a KEP
+- number of issues open which reference a KEP
 - number of contributors who authored a KEP
 - number of contributors who authored a KEP for the first time
 - number of orphaned KEPs
@@ -330,7 +330,7 @@ this proposal attempts to place these concerns within a general framework.
 [accepted design and a proposal]: https://github.com/kubernetes/community/issues/914
 [the organization of design proposals]: https://github.com/kubernetes/community/issues/918
 
-### Github issues vs. KEPs
+### GitHub issues vs. KEPs
 
 The use of GitHub issues when proposing changes does not provide SIGs good
 facilities for signaling approval or rejection of a proposed change to Kubernetes
