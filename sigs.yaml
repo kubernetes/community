@@ -1534,24 +1534,14 @@ sigs:
       slack: sig-release
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-release
       teams:
+      - name: sig-release
+        description: SIG Release Members
       - name: sig-release-admins
-        description: Release Team Admins
-      - name: sig-release-api-reviews
-        description: API Changes and Reviews
-      - name: sig-release-bugs
-        description: Bug Triage and Troubleshooting
-      - name: sig-release-feature-requests
-        description: Feature Requests
-      - name: sig-release-members
-        description: Release Team Members
-      - name: sig-release-misc
-        description: General Discussion
-      - name: sig-release-pr-reviews
-        description: PR Reviews
-      - name: sig-release-proposals
-        description: Design Proposals
-      - name: sig-release-test-failures
-        description: Test Failures and Triage
+        description: Admins for SIG Release repositories
+      - name: kubernetes-milestone-maintainers
+        description: Milestone Maintainers
+      - name: kubernetes-release-managers
+        description: Release Managers
     subprojects:
     - name: hyperkube
       owners:
