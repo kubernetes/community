@@ -68,18 +68,46 @@ Create a Google Group at [https://groups.google.com/forum/#!creategroup](https:/
 Each SIG must have two discussion groups with the following settings.
 
 - kubernetes-sig-foo (the discussion group):
-  - Anyone can view content.
-  - Anyone can join.
-  - Moderate messages from non-members of the group.
-  - Only members can view the list of members.
+  - Anyone can view content
+  - Anyone can join
+  - Anyone can post
+  - Only members can view the list of members
 - kubernetes-sig-foo-leads (list for the leads, to be used with Zoom and Calendars)
-  - Only members can view group content.
-  - Anyone can apply to join.
-  - Moderate messages from non-members of the group.
-  - Only members can view the list of members.
-- Groups should be created as e-mail lists with at least three owners (including parispittman at google.com and jorge@heptio.com and ihor@cncf.io)
-- To add the owners, visit the Group Settings (drop-down menu on the right side), select Direct Add Members on the left side and add Paris, Jorge and Ihor via email address (with a suitable welcome message); in Members/All Members select Paris, Jorge, and Ihor and assign to an "owner role"
-- Set "View topics", "Post", "Join the Group" permissions to be "Public";
+  - Only members can view group content
+  - Anyone can apply to join
+  - Anyone can post
+  - Only members can view the list of members
+- Groups should be created as e-mail lists with at least three owners (including parispittman at google.com and ihor.dvoretskyi at gmail.com);
+- To add the owners, visit the Group Settings (drop-down menu on the right side), select Direct Add Members on the left side and add Paris and Ihor via email address (with a suitable welcome message); in Members/All Members select Ihor and Paris and assign to an "owner role"
+- Set "View topics", "Post", "Join the Group" permissions to be "Public"
 
-Familiarize yourself with the [moderation guidelines](https://github.com/kubernetes/community/blob/master/communication/moderation.md) for the project. Chairs should be cognizant that a new group will require an initial time investment moderation-wise as the group establishes itself.
+## SIG/WG Retirement
 
+Sometimes it might be necessary to sunset a SIG or Working Group.
+SIGs/WGs may also merge with an existing SIG/WG if deemed appropriate, and would save project overhead in the long run.
+Working Groups in particular are more ephemeral than SIGs, so this process should be followed when the Working Group has accomplished it's mission.
+
+- Retiring a SIG for is covered in the [SIG Governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md)
+- Retiring a Working Group is covered in [WG Governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md)
+
+The process for closing a SIG/WG is as follows:
+
+- SIG Chairs agree to disband. This decision should follow the decision making process of the SIG's Charter.
+- Send a email to kubernetes-dev to let people know the SIG has either closed or merged with another SIG. This will let SIG Contributor Experience know that they need to help you archive/deactivate project resources.
+  - Consider sending a [closing summary](https://docs.google.com/document/d/1qZcAvuWBznR_oEaPWtwm7U4JNT91m8r9YOUvInU-src/edit#heading=h.jsw0l2t0ra8) to the list. 
+- Work with SIG Contributor Experience to:
+  - Archive the mailing list/group
+  - Archive the leads mailing list/group
+  - Archive the slack channel
+  - Deactivate the group's Zoom license
+  - Move all appropriate github repositories to an appropriate archive or a repo outside of the Kubernetes org
+    - Each subproject a SIG owns must transfer ownership to a new SIG, outside the project, or be retired
+    - File an issue with kubernetes/org if multiple repos that need to be retired
+  - Coordinate with SIG Testing on the following topics (if necessary) 
+    - Retire or transfer any test-infra jobs owned by the SIG
+    - Retire or transfer any testgrid dashboards owned by the SIG
+  - Clean up and remove all GitHub teams that refer to that SIG/WG
+  - Migrate/Remove/Deprecate any SIG/WG labels in [labels.yaml](https://git.k8s.io/test-infra/label_sync/labels.yaml)
+  - Ensure that the YouTube Collaboration links are removed
+- Remove SIG Calendar and events from the community calendar
+- Update `sigs.yaml` to reflect the removal of the SIG/WG
