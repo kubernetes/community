@@ -29,8 +29,8 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 
 ### Out of scope
 
-- KEPs that do not have architectural implications
-- The release enhancement delivery process
+- KEPs that do not have architectural implications or impact are managed by their respective sponsoring SIG(s)
+- The release enhancement delivery [process] that is part of the SIG-Release Release Team [subproject]
 
 ## Roles and Organization Management
 
@@ -62,3 +62,5 @@ Federation of Subprojects as defined in [sig-governance]
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
 [here]: https://docs.google.com/document/d/1TTcfvf8T_tBhGDm-wjgg31WrWjYg8IZEmo3b1mpUXh0/edit?usp=sharing
 [conflicts]: https://github.com/kubernetes/community/pull/2074#discussion_r184466503
+[process]: https://github.com/kubernetes/sig-release/blob/master/release-team/role-handbooks/enhancements/README.md
+[subproject]: https://github.com/kubernetes/sig-release/blob/master/release-team/README.md
