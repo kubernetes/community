@@ -190,7 +190,7 @@ Docker API does not provide user-namespace mapping. Therefore to handle `GetRunt
 ## Future Work
 ### Namespace-Level/Pod-Level user-namespace support
 There is no runtime today which supports creating containers with a specified user namespace configuration. For example here is the discussion related to this support in Docker https://github.com/moby/moby/issues/28593
-Once user-namespace feature in the runtimes has evolved to support container’s request for a specific user-namespace mapping(UID and GID range), we can extend current Node-Level user-namespace support in Kubernetes to support Namespace-level isolation(or if desired even pod-level isolation) by dividing and allocating learned mapping from runtime among Kubernetes namespaces (or pods, if desired). From end-user UI perspective, we dont expect any change in the UI related to user namespaces support.
+Once user-namespace feature in the runtimes has evolved to support container’s request for a specific user-namespace mapping(UID and GID range), we can extend current Node-Level user-namespace support in Kubernetes to support Namespace-level isolation(or if desired even pod-level isolation) by dividing and allocating learned mapping from runtime among Kubernetes namespaces (or pods, if desired). From end-user UI perspective, we don't expect any change in the UI related to user namespaces support.
 ### Remote Volumes
 Remote Volumes support should be investigated and should be targeted in future once support is there at lower infra layers.
 

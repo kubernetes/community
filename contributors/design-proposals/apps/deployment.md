@@ -143,7 +143,7 @@ For each creation or update for a Deployment, it will:
      is the one that the new RS uses and collisionCount is a counter in the DeploymentStatus
      that increments every time a [hash collision](#hashing-collisions) happens (hash
      collisions should be rare with fnv).
-   - If the RSs and pods dont already have this label and selector:
+   - If the RSs and pods don't already have this label and selector:
      - We will first add this to RS.PodTemplateSpec.Metadata.Labels for all RSs to
        ensure that all new pods that they create will have this label.
      - Then we will add this label to their existing pods
