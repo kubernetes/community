@@ -1,7 +1,5 @@
 # Kubernetes Working Group Formation and Disbandment
 
-Draft 1.0 // Jaice Singer DuMars // June, 2018
-
 ## Process Overview and Motivations
 Working Groups provide a formal avenue for disparate groups to collaborate around a common problem, craft a balanced
 position, and disband. Because they represent the interests of multiple groups, they are a vehicle for consensus
@@ -24,6 +22,27 @@ over its formation and disbanding.
 
 - Documenting other governance bodies such as sub-projects or SIGs
 - Changing the status of existing Working Groups/SIGs/Sub-projects
+
+## Working Group Relationship To SIGs
+Assets owned by the Kubernetes project (e.g. code, docs, blogs, processes, etc) are owned and 
+managed by [SIGs](sig-governance.md).  The exception to this is specific assets that may be owned
+by Working Groups, as outlined below.
+
+Working Groups provide structure for governance and communication channels, and as such may
+own the following types of assets:
+
+- Calendar Events
+- Slack Channels
+- Discussion Forum Groups
+
+Working Groups are distinct from SIGs in that they are intend to:
+ 
+- facilitate collaboration across SIGs
+- facilitate an exploration of a problem / solution through a group with minimal governmental overhead
+
+Working Groups will typically have stake holders whose participation is in the
+context of one or more SIGs.  These SIGs should be documented as stake holders of the Working Group
+(see Creation Process).
 
 ## Is it a Working Group? Yes, if...
 - It does not own any code
@@ -62,8 +81,7 @@ requirements for that are:
 - chair information
 - meeting information
 - contact methods
-- any sig stakeholders
-- any subproject stakeholders
+- any [sig](sig-governance.md) stakeholders
 
 The pull request should be labeled with any SIG stakeholders and committee/steering. And since GitHub notifications
 are not a reliable means to contact people, an email should be sent to the mailing lists for the stakeholder SIGs,
@@ -92,7 +110,7 @@ Working Groups will be disbanded if either of the following is true:
   - Zoom
 
 The current Chair may step down at any time.  When they do so, a new Chair may be selected through lazy consensus
-within the Working Group.
+within the Working Group, and [sigs.yaml](/sigs.yaml) should be updated.
 
 References
 
