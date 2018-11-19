@@ -13,7 +13,7 @@ SIG Apps covers developing, deploying, and operating applications on Kubernetes 
 
 - APIs used for running applications (e.g., Workloads API)
 - Tools and documentation to aid in ecosystem tool interoperability around apps (e.g., Application CRD/Controller)
-- Grandfathered in tools used to aide in development of and management of workloads (e.g., Kompose)
+- Grandfathered in tools used to aid in development of and management of workloads (e.g., Kompose)
 
 #### Cross-cutting and Externally Facing Processes
 
