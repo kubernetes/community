@@ -36,7 +36,13 @@ status: provisional
 Currently, support for IP multicast traffic on the pod network is
 entirely undefined, with no multicast-related behavior being either
 required or forbidden, and different plugins offering different
-functionality. This KEP aims to standardize things.
+functionality.
+
+This KEP aims first to clarify the default behavior (that the pod
+network should not carry multicast traffic unless configured to so),
+and second, to define a way for a user to indicate that an application
+does require multicast support, when running under a network plugin
+that supports multicast.
 
 ## Motivation
 
@@ -61,7 +67,8 @@ See also:
 ### Non-Goals
 
 - Requiring all plugins to support multicast.
-- Anything having to do with multicast on interfaces/networks other than the default cluster network.
+- Forcing all plugins to support only a least-common-denominator form of multicast.
+- Specifying anything having to do with multicast on interfaces/networks other than the default cluster network.
 
 ## Existing Work
 
@@ -92,6 +99,41 @@ NetworkPolicy to extend multicast traffic across namespace boundaries.
 
 ### User Stories
 
+#### Running WildFly ("JBoss") under Kubernetes
+
+WildFly (formerly and sometimes still currently known as JBoss
+Application Server) allows running [High
+Availability](http://docs.wildfly.org/14/High_Availability_Guide.html)
+Java EE applications. It uses a library called
+[JGroups](http://www.jgroups.org/) to allow new and old servers to
+discover each other as instances are added and removed, and to manage
+communication between servers in the cluster.
+
+Although there are several ways to configure JGroups, the default (and
+generally preferred) configuration uses multicast for discovery; when
+a new server instance is brought up, it joins an IP multicast group
+(using either a default multicast IP or one specified in a
+configuration file), and then sends a multicast message to that
+address announcing its presence. The other existing servers will
+respond, allowing each server to learn about each of the others
+without having known about any of them in advance.
+
+(As an alternative to using multicast for discovery, there is a
+JGroups extension called
+[KUBE_PING](https://github.com/jgroups-extras/jgroups-kubernetes) that
+allows peers to find each other by making Kubernetes apiserver calls.
+Although this provides a workaround for clusters where multicast is
+not available, it's generally less preferred since it requires
+additional configuration, and in particular, in clusters using RBAC it
+may require updating role bindings to grant the WildFly pods the
+apiserver access they need.)
+
+The default JGroups configuration also uses multicast for most
+peer-to-peer communication between the servers, although it is
+possible to configure it to use unicast TCP instead.
+
+#### User Story 2
+
 TBD
 
 ### Implementation Details/Notes/Constraints
@@ -112,6 +154,10 @@ sending the traffic to them would be a waste of bandwidth.
 
 3. This is probably the most-commonly-implemented behavior among
 existing network plugins anyway.
+
+4. Some network plugins simply expose an underlying provider network,
+and in some cases (eg, GCP), that underlying network does not support
+multicast.
 
 #### Optional IP Multicast Support
 
@@ -184,7 +230,9 @@ TBD
 
 ## Graduation Criteria
 
-TBD
+- The documentation indicates the expected default behavior of Kubernetes clusters with respect to IP multicast traffic.
+- The networking tests validate the expected default behavior.
+- TBD
 
 ## Implementation History
 
