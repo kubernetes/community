@@ -211,6 +211,8 @@ the ReplicationController being autoscaled.
 ```yaml
 kind: HorizontalPodAutoscaler
 apiVersion: autoscaling/v2alpha1
+metadata:
+  name: WebFrontend
 spec:
   scaleTargetRef:
     kind: ReplicationController
