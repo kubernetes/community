@@ -1,5 +1,5 @@
 ---
-kep-number: 31
+kep-number: 32
 title: Data Driven Commands for Kubectl
 authors:
   - "@pwittrock"
@@ -52,6 +52,9 @@ to populate the request body.
 
 Publishing commands as data from the server addresses cli integration with API extensions as well as client-server
 version skew.
+
+**Note:** No server-side changes are required for this, all Request and Response template expansion is performed on
+the client side.
 
 ## Motivation
 
@@ -133,6 +136,16 @@ limitations under the License.
 
 package v1alpha1
 
+type OutputType string
+
+const (
+	// Use the outputTemplate field to format the response on the client-side
+	OUTPUT_TEMPLATE OutputType = "TEMPLATE"
+
+	// Use Server-Side Printing and output the response table in a columnar format
+	OUTPUT_TABLE                   = "TABLE"
+)
+
 // ResourceCommand defines a command that is dynamically defined as an annotation on a CRD
 type ResourceCommand struct {
 	// Command is the cli Command
@@ -142,28 +155,35 @@ type ResourceCommand struct {
 	// +optional
 	Requests []ResourceRequest `json:"requests,omitempty"`
 
-	// Output is a go-template used write the command output.  It may reference values specified as flags using
+	// OutputType is used to determine what output type to print
+	// +optional
+    OutputType OutputType `json:"outputTemplate,omitempty"`
+
+	// OutputTemplate is a go-template used by the kubectl client to format the server responses as command output
+	// (STDOUT).
+	//
+	// The template may reference values specified as flags using
 	// {{index .Flags.Strings "flag-name"}}, {{index .Flags.Ints "flag-name"}}, {{index .Flags.Bools "flag-name"}},
 	// {{index .Flags.Floats "flag-name"}}.
 	//
-	// It may also reference values from the responses that were saved using saveResponseValues
-	// - {{index .Responses.Strings "response-value-name"}}.
+	// The template may also reference values from the responses that were saved using saveResponseValues
+	// {{index .Responses.Strings "response-value-name"}}.
 	//
 	// Example:
 	// 		deployment.apps/{{index .Responses.Strings "responsename"}} created
 	//
 	// +optional
-	Output string `json:"output,omitempty"`
+	OutputTemplate string `json:"outputTemplate,omitempty"`
 }
 
 type ResourceOperation string
 
 const (
-	CREATE_RESOURCE ResourceOperation = "Create"
-	UPDATE_RESOURCE                   = "Update"
-	DELETE_RESOURCE                   = "Delete"
-	GET_RESOURCE                      = "Get"
-	PATCH_RESOURCE                    = "Patch"
+	CREATE_RESOURCE ResourceOperation = "CREATE"
+	UPDATE_RESOURCE                   = "UPDATE"
+	DELETE_RESOURCE                   = "DELETE"
+	GET_RESOURCE                      = "GET"
+	PATCH_RESOURCE                    = "PATCH"
 )
 
 type ResourceRequest struct {
@@ -225,7 +245,10 @@ type ResourceRequest struct {
 	SaveResponseValues []ResponseValue `json:"saveResponseValues,omitempty"`
 }
 
-// Flag defines a cli flag that should be registered and available in request / output templates
+// Flag defines a cli flag that should be registered and available in request / output templates.
+//
+// Flag is used only by the client to expand Request and Response templates with user defined values provided
+// as command line flags.
 type Flag struct {
 	Type FlagType `json:"type"`
 
@@ -290,6 +313,9 @@ type Command struct {
 	Deprecated string `json:"deprecated,omitempty"`
 
 	// Flags are the command line flags.
+	// 
+	// Flags are used by the client to expose command line flags to users and populate the Request go-templates
+	// with the user provided values.
 	//
 	// Example:
 	// 		  - name: namespace
@@ -385,7 +411,7 @@ items:
     saveResponseValues:
     - name: responsename
       jsonPath: "{.metadata.name}"
-  output: |
+  outputTemplate: |
     deployment.apps/{{index .Responses.Strings "responsename"}} created
 ```
 
@@ -393,9 +419,16 @@ items:
 
 - Command name collisions: CRD publishes command that conflicts with another command
   - Initially require the resource name to be the command name (e.g. `create foo`, `set image foo`)
+  - Mitigation: Use the discovery service to manage preference (as it does for the K8S APIs)
+- Command makes requests on behalf of the user that may be undesirable
+  - Mitigation: Automatically output the Resource APIs that command uses as part of the command description
+  - Mitigation: Support dry-run to emit the requests made to the server without actually making them
+  - Migration: Possibly restrict the APIs commands can use (e.g. CRD published commands can only use the APIs for that
+    Resource).
 - Approach is hard to maintain, complex, etc
   - Initially restrict to only `create` commands, get feedback
-  
+- Doesn't work well with auto-complete
+  - TODO: Investigate if this is true and how much it matters.
 
 ## Graduation Criteria
 
