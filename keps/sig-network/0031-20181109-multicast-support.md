@@ -177,11 +177,271 @@ in traffic for, and then only deliver multicast traffic to the pods
 which have subscribed to that traffic. This might be more efficient if
 there are many pods communicating over different multicast addresses.
 
-#### End-User Configuration of Multicast
+#### End-User Configuration of Multicast (WIP)
 
-TBD
+##### Simple Bidirectional Policies
 
-##### Configuring Cross-Namespace Multicast
+A user can configure a namespace to allow multicast traffic by
+creating an appropriate NetworkPolicy. Eg:
+
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: mdns-1
+      namespace: project-a
+    spec:
+      podSelector:
+        matchLabels:
+          app: mdns
+      policyTypes:
+      - Multicast
+      multicast:
+      - cidr: 224.0.0.251/32
+        ports:
+        - protocol: UDP
+          port: 5353
+
+This says "all pods in namespace `project-a` with the label `app=mdns`
+should be allowed to send and receive multicast traffic to
+`224.0.0.251:5353` (the reserved IP/port for multicast DNS).
+
+##### Combined Multicast/Unicast Policies
+
+Although mDNS normally uses multicast for both requests and responses,
+clients can optionally request unicast responses, so if the namespace
+is otherwise isolated for ingress/egress you might need to add rules
+for unicast responses as well:
+
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: mdns-2
+      namespace: project-a
+    spec:
+      podSelector:
+        matchLabels:
+          app: mdns
+      policyTypes:
+      - Multicast
+      - Ingress
+      - Egress
+      multicast:
+      - cidr: 224.0.0.251/32
+        ports:
+        - protocol: UDP
+          port: 5353
+      ingress:
+      - from:
+        - podSelector:
+            matchLabels:
+              app: mdns
+        ports:
+        - protocol: UDP
+          port: 5353
+      egress:
+      - to:
+        - podSelector:
+            matchLabels:
+              app: mdns
+        ports:
+        - protocol: UDP
+          port: 5353
+
+("All pods in namespace `project-a` with the label `app=mdns` should
+be able to send and receive multicast traffic to `224.0.0.251:5353`,
+and should also be able to send and receive unicast traffic to UDP port
+5353 on other pods with the label `app=mdns`.)
+
+##### Unidirectional Multicast
+
+Although most of the time with multicast protocols, it is most
+convenient to have a single rule that says both "can send to multicast
+address X" and "can receive traffic addressed to multicast address X"
+as above, there may be cases where you want distinct client and server
+rules.
+
+(TBD: Really? Does anyone *actually* want this?)
+
+In that case, rather than having a single "multicast" policy type, it
+might be better to specify multicast permissions inside the "ingress"
+and "egress" sections:
+
+(NB: different proposed syntax from the earlier examples)
+
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: mdns-3-client
+      namespace: project-a
+    spec:
+      podSelector:
+        matchLabels:
+          app: mdns-client
+      policyTypes:
+      - Ingress
+      - Egress
+      egress:
+      - multicast:
+        - cidr: 224.0.0.251/32
+          ports:
+          - protocol: UDP
+            port: 5353
+      ingress:
+      - from:
+        - podSelector:
+            matchLabels:
+              app: mdns-server
+        ports:
+        - protocol: UDP
+          port: 5353
+
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: mdns-3-server
+      namespace: project-a
+    spec:
+      podSelector:
+        matchLabels:
+          app: mdns-server
+      policyTypes:
+      - Ingress
+      - Egress
+      ingress:
+      - multicast:
+        - cidr: 224.0.0.251/32
+          ports:
+          - protocol: UDP
+            port: 5353
+      egress:
+      - to:
+        - podSelector:
+            matchLabels:
+              app: mdns-client
+        ports:
+        - protocol: UDP
+          port: 5353
+
+This policy splits up client and server permissions, and requires
+requests to be multicast and responses to be unicast. (This probably
+doesn't actually make sense in the mDNS case, but let's pretend it
+does.) So the first policy says that `app=mdns-client` pods can send
+multicast traffic to `224.0.0.251:5353`, and can receive unicast
+packets from `app=mdns-server` pods on port 5353. The second policy
+says that `app=mdns-server` pods can receive multicast traffic to
+`224.0.0.251:5353` and send unicast packets to `app=mdns-client` pods
+on port 5353. (We need to explicitly specify both client and server
+policy here because with mixed multicast/unicast protocols the source
+and destination IPs on the request and reply packets don't match up in
+a way that conntrack can recognize, so there's no way to make the
+replies be accepted automatically.)
+
+Note that we use new `ingress.multicast` and `egress.multicast` fields
+rather than just reusing `ingress.from.ipBlock` / `egress.to.ipBlock`,
+because with `ipBlock` the semantics would be backwards for `ingress`:
+
+    ingress:
+    - from:
+      - ipBlock:
+          cidr: 224.0.0.251/32
+      ports:
+      - protocol: UDP
+        port: 5353
+
+Logically, this says "accept incoming packets *coming from*
+224.0.0.251", but we want the rule to mean "accept incoming packets
+*going to* 224.0.0.251". So a new subfield makes more sense.
+
+##### Scope of Multicast Traffic
+
+There is only a single set of multicast IP addresses, and certain
+protocols reserve specific ones (eg, 224.0.0.251 for mDNS). If we want
+to allow for the possibility of non-intercommunicating sets of pods
+using the same multicast IPs (eg, an mDNS server in project-a only
+responding to requests on 224.0.0.251 from project-a pods, and an mDNS
+server in project-b only responding to requests on 224.0.0.251 from
+project-b pods) then we need to define how multicast traffic is
+scoped.
+
+The three simplest options are:
+
+  1. Scope-to-Cluster: There is no scoping; all multicast traffic is
+     cluster-wide. (Weave's model)
+
+  2. Scope-to-Namespace: Multicast traffic is scoped to the namespace
+     it originates from. You can have distinct mDNS multicast groups
+     in different namespaces, but you can't have distinct mDNS
+     multicast groups for `environment=testing` and
+     `environment=production` pods in the same namespace. (OpenShift
+     SDN's model)
+
+  3. Scope-to-NetworkPolicy: Traffic allowed by a given NetworkPolicy
+     is scoped to the pods selected by that NetworkPolicy. If you
+     create two copies of a multicast NetworkPolicy with different
+     `spec.podSelector` values, then this would form two separate
+     scopes (so you could have separate multicast groups for
+     `environment=testing` and `environment=production`).
+
+     Since NetworkPolicies are tied to particular namespaces, this
+     means that it would not be possible to implement cross-namespace
+     multicast. It would also not be possible to implement
+     asymmetrical policies like `mdns-3-client`/`mdns-3-server` above,
+     since the two NetworkPolicy resources would end up creating
+     separate non-communicating scopes.
+
+A more complicated and powerful solution would be to have Explicit
+Scopes specified in the NetworkPolicy:
+
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: mdns-4-client
+      namespace: project-a
+    spec:
+      podSelector:
+        matchLabels:
+          app: mdns-client
+      policyTypes:
+      - Ingress
+      - Egress
+      egress:
+      - multicast:
+        - cidr: 224.0.0.251/32
+          ports:
+          - protocol: UDP
+            port: 5353
+          scope:
+            podSelector:
+              matchExpressions:
+              - { key: app, operator: In, values: [mdns-client, mdns-server] }
+      ...
+
+(This example is based on the syntax from the "Unidirectional
+Multicast" example, but the new field would work with the syntax from
+"Simple Bidirectional Policies" too.)
+
+The `scope` field here specifies that the multicast traffic is grouped
+to the given `NetworkPolicyPeer`; in this case, a podSelector
+selecting both `app=mdns-client` and `app=mdns-server` pods. The
+server-side policy would have the same `scope`.
+
+(TBD: What if a pod matches the labels of two different multicast
+policies? Would this create partially-overlapping scopes, where pod A
+sends to and receives from both pod B and pod C, but pod B and pod C
+do not see multicast traffic from each other? Is that a problem if so?
+Note that this applies to Scope-to-NetworkPolicy as well, not just
+Explicit Scopes.)
+
+Note that we could use one of the simple implicitly-scoped versions
+for the initial version of the feature, and then add Explicit Scopes
+on top of that later, by retconning the earlier implicit scope as just
+being the default value for `scope` when no `scope` was specified.
+(For Scope-to-Cluster, the default `scope` would be `scope: {
+namespaceSelector: {} }`. For Scope-to-Namespace, it would be `scope:
+{ podSelector: {} }`, and for Scope-to-NetworkPolicy, the default
+would be a copy of the NetworkPolicy's `spec.podSelector`.)
+
+##### Cross-Namespace Scopes
 
 Allowing cross-namespace multicast is tricky if we want to use
 NetworkPolicy to configure it.
@@ -200,29 +460,115 @@ namespace A create a policy saying "accept multicast traffic that
 namespace B sends to 224.0.0.251:5353", because namespace B might not
 want its traffic to that IP to be going to namespace A as well.
 
-So if we are using NetworkPolicy to configure cross-namespace
-multicast, then both namespaces will need to create policies allowing
-it. This potentially gets complicated, if namespaces have asymmetric
-policies (eg, A allows multicast only with B, but B allows multicast
-with both A and C).
+Assuming something like the Explicit Scopes model above, we could say
+that two pods in different namespaces are in the same scope if each
+one is selected by a NetworkPolicy in its namespace whose scope
+selects both pods. Eg, if project-a and project-b both have the label
+`user=alice`, and both contain a policy:
 
-(The other possibility would be to only allow cross-namespace
-multicast to be configured by cluster administrators, not namespace
-administrators.)
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: mdns-5
+    spec:
+      podSelector:
+        matchLabels:
+          app: mdns
+      policyTypes:
+      - Multicast
+      multicast:
+      - cidr: 224.0.0.251/32
+        ports:
+        - protocol: UDP
+          port: 5353
+        scope:
+        - namespaceSelector:
+            matchLabels:
+              user: alice
+          podSelector:
+            matchLabels:
+              app: mdns
 
-##### Client-vs-server / multicast-vs-unicast communication
+then traffic to 224.0.0.251:5353 will be shared between `app=mdns`
+pods in the two namespaces.
 
-In multicast protocols, the request will have a multicast destination
-IP, but the reply will have a unicast source IP, and so will not be
-recognized as a reply by conntrack (right?). Thus, even for strictly
-client-server protocols, policy rules are likely to be needed in both
-directions.
+The `scope` simultaneously indicates where the multicast packets
+should be delivered, *and* who else is allowed to join the scope.
+Other namespaces labeled `user=alice` can join the group by creating a
+matching NetworkPolicy, but namespaces that aren't labeled
+`user=alice` would be unable to join, regardless of what `scope` they
+specified, because they wouldn't be matched by the `scope`s of the
+existing members.
 
-In some cases (eg, mDNS), the server is expected to respond via
-multicast, and so the clients and servers can use the same policies.
-In cases where they need distinct policies, it would be helpful if
-things were defined in such a way that you could specify both policies
-in a single NetworkPolicy resource.
+(TBD: This creates even more potential for confusing overlapping
+scopes than in the single-namespace case above... Also, we need to
+really think through the details of this to make sure the security
+model actually works. Also, that this doesn't end up being
+impossibly-complicated to implement.)
+
+(As already mentioned when discussing Explicit Scopes above, if we
+initially started with Scope-to-Namespace or Scope-to-NetworkPolicy,
+we could then add Explicit Scopes, and thus cross-namespace multicast,
+at a later date. Presumably other ways of defining cross-namespace
+multicast could also be bolted on later.)
+
+In this model, Weave's cluster-wide multicast would be equivalent to
+giving every namespace a policy like:
+
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: allow-all-multicast
+    spec:
+      podSelector:
+      policyTypes:
+      - Multicast
+      multicast:
+      - cidr: 224.0.0.0/4
+        scope:
+        - namespaceSelector: {}
+      - cidr: ff80::/8
+        scope:
+        - namespaceSelector: {}
+
+Though any namespace that wanted to opt out of the fun could do so by
+deleting that policy.
+
+(TBD: Do we really need cross-namespace multicast anyway? It would
+simplify things a lot to say "no", but in the "namespaceSelector plus
+podSelector" discussion, people had various reasons for needing pods
+to be in separate namespaces even though they were part of the same
+"application"...)
+
+##### Multicast Across the Pod Network Boundary
+
+In cases where the pod network is directly reachable from some
+cluster-external hosts, people might want to do multicast with those
+hosts. This could perhaps be expressed with an `ipBlock`-based
+`scope`?
+
+This runs into the "consent" problem again though; there's no way for
+the external hosts to indicate whether they had or had not intended
+for the pods to be able to join their multicast group. In particular,
+if the node itself (or a hostNetwork pod) is using some
+multicast-based protocol on the underlying network, it may not want to
+share that traffic with anyone on the pod network.
+
+##### Non-NetworkPolicy-based Solutions
+
+It's also possible that NetworkPolicy isn't the right way to configure
+multicast. I haven't thought much about this, other than that it might
+simplify the cross-namespace and cluster-external cases if only
+cluster administrators were able to enable multicast in those cases.
+
+#### Interaction with non-multicast NetworkPolicies
+
+If a user has NetworkPolicies with `ipBlock`s that extend over the
+multicast IP range, how should those interact with multicast traffic?
+I feel like the right answer here is "they don't; `ipBlock` only
+matches unicast traffic". In particular, a policy allowing traffic
+to/from `0.0.0.0/0` or `::/0` should not cause multicast traffic to be
+enabled.
 
 ### Risks and Mitigations
 
