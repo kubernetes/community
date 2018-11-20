@@ -1,5 +1,5 @@
 ---
-kep-number: 0
+kep-number: 31
 title: Make kube-proxy service abstraction optional
 authors:
   - "@bradhoekstra"
@@ -73,11 +73,13 @@ In a cluster where a service is only accessed via other applications in the serv
 
 It is important for overall scalability that kube-proxy does not receive data for Service/Endpoints objects that it is not going to affect. This can reduce load on the kube-proxy and the network by never receiving the updates in the first place.
 
-The proposal is to make this feature available by annotating the Service object with this label: `service.kubernetes.io/alternative-service-proxy`. If this label key is set, with any value, the associated Endpoints object will automatically inherit that label from the Service object as well.
+The proposal is to make this feature available by annotating the Service object with this label: `service.kubernetes.io/service-proxy-name`. If this label key is set, with any value, the associated Endpoints object will automatically inherit that label from the Service object as well.
 
 When this label is set, kube-proxy will behave as if that service does not exist. None of the functionality that kube-proxy provides will be available for that service.
 
 kube-proxy will properly implement this label both at object creation and on dynamic addition/removal/updates of this label, either providing functionality or not for the service based on the latest version on the object.
+
+It is optional for other service proxy implementations (besides kube-proxy) to implement this feature. They may ignore this value and still remain conformant with kubernetes services.
 
 It is expected that this feature will mainly be used on large clusters with lots (>1000) of services. Any use of this feature in a smaller cluster will have negligible impact.
 
@@ -97,7 +99,7 @@ The new design will simply add a LabelSelector filter to the shared informer fac
 -       informerFactory := informers.NewSharedInformerFactory(s.Client, s.ConfigSyncPeriod)
 +       informerFactory := informers.NewSharedInformerFactoryWithOptions(s.Client, s.ConfigSyncPeriod,
 +               informers.WithTweakListOptions(func(options *v1meta.ListOptions) {
-+                       options.LabelSelector = "!service.kubernetes.io/alternative-service-proxy"
++                       options.LabelSelector = "!service.kubernetes.io/service-proxy-name"
 +               }))
 ```
 
@@ -108,11 +110,12 @@ This code will also handle the dynamic label update case. When the label selecto
 The following cases should be tested. In each case, make sure that services are added/removed from iptables (or other) as expected:
 * Adding/removing services/endpoints with and without the above label
 * Adding/removing the above label from existing services/endpoints
-* Having a label value other than 'true', which should behave as if the label is not set
 
 ### Risks and Mitigations
 
-We will keep the existing behaviour enabled by default, and only disable it when the cluster operator specifically asks to do so.
+We will keep the existing behaviour enabled by default, and only disable the kube-proxy service proxy when the service contains this new label.
+
+This will have no effect on alternate service proxy implementations since they will not handle this label.
 
 ## Graduation Criteria
 
