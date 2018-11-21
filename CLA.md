@@ -71,6 +71,20 @@ Once you have this, the CLA authorizer bot will authorize your PRs.
 
 ![CNCFCLA3](http://i.imgur.com/C5ZsNN6.png)
 
+## Changing your Affiliation
+
+If you've changed employers and still contribute to Kubernetes, your affiliation
+needs to be updated. The Cloud Native Computing Foundation uses [gitdm](https://github.com/cncf/gitdm)
+to track who is contributing and from where. Create a pull request to the gitdm
+repository with a change to [developers_affiliations.txt](https://github.com/cncf/gitdm/blob/master/developers_affiliations.txt).
+Your entry should look similar to this:
+
+```
+Jorge O. Castro*: jorge!heptio.com, jorge!ubuntu.com, jorge.castro!gmail.com
+Heptio
+Canonical until 2017-03-31
+```
+
 ## Troubleshooting
 
 If you have problems signing the CLA, send an email message to: `helpdesk@rt.linuxfoundation.org`.
