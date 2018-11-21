@@ -74,7 +74,7 @@ The Kubernetes team scans Stack Overflow on a regular basis and will try to ensu
 
 ## Find something to work on
 
-Help is always welcome! For example, documentation (like the text you are reading now) can always use improvement. 
+Help is always welcome! For example, documentation (like the text you are reading now) can always be improved. 
 There's always code that can be clarified and variables or functions that can be renamed or commented.
 There's always a need for more test coverage.
 You get the idea - if you ever see something you think should be fixed, you should own it.
