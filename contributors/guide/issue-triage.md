@@ -14,7 +14,7 @@ and in that case simply add a comment in the issue with your findings.
 
 Following are few predetermined searches on issues for convenience:
 * [Longest untriaged issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc) (sorted by age)
-* [Needs to be assigned to a SIG](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc)
+* [Needs to be assigned to a SIG](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aneeds-sig)
 * [Newest incoming issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue)
 * [Busy untriaged issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc) (sorted by number of comments)
 * [Issues that need more attention](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-asc)
@@ -233,3 +233,20 @@ not removed with the `/remove-lifecycle stale` label or prevented with the
 for more details. It is fine to add any of the `triage/*` labels described in
 this issue triage guidelines to issues triaged by the `fejta-bot` for a better
 understanding of the issue and closing of it.
+
+## Help Wanted issues
+
+We use two labels [help wanted](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
+and [good first issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
+to identify issues that have been specially groomed for new contributors.
+
+We have specific [guidelines](/contributors/devel/help-wanted.md)
+for how to use these labels. If you see an issue that satisfies these
+guidelines, you can add the `help wanted` label with the `/help` command
+and the `good first issue` label with the `/good-first-issue` command.
+Please note that adding the `good first issue` label will also automatically
+add the `help wanted` label.
+
+If an issue has these labels but does not satisify the guidelines, please
+ask for more details to be added to the issue or remove the labels using
+`/remove-help` or `/remove-good-first-issue` commands.
