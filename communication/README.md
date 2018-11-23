@@ -63,9 +63,9 @@ Office hours are held once a month. Please refer to [this document](/events/offi
 
 ## Weekly Meeting
 
-We have PUBLIC and RECORDED [weekly meeting] every Thursday at 10am US Pacific Time over Zoom.
+We have a public and recorded [weekly meeting] every Thursday at 10am US Pacific Time over Zoom.
 
-Map that to your local time with this [timezone table].
+Convert it to your local time using the [timezone table].
 
 See it on the web at [calendar.google.com], or paste this [iCal url] into any iCal client.
 
