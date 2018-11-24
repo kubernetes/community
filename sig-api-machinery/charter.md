@@ -5,7 +5,7 @@ the Roles and Organization Management outlined in [sig-governance].
 
 ## Scope
 
-SIG API Machinery is responsible for the development and enhancement of Kubernetes cluster control plane.  The scope covers API server, persistence layer (etcd), controller manager, cloud controller manager, CustomResourceDefinition, scheduler and webhooks.
+SIG API Machinery is responsible for the development and enhancement of Kubernetes cluster control plane.  The scope covers API server, persistence layer (etcd), controller manager, cloud controller manager, CustomResourceDefinition and webhooks.
 
 ### In scope
 
