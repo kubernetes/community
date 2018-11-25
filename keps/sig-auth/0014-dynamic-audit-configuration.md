@@ -201,7 +201,7 @@ parameters. It will then utilize the `LevelAndStages` method in the policy
 and drop any unneeded sections. The new dynamic backend will implement the `EnforcedSink` interface, and update its state 
 based on a shared informer. For the existing backends to comply, a method will be added that implements the `EnforcedSink` interface.
 
-Implementing the [attribute interface](/Users/patrick/go/src/k8s.io/kubernetes/vendor/k8s.io/apiserver/pkg/authorization/authorizer/interfaces.go) 
+Implementing the [attribute interface](https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/apiserver/pkg/authorization/authorizer/interfaces.go) 
 based on the Event struct was also explored. This would allow us to keep the existing `Sink` interfaces, however it would 
 require parsing the request URI twice in the pipeline due to how that field is represented in the Event. This was determined 
 to not be worth the cost.
