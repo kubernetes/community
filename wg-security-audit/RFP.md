@@ -19,7 +19,7 @@ If your proposal includes sub-contractors, please include relevant details from 
 
 ### RFP Process
 
-This RFP will be open between 2018/10/29 and 2019/11/26.
+This RFP will be open between 2018/10/29 and 2019/11/30.
 
 The working group will answer questions for the first two weeks of this period.
 
@@ -29,8 +29,8 @@ Proposals must include CVs, resumes, and/or example reports from staff that will
 
 - 2018/10/29: RFP Open, Question period open
 - 2018/11/12: Question period closes
-- 2018/11/26: RFP Closes
-- 2018/12/04: The working group will announce vendor selection
+- 2018/11/30: RFP Closes
+- 2018/12/11: The working group will announce vendor selection
 
 ## Audit Scope
 
