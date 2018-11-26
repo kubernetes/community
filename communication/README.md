@@ -81,7 +81,7 @@ please propose a specific date on the [Kubernetes Community Meeting Agenda].
 
 ## Conferences
 
-Kubernetes is the main focus of KubeCon + CloudNativeCon, held every spring in Europe and winter in North America. Information about these and other community events is available on the CNCF [events] pages.
+Kubernetes is the main focus of KubeCon + CloudNativeCon, held every spring in Europe, summer in China, and winter in North America. Information about these and other community events is available on the CNCF [events] pages.
 
 
 [Blog]: https://kubernetes.io/blog/
