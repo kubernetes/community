@@ -74,7 +74,7 @@ As a CNCF Platinum member, Alibaba Cloud is dedicated in providing users with hi
 Usage of aliyun container services can be seen from github issues in the existing alicloud controller manager repo: https://github.com/AliyunContainerService/alicloud-controller-manager/issues
 
 ### Testgrid Integration
- Alibaba cloud provider is reporting conformance test results to TestGrid as per the [Reporting Conformance Test Results to Testgrid KEP](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0003-testgrid-conformance-e2e.md).
+ Alibaba cloud provider is reporting conformance test results to TestGrid as per the [Reporting Conformance Test Results to Testgrid KEP](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0018-testgrid-conformance-e2e.md).
  See [report](https://k8s-testgrid.appspot.com/conformance-alibaba-cloud-provider#Alibaba%20Cloud%20Provider,%20v1.10) for more details.
 
 ### CNCF Certified Kubernetes
