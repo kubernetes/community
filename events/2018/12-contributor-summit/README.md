@@ -86,7 +86,7 @@ What to expect: Attendees will have access to bowl, play pool/billiards, suggest
 | 2:00pm | API Codebase Tour - @sttts [50 mins] | " | Cluster lifecycle BoF [50 mins] | etcd Maintainers Ask Us Anything [50 mins] | - | *Unconference Slot [50 mins] | &#124; | Testrgid tour, docs, membership |
 | 2:30pm | " |  SIG/WG Chair/TL Training [1.5 hrs]  |  "  | "  | -  | " | &#124; | -  |
 | 2:50pm | 10 Minute Break | "  | -  | -  | -  | -  | -  | &#124; |
-| 3:00pm | Live API Code Review - @lavalamp  | " | Release Management w/ @tepper [50 mins] | UI Dashboard Planning Discussion [50 mins] | *Unconference Slot [50 mins] | *Unconference Slot [50 mins] | &#124; | SIG Meet and Greet |
+| 3:00pm | Live API Code Review - @lavalamp  | " | Long Term Support (WG LTS) - @tpepper [50 mins] | UI Dashboard Planning Discussion [50 mins] | *Unconference Slot [50 mins] | *Unconference Slot [50 mins] | &#124; | SIG Meet and Greet |
 | 3:50pm | 10 Minute Break | -  | -  | -  | -  | -  | -  | &#124; |
 | 4:00pm | Steering Committee Q+A | -  | -  | -  | -  | -  | -  | &#124; |
 | 4:45pm | Wrap-Up and Group Pic! |  -  | -  | -  | -  | -  | -  | -  |
