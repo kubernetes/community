@@ -45,12 +45,7 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-big-data-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-big-data-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
-## Goals
-* Design and architect ways to run big data applications effectively on Kubernetes
-* Discuss ongoing implementation efforts
-* Discuss resource sharing and multi-tenancy (in the context of big data applications)
-* Suggest Kubernetes features where we see a need
 
-## Non-goals
-* Endorsing any particular tool/framework
+SIG Big Data [Charter](charter.md)
+
 <!-- END CUSTOM CONTENT -->
