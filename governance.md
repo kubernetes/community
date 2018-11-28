@@ -31,6 +31,8 @@ The project has 4 main types of groups:
 * Working Groups, WGs
 * Committees
 
+![Kubernetes Governance Diagram](kubernetes_governance_diagram.png)
+
 ## SIGs
 
 The Kubernetes project is organized primarily into Special Interest
