@@ -4,7 +4,7 @@ This document is focused on Kubernetes developers and contributors
 who need to create a feature, issue, or pull request which targets a specific
 release milestone.
 
--   [TL;DR](#tl-dr)
+-   [TL;DR](#tldr)
 -   [Definitions](#definitions)
 -   [The Release Cycle](#the-release-cycle)
 -   [Removal Of Items From The Milestone](#removal-of-items-from-the-milestone)
@@ -86,16 +86,19 @@ If you want your PR to get merged, it needs the following required labels and mi
 </ul>
 </td>
 <td>
-<ul>
 <!--Weeks 12+-->
-<li>/milestone {v1.y}</li>
+Return to 'Normal Dev' phase requirements:
+<ul>
 <li>/sig {name}</li>
-<li>/kind {bug, failing-test}</li>
-<li>/priority critical-urgent</li>
+<li>/kind {type}</li>
 <li>/lgtm</li>
 <li>/approved</li>
-<li>cherry-pick labels set by release branch patch manager</li>
 </ul>
+
+Merges into the 1.y branch are now [via cherrypicks](https://github.com/kubernetes/community/blob/master/contributors/devel/cherry-picks.md), approved by release branch manager.
+</td>
+<td>
+<ul>
 </td>
 </tr>
 </table>
