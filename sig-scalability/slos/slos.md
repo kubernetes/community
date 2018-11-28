@@ -109,10 +109,15 @@ Prerequisite: Kubernetes cluster is available and serving.
 | __WIP__ | Latency of programming a single (e.g. iptables on a given node) in-cluster load balancing mechanism, measured from when service spec or list of its `Ready` pods change to when it is reflected in load balancing mechanism, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile of (99th percentiles across all programmers (e.g. iptables)) per cluster-day<sup>[1](#footnote1)</sup> <= X | [Details](./network_programming_latency.md) |
 | __WIP__ | Latency of programming a single in-cluster dns instance, measured from when service spec or list of its `Ready` pods change to when it is reflected in that dns instance, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile of (99th percentiles across all dns instances) per cluster-day <= X | [Details](./dns_programming_latency.md) |
 | __WIP__ | In-cluster network latency from a single prober pod, measured as latency of per second ping from that pod to "null service", measured as 99th percentile over last 5 minutes. | In default Kubernetes installataion with RTT between nodes <= Y, 99th percentile of (99th percentile over all prober pods) per cluster-day <= X | [Details](./network_latency.md) |
+| __WIP__ | In-cluster dns latency from a single prober pod, measured as latency of per second DNS lookup<sup>[1](#footnote2)</sup> for "null service" from that pod, measured as 99th percentile over last 5 minutes. | In default Kubernetes installataion with RTT between nodes <= Y, 99th percentile of (99th percentile over all prober pods) per cluster-day <= X |
 
 <a name="footnote1">\[1\]</a> For the purpose of visualization it will be a
 sliding window. However, for the purpose of reporting the SLO, it means one
 point per day (whether SLO was satisfied on a given day or not).
+<a name="footnote2">\[2\]</a> In fact two DNS lookups: (1) to nameserver IP from
+/etc/resolv.conf (2) to kube-system/kube-dns service IP and track them as two
+separate SLIs.
+
 
 ### Burst SLIs/SLOs
 
