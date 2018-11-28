@@ -24,7 +24,7 @@ The Big Data SIG serves as a community resource for advising big data and data s
 
 ### Out of scope
 
-- Promoting or otherwise advocating for any specfic big data project
+- Promoting or otherwise advocating for any specific big data project
 - Software and tooling communities that have no intersection with data science or big data.
 
 ## Roles and Organization Management
