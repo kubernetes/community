@@ -1402,7 +1402,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
     - name: node-feature-discovery
       owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/node-feature-discovery/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/OWNERS
     - name: node-problem-detector
       owners:
       - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
