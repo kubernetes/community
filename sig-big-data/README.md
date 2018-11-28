@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Big Data Special Interest Group
 
-Covers deploying and operating big data applications (Spark, Kafka, Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integrations with big data applications and architecting the best ways to run them on Kubernetes.
+Serve as a community resource for advising big data and data science related software projects on techniques and best practices for integrating with Kubernetes. Represents the concerns of users from big data communities to Kubernetes for the purposes of driving new features and other enhancements, based on big data use cases.    
 
 ## Meetings
 * Regular SIG Meeting: [Wednesdays at 17:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
