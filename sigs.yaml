@@ -576,9 +576,10 @@ sigs:
   - name: Big Data
     dir: sig-big-data
     mission_statement: >
-      Covers deploying and operating big data applications (Spark, Kafka,
-      Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integrations with
-      big data applications and architecting the best ways to run them on Kubernetes.
+      Serve as a community resource for advising big data and data science related software projects
+      on techniques and best practices for integrating with Kubernetes.
+      Represents the concerns of users from big data communities to Kubernetes for the purposes of
+      driving new features and other enhancements, based on big data use cases.    
     charter_link:
     label: big-data
     leadership:
