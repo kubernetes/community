@@ -1,5 +1,4 @@
 ---
-kep-number: 34
 title: aws-ebs-csi-driver
 authors:
   - "@leakingtapan"
