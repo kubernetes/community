@@ -52,9 +52,34 @@ What to expect: Attendees will have access to bowl, play pool/billiards, suggest
 - Docs Planning Session -
   - Working on a curated list of issues and challenges that SIG Docs is tackling at that time. (Current+Doc Capacity: 300)
 
+### Proposing a BoF Session
+
+We have 4 slots available for the unconference section of the summit.
+Submit your talk idea on a 5x8 index card provided at The Garage during the Sunday event
+and in room 610 during the day of the Summit.
+
+#### Proposers:
+- Hang your card on the board in Room 610
+- You are encouraged to advertise your session to garner support.
+- These sessions are working sessions, they are NOT 1 hour venting sessions, 
+by proposing a talk you are committing to gathering work items and proposals, 
+and coming up with _actionable items_ that people can work on for the next development cycle.
+
+#### Attendees:
+You are encouraged to check the board for sessions that interest you and VOTE on them
+by putting a dot (and only one dot!) on the session that you would be interested in participating in.
+
+- Please respect the process by only voting for sessions you plan on attending and refraining from gaming the system.  
+- Prior to lunch during the Summit we will pick and announce the top 4 talks by number of votes and then 
+schedule them for the afternoon. 
+
+In case of a tie or unclear winner we will ask the audience to vote on the spot in the main session by a show of hands.
+
+
+
 ### Monday Schedule
 
-The schedule has been published to [the community calendar](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&mode=DAY&dates=20181210/20181211) so that you can subscribe to the sessions you want to go to.
+The schedule has been published to [the community calendar](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&mode=DAY&dates=20181210/20181211) so that you can subscribe to the sessions you want to go to. Do NOT copy the meetings over to a your personal calendar, you will miss meeting updates. Instead use your client's calendaring feature to say you are attending the meeting so that any changes made to meetings will be reflected on your personal calendar.
 
 **Morning**
 
