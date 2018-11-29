@@ -19,7 +19,7 @@ The Cloud Provider SIG ensures that the Kubernetes ecosystem is evolving in a wa
 * Developing future functionality in Kubernetes to support use cases common to all providers while also allowing custom and pluggable implementations when required, some examples include but are not limited to:
     * Extendable node status’ and machine states based on provider
     * Extendable node address types based on provider
-    * See also [Cloud Controller Manager KEP](https://github.com/kubernetes/community/blob/master/keps/0002-controller-manager.md)
+    * See also [Cloud Controller Manager KEP](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0002-cloud-controller-manager.md)
 * The collection of user experience reports from Kubernetes operators running on provider subprojects; and the delivery of roadmap information to SIG PM
 
 ## Organizational Management
@@ -32,14 +32,14 @@ The Cloud Provider SIG ensures that the Kubernetes ecosystem is evolving in a wa
 ## Subproject Creation
 
 Each Kubernetes provider will (eventually) be a subproject under SIG Cloud Provider. To add new sub projects (providers), SIG Cloud Provider will maintain an open list of requirements that must be satisfied.
-The current requirements can be seen [here](https://github.com/kubernetes/community/blob/master/keps/0002-controller-manager.md#repository-requirements). Each provider subproject is entitled to create 1..N repositories related to cluster turn up or operation on their platform, subject to technical standards set by SIG Cloud Provider.
+The current requirements can be seen [here](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0002-cloud-controller-manager.md#repository-requirements). Each provider subproject is entitled to create 1..N repositories related to cluster turn up or operation on their platform, subject to technical standards set by SIG Cloud Provider.
 Creation of a repository SHOULD follow the KEP process to preserve the motivation for the repository and any additional instructions for how other SIGs (e.g SIG Documentation and SIG Release) should interact with the repository
 
 Subprojects that fall under SIG Cloud Provider may also be features in Kubernetes that is requested or needed by all, or at least a large majority of providers. The creation process for these subprojects will follow the usual KEP process.
 
 ## Subproject Retirement
 
-Subprojects representing Kubernetes providers may be retired given they do not satisfy requirements for more than 6 months. Final decisions for retirement should be supported by a majority of SIG members using [lazy consensus](http://communitymgt.wikia.com/wiki/Lazy_consensus). Once retired any code related to that provider will be archived into the kubernetes-retired organization.
+Subprojects representing Kubernetes providers may be retired given they do not satisfy requirements for more than 6 months. Final decisions for retirement should be supported by a majority of SIG members using [lazy consensus](http://en.osswiki.info/concepts/lazy_consensus). Once retired any code related to that provider will be archived into the kubernetes-retired organization.
 
 Subprojects representing Kubernetes features may be retired at any point given a lack of development or a lack of demand. Final decisions for retirement should be supported by a majority of SIG members, ideally from every provider. Once retired, any code related to that subproject will be archived into the kubernetes-retired organization.
 

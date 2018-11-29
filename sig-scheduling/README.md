@@ -21,7 +21,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Bobby (Babak) Salamat (**[@bsalamat](https://github.com/bsalamat)**), Google
-* Klaus Ma (**[@k82cn](https://github.com/k82cn)**), IBM
+* Klaus Ma (**[@k82cn](https://github.com/k82cn)**), Huawei
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-scheduling)

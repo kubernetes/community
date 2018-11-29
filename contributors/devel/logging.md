@@ -23,8 +23,11 @@ The following conventions for the glog levels to use.
     * Scheduler log messages
   * glog.V(3) - Extended information about changes
     * More info about system state changes
-  * glog.V(4) - Debug level verbosity (for now)
+  * glog.V(4) - Debug level verbosity
     * Logging in particularly thorny parts of code where you may want to come back later and check it
+  * glog.V(5) - Trace level verbosity
+    * Context to understand the steps leading up to errors and warnings
+    * More information for troubleshooting reported issues
 
 As per the comments, the practical default level is V(2). Developers and QE
 environments may wish to run at V(3) or V(4). If you wish to change the log

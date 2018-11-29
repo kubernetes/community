@@ -35,8 +35,8 @@ The following subprojects are owned by sig-network:
 - **services**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/pkg/kubernetes/master/controller/endpoint/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/pkg/kubernetes/master/controller/service/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
 - **kube-dns**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
@@ -83,8 +83,8 @@ SIG Network is responsible for the following Kubernetes subsystems:
 
 SIG Network is responsible for a number of issues and PRs. A summary can be found through GitHub search:
 
-* [SIG Network PRs](https://github.com/issues?utf8=%E2%9C%93&q=team%3Akubernetes%2Fsig-network+is%3Aopen+is%3Apr+)
-* [SIG Network Issues](https://github.com/issues?utf8=%E2%9C%93&q=team%3A%22kubernetes%2Fsig-network%22+is%3Aopen+is%3Aissue)
+* [SIG Network PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+is%3Aopen+label%3Asig%2Fnetwork)
+* [SIG Network Issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fnetwork)
 
 ## Documents
 

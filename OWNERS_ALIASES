@@ -9,9 +9,10 @@ aliases:
   sig-architecture-leads:
     - bgrant0607
     - jdumars
+    - mattfarina
   sig-auth-leads:
-    - liggitt
     - mikedanese
+    - enj
     - tallclair
   sig-autoscaling-leads:
     - mwielgus
@@ -22,8 +23,9 @@ aliases:
     - d-nishi
   sig-azure-leads:
     - justaugustus
-    - shubheksha
+    - dstrebel
     - khenidak
+    - feiskyer
   sig-big-data-leads:
     - foxish
     - erikerlandson
@@ -50,9 +52,9 @@ aliases:
     - grodrigues3
     - cblecker
   sig-docs-leads:
-    - zacharysarah
     - chenopis
-    - jaredbhatti
+    - zacharysarah
+    - bradamant3
   sig-gcp-leads:
     - abgworrall
   sig-ibmcloud-leads:
@@ -81,8 +83,9 @@ aliases:
     - idvoretskyi
     - calebamiles
   sig-release-leads:
-    - jdumars
     - calebamiles
+    - justaugustus
+    - tpepper
   sig-scalability-leads:
     - wojtek-t
     - countspongebob
@@ -90,10 +93,10 @@ aliases:
     - bsalamat
     - k82cn
   sig-service-catalog-leads:
-    - pmorie
     - carolynvs
     - kibbles-n-bytes
     - duglin
+    - jboyd01
   sig-storage-leads:
     - saad-ali
     - childsb
@@ -121,7 +124,10 @@ aliases:
     - smarterclayton
     - destijl
   wg-iot-edge-leads:
+    - cindyxing
     - dejanb
+    - ptone
+    - cantbewong
   wg-kubeadm-adoption-leads:
     - luxas
     - justinsb
@@ -142,20 +148,23 @@ aliases:
   wg-resource-management-leads:
     - vishh
     - derekwaynecarr
+  wg-security-audit-leads:
+    - aasmall
+    - joelsmith
+    - cji
 ## BEGIN CUSTOM CONTENT
   steering-committee:
     - bgrant0607
     - brendanburns
     - derekwaynecarr
+    - dims
     - jbeda
     - michelleN
     - philips
     - pwittrock
-    - quinton-hoole
     - sarahnovotny
     - smarterclayton
     - spiffxp
-    - thockin
     - timothysc
   code-of-conduct-committee:
     - jdumars

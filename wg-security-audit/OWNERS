@@ -1,0 +1,6 @@
+reviewers:
+  - wg-security-audit-leads
+approvers:
+  - wg-security-audit-leads
+labels:
+  - wg/security-audit

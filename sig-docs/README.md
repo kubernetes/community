@@ -23,9 +23,9 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
 * Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
-* Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**), Google
+* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
+* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), Heptio
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-docs)
@@ -35,21 +35,15 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-docs:
-- **kubernetes-docs-ja**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-ja/master/OWNERS
-- **kubernetes-docs-ko**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-ko/master/OWNERS
-- **kubernetes-docs-zh**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-docs-zh/master/OWNERS
 - **reference-docs**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
 - **website**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
+- **website-metadata**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/website-metadata/master/OWNERS
 
 ## GitHub Teams
 
@@ -58,10 +52,11 @@ Note that the links to display team membership will only work if you are a membe
 
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
-| @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation Maintainers |
-| @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR Reviewers |
-| @kubernetes/sig-docs-ko-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | Korean L10n Repository Owners |
-| @kubernetes/sig-docs-ja-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | Japanese L10n Repository Owners |
+| @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation maintainers |
+| @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR reviews |
+| @kubernetes/sig-docs-ko-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | Korean localization |
+| @kubernetes/sig-docs-ja-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | Japanese localization |
+| @kubernetes/sig-docs-zh-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) | Chinese localization |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals

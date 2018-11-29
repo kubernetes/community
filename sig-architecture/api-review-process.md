@@ -20,7 +20,7 @@ Because expert reviewer bandwidth is extremely limited, the process provides a c
 
 * Maintain the high standards of the project, including positive user interactions with APIs
 
-* Provide review regardless of method of API defininition (built-in, Extension API Server, or Custom Resource Definition)
+* Provide review regardless of method of API definition (built-in, Extension API Server, or Custom Resource Definition)
 
 * Provide review over both tightly coupled external projects and in-tree API changes.  
 
@@ -193,7 +193,7 @@ Once the provisional review has been accepted by the approver, it then goes to t
 
 As aspiring reviewers gain proficiency, they may pair with an approver on time-sensitive reviews to better understand the process with less impact on the review duration. 
 
-Aspiring reviewers should reach out the the moderator on slack.  The moderator will add them to the list of aspiring reviewers and assign training reviews as they become available. 
+Aspiring reviewers should reach out the moderator on slack.  The moderator will add them to the list of aspiring reviewers and assign training reviews as they become available. 
 
 ## Aspirations for future iterations of this process
 

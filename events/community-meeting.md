@@ -1,6 +1,6 @@
 # Kubernetes Weekly Community Meeting
 
-We have PUBLIC and RECORDED [weekly meeting](https://zoom.us/my/kubernetescommunity) every Thursday at [5pm UTC](https://www.google.com/search?q=5pm+UTC).
+We have PUBLIC and RECORDED [weekly meeting](https://zoom.us/my/kubernetescommunity) every Thursday at [6pm UTC](https://www.google.com/search?q=6pm+UTC).
  
 See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any [iCal client](https://en.wikipedia.org/wiki/ICalendar). Do NOT copy the meetings over to a your personal calendar, you will miss meeting updates. Instead use your client's calendaring feature to say you are attending the meeting so that any changes made to meetings will be reflected on your personal calendar. 
 
@@ -48,7 +48,7 @@ The first 10 minutes of a meeting is dedicated to demonstrations from the commun
 These demos are noted at the top of the community document. 
 There is a hard stop of the demo at 10 minutes, with up to 5 more minutes for questions.
 Feel free to add your demo request to the bottom of the list, then one of the organizers will get back to you to schedule an exact date. 
-Demo submissions MUST follow the the requirements listed below. 
+Demo submissions MUST follow the requirements listed below. 
 
 ### Requirements
 

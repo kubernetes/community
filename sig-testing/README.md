@@ -35,7 +35,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following subprojects are owned by sig-testing:
 - **kind**
   - Description: Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
-
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
 - **repo-publishing**
@@ -43,7 +42,6 @@ The following subprojects are owned by sig-testing:
     - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
 - **testing-commons**
   - Description: The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project
-
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS

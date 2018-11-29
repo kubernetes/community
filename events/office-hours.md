@@ -6,8 +6,8 @@ Office Hours is a live stream where we answer live questions about Kubernetes fr
 
 Third Wednesday of every month, there are two sessions: 
 
-- European Edition: [1pm UTC](https://www.google.com/search?q=1pm+UTC) 
-- Western Edition: [8pm UTC](https://www.google.com/search?q=8pm+UTC)
+- European Edition: [2pm UTC](https://www.google.com/search?q=2pm+UTC) 
+- Western Edition: [9pm UTC](https://www.google.com/search?q=9pm+UTC)
 
 Tune into the [Kubernetes YouTube Channel](https://www.youtube.com/c/KubernetesCommunity/live) to follow along. 
 

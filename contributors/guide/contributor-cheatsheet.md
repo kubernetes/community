@@ -15,12 +15,12 @@ A list of common resources when contributing to Kubernetes.
 ## Workflow
 
 - [Gubernator Dashboard - k8s.reviews](https://k8s-gubernator.appspot.com/pr)
-- [Submit Queue](https://submit-queue.k8s.io)
+- [Tide](https://prow.k8s.io/tide)
 - [Bot commands](https://go.k8s.io/bot-commands)
 - [GitHub labels](https://go.k8s.io/github-labels)
 - [Release Buckets](https://gcsweb.k8s.io/gcs/kubernetes-release/)
 - Developer Guide
-  - [Cherry Picking Guide](/contributors/devel/cherry-picks.md) - [Queue](https://cherrypick.k8s.io/#/queue)
+  - [Cherry Picking Guide](/contributors/devel/cherry-picks.md)
 - [Kubernetes Code Search](https://cs.k8s.io/), maintained by [@dims](https://github.com/dims)
 
 
@@ -52,6 +52,7 @@ A list of common resources when contributing to Kubernetes.
 - steering@kubernetes.io - Mail the steering committee. Public address with public archive.
 - steering-private@kubernetes.io - Mail the steering committee privately, for sensitive items.
 - helpdesk@rt.linuxfoundation.org - Mail the LF helpdesk for help with CLA issues.
+- conduct@kubernetes.io - Contact the Code of Conduct committee, private mailing list.
 
 ## Other
 

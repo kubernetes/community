@@ -6,65 +6,25 @@ Kubernetes uses a variety of automated tools in an attempt to relieve developers
 of repetitive, low brain power work. This document attempts to describe these
 processes.
 
+## Tide
 
-## Submit Queue
+This project formerly used a Submit Queue, it has since been replaced by
+[Tide](https://git.k8s.io/test-infra/prow/cmd/tide).
 
-In an effort to
-   * reduce load on core developers
-   * maintain end-to-end test stability
-   * load test github's label feature
+#### Ready to merge status
 
-We have added an automated [submit-queue](https://git.k8s.io/test-infra/mungegithub/submit-queue)
-to the
-[github "munger"](https://git.k8s.io/test-infra/mungegithub)
-for kubernetes.
-
-The submit-queue does the following:
-
-```go
-for _, pr := range readyToMergePRs() {
-    if testsAreStable() {
-        if retestPR(pr) == success {
-            mergePR(pr)
-        }
-    }
-}
-```
-
-The status of the submit-queue is [online.](http://submit-queue.k8s.io/)
-
-### Ready to merge status
-
-A PR is considered "ready for merging" by the submit queue if it matches the set
-of conditions listed in the [merge requirements tab](http://submit-queue.k8s.io/#/info)
-of the info page.
+A PR is considered "ready for merging" by Tide if it matches the set
+of conditions listed in the [Tide dashboard](https://prow.k8s.io/tide).
 Please visit that page for more details.
-
-### Merge process
-
-If the PR has the `retest-not-required` label, it is simply merged. If the PR does
-not have this label, the aforementioned required tests are re-run.
-If these tests pass a second time, the PR will be merged when this PR finishes retesting.
-
-## Github Munger
-
-We run [github "mungers"](https://git.k8s.io/test-infra/mungegithub).
-
-This runs repeatedly over github pulls and issues and runs modular "mungers".
-The mungers include the "submit-queue" referenced above along
-with numerous other functions. See the README in the link above.
-
-Please feel free to unleash your creativity on this tool, send us new mungers
-that you think will help support the Kubernetes development process.
 
 ### Closing stale pull-requests
 
-Github Munger will close pull-requests that don't have human activity in the
+Prow will close pull-requests that don't have human activity in the
 last 90 days. It will warn about this process 60 days before closing the
 pull-request, and warn again 30 days later. One way to prevent this from
-happening is to add the `keep-open` label on the pull-request.
+happening is to add the `lifecycle/frozen` label on the pull-request.
 
-Feel free to re-open and maybe add the `keep-open` label if this happens to a
+Feel free to re-open and maybe add the `lifecycle/frozen` label if this happens to a
 valid pull-request. It may also be a good opportunity to get more attention by
 verifying that it is properly assigned and/or mention people that might be
 interested. Commenting on the pull-request will also keep it open for another 90
@@ -89,4 +49,4 @@ during the original test. It would be good to file flakes as an
 The simplest way is to comment `/retest`.
 
 Any pushes of new code to the PR will automatically trigger a new test. No human
-interraction is required. Note that if the PR has a `lgtm` label, it will be removed after the pushes.
+interaction is required. Note that if the PR has a `lgtm` label, it will be removed after the pushes.

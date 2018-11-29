@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Covers maintaining, supporting, and using Kubernetes hosted on AWS Cloud.
 
+The [charter](charter.md) defines the scope and governance of the AWS Special Interest Group.
+
 ## Meetings
 * Regular SIG Meeting: [Fridays at 9:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit).
@@ -43,6 +45,9 @@ The following subprojects are owned by sig-aws:
 - **aws-encryption-provider**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
+- **aws-ebs-csi-driver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
 
 ## GitHub Teams
 

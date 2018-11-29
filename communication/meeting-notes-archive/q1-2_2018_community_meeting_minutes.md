@@ -326,7 +326,7 @@
                 *   Rolling out new contributor workshop + playground
                 *   Will have smaller summit in Shanghai (contact @jberkus)
                 *   Started planning for Seattle, will have an extra ½ day.
-                    *   Registration will be going through kubecon site
+                    *   Registration will be going through KubeCon/CloudNativeCon site
                 *   Manage alacarte events at other people's conferences
             *   Communication pipelines & moderation
                 *   Clean up spam
@@ -380,7 +380,7 @@
     *   Github Groups [Jorge Castro]
         *   [https://github.com/kubernetes/community/issues/2323](https://github.com/kubernetes/community/issues/2323)  working to make current 303 groups in the org easier to manage
     *   Shoutouts this week (Check in #shoutouts on slack)
-        *   jberkus: To Jordan Liggitt for diagnosing & fixing the controller performance issue that has haunted us since last August, and  to Julia Evans for reporting the original issue.
+        *   jberkus: To Jordan Liggitt for diagnosing & fixing the controller performance issue that has haunted us since last August, and to Julia Evans for reporting the original issue.
             *   Maulion: And another to @liggitt for always helping anyone with a auth question in all the channels with kindness
         *   jdumars: @paris - thank you for all of your work helping to keep our community safe and inclusive! I know that you've spent countless hours refining our Zoom usage, documenting, testing, and generally being super proactive on this.
         *   Nikhita: shoutout to @cblecker for excellent meme skills!
@@ -612,7 +612,7 @@
         *   GitHub:[ https://github.com/YugaByte/yugabyte-db](https://github.com/YugaByte/yugabyte-db)
         *   Docs:[ https://docs.yugabyte.com/](https://docs.yugabyte.com/)
         *   Slides: https://www.slideshare.net/YugaByte
-        *   Yugabyte is a database focusing on, planet scale, transactional and high availability. It implements many common database apis making it a drop in replacement for those DBs. Can run as a StatefulSet  on k8s. Multiple db api paradigms can be used for one database.
+        *   Yugabyte is a database focusing on, planet scale, transactional and high availability. It implements many common database apis making it a drop in replacement for those DBs. Can run as a StatefulSet on k8s. Multiple db api paradigms can be used for one database.
         *   No Kubernetes operator yet, but it's in progress.
     *   Answers from Q&A:
         *   @jberkus - For q1 - YB is optimized for small reads and writes, but can also perform batch reads and writes efficiently - mostly oriented towards modern OLTP/user-facing applications. Example is using spark or presto on top for use-cases like iot, fraud detection, alerting, user-personalization, etc.
@@ -778,7 +778,7 @@
         *   Aish Sundar - Shoutout to Benjamin Elder for adding Conformance test results to all Sig-release dashboards - master-blocking and all release branches.
         *   Josh Berkus and Stephen Augustus -  To Misty Stanley-Jones for aggressively and doggedly pursuing 1.11 documentation deadlines, which both gives folks earlier warning about docs needs and lets us bounce incomplete features earlier
     *   Help Wanted
-        *   Looking for Mandarin-speakers to help with new contributor workshop and other events at KubeCon Shanghai.  If you can help, please contact @jberkus / [jberkus@redhat.com](mailto:jberkus@redhat.com)
+        *   Looking for Mandarin-speakers to help with new contributor workshop and other events at KubeCon/CloudNativeCon Shanghai.  If you can help, please contact @jberkus / [jberkus@redhat.com](mailto:jberkus@redhat.com)
         *   [KEP-005](https://github.com/kubernetes/community/blob/master/keps/sig-contributor-experience/0005-contributor-site.md) - Contributor Site - ping [jorge@heptio.com](mailto:jorge@heptio.com) if you can help!
     *   Meet Our Contributors (mentors on demand)
         *   June 6th at 230p and 8pm **UTC** [https://git.k8s.io/community/mentoring/meet-our-contributors.md](https://git.k8s.io/community/mentoring/meet-our-contributors.md)
@@ -852,7 +852,7 @@
         *   External projects:  SIG has something like 20 projects and is breaking them apart, looking for owners and out of tree locations for them to better live.  Projects should move to CSI, a kubernetes-sigs/* repo, a utility library, or EOL
 *   [ 0:00 ] **Announcements**
     *   <span style="text-decoration:underline;">Shoutouts this week</span> (Check in #shoutouts on slack)
-        *   Big shoutout to @carolynvs for being welcoming and encouraging to newcomers, to @paris for all the community energy and dedication, and to all the panelists from the recent Kubecon diversity lunch for sharing their experiences.
+        *   Big shoutout to @carolynvs for being welcoming and encouraging to newcomers, to @paris for all the community energy and dedication, and to all the panelists from the recent KubeCon/CloudNativeCon diversity lunch for sharing their experiences.
         *   Big shoutout to @mike.splain for running the Boston Kubernetes meetup (9 so far!)
         *   everyone at svcat is awesome and patient especially @carolynvs, @Jeremy Rickard & @jpeeler who all took time to help me when I hit some bumps on my first PR.
     *   <span style="text-decoration:underline;">Help Wanted</span>
@@ -962,7 +962,7 @@
         *   SIG Scalability is looking for contributors!
         *   We need more contributor mentors! [Fill this out.](https://goo.gl/forms/17Fzwdm5V2TVWiwy2)
             *   The next Meet Our Contributors (mentors on demand!) will be on June 6th. Check out kubernetes.io/community for time slots and to copy to your calendar.
-    *   **Kubecon Follow Ups**
+    *   **KubeCon/CloudNativeCon Follow Ups**
         *   Videos and slides: [https://github.com/cloudyuga/kubecon18-eu](https://github.com/cloudyuga/kubecon18-eu) Thanks CloudYuga for this!
     *   **Other**
         *   Don't forget to check out [discuss.kubernetes.io](https://discuss.kubernetes.io/)!
@@ -1014,7 +1014,7 @@
             *   Communication platform
             *   Flow in github
         *   [Developers Guide underway](https://github.com/kubernetes/community/issues/1919) under Contributor Docs subproject
-        *   Contributor Experience Update [slide deck](https://docs.google.com/presentation/d/1KUbnP_Bl7ulLJ1evo-X_TdXhlvQWUyru4GuZm51YfjY/edit?usp=sharing) from KubeConEU [if you are in k-dev mailing list, you'll have access)
+        *   Contributor Experience Update [slide deck](https://docs.google.com/presentation/d/1KUbnP_Bl7ulLJ1evo-X_TdXhlvQWUyru4GuZm51YfjY/edit?usp=sharing) from KubeCon/CloudNativeCon UE [if you are in k-dev mailing list, you'll have access)
 *   **Announcements:**
     *   **Shoutouts!**
         *   See someone doing something great in the community? Mention them in #shoutouts on slack and we'll mention them during the community meeting:
@@ -1023,7 +1023,7 @@
         *   Tim Pepper to Aaron Crickenberger for being such a great leader on the project during recent months
         *   Chuck Ha shouts out to the doc team - "Working on the website is such a good experience now that it's on hugo. Page rebuild time went from ~20 seconds to 60ms" :heart emoji:
         *   Jason de Tiber would like to thank Leigh Capili (@stealthybox) for the hard work and long hours helping to fix kubeadm upgrade issues. (2nd shoutout in a row for Leigh! -ed)
-        *   Jorge Castro and Paris Pittman would like to thank Vanessa Heric and the rest of the CNCF/Linux Foundation personnel that helped us pull off another great Contributor Summit and Kubecon
+        *   Jorge Castro and Paris Pittman would like to thank Vanessa Heric and the rest of the CNCF/Linux Foundation personnel that helped us pull off another great Contributor Summit and KubeCon/CloudNativeCon
         *   [Top Stackoverflow Users](https://stackoverflow.com/tags/kubernetes/topusers) in the Kubernetes Tag for the month
             *   Anton Kostenko, Nicola Ben, Maruf Tuhin, Jonah Benton, Const
     *   Message from the docs team re: hugo transition:
@@ -1042,7 +1042,7 @@
         **Help Wanted?**
 
         *   [SIG UI](https://github.com/kubernetes/community/blob/master/sig-ui/README.md) is looking for additional contributors (with javascript and/or go knowledge) and maintainers
-            *   [Piotr](https://github.com/bryk) and and [Konrad](https://github.com/konryd) from google have offered to bring folks up to speed.
+            *   [Piotr](https://github.com/bryk) and [Konrad](https://github.com/konryd) from google have offered to bring folks up to speed.
             *   Take a look at open issues to get started or reach out to their slack channel, mailing list, or next meeting.
             *   SIG UI mailing list: [https://groups.google.com/forum/#!forum/kubernetes-sig-ui](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)
 
@@ -1076,7 +1076,7 @@
         *   35k users with 5k weekly active users
         *   Produced Quarterly
 *   **SIG Updates:**
-    *   **Thanks to test infra  folks for labels**
+    *   **Thanks to test infra folks for labels**
     *   **Cluster Lifecycle [Tim St. Clair]**
         *   Kubeadm
             *   Steadily burning down against 1.11
@@ -1103,21 +1103,21 @@
             *   Slight changes to structure of object (Unify metrics sources)
         *   Better e2e tests on all HPA functionality
             *   Movement along the path to blocking HPA custom metrics e2e tests
-        *   VPA work coming along, alpha soon (demo at KubeCon)
-        *   Come say hi at KubeCon (Intro and Deep Dive, talks on HPA)
+        *   VPA work coming along, alpha soon (demo at KubeCon/CloudNativeCon)
+        *   Come say hi at KubeCon/CloudNativeCon (Intro and Deep Dive, talks on HPA)
     *   **PM [Jaice Singer DuMars]**
         *   Working on mechanisms to get feedback from the user community (playing with something like [http://kubernetes.report](http://kubernetes.report) -- in development, not ready for distro yet)
-        *   Presenting at KubeCon 16:35 on Thursday ~ Ihor and Aparna
+        *   Presenting at KubeCon/CloudNativeCon 16:35 on Thursday ~ Ihor and Aparna
         *   Working on a charter draft
             *   We actually represent three 'P' areas: product, project, and program
             *   Help SIG focus on implementations
             *   We're trying to look a
 *   **Announcements:**
-    *   **Kubecon next week, no community meeting! **\o/
+    *   **KubeCon/CloudNativeCon next week, no community meeting! **\o/
     *   **Last Chance to Register for the Contributor Summit - **
         *   Registration ends Fri, Apr 7th @ 7pm UTC
-        *   Tuesday, May 1, day before Kubecon
-        *   You must [register here](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit) even if you've registered for Kubecon
+        *   Tuesday, May 1, day before KubeCon/CloudNativeCon
+        *   You must [register here](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit) even if you've registered for KubeCon/CloudNativeCon
         *   SIGs, remember to [put yourself down on the SIG Update sheet](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=1543199895) to give your 5 minute update that afternoon.
     *   **Shoutouts!**
         *   See someone doing something great in the community? Mention them in #shoutouts on slack and we'll mention them during the community meeting:
@@ -1201,7 +1201,7 @@
         *   @cblecker for fielding so many issues and PRs.
     *   <span style="text-decoration:underline;">Help Wanted?</span>
         *   SIG UI is looking for more active contributors to revitalize the dashboard. Please join their [communication channels](https://github.com/kubernetes/community/blob/master/sig-ui/README.md) and attend the next meeting to announce your interest.
-    *   <span style="text-decoration:underline;">KubeCon EU Update</span>
+    *   <span style="text-decoration:underline;">KubeCon/CloudNativeCon EU Update</span>
         *   Current contributor track session voting will be emailed to attendees today!C
         *   RSVP for Contributor Summit [[here]](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit)
         *   SIG Leads, please do your updates for the 5 minute updates
@@ -1223,7 +1223,7 @@
     *   Support for kubeadm and minikube
     *   Create issues on crio project on github
     *   sig-node does not have plans to choose one yet
-        *   Working on conformance to address implementations which should lead to  choosing default implementation
+        *   Working on conformance to address implementations which should lead to choosing default implementation
         *   Choice is important since it would be used under scalability testing
         *   Test data? Plan to publish results to testgrid, will supply results ASAP
             *   Previously blocked on dashboard issue
@@ -1301,8 +1301,8 @@
         *   6 charters in flight working on charter, then going to other SIGs
     *   [r/kubernetes: Ask Me Anything](https://www.reddit.com/r/kubernetes/comments/8b7f0x/we_are_kubernetes_developers_ask_us_anything/) - thanks everyone for participating, lots of user feedback, please have a look.
         *   We'll likely do more of these in the future.
-    *   [Kubernetes Contributor Summit @ Kubecon](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit) - May 1 (jb)
-        *   You need to register for this even if you already registered for Kubecon! Link to the form in the link above.
+    *   [Kubernetes Contributor Summit @ KubeCon/CloudNativeCon](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit) - May 1 (jb)
+        *   You need to register for this even if you already registered for KubeCon/CloudNativeCon! Link to the form in the link above.
         *   New contributor/on-going contrib in morning and general tracks in afternoon
     *   New CNCF Interactive Landscape: [https://landscape.cncf.io/](https://landscape.cncf.io/)  (dan kohn)
 
@@ -1322,7 +1322,7 @@
         *   creating docker registry and helm repos, pushing helm chart
         *   CLI and web UI
         *   Caching upstream repositories
-    *   Walkthrough  and Example: [https://jfrog.com/blog/control-your-kubernetes-voyage-with-artifactory/](https://jfrog.com/blog/control-your-kubernetes-voyage-with-artifactory/) & [https://github.com/jfrogtraining/kubernetes_example](https://github.com/jfrogtraining/kubernetes_example)
+    *   Walkthrough and Example: [https://jfrog.com/blog/control-your-kubernetes-voyage-with-artifactory/](https://jfrog.com/blog/control-your-kubernetes-voyage-with-artifactory/) & [https://github.com/jfrogtraining/kubernetes_example](https://github.com/jfrogtraining/kubernetes_example)
     *   Questions
         *   Difference between commercial and free (and what's the cost)
             *   Free only has maven support, is open source, commercial supports everything (including Kubernetes-related technologies, like Helm)
@@ -1399,8 +1399,8 @@
                 *   They will be migrated, with blog manager opening PRs as needed
     *   SIG Service Catalog - bumped to 5/24
 *   **Announcements**
-    *   [Kubernetes Contributor Summit @ Kubecon](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit) - May 1 [Jorge Castro]
-        *   You need to register for this even if you already registered for Kubecon! Link to the form in the link above.
+    *   [Kubernetes Contributor Summit @ KubeCon/CloudNativeCon](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit) - May 1 [Jorge Castro]
+        *   You need to register for this even if you already registered for KubeCon/CloudNativeCon! Link to the form in the link above.
         *   Current contributor track voting on topics will be emailed to attendees Monday
     *   Reddit r/kubernetes AMA [Jorge Castro]
         *   This next Tuesday: [https://www.reddit.com/r/kubernetes/comments/89gdv0/kubernetes_ama_will_be_on_10_april_tuesday/](https://www.reddit.com/r/kubernetes/comments/89gdv0/kubernetes_ama_will_be_on_10_april_tuesday/)
@@ -1439,7 +1439,7 @@
         *   Generates join keys for kubeadm
         *   Sends information like master election, cluster admin config file, etc back to shared data set
     *   Resources:
-        *   Kubecon Presentation [https://www.slideshare.net/rhirschfeld/kubecon-2017-zero-touch-kubernetes](https://www.slideshare.net/rhirschfeld/kubecon-2017-zero-touch-kubernetes)
+        *   KubeCon/CloudNativeCon Presentation [https://www.slideshare.net/rhirschfeld/kubecon-2017-zero-touch-kubernetes](https://www.slideshare.net/rhirschfeld/kubecon-2017-zero-touch-kubernetes)
         *   Longer Demo Video [https://www.youtube.com/watch?v=OMm6Oz1NF6I](https://www.youtube.com/watch?v=OMm6Oz1NF6I)
         *   Digital Rebar:[https://github.com/digitalrebar/provision](https://github.com/digitalrebar/provision),
         *   Project Site:  [http://rebar.digital](http://rebar.digital)
@@ -1453,7 +1453,7 @@
         *   Looking for contributors to answer questions, 2 slots
         *   Reach out to @paris on Slack if you're interested in participating
     *   Contributor Summit in Copenhagen May 1 - [registration](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/co-located-events/kubernetes-contributor-summit/) is live
-    *   KubeCon Copenhagen (May 2-4) is **on track to sell out**. [Register](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/)
+    *   KubeCon/CloudNativeCon Copenhagen (May 2-4) is **on track to sell out**. [Register](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/)
     *   Shoutouts this week (from #shoutouts in slack):
         *   @nabrahams who picked the 1.10 release notes as his first contribution. We literally could not have done this without him!
 *   [ 0:15 ]** Kubernetes 1.10 Release Retrospective**
@@ -1590,7 +1590,7 @@
     *   Registration for the Contributor Summit is now live:
         *   See [this page](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/co-located-events/kubernetes-contributor-summit/) for details
         *   Please register if you're planning on attending, we need this so we have the correct amount of food!
-        *   Just registering for Kubecon is not enough!
+        *   Just registering for KubeCon/CloudNativeCon is not enough!
     *   [Office Hours Next Week!](https://github.com/kubernetes/community/blob/master/events/office-hours.md)
         *   Volunteer developers needed to answer questions
     *   [Helm Summit Videos](https://www.youtube.com/playlist?list=PL69nYSiGNLP3PlhEKrGA0oN4eY8c4oaAH&disable_polymer=true) are up.
@@ -1628,7 +1628,7 @@
 *   [ 0:00 ] **Graph o' the Week **Zach Corleissen, SIG Docs
     *   Weekly update on data from devstats.k8s.io
     *   [https://k8s.devstats.cncf.io/d/44/time-metrics?orgId=1&var-period=w&var-repogroup_name=Docs&var-repogroup=docs&var-apichange=All&var-size_name=All&var-size=all&var-full_name=Kubernetes](https://k8s.devstats.cncf.io/d/44/time-metrics?orgId=1&var-period=w&var-repogroup_name=Docs&var-repogroup=docs&var-apichange=All&var-size_name=All&var-size=all&var-full_name=Kubernetes)
-    *   Docs folks had vague anxiety (without concrete data) on their response times for issues and PRs.  Devstats shows less than approx. 4 days initial response times during the last year, outside of a few spikes associated with holidays on the calendar and KubeCon.
+    *   Docs folks had vague anxiety (without concrete data) on their response times for issues and PRs.  Devstats shows less than approx. 4 days initial response times during the last year, outside of a few spikes associated with holidays on the calendar and KubeCon/CloudNativeCon.
     *   Introduction of prow into kubernetes/website led to a demonstrable improvement in early 2018
 *   [ 0:00 ] **SIG Updates**
     *   SIG Apps [Adnan Abdulhussein] (confirmed)
@@ -1647,9 +1647,9 @@
         *   [Governance.md updated with subprojects](https://github.com/kubernetes/community/blob/master/governance.md#subprojects)
         *   [WIP: Subproject Meta](https://docs.google.com/document/d/1FHauGII5LNVM-dZcNfzYZ-6WRs9RoPctQ4bw5dczrkk/edit#heading=h.2nslsje41be1)
         *   [WIP: Charter FAQ (the "Why"s)](https://github.com/kubernetes/community/pull/1908)
-    *   Reminder: [Contributor Summit](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit), 1 May, day before Kubecon
+    *   Reminder: [Contributor Summit](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit), 1 May, day before KubeCon/CloudNativeCon
     *   CNCF would like feedback on the draft blog post for 1.10 beta:
-        *   [http://blog.kubernetes.io/2018/03/first-beta-version-of-kubernetes-1-10.html](http://blog.kubernetes.io/2018/03/first-beta-version-of-kubernetes-1-10.html)
+        *   [https://kubernetes.io/blog/2018/03/first-beta-version-of-kubernetes-1-10/](https://kubernetes.io/blog/2018/03/first-beta-version-of-kubernetes-1-10/)
         *   Please contact [Natasha Woods](mailto:nwoods@linuxfoundation.org) with your feedback
     *   Shoutouts this week
         *   See someone doing something great for the community? Mention them in #shoutouts on slack.
@@ -1727,9 +1727,9 @@
 *   [ 0:00 ] <strong>Announcements</strong>
     *   [Owner/Maintainer ](https://github.com/kubernetes/community/pull/1861/files)[pwittrock]
         *   Maintainer is folding into Owner
-    *   Reminder: Contributor Summit happens 1 May, day before Kubecon
+    *   Reminder: Contributor Summit happens 1 May, day before KubeCon/CloudNativeCon
         *   [https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit)
-    *   Kubecon price increase March 9
+    *   KubeCon/CloudNativeCon price increase March 9
         *   [https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2018/)
         *   Copenhagen May 2-4, 2018
     *   [Meet Our Contributors is next Weds!](https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md)
@@ -1737,7 +1737,7 @@
         *   Ask current contributors anything on slack #meet-our-contributors - testing infra, how to make first time contribution, how did they get involved in k8s
     *   Shoutouts!
         *   None on slack this week, thank someone in #shoutouts!
-        *   Top 5 in the the Kubernetes StackOverflow tag for the week: Radek "Goblin" Pieczonka, aerokite, Vikram Hosakote, Jonah Benton, and fiunchinho
+        *   Top 5 in the Kubernetes StackOverflow tag for the week: Radek "Goblin" Pieczonka, aerokite, Vikram Hosakote, Jonah Benton, and fiunchinho
 
 
 ## February 22, 2018 - ([recording](https://www.youtube.com/watch?v=7pN0xdiFqPE))
@@ -1772,7 +1772,7 @@
     *   SIG Cluster Lifecycle [First Last]
         *   Not happening
 *   [ 0:00 ] **Announcements**
-    *   Reminder: Contributor Summit happens 1 May, day before Kubecon
+    *   Reminder: Contributor Summit happens 1 May, day before KubeCon/CloudNativeCon
         *   [https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit)
     *   Shoutouts this week
         *   Zhonghu Xu - @hzxuzhonghu for many high quality apiserver APIs PRs
@@ -1866,7 +1866,7 @@
             *   Roadshow!
             *   F2F this Tuesday @ INDEX
             *   Contributor Summit in Copenhagen
-            *   May 1; registration will be on KubeCon site this week
+            *   May 1; registration will be on KubeCon/CloudNativeCon site this week
             *   New weekly meeting (from bi-weekly) same day / time (Weds @ 5pUTC)
     *   SIG API Machinery [Daniel Smith](c)
         *   Reminder: SIG-API doesn't own the API (that's SIG-architecture), but rather mechanics in API server, registry and discovery
@@ -1876,7 +1876,7 @@
 *   [ 0:00 ] **Announcements**
     *   Office hours next week!
         *   [https://github.com/kubernetes/community/blob/master/events/office-hours.md](https://github.com/kubernetes/community/blob/master/events/office-hours.md)
-    *   Reminder: Contributor Summit will be 1 May, the day before Kubecon EU: [https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit)
+    *   Reminder: Contributor Summit will be 1 May, the day before KubeCon/CloudNativeCon EU: [https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit](https://github.com/kubernetes/community/tree/master/events/2018/05-contributor-summit)
     *   /lgtm, /approve and the principle of least surprise
         *   [https://github.com/kubernetes/test-infra/issues/6589](https://github.com/kubernetes/test-infra/issues/6589)
         *   Do we all need to use [the exact same code review process](https://github.com/kubernetes/community/blob/master/contributors/guide/owners.md#the-code-review-process)?
@@ -2076,11 +2076,11 @@
             *   contributing tests
             *   cleaning up tests
             *   what things are tested
-            *   e2e  framework
+            *   e2e framework
             *   Conformance
         *   Please come participate
     *   Kubernetes Documentation [User Journeys MVP](https://kubernetes.io/docs/home/) launched [Andrew Chen]
-        *   Please give  SIG Docs for feedback, still adding things later
+        *   Please give SIG Docs for feedback, still adding things later
             *   Can contribute normally (join SIG docs for more information)
         *   New landing page incorporating personas (users, contributors, operators)
         *   Levels of knowledge (foundational, advanced, etc)
@@ -2090,7 +2090,7 @@
         *   Feel free to comment offline or on the issue if you have comments
         *   TL;DR: call it the "control plane"
         *   Issue: [https://github.com/kubernetes/website/issues/6525](https://github.com/kubernetes/website/issues/6525)
-    *   Contributor Summit for Kubecon EU [Jorge and Paris]
+    *   Contributor Summit for KubeCon/CloudNativeCon EU [Jorge and Paris]
         *   SAVE THE DATE: May 1, 2018
         *   [https://github.com/kubernetes/community/pull/1718](https://github.com/kubernetes/community/pull/1718)
     *   #shoutouts - [Jorge Castro]
@@ -2136,7 +2136,7 @@
         *   Breaking up the monolithic kubectl.
         *   
 *   [ 0:00 ] **Announcements**
-    *   SIG leads: register to offer intros and deep dives in SIG track at KubeCon Copenhagen (May 2-4): [overview](https://groups.google.com/forum/#!searchin/kubernetes-dev/kohn%7Csort:date/kubernetes-dev/5U-eNRBav2Q/g71MW47ZAgAJ), [signup](https://docs.google.com/forms/d/e/1FAIpQLSedSif6MwGfdI1-Rb33NRjTYwotQtIhNL7-ebtYQoDARPB2Tw/viewform) (1/31 deadline)
+    *   SIG leads: register to offer intros and deep dives in SIG track at KubeCon/CloudNativeCon Copenhagen (May 2-4): [overview](https://groups.google.com/forum/#!searchin/kubernetes-dev/kohn%7Csort:date/kubernetes-dev/5U-eNRBav2Q/g71MW47ZAgAJ), [signup](https://docs.google.com/forms/d/e/1FAIpQLSedSif6MwGfdI1-Rb33NRjTYwotQtIhNL7-ebtYQoDARPB2Tw/viewform) (1/31 deadline)
     *   [SIG Contributor Experience news: new lead, new meeting](https://groups.google.com/forum/#!topic/kubernetes-dev/65S1Y3IK8PQ)
     *   [Meet Our Contributors ](https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md)- Feb 7th [Paris]
         *   730a PST/ 3:30 pm UTC & 1pm PST / 9pm UTC
@@ -2200,7 +2200,7 @@
     *   GSoC [Ihor D]
         *   [https://github.com/cncf/soc](https://github.com/cncf/soc); [k8s gh](https://github.com/kubernetes/community/blob/master/mentoring/google-summer-of-code.md)
         *   nikhita has volunteered to drive this program for Kubernetes
-    *   SIG Intros & Deep Dives sessions registration at KubeCon & CloudNativeCon will be announced shortly (stay tuned!)
+    *   SIG Intros & Deep Dives sessions registration at KubeCon/CloudNativeCon & CloudNativeCon will be announced shortly (stay tuned!)
     *   Changes to this meeting's format [Jorge Castro]
         *   SIGs scheduled per cycle instead of adhoc
         *   Demo changes

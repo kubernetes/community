@@ -68,7 +68,9 @@ Kubernetes organization to any related orgs automatically, but such is not the
 case currently. If you are a Kubernetes org member, you are implicitly eligible
 for membership in related orgs, and can request membership when it becomes
 relevant, by [opening an issue][membership request] against the kubernetes/org
-repo, as above.
+repo, as above. However, if you are a member of any of the related
+[Kubernetes GitHub organizations] but not of the [Kubernetes org],
+you will need explicit sponsorship for your membership request.
 
 ### Responsibilities and privileges
 
@@ -226,6 +228,7 @@ The Maintainer role has been removed and replaced with a greater focus on [OWNER
 [contributor guide]: /contributors/guide/README.md
 [Kubernetes GitHub Admin team]: /github-management/README.md#github-administration-team
 [Kubernetes GitHub organizations]: /github-management#actively-used-github-organizations
+[Kubernetes org]: https://github.com/kubernetes
 [kubernetes-dev@googlegroups.com]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [kubernetes-sigs]: https://github.com/kubernetes-sigs
 [membership request]: https://github.com/kubernetes/org/issues/new?template=membership.md&title=REQUEST%3A%20New%20membership%20for%20%3Cyour-GH-handle%3E

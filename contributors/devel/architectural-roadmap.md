@@ -761,7 +761,7 @@ therefore wouldn’t be considered to be part of Kubernetes.
       applications, but not for specific applications.
 
     * Platform as a Service: Kubernetes [provides a
-      foundation](http://blog.kubernetes.io/2017/02/caas-the-foundation-for-next-gen-paas.html)
+      foundation](https://kubernetes.io/blog/2017/02/caas-the-foundation-for-next-gen-paas/)
       for a multitude of focused, opinionated PaaSes, including DIY
       ones.
 

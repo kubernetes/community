@@ -197,7 +197,7 @@ Among these controller loops, the following are cloud provider dependent.
 
 The nodeIpamController uses the cloudprovider to handle cloud specific CIDR assignment of a node. Currently the only
 cloud provider using this functionality is GCE. So the current plan is to break this functionality out of the common 
-verion of the nodeIpamController. Most cloud providers can just run the default version of this controller. However any
+version of the nodeIpamController. Most cloud providers can just run the default version of this controller. However any
 cloud provider which needs cloud specific version of this functionality and disable the default version running in the 
 KCM and run their own version in the CCM.
 

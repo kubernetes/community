@@ -27,7 +27,7 @@ Our SLIs/SLOs need to have the following properties:
   arcane knowledge.
 
 We may also introduce internal(for developers only) SLIs, that may be useful
-for understanding performance characterstic of the system, but for which
+for understanding performance characteristic of the system, but for which
 we don't provide any guarantees for users (and thus don't require them to be
 that easily understandable).
 
@@ -89,7 +89,7 @@ MUST satisfy thresholds defined in [thresholds file][].
 ## Kubernetes SLIs/SLOs
 
 The currently existing SLIs/SLOs are enough to guarantee that cluster isn't
-completely dead. However, the are not enough to satisfy user's needs in most
+completely dead. However, they are not enough to satisfy user's needs in most
 of the cases.
 
 We are looking into extending the set of SLIs/SLOs to cover more parts of
@@ -107,6 +107,8 @@ Prerequisite: Kubernetes cluster is available and serving.
 | __Official__ | Latency of non-streaming read-only API calls for every (resource, scope pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, scope) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day<sup>[1](#footnote1)</sup> (a) <= 1s if `scope=resource` (b) <= 5s if `scope=namespace` (c) <= 30s if `scope=cluster` | [Details](./api_call_latency.md) |
 | __Official__ | Startup latency of stateless and schedulable pods, excluding time to pull images and run init containers, measured from pod creation timestamp to when all its containers are reported as started and observed via watch, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile per cluster-day<sup>[1](#footnote1)</sup> <= 5s | [Details](./pod_startup_latency.md) |
 | __WIP__ | Latency of programming a single (e.g. iptables on a given node) in-cluster load balancing mechanism, measured from when service spec or list of its `Ready` pods change to when it is reflected in load balancing mechanism, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile of (99th percentiles across all programmers (e.g. iptables)) per cluster-day<sup>[1](#footnote1)</sup> <= X | [Details](./network_programming_latency.md) |
+| __WIP__ | Latency of programming a single in-cluster dns instance, measured from when service spec or list of its `Ready` pods change to when it is reflected in that dns instance, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile of (99th percentiles across all dns instances) per cluster-day <= X | [Details](./dns_programming_latency.md) |
+| __WIP__ | In-cluster network latency from a single prober pod, measured as latency of per second ping from that pod to "null service", measured as 99th percentile over last 5 minutes. | In default Kubernetes installataion with RTT between nodes <= Y, 99th percentile of (99th percentile over all prober pods) per cluster-day <= X | [Details](./network_latency.md) |
 
 <a name="footnote1">\[1\]</a> For the purpose of visualization it will be a
 sliding window. However, for the purpose of reporting the SLO, it means one

@@ -84,7 +84,7 @@ Subproject Owner Role.  (this different from a SIG or Organization Member).
 
 - SIG meets bi-weekly on zoom with agenda in meeting notes
   - *SHOULD* be facilitated by chairs unless delegated to specific Members
-- SIG overview and deep-dive sessions organized for Kubecon
+- SIG overview and deep-dive sessions organized for KubeCon/CloudNativeCon
   - *SHOULD* be organized by chairs unless delegated to specific Members
 - SIG updates to Kubernetes community meeting on a regular basis
   - *SHOULD* be presented by chairs unless delegated to specific Members
@@ -155,7 +155,7 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
   - after 3 or more months it *SHOULD* be retired
   - after 6 or more months it *MUST* be retired
 
-[lazy-consensus]: http://communitymgt.wikia.com/wiki/Lazy_consensus
+[lazy-consensus]: http://en.osswiki.info/concepts/lazy_consensus
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote
 [KEP]: https://github.com/kubernetes/community/blob/master/keps/0000-kep-template.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1454

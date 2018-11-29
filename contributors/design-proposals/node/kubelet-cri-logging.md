@@ -133,7 +133,7 @@ PodSandboxConfig.LogDirectory: /var/log/pods/<podUID>/
 ContainerConfig.LogPath: <containerName>_<instance#>.log
 ```
 
-Because kubelet determines where the logs are stores and can access them
+Because kubelet determines where the logs are stored and can access them
 directly, this meets requirement (1). As for requirement (2), the log collector
 can easily extract basic pod metadata (e.g., pod UID, container name) from
 the paths, and watch the directly for any changes. In the future, we can
@@ -150,7 +150,7 @@ one tag is defined in CRI to support multi-line log entries: partial or full.
 Partial (`P`) is used when a log entry is split into multiple lines by the
 runtime, and the entry has not ended yet. Full (`F`) indicates that the log
 entry is completed -- it is either a single-line entry, or this is the last
-line of the muiltple-line entry.
+line of the multiple-line entry.
 
 For example,
 ```
@@ -160,7 +160,7 @@ For example,
 2016-10-06T00:17:10.113242941Z stderr F Last line of the log entry 2
 ```
 
-With the knowledge, kubelet can parses the logs and serve them for `kubectl
+With the knowledge, kubelet can parse the logs and serve them for `kubectl
 logs` requests. This meets requirement (3). Note that the format is defined
 deliberately simple to provide only information necessary to serve the requests.
 We do not intend for kubelet to host various logging plugins. It is also worth
@@ -176,7 +176,7 @@ to rotate the logs periodically, similar to today's implementation.
 We do not rule out the possibility of letting kubelet or a per-node daemon
 (`DaemonSet`) to take up the responsibility, or even declare rotation policy
 in the kubernetes API as part of the `PodSpec`, but it is beyond the scope of
-the this proposal.
+this proposal.
 
 **What about non-supported log formats?**
 

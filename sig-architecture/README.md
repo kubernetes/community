@@ -24,6 +24,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Brian Grant (**[@bgrant0607](https://github.com/bgrant0607)**), Google
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
+* Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-architecture)
@@ -33,28 +34,36 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-architecture:
-- **api**
+- **architecture-and-api-governance**
+  - Description: [Described below](#architecture-and-api-governance)
   - Owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
-- **kubernetes-template-project**
+- **conformance-definition**
+  - Description: [Described below](#conformance-definition)
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
-- **spartakus**
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
+- **kep-adoption-and-reviews**
+  - Description: [Described below](#kep-adoption-and-reviews)
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
-- **steering**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
-- **architecture-tracking**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
-- **universal-utils**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
-- **contrib**
+    - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
+- **code-organization**
+  - Description: [Described below](#code-organization)
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
+- **steering**
+  - Description: Placeholder until sigs.yaml supports committees as first-class groups. These repos are owned by the kubernetes steering committee, which is a wholly separate entity from SIG Architecture
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
 
 ## GitHub Teams
 
@@ -77,12 +86,45 @@ Note that the links to display team membership will only work if you are a membe
 
 * [Charter](charter.md)
 
-## Processes owned and tracked by the SIG
+# Details about SIG-Architecture sub-projects
 
-[Architecture Tracking Repository](https://github.com/kubernetes-sigs/architecture-tracking/)
+## Architecture and API Governance
 
-* [API Reviews](https://github.com/kubernetes-sigs/architecture-tracking/projects/3)
-* [KEP Reviews](https://github.com/kubernetes-sigs/architecture-tracking/projects/2)
-* [Conformance Test Review](https://github.com/kubernetes-sigs/architecture-tracking/projects/1)
+Establishing and documenting design principles, documenting and evolving the system architecture, reviewing, curating, and documenting new extension patterns
+
+Establishing and documenting conventions for system and user-facing APIs, define and operate the APl review process, final API implementation consistency validation, co-own top-level API directories with API machinery; maintaining, evolving, and enforcing the deprecation policy
+
+* [Kubernetes Design and Architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/architecture.md)
+* [Design principles](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/principles.md)
+* [API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md)
+* [API Review process](https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md)
+* [Deprecation policy](https://kubernetes.io/docs/reference/deprecation-policy/)
+
+Please see the [Design documentation](https://github.com/kubernetes-sigs/architecture-tracking/projects/4) and [API Reviews](https://github.com/kubernetes-sigs/architecture-tracking/projects/3) tracking boards to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/OWNERS) file if you are interested in joining this effort.
+
+## Conformance Definition
+
+Reviewing, approving, and driving changes to the conformance test suite; reviewing, guiding, and creating new conformance profiles
+
+* [Conformance Tests](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.txt)
+* [Test Guidelines](https://github.com/kubernetes/community/blob/master/contributors/devel/conformance-tests.md)
+
+Please see the [Conformance Test Review](https://github.com/kubernetes-sigs/architecture-tracking/projects/1) tracking board to follow the work for this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS) file if you are interested in joining this effort. There is a lot of overlap with the [Kubernetes Software Conformance Working Group](https://github.com/cncf/k8s-conformance/blob/master/README-WG.md) with this sub project as well. The github group [cncf-conformance-wg](https://github.com/orgs/kubernetes/teams/cncf-conformance-wg) enumerates the folks on this working group. Look for the `area/conformance` label in the kubernetes repositories to mark [issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fconformance) and [PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+is%3Aopen+label%3Aarea%2Fconformance) 
+
+## KEP Adoption and Reviews
+
+Develop and drive technical enhancement review process
+
+* [KEP Process](https://github.com/kubernetes/community/blob/master/keps/0001-kubernetes-enhancement-proposal-process.md)
+* [Template](https://github.com/kubernetes/community/blob/master/keps/0000-kep-template.md)
+
+Please see the [KEP Tracking](https://github.com/kubernetes-sigs/architecture-tracking/projects/2) board to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/community/blob/master/keps/OWNERS) file if you are interested in joining this effort.
+
+## Code Organization
+
+Overall code organization, including github repositories and branching methodology, top-level and pkg OWNERS of kubernetes/kubernetes, vendoring
+
+Please reach out to folks in the [OWNERS](https://github.com/kubernetes/kubernetes/blob/master/vendor/OWNERS) file if you are interested in joining this effort.
+
 
 <!-- END CUSTOM CONTENT -->

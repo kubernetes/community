@@ -53,7 +53,7 @@ _With regards to leadership roles i.e., Chairs, Technical Leads, and Subproject 
 
 - SIG meets bi-weekly on zoom with agenda in meeting notes 
   - SHOULD be facilitated by chairs unless delegated to specific Members 
-- SIG overview and deep-dive sessions organized for Kubecon 
+- SIG overview and deep-dive sessions organized for KubeCon/CloudNativeCon 
   - SHOULD be organized by chairs unless delegated to specific Members 
 - Contributing instructions defined in the SIG CONTRIBUTING.md 
 
@@ -93,7 +93,7 @@ Subprojects of the SIG MUST use the following processes unless explicitly follow
 
 Issues impacting multiple subprojects in the SIG should be resolved by SIG Technical Leads, with fallback to consensus of subproject owners.
 
-[lazy-consensus]: http://communitymgt.wikia.com/wiki/Lazy_consensus
+[lazy-consensus]: http://en.osswiki.info/concepts/lazy_consensus
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote
 [KEP]: https://github.com/kubernetes/community/blob/master/keps/0000-kep-template.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1454

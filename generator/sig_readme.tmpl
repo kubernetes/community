@@ -62,7 +62,7 @@ The following subprojects are owned by sig-{{.Label}}:
 {{- range .Subprojects }}
 - **{{.Name}}**
 {{- if .Description }}
-  - Description: {{ .Description }}
+  - Description: {{ trimSpace .Description }}
 {{- end }}
   - Owners:
 {{- range .Owners }}

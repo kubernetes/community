@@ -107,12 +107,12 @@ See https://github.com/kubernetes/kubernetes/issues/53640 and https://github.com
 * Relay all information given to `kubectl` (via command line args) to plugins as-is.
   Plugins receive all arguments and flags provided by users and are responsible for adjusting their behavior
   accordingly.
-* Provide a way to limit which command paths can and cannot be overriddden by plugins in the command tree.
+* Provide a way to limit which command paths can and cannot be overridden by plugins in the command tree.
 
 ### Non-Goals
 
 * The new plugin mechanism will not be a "plugin installer" or wizard. It will not have specific or baked-in knowledge 
-  regarding a plugin's location or composition, nor will it it provide a way to download or unpack plugins in a correct 
+  regarding a plugin's location or composition, nor will it provide a way to download or unpack plugins in a correct 
   location.
 * Plugin discovery is not a main focus of this mechanism. As such, it will not attempt to collect data about every 
   plugin that exists in an environment.
@@ -138,7 +138,7 @@ or case-handling in `kubectl`.
 
 In essence, a plugin binary must be able to run as a standalone process, completely independent of `kubectl`.
 
-* When `kubectl` is executed with a subcommand _foo_ that does not exist exist in the command tree, it will attempt to look
+* When `kubectl` is executed with a subcommand _foo_ that does not exist in the command tree, it will attempt to look
 for a filename `kubectl-foo` (`kubectl-foo.exe` on Windows) in the user's `PATH` and execute it, relaying all arguments given
 as well as all environment variables to the plugin child-process.
 

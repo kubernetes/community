@@ -4,7 +4,7 @@ This document is focused on Kubernetes developers and contributors
 who need to create a feature, issue, or pull request which targets a specific
 release milestone.
 
--   [TL;DR](#tl-dr)
+-   [TL;DR](#tldr)
 -   [Definitions](#definitions)
 -   [The Release Cycle](#the-release-cycle)
 -   [Removal Of Items From The Milestone](#removal-of-items-from-the-milestone)
@@ -56,7 +56,7 @@ If you want your PR to get merged, it needs the following required labels and mi
 <td>Required Labels</td>
 <td>
 <ul>
-<li>/milestone {v1.y}</li>
+<!--Weeks 1-8-->
 <li>/sig {name}</li>
 <li>/kind {type}</li>
 <li>/lgtm</li>
@@ -65,6 +65,7 @@ If you want your PR to get merged, it needs the following required labels and mi
 </td>
 <td>
 <ul>
+<!--Week 9-->
 <li>/milestone {v1.y}</li>
 <li>/sig {name}</li>
 <li>/kind {type}</li>
@@ -75,6 +76,7 @@ If you want your PR to get merged, it needs the following required labels and mi
 </td>
 <td>
 <ul>
+<!--Weeks 10-12-->
 <li>/milestone {v1.y}</li>
 <li>/sig {name}</li>
 <li>/kind {bug, failing-test}</li>
@@ -84,15 +86,19 @@ If you want your PR to get merged, it needs the following required labels and mi
 </ul>
 </td>
 <td>
+<!--Weeks 12+-->
+Return to 'Normal Dev' phase requirements:
 <ul>
-<li>/milestone {v1.y}</li>
 <li>/sig {name}</li>
-<li>/kind {bug, failing-test}</li>
-<li>/priority critical-urgent</li>
+<li>/kind {type}</li>
 <li>/lgtm</li>
 <li>/approved</li>
-<li>cherry-pick labels set by release branch patch manager</li>
 </ul>
+
+Merges into the 1.y branch are now [via cherrypicks](https://github.com/kubernetes/community/blob/master/contributors/devel/cherry-picks.md), approved by release branch manager.
+</td>
+<td>
+<ul>
 </td>
 </tr>
 </table>
@@ -138,11 +144,11 @@ project is always stable so that individual commits can be
 flagged as having broken something.
 
 With ongoing feature definition through the year, some set of items
-will bubble up as targeting a given release.  The **feature freeze**
+will bubble up as targeting a given release.  The **enhancement freeze**
 starts ~4 weeks into release cycle.  By this point all intended
 feature work for the given release has been defined in suitable
-planning artifacts in conjunction with the Release Team's [features
-lead](https://github.com/kubernetes/sig-release/tree/master/release-team/role-handbooks/features).
+planning artifacts in conjunction with the Release Team's [enhancements
+lead](https://git.k8s.io/sig-release/release-team/role-handbooks/enhancements/README.md).
 
 Implementation and bugfixing is ongoing across the cycle, but
 culminates in a code slush and code freeze period:
@@ -229,11 +235,11 @@ milestone by creating GitHub issues and marking them with the Prow "/milestone"
 command.
 
 For the first ~4 weeks into the release cycle, the release team's
-Features Lead will interact with SIGs and feature owners via GitHub,
+Enhancements Lead will interact with SIGs and feature owners via GitHub,
 Slack, and SIG meetings to capture all required planning artifacts.
 
 If you have a feature to target for an upcoming release milestone, begin a
-conversation with your SIG leadership and with that release's Features
+conversation with your SIG leadership and with that release's Enhancements
 Lead.
 
 ### Issue additions
@@ -266,6 +272,8 @@ described above.
 
 ## Other Required Labels
 
+*Note* [Here is the list of labels and their use and purpose.](https://git.k8s.io/test-infra/label_sync/labels.md#labels-that-apply-to-all-repos-for-both-issues-and-prs)
+
 ### SIG Owner Label
 
 The SIG owner label defines the SIG to which we escalate if a
@@ -297,20 +305,21 @@ of the issue.
   - even less urgent / critical than `priority/important-soon`
   - moved out of milestone more aggressively than `priority/important-soon`
 
-### Issue Kind Label
+### Issue/PR Kind Label
 
 The issue kind is used to help identify the types of changes going
 into the release over time.  This may allow the release team to
 develop a better understanding of what sorts of issues we would
 miss with a faster release cadence.
 
-This may also be used to escalate to the correct SIG GitHub team.
-For release targeted issues one of the follow issue types must be
-set (additional may also be set):
+For release targeted issues, including pull requests, one of the following 
+issue kind labels must be set:
 
+- `kind/api-change`: Adds, removes, or changes an API
 - `kind/bug`: Fixes a newly discovered bug.
-  - were not known issues at the start of the development period.
-- `kind/feature`: New functionality.
 - `kind/cleanup`: Adding tests, refactoring, fixing old bugs.
+- `kind/design`: Related to design
+- `kind/documentation`: Adds documentation
 - `kind/failing-test`: CI test case is failing consistently.
+- `kind/feature`: New functionality.
 - `kind/flake`: CI test case is showing intermittent failures.

@@ -19,8 +19,8 @@ approvers:
   - TBD
 editor: TBD
 creation-date: 2018-06-06
-last-updated: 2018-06-06
-status: provisional
+last-updated: 2018-11-16
+status: implementable
 
 ---
 
@@ -266,5 +266,6 @@ All providers are periodically uploading conformance test results in at least on
 
 ## Implementation History
 
-- the `Summary` and `Motivation` sections being merged signaling SIG acceptance
+- Jun 6th 2018: KEP is merged as a signal of acceptance. Cloud providers should now be looking to report their conformance test results to testgrid.
+- Nov 19th 2018: KEP has been in implementation stage for roughly 5 months with Alibaba Cloud, Baidu Cloud, DigitalOcean, GCE, OpenStack and vSphere reporting conformance test results to testgrid.
 

@@ -34,7 +34,7 @@ The following topics fall under ownership of this SIG:
 - User interface, or user experience, issues other than cluster bootstrapping or management (see [sig-ui](../sig-ui) and  [sig-cli](../sig-cli)).
 - Node related issues (see [sig-node](../sig-node)).
 - Kubernetes control plane issues:
-   - Control plane component related issues (see [sig-apimachinery](../sig-apimachinery)).
+   - Control plane component related issues (see [sig-api-machinery](../sig-api-machinery)).
 
 ## Roles and Organization Management
 

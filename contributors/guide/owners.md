@@ -84,7 +84,7 @@ filters:
 Instead, set a `.*` key inside `filters` (as shown in the previous example).
 
 **WARNING**: The `approve` plugin [does not currently respect `filters`][test-infra-7690].
-Until that is fixed, `filters` should only be used for the the `labels` key (as shown in the above example).
+Until that is fixed, `filters` should only be used for the `labels` key (as shown in the above example).
 
 ### OWNERS_ALIASES
 
@@ -209,21 +209,15 @@ is the state of today.
 
 ## Automation using OWNERS files
 
-### ~[`mungegithub`](https://git.k8s.io/test-infra/mungegithub)~ is deprecated
+Kubernetes uses the Prow Blunderbuss plugin and Tide.
+Tide uses GitHub queries to select PRs into “tide pools”, runs as many in a
+batch as it can (“tide comes in”), and merges them (“tide goes out”).
 
-Mungegithub's blunderbuss and submit-queue mungers are currently used for kubernetes/kubernetes. Their
-equivalents are the prow blunderbuss plugin, and prow's tide cmd.  These docs will be removed once
-kubernetes/kubernetes has transitioned over to tide.
-
-~Mungegithub polls GitHub, and "munges" things it finds, including issues and pull requests. It is
-stateful, in that restarting it means it loses track of which things it has munged at what time.~
-
-- ~[munger:
-  blunderbuss](https://git.k8s.io/test-infra/mungegithub/mungers/blunderbuss.go)~
-  - ~responsible for determining **reviewers** and assigning to them~
-- [munger:
-  submit-queue](https://git.k8s.io/test-infra/mungegithub/mungers/submit-queue.go)
-  - responsible for merging PR's
+- [Blunderbuss plugin](https://git.k8s.io/test-infra/prow/plugins/blunderbuss):
+  - responsible for determining **reviewers**
+- [Tide](https://git.k8s.io/test-infra/prow/cmd/tide):
+  - responsible for automatically running batch tests and merging multiple PRs together whenever possible.
+  - responsible for retriggering stale PR tests.
   - responsible for updating a GitHub status check explaining why a PR can't be merged (eg: a
     missing `lgtm` or `approved` label)
 
@@ -247,7 +241,7 @@ pieces of prow are used to implement the code review process above.
 - [plugin: assign](https://git.k8s.io/test-infra/prow/plugins/assign)
   - assigns GitHub users in response to `/assign` comments on a PR
   - unassigns GitHub users in response to `/unassign` comments on a PR
-- [plugin: approve](https://git.k8s.io/test-infra/prow/plugins/assign)
+- [plugin: approve](https://git.k8s.io/test-infra/prow/plugins/approve)
   - per-repo configuration:
     - `issue_required`: defaults to `false`; when `true`, require that the PR description link to
       an issue, or that at least one **approver** issues a `/approve no-isse`
@@ -257,7 +251,7 @@ pieces of prow are used to implement the code review process above.
     OWNERS files has `/approve`'d
   - comments as required OWNERS files are satisfied
   - removes outdated approval status comments
-- [plugin: blunderbuss](https://git.k8s.io/test-infra/prow/plugins/assign)
+- [plugin: blunderbuss](https://git.k8s.io/test-infra/prow/plugins/blunderbuss)
   - determines **reviewers** and requests their reviews on PR's
 - [plugin: lgtm](https://git.k8s.io/test-infra/prow/plugins/lgtm)
   - adds the `lgtm` label when a **reviewer** comments `/lgtm` on a PR

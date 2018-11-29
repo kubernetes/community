@@ -61,7 +61,7 @@ Assumption: "big tangled ball of pasta" is hard to contribute to
 - jdumars: the vault provider thing was one of the ebtter things that happened, it pushed us at MS to thing about genercizing the solution, it pushed us to think about what's better for the community vs. what's better for the provider
 - jdumars: flipside is we need to have a process where people can up with a well accepted / adopted solution, the vault provider thing was one way of doing that
 - lavalamp: I tend to think that most extension points are special snowflakes and you can't have a generic process for adding a new extension point
-- thockin: wandering back to kubernetes/kubrnetes "main point", looking at staging as "already broken out", are there other ones that we want to break out?
+- thockin: wandering back to kubernetes/kubernetes "main point", looking at staging as "already broken out", are there other ones that we want to break out?
 - dims: kubeadm could move out if needed, could move it to staging for sure
 - thockin: so what about the rest? eg: kubelet, kube-proxy... do we think that people will concretely get benefits from that? or will that cause more pain
 - thockin: we recognize this will slow down things

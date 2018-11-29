@@ -21,7 +21,7 @@ Moderators _MUST_:
 - Take care of spam as soon as possible, which may mean taking action by removing a member from that resource.
 - Foster a safe and productive environment by being aware of potential multiple cultural differences between Kubernetes community members.
 - Understand that you might be contacted by moderators, community managers, and other users via private email or a direct message. 
-- Report egregious behavior to steering@k8s.io.
+- Report violations of the Code of Conduct to <conduct@kubernetes.io>.
 
 Moderators _SHOULD_: 
 
@@ -34,7 +34,7 @@ Moderators _SHOULD_:
 
 ## Violations
 
-The Kubernetes [Steering Committee](https://github.com/kubernetes/steering) will have the final authority regarding escalated moderation matters.  Violations of the Code of Conduct will be handled on a case by case basis. Depending on severity this can range up to and including removal of the person from the community, though this is extremely rare.
+The Kubernetes [Code of Conduct Committee](https://git.k8s.io/community/committee-code-of-conduct) will have the final authority regarding escalated moderation matters.  Violations of the Code of Conduct will be handled on a case by case basis. Depending on severity this can range up to and including removal of the person from the community, though this is extremely rare.
 
 ## Specific Guidelines
 
@@ -42,6 +42,22 @@ These guidelines are for tool-specific policies that don't fit under a general u
 
 ### Mailing Lists
 
+### Moderating a SIG/WG list
+
+- SIG and Working Group mailing list should have parispittman@google.com and jorge@heptio.com as a coowner so that administrative functions can be managed centrally across the project.
+  - Moderation of the SIG/WG lists is up to that individual SIG/WG, these admins are there to help facilitate leadership changes, reset lost passwords, etc. 
+
+- Users who are violating the Code of Conduct or other negative activities (like spamming) should be moderated.
+  - [Lock the thread immediately](https://support.google.com/groups/answer/2466386?hl=en#) so that people cannot reply to the thread.
+  - [Delete the post](https://support.google.com/groups/answer/1046523?hl=en) - 
+  - In some cases you might need to ban a user from the group, follow [these instructions](https://support.google.com/groups/answer/2646833?hl=en&ref_topic=2458761#) on how stop a member from being able to post to the group. 
+
+For more technical help on how to use Google Groups, check the [Groups Help](https://support.google.com/groups/answer/2466386?hl=en&ref_topic=2458761) page.
+
+### New users posting to a SIG/WG list
+New members who post to a group will automatically have their messages put in a queue and be sent the following message automatically: "Since you're a new subscriber you're in a moderation queue, sorry for the inconvenience, a moderator will check your message shortly."
+
+Moderators will receive emails when messages are in this queue and will process them accordingly.
 
 ### Slack
 

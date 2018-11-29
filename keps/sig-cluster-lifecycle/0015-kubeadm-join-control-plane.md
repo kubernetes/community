@@ -143,7 +143,7 @@ capabilities like e.g. kubeadm upgrade for HA clusters.
 
 - This proposal doesn't provide an automated solution for transferring the CA key and other required
   certs from one control-plane instance to the other. More specifically, this proposal doesn't address
-  the ongoing discussion about storage of kubeadm TLS assets in secrets and it it is not planned
+  the ongoing discussion about storage of kubeadm TLS assets in secrets and it is not planned
   to provide support for clusters with TLS stored in secrets (but nothing in this
   proposal should explicitly prevent to reconsider this in future).
 
@@ -232,7 +232,7 @@ should copy control plane certificates from an existing control plane instance, 
 > in the machine where it is running, so it is not possible to copy automatically
 > certificates from remote locations.
 
-Please note that strictly speaking only ca, front-proxy-ca certificate and and service account key pair
+Please note that strictly speaking only ca, front-proxy-ca certificate and service account key pair
 are required to be equal among all control plane instances. Accordingly:
 
 - `kubeadm join --control-plane` will check for the mandatory certificates and fail fast if

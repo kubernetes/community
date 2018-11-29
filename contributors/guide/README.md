@@ -247,7 +247,7 @@ If you're looking to run e2e tests on your own infrastructure, [kubetest](https:
 ## Issues Management or Triage
 
 Have you ever noticed the total number of [open issues](https://issues.k8s.io)?
-Helping to manage or triage these open issues can be a great contributionand a great opportunity to learn about the various areas of the project.
+Helping to manage or triage these open issues can be a great contribution and a great opportunity to learn about the various areas of the project. Triaging is the word we use to describe the process of adding multiple types of descriptive labels to GitHub issues, in order to speed up routing issues to the right folks.
 Refer to the [Issue Triage Guidelines](/contributors/guide/issue-triage.md) for more information.
 
 # Community
@@ -273,7 +273,7 @@ You may also contact Paris Pittman via direct message on Kubernetes Slack (@pari
 ## Mentorship
 
 Please learn about our mentoring initiatives [here](http://git.k8s.io/community/mentoring/README.md).
-
+Feel free to ask us anything during our [Meet Our Contributors](https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md) to connect with us.
 # Advanced Topics
 
 This section includes things that need to be documented, but typical contributors do not need to interact with regularly.

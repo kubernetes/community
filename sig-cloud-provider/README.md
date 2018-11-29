@@ -36,6 +36,8 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following subprojects are owned by sig-cloud-provider:
 - **kubernetes-cloud-provider**
   - Owners:
+    - https://raw.githubusercontent.com/kubernetes/cloud-provider/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/cloudprovider/OWNERS
@@ -48,6 +50,11 @@ The following subprojects are owned by sig-cloud-provider:
 - **cloud-provider-vsphere**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
+- **cloud-provider-extraction**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction/OWNERS
+  - Meetings:
+    - Weekly Sync removing the in-tree cloud providers led by @cheftako and @d-nishi: [Thursdays at 13:30 PT (Pacific Time)](https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:30&tz=PT%20%28Pacific%20Time%29).
 
 ## GitHub Teams
 

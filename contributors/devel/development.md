@@ -115,6 +115,11 @@ environment. Recent Linux distros should work out-of-the-box.
 macOS ships with outdated BSD-based tools. We recommend installing [macOS GNU
 tools].
 
+### rsync
+
+Kubernetes build system requires `rsync` command present in the development
+platform.
+
 ### etcd
 
 Kubernetes maintains state in [`etcd`][etcd-latest], a distributed key store.

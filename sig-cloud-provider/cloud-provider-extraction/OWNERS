@@ -1,0 +1,8 @@
+reviewers:
+  - cheftako
+  - d-nishi
+approvers:
+  - cheftako
+  - d-nishi
+labels:
+  - sig/cloud-provider
