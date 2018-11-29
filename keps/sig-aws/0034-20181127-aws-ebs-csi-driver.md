@@ -16,7 +16,7 @@ last-updated: 2018-11-27
 status: provisional
 ---
 
-# AWS Elastic Block Store (EBS) CSI Driver 
+# AWS Elastic Block Store (EBS) CSI Driver
 
 ## Table of Contents
 
@@ -41,14 +41,14 @@ Similar to CNI plugins, AWS EBS CSI driver will be a stand alone plugin that liv
 
 ### Goals
 AWS EBS CSI driver will provide similar user experience as in-tree EBS plugin:
-* As an application developer, he will not even notice any difference between EBS CSI driver and in-tree plugin. His workflow will stay the same as current. 
+* As an application developer, he will not even notice any difference between EBS CSI driver and in-tree plugin. His workflow will stay the same as current.
 * As an infrastructure operator, he just need to create/update storage class to use CSI driver to manage underlying storage backend.
 
 List of driver features include volume creation/deletion, volume attach/detach, volume mount/unmount, volume scheduling, create volume configurations, volume snapshotting, mount options, raw block volume, etc.
 
 ### Non-Goals
 * Supporting non AWS block storage
-* Supporting other AWS storage serivces such as Dynamodb, S3, etc. 
+* Supporting other AWS storage serivces such as Dynamodb, S3, etc.
 
 ## Proposal
 
@@ -62,13 +62,13 @@ Operation creates StorageClass with  volumeBindingMode = WaitForFirstConsumer. W
 
 ### Risks and Mitigations
 * *Information disclosure* - AWS EBS CSI driver requires permission to perform AWS operation on users&#39; behave. EBS CSI driver will make sure non of credentials are logged. And we will instruct user to grant only required permission to driver as best securtiy practise.
-* *Escalation of Privileges* - Since EBS CSI driver is formatting and mounting volumes, it requires root privilege to permform the operations. So that driver will have higher privilege than other containers in the cluster. The driver will not execute random command provided by untrusted user. All of its interfaces are only provided for kuberenetes system components to interact with. The driver will also validate requests to make sure it aligns with its assumption. 
+* *Escalation of Privileges* - Since EBS CSI driver is formatting and mounting volumes, it requires root privilege to permform the operations. So that driver will have higher privilege than other containers in the cluster. The driver will not execute random command provided by untrusted user. All of its interfaces are only provided for kuberenetes system components to interact with. The driver will also validate requests to make sure it aligns with its assumption.
 
 ## Graduation Criteria
-AWS EBS CSI driver provides the same features as in-tree plugin. 
+AWS EBS CSI driver provides the same features as in-tree plugin.
 
 ## Implementation History
-* 2018-11-26 Initial proposal to SIG 
-* 2018-11-26 Initial KEP draft 
+* 2018-11-26 Initial proposal to SIG
+* 2018-11-26 Initial KEP draft
 * 2018-12-03 Alpha release with kuberentes 1.13
 
