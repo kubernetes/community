@@ -53,7 +53,8 @@ What to expect: Attendees will have access to bowl, play pool/billiards, suggest
   - Working on a curated list of issues and challenges that SIG Docs is tackling at that time. (Current+Doc Capacity: 300)
 
 ### Monday Schedule
-**The schedule will be posted to the main KubeCon/CloudNativeCon site on Monday, November 26th with more details about each of the sessions, birds of a feather statements, and more.**
+
+The schedule has been published to [the community calendar](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&mode=DAY&dates=20181210/20181211) so that you can subscribe to the sessions you want to go to.
 
 **Morning**
 
@@ -68,11 +69,11 @@ What to expect: Attendees will have access to bowl, play pool/billiards, suggest
 | 08:00am    | -   | - | Open Space**  | -  |
 | 09:00am    | Welcome & Details (all tracks) | -  | &#124;  |   -  |
 | 09:30am    | Technical Vision for Kubernetes w/ Architecture's @bgrant0607 |  - | &#124;  | - |
-| 10:00am    | State of Security w/ Auth's @tallclair @cjcullen | Doc Planning (open to all) | &#124; | Where to Contribute |
+| 10:00am    | Security Through the Ages | Doc Planning (open to all) | &#124; | Where to Contribute |
 | 10:30am    | State of Networking w/ @thockin|  -  |   &#124;  | Where to Communicate |
 | 10:55am    | 15 minute break | -  | &#124;  |  &#124; |
 | 11:10am    | State of KEPs w/ PM's @justaugustus |  -  |   &#124;  | OWNERS Files |
-| 11:30am    | State of Cluster Lifecycle w/ @timothysc |  -  |   &#124;  | Github Workflow |
+| 11:30am    | Past, Present, Future of SIG Cluster Lifecycle |  -  |   &#124;  | Github Workflow |
 | 12:05pm    | Lunch Break | +   | Last call for Unconference Voting*  |   -  |
 
 
