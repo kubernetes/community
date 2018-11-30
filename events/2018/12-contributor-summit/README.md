@@ -92,8 +92,8 @@ The schedule has been published to [the community calendar](https://calendar.goo
 | 10:00am    | Security Through the Ages | Doc Planning (open to all) | &#124; | Where to Contribute |
 | 10:30am    | State of Networking w/ @thockin|  -  |   &#124;  | Where to Communicate |
 | 10:55am    | 15 minute break | -  | &#124;  |  &#124; |
-| 11:10am    | State of KEPs w/ PM's @justaugustus |  -  |   &#124;  | OWNERS Files |
-| 11:30am    | Past, Present, Future of SIG Cluster Lifecycle |  -  |   &#124;  | Github Workflow |
+| 11:10am    | State of KEPs w/ PM's @justaugustus |  -  |   &#124;  | SIGs and Repositories|
+| 11:30am    | Past, Present, Future of SIG Cluster Lifecycle |  -  |   &#124;  | Kubernetes Automation and Github Workflow |
 | 12:05pm    | Lunch Break | +   | Last call for Unconference Voting*  |   -  |
 
 
@@ -102,12 +102,12 @@ The schedule has been published to [the community calendar](https://calendar.goo
 | Time       | Main Track  | Planning & Training  | Track #1  |  Track #2  |  Track #3 |  Track #4 | Contributor Lounge | New Contributor Workshop |
 | --- | :---: | :---: | :---: | :---: | :---: |:---: | :---: | :---: |
 | **Room** | 608/609 [theater] |  613 [pods] | 606 [fishbowl] | 607 [fishbowl]  | 605 [fishbowl] | 611 [fishbowl] |   610  [pods] | 602/603/604 [round classroom]  |
-| 1:00pm    | Automation and CI w/Testing and ContribEx @spiffxp @cblecker [50 mins] |  Docs Planning [2 hrs; open to all] | Networking BoF [50 mins] | KEP BoF [50 mins] | *Unconference Slot [50 mins] | - | Open Space  | Pull Request Practice |
+| 1:00pm    | Automation and CI w/Testing and ContribEx @spiffxp @cblecker [50 mins] |  Docs Planning [2 hrs; open to all] | Networking BoF [50 mins] | KEP BoF [50 mins] | *Unconference Slot [50 mins] | - | Open Space  | Submitting Issues and Pull Requests: Real-Time Practice |
 | 1:50pm | 10 Minute Break | -  | -  | -  | -  | -  | -  | &#124; |
-| 2:00pm | API Codebase Tour - @sttts [50 mins] | " | Cluster lifecycle BoF [50 mins] | etcd Maintainers Ask Us Anything [50 mins] | - | *Unconference Slot [50 mins] | &#124; | Testrgid tour, docs, membership |
-| 2:30pm | " |  SIG/WG Chair/TL Training [1.5 hrs]  |  "  | "  | -  | " | &#124; | -  |
+| 2:00pm | API Codebase Tour - @sttts [50 mins] | " | Cluster lifecycle BoF [50 mins] | etcd Maintainers Ask Us Anything [50 mins] | - | *Unconference Slot [50 mins] | &#124; | Local Test&Build |
+| 2:30pm | " |  SIG/WG Chair/TL Training [1.5 hrs]  |  "  | "  |   | " | &#124; |  Testgrid Tour; Docs  |
 | 2:50pm | 10 Minute Break | "  | -  | -  | -  | -  | -  | &#124; |
-| 3:00pm | Live API Code Review - @lavalamp  | " | Long Term Support (WG LTS) - @tpepper [50 mins] | UI Dashboard Planning Discussion [50 mins] | *Unconference Slot [50 mins] | *Unconference Slot [50 mins] | &#124; | SIG Meet and Greet |
+| 3:00pm | Live API Code Review - @lavalamp  | " | Long Term Support (WG LTS) - @tpepper [50 mins] | UI Dashboard Planning Discussion [50 mins] | *Unconference Slot [50 mins] | *Unconference Slot [50 mins] | &#124; | Going Beyond: Releases and Membership; SIG Meet and Greet |
 | 3:50pm | 10 Minute Break | -  | -  | -  | -  | -  | -  | &#124; |
 | 4:00pm | Steering Committee Q+A | -  | -  | -  | -  | -  | -  | &#124; |
 | 4:45pm | Wrap-Up and Group Pic! |  -  | -  | -  | -  | -  | -  | -  |
