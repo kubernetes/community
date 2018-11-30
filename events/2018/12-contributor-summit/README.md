@@ -11,12 +11,7 @@ In some sense, the summit is a real-life extension of the community meetings and
 
 ## Registration
 
-The event is now full and is accepting a wait list on the below form. If you are a SIG/WG Chair, Tech Lead, or Subproject Owner, please reach out to community@kubernetes.io after filling out the wait list form.
-
-- [RSVP/Wait List Form](https://goo.gl/X8YrRv)
-- If you are planning on attending the New Contributor Track, [Sign the CLA](/CLA.md) if you have not done so already.
-
-This is not your KubeCon/CloudNativeCon ticket. This is a co-located event. KC/CNC is currently sold out; however, you do not need a KC/CNC ticket to attend this event. 
+Public registration for the event is now closed. If you are a SIG/WG Chair, Tech Lead, or Subproject Owner, please reach out to community@kubernetes.io to make arrangements. There is a limited amount of reserved slots available to you.
 
 ## When and Where
 
