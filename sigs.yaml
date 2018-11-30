@@ -2259,7 +2259,7 @@ workinggroups:
     meetings:
     - description: Regular WG Meeting
       day: Friday
-      time: "15:00"
+      time: "16:00"
       tz: "UTC"
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
