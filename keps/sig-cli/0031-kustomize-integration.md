@@ -98,6 +98,9 @@ Kustomize has following subcommands:
 - Resolve variables and substitute them
 
 ```
+# TODO: currently kustomization.yaml is not versioned
+# Need to version this with apiVersion and Kind
+# https://github.com/kubernetes-sigs/kustomize/issues/588
 namePrefix: alices-
 
 commonAnnotations:
