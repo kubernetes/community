@@ -72,7 +72,7 @@ NOTES:
 
 ## Control Plane Configurations for Testing
 
-Configuration of the control plane for cluster testing varies by provider, and there are multiple reasonable configurations. Discussion and guideline of control plane configuration options and standards are documented [here](provider-configs.md).
+Configuration of the control plane for cluster testing varies by provider, and there are multiple reasonable configurations. Discussion and guideline of control plane configuration options and standards are documented [here](configs-and-limits/provider-configs.md).
 
 ## Open Questions
 

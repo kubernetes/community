@@ -2,7 +2,7 @@
 
 If you'd like to help with documentation, please read the [kubernetes.io site instructions](https://git.k8s.io/kubernetes.github.io/README.md).
 
-If you'd like to contribute an example, please read the [guidelines](https://git.k8s.io/kubernetes/examples/guidelines.md).
+If you'd like to contribute an example, please read the [guidelines](https://git.k8s.io/examples/guidelines.md).
 
 Owners: @kubernetes/docs, @kubernetes/examples
 

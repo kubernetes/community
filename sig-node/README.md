@@ -45,7 +45,7 @@ The following subprojects are owned by sig-node:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
 - **node-feature-discovery**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/node-feature-discovery/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/OWNERS
 - **node-problem-detector**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS

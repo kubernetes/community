@@ -21,7 +21,7 @@ Iptables can be slow in packet processing when a large number of services exist.
 
 - Moving from iptables to IPVS may help here if that works stably. We have the IPVS alternative [implemented](https://github.com/kubernetes/kubernetes/pull/46580), but it still hasn’t gone to GA.
 - For a long time the official kernel upstream answer for this issue was that nftables was going to solve all iptables-related scalability problems (both with packet processing and with rule changes), and there's now an out-of-tree nftables kube-proxy backend too ([#62720](https://github.com/kubernetes/kubernetes/issues/62720)).
-- There's also an alternative plan to fix the packet processing speed problems by rewriting iptables to use eBPF inside the kernel (see - https://cilium.io/blog/2018/04/17/why-is-the-kernel-community-replacing-iptables).
+- There's also an alternative plan to fix the packet processing speed problems by rewriting iptables to use eBPF inside the kernel (see - https://cilium.io/blog/2018/04/17/why-is-the-kernel-community-replacing-iptables ).
 
 
 ## Slow/failing iptables-restore operations when large number of rules exist

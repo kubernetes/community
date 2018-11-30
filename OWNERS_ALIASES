@@ -9,6 +9,7 @@ aliases:
   sig-architecture-leads:
     - bgrant0607
     - jdumars
+    - mattfarina
   sig-auth-leads:
     - mikedanese
     - enj

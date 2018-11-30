@@ -1,6 +1,6 @@
 # SLACK GUIDELINES
 
-Slack is the main communication platform for Kubernetes outside of our mailing lists. It’s important that conversation stays on topic in each channel, and that everyone abides by the Code of Conduct. We have over 30,000 members who should all expect to have a positive experience.
+Slack is the main communication platform for Kubernetes outside of our mailing lists. It’s important that conversation stays on topic in each channel, and that everyone abides by the Code of Conduct. We have over 50,000 members who should all expect to have a positive experience.
 
 Chat is searchable and public. Do not make comments that you would not say on a video recording or in another public space. Please be courteous to others.
 
@@ -33,7 +33,7 @@ Please reach out to the #slack-admins group with your request to create a new ch
 Channels are dedicated to [SIGs, WGs](/sig-list.md), sub-projects, community topics, and related Kubernetes programs/projects.  
 Channels are not:
 * company specific; cloud providers are ok with product names as the channel. Discourse will be about Kubernetes-related topics and not proprietary information of the provider.
-* private unless there is an exception: code of conduct matters, mentoring, security/vulnerabilities, or steering committee.  
+* private unless there is an exception: code of conduct matters, mentoring, security/vulnerabilities, github management, or steering committee.  
 
 Typical naming conventions:
 #kubernetes-foo #sig-foo #meetup-foo #location-users #projectname
@@ -47,11 +47,13 @@ Join the #slack-admins channel or contact one of the admins in the closest timez
 
 What if you have a problem with an admin?
 Send a DM to another listed Admin and describe the situation OR
-If it’s a code of conduct issue, please send an email to steering-private@kubernetes.io and describe the situation
+If it’s a code of conduct issue, please send an email to conduct@kubernetes.io and describe the situation
 
 ## BOTS, TOKENS, WEBHOOKS, OH MY
 
-Bots, tokens, and webhooks are reviewed on a case-by-case basis with most requests being rejected due to security, privacy, and usability concerns.. Bots and the like tend to make a lot of noise in channels. Our Slack instance has over 30,000 people and we want everyone to have a great experience. Please join #Slack-admins and have a discussion about your request before requesting the access. GitHub workflow alerts into certain channels and requests from CNCF are typically OK.
+Bots, tokens, and webhooks are reviewed on a case-by-case basis with most requests being rejected due to security, privacy, and usability concerns. Bots and the like tend to make a lot of noise in channels. Our Slack instance has over 50,000 people and we want everyone to have a great experience. Please join #slack-admins and have a discussion about your request before requesting the access.  
+
+Typically OK: GitHub, CNCF requests, and tools/platforms that we use to contribute to Kubernetes
 
 ## ADMIN MODERATION
 
@@ -74,8 +76,15 @@ For reasons listed below, admins may inactivate individual Slack accounts. Due t
 In the case that certain channels have rules or guidelines, they will be listed in the purpose or pinned docs of that channel.
 
 #kubernetes-dev = questions and discourse around upstream contributions and development to kubernetes
-#kubernetes-careers = job openings for positions working with/on/around Kubernetes. Postings should include contact details.
+#kubernetes-careers = job openings for positions working with/on/around Kubernetes. Post the job once and pin it. Pins expire after 30 days. Postings must include:  
+- A link to the posting or job description
+- The business name that will employ the Kubernetes hire
+- The location of the role or if remote is OK
 
 ## DM (Direct Message) Conversations
 
 Please do not engage in proprietary company specific conversations in the Kubernetes Slack instance. This is meant for conversations around related Kubernetes open source topics and community. Proprietary conversations should occur in your company Slack and/or communication platforms.  As with all communication, please be mindful of appropriateness, professionalism, and applicability to the Kubernetes community.
+
+
+Note:
+We archive the entire workgroup's slack data in zip files when we have time. [The latest archive is from June 2016-November 2018.](https://drive.google.com/drive/folders/1idJkWcDuSfs8nFUm-1BgvzZxCqPMpDCb?usp=sharing)

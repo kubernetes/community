@@ -31,6 +31,8 @@ The project has 4 main types of groups:
 * Working Groups, WGs
 * Committees
 
+![Kubernetes Governance Diagram](kubernetes_governance_diagram.png)
+
 ## SIGs
 
 The Kubernetes project is organized primarily into Special Interest
@@ -103,35 +105,17 @@ Subprojects for each SIG are documented in [sigs.yaml](sigs.yaml).
 
 We need community rallying points to facilitate discussions/work
 regarding topics that are short-lived or that span multiple SIGs.
-This is the purpose of Working Groups (WG). The intent is to make
-Working Groups relatively easy to create and to deprecate, once
-inactive.
-
-Working groups do not own any code or subprojects. Instead, they are a place for
-people to discuss topics that cross SIG boundaries.
 
 Working groups are primarily used to facilitate topics of discussion that are in
 scope for Kubernetes but that cross SIG lines. If a set of folks in the
 community want to get together and discuss a topic, they can do so without
-forming a Working Group. As a community we will be looking for other ways to
-highlight and encourage a larger ecosystem (with things like slack channels)
-without offering any official endorsement.
+forming a Working Group.
 
-To propose a new working group, first find a SIG to sponsor the group.
-Next, send a proposal to kubernetes-dev@googlegroups.com and also include
-any potentially interested SIGs. Wait for public comment. If there's
-enough interest, a new Working Group should be formed.
-
-Create a new mailing list in the from of kubernetes-wg-group-name. Working
-groups typically have a Slack channel as well as regular meetings on zoom.
-It's encouraged to keep a clear record of all accomplishments that's publicly
-accessible.  Like SIGs, working group communications and meetings should be
-open and be recorded for later viewing.
+See [working group governance] for more details about forming and disbanding
+Working Groups.
 
 Working groups are documented in [sigs.yaml](sigs.yaml).
 
-See [working group governance] for more details about forming and disbanding Working
-Groups.
 
 ## Committees
 

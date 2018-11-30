@@ -23,7 +23,9 @@ approvers:
   - "@hogepodge"
   - "@jagosan"
 editor: TBD
-status: provisional
+creation-date: 2018-07-31
+last-updated: 2018-11-16
+status: implementable
 ---
 ## Transfer the responsibility of maintaining valid documentation for Cloud Provider Code to the Cloud Provider
 
@@ -172,4 +174,9 @@ Major milestones in the life cycle of a KEP should be tracked in Implementation 
 The Alternatives section is used to highlight and record other possible approaches to delivering the value proposed by a KEP.
 * SIG docs could tag cloudprovider documentation as a blocking item for Kubernetes releases
 * SIG docs could also assign SIG-<provider> leads to unblock cloudprovider documentation in the planning phase for the release.
+
+## Implementation History
+
+- July 31st 2018: KEP is merged as a signal of acceptance. Cloud providers should now be looking to add documentation for their provider according to this KEP.
+- Nov 19th 2018: KEP has been in implementation stage for roughly 4 months with Alibaba Cloud, Azure, DigitalOcean, OpenStack and vSphere having written documentation for their providers according to this KEP.
 

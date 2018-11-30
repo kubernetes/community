@@ -103,7 +103,7 @@ If you'd like to contribute, please read the [conventions](/contributors/devel/k
 * [Eliminate round-trip conversion of API objects in kubectl](https://github.com/kubernetes/kubernetes/issues/3955)
 * [Move preferences out of kubeconfig](https://github.com/kubernetes/kubernetes/issues/10693)
 * And then add more preferences
-  * Enable/disable explanatory mode (see [kploy output](http://kubernetes.sh/kploy/))
+  * Enable/disable explanatory mode (see [kploy output](https://github.com/kubernauts/kploy))
   * Permanently disable warnings once displayed
   * Default labels as columns
   * Default `--record`, `--save-config`, etc.

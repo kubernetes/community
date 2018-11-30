@@ -22,17 +22,12 @@ and meetings devoted to Kubernetes.
 * [Twitter]
 * [Blog]
 * Pose questions and help answer them on [Stack Overflow].
-* [Slack] - sign up  
 
-To add new channels, contact one of the admins in the #slack-admins channel. Our guidelines are [here](/communication/slack-guidelines.md).
+## Slack
 
-## Issues
+[Join Slack] - sign up and join channels on topics that interest you, but please read our [Slack Guidelines] before participating.
 
-If you have a question about Kubernetes or have a problem using it,
-please start with the [troubleshooting guide].
-
-If that doesn't answer your questions, or if you think you found a bug,
-please [file an issue].
+If you want to add a new channel, contact one of the admins in the #slack-admins channel.
 
 
 ## Mailing lists
@@ -46,6 +41,14 @@ relevant to you, as you would any other Google Group.
 * [kubernetes-dev] hosts development announcements and discussions around developing kubernetes itself
 * [Discuss Kubernetes] is where kubernetes users trade notes
 * Additional Google groups exist and can be joined for discussion related to each SIG and Working Group.  These are linked from the [SIG list](/sig-list.md).
+
+## Issues
+
+If you have a question about Kubernetes or have a problem using it,
+please start with the [troubleshooting guide].
+
+If that doesn't answer your questions, or if you think you found a bug,
+please [file an issue].
 
 ## Accessing community documents
 
@@ -63,9 +66,9 @@ Office hours are held once a month. Please refer to [this document](/events/offi
 
 ## Weekly Meeting
 
-We have PUBLIC and RECORDED [weekly meeting] every Thursday at 10am US Pacific Time over Zoom.
+We have a public and recorded [weekly meeting] every Thursday at 10am US Pacific Time over Zoom.
 
-Map that to your local time with this [timezone table].
+Convert it to your local time using the [timezone table].
 
 See it on the web at [calendar.google.com], or paste this [iCal url] into any iCal client.
 
@@ -78,7 +81,7 @@ please propose a specific date on the [Kubernetes Community Meeting Agenda].
 
 ## Conferences
 
-Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Europe and winter in North America. Information about these and other community events is available on the CNCF [events] pages.
+Kubernetes is the main focus of KubeCon + CloudNativeCon, held every spring in Europe, summer in China, and winter in North America. Information about these and other community events is available on the CNCF [events] pages.
 
 
 [Blog]: https://kubernetes.io/blog/
@@ -96,7 +99,8 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [Discuss Kubernetes]: https://discuss.kubernetes.io
 [kubernetes.slack.com]: https://kubernetes.slack.com
-[Slack]: http://slack.k8s.io
+[Join Slack]: http://slack.k8s.io
+[Slack Guidelines]: /communication/slack-guidelines.md
 [Special Interest Group]: /README.md#SIGs
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [timezone table]: https://www.google.com/search?q=1000+am+in+pst

@@ -11,7 +11,7 @@ setup the Linux Foundation CNCF CLA check for your repositories, please read on.
 1. Go to the settings for your organization or webhook, and choose Webhooks from
    the menu, then "Add webhook"
     - Payload URL:
-      https://identity.linuxfoundation.org/lfcla/github/postreceive?group=284&comment=no&target=https://identity.linuxfoundation.org/projects/cncf
+      `https://identity.linuxfoundation.org/lfcla/github/postreceive?group=284&comment=no&target=https://identity.linuxfoundation.org/projects/cncf`
       - `group=284` specifies the ID of the CNCF project authorized committers
         group in our CLA system.
       - `comment=no` specifies that our system should not post help comments

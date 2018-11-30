@@ -55,6 +55,9 @@ The following subprojects are owned by sig-storage:
     - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi-migration-library/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/csi-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/node-driver-registrar/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-utils/master/OWNERS
 - **external-storage**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS

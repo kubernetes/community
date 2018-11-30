@@ -61,7 +61,7 @@ If you find that any one person is in charge of a resource it is your responsibi
 
 ### Community Meeting
 
-- [ ] Generate an archive of the [communtiy meeting notes](https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#heading=h.2gp5yf2snwg5) for the quarter if necessary
+- [ ] Generate an archive of the [community meeting notes](https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#heading=h.2gp5yf2snwg5) for the quarter if necessary
   - [ ] Ensure the retrospective section has links to the retrospective for the releases
   - [ ] Ensure the demo section is filled out and demos are assigned dates
   - [ ] Ensure the [agenda template and hosting guide](https://docs.google.com/document/d/1g7fR5cvCGFq15SJ4iQMclbj0QIeREKu_QP8ftnSaJ4o/edit) are up to date 

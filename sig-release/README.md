@@ -56,18 +56,14 @@ Note that the links to display team membership will only work if you are a membe
 
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
-| @kubernetes/sig-release-admins | [link](https://github.com/orgs/kubernetes/teams/sig-release-admins) | Release Team Admins |
-| @kubernetes/sig-release-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-release-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-release-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-release-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-release-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-release-feature-requests) | Feature Requests |
-| @kubernetes/sig-release-members | [link](https://github.com/orgs/kubernetes/teams/sig-release-members) | Release Team Members |
-| @kubernetes/sig-release-misc | [link](https://github.com/orgs/kubernetes/teams/sig-release-misc) | General Discussion |
-| @kubernetes/sig-release-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-release-pr-reviews) | PR Reviews |
-| @kubernetes/sig-release-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-release-proposals) | Design Proposals |
-| @kubernetes/sig-release-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-release-test-failures) | Test Failures and Triage |
+| @kubernetes/sig-release | [link](https://github.com/orgs/kubernetes/teams/sig-release) | SIG Release Members |
+| @kubernetes/sig-release-admins | [link](https://github.com/orgs/kubernetes/teams/sig-release-admins) | Admins for SIG Release repositories |
+| @kubernetes/kubernetes-milestone-maintainers | [link](https://github.com/orgs/kubernetes/teams/kubernetes-milestone-maintainers) | Milestone Maintainers |
+| @kubernetes/kubernetes-release-managers | [link](https://github.com/orgs/kubernetes/teams/kubernetes-release-managers) | Release Managers |
 
 <!-- BEGIN CUSTOM CONTENT -->
-[SIG Release] has moved!
+---
 
-[SIG Release]: https://github.com/kubernetes/sig-release
+_The canonical location for SIG Release information is [k/sig-release](https://github.com/kubernetes/sig-release)._
+
 <!-- END CUSTOM CONTENT -->

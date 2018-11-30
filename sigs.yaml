@@ -205,6 +205,9 @@ sigs:
       - name: Jaice Singer DuMars
         github: jdumars
         company: Google
+      - name: Matt Farina
+        github: mattfarina
+        company: Samsung SDS
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
@@ -1069,6 +1072,9 @@ sigs:
     - name: website
       owners:
       - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
+    - name: website-metadata
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/website-metadata/master/OWNERS
   - name: GCP
     dir: sig-gcp
     mission_statement: >
@@ -1169,7 +1175,7 @@ sigs:
       tz: "UTC"
       frequency: biweekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-      archive_url: https://docs.google.com/document/d/1gWuAATtlmI7XJILXd31nA4kMq6U9u63L70382Y3xcbM/edit
+      archive_url: https://docs.google.com/document/d/17emKiwJeqfrCsv0NZ2FtyDbenXGtTNCsDEiLbPa7x7Y/edit
     contact:
       slack: sig-instrumentation
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation
@@ -1323,8 +1329,8 @@ sigs:
     - name: services
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/pkg/kubernetes/master/controller/endpoint/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/pkg/kubernetes/master/controller/service/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
     - name: kube-dns
       owners:
       - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
@@ -1396,7 +1402,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
     - name: node-feature-discovery
       owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/node-feature-discovery/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/OWNERS
     - name: node-problem-detector
       owners:
       - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
@@ -1534,24 +1540,14 @@ sigs:
       slack: sig-release
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-release
       teams:
+      - name: sig-release
+        description: SIG Release Members
       - name: sig-release-admins
-        description: Release Team Admins
-      - name: sig-release-api-reviews
-        description: API Changes and Reviews
-      - name: sig-release-bugs
-        description: Bug Triage and Troubleshooting
-      - name: sig-release-feature-requests
-        description: Feature Requests
-      - name: sig-release-members
-        description: Release Team Members
-      - name: sig-release-misc
-        description: General Discussion
-      - name: sig-release-pr-reviews
-        description: PR Reviews
-      - name: sig-release-proposals
-        description: Design Proposals
-      - name: sig-release-test-failures
-        description: Test Failures and Triage
+        description: Admins for SIG Release repositories
+      - name: kubernetes-milestone-maintainers
+        description: Milestone Maintainers
+      - name: kubernetes-release-managers
+        description: Release Managers
     subprojects:
     - name: hyperkube
       owners:
@@ -1807,6 +1803,9 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi-migration-library/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/csi-api/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/node-driver-registrar/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-utils/master/OWNERS
     - name: external-storage
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
@@ -2291,3 +2290,5 @@ workinggroups:
       tz: "PT (Pacific Time)"
       frequency: weekly
       url: https://docs.google.com/document/d/1RbC4SBZBlKth7IjYv_NaEpnmLGwMJ0ElpUOmsG-bdRA/edit
+    contact:
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-audit

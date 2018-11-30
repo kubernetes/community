@@ -21,10 +21,14 @@ Perform a security audit on k8s with a vendor and produce as artifacts a threat 
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/)
-* [Mailing list]()
+* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-audit)
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Request For Proposals
       
-The RFP will be open between 2018/10/29 and 2018/11/26 and has been published [here](https://github.com/kubernetes/community/blob/master/wg-security-audit/RFP.md).
+The RFP will be open between 2018/10/29 and 2018/11/30 and has been published [here](https://github.com/kubernetes/community/blob/master/wg-security-audit/RFP.md).
+
+## Submission
+
+Submissions should be sent to the [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-audit)
 <!-- END CUSTOM CONTENT -->
