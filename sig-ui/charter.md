@@ -1,7 +1,5 @@
 # SIG UI Charter
 
-This charter is a WIP.
-
 This charter adheres to the conventions described in the [Kubernetes Charter README] and uses the Roles and Organization Management outlined in [sig-governance].
 
 ## Scope
