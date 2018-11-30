@@ -71,9 +71,9 @@ by putting a dot (and only one dot!) on the session that you would be interested
 
 - Please respect the process by only voting for sessions you plan on attending and refraining from gaming the system.  
 - Prior to lunch during the Summit we will pick and announce the top 4 talks by number of votes and then 
-schedule them for the afternoon. 
+schedule them for the afternoon.
 
-In case of a tie or unclear winner we will ask the audience to vote on the spot in the main session by a show of hands.
+In case of a tie or unclear winner we will schedule the sessions in the contributor lounge.
 
 
 
