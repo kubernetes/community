@@ -6,15 +6,12 @@ This charter adheres to the conventions described in the [Kubernetes Charter REA
 
 ## Scope
 
-SIG-UI covers all things user interface related within the Kubernetes project. Efforts are centered around the Kubernetes Dashboard: a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
-
-### In scope
-
-  Link to SIG section in [sigs.yaml]
+SIG-UI covers GUI-related aspects of the Kubernetes project. Efforts are centered around the Kubernetes Dashboard: a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
 
 #### Code, Binaries and Services
 
-- Kubernetes Dashboard
+- [Kubernetes Dashboard](https://github.com/kubernetes/dashboard)
+- [Dashboard Cluster Addon](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dashboard)
 
 #### Cross-cutting and Externally Facing Processes
 
