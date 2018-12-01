@@ -1,6 +1,0 @@
-reviewers:
-  - sig-cli-leads
-approvers:
-  - sig-cli-leads
-labels:
-  - sig/cli
