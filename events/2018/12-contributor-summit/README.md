@@ -90,9 +90,9 @@ The schedule has been published to [the community calendar](https://calendar.goo
 | 09:00am    | Welcome & Details (all tracks) | -  | &#124;  |   -  |
 | 09:30am    | Technical Vision for Kubernetes w/ Architecture's @bgrant0607 |  - | &#124;  | - |
 | 10:00am    | Security Through the Ages | Doc Planning (open to all) | &#124; | Where to Contribute |
-| 10:30am    | State of Networking w/ @thockin|  -  |   &#124;  | Where to Communicate |
+| 10:30am    | SIG Networking Update |  -  |   &#124;  | Where to Communicate |
 | 10:55am    | 15 minute break | -  | &#124;  |  &#124; |
-| 11:10am    | State of KEPs w/ PM's @justaugustus |  -  |   &#124;  | SIGs and Repositories|
+| 11:10am    | Put on Your Thinking KEP |  -  |   &#124;  | SIGs and Repositories|
 | 11:30am    | Past, Present, Future of SIG Cluster Lifecycle |  -  |   &#124;  | Kubernetes Automation and Github Workflow |
 | 12:05pm    | Lunch Break | +   | Last call for Unconference Voting*  |   -  |
 
