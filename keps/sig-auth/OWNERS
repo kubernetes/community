@@ -1,6 +1,0 @@
-reviewers:
-  - sig-auth-leads
-approvers:
-  - sig-auth-leads
-labels:
-  - sig/auth
