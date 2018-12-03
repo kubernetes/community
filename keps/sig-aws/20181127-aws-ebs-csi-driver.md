@@ -40,8 +40,10 @@ Similar to CNI plugins, AWS EBS CSI driver will be a stand alone plugin that liv
 
 ### Goals
 AWS EBS CSI driver will provide similar user experience as in-tree EBS plugin:
-* As an application developer, he will not even notice any difference between EBS CSI driver and in-tree plugin. His workflow will stay the same as current.
+* As an application developer, he will not even notice any differences between EBS CSI driver and in-tree plugin. His workflow will stay the same as current.
 * As an infrastructure operator, he just need to create/update storage class to use CSI driver to manage underlying storage backend.
+
+Since EBS CSI Driver is out-of-tree implementation that comes outside of kuberenetes distrubtion, documentations will be provided on how to install, use and upgrade the driver.
 
 List of driver features include volume creation/deletion, volume attach/detach, volume mount/unmount, volume scheduling, create volume configurations, volume snapshotting, mount options, raw block volume, etc.
 
@@ -54,13 +56,16 @@ List of driver features include volume creation/deletion, volume attach/detach, 
 ### User Stories
 
 #### Static Provisioning
-Operator creates a pre-created EBS volume on AWS and a PV that refer the EBS volume on cluster. Developer creates PVC and a Pod that uses the PVC. Then developer deploys the Pod during which time the PV will be attached to container inside Pod after PVC bonds to PV successfully.
+Operator creates a pre-created EBS volume on AWS and a CSI PV that refers the EBS volume on cluster. Developer creates PVC and a Pod that uses the PVC. Then developer deploys the Pod during which time the PV will be attached to container inside Pod after PVC bonds to PV successfully.
+
+#### Dynamic Provisioning
+Operator creates a storage class that defines EBS CSI drivere as provisioner. Developer creates PVC and a Pod that uses the PVC. A new CSI PV will be created dynamically and be bond to the defined PVC. Finally, the PV will be attached to container inside Pod.
 
 #### Volume Scheduling
 Operation creates StorageClass with  volumeBindingMode = WaitForFirstConsumer. When developer deploys a Pod that has PVC that is trying to claim for a PV, a new PV will be created, attached, formatted and mounted inside Pod&#39;s container by the EBS CSI driver. Topology information provided by EBS CSI driver will be used during Pod scheduling to guarantee that both Pod and volume are collocated in the same availability zone.
 
 ### Risks and Mitigations
-* *Information disclosure* - AWS EBS CSI driver requires permission to perform AWS operation on users&#39; behave. EBS CSI driver will make sure non of credentials are logged. And we will instruct user to grant only required permission to driver as best securtiy practise.
+* *Information disclosure* - AWS EBS CSI driver requires permission to perform AWS operation on users&#39; behalf. EBS CSI driver will make sure non of credentials are logged. And we will instruct user to grant only required permission to driver as best securtiy practise.
 * *Escalation of Privileges* - Since EBS CSI driver is formatting and mounting volumes, it requires root privilege to permform the operations. So that driver will have higher privilege than other containers in the cluster. The driver will not execute random command provided by untrusted user. All of its interfaces are only provided for kuberenetes system components to interact with. The driver will also validate requests to make sure it aligns with its assumption.
 
 ## Graduation Criteria
