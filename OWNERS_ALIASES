@@ -120,6 +120,10 @@ aliases:
     - garethr
   wg-apply-leads:
     - lavalamp
+  wg-component-standard-leads:
+    - luxas
+    - sttts
+    - mtaufen
   wg-container-identity-leads:
     - smarterclayton
     - destijl

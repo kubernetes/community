@@ -108,6 +108,10 @@ sigs:
     - name: yaml
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/yaml/master/OWNERS
+    - name: component-base
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/component-base/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/OWNERS
   - name: Apps
     dir: sig-apps
     mission_statement: >
@@ -2340,3 +2344,31 @@ workinggroups:
     contact:
       slack: wg-security-audit
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-audit
+  - name: Component Standard
+    dir: wg-component-standard
+    mission_statement: >
+      Develop a standard foundation (philosophy and libraries) for core Kubernetes components to build on top of.
+      Areas to standardize include configuration (flags, ComponentConfig APIs, ...), status endpoints (healthz, configz, ...), integration points (delegated authn/z, ...), and logging.
+      Details are outlined in KEP 0032: https://github.com/kubernetes/enhancements/blob/master/keps/sig-cluster-lifecycle/0032-create-a-k8s-io-component-repo.md.
+    charter_link:
+    leadership:
+      chairs:
+      - name: Lucas Käldström
+        github: luxas
+        company: Luxas Labs (occasionally contracting for Weaveworks)
+      - name: Dr. Stefan Schimanski
+        github: sttts
+        company: Red Hat
+      - name: Michael Taufen
+        github: mtaufen
+        company: Google
+    meetings:
+    - description: Regular WG Meeting
+      day: Tuesday
+      time: "08:30"
+      tz: "PT (Pacific Time)"
+      frequency: weekly
+      url: https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI
+    contact:
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-component-standard
+
