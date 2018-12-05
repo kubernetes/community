@@ -101,7 +101,7 @@ make test WHAT=./pkg/api/validation GOFLAGS="-v" KUBE_TEST_ARGS="-run ValidatePo
 ```
 
 For other supported test flags, see the [golang
-documentation](https://golang.org/cmd/go/#hdr-Description_of_testing_flags).
+documentation](https://golang.org/cmd/go/#hdr-Testing_flags).
 
 ### Stress running unit tests
 
