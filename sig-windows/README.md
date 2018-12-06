@@ -13,14 +13,14 @@ Focuses on supporting Windows Server Containers for Kubernetes.
 ## Meetings
 * Regular SIG Meeting: [Tuesdays at 12:30 Eastern Standard Time (EST)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:30&tz=Eastern%20Standard%20Time%20%28EST%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431).
-  * [Meeting recordings](https://www.youtube.com/watch?v=7zawb3KT9Xk&list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4).
 
 ## Leadership
 
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Michael Michael (**[@michmike](https://github.com/michmike)**), Apprenda
+* Michael Michael (**[@michmike](https://github.com/michmike)**), VMware
 * Patrick Lang (**[@patricklang](https://github.com/patricklang)**), Microsoft
 
 ## Contact
