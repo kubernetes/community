@@ -1579,8 +1579,8 @@ sigs:
       - name: Wojciech Tyczynski
         github: wojtek-t
         company: Google
-      - name: Bob Wise
-        github: countspongebob
+      - name: Shyam Jeedigunta
+        github: shyamjvs
         company: AWS
     meetings:
     - description: Regular SIG Meeting

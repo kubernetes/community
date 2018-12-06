@@ -23,7 +23,7 @@ For more details about our objectives please review our [Scaling And Performance
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
-* Bob Wise (**[@countspongebob](https://github.com/countspongebob)**), AWS
+* Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), AWS
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-scalability)
