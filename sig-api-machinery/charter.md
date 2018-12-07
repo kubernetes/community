@@ -51,7 +51,9 @@ N/A
 
 ### Deviations from [sig-governance]
 
-N/A
+#### Subproject Governance
+
+SIG delegates responsibilities related to any individual subproject, such as repository creation and maintenance for that subproject, to the leads of the given subproject.
 
 ### Subproject Creation
 
