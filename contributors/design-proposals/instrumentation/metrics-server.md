@@ -78,7 +78,7 @@ horizontally, though it’s rather complicated and is out of the scope of this d
  
 Metrics server will be Kubernetes addon, create by kube-up script and managed by
 [addon-manager](https://git.k8s.io/kubernetes/cluster/addons/addon-manager).
-Since there is a number of dependent components, it will be marked as a critical addon.
+Since there are a number of dependent components, it will be marked as a critical addon.
 In the future when the priority/preemption feature is introduced we will migrate to use this
 proper mechanism for marking it as a high-priority, system component.
 

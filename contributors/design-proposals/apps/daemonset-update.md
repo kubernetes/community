@@ -42,7 +42,7 @@ Here are some potential requirements that haven't been covered by this proposal:
 - Uptime is critical for each pod of a DaemonSet during an upgrade (e.g. the time
   from a DaemonSet pods being killed to recreated and healthy should be < 5s)
 - Each DaemonSet pod can still fit on the node after being updated
-- Some DaemonSets require the node to be drained before the DeamonSet's pod on it 
+- Some DaemonSets require the node to be drained before the DaemonSet's pod on it 
   is updated (e.g. logging daemons)
 - DaemonSet's pods are implicitly given higher priority than non-daemons
 - DaemonSets can only be operated by admins (i.e. people who manage nodes)

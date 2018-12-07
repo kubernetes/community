@@ -15,6 +15,19 @@ what caused the failure.
 Note that flakes can occur in unit tests, integration tests, or end-to-end
 tests, but probably occur most commonly in end-to-end tests.
 
+## Hunting Flakes
+
+You may notice lots of your PRs or ones you watch are having a common
+pre-submit failure, but less frequent issues that are still of concern take
+more analysis over time.  There are metrics recorded and viewable in:
+- [TestGrid](https://k8s-testgrid.appspot.com/presubmits-kubernetes-blocking#Summary)
+- [Velodrome](http://velodrome.k8s.io/dashboard/db/bigquery-metrics?orgId=1)
+
+It is worth noting tests are going to fail in presubmit a lot due
+to unbuildable code, but that wont happen as much on the same commit unless
+there's a true issue in the code or a broader problem like a dep failed to
+pull in.
+
 ## Filing issues for flaky tests
 
 Because flakes may be rare, it's very important that all relevant logs be
@@ -63,18 +76,16 @@ we have the following guidelines:
 3. If you can reproduce it (or it's obvious from the logs what happened), you
    should then be able to fix it, or in the case where someone is clearly more
    qualified to fix it, reassign it with very clear instructions.
-4. PRs that fix or help debug flakes may have the P0 priority set to get them
-   through the merge queue as fast as possible.
-5. Once you have made a change that you believe fixes a flake, it is conservative
+4. Once you have made a change that you believe fixes a flake, it is conservative
    to keep the issue for the flake open and see if it manifests again after the
    change is merged.
-6. If you can't reproduce a flake: __don't just close it!__ Every time a flake comes
+5. If you can't reproduce a flake: __don't just close it!__ Every time a flake comes
    back, at least 2 hours of merge time is wasted. So we need to make monotonic
    progress towards narrowing it down every time a flake occurs. If you can't
    figure it out from the logs, add log messages that would have help you figure
    it out.  If you make changes to make a flake more reproducible, please link
    your pull request to the flake you're working on.
-7. If a flake has been open, could not be reproduced, and has not manifested in
+6. If a flake has been open, could not be reproduced, and has not manifested in
    3 months, it is reasonable to close the flake issue with a note saying
    why.
 

@@ -13,7 +13,7 @@ If you'd like to contribute, please read the [conventions](/contributors/devel/k
 ### Add new commands / subcommands / flags
 * [Simplify support for multiple files](https://github.com/kubernetes/kubernetes/issues/24649)
   * Manifest that can specify multiple files / http(s) URLs
-  * [Default manifest manifest](https://github.com/kubernetes/kubernetes/issues/3268) (ala Dockerfile or Makefile)
+  * [Default manifest](https://github.com/kubernetes/kubernetes/issues/3268) (ala Dockerfile or Makefile)
   * Unpack archive (tgz, zip) and then invoke “-f” on that directory
   * URL shortening via default URL prefix
 * [Imperative `set` commands](https://github.com/kubernetes/kubernetes/issues/21648)
@@ -103,7 +103,7 @@ If you'd like to contribute, please read the [conventions](/contributors/devel/k
 * [Eliminate round-trip conversion of API objects in kubectl](https://github.com/kubernetes/kubernetes/issues/3955)
 * [Move preferences out of kubeconfig](https://github.com/kubernetes/kubernetes/issues/10693)
 * And then add more preferences
-  * Enable/disable explanatory mode (see [kploy output](http://kubernetes.sh/kploy/))
+  * Enable/disable explanatory mode (see [kploy output](https://github.com/kubernauts/kploy))
   * Permanently disable warnings once displayed
   * Default labels as columns
   * Default `--record`, `--save-config`, etc.

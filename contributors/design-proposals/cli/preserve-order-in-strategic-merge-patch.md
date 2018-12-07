@@ -7,7 +7,7 @@ Author: @mengqiy
 Background of the Strategic Merge Patch is covered [here](../devel/strategic-merge-patch.md).
 
 The Kubernetes API may apply semantic meaning to the ordering of items within a list,
-however the strategic merge patch does not keeping the ordering of elements.
+however the strategic merge patch does not keep the ordering of elements.
 Ordering has semantic meaning for Environment variables,
 as later environment variables may reference earlier environment variables,
 but not the other way around.
@@ -30,7 +30,7 @@ Add to the current patch, a directive ($setElementOrder) containing a list of el
 either the patch merge key, or for primitives the value. When applying the patch,
 the server ensures that the relative ordering of elements matches the directive.
 
-The server will reject the patch if it doesn't satisfy the following 2 requirement.
+The server will reject the patch if it doesn't satisfy the following 2 requirements.
 - the relative order of any two items in the `$setElementOrder` list
 matches that in the patch list if they present.
 - the items in the patch list must be a subset or the same as the `$setElementOrder` list if the directive presents.
@@ -45,7 +45,7 @@ The relative order of two items are determined by the following order:
 If the relative order of the live config in the server is different from the order of the parallel list,
 the user's patch will always override the order in the server.
 
-Here is an simple example of the patch format:
+Here is a simple example of the patch format:
 
 Suppose we have a type called list. The patch will look like below.
 The order from the parallel list ($setElementOrder/list) will be respected.
@@ -60,7 +60,7 @@ list:
 - C
 ```
 
-All the items in the server's live list but not in the parallel list will be come before the parallel list.
+All the items in the server's live list but not in the parallel list will come before the parallel list.
 The relative order between these appended items are kept.
 
 The patched list will look like:
@@ -114,7 +114,7 @@ list:
 ### `$setElementOrder` may contain elements not present in the patch list
 
 The $setElementOrder value may contain elements that are not present in the patch
-but present in the list to be merge to reorder the elements as part of the merge.
+but present in the list to be merged to reorder the elements as part of the merge.
 
 Example where A & B have not changed:
 
@@ -481,15 +481,15 @@ we send a whole list from user's config.
 It is NOT backward compatible in terms of list of primitives.
 
 When patching a list of maps:
-- An old client sends a old patch to a new server, the server just merges the change and no reordering.
+- An old client sends an old patch to a new server, the server just merges the change and no reordering.
 The server behaves the same as before.
-- An new client sends a new patch to an old server, the server doesn't understand the new directive.
+- A new client sends a new patch to an old server, the server doesn't understand the new directive.
 So it just simply does the merge.
 
 When patching a list of primitives:
-- An old client sends a old patch to a new server, the server will reorder the patch list which is sublist of user's.
+- An old client sends an old patch to a new server, the server will reorder the patch list which is sublist of user's.
 The server has the WRONG behavior.
-- An new client sends a new patch to an old server, the server will deduplicate after merging.
+- A new client sends a new patch to an old server, the server will deduplicate after merging.
 The server behaves the same as before.
 
 ## Example

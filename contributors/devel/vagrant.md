@@ -2,8 +2,12 @@
 
 Running Kubernetes with Vagrant is an easy way to run/test/develop on your
 local machine in an environment using the same setup procedures when running on
-GCE or AWS cloud providers. This provider is not tested on a per PR basis, if
-you experience bugs when testing from HEAD, please open an issue.
+GCE or AWS cloud providers.
+
+Note : Support for vagrant has been removed in 1.10. Check 
+[#58118](https://github.com/kubernetes/kubernetes/pull/58118) and 
+[#64561](https://github.com/kubernetes/kubernetes/issues/64561#issuecomment-394366611).
+You might run into issues with kubernetes versions >= 1.10
 
 ### Prerequisites
 

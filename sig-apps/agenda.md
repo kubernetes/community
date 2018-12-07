@@ -1,13 +1,10 @@
 # Agenda
-~~Join us for sig-apps on Wednesdays at 9am PDT on Zoom: zoom.us/my/sig.apps~~
-
-SIG-Apps meetings are now on **Mondays at 9am PDT** on Zoom: https://zoom.us/my/sig.apps
 
 _Note, the [minutes and agenda have moved to Google Docs](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#)._
 
 ## August 17, 2016
 * Intro / Agenda
-* Brian Hardock of the Deis Helm team will demo [Helm](www.github.com/kubernetes/helm).
+* Brian Hardock of the Deis Helm team will demo [Helm](https://github.com/helm/helm).
   * Helm is a tool for creating and managing Kubernetes native applications.
 * Adnan Abdulhussein from Bitnami will walk us through example helm charts for Kubernetes native applications
 
@@ -25,7 +22,7 @@ _Note, the [minutes and agenda have moved to Google Docs](https://docs.google.co
 
 ## July 27, 2016 [[notes](minutes/2016-07-27.md)]
 * Intro
-* [Gerred Dillon](https://twitter.com/justicefries) will do a demo of [Deis](https://deis.com/)
+* [Gerred Dillon](https://twitter.com/justicefries) will do a demo of [Deis](https://github.com/deis)
 * Group discussion on Deis
 * Matt Farina will give an update on results of the sig-apps survey
 * Open discussion around sig-apps survey

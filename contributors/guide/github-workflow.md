@@ -74,6 +74,22 @@ git checkout -b myfeature
 Then edit code on the `myfeature` branch.
 
 #### Build
+The following section is a quick start on how to build Kubernetes locally, for more detailed information you can see [kubernetes/build](https://git.k8s.io/kubernetes/build/README.md).
+The best way to validate your current setup is to build a small part of Kubernetes. This way you can address issues without waiting for the full build to complete. To build a specific part of Kubernetes use the `WHAT` environment variable to let the build scripts know you want to build only a certain package/executable.
+
+```sh
+make WHAT=cmd/{$package_you_want}
+```
+
+*Note:* This applies to all top level folders under kubernetes/cmd.
+
+So for the cli, you can run:
+
+```sh
+make WHAT=cmd/kubectl
+```
+
+If everything checks out you will have an executable in the `_output/bin` directory to play around with.
 
 *Note:* If you are using `CDPATH`, you must either start it with a leading colon, or unset the variable. The make rules and scripts to build require the current directory to come first on the CD search path in order to properly navigate between directories.
 
@@ -235,3 +251,47 @@ git rebase -i upstream/master
 For mass automated fixups (e.g. automated doc formatting), use one or more
 commits for the changes to tooling and a final commit to apply the fixup en
 masse. This makes reviews easier.
+
+### Reverting a commit
+
+In case you wish to revert a commit, use the following instructions.
+
+_If you have upstream write access_, please refrain from using the
+`Revert` button in the GitHub UI for creating the PR, because GitHub
+will create the PR branch inside the main repository rather than inside your fork.
+
+1. Create a branch and sync it with upstream.
+
+```sh
+# create a branch
+git checkout -b myrevert
+
+# sync the branch with upstream
+git fetch upstream
+git rebase upstream/master
+```
+
+2. If the commit you wish to revert is a:
+
+- merge commit:
+
+```sh
+# SHA is the hash of the merge commit you wish to revert
+git revert -m 1 SHA
+```
+
+- single commit:
+
+```sh
+# SHA is the hash of the single commit you wish to revert
+git revert SHA
+```
+
+3. This will create a new commit reverting the changes.
+Push this new commit to your remote.
+
+```sh
+git push ${your_remote_name} myrevert
+```
+
+4. [Create a Pull Request](#7-create-a-pull-request) using this branch.

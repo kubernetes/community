@@ -34,12 +34,14 @@ OWNERS files are in YAML format and support the following keys:
     effect on `a/deep/nested/bit/of/code`
 - `reviewers`: a list of GitHub usernames or aliases that are good candidates to `/lgtm` a PR
 
+The above keys constitute a *simple OWNERS configuration*.
+
 All users are expected to be assignable. In GitHub terms, this means they are either collaborators
 of the repo, or members of the organization to which the repo belongs.
 
 A typical OWNERS file looks like:
 
-```
+```yaml
 approvers:
   - alice
   - bob     # this is a comment
@@ -48,6 +50,41 @@ reviewers:
   - carol   # this is another comment
   - sig-foo # this is an alias
 ```
+
+#### Filters
+
+An OWNERS file may also include a `filters` key.
+The `filters` key is a map whose keys are [Go regular expressions][go-regex] and whose values are [simple OWNERS configurations](#owners).
+The regular expression keys are matched against paths relative to the OWNERS file in which the keys are declared.
+For example:
+
+```yaml
+filters:
+  ".*":
+    labels:
+    - re/all
+  "\\.go$":
+    labels:
+    - re/go
+```
+
+If you set `filters` you must not set a [simple OWNERS configuration](#owners) outside of `filters`.
+For example:
+
+```yaml
+# WARNING: This use of 'labels' and 'filters' as siblings is invalid.
+labels:
+- re/all
+filters:
+  "\\.go$":
+    labels:
+    - re/go
+```
+
+Instead, set a `.*` key inside `filters` (as shown in the previous example).
+
+**WARNING**: The `approve` plugin [does not currently respect `filters`][test-infra-7690].
+Until that is fixed, `filters` should only be used for the `labels` key (as shown in the above example).
 
 ### OWNERS_ALIASES
 
@@ -62,7 +99,7 @@ publicly auditable.
 
 A sample OWNERS_ALISES file looks like:
 
-```
+```yaml
 aliases:
   sig-foo:
     - david
@@ -77,7 +114,7 @@ GitHub usernames and aliases listed in OWNERS files are case-insensitive.
 ## Code Review using OWNERS files
 
 This is a simplified description of our [full PR testing and merge
-workflow](/contributors/devel/pull-requests.md#the-testing-and-merge-workflow)
+workflow](/contributors/guide/pull-requests.md#the-testing-and-merge-workflow)
 that conveniently forgets about the existence of tests, to focus solely on the roles driven by
 OWNERS files.  Please see [below](#automation-using-owners-files) for details on how specific
 aspects of this process may be configured on a per-repo basis.
@@ -101,8 +138,8 @@ aspects of this process may be configured on a per-repo basis.
 - Phase 2: Humans approve the PR
   - The PR **author** `/assign`'s all suggested **approvers** to the PR, and optionally notifies
     them (eg: "pinging @foo for approval")
-  - Only people listed in the relevant OWNERS files, either directly or through an alias, can act
-    as **approvers**, including the individual who opened the PR
+  - Only people listed in the relevant OWNERS files, either directly or through an alias, as [described
+    above](#owners_aliases), can act as **approvers**, including the individual who opened the PR.
   - **Approvers** look for holistic acceptance criteria, including dependencies with other features,
     forwards/backwards compatibility, API and flag definitions, etc
   - If the code changes look good to them, an **approver** types `/approve` in a PR comment or
@@ -172,21 +209,15 @@ is the state of today.
 
 ## Automation using OWNERS files
 
-### ~[`mungegithub`](https://git.k8s.io/test-infra/mungegithub)~ is deprecated
+Kubernetes uses the Prow Blunderbuss plugin and Tide.
+Tide uses GitHub queries to select PRs into “tide pools”, runs as many in a
+batch as it can (“tide comes in”), and merges them (“tide goes out”).
 
-Mungegithub's blunderbuss and submit-queue mungers are currently used for kubernetes/kubernetes. Their
-equivalents are the prow blunderbuss plugin, and prow's tide cmd.  These docs will be removed once
-kubernetes/kubernetes has transitioned over to tide.
-
-~Mungegithub polls GitHub, and "munges" things it finds, including issues and pull requests. It is
-stateful, in that restarting it means it loses track of which things it has munged at what time.~
-
-- ~[munger:
-  blunderbuss](https://git.k8s.io/test-infra/mungegithub/mungers/blunderbuss.go)~
-  - ~responsible for determining **reviewers** and assigning to them~
-- [munger:
-  submit-queue](https://git.k8s.io/test-infra/mungegithub/mungers/submit-queue.go)
-  - responsible for merging PR's
+- [Blunderbuss plugin](https://git.k8s.io/test-infra/prow/plugins/blunderbuss):
+  - responsible for determining **reviewers**
+- [Tide](https://git.k8s.io/test-infra/prow/cmd/tide):
+  - responsible for automatically running batch tests and merging multiple PRs together whenever possible.
+  - responsible for retriggering stale PR tests.
   - responsible for updating a GitHub status check explaining why a PR can't be merged (eg: a
     missing `lgtm` or `approved` label)
 
@@ -210,7 +241,7 @@ pieces of prow are used to implement the code review process above.
 - [plugin: assign](https://git.k8s.io/test-infra/prow/plugins/assign)
   - assigns GitHub users in response to `/assign` comments on a PR
   - unassigns GitHub users in response to `/unassign` comments on a PR
-- [plugin: approve](https://git.k8s.io/test-infra/prow/plugins/assign)
+- [plugin: approve](https://git.k8s.io/test-infra/prow/plugins/approve)
   - per-repo configuration:
     - `issue_required`: defaults to `false`; when `true`, require that the PR description link to
       an issue, or that at least one **approver** issues a `/approve no-isse`
@@ -220,7 +251,7 @@ pieces of prow are used to implement the code review process above.
     OWNERS files has `/approve`'d
   - comments as required OWNERS files are satisfied
   - removes outdated approval status comments
-- [plugin: blunderbuss](https://git.k8s.io/test-infra/prow/plugins/assign)
+- [plugin: blunderbuss](https://git.k8s.io/test-infra/prow/plugins/blunderbuss)
   - determines **reviewers** and requests their reviews on PR's
 - [plugin: lgtm](https://git.k8s.io/test-infra/prow/plugins/lgtm)
   - adds the `lgtm` label when a **reviewer** comments `/lgtm` on a PR
@@ -257,3 +288,6 @@ Good examples of OWNERS usage:
 - there are more `reviewers` than `approvers`
 - the `approvers` are not in the `reviewers` section
 - OWNERS files that are regularly updated (at least once per release)
+
+[go-regex]: https://golang.org/pkg/regexp/#pkg-overview
+[test-infra-7690]: https://github.com/kubernetes/test-infra/issues/7690

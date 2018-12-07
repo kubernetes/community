@@ -20,7 +20,7 @@ On the Windows platform, processes may be assigned to a job object, which can ha
 [#547](https://github.com/kubernetes/features/issues/547)
 
 ## Motivation
-The goal is to start filling the gap of platform support in CRI, specifically for Windows platform. For example, currrently in dockershim Windows containers are scheduled using the default resource constraints and does not respect the resource requests and limits specified in POD. With this proposal, Windows containers will be able to leverage POD spec and CRI to allocate compute resource and respect restriction.
+The goal is to start filling the gap of platform support in CRI, specifically for Windows platform. For example, currently in dockershim Windows containers are scheduled using the default resource constraints and does not respect the resource requests and limits specified in POD. With this proposal, Windows containers will be able to leverage POD spec and CRI to allocate compute resource and respect restriction.
 
 ## Proposed design
 
@@ -85,7 +85,7 @@ The implementation will mainly be in two parts:
 
 In both parts, we need to implement:
 * Fork code for Windows from Linux.
-* Convert from Resources.Requests and Resources.Limits to Windows configuration in CRI, and convert from Windows configration in CRI to container configuration.
+* Convert from Resources.Requests and Resources.Limits to Windows configuration in CRI, and convert from Windows configuration in CRI to container configuration.
 
 To implement resource controls for Windows containers, refer to [this MSDN documentation](https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/resource-controls) and [Docker's conversion to OCI spec](https://github.com/moby/moby/blob/master/daemon/oci_windows.go).
 

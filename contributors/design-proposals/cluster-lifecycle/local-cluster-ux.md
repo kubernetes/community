@@ -5,7 +5,7 @@ The current local cluster experience is sub-par and often not functional.
 There are several options to setup a local cluster (docker, vagrant, linux processes, etc) and we do not test any of them continuously.
 Here are some highlighted issues:
 - Docker based solution breaks with docker upgrades, does not support DNS, and many kubelet features are not functional yet inside a container.
-- Vagrant based solution are too heavy and have mostly failed on OS X.
+- Vagrant based solution are too heavy and have mostly failed on macOS.
 - Local linux cluster is poorly documented and is undiscoverable.
 From an end user perspective, they want to run a kubernetes cluster. They care less about *how* a cluster is setup locally and more about what they can do with a functional cluster.
 
@@ -15,7 +15,7 @@ From an end user perspective, they want to run a kubernetes cluster. They care l
 From a high level the goal is to make it easy for a new user to run a Kubernetes cluster and play with curated examples that require least amount of knowledge about Kubernetes.
 These examples will only use kubectl and only a subset of Kubernetes features that are available will be exposed.
 
-- Works across multiple OSes - OS X, Linux and Windows primarily.
+- Works across multiple OSes - macOS, Linux and Windows primarily.
 - Single command setup and teardown UX.
 - Unified UX across OSes
 - Minimal dependencies on third party software.
@@ -68,7 +68,7 @@ This is only a part of the overall local cluster solution.
 
 The kube-up.sh script included in Kubernetes release supports a few Vagrant based local cluster deployments.
 kube-up.sh is not user friendly.
-It typically takes a long time for the cluster to be set up using vagrant and often times is unsuccessful on OS X.
+It typically takes a long time for the cluster to be set up using vagrant and often times is unsuccessful on macOS.
 The [Core OS single machine guide](https://coreos.com/kubernetes/docs/latest/kubernetes-on-vagrant-single.html)  uses Vagrant as well and it just works.
 Since we are targeting a single command install/teardown experience, vagrant needs to be an implementation detail and not be exposed to our users.
 
@@ -90,8 +90,8 @@ For running and managing the kubernetes components themselves,  we can re-use [S
 Localkube is a self-contained go binary that includes all the master components including DNS and runs them using multiple go threads.
 Each Kubernetes release will include a localkube binary that has been tested exhaustively.
 
-To support Windows and OS X, minikube will use [libmachine](https://github.com/docker/machine/tree/master/libmachine) internally to create and destroy virtual machines.
-Minikube will be shipped with an hypervisor (virtualbox) in the case of OS X.
+To support Windows and macOS, minikube will use [libmachine](https://github.com/docker/machine/tree/master/libmachine) internally to create and destroy virtual machines.
+Minikube will be shipped with an hypervisor (virtualbox) in the case of macOS.
 Minikube will include a base image that will be well tested.
 
 In the case of Linux, since the cluster can be run locally, we ideally want to avoid setting up a VM.
@@ -105,7 +105,7 @@ Alternatives to docker for running the localkube core includes using [rkt](https
 
 To summarize the pipeline is as follows:
 
-##### OS X / Windows
+##### macOS / Windows
 
 minikube -> libmachine -> virtualbox/hyper V -> linux VM -> localkube
 
@@ -126,7 +126,7 @@ minikube -> docker -> localkube
 ##### Cons
 
 - Not designed to be wrapped, may be unstable
-- Might make configuring networking difficult on OS X and Windows
+- Might make configuring networking difficult on macOS and Windows
 - Versioning and updates will be challenging. We can mitigate some of this with testing at HEAD, but we'll - inevitably hit situations where it's infeasible to work with multiple versions of docker.
 - There are lots of different ways to install docker, networking might be challenging if we try to support many paths.
 

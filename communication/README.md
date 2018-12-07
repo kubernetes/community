@@ -10,7 +10,7 @@ The Kubernetes community abides by the [CNCF code of conduct].  Here is an excer
 
 ## SIGs
 
-Kubernetes encompasses many projects, organized into [SIGs](sig-list.md).
+Kubernetes encompasses many projects, organized into [SIGs](/sig-list.md).
 Some communication has moved into SIG-specific channels - see
 a given SIG subdirectory for details.
 
@@ -22,13 +22,25 @@ and meetings devoted to Kubernetes.
 * [Twitter]
 * [Blog]
 * Pose questions and help answer them on [Stack Overflow].
-* [Slack] - sign up  
 
-Real time discussion at kubernetes.slack.io:   
-Discussions on most channels are archived at [kubernetes.slackarchive.io].
-Start archiving by inviting the _slackarchive_ bot to a
-channel via `/invite @slackarchive`.
-To add new channels, contact one of the admins in the #slack-admins channel. Our guidelines are [here](/communication/slack-guidelines.md).
+## Slack
+
+[Join Slack] - sign up and join channels on topics that interest you, but please read our [Slack Guidelines] before participating.
+
+If you want to add a new channel, contact one of the admins in the #slack-admins channel.
+
+
+## Mailing lists
+
+Kubernetes mailing lists are hosted through Google Groups.  To
+receive these lists' emails,
+[join](https://support.google.com/groups/answer/1067205) the groups
+relevant to you, as you would any other Google Group.
+
+* [kubernetes-announce] broadcasts major project announcements such as releases and security issues
+* [kubernetes-dev] hosts development announcements and discussions around developing kubernetes itself
+* [Discuss Kubernetes] is where kubernetes users trade notes
+* Additional Google groups exist and can be joined for discussion related to each SIG and Working Group.  These are linked from the [SIG list](/sig-list.md).
 
 ## Issues
 
@@ -37,15 +49,6 @@ please start with the [troubleshooting guide].
 
 If that doesn't answer your questions, or if you think you found a bug,
 please [file an issue].
-
-
-## Mailing lists
-
-Development announcements and discussions appear on the Google group
-[kubernetes-dev] (send mail to `kubernetes-dev@googlegroups.com`).
-
-Users trade notes on the Google group
-[kubernetes-users] (send mail to `kubernetes-users@googlegroups.com`).
 
 ## Accessing community documents
 
@@ -63,9 +66,9 @@ Office hours are held once a month. Please refer to [this document](/events/offi
 
 ## Weekly Meeting
 
-We have PUBLIC and RECORDED [weekly meeting] every Thursday at 10am US Pacific Time over Zoom.
+We have a public and recorded [weekly meeting] every Thursday at 10am US Pacific Time over Zoom.
 
-Map that to your local time with this [timezone table].
+Convert it to your local time using the [timezone table].
 
 See it on the web at [calendar.google.com], or paste this [iCal url] into any iCal client.
 
@@ -78,10 +81,10 @@ please propose a specific date on the [Kubernetes Community Meeting Agenda].
 
 ## Conferences
 
-Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Europe and winter in North America. Information about these and other community events is available on the CNCF [events] pages.
+Kubernetes is the main focus of KubeCon + CloudNativeCon, held every spring in Europe, summer in China, and winter in North America. Information about these and other community events is available on the CNCF [events] pages.
 
 
-[Blog]: http://blog.kubernetes.io
+[Blog]: https://kubernetes.io/blog/
 [calendar.google.com]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles
 [CNCF code of conduct]: https://github.com/cncf/foundation/blob/master/code-of-conduct.md
 [communication]: /communication.md
@@ -92,15 +95,16 @@ Kubernetes is the main focus of CloudNativeCon/KubeCon, held every spring in Eur
 [iCal url]: https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics
 [Kubernetes Community Meeting Agenda]: https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#
 [kubernetes-community-video-chat]: https://groups.google.com/forum/#!forum/kubernetes-community-video-chat
+[kubernetes-announce]: https://groups.google.com/forum/#!forum/kubernetes-announce
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
-[kubernetes-users]: https://groups.google.com/forum/#!forum/kubernetes-users
-[kubernetes.slackarchive.io]: https://kubernetes.slackarchive.io
+[Discuss Kubernetes]: https://discuss.kubernetes.io
 [kubernetes.slack.com]: https://kubernetes.slack.com
-[Slack]: http://slack.k8s.io
+[Join Slack]: http://slack.k8s.io
+[Slack Guidelines]: /communication/slack-guidelines.md
 [Special Interest Group]: /README.md#SIGs
-[Stack Overflow]: http://stackoverflow.com/questions/tagged/kubernetes
+[Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [timezone table]: https://www.google.com/search?q=1000+am+in+pst
-[troubleshooting guide]: http://kubernetes.io/docs/troubleshooting
+[troubleshooting guide]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
 [Twitter]: https://twitter.com/kubernetesio
 [weekly meeting]: https://zoom.us/my/kubernetescommunity
 

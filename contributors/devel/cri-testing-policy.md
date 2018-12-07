@@ -13,7 +13,7 @@ because many features require integration of runtime, OS, or even the cloud
 provider. A higher-level integration tests provider better signals on vertical
 stack compatibility to the Kubernetes community. On the other hand, runtime
 developers are strongly encouraged to run low-level
-[CRI validation test suite](https://github.com/kubernetes-incubator/cri-tools/blob/master/docs/validation.md)
+[CRI validation test suite](https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/validation.md)
 for validation as part of their development process.
 
 ## Required and optional tests
@@ -50,16 +50,16 @@ To publish tests results, please submit a proposal in the
 briefly explaining your runtime, providing at least two maintainers, and
 assigning the proposal to the leads of SIG-Node.
 
-These test results should be published under the `sig-node` tab, grouped by the
-runtimes, organized as follows.
+These test results should be published under the `sig-node` tab, organized
+as follows.
 
 ```
-sig-node -> sig-node-{Kubernetes-version} -> sig-node-{runtime-name} -> [page containing all test jobs]
+sig-node -> sig-node-cri-{Kubernetes-version} -> [page containing the required jobs]
 ```
 
-The `sig-node` tab only lists up to three most recent Kubernetes versions,
-including the master branch for the current release cycle, e.g.,
-`sig-node-master, sig-node-1.9, sig-node-1.8`.
+Only the last three most recent Kubernetes versions and the master branch are
+kept at any time. This is consistent with the Kubernetes release schedule and
+policy.
 
 ## Test job maintenance
 

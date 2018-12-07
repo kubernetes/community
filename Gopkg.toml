@@ -1,2 +1,6 @@
-
 required = ["github.com/client9/misspell/cmd/misspell"]
+
+[prune]
+  go-tests = true
+  unused-packages = true
+  non-go = true

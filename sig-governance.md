@@ -2,6 +2,7 @@
 
 In order to standardize Special Interest Group efforts, create maximum transparency, and route contributors to the appropriate SIG, SIGs should follow the guidelines stated below:
 
+* Create a charter and have it approved according to the [SIG charter process]
 * Meet regularly, at least for 30 minutes every 3 weeks, except November and December
 * Keep up-to-date meeting notes, linked from the SIG's page in the community repo
 * Announce meeting agenda and minutes after each meeting, on their SIG mailing list
@@ -9,26 +10,33 @@ In order to standardize Special Interest Group efforts, create maximum transpare
 * Ensure the SIG's mailing list and slack channel are archived
 * Report activity in the weekly community meeting at least once every 6 weeks
 * Participate in release planning meetings and retrospectives, and burndown meetings, as needed
-* Ensure related work happens in a project-owned github org and repository, with code and tests explicitly owned and supported by the SIG, including issue triage, PR reviews, test-failure response, bug fixes, etc. 
+* Ensure related work happens in a project-owned github org and repository, with code and tests explicitly owned and supported by the SIG, including issue triage, PR reviews, test-failure response, bug fixes, etc.
 * Use the above forums as the primary means of working, communicating, and collaborating, as opposed to private emails and meetings
-* Represent the SIG for the PM group - see [PM SIG representatives](/sig-product-management/SIG%20PM%20representatives.md).
 
-## SIG roles
-- **SIG Participant**: active in one or more areas of the project; wide 
-  variety of roles are represented
-- **SIG Lead**: SIG organizer
+In addition, SIGs have the following responsibilities to SIG PM:
+* identify SIG annual roadmap
+* identify all SIG features in the current release
+* actively track / maintain SIG features within [k/features](https://github.com/kubernetes/features)
+* attend [SIG PM](/sig-pm/README.md) meetings, as needed / requested
+
+[SIG charter process]: /committee-steering/governance/README.md
+
+## SIG Roles
+
+Defining SIG Roles is a function of the SIG Charter.
+Guidelines for drafting a SIG Charter can be found [here](/committee-steering/governance/README.md).
 
 ## SIG creation and maintenance procedure
 
 ### Prerequisites
 
-* Propose the new SIG publicly, including a brief mission statement, by emailing kubernetes-dev@googlegroups.com and kubernetes-users@googlegroups.com, then wait a couple of days for feedback
+* Work with the Steering Committee to scope the SIG and get provisional approval.
+  Follow the [SIG charter process] to propose and obtain approval for a charter.
 * Ask a repo maintainer to create a github label, if one doesn't already exist: sig/foo
 * Request a new [kubernetes.slack.com](http://kubernetes.slack.com) channel (#sig-foo) from [@parispittman](https://github.com/parispittman) or [@castrojo](https://github.com/castrojo).  New users can join at [slack.kubernetes.io](http://slack.kubernetes.io).
-* Slack activity is archived at [kubernetes.slackarchive.io](http://kubernetes.slackarchive.io).  To start archiving a new channel invite the slackarchive bot to the channel via `/invite @slackarchive`
 * Organize video meetings as needed. No need to wait for the [Weekly Community Video Conference](community/README.md) to discuss. Please report summary of SIG activities there.
  * Request a Zoom account by emailing Paris Pittman(`parispittman@google.com`) and Jorge Castro(`jorge@heptio.com`). You must set up a google group (see below) for the SIG leads so that all the SIG leads have the ability to reset the password if necessary.
- * Read [how to use YouTube](/community/K8sYoutubeCollaboration.md) for publishing your videos to the Kubernetes channel. 
+ * Read [how to use YouTube](/communication/K8sYoutubeCollaboration.md) for publishing your videos to the Kubernetes channel.
  * Calendars
    1. Create a calendar on your own account. Make it public.
    2. Share it with all SIG leads with full ownership of the calendar - they can edit, rename, or even delete it.
@@ -36,101 +44,70 @@ In order to standardize Special Interest Group efforts, create maximum transpare
    4. Share it with the SIG mailing list, lowest privileges.
    5. Share individual events with `cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com` to publish on the universal calendar.
 * Use existing proposal and PR process (to be documented)
-* Announce new SIG on kubernetes-dev@googlegroups.com 
+* Announce new SIG on kubernetes-dev@googlegroups.com
+* Leads should [subscribe to the kubernetes-sig-leads mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-leads)
 * Submit a PR to add a row for the SIG to the table in the kubernetes/community README.md file, to create a kubernetes/community directory, and to add any SIG-related docs, schedules, roadmaps, etc. to your new kubernetes/community/SIG-foo directory.
 
-### **Creating service accounts for the SIG**
+### Discussion Platforms
 
-With a purpose to distribute the channels of notification and discussion of the various topics, every SIG has to use multiple accounts to GitHub mentioning and notifications. Below the procedure is explained step-by-step.
+Your SIG needs a place to discuss topics asynchronously. You have two options, a traditional mailing list via Google Groups, or a category on [discuss.kubernetes.io](discuss.kubernetes.io). The main difference is Groups is primarily email-based with a web UI tacked on, and Discuss is primarily a Web UI with email tacked-on. The other difference is that your SIG/WG is responsible for moderating your Google Group; with discuss you just depend on the usual community moderation.
 
-NOTE: This procedure is managed and maintained by **[@idvoretskyi](https://github.com/idvoretskyi)**; please, reach him directly in case of any questions/suggestions.
+- Working Groups, due to their temporary nature, are strongly encouraged to consider using an existing SIG mailing list if appropriate, otherwise use a discuss category for less management overhead.
+- SIGs, due to their usage of calendars, and Zoom accounts, are strongly encouraged to use a traditional mailing list.
 
-#### **Google Groups creation**
+Choose one:
 
-Create Google Groups at [https://groups.google.com/forum/#!creategroup](https://groups.google.com/forum/#!creategroup), following the procedure: 
+#### Create a Category
 
-* Each SIG should have one discussion groups, and a number of groups for mirroring relevant github notifications;
-* Create groups using the name conventions below;
-* Groups should be created as e-mail lists with at least three owners (including sarahnovotny at google.com and ihor.dvoretskyi at gmail.com);
-* To add the owners, visit the Group Settings (drop-down menu on the right side), select Direct Add Members on the left side and add Sarah and Ihor via email address (with a suitable welcome message); in Members/All Members select Ihor and Sarah and assign to an "owner role";
-* Set "View topics", "Post", "Join the Group" permissions to be "Public"
+Post a message asking for a category in the [Site Feedback and Help](https://discuss.kubernetes.io/c/site-feedback) section and a moderator will create your category for you and provide you with a URL and mail address to post to.
 
-Name convention:
+#### Creating a Google Group
 
-* kubernetes-sig-foo (the discussion group)
-* kubernetes-sig-foo-leads (list for the leads, to be used with Zoom and Calendars)
-* kubernetes-sig-foo-misc
-* kubernetes-sig-foo-test-failures
-* kubernetes-sig-foo-bugs
-* kubernetes-sig-foo-feature-requests
-* kubernetes-sig-foo-proposals
-* kubernetes-sig-foo-pr-reviews
-* kubernetes-sig-foo-api-reviews
+Create a Google Group at [https://groups.google.com/forum/#!creategroup](https://groups.google.com/forum/#!creategroup), following the procedure:
 
-Example:
+Each SIG must have two discussion groups with the following settings.
 
-* kubernetes-sig-onprem
-* kubernetes-sig-onprem-misc
-* kubernetes-sig-onprem-test-failures
-* kubernetes-sig-onprem-bugs
-* kubernetes-sig-onprem-feature-requests
-* kubernetes-sig-onprem-proposals
-* kubernetes-sig-onprem-pr-reviews
-* kubernetes-sig-onprem-api-reviews
+- kubernetes-sig-foo (the discussion group):
+  - Anyone can view content
+  - Anyone can join
+  - Anyone can post
+  - Only members can view the list of members
+- kubernetes-sig-foo-leads (list for the leads, to be used with Zoom and Calendars)
+  - Only members can view group content
+  - Anyone can apply to join
+  - Anyone can post
+  - Only members can view the list of members
+- Groups should be created as e-mail lists with at least three owners (including parispittman at google.com and ihor.dvoretskyi at gmail.com);
+- To add the owners, visit the Group Settings (drop-down menu on the right side), select Direct Add Members on the left side and add Paris and Ihor via email address (with a suitable welcome message); in Members/All Members select Ihor and Paris and assign to an "owner role"
+- Set "View topics", "Post", "Join the Group" permissions to be "Public"
 
-#### **GitHub users creation**
+## SIG/WG Retirement
 
-Create the GitHub users at [https://github.com/join](https://github.com/join), using the name convention below.
+Sometimes it might be necessary to sunset a SIG or Working Group.
+SIGs/WGs may also merge with an existing SIG/WG if deemed appropriate, and would save project overhead in the long run.
+Working Groups in particular are more ephemeral than SIGs, so this process should be followed when the Working Group has accomplished it's mission.
 
-As an e-mail address, please, use the Google Group e-mail address of the respective Google Group, created before (i.e. - for user ‘k8s-mirror-foo-misc’ use ‘[kubernetes-sig-foo-misc@googlegroups.com](mailto:kubernetes-sig-foo-misc@googlegroups.com)’). After creating the GitHub users, please, add these users to the Kubernetes organization. If you don't have enough permissions to do that (by default, you don't), please request **@idvoretskyi** (backup person - **@sarahnovotny**) to help you with this. If GitHub contacts you about having too many robot accounts, please let us know.
+- Retiring a SIG for is covered in the [SIG Governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md)
+- Retiring a Working Group is covered in [WG Governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md)
 
+The process for closing a SIG/WG is as follows:
 
-Name convention:
-
-* k8s-mirror-foo-misc 
-* k8s-mirror-foo-test-failures
-* k8s-mirror-foo-bugs
-* k8s-mirror-foo-feature-requests
-* k8s-mirror-foo-proposals
-* k8s-mirror-foo-pr-reviews
-* k8s-mirror-foo-api-reviews
-
-There is no need for a k8s-mirro-foo user.
-
-Example:
-
-* k8s-mirror-onprem-misc
-* k8s-mirror-onprem-test-failures
-* k8s-mirror-onprem-bugs
-* k8s-mirror-onprem-feature-requests
-* k8s-mirror-onprem-proposals
-* k8s-mirror-onprem-pr-reviews
-* k8s-mirror-onprem-api-reviews
-
-NOTE: We have found that Github's notification autocompletion finds the users before the corresponding teams. This is the reason we recommend naming the users `k8s-mirror-foo-*` instead of `k8s-sig-foo-*`. If you previously created users named `k8s-sig-foo-*`, we recommend you rename them.
-
-#### **Create the GitHub teams**
-
-Create the GitHub teams at [https://github.com/orgs/kubernetes/new-team](https://github.com/orgs/kubernetes/new-team), using the name convention below. Please, add the GitHub users (created before) to the GitHub teams respectively.
-
-Name convention:
-
-* sig-foo-misc 
-* sig-foo-test-failures
-* sig-foo-bugs
-* sig-foo-feature-requests
-* sig-foo-proposals
-* sig-foo-pr-reviews
-* sig-foo-api-reviews
-
-Note that there should not be a sig-foo team. We want to encourage contributors to select the most appropriate team to notify.
-
-Example:
-
-* sig-onprem-misc
-* sig-onprem-test-failures
-* sig-onprem-bugs
-* sig-onprem-feature-requests
-* sig-onprem-proposals
-* sig-onprem-pr-reviews
-* sig-onprem-api-reviews
+- SIG Chairs agree to disband. This decision should follow the decision making process of the SIG's Charter.
+- Send a email to kubernetes-dev to let people know the SIG has either closed or merged with another SIG. This will let SIG Contributor Experience know that they need to help you archive/deactivate project resources.
+  - Consider sending a [closing summary](https://docs.google.com/document/d/1qZcAvuWBznR_oEaPWtwm7U4JNT91m8r9YOUvInU-src/edit#heading=h.jsw0l2t0ra8) to the list. 
+- Work with SIG Contributor Experience to:
+  - Archive the mailing list/group
+  - Archive the leads mailing list/group
+  - Archive the slack channel
+  - Deactivate the group's Zoom license
+  - Move all appropriate github repositories to an appropriate archive or a repo outside of the Kubernetes org
+    - Each subproject a SIG owns must transfer ownership to a new SIG, outside the project, or be retired
+    - File an issue with kubernetes/org if multiple repos that need to be retired
+  - Coordinate with SIG Testing on the following topics (if necessary) 
+    - Retire or transfer any test-infra jobs owned by the SIG
+    - Retire or transfer any testgrid dashboards owned by the SIG
+  - Clean up and remove all GitHub teams that refer to that SIG/WG
+  - Migrate/Remove/Deprecate any SIG/WG labels in [labels.yaml](https://git.k8s.io/test-infra/label_sync/labels.yaml)
+  - Ensure that the YouTube Collaboration links are removed
+- Remove SIG Calendar and events from the community calendar
+- Update `sigs.yaml` to reflect the removal of the SIG/WG

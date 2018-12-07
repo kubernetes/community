@@ -28,7 +28,7 @@ implied. However, describing the process as "moving" the pod is approximately ac
 and easier to understand, so we will use this terminology in the document.
 
 We use the term "rescheduling" to describe any action the system takes to move an
-already-running pod. The decision may be made and executed by any component; we wil
+already-running pod. The decision may be made and executed by any component; we will
 introduce the concept of a "rescheduler" component later, but it is not the only
 component that can do rescheduling.
 
@@ -177,7 +177,7 @@ topic that is outside the scope of this document. For example, resource fragment
 RequiredDuringScheduling node and pod affinity and anti-affinity means that even if the
 sum of the quotas at the top priority level is less than or equal to the total aggregate
 capacity of the cluster, some pods at the top priority level might still go pending. In
-general, priority provdes a *probabilistic* guarantees of pod schedulability in the face
+general, priority provides a *probabilistic* guarantees of pod schedulability in the face
 of overcommitment, by allowing prioritization of which pods should be allowed to run pods
 when demand for cluster resources exceeds supply.
 

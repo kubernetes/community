@@ -81,8 +81,7 @@ on historical utilization. It is designed to only kick in on Pod creation.
 VPA is intended to supersede this feature.
 
 #### In-place updates ####
-In-place Pod updates ([#5774]
-(https://github.com/kubernetes/kubernetes/issues/5774)) is a planned feature to
+In-place Pod updates ([#5774](https://github.com/kubernetes/kubernetes/issues/5774)) is a planned feature to
 allow changing resources (request/limit) of existing containers without killing them, assuming sufficient free resources available on the node.
 Vertical Pod Autoscaler will greatly benefit from this ability, however it is
 not considered a blocker for the MVP.
@@ -190,7 +189,7 @@ Design
 
 ### API ###
 We introduce a new type of API object `VerticalPodAutoscaler`, which
-consists of the Target, that is a [label selector](https://kubernetes.io/docs/api-reference/v1.5/#labelselector-unversioned)
+consists of the Target, that is a [label selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors)
 for matching Pods and two policy sections: the update policy and the resources
 policy.
 Additionally it holds the most recent recommendation computed by VPA.
@@ -558,7 +557,7 @@ VPA controls the request (memory and CPU) of containers. In MVP it always sets
 the limit to infinity. It is not yet clear whether there is a use-case for VPA
 setting the limit.
 
-The request is calculated based on analysis of the current and revious runs of
+The request is calculated based on analysis of the current and previous runs of
 the container and other containers with similar properties (name, image,
 command, args).
 The recommendation model (MVP) assumes that the memory and CPU consumption are

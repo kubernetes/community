@@ -249,7 +249,7 @@ Users are expected to specify `KubeReserved` and `SystemReserved` based on their
 
 Resource requirements for Kubelet and the runtime is typically proportional to the number of pods running on a node.
 Once a user identified the maximum pod density for each of their nodes, they will be able to compute `KubeReserved` using [this performance dashboard](http://node-perf-dash.k8s.io/#/builds).
-[This blog post](http://blog.kubernetes.io/2016/11/visualize-kubelet-performance-with-node-dashboard.html) explains how the dashboard has to be interpreted.
+[This blog post](https://kubernetes.io/blog/2016/11/visualize-kubelet-performance-with-node-dashboard/) explains how the dashboard has to be interpreted.
 Note that this dashboard provides usage metrics for docker runtime only as of now.
 
 Support for evictions based on Allocatable will be introduced in this phase.

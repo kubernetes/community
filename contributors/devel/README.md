@@ -11,7 +11,7 @@ Guide](http://kubernetes.io/docs/admin/).
 * **Contributor Guide**
   ([Please start here](/contributors/guide/README.md)) to learn about how to contribute to Kubernetes
 
-* **GitHub Issues** ([issues.md](issues.md)): How incoming issues are triaged.
+* **GitHub Issues** ([/contributors/guide/issue-triage.md](/contributors/guide/issue-triage.md)): How incoming issues are triaged.
 
 * **Pull Request Process** ([/contributors/guide/pull-requests.md](/contributors/guide/pull-requests.md)): When and why pull requests are closed.
 
@@ -25,6 +25,9 @@ Guide](http://kubernetes.io/docs/admin/).
 * **Development Guide** ([development.md](development.md)): Setting up your development environment.
 
 * **Testing** ([testing.md](testing.md)): How to run unit, integration, and end-to-end tests in your development sandbox.
+
+* **Conformance Testing** ([conformance-tests.md](conformance-tests.md))
+  What is conformance testing and how to create/manage them.
 
 * **Hunting flaky tests** ([flaky-tests.md](flaky-tests.md)): We have a goal of 99.9% flake free tests.
   Here's how to run your tests many times.

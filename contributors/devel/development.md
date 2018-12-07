@@ -79,7 +79,7 @@ document the improvement with data):
 - Parallelizing a calculation that needs to run on a large set of node/pod
   objects.
 
-These issues should always be submitted with (in decreasing order or value):
+These issues should always be submitted with (in decreasing order of value):
 
 - A golang Benchmark test.
 - A visual depiction of reduced metric load on a cluster (measurable using
@@ -112,8 +112,13 @@ instructions](http://releases.k8s.io/HEAD/build/README.md).
 Kubernetes development helper scripts assume an up-to-date GNU tools
 environment. Recent Linux distros should work out-of-the-box.
 
-Mac OS X ships with outdated BSD-based tools. We recommend installing [OS X GNU
+macOS ships with outdated BSD-based tools. We recommend installing [macOS GNU
 tools].
+
+### rsync
+
+Kubernetes build system requires `rsync` command present in the development
+platform.
 
 ### etcd
 
@@ -134,7 +139,9 @@ development environment, please [set one up](http://golang.org/doc/code.html).
 | 1.5, 1.6       | 1.7 - 1.7.5 |
 | 1.7            | 1.8.1       |
 | 1.8            | 1.8.3       |
-| 1.9+           | 1.9.1       |
+| 1.9            | 1.9.1       |
+| 1.10           | 1.9.1       |
+| 1.11+          | 1.10.2      |
 
 Ensure your GOPATH and PATH have been configured in accordance with the Go
 environment instructions.
@@ -171,7 +178,7 @@ see [Build with Bazel].
 To check out code to work on, please refer to [this guide](/contributors/guide/github-workflow.md).
 
 
-[OS X GNU tools]: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x
+[macOS GNU tools]: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x
 [build/build-image/cross]: https://git.k8s.io/kubernetes/build/build-image/cross
 [build/common.sh]: https://git.k8s.io/kubernetes/build/common.sh
 [e2e-image]: https://git.k8s.io/test-infra/jenkins/e2e-image

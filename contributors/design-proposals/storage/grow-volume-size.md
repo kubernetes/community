@@ -198,7 +198,7 @@ we have considered following options:
 
    Cons:
    * I don't know if there is a pattern that exists in kube today for shipping shell scripts that are called out from code in Kubernetes. Flex is
-     different because, none of the flex scripts are shipped with Kuberntes.
+     different because, none of the flex scripts are shipped with Kubernetes.
 3. Ship resizing tools in a container.
 
 

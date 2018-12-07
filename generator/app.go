@@ -103,7 +103,8 @@ type LeadershipGroup struct {
 type Group struct {
 	Name             string
 	Dir              string
-	MissionStatement string `yaml:"mission_statement"`
+	MissionStatement string `yaml:"mission_statement,omitempty"`
+	CharterLink      string `yaml:"charter_link,omitempty"`
 	Label            string
 	Leadership       LeadershipGroup `yaml:"leadership"`
 	Meetings         []Meeting
@@ -177,9 +178,10 @@ func getExistingContent(path string, fileFormat string) (string, error) {
 
 var funcMap = template.FuncMap{
 	"tzUrlEncode": tzUrlEncode,
+	"trimSpace":   strings.TrimSpace,
 }
 
-// tzUrlEncode returns an url encoded string without the + shortcut. This is
+// tzUrlEncode returns a url encoded string without the + shortcut. This is
 // required as the timezone conversion site we are using doesn't recognize + as
 // a valid url escape character.
 func tzUrlEncode(tz string) string {

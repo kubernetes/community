@@ -306,34 +306,57 @@ response reduces the complexity of these clients.
 ##### Typical status properties
 
 **Conditions** represent the latest available observations of an object's
-current state. Objects may report multiple conditions, and new types of
-conditions may be added in the future. Therefore, conditions are represented
-using a list/slice, where all have similar structure.
+state.  They are an extension mechanism intended to be used when the details of
+an observation are not a priori known or would not apply to all instances of a
+given Kind.  For observations that are well known and apply to all instances, a
+regular field is preferred.  An example of a Condition that probably should
+have been a regular field is Pod's "Ready" condition - it is managed by core
+controllers, it is well understood, and it applies to all Pods.
+
+Objects may report multiple conditions, and new types of conditions may be
+added in the future or by 3rd party controllers. Therefore, conditions are
+represented using a list/slice, where all have similar structure.
 
 The `FooCondition` type for some resource type `Foo` may include a subset of the
 following fields, but must contain at least `type` and `status` fields:
 
 ```go
-  Type               FooConditionType  `json:"type" description:"type of Foo condition"`
-  Status             ConditionStatus   `json:"status" description:"status of the condition, one of True, False, Unknown"`
+  Type               FooConditionType   `json:"type" description:"type of Foo condition"`
+  Status             ConditionStatus    `json:"status" description:"status of the condition, one of True, False, Unknown"`
+
   // +optional
-  LastHeartbeatTime  unversioned.Time  `json:"lastHeartbeatTime,omitempty" description:"last time we got an update on a given condition"`
+  Reason             *string            `json:"reason,omitempty" description:"one-word CamelCase reason for the condition's last transition"`
   // +optional
-  LastTransitionTime unversioned.Time  `json:"lastTransitionTime,omitempty" description:"last time the condition transit from one status to another"`
+  Message            *string            `json:"message,omitempty" description:"human-readable message indicating details about last transition"`
+
   // +optional
-  Reason             string            `json:"reason,omitempty" description:"one-word CamelCase reason for the condition's last transition"`
+  LastHeartbeatTime  *unversioned.Time  `json:"lastHeartbeatTime,omitempty" description:"last time we got an update on a given condition"`
   // +optional
-  Message            string            `json:"message,omitempty" description:"human-readable message indicating details about last transition"`
+  LastTransitionTime *unversioned.Time  `json:"lastTransitionTime,omitempty" description:"last time the condition transit from one status to another"`
 ```
 
 Additional fields may be added in the future.
 
+Do not use fields that you don't need - simpler is better.
+
+Use of the `Reason` field is encouraged.
+
+Use the `LastHeartbeatTime` with great caution - frequent changes to this field
+can cause a large fan-out effect for some resources.
+
 Conditions should be added to explicitly convey properties that users and
 components care about rather than requiring those properties to be inferred from
-other observations.
+other observations.  Once defined, the meaning of a Condition can not be
+changed arbitrarily - it becomes part of the API, and has the same backwards-
+and forwards-compatibility concerns of any other part of the API.
 
 Condition status values may be `True`, `False`, or `Unknown`. The absence of a
-condition should be interpreted the same as `Unknown`.
+condition should be interpreted the same as `Unknown`.  How controllers handle
+`Unknown` depends on the Condition in question.
+
+Condition types should indicate state in the "abnormal-true" polarity.  For
+example, if the condition indicates when a policy is invalid, the "is valid"
+case is probably the norm, so the condition should be called "Invalid".
 
 In general, condition values may change back and forth, but some condition
 transitions may be monotonic, depending on the resource and condition type.
@@ -742,7 +765,9 @@ APIs may return alternative representations of any resource in response to an
 Accept header or under alternative endpoints, but the default serialization for
 input and output of API responses MUST be JSON.
 
-Protobuf serialization of API objects are currently **EXPERIMENTAL** and will change without notice.
+A protobuf encoding is also accepted for built-in resources. As proto is not
+self-describing, there is an envelope wrapper which describes the type of
+the contents.
 
 All dates should be serialized as RFC3339 strings.
 
@@ -753,6 +778,9 @@ must be specified as part of the value (e.g., `resource.Quantity`). Which
 approach is preferred is TBD, though currently we use the `fooSeconds`
 convention for durations.
 
+Duration fields must be represented as integer fields with units being
+part of the field name (e.g. `leaseDurationSeconds`). We don't use Duration
+in the API since that would require clients to implement go-compatible parsing.
 
 ## Selecting Fields
 
@@ -1146,6 +1174,13 @@ be called `fooName`. The name of a field referring to another resource of kind
 be ambiguous and they are not specified by the value or value type.
 * The name of a field expressing a boolean property called 'fooable' should be
 called `Fooable`, not `IsFooable`.
+
+### Namespace Names
+* The name of a namespace must be a
+[DNS_LABEL](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/identifiers.md).
+* The `kube-` prefix is reserved for Kubernetes system namespaces, e.g. `kube-system` and `kube-public`.
+* See
+[the namespace docs](https://kubernetes.io/docs/user-guide/namespaces/) for more information.
 
 ## Label, selector, and annotation conventions
 

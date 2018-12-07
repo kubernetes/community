@@ -2,3 +2,5 @@ reviewers:
   - wg-container-identity-leads
 approvers:
   - wg-container-identity-leads
+labels:
+  - wg/container-identity

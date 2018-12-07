@@ -23,6 +23,7 @@ This doc explains the process and best practices for submitting a pull request t
   * [7. KISS, YAGNI, MVP, etc.](#7-kiss-yagni-mvp-etc)
   * [8. It's OK to Push Back](#8-its-ok-to-push-back)
   * [9. Common Sense and Courtesy](#9-common-sense-and-courtesy)
+  * [10. Trivial Edits](#10-trivial-edits)
 
 # Before You Submit a Pull Request
 
@@ -71,39 +72,52 @@ Here's the process the pull request goes through on its way from submission to m
 
 1. If you're **not** a member of the Kubernetes organization, a Reviewer/Kubernetes Member checks that the pull request is safe to test. If so, they comment `/ok-to-test`. Pull requests by Kubernetes organization [members](/community-membership.md) do not need this step. Now the pull request is considered to be trusted, and the pre-submit tests will run:
 
-    1. Automatic tests run. See the current list of tests on the [MERGE REQUIREMENTS tab, at this link](https://submit-queue.k8s.io/#/info)
+    1. Automatic tests run. See the current list of tests at this [link](https://prow.k8s.io/?repo=kubernetes%2Fkubernetes&type=presubmit)
     1. If tests fail, resolve issues by pushing edits to your pull request branch
     1. If the failure is a flake, anyone on trusted pull requests can comment `/retest` to rerun failed tests
 
 1. Reviewer suggests edits
 1. Push edits to your pull request branch
-1. Repeat the prior two steps as needed until reviewer(s) add `/lgtm` label
+1. Repeat the prior two steps as needed until reviewer(s) add `/lgtm` label. The `/lgtm` label, when applied by someone listed as an `reviewer` in the corresponding project `OWNERS` file, is a signal that the code has passed review from one or more trusted reviewers for that project
 1. (Optional) Some reviewers prefer that you squash commits at this step
-1. Follow the bot suggestions to assign an OWNER who will add the `/approve` label to the pull request
+1. Follow the bot suggestions to assign an OWNER who will add the `/approve` label to the pull request. The `/approve` label, when applied by someone listed as an `approver` in the corresponding project `OWNERS`, is a signal that the code has passed final review and is ready to be automatically merged
 
-Once the tests pass, all failures are commented as flakes, or the reviewer adds the labels `/lgtm` and `/approved`, the pull request enters the final merge queue. The merge queue is needed to make sure no incompatible changes have been introduced by other pull requests since the tests were last run on your pull request.
+The behavior of Prow is configurable across projects. You should be aware of the following configurable behaviors.
+
+* If you are listed as an `/approver` in the `OWNERS` file, an implicit `/approve` can be applied to your pull request. This can result in a merge being triggered by a `/lgtm` label. This is the configured behavior in many projects, including `kubernetes/kubernetes`. You can remove the implicit `/approve` with `/approve cancel`
+* `/lgtm` can be configured so that from someone listed as both a `reviewer` and an `approver` will cause both labels to be applied. For `kubernetes/kuebernetes` and many other projects this is _not_ the default behavior, and `/lgtm` is decoupled from `/approve`
+
+Once the tests pass and the reviewer adds the `lgtm` and `approved` labels, the pull request enters the final merge pool. The merge pool is needed to make sure no incompatible changes have been introduced by other pull requests since the tests were last run on your pull request.
 <!-- TODO: create parallel instructions for reviewers -->
 
-The [GitHub "munger"](https://git.k8s.io/test-infra/mungegithub) submit-queue plugin will manage the merge queue automatically.
+[Tide](https://git.k8s.io/test-infra/prow/cmd/tide) will manage the merge pool
+automatically. It uses GitHub queries to select PRs into “tide pools”,
+runs as many in a batch as it can (“tide comes in”), and merges them (“tide goes out”).
 
-1. The pull request enters the merge queue ([http://submit-queue.k8s.io](http://submit-queue.k8s.io))
-1. The merge queue triggers a test re-run with the comment `/test all [submit-queue is verifying that this pull request is safe to merge]`
-    1. Author has signed the CLA (`cncf-cla: yes` label added to pull request)
-    1. No changes made since last `lgtm` label applied
+1. The pull request enters the [merge pool](https://prow.k8s.io/tide)
+if the merge criteria are met. The [PR dashboard](https://prow.k8s.io/pr) shows
+the difference between your PR's state and the merge criteria so that you can
+easily see all criteria that are not being met and address them.
 1. If tests fail, resolve issues by pushing edits to your pull request branch
 1. If the failure is a flake, anyone can comment `/retest` if the pull request is trusted
-1. If tests pass, the merge queue automatically merges the pull request
+1. If tests pass, Tide automatically merges the pull request
 
 That's the last step. Your pull request is now merged.
 
 ## Marking Unfinished Pull Requests
 
-If you want to solicit reviews before the implementation of your pull request is complete, you should hold your pull request to ensure that the merge queue does not pick it up and attempt to merge it. There are two methods to achieve this:
+If you want to solicit reviews before the implementation of your pull request is complete, you should hold your pull request to ensure that Tide does not pick it up and attempt to merge it. There are two methods to achieve this:
 
 1. You may add the `/hold` or `/hold cancel` comment commands
 2. You may add or remove a `WIP` or `[WIP]` prefix to your pull request title
 
 The GitHub robots will add and remove the `do-not-merge/hold` label as you use the comment commands and the `do-not-merge/work-in-progress` label as you edit your title. While either label is present, your pull request will not be considered for merging.
+
+## Pull Requests and the Release Cycle
+
+If a pull request has been reviewed, but held or not approved, it might be due to the current phase in the [Release Cycle](/contributors/devel/release.md). Occasionally, a SIG may freeze their own code base when working towards a specific feature or goal that could impact other development. During this time, your pull request could remain unmerged while their release work is completed.
+
+If you feel your pull request is in this state, contact the appropriate [SIG](https://git.k8s.io/community/sig-list.md) or [SIG-Release](https://git.k8s.io/sig-release) for clarification.
 
 ## Comment Commands Reference
 
@@ -277,3 +291,17 @@ Another phenomenon of open-source projects (where anyone can comment on any issu
 
 No document can take the place of common sense and good taste. Use your best judgment, while you put
 a bit of thought into how your work can be made easier to review. If you do these things your pull requests will get merged with less friction.
+
+## 10. Trivial Edits
+
+Each incoming Pull Request needs to be reviewed, checked, and then merged.
+
+While automation helps with this, each contribution also has an engineering cost. Therefore it is appreciated if you do NOT make trivial edits and fixes, but instead focus on giving the entire file a review.
+
+If you find one grammatical or spelling error, it is likely there are more in that file, you can really make your Pull Request count by checking formatting, checking for broken links, and fixing errors and then submitting all the fixes at once to that file.
+
+**Some questions to consider:**
+
+* Can the file be improved further?
+* Does the trivial edit greatly improve the quality of the content?
+

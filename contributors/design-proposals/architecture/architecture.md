@@ -65,7 +65,7 @@ The project is committed to the following (aspirational) [design ideals](princip
   approach is key to the system’s self-healing and autonomic capabilities. 
 * _Advance the state of the art_. While Kubernetes intends to support non-cloud-native
   applications, it also aspires to advance the cloud-native and DevOps state of the art, such as
-  in the [participation of applications in their own management](http://blog.kubernetes.io/2016/09/cloud-native-application-interfaces.html).
+  in the [participation of applications in their own management](https://kubernetes.io/blog/2016/09/cloud-native-application-interfaces/).
   However, in doing
   so, we strive not to force applications to lock themselves into Kubernetes APIs, which is, for
   example, why we prefer configuration over convention in the [downward API](https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/#the-downward-api).
@@ -221,7 +221,7 @@ Kubelet does not link in the base container runtime. Instead, we're defining a
 underlying runtime and facilitate pluggability of that layer.
 This decoupling is needed in order to maintain clear component boundaries, facilitate testing, and facilitate pluggability.
 Runtimes supported today, either upstream or by forks, include at least docker (for Linux and Windows), 
-[rkt](https://kubernetes.io/docs/getting-started-guides/rkt/),
+[rkt](https://github.com/rkt/rkt),
 [cri-o](https://github.com/kubernetes-incubator/cri-o), and [frakti](https://github.com/kubernetes/frakti).
 
 #### Kube Proxy

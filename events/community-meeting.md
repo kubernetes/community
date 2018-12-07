@@ -1,12 +1,10 @@
 # Kubernetes Weekly Community Meeting
 
-We have PUBLIC and RECORDED [weekly meeting](https://zoom.us/my/kubernetescommunity) every Thursday at 6pm UTC (1pm EST / 10am PST)
+We have PUBLIC and RECORDED [weekly meeting](https://zoom.us/my/kubernetescommunity) every Thursday at [6pm UTC](https://www.google.com/search?q=6pm+UTC).
  
-Map that to your local time with this [timezone table](https://www.google.com/search?q=1800+in+utc)
+See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any [iCal client](https://en.wikipedia.org/wiki/ICalendar). Do NOT copy the meetings over to a your personal calendar, you will miss meeting updates. Instead use your client's calendaring feature to say you are attending the meeting so that any changes made to meetings will be reflected on your personal calendar. 
 
-See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any [iCal client](https://en.wikipedia.org/wiki/ICalendar). Do NOT copy the meetings over to a your perosnal calendar, you will miss meeting updates. Instead use your client's calendaring feature to say you are attending the meeting so that any changes made to meetings will be reflected on your personal calendar. 
-
-All meetings are archived on the [Youtube Channel](https://www.youtube.com/watch?v=onlFHICYB4Q&list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ)
+All meetings are archived on the [Youtube Channel](https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ).
 
 Quick links:
 
@@ -50,7 +48,7 @@ The first 10 minutes of a meeting is dedicated to demonstrations from the commun
 These demos are noted at the top of the community document. 
 There is a hard stop of the demo at 10 minutes, with up to 5 more minutes for questions.
 Feel free to add your demo request to the bottom of the list, then one of the organizers will get back to you to schedule an exact date. 
-Demo submissions MUST follow the the requirements listed below. 
+Demo submissions MUST follow the requirements listed below. 
 
 ### Requirements
 
@@ -65,13 +63,29 @@ Also, if you are doing a live coding demo, please make sure it has a reasonable 
 - Ensure you are presenting from a quiet environment.
 - If you run out of time while performing your demo, you may ask the audience if they would like a follow-up at a subsequent meeting. If there is enthusiastic support, the community team will help schedule a continuation.
 
-## SIG Updates 
+## SIG Updates
 
-SIGs will give a community update at least once per release cycle per the [schedule](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k). 
+SIGs will give a community update at least once per release cycle per the [schedule](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k).
+The SIG Update should mention:
+
+- Topics where input is being sought from other SIGs
+- Topics that could affect other SIGs
+- Currently active themes and goals in the SIG
+  - Broad description of future themes and goals if possible
+- Status of any notable features that are transitioning across the spectrum of incubation, alpha, beta, stable/GA, or are being deprecated
+- New or deprecated subprojects
+- Leadership position changes or updates
+- Charter status and updates, if any
+- How people can contribute, areas where help is needed
+- Any pending Kubernetes Enhancement Proposals (KEPs) or general big ideas that might warrant outside input
+- Prior 1.X.Y release patches in flight status
+- Current 1.X release targeted feature status
+
+Since you only usually have ~10 minutes generally speaking if something is internal only to your SIG and doesn't affect others it doesn't need to be mentioned, people can always attend your SIG meeting for the details.
 
 ## Archives
 
 The document gets slow as we add notes, so it is archived regularly into another document:
 
 - [2017](https://docs.google.com/document/d/1sAH-74kIGROvM5MhyAkbJPVcuE9-RDHiOqfv_4PAGdw/edit#heading=h.en8cy6hno0c6)
-- [2014-1016](https://docs.google.com/a/google.com/document/d/1fcs_POhXJCL1dqYrG3IxE4Ivh8jh2JYLCCdgRmBQeb8/edit?usp=sharing) 
+- [2014-2016](https://docs.google.com/a/google.com/document/d/1fcs_POhXJCL1dqYrG3IxE4Ivh8jh2JYLCCdgRmBQeb8/edit?usp=sharing) 

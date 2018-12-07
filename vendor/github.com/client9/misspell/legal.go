@@ -1,3 +1,4 @@
+// Package misspell corrects commonly misspelled English words in source files.
 package misspell
 
 // Legal provides licensing info.

@@ -1,0 +1,6 @@
+reviewers:
+  - sig-pm-leads
+approvers:
+  - sig-pm-leads
+labels:
+  - sig/pm

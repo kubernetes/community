@@ -2,3 +2,5 @@ reviewers:
   - wg-multitenancy-leads
 approvers:
   - wg-multitenancy-leads
+labels:
+  - wg/multitenancy

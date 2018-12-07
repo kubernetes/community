@@ -14,7 +14,7 @@ and in that case simply add a comment in the issue with your findings.
 
 Following are few predetermined searches on issues for convenience:
 * [Longest untriaged issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc) (sorted by age)
-* [Needs to be assigned to a SIG](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc)
+* [Needs to be assigned to a SIG](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aneeds-sig)
 * [Newest incoming issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue)
 * [Busy untriaged issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc) (sorted by number of comments)
 * [Issues that need more attention](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-asc)
@@ -33,37 +33,37 @@ for other github repositories related to Kubernetes is TBD.
 Most people can leave comments and open issues. They don't have the ability to
 set labels, change milestones and close other peoples issues. For that we use
 a bot to manage labelling and triaging. The bot has a set of
-[commands and permissions](https://git.k8s.io/test-infra/commands.md)
+[commands and permissions](https://go.k8s.io/bot-commands)
 and this document will cover the basic ones.
 
 ## Determine if it's a support request
 
 Sometimes users ask for support requests in issues; these are usually requests
-from people who need help configuring some aspect of Kubernetes. These should be
-directed to our support structures (see below) and then closed. Also, if the issue 
-is clearly abandoned or in the wrong place, it should be closed. Keep in mind that 
-only issue reporter, assignees and component organization members can close issue. 
-If you do not have such privilege, just comment your findings. Otherwise, first
-`/assign` issue to yourself and then `/close`.
+from people who need help configuring some aspect of Kubernetes. These issues
+should be labeled with `triage/support`, directed to our support structures
+(see below) and then closed. Also, if the issue is clearly abandoned or in the
+wrong place, it should be closed. Keep in mind that only issue reporter,
+assignees and component organization members can close issue. If you do not
+have such privilege, just comment your findings. Otherwise, first `/assign`
+issue to yourself and then `/close`.
 
 ### Support Structures
 
 Support requests should be directed to the following:
 
-* [User documentation](https://kubernetes.io/docs/) and
+* [User documentation](https://kubernetes.io/docs/home/) and
 [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
 
 * [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes) and
 [ServerFault](http://serverfault.com/questions/tagged/kubernetes)
 
 * [Slack](https://kubernetes.slack.com) ([registration](http://slack.k8s.io))
-  * Check out the [Slack Archive](http://kubernetes.slackarchive.io/) first.
 
-* [Email/Groups](https://groups.google.com/forum/#!forum/kubernetes-users)
+* [Discussion forums](https://discuss.kubernetes.io)
 
 ### User support response example
 
-If you see support questions on kubernetes-dev@googlegroups.com or issues asking for 
+If you see support questions on kubernetes-dev@googlegroups.com or issues asking for
 support try to redirect them to Stack Overflow. Example response:
 
 ```code
@@ -81,10 +81,10 @@ large volume of support issues on github is making it difficult for us to use
 issues to identify real bugs.
 
 Members of the Kubernetes community use Stack Overflow to field support
-requests. Before posting a new question, please search Stack Overflow for answers 
+requests. Before posting a new question, please search Stack Overflow for answers
 to similar questions, and also familiarize yourself with:
 
-  * [user documentation](http://kubernetes.io/docs/)
+  * [user documentation](https://kubernetes.io/docs/home/)
   * [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
 
 Again, thanks for using Kubernetes.
@@ -104,18 +104,21 @@ comment.
 
 ## Validate if the issue is bug
 
-Validate if the problem is a bug by reproducing it. If reproducible, move to the
-next step of defining priority. You may need to contact the issue reporter in
-the following cases:
-* Do a quick duplicate search to see if the issue has been reported already. If
-a duplicate is found, let the issue reporter know it by marking it duplicate.
-* If you can not reproduce the issue, contact the issue reporter with your
-findings and close the issue if both the parties agree that it could not be
-reproduced.
-* If the issue is non-trivial to reproduce, work with issue reporter and let SIG
-know of your findings.
-* If you do not get a response in 20 days, then close the issue with appropriate
-comment.
+Validate if the problem is a bug by reproducing it. If reproducible, move to
+the next step of defining priority. You may need to contact the issue reporter
+in the following cases:
+* Do a quick duplicate search to see if the issue has been reported already.
+If a duplicate is found, let the issue reporter know it by marking it
+duplicate. Label such issues as `triage/duplicate`.
+* If you can not reproduce the issue, label it as a `triage/not-reproducible`.
+Contact the issue reporter with your findings and close the issue if both the
+parties agree that it could not be reproduced.
+* If you need more information to further work on the issue, let the reporter
+know it by adding an issue comment followed by label
+`triage/needs-information`.
+
+In all cases, if you do not get a response in 20 days then close the issue
+with an appropriate comment.
 
 ## Define priority
 
@@ -133,9 +136,6 @@ leaders are responsible for making sure that all the issues, labeled with this
 priority, in their area are being actively worked on. Examples include
 user-visible bugs in core features, broken builds or tests and critical
 security issues.
-
-- **priority/failing-test**: Automatically filed frequently failing test. Needs
-to be investigated.
 
 - **priority/important-soon**: Must be staffed and worked on either currently,
 or very soon, ideally in time for the next release.
@@ -197,10 +197,56 @@ bug shouldn't be in this milestone for more than a day or two towards the end of
 a milestone. It should be triaged either into vX.Y, or moved out of the release
 milestones.
 
-The above [priority](#define-priority) scheme still applies. The `priority/critical-urgent`
-and `priority/failing-test` issues are work we feel must get done before
+The above [priority](#define-priority) scheme still applies. The
+`priority/critical-urgent` issues are work we feel must get done before
 release.  The `priority/important-soon` and `priority/important-longterm`
 issues are work we would merge into the release if it gets done, but we wouldn't
 block the release on it. A few days before release, we will probably move all
 `priority/important-soon` and `priority/important-longterm` bugs out of
 that milestone in bulk.
+
+More information can be found in the developer guide section for
+[targeting issues and PRs to a milestone release](/contributors/devel/release.md).
+
+## Closing issues
+Issues that are identified as a support request, duplicate, not-reproducible
+or lacks enough information from reporter should be closed following guidelines
+explained in this file. Also, any issues that can not be resolved because of
+any particular reason should be closed. These issues should have one or more
+of following self-readable labels:
+* `triage/support`: Indicates an issues is not a bug but a support request.
+* `triage/duplicate`: Indicates an issue is a duplicate of other open issue.
+* `triage/not-reproducible`: Indicates an issue can not be reproduced as
+described.
+* `triage/needs-information`: Indicates an issue needs more information in
+order to work on it.
+* `triage/unresolved`: Indicates an issue that can not be resolved.
+
+A triage engineer should add these labels appropriately. Kubernetees GitHub
+Org members can search [open issues per these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%93&q=triage%2F+kind%2Fsupport+is%3Aopen) to find ones that can be
+quickly closed.
+
+Also note that, `fejta-bot` will add `lifecycle/stale` label to issues with no
+activity for 90 days. Such issues will be eventually auto closed if the label is
+not removed with the `/remove-lifecycle stale` label or prevented with the
+`/lifecycle frozen` label. Refer to the `fejta-bot` added comments in the issue
+for more details. It is fine to add any of the `triage/*` labels described in
+this issue triage guidelines to issues triaged by the `fejta-bot` for a better
+understanding of the issue and closing of it.
+
+## Help Wanted issues
+
+We use two labels [help wanted](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
+and [good first issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
+to identify issues that have been specially groomed for new contributors.
+
+We have specific [guidelines](/contributors/devel/help-wanted.md)
+for how to use these labels. If you see an issue that satisfies these
+guidelines, you can add the `help wanted` label with the `/help` command
+and the `good first issue` label with the `/good-first-issue` command.
+Please note that adding the `good first issue` label will also automatically
+add the `help wanted` label.
+
+If an issue has these labels but does not satisify the guidelines, please
+ask for more details to be added to the issue or remove the labels using
+`/remove-help` or `/remove-good-first-issue` commands.

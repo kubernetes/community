@@ -2,7 +2,11 @@
 # {{.Name}} Special Interest Group
 
 {{ .MissionStatement }}
-{{ if .Meetings }}## Meetings
+{{- if .CharterLink }}
+The [charter]({{.CharterLink}}) defines the scope and governance of the {{.Name}} Special Interest Group.
+{{ end }}
+{{ if .Meetings -}}
+## Meetings
 {{- range .Meetings }}
 * {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}}]({{.URL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.Time}}&tz={{.TZ | tzUrlEncode}}).
 {{- if .ArchiveURL }}
@@ -58,7 +62,7 @@ The following subprojects are owned by sig-{{.Label}}:
 {{- range .Subprojects }}
 - **{{.Name}}**
 {{- if .Description }}
-  - Description: {{ .Description }}
+  - Description: {{ trimSpace .Description }}
 {{- end }}
   - Owners:
 {{- range .Owners }}
@@ -84,13 +88,9 @@ The following subprojects are owned by sig-{{.Label}}:
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
 Note that the links to display team membership will only work if you are a member of the org.
 
-The google groups contain the archive of Github team notifications.
-Mentioning a team on Github will CC its group.
-Monitor these for Github activity if you are not a member of the team.
-
-| Team Name | Details | Google Groups | Description |
-| --------- |:-------:|:-------------:|  ----------- |
+| Team Name | Details | Description |
+| --------- |:-------:| ----------- |
 {{- range .Contact.GithubTeams }}
-| @kubernetes/{{.Name}} | [link](https://github.com/orgs/kubernetes/teams/{{.Name}}) | [link](https://groups.google.com/forum/#!forum/kubernetes-{{.Name}}) | {{.Description}} |
+| @kubernetes/{{.Name}} | [link](https://github.com/orgs/kubernetes/teams/{{.Name}}) | {{.Description}} |
 {{- end }}
 {{  end }}

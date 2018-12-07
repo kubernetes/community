@@ -61,7 +61,7 @@ think about it.
 about uniqueness, just labeling for user's own reasons.
 - Defaulting logic sets `job.spec.selector` to
 `matchLabels["controller-uid"]="$UIDOFJOB"`
-- Defaulting logic  appends 2 labels to the `.spec.template.metadata.labels`.
+- Defaulting logic appends 2 labels to the `.spec.template.metadata.labels`.
   - The first label is controller-uid=$UIDOFJOB.
   - The second label is "job-name=$NAMEOFJOB".
 

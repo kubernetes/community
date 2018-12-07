@@ -37,7 +37,7 @@ passing, so it is often a good idea to make sure the e2e tests work as well.
 * The preferred method of testing multiple scenarios or input is
   [table driven testing](https://github.com/golang/go/wiki/TableDrivenTests)
   - Example: [TestNamespaceAuthorization](https://git.k8s.io/kubernetes/test/integration/auth/auth_test.go)
-* Unit tests must pass on OS X and Windows platforms.
+* Unit tests must pass on macOS and Windows platforms.
   - Tests using linux-specific features must be skipped or compiled out.
   - Skipped is better, compiled out is required when it won't compile.
 * Concurrent unit test runs must pass.
@@ -52,6 +52,12 @@ also just use `go test` directly.
 ```sh
 cd kubernetes
 make test  # Run all unit tests.
+```
+
+If any unit test fails with a timeout panic (see [#1594](https://github.com/kubernetes/community/issues/1594)) on the testing package, you can increase the `KUBE_TIMEOUT` value as shown below.
+
+```sh
+make test KUBE_TIMEOUT="-timeout 300s"
 ```
 
 ### Set go flags during unit tests
@@ -95,7 +101,7 @@ make test WHAT=./pkg/api/validation GOFLAGS="-v" KUBE_TEST_ARGS="-run ValidatePo
 ```
 
 For other supported test flags, see the [golang
-documentation](https://golang.org/cmd/go/#hdr-Description_of_testing_flags).
+documentation](https://golang.org/cmd/go/#hdr-Testing_flags).
 
 ### Stress running unit tests
 

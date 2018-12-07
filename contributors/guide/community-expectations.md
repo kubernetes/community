@@ -3,7 +3,7 @@
 Kubernetes is a community project. Consequently, it is wholly dependent on
 its community to provide a productive, friendly and collaborative environment.
 
-The first and foremost goal of the Kubernetes community to develop orchestration
+The first and foremost goal of the Kubernetes community is to develop orchestration
 technology that radically simplifies the process of creating reliable
 distributed systems. However a second, equally important goal is the creation
 of a community that fosters easy, agile development of such orchestration

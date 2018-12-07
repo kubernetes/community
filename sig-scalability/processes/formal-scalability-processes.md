@@ -6,7 +6,7 @@ _by Shyam JVS, Google Inc_
 
 ## Introduction
 
-Scalability is a very crucial aspect of kubernetes and has allowed many customers to adopt it with confidence. K8s [started scaling to 5000](http://blog.kubernetes.io/2017/03/scalability-updates-in-kubernetes-1.6.html) nodes beginning from release 1.6. Building and maintaining a performant and scalable system needs conscious efforts from the whole developer community. Lack of solid measures have caused problems (both scalability and release-related) in the past - for e.g during [release-1.7](https://github.com/kubernetes/kubernetes/issues/47344), [release-1.8](https://github.com/kubernetes/kubernetes/issues/53255) and [in general](https://github.com/kubernetes/kubernetes/issues/56062). We need them to ensure that the effort is well-streamlined with proper checks and balances in place. Of course they may evolve over time to suit the community/project’s needs better.
+Scalability is a very crucial aspect of kubernetes and has allowed many customers to adopt it with confidence. K8s [started scaling to 5000](https://kubernetes.io/blog/2017/03/scalability-updates-in-kubernetes-1.6) nodes beginning from release 1.6. Building and maintaining a performant and scalable system needs conscious efforts from the whole developer community. Lack of solid measures have caused problems (both scalability and release-related) in the past - for e.g during [release-1.7](https://github.com/kubernetes/kubernetes/issues/47344), [release-1.8](https://github.com/kubernetes/kubernetes/issues/53255) and [in general](https://github.com/kubernetes/kubernetes/issues/56062). We need them to ensure that the effort is well-streamlined with proper checks and balances in place. Of course they may evolve over time to suit the community/project’s needs better.
 
 ## Goal
 
@@ -65,11 +65,11 @@ These are scalability jobs that would run against the PR at the head of the subm
 - Kubemark-500 (time to run: [~50m](https://k8s-gubernator.appspot.com/builds/kubernetes-jenkins/logs/ci-kubernetes-kubemark-500-gce?before=10000), flakiness: [0%](https://k8s-gubernator.appspot.com/builds/kubernetes-jenkins/logs/ci-kubernetes-kubemark-500-gce?before=11251) in last 100 runs (as of 15/1/18)
 - GCE-100 (time to run: [~40m](https://k8s-gubernator.appspot.com/builds/kubernetes-jenkins/logs/ci-kubernetes-e2e-gci-gce-scalability?before=8366), flakiness: [1%](https://k8s-gubernator.appspot.com/builds/kubernetes-jenkins/logs/ci-kubernetes-e2e-gci-gce-scalability?before=9970) in last 100 runs (as of 15/1/18)
 
-About 60% of scalability regressions are caught by these medium-scale jobs ([source](https://github.com/kubernetes/community/blob/master/sig-scalability/blogs/scalability-regressions-case-studies.md)) and having them run as presubmits will greatly help by preventing those from entering.
+About 60% of scalability regressions are caught by these medium-scale jobs ([source](https://github.com/kubernetes/community/blob/master/sig-scalability/governance/scalability-regressions-case-studies.md)) and having them run as presubmits will greatly help by preventing those from entering.
 
 ### Testing / Post-submit phase
 
-This phase constitutes the final layer of protection against regressions before cutting the release. We already have scalability CI jobs in place for this. The spectrum of scale they cover is quite wide, ranging from 100-node to 5000-node clusters (both for kubemark and real clusters). However, what what we need additionally is:
+This phase constitutes the final layer of protection against regressions before cutting the release. We already have scalability CI jobs in place for this. The spectrum of scale they cover is quite wide, ranging from 100-node to 5000-node clusters (both for kubemark and real clusters). However, what we need additionally is:
 
 The ability for crucial scalability jobs to block submit-queue (with manual unblock ability)\
 ([relevant feature request](https://github.com/kubernetes/kubernetes/issues/53255))\

@@ -40,4 +40,4 @@ Collaboration should simplify things for everyone, but with privilege comes resp
 
 Your community managers are happy to help with any questions that you may have and will do their best to help if anything goes wrong. Please get in touch via [SIG Contributor Experience](https://git.kubernetes.io/community/sig-contributor-experience).
 
- 
+- Check the [centralized list of administrators](./moderators.md) for contact information.
