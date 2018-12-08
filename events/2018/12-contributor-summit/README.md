@@ -27,8 +27,8 @@ Public registration for the event is now closed. If you are a SIG/WG Chair, Tech
 If you are not attending KubeCon/CnC but attending this event, please reach out to community@kubernetes.io for a separate process.
 
 You will need your KubeCon/CnC badge to get into Sunday and Monday events. Badge locations:
-- participating hotels (TBA)
-- atrium on the 4th floor of the Washington Convention Center
+- [Participating hotels](https://kccna18.sched.com/overview/type/Registration)
+- Atrium on the 4th floor of the Washington Convention Center
 - Garage on Sunday night (convenient!)
 
 ## Agenda
