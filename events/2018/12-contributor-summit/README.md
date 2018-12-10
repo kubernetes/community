@@ -124,6 +124,12 @@ Contributor content flows in KubeCon
 | 340p | Deep Dives: Container Identity WG, Testing, VMWare | TBA |
 | 430p | Deep Dives: Big Data, Scheduling | TBA |
 
+*Friday*
+
+| Time   |  Speaker & Title   | Room  |
+| --- | :----------: | :----------: |
+| 1p| Kubebuilder Birds of a Feather | Google: 601 N 34th St, Seattle, WA 98103 |
+
 ## Chat With Us
 There is a [Slack channel](https://kubernetes.slack.com/messages/contributor-summit) (#contributor-summit) for you to use before and during the summit. Look here for volunteer opportunities and content updates. Feel free to pass URLs, notes, reserve the hallway track room, and connect with the organizers.
 
