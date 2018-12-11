@@ -49,7 +49,7 @@ Important notes about the numbers:
 | Number of services                  | 10000          |             | 100000         |
 | Number of services per ns           | 5000           |             | 5000           |
 | Number of all services backends     | TBD            |             | 500000         |
-| Number of backends per service      | 5000           |             | 5000           |
+| Number of backends per service      | 250            |             | 5000           |
 | Number of deployments per ns        | 2000           |             | 10000          |
 | Number of pods per deployment       | TBD            |             | 10000          |
 | Number of jobs per ns               | TBD            |             | 1000           |
