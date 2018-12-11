@@ -128,7 +128,7 @@ proposed</td>
 
 ### Control Plane Cluster Config 
 
-Diagram shows high level target control plan config using the server types listed above, capturing:
+Diagram shows high level target control plane config using the server types listed above, capturing:
 
 * 5 server cluster
 
