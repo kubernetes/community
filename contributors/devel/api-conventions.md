@@ -1251,29 +1251,38 @@ to, but if unspecified, it could be set by default, such as to the resource
 type, like job, deployment, or replicationController. The value would need to be
 at least spatially unique, and perhaps temporally unique in the case of job.
 
-Annotations have very different intended usage from labels. We expect them to be
-primarily generated and consumed by tooling and system extensions. I'm inclined
-to generalize annotations to permit them to directly store arbitrary json. Rigid
-names and name prefixes make sense, since they are analogous to API fields.
+Annotations have very different intended usage from labels. They are
+primarily generated and consumed by tooling and system extensions, or are used
+by end-users to engage non-standard behavior of components.  For example, an
+annotation might be used to indicate that an instance of a resource expects
+additional handling by non-kubernetes controllers. Annotations may carry
+arbitrary payloads, including JSON documents.  Like labels, annotation keys can
+be prefixed with a governing domain (e.g. `example.com/key-name`).  Unprefixed
+keys (e.g. `key-name`) are reserved for end-users.  Third-party components must
+use prefixed keys.  Key prefixes under the "kubernetes.io" and "k8s.io" domains
+are reserved for use by the kubernetes project and must not be used by
+third-parties.
 
-In fact, in-development API fields, including those used to represent fields of
-newer alpha/beta API versions in the older stable storage version, may be
-represented as annotations with the form `something.alpha.kubernetes.io/name` or
-`something.beta.kubernetes.io/name` (depending on our confidence in it). For
-example `net.alpha.kubernetes.io/policy` might represent an experimental network
-policy field. The "name" portion of the annotation should follow the below
-conventions for annotations. When an annotation gets promoted to a field, the
-name transformation should then be mechanical: `foo-bar` becomes `fooBar`.
+In early versions of Kubernetes, some in-development features represented new
+API fields as annotations, generally with the form `something.alpha.kubernetes.io/name` or
+`something.beta.kubernetes.io/name` (depending on our confidence in it). This
+pattern is deprecated.  Some such annotations may still exist, but no new
+annotations may be defined.  New API fields are now developed as regular fields.
 
 Other advice regarding use of labels, annotations, taints, and other generic map keys by
 Kubernetes components and tools:
   - Key names should be all lowercase, with words separated by dashes instead of camelCase
     - For instance, prefer `foo.kubernetes.io/foo-bar` over `foo.kubernetes.io/fooBar`, prefer
     `desired-replicas` over `DesiredReplicas`
-  - Prefix the key with `kubernetes.io/` or `foo.kubernetes.io/`, preferably the
-latter if the label/annotation is specific to `foo`
-    - For instance, prefer `service-account.kubernetes.io/name` over
-`kubernetes.io/service-account.name`
+  - Unprefixed keys are reserved for end-users.  All other labels and annotations must be prefixed.
+  - Key prefixes under "kubernetes.io" and "k8s.io" are reserved for the Kubernetes
+    project.
+    - Such keys are effectively part of the kubernetes API and may be subject
+      to deprecation and compatibility policies. 
+  - Key names, including prefixes, should be precise enough that a user could
+    plausibly understand where it came from and what it is for.
+  - Key prefixes should carry as much context as possible.
+    - For instance, prefer `subsystem.kubernetes.io/parameter` over `kubernetes.io/subsystem-parameter`
   - Use annotations to store API extensions that the controller responsible for
 the resource doesn't need to know about, experimental fields that aren't
 intended to be generally used API fields, etc. Beware that annotations aren't
