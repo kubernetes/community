@@ -2,7 +2,7 @@
 
 # Overview
 
-[HPA v2 API extension proposal](https://github.com/kubernetes/community/blob/hpa_external/contributors/design-proposals/autoscaling/hpa-external-metrics.md) introduces new External metric type for autoscaling based on metrics coming from outside of Kubernetes cluster. This document proposes a new External Metrics API that will be used by HPA controller to get those metrics.
+[HPA v2 API extension proposal](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/autoscaling/hpa-external-metrics.md) introduces new External metric type for autoscaling based on metrics coming from outside of Kubernetes cluster. This document proposes a new External Metrics API that will be used by HPA controller to get those metrics.
 
 This API performs a similar role to and is based on existing [Custom Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/custom-metrics-api.md). Unless explicitly specified otherwise all sections related to semantics, implementation and design decisions in [Custom Metrics API design](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/custom-metrics-api.md) apply to External Metrics API as well. It is generally expected that a Custom Metrics Adapter will provide both Custom Metrics API and External Metrics API, however, this is not a requirement and both APIs can be implemented and used separately.
 
