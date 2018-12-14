@@ -44,7 +44,7 @@ These guidelines are for tool-specific policies that don't fit under a general u
 
 ### Moderating a SIG/WG list
 
-- SIG and Working Group mailing list should have parispittman@google.com and jorge@heptio.com as a coowner so that administrative functions can be managed centrally across the project.
+- SIG and Working Group mailing list should have parispittman@google.com and jorgec@vmware.com as a coowner so that administrative functions can be managed centrally across the project.
   - Moderation of the SIG/WG lists is up to that individual SIG/WG, these admins are there to help facilitate leadership changes, reset lost passwords, etc. 
 
 - Users who are violating the Code of Conduct or other negative activities (like spamming) should be moderated.
