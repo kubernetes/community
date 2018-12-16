@@ -1064,8 +1064,8 @@ sigs:
         description: Korean localization
       - name: sig-docs-ja-owners
         description: Japanese localization
-      - name: sig-docs-zh-owners 
-        description: Chinese localization 
+      - name: sig-docs-zh-owners
+        description: Chinese localization
     subprojects:
     - name: reference-docs
       owners:
@@ -1401,6 +1401,10 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubelet/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
+    - name: node-api
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/node-api/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/node-api/OWNERS
     - name: node-feature-discovery
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/OWNERS
@@ -2008,7 +2012,7 @@ sigs:
       frequency: weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
-      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4 
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4
     contact:
       slack: sig-windows
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-windows
