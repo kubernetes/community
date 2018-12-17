@@ -58,6 +58,9 @@ The following subprojects are owned by sig-architecture:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
+- **klog**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
 - **steering**
   - Description: Placeholder until sigs.yaml supports committees as first-class groups. These repos are owned by the kubernetes steering committee, which is a wholly separate entity from SIG Architecture
   - Owners:

@@ -260,6 +260,9 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
+    - name: klog
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
     - name: steering
       description: Placeholder until sigs.yaml supports committees as first-class groups. These repos are owned by the kubernetes steering committee, which is a wholly separate entity from SIG Architecture
       owners:
