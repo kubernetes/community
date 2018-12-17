@@ -137,7 +137,7 @@ the NVIDIA device plugin through:
 
 The device plugin lands on all the nodes of the cluster and if it detects that
 there are no GPUs it terminates (assuming `restart: OnFailure`). However, when
-there are GPUs it reports them to Kubelet and starts it's gRPC server to
+there are GPUs it reports them to Kubelet and starts its gRPC server to
 monitor devices and hook into the container creation process.
 
 Devices reported by Device Plugins are advertised as Extended resources of
@@ -168,7 +168,7 @@ satisfy the resource requests.
 ## Introduction
 
 The device plugin is structured in 3 parts:
-1. Registration: The device plugin advertises it's presence to Kubelet
+1. Registration: The device plugin advertises its presence to Kubelet
 2. ListAndWatch: The device plugin advertises a list of Devices to Kubelet
    and sends it again if the state of a Device changes
 3. Allocate: When creating containers, Kubelet calls the device plugin's
@@ -187,7 +187,7 @@ sockets and follow this simple pattern:
    gRPC request)
 2. Kubelet answers to the `RegisterRequest` with a `RegisterResponse`
    containing any error Kubelet might have encountered
-3. The device plugin start it's gRPC server if it did not receive an
+3. The device plugin start its gRPC server if it did not receive an
    error
 
 ## Unix Socket
@@ -341,7 +341,7 @@ We want Kubelet as well as the Device Plugins to recover from failures
 that may happen on any side of this protocol.
 
 At the communication level, gRPC is a very strong piece of software and
-is able to ensure that if failure happens it will try it's best to recover
+is able to ensure that if failure happens it will try its best to recover
 through exponential backoff reconnection and Keep Alive checks.
 
 The proposed mechanism intends to replace any device specific handling in
