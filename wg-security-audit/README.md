@@ -20,7 +20,7 @@ Perform a security audit on k8s with a vendor and produce as artifacts a threat 
 * Craig Ingram (**[@cji](https://github.com/cji)**), Salesforce
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/)
+* [Slack](https://kubernetes.slack.com/messages/wg-security-audit)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-audit)
 
 <!-- BEGIN CUSTOM CONTENT -->
