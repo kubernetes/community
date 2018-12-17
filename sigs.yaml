@@ -2037,6 +2037,10 @@ sigs:
         description: Feature Requests
       - name: sig-windows-misc
         description: General Discussion
+    subprojects:
+    - name: windows-testing
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
 workinggroups:
   - name: Resource Management
     dir: wg-resource-management
