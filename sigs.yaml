@@ -911,7 +911,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
     - name: kubespray
       owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/kubespray/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
     - name: minikube
       owners:
       - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
