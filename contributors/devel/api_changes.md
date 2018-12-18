@@ -927,8 +927,10 @@ The preferred approach adds an alpha field to the existing object, and ensures i
     }
     ```
 
-3. Before persisting the object to storage, clear disabled alpha fields.
-One possible place to do this is in the REST storage strategy's PrepareForCreate/PrepareForUpdate methods:
+3. Before persisting the object to storage, clear disabled alpha fields on create,
+and on update if the existing object does not already have a value in the field.
+This prevents new usage of the feature while it is disabled, while ensuring existing data is preserved.
+The recommended place to do this is in the REST storage strategy's PrepareForCreate/PrepareForUpdate methods:
 
     ```go
     func (frobberStrategy) PrepareForCreate(ctx genericapirequest.Context, obj runtime.Object) {
@@ -943,29 +945,23 @@ One possible place to do this is in the REST storage strategy's PrepareForCreate
       newFrobber := obj.(*api.Frobber)
       oldFrobber := old.(*api.Frobber)
     
-      if !utilfeature.DefaultFeatureGate.Enabled(features.Frobber2D) {
+      if !utilfeature.DefaultFeatureGate.Enabled(features.Frobber2D) && oldFrobber.Width == nil {
         newFrobber.Width = nil
-        oldFrobber.Width = nil
       }
     }
     ```
 
-4. In validation, ensure the alpha field is not set if the feature gate is disabled (covers cases we might miss in the above):
+4. In validation, validate the field if present:
 
     ```go
     func ValidateFrobber(f *api.Frobber, fldPath *field.Path) field.ErrorList {
       ...
-      if utilfeature.DefaultFeatureGate.Enabled(features.Frobber2D) {
-        ... normal validation of width field ...
-      } else if f.Width != nil {		
-        allErrs = append(allErrs, field.Forbidden(fldPath.Child("width"), "disabled by feature-gate"))
+      if f.Width != nil {
+        ... validation of width field ...
       }
       ...
     }
     ```
-
-Eventually, the API machinery will handle a lot of these things automatically from
-declarative inputs.
 
 In future Kubernetes versions:
 
