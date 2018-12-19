@@ -57,16 +57,21 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-scalability-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
-## Upcoming 2018 Meeting Dates
-   * 6/7
-   * 6/21
-   * 7/5
-   * 7/19
-   * 8/2
-   * 8/16
-   * 8/30
-   * 9/13
-   * 9/27
+## Upcoming 2019 Meeting Dates
+   * 12/20/2018
+   * 1/3
+   * 1/17
+   * 1/31
+   * 2/14
+   * 2/28
+   * 3/14
+   * 3/28
+   * 4/11
+   * 4/25
+   * 5/9
+   * 5/23
+   * 6/6
+   * 5/20
 
 ## Scalability/performance SLIs and SLOs
 
