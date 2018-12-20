@@ -8,9 +8,10 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Scalability Special Interest Group
 
-Responsible for answering scalability related questions such as:
-What size clusters do we think that we should support with Kubernetes in the short to medium term? How performant do we think that the control system should be at scale? What resource overhead should the Kubernetes control system reasonably consume?
-For more details about our objectives please review our [Scaling And Performance Goals](https://git.k8s.io/community/sig-scalability/goals.md)
+SIG Scalability is responsible for defining and driving scalability goals for Kubernetes. We also coordinate and contribute to general system-wide scalability and performance improvements (not falling into the charter of other individual SIGs) by driving large architectural changes and finding bottlenecks, as well as provide guidance and consultations about any scalability and performance related aspects of Kubernetes.
+We are actively working on finding and removing various scalability bottlenecks which should lead us towards pushing system's scalability higher. This may include going beyond 5k nodes in the future - although that's not our priority as of now, this is very deeply in our area of interest and we are happy to guide and collaborate on any efforts towards that goal as long as they are not sacrificing on overall Kubernetes architecture (by making it non-maintainable, non-understandable, etc.).
+
+The [charter](charter.md) defines the scope and governance of the Scalability Special Interest Group.
 
 ## Meetings
 * Regular SIG Meeting: [Thursdays at 16:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=UTC).
@@ -33,13 +34,19 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-scalability:
-- **kubemark**
+- **kubernetes-scalability-definition**
+  - Owners:
+    - https://github.com/kubernetes/community/blob/master/sig-scalability/slos/OWNERS
+- **kubernetes-scalability-governance**
+  - Owners:
+    - https://github.com/kubernetes/community/blob/master/sig-scalability/governance/OWNERS
+- **kubernetes-scalability-test-frameworks**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubemark/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubemark/OWNERS
-- **perf-tests**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/perf-tests/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/kubemark/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/perf-tests/blob/master/clusterloader2/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/perf-tests/blob/master/OWNERS
 
 ## GitHub Teams
 
