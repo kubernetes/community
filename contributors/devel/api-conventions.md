@@ -358,6 +358,9 @@ Condition types should indicate state in the "abnormal-true" polarity.  For
 example, if the condition indicates when a policy is invalid, the "is valid"
 case is probably the norm, so the condition should be called "Invalid".
 
+The thinking around conditions has evolved over time, so there are several
+non-normative examples in wide use.
+
 In general, condition values may change back and forth, but some condition
 transitions may be monotonic, depending on the resource and condition type.
 However, conditions are observations and not, themselves, state machines, nor do
@@ -365,24 +368,26 @@ we define comprehensive state machines for objects, nor behaviors associated
 with state transitions. The system is level-based rather than edge-triggered,
 and should assume an Open World.
 
-A typical oscillating condition type is `Ready`, which indicates the object was
-believed to be fully operational at the time it was last probed. A possible
-monotonic condition could be `Succeeded`. A `False` status for `Succeeded` would
-imply failure. An object that was still active would not have a `Succeeded`
-condition, or its status would be `Unknown`.
+An example of an oscillating condition type is `Ready` (despite it running
+afoul of current guidance), which indicates the object was believed to be fully
+operational at the time it was last probed. A possible monotonic condition
+could be `Failed`. A `True` status for `Failed` would imply failure with no
+retry. An object that was still active would generally not have a `Failed`
+condition.
 
 Some resources in the v1 API contain fields called **`phase`**, and associated
 `message`, `reason`, and other status fields. The pattern of using `phase` is
-deprecated. Newer API types should use conditions instead. Phase was essentially
-a state-machine enumeration field, that contradicted
-[system-design principles](../design-proposals/architecture/principles.md#control-logic) and hampered
-evolution, since [adding new enum values breaks backward
+deprecated. Newer API types should use conditions instead. Phase was
+essentially a state-machine enumeration field, that contradicted [system-design
+principles](../design-proposals/architecture/principles.md#control-logic) and
+hampered evolution, since [adding new enum values breaks backward
 compatibility](api_changes.md). Rather than encouraging clients to infer
-implicit properties from phases, we intend to explicitly expose the conditions
-that clients need to monitor. Conditions also have the benefit that it is
-possible to create some conditions with uniform meaning across all resource
-types, while still exposing others that are unique to specific resource types.
-See [#7856](http://issues.k8s.io/7856) for more details and discussion.
+implicit properties from phases, we prefer to explicitly expose the individual
+conditions that clients need to monitor. Conditions also have the benefit that
+it is possible to create some conditions with uniform meaning across all
+resource types, while still exposing others that are unique to specific
+resource types.  See [#7856](http://issues.k8s.io/7856) for more details and
+discussion.
 
 In condition types, and everywhere else they appear in the API, **`Reason`** is
 intended to be a one-word, CamelCase representation of the category of cause of
