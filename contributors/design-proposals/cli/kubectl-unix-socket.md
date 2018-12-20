@@ -46,5 +46,5 @@ There should be no compatibility issues. New clients will still be compatible wi
 
 ## Alternatives considered
 
-- We could allow users to designate the network AND address that get passed into the net.Dial function used to connect to the server. That would clutter the cli interface. Taking this approach keeps it more consistant with curl and other familiar unix tools.
+- We could allow users to designate the network AND address that get passed into the net.Dial function used to connect to the server. That would clutter the cli interface. Taking this approach keeps it more consistent with curl and other familiar unix tools.
 - We could use a different name, other than "via-unix-socket". Perhaps "proxy-socket" would be better. Unfortunately, we cannot use --unix-socket because it is already a flag to kubectl proxy. We could also use "--via-unix-socket" on the cli and just "unix-socket" in kubeconfig files. I opted to use "via-unix-socket" to keep both config syntax unified.
