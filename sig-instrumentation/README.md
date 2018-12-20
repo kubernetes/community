@@ -46,6 +46,9 @@ The following subprojects are owned by sig-instrumentation:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS
+- **mutating-trace-admission-controller**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
 
 ## GitHub Teams
 

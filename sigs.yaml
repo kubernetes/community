@@ -105,6 +105,9 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes-incubator/client-python/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/client-go/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/OWNERS
+    - name: yaml
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/yaml/master/OWNERS
   - name: Apps
     dir: sig-apps
     mission_statement: >
@@ -260,6 +263,9 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
+    - name: klog
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
     - name: steering
       description: Placeholder until sigs.yaml supports committees as first-class groups. These repos are owned by the kubernetes steering committee, which is a wholly separate entity from SIG Architecture
       owners:
@@ -753,6 +759,9 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/cloudprovider/OWNERS
+    - name: cloud-provider-alibaba-cloud
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-alibaba-cloud/master/OWNERS
     - name: cloud-provider-gcp
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
@@ -905,7 +914,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
     - name: kubespray
       owners:
-      - https://raw.githubusercontent.com/kubernetes-incubator/kubespray/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
     - name: minikube
       owners:
       - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
@@ -1212,6 +1221,9 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS
+    - name: mutating-trace-admission-controller
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
   - name: Multicluster
     dir: sig-multicluster
     mission_statement: >
@@ -1401,6 +1413,10 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubelet/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
+    - name: node-api
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/node-api/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/node-api/OWNERS
     - name: node-feature-discovery
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/OWNERS
@@ -1812,6 +1828,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes-csi/external-attacher/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/external-resizer/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi-migration-library/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/csi-api/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
@@ -1822,6 +1839,7 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-lib-external-provisioner/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-local-static-provisioner/master/OWNERS
     - name: git-sync
       owners:
       - https://raw.githubusercontent.com/kubernetes/git-sync/master/OWNERS
@@ -2030,6 +2048,10 @@ sigs:
         description: Feature Requests
       - name: sig-windows-misc
         description: General Discussion
+    subprojects:
+    - name: windows-testing
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
 workinggroups:
   - name: Resource Management
     dir: wg-resource-management

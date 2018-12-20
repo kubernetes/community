@@ -52,6 +52,7 @@ The following subprojects are owned by sig-storage:
     - https://raw.githubusercontent.com/kubernetes-csi/external-attacher/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/external-resizer/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi-migration-library/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/csi-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
@@ -62,6 +63,7 @@ The following subprojects are owned by sig-storage:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-lib-external-provisioner/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-local-static-provisioner/master/OWNERS
 - **git-sync**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/git-sync/master/OWNERS

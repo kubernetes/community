@@ -94,7 +94,7 @@ The following subprojects are owned by sig-cluster-lifecycle:
     - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
 - **kubespray**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/kubespray/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
 - **minikube**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
