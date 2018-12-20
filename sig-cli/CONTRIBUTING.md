@@ -400,7 +400,7 @@ See the sig-cli [community page] for points of contact and meeting times:
 [`PTAL`]: https://en.wiktionary.org/wiki/PTAL
 [agenda]: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit
 [bug]: #bug-lifecycle
-[communication]:  /sig-cli#contact
+[communication]:  /sig-cli/README.md#contact
 [community page]: /sig-cli
 [design proposal]: #design-proposals
 [design repo]: /contributors/design-proposals/cli
@@ -415,9 +415,9 @@ See the sig-cli [community page] for points of contact and meeting times:
 [kubectl docs]: https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/
 [kubernetes/cmd/kubectl]: https://git.k8s.io/kubernetes/cmd/kubectl
 [kubernetes/pkg/kubectl]: https://git.k8s.io/kubernetes/pkg/kubectl
-[leads]: /sig-cli#leads
+[leads]: /sig-cli/README.md#leadership
 [management overview]: https://kubernetes.io/docs/concepts/tools/kubectl/object-management-overview
-[meeting]: /sig-cli#meetings
+[meeting]: /sig-cli/README.md#meetings
 [release]: #release
 [slack-messages]: https://kubernetes.slack.com/messages/sig-cli
 [slack-signup]: http://slack.k8s.io/
