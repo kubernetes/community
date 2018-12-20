@@ -2293,4 +2293,4 @@ workinggroups:
       url: https://docs.google.com/document/d/1RbC4SBZBlKth7IjYv_NaEpnmLGwMJ0ElpUOmsG-bdRA/edit
     contact:
       slack: wg-security-audit
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-audit
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit
