@@ -1724,12 +1724,25 @@ sigs:
       - name: Michael Kibbe
         github: kibbles-n-bytes
         company: Google
-      - name: Doug Davis
-        github: duglin
+      - name: Jonathan Berkhahn
+        github: jberkhahn
         company: IBM
       - name: Jay Boyd
         github: jboyd01
         company: Red Hat
+      emeritus_leads:
+      - name: Paul Morie
+        github: pmorie
+        company: Red Hat
+      - name: Aaron Schlesinger
+        github: arschles
+        company: Microsoft
+      - name: Ville Aikas
+        github: vaikas-google
+        company: Google
+      - name: Doug Davis
+        github: duglin
+        company: IBM
     meetings:
     - description: Regular SIG Meeting
       day: Monday
