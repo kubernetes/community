@@ -37,12 +37,12 @@ The following subprojects are owned by sig-scalability:
 - **kubernetes-scalability-definition**
   - Description: [Described below](#kubernetes-scalability-definition)
   - Owners:
-    - https://github.com/kubernetes/community/blob/master/sig-scalability/slos/OWNERS
-    - https://github.com/kubernetes/community/blob/master/sig-scalability/configs-and-limits/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/slos/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/configs-and-limits/OWNERS
 - **kubernetes-scalability-governance**
   - Description: [Described below](#kubernetes-scalability-governance)
   - Owners:
-    - https://github.com/kubernetes/community/blob/master/sig-scalability/governance/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/governance/OWNERS
 - **kubernetes-scalability-test-frameworks**
   - Description: [Described below](#kubernetes-scalability-test-frameworks)
   - Owners:
@@ -50,16 +50,17 @@ The following subprojects are owned by sig-scalability:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubemark/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubemark/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/kubemark/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/perf-tests/blob/master/clusterloader2/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/perf-tests/blob/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/perf-tests/master/clusterloader2/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/perf-tests/master/OWNERS
 - **kubernetes-scalability-and-performance-tests-and-validation**
   - Description: [Described below](#kubernetes-scalability-and-performance-tests-and-validation)
   - Owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/processes/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/scalability/OWNERS
 - **kubernetes-scalability-bottlenecks-detection**
   - Description: [Described below](#kubernetes-scalability-bottlenecks-detection)
   - Owners:
-    - https://github.com/kubernetes/community/blob/master/sig-scalability/blogs/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/blogs/OWNERS
 
 ## GitHub Teams
 
