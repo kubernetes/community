@@ -35,18 +35,31 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 The following subprojects are owned by sig-scalability:
 - **kubernetes-scalability-definition**
+  - Description: [Described below](#kubernetes-scalability-definition)
   - Owners:
     - https://github.com/kubernetes/community/blob/master/sig-scalability/slos/OWNERS
+    - https://github.com/kubernetes/community/blob/master/sig-scalability/configs-and-limits/OWNERS
 - **kubernetes-scalability-governance**
+  - Description: [Described below](#kubernetes-scalability-governance)
   - Owners:
     - https://github.com/kubernetes/community/blob/master/sig-scalability/governance/OWNERS
 - **kubernetes-scalability-test-frameworks**
+  - Description: [Described below](#kubernetes-scalability-test-frameworks)
   - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/kubemark/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubemark/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubemark/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/kubemark/OWNERS
     - https://raw.githubusercontent.com/kubernetes/perf-tests/blob/master/clusterloader2/OWNERS
     - https://raw.githubusercontent.com/kubernetes/perf-tests/blob/master/OWNERS
+- **kubernetes-scalability-and-performance-tests-and-validation**
+  - Description: [Described below](#kubernetes-scalability-and-performance-tests-and-validation)
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/scalability/OWNERS
+- **kubernetes-scalability-bottlenecks-detection**
+  - Description: [Described below](#kubernetes-scalability-bottlenecks-detection)
+  - Owners:
+    - https://github.com/kubernetes/community/blob/master/sig-scalability/blogs/OWNERS
 
 ## GitHub Teams
 
@@ -80,7 +93,66 @@ Note that the links to display team membership will only work if you are a membe
    * 6/6
    * 5/20
 
-## Scalability/performance SLIs and SLOs
+# Details about SIG-Scalability sub-projects
 
-Check out [SLIs/SLOs page](./slos/slos.md).
+## Kubernetes scalability definition
+
+Defining what does it mean that "Kubernetes scales".
+This includes defining (or approving) individual performance and scalability
+related SLIs/SLOs, ensuring they are all oriented on user experience and
+consistent with each other.
+
+Measuring and publishing limits within which Kubernetes is supposed to scale
+as defined above and providing recommendations about setting clusters in
+scalable and performant ways.
+
+* [Kubernetes Scalability SLIs/SLOs](./slos/slos.md).
+
+## Kubernetes scalability governance
+
+Establishing and documenting best practises on how do design and implement
+Kubernetes features in scalable and performance way.
+Educating contributors and ensuring best practises are widely used.
+
+* [Regressions case study](./governance/scalability-regressions-case-studies.md)
+
+## Kubernetes scalability test frameworks
+
+Designing and creating frameworks to make scalability and performance testing
+of Kubernetes easy and available for all contributors.
+Different frameworks may help in different aspects of scalability testing,
+enabling making conscious tradeoffs, e.g. cost vs accuracy or real life vs
+more generalized benchmarking scenarios.
+
+* [Cluster Loader v2](https://github.com/kubernetes/perf-tests/tree/master/clusterloader2)
+* [Kubemark](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubemark)
+
+## Kubernetes scalability and performance tests and validation
+
+Ensuring that all tests necessary to validate Kubernetes scalability and
+performance exists (ideally by providing easy-to-use frameworks and working
+with SIGs to provide them), having engironment and resources to run them.
+
+Ensuring that tests are being executed according to calendar and ensuring that
+each official Kubernetes release satisfies all scalability and performance
+requirements as stated in "Kubernetes scalability" definition.
+This also includes designing processes to reduce maintenance work and number
+of scalability and performance regressions:
+
+* [Processes](https://github.com/kubernetes/community/tree/master/sig-scalability/processes)
+
+We are in progress to migrating tests to new framework:
+
+* [Still official tests](https://github.com/kubernetes/kubernetes/tree/master/test/e2e/scalability)
+* [Soon to be official tests](https://github.com/kubernetes/perf-tests/tree/master/clusterloader2/testing)
+
+## Kubernetes scalability bottlenecks detection
+
+Detecting scalability bottlenecks and limitations, documenting them and
+driving architectural changes to eliminate those (if such are required) in
+collaboration with other SIGs or directly delegating improvements to
+individual SIGs, of bottlenecks aren't cross-cutting the whole system.
+
+* [Scalability issues with Services](.blogs/k8s-services-scalability-issues.md)
+
 <!-- END CUSTOM CONTENT -->
