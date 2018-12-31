@@ -57,7 +57,7 @@ We propose that:
     for their parsing, document them and refuse any selector that references
     unknown labels.
 
-3.  An api object will be incubated in storage.k8s.io/v1beta1 to hold the a `StorageClass`
+3.  An api object will be incubated in storage.k8s.io/v1beta1 to hold a `StorageClass`
     API resource. Each StorageClass object contains parameters required by the provisioner to provision volumes of that class.  These parameters are opaque to the user.
 
 4.  `PersistentVolume.Spec.Class` attribute is added to volumes. This attribute
@@ -184,7 +184,7 @@ Existing behavior is unchanged for claims that do not specify
   3. It tries to find a StorageClass instance referenced by annotation
      `claim.Annotations["volume.beta.kubernetes.io/storage-class"]`. If not
      found, it SHOULD report an error (by sending an event to the claim) and it
-     SHOULD retry periodically with step i.
+     SHOULD retry periodically with step 1.
 
   4. The provisioner MUST parse arguments in the `StorageClass` and
      `claim.Spec.Selector` and provisions appropriate storage asset that matches
@@ -193,7 +193,7 @@ Existing behavior is unchanged for claims that do not specify
      `claim.Spec.Selector` or the combination of these parameters is impossible
      to achieve, it SHOULD report an error and it MUST NOT provision a volume.
      All errors found during parsing or provisioning SHOULD be send as events
-     on the claim and the provisioner SHOULD retry periodically with step i.
+     on the claim and the provisioner SHOULD retry periodically with step 1.
 
      As parsing (and understanding) claim selectors is hard, the sentence
      "MUST parse ... `claim.Spec.Selector`"  will in typical case lead to simple
