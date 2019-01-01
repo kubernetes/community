@@ -168,10 +168,10 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 
 [community membership]: /community-membership.md
 [sig governance]: /sig-governance.md
-[owners]: community-membership.md#subproject-owner
-[sig charter process]: committee-steering/governance/README.md
-[short template]: committee-steering/governance/sig-governance-template-short.md
-[kubernetes repository guidelines]: kubernetes-repositories.md
-[working group governance]: committee-steering/governance/wg-governance.md
+[owners]: /community-membership.md#subproject-owner
+[sig charter process]: /committee-steering/governance/README.md
+[short template]: /committee-steering/governance/sig-governance-template-short.md
+[kubernetes repository guidelines]: /github-management/kubernetes-repositories.md
+[working group governance]: /committee-steering/governance/wg-governance.md
 
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/governance.md?pixel)]()
