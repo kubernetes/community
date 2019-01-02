@@ -29,8 +29,7 @@ Therefore, we are very cautious about giving more people this access than
 really need it.
 
 There are certain actions that require org owner access:
-- Invite or remove members from the organization (in future, will be handled by
-  [peribolos])
+- Invite or remove members from the organization (handled by [peribolos])
 - Access the organization audit log
 - Create new repositories
 - Transfer repositories
@@ -69,7 +68,7 @@ In most cases, this level of access should not be necessary as the majority of
 actions will be able to be implemented by automation. Certain actions like
 creating a release may still need this level of access.
 
-**// TODO(cblecker):** Define specific roles that need this.
+<!--- TODO(cblecker): Define specific roles that need this. -->
 
 ### Write
 
