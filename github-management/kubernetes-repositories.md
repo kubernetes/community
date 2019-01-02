@@ -65,7 +65,7 @@ from a central body (e.g. steering committee or sig-architecture)
 
 ### Rules for new repositories
 
-   * For now all repos will live in github.com/kubernetes-sigs/\<project-name\>.
+   * For now all repos will live in `github.com/kubernetes-sigs/\<project-name\>`.
    * Must contain the topic for the sponsoring SIG - e.g.
      `k8s-sig-api-machinery`.  (Added through the *Manage topics* link on the
 repo page.)
@@ -108,7 +108,9 @@ in official Kubernetes releases. Additionally, the kubernetes.io website, k8s.io
 machinery, and other project-wide infrastructure will remain in the kubernetes
 github organization.
 
-### Goals Create a broader base of repositories than the existing
+### Goals
+
+Create a broader base of repositories than the existing
 gh/kubernetes/kubernetes so that the project can scale. Present expectations
 about the centrality and importance of the repository in the Kubernetes
 ecosystem. Carries the endorsement of the Kubernetes community.
@@ -158,16 +160,16 @@ circumstances (e.g. a code of conduct violation).
 When a repository has been deemed eligible for removal, we take the following
 steps:
 
-    * Ownership of the repo is transferred to the [kubernetes-retired] GitHub
-      organization
-    * The repo description is edited to start with the phrase "[EOL]"
-    * All open issues and PRs are closed
-    * All external collaborators are removed
-    * All webhooks, apps, integrations or services are removed
-    * GitHub Pages are disabled
-    * The repo is marked as archived using [GitHub's archive feature]
-    * The removal is announced on the kubernetes-dev mailing list and community
-      meeting
+  * Ownership of the repo is transferred to the [kubernetes-retired] GitHub
+    organization
+  * The repo description is edited to start with the phrase "[EOL]"
+  * All open issues and PRs are closed
+  * All external collaborators are removed
+  * All webhooks, apps, integrations or services are removed
+  * GitHub Pages are disabled
+  * The repo is marked as archived using [GitHub's archive feature]
+  * The removal is announced on the kubernetes-dev mailing list and community
+    meeting
 
 This maintains the complete record of issues, PRs and other contributions,
 leaves the repository read-only, and makes it clear that the repository should
