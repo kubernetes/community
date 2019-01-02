@@ -42,7 +42,7 @@ and opts-in to updates and modifications to [sig-governance].
 
 ### Subproject Creation
 
-Option 1: by [SIG Technical Leads](https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md#L100)
+Option 1: by [SIG Technical Leads](https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md#tech-lead)
 
 
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
