@@ -1585,8 +1585,7 @@ sigs:
       scalability and performance improvements (not falling into the charter of
       other individual SIGs) by driving large architectural changes and finding
       bottlenecks, as well as provide guidance and consultations about any
-      scalability and performance related aspects of Kubernetes.
-
+      scalability and performance related aspects of Kubernetes. <br/>
       We are actively working on finding and removing various scalability
       bottlenecks which should lead us towards pushing system's scalability
       higher. This may include going beyond 5k nodes in the future - although

@@ -4,9 +4,9 @@
 
 | Status | SLI | SLO |
 | --- | --- | --- |
-| __WIP__ | In-cluster dns latency from a single prober pod, measured as latency of per second DNS lookup<sup>[1](#footnote)</sup> for "null service" from that pod, measured as 99th percentile over last 5 minutes. | In default Kubernetes installataion with RTT between nodes <= Y, 99th percentile of (99th percentile over all prober pods) per cluster-day <= X |
+| __WIP__ | In-cluster dns latency from a single prober pod, measured as latency of per second DNS lookup<sup>[1](#footnote1)</sup> for "null service" from that pod, measured as 99th percentile over last 5 minutes. | In default Kubernetes installataion with RTT between nodes <= Y, 99th percentile of (99th percentile over all prober pods) per cluster-day <= X |
 
-<a name="footnote">\[1\]</a> In fact two DNS lookups: (1) to nameserver IP from
+<a name="footnote1">\[1\]</a> In fact two DNS lookups: (1) to nameserver IP from
 /etc/resolv.conf (2) to kube-system/kube-dns service IP and track them as two
 separate SLIs.
 
