@@ -44,7 +44,7 @@ Introduction
 
 ### Background ###
 * [Compute resources](https://kubernetes.io/docs/user-guide/compute-resources/)
-* [Resource QoS](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-qos.md)
+* [Resource QoS](/contributors/design-proposals/node/resource-qos.md)
 * [Admission Controllers](https://kubernetes.io/docs/admin/admission-controllers/)
 * [External Admission Webhooks](https://kubernetes.io/docs/admin/extensible-admission-controllers/#external-admission-webhooks)
 
@@ -449,7 +449,7 @@ user who wants to create the VPA config together with submitting the Pod.
 The VPA Admission Controller will be implemented as an
 [External Admission Hook](https://kubernetes.io/docs/admin/extensible-admission-controllers/#external-admission-webhooks).
 Note however that this depends on the proposed feature to allow
-[mutating webhook admission controllers](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/admission_control_extension.md#future-work).
+[mutating webhook admission controllers](/contributors/design-proposals/api-machinery/admission_control_extension.md#future-work).
 
 ### Recommender ###
 Recommender is the main component of the VPA. It is responsible for
