@@ -1606,7 +1606,7 @@ sigs:
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
-      time: "16:30"
+      time: "17:30"
       tz: "UTC"
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
