@@ -5,6 +5,12 @@
 {{- if .CharterLink }}
 The [charter]({{.CharterLink}}) defines the scope and governance of the {{.Name}} Working Group.
 {{ end }}
+{{- if .StakeholderSIGs }}
+## Stakeholder SIGs
+{{- range .StakeholderSIGs }}
+* SIG {{.}}
+{{- end }}
+{{ end }}
 {{ if .Meetings -}}
 ## Meetings
 {{- range .Meetings }}

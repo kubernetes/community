@@ -110,6 +110,7 @@ type Group struct {
 	Meetings         []Meeting
 	Contact          Contact
 	Subprojects      []Subproject
+	StakeholderSIGs  []string `yaml:"stakeholder_sigs,omitempty"`
 }
 
 // DirName returns the directory that a group's documentation will be

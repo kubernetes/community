@@ -24,7 +24,7 @@ import (
 	"testing"
 )
 
-func TestNonExistantDirIsCreated(t *testing.T) {
+func TestNonExistentDirIsCreated(t *testing.T) {
 	dir := "/tmp/nonexistent"
 	err := createDirIfNotExists(dir)
 	if err != nil {
@@ -35,7 +35,7 @@ func TestNonExistantDirIsCreated(t *testing.T) {
 	}
 }
 
-func TestExistantDirNotCreated(t *testing.T) {
+func TestExistentDirNotCreated(t *testing.T) {
 	dir := "./testdata"
 	err := createDirIfNotExists(dir)
 	if err != nil {
