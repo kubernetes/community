@@ -130,7 +130,14 @@ Note: Secrets are passed only to "mount/unmount" call-outs.
 "kubernetes.io/fsType":"<FS type>",
 "kubernetes.io/readwrite":"<rw>",
 "kubernetes.io/fsGroup":"<FS group>",
+"kubernetes.io/mountsDir":"<string>",
 "kubernetes.io/pvOrVolumeName":"<Volume name if the volume is in-line in the pod spec; PV name if the volume is a PV>"
+
+"kubernetes.io/pod.name":"<string>",
+"kubernetes.io/pod.namespace":"<string>",
+"kubernetes.io/pod.uid":"<string>",
+"kubernetes.io/serviceAccount.name":"<string>",
+
 "kubernetes.io/secret/key1":"<secret1>"
 ...
 "kubernetes.io/secret/keyN":"<secretN>"
