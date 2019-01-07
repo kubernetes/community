@@ -42,10 +42,17 @@ The following subprojects are owned by sig-release:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
-- **release**
+- **release-team**
+  - Description: The Kubernetes Release Team is responsible for the day to day work required to successfully create releases of Kubernetes.
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/release-team/master/OWNERS
+- **publishing-bot**
+  - Description: The publishing-bot publishes the contents of staging repos that live in k8s.io/kubernetes/staging to their own repositories in kubernetes
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
 - **sig-release**
+  - Description: Documents and processes related to SIG Release
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/OWNERS
 
