@@ -1571,10 +1571,22 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
-    - name: release
+    - name: release-team
+      description: >
+        The Kubernetes Release Team is responsible for the day to day work
+        required to successfully create releases of Kubernetes.
       owners:
       - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
+    - name: publishing-bot
+      description: >
+        The publishing-bot publishes the contents of staging repos that live
+        in k8s.io/kubernetes/staging to their own repositories in kubernetes
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
     - name: sig-release
+      description: >
+        Documents and processes related to SIG Release
       owners:
       - https://raw.githubusercontent.com/kubernetes/sig-release/master/OWNERS
   - name: Scalability
@@ -1903,15 +1915,38 @@ sigs:
       - name: sig-testing-pr-reviews
         description: PR Reviews
     subprojects:
+    - name: boskos
+      description: >
+        Boskos is a resource manager service that handles different kinds of
+        resources and transitions between different states. We use it on the
+        Kubernetes project to manage pools of GCP projects for CI/CD.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
+    - name: gopherage
+      description: >
+        Gopherage is a tool for manipulating Go coverage files. We use it on
+        the Kubernetes project to report on code coverage due to e2e tests
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/test-infra/master/gubernator/OWNERS
+    - name: gubernator
+      description: >
+        Gubernator is a frontend for displaying Kubernetes test results stored
+        in GCS. See gubernator.k8s.io to see it in action for the Kubernetes 
+        project.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/test-infra/master/gubernator/OWNERS
     - name: kind
       description: >
         Kubernetes IN Docker. Run Kubernetes test clusters on your local
         machine using Docker containers as nodes.
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
-    - name: repo-publishing
+    - name: prow
+      description: >
+        Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it
+        in action for the Kubernetes project
       owners:
-      - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
     - name: testing-commons
       description: >
         The Testing Commons is a subproject within the Kubernetes sig-testing community
@@ -1929,6 +1964,9 @@ sigs:
         url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
         archive_url: https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o
     - name: test-infra
+      description: >
+        Miscellaneous tools and configuration to run the testing infrastructure
+        for the Kubernetes project
       owners:
       - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
   - name: UI
