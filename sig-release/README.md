@@ -46,7 +46,7 @@ The following subprojects are owned by sig-release:
   - Description: The Kubernetes Release Team is responsible for the day to day work required to successfully create releases of Kubernetes.
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/release-team/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
 - **publishing-bot**
   - Description: The publishing-bot publishes the contents of staging repos that live in k8s.io/kubernetes/staging to their own repositories in kubernetes
   - Owners:
