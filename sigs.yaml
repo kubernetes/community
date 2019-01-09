@@ -550,7 +550,7 @@ sigs:
       chairs:
       - name: Stephen Augustus
         github: justaugustus
-        company: Red Hat
+        company: VMware
       - name: Dave Strebel
         github: dstrebel
         company: Microsoft
@@ -1536,7 +1536,7 @@ sigs:
         company: Google
       - name: Stephen Augustus
         github: justaugustus
-        company: Red Hat
+        company: VMware
       - name: Tim Pepper
         github: tpepper
         company: VMware
