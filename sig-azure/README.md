@@ -22,7 +22,7 @@ The [charter](charter.md) defines the scope and governance of the Azure Special 
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Red Hat
+* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
 * Dave Strebel (**[@dstrebel](https://github.com/dstrebel)**), Microsoft
 
 ### Technical Leads
