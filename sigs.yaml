@@ -580,6 +580,9 @@ sigs:
     - name: cloud-provider-azure
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
+    - name: cluster-api-provider-azure
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
   - name: Big Data
     dir: sig-big-data
     mission_statement: >

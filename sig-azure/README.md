@@ -43,6 +43,9 @@ The following subprojects are owned by sig-azure:
 - **cloud-provider-azure**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
+- **cluster-api-provider-azure**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
 
 ## GitHub Teams
 
