@@ -33,8 +33,10 @@ The README in the [community repo](https://github.com/kubernetes/community) deta
 
 ## Coordination
 
-* Paris Pittman - parispittman@google.com
-* Nikhita Raghunath - nikitaraghunath@gmail.com
+| **Name** | **Slack** | **Email** |
+|----------|-----------|-----------|
+| [Paris Pittman](https://github.com/parispittman) | @paris |  parispittman@google.com |
+| [Nikhita Raghunath](https://github.com/nikhita) | @nikhita | nikitaraghunath@gmail.com |
 
 The coordinators can be contacted at any time. The easiest way is to send a slack message.
 

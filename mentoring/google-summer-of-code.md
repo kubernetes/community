@@ -2,7 +2,7 @@
 
 Kubernetes is happy to announce that we have participated in the Google Summer of Code (GSoC) program
 under the Cloud Native Computing Foundation (CNCF) in 2017 and 2018 and as an independent organization
-in 2015. This page will be updated when the 2019 program is announced.
+in 2015. The details for 2019 can be found [here](https://github.com/cncf/soc#kubernetes).
 
 Please see the [main program page](https://summerofcode.withgoogle.com/) for general information about the program,
 such as its purpose, timeline, eligibility requirements, and how to apply.
@@ -24,7 +24,7 @@ This [slide deck](https://docs.google.com/presentation/d/1JqcALpsg07eH665ZXQrIvO
 ## Communication
 
 - Mailing List: development announcements and discussions appear on the Google group `kubernetes-dev` (send mail to kubernetes-dev@googlegroups.com).
-- Slack: Please [sign up](http://slack.k8s.io/) for an invite.
+- Slack: #gsoc-apps channel on the Kubernetes Slack. You can get an invite [here](http://slack.k8s.io/).
 
 ## Contribute
 
@@ -40,9 +40,11 @@ Please read the guides and [FAQs](https://developers.google.com/open-source/gsoc
 
 ## Coordination
 
-* Ihor Dvoretskyi - ihor@cncf.io
-* Nikhita Raghunath - nikitaraghunath@gmail.com
-* Paris Pittman - parispittman@google.com
+| **Name** | **Slack** | **Email** |
+|----------|-----------|-----------|
+| [Ihor Dvoretskyi](https://github.com/idvoretskyi) | @ihor.dvoretskyi | ihor@cncf.io |
+| [Nikhita Raghunath](https://github.com/nikhita) | @nikhita | nikitaraghunath@gmail.com |
+| [Paris Pittman](https://github.com/parispittman) | @paris |  parispittman@google.com |
 
 The coordinators can be contacted at any time. The easiest way is to send a slack message.
 
