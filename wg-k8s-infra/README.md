@@ -8,12 +8,12 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # K8s Infra Working Group
 
-A Working Group dedicated to migrating Kubernetes project infrastructure over to the CNCF, and the creation of teams and processes for ongoing maintenance. Involves collaboration with multiple SIGs such as Architecture, Contributor Experience, Release, and Testing.
+A Working Group dedicated to migrating Kubernetes project infrastructure over to the CNCF, and the creation of teams and processes for ongoing maintenance. Involves collaboration with multiple SIGs such as Architecture, Contributor Experience, Release, and Testing, etc.
 
 The [charter](charter.md) defines the scope and governance of the K8s Infra Working Group.
 
 ## Meetings
-* Regular WG Meeting: [Fridays at 9:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Wednesdays at 8:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](http://bit.ly/wg-k8s-infra-notes).
 
 ## Organizers

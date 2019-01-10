@@ -125,11 +125,11 @@ This WG adheres to the Roles and Organization Management outlined in
 
 ### Subproject Creation
 
-Subprojects are created via lazy consensus, though we prefer to hear from a
-majority of WG members. If objections are raised by WG members, we may fall back
-to vote a decided by the super-majority of existing subproject owners and 
-WG organizers. If we are still unable to come to consensus, as a last resort
-we will escalate to the Steering Committee.
+As this is _not_ a SIG, we own no code and cannot create subprojects. We will
+instead identify and petition the appropriate SIG for subproject creation. We
+will provide guidelines on how the relevant subprojects should be staffed, per
+the deviations from [sig-governance] outlined above
+
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
