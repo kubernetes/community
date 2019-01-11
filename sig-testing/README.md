@@ -42,7 +42,7 @@ The following subprojects are owned by sig-testing:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/gubernator/OWNERS
 - **gubernator**
-  - Description: Gubernator is a frontend for displaying Kubernetes test results stored in GCS. See gubernator.k8s.io to see it in action for the Kubernetes  project.
+  - Description: Gubernator is a frontend for displaying Kubernetes test results stored in GCS. See gubernator.k8s.io to see it in action for the Kubernetes project.
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/gubernator/OWNERS
 - **kind**
