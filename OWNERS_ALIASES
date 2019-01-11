@@ -132,6 +132,9 @@ aliases:
     - dejanb
     - ptone
     - cantbewong
+  wg-k8s-infra-leads:
+    - dims
+    - spiffxp
   wg-kubeadm-adoption-leads:
     - luxas
     - justinsb
