@@ -975,11 +975,14 @@ sigs:
         github: parispittman
         company: Google
       tech_leads:
+        - name: Christoph Blecker
+          github: cblecker
+        - name: Nikhita Raghunath
+          github: nikhita
+      emeritus_leads:
         - name: Garrett Rodrigues
           github: grodrigues3
           company: Google
-        - name: Christoph Blecker
-          github: cblecker
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -1939,7 +1942,7 @@ sigs:
     - name: gubernator
       description: >
         Gubernator is a frontend for displaying Kubernetes test results stored
-        in GCS. See gubernator.k8s.io to see it in action for the Kubernetes 
+        in GCS. See gubernator.k8s.io to see it in action for the Kubernetes
         project.
       owners:
       - https://raw.githubusercontent.com/kubernetes/test-infra/master/gubernator/OWNERS

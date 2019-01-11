@@ -29,8 +29,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**), Google
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
+* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
+
+## Emeritus Leads
+
+* Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-contribex)
