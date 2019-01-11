@@ -1,10 +1,9 @@
 # WG K8s Infra Charter
 
-This charter adheres to the conventions described in the
-[Kubernetes Charter README] and uses the Roles and Organization Management
-outlined in [sig-governance]. We are following the SIG template because we
-believe it is important this WG follow a certain level of formalism and 
-transparency that the current SIG governance template already provides.
+This charter adheres to the [wg-governance] guidance, as well as
+adheres to the general conventions described in the [Kubernetes
+Charter README] and the Roles and Organization Management outlined
+in [sig-governance], where applicable to a Working Group.
 
 ## Scope
 
@@ -12,6 +11,8 @@ The K8s Infra Working Group is interested in the successful migration of all
 project infrastructure from Google (or elsewhere) to the CNCF, such that the
 project is able to sustainably operate itself without direct assistance from
 entities such as Google or Red Hat.
+
+### Disband criteria
 
 It is our intent to disband once this migration is complete, with ownership
 of all code, processes and teams assigned to the appropriate SIGs. If we find
@@ -71,13 +72,13 @@ time.
 
 - **Medium risk** changes may impact existing contributor workflows, should be
   easy to roll back, and may impact all of the project's repos. These should
-  be shared with the appropriate SIGs, and may require a lazy consensus
+  be shared with the appropriate SIGs, and may require a [lazy consensus]
   issue with [kubernetes-dev@] notice.
 
 - **High risk changes** likely break existing contributor workflows, may be
   difficult to roll back, and likely impact all of the project's repos. These
   require a consultation with SIG Contributor Experience as well as any other
-  owning SIGs, and a lazy consensus issue with [kubernetes-dev@] notice.
+  owning SIGs, and a [lazy consensus] issue with [kubernetes-dev@] notice.
 
 ### Out of Scope
 
@@ -87,17 +88,15 @@ time.
 
 ## Roles and Organization Management
 
-This WG adheres to the Roles and Organization Management outlined in
-[sig-governance] and opts-in to updates and modifications to [sig-governance].
+- Proposing and making decisions _MAY_ be done without the use of KEPS so long
+  as the decision is documented in a linkable medium. We prefer to see written
+  decisions and reasoning on the [wg-k8s-infra@] mailing list or as issues
+  filed against [kubernetes/k8s.io]. We encourage the use of faster mediums
+  such as slack of video conferences to come to consensus.
 
-### Deviations from [sig-governance]
+- It is our intent that each infra-related subproject identified for migration
+  must be  staffed / owned by at least 3 volunteers
 
-- As this is _not_ a SIG, our Organizers fullfil the duties of Chair and 
-  Tech Lead. Their capacity as Tech Leads will primarily be focused on finding
-  the appropriate subproject owners to delegate to.
-
-- It is our intent that each subproject must be staffed / owned by at least 3 
-  volunteers
   - We aspire to follow the same 1/3 maximal representation rules used by the
     Steering Committee, Product Security Team, and other groups that have
     project-wide impact
@@ -117,21 +116,13 @@ This WG adheres to the Roles and Organization Management outlined in
   - Phone numbers
   - Timezone
 
-- Proposing and making decisions _MAY_ be done without the use of KEPS so long
-  as the decision is documented in a linkable medium. We prefer to see written
-  decisions and reasoning on the [wg-k8s-infra@] mailing list or as issues
-  filed against [kubernetes/k8s.io]. We encourage the use of faster mediums
-  such as slack of video conferences to come to consensus.
-
-### Subproject Creation
-
-As this is _not_ a SIG, we own no code and cannot create subprojects. We will
-instead identify and petition the appropriate SIG for subproject creation. We
-will provide guidelines on how the relevant subprojects should be staffed, per
-the deviations from [sig-governance] outlined above
-
+- As this is a Working Group, we own no code and cannot create subprojects. We
+  will instead identify and petition the appropriate SIG for subproject 
+  creation. We will provide guidelines on how the relevant subprojects should
+  be staffed, per the above.
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
+[wg-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
 [lazy consensus]: http://en.osswiki.info/concepts/lazy_consensus
 
