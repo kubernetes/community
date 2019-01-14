@@ -2402,6 +2402,7 @@ workinggroups:
     contact:
       slack: wg-security-audit
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit
+<<<<<<< HEAD
   - name: Component Standard
     dir: wg-component-standard
     mission_statement: >
@@ -2456,3 +2457,5 @@ workinggroups:
     contact:
       slack: k8s-infra-team # TODO(spiffxp): rename to wg-k8s-infra
       mailing_list: https://groups.google.com/forum/#!forum/k8s-infra-team # TODO(spiffxp): rename to wg-k8s-infra
+=======
+>>>>>>> refs/remotes/origin/rfp-closed
