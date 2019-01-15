@@ -240,7 +240,7 @@ We use two labels [help wanted](https://github.com/kubernetes/kubernetes/issues?
 and [good first issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 to identify issues that have been specially groomed for new contributors.
 
-We have specific [guidelines](/contributors/devel/help-wanted.md)
+We have specific [guidelines](/contributors/guide/help-wanted.md)
 for how to use these labels. If you see an issue that satisfies these
 guidelines, you can add the `help wanted` label with the `/help` command
 and the `good first issue` label with the `/good-first-issue` command.
