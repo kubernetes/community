@@ -1,58 +1,142 @@
 # Contributor Experience Special Interest Group Charter
 
-## Chairs:
-* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**)
-* Paris Pittman (**[@parispittman](https://github.com/parispittman)**) 
+This charter adheres to the conventions described in the [Kubernetes Charter README] and uses the Roles and Organization Management outlined in [sig-governance].
 
-## Technical Leads (TL):
-* Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**)
-* Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
+## Scope
 
-## Subprojects and OWNERs
-Can be found on our [README](README.md)
+The [Contributor Experience Special Interest Group] (SIG) is responsible for improving the experience of those who upstream contribute to the Kubernetes project. We do this by creating, and maintaining programs and processes that promote community health and reduce project friction, while retiring those programs and processes that don't. Being conscientious of our contributor base is critical to scaling the project, growing the ecosystem, and helping the project succeed.
 
-## Processes and Responsibilities
-* Chairs run weekly meetings in accordance with [SIG governance procedures](/sig-governance.md) unless TLs need to fill in 
-* Chairs and TLs run quarterly planning meetings where we decide goals for the next release, to be published in the SIG’s [README](README.md)  
-* Chairs plan at least one annual face to face Contributor Experience SIG meeting proposed via mailing list and announced via slack and other channels
-* Members run and organize the weekly [Kubernetes Community Meeting](/events/community-meeting.md)
-* This SIG will act as owners and maintainers of [kubernetes/community](https://github.com/kubernetes/community)
-* We participate in [lazy consensus](http://en.osswiki.info/concepts/lazy_consensus) for our decisions and the [KEP](/keps) process for major features and enhancements
-  * Idea and/or solution is proposed via the kubernetes-sig-contribex@googlegroups.com mailing list. Link(s) to GitHub issue proposal is a nice to have but not required
-  * Author will give a time period of no less than 3 working days being cognizant of popular observed world holidays to respond with questions, issues, or hold from a Chair/TL(s) for more information/research needed
-  * Author will participate in implementation of the proposed idea and/or solution
-* We are responsible for community growth and management of Kubernetes and its ecosystem.  We support this growth by creating programs for SIGs, WGs and subprojects to address mentoring, learning and development, contributors, and GitHub workflows.
-  * We will build metrics that capture the project’s velocity and stability  
-  * This SIG does not create new SIGs, WGs, subprojects themselves but will mentor new SIGs in the creation and management of their own:
-    * YouTube playlist
-    * Zoom account(s)
-    * Slack channel(s)
-    * GitHub service teams
-* We ensure communication platforms are a safe environment for discourse and maintain them and in some cases in conjunction with CNCF/LF. Depending on the situation, we will warn first and then report to Steering Committee. Platforms may include Slack, Kubernetes weekly meetings, Zoom, YouTube, etc.
-* Provide guidance and mediation between SIGs and WGs that are having contributor experience issues. For example, consolidation around a certain workflow 
-* Solicit feedback from other SIGs, project areas, and contributors formally twice a year (mid and end) about our performance and how we can improve the contributor experience
-* We encourage and determine where automation makes sense for the contributor workflow
-* We own no code outside of the kubernetes/community repo although we may collaborate with other OWNERs of repos and SIG and WG leads
-* Drives consistent automation surrounding the PR workflow and issue triaging, and collaborates with other groups on implementing our design  
-* Process change communication: 
-  * Socialize on kubernetes-sig-contribex@googlegroups.com and on our weekly update calls 
-  * If the change impacts a small number (<4) of SIGs, WGs, or repos, we will go to each lead, their mailing lists, slack channel, and/or their update meetings and ask for feedback and a lazy consensus process. We will follow up with a post to kubernetes-dev@googlegroups.com mailing list 
-  * In cases of impacts across a large number of areas and/or project wide, we will:
-    *  Lazy consensus with a time box of at least 72 hours to the following mailing lists with the GitHub issue link including the subject [NOTICE]: foobar to the following mailing lists:
-       * kubernetes-dev@
-       * sig-leads@
-       * kubernetes-sig-contribex@
-    * Announce at weekly Kubernetes Community Meeting on Thursdays
+We do this by listening - whether it’s through our roadshows to SIG meetings, surveys, data, or [GitHub issues], we take in the feedback and turn it into our [project list]. We build a welcoming and inclusive community of contributors by giving them places to be heard and productive.
 
-## Leadership Composition
-  * Two (2) Chairs and Two (2) Technical Leads unless group decides that more is needed
-  * Each Chair and Technical Lead will be responsible for a sub-group in addition to assisting with the processes outlined here 
-  * Lazy Consensus within the SIG to make final decision 
-* Changing leadership
-  * Candidates are nominated through the mailing list and confirmed at SIG meeting; self nomination is fine. Candidate needs two +1’s from folks representing different companies or independent/freelancers in the community to be considered a nominee 
-  * Chair/TL may step down at any time for any reason and propose a replacement that is already an active contributing member of Contributor Experience. They will make the change to the OWNERs file
-  * A Chair/TL may be asked to step down if one of the following occurs:
-    * Inactivity as determined by the governance of the project or as specifically described in the ask to SIG leadership
-    * Inappropriate behavior or code of conduct issues
-    * For other reasons as determined by the Chair/TLs at that time but also discussed in conjunction with the lead in question
-    * Chair/TLs may appoint a temporary replacement if a leave of absence is desired, called a delegate that is already an active contributing member of Contributor Experience  
+### In scope
+
+#### Code, Binaries and Services
+
+- Establish policies, standards and procedures for the use, [moderation], and management of all public platforms officially used by the project, including but not limited to:
+  - [discuss.kubernetes.io]
+  - [GitHub Management]
+  - [Mailing lists] / Google groups for the project as a whole (eg: kubernetes-dev@googlegroups.com) and for individual sigs and wgs where the Chairs have provided us ownership
+  - [Slack]
+  - [/kubernetescommunity] YouTube channel
+  - [Zoom]
+- Establish and staff teams responsible for the administration and moderation of these platforms
+  - Teams must be staffed by trusted contributors spanning time zones, see [moderation] for more detail
+  - They are authorized to take immediate action when dealing with code of conduct issues, see [moderators] for the full list
+  - They are expected to escalate to the project's code of conduct committee when issues rise above the level of simple moderation
+- Work with other SIGs and interested parties in the project to execute GitHub tasks where required, see [GitHub Management] for more detail
+- Own and execute events that are targeted to the Kubernetes contributor community, including:
+  - The weekly [Kubernetes Community meeting]
+  - [Contributor Summit(s)]
+  - [Steering Committee elections] (though we do not own policy creation, see 'out of scope' below)
+  - Retrospective moderation for other SIGs upon request
+  - Other events, like other SIG face to face events, upon request and consideration
+- Strategize, build, and execute on scalable [mentoring programs] for all contributor levels. These may include:
+  - [Google Summer of Code]
+  - [Outreachy]
+  - [Meet Our Contributors]
+  - [Group Mentoring - WIP]
+  - [The 1:1 Hour - WIP]
+  - Speed Mentoring sessions at selected KubeCon/CloundNativeCon's
+- Help onboard new and current contributors into the culture, workflow, and CI of our contributor experience through the [contributor guide], other related documentation, [contributor summits] and programs tailored to onboarding.
+- Perform issue triage on and maintain the [kubernetes/community] repository.  
+- Help SIGs with being as transparent and open as possible through creating best practices, guidelines, and general administration of YouTube, Zoom, and our mailing lists where applicable
+- Assist SIGs/WG Chairs and Technical Leads with organizational management operations as laid out in the [sig-governance] doc
+- Distribute contributor related news on various Kubernetes channels, including Cloud Native Compute Foundation ([CNCF]) for posting blogs, social media, and other platforms as needed.
+- Establish and share metrics to measure project health, community health, and general trends, including:
+  - ongoing work with the CNCF to improve [DevStats]
+  - the contributor experience survey(s)
+  - engagement on project platforms that we manage
+- Research other OSS projects and consult with their leaders about contributor experience topics to make sure we are always delivering value to our contributors
+
+#### Cross-cutting and Externally Facing Processes
+
+We cross-cut all SIGs and WGs to deliver the following processes:
+
+- Deploying Changes:
+  When implementing policy changes we strive to balance responding quickly to the needs of the community and ensuring a disruption-free experience for project contributors. As such, the amount of notice we provide and the amount of consensus we seek is driven by our estimation of risk. We don't measure risk objectively at this time, but estimate it based on these parameters:
+  - Low-risk changes impact a small number (<4) of SIGs, WGs, or repos, do not break existing contributor workflows, and are easy to roll back. When implementing low-risk changes we:
+    - Socialize on kubernetes-sig-contribex@googlegroups.com and our weekly update calls
+    - We will go to each lead, their mailing lists, slack channel, and/or their update meetings and ask for feedback and a [lazy consensus] process. We will follow up with a post to [kubernetes-dev@]googlegroups.com mailing list
+  - High-risk changes impact a large number (>4) of SIGs, WGs, or repos, break existing contributor workflows, and are not easy to roll back. When implementing high-risk changes we:
+    - Socialize on kubernetes-sig-contribex@googlegroups.com and our weekly update calls
+    - Seek [lazy consensus] with a time box of at least 72 business hours with a GitHub issue link (or proposal if not applicable) to the following mailing lists:
+        - [kubernetes-sig-contribex@]googlegroups.com
+        - sig-leads@googlegroups.com
+        - [kubernetes-dev@]googlegroups.com with the GitHub issue link including the subject [NOTICE]: $announcement
+        - We will also announce it at the weekly Kubernetes Community Meeting on Thursdays
+- Depending on how wide of an ecosystem change this is, we may also slack, blog, tweet, and use other channels to get the word out.
+- Our standard time box is 72 business hours; however, there may be situations where we need to act quickly but the time period will always be clear and upfront.
+- Encourage automation to improve productivity for contributors where it makes sense and consult with SIG Testing if automation is covering GitHub workflows.
+
+If we need funding for any reason, we approach [CNCF].
+CNCF in many of the noted cases above, contributes funding to our platforms, processes, and/or programs. They do not play a day-to-day operations role and have bestowed that to our community to run as we see fit. Since they do fund some of our initiatives, this means that they hold owner account privileges on certain platforms like Zoom and Slack. In these cases, such as Slack, there are at least two Contributor Experience [communication] subproject OWNERs listed as admins.
+
+### Out of scope
+
+- Code for the testing and CI infrastructure - that’s SIG Testing
+- [kubernetes/community]  ownership of folders for KEPs and Design Proposals. Members are to follow those folders owners files and SIG leadership for the specific issue/PR in question.
+- User community management. We hold office hours because contributors are a large portion of the volunteers that run that program.
+- The contributor experience for repos not included in the Kubernetes associated repositories list found in the [GitHub Management] subproject README.
+- Steering committee election policy updates and maintenance.
+- We do not create SIGs/WGs but can assist in the various community management needs of their micro communities that would kick off their formation and keep them going.
+- We are not the [code of conduct committee] and therefore do not control incident management reporting or decisions; however, our moderation guidelines allow us to act swiftly if there is a clear violation of terms of either our code of conduct or one of our supported platforms terms of service. If there is an action that the committee needs to take that involves one of these platforms (example: the removal of someone from GitHub), we will carry that out if none of the committee members have access.
+- Communication platforms that are out of our scope for maintenance and support but we may still have some influence:
+    - [r/kubernetes]
+    - [@kubernetesio] twitter account
+    - [kubernetes blog]
+
+## Roles and Organization Management
+
+This sig adheres to the Roles and Organization Management outlined in [sig-governance]
+and opts-in to updates and modifications to [sig-governance].
+
+
+### Additional responsibilities of Chairs
+
+Chairs SHOULD plan at least one face to face Contributor Experience meeting per year
+
+### Additional responsibilities of Tech Leads
+
+Ensuring that technical changes from subprojects follow the process change communication guidelines listed above.
+
+### Deviations from sig-governance
+Six months after this charter is first ratified, it MUST be reviewed and re-approved by the SIG in order to evaluate the assumptions made in its initial drafting.
+
+### Subproject Creation
+Chairs and Technical Leads
+
+[sig-governance]: https://git.k8s.io/community/committee-steering/governance/sig-governance.md
+[Kubernetes Charter README]: https://git.k8s.io/community/committee-steering/governance/README.md
+[lazy consensus]: http://en.osswiki.info/concepts/lazy_consensus
+[Contributor Experience Special Interest Group]: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
+[kubernetes-dev@]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[@kubernetesio]: https://www.twitter.com/kubernetesio
+[r/kubernetes]: https://kubernetes.reddit.com
+[Google Summer of Code]: https://git.k8s.io/community/mentoring/google-summer-of-code.md
+[Outreachy]: https://git.k8s.io/community/mentoring/outreachy.md
+[Meet Our Contributors]:  https://git.k8s.io/community/mentoring/meet-our-contributors.md
+[Group Mentoring - WIP]:  https://git.k8s.io/community/mentoring/group-mentoring.md
+[The 1:1 Hour - WIP]: https://git.k8s.io/community/mentoring/the1-on-1hour.md
+[kubernetes/community]: https://git.k8s.io/community/
+[Contributor Summit(s)]: https://git.k8s.io/community/events/2018/12-contributor-summit
+[contributor summits]: https://git.k8s.io/community/events/2018/12-contributor-summit
+[DevStats]: https://k8s.cncf.devstats.io
+[kubernetes-sig-contribex@]: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
+[kubernetes blog]: https://www.kubernetes.io/blog
+[GitHub Management]: https://git.k8s.io/community/github-management
+[communication]: https://git.k8s.io/community/communication
+[CNCF]: https://cncf.io
+[GitHub issues]: https://github.com/kubernetes/community/issues
+[project list]: https://github.com/orgs/kubernetes/projects/1
+[Kubernetes Community meeting]: https://git.k8s.io/community/communication#weekly-meeting
+[mentoring programs]: https://git.k8s.io/community/mentoring
+[Steering Committee elections]: https://git.k8s.io/community/events/elections
+[Slack]: https://git.k8s.io/community/communication/slack-guidelines.md
+[Zoom]: https://git.k8s.io/community/communication/zoom-guidelines.md
+[/kubernetescommunity]: https://www.youtube.com/kubernetescommunity
+[discuss.kubernetes.io]: https://discuss.kubernetes.io
+[contributor guide]: https://git.k8s.io/community/contributor
+[moderation]: https://git.k8s.io/community/communication/moderation.md
+[code of conduct committee]: https://git.k8s.io/community/committee-code-of-conduct
+[Mailing lists]: https://git.k8s.io/community/communication/moderation.md#specific-guidelines
+[moderators]: https://git.k8s.io/community/communication/moderators.md
