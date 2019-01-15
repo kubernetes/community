@@ -159,7 +159,7 @@ If you find that this is not the case, please complain loudly.
 As a potential contributor, your changes and ideas are welcome at any hour of the day or night, weekdays, weekends, and holidays.
 Please do not ever hesitate to ask a question or send a pull request.
 
-Check out our [community guiding principles](/contributors/devel/collab.md) on how to create great code as a big group.
+Check out our [community guiding principles](/contributors/guide/collab.md) on how to create great code as a big group.
 
 Beginner focused information can be found below in [Open a Pull Request](#open-a-pull-request) and [Code Review](#code-review).
 

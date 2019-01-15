@@ -223,7 +223,7 @@ The following apply to the subproject for which one would be an owner.
 
 The Maintainer role has been removed and replaced with a greater focus on [OWNERS].
 
-[code reviews]: /contributors/devel/collab.md
+[code reviews]: /contributors/guide/collab.md
 [community expectations]: /contributors/guide/community-expectations.md
 [contributor guide]: /contributors/guide/README.md
 [Kubernetes GitHub Admin team]: /github-management/README.md#github-administration-team
