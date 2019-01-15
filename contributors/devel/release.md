@@ -41,16 +41,14 @@ If you want your PR to get merged, it needs the following required labels and mi
 <tr>
 <td></td>
 <td>Normal Dev</td>
-<td>Code Slush</td>
 <td>Code Freeze</td>
 <td>Post-Release</td>
 </tr>
 <tr>
 <td></td>
 <td>Weeks 1-8</td>
-<td>Week 9</td>
-<td>Weeks 10-12</td>
-<td>Weeks 12+</td>
+<td>Weeks 9-11</td>
+<td>Weeks 11+</td>
 </tr>
 <tr>
 <td>Required Labels</td>
@@ -65,18 +63,7 @@ If you want your PR to get merged, it needs the following required labels and mi
 </td>
 <td>
 <ul>
-<!--Week 9-->
-<li>/milestone {v1.y}</li>
-<li>/sig {name}</li>
-<li>/kind {type}</li>
-<li>/priority {level}</li>
-<li>/lgtm</li>
-<li>/approved</li>
-</ul>
-</td>
-<td>
-<ul>
-<!--Weeks 10-12-->
+<!--Weeks 9-11-->
 <li>/milestone {v1.y}</li>
 <li>/sig {name}</li>
 <li>/kind {bug, failing-test}</li>
@@ -86,7 +73,7 @@ If you want your PR to get merged, it needs the following required labels and mi
 </ul>
 </td>
 <td>
-<!--Weeks 12+-->
+<!--Weeks 11+-->
 Return to 'Normal Dev' phase requirements:
 <ul>
 <li>/sig {name}</li>
@@ -151,10 +138,7 @@ planning artifacts in conjunction with the Release Team's [enhancements
 lead](https://git.k8s.io/sig-release/release-team/role-handbooks/enhancements/README.md).
 
 Implementation and bugfixing is ongoing across the cycle, but
-culminates in a code slush and code freeze period:
-* The **code slush** starts in week ~9 of the release cycle.  The master
-  branch only accepts PRs for the upcoming release milestone.  No additional feature
-  development is merged after this point.
+culminates in a code freeze period:
 * The **code freeze** starts in week ~10 and continues for ~2 weeks.
   Only critical bug fixes are accepted into the release codebase.
 
@@ -267,8 +251,7 @@ only marked as lower priority.
 PRs are marked as targeting a milestone via the Prow
 "/milestone" command.
 
-This is a blocking requirement during code slush and code freeze as
-described above.
+This is a blocking requirement during code freeze as described above.
 
 ## Other Required Labels
 
@@ -294,7 +277,6 @@ of the issue.
 
 - `priority/critical-urgent`: Never automatically move out of a release milestone; continually escalate to contributor and SIG through all available channels.
   - considered a release blocking issue
-  - code slush: issue owner update frequency: every 3 days
   - code freeze: issue owner update frequency: daily
   - would require a patch release if left undiscovered until after the minor release.
 - `priority/important-soon`: Escalate to the issue owners and SIG owner; move out of milestone after several unsuccessful escalation attempts.
