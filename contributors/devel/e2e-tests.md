@@ -406,7 +406,11 @@ In order to run an E2E test against a locally running cluster, first make sure
 to have a local build of the tests:
 
 ```sh
+# If on amd64 platform:
 kubetest --build
+# "make quick-release" in Kubernetes is not supported on other platforms, such as arm64/ppc64le...
+# If on other platforms, we need to use following command:
+kubetest --build=host-go
 ```
 
 Then point the tests at a custom host directly:
