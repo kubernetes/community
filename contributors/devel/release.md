@@ -47,8 +47,8 @@ If you want your PR to get merged, it needs the following required labels and mi
 <tr>
 <td></td>
 <td>Weeks 1-8</td>
-<td>Weeks 10-12</td>
-<td>Weeks 12+</td>
+<td>Weeks 9-11</td>
+<td>Weeks 11+</td>
 </tr>
 <tr>
 <td>Required Labels</td>
@@ -63,7 +63,7 @@ If you want your PR to get merged, it needs the following required labels and mi
 </td>
 <td>
 <ul>
-<!--Weeks 10-12-->
+<!--Weeks 9-11-->
 <li>/milestone {v1.y}</li>
 <li>/sig {name}</li>
 <li>/kind {bug, failing-test}</li>
@@ -73,7 +73,7 @@ If you want your PR to get merged, it needs the following required labels and mi
 </ul>
 </td>
 <td>
-<!--Weeks 12+-->
+<!--Weeks 11+-->
 Return to 'Normal Dev' phase requirements:
 <ul>
 <li>/sig {name}</li>
