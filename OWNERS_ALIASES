@@ -16,7 +16,6 @@ aliases:
     - tallclair
   sig-autoscaling-leads:
     - mwielgus
-    - directxman12
   sig-aws-leads:
     - justinsb
     - kris-nova
