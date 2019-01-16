@@ -445,9 +445,6 @@ sigs:
       - name: Marcin Wielgus
         github: mwielgus
         company: Google
-      - name: Solly Ross
-        github: directxman12
-        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Monday

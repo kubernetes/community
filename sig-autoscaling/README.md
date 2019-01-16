@@ -22,7 +22,6 @@ The [charter](charter.md) defines the scope and governance of the Autoscaling Sp
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
-* Solly Ross (**[@directxman12](https://github.com/directxman12)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-autoscaling)
