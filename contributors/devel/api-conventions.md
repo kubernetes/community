@@ -122,7 +122,7 @@ defaults) and may not have lists.
 filtering (see [the labels documentation](https://kubernetes.io/docs/user-guide/labels/)), and most
 lists should support filtering by fields.
 
-   Examples: PodLists, ServiceLists, NodeLists
+   Examples: `PodLists`, `ServiceLists`, `NodeLists`.
 
    TODO: Describe field filtering below or in a separate doc.
 
@@ -487,7 +487,7 @@ selectors, annotations, data), as opposed to sets of subobjects.
 
 Some fields will have a list of allowed values (enumerations). These values will
 be strings, and they will be in CamelCase, with an initial uppercase letter.
-Examples: "ClusterFirst", "Pending", "ClientIP".
+Examples: `ClusterFirst`, `Pending`, `ClientIP`.
 
 #### Unions
 
