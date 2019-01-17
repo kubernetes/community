@@ -72,7 +72,8 @@ metadata:
 provisioner: kubernetes.io/glusterfs
 parameters:
   type: gp2
-  mountOptions: "auto_mount"
+mountOptions:
+  - auto_mount
 ```
 
 The mount option specified in Storage Class will be used while provisioning persistent volumes
