@@ -1448,12 +1448,19 @@ sigs:
       - name: Chris Hoge
         github: hogepodge
         company: OpenStack Foundation
-      - name: David Lyle
-        github: dklyle
-        company: Intel
-      - name: Robert Morse
-        github: rjmorse
-        company: Ticketmaster
+      emeritus_leads:
+       - name: David Lyle
+         github: dklyle
+         company: Intel
+       - name: Robert Morse
+         github: rjmorse
+         company: Ticketmaster
+       - name: Steve Gordon
+         github: xsgordon
+         company: Red Hat
+       - name: Ihor Dvoretskyi
+         github: idvoretskyi
+         company: CNCF
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
