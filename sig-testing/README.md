@@ -40,7 +40,7 @@ The following subprojects are owned by sig-testing:
 - **gopherage**
   - Description: Gopherage is a tool for manipulating Go coverage files. We use it on the Kubernetes project to report on code coverage due to e2e tests
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/test-infra/master/gubernator/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/test-infra/master/gopherage/OWNERS
 - **gubernator**
   - Description: Gubernator is a frontend for displaying Kubernetes test results stored in GCS. See gubernator.k8s.io to see it in action for the Kubernetes project.
   - Owners:

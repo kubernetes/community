@@ -1948,7 +1948,7 @@ sigs:
         Gopherage is a tool for manipulating Go coverage files. We use it on
         the Kubernetes project to report on code coverage due to e2e tests
       owners:
-      - https://raw.githubusercontent.com/kubernetes/test-infra/master/gubernator/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/test-infra/master/gopherage/OWNERS
     - name: gubernator
       description: >
         Gubernator is a frontend for displaying Kubernetes test results stored
