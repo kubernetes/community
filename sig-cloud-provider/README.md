@@ -44,6 +44,9 @@ The following subprojects are owned by sig-cloud-provider:
 - **cloud-provider-alibaba-cloud**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-alibaba-cloud/master/OWNERS
+- **cloud-provider-azure**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
 - **cloud-provider-gcp**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS

@@ -766,6 +766,9 @@ sigs:
     - name: cloud-provider-alibaba-cloud
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-alibaba-cloud/master/OWNERS
+    - name: cloud-provider-azure
+      owners:
+        - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
     - name: cloud-provider-gcp
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
