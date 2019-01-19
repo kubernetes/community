@@ -35,9 +35,9 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-pm:
-- **features**
+- **enhancements**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/features/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

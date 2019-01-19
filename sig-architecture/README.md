@@ -50,6 +50,7 @@ The following subprojects are owned by sig-architecture:
   - Description: [Described below](#kep-adoption-and-reviews)
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/enhancements/master/keps/OWNERS
 - **code-organization**
   - Description: [Described below](#code-organization)
   - Owners:

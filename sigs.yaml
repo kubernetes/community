@@ -259,6 +259,7 @@ sigs:
       description: "[Described below](#kep-adoption-and-reviews)"
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/enhancements/master/keps/OWNERS
     - name: code-organization
       description: "[Described below](#code-organization)"
       owners:
@@ -1529,9 +1530,9 @@ sigs:
       slack: sig-pm
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-pm
     subprojects:
-    - name: features
+    - name: enhancements
       owners:
-      - https://raw.githubusercontent.com/kubernetes/features/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
   - name: Release
     dir: sig-release
     charter_link: charter.md
