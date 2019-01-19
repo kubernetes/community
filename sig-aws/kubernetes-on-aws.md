@@ -3,8 +3,10 @@ Kubernetes on Amazon Web Services
 
 This page lists different options, in alphabetic order, of starting a Kubernetes cluster on Amazon Web Services.
 
+* Amazon Elastic Container Service for Kubernetes: https://aws.amazon.com/eks/
 * Clocker: http://www.clocker.io/tutorials/kubernetes-cluster.html
-* Heptio: https://github.com/aws-quickstart/quickstart-heptio 
+* Eksctl: http://eksctl.io
+* Heptio: https://github.com/aws-quickstart/quickstart-heptio
 * Juju Charms: https://jujucharms.com/canonical-kubernetes/
 * KAT - Kubernetes cluster on AWS with Terraform: https://github.com/xuwang/kube-aws-terraform
 * Kargo: https://github.com/kubernetes-incubator/kargo
