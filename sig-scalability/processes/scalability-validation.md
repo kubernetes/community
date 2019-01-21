@@ -46,41 +46,26 @@ We need to run them on 5k-node clusters, but they’re:
 - Expensive (tens of thousands of core hours per run)
 - Blocking other large tests (quota limitations + only one large test project available viz. 'kubernetes-scale')
 
-So we don’t want to run them too frequently. On the other hand, running them too infrequently means late identification and piling up of regressions. So we choose the following middleground:
+So we don’t want to run them too frequently. On the other hand, running them too infrequently means 
+late identification and piling up of regressions. So we choose the following middleground. \
+(**B** = release-blocking job, all times in UTC)
 
-- Performance tests on 2k-node/5k-node GCE clusters alternatingly from Mon-Sat
-  - would give us one performance run from each day to help catch regressions fast
-  - running 2k-node on alternating days gives time for 5k-node correctness tests to run on those days
-  - many of the performance regressions on 5k-node should also be seen on 2k-node (albeit a smaller version probably)
-- Correctness tests on 2k-node/5k-node GCE clusters alternatingly from Mon-Sat
-  - would give us one correctness run from each day to help catch regressions fast
-  - running 2k-node on alternating days gives time for 5k-node performance tests to run on those days
-  - many of the correctness regressions on 5k-node should also be seen on 2k-node
-- Performance tests on 2k-node GKE cluster on Sun
-  - would give us a performance run for sunday too
-  - would also additionally help verify performance of GKE
-- Correctness tests on 2k-node GKE cluster on Sun
-  - would give us a correctness run for sunday too
-  - would also additionally help verify correctness of GKE
 
-Here's the proposed schedule (may be fine-tuned later based on test health / release schedule):
-(B = release-blocking job)
+| Day | |
+| ------------- |:-------------:| 
+| Mon | GCE 5k-node correctness (**B**)  @ 03:01 AM UTC <br /> GCE 5k-node performance (**B**) @ 08:01 AM UTC |
+| Tue | GCE 5k-node correctness (**B**)  @ 03:01 AM UTC <br /> GCE 5k-node performance (**B**) @ 08:01 AM UTC |
+| Wed | GCE 5k-node correctness (**B**)  @ 03:01 AM UTC <br /> GCE 5k-node performance (**B**) @ 08:01 AM UTC |
+| Thu | GCE 5k-node correctness (**B**)  @ 03:01 AM UTC <br /> GCE 5k-node performance (**B**) @ 08:01 AM UTC |
+| Fri | GCE 5k-node correctness (**B**)  @ 03:01 AM UTC <br /> GCE 5k-node performance (**B**) @ 08:01 AM UTC |
+| Sat | GKE 5k-node correctness @ 03:01 AM UTC <br /> GKE 5k-node performance @ 08:01 AM UTC |
+| Sun | GKE 2k-node performance @ 08:01 AM UTC <br /> GKE 2k-node performance (regional) @ 08:01 AM UTC |
 
-| Day | | |
-| ------------- |:-------------:| -----:|
-| Mon | 5k-node performance @ 00:01 PT (B) | 2k-node correctness @ 22:01 PT |
-| Tue | 2k-node performance @ 05:01 PT | 5k-node correctness @ 14:01 PT (B) |
-| Wed | 5k-node performance @ 00:01 PT (B) | 2k-node correctness @ 22:01 PT |
-| Thu | 2k-node performance @ 05:01 PT | 5k-node correctness @ 14:01 PT (B) |
-| Fri | 5k-node performance @ 00:01 PT (B) | 2k-node correctness @ 22:01 PT |
-| Sat | 2k-node performance @ 05:01 PT | 5k-node correctness @ 14:01 PT (B) |
-| Sun | 'GKE' 2k-node performance @ 05:01 PT | 'GKE' 2k-node correctness @ 15:01 PT |
-
-Note: The above schedule is subject to change based on job health, release requirements, etc. You should find it up-to-date in this [calendar].
+Note: The above schedule is subject to change based on job health, release requirements, etc.
 
 Why this schedule?
 
-- 5k tests might need special attention in case of failures so they should mostly run on weekdays (EDIT: Given that they're quite stable now, we're trying running them on weekend too)
+- 5k tests might need special attention in case of failures so they should mostly run on weekdays.
 - Running a large-scale performance job and a large-scale correctness job each day would:
   - help catch regressions on a daily basis
   - help verify fixes with low latency
