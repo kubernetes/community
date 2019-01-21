@@ -25,7 +25,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
 * Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
-* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), Heptio
+* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), VMware
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-docs)

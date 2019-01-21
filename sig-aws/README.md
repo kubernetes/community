@@ -22,7 +22,7 @@ The [charter](charter.md) defines the scope and governance of the AWS Special In
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
-* Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), Heptio
+* Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), VMware
 * Nishi Davidson (**[@d-nishi](https://github.com/d-nishi)**), AWS
 
 ## Contact

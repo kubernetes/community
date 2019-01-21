@@ -23,7 +23,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 * Erick Feja (**[@fejta](https://github.com/fejta)**), Google
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
-* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), Heptio
+* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-testing)
