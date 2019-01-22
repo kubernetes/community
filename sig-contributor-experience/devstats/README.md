@@ -1,11 +1,16 @@
 # devstats
 
-This file documents the devstats subproject. We are responsible for
-continued advocacy of CNCF's devstats project within the kubernetes
+This file documents the [devstats](https://k8s.devstats.cncf.io/) subproject.
+We are responsible for continued advocacy of CNCF's devstats project within the kubernetes
 community. The kubernetes project has a significant number of metrics
 and workflows that are unique amongst CNCF projects, thus we are more
 actively involved in ongoing development and maintenance of meaningful
 devstats metrics and dashboards than most other CNCF projects.
+
+## Suggesting improvements to devstats
+
+To suggest improvements to devstats, please create an issue on the
+https://github.com/cncf/devstats repo.
 
 ## Things we have done in the past
 
