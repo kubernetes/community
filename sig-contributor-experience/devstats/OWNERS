@@ -14,3 +14,4 @@ approvers:
   - spiffxp
 labels:
   - sig/contributor-experience
+  - area/devstats
