@@ -520,7 +520,7 @@ sigs:
       day: Friday
       time: "9:00"
       tz: "PT (Pacific Time)"
-      frequency: biweekly
+      frequency: "biweekly 2019 start date: Jan. 11th"
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
     contact:
