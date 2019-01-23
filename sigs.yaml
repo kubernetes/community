@@ -1579,12 +1579,24 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
-    - name: release-team
+    - name: licensing
       description: >
-        The Kubernetes Release Team is responsible for the day to day work
-        required to successfully create releases of Kubernetes.
+        The Licensing subproject is responsible for analyzing/reporting/remediating
+        licensing concerns within the Kubernetes project orgs.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/sig-release/master/licensing/OWNERS
+    - name: release-engineering
+      description: >
+        The Release Engineering subproject is responsible for the process/procedures/tools
+        used to create/maintain Kubernetes release artifacts.
       owners:
       - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
+    - name: release-team
+      description: >
+        The Kubernetes Release Team is responsible for the day-to-day work
+        required to successfully create releases of Kubernetes.
+      owners:
       - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
     - name: publishing-bot
       description: >
