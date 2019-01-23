@@ -2436,6 +2436,11 @@ workinggroups:
       maintenance. Involves collaboration with multiple SIGs such as
       Architecture, Contributor Experience, Release, and Testing, etc.
     charter_link: charter.md
+    stakeholder_sigs:
+    - Architecture
+    - Contributor Experience
+    - Release
+    - Testing
     leadership:
       chairs:
       - name: Davanum Srinivas
