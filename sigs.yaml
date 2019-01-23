@@ -507,7 +507,7 @@ sigs:
         github: justinsb
       - name: Kris Nova
         github: kris-nova
-        company: Heptio
+        company: VMware
       - name: Nishi Davidson
         github: d-nishi
         company: AWS
@@ -720,7 +720,7 @@ sigs:
       chairs:
       - name: Andrew Sy Kim
         github: andrewsykim
-        company: DigitalOcean
+        company: VMware
       - name: Chris Hoge
         github: hogepodge
         company: OpenStack Foundation
@@ -803,7 +803,7 @@ sigs:
         company: Luxas Labs (occasionally contracting for Weaveworks)
       - name: Timothy St. Clair
         github: timothysc
-        company: Heptio
+        company: VMware
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -1051,7 +1051,7 @@ sigs:
         company: Linux Foundation
       - name: Jennifer Rondeau
         github: bradamant3
-        company: Heptio
+        company: VMware
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -1931,7 +1931,7 @@ sigs:
         company: Red Hat
       - name: Timothy St. Clair
         github: timothysc
-        company: Heptio
+        company: VMware
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -2229,7 +2229,7 @@ workinggroups:
         company: CoreOS
       - name: Bryan Liles
         github: bryanl
-        company: Heptio
+        company: VMware
       - name: Gareth Rushgrove
         github: garethr
         company: Docker

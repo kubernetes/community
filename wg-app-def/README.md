@@ -17,7 +17,7 @@ Improve UX of declarative primitives in the API and/or primary client libraries 
 ## Organizers
 
 * Antoine Legrand (**[@ant31](https://github.com/ant31)**), CoreOS
-* Bryan Liles (**[@bryanl](https://github.com/bryanl)**), Heptio
+* Bryan Liles (**[@bryanl](https://github.com/bryanl)**), VMware
 * Gareth Rushgrove (**[@garethr](https://github.com/garethr)**), Docker
 
 ## Contact
