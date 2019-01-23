@@ -574,6 +574,11 @@ test suite for [Conformance Testing](conformance-tests.md). This test must
 meet a number of [requirements](conformance-tests.md#conformance-test-requirements)
 to be eligible for this tag. This tag does not supersed any other labels.
 
+  - `[LinuxOnly]`: If a test is known to be using Linux-specific features 
+(e.g.: seLinuxOptions) or is unable to run on Windows nodes, it is labeled
+`[LinuxOnly]`. When using Windows nodes, this tag should be added to the
+`skip` argument.
+
   - The following tags are not considered to be exhaustively applied, but are
 intended to further categorize existing `[Conformance]` tests, or tests that are
 being considered as candidate for promotion to `[Conformance]` as we work to
