@@ -2473,6 +2473,7 @@ workinggroups:
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: http://bit.ly/wg-k8s-infra-notes
+      recordings_url: http://bit.ly/wg-k8s-infra-playlist
     contact:
-      slack: k8s-infra-team # TODO(spiffxp): rename to wg-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/k8s-infra-team # TODO(spiffxp): rename to wg-k8s-infra
+      slack: wg-k8s-infra
+      mailing_list: https://groups.google.com/forum/#!forum/wg-k8s-infra
