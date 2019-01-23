@@ -225,3 +225,38 @@ version and the watch cache test is skipped.
 ## End-to-End tests
 
 Please refer to [End-to-End Testing in Kubernetes](e2e-tests.md).
+
+## Running your contribution in the Kubernetes CI
+Once you open a PR, prow will run pre-submit tests in CI.
+
+### Troubleshooting a failure
+Click on `Details` and look at the [`gubernator`](gubernator.k8s.io/) output for the test.
+
+#### Troubleshooting failures/flakes that are not caused by your change
+- Check if an issue has already been opened for that test failure/flake
+  - If yes, comment on it and link your PR, the failed run that affected you and any other information you think might be relevant
+  - If no, open a new issue and notify the appropriate SIG (see: SIG test escalation)
+
+#### SIG test escalation
+- Figure out corresponding sig from test name/description
+- Mention the sig's github handle on the issue, optionally cc the SIG's chair(s) (locate them under kubernetes/community/sig-<name>)
+- Optionally (or if you haven't heard back on the issue after 24h) reach out to the SIG on slack
+
+### Testgrid
+You can see CI in testgrid, either:
+- Starting from gubernator report, or
+- testgrid.k8s.io
+
+testgrid is organised in:
+- tests
+  - collection of assertions in a test file
+  - each test is typically owned by a single SIG
+  - each test is represented as a row on the grid
+- jobs
+  - collection of tests
+  - each job is typically owned by a single SIG
+  - each job is represented as a tab
+- dashboards
+  - collection of jobs
+  - each dashboard is represented as a button
+  - some dashboards collect jobs/tests in the domain of a specific SIG (named after and owned by those sigs), and dashboards to monitor project wide health (owned by sig-release)
