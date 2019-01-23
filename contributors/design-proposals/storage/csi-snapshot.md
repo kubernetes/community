@@ -292,7 +292,7 @@ As the figure below shows, the CSI snapshot controller architecture consists of 
 
 * External snapshotter uses ControllerGetCapabilities to find out if CSI driver supports CREATE_DELETE_SNAPSHOT calls. It degrades to trivial mode if not.
 
-* External snapshotter is responsible for creating/deleting snapshots and binding snapshot and SnapshotContent objects. It follows [controller](https://github.com/kubernetes/community/blob/master/contributors/devel/controllers.md) pattern and uses informers to watch for `VolumeSnapshot` and `VolumeSnapshotContent` create/update/delete events. It filters out `VolumeSnapshot` instances with `Snapshotter==<CSI driver name>` and processes these events in workqueues with exponential backoff. 
+* External snapshotter is responsible for creating/deleting snapshots and binding snapshot and SnapshotContent objects. It follows [controller](/contributors/devel/sig-api-machinery/controllers.md) pattern and uses informers to watch for `VolumeSnapshot` and `VolumeSnapshotContent` create/update/delete events. It filters out `VolumeSnapshot` instances with `Snapshotter==<CSI driver name>` and processes these events in workqueues with exponential backoff. 
 
 * For dynamically created snapshot, it should have a VolumeSnapshotClass associated with it. User can explicitly specify a VolumeSnapshotClass in the VolumeSnapshot API object. If user does not specify a VolumeSnapshotClass, a default VolumeSnapshotClass created by the admin will be used. This is similar to how a default StorageClass created by the admin will be used for the provisioning of a PersistentVolumeClaim.
 
