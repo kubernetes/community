@@ -570,8 +570,8 @@ some separate test suites owned by the feature owner(s)
 (see [Continuous Integration](#continuous-integration) below).
 
   - `[Conformance]`: Designate that this test is included in the Conformance
-test suite for [Conformance Testing](conformance-tests.md). This test must
-meet a number of [requirements](conformance-tests.md#conformance-test-requirements)
+test suite for [Conformance Testing](sig-architecture/conformance-tests.md). This test must
+meet a number of [requirements](sig-architecture/conformance-tests.md#conformance-test-requirements)
 to be eligible for this tag. This tag does not supersed any other labels.
 
   - The following tags are not considered to be exhaustively applied, but are
@@ -603,7 +603,7 @@ In time, it is our intent to add or autogenerate a sample viper configuration th
 
 ### Conformance tests
 
-For more information on Conformance tests please see the [Conformance Testing](conformance-tests.md)
+For more information on Conformance tests please see the [Conformance Testing](sig-architecture/conformance-tests.md)
 
 ## Continuous Integration
 

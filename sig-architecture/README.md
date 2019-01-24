@@ -100,7 +100,7 @@ Establishing and documenting conventions for system and user-facing APIs, define
 
 * [Kubernetes Design and Architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/architecture.md)
 * [Design principles](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/principles.md)
-* [API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md)
+* [API conventions](/contributors/devel/sig-architecture/api-conventions.md)
 * [API Review process](https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md)
 * [Deprecation policy](https://kubernetes.io/docs/reference/deprecation-policy/)
 
@@ -111,7 +111,7 @@ Please see the [Design documentation](https://github.com/kubernetes-sigs/archite
 Reviewing, approving, and driving changes to the conformance test suite; reviewing, guiding, and creating new conformance profiles
 
 * [Conformance Tests](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.txt)
-* [Test Guidelines](https://github.com/kubernetes/community/blob/master/contributors/devel/conformance-tests.md)
+* [Test Guidelines](/contributors/devel/sig-architecture/conformance-tests.md)
 
 Please see the [Conformance Test Review](https://github.com/kubernetes-sigs/architecture-tracking/projects/1) tracking board to follow the work for this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS) file if you are interested in joining this effort. There is a lot of overlap with the [Kubernetes Software Conformance Working Group](https://github.com/cncf/k8s-conformance/blob/master/README-WG.md) with this sub project as well. The github group [cncf-conformance-wg](https://github.com/orgs/kubernetes/teams/cncf-conformance-wg) enumerates the folks on this working group. Look for the `area/conformance` label in the kubernetes repositories to mark [issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fconformance) and [PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+is%3Aopen+label%3Aarea%2Fconformance) 
 

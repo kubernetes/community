@@ -26,7 +26,7 @@ Guide](http://kubernetes.io/docs/admin/).
 
 * **Testing** ([testing.md](testing.md)): How to run unit, integration, and end-to-end tests in your development sandbox.
 
-* **Conformance Testing** ([conformance-tests.md](conformance-tests.md))
+* **Conformance Testing** ([conformance-tests.md](sig-architecture/conformance-tests.md))
   What is conformance testing and how to create/manage them.
 
 * **Hunting flaky tests** ([flaky-tests.md](flaky-tests.md)): We have a goal of 99.9% flake free tests.

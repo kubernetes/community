@@ -31,7 +31,7 @@ The `Version` object currently only specifies:
 ## Expectations about third party objects
 
 Every object that is added to a third-party Kubernetes object store is expected
-to contain Kubernetes compatible [object metadata](../devel/api-conventions.md#metadata).
+to contain Kubernetes compatible [object metadata](/contributors/devel/sig-architecture/api-conventions.md#metadata).
 This requirement enables the Kubernetes API server to provide the following
 features:
    * Filtering lists of objects via label queries.

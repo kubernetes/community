@@ -4,7 +4,7 @@
 
 # Process Overview and Motivations
 
-Due to the importance of preserving usability and consistency in Kubernetes APIs, all changes and additions require expert oversight. The API review process is intended to maintain logical and functional integrity of the API over time, the consistency of user experience and the ability of previously written tools to function with new APIs. Wherever possible, the API review process should help change submitters follow [established conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md), and not simply reject without cause. 
+Due to the importance of preserving usability and consistency in Kubernetes APIs, all changes and additions require expert oversight. The API review process is intended to maintain logical and functional integrity of the API over time, the consistency of user experience and the ability of previously written tools to function with new APIs. Wherever possible, the API review process should help change submitters follow [established conventions](/contributors/devel/sig-architecture/api-conventions.md), and not simply reject without cause. 
 
 Because expert reviewer bandwidth is extremely limited, the process provides a curated backlog with highest priority issues at the top. While this does mean some changes may be delayed in favor of other higher priority ones, this will help maintain critical project velocity, transparency, and equilibrium. Ideally, those whose API review priority is shifted in a release-impacting way will be proactively notified by the reviewers.
 
@@ -229,7 +229,7 @@ Aspiring reviewers should reach out the moderator on slack.  The moderator will 
 
 * [https://git.k8s.io/community/contributors/devel/sig-architecture/api_changes.md](/contributors/devel/sig-architecture/api_changes.md)
 
-* [https://github.com/kubernetes/community/blob/be9eeca6ee3becfa5b4c96bedf62b5b3ff5b1f8d/contributors/devel/api-conventions.md](https://github.com/kubernetes/community/blob/be9eeca6ee3becfa5b4c96bedf62b5b3ff5b1f8d/contributors/devel/api-conventions.md)
+* [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md)
 
 * [Pull-requests.md](https://github.com/kubernetes/community/blob/a74d906f0121c78114d79a3ac105aa2d36e24b57/contributors/devel/pull-requests.md#2-smaller-is-better-small-commits-small-prs) - should be updated to specifically call out API changes as important
 

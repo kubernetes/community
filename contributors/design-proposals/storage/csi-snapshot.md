@@ -59,7 +59,7 @@ The API design of VolumeSnapshot and VolumeSnapshotContent is modeled after Pers
 type VolumeSnapshot struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
@@ -144,7 +144,7 @@ Note that if an error occurs before the snapshot is cut, `Error` will be set and
 type VolumeSnapshotContent struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
@@ -234,7 +234,7 @@ A new VolumeSnapshotClass API object will be added instead of reusing the existi
 type VolumeSnapshotClass struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
