@@ -243,11 +243,13 @@ Click on `Details` and look at the [`gubernator`](gubernator.k8s.io/) output for
 - Optionally (or if you haven't heard back on the issue after 24h) reach out to the SIG on slack
 
 ### Testgrid
-You can see CI in testgrid, either:
-- Starting from gubernator report, or
-- testgrid.k8s.io
+[`testgrid`](https://testgrid.k8s.io/) is a visualization of the Kubernetes CI.
 
-testgrid is organised in:
+It is useful as a way to:
+- see the run history of a test you are debugging (access it starting from a gubernator report for that test)
+- get an overview of the project's general health
+
+`testgrid` is organised in:
 - tests
   - collection of assertions in a test file
   - each test is typically owned by a single SIG
