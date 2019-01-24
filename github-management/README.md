@@ -31,13 +31,13 @@ This team (**[@kubernetes/owners](https://github.com/orgs/kubernetes/teams/owner
 * Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**, US Pacific)
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**, CA Pacific)
 * Erick Fejta (**[@fejta](https://github.com/fejta)**, US Pacific)
-* Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**, US Pacific)
+* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**, Indian Standard Time)
 * Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**, UA Eastern European)
 
 This team is responsible for holding Org Owner privileges over all the active
 Kubernetes orgs, and will take action in accordance with our polices and
 procedures. All members of this team are subject to the Kubernetes
-[security embargo policy](https://git.k8s.io/sig-release/security-release-process-documentation/security-release-process.md#embargo-policy).
+[security embargo policy].
 
 Nominations to this team will come from the Contributor Experience SIG, and
 require confirmation by the Steering Committee before taking effect. Time zones
@@ -110,3 +110,5 @@ repositories and organizations:
 - [label_sync](https://git.k8s.io/test-infra/label_sync): Add, modify, delete,
   and migrate labels across an entire organization based on a defined YAML
   configuration
+
+[security embargo policy]: https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/private-distributors-list.md#embargo-policy
