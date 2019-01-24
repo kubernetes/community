@@ -49,7 +49,7 @@ This was asked on the mailing list here[2] and here[3], too.
 Several alternatives have been considered:
 
  * Add a mode to the API definition when using secrets: this is backward
-   compatible as described in (docs/devel/api_changes.md) IIUC and seems like the
+   compatible as described [here](https://git.k8s.io/community/contributors/devel/sig-architecture/api_changes.md) IIUC and seems like the
    way to go. Also @thockin said in the ML that he would consider such an
    approach. But it might be worth to consider if we want to do the same for
    configmaps or owners, but there is no need to do it now either.

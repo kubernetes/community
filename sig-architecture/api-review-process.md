@@ -227,7 +227,7 @@ Aspiring reviewers should reach out the moderator on slack.  The moderator will 
 
 * [Updating-docs-for-feature-changes.md](https://git.k8s.io/sig-release/release-team/role-handbooks/documentation-guides/updating-docs-for-feature-changes.md#when-making-api-changes)
 
-* [https://github.com/kubernetes/community/blob/be9eeca6ee3becfa5b4c96bedf62b5b3ff5b1f8d/contributors/devel/api_changes.md](https://github.com/kubernetes/community/blob/be9eeca6ee3becfa5b4c96bedf62b5b3ff5b1f8d/contributors/devel/api_changes.md)
+* [https://git.k8s.io/community/contributors/devel/sig-architecture/api_changes.md](/contributors/devel/sig-architecture/api_changes.md)
 
 * [https://github.com/kubernetes/community/blob/be9eeca6ee3becfa5b4c96bedf62b5b3ff5b1f8d/contributors/devel/api-conventions.md](https://github.com/kubernetes/community/blob/be9eeca6ee3becfa5b4c96bedf62b5b3ff5b1f8d/contributors/devel/api-conventions.md)
 

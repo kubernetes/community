@@ -47,7 +47,7 @@ feature's owner(s). The following are suggested conventions:
 - Features that touch multiple components should reserve the same key
   in each component to toggle on/off.
 - Alpha features should be disabled by default. Beta features may
-  be enabled by default. Refer to docs/devel/api_changes.md#alpha-beta-and-stable-versions
+  be enabled by default. Refer to [this file](https://git.k8s.io/community/contributors/devel/sig-architecture/api_changes.md#alpha-beta-and-stable-versions)
   for more detailed guidance on alpha vs. beta.
 
 ## Upgrade support

@@ -148,7 +148,7 @@ in *CRD v1* (apiextensions.k8s.io/v1), there will be only version list with no t
 
 #### Alternative approaches considered
 
-First a defaulting approach is considered which per-version fields would be defaulted to top level fields. but that breaks backward incompatible change; Quoting from API [guidelines](https://github.com/kubernetes/community/blob/master/contributors/devel/api_changes.md#backward-compatibility-gotchas):
+First a defaulting approach is considered which per-version fields would be defaulted to top level fields. but that breaks backward incompatible change; Quoting from API [guidelines](https://git.k8s.io/community/contributors/devel/sig-architecture/api_changes.md#backward-compatibility-gotchas):
 
 > A single feature/property cannot be represented using multiple spec fields in the same API version simultaneously
 

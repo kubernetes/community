@@ -50,7 +50,7 @@ lot of applications and customer use-cases.
 # Alpha Design
 
 This section describes the proposed design for
-[alpha-level](../devel/api_changes.md#alpha-beta-and-stable-versions) support, although
+[alpha-level](https://git.k8s.io/community/contributors/devel/sig-architecture/api_changes.md#alpha-beta-and-stable-versions) support, although
 additional features are described in [future work](#future-work).
 
 ## Overview
