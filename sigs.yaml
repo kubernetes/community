@@ -927,35 +927,6 @@ sigs:
     - name: minikube
       owners:
       - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
-  - name: Cluster Ops
-    dir: sig-cluster-ops
-    mission_statement: >
-      Promote operability and interoperability of Kubernetes clusters. We
-      focus on shared operations practices for Kubernetes clusters with a goal
-      to make Kubernetes broadly accessible with a common baseline reference.
-      We also organize operators as a sounding board and advocacy group.
-    charter_link:
-    label: cluster-ops
-    leadership:
-      chairs:
-      - name: Rob Hirschfeld
-        github: zehicle
-        company: RackN
-      - name: Jaice Singer DuMars
-        github: jdumars
-        company: Google
-    meetings:
-    - description: Regular SIG Meeting
-      day: Thursday
-      time: "20:00"
-      tz: "UTC"
-      frequency: biweekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-      archive_url: https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#
-      recordings_url: https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR
-    contact:
-      slack: sig-cluster-ops
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-ops
   - name: Contributor Experience
     dir: sig-contributor-experience
     mission_statement: >
