@@ -108,8 +108,10 @@ aliases:
     - stevekuznetsov
     - timothysc
   sig-ui-leads:
-    - danielromlein
     - floreks
+    - maciaszczykm
+    - danielromlein
+    - jeefy
   sig-vmware-leads:
     - frapposelli
     - cantbewong
