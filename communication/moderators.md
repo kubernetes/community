@@ -33,9 +33,12 @@ See our [moderation guidelines](./moderating.md) for policies and recommendation
 - Bob Killen (@mrbobbytables) - ET
 - Jeffrey Sica (@jeefy) - ET
 
-### Additional Moderators
+### Regional category moderators
 
-- Ihor Dvoretskyi (@idvoretskyi) - CET
+- [Chinese]
+- [German]
+- [Italian]
+- [Ukrainian]
 
 ## YouTube Channel
 
@@ -60,3 +63,9 @@ See our [moderation guidelines](./moderating.md) for policies and recommendation
 
 - Paris Pittman (@parispittman) - PT
 - Jorge Castro (@castrojo) - ET
+
+
+[Chinese]: https://discuss.kubernetes.io/t/about-the-chinese-category/2881
+[German]: https://discuss.kubernetes.io/t/about-the-german-category/3152
+[Italian]: https://discuss.kubernetes.io/t/about-the-italian-category/2917/2
+[Ukrainian]: https://discuss.kubernetes.io/t/about-the-ukrainian-category/2916
