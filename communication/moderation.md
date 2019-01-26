@@ -59,6 +59,10 @@ New members who post to a group will automatically have their messages put in a 
 
 Moderators will receive emails when messages are in this queue and will process them accordingly.
 
+### Discuss
+
+- [Discuss Guidelines](./discuss-guidelines.md)
+
 ### Slack
 
 - [Slack Guidelines](./slack-guidelines.md)
