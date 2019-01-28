@@ -34,6 +34,6 @@ The [RFP](https://github.com/kubernetes/community/blob/master/wg-security-audit/
 
 ## Mailing Lists
 
-* Sensitive communications regarding the audit shouls be sent to the [private variant of the mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit-private).
+* Sensitive communications regarding the audit should be sent to the [private variant of the mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit-private).
 
 <!-- END CUSTOM CONTENT -->
