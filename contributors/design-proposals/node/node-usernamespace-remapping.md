@@ -85,9 +85,10 @@ To maintain **backward compatibility**, if such a pod configuration is detected 
         // +optional
         HostUserNamespace *bool `json:"hostUserNamespace,omitempty" protobuf:"varint,31,opt,name=hostUserNamespace"`
 ```
-Today end users are NOT provided any guaranteed behavior by the Kubernetes related to usernamespace remapping support at runtime. If runtime has usernamespace remapping disabled, pods will run otherwise pods will fail. In other words, behavior is container runtime defined. `nil` value of `HostUserNamespace` will show the same behavior i.e runtime defined usernamespace behavior. However, with an added improvement of running pods with remapped usernamespace "when possible". "when possible" means runtime is running with usernamespace remapping enabled and pod does not specify any configuration which is not possible to provide in remapped usernamespace. 
+Today end users are NOT provided any guaranteed behavior by the Kubernetes related to usernamespace remapping support at runtime. If runtime has usernamespace remapping disabled, pods will run otherwise pod containers will fail to start. In other words, behavior is (container runtime) configuration defined. `nil` value of `HostUserNamespace` will show the same behavior i.e configuration(runtime and the kubelet flags `--userns-{uid/gid}map` ) defined usernamespace behavior. If the kubelet flags are to be set and `HostUserNamespace` value will be changed from `nil` to `false` otherwise `true`.  
+However, with an added improvement of running pods with remapped usernamespace "when possible". "when possible" means configuration at runtime and kubelet is usernamespace remapping enabled and pod does not specify any configuration which is not possible to provide in remapped usernamespace. 
 
-`HostUserNamespace` field will be gated behind `HostUserNamespace` feature-gate. To set it to `true` or `false`, feature-gate will have to be enabled. If feature-gate not enabled or feature-gate enabled but any value is not set, `nil` will be the default value. 
+`HostUserNamespace` field will be gated behind `HostUserNamespace` feature-gate. To set it to `true` or `false`, feature-gate will have to be enabled. If feature-gate not enabled or feature-gate is enabled but any value is not set, `nil` will be the default value. 
 
 ### Effect on existing Security Context fields
 
@@ -109,75 +110,94 @@ Today end users are NOT provided any guaranteed behavior by the Kubernetes relat
 
 ### Volume Permissions  
 Kubelet will change the file permissions, i.e chown, at `/var/lib/kubelet/pods/<pod-uid>/volumes` after volume plugin is done with provisioning to get updated ownership of the volume directory according to remapped UID and GID.
+
+
 This proposal will work only for local volumes and not with remote volumes which have client-server kind of complex architecture where client is not allowed to chown volumes as root such as NFS.
 
+### Kubelet Configuration
 
-### CRI API Changes
-A new CRI API, `GetRuntimeConfigInfo` will be added. At the initialization, Kubelet will use this API to retrieve default {U/G}ID mappings from the container runtime. 
+There are two possible ways for passing usernamespace configuration to the Kubelet:
 
-```golang
-// Runtime service defines the public APIs for remote container runtimes
-service RuntimeService {
+**1. Explicitly through Kubelet flags:**
+Based on [@Random-Liu's suggestions](https://github.com/kubernetes/kubernetes/pull/64005#issuecomment-452429232), two Kubelet flags, `--userns-uidmap` and `--userns-gidmap`, will be introduced for passing usernamespace configuration to the Kubelet. While preparing a pod creation request, `RunAsUser` and `RunAsGroup` fields in the `LinuxSandboxSecurityContext` will be initialized as per the usernamespace configuration.  
+
+
+**2. Implicitly discovering runtime configuration using a new CRI API:** A new CRI API, `GetRuntimeConfigInfo` will be added. At the initialization, Kubelet will use this API to retrieve default {U/G}ID mappings from the container runtime. 
+
+    ```golang
+    // Runtime service defines the public APIs for remote container runtimes
+    service RuntimeService {
     // Version returns the runtime name, runtime version, and runtime API version.
     rpc Version(VersionRequest) returns (VersionResponse) {}
     …….
     …….
     //  GetRuntimeConfigInfo returns the configuration details of the runtime.
     rpc GetRuntimeConfigInfo(GetRuntimeConfigInfoRequest) returns (GetRuntimeConfigInfoResponse) {}
-}
+    }
 
-// GetRuntimeConfigInfoRequest is the message sent for requesting runtime configuration details
-message GetRuntimeConfigInfoRequest {}
+    // GetRuntimeConfigInfoRequest is the message sent for requesting runtime configuration details
+    message GetRuntimeConfigInfoRequest {}
 
-// GetRuntimeConfigInfoResponse is the response message from runtime that includes configuration details
-message GetRuntimeConfigInfoResponse {
-    ActiveRuntimeConfig runtime_config = 1
-}
+    // GetRuntimeConfigInfoResponse is the response message from runtime that includes configuration details
+    message GetRuntimeConfigInfoResponse {
+        ActiveRuntimeConfig runtime_config = 1
+    }
 
-// ActiveRuntimeConfig contains the configuration details from the runtime.
-message ActiveRuntimeConfig {
-    LinuxUserNamespaceConfig user_namespace_config = 1;
-}
+    // ActiveRuntimeConfig contains the configuration details from the runtime.
+    message ActiveRuntimeConfig {
+        LinuxUserNamespaceConfig user_namespace_config = 1;
+    }
 
-// LinuxUserNamespaceConfig represents runtime's user-namespace configuration on a linux host.
-message LinuxUserNamespaceConfig {
-   // uid_mappings is an array of user id mappings.
-   repeated LinuxIDMapping uid_mappings = 1;
-   // gid_mappings is an array of group id mappings.
-   repeated LinuxIDMapping gid_mappings = 2;
-}
+    // LinuxUserNamespaceConfig represents runtime's user-namespace configuration on a linux host.
+    message LinuxUserNamespaceConfig {
+    // uid_mappings is an array of user id mappings.
+    repeated LinuxIDMapping uid_mappings = 1;
+    // gid_mappings is an array of group id mappings.
+    repeated LinuxIDMapping gid_mappings = 2;
+    }
 
-// LinuxIDMapping represents a single user namespace mapping in Linux.
-message LinuxIDMapping {
-   // container_id is the starting id for the mapping inside the container.
-   uint32 container_id = 1;
-   // host_id is the starting id for the mapping on the host.
-   uint32 host_id = 2;
-   // size is the length of the mapping.
-   uint32 size = 3;
-}
+    // LinuxIDMapping represents a single user namespace mapping in Linux.
+    message LinuxIDMapping {
+    // container_id is the starting id for the mapping inside the container.
+    uint32 container_id = 1;
+    // host_id is the starting id for the mapping on the host.
+    uint32 host_id = 2;
+    // size is the length of the mapping.
+    uint32 size = 3;
+    }
+    ```
+#### Pros of using approach `1` i.e Kubelet flags
+1. No need to add a new CRI API
+2. Kubelet configuration management is simpler than runtime configuration(varies with runtimes)
 
-...
+#### Cons of using approach `1` i.e Kubelet flags
+Increased chance of inconsistent configuration errors due to mismatch between Kubelet configuration and runtime configuration **in the alpha stage**. Though in beta, when per-pod usernamespaces will be supported, runtime configuration will not be considered and configuration will be managed only at Kubelet.
 
+
+### CRI API, `NamespaceOption`, Extension
+
+Existing `NamespaceOption` will be extended to add a new option `user`.
+
+```golang
 // NamespaceOption provides options for Linux namespaces.
 message NamespaceOption {
-	// Network namespace for this container/sandbox.
-	// Note: There is currently no way to set CONTAINER scoped network in the Kubernetes API.
-	// Namespaces currently set by the kubelet: POD, NODE
-	NamespaceMode network = 1;
-	// PID namespace for this container/sandbox.
-	// Note: The CRI default is POD, but the v1.PodSpec default is CONTAINER.
-	// The kubelet's runtime manager will set this to CONTAINER explicitly for v1 pods.
-	// Namespaces currently set by the kubelet: POD, CONTAINER, NODE
-	NamespaceMode pid = 2;
-	// IPC namespace for this container/sandbox.
-	// Note: There is currently no way to set CONTAINER scoped IPC in the Kubernetes API.
-	// Namespaces currently set by the kubelet: POD, NODE
-	NamespaceMode ipc = 3;
-	// User namespace for this container/sandbox.
+    // Network namespace for this container/sandbox.
+    // Note: There is currently no way to set CONTAINER scoped network in the Kubernetes API.
+    // Namespaces currently set by the kubelet: POD, NODE
+    NamespaceMode network = 1;
+    // PID namespace for this container/sandbox.
+    // Note: The CRI default is POD, but the v1.PodSpec default is CONTAINER.
+    // The kubelet's runtime manager will set this to CONTAINER explicitly for v1 pods.
+    // Namespaces currently set by the kubelet: POD, CONTAINER, NODE
+    NamespaceMode pid = 2;
+    // IPC namespace for this container/sandbox.
+    // Note: There is currently no way to set CONTAINER scoped IPC in the Kubernetes API.
+    // Namespaces currently set by the kubelet: POD, NODE
+    NamespaceMode ipc = 3;
+    // User namespace for this container/sandbox
     // Note: There is currently no way to set CONTAINER scoped user namespace in the Kubernetes API.
     // The container runtime should IGNORE this if user namespace remapping is NOT supported.
-    // Kubelet will set it to NODE_WIDE_REMAPPED if the following is true:
+    // Kubelet will set it to POD if the following is true:
     // - pod spec field `HostUserNamespace` == nil OR false
     // - AND host usernamespace requiring configuration like hostpath volumes not there in pod
     // - AND userns remapping is enabled at runtime  
@@ -185,17 +205,23 @@ message NamespaceOption {
     // - userns remapping is NOT enabled at runtime
     // - OR remapping enabled at runtime AND pod spec field `HostUserNamespace` == false
     // - OR remapping enabled at runtime AND host usernamespace requiring configuration like hostpath volumes present in pod definition
-    // Namespaces currently set by the kubelet: NODE, NODE_WIDE_REMAPPED
-	NamespaceMode user = 4;
+    // Namespaces currently set by the kubelet: NODE, POD
+    NamespaceMode user = 4;
 }
 
 // A NamespaceMode describes the intended namespace configuration for each
-// of the namespaces (Network, PID, IPC) in NamespaceOption. Runtimes should
+// of the namespaces (Network, PID, IPC, User) in NamespaceOption. Runtimes should
 // map these modes as appropriate for the technology underlying the runtime.
 enum NamespaceMode {
     // A POD namespace is common to all containers in a pod.
     // For example, a container with a PID namespace of POD expects to view
     // all of the processes in all of the containers in the pod.
+    // The uid/gids of the pods/containers on a given node are mapped to a range of uids/gids
+    // from that Node's namespace. For e.g. starting with 200000 id on the nodes namespace,
+    // 10000 ids are allocated for a pod. This means uid/gid 0 inside the pod would map to 200000 id on the nodes namespace.
+    // For example, starting from uid/gid 0, 10000 uids/gids in this namespace are mapped to
+    // 10000 ids on node namespace,starting with id 200000. i.e uid/gid 0 in this namespace is
+    // mapped to uid/gid 200000 on node namespace.
     POD       = 0;
     // A CONTAINER namespace is restricted to a single container.
     // For example, a container with a PID namespace of CONTAINER expects to
@@ -205,14 +231,6 @@ enum NamespaceMode {
     // For example, a container with a PID namespace of NODE expects to view
     // all of the processes on the host running the kubelet.
     NODE      = 2; 
-    // A NODE_WIDE_REMAPPED namespace applies to all pods on a given kubernetes node.
-    // The uid/gids of the pods/containers on a given node are mapped to a range of uids/gids
-    // from that Node's namespace. For e.g. starting with 200000 id on the nodes namespace,
-    // 10000 ids are allocated for a pod. This means uid/gid 0 inside the pod would map to 200000 id on the nodes namespace.
-    // For example, starting from uid/gid 0, 10000 uids/gids in this namespace are mapped to
-    // 10000 ids on node namespace,starting with id 200000. i.e uid/gid 0 in this namespace is
-    // mapped to uid/gid 200000 on node namespace.
-    NODE_WIDE_REMAPPED = 3; 
 }
 
 ```
@@ -304,6 +322,3 @@ The main risk with this change stems from the fact that processes in Pods will r
 ## Graduation Criteria
 - PSP integration
 - e2e tests
-
-## Alternatives
-User Namespace mappings can be passed explicitly through kubelet flags similar to https://github.com/kubernetes/kubernetes/pull/55707 but we do not prefer this option because this is very much prone to mis-configuration.
