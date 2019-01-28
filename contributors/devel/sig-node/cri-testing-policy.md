@@ -25,7 +25,7 @@ Runtime maintainers are **required** to submit the tests listed below.
 Node E2E tests qualify an OS image with a pre-installed CRI runtime. The
 runtime maintainers are free to choose any OS distribution, packaging, and
 deployment mechanism. Please see the
-[tutorial](https://github.com/kubernetes/community/blob/master/contributors/devel/e2e-node-tests.md)
+[tutorial](e2e-node-tests.md)
 to know more about the Node E2E test framework and tests for validating a
 compatible OS image.
 
