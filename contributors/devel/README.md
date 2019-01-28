@@ -32,12 +32,12 @@ Guide](http://kubernetes.io/docs/admin/).
 * **Hunting flaky tests** ([flaky-tests.md](flaky-tests.md)): We have a goal of 99.9% flake free tests.
   Here's how to run your tests many times.
 
-* **Logging Conventions** ([logging.md](logging.md)): Glog levels.
+* **Logging Conventions** ([logging.md](sig-instrumentation/logging.md)): Glog levels.
 
 * **Profiling Kubernetes** ([profiling.md](profiling.md)): How to plug in go pprof profiler to Kubernetes.
 
 * **Instrumenting Kubernetes with a new metric**
-  ([instrumentation.md](instrumentation.md)): How to add a new metrics to the
+  ([instrumentation.md](sig-instrumentation/instrumentation.md)): How to add a new metrics to the
   Kubernetes code base.
 
 * **Coding Conventions** ([coding-conventions.md](../guide/coding-conventions.md)):
