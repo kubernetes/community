@@ -60,7 +60,7 @@ proposals. We are working on adding more documentation for the API.
 
   - [Original proposal](https://github.com/kubernetes/kubernetes/blob/release-1.5/docs/proposals/container-runtime-interface-v1.md)
   - [Networking](/contributors/devel/kubelet-cri-networking.md)
-  - [Container metrics](/contributors/devel/cri-container-stats.md)
+  - [Container metrics](cri-container-stats.md)
   - [Exec/attach/port-forward streaming requests](https://docs.google.com/document/d/1OE_QoInPlVCK9rMAx9aybRmgFiVjHpJCHI9LrfdNM_s/edit?usp=sharing)
   - [Container stdout/stderr logs](https://github.com/kubernetes/kubernetes/blob/release-1.5/docs/proposals/kubelet-cri-logging.md)
 
