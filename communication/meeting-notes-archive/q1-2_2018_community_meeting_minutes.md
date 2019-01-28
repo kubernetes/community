@@ -1499,7 +1499,7 @@
         *   Many fixes in the 1.10 release
         *   More great things in the pipeline
     *   SIG Node [Derek Carr] (confirmed)
-        *   New [CRI testing policy](https://github.com/kubernetes/community/blob/master/contributors/devel/cri-testing-policy.md)
+        *   New [CRI testing policy](/contributors/devel/sig-node/cri-testing-policy.md)
         *   Feature going into Beta - Local storage capacity isolation
         *   Feature going into alpha - debug container, supports pod pid limits, cri container log rotation
         *   wg-resource-mgmt : graduated device plugins, hugepages, cpu pinning (beta)
