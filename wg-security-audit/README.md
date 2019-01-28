@@ -21,14 +21,19 @@ Perform a security audit on k8s with a vendor and produce as artifacts a threat 
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-security-audit)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-audit)
+* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit)
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Request For Proposals
       
 The RFP will be open between 2018/10/29 and 2018/11/30 and has been published [here](https://github.com/kubernetes/community/blob/master/wg-security-audit/RFP.md).
 
-## Submission
+## Vendor Selection
 
-Submissions should be sent to the [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-audit)
+The [RFP](https://github.com/kubernetes/community/blob/master/wg-security-audit/RFP.md) is now closed. The working group selected Trail of Atredis, a collaboration between [Trail of Bits](https://www.trailofbits.com/) and [Atredis Partners](https://www.atredis.com/) to perform the audit.
+
+## Mailing Lists
+
+* Sensitive communications regarding the audit should be sent to the [private variant of the mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit-private).
+
 <!-- END CUSTOM CONTENT -->
