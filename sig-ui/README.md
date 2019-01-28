@@ -35,6 +35,7 @@ The following subprojects are owned by sig-ui:
 - **dashboard**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/dashboard-metrics-scraper/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 

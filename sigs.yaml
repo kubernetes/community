@@ -2047,6 +2047,7 @@ sigs:
     - name: dashboard
       owners:
       - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/dashboard-metrics-scraper/master/OWNERS 
   - name: VMware
     dir: sig-vmware
     mission_statement: >
