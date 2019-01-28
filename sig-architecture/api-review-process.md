@@ -227,9 +227,9 @@ Aspiring reviewers should reach out the moderator on slack.  The moderator will 
 
 * [Updating-docs-for-feature-changes.md](https://git.k8s.io/sig-release/release-team/role-handbooks/documentation-guides/updating-docs-for-feature-changes.md#when-making-api-changes)
 
-* [https://git.k8s.io/community/contributors/devel/sig-architecture/api_changes.md](/contributors/devel/sig-architecture/api_changes.md)
+* [Api_changes.md](/contributors/devel/sig-architecture/api_changes.md)
 
-* [https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md](https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md)
+* [Api-conventions.md](/contributors/devel/sig-architecture/api-conventions.md)
 
 * [Pull-requests.md](https://github.com/kubernetes/community/blob/a74d906f0121c78114d79a3ac105aa2d36e24b57/contributors/devel/pull-requests.md#2-smaller-is-better-small-commits-small-prs) - should be updated to specifically call out API changes as important
 

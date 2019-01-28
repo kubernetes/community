@@ -55,7 +55,7 @@ the name of the directory in which the .go file exists.
 sync.Mutex`). When multiple locks are present, give each lock a distinct name
 following Go conventions - `stateLock`, `mapLock` etc.
 
-    - [API changes](https://git.k8s.io/community/contributors/devel/sig-architecture/api_changes.md)
+    - [API changes](/contributors/devel/sig-architecture/api_changes.md)
 
     - [API conventions](/contributors/devel/api-conventions.md)
 
