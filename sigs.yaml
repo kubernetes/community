@@ -2025,7 +2025,7 @@ sigs:
     - name: dashboard
       owners:
       - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes-sigs/dashboard-metrics-scraper/master/OWNERS 
+      - https://raw.githubusercontent.com/kubernetes-sigs/dashboard-metrics-scraper/master/OWNERS
   - name: VMware
     dir: sig-vmware
     mission_statement: >
@@ -2411,11 +2411,11 @@ workinggroups:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit
   - name: Component Standard
     dir: wg-component-standard
+    label: component-standard
     mission_statement: >
       Develop a standard foundation (philosophy and libraries) for core Kubernetes components to build on top of.
       Areas to standardize include configuration (flags, ComponentConfig APIs, ...), status endpoints (healthz, configz, ...), integration points (delegated authn/z, ...), and logging.
       Details are outlined in KEP 0032: https://github.com/kubernetes/enhancements/blob/master/keps/sig-cluster-lifecycle/0032-create-a-k8s-io-component-repo.md.
-    charter_link:
     leadership:
       chairs:
       - name: Lucas Käldström
@@ -2427,15 +2427,24 @@ workinggroups:
       - name: Michael Taufen
         github: mtaufen
         company: Google
+    stakeholder_sigs:
+    - Architecture
+    - API Machinery
+    - Cluster Lifecycle
     meetings:
     - description: Regular WG Meeting
       day: Tuesday
       time: "08:30"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI
+      url: https://zoom.us/j/705540322
+      archive_url: https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI
     contact:
+      slack: wg-component-standard
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-component-standard
+      teams:
+      - name: wg-component-standard
+        description: Component Standard Discussion
   - name: K8s Infra
     dir: wg-k8s-infra
     mission_statement: >
