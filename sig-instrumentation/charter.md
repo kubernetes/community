@@ -69,5 +69,5 @@ By SIG Technical Leads
 [sig-node]: https://github.com/kubernetes/community/tree/master/sig-node
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L964-L1018
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
-[instrumenting-kubernetes]: https://github.com/kubernetes/community/blob/master/contributors/devel/instrumentation.md
+[instrumenting-kubernetes]: /contributors/devel/sig-instrumentation/instrumentation.md
 [core-metrics-pipeline]: https://kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/
