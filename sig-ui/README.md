@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Covers all things UI related. Efforts are centered around Kubernetes Dashboard: a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 18:00 CET (Central European Time)](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=CET%20%28Central%20European%20Time%29).
+* Regular SIG Meeting: [Thursdays at 18:00 CET (Central European Time)](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=CET%20%28Central%20European%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing).
 
 ## Leadership
@@ -19,8 +19,10 @@ Covers all things UI related. Efforts are centered around Kubernetes Dashboard: 
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Sebastian Florek (**[@floreks](https://github.com/floreks)**), Loodse
+* Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**), Loodse
 * Dan Romlein (**[@danielromlein](https://github.com/danielromlein)**), Google
-* Sebastian Florek (**[@floreks](https://github.com/floreks)**), Fujitsu
+* Jeffrey Sica (**[@jeefy](https://github.com/jeefy)**), University of Michigan
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-ui)
@@ -33,6 +35,7 @@ The following subprojects are owned by sig-ui:
 - **dashboard**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/dashboard-metrics-scraper/master/OWNERS
 
 <!-- BEGIN CUSTOM CONTENT -->
 
