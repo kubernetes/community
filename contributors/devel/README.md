@@ -34,7 +34,7 @@ Guide](http://kubernetes.io/docs/admin/).
 
 * **Logging Conventions** ([logging.md](logging.md)): Glog levels.
 
-* **Profiling Kubernetes** ([profiling.md](profiling.md)): How to plug in go pprof profiler to Kubernetes.
+* **Profiling Kubernetes** ([profiling.md](sig-scalability/profiling.md)): How to plug in go pprof profiler to Kubernetes.
 
 * **Instrumenting Kubernetes with a new metric**
   ([instrumentation.md](instrumentation.md)): How to add a new metrics to the
