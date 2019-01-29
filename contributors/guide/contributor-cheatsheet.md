@@ -20,7 +20,7 @@ A list of common resources when contributing to Kubernetes.
 - [GitHub labels](https://go.k8s.io/github-labels)
 - [Release Buckets](https://gcsweb.k8s.io/gcs/kubernetes-release/)
 - Developer Guide
-  - [Cherry Picking Guide](/contributors/devel/cherry-picks.md)
+  - [Cherry Picking Guide](/contributors/devel/sig-release/cherry-picks.md)
 - [Kubernetes Code Search](https://cs.k8s.io/), maintained by [@dims](https://github.com/dims)
 
 
