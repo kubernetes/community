@@ -206,7 +206,7 @@ block the release on it. A few days before release, we will probably move all
 that milestone in bulk.
 
 More information can be found in the developer guide section for
-[targeting issues and PRs to a milestone release](/contributors/devel/release.md).
+[targeting issues and PRs to a milestone release](/contributors/devel/sig-release/release.md).
 
 ## Closing issues
 Issues that are identified as a support request, duplicate, not-reproducible
