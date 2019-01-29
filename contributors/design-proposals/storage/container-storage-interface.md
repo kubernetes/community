@@ -29,7 +29,7 @@ Kubernetes volume plugins are currently “in-tree” meaning they are linked, c
 4. Volume plugins get full privileges of kubernetes components (kubelet and kube-controller-manager).
 5. Plugin developers are forced to make plugin source code available, and can not choose to release just a binary.
 
-The existing [Flex Volume](/contributors/devel/flexvolume.md) plugin attempted to address this by exposing an exec based API for mount/unmount/attach/detach. Although it enables third party storage vendors to write drivers out-of-tree, it requires access to the root filesystem of node and master machines in order to deploy the third party driver files.
+The existing [Flex Volume] plugin attempted to address this by exposing an exec based API for mount/unmount/attach/detach. Although it enables third party storage vendors to write drivers out-of-tree, it requires access to the root filesystem of node and master machines in order to deploy the third party driver files.
 
 Additionally, it doesn’t address another pain of in-tree volumes plugins: dependencies. Volume plugins tend to have many external requirements: dependencies on mount and filesystem tools, for example. These dependencies are assumed to be available on the underlying host OS, which often is not the case, and installing them requires direct machine access. There are efforts underway, for example https://github.com/kubernetes/community/pull/589, that are hoping to address this for in-tree volume plugins. But, enabling volume plugins to be completely containerized will make dependency management much easier.
 
@@ -56,7 +56,7 @@ The objective of this document is to document all the requirements for enabling 
 * Recommend deployment process for Kubernetes compatible, third-party CSI Volume drivers on a Kubernetes cluster.
 
 ## Non-Goals
-* Replace [Flex Volume plugin](/contributors/devel/flexvolume.md)
+* Replace [Flex Volume plugin]
   * The Flex volume plugin exists as an exec based mechanism to create “out-of-tree” volume plugins.
   * Because Flex drivers exist and depend on the Flex interface, it will continue to be supported with a stable API.
   * The CSI Volume plugin will co-exist with Flex volume plugin.
@@ -777,3 +777,7 @@ Instead of creating a new `VolumeAttachment` object, another option we considere
 * List of nodes the volume was successfully attached to.
 
 We dismissed this approach because having attach/detach triggered by the creation/deletion of an object is much easier to manage (for both external-attacher and Kubernetes) and more robust (fewer corner cases to worry about).
+
+
+[Flex Volume]: /contributors/devel/sig-storage/flexvolume.md
+[Flex Volume plugin]: /contributors/devel/sig-storage/flexvolume.md
