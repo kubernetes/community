@@ -155,11 +155,11 @@ make test-integration
 # Run e2e tests by building test binaries, turn up a test cluster, run all tests, and tear the cluster down
 # Equivalent to: go run hack/e2e.go -- -v --build --up --test --down
 # Note: running all e2e tests takes a LONG time! To run specific e2e tests, visit:
-# https://git.k8s.io/community/contributors/devel/e2e-tests.md#building-kubernetes-and-running-the-tests
+# https://git.k8s.io/community/contributors/devel/sig-testing/e2e-tests.md#building-kubernetes-and-running-the-tests
 make test-e2e
 ```
 
-See the [testing guide](/contributors/devel/testing.md) and [end-to-end tests](/contributors/devel/e2e-tests.md)
+See the [testing guide](/contributors/devel/sig-testing/testing.md) and [end-to-end tests](/contributors/devel/sig-testing/e2e-tests.md)
 for additional information and scenarios.
 
 Run `make help` for additional information on these make targets.

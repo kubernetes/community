@@ -72,7 +72,7 @@ tests
 example, see [TestNamespaceAuthorization](https://git.k8s.io/kubernetes/test/integration/auth/auth_test.go)
 
   - Significant features should come with integration (test/integration) and/or
-[end-to-end (test/e2e) tests](/contributors/devel/e2e-tests.md)
+[end-to-end (test/e2e) tests](/contributors/devel/sig-testing/e2e-tests.md)
     - Including new kubectl commands and major features of existing commands
 
   - Unit tests must pass on macOS and Windows platforms - if you use Linux
