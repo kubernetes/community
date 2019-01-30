@@ -97,4 +97,4 @@ Issues impacting multiple subprojects in the SIG should be resolved by SIG Techn
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote
 [KEP]: https://github.com/kubernetes/community/blob/master/keps/0000-kep-template.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1454
-[OWNERS]: contributors/devel/owners.md
+[OWNERS]: owners.md

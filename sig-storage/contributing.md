@@ -40,7 +40,7 @@ For folks looking to add support for a new storage platform in Kubernetes, you h
 - Write an in-tree volume plugin or provisioner: You can contribute a new in-tree volume plugin or provisioner, that gets built and ships with Kubernetes, for use within the Persistent Volume Framework. 
 [See the Ceph RBD volume plugin example](https://git.k8s.io/kubernetes/pkg/volume/rbd) or [the AWS Provisioner example](https://github.com/kubernetes/kubernetes/pull/29006)
 - Write a FlexVolume plugin: This is an out-of-tree volume plugin which you develop and build separately outside of Kubernetes. 
-You then install the plugin on every Kubernetes host within your cluster and then [configure the plugin in Kubernetes as a FlexVolume](https://git.k8s.io/kubernetes/examples/volumes/flexvolume)
+You then install the plugin on every Kubernetes host within your cluster and then [configure the plugin in Kubernetes as a FlexVolume](https://git.k8s.io/examples/staging/volumes/flexvolume)
 - Write a Provisioner Controller: You can write a separate controller that watches for pending claims with a specific selector label on them. 
 Once an appropriate claim is discovered, the controller then provisions the appropriate storage intended for the claim and creates a corresponding 
 persistent volume for the claim that includes the same label used in the original claim selector. This will ensure that the PV for the new 
