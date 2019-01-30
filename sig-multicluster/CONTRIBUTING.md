@@ -295,4 +295,4 @@ See the sig-multicluster [community page] for points of contact and meeting time
 [release]: #release
 [slack-messages]: https://kubernetes.slack.com/messages/sig-multicluster
 [slack-signup]: http://slack.k8s.io/
-[tests]: /contributors/devel/testing.md
+[tests]: /contributors/devel/sig-testing/testing.md

@@ -86,7 +86,7 @@ required when your code does not compile on Windows).
 asynchronous thing to happen (e.g. wait for 1 seconds and expect a Pod to be
 running). Wait and retry instead.
 
-  - See the [testing guide](/contributors/devel/testing.md) for additional testing advice.
+  - See the [testing guide](/contributors/devel/sig-testing/testing.md) for additional testing advice.
 
 ## Directory and file conventions
 

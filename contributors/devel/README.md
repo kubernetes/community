@@ -24,7 +24,7 @@ Guide](http://kubernetes.io/docs/admin/).
 
 * **Development Guide** ([development.md](development.md)): Setting up your development environment.
 
-* **Testing** ([testing.md](testing.md)): How to run unit, integration, and end-to-end tests in your development sandbox.
+* **Testing** ([testing.md](sig-testing/testing.md)): How to run unit, integration, and end-to-end tests in your development sandbox.
 
 * **Conformance Testing** ([conformance-tests.md](conformance-tests.md))
   What is conformance testing and how to create/manage them.

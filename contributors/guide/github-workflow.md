@@ -149,7 +149,7 @@ make test
 make test WHAT=./pkg/api/helper GOFLAGS=-v
 
 # Run integration tests, requires etcd
-# For more info, visit https://git.k8s.io/community/contributors/devel/testing.md#integration-tests
+# For more info, visit https://git.k8s.io/community/contributors/devel/sig-testing/testing.md#integration-tests
 make test-integration
 
 # Run e2e tests by building test binaries, turn up a test cluster, run all tests, and tear the cluster down

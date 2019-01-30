@@ -421,6 +421,6 @@ See the sig-cli [community page] for points of contact and meeting times:
 [release]: #release
 [slack-messages]: https://kubernetes.slack.com/messages/sig-cli
 [slack-signup]: http://slack.k8s.io/
-[tests]: /contributors/devel/testing.md
+[tests]: /contributors/devel/sig-testing/testing.md
 [cli mentors]: https://groups.google.com/a/google.com/forum/#!forum/kubernetes-sig-cli-mentors
 [about me form]: https://docs.google.com/forms/d/1ID6DX1abiDr9Z9_sXXC0DsMwuyHb_NeFdB3xeRa4Vf0
