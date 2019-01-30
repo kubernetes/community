@@ -25,11 +25,12 @@ See [community membership]
 
 # Community groups
 
-The project has 4 main types of groups:
+The project has 5 main types of groups:
 * Special Interest Groups, SIGs
   * Subprojects
 * Working Groups, WGs
 * Committees
+* User Groups
 
 ![Kubernetes Governance Diagram](kubernetes_governance_diagram.png)
 
@@ -128,6 +129,21 @@ of a committee is decided by the steering committee.  Like a SIG, a
 committee has a charter and a chair, and will report to the steering
 committee periodically, and to the community as makes sense, given the
 charter.
+
+## User groups
+Some topics have long term relevance to large groups of Kubernetes users, but
+do not have clear deliverables or ownership of parts of the Kubernetes
+code base. As such they are neither good fits for SIGs or Working Groups.
+Examples of such a topic might be continuous delivery to Kubernetes.
+
+User groups function as a centralized resource to facilitate communication
+and discovery of information related to the topic of the user group. User
+groups should not undertake to produce any deliverable, instead they should
+form working groups under the auspices of some SIG for such work. Likewise
+they shouldn't take ownership of anything in the Kubernetes process, as
+that is a role for SIGs.
+
+User groups are documented in [sigs.yaml](sigs.yaml)
 
 ## Cross-project Communication and Coordination
 
