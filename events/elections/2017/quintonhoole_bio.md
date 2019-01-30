@@ -28,7 +28,7 @@ I have an M.Sc in Computer Science.
 # Highlights of What I've done on Kubernetes thus far
 
 Initially I led the effort to get our CI Testing stuff initiated and
-[working effectively](https://github.com/kubernetes/community/blob/master/contributors/devel/writing-good-e2e-tests.md), which was critical to being able to launch v1.0 successfully,
+[working effectively](/contributors/devel/sig-testing/writing-good-e2e-tests.md), which was critical to being able to launch v1.0 successfully,
 way back in July 2015.  Around that time I handed it over to the now-famous SIG-Testing.
 
 After that I initiated and led the [Cluster
