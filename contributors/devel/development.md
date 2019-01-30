@@ -194,4 +194,4 @@ To check out code to work on, please refer to [this guide](/contributors/guide/g
 [kubernetes.io]: https://kubernetes.io
 [mercurial]: http://mercurial.selenic.com/wiki/Download
 [test-image]: https://git.k8s.io/test-infra/jenkins/test-image
-[Build with Bazel]: bazel.md
+[Build with Bazel]: sig-testing/bazel.md
