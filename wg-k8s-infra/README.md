@@ -21,6 +21,7 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Work
 ## Meetings
 * Regular WG Meeting: [Wednesdays at 8:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](http://bit.ly/wg-k8s-infra-notes).
+  * [Meeting recordings](http://bit.ly/wg-k8s-infra-playlist).
 
 ## Organizers
 
@@ -28,8 +29,8 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Work
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/k8s-infra-team)
-* [Mailing list](https://groups.google.com/forum/#!forum/k8s-infra-team)
+* [Slack](https://kubernetes.slack.com/messages/wg-k8s-infra)
+* [Mailing list](https://groups.google.com/forum/#!forum/wg-k8s-infra)
 
 <!-- BEGIN CUSTOM CONTENT -->
 

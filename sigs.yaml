@@ -299,18 +299,22 @@ sigs:
       - name: Tim Allclair
         github: tallclair
         company: Google
+      tech_leads:
+      - name: David Eads
+        github: deads2k
+        company: Red Hat
+      - name: Jordan Liggitt
+        github: liggitt
+        company: Google
+      - name: Mike Danese
+        github: mikedanese
+        company: Google
       emeritus_leads:
       - name: Eric Chiang
         github: ericchiang
         company: Red Hat
       - name: Eric Tune
         github: erictune
-        company: Google
-      - name: David Eads
-        github: deads2k
-        company: Red Hat
-      - name: Jordan Liggitt
-        github: liggitt
         company: Google
     meetings:
     - description: Regular SIG Meeting
@@ -516,7 +520,7 @@ sigs:
       day: Friday
       time: "9:00"
       tz: "PT (Pacific Time)"
-      frequency: biweekly
+      frequency: "biweekly 2019 start date: Jan. 11th"
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
     contact:
@@ -923,35 +927,6 @@ sigs:
     - name: minikube
       owners:
       - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
-  - name: Cluster Ops
-    dir: sig-cluster-ops
-    mission_statement: >
-      Promote operability and interoperability of Kubernetes clusters. We
-      focus on shared operations practices for Kubernetes clusters with a goal
-      to make Kubernetes broadly accessible with a common baseline reference.
-      We also organize operators as a sounding board and advocacy group.
-    charter_link:
-    label: cluster-ops
-    leadership:
-      chairs:
-      - name: Rob Hirschfeld
-        github: zehicle
-        company: RackN
-      - name: Jaice Singer DuMars
-        github: jdumars
-        company: Google
-    meetings:
-    - description: Regular SIG Meeting
-      day: Thursday
-      time: "20:00"
-      tz: "UTC"
-      frequency: biweekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-      archive_url: https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#
-      recordings_url: https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR
-    contact:
-      slack: sig-cluster-ops
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-ops
   - name: Contributor Experience
     dir: sig-contributor-experience
     mission_statement: >
@@ -1449,12 +1424,19 @@ sigs:
       - name: Chris Hoge
         github: hogepodge
         company: OpenStack Foundation
-      - name: David Lyle
-        github: dklyle
-        company: Intel
-      - name: Robert Morse
-        github: rjmorse
-        company: Ticketmaster
+      emeritus_leads:
+       - name: David Lyle
+         github: dklyle
+         company: Intel
+       - name: Robert Morse
+         github: rjmorse
+         company: Ticketmaster
+       - name: Steve Gordon
+         github: xsgordon
+         company: Red Hat
+       - name: Ihor Dvoretskyi
+         github: idvoretskyi
+         company: CNCF
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -2015,18 +1997,24 @@ sigs:
     label: ui
     leadership:
       chairs:
+      - name: Sebastian Florek
+        github: floreks
+        company: Loodse
+      - name: Marcin Maciaszczyk
+        github: maciaszczykm
+        company: Loodse
       - name: Dan Romlein
         github: danielromlein
         company: Google
-      - name: Sebastian Florek
-        github: floreks
-        company: Fujitsu
+      - name: Jeffrey Sica
+        github: jeefy
+        company: University of Michigan
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
       time: "18:00"
       tz: "CET (Central European Time)"
-      frequency: weekly
+      frequency: bi-weekly
       url: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
       archive_url: https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing
       recordings_url:
@@ -2037,6 +2025,7 @@ sigs:
     - name: dashboard
       owners:
       - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/dashboard-metrics-scraper/master/OWNERS
   - name: VMware
     dir: sig-vmware
     mission_statement: >
@@ -2378,10 +2367,17 @@ workinggroups:
         company: VMWare
     meetings:
     - description: Regular WG Meeting
-      day: Friday
-      time: "16:00"
+      day: Wednesday
+      time: "17:00"
       tz: "UTC"
-      frequency: bi-weekly
+      frequency: every four weeks
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
+    - description: APAC WG Meeting
+      day: Wednesday
+      time: "5:00"
+      tz: "UTC"
+      frequency: every four weeks
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
     contact:
@@ -2412,14 +2408,14 @@ workinggroups:
       url: https://docs.google.com/document/d/1RbC4SBZBlKth7IjYv_NaEpnmLGwMJ0ElpUOmsG-bdRA/edit
     contact:
       slack: wg-security-audit
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-audit
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit
   - name: Component Standard
     dir: wg-component-standard
+    label: component-standard
     mission_statement: >
       Develop a standard foundation (philosophy and libraries) for core Kubernetes components to build on top of.
       Areas to standardize include configuration (flags, ComponentConfig APIs, ...), status endpoints (healthz, configz, ...), integration points (delegated authn/z, ...), and logging.
       Details are outlined in KEP 0032: https://github.com/kubernetes/enhancements/blob/master/keps/sig-cluster-lifecycle/0032-create-a-k8s-io-component-repo.md.
-    charter_link:
     leadership:
       chairs:
       - name: Lucas Käldström
@@ -2431,15 +2427,24 @@ workinggroups:
       - name: Michael Taufen
         github: mtaufen
         company: Google
+    stakeholder_sigs:
+    - Architecture
+    - API Machinery
+    - Cluster Lifecycle
     meetings:
     - description: Regular WG Meeting
       day: Tuesday
       time: "08:30"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI
+      url: https://zoom.us/j/705540322
+      archive_url: https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI
     contact:
+      slack: wg-component-standard
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-component-standard
+      teams:
+      - name: wg-component-standard
+        description: Component Standard Discussion
   - name: K8s Infra
     dir: wg-k8s-infra
     mission_statement: >
@@ -2469,6 +2474,7 @@ workinggroups:
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: http://bit.ly/wg-k8s-infra-notes
+      recordings_url: http://bit.ly/wg-k8s-infra-playlist
     contact:
-      slack: k8s-infra-team # TODO(spiffxp): rename to wg-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/k8s-infra-team # TODO(spiffxp): rename to wg-k8s-infra
+      slack: wg-k8s-infra
+      mailing_list: https://groups.google.com/forum/#!forum/wg-k8s-infra

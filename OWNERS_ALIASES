@@ -14,6 +14,9 @@ aliases:
     - mikedanese
     - enj
     - tallclair
+    - deads2k
+    - liggitt
+    - mikedanese
   sig-autoscaling-leads:
     - mwielgus
   sig-aws-leads:
@@ -42,9 +45,6 @@ aliases:
     - roberthbailey
     - luxas
     - timothysc
-  sig-cluster-ops-leads:
-    - zehicle
-    - jdumars
   sig-contributor-experience-leads:
     - Phillels
     - parispittman
@@ -75,8 +75,6 @@ aliases:
     - derekwaynecarr
   sig-openstack-leads:
     - hogepodge
-    - dklyle
-    - rjmorse
   sig-pm-leads:
     - apsinha
     - idvoretskyi
@@ -105,8 +103,10 @@ aliases:
     - stevekuznetsov
     - timothysc
   sig-ui-leads:
-    - danielromlein
     - floreks
+    - maciaszczykm
+    - danielromlein
+    - jeefy
   sig-vmware-leads:
     - frapposelli
     - cantbewong

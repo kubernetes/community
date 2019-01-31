@@ -15,7 +15,7 @@ Guide](http://kubernetes.io/docs/admin/).
 
 * **Pull Request Process** ([/contributors/guide/pull-requests.md](/contributors/guide/pull-requests.md)): When and why pull requests are closed.
 
-* **Getting Recent Builds** ([getting-builds.md](getting-builds.md)): How to get recent builds including the latest builds that pass CI.
+* **Getting Recent Builds** ([getting-builds.md](sig-release/getting-builds.md)): How to get recent builds including the latest builds that pass CI.
 
 * **Automated Tools** ([automation.md](automation.md)): Descriptions of the automation that is running on our github repository.
 
@@ -24,20 +24,20 @@ Guide](http://kubernetes.io/docs/admin/).
 
 * **Development Guide** ([development.md](development.md)): Setting up your development environment.
 
-* **Testing** ([testing.md](testing.md)): How to run unit, integration, and end-to-end tests in your development sandbox.
+* **Testing** ([testing.md](sig-testing/testing.md)): How to run unit, integration, and end-to-end tests in your development sandbox.
 
 * **Conformance Testing** ([conformance-tests.md](sig-architecture/conformance-tests.md))
   What is conformance testing and how to create/manage them.
 
-* **Hunting flaky tests** ([flaky-tests.md](flaky-tests.md)): We have a goal of 99.9% flake free tests.
+* **Hunting flaky tests** ([flaky-tests.md](sig-testing/flaky-tests.md)): We have a goal of 99.9% flake free tests.
   Here's how to run your tests many times.
 
-* **Logging Conventions** ([logging.md](logging.md)): Glog levels.
+* **Logging Conventions** ([logging.md](sig-instrumentation/logging.md)): Glog levels.
 
-* **Profiling Kubernetes** ([profiling.md](profiling.md)): How to plug in go pprof profiler to Kubernetes.
+* **Profiling Kubernetes** ([profiling.md](sig-scalability/profiling.md)): How to plug in go pprof profiler to Kubernetes.
 
 * **Instrumenting Kubernetes with a new metric**
-  ([instrumentation.md](instrumentation.md)): How to add a new metrics to the
+  ([instrumentation.md](sig-instrumentation/instrumentation.md)): How to add a new metrics to the
   Kubernetes code base.
 
 * **Coding Conventions** ([coding-conventions.md](../guide/coding-conventions.md)):

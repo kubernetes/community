@@ -61,7 +61,7 @@ following Go conventions - `stateLock`, `mapLock` etc.
 
     - [Kubectl conventions](/contributors/devel/kubectl-conventions.md)
 
-    - [Logging conventions](/contributors/devel/logging.md)
+    - [Logging conventions](/contributors/devel/sig-instrumentation/logging.md)
 
 ## Testing conventions
 
@@ -72,7 +72,7 @@ tests
 example, see [TestNamespaceAuthorization](https://git.k8s.io/kubernetes/test/integration/auth/auth_test.go)
 
   - Significant features should come with integration (test/integration) and/or
-[end-to-end (test/e2e) tests](/contributors/devel/e2e-tests.md)
+[end-to-end (test/e2e) tests](/contributors/devel/sig-testing/e2e-tests.md)
     - Including new kubectl commands and major features of existing commands
 
   - Unit tests must pass on macOS and Windows platforms - if you use Linux
@@ -86,7 +86,7 @@ required when your code does not compile on Windows).
 asynchronous thing to happen (e.g. wait for 1 seconds and expect a Pod to be
 running). Wait and retry instead.
 
-  - See the [testing guide](/contributors/devel/testing.md) for additional testing advice.
+  - See the [testing guide](/contributors/devel/sig-testing/testing.md) for additional testing advice.
 
 ## Directory and file conventions
 

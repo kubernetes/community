@@ -1,3 +1,5 @@
+# See the OWNERS docs at https://go.k8s.io/owners
+
 reviewers:
   - castrojo
   - guineveresaenger
@@ -8,6 +10,7 @@ reviewers:
 approvers:
   - castrojo
   - parispittman
+  - guineveresaenger
 labels:
   - sig/contributor-experience
   - area/contributor-guide

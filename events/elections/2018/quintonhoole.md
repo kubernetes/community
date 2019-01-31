@@ -30,7 +30,7 @@ I have an M.Sc in Computer Science.
 1. steering committee member since October 2017. 
 2. active contributor to [SIG-Architecture](https://github.com/kubernetes/community/tree/master/sig-architecture).
 3. lead [SIG-Multicluster](https://github.com/kubernetes/community/tree/master/sig-multicluster)
-4. early lead getting CI Testing [working effectively](https://github.com/kubernetes/community/blob/master/contributors/devel/writing-good-e2e-tests.md), critical to v1.0 launch.
+4. early lead getting CI Testing [working effectively](/contributors/devel/sig-testing/writing-good-e2e-tests.md), critical to v1.0 launch.
 5. Helped [SIG-Scalability set key
 objectives](https://github.com/kubernetes/community/blob/master/sig-scalability/goals.md).
 
