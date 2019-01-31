@@ -45,7 +45,7 @@ See our [moderation guidelines](./moderating.md) for policies and recommendation
 - Paris Pittman (@parispittman) - PT
 - Sarah Novotny (@sarahnovotny) - PT
 - Bob Hrdinsky - PT
-- Ihor Dvoretskyi (@idvoretskyi) - CET
+- Ihor Dvoretskyi (@idvoretskyi) - EET
 - Jeffrey Sica (@jeefy) - ET
 - Jorge Castro (@castrojo) - ET
 - Joe Beda - (@joebeda) - PT
@@ -54,7 +54,7 @@ See our [moderation guidelines](./moderating.md) for policies and recommendation
 ## Slack
 
 - Chris Aniszczyk (@caniszczyk) - CT
-- Ihor Dvoretskyi (@idvoretskyi) - CET
+- Ihor Dvoretskyi (@idvoretskyi) - EET
 - Jaice Singer DuMars (@jdumars) - PT
 - Jorge Castro (@castrojo) - ET
 - Paris Pittman (@parispittman) - PT
