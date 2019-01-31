@@ -25,7 +25,7 @@ See [community membership]
 
 # Community groups
 
-The project has 5 main types of groups:
+The project is comprised of the following types of subgroups:
 * Special Interest Groups, SIGs
   * Subprojects
 * Working Groups, WGs
