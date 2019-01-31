@@ -134,7 +134,16 @@ charter.
 Some topics have long term relevance to large groups of Kubernetes users, but
 do not have clear deliverables or ownership of parts of the Kubernetes
 code base. As such they are neither good fits for SIGs or Working Groups.
-Examples of such a topic might be continuous delivery to Kubernetes.
+An example of such a topic might be continuous delivery to Kubernetes. 
+
+Though their central goal is not a a deliverable piece of work, as contributing
+members of the community working groups are expected to work with SIGs
+to either identify friction or usability issues that need to be addressed,
+or to provide or improve documentation in their area of expertise. However
+these activities are covered under general code contributions to the relevant
+SIGs (e.g. SIG Docs) rather than as part of the user group. These contributions
+are expected to be more incremental and ad-hoc versus the more targeted 
+output of a working group.
 
 User groups function as a centralized resource to facilitate communication
 and discovery of information related to the topic of the user group. User
@@ -143,7 +152,8 @@ form working groups under the auspices of some SIG for such work. Likewise
 they shouldn't take ownership of anything in the Kubernetes process, as
 that is a role for SIGs.
 
-User groups are documented in [sigs.yaml](sigs.yaml)
+To facilitate discoverability and engagement, 
+user groups are documented in [sigs.yaml](sigs.yaml)
 
 ## Cross-project Communication and Coordination
 
