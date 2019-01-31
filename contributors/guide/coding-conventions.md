@@ -55,7 +55,7 @@ the name of the directory in which the .go file exists.
 sync.Mutex`). When multiple locks are present, give each lock a distinct name
 following Go conventions - `stateLock`, `mapLock` etc.
 
-    - [API changes](/contributors/devel/api_changes.md)
+    - [API changes](/contributors/devel/sig-architecture/api_changes.md)
 
     - [API conventions](/contributors/devel/api-conventions.md)
 
@@ -119,7 +119,7 @@ respectively. Actual application examples belong in /examples.
 
     - Go code for normal third-party dependencies is managed using
 [Godep](https://github.com/tools/godep) and is described in the kubernetes
-[godep guide](/contributors/devel/godep.md)
+[godep guide](/contributors/devel/sig-architecture/godep.md)
 
     - Other third-party code belongs in `/third_party`
       - forked third party Go code goes in `/third_party/forked`

@@ -167,7 +167,7 @@ Kubernetes uses [`godep`](https://github.com/tools/godep) to manage
 dependencies.
 
 Developers who need to manage dependencies in the `vendor/` tree should read
-the docs on [using godep to manage dependencies](godep.md).
+the docs on [using godep to manage dependencies](sig-architecture/godep.md).
 
 
 ## Build with Bazel/Gazel

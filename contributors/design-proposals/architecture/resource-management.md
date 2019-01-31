@@ -89,7 +89,7 @@ API groups may be exposed as a unified API surface while being served by distinc
 
 Each API server supports a custom [discovery API](https://github.com/kubernetes/client-go/blob/master/discovery/discovery_client.go) to enable clients to discover available API groups, versions, and types, and also [OpenAPI](https://kubernetes.io/blog/2016/12/kubernetes-supports-openapi/), which can be used to extract documentation and validation information about the resource types.
 
-See the [Kubernetes API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md ) for more details.
+See the [Kubernetes API conventions](/contributors/devel/sig-architecture/api-conventions.md ) for more details.
 
 ## Resource semantics and lifecycle
 
@@ -97,12 +97,12 @@ Each API resource undergoes [a common sequence of behaviors](https://kubernetes.
 
 1. [Authentication](https://kubernetes.io/docs/admin/authentication/)
 2. [Authorization](https://kubernetes.io/docs/admin/authorization/): [Built-in](https://kubernetes.io/docs/admin/authorization/rbac/) and/or [administrator-defined](https://kubernetes.io/docs/admin/authorization/webhook/) identity-based policies
-3. [Defaulting](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#defaulting): API-version-specific default values are made explicit and persisted
+3. [Defaulting](/contributors/devel/sig-architecture/api-conventions.md#defaulting): API-version-specific default values are made explicit and persisted
 4. Conversion: The apiserver converts between the client-requested [API version](https://kubernetes.io/docs/concepts/overview/kubernetes-api/#API-versioning) and the version it uses to store each resource type in etcd
 5. [Admission control](https://kubernetes.io/docs/admin/admission-controllers/): [Built-in](https://kubernetes.io/docs/admin/admission-controllers/) and/or [administrator-defined](https://kubernetes.io/docs/admin/extensible-admission-controllers/) resource-type-specific policies
-6. [Validation](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#validation): Resource field values are validated. Other than the presence of required fields, the API resource schema is not currently validated, but optional validation may be added in the future
+6. [Validation](/contributors/devel/sig-architecture/api-conventions.md#validation): Resource field values are validated. Other than the presence of required fields, the API resource schema is not currently validated, but optional validation may be added in the future
 7. Idempotence: Resources are accessed via immutable client-provided, declarative-friendly names
-8. [Optimistic concurrency](https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#concurrency-control-and-consistency): Writes may specify a precondition that the **resourceVersion** last reported for a resource has not changed
+8. [Optimistic concurrency](/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency): Writes may specify a precondition that the **resourceVersion** last reported for a resource has not changed
 9. [Audit logging](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/): Records the sequence of changes to each resource by all actors
 
 Additional behaviors are supported upon deletion:
