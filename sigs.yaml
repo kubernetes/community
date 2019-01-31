@@ -1227,7 +1227,7 @@ sigs:
         github: csbell
         company: Google
       - name: Quinton Hoole
-        github: quinton-hoole
+        github: quinton-hoole-2
         company: Huawei
     meetings:
     - description: Regular SIG Meeting
