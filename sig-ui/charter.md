@@ -10,6 +10,7 @@ SIG-UI covers GUI-related aspects of the Kubernetes project. Efforts are centere
 
 - [Kubernetes Dashboard](https://github.com/kubernetes/dashboard)
 - [Dashboard Cluster Addon](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dashboard)
+- [Dashboard Metrics Scraper](https://github.com/kubernetes-sigs/dashboard-metrics-scraper)
 
 #### Cross-cutting and Externally Facing Processes
 
