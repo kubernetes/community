@@ -4,7 +4,7 @@ Author: @mengqiy
 
 ## Motivation
 
-Background of the Strategic Merge Patch is covered [here](../devel/strategic-merge-patch.md).
+Background of the Strategic Merge Patch is covered [here](/contributors/devel/sig-api-machinery/strategic-merge-patch.md).
 
 The Kubernetes API may apply semantic meaning to the ordering of items within a list,
 however the strategic merge patch does not keep the ordering of elements.
