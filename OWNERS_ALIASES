@@ -137,6 +137,11 @@ aliases:
   wg-kubeadm-adoption-leads:
     - luxas
     - justinsb
+  wg-lts-leads:
+    - tpepper
+    - imkin
+    - quinton-hoole-2
+    - youngnick
   wg-machine-learning-leads:
     - vishh
     - kow3ns

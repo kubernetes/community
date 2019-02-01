@@ -2203,6 +2203,50 @@ workinggroups:
     contact:
       slack: sig-cluster-lifecycle
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+  - name: LTS
+    dir: wg-lts
+    mission_statement: >
+      Answer the question: Does Kubernetes need a longer support
+      term? If yes, figure out what that looks like for Kubernetes
+      and propose this to the rest of the project. If no, figure
+      out how to help end users cope with this and propose that to
+      the rest of the project. If a proposal is accepted, the working
+      group's mission will change to implement it.
+
+      The working group is sponsored by SIG Release, but has the
+      potential to span almost all SIGs.  For more background see
+      the [WG formation proposal](https://docs.google.com/presentation/d/1-Z-mUNIs3mUi7AdP1KwoAVNviwKrCoo3lxMb5wzCWbk/edit?usp=sharing).
+    charter_link: charter.md
+    stakeholder_sigs:
+    - API Machinery
+    - CLI
+    - Node
+    leadership:
+      chairs:
+      - name: Tim Pepper
+        github: tpepper
+        company: VMware
+      - name: Dhawal Yogesh Bhanusali
+        github: imkin
+        company: VMware
+      - name: Quinton Hoole
+        github: quinton-hoole-2
+        company: Huawei
+      - name: Nick Young
+        github: youngnick
+        company: Atlassian
+    meetings:
+    - description: Regular WG Meeting
+      day: Tuesday
+      time: "09:00"
+      tz: "PT (Pacific Time)"
+      frequency: bi-weekly
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://docs.google.com/document/d/1J2CJ-q9WlvCnIVkoEo9tAo19h08kOgUJAS3HxaSMsLA/edit?usp=sharing
+      recordings_url:
+    contact:
+      slack: wg-lts
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-lts
   - name: App Def
     dir: wg-app-def
     mission_statement: >
