@@ -16,7 +16,7 @@ moderation guidelines.
 
 ## Code of conduct
 
-The Kubernetes project adheres to the community [Code of Conduct] throughout all
+The Kubernetes project adheres to the [Kubernetes Code of Conduct] throughout all
 platforms and includes all communication mediums.
 
 
@@ -195,7 +195,7 @@ Thanks for making Kubernetes meetings work great!
 [zoom admins]: /moderators.md#zoom
 [host key]: https://support.zoom.us/hc/en-us/articles/205172555-Host-Key
 [CNCF Service Desk]: https://github.com/cncf/servicedesk
-[Code of Conduct]: /code-of-conduct.md
+[Kubernetes Code of Conduct]: /code-of-conduct.md
 [code of conduct committee]: /committee-code-of-conduct/README.md
 [SIG Creation procedure]: /sig-governance.md#sig-creation-and-maintenance-procedure
 [latest version]: https://zoom.us/download
