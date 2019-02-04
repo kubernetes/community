@@ -26,7 +26,7 @@ As such, it is also a proving group for widely used functionality that may be mo
 into the server.  Past examples of kubectl functionality that moved into the server include -
 garbage collection, rolling updates, apply, "get" and dry-run.
 
-It may also include functionality that bridges standard non-Kubernetes native solution to Kubernetes
+It may also include porcelain that bridges standard non-Kubernetes native solution to Kubernetes
 native solutions - e.g. `docker run` -> `kubectl run`, `EXPOSE` -> `kubectl expose`.
 
 ## Workflows
@@ -62,17 +62,20 @@ with the goal of remaining close to the Kubernetes APIs.
 
 ## Documentation
 
-In addition to reference documentation for the libraries and tools it develops,
-SIG CLI should develop documentation for users which describing concepts central
-to effectively working with kubectl or effective techniques when using
-kubectl as part of larger workflows, but for which the tooling is not owned or
-developed by SIG CLI.
+SIG CLI is responsible for developing documentation to accompany kubectl that both describes
+the functionality and provides techniques for effective usage.
 
-Examples:
+#### Examples of Functionality In Kubectl
 
-* If in a workflow deploying to multiple clusters how to use the `--context` flag to
-  specify the cluster within a kubeconfig, or `--kubeconfig` flag to specify a
-  different kubeconfig file.
-* Fix the api version when using `kubect get -o jsonpath`.
-* Implications of using kubectl within a GitOps workflow.
+Following are examples of functionality that is in kubectl.
 
+- Invoking Kubernetes APIs: Resource APIs, SubResource APIs, Discovery Service, Version, OpenAPI
+- Pre and Post processing API Resource Config, API Requests and API Responses
+- Aggregating multiple API Responses and post processing them
+- Collapsing multiple manual steps into a command
+- Generating Kubernetes Resource Config locally or creating Resources remotely
+- Transforming Kubernetes Resource Config locally or patching remotely
+- Blocking on propagation of an event or change to the cluster
+- Referencing a collection of either remote or local Resource Config
+- Configure how to talk to a specific cluster from the cli
+- Selecting which API group/version to invoke if ambiguous in the context of the command
