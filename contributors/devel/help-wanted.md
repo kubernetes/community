@@ -1,3 +1,3 @@
-This document has moved [here](https://git.k8s.io/community/tree/master/contributors/guide/help-wanted.md).
+This file has moved to https://git.k8s.io/community/contributors/guide/help-wanted.md.
 
-*This file is a redirect stub. It should be deleted by 04/22/2019.*
+This file is a placeholder to preserve links.  Please remove after 2019-07-01 or the release of kubernetes 1.15, whichever comes first.
