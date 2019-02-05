@@ -143,7 +143,7 @@ field which the service account authenticator will validate.
 type TokenReviewSpec struct {
   // Token is the opaque bearer token.
   Token string
-  // Audiences is the identifier that the client identifies as.
+  // Audiences are the identifiers that the client identifies as.
   Audiences []string
 }
 ```
