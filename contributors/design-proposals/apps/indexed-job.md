@@ -144,7 +144,7 @@ Also, as a shortcut, for small worklists, it can be included in an annotation on
 the Job object, which is then exposed as a volume in the pod via the downward
 API.
 
-### What Varies Between Pods of a Job
+### What Varies Between Pods of an indexed-job
 
 Pods need to differ in some way to do something different. (They do not differ
 in the work-queue style of Job, but that style has ease-of-use issues).
