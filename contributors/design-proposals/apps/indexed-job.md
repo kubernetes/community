@@ -184,7 +184,7 @@ Experience in [similar systems](http://static.googleusercontent.com/media/resear
 has shown this model to be applicable to a very broad range of problems, despite
 this restriction.
 
-Therefore we to allow pods in the same Job to differ **only** in the following
+Therefore we want to allow pods in the same Job to differ **only** in the following
  aspects:
 - command line
 - environment variables
