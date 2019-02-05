@@ -171,7 +171,7 @@ Future work:
 * Allow more sophisticated identity assignment - instead of `{name}-{0 - replicas-1}`, allow subsets and
   complex indexing.
 
-### Controller behavior.
+### Controller behavior
 
 When a StatefulSet is scaled up, the controller must create both pods and supporting resources for
 each new identity. The controller must create supporting resources for the pod before creating the
