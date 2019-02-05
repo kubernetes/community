@@ -997,6 +997,13 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
+      meetings:
+      - description: Non-Code Contributors Meeting
+        day: Wednesday
+        time: "11:00"
+        tz: "PT (Pacific Time)"
+        frequency: biweekly
+        url: https://docs.google.com/document/d/1gdFWfkrapQclZ4-z4Lx2JwqKsJjXXUOVoLhBzZiZgSk/edit
     - name: devstats
       owners:
         - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS

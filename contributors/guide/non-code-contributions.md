@@ -27,10 +27,11 @@ These are roles that either span the project as a whole, or span several areas o
 - Outward facing community work (might be more CNCF-oriented)
   - Hosting meetups and general evangelism
   - Presentation of work to meetups
-  - Design
-    - Web Development
-    - Artistic contributions
-      - Conference-specific or Project-specific
+  - Visual Communication
+    - Diagrams and visual explanations of concepts
+    - Infographic design
+    - Icon design
+    - Various artistic contributions to strengthen kubernetes brand, evangelize the project, and develop community
 - Non-Documentation writing
   - Blogging about early experiences
   - Operational manuals
@@ -63,6 +64,7 @@ These are roles that are important to each and every SIG within the Kubernetes p
   - Updates
     - Reviewing/logging technical ownership for documentation that might need updating
   - Translation
+- UX/UI Design
 - Release roles
   - All roles have shadows for onboarding new members
 - Project management
@@ -74,6 +76,7 @@ These are roles that are important to each and every SIG within the Kubernetes p
 - Events
   - Organizing/helping run Face-to-Face meetings for SIGs/WGs/subprojects
   - Putting together SIG Intros & Deep-dives for KubeCon/CloudNativeCon
+- Managing & Uploading Recordings to YouTube
 
 #### Non-Code Tasks in Primarily-Code roles
 These are roles that are not code-based, but require knowledge of either general coding, or specific domain knowledge of the Kubernetes code base.

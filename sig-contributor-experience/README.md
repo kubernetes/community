@@ -58,6 +58,8 @@ The following subprojects are owned by sig-contributor-experience:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
+  - Meetings:
+    - Non-Code Contributors Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1gdFWfkrapQclZ4-z4Lx2JwqKsJjXXUOVoLhBzZiZgSk/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
 - **devstats**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
