@@ -570,8 +570,8 @@ some separate test suites owned by the feature owner(s)
 (see [Continuous Integration](#continuous-integration) below).
 
   - `[Conformance]`: Designate that this test is included in the Conformance
-test suite for [Conformance Testing](conformance-tests.md). This test must
-meet a number of [requirements](conformance-tests.md#conformance-test-requirements)
+test suite for [Conformance Testing](../sig-architecture/conformance-tests.md). This test must
+meet a number of [requirements](../sig-architecture/conformance-tests.md#conformance-test-requirements)
 to be eligible for this tag. This tag does not supersed any other labels.
 
   - `[LinuxOnly]`: If a test is known to be using Linux-specific features 
@@ -608,7 +608,7 @@ In time, it is our intent to add or autogenerate a sample viper configuration th
 
 ### Conformance tests
 
-For more information on Conformance tests please see the [Conformance Testing](conformance-tests.md)
+For more information on Conformance tests please see the [Conformance Testing](../sig-architecture/conformance-tests.md)
 
 ## Continuous Integration
 
@@ -759,6 +759,6 @@ metrics that kubernetes provides.
 
 ## One More Thing
 
-You should also know the [testing conventions](../guide/coding-conventions.md#testing-conventions).
+You should also know the [testing conventions](../../guide/coding-conventions.md#testing-conventions).
 
 **HAPPY TESTING!**
