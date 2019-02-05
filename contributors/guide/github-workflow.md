@@ -199,7 +199,7 @@ git push -f ${your_remote_name} myfeature
 
 ### 7 Create a pull request
 
-1. Visit your fork at https://github.com/$user/kubernetes
+1. Visit your fork at `https://github.com/$user/kubernetes`
 2. Click the `Compare & Pull Request` button next to your `myfeature` branch.
 3. Check out the pull request [process](/contributors/guide/pull-requests.md) for more details and
    advice.
@@ -219,10 +219,6 @@ Commit changes made in response to review comments to the same branch on your
 fork.
 
 Very small PRs are easy to review.  Very large PRs are very difficult to review.
-At the assigned reviewer's discretion, a PR may be switched to use
-[Reviewable](https://reviewable.k8s.io) instead.  Once a PR is switched to
-Reviewable, please ONLY send or reply to comments through Reviewable.  Mixing
-code review tools can be very confusing.
 
 #### Squash and Merge
 
