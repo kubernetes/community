@@ -111,3 +111,4 @@ The process for closing a SIG/WG is as follows:
   - Ensure that the YouTube Collaboration links are removed
 - Remove SIG Calendar and events from the community calendar
 - Update `sigs.yaml` to reflect the removal of the SIG/WG
+    - Move the existing SIG directory into the [archive](/archive) in kubernetes/community
