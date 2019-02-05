@@ -131,7 +131,7 @@ type DeploymentStatus struct {
 The DeploymentController will process Deployments and crud ReplicaSets.
 For each creation or update for a Deployment, it will:
 
-1. Find all RSs (ReplicaSets) whose label selector is a subset of DeploymentSpec.Selector.
+1. Find all RSs (ReplicaSets) whose label selector is a superset of DeploymentSpec.Selector.
    - For now, we will do this in the client - list all RSs and then filter out the
      ones we want. Eventually, we want to expose this in the API.
 2. The new RS can have the same selector as the old RS and hence we add a unique
@@ -153,7 +153,7 @@ For each creation or update for a Deployment, it will:
    is same as hash of DeploymentSpec.PodTemplateSpec. If it exists already, then
    this is the RS that will be ramped up. If there is no such RS, then we create
    a new one using DeploymentSpec and then add a "pod-template-hash" label
-   to it. The size of the new RS depends on the used DeploymentStrategyType
+   to it. The size of the new RS depends on the used DeploymentStrategyType.
 4. Scale up the new RS and scale down the olds ones as per the DeploymentStrategy.
    Raise events appropriately (both in case of failure or success).
 5. Go back to step 1 unless the new RS has been ramped up to desired replicas
