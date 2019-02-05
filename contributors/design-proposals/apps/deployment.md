@@ -131,8 +131,8 @@ type DeploymentStatus struct {
 The DeploymentController will process Deployments and crud ReplicaSets.
 For each creation or update for a Deployment, it will:
 
-1. Find all RSs (ReplicaSets) whose label selector is a superset of DeploymentSpec.Selector.
-   - For now, we will do this in the client - list all RSs and then filter the
+1. Find all RSs (ReplicaSets) whose label selector is a subset of DeploymentSpec.Selector.
+   - For now, we will do this in the client - list all RSs and then filter out the
      ones we want. Eventually, we want to expose this in the API.
 2. The new RS can have the same selector as the old RS and hence we add a unique
    selector to all these RSs (and the corresponding label to their pods) to ensure
