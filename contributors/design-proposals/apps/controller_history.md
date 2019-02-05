@@ -343,7 +343,7 @@ provided that the associated version tracking information is updated as well.
 current target Object state.
 
 ### Kubernetes Upgrades
-During the upgrade process form a version of Kubernetes that does not support 
+During the upgrade process from a version of Kubernetes that does not support 
 controller history to a version that does, controllers that implement history 
 based update mechanisms may find that they have specification type Objects with 
 no history and with generated Objects. For instance, a StatefulSet may exist 
