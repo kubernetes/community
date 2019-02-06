@@ -19,7 +19,7 @@
   - [End-to-End tests](#end-to-end-tests)
 
 
-This assumes you already read the [development guide](development.md) to
+This assumes you already read the [development guide](../development.md) to
 install go, godeps, and configure your git client.  All command examples are
 relative to the `kubernetes` root directory.
 
@@ -41,7 +41,7 @@ passing, so it is often a good idea to make sure the e2e tests work as well.
   - Tests using linux-specific features must be skipped or compiled out.
   - Skipped is better, compiled out is required when it won't compile.
 * Concurrent unit test runs must pass.
-* See [coding conventions](../guide/coding-conventions.md).
+* See [coding conventions](../../guide/coding-conventions.md).
 
 ### Run all unit tests
 
@@ -166,7 +166,7 @@ is [table driven testing](https://github.com/golang/go/wiki/TableDrivenTests)
   - Example: [TestNamespaceAuthorization](https://git.k8s.io/kubernetes/test/integration/auth/auth_test.go)
 * Each test should create its own master, httpserver and config.
   - Example: [TestPodUpdateActiveDeadlineSeconds](https://git.k8s.io/kubernetes/test/integration/pods/pods_test.go)
-* See [coding conventions](coding-conventions.md).
+* See [coding conventions](../../guide/coding-conventions.md).
 
 ### Install etcd dependency
 
