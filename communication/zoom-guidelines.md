@@ -37,7 +37,7 @@ to obtain a Zoom licence.
 ## Setting up your meeting and moderation
 
 Do **not** share your Zoom link on social media. This will help curtail trolls
-and other who would intentionally attempt to disrupt your Zoom call.
+and others who would intentionally attempt to disrupt your Zoom call.
 
 To create a meeting with **moderation** enabled, ensure the following:
 
