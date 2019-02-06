@@ -1017,6 +1017,15 @@ sigs:
     - name: repo-infra
       owners:
       - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
+    - name: events
+      owners:
+        - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
+      meetings:
+      - description: Contributor Summit strategy, content and planning
+        day: Monday
+        time: "9:00"
+        tz: "PT (Pacific Time)"
+        frequency: weekly
   - name: Docs
     dir: sig-docs
     mission_statement: >
