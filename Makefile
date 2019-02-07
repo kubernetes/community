@@ -1,4 +1,4 @@
-IMAGE_NAME=golang:1.9
+IMAGE_NAME=golang:1.11
 
 default: \
 	generate \
