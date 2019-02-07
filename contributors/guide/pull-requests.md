@@ -182,7 +182,7 @@ Let's talk about best practices so your pull request gets reviewed quickly.
 * [Development guide](/contributors/devel/development.md)
 * [Coding conventions](../guide/coding-conventions.md)
 * [API conventions](/contributors/devel/api-conventions.md)
-* [Kubectl conventions](/contributors/devel/kubectl-conventions.md)
+* [Kubectl conventions](/contributors/devel/sig-cli/kubectl-conventions.md)
 
 ## 1. Is the feature wanted? File a Kubernetes Enhancement Proposal
 Are you sure Feature-X is something the Kubernetes team wants or will accept? Is it implemented to fit with other changes in flight? Are you willing to bet a few days or weeks of work on it?

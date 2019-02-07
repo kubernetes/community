@@ -59,7 +59,7 @@ following Go conventions - `stateLock`, `mapLock` etc.
 
     - [API conventions](/contributors/devel/api-conventions.md)
 
-    - [Kubectl conventions](/contributors/devel/kubectl-conventions.md)
+    - [Kubectl conventions](/contributors/devel/sig-cli/kubectl-conventions.md)
 
     - [Logging conventions](/contributors/devel/sig-instrumentation/logging.md)
 
