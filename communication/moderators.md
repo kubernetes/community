@@ -78,29 +78,38 @@ be able to effectively moderate).
 
 ## YouTube Channel (9)
 
-### Primary Moderators
+### Owners
 
 - Paris Pittman (@parispittman) - PT
 - Sarah Novotny (@sarahnovotny) - PT
-- Bob Hrdinsky - PT
+
+### Primary Moderators
+
 - Ihor Dvoretskyi (@idvoretskyi) - EET
 - Jeffrey Sica (@jeefy) - ET
 - Jorge Castro (@castrojo) - ET
 - Joe Beda - (@joebeda) - PT
 - Jaice Singer DuMars - (@jdumars) - PT
 - Open
+- Open
+- Open
 
 ### Moderators Pro Tempore (3)
 
-- Open
+These are listed as "Communications Managers" in YouTube
+
+- Bob Killen (@mrbobbytables)- ET
 - Open
 - Open
 
 ## Slack
 
+#### Owner (1)
+
+- Chris Aniszczyk (@caniszczyk) - CT (non-admin role)
+
 #### Moderators (9)
 
-- Chris Aniszczyk (@caniszczyk) - CT
 - Ihor Dvoretskyi (@idvoretskyi) - EET
 - Jaice Singer DuMars (@jdumars) - PT
 - Jorge Castro (@castrojo) - ET
@@ -126,6 +135,8 @@ be able to effectively moderate).
 
 - Paris Pittman (@parispittman) - PT
 - Jorge Castro (@castrojo) - ET
+- Open
+- Open
 - License and main account controlled by the CNCF
 
 

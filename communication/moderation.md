@@ -87,7 +87,7 @@ Moderators _MUST_:
     do not need to wait for review or approval if an egregious violation has
     occurred. Make a judgement call based on our Code of Conduct and Values (see
     below).
-  - Removing a bad actor or content from the medium is preferable to letting it
+  - Removing a bad actor or content from the medium is required, do NOT let it
     sit there.
 - Abide by the documented tasks and actions required of moderators.
 - Ensure that the Kubernetes [Code of Conduct] is in effect on all official
@@ -125,7 +125,7 @@ The Kubernetes [Code of Conduct Committee] will have the final authority
 regarding escalated moderation matters. Violations of the Code of Conduct will
 be handled on a case by case basis. Depending on severity this can range up to
 and including removal of the person from the community, though this is extremely
-rare.
+rare. This decision comes from the Code of Conduct committee, not the moderators. 
 
 ## Specific Guidelines
 
@@ -174,4 +174,4 @@ guidelines:
 [Kubernetes Community Values]: /values.md 
 [stages of burnout]: https://opensource.com/business/15/12/avoid-burnout-live-happy
 [Code of Conduct Committee]: /committee-code-of-conduct 
-[moderator request](github template goes here.)
+[moderator request]: /.github/MODERATOR_APPLICATION.md
