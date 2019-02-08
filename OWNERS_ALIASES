@@ -113,19 +113,12 @@ aliases:
   sig-windows-leads:
     - michmike
     - patricklang
-  wg-app-def-leads:
-    - ant31
-    - bryanl
-    - garethr
   wg-apply-leads:
     - lavalamp
   wg-component-standard-leads:
     - luxas
     - sttts
     - mtaufen
-  wg-container-identity-leads:
-    - smarterclayton
-    - destijl
   wg-iot-edge-leads:
     - cindyxing
     - dejanb
@@ -134,9 +127,6 @@ aliases:
   wg-k8s-infra-leads:
     - dims
     - spiffxp
-  wg-kubeadm-adoption-leads:
-    - luxas
-    - justinsb
   wg-lts-leads:
     - tpepper
     - imkin
