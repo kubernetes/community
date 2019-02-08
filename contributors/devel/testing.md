@@ -235,9 +235,9 @@ Click on `Details` and look at the [`gubernator`](gubernator.k8s.io/) output for
 #### Troubleshooting failures/flakes that are not caused by your change
 - Check if an issue has already been opened for that test failure/flake
   - If yes, comment on it and link your PR, the failed run that affected you and any other information you think might be relevant
-  - If no, open a new issue and notify the appropriate SIG (see: SIG test escalation)
+  - If no, open a new issue and notify the appropriate SIG (see: Escalating failures to a SIG)
 
-#### SIG test escalation
+#### Escalating failures to a SIG
 - Figure out corresponding sig from test name/description
 - Mention the sig's github handle on the issue, optionally cc the SIG's chair(s) (locate them under kubernetes/community/sig-<name>)
 - Optionally (or if you haven't heard back on the issue after 24h) reach out to the SIG on slack
