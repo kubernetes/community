@@ -159,11 +159,11 @@ const (
 
 | Regarding | Action | Reason | ReportingController | Related | 
 | ----------| -------| -------| --------------------|---------| 
-| Node X | BecameUnreachable | HeartbeatTooOld | kubernetes.io/node-ctrl | <nil> |
-| Node Y | FailedToAttachVolume | Unknown | kubernetes.io/pv-attach-ctrl | PVC X |
-| ReplicaSet X | FailedToInstantiatePod | QuotaExceeded | kubernetes.io/replica-set-ctrl | <nil> |
-| ReplicaSet X | InstantiatedPod | | kubernetes.io/replica-set-ctrl | Pod Y |
-| Ingress X | CreatedLoadBalancer | | kubernetes.io/ingress-ctrl | <nil> |
+| Node X | BecameUnreachable | HeartbeatTooOld | kubernetes.io/node-controller | <nil> |
+| Node Y | FailedToAttachVolume | Unknown | kubernetes.io/pv-attach-controller | PVC X |
+| ReplicaSet X | FailedToInstantiatePod | QuotaExceeded | kubernetes.io/replica-set-controller | <nil> |
+| ReplicaSet X | InstantiatedPod | | kubernetes.io/replica-set-controller | Pod Y |
+| Ingress X | CreatedLoadBalancer | | kubernetes.io/ingress-controller | <nil> |
 | Pod X | ScheduledOn | | kubernetes.io/scheduler | Node Y |
 | Pod X | FailedToSchedule | FitResourcesPredicateFailed | kubernetes.io/scheduler | <nil> |
 
@@ -369,7 +369,7 @@ We considered adding nested information about occurrences into the Event. In oth
 
 ### Using new API group for storing data
 Instead of adding "new" fields to the "old" versioned type, we could have change the version in which we store Events to the new group and use annotations to store "deprecated" fields. This would allow us to avoid having "hybrid" type, as `v1.Events` became, but the change would have a much higher risk (we would have been moving battle-tested and simple `v1.Event` store to new `events.Event` store with some of the data present only in annotations). Additionally performance would degrade, as we'd need to parse JSONs from annotations to get values for "old" fields.
-Adding panic button that would stop creation/update of Events
+Adding panic button that would stop creation/update of Events.	
 If all other prevention mechanism fail we’d like a way for cluster admin to disable Events in the cluster, to stop them overloading the server. However, we dropped this idea, as it's currently possible to achieve the similar result by changing RBAC rules.
 
 ### Pivoting towards more machine readable Events by introducing stricter structure
@@ -381,4 +381,4 @@ We considered exposing more data that cluster operator would need to use Events 
 ## Proposed implementation plan
 - 1.9 - create a beta api-group Events with the new Event type,
 - 1.10 - migrate at controllers running in controller manager to use events API group,
-- 1.11 - finish migrating Events in all components and move and move events storage representation to the new type.
+- 1.11 - finish migrating Events in all components and move events storage representation to the new type.
