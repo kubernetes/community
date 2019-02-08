@@ -253,19 +253,26 @@ also be reviewed.
 For reference, whitelisted licenses as per the CNCF Whitelist Policy are
 mentioned below.
 
-### License changes
+### Licenses for Dependencies
 
-Some licenses are whitelisted as per the CNCF Whitelist Policy
-(adopted by the CNCF Governing Board on 2018-05-01). This whitelisting process is
-described below.
+Dependencies that are licensed under Apache-2.0 do not require further license
+review or approval, since they are under the same license as Kubernetes itself.
 
-In case of questions or concerns regarding the list of approved licenses,
+The IP policy in the [CNCF Charter], section 11, allows the CNCF Governing Board to review and approve
+other non-Apache-2.0 licenses on an exception basis.
+
+To streamline this process, licenses for some components are whitelisted as per the CNCF Whitelist Policy (adopted by the CNCF Governing Board on 2018-05-01). This whitelisting policy is described below.
+
+Components that are not under Apache-2.0, and that do not satisfy the Whitelist
+Policy, remain subject to review and exception approval by the Governing Board.
+
+In case of questions or concerns regarding the whitelist policy,
 please create an issue or send an email to the [SIG Architecture] and
 [SIG Release] mailing lists.
 
-#### Whitelisting Process
+#### Whitelisting Policy
 
-A third-party component under a non-Apache 2.0 license will be deemed
+A third-party component under a non-Apache 2.0 license is deemed
 automatically approved by the Governing Board for inclusion in a CNCF codebase
 as an exception to the CNCF Intellectual Property Policy,
 if all of the following apply:
@@ -284,11 +291,11 @@ if all of the following apply:
 #### Approved Licenses for Whitelist
 
 To be approved as “whitelisted,” a third-party component must be fully
-licenseable under one or more of these licenses, and must meet the other
-whitelist criteria set forth in the [Whitelisting Process].
+licenseable under one or more of the following licenses, and must meet the other
+whitelist criteria set forth in the [Whitelisting Policy] above.
 
-Except where otherwise defined below,
-license IDs refer to the SPDX License List at https://spdx.org/licenses.
+License IDs refer to the SPDX License List at https://spdx.org/licenses, except where
+a URL is specified below for licenses that are not on the SPDX License List.
 
 - BSD-2-Clause
 - BSD-2-Clause-FreeBSD
@@ -302,6 +309,7 @@ license IDs refer to the SPDX License List at https://spdx.org/licenses.
 - Google patent license for Golang (https://golang.org/PATENTS)
 
 [Approved Licenses]: #approved-licenses-for-whitelist
-[Whitelisting Process]: #whitelisting-process
+[Whitelisting Policy]: #whitelisting-policy
+[CNCF Charter]: https://github.com/cncf/foundation/blob/master/charter.md
 [SIG Architecture]: https://groups.google.com/forum/#!forum/kubernetes-sig-architecture
 [SIG Release]: https://groups.google.com/forum/#!forum/kubernetes-sig-release
