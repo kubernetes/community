@@ -238,8 +238,8 @@ Click on `Details` and look at the [`gubernator`](gubernator.k8s.io/) output for
   - If no, open a new issue and notify the appropriate SIG (see: Escalating failures to a SIG)
 
 #### Escalating failures to a SIG
-- Figure out corresponding sig from test name/description
-- Mention the sig's github handle on the issue, optionally cc the SIG's chair(s) (locate them under kubernetes/community/sig-<name>)
+- Figure out corresponding SIG from test name/description
+- Mention the SIG's GitHub handle on the issue, optionally `cc` the SIG's chair(s) (locate them under kubernetes/community/sig-<name\>)
 - Optionally (or if you haven't heard back on the issue after 24h) reach out to the SIG on slack
 
 ### Testgrid
@@ -261,4 +261,4 @@ It is useful as a way to:
 - dashboards
   - collection of jobs
   - each dashboard is represented as a button
-  - some dashboards collect jobs/tests in the domain of a specific SIG (named after and owned by those sigs), and dashboards to monitor project wide health (owned by sig-release)
+  - some dashboards collect jobs/tests in the domain of a specific SIG (named after and owned by those SIGs), and dashboards to monitor project wide health (owned by SIG-release)
