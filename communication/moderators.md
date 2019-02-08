@@ -1,7 +1,7 @@
 # Community Moderators
 
 The following people are responsible for moderating/administrating Kubernetes communication channels and their home time zone. 
-See our [moderation guidelines](./moderating.md) for policies and recommendations.
+See our [moderation guidelines](./moderation.md) for policies and recommendations.
 
 ## Mailing Lists
 
