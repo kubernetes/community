@@ -259,3 +259,6 @@ or the Steering Committee (@kubernetes/steering-committee) to ensure that they
 are compatible with the Kubernetes project license. It is also important to note
 and flag if a license has changed when updating a dependency, so that these can
 also be reviewed.
+
+For reference, whitelisted licenses as per the CNCF Whitelist Policy are
+mentioned [here](https://git.k8s.io/sig-release/licensing/README.md#licenses-for-dependencies).
