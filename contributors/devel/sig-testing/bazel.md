@@ -14,6 +14,10 @@ These tools are called via the `hack/update-bazel.sh` script.
 
 Instructions for installing Bazel
 can be found [here](https://www.bazel.io/versions/master/docs/install.html).
+Please note that until [this Bazel
+issue](https://github.com/bazelbuild/rules_docker/issues/454) is fixed,
+`/usr/bin/env python` must be python2 in order for all the Bazel commands listed
+below to succeed.
 
 Several convenience `make` rules have been created for common operations:
 
