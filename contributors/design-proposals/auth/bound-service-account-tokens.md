@@ -108,7 +108,7 @@ type TokenRequestSpec struct {
   // The token will only be valid for as long as the bound object exists.
   BoundObjectRef *BoundObjectReference
 
-  // ContainerName indicates which container the request comes from. Valid
+  // ContainerName indicates which container the token will be bound to. Valid
   // when BoundObjectRef is Pod.
   ContainerName string
 }

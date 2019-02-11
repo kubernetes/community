@@ -80,8 +80,8 @@ type ServiceAccountTokenProjection struct {
   ExpirationSeconds int64
   // Path is the relative path of the file to project the token into.
   Path string
-  // IsContainerLevel determines if the token should include information about
-  // which container the request comes from.
+  // If true, the token this volume contains would include informations about
+  // which container the token will mount on.
   IsContainerLevel bool
 }
 ```
@@ -91,7 +91,7 @@ sourced from the TokenRequest API into volumes created from
 ProjectedVolumeSources. As the token approaches expiration, the kubelet volume
 plugin will proactively rotate the service account token. The kubelet will start
 trying to rotate the token if the token is older than 80 percent of its time to
-live or if the token is older than 24 hours. If IsContainerLevel is specified, the
+live or if the token is older than 24 hours. If IsContainerLevel is true, the
 volume should be used by single container exclusively.
 
 To replace the current service account token secrets, we also need to inject the
