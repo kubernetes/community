@@ -32,6 +32,8 @@ The RFP will be open between 2018/10/29 and 2018/11/30 and has been published [h
 
 The [RFP](https://github.com/kubernetes/community/blob/master/wg-security-audit/RFP.md) is now closed. The working group selected Trail of Atredis, a collaboration between [Trail of Bits](https://www.trailofbits.com/) and [Atredis Partners](https://www.atredis.com/) to perform the audit.
 
+You can read more about the vendor selection [here](RFP_Decision.md).
+
 ## Mailing Lists
 
 * Sensitive communications regarding the audit should be sent to the [private variant of the mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit-private).
