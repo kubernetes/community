@@ -144,10 +144,15 @@ umbrella.
 
 - [Slack guidelines](./slack-guidelines.md)
 
+### YouTube
+
+- Moderators should check the Comments section in the community tab regularly for
+published comments and the "holds for review" sections to see if comments are being flagged by the system.
+- We do NOT use YouTube comments during our live streams, these are checked as OFF in the settings. 
+
 ### Zoom 
 
 - [Zoom guidelines](./zoom-guidelines.md)
-
 
 ### References and Resources
 
