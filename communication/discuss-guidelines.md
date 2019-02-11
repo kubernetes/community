@@ -16,7 +16,7 @@ _"be excellent to each other"_.
 
 ## Code of conduct
 
-Kubernetes adheres to the Cloud Native Compute Foundation's [Code of Conduct]
+Kubernetes adheres to the [Kubernetes Code of Conduct]
 throughout the project, and includes all communication mediums.
 
 
@@ -178,7 +178,7 @@ list with the new region, the moderators and their timezone.
 [Discourse]: https://discourse.org
 [KEP 0007]: https://github.com/kubernetes/enhancements/blob/master/keps/sig-contributor-experience/0007-20180403-community-forum.md
 [archive k-users]: https://github.com/kubernetes/community/issues/2492
-[Code of Conduct]: https://github.com/cncf/foundation/blob/master/code-of-conduct.md
+[Kubernetes Code of Conduct]: /code-of-conduct.md
 [Linux Foundation Privacy Policy]: https://www.linuxfoundation.org/privacy/
 [admins]: ./moderators.md#discusskubernetesio
 [Discuss About page]: https://discuss.kubernetes.io/about

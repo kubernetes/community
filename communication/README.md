@@ -1,6 +1,6 @@
 # Communication
 
-The Kubernetes community abides by the [CNCF code of conduct].  Here is an excerpt:
+The Kubernetes community abides by the [Kubernetes code of conduct].  Here is an excerpt:
 
 > _As contributors and maintainers of this project, and in the interest
 > of fostering an open and welcoming community, we pledge to respect
@@ -86,7 +86,7 @@ Kubernetes is the main focus of KubeCon + CloudNativeCon, held every spring in E
 
 [Blog]: https://kubernetes.io/blog/
 [calendar.google.com]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles
-[CNCF code of conduct]: https://github.com/cncf/foundation/blob/master/code-of-conduct.md
+[Kubernetes code of conduct]: /code-of-conduct.md
 [communication]: /communication.md
 [community meeting]: /communication.md#weekly-meeting
 [events]: https://www.cncf.io/events/

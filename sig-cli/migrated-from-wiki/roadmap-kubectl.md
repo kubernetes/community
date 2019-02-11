@@ -2,7 +2,7 @@
 
 `kubectl` is the Kubernetes CLI.
 
-If you'd like to contribute, please read the [conventions](/contributors/devel/kubectl-conventions.md) and familiarize yourself with [existing commands](http://kubernetes.io/docs/user-guide/kubectl-overview/).
+If you'd like to contribute, please read the [conventions](/contributors/devel/sig-cli/kubectl-conventions.md) and familiarize yourself with [existing commands](http://kubernetes.io/docs/user-guide/kubectl-overview/).
 
 **Owner:** @kubernetes/kubectl
 

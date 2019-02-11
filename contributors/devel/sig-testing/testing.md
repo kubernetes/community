@@ -12,10 +12,6 @@
     - [Unit test coverage](#unit-test-coverage)
     - [Benchmark unit tests](#benchmark-unit-tests)
   - [Integration tests](#integration-tests)
-    - [Install etcd dependency](#install-etcd-dependency)
-    - [Etcd test data](#etcd-test-data)
-    - [Run integration tests](#run-integration-tests)
-    - [Run a specific integration test](#run-a-specific-integration-test)
   - [End-to-End tests](#end-to-end-tests)
 
 
@@ -46,13 +42,23 @@ passing, so it is often a good idea to make sure the e2e tests work as well.
 ### Run all unit tests
 
 `make test` is the entrypoint for running the unit tests that ensures that
-`GOPATH` is set up correctly.  If you have `GOPATH` set up correctly, you can
-also just use `go test` directly.
+`GOPATH` is set up correctly.
 
 ```sh
 cd kubernetes
 make test  # Run all unit tests.
 ```
+If you have `GOPATH` set up correctly, you can
+also just use `go test` directly.
+
+```sh
+cd kubernetes
+go test ./... # Run all unit tests
+```
+
+The remainder of this documentation presumes that you use `Make` as an
+entry point, but remember that the ability to use `go test` exists should you
+desire.
 
 If any unit test fails with a timeout panic (see [#1594](https://github.com/kubernetes/community/issues/1594)) on the testing package, you can increase the `KUBE_TIMEOUT` value as shown below.
 
@@ -71,19 +77,33 @@ You can set [go flags](https://golang.org/cmd/go/) by setting the
 added automatically to these:
 
 ```sh
-make test WHAT=./pkg/api                # run tests for pkg/api
+make test WHAT=./pkg/kubelet                # run tests for pkg/kubelet
+```
+
+Expressed strictly with `go test`, the above command is equivalent to the following:
+
+```sh
+go test ./pkg/kubelet
+```
+
+To run tests for a package and all of its subpackages, you need to append `...`
+to the package path:
+
+```sh
+make test WHAT=./pkg/api/...  # run tests for pkg/api and all its subpackages
 ```
 
 To run multiple targets you need quotes:
 
 ```sh
-make test WHAT="./pkg/api ./pkg/kubelet"  # run tests for pkg/api and pkg/kubelet
+make test WHAT="./pkg/kubelet ./pkg/scheduler"  # run tests for pkg/kubelet and pkg/scheduler
 ```
 
 In a shell, it's often handy to use brace expansion:
 
 ```sh
-make test WHAT=./pkg/{api,kubelet}  # run tests for pkg/api and pkg/kubelet
+make test WHAT=./pkg/{kubelet,scheduler}  # run tests for pkg/kubelet and
+pkg/scheduler
 ```
 
 ### Run specific unit test cases in a package
@@ -94,10 +114,16 @@ regular expression for the name of the test that should be run.
 
 ```sh
 # Runs TestValidatePod in pkg/api/validation with the verbose flag set
-make test WHAT=./pkg/api/validation GOFLAGS="-v" KUBE_TEST_ARGS='-run ^TestValidatePod$'
+make test WHAT=./pkg/apis/core/validation GOFLAGS="-v" KUBE_TEST_ARGS='-run ^TestValidatePod$'
 
 # Runs tests that match the regex ValidatePod|ValidateConfigMap in pkg/api/validation
-make test WHAT=./pkg/api/validation GOFLAGS="-v" KUBE_TEST_ARGS="-run ValidatePod\|ValidateConfigMap$"
+make test WHAT=./pkg/apis/core/validation GOFLAGS="-v" KUBE_TEST_ARGS="-run ValidatePod\|ValidateConfigMap$"
+```
+
+Or if we are using `go test` as our entry point, we could run:
+
+```sh
+go test ./pkg/apis/core/validation -v -run ^TestValidatePods$
 ```
 
 For other supported test flags, see the [golang
@@ -143,84 +169,30 @@ combined for all tests run.
 To run benchmark tests, you'll typically use something like:
 
 ```sh
-go test ./pkg/apiserver -benchmem -run=XXX -bench=BenchmarkWatch
+make test WHAT=./pkg/scheduler/internal/cache KUBE_TEST_ARGS='-benchmem -run=XXX -bench=BenchmarkExpirePods'
+```
+
+Alternatively, to express in pure Go, you could write the following:
+
+```sh
+go test ./pkg/scheduler/internal/cache -benchmem -run=XXX -bench=Benchmark
 ```
 
 This will do the following:
 
-1. `-run=XXX` is a regular expression filter on the name of test cases to run
-2. `-bench=BenchmarkWatch` will run test methods with BenchmarkWatch in the name
-  * See `grep -nr BenchmarkWatch .` for examples
+1. `-run=XXX` is a regular expression filter on the name of test cases to run.
+   Go will execute both the tests matching the `-bench` regex and the `-run`
+   regex. Since we only want to execute benchmark tests, we set the `-run` regex
+   to XXX, which will not match any tests.
+2. `-bench=Benchmark` will run test methods with Benchmark in the name
+  * See `grep -nr Benchmark .` for examples
 3. `-benchmem` enables memory allocation stats
 
 See `go help test` and `go help testflag` for additional info.
 
 ## Integration tests
 
-* Integration tests should only access other resources on the local machine
-  - Most commonly etcd or a service listening on localhost.
-* All significant features require integration tests.
-  - This includes kubectl commands
-* The preferred method of testing multiple scenarios or inputs
-is [table driven testing](https://github.com/golang/go/wiki/TableDrivenTests)
-  - Example: [TestNamespaceAuthorization](https://git.k8s.io/kubernetes/test/integration/auth/auth_test.go)
-* Each test should create its own master, httpserver and config.
-  - Example: [TestPodUpdateActiveDeadlineSeconds](https://git.k8s.io/kubernetes/test/integration/pods/pods_test.go)
-* See [coding conventions](../../guide/coding-conventions.md).
-
-### Install etcd dependency
-
-Kubernetes integration tests require your `PATH` to include an
-[etcd](https://github.com/coreos/etcd/releases) installation. Kubernetes
-includes a script to help install etcd on your machine.
-
-```sh
-# Install etcd and add to PATH
-
-# Option a) install inside kubernetes root
-hack/install-etcd.sh  # Installs in ./third_party/etcd
-echo export PATH="\$PATH:$(pwd)/third_party/etcd" >> ~/.profile  # Add to PATH
-
-# Option b) install manually
-grep -E "image.*etcd" cluster/gce/manifests/etcd.manifest  # Find version
-# Install that version using yum/apt-get/etc
-echo export PATH="\$PATH:<LOCATION>" >> ~/.profile  # Add to PATH
-```
-
-### Etcd test data
-
-Many tests start an etcd server internally, storing test data in the operating system's temporary directory.
-
-If you see test failures because the temporary directory does not have sufficient space,
-or is on a volume with unpredictable write latency, you can override the test data directory
-for those internal etcd instances with the `TEST_ETCD_DIR` environment variable.
-
-### Run integration tests
-
-The integration tests are run using `make test-integration`.
-The Kubernetes integration tests are written using the normal golang testing
-package but expect to have a running etcd instance to connect to.  The `test-integration.sh`
-script wraps `make test` and sets up an etcd instance for the integration tests to use.
-
-```sh
-make test-integration  # Run all integration tests.
-```
-
-This script runs the golang tests in package
-[`test/integration`](https://git.k8s.io/kubernetes/test/integration).
-
-### Run a specific integration test
-
-You can also use the `KUBE_TEST_ARGS` environment variable with the `make test-integration`
-to run a specific integration test case:
-
-```sh
-# Run integration test TestPodUpdateActiveDeadlineSeconds with the verbose flag set.
-make test-integration WHAT=./test/integration/pods GOFLAGS="-v" KUBE_TEST_ARGS="-run ^TestPodUpdateActiveDeadlineSeconds$"
-```
-
-If you set `KUBE_TEST_ARGS`, the test case will be run with only the `v1` API
-version and the watch cache test is skipped.
+Please refer to [Integration Testing in Kubernetes](integration-tests.md).
 
 ## End-to-End tests
 
