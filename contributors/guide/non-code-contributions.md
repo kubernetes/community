@@ -4,7 +4,7 @@
 
 *If you are interested in helping define and structure this work, [check the weekly meeting notes](https://docs.google.com/document/d/1gdFWfkrapQclZ4-z4Lx2JwqKsJjXXUOVoLhBzZiZgSk/edit#) for information on how to get involved. You can also find us in the SIG Contributor Experience [Slack channel](https://kubernetes.slack.com/messages/sig-contribex).*
 
-*All contributors welcome, new and old!*
+*All contributors are welcome, new and old!*
 
 ### What is this?
 
