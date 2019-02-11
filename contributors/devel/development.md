@@ -1,5 +1,14 @@
 # Development Guide
 
+**Table of Contents**
+
+- [Pre submit flight checks](#pre-submit-flight-checks)
+  - [Is this just a simple bug fix?](#is-this-just-a-simple-bug-fix)
+  - [Is this an architecture improvement?](#is-this-an-architecture-improvement)
+  - [Is this a performance improvement?](#is-this-a-performance-improvement)
+- [Getting the code](#getting-the-code)
+    - [Git install](#install)
+
 This document is the canonical source of truth for things like supported
 toolchain versions for building Kubernetes.
 
@@ -50,7 +59,7 @@ resilient behavior.  For example: if your patch causes a controller to better
 handle inconsistent data, make a mock object which returns incorrect data a few
 times and verify the controller's new behaviour.
 
-### Is this a performance improvement ?
+### Is this a performance improvement?
 
 Performance bug reports MUST include data that demonstrates the bug.  Without
 data, the issue will be closed.  You can measure performance using kubemark,
@@ -100,6 +109,14 @@ the "scientific method" of creating a hypothesis, collecting data, and then
 revising your hypothesis.  The above issues do this transparently, using figures
 and data rather then conjecture. Notice that the problem is analyzed and a
 correct solution is created before a single line of code is reviewed.
+
+## Getting the code
+
+Kubernetes is developed using git for version control.
+
+### Install
+
+Follow the [official git documentation] to learn how to install git, then follow the directions in [github-workflow.md] for step-by-step development procedures.
 
 ## Building Kubernetes with Docker
 
@@ -195,3 +212,5 @@ To check out code to work on, please refer to [this guide](/contributors/guide/g
 [mercurial]: http://mercurial.selenic.com/wiki/Download
 [test-image]: https://git.k8s.io/test-infra/jenkins/test-image
 [Build with Bazel]: sig-testing/bazel.md
+[official git documentation]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+[github-workflow.md]: https://github.com/kubernetes/community/blob/master/contributors/guide/github-workflow.md
