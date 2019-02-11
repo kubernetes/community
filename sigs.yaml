@@ -1973,6 +1973,15 @@ sigs:
       description: >
         Kubernetes IN Docker. Run Kubernetes test clusters on your local
         machine using Docker containers as nodes.
+      meetings:
+      - description: sigs.k8s.io/kind weekly meeting
+        day: Monday
+        time: "11:00"
+        tz: "PT (Pacific Time)"
+        frequency: weekly
+        url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+        archive_url: https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit
+        recordings_url: https://bit.ly/k8s-sig-testing-videos 
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
     - name: prow
