@@ -2259,9 +2259,9 @@ workinggroups:
       - name: David Oppenheimer
         github: davidopp
         company: Google
-      - name: Jessie Frazelle
-        github: jessfraz
-        company: Microsoft
+      - name: Tasha Drew
+        github: tashimi
+        company: VMware
     meetings:
     - description: Regular WG Meeting
       day: Wednesday
