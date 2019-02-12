@@ -1,1 +1,1 @@
-# 2018 Kubernetes Contributor Summit Shanghai
+# 2019 Kubernetes Contributor Summit Shanghai

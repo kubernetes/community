@@ -1,1 +1,1 @@
-# 2018 Kubernetes Contributor Summit EU
+# 2019 Kubernetes Contributor Summit EU
