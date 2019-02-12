@@ -31,6 +31,9 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-windows:
+- **windows-gmca**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/windows-gmca/master/OWNERS
 - **windows-testing**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS

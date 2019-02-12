@@ -2150,6 +2150,9 @@ sigs:
       - name: sig-windows-misc
         description: General Discussion
     subprojects:
+    - name: windows-gmca
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/windows-gmca/master/OWNERS
     - name: windows-testing
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
