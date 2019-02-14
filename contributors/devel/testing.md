@@ -227,15 +227,36 @@ version and the watch cache test is skipped.
 Please refer to [End-to-End Testing in Kubernetes](e2e-tests.md).
 
 ## Running your contribution in the Kubernetes CI
-Once you open a PR, prow will run pre-submit tests in CI.
+Once you open a PR, [`prow`][prow-doc] runs pre-submit tests in CI.
+
+If you are not a [Kubernetes org member][member], another org member will need to run [`/ok-to-test`][ok-to-test] on your PR.
+
+Find out more about [other commands][prow-cmds] you can use to interact with prow through GitHub comments.
 
 ### Troubleshooting a failure
 Click on `Details` and look at the [`gubernator`](gubernator.k8s.io/) output for the test.
 
-#### Troubleshooting failures/flakes that are not caused by your change
-- Check if an issue has already been opened for that test failure/flake
-  - If yes, comment on it and link your PR, the failed run that affected you and any other information you think might be relevant
-  - If no, open a new issue and notify the appropriate SIG (see: Escalating failures to a SIG)
+If the failure seems unrelated to the change you're submitting:
+- Is it a flake?
+  - Check if an issue has already been opened for that flake
+    - If not, open a new one (like [this example][new-issue-example]) and [label it `kind/flake`][kind/flake]
+  - Run [`/retest`][retest] on your PR to re-trigger the tests
+
+- Is it a failure that shouldn't be happening (in other words, is the test now wrong)
+  - Get in touch with the SIG
+    - preferably as a comment on your PR, by tagging the [team][k-teams] (for example a [reviewers team for the SIG][k-teams-review])
+    - if you don't get a response in 24h, engage with the SIG on their channel on the Kubernetes slack and/or attend one of the [SIG meetings][sig-meetings] to ask for input.
+
+[prow-doc]: https://kubernetes.io/blog/2018/08/29/the-machines-can-do-the-work-a-story-of-kubernetes-testing-ci-and-automating-the-contributor-experience/#enter-prow
+[member]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
+[k-teams]: https://github.com/orgs/kubernetes/teams
+[k-teams-review]: https://github.com/orgs/kubernetes/teams?utf8=%E2%9C%93&query=review
+[ok-to-test]: https://prow.k8s.io/command-help#ok_to_test
+[prow-cmds]: https://prow.k8s.io/command-help
+[retest]: https://prow.k8s.io/command-help#retest
+[new-issue-example]: https://github.com/kubernetes/kubernetes/issues/71430
+[kind/flake]: https://prow.k8s.io/command-help#kind
+[sig-meetings]: https://github.com/kubernetes/community/blob/master/sig-list.md
 
 #### Escalating failures to a SIG
 - Figure out corresponding SIG from test name/description
