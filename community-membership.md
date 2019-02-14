@@ -50,8 +50,8 @@ remain active contributors to the community.
 - Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
     - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating
       on issues, etc.
-    - Sponsors must be reviewers or approvers in at least 1 OWNERS file (in any repo in the Kubernetes GitHub
-      organization)
+    - Sponsors must be reviewers or approvers in at least 1 OWNERS file either in any repo in the [Kubernetes org],
+    or the org they are sponsoring for.
     - Sponsors must be from multiple member companies to demonstrate integration across community.
 - **[Open an issue][membership request] against the kubernetes/org repo**
    - Ensure your sponsors are @mentioned on the issue
