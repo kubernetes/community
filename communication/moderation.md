@@ -127,6 +127,31 @@ be handled on a case by case basis. Depending on severity this can range up to
 and including removal of the person from the community, though this is extremely
 rare. This decision comes from the Code of Conduct committee, not the moderators. 
 
+## Escalation Procedures
+
+In the event of large attacks the moderator and moderator team must enact the
+following procedures:
+
+- The person on call should immediately concentrate on removing the offending
+  content and asking for other on call moderators for help. That is their sole
+  responsiblity. 
+- The secondary person on call should immediately begin to take notes to
+  document the incident, this will form the basis of a post-mortem. The 2nd
+  person on site is responsible for finding help and documenting the incident. 
+- The secondary person on call will escalate if necessary, if it's a one off
+  incident and the content is removed then the collective moderators can work on
+  a post-mortem and report the incident to primary moderators within 24 hours.
+  - If it's a sustained incident that needs more help the secondary will contact
+    a primary moderators as soon as possible.
+  - If appropriate, the next level of people to contact are the OWNERS of this
+    subproject
+  - If appropriate, the next level of people to contact are the [Code of Conduct
+    Committee]
+  - If appropruate, the next level of people to contact are the [Steering
+    Committee]
+- Moderators will have access to a private document with contact information of
+  the appropriate people.
+
 ## Specific Guidelines
 
 These guidelines are for tool-specific policies that don't fit under a general
@@ -179,4 +204,5 @@ guidelines:
 [Kubernetes Community Values]: /values.md 
 [stages of burnout]: https://opensource.com/business/15/12/avoid-burnout-live-happy
 [Code of Conduct Committee]: /committee-code-of-conduct 
+[Steering Committee]: /committee-steering
 [moderator request]: /.github/MODERATOR_APPLICATION.md
