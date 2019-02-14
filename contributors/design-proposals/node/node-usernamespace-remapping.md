@@ -69,15 +69,20 @@ In general Linux convention, UID(or GID) mapping consists of three parts:
 As an example, `host_id 1000, container_id 0, size 10`
 In this case, 1000 to 1009 on host will be mapped to 0 to 9 inside the container.
 
-2. Enabling usernamespace remapping at runtime will not require any changes in the existing pod yamls. Kubelet will make sure that older pod yamls will continue to work even in usernamespace remapped configuration. There are valid pod configurations which cannot be supported in usernamespace remapped environment, ex:
+2. Enabling usernamespace remapping at runtime will not require any changes in the existing pod yamls. Kubelet will make sure that older pod yamls will continue to work even in usernamespace remapped configuration. There are valid pod configurations which cannot be supported in usernamespace remapped environment:
   - host namespaces (pid, ipc, net)
   - non-namespaced capabilities (mknod, sys_time, sys_module)
   - The pod contains a privileged container or using host path volumes.
-To maintain **backward compatibility**, if such a pod configuration is detected by Kubelet, usernamespace remapping will be disabled, implicitly, for each of such pod in isolation by passing case appropriate `NamespaceOption` to the runtime. For more details see the CRI section below. Other pods will be run with remapped usernamespace.
+  - Pod spec specifies volume type which does not support usernamespace remapping:
+    - NFS
 
-### Pod API Change
+To maintain **backward compatibility**, if such a pod configuration is observed at api server, `hostUsernamespace` will be set to `true` and usernamespace remapping will be disabled, implicitly, for each of such pod through api defaulting.
+
+### API Changes
+
+#### New Field in Pod Spec
 `HostUserNamespace` field will be introduced in the pod spec. Its meaning is similar to other `Host*` fields the pod spec. If set to `true`, pod will share usernamespace from underlying host.
-```
+```golang
         // Use host's user namespace for the pod.
         // This field is alpha-level and can be set to true/false only if HostUserNamespace feature-gate is enabled.
         // Optional: Defaults to nil which means behavior will be container runtime defined.
@@ -90,11 +95,36 @@ However, with an added improvement of running pods with remapped usernamespace "
 
 `HostUserNamespace` field will be gated behind `HostUserNamespace` feature-gate. To set it to `true` or `false`, feature-gate will have to be enabled. If feature-gate not enabled or feature-gate is enabled but any value is not set, `nil` will be the default value. 
 
+#### New Field in the Volume api object
+
+`HostUserNamespace` field will be introduced in the `Volume`
+```golang
+// Volume represents a named volume in a pod that may be accessed by any container in the pod. 
+type Volume struct {
+        // Volume's name.
+        // Must be a DNS_LABEL and unique within the pod. 
+        // More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+        Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
+        // VolumeSource represents the location and type of the mounted volume.
+        // If not specified, the Volume is implied to be an EmptyDir.
+        // This implied behavior is deprecated and will be removed in a future version.
+        VolumeSource `json:",inline" protobuf:"bytes,2,opt,name=volumeSource"`
+        // Optional: Defaults to value of hostUserNamespace field in the pod spec
+        // +k8s:conversion-gen=false
+        // +optional
+        HostUserNamespace *bool `json:"hostUserNamespace,omitempty" protobuf:"varint,3,opt,
+}
+
+```
+Pod validation at api server will fail if the type of the mounted volume does not support specified hostUserNamespace configuration. For example, if any of the volume in pod spec is of type `NFS` and `hostUserNamespace` field is specified as `False`, validation check will fail because remote volumes like NFS does not support usernamespace remapping.
+
+
+
 ### Effect on existing Security Context fields
 
 * **RunAsUser**: UID to run the entrypoint of the container process. After usernamespace support in kubelet, if Kubelet discovers that usernamespace remapping is enabled at runtime, this will be the UID in the container usernamespace. In such a case, if no mapping(corresponding host UID) is found in the mapping range, pod will be failed admission at Kubelet. If kubelet discovers that usernamespace remapping is not supported at runtime, no validation check will be performed. 
 * **RunAsGroup**: same as **RunAsUser** but for gid mapping ranges.
-* **RunAsNonRoot**: Today, kubelet fails to start the container if image is found to be having UID 0. After usernamespace support in kubelet, kubelet should ignore this check if runtime is found to be running with usernamespace remapping enabled. Kubelet should verify image UID only when it is learned that usernamespace remapping is either not supported or not enabled at runtime.
+* **RunAsNonRoot**: Today, kubelet fails to start the container if image is found to be having UID 0. Behaviour will remain unchanged even after usernamespace remapping is enabled.
 * **FsGroup and SupplementalGroups**: FsGroup and SupplementalGroups will continue to work after usernamespace support is Kubelet if runtime either does not support usernamespaces or support is not enabled. In case usernamespace support is discovered by kubelet as enabled at runtime, FsGroups/SupplementalGroups will work only if supported by the runtime (CRI implementation). One implementation, for example, could be where runtime(CRI implementation) will add a triplet in `/proc/<container-pid>/gid_map` for the FsGroup/Supplemental GIDs. This will be a 1:1 mapping between host usernamespace group id and container usernamespace group id i.e container ID and host ID will be same. Example:
 
     If pod has `FsGroup: 2000` and runtime's default gid mappings are `containerid 0,  hostid 100000, size 1000`, runtime should be adding two entries in the `/proc/<container-pid>/gid_map`:
@@ -105,12 +135,17 @@ However, with an added improvement of running pods with remapped usernamespace "
 
     Setting the permissions on volume is resposibility of volume plugin. Once GID on the volume matches the supplemental GID in the container, access will work.
 
-    NOTE: Pod will be failed admission at kubelet if FsGroup/SupplementalGroups are in the default mapping range and mappings are not 1:1 i.e host id for a container id is different.
+    NOTE: Pod will be failed(hard) admission at kubelet if FsGroup/SupplementalGroups are in the default mapping range and mappings are not 1:1 i.e host id for a container id is different.
+    **@tallclair's comment on hard failure:**
+    ```
+    The problem with hard failure is that the controllers will retry and cause churn. This is a general problem though, which we've discussed fixing in the controller layer.
+    ```
 
 
 ### Volume Permissions  
-Kubelet will change the file permissions, i.e chown, at `/var/lib/kubelet/pods/<pod-uid>/volumes` after volume plugin is done with provisioning to get updated ownership of the volume directory according to remapped UID and GID.
+Kubelet will change the file permissions, i.e recursive chown, at `/var/lib/kubelet/pods/<pod-uid>/volumes` after volume plugin is done with provisioning to get updated ownership of the volume directory according to remapped UID and GID.
 
+Recursive chown can be expensive on larger volumes. This needs to be discussed more.
 
 This proposal will work only for local volumes and not with remote volumes which have client-server kind of complex architecture where client is not allowed to chown volumes as root such as NFS.
 
@@ -276,7 +311,7 @@ Docker API does not provide user-namespace mapping. Therefore to handle `GetRunt
 - Namespace-Level usernamespace remapping support
 
 ## Rollout Strategy
-Upgrading a cluster to 1.14 will not impact any existing workloads (Assuming that existing cluster nodes were not running runtimes with usernamespace remapping enabled). To be able to use the security benefit of usernamespace remapping on existing node, usernamespace remapping will have to enabled at the runtime. To perform this runtime configuration update, first node will be tainted to make it unschedulable, then it will be drained and runtime will be updated. Next, the taint will removed to make it available to the schedular. Now Kubelet will discover this configuration change and starts creating pods with remapped usernamespace.
+Upgrading a cluster to 1.14 will not impact any existing workloads (Assuming that existing cluster nodes were not running runtimes with usernamespace remapping enabled). To be able to use the security benefit of usernamespace remapping on existing node, usernamespace remapping will have to enabled at the runtime. To perform this runtime configuration update, first node will be tainted to make it unschedulable, then it will be drained and runtime will be updated. Next, the taint will removed to make it available to the scheduler. Now Kubelet will discover this configuration change and starts creating pods with remapped usernamespace.
 As we discussed in above sections, Values of `RunAsUser`, `RunAsGroup`, `SupplementalGroups` and `FsGroup` in the older/existing templates may cause pod admission failure if the values are not consistent with the default id mappings of the runtime as learned by Kubelet.
 
 `RunAsUser` and `RunAsGroup` values are treated as translated IDs in the container usernamespace and if the runtime's default mappings does not have a mapping for these containerIds, pod will fail admission at Kubelet.
