@@ -7,7 +7,7 @@ Chat is searchable and public. Do not make comments that you would not say on a 
 `@here` and `@channel` should be used rarely. Members will receive notifications from these commands and we are a global project - please be kind. Note: `@all` is only to be used by admins.
 
 ## CODE OF CONDUCT
-Kubernetes adheres to Cloud Native Compute Foundation's [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) throughout the project, and includes all communication mediums.
+Kubernetes adheres to the [Kubernetes Code of Conduct](/code-of-conduct.md) throughout the project, and includes all communication mediums.
 
 ## ADMINS
 

@@ -14,6 +14,9 @@ aliases:
     - mikedanese
     - enj
     - tallclair
+    - deads2k
+    - liggitt
+    - mikedanese
   sig-autoscaling-leads:
     - mwielgus
   sig-aws-leads:
@@ -42,9 +45,6 @@ aliases:
     - roberthbailey
     - luxas
     - timothysc
-  sig-cluster-ops-leads:
-    - zehicle
-    - jdumars
   sig-contributor-experience-leads:
     - Phillels
     - parispittman
@@ -65,7 +65,7 @@ aliases:
     - brancz
   sig-multicluster-leads:
     - csbell
-    - quinton-hoole
+    - quinton-hoole-2
   sig-network-leads:
     - thockin
     - dcbw
@@ -75,8 +75,6 @@ aliases:
     - derekwaynecarr
   sig-openstack-leads:
     - hogepodge
-    - dklyle
-    - rjmorse
   sig-pm-leads:
     - apsinha
     - idvoretskyi
@@ -105,27 +103,22 @@ aliases:
     - stevekuznetsov
     - timothysc
   sig-ui-leads:
-    - danielromlein
     - floreks
+    - maciaszczykm
+    - danielromlein
+    - jeefy
   sig-vmware-leads:
     - frapposelli
     - cantbewong
   sig-windows-leads:
     - michmike
     - patricklang
-  wg-app-def-leads:
-    - ant31
-    - bryanl
-    - garethr
   wg-apply-leads:
     - lavalamp
   wg-component-standard-leads:
     - luxas
     - sttts
     - mtaufen
-  wg-container-identity-leads:
-    - smarterclayton
-    - destijl
   wg-iot-edge-leads:
     - cindyxing
     - dejanb
@@ -134,9 +127,11 @@ aliases:
   wg-k8s-infra-leads:
     - dims
     - spiffxp
-  wg-kubeadm-adoption-leads:
-    - luxas
-    - justinsb
+  wg-lts-leads:
+    - tpepper
+    - imkin
+    - quinton-hoole-2
+    - youngnick
   wg-machine-learning-leads:
     - vishh
     - kow3ns
@@ -144,7 +139,7 @@ aliases:
     - ConnorDoyle
   wg-multitenancy-leads:
     - davidopp
-    - jessfraz
+    - tashimi
   wg-policy-leads:
     - hannibalhuang
     - tsandall

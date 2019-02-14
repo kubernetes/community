@@ -47,7 +47,7 @@ Before you can contribute, you will need to sign the [Contributor License Agreem
 
 ## Code of Conduct
 
-Please make sure to read and observe our [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md).
+Please make sure to read and observe our [Code of Conduct](/code-of-conduct.md).
 
 ## Setting up your development environment
 
@@ -80,6 +80,7 @@ There's always a need for more test coverage.
 You get the idea - if you ever see something you think should be fixed, you should own it.
 Here is how you get started.
 If you have no idea what to start on, you can browse the [Contributor Role Board](https://discuss.kubernetes.io/c/contributors/role-board) to see who is looking for help.
+Those interested in contributing without writing code may also find ideas in the [Non-Code Contributions Guide](non-code-contributions.md).
 
 ### Find a good first topic
 
@@ -207,7 +208,7 @@ To make it easier for your PR to receive reviews, consider the reviewers will ne
 * break large changes into a logical series of smaller patches which individually make easily understandable changes, and in aggregate solve a broader issue
 * label PRs with appropriate SIGs and reviewers: to do this read the messages the bot sends you to guide you through the PR process
 
-Reviewers, the people giving the review, are highly encouraged to revisit the [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) and must go above and beyond to promote a collaborative, respectful community.  
+Reviewers, the people giving the review, are highly encouraged to revisit the [Code of Conduct](/code-of-conduct.md) and must go above and beyond to promote a collaborative, respectful community.  
 When reviewing PRs from others [The Gentle Art of Patch Review](http://sage.thesharps.us/2014/09/01/the-gentle-art-of-patch-review/) suggests an iterative series of focuses which is designed to lead new contributors to positive collaboration without inundating them initially with nuances:
 
 * Is the idea behind the contribution sound?
@@ -217,15 +218,15 @@ When reviewing PRs from others [The Gentle Art of Patch Review](http://sage.thes
 ## Testing
 
 Testing is the responsibility of all contributors and is in part owned by all SIGss, but is also coordinated by [sig-testing](/sig-testing). 
-Refer to the [Testing Guide](/contributors/devel/testing.md) for more information.
+Refer to the [Testing Guide](/contributors/devel/sig-testing/testing.md) for more information.
 
 There are multiple types of tests.
 The location of the test code varies with type, as do the specifics of the environment needed to successfully run the test:
 
 * Unit: These confirm that a particular function behaves as intended.  Golang includes a native ability for unit testing via the [testing](https://golang.org/pkg/testing/) package.  Unit test source code can be found adjacent to the corresponding source code within a given package.  For example: functions defined in [kubernetes/cmd/kubeadm/app/util/version.go](https://git.k8s.io/kubernetes/cmd/kubeadm/app/util/version.go) will have unit tests in [kubernetes/cmd/kubeadm/app/util/version_test.go](https://git.k8s.io/kubernetes/cmd/kubeadm/app/util/version_test.go).  These are easily run locally by any developer on any OS.
 * Integration: These tests cover interactions of package components or interactions between kubernetes components and some other non-kubernetes system resource (eg: etcd).  An example would be testing whether a piece of code can correctly store data to or retrieve data from etcd.  Integration tests are stored in [kubernetes/test/integration/](https://git.k8s.io/kubernetes/test/integration).  Running these can require the developer set up additional functionality on their development system.
-* End-to-end ("e2e"): These are broad tests of overall system behavior and coherence.  These are more complicated as they require a functional kubernetes cluster built from the sources to be tested. A separate [document detailing e2e testing](/contributors/devel/e2e-tests.md) and test cases themselves can be found in [kubernetes/test/e2e/](https://git.k8s.io/kubernetes/test/e2e).
-* Conformance: These are a set of testcases, currently a subset of the integration/e2e tests, that the Architecture SIG has approved to define the core set of interoperable features that all Kubernetes deployments must support. For more information on Conformance tests please see the [Conformance Testing](/contributors/devel/conformance-tests.md) Document.
+* End-to-end ("e2e"): These are broad tests of overall system behavior and coherence.  These are more complicated as they require a functional kubernetes cluster built from the sources to be tested. A separate [document detailing e2e testing](/contributors/devel/sig-testing/e2e-tests.md) and test cases themselves can be found in [kubernetes/test/e2e/](https://git.k8s.io/kubernetes/test/e2e).
+* Conformance: These are a set of testcases, currently a subset of the integration/e2e tests, that the Architecture SIG has approved to define the core set of interoperable features that all Kubernetes deployments must support. For more information on Conformance tests please see the [Conformance Testing](/contributors/devel/sig-architecture/conformance-tests.md) Document.
 
 Continuous integration will run these tests either as pre-submits on PRs, post-submits against master/release branches, or both.  
 The results appear on [testgrid](https://testgrid.k8s.io).

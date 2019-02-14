@@ -66,8 +66,8 @@ None
 SIG Technical Leads
 
 
-[validation]: https://github.com/kubernetes/community/blob/master/contributors/devel/cri-validation.md
-[testing policy]: https://github.com/kubernetes/community/blob/master/contributors/devel/cri-testing-policy.md
+[validation]: /contributors/devel/sig-node/cri-validation.md
+[testing policy]: /contributors/devel/sig-node/cri-testing-policy.md
 [test grid]: https://k8s-testgrid.appspot.com/sig-node#Summary
 [perf dashboard]: http://node-perf-dash.k8s.io/#/builds
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md

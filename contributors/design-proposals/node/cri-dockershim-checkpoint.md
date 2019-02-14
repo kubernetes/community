@@ -4,7 +4,7 @@
 [#34672](https://github.com/kubernetes/kubernetes/issues/34672)
 
 ## Background
-[Container Runtime Interface (CRI)](../devel/container-runtime-interface.md) 
+[Container Runtime Interface (CRI)](/contributors/devel/sig-node/container-runtime-interface.md) 
 is an ongoing project to allow container runtimes to integrate with 
 kubernetes via a newly-defined API. 
 [Dockershim](https://github.com/kubernetes/kubernetes/blob/release-1.5/pkg/kubelet/dockershim) 

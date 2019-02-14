@@ -21,8 +21,13 @@ Coordinates the cross-community efforts of the OpenStack and Kubernetes communit
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Chris Hoge (**[@hogepodge](https://github.com/hogepodge)**), OpenStack Foundation
+
+## Emeritus Leads
+
 * David Lyle (**[@dklyle](https://github.com/dklyle)**), Intel
 * Robert Morse (**[@rjmorse](https://github.com/rjmorse)**), Ticketmaster
+* Steve Gordon (**[@xsgordon](https://github.com/xsgordon)**), Red Hat
+* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-openstack)

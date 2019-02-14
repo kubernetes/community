@@ -6,7 +6,7 @@ Support multi-fields merge key in Strategic Merge Patch.
 
 ## Background
 
-Strategic Merge Patch is covered in this [doc](/contributors/devel/strategic-merge-patch.md).
+Strategic Merge Patch is covered in this [doc](/contributors/devel/sig-api-machinery/strategic-merge-patch.md).
 In Strategic Merge Patch, we use Merge Key to identify the entries in the list of non-primitive types.
 It must always be present and unique to perform the merge on the list of non-primitive types,
 and will be preserved.

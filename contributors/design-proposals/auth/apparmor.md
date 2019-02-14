@@ -63,7 +63,7 @@ and is supported on several
 # Alpha Design
 
 This section describes the proposed design for
-[alpha-level](../devel/api_changes.md#alpha-beta-and-stable-versions) support, although
+[alpha-level](/contributors/devel/sig-architecture/api_changes.md#alpha-beta-and-stable-versions) support, although
 additional features are described in [future work](#future-work). For AppArmor alpha support
 (targeted for Kubernetes 1.4) we will enable:
 
@@ -268,7 +268,7 @@ already underway for Docker, called
 ## Container Runtime Interface
 
 Other container runtimes will likely add AppArmor support eventually, so the
-[Container Runtime Interface](/contributors/devel/container-runtime-interface.md) (CRI) needs to be made compatible
+[Container Runtime Interface](/contributors/devel/sig-node/container-runtime-interface.md) (CRI) needs to be made compatible
 with this design. The two important pieces are a way to report whether AppArmor is supported by the
 runtime, and a way to specify the profile to load (likely through the `LinuxContainerConfig`).
 

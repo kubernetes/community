@@ -59,7 +59,7 @@ The API design of VolumeSnapshot and VolumeSnapshotContent is modeled after Pers
 type VolumeSnapshot struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
@@ -144,7 +144,7 @@ Note that if an error occurs before the snapshot is cut, `Error` will be set and
 type VolumeSnapshotContent struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
@@ -234,7 +234,7 @@ A new VolumeSnapshotClass API object will be added instead of reusing the existi
 type VolumeSnapshotClass struct {
 	metav1.TypeMeta `json:",inline"`
 	// Standard object's metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
+	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
 	// +optional
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
@@ -292,7 +292,7 @@ As the figure below shows, the CSI snapshot controller architecture consists of 
 
 * External snapshotter uses ControllerGetCapabilities to find out if CSI driver supports CREATE_DELETE_SNAPSHOT calls. It degrades to trivial mode if not.
 
-* External snapshotter is responsible for creating/deleting snapshots and binding snapshot and SnapshotContent objects. It follows [controller](https://github.com/kubernetes/community/blob/master/contributors/devel/controllers.md) pattern and uses informers to watch for `VolumeSnapshot` and `VolumeSnapshotContent` create/update/delete events. It filters out `VolumeSnapshot` instances with `Snapshotter==<CSI driver name>` and processes these events in workqueues with exponential backoff. 
+* External snapshotter is responsible for creating/deleting snapshots and binding snapshot and SnapshotContent objects. It follows [controller](/contributors/devel/sig-api-machinery/controllers.md) pattern and uses informers to watch for `VolumeSnapshot` and `VolumeSnapshotContent` create/update/delete events. It filters out `VolumeSnapshot` instances with `Snapshotter==<CSI driver name>` and processes these events in workqueues with exponential backoff. 
 
 * For dynamically created snapshot, it should have a VolumeSnapshotClass associated with it. User can explicitly specify a VolumeSnapshotClass in the VolumeSnapshot API object. If user does not specify a VolumeSnapshotClass, a default VolumeSnapshotClass created by the admin will be used. This is similar to how a default StorageClass created by the admin will be used for the provisioning of a PersistentVolumeClaim.
 

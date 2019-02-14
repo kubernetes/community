@@ -28,7 +28,7 @@ APIs).
 
 [List of subprojects](https://github.com/kubernetes/community/tree/master/sig-instrumentation#subprojects)
 
-- Components required for any Kubernetes cluster in regards to observability. Also referred to as the [core metrics pipeline][core-metrics-pipeline], meaning metrics that are to be consumed by the scheduler, kubectl and autoscaling. ([kubernetes-incubator/metrics-server](https://github.com/kubernetes-incubator/metrics-server), [kubenernetes/heapster](https://github.com/kubernetes/heapster))
+- Components required for any Kubernetes cluster in regards to observability. Also referred to as the [core metrics pipeline][core-metrics-pipeline], meaning metrics that are to be consumed by the scheduler, kubectl and autoscaling. ([kubernetes-incubator/metrics-server](https://github.com/kubernetes-incubator/metrics-server), [kubernetes/heapster](https://github.com/kubernetes/heapster))
 - Interfaces/API definitions required for any Kubernetes cluster in regards to observability. These the APIs defined in order to interface external system (such as Prometheus, Stackdriver, etc.) to be exposed to Kubernetes as a common interface, in order for Kubernetes to be able to treat metric sources as a generic metrics API. ([kubernetes/metrics](https://github.com/kubernetes/metrics), [kubernetes-incubator/custom-metrics-apiserver](https://github.com/kubernetes-incubator/custom-metrics-apiserver))
 - Well established but optional components or adapters for Kubernetes clusters, if endorsed by members. Each component must have two or more members as maintainers. ([kubernetes/kube-state-metrics](https://github.com/kubernetes/kube-state-metrics), not yet officially owned by SIG-Instrumentation, but an example prospect for this category: [DirectXMan12/k8s-prometheus-adapter](https://github.com/DirectXMan12/k8s-prometheus-adapter))
 
@@ -69,5 +69,5 @@ By SIG Technical Leads
 [sig-node]: https://github.com/kubernetes/community/tree/master/sig-node
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L964-L1018
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
-[instrumenting-kubernetes]: https://github.com/kubernetes/community/blob/master/contributors/devel/instrumentation.md
+[instrumenting-kubernetes]: /contributors/devel/sig-instrumentation/instrumentation.md
 [core-metrics-pipeline]: https://kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/

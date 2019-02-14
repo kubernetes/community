@@ -115,7 +115,7 @@ The GitHub robots will add and remove the `do-not-merge/hold` label as you use t
 
 ## Pull Requests and the Release Cycle
 
-If a pull request has been reviewed, but held or not approved, it might be due to the current phase in the [Release Cycle](/contributors/devel/release.md). Occasionally, a SIG may freeze their own code base when working towards a specific feature or goal that could impact other development. During this time, your pull request could remain unmerged while their release work is completed.
+If a pull request has been reviewed, but held or not approved, it might be due to the current phase in the [Release Cycle](/contributors/devel/sig-release/release.md). Occasionally, a SIG may freeze their own code base when working towards a specific feature or goal that could impact other development. During this time, your pull request could remain unmerged while their release work is completed.
 
 If you feel your pull request is in this state, contact the appropriate [SIG](https://git.k8s.io/community/sig-list.md) or [SIG-Release](https://git.k8s.io/sig-release) for clarification.
 
@@ -182,7 +182,7 @@ Let's talk about best practices so your pull request gets reviewed quickly.
 * [Development guide](/contributors/devel/development.md)
 * [Coding conventions](../guide/coding-conventions.md)
 * [API conventions](/contributors/devel/api-conventions.md)
-* [Kubectl conventions](/contributors/devel/kubectl-conventions.md)
+* [Kubectl conventions](/contributors/devel/sig-cli/kubectl-conventions.md)
 
 ## 1. Is the feature wanted? File a Kubernetes Enhancement Proposal
 Are you sure Feature-X is something the Kubernetes team wants or will accept? Is it implemented to fit with other changes in flight? Are you willing to bet a few days or weeks of work on it?

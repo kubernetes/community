@@ -299,18 +299,22 @@ sigs:
       - name: Tim Allclair
         github: tallclair
         company: Google
+      tech_leads:
+      - name: David Eads
+        github: deads2k
+        company: Red Hat
+      - name: Jordan Liggitt
+        github: liggitt
+        company: Google
+      - name: Mike Danese
+        github: mikedanese
+        company: Google
       emeritus_leads:
       - name: Eric Chiang
         github: ericchiang
         company: Red Hat
       - name: Eric Tune
         github: erictune
-        company: Google
-      - name: David Eads
-        github: deads2k
-        company: Red Hat
-      - name: Jordan Liggitt
-        github: liggitt
         company: Google
     meetings:
     - description: Regular SIG Meeting
@@ -399,7 +403,7 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/OWNERS
-    - name: node-identity-and-isolation
+    - name: node-n-and-isolation
       description: >
         Node identity management (co-owned with sig-lifecycle), and
         authorization restrictions for isolating workloads on separate nodes
@@ -516,7 +520,7 @@ sigs:
       day: Friday
       time: "9:00"
       tz: "PT (Pacific Time)"
-      frequency: biweekly
+      frequency: "biweekly 2019 start date: Jan. 11th"
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
     contact:
@@ -760,6 +764,7 @@ sigs:
     - name: kubernetes-cloud-provider
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/cloud-provider-sample/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
@@ -923,35 +928,6 @@ sigs:
     - name: minikube
       owners:
       - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
-  - name: Cluster Ops
-    dir: sig-cluster-ops
-    mission_statement: >
-      Promote operability and interoperability of Kubernetes clusters. We
-      focus on shared operations practices for Kubernetes clusters with a goal
-      to make Kubernetes broadly accessible with a common baseline reference.
-      We also organize operators as a sounding board and advocacy group.
-    charter_link:
-    label: cluster-ops
-    leadership:
-      chairs:
-      - name: Rob Hirschfeld
-        github: zehicle
-        company: RackN
-      - name: Jaice Singer DuMars
-        github: jdumars
-        company: Google
-    meetings:
-    - description: Regular SIG Meeting
-      day: Thursday
-      time: "20:00"
-      tz: "UTC"
-      frequency: biweekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-      archive_url: https://docs.google.com/document/d/1IhN5v6MjcAUrvLd9dAWtKcGWBWSaRU8DNyPiof3gYMY/edit#
-      recordings_url: https://www.youtube.com/watch?v=7uyy37pCk4U&list=PL69nYSiGNLP3b38liicqy6fm2-jWT4FQR
-    contact:
-      slack: sig-cluster-ops
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-ops
   - name: Contributor Experience
     dir: sig-contributor-experience
     mission_statement: >
@@ -1022,6 +998,13 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
+      meetings:
+      - description: Non-Code Contributors Meeting
+        day: Wednesday
+        time: "11:00"
+        tz: "PT (Pacific Time)"
+        frequency: biweekly
+        url: https://docs.google.com/document/d/1gdFWfkrapQclZ4-z4Lx2JwqKsJjXXUOVoLhBzZiZgSk/edit
     - name: devstats
       owners:
         - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
@@ -1035,6 +1018,15 @@ sigs:
     - name: repo-infra
       owners:
       - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
+    - name: events
+      owners:
+        - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
+      meetings:
+      - description: Contributor Summit strategy, content and planning
+        day: Monday
+        time: "9:00"
+        tz: "PT (Pacific Time)"
+        frequency: weekly
   - name: Docs
     dir: sig-docs
     mission_statement: >
@@ -1252,7 +1244,7 @@ sigs:
         github: csbell
         company: Google
       - name: Quinton Hoole
-        github: quinton-hoole
+        github: quinton-hoole-2
         company: Huawei
     meetings:
     - description: Regular SIG Meeting
@@ -1449,12 +1441,19 @@ sigs:
       - name: Chris Hoge
         github: hogepodge
         company: OpenStack Foundation
-      - name: David Lyle
-        github: dklyle
-        company: Intel
-      - name: Robert Morse
-        github: rjmorse
-        company: Ticketmaster
+      emeritus_leads:
+       - name: David Lyle
+         github: dklyle
+         company: Intel
+       - name: Robert Morse
+         github: rjmorse
+         company: Ticketmaster
+       - name: Steve Gordon
+         github: xsgordon
+         company: Red Hat
+       - name: Ihor Dvoretskyi
+         github: idvoretskyi
+         company: CNCF
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
@@ -1587,8 +1586,10 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/sig-release/master/licensing/OWNERS
     - name: release-engineering
       description: >
-        The Release Engineering subproject is responsible for the process/procedures/tools
-        used to create/maintain Kubernetes release artifacts.
+        The Release Engineering subproject is responsible for the
+        [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering)
+        and [tools](https://github.com/kubernetes/release) used to
+        create/maintain Kubernetes release artifacts.
       owners:
       - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
@@ -1974,6 +1975,15 @@ sigs:
       description: >
         Kubernetes IN Docker. Run Kubernetes test clusters on your local
         machine using Docker containers as nodes.
+      meetings:
+      - description: sigs.k8s.io/kind weekly meeting
+        day: Monday
+        time: "11:00"
+        tz: "PT (Pacific Time)"
+        frequency: weekly
+        url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+        archive_url: https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit
+        recordings_url: https://bit.ly/k8s-sig-testing-videos
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
     - name: prow
@@ -2015,18 +2025,24 @@ sigs:
     label: ui
     leadership:
       chairs:
+      - name: Sebastian Florek
+        github: floreks
+        company: Loodse
+      - name: Marcin Maciaszczyk
+        github: maciaszczykm
+        company: Loodse
       - name: Dan Romlein
         github: danielromlein
         company: Google
-      - name: Sebastian Florek
-        github: floreks
-        company: Fujitsu
+      - name: Jeffrey Sica
+        github: jeefy
+        company: University of Michigan
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
       time: "18:00"
       tz: "CET (Central European Time)"
-      frequency: weekly
+      frequency: bi-weekly
       url: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
       archive_url: https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing
       recordings_url:
@@ -2037,6 +2053,7 @@ sigs:
     - name: dashboard
       owners:
       - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/dashboard-metrics-scraper/master/OWNERS
   - name: VMware
     dir: sig-vmware
     mission_statement: >
@@ -2164,86 +2181,50 @@ workinggroups:
     contact:
       slack: wg-resource-mgmt
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-resource-management
-  - name: Container Identity
-    dir: wg-container-identity
+  - name: LTS
+    dir: wg-lts
     mission_statement: >
-      Ensure containers are able to interact with external systems and acquire secure identities for communication, integrating with external solutions as necessary.
-    charter_link:
+      Answer the question: Does Kubernetes need a longer support
+      term? If yes, figure out what that looks like for Kubernetes
+      and propose this to the rest of the project. If no, figure
+      out how to help end users cope with this and propose that to
+      the rest of the project. If a proposal is accepted, the working
+      group's mission will change to implement it.
+
+      The working group is sponsored by SIG Release, but has the
+      potential to span almost all SIGs.  For more background see
+      the [WG formation proposal](https://docs.google.com/presentation/d/1-Z-mUNIs3mUi7AdP1KwoAVNviwKrCoo3lxMb5wzCWbk/edit?usp=sharing).
+    charter_link: charter.md
+    stakeholder_sigs:
+    - API Machinery
+    - CLI
+    - Node
     leadership:
       chairs:
-      - name: Clayton Coleman
-        github: smarterclayton
-        company: Red Hat
-      - name: Greg Castle
-        github: destijl
-        company: Google
-    meetings:
-    - description: Regular WG Meeting
-      day: Wednesday
-      time: "10:00"
-      tz: "PDT"
-      frequency: bi-weekly (On demand)
-      url: https://zoom.us/my/k8s.sig.auth
-      archive_url: https://docs.google.com/document/d/1uH60pNr1-jBn7N2pEcddk6-6NTnmV5qepwKUJe9tMRo/edit
-      recordings_url:
-    contact:
-      slack: wg-container-identity
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-container-identity
-  - name: Kubeadm Adoption
-    dir: wg-kubeadm-adoption
-    mission_statement: >
-      Boost adoption of the kubeadm tool. kubeadm is a tool for creating new Kubernetes clusters easily for new users, but can also be used as a toolbox for higher-level deployment
-      solutions. This working group makes sure kubeadm meets the extensibility requirements of those higher-level Kubernetes installers.
-    charter_link:
-    leadership:
-      chairs:
-      - name: Lucas Käldström
-        github: luxas
-        company: Luxas Labs (occasionally contracting for Weaveworks)
-      - name: Justin Santa Barbara
-        github: justinsb
+      - name: Tim Pepper
+        github: tpepper
+        company: VMware
+      - name: Dhawal Yogesh Bhanusali
+        github: imkin
+        company: VMware
+      - name: Quinton Hoole
+        github: quinton-hoole-2
+        company: Huawei
+      - name: Nick Young
+        github: youngnick
+        company: Atlassian
     meetings:
     - description: Regular WG Meeting
       day: Tuesday
-      time: "18:00"
-      tz: "UTC"
+      time: "09:00"
+      tz: "PT (Pacific Time)"
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-      archive_url: https://docs.google.com/document/d/1KdXsLYiJYJdiRbtgZsx6qbHF4g_K-gAScB9Zs4avgzg/edit
-      recordings_url: https://www.youtube.com/watch?v=-Xlcrm5iT80&list=PLPgAK4Icr0ehh93BiMC3djAc5KoW7WIkl
+      archive_url: https://docs.google.com/document/d/1J2CJ-q9WlvCnIVkoEo9tAo19h08kOgUJAS3HxaSMsLA/edit?usp=sharing
+      recordings_url:
     contact:
-      slack: sig-cluster-lifecycle
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
-  - name: App Def
-    dir: wg-app-def
-    mission_statement: >
-      Improve UX of declarative primitives in the API and/or primary client libraries and tools,
-      understand the needs of other parts of the ecosystem on this layer, and improve the interoperability
-      of application management tools through better separation of concerns, common conventions,
-      and common principles.
-    charter_link:
-    leadership:
-      chairs:
-      - name: Antoine Legrand
-        github: ant31
-        company: CoreOS
-      - name: Bryan Liles
-        github: bryanl
-        company: VMware
-      - name: Gareth Rushgrove
-        github: garethr
-        company: Docker
-    meetings:
-    - description: Regular WG Meeting
-      day: Wednesday
-      time: "16:00"
-      tz: "UTC"
-      frequency: bi-weekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-      archive_url: https://docs.google.com/document/d/1Pxc-qwAt4FvuISZ_Ib5KdUwlynFkGueuzPx5Je_lbGM/edit
-    contact:
-      slack: wg-app-def
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-app-def
+      slack: wg-lts
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-lts
   - name: Apply
     dir: wg-apply
     # We might want to create a charter here.
@@ -2280,9 +2261,9 @@ workinggroups:
       - name: David Oppenheimer
         github: davidopp
         company: Google
-      - name: Jessie Frazelle
-        github: jessfraz
-        company: Microsoft
+      - name: Tasha Drew
+        github: tashimi
+        company: VMware
     meetings:
     - description: Regular WG Meeting
       day: Wednesday
@@ -2378,10 +2359,17 @@ workinggroups:
         company: VMWare
     meetings:
     - description: Regular WG Meeting
-      day: Friday
-      time: "16:00"
+      day: Wednesday
+      time: "17:00"
       tz: "UTC"
-      frequency: bi-weekly
+      frequency: every four weeks
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
+    - description: APAC WG Meeting
+      day: Wednesday
+      time: "5:00"
+      tz: "UTC"
+      frequency: every four weeks
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
     contact:
@@ -2412,14 +2400,14 @@ workinggroups:
       url: https://docs.google.com/document/d/1RbC4SBZBlKth7IjYv_NaEpnmLGwMJ0ElpUOmsG-bdRA/edit
     contact:
       slack: wg-security-audit
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-audit
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit
   - name: Component Standard
     dir: wg-component-standard
+    label: component-standard
     mission_statement: >
       Develop a standard foundation (philosophy and libraries) for core Kubernetes components to build on top of.
       Areas to standardize include configuration (flags, ComponentConfig APIs, ...), status endpoints (healthz, configz, ...), integration points (delegated authn/z, ...), and logging.
       Details are outlined in KEP 0032: https://github.com/kubernetes/enhancements/blob/master/keps/sig-cluster-lifecycle/0032-create-a-k8s-io-component-repo.md.
-    charter_link:
     leadership:
       chairs:
       - name: Lucas Käldström
@@ -2431,15 +2419,24 @@ workinggroups:
       - name: Michael Taufen
         github: mtaufen
         company: Google
+    stakeholder_sigs:
+    - Architecture
+    - API Machinery
+    - Cluster Lifecycle
     meetings:
     - description: Regular WG Meeting
       day: Tuesday
       time: "08:30"
       tz: "PT (Pacific Time)"
       frequency: weekly
-      url: https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI
+      url: https://zoom.us/j/705540322
+      archive_url: https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI
     contact:
+      slack: wg-component-standard
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-component-standard
+      teams:
+      - name: wg-component-standard
+        description: Component Standard Discussion
   - name: K8s Infra
     dir: wg-k8s-infra
     mission_statement: >
@@ -2469,6 +2466,7 @@ workinggroups:
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: http://bit.ly/wg-k8s-infra-notes
+      recordings_url: http://bit.ly/wg-k8s-infra-playlist
     contact:
-      slack: k8s-infra-team # TODO(spiffxp): rename to wg-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/k8s-infra-team # TODO(spiffxp): rename to wg-k8s-infra
+      slack: wg-k8s-infra
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra

@@ -84,7 +84,7 @@ Optional API operations:
     support WATCH for this API. Implementations can choose to support or not
     support this operation. An implementation that does not support the
     operation should return HTTP error 405, StatusMethodNotAllowed, per the
-    [relevant Kubernetes API conventions](/contributors/devel/api-conventions.md#error-codes).
+    [relevant Kubernetes API conventions](/contributors/devel/sig-architecture/api-conventions.md#error-codes).
 
 We also intend to support a use case where the server returns a file that can be
 stored for later use. We expect this to be doable with the standard API
@@ -107,7 +107,7 @@ objects that contain a value for the `ClusterName` field. The `Cluster` object's
 of namespace scoped.
 
 The `Cluster` object will have `Spec` and `Status` fields, following the
-[Kubernetes API conventions](/contributors/devel/api-conventions.md#spec-and-status).
+[Kubernetes API conventions](/contributors/devel/sig-architecture/api-conventions.md#spec-and-status).
 There was argument in favor of a `State` field instead of `Spec` and `Status`
 fields, since the `Cluster` in the registry does not necessarily hold a user's
 intent about the cluster being represented, but instead may hold descriptive

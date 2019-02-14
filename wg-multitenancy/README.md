@@ -18,7 +18,7 @@ Define the models of multitenancy that Kubernetes will support. Discuss and exec
 ## Organizers
 
 * David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google
-* Jessie Frazelle (**[@jessfraz](https://github.com/jessfraz)**), Microsoft
+* Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-multitenancy)

@@ -1,4 +1,4 @@
-IMAGE_NAME=golang:1.9
+IMAGE_NAME=golang:1.11
 
 default: \
 	generate \
@@ -14,6 +14,9 @@ generate-dockerized:
 
 verify:
 	@hack/verify.sh
+
+verify-dockerized:
+	docker run --rm -v $(shell pwd):/go/src/app:Z $(IMAGE_NAME) make -C /go/src/app verify
 
 test:
 	go test -v ./generator/...

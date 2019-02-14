@@ -275,8 +275,8 @@ See the sig-multicluster [community page] for points of contact and meeting time
 [community page]: /sig-multicluster
 [contributors guide]: /contributors/guide
 [design proposal]: #design-proposals
-[design repo]: /contributors/design-proposals/sig-multicluster
-[design template]: /contributors/design-proposals/sig-multicluster/template.md
+[design repo]: /contributors/design-proposals/multicluster
+[design template]: /contributors/design-proposals/Design_Proposal_TEMPLATE.md
 [development guide]: /contributors/devel/development.md
 [existing issue]: #adopt-an-issue
 [feature repo]: https://github.com/kubernetes/features
@@ -295,4 +295,4 @@ See the sig-multicluster [community page] for points of contact and meeting time
 [release]: #release
 [slack-messages]: https://kubernetes.slack.com/messages/sig-multicluster
 [slack-signup]: http://slack.k8s.io/
-[tests]: /contributors/devel/testing.md
+[tests]: /contributors/devel/sig-testing/testing.md

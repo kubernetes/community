@@ -1,7 +1,7 @@
 # Community Moderators
 
 The following people are responsible for moderating/administrating Kubernetes communication channels and their home time zone. 
-See our [moderation guidelines](./moderating.md) for policies and recommendations.
+See our [moderation guidelines](./moderation.md) for policies and recommendations.
 
 ## Mailing Lists
 
@@ -33,16 +33,19 @@ See our [moderation guidelines](./moderating.md) for policies and recommendation
 - Bob Killen (@mrbobbytables) - ET
 - Jeffrey Sica (@jeefy) - ET
 
-### Additional Moderators
+### Regional category moderators
 
-- Ihor Dvoretskyi (@idvoretskyi) - CET
+- [Chinese]
+- [German]
+- [Italian]
+- [Ukrainian]
 
 ## YouTube Channel
 
 - Paris Pittman (@parispittman) - PT
 - Sarah Novotny (@sarahnovotny) - PT
 - Bob Hrdinsky - PT
-- Ihor Dvoretskyi (@idvoretskyi) - CET
+- Ihor Dvoretskyi (@idvoretskyi) - EET
 - Jeffrey Sica (@jeefy) - ET
 - Jorge Castro (@castrojo) - ET
 - Joe Beda - (@joebeda) - PT
@@ -51,7 +54,7 @@ See our [moderation guidelines](./moderating.md) for policies and recommendation
 ## Slack
 
 - Chris Aniszczyk (@caniszczyk) - CT
-- Ihor Dvoretskyi (@idvoretskyi) - CET
+- Ihor Dvoretskyi (@idvoretskyi) - EET
 - Jaice Singer DuMars (@jdumars) - PT
 - Jorge Castro (@castrojo) - ET
 - Paris Pittman (@parispittman) - PT
@@ -60,3 +63,9 @@ See our [moderation guidelines](./moderating.md) for policies and recommendation
 
 - Paris Pittman (@parispittman) - PT
 - Jorge Castro (@castrojo) - ET
+
+
+[Chinese]: https://discuss.kubernetes.io/t/about-the-chinese-category/2881
+[German]: https://discuss.kubernetes.io/t/about-the-german-category/3152
+[Italian]: https://discuss.kubernetes.io/t/about-the-italian-category/2917/2
+[Ukrainian]: https://discuss.kubernetes.io/t/about-the-ukrainian-category/2916

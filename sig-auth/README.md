@@ -28,12 +28,18 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Mo Khan (**[@enj](https://github.com/enj)**), Red Hat
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Google
 
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
+* Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Google
+* Mike Danese (**[@mikedanese](https://github.com/mikedanese)**), Google
+
 ## Emeritus Leads
 
 * Eric Chiang (**[@ericchiang](https://github.com/ericchiang)**), Red Hat
 * Eric Tune (**[@erictune](https://github.com/erictune)**), Google
-* David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
-* Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-auth)
@@ -97,7 +103,7 @@ The following subprojects are owned by sig-auth:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/OWNERS
-- **node-identity-and-isolation**
+- **node-n-and-isolation**
   - Description: Node identity management (co-owned with sig-lifecycle), and authorization restrictions for isolating workloads on separate nodes (co-owned with sig-node).
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/certificates/approver/OWNERS

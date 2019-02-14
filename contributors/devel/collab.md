@@ -1,3 +1,3 @@
-This document has moved to: [here](https://git.k8s.io/community/contributors/guide/collab.md).
+This file has moved to https://git.k8s.io/community/contributors/guide/collab.md.
 
-*This file is a redirect stub. It should be deleted within 3 months from the current date.*
+This file is a placeholder to preserve links.  Please remove after 2019-07-01 or the release of kubernetes 1.15, whichever comes first.

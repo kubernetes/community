@@ -68,7 +68,7 @@ For more information on how to write and deploy a CSI Driver on Kubernetes, see 
 FlexVolume is an out-of-tree plugin interface that has existed in Kubernetes since version 1.2 (before CSI). It uses an exec-based model to interface with drivers. FlexVolume driver binaries must be installed on host machines. Kubernetes performs volume operations by executing pre-defined commands in the FlexVolume API against the driver on the host. FlexVolume is GA as of Kubernetes 1.8.
 
 For more information about Flex, see:
-*   https://github.com/kubernetes/community/blob/master/contributors/devel/flexvolume.md
+*   [Flexvolume.md]
 
 **What are the limitations of FlexVolume?**
 
@@ -86,3 +86,5 @@ The Storage SIG suggests implementing a CSI driver if possible. CSI overcomes th
 If Flex Volume satisfies your requirements, there is no need to migrate to CSI. The Kubernetes Storage-SIG plans to continue to support and maintain the Flex Volume API.
 
 For those who would still like to migrate to CSI, there is an effort underway in the storage community to build a CSI adapter for FlexVolume. This will allow existing FlexVolume implementations to easily be containerized and deployed as a CSI plugin. See [this link](https://github.com/kubernetes-csi/drivers/tree/master/pkg/flexadapter) for details. However, the adapter will be a stop-gap solution, and if migration to CSI is the goal, we recommend writing a CSI driver from scratch to take full advantage of the API.
+
+[Flexvolume.md]: /contributors/devel/sig-storage/flexvolume.md

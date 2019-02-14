@@ -10,7 +10,7 @@ The Kubernetes community adheres to the following principles:
 
 # Code of Conduct
 
-The Kubernetes community abides by the CNCF [code of conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md). Here is an excerpt:
+The Kubernetes community abides by the [Kubernetes code of conduct](/code-of-conduct.md). Here is an excerpt:
 
 _As contributors and maintainers of this project, and in the interest of fostering an open and welcoming community, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities._
 
@@ -25,11 +25,12 @@ See [community membership]
 
 # Community groups
 
-The project has 4 main types of groups:
+The project is comprised of the following types of subgroups:
 * Special Interest Groups, SIGs
   * Subprojects
 * Working Groups, WGs
 * Committees
+* User Groups
 
 ![Kubernetes Governance Diagram](kubernetes_governance_diagram.png)
 
@@ -128,6 +129,31 @@ of a committee is decided by the steering committee.  Like a SIG, a
 committee has a charter and a chair, and will report to the steering
 committee periodically, and to the community as makes sense, given the
 charter.
+
+## User groups
+Some topics have long term relevance to large groups of Kubernetes users, but
+do not have clear deliverables or ownership of parts of the Kubernetes
+code base. As such they are neither good fits for SIGs or Working Groups.
+An example of such a topic might be continuous delivery to Kubernetes. 
+
+Though their central goal is not a a deliverable piece of work, as contributing
+members of the community working groups are expected to work with SIGs
+to either identify friction or usability issues that need to be addressed,
+or to provide or improve documentation in their area of expertise. However
+these activities are covered under general code contributions to the relevant
+SIGs (e.g. SIG Docs) rather than as part of the user group. These contributions
+are expected to be more incremental and ad-hoc versus the more targeted 
+output of a working group.
+
+User groups function as a centralized resource to facilitate communication
+and discovery of information related to the topic of the user group. User
+groups should not undertake to produce any deliverable, instead they should
+form working groups under the auspices of some SIG for such work. Likewise
+they shouldn't take ownership of anything in the Kubernetes process, as
+that is a role for SIGs.
+
+To facilitate discoverability and engagement, 
+user groups are documented in [sigs.yaml](sigs.yaml)
 
 ## Cross-project Communication and Coordination
 
