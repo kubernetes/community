@@ -1586,8 +1586,10 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/sig-release/master/licensing/OWNERS
     - name: release-engineering
       description: >
-        The Release Engineering subproject is responsible for the process/procedures/tools
-        used to create/maintain Kubernetes release artifacts.
+        The Release Engineering subproject is responsible for the
+        [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering)
+        and [tools](https://github.com/kubernetes/release) used to
+        create/maintain Kubernetes release artifacts.
       owners:
       - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
@@ -1981,7 +1983,7 @@ sigs:
         frequency: weekly
         url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
         archive_url: https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit
-        recordings_url: https://bit.ly/k8s-sig-testing-videos 
+        recordings_url: https://bit.ly/k8s-sig-testing-videos
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
     - name: prow
