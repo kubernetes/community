@@ -4,45 +4,28 @@
 
 # Process Overview and Motivations
 
-Due to the importance of preserving usability and consistency in Kubernetes APIs, all changes and additions require expert oversight.
+To preserve usability and consistency in Kubernetes APIs, changes and additions require oversight.
 The API review process is intended to maintain logical and functional integrity of the API over time,
 the consistency of user experience and the ability of previously written tools to function with new APIs.
 Wherever possible, the API review process should help change submitters follow [established conventions](/contributors/devel/sig-architecture/api-conventions.md),
 and not simply reject without cause. 
 
-Because expert reviewer bandwidth is extremely limited, the process provides a curated backlog with highest priority issues at the top.
-While this does mean some changes may be delayed in favor of other higher priority ones, this will help maintain critical project velocity, transparency, and equilibrium.
+Because reviewer bandwidth is limited, the process provides a prioritized backlog.
+While this means some changes may be delayed in favor of other higher priority ones,
+this will help maintain critical project velocity, transparency, and equilibrium.
 Ideally, those whose API review priority is shifted in a release-impacting way will be proactively notified by the reviewers.
 
 # Goals of the process
 
-* Provide an easily-navigable process so all parties understand their roles, responsibilities, and expectations
+* Provide a transparent, easily-navigable process so all parties understand their roles, responsibilities, and expectations
 
 * Protect Kubernetes APIs from disruptive, inconsistent, or destabilizing changes
 
-* Respect, gate, and expand expert reviewer bandwidth while maintaining consistent flow across the process
+* Respect, maximize, and expand reviewer bandwidth
 
-* Provide transparency, including clear feedback and path forward for API contributors
+* Integration with the regular review process, adding as little API-review-specific overhead as possible
 
-* Maintain the high standards of the project, including positive user interactions with APIs
-
-* Provide review regardless of method of API definition (built-in, Extension API Server, or Custom Resource Definition)
-
-* Provide review over both tightly coupled external projects and in-tree API changes.  
-
-* Provide a platform for commenting on popular extensions' APIs, so as to encourage the spread of good API practices throughout the ecosystem
-
-# Non-goals of the process
-
-* Creation or maintenance of the API standards documentation
-
-* Being a "rubber stamp" for changes
-
-# Process Description
-
-![image alt text](image_0.png)
-
-## What APIs need to be reviewed?
+# What APIs need to be reviewed?
 
 * What are the kind of reviews?
 
