@@ -4,9 +4,15 @@
 
 # Process Overview and Motivations
 
-Due to the importance of preserving usability and consistency in Kubernetes APIs, all changes and additions require expert oversight. The API review process is intended to maintain logical and functional integrity of the API over time, the consistency of user experience and the ability of previously written tools to function with new APIs. Wherever possible, the API review process should help change submitters follow [established conventions](/contributors/devel/sig-architecture/api-conventions.md), and not simply reject without cause. 
+Due to the importance of preserving usability and consistency in Kubernetes APIs, all changes and additions require expert oversight.
+The API review process is intended to maintain logical and functional integrity of the API over time,
+the consistency of user experience and the ability of previously written tools to function with new APIs.
+Wherever possible, the API review process should help change submitters follow [established conventions](/contributors/devel/sig-architecture/api-conventions.md),
+and not simply reject without cause. 
 
-Because expert reviewer bandwidth is extremely limited, the process provides a curated backlog with highest priority issues at the top. While this does mean some changes may be delayed in favor of other higher priority ones, this will help maintain critical project velocity, transparency, and equilibrium. Ideally, those whose API review priority is shifted in a release-impacting way will be proactively notified by the reviewers.
+Because expert reviewer bandwidth is extremely limited, the process provides a curated backlog with highest priority issues at the top.
+While this does mean some changes may be delayed in favor of other higher priority ones, this will help maintain critical project velocity, transparency, and equilibrium.
+Ideally, those whose API review priority is shifted in a release-impacting way will be proactively notified by the reviewers.
 
 # Goals of the process
 
@@ -35,19 +41,6 @@ Because expert reviewer bandwidth is extremely limited, the process provides a c
 # Process Description
 
 ![image alt text](image_0.png)
-
-
-## Intake Pre-review Checklist
-
-* The change/addition has been reviewed by the appropriate sub-project stakeholders and SIG chairs as needed, or else the request may be rejected pending initial review
-
-* A KEP has been created if introducing:
-
-    * Any new resource type
-
-    * Any new version of a stable API
-
-    * Any new functionality added to a stable API as defined by SIG Architecture and the API Reviewers
 
 ## What APIs need to be reviewed?
 
@@ -85,9 +78,17 @@ Because expert reviewer bandwidth is extremely limited, the process provides a c
 
     * plugins which are not covered by some other standards effort (e.g. CSI and CNI APIs would be deferred to those standards bodies)
 
-## End-states of Reviews
+## Intake Pre-review Checklist
 
-The API review process can result in multiple outcomes depending on the content of the change. For example, a new API could be approved for being builtin, or rejected in favor of out-of-tree development. An API that is reviewed informationally, results in either suggestions for changes, or approval as-is. 
+* The change/addition has been reviewed by the appropriate sub-project stakeholders and SIG chairs as needed, or else the request may be rejected pending initial review
+
+* A KEP has been created if introducing:
+
+    * Any new resource type
+
+    * Any new version of a stable API
+
+    * Any new functionality added to a stable API as defined by SIG Architecture and the API Reviewers
 
 ## Information required from the submitter
 
@@ -111,6 +112,10 @@ To begin the process:
 
 * Acknowledgement that they have read and followed the existing API conventions document 
 
+## End-states of Reviews
+
+The API review process can result in multiple outcomes depending on the content of the change. For example, a new API could be approved for being builtin, or rejected in favor of out-of-tree development. An API that is reviewed informationally, results in either suggestions for changes, or approval as-is. 
+
 ## Information to be provided from the reviewer(s)
 
 If **approved**/**reviewed**:
@@ -130,10 +135,6 @@ If **rejected**:
 * All applicable in-tree or critical PRs and Issues will be noted as not approved with UNAPPROVED until they successfully pass a review
 
 * Final status in the API Review issue should be given along with @ notifications for the submitter(s) so they are informed when the review is complete
-
-## The Moderator Role
-
-The moderator role is staffed by SIG Architecture and manages the API review backlog on behalf of the reviewer team. They will ensure that reviews are finished within a reasonable time, that information is correct, and that appropriate state labels are applied. They may also help prioritize the backlog, or move cards across the project board. Their mission is to help reviewers spend the majority of their efforts on performing reviews, not doing process administrivia. They may also work with the review team to schedule face-to-face review sessions as needed, or ensure the review is added to the SIG-Architecture meeting agenda.
 
 ## Process mechanics (see diagram above)
 
@@ -172,6 +173,10 @@ Ideally, reviews will happen as quickly as possible, but it is highly dependent 
 - time t+3 weeks: first review complete
 - time t+4 weeks: subsequent review complete
 - time t+6 weeks: approved or rejected
+
+## The Moderator Role
+
+The moderator role is staffed by SIG Architecture and manages the API review backlog on behalf of the reviewer team. They will ensure that reviews are finished within a reasonable time, that information is correct, and that appropriate state labels are applied. They may also help prioritize the backlog, or move cards across the project board. Their mission is to help reviewers spend the majority of their efforts on performing reviews, not doing process administrivia. They may also work with the review team to schedule face-to-face review sessions as needed, or ensure the review is added to the SIG-Architecture meeting agenda.
 
 ## Expanding the Reviewer and Approver Pool
 
