@@ -241,7 +241,7 @@ single field `mode` that enables the feature.
 
 ```json
 "updatePolicy" {
-  "mode": "",
+  "updateMode": "",
 }
 ```
 
@@ -249,10 +249,15 @@ Mode can be set to one of the following:
 
 1. `"Initial"`: VPA only assigns resources on Pod creation and does not
    change them during lifetime of the Pod.
-2. `"Auto"` (default): VPA assigns resources on Pod creation and
+2. `"Recreate"`: VPA assigns resources on Pod creation and
    additionally can update them during lifetime of the Pod, including evicting /
    rescheduling the Pod.
-3. `"Off"`: VPA never changes Pod resources. The recommender still sets the
+3. `"Auto"` (default): Currently this mode is equivalent to the `"Recreate"` mode.
+   VPA assigns resources on Pod creation and additionally can update them during 
+   the lifetime of the pod, using any available update method. To reiterate, 
+   this is equivalent to `"Recreate"`, which is currently the only available
+   update method.
+4. `"Off"`: VPA never changes Pod resources. The recommender still sets the
    recommended resources in the VPA object. This can be used for a “dry run”.
 
 To disable VPA updates the user can do any of the following: (1) change the
