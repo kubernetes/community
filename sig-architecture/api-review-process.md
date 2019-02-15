@@ -61,101 +61,78 @@ Ideally, those whose API review priority is shifted in a release-impacting way w
 
     * plugins which are not covered by some other standards effort (e.g. CSI and CNI APIs would be deferred to those standards bodies)
 
-## Intake Pre-review Checklist
+# Mechanics
 
-* The change/addition has been reviewed by the appropriate sub-project stakeholders and SIG chairs as needed, or else the request may be rejected pending initial review
+0. Requesters should complete the pre-review checklist:
+    * The goal of the proposed change has agreement from the appropriate sub-project owners and/or SIG leads
+    * A [KEP](https://github.com/kubernetes/enhancements/blob/master/keps/0001-kubernetes-enhancement-proposal-process.md) and tracking issue in [kubernetes/enhancements](https://github.com/kubernetes/enhancements/) has been created for changes within the kubernetes-* org introducing:
+        * Any new resource type
+        * Any new version of a stable API
+        * Any new functionality added to a stable API as defined by SIG Architecture and the API Reviewers
+    * The existing [API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md) (and [API change guidelines](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api_changes.md), if applicable) have been read and followed.
 
-* A KEP has been created if introducing:
+1. Request an API review for a PR or issue in the kubernetes org by adding the `api-review` label with a `/api-review` comment (the `/api-review` command is in the process of being built... if it is not available, request a review by mentioning `@kubernetes/api-reviewers` in a PR or issue and asking to have it added to the API review backlog).
+    * If this is a review of a PR implementing an already-reviewed design/KEP, reference the approved KEP and note any differences between the approved design and the implementation.
 
-    * Any new resource type
+2. API reviews are tracked in a project board at https://github.com/orgs/kubernetes/projects/13
+    * Github query for requested reviews not yet in the project:
+        * [`is:open org:kubernetes label:api-review -project:kubernetes/13`](https://github.com/search?q=is%3Aopen+org%3Akubernetes+label%3Aapi-review+-project%3Akubernetes%2F13)
+    * Github query for items in the project no longer requesting review:
+        * [`is:open org:kubernetes -label:api-review project:kubernetes/13`](https://github.com/search?q=is%3Aopen+org%3Akubernetes+-label%3Aapi-review+project%3Akubernetes%2F13)
+    * Requests are triaged by API approvers/reviewers/moderators [regularly](#review-lifecycle-timing), and added to the project board if prereqs have been completed
+    * As requests are added to the project board, that is reflected in the sidebar of the issue or PR, along with the current status (backlog, assigned, in progress, completed)
+    * The API review backlog and queue is publicly visible at https://github.com/orgs/kubernetes/projects/13
 
-    * Any new version of a stable API
+3. Backlog
+    * An approver or moderator will adjust the prioritization of the issue in the backlog. Reviews are prioritized based on a number of factors:
+    * Whether the change is targeting the current milestone, a specific future milestone, or is untargeted
+    * The maturity level of the change (generally, GA > beta > alpha changes)
+    * Feedback from SIG leads / subproject leads on relative priorities
+    * Whether this is an initial review or re-review (or a review of a PR implementing an already-reviewed API in a KEP)
+    * Size/complexity of the change
 
-    * Any new functionality added to a stable API as defined by SIG Architecture and the API Reviewers
+4. Assigned
+    * An approver or moderator will assign an approver (or potentially aspiring reviewer - see *training reviews* below for the aspiring reviewer workflow)
+    * Reviews are assigned based on reviewer capacity and domain knowledge
+    * Assignment of reviewers is done on the issue/PR itself using the normal `/assign` method (works seamlessly with existing github/PR dashboard queries)
+    * All API reviews assigned to an individual can be viewed in the project board ([example](https://github.com/orgs/kubernetes/projects/13/?card_filter_query=assignee%3Aliggitt)), for visibility on status, order, and reviewer load
 
-## Information required from the submitter
+5. In Progress / Approved / Changes Requested / Rejected
+    * Reviews proceed like a normal KEP or PR review. Possible outcomes:
+    * Approval:
+      * Implementation PRs are tagged with `/lgtm /approve` and merged normally
+      * KEP PRs containing API designs can also be tagged with `/lgtm /approve`, but should explicitly note if API approval is being given. This approval should be linked to when later requesting review of the implementation PR, and should limit the scope of the implementation review to differences between the approved design and final implementation, problems encountered during implementation, and correctness of the implementation.
+      * The approved issue is archived in the review project board, and the `api-review` label is removed.
+    * Changes requested:
+      * Comments or questions are left on the PR or issue, and the reviewer notifies the submitter
+      * The reviewer moves the issue to "Changes Requested" in the review project board
+      * Once the requested changes are made, or questions are answered, the submitter notifies the reviewer, who moves the issue back to "In Progress"
+      * To the degree possible, complete sets of comments/changes should be requested and made, to avoid excessive back-and-forth cycles.
+    * Rejected:
+      * If completely rejected, e.g. "please do this work outside the Kubernetes org" - an explanation of why the change was rejected - appeals can be requested from the api-approvers mailing list ([kubernetes-api-reviewers@googlegroups.com](mailto:kubernetes-api-reviewers@googlegroups.com)) where the moderator will coordinate a follow-up review.  If that request results in another rejection, there is no further appeal.
+      * The rejected issue is archived in the review project board, and the `api-review` label is removed.
 
-As much as possible, we will automate the detection of PRs that require API reviews.  Significant changes should be reviewed BEFORE they reach the PR stage, but this is the backstop for anything that gets missed.  Such automation may miss cases, so any PR can be flagged as "needs API review", which triggers this process.
+# Open improvements
 
-To begin the process:
+To enable this process, the following needs to be done:
 
-* Create an issue in the kubernetes-sigs/architecture-tracking repository that links to the relevant KEP or documentation
+* Add `/api-review` and `/api-review cancel` bot commands to allow any org member to request or cancel a request for an API review
 
-* The KEPs/documentation should include a clear and thoroughly-researched justification on why the change or addition is needed, including, upgrade/downgrade considerations, and alternatives considered.
+To improve visibility and understanding of this process, the following would be helpful:
 
-* The proposer may follow one of two paths:
-
-    * Complete the coding of the API change.  Create a PR.  Request an API review on the PR.  (In future, the request will be automated based on detecting API changes). The API reviewer will /approve the PR, assuming the change was satisfactory and at least one LGTM has been given by another reviewer
-
-    * Write the KEP/documentation including a detailed description of the API.  Request a review on that.  The API reviewer will note in the API review issue the commit SHA at which the KEP was reviewed.  The reviewee will note the API review issue number.  Later, when the PR is ready to add the API, the reviewee files another review ticket (per above path).  The review is expedited because the reviewer only needs to compare the current PR to what was previously approved.  This two step process allows for automation, and allows for KEPs to get API approval before moving forward.
-
-*  explicit approvals by SIG stakeholders are not checked in the API review process.  This is assumed to be given at the PR stage.
-
-* Any additional GitHub IDs associated with the submission (particularly in the case of multiple authors)
-
-* Acknowledgement that they have read and followed the existing API conventions document 
-
-## End-states of Reviews
-
-The API review process can result in multiple outcomes depending on the content of the change. For example, a new API could be approved for being builtin, or rejected in favor of out-of-tree development. An API that is reviewed informationally, results in either suggestions for changes, or approval as-is. 
-
-## Information to be provided from the reviewer(s)
-
-If **approved**/**reviewed**:
-
-* Any non-blocking or nit suggestions should be documented in the review document that will be stored in the repository
-
-* The feedback should be made in the issue with APPROVED or  REVIEWED (for externally-maintained CRDs or external components where there is only feedback, not approval)
-
-* Final status in the issue should be given along with @ notifications for the submitter(s) so they are informed when the review is complete
-
-If **rejected**:
-
-* If completely rejected, e.g. "please do this work outside the Kubernetes org" - an explanation of why the change was rejected - appeals can be requested from the api-approvers mailing list ([kubernetes-api-reviewers@googlegroups.com](mailto:kubernetes-api-reviewers@googlegroups.com)) where the moderator will coordinate a follow-up review.  If that request results in another rejection, there is no further appeal.
-
-* If rejected with "changes requested" - an explanation in the review document of what exactly needs to be changed and why (prior decisions, standards, etc.)
-
-* All applicable in-tree or critical PRs and Issues will be noted as not approved with UNAPPROVED until they successfully pass a review
-
-* Final status in the API Review issue should be given along with @ notifications for the submitter(s) so they are informed when the review is complete
-
-## Process mechanics (see diagram above)
-
-Timing of API review requests matters.  The larger the change the more time that must be afforded.  New API resources (aka Kinds) may require significantly more thought than single field additions.  API reviews that are requested too late in a release cycle may not complete in time to make the release.  Plan ahead. Also, if you are changing an approved API, you must consult with the [kubernetes-api-reviewers@googlegroups.com](mailto:kubernetes-api-reviewers@googlegroups.com) list to ensure it is still consistent with the approvals already granted. From a process perspective, you would request a new review in that case.
-
-New APIs (groups or Kinds) or substantial changes require KEPs.  Major changes without KEPs will be rejected.
-
-1. Create an API Review request issue in [https://github.com/kubernetes-sigs/architecture-tracking](https://github.com/kubernetes-sigs/architecture-tracking) - the work will be tracked in the corresponding project board
-
-    1. Provide the following information:
-
-        1. Submitter GitHub IDs
-
-        2. Links to code/issues/documentation/KEP (keep in mind that all code will need review as well, as translation errors between proposals/markdown can and do happen)
-
-        3. One line description of the purpose
-
-        4. Acknowledgement of reading/following the API conventions document
-
-2. If the work is currently in GitHub kubernetes/kubernetes (or other explicitly-critical repository) as either a pull request or issue, add a link to the PR/Issue pointing at the API Review request issue
-
-3. An approver or moderator will adjust the prioritization of the request in the backlog, assign an approver (or potentially aspiring reviewer), and add the label status/assigned-to-reviewer (see *training reviews* below for the aspiring reviewer workflow)
-
-4. Assigned approver will either start the review, work with the moderator to schedule face-to-face discussions during SIG-Architecture, or lower its priority in the backlog. They may also request that other reviewers be involved at their discretion.
-
-5. Once the review is completed, the report will be made available to the submitters and one of the three labels applied: APPROVED  REVIEWED or UNAPPROVED These may also be added after face-to-face discussions.
-
-6. Either an appeal happens, or the issue is closed
+* Add bot logic to automatically leave a comment in any PR flagged with `kind/api-change` outlining the prereqs and steps for requesting a review
 
 ## Review lifecycle timing
 
 Ideally, reviews will happen as quickly as possible, but it is highly dependent on reviewer availability and bandwidth. In general, the following timeframe can be expected:
 
-- time t: create PR in api-reviews
+- time t: request review
 - time t+1 week: prioritized and queued
 - time t+3 weeks: first review complete
 - time t+4 weeks: subsequent review complete
 - time t+6 weeks: approved or rejected
+
+Timing of API review requests matters.  The larger the change the more time that must be afforded.  New API resources (aka Kinds) may require significantly more thought than single field additions.  API reviews that are requested too late in a release cycle may not complete in time to make the release.  Plan ahead. Also, if you are changing an approved API, you must consult with the [kubernetes-api-reviewers@googlegroups.com](mailto:kubernetes-api-reviewers@googlegroups.com) list to ensure it is still consistent with the approvals already granted. From a process perspective, you would request a new review in that case.
 
 ## The Moderator Role
 
