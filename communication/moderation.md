@@ -134,7 +134,7 @@ following procedures:
 
 - The person on call should immediately concentrate on removing the offending
   content and asking for other on call moderators for help. That is their sole
-  responsiblity. 
+  responsibility. 
 - The secondary person on call should immediately begin to take notes to
   document the incident, this will form the basis of a post-mortem. The 2nd
   person on site is responsible for finding help and documenting the incident. 
