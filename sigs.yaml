@@ -2269,7 +2269,7 @@ workinggroups:
         company: VMware
     meetings:
     - description: Regular WG Meeting
-      day: Wednesday
+      day: Tuesday
       time: "11:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
