@@ -23,9 +23,14 @@ It is also important to remember that the role of managing an open source projec
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google
-* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
 * Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), Google
+* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
+* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
+
+## Emeritus Leads
+
+* Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-pm)
@@ -67,22 +72,6 @@ In this milieu, the art of program-level facilitation requires an observational 
 -	Responsible for the forward-looking translation of high-level strategic objectives into project, product, marketing, and other specialized implementation strategies as defined by special interest groups.
 
 -	Staffing of specific release roles: Release features lead, Release Marketing Coordinator, Product Roadmap committee
-
-Chairs:
--------
-
--	SIG:
-
-	-	Ihor Dvoretskyi (CNCF);  
-	-	Aparna Sinha (Google);
-	-	Caleb Miles (Google)  
-
--	Subproject areas:
-
-	-	Jaice Singer DuMars (Google); Area: Program Management & Release
-	-	Dustin Kirkland (Google); Area: Product Management
-	-	Stephen Augustus (Red Hat); Area: Product Management
-	-	Natasha Woods & Kaitlyn Barnard (CNCF); Area: Marketing  
 
 Key Roles:
 ----------
