@@ -84,6 +84,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/controller-tools/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder-declarative-pattern/master/OWNERS
     - name: idl-schema-client-pipeline
       owners:
       - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS # possibly should be totally separate

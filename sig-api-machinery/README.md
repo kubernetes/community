@@ -71,6 +71,7 @@ The following subprojects are owned by sig-api-machinery:
     - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/controller-tools/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder-declarative-pattern/master/OWNERS
 - **idl-schema-client-pipeline**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS
