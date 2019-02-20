@@ -118,13 +118,17 @@ Kubernetes is developed using git for version control.
 
 Follow the [official git documentation] to learn how to install git, then follow the directions in [github-workflow.md] for step-by-step development procedures.
 
-## Building Kubernetes with Docker
+## Building Kubernetes
+
+There are two recommended ways of building Kubernetes, and the choice of one or the other depends on if you do plan on developing upstream. One way is building a release from source, this is recommended for development purposes. If there is no development involved, it is suggested using a pre-built version of the current release.
+
+### Building Kubernetes with Docker
 
 Official releases are built using Docker containers. To build Kubernetes using
 Docker please follow [these
 instructions](http://releases.k8s.io/HEAD/build/README.md).
 
-## Building Kubernetes on a local OS/shell environment
+### Building Kubernetes on a local OS/shell environment
 
 Kubernetes development helper scripts assume an up-to-date GNU tools
 environment. Recent Linux distros should work out-of-the-box.
