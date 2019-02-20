@@ -134,7 +134,7 @@ instructions](http://releases.k8s.io/HEAD/build/README.md).
 ### Building Kubernetes on a local OS/shell environment
 
 Kubernetes development helper scripts assume an up-to-date GNU tools
-environment. Recent Linux distros should work out-of-the-box.
+environment. Recent Linux distributions should work out-of-the-box.
 
 macOS ships with outdated BSD-based tools. We recommend installing [macOS GNU
 tools].
