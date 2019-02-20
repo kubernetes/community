@@ -120,7 +120,7 @@ Please see the [Conformance Test Review](https://github.com/kubernetes-sigs/arch
 Develop and drive technical enhancement review process
 
 * [KEP Process](https://github.com/kubernetes/community/blob/master/keps/0001-kubernetes-enhancement-proposal-process.md)
-* [Template](https://github.com/kubernetes/community/blob/master/keps/0000-kep-template.md)
+* [Template](https://git.k8s.io/enhancements/keps/YYYYMMDD-kep-template.md)
 
 Please see the [KEP Tracking](https://github.com/kubernetes-sigs/architecture-tracking/projects/2) board to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/community/blob/master/keps/OWNERS) file if you are interested in joining this effort.
 

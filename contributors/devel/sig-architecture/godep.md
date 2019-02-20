@@ -244,8 +244,21 @@ When importing a new dependency, be sure to keep an eye out for the following:
 - Does the dependency have a license that is compatible with the Kubernetes
   project?
 
+Additionally:
+- Look at the godeps file. Check that the only changes are what the PR claims
+  them to be. 
+- Check if there is a tagged release we can vendor instead of a random hash
+- Scan the imported code for things like init() functions
+- Look at the Kubernetes code changes and make sure they are appropriate
+  (e.g. renaming imports or similar). You do not need to do feature code review.
+- If this is all good, approve, but don't LGTM, unless you also do code review
+  or unless it is trivial (e.g. moving from k/k/pkg/utils -> k/utils).
+
 All new dependency licenses should be reviewed by either Tim Hockin (@thockin)
 or the Steering Committee (@kubernetes/steering-committee) to ensure that they
 are compatible with the Kubernetes project license. It is also important to note
 and flag if a license has changed when updating a dependency, so that these can
 also be reviewed.
+
+For reference, whitelisted licenses as per the CNCF Whitelist Policy are
+mentioned [here](https://git.k8s.io/sig-release/licensing/README.md#licenses-for-dependencies).

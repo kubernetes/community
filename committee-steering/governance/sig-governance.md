@@ -157,7 +157,7 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 
 [lazy-consensus]: http://en.osswiki.info/concepts/lazy_consensus
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote
-[KEP]: https://github.com/kubernetes/community/blob/master/keps/0000-kep-template.md
+[KEP]: https://git.k8s.io/enhancements/keps/YYYYMMDD-kep-template.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1454
 [OWNERS]: contributors/devel/owners.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md

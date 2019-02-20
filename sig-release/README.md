@@ -47,7 +47,7 @@ The following subprojects are owned by sig-release:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/licensing/OWNERS
 - **release-engineering**
-  - Description: The Release Engineering subproject is responsible for the process/procedures/tools used to create/maintain Kubernetes release artifacts.
+  - Description: The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS

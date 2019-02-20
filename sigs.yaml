@@ -84,6 +84,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/controller-tools/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder-declarative-pattern/master/OWNERS
     - name: idl-schema-client-pipeline
       owners:
       - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS # possibly should be totally separate
@@ -1586,8 +1587,10 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/sig-release/master/licensing/OWNERS
     - name: release-engineering
       description: >
-        The Release Engineering subproject is responsible for the process/procedures/tools
-        used to create/maintain Kubernetes release artifacts.
+        The Release Engineering subproject is responsible for the
+        [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering)
+        and [tools](https://github.com/kubernetes/release) used to
+        create/maintain Kubernetes release artifacts.
       owners:
       - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
@@ -1973,6 +1976,15 @@ sigs:
       description: >
         Kubernetes IN Docker. Run Kubernetes test clusters on your local
         machine using Docker containers as nodes.
+      meetings:
+      - description: sigs.k8s.io/kind weekly meeting
+        day: Monday
+        time: "11:00"
+        tz: "PT (Pacific Time)"
+        frequency: weekly
+        url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+        archive_url: https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit
+        recordings_url: https://bit.ly/k8s-sig-testing-videos
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
     - name: prow
@@ -2141,6 +2153,9 @@ sigs:
       - name: sig-windows-misc
         description: General Discussion
     subprojects:
+    - name: windows-gmsa
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/windows-gmsa/master/OWNERS
     - name: windows-testing
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
@@ -2250,12 +2265,12 @@ workinggroups:
       - name: David Oppenheimer
         github: davidopp
         company: Google
-      - name: Jessie Frazelle
-        github: jessfraz
-        company: Microsoft
+      - name: Tasha Drew
+        github: tashimi
+        company: VMware
     meetings:
     - description: Regular WG Meeting
-      day: Wednesday
+      day: Tuesday
       time: "11:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
@@ -2458,4 +2473,4 @@ workinggroups:
       recordings_url: http://bit.ly/wg-k8s-infra-playlist
     contact:
       slack: wg-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/wg-k8s-infra
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra

@@ -47,7 +47,7 @@ Subprojects representing Kubernetes features may be retired at any point given a
 ## Technical Processes
 Subprojects (providers) of the SIG MUST use the following processes unless explicitly following alternatives they have defined.
 
-* Proposals will be sent as [KEP](https://github.com/kubernetes/community/blob/master/keps/0000-kep-template.md) PRs, and published to the official group mailing list as an announcement
+* Proposals will be sent as [KEP](https://git.k8s.io/enhancements/keps/YYYYMMDD-kep-template.md) PRs, and published to the official group mailing list as an announcement
 * Proposals, once submitted, SHOULD be placed on the next full meeting agenda
 * Decisions within the scope of individual subprojects should be made by lazy consensus by subproject owners, with fallback to majority vote by subproject owners; if a decision can’t be made, it should be escalated to the SIG Chairs
 * Issues impacting multiple subprojects in the SIG should be resolved by consensus of the owners of the involved subprojects; if a decision can’t be made, it should be escalated to the SIG Chairs

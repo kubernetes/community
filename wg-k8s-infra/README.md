@@ -30,7 +30,7 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Work
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-k8s-infra)
-* [Mailing list](https://groups.google.com/forum/#!forum/wg-k8s-infra)
+* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra)
 
 <!-- BEGIN CUSTOM CONTENT -->
 

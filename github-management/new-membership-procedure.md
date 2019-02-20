@@ -51,8 +51,8 @@ required to be eligible to sponsor a new member. These requirements are:
   then the sponsor should be a member of either that org, or main Kubernetes
   org (as members of the main org have implicit membership in other orgs).
 
-- Sponsors must be a reviewer or approver in at least one OWNERS file in any
-  Kubernetes GitHub org.
+- Sponsors must be a reviewer or approver in at least one OWNERS file in
+  either the [Kubernetes GitHub org] or the org they are sponsoring for.
 
 - Sponsors must be from multiple member companies to demonstrate integration
   across community
@@ -101,3 +101,4 @@ merge.
 [community membership]: /community-membership.md
 [k-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [kubernetes/org]: https://git.k8s.io/org/
+[Kubernetes GitHub org]: https://github.com/kubernetes
