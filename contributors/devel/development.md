@@ -1,5 +1,8 @@
 # Development Guide
 
+This document is the canonical source of truth for things like supported
+toolchain versions for building Kubernetes.
+
 **Table of Contents**
 
 - [Pre submit flight checks](#pre-submit-flight-checks)
@@ -8,9 +11,9 @@
   - [Is this a performance improvement?](#is-this-a-performance-improvement)
 - [Getting the code](#getting-the-code)
     - [Git install](#install)
-
-This document is the canonical source of truth for things like supported
-toolchain versions for building Kubernetes.
+- [Building Kubernetes](#building-kubernetes)
+  - [Building Kubernetes with Docker](#building-kubernetes-with-docker)
+  - [Building Kubernetes on a local OS/shell environment](#building-kubernetes-on-a-local-OS/shell-environment)
 
 Please submit an [issue] on Github if you
 * Notice a requirement that this doc does not capture.
