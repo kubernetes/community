@@ -51,7 +51,20 @@ N/A
 
 ### Deviations from [sig-governance]
 
-N/A
+#### Sub-project Repo Creation
+
+The following individuals may approve kubernetes-sigs repo creation requests to be owned by any api-machinery
+sub-projects:
+
+- @cheftako
+- @sttts
+
+The following individuals may approve kubernetes-sigs repo creation requests to be owned by specific api-machinery
+sub-projects:
+
+- server-sdk
+  - @pwittrock
+
 
 ### Subproject Creation
 
