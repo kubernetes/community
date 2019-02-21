@@ -1,16 +1,25 @@
 # SIG Roles and Organizational Governance
 
-This charter adheres to the conventions described in the [Kubernetes Charter README].
+This charter adheres to the conventions described in the [Kubernetes Charter README]. It will be updated as needed to meet the current needs of the Kubernetes project.
 
-This document will be updated as needed to meet the current needs of the Kubernetes project.
+In order to standardize Special Interest Group efforts, create maximum transparency, and route contributors to the appropriate SIG, SIGs should follow these guidelines:
 
+- Create a charter and have it approved according to the [SIG charter process]
+- Meet regularly, at least for 30 minutes every 3 weeks, except November and December
+- Keep up-to-date meeting notes, linked from the SIG's page in the community repo
+- Record meetings and make them publicly available on a YouTube playlist
+- Report activity in the weekly community meeting at least once every quarter
+- Participate in release planning meetings and retrospectives, and burndown meetings, as needed
+- Ensure related work happens in a project-owned github org and repository, with code and tests explicitly owned and supported by the SIG, including issue triage, PR reviews, test-failure response, bug fixes, etc.
+- Use the [forums provided] as the primary means of working, communicating, and collaborating, as opposed to private emails and meetings
+
+The process for setting up a SIG or Working Group (WG) is listed in the [sig-wg-lifecycle] document.
 ## Roles
 
 ### Notes on Roles
 
-Unless otherwise stated, individuals are expected to be responsive and active within
-their roles.  Within this section "member" refers to a member of a Chair, Tech Lead or
-Subproject Owner Role.  (this different from a SIG or Organization Member).
+Within this section "member" refers to a member of a Chair, Tech Lead or
+Subproject Owner Role.  (this different from a SIG or Organization Member).  
 
 - Initial members are defined at the founding of the SIG or Subproject as part of the acceptance
   of that SIG or Subproject.
@@ -20,7 +29,7 @@ Subproject Owner Role.  (this different from a SIG or Organization Member).
   role is adequately staffed during the leave.
 - Members going on leave for 1-3 months *MAY* work with other
   members to identify a temporary replacement.
-- Members of a role *SHOULD* remove any other members that have not communicated a 
+- Members of a role *SHOULD* remove any other members that have not communicated a
   leave of absence and either cannot be reached for more than 1 month or are not
   fulfilling their documented responsibilities for more than 1 month.
   This may be done through a [super-majority] vote of members, or if there are not
@@ -49,7 +58,7 @@ Subproject Owner Role.  (this different from a SIG or Organization Member).
   - Resolve X-Subproject technical issues and decisions
   - Number: 2-3
   - Membership tracked in [sigs.yaml]
-  
+
 ### Subproject Owner
 
 - Subproject Owners
@@ -91,6 +100,11 @@ Subproject Owner Role.  (this different from a SIG or Organization Member).
 - Contributing instructions defined in the SIG CONTRIBUTING.md
 
 ### Project Management
+In addition, SIGs have the following responsibilities to SIG PM:
+- identify SIG annual roadmap
+- identify all SIG features in the current release
+- actively track / maintain SIG features within [k/enhancements]
+- attend [SIG PM] meetings, as needed / requested
 
 #### Subproject Creation
 
@@ -113,7 +127,7 @@ Option 2: by Federation of Subprojects
   - [sigs.yaml] *MUST* be updated to include subproject information and [OWNERS] files with subproject owners
   - Where subprojects processes differ from the SIG governance, they must document how
     - e.g. if subprojects release separately - they must document how release and planning is performed
-    
+
 Subprojects may create repos under *github.com/kubernetes-sigs* through [lazy-consensus] of subproject owners.
 
 ---
@@ -155,11 +169,17 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
   - after 3 or more months it *SHOULD* be retired
   - after 6 or more months it *MUST* be retired
 
+[SIG PM]: https://github.com/kubernetes/community/tree/master/sig-pm
+[k/enhancements]: https://github.com/kubernetes/enhancements
+[forums provided]:
+
 [lazy-consensus]: http://en.osswiki.info/concepts/lazy_consensus
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote
 [KEP]: https://git.k8s.io/enhancements/keps/YYYYMMDD-kep-template.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1454
 [OWNERS]: contributors/devel/owners.md
+[SIG Charter process]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
 [Embargo Policy]: https://git.k8s.io/security/private-distributors-list.md#embargo-policy
 [SECURITY_CONTACTS]: https://github.com/kubernetes/kubernetes-template-project/blob/master/SECURITY_CONTACTS
+[sig-wg-lifecycle]: /sig-wg-lifecycle.md

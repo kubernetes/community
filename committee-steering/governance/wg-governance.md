@@ -4,14 +4,14 @@
 Working Groups provide a formal avenue for disparate groups to collaborate around a common problem, craft a balanced
 position, and disband. Because they represent the interests of multiple groups, they are a vehicle for consensus
 building.  If code is developed as part of collaboration within the Working Group, that code will be housed in an
-appropriate repository as described in the [repositories document][repodoc].  The merging of this code into the repository
+appropriate repository as described in the [repositories document].  The merging of this code into the repository
 will be governed by the standard policies regarding submitting code to that repository (e.g. developed within one or
 more Subprojects owned by SIGs).
 
 Because a working group is an official part of the Kubernetes project it is subject to steering committee oversight
 over its formation and disbanding.
 
-[repodoc]: https://github.com/kubernetes/community/blob/master/github-management/kubernetes-repositories.md
+The tactical checklist to creation and/or retirement is found in the [SIG / WG lifeycle] document.  
 
 ## Goals of the process
 
@@ -26,7 +26,7 @@ over its formation and disbanding.
 - Changing the status of existing Working Groups/SIGs/Sub-projects
 
 ## Working Group Relationship To SIGs
-Assets owned by the Kubernetes project (e.g. code, docs, blogs, processes, etc) are owned and 
+Assets owned by the Kubernetes project (e.g. code, docs, blogs, processes, etc) are owned and
 managed by [SIGs](sig-governance.md).  The exception to this is specific assets that may be owned
 by Working Groups, as outlined below.
 
@@ -38,7 +38,7 @@ own the following types of assets:
 - Discussion Forum Groups
 
 Working Groups are distinct from SIGs in that they are intend to:
- 
+
 - facilitate collaboration across SIGs
 - facilitate an exploration of a problem / solution through a group with minimal governmental overhead
 
@@ -73,23 +73,7 @@ should eventually be reflected in a pull request on sigs.yaml:
 1. Who will chair the group, and ensure it continues to meet these requirements?
 1. Is diversity well-represented in the Working Group?
 
-Once the above questions have been answered, the pull request against sigs.yaml can be created. Once the generator
-is run, this will in turn create the OWNERS_ALIASES file, readme files, and the main SIGs list.  The minimum
-requirements for that are:
-
-- name
-- directory
-- mission statement
-- chair information
-- meeting information
-- contact methods
-- any [sig](sig-governance.md) stakeholders
-
-The pull request should be labeled with any SIG stakeholders and committee/steering. And since GitHub notifications
-are not a reliable means to contact people, an email should be sent to the mailing lists for the stakeholder SIGs,
-and the steering committee with a link to the PR. A member of the community admin team will place a /hold on it
-until it has an LGTM from at least one chair from each of the stakeholder SIGs, and a simple majority of the steering
-committee.
+Once the above questions have been answered, complete the rest of the checklist in the [SIG / WG Lifecycle] document
 
 Once merged, the Working Group is officially chartered until it either completes its stated goal, or disbands
 voluntarily (e.g. due to new facts, member attrition, change in direction, etc). Working groups should strive to
@@ -117,7 +101,8 @@ within the Working Group, and [sigs.yaml](/sigs.yaml) should be updated.
 References
 
 - [1] https://github.com/kubernetes/community/pull/1994
-- [2] https://groups.google.com/a/kubernetes.io/d/msg/steering/zEY93Swa_Ss/C0ziwjkGCQAJ 
+- [2] https://groups.google.com/a/kubernetes.io/d/msg/steering/zEY93Swa_Ss/C0ziwjkGCQAJ
 
 
-[repository document]: https://github.com/kubernetes/community/blob/master/github-management/kubernetes-repositories.md
+[SIG / WG Lifecycle]: /sig-wg-lifecycle.md
+[repositories document]: https://github.com/kubernetes/community/blob/master/github-management/kubernetes-repositories.md
