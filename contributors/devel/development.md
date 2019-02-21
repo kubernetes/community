@@ -186,7 +186,7 @@ To check out code to work on, please refer to [this guide](/contributors/guide/g
 [build/common.sh]: https://git.k8s.io/kubernetes/build/common.sh
 [e2e-image]: https://git.k8s.io/test-infra/jenkins/e2e-image
 [etcd-latest]: https://coreos.com/etcd/docs/latest
-[etcd-install]: sig-testing/testing.md#install-etcd-dependency
+[etcd-install]: sig-testing/integration-tests.md#install-etcd-dependency
 <!-- https://github.com/coreos/etcd/releases -->
 [go-workspace]: https://golang.org/doc/code.html#Workspaces
 [issue]: https://github.com/kubernetes/kubernetes/issues
