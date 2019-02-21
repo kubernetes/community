@@ -119,11 +119,11 @@ Kubernetes is developed using git for version control.
 
 ### Install
 
-Follow the [official git documentation] to learn how to install git, then follow the directions in [github-workflow.md] for step-by-step development procedures.
+Follow the [official git documentation] to learn how to install git, then follow the directions in [github-workflow.md] for step-by-step development procedures. For tips, tricks, and common practices used within the Kubernetes project read the [Kubernetes GitHub cheat sheet][github-cheat-sheet].
 
 ## Building Kubernetes
 
-There are two recommended ways of building Kubernetes, and the choice of one or the other depends on if you do plan on developing upstream. One way is building a release from source, this is recommended for development purposes. If there is no development involved, it is suggested using a pre-built version of the current release.
+There are two recommended ways of building Kubernetes, and the choice of one or the other depends on if you do plan on developing upstream. One way is building a release from source, this is recommended for development purposes. If there is no development involved, it is suggested to use a pre-built version of the current release.
 
 ### Building Kubernetes with Docker
 
@@ -146,7 +146,9 @@ platform.
 
 ### etcd
 
-Kubernetes maintains state in [`etcd`][etcd-latest], a distributed key store.
+etcd is a distributed key value store that provides a reliable way to store data across a cluster of machines. Kubernetes maintains state in [`etcd`][etcd-latest]. Version 2 as a backend was deprecated and support was removed in Kubernetes 1.13 so that make sure to install etcd version 3.x.
+
+
 
 Please [install it locally][etcd-install] to run local integration tests.
 
@@ -221,3 +223,4 @@ To check out code to work on, please refer to [this guide](/contributors/guide/g
 [Build with Bazel]: sig-testing/bazel.md
 [official git documentation]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-workflow.md]: https://github.com/kubernetes/community/blob/master/contributors/guide/github-workflow.md
+[github-cheat-sheet]: https://github.com/kubernetes/community/blob/master/devel/github-cheat-sheet.md
