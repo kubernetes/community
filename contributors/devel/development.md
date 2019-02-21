@@ -146,11 +146,14 @@ platform.
 
 ### etcd
 
-etcd is a distributed key value store that provides a reliable way to store data across a cluster of machines. Kubernetes maintains state in [`etcd`][etcd-latest]. Version 2 as a backend was deprecated and support was removed in Kubernetes 1.13 so that make sure to install etcd version 3.x.
+etcd is a distributed key value store that provides a reliable way to store data across a cluster of machines. Kubernetes maintains state in [`etcd`][etcd-latest]. Version 2 as a backend was deprecated and support was removed in Kubernetes 1.13; thereby, make sure to install etcd version 3.x.
 
+Please [install it locally][etcd-install] to run local integration tests. Also, add it to PATH.
 
-
-Please [install it locally][etcd-install] to run local integration tests.
+#### Options for local installation
+  1. Install inside kubernetes root. Use `hack/install-etcd.sh`
+  2. Install manually.  
+    Find version with `grep -E "image.*etcd" cluster/gce/manifests/etcd.manifest` and install with you OS package manager.
 
 ### Go
 
