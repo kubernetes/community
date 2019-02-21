@@ -198,7 +198,7 @@ Please refer to [Integration Testing in Kubernetes](integration-tests.md).
 
 Please refer to [End-to-End Testing in Kubernetes](e2e-tests.md).
 
-## Running your contribution through Kubernetes CI/CD
+## Running your contribution through Kubernetes CI
 Once you open a PR, [`prow`][prow-url] runs pre-submit tests in CI. You can find more about `prow` in [kubernetes/test-infra][prow-git] and in [this blog post][prow-doc] on automation involved in testing PRs to Kubernetes.
 
 If you are not a [Kubernetes org member][membership], another org member will need to run [`/ok-to-test`][ok-to-test] on your PR.
@@ -206,17 +206,25 @@ If you are not a [Kubernetes org member][membership], another org member will ne
 Find out more about [other commands][prow-cmds] you can use to interact with prow through GitHub comments.
 
 ### Troubleshooting a failure
-Click on `Details` and look at the [`gubernator`](gubernator.k8s.io/) output for the test.
+Click on `Details` to look at artifacts produced by the test and the cluster under test, to help you debug the failure. These artifacts include:
+- test results
+- metadata on the test run (including versions of binaries used, test duration)
+- output from tests that have failed
+- build log showing the full test run
+- logs from the cluster under test (k8s components such as kubelet and apiserver, possibly other logs such as etcd and kernel)
+- junit xml files
+- test coverage files
 
 If the failure seems unrelated to the change you're submitting:
 - Is it a flake?
-  - Check if an issue has already been opened for that flake
+  - Check if a GitHub issue is already open for that flake
     - If not, open a new one (like [this example][new-issue-example]) and [label it `kind/flake`][kind/flake]
+    - If yes, any help troubleshooting and resolving it is very appreciated. Look at [Helping with known flakes](#helping-with-known-flakes) for how to do it.
   - Run [`/retest`][retest] on your PR to re-trigger the tests
 
-- Is it a failure that shouldn't be happening (in other words, is the test expectation now wrong)
+- Is it a failure that shouldn't be happening (in other words; is the test expectation now wrong)?
   - Get in touch with the SIG that your PR is labeled after
-    - preferably as a comment on your PR, by tagging the [github team][k-teams] (for example a [reviewers team for the SIG][k-teams-review])
+    - preferably as a comment on your PR, by tagging the [GitHub team][k-teams] (for example a [reviewers team for the SIG][k-teams-review])
     - write your reasoning as to why you think the test is now outdated and should be changed
     - if you don't get a response in 24 hours, engage with the SIG on their channel on the [Kubernetes slack](http://slack.k8s.io/) and/or attend one of the [SIG meetings][sig-meetings] to ask for input.
 
@@ -233,13 +241,18 @@ If the failure seems unrelated to the change you're submitting:
 [kind/flake]: https://prow.k8s.io/command-help#kind
 [sig-meetings]: https://github.com/kubernetes/community/blob/master/sig-list.md
 
+#### Helping with known flakes
+For known flakes (i.e. with open GitHub issues against them), the community deeply values help in troubleshooting and resolving them. Starting points could be:
+- add logs from the failed run you experienced, and any other context to the existing discussion
+- if you spot a pattern or identify a root cause, notify or collaborate with the SIG that owns that area to resolve them
+
 #### Escalating failures to a SIG
 - Figure out corresponding SIG from test name/description
 - Mention the SIG's GitHub handle on the issue, optionally `cc` the SIG's chair(s) (locate them under kubernetes/community/sig-<name\>)
 - Optionally (or if you haven't heard back on the issue after 24h) reach out to the SIG on slack
 
 ### Testgrid
-[`testgrid`](https://testgrid.k8s.io/) is a visualization of the Kubernetes CI.
+[`testgrid`](https://testgrid.k8s.io/) is a visualization of the Kubernetes CI status.
 
 It is useful as a way to:
 - see the run history of a test you are debugging (access it starting from a gubernator report for that test)
