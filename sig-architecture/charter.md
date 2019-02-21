@@ -30,7 +30,7 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 
 - KEPs that do not have architectural implications or impact are managed by their respective sponsoring SIG(s)
 - The release enhancement delivery [process] that is part of the SIG-Release Release Team [subproject]
-- The KEP process itself is not managed by SIG-PM and architecture subprjects are a stakeholder
+- The KEP process itself is now managed by SIG-PM and architecture subprjects are a stakeholder
 
 ## Roles and Organization Management
 
