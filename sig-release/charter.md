@@ -11,14 +11,15 @@ This charter adheres to the conventions described in the [Kubernetes Charter REA
 
 ### In scope
 
-- Ensuring quality Kubernetes releases
+- Declare a release and ensure quality/feature/other requirements are met.
   - Defining and staffing release roles to manage the resolution of release blocking criteria
   - Defining and driving development processes (e.g. merge queues, cherrypicks) and release processes
     (e.g. burndown meetings, cutting beta releases) with the intent of meeting the release schedule
-  - Managing the creation of release specific artifacts, including:
+  - Control access to and establish processes regarding release specific artifacts, including:
     - Code branches
     - Binary artifacts
     - Release notes
+    - Build Infrastructure
 - Continually improving release and development processes
   - Working closely with SIG Contributor Experience to define and build tools to facilitate release process (e.g. dashboards)
   - Working closely with SIG Testing to determine and implement tests, automation, and labeling required for stable releases
