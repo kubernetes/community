@@ -117,9 +117,11 @@ correct solution is created before a single line of code is reviewed.
 
 Kubernetes is developed using git for version control.
 
-### Install
+### GitHub workflow
 
-Follow the [official git documentation] to learn how to install git, then follow the directions in [github-workflow.md] for step-by-step development procedures. For tips, tricks, and common practices used within the Kubernetes project read the [Kubernetes GitHub cheat sheet][github-cheat-sheet].
+To check out code to work on, please refer to [this guide](/contributors/guide/github-workflow.md).
+
+For tips, tricks, and common practices used within the Kubernetes project read the [Kubernetes GitHub Cheat Sheet][github-cheat-sheet].
 
 ## Building Kubernetes
 
@@ -139,14 +141,14 @@ environment. Recent Linux distributions should work out-of-the-box.
 macOS ships with outdated BSD-based tools. We recommend installing [macOS GNU
 tools].
 
-### rsync
+#### rsync
 
 Kubernetes build system requires `rsync` command present in the development
 platform.
 
-### etcd
+#### etcd
 
-etcd is a distributed key value store that provides a reliable way to store data across a cluster of machines. Kubernetes maintains state in [`etcd`][etcd-latest]. Version 2 as a backend was deprecated and support was removed in Kubernetes 1.13; thereby, make sure to install etcd version 3.x.
+etcd is a distributed key value store that provides a reliable way to store data across a cluster of machines. Kubernetes maintains state in [`etcd`][etcd-latest]. Version 2 as was deprecated and support was removed in Kubernetes 1.13; thereby, make sure to install etcd version 3.x.
 
 Please [install it locally][etcd-install] to run local integration tests. Also, add it to PATH.
 
@@ -155,10 +157,12 @@ Please [install it locally][etcd-install] to run local integration tests. Also, 
   2. Install manually.  
     Find version with `grep -E "image.*etcd" cluster/gce/manifests/etcd.manifest` and install with you OS package manager.
 
-### Go
+#### Go
 
 Kubernetes is written in [Go](http://golang.org). If you don't have a Go
-development environment, please [set one up](http://golang.org/doc/code.html).
+development environment, please [set one up](https://golang.org/doc/install).
+
+Great introduction to the [development process in Go](http://golang.org/doc/code.html).
 
 
 | Kubernetes     | requires Go |
@@ -178,7 +182,7 @@ development environment, please [set one up](http://golang.org/doc/code.html).
 Ensure your GOPATH and PATH have been configured in accordance with the Go
 environment instructions.
 
-#### Upgrading Go
+##### Upgrading Go
 
 Upgrading Go requires specific modification of some scripts and container
 images.
@@ -190,7 +194,7 @@ images.
 - The cross tag `KUBE_BUILD_IMAGE_CROSS_TAG` in [build/common.sh].
 
 
-#### Dependency management
+##### Dependency management
 
 Kubernetes uses [`godep`](https://github.com/tools/godep) to manage
 dependencies.
@@ -199,15 +203,10 @@ Developers who need to manage dependencies in the `vendor/` tree should read
 the docs on [using godep to manage dependencies](sig-architecture/godep.md).
 
 
-## Build with Bazel/Gazel
+### Build with Bazel/Gazel
 
 Building with Bazel is currently experimental.  For more information,
 see [Build with Bazel].
-
-
-## GitHub workflow
-
-To check out code to work on, please refer to [this guide](/contributors/guide/github-workflow.md).
 
 
 [macOS GNU tools]: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x
