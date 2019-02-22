@@ -35,7 +35,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following subprojects are owned by sig-storage:
 - **kubernetes-csi**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-cinder/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-flex/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-host-path/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-image-populator/master/OWNERS
