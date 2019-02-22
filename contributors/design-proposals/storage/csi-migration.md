@@ -237,26 +237,55 @@ with the in-tree plugin, the VolumeAttachment object becomes orphaned.
 ### In-line Volumes
 
 In-line controller calls are a special case because there is no PV. In this case
-we will add the CSI Source JSON to the VolumeToAttach object and in Attach we
-will put the Source in a new field in the VolumeAttachment object
-VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineVolumeSource. The CSI Attacher will have to
-be modified to also check this location for a source before checking the PV
-itself.
+we will forward the in-tree volume source to CSI attach as-is and it will be
+copied to a new field in the VolumeAttachment object
+VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineVolumeSource. The
+VolumeAttachment name must be made with the CSI Translated version of the
+VolumeSource in order for it to be discoverable by Detach and WaitForAttach
+(described in more detail below).
+
+The CSI Attacher will have to be modified to also check this location for a
+source as well as checking for the `pvName`. Only one of the two may be
+specified.
+
+The new VolumeAttachmentSource API will look as such:
+```
+// VolumeAttachmentSource represents a volume that should be attached.
+// Right now only PersistenVolumes can be attached via external attacher,
+// in future we may allow also inline volumes in pods.
+// Exactly one member can be set.
+type VolumeAttachmentSource struct {
+	// Name of the persistent volume to attach.
+	// +optional
+	PersistentVolumeName *string `json:"persistentVolumeName,omitempty" protobuf:"bytes,1,opt,name=persistentVolumeName"`
+
+	// Allows CSI migration code to copy an inline volume
+	// source from a pod to the VolumeAttachment to support shimming of
+	// in-tree inline volumes to a CSI backend.
+	// This field is alpha-level and is only honored by servers that enable the CSIMigration feature.
+	// +optional
+	InlineVolumeSource *v1.VolumeSource `json:"inlineVolumeSource,omitempty protobuf:"bytes,2,opt,name=inlineVolumeSource"`
+}
+```
 
 We need to be careful with naming VolumeAttachments for in-line volumes. The
-name needs to be unique and ADC must be able to find the right
-VolumeAttachment when a pod is deleted (i.e. using only info in Node.Status).
-CSI driver in kubelet must be able to find the VolumeAttachment too to get
-AttachmentMetadata for NodeStage/NodePublish.
+name needs to be unique and ADC must be able to find the right VolumeAttachment
+when a pod is deleted (i.e. using only info in Node.Status). CSI driver in
+kubelet must be able to find the VolumeAttachment too to call WaitForAttach and
+VolumesAreAttached.
 
-In downgrade scenario where the migration is then turned off we will have to
-remove these floating VolumeAttachment objects, the same issue is outlined above
-in the Non-Dynamic Provisioned Volumes section.
+The attachment name is usually a hash of the volume name, CSI Driver name, and
+Node name. We are able to get all this information for Detach and WaitForAttach
+by translating the in-tree inline volume source to a CSI volume source before
+passing it to to the volume operations.
 
-For more details on this see the PR that specs out CSI Inline Volumes in more detail:
-https://github.com/kubernetes/community/pull/2273. Basically we will just translate
-the in-tree inline volumes into the format specified/implemented in the 
-container-storage-interface-inline-volumes proposal.
+There is currently a race condition in in-tree inline volumes where if a pod
+object is deleted and the ADC restarts we lose the information for the inline
+volume and will not be able to detach the volume. This is a known issue and we
+will retain the same behavior with migrated inline volumes. However, we may be
+able to solve this in the future by reconciling the VolumeAttachment object with
+existing Pods in the ADC.
+
 
 ### Volume Resize
 
