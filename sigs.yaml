@@ -782,11 +782,11 @@ sigs:
     - name: cloud-provider-vsphere
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
-    - name: cloud-provider-extraction
+    - name: cloud-provider-extraction-migration
       owners:
-      - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
       meetings:
-      - description: Weekly Sync removing the in-tree cloud providers led by @cheftako and @d-nishi
+      - description: Weekly Sync removing the in-tree cloud providers led by @cheftako and @andrewsykim
         day: Thursday
         time: "13:30"
         tz: "PT (Pacific Time)"
