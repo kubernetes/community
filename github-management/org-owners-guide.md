@@ -76,6 +76,28 @@ for all orgs going forward.  Notable discrepancies at the moment:
   org. This was a mistake that swapped the usual convention, and we would like
   to rename the team
 
+## Project Board Guidance
+
+Guidelines for project boards in the Kubernetes GitHub orgs are described below:
+
+- All project boards should be organization-level project boards instead of
+repository-level even if the project board is intended to be scoped to a single
+repository. It is easier to distribute permissions via org-level project boards
+since write access to a repo-level project board requires full write access
+to the repo.
+
+- Project Boards *must* have `Public` visibility.
+
+- The default _Organization Member Permission_ is suggested to be `Write` so
+that contributors can move cards themselves as they take on work items.
+However if the project board needs to be only scoped to a set of people,
+the access *must* be granted through a GitHub team, instead of direct
+collaborator access.
+
+**NB**: Not all project boards in use today currently follow this guidance.
+We are looking to coalesce existing project boards towards this model, and use
+this model for all orgs going forward.
+
 ## Repository Guidance
 
 Repositories have additional guidelines and requirements, such as the use of CLA
