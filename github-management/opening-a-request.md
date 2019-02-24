@@ -9,6 +9,7 @@ If you need help with the following:
 - Webhooks
 - Repository creation/migration
 - Repository archival
+- Project Board creation
 - Other repository and configuration issues
 
 Please open an issue against the [kubernetes/org] repository describing your
