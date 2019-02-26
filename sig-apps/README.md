@@ -69,7 +69,7 @@ The following subprojects are owned by sig-apps:
 - **application**
   - Description: Application metadata descriptor CRD
   - Owners:
-    - https://github.com/kubernetes-sigs/application/blob/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/application/master/OWNERS
 
 ## GitHub Teams
 
