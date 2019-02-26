@@ -10,10 +10,16 @@ toolchain versions for building Kubernetes.
   - [Is this an architecture improvement?](#is-this-an-architecture-improvement)
   - [Is this a performance improvement?](#is-this-a-performance-improvement)
 - [Getting the code](#getting-the-code)
-    - [Git install](#install)
+    - [GitHub workflow](#github-workflow)
 - [Building Kubernetes](#building-kubernetes)
   - [Building Kubernetes with Docker](#building-kubernetes-with-docker)
   - [Building Kubernetes on a local OS/shell environment](#building-kubernetes-on-a-local-OS/shell-environment)
+    - [rsync](#rsync)
+    - [etcd](#etcd)
+    - [Go](#go)
+    - [Upgrading Go](#upgrading-go)
+    - [Dependency management](#dependency-management)
+    - [Import paths](#import-paths)
 
 Please submit an [issue] on Github if you
 * Notice a requirement that this doc does not capture.
@@ -152,7 +158,7 @@ etcd is a distributed key value store that provides a reliable way to store data
 
 Please [install it locally][etcd-install] to run local integration tests. Also, add it to PATH.
 
-#### Options for local installation
+Options for local installation:
   1. Install inside kubernetes root. Use `hack/install-etcd.sh`
   2. Install manually.  
     Find version with `grep -E "image.*etcd" cluster/gce/manifests/etcd.manifest` and install with you OS package manager.
@@ -202,6 +208,11 @@ dependencies.
 Developers who need to manage dependencies in the `vendor/` tree should read
 the docs on [using godep to manage dependencies](sig-architecture/godep.md).
 
+##### Import paths
+
+Kubernetes import paths are of the form `k8s.io/X`. Those paths map to `github.com/kubernetes/kubernetes/staging/X` whose code is placed in the staging area directory `staging/src/k8s.io`. Aditionally, that code is found by the compiler because of the symlinks located at `vendor/k8s.io`. For more information,
+see [staging/README.md].
+
 
 ### Build with Bazel/Gazel
 
@@ -225,4 +236,6 @@ see [Build with Bazel].
 [Build with Bazel]: sig-testing/bazel.md
 [official git documentation]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-workflow.md]: https://github.com/kubernetes/community/blob/master/contributors/guide/github-workflow.md
+[staging/README.md]: https://git.k8s.io/kubernetes/staging/README.md
+
 [github-cheat-sheet]: https://github.com/kubernetes/community/blob/master/devel/github-cheat-sheet.md
