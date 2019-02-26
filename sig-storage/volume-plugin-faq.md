@@ -1,7 +1,7 @@
 
 # Kubernetes Volume Plugin FAQ for Storage Vendors
 
-Last Updated: 02/08/2018
+Last Updated: 02/21/2019
 
 **What is Kubernetes volume plugin?**
 
@@ -12,11 +12,12 @@ A *Kubernetes Volume plugin* extends the Kubernetes volume interface to support 
 **How do I implement a Volume plugin?**
 
 There are three methods to implement a volume plugin:
-1. In-tree volume plugin
-2. Out-of-tree FlexVolume driver
+1. In-tree volume plugin [deprecated]
+2. Out-of-tree FlexVolume driver [deprecated]
 3. Out-of-tree CSI driver
 
-The Kubernetes Storage SIG, which is responsible for all volume code in the Kubernetes core repository, is no longer accepting new in-tree volume plugins. Instead, the SIG recommends storage vendors develop plugins as either FlexVolume or CSI drivers.
+The Kubernetes Storage SIG, which is responsible for all volume code in the Kubernetes core repository, is no longer accepting new in-tree volume plugins.
+Instead, the SIG recommends storage vendors develop plugins as CSI drivers. See the [Kubernetes CSI developer documentation](https://kubernetes-csi.github.io/docs/) for details.
 
 **What is an in-tree vs. out-of-tree volume plugin?**
 
@@ -38,28 +39,39 @@ For these reasons, the Kubernetes Storage SIG choose to stop accepting new in-tr
 **What options do I now have to implement a Kubernetes volume plugin?**
 
 As of Kubernetes 1.9, there are two out-of-tree methods to implement volume plugins: CSI and FlexVolume.
+As of Kubernetes 1.13, CSI is GA and the recommended way to implement volume plugins (while FlexVolume will continue to be maintained, new functionality will only be added to CSI, not FlexVolume).
 
 **What happens to existing in-tree volume plugins?**
 
 One of the goals of SIG Storage is to eventually have a CSI-compatible plugin for most existing in-tree plugins and migrate the in-tree plugins to CSI.
+For more details on that effort see:
+
+*   https://github.com/kubernetes/enhancements/issues/625
+*   https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/csi-migration.md
+*   https://github.com/kubernetes/enhancements/blob/master/keps/sig-storage/20190129-csi-migration.md
 
 ## Container Storage Interface (CSI)
 
 **What is the Container Storage Interface (CSI)?**
 
-Container Storage Interface (CSI) is a standardized mechanism for Container Orchestration Systems (COs), including Kubernetes, to expose arbitrary storage systems to containerized workloads. CSI is planned to become the primary volume plugin system for Kubernetes. It was introduced in Kubernetes 1.9 as alpha. There are plans to promote it to beta in the 1.10 to 1.11 timeframe.
+Container Storage Interface (CSI) is a standardized mechanism for Container Orchestration Systems (COs), including Kubernetes, to expose arbitrary storage systems to containerized workloads.
+
+CSI is the primary volume plugin system for Kubernetes. It was introduced in Kubernetes 1.9 as alpha. It was promoted to beta with Kubernetes 1.10, and GA in Kubernetes 1.13.
 
 For more information about CSI, see:
 
-*   https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/
-*   [kubernetes-csi.github.io/docs](http://kubernetes-csi.github.io/docs)
+*   [CSI User Documentation](https://kubernetes.io/docs/concepts/storage/volumes/#csi)
+*   [CSI Developer Documentation](http://kubernetes-csi.github.io/docs)
+*   [Kubernetes CSI Alpha Announcement Blog Post](https://kubernetes.io/blog/2018/01/introducing-container-storage-interface/)
+*   [Kubernetes CSI Beta Announcement Blog Post](https://kubernetes.io/blog/2018/04/10/container-storage-interface-beta/)
+*   [Kubernetes CSI GA Announcement Blog Post](https://kubernetes.io/blog/2019/01/15/container-storage-interface-ga/)
 
 **What are the limitations of CSI?**
 *   CSI implementation in Kubernetes is not yet stable/GA (currently in alpha).
 
 **How do I write a CSI Driver?**
 
-For more information on how to write and deploy a CSI Driver on Kubernetes, see https://kubernetes-csi.github.io/docs/CSI-Driver.html
+For more information on how to write and deploy a CSI Driver on Kubernetes, see https://kubernetes-csi.github.io/docs/developing.html
 
 ## FlexVolume
 
@@ -70,6 +82,8 @@ FlexVolume is an out-of-tree plugin interface that has existed in Kubernetes sin
 For more information about Flex, see:
 *   [Flexvolume.md]
 
+Although FlexVolumes is still maintained, new functionality is only added to CSI, not to FlexVolume.
+
 **What are the limitations of FlexVolume?**
 
 *   FlexVolume requires root access on host machine to install FlexVolume driver files.
@@ -79,11 +93,12 @@ For more information about Flex, see:
 
 **Should I use CSI or FlexVolume?**
 
-The Storage SIG suggests implementing a CSI driver if possible. CSI overcomes the limitations of FlexVolume listed above, and the SIG plans to focus most of its development efforts on CSI in the long term. However, CSI is currently alpha, and will take several quarters to become GA. So if depending on alpha/beta software is a concern and you have a time constraint, implementing a FlexVolume driver may be a better option.
+The Storage SIG strongly suggests implementing a CSI driver. CSI is GA in Kubernetes as of v1.13. CSI overcomes the limitations of FlexVolume listed above, and the SIG plans to focus future development efforts on CSI.
+
 
 **If I already have FlexVolume driver implemented, how do I migrate to CSI?**
 
-If Flex Volume satisfies your requirements, there is no need to migrate to CSI. The Kubernetes Storage-SIG plans to continue to support and maintain the Flex Volume API.
+If you have a legacy FlexVolume driver that satisfies your requirements, there is no need to migrate to CSI. The Kubernetes Storage-SIG plans to continue to support and maintain the Flex Volume API. So you can continue to use it without worry of deprecation, but note that additional features (like topology, snapshots, etc.) will only be added to CSI not to FlexVolume.
 
 For those who would still like to migrate to CSI, there is an effort underway in the storage community to build a CSI adapter for FlexVolume. This will allow existing FlexVolume implementations to easily be containerized and deployed as a CSI plugin. See [this link](https://github.com/kubernetes-csi/drivers/tree/master/pkg/flexadapter) for details. However, the adapter will be a stop-gap solution, and if migration to CSI is the goal, we recommend writing a CSI driver from scratch to take full advantage of the API.
 

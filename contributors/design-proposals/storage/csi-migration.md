@@ -6,6 +6,14 @@ This document presents a detailed design for migrating in-tree storage plugins
 to CSI. This will be an opt-in feature turned on at cluster creation time that
 will redirect in-tree plugin operations to a corresponding CSI Driver.
 
+## Glossary
+
+* ADC (Attach Detach Controller): Controller binary that handles Attach and Detach portion of a volume lifecycle
+* Kubelet: Kubernetes component that runs on each node, it handles the Mounting and Unmounting portion of volume lifecycle
+* CSI (Container Storage Interface): An RPC interface that Kubernetes uses to interface with arbitrary 3rd party storage drivers
+* In-tree: Code that is compiled into native Kubernetes binaries
+* Out-of-tree: Code that is not compiled into Kubernetes binaries, but can be run as Deployments on Kubernetes
+
 ## Background and Motivations
 
 The Kubernetes volume plugins are currently in-tree meaning all logic and
@@ -46,6 +54,7 @@ internal APIs.
       and off separately
 
 ## Non-Goals
+
 * Design a mechanism for deploying  CSI drivers on all systems so that users can
   use the current storage system the same way they do today without having to do
   extra set up.
@@ -70,7 +79,22 @@ GA [TBD]
 * CSI Drivers for migrated plugins available on related cloud provider cluster
   by default
 
+## Milestones
+
+* Translation Library implemented in Kubernetes staging
+* Migration Shim for Provision, Attach, Detach, Mount, Unmount (including Inline Volumes)
+* Migration Shim for Resize, Block
+* CSI Driver lifecycle manager
+* GCE PD feature parity in CSI with in-tree implementation
+* AWS EBS feature parity in CSI with in-tree implementation
+* Cloud Driver feature parity in CSI with in-tree implementation
+
+## Dependency Graph
+
+![CSI Migration Dependency Diagram](csi-migration_dependencies.png?raw=true "CSI Migration Dependency Diagram")
+
 ## Feature Gating
+
 We will have an alpha feature gate for the whole feature that can turn the CSI
 migration on or off, when off all code paths should revert/stay with the in-tree
 plugins. We will also have individual flags for each driver so that admins can
@@ -95,6 +119,7 @@ CSIMigrationAWS utilfeature.Feature = "CSIMigrationAWS"
 ```
 
 ## Translation Layer
+
 The main mechanism we will use to migrate plugins is redirecting in-tree
 operation calls to the CSI Driver instead of the in-tree driver, the external
 components will pick up these in-tree PV's and use a translation library to
@@ -111,6 +136,7 @@ Cons:
 ### Dynamically Provisioned Volumes
 
 #### Kubernetes Changes
+
 Dynamically Provisioned volumes will continue to be provisioned with the in-tree
 `PersistentVolumeSource`. The CSI external-provisioner to pick up the
 in-tree PVC's when migration is turned on and provision using the CSI Drivers;
@@ -119,6 +145,7 @@ in-tree PV. The PV will then go through all the same steps outlined below in the
 "Non-Dynamic Provisioned Volumes" for the rest of the volume lifecycle.
 
 #### Leader Election
+
 There will have to be some mechanism to switch between in-tree and external
 provisioner when the migration feature is turned on/off. The two should be
 compatible as they both will create the same volume and PV based on the same
@@ -126,7 +153,6 @@ PVC, as well as both be able to delete the same PV/PVCs. The in-tree provisioner
 will have logic added so that it will stand down and mark the PV as "migrated"
 with an annotation  when the migration is turned on and the external provisioner
 will take care of the PV when it sees the annotation.
-
 
 ### Translation Library
 
@@ -139,25 +165,40 @@ imported library and part of whatever binary needs the translation (no extra
 API or RPC calls).
 
 #### Library Interface
+
 ```
 type CSITranslator interface {
-  // TranslateToCSI takes a volume.Spec and will translate it to a
-  // CSIPersistentVolumeSource if the translation logic for that
-  // specific in-tree volume spec has been implemented
-  TranslateToCSI(spec volume.Spec) (CSIPersistentVolumeSource, error)
+  // TranslateInTreePVToCSI takes a persistent volume and will translate
+  // the in-tree source to a CSI Source if the translation logic
+  // has been implemented. The input persistent volume will not
+  // be modified
+  TranslateInTreePVToCSI(pv *v1.PersistentVolume) (*v1.PersistentVolume, error) {
 
-  // TranslateToIntree takes a CSIPersistentVolumeSource and will translate
-  // it to a volume.Spec for the specific in-tree volume specified by
-  //`inTreePlugin`, if that translation logic has been implemented
-  TranslateToInTree(source CSIPersistentVolumeSource, inTreePlugin string) (volume.Spec, error)
+  // TranslateCSIPVToInTree takes a PV with a CSI PersistentVolume Source and will translate
+  // it to a in-tree Persistent Volume Source for the specific in-tree volume specified
+  // by the `Driver` field in the CSI Source. The input PV object will not be modified.
+  TranslateCSIPVToInTree(pv *v1.PersistentVolume) (*v1.PersistentVolume, error) {
 
-  // IsMigrated returns true if the plugin has migration logic
-  // false if it does not
-  IsMigrated(inTreePlugin string) bool
+
+  // IsMigratableByName tests whether there is Migration logic for the in-tree plugin
+  // for the given `pluginName`
+  IsMigratableByName(pluginName string) bool {
+
+  // GetCSINameFromIntreeName maps the name of a CSI driver to its in-tree version
+  GetCSINameFromIntreeName(pluginName string) (string, error) {
+
+
+  // IsPVMigratable tests whether there is Migration logic for the given Persistent Volume
+  IsPVMigratable(pv *v1.PersistentVolume) bool {
+
+
+  // IsInlineMigratable tests whether there is Migration logic for the given Inline Volume
+  IsInlineMigratable(vol *v1.Volume) bool {
 }
 ```
 
 #### Library Versioning
+
 Since the library will be imported by various components it is imperative that
 all components import a version of the library that supports in-tree driver x
 before the migration feature flag for x is turned on. If not, the TranslateToCSI
@@ -165,6 +206,7 @@ function will return an error when the translation is attempted.
 
 
 ### Pre-Provisioned Volumes (and volumes provisioned before migration)
+
 In the OperationGenerator at the start of each volume operation call we will
 check to see whether the plugin has been migrated.
 
@@ -192,7 +234,8 @@ creates a VolumeAttachment object, and if for some reason we are doing a detach
 with the in-tree plugin, the VolumeAttachment object becomes orphaned.
 
 
-### In-Line Volumes
+### In-line Volumes
+
 In-line controller calls are a special case because there is no PV. In this case
 we will add the CSI Source JSON to the VolumeToAttach object and in Attach we
 will put the Source in a new field in the VolumeAttachment object
@@ -201,7 +244,7 @@ be modified to also check this location for a source before checking the PV
 itself.
 
 We need to be careful with naming VolumeAttachments for in-line volumes. The
-name needs to be unique and A/D controller must be able to find the right
+name needs to be unique and ADC must be able to find the right
 VolumeAttachment when a pod is deleted (i.e. using only info in Node.Status).
 CSI driver in kubelet must be able to find the VolumeAttachment too to get
 AttachmentMetadata for NodeStage/NodePublish.
@@ -215,7 +258,24 @@ https://github.com/kubernetes/community/pull/2273. Basically we will just transl
 the in-tree inline volumes into the format specified/implemented in the 
 container-storage-interface-inline-volumes proposal.
 
+### Volume Resize
+
+TODO: Design
+
+### Raw Block
+
+TODO: Design
+
+### Volume Reconstruction
+
+TODO: Design
+
+### Volume Limit
+
+TODO: Design
+
 ## Interactions with PV-PVC Protection Finalizers
+
 PV-PVC Protection finalizers prevent deletion of a PV when it is bound to a PVC,
 and prevent deletion of a PVC when it is in use by a pod.
 
@@ -224,6 +284,7 @@ the same ways as we are not removing/adding PV’s or PVC’s in out of the ordi
 ways.
 
 ## Dealing with CSI Driver Failures
+
 Plugin should fail if the CSI Driver is down and migration is turned on. When
 the driver recovers we should be able to resume gracefully.
 
@@ -231,71 +292,252 @@ We will also create a playbook entry for how to turn off the CSI Driver
 migration gracefully, how to tell when the CSI Driver is broken or non-existent,
 and how to redeploy a CSI Driver in a cluster.
 
+## API Changes
+
+### CSINodeInfo API
+
+Changes in: https://github.com/kubernetes/kubernetes/pull/70515
+
+#### Old CSINodeInfo API
+
+```
+// CSINodeInfo holds information about all CSI drivers installed on a node.
+type CSINodeInfo struct {
+	metav1.TypeMeta `json:",inline"`
+
+	// metadata.name must be the Kubernetes node name.
+	metav1.ObjectMeta `json:"metadata,omitempty"`
+
+	// List of CSI drivers running on the node and their properties.
+	// +patchMergeKey=driver
+	// +patchStrategy=merge
+	CSIDrivers []CSIDriverInfo `json:"csiDrivers" patchStrategy:"merge" patchMergeKey:"driver"`
+}
+
+// CSIDriverInfo contains information about one CSI driver installed on a node.
+type CSIDriverInfo struct {
+	// driver is the name of the CSI driver that this object refers to.
+	// This MUST be the same name returned by the CSI GetPluginName() call for
+	// that driver.
+	Driver string `json:"driver"`
+
+	// nodeID of the node from the driver point of view.
+	// This field enables Kubernetes to communicate with storage systems that do
+	// not share the same nomenclature for nodes. For example, Kubernetes may
+	// refer to a given node as "node1", but the storage system may refer to
+	// the same node as "nodeA". When Kubernetes issues a command to the storage
+	// system to attach a volume to a specific node, it can use this field to
+	// refer to the node name using the ID that the storage system will
+	// understand, e.g. "nodeA" instead of "node1".
+	NodeID string `json:"nodeID"`
+
+	// topologyKeys is the list of keys supported by the driver.
+	// When a driver is initialized on a cluster, it provides a set of topology
+	// keys that it understands (e.g. "company.com/zone", "company.com/region").
+	// When a driver is initialized on a node it provides the same topology keys
+	// along with values that kubelet applies to the coresponding node API
+	// object as labels.
+	// When Kubernetes does topology aware provisioning, it can use this list to
+	// determine which labels it should retrieve from the node object and pass
+	// back to the driver.
+	TopologyKeys []string `json:"topologyKeys"`
+}
+```
+
+#### New CSINodeInfo API 
+
+```
+// +genclient
+// +genclient:nonNamespaced
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+
+// CSINodeInfo holds information about all CSI drivers installed on a node.
+// CSI drivers do not need to create the CSINodeInfo object directly. As long as
+// they use the node-driver-registrar sidecar container, the kubelet will
+// automatically populate the CSINodeInfo object for the CSI driver as part of
+// kubelet plugin registration.
+// CSINodeInfo has the same name as a node. If it is missing, it means either
+// there are no CSI Drivers available on the node, or the Kubelet version is low
+// enough that it doesn't create this object.
+// CSINodeInfo has an OwnerReference that points to the corresponding node object.
+type CSINodeInfo struct {
+	metav1.TypeMeta
+
+	// metadata.name must be the Kubernetes node name.
+	metav1.ObjectMeta
+
+	// spec is the specification of CSINodeInfo
+	Spec CSINodeInfoSpec
+}
+
+// CSINodeInfoSpec holds information about the specification of all CSI drivers installed on a node
+type CSINodeInfoSpec struct {
+	// drivers is a list of information of all CSI Drivers existing on a node.
+	// It can be empty on initialization.
+	// +patchMergeKey=name
+	// +patchStrategy=merge
+	Drivers []CSIDriverInfoSpec
+}
+
+// CSIDriverInfoSpec holds information about the specification of one CSI driver installed on a node
+type CSIDriverInfoSpec struct {
+	// This is the name of the CSI driver that this object refers to.
+	// This MUST be the same name returned by the CSI GetPluginName() call for
+	// that driver.
+	Name string
+
+	// nodeID of the node from the driver point of view.
+	// This field enables Kubernetes to communicate with storage systems that do
+	// not share the same nomenclature for nodes. For example, Kubernetes may
+	// refer to a given node as "node1", but the storage system may refer to
+	// the same node as "nodeA". When Kubernetes issues a command to the storage
+	// system to attach a volume to a specific node, it can use this field to
+	// refer to the node name using the ID that the storage system will
+	// understand, e.g. "nodeA" instead of "node1".
+	// This field must be populated. An empty string means NodeID is not initialized
+	// by the driver and it is invalid.
+	NodeID string
+
+	// topologyKeys is the list of keys supported by the driver.
+	// When a driver is initialized on a cluster, it provides a set of topology
+	// keys that it understands (e.g. "company.com/zone", "company.com/region").
+	// When a driver is initialized on a node, it provides the same topology keys
+	// along with values. Kubelet will expose these topology keys as labels
+	// on its own node object.
+	// When Kubernetes does topology aware provisioning, it can use this list to
+	// determine which labels it should retrieve from the node object and pass
+	// back to the driver.
+	// It is possible for different nodes to use different topology keys.
+	// This can be empty if driver does not support topology.
+	// +optional
+	TopologyKeys []string
+}
+```
+
+#### API Lifecycle
+
+A new `CSINodeInfo` API object is created for each node by the Kubelet on
+Kubelet initialization before pods are able to be scheduled. A driver will be
+added with all of its information populated when a driver is registered through
+the plugin registration mechanism. When the driver is unregistered through the
+plugin registration mechanism it's entry will be removed from the `Drivers` list
+in the `CSINodeInfoSpec`.
+
+#### Kubelet Initialization & Migration Annotation
+
+On Kubelet initialization we will also pre-populate an annotation for that
+node's `CSINodeInfo`. The key will be
+`storage.alpha.kubernetes.io/migrated-plugins` and the value will be a list of
+in-tree plugin names that the Kubelet has the migration shim turned on for
+(through feature flags). This must be populated before the Kubelet becomes
+schedulable in order to achieve synchronization described in the "ADC and
+Kubelete CSI/In-tree Sync" section below".
 
 ## Upgrade/Downgrade, Migrate/Un-migrate
-### Kubelet Node Annotation
-When the Kubelet starts, it will check whether the feature gate is
-enabled and if so will annotate its node with `csi.attach.kubernetes.io/gce-pd`
-for example to communicate to the A/D Controller that it supports migration of
-the gce-pd to CSI. The A/D Controller will have to choose on a per-node basis
-whether to use the CSI or the in-tree plugin for attach based on 3 criterea:
-1. Feature gate
-2. Plugin Migratable (Implements MigratablePlugin interface)
-3. Node to Attach to has requisite Annotation
 
-Note: All 3 criteria must be satisfied for A/D controller to Attach/Detach with
-CSI instead of in-tree plugin. For example if a Kubelet has feature on and marks
-the annotation, but the A/D Controller does not have the feature gate flipped,
-we consider this user error and will throw some errors.
+### Feature Flags
 
-This can cause a race between the A/D Controller and the Kubelet annotating, if
-a volume is attached before the Kubelet completes annotation the A/D controller
-could attach using in-tree plugin instead of CSI while the Kubelet is expecting
-a CSI Attach. The same issue exists on downgrade if the Annotation is not
-removed before a volume is attached. An additional consideration is that we
-cannot have the Kubelet downgraded to a version that does not have the
-Annotation removal code.
+ADC and Kubelet use the "same" feature flags, but in reality they are passed in
+to each binary separately. There will be a feature flag per driver as well as
+one for CSIMigration in general.
+
+Kubelet will use its own feature flags to determine whether to use the in-tree
+or csi backend for Kubelet storage lifecycle operations, as well as to add the
+plugins that have the feature flag on to the
+`storage.alpha.kubernetes.io/migrated-plugins` annotation of `CSINodeInfo` for
+the node that Kubelet is running on.
+
+The ADC will also use its own feature flags to help make the determination
+whether to use in-tree or CSI backend for ADC storage lifecycle operations. The
+other component to help determine which backend to use will be outlined below in
+the "ADC and Kubelet CSI/In-tree Sync" section.
+
+### ADC and Kubelet CSI/In-tree Sync
+
+Some plugins have subtly different behavior on both ADC and Kubelet side between
+in-tree and CSI implementations. Therefore it is important that if the ADC is to
+use the in-tree implementation, the Kubelet must as well - and if the ADC is to
+use the CSI Migrated implementation, the Kubelet must as well. Therefore we will
+implement a mechanism to keep the ADC and the Kubelet in sync about the Kubelets
+abilities as well as the feature gates active in each.
+
+In order for the ADC controller to have the requisite information from the
+Kubelet to make informed decisions the Kubelet must propagate the
+`storage.alpha.kubernetes.io/migrated-plugins` annotation information for each
+potentially migrated driver on Kubelet startup and be considered `NotReady`
+until that information is synced to the API server. This gives is the following
+guarantees:
+* If `CSINodeInfo` for the node does not exist, then ADC can infer the Kubelet
+  is not at a version with migration logic and should therefore fall-back to
+  in-tree implementation
+* If `CSINodeInfo` exists, and `storage.alpha.kubernetes.io/migrated-plugins`
+  doesn't include the plugin name, then ADC can infer Kubelet has migration
+  logic however the Feature Flag for that particular plugin is `off` and the ADC
+  should therefore fall-back to in-tree storage implementation
+* If `CSINodeInfo` exists, and `storage.alpha.kubernetes.io/migrated-plugins`
+  does include the plugin name, then ADC can infer Kubelet has migration logic
+  and the Feature Flag for that particular plugin is `on` and the ADC should
+  therefore use the csi-plugin migration implementation
+* If `CSINodeInfo` exists, and `storage.alpha.kubernetes.io/migrated-plugins`
+  does include the plugin name but the ADC feature flags for that driver are off
+  (`in-tree`), then an error should be thrown notifying users that Kubelet
+  requested `csi-plugin` volume plugin mechanism but it was not specified on the
+  ADC
+
+In each of these above cases, the decision the ADC makes to use in-tree or csi
+migration implemtnation will be mirror the Kubelets logic therefore guaranteeing
+the entire lifecycle of a volume from controller to Kubelet will be done with
+the same implementation.
 
 ### Node Drain Requirement
+
 We require node's to be drained whenever the Kubelet is Upgrade/Downgraded or
 Migrated/Unmigrated to ensure that the entire volume lifecycle is maintained
 inside one code branch (CSI or In-tree). This simplifies upgrade/downgrade
 significantly and reduces chance of error and races.
 
 ### Upgrade/Downgrade Migrate/Unmigrate Scenarios
+
 For upgrade, starting from a non-migrated cluster you must turn on migration for
-A/D Controller first, then drain your node before turning on migration for the
+ADC first, then drain your node before turning on migration for the
 Kubelet. The workflow is as follows:
-1. A/D Controller and Kubelet are both not migrated
-2. A/D Controller restarted and migrated (flags flipped)
-3. A/D Controller continues to use in-tree code for this node b/c node
-   annotation doesn't exist
-4. Node drained and made unschedulable. All volumes unmounted/detached with in-tree code
-5. Kubelet restarted and migrated (flags flipped)
-6. Kubelet annotates node to tell A/D controller this node has been migrated
-7. Kubelet is made schedulable
-8. Both A/D Controller & Kubelet Migrated, node is in "fresh" state so all new
+1. ADC and Kubelet are both not migrated
+2. ADC restarted and migrated (flags flipped)
+3. ADC continues to use in-tree code for this node b/c
+   `storage.alpha.kubernetes.io/migrated-plugins` does NOT include the plugin
+   name
+4. Node drained and made unschedulable. All volumes unmounted/detached with
+   in-tree code
+6. Kubelet restarted and migrated (flags flipped)
+7. Kubelet updates CSINodeInfo node to tell ADC (without informer) whether each
+   node/driver has been migrated by adding the plugin to the
+   `storage.alpha.kubernetes.io/migrated-plugins` annotation
+8. Kubelet is made schedulable
+9. Both ADC & Kubelet Migrated, node is in "fresh" state so all new
    volumes lifecycle is CSI
 
 For downgrade, starting from a fully migrated cluster you must drain your node
 first, then turn off migration for your Kubelet, then turn off migration for the
-A/D Controller. The workflow is as follows:
-1. A/D Controller and Kubelet are both migrated
-2. Kubelet drained and made unschedulable, all volumes unmounted/detached with CSI code
+ADC. The workflow is as follows:
+1. ADC and Kubelet are both migrated
+2. Kubelet drained and made unschedulable, all volumes unmounted/detached with
+   CSI code
 3. Kubelet restarted and un-migrated (flags flipped)
-4. Kubelet removes node annotation to tell A/D Controller this node is not
-   migrated. In case kubelet does not have annotation removal code, admin must
-   remove the annotation manually.
+4. Kubelet removes the plugin in question to
+   `storage.alpha.kubernetes.io/migrated-plugins`. In case kubelet does not have
+   `storage.alpha.kubernetes.io/migrated-plugins` update code, admin must update
+   the field manually.
 5. Kubelet is made schedulable.
 5. At this point all volumes going onto the node would be using in-tree code for
-   both A/D Controller(b/c of annotation) and Kublet
-6. Restart and un-migrate A/D Controller
+   both ADC(b/c of annotation) and Kublet
+6. Restart and un-migrate ADC
 
 With these workflows a volume attached with CSI will be handled by CSI code for
 its entire lifecycle, and a volume attached with in-tree code will be handled by
 in-tree code for its entire lifecycle.
 
 ## Cloud Provider Requirements
+
 There is a push to remove CloudProvider code from kubernetes.
 
 There will not be any general auto-deployment mechanism for ALL CSI drivers
@@ -322,19 +564,40 @@ And at this point users doing their own deployment and not installing the GCE PD
 CSI driver encounter an error.
 
 ## Testing
-### Standard
-Good news is that all “normal functionality” can be tested by simply bringing up
-a cluster with “migrated” drivers and running the existing e2e tests for that
-driver. We will create CI jobs that run in this configuration for each new
-volume plugin
 
-### Migration/Non-migration (Upgrade/Downgrade)
-Write tests were in a normal workflow of attach/mount/unmount/detach, we have
-any one of these operations actually happen with the old volume plugin, not the
-CSI one This makes sure that the workflow is resiliant to rollback at any point
-in time.
+### Migration Shim Testing
+Run all existing in-tree plugin driver tests
+* If migration is on for that plugin, add infrastructure piece that inspects CSI
+  Drivers logs to make sure that the driver is servicing the operations
+* Also observer that none of the in-tree code is being called
 
-### Version Skew
-Master/Node can have up to 2 version skw. Master must always be equal or higher
-version than the node. It should be covered by the tests in
-Migration/Non-migration section.
+Additionally, we must test that a PV created from migrated dynamic provisioning
+is identical to the PV created from the in-tree plugin
+
+This should cover all use cases of volume operations, including volume
+reconstruction. 
+
+### Upgrade/Downgrade/Skew Testing
+We need to have test clusters brought up that have different feature flags
+enabled on different components (ADC and Kubelet). Once these feature flag skew
+configurations are brought up the test itself would have to know what
+configuration it’s running in and validate the expected result.
+
+Configurations to test:
+
+| ADC               | Kubelet                                            | Expected Result                                                          |
+|-------------------|----------------------------------------------------|--------------------------------------------------------------------------|
+| ADC Migration On  | Kubelet Migration On                               | Fully migrated - result should be same as “Migration Shim Testing” above |
+| ADC Migration On  | Kubelet Migration Off (or Kubelet version too low) | No calls made to driver. All operations serviced by in-tree plugin       |
+| ADC Migration Off | Kubelet Migration On                               | Not supported config - Undefined behavior                                |
+| ADC Migration Off | Kubelet Migration Off                              | No calls made to driver. All operations service by in-tree plugin        |
+
+### CSI Driver Feature Parity Testing
+
+We will need some way to automatically qualify drivers have feature parity
+before promoting their migration features to Beta (on by default). 
+
+This is as simple as on the feature flags and run through our “Migration Shim
+Testing” tests. If the driver passes all of them then they have parity. If not,
+we need to revisit in-tree plugin tests and make sure they test the entire suite
+of possible tests.

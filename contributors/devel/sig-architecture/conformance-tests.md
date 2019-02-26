@@ -122,7 +122,7 @@ export KUBERNETES_CONFORMANCE_TEST=y
 kubetest --provider=skeleton --test --test_args="--ginkgo.focus=\[Conformance\]"
 
 # Option B: run parallel conformance tests first, then serial conformance tests serially
-GINKGO_PARALLEL=y kubetest --provider=skeleton --test --test_args="--ginkgo.focus=\[Conformance\] --ginkgo.skip=\[Serial\]"
+kubetest --ginkgo-parallel --provider=skeleton --test --test_args="--ginkgo.focus=\[Conformance\] --ginkgo.skip=\[Serial\]"
 kubetest --provider=skeleton --test --test_args="--ginkgo.focus=\[Serial\].*\[Conformance\]"
 ```
 

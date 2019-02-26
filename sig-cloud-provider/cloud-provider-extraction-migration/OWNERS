@@ -2,9 +2,9 @@
 
 reviewers:
   - cheftako
-  - d-nishi
+  - andrewsykim
 approvers:
   - cheftako
-  - d-nishi
+  - andrewsykim
 labels:
   - sig/cloud-provider

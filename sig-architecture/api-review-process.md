@@ -71,7 +71,7 @@ Ideally, those whose API review priority is shifted in a release-impacting way w
         * Any new functionality added to a stable API as defined by SIG Architecture and the API Reviewers
     * The existing [API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md) (and [API change guidelines](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api_changes.md), if applicable) have been read and followed.
 
-1. Request an API review for a PR or issue in the kubernetes org by adding the `api-review` label with a `/api-review` comment (the `/api-review` command is in the process of being built... if it is not available, request a review by mentioning `@kubernetes/api-reviewers` in a PR or issue and asking to have it added to the API review backlog).
+1. Request an API review for a PR or issue in the kubernetes org by adding the `api-review` label with a `/label api-review` comment (requests can be cancelled with a `/remove-label api-review` comment)
     * If this is a review of a PR implementing an already-reviewed design/KEP, reference the approved KEP and note any differences between the approved design and the implementation.
 
 2. API reviews are tracked in a project board at https://github.com/orgs/kubernetes/projects/13
@@ -111,16 +111,6 @@ Ideally, those whose API review priority is shifted in a release-impacting way w
     * Rejected:
       * If completely rejected, e.g. "please do this work outside the Kubernetes org" - an explanation of why the change was rejected - appeals can be requested from the api-approvers mailing list ([kubernetes-api-reviewers@googlegroups.com](mailto:kubernetes-api-reviewers@googlegroups.com)) where the moderator will coordinate a follow-up review.  If that request results in another rejection, there is no further appeal.
       * The rejected issue is archived in the review project board, and the `api-review` label is removed.
-
-# Open improvements
-
-To enable this process, the following needs to be done:
-
-* Add `/api-review` and `/api-review cancel` bot commands to allow any org member to request or cancel a request for an API review
-
-To improve visibility and understanding of this process, the following would be helpful:
-
-* Add bot logic to automatically leave a comment in any PR flagged with `kind/api-change` outlining the prereqs and steps for requesting a review
 
 ## Review lifecycle timing
 

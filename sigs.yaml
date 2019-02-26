@@ -197,7 +197,7 @@ sigs:
     - name: application
       description: Application metadata descriptor CRD
       owners:
-      - https://github.com/kubernetes-sigs/application/blob/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/application/master/OWNERS
   - name: Architecture
     dir: sig-architecture
     mission_statement: >
@@ -782,11 +782,11 @@ sigs:
     - name: cloud-provider-vsphere
       owners:
       - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
-    - name: cloud-provider-extraction
+    - name: cloud-provider-extraction-migration
       owners:
-      - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
       meetings:
-      - description: Weekly Sync removing the in-tree cloud providers led by @cheftako and @d-nishi
+      - description: Weekly Sync removing the in-tree cloud providers led by @cheftako and @andrewsykim
         day: Thursday
         time: "13:30"
         tz: "PT (Pacific Time)"
@@ -855,7 +855,7 @@ sigs:
       day: Monday
       time: "10:00"
       tz: "PT (Pacific Time)"
-      frequency: weekly
+      frequency: biweekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/10dq54Fd-xa6P5Iy3p46VY1YTFqugGMd1PygDIpuRw6c/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
@@ -1871,9 +1871,9 @@ sigs:
     subprojects:
     - name: kubernetes-csi
       owners:
-      - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-cinder/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-flex/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-host-path/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-image-populator/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-iscsi/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-common/master/OWNERS
