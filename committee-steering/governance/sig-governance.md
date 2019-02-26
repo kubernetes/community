@@ -74,7 +74,7 @@ Subproject Owner Role.  (this different from a SIG or Organization Member).
 ### Security Contact
 
 - Security Contact
-  - *MUST* be a contact point for the Product Security Team to reach out to for
+  - *MUST* be a contact point for the Product Security Committee to reach out to for
     triaging and handling of incoming issues
   - *MUST* accept the [Embargo Policy]
   - Defined in `SECURITY_CONTACTS` files, this is only relevant to the root file in
