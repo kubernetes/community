@@ -137,7 +137,7 @@ There are two recommended ways of building Kubernetes, and the choice of one or 
 
 Official releases are built using Docker containers. To build Kubernetes using
 Docker please follow [these
-instructions](http://releases.k8s.io/HEAD/build/README.md).
+instructions][these-instructions].
 
 ### Building Kubernetes on a local OS/shell environment
 
@@ -161,7 +161,7 @@ Please [install it locally][etcd-install] to run local integration tests. Also, 
 Options for local installation:
   1. Install inside kubernetes root. Use `hack/install-etcd.sh`
   2. Install manually.  
-    Find version with `grep -E "image.*etcd" cluster/gce/manifests/etcd.manifest` and install with you OS package manager.
+    Find version with `grep -E "image.*etcd" cluster/gce/manifests/etcd.manifest` and install with your OS package manager.
 
 #### Go
 
@@ -210,7 +210,9 @@ the docs on [using godep to manage dependencies](sig-architecture/godep.md).
 
 ##### Import paths
 
-Kubernetes import paths are of the form `k8s.io/X`. Those paths map to `github.com/kubernetes/kubernetes/staging/X` whose code is placed in the staging area directory `staging/src/k8s.io`. Aditionally, that code is found by the compiler because of the symlinks located at `vendor/k8s.io`. For more information,
+Kubernetes import paths are of the form `k8s.io/X`. Those paths map to `github.com/kubernetes/kubernetes/staging/X` whose code is placed in the staging area directory `staging/src/k8s.io`.
+
+Aditionally, that code is found by the compiler because of the symlinks located at `vendor/k8s.io`. For more information,
 see [staging/README.md].
 
 
@@ -237,5 +239,6 @@ see [Build with Bazel].
 [official git documentation]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [github-workflow.md]: https://github.com/kubernetes/community/blob/master/contributors/guide/github-workflow.md
 [staging/README.md]: https://git.k8s.io/kubernetes/staging/README.md
+[these-instructions]: https://git.k8s.io/kubernetes/build/README.md
 
 [github-cheat-sheet]: https://github.com/kubernetes/community/blob/master/devel/github-cheat-sheet.md
