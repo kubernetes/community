@@ -109,12 +109,13 @@ These are listed as "Communications Managers" in YouTube
 
 #### Moderators (9)
 
+- Bob Killen (@mrbobbytables) - ET
 - Ihor Dvoretskyi (@idvoretskyi) - EET
 - Jaice Singer DuMars (@jdumars) - PT
+- Jeffrey Sica (@jeefy) - ET
 - Jorge Castro (@castrojo) - ET
+- Katharine Berry (@Katharine) - PT
 - Paris Pittman (@parispittman) - PT
-- Open
-- Open
 - Open
 - Open
 
