@@ -137,13 +137,13 @@ code base. As such they are neither good fits for SIGs or Working Groups.
 An example of such a topic might be continuous delivery to Kubernetes. 
 
 Though their central goal is not a a deliverable piece of work, as contributing
-members of the community working groups are expected to work with SIGs
+members of the community user groups are expected to work with SIGs
 to either identify friction or usability issues that need to be addressed,
 or to provide or improve documentation in their area of expertise. However
 these activities are covered under general code contributions to the relevant
 SIGs (e.g. SIG Docs) rather than as part of the user group. These contributions
 are expected to be more incremental and ad-hoc versus the more targeted 
-output of a working group.
+output of a user group.
 
 User groups function as a centralized resource to facilitate communication
 and discovery of information related to the topic of the user group. User
