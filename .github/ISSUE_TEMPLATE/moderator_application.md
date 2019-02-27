@@ -2,7 +2,9 @@
 name: Community Moderator Request
 about: Request moderator priviledges on a Kubernetes property
 title: 'REQUEST: New moderator for <your-GH-handle> of <k8s property>'
-labels: area/community-management
+labels:
+- area/community-management
+- sig/contributor-experience
 assignees: ''
 
 ---
