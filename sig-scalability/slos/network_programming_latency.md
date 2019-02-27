@@ -4,7 +4,11 @@
 
 | Status | SLI | SLO |
 | --- | --- | --- |
-| __WIP__ | Latency of programming a single (e.g. iptables on a given node) in-cluster load balancing mechanism, measured from when service spec or list of its `Ready` pods change to when it is reflected in load balancing mechanism, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile of (99th percentiles across all programmers (e.g. iptables)) per cluster-day <= X |
+| __WIP__ | Latency of programming in-cluster load balancing mechanism (e.g. iptables), measured from when service spec or list of its `Ready` pods change to when it is reflected in load balancing mechanism, measured as 99th percentile over last 5 minutes aggregated across all programmers<sup>[1](#footnote1)</sup> | In default Kubernetes installation, 99th percentile per cluster-day <= X |
+
+<a name="footnote1">[1\]</a>Aggregation across all programmers means that all
+samples from all programmers go into one large pool, and SLI is percentile
+from all of them.
 
 ### User stories
 - As a user of vanilla Kubernetes, I want some guarantee how quickly new backends
@@ -27,12 +31,11 @@ but rejected due to being application specific, and thus introducing SLO would
 be impossible.
 
 ### Caveats
-- The SLI is formulated for a single "programmer" (e.g. iptables on a single
-node), even though that value itself is not very interesting for the user.
-In case there are multiple programmers in the cluster, the aggregation across
-them is done only at the SLO level (and only that gives a value that is somehow
-interesting for the user). The reason for doing it this is feasibility for
-efficiently computing that:
+- The SLI is aggregated across all "programmers", which is what is interesting
+for the end-user. It may happen that small percentage of programmers are
+completely unresponsive (if all others are fast), but that is desired - we need
+to allow slower/unresponsive nodes because at some scale it will be happening.
+The reason for doing it this way is feasibility for efficiently computing that:
   - if we would be doing aggregation at the SLI level (i.e. the SLI would be
     formulated like "... reflected in in-cluster load-balancing mechanism and
     visible from 99% of programmers"), computing that SLI would be extremely
@@ -40,9 +43,6 @@ efficiently computing that:
     Ready state is reflected, we would have to know when exactly it was reflected
     in 99% of programmers (e.g. iptables). That requires tracking metrics on
     per-change base (which we can't do efficiently).
-  - we admit that the SLO is a bit weaker in that form (i.e. it doesn't necessary
-    force that a given change is reflected in 99% of programmers with a given
-		99th percentile latency), but it's close enough approximation.
 
 ### How to measure the SLI.
 The method of measuring this SLI is not obvious, so for completeness we describe
