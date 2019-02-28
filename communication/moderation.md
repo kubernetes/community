@@ -23,7 +23,7 @@ Moderators _MUST_:
 - Make themselves available during their primary working hours for their given
   timezone.
 - Communicate their availability to their peer moderators when appropriate when
-  travelling or becoming unavailable for a period of time
+  traveling or becoming unavailable for a period of time
 - Understand that volunteering for this role might mean an occasional personal
   time commitment or offhour duty.
 
@@ -147,7 +147,7 @@ following procedures:
     subproject
   - If appropriate, the next level of people to contact are the [Code of Conduct
     Committee]
-  - If appropruate, the next level of people to contact are the [Steering
+  - If appropriate, the next level of people to contact are the [Steering
     Committee]
 - Moderators will have access to a private document with contact information of
   the appropriate people.
@@ -206,3 +206,4 @@ guidelines:
 [Code of Conduct Committee]: /committee-code-of-conduct 
 [Steering Committee]: /committee-steering
 [moderator request]: https://github.com/kubernetes/community/issues/new/choose
+[moderator template]: https://git.k8s.io/community/.github/ISSUE_TEMPLATE/moderator_application.md

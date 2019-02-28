@@ -1,6 +1,6 @@
 ---
 name: Community Moderator Request
-about: Request moderator priviledges on a Kubernetes property
+about: Request moderator privileges on a Kubernetes property
 title: 'REQUEST: New moderator for <your-GH-handle> of <k8s property>'
 labels: area/community-management, sig/contributor-experience
 assignees: ''
@@ -8,18 +8,18 @@ assignees: ''
 ---
 
 ### GitHub Username
-e.g. (at)example_user
+e.g. (at)github_user
 
 ### Property you'd like to Moderate
 e.g. discuss.k8s.io, kubernetes-dev
 
 ### Username on Property Requested
-e.g. (at)example_user
+e.g. (at)property_user
 
 ### Requirements
 
 - [ ] I am a Kubernetes Org member already
-- [ ] I have read and will abide by the policies mentioned in the [Moderation Guidelines]((https://git.k8s.io/community/communication/moderation.md))
+- [ ] I have read and will abide by the policies mentioned in the [Moderation Guidelines](https://git.k8s.io/community/communication/moderation.md)
 - [ ] I have two sponsors that meet the sponsor requirements listed in the moderator guidelines
 - [ ] I have spoken to my sponsors ahead of this application, and they have agreed to sponsor my application
 
@@ -31,5 +31,5 @@ e.g. (at)example_user
 ### List of qualifications for this position
 
 - Prior moderation experience
-- Links to public discusssions showing your moderation experience (if available)
+- Links to public discussions showing your moderation experience (if available)
 - Any other qualifications
