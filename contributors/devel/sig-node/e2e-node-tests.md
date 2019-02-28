@@ -148,6 +148,30 @@ test in parallel against different instances of the same image.
 make test-e2e-node REMOTE=true INSTANCE_PREFIX="my-prefix"
 ```
 
+## Run tests using a custom image config
+
+This is useful if you want to test out different runtime configurations. First, make a local
+(temporary) copy of the base image config from the test-infra repo:
+https://github.com/kubernetes/test-infra/tree/master/jobs/e2e_node
+
+Make your desired modifications to the config, and update data paths to be absolute paths to the
+relevant files on your local machine (e.g. prepend your home directory path to each). For example:
+
+```diff
+ images:
+   cos-stable:
+     image_regex: cos-stable-60-9592-84-0
+     project: cos-cloud
+-    metadata: "user-data</go/src/github.com/containerd/cri/test/e2e_node/init.yaml,containerd-configure-sh</go/src/github.com/containerd/cri/cluster/gce/configure.sh,containerd-extra-init-sh</go/src/github.com/containerd/cri/test/e2e_node/gci-init.sh,containerd-env</workspace/test-infra/jobs/e2e_node/containerd/cri-master/env,gci-update-strategy=update_disabled"
++    metadata: "user-data</home/tallclair/go/src/github.com/containerd/cri/test/e2e_node/init.yaml,containerd-configure-sh</home/tallclair/go/src/github.com/containerd/cri/cluster/gce/configure.sh,containerd-extra-init-sh</home/tallclair/go/src/github.com/containerd/cri/test/e2e_node/gci-init.sh,containerd-env</home/tallclair/workspace/test-infra/jobs/e2e_node/containerd/cri-master/env,gci-update-strategy=update_disabled"
+```
+
+Finally, run the tests with your custom config:
+
+```sh
+make test-e2e-node REMOTE=true IMAGE_CONFIG_FILE="<local file>" [...]
+```
+
 # Additional Test Options for both Remote and Local execution
 
 ## Only run a subset of the tests
