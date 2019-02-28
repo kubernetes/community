@@ -59,19 +59,19 @@ be able to effectively moderate).
 ### Regional category moderators
 
 - [Chinese] (3)
-    - Open
-    - Open
-    - Open
+    - Peter (Xiang Peng) Zhao (@xiangpengzhao) - CST
+    - Yang Li (@idealhack) - CST
+    - Puja Abbassi (@puja108) - CET
 - [German] (3)
-    - Open
-    - Open
-    - Open
+    - Puja Abbassi (@puja108) - CET
+    - Michael Hausenblas (@mhausenblas) - WET
+    - Daniel Holbach (@dholbach) - CET
 - [Italian] (3)
-    - Open
+    - Jacopo Nardiello (@jnardiello) - CET
     - Open
     - Open
 - [Ukrainian] (3)
-    - Open
+    - Ihor Dvoretskyi (@idvoretskyi) - EET
     - Open
     - Open
 
