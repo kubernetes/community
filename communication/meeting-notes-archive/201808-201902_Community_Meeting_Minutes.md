@@ -1435,7 +1435,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         **? **Shoutouts this week (Check in #shoutouts on slack) **?**
 
         *   pwittrock - Shoutout to @alexismp @jeefy and @mrbobbytables for helping me with my All Things Open Kubebuilder workshop.  Thank you so much!
-        *   AishSundar - shoutout to @nikopen for automating the Issues and PR spreadsheet for Bug Triage and CI Signal for 1.13 ! Thanks for staying on top of this and accomodating the feature requests
+        *   AishSundar - shoutout to @nikopen for automating the Issues and PR spreadsheet for Bug Triage and CI Signal for 1.13 ! Thanks for staying on top of this and accommodating the feature requests
         *   jberkus - to @justinsb for splitting out our long-running upgrade tests so that they actually complete
         *   spiffxp - Congrats to @bentheelder for creating a PR that deletes over 3 million lines of code [https://github.com/kubernetes-sigs/kustomize/pull/503](https://github.com/kubernetes-sigs/kustomize/pull/503)
             *   Shoutouts to @ixdy for setting things up so we can use shorter URL's https://testgrid.k8s.io and [https://gubernator.k8s.io](https://gubernator.k8s.io)
