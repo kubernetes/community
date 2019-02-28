@@ -13,7 +13,7 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 The [charter](charter.md) defines the scope and governance of the Architecture Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 19:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 19:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
 
@@ -46,11 +46,6 @@ The following subprojects are owned by sig-architecture:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
-- **kep-adoption-and-reviews**
-  - Description: [Described below](#kep-adoption-and-reviews)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/enhancements/master/keps/OWNERS
 - **code-organization**
   - Description: [Described below](#code-organization)
   - Owners:
@@ -86,10 +81,6 @@ Note that the links to display team membership will only work if you are a membe
 
 <!-- BEGIN CUSTOM CONTENT -->
 
-## Additional materials
-
-* [Charter](charter.md)
-
 # Details about SIG-Architecture sub-projects
 
 ## Architecture and API Governance
@@ -114,15 +105,6 @@ Reviewing, approving, and driving changes to the conformance test suite; reviewi
 * [Test Guidelines](/contributors/devel/sig-architecture/conformance-tests.md)
 
 Please see the [Conformance Test Review](https://github.com/kubernetes-sigs/architecture-tracking/projects/1) tracking board to follow the work for this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS) file if you are interested in joining this effort. There is a lot of overlap with the [Kubernetes Software Conformance Working Group](https://github.com/cncf/k8s-conformance/blob/master/README-WG.md) with this sub project as well. The github group [cncf-conformance-wg](https://github.com/orgs/kubernetes/teams/cncf-conformance-wg) enumerates the folks on this working group. Look for the `area/conformance` label in the kubernetes repositories to mark [issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fconformance) and [PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+is%3Aopen+label%3Aarea%2Fconformance) 
-
-## KEP Adoption and Reviews
-
-Develop and drive technical enhancement review process
-
-* [KEP Process](https://github.com/kubernetes/community/blob/master/keps/0001-kubernetes-enhancement-proposal-process.md)
-* [Template](https://git.k8s.io/enhancements/keps/YYYYMMDD-kep-template.md)
-
-Please see the [KEP Tracking](https://github.com/kubernetes-sigs/architecture-tracking/projects/2) board to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/community/blob/master/keps/OWNERS) file if you are interested in joining this effort.
 
 ## Code Organization
 
