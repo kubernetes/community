@@ -205,4 +205,4 @@ guidelines:
 [stages of burnout]: https://opensource.com/business/15/12/avoid-burnout-live-happy
 [Code of Conduct Committee]: /committee-code-of-conduct 
 [Steering Committee]: /committee-steering
-[moderator request]: /.github/MODERATOR_APPLICATION.md
+[moderator request]: https://github.com/kubernetes/community/issues/new/choose
