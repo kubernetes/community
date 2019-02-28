@@ -1,0 +1,28 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "schemes.go",
+        "tlds.go",
+        "tlds_pseudo.go",
+        "xurls.go",
+    ],
+    importmap = "k8s.io/test-infra/vendor/mvdan.cc/xurls/v2",
+    importpath = "mvdan.cc/xurls/v2",
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "package-srcs",
+    srcs = glob(["**"]),
+    tags = ["automanaged"],
+    visibility = ["//visibility:private"],
+)
+
+filegroup(
+    name = "all-srcs",
+    srcs = [":package-srcs"],
+    tags = ["automanaged"],
+    visibility = ["//visibility:public"],
+)
