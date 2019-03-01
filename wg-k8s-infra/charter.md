@@ -127,5 +127,5 @@ time.
 [lazy consensus]: http://en.osswiki.info/concepts/lazy_consensus
 
 [kubernetes-dev@]: https://groups.google.com/forum/#!forum/kubernetes-dev
-[wg-k8s-infra@]: https://groups.google.com/forum/#!forum/k8s-infra-team
+[wg-k8s-infra@]: https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra
 [kubernetes/k8s.io]: https://git.k8s.io/k8s.io
