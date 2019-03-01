@@ -1,19 +1,24 @@
 # Community Moderators
 
-The following people are responsible for moderating/administrating Kubernetes communication channels and their home time zone. 
-See our [moderation guidelines](./moderation.md) for policies and recommendations.
+The following people are responsible for moderating/administrating Kubernetes
+communication channels and their home time zone. See our
+[moderation guidelines] for policies and recommendations.
 
 ## Mailing Lists
 
 ### kubernetes-dev
 
-#### Administrators (3)
+#### Administrators
+
+Administrator seats: 3
 
 - Paris Pittman  - PT
-- Aaron Crickenberger - PT 
+- Aaron Crickenberger - PT
 - Open
 
-#### Primary Moderators (7)
+#### Primary Moderators
+
+Primary moderators seats: 7
 
 - Jorge Castro (@castrojo) - ET
 - Jaice Singer DuMars - (@jdumars) - PT
@@ -23,7 +28,9 @@ See our [moderation guidelines](./moderation.md) for policies and recommendation
 - Open
 - Open
 
-#### Moderators Pro Tempore (5)
+#### Moderators Pro Tempore
+
+Moderators pro tempore seats: 5
 
 - Open
 - Open
@@ -34,48 +41,51 @@ See our [moderation guidelines](./moderation.md) for policies and recommendation
 ## GitHub
 
 Note that this team is not only responsible for the project's Github
-administration, but also moderation of issues, PRs, etc. 
+administration, but also moderation of issues, PRs, etc.
 
-- [GitHub Administration
-  Team](https://github.com/kubernetes/community/tree/master/github-management#github-administration-team)
+- [GitHub Administration Team]
 
-## discuss.kubernetes.io
+## Discuss
 
 ### Administrators
 
+Administrators seats: 4
+
 - Paris Pittman (@parispittman) - PT
-- Jorge Castro (@castrojo) - ET 
+- Jorge Castro (@castrojo) - ET
 - Bob Killen (@mrbobbytables) - ET
 - Jeffrey Sica (@jeefy) - ET
 
 Note, due to how the software is designed, dedicated moderators are not required
-for discuss, the [trust
-system](https://blog.discourse.org/2018/06/understanding-discourse-trust-levels/)
-in place allows for self moderation. In this case administrators act as
-exception handlers. Regional moderators are required for language/cultural
-reasons, (ie. we can't expect a community member who doesn't speak a language to
-be able to effectively moderate). 
+for discuss, the [trust system] in place allows for self moderation. In this
+case administrators act as exception handlers. Regional moderators are required
+for language/cultural reasons, (ie. we can't expect a community member who
+doesn't speak a language to be able to effectively moderate).
 
-### Regional category moderators
+### Regional Category Moderators
 
-- [Chinese] (3)
+Regional category moderators seats (per category): 3
+
+- [Chinese]
     - Peter (Xiang Peng) Zhao (@xiangpengzhao) - CST
     - Yang Li (@idealhack) - CST
     - Puja Abbassi (@puja108) - CET
-- [German] (3)
+- [German]
     - Puja Abbassi (@puja108) - CET
     - Michael Hausenblas (@mhausenblas) - WET
     - Daniel Holbach (@dholbach) - CET
-- [Italian] (3)
+- [Italian]
     - Jacopo Nardiello (@jnardiello) - CET
     - Open
     - Open
-- [Ukrainian] (3)
+- [Ukrainian]
     - Ihor Dvoretskyi (@idvoretskyi) - EET
     - Open
     - Open
 
-## YouTube Channel (9)
+## YouTube Channel
+
+Youtube owners seats: 2
 
 ### Owners
 
@@ -83,6 +93,8 @@ be able to effectively moderate).
 - Sarah Novotny (@sarahnovotny) - PT
 
 ### Primary Moderators
+
+Moderators seats: 10
 
 - Ihor Dvoretskyi (@idvoretskyi) - EET
 - Jeffrey Sica (@jeefy) - ET
@@ -93,7 +105,9 @@ be able to effectively moderate).
 - Open
 - Open
 
-### Moderators Pro Tempore (3)
+### Moderators Pro Tempore
+
+Moderators pro tempore seats: 3
 
 These are listed as "Communications Managers" in YouTube
 
@@ -103,11 +117,15 @@ These are listed as "Communications Managers" in YouTube
 
 ## Slack
 
-#### Owner (1)
+#### Owner
+
+Owners seats: 1
 
 - Chris Aniszczyk (@caniszczyk) - CT (non-admin role)
 
-#### Moderators (9)
+#### Moderators
+
+Moderators seats: 9
 
 - Bob Killen (@mrbobbytables) - ET
 - Ihor Dvoretskyi (@idvoretskyi) - EET
@@ -119,7 +137,9 @@ These are listed as "Communications Managers" in YouTube
 - Open
 - Open
 
-#### Moderators Pro Tempore (9)
+#### Moderators Pro Tempore
+
+Moderators pro tempore seats: 9
 
 - Open
 - Open
@@ -133,13 +153,17 @@ These are listed as "Communications Managers" in YouTube
 
 ## Zoom
 
+Administrators seats: 4
+
 - Paris Pittman (@parispittman) - PT
 - Jorge Castro (@castrojo) - ET
 - Open
 - Open
 - License and main account controlled by the CNCF
 
-
+[moderation guidelines]: ./moderation.md
+[GitHub Administration Team]: https://git.k8s.io/community/github-management#github-administration-team
+[trust system]: https://blog.discourse.org/2018/06/understanding-discourse-trust-levels/
 [Chinese]: https://discuss.kubernetes.io/t/about-the-chinese-category/2881
 [German]: https://discuss.kubernetes.io/t/about-the-german-category/3152
 [Italian]: https://discuss.kubernetes.io/t/about-the-italian-category/2917/2
