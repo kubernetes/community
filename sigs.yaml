@@ -958,10 +958,16 @@ sigs:
       day: Wednesday
       time: "9:30"
       tz: "PT (Pacific Time)"
-      frequency: weekly
+      frequency: weekly - except fourth Wednesday every month
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
       recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
+    - description: APAC SIG Meeting
+      day: Wednesday
+      time: "20:00"
+      tz: "PT (Pacific Time)"
+      frequency: monthly - fourth Wednesday every month
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
     contact:
       slack: sig-contribex
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
