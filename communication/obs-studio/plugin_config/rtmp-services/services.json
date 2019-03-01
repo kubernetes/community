@@ -1,0 +1,1465 @@
+{
+    "format_version": 2,
+    "services": [
+        {
+            "name": "Twitch",
+            "common": true,
+            "servers": [
+                {
+                    "name": "Asia: Hong Kong",
+                    "url": "rtmp://live-hkg.twitch.tv/app"
+                },
+                {
+                    "name": "Asia: Seoul, South Korea",
+                    "url": "rtmp://live-sel.twitch.tv/app"
+                },
+                {
+                    "name": "Asia: Singapore",
+                    "url": "rtmp://live-sin.twitch.tv/app"
+                },
+                {
+                    "name": "Asia: Taipei, Taiwan",
+                    "url": "rtmp://live-tpe.twitch.tv/app"
+                },
+                {
+                    "name": "Asia: Tokyo, Japan",
+                    "url": "rtmp://live-tyo.twitch.tv/app"
+                },
+                {
+                    "name": "Australia: Sydney",
+                    "url": "rtmp://live-syd.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Amsterdam, NL",
+                    "url": "rtmp://live-ams.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Berlin, DE",
+                    "url": "rtmp://live-ber.twitch.tv/app"
+                },
+                {
+                    "name": "Europe: Copenhagen, DK",
+                    "url": "rtmp://live-cph.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Frankfurt, DE",
+                    "url": "rtmp://live-fra.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Helsinki, FI",
+                    "url": "rtmp://live-hel.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Lisbon, Portugal",
+                    "url": "rtmp://live-lis.twitch.tv/app"
+                },
+                {
+                    "name": "EU: London, UK",
+                    "url": "rtmp://live-lhr.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Madrid, Spain",
+                    "url": "rtmp://live-mad.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Marseille, FR",
+                    "url": "rtmp://live-mrs.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Milan, Italy",
+                    "url": "rtmp://live-mil.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Paris, FR",
+                    "url": "rtmp://live-cdg.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Prague, CZ",
+                    "url": "rtmp://live-prg.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Stockholm, SE",
+                    "url": "rtmp://live-arn.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Vienna, Austria",
+                    "url": "rtmp://live-vie.twitch.tv/app"
+                },
+                {
+                    "name": "EU: Warsaw, Poland",
+                    "url": "rtmp://live-waw.twitch.tv/app"
+                },
+                {
+                    "name": "NA: Mexico City",
+                    "url": "rtmp://live-qro.twitch.tv/app"
+                },
+                {
+                    "name": "NA: Quebec, Canada",
+                    "url": "rtmp://live-ymq.twitch.tv/app"
+                },
+                {
+                    "name": "NA: Toronto, Canada",
+                    "url": "rtmp://live-yto.twitch.tv/app"
+                },
+                {
+                    "name": "South America: Argentina",
+                    "url": "rtmp://live-eze.twitch.tv/app"
+                },
+                {
+                    "name": "South America: Chile",
+                    "url": "rtmp://live-scl.twitch.tv/app"
+                },
+                {
+                    "name": "South America: Lima, Peru",
+                    "url": "rtmp://live-lim.twitch.tv/app"
+                },
+                {
+                    "name": "South America: Medellin, Colombia",
+                    "url": "rtmp://live-mde.twitch.tv/app"
+                },
+                {
+                    "name": "South America: Rio de Janeiro, Brazil",
+                    "url": "rtmp://live-rio.twitch.tv/app"
+                },
+                {
+                    "name": "South America: Sao Paulo, Brazil",
+                    "url": "rtmp://live-sao.twitch.tv/app"
+                },
+                {
+                    "name": "US Central: Dallas, TX",
+                    "url": "rtmp://live-dfw.twitch.tv/app"
+                },
+                {
+                    "name": "US Central: Denver, CO",
+                    "url": "rtmp://live-den.twitch.tv/app"
+                },
+                {
+                    "name": "US Central: Houston, TX",
+                    "url": "rtmp://live-hou.twitch.tv/app"
+                },
+                {
+                    "name": "US Central: Salt Lake City, UT",
+                    "url": "rtmp://live-slc.twitch.tv/app"
+                },
+                {
+                    "name": "US East: Ashburn, VA",
+                    "url": "rtmp://live-iad.twitch.tv/app"
+                },
+                {
+                    "name": "US East: Atlanta, GA",
+                    "url": "rtmp://live-atl.twitch.tv/app"
+                },
+                {
+                    "name": "US East: Chicago",
+                    "url": "rtmp://live-ord.twitch.tv/app"
+                },
+                {
+                    "name": "US East: Miami, FL",
+                    "url": "rtmp://live-mia.twitch.tv/app"
+                },
+                {
+                    "name": "US East: New York, NY",
+                    "url": "rtmp://live-jfk.twitch.tv/app"
+                },
+                {
+                    "name": "US West: Los Angeles, CA",
+                    "url": "rtmp://live-lax.twitch.tv/app"
+                },
+                {
+                    "name": "US West: Phoenix, AZ",
+                    "url": "rtmp://live-phx.twitch.tv/app"
+                },
+                {
+                    "name": "US West: Portland, Oregon",
+                    "url": "rtmp://live-pdx.twitch.tv/app"
+                },
+                {
+                    "name": "US West: San Francisco, CA",
+                    "url": "rtmp://live-sfo.twitch.tv/app"
+                },
+                {
+                    "name": "US West: San Jose, CA",
+                    "url": "rtmp://live-sjc.twitch.tv/app"
+                },
+                {
+                    "name": "US West: Seattle, WA",
+                    "url": "rtmp://live-sea.twitch.tv/app"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "max video bitrate": 6000,
+                "max audio bitrate": 160,
+                "x264opts": "scenecut=0"
+            }
+        },
+        {
+            "name": "YouTube / YouTube Gaming",
+            "common": true,
+            "servers": [
+                {
+                    "name": "Primary YouTube ingest server",
+                    "url": "rtmp://a.rtmp.youtube.com/live2"
+                },
+                {
+                    "name": "Backup YouTube ingest server",
+                    "url": "rtmp://b.rtmp.youtube.com/live2?backup=1"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "max video bitrate": 51000,
+                "max audio bitrate": 160
+            }
+        },
+        {
+            "name": "Smashcast",
+            "common": true,
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://live.hitbox.tv/push"
+                },
+                {
+                    "name": "EU-North: Amsterdam, Netherlands",
+                    "url": "rtmp://live.ams.hitbox.tv/push"
+                },
+                {
+                    "name": "EU-West: Paris, France",
+                    "url": "rtmp://live.cdg.hitbox.tv/push"
+                },
+                {
+                    "name": "EU-South: Milan, Italia",
+                    "url": "rtmp://live.mxp.hitbox.tv/push"
+                },
+                {
+                    "name": "Russia: Moscow",
+                    "url": "rtmp://live.dme.hitbox.tv/push"
+                },
+                {
+                    "name": "US-East: New York",
+                    "url": "rtmp://live.jfk.hitbox.tv/push"
+                },
+                {
+                    "name": "US-West: San Francisco",
+                    "url": "rtmp://live.sfo.hitbox.tv/push"
+                },
+                {
+                    "name": "US-West: Los Angeles",
+                    "url": "rtmp://live.lax.hitbox.tv/push"
+                },
+                {
+                    "name": "South America: Sao Paulo, Brazil",
+                    "url": "rtmp://live.gru.hitbox.tv/push"
+                },
+                {
+                    "name": "Asia: Singapore",
+                    "url": "rtmp://live.sin.hitbox.tv/push"
+                },
+                {
+                    "name": "Oceania: Sydney, Australia",
+                    "url": "rtmp://live.syd.hitbox.tv/push"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "profile": "high",
+                "max video bitrate": 3500,
+                "max audio bitrate": 320
+            }
+        },
+        {
+            "name": "Mixer.com - FTL",
+            "common": true,
+            "servers": [
+                {
+                    "name": "US: Dallas, TX",
+                    "url": "ingest-dal.mixer.com"
+                },
+                {
+                    "name": "US: San Jose, CA",
+                    "url": "ingest-sjc.mixer.com"
+                },
+                {
+                    "name": "US: Seattle, WA",
+                    "url": "ingest-sea.mixer.com"
+                },
+                {
+                    "name": "US: Washington DC",
+                    "url": "ingest-wdc.mixer.com"
+                },
+                {
+                    "name": "Canada: Toronto",
+                    "url": "ingest-tor.mixer.com"
+                },
+                {
+                    "name": "EU: London",
+                    "url": "ingest-lon.mixer.com"
+                },
+                {
+                    "name": "EU: Amsterdam",
+                    "url": "ingest-ams.mixer.com"
+                },
+                {
+                    "name": "EU: Milan",
+                    "url": "ingest-mil.mixer.com"
+                },
+                {
+                    "name": "EU: Paris",
+                    "url": "ingest-par.mixer.com"
+                },
+                {
+                    "name": "EU: Frankfurt",
+                    "url": "ingest-fra.mixer.com"
+                },
+                {
+                    "name": "EU: Oslo",
+                    "url": "ingest-osl.mixer.com"
+                },
+                {
+                    "name": "Brazil: Sao Paulo",
+                    "url": "ingest-sao.mixer.com"
+                },
+                {
+                    "name": "Australia: Melbourne",
+                    "url": "ingest-mel.mixer.com"
+                },
+                {
+                    "name": "Australia: Sydney",
+                    "url": "ingest-syd.mixer.com"
+                },
+                {
+                    "name": "Mexico: Mexico City",
+                    "url": "ingest-mex.mixer.com"
+                },
+                {
+                    "name": "Asia: Hong Kong",
+                    "url": "ingest-hkg.mixer.com"
+                },
+                {
+                    "name": "Asia: Tokyo",
+                    "url": "ingest-tok.mixer.com"
+                },
+                {
+                    "name": "South Korea: Seoul",
+                    "url": "ingest-seo.mixer.com"
+                },
+                {
+                    "name": "India: Chennai",
+                    "url": "ingest-che.mixer.com"
+                }
+            ],
+            "recommended": {
+                "keyint": 3,
+                "output": "ftl_output",
+                "max audio bitrate": 160,
+                "max video bitrate": 10000,
+                "profile": "main",
+                "bframes": 0
+            }
+        },
+        {
+            "name": "Mixer.com - RTMP",
+            "common": true,
+            "servers": [
+                {
+                    "name": "US: Dallas, TX",
+                    "url": "rtmp://ingest-dal.mixer.com:1935/beam"
+                },
+                {
+                    "name": "US: San Jose, CA",
+                    "url": "rtmp://ingest-sjc.mixer.com:1935/beam"
+                },
+                {
+                    "name": "US: Seattle, WA",
+                    "url": "rtmp://ingest-sea.mixer.com:1935/beam"
+                },
+                {
+                    "name": "US: Washington DC",
+                    "url": "rtmp://ingest-wdc.mixer.com:1935/beam"
+                },
+                {
+                    "name": "Canada: Toronto",
+                    "url": "rtmp://ingest-tor.mixer.com:1935/beam"
+                },
+                {
+                    "name": "EU: London",
+                    "url": "rtmp://ingest-lon.mixer.com:1935/beam"
+                },
+                {
+                    "name": "EU: Amsterdam",
+                    "url": "rtmp://ingest-ams.mixer.com:1935/beam"
+                },
+                {
+                    "name": "EU: Milan",
+                    "url": "rtmp://ingest-mil.mixer.com:1935/beam"
+                },
+                {
+                    "name": "EU: Paris",
+                    "url": "rtmp://ingest-par.mixer.com:1935/beam"
+                },
+                {
+                    "name": "EU: Frankfurt",
+                    "url": "rtmp://ingest-fra.mixer.com:1935/beam"
+                },
+                {
+                    "name": "EU: Oslo",
+                    "url": "rtmp://ingest-osl.mixer.com:1935/beam"
+                },
+                {
+                    "name": "Brazil: Sao Paulo",
+                    "url": "rtmp://ingest-sao.mixer.com:1935/beam"
+                },
+                {
+                    "name": "Australia: Melbourne",
+                    "url": "rtmp://ingest-mel.mixer.com:1935/beam"
+                },
+                {
+                    "name": "Australia: Sydney",
+                    "url": "rtmp://ingest-syd.mixer.com:1935/beam"
+                },
+                {
+                    "name": "Mexico: Mexico City",
+                    "url": "rtmp://ingest-mex.mixer.com:1935/beam"
+                },
+                {
+                    "name": "Asia: Hong Kong",
+                    "url": "rtmp://ingest-hkg.mixer.com:1935/beam"
+                },
+                {
+                    "name": "Asia: Tokyo",
+                    "url": "rtmp://ingest-tok.mixer.com:1935/beam"
+                },
+                {
+                    "name": "South Korea: Seoul",
+                    "url": "rtmp://ingest-seo.mixer.com:1935/beam"
+                },
+                {
+                    "name": "India: Chennai",
+                    "url": "rtmp://ingest-che.mixer.com:1935/beam"
+                }
+            ],
+            "recommended": {
+                "keyint": 3,
+                "max audio bitrate": 160,
+                "max video bitrate": 10000,
+                "profile": "main"
+            }
+        },
+        {
+            "name": "Mobcrush",
+            "servers": [
+                {
+                    "name": "Primary",
+                    "url": "rtmp://live.mobcrush.net/mob"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "profile": "main",
+                "max video bitrate": 6000,
+                "max audio bitrate": 160
+            }
+        },
+        {
+            "name": "Web.TV",
+            "servers": [
+                {
+                    "name": "Primary",
+                    "url": "rtmp://live3.origins.web.tv/liveext"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "profile": "main",
+                "max video bitrate": 3500,
+                "max audio bitrate": 160
+            }
+        },
+        {
+            "name": "GoodGame.ru",
+            "servers": [
+                {
+                    "name": "Моscow",
+                    "url": "rtmp://msk.goodgame.ru:1940/live"
+                }
+            ]
+        },
+        {
+            "name": "Vaughn Live / iNSTAGIB",
+            "servers": [
+                {
+                    "name": "US: Primary",
+                    "url": "rtmp://live.vaughnsoft.net/live"
+                },
+                {
+                    "name": "US: Chicago, IL",
+                    "url": "rtmp://live-ord.vaughnsoft.net/live"
+                },
+                {
+                    "name": "US: Denver, CO",
+                    "url": "rtmp://live-den.vaughnsoft.net/live"
+                },
+                {
+                    "name": "US: New York, NY",
+                    "url": "rtmp://live-nyc.vaughnsoft.net/live"
+                },
+                {
+                    "name": "EU: Amsterdam, NL",
+                    "url": "rtmp://live-ams.vaughnsoft.net/live"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "max video bitrate": 3500,
+                "max audio bitrate": 160
+            }
+        },
+        {
+            "name": "Breakers.TV",
+            "servers": [
+                {
+                    "name": "US: Primary",
+                    "url": "rtmp://live.vaughnsoft.net/live"
+                },
+                {
+                    "name": "US: Chicago, IL",
+                    "url": "rtmp://live-ord.vaughnsoft.net/live"
+                },
+                {
+                    "name": "US: Denver, CO",
+                    "url": "rtmp://live-den.vaughnsoft.net/live"
+                },
+                {
+                    "name": "US: New York, NY",
+                    "url": "rtmp://live-nyc.vaughnsoft.net/live"
+                },
+                {
+                    "name": "EU: Amsterdam, NL",
+                    "url": "rtmp://live-ams.vaughnsoft.net/live"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "max video bitrate": 3500,
+                "max audio bitrate": 160
+            }
+        },
+        {
+            "name": "CyberGame.TV",
+            "servers": [
+                {
+                    "name": "RU Origin",
+                    "url": "rtmp://st.cybergame.tv:1953/live"
+                },
+                {
+                    "name": "RU Premium",
+                    "url": "rtmp://premium.cybergame.tv:1953/premium"
+                }
+            ]
+        },
+        {
+            "name": "DJlive.pl",
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://live.djlive.pl/live"
+                }
+            ],
+            "recommended": {
+                "keyint": 1,
+                "profile": "high",
+                "max video bitrate": 1300,
+                "max audio bitrate": 320
+            }
+        },
+        {
+            "name": "Facebook Live",
+            "common": true,
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmps://rtmp-api.facebook.com:443/rtmp/"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "profile": "main",
+                "max video bitrate": 4000,
+                "max audio bitrate": 128
+            }
+        },
+        {
+            "name": "Restream.io - RTMP",
+            "alt_names": [
+                "Restream.io"
+            ],
+            "common": true,
+            "servers": [
+                {
+                    "name": "Autodetect",
+                    "url": "rtmp://live.restream.io/live"
+                },
+                {
+                    "name": "EU-West (London, GB)",
+                    "url": "rtmp://eu-london.restream.io/live"
+                },
+                {
+                    "name": "EU-West (Amsterdam, NL)",
+                    "url": "rtmp://eu-ams.restream.io/live"
+                },
+                {
+                    "name": "EU-West (Luxembourg)",
+                    "url": "rtmp://eu-luxembourg.restream.io/live"
+                },
+                {
+                    "name": "EU-West (Paris, FR)",
+                    "url": "rtmp://eu-paris.restream.io/live"
+                },
+                {
+                    "name": "EU-Central (Frankfurt, DE)",
+                    "url": "rtmp://eu-central.restream.io/live"
+                },
+                {
+                    "name": "EU-East (Falkenstein, DE)",
+                    "url": "rtmp://eu-east.restream.io/live"
+                },
+                {
+                    "name": "EU-South (Madrid, Spain)",
+                    "url": "rtmp://eu-madrid.restream.io/live"
+                },
+                {
+                    "name": "Russia (Moscow)",
+                    "url": "rtmp://ru.restream.io/live"
+                },
+                {
+                    "name": "US-West (Seattle, WA)",
+                    "url": "rtmp://us-seattle.restream.io/live"
+                },
+                {
+                    "name": "US-West (San Jose, CA)",
+                    "url": "rtmp://us-west.restream.io/live"
+                },
+                {
+                    "name": "US-Central (Dallas, TX)",
+                    "url": "rtmp://us-central.restream.io/live"
+                },
+                {
+                    "name": "US-East (Washington, DC)",
+                    "url": "rtmp://us-east.restream.io/live"
+                },
+                {
+                    "name": "US-East (Miami, FL)",
+                    "url": "rtmp://us-miami.restream.io/live"
+                },
+                {
+                    "name": "NA-East (Toronto, Canada)",
+                    "url": "rtmp://na-toronto.restream.io/live"
+                },
+                {
+                    "name": "SA (Saint Paul, Brazil)",
+                    "url": "rtmp://sa.restream.io/live"
+                },
+                {
+                    "name": "Asia (Singapore)",
+                    "url": "rtmp://singapore.restream.io/live"
+                },
+                {
+                    "name": "Asia (Seoul, South Korea)",
+                    "url": "rtmp://seoul.restream.io/live"
+                },
+                {
+                    "name": "Asia (Tokyo, Japan)",
+                    "url": "rtmp://tokyo.restream.io/live"
+                },
+                {
+                    "name": "India (Bangalore)",
+                    "url": "rtmp://india.restream.io/live"
+                },
+                {
+                    "name": "Australia (Sydney)",
+                    "url": "rtmp://au.restream.io/live"
+                }
+            ],
+            "recommended": {
+                "keyint": 2
+            }
+        },
+        {
+            "name": "Restream.io - FTL",
+            "common": true,
+            "servers": [
+                {
+                    "name": "Autodetect",
+                    "url": "live.restream.io"
+                },
+                {
+                    "name": "EU-West (London, GB)",
+                    "url": "eu-london.restream.io"
+                },
+                {
+                    "name": "EU-West (Amsterdam, NL)",
+                    "url": "eu-ams.restream.io"
+                },
+                {
+                    "name": "EU-West (Luxembourg)",
+                    "url": "eu-luxembourg.restream.io"
+                },
+                {
+                    "name": "EU-West (Paris, FR)",
+                    "url": "eu-paris.restream.io"
+                },
+                {
+                    "name": "EU-Central (Frankfurt, DE)",
+                    "url": "eu-central.restream.io"
+                },
+                {
+                    "name": "EU-East (Falkenstein, DE)",
+                    "url": "eu-east.restream.io"
+                },
+                {
+                    "name": "EU-South (Madrid, Spain)",
+                    "url": "eu-madrid.restream.io"
+                },
+                {
+                    "name": "Russia (Moscow)",
+                    "url": "ru.restream.io"
+                },
+                {
+                    "name": "US-West (Seattle, WA)",
+                    "url": "us-seattle.restream.io"
+                },
+                {
+                    "name": "US-West (San Jose, CA)",
+                    "url": "us-west.restream.io"
+                },
+                {
+                    "name": "US-Central (Dallas, TX)",
+                    "url": "us-central.restream.io"
+                },
+                {
+                    "name": "US-East (Washington, DC)",
+                    "url": "us-east.restream.io"
+                },
+                {
+                    "name": "US-East (Miami, FL)",
+                    "url": "us-miami.restream.io"
+                },
+                {
+                    "name": "NA-East (Toronto, Canada)",
+                    "url": "na-toronto.restream.io"
+                },
+                {
+                    "name": "SA (Saint Paul, Brazil)",
+                    "url": "sa.restream.io"
+                },
+                {
+                    "name": "Asia (Singapore)",
+                    "url": "singapore.restream.io"
+                },
+                {
+                    "name": "Asia (Seoul, South Korea)",
+                    "url": "seoul.restream.io"
+                },
+                {
+                    "name": "Asia (Tokyo, Japan)",
+                    "url": "tokyo.restream.io"
+                },
+                {
+                    "name": "Australia (Sydney)",
+                    "url": "au.restream.io"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "output": "ftl_output",
+                "max audio bitrate": 160,
+                "max video bitrate": 10000,
+                "profile": "main",
+                "bframes": 0
+            }
+        },
+        {
+            "name": "Nood",
+            "servers": [
+                {
+                    "name": "Global: Fastest (Recommended)",
+                    "url": "rtmp://stream.nood.tv/live_source"
+                },
+                {
+                    "name": "NA East: Ashburn, VA, USA",
+                    "url": "rtmp://us-east-1.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "NA East: Columbus, OH, USA",
+                    "url": "rtmp://us-east-2.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "NA East: Montreal, QC, CAN",
+                    "url": "rtmp://ca-central-1.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "NA West: San Francisco, CA, USA",
+                    "url": "rtmp://us-west-1.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "NA West: Portland, OR, USA",
+                    "url": "rtmp://us-west-2.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "SA East: Sao Paulo, BRA",
+                    "url": "rtmp://sa-east-1.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "EU West: Dublin, IRL",
+                    "url": "rtmp://eu-west-1.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "EU West: London, GBR",
+                    "url": "rtmp://eu-west-2.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "EU West: Paris, FRA",
+                    "url": "rtmp://eu-west-3.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "EU West: Frankfurt, DEU",
+                    "url": "rtmp://eu-central-1.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "Asia North-East: Tokyo, JPN",
+                    "url": "rtmp://ap-northeast-1.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "Asia North-East: Seoul, KOR",
+                    "url": "rtmp://ap-northeast-2.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "Asia South-East: Singapore, SGP",
+                    "url": "rtmp://ap-southeast-1.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "Asia South-East: Sydney, AUS",
+                    "url": "rtmp://ap-southeast-2.stream.nood.tv/live_source"
+                },
+                {
+                    "name": "Asia South: Mumbai, IND",
+                    "url": "rtmp://ap-south-1.stream.nood.tv/live_source"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "max video bitrate": 25000,
+                "max audio bitrate": 192,
+                "x264opts": "scenecut=0"
+            }
+        },
+        {
+            "name": "Castr.io",
+            "servers": [
+                {
+                    "name": "Chicago US",
+                    "url": "rtmp://cg.castr.io"
+                },
+                {
+                    "name": "Los Angeles US",
+                    "url": "rtmp://la.castr.io"
+                },
+                {
+                    "name": "New York US",
+                    "url": "rtmp://ny.castr.io"
+                },
+                {
+                    "name": "Montreal CA",
+                    "url": "rtmp://qc.castr.io"
+                },
+                {
+                    "name": "London UK",
+                    "url": "rtmp://uk.castr.io"
+                },
+                {
+                    "name": "Frankfurt DE",
+                    "url": "rtmp://de.castr.io"
+                },
+                {
+                    "name": "Frankfurt DE 2",
+                    "url": "rtmp://fr.castr.io"
+                },
+                {
+                    "name": "Moscow RU",
+                    "url": "rtmp://ru.castr.io"
+                },
+                {
+                    "name": "Singapore",
+                    "url": "rtmp://sg.castr.io"
+                },
+                {
+                    "name": "Sydney AU",
+                    "url": "rtmp://au.castr.io"
+                },
+                {
+                    "name": "Brazil",
+                    "url": "rtmp://br.castr.io"
+                },
+                {
+                    "name": "US Central",
+                    "url": "rtmp://us-central.castr.io"
+                },
+                {
+                    "name": "US West",
+                    "url": "rtmp://us-west.castr.io"
+                },
+                {
+                    "name": "US East",
+                    "url": "rtmp://us-east.castr.io"
+                },
+                {
+                    "name": "US South",
+                    "url": "rtmp://us-south.castr.io"
+                },
+                {
+                    "name": "South America",
+                    "url": "rtmp://south-am.castr.io"
+                },
+                {
+                    "name": "EU Central",
+                    "url": "rtmp://eu-central.castr.io"
+                }
+            ],
+            "recommended": {
+                "keyint": 2
+            }
+        },
+        {
+            "name": "Boomstream",
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://live.boomstream.com/live"
+                }
+            ]
+        },
+        {
+            "name": "Stream.live",
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://media.stream.live:1935/live"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "profile": "main",
+                "max video bitrate": 2500,
+                "max audio bitrate": 160
+            }
+        },
+        {
+            "name": "Meridix Live Sports Platform",
+            "servers": [
+                {
+                    "name": "Primary",
+                    "url": "rtmp://publish.meridix.com/live"
+                }
+            ],
+            "recommended": {
+                "max video bitrate": 3500
+            }
+        },
+        {
+            "name": "Afreeca.TV",
+            "servers": [
+                {
+                    "name": "North America : US East",
+                    "url": "rtmp://rtmpmanager-aws-en-east.afreeca.tv/live"
+                },
+                {
+                    "name": "North America : US West",
+                     "url": "rtmp://rtmpmanager-aws-en-west.afreeca.tv/live"
+                },
+                {
+                    "name": "Asia : Singapore",
+                    "url": "rtmp://rtmpmanager-aws-sg.afreeca.tv/live"
+                }
+            ],
+            "recommended": {
+                "keyint": 1,
+                "profile": "main",
+                "max video bitrate": 5000,
+                "max audio bitrate": 192
+            }
+        },
+        {
+            "name": "아프리카TV",
+            "servers": [
+                {
+                "name": "Korea",
+                "url": "rtmp://rtmpmanager-freecat.afreeca.tv/app/"
+                }
+            ],
+            "recommended": {
+                "keyint": 1,
+                "profile": "main",
+                "max video bitrate": 5000,
+                "max audio bitrate": 192
+            }
+        },
+        {
+            "name": "CAM4",
+            "servers": [
+                {
+                    "name": "CAM4",
+                    "url": "rtmp://origin.cam4.com/cam4-origin-live"
+                }
+            ],
+            "recommended": {
+                "keyint": 1,
+                "profile": "baseline",
+                "max video bitrate": 3000,
+                "max audio bitrate": 128
+            }
+        },
+        {
+            "name": "Picarto",
+            "servers": [
+                {
+                    "name": "US East (Chicago, USA)",
+                    "url": "rtmp://live.us-east1.picarto.tv/golive"
+                },
+                {
+                    "name": "US West (Los Angeles, USA)",
+                    "url": "rtmp://live.us-west1.picarto.tv/golive"
+                },
+                {
+                    "name": "EU West (Düsseldorf, Germany)",
+                    "url": "rtmp://live.eu-west1.picarto.tv/golive"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "profile": "main",
+                "max video bitrate": 3500
+            }
+        },
+        {
+            "name": "Pandora TV Korea",
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://plive.pandora.tv:80/mediaHub"
+                }
+            ]
+        },
+        {
+            "name": "Livestream",
+            "servers": [
+                {
+                    "name": "Primary",
+                    "url": "rtmp://rtmpin.livestreamingest.com/rtmpin"
+                }
+            ]
+        },
+        {
+            "name": "Chaturbate",
+            "servers": [
+                {
+                    "name": "Global Main Fastest - Recommended",
+                    "url": "rtmp://live.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "Global Backup",
+                    "url": "rtmp://live-backup.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "US West: Seattle, WA",
+                    "url": "rtmp://live-sea.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "US West: Phoenix, AZ",
+                    "url": "rtmp://live-phx.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "US Central: Salt Lake City, UT",
+                    "url": "rtmp://live-slc.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "US Central: Chicago, IL",
+                    "url": "rtmp://live-chi.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "US East: Atlanta, GA",
+                    "url": "rtmp://live-atl.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "US East: Ashburn, VA",
+                    "url": "rtmp://live-ash.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "South America: Sao Paulo, Brazil",
+                    "url": "rtmp://live-gru.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "EU: Amsterdam, NL",
+                    "url": "rtmp://live-nld.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "EU: Alblasserdam, NL",
+                    "url": "rtmp://live-alb.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "EU: Frankfurt, DE",
+                    "url": "rtmp://live-fra.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "EU: Belgrade, Serbia",
+                    "url": "rtmp://live-srb.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "Asia: Singapore",
+                    "url": "rtmp://live-sin.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "Asia: Tokyo, Japan",
+                    "url": "rtmp://live-nrt.stream.highwebmedia.com/live-origin"
+                },
+                {
+                    "name": "Australia: Sydney",
+                    "url": "rtmp://live-syd.stream.highwebmedia.com/live-origin"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "max video bitrate": 50000,
+                "max audio bitrate": 192
+            }
+        },
+        {
+            "name": "Twitter / Periscope",
+            "common": true,
+            "servers": [
+                {
+                    "name": "US West: California",
+                    "url": "rtmp://ca.pscp.tv:80/x"
+                },
+                {
+                    "name": "US West: Oregon",
+                    "url": "rtmp://or.pscp.tv:80/x"
+                },
+                {
+                    "name": "US East: Virginia",
+                    "url": "rtmp://va.pscp.tv:80/x"
+                },
+                {
+                    "name": "South America: Brazil",
+                    "url": "rtmp://br.pscp.tv:80/x"
+                },
+                {
+                    "name": "EU West: Ireland",
+                    "url": "rtmp://ie.pscp.tv:80/x"
+                },
+                {
+                    "name": "EU Central: Germany",
+                    "url": "rtmp://de.pscp.tv:80/x"
+                },
+                {
+                    "name": "Asia/Pacific: Australia",
+                    "url": "rtmp://au.pscp.tv:80/x"
+                },
+                {
+                    "name": "Asia/Pacific: Japan",
+                    "url": "rtmp://jp.pscp.tv:80/x"
+                },
+                {
+                    "name": "Asia/Pacific: Singapore",
+                    "url": "rtmp://sg.pscp.tv:80/x"
+                }
+            ],
+            "recommended": {
+                "keyint": 3,
+                "max video bitrate": 4000,
+                "max audio bitrate": 128
+            }
+        },
+        {
+            "name": "Switchboard Live (Joicaster)",
+            "servers": [
+                {
+                    "name": "Default - Performance Global",
+                    "url": "rtmp://ingest-global-a.switchboard.zone/live"
+                },
+                {
+                    "name": "US West",
+                    "url": "rtmp://ingest-us-west.a.switchboard.zone/live"
+                },
+                {
+                    "name": "US East",
+                    "url": "rtmp://ingest-us-east.a.switchboard.zone/live"
+                },
+                {
+                    "name": "Europe West",
+                    "url": "rtmp://ingest-eu-west.a.switchboard.zone/live"
+                },
+                {
+                    "name": "Europe Central",
+                    "url": "rtmp://ingest-us-east.a.switchboard.zone/live"
+                },
+                {
+                    "name": "Australia East",
+                    "url": "rtmp://ingest-au-east.a.switchboard.zone/live"
+                },
+                {
+                    "name": "Asia Central",
+                    "url": "rtmp://ingest-as-central.a.switchboard.zone/live"
+                }
+            ]
+        },
+        {
+            "name": "Looch",
+            "common": false,
+            "servers": [
+                {
+                    "name": "Primary Looch ingest server",
+                    "url": "rtmp://ingest.looch.tv/live"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "profile": "main",
+                "max video bitrate": 6000,
+                "max audio bitrate": 160
+            }
+        },
+        {
+            "name": "Stream.me",
+            "common": false,
+            "servers": [
+                {
+                    "name": "US, Central",
+                    "url": "rtmp://uc-origin.stream.me/origin"
+                },
+                {
+                    "name": "US, East",
+                    "url": "rtmp://ue-origin.stream.me/origin"
+                },
+                {
+                    "name": "US, West",
+                    "url": "rtmp://uw-origin.stream.me/origin"
+                },
+                {
+                    "name": "Europe, West",
+                    "url": "rtmp://ew-origin.stream.me/origin"
+                },
+                {
+                    "name": "Asia, East",
+                    "url": "rtmp://ae-origin.stream.me/origin"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "profile": "main",
+                "max video bitrate": 20000,
+                "max audio bitrate": 192
+            }
+        },
+        {
+            "name": "Eventials",
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://live.eventials.com/eventialsLiveOrigin"
+                }
+            ],
+            "recommended": {
+                "keyint": 1,
+                "profile": "baseline",
+                "max video bitrate": 900,
+                "max audio bitrate": 192
+            }
+        },
+        {
+            "name": "Lahzenegar - StreamG | لحظه‌نگار - استریمجی",
+            "servers": [
+                {
+                    "name": "Primary",
+                    "url": "rtmp://rtmp.lahzecdn.com/pro"
+                },
+                {
+                    "name": "Iran",
+                    "url": "rtmp://rtmp-iran.lahzecdn.com/pro"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "profile": "main",
+                "max video bitrate": 2800,
+                "max audio bitrate": 128
+            }
+        },
+        {
+            "name": "MyLive",
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://stream.mylive.in.th/live"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "profile": "main",
+                "max video bitrate": 7000,
+                "max audio bitrate": 192
+            }
+        },
+        {
+            "name": "SermonAudio.com",
+            "servers": [
+                {
+                    "name": "Primary",
+                    "url": "rtmp://stream.sermonaudio.com/"
+                }
+            ],
+            "recommended": {
+                "max video bitrate": 1000,
+                "max audio bitrate": 64
+            }
+        },
+        {
+            "name": "Vimeo",
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://rtmp.cloud.vimeo.com/live"
+                }
+            ]
+        },
+        {
+            "name": "Aparat",
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://rtmp.cdn.asset.aparat.com:443/event"
+                }
+            ]
+        },
+        {
+            "name": "KakaoTV",
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://rtmp.play.kakao.com/kakaotv"
+                }
+            ],
+            "recommended": {
+                "max video bitrate": 8000,
+                "max audio bitrate": 192
+            }
+        },
+        {
+            "name": "Piczel.tv",
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://piczel.tv:1935/live"
+                }
+            ],
+            "recommended": {
+                "max video bitrate": 5000
+            }
+        },
+        {
+            "name": "STAGE TEN",
+            "servers": [
+                {
+                    "name": "STAGE TEN",
+                    "url": "rtmps://app-rtmp.stageten.tv:443/stageten"
+                }
+            ],
+            "recommended": {
+                "keyint": 2,
+                "profile": "baseline",
+                "max video bitrate": 4000,
+                "max audio bitrate": 128
+            }
+        },
+        {
+            "name": "DLive",
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://stream.dlive.tv/live"
+                }
+            ],
+            "recommend": {
+                "keyint": 2,
+                "max video bitrate": 6000,
+                "max audio bitrate": 160
+            }
+        },
+        {
+            "name": "Lightcast.com",
+            "servers": [
+                {
+                    "name": "North America / East",
+                    "url": "rtmp://us-east.live.lightcast.com/202E1F/default"
+                },
+                {
+                    "name": "North America / West",
+                    "url": "rtmp://us-west.live.lightcast.com/202E1F/default"
+                },
+                {
+                    "name": "Europe / Amsterdam",
+                    "url": "rtmp://europe.live.lightcast.com/202E1F/default"
+                },
+                {
+                    "name": "Europe / Frankfurt",
+                    "url": "rtmp://europe-fra.live.lightcast.com/202E1F/default"
+                },
+                {
+                    "name": "Europe / Stockholm",
+                    "url": "rtmp://europe-sto.live.lightcast.com/202E1F/default"
+                },
+                {
+                    "name": "Asia / Hong Kong",
+                    "url": "rtmp://asia.live.lightcast.com/202E1F/default"
+                },
+                {
+                    "name": "Australia / Sydney",
+                    "url": "rtmp://australia.live.lightcast.com/202E1F/default"
+                }
+            ],
+            "recommend": {
+                "keyint": 2,
+                "max video bitrate": 6000,
+                "max audio bitrate": 160
+            }
+        },
+        {
+            "name": "Bongacams",
+            "servers": [
+                {
+                    "name": "Default",
+                    "url": "rtmp://origin.bcrncdn.com:1934/live"
+                }
+            ],
+            "recommend": {
+                "keyint": 2,
+                "max video bitrate": 6000,
+                "max audio bitrate": 192
+            }
+        },
+        {
+            "name": "Camplace",
+            "servers": [
+                {
+                    "name": "Camplace - Default",
+                    "url": "rtmp://rtmp.camplace.com"
+                }
+            ],
+            "recommend": {
+                "keyint": 2,
+                "max video bitrate": 3000,
+                "max audio bitrate": 128
+            }
+        }
+    ]
+}

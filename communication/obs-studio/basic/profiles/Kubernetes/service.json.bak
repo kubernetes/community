@@ -1,0 +1,8 @@
+{
+    "settings": {
+        "key": "https://zoom.us/my/kubernetescommunity",
+        "server": "rtmp://a.rtmp.youtube.com/live2",
+        "service": "YouTube / YouTube Gaming"
+    },
+    "type": "rtmp_common"
+}
