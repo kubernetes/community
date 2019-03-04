@@ -116,7 +116,7 @@ These are listed as "Communications Managers" in YouTube
 - Jorge Castro (@castrojo) - ET
 - Katharine Berry (@Katharine) - PT
 - Paris Pittman (@parispittman) - PT
-- Open
+- Jorge Alarcon (@alejandrox1) - ET
 - Open
 
 #### Moderators Pro Tempore (9)
