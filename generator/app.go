@@ -124,6 +124,7 @@ func (e *Group) DirName(prefix string) string {
 type Context struct {
 	Sigs          []Group
 	WorkingGroups []Group
+	UserGroups    []Group
 }
 
 func pathExists(path string) bool {
@@ -305,12 +306,21 @@ func main() {
 		return strings.ToLower(ctx.WorkingGroups[i].Name) <= strings.ToLower(ctx.WorkingGroups[j].Name)
 	})
 
+	sort.Slice(ctx.UserGroups, func(i, j int) bool {
+		return strings.ToLower(ctx.UserGroups[i].Name) <= strings.ToLower(ctx.UserGroups[j].Name)
+	})
+
 	err = createGroupReadme(ctx.Sigs, "sig")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	err = createGroupReadme(ctx.WorkingGroups, "wg")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = createGroupReadme(ctx.UserGroups, "ug")
 	if err != nil {
 		log.Fatal(err)
 	}

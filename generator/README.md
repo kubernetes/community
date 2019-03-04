@@ -13,6 +13,7 @@ The documentation follows a template and uses the values from [`sigs.yaml`](/sig
 - List: [`list.tmpl`](list.tmpl)
 - SIG README: [`sig_readme.tmpl`](sig_readme.tmpl)
 - WG README: [`wg_readme.tmpl`](wg_readme.tmpl)
+- UG README: [`ug_readme.tmpl`](ug_readme.tmpl)
 
 **Time Zone gotcha**:
 Time zones make everything complicated.
@@ -28,6 +29,7 @@ accompanying documentation. This takes the format of three types of doc files:
 ```
 sig-<sig-name>/README.md
 wg-<working-group-name>/README.md
+ug-<user-group-name>/README.md
 sig-list.md
 ```
 
