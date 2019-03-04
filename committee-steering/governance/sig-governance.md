@@ -161,5 +161,5 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml#L1454
 [OWNERS]: contributors/devel/owners.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
-[Embargo Policy]: https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#embargo-policy
+[Embargo Policy]: https://git.k8s.io/security/private-distributors-list.md#embargo-policy
 [SECURITY_CONTACTS]: https://github.com/kubernetes/kubernetes-template-project/blob/master/SECURITY_CONTACTS

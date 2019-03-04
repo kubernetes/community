@@ -111,4 +111,4 @@ repositories and organizations:
   and migrate labels across an entire organization based on a defined YAML
   configuration
 
-[security embargo policy]: https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/private-distributors-list.md#embargo-policy
+[security embargo policy]: https://git.k8s.io/security/private-distributors-list.md#embargo-policy
