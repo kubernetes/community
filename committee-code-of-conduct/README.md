@@ -36,13 +36,17 @@ Note that the links to display team membership will only work if you are a membe
 ## Terms
 
 The members and their terms are as follows:
-- Jaice Singer Dumars (Google) - 2 years
-- Paris Pittman (Google) - 2 years
+
+### Term ends on August 7, 2019
 - Carolyn Van Slyck (Microsoft) - 1 year
 - Eric Paris (Red Hat) - 1 year
 - Jennifer Rondeau (Heptio) - 1 year
 
+### Term ends on August 7, 2020
+- Jaice Singer Dumars (Google) - 2 years
+- Paris Pittman (Google) - 2 years
+
 Please see the [bootstrapping document](./bootstrapping-process.md) for more information on how members are picked, their responsibilities, and how the committee will initially function.
 
-_More information on how to contact this committee and learn about its process to come in the near future. For now, any Code of Conduct or Code of Conduct Committee concerns can be directed to <conduct@kubernetes.io>_.
+_More information on conflict resolution process to come in the near future. For now, any Code of Conduct or Code of Conduct Committee concerns can be directed to <conduct@kubernetes.io>_.
 <!-- END CUSTOM CONTENT -->
