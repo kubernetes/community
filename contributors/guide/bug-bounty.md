@@ -64,7 +64,7 @@ vulnerability reports in these areas, they are not (currently) eligible to recei
 - Linux privilege escalations<br>
   _Please report these through security@kernel.org_
 - Attacks against containers from the host they are running on
-- Attacks relying on insecure configurations (subject to the [Product Security Team][]'s opinion),
+- Attacks relying on insecure configurations (subject to the [Product Security Committee][]'s opinion),
   such as clusters not utilizing mutual authentication or encryption between Kubernetes components.
 - Attacks relying on or against deprecated components (e.g. gitrepo volumes)
 - Vulnerabilities in etcd<br>
@@ -74,6 +74,6 @@ vulnerability reports in these areas, they are not (currently) eligible to recei
 - Vulnerabilities specific to a hosted Kubernetes setup<br>
   _Please report these through the associated provider_
 
-[Product Security Team]: https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#product-security-team-pst
+[Product Security Committee]: https://git.k8s.io/security/security-release-process.md#product-security-committee-psc
 [CoreOS's disclosure process]: https://coreos.com/security/disclosure/
 [CoreDNS's disclosure process]: https://github.com/coredns/coredns#security
