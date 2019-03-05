@@ -50,8 +50,6 @@ Development would be based on a generated client using OpenAPI and [swagger-code
 
     * Proto encoding
 
-    * Generated examples
-
 ### Client Support Level
 
 * Alpha [![Client Support Level](https://img.shields.io/badge/kubernetes%20client-alpha-green.svg?style=plastic&colorA=306CE8)](/contributors/design-proposals/api-machinery/csi-new-client-library-procedure.md#client-support-level)
