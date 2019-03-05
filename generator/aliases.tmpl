@@ -14,3 +14,9 @@ aliases:
     - {{.GitHub}}
     {{- end}}
   {{- end}}
+  {{- range .UserGroups}}
+  {{.Dir}}-leads:
+    {{- range .Leadership.Chairs}}
+    - {{.GitHub}}
+    {{- end}}
+  {{- end}}
