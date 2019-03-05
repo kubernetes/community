@@ -121,7 +121,7 @@ These are listed as "Communications Managers" in YouTube
 
 #### Moderators Pro Tempore (9)
 
-- Open
+- Dylan Graham (@DylanGraham) - AEST
 - Open
 - Open
 - Open
