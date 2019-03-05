@@ -25,6 +25,7 @@
   - [Kinds of tests](#kinds-of-tests)
     - [Viper configuration and hierarchichal test parameters.](#viper-configuration-and-hierarchichal-test-parameters)
     - [Conformance tests](#conformance-tests)
+	- [Validation suites](#validation-suites)
   - [Continuous Integration](#continuous-integration)
     - [What is CI?](#what-is-ci)
     - [What runs in CI?](#what-runs-in-ci)
@@ -609,6 +610,10 @@ In time, it is our intent to add or autogenerate a sample viper configuration th
 ### Conformance tests
 
 For more information on Conformance tests please see the [Conformance Testing](../sig-architecture/conformance-tests.md)
+
+### Validation suite tests
+
+For more information on Validation suite test please see the [Validation Suite Testing](../sig-architecture/validation-suites.md)
 
 ## Continuous Integration
 
