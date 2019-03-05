@@ -1589,6 +1589,7 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
     - name: release-team
       description: >
         The Kubernetes Release Team is responsible for the day-to-day work

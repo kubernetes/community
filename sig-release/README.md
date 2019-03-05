@@ -51,6 +51,7 @@ The following subprojects are owned by sig-release:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
 - **release-team**
   - Description: The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
   - Owners:
