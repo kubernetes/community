@@ -1003,7 +1003,6 @@ sigs:
     - name: community-management
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
-        https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
     - name: github-management
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
