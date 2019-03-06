@@ -585,6 +585,10 @@ sigs:
     - name: cluster-api-provider-azure
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
+    - name: csi-drivers-azure
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
   - name: Big Data
     dir: sig-big-data
     mission_statement: >

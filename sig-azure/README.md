@@ -46,6 +46,10 @@ The following subprojects are owned by sig-azure:
 - **cluster-api-provider-azure**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
+- **csi-drivers-azure**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
 
 ## GitHub Teams
 
