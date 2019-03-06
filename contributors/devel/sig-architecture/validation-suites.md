@@ -17,42 +17,29 @@ a Validation suite or portion of it may be promoted to become a
 ## Validation Suite Test Requirements
 
 Validation Test Suites may be used as deemed necessary by the associated Kubernetes
-SIG that is defining the Validation Suite. 
+SIG that is defining the Validation Suite.  Unlike Conformance Tests, Validation
+Suites may change over time with additions, deletions, and modifications whenever
+the SIG learns more about the problem space and adapts the implementations.
+Hence, Validation Suites are not subject to the deprecation cycles such as those 
+that apply to features and modification decisions are left to the decision making
+provess(es) of the SIG.  The end users of the Validation Suites are strongly 
+encouraged to participate in the upkeep and maintenance of the suite so
+they know what changes are coming up and can adapt their 
+product/implementation to the updates of the test suite.
 
 ## Running Validation Suite Tests
 
 Validation Suite tests are designed to be run even when there is no cloud provider
-configured. Validation Suite tests must be able to be run against clusters that have
-not been created with `hack/e2e.go`, just provide a kubeconfig with the
-appropriate endpoint and credentials.
-
-These commands are intended to be run within a kubernetes directory, either
-cloned from source, or extracted from release artifacts such as
-`kubernetes.tar.gz`. They assume you have a valid golang installation.
-
-```sh
-# ensure kubetest is installed
-go get -u k8s.io/test-infra/kubetest
-
-# build test binaries, ginkgo, and kubectl first:
-make WHAT="test/e2e/e2e.test vendor/github.com/onsi/ginkgo/ginkgo cmd/kubectl"
-
-# setup for conformance tests
-export KUBECONFIG=/path/to/kubeconfig
-
-# Option A: run all validation suite tests serially
-kubetest --provider=skeleton --test --test_args="--ginkgo.focus=\[*Validation\]"
-
-# Option B: run parallel validations suite tests first, then serial validations tests serially
-kubetest --ginkgo-parallel --provider=skeleton --test --test_args="--ginkgo.focus=\[*Validation\] --ginkgo.skip=\[Serial\]"
-kubetest --provider=skeleton --test --test_args="--ginkgo.focus=\[Serial\].*\[*Validation\]"
-```
-
-Note that if you would like to run a specific Validation Suite instead of all the
-Validation Suites, replace `*Validation` in `--ginkgo.focus=\[*Validation\]` with
-a more specific Validation Suite name such as `StorageValidation`
-
-
+configured. The [Testing Commons](https://github.com/kubernetes/community/tree/master/sig-testing) 
+subproject within the Kubernetes sig-testing
+community is currently tasked with adding a framework for writing test suites and
+this new framework may be used for running Validation Suites. This new framework is 
+optional because there is not a prescribed approach for how a Validation Suite needs to 
+be run.  Instead, the authors of the Validation Suite need to ensure that the 
+mechanisms for running the Validation Suite are easy to use, provide sufficient
+documentation, and follow patterns similar to existing e2e tests. 
+In addition, the mechanism should provide the  ability to select some tests and 
+skip others.  
 
 ### Validation Suite Test Comment Metadata
 
@@ -77,7 +64,8 @@ within its associated comment:
 ### Sample Validation Suite Test
 
 The following snippet of code shows a sample Storage Validation Suite test's 
-metadata:
+metadata.  Note how the test contains a bracketed label with name of the Validation
+Suite that this test belongs to. 
 
 ```
 /*
