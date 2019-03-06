@@ -117,7 +117,7 @@ These are listed as "Communications Managers" in YouTube
 - Katharine Berry (@Katharine) - PT
 - Paris Pittman (@parispittman) - PT
 - Jorge Alarcon (@alejandrox1) - ET
-- Open
+- Yang Li (@idealhack) - CST
 
 #### Moderators Pro Tempore (9)
 
