@@ -12,18 +12,20 @@ lists, YouTube, Zoom, and any property listed in the SIG Contributor Experience
 
 ---
 
-- [Selection of Moderators](#selection-of-moderators)
-  - [Moderators Pro Tempore](#moderators-pro-tempore)
-- [Rotation of Moderators](#rotation-of-moderators)
-- [Roles and Responsibilities](#roles-and-responsibilities)
-- [Escalation Procedures](#escalation-procedures)
-- [Platform Specific Guidelines](#platform-specific-guidelines)
-  - [Discuss](#discuss)
-  - [Mailing list](#mailing-list)
-  - [Slack](#slack)
-  - [Youtube](#youtube)
-  - [Zoom](#zoom)
-- [References and Resources](#references-and-resources)
+- [Moderation on Kubernetes Communications Channels](#moderation-on-kubernetes-communications-channels)
+  - [Selection of Moderators](#selection-of-moderators)
+    - [Moderators Pro Tempore](#moderators-pro-tempore)
+  - [Rotation of Moderators](#rotation-of-moderators)
+  - [Roles and Responsibilities](#roles-and-responsibilities)
+  - [Violations](#violations)
+  - [Escalation Procedures](#escalation-procedures)
+  - [Platform Specific Guidelines](#platform-specific-guidelines)
+    - [Discuss](#discuss)
+    - [Mailing List](#mailing-list)
+    - [Slack](#slack)
+    - [YouTube](#youtube)
+    - [Zoom](#zoom)
+  - [References and Resources](#references-and-resources)
 
 ---
 
@@ -174,6 +176,9 @@ procedures:
     Committee].
 - Moderators will have access to a private document with contact information of
   the appropriate people.
+- Primary moderators will then execute an audit of the affected property:
+  - Slack: emoji audit
+  - (More per-property steps to be added as we learn them)
 
 
 ## Platform Specific Guidelines
