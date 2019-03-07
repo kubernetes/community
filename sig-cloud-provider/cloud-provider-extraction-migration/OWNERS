@@ -2,9 +2,9 @@
 
 reviewers:
   - cheftako
-  - andrewsykim
+  - mcrute
 approvers:
   - cheftako
-  - andrewsykim
+  - mcrute
 labels:
   - sig/cloud-provider
