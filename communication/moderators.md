@@ -145,7 +145,7 @@ Moderators pro tempore seats: 9
 - Roy Lenferink (@rlenferink) - CET
 - Loic Le Dru (@lledru) - CET
 - Puja Abbassi (@puja108) - CET
-- Open
+- Manjunath Kumatagi (@mkumatag) - IST
 - Open
 - Open
 - Open
