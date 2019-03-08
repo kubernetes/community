@@ -181,13 +181,13 @@ An administrator must be able to properly secure Kubernetes at a policy level,
 rather than at an implementation level, and schema changes over time should not
 risk unintended security leaks.
 
-Both the Kubelet and Kube Proxy need information related to their specific roles -
-for the Kubelet, the set of pods it should be running, and for the Proxy, the
-set of services and endpoints to load balance. The Kubelet also needs to provide
+Both the kubelet and kube-proxy need information related to their specific roles -
+for the kubelet, the set of pods it should be running, and for the kube-proxy, the
+set of services and endpoints to load balance. The kubelet also needs to provide
 information about running pods and historical termination data. The access
-pattern for both Kubelet and Proxy to load their configuration is an efficient
-"wait for changes" request over HTTP. It should be possible to limit the Kubelet
-and Proxy to only access the information they need to perform their roles and no
+pattern for both kubelet and kube-proxy to load their configuration is an efficient
+"wait for changes" request over HTTP. It should be possible to limit the kubelet
+and kube-proxy to only access the information they need to perform their roles and no
 more.
 
 The controller manager for Replication Controllers and other future controllers
