@@ -116,6 +116,9 @@ Moderators _MUST_:
 - Abide by the documented tasks and actions required of moderators.
 - Ensure that the Kubernetes [Code of Conduct] is in effect on all official
   Kubernetes communication channels.
+- Make yourself generally available during working hours in your time zone for moderation.
+  - This can be handled as a group so that there is enough coverage of people to allow for absences/travel.
+  - Ensure you are on #slack-admins during work hours and notifications are set appropriately. 
 - Become familiar with the [Kubernetes Community Values].
 - Take care of spam as soon as possible, which may mean taking action by
   removing a member from that resource.
