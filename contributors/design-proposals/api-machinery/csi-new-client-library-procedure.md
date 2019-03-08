@@ -8,7 +8,7 @@
 
 # Background
 
-Kubernetes currently officially supports both Go and [Python client](https://github.com/kubernetes-incubator/client-python) libraries. The go client is developed and extracted from main kubernetes repositories in a complex process. On the other hand, the python client is based on OpenAPI, and is mostly generated code (via [swagger-codegen](https://github.com/swagger-api/swagger-codegen)). By generating the API Operations and Data Models, updating the client and tracking changes from main repositories becomes much more sustainable.
+Kubernetes currently officially supports both Go and [Python client](https://github.com/kubernetes-incubator/client-python) libraries. The go client is developed and extracted from main kubernetes repositories in a complex process. On the other hand, the python client is based on OpenAPI, and is mostly generated code (via [code-generation](#code-generation)). By generating the API Operations and Data Models, updating the client and tracking changes from main repositories becomes much more sustainable.
 
 The python client development process can be repeated for other languages. Supporting a basic set of languages would help the community to build more tools and applications based on kubernetes. We may consider adjusting the go client library generation to match, but that is not the goal of this doc.
 
@@ -20,7 +20,7 @@ The proposal is to support *Java*, *PHP*, *Ruby*, *C#*, and *Javascript* in addi
 
 # Development process
 
-Development would be based on a generated client using OpenAPI and [swagger-codegen](https://github.com/swagger-api/swagger-codegen). Some basic functionality such as loading config, watch, etc. would be added (i.e., hand-written) on top of this generated client. The idea is to develop transportation and configuration layer, and modify as few generated files (such as API and models) as possible. The clients would be in alpha, beta or stable stages, and may have either bronze, silver, or gold support according to these requirements:
+Development would be based on a generated client using OpenAPI and [code-generation](#code-generation). Some basic functionality such as loading config, watch, etc. would be added (i.e., hand-written) on top of this generated client. The idea is to develop transportation and configuration layer, and modify as few generated files (such as API and models) as possible. The clients would be in alpha, beta or stable stages, and may have either bronze, silver, or gold support according to these requirements:
 
 ### Client Capabilities
 
@@ -46,7 +46,8 @@ Development would be based on a generated client using OpenAPI and [swagger-code
 
 * Gold Requirements [![Client Capabilities](https://img.shields.io/badge/Kubernetes%20client-Gold-blue.svg?style=plastic&colorB=FFD700&colorA=306CE8)](/contributors/design-proposals/api-machinery/csi-new-client-library-procedure.md#client-capabilities)
 
-    * Support exec, attach, port-forward calls (these are not normally supported out of the box from [swagger-codegen](https://github.com/swagger-api/swagger-codegen))
+    * Support exec, attach, port-forward calls (these are not normally supported out of the box from 
+    [code-generation](#code-generation)
 
     * Proto encoding
 
@@ -91,6 +92,13 @@ New clients will start as repositories in the [kubernetes client](https://github
 We propose to make a `gen` repository to house common functionality such as preprocessing the OpenAPI spec and running the generator, etc.
 
 For each client language, we’ll make a client-[lang]-base and client-[lang] repository (where lang is one of java, csharp, js, php, ruby). The base repo would have all utility and add-ons for the specified language and the main repo will have generated client and reference to base repo.
+
+# Code Generation
+
+There are many different Swagger/OpenAPI to code generation tools in existence. The project originally
+standardized on [swagger-codegen](https://github.com/swagger-api/swagger-codegen)), but this project
+has recently forked to [openapi-codegen](https://github.com/OpenAPITools/openapi-generator). We are
+in the process of migrating clients to the new code generator.
 
 # Support
 
