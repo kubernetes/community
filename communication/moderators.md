@@ -144,7 +144,7 @@ Moderators pro tempore seats: 9
 - Dylan Graham (@DylanGraham) - AEST
 - Loic Le Dru (@lledru) - CET
 - Puja Abbassi (@puja108) - CET
-- Open
+- Manjunath Kumatagi (@mkumatag) - IST
 - Open
 - Open
 - Open
