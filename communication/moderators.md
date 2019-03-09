@@ -101,7 +101,7 @@ Moderators seats: 10
 - Jorge Castro (@castrojo) - ET
 - Joe Beda - (@joebeda) - PT
 - Jaice Singer DuMars - (@jdumars) - PT
-- Open
+- Jorge Alarcon (@alejandrox1) - ET 
 - Open
 - Open
 
@@ -157,7 +157,7 @@ Administrators seats: 4
 
 - Paris Pittman (@parispittman) - PT
 - Jorge Castro (@castrojo) - ET
-- Open
+- Jorge Alarcon (@alejandrox1) - ET
 - Open
 - License and main account controlled by the CNCF
 
