@@ -18,6 +18,7 @@ Perform a security audit on k8s with a vendor and produce as artifacts a threat 
 * Aaron Small (**[@aasmall](https://github.com/aasmall)**), Google
 * Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
 * Craig Ingram (**[@cji](https://github.com/cji)**), Salesforce
+* Jay Beale (**[@jaybeale](https://github.com/jaybeale)**), InGuardians
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-security-audit)

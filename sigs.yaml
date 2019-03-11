@@ -2406,6 +2406,9 @@ workinggroups:
       - name: Craig Ingram
         github: cji
         company: Salesforce
+      - name: Jay Beale
+        github: jaybeale
+        company: InGuardians
     meetings:
     - description: Regular WG Meeting
       day: Monday
