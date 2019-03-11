@@ -1446,6 +1446,12 @@ sigs:
       - name: Chris Hoge
         github: hogepodge
         company: OpenStack Foundation
+      - name: Aditi Sharma
+        github: adisky
+        company: NEC Technologies India
+      - name: Christoph Glaubitz
+        github: chrigl
+        company: iNNOVO Cloud
       emeritus_leads:
        - name: David Lyle
          github: dklyle
@@ -1461,12 +1467,12 @@ sigs:
          company: CNCF
     meetings:
     - description: Regular SIG Meeting
-      day: Wednesday
-      time: "16:00"
+      day: Thursday
+      time: "08:00"
       tz: "PT (Pacific Time)"
-      frequency: biweekly
-      url: https://docs.google.com/document/d/15UwgLbEyZyXXxVtsThcSuPiJru4CuqU9p3ttZSfTaY4/edit
-      archive_url: https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f
+      frequency: "biweekly starting Thursday February 28, 2019"
+      url: https://docs.google.com/document/d/1bW3j4hFN4D8rv2LFv-DybB3gcE5ISAaOO_OpvDCgrGg/edit
+      archive_url:  https://docs.google.com/document/d/15UwgLbEyZyXXxVtsThcSuPiJru4CuqU9p3ttZSfTaY4/edit
       recordings_url: https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax
     contact:
       slack: sig-openstack
