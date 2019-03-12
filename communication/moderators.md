@@ -125,7 +125,7 @@ Owners seats: 1
 
 #### Moderators
 
-Moderators seats: 9
+Moderators seats: 10
 
 - Bob Killen (@mrbobbytables) - ET
 - Ihor Dvoretskyi (@idvoretskyi) - EET
@@ -136,6 +136,7 @@ Moderators seats: 9
 - Paris Pittman (@parispittman) - PT
 - Jorge Alarcon (@alejandrox1) - ET
 - Yang Li (@idealhack) - CST
+- Noah Kantrowitz (@coderanger) - America/Los_Angeles
 
 #### Moderators Pro Tempore
 
