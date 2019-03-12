@@ -8,6 +8,23 @@ are over 50,000 members who should all expect to have a positive experience.
 Chat is searchable and public. Do not make comments that you would not say on a
 video recording or in another public space. Please be courteous to others.
 
+- [Code of Conduct](#code-of-conduct)
+- [Admins](#admins)
+- [General Communication Guidelines](#general-communication-guidelines)
+  - [Workspace Channel History](#workspace-channel-history)
+  - [DM (Direct Message) Conversations](#dm-direct-message-conversations)
+  - [Specific Channel Rules](#specific-channel-rules)
+  - [Escalating and/or Reporting a Problem](#escalating-andor-reporting-a-problem)
+- [Requesting a Channel](#requesting-a-channel)
+- [Requesting a Bot, Token, or Webhook](#requesting-a-bot-token-or-webhook)
+- [Moderation](#moderation)
+  - [Admin Expectations and Guidelines]()
+  - [Sending Messages to the Channel]()
+  - [Processing Slack Requests](#processing-slack-requests)
+    - [Processing Channel Requests](#processing-channel-requests)
+    - [Processing Bot, Token, or Webhook Requests](#processing-bot-token-or-webhook-requests)
+  - [Inactivating Accounts](#inactivating-accounts)
+
 
 ## Code of Conduct
 
@@ -65,7 +82,10 @@ development to kubernetes,
 
 ### Escalating and/or Reporting a Problem
 
-Join the `#slack-admins` channel or contact one of the admins in the
+Join the `#slack-admins` channel and alert the admins to the current issue. This
+is the **fastest way** to get an admin response with many watching the channel.
+
+As a last resort, or if the issue is private, contact one of the admins in the
 [closest timezone][admins] via DM directly and describe the situation. If the
 issue can be documented, please take a screenshot to include in your message.
 
@@ -74,99 +94,6 @@ issue can be documented, please take a screenshot to include in your message.
 Send a DM to another [listed admin][admins] and describe the situation. If it’s
 a [code of conduct][coc] issue, please send an email to <conduct@kubernetes.io>
 and describe the situation.
-
----
-
-## Moderation
-
-### Admin Expectations and Guidelines
-
-Admins should adhere to the general Kubernetes project [moderation guidelines].
-
-Admins should additionally make sure to mention they are a Slack admin and their
-timezone in their “What I do” section of their Slack profile.
-
-Be mindful of how you handle communication during stressful interactions.
-Administrators act as direct representatives of the community, and need to
-maintain a very high level of professionalism at all times. If you feel too
-involved in the situation to maintain impartiality or professionalism, that’s
-a great time to enlist the help of another admin.
-
-Try to take any situations that involve upset or angry members to DM or video
-chat. Please document these interactions for other Slack admins to review.
-
-Content will be automatically removed if it violates code of conduct or is a
-sales pitch. Admins will take a screenshot of such behavior in order to document
-the situation. The community takes such violations extremely seriously, and the
-admins are empowered to handle it swiftly.
-
-
-### Sending Messages to the Channel
-
-`@all`, `@here` and `@channel` should be used rarely. Members will receive
-notifications from these commands. Remember Kubernetes is a global project -
-please be kind.
-
-
-### Slack Requests
-
-Admins are tasked with processing requests for channels and other things such as
-bots, tokens or webhook.
-
-
-#### Channel Requests
-
-Channel requests should be reviewed for their relation and relevance to the
-Kubernetes community. Typically channels should be dedicated to SIGs, WGs, UGs,
-sub-projects, community topics, and other things related to Kubernetes programs
-and projects.
-
-For Kubernetes project centric requests, validate them against the [sig-list],
-or request a link to a related issue/PR, or mailing list discussion for the
-requested Channel.
-
-Small external projects are encouraged to use the channel of the SIG, WG, or UG
-most relevant to them. Other things such as programming language specific
-channels are discouraged and should in turn be steered to `#kubernetes-client`
-or communication avenues commonly used by their specific language.
-
-In general, use your best judgment.
-
-Once two admins have agreed to sponsor the channel, an admin should assign the
-issue to themselves, and create the channel. A message should then be pinned
-with the below text:
-```
-This channel abides to the Kubernetes Code of Conduct - http://git.k8s.io/community/code-of-conduct.md
-Contact conduct@kubernetes.io or an admin in the #slack-admins channel if there is a problem.
-```
-
-
-#### Bot, Token, or Webhook Requests
-
-Requests should first be evaluated for their relevance to the project. Typically
-approved requests are related to: GitHub, the CNCF, or other tools/platforms
-used to aid in the management of Slack. Requests outside of this scope should be
-heavily scrutinized and reviewed for **ANY** potential security, privacy, or
-usability concerns.
-
-It is best to err on the side of not allowing a Bot, Token or Webhook request
-than allowing one.
-
-If consensus among the admins can be reached regarding the request; an admin
-should assign the issue to themselves, and reach out to the request contact
-regarding next steps.
-
-
-### Inactivating Accounts
-
-For the reasons listed below, admins may inactivate individual Slack accounts.
-Due to Slack’s framework, it does not allow for an account to be banned or
-suspended in the traditional sense, merely inactivated. See [Slack’s policy on
-inactivated accounts] for more information.
-
-- Spreading spam content in DMs and/or channels.
-- Not adhering to the code of conduct set forth in DMs and/or channels.
-- Overtly selling products, related or unrelated to Kubernetes.
 
 ---
 
@@ -221,6 +148,100 @@ After you submit your request the Slack admins will review and follow-up with
 any questions in the issue. If consensus can be reached among the admins, the
 request will be approved and follow-up communication on implementation will be
 discussed in Slack itself.
+
+---
+
+## Moderation
+
+### Admin Expectations and Guidelines
+
+Admins should adhere to the general Kubernetes project [moderation guidelines].
+
+Additionally, admins should ensure they have 2-factor auth enabled for their
+account and mention they are a Slack admin in the "What I do" portion of their
+profile. This message should also include the timezone they are representing.
+
+Be mindful of how you handle communication during stressful interactions.
+Administrators act as direct representatives of the community, and need to
+maintain a very high level of professionalism at all times. If you feel too
+involved in the situation to maintain impartiality or professionalism, that’s
+a great time to enlist the help of another admin.
+
+Try to take any situations that involve upset or angry members to DM or video
+chat. Please document these interactions for other Slack admins to review.
+
+Content will be removed if it violates code of conduct or is a sales pitch.
+Admins will take a screenshot of such behavior in order to document the
+situation. The community takes such violations extremely seriously, and the
+admins are empowered to handle it swiftly.
+
+
+### Sending Messages to the Channel
+
+`@all`, `@here` and `@channel` should be used rarely. Members will receive
+notifications from these commands. Remember Kubernetes is a global project -
+please be kind.
+
+
+### Processing Slack Requests
+
+Admins are tasked with processing requests for channels and other things such as
+bots, tokens or webhook.
+
+
+#### Processing Channel Requests
+
+Channel requests should be reviewed for their relation and relevance to the
+Kubernetes community. Typically channels should be dedicated to SIGs, WGs, UGs,
+sub-projects, community topics, and other things related to Kubernetes programs
+and projects.
+
+For Kubernetes project centric requests, validate them against the [sig-list],
+or request a link to a related issue/PR, or mailing list discussion for the
+requested Channel.
+
+Small external projects are encouraged to use the channel of the SIG, WG, or UG
+most relevant to them. Other things such as programming language specific
+channels are discouraged and should in turn be steered to `#kubernetes-client`
+or communication avenues commonly used by their specific language.
+
+In general, use your best judgment.
+
+Once two admins have agreed to sponsor the channel, an admin should assign the
+issue to themselves, and create the channel. A message should then be pinned
+with the below text:
+```
+This channel abides to the Kubernetes Code of Conduct - http://git.k8s.io/community/code-of-conduct.md
+Contact conduct@kubernetes.io or an admin in the #slack-admins channel if there is a problem.
+```
+
+
+#### Processing Bot, Token, or Webhook Requests
+
+Requests should first be evaluated for their relevance to the project. Typically
+approved requests are related to: GitHub, the CNCF, or other tools/platforms
+used to aid in the management of Slack. Requests outside of this scope should be
+heavily scrutinized and reviewed for **ANY** potential security, privacy, or
+usability concerns.
+
+It is best to err on the side of not allowing a Bot, Token or Webhook request
+than allowing one.
+
+If consensus among the admins can be reached regarding the request; an admin
+should assign the issue to themselves, and reach out to the request contact
+regarding next steps.
+
+
+### Inactivating Accounts
+
+For the reasons listed below, admins may inactivate individual Slack accounts.
+Due to Slack’s framework, it does not allow for an account to be banned or
+suspended in the traditional sense, merely inactivated. See [Slack’s policy on
+inactivated accounts] for more information.
+
+- Spreading spam content in DMs and/or channels.
+- Not adhering to the code of conduct set forth in DMs and/or channels.
+- Overtly selling products, related or unrelated to Kubernetes.
 
 
 [coc]: /code-of-conduct.md
