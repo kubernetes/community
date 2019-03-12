@@ -217,7 +217,7 @@ When reviewing PRs from others [The Gentle Art of Patch Review](http://sage.thes
 
 ## Testing
 
-Testing is the responsibility of all contributors and is in part owned by all SIGss, but is also coordinated by [sig-testing](/sig-testing). 
+Testing is the responsibility of all contributors and is in part owned by all SIGs, but is also coordinated by [sig-testing](/sig-testing). 
 Refer to the [Testing Guide](/contributors/devel/sig-testing/testing.md) for more information.
 
 There are multiple types of tests.
