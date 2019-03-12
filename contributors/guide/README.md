@@ -33,6 +33,8 @@ Welcome to Kubernetes!
     -   [Security](#security)
     -   [Documentation](#documentation)
     -   [Issues Management or Triage](#issues-management-or-triage)
+-   [Kubernetes Contributor Playground](#kubernetes-contributor-playground)
+    -   [Youtube playlist](#youtube-playlist)
 -   [Community](#community)
     -   [Communication](#communication-1)
     -   [Events](#events)
@@ -250,6 +252,14 @@ If you're looking to run e2e tests on your own infrastructure, [kubetest](https:
 Have you ever noticed the total number of [open issues](https://issues.k8s.io)?
 Helping to manage or triage these open issues can be a great contribution and a great opportunity to learn about the various areas of the project. Triaging is the word we use to describe the process of adding multiple types of descriptive labels to GitHub issues, in order to speed up routing issues to the right folks.
 Refer to the [Issue Triage Guidelines](/contributors/guide/issue-triage.md) for more information.
+
+# Kubernetes Contributor Playground
+
+If you are looking for a safe place, where you can familiarize yourself with (some of) the Kubernetes Project's review and pull request processes, then the [Kubernetes Contributor Playground](https://github.com/kubernetes-sigs/contributor-playground/) is the right place for you.
+
+## Youtube playlist
+
+A [Youtube playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP3M5X7stuD7N4r3uP2PZQUx) of the New Contributor workshop has been posted, and an outline of the video content can be found [here](/events/2018/05-contributor-summit). 
 
 # Community
 
