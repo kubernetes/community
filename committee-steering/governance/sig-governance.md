@@ -59,7 +59,7 @@ Subproject Owner Role.  (this different from a SIG or Organization Member).
   - Number: 2-3
   - Membership tracked in [sigs.yaml]
 
-### Subproject Owner
+### Subprojects
 
 - Subproject Owners
   - Scoped to a subproject defined in [sigs.yaml]
@@ -67,6 +67,12 @@ Subproject Owner Role.  (this different from a SIG or Organization Member).
   - *SHOULD* be an escalation point for technical discussions and decisions in the subproject
   - *SHOULD* set milestone priorities or delegate this responsibility
   - Number: 2-3
+  - Membership tracked in [sigs.yaml]
+
+- Subproject Leads
+  - Track and coordinate work
+  - Ensure decisions are made are documented
+  - Number 1-2
   - Membership tracked in [sigs.yaml]
 
 ### Member
