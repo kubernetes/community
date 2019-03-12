@@ -147,8 +147,8 @@ Moderators pro tempore seats: 9
 - Loic Le Dru (@lledru) - CET
 - Puja Abbassi (@puja108) - CET
 - Manjunath Kumatagi (@mkumatag) - IST
-- Pandiyaraja Ramamoorthy(@pontiyaraja) - IST
-- Open
+- Pandiyaraja Ramamoorthy (@pontiyaraja) - IST
+- James Munnelly (@munnerz) - GMT
 - Open
 
 ## Zoom
