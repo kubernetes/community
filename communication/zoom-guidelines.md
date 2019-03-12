@@ -8,7 +8,7 @@ has to moderate a meeting in all senses of the word from starting and stopping
 the meeting, to acting on [code of conduct] issues.
 
 These guidelines are meant as a tool to help Kubernetes members manage their
-Zoom resources. 
+Zoom resources.
 
 Check the main [moderation] page for more information on other tools and general
 moderation guidelines.
@@ -28,7 +28,7 @@ listed in the [centralized list of administrators].
 
 ### Obtaining a Zoom license
 
-Ensure that all SIG/WG leads, chairs, and any other necessary trusted owners 
+Ensure that all SIG/WG leads, chairs, and any other necessary trusted owners
 have access to the `k-sig-<foo>-leads@googlegroups.com` account as described
 in the [sig creation procedure]. Once done, contact one of the [Zoom Admins]
 to obtain a Zoom licence.
@@ -43,9 +43,9 @@ To create a meeting with **moderation** enabled, ensure the following:
 
 - Have the [latest version] of the Zoom client installed.
 - Be logged in as the leads account associated with the meeting **OR** use the
-  [host key] to "claim host". 
+  [host key] to "claim host".
 - Configure a meeting setup through the "Meeting" menu in the leads Zoom account.
-  **NOTE:** Do **NOT** use the "Personal Meeting ID". This will create an 
+  **NOTE:** Do **NOT** use the "Personal Meeting ID". This will create an
   "ad-hoc" meeting that is time-bounded and without moderation capability.
 
 After the meeting has started:
@@ -60,7 +60,7 @@ After the meeting has started:
 
 If you're dealing with a troll or bad actor:
 
-- Put the troll or bad actor on **hold**. The participant will be put into a 
+- Put the troll or bad actor on **hold**. The participant will be put into a
   "waiting room" and will not be able to participate in the call until the host
   removes the hold.
 - Remove the participant. Please be cautious when testing or using this feature,
@@ -76,7 +76,7 @@ options after scrolling over the participants name/information.
 
 Hosts **must** be comfortable with how to use these moderation tools and the
 Zoom settings in general. Make sure whoever is running your meeting is equipped
-with the right knowledge and skills. If you have any questions or concerns, 
+with the right knowledge and skills. If you have any questions or concerns,
 reach out to the [Zoom Admins] and they will be able to provide further guidance
 and training.
 
@@ -84,7 +84,7 @@ and training.
 #### Related moderation documentation
 
 - Zoom has [documentation on how to use their moderation tools].
-- Members of the _kubernetes-sig-leads@_ group have access to an extensive 
+- Members of the _kubernetes-sig-leads@_ group have access to an extensive
   [best practices doc] with screenshots going over the community Zoom best
   practices.
 
@@ -203,7 +203,7 @@ Thanks for making Kubernetes meetings work great!
 [best practices doc]: https://docs.google.com/document/d/1fudC_diqhN2TdclGKnQ4Omu4mwom83kYbZ5uzVRI07w/edit?usp=sharing
 [Kubernetes channel]: https://www.youtube.com/c/kubernetescommunity
 [SIG Contributor Experience]: /sig-contributor-experience
-[Please follow this guideline for more details.]: ./K8sYoutubeCollaboration.md
+[Please follow this guideline for more details.]: ./youtube-guidelines.md
 [centralized list of administrators]: ./moderators.md
 [documentation on how to use their screen sharing feature]: https://support.zoom.us/hc/en-us/articles/201362153-How-Do-I-Share-My-Screen
 [lots of things that can go wrong]: https://www.youtube.com/watch?v=JMOOG7rWTPg
