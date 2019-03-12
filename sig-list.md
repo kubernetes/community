@@ -16,7 +16,7 @@ depending on their needs and workflow.
 
 Each group's material is in its subdirectory in this project.
 
-When the need arises, a [new SIG can be created](sig-creation-procedure.md)
+When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 
 ### Master SIG List
 
