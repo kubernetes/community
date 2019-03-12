@@ -197,7 +197,7 @@ Thanks for making Kubernetes meetings work great!
 [CNCF Service Desk]: https://github.com/cncf/servicedesk
 [Kubernetes Code of Conduct]: /code-of-conduct.md
 [code of conduct committee]: /committee-code-of-conduct/README.md
-[SIG Creation procedure]: /sig-governance.md#sig-creation-and-maintenance-procedure
+[SIG Creation procedure]: /sig-wg-lifecycle.md#communicate
 [latest version]: https://zoom.us/download
 [documentation on how to use their moderation tools]: https://support.zoom.us/hc/en-us/articles/201362603-Host-Controls-in-a-Meeting
 [best practices doc]: https://docs.google.com/document/d/1fudC_diqhN2TdclGKnQ4Omu4mwom83kYbZ5uzVRI07w/edit?usp=sharing
