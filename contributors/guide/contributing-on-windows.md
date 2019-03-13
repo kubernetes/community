@@ -1,6 +1,6 @@
 # Contributing on Windows Node support
 
-Contains a list of common resources when contributing to supporting Windows Node and Windows Server containers in Kubernetes.
+Contains a list of common resources when contributing in the effort to support Windows Node and Windows Server containers in Kubernetes.
 
 ## Joining the community of other contributors
 
