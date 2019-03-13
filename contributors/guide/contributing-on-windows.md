@@ -2,6 +2,18 @@
 
 Contains a list of common resources when contributing in the effort to support Windows Node and Windows Server containers in Kubernetes.
 
+-   [Joining the community of other contributors](#joining-the-community-of-other-contributors)    
+-   [Find work in progress](#find-work-in-progress)    
+-   [Building Kubernetes for Windows from Source](#building-kubernetes-for-windows-from-source)        
+    -   [Build Prerequisites](#build-prerequisites)       
+    -   [Building Kubernetes binaries for Windows](#building-kubernetes-binaries-for-windows)        
+    -   [Updating the Node binaries](#updating-the-node-binaries)    
+-   [Creating a PR](#creating-a-pr)    
+-   [Running Tests](#running-tests)    
+-   [Reporting Issues](#reporting-issues)    
+-   [Gathering Logs](#gathering-logs)        
+    -   [Collecting Networking Logs](#collecting-networking-logs)
+
 ## Joining the community of other contributors
 
 The best way to get in contact with the contributors working on Windows support is through the Kubernetes Slack. To get a Slack invite, visit [http://slack.k8s.io/](http://slack.k8s.io/) . Once you're logged in, join us in the [#SIG-Windows](https://kubernetes.slack.com/messages/sig-windows) channel.
