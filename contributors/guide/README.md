@@ -244,7 +244,7 @@ If you're looking to run e2e tests on your own infrastructure, [kubetest](https:
 - [Security and Disclosure Information](https://kubernetes.io/docs/reference/issues-security/security/) - check this page if you wish to report a security vulnerability.
 
 ## Contributing on Windows Node support
-If you would like to contribute to the effort of supporting Windows Nodes in Kubernetes and scheduling Windows containers, we have a dedicated [reference guide](./contributing-on-windows.md). 
+If you would like to contribute to the effort of supporting Windows Nodes in Kubernetes and scheduling Windows containers, we have a dedicated [reference guide](../../sig-windows/contributors-guide.md.md). 
 
 ## Documentation
 
