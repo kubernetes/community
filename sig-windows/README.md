@@ -52,23 +52,19 @@ Note that the links to display team membership will only work if you are a membe
 <!-- BEGIN CUSTOM CONTENT -->
 ## Getting Started
 
-If you're looking for information on building and running containers on Windows, you can get started at http://aka.ms/windowscontainers .
+If you're looking for information on building and running containers on Windows, you can get started at http://aka.ms/windowscontainers.
 
-Kubernetes 1.9 includes beta support for Windows Server containers and has an up-to-date [Getting Started Guide for Windows](https://kubernetes.io/docs/getting-started-guides/windows/) .
+Kubernetes 1.14 includes stable support for Windows Server containers and has an up-to-date [Getting Started Guide for Windows](https://kubernetes.io/docs/getting-started-guides/windows/) .
 
-Some additional guides are available, but may refer to older releases:
-
-* Using host gateway networking: https://docs.microsoft.com/en-us/virtualization/windowscontainers/kubernetes/getting-started-kubernetes-windows 
-* Using OVN as demonstrated at Google Cloud Next '17: https://github.com/apprenda/kubernetes-ovn-heterogeneous-cluster
+Additional information and guides are available in the [KEPs for SIG-Windows](https://github.com/kubernetes/enhancements/tree/master/keps/sig-windows)
 
 ## Contributing
 
-We're currently using a public [Trello board](https://trello.com/b/rjTqrwjl/windows-k8s-roadmap) in the weekly SIG-Windows meeting to track items with active progress for each release. That's a great place to start to get the most up-to-date status, then feel free to join us on the Slack channel anytime with questions.
+To get yourself familiar with contributing, please read the [SIG-Windows Contributor guide](https://github.com/kubernetes/community/blob/master/contributors/guide/README.md#contributing-on-windows-node-support)
+
+We're currently using a [GitHub project](https://github.com/orgs/kubernetes/projects/8) in the weekly SIG-Windows meeting to track items with active progress for each release. That's a great place to start to get the most up-to-date status, then feel free to join us on the Slack channel anytime with questions.
 
 As always, you can also find the active list of open issues and proposals [Open Code Issues and PRs for SIG/Windows](https://github.com/kubernetes/kubernetes/labels/sig%2Fwindows) on GitHub.
-
-## API tracking
-We also have an [API tracking](https://github.com/kubernetes/community/blob/master/sig-windows/api-tracking.md) document that we're building out to track areas where the APIs may not be implemented or need to change for Windows.
 
 ## Meeting Recordings
 
