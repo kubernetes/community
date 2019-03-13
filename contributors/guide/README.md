@@ -31,6 +31,7 @@ Welcome to Kubernetes!
     -   [Code Review](#code-review)
     -   [Testing](#testing)
     -   [Security](#security)
+    -   [Contributing on Windows Node support](#contributing-on-windows-node-support)    
     -   [Documentation](#documentation)
     -   [Issues Management or Triage](#issues-management-or-triage)
 -   [Kubernetes Contributor Playground](#kubernetes-contributor-playground)
@@ -242,6 +243,8 @@ If you're looking to run e2e tests on your own infrastructure, [kubetest](https:
 - [Security Release Page](https://git.k8s.io/sig-release/security-release-process-documentation/security-release-process.md) - outlines the procedures for the handling of security issues.
 - [Security and Disclosure Information](https://kubernetes.io/docs/reference/issues-security/security/) - check this page if you wish to report a security vulnerability.
 
+## Contributing on Windows Node support
+If you would like to contribute to the effort of supporting Windows Nodes in Kubernetes and scheduling Windows containers, we have a dedicated [reference guide](./contributing-on-windows.md). 
 
 ## Documentation
 
