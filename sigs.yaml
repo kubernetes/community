@@ -2133,7 +2133,7 @@ sigs:
   - name: Windows
     dir: sig-windows
     mission_statement: >
-      Focuses on supporting Windows Server Containers for Kubernetes.
+      Focuses on supporting Windows Node and scheduling Windows Server containers on Kubernetes.
     charter_link:
     label: windows
     leadership:
