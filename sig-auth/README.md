@@ -128,6 +128,10 @@ The following subprojects are owned by sig-auth:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/token/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/serviceaccount/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/serviceaccount/OWNERS
+- **multi-tenancy**
+  - Description: Proposals and prototypes for introducing tenant model to enable multi-tenant cluster
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/multi-tenancy/master/OWNERS
 
 ## GitHub Teams
 

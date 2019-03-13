@@ -443,6 +443,11 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/token/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/serviceaccount/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/serviceaccount/OWNERS
+    - name: multi-tenancy
+      description: >
+       Proposals and prototypes for introducing tenant model to enable multi-tenant cluster
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/multi-tenancy/master/OWNERS
   - name: Autoscaling
     dir: sig-autoscaling
     mission_statement: >
