@@ -23,6 +23,7 @@ Welcome to Kubernetes!
     -   [Find something to work on](#find-something-to-work-on)
         -   [Find a good first topic](#find-a-good-first-topic)
         -   [Learn about SIGs](#learn-about-sigs)
+        -   [SIG-specific contributing guidelines](#sig-specific-contributing-guidelines)
         -   [File an Issue](#file-an-issue)
 -   [Contributing](#contributing)
     -   [Communication](#communication)
@@ -30,8 +31,7 @@ Welcome to Kubernetes!
     -   [Open a Pull Request](#open-a-pull-request)
     -   [Code Review](#code-review)
     -   [Testing](#testing)
-    -   [Security](#security)
-    -   [Contributing on Windows Node support](#contributing-on-windows-node-support)    
+    -   [Security](#security)    
     -   [Documentation](#documentation)
     -   [Issues Management or Triage](#issues-management-or-triage)
 -   [Kubernetes Contributor Playground](#kubernetes-contributor-playground)
@@ -109,10 +109,6 @@ You may have noticed that some repositories in the Kubernetes Organization are o
 We organize the community into SIGs in order to improve our workflow and more easily manage what is a very large community project.
 The developers within each SIG have autonomy and ownership over that SIG's part of Kubernetes.
 
-Some SIGs also have their own `CONTRIBUTING.md` files, which may contain extra information or guidelines in addition to these general ones.
-These are located in the SIG-specific community directories.
-For example: the contributor's guide for SIG CLI is located in the *kubernetes/community* repo, as [`/sig-cli/CONTRIBUTING.md`](/sig-cli/CONTRIBUTING.md).
-
 A SIG is an open, community effort.
 Anybody is welcome to jump into a SIG and begin fixing issues, critiquing design proposals and reviewing code.
 SIGs have regular [video meetings](https://kubernetes.io/community/) which everyone is welcome to.
@@ -141,6 +137,16 @@ Here is the [list of SIGs](/sig-list.md) so that you can determine which is most
 Follow the link in the SIG name column to reach each SIGs README. 
 Most SIGs will have a set of GitHub Teams with tags that can be mentioned in a comment on issues and pull requests for higher visibility. 
 If you are not sure about the correct SIG for an issue, you can try SIG-contributor-experience [here](/sig-contributor-experience#github-teams), or [ask in Slack](http://slack.k8s.io/).
+
+##### SIG-specific contributing guidelines
+Some SIGs also have their own `CONTRIBUTING.md` files, which may contain extra information or guidelines in addition to these general ones.
+These are located in the SIG-specific community directories:
+- [`/sig-apps/CONTRIBUTING.md`](/sig-apps/CONTRIBUTING.md)
+- [`/sig-aws/CONTRIBUTING.md`](/sig-aws/CONTRIBUTING.md)
+- [`/sig-cli/CONTRIBUTING.md`](/sig-cli/CONTRIBUTING.md)
+- [`/sig-multicluster/CONTRIBUTING.md`](/sig-multicluster/CONTRIBUTING.md)
+- [`/sig-storage/CONTRIBUTING.md`](/sig-storage/CONTRIBUTING.md)
+- [`/sig-windows/CONTRIBUTING.md`](/sig-windows/CONTRIBUTING.md)
 
 ### File an Issue
 
@@ -244,9 +250,6 @@ If you're looking to run e2e tests on your own infrastructure, [kubetest](https:
 
 - [Security Release Page](https://git.k8s.io/sig-release/security-release-process-documentation/security-release-process.md) - outlines the procedures for the handling of security issues.
 - [Security and Disclosure Information](https://kubernetes.io/docs/reference/issues-security/security/) - check this page if you wish to report a security vulnerability.
-
-## Contributing on Windows Node support
-If you would like to contribute to the effort of supporting Windows Nodes in Kubernetes and scheduling Windows containers, we have a dedicated [reference guide](../../sig-windows/contributors-guide.md). 
 
 ## Documentation
 
