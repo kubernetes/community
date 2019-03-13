@@ -60,7 +60,7 @@ Additional information and guides are available in the [KEPs for SIG-Windows](ht
 
 ## Contributing
 
-To get yourself familiar with contributing, please read the [SIG-Windows Contributor guide](https://github.com/kubernetes/community/blob/master/contributors/guide/README.md#contributing-on-windows-node-support)
+To get yourself familiar with contributing, please read the [SIG-Windows Contributor guide](./contributors-guide.md)
 
 We're currently using a [GitHub project](https://github.com/orgs/kubernetes/projects/8) in the weekly SIG-Windows meeting to track items with active progress for each release. That's a great place to start to get the most up-to-date status, then feel free to join us on the Slack channel anytime with questions.
 
