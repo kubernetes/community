@@ -217,6 +217,8 @@ When reviewing PRs from others [The Gentle Art of Patch Review](http://sage.thes
 * Is the contribution architected correctly?
 * Is the contribution polished?
 
+Note: if your pull request isn't getting enough attention, you can use the [#pr-reviews](https://kubernetes.slack.com/messages/pr-reviews) channel on Slack to get help finding reviewers.
+
 ## Testing
 
 Testing is the responsibility of all contributors and is in part owned by all SIGss, but is also coordinated by [sig-testing](/sig-testing). 
