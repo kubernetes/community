@@ -151,6 +151,7 @@ Moderators pro tempore seats: 9
 - Pandiyaraja Ramamoorthy (@pontiyaraja) - IST
 - James Munnelly (@munnerz) - GMT
 - Joel Speed (@JoelSpeed) - GMT
+- Aditya Konarde (@aditya-konarde) - IST
 
 ## Zoom
 
