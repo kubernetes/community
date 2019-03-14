@@ -136,7 +136,7 @@ Moderators seats: 10
 - Paris Pittman (@parispittman) - PT
 - Jorge Alarcon (@alejandrox1) - ET
 - Yang Li (@idealhack) - CST
-- Noah Kantrowitz (@coderanger) - America/Los_Angeles
+- Noah Kantrowitz (@coderanger) - PT
 
 #### Moderators Pro Tempore
 
