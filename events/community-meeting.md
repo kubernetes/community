@@ -1,6 +1,7 @@
 # Kubernetes Weekly Community Meeting
 
-We have PUBLIC and RECORDED [weekly meeting](https://zoom.us/my/kubernetescommunity) every Thursday at [6pm UTC](https://www.google.com/search?q=6pm+UTC).
+We have PUBLIC and RECORDED [weekly meeting](https://zoom.us/my/kubernetescommunity) every Thursday at [10am PT](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29)
+a).
  
 See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any [iCal client](https://en.wikipedia.org/wiki/ICalendar). Do NOT copy the meetings over to a your personal calendar, you will miss meeting updates. Instead use your client's calendaring feature to say you are attending the meeting so that any changes made to meetings will be reflected on your personal calendar. 
 
