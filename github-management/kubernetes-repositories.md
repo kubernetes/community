@@ -98,6 +98,8 @@ the developers who could not be reached
      [@caniszczyk](https://github.com/caniszczyk) for review of third party deps
    * Boilerplate text across all files should attribute copyright as follows:
      `"Copyright <Project Authors>"` if no CLA was in place prior to donation
+     * If there was a CLA prior to donation, the copyright can be updated post-transfer.
+     The copyright _must_ be updated by someone from the donating organization.
 
 ## Core Repositories
 
