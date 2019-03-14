@@ -138,8 +138,8 @@ Follow the link in the SIG name column to reach each SIGs README.
 Most SIGs will have a set of GitHub Teams with tags that can be mentioned in a comment on issues and pull requests for higher visibility. 
 If you are not sure about the correct SIG for an issue, you can try SIG-contributor-experience [here](/sig-contributor-experience#github-teams), or [ask in Slack](http://slack.k8s.io/).
 
-##### SIG-specific contributing guidelines
-Some SIGs also have their own `CONTRIBUTING.md` files, which may contain extra information or guidelines in addition to these general ones.
+### SIG-specific contributing guidelines
+Some SIGs have their own `CONTRIBUTING.md` files, which may contain extra information or guidelines in addition to these general ones.
 These are located in the SIG-specific community directories:
 - [`/sig-apps/CONTRIBUTING.md`](/sig-apps/CONTRIBUTING.md)
 - [`/sig-aws/CONTRIBUTING.md`](/sig-aws/CONTRIBUTING.md)
