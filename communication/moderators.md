@@ -149,7 +149,7 @@ Moderators pro tempore seats: 9
 - Manjunath Kumatagi (@mkumatag) - IST
 - Pandiyaraja Ramamoorthy (@pontiyaraja) - IST
 - James Munnelly (@munnerz) - GMT
-- Open
+- Joel Speed (@JoelSpeed) - GMT
 
 ## Zoom
 
