@@ -725,7 +725,6 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
     - name: kustomize
       owners:
-      # "owners" entry
       - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
     - name: cli-sdk
       owners:
@@ -733,6 +732,14 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
       - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
+    - name: krew
+      description: Plugin manager for kubectl.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/krew/master/OWNERS
+    - name: krew-index
+      description: Centralized plugin index for krew.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/krew-index/master/OWNERS
   - name: Cloud Provider
     dir: sig-cloud-provider
     mission_statement: >
