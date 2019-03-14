@@ -25,7 +25,7 @@ Primary moderators seats: 7
 - Louis Taylor (@kragniz)- CET
 - Ihor Dvoretskyi (@idvoretskyi) - EET
 - Nikhita Raghunath (@nikhita) - IST
-- Open
+- Bob Killen (@mrbobbytabkes) - ET
 - Open
 
 #### Moderators Pro Tempore
@@ -101,8 +101,8 @@ Moderators seats: 10
 - Jorge Castro (@castrojo) - ET
 - Joe Beda - (@joebeda) - PT
 - Jaice Singer DuMars - (@jdumars) - PT
-- Jorge Alarcon (@alejandrox1) - ET 
-- Open
+- Jorge Alarcon (@alejandrox1) - ET
+- Bob Killen (@mrbobbytables) - ET
 - Open
 
 ### Moderators Pro Tempore
@@ -111,7 +111,7 @@ Moderators pro tempore seats: 3
 
 These are listed as "Communications Managers" in YouTube
 
-- Bob Killen (@mrbobbytables)- ET
+- Open
 - Open
 - Open
 
@@ -158,7 +158,7 @@ Administrators seats: 4
 - Paris Pittman (@parispittman) - PT
 - Jorge Castro (@castrojo) - ET
 - Jorge Alarcon (@alejandrox1) - ET
-- Open
+- Bob Killen (@mrbobbytables) - ET
 - License and main account controlled by the CNCF
 
 [moderation guidelines]: ./moderation.md
