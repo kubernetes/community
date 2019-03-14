@@ -292,8 +292,14 @@ existing Pods in the ADC.
 TODO: Design
 
 ### Raw Block
+In the OperationGenerator, `GenerateMapVolumeFunc`, `GenerateUnmapVolumeFunc` and 
+`GenerateUnmapDeviceFunc` are used to prepare and mount/umount block devices. At the 
+beginning of each API, we will check whether migration is enabled for the plugin. If
+enabled, volume spec will be translated from the in-tree spec to out-of-tree spec using
+CSI as the persistence volume source.
 
-TODO: Design
+Caveat: the original spec needs to be used when setting the state of `actualStateOfWorld`
+for where is it used before the translation.
 
 ### Volume Reconstruction
 
