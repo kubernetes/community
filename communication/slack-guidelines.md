@@ -82,8 +82,20 @@ development to kubernetes,
 
 ### Escalating and/or Reporting a Problem
 
-Join the `#slack-admins` channel and alert the admins to the current issue. This
-is the **fastest way** to get an admin response with many watching the channel.
+The Kubernetes Slack has an integrated tool for reporting issues. It may be
+accessed by clicking on "More actions", the "`...`" to the right of a message,
+and selecting **Report message**.
+
+This will open a new dialog prompt where you may describe the problem. When
+done, it will send the reported message and your comments to **BOTH** the Slack
+admins and [Code of Conduct Committee (CoCC)].
+
+A Slack admin or CoCC member will work to resolve the issue or reach out for
+more information.
+
+If the issue has not been responded to in a timely manner, Join the
+`#slack-admins` channel and alert the admins to the current issue. Many Slack
+admins watch the channel and should respond to you shortly.
 
 As a last resort, or if the issue is private, contact one of the admins in the
 [closest timezone][admins] via DM directly and describe the situation. If the
@@ -246,8 +258,9 @@ inactivated accounts] for more information.
 
 [coc]: /code-of-conduct.md
 [admins]: ./moderators.md#Slack
+[Slack Archive Download]: https://drive.google.com/drive/folders/1idJkWcDuSfs8nFUm-1BgvzZxCqPMpDCb?usp=sharing
+[Code of Conduct Committee (CoCC)]: /committee-code-of-conduct/README.md
 [GitHub Issue]: https://github.com/kubernetes/community/issues/new/choose
 [sig-list]: /sig-list.md
 [Slack’s policy on inactivated accounts]: https://get.Slack.help/hc/en-us/articles/204475027-Deactivate-a-member-s-account
-[Slack Archive Download]: https://drive.google.com/drive/folders/1idJkWcDuSfs8nFUm-1BgvzZxCqPMpDCb?usp=sharing
 [moderation guidelines]: ./moderation.md
