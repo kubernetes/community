@@ -221,6 +221,9 @@ sigs:
       - name: Matt Farina
         github: mattfarina
         company: Samsung SDS
+      - name: Derek Carr
+        github: derekwaynecarr
+        company: Red Hat
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
