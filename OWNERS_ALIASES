@@ -163,6 +163,12 @@ aliases:
     - carolynvs
     - eparis
     - bradamant3
+  committee-product-security:
+    - philips
+    - jessfraz
+    - cjcullen
+    - tallclair
+    - liggitt
   committee-steering:
     - bgrant0607
     - brendanburns
@@ -177,10 +183,5 @@ aliases:
     - spiffxp
     - timothysc
 ## BEGIN CUSTOM CONTENT
-  product-security-committee:
-    - philips
-    - jessfraz
-    - cjcullen
-    - tallclair
-    - liggitt
+
 ## END CUSTOM CONTENT
