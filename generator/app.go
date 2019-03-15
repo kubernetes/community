@@ -73,9 +73,10 @@ type Meeting struct {
 
 // Contact represents the various contact points for a group.
 type Contact struct {
-	Slack       string
-	MailingList string        `yaml:"mailing_list"`
-	GithubTeams []GithubTeams `yaml:"teams"`
+	Slack              string
+	MailingList        string        `yaml:"mailing_list"`
+	PrivateMailingList string        `yaml:"private_mailing_list"`
+	GithubTeams        []GithubTeams `yaml:"teams"`
 }
 
 // GithubTeams represents a specific Github Team.
@@ -125,6 +126,7 @@ type Context struct {
 	Sigs          []Group
 	WorkingGroups []Group
 	UserGroups    []Group
+	Committees    []Group
 }
 
 func pathExists(path string) bool {
@@ -310,6 +312,10 @@ func main() {
 		return strings.ToLower(ctx.UserGroups[i].Name) <= strings.ToLower(ctx.UserGroups[j].Name)
 	})
 
+	sort.Slice(ctx.Committees, func(i, j int) bool {
+		return strings.ToLower(ctx.Committees[i].Name) <= strings.ToLower(ctx.Committees[j].Name)
+	})
+
 	err = createGroupReadme(ctx.Sigs, "sig")
 	if err != nil {
 		log.Fatal(err)
@@ -321,6 +327,11 @@ func main() {
 	}
 
 	err = createGroupReadme(ctx.UserGroups, "ug")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = createGroupReadme(ctx.Committees, "committee")
 	if err != nil {
 		log.Fatal(err)
 	}
