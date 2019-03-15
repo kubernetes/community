@@ -224,6 +224,9 @@ sigs:
       - name: Derek Carr
         github: derekwaynecarr
         company: Red Hat
+      - name: Davanum Srinivas
+        github: dims
+        company: Huawei
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
