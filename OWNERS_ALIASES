@@ -158,8 +158,7 @@ aliases:
     - joelsmith
     - cji
     - jaybeale
-## BEGIN CUSTOM CONTENT
-  steering-committee:
+  committee-steering:
     - bgrant0607
     - brendanburns
     - derekwaynecarr
@@ -172,6 +171,7 @@ aliases:
     - smarterclayton
     - spiffxp
     - timothysc
+## BEGIN CUSTOM CONTENT
   code-of-conduct-committee:
     - jdumars
     - parispittman
