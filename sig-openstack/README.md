@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Coordinates the cross-community efforts of the OpenStack and Kubernetes communities. This includes OpenStack-related contributions to Kubernetes projects with OpenStack as: a deployment platform for Kubernetes; a service provider for Kubernetes; a collection of applications to run on Kubernetes.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 08:00 PT (Pacific Time)](https://docs.google.com/document/d/1bW3j4hFN4D8rv2LFv-DybB3gcE5ISAaOO_OpvDCgrGg/edit) (biweekly starting Thursday February 28, 2019). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 08:00 PT (Pacific Time)](https://docs.google.com/document/d/1bW3j4hFN4D8rv2LFv-DybB3gcE5ISAaOO_OpvDCgrGg/edit) (biweekly starting Wednesday March 20, 2019). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/15UwgLbEyZyXXxVtsThcSuPiJru4CuqU9p3ttZSfTaY4/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax).
 

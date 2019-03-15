@@ -1470,10 +1470,10 @@ sigs:
          company: CNCF
     meetings:
     - description: Regular SIG Meeting
-      day: Thursday
+      day: Wednesday
       time: "08:00"
       tz: "PT (Pacific Time)"
-      frequency: "biweekly starting Thursday February 28, 2019"
+      frequency: "biweekly starting Wednesday March 20, 2019"
       url: https://docs.google.com/document/d/1bW3j4hFN4D8rv2LFv-DybB3gcE5ISAaOO_OpvDCgrGg/edit
       archive_url:  https://docs.google.com/document/d/15UwgLbEyZyXXxVtsThcSuPiJru4CuqU9p3ttZSfTaY4/edit
       recordings_url: https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax
