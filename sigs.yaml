@@ -2593,3 +2593,31 @@ committees:
       teams:
       - name: code-of-conduct-committee
         description: General Discussion
+  - name: Product Security
+    dir: committee-product-security
+    mission_statement: >
+     The Kubernetes Product Security Committee is the body that is responsible
+     for receiving and responding to reports of security issues in Kubernetes
+     products.
+    label: product-security
+    leadership:
+      chairs:
+      - name: Brandon Philips
+        github: philips
+        company: Red Hat
+      - name: Jess Frazelle
+        github: jessfraz
+      - name: CJ Cullen
+        github: cjcullen
+        company: Google
+      - name: Tim Allclair
+        github: tallclair
+        company: Google
+      - name: Jordan Liggitt
+        github: liggitt
+        company: Google
+    contact:
+      private_mailing_list: security@kubernetes.io
+      teams:
+      - name: product-security-committee
+        description: General Discussion
