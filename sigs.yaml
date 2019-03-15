@@ -2491,3 +2491,65 @@ workinggroups:
     contact:
       slack: wg-k8s-infra
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra
+committees:
+  - name: Steering
+    dir: committee-steering
+    mission_statement: >
+      The Kubernetes Steering Committee is the governing body of the Kubernetes
+      project, providing decision-making and oversight pertaining to the
+      Kubernetes project bylaws, sub-organizations, and financial planning.
+      The Steering Committee also defines the project values and structure.
+    label: steering
+    charter_link: https://git.k8s.io/steering/charter.md
+    leadership:
+      chairs:
+      - name: Brian Grant
+        github: bgrant0607
+        company: Google
+      - name: Brendan Burns
+        github: brendanburns
+        company: Microsoft
+      - name: Derek Carr
+        github: derekwaynecarr
+        company: Red Hat
+      - name: Davanum Srinivas
+        github: dims
+        company: Huawei
+      - name: Joe Beda
+        github: jbeda
+        company: VMware
+      - name: Michelle Noorali
+        github: michelleN
+        company: Microsoft
+      - name: Brandon Philips
+        github: philips
+        company: Red Hat
+      - name: Phillip Wittrock
+        github: pwittrock
+        company: Google
+      - name: Sarah Novotny
+        github: sarahnovotny
+        company: Google
+      - name: Clayton Coleman
+        github: smarterclayton
+        company: Red Hat
+      - name: Aaron Crickenberger
+        github: spiffxp
+        company: Google
+      - name: Timothy St. Clair
+        github: timothysc
+        company: VMware
+    meetings:
+    - description: Public Steering Committee Meeting
+      day: Wednesday
+      time: "13:00"
+      tz: "PT (Pacific Time)"
+      frequency: biweekly
+      url: https://bit.ly/k8s-steering-wd
+      recordings_url: https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM
+    contact:
+      mailing_list: https://groups.google.com/a/kubernetes.io/forum/#!forum/steering
+      private_mailing_list: steering-private@kubernetes.io
+      teams:
+      - name: steering-committee
+        description: General Discussion
