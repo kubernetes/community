@@ -157,6 +157,12 @@ aliases:
     - joelsmith
     - cji
     - jaybeale
+  committee-code-of-conduct:
+    - jdumars
+    - parispittman
+    - carolynvs
+    - eparis
+    - bradamant3
   committee-steering:
     - bgrant0607
     - brendanburns
@@ -171,12 +177,6 @@ aliases:
     - spiffxp
     - timothysc
 ## BEGIN CUSTOM CONTENT
-  code-of-conduct-committee:
-    - jdumars
-    - parispittman
-    - eparis
-    - carolynvs
-    - bradamant3
   product-security-committee:
     - philips
     - jessfraz

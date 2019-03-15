@@ -2553,3 +2553,32 @@ committees:
       teams:
       - name: steering-committee
         description: General Discussion
+  - name: Code of Conduct
+    dir: committee-code-of-conduct
+    mission_statement: >
+      The Kubernetes Code of Conduct Committee (CoCC) is the body that is
+      responsible for enforcing and maintaining the Kubernetes Code of Conduct.
+    label: conduct
+    charter_link:
+    leadership:
+      chairs:
+      - name: Jaice Singer Dumars
+        github: jdumars
+        company: Google
+      - name: Paris Pittman
+        github: parispittman
+        company: Google
+      - name: Carolyn Van Slyck
+        github: carolynvs
+        company: Microsoft
+      - name: Eric Paris
+        github: eparis
+        company: Red Hat
+      - name: Jennifer Rondeau
+        github: bradamant3
+        company: VMware
+    contact:
+      private_mailing_list: conduct@kubernetes.io
+      teams:
+      - name: code-of-conduct-committee
+        description: General Discussion
