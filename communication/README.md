@@ -87,21 +87,16 @@ Kubernetes is the main focus of KubeCon + CloudNativeCon, held every spring in E
 [Blog]: https://kubernetes.io/blog/
 [calendar.google.com]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles
 [Kubernetes code of conduct]: /code-of-conduct.md
-[communication]: /communication.md
-[community meeting]: /communication.md#weekly-meeting
 [events]: https://www.cncf.io/events/
 [file an issue]: https://github.com/kubernetes/kubernetes/issues/new
-[Google+]: https://plus.google.com/u/0/b/116512812300813784482/116512812300813784482
 [iCal url]: https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics
 [Kubernetes Community Meeting Agenda]: https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#
 [kubernetes-community-video-chat]: https://groups.google.com/forum/#!forum/kubernetes-community-video-chat
 [kubernetes-announce]: https://groups.google.com/forum/#!forum/kubernetes-announce
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [Discuss Kubernetes]: https://discuss.kubernetes.io
-[kubernetes.slack.com]: https://kubernetes.slack.com
 [Join Slack]: http://slack.k8s.io
 [Slack Guidelines]: /communication/slack-guidelines.md
-[Special Interest Group]: /README.md#SIGs
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [timezone table]: https://www.google.com/search?q=1000+am+in+pst
 [troubleshooting guide]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
