@@ -69,6 +69,9 @@ The following subprojects are owned by sig-cluster-lifecycle:
 - **cluster-api-provider-openstack**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
+- **etcdadm**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
 - **kops**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
