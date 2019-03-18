@@ -21,7 +21,7 @@ In some sense, the summit is a real-life extension of the community meetings and
 The Contributor Summit takes place in the days leading up to [KubeCon + CloudNativeCon Europe](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/), make sure you plan travel accordingly.
 
  - Sunday, May 19, 2019 - Social event (optional)
- - Monday, May 20, 2019 - New Contributor Summit and SIG F2F meetings
+ - Monday, May 20, 2019 - Contributor Summit (New Contributor Workshops and SIG F2F meetings)
  - Fira Gran Via, Barcelona, Spain
  - Event website with more information: LINK TBD
 
