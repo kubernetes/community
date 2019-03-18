@@ -2616,6 +2616,9 @@ committees:
       - name: Jordan Liggitt
         github: liggitt
         company: Google
+      - name: Joel Smith
+        github: joelsmith
+        company: Red Hat
     contact:
       private_mailing_list: security@kubernetes.io
       teams:
