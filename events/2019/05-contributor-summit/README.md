@@ -31,7 +31,7 @@ The focus of the contributor summit in Barcelona is on new contributors. We have
 
 **Important**: The new contributor workshops are for people who are interested in **contributing** to Kubernetes, and **will not** include how to use / do k8s. The rest of KubeCon will have plenty of content about using k8s.
 
-### The New Contributor Summit will have 2 tracks:
+### The New Contributor Workshops will have 2 tracks:
 
 * 101 New Contributors: audience is brand new contributors who are interested in contributing, but have little to no experience contributing to open source projects.
 * 201 Intermediate New Contributors: audience is people who have experience contributing to other open source projects, but who are new to contributing to k8s.
