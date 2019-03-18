@@ -158,8 +158,19 @@ aliases:
     - joelsmith
     - cji
     - jaybeale
-## BEGIN CUSTOM CONTENT
-  steering-committee:
+  committee-code-of-conduct:
+    - jdumars
+    - parispittman
+    - carolynvs
+    - eparis
+    - bradamant3
+  committee-product-security:
+    - philips
+    - jessfraz
+    - cjcullen
+    - tallclair
+    - liggitt
+  committee-steering:
     - bgrant0607
     - brendanburns
     - derekwaynecarr
@@ -172,16 +183,6 @@ aliases:
     - smarterclayton
     - spiffxp
     - timothysc
-  code-of-conduct-committee:
-    - jdumars
-    - parispittman
-    - eparis
-    - carolynvs
-    - bradamant3
-  product-security-committee:
-    - philips
-    - jessfraz
-    - cjcullen
-    - tallclair
-    - liggitt
+## BEGIN CUSTOM CONTENT
+
 ## END CUSTOM CONTENT

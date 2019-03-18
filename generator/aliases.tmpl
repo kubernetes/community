@@ -20,3 +20,9 @@ aliases:
     - {{.GitHub}}
     {{- end}}
   {{- end}}
+  {{- range .Committees}}
+  {{.Dir}}:
+    {{- range .Leadership.Chairs}}
+    - {{.GitHub}}
+    {{- end}}
+  {{- end}}
