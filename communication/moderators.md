@@ -20,23 +20,30 @@ Administrator seats: 3
 
 Primary moderators seats: 7
 
-- Jorge Castro (@castrojo) - ET
-- Jaice Singer DuMars - (@jdumars) - PT
-- Louis Taylor (@kragniz)- CET
-- Ihor Dvoretskyi (@idvoretskyi) - EET
-- Nikhita Raghunath (@nikhita) - IST
-- Bob Killen (@mrbobbytabkes) - ET
-- Open
+- Americas
+  - Jorge Castro (@castrojo) - ET
+  - Bob Killen (@mrbobbytabkes) - ET
+  - Jaice Singer DuMars - (@jdumars) - PT
+- APAC
+  - Nikhita Raghunath (@nikhita) - IST
+  - Open
+- EMEA
+  - Louis Taylor (@kragniz)- CET
+  - Ihor Dvoretskyi (@idvoretskyi) - EET
 
 #### Moderators Pro Tempore
 
-Moderators pro tempore seats: 5
+Moderators pro tempore seats: 6
 
-- Open
-- Open
-- Open
-- Open
-- Open
+- Americas
+  - Open
+  - Open
+- APAC
+  - Open
+  - Open
+- EMEA
+  - Open
+  - Open
 
 ## GitHub
 
@@ -96,14 +103,17 @@ Youtube owners seats: 2
 
 Moderators seats: 10
 
-- Ihor Dvoretskyi (@idvoretskyi) - EET
-- Jeffrey Sica (@jeefy) - ET
-- Jorge Castro (@castrojo) - ET
-- Joe Beda - (@joebeda) - PT
-- Jaice Singer DuMars - (@jdumars) - PT
-- Jorge Alarcon (@alejandrox1) - ET
-- Bob Killen (@mrbobbytables) - ET
-- Open
+- Americas
+  - Jeffrey Sica (@jeefy) - ET
+  - Jorge Castro (@castrojo) - ET
+  - Jorge Alarcon (@alejandrox1) - ET
+  - Bob Killen (@mrbobbytables) - ET
+  - Joe Beda - (@joebeda) - PT
+  - Jaice Singer DuMars - (@jdumars) - PT
+- APAC
+  - Open
+- EMEA
+  - Ihor Dvoretskyi (@idvoretskyi) - EET
 
 ### Moderators Pro Tempore
 
@@ -127,31 +137,38 @@ Owners seats: 1
 
 Moderators seats: 10
 
-- Bob Killen (@mrbobbytables) - ET
-- Ihor Dvoretskyi (@idvoretskyi) - EET
-- Jaice Singer DuMars (@jdumars) - PT
-- Jeffrey Sica (@jeefy) - ET
-- Jorge Castro (@castrojo) - ET
-- Katharine Berry (@Katharine) - PT
-- Paris Pittman (@parispittman) - PT
-- Jorge Alarcon (@alejandrox1) - ET
-- Yang Li (@idealhack) - CST
-- Noah Kantrowitz (@coderanger) - PT
+- Americas
+  - Bob Killen (@mrbobbytables) - ET
+  - Jeffrey Sica (@jeefy) - ET
+  - Jorge Castro (@castrojo) - ET
+  - Jorge Alarcon (@alejandrox1) - ET
+  - Jaice Singer DuMars (@jdumars) - PT
+  - Katharine Berry (@Katharine) - PT
+  - Paris Pittman (@parispittman) - PT
+  - Noah Kantrowitz (@coderanger) - PT
+- APAC
+  - Yang Li (@idealhack) - CST
+- EMEA
+  - Ihor Dvoretskyi (@idvoretskyi) - EET
+
 
 #### Moderators Pro Tempore
 
-Moderators pro tempore seats: 9
+Moderators pro tempore seats: 10
 
-- Dylan Graham (@DylanGraham) - AEST
-- Angus Lees (@anguslees) - AEST
-- Roy Lenferink (@rlenferink) - CET
-- Loic Le Dru (@lledru) - CET
-- Puja Abbassi (@puja108) - CET
-- Manjunath Kumatagi (@mkumatag) - IST
-- Pandiyaraja Ramamoorthy (@pontiyaraja) - IST
-- James Munnelly (@munnerz) - GMT
-- Joel Speed (@JoelSpeed) - GMT
-- Aditya Konarde (@aditya-konarde) - IST
+- Americas
+- EMEA
+  - Joel Speed (@JoelSpeed) - GMT
+  - James Munnelly (@munnerz) - GMT
+  - Roy Lenferink (@rlenferink) - CET
+  - Loic Le Dru (@lledru) - CET
+  - Puja Abbassi (@puja108) - CET
+- APAC
+  - Manjunath Kumatagi (@mkumatag) - IST
+  - Pandiyaraja Ramamoorthy (@pontiyaraja) - IST
+  - Aditya Konarde (@aditya-konarde) - IST
+  - Dylan Graham (@DylanGraham) - AEST
+  - Angus Lees (@anguslees) - AEST
 
 ## Zoom
 
