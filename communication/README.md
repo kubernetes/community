@@ -27,7 +27,8 @@ and meetings devoted to Kubernetes.
 
 [Join Slack] - sign up and join channels on topics that interest you, but please read our [Slack Guidelines] before participating.
 
-If you want to add a new channel, contact one of the admins in the #slack-admins channel.
+If you want to add a new channel, simply file a request following [these
+instructions](slack-guidelines.md#requesting-a-channel).
 
 
 ## Mailing lists
