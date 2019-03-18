@@ -70,6 +70,7 @@ proposals. We are working on adding more documentation for the API.
  - [rktlet](https://github.com/kubernetes-incubator/rktlet)
  - [frakti](https://github.com/kubernetes/frakti)
  - [cri-containerd](https://github.com/kubernetes-incubator/cri-containerd)
+ - [singularity-cri](https://github.com/sylabs/singularity-cri)
 
 ## [Status update](#status-update)
 ### Kubernetes v1.7 release (Docker-CRI integration GA, container metrics API)
