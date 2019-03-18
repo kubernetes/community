@@ -10,7 +10,7 @@ Contains a list of common resources when contributing in the effort to support W
     -   [Updating the Node binaries](#updating-the-node-binaries)    
 -   [Creating a PR](#creating-a-pr)    
 -   [Running Tests](#running-tests)    
--   [Reporting Issues](#reporting-issues)    
+-   [Reporting Issues and Feature Requests](#reporting-issues-and-feature-requests)    
 -   [Gathering Logs](#gathering-logs)        
     -   [Collecting Networking Logs](#collecting-networking-logs)
 
@@ -79,11 +79,17 @@ The detailed steps here are based off an example PR on GitHub: [https://github.c
 
 For the most up-to-date steps on how to build and run tests, please go to [https://github.com/kubernetes-sigs/windows-testing](https://github.com/kubernetes-sigs/windows-testing). It has everything you need to build and run tests, as well as links to the SIG-Windows configurations used on [TestGrid](https://testgrid.k8s.io/sig-windows).
 
-## Reporting Issues
+## Reporting Issues and Feature Requests
 
-You can open issues on [GitHub](https://github.com/kubernetes/kubernetes/issues/new/choose) and assign them to SIG-Windows by commenting on the issue with `/sig windows`. You should first search the list of issues in case it was reported previously and comment with your experience on the issue and add additional logs. SIG-Windows Slack is also a great avenue to get some initial support prior to creating a ticket.
+If you have what looks like a bug, or you would like to make a feature request, please use the [Github issue tracking system](https://github.com/kubernetes/kubernetes/issues). You can open issues on [GitHub](https://github.com/kubernetes/kubernetes/issues/new/choose) and assign them to SIG-Windows. You should first search the list of issues in case it was reported previously and comment with your experience on the issue and add additional logs. SIG-Windows Slack is also a great avenue to get some initial support and troubleshooting ideas prior to creating a ticket.
 
-It is important you include as much information as possible with your issue. That includes environment details, detailed steps on how to reproduce the issue, and logs.
+If filing a bug, please include detailed information about how to reproduce the problem, such as:
+
+* Kubernetes version: kubectl version
+* Environment details: Cloud provider, OS distro, networking choice and configuration, and Docker version
+* Detailed steps to reproduce the problem
+* Relevant logs
+* Tag the issue sig/windows by commenting on the issue with `/sig windows` to bring it to a SIG-Windows member's attention
 
 ## Gathering Logs
 
