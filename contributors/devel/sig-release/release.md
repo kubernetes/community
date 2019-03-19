@@ -67,7 +67,6 @@ If you want your PR to get merged, it needs the following required labels and mi
 <li>/milestone {v1.y}</li>
 <li>/sig {name}</li>
 <li>/kind {bug, failing-test}</li>
-<li>/priority critical-urgent</li>
 <li>/lgtm</li>
 <li>/approved</li>
 </ul>
