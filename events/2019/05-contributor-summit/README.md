@@ -29,7 +29,7 @@ The Contributor Summit takes place in the days leading up to [KubeCon + CloudNat
 
 The focus of the contributor summit in Barcelona is on new contributors. We have a large existing contributor base, especially in the US, and while we have a solid contingent in Europe, we would like to continue to grow our contributor presence in Europe to have a better balance across time zones and a more diverse set of contributors.
 
-**Important**: The new contributor workshops are for people who are interested in **contributing** to Kubernetes and **will not** include how to use / do k8s. The rest of KubeCon will have plenty of content about using k8s.
+**Important**: The new contributor workshops are for people who are interested in **contributing** to Kubernetes and **will not** include how to use Kubernetes. The rest of KubeCon will have plenty of content about using Kubernetes, but this day is focused solely on contributing to Kuberenetes.
 
 ### The New Contributor Workshops will have 2 tracks:
 
@@ -47,7 +47,7 @@ Combined Intro (Big Room) - All Workshop Participants:
 
 * How To Communicate (join all the things)
 * Repo Tour
-* What even is a SIG and How Do I Join One
+* What is a SIG, and How Do I Join One
 
 101 New Contributor Workshop Track (Room 1):
 
