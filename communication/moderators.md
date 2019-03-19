@@ -28,7 +28,7 @@ Primary moderators seats: 7
 | Bob Killen          | @mrbobbytables      | [ET - Pacific Time (US East Coast)](https://time.is/ET) | − 05:00    |
 | Jaice Singer DuMars | @jdumars            | [PT - Pacific Time (US East Coast)](https://time.is/PT) | − 08:00    |
 | Louis Taylor        | @kragniz            | [CET - Central European Time](https://time.is/CET)i     | + 01:00    |
-| Ihor Dvoretskyi     | @ihor.dvoretskyi    | [EET - Easter European Time](https://time.is/EET)       | + 02:00    |
+| Ihor Dvoretskyi     | @ihor.dvoretskyi    | [EET - Eastern European Time](https://time.is/EET)      | + 02:00    |
 | Nikhita Raghunath   | @nikhita            | [IST - India Standard Time](https://time.is/India)      | + 05:30    |
 | *Open*              | *Open*              |                                                         |            |
 
