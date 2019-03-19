@@ -95,6 +95,16 @@ If filing a bug, please include detailed information about how to reproduce the 
 
 Logs are an important element of troubleshooting issues in Kubernetes. Make sure to include them any time you seek troubleshooting assistance from other contributors.
 
+### Collecting kubelet and kube-proxy Logs
+There are a few different ways to run the node binaries (kubelet, kube-proxy, etc) and the execution method also dictates how logs will be collected. [Issue 75319](https://github.com/kubernetes/kubernetes/issues/75319) tracks pending work for better log management on Windows (for example using the Windows Event Log for higher log throughput and log rotation). If you end up logging to a file, you can use [fluentd](https://docs.fluentd.org/v0.12/articles/windows) or Splunk to ship logs to a syslog server for search and analytics.
+1. Windows Service Manager services - You may have to introduce your own log consumption and log rotation service if you are logging to a file. We will investigate if journald is an option
+2. nssm.exe services - nssm.exe provides support for forwarding stdout/stderr logs to a file (use the `AppStdout` and `AppStderr` options) and also supports logs file rotation (See the `File rotation` and `I/O redirection` sections in the [documentation](https://nssm.cc/usage)). You can see more examples on using nssm.exe for the Kubernetes components of the Windows node in the services and background processes section under [troubleshooting](https://kubernetes.io/docs/getting-started-guides/windows/#troubleshooting)
+```Powershell
+# Example nssm command line for the kubelet
+nssm set kubelet AppStdout C:\k\kubelet.log
+nssm set kubelet AppStderr C:\k\kubelet.log
+```
+
 ### Collecting Networking Logs
 1. On the node before creating the pod for the first time.
 2. `start-bitstransfer https://raw.githubusercontent.com/Microsoft/SDN/master/Kubernetes/windows/debug/collectlogs.ps1`
