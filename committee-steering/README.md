@@ -36,6 +36,22 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 * Private Mailing List: steering-private@kubernetes.io
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fsteering)
 
+## Subprojects
+
+The following subprojects are owned by the Steering Committee:
+- **steering**
+  - Description: Steering Committee policy and documentation
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
+- **kubernetes-template-project**
+  - Description: Template for starting new projects in the GitHub organizations owned by Kubernetes.
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
+- **spartakus**
+  - Description: Collection of usage information about Kubernetes clusters.
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
