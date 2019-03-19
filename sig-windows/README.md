@@ -54,7 +54,7 @@ Note that the links to display team membership will only work if you are a membe
 
 If you're looking for information on building and running containers on Windows, you can get started at http://aka.ms/windowscontainers.
 
-Kubernetes 1.14 includes stable support for Windows Server containers and has an up-to-date [Getting Started Guide for Windows](https://kubernetes.io/docs/getting-started-guides/windows/) .
+Kubernetes 1.14 includes stable support for Windows Server containers and has up-to-date [documentation](https://kubernetes.io/docs/setup/windows/intro-windows-in-kubernetes/) .
 
 Additional information and guides are available in the [KEPs for SIG-Windows](https://github.com/kubernetes/enhancements/tree/master/keps/sig-windows)
 
