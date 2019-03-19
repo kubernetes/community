@@ -102,8 +102,7 @@ make test WHAT="./pkg/kubelet ./pkg/scheduler"  # run tests for pkg/kubelet and 
 In a shell, it's often handy to use brace expansion:
 
 ```sh
-make test WHAT=./pkg/{kubelet,scheduler}  # run tests for pkg/kubelet and
-pkg/scheduler
+make test WHAT=./pkg/{kubelet,scheduler}  # run tests for pkg/kubelet and pkg/scheduler
 ```
 
 ### Run specific unit test cases in a package
