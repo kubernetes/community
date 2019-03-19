@@ -2629,3 +2629,8 @@ committees:
       teams:
       - name: product-security-committee
         description: General Discussion
+    subprojects:
+    - name: security
+      description: Policies and documentation for the Product Security Committee
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/security/master/OWNERS

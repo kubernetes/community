@@ -23,6 +23,14 @@ The Kubernetes Product Security Committee is the body that is responsible for re
 * Private Mailing List: security@kubernetes.io
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fproduct-security)
 
+## Subprojects
+
+The following subprojects are owned by the Product Security Committee:
+- **security**
+  - Description: Policies and documentation for the Product Security Committee
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/security/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.
