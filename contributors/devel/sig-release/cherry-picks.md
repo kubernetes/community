@@ -54,6 +54,13 @@ or the [Patch Release Team](https://git.k8s.io/sig-release/release-team/role-han
 are the final authority on removing the `do-not-merge/cherry-pick-not-approved`
 label  and triggering a merge into the target branch.
 
+Cherry-pick pull requests follow the same release note requirements as
+other pull requests, except the release note stanza will auto-populate from
+the master branch pull request from which the cherry-pick originated.  If
+this is unsuccessful the `do-not-merge/release-note-label-needed` label
+will be applied and the cherry-pick author must edit the pull request
+description to [add a release note](https://git.k8s.io/community/contributors/guide/release-notes.md).
+
 ## Searching for Cherry-picks
 
 - [A sample search on kubernetes/kubernetes pull requests that are labeled as `cherry-pick-approved`](https://github.com/kubernetes/kubernetes/pulls?q=is%3Aopen+is%3Apr+label%3Acherry-pick-approved)
