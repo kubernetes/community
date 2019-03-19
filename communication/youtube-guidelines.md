@@ -105,12 +105,19 @@ Conduct][coc]. Any potential violations should sent to <conduct@kubernetes.io>.
 
 ### Trimming and Editing Recordings
 
-YouTube admins may be asked to help [trim] and [edit] recordings. Certain events
+YouTube admins should help [trim] and [edit] recordings. Certain events
 such as the Contributor Summits are not uploaded directly to YouTube and require
 editing. In other instances a Zoom recording may have significant dead-space
 leading the meeting itself. In these instances the playlist owners may be asked
 first to trim a recording; however there are times where this is inopportune and
-an admin may step in.
+an admin may step in. When in doubt, ask.
+
+### Housecleaning
+
+Random tasks that help promote a healthy channel:
+* Adding descriptions and/or keywords that would help the discoverability of information  
+* Trying new automation methods and new ways of doing things to help productivity
+* Putting (and possibly creating) image thumbnails for the start of videos
 
 
 ### Streaming Events
@@ -135,3 +142,4 @@ TODO: Add details on streaming/using OBS after  https://github.com/kubernetes/co
 [Community Meeting]: /events/community-meeting.md
 [Office Hours]: /events/office-hours.md
 [Meet our Contributors]: /mentoring/meet-our-contributors.md
+[moderation guidelines]: ./moderation.md
