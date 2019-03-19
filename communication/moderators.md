@@ -112,7 +112,7 @@ Moderators seats: 10
 | Jorge Alarcon       | @alejandroxv1       | [ET - Pacific Time (US East Coast)](https://time.is/ET) | − 05:00    |
 | Jaice Singer DuMars | @jdumars            | [PT - Pacific Time (US West Coast)](https://time.is/PT) | − 08:00    |
 | Joe Beda            | @joebeda            | [PT - Pacific Time (US West Coast)](https://time.is/PT) | − 08:00    |
-| Ihor Dvoretskyi     | @ihor.dvoretskyi    | [EET - Easter European Time](https://time.is/EET)       | + 02:00    |
+| Ihor Dvoretskyi     | @ihor.dvoretskyi    | [EET - Eastern European Time](https://time.is/EET)      | + 02:00    |
 | *Open*              | *Open*              |                                                         |            |
 
 
