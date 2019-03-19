@@ -29,30 +29,18 @@ The Contributor Summit takes place in the days leading up to [KubeCon + CloudNat
 
 The focus of the contributor summit in Barcelona is on new contributors. We have a large existing contributor base, especially in the US, and while we have a solid contingent in Europe, we would like to continue to grow our contributor presence in Europe to have a better balance across time zones and a more diverse set of contributors.
 
-**Important**: The new contributor workshops are for people who are interested in **contributing** to Kubernetes, and **will not** include how to use / do k8s. The rest of KubeCon will have plenty of content about using k8s.
+**Important**: The new contributor workshops are for people who are interested in **contributing** to Kubernetes and **will not** include how to use / do k8s. The rest of KubeCon will have plenty of content about using k8s.
 
 ### The New Contributor Workshops will have 2 tracks:
 
-* 101 New Contributors: audience is brand new contributors who are interested in contributing, but have little to no experience contributing to open source projects.
-* 201 Intermediate New Contributors: audience is people who have experience contributing to other open source projects, but who are new to contributing to k8s.
+* 101 New Contributor Track: Attendees should be brand new contributors who are interested in contributing to Kubernetes, but who have little to no experience previously contributing to open source projects.
+* 201 Intermediate New Contributor Track: Attendees should be people who have previous experience contributing to other open source projects, but who are new to contributing to Kubernetes.
 
-**Note**: Existing contributors should **not** register for either of these workshops, but you are welcome to attend the social event on Sunday, and you should talk to your SIG chairs to see if they plan to have a SIG F2F meeting on Monday.
-
-### Key Facts:
-
-* We are expecting 200 people with 100 of those attending the 101 New Contributor Workshop and 100 of those attending the 201 Intermediate New Contributor Workshop. 
-* We have space for 140 people in room 4.1, and 100 people in room 5.1.
-* Based on two previous event feedback, folks wanted the following: more hallway track/hang out time, more sessions with actionable items.
-
-### Transparency:
-
-* Recording: Record video, edit it into sections for easier consumption, and upload it to YouTube.
-* Transcription: Create transcriptions to upload with the video.
-* Content Sharing: Upload all presentations.
+**Note**: Existing contributors should **not** register for either of these workshops. Existing contributors are encouraged to attend the social event on Sunday and should talk to their SIG chairs to see if any relevant SIGs are planning to have a SIG F2F meeting on Monday.
 
 ### New Contributor Workshop Outline:
 
-Workshop Preparation: Clear communication on signing the CLA, and any preparatory downloads/installs for any content. Students will be given access to the slides in advance because there will be hands-on activities we want to avoid slow and error prone typing of links from a presentation being displayed on a screen.
+Workshop Preparation: Before arriving in Barcelona, workshop attendees are expected to sign the CLA and complete any preparatory downloads and installations for required tools and content. Students will be given access to the slides in advance to allow for easier copying and pasting of commands during the hands-on exercises.
 
 
 Combined Intro (Big Room) - All Workshop Participants:
@@ -61,18 +49,18 @@ Combined Intro (Big Room) - All Workshop Participants:
 * Repo Tour
 * What even is a SIG and How Do I Join One
 
-101 New Contributor Workshop (Room 1):
+101 New Contributor Workshop Track (Room 1):
 
 * Finding Your First Topic AKA Where Do I Fit In
 * Automation and Pull Request Demo/Practice
-* Setting Up Your Dev Environment Lab (this will need lots of tutors)
+* Setting Up Your Dev Environment Lab 
 * Install Golang (or straighten out gopaths)
 * Install Docker
 * Clone Kubernetes
 * make WHAT?
 * run tests
 
-201 Intermediate New Contributor Workshop (Room 2):
+201 Intermediate New Contributor Workshop Track (Room 2):
 
 * Brief Automation Demo (no practice): Labels, bots, org membership
 * Local Test & Build using a container
@@ -80,12 +68,17 @@ Combined Intro (Big Room) - All Workshop Participants:
 * Testgrid Tour
 * Docs contributions
 
-Combined Wrap-Up and Networking (Big Room)
+Combined Wrap-Up and Networking (Big Room) - All Workshop Participants:
 
-* All Workshop Participants:
 * Hallway Track: Network and find people with SIG buttons
 
 Note: The full schedule and room details will be available on [Sched](https://contsummiteu19.sched.com/) soon.
+
+### Transparency:
+
+* Recording: Workshops will be video recorded and uploaded to YouTube.
+* Transcription: Transcriptions will be uploaded with the video.
+* Content Sharing: All presentations will be uploaded.
 
 ## Contributor Summit Team
 
