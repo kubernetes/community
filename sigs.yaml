@@ -1790,9 +1790,6 @@ sigs:
     label: service-catalog
     leadership:
       chairs:
-      - name: Carolyn Van Slyck
-        github: carolynvs
-        company: Microsoft
       - name: Michael Kibbe
         github: kibbles-n-bytes
         company: Google
@@ -1815,6 +1812,9 @@ sigs:
       - name: Doug Davis
         github: duglin
         company: IBM
+      - name: Carolyn Van Slyck
+        github: carolynvs
+        company: Microsoft
     meetings:
     - description: Regular SIG Meeting
       day: Monday
