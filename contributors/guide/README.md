@@ -248,7 +248,7 @@ If you're looking to run e2e tests on your own infrastructure, [kubetest](https:
 
 ## Security
 
-- [Security Release Page](https://git.k8s.io/sig-release/security-release-process-documentation/security-release-process.md) - outlines the procedures for the handling of security issues.
+- [Security Release Page](https://git.k8s.io/security/security-release-process.md) - outlines the procedures for the handling of security issues.
 - [Security and Disclosure Information](https://kubernetes.io/docs/reference/issues-security/security/) - check this page if you wish to report a security vulnerability.
 
 ## Documentation
