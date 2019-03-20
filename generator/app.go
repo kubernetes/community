@@ -89,6 +89,7 @@ type GithubTeams struct {
 type Subproject struct {
 	Name        string
 	Description string
+	Contact     Contact
 	Owners      []string
 	Meetings    []Meeting
 }
