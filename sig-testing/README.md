@@ -50,7 +50,7 @@ The following subprojects are owned by sig-testing:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
   - Meetings:
-    - sigs.k8s.io/kind weekly meeting: [Mondays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+    - sigs.k8s.io/kind bi-weekly meeting: [Mondays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
       - [Meeting notes and Agenda](https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit).
       - [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
 - **prow**
