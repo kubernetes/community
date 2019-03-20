@@ -1,14 +1,15 @@
-# SUMMARY:
+## SUMMARY:
 
 This document covers everything you need to know about the creation and retirement (“lifecycle”) of a special interest or working group within the Kubernetes project. General project governance information can be found in the [steering committee repo].
 Out of scope for this document: [subproject] creation.
 
+[Creation]
+[Retirement]
 
-## [Creation]  
+## [Creation]
 ### Prerequisites for a SIG
 - [ ] Read [sig-governance.md]
-- [ ] Send an email to the Steering Committee(<steering@kubernetes.io>) to scope
-the SIG and get provisional approval.
+- [ ] Send an email to the Steering Committee <steering@kubernetes.io> to scope the SIG and get provisional approval.
 - [ ] Look at the checklist below for processes and tips that you will need to do while this is going on. It's best to collect this information upfront so you have a smoother process to launch
 - [ ] Follow the [SIG charter process] to propose and obtain approval for a charter
 - [ ] Announce new SIG on kubernetes-dev@googlegroups.com
@@ -54,9 +55,10 @@ Each one of these has a linked canonical source guideline from set up to moderat
 
 ...with the community as part of [sig-governance.md]
 - [ ] Get on the schedule for [Thursday community updates]; info at the top of the agenda
-- [ ] Schedule your weekly/biweekly/triweekly [update meetings] and create your SIG/WG shared calendar.
+- [ ] Create a shared calendar and schedule your weekly/biweekly/triweekly weeks [update meetings]
+- This calendar creation process will allow all of your leads to edit SIG/WG Meetings. This is important as we all change jobs, email addresses, and take breaks from the project. Shared calendars will also provide consistency with contributors looking for your subproject meetings, office hours, and anything else that the SIG/WGs contributors should know about.
 
-## [Retirement]  
+## [Retirement]   
 (merging or disbandment)
 Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may also merge with an existing SIG/WG if deemed appropriate, and would save project overhead in the long run. Working Groups in particular are more ephemeral than SIGs, so this process should be followed when the Working Group has accomplished it's mission.
 
