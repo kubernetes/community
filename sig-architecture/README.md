@@ -48,6 +48,9 @@ The following subprojects are owned by sig-architecture:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
+  - Slack: [#k8s-conformance](https://kubernetes.slack.com/messages/k8s-conformance)
+  - GitHub Teams:
+    - [@kubernetes/cncf-conformance-wg](https://github.com/orgs/kubernetes/teams/cncf-conformance-wg)
 - **code-organization**
   - Description: [Described below](#code-organization)
   - Owners:
