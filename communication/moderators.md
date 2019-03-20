@@ -109,8 +109,6 @@ Moderators seats: 10
 
 Moderators pro tempore seats: 3
 
-These are listed as "Communications Managers" in YouTube
-
 - Open
 - Open
 - Open
