@@ -942,6 +942,9 @@ sigs:
     - name: minikube
       owners:
       - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
+    - name: cluster-addons
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/addon-operators/master/OWNERS
   - name: Contributor Experience
     dir: sig-contributor-experience
     mission_statement: >
