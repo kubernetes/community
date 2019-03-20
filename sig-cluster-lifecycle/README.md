@@ -101,6 +101,9 @@ The following subprojects are owned by sig-cluster-lifecycle:
 - **minikube**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
+- **cluster-addons**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/addon-operators/master/OWNERS
 
 ## GitHub Teams
 
