@@ -2,12 +2,12 @@
 
 reviewers:
   - cblecker
-  - grodrigues3
   - jamiehannaford
+  - nikhita
   - spiffxp
 approvers:
   - cblecker
-  - grodrigues3
+  - nikhita
   - spiffxp
 labels:
   - sig/contributor-experience
