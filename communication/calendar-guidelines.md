@@ -35,7 +35,6 @@ Best advice here is to recreate one. It won't hurt to recreate a meeting invite 
 Make sure your work account doesn't have restrictions for public viewing of calendar invites you create. Test this with other contributors before sending it to mailing lists if you are unsure. This would be for both the calendar entry itself and the shared calendar if you are the chair creating it.
 If this is the case, use a personal account (ex: gmail).
 
-
 #### If you are viewing calendar events:
 TODO
 
