@@ -12,34 +12,34 @@ communication channels and their home time zone. See our
 
 Administrator seats: 3
 
-| Name                | Kubernetes Slack ID | Timezone                                                |
-|---------------------|---------------------|---------------------------------------------------------|
-| Paris Pittman       | @paris              | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Aaron Crickenberger | @spiffxp            | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| *Open*              | *Open*              |                                                         |
+| Name                | Kubernetes Slack ID | Region   | Timezone                                                |
+|---------------------|---------------------|----------|---------------------------------------------------------|
+| Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Aaron Crickenberger | @spiffxp            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| *Open*              | *Open*              |          |                                                         |
 
 #### Primary Moderators
 
 Primary moderators seats: 7
 
-| Name                | Kubernetes Slack ID | Timezone                                                |
-|---------------------|---------------------|---------------------------------------------------------|
-| Jorge Castro        | @castrojo           | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Bob Killen          | @mrbobbytables      | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jaice Singer DuMars | @jdumars            | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Louis Taylor        | @kragniz            | [CET - Central European Time](https://time.is/CET)      |
-| Ihor Dvoretskyi     | @ihor.dvoretskyi    | [EET - Eastern European Time](https://time.is/EET)      |
-| Nikhita Raghunath   | @nikhita            | [IST - Indian Standard Time](https://time.is/India)     |
-| *Open*              | *Open*              |                                                         |
+| Name                | Kubernetes Slack ID | Region   | Timezone                                                |
+|---------------------|---------------------|----------|---------------------------------------------------------|
+| Jorge Castro        | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Bob Killen          | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Louis Taylor        | @kragniz            | EMEA     | [CET - Central European Time](https://time.is/CET)      |
+| Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
+| Nikhita Raghunath   | @nikhita            | APAC     | [IST - Indian Standard Time](https://time.is/India)     |
+| *Open*              | *Open*              |          |                                                         |
 
 
 #### Moderators Pro Tempore
 
 Moderators pro tempore seats: 5
 
-| Name                | Kubernetes Slack ID | Timezone                                                |
-|---------------------|---------------------|---------------------------------------------------------|
-| *Open*              | *Open*              |                                                         |
+| Name                | Kubernetes Slack ID | Region   | Timezone                                                |
+|---------------------|---------------------|----------|---------------------------------------------------------|
+| *Open*              | *Open*              |          |                                                         |
 
 
 ## GitHub
@@ -55,12 +55,12 @@ administration, but also moderation of issues, PRs, etc.
 
 Administrators seats: 4
 
-| Name          | Kubernetes Discuss ID | Timezone                                                |
-|---------------|-----------------------|---------------------------------------------------------|
-| Paris Pittman | @parispittman         | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Jorge Castro  | @castrojo             | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Bob Killen    | @mrbobbytables        | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jeffrey Sica  | @jeefy                | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Name          | Kubernetes Discuss ID | Region   | Timezone                                                |
+|---------------|-----------------------|----------|---------------------------------------------------------|
+| Paris Pittman | @parispittman         | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Jorge Castro  | @castrojo             | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Bob Killen    | @mrbobbytables        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jeffrey Sica  | @jeefy                | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 
 Note, due to how the software is designed, dedicated moderators are not required
 for discuss, the [trust system] in place allows for self moderation. In this
@@ -72,22 +72,36 @@ doesn't speak a language to be able to effectively moderate).
 
 Regional category moderators seats (per category): 3
 
-- [Chinese]
-    - Peter (Xiang Peng) Zhao (@xiangpengzhao) - CST
-    - Yang Li (@idealhack) - CST
-    - Puja Abbassi (@puja108) - CET
-- [German]
-    - Puja Abbassi (@puja108) - CET
-    - Michael Hausenblas (@mhausenblas) - WET
-    - Daniel Holbach (@dholbach) - CET
-- [Italian]
-    - Jacopo Nardiello (@jnardiello) - CET
-    - Open
-    - Open
-- [Ukrainian]
-    - Ihor Dvoretskyi (@idvoretskyi) - EET
-    - Open
-    - Open
+**[Chinese]**
+
+| Name                    | Kubernetes Discuss ID | Region | Timezone                                           |
+|-------------------------|-----------------------|--------|----------------------------------------------------|
+| Peter (Xiang Peng) Zhao | @xiangpengzhao        | APAC   | [CST - China Standard Time](https://time.is/China) |
+| Yang Li                 | @idealhack            | APAC   | [CST - China Standard Time](https://time.is/China) |
+| Puja Abbassi            | @puja                 | EMEA   | [CET - Central European Time](https://time.is/CET) |
+
+**[German]**
+
+| Name               | Kubernetes Discuss ID | Region | Timezone                                           |
+|--------------------|-----------------------|--------|----------------------------------------------------|
+| Puja Abbassi       | @puja                 | EMEA   | [CET - Central European Time](https://time.is/CET) |
+| Daniel Holbach     | @dholbach             | EMEA   | [CET - Central European Time](https://time.is/CET) |
+| Michael Hausenblas | @mhausenblas          | EMEA   | [WET - Western European Time](https://time.is/WET) |
+
+**[Italian]**
+
+| Name               | Kubernetes Discuss ID | Region | Timezone                                           |
+|--------------------|-----------------------|--------|----------------------------------------------------|
+| Jacopo Nardiello   | @jnardiello           | EMEA   | [CET - Central European Time](https://time.is/CET) |
+| *Open*             | *Open*                |        |                                                    |
+
+**[Ukrainian]**
+
+| Name             | Kubernetes Discuss ID | Region | Timezone                                           |
+|------------------|-----------------------|--------|----------------------------------------------------|
+| Ihor Dvoretskyi  | @idvoretskyi          | EMEA   | [EET - Eastern European Time](https://time.is/EET) |
+| *Open*           | *Open*                |        |                                                    |
+
 
 ## YouTube Channel
 
@@ -95,34 +109,35 @@ Youtube owners seats: 2
 
 ### Owners
 
-| Name                | Kubernetes Slack ID | Timezone                                                |
-|---------------------|---------------------|---------------------------------------------------------|
-| Paris Pittman       | @paris              | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Sarah Novotny       | @sarahnovotny       | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Name                | Kubernetes Slack ID | Region   | Timezone                                                |
+|---------------------|---------------------|----------|---------------------------------------------------------|
+| Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Sarah Novotny       | @sarahnovotny       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 ### Primary Moderators
 
 Moderators seats: 10
 
-| Name                | Kubernetes Slack ID | Timezone                                                |
-|---------------------|---------------------|---------------------------------------------------------|
-| Jorge Castro        | @castrojo           | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jeffrey Sica        | @jeefy              | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Bob Killen          | @mrbobbytables      | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jorge Alarcon       | @alejandroxv1       | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jaice Singer DuMars | @jdumars            | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Joe Beda            | @joebeda            | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Ihor Dvoretskyi     | @ihor.dvoretskyi    | [EET - Eastern European Time](https://time.is/EET)      |
-| *Open*              | *Open*              |                                                         |
+| Name                | Kubernetes Slack ID | Region   | Timezone                                                |
+|---------------------|---------------------|----------|---------------------------------------------------------|
+| Jorge Castro        | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jeffrey Sica        | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Bob Killen          | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jorge Alarcon       | @alejandroxv1       | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Joe Beda            | @joebeda            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
+| *Open*              | *Open*              |          |                                                         |
 
 
 ### Moderators Pro Tempore
 
 Moderators pro tempore seats: 3
 
-- Open
-- Open
-- Open
+
+| Name                | Kubernetes Slack ID | Region   | Timezone                                                |
+|---------------------|---------------------|----------|---------------------------------------------------------|
+| *Open*              | *Open*              |          |                                                         |
 
 ## Slack
 
@@ -130,56 +145,57 @@ Moderators pro tempore seats: 3
 
 Owners seats (non-admin role): 1
 
-| Name                | Kubernetes Slack ID | Timezone                                                |
-|---------------------|---------------------|---------------------------------------------------------|
-| Chris Aniszczyk     | @caniszczyk         | [CT - Central Time (US Central)](https://time.is/CT)    |
+| Name            | Kubernetes Slack ID | Region   | Timezone                                             |
+|-----------------|---------------------|----------|------------------------------------------------------|
+| Chris Aniszczyk | @caniszczyk         | Americas | [CT - Central Time (US Central)](https://time.is/CT) |
 
 #### Moderators
 
 Moderators seats: 10
 
-| Name                | Kubernetes Slack ID | Timezone                                                |
-|---------------------|---------------------|---------------------------------------------------------|
-| Jorge Castro        | @castrojo           | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jeffrey Sica        | @jeefy              | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Bob Killen          | @mrbobbytables      | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jorge Alarcon       | @alejandroxv1       | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Katharine Berry     | @Katharine          | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Jaice Singer DuMars | @jdumars            | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Paris Pittman       | @paris              | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Noah Kantrowitz     | @coderanger         | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Ihor Dvoretskyi     | @ihor.dvoretskyi    | [EET - Easter European Time](https://time.is/EET)       |
-| Yang Li             | @idealhack          | [CST - China Standard Time](https://time.is/China)      |
+| Name                | Kubernetes Slack ID | Region   | Timezone                                                |
+|---------------------|---------------------|----------|---------------------------------------------------------|
+| Jorge Castro        | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jeffrey Sica        | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Bob Killen          | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jorge Alarcon       | @alejandroxv1       | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Katharine Berry     | @Katharine          | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Noah Kantrowitz     | @coderanger         | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Easter European Time](https://time.is/EET)       |
+| Yang Li             | @idealhack          | APAC     | [CST - China Standard Time](https://time.is/China)      |
 
 
 #### Moderators Pro Tempore
 
 Moderators pro tempore seats: 10
 
-| Name                    | Kubernetes Slack ID | Timezone                                                        |
-|-------------------------|---------------------|-----------------------------------------------------------------|
-| Dylan Graham            | @DylanGraham        | [AEST - Australian Eastern Standard Time](https://time.is/Australia) |
-| Angus Lees              | @anguslees          | [AEST - Australian Eastern Standard Time](https://time.is/Australia) |
-| Roy Lenferink           | @rlenferink         | [CET - Central European Time](https://time.is/CET)              |
-| Loic Le Dru             | @lledru             | [CET - Central European Time](https://time.is/CET)              |
-| Puja Abbassi            | @puja108            | [CET - Central European Time](https://time.is/CET)              |
-| James Munnelly          | @munnerz            | [GMT - Greenwich Mean Time](https://time.is/GMT)                |
-| Joel Speed              | @JoelSpeed          | [GMT - Greenwich Mean Time](https://time.is/GMT)                |
-| Aditya Konarde          | @aditya-konarde     | [IST - Indian Standard Time](https://time.is/IST)               |
-| Manjunath Kumatagi      | @mkumatag           | [IST - Indian Standard Time](https://time.is/IST)               |
-| Pandiyaraja Ramamoorthy | @pontiyaraja        | [IST - Indian Standard Time](https://time.is/IST)               |
+| Name                    | Kubernetes Slack ID | Region | Timezone                                                   |
+|-------------------------|---------------------|--------|------------------------------------------------------------|
+| Dylan Graham            | @DylanGraham        | APAC   | [AET - Australian Eastern Time](https://time.is/Australia) |
+| Angus Lees              | @anguslees          | APAC   | [AET - Australian Eastern Time](https://time.is/Australia) |
+| Aditya Konarde          | @aditya-konarde     | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
+| Manjunath Kumatagi      | @mkumatag           | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
+| Pandiyaraja Ramamoorthy | @pontiyaraja        | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
+| Roy Lenferink           | @rlenferink         | EMEA   | [CET - Central European Time](https://time.is/CET)         |
+| Loic Le Dru             | @lledru             | EMEA   | [CET - Central European Time](https://time.is/CET)         |
+| Puja Abbassi            | @puja108            | EMEA   | [CET - Central European Time](https://time.is/CET)         |
+| James Munnelly          | @munnerz            | EMEA   | [GMT - Greenwich Mean Time](https://time.is/GMT)           |
+| Joel Speed              | @JoelSpeed          | EMEA   | [GMT - Greenwich Mean Time](https://time.is/GMT)           |
+
 
 
 ## Zoom
 
 Administrators seats: 4
 
-| Name                | Kubernetes Slack ID | Timezone                                                |
-|---------------------|---------------------|---------------------------------------------------------|
-| Jorge Castro        | @castrojo           | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Bob Killen          | @mrbobbytables      | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jorge Alarcon       | @alejandroxv1       | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Paris Pittman       | @paris              | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Name          | Kubernetes Slack ID | Region   | Timezone                                                |
+|---------------|---------------------|----------|---------------------------------------------------------|
+| Jorge Castro  | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Bob Killen    | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jorge Alarcon | @alejandroxv1       | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Paris Pittman | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 - License and main account controlled by the CNCF
 
