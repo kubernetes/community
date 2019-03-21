@@ -87,7 +87,11 @@ Canonical until 2017-03-31
 
 ## Troubleshooting
 
-If you have problems signing the CLA, send an email message to: `helpdesk@rt.linuxfoundation.org`.
+If you encounter any problems signing the CLA, log a ticket with the Linux
+Foundation ID group through the [Linux Foundation Support Site].
+
+Should you have any issues using the LF Support Site, send a message to the
+backup e-mail support address <login-issues@jira.linuxfoundation.org>
 
 Someone from the CNCF will respond to your ticket to help.
 
@@ -95,3 +99,6 @@ Someone from the CNCF will respond to your ticket to help.
 
 If you are a Kubernetes GitHub organization or repo owner and would like to setup
 the Linux Foundation CNCF CLA check for your repositories, [read the docs on setting up the CNCF CLA check](/github-management/setting-up-cla-check.md)
+
+
+[Linux Foundation Support Site]: https://support.linuxfoundation.org/
