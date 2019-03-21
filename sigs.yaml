@@ -2292,6 +2292,9 @@ workinggroups:
 
       Resources can be found in [this Google drive folder](https://drive.google.com/drive/folders/1wlpgkS2gFZXdp4x2WlRsfUBxkFlt2Gx0)
     charter_link:
+    stakeholder_sigs:
+    - API Machinery
+    - CLI
     leadership:
       chairs:
       # TBD: We probably need more people here?
@@ -2303,7 +2306,7 @@ workinggroups:
       day: Tuesday
       time: "9:30"
       tz: "PT (Pacific Time)"
-      frequency: weekly
+      frequency: biweekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
     contact:
       slack: wg-apply
