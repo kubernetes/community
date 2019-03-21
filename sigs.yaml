@@ -2378,6 +2378,10 @@ workinggroups:
     mission_statement: >
       Identify and fix gaps in Kubernetes to better support Machine Learning applications
     charter_link:
+    stakeholder_sigs:
+    - Apps
+    - Big Data
+    - Node
     leadership:
       chairs:
       - name: Vishnu Kannan
