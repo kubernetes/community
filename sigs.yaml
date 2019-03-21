@@ -2384,6 +2384,9 @@ workinggroups:
     dir: wg-iot-edge
     mission_statement: >
        A Working Group dedicated to discussing, designing and documenting using Kubernetes for developing and deploying IoT and Edge specific applications
+    stakeholder_sigs:
+    - Multicluster
+    - Networking
     leadership:
       chairs:
       - name: Cindy Xing
