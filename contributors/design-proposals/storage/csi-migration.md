@@ -237,8 +237,7 @@ with the in-tree plugin, the VolumeAttachment object becomes orphaned.
 ### In-line Volumes
 
 In-line controller calls are a special case because there is no PV. In this case
-we will forward the in-tree volume source to CSI attach as-is and it will be
-copied to a new field in the VolumeAttachment object
+we will translate the volume source and copy it to the field
 VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineVolumeSource. The
 VolumeAttachment name must be made with the CSI Translated version of the
 VolumeSource in order for it to be discoverable by Detach and WaitForAttach
@@ -259,12 +258,12 @@ type VolumeAttachmentSource struct {
 	// +optional
 	PersistentVolumeName *string `json:"persistentVolumeName,omitempty" protobuf:"bytes,1,opt,name=persistentVolumeName"`
 
-	// Allows CSI migration code to copy an inline volume
-	// source from a pod to the VolumeAttachment to support shimming of
-	// in-tree inline volumes to a CSI backend.
-	// This field is alpha-level and is only honored by servers that enable the CSIMigration feature.
+	// Translated VolumeSource from a pod to a CSIPersistentVolumeSource
+	// to support shimming of in-tree inline volumes to a CSI backend.
+	// This field is alpha-level and is only honored by servers that
+	// enable the CSIMigration feature.
 	// +optional
-	InlineVolumeSource *v1.VolumeSource `json:"inlineVolumeSource,omitempty protobuf:"bytes,2,opt,name=inlineVolumeSource"`
+	InlineCSIVolumeSource *v1.CSIPersistentVolumeSource `json:"inlineCSIVolumeSource,omitempty" protobuf:"bytes,2,opt,name=inlineCSIVolumeSource"`
 }
 ```
 
