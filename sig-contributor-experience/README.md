@@ -23,14 +23,14 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), CoreOS
+* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), Red Hat
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
+* Christoph Blecker (**[@cblecker](https://github.com/cblecker)**), Red Hat
 * Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
 
 ## Emeritus Leads
