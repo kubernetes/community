@@ -894,6 +894,13 @@ sigs:
       frequency: biweekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit
+    - description: Cluster Addons meeting
+      day: Friday
+      time: "10:00"
+      tz: "PT (Pacific Time)"
+      frequency: biweekly
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit
     contact:
       slack: sig-cluster-lifecycle
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
