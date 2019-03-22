@@ -979,13 +979,14 @@ sigs:
       chairs:
       - name: Elsie Phillips
         github: Phillels
-        company: CoreOS
+        company: Red Hat
       - name: Paris Pittman
         github: parispittman
         company: Google
       tech_leads:
         - name: Christoph Blecker
           github: cblecker
+          company: Red Hat
         - name: Nikhita Raghunath
           github: nikhita
       emeritus_leads:
