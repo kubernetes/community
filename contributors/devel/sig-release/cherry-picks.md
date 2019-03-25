@@ -40,9 +40,11 @@ branches.
    * Milestones on cherry-pick PRs should be the milestone for the target 
    release branch (for example, milestone 1.11 for a cherry-pick onto 
    release-1.11).
-   *  You can find the current release team members in the 
-   [appropriate release folder](https://git.k8s.io/sig-release/releases) for the target release.
-   You may cc them with `<@githubusername>` on your cherry-pick PR.
+   * During code freeze, to get attention on a cherry-pick by the current
+   release team members see the [appropriate release folder](https://git.k8s.io/sig-release/releases)
+   for the target release's team contact information. You may cc them with
+   `<@githubusername>` on your cherry-pick PR.
+   * For prior branches, check the [patch release schedule](https://git.k8s.io/sig-release/releases/patch-releases.md), which includes contact information for the patch release team.
 
 ## Cherry-pick Review
 
