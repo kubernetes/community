@@ -58,6 +58,9 @@ Kubernetes 1.14 includes stable support for Windows Server containers and has up
 
 Additional information and guides are available in the [KEPs for SIG-Windows](https://github.com/kubernetes/enhancements/tree/master/keps/sig-windows)
 
+## Discuss
+Join us on [Slack](https://kubernetes.slack.com/messages/sig-windows) or the [Kubernetes Community Forums](https://discuss.kubernetes.io/c/general-discussions/windows) to chat about Windows containers on Kubernetes.
+
 ## Contributing
 
 To get yourself familiar with contributing, please read the [Kubernetes Contributor Guide](../contributors/guide/README.md) and the [SIG-Windows Contributor guide](./CONTRIBUTING.md)
