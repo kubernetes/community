@@ -23,6 +23,7 @@ Welcome to Kubernetes!
     -   [Find something to work on](#find-something-to-work-on)
         -   [Find a good first topic](#find-a-good-first-topic)
         -   [Learn about SIGs](#learn-about-sigs)
+        -   [SIG-specific contributing guidelines](#sig-specific-contributing-guidelines)
         -   [File an Issue](#file-an-issue)
 -   [Contributing](#contributing)
     -   [Communication](#communication)
@@ -30,9 +31,11 @@ Welcome to Kubernetes!
     -   [Open a Pull Request](#open-a-pull-request)
     -   [Code Review](#code-review)
     -   [Testing](#testing)
-    -   [Security](#security)
+    -   [Security](#security)    
     -   [Documentation](#documentation)
     -   [Issues Management or Triage](#issues-management-or-triage)
+-   [Kubernetes Contributor Playground](#kubernetes-contributor-playground)
+    -   [Youtube playlist](#youtube-playlist)
 -   [Community](#community)
     -   [Communication](#communication-1)
     -   [Events](#events)
@@ -106,10 +109,6 @@ You may have noticed that some repositories in the Kubernetes Organization are o
 We organize the community into SIGs in order to improve our workflow and more easily manage what is a very large community project.
 The developers within each SIG have autonomy and ownership over that SIG's part of Kubernetes.
 
-Some SIGs also have their own `CONTRIBUTING.md` files, which may contain extra information or guidelines in addition to these general ones.
-These are located in the SIG-specific community directories.
-For example: the contributor's guide for SIG CLI is located in the *kubernetes/community* repo, as [`/sig-cli/CONTRIBUTING.md`](/sig-cli/CONTRIBUTING.md).
-
 A SIG is an open, community effort.
 Anybody is welcome to jump into a SIG and begin fixing issues, critiquing design proposals and reviewing code.
 SIGs have regular [video meetings](https://kubernetes.io/community/) which everyone is welcome to.
@@ -138,6 +137,16 @@ Here is the [list of SIGs](/sig-list.md) so that you can determine which is most
 Follow the link in the SIG name column to reach each SIGs README. 
 Most SIGs will have a set of GitHub Teams with tags that can be mentioned in a comment on issues and pull requests for higher visibility. 
 If you are not sure about the correct SIG for an issue, you can try SIG-contributor-experience [here](/sig-contributor-experience#github-teams), or [ask in Slack](http://slack.k8s.io/).
+
+### SIG-specific contributing guidelines
+Some SIGs have their own `CONTRIBUTING.md` files, which may contain extra information or guidelines in addition to these general ones.
+These are located in the SIG-specific community directories:
+- [`/sig-apps/CONTRIBUTING.md`](/sig-apps/CONTRIBUTING.md)
+- [`/sig-aws/CONTRIBUTING.md`](/sig-aws/CONTRIBUTING.md)
+- [`/sig-cli/CONTRIBUTING.md`](/sig-cli/CONTRIBUTING.md)
+- [`/sig-multicluster/CONTRIBUTING.md`](/sig-multicluster/CONTRIBUTING.md)
+- [`/sig-storage/CONTRIBUTING.md`](/sig-storage/CONTRIBUTING.md)
+- [`/sig-windows/CONTRIBUTING.md`](/sig-windows/CONTRIBUTING.md)
 
 ### File an Issue
 
@@ -170,7 +179,7 @@ For quick reference on contributor resources, we have a handy [contributor cheat
 
 It is best to contact your [SIG](#learn-about-sigs) for issues related to the SIG's topic. Your SIG will be able to help you much more quickly than a general question would.
 
-For general questions and troubleshooting, use the [standard lines of communication](/communication.md) and work through the [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/).
+For general questions and troubleshooting, use the [standard lines of communication](/communication/README.md) and work through the [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/).
 
 ## GitHub workflow
 
@@ -215,9 +224,11 @@ When reviewing PRs from others [The Gentle Art of Patch Review](http://sage.thes
 * Is the contribution architected correctly?
 * Is the contribution polished?
 
+Note: if your pull request isn't getting enough attention, you can use the [#pr-reviews](https://kubernetes.slack.com/messages/pr-reviews) channel on Slack to get help finding reviewers.
+
 ## Testing
 
-Testing is the responsibility of all contributors and is in part owned by all SIGss, but is also coordinated by [sig-testing](/sig-testing). 
+Testing is the responsibility of all contributors and is in part owned by all SIGs, but is also coordinated by [sig-testing](/sig-testing). 
 Refer to the [Testing Guide](/contributors/devel/sig-testing/testing.md) for more information.
 
 There are multiple types of tests.
@@ -237,9 +248,8 @@ If you're looking to run e2e tests on your own infrastructure, [kubetest](https:
 
 ## Security
 
-- [Security Release Page](https://git.k8s.io/sig-release/security-release-process-documentation/security-release-process.md) - outlines the procedures for the handling of security issues.
+- [Security Release Page](https://git.k8s.io/security/security-release-process.md) - outlines the procedures for the handling of security issues.
 - [Security and Disclosure Information](https://kubernetes.io/docs/reference/issues-security/security/) - check this page if you wish to report a security vulnerability.
-
 
 ## Documentation
 
@@ -250,6 +260,14 @@ If you're looking to run e2e tests on your own infrastructure, [kubetest](https:
 Have you ever noticed the total number of [open issues](https://issues.k8s.io)?
 Helping to manage or triage these open issues can be a great contribution and a great opportunity to learn about the various areas of the project. Triaging is the word we use to describe the process of adding multiple types of descriptive labels to GitHub issues, in order to speed up routing issues to the right folks.
 Refer to the [Issue Triage Guidelines](/contributors/guide/issue-triage.md) for more information.
+
+# Kubernetes Contributor Playground
+
+If you are looking for a safe place, where you can familiarize yourself with (some of) the Kubernetes Project's review and pull request processes, then the [Kubernetes Contributor Playground](https://github.com/kubernetes-sigs/contributor-playground/) is the right place for you.
+
+## Youtube playlist
+
+A [Youtube playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP3M5X7stuD7N4r3uP2PZQUx) of the New Contributor workshop has been posted, and an outline of the video content can be found [here](/events/2018/05-contributor-summit). 
 
 # Community
 

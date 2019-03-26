@@ -1,10 +1,14 @@
-## Network programming latency SLIs/SLOs details
+## DNS programming latency SLIs/SLOs details
 
 ### Definition
 
 | Status | SLI | SLO |
 | --- | --- | --- |
-| __WIP__ | Latency of programming a single in-cluster dns instance, measured from when service spec or list of its `Ready` pods change to when it is reflected in that dns instance, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile of (99th percentiles across all dns instances) per cluster-day <= X |
+| __WIP__ | Latency of programming dns instance, measured from when service spec or list of its `Ready` pods change to when it is reflected in that dns instance, measured as 99th percentile over last 5 minutes aggregated across all dns instances<sup>[1](#footnote1)</sup> | In default Kubernetes installation, 99th percentile per cluster-day <= X |
+
+<a name="footnote1">[1\]</a>Aggregation across all programmers means that all
+samples from all programmers go into one large pool, and SLI is percentile
+from all of them.
 
 ### User stories
 - As a user of vanilla Kubernetes, I want some guarantee how quickly in-cluster
@@ -20,22 +24,18 @@ as external DNS resolution clearly depends on cloud provider or environment
 in which the cluster is running (it hard to set the SLO for it).
 
 ### Caveats
-- The SLI is formulated for a single DNS instance, even though that value
-itself is not very interesting for the user.
-If there are multiple DNS instances in the cluster, the aggregation across
-them is done only at the SLO level (and only that gives a value that is
-interesting for the user). The reason for doing it this is feasibility for
-efficiently computing that:
+- The SLI is aggregated across all DNS instances, which is what is interesting
+for the end-user. It may happen that small percentage of DNS instances are
+completely unresponsive (if all others are fast), but that is desired - we need
+to allow slower/unresponsive ones because at some scale it will be happening.
+The reason for doing it this way is feasibility for efficiently computing that:
   - if we would be doing aggregation at the SLI level (i.e. the SLI would be
-    formulated like "... reflected in in-cluster DNS and visible from 99%
-    of DNS instances"), computing that SLI would be extremely
+    formulated like "... reflected in in-cluster load-balancing mechanism and
+    visible from 99% of programmers"), computing that SLI would be extremely
     difficult. It's because in order to decide e.g. whether pod transition to
     Ready state is reflected, we would have to know when exactly it was reflected
-    in 99% of DNS instances. That requires tracking metrics on
+    in 99% of programmers (e.g. iptables). That requires tracking metrics on
     per-change base (which we can't do efficiently).
-  - we admit that the SLO is a bit weaker in that form (i.e. it doesn't necessary
-    force that a given change is reflected in 99% of programmers with a given
-		99th percentile latency), but it's close enough approximation.
 
 ### How to measure the SLI.
 There [network programming latency](./network_programming_latency.md) is

@@ -10,6 +10,8 @@ aliases:
     - bgrant0607
     - jdumars
     - mattfarina
+    - derekwaynecarr
+    - dims
   sig-auth-leads:
     - mikedanese
     - enj
@@ -75,6 +77,8 @@ aliases:
     - derekwaynecarr
   sig-openstack-leads:
     - hogepodge
+    - adisky
+    - chrigl
   sig-pm-leads:
     - apsinha
     - idvoretskyi
@@ -90,7 +94,6 @@ aliases:
     - bsalamat
     - k82cn
   sig-service-catalog-leads:
-    - carolynvs
     - kibbles-n-bytes
     - jberkhahn
     - jboyd01
@@ -153,8 +156,21 @@ aliases:
     - aasmall
     - joelsmith
     - cji
-## BEGIN CUSTOM CONTENT
-  steering-committee:
+    - jaybeale
+  committee-code-of-conduct:
+    - jdumars
+    - parispittman
+    - carolynvs
+    - eparis
+    - bradamant3
+  committee-product-security:
+    - philips
+    - jessfraz
+    - cjcullen
+    - tallclair
+    - liggitt
+    - joelsmith
+  committee-steering:
     - bgrant0607
     - brendanburns
     - derekwaynecarr
@@ -167,10 +183,6 @@ aliases:
     - smarterclayton
     - spiffxp
     - timothysc
-  code-of-conduct-committee:
-    - jdumars
-    - parispittman
-    - eparis
-    - carolynvs
-    - bradamant3
+## BEGIN CUSTOM CONTENT
+
 ## END CUSTOM CONTENT

@@ -21,7 +21,7 @@ Interested in how we can most effectively test Kubernetes. We're interested spec
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
-* Erick Feja (**[@fejta](https://github.com/fejta)**), Google
+* Erick Fejta (**[@fejta](https://github.com/fejta)**), Google
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
 
@@ -49,21 +49,27 @@ The following subprojects are owned by sig-testing:
   - Description: Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
+  - Contact
+    - Slack: [#kind](https://kubernetes.slack.com/messages/kind)
   - Meetings:
-    - sigs.k8s.io/kind weekly meeting: [Mondays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+    - sigs.k8s.io/kind bi-weekly meeting: [Mondays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
       - [Meeting notes and Agenda](https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit).
       - [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
 - **prow**
   - Description: Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action for the Kubernetes project
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
+  - Contact
+    - Slack: [#prow](https://kubernetes.slack.com/messages/prow)
 - **testing-commons**
   - Description: The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
+  - Contact
+    - Slack: [#testing-commons](https://kubernetes.slack.com/messages/testing-commons)
   - Meetings:
-    - Testing Commons: [Wednesdays at 07:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29).
+    - Testing Commons: [Fridays at 07:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29).
       - [Meeting notes and Agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o).
 - **test-infra**
   - Description: Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project

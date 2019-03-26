@@ -109,11 +109,11 @@ roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair rol
     related events, such as KubeCon.
 
 - Security Contacts
-  - Are a contact point for the Product Security Team to reach out to for
+  - Are a contact point for the Product Security Committee to reach out to for
     triaging and handling of incoming issues.
   - Must be a maintainer.
   - Must accept and adhere to the Kubernetes [Embargo
-    Policy](https://github.com/kubernetes/sig-release/blob/master/security-release-process-documentation/security-release-process.md#embargo-policy).
+    Policy](https://git.k8s.io/security/private-distributors-list.md#embargo-policy).
   - Defined in
     [SECURITY_CONTACTS](https://github.com/kubernetes-incubator/service-catalog/blob/master/SECURITY_CONTACTS)
     file.

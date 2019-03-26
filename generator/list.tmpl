@@ -2,14 +2,14 @@
 # SIGs and Working Groups
 
 Most community activity is organized into Special Interest Groups (SIGs),
-time bounded Working Groups, and the [community meeting](communication.md#weekly-meeting).
+time bounded Working Groups, and the [community meeting](communication/README.md#weekly-meeting).
 
 SIGs follow these [guidelines](governance.md) although each of these groups may operate a little differently
 depending on their needs and workflow.
 
 Each group's material is in its subdirectory in this project.
 
-When the need arises, a [new SIG can be created](sig-creation-procedure.md)
+When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 
 ### Master SIG List
 
@@ -33,4 +33,21 @@ When the need arises, a [new SIG can be created](sig-creation-procedure.md)
 |------|------------------|-----------|---------|----------|
 {{- range .WorkingGroups}}
 |[{{.Name}}]({{.Dir}}/README.md)|{{range .StakeholderSIGs}}* {{.}}<br>{{end }}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
+{{- end }}
+{{- /* TODO: remove the below condition when at least one user group has been added */}}
+{{ if .UserGroups }}
+### Master User Group List
+
+| Name | Organizers | Contact | Meetings |
+|------|------------|---------|----------|
+{{- range .UserGroups}}
+|[{{.Name}}]({{.Dir}}/README.md)|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
+{{- end }}
+{{  end }}
+### Master Committee List
+
+| Name |  Label | Members | Contact |
+|------|--------|---------|---------|
+{{- range .Committees}}
+|[{{.Name}}]({{.Dir}}/README.md)|{{.Label}}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|{{ if .Contact.Slack }}* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>{{ end }}{{ if .Contact.MailingList }}* [Mailing List]({{.Contact.MailingList}})<br>{{ end }}{{ if .Contact.PrivateMailingList }}* [Private Mailing List]({{.Contact.PrivateMailingList}}){{ end }}
 {{- end }}

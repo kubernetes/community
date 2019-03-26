@@ -43,7 +43,7 @@ Guide](http://kubernetes.io/docs/admin/).
 * **Coding Conventions** ([coding-conventions.md](../guide/coding-conventions.md)):
   Coding style advice for contributors.
 
-* **Document Conventions** ([how-to-doc.md](how-to-doc.md))
+* **Document Conventions** ([The Kubernetes documentation](https://github.com/kubernetes/website))
   Document style advice for contributors.
 
 * **Running a cluster locally** ([running-locally.md](running-locally.md)):
@@ -60,7 +60,7 @@ Guide](http://kubernetes.io/docs/admin/).
 * **API Conventions** ([api-conventions.md](api-conventions.md)):
   Defining the verbs and resources used in the Kubernetes API.
 
-* **API Client Libraries** ([client-libraries.md](client-libraries.md)):
+* **API Client Libraries** ([Client Libraries](https://kubernetes.io/docs/reference/using-api/client-libraries/)):
   A list of existing client libraries, both supported and user-contributed.
 
 

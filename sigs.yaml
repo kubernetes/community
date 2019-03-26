@@ -25,6 +25,11 @@ sigs:
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://goo.gl/0lbiM9
       recordings_url: https://www.youtube.com/watch?v=Lj1ScbXpnpY&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R
+    - description: Kubebuilder and Controller Runtime Meeting
+      day: Wednesday
+      time: "10:00"
+      tz: "PT (Pacific Time)"
+      frequency: monthly - second Wednesday every month
     contact:
       slack: sig-api-machinery
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery
@@ -80,7 +85,7 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-apiserver/OWNERS
       - https://raw.githubusercontent.com/kubernetes/sample-controller/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-controller/OWNERS
-      - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder-alpha/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/controller-tools/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder/master/OWNERS
@@ -216,14 +221,28 @@ sigs:
       - name: Matt Farina
         github: mattfarina
         company: Samsung SDS
+      - name: Derek Carr
+        github: derekwaynecarr
+        company: Red Hat
+      - name: Davanum Srinivas
+        github: dims
+        company: Huawei
     meetings:
     - description: Regular SIG Meeting
       day: Thursday
       time: "19:00"
       tz: "UTC"
-      frequency: weekly
+      frequency: biweekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
+    - description: conformance Office Hours
+      day: Tuesday
+      time: "12:00"
+      tz: "PT (Pacific Time)"
+      frequency: weekly
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://docs.google.com/document/d/1W31nXh9RYAb_VaYkwuPLd1hFxuRX3iU0DmaQ4lkCsX8/edit#
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
     contact:
       slack: sig-architecture
@@ -253,14 +272,13 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
     - name: conformance-definition
       description: "[Described below](#conformance-definition)"
+      contact:
+        slack: k8s-conformance
+        teams:
+          - name: cncf-conformance-wg
       owners:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
-    - name: kep-adoption-and-reviews
-      description: "[Described below](#kep-adoption-and-reviews)"
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/community/master/keps/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/enhancements/master/keps/OWNERS
     - name: code-organization
       description: "[Described below](#code-organization)"
       owners:
@@ -272,12 +290,6 @@ sigs:
     - name: klog
       owners:
       - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
-    - name: steering
-      description: Placeholder until sigs.yaml supports committees as first-class groups. These repos are owned by the kubernetes steering committee, which is a wholly separate entity from SIG Architecture
-      owners:
-      - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
-      - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
 
   - name: Auth
     dir: sig-auth
@@ -437,6 +449,11 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/token/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/serviceaccount/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/serviceaccount/OWNERS
+    - name: multi-tenancy
+      description: >
+       Proposals and prototypes for introducing tenant model to enable multi-tenant cluster
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/multi-tenancy/master/OWNERS
   - name: Autoscaling
     dir: sig-autoscaling
     mission_statement: >
@@ -590,6 +607,10 @@ sigs:
     - name: cluster-api-provider-azure
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
+    - name: csi-drivers-azure
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
   - name: Big Data
     dir: sig-big-data
     mission_statement: >
@@ -786,7 +807,7 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
       meetings:
-      - description: Weekly Sync removing the in-tree cloud providers led by @cheftako and @andrewsykim
+      - description: Weekly Sync removing the in-tree cloud providers led by @cheftako and @mcrute
         day: Thursday
         time: "13:30"
         tz: "PT (Pacific Time)"
@@ -868,19 +889,25 @@ sigs:
       archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
     - description: Kubespray Office Hours
       day: Wednesday
-      time: "07:00"
+      time: "08:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit
+    - description: Cluster Addons meeting
+      day: Friday
+      time: "10:00"
+      tz: "PT (Pacific Time)"
+      frequency: biweekly
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit
     - description: minikube Office Hours
       day: Monday
       time: "10:00"
       tz: "PT (Pacific Time)"
       frequency: biweekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-      archive_url: https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit#heading=h.pry1y79ou79l
-      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+      archive_url: https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit
     contact:
       slack: sig-cluster-lifecycle
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
@@ -908,6 +935,9 @@ sigs:
     - name: cluster-api-provider-openstack
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
+    - name: etcdadm
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
     - name: kops
       owners:
       - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
@@ -937,6 +967,9 @@ sigs:
     - name: minikube
       owners:
       - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
+    - name: cluster-addons
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/addon-operators/master/OWNERS
   - name: Contributor Experience
     dir: sig-contributor-experience
     mission_statement: >
@@ -953,13 +986,14 @@ sigs:
       chairs:
       - name: Elsie Phillips
         github: Phillels
-        company: CoreOS
+        company: Red Hat
       - name: Paris Pittman
         github: parispittman
         company: Google
       tech_leads:
         - name: Christoph Blecker
           github: cblecker
+          company: Red Hat
         - name: Nikhita Raghunath
           github: nikhita
       emeritus_leads:
@@ -971,10 +1005,16 @@ sigs:
       day: Wednesday
       time: "9:30"
       tz: "PT (Pacific Time)"
-      frequency: weekly
+      frequency: weekly - except fourth Wednesday every month
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
       recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
+    - description: APAC SIG Meeting
+      day: Wednesday
+      time: "20:00"
+      tz: "PT (Pacific Time)"
+      frequency: monthly - fourth Wednesday every month
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
     contact:
       slack: sig-contribex
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
@@ -998,7 +1038,6 @@ sigs:
     - name: community-management
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
-        https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
     - name: github-management
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
@@ -1450,6 +1489,12 @@ sigs:
       - name: Chris Hoge
         github: hogepodge
         company: OpenStack Foundation
+      - name: Aditi Sharma
+        github: adisky
+        company: NEC Technologies India
+      - name: Christoph Glaubitz
+        github: chrigl
+        company: iNNOVO Cloud
       emeritus_leads:
        - name: David Lyle
          github: dklyle
@@ -1466,11 +1511,11 @@ sigs:
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday
-      time: "16:00"
+      time: "08:00"
       tz: "PT (Pacific Time)"
-      frequency: biweekly
-      url: https://docs.google.com/document/d/15UwgLbEyZyXXxVtsThcSuPiJru4CuqU9p3ttZSfTaY4/edit
-      archive_url: https://docs.google.com/document/d/1iAQ3LSF_Ky6uZdFtEZPD_8i6HXeFxIeW4XtGcUJtPyU/edit?usp=sharing_eixpa_nl&ts=588b986f
+      frequency: "biweekly starting Wednesday March 20, 2019"
+      url: https://docs.google.com/document/d/1bW3j4hFN4D8rv2LFv-DybB3gcE5ISAaOO_OpvDCgrGg/edit
+      archive_url:  https://docs.google.com/document/d/15UwgLbEyZyXXxVtsThcSuPiJru4CuqU9p3ttZSfTaY4/edit
       recordings_url: https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax
     contact:
       slack: sig-openstack
@@ -1602,6 +1647,7 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
     - name: release-team
       description: >
         The Kubernetes Release Team is responsible for the day-to-day work
@@ -1773,9 +1819,6 @@ sigs:
     label: service-catalog
     leadership:
       chairs:
-      - name: Carolyn Van Slyck
-        github: carolynvs
-        company: Microsoft
       - name: Michael Kibbe
         github: kibbles-n-bytes
         company: Google
@@ -1798,6 +1841,9 @@ sigs:
       - name: Doug Davis
         github: duglin
         company: IBM
+      - name: Carolyn Van Slyck
+        github: carolynvs
+        company: Microsoft
     meetings:
     - description: Regular SIG Meeting
       day: Monday
@@ -1933,7 +1979,7 @@ sigs:
       - name: Aaron Crickenberger
         github: spiffxp
         company: Google
-      - name: Erick Feja
+      - name: Erick Fejta
         github: fejta
         company: Google
       - name: Steve Kuznetsov
@@ -1984,12 +2030,14 @@ sigs:
       description: >
         Kubernetes IN Docker. Run Kubernetes test clusters on your local
         machine using Docker containers as nodes.
+      contact:
+        slack: kind
       meetings:
-      - description: sigs.k8s.io/kind weekly meeting
+      - description: sigs.k8s.io/kind bi-weekly meeting
         day: Monday
         time: "11:00"
         tz: "PT (Pacific Time)"
-        frequency: weekly
+        frequency: bi-weekly
         url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
         archive_url: https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit
         recordings_url: https://bit.ly/k8s-sig-testing-videos
@@ -1999,6 +2047,8 @@ sigs:
       description: >
         Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it
         in action for the Kubernetes project
+      contact:
+        slack: prow
       owners:
       - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
     - name: testing-commons
@@ -2006,12 +2056,14 @@ sigs:
         The Testing Commons is a subproject within the Kubernetes sig-testing community
         interested code structure, layout, and execution of common test code used
         throughout the kubernetes project
+      contact:
+        slack: testing-commons
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
       meetings:
       - description: Testing Commons
-        day: Wednesday
+        day: Friday
         time: "07:30"
         tz: "PT (Pacific Time)"
         frequency: bi-weekly
@@ -2130,7 +2182,7 @@ sigs:
   - name: Windows
     dir: sig-windows
     mission_statement: >
-      Focuses on supporting Windows Server Containers for Kubernetes.
+      Focuses on supporting Windows Node and scheduling Windows Server containers on Kubernetes.
     charter_link:
     label: windows
     leadership:
@@ -2355,6 +2407,9 @@ workinggroups:
     dir: wg-iot-edge
     mission_statement: >
        A Working Group dedicated to discussing, designing and documenting using Kubernetes for developing and deploying IoT and Edge specific applications
+    stakeholder_sigs:
+    - Multicluster
+    - Networking
     leadership:
       chairs:
       - name: Cindy Xing
@@ -2403,6 +2458,9 @@ workinggroups:
       - name: Craig Ingram
         github: cji
         company: Salesforce
+      - name: Jay Beale
+        github: jaybeale
+        company: InGuardians
     meetings:
     - description: Regular WG Meeting
       day: Monday
@@ -2482,3 +2540,144 @@ workinggroups:
     contact:
       slack: wg-k8s-infra
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra
+committees:
+  - name: Steering
+    dir: committee-steering
+    mission_statement: >
+      The Kubernetes Steering Committee is the governing body of the Kubernetes
+      project, providing decision-making and oversight pertaining to the
+      Kubernetes project bylaws, sub-organizations, and financial planning.
+      The Steering Committee also defines the project values and structure.
+    label: steering
+    charter_link: https://git.k8s.io/steering/charter.md
+    leadership:
+      chairs:
+      - name: Brian Grant
+        github: bgrant0607
+        company: Google
+      - name: Brendan Burns
+        github: brendanburns
+        company: Microsoft
+      - name: Derek Carr
+        github: derekwaynecarr
+        company: Red Hat
+      - name: Davanum Srinivas
+        github: dims
+        company: Huawei
+      - name: Joe Beda
+        github: jbeda
+        company: VMware
+      - name: Michelle Noorali
+        github: michelleN
+        company: Microsoft
+      - name: Brandon Philips
+        github: philips
+        company: Red Hat
+      - name: Phillip Wittrock
+        github: pwittrock
+        company: Google
+      - name: Sarah Novotny
+        github: sarahnovotny
+        company: Google
+      - name: Clayton Coleman
+        github: smarterclayton
+        company: Red Hat
+      - name: Aaron Crickenberger
+        github: spiffxp
+        company: Google
+      - name: Timothy St. Clair
+        github: timothysc
+        company: VMware
+    meetings:
+    - description: Public Steering Committee Meeting
+      day: Wednesday
+      time: "13:00"
+      tz: "PT (Pacific Time)"
+      frequency: biweekly
+      url: https://bit.ly/k8s-steering-wd
+      recordings_url: https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM
+    contact:
+      mailing_list: https://groups.google.com/a/kubernetes.io/forum/#!forum/steering
+      private_mailing_list: steering-private@kubernetes.io
+      teams:
+      - name: steering-committee
+        description: General Discussion
+    subprojects:
+    - name: steering
+      description: Steering Committee policy and documentation
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
+    - name: kubernetes-template-project
+      description: Template for starting new projects in the GitHub organizations owned by Kubernetes.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
+    - name: spartakus
+      description: Collection of usage information about Kubernetes clusters.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+
+  - name: Code of Conduct
+    dir: committee-code-of-conduct
+    mission_statement: >
+      The Kubernetes Code of Conduct Committee (CoCC) is the body that is
+      responsible for enforcing and maintaining the Kubernetes Code of Conduct.
+    label: conduct
+    charter_link:
+    leadership:
+      chairs:
+      - name: Jaice Singer Dumars
+        github: jdumars
+        company: Google
+      - name: Paris Pittman
+        github: parispittman
+        company: Google
+      - name: Carolyn Van Slyck
+        github: carolynvs
+        company: Microsoft
+      - name: Eric Paris
+        github: eparis
+        company: Red Hat
+      - name: Jennifer Rondeau
+        github: bradamant3
+        company: VMware
+    contact:
+      private_mailing_list: conduct@kubernetes.io
+      teams:
+      - name: code-of-conduct-committee
+        description: General Discussion
+  - name: Product Security
+    dir: committee-product-security
+    mission_statement: >
+     The Kubernetes Product Security Committee is the body that is responsible
+     for receiving and responding to reports of security issues in Kubernetes
+     products.
+    label: product-security
+    leadership:
+      chairs:
+      - name: Brandon Philips
+        github: philips
+        company: Red Hat
+      - name: Jess Frazelle
+        github: jessfraz
+      - name: CJ Cullen
+        github: cjcullen
+        company: Google
+      - name: Tim Allclair
+        github: tallclair
+        company: Google
+      - name: Jordan Liggitt
+        github: liggitt
+        company: Google
+      - name: Joel Smith
+        github: joelsmith
+        company: Red Hat
+    contact:
+      private_mailing_list: security@kubernetes.io
+      teams:
+      - name: product-security-committee
+        description: General Discussion
+    subprojects:
+    - name: security
+      description: Policies and documentation for the Product Security Committee
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/security/master/OWNERS

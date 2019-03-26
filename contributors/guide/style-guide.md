@@ -35,12 +35,12 @@ These are **guidelines**, not rules. Use your best judgement.
 
 ## Cheatsheet
 
-### Cheatsheet: Content design, formatting, and language
+### Cheatsheet: Content Design, Formatting, and Language
 
-**[Contact information:](#contact-information)**
+**[Contact Information:](#contact-information)**
 - Use official Kubernetes contact information.
 
-**[Dates and times:](#dates-and-times)**
+**[Dates and Times:](#dates-and-times)**
 - Format dates as `month day, year`. (December 13, 2018)
 - When conveying a date in numerical form, use [ISO 8601] Format: `yyyy-mm-dd`.
 - Use the 24 hour clock when referencing time.
@@ -52,7 +52,7 @@ These are **guidelines**, not rules. Use your best judgement.
 - Supply a link to a globally available time zone converter service.
   - `http://www.thetimezoneconverter.com/?t=<TIME REFERENCE>&tz=<TZ REFERENCE>`
 
-**[Diagrams, images and other assets:](#diagrams-images-and-other-assets)**
+**[Diagrams, Images and Other Assets:](#diagrams-images-and-other-assets)**
 - Images and other assets should be stored in the same directory as the document
   that is referencing it.
 - Filenames should be lowercase and descriptive of what they are referencing.
@@ -70,7 +70,7 @@ These are **guidelines**, not rules. Use your best judgement.
 - Do not repeat content. Instead link back to the canonical source.
 - Large content or topic shifts should be separated with a horizontal rule.
 
-**[Formatting text:](#formatting-text)**
+**[Formatting Text:](#formatting-text)**
 - API objects:
   - Follow the established [API naming convention] when referring to API Objects.
   - Do not split API object names into their components.
@@ -83,7 +83,7 @@ These are **guidelines**, not rules. Use your best judgement.
   - Command line examples and flags.
   - Object field names.
 
-**[Language, grammar and tone:](#language)**
+**[Language, Grammar and Tone:](#language)**
 - Documentation should be written in English.
 - Prefer an active voice and present tense when possible.
 - Use simple and direct language.
@@ -96,12 +96,12 @@ These are **guidelines**, not rules. Use your best judgement.
 - If using an abbreviation, spell it out the first time it is used in the
   document unless it is commonly known. (example: TCP/IP)
 
-**[Moving a document:](#moving-a-document)**
+**[Moving a Document:](#moving-a-document)**
 - Use `[git-mv]` to move documents.
 - Commit moved documents separately from any other changes.
 - When a document has moved, leave a tombstone file with a removal date in its
   place.
-  
+
 **[Punctuation:](#punctuation)**
 - Do not use punctuation in headings.
 - End full sentences with a period.
@@ -122,7 +122,7 @@ These are **guidelines**, not rules. Use your best judgement.
 
 ### Cheatsheet: Markdown
 
-**[Code blocks:](#code-blocks)**
+**[Code Blocks:](#code-blocks)**
 - When possible, reference the language at the beginning of a Code Block.
 - When a code block is used to reference a shell, do not include the command
   prompt (`$`).
@@ -133,22 +133,26 @@ These are **guidelines**, not rules. Use your best judgement.
 - Use two asterisks (`**`) for **Bold** text.
 - Use an underscore (`_`) for _Italics_.
 - Use two tildes (`~~`) for ~~Strikethrough~~.
- 
+
 **[Headings:](#headings)**
 - Use a single `H1` (`#`) Heading per document.
   - **Exception:** `H1` may be used multiple times in the same document when
     there is a large content shift or "chapter" change.
 - Follow the Header hierarchy of `H2` > `H3` > `H4` > `H5` > `H6`.
-- Use sentence-style capitalization in titles (first word and proper nouns).
+- Use title-case capitalization.
+  - Capitalize the first word.
+  - Capitalize all nouns, verbs, adjectives, adverbs, and pronouns.
+  - Capitalize all words of four letters or more.
+  - Use lowercase words of three or fewer letters.
 - Avoid using special characters.
 - Leave exactly 1 new line after a heading.
 - Avoid using links in headings.
 
-**[Horizontal rules:](#horizontal-lines)**
+**[Horizontal Rules:](#horizontal-lines)**
 - Use three dashes (`---`) to denote a horizontal rule.
 - Use a horizontal rule (`---`) to logically separate large sections.
 
-**[Line length:](#line-length)**
+**[Line Length:](#line-length)**
 - Prefer an 80 character line limit.
 
 **[Links:](#links)**
@@ -185,20 +189,20 @@ These are **guidelines**, not rules. Use your best judgement.
 
 ---
 
-## Content design, formatting, and language
+## Content Design, Formatting, and Language
 
-### Contact information
+### Contact Information
 
 - Use official Kubernetes contact information.
   - Use official community contact email addresses. There should be no personal
     or work contact information included in public documentation; instead use
     addresses like the [SIG Google groups] or managed accounts such as
-    community@kubernetes.io. 
+    community@kubernetes.io.
   - **Good example:** community@kubernetes.io
   - **Bad example:** bob@example.com
 
 
-### Dates and times
+### Dates and Times
 
 The Kubernetes Contributor Community spans many regions and time zones.
 Following a consistent pattern and avoiding shorthand improves the readability
@@ -235,7 +239,7 @@ for every member.
   ```
 
 
-### Diagrams, images and other assets
+### Diagrams, Images and Other Assets
 
 - Images and other assets should be stored in the same directory as the document
   that is referencing it.
@@ -249,7 +253,7 @@ for every member.
 
 ### Document Layout
 
-Adhering to a standard document layout ensures that each page can intuitively 
+Adhering to a standard document layout ensures that each page can intuitively
 be navigated once a reader is familiar with the standard layout.
 
 - Documents should follow the general template of:
@@ -265,7 +269,7 @@ be navigated once a reader is familiar with the standard layout.
 - Large content or topic shifts should be separated with a horizontal rule.
 
 
-### Formatting text
+### Formatting Text
 
 The formatting guidelines have been selected to mirror or augment the
 [Kubernetes documentation style-guide]. Remaining consistent across the
@@ -304,7 +308,7 @@ external appearance.
     - **Bad example:** Set the externalTrafficPolicy to Local.
 
 
-### Language, grammar and tone
+### Language, Grammar and Tone
 
 - Documentation should be written in English.
 - Prefer an active voice and present tense when possible.
@@ -328,7 +332,7 @@ external appearance.
   - **Bad example:** chairman
 - Avoid personal pronouns ("I," "we," "us," "our," and "ours").
   - In most cases personal pronouns should be avoided as they can lead to
-    confusion regarding who they are referring to. 
+    confusion regarding who they are referring to.
   - **Good example:** The release-team shepherded the successful release of 1.13.
   - **Bad example:** We shepherded the successful release of 1.13.
 - Address the reader as "you" instead of "we".
@@ -338,7 +342,7 @@ external appearance.
   - **Bad example:** We will create a new cluster with kubeadm.
 - Do not use Latin phrases.
   - [Latin phrases] can make it difficult for readers not familiar with them to
-    grasp their meaning. 
+    grasp their meaning.
   - Some useful alternatives include:
 
     | Latin Phrase | Alternative |
@@ -416,9 +420,9 @@ external appearance.
 ---
 
 
-## Markdown formatting
+## Markdown Formatting
 
-### Code blocks
+### Code Blocks
 
 - When possible, reference the language at the beginning of a Code Block.
   - The two markdown renderers used by the Kubernetes community
@@ -447,7 +451,7 @@ external appearance.
   prompt (`$`)
   - When a code block is referencing a shell, it is implied that it is a
     command prompt. The exception to this is when a code block is being used
-    for raw shell output such as debug logs. 
+    for raw shell output such as debug logs.
   - **Good example:**
     ```
     kubectl get pods -o wide
@@ -500,13 +504,16 @@ standard across documentation improves supportability.
   - **Exception:** `H1` may be used multiple times in the same document when
     there is a large content shift or "chapter" change.
 - Follow the Header hierarchy of `H2` > `H3` > `H4` > `H5` > `H6`.
-- Use sentence-style capitalization in titles (first word and proper nouns).
+- Use title-case capitalization.
+  - Capitalize the first word.
+  - Capitalize all nouns, verbs, adjectives, adverbs, and pronouns.
+  - Capitalize all words of four letters or more.
 - Avoid using special characters.
 - Leave exactly 1 new line after a heading.
 - Avoid using links in headings.
 
 
-### Horizontal rules
+### Horizontal Rules
 
 Markdown has multiple ways of indicating a horizontal rule. Adhering to a
 standard across documentation improves supportability.
@@ -517,7 +524,7 @@ standard across documentation improves supportability.
 - Use a horizontal rule (`---`) to logically separate large sections.
 
 
-### Line length
+### Line Length
 
 - Prefer an 80 character line limit.
   - There is no specific general best practice for Markdown line length. The
@@ -528,11 +535,11 @@ standard across documentation improves supportability.
 ### Links
 
 Markdown provides two primary methods to link to content: inline links and
-relative links. However, how and what they're being linked to can vary widely. 
+relative links. However, how and what they're being linked to can vary widely.
 
 - Prefer using reference style links over inline style links.
   - Reference links are shorter and easier to read. They have the added benefit
-    of being reusable throughout the entire document. 
+    of being reusable throughout the entire document.
   - The link itself should be at the bottom of the document. If the document is
     large or covers many topics, place the link at the end of the logical
     chapter or section.
@@ -577,7 +584,7 @@ relative links. However, how and what they're being linked to can vary widely.
 - When linking to a file in another Kubernetes github repository, use the
   `k8s.io` url shortener.
   - The shorthand version will auto-expand linking to documents within the
-    master branch and can be used for multiple purposes. 
+    master branch and can be used for multiple purposes.
 
     |      Short URL      |            Expanded URL            |
     |:-------------------:|:----------------------------------:|
@@ -641,7 +648,7 @@ relative links. However, how and what they're being linked to can vary widely.
     ```
 - Tables do not need to adhere to the suggested line length.
   - Markdown tables have an inherently longer line length, and cannot be
-    line wrapped. 
+    line wrapped.
 - Avoid long inline links.
   - Long inline links can make it difficult to work with markdown tables.
     Prefer to use reference style links instead.

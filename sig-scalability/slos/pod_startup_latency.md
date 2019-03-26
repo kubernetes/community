@@ -4,29 +4,48 @@
 
 | Status | SLI | SLO |
 | --- | --- | --- |
-| __Official__ | Startup latency of stateless<sup>[1](#footnote1)</sup> and schedulable<sup>[2](#footnote2)</sup> pods, excluding time to pull images and run init containers, measured from pod creation timestamp to when all its containers are reported as started and observed via watch, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile per cluster-day <= 5s |
+| __Official__ | Startup latency of schedulable<sup>[1](#footnote1)</sup> stateless<sup>[2](#footnote2)</sup> pods, excluding time to pull images and run init containers, measured from pod creation timestamp to when all its containers are reported as started and observed via watch, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile per cluster-day <= 5s |
+| __WIP__ | Startup latency of schedulable<sup>[1](#footnote1)</sup> stateful<sup>[3](#footnote3)</sup> pods, excluding time to pull images, run init containers, provision volumes (in delayed binding mode) and unmount/detach volumes (from previous pod if needed), measured from pod creation timestamp to when all its containers are reported as started and observed via watch, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile per cluster-day <= X where X depends on storage provider |
 
-<a name="footnote1">[1\]</a>A `stateless pod` is defined as a pod that doesn't
+<a name="footnote1">[1\]</a>By schedulable pod we mean a pod that can be
+scheduled in the cluster without causing any preemption.
+
+<a name="footnote2">[2\]</a>A `stateless pod` is defined as a pod that doesn't
 mount volumes with sources other than secrets, config maps, downward API and
 empty dir.
 
-<a name="footnote2">[2\]</a>By schedulable pod we mean a pod that can be
-scheduled in the cluster without causing any preemption.
+<a name="footnote3">[3\]</a>A `stateful pod` is defined as a pod that mounts
+at least one volume with sources other than secrets, config maps, downward API
+and empty dir.
 
 ### User stories
 - As a user of vanilla Kubernetes, I want some guarantee how quickly my pods
 will be started.
 
 ### Other notes
-- Only schedulable and stateless pods contribute to the SLI:
+- Only schedulable pods contribute to the SLIs:
   - If there is no space in the cluster to place the pod, there is not much
     we can do about it (it is task for Cluster Autoscaler which should have
     separate SLIs/SLOs).
   - If placing a pod requires preempting other pods, that may heavily depend
     on the application (e.g. on their graceful termination period). We don't
     want that to contribute to this SLI.
-  - Mounting disks required by non-stateless pods may potentially also require
-    non-negligible time, not fully dependent on Kubernetes.
+- We are explicitly splitting stateless and stateful pods from each other:
+  - Starting a stateful pod requires attaching and mounting volumes, that
+    takes non-negligible amount of time and doesn't even fully depend on
+    Kubernetes. However, even though it depends on chosen storage provider,
+    it isn't application specific, thus we make that part of the SLI
+    (though the exact SLO threshold may depend on chosen storage provider).
+  - We also explicitly exclude time to provision a volume (in delayed volume
+    binding mode), even though that also only depends on storage provider,
+    not on the application itself. However, volume provisioning can be
+    perceived as a bootstrapping operation in the lifetime of a stateful
+    workload, being done only once at the beginning, not everytime a pod is
+    created. As a result, we decided to exclude it.
+  - We also explicitly exclude time to unmount and detach the volume (if it
+    was previously mounted to a different pod). This situation is symetric to
+    excluding pods that need to preempt others (it's kind of cleaning after
+    predecessors).
 - We are explicitly excluding image pulling from time the SLI. This is
 because it highly depends on locality of the image, image registry performance
 characteristic (e.g. throughput), image size itself, etc. Since we have
@@ -58,10 +77,18 @@ reported as started and observed via watch", because:
     can potentially be fired).
 
 ### TODOs
-- We should try to provide guarantees for non-stateless pods (the threshold
-may be higher for them though).
 - Revisit whether we want "watch pod status" part to be included in the SLI.
+- Consider creating an SLI for pod deletion latency, given that for stateful
+pods, detaching RWO volume is required before it can be attached to a
+different node (i.e. slow pod deletion may block pod startup).
+- While it's easy to exclude pods that require preempting other pods or
+volume unmounting in tests (where we fully control the environment), we need
+to figure out how to do that properly in production environments.
 
 ### Test scenario
 
 __TODO: Descibe test scenario.__
+
+Note: when running tests against clusters with nodes in multiple zones, the
+preprovisioned volumes should be balanced across zones so that we don't make
+pods unschedulable due to lack of resources in a single zone.

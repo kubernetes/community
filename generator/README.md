@@ -1,7 +1,8 @@
 # SIG Doc builder
 
 This folder contains scripts to automatically generate documentation about the
-different Special Interest Groups (SIGs) and Working Groups (WGs) of Kubernetes. The authoritative
+different Special Interest Groups (SIGs), Working Groups (WGs),
+User Groups (UGs) and Committees of Kubernetes. The authoritative
 source for SIG information is the [`sigs.yaml`](/sigs.yaml) file in the project root.
 All updates must be done there.
 
@@ -13,6 +14,8 @@ The documentation follows a template and uses the values from [`sigs.yaml`](/sig
 - List: [`list.tmpl`](list.tmpl)
 - SIG README: [`sig_readme.tmpl`](sig_readme.tmpl)
 - WG README: [`wg_readme.tmpl`](wg_readme.tmpl)
+- UG README: [`ug_readme.tmpl`](ug_readme.tmpl)
+- Committee README: [`committee_readme.tmpl`](committee_readme.tmpl)
 
 **Time Zone gotcha**:
 Time zones make everything complicated.
@@ -23,11 +26,13 @@ Practically, that means US pacific time must be `PT (Pacific Time)`.
 `PT` isn't good enough, unfortunately.
 
 When an update happens to the this file, the next step is to generate the
-accompanying documentation. This takes the format of three types of doc files:
+accompanying documentation. This takes the format of the following types of doc files:
 
 ```
 sig-<sig-name>/README.md
 wg-<working-group-name>/README.md
+ug-<user-group-name>/README.md
+committee-<committee-name>/README.md
 sig-list.md
 ```
 
@@ -62,9 +67,11 @@ make WHAT=container-identity
 
 where the `WHAT` var refers to the directory being built.
 
-## Adding custom content to your README
+## Adding custom content
 
-If your SIG or WG wishes to add custom content, you can do so by placing it within
+### README
+
+If your SIG, WG, UG or Committee wishes to add custom content, you can do so by placing it within
 the following code comments:
 
 ```markdown
@@ -85,4 +92,15 @@ An example might be:
 - Do this
 - Do that
 <!-- END CUSTOM CONTENT -->
+```
+
+### OWNERS_ALIASES
+
+Similarly, custom aliases can be added in the `OWNERS_ALIASES` file by placing
+it within the following code comments:
+
+```yaml
+## BEGIN CUSTOM CONTENT
+
+## END CUSTOM CONTENT
 ```

@@ -71,7 +71,7 @@ hack/run-in-gopath.sh hack/godep-restore.sh
 This script will try to optimize what it needs to download, and if it seems the
 dependencies are all present already, it will return very quickly.
 
-If there's every any doubt about the correctness of your dependencies, you can
+If there's ever any doubt about the correctness of your dependencies, you can
 simply `make clean` or `rm -rf _output`, and run it again.
 
 Now you should have a clean copy of all of the Kubernetes dependencies.
