@@ -1441,6 +1441,9 @@ sigs:
       - name: sig-node-test-failures
         description: Test Failures and Triage
     subprojects:
+    - name: cri-api
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cri-api/master/OWNERS
     - name: cri-o
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cri-o/master/OWNERS
