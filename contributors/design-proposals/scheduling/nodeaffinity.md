@@ -144,12 +144,36 @@ Hopefully this won't cause too much confusion.
 
 ## Examples
 
-**TODO: fill in this section**
+Run a pod on a node with an Intel or AMD CPU and in availability zone Z:
 
-* Run this pod on a node with an Intel or AMD CPU
-
-* Run this pod on a node in availability zone Z
-
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-node-affinity
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: cpu-arch
+            operator: In
+            values:
+            - intel
+            - amd
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: zone
+            operator: In
+            values:
+            - Z
+  containers:
+  - name: pod-with-node-affinity
+    image: tomcat:8
+```
 
 ## Backward compatibility
 
