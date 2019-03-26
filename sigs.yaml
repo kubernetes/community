@@ -2650,8 +2650,6 @@ committees:
       - name: Brandon Philips
         github: philips
         company: Red Hat
-      - name: Jess Frazelle
-        github: jessfraz
       - name: CJ Cullen
         github: cjcullen
         company: Google
