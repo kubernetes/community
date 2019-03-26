@@ -163,7 +163,7 @@ Moderators seats: 10
 | Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Noah Kantrowitz     | @coderanger         | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Easter European Time](https://time.is/EET)       |
+| Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)       |
 | Yang Li             | @idealhack          | APAC     | [CST - China Standard Time](https://time.is/China)      |
 
 
