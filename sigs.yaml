@@ -1110,12 +1110,20 @@ sigs:
         description: Documentation maintainers
       - name: sig-docs-pr-reviews
         description: Documentation PR reviews
-      - name: sig-docs-ko-owners
-        description: Korean localization
+      - name: sig-docs-en-owners
+        description: English content (default)
+      - name: sig-docs-de-owners
+        description: German content
+      - name: sig-docs-fr-owners
+        description: French content
+      - name: sig-docs-it-owners
+        description: Italian content
       - name: sig-docs-ja-owners
-        description: Japanese localization
+        description: Japanese content
+      - name: sig-docs-ko-owners
+        description: Korean content
       - name: sig-docs-zh-owners
-        description: Chinese localization
+        description: Chinese content
     subprojects:
     - name: reference-docs
       owners:
