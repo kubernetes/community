@@ -120,6 +120,8 @@ tools].
 Kubernetes build system requires `rsync` command present in the development
 platform.
 
+### Prerequisites
+
 The following section is a quick start on how to build Kubernetes locally, for more detailed information you can see [kubernetes/build](https://git.k8s.io/kubernetes/build/README.md).
 The best way to validate your current setup is to build a small part of Kubernetes. This way you can address issues without waiting for the full build to complete. To build a specific part of Kubernetes use the `WHAT` environment variable to let the build scripts know you want to build only a certain package/executable.
 
