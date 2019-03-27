@@ -154,6 +154,43 @@ To promote a test to the conformance test suite, open a PR as follows:
     all of the required [conformance test comment metadata]
 - add the PR to SIG Architecture's [Conformance Test Review board]
 
+#### Windows nodes considerations
+
+Not all tests are able to pass on Windows, some of which have been labeled as
+``[LinuxOnly]``. The main reasons are defined in the Windows Node Support KEP
+(https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/20190103-windows-node-support.md#what-will-never-work) . The most common reasons found why tests cannot pass on Windows are:
+
+- Pod ``SecurityContext`` set. Most of the fields are Linux specific, and with
+  and any field set in the Pod's ``SecurityContext`` will result in the Pod not
+  being able to spawn, or not work as intended.
+- File permissions cannot be set on volumes. Tests which are setting Volumes
+  ``DefaultMode`` or ``Mode`` and expecting those file permissions to be set will fail.
+- Individual files cannot be mounted on Windows Containers. Tests which are mounting
+  or expecting such files to be mounted (including ``/etc/hosts``, ``/etc/resolv.conf``,
+  ``/dev/termination-log``).
+- Tests which create EmptyDir volumes with ``Medium=memory``. The volumes are created
+  as regular EmprtyDir volumes, and if the test checks if the fstype is ``tmps``, it will
+  fail.
+- Pod ``HostNetwork=true`` set. Is not supported on Windows, and if set, the Pod will
+  fail to spawn.
+- Cannot resolve PQDNs (Partially Qualified Domain Names). At the moment, Windows Containers are
+  configured with a single DNS suffix (e.g.: ``lish.svc.cluster.local``). The containers are
+  only able to resolve FQDNs, or names within namespace (e.g.: ``foo.lish.cluster.local``). Anything
+  in between it cannot (e.g.: ``foo.lish``), and tests relying on PQDNs will fail.
+- Running Linux specific commands. Most Windows images used in testing are based on busybox, and thus,
+  quite a few Linux commands are acceptable. But, due to the differences between Linux and Windows, not
+  all commands and command options are included in Windows busybox binary. The most concerning cases are:
+  - has full path to binary (e.g: ``/usr/bin/nc). Those paths do not exist on Windows, and should
+    already exist in ``$PATH``.
+  - networking commands. Most networking commands work differently on Windows and Linux, including
+    ``ping`` and ``wget``.
+- Windows Containers do not IPv6 support at the moment.
+- The test is spawning a Pod using a Linux-only image. Any hardcoded image is typically a
+  red flag, as most images do not have Windows support. The tests should use images defined
+  in ``k8s.io/kubernetes/test/utils/image``. Note that not **all** images have Windows support.
+  To see which do, see: https://github.com/kubernetes-sigs/windows-testing/blob/master/images/Utils.ps1
+
+The tests which are affected by one of the criteria above should be labeled as ``[LinuxOnly]``.
 
 ### Conformance Test Comment Metadata
 
