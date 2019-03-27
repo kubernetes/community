@@ -157,16 +157,16 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
-          - key: cpu-arch
+          - key: kubernetes.io/arch
             operator: In
             values:
             - intel
-            - amd
+            - amd64
       preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
         preference:
           matchExpressions:
-          - key: zone
+          - key: failure-domain.beta.kubernetes.io/zone
             operator: In
             values:
             - Z
