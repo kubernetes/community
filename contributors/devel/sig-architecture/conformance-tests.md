@@ -41,7 +41,7 @@ specifically, a test is eligible for promotion to conformance if:
   to pre-pull images for conformance tests)
 - it works without non-standard filesystem permissions granted to pods
 - it does not rely on any binaries that would not be required for the linux
-  kernel or kubelet to run (e.g., can't rely on git)
+  kernel or kubelet to run (e.g., can't rely on git), or differ in behavior based on OS (nslookup, ping)
 - any container images used within the test support all architectures for which
   kubernetes releases are built
 - it passes against the appropriate versions of kubernetes as spelled out in
@@ -69,6 +69,50 @@ reasonable production worthy environments:
 - tests may need to create or set objects or fields that are alpha or beta that
   bypass policies that are not yet GA, but which may reasonably be enabled on a
   conformant cluster (e.g., pod security policy, non-GA scheduler annotations)
+
+### Windows & Linux Considerations
+
+As of v1.14, Windows is a stable feature, but not yet included in conformance
+testing. In preparation for this, a large number of conformance tests are
+already included in Windows testing. You can see what tests have already pass by
+looking at TestGrid for results of Windows tests running on 
+[Azure](https://testgrid.k8s.io/sig-windows#aks-engine-azure-windows-master) and 
+[GCE](https://testgrid.k8s.io/sig-windows#gce-windows-master)).
+
+Generally speaking, the goals are to:
+
+- Make sure tests that are already passing remain passing. If new OS-specific
+functionality is added, it should be in a new test.
+- Ensure that new tests covering Linux-specific functionality are tagged with `[LinuxOnly]` 
+(see: [Kinds of Tests](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests),
+  - Give future reviewers a reference to an active issue or documentation clarifying why a test
+cannot run on Windows.
+
+The tests that are running today:
+
+- Rely only on container images that already have a multi-architecture manifest
+including Windows versions, or have been ported by SIG-Windows
+(see [kubernetes-sigs/windows-testing/images](https://github.com/kubernetes-sigs/windows-testing/tree/master/images)
+- Do not depend on any functionality is different or not available on Windows. The full list
+is available in the Windows Kubernetes docs under [api](https://kubernetes.io/docs/setup/windows/intro-windows-in-kubernetes/#api). 
+A brief summary is included here as a starting point. If the docs are insufficient
+or there are more questions, please contact #SIG-Windows on Slack to get another
+reviewer.
+
+Some of the most common differences to watch for are:
+- Most user & security context options are not supported since Windows does not
+use POSIX-style users, permissions or ACLs
+- Privileged containers and host networking modes are not supported. Containers are always isolated.
+- Only NTFS is supported. Volume mounts specifying other filesystems (ext4, xfs) or mediums (memory) are not supported
+  - Projected mounts and permission masks are not supported
+  - Mappings of individual files are not supported. This means some features that rely on it such as 
+V1.Container.terminationMessagePath or writing service entries to `/etc/hosts` also do not work.
+- Network and DNS settings must be passed through CNI. Windows does not use `/etc/resolv.conf` 
+and stores networking settings in the Windows registry instead
+- Windows treats all DNS lookups with a `.` to be FQDN, not PQDN.
+- Windows uses job objects or Hyper-V for pod isolation and resource controls, not CGroups. These are managed implicitly by Docker or ContainerD, not by the kubelet. Do not check properties of CGroups as pass/fail criteria.
+- ICMP only works between pods on the same network, and are not routable to external networks. TCP/UDP are routable.
+
 
 ## Conformance Test Version Skew Policy
 
