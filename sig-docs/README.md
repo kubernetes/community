@@ -23,9 +23,13 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
+* Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**), Google
 * Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
-* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), VMware
+* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), Stripe
+
+## Emeritus Leads
+
+* Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-docs)
