@@ -12,21 +12,15 @@ We do this by listening - whether it’s through our roadshows to SIG meetings, 
 
 #### Code, Binaries and Services
 
-- Establish policies, standards and procedures for the use, [moderation], and management of all public platforms officially used by the project, including but not limited to:
-  - [discuss.kubernetes.io]
-  - [GitHub Management]
-  - [Mailing lists] / Google groups for the project as a whole (eg: kubernetes-dev@googlegroups.com) and for individual sigs and wgs where the Chairs have provided us ownership
-  - [Slack]
-  - [/kubernetescommunity] YouTube channel
-  - [Zoom]
-- Establish and staff teams responsible for the administration and moderation of these platforms
-  - Teams must be staffed by trusted contributors spanning time zones, see [moderation] for more detail
-  - They are authorized to take immediate action when dealing with code of conduct issues, see [moderators] for the full list
-  - They are expected to escalate to the project's code of conduct committee when issues rise above the level of simple moderation
+- [GitHub Management]
+- [Mailing lists] / Google groups for the project as a whole (eg: kubernetes-dev@googlegroups.com) that are not owned by SIGs
 - Work with other SIGs and interested parties in the project to execute GitHub tasks where required, see [GitHub Management] for more detail
 - Own and execute events that are targeted to the Kubernetes contributor community, including:
   - The weekly [Kubernetes Community meeting]
-  - [Contributor Summit(s)]
+  - Maintenance of the Kubernetes Gsuite
+    - Managing @kubernetes.io aliases for project usage
+    - Managing the Kubernetes Community Calendar
+  - Content and Format of the [Contributor Summit(s)]
   - [Steering Committee elections] (though we do not own policy creation, see 'out of scope' below)
   - Retrospective moderation for other SIGs upon request
   - Other events, like other SIG face to face events, upon request and consideration
@@ -76,14 +70,29 @@ CNCF in many of the noted cases above, contributes funding to our platforms, pro
 - Code for the testing and CI infrastructure - that’s SIG Testing
 - [kubernetes/community]  ownership of folders for KEPs and Design Proposals. Members are to follow those folders owners files and SIG leadership for the specific issue/PR in question.
 - User community management. We hold office hours because contributors are a large portion of the volunteers that run that program.
+  - Slack or YouTube moderation (This should be a new SIG or another group)
 - The contributor experience for repos not included in the Kubernetes associated repositories list found in the [GitHub Management] subproject README.
-- Steering committee election policy updates and maintenance.
+- Steering committee election policy updates and maintenance. (Steering Comittee handles this)
 - We do not create SIGs/WGs but can assist in the various community management needs of their micro communities that would kick off their formation and keep them going.
+  - We do not close down Working Groups, that is the responsibility of the sponsoring SIGs of that working group
 - We are not the [code of conduct committee] and therefore do not control incident management reporting or decisions; however, our moderation guidelines allow us to act swiftly if there is a clear violation of terms of either our code of conduct or one of our supported platforms terms of service. If there is an action that the committee needs to take that involves one of these platforms (example: the removal of someone from GitHub), we will carry that out if none of the committee members have access.
+- SIG Properties 
+  - SIG Calendars and their settings
+  - SIG Mailing List permissions, moderation, and maintenance
+  - SIG YouTube playlist videos
+  - SIG settings on their Zoom account
+  - We are available to assist SIGs with these properties, but the responsibility of managing these day to day belongs to the individual SIG
+- Account ownership of the Kubernetes public social properties. The CNCF may delegate admin or management positions on these properties to members of Contrib Ex:
+  - Main Zoom account (CNCF)
+  - Main YouTube account (CNCF)
+  - Main Slack ownership (CNCF)
 - Communication platforms that are out of our scope for maintenance and support but we may still have some influence:
     - [r/kubernetes]
     - [@kubernetesio] twitter account
     - [kubernetes blog]
+- Logistical Execution of the [Contributor Summit(s)]
+  - The CNCF will handle the logistical requirements of the contributor summits with our input while we will focus on the content.
+
 
 ## Roles and Organization Management
 
