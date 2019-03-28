@@ -207,7 +207,7 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 [design principles]: /contributors/design-proposals/architecture/principles.md
 [scope]: https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
 [community membership]: /community-membership.md
-[sig governance]: /committee-steering/sig-governance.md
+[sig governance]: /committee-steering/governance/sig-governance.md
 [owners]: /community-membership.md#subproject-owner
 [sig charter process]: /committee-steering/governance/README.md
 [short template]: /committee-steering/governance/sig-governance-template-short.md
