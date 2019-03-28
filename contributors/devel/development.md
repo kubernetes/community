@@ -120,7 +120,41 @@ tools].
 Kubernetes build system requires `rsync` command present in the development
 platform.
 
-### Prerequisites
+### Go
+
+Kubernetes is written in [Go](http://golang.org). If you don't have a Go
+development environment, please [set one up](http://golang.org/doc/code.html).
+
+
+| Kubernetes     | requires Go |
+|----------------|-------------|
+| 1.0 - 1.2      | 1.4.2       |
+| 1.3, 1.4       | 1.6         |
+| 1.5, 1.6       | 1.7 - 1.7.5 |
+| 1.7            | 1.8.1       |
+| 1.8            | 1.8.3       |
+| 1.9            | 1.9.1       |
+| 1.10           | 1.9.1       |
+| 1.11           | 1.10.2      |
+| 1.12           | 1.10.4      |
+| 1.13           | 1.11.2      |
+| 1.13+          | 1.11.4      |
+
+Ensure your GOPATH and PATH have been configured in accordance with the Go
+environment instructions.
+
+#### Upgrading Go
+
+Upgrading Go requires specific modification of some scripts and container
+images.
+
+- The image for cross compiling in [build/build-image/cross].
+  The `VERSION` file and `Dockerfile`.
+- Update the desired Go version in Dockerfile for the [e2e][e2e-image] and [test][test-image].
+  This requires pushing the [e2e][e2e-image] and [test][test-image] images that are `FROM` the desired Go version.
+- The cross tag `KUBE_BUILD_IMAGE_CROSS_TAG` in [build/common.sh].
+
+### Quick Start
 
 The following section is a quick start on how to build Kubernetes locally, for more detailed information you can see [kubernetes/build](https://git.k8s.io/kubernetes/build/README.md).
 The best way to validate your current setup is to build a small part of Kubernetes. This way you can address issues without waiting for the full build to complete. To build a specific part of Kubernetes use the `WHAT` environment variable to let the build scripts know you want to build only a certain package/executable.
@@ -211,42 +245,6 @@ See the [testing guide](/contributors/devel/sig-testing/e2e-tests.md) and [end-t
 for additional information and scenarios.
 
 Run `make help` for additional information on these make targets.
-
-
-### Go
-
-Kubernetes is written in [Go](http://golang.org). If you don't have a Go
-development environment, please [set one up](http://golang.org/doc/code.html).
-
-
-| Kubernetes     | requires Go |
-|----------------|-------------|
-| 1.0 - 1.2      | 1.4.2       |
-| 1.3, 1.4       | 1.6         |
-| 1.5, 1.6       | 1.7 - 1.7.5 |
-| 1.7            | 1.8.1       |
-| 1.8            | 1.8.3       |
-| 1.9            | 1.9.1       |
-| 1.10           | 1.9.1       |
-| 1.11           | 1.10.2      |
-| 1.12           | 1.10.4      |
-| 1.13           | 1.11.2      |
-| 1.13+          | 1.11.4      |
-
-Ensure your GOPATH and PATH have been configured in accordance with the Go
-environment instructions.
-
-#### Upgrading Go
-
-Upgrading Go requires specific modification of some scripts and container
-images.
-
-- The image for cross compiling in [build/build-image/cross].
-  The `VERSION` file and `Dockerfile`.
-- Update the desired Go version in Dockerfile for the [e2e][e2e-image] and [test][test-image].
-  This requires pushing the [e2e][e2e-image] and [test][test-image] images that are `FROM` the desired Go version.
-- The cross tag `KUBE_BUILD_IMAGE_CROSS_TAG` in [build/common.sh].
-
 
 #### Dependency management
 
