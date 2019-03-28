@@ -166,7 +166,7 @@ spec:
       - weight: 1
         preference:
           matchExpressions:
-          - key: failure-domain.beta.kubernetes.io/zone
+          - key: failure-domain.kubernetes.io/zone
             operator: In
             values:
             - Z
