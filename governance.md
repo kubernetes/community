@@ -143,7 +143,7 @@ do not have clear deliverables or ownership of parts of the Kubernetes
 code base. As such they are neither good fits for SIGs or Working Groups.
 An example of such a topic might be continuous delivery to Kubernetes.
 
-Though their central goal is not a a deliverable piece of work, as contributing
+Though their central goal is not a deliverable piece of work, as contributing
 members of the community user groups are expected to work with SIGs
 to either identify friction or usability issues that need to be addressed,
 or to provide or improve documentation in their area of expertise. However
