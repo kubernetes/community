@@ -13,7 +13,13 @@ We do this by listening - whether it’s through our roadshows to SIG meetings, 
 #### Code, Binaries and Services
 
 - [GitHub Management]
-- [Mailing lists] / Google groups for the project as a whole (eg: kubernetes-dev@googlegroups.com) that are not owned by SIGs
+- Establish policies, standards and procedures for the use, of all public platforms officially used by the project, including but not limited to:
+  - [discuss.kubernetes.io]
+  - [GitHub Management]
+  - [Mailing lists] / Google groups for the project as a whole (eg: kubernetes-dev@googlegroups.com) and for individual sigs and wgs where the Chairs have provided us ownership
+  - [Slack]
+  - [/kubernetescommunity] YouTube channel
+  - [Zoom]
 - Work with other SIGs and interested parties in the project to execute GitHub tasks where required, see [GitHub Management] for more detail
 - Own and execute events that are targeted to the Kubernetes contributor community, including:
   - The weekly [Kubernetes Community meeting]
@@ -81,17 +87,19 @@ CNCF in many of the noted cases above, contributes funding to our platforms, pro
   - SIG Mailing List permissions, moderation, and maintenance
   - SIG YouTube playlist videos
   - SIG settings on their Zoom account
-  - We are available to assist SIGs with these properties, but the responsibility of managing these day to day belongs to the individual SIG
-- Account ownership of the Kubernetes public social properties. The CNCF may delegate admin or management positions on these properties to members of Contrib Ex:
-  - Main Zoom account (CNCF)
-  - Main YouTube account (CNCF)
-  - Main Slack ownership (CNCF)
+  - We are available to assist SIGs with these properties and provide guidance, but the responsibility of managing these day to day belongs to the individual SIG
+- Ownership, staffing, and moderation of Kubernetes communication properties. The CNCF may delegate admin or management positions on these properties to members of Contributor Experience
+  - [discuss.kubernetes.io] - This tool is mostly self-moderating and enough Kubernetes members participate that most of these roles are administrative.
+  - [Mailing lists] / Google groups (that belong to the each SIG)
+  - [Slack] - (TBD)
+  - [/kubernetescommunity] YouTube channel (CNCF) 
+  - [Zoom] (CNCF)
 - Communication platforms that are out of our scope for maintenance and support but we may still have some influence:
     - [r/kubernetes]
     - [@kubernetesio] twitter account
     - [kubernetes blog]
 - Logistical Execution of the [Contributor Summit(s)]
-  - The CNCF will handle the logistical requirements of the contributor summits with our input while we will focus on the content.
+  - The CNCF will provide us with an events manager who will handle the event logistics and provide guidance with the requirements we set forth. 
 
 
 ## Roles and Organization Management
