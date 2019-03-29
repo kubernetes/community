@@ -740,6 +740,9 @@ sigs:
       description: Centralized plugin index for krew.
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/krew-index/master/OWNERS
+    - name: cli-experimental
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/cli-experimental/master/OWNERS
   - name: Cloud Provider
     dir: sig-cloud-provider
     mission_statement: >

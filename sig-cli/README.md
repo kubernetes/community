@@ -66,6 +66,9 @@ The following subprojects are owned by sig-cli:
   - Description: Centralized plugin index for krew.
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/krew-index/master/OWNERS
+- **cli-experimental**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cli-experimental/master/OWNERS
 
 ## GitHub Teams
 
