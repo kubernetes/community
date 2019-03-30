@@ -241,7 +241,7 @@ make test-integration
 make test-e2e
 ```
 
-See the [testing guide](/contributors/devel/sig-testing/e2e-tests.md) and [end-to-end tests](/contributors/devel/sig-testing/e2e-tests.md)
+See the [testing guide](./sig-testing/testing.md) and [end-to-end tests](./sig-testing/e2e-tests.md)
 for additional information and scenarios.
 
 Run `make help` for additional information on these make targets.
