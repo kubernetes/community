@@ -1076,15 +1076,19 @@ sigs:
     label: docs
     leadership:
       chairs:
-      - name: Andrew Chen
-        github: chenopis
+      - name: Jared Bhatti  
+        github: jaredbhatti
         company: Google
       - name: Zach Corleissen
         github: zacharysarah
         company: Linux Foundation
       - name: Jennifer Rondeau
         github: bradamant3
-        company: VMware
+        company: Stripe
+      emeritus_leads:
+      - name: Andrew Chen
+        github: chenopis
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
