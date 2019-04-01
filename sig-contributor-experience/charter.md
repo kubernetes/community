@@ -34,7 +34,7 @@ The inscope bullets listed below have a matching bullet for out of scope
   - Execution of the [Steering Committee elections]
   - Retrospective moderation for other SIGs upon request
   - Assist SIGs/WG Chairs and Technical Leads with organizational management operations as laid out in the [sig-governance] doc
-  - Distribute contributor related news on various Kubernetes channels, including Cloud Native Compute Foundation ([CNCF]) for posting blogs, social media, and other platforms as needed.
+  - Distribute contributor related news on various Kubernetes channels, including Cloud Native Computing Foundation ([CNCF]) for posting blogs, social media, and other platforms as needed.
   - Establish and share metrics to measure project health, community health, and general trends, including:
     - Ongoing work with the CNCF to improve [DevStats]
     - The contributor experience survey(s)
