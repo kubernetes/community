@@ -78,6 +78,10 @@ There is 2 types of icons
 
 [Kubernetes_Icons_GSlide](https://docs.google.com/presentation/d/15h_MHjR2fzXIiGZniUdHok_FP07u1L8MAX5cN1r0j4U/edit)
 
+## Resources
+
+Additional resources can be found in the `./resources` folder.
+
 ## License
 The Kubernetes Icons Set is licensed under a choice of either Apache-2.0
 or CC-BY-4.0 (Creative Commons Attribution 4.0 International). The
