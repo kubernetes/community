@@ -1076,7 +1076,7 @@ sigs:
     label: docs
     leadership:
       chairs:
-      - name: Jared Bhatti  
+      - name: Jared Bhatti
         github: jaredbhatti
         company: Google
       - name: Zach Corleissen
@@ -2564,7 +2564,7 @@ committees:
         github: bgrant0607
         company: Google
       - name: Brendan Burns
-        github: brendanburns
+        github: brendandburns
         company: Microsoft
       - name: Derek Carr
         github: derekwaynecarr
