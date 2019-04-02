@@ -103,7 +103,7 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 [moderation.md]: /communication/moderation.md
 [GoogleGroups]: /communication/mailing-list-guidelines.md
 [slack-guidelines.md]: /communication/slack-guidelines.md
-[youtube-guidelines.md]: /communication/youtube-guidelines.md
+[youtube-guidelines.md]: /communication/youtube/youtube-guidelines.md
 [zoom-guidelines.md]: /communication/zoom-guidelines.md
 [discuss-guidelines.md]: /communication/discuss-guidelines.md
 [Thursday community updates]: /events/community-meeting.md

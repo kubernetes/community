@@ -203,7 +203,7 @@ Thanks for making Kubernetes meetings work great!
 [best practices doc]: https://docs.google.com/document/d/1fudC_diqhN2TdclGKnQ4Omu4mwom83kYbZ5uzVRI07w/edit?usp=sharing
 [Kubernetes channel]: https://www.youtube.com/c/kubernetescommunity
 [SIG Contributor Experience]: /sig-contributor-experience
-[Please follow this guideline for more details.]: ./youtube-guidelines.md
+[Please follow this guideline for more details.]: ./youtube/youtube-guidelines.md
 [centralized list of administrators]: ./moderators.md
 [documentation on how to use their screen sharing feature]: https://support.zoom.us/hc/en-us/articles/201362153-How-Do-I-Share-My-Screen
 [lots of things that can go wrong]: https://www.youtube.com/watch?v=JMOOG7rWTPg

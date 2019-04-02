@@ -79,6 +79,9 @@ The following subprojects are owned by sig-contributor-experience:
     - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
   - Meetings:
     - Contributor Summit strategy, content and planning: [Mondays at 9:00 PT (Pacific Time)]() (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+- **youtube**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/communication/master/youtube/OWNERS
 
 ## GitHub Teams
 
