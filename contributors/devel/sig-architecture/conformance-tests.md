@@ -41,7 +41,8 @@ specifically, a test is eligible for promotion to conformance if:
   to pre-pull images for conformance tests)
 - it works without non-standard filesystem permissions granted to pods
 - it does not rely on any binaries that would not be required for the linux
-  kernel or kubelet to run (e.g., can't rely on git), or differ in behavior based on OS (nslookup, ping)
+  kernel or kubelet to run (e.g., can't rely on git)
+- it does not depend on outputs that change based on OS (nslookup, ping, chmod, ls)
 - any container images used within the test support all architectures for which
   kubernetes releases are built
 - it passes against the appropriate versions of kubernetes as spelled out in
@@ -72,12 +73,15 @@ reasonable production worthy environments:
 
 ### Windows & Linux Considerations
 
-As of v1.14, Windows is a stable feature, but not yet included in conformance
-testing. In preparation for this, a large number of conformance tests are
+As of v1.14, Windows is a stable feature, but not required in all Kubernetes
+cluster and is therefore not part of the conformance suite. Nonetheless, it's
+importatnt to verify that the behavior of Windows nodes conformance as much as
+possible. To that end, a large number of conformance tests are
 already included in Windows testing. You can see what tests have already pass by
-looking at TestGrid for results of Windows tests running on 
-[Azure](https://testgrid.k8s.io/sig-windows#aks-engine-azure-windows-master) and 
-[GCE](https://testgrid.k8s.io/sig-windows#gce-windows-master)).
+looking at TestGrid for results of Windows tests running on
+[Azure](https://testgrid.k8s.io/sig-windows#aks-engine-azure-windows-master) and
+[GCE](https://testgrid.k8s.io/sig-windows#gce-windows-master)). Tests may be
+scheduled for any PR with the bot command `/test pull-kubernetes-e2e-aks-engine-azure-windows`.
 
 Generally speaking, the goals are to:
 
@@ -93,26 +97,36 @@ The tests that are running today:
 - Rely only on container images that already have a multi-architecture manifest
 including Windows versions, or have been ported by SIG-Windows
 (see [kubernetes-sigs/windows-testing/images](https://github.com/kubernetes-sigs/windows-testing/tree/master/images)
-- Do not depend on any functionality is different or not available on Windows. The full list
+- Do not depend on any functionality that is different or not available on Windows. The full list
 is available in the Windows Kubernetes docs under [api](https://kubernetes.io/docs/setup/windows/intro-windows-in-kubernetes/#api). 
 A brief summary is included here as a starting point. If the docs are insufficient
 or there are more questions, please contact #SIG-Windows on Slack to get another
 reviewer.
 
 Some of the most common differences to watch for are:
-- Most user & security context options are not supported since Windows does not
-use POSIX-style users, permissions or ACLs
-- Privileged containers and host networking modes are not supported. Containers are always isolated.
-- Only NTFS is supported. Volume mounts specifying other filesystems (ext4, xfs) or mediums (memory) are not supported
-  - Projected mounts and permission masks are not supported
-  - Mappings of individual files are not supported. This means some features that rely on it such as 
-V1.Container.terminationMessagePath or writing service entries to `/etc/hosts` also do not work.
-- Network and DNS settings must be passed through CNI. Windows does not use `/etc/resolv.conf` 
-and stores networking settings in the Windows registry instead
-- Windows treats all DNS lookups with a `.` to be FQDN, not PQDN.
-- Windows uses job objects or Hyper-V for pod isolation and resource controls, not CGroups. These are managed implicitly by Docker or ContainerD, not by the kubelet. Do not check properties of CGroups as pass/fail criteria.
-- ICMP only works between pods on the same network, and are not routable to external networks. TCP/UDP are routable.
 
+- Container Options & Actions
+  - Pod SecurityContext is set. Most of the fields are Linux specific, and any field set in the Pod's SecurityContext will result in the Pod not being able to spawn or not work as intended.
+  - Privileged containers are not supported. Containers are always isolated.
+  - Windows uses job objects or Hyper-V for pod isolation and resource controls, not CGroups. These are managed
+implicitly by Docker or ContainerD, not by the kubelet. Do not check properties of CGroups as pass/fail criteria.
+  - Running Linux-specific commands are not likely to work. Some commands may work using a Windows [busybox](https://github.com/kubernetes-sigs/windows-testing/tree/master/images/busybox) container.
+- Storage
+  - File permissions cannot be set on volumes. Tests using `DefaultMode` or `Mode` and checking the resulting permissions will fail.
+  - Only NTFS is supported. Volume mounts specifying other filesystems (ext4, xfs) or mediums (memory) are not supported
+  - Mappings of individual files are not supported. Tests which are mounting or expecting such files to be mounted (including /etc/hosts, /etc/resolv.conf, /dev/termination-log) will fail.
+  - Bidirectional mount propagation, specifically propagating mounts from a container to host, does not work.
+- Networking
+  - Pods set `HostNetwork=true`. Is not supported on Windows, and the Pod will not start.
+  - Network and DNS settings must be passed through CNI. Windows does not use `/etc/resolv.conf`, so tests should
+  not rely on reading that file to check DNS settings.
+  - Windows treats all DNS lookups with a `.` to be FQDN, not PQDN. For example `kubernetes` will resolve as a PQDN,
+  but `kubernetes.default` will be resolved as a FQDN and fail.
+  - ICMP only works between pods on the same network, and are not routable to external networks. TCP/UDP are routable.
+  - Windows containers do not support IPv6.
+
+The existing tests which are affected by one of those criteria are tagged with `[LinuxOnly]` 
+(see: [Kinds of Tests](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests).
 
 ## Conformance Test Version Skew Policy
 
