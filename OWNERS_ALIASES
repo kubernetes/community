@@ -23,8 +23,8 @@ aliases:
     - mwielgus
   sig-aws-leads:
     - justinsb
-    - kris-nova
     - d-nishi
+    - kris-nova
   sig-azure-leads:
     - justaugustus
     - dstrebel
