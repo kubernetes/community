@@ -25,7 +25,7 @@
   - [Kinds of tests](#kinds-of-tests)
     - [Viper configuration and hierarchichal test parameters.](#viper-configuration-and-hierarchichal-test-parameters)
     - [Conformance tests](#conformance-tests)
-	- [Validation suites](#validation-suites)
+    - [Validation suites](#validation-suites)
   - [Continuous Integration](#continuous-integration)
     - [What is CI?](#what-is-ci)
     - [What runs in CI?](#what-runs-in-ci)
