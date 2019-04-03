@@ -563,6 +563,12 @@ sigs:
     - name: aws-ebs-csi-driver
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
+    - name: aws-efs-csi-driver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/aws-efs-csi-driver/master/OWNERS
+    - name: aws-fsx-csi-driver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/OWNERS
   - name: Azure
     dir: sig-azure
     mission_statement: >
