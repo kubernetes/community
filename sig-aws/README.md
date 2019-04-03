@@ -22,8 +22,8 @@ The [charter](charter.md) defines the scope and governance of the AWS Special In
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
-* Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), VMware
-* Nishi Davidson (**[@d-nishi](https://github.com/d-nishi)**), AWS
+* Nishi Davidson (**[@d-nishi](https://github.com/d-nishi)**)
+* Kris Nova (**[@kris-nova](https://github.com/kris-nova)**)
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-aws)
@@ -48,6 +48,12 @@ The following subprojects are owned by sig-aws:
 - **aws-ebs-csi-driver**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
+- **aws-efs-csi-driver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-efs-csi-driver/master/OWNERS
+- **aws-fsx-csi-driver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/OWNERS
 
 ## GitHub Teams
 
