@@ -1,3 +1,8 @@
+**Note**: Kubernetes now manages dependencies using go modules.
+See [current documentation for working with dependencies](./vendor.md) for master branch development.
+This document only applies to Kubernetes 1.14.x and earlier,
+and should be removed once Kubernetes 1.14.x is no longer supported.
+
 # Using godep to manage dependencies
 
 This document is intended to show a way for managing `vendor/` tree dependencies
