@@ -201,7 +201,7 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 
 [positive experiences]: https://www.cncf.io/blog/2016/12/14/diversity-scholarship-series-one-software-engineers-unexpected-cloudnativecon-kubecon-experience
 [sigs.yaml]: /sigs.yaml
-[SIG Lifecycle]: /sig-wg-lifecycle
+[SIG Lifecycle]: /sig-wg-lifecycle.md
 [We have them!]: /values.md
 [Kubernetes code of conduct]: /code-of-conduct.md
 [design principles]: /contributors/design-proposals/architecture/principles.md
