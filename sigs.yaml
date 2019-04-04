@@ -838,8 +838,8 @@ sigs:
     label: cluster-lifecycle
     leadership:
       chairs:
-      - name: Robert Bailey
-        github: roberthbailey
+      - name: Justin Santa Barbara
+        github: justinsb
         company: Google
       - name: Lucas Käldström
         github: luxas
@@ -847,6 +847,10 @@ sigs:
       - name: Timothy St. Clair
         github: timothysc
         company: VMware
+      emeritus_leads:
+        - name: Robert Bailey
+          github: roberthbailey
+          company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
