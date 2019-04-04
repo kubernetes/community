@@ -75,7 +75,7 @@ CNCF in many of the noted cases above, contributes funding to our platforms, pro
 - Code for the testing and CI infrastructure - that’s SIG Testing
 - [kubernetes/community] Members are to follow those folders owners files and SIG leadership for the specific issue/PR in question.
 - User community relations and management.
-  - Slack or YouTube moderation (This should be a new SIG or the CNCF)
+  - Slack or YouTube moderation (This should be a new SIG)
 - The contributor experience for repos not included in the Kubernetes associated repositories list found in the [GitHub Project Organizational Management] subproject README.
 - Steering committee election policy updates and maintenance. (Steering Comittee handles this)
 - We do not create SIGs/WGs but can assist in the various community management needs of their micro communities that would kick off their formation and keep them going.
@@ -89,10 +89,10 @@ CNCF in many of the noted cases above, contributes funding to our platforms, pro
 - Ownership, staffing, and moderation of Kubernetes communication properties. The CNCF may delegate admin or management positions on these properties to members of Contributor Experience:
   - [discuss.kubernetes.io] - This tool is mostly self-moderating and enough Kubernetes members participate that most of these roles are administrative.
   - [Mailing lists] / Google groups (this belongs to the each SIG)
-  - [Slack] (CNCF)
-  - [/kubernetescommunity] YouTube channel (CNCF)
+  - [Slack] (This should be a new SIG)
+  - [/kubernetescommunity] YouTube channel (This should be a shared responsibility with a new SIG)
   - [Zoom] (CNCF)
-  - Ownership of the Kubernetes Gsuite (this is Steering Committee)
+  - Ownership of the Kubernetes G suite (this is Steering Committee)
 - Logistical Execution of the [Contributor Summit(s)]
   - The CNCF will provide us with an events manager who will handle the event logistics and provide guidance with the requirements we set forth. 
 
@@ -125,8 +125,8 @@ Chairs and Technical Leads
 [Google Summer of Code]: https://git.k8s.io/community/mentoring/google-summer-of-code.md
 [Outreachy]: https://git.k8s.io/community/mentoring/outreachy.md
 [Meet Our Contributors]:  https://git.k8s.io/community/mentoring/meet-our-contributors.md
-[Group Mentoring - WIP]:  https://git.k8s.io/community/mentoring/group-mentoring.md
-[The 1:1 Hour - WIP]: https://git.k8s.io/community/mentoring/the1-on-1hour.md
+[Group Mentoring]:  https://git.k8s.io/community/mentoring/group-mentoring.md
+[The 1:1 Hour]: https://git.k8s.io/community/mentoring/the1-on-1hour.md
 [kubernetes/community]: https://git.k8s.io/community/
 [Contributor Summit(s)]: https://git.k8s.io/community/events/2018/12-contributor-summit
 [contributor summits]: https://git.k8s.io/community/events/2018/12-contributor-summit
