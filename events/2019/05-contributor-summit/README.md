@@ -13,8 +13,8 @@ In some sense, the summit is a real-life extension of the community meetings and
 
 ## Registration
 
- - [Sign the CLA](/CLA.md) if you have not done so already
- - Registration form will be available soon
+ - [Sign the CLA](/CLA.md) if you have not done so already.
+ - [Complete the Registration form.](https://events.linuxfoundation.org/events/contributor-summit-europe-2019/register/)
 
 ## When and Where
 
@@ -53,7 +53,7 @@ Combined Intro (Big Room) - All Workshop Participants:
 
 * Finding Your First Topic AKA Where Do I Fit In
 * Automation and Pull Request Demo/Practice
-* Setting Up Your Dev Environment Lab 
+* Setting Up Your Dev Environment Lab
 * Install Golang (or straighten out gopaths)
 * Install Docker
 * Clone Kubernetes
