@@ -26,7 +26,7 @@ The [charter](charter.md) defines the scope and governance of the Multicluster S
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Christian Bell (**[@csbell](https://github.com/csbell)**), Google
-* Quinton Hoole (**[@quinton-hoole-2](https://github.com/quinton-hoole-2)**), Huawei
+* Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-multicluster)

@@ -1317,7 +1317,7 @@ sigs:
         github: csbell
         company: Google
       - name: Quinton Hoole
-        github: quinton-hoole-2
+        github: quinton-hoole
         company: Huawei
     meetings:
     - description: Regular SIG Meeting
@@ -2300,7 +2300,7 @@ workinggroups:
         github: imkin
         company: VMware
       - name: Quinton Hoole
-        github: quinton-hoole-2
+        github: quinton-hoole
         company: Huawei
       - name: Nick Young
         github: youngnick
