@@ -90,8 +90,8 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 [steering committee repo]: https://github.com/kubernetes/steering
 [discuss.kubernetes.io]: https://discuss.kubernetes.io
 [subproject]: /governance.md#subprojects
-[Creation]: (#Creation)
-[Retirement]: (#Retirement)
+[Creation]: #Creation
+[Retirement]: #Retirement
 [sig-governance.md]: /committee-steering/governance/sig-governance.md
 [SIG charter process]: /committee-steering/governance
 [wg-governance.md]: /committee-steering/governance/wg-governance.md
