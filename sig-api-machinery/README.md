@@ -101,6 +101,7 @@ The following subprojects are owned by sig-api-machinery:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/component-base/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/legacyflag/master/OWNERS
 
 ## GitHub Teams
 

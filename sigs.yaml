@@ -118,6 +118,7 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/component-base/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/OWNERS
+      - https://raw.githubusercontent.com/kubernetes-sigs/legacyflag/master/OWNERS
   - name: Apps
     dir: sig-apps
     mission_statement: >
