@@ -73,12 +73,9 @@ reasonable production worthy environments:
 
 ### Windows & Linux Considerations
 
-As of v1.14, Windows is a stable feature, but not required in all Kubernetes
-cluster and is therefore not part of the conformance suite. Nonetheless, it's
-importatnt to verify that the behavior of Windows nodes conformance as much as
-possible. To that end, a large number of conformance tests are
-already included in Windows testing. You can see what tests have already pass by
-looking at TestGrid for results of Windows tests running on
+Windows node support is an optional but stable feature as of Kubernetes 1.14. This means that it is
+not required by conformance testing. Nonetheless, it's important to verify that the behavior of Windows nodes match the behaviors tested in the conformance suite as much as possible. To that end, a
+large number of conformance tests are already included in Windows testing. You can see what tests are already passing by looking at TestGrid for results of Windows tests running on
 [Azure](https://testgrid.k8s.io/sig-windows#aks-engine-azure-windows-master) and
 [GCE](https://testgrid.k8s.io/sig-windows#gce-windows-master)). Tests may be
 scheduled for any PR with the bot command `/test pull-kubernetes-e2e-aks-engine-azure-windows`.
@@ -89,7 +86,7 @@ Generally speaking, the goals are to:
 functionality is added, it should be in a new test.
 - Ensure that new tests covering Linux-specific functionality are tagged with `[LinuxOnly]` 
 (see: [Kinds of Tests](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests),
-  - Give future reviewers a reference to an active issue or documentation clarifying why a test
+- Give future reviewers a reference to an active issue or documentation clarifying why a test
 cannot run on Windows.
 
 The tests that are running today:
@@ -105,15 +102,17 @@ reviewer.
 
 Some of the most common differences to watch for are:
 
+- Container Images
+  - Watch out for image names hardcoded into test cases or YAML files. These are often Linux-only. Instead, they should be adding to or using existing images from [tests/utils/image/manifest.go](https://github.com/kubernetes/kubernetes/blob/master/test/utils/image/manifest.go). This allows the container registry to be configured to one containing Windows images, and also supports testing on clusters with no internet access using a private registry. Multi-arch images supporting Windows are also acceptable.
 - Container Options & Actions
   - Pod SecurityContext is set. Most of the fields are Linux specific, and any field set in the Pod's SecurityContext will result in the Pod not being able to spawn or not work as intended.
   - Privileged containers are not supported. Containers are always isolated.
   - Windows uses job objects or Hyper-V for pod isolation and resource controls, not CGroups. These are managed
 implicitly by Docker or ContainerD, not by the kubelet. Do not check properties of CGroups as pass/fail criteria.
-  - Running Linux-specific commands are not likely to work. Some commands may work using a Windows [busybox](https://github.com/kubernetes-sigs/windows-testing/tree/master/images/busybox) container.
+  - Running Linux-specific commands are not likely to work. Some commands may work using a Windows [busybox](https://github.com/kubernetes-sigs/windows-testing/tree/master/images/busybox) container. The paths of these binaries may differ from Linux, so it's best to rely on `PATH` rather than using Linux-specific paths such as `/usr/bin/nc`
 - Storage
   - File permissions cannot be set on volumes. Tests using `DefaultMode` or `Mode` and checking the resulting permissions will fail.
-  - Only NTFS is supported. Volume mounts specifying other filesystems (ext4, xfs) or mediums (memory) are not supported
+  - Only NTFS volumes are supported. Volume mounts specifying other filesystems (ext4, xfs) or mediums (memory) are not supported
   - Mappings of individual files are not supported. Tests which are mounting or expecting such files to be mounted (including /etc/hosts, /etc/resolv.conf, /dev/termination-log) will fail.
   - Bidirectional mount propagation, specifically propagating mounts from a container to host, does not work.
 - Networking
