@@ -2313,6 +2313,13 @@ workinggroups:
     mission_statement: >
       Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
     charter_link:
+    stakeholder_sigs:
+    - Auth
+    - API Machinery
+    - Networking
+    - Node
+    - Scheduling
+    - Storage
     leadership:
       chairs:
       - name: David Oppenheimer
