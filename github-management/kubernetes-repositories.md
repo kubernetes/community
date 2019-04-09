@@ -98,6 +98,13 @@ the developers who could not be reached
      [@caniszczyk](https://github.com/caniszczyk) for review of third party deps
    * Boilerplate text across all files should attribute copyright as follows:
      `"Copyright <Project Authors>"` if no CLA was in place prior to donation
+   * Additions of [the standard Kubernetes header](https://git.k8s.io/kubernetes/hack/boilerplate/boilerplate.go.txt)
+     to code created by the contributors can occur post-transfer, but should
+     ideally occur shortly thereafter.
+
+Note that copyright notices should only be modified or removed by the people or
+organizations named in the notice. See [the FAQ below](#faq) for more information
+regarding copyrights and copyright notices.
 
 ## Core Repositories
 
@@ -219,6 +226,20 @@ associated projects. Many things seem vague. Help!**
 
 True, we need to improve these things. For now, do the best you can to conform
 to the spirit of the proposal (e.g. post the code of conduct, etc)
+
+**When I donate my project, am I transferring my copyrights?**
+
+No. All contributors retain ownership of their copyrights in the code they donate.
+Instead, they are granting a license to the project (that's the 'L' in 'CLA').
+
+For consistency and efficiency in complying with notice requirements, code that is
+donated to a Kubernetes repo should use [the standard header](https://git.k8s.io/kubernetes/hack/boilerplate/boilerplate.go.txt)
+referencing "The Kubernetes Authors". That doesn't mean you are transferring your
+copyright. Instead, it's a general reference to the fact that the copyrights remain
+owned by the authors of Kubernetes.
+
+Note that you should _never_ modify or remove a third party's copyright notice if
+you are not authorized by them to do so.
 
 [GitHub's archive feature]:
 https://help.github.com/articles/archiving-a-github-repository/
