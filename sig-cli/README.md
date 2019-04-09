@@ -58,6 +58,17 @@ The following subprojects are owned by sig-cli:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
+- **krew**
+  - Description: Plugin manager for kubectl.
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/krew/master/OWNERS
+- **krew-index**
+  - Description: Centralized plugin index for krew.
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/krew-index/master/OWNERS
+- **cli-experimental**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cli-experimental/master/OWNERS
 
 ## GitHub Teams
 

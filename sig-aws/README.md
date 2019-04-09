@@ -48,6 +48,12 @@ The following subprojects are owned by sig-aws:
 - **aws-ebs-csi-driver**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
+- **aws-efs-csi-driver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-efs-csi-driver/master/OWNERS
+- **aws-fsx-csi-driver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/OWNERS
 
 ## GitHub Teams
 

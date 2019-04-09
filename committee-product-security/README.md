@@ -14,7 +14,6 @@ The Kubernetes Product Security Committee is the body that is responsible for re
 ## Members
 
 * Brandon Philips (**[@philips](https://github.com/philips)**), Red Hat
-* Jess Frazelle (**[@jessfraz](https://github.com/jessfraz)**)
 * CJ Cullen (**[@cjcullen](https://github.com/cjcullen)**), Google
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Google
 * Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Google

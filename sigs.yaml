@@ -563,6 +563,12 @@ sigs:
     - name: aws-ebs-csi-driver
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
+    - name: aws-efs-csi-driver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/aws-efs-csi-driver/master/OWNERS
+    - name: aws-fsx-csi-driver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/OWNERS
   - name: Azure
     dir: sig-azure
     mission_statement: >
@@ -611,52 +617,6 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
-  - name: Big Data
-    dir: sig-big-data
-    mission_statement: >
-      Covers deploying and operating big data applications (Spark, Kafka,
-      Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integrations with
-      big data applications and architecting the best ways to run them on Kubernetes.
-    charter_link:
-    label: big-data
-    leadership:
-      chairs:
-      - name: Anirudh Ramanathan
-        github: foxish
-        company: Rockset
-      - name: Erik Erlandson
-        github: erikerlandson
-        company: Red Hat
-      - name: Yinan Li
-        github: liyinan926
-        company: Google
-    meetings:
-    - description: Regular SIG Meeting
-      day: Wednesday
-      time: "17:00"
-      tz: "UTC"
-      frequency: biweekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-      archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
-      recordings_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
-    contact:
-      slack: sig-big-data
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-big-data
-      teams:
-      - name: sig-big-data-api-reviews
-        description: API Changes and Reviews
-      - name: sig-big-data-bugs
-        description: Bug Triage and Troubleshooting
-      - name: sig-big-data-feature-requests
-        description: Feature Requests
-      - name: sig-big-data-misc
-        description: General Discussion
-      - name: sig-big-data-pr-reviews
-        description: PR Reviews
-      - name: sig-big-data-proposals
-        description: Design Proposals
-      - name: sig-big-data-test-failures
-        description: Test Failures and Triage
   - name: CLI
     dir: sig-cli
     mission_statement: >
@@ -725,7 +685,6 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
     - name: kustomize
       owners:
-      # "owners" entry
       - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
     - name: cli-sdk
       owners:
@@ -733,6 +692,17 @@ sigs:
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
       - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
+    - name: krew
+      description: Plugin manager for kubectl.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/krew/master/OWNERS
+    - name: krew-index
+      description: Centralized plugin index for krew.
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/krew-index/master/OWNERS
+    - name: cli-experimental
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/cli-experimental/master/OWNERS
   - name: Cloud Provider
     dir: sig-cloud-provider
     mission_statement: >
@@ -822,8 +792,8 @@ sigs:
     label: cluster-lifecycle
     leadership:
       chairs:
-      - name: Robert Bailey
-        github: roberthbailey
+      - name: Justin Santa Barbara
+        github: justinsb
         company: Google
       - name: Lucas Käldström
         github: luxas
@@ -831,6 +801,10 @@ sigs:
       - name: Timothy St. Clair
         github: timothysc
         company: VMware
+      emeritus_leads:
+        - name: Robert Bailey
+          github: roberthbailey
+          company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -1083,15 +1057,19 @@ sigs:
     label: docs
     leadership:
       chairs:
-      - name: Andrew Chen
-        github: chenopis
+      - name: Jared Bhatti
+        github: jaredbhatti
         company: Google
       - name: Zach Corleissen
         github: zacharysarah
         company: Linux Foundation
       - name: Jennifer Rondeau
         github: bradamant3
-        company: VMware
+        company: Stripe
+      emeritus_leads:
+      - name: Andrew Chen
+        github: chenopis
+        company: Google
     meetings:
     - description: Regular SIG Meeting
       day: Tuesday
@@ -1117,12 +1095,22 @@ sigs:
         description: Documentation maintainers
       - name: sig-docs-pr-reviews
         description: Documentation PR reviews
-      - name: sig-docs-ko-owners
-        description: Korean localization
+      - name: sig-docs-en-owners
+        description: English content (default)
+      - name: sig-docs-es-owners
+        description: Spanish content
+      - name: sig-docs-de-owners
+        description: German content
+      - name: sig-docs-fr-owners
+        description: French content
+      - name: sig-docs-it-owners
+        description: Italian content
       - name: sig-docs-ja-owners
-        description: Japanese localization
+        description: Japanese content
+      - name: sig-docs-ko-owners
+        description: Korean content
       - name: sig-docs-zh-owners
-        description: Chinese localization
+        description: Chinese content
     subprojects:
     - name: reference-docs
       owners:
@@ -1292,7 +1280,7 @@ sigs:
         github: csbell
         company: Google
       - name: Quinton Hoole
-        github: quinton-hoole-2
+        github: quinton-hoole
         company: Huawei
     meetings:
     - description: Regular SIG Meeting
@@ -1448,6 +1436,9 @@ sigs:
       - name: sig-node-test-failures
         description: Test Failures and Triage
     subprojects:
+    - name: cri-api
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/cri-api/master/OWNERS
     - name: cri-o
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cri-o/master/OWNERS
@@ -2272,7 +2263,7 @@ workinggroups:
         github: imkin
         company: VMware
       - name: Quinton Hoole
-        github: quinton-hoole-2
+        github: quinton-hoole
         company: Huawei
       - name: Nick Young
         github: youngnick
@@ -2540,6 +2531,42 @@ workinggroups:
     contact:
       slack: wg-k8s-infra
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra
+usergroups:
+  - name: Big Data
+    dir: ug-big-data
+    mission_statement: >
+      Serve as a community resource for advising big data and data science related software projects
+      on techniques and best practices for integrating with Kubernetes.
+      Represents the concerns of users from big data communities to Kubernetes for the purposes of
+      driving new features and other enhancements, based on big data use cases.
+    charter_link:
+    label: big-data
+    leadership:
+      chairs:
+      - name: Anirudh Ramanathan
+        github: foxish
+        company: Rockset
+      - name: Erik Erlandson
+        github: erikerlandson
+        company: Red Hat
+      - name: Yinan Li
+        github: liyinan926
+        company: Google
+    meetings:
+    - description: Regular User Group Meeting
+      day: Wednesday
+      time: "18:00"
+      tz: "UTC"
+      frequency: biweekly
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
+      recordings_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
+    contact:
+      slack: ug-big-data
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-ug-big-data
+      teams:
+      - name: ug-big-data
+        description: General Discussion
 committees:
   - name: Steering
     dir: committee-steering
@@ -2556,7 +2583,7 @@ committees:
         github: bgrant0607
         company: Google
       - name: Brendan Burns
-        github: brendanburns
+        github: brendandburns
         company: Microsoft
       - name: Derek Carr
         github: derekwaynecarr
@@ -2657,8 +2684,6 @@ committees:
       - name: Brandon Philips
         github: philips
         company: Red Hat
-      - name: Jess Frazelle
-        github: jessfraz
       - name: CJ Cullen
         github: cjcullen
         company: Google

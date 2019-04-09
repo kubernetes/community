@@ -23,9 +23,13 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
+* Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**), Google
 * Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
-* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), VMware
+* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), Stripe
+
+## Emeritus Leads
+
+* Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-docs)
@@ -54,9 +58,14 @@ Note that the links to display team membership will only work if you are a membe
 | --------- |:-------:| ----------- |
 | @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation maintainers |
 | @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR reviews |
-| @kubernetes/sig-docs-ko-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | Korean localization |
-| @kubernetes/sig-docs-ja-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | Japanese localization |
-| @kubernetes/sig-docs-zh-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) | Chinese localization |
+| @kubernetes/sig-docs-en-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners) | English content (default) |
+| @kubernetes/sig-docs-es-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-es-owners) | Spanish content |
+| @kubernetes/sig-docs-de-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-de-owners) | German content |
+| @kubernetes/sig-docs-fr-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-fr-owners) | French content |
+| @kubernetes/sig-docs-it-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-it-owners) | Italian content |
+| @kubernetes/sig-docs-ja-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | Japanese content |
+| @kubernetes/sig-docs-ko-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | Korean content |
+| @kubernetes/sig-docs-zh-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) | Chinese content |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals

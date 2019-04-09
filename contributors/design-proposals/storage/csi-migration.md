@@ -237,8 +237,7 @@ with the in-tree plugin, the VolumeAttachment object becomes orphaned.
 ### In-line Volumes
 
 In-line controller calls are a special case because there is no PV. In this case
-we will forward the in-tree volume source to CSI attach as-is and it will be
-copied to a new field in the VolumeAttachment object
+we will translate the volume source and copy it to the field
 VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineVolumeSource. The
 VolumeAttachment name must be made with the CSI Translated version of the
 VolumeSource in order for it to be discoverable by Detach and WaitForAttach
@@ -259,12 +258,12 @@ type VolumeAttachmentSource struct {
 	// +optional
 	PersistentVolumeName *string `json:"persistentVolumeName,omitempty" protobuf:"bytes,1,opt,name=persistentVolumeName"`
 
-	// Allows CSI migration code to copy an inline volume
-	// source from a pod to the VolumeAttachment to support shimming of
-	// in-tree inline volumes to a CSI backend.
-	// This field is alpha-level and is only honored by servers that enable the CSIMigration feature.
+	// Translated VolumeSource from a pod to a CSIPersistentVolumeSource
+	// to support shimming of in-tree inline volumes to a CSI backend.
+	// This field is alpha-level and is only honored by servers that
+	// enable the CSIMigration feature.
 	// +optional
-	InlineVolumeSource *v1.VolumeSource `json:"inlineVolumeSource,omitempty protobuf:"bytes,2,opt,name=inlineVolumeSource"`
+	InlineCSIVolumeSource *v1.CSIPersistentVolumeSource `json:"inlineCSIVolumeSource,omitempty" protobuf:"bytes,2,opt,name=inlineCSIVolumeSource"`
 }
 ```
 
@@ -292,12 +291,40 @@ existing Pods in the ADC.
 TODO: Design
 
 ### Raw Block
+In the OperationGenerator, `GenerateMapVolumeFunc`, `GenerateUnmapVolumeFunc` and 
+`GenerateUnmapDeviceFunc` are used to prepare and mount/umount block devices. At the 
+beginning of each API, we will check whether migration is enabled for the plugin. If
+enabled, volume spec will be translated from the in-tree spec to out-of-tree spec using
+CSI as the persistence volume source.
 
-TODO: Design
+Caveat: the original spec needs to be used when setting the state of `actualStateOfWorld`
+for where is it used before the translation.
 
 ### Volume Reconstruction
 
-TODO: Design
+Volume Reconstruction is currently a routine in the reconciler that runs on the
+nodes when a Kubelet restarts and loses its cached state (`desiredState` and
+`actualState`). It is kicked off in `syncStates()` in
+`pkg/kubeletvolumemanager/reconciler/reconciler.go` and attempts to reconstruct
+a volume based on the mount path on the host machine.
+
+When CSI Migration is turned on, when the reconstruction code is run and it
+finds a CSI mounted volume we currently do not know whether it was mounted as a
+native CSI volume or migrated from in-tree. To solve this issue we will save a
+`migratedVolume` boolean in the `saveVolumeData` function when the `NewMounter`
+is created during the `MountVolume` call for that particular volume in the
+Operation generator.
+
+When the Kubelet is restarted and we lose state the Kubelet will call
+`reconstructVolume` we can `loadVolumeData` and determine whether that CSI
+volume was migrated or not, as well as get the information about the original
+plugin requested. With that information we should be able to call the
+`ReconstructVolumeOperation` with the correct in-tree plugin to get the original
+in-tree spec that we can then pass to the rest of volume reconstruction. The
+rest of the volume reconstruction code will then use this in-tree spec passed to
+the `desiredState`, `actualState`, and `operationGenerator` and the volume will
+go through the standard volume pathways and go through the standard migrated
+volume lifecycles described above in the "Pre-Provisioned Volumes" section.
 
 ### Volume Limit
 

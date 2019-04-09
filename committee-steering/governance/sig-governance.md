@@ -171,7 +171,7 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 
 [SIG PM]: https://github.com/kubernetes/community/tree/master/sig-pm
 [k/enhancements]: https://github.com/kubernetes/enhancements
-[forums provided]:
+[forums provided]: /communication/README.md
 
 [lazy-consensus]: http://en.osswiki.info/concepts/lazy_consensus
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote

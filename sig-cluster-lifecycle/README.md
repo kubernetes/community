@@ -43,9 +43,13 @@ The Cluster Lifecycle SIG examines how we should change Kubernetes to make it ea
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
+* Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**), Google
 * Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
+
+## Emeritus Leads
+
+* Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)

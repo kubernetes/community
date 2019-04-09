@@ -144,12 +144,36 @@ Hopefully this won't cause too much confusion.
 
 ## Examples
 
-**TODO: fill in this section**
+Run a pod on a node with an Intel or AMD CPU and in availability zone Z:
 
-* Run this pod on a node with an Intel or AMD CPU
-
-* Run this pod on a node in availability zone Z
-
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-node-affinity
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/arch
+            operator: In
+            values:
+            - intel
+            - amd64
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: failure-domain.kubernetes.io/zone
+            operator: In
+            values:
+            - Z
+  containers:
+  - name: pod-with-node-affinity
+    image: tomcat:8
+```
 
 ## Backward compatibility
 
@@ -239,4 +263,5 @@ The review for this proposal is in [#18261](https://github.com/kubernetes/kubern
 The main related issue is [#341](https://github.com/kubernetes/kubernetes/issues/341).
 Issue [#367](https://github.com/kubernetes/kubernetes/issues/367) is also related.
 Those issues reference other related issues.
+
 

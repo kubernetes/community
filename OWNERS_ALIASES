@@ -30,10 +30,6 @@ aliases:
     - dstrebel
     - khenidak
     - feiskyer
-  sig-big-data-leads:
-    - foxish
-    - erikerlandson
-    - liyinan926
   sig-cli-leads:
     - soltysh
     - seans3
@@ -44,7 +40,7 @@ aliases:
     - hogepodge
     - jagosan
   sig-cluster-lifecycle-leads:
-    - roberthbailey
+    - justinsb
     - luxas
     - timothysc
   sig-contributor-experience-leads:
@@ -53,7 +49,7 @@ aliases:
     - cblecker
     - nikhita
   sig-docs-leads:
-    - chenopis
+    - jaredbhatti
     - zacharysarah
     - bradamant3
   sig-gcp-leads:
@@ -67,7 +63,7 @@ aliases:
     - brancz
   sig-multicluster-leads:
     - csbell
-    - quinton-hoole-2
+    - quinton-hoole
   sig-network-leads:
     - thockin
     - dcbw
@@ -133,7 +129,7 @@ aliases:
   wg-lts-leads:
     - tpepper
     - imkin
-    - quinton-hoole-2
+    - quinton-hoole
     - youngnick
   wg-machine-learning-leads:
     - vishh
@@ -157,6 +153,10 @@ aliases:
     - joelsmith
     - cji
     - jaybeale
+  ug-big-data-leads:
+    - foxish
+    - erikerlandson
+    - liyinan926
   committee-code-of-conduct:
     - jdumars
     - parispittman
@@ -165,14 +165,13 @@ aliases:
     - bradamant3
   committee-product-security:
     - philips
-    - jessfraz
     - cjcullen
     - tallclair
     - liggitt
     - joelsmith
   committee-steering:
     - bgrant0607
-    - brendanburns
+    - brendandburns
     - derekwaynecarr
     - dims
     - jbeda

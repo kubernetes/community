@@ -143,7 +143,7 @@ do not have clear deliverables or ownership of parts of the Kubernetes
 code base. As such they are neither good fits for SIGs or Working Groups.
 An example of such a topic might be continuous delivery to Kubernetes.
 
-Though their central goal is not a a deliverable piece of work, as contributing
+Though their central goal is not a deliverable piece of work, as contributing
 members of the community user groups are expected to work with SIGs
 to either identify friction or usability issues that need to be addressed,
 or to provide or improve documentation in their area of expertise. However
@@ -201,13 +201,13 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 
 [positive experiences]: https://www.cncf.io/blog/2016/12/14/diversity-scholarship-series-one-software-engineers-unexpected-cloudnativecon-kubecon-experience
 [sigs.yaml]: /sigs.yaml
-[SIG Lifecycle]: /sig-wg-lifecycle
+[SIG Lifecycle]: /sig-wg-lifecycle.md
 [We have them!]: /values.md
 [Kubernetes code of conduct]: /code-of-conduct.md
 [design principles]: /contributors/design-proposals/architecture/principles.md
 [scope]: https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
 [community membership]: /community-membership.md
-[sig governance]: /committee-steering/sig-governance.md
+[sig governance]: /committee-steering/governance/sig-governance.md
 [owners]: /community-membership.md#subproject-owner
 [sig charter process]: /committee-steering/governance/README.md
 [short template]: /committee-steering/governance/sig-governance-template-short.md
