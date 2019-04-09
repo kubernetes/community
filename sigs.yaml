@@ -617,52 +617,6 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
-  - name: Big Data
-    dir: sig-big-data
-    mission_statement: >
-      Covers deploying and operating big data applications (Spark, Kafka,
-      Hadoop, Flink, Storm, etc) on Kubernetes. We focus on integrations with
-      big data applications and architecting the best ways to run them on Kubernetes.
-    charter_link:
-    label: big-data
-    leadership:
-      chairs:
-      - name: Anirudh Ramanathan
-        github: foxish
-        company: Rockset
-      - name: Erik Erlandson
-        github: erikerlandson
-        company: Red Hat
-      - name: Yinan Li
-        github: liyinan926
-        company: Google
-    meetings:
-    - description: Regular SIG Meeting
-      day: Wednesday
-      time: "17:00"
-      tz: "UTC"
-      frequency: biweekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-      archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
-      recordings_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
-    contact:
-      slack: sig-big-data
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-big-data
-      teams:
-      - name: sig-big-data-api-reviews
-        description: API Changes and Reviews
-      - name: sig-big-data-bugs
-        description: Bug Triage and Troubleshooting
-      - name: sig-big-data-feature-requests
-        description: Feature Requests
-      - name: sig-big-data-misc
-        description: General Discussion
-      - name: sig-big-data-pr-reviews
-        description: PR Reviews
-      - name: sig-big-data-proposals
-        description: Design Proposals
-      - name: sig-big-data-test-failures
-        description: Test Failures and Triage
   - name: CLI
     dir: sig-cli
     mission_statement: >
@@ -2568,6 +2522,42 @@ workinggroups:
     contact:
       slack: wg-k8s-infra
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra
+usergroups:
+  - name: Big Data
+    dir: ug-big-data
+    mission_statement: >
+      Serve as a community resource for advising big data and data science related software projects
+      on techniques and best practices for integrating with Kubernetes.
+      Represents the concerns of users from big data communities to Kubernetes for the purposes of
+      driving new features and other enhancements, based on big data use cases.
+    charter_link:
+    label: big-data
+    leadership:
+      chairs:
+      - name: Anirudh Ramanathan
+        github: foxish
+        company: Rockset
+      - name: Erik Erlandson
+        github: erikerlandson
+        company: Red Hat
+      - name: Yinan Li
+        github: liyinan926
+        company: Google
+    meetings:
+    - description: Regular User Group Meeting
+      day: Wednesday
+      time: "18:00"
+      tz: "UTC"
+      frequency: biweekly
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
+      recordings_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
+    contact:
+      slack: ug-big-data
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-ug-big-data
+      teams:
+      - name: ug-big-data
+        description: General Discussion
 committees:
   - name: Steering
     dir: committee-steering

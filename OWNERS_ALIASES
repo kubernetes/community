@@ -30,10 +30,6 @@ aliases:
     - dstrebel
     - khenidak
     - feiskyer
-  sig-big-data-leads:
-    - foxish
-    - erikerlandson
-    - liyinan926
   sig-cli-leads:
     - soltysh
     - seans3
@@ -157,6 +153,10 @@ aliases:
     - joelsmith
     - cji
     - jaybeale
+  ug-big-data-leads:
+    - foxish
+    - erikerlandson
+    - liyinan926
   committee-code-of-conduct:
     - jdumars
     - parispittman
