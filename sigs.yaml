@@ -1090,6 +1090,8 @@ sigs:
         description: Documentation PR reviews
       - name: sig-docs-en-owners
         description: English content (default)
+      - name: sig-docs-es-owners
+        description: Spanish content
       - name: sig-docs-de-owners
         description: German content
       - name: sig-docs-fr-owners

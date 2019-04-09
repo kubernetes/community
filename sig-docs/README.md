@@ -59,6 +59,7 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation maintainers |
 | @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR reviews |
 | @kubernetes/sig-docs-en-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners) | English content (default) |
+| @kubernetes/sig-docs-es-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-es-owners) | Spanish content |
 | @kubernetes/sig-docs-de-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-de-owners) | German content |
 | @kubernetes/sig-docs-fr-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-fr-owners) | French content |
 | @kubernetes/sig-docs-it-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-it-owners) | Italian content |
