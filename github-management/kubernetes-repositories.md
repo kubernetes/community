@@ -98,7 +98,7 @@ the developers who could not be reached
      [@caniszczyk](https://github.com/caniszczyk) for review of third party deps
    * Boilerplate text across all files should attribute copyright as follows:
      `"Copyright <Project Authors>"` if no CLA was in place prior to donation
-   * Additions of [the standard Kubernetes header](https://github.com/kubernetes/kubernetes/blob/master/hack/boilerplate/boilerplate.go.txt)
+   * Additions of [the standard Kubernetes header](https://git.k8s.io/kubernetes/hack/boilerplate/boilerplate.go.txt)
      to code created by the contributors can occur post-transfer, but should
      ideally occur shortly thereafter.
 
@@ -233,7 +233,7 @@ No. All contributors retain ownership of their copyrights in the code they donat
 Instead, they are granting a license to the project (that's the 'L' in 'CLA').
 
 For consistency and efficiency in complying with notice requirements, code that is
-donated to a Kubernetes repo should use [the standard header](https://github.com/kubernetes/kubernetes/blob/master/hack/boilerplate/boilerplate.go.txt)
+donated to a Kubernetes repo should use [the standard header](https://git.k8s.io/kubernetes/hack/boilerplate/boilerplate.go.txt)
 referencing "The Kubernetes Authors". That doesn't mean you are transferring your
 copyright. Instead, it's a general reference to the fact that the copyrights remain
 owned by the authors of Kubernetes.
