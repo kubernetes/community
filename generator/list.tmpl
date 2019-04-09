@@ -34,16 +34,15 @@ When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 {{- range .WorkingGroups}}
 |[{{.Name}}]({{.Dir}}/README.md)|{{range .StakeholderSIGs}}* {{.}}<br>{{end }}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
 {{- end }}
-{{- /* TODO: remove the below condition when at least one user group has been added */}}
-{{ if .UserGroups }}
+
 ### Master User Group List
 
-| Name | Organizers | Contact | Meetings |
-|------|------------|---------|----------|
+| Name | Label |Organizers | Contact | Meetings |
+|------|-------|------------|--------|----------|
 {{- range .UserGroups}}
-|[{{.Name}}]({{.Dir}}/README.md)|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
+|[{{.Name}}]({{.Dir}}/README.md)|{{.Label}}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
 {{- end }}
-{{  end }}
+
 ### Master Committee List
 
 | Name |  Label | Members | Contact |
