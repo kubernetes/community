@@ -138,7 +138,8 @@ development environment, please [set one up](http://golang.org/doc/code.html).
 | 1.11           | 1.10.2      |
 | 1.12           | 1.10.4      |
 | 1.13           | 1.11.2      |
-| 1.13+          | 1.11.4      |
+| 1.13           | 1.11.4      |
+| 1.14+          | 1.12.1      |
 
 Ensure your GOPATH and PATH have been configured in accordance with the Go
 environment instructions.
@@ -150,9 +151,10 @@ images.
 
 - The image for cross compiling in [build/build-image/cross].
   The `VERSION` file and `Dockerfile`.
-- Update the desired Go version in Dockerfile for the [e2e][e2e-image] and [test][test-image].
-  This requires pushing the [e2e][e2e-image] and [test][test-image] images that are `FROM` the desired Go version.
 - The cross tag `KUBE_BUILD_IMAGE_CROSS_TAG` in [build/common.sh].
+- The `go_version` in the [`go_register_toolchains`](https://git.k8s.io/kubernetes/build/root/WORKSPACE) bazel rule.
+- The desired Go verion in
+  [test/images/Makefile](https://git.k8s.io/kubernetes/test/images/Makefile).
 
 ### Quick Start
 
@@ -269,7 +271,6 @@ To check out code to work on, please refer to [this guide](/contributors/guide/g
 [macOS GNU tools]: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x
 [build/build-image/cross]: https://git.k8s.io/kubernetes/build/build-image/cross
 [build/common.sh]: https://git.k8s.io/kubernetes/build/common.sh
-[e2e-image]: https://git.k8s.io/test-infra/jenkins/e2e-image
 [etcd-latest]: https://coreos.com/etcd/docs/latest
 [etcd-install]: sig-testing/integration-tests.md#install-etcd-dependency
 <!-- https://github.com/coreos/etcd/releases -->
@@ -278,5 +279,4 @@ To check out code to work on, please refer to [this guide](/contributors/guide/g
 [kubectl user guide]: https://kubernetes.io/docs/user-guide/kubectl
 [kubernetes.io]: https://kubernetes.io
 [mercurial]: http://mercurial.selenic.com/wiki/Download
-[test-image]: https://git.k8s.io/test-infra/jenkins/test-image
 [Build with Bazel]: sig-testing/bazel.md
