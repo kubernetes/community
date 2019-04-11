@@ -172,6 +172,7 @@ To promote a test to the conformance test suite, open a PR as follows:
     than the `framework.It()` function
   - adds a comment immediately before the `ConformanceIt()` call that includes
     all of the required [conformance test comment metadata]
+  - adds the test name to the [conformance.txt] file
 - add the PR to SIG Architecture's [Conformance Test Review board] in the To
   Triage column
 
@@ -231,8 +232,9 @@ for your provider, please see the [testgrid conformance README]
 [Conformance Test Review board]: https://github.com/orgs/kubernetes/projects/9
 [Conformance test reviewers]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS
 [conformance test requirements]: #conformance-test-requirements
-[conformance test metadata]: #conformance-test-metadata
+[conformance test comment metadata]: #conformance-test-comment-metadata
 [conformance test version skew policy]: #conformance-test-version-skew-policy
 [testgrid conformance dashboard]: https://testgrid.k8s.io/conformance-all
 [testgrid conformance README]: https://github.com/kubernetes/test-infra/blob/master/testgrid/conformance/README.md
 [v1.9 conformance doc]: https://github.com/cncf/k8s-conformance/blob/master/docs/KubeConformance-1.9.md
+[conformance.txt]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.txt
