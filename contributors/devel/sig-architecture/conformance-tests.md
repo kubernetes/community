@@ -47,6 +47,11 @@ specifically, a test is eligible for promotion to conformance if:
 - it passes against the appropriate versions of kubernetes as spelled out in
   the [conformance test version skew policy]
 - it is stable and runs consistently (e.g., no flakes)
+- new conformance tests or updates to conformance tests for additional scenarios
+  are only allowed before code freeze dates set by the release team to allow
+  enough soak time of the changes and gives folks a chance to kick the tires
+  either in the community CI or their own infrastructure to make sure the tests
+  are robust
 
 Examples of features which are not currently eligible for conformance tests:
 
