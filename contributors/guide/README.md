@@ -54,7 +54,7 @@ Please make sure to read and observe our [Code of Conduct](/code-of-conduct.md).
 
 ## Setting up your development environment
 
-If you haven’t set up your environment, check the [developer resources](/contributors/devel).
+If you haven’t set up your environment, check the [developer resources](/contributors/devel/README.md#setting-up-your-dev-environment-coding-and-debugging).
 
 ## Community Expectations and Roles
 
