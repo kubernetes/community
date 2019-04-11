@@ -109,7 +109,7 @@ Some of the most common differences to watch for are:
   - Privileged containers are not supported. Containers are always isolated.
   - Windows uses job objects or Hyper-V for pod isolation and resource controls, not CGroups. These are managed
 implicitly by Docker or ContainerD, not by the kubelet. Do not check properties of CGroups as pass/fail criteria.
-  - Running Linux-specific commands are not likely to work. Some commands may work using a Windows [busybox](https://github.com/kubernetes-sigs/windows-testing/tree/master/images/busybox) container. The paths of these binaries may differ from Linux, so it's best to rely on `PATH` rather than using Linux-specific paths such as `/usr/bin/nc`. 
+  - Running Linux-specific commands are not likely to work. Some commands may work using a Windows [busybox](https://github.com/kubernetes-sigs/windows-testing/tree/master/images/busybox) container. The paths of these binaries may differ from Linux, so it's best to rely on `PATH` rather than using Linux-specific paths such as `/usr/bin/nc`. As an alternative, you can use commands in the cross-platform [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) image which is designed to return the same results regardless of OS.
 - Storage
   - File permissions cannot be set on volumes. Tests using `DefaultMode` or `Mode` and checking the resulting permissions will fail.
   - Only NTFS volumes are supported. Volume mounts specifying other filesystems (ext4, xfs) or mediums (memory) are not supported
@@ -118,7 +118,7 @@ implicitly by Docker or ContainerD, not by the kubelet. Do not check properties 
 - Networking
   - Pods set `HostNetwork=true`. Is not supported on Windows, and the Pod will not start.
   - Network and DNS settings must be passed through CNI. Windows does not use `/etc/resolv.conf`, so tests should not rely on reading that file to check DNS settings.
-    - If you to check network settings such as dns search lists, please use [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) to output needed data from the container. Agnhost is a simple golang app that will return the same results for both Windows & Linux for each included command.
+    - If you to check network settings such as dns search lists, please use [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) to output needed data from the container. 
   - Windows treats all DNS lookups with a `.` to be FQDN, not PQDN. For example `kubernetes` will resolve as a PQDN,
   but `kubernetes.default` will be resolved as a FQDN and fail.
   - ICMP only works between pods on the same network, and are not routable to external networks. TCP/UDP are routable.
