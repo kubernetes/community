@@ -1,0 +1,4 @@
+# This file contains a mapping from lowercase GitHub usernames to Kubernetes
+# Slack user IDs.
+users:
+  katharine: UBTBNJ6GL

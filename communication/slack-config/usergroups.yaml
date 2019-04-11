@@ -1,0 +1,5 @@
+# This file contains a list of all Slack usergroups that exist.
+
+usergroups:
+  - name: test-infra-oncall
+    external: true
