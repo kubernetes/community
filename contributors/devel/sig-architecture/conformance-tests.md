@@ -42,7 +42,7 @@ specifically, a test is eligible for promotion to conformance if:
 - it works without non-standard filesystem permissions granted to pods
 - it does not rely on any binaries that would not be required for the linux
   kernel or kubelet to run (e.g., can't rely on git)
-- it does not depend on outputs that change based on OS (nslookup, ping, chmod, ls)
+- where possible, it does not depend on outputs that change based on OS (nslookup, ping, chmod, ls)
 - any container images used within the test support all architectures for which
   kubernetes releases are built
 - it passes against the appropriate versions of kubernetes as spelled out in
@@ -109,7 +109,7 @@ Some of the most common differences to watch for are:
   - Privileged containers are not supported. Containers are always isolated.
   - Windows uses job objects or Hyper-V for pod isolation and resource controls, not CGroups. These are managed
 implicitly by Docker or ContainerD, not by the kubelet. Do not check properties of CGroups as pass/fail criteria.
-  - Running Linux-specific commands are not likely to work. Some commands may work using a Windows [busybox](https://github.com/kubernetes-sigs/windows-testing/tree/master/images/busybox) container. The paths of these binaries may differ from Linux, so it's best to rely on `PATH` rather than using Linux-specific paths such as `/usr/bin/nc`
+  - Running Linux-specific commands are not likely to work. Some commands may work using a Windows [busybox](https://github.com/kubernetes-sigs/windows-testing/tree/master/images/busybox) container. The paths of these binaries may differ from Linux, so it's best to rely on `PATH` rather than using Linux-specific paths such as `/usr/bin/nc`. 
 - Storage
   - File permissions cannot be set on volumes. Tests using `DefaultMode` or `Mode` and checking the resulting permissions will fail.
   - Only NTFS volumes are supported. Volume mounts specifying other filesystems (ext4, xfs) or mediums (memory) are not supported
@@ -117,8 +117,8 @@ implicitly by Docker or ContainerD, not by the kubelet. Do not check properties 
   - Bidirectional mount propagation, specifically propagating mounts from a container to host, does not work.
 - Networking
   - Pods set `HostNetwork=true`. Is not supported on Windows, and the Pod will not start.
-  - Network and DNS settings must be passed through CNI. Windows does not use `/etc/resolv.conf`, so tests should
-  not rely on reading that file to check DNS settings.
+  - Network and DNS settings must be passed through CNI. Windows does not use `/etc/resolv.conf`, so tests should not rely on reading that file to check DNS settings.
+    - If you to check network settings such as dns search lists, please use [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) to output needed data from the container. Agnhost is a simple golang app that will return the same results for both Windows & Linux for each included command.
   - Windows treats all DNS lookups with a `.` to be FQDN, not PQDN. For example `kubernetes` will resolve as a PQDN,
   but `kubernetes.default` will be resolved as a FQDN and fail.
   - ICMP only works between pods on the same network, and are not routable to external networks. TCP/UDP are routable.
@@ -210,6 +210,10 @@ To promote a test to the conformance test suite, open a PR as follows:
   - adds a comment immediately before the `ConformanceIt()` call that includes
     all of the required [conformance test comment metadata]
 - add the PR to SIG Architecture's [Conformance Test Review board]
+
+Once you create the PR, please schedule the additional Windows tests with
+`/test pull-kubernetes-e2e-aks-engine-azure-windows` to see if any existing tests
+that pass on Windows are broken by the change.
 
 
 ### Conformance Test Comment Metadata
