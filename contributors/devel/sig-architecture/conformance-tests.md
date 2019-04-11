@@ -42,6 +42,7 @@ specifically, a test is eligible for promotion to conformance if:
 - it works without non-standard filesystem permissions granted to pods
 - it does not rely on any binaries that would not be required for the linux
   kernel or kubelet to run (e.g., can't rely on git)
+- where possible, it does not depend on outputs that change based on OS (nslookup, ping, chmod, ls)
 - any container images used within the test support all architectures for which
   kubernetes releases are built
 - it passes against the appropriate versions of kubernetes as spelled out in
@@ -74,6 +75,62 @@ reasonable production worthy environments:
 - tests may need to create or set objects or fields that are alpha or beta that
   bypass policies that are not yet GA, but which may reasonably be enabled on a
   conformant cluster (e.g., pod security policy, non-GA scheduler annotations)
+
+### Windows & Linux Considerations
+
+Windows node support is an optional but stable feature as of Kubernetes 1.14. This means that it is
+not required by conformance testing. Nonetheless, it's important to verify that the behavior of Windows nodes match the behaviors tested in the conformance suite as much as possible. To that end, a
+large number of conformance tests are already included in Windows testing. You can see what tests are already passing by looking at TestGrid for results of Windows tests running on
+[Azure](https://testgrid.k8s.io/sig-windows#aks-engine-azure-windows-master) and
+[GCE](https://testgrid.k8s.io/sig-windows#gce-windows-master)). Tests may be
+scheduled for any PR with the bot command `/test pull-kubernetes-e2e-aks-engine-azure-windows`.
+
+Generally speaking, the goals are to:
+
+- Make sure tests that are already passing remain passing. If new OS-specific
+functionality is added, it should be in a new test.
+- Ensure that new tests covering Linux-specific functionality are tagged with `[LinuxOnly]` 
+(see: [Kinds of Tests](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests),
+- Give future reviewers a reference to an active issue or documentation clarifying why a test
+cannot run on Windows.
+
+The tests that are running today:
+
+- Rely only on container images that already have a multi-architecture manifest
+including Windows versions, or have been ported by SIG-Windows
+(see [kubernetes-sigs/windows-testing/images](https://github.com/kubernetes-sigs/windows-testing/tree/master/images)
+- Do not depend on any functionality that is different or not available on Windows. The full list
+is available in the Windows Kubernetes docs under [api](https://kubernetes.io/docs/setup/windows/intro-windows-in-kubernetes/#api). 
+A brief summary is included here as a starting point. If the docs are insufficient
+or there are more questions, please contact #SIG-Windows on Slack to get another
+reviewer.
+
+Some of the most common differences to watch for are:
+
+- Container Images
+  - Watch out for image names hardcoded into test cases or YAML files. These are often Linux-only. Instead, they should be adding to or using existing images from [tests/utils/image/manifest.go](https://github.com/kubernetes/kubernetes/blob/master/test/utils/image/manifest.go). This allows the container registry to be configured to one containing Windows images, and also supports testing on clusters with no internet access using a private registry. Multi-arch images supporting Windows are also acceptable.
+- Container Options & Actions
+  - Pod SecurityContext is set. Most of the fields are Linux specific, and any field set in the Pod's SecurityContext will result in the Pod not being able to spawn or not work as intended.
+  - Privileged containers are not supported. Containers are always isolated.
+  - Windows uses job objects or Hyper-V for pod isolation and resource controls, not CGroups. These are managed
+implicitly by Docker or ContainerD, not by the kubelet. Do not check properties of CGroups as pass/fail criteria.
+  - Running Linux-specific commands are not likely to work. Some commands may work using a Windows [busybox](https://github.com/kubernetes-sigs/windows-testing/tree/master/images/busybox) container. The paths of these binaries may differ from Linux, so it's best to rely on `PATH` rather than using Linux-specific paths such as `/usr/bin/nc`. As an alternative, you can use commands in the cross-platform [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) image which is designed to return the same results regardless of OS.
+- Storage
+  - File permissions cannot be set on volumes. Tests using `DefaultMode` or `Mode` and checking the resulting permissions will fail.
+  - Only NTFS volumes are supported. Volume mounts specifying other filesystems (ext4, xfs) or mediums (memory) are not supported
+  - Mappings of individual files are not supported. Tests which are mounting or expecting such files to be mounted (including /etc/hosts, /etc/resolv.conf, /dev/termination-log) will fail.
+  - Bidirectional mount propagation, specifically propagating mounts from a container to host, does not work.
+- Networking
+  - Pods set `HostNetwork=true`. Is not supported on Windows, and the Pod will not start.
+  - Network and DNS settings must be passed through CNI. Windows does not use `/etc/resolv.conf`, so tests should not rely on reading that file to check DNS settings.
+    - If you to check network settings such as dns search lists, please use [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) to output needed data from the container. 
+  - Windows treats all DNS lookups with a `.` to be FQDN, not PQDN. For example `kubernetes` will resolve as a PQDN,
+  but `kubernetes.default` will be resolved as a FQDN and fail.
+  - ICMP only works between pods on the same network, and are not routable to external networks. TCP/UDP are routable.
+  - Windows containers do not support IPv6.
+
+The existing tests which are affected by one of those criteria are tagged with `[LinuxOnly]` 
+(see: [Kinds of Tests](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests).
 
 ## Conformance Test Version Skew Policy
 
@@ -158,6 +215,10 @@ To promote a test to the conformance test suite, open a PR as follows:
   - adds a comment immediately before the `ConformanceIt()` call that includes
     all of the required [conformance test comment metadata]
 - add the PR to SIG Architecture's [Conformance Test Review board]
+
+Once you create the PR, please schedule the additional Windows tests with
+`/test pull-kubernetes-e2e-aks-engine-azure-windows` to see if any existing tests
+that pass on Windows are broken by the change.
 
 
 ### Conformance Test Comment Metadata
