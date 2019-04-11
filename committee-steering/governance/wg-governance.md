@@ -65,8 +65,7 @@ should eventually be reflected in a pull request on sigs.yaml:
 1. What is the artifact that this group will deliver, and to whom?
 1. How does the group know when the problem solving process is completed, and it is time for the Working Group to
    dissolve?
-1. Who are all of the stakeholders involved in this problem this group is trying to solve (SIGs, steering committee,
-   other Working Groups)?
+1. Who are all of the stakeholder SIGs involved in this problem this group is trying to solve?
 1. What are the meeting mechanics (frequency, duration, roles)?
 1. Does the goal of the Working Group represent the needs of the project as a whole, or is it focused on the interests
    of a narrow set of contributors or companies?
