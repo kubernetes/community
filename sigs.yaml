@@ -24,7 +24,7 @@ sigs:
       frequency: biweekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://goo.gl/0lbiM9
-      recordings_url: https://www.youtube.com/watch?v=Lj1ScbXpnpY&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R
     - description: Kubebuilder and Controller Runtime Meeting
       day: Wednesday
       time: "10:00"
