@@ -1,7 +1,7 @@
 # Slack Config
 
 YAML files in this directory control the state of Slack, via
-[Tempelis](Tempelis). Updating a configuration file will result in Slack being updated
+[Tempelis]. Updating a configuration file will result in Slack being updated
 once the change merges. If a change is not legal, a presubmit will fail.
 
 ## Users
