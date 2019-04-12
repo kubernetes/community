@@ -73,6 +73,8 @@ should eventually be reflected in a pull request on sigs.yaml:
 1. Who will chair the group, and ensure it continues to meet these requirements?
 1. Is diversity well-represented in the Working Group?
 
+Please note that all working group organizers and holders of other leadership roles must be [community members].
+
 Once the above questions have been answered, complete the rest of the checklist in the [SIG / WG Lifecycle] document
 
 Once merged, the Working Group is officially chartered until it either completes its stated goal, or disbands
@@ -106,3 +108,4 @@ References
 
 [SIG / WG Lifecycle]: /sig-wg-lifecycle.md
 [repositories document]: https://github.com/kubernetes/community/blob/master/github-management/kubernetes-repositories.md
+[community members]: /community-membership.md

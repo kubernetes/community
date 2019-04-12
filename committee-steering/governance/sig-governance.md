@@ -24,6 +24,8 @@ Subproject Owner Role.  (this different from a SIG or Organization Member).
 - Initial members are defined at the founding of the SIG or Subproject as part of the acceptance
   of that SIG or Subproject.
 - Members *SHOULD* remain active and responsive in their Roles.
+- Members *MUST* be [community members] to be eligible to hold a leadership role
+  within a SIG.
 - Members taking an extended leave of 1 or more months *SHOULD*
   coordinate with other members to ensure the
   role is adequately staffed during the leave.
@@ -183,3 +185,4 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [Embargo Policy]: https://git.k8s.io/security/private-distributors-list.md#embargo-policy
 [SECURITY_CONTACTS]: https://github.com/kubernetes/kubernetes-template-project/blob/master/SECURITY_CONTACTS
 [sig-wg-lifecycle]: /sig-wg-lifecycle.md
+[community members]: /community-membership.md
