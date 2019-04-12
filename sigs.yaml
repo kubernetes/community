@@ -2535,7 +2535,7 @@ workinggroups:
       tz: "PT (Pacific Time)"
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-      archive_url: http://bit.ly/wg-k8s-infra-notes
+      archive_url: https://docs.google.com/document/d/16VBfsFMynA7tObzuZGPpw-sKDKfFc_T5W_E4IeEIaOQ/edit
       recordings_url: http://bit.ly/wg-k8s-infra-playlist
     contact:
       slack: wg-k8s-infra
