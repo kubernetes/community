@@ -41,8 +41,6 @@ channels:
   - name: crio
   - name: de-events
   - name: de-users
-  - name: deis-dev
-  - name: deis-users
   - name: devstats
   - name: digitalocean-k8s
   - name: diversity
@@ -74,6 +72,10 @@ channels:
     archived: true
   - name: helm-dev
   - name: helm-users
+  - name: hephy-dev
+    id: C67TNP3FF
+  - name: hephy-users
+    id: C678BMZ89
   - name: il-users
   - name: in-dev
   - name: in-events
