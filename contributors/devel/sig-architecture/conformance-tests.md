@@ -47,7 +47,8 @@ specifically, a test is eligible for promotion to conformance if:
   kubernetes releases are built
 - it passes against the appropriate versions of kubernetes as spelled out in
   the [conformance test version skew policy]
-- it is stable and runs consistently (e.g., no flakes)
+- it is stable and runs consistently (e.g., no flakes), and has been running
+  for at least one release cycle
 - new conformance tests or updates to conformance tests for additional scenarios
   are only allowed before code freeze dates set by the release team to allow
   enough soak time of the changes and gives folks a chance to kick the tires
@@ -197,6 +198,25 @@ This document will help people understand what features are being tested without
 having to look through the testcase's code directly.
 
 
+## Conformance test review board
+
+The conformance subproject uses the [Conformance Test Review board] to track
+progress of PRs through to approval. The following types of PRs must go through
+this approval process:
+
+- promotion of tests to conformance
+- demotion of tests from conformance
+- changes to existing conformance tests
+- changes to the conformance criteria or process
+- changes to the conformance infrastructure code
+
+There are six columns in this board. New PRs should enter in the To Triage
+column, and [Conformance test reviewers] will pick it up from there and move it
+through the process. New end-to-end tests that are intended to be promoted to
+conformance tests in the future may be added to this board, but they will not
+move all the way to the Needs Approval column, as that is intended only for the
+types of PRs described above.
+
 ## Promoting Tests to Conformance
 
 To promote a test to the conformance test suite, open a PR as follows:
@@ -214,7 +234,9 @@ To promote a test to the conformance test suite, open a PR as follows:
     than the `framework.It()` function
   - adds a comment immediately before the `ConformanceIt()` call that includes
     all of the required [conformance test comment metadata]
-- add the PR to SIG Architecture's [Conformance Test Review board]
+  - adds the test name to the [conformance.txt] file
+- add the PR to SIG Architecture's [Conformance Test Review board] in the To
+  Triage column
 
 Once you create the PR, please schedule the additional Windows tests with
 `/test pull-kubernetes-e2e-aks-engine-azure-windows` to see if any existing tests
@@ -273,10 +295,12 @@ Conformance test results, by provider and releases, can be viewed in the
 for your provider, please see the [testgrid conformance README]
 
 [kubernetes versioning policy]: /contributors/design-proposals/release/versioning.md#supported-releases-and-component-skew
-[Conformance Test Review board]: https://github.com/kubernetes-sigs/architecture-tracking/projects/1
+[Conformance Test Review board]: https://github.com/orgs/kubernetes/projects/9
+[Conformance test reviewers]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS
 [conformance test requirements]: #conformance-test-requirements
-[conformance test metadata]: #conformance-test-metadata
+[conformance test comment metadata]: #conformance-test-comment-metadata
 [conformance test version skew policy]: #conformance-test-version-skew-policy
 [testgrid conformance dashboard]: https://testgrid.k8s.io/conformance-all
 [testgrid conformance README]: https://github.com/kubernetes/test-infra/blob/master/testgrid/conformance/README.md
 [v1.9 conformance doc]: https://github.com/cncf/k8s-conformance/blob/master/docs/KubeConformance-1.9.md
+[conformance.txt]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.txt
