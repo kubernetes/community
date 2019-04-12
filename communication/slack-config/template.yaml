@@ -1,0 +1,8 @@
+# This template will be used whenever Tempelis creates a new channel.
+channel_template:
+  # topic: none
+  # purpose: none
+  pins:
+    - >-
+      This channel abides to the Kubernetes Code of Conduct - http://git.k8s.io/community/code-of-conduct.md
+      Contact conduct@kubernetes.io or an admin in the #slack-admins channel if there is a problem.

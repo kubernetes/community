@@ -1,0 +1,13 @@
+restrictions:
+  - path: users.yaml
+    users: true
+  - path: channels.yaml
+    channels:
+      - ".*"
+    template: true
+  - path: usergroups.yaml
+    usergroups:
+      - ".*"
+  - path: template.yaml
+    template: true
+  - path: "**/*" # prevent any other file from containing anything
