@@ -2,13 +2,15 @@
 
 # These are the primary slack moderators.
 approvers:
-- katharine
-- castrojo
-- jeefy
-- mrbobbytables
-- alejandrox1
-- jdumars
-- parispitmann
-- coderanger
-- idvoretskyi
-- idealhack
+  - katharine
+  - castrojo
+  - jeefy
+  - mrbobbytables
+  - alejandrox1
+  - jdumars
+  - parispitmann
+  - coderanger
+  - idvoretskyi
+  - idealhack
+labels:
+  - area/slack-management
