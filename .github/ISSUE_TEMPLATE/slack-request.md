@@ -2,7 +2,7 @@
 name: Slack Request
 about: Request a Channel, Bot, Token, or Webhook
 title: 'REQUEST: New Slack <[channel|bot|token|webhook]> <[channel|bot|token|webhook] name>'
-labels: area/community-management, sig/contributor-experience
+labels: area/community-management, area/slack-management, sig/contributor-experience
 assignees: ''
 ---
 <!--
@@ -30,6 +30,3 @@ The Slack username of the Channel/Bot/Token/Webhook owner or primary contact.
 
 
 **Description of Request:**
-
-
-
