@@ -300,7 +300,22 @@ inactivated accounts] for more information.
 - Not adhering to the code of conduct set forth in DMs and/or channels.
 - Overtly selling products, related or unrelated to Kubernetes.
 
+**BE CAREFUL**
 
+To inactivate a user, and optionally remove their content (spam). First, double
+check you have the correct user by verifying their Slack Member ID. Spammers may
+try and fake or assume the identity of another user.
+
+Once verified, find a message from the offending user. Then select
+"**More actions**", the "**...**" to the right of a message from the offending user.
+Then select "**Report message**".
+
+This will open a contextually aware prompt only available to Slack Admins with
+the options to deactivate the user and remove all content from them over the 
+past "X" minutes/hours.
+
+Report any actions taken to the other slack admins, and if needed the
+[Code of Conduct Committee][cocc].
 
 [coc]: /code-of-conduct.md
 [admins]: ./moderators.md#Slack

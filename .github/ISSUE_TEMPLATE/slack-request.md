@@ -6,7 +6,8 @@ labels: area/community-management, area/slack-management, sig/contributor-experi
 assignees: ''
 ---
 <!--
-ATTENTION: Channels and UserGroup requests should now be PR'ed directly. See guidelines for more information.
+ATTENTION: Channels and UserGroup requests can now be PR'ed directly speeding up the review process. 
+See the guidelines below for more information. 
 Channel Request: https://git.k8s.io/community/communication/slack-guidelines.md#Requesting-a-Channel
 UserGroup Request:  https://git.k8s.io/community/communication/slack-guidelines.md#Requesting-a-User-Group
 
@@ -27,7 +28,8 @@ The Slack username of the Channel/Bot/Token/Webhook owner or primary contact.
 
 **What Type of Request is it (Channel, User Group, Bot, Token, or Webhook)?**
 <!--
-ATTENTION: Channels and UserGroup requests should now be PR'ed directly. See guidelines for more information.
+ATTENTION: Channels and UserGroup requests can now be PR'ed directly speeding up the review process. 
+See the guidelines below for more information. 
 Channel Request: https://git.k8s.io/community/communication/slack-guidelines.md#Requesting-a-Channel
 User Group Request:  https://git.k8s.io/community/communication/slack-guidelines.md#Requesting-a-User-Group
 -->
