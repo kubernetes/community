@@ -701,3 +701,5 @@ coupling it with container images.
         containers in a pod
     *   [#26751](https://issues.k8s.io/26751) - Pod-Level cgroup
     *   [#10782](https://issues.k8s.io/10782) - Vertical pod autoscaling
+ * Related work
+    *   [aylei/kubectl-debug](https://github.com/aylei/kubectl-debug) - A working solution to this problem
