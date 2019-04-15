@@ -68,6 +68,7 @@ channels:
   - name: gke
   - name: gloo
   - name: gsoc-apps
+  - name: helm-chart-testing
   - name: helm-deprecated
     archived: true
   - name: helm-dev
