@@ -95,6 +95,9 @@ Issues that cannot be handle via normal moderation, or with the assistance of th
 [Zoom Admins] should be escalated to the Kubernetes [Code of Conduct Committee]
 at conduct@kubernetes.io.
 
+To contact the admin group in Slack, ping `@zoom-admins` in the `#sig-contribex`
+Slack channel.
+
 
 ## Meeting recordings
 

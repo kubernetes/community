@@ -23,7 +23,7 @@ project, and includes all communication mediums.
 ## Admins
 
 - Check the [centralized list of administrators] for contact information.
-
+- To contact the admin group in Slack, ping `@youtube-admins` in the `#sig-contribex` Slack channel.
 
 ## Meeting Playlists
 

@@ -123,9 +123,9 @@ Moderators seats: 10
 | Jorge Castro        | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jeffrey Sica        | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen          | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jorge Alarcon       | @alejandroxv1       | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jorge Alarcon       | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Joe Beda            | @joebeda            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Joe Beda            | @jbeda              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
 | *Open*              | *Open*              |          |                                                         |
 
@@ -158,7 +158,7 @@ Moderators seats: 10
 | Jorge Castro        | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jeffrey Sica        | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen          | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jorge Alarcon       | @alejandroxv1       | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jorge Alarcon       | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Katharine Berry     | @Katharine          | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
@@ -177,7 +177,7 @@ Moderators pro tempore seats: 10
 | Angus Lees              | @anguslees          | APAC   | [AET - Australian Eastern Time](https://time.is/Australia) |
 | Aditya Konarde          | @aditya-konarde     | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
 | Manjunath Kumatagi      | @mkumatag           | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
-| Pandiyaraja Ramamoorthy | @pontiyaraja        | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
+| Pandiyaraja Ramamoorthy | @pontiya            | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
 | Roy Lenferink           | @rlenferink         | EMEA   | [CET - Central European Time](https://time.is/CET)         |
 | Loic Le Dru             | @lledru             | EMEA   | [CET - Central European Time](https://time.is/CET)         |
 | Puja Abbassi            | @puja108            | EMEA   | [CET - Central European Time](https://time.is/CET)         |
@@ -194,7 +194,7 @@ Administrators seats: 4
 |---------------|---------------------|----------|---------------------------------------------------------|
 | Jorge Castro  | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen    | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jorge Alarcon | @alejandroxv1       | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jorge Alarcon | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Paris Pittman | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 - License and main account controlled by the CNCF
