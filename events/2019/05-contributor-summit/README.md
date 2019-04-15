@@ -8,7 +8,7 @@ In some sense, the summit is a real-life extension of the community meetings and
 
  - Onboard new contributors to be productive in our community
  - Send contributors home with more context, knowledge, and skills about the project
- - SIG-specific face-to-face collaboration
+ - [SIG-specific face-to-face collaboration](sig-f2f-guidelines.md)
 
 
 ## Registration
