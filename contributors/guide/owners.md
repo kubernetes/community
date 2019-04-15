@@ -15,7 +15,7 @@ of OWNERS files
 
 ## OWNERS spec
 
-The [k8s.io/test-infra/prow/repowners package](https://git.k8s.io/test-infra/prow/repoowners/repoowners.go)
+The [k8s.io/test-infra/prow/repoowners package](https://git.k8s.io/test-infra/prow/repoowners/repoowners.go)
 is the main consumer of OWNERS files.  If this page is out of date, look there.
 
 ### OWNERS
@@ -256,7 +256,7 @@ pieces of prow are used to implement the code review process above.
 - [plugin: lgtm](https://git.k8s.io/test-infra/prow/plugins/lgtm)
   - adds the `lgtm` label when a **reviewer** comments `/lgtm` on a PR
   - the **PR author** may not `/lgtm` their own PR
-- [pkg: k8s.io/test-infra/prow/repowners](https://git.k8s.io/test-infra/prow/repoowners/repoowners.go)
+- [pkg: k8s.io/test-infra/prow/repoowners](https://git.k8s.io/test-infra/prow/repoowners/repoowners.go)
   - parses OWNERS and OWNERS_ALIAS files
   - if the `no_parent_owners` option is encountered, parent owners are excluded from having
     any influence over files adjacent to or underneath of the current OWNERS file
