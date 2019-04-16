@@ -9,6 +9,7 @@ Out of scope for this document: [subproject] creation.
 ## [Creation]
 ### Prerequisites for a SIG
 - [ ] Read [sig-governance.md]
+- [ ] Ensure all SIG Chairs, Technical Leads, and other leadership roles are [community members]
 - [ ] Send an email to the Steering Committee <steering@kubernetes.io> to scope the SIG and get provisional approval.
 - [ ] Look at the checklist below for processes and tips that you will need to do while this is going on. It's best to collect this information upfront so you have a smoother process to launch
 - [ ] Follow the [SIG charter process] to propose and obtain approval for a charter
@@ -16,6 +17,7 @@ Out of scope for this document: [subproject] creation.
 
 ### Prerequisites for a WG
 - [ ] Read [wg-governance.md]
+- [ ] Ensure all WG Organizers, and other leadership roles are [community members]
 - [ ] Send email to [kubernetes-dev@googlegroups.com] titled "WG-Creation-Request: WG Foo" with some of the questions answered from wg-goverance.md and wait for community discourse; ask for SIG sponsorship
 - [ ] Do the first checklist item in the #GitHub section below and add a row to the WG section:
   - [ ] Label with committee/steering and wait for a simple majority
@@ -109,3 +111,4 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 [Thursday community updates]: /events/community-meeting.md
 [example]: https://docs.google.com/document/d/1qZcAvuWBznR_oEaPWtwm7U4JNT91m8r9YOUvInU-src/edit#heading=h.jsw0l2t0ra8
 [update meetings]: /communication/calendar-guidelines.md
+[community members]: /community-membership.md
