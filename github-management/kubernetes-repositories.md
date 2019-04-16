@@ -182,6 +182,9 @@ This maintains the complete record of issues, PRs and other contributions,
 leaves the repository read-only, and makes it clear that the repository should
 be considered retired and unmaintained.
 
+In case a repository has only the initial commits adding template files
+and no additional activity, it can be completely deleted.
+
 ## FAQ
 
 **My project is currently in kubernetes-incubator, what is going to happen to
