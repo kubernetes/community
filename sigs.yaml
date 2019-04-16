@@ -779,6 +779,7 @@ sigs:
       owners:
       - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
       - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-network-proxy/master/OWNERS
+      - https://raw.githubusercontent.com/kubernetes/legacy-cloud-providers/master/OWNERS
       meetings:
       - description: Weekly Sync removing the in-tree cloud providers led by @cheftako and @mcrute
         day: Thursday

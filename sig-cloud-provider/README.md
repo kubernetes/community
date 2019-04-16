@@ -58,6 +58,7 @@ The following subprojects are owned by sig-cloud-provider:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-network-proxy/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/legacy-cloud-providers/master/OWNERS
   - Meetings:
     - Weekly Sync removing the in-tree cloud providers led by @cheftako and @mcrute: [Thursdays at 13:30 PT (Pacific Time)](https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:30&tz=PT%20%28Pacific%20Time%29).
 
