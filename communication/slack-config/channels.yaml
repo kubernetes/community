@@ -131,13 +131,7 @@ channels:
   - name: kubernetes-careers
   - name: kubernetes-client
   - name: kubernetes-dev
-  - name: kubernetes-docs-de
-  - name: kubernetes-docs-es
-  - name: kubernetes-docs-fr
-  - name: kubernetes-docs-it
-  - name: kubernetes-docs-ja
-  - name: kubernetes-docs-ko
-  - name: kubernetes-docs-zh
+  # kubernetes-docs-* channels are defined in sig-docs/
   - name: kubernetes-novice
   - name: kubernetes-operators
   - name: kubernetes-ruby

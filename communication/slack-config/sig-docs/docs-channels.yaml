@@ -1,0 +1,8 @@
+channels:
+  - name: kubernetes-docs-de
+  - name: kubernetes-docs-es
+  - name: kubernetes-docs-fr
+  - name: kubernetes-docs-it
+  - name: kubernetes-docs-ja
+  - name: kubernetes-docs-ko
+  - name: kubernetes-docs-zh
