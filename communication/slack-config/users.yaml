@@ -1,13 +1,13 @@
-# This file contains a mapping from lowercase GitHub usernames to Kubernetes
-# Slack user IDs.
+# This file contains an alpahbetically sorted mapping of lowercase GitHub
+# usernames to Kubernetes Slack user IDs.
 users:
-  katharine: UBTBNJ6GL
-  jeefy: U5MCFK468
-  sarahnovotny: U0AGW7007
-  paris: U5SB22BBQ
-  castrojo: U1W1Q6PRQ
-  mrbobbytables: U511ZSKHD
   alejandrox1: U6AS37R50
-  jdumars: U0YJS6LHL
-  jbeda: U09QZ63DX
+  castrojo: U1W1Q6PRQ
   idvoretskyi: U0CBHE6GM
+  jbeda: U09QZ63DX
+  jdumars: U0YJS6LHL
+  jeefy: U5MCFK468
+  katharine: UBTBNJ6GL
+  mrbobbytables: U511ZSKHD
+  paris: U5SB22BBQ
+  sarahnovotny: U0AGW7007
