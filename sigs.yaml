@@ -2218,6 +2218,13 @@ workinggroups:
     mission_statement: >
       Designing and shepherding cross-cutting features around compute resource isolation and utilization.
     charter_link:
+    stakeholder_sigs:
+    - Autoscaling
+    - Instrumentation
+    - Networking
+    - Node
+    - Scheduling
+    - Storage
     leadership:
       chairs:
       - name: Vishnu Kannan
