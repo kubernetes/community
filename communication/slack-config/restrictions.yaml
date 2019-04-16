@@ -10,4 +10,7 @@ restrictions:
       - ".*"
   - path: template.yaml
     template: true
+  - path: "sig-docs/*.yaml"
+    channels:
+      - "^kubernetes-docs-[a-z]{2}$"
   - path: "**/*" # prevent any other file from containing anything
