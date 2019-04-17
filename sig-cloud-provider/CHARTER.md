@@ -23,6 +23,8 @@ SIG Cloud Provider’s mission is to simplify, develop, and maintain cloud provi
 - core controllers (started by the cloud-controller-manager) that interact with cloud provider resources
 - all [cloud provider repositories](https://github.com/kubernetes?utf8=%E2%9C%93&q=cloud-provider-&type=&language=) under the Kubernetes organization
 - [e2e tests for cloud provider specific](https://github.com/kubernetes/kubernetes/tree/master/test/e2e/cloud) functionality
+- all the subprojects formerly owned by [SIG-AWS](https://github.com/kubernetes/community/tree/master/sig-aws#subprojects), [SIG-AZURE](https://github.com/kubernetes/community/tree/master/sig-azure#subprojects), [SIG-GCP](https://github.com/kubernetes/community/tree/master/sig-gcp#subprojects), [SIG-IBMCloud](https://github.com/kubernetes/community/tree/master/sig-ibmcloud#subprojects), [SIG-Openstack](https://github.com/kubernetes/community/tree/master/sig-openstack#subprojects), [SIG-VMware](https://github.com/kubernetes/community/tree/master/sig-vmware#subprojects).
+- any new subproject that is cloud provider specific, unless there is another SIG already sponsoring it.
 
 #### Cross-cutting and Externally Facing Processes
 
