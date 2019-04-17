@@ -16,6 +16,7 @@ video recording or in another public space. Please be courteous to others.
   - [Specific Channel Rules](#specific-channel-rules)
   - [Escalating and/or Reporting a Problem](#escalating-andor-reporting-a-problem)
 - [Requesting a Channel](#requesting-a-channel)
+  - [Delegating Channel Ownership](#delegating-channel-ownership)
 - [Requesting a User Group](#requesting-a-user-group)
 - [Requesting a Bot, Token, or Webhook](#requesting-a-bot-token-or-webhook)
 - [Moderation](#moderation)
@@ -140,8 +141,45 @@ After you submit your request the Slack Admins will review and follow-up with
 any questions in the PR itself. Once it is signed off and merged, the Channel
 will be created.
 
-For further information, see the [Slack Config Documentation]
+For further information, see the [Slack Config Documentation].
 
+
+### Delegating Channel Ownership
+
+Channel management can be delegated to other groups enabling SIG leads or other
+members to govern certain sets channels. This by-passes the need for a Slack
+Admins to sign-off on all requests and passes the responsibility to the most
+relevant group.
+
+To delegate channel ownership, open a Pull Request (PR) updating the
+[slack-config].
+- Create a sub-directory under the [slack-config] for your sig or group.
+- Update [restrictions.yaml] with an entry targeting yaml config files in the
+  sub-directory you created along with one or more regular expressions that
+  match the channel names that should be delegated.
+  - **Example Restrictions Entry:**
+    ```yaml
+    restrictions:
+    - path: "sig-foo/*.yaml"          # path to channel config
+      channels:
+      - "^kubernetes-foo-[a-z]{1,3}$" # channel regexp - example match: kubernetes-foo-bar
+      - "^foo-[a-zA-Z]+$"             # channel regexp - example match: foo-awesomechannel
+    ```
+- Create an [`OWNERS`] file in the sub-directory adding the appropriate
+  reviewers and approvers for the desired channels.
+- In the directory create one or more channel configs following the
+  [Channel Documentation].
+  - **Example Channel Config:**
+    ```yaml
+    channels:
+    - name: kubernetes-foo-bar # regexp: "^kubernetes-foo-[a-z]{1,3}$"
+    - name: foo-users          # regexp: "^foo-[a-zA-Z]+$"
+    - name: foo-dev            # regexp: "^foo-[a-zA-Z]+$"
+    ```
+After you submit your PR and the Slack Admins sign off on the update, it will be
+merged and the group will be able to fully self-manage their own channels.
+
+For further information, see the [Slack Config Documentation].
 
 ## Requesting a User Group
 
@@ -327,6 +365,8 @@ Report any actions taken to the other slack admins, and if needed the
 [slack-config]: ./slack-config/
 [Channel Documentation]: ./slack-config/README.md#channels
 [channels.yaml]: ./slack-config/channels.yaml
+[restrictions.yaml]: ./slack-config/restrictions.yaml
+[`owners`]: /contributors/guide/owners.md
 [users]: ./slack-config/README.md#users
 [users.yaml]: ./slack-config/users.yaml
 [usergroups.yaml]: ./slack-config/usergroups.yaml
