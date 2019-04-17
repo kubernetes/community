@@ -16,6 +16,8 @@ video recording or in another public space. Please be courteous to others.
   - [Specific Channel Rules](#specific-channel-rules)
   - [Escalating and/or Reporting a Problem](#escalating-andor-reporting-a-problem)
 - [Requesting a Channel](#requesting-a-channel)
+  - [Delegating Channel Ownership](#delegating-channel-ownership)
+- [Requesting a User Group](#requesting-a-user-group)
 - [Requesting a Bot, Token, or Webhook](#requesting-a-bot-token-or-webhook)
 - [Moderation](#moderation)
   - [Admin Expectations and Guidelines]()
@@ -83,12 +85,12 @@ development to kubernetes,
 ### Escalating and/or Reporting a Problem
 
 The Kubernetes Slack has an integrated tool for reporting issues. It may be
-accessed by clicking on "More actions", the "`...`" to the right of a message,
+accessed by clicking on "More actions", the "**...**" to the right of a message,
 and selecting **Report message**.
 
 This will open a new dialog prompt where you may describe the problem. When
 done, it will send the reported message and your comments to **BOTH** the Slack
-admins and [Code of Conduct Committee (CoCC)].
+admins and [Code of Conduct Committee (CoCC)][cocc].
 
 A Slack admin or CoCC member will work to resolve the issue or reach out for
 more information.
@@ -111,16 +113,20 @@ and describe the situation.
 
 ## Requesting a Channel
 
-- Create a [GitHub Issue] using the Slack Request template.
-- Include the desired name of the channel. Typical naming conventions follow:
-  - `#kubernetes-foo`
-  - `#sig-foo`
-  - `#meetup-foo`
-  - `#location-user`
-  - `#projectname`
-- In the issue describe the purpose of the Channel. Channels should be
-  dedicated to [SIGs, WGs, UGs][sig-list], sub-projects, community topics, or
-  related Kubernetes programs/projects.
+Channels and User Groups are managed by [Tempelis], a tool that enables external
+management of Slack.
+
+To add a channel, open a Pull Request (PR) updating the [slack-config].
+- Add the channel to [channels.yaml] following the [Channel Documentation].
+  - Typical channel naming conventions follow:
+    - `#kubernetes-foo`
+    - `#sig-foo`
+    - `#meetup-foo`
+    - `#location-user`
+    - `#projectname`
+- In the PR comments, include some details regarding the purpose of the Channel.
+  - Channels should be dedicated to [SIGs, WGs, UGs][sig-list], sub-projects,
+    community topics, or related Kubernetes programs/projects.
   - Linking to resources such as the PR adding the subproject will speed in the
     validation and processing of the channel creation request.
   - Channels are **NOT**:
@@ -131,10 +137,71 @@ and describe the situation.
       security/vulnerabilities, github management, or steering committee.
   - Special accommodations will be made where necessary.
 
-After you submit your request the Slack admins will review and follow-up with
-any questions in the issue. If two admins add their support for the creation of
-the channel, an admin will assign it to themselves and close the issue once it
-has been created.
+After you submit your request the Slack Admins will review and follow-up with
+any questions in the PR itself. Once it is signed off and merged, the Channel
+will be created.
+
+For further information, see the [Slack Config Documentation].
+
+
+### Delegating Channel Ownership
+
+Channel management can be delegated to other groups enabling SIG leads or other
+members to govern certain sets channels. This by-passes the need for a Slack
+Admins to sign-off on all requests and passes the responsibility to the most
+relevant group.
+
+To delegate channel ownership, open a Pull Request (PR) updating the
+[slack-config].
+- Create a sub-directory under the [slack-config] for your sig or group.
+- Update [restrictions.yaml] with an entry targeting yaml config files in the
+  sub-directory you created along with one or more regular expressions that
+  match the channel names that should be delegated.
+  - **Example Restrictions Entry:**
+    ```yaml
+    restrictions:
+    - path: "sig-foo/*.yaml"          # path to channel config
+      channels:
+      - "^kubernetes-foo-[a-z]{1,3}$" # channel regexp - example match: kubernetes-foo-bar
+      - "^foo-[a-zA-Z]+$"             # channel regexp - example match: foo-awesomechannel
+    ```
+- Create an [`OWNERS`] file in the sub-directory adding the appropriate
+  reviewers and approvers for the desired channels.
+- In the directory create one or more channel configs following the
+  [Channel Documentation].
+  - **Example Channel Config:**
+    ```yaml
+    channels:
+    - name: kubernetes-foo-bar # regexp: "^kubernetes-foo-[a-z]{1,3}$"
+    - name: foo-users          # regexp: "^foo-[a-zA-Z]+$"
+    - name: foo-dev            # regexp: "^foo-[a-zA-Z]+$"
+    ```
+After you submit your PR and the Slack Admins sign off on the update, it will be
+merged and the group will be able to fully self-manage their own channels.
+
+For further information, see the [Slack Config Documentation].
+
+## Requesting a User Group
+
+Channels and User Groups are managed by [Tempelis], a tool that enables external
+management of Slack.
+
+To add a User Group, open a Pull Request (PR) updating the [slack-config].
+- Add the [users] to [users.yaml]. **NOTE:** This **must** be a mapping of their
+  GitHub ID to their Slack Member ID.
+  - To get a person's Slack Member ID, view their profile. Then click on the
+    "**...**" and select **Copy member ID**. It will be a  9 character string of
+    uppercase letters and numbers (example: `U1H63D8SZ`).
+- Update [usergroups.yaml] Follow the guidelines for creating a User Group in
+  the Slack Config [User Group Documentation].
+- In the PR comments, include details on the User Group and `/cc` the members
+  you are adding so that they may sign off and accept being added to the group.
+
+After you submit your request, the Slack Admins will review and follow-up with
+any questions in the PR itself. Once it is signed off by the members being added
+and the Slack Admins, it will be merged, and the User Group will be created.
+
+For further information, see the [Slack Config Documentation].
 
 
 ## Requesting a Bot, Token, or Webhook
@@ -219,13 +286,29 @@ or communication avenues commonly used by their specific language.
 
 In general, use your best judgment.
 
-Once two admins have agreed to sponsor the channel, an admin should assign the
-issue to themselves, and create the channel. A message should then be pinned
-with the below text:
+Once two Slack admins have reviewed and agreed to sponsor the channel, they will
+sign off on the Channel Request PR. Once merged, the channel will be created.
+
+Channels managed by [Tempelis] will automatically have [default messages pinned].
+For any manually provisioned channels, such as private channels, add the below
+message and pin it.
 ```
 This channel abides to the Kubernetes Code of Conduct - http://git.k8s.io/community/code-of-conduct.md
 Contact conduct@kubernetes.io or an admin in the #slack-admins channel if there is a problem.
 ```
+
+#### Processing User Group Requests
+
+User Group requests should be reviewed for their relation and relevance to the
+Kubernetes community along with their importance to the requesting group. They
+are a useful alias, but can also easily be spammed or abused.
+
+Before signing off on a User Group PR request, ensure all members of the User
+Group have signed off acknowledging they will be added to the group.
+
+After all the User Group members have accepted being added to the group, and two
+Slack Admins have signed off on the request, the PR will be merged. Once merged,
+the User Group will be created.
 
 
 #### Processing Bot, Token, or Webhook Requests
@@ -255,12 +338,40 @@ inactivated accounts] for more information.
 - Not adhering to the code of conduct set forth in DMs and/or channels.
 - Overtly selling products, related or unrelated to Kubernetes.
 
+**BE CAREFUL**
+
+To inactivate a user, and optionally remove their content (spam). First, double
+check you have the correct user by verifying their Slack Member ID. Spammers may
+try and fake or assume the identity of another user.
+
+Once verified, find a message from the offending user. Then select
+"**More actions**", the "**...**" to the right of a message from the offending user.
+Then select "**Report message**".
+
+This will open a contextually aware prompt only available to Slack Admins with
+the options to deactivate the user and remove all content from them over the 
+past "X" minutes/hours.
+
+Report any actions taken to the other slack admins, and if needed the
+[Code of Conduct Committee][cocc].
 
 [coc]: /code-of-conduct.md
 [admins]: ./moderators.md#Slack
 [Slack Archive Download]: https://drive.google.com/drive/folders/1idJkWcDuSfs8nFUm-1BgvzZxCqPMpDCb?usp=sharing
-[Code of Conduct Committee (CoCC)]: /committee-code-of-conduct/README.md
+[cocc]: /committee-code-of-conduct/README.md
 [GitHub Issue]: https://github.com/kubernetes/community/issues/new/choose
 [sig-list]: /sig-list.md
+[tempelis]: http://sigs.k8s.io/slack-infra/tempelis
+[slack-config]: ./slack-config/
+[Channel Documentation]: ./slack-config/README.md#channels
+[channels.yaml]: ./slack-config/channels.yaml
+[restrictions.yaml]: ./slack-config/restrictions.yaml
+[`owners`]: /contributors/guide/owners.md
+[users]: ./slack-config/README.md#users
+[users.yaml]: ./slack-config/users.yaml
+[usergroups.yaml]: ./slack-config/usergroups.yaml
+[User Group Documentation]: ./slack-config/README.md#usergroups
+[Slack Config Documentation]: ./slack-config/README.md
+[default message pinned]: ./slack-config/template.yaml
 [Slack’s policy on inactivated accounts]: https://get.Slack.help/hc/en-us/articles/204475027-Deactivate-a-member-s-account
 [moderation guidelines]: ./moderation.md
