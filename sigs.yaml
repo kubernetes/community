@@ -2174,6 +2174,9 @@ sigs:
     - name: cluster-api-provider-vsphere
       owners:
       - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
+    - name: vsphere-csi-driver
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/vsphere-csi-driver/master/OWNERS
   - name: Windows
     dir: sig-windows
     mission_statement: >

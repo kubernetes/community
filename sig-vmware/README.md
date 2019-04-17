@@ -40,6 +40,9 @@ The following subprojects are owned by sig-vmware:
 - **cluster-api-provider-vsphere**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
+- **vsphere-csi-driver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/vsphere-csi-driver/master/OWNERS
 
 ## GitHub Teams
 
