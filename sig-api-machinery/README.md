@@ -15,6 +15,7 @@ Covers all aspects of API server, API registration and discovery, generic API CR
   * [Meeting notes and Agenda](https://goo.gl/0lbiM9).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R).
 * Kubebuilder and Controller Runtime Meeting: [Wednesdays at 10:00 PT (Pacific Time)]() (monthly - second Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ih-2cgg1bUrLwLVTB9tADlPcVdgnuMNBGbUl4D-0TIk/edit?usp=sharing).
 
 ## Leadership
 
