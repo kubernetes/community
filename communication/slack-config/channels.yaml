@@ -250,6 +250,7 @@ channels:
   - name: sig-windows
   - name: skaffold
   - name: slack-admins
+  - name: slack-infra
   - name: sonobuoy
   - name: spark-operator
   - name: spinnaker
