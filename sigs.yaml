@@ -284,7 +284,6 @@ sigs:
     - name: code-organization
       description: "[Described below](#code-organization)"
       owners:
-      - https://raw.githubusercontent.com/kubernetes/contrib/master/OWNERS # solely to steward moving code _out_ of here to more appropriate places
       - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
       - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
