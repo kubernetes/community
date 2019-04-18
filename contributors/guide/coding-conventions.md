@@ -118,8 +118,8 @@ respectively. Actual application examples belong in /examples.
   - Third-party code
 
     - Go code for normal third-party dependencies is managed using
-[Godep](https://github.com/tools/godep) and is described in the kubernetes
-[godep guide](/contributors/devel/sig-architecture/godep.md)
+[go modules](https://github.com/golang/go/wiki/Modules) and is described in the kubernetes
+[vendoring guide](/contributors/devel/sig-architecture/vendor.md)
 
     - Other third-party code belongs in `/third_party`
       - forked third party Go code goes in `/third_party/forked`
