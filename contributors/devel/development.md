@@ -250,11 +250,11 @@ Run `make help` for additional information on these make targets.
 
 #### Dependency management
 
-Kubernetes uses [`godep`](https://github.com/tools/godep) to manage
+Kubernetes uses [go modules](https://github.com/golang/go/wiki/Modules) to manage
 dependencies.
 
 Developers who need to manage dependencies in the `vendor/` tree should read
-the docs on [using godep to manage dependencies](sig-architecture/godep.md).
+the docs on [using go modules to manage dependencies](/contributors/devel/sig-architecture/vendor.md).
 
 
 ## Build with Bazel/Gazel
