@@ -97,7 +97,8 @@ Repeat until step 4 shows no new transitive version requirements, compared to `m
 
 This happens almost for free.  If you edit Kubernetes code and remove the last
 use of a given dependency, you only need to run `hack/update-vendor.sh`, and the
-tooling will figure out that you don't need that dependency any more and remove it.
+tooling will figure out that you don't need that dependency any more and remove it,
+along with any unused transitive dependencies.
 
 ## Commit messages
 
@@ -152,9 +153,10 @@ Additionally:
 - Look at the `go.mod` changes in `k8s.io/kubernetes`.
   Check that the only changes are what the PR claims them to be. 
 - Look at the `go.mod` changes in the staging components.
-  If they are adding new `replace` directives, this is problematic for
-  consumers of those libraries (it means we are pinned to older versions than
-  would be selected by go when our module is used as a library).
+  Avoid adding new `replace` directives in staging component `go.mod` files.
+  New `replace` directives are problematic for consumers of those libraries,
+  since it means we are pinned to older versions than would be selected by go
+  when our module is used as a library.
 - Check if there is a tagged release we can vendor instead of a random hash
 - Scan the imported code for things like init() functions
 - Look at the Kubernetes code changes and make sure they are appropriate
@@ -162,8 +164,7 @@ Additionally:
 - If this is all good, approve, but don't LGTM, unless you also do code review
   or unless it is trivial (e.g. moving from k/k/pkg/utils -> k/utils).
 
-All new dependency licenses should be reviewed by either Tim Hockin (@thockin)
-or the Steering Committee (@kubernetes/steering-committee) to ensure that they
+All new dependency licenses should be reviewed by @kubernetes/dep-approvers to ensure that they
 are compatible with the Kubernetes project license. It is also important to note
 and flag if a license has changed when updating a dependency, so that these can
 also be reviewed.

@@ -259,8 +259,7 @@ Additionally:
 - If this is all good, approve, but don't LGTM, unless you also do code review
   or unless it is trivial (e.g. moving from k/k/pkg/utils -> k/utils).
 
-All new dependency licenses should be reviewed by either Tim Hockin (@thockin)
-or the Steering Committee (@kubernetes/steering-committee) to ensure that they
+All new dependency licenses should be reviewed by @kubernetes/dep-approvers to ensure that they
 are compatible with the Kubernetes project license. It is also important to note
 and flag if a license has changed when updating a dependency, so that these can
 also be reviewed.
