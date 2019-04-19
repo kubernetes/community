@@ -74,6 +74,9 @@ The following subprojects are owned by sig-contributor-experience:
 - **repo-infra**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
+- **slack-infra**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/slack-infra/master/OWNERS
 - **events**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS

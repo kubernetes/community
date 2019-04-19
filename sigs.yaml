@@ -1043,6 +1043,9 @@ sigs:
     - name: repo-infra
       owners:
       - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
+    - name: slack-infra
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/slack-infra/master/OWNERS
     - name: events
       owners:
         - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
