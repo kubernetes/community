@@ -40,7 +40,6 @@ The following subprojects are owned by sig-storage:
     - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-image-populator/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-iscsi/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-common/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-fc/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-iscsi/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-test/master/OWNERS
