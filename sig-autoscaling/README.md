@@ -75,4 +75,32 @@ Note that the links to display team membership will only work if you are a membe
 * horizontal and vertical autoscaling of pods,
 * setting initial resources for pods,
 * topics related to monitoring pods and gathering their metrics (e.g.: Heapster)
+
+## Demo and Presentation Guidelines
+
+If you want to demo at SIG Autoscaling, we have some guidelines:
+
+- Demos should talk about *open-source* projects relevant to Kubernetes autoscaling, such as:
+
+  * Prototypes for features to be added to Kubernetes
+  * Projects that fill gaps in our infrastructure that we might want to address
+  * Alternative approaches to what we do now that we may want to research
+ 
+- Demos and presentations should be geared towards a techincal audience.
+
+- Demos and presentations should not talk about company history or background,
+  except to provide context for a usecase or issue:
+  
+  * "We're a retail company, and people don't shop as much during at 3am, so we generally
+  see patterns of traffic around times" is acceptable.
+  
+  * Giving a company elevator pitch is not acceptable.
+
+- Non-demo presentations should focus on usecases and issues.  A good rule of thumb is that
+  content should be relevant in some form to a design doc or KEP's motivation or background
+  sections.  If it's not, it probably doesn't belong in the presentation.
+
+- Demos and presentations *should not pitch products*.  If you want to talk about a product that's
+  recently been open-sourced, focus on it from the perspective of why it's useful to the *community*.
+
 <!-- END CUSTOM CONTENT -->
