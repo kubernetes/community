@@ -159,6 +159,9 @@ shouldn't take ownership of anything in the Kubernetes process, as that is a
 role for SIGs. All user group chairs, and others that hold leadership positions
 within a user group must be [community members].
 
+See [user group governance] for more details about forming and disbanding
+User Groups.
+
 To facilitate discoverability and engagement,
 user groups are documented in [sigs.yaml]
 
@@ -213,5 +216,6 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 [short template]: /committee-steering/governance/sig-governance-template-short.md
 [kubernetes repository guidelines]: /github-management/kubernetes-repositories.md
 [working group governance]: /committee-steering/governance/wg-governance.md
+[user group governance]: /committee-steering/governance/ug-governance.md
 [SIG Governance Requirements]: /committee-steering/governance/sig-governance-requirements.md
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/governance.md?pixel)]()
