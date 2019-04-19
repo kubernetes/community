@@ -2359,6 +2359,14 @@ workinggroups:
     mission_statement: >
       Provide an overall architecture that describes both the current policy related implementations as well as future policy related proposals in Kubernetes. Through a collaborative method, we want to present both dev and end user a universal view of policy architecture in Kubernetes.
     charter_link:
+    stakeholder_sigs:
+    - Architecture
+    - Auth
+    - Networking
+    - Node
+    - Multicluster
+    - Scheduling
+    - Storage
     leadership:
       chairs:
       - name: Howard Huang
