@@ -22,6 +22,9 @@ against the kubernetes/org repo.
 - [Core Repositories](#core-repositories)
   * [Goals](#goals-2)
   * [Rules](#rules-1)
+- [Creating Repositories](#creating-repositories)
+  * [Non-staging repositories](#non-staging-repositories)
+  * [Staging repositories](#staging-repositories)
 - [Removing Repositories](#removing-repositories)
   * [Grounds for removal](#grounds-for-removal)
   * [Procedure for removal](#procedure-for-removal)
@@ -133,6 +136,62 @@ ecosystem. Carries the endorsement of the Kubernetes community.
    * All OWNERS must be members of standing as defined by ability to vote in
      Kubernetes steering committee elections. in the Kubernetes community
    * Repository must be approved by SIG-Architecture
+
+## Creating Repositories
+
+### Non-staging repositories
+
+For non-staging repositories, suggestions on how to create
+a new repository are described below.
+
+  * Ensure that the repo creation request has appropriate approvals
+  as per the rules mentioned above.
+  * Using the organization and repository name mentioned in the repo creation
+  request, create a new repo with default GitHub settings.
+  * Set the description as per the repo creation request.
+  * Clone the newly created repo locally.
+  * Copy the latest contents of [kubernetes-template-project] and create an
+  initial commit with the message *Initial commit from the
+  kubernetes-template-project*.
+  * Make the following changes in the next commit:
+    * If the request references a GitHub team to be listed in the `OWNERS`
+    file, update the `OWNERS_ALIASES` file to remove the steering-committee
+    alias and add a new alias for the team with members populated as per the
+    GitHub team. If the request does not reference a GitHub team, remove the
+    `OWNERS_ALIASES` file.
+    * Update the OWNERS file as per the request. If the repo is a
+    [SIG Repository], add a labels entry for the SIG that the repo belongs to.
+    * Update the `SECURITY_CONTACTS` file as per the request. Note that aliases
+    cannot be used in this case so expand the GitHub team, if specified.
+    * Create a new commit with the message *Update OWNERS, OWNERS_ALIASES and
+    SECURITY_CONTACTS*.
+  * Push the new commits directly to the master branch.
+  * If the repo is a [SIG Repository], add a new topic of the form
+  `k8s-sig-<sig-name-repo-belongs-to>` using the *Manage Topics* option.
+  * Create a PR against [kubernetes/org] to add teams as per the [team guidance]
+  for alloting repo admin and write access.
+  * Once the above PR is merged and the postsubmit has run, the new GitHub teams
+  will be created. In the *Collaborators and Teams* section in Settings,
+  assign the new teams appropriate access to the repo.
+  * Ask the author of the repo creation request to add the repo
+  as a part of a subproject in [`sigs.yaml`](/sigs.yaml).
+
+### Staging Repositories
+
+If the repository is a staging repository, there are some deviations
+from the above procedure:
+
+  * The repository **must** have an initial empty commit. The contents of the
+  repo will be populated from staging by the [publishing-bot].
+  * Setup branch protection and enable access to the
+  `stage-bots` team by adding the repo in
+  [`prow/config.yaml`](https://git.k8s.io/test-infra/prow/config.yaml). See
+  [kubernetes/test-infra#9292](https://github.com/kubernetes/test-infra/pull/9292)
+  for an example.
+  * Once the repo has been created, ask [@nikhita] to update the
+  [publishing-bot] configuration to include the repo.
+
+<!-- TODO: Add suggestions for how to migrate existing repos -->
 
 ## Removing Repositories
 
@@ -247,3 +306,9 @@ you are not authorized by them to do so.
 [GitHub's archive feature]:
 https://help.github.com/articles/archiving-a-github-repository/
 [kubernetes-retired]: https://github.com/kubernetes-retired
+[kubernetes-template-project]: https://github.com/kubernetes/kubernetes-template-project
+[kubernetes/org]: https://github.com/kubernetes/org
+[team guidance]: /github-management/org-owners-guide.md#team-guidance
+[SIG Repository]: #sig-repositories
+[publishing-bot]: https://github.com/kubernetes/publishing-bot
+[@nikhita]: https://github.com/nikhita
