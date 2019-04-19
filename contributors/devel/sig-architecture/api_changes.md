@@ -732,7 +732,7 @@ doing!
 
 ## Write end-to-end tests
 
-Check out the [E2E docs](e2e-tests.md) for detailed information about how to
+Check out the [E2E docs](../sig-testing/e2e-tests.md) for detailed information about how to
 write end-to-end tests for your feature.
 
 ## Examples and docs
