@@ -30,6 +30,7 @@ sigs:
       time: "10:00"
       tz: "PT (Pacific Time)"
       frequency: monthly - second Wednesday every month
+      archive_url: https://docs.google.com/document/d/1Ih-2cgg1bUrLwLVTB9tADlPcVdgnuMNBGbUl4D-0TIk/edit?usp=sharing
     contact:
       slack: sig-api-machinery
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery
