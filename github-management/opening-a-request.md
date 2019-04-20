@@ -15,6 +15,10 @@ If you need help with the following:
 Please open an issue against the [kubernetes/org] repository describing your
 issue. If your request is urgent, please escalate to **[@kubernetes/owners]**.
 
+To create a new team, add a member to a team or rename a team, please
+create a PR against the [kubernetes/org] repository according to
+the [team guidance].
+
 ## Bot/Automation issues
 
 If you need help with the following:
@@ -32,3 +36,4 @@ your issue. If your request is urgent, please escalate to the
 [@kubernetes/owners]: https://github.com/orgs/kubernetes/teams/owners
 [kubernetes/test-infra]: https://github.com/kubernetes/test-infra/issues
 [test-infra on-call]: https://go.k8s.io/oncall
+[team guidance]: /github-management/org-owners-guide.md#team-guidance
