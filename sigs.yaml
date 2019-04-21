@@ -1541,7 +1541,6 @@ sigs:
         description: Design Proposals
       - name: sig-openstack-test-failures
         description: Test Failures and Triage
-    subprojects:
   - name: PM
     dir: sig-pm
     mission_statement: >
