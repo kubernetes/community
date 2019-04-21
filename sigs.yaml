@@ -528,6 +528,7 @@ sigs:
       chairs:
       - name: Justin Santa Barbara
         github: justinsb
+        company: Google
       - name: Kris Nova
         github: kris-nova
         company: VMware
@@ -973,6 +974,7 @@ sigs:
           company: Red Hat
         - name: Nikhita Raghunath
           github: nikhita
+          company: Loodse
       emeritus_leads:
         - name: Garrett Rodrigues
           github: grodrigues3
