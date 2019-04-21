@@ -2236,6 +2236,7 @@ sigs:
 workinggroups:
   - name: Resource Management
     dir: wg-resource-management
+    label: resource-management
     mission_statement: >
       Designing and shepherding cross-cutting features around compute resource isolation and utilization.
     stakeholder_sigs:
@@ -2267,6 +2268,7 @@ workinggroups:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-resource-management
   - name: LTS
     dir: wg-lts
+    label: lts
     mission_statement: >
       Answer the question: Does Kubernetes need a longer support
       term? If yes, figure out what that looks like for Kubernetes
@@ -2311,6 +2313,7 @@ workinggroups:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-lts
   - name: Apply
     dir: wg-apply
+    label: apply
     mission_statement: >
       Improve the state of declarative object management by fixing `kubectl apply`,
       moving the logic from the client to the server. This move also enables new/fixed
@@ -2338,6 +2341,7 @@ workinggroups:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-apply
   - name: Multitenancy
     dir: wg-multitenancy
+    label: multitenancy
     mission_statement: >
       Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
     stakeholder_sigs:
@@ -2369,6 +2373,7 @@ workinggroups:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy
   - name: Policy
     dir: wg-policy
+    label: policy
     mission_statement: >
       Provide an overall architecture that describes both the current policy related implementations as well as future policy related proposals in Kubernetes. Through a collaborative method, we want to present both dev and end user a universal view of policy architecture in Kubernetes.
     stakeholder_sigs:
@@ -2409,6 +2414,7 @@ workinggroups:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-policy
   - name: Machine Learning
     dir: wg-machine-learning
+    label: machine-learning
     mission_statement: >
       Identify and fix gaps in Kubernetes to better support Machine Learning applications
     stakeholder_sigs:
@@ -2442,6 +2448,7 @@ workinggroups:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-machine-learning
   - name: IoT Edge
     dir: wg-iot-edge
+    label: iot-edge
     mission_statement: >
        A Working Group dedicated to discussing, designing and documenting using Kubernetes for developing and deploying IoT and Edge specific applications
     stakeholder_sigs:
@@ -2481,6 +2488,7 @@ workinggroups:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge
   - name: Security Audit
     dir: wg-security-audit
+    label: security-audit
     mission_statement: >
       Perform a security audit on k8s with a vendor and produce as artifacts a threat model and whitepaper outlining everything found during the audit.
     leadership:
@@ -2545,6 +2553,7 @@ workinggroups:
         description: Component Standard Discussion
   - name: K8s Infra
     dir: wg-k8s-infra
+    label: k8s-infra
     mission_statement: >
       A Working Group dedicated to migrating Kubernetes project infrastructure
       over to the CNCF, and the creation of teams and processes for ongoing
