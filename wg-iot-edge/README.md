@@ -15,7 +15,7 @@ A Working Group dedicated to discussing, designing and documenting using Kuberne
 * SIG Networking
 
 ## Meetings
-* Regular WG Meeting: [Wednesdays at 17:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
+* Regular WG Meeting: [Wednesdays at 09:00 (Pacific Time) PT](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00 (Pacific Time)&tz=PT).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing).
 * APAC WG Meeting: [Wednesdays at 5:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing).

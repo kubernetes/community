@@ -2456,8 +2456,8 @@ workinggroups:
     meetings:
     - description: Regular WG Meeting
       day: Wednesday
-      time: "17:00"
-      tz: "UTC"
+      time: "09:00 (Pacific Time)"
+      tz: "PT"
       frequency: every four weeks
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
