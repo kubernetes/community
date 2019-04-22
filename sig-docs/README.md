@@ -45,6 +45,9 @@ The following subprojects are owned by sig-docs:
 - **website**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
+- **Kubernetes-blog**
+  - Owners:
+    - https://github.com/kubernetes/website/blob/master/content/en/blog/OWNERS
 
 ## GitHub Teams
 
@@ -53,22 +56,17 @@ Note that the links to display team membership will only work if you are a membe
 
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
+| @kubernetes/kubernetes-blog | [link](https://github.com/orgs/kubernetes/teams/kubernetes-blog) | Kubernetes blog |
 | @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation maintainers |
 | @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR reviews |
 | @kubernetes/sig-docs-en-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners) | English content (default) |
-| @kubernetes/sig-docs-es-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-es-owners) | Spanish content |
-| @kubernetes/sig-docs-de-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-de-owners) | German content |
-| @kubernetes/sig-docs-fr-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-fr-owners) | French content |
-| @kubernetes/sig-docs-it-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-it-owners) | Italian content |
-| @kubernetes/sig-docs-ja-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | Japanese content |
-| @kubernetes/sig-docs-ko-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | Korean content |
-| @kubernetes/sig-docs-zh-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) | Chinese content |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
 * Discuss documentation and docs issues for kubernetes.io
-* Plan docs releases for kubernetes
-* Suggest improvements to user onboarding through better documentation on Kubernetes.io
-* Identify and implement ways to get documentation feedback and metrics
-* Help community contributors get involved in kubernetes documentation
+* Content for the official Kubernetes blog
+* Lead docs releases for Kubernetes
+* Suggest improvements to user onboarding through better documentation on kubernetes.io
+* Documentation metrics and user feedback
+* Help community contributors get involved in Kubernetes documentation
 <!-- END CUSTOM CONTENT -->
