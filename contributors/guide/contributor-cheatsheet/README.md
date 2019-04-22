@@ -79,7 +79,6 @@ make your GitHub contribution experience better.
 - social@cncf.io - Contact the CNCF social team; blog, twitter account, and other social properties.
 - steering@kubernetes.io - Mail the steering committee. Public address with public archive.
 - steering-private@kubernetes.io - Mail the steering committee privately, for sensitive items.
-- helpdesk@rt.linuxfoundation.org - Mail the LF helpdesk for help with CLA issues.
 - conduct@kubernetes.io - Contact the Code of Conduct committee, private mailing list.
 
 ## Communicating Effectively on GitHub
