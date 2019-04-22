@@ -179,6 +179,10 @@ type CSITranslator interface {
   // by the `Driver` field in the CSI Source. The input PV object will not be modified.
   TranslateCSIPVToInTree(pv *v1.PersistentVolume) (*v1.PersistentVolume, error) {
 
+  // TranslateInTreeVolumeToCSI takes an inline intree volume and will translate
+  // the in-tree volume source to a CSIPersistentVolumeSource
+  // A PV object containing the CSIPersistentVolumeSource in it's spec is returned
+  TranslateInTreeInlineVolumeToCSI(volume *v1.Volume (*v1.PersistentVolume, error) {
 
   // IsMigratableByName tests whether there is Migration logic for the in-tree plugin
   // for the given `pluginName`
@@ -187,10 +191,14 @@ type CSITranslator interface {
   // GetCSINameFromIntreeName maps the name of a CSI driver to its in-tree version
   GetCSINameFromIntreeName(pluginName string) (string, error) {
 
+  // GetAccessModeForVolume returns a reasonable access mode based on readonly flag
+  GetAccessModeForVolume(readOnly bool, pluginName string) (csi.VolumeCapability_AccessMode, error) {
+
+  // GetMountOptions returns a reasonable access mode based on readonly flag
+  GetMountOptions(pluginName string) (string) {
 
   // IsPVMigratable tests whether there is Migration logic for the given Persistent Volume
   IsPVMigratable(pv *v1.PersistentVolume) bool {
-
 
   // IsInlineMigratable tests whether there is Migration logic for the given Inline Volume
   IsInlineMigratable(vol *v1.Volume) bool {
@@ -237,15 +245,23 @@ with the in-tree plugin, the VolumeAttachment object becomes orphaned.
 ### In-line Volumes
 
 In-line controller calls are a special case because there is no PV. In this case
-we will translate the volume source and copy it to the field
-VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineVolumeSource. The
-VolumeAttachment name must be made with the CSI Translated version of the
+we will translate the in-line volume source into a CSIPersistentVolumeSource 
+and copy it to the field `VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineCSIVolumeSource`.
+The VolumeAttachment name must be made with the CSI Translated version of the
 VolumeSource in order for it to be discoverable by Detach and WaitForAttach
 (described in more detail below).
 
-The CSI Attacher will have to be modified to also check this location for a
-source as well as checking for the `pvName`. Only one of the two may be
-specified.
+The CSI Attacher will have to be modified to also check for `InlineCSIVolumeSource`
+besides the `PersistentVolumeName`. Only one of the two may be specified. If `PersistentVolumeName` 
+is empty and `InlineCSIVolumeSource` is set, the CSI Attacher will not look for 
+an associated PV in it's PV informer cache as it implies the inline volume scenario 
+(where no PVs are created).
+
+The CSI Attacher will have access to most of the data it requires for handling in-line 
+volumes to pass to the CSI plugins from `InlineCSIVolumeSource`. However a few fields
+require special handling due to the absence of a PV. Specifically, reasonable 
+`MountOptions` and `AccessModes` need to be determined by plugin-specific APIs:
+`GetAccessModeForVolume` and `GetMountOptions`.
 
 The new VolumeAttachmentSource API will look as such:
 ```
@@ -277,6 +293,8 @@ The attachment name is usually a hash of the volume name, CSI Driver name, and
 Node name. We are able to get all this information for Detach and WaitForAttach
 by translating the in-tree inline volume source to a CSI volume source before
 passing it to to the volume operations.
+
+The translation logic for inline volumes needs to set things up 
 
 There is currently a race condition in in-tree inline volumes where if a pod
 object is deleted and the ADC restarts we lose the information for the inline
