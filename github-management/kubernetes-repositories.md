@@ -183,13 +183,15 @@ from the above procedure:
 
   * The repository **must** have an initial empty commit. The contents of the
   repo will be populated from staging by the [publishing-bot].
+  * Grant the [@kubernetes/stage-bots] team admin access to the repo.
   * Setup branch protection and enable access to the
   `stage-bots` team by adding the repo in
   [`prow/config.yaml`](https://git.k8s.io/test-infra/prow/config.yaml). See
   [kubernetes/test-infra#9292](https://github.com/kubernetes/test-infra/pull/9292)
   for an example.
-  * Once the repo has been created, ask [@nikhita] to update the
-  [publishing-bot] configuration to include the repo.
+  * Once the repo has been created, add the repo to
+  [`hack/fetch-all-latest-and-push.sh`](https://git.k8s.io/publishing-bot/hack/fetch-all-latest-and-push.sh)
+  in the [publishing-bot] repo.
 
 <!-- TODO: Add suggestions for how to migrate existing repos -->
 
@@ -234,6 +236,8 @@ steps:
   * All webhooks, apps, integrations or services are removed
   * GitHub Pages are disabled
   * The repo is marked as archived using [GitHub's archive feature]
+  * Remove all teams associated with the repo
+  * Remove the repo from [sigs.yaml]
   * The removal is announced on the kubernetes-dev mailing list and community
     meeting
 
@@ -311,4 +315,5 @@ https://help.github.com/articles/archiving-a-github-repository/
 [team guidance]: /github-management/org-owners-guide.md#team-guidance
 [SIG Repository]: #sig-repositories
 [publishing-bot]: https://github.com/kubernetes/publishing-bot
-[@nikhita]: https://github.com/nikhita
+[@kubernetes/stage-bots]: https://github.com/orgs/kubernetes/teams/stage-bots
+[sigs.yaml]: /sigs.yaml
