@@ -82,19 +82,30 @@ for all orgs going forward.  Notable discrepancies at the moment:
 
 Guidelines on how to create and structure teams are described below:
 
-- Teams should not have any `maintainers` and everyone who should be part of
-the team should be added in the `members` list.
-  - Note that because of how the GiHub API works, org admins still need to be
-    in the `maintainers` list for the teams they are a part of.
+#### Structure
+
+**Renaming a team**:
+
+To rename a team, add the `previously: <old-team-name>` field to the team
+and rename the `name` of the team to the new name.
+
+**Creating a team**:
+
+- Unless a member is part of the [@kubernetes/owners] team, they needed to be
+  added to the `members` list in the team. Members of the
+  [@kubernetes/owners] team *must* be added to the `maintainers` list because
+  of how the GitHub API works.
 - The `privacy` of a team *must* be `closed`.
-- A new team can be created or a member can be added to a team by
+
+#### Process
+
+A new team can be created or a member can be added to a team by
 creating a PR against the [kubernetes/org] repo. The PR must be
 approved by the relevant `OWNERS` or the SIG leads.
-  - For example, addition of a member to `foo-maintainers` must be approved
-    by the `OWNERS` of the repo `foo` or the leads of the SIG associated
-    with the repo.
-- To rename a team, add the `previously: <old-team-name>` field to the team
-and rename the `name` of the team to the new name.
+
+For example, addition of a member to `foo-maintainers` must be approved
+by the `OWNERS` of the repo `foo` or the leads of the SIG associated
+with the repo.
 
 ## Project Board Guidance
 
