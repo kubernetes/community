@@ -43,7 +43,6 @@ The following subprojects are owned by sig-architecture:
   - Description: [Described below](#architecture-and-api-governance)
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/architecture-tracking/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
 - **conformance-definition**
