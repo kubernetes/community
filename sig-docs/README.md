@@ -45,9 +45,6 @@ The following subprojects are owned by sig-docs:
 - **website**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
-- **website-metadata**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/website-metadata/master/OWNERS
 
 ## GitHub Teams
 
