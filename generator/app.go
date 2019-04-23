@@ -52,11 +52,23 @@ var (
 	templateDir      = "generator"
 )
 
+// FoldedString is a string that will be serialized in FoldedStyle by go-yaml
+type FoldedString string
+
+// MarshalYAML customizes how FoldedStrings will be serialized by go-yaml
+func (x FoldedString) MarshalYAML() (interface{}, error) {
+	return &yaml.Node{
+		Kind:  yaml.ScalarNode,
+		Style: yaml.FoldedStyle,
+		Value: string(x),
+	}, nil
+}
+
 // Person represents an individual person holding a role in a group.
 type Person struct {
+	GitHub  string
 	Name    string
 	Company string
-	GitHub  string
 }
 
 // Meeting represents a regular meeting for a group.
@@ -66,53 +78,53 @@ type Meeting struct {
 	Time          string
 	TZ            string
 	Frequency     string
-	URL           string
-	ArchiveURL    string `yaml:"archive_url"`
-	RecordingsURL string `yaml:"recordings_url"`
+	URL           string `yaml:",omitempty"`
+	ArchiveURL    string `yaml:"archive_url,omitempty"`
+	RecordingsURL string `yaml:"recordings_url,omitempty"`
 }
 
 // Contact represents the various contact points for a group.
 type Contact struct {
-	Slack              string
-	MailingList        string        `yaml:"mailing_list"`
-	PrivateMailingList string        `yaml:"private_mailing_list"`
-	GithubTeams        []GithubTeams `yaml:"teams"`
+	Slack              string       `yaml:",omitempty"`
+	MailingList        string       `yaml:"mailing_list,omitempty"`
+	PrivateMailingList string       `yaml:"private_mailing_list,omitempty"`
+	GithubTeams        []GithubTeam `yaml:"teams,omitempty"`
 }
 
-// GithubTeams represents a specific Github Team.
-type GithubTeams struct {
+// GithubTeam represents a specific Github Team.
+type GithubTeam struct {
 	Name        string
-	Description string
+	Description string `yaml:",omitempty"`
 }
 
 // Subproject represents a specific subproject owned by the group
 type Subproject struct {
 	Name        string
-	Description string
-	Contact     *Contact
+	Description string   `yaml:",omitempty"`
+	Contact     *Contact `yaml:",omitempty"`
 	Owners      []string
-	Meetings    []Meeting
+	Meetings    []Meeting `yaml:",omitempty"`
 }
 
 // LeadershipGroup represents the different groups of leaders within a group
 type LeadershipGroup struct {
 	Chairs         []Person
-	TechnicalLeads []Person `yaml:"tech_leads"`
-	EmeritusLeads  []Person `yaml:"emeritus_leads"`
+	TechnicalLeads []Person `yaml:"tech_leads,omitempty"`
+	EmeritusLeads  []Person `yaml:"emeritus_leads,omitempty"`
 }
 
 // Group represents either a Special Interest Group (SIG) or a Working Group (WG)
 type Group struct {
-	Name             string
 	Dir              string
-	MissionStatement string `yaml:"mission_statement,omitempty"`
-	CharterLink      string `yaml:"charter_link,omitempty"`
+	Name             string
+	MissionStatement FoldedString `yaml:"mission_statement,omitempty"`
+	CharterLink      string       `yaml:"charter_link,omitempty"`
+	StakeholderSIGs  []string     `yaml:"stakeholder_sigs,omitempty"`
 	Label            string
 	Leadership       LeadershipGroup `yaml:"leadership"`
 	Meetings         []Meeting
 	Contact          Contact
-	Subprojects      []Subproject
-	StakeholderSIGs  []string `yaml:"stakeholder_sigs,omitempty"`
+	Subprojects      []Subproject `yaml:",omitempty"`
 }
 
 // DirName returns the directory that a group's documentation will be
@@ -128,6 +140,57 @@ type Context struct {
 	WorkingGroups []Group
 	UserGroups    []Group
 	Committees    []Group
+}
+
+// PrefixToGroupMap returns a map of prefix to groups, useful for iteration over all groups
+func (c *Context) PrefixToGroupMap() map[string][]Group {
+	return map[string][]Group{
+		"sig":       c.Sigs,
+		"wg":        c.WorkingGroups,
+		"ug":        c.UserGroups,
+		"committee": c.Committees,
+	}
+}
+
+// Sort sorts all lists within the Context struct
+func (c *Context) Sort() {
+	for _, groups := range c.PrefixToGroupMap() {
+		sort.Slice(groups, func(i, j int) bool {
+			return groups[i].Dir < groups[j].Dir
+		})
+		for _, group := range groups {
+			sort.Strings(group.StakeholderSIGs)
+			for _, people := range [][]Person{
+				group.Leadership.Chairs,
+				group.Leadership.TechnicalLeads,
+				group.Leadership.EmeritusLeads} {
+				sort.Slice(people, func(i, j int) bool {
+					// This ensure OWNERS / OWNERS_ALIAS files are ordered by github
+					return people[i].GitHub < people[j].GitHub
+				})
+			}
+			sort.Slice(group.Meetings, func(i, j int) bool {
+				return group.Meetings[i].Description < group.Meetings[j].Description
+			})
+			sort.Slice(group.Contact.GithubTeams, func(i, j int) bool {
+				return group.Contact.GithubTeams[i].Name < group.Contact.GithubTeams[j].Name
+			})
+			sort.Slice(group.Subprojects, func(i, j int) bool {
+				return group.Subprojects[i].Name < group.Subprojects[j].Name
+			})
+			for _, subproject := range group.Subprojects {
+				if subproject.Contact != nil {
+					sort.Slice(subproject.Contact.GithubTeams, func(i, j int) bool {
+						return subproject.Contact.GithubTeams[i].Name < subproject.Contact.GithubTeams[j].Name
+					})
+				}
+				sort.Strings(subproject.Owners)
+				sort.Slice(subproject.Meetings, func(i, j int) bool {
+					return subproject.Meetings[i].Description < subproject.Meetings[j].Description
+				})
+			}
+		}
+	}
 }
 
 func pathExists(path string) bool {
@@ -182,14 +245,14 @@ func getExistingContent(path string, fileFormat string) (string, error) {
 }
 
 var funcMap = template.FuncMap{
-	"tzUrlEncode": tzUrlEncode,
+	"tzUrlEncode": tzURLEncode,
 	"trimSpace":   strings.TrimSpace,
 }
 
 // tzUrlEncode returns a url encoded string without the + shortcut. This is
 // required as the timezone conversion site we are using doesn't recognize + as
 // a valid url escape character.
-func tzUrlEncode(tz string) string {
+func tzURLEncode(tz string) string {
 	return strings.Replace(url.QueryEscape(tz), "+", "%20", -1)
 }
 
@@ -289,52 +352,54 @@ func createGroupReadme(groups []Group, prefix string) error {
 	return nil
 }
 
+// readSigsYaml decodes yaml stored in a file at path into the
+// specified yaml.Node
+func readYaml(path string, data interface{}) error {
+	file, err := os.Open(path)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	decoder := yaml.NewDecoder(file)
+	decoder.KnownFields(true)
+	return decoder.Decode(data)
+}
+
+// writeSigsYaml writes the specified data to a file at path
+// indent is set to 2 spaces
+func writeYaml(data interface{}, path string) error {
+	file, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	enc := yaml.NewEncoder(file)
+	enc.SetIndent(2)
+	return enc.Encode(data)
+}
+
 func main() {
-	yamlData, err := ioutil.ReadFile(filepath.Join(baseGeneratorDir, sigsYamlFile))
-	if err != nil {
-		log.Fatal(err)
-	}
-
+	yamlPath := filepath.Join(baseGeneratorDir, sigsYamlFile)
 	var ctx Context
-	err = yaml.Unmarshal(yamlData, &ctx)
+
+	err := readYaml(yamlPath, &ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	sort.Slice(ctx.Sigs, func(i, j int) bool {
-		return strings.ToLower(ctx.Sigs[i].Name) <= strings.ToLower(ctx.Sigs[j].Name)
-	})
+	ctx.Sort()
 
-	sort.Slice(ctx.WorkingGroups, func(i, j int) bool {
-		return strings.ToLower(ctx.WorkingGroups[i].Name) <= strings.ToLower(ctx.WorkingGroups[j].Name)
-	})
-
-	sort.Slice(ctx.UserGroups, func(i, j int) bool {
-		return strings.ToLower(ctx.UserGroups[i].Name) <= strings.ToLower(ctx.UserGroups[j].Name)
-	})
-
-	sort.Slice(ctx.Committees, func(i, j int) bool {
-		return strings.ToLower(ctx.Committees[i].Name) <= strings.ToLower(ctx.Committees[j].Name)
-	})
-
-	err = createGroupReadme(ctx.Sigs, "sig")
+	// Write the Context struct back to yaml to enforce formatting
+	err = writeYaml(&ctx, yamlPath)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	err = createGroupReadme(ctx.WorkingGroups, "wg")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	err = createGroupReadme(ctx.UserGroups, "ug")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	err = createGroupReadme(ctx.Committees, "committee")
-	if err != nil {
-		log.Fatal(err)
+	for prefix, groups := range ctx.PrefixToGroupMap() {
+		err = createGroupReadme(groups, prefix)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 
 	fmt.Println("Generating sig-list.md")
