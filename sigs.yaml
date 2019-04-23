@@ -1125,9 +1125,6 @@ sigs:
     - name: website
       owners:
       - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
-    - name: website-metadata
-      owners:
-      - https://raw.githubusercontent.com/kubernetes-sigs/website-metadata/master/OWNERS
   - name: GCP
     dir: sig-gcp
     mission_statement: >
