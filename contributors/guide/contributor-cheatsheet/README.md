@@ -1,20 +1,24 @@
 # Kubernetes Contributor Cheat Sheet
 
-A list of common resources when contributing to Kubernetes, tips, tricks, and common best practices used within the
-Kubernetes project. It is a "TL;DR" or quick reference of useful information to
-make your GitHub contribution experience better.
+A list of common resources when contributing to Kubernetes, tips, tricks, and
+common best practices used within the Kubernetes project. It is a "TL;DR" or
+quick reference of useful information to make your GitHub contribution experience
+better.
 
 **Table of Contents**
-- [Getting Started](#getting-started)
-- [Workflow](#workflow)
-- [SIGs and Working Groups](#sigs-and-working-groups)
-- [Community](#community)
-- [Tests](#tests)
-- [Email Aliases](#email-aliases)
+- [Helpful Resources](#Helpful-Resources)
+  - [Getting Started](#Getting-Started)
+  - [SIGs and other Groups](#SIGS-and-Other-Groups)
+  - [Community](#Community)
+  - [Important Email Aliases](#Important-Email-Aliases)
+  - [Workflow](#Workflow)
+  - [Tests](#Tests)
+  - [Other Useful Links](#Other-Useful-Links)
 - [Communicating effectively on GitHub](#Communicating-Effectively-on-GitHub)
   - [How to be Excellent to Each Other](#How-to-be-Excellent-to-Each-Other)
     - [Examples of Good/Bad Communication](#Examples-of-GoodBad-Communication)
 - [Submitting a Contribution](#Submitting-a-Contribution)
+  - [Signing the CLA](#signing-the-CLA)
   - [Opening and Responding to Issues](#Opening-and-Responding-to-Issues)
     - [Creating an Issue](#Creating-an-Issue)
     - [Responding to an Issue](#Responding-to-an-Issue)
@@ -28,58 +32,75 @@ make your GitHub contribution experience better.
     - [Adding Upstream](#Adding-Upstream)
     - [Keeping Your Fork in Sync](#Keeping-Your-Fork-in-Sync)
   - [Squashing Commits](#Squashing-Commits)
-- [Other](#other)
 
-| Repo | PRs | Issues | Notes |
-| ---- | --- | ------ | ----- |
-| [Kubernetes](https://github.com/kubernetes/kubernetes) | [PRs](https://github.com/kubernetes/kubernetes/pulls) | [Issues](https://github.com/kubernetes/kubernetes/issues) | [Meeting Notes](http://bit.ly/kubenotes)
-| [Community](https://github.com/kubernetes/community) | [PRs](https://github.com/kubernetes/community/pulls) | [Issues](https://github.com/kubernetes/community/issues) |
-| [Docs](https://github.com/kubernetes/website) | [PRs](https://github.com/kubernetes/website/pulls) | [Issues](https://github.com/kubernetes/website/issues)
+---
 
-## Getting Started
+## Helpful Resources
 
-- [Contributor Guide](https://github.com/kubernetes/community/blob/master/contributors/guide/README.md) 
+### Getting Started
 
-## Workflow
-
-- [Gubernator Dashboard - k8s.reviews](https://k8s-gubernator.appspot.com/pr)
-- [Tide](https://prow.k8s.io/tide)
-- [Bot commands](https://go.k8s.io/bot-commands)
-- [GitHub labels](https://go.k8s.io/github-labels)
-- [Release Buckets](https://gcsweb.k8s.io/gcs/kubernetes-release/)
-- Developer Guide
-  - [Cherry Picking Guide](/contributors/devel/sig-release/cherry-picks.md)
-- [Kubernetes Code Search](https://cs.k8s.io/), maintained by [@dims](https://github.com/dims)
+- [Contributor Guide] - Guide on how to begin contributing to Kubernetes
+  Project.
+- [Developer Guide] - Guide to contributing code directly to the Kubernetes
+  Project.
 
 
-## SIGs and Working Groups
+### SIGs and Other Groups
 
-- [Master SIG list](/sig-list.md#master-sig-list)
+- [Master Group List][sigs]
 
-## Community
+### Community
 
-- [Calendar](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com)
-- [kubernetes-dev](https://groups.google.com/forum/#!forum/kubernetes-dev)
-- [Kubernetes Forums](https://discuss.kubernetes.io)
-- [Slack channels](http://slack.k8s.io/)
-- [StackOverflow](https://stackoverflow.com/questions/tagged/kubernetes)
-- [YouTube Channel](https://www.youtube.com/c/KubernetesCommunity/)
+- [Calendar] - View all the Kubernetes Community events (SIG/WG meetings,
+  events etc.)
+- [kubernetes-dev] - The Kubernetes development mailing list
+- [Kubernetes Forum] - Official Kubernetes forum.
+- [Slack channels] - Official Kubernetes Slack.
+- [StackOverflow] - A place to ask your Kubernetes end-user questions.
+- [YouTube Channel] - Official channel for the Kubernetes community.
 
-## Tests
 
-- [Current Test Status](https://prow.k8s.io/)
-- [Aggregated Failures](https://go.k8s.io/triage)
-- [Test Grid](https://testgrid.k8s.io)
-- [Test Health](https://go.k8s.io/test-health)
-- [Test History](https://go.k8s.io/test-history)
+### Workflow
 
-## Email Aliases
+- [Gubernator Dashboard] - View incoming and outgoing Pull Requests that require
+  your attention.
+- [Prow] - Kubernetes CI/CD System.
+- [Tide] - Prow plugin that manages merges and tests. [Tide Dashboard]
+- [Bot commands] - Commands used to interact with Kubernetes Bots (examples:
+  `/cc`, `/lgtm`, and `/retest`)
+- [GitHub labels] - List of labels used throughout the Kubernetes Project
+- [Kubernetes Code Search], maintained by [@dims]
 
-- community@kubernetes.io - Mail someone on the community team (SIG Contributor Experience) about a community issue.
-- social@cncf.io - Contact the CNCF social team; blog, twitter account, and other social properties.
-- steering@kubernetes.io - Mail the steering committee. Public address with public archive.
-- steering-private@kubernetes.io - Mail the steering committee privately, for sensitive items.
-- conduct@kubernetes.io - Contact the Code of Conduct committee, private mailing list.
+
+### Tests
+
+- [Prow] - Kubernetes CI/CD System.
+- [Test Grid] - View historical tests and their associated information.
+- [Triage Dashboard] - Aggregates similar failures together for better
+  troubleshooting. 
+- [Velodrome] - Dashboard to track job and test health.
+
+
+### Important Email Aliases
+
+- community@kubernetes.io - Mail someone on the community team (SIG Contributor
+  Experience) about a community issue.
+- conduct@kubernetes.io - Contact the Code of Conduct committee, private mailing
+  list.
+- steering@kubernetes.io - Mail the steering committee. Public address with
+  public archive.
+- steering-private@kubernetes.io - Mail the steering committee privately, for
+  sensitive items.
+- social@cncf.io - Contact the CNCF social team; blog, twitter account, and
+  other social properties.
+
+
+### Other Useful Links
+
+- [Developer Statistics] - View developer statistics for all CNCF managed
+  projects.
+
+---
 
 ## Communicating Effectively on GitHub
 
@@ -106,8 +127,19 @@ why it does not meet the requirements to be merged.
 
 😞 “Why isn’t this following the API conventions? This should be done elsewhere!”
 
+---
 
 ## Submitting a Contribution
+
+### Signing the CLA
+
+Before you can submit a contribution, you must [sign the Contributor License
+Agreement(CLA)][cla]. The Kubernetes project can _only_ accept a contribution
+if you or your company has signed the CLA.
+
+Should you encounter any problems signing the CLA, follow the [CLA
+troubleshooting guidelines].
+
 
 ### Opening and Responding to Issues
 
@@ -115,7 +147,7 @@ GitHub Issues are the primary means of tracking things such as bug reports,
 enhancement requests, or reporting other issues such as failing tests. They are
 **not** intended for [user support requests]. For those, please check with the
 [troubleshooting guide], report the problem to [Stack Overflow] or follow up on
-the Kubernetes [User forum].
+the [Kubernetes forum].
 
 **References:**
 - [Labels]
@@ -134,6 +166,7 @@ the Kubernetes [User forum].
 - Be selective when assigning issues using [`/assign @<username>`][assign] or
   [`/cc @<username>`][cc]. Your issue will be triaged more effectively applying
   correct labels over assigning more people to the issue.
+
 
 #### Responding to an Issue
 
@@ -156,6 +189,7 @@ other forms of work that would be stored within a git repository.
 - [Prow commands][commands]
 - [Pull request process]
 - [Github workflow]
+
 
 #### Creating a Pull Request
 
@@ -212,11 +246,6 @@ What's in that PR:
 
 #### Troubleshooting a Pull Request
 
-<!---
-include link to CI troubleshooting when  this is merged:
-https://github.com/kubernetes/community/pull/3143
---->
-
 After your PR is proposed, a series of tests are executed by the Kubernetes CI
 platform, [Prow]. If any of the tests failed, the [k8s-ci-robot][prow]
 will reply to the PR with links to the failed tests and available logs.
@@ -226,6 +255,8 @@ Pushing new commits to your PR will automatically trigger the tests to re-run.
 Occasionally there can be issues with Kubernetes CI platform. These can occur
 for a wide variety of reasons even if your contribution passes all local
 tests. You can trigger a re-run of the tests with the `/retest` command.
+
+For more information on troubleshooting specific tests, see the [Testing Guide].
 
 
 ### Labels
@@ -245,6 +276,7 @@ Frequently used labels:
   [area][labels].
 - [`/kind <category>`][kind] [Categorizes][labels] the issue or PR.
 
+---
 
 ## Working Locally
 
@@ -314,10 +346,27 @@ phase of a PR revision. If you are unsure if you should squash your commits, it
 is better to err on the side of having more and leave it up to the judgement of
 the other contributors assigned to review and approve your PR.
 
-## Other
 
-- [Developer Statistics](https://k8s.devstats.cncf.io)
 
+[contributor guide]: /contributors/guide/README.md
+[developer guide]: /contributors/devel/README.md
+[gubernator dashboard]: https://gubernator.k8s.io/pr
+[prow]: https://prow.k8s.io
+[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide dashboard]: https://prow.k8s.io/tide
+[bot commands]: https://go.k8s.io/bot-commands
+[gitHub labels]: https://go.k8s.io/github-labels
+[Kubernetes Code Search]: https://cs.k8s.io/
+[@dims]: https://github.com/dims
+[calendar]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[slack channels]: http://slack.k8s.io/
+[stackOverflow]: https://stackoverflow.com/questions/tagged/kubernetes
+[youtube channel]: https://www.youtube.com/c/KubernetesCommunity/
+[triage dashboard]: https://go.k8s.io/triage
+[test grid]: https://testgrid.k8s.io
+[velodrome]: https://go.k8s.io/test-health
+[developer statistics]: https://k8s.devstats.cncf.io
 [code of conduct]: /code-of-conduct.md
 [user support request]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request
 [troubleshooting guide]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
@@ -326,12 +375,15 @@ the other contributors assigned to review and approve your PR.
 [pull request process]: /contributors/guide/pull-requests.md
 [github workflow]: /contributors/guide/github-workflow.md
 [prow]: https://git.k8s.io/test-infra/prow#prow
+[cla]: /CLA.md#how-do-i-sign
+[cla troubleshooting guidelines]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help
 [kind]: https://prow.k8s.io/command-help#kind
 [cc]: https://prow.k8s.io/command-help#hold
 [hold]: https://prow.k8s.io/command-help#hold
 [assign]: https://prow.k8s.io/command-help#assign
 [SIGs]: /sig-list.md
+[testing guide]: /contributors/devel/sig-testing/testing.md
 [labels]: https://git.k8s.io/test-infra/label_sync/labels.md
 [trivial fix]: /contributors/guide/pull-requests.md#10-trivial-edits
 [Github workflow]: /contributors/guide/github-workflow.md#3-branch
