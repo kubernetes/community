@@ -40,7 +40,7 @@ reply with the `/ok-to-test` command on a single line to begin CI testing.
 
 ## FAQ:
 
-#### How can I ask my PR to be tested again for Jenkins failures?
+#### How can I ask my PR to be tested again for test failures?
 
 PRs should only need to be manually re-tested if you believe there was a flake
 during the original test. It would be good to file flakes as an
