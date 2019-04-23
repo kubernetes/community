@@ -191,11 +191,11 @@ type CSITranslator interface {
   // GetCSINameFromIntreeName maps the name of a CSI driver to its in-tree version
   GetCSINameFromIntreeName(pluginName string) (string, error) {
 
-  // GetAccessModeForVolume returns a reasonable access mode based on readonly flag
-  GetAccessModeForVolume(readOnly bool, pluginName string) (csi.VolumeCapability_AccessMode, error) {
+  // GetAccessModes returns a default access mode based on the plugin and volume spec
+  GetAccessModes(pluginName string, vol *v1.Volume) (csi.VolumeCapability_AccessMode, error) {
 
-  // GetMountOptions returns a reasonable access mode based on readonly flag
-  GetMountOptions(pluginName string) (string) {
+  // GetMountOptions returns a default mount option based on the plugin and volume spec
+  GetMountOptions(pluginName string, vol *v1.Volume) (string) {
 
   // IsPVMigratable tests whether there is Migration logic for the given Persistent Volume
   IsPVMigratable(pv *v1.PersistentVolume) bool {
@@ -258,10 +258,22 @@ an associated PV in it's PV informer cache as it implies the inline volume scena
 (where no PVs are created).
 
 The CSI Attacher will have access to most of the data it requires for handling in-line 
-volumes to pass to the CSI plugins from `InlineCSIVolumeSource`. However a few fields
-require special handling due to the absence of a PV. Specifically, reasonable 
-`MountOptions` and `AccessModes` need to be determined by plugin-specific APIs:
-`GetAccessModeForVolume` and `GetMountOptions`.
+volumes attachment (through the CSI plugins) from `InlineCSIVolumeSource`. However 
+a few fields require special handling due to the absence of a PV where such fields
+are assigned desired values. Specifically, reasonable `MountOptions` and 
+`AccessModes` settings need to be determined by plugin-specific APIs:
+`GetMountOptions` and `GetAccessModes` that sets the default values for
+these parameters and satisfies the broadest of scenarios supported by the CSI
+plugin. Some specific example:
+1. If GCEPersistentDiskVolumeSource.ReadOnly is true, `GetAccessModes` for GCE PD
+can return csi.VolumeCapability_AccessMode_MULTI_NODE_READER_ONLY. If 
+If GCEPersistentDiskVolumeSource.ReadOnly is false, `GetAccessModes` for GCE PD 
+can return csi.VolumeCapability_AccessMode_SINGLE_NODE_WRITER
+2. The EBS CSI driver only supports csi.VolumeCapability_AccessMode_SINGLE_NODE_WRITER
+today . So `GetAccessModes` for EBS can always return 
+csi.VolumeCapability_AccessMode_SINGLE_NODE_WRITER until further modes are supported.
+3. For shared FS plugins like AzureFile or CephFS, `GetAccessModes` may return 
+csi.VolumeCapability_AccessMode_MULTI_NODE_MULTI_WRITER
 
 The new VolumeAttachmentSource API will look as such:
 ```
@@ -293,8 +305,6 @@ The attachment name is usually a hash of the volume name, CSI Driver name, and
 Node name. We are able to get all this information for Detach and WaitForAttach
 by translating the in-tree inline volume source to a CSI volume source before
 passing it to to the volume operations.
-
-The translation logic for inline volumes needs to set things up 
 
 There is currently a race condition in in-tree inline volumes where if a pod
 object is deleted and the ADC restarts we lose the information for the inline
