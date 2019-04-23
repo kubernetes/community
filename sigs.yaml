@@ -1582,7 +1582,7 @@ sigs:
       recordings_url: https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ
     contact:
       slack: sig-pm
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-pm
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-pm
     subprojects:
     - name: enhancements
       owners:
