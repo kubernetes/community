@@ -11,16 +11,16 @@ how to best staff for that function and fill in other roles. Each role will idea
 CNCF will provide an events manager dedicated to each summit that will help us put
 the logistical and operational pieces together.
 
-| Role | Handbook | Notes |
-| --- | --- | --- |
-| Events Lead/Chair | TODO | May have more than one |
-| Project Manager | TODO |  |
-| Registration Lead | TODO | |
-| Marketing Lead | TODO |  |
-| CNCF Events Manager | CNCF | CNCF will staff this |
-| Overall Content Lead | TODO |  |
-| New Contributor Workshop Lead | TODO | Events Lead and General Content will determine this |
-| Accessibility, Inclusiveness, and Diversity | TODO |   |    
+| Role                                        | Handbook                | Notes                                               |
+|---------------------------------------------|-------------------------|-----------------------------------------------------|
+| Events Lead/Chair                           | TODO                    | May have more than one                              |
+| Project Manager                             | TODO                    |                                                     |
+| Registration Lead                           | [Registration Handbook] |                                                     |
+| Marketing Lead                              | TODO                    |                                                     |
+| CNCF Events Manager                         | CNCF                    | CNCF will staff this                                |
+| Overall Content Lead                        | TODO                    |                                                     |
+| New Contributor Workshop Lead               | TODO                    | Events Lead and General Content will determine this |
+| Accessibility, Inclusiveness, and Diversity | TODO                    |                                                     |   
 
 
 ## Handbooks:
@@ -92,5 +92,6 @@ We don't coordinate meetups. CNCF leads these efforts and their information can 
 
 
 [Release Team]: https://github.com/kubernetes/sig-release/tree/master/release-team
+[registration handbook]: ./registration/README.md
 [best-practices.md]: ./best-practices.md
 [here]: https://github.com/cncf/meetups
