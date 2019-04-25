@@ -130,8 +130,13 @@ type Group struct {
 // DirName returns the directory that a group's documentation will be
 // generated into. It is composed of a prefix (sig for SIGs and wg for WGs),
 // and a formatted version of the group's name (in kebab case).
-func (e *Group) DirName(prefix string) string {
-	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.Replace(e.Name, " ", "-", -1)))
+func (g *Group) DirName(prefix string) string {
+	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.Replace(g.Name, " ", "-", -1)))
+}
+
+// LabelName returns the expected label for a given group
+func (g *Group) LabelName(prefix string) string {
+	return strings.Replace(g.DirName(prefix), fmt.Sprintf("%s-", prefix), "", 1)
 }
 
 // Context is the context for the sigs.yaml file.
@@ -140,6 +145,15 @@ type Context struct {
 	WorkingGroups []Group
 	UserGroups    []Group
 	Committees    []Group
+}
+
+func index(groups []Group, predicate func(Group) bool) int {
+	for i, group := range groups {
+		if predicate(group) {
+			return i
+		}
+	}
+	return -1
 }
 
 // PrefixToGroupMap returns a map of prefix to groups, useful for iteration over all groups
@@ -191,6 +205,48 @@ func (c *Context) Sort() {
 			}
 		}
 	}
+}
+
+// Validate returns a list of errors encountered while validating a Context
+func (c *Context) Validate() []error {
+	errors := []error{}
+	for prefix, groups := range c.PrefixToGroupMap() {
+		for _, group := range groups {
+			expectedDir := group.DirName(prefix)
+			if expectedDir != group.Dir {
+				errors = append(errors, fmt.Errorf("expected dir: %s, got: %s", expectedDir, group.Dir))
+			}
+			expectedLabel := group.LabelName(prefix)
+			if expectedLabel != group.Label {
+				errors = append(errors, fmt.Errorf("%s: expected label: %s, got: %s", group.Dir, expectedLabel, group.Label))
+			}
+			if len(group.StakeholderSIGs) != 0 {
+				if prefix == "wg" {
+					for _, name := range group.StakeholderSIGs {
+						if index(c.Sigs, func(g Group) bool { return g.Name == name }) == -1 {
+							errors = append(errors, fmt.Errorf("%s: invalid stakeholder sig name %s", group.Dir, name))
+						}
+					}
+				} else {
+					errors = append(errors, fmt.Errorf("%s: only WGs may have stakeholder_sigs", group.Dir))
+				}
+			}
+			if prefix == "sig" {
+				if group.CharterLink == "" {
+					errors = append(errors, fmt.Errorf("%s: has no charter", group.Dir))
+				}
+				// TODO(spiffxp): is this required though?
+				if group.MissionStatement == "" {
+					errors = append(errors, fmt.Errorf("%s: has no mission statement", group.Dir))
+				}
+				if len(group.Subprojects) == 0 {
+					errors = append(errors, fmt.Errorf("%s: has no subprojects", group.Dir))
+				}
+			}
+
+		}
+	}
+	return errors
 }
 
 func pathExists(path string) bool {
@@ -328,7 +384,6 @@ func createGroupReadme(groups []Group, prefix string) error {
 	}
 
 	for _, group := range groups {
-		group.Dir = group.DirName(prefix)
 		// skip generation if the user specified only one group
 		if selectedGroupName != nil && strings.HasSuffix(group.Dir, *selectedGroupName) == false {
 			fmt.Printf("Skipping %s/README.md\n", group.Dir)
@@ -388,6 +443,15 @@ func main() {
 	}
 
 	ctx.Sort()
+
+	fmt.Printf("Validating %s\n", yamlPath)
+	errs := ctx.Validate()
+	if len(errs) != 0 {
+		for _, err := range errs {
+			fmt.Printf("NOTICE: %s\n", err.Error())
+		}
+		fmt.Println("NOTICE: validation errors are ignored at present")
+	}
 
 	// Write the Context struct back to yaml to enforce formatting
 	err = writeYaml(&ctx, yamlPath)
