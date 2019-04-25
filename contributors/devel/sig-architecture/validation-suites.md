@@ -9,10 +9,7 @@ characteristic that differentiates Validation suites from
 [Conformance Tests](../sig-architecture/conformance-tests.md) and 
 [Conformance profiles](https://github.com/cncf/k8s-conformance/blob/master/terms-conditions/Certified_Kubernetes_Terms.md). In addition, Validation suites differ from  
 Conformance profiles in that they do not require conformance certification approval
-in order to be created and utilized.  The creation of a Conformance Profile requires
-consensus and discussion across the community because there is a desire to limit
-the number of conformance profiles created; a large number of Conformance Profiles
-would inhibit the portability of Kubernetes workloads. In contrast, Validation 
+in order to be created and utilized. As a result, Validation 
 suites can be created to validate the functionality of an optional 
 capability and the more lengthy community discussion of whether the validation suite
 should be promoted to become a Conformance profile or merged into the base
