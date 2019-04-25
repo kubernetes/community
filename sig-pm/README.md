@@ -34,7 +34,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-pm)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-pm)
+* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-pm)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fpm)
 
 ## Subprojects

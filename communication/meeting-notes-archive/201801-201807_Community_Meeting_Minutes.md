@@ -1405,7 +1405,7 @@
     *   Reddit r/kubernetes AMA [Jorge Castro]
         *   This next Tuesday: [https://www.reddit.com/r/kubernetes/comments/89gdv0/kubernetes_ama_will_be_on_10_april_tuesday/](https://www.reddit.com/r/kubernetes/comments/89gdv0/kubernetes_ama_will_be_on_10_april_tuesday/)
         *   If you're a reddit user please contact [jorge@heptio.com](mailto:jorge@heptio.com) so we can coordinate.
-    *   Roadmaps call - SIG-PM is asking for the roadmap input [https://groups.google.com/forum/#!topic/kubernetes-pm/-jW3bHUbfE8](https://groups.google.com/forum/#!topic/kubernetes-pm/-jW3bHUbfE8) [Ihor/Jaice]
+    *   Roadmaps call - SIG-PM is asking for the roadmap input [https://groups.google.com/forum/#!topic/kubernetes-sig-pm/-jW3bHUbfE8](https://groups.google.com/forum/#!topic/kubernetes-sig-pm/-jW3bHUbfE8) [Ihor/Jaice]
         *   We're trying to assess if there are any long-term, cross-cutting views of the project, or if our planning horizon is only the length of features in process/one release
         *   We want to provide more transparency to the end-user community about what planning exists
         *   SIG-PM can also help facilitate planning, as in this [template](https://docs.google.com/document/d/1qi4LKV3W9B5JJ5JLjmAY33jESYAqWMWFyO5bWoYEBDo/edit)
