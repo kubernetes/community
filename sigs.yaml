@@ -1555,14 +1555,21 @@ sigs:
     label: pm
     leadership:
       chairs:
-      - name: Aparna Sinha
-        github: apsinha
+      - name: Caleb Miles
+        github: calebamiles
         company: Google
       - name: Ihor Dvoretskyi
         github: idvoretskyi
         company: CNCF
-      - name: Caleb Miles
-        github: calebamiles
+      - name: Jaice Singer DuMars
+        github: jdumars
+        company: Google
+      - name: Stephen Augustus
+        github: justaugustus
+        company: VMware
+      emeritus_leads:
+      - name: Aparna Sinha
+        github: apsinha
         company: Google
     meetings:
     - description: Regular SIG Meeting

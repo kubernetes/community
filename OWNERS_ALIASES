@@ -76,9 +76,10 @@ aliases:
     - adisky
     - chrigl
   sig-pm-leads:
-    - apsinha
-    - idvoretskyi
     - calebamiles
+    - idvoretskyi
+    - jdumars
+    - justaugustus
   sig-release-leads:
     - calebamiles
     - justaugustus
