@@ -1097,26 +1097,32 @@ sigs:
       slack: sig-docs
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
       teams:
+      - name: kubernetes-blog
+        description: Kubernetes blog maintainers
       - name: sig-docs-maintainers
         description: Documentation maintainers
       - name: sig-docs-pr-reviews
         description: Documentation PR reviews
+      - name: sig-docs-de-owners
+        description: German language content
       - name: sig-docs-en-owners
         description: English content (default)
       - name: sig-docs-es-owners
-        description: Spanish content
-      - name: sig-docs-de-owners
-        description: German content
+        description: Spanish language content
       - name: sig-docs-fr-owners
-        description: French content
+        description: French language content
+      - name: sig-docs-id-owners
+        description: Indonesian language content
       - name: sig-docs-it-owners
-        description: Italian content
+        description: Italian language content
       - name: sig-docs-ja-owners
-        description: Japanese content
+        description: Japanese language content
       - name: sig-docs-ko-owners
-        description: Korean content
+        description: Korean language content
+      - name: sig-docs-pt-owners
+        description: Portuguese language content
       - name: sig-docs-zh-owners
-        description: Chinese content
+        description: Chinese language content
     subprojects:
     - name: reference-docs
       owners:
@@ -1124,6 +1130,9 @@ sigs:
     - name: website
       owners:
       - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
+    - name: kubernetes-blog
+      owners:
+      - https://raw.githubusercontent.com/kubernetes/website/master/content/en/blog/OWNERS
   - name: GCP
     dir: sig-gcp
     mission_statement: >
