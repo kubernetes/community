@@ -43,7 +43,8 @@ better.
   Project.
 - [Developer Guide] - Guide to contributing code directly to the Kubernetes
   Project.
-
+- [Security and Disclosure Information] - Guide for reporting vulnerabilities
+  and the security release process.
 
 ### SIGs and Other Groups
 
@@ -393,3 +394,4 @@ the other contributors assigned to review and approve your PR.
 [developer guide]: /contributors/devel/README.md
 [Atlassian git tutorial]: https://www.atlassian.com/git/tutorials
 [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
+[Security and Disclosure Information]: https://kubernetes.io/docs/reference/issues-security/security/
