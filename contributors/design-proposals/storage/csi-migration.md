@@ -179,10 +179,9 @@ type CSITranslator interface {
   // by the `Driver` field in the CSI Source. The input PV object will not be modified.
   TranslateCSIPVToInTree(pv *v1.PersistentVolume) (*v1.PersistentVolume, error) {
 
-  // TranslateInTreeVolumeToCSI takes an inline intree volume and will translate
-  // the in-tree volume source to a CSIPersistentVolumeSource
-  // A PV object containing the CSIPersistentVolumeSource in it's spec is returned
-  TranslateInTreeInlineVolumeToCSI(volume *v1.Volume (*v1.PersistentVolume, error) {
+  // TranslateInTreeInlineVolumeToPVSpec takes an inline intree volume and will translate
+  // the in-tree volume source to a PersistentVolumeSpec containing a CSIPersistentVolumeSource
+  TranslateInTreeInlineVolumeToPVSpec(volume *v1.Volume) (*v1.PersistentVolumeSpec, error) {
 
   // IsMigratableByName tests whether there is Migration logic for the in-tree plugin
   // for the given `pluginName`
@@ -190,12 +189,6 @@ type CSITranslator interface {
 
   // GetCSINameFromIntreeName maps the name of a CSI driver to its in-tree version
   GetCSINameFromIntreeName(pluginName string) (string, error) {
-
-  // GetAccessModes returns a default access mode based on the plugin and volume spec
-  GetAccessModes(pluginName string, vol *v1.Volume) (csi.VolumeCapability_AccessMode, error) {
-
-  // GetMountOptions returns a default mount option based on the plugin and volume spec
-  GetMountOptions(pluginName string, vol *v1.Volume) (string) {
 
   // IsPVMigratable tests whether there is Migration logic for the given Persistent Volume
   IsPVMigratable(pv *v1.PersistentVolume) bool {
@@ -244,54 +237,49 @@ with the in-tree plugin, the VolumeAttachment object becomes orphaned.
 
 ### In-line Volumes
 
-In-line controller calls are a special case because there is no PV. In this case
-we will translate the in-line volume source into a CSIPersistentVolumeSource 
-and copy it to the field `VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineCSIVolumeSource`.
-The VolumeAttachment name must be made with the CSI Translated version of the
+In-line controller calls are a special case because there is no PV. In this case,
+we will translate the in-line Volume into a PersistentVolumeSpec using
+plugin-specific translation logic in the CSI translation library method,
+`TranslateInTreeInlineVolumeToPVSpec`. The resulting PersistentVolumeSpec will
+and be stored in a new field `VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineVolumeSpec`.
+
+The plugin-specific CSI translation logic invoked by `TranslateInTreeInlineVolumeToPVSpec`
+will need to populate the `CSIPersistentVolumeSource` field along with appropriate
+values for `AccessModes` and `MountOptions` fields in
+`VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineVolumeSpec`. Since
+`AccessModes` and `MountOptions` are not specified for inline volumes, default values
+for these fields suitable for the CSI plugin will need to be populated in addition
+to translation logic to populate `CSIPersistentVolumeSource`.
+
+The VolumeAttachment name must be made with the CSI translated version of the
 VolumeSource in order for it to be discoverable by Detach and WaitForAttach
 (described in more detail below).
 
-The CSI Attacher will have to be modified to also check for `InlineCSIVolumeSource`
-besides the `PersistentVolumeName`. Only one of the two may be specified. If `PersistentVolumeName` 
-is empty and `InlineCSIVolumeSource` is set, the CSI Attacher will not look for 
-an associated PV in it's PV informer cache as it implies the inline volume scenario 
+The CSI Attacher will have to be modified to also check for `InlineVolumeSpec`
+besides the `PersistentVolumeName`. Only one of the two may be specified. If `PersistentVolumeName`
+is empty and `InlineVolumeSpec` is set, the CSI Attacher will not look for
+an associated PV in it's PV informer cache as it implies the inline volume scenario
 (where no PVs are created).
 
-The CSI Attacher will have access to most of the data it requires for handling in-line 
-volumes attachment (through the CSI plugins) from `InlineCSIVolumeSource`. However 
-a few fields require special handling due to the absence of a PV where such fields
-are assigned desired values. Specifically, reasonable `MountOptions` and 
-`AccessModes` settings need to be determined by plugin-specific APIs:
-`GetMountOptions` and `GetAccessModes` that sets the default values for
-these parameters and satisfies the broadest of scenarios supported by the CSI
-plugin. Some specific example:
-1. If GCEPersistentDiskVolumeSource.ReadOnly is true, `GetAccessModes` for GCE PD
-can return csi.VolumeCapability_AccessMode_MULTI_NODE_READER_ONLY. If 
-If GCEPersistentDiskVolumeSource.ReadOnly is false, `GetAccessModes` for GCE PD 
-can return csi.VolumeCapability_AccessMode_SINGLE_NODE_WRITER
-2. The EBS CSI driver only supports csi.VolumeCapability_AccessMode_SINGLE_NODE_WRITER
-today . So `GetAccessModes` for EBS can always return 
-csi.VolumeCapability_AccessMode_SINGLE_NODE_WRITER until further modes are supported.
-3. For shared FS plugins like AzureFile or CephFS, `GetAccessModes` may return 
-csi.VolumeCapability_AccessMode_MULTI_NODE_MULTI_WRITER
+The CSI Attacher will have access to all the data it requires for handling in-line
+volumes attachment (through the CSI plugins) from fields in the `InlineVolumeSpec`.
 
 The new VolumeAttachmentSource API will look as such:
 ```
 // VolumeAttachmentSource represents a volume that should be attached.
-// Right now only PersistenVolumes can be attached via external attacher,
-// in future we may allow also inline volumes in pods.
+// Inline volumes and Persistent volumes can be attached via external attacher.
 // Exactly one member can be set.
 type VolumeAttachmentSource struct {
 	// Name of the persistent volume to attach.
 	// +optional
 	PersistentVolumeName *string `json:"persistentVolumeName,omitempty" protobuf:"bytes,1,opt,name=persistentVolumeName"`
 
-	// Translated VolumeSource from a pod to a CSIPersistentVolumeSource
-	// to support shimming of in-tree inline volumes to a CSI backend.
+	// A PersistentVolumeSpec whose fields contain translated data from a pod's inline
+	// VolumeSource to support shimming of in-tree inline volumes to a CSI backend.
 	// This field is alpha-level and is only honored by servers that
 	// enable the CSIMigration feature.
 	// +optional
-	InlineCSIVolumeSource *v1.CSIPersistentVolumeSource `json:"inlineCSIVolumeSource,omitempty" protobuf:"bytes,2,opt,name=inlineCSIVolumeSource"`
+	InlineVolumeSpec *v1.PersistentVolumeSpec `json:"inlineVolumeSpec,omitempty" protobuf:"bytes,2,opt,name=inlineVolumeSpec"`
 }
 ```
 
