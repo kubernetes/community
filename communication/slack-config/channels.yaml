@@ -198,6 +198,7 @@ channels:
   - name: rancher
   - name: random
     archived: true
+  - name: release-branch-mgmt
   - name: rktnetes
   - name: ro-users
   - name: ru-users
