@@ -118,6 +118,7 @@ management of Slack.
 
 To add a channel, open a Pull Request (PR) updating the [slack-config].
 - Add the channel to [channels.yaml] following the [Channel Documentation].
+  - Channel names must be 21 characters or less in length (Slack limit).
   - Typical channel naming conventions follow:
     - `#kubernetes-foo`
     - `#sig-foo`
