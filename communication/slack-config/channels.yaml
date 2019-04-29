@@ -115,6 +115,7 @@ channels:
   - name: kube-deploy
   - name: kube-monkey
   - name: kube-router
+  - name: kube-score
   - name: kube-spawn
   - name: kubeadm
   - name: kubeapps
