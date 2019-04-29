@@ -1,0 +1,3 @@
+channels:
+  - name: sig-release
+  - name: release-managers

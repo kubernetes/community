@@ -13,4 +13,8 @@ restrictions:
   - path: "sig-docs/*.yaml"
     channels:
       - "^kubernetes-docs-[a-z]{2}$"
+  - path: "sig-release/*.yaml"
+    channels:
+      - "^sig-release$"
+      - "^release-managers$"
   - path: "**/*" # prevent any other file from containing anything
