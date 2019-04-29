@@ -241,7 +241,7 @@ In-line controller calls are a special case because there is no PV. In this case
 we will translate the in-line Volume into a PersistentVolumeSpec using
 plugin-specific translation logic in the CSI translation library method,
 `TranslateInTreeInlineVolumeToPVSpec`. The resulting PersistentVolumeSpec will
-and be stored in a new field `VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineVolumeSpec`.
+be stored in a new field `VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineVolumeSpec`.
 
 The plugin-specific CSI translation logic invoked by `TranslateInTreeInlineVolumeToPVSpec`
 will need to populate the `CSIPersistentVolumeSource` field along with appropriate
