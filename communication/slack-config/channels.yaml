@@ -172,6 +172,7 @@ channels:
   - name: metallb
   - name: microk8s
   - name: minikube
+  - name: minikube-dev
   - name: monitoring-mixins
   - name: monolith
   - name: multi-platform
