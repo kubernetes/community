@@ -22,8 +22,8 @@ Serve as a community resource for advising big data and data science related sof
 * Yinan Li (**[@liyinan926](https://github.com/liyinan926)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/ug-big-data)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-ug-big-data)
+* [Slack](https://kubernetes.slack.com/messages/big-data-user-group)
+* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-big-data-user-group)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fbig-data)
 
 
