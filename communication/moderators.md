@@ -95,6 +95,13 @@ Regional category moderators seats (per category): 3
 | Jacopo Nardiello   | @jnardiello           | EMEA   | [CET - Central European Time](https://time.is/CET) |
 | *Open*             | *Open*                |        |                                                    |
 
+**[Spanish]**
+
+| Name               | Kubernetes Discuss ID | Region | Timezone                                           |
+|--------------------|-----------------------|--------|----------------------------------------------------|
+| Rael Garcia        | @rael                 | EMEA   | [CET - Central European Time](https://time.is/CET) |
+| *Open*             | *Open*                |        |                                                    |
+
 **[Ukrainian]**
 
 | Name             | Kubernetes Discuss ID | Region | Timezone                                           |
@@ -205,4 +212,5 @@ Administrators seats: 4
 [Chinese]: https://discuss.kubernetes.io/t/about-the-chinese-category/2881
 [German]: https://discuss.kubernetes.io/t/about-the-german-category/3152
 [Italian]: https://discuss.kubernetes.io/t/about-the-italian-category/2917/2
+[Spanish]: https://discuss.kubernetes.io/t/about-the-spanish-category/6167
 [Ukrainian]: https://discuss.kubernetes.io/t/about-the-ukrainian-category/2916
