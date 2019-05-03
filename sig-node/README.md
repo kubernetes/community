@@ -33,9 +33,6 @@ The following subprojects are owned by sig-node:
 - **cri-api**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cri-api/master/OWNERS
-- **cri-o**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cri-o/master/OWNERS
 - **cri-tools**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
