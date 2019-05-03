@@ -214,7 +214,6 @@ channels:
   - name: sig-autoscaling
   - name: sig-aws
   - name: sig-azure
-  - name: sig-big-data
   - name: sig-cli
   - name: sig-cloud-provider
   - name: sig-clstr-life-leads
@@ -270,6 +269,8 @@ channels:
   - name: traefik
   - name: travis-ci
   - name: tw-users
+  - name: ug-big-data
+    id: C0ELB338T
   - name: velero
   - name: virtlet
   - name: virtual-kubelet
