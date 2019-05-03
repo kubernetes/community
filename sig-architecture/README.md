@@ -26,10 +26,10 @@ The [charter](charter.md) defines the scope and governance of the Architecture S
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Brian Grant (**[@bgrant0607](https://github.com/bgrant0607)**), Google
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
-* Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), Huawei
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
+* Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-architecture)
@@ -42,25 +42,25 @@ The following subprojects are owned by sig-architecture:
 - **architecture-and-api-governance**
   - Description: [Described below](#architecture-and-api-governance)
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
     - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
+- **code-organization**
+  - Description: [Described below](#code-organization)
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
 - **conformance-definition**
   - Description: [Described below](#conformance-definition)
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
   - Contact
     - Slack: [#k8s-conformance](https://kubernetes.slack.com/messages/k8s-conformance)
     - GitHub Teams:
       - [@kubernetes/cncf-conformance-wg](https://github.com/orgs/kubernetes/teams/cncf-conformance-wg)
-- **code-organization**
-  - Description: [Described below](#code-organization)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
 - **klog**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS

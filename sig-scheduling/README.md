@@ -9,6 +9,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 # Scheduling Special Interest Group
 
 
+The [charter](charter.md) defines the scope and governance of the Scheduling Special Interest Group.
+
 ## Meetings
 * 10AM PT Meeting: [Thursdays at 17:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly starting Thursday June 7, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
 * 5PM PT Meeting: [Thursdays at 24:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly starting Thursday June 14, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=24:00&tz=UTC).
@@ -40,13 +42,13 @@ The following subprojects are owned by sig-scheduling:
 - **kube-batch**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kube-batch/master/OWNERS
+- **poseidon**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
 - **scheduler**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
-- **poseidon**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
 
 ## GitHub Teams
 

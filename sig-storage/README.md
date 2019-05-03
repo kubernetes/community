@@ -22,8 +22,8 @@ The [charter](charter.md) defines the scope and governance of the Storage Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Saad Ali (**[@saad-ali](https://github.com/saad-ali)**), Google
 * Bradley Childs (**[@childsb](https://github.com/childsb)**), Red Hat
+* Saad Ali (**[@saad-ali](https://github.com/saad-ali)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-storage)
@@ -33,33 +33,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-storage:
-- **kubernetes-csi**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-flex/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-host-path/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-image-populator/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-iscsi/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-fc/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-iscsi/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-test/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/docs/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/driver-registrar/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/drivers/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi.github.io/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/livenessprobe/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/external-attacher/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/external-resizer/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/csi-api/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/csi-translation-lib/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-translation-lib/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/node-driver-registrar/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-utils/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-release-tools/master/OWNERS
 - **external-storage**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
@@ -68,6 +41,33 @@ The following subprojects are owned by sig-storage:
 - **git-sync**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/git-sync/master/OWNERS
+- **kubernetes-csi**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-flex/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-host-path/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-image-populator/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-iscsi/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-fc/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-iscsi/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-utils/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-release-tools/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-test/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/docs/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/driver-registrar/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/drivers/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/external-attacher/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/external-resizer/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi.github.io/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/livenessprobe/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/node-driver-registrar/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/csi-api/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/csi-translation-lib/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-translation-lib/OWNERS
 - **nfs-provisioner**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS

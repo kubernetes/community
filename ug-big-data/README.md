@@ -17,8 +17,8 @@ Serve as a community resource for advising big data and data science related sof
 
 ## Organizers
 
-* Anirudh Ramanathan (**[@foxish](https://github.com/foxish)**), Rockset
 * Erik Erlandson (**[@erikerlandson](https://github.com/erikerlandson)**), Red Hat
+* Anirudh Ramanathan (**[@foxish](https://github.com/foxish)**), Rockset
 * Yinan Li (**[@liyinan926](https://github.com/liyinan926)**), Google
 
 ## Contact

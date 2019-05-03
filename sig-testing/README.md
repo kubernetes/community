@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Interested in how we can most effectively test Kubernetes. We're interested specifically in making it easier for the community to run tests and contribute test results, to ensure Kubernetes is stable across a variety of cluster configurations and cloud providers.
 
+The [charter](charter.md) defines the scope and governance of the Testing Special Interest Group.
+
 ## Meetings
 * Regular SIG Meeting: [Tuesdays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-testing-notes).
@@ -20,8 +22,8 @@ Interested in how we can most effectively test Kubernetes. We're interested spec
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 * Erick Fejta (**[@fejta](https://github.com/fejta)**), Google
+* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
 
@@ -61,6 +63,10 @@ The following subprojects are owned by sig-testing:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
   - Contact
     - Slack: [#prow](https://kubernetes.slack.com/messages/prow)
+- **test-infra**
+  - Description: Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
 - **testing-commons**
   - Description: The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project
   - Owners:
@@ -71,10 +77,6 @@ The following subprojects are owned by sig-testing:
   - Meetings:
     - Testing Commons: [Fridays at 07:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29).
       - [Meeting notes and Agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o).
-- **test-infra**
-  - Description: Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
 
 ## GitHub Teams
 

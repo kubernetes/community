@@ -25,6 +25,7 @@ Resources can be found in [this Google drive folder](https://drive.google.com/dr
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-apply)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-apply)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fapply)
 
 <!-- BEGIN CUSTOM CONTENT -->
 

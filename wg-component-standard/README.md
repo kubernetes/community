@@ -11,8 +11,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Develop a standard foundation (philosophy and libraries) for core Kubernetes components to build on top of. Areas to standardize include configuration (flags, ComponentConfig APIs, ...), status endpoints (healthz, configz, ...), integration points (delegated authn/z, ...), and logging. Details are outlined in KEP 0032: https://github.com/kubernetes/enhancements/blob/master/keps/sig-cluster-lifecycle/0032-create-a-k8s-io-component-repo.md.
 
 ## Stakeholder SIGs
-* SIG Architecture
 * SIG API Machinery
+* SIG Architecture
 * SIG Cluster Lifecycle
 
 ## Meetings
@@ -22,8 +22,8 @@ Develop a standard foundation (philosophy and libraries) for core Kubernetes com
 ## Organizers
 
 * Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)
-* Dr. Stefan Schimanski (**[@sttts](https://github.com/sttts)**), Red Hat
 * Michael Taufen (**[@mtaufen](https://github.com/mtaufen)**), Google
+* Dr. Stefan Schimanski (**[@sttts](https://github.com/sttts)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-component-standard)
