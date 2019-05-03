@@ -28,6 +28,13 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-ibmcloud)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fibmcloud)
 
+## Subprojects
+
+The following subprojects are owned by sig-ibmcloud:
+- **cluster-api-provider-ibmcloud**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.

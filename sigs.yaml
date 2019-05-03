@@ -1210,6 +1210,10 @@ sigs:
       teams:
       - name: sig-ibmcloud-misc
         description: General Discussion
+    subprojects:
+    - name: cluster-api-provider-ibmcloud
+      owners:
+      - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
   - name: Instrumentation
     dir: sig-instrumentation
     mission_statement: >
