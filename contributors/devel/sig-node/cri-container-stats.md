@@ -115,7 +115,10 @@ behind it.*
 
 ## Status
 
-The container metrics calls are added to CRI in Kubernetes 1.7, but Kubelet does not
-yet use it to gather metrics from the runtime. We plan to enable Kubelet to
-optionally consume the container metrics from the API in 1.8.
-
+The container metrics calls were added to CRI in Kubernetes 1.7, but Kubelet did not
+yet use it to gather metrics from the runtime. In Kubernetes 1.8, Kubelet was
+given the option to [consume the container metrics using CRI
+stats](https://github.com/kubernetes/kubernetes/pull/51557). See the
+`pkg/kubelet/cadvisor.go#UsingLegacyCadvisorStats`
+[function](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/cadvisor/util.go#L73)
+for more information on how Kubelet determines the proper metrics source.
