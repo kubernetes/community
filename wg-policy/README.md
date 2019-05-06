@@ -13,9 +13,9 @@ Provide an overall architecture that describes both the current policy related i
 ## Stakeholder SIGs
 * SIG Architecture
 * SIG Auth
+* SIG Multicluster
 * SIG Networking
 * SIG Node
-* SIG Multicluster
 * SIG Scheduling
 * SIG Storage
 
@@ -25,15 +25,16 @@ Provide an overall architecture that describes both the current policy related i
 
 ## Organizers
 
-* Howard Huang (**[@hannibalhuang](https://github.com/hannibalhuang)**), Huawei
-* Torin Sandall (**[@tsandall](https://github.com/tsandall)**), Styra
 * Yisui Hu (**[@easeway](https://github.com/easeway)**), Google
 * Erica von Buelow (**[@ericavonb](https://github.com/ericavonb)**), Red Hat
+* Howard Huang (**[@hannibalhuang](https://github.com/hannibalhuang)**), Huawei
 * Michael Elder (**[@mdelder](https://github.com/mdelder)**), IBM
+* Torin Sandall (**[@tsandall](https://github.com/tsandall)**), Styra
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-policy)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-policy)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fpolicy)
 
 <!-- BEGIN CUSTOM CONTENT -->
 

@@ -22,15 +22,15 @@ The [charter](charter.md) defines the scope and governance of the Azure Special 
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
 * Dave Strebel (**[@dstrebel](https://github.com/dstrebel)**), Microsoft
+* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Kal Khenidak (**[@khenidak](https://github.com/khenidak)**), Microsoft
 * Pengfei Ni (**[@feiskyer](https://github.com/feiskyer)**), Microsoft
+* Kal Khenidak (**[@khenidak](https://github.com/khenidak)**), Microsoft
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-azure)

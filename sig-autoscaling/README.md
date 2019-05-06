@@ -31,28 +31,28 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-autoscaling:
-- **scale-client**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/client-go/master/scale/OWNERS
-- **cluster-autoscaler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
-- **vertical-pod-autoscaler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
-- **horizontal-pod-autoscaler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
-- **cluster-proportional-vertical-autoscaler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
-- **cluster-proportional-autoscaler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
 - **addon-resizer**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/autoscaler/master/addon-resizer/OWNERS
+- **cluster-autoscaler**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+- **cluster-proportional-autoscaler**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
+- **cluster-proportional-vertical-autoscaler**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
+- **horizontal-pod-autoscaler**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
+- **scale-client**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/client-go/master/scale/OWNERS
+- **vertical-pod-autoscaler**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
 
 ## GitHub Teams
 

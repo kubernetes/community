@@ -39,10 +39,6 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 ## Subprojects
 
 The following subprojects are owned by the Steering Committee:
-- **steering**
-  - Description: Steering Committee policy and documentation
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
 - **kubernetes-template-project**
   - Description: Template for starting new projects in the GitHub organizations owned by Kubernetes.
   - Owners:
@@ -51,6 +47,10 @@ The following subprojects are owned by the Steering Committee:
   - Description: Collection of usage information about Kubernetes clusters.
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+- **steering**
+  - Description: Steering Committee policy and documentation
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
 
 ## GitHub Teams
 

@@ -34,17 +34,16 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-cloud-provider:
-- **kubernetes-cloud-provider**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cloud-provider/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/cloud-provider-sample/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/cloudprovider/OWNERS
 - **cloud-provider-alibaba-cloud**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-alibaba-cloud/master/OWNERS
+- **cloud-provider-extraction-migration**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-network-proxy/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/legacy-cloud-providers/master/OWNERS
+  - Meetings:
+    - Weekly Sync removing the in-tree cloud providers led by @cheftako and @mcrute: [Thursdays at 13:30 PT (Pacific Time)](https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:30&tz=PT%20%28Pacific%20Time%29).
 - **cloud-provider-gcp**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
@@ -54,13 +53,14 @@ The following subprojects are owned by sig-cloud-provider:
 - **cloud-provider-vsphere**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
-- **cloud-provider-extraction-migration**
+- **kubernetes-cloud-provider**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-network-proxy/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/legacy-cloud-providers/master/OWNERS
-  - Meetings:
-    - Weekly Sync removing the in-tree cloud providers led by @cheftako and @mcrute: [Thursdays at 13:30 PT (Pacific Time)](https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:30&tz=PT%20%28Pacific%20Time%29).
+    - https://raw.githubusercontent.com/kubernetes/cloud-provider-sample/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/cloud-provider/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/cloudprovider/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/OWNERS
 
 ## GitHub Teams
 
@@ -73,10 +73,10 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-cloud-provider-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-bugs) | Bug Triage and Troubleshooting |
 | @kubernetes/sig-cloud-provider-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-feature-requests) | Feature Requests |
 | @kubernetes/sig-cloud-provider-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-maintainers) | Cloud Providers Maintainers |
-| @kubernetes/sig-cloud-providers-misc | [link](https://github.com/orgs/kubernetes/teams/sig-cloud-providers-misc) | General Discussion |
 | @kubernetes/sig-cloud-provider-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-pr-reviews) | PR Reviews |
 | @kubernetes/sig-cloud-provider-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-proposals) | Design Proposals |
 | @kubernetes/sig-cloud-provider-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-test-failures) | Test Failures and Triage |
+| @kubernetes/sig-cloud-providers-misc | [link](https://github.com/orgs/kubernetes/teams/sig-cloud-providers-misc) | General Discussion |
 
 <!-- BEGIN CUSTOM CONTENT -->
 

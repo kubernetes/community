@@ -1,20 +1,20 @@
 aliases:
   sig-api-machinery-leads:
-    - lavalamp
     - deads2k
+    - lavalamp
   sig-apps-leads:
+    - kow3ns
     - mattfarina
     - prydonius
-    - kow3ns
   sig-architecture-leads:
     - bgrant0607
-    - jdumars
-    - mattfarina
     - derekwaynecarr
     - dims
+    - jdumars
+    - mattfarina
   sig-auth-leads:
-    - mikedanese
     - enj
+    - mikedanese
     - tallclair
     - deads2k
     - liggitt
@@ -22,19 +22,19 @@ aliases:
   sig-autoscaling-leads:
     - mwielgus
   sig-aws-leads:
+    - d-nishi
     - justinsb
     - kris-nova
-    - d-nishi
   sig-azure-leads:
-    - justaugustus
     - dstrebel
-    - khenidak
+    - justaugustus
     - feiskyer
+    - khenidak
   sig-cli-leads:
-    - soltysh
     - seans3
     - soltysh
     - pwittrock
+    - soltysh
   sig-cloud-provider-leads:
     - andrewsykim
     - hogepodge
@@ -49,9 +49,9 @@ aliases:
     - cblecker
     - nikhita
   sig-docs-leads:
+    - bradamant3
     - jaredbhatti
     - zacharysarah
-    - bradamant3
   sig-gcp-leads:
     - abgworrall
   sig-ibmcloud-leads:
@@ -59,22 +59,22 @@ aliases:
     - rtheis
     - spzala
   sig-instrumentation-leads:
-    - piosz
     - brancz
+    - piosz
   sig-multicluster-leads:
     - csbell
     - quinton-hoole
   sig-network-leads:
-    - thockin
-    - dcbw
     - caseydavenport
+    - dcbw
+    - thockin
   sig-node-leads:
     - dchen1107
     - derekwaynecarr
   sig-openstack-leads:
-    - hogepodge
     - adisky
     - chrigl
+    - hogepodge
   sig-pm-leads:
     - calebamiles
     - idvoretskyi
@@ -85,31 +85,31 @@ aliases:
     - justaugustus
     - tpepper
   sig-scalability-leads:
-    - wojtek-t
     - shyamjvs
+    - wojtek-t
   sig-scheduling-leads:
     - bsalamat
     - k82cn
   sig-service-catalog-leads:
-    - kibbles-n-bytes
     - jberkhahn
     - jboyd01
+    - kibbles-n-bytes
   sig-storage-leads:
-    - saad-ali
     - childsb
+    - saad-ali
   sig-testing-leads:
-    - spiffxp
     - fejta
+    - spiffxp
     - stevekuznetsov
     - timothysc
   sig-ui-leads:
-    - floreks
-    - maciaszczykm
     - danielromlein
+    - floreks
     - jeefy
+    - maciaszczykm
   sig-vmware-leads:
-    - frapposelli
     - cantbewong
+    - frapposelli
   sig-windows-leads:
     - michmike
     - patricklang
@@ -117,59 +117,59 @@ aliases:
     - lavalamp
   wg-component-standard-leads:
     - luxas
-    - sttts
     - mtaufen
+    - sttts
   wg-iot-edge-leads:
+    - cantbewong
     - cindyxing
     - dejanb
     - ptone
-    - cantbewong
   wg-k8s-infra-leads:
     - dims
     - spiffxp
   wg-lts-leads:
-    - tpepper
     - imkin
     - quinton-hoole
+    - tpepper
     - youngnick
   wg-machine-learning-leads:
-    - vishh
-    - kow3ns
-    - balajismaniam
     - ConnorDoyle
+    - balajismaniam
+    - kow3ns
+    - vishh
   wg-multitenancy-leads:
     - davidopp
     - tashimi
   wg-policy-leads:
-    - hannibalhuang
-    - tsandall
     - easeway
     - ericavonb
+    - hannibalhuang
     - mdelder
+    - tsandall
   wg-resource-management-leads:
-    - vishh
     - derekwaynecarr
+    - vishh
   wg-security-audit-leads:
     - aasmall
-    - joelsmith
     - cji
     - jaybeale
+    - joelsmith
   ug-big-data-leads:
-    - foxish
     - erikerlandson
+    - foxish
     - liyinan926
   committee-code-of-conduct:
-    - jdumars
-    - parispittman
+    - bradamant3
     - carolynvs
     - eparis
-    - bradamant3
+    - jdumars
+    - parispittman
   committee-product-security:
-    - philips
     - cjcullen
-    - tallclair
-    - liggitt
     - joelsmith
+    - liggitt
+    - philips
+    - tallclair
   committee-steering:
     - bgrant0607
     - brendandburns

@@ -24,8 +24,8 @@ The [charter](charter.md) defines the scope and governance of the Auth Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Mike Danese (**[@mikedanese](https://github.com/mikedanese)**), Google
 * Mo Khan (**[@enj](https://github.com/enj)**), Red Hat
+* Mike Danese (**[@mikedanese](https://github.com/mikedanese)**), Google
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Google
 
 ### Technical Leads
@@ -103,6 +103,10 @@ The following subprojects are owned by sig-auth:
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/OWNERS
+- **multi-tenancy**
+  - Description: Proposals and prototypes for introducing tenant model to enable multi-tenant cluster
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/multi-tenancy/master/OWNERS
 - **node-n-and-isolation**
   - Description: Node identity management (co-owned with sig-lifecycle), and authorization restrictions for isolating workloads on separate nodes (co-owned with sig-node).
   - Owners:
@@ -113,14 +117,14 @@ The following subprojects are owned by sig-auth:
 - **policy-management**
   - Description: API validation and policies enforced during admission, such as PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and Seccomp.
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/imagepolicy/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/policy/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/security/podsecuritypolicy/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/policy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/imagepolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/policy/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/policy/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/security/podsecuritypolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/imagepolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/security/podsecuritypolicy/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/imagepolicy/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/policy/OWNERS
 - **service-accounts**
   - Description: Infrastructure implementing Kubernetes service account based workload identity.
   - Owners:
@@ -128,10 +132,6 @@ The following subprojects are owned by sig-auth:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/token/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/serviceaccount/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/serviceaccount/OWNERS
-- **multi-tenancy**
-  - Description: Proposals and prototypes for introducing tenant model to enable multi-tenant cluster
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/multi-tenancy/master/OWNERS
 
 ## GitHub Teams
 
