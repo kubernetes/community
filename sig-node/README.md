@@ -8,6 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Node Special Interest Group
 
+SIG Node is responsible for the components that support the controlled interactions between pods and host resources.
 
 The [charter](charter.md) defines the scope and governance of the Node Special Interest Group.
 

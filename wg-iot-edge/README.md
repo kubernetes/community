@@ -12,7 +12,7 @@ A Working Group dedicated to discussing, designing and documenting using Kuberne
 
 ## Stakeholder SIGs
 * SIG Multicluster
-* SIG Networking
+* SIG Network
 
 ## Meetings
 * APAC WG Meeting: [Wednesdays at 5:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
@@ -22,7 +22,7 @@ A Working Group dedicated to discussing, designing and documenting using Kuberne
 
 ## Organizers
 
-* Steve Wong (**[@cantbewong](https://github.com/cantbewong)**), VMWare
+* Steve Wong (**[@cantbewong](https://github.com/cantbewong)**), VMware
 * Cindy Xing (**[@cindyxing](https://github.com/cindyxing)**), Huawei
 * Dejan Bosanac (**[@dejanb](https://github.com/dejanb)**), Red Hat
 * Preston Holmes (**[@ptone](https://github.com/ptone)**), Google

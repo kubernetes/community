@@ -12,7 +12,6 @@ Identify and fix gaps in Kubernetes to better support Machine Learning applicati
 
 ## Stakeholder SIGs
 * SIG Apps
-* SIG Big Data
 * SIG Node
 
 ## Meetings

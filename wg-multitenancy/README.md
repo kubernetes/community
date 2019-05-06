@@ -13,7 +13,7 @@ Define the models of multitenancy that Kubernetes will support. Discuss and exec
 ## Stakeholder SIGs
 * SIG API Machinery
 * SIG Auth
-* SIG Networking
+* SIG Network
 * SIG Node
 * SIG Scheduling
 * SIG Storage

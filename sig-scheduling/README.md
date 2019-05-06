@@ -8,6 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Scheduling Special Interest Group
 
+SIG Scheduling is responsible for the components that make Pod placement decisions.
 
 The [charter](charter.md) defines the scope and governance of the Scheduling Special Interest Group.
 

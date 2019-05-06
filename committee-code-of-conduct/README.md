@@ -13,10 +13,10 @@ The Kubernetes Code of Conduct Committee (CoCC) is the body that is responsible 
 
 ## Members
 
-* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), VMware
+* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), Stripe
 * Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**), Microsoft
 * Eric Paris (**[@eparis](https://github.com/eparis)**), Red Hat
-* Jaice Singer Dumars (**[@jdumars](https://github.com/jdumars)**), Google
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google
 
 ## Contact
