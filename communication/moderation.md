@@ -212,7 +212,7 @@ umbrella.
   are being flagged by the system.
 - We do NOT use YouTube comments during our live streams, these are checked as
   OFF in the settings.
-- [Youtube Guidelines](./youtube-guidelines.md)
+- [Youtube Guidelines](./youtube/youtube-guidelines.md)
 - [Moderators](./moderators.md#youtube-channel)
 
 ### Zoom
