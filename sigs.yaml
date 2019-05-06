@@ -2316,7 +2316,7 @@ workinggroups:
     chairs:
     - github: cantbewong
       name: Steve Wong
-      company: VMWare
+      company: VMware
     - github: cindyxing
       name: Cindy Xing
       company: Huawei
@@ -2651,7 +2651,7 @@ committees:
     chairs:
     - github: bradamant3
       name: Jennifer Rondeau
-      company: VMware
+      company: Stripe
     - github: carolynvs
       name: Carolyn Van Slyck
       company: Microsoft
@@ -2659,7 +2659,7 @@ committees:
       name: Eric Paris
       company: Red Hat
     - github: jdumars
-      name: Jaice Singer Dumars
+      name: Jaice Singer DuMars
       company: Google
     - github: parispittman
       name: Paris Pittman
