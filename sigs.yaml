@@ -2310,7 +2310,7 @@ workinggroups:
 
   stakeholder_sigs:
   - Multicluster
-  - Networking
+  - Network
   label: iot-edge
   leadership:
     chairs:
@@ -2429,7 +2429,6 @@ workinggroups:
 
   stakeholder_sigs:
   - Apps
-  - Big Data
   - Node
   label: machine-learning
   leadership:
@@ -2468,7 +2467,7 @@ workinggroups:
   stakeholder_sigs:
   - API Machinery
   - Auth
-  - Networking
+  - Network
   - Node
   - Scheduling
   - Storage
@@ -2505,7 +2504,7 @@ workinggroups:
   - Architecture
   - Auth
   - Multicluster
-  - Networking
+  - Network
   - Node
   - Scheduling
   - Storage
@@ -2547,7 +2546,7 @@ workinggroups:
   stakeholder_sigs:
   - Autoscaling
   - Instrumentation
-  - Networking
+  - Network
   - Node
   - Scheduling
   - Storage
