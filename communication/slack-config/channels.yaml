@@ -240,7 +240,6 @@ channels:
   - name: sig-node-rkt
   - name: sig-openstack
   - name: sig-pm
-  - name: sig-release
   - name: sig-scalability
   - name: sig-scheduling
   - name: sig-service-catalog
