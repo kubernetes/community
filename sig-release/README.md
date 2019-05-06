@@ -8,6 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Release Special Interest Group
 
+Ensure quality Kubernetes releases
 
 The [charter](charter.md) defines the scope and governance of the Release Special Interest Group.
 

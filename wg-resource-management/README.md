@@ -13,7 +13,7 @@ Designing and shepherding cross-cutting features around compute resource isolati
 ## Stakeholder SIGs
 * SIG Autoscaling
 * SIG Instrumentation
-* SIG Networking
+* SIG Network
 * SIG Node
 * SIG Scheduling
 * SIG Storage

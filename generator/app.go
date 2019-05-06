@@ -113,6 +113,15 @@ type LeadershipGroup struct {
 	EmeritusLeads  []Person `yaml:"emeritus_leads,omitempty"`
 }
 
+// PrefixToPersonMap returns a map of prefix to persons, useful for iteration over all persons
+func (g *LeadershipGroup) PrefixToPersonMap() map[string][]Person {
+	return map[string][]Person{
+		"chair":         g.Chairs,
+		"tech_lead":     g.TechnicalLeads,
+		"emeritus_lead": g.EmeritusLeads,
+	}
+}
+
 // Group represents either a Special Interest Group (SIG) or a Working Group (WG)
 type Group struct {
 	Dir              string
@@ -210,6 +219,7 @@ func (c *Context) Sort() {
 // Validate returns a list of errors encountered while validating a Context
 func (c *Context) Validate() []error {
 	errors := []error{}
+	people := make(map[string]Person)
 	for prefix, groups := range c.PrefixToGroupMap() {
 		for _, group := range groups {
 			expectedDir := group.DirName(prefix)
@@ -219,6 +229,17 @@ func (c *Context) Validate() []error {
 			expectedLabel := group.LabelName(prefix)
 			if expectedLabel != group.Label {
 				errors = append(errors, fmt.Errorf("%s: expected label: %s, got: %s", group.Dir, expectedLabel, group.Label))
+			}
+			for prefix, persons := range group.Leadership.PrefixToPersonMap() {
+				for _, person := range persons {
+					if val, ok := people[person.GitHub]; ok {
+						if val.Name != person.Name || val.Company != person.Company {
+							errors = append(errors, fmt.Errorf("%s: %ss: expected person: %v, got: %v", group.Dir, prefix, val, person))
+						}
+					} else {
+						people[person.GitHub] = person
+					}
+				}
 			}
 			if len(group.StakeholderSIGs) != 0 {
 				if prefix == "wg" {
@@ -243,7 +264,6 @@ func (c *Context) Validate() []error {
 					errors = append(errors, fmt.Errorf("%s: has no subprojects", group.Dir))
 				}
 			}
-
 		}
 	}
 	return errors

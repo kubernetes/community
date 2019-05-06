@@ -14,7 +14,7 @@ Provide an overall architecture that describes both the current policy related i
 * SIG Architecture
 * SIG Auth
 * SIG Multicluster
-* SIG Networking
+* SIG Network
 * SIG Node
 * SIG Scheduling
 * SIG Storage

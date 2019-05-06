@@ -1429,6 +1429,10 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
 - dir: sig-node
   name: Node
+  mission_statement: >
+    SIG Node is responsible for the components that support the controlled interactions
+    between pods and host resources.
+
   charter_link: charter.md
   label: node
   leadership:
@@ -1611,6 +1615,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
 - dir: sig-release
   name: Release
+  mission_statement: >
+    Ensure quality Kubernetes releases
+
   charter_link: charter.md
   label: release
   leadership:
@@ -1765,6 +1772,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/perf-tests/master/clusterloader2/OWNERS
 - dir: sig-scheduling
   name: Scheduling
+  mission_statement: >
+    SIG Scheduling is responsible for the components that make Pod placement decisions.
+
   charter_link: charter.md
   label: scheduling
   leadership:
@@ -2310,13 +2320,13 @@ workinggroups:
 
   stakeholder_sigs:
   - Multicluster
-  - Networking
+  - Network
   label: iot-edge
   leadership:
     chairs:
     - github: cantbewong
       name: Steve Wong
-      company: VMWare
+      company: VMware
     - github: cindyxing
       name: Cindy Xing
       company: Huawei
@@ -2429,7 +2439,6 @@ workinggroups:
 
   stakeholder_sigs:
   - Apps
-  - Big Data
   - Node
   label: machine-learning
   leadership:
@@ -2468,7 +2477,7 @@ workinggroups:
   stakeholder_sigs:
   - API Machinery
   - Auth
-  - Networking
+  - Network
   - Node
   - Scheduling
   - Storage
@@ -2505,7 +2514,7 @@ workinggroups:
   - Architecture
   - Auth
   - Multicluster
-  - Networking
+  - Network
   - Node
   - Scheduling
   - Storage
@@ -2547,7 +2556,7 @@ workinggroups:
   stakeholder_sigs:
   - Autoscaling
   - Instrumentation
-  - Networking
+  - Network
   - Node
   - Scheduling
   - Storage
@@ -2651,7 +2660,7 @@ committees:
     chairs:
     - github: bradamant3
       name: Jennifer Rondeau
-      company: VMware
+      company: Stripe
     - github: carolynvs
       name: Carolyn Van Slyck
       company: Microsoft
@@ -2659,7 +2668,7 @@ committees:
       name: Eric Paris
       company: Red Hat
     - github: jdumars
-      name: Jaice Singer Dumars
+      name: Jaice Singer DuMars
       company: Google
     - github: parispittman
       name: Paris Pittman
