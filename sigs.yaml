@@ -1429,6 +1429,8 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
 - dir: sig-node
   name: Node
+  mission_statement: >
+    SIG Node is responsible for the components that support the controlled interactions between pods and host resources.
   charter_link: charter.md
   label: node
   leadership:
@@ -1611,6 +1613,8 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
 - dir: sig-release
   name: Release
+  mission_statement: >
+    Ensure quality Kubernetes releases
   charter_link: charter.md
   label: release
   leadership:
@@ -1765,6 +1769,8 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/perf-tests/master/clusterloader2/OWNERS
 - dir: sig-scheduling
   name: Scheduling
+  mission_statement: >
+    SIG Scheduling is responsible for the components that make Pod placement decisions.
   charter_link: charter.md
   label: scheduling
   leadership:
