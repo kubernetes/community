@@ -11,7 +11,7 @@ inspired [GitHub's CODEOWNERS files](https://help.github.com/articles/about-code
 The velocity of a project that uses code review is limited by the number of people capable of
 reviewing code. The quality of a person's code review is limited by their familiarity with the code
 under review. Our goal is to address both of these concerns through the prudent use and maintenance
-of OWNERS files
+of OWNERS files.
 
 ## OWNERS spec
 
@@ -85,6 +85,28 @@ Instead, set a `.*` key inside `filters` (as shown in the previous example).
 
 **WARNING**: The `approve` plugin [does not currently respect `filters`][test-infra-7690].
 Until that is fixed, `filters` should only be used for the `labels` key (as shown in the above example).
+
+
+#### Emeritus
+
+It is inevitable, but there are times when someone may shift focuses, change jobs or step away from
+a specific area in the project for a time. These people may be domain experts over certain areas
+of the codebase, but can no longer dedicate the time needed to handle the responsibilities of
+reviewing and approving changes. They are encouraged to add themselves as an _"emeritus"_ approver
+under the `emeritus_approvers` key.
+
+GitHub usernames listed under the `emeritus_approvers` key can no longer approve code (use the
+`/approve` command) and will be ignored by prow for assignment. However, it can still be referenced
+by a person looking at the OWNERS file for a possible second or more informed opinion.
+
+When a contributor returns to being more active in that area, they may be promoted back to a
+regular approver at the discretion of the current approvers.
+
+```yaml
+emeritus_approvers:
+- david    # 2018-05-02
+- emily    # 2019-01-05
+```
 
 ### OWNERS_ALIASES
 
@@ -265,7 +287,9 @@ pieces of prow are used to implement the code review process above.
 
 OWNERS files should be regularly maintained.
 
-We encourage people to self-nominate or self-remove from OWNERS files via PR's. Ideally in the future we could use metrics-driven automation to assist in this process.
+We encourage people to self-nominate, self-remove or switch to [emeritus](#emeritus) from OWNERS
+files via PR's. Ideally in the future we could use metrics-driven automation to assist in this
+process.
 
 We should strive to:
 
