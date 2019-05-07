@@ -181,7 +181,7 @@ Let's talk about best practices so your pull request gets reviewed quickly.
 
 * [Development guide](/contributors/devel/development.md)
 * [Coding conventions](../guide/coding-conventions.md)
-* [API conventions](/contributors/devel/api-conventions.md)
+* [API conventions](/contributors/devel/sig-architecture/api-conventions.md)
 * [Kubectl conventions](/contributors/devel/sig-cli/kubectl-conventions.md)
 
 ## 1. Is the feature wanted? File a Kubernetes Enhancement Proposal

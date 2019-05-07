@@ -3,7 +3,7 @@
 **Owner: SIG-Node**
 
 This document describes testing policy and process for runtimes implementing the
-[Container Runtime Interface (CRI)](/contributors/devel/container-runtime-interface.md)
+[Container Runtime Interface (CRI)](/contributors/devel/sig-node/container-runtime-interface.md)
 to publish test results in a federated dashboard. The objective is to provide
 the Kubernetes community an easy way to track the conformance, stability, and
 supported features of a CRI runtime.
