@@ -52,5 +52,9 @@ k8s networking requirements are satisfied.
 * As more network feature arrives, CRI will evolve. 
 
 ## Related Issues
+
+Note, these issues may be resolved/closed. We still list them because they
+provide additional historical context.
+
 * Kubelet network plugin for client/server container runtimes [#28667](https://github.com/kubernetes/kubernetes/issues/28667)
 * CRI networking umbrella issue [#37316](https://github.com/kubernetes/kubernetes/issues/37316)
