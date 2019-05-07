@@ -179,6 +179,7 @@ channels:
   - name: mysql-operator
   - name: navigator
   - name: nl-users
+  - name: node-problem-detector
   - name: norw-users
   - name: office-hours
   - name: opencontainers
