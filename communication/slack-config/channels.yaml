@@ -175,6 +175,7 @@ channels:
   - name: minikube-dev
   - name: monitoring-mixins
   - name: monolith
+    archived: true
   - name: multi-platform
   - name: mysql-operator
   - name: navigator
@@ -188,6 +189,7 @@ channels:
   - name: openstack-helm
   - name: openstack-kolla
   - name: ops-status
+    archived: true
   - name: osbkit
   - name: pharmer
   - name: pl-users
