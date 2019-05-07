@@ -61,9 +61,6 @@ The following subprojects are owned by sig-architecture:
     - Slack: [#k8s-conformance](https://kubernetes.slack.com/messages/k8s-conformance)
     - GitHub Teams:
       - [@kubernetes/cncf-conformance-wg](https://github.com/orgs/kubernetes/teams/cncf-conformance-wg)
-- **klog**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
 
 ## GitHub Teams
 
