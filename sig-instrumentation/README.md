@@ -38,6 +38,9 @@ The following subprojects are owned by sig-instrumentation:
 - **heapster**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
+- **klog**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
 - **kube-state-metrics**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS

@@ -292,9 +292,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
-  - name: klog
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
 - dir: sig-auth
   name: Auth
   mission_statement: >
@@ -1275,6 +1272,9 @@ sigs:
   - name: heapster
     owners:
     - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
+  - name: klog
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
   - name: kube-state-metrics
     owners:
     - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS
