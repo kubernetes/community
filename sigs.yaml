@@ -2643,8 +2643,8 @@ usergroups:
     archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
     recordings_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
   contact:
-    slack: big-data-user-group
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-big-data-user-group
+    slack: ug-big-data
+    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-ug-big-data
     teams:
     - name: ug-big-data
       description: General Discussion
