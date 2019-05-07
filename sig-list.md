@@ -71,7 +71,7 @@ When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 
 | Name | Label |Organizers | Contact | Meetings |
 |------|-------|------------|--------|----------|
-|[Big Data](ug-big-data/README.md)|big-data|* [Erik Erlandson](https://github.com/erikerlandson), Red Hat<br>* [Anirudh Ramanathan](https://github.com/foxish), Rockset<br>* [Yinan Li](https://github.com/liyinan926), Google<br>|* [Slack](https://kubernetes.slack.com/messages/big-data-user-group)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-big-data-user-group)|* Regular User Group Meeting: [Wednesdays at 18:00 UTC (biweekly)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit)<br>
+|[Big Data](ug-big-data/README.md)|big-data|* [Erik Erlandson](https://github.com/erikerlandson), Red Hat<br>* [Anirudh Ramanathan](https://github.com/foxish), Rockset<br>* [Yinan Li](https://github.com/liyinan926), Google<br>|* [Slack](https://kubernetes.slack.com/messages/ug-big-data)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-ug-big-data)|* Regular User Group Meeting: [Wednesdays at 18:00 UTC (biweekly)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit)<br>
 
 ### Master Committee List
 
