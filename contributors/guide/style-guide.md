@@ -668,7 +668,7 @@ their previous efforts this guide would not be nearly as concise as it should.
 [SIG Google groups]: /sig-list.md
 [ISO 8601]: https://en.wikipedia.org/wiki/ISO_8601
 [kubernetes icon set]: /icons
-[API naming convention]: /contributors/devel/api-conventions.md#naming-conventions
+[API naming convention]: /contributors/devel/sig-architecture/api-conventions.md#naming-conventions
 [singular-they]: https://en.wikipedia.org/wiki/Singular_they
 [Microsoft's guide to bias-free communication]: https://docs.microsoft.com/en-us/style-guide/bias-free-communication
 [Wikipedia's entry for the Singular they]: https://en.wikipedia.org/wiki/Singular_they

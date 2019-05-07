@@ -1,7 +1,7 @@
 # Container Runtime Interface: Container Metrics
 
 [Container runtime interface
-(CRI)](/contributors/devel/container-runtime-interface.md)
+(CRI)](/contributors/devel/sig-node/container-runtime-interface.md)
 provides an abstraction for container runtimes to integrate with Kubernetes.
 CRI expects the runtime to provide resource usage statistics for the
 containers.
