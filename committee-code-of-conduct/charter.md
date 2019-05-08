@@ -1,7 +1,7 @@
 # Kubernetes Code of Conduct Committee Charter
 
 ## Mission/Purpose
-Our primary concern is creating and maintaining a safe and respectful community.
+Our primary mission is creating and maintaining a safe and respectful community.
 Our role is to provide and enforce a well-considered viewpoint on what
 constitutes acceptable behavior within our community. The [Code of
 Conduct](https://git.k8s.io/community/code-of-conduct.md) serves as the primary
