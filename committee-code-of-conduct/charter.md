@@ -111,7 +111,7 @@ impartial. If a committee member does not recuse themselves they may be removed
 from participation by a unanimous vote of all other members of the committee. 
 
 ### Committee seats unoccupied
-In the event that one or more of the seats on the committee is occupied, for any
+In the event that one or more of the seats on the committee is unoccupied, for any
 reason, a replacement member will be appointed by the steering committee as soon
 as reasonable. That person will serve out the remainder of the term of the
 person they are replacing.
