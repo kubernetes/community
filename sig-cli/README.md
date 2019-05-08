@@ -54,6 +54,9 @@ The following subprojects are owned by sig-cli:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
+- **cli-utils**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cli-utils/master/OWNERS
 - **krew**
   - Description: Plugin manager for kubectl.
   - Owners:
