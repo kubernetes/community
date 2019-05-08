@@ -173,7 +173,7 @@ Check out our [community guiding principles](/contributors/guide/collab.md) on h
 
 Beginner focused information can be found below in [Open a Pull Request](#open-a-pull-request) and [Code Review](#code-review).
 
-For quick reference on contributor resources, we have a handy [contributor cheatsheet](./contributor-cheatsheet.md)
+For quick reference on contributor resources, we have a handy [contributor cheatsheet](./contributor-cheatsheet/).
 
 ### Communication
 
