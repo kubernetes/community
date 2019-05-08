@@ -117,6 +117,7 @@ channels:
   - name: kube-router
   - name: kube-score
   - name: kube-spawn
+  - name: kube-state-metrics
   - name: kubeadm
   - name: kubeapps
   - name: kubebuilder
