@@ -25,7 +25,7 @@ The [charter](charter.md) defines the scope and governance of the Multicluster S
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Christian Bell (**[@csbell](https://github.com/csbell)**), Google
+* Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
 * Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei
 
 ## Contact

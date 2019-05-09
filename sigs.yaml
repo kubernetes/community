@@ -1305,9 +1305,9 @@ sigs:
   label: multicluster
   leadership:
     chairs:
-    - github: csbell
-      name: Christian Bell
-      company: Google
+    - github: pmorie
+      name: Paul Morie
+      company: Red Hat
     - github: quinton-hoole
       name: Quinton Hoole
       company: Huawei
