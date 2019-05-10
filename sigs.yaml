@@ -912,6 +912,8 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
   - name: cluster-addons
+    contact:
+      slack: cluster-addons
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/addon-operators/master/OWNERS
   - name: cluster-api

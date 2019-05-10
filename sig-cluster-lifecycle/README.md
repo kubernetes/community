@@ -67,6 +67,8 @@ The following subprojects are owned by sig-cluster-lifecycle:
 - **cluster-addons**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/addon-operators/master/OWNERS
+  - Contact
+    - Slack: [#cluster-addons](https://kubernetes.slack.com/messages/cluster-addons)
 - **cluster-api**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
