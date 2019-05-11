@@ -243,6 +243,14 @@ sigs:
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
     archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
+  - description: code organization Office Hours
+    day: Thursday
+    time: "14:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    archive_url: https://docs.google.com/document/d/1HtTI0rJEGP_MSf6eO87aCmx_tzpovPAAg7U2Zxwm8FE/edit#
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP03VEluzh0wpSRPzgve8kI5
   - description: conformance Office Hours
     day: Tuesday
     time: "12:00"
@@ -278,6 +286,8 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
   - name: code-organization
     description: '[Described below](#code-organization)'
+    contact:
+      slack: k8s-code-organization
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS

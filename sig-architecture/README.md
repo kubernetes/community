@@ -16,6 +16,9 @@ The [charter](charter.md) defines the scope and governance of the Architecture S
 * Regular SIG Meeting: [Thursdays at 19:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
+* code organization Office Hours: [Thursdays at 14:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1HtTI0rJEGP_MSf6eO87aCmx_tzpovPAAg7U2Zxwm8FE/edit#).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP03VEluzh0wpSRPzgve8kI5).
 * conformance Office Hours: [Tuesdays at 12:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1W31nXh9RYAb_VaYkwuPLd1hFxuRX3iU0DmaQ4lkCsX8/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
@@ -52,6 +55,8 @@ The following subprojects are owned by sig-architecture:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
     - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
+  - Contact
+    - Slack: [#k8s-code-organization](https://kubernetes.slack.com/messages/k8s-code-organization)
 - **conformance-definition**
   - Description: [Described below](#conformance-definition)
   - Owners:
@@ -108,7 +113,7 @@ Please see the [Conformance Test Review](https://github.com/kubernetes-sigs/arch
 
 Overall code organization, including github repositories and branching methodology, top-level and pkg OWNERS of kubernetes/kubernetes, vendoring
 
-Please reach out to folks in the [OWNERS](https://github.com/kubernetes/kubernetes/blob/master/vendor/OWNERS) file if you are interested in joining this effort.
+Please see the [Code Organization](https://github.com/orgs/kubernetes/projects/27) tracking board to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/kubernetes/blob/master/vendor/OWNERS) file if you are interested in joining this effort. Look for the `area/code-organization` label in the kubernetes repositories to mark [issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fcode-organization) and [PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+is%3Aopen+label%3Aarea%2Fcode-organization). We also use `area/dependency` label as well [issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fdependency) and [PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+is%3Aopen+label%3Aarea%2Fdependency).
 
 
 <!-- END CUSTOM CONTENT -->
