@@ -43,14 +43,16 @@ Expose a simple chunking mechanism to allow large API responses to be broken int
 ```
 GET /api/v1/pods?limit=500
 {
-  "metadata": {"continue": "ABC...", "resourceVersion": "147"},
+  "metadata": {"continue": "ABC...", "resourceVersion": "147",
+  "remaingingItemCount": 950},
   "items": [
      // no more than 500 items
    ]
 }
 GET /api/v1/pods?limit=500&continue=ABC...
 {
-  "metadata": {"continue": "DEF...", "resourceVersion": "147"},
+  "metadata": {"continue": "DEF...", "resourceVersion": "147",
+  "remainingItemCount": 450},
   "items": [
      // no more than 500 items
    ]
@@ -78,6 +80,11 @@ The server **may** limit the amount of time a continue token is valid for. Clien
 
 The server **must** support `continue` tokens that are valid across multiple API servers. The server **must** support a mechanism for rolling restart such that continue tokens are valid after one or all API servers have been restarted.
 
+The `remainingItemCount` returned by the server is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and this field will be unset and omitted during serialization. If the list is complete (either because the list request is not a chunking one or because this is the last chunk), then there are no more remaining items and this field is unset and is omitted during serialization. Servers older than v1.15 omit this field in their response to any list request.
+
+For example, assuming there are 1450 pods in the cluster when the client sends a chunking list request for pods, with `limit` set to 500. The first chunked list response contains 500 pods, a `continue` token, and with `metadata.remainingItemCount` set to 950. If the client use the `continue` token to continue listing, the server returns the second chunked list response containing the next 500 pods, another `continue` token, and with `metadata.remainingItemCount` set to 450. Note that the `remainingItemCount` is calculated based on the consistent list taken at the first chunking list request, that is, no matter if pods are created or deleted between the first and the second chunking list requests, the `metadata.remainingItemCount` in the second list response is always set to 450.
+
+The `remainingItemCount` offers a simple and efficient way to get the count of objects of a resource type. For example, to get the total count of all pods in the cluster, simply sends `GET /api/v1/pods?limit=1` to the apiserver. Similarly, one can get the total count of all pods in a namespace. Note that the `remainingItemCount` is set to 0 when the list request contains any label or field selector, so this feature cannot be used to count the number of objects matching specific label or field selectors. Without the `remainingItemCount` feature, one needs to list all pods to get a count.
 
 ### Proposed Implementations
 
@@ -90,6 +97,8 @@ Implementations that cannot offer consistent ranging (returning a set of results
 #### etcd3
 
 For etcd3 the continue token would contain a resource version (the snapshot that we are reading that is consistent across the entire LIST) and the start key for the next set of results. Upon receiving a valid continue token the apiserver would instruct etcd3 to retrieve the set of results at a given resource version, beginning at the provided start key, limited by the maximum number of requests provided by the continue token (or optionally, by a different limit specified by the client). If more results remain after reading up to the limit, the storage should calculate a continue token that would begin at the next possible key, and the continue token set on the returned list.
+
+etcd3 returns the total number of keys within the range as `response.Count` if the read is a range read. The storage checks if the list request contained label or field selector. If not, the storage calculates the `remainingItemCount` as `response.Count-limit`, which is the number of remaining items in the consistent list, excluding the items in the current and previous chunked list response.
 
 The storage layer in the apiserver must apply consistency checking to the provided continue token to ensure that malicious users cannot trick the server into serving results outside of its range. The storage layer must perform defensive checking on the provided value, check for path traversal attacks, and have stable versioning for the continue token.
 
