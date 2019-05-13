@@ -12,6 +12,7 @@ channels:
   - name: aus-nz-users
   - name: awesome-kubernetes
   - name: aws-authenticator
+  - name: batch-condor-hpc
   - name: bazel
   - name: bootkube
   - name: brigade
