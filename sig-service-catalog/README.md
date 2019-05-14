@@ -23,8 +23,6 @@ The [charter](charter.md) defines the scope and governance of the Service Catalo
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Jonathan Berkhahn (**[@jberkhahn](https://github.com/jberkhahn)**), IBM
-* Jay Boyd (**[@jboyd01](https://github.com/jboyd01)**), Red Hat
-* Michael Kibbe (**[@kibbles-n-bytes](https://github.com/kibbles-n-bytes)**), Google
 
 ## Emeritus Leads
 

@@ -1863,12 +1863,6 @@ sigs:
     - github: jberkhahn
       name: Jonathan Berkhahn
       company: IBM
-    - github: jboyd01
-      name: Jay Boyd
-      company: Red Hat
-    - github: kibbles-n-bytes
-      name: Michael Kibbe
-      company: Google
     emeritus_leads:
     - github: arschles
       name: Aaron Schlesinger
