@@ -6,11 +6,11 @@ June 24th, 2019<br />
 10am to 5pm<br />
 Shanghai Expo Center
 
-[Registration Page](https://www.lfasiallc.com/events/contributor-summit-shanghai-2019/)
+[Event Page](https://www.lfasiallc.com/events/contributors-summit-china-2019/)
 
 ## Description
 
-This year's contributor summit in China will be full-day event for people who contribute to Kubernetes, or are interested in becoming contributors, whether through writing code, documentation, infrastructure, project management, or the many other places they can help.  It will include three tracks:
+This year's contributor summit in China will be a full-day event for people who contribute to Kubernetes, or are interested in becoming contributors, whether through writing code, documentation, infrastructure, project management, or the many other places they can help.  It will include three tracks:
 
 * The New Contributor Workshop is for those looking to find out how to become Kubernetes contributors;
 * The Current Contributor Day is for attendees who are already contributing to Kubernetes, and want to learn more or do hands-on work at the Summit;
