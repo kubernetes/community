@@ -1,4 +1,5 @@
 channels:
+  - name: kubernetes-docs-blog
   - name: kubernetes-docs-de
   - name: kubernetes-docs-es
   - name: kubernetes-docs-fr
@@ -9,4 +10,3 @@ channels:
   - name: kubernetes-docs-ko
   - name: kubernetes-docs-pt
   - name: kubernetes-docs-zh
-  - name: kubernetes-docs-blog
