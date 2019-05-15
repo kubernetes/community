@@ -1,4 +1,6 @@
-The Kubernetes Blog Subproject is owned by SIG-Docs and run by the Editorial Team.
+# Kubernetes Blog Subproject
+
+The Kubernetes Blog Subproject is owned by [SIG-Docs](https://github.com/kubernetes/community/tree/master/sig-docs) and run by the [Editorial Team](#leadership).
 
 This section covers documentation, processes, and roles for the Kubernetes blog.
 
@@ -11,17 +13,17 @@ Regular Blog Meeting: TBD (biweekly).
 
 ## Leadership
 
-**Editorial Leads:** [Kaitlyn Barnard](https://github.com/kbarnard10), [Zach Corleissen](https://github.com/zacharysarah) (shadow)
-**Technical Editors:** [Bob Killen](https://github.com/mrbobbytables)
-**Copy Editors:** [Alex Handy](https://github.com/vonguard), [Cody Clark](https://github.com/cody-clark)
-**Blog Community Managers:** [Jorge Castro](https://github.com/castrojo), [Paris Pittman](https://github.com/parispittman) (shadow)
+* **Editorial Leads:** [Kaitlyn Barnard](https://github.com/kbarnard10), [Zach Corleissen](https://github.com/zacharysarah) (shadow)
+* **Technical Editors:** [Bob Killen](https://github.com/mrbobbytables)
+* **Copy Editors:** [Alex Handy](https://github.com/vonguard), [Cody Clark](https://github.com/cody-clark)
+* **Blog Community Managers:** [Jorge Castro](https://github.com/castrojo), [Paris Pittman](https://github.com/parispittman) (shadow)
 
 ## Contact
 
-Slack: #kubernetes-docs-blog
-Mailing List: [blog@kubernetes.io](mailto:blog@kubernetes.io)
-Open Community Issues/PRs: area/blog label
-GitHub Team: @kubernetes/sig-docs-blog-reviews
+* Slack: #kubernetes-docs-blog
+* Mailing List: [blog@kubernetes.io](mailto:blog@kubernetes.io)
+* Open Community Issues/PRs: area/blog label
+* GitHub Team: @kubernetes/sig-docs-blog-reviews
 
 ## Submit a Post
 
