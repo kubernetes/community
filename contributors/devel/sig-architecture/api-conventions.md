@@ -342,7 +342,9 @@ Do not use fields that you don't need - simpler is better.
 Use of the `Reason` field is encouraged.
 
 Use the `LastHeartbeatTime` with great caution - frequent changes to this field
-can cause a large fan-out effect for some resources.
+can cause a large fan-out effect for some resources. The name of this field also
+varies from resource to resource, sometimes it's called `LastProbeTime`, and other
+times it's called `LastUpdateTime`.
 
 Conditions should be added to explicitly convey properties that users and
 components care about rather than requiring those properties to be inferred from
