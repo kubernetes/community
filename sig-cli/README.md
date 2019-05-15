@@ -69,6 +69,8 @@ The following subprojects are owned by sig-cli:
 - **kustomize**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
+  - Contact
+    - Slack: [#kustomize](https://kubernetes.slack.com/messages/kustomize)
 
 ## GitHub Teams
 

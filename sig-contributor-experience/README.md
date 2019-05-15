@@ -60,9 +60,13 @@ The following subprojects are owned by sig-contributor-experience:
 - **devstats**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
+  - Contact
+    - Slack: [#devstats](https://kubernetes.slack.com/messages/devstats)
 - **events**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
+  - Contact
+    - Slack: [#events](https://kubernetes.slack.com/messages/events)
   - Meetings:
     - Contributor Summit strategy, content and planning: [Mondays at 9:00 PT (Pacific Time)]() (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
 - **github-management**
@@ -82,6 +86,8 @@ The following subprojects are owned by sig-contributor-experience:
 - **slack-infra**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/slack-infra/master/OWNERS
+  - Contact
+    - Slack: [#slack-infra](https://kubernetes.slack.com/messages/slack-infra)
 
 ## GitHub Teams
 

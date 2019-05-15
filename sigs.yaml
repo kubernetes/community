@@ -179,6 +179,8 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/examples/master/OWNERS
   - name: kompose
+    contact:
+      slack: kompose
     owners:
     - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
   - name: workloads-api
@@ -713,6 +715,8 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
   - name: kustomize
+    contact:
+      slack: kustomize
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
 - dir: sig-cloud-provider
@@ -909,6 +913,8 @@ sigs:
       description: PR Reviews
   subprojects:
   - name: bootkube
+    contact:
+      slack: bootkube
     owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
   - name: cluster-addons
@@ -917,6 +923,8 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/addon-operators/master/OWNERS
   - name: cluster-api
+    contact:
+      slack: cluster-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
   - name: cluster-api-provider-aws
@@ -932,21 +940,29 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
   - name: etcdadm
+    contact:
+      slack: etcdadm
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
   - name: kops
     owners:
     - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
   - name: kube-aws
+    contact:
+      slack: kube-aws
     owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
   - name: kube-deploy
+    contact:
+      slack: kube-deploy
     owners:
     - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
   - name: kube-up
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
   - name: kubeadm
+    contact:
+      slack: kubeadm
     owners:
     - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
@@ -958,9 +974,13 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
   - name: kubespray
+    contact:
+      slack: kubespray
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
   - name: minikube
+    contact:
+      slack: minikube
     owners:
     - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
 - dir: sig-contributor-experience
@@ -1043,9 +1063,13 @@ sigs:
       frequency: biweekly
       url: https://docs.google.com/document/d/1gdFWfkrapQclZ4-z4Lx2JwqKsJjXXUOVoLhBzZiZgSk/edit
   - name: devstats
+    contact:
+      slack: devstats
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
   - name: events
+    contact:
+      slack: events
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
     meetings:
@@ -1069,6 +1093,8 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
   - name: slack-infra
+    contact:
+      slack: slack-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/slack-infra/master/OWNERS
 - dir: sig-docs
@@ -1285,9 +1311,13 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
   - name: klog
+    contact:
+      slack: klog
     owners:
     - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
   - name: kube-state-metrics
+    contact:
+      slack: kube-state-metrics
     owners:
     - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS
   - name: metrics
@@ -1418,6 +1448,8 @@ sigs:
       description: Test Failures and Triage
   subprojects:
   - name: external-dns
+    contact:
+      slack: external-dns
     owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/external-dns/master/OWNERS
   - name: ingress
@@ -1502,6 +1534,8 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/OWNERS
   - name: node-problem-detector
+    contact:
+      slack: node-problem-detector
     owners:
     - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
   - name: rktlet
