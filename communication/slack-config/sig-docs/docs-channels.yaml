@@ -9,3 +9,4 @@ channels:
   - name: kubernetes-docs-ko
   - name: kubernetes-docs-pt
   - name: kubernetes-docs-zh
+  - name: kubernetes-docs-blog
