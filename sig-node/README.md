@@ -56,6 +56,8 @@ The following subprojects are owned by sig-node:
 - **node-problem-detector**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
+  - Contact
+    - Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
 - **rktlet**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/rktlet/master/OWNERS

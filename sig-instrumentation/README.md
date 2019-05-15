@@ -41,9 +41,13 @@ The following subprojects are owned by sig-instrumentation:
 - **klog**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
+  - Contact
+    - Slack: [#klog](https://kubernetes.slack.com/messages/klog)
 - **kube-state-metrics**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS
+  - Contact
+    - Slack: [#kube-state-metrics](https://kubernetes.slack.com/messages/kube-state-metrics)
 - **metrics**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS

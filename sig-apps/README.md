@@ -44,6 +44,8 @@ The following subprojects are owned by sig-apps:
 - **kompose**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
+  - Contact
+    - Slack: [#kompose](https://kubernetes.slack.com/messages/kompose)
 - **workloads-api**
   - Description: The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, and StatefulSet kinds
   - Owners:

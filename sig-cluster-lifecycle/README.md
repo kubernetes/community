@@ -64,6 +64,8 @@ The following subprojects are owned by sig-cluster-lifecycle:
 - **bootkube**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
+  - Contact
+    - Slack: [#bootkube](https://kubernetes.slack.com/messages/bootkube)
 - **cluster-addons**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/addon-operators/master/OWNERS
@@ -72,6 +74,8 @@ The following subprojects are owned by sig-cluster-lifecycle:
 - **cluster-api**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
+  - Contact
+    - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
 - **cluster-api-provider-aws**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
@@ -87,15 +91,21 @@ The following subprojects are owned by sig-cluster-lifecycle:
 - **etcdadm**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
+  - Contact
+    - Slack: [#etcdadm](https://kubernetes.slack.com/messages/etcdadm)
 - **kops**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
 - **kube-aws**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
+  - Contact
+    - Slack: [#kube-aws](https://kubernetes.slack.com/messages/kube-aws)
 - **kube-deploy**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
+  - Contact
+    - Slack: [#kube-deploy](https://kubernetes.slack.com/messages/kube-deploy)
 - **kube-up**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
@@ -104,6 +114,8 @@ The following subprojects are owned by sig-cluster-lifecycle:
     - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+  - Contact
+    - Slack: [#kubeadm](https://kubernetes.slack.com/messages/kubeadm)
 - **kubeadm-dind-cluster**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubeadm-dind-cluster/master/OWNERS
@@ -113,9 +125,13 @@ The following subprojects are owned by sig-cluster-lifecycle:
 - **kubespray**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
+  - Contact
+    - Slack: [#kubespray](https://kubernetes.slack.com/messages/kubespray)
 - **minikube**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
+  - Contact
+    - Slack: [#minikube](https://kubernetes.slack.com/messages/minikube)
 
 ## GitHub Teams
 
