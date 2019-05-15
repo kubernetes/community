@@ -88,6 +88,8 @@ To detect if the server supports the `remainingItemCount`, a client can send a c
 
 The `remainingItemCount` offers a simple and efficient way to estimate the size of the collection. For example, to estimate the count of all pods in the cluster, simply sends `GET /api/v1/pods?limit=1` to the apiserver. Similarly, one can get the count of pods in a namespace. Note that the `remainingItemCount` is set to 0 when the list request contains any label or field selector, so this feature cannot be used to count the number of objects matching specific label or field selectors. Without the `remainingItemCount` feature, one needs to list all pods to count.
 
+In v1.15, the `remainingItemCount` is an alpha feature controlled by the `RemainingItemCount` feature flag. It is disabled by default, meaning that v1.15 apiservers by default omit the `remainingItemCount` in list responses.
+
 ### Proposed Implementations
 
 etcd3 is the primary Kubernetes store and has been designed to support consistent range reads in chunks for this use case. The etcd3 store is an ordered map of keys to values, and Kubernetes places all keys within a resource type under a common prefix, with namespaces being a further prefix of those keys. A read of all keys within a resource type is an in-order scan of the etcd3 map, and therefore we can retrieve in chunks by defining a start key for the next chunk that skips the last key read.
@@ -186,3 +188,5 @@ The initial chunking implementation would focus on consistent listing on server 
 For the initial alpha release, chunking would be behind a feature flag and attempts to provide the `continue` or `limit` flags should be ignored. While disabled, a `continue` token should never be returned by the server as part of a list.
 
 Future work might offer more options for clients to page in an inconsistent fashion, or allow clients to directly specify the parts of the namespace / name keyspace they wish to range over (paging).
+
+The `RemainingItemCount` is an alpha feature in v1.15. We will promote it to GA in v1.16 if we get good feedback.
