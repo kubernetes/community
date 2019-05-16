@@ -134,6 +134,7 @@ channels:
   - name: kubernetes-client
   - name: kubernetes-dev
   # kubernetes-docs-* channels are defined in sig-docs/
+  - name: kubernetes-docs-blog
   - name: kubernetes-novice
   - name: kubernetes-operators
   - name: kubernetes-ruby
