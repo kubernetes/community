@@ -228,6 +228,7 @@ channels:
     archived: true
   - name: sig-contribex
   - name: sig-docs
+  - name: sig-docs-blog
   - name: sig-docs-maintainers
   - name: sig-docs-modeling
   - name: sig-docs-release
