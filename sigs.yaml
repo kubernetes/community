@@ -881,6 +881,12 @@ sigs:
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
     archive_url: https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+  - description: etcdadm Office Hours
+    day: Monday
+    time: "09:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit#
   - description: kops Office Hours
     day: Friday
     time: "09:00"
