@@ -26,7 +26,7 @@ As the CSI Spec moves towards GA and more storage plugins are being created and
 becoming production ready, we will want to migrate our in-tree plugin logic to
 use CSI plugins instead. This is motivated by the fact that we are currently
 supporting two versions of each plugin (one in-tree and one CSI), and that we
-want to eventually transition all storage users to CSI.
+want to eventually migrate all storage users to CSI.
 
 In order to do this we need to migrate the internals of the in-tree plugins to
 call out to CSI Plugins because we will be unable to deprecate the current
@@ -303,8 +303,34 @@ existing Pods in the ADC.
 
 
 ### Volume Resize
+#### Offline Resizing
+For controller expansion, in the in-tree resize controller, we will create a new PVC annotation `volume.kubernetes.io/storage-resizer`
+and set the value to the name of resizer. If the PV is CSI PV or migrated in-tree PV, the annotation will be set to 
+the name of CSI driver; otherwise, it will be set to the name of in-tree plugin.
 
-TODO: Design
+For migrated volume, The CSI resizer name will be derived from translating in-tree plugin name
+to CSI driver name by translation library. We will also add an event to PVC about resizing being handled
+by external controller.
+
+For external resizer, we will update it to expand volume for both CSI volume and in-tree 
+volume (only if migration is enabled). For migrated in-tree volume, it will update in-tree PV object
+with new volume size and mark in-tree PVC as resizing finished.
+
+To synchronize between in-tree resizer and external resizer, external resizer will find resizer name
+using PVC annotation `volume.kubernetes.io/storage-resizer`. Since `volume.kubernetes.io/storage-resizer`
+annotation defines the CSI plugin name which will handle external resizing, it should
+match driver running with external-resizer, hence external resizer will proceed with volume resizing. Otherwise,
+it will yield to in-tree resizer.
+
+For filesystem expansion, in the OperationGenerator, `GenerateMountVolumeFunc` is used to expand file system after volume
+is expanded and staged/mounted. The migration logic is covered by previous migration of volume mount.
+
+#### Online Resizing
+Handling online resizing does not require anything special in control plane. The behaviour will be
+same as offline resizing. 
+
+To handle expansion on kubelet - we will convert volume spec to CSI spec before handling the call
+to volume plugin inside `GenerateExpandVolumeFSWithoutUnmountingFunc`.
 
 ### Raw Block
 In the OperationGenerator, `GenerateMapVolumeFunc`, `GenerateUnmapVolumeFunc` and 
