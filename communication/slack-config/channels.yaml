@@ -263,6 +263,7 @@ channels:
   - name: summit-staff
   - name: suse-caasp
   - name: talk-proposals
+  - name: terraform-providers
   - name: testing-commons
   - name: testing-ops
   - name: tilt
@@ -300,4 +301,3 @@ channels:
   - name: wg-virtual-kubelet
     archived: true
   - name: workshop-chat
-  - name: terraform-providers
