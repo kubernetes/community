@@ -90,11 +90,10 @@ repository.
 ### Meeting quorum
 Meetings are considered at quorum when a simple majority of the members are
 present. Where there are 4 or fewer members available due vacant seats or
-recusal, quorum is 2. Note that many decisions are not able to be implemented in
-situations where only 2 members are present.
+recusal, quorum is 2.
 
 ### Policy change ratification
-Any changes to the charter require explicit LGTM or Approve from all active
+Any changes to the charter require explicit LGTM or Approve from all
 committee members. For pull requests, a /hold will be applied until all
 approvals are present. Any changes merged without consensus will be reverted. 
 
