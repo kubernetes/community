@@ -618,7 +618,7 @@ Fields must be either optional or required.
 Optional fields have the following properties:
 
 - They have the `+optional` comment tag in Go.
-- They are a pointer type in the Go definition (e.g. `bool *awesomeFlag`) or
+- They are a pointer type in the Go definition (e.g. `AwesomeFlag *SomeFlag`) or
 have a built-in `nil` value (e.g. maps and slices).
 - The API server should allow POSTing and PUTing a resource with this field
 unset.
@@ -637,7 +637,7 @@ Required fields have the opposite properties, namely:
 
 - They do not have an `+optional` comment tag.
 - They do not have an `omitempty` struct tag.
-- They are not a pointer type in the Go definition (e.g. `bool otherFlag`).
+- They are not a pointer type in the Go definition (e.g. `AnotherFlag SomeFlag`).
 - The API server should not allow POSTing or PUTing a resource with this field
 unset.
 
