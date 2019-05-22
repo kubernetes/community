@@ -46,7 +46,9 @@ The [committee is composed of 5
 members](https://git.k8s.io/community/committee-code-of-conduct) elected by the
 Steering Committee based on private nomination. During an election, the two
 candidates that received the most committee votes are granted 2 year terms, with
-the remaining person given a one year term. 
+the remaining person(s) given a one year term. This gives us overlap between
+members terms, so that there are two members staying on between each to provide
+continuity.
 
 The committee is the primary recipient of all conduct complaints regardless of
 where in the community they originate. The only exception is at CNCF events,
