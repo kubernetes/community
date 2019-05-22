@@ -121,8 +121,9 @@ person they are replacing.
 If committee members believe that the committee is no longer able to act in
 accordance with the above Mission/Purpose the committee may vote to dissolve.
 The committee should specify a date of dissolution. Dissolution requires an
-affirmative vote of more than 75% of committee members. If the committee is
-dissolved all seats are vacated on the date specified.
+affirmative vote of more than 75% of committee members, and must be unamimous
+when the committee has only 4 or fewer members. If the committee is dissolved,
+all seats are vacated on the date specified.
 
 ### Removal
 A committee member may be removed from the committee by a unanimous decision of
