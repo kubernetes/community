@@ -107,7 +107,7 @@ The following subprojects are owned by sig-auth:
   - Description: Proposals and prototypes for introducing tenant model to enable multi-tenant cluster
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/multi-tenancy/master/OWNERS
-- **node-n-and-isolation**
+- **node-identity-and-isolation**
   - Description: Node identity management (co-owned with sig-lifecycle), and authorization restrictions for isolating workloads on separate nodes (co-owned with sig-node).
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/certificates/approver/OWNERS

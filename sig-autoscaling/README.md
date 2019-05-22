@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Autoscaling Special Interest Group
 
-Covers development and maintenance of components for automated scaling in Kubernetes.  This includes automated vertical and horizontal pod autoscaling, initial resource estimation, cluster-proportional system component autoscaling, and autoscaling of Kubernetes clusters themselves.
+Covers development and maintenance of components for automated scaling in Kubernetes. This includes automated vertical and horizontal pod autoscaling, initial resource estimation, cluster-proportional system component autoscaling, and autoscaling of Kubernetes clusters themselves.
 
 The [charter](charter.md) defines the scope and governance of the Autoscaling Special Interest Group.
 
