@@ -2,22 +2,20 @@
 
 Building and testing Kubernetes with  Bazel is supported but not yet default.
 
-Bazel is used to run all Kubernetes PRs on [Prow](https://prow.k8s.io),
+Bazel is used to run all Kubernetes PRs on [Prow],
 as remote caching enables significantly reduced build and test times.
 
 Some repositories (such as kubernetes/test-infra) have switched to using Bazel
 exclusively for all build, test, and release workflows.
 
-Go rules are managed by the [`gazelle`](https://github.com/bazelbuild/rules_go/tree/master/go/tools/gazelle)
-tool, with some additional rules managed by the [`kazel`](https://git.k8s.io/repo-infra/kazel) tool.
+Go rules are managed by the [`gazelle`][gazelle]
+tool, with some additional rules managed by the [`kazel`][kazel] tool.
 These tools are called via the `hack/update-bazel.sh` script.
 
-Instructions for installing Bazel
-can be found [here](https://www.bazel.io/versions/master/docs/install.html).
-Please note that until [this Bazel
-issue](https://github.com/bazelbuild/rules_docker/issues/454) is fixed,
-`/usr/bin/env python` must be python2 in order for all the Bazel commands listed
-below to succeed.
+Instructions for installing Bazel can be found [here][bazel-install].
+Note that older Bazel versions did not work with Python 3, so we recommend
+using version 0.27.0 or newer. If you still have Python-related problems,
+please take a look at [this FAQ][bazel-python-faq].
 
 Several convenience `make` rules have been created for common operations:
 
@@ -36,6 +34,12 @@ tests, run
 ```console
 $ bazel test //pkg/kubectl/...
 ```
+
+[Prow]: https://prow.k8s.io
+[bazel-install]: https://www.bazel.io/versions/master/docs/install.html
+[kazel]: https://git.k8s.io/repo-infra/kazel
+[gazelle]: https://github.com/bazelbuild/rules_go/tree/master/go/tools/gazelle
+[bazel-python-faq]: https://github.com/bazelbuild/bazel/issues/7899
 
 ## Planter
 If you don't want to install Bazel, you can instead try using the unofficial
