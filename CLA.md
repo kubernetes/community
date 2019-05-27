@@ -1,6 +1,6 @@
 # The Contributor License Agreement
 
-The [Cloud Native Computing Foundation](https://www.cncf.io/community) defines
+The [Cloud Native Computing Foundation](https://www.cncf.io/community) (CNCF) defines
 the legal status of the contributed code in two different types of _Contributor License Agreements_
 (CLAs), [individual contributors](https://github.com/cncf/cla/blob/master/individual-cla.pdf) and [corporations](https://github.com/cncf/cla/blob/master/corporate-cla.pdf).
 
