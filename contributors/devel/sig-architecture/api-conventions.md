@@ -5,7 +5,7 @@ Updated: 3/7/2017
 
 *This document is oriented at users who want a deeper understanding of the
 Kubernetes API structure, and developers wanting to extend the Kubernetes API.
-An introduction to using resources with kubectl can be found in [the object management overview](https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/).*
+An introduction to using resources with kubectl can be found in [the object management overview](https://kubernetes.io/docs/concepts/overview/working-with-objects/object-management/).*
 
 **Table of Contents**
 
