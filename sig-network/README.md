@@ -13,7 +13,7 @@ Covers networking in Kubernetes.
 The [charter](charter.md) defines the scope and governance of the Network Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 14:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Thursdays at 14:00 PT (Pacific Time)](https://zoom.us/j/361123509) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
 
