@@ -1,6 +1,6 @@
 # The Contributor License Agreement
 
-The [Cloud Native Computing Foundation](https://www.cncf.io/community) defines
+The [Cloud Native Computing Foundation](https://www.cncf.io/community) (CNCF) defines
 the legal status of the contributed code in two different types of _Contributor License Agreements_
 (CLAs), [individual contributors](https://github.com/cncf/cla/blob/master/individual-cla.pdf) and [corporations](https://github.com/cncf/cla/blob/master/corporate-cla.pdf).
 
@@ -13,7 +13,7 @@ It is important to read and understand this legal agreement.
 
 ## How do I sign?
 
-If your work is done as an employee of your company, contact your company's legal department and ask to be put on the list of approved contributors for the Kubernetes CLA. Below, we have included steps for "Corporation signup" in case your company does not have a company agreement and would like to have one.
+If your work is done as an employee of your company, contact your company's legal department and ask to be put on the list of approved contributors for the CNCF CLA. Below, we have included steps for "Corporation signup" in case your company does not have a company agreement and would like to have one.
 
 #### 1. Log in to the Linux Foundation ID Portal with Github
 
