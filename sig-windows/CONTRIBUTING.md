@@ -8,7 +8,8 @@ Contains a list of common resources when contributing in the effort to support W
     -   [Build Prerequisites](#build-prerequisites)       
     -   [Building Kubernetes binaries for Windows](#building-kubernetes-binaries-for-windows)        
     -   [Updating the Node binaries](#updating-the-node-binaries)    
--   [Creating a PR](#creating-a-pr)    
+-   [Creating a PR](#creating-a-pr)
+-   [API Considerations](#api-considerations)
 -   [Running Tests](#running-tests)    
 -   [Reporting Issues and Feature Requests](#reporting-issues-and-feature-requests)    
 -   [Gathering Logs](#gathering-logs)        
@@ -74,6 +75,10 @@ The detailed steps here are based off an example PR on GitHub: [https://github.c
 5. If there are errors, fix them as needed. Once you're done, delete the `.patch` file and then `git commit` the rest to your local branch.
 6. Deploy your own cluster, including Windows Nodes
 7. Test Your Changes
+
+## API Considerations
+
+If you modifying an API in the SIG-Windows codebase, make sure you are aware of the API [guidelines](/contributors/devel/sig-architecture/api_changes.md) and [conventions](/contributors/devel/sig-architecture/api-conventions.md) used in Kubernetes. This [document offers guidelines for API reviewers that API developers should always have in consideration](https://docs.google.com/document/d/1pkCYjr_OLCRUk2e606eMa2PEIwJdFHAfU5slXtBcKj8/edit).
 
 ## Running Tests
 
