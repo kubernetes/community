@@ -78,7 +78,7 @@ The detailed steps here are based off an example PR on GitHub: [https://github.c
 
 ## API Considerations
 
-If you modifying an API in the SIG-Windows codebase, make sure you are aware of the API [guidelines](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api_changes.md) and [conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md) used in Kubernetes. This [document offers guidelines for API reviewers that API developers should always have in consideration](https://docs.google.com/document/d/1pkCYjr_OLCRUk2e606eMa2PEIwJdFHAfU5slXtBcKj8/edit).
+If you modifying an API in the SIG-Windows codebase, make sure you are aware of the API [guidelines](/contributors/devel/sig-architecture/api_changes.md) and [conventions](/contributors/devel/sig-architecture/api-conventions.md) used in Kubernetes. This [document offers guidelines for API reviewers that API developers should always have in consideration](https://docs.google.com/document/d/1pkCYjr_OLCRUk2e606eMa2PEIwJdFHAfU5slXtBcKj8/edit).
 
 ## Running Tests
 
