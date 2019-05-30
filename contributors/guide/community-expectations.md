@@ -54,6 +54,8 @@ to them.  Reviewers are expected to respond to an *active* PRs with reasonable
 latency, and if reviewers fail to respond, those PRs may be assigned to other
 reviewers.
 
+If reviewers are unavailable to review for some time, they are expected to set their [user status](https://help.github.com/en/articles/personalizing-your-profile#setting-a-status) to "busy" so that the bot will not request reviews from them on new PRs automatically. If they are unavailable for a longer period of time, they are expected to remove themselves from the OWNERS file and potentially nominate someone else.
+
 *Active* PRs are considered those which have a proper CLA (`cla:yes`) label
 and do not need rebase to be merged.  PRs that do not have a proper CLA, or
 require a rebase are not considered active PRs.
