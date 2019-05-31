@@ -25,7 +25,6 @@ An introduction to using resources with kubectl can be found in [the object mana
   - [Differing Representations](#differing-representations)
   - [Verbs on Resources](#verbs-on-resources)
     - [PATCH operations](#patch-operations)
-      - [Strategic Merge Patch](#strategic-merge-patch)
   - [Idempotency](#idempotency)
   - [Optional vs. Required](#optional-vs-required)
   - [Defaulting](#defaulting)
@@ -163,7 +162,7 @@ are not singular JSON objects, such as streams of JSON objects or unstructured
 text log data.
 
 A common set of "meta" API objects are used across all API groups and are
-thus considered part of the server group named `meta.k8s.io`. These types may
+thus considered part of the API group named `meta.k8s.io`. These types may
 evolve independent of the API group that uses them and API servers may allow
 them to be addressed in their generic form. Examples are `ListOptions`,
 `DeleteOptions`, `List`, `Status`, `WatchEvent`, and `Scale`. For historical
@@ -252,7 +251,7 @@ or otherwise changed after creation by other ecosystem components (e.g.,
 schedulers, auto-scalers), and is persisted in stable storage with the API
 object. If the specification is deleted, the object will be purged from the
 system. The status summarizes the current state of the object in the system, and
-is usually persisted with the object by an automated processes but may be
+is usually persisted with the object by automated processes but may be
 generated on the fly. At some cost and perhaps some temporary degradation in
 behavior, the status could be reconstructed by observation if it were lost.
 
@@ -499,8 +498,8 @@ as `nfs` and `iscsi`.  All fields in the set should be
 Sometimes, when a new type is created, the api designer may anticipate that a
 union will be needed in the future, even if only one field is allowed initially.
 In this case, be sure to make the field [Optional](#optional-vs-required)
-optional. In the validation, you may still return an error if the sole field is
-unset. Do not set a default value for that field.
+In the validation, you may still return an error if the sole field is unset. Do
+not set a default value for that field.
 
 ### Lists and Simple kinds
 
@@ -572,23 +571,19 @@ The API supports three different PATCH operations, determined by their
 corresponding Content-Type header:
 
 * JSON Patch, `Content-Type: application/json-patch+json`
- * As defined in [RFC6902](https://tools.ietf.org/html/rfc6902), a JSON Patch is
+  * As defined in [RFC6902](https://tools.ietf.org/html/rfc6902), a JSON Patch is
 a sequence of operations that are executed on the resource, e.g. `{"op": "add",
 "path": "/a/b/c", "value": [ "foo", "bar" ]}`. For more details on how to use
 JSON Patch, see the RFC.
 * Merge Patch, `Content-Type: application/merge-patch+json`
- * As defined in [RFC7386](https://tools.ietf.org/html/rfc7386), a Merge Patch
+  * As defined in [RFC7386](https://tools.ietf.org/html/rfc7386), a Merge Patch
 is essentially a partial representation of the resource. The submitted JSON is
 "merged" with the current resource to create a new one, then the new one is
 saved. For more details on how to use Merge Patch, see the RFC.
 * Strategic Merge Patch, `Content-Type: application/strategic-merge-patch+json`
- * Strategic Merge Patch is a custom implementation of Merge Patch. For a
+  * Strategic Merge Patch is a custom implementation of Merge Patch. For a
 detailed explanation of how it works and why it needed to be introduced, see
-below.
-
-#### Strategic Merge Patch
-
-Details of Strategic Merge Patch are covered [here](/contributors/devel/sig-api-machinery/strategic-merge-patch.md).
+[here](/contributors/devel/sig-api-machinery/strategic-merge-patch.md).
 
 ## Idempotency
 
@@ -630,8 +625,8 @@ different logic for an optional field which is not provided vs. provided with
 empty values, do not use `omitempty` (e.g. https://github.com/kubernetes/kubernetes/issues/34641).
 
 Note that for backward compatibility, any field that has the `omitempty` struct
-tag will considered to be optional but this may change in future and having
-the `+optional` comment tag is highly recommended.
+tag will be considered to be optional, but this may change in the future and
+having the `+optional` comment tag is highly recommended.
 
 Required fields have the opposite properties, namely:
 
@@ -879,11 +874,11 @@ was not supported by the code.
   * Indicates that either the resource the client attempted to create already
 exists or the requested update operation cannot be completed due to a conflict.
   * Suggested client recovery behavior:
-  * * If creating a new resource:
-  *   * Either change the identifier and try again, or GET and compare the
+    * If creating a new resource:
+      * Either change the identifier and try again, or GET and compare the
 fields in the pre-existing object and issue a PUT/update to modify the existing
 object.
-  * * If updating an existing resource:
+    * If updating an existing resource:
       * See `Conflict` from the `status` response section below on how to
 retrieve more information about the nature of the conflict.
       * GET and compare the fields in the pre-existing object, merge changes (if
