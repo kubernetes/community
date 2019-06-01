@@ -63,18 +63,6 @@ we will not provide any guarantees for users.
 [Service Level Objectives]: https://en.wikipedia.org/wiki/Service_level_objective
 [Service Level Agreement]: https://en.wikipedia.org/wiki/Service-level_agreement
 
-## Types of SLOs
-
-While SLIs are very generic and don't really depend on anything (they just
-define what and how we measure), it's not the case for SLOs.
-SLOs provide guarantees, and satisfying them may depend on meeting some
-specific requirements.
-
-As a result, we build our SLOs in "you promise, we promise" format.
-That means, that we provide you a guarantee only if you satisfy the requirement
-that we put on you.
-
-As a consequence we introduce the two types of SLOs.
 
 ### Steady state SLOs
 
@@ -86,12 +74,6 @@ We define system to be in steady state when the cluster churn per second is <= 2
 
 churn = #(Pod spec creations/updates/deletions) + #(user originated requests) in a given second
 ```
-
-### Burst SLO
-
-With burst SLOs, we provide guarantees on how system behaves under the heavy load
-(when user wants the system to do something as quickly as possible not caring too
-much about response time).
 
 ## Environment
 
@@ -144,12 +126,6 @@ Prerequisite: Kubernetes cluster is available and serving.
 sliding window. However, for the purpose of SLO itself, it basically means
 "fraction of good minutes per day" being within threshold.
 
-
-### Burst SLIs/SLOs
-
-| Status | SLI | SLO | User stories, test scenarios, ... |
-| --- | --- | --- | --- |
-| WIP | Time to start 30\*#nodes pods, measured from test scenario start until observing last Pod as ready | Benchmark: when all images present on all Nodes, 99th percentile <= X minutes | [Details](./system_throughput.md) |
 
 ### Other SLIs
 
