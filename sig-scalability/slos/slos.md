@@ -63,31 +63,19 @@ we will not provide any guarantees for users.
 [Service Level Objectives]: https://en.wikipedia.org/wiki/Service_level_objective
 [Service Level Agreement]: https://en.wikipedia.org/wiki/Service-level_agreement
 
+### Environment (cluster configuration)
 
-### Steady state SLOs
-
-With steady state SLOs, we provide guarantees about system's behavior during
-normal operations. We are able to provide much more guarantees in that situation.
-
-```Definition
-We define system to be in steady state when the cluster churn per second is <= 20, where
-
-churn = #(Pod spec creations/updates/deletions) + #(user originated requests) in a given second
-```
-
-## Environment
-
-In order to meet the SLOs, system must run in the environment satisfying
+In order to meet SLOs, system must run in the environment satisfying
 the following criteria:
-- Runs a single or more appropriate sized master machines
-- Main etcd running on master machine(s)
-- Events are stored in a separate etcd running on the master machine(s)
+- Runs a single or more appropriately sized master machines
+- Events are stored in a separate etcd instance (or cluster)
+- All etcd instances are running on master machine(s)
 - Kubernetes version is at least X.Y.Z
 - ...
 
 __TODO: Document other necessary configuration.__
 
-## Thresholds
+### Scalability thresholds
 
 To make the cluster eligible for SLO, users also can't have too many objects in
 their clusters. More concretely, the number of different objects in the cluster
@@ -95,19 +83,32 @@ MUST satisfy thresholds defined in [thresholds file][].
 
 [thresholds file]: https://github.com/kubernetes/community/blob/master/sig-scalability/configs-and-limits/thresholds.md
 
+### Kubernetes extensibility
+
+In order to meet SLOs, you have to use extensibility features "wisely".
+The more precise formulation is to-be-defined, but this includes things like:
+- webhooks have to provide high availability and low latency
+- CRDs and CRs has to be kept within thresholds
+- ...
 
 ## Kubernetes SLIs/SLOs
 
 The currently existing SLIs/SLOs are enough to guarantee that cluster isn't
-completely dead. However, they are not enough to satisfy user's needs in most
-of the cases.
+completely dead. However, they are not meeting user expectations in many areas of
+the system and we are actively working on extending their coverage.
 
-We are looking into extending the set of SLIs/SLOs to cover more parts of
-Kubernetes.
+We are also introducing two more prerequisites which has to be met to ensure that
+SLOs can be satisfied:
 
 ```
-Prerequisite: Kubernetes cluster is available and serving.
+Prerequisites:
+   1. Kubernetes cluster is available and serving.
+   2. Cluster churn is <= 20, where churn is defined as:
+     churn = #(Pod spec creations/updates/deletions) + #(user originated requests) in a given second
 ```
+
+__TODO: Cluster churn should be moved to scalability thresholds.__
+
 
 ### Steady state SLIs/SLOs
 
@@ -116,7 +117,7 @@ Prerequisite: Kubernetes cluster is available and serving.
 | __Official__ | Latency of mutating API calls for single objects for every (resource, verb) pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, verb) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day<sup>[1](#footnote1)</sup> <= 1s | [Details](./api_call_latency.md) |
 | __Official__ | Latency of non-streaming read-only API calls for every (resource, scope pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, scope) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day<sup>[1](#footnote1)</sup> (a) <= 1s if `scope=resource` (b) <= 5s if `scope=namespace` (c) <= 30s if `scope=cluster` | [Details](./api_call_latency.md) |
 | __Official__ | Startup latency of schedulable stateless pods, excluding time to pull images and run init containers, measured from pod creation timestamp to when all its containers are reported as started and observed via watch, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile per cluster-day<sup>[1](#footnote1)</sup> <= 5s | [Details](./pod_startup_latency.md) |
-| __WIP__ | Startup latency of schedulable stateful pods, excluding time to pull images, run init containers, provision volumes (in delayed binding mode) and unmount/detach volumes (from previous pod if needed), measured from pod creation timestamp to when all its containers are reported as started and observed via watch, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile per cluster-day<sup>[1](#footnote1)</sup> <= X where X depends on storage provider | | [Details](./pod_startup_latency.md) |
+| __WIP__ | Startup latency of schedulable stateful pods, excluding time to pull images, run init containers, provision volumes (in delayed binding mode) and unmount/detach volumes (from previous pod if needed), measured from pod creation timestamp to when all its containers are reported as started and observed via watch, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile per cluster-day<sup>[1](#footnote1)</sup> <= X where X depends on storage provider | [Details](./pod_startup_latency.md) |
 | __WIP__ | Latency of programming in-cluster load balancing mechanism (e.g. iptables), measured from when service spec or list of its `Ready` pods change to when it is reflected in load balancing mechanism, measured as 99th percentile over last 5 minutes aggregated across all programmers | In default Kubernetes installation, 99th percentile per cluster-day<sup>[1](#footnote1)</sup> <= X | [Details](./network_programming_latency.md) |
 | __WIP__ | Latency of programming dns instance, measured from when service spec or list of its `Ready` pods change to when it is reflected in that dns instance, measured as 99th percentile over last 5 minutes aggregated across all dns instances | In default Kubernetes installation, 99th percentile per cluster-day<sup>[1](#footnote1)</sup> <= X | [Details](./dns_programming_latency.md) |
 | __WIP__ | In-cluster network latency from a single prober pod, measured as latency of per second ping from that pod to "null service", measured as 99th percentile over last 5 minutes. | In default Kubernetes installataion with RTT between nodes <= Y, 99th percentile of (99th percentile over all prober pods) per cluster-day<sup>[1](#footnote1)</sup> <= X | [Details](./network_latency.md) |
