@@ -1,5 +1,7 @@
 # Kubernetes Contributor Cheat Sheet
 
+[Bahasa Indonesia](README-id.md) | [한국어](README-ko.md) | [Português](README-pt.md) | [中文](README-zh.md)
+
 A list of common resources when contributing to Kubernetes, tips, tricks, and
 common best practices used within the Kubernetes project. It is a "TL;DR" or
 quick reference of useful information to make your GitHub contribution experience
