@@ -9,27 +9,55 @@ you would expect to have some guarantees in those areas.
 The goal of this doc is to organize the guarantees that Kubernetes provides
 in these areas.
 
-## What do we require from SLIs/SLOs?
+## How we define scalability?
 
-We are in the process of extending the number of SLIs ([Service Level Indicators])
-and SLOs ([Service Level Objectives]) built on top of these SLIs to cover more areas
-of the system and user expectations.
+Our scalability definition is built on two concepts:
+- [Service Level Indicators]
+- [Service Level Objectives]
 
-Our SLIs/SLOs need to have the following properties:
-- <b> They need to be testable </b> <br/>
-  Ideally, they (SLIs and SLOs) should be measurable in all running clusters,
-	but if   that isn't possible a benchmark may be enough in some situations.
-  That means that not every SLO may be translatable to SLA ([Service
-  Level Agreement]).
-- <b> They need to be understandable for users </b> <br/>
-  In particular, they need to be understandable for people not familiar
-  with the system internals, i.e. their formulation can't depend on some
-  arcane knowledge.
+We require our SLIs/SLOs to have the following properties:
+- <b> They are precise and well-defined </b> <br/>
+  It's extremely important to ensure that both users and us have exactly the
+  same understanding of what we guarantee.
+- <b> They are consistent with each other </b> <br/>
+  This is mostly about using the same terminology, same concepts, etc.
+- <b> They are user-oriented </b> <br/>
+  First, the SLOs we provide need to be things users really care about.
+  Second, they need to be understandable for people not familiar with the system
+  internals (e.g. their formulation can't depend on some arcane knowledge or
+  implementation details of the system).
+- <b> They are testable </b> <br/>
+  Ideally, SLIs/SLOs should be measurable in all running clusters, but if measuring
+  some metrics isn't possible or would be extremely expensive (e.g. in terms
+  of resource overhead for the system), benchmarks sometimes may be enough.
+  That means that not every SLO may be translatable to SLA ([Service Level
+  Agreement]).
 
-We may also introduce internal(for developers only) SLIs, that may be useful
-for understanding performance characteristic of the system, but for which
-we don't provide any guarantees for users (and thus don't require them to be
-that easily understandable).
+While SLIs are generic (they just define what and how we measure), SLOs provide
+specific guarantees and satisfying them may depend on meeting some specific
+requirements. Specific examples that may visibly affect ability to satisfy them
+are:
+- cluster configuration
+- user of Kubernetes extensibility features
+- load on the cluster.
+
+As a result, we define Kubernetes scalability using "you promise, we promise"
+framework, as following:
+
+<b> If you promise to:
+- correctly configure your cluster
+- use extensibility features "reasonably"
+- keep the load in the cluster within recommended limits
+
+then we promise that your cluster scales, i.e.:
+- all the SLOs are satisfied. </b>
+
+We are in the process of extending coverage of the system with SLIs and SLOs
+to better reflect user expectations.
+
+Note that may also introduce internal (for developers only) SLIs, that may be
+useful for understanding performance characteristic of the system, but for which
+we will not provide any guarantees for users.
 
 [Service Level Indicators]: https://en.wikipedia.org/wiki/Service_level_indicator
 [Service Level Objectives]: https://en.wikipedia.org/wiki/Service_level_objective
