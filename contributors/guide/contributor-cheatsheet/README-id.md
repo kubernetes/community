@@ -57,7 +57,7 @@ di GitHub menjadi lebih baik.
 - [kubernetes-dev] - Alamat email pengembangan Kubernetes
 - [Forum Kubernetes] - Forum resmi Kubernetes.
 - [Slack _channels_] - Slack resmi Kubernetes.
-- [StackOverflow] - _Platform_ tanya jawab pengguna Kubernetes.
+- [Stack Overflow] - _Platform_ tanya jawab pengguna Kubernetes.
 - [YouTube _Channel_] - _Channel_ resmi untuk komunitas Kubernetes.
 
 
@@ -185,7 +185,7 @@ dokumentasi, atau segala bentuk hal yang disimpan dalam repositori git.
 - [Label]
 - [Perintah Prow][perintah bot]
 - [Pull request process]
-- [Github workflow]
+- [GitHub workflow]
 
 
 #### Membuat sebuah Pull Request (PR)
@@ -286,7 +286,7 @@ pembelajaran yang baik. Sebagai alternatif lain, juga terdapat tutorial [_Stanfo
 **Referensi:**
 - [Tutorial git Atlassian]
 - [Git magic]
-- [Github workflow]
+- [GitHub workflow]
 - [Testing locally]
 - [Developer guide]
 
@@ -359,7 +359,7 @@ _squashing_ perlu dilakukan atau tidak.
 [kalender]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [slack _channels_]: http://slack.k8s.io/
-[stackOverflow]: https://stackoverflow.com/questions/tagged/kubernetes
+[Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [youtube _channel_]: https://www.youtube.com/c/KubernetesCommunity/
 [dasbor triase]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
@@ -368,7 +368,6 @@ _squashing_ perlu dilakukan atau tidak.
 [code of conduct]: /code-of-conduct.md
 [_user support request_]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request
 [petunjuk _troubleshooting_]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
-[stack overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [forum kubernetes]: https://discuss.kubernetes.io/
 [pull request process]: /contributors/guide/pull-requests.md
 [github workflow]: /contributors/guide/github-workflow.md
@@ -377,18 +376,17 @@ _squashing_ perlu dilakukan atau tidak.
 [petunjuk _troubleshooting_ cla]: /CLA.md#troubleshooting
 [perintah]: https://prow.k8s.io/command-help
 [kind]: https://prow.k8s.io/command-help#kind
-[cc]: https://prow.k8s.io/command-help#hold
+[cc]: https://prow.k8s.io/command-help#cc
 [hold]: https://prow.k8s.io/command-help#hold
 [assign]: https://prow.k8s.io/command-help#assign
 [SIGs]: /sig-list.md
 [testing guide]: /contributors/devel/sig-testing/testing.md
 [label]: https://git.k8s.io/test-infra/label_sync/labels.md
 [_trivial_ _fix_]: /contributors/guide/pull-requests.md#10-trivial-edits
-[Github workflow]: /contributors/guide/github-workflow.md#3-branch
+[GitHub workflow]: /contributors/guide/github-workflow.md#3-branch
 [_commit_ _squashing_]: /contributors/guide/pull-requests.md#6-squashing-and-commit-titles
 [_owner_]: /contributors/guide/owners.md
 [testing locally]: /contributors/guide/README.md#testing
-[developer guide]: /contributors/devel/README.md
 [Tutorial git Atlassian]: https://www.atlassian.com/git/tutorials
 [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [_Security_ dan _Disclosure_ Informasi]: https://kubernetes.io/docs/reference/issues-security/security/

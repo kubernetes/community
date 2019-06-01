@@ -57,7 +57,7 @@
 - [kubernetes-dev] - 쿠버네티스 개발 메일링 목록
 - [쿠버네티스 포럼] - 쿠버네티스 공식 포럼
 - [Slack 채널] - 쿠버네티스 공식 Slack
-- [StackOverflow] - 쿠버네티스 엔드-사용자의 질문에 답변할 수 있는 장소
+- [Stack Overflow] - 쿠버네티스 엔드-사용자의 질문에 답변할 수 있는 장소
 - [YouTube 채널] - 쿠버네티스 커뮤니티 공식 채널
 
 
@@ -189,7 +189,7 @@ GitHub 이슈는 버그 리포트, 개선 요청 또는 실패한 테스트와 �
 - [레이블]
 - [Prow 명령][commands]
 - [풀 리퀘스트 과정]
-- [Github 작업 흐름]
+- [GitHub 작업 흐름]
 
 
 #### 풀 리퀘스트 생성
@@ -290,7 +290,7 @@ git에 익숙하지 않다면, [Atlassian git 튜토리얼]이 좋은 출발점�
 **참고:**
 - [Atlassian git 튜토리얼]
 - [Git magic]
-- [Github 작업 흐름]
+- [GitHub 작업 흐름]
 - [로컬 테스트]
 - [개발자 가이드]
 
@@ -363,7 +363,7 @@ PR을 검토하고 승인하도록 지정된 다른 참여자의 판단에 맡�
 [달력]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [Slack 채널]: http://slack.k8s.io/
-[stackOverflow]: https://stackoverflow.com/questions/tagged/kubernetes
+[Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [YouTube 채널]: https://www.youtube.com/c/KubernetesCommunity/
 [triage 대시보드]: https://go.k8s.io/triage
 [테스트 그리드]: https://testgrid.k8s.io
@@ -372,7 +372,6 @@ PR을 검토하고 승인하도록 지정된 다른 참여자의 판단에 맡�
 [행동 강령]: /code-of-conduct.md
 [사용자 지원 요청]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request
 [문제해결 가이드]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
-[stack overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [쿠버네티스 포럼]: https://discuss.kubernetes.io/
 [풀 리퀘스트 과정]: /contributors/guide/pull-requests.md
 [github 작업 흐름]: /contributors/guide/github-workflow.md
@@ -381,18 +380,17 @@ PR을 검토하고 승인하도록 지정된 다른 참여자의 판단에 맡�
 [CLA 문제해결 가이드라인]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help
 [kind]: https://prow.k8s.io/command-help#kind
-[cc]: https://prow.k8s.io/command-help#hold
+[cc]: https://prow.k8s.io/command-help#cc
 [hold]: https://prow.k8s.io/command-help#hold
 [assign]: https://prow.k8s.io/command-help#assign
 [SIGs]: /sig-list.md
 [테스트 가이드]: /contributors/devel/sig-testing/testing.md
 [레이블]: https://git.k8s.io/test-infra/label_sync/labels.md
 [사소한 수정]: /contributors/guide/pull-requests.md#10-trivial-edits
-[Github 작업 흐름]: /contributors/guide/github-workflow.md#3-branch
+[GitHub 작업 흐름]: /contributors/guide/github-workflow.md#3-branch
 [스쿼시 커밋]: /contributors/guide/pull-requests.md#6-squashing-and-commit-titles
 [owners]: /contributors/guide/owners.md
 [로컬 테스트]: /contributors/guide/README.md#testing
-[개발자 가이드]: /contributors/devel/README.md
 [Atlassian git 튜토리얼]: https://www.atlassian.com/git/tutorials
 [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [보안과 정보 공개]: https://kubernetes.io/docs/reference/issues-security/security/
