@@ -53,7 +53,7 @@ Melhor.
 - [kubernetes-dev] - A lista de discussão do desenvolvimento do Kubernetes
 - [Fórum do Kubernetes] - Fórum oficial do Kubernetes.
 - [Slack] - Slack Oficial do Kubernetes.
-- [StackOverflow] - Um lugar para fazer perguntas ao usuário final do Kubernetes.
+- [Stack Overflow] - Um lugar para fazer perguntas ao usuário final do Kubernetes.
 - [YouTube] - Canal oficial da comunidade Kubernetes.
 
 
@@ -175,7 +175,7 @@ outras formas de trabalho que seriam armazenadas em um repositório git.
 - [Labels]
 - [Prow commands][commands]
 - [Processo de pull request]
-- [Github workflow]
+- [GitHub workflow]
 
 
 #### Criando um Pull Request
@@ -272,7 +272,7 @@ opção multi-idioma.
 **Referências:**
 - [Tutorial git Atlassian]
 - [Tutorial git magic]
-- [Github workflow]
+- [GitHub workflow]
 - [Testando localmente]
 - [Guia do Desenvolvedor]
 
@@ -344,7 +344,7 @@ fase de uma revisão do PR. Se você não tem certeza se deve efetuar o squashin
 [Calendário]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [slack]: http://slack.k8s.io/
-[stackOverflow]: https://stackoverflow.com/questions/tagged/kubernetes
+[Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [youtube]: https://www.youtube.com/c/KubernetesCommunity/
 [Dashboard de Triagem]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
@@ -353,7 +353,6 @@ fase de uma revisão do PR. Se você não tem certeza se deve efetuar o squashin
 [Código de Conduta]: /code-of-conduct.md
 [solicitações de suporte ao usuário]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request
 [guia de solução de problemas]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
-[stack overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [Fórum do Kubernetes]: https://discuss.kubernetes.io/
 [Processo de pull request]: /contributors/guide/pull-requests.md
 [github workflow]: /contributors/guide/github-workflow.md
@@ -362,14 +361,14 @@ fase de uma revisão do PR. Se você não tem certeza se deve efetuar o squashin
 [solucionando problemas do cla]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help
 [kind]: https://prow.k8s.io/command-help#kind
-[cc]: https://prow.k8s.io/command-help#hold
+[cc]: https://prow.k8s.io/command-help#cc
 [hold]: https://prow.k8s.io/command-help#hold
 [assign]: https://prow.k8s.io/command-help#assign
 [SIGs]: /sig-list.md
 [guia para testes]: /contributors/devel/sig-testing/testing.md
 [labels]: https://git.k8s.io/test-infra/label_sync/labels.md
 [trivial fix]: /contributors/guide/pull-requests.md#10-trivial-edits
-[Github workflow]: /contributors/guide/github-workflow.md#3-branch
+[GitHub workflow]: /contributors/guide/github-workflow.md#3-branch
 [agrupar os commits]: /contributors/guide/pull-requests.md#6-squashing-and-commit-titles
 [owners]: /contributors/guide/owners.md
 [Testando localmente]: /contributors/guide/README.md#testing
