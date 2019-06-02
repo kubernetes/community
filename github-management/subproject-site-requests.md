@@ -37,9 +37,10 @@ based framework. It's used for the Kubernetes website and several subprojects.
   follow up with any questions in the issue.
 
 - Once Netlify has been configured, [request a subproject
-  domain](#subproject-domain-request) and reference the issue you created. You
-  may use the Netlify site URL (example: `kubernetes-sigs-foo.netlify.com`) till
-  the DNS request has been processed.
+  domain](#subproject-domain-request) and reference the issue you created. Go on
+  to the next step to add a Netlify site config. This will let you preview the
+  site using the Netlify URL (example: `kubernetes-sigs-foo.netlify.com`) while
+  waiting for the DNS request to be processed.
 
 - Update the project to include a [site specific][site-config] configuration
   file at the root of the repository ([`netlify.toml`][site-config]). Below is a
