@@ -39,6 +39,9 @@ The following subprojects are owned by sig-windows:
 - **windows-testing**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
+- **windows-tools**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
 
 ## GitHub Teams
 
