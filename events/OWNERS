@@ -2,8 +2,12 @@
 
 reviewers:
   - parispittman
+  - tpepper
 approvers:
   - parispittman
+  - mrbobbytables
+  - guineveresaenger
+  - jberkus
   - sig-contributor-experience-leads
 labels:
   - sig/contributor-experience
