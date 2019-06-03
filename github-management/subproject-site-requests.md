@@ -23,6 +23,10 @@ based framework. It's used for the Kubernetes website and several subprojects.
 
 ## Requesting a Netlify Site
 
+- Update the project to include a [site specific][site-config] configuration
+  file at the root of the repository ([`netlify.toml`][site-config]).
+  [Below](#example-netlify-configuration) is a [Hugo] based example that you
+  may use as a reference.
 
 - Create an issue in the [kubernetes/org] repository using the
   [Netlify Site Request Template]. It will ask for:
@@ -36,19 +40,12 @@ based framework. It's used for the Kubernetes website and several subprojects.
 - A member of the GitHub Admin team handling Netlify requests will respond and
   follow up with any questions in the issue.
 
-- Once Netlify has been configured, [request a subproject
-  domain](#subproject-domain-request) and reference the issue you created. Go on
-  to the next step to add a Netlify site config. This will let you preview the
-  site using the Netlify URL (example: `kubernetes-sigs-foo.netlify.com`) while
-  waiting for the DNS request to be processed.
-
-- Update the project to include a [site specific][site-config] configuration
-  file at the root of the repository ([`netlify.toml`][site-config]). Below is a
-  [Hugo] based example that you may use as a reference.
-
+- Once Netlify has been configured, you can preview the site using the Netlify
+  URL (example: `kubernetes-sigs-foo.netlify.com`). After this looks good to you,
+  [request a subproject domain](#subproject-domain-request) and reference the
+  issue you created.
 
 Once complete, the site should be accessible.
-
 
 ### Example Netlify Configuration
 
@@ -72,7 +69,7 @@ command = "hugo --enableGitInfo --buildFuture -b $DEPLOY_PRIME_URL"
 command = "hugo --enableGitInfo --buildFuture -b $DEPLOY_PRIME_URL"
   ```
 
-## Subproject Domain Request
+## Requesting a Subproject Domain
 
 Subproject domains may be requested for a Kubernetes Org managed Netlify site in
 the form of: `<project>.sigs.k8s.io`.
@@ -126,9 +123,10 @@ Netlify admin to follow the procedure.
   authorize the application for the desired GitHub Organization. Select the
   GitHub Organization and the desired repo.
 
-- In the _"Deploy Options"_ ensure the **Owner** is set to Kubernetes and
-  **Branch to deploy** is set to `master`. Deploy the site. It will take you
-  to the _"Site overview"_ page.
+- In the _"Deploy Options"_ ensure the **Owner** is set to `Kubernetes Docs` and
+  **Branch to deploy** is set to `master`. The _"Basic build settings"_ will be
+  autopopulated with the values provided in `netlify.toml`. Deploy the site.
+  It will take you to the _"Site overview"_ page.
 
 - Navigate to the **Site Settings** and then change the Site name following the
   convention `kubernetes-sigs-<repo/project name>` e.g. `kubernetes-sigs-foo`.
@@ -139,10 +137,8 @@ Netlify admin to follow the procedure.
 
 - Select **[Add custom domain]**. Then enter the domain name requested in the
   issue. It should follow the pattern of `<subproject-name>.sigs.k8s.io`.
-
-- From the _"Domain management"_ page, select **HTTPS**. It will prompt you
-  regarding enabling _"Lets Encrypt"_ for the site. Enable it, and save the
-  settings.
+  Note that HTTPS will not be enabled right away. Once the DNS configuration is
+  updated, HTTPS will be enabled automatically.
 
 - Follow up with the requestor in the issue and let them know the site has been
   deployed and give them the Netlify site url (site name + `netlify.com`).
