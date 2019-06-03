@@ -705,6 +705,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
+  - name: cli-utils
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cli-utils/master/OWNERS
   - name: krew
     description: Plugin manager for kubectl.
     owners:
