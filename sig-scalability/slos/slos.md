@@ -88,7 +88,7 @@ MUST satisfy thresholds defined in [thresholds file][].
 In order to meet SLOs, you have to use extensibility features "wisely".
 The more precise formulation is to-be-defined, but this includes things like:
 - webhooks have to provide high availability and low latency
-- CRDs and CRs has to be kept within thresholds
+- CRDs and CRs have to be kept within thresholds
 - ...
 
 ## Kubernetes SLIs/SLOs
@@ -97,7 +97,7 @@ The currently existing SLIs/SLOs are enough to guarantee that cluster isn't
 completely dead. However, they are not meeting user expectations in many areas of
 the system and we are actively working on extending their coverage.
 
-We are also introducing two more prerequisites which has to be met to ensure that
+We are also introducing two more prerequisites which have to be met to ensure that
 SLOs can be satisfied:
 
 ```
