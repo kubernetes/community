@@ -3,10 +3,10 @@
 ## Overview
 
 OWNERS files are used to designate responsibility over different parts of the Kubernetes codebase.
-Today, we use them to assign the **reviewer** and **approver** roles used in our two-phase code
-review process. Our OWNERS files were inspired by [Chromium OWNERS
-files](https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md), which in turn
-inspired [GitHub's CODEOWNERS files](https://help.github.com/articles/about-codeowners/).
+Today, we use them to assign the **[reviewer][reviewer-role]** and **[approver][approver-role]** 
+roles (defined in our [community membership doc]) that are used in our two-phase code review 
+process. Our OWNERS files were inspired by [Chromium OWNERS files][chromium-owners] which in turn
+inspired [GitHub's CODEOWNERS files][github-codeowners]
 
 The velocity of a project that uses code review is limited by the number of people capable of
 reviewing code. The quality of a person's code review is limited by their familiarity with the code
@@ -144,7 +144,7 @@ aspects of this process may be configured on a per-repo basis.
 ### The Code Review Process
 
 - The **author** submits a PR
-- Phase 0: Automation suggests **reviewers** and **approvers** for the PR
+- Phase 0: Automation suggests **[reviewers][reviewer-role]** and **[approvers][approver-role]** for the PR
   - Determine the set of OWNERS files nearest to the code being changed
   - Choose at least two suggested **reviewers**, trying to find a unique reviewer for every leaf
     OWNERS file, and request their reviews on the PR
@@ -194,16 +194,6 @@ is the state of today.
     a **reviewer**
   - This goes against the idea of having at least two sets of eyes on a PR, and may be a sign that
     there are too few **reviewers** (who aren't also **approver**)
-- An **approver** can `/approve no-issue` to bypass the requirement that PR's must have linked
-  issues
-  - There is disagreement within the community over whether requiring every PR to have a linked
-    issue provides value
-  - Protest is being expressed in the form of overuse of `/approve no-issue`
-  - Instead, suggest to the PR **author** that they edit the PR description to include a linked
-    issue
-  - This is a sign that we need to actually deliver value with linked issues, or be able to define
-    what a "trivial" PR is in a machine-enforceable way to be able to automatically waive the linked
-    issue requirement
 - Technically, anyone who is a member of the kubernetes GitHub organization can drive-by `/lgtm` a
   PR
   - Drive-by reviews from non-members are encouraged as a way of demonstrating experience and
@@ -315,3 +305,8 @@ Good examples of OWNERS usage:
 
 [go-regex]: https://golang.org/pkg/regexp/#pkg-overview
 [test-infra-7690]: https://github.com/kubernetes/test-infra/issues/7690
+[approver-role]: https://git.k8s.io/community/community-membership.md#approver
+[reviewer-role]: https://git.k8s.io/community/community-membership.md#reviewer
+[community membership doc]: https://git.k8s.io/community/community-membership.md
+[chromium-owners]: https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md
+[github-codeowners]: https://help.github.com/articles/about-codeowners/
