@@ -1,4 +1,8 @@
-# OWNERS files
+---
+title: "OWNERS Files"
+weight: 1
+slug: "owners" 
+---
 
 ## Overview
 

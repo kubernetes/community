@@ -1,4 +1,8 @@
-# Kubernetes Issue Triage Guidelines
+---
+title: "Issue Triage Guidelines"
+weight: 1
+slug: "issue-triage"
+---
 
 ## Purpose
 

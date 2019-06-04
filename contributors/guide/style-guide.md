@@ -1,8 +1,8 @@
 ---
-title: Documentation Style Guide
+title: "Documentation Style Guide"
+weight: 1
+slug: "documentation-style-guide" 
 ---
-
-# Documentation Style Guide
 
 This style guide is for content in the Kubernetes github [community repository].
 It is an extension of the [Kubernetes documentation style-guide].

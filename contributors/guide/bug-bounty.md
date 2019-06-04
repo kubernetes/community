@@ -1,4 +1,8 @@
-# Kubernetes Bug Bounty Program
+---
+title: "Bug Bounty Programs"
+weight: 1
+slug: "bounties"
+---
 
 This program is a **work in progress**. This tracks the currently proposed program, but the bug
 bounty is not currently active. If you currently have a bug to submit, follow instructions at https://kubernetes.io/docs/reference/issues-security/security/

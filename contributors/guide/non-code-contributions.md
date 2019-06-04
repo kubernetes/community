@@ -1,4 +1,8 @@
-# Non-code Contributions
+---
+title: "Non-code Contributions"
+weight: 1
+slug: "non-code" 
+---
 
 *This section is new and in progress. Expect this document to change often.*
 
