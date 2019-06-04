@@ -3,6 +3,7 @@
 
 channels:
   - name: airflow-operator
+  - name: aks
   - name: announcements
   - name: api-reviews
   - name: apisnoop
