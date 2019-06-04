@@ -131,11 +131,9 @@ To add a channel, open a Pull Request (PR) updating the [slack-config].
   - Linking to resources such as the PR adding the subproject will speed in the
     validation and processing of the channel creation request.
   - Channels are **NOT**:
-    - Company specific; cloud providers are ok with product names as the channel.
-      Discourse will be about Kubernetes-related topics and not proprietary
-      information of the provider.
+    - Specific to a single company, commercial product, or commercial service
     - Private channels with the exception of: code of conduct matters, mentoring,
-      security/vulnerabilities, github management, or steering committee.
+      security/vulnerabilities, GitHub management, or steering committee.
   - Special accommodations will be made where necessary.
 
 After you submit your request the Slack Admins will review and follow-up with
@@ -285,6 +283,11 @@ most relevant to them. Other things such as programming language specific
 channels are discouraged and should in turn be steered to `#kubernetes-client`
 or communication avenues commonly used by their specific language.
 
+Channels should not be focused on a single company, commercial product, or
+commercial service. Community members seeking support for these products should
+contact the company offering the product or service through their regular
+support channels.
+
 In general, use your best judgment.
 
 Once two Slack admins have reviewed and agreed to sponsor the channel, they will
@@ -350,7 +353,7 @@ Once verified, find a message from the offending user. Then select
 Then select "**Report message**".
 
 This will open a contextually aware prompt only available to Slack Admins with
-the options to deactivate the user and remove all content from them over the 
+the options to deactivate the user and remove all content from them over the
 past "X" minutes/hours.
 
 Report any actions taken to the other slack admins, and if needed the
