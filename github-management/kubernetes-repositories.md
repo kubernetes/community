@@ -77,7 +77,8 @@ repo page.)
      repositories must use the Creative Commons License version 4.0.
    * Must adopt the CNCF CLA bot, merge bot and Kubernetes PR commands/bots.
    * All OWNERS of the project must also be active SIG members.
-   * SIG membership must vote using lazy consensus to create a new repository
+   * Must be approved by the process spelled out in the SIG's charter and a
+   publicly linkable written decision should be available for the same.
    * SIG must already have identified all of their existing subprojects and
      code, with valid OWNERS files, in
 [`sigs.yaml`](https://github.com/kubernetes/community/blob/master/sigs.yaml)
