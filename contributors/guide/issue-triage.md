@@ -5,11 +5,11 @@
 Speed up issue management.
 
 The Kubernetes issues are listed at https://github.com/kubernetes/kubernetes/issues
-and are identified with labels. For example, an issue that belongs to SIG
+and are identified with labels. For example, an issue that belongs to the SIG
 Network group will eventually be set to label `sig/network`. New issues will
 start out without any labels. The detailed list of labels can be found at
 https://github.com/kubernetes/kubernetes/labels. While working on triaging
-issues you may not have privilege to assign specific label (e.g. `triaged`)
+issues you may not have privilege to assign a specific label (e.g. `triaged`)
 and in that case simply add a comment in the issue with your findings.
 
 Following are few predetermined searches on issues for convenience:
@@ -23,15 +23,15 @@ Following are few predetermined searches on issues for convenience:
 
 These guidelines serves as a primary document for triaging incoming issues to
 Kubernetes. SIGs and projects are encouraged to either use these guidelines, or
-use this as a starting point if necessary. For example if your SIG has specific
+use this as a starting point if necessary. For example, if your SIG has specific
 triaging needs, extend these guidelines.
-**Note:** These guidelines only applies to the kubernetes repository. Its usage
-for other github repositories related to Kubernetes is TBD.
+**Note:** These guidelines only applies to the Kubernetes repository. Its usage
+for other GitHub repositories related to Kubernetes is TBD.
 
 ## Using the bot
 
 Most people can leave comments and open issues. They don't have the ability to
-set labels, change milestones and close other peoples issues. For that we use
+set labels, change milestones and close other people's issues. For that we use
 a bot to manage labelling and triaging. The bot has a set of
 [commands and permissions](https://go.k8s.io/bot-commands)
 and this document will cover the basic ones.
@@ -42,8 +42,8 @@ Sometimes users ask for support requests in issues; these are usually requests
 from people who need help configuring some aspect of Kubernetes. These issues
 should be labeled with `triage/support`, directed to our support structures
 (see below) and then closed. Also, if the issue is clearly abandoned or in the
-wrong place, it should be closed. Keep in mind that only issue reporter,
-assignees and component organization members can close issue. If you do not
+wrong place, it should be closed. Keep in mind that only issue reporters,
+assignees and component organization members can close issues. If you do not
 have such privilege, just comment your findings. Otherwise, first `/assign`
 issue to yourself and then `/close`.
 
@@ -77,7 +77,7 @@ how to address common use cases.
 
 We regularly see messages posted in multiple forums, with the full response
 thread only in one place or, worse, spread across multiple forums. Also, the
-large volume of support issues on github is making it difficult for us to use
+large volume of support issues on GitHub is making it difficult for us to use
 issues to identify real bugs.
 
 Members of the Kubernetes community use Stack Overflow to field support
@@ -99,10 +99,10 @@ Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). Fin
 example.
 * Multiword SIGs use dashes, for example `/sig cluster-lifecycle`.
 
-Keep in mind that these commands must be on its own line and at the front of the
+Keep in mind that these commands must be on their own lines, and at the front of the
 comment.
 
-## Validate if the issue is bug
+## Validate if the issue is a bug
 
 Validate if the problem is a bug by reproducing it. If reproducible, move to
 the next step of defining priority. You may need to contact the issue reporter
@@ -145,9 +145,9 @@ currently staffed and/or may require multiple releases to complete.
 
 - **priority/backlog**: There appears to be general agreement that this would be
 good to have, but we may not have anyone available to work on it right now or in
-the immediate future. Community contributions would be most welcome in the mean
-time (although it might take a while to get them reviewed if reviewers are fully
-occupied with higher priority issues, for example immediately before a release).
+the immediate future. Community contributions would be most welcome in the meantime 
+(although it might take a while to get them reviewed if 
+reviewers are fully occupied with higher priority issues, for example immediately before a release).
 
 - **priority/awaiting-more-evidence**: Possibly useful, but not yet enough
 support to actually get it done. These are mostly place-holders for potentially
@@ -156,14 +156,14 @@ good ideas, so that they don't get completely forgotten, and can be referenced
 
 ## Set ownership
 
-If you are not sure of who should own issue, defer to the
-SIG label only. If you feel the issue should warrant a notification,you can ping
+If you are not sure of who should own an issue, defer to the
+SIG label only. If you feel the issue should warrant a notification, you can ping
 a team with an @ mention, in this format, `@kubernetes/sig-<group-name>-<group-suffix>`.
 Here the `<group-suffix>` can be one of `bugs, feature-requests, pr-reviews, test-failures, proposals`.
 For example, `@kubernetes/sig-cluster-lifecycle-bugs, can you have a look at this?`
 
 If you think you can fix the issue and you are an issue reporter or a component
-organization member, assign it to yourself with just `/assign`. If you can not
+organization member, assign it to yourself with just `/assign`. If you cannot
 self-assign, leave a comment that you are willing to work on it and work on
 creating a PR.
 
@@ -192,7 +192,7 @@ release.
 
 - **vX.Y**: The list of bugs that will be merged for that milestone once ready.
 
-- **vX.Y-candidate**: The list of bug that we might merge for that milestone. A
+- **vX.Y-candidate**: The list of bugs that we might merge for that milestone. A
 bug shouldn't be in this milestone for more than a day or two towards the end of
 a milestone. It should be triaged either into vX.Y, or moved out of the release
 milestones.
