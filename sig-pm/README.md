@@ -26,13 +26,14 @@ The [charter](charter.md) defines the scope and governance of the PM Special Int
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), Google
-* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
+* Lachie Evenson (**[@lachie83](https://github.com/lachie83)**), Microsoft
 
 ## Emeritus Leads
 
 * Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google
+* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-pm)
