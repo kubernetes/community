@@ -10,6 +10,14 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Designing and shepherding cross-cutting features around compute resource isolation and utilization.
 
+## Stakeholder SIGs
+* SIG Autoscaling
+* SIG Instrumentation
+* SIG Network
+* SIG Node
+* SIG Scheduling
+* SIG Storage
+
 ## Meetings
 * Regular WG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly (On demand)). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1j3vrG6BgE0hUDs2e-1ZUegKN4W4Adb1B6oJ6j-4kyPU).
@@ -17,12 +25,13 @@ Designing and shepherding cross-cutting features around compute resource isolati
 
 ## Organizers
 
-* Vishnu Kannan (**[@vishh](https://github.com/vishh)**), Google
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
+* Vishnu Kannan (**[@vishh](https://github.com/vishh)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-resource-mgmt)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-resource-management)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fresource-management)
 
 <!-- BEGIN CUSTOM CONTENT -->
 A working group that is a cross-SIG effort currently sponsored by sig-node and sig-scheduling with

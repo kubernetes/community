@@ -68,6 +68,21 @@ The following subprojects are owned by sig-{{.Label}}:
 {{- range .Owners }}
     - {{.}}
 {{- end }}
+{{- if .Contact }}
+  - Contact
+{{- if .Contact.Slack }}
+    - Slack: [#{{.Contact.Slack}}](https://kubernetes.slack.com/messages/{{.Contact.Slack}})
+{{- end }}
+{{- if .Contact.MailingList }}
+    - [Mailing List]({{.Contact.MailingList}})
+{{- end }}
+{{- if .Contact.GithubTeams }}
+    - GitHub Teams: 
+{{- range .Contact.GithubTeams }}
+      - [@kubernetes/{{.Name}}](https://github.com/orgs/kubernetes/teams/{{.Name}}) {{- if .Description }}({{.Description}}){{- end}}
+{{- end }}
+{{- end }}
+{{- end }}
 {{- if .Meetings }}
   - Meetings:
 {{- range .Meetings }}

@@ -1,4 +1,8 @@
-# Pull Request Process
+---
+title: "Pull Request Process"
+weight: 1
+slug: "pull-requests" 
+---
 
 This doc explains the process and best practices for submitting a pull request to the [Kubernetes project](https://github.com/kubernetes/kubernetes) and its associated subrepositories. It should serve as a reference for all contributors, and be useful especially to new and infrequent submitters.
 
@@ -181,7 +185,7 @@ Let's talk about best practices so your pull request gets reviewed quickly.
 
 * [Development guide](/contributors/devel/development.md)
 * [Coding conventions](../guide/coding-conventions.md)
-* [API conventions](/contributors/devel/api-conventions.md)
+* [API conventions](/contributors/devel/sig-architecture/api-conventions.md)
 * [Kubectl conventions](/contributors/devel/sig-cli/kubectl-conventions.md)
 
 ## 1. Is the feature wanted? File a Kubernetes Enhancement Proposal

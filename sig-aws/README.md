@@ -21,9 +21,9 @@ The [charter](charter.md) defines the scope and governance of the AWS Special In
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**)
-* Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), VMware
 * Nishi Davidson (**[@d-nishi](https://github.com/d-nishi)**), AWS
+* Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**), Google
+* Kris Nova (**[@kris-nova](https://github.com/kris-nova)**), VMware
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-aws)
@@ -33,21 +33,27 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-aws:
-- **cloud-provider-aws**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
 - **aws-alb-ingress-controller**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/master/OWNERS
-- **aws-iam-authenticator**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/aws-iam-authenticator/master/OWNERS
-- **aws-encryption-provider**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
 - **aws-ebs-csi-driver**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
+- **aws-efs-csi-driver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-efs-csi-driver/master/OWNERS
+- **aws-encryption-provider**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
+- **aws-fsx-csi-driver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/OWNERS
+- **aws-iam-authenticator**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-iam-authenticator/master/OWNERS
+- **cloud-provider-aws**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
 
 ## GitHub Teams
 

@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Covers best practices for cluster observability through metrics, logging, and events across all Kubernetes components and development of relevant components such as Heapster and kube-state-metrics. Coordinates metric requirements of different SIGs for other components through finding common APIs.
 
+The [charter](charter.md) defines the scope and governance of the Instrumentation Special Interest Group.
+
 ## Meetings
 * Regular SIG Meeting: [Thursdays at 17:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/17emKiwJeqfrCsv0NZ2FtyDbenXGtTNCsDEiLbPa7x7Y/edit).
@@ -19,8 +21,8 @@ Covers best practices for cluster observability through metrics, logging, and ev
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Piotr Szczesniak (**[@piosz](https://github.com/piosz)**), Google
 * Frederic Branczyk (**[@brancz](https://github.com/brancz)**), Red Hat
+* Piotr Szczesniak (**[@piosz](https://github.com/piosz)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-instrumentation)
@@ -36,16 +38,23 @@ The following subprojects are owned by sig-instrumentation:
 - **heapster**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
+- **klog**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
+  - Contact
+    - Slack: [#klog](https://kubernetes.slack.com/messages/klog)
 - **kube-state-metrics**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS
+  - Contact
+    - Slack: [#kube-state-metrics](https://kubernetes.slack.com/messages/kube-state-metrics)
+- **metrics**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
 - **metrics-server**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/OWNERS
-- **metrics**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS
 - **mutating-trace-admission-controller**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS

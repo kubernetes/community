@@ -13,6 +13,8 @@ Besides helping to discover both what to build and how to build it, the PM Group
 Members of the Kubernetes PM Group can assume certain additional responsibilities to help maintain the Kubernetes Project itself.
 It is also important to remember that the role of managing an open source project is very new and largely unscoped for a project as large as Kubernetes; we are learning too and we are excited to learn how we can best serve the community of users and contributors.
 
+The [charter](charter.md) defines the scope and governance of the PM Special Interest Group.
+
 ## Meetings
 * Regular SIG Meeting: [Tuesdays at 18:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/13uHgcLf-hcR4a5QbV888fhnVsF3djBEpN8HolwS0kWM/edit?usp=sharing).
@@ -23,13 +25,18 @@ It is also important to remember that the role of managing an open source projec
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google
-* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
 * Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), Google
+* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
+* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
+
+## Emeritus Leads
+
+* Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-pm)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-pm)
+* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-pm)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fpm)
 
 ## Subprojects
@@ -67,22 +74,6 @@ In this milieu, the art of program-level facilitation requires an observational 
 -	Responsible for the forward-looking translation of high-level strategic objectives into project, product, marketing, and other specialized implementation strategies as defined by special interest groups.
 
 -	Staffing of specific release roles: Release features lead, Release Marketing Coordinator, Product Roadmap committee
-
-Chairs:
--------
-
--	SIG:
-
-	-	Ihor Dvoretskyi (CNCF);  
-	-	Aparna Sinha (Google);
-	-	Caleb Miles (Google)  
-
--	Subproject areas:
-
-	-	Jaice Singer DuMars (Google); Area: Program Management & Release
-	-	Dustin Kirkland (Google); Area: Product Management
-	-	Stephen Augustus (Red Hat); Area: Product Management
-	-	Natasha Woods & Kaitlyn Barnard (CNCF); Area: Marketing  
 
 Key Roles:
 ----------

@@ -1,100 +1,70 @@
 # SIG Cloud Provider Charter
 
-## Mission
-The Cloud Provider SIG ensures that the Kubernetes ecosystem is evolving in a way that is neutral to all (public and private) cloud providers. It will be responsible for establishing standards and requirements that must be met by all providers to ensure optimal integration with Kubernetes.
+This charter adheres to the conventions described in the [Kubernetes Charter README] and uses
+the Roles and Organization Management outlined in [sig-governance].
 
-## Subprojects & Areas of Focus
+## Scope
 
-* Maintaining parts of the Kubernetes project that allows Kubernetes to integrate with the underlying provider. This includes but are not limited to:
-    * [cloud provider interface](https://github.com/kubernetes/kubernetes/blob/master/pkg/cloudprovider/cloud.go)
-    * [cloud-controller-manager](https://github.com/kubernetes/kubernetes/tree/master/cmd/cloud-controller-manager)
-    * Deployment tooling which has historically resided under [cluster/](https://github.com/kubernetes/kubernetes/tree/release-1.11/cluster)
-* Code ownership for all cloud providers that fall under the kubernetes organization and have opted to be subprojects of SIG Cloud Provider. Following the guidelines around subprojects we anticipate providers will have full autonomy to maintain their own repositories, however, official code ownership will still belong to SIG Cloud Provider.
-    * [cloud-provider-azure](https://github.com/kubernetes/cloud-provider-azure)
-    * [cloud-provider-gcp](https://github.com/kubernetes/cloud-provider-gcp)
-    * [cloud-provider-openstack](https://github.com/kubernetes/cloud-provider-openstack)
-    * [cloud-provider-vsphere](https://github.com/kubernetes/cloud-provider-vsphere)
-* Standards for documentation that should be included by all providers.
-* Defining processes/standards for E2E tests that should be reported by all providers
-* Developing future functionality in Kubernetes to support use cases common to all providers while also allowing custom and pluggable implementations when required, some examples include but are not limited to:
-    * Extendable node status’ and machine states based on provider
-    * Extendable node address types based on provider
-    * See also [Cloud Controller Manager KEP](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0002-cloud-controller-manager.md)
-* The collection of user experience reports from Kubernetes operators running on provider subprojects; and the delivery of roadmap information to SIG PM
+SIG Cloud Provider’s mission is to simplify, develop, and maintain cloud provider integrations as extensions, or add-ons, to Kubernetes clusters.
 
-## Organizational Management
+### In scope
 
-* Six months after this charter is first ratified, it MUST be reviewed and re-approved by the SIG in order to evaluate the assumptions made in its initial drafting
-* SIG meets bi-weekly on zoom with agenda in meeting notes.
-    * SHOULD be facilitated by chairs unless delegated to specific Members
-* The SIG MUST make a best effort to provide leadership opportunities to individuals who represent different races, national origins, ethnicities, genders, abilities, sexual preferences, ages, backgrounds, levels of educational achievement, and socioeconomic statuses
+#### Areas of Focus
 
-## Subproject Creation
+- Extension points between Kubernetes and any cloud provider
+- APIs/interfaces for efficiently provisioning/de-provisioning cloud resources (nodes, routes, load balancers, etc)
+- Configuration of cluster components to enable cloud provider integrations
+- Testing and testing frameworks to ensure vendor neutrality across all cloud providers
 
-Each Kubernetes provider will (eventually) be a subproject under SIG Cloud Provider. To add new sub projects (providers), SIG Cloud Provider will maintain an open list of requirements that must be satisfied.
-The current requirements can be seen [here](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0002-cloud-controller-manager.md#repository-requirements). Each provider subproject is entitled to create 1..N repositories related to cluster turn up or operation on their platform, subject to technical standards set by SIG Cloud Provider.
-Creation of a repository SHOULD follow the KEP process to preserve the motivation for the repository and any additional instructions for how other SIGs (e.g SIG Documentation and SIG Release) should interact with the repository
+#### Code, Binaries and Services
 
-Subprojects that fall under SIG Cloud Provider may also be features in Kubernetes that is requested or needed by all, or at least a large majority of providers. The creation process for these subprojects will follow the usual KEP process.
+- the [common interfaces](https://github.com/kubernetes/cloud-provider/blob/master/cloud.go) consumed by all cloud providers
+- the [cloud-controller-manager](https://github.com/kubernetes/kubernetes/tree/master/cmd/cloud-controller-manager), which acts as the “out-of-tree” cloud provider component for clusters.
+- core controllers (started by the cloud-controller-manager) that interact with cloud provider resources
+- all [cloud provider repositories](https://github.com/kubernetes?utf8=%E2%9C%93&q=cloud-provider-&type=&language=) under the Kubernetes organization
+- [e2e tests for cloud provider specific](https://github.com/kubernetes/kubernetes/tree/master/test/e2e/cloud) functionality
+- all the subprojects formerly owned by [SIG-AWS](https://github.com/kubernetes/community/tree/master/sig-aws#subprojects), [SIG-AZURE](https://github.com/kubernetes/community/tree/master/sig-azure#subprojects), [SIG-GCP](https://github.com/kubernetes/community/tree/master/sig-gcp#subprojects), [SIG-IBMCloud](https://github.com/kubernetes/community/tree/master/sig-ibmcloud#subprojects), [SIG-Openstack](https://github.com/kubernetes/community/tree/master/sig-openstack#subprojects), [SIG-VMware](https://github.com/kubernetes/community/tree/master/sig-vmware#subprojects).
+- any new subproject that is cloud provider specific, unless there is another SIG already sponsoring it.
 
-## Subproject Retirement
+#### Cross-cutting and Externally Facing Processes
 
-Subprojects representing Kubernetes providers may be retired given they do not satisfy requirements for more than 6 months. Final decisions for retirement should be supported by a majority of SIG members using [lazy consensus](http://en.osswiki.info/concepts/lazy_consensus). Once retired any code related to that provider will be archived into the kubernetes-retired organization.
+- This SIG works with SIG Testing & SIG Release to ensure that cloud providers are actively testing & reporting test results to testgrid.
+- This SIG works with SIG Docs to provide user-facing documentation on configuring Kubernetes clusters with cloud provider integration enabled.
+- This SIG works with new cloud providers in the ecosystem that want to host their code in the Kubernetes organization and have an interest in contributing back.
+- This SIG actively engages with SIGs owning other external components of Kubernetes (CNI, CSI, etc) to ensure a consistent integration story for users.
 
-Subprojects representing Kubernetes features may be retired at any point given a lack of development or a lack of demand. Final decisions for retirement should be supported by a majority of SIG members, ideally from every provider. Once retired, any code related to that subproject will be archived into the kubernetes-retired organization.
+### Out of scope
+
+- This SIG does not act as a line of support for Kubernetes users running their clusters on any cloud provider, though many members of the SIG represent cloud providers and are actively engaged with users.
+- This SIG does not address features/bugs pertaining to cloud providers outside the scope of Kubernetes integrations (e.g. when will instance type X be available on cloud provider Y?)
+
+## Roles and Organization Management
+
+This sig follows adheres to the Roles and Organization Management outlined in [sig-governance]
+and opts-in to updates and modifications to [sig-governance].
+
+### Additional responsibilities of Chairs
+
+- Selecting/prioritizing work to be done for a milestone
+- Hosting the weekly SIG meeting, ensure that recordings are uploaded in a timely fashion.
+- Ensuring that the breakout sessions the SIG hosts during the week have chairs.
+- Organizing SIG sessions at KubeCon events (intro / deep dive sessions).
+- Creating roadmaps for a given year or release, or reviewing and approving technical implementation plans (e.g. KEPs) in coordination with both SIG Cluster Lifecycle contributors and other SIGs.
+
+### Deviations from [sig-governance]
+
+- There should be no more than 1 chair from a single company. This ensures decisions are not being made in favor of a single provider/company.
+- As SIG cloud provider contains a number of subprojects, the SIG has empowered subproject leads with a number of additional responsibilities, including but not limited to:
+    * Releases: The subproject owners are responsible for determining the subproject release cadence, producing releases, and communicating releases with SIG Release and any other relevant SIG.
+    * Backlog grooming: The subproject owners are responsible for ensuring that the issues for the subproject are correctly associated with milestones and that bugs are triaged in a timely manner.
+PR timeliness: The subproject owners are responsible for ensuring that active pull requests for the subproject are addressed in a timely manner.
+    * Repository ownership: The subproject owners are given admin permissions to repositories under the subproject. For example, the owners of the Azure subproject are given admin access to the `k8s.io/cloud-provider-azure` repository.
 
 
-## Technical Processes
-Subprojects (providers) of the SIG MUST use the following processes unless explicitly following alternatives they have defined.
+### Subproject Creation
 
-* Proposals will be sent as [KEP](https://git.k8s.io/enhancements/keps/YYYYMMDD-kep-template.md) PRs, and published to the official group mailing list as an announcement
-* Proposals, once submitted, SHOULD be placed on the next full meeting agenda
-* Decisions within the scope of individual subprojects should be made by lazy consensus by subproject owners, with fallback to majority vote by subproject owners; if a decision can’t be made, it should be escalated to the SIG Chairs
-* Issues impacting multiple subprojects in the SIG should be resolved by consensus of the owners of the involved subprojects; if a decision can’t be made, it should be escalated to the SIG Chairs
+Federation of Subprojects
 
-## Roles
-The following roles are required for the SIG to function properly. In the event that any role is unfilled, the SIG will make a best effort to fill it. Any decisions reliant on a missing role will be postponed until the role is filled.
-
-
-### Chairs
-* 3 chairs are required
-* Run operations and processes governing the SIG
-* An initial set of chairs was established at the time the SIG was founded.
-* Chairs MAY decide to step down at anytime and propose a replacement, who must be approved by all of the other chairs. This SHOULD be supported by a majority of SIG Members.
-* Chairs MAY select additional chairs using lazy consensus amongst SIG Members.
-* Chairs MUST remain active in the role and are automatically removed from the position if they are unresponsive for > 3 months and MAY be removed by consensus of the other Chairs and members if not proactively working with other Chairs to fulfill responsibilities.
-* Chairs WILL be asked to step down if there is inappropriate behavior or code of conduct issues
-* SIG Cloud Provider cannot have more than one chair from any one company.
-
-### Subproject/Provider Owners
-* There should be at least 1 representative per subproject/provider (though 3 is recommended to avoid deadlock) as specified in the OWNERS file of each cloud provider repository.
-* MUST be an escalation point for technical discussions and decisions in the subproject/provider
-* MUST set milestone priorities or delegate this responsibility
-* MUST remain active in the role and are automatically removed from the position if they are unresponsive for > 3 months and MAY be removed by consensus of other subproject owners and Chairs if not proactively working with other Subproject Owners to fulfill responsibilities.
-* MAY decide to step down at anytime and propose a replacement. This can be done by updating the OWNERS file for any subprojects.
-* MAY select additional subproject owners by updating the OWNERs file.
-* WILL be asked to step down if there is inappropriate behavior or code of conduct issues
-
-### SIG Members
-
-Approvers and reviewers in the OWNERS file of all subprojects under SIG Cloud Provider.
-
-## Long Term Goals
-
-The long term goal of SIG Cloud Provider is to promote a vendor neutral ecosystem for our community.  Vendors wanting to support Kubernetes should feel equally empowered to do so
-as any of today’s existing cloud providers; but more importantly ensuring a high quality user experience across providers. The SIG will act as a central group for developing
-the Kubernetes project in a way that ensures all providers share common privileges and responsibilities. Below are some concrete goals on how SIG Cloud Provider plans to accomplish this.
-
-### Consolidating Existing Cloud SIGs
-
-SIG Cloud Provider will aim to eventually consolidate existing cloud provider SIGs and have each provider instead form a subproject under it. The subprojects would drive the development of
-individual providers and work closely with SIG Cloud Provider to ensure compatibility with Kubernetes. With this model, code ownership for new and existing providers will belong to SIG Cloud Provider,
-limiting SIG sprawl as more providers support Kubernetes. Existing SIGs representing cloud providers are highly encouraged to opt-in as sub-projects under SIG Cloud Provider but are not required to do.
-As a SIG opts-in, it will operate to ensure a smooth transition, typically over the course of 3 release cycles.
-
-### Supporting New Cloud Providers
-
-One of the primary goals of SIG Cloud Provider is to become an entrypoint for new providers wishing to support Kubernetes on their platform and ensuring technical excellence from each of those providers.
-SIG Cloud Provider will accomplish this by maintaining documentation around how new providers can get started and managing the set of requirements that must be met to onboard them. In addition to
-onboarding new providers, the entire lifecycle of providers would also fall under the responsibility of SIG Cloud Provider, which may involve clean up work if a provider decides to no longer support Kubernetes.
-
+[sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
+[sig-subprojects]: https://github.com/kubernetes/community/blob/master/sig-YOURSIG/README.md#subprojects
+[Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md

@@ -26,7 +26,7 @@ As the CSI Spec moves towards GA and more storage plugins are being created and
 becoming production ready, we will want to migrate our in-tree plugin logic to
 use CSI plugins instead. This is motivated by the fact that we are currently
 supporting two versions of each plugin (one in-tree and one CSI), and that we
-want to eventually transition all storage users to CSI.
+want to eventually migrate all storage users to CSI.
 
 In order to do this we need to migrate the internals of the in-tree plugins to
 call out to CSI Plugins because we will be unable to deprecate the current
@@ -179,6 +179,9 @@ type CSITranslator interface {
   // by the `Driver` field in the CSI Source. The input PV object will not be modified.
   TranslateCSIPVToInTree(pv *v1.PersistentVolume) (*v1.PersistentVolume, error) {
 
+  // TranslateInTreeInlineVolumeToPVSpec takes an inline intree volume and will translate
+  // the in-tree volume source to a PersistentVolumeSpec containing a CSIPersistentVolumeSource
+  TranslateInTreeInlineVolumeToPVSpec(volume *v1.Volume) (*v1.PersistentVolumeSpec, error) {
 
   // IsMigratableByName tests whether there is Migration logic for the in-tree plugin
   // for the given `pluginName`
@@ -187,10 +190,8 @@ type CSITranslator interface {
   // GetCSINameFromIntreeName maps the name of a CSI driver to its in-tree version
   GetCSINameFromIntreeName(pluginName string) (string, error) {
 
-
   // IsPVMigratable tests whether there is Migration logic for the given Persistent Volume
   IsPVMigratable(pv *v1.PersistentVolume) bool {
-
 
   // IsInlineMigratable tests whether there is Migration logic for the given Inline Volume
   IsInlineMigratable(vol *v1.Volume) bool {
@@ -236,35 +237,49 @@ with the in-tree plugin, the VolumeAttachment object becomes orphaned.
 
 ### In-line Volumes
 
-In-line controller calls are a special case because there is no PV. In this case
-we will forward the in-tree volume source to CSI attach as-is and it will be
-copied to a new field in the VolumeAttachment object
-VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineVolumeSource. The
-VolumeAttachment name must be made with the CSI Translated version of the
+In-line controller calls are a special case because there is no PV. In this case,
+we will translate the in-line Volume into a PersistentVolumeSpec using
+plugin-specific translation logic in the CSI translation library method,
+`TranslateInTreeInlineVolumeToPVSpec`. The resulting PersistentVolumeSpec will
+be stored in a new field `VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineVolumeSpec`.
+
+The plugin-specific CSI translation logic invoked by `TranslateInTreeInlineVolumeToPVSpec`
+will need to populate the `CSIPersistentVolumeSource` field along with appropriate
+values for `AccessModes` and `MountOptions` fields in
+`VolumeAttachment.Spec.Source.VolumeAttachmentSource.InlineVolumeSpec`. Since
+`AccessModes` and `MountOptions` are not specified for inline volumes, default values
+for these fields suitable for the CSI plugin will need to be populated in addition
+to translation logic to populate `CSIPersistentVolumeSource`.
+
+The VolumeAttachment name must be made with the CSI translated version of the
 VolumeSource in order for it to be discoverable by Detach and WaitForAttach
 (described in more detail below).
 
-The CSI Attacher will have to be modified to also check this location for a
-source as well as checking for the `pvName`. Only one of the two may be
-specified.
+The CSI Attacher will have to be modified to also check for `InlineVolumeSpec`
+besides the `PersistentVolumeName`. Only one of the two may be specified. If `PersistentVolumeName`
+is empty and `InlineVolumeSpec` is set, the CSI Attacher will not look for
+an associated PV in it's PV informer cache as it implies the inline volume scenario
+(where no PVs are created).
+
+The CSI Attacher will have access to all the data it requires for handling in-line
+volumes attachment (through the CSI plugins) from fields in the `InlineVolumeSpec`.
 
 The new VolumeAttachmentSource API will look as such:
 ```
 // VolumeAttachmentSource represents a volume that should be attached.
-// Right now only PersistenVolumes can be attached via external attacher,
-// in future we may allow also inline volumes in pods.
+// Inline volumes and Persistent volumes can be attached via external attacher.
 // Exactly one member can be set.
 type VolumeAttachmentSource struct {
 	// Name of the persistent volume to attach.
 	// +optional
 	PersistentVolumeName *string `json:"persistentVolumeName,omitempty" protobuf:"bytes,1,opt,name=persistentVolumeName"`
 
-	// Allows CSI migration code to copy an inline volume
-	// source from a pod to the VolumeAttachment to support shimming of
-	// in-tree inline volumes to a CSI backend.
-	// This field is alpha-level and is only honored by servers that enable the CSIMigration feature.
+	// A PersistentVolumeSpec whose fields contain translated data from a pod's inline
+	// VolumeSource to support shimming of in-tree inline volumes to a CSI backend.
+	// This field is alpha-level and is only honored by servers that
+	// enable the CSIMigration feature.
 	// +optional
-	InlineVolumeSource *v1.VolumeSource `json:"inlineVolumeSource,omitempty protobuf:"bytes,2,opt,name=inlineVolumeSource"`
+	InlineVolumeSpec *v1.PersistentVolumeSpec `json:"inlineVolumeSpec,omitempty" protobuf:"bytes,2,opt,name=inlineVolumeSpec"`
 }
 ```
 
@@ -288,16 +303,70 @@ existing Pods in the ADC.
 
 
 ### Volume Resize
+#### Offline Resizing
+For controller expansion, in the in-tree resize controller, we will create a new PVC annotation `volume.kubernetes.io/storage-resizer`
+and set the value to the name of resizer. If the PV is CSI PV or migrated in-tree PV, the annotation will be set to 
+the name of CSI driver; otherwise, it will be set to the name of in-tree plugin.
 
-TODO: Design
+For migrated volume, The CSI resizer name will be derived from translating in-tree plugin name
+to CSI driver name by translation library. We will also add an event to PVC about resizing being handled
+by external controller.
+
+For external resizer, we will update it to expand volume for both CSI volume and in-tree 
+volume (only if migration is enabled). For migrated in-tree volume, it will update in-tree PV object
+with new volume size and mark in-tree PVC as resizing finished.
+
+To synchronize between in-tree resizer and external resizer, external resizer will find resizer name
+using PVC annotation `volume.kubernetes.io/storage-resizer`. Since `volume.kubernetes.io/storage-resizer`
+annotation defines the CSI plugin name which will handle external resizing, it should
+match driver running with external-resizer, hence external resizer will proceed with volume resizing. Otherwise,
+it will yield to in-tree resizer.
+
+For filesystem expansion, in the OperationGenerator, `GenerateMountVolumeFunc` is used to expand file system after volume
+is expanded and staged/mounted. The migration logic is covered by previous migration of volume mount.
+
+#### Online Resizing
+Handling online resizing does not require anything special in control plane. The behaviour will be
+same as offline resizing. 
+
+To handle expansion on kubelet - we will convert volume spec to CSI spec before handling the call
+to volume plugin inside `GenerateExpandVolumeFSWithoutUnmountingFunc`.
 
 ### Raw Block
+In the OperationGenerator, `GenerateMapVolumeFunc`, `GenerateUnmapVolumeFunc` and 
+`GenerateUnmapDeviceFunc` are used to prepare and mount/umount block devices. At the 
+beginning of each API, we will check whether migration is enabled for the plugin. If
+enabled, volume spec will be translated from the in-tree spec to out-of-tree spec using
+CSI as the persistence volume source.
 
-TODO: Design
+Caveat: the original spec needs to be used when setting the state of `actualStateOfWorld`
+for where is it used before the translation.
 
 ### Volume Reconstruction
 
-TODO: Design
+Volume Reconstruction is currently a routine in the reconciler that runs on the
+nodes when a Kubelet restarts and loses its cached state (`desiredState` and
+`actualState`). It is kicked off in `syncStates()` in
+`pkg/kubeletvolumemanager/reconciler/reconciler.go` and attempts to reconstruct
+a volume based on the mount path on the host machine.
+
+When CSI Migration is turned on, when the reconstruction code is run and it
+finds a CSI mounted volume we currently do not know whether it was mounted as a
+native CSI volume or migrated from in-tree. To solve this issue we will save a
+`migratedVolume` boolean in the `saveVolumeData` function when the `NewMounter`
+is created during the `MountVolume` call for that particular volume in the
+Operation generator.
+
+When the Kubelet is restarted and we lose state the Kubelet will call
+`reconstructVolume` we can `loadVolumeData` and determine whether that CSI
+volume was migrated or not, as well as get the information about the original
+plugin requested. With that information we should be able to call the
+`ReconstructVolumeOperation` with the correct in-tree plugin to get the original
+in-tree spec that we can then pass to the rest of volume reconstruction. The
+rest of the volume reconstruction code will then use this in-tree spec passed to
+the `desiredState`, `actualState`, and `operationGenerator` and the volume will
+go through the standard volume pathways and go through the standard migrated
+volume lifecycles described above in the "Pre-Provisioned Volumes" section.
 
 ### Volume Limit
 

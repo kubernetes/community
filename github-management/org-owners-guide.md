@@ -48,6 +48,8 @@ transfer in existing code.
 
 ## Team Guidance
 
+### Nomenclature
+
 Each organization should have the following teams:
 
 - teams for each repo `foo`
@@ -75,6 +77,35 @@ for all orgs going forward.  Notable discrepancies at the moment:
 - `admins-foo` and `maintainers-foo` teams as used by the kubernetes-incubator
   org. This was a mistake that swapped the usual convention, and we would like
   to rename the team
+
+### Structure and Process
+
+Guidelines on how to create and structure teams are described below:
+
+#### Structure
+
+**Renaming a team**:
+
+To rename a team, add the `previously: <old-team-name>` field to the team
+and rename the `name` of the team to the new name.
+
+**Creating a team**:
+
+- Unless a member is part of the [@kubernetes/owners] team, they needed to be
+  added to the `members` list in the team. Members of the
+  [@kubernetes/owners] team *must* be added to the `maintainers` list because
+  of how the GitHub API works.
+- The `privacy` of a team *must* be `closed`.
+
+#### Process
+
+A new team can be created or a member can be added to a team by
+creating a PR against the [kubernetes/org] repo. The PR must be
+approved by the relevant `OWNERS` or the SIG leads.
+
+For example, addition of a member to `foo-maintainers` must be approved
+by the `OWNERS` of the repo `foo` or the leads of the SIG associated
+with the repo.
 
 ## Project Board Guidance
 
@@ -109,3 +140,4 @@ Project](https://github.com/kubernetes/kubernetes-template-project), and the
 [GitHub Administration Team]:
 /github-management/README.md#github-administration-team
 [@kubernetes/owners]: https://github.com/orgs/kubernetes/teams/owners
+[kubernetes/org]: https://github.com/kubernetes/org

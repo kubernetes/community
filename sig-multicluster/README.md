@@ -13,20 +13,20 @@ A Special Interest Group focused on solving common challenges related to the man
 The [charter](charter.md) defines the scope and governance of the Multicluster Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit).
-  * [Meeting recordings](https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
 * Federation v2 Working Group: [Wednesdays at 7:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=7:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3iKP5EzMbtNT2zOZv6RCrX).
+* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit).
+  * [Meeting recordings](https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
 
 ## Leadership
 
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Christian Bell (**[@csbell](https://github.com/csbell)**), Google
-* Quinton Hoole (**[@quinton-hoole-2](https://github.com/quinton-hoole-2)**), Huawei
+* Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
+* Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-multicluster)
@@ -36,15 +36,15 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-multicluster:
-- **federation-v1**
+- **Kubefed**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/federation/master/OWNERS
-- **federation-v2**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/federation-v2/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/kubefed/master/OWNERS
 - **cluster-registry**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cluster-registry/master/OWNERS
+- **federation-v1**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/federation/master/OWNERS
 - **kubemci**
   - Owners:
     - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
@@ -67,16 +67,16 @@ Note that the links to display team membership will only work if you are a membe
 <!-- BEGIN CUSTOM CONTENT -->
 ## Subprojects
 
-### Federation v2
+### Kubefed
 Control Plane for newer Multicluster-specific APIs. Discussions are ongoing to focus future development on multi-cluster specific Kubernetes APIs rather than a reimplementation of single-cluster Kubernetes APIs.
 
 |  |  |
 | -------------- |:-------|
 | Recommended for Production | Not yet. |
 | General Availability | Beta by 2018-Q4. GA TBD. |
-| Current Level of Activity | Once to twice weekly discussions as part of Federation working group (most active SIG-Multicluster members). |
+| Current Level of Activity | Once to twice weekly discussions as part of Kubefed working group (most active SIG-Multicluster members). |
 | Owner(s) | Working Group |
-| Where to find it? | https://github.com/kubernetes-sigs/federation-v2 |
+| Where to find it? | https://github.com/kubernetes-sigs/kubefed |
 | Meeting Agenda | https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY |
 
 ### Cluster Registry
@@ -104,13 +104,13 @@ Ability to program Global multicluster load balancers with two deliverables:
 | Where to find it? | https://github.com/GoogleCloudPlatform/k8s-multicluster-ingress |
 
 ### Federation v1 (a.k.a. Cluster Federation)
-Control Plane that coordinates configuration across multiple clusters by presenting a subset of the existing single-cluster Kubernetes APIs. Initially released as part of Kubernetes 1.3, Cluster Federation has implemented parts of the existing “single-cluster” Kubernetes API so that they may be used transparently in a multi-cluster fashion. As of Kubernetes 1.9, many of the non-Federated Kubernetes Workloads APIs have moved to GA (Deployments, ReplicaSets, Daemonset, StatefulSet). However, under Federation, these workloads have not reached the maturity of “GA” since they are re-implemented by different federated controllers. The SIG is currently re-thinking how to support Kubernetes APIs in a Federation fashion and this discussion is reflected under Federation v2.
+Control Plane that coordinates configuration across multiple clusters by presenting a subset of the existing single-cluster Kubernetes APIs. Initially released as part of Kubernetes 1.3, Cluster Federation has implemented parts of the existing “single-cluster” Kubernetes API so that they may be used transparently in a multi-cluster fashion. As of Kubernetes 1.9, many of the non-Federated Kubernetes Workloads APIs have moved to GA (Deployments, ReplicaSets, Daemonset, StatefulSet). However, under Federation, these workloads have not reached the maturity of “GA” since they are re-implemented by different federated controllers. The SIG is currently re-thinking how to support Kubernetes APIs in a Federation fashion and this discussion is reflected under Kubefed.
 
 |  |  |
 | -------------- |:-------|
 | Recommended for Production | No. Between Alpha and Beta levels of functionality depending on Kubernetes APIs used. |
 | General Availability | No target set date. |
-| Current Level of Activity | On Hold. See Federation v2. |
+| Current Level of Activity | On Hold. See Kubefed. |
 | Owner(s) | [@shashidharatd](https://github.com/shashidharatd) |
 | Where to find it? | Out of main Kubernetes repository as of 1.9 and into its own [kubernetes/federation](https://github.com/kubernetes/federation) repository (kubefed is no longer distributed as part of Kubernetes client tools). Users have to build their own Federation Control Plane and kubefed client tool or wait on [issue #192](https://github.com/kubernetes/federation/issues/192) to be resolved. |
 <!-- END CUSTOM CONTENT -->

@@ -22,20 +22,20 @@ The [charter](charter.md) defines the scope and governance of the CLI Special In
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 * Sean Sullivan (**[@seans3](https://github.com/seans3)**), Google
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 * Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 
 ## Emeritus Leads
 
-* Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**), Red Hat
 * Tony Ado (**[@AdoHe](https://github.com/AdoHe)**), Alibaba
+* Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**), Red Hat
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cli)
@@ -45,6 +45,26 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Subprojects
 
 The following subprojects are owned by sig-cli:
+- **cli-experimental**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cli-experimental/master/OWNERS
+- **cli-sdk**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/cli-runtime/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
+- **cli-utils**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cli-utils/master/OWNERS
+- **krew**
+  - Description: Plugin manager for kubectl.
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/krew/master/OWNERS
+- **krew-index**
+  - Description: Centralized plugin index for krew.
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/krew-index/master/OWNERS
 - **kubectl**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
@@ -52,12 +72,8 @@ The following subprojects are owned by sig-cli:
 - **kustomize**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
-- **cli-sdk**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cli-runtime/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
+  - Contact
+    - Slack: [#kustomize](https://kubernetes.slack.com/messages/kustomize)
 
 ## GitHub Teams
 

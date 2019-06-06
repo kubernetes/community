@@ -24,14 +24,15 @@ The [charter](charter.md) defines the scope and governance of the LTS Working Gr
 
 ## Organizers
 
-* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
 * Dhawal Yogesh Bhanusali (**[@imkin](https://github.com/imkin)**), VMware
-* Quinton Hoole (**[@quinton-hoole-2](https://github.com/quinton-hoole-2)**), Huawei
+* Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei
+* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
 * Nick Young (**[@youngnick](https://github.com/youngnick)**), Atlassian
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-lts)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-lts)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Flts)
 
 <!-- BEGIN CUSTOM CONTENT -->
 

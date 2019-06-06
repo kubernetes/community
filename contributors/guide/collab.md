@@ -1,4 +1,8 @@
-# On Collaborative Development
+---
+title: "Collaborative Development"
+weight: 1
+slug: "collab"
+---
 
 ## Code reviews
 

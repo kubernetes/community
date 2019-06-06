@@ -40,9 +40,11 @@ branches.
    * Milestones on cherry-pick PRs should be the milestone for the target 
    release branch (for example, milestone 1.11 for a cherry-pick onto 
    release-1.11).
-   *  You can find the current release team members in the 
-   [appropriate release folder](https://git.k8s.io/sig-release/releases) for the target release.
-   You may cc them with `<@githubusername>` on your cherry-pick PR.
+   * During code freeze, to get attention on a cherry-pick by the current
+   release team members see the [appropriate release folder](https://git.k8s.io/sig-release/releases)
+   for the target release's team contact information. You may cc them with
+   `<@githubusername>` on your cherry-pick PR.
+   * For prior branches, check the [patch release schedule](https://git.k8s.io/sig-release/releases/patch-releases.md), which includes contact information for the patch release team.
 
 ## Cherry-pick Review
 
@@ -53,6 +55,13 @@ The [Branch Manager](https://git.k8s.io/sig-release/release-team/role-handbooks/
 or the [Patch Release Team](https://git.k8s.io/sig-release/release-team/role-handbooks/patch-release-manager)
 are the final authority on removing the `do-not-merge/cherry-pick-not-approved`
 label  and triggering a merge into the target branch.
+
+Cherry-pick pull requests follow the same release note requirements as
+other pull requests, except the release note stanza will auto-populate from
+the master branch pull request from which the cherry-pick originated.  If
+this is unsuccessful the `do-not-merge/release-note-label-needed` label
+will be applied and the cherry-pick author must edit the pull request
+description to [add a release note](https://git.k8s.io/community/contributors/guide/release-notes.md).
 
 ## Searching for Cherry-picks
 

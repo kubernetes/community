@@ -22,8 +22,8 @@ The [charter](charter.md) defines the scope and governance of the Scalability Sp
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
 * Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), AWS
+* Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-scalability)
@@ -33,11 +33,20 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-scalability:
+- **kubernetes-scalability-and-performance-tests-and-validation**
+  - Description: [Described below](#kubernetes-scalability-and-performance-tests-and-validation)
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/processes/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/scalability/OWNERS
+- **kubernetes-scalability-bottlenecks-detection**
+  - Description: [Described below](#kubernetes-scalability-bottlenecks-detection)
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/blogs/OWNERS
 - **kubernetes-scalability-definition**
   - Description: [Described below](#kubernetes-scalability-definition)
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/slos/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/configs-and-limits/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/slos/OWNERS
 - **kubernetes-scalability-governance**
   - Description: [Described below](#kubernetes-scalability-governance)
   - Owners:
@@ -49,17 +58,8 @@ The following subprojects are owned by sig-scalability:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubemark/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubemark/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/kubemark/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/perf-tests/master/clusterloader2/OWNERS
     - https://raw.githubusercontent.com/kubernetes/perf-tests/master/OWNERS
-- **kubernetes-scalability-and-performance-tests-and-validation**
-  - Description: [Described below](#kubernetes-scalability-and-performance-tests-and-validation)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/processes/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/scalability/OWNERS
-- **kubernetes-scalability-bottlenecks-detection**
-  - Description: [Described below](#kubernetes-scalability-bottlenecks-detection)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/blogs/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/perf-tests/master/clusterloader2/OWNERS
 
 ## GitHub Teams
 

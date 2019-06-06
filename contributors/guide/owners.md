@@ -1,21 +1,25 @@
-# OWNERS files
+---
+title: "OWNERS Files"
+weight: 1
+slug: "owners" 
+---
 
 ## Overview
 
 OWNERS files are used to designate responsibility over different parts of the Kubernetes codebase.
-Today, we use them to assign the **reviewer** and **approver** roles used in our two-phase code
-review process. Our OWNERS files were inspired by [Chromium OWNERS
-files](https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md), which in turn
-inspired [GitHub's CODEOWNERS files](https://help.github.com/articles/about-codeowners/).
+Today, we use them to assign the **[reviewer][reviewer-role]** and **[approver][approver-role]** 
+roles (defined in our [community membership doc]) that are used in our two-phase code review 
+process. Our OWNERS files were inspired by [Chromium OWNERS files][chromium-owners] which in turn
+inspired [GitHub's CODEOWNERS files][github-codeowners]
 
 The velocity of a project that uses code review is limited by the number of people capable of
 reviewing code. The quality of a person's code review is limited by their familiarity with the code
 under review. Our goal is to address both of these concerns through the prudent use and maintenance
-of OWNERS files
+of OWNERS files.
 
 ## OWNERS spec
 
-The [k8s.io/test-infra/prow/repowners package](https://git.k8s.io/test-infra/prow/repoowners/repoowners.go)
+The [k8s.io/test-infra/prow/repoowners package](https://git.k8s.io/test-infra/prow/repoowners/repoowners.go)
 is the main consumer of OWNERS files.  If this page is out of date, look there.
 
 ### OWNERS
@@ -86,6 +90,28 @@ Instead, set a `.*` key inside `filters` (as shown in the previous example).
 **WARNING**: The `approve` plugin [does not currently respect `filters`][test-infra-7690].
 Until that is fixed, `filters` should only be used for the `labels` key (as shown in the above example).
 
+
+#### Emeritus
+
+It is inevitable, but there are times when someone may shift focuses, change jobs or step away from
+a specific area in the project for a time. These people may be domain experts over certain areas
+of the codebase, but can no longer dedicate the time needed to handle the responsibilities of
+reviewing and approving changes. They are encouraged to add themselves as an _"emeritus"_ approver
+under the `emeritus_approvers` key.
+
+GitHub usernames listed under the `emeritus_approvers` key can no longer approve code (use the
+`/approve` command) and will be ignored by prow for assignment. However, it can still be referenced
+by a person looking at the OWNERS file for a possible second or more informed opinion.
+
+When a contributor returns to being more active in that area, they may be promoted back to a
+regular approver at the discretion of the current approvers.
+
+```yaml
+emeritus_approvers:
+- david    # 2018-05-02
+- emily    # 2019-01-05
+```
+
 ### OWNERS_ALIASES
 
 Each repo may contain at its root an OWNERS_ALIAS file.
@@ -122,7 +148,7 @@ aspects of this process may be configured on a per-repo basis.
 ### The Code Review Process
 
 - The **author** submits a PR
-- Phase 0: Automation suggests **reviewers** and **approvers** for the PR
+- Phase 0: Automation suggests **[reviewers][reviewer-role]** and **[approvers][approver-role]** for the PR
   - Determine the set of OWNERS files nearest to the code being changed
   - Choose at least two suggested **reviewers**, trying to find a unique reviewer for every leaf
     OWNERS file, and request their reviews on the PR
@@ -172,16 +198,6 @@ is the state of today.
     a **reviewer**
   - This goes against the idea of having at least two sets of eyes on a PR, and may be a sign that
     there are too few **reviewers** (who aren't also **approver**)
-- An **approver** can `/approve no-issue` to bypass the requirement that PR's must have linked
-  issues
-  - There is disagreement within the community over whether requiring every PR to have a linked
-    issue provides value
-  - Protest is being expressed in the form of overuse of `/approve no-issue`
-  - Instead, suggest to the PR **author** that they edit the PR description to include a linked
-    issue
-  - This is a sign that we need to actually deliver value with linked issues, or be able to define
-    what a "trivial" PR is in a machine-enforceable way to be able to automatically waive the linked
-    issue requirement
 - Technically, anyone who is a member of the kubernetes GitHub organization can drive-by `/lgtm` a
   PR
   - Drive-by reviews from non-members are encouraged as a way of demonstrating experience and
@@ -256,7 +272,7 @@ pieces of prow are used to implement the code review process above.
 - [plugin: lgtm](https://git.k8s.io/test-infra/prow/plugins/lgtm)
   - adds the `lgtm` label when a **reviewer** comments `/lgtm` on a PR
   - the **PR author** may not `/lgtm` their own PR
-- [pkg: k8s.io/test-infra/prow/repowners](https://git.k8s.io/test-infra/prow/repoowners/repoowners.go)
+- [pkg: k8s.io/test-infra/prow/repoowners](https://git.k8s.io/test-infra/prow/repoowners/repoowners.go)
   - parses OWNERS and OWNERS_ALIAS files
   - if the `no_parent_owners` option is encountered, parent owners are excluded from having
     any influence over files adjacent to or underneath of the current OWNERS file
@@ -265,7 +281,9 @@ pieces of prow are used to implement the code review process above.
 
 OWNERS files should be regularly maintained.
 
-We encourage people to self-nominate or self-remove from OWNERS files via PR's. Ideally in the future we could use metrics-driven automation to assist in this process.
+We encourage people to self-nominate, self-remove or switch to [emeritus](#emeritus) from OWNERS
+files via PR's. Ideally in the future we could use metrics-driven automation to assist in this
+process.
 
 We should strive to:
 
@@ -291,3 +309,8 @@ Good examples of OWNERS usage:
 
 [go-regex]: https://golang.org/pkg/regexp/#pkg-overview
 [test-infra-7690]: https://github.com/kubernetes/test-infra/issues/7690
+[approver-role]: https://git.k8s.io/community/community-membership.md#approver
+[reviewer-role]: https://git.k8s.io/community/community-membership.md#reviewer
+[community membership doc]: https://git.k8s.io/community/community-membership.md
+[chromium-owners]: https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md
+[github-codeowners]: https://help.github.com/articles/about-codeowners/

@@ -16,7 +16,7 @@
 
 
 This assumes you already read the [development guide](../development.md) to
-install go, godeps, and configure your git client.  All command examples are
+install go and configure your git client.  All command examples are
 relative to the `kubernetes` root directory.
 
 Before sending pull requests you should at least make sure your changes have
@@ -102,8 +102,7 @@ make test WHAT="./pkg/kubelet ./pkg/scheduler"  # run tests for pkg/kubelet and 
 In a shell, it's often handy to use brace expansion:
 
 ```sh
-make test WHAT=./pkg/{kubelet,scheduler}  # run tests for pkg/kubelet and
-pkg/scheduler
+make test WHAT=./pkg/{kubelet,scheduler}  # run tests for pkg/kubelet and pkg/scheduler
 ```
 
 ### Run specific unit test cases in a package

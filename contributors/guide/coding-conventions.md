@@ -1,6 +1,8 @@
-# Coding Conventions
-
-Updated: 1/24/2018
+---
+title: "Coding Conventions"
+weight: 1
+slug: "coding-conventions"
+---
 
 **Table of Contents**
 
@@ -57,7 +59,7 @@ following Go conventions - `stateLock`, `mapLock` etc.
 
     - [API changes](/contributors/devel/sig-architecture/api_changes.md)
 
-    - [API conventions](/contributors/devel/api-conventions.md)
+    - [API conventions](/contributors/devel/sig-architecture/api-conventions.md)
 
     - [Kubectl conventions](/contributors/devel/sig-cli/kubectl-conventions.md)
 
@@ -118,8 +120,8 @@ respectively. Actual application examples belong in /examples.
   - Third-party code
 
     - Go code for normal third-party dependencies is managed using
-[Godep](https://github.com/tools/godep) and is described in the kubernetes
-[godep guide](/contributors/devel/sig-architecture/godep.md)
+[go modules](https://github.com/golang/go/wiki/Modules) and is described in the kubernetes
+[vendoring guide](/contributors/devel/sig-architecture/vendor.md)
 
     - Other third-party code belongs in `/third_party`
       - forked third party Go code goes in `/third_party/forked`

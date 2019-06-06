@@ -201,7 +201,7 @@ To interact with the Namespace API:
 | LIST | GET | /api/{version}/namespaces | List all namespaces |
 | UPDATE | PUT | /api/{version}/namespaces/{namespace} | Update namespace {namespace} |
 | DELETE | DELETE | /api/{version}/namespaces/{namespace} | Delete namespace {namespace} |
-| FINALIZE | POST | /api/{version}/namespaces/{namespace}/finalize | Finalize namespace {namespace} |
+| FINALIZE | PUT | /api/{version}/namespaces/{namespace}/finalize | Finalize namespace {namespace} |
 | WATCH | GET | /api/{version}/watch/namespaces | Watch all namespaces |
 
 This specification reserves the name *finalize* as a sub-resource to namespace.

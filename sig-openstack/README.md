@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Coordinates the cross-community efforts of the OpenStack and Kubernetes communities. This includes OpenStack-related contributions to Kubernetes projects with OpenStack as: a deployment platform for Kubernetes; a service provider for Kubernetes; a collection of applications to run on Kubernetes.
 
+The [charter](charter.md) defines the scope and governance of the OpenStack Special Interest Group.
+
 ## Meetings
 * Regular SIG Meeting: [Wednesdays at 08:00 PT (Pacific Time)](https://docs.google.com/document/d/1bW3j4hFN4D8rv2LFv-DybB3gcE5ISAaOO_OpvDCgrGg/edit) (biweekly starting Wednesday March 20, 2019). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/15UwgLbEyZyXXxVtsThcSuPiJru4CuqU9p3ttZSfTaY4/edit).
@@ -20,16 +22,16 @@ Coordinates the cross-community efforts of the OpenStack and Kubernetes communit
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Chris Hoge (**[@hogepodge](https://github.com/hogepodge)**), OpenStack Foundation
 * Aditi Sharma (**[@adisky](https://github.com/adisky)**), NEC Technologies India
 * Christoph Glaubitz (**[@chrigl](https://github.com/chrigl)**), iNNOVO Cloud
+* Chris Hoge (**[@hogepodge](https://github.com/hogepodge)**), OpenStack Foundation
 
 ## Emeritus Leads
 
 * David Lyle (**[@dklyle](https://github.com/dklyle)**), Intel
+* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
 * Robert Morse (**[@rjmorse](https://github.com/rjmorse)**), Ticketmaster
 * Steve Gordon (**[@xsgordon](https://github.com/xsgordon)**), Red Hat
-* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-openstack)

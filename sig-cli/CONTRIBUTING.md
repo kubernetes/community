@@ -5,9 +5,9 @@ about the prospect of you joining our [community][community page]!
 
 ## Before You Begin
 
-We strongly recommend you to understand the main [Kubernetes Contributor Guide](http://git.k8s.io/community/contributors/guide) and adhere to the contribution rules (specially signing the CLA). 
+We strongly recommend you to understand the main [Kubernetes Contributor Guide](http://git.k8s.io/community/contributors/guide) and adhere to the contribution rules (specially signing the CLA).
 
-You can also check the [Contributor Cheat Sheet](https://git.k8s.io/community/contributors/guide/contributor-cheatsheet.md), with common resources for existing developers.
+You can also check the [Contributor Cheat Sheet](/contributors/guide/contributor-cheatsheet/), with common resources for existing developers.
 
 The process for contributing code to Kubernetes via SIG-CLI [community][community page].
 

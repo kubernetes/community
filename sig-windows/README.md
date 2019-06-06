@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Focuses on supporting Windows Node and scheduling Windows Server containers on Kubernetes.
 
+The [charter](charter.md) defines the scope and governance of the Windows Special Interest Group.
+
 ## Meetings
 * Regular SIG Meeting: [Tuesdays at 12:30 Eastern Standard Time (EST)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:30&tz=Eastern%20Standard%20Time%20%28EST%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431).
@@ -37,6 +39,9 @@ The following subprojects are owned by sig-windows:
 - **windows-testing**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
+- **windows-tools**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
 
 ## GitHub Teams
 
@@ -54,9 +59,12 @@ Note that the links to display team membership will only work if you are a membe
 
 If you're looking for information on building and running containers on Windows, you can get started at http://aka.ms/windowscontainers.
 
-Kubernetes 1.14 includes stable support for Windows Server containers and has an up-to-date [Getting Started Guide for Windows](https://kubernetes.io/docs/getting-started-guides/windows/) .
+Kubernetes 1.14 includes stable support for Windows Server containers and has up-to-date [documentation](https://kubernetes.io/docs/setup/windows/intro-windows-in-kubernetes/) .
 
 Additional information and guides are available in the [KEPs for SIG-Windows](https://github.com/kubernetes/enhancements/tree/master/keps/sig-windows)
+
+## Discuss
+Join us on [Slack](https://kubernetes.slack.com/messages/sig-windows) or the [Kubernetes Community Forums](https://discuss.kubernetes.io/c/general-discussions/windows) to chat about Windows containers on Kubernetes.
 
 ## Contributing
 

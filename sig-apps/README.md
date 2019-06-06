@@ -22,9 +22,10 @@ The [charter](charter.md) defines the scope and governance of the Apps Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
+* Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Google
 * Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
 * Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), Bitnami
-* Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-apps)
@@ -34,15 +35,25 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-apps:
+- **application**
+  - Description: Application metadata descriptor CRD
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/application/master/OWNERS
 - **examples**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/examples/master/OWNERS
 - **kompose**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
+  - Contact
+    - Slack: [#kompose](https://kubernetes.slack.com/messages/kompose)
 - **workloads-api**
   - Description: The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, and StatefulSet kinds
   - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/core/v1/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/extensions/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cronjob/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/daemon/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/deployment/OWNERS
@@ -52,24 +63,16 @@ The following subprojects are owned by sig-apps:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replicaset/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replication/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/core/v1/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/extensions/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/apps/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/batch/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/extensions/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/apps/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/core/v1/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/batch/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/core/v1/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/extensions/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/apps/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/daemonset/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/deployment/OWNERS
-- **application**
-  - Description: Application metadata descriptor CRD
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/application/master/OWNERS
 
 ## GitHub Teams
 

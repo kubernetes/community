@@ -1,4 +1,9 @@
-# Kubernetes Contributor Guide
+---
+title: "Kubernetes Contributor Guide"
+weight: 1
+slug: "guide" 
+---
+
 
 <!-- 
 Contributing to this document? 
@@ -54,7 +59,7 @@ Please make sure to read and observe our [Code of Conduct](/code-of-conduct.md).
 
 ## Setting up your development environment
 
-If you haven’t set up your environment, check the [developer resources](/contributors/devel).
+If you haven’t set up your environment, check the [developer resources](/contributors/devel/README.md#setting-up-your-dev-environment-coding-and-debugging).
 
 ## Community Expectations and Roles
 
@@ -173,7 +178,7 @@ Check out our [community guiding principles](/contributors/guide/collab.md) on h
 
 Beginner focused information can be found below in [Open a Pull Request](#open-a-pull-request) and [Code Review](#code-review).
 
-For quick reference on contributor resources, we have a handy [contributor cheatsheet](./contributor-cheatsheet.md)
+For quick reference on contributor resources, we have a handy [contributor cheatsheet](./contributor-cheatsheet/).
 
 ### Communication
 
@@ -204,6 +209,7 @@ Common new contributor PR issues are:
 * finding the right SIG or reviewer(s) for the PR (see [Code Review](#code-review) section) and following any SIG or repository specific contributing guidelines (see [Learn about SIGs](#learn-about-sigs) section)
 * dealing with test cases which fail on your PR, unrelated to the changes you introduce (see [Test Flakes](http://velodrome.k8s.io/dashboard/db/bigquery-metrics?orgId=1))
 * Not following [scalability good practices](scalability-good-practices.md)
+* Include mentions (like @person) and [keywords](https://help.github.com/en/articles/closing-issues-using-keywords) which could close the issue (like fixes #xxxx) in commit messages.
 
 ## Code Review
 
@@ -248,7 +254,7 @@ If you're looking to run e2e tests on your own infrastructure, [kubetest](https:
 
 ## Security
 
-- [Security Release Page](https://git.k8s.io/sig-release/security-release-process-documentation/security-release-process.md) - outlines the procedures for the handling of security issues.
+- [Security Release Page](https://git.k8s.io/security/security-release-process.md) - outlines the procedures for the handling of security issues.
 - [Security and Disclosure Information](https://kubernetes.io/docs/reference/issues-security/security/) - check this page if you wish to report a security vulnerability.
 
 ## Documentation

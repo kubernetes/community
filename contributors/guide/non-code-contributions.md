@@ -1,4 +1,8 @@
-# Non-code Contributions
+---
+title: "Non-code Contributions"
+weight: 1
+slug: "non-code" 
+---
 
 *This section is new and in progress. Expect this document to change often.*
 
@@ -18,14 +22,26 @@ Are you interested in any of the roles below? Come chat with us [on Slack](https
 These are roles that either span the project as a whole, or span several areas of the project. Most of the roles below can be considered "good-first-roles".
 
 - Community education
-  - Answering questions on Discuss, Slack, StackOverflow, etc
-  - K8s Office Hours
-  - Meet Our Contributors
+  - Answering questions on [Discuss](https://discuss.kubernetes.io/), [Slack](http://slack.k8s.io/), [StackOverflow](https://stackoverflow.com/questions/tagged/kubernetes), etc
+  - [K8s Office Hours](https://github.com/kubernetes/community/blob/master/events/office-hours.md) 
+    - [Slack](https://kubernetes.slack.com/messages/C6RFQ3T5H/)
+    - [Discuss](https://discuss.kubernetes.io/tags/office-hours)
+    - [YouTube](https://www.youtube.com/playlist?list=PL69nYSiGNLP3azFUvYJjGn45YbF6C-uIg)
+  - [Meet Our Contributors](https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md)
+    - [Slack](https://kubernetes.slack.com/messages/C8WRR2BB9/) 
+    - [YouTube](https://www.youtube.com/playlist?list=PL69nYSiGNLP3QpQrhZq_sLYo77BVKv09F)
   - Onboarding new contributors
     - Capturing the experiences of “Fresh Eyes” in the project
-  - Getting more people to SIG-Docs
+  - Getting more people to [SIG-Docs](https://github.com/kubernetes/community/tree/master/sig-docs)
+    - [Contribute to Kubernetes docs](https://kubernetes.io/docs/contribute/)
+  - Doing demos
+    - [Kubernetes Weekly Community Meeting](https://github.com/kubernetes/community/blob/master/events/community-meeting.md)
+      - [YouTube](https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ)
 - Outward facing community work (might be more CNCF-oriented)
   - Hosting meetups and general evangelism
+    - [meetups are managed by the CNCF](https://github.com/cncf/meetups)
+    - [Find CNCF meetups near you](https://www.meetup.com/pro/cncf)
+    - [See events in Discuss](https://discuss.kubernetes.io/c/events-and-meetups)
   - Presentation of work to meetups
   - Visual Communication
     - Diagrams and visual explanations of concepts
@@ -40,9 +56,9 @@ These are roles that either span the project as a whole, or span several areas o
     - Playbooks for Ansible, Chef, Salt, etc
   - Indexing of blogs, videos, etc
   - Maintaining content for the new Contributor Site
-- Management of communication tools (at the discretion of project maintainers)
-  - Mailing list moderation
-  - Slack or Discourse management
+- [Management of communication tools](https://github.com/kubernetes/community/blob/master/communication/moderation.md) (at the discretion of project maintainers)
+  - [Mailing list moderation](https://github.com/kubernetes/community/blob/master/communication/moderation.md#mailing-list)
+  - [Slack](https://github.com/kubernetes/community/blob/master/communication/moderation.md#slack) or [Discourse management](https://github.com/kubernetes/community/blob/master/communication/moderation.md#discuss)
   - Calendar management
   - Analysis of our comm tools/metrics
 - Volunteer management
@@ -50,7 +66,7 @@ These are roles that either span the project as a whole, or span several areas o
   - Recognition of those who contribute a lot
   - Recognition of projects and growth efforts
 - Issue Triage
-  - Issue triage & labeling
+  - [Issue triage & labeling](https://github.com/kubernetes/community/blob/master/contributors/guide/issue-triage.md)
 - Event management
   - Helping run Contributor Summits
   - Co-organizing Meetups
@@ -65,7 +81,7 @@ These are roles that are important to each and every SIG within the Kubernetes p
     - Reviewing/logging technical ownership for documentation that might need updating
   - Translation
 - UX/UI Design
-- Release roles
+- [Release team roles](https://github.com/kubernetes/sig-release/tree/master/release-team)
   - All roles have shadows for onboarding new members
 - Project management
   - Confirming ownership of tasks, issues, objects, etc

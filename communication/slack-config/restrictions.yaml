@@ -1,0 +1,20 @@
+restrictions:
+  - path: users.yaml
+    users: true
+  - path: channels.yaml
+    channels:
+      - ".*"
+    template: true
+  - path: usergroups.yaml
+    usergroups:
+      - ".*"
+  - path: template.yaml
+    template: true
+  - path: "sig-docs/*.yaml"
+    channels:
+      - "^kubernetes-docs-[a-z]{2}$"
+  - path: "sig-release/*.yaml"
+    channels:
+      - "^sig-release$"
+      - "^release-managers$"
+  - path: "**/*" # prevent any other file from containing anything

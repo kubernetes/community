@@ -1,0 +1,30 @@
+# This file contains a list of all Slack usergroups that exist.
+
+usergroups:
+  - name: test-infra-oncall
+    external: true
+  - name: youtube-admins
+    long_name: YouTube Admins
+    description: YouTube Admin group. Ping for a YouTube-specific issue
+    channels:
+      - sig-contribex
+    members:
+      - jeefy
+      - sarahnovotny
+      - paris
+      - castrojo
+      - mrbobbytables
+      - alejandrox1
+      - jdumars
+      - jbeda
+      - idvoretskyi
+  - name: zoom-admins
+    long_name: Zoom Admins
+    description: Zoom Admin group. Ping for a Zoom-specific issue
+    channels:
+      - sig-contribex
+    members:
+      - paris
+      - castrojo
+      - mrbobbytables
+      - alejandrox1

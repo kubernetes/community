@@ -11,8 +11,12 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Improve the state of declarative object management by fixing `kubectl apply`, moving the logic from the client to the server. This move also enables new/fixed features included in the scope of this working-group: diff, dry-run and prune.
 Resources can be found in [this Google drive folder](https://drive.google.com/drive/folders/1wlpgkS2gFZXdp4x2WlRsfUBxkFlt2Gx0)
 
+## Stakeholder SIGs
+* SIG API Machinery
+* SIG CLI
+
 ## Meetings
-* Regular WG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
 
 ## Organizers
 
@@ -21,6 +25,7 @@ Resources can be found in [this Google drive folder](https://drive.google.com/dr
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-apply)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-apply)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fapply)
 
 <!-- BEGIN CUSTOM CONTENT -->
 

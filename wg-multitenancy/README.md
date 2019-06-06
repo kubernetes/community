@@ -10,6 +10,14 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
 
+## Stakeholder SIGs
+* SIG API Machinery
+* SIG Auth
+* SIG Network
+* SIG Node
+* SIG Scheduling
+* SIG Storage
+
 ## Meetings
 * Regular WG Meeting: [Tuesdays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1fj3yzmeU2eU8ZNBCUJG97dk_wC7228-e_MmdcmTNrZY/edit?usp=sharing).
@@ -23,6 +31,7 @@ Define the models of multitenancy that Kubernetes will support. Discuss and exec
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-multitenancy)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fmultitenancy)
 
 <!-- BEGIN CUSTOM CONTENT -->
 

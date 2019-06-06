@@ -13,25 +13,25 @@ Developing and sustaining a healthy community of contributors is critical to sca
 The [charter](charter.md) defines the scope and governance of the Contributor Experience Special Interest Group.
 
 ## Meetings
+* APAC SIG Meeting: [Wednesdays at 20:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly - fourth Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=PT%20%28Pacific%20Time%29).
 * Regular SIG Meeting: [Wednesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly - except fourth Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
   * [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
-* APAC SIG Meeting: [Wednesdays at 20:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly - fourth Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=PT%20%28Pacific%20Time%29).
 
 ## Leadership
 
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), CoreOS
+* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), Red Hat
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
-* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
+* Christoph Blecker (**[@cblecker](https://github.com/cblecker)**), Red Hat
+* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**), Loodse
 
 ## Emeritus Leads
 
@@ -51,34 +51,43 @@ The following subprojects are owned by sig-contributor-experience:
 - **community-management**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
-- **github-management**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
 - **contributors-documentation**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
   - Meetings:
     - Non-Code Contributors Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1gdFWfkrapQclZ4-z4Lx2JwqKsJjXXUOVoLhBzZiZgSk/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
 - **devstats**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
+  - Contact
+    - Slack: [#devstats](https://kubernetes.slack.com/messages/devstats)
+- **events**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
+  - Contact
+    - Slack: [#events](https://kubernetes.slack.com/messages/events)
+  - Meetings:
+    - Contributor Summit strategy, content and planning: [Mondays at 9:00 PT (Pacific Time)]() (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+- **github-management**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
 - **k8s.io**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
 - **mentoring**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
 - **repo-infra**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
-- **events**
+- **slack-infra**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
-  - Meetings:
-    - Contributor Summit strategy, content and planning: [Mondays at 9:00 PT (Pacific Time)]() (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+    - https://raw.githubusercontent.com/kubernetes-sigs/slack-infra/master/OWNERS
+  - Contact
+    - Slack: [#slack-infra](https://kubernetes.slack.com/messages/slack-infra)
 
 ## GitHub Teams
 

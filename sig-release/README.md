@@ -8,6 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Release Special Interest Group
 
+Ensure quality Kubernetes releases
 
 The [charter](charter.md) defines the scope and governance of the Release Special Interest Group.
 
@@ -40,26 +41,27 @@ The following subprojects are owned by sig-release:
 - **hyperkube**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
 - **licensing**
   - Description: The Licensing subproject is responsible for analyzing/reporting/remediating licensing concerns within the Kubernetes project orgs.
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/licensing/OWNERS
-- **release-engineering**
-  - Description: The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
-- **release-team**
-  - Description: The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
 - **publishing-bot**
   - Description: The publishing-bot publishes the contents of staging repos that live in k8s.io/kubernetes/staging to their own repositories in kubernetes
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
+- **release-engineering**
+  - Description: The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/release-notes/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
+- **release-team**
+  - Description: The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
 - **sig-release**
   - Description: Documents and processes related to SIG Release
   - Owners:
@@ -72,10 +74,10 @@ Note that the links to display team membership will only work if you are a membe
 
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
-| @kubernetes/sig-release | [link](https://github.com/orgs/kubernetes/teams/sig-release) | SIG Release Members |
-| @kubernetes/sig-release-admins | [link](https://github.com/orgs/kubernetes/teams/sig-release-admins) | Admins for SIG Release repositories |
 | @kubernetes/kubernetes-milestone-maintainers | [link](https://github.com/orgs/kubernetes/teams/kubernetes-milestone-maintainers) | Milestone Maintainers |
 | @kubernetes/kubernetes-release-managers | [link](https://github.com/orgs/kubernetes/teams/kubernetes-release-managers) | Release Managers |
+| @kubernetes/sig-release | [link](https://github.com/orgs/kubernetes/teams/sig-release) | SIG Release Members |
+| @kubernetes/sig-release-admins | [link](https://github.com/orgs/kubernetes/teams/sig-release-admins) | Admins for SIG Release repositories |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ---

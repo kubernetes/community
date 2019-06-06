@@ -10,8 +10,10 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Covers networking in Kubernetes.
 
+The [charter](charter.md) defines the scope and governance of the Network Special Interest Group.
+
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 14:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Thursdays at 14:00 PT (Pacific Time)](https://zoom.us/j/361123509) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
 
@@ -20,9 +22,9 @@ Covers networking in Kubernetes.
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
-* Dan Williams (**[@dcbw](https://github.com/dcbw)**), Red Hat
 * Casey Davenport (**[@caseydavenport](https://github.com/caseydavenport)**), Tigera
+* Dan Williams (**[@dcbw](https://github.com/dcbw)**), Red Hat
+* Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-network)
@@ -32,28 +34,30 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-network:
-- **services**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
-- **kube-dns**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
 - **external-dns**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/external-dns/master/OWNERS
+  - Contact
+    - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
 - **ingress**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
+- **kube-dns**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
+- **network-policy**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
 - **pod-networking**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/ip-masq-agent/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
-- **network-policy**
+- **services**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
 
 ## GitHub Teams
 

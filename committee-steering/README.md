@@ -19,7 +19,7 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 ## Members
 
 * Brian Grant (**[@bgrant0607](https://github.com/bgrant0607)**), Google
-* Brendan Burns (**[@brendanburns](https://github.com/brendanburns)**), Microsoft
+* Brendan Burns (**[@brendandburns](https://github.com/brendandburns)**), Microsoft
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), Huawei
 * Joe Beda (**[@jbeda](https://github.com/jbeda)**), VMware
@@ -35,6 +35,22 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 * [Mailing list](https://groups.google.com/a/kubernetes.io/forum/#!forum/steering)
 * Private Mailing List: steering-private@kubernetes.io
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fsteering)
+
+## Subprojects
+
+The following subprojects are owned by the Steering Committee:
+- **kubernetes-template-project**
+  - Description: Template for starting new projects in the GitHub organizations owned by Kubernetes.
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
+- **spartakus**
+  - Description: Collection of usage information about Kubernetes clusters.
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+- **steering**
+  - Description: Steering Committee policy and documentation
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
 
 ## GitHub Teams
 

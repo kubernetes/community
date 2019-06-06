@@ -48,7 +48,7 @@ See Cross-cutting for limitations on how the SIG helps with related efforts on o
 - [Coordinating docs contributions for quarterly releases][docs-release]
 
 - Kubernetes blog:
-  SIG Docs hosts the Kubernetes blog and provides tooling and workflow support for publishing the blog, but does not directly review blog posts or work with blog contributors.
+  The Kubernetes blog is a subproject of SIG Docs. SIG Docs provides tooling and workflow support for publishing the blog, but does not directly review blog posts or work with blog contributors. The blog subproject provides its own approvers and reviewers, and sets independent standards for creation and review of blog content. 
 
 - Site UX:
   SIG Docs organizes and revises technical content to improve UX and technical accuracy for the current and four most previous releases, based on:

@@ -1,3 +1,9 @@
+---
+title: "Help Wanted and Good First Issue Labels"
+weight: 1
+slug: "help-wanted"
+---
+
 # Overview
 
 We use two labels [help wanted](#help-wanted) and [good first

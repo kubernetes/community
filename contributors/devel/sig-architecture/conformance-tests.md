@@ -42,11 +42,18 @@ specifically, a test is eligible for promotion to conformance if:
 - it works without non-standard filesystem permissions granted to pods
 - it does not rely on any binaries that would not be required for the linux
   kernel or kubelet to run (e.g., can't rely on git)
+- where possible, it does not depend on outputs that change based on OS (nslookup, ping, chmod, ls)
 - any container images used within the test support all architectures for which
   kubernetes releases are built
 - it passes against the appropriate versions of kubernetes as spelled out in
   the [conformance test version skew policy]
-- it is stable and runs consistently (e.g., no flakes)
+- it is stable and runs consistently (e.g., no flakes), and has been running
+  for at least one release cycle
+- new conformance tests or updates to conformance tests for additional scenarios
+  are only allowed before code freeze dates set by the release team to allow
+  enough soak time of the changes and gives folks a chance to kick the tires
+  either in the community CI or their own infrastructure to make sure the tests
+  are robust
 
 Examples of features which are not currently eligible for conformance tests:
 
@@ -56,12 +63,20 @@ Examples of features which are not currently eligible for conformance tests:
 - cloud-provider-specific features, eg: GCE monitoring, S3 Bucketing, etc.
 - anything that requires a non-default admission plugin
 
-Examples of tests which are not eligible for promotion to conformance:
+Conformance tests are intended to be stable and backwards compatible according to 
+the standard API deprecation policies. Therefore any test that relies on specific 
+output that is not subject to the deprecation policy cannot be promoted to conformance. 
+Examples of tests which are not eligible to conformance:
 - anything that checks specific Events are generated, as we make no guarantees
   about the contents of events, nor their delivery
+    - If a test depends on events it is recommended to change the test to 
+      use an informer pattern and watch specific resource changes instead.
 - anything that checks optional Condition fields, such as Reason or Message, as
   these may change over time (however it is reasonable to verify these fields
   exist or are non-empty)
+    - If the test is checking for specific conditions or reasons, it is considered 
+      overly specific and it is recommended to simply look for pass/failure criteria 
+      where possible, and output the condition/reason for debugging purposes only.
 
 Examples of areas we may want to relax these requirements once we have a
 sufficient corpus of tests that define out of the box functionality in all
@@ -69,6 +84,62 @@ reasonable production worthy environments:
 - tests may need to create or set objects or fields that are alpha or beta that
   bypass policies that are not yet GA, but which may reasonably be enabled on a
   conformant cluster (e.g., pod security policy, non-GA scheduler annotations)
+
+### Windows & Linux Considerations
+
+Windows node support is an optional but stable feature as of Kubernetes 1.14. This means that it is
+not required by conformance testing. Nonetheless, it's important to verify that the behavior of Windows nodes match the behaviors tested in the conformance suite as much as possible. To that end, a
+large number of conformance tests are already included in Windows testing. You can see what tests are already passing by looking at TestGrid for results of Windows tests running on
+[Azure](https://testgrid.k8s.io/sig-windows#aks-engine-azure-windows-master) and
+[GCE](https://testgrid.k8s.io/sig-windows#gce-windows-master)). Tests may be
+scheduled for any PR with the bot command `/test pull-kubernetes-e2e-aks-engine-azure-windows`.
+
+Generally speaking, the goals are to:
+
+- Make sure tests that are already passing remain passing. If new OS-specific
+functionality is added, it should be in a new test.
+- Ensure that new tests covering Linux-specific functionality are tagged with `[LinuxOnly]` 
+(see: [Kinds of Tests](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests),
+- Give future reviewers a reference to an active issue or documentation clarifying why a test
+cannot run on Windows.
+
+The tests that are running today:
+
+- Rely only on container images that already have a multi-architecture manifest
+including Windows versions, or have been ported by SIG-Windows
+(see [kubernetes-sigs/windows-testing/images](https://github.com/kubernetes-sigs/windows-testing/tree/master/images)
+- Do not depend on any functionality that is different or not available on Windows. The full list
+is available in the Windows Kubernetes docs under [api](https://kubernetes.io/docs/setup/windows/intro-windows-in-kubernetes/#api). 
+A brief summary is included here as a starting point. If the docs are insufficient
+or there are more questions, please contact #SIG-Windows on Slack to get another
+reviewer.
+
+Some of the most common differences to watch for are:
+
+- Container Images
+  - Watch out for image names hardcoded into test cases or YAML files. These are often Linux-only. Instead, they should be adding to or using existing images from [tests/utils/image/manifest.go](https://github.com/kubernetes/kubernetes/blob/master/test/utils/image/manifest.go). This allows the container registry to be configured to one containing Windows images, and also supports testing on clusters with no internet access using a private registry. Multi-arch images supporting Windows are also acceptable.
+- Container Options & Actions
+  - Pod SecurityContext is set. Most of the fields are Linux specific, and any field set in the Pod's SecurityContext will result in the Pod not being able to spawn or not work as intended.
+  - Privileged containers are not supported. Containers are always isolated.
+  - Windows uses job objects or Hyper-V for pod isolation and resource controls, not CGroups. These are managed
+implicitly by Docker or ContainerD, not by the kubelet. Do not check properties of CGroups as pass/fail criteria.
+  - Running Linux-specific commands are not likely to work. Some commands may work using a Windows [busybox](https://github.com/kubernetes-sigs/windows-testing/tree/master/images/busybox) container. The paths of these binaries may differ from Linux, so it's best to rely on `PATH` rather than using Linux-specific paths such as `/usr/bin/nc`. As an alternative, you can use commands in the cross-platform [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) image which is designed to return the same results regardless of OS.
+- Storage
+  - File permissions cannot be set on volumes. Tests using `DefaultMode` or `Mode` and checking the resulting permissions will fail.
+  - Only NTFS volumes are supported. Volume mounts specifying other filesystems (ext4, xfs) or mediums (memory) are not supported
+  - Mappings of individual files are not supported. Tests which are mounting or expecting such files to be mounted (including /etc/hosts, /etc/resolv.conf, /dev/termination-log) will fail.
+  - Bidirectional mount propagation, specifically propagating mounts from a container to host, does not work.
+- Networking
+  - Pods set `HostNetwork=true`. Is not supported on Windows, and the Pod will not start.
+  - Network and DNS settings must be passed through CNI. Windows does not use `/etc/resolv.conf`, so tests should not rely on reading that file to check DNS settings.
+    - If you to check network settings such as dns search lists, please use [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) to output needed data from the container. 
+  - Windows treats all DNS lookups with a `.` to be FQDN, not PQDN. For example `kubernetes` will resolve as a PQDN,
+  but `kubernetes.default` will be resolved as a FQDN and fail.
+  - ICMP only works between pods on the same network, and are not routable to external networks. TCP/UDP are routable.
+  - Windows containers do not support IPv6.
+
+The existing tests which are affected by one of those criteria are tagged with `[LinuxOnly]` 
+(see: [Kinds of Tests](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests).
 
 ## Conformance Test Version Skew Policy
 
@@ -135,6 +206,25 @@ This document will help people understand what features are being tested without
 having to look through the testcase's code directly.
 
 
+## Conformance test review board
+
+The conformance subproject uses the [Conformance Test Review board] to track
+progress of PRs through to approval. The following types of PRs must go through
+this approval process:
+
+- promotion of tests to conformance
+- demotion of tests from conformance
+- changes to existing conformance tests
+- changes to the conformance criteria or process
+- changes to the conformance infrastructure code
+
+There are six columns in this board. New PRs should enter in the To Triage
+column, and [Conformance test reviewers] will pick it up from there and move it
+through the process. New end-to-end tests that are intended to be promoted to
+conformance tests in the future may be added to this board, but they will not
+move all the way to the Needs Approval column, as that is intended only for the
+types of PRs described above.
+
 ## Promoting Tests to Conformance
 
 To promote a test to the conformance test suite, open a PR as follows:
@@ -152,7 +242,13 @@ To promote a test to the conformance test suite, open a PR as follows:
     than the `framework.It()` function
   - adds a comment immediately before the `ConformanceIt()` call that includes
     all of the required [conformance test comment metadata]
-- add the PR to SIG Architecture's [Conformance Test Review board]
+  - adds the test name to the [conformance.txt] file
+- add the PR to SIG Architecture's [Conformance Test Review board] in the To
+  Triage column
+
+Once you create the PR, please schedule the additional Windows tests with
+`/test pull-kubernetes-e2e-aks-engine-azure-windows` to see if any existing tests
+that pass on Windows are broken by the change.
 
 
 ### Conformance Test Comment Metadata
@@ -207,10 +303,12 @@ Conformance test results, by provider and releases, can be viewed in the
 for your provider, please see the [testgrid conformance README]
 
 [kubernetes versioning policy]: /contributors/design-proposals/release/versioning.md#supported-releases-and-component-skew
-[Conformance Test Review board]: https://github.com/kubernetes-sigs/architecture-tracking/projects/1
+[Conformance Test Review board]: https://github.com/orgs/kubernetes/projects/9
+[Conformance test reviewers]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS
 [conformance test requirements]: #conformance-test-requirements
-[conformance test metadata]: #conformance-test-metadata
+[conformance test comment metadata]: #conformance-test-comment-metadata
 [conformance test version skew policy]: #conformance-test-version-skew-policy
 [testgrid conformance dashboard]: https://testgrid.k8s.io/conformance-all
 [testgrid conformance README]: https://github.com/kubernetes/test-infra/blob/master/testgrid/conformance/README.md
 [v1.9 conformance doc]: https://github.com/cncf/k8s-conformance/blob/master/docs/KubeConformance-1.9.md
+[conformance.txt]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.txt

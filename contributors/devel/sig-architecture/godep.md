@@ -1,3 +1,8 @@
+**Note**: Kubernetes now manages dependencies using go modules.
+See [current documentation for working with dependencies](./vendor.md) for master branch development.
+This document only applies to Kubernetes 1.14.x and earlier,
+and should be removed once Kubernetes 1.14.x is no longer supported.
+
 # Using godep to manage dependencies
 
 This document is intended to show a way for managing `vendor/` tree dependencies
@@ -254,8 +259,7 @@ Additionally:
 - If this is all good, approve, but don't LGTM, unless you also do code review
   or unless it is trivial (e.g. moving from k/k/pkg/utils -> k/utils).
 
-All new dependency licenses should be reviewed by either Tim Hockin (@thockin)
-or the Steering Committee (@kubernetes/steering-committee) to ensure that they
+All new dependency licenses should be reviewed by @kubernetes/dep-approvers to ensure that they
 are compatible with the Kubernetes project license. It is also important to note
 and flag if a license has changed when updating a dependency, so that these can
 also be reviewed.

@@ -10,11 +10,13 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Covers documentation, doc processes, and doc publishing for Kubernetes.
 
+The [charter](charter.md) defines the scope and governance of the Docs Special Interest Group.
+
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 17:30 UTC](https://docs.google.com/document/d/1zg6By77SGg90EVUrhDIhopjZlSDg2jCebU-Ks9cYx0w/edit) (weekly - except fourth Tuesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
+* APAC SIG Meeting: [Wednesdays at 02:00 UTC](https://docs.google.com/document/d/1zg6By77SGg90EVUrhDIhopjZlSDg2jCebU-Ks9cYx0w/edit) (monthly - fourth Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=02:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
-* APAC SIG Meeting: [Wednesdays at 02:00 UTC](https://docs.google.com/document/d/1zg6By77SGg90EVUrhDIhopjZlSDg2jCebU-Ks9cYx0w/edit) (monthly - fourth Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=02:00&tz=UTC).
+* Regular SIG Meeting: [Tuesdays at 17:30 UTC](https://docs.google.com/document/d/1zg6By77SGg90EVUrhDIhopjZlSDg2jCebU-Ks9cYx0w/edit) (weekly - except fourth Tuesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 
@@ -23,9 +25,13 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
+* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), Stripe
+* Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**), Google
 * Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
-* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), VMware
+
+## Emeritus Leads
+
+* Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-docs)
@@ -35,15 +41,15 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-docs:
+- **kubernetes-blog**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes/website/master/content/en/blog/OWNERS
 - **reference-docs**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
 - **website**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
-- **website-metadata**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/website-metadata/master/OWNERS
 
 ## GitHub Teams
 
@@ -52,17 +58,26 @@ Note that the links to display team membership will only work if you are a membe
 
 | Team Name | Details | Description |
 | --------- |:-------:| ----------- |
+| @kubernetes/kubernetes-blog | [link](https://github.com/orgs/kubernetes/teams/kubernetes-blog) | Kubernetes blog maintainers |
+| @kubernetes/sig-docs-de-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-de-owners) | German language content |
+| @kubernetes/sig-docs-en-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners) | English content (default) |
+| @kubernetes/sig-docs-es-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-es-owners) | Spanish language content |
+| @kubernetes/sig-docs-fr-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-fr-owners) | French language content |
+| @kubernetes/sig-docs-id-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-id-owners) | Indonesian language content |
+| @kubernetes/sig-docs-it-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-it-owners) | Italian language content |
+| @kubernetes/sig-docs-ja-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | Japanese language content |
+| @kubernetes/sig-docs-ko-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | Korean language content |
 | @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation maintainers |
 | @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR reviews |
-| @kubernetes/sig-docs-ko-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | Korean localization |
-| @kubernetes/sig-docs-ja-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | Japanese localization |
-| @kubernetes/sig-docs-zh-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) | Chinese localization |
+| @kubernetes/sig-docs-pt-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) | Portuguese language content |
+| @kubernetes/sig-docs-zh-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) | Chinese language content |
 
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
 * Discuss documentation and docs issues for kubernetes.io
-* Plan docs releases for kubernetes
-* Suggest improvements to user onboarding through better documentation on Kubernetes.io
-* Identify and implement ways to get documentation feedback and metrics
-* Help community contributors get involved in kubernetes documentation
+* Content for the official Kubernetes blog
+* Lead docs releases for Kubernetes
+* Suggest improvements to user onboarding through better documentation on kubernetes.io
+* Documentation metrics and user feedback
+* Help community contributors get involved in Kubernetes documentation
 <!-- END CUSTOM CONTENT -->

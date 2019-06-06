@@ -8,6 +8,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Node Special Interest Group
 
+SIG Node is responsible for the components that support the controlled interactions between pods and host resources.
+
+The [charter](charter.md) defines the scope and governance of the Node Special Interest Group.
 
 ## Meetings
 * Regular SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
@@ -30,9 +33,9 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-node:
-- **cri-o**
+- **cri-api**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cri-o/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/cri-api/master/OWNERS
 - **cri-tools**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
@@ -45,14 +48,16 @@ The following subprojects are owned by sig-node:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
 - **node-api**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes/node-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/node-api/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/node-api/master/OWNERS
 - **node-feature-discovery**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/OWNERS
 - **node-problem-detector**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
+  - Contact
+    - Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
 - **rktlet**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/rktlet/master/OWNERS

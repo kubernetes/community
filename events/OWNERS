@@ -2,10 +2,12 @@
 
 reviewers:
   - parispittman
-  - castrojo
+  - tpepper
 approvers:
   - parispittman
-  - castrojo
+  - mrbobbytables
+  - guineveresaenger
+  - jberkus
   - sig-contributor-experience-leads
 labels:
   - sig/contributor-experience

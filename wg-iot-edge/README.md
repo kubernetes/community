@@ -10,22 +10,27 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 A Working Group dedicated to discussing, designing and documenting using Kubernetes for developing and deploying IoT and Edge specific applications
 
+## Stakeholder SIGs
+* SIG Multicluster
+* SIG Network
+
 ## Meetings
-* Regular WG Meeting: [Wednesdays at 17:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing).
 * APAC WG Meeting: [Wednesdays at 5:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing).
+* Regular WG Meeting: [Wednesdays at 09:00 (Pacific Time) PT](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00 (Pacific Time)&tz=PT).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing).
 
 ## Organizers
 
+* Steve Wong (**[@cantbewong](https://github.com/cantbewong)**), VMware
 * Cindy Xing (**[@cindyxing](https://github.com/cindyxing)**), Huawei
 * Dejan Bosanac (**[@dejanb](https://github.com/dejanb)**), Red Hat
 * Preston Holmes (**[@ptone](https://github.com/ptone)**), Google
-* Steve Wong (**[@cantbewong](https://github.com/cantbewong)**), VMWare
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/wg-iot-edge)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fiot-edge)
 
 <!-- BEGIN CUSTOM CONTENT -->
 This working group is a cross-SIG effort currently sponsored by _sig-networking_ and _sig-multicluster_ with
