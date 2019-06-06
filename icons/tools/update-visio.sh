@@ -1,13 +1,27 @@
-#/bin/bash
+#!/bin/bash
 
-CONTENT_PATH="${PWD}/png"
-OUTPUT_FILENAME="kubernetes-visio-stencil"
+ICONS_PATH=${PWD}
 
-curl -s -N https://raw.githubusercontent.com/hoveytechllc/visio-stencil-creator/master/scripts/build-and-run.sh | bash -s -- --content-path=${CONTENT_PATH} --output-filename=${OUTPUT_FILENAME}
+GITHUB_ORG="hoveytechllc"
+REPO_NAME="visio-stencil-creator"
 
-if [ -f ${CONTENT_PATH}/${OUTPUT_FILENAME}.vssx ]; then
-    mv ${CONTENT_PATH}/${OUTPUT_FILENAME}.vssx ./visio/${OUTPUT_FILENAME}.vssx
-else
-    echo "ERROR -> Visio Stencil was not in expected path: "${CONTENT_PATH}/${OUTPUT_FILENAME}
-    exit 1
-fi
+rm -fdr ./tools/${REPO_NAME}
+
+# Clone repository in current path
+git clone https://github.com/${GITHUB_ORG}/${REPO_NAME}.git ./tools/${REPO_NAME}
+
+# build image using Dockerfile from github repository
+docker build \
+    -t ${REPO_NAME}:latest \
+    -f ./tools/${REPO_NAME}/Dockerfile \
+    ./tools/${REPO_NAME}
+
+# Run newly created Docker image
+docker run \
+    -v ${ICONS_PATH}:/app/content \
+    ${REPO_NAME}:latest \
+    "--image-pattern=**/labeled/*-256.png" \
+    "--image-path=/app/content/png" \
+    "--output-filename=/app/content/visio/kubernetes-visio-stencil.vssx"
+
+rm -fdr ./tools/${REPO_NAME}
