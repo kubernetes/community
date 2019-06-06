@@ -1,4 +1,8 @@
-## Workflow
+---
+title: "GitHub Workflow"
+weight: 1
+slug: "github"
+---
 
 ![Git workflow](git_workflow.png)
 

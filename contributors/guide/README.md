@@ -1,4 +1,9 @@
-# Kubernetes Contributor Guide
+---
+title: "Kubernetes Contributor Guide"
+weight: 1
+slug: "guide" 
+---
+
 
 <!-- 
 Contributing to this document? 

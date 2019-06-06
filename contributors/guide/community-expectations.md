@@ -1,4 +1,8 @@
-# Community Expectations
+---
+title: "Community Expectations"
+weight: 1
+slug: "expectations"
+---
 
 Kubernetes is a community project. Consequently, it is wholly dependent on
 its community to provide a productive, friendly and collaborative environment.

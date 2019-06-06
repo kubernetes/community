@@ -1,6 +1,8 @@
-# Coding Conventions
-
-Updated: 1/24/2018
+---
+title: "Coding Conventions"
+weight: 1
+slug: "coding-conventions"
+---
 
 **Table of Contents**
 
