@@ -145,7 +145,7 @@ sigs:
       company: Samsung SDS
     - github: prydonius
       name: Adnan Abdulhussein
-      company: Bitnami
+      company: VMware
   meetings:
   - description: Regular SIG Meeting
     day: Monday
