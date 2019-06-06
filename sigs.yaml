@@ -595,8 +595,8 @@ sigs:
   label: azure
   leadership:
     chairs:
-    - github: dstrebel
-      name: Dave Strebel
+    - github: craiglpeters
+      name: Craig Peters
       company: Microsoft
     - github: justaugustus
       name: Stephen Augustus
@@ -608,6 +608,13 @@ sigs:
     - github: khenidak
       name: Kal Khenidak
       company: Microsoft
+    emeritus_leads:
+    - github: dstrebel
+      name: Dave Strebel
+      company: Microsoft
+    - github: jdumars
+      name: Jaice Singer DuMars
+      company: Google
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday
