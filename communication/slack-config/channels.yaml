@@ -156,6 +156,7 @@ channels:
   - name: meetup-athens
   - name: meetup-austin
   - name: meetup-bayarea
+  - name: meetup-bordeaux
   - name: meetup-boston
   - name: meetup-dfw
   - name: meetup-guatemala
@@ -165,11 +166,13 @@ channels:
   - name: meetup-manchester
   - name: meetup-minneapolis
   - name: meetup-nyc
+  - name: meetup-paris
   - name: meetup-pittsburgh
   - name: meetup-sacramento
   - name: meetup-sanantonio
   - name: meetup-sandiego
   - name: meetup-seattle
+  - name: meetup-toulouse
   - name: meetup-trondheim
   - name: meetup-tunisia
   - name: metacontroller
