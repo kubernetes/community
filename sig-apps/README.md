@@ -25,7 +25,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
 * Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Google
 * Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
-* Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), Bitnami
+* Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), VMware
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-apps)
