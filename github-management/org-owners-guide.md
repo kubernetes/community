@@ -41,7 +41,8 @@ managed by the Kubernetes project or use a different name.
 
 Due to licensing and CLA issues, prior to transferring software into a
 Kubernetes managed organization there is some due diligence that needs to occur.
-Please contact the steering committee and CNCF prior to moving any code in.
+If needed, please contact the steering committee and CNCF prior to moving any
+code in.
 
 It is easier to start new code in a Kubernetes organization than it is to
 transfer in existing code.
@@ -149,25 +150,23 @@ a new repository are described below.
   * Ensure that the repo creation request has appropriate approvals
   as per the rules mentioned above.
   * Using the organization and repository name mentioned in the repo creation
-  request, create a new repo with default GitHub settings.
-  * Set the description as per the repo creation request.
+  request, create a new repo with:
+    * `Repository Template` as `kubernetes/kubernetes-template-project`
+    * `Description` as mentioned in the repo creation request
   * Clone the newly created repo locally.
-  * Copy the latest contents of [kubernetes-template-project] and create an
-  initial commit with the message *Initial commit from the
-  kubernetes-template-project*.
-  * Make the following changes in the next commit:
-    * If the request references a GitHub team to be listed in the `OWNERS`
+  * Make the following changes:
+    * If the request references a team to be listed in the `OWNERS`
     file, update the `OWNERS_ALIASES` file to remove the steering-committee
     alias and add a new alias for the team with members populated as per the
-    GitHub team. If the request does not reference a GitHub team, remove the
+    GitHub team. If the request does not reference a team, remove the
     `OWNERS_ALIASES` file.
     * Update the OWNERS file as per the request. If the repo is a
     [SIG Repository], add a labels entry for the SIG that the repo belongs to.
     * Update the `SECURITY_CONTACTS` file as per the request. Note that aliases
-    cannot be used in this case so expand the GitHub team, if specified.
+    cannot be used in this case so expand the team, if specified.
     * Create a new commit with the message *Update OWNERS, OWNERS_ALIASES and
     SECURITY_CONTACTS*.
-  * Push the new commits directly to the master branch.
+  * Push the new commit directly to the master branch.
   * If the repo is a [SIG Repository], add a new topic of the form
   `k8s-sig-<sig-name-repo-belongs-to>` using the *Manage Topics* option.
   * Create a PR against [kubernetes/org] to add teams as per the [team guidance](#team-guidance)
@@ -209,8 +208,8 @@ steps:
   * All external collaborators are removed
   * All webhooks, apps, integrations or services are removed
   * GitHub Pages are disabled
-  * The repo is marked as archived using [GitHub's archive feature]
   * Remove all teams associated with the repo
+  * The repo is marked as archived using [GitHub's archive feature]
   * Remove the repo from [sigs.yaml]
   * The removal is announced on the kubernetes-dev mailing list and community
     meeting
@@ -232,4 +231,4 @@ https://help.github.com/articles/archiving-a-github-repository/
 [@kubernetes/stage-bots]: https://github.com/orgs/kubernetes/teams/stage-bots
 [kubernetes-retired]: https://github.com/kubernetes-retired
 [kubernetes-template-project]: https://github.com/kubernetes/kubernetes-template-project
-[SIG Repository]: #sig-repositories
+[SIG Repository]: /github-management/kubernetes-repositories.md##sig-repositories
