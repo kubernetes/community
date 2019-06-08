@@ -1642,19 +1642,22 @@ sigs:
     - github: calebamiles
       name: Caleb Miles
       company: Google
-    - github: idvoretskyi
-      name: Ihor Dvoretskyi
-      company: CNCF
     - github: jdumars
       name: Jaice Singer DuMars
       company: Google
     - github: justaugustus
       name: Stephen Augustus
       company: VMware
+    - github: lachie83
+      name: Lachie Evenson
+      company: Microsoft
     emeritus_leads:
     - github: apsinha
       name: Aparna Sinha
       company: Google
+    - github: idvoretskyi
+      name: Ihor Dvoretskyi
+      company: CNCF
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
