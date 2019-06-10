@@ -23,13 +23,17 @@ sigs:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: monthly - second Wednesday every month
+    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
     archive_url: https://docs.google.com/document/d/1Ih-2cgg1bUrLwLVTB9tADlPcVdgnuMNBGbUl4D-0TIk/edit?usp=sharing
   - description: Regular SIG Meeting
     day: Wednesday
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=NjNsZ3E2OXVwaG9oNnF1c3MyZjc2aWdubm5fMjAxOTA2MTlUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://goo.gl/0lbiM9
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R
   contact:
@@ -152,7 +156,7 @@ sigs:
     time: "9:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=NWY5ODFydjRnMjVvMHYxN3NnM2toOGljbTdfMjAxOTA1MDZUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#
     recordings_url: https://www.youtube.com/watch?v=hn23Z-vL_cM&list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3
   contact:
@@ -245,15 +249,15 @@ sigs:
     time: "19:00"
     tz: UTC
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=M3BjbnVxc2VobHBpMDJrYmRnYWdkdW9ncjFfMjAxOTA2MDZUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
   - description: code organization Office Hours
     day: Thursday
-    time: "14:00"
+    time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=aGN0OGh1cjFoNm5lMmgzNzlyaGxrcHZvM2NfMjAxOTA2MTNUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1HtTI0rJEGP_MSf6eO87aCmx_tzpovPAAg7U2Zxwm8FE/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP03VEluzh0wpSRPzgve8kI5
   - description: conformance Office Hours
@@ -261,7 +265,7 @@ sigs:
     time: "12:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=ZmRpMzc2Y2NmYnZnM3MzOGJhamRjaWJiZjBfMjAxOTA1MDdUMTkwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1W31nXh9RYAb_VaYkwuPLd1hFxuRX3iU0DmaQ4lkCsX8/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
   contact:
@@ -353,7 +357,7 @@ sigs:
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=MWhwdHZtaThnNmt2YmtjZWsxMDAxaTg2YWJfMjAxOTA0MDNUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
   contact:
@@ -488,7 +492,7 @@ sigs:
     time: "14:00"
     tz: UTC
     frequency: biweekly/triweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=cWJnYTJzb3BwNnVlNGxmbmY4MDVqaGU4MnNfMjAxOTA0MDhUMTQwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit
   contact:
     slack: sig-autoscaling
@@ -555,7 +559,7 @@ sigs:
     time: "9:00"
     tz: PT (Pacific Time)
     frequency: 'biweekly 2019 start date: Jan. 11th'
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=cjQyZ2dzMW02dnQ5NGVkOWFtbTI0N21udmdfMjAxOTA0MTlUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29DzPOBBaJi-SO3AQ_b4HC
   contact:
@@ -622,7 +626,7 @@ sigs:
     time: "16:00"
     tz: UTC
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=NjFpNjJkOWxjcGg2MmI5aGNrbzY0YjlrNjVpajJiYjI2Y3JqMGI5ajY5aWo0Y2hpNnNvNjRkcGxjb18yMDE5MDUwMVQxNjAwMDBaIGNnbnQzNjR2ZDhzODZocjJwaGFwZmpjNnVrQGc&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit
     recordings_url: https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4
   contact:
@@ -680,7 +684,7 @@ sigs:
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=bmJiZXVjb3BlaXQxMWk5azlzZXZ1cW5mazRfMjAxOTA1MDhUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
   contact:
@@ -760,7 +764,7 @@ sigs:
     time: "1:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=Nm5lNm9hMzVpNGY0bjh1dDh0anJ1YzNoaXNfMjAxOTA2MTJUMjAwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3dXLcYbRKCbpPCN-8CDFAB
   contact:
@@ -846,7 +850,7 @@ sigs:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=OWloMWJiNTVnanZhMDRuMTJrbWY0MW5sNDBfMjAxOTA2MTdUMTcwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/10dq54Fd-xa6P5Iy3p46VY1YTFqugGMd1PygDIpuRw6c/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API Provider Implementers' office hours (EMEA)
@@ -854,7 +858,7 @@ sigs:
     time: "15:00"
     tz: CEST (Central European Summer Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=b3VzbjgwcG9oZ3FiajJkbmUyaW50NG5xbWNfMjAxOTA2MTJUMTMwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API Provider Implementers' office hours (US West Coast)
@@ -863,6 +867,9 @@ sigs:
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
     archive_url: https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API office hours
@@ -870,7 +877,7 @@ sigs:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=aHZobTdmbDdya240YjJhcDRqMGFpNmsyOW9fMjAxOTA1MTVUMTcwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1Ys-DOR5UsgbMEeciuG0HOgDQc8kZsaWIWJeKJ1-UfbY/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster Addons meeting
@@ -878,21 +885,21 @@ sigs:
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=cWpiOWhrNTBqdjJzcDhoZDJ0b3Q5YzZpNmdfMjAxOTA1MTRUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit
   - description: Kubespray Office Hours
     day: Wednesday
     time: "08:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=djJmZzhmMjFnaGQ1bmwwN2YycWJxYWs0MDBfMjAxOTA1MjJUMTUwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit
   - description: Regular SIG Meeting
     day: Tuesday
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=aHZobTdmbDdya240YjJhcDRqMGFpNmsyOW9fMjAxOTA2MTJUMTcwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: etcdadm Office Hours
@@ -900,20 +907,24 @@ sigs:
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit#
+    url: https://www.google.com/calendar/event?eid=MGFidnFmOGI2b2RzNWwybGIxNGc4bHN2MXBfMjAxOTA2MTBUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
+    archive_url: https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit#
   - description: kops Office Hours
     day: Friday
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
     archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
   - description: kubeadm Office Hours
     day: Wednesday
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=bjJ2bGJmcG04ZWhhOXM0NDhrOXVuZWkxY2NfMjAxOTA0MDNUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/130_kiXjG7graFNSnIAgtMS1G8zPDwpkshgfRYS0nggo/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: minikube Office Hours
@@ -922,6 +933,9 @@ sigs:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
     archive_url: https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit
   contact:
     slack: sig-cluster-lifecycle
@@ -1039,13 +1053,13 @@ sigs:
     time: "20:00"
     tz: PT (Pacific Time)
     frequency: monthly - fourth Wednesday every month
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=NXRvdDBiZmh2Zm9xZWkxOTVpdTdwazk2azFfMjAxOTA0MjRUMTYzMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
   - description: Regular SIG Meeting
     day: Wednesday
     time: "9:30"
     tz: PT (Pacific Time)
     frequency: weekly - except fourth Wednesday every month
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=NXRvdDBiZmh2Zm9xZWkxOTVpdTdwazk2azFfMjAxOTA0MDNUMTYzMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
     recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   contact:
@@ -1216,6 +1230,9 @@ sigs:
     tz: UTC
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
     archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
   contact:
     slack: sig-gcp
@@ -1267,7 +1284,7 @@ sigs:
     time: "14:00"
     tz: EST
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=NmxvYTRsaTdzdjBoZzY2anJsaGxicGk1anRfMjAxOTAyMjdUMTkwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit
   contact:
     slack: sig-ibmcloud
@@ -1303,7 +1320,7 @@ sigs:
     time: "17:30"
     tz: UTC
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=NjI1Nm5mOGVtNXBlMXRsN2dhN3I1NzBkbzlfMjAxOTAzMDdUMTczMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/17emKiwJeqfrCsv0NZ2FtyDbenXGtTNCsDEiLbPa7x7Y/edit
   contact:
     slack: sig-instrumentation
@@ -1380,6 +1397,9 @@ sigs:
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
     archive_url: https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3iKP5EzMbtNT2zOZv6RCrX
   - description: Regular SIG Meeting
@@ -1388,6 +1408,9 @@ sigs:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
     archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
     recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
   contact:
@@ -1513,7 +1536,9 @@ sigs:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: duplicate meetings in calendar - which one is correct?
+    url: https://www.google.com/calendar/event?eid=NmhqMzU5aDU0amV1bDVhOGlicTVmazQwbmpfMjAxOTAzMDVUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
+    # url: https://www.google.com/calendar/event?eid=NDRtdDM5dnVmbTgzZGFycXBqNGI3NDE2ajBfMjAxOTAzMDVUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing
     recordings_url: https://www.youtube.com/watch?v=FbKOI9-x9hI&list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG
   contact:
@@ -1672,7 +1697,7 @@ sigs:
     time: "18:30"
     tz: UTC
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=MXAwZGM4ajI1MnBocDlyYW1vaWQxbHMwMGxfMjAxOTAyMjZUMTkzMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/13uHgcLf-hcR4a5QbV888fhnVsF3djBEpN8HolwS0kWM/edit?usp=sharing
     recordings_url: https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ
   contact:
@@ -1710,7 +1735,7 @@ sigs:
     time: "21:00"
     tz: UTC
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=NnNocjBwcms5dW5rcThoNzdlZDRhOTIzMnNfMjAxOTAyMjZUMjIwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1Fu6HxXQu8wl6TwloGUEOXVzZ1rwZ72IAhglnaAMCPqA/edit?usp=sharing
     recordings_url: https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ
   contact:
@@ -1791,7 +1816,7 @@ sigs:
     time: "17:30"
     tz: UTC
     frequency: bi-weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=cTVtNGg1NTkzbTMyMGk3Yjl0MzloOHF1NGdfMjAxOTAyMjhUMTczMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
     recordings_url: https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL
   contact:
@@ -1862,12 +1887,15 @@ sigs:
     tz: UTC
     frequency: biweekly starting Thursday June 7, 2018
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
   - description: 5PM PT Meeting
     day: Thursday
     time: "24:00"
     tz: UTC
     frequency: biweekly starting Thursday June 14, 2018
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=aThmajQwM3ZoMDFubmM4NDBvaTc0cWl2NzBfMjAxOTAzMDhUMDEwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
     recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
   contact:
@@ -1948,7 +1976,7 @@ sigs:
     time: "9:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=bHZrZXA2ZzF2YTdubW5jcWF0aGo1YnRqMHNfMjAxOTA0MjJUMjAwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit
     recordings_url: https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs
   contact:
@@ -2000,7 +2028,10 @@ sigs:
     time: "9:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: triplicate meetings in calendar - which one is correct?
+    url: https://www.google.com/calendar/event?eid=amFoOWdjNHE5NzRjajA0ZmE3MG05Ymwzam9fMjAxOTA0MjVUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
+    # url: https://www.google.com/calendar/event?eid=MmQ3dXBqYmVmNHM1dHY2azQ0MWhyMWk1YnNfMjAxOTA0MjVUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
+    # url: https://www.google.com/calendar/event?eid=MTQ5MTYyb3RvY2FwOTV0ZDdxajV0bXZuOTRfMjAxOTA0MjVUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing
     recordings_url: https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq
   contact:
@@ -2093,7 +2124,7 @@ sigs:
     time: "13:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=MjJxc2tscGdzMHVmMzlhbGQwdmhvbGQ3Y3NfMjAxOTA0MzBUMjAwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://bit.ly/k8s-sig-testing-notes
     recordings_url: https://bit.ly/k8s-sig-testing-videos
   contact:
@@ -2134,6 +2165,9 @@ sigs:
       tz: PT (Pacific Time)
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      # TODO: Add this meeting to the contributor calendar:
+      # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+      # And update the link above
       archive_url: https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit
       recordings_url: https://bit.ly/k8s-sig-testing-videos
   - name: prow
@@ -2162,7 +2196,7 @@ sigs:
       time: "07:30"
       tz: PT (Pacific Time)
       frequency: bi-weekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      url: https://www.google.com/calendar/event?eid=NmJpaWtxdTZiOWdobDhsamNqZDQwZG92dnBfMjAxOTAzMDhUMTUzMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
       archive_url: https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o
 - dir: sig-ui
   name: UI
@@ -2227,7 +2261,7 @@ sigs:
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: monthly - first Wednesday every month
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=NzZtaGxvbHY5Y2V1ZGk1cTBmbTFmaWs5bjRfMjAxOTA0MDNUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR
   - description: Cluster API Provider vSphere bi-weekly syncup
@@ -2235,7 +2269,7 @@ sigs:
     time: "13:00"
     tz: PT (Pacific Time)
     frequency: bi-weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=aGlyZjI2cnIwMGV1N3JhajI3NTYzZjN2MW9fMjAxOTAzMTFUMjAwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu
   - description: Regular SIG Meeting
@@ -2243,7 +2277,7 @@ sigs:
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: bi-weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=cmozdnZzanNoZGl0NjFsamEyaTRuZGdtZnNfMjAxOTA0MDRUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y
   contact:
@@ -2295,7 +2329,7 @@ sigs:
     time: "12:30"
     tz: Eastern Standard Time (EST)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=MmpoYjEwYnNxZ3R0cW8wYnVhZWc3azM4Z2lfMjAxODEyMDRUMTczMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4
   contact:
@@ -2344,6 +2378,9 @@ workinggroups:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
   contact:
     slack: wg-apply
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-apply
@@ -2416,13 +2453,16 @@ workinggroups:
     tz: UTC
     frequency: every four weeks
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
     archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
   - description: Regular WG Meeting
     day: Wednesday
-    time: 09:00 (Pacific Time)
+    time: 08:00 (Pacific Time)
     tz: PT
     frequency: every four weeks
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=Y25ibTA0Mm1kb2tycXZpNTNiazA2bDR0czhfMjAxODEwMTJUMTUwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
   contact:
     slack: wg-iot-edge
@@ -2457,6 +2497,9 @@ workinggroups:
     tz: PT (Pacific Time)
     frequency: bi-weekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
     archive_url: http://bit.ly/wg-k8s-infra-notes
     recordings_url: http://bit.ly/wg-k8s-infra-playlist
   contact:
@@ -2500,7 +2543,7 @@ workinggroups:
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: bi-weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=MGphZDVnMGFjc2p2ZGhzM2Npa3BkZjFmZzBfMjAxODExMTNUMTcwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1J2CJ-q9WlvCnIVkoEo9tAo19h08kOgUJAS3HxaSMsLA/edit?usp=sharing
   contact:
     slack: wg-lts
@@ -2535,6 +2578,9 @@ workinggroups:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
     archive_url: https://goo.gl/gBCdt1
   contact:
     slack: wg-machine-learning
@@ -2569,7 +2615,7 @@ workinggroups:
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=NmlncTkwdjhsY2M2ZzkyZGUybDVkdGpzMXZfMjAxODEwMjRUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1fj3yzmeU2eU8ZNBCUJG97dk_wC7228-e_MmdcmTNrZY/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1tBA0W8zEe6UwPsabGQk-j
   contact:
@@ -2616,6 +2662,9 @@ workinggroups:
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    # TODO: Add this meeting to the contributor calendar:
+    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+    # And update the link above
     archive_url: https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing
   contact:
     slack: wg-policy
@@ -2648,7 +2697,7 @@ workinggroups:
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly (On demand)
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=N3FrNWpoNm1ubjg0ZGlkOGZoMDAzMW9lMXZfMjAxODA5MTJUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1j3vrG6BgE0hUDs2e-1ZUegKN4W4Adb1B6oJ6j-4kyPU
     recordings_url: https://www.youtube.com/watch?v=FUUJeWIEej0&list=PL69nYSiGNLP2uTrVwZCFtdEvLQvsbG2w4
   contact:
@@ -2712,7 +2761,7 @@ usergroups:
     time: "18:00"
     tz: UTC
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://www.google.com/calendar/event?eid=YWpza2NpZzlkazkxMmRlbmY5Nmk2NzhoMzhfMjAxODA5MTlUMTcwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
     recordings_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
   contact:
