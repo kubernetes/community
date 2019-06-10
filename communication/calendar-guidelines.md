@@ -57,6 +57,8 @@ addition of [gsuite], this practice may change soon.
     and any other pertinent information that you want your group to know.
   - Invite your SIG/WG mailing list and the Kubernetes Community Public
     Calendar address: `cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com`
+  - Update [sigs.yaml](../sigs.yaml) with the meeting details, including the
+    time, timezone and link to the calendar event.
 
 
 ### Testing Permissions
