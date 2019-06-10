@@ -3,10 +3,15 @@
 ## Essential Information
 
 June 24th, 2019<br />
-10am to 5pm<br />
-Shanghai Expo Center
+9am to 10pm
+
+Shanghai Expo Center<br />
+No. 1500 Shibo Avenue<br />
+Shanghai, China
 
 [Event Page](https://www.lfasiallc.com/events/contributors-summit-china-2019/)
+
+[Registration Required](https://www.lfasiallc.com/events/contributors-summit-china-2019/register/)
 
 ## Description
 
@@ -26,10 +31,19 @@ Attendees will be expected to bring a laptop, sign the Contributor License Agree
 
 This day is for people who already contribute to Kubernetes and participate in its community and want a place to have working meetings, as well as contributors who have already taken the New Contributor Workshop and want to learn more in-depth contribution topics.
 
-Sessions during this day will be arranged by the community, and as such a final schedule will be posted here in early June.
+Sessions during this day will be arranged by the community, and as such a final schedule will be posted here in early June.  Current sessions we have planned include:
+
+* How to write a KEP
+* Codebase and repository review
+* Local Build & Test troubleshooting session
+* Guide to Non-Code Contribution opportunities
+* SIG-Azure face-to-face
+* SIG-Scheduling face-to-face
+* Other SIG face-to-face meetings as we confirm them
+
+Contact[Josh Berkus](mailto:jberkus@redhat.com) if your SIG wants to have a face to face meeting at the Summit.
 
 The Contributor Day will be held primarily in English, although one or two sessions may be in Chinese.
-
 
 ## Documentation Sprints
 
