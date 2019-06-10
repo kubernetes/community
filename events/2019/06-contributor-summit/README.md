@@ -3,7 +3,7 @@
 ## Essential Information
 
 June 24th, 2019<br />
-9am to 10pm
+9am to 4pm
 
 Shanghai Expo Center<br />
 No. 1500 Shibo Avenue<br />
