@@ -1945,7 +1945,7 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Monday
-    time: "13:00"
+    time: "9:00"
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
