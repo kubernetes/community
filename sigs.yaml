@@ -2850,6 +2850,10 @@ committees:
     - name: steering-committee
       description: General Discussion
   subprojects:
+  - name: funding
+    description: Funding requests for project infrastructure, events, and consulting
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/funding/master/OWNERS
   - name: kubernetes-template-project
     description: Template for starting new projects in the GitHub organizations owned
       by Kubernetes.
