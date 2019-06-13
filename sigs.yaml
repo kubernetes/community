@@ -2191,8 +2191,8 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
-    time: "18:00"
-    tz: CET (Central European Time)
+    time: "09:00"
+    tz: PT (Pacific Time)
     frequency: bi-weekly
     url: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
     archive_url: https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing
