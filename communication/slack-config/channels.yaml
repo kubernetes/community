@@ -61,6 +61,8 @@ channels:
   - name: fi-users
   - name: fr-events
   - name: fr-users
+  - name: garden
+  - name: garden-dev
   - name: gardener
   - name: gimbal
   - name: github
