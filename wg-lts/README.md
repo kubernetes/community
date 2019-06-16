@@ -19,7 +19,7 @@ The [charter](charter.md) defines the scope and governance of the LTS Working Gr
 * SIG Node
 
 ## Meetings
-* Regular WG Meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://www.google.com/calendar/event?eid=MGphZDVnMGFjc2p2ZGhzM2Npa3BkZjFmZzBfMjAxODExMTNUMTcwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1J2CJ-q9WlvCnIVkoEo9tAo19h08kOgUJAS3HxaSMsLA/edit?usp=sharing).
 
 ## Organizers

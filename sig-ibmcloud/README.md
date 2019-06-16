@@ -13,7 +13,7 @@ A Special Interest Group (SIG) for building, deploying, maintaining, supporting,
 The [charter](charter.md) defines the scope and governance of the IBMCloud Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 14:00 EST](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).
+* Regular SIG Meeting: [Wednesdays at 14:00 EST](https://www.google.com/calendar/event?eid=NmxvYTRsaTdzdjBoZzY2anJsaGxicGk1anRfMjAxOTAyMjdUMTkwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit).
 
 ## Leadership

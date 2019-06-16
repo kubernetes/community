@@ -13,7 +13,7 @@ SIG Node is responsible for the components that support the controlled interacti
 The [charter](charter.md) defines the scope and governance of the Node Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://www.google.com/calendar/event?eid=NmhqMzU5aDU0amV1bDVhOGlicTVmazQwbmpfMjAxOTAzMDVUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/watch?v=FbKOI9-x9hI&list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
 

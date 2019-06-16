@@ -13,13 +13,13 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 The [charter](charter.md) defines the scope and governance of the Architecture Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 19:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 19:00 UTC](https://www.google.com/calendar/event?eid=M3BjbnVxc2VobHBpMDJrYmRnYWdkdW9ncjFfMjAxOTA2MDZUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
-* code organization Office Hours: [Thursdays at 14:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
+* code organization Office Hours: [Thursdays at 11:00 PT (Pacific Time)](https://www.google.com/calendar/event?eid=aGN0OGh1cjFoNm5lMmgzNzlyaGxrcHZvM2NfMjAxOTA2MTNUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1HtTI0rJEGP_MSf6eO87aCmx_tzpovPAAg7U2Zxwm8FE/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP03VEluzh0wpSRPzgve8kI5).
-* conformance Office Hours: [Tuesdays at 12:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=PT%20%28Pacific%20Time%29).
+* conformance Office Hours: [Tuesdays at 12:00 PT (Pacific Time)](https://www.google.com/calendar/event?eid=ZmRpMzc2Y2NmYnZnM3MzOGJhamRjaWJiZjBfMjAxOTA1MDdUMTkwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1W31nXh9RYAb_VaYkwuPLd1hFxuRX3iU0DmaQ4lkCsX8/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
 

@@ -19,7 +19,7 @@ Designing and shepherding cross-cutting features around compute resource isolati
 * SIG Storage
 
 ## Meetings
-* Regular WG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly (On demand)). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://www.google.com/calendar/event?eid=N3FrNWpoNm1ubjg0ZGlkOGZoMDAzMW9lMXZfMjAxODA5MTJUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (biweekly (On demand)). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1j3vrG6BgE0hUDs2e-1ZUegKN4W4Adb1B6oJ6j-4kyPU).
   * [Meeting recordings](https://www.youtube.com/watch?v=FUUJeWIEej0&list=PL69nYSiGNLP2uTrVwZCFtdEvLQvsbG2w4).
 

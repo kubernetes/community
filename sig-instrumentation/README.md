@@ -13,7 +13,7 @@ Covers best practices for cluster observability through metrics, logging, and ev
 The [charter](charter.md) defines the scope and governance of the Instrumentation Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 17:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 17:30 UTC](https://www.google.com/calendar/event?eid=NjI1Nm5mOGVtNXBlMXRsN2dhN3I1NzBkbzlfMjAxOTAzMDdUMTczMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/17emKiwJeqfrCsv0NZ2FtyDbenXGtTNCsDEiLbPa7x7Y/edit).
 
 ## Leadership

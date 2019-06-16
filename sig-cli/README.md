@@ -13,7 +13,7 @@ Covers kubectl and related tools. We focus on the development and standardizatio
 The [charter](charter.md) defines the scope and governance of the CLI Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time)](https://www.google.com/calendar/event?eid=bmJiZXVjb3BlaXQxMWk5azlzZXZ1cW5mazRfMjAxOTA1MDhUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
 

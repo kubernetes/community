@@ -24,9 +24,6 @@ sigs:
     tz: PT (Pacific Time)
     frequency: monthly - second Wednesday every month
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
     archive_url: https://docs.google.com/document/d/1Ih-2cgg1bUrLwLVTB9tADlPcVdgnuMNBGbUl4D-0TIk/edit?usp=sharing
   - description: Regular SIG Meeting
     day: Wednesday
@@ -867,9 +864,6 @@ sigs:
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
     archive_url: https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API office hours
@@ -915,9 +909,6 @@ sigs:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
     archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
   - description: kubeadm Office Hours
     day: Wednesday
@@ -933,9 +924,6 @@ sigs:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
     archive_url: https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit
   contact:
     slack: sig-cluster-lifecycle
@@ -1230,9 +1218,6 @@ sigs:
     tz: UTC
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
     archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
   contact:
     slack: sig-gcp
@@ -1397,9 +1382,6 @@ sigs:
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
     archive_url: https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3iKP5EzMbtNT2zOZv6RCrX
   - description: Regular SIG Meeting
@@ -1408,9 +1390,6 @@ sigs:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
     archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
     recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
   contact:
@@ -1536,9 +1515,7 @@ sigs:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    # TODO: duplicate meetings in calendar - which one is correct?
     url: https://www.google.com/calendar/event?eid=NmhqMzU5aDU0amV1bDVhOGlicTVmazQwbmpfMjAxOTAzMDVUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
-    # url: https://www.google.com/calendar/event?eid=NDRtdDM5dnVmbTgzZGFycXBqNGI3NDE2ajBfMjAxOTAzMDVUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing
     recordings_url: https://www.youtube.com/watch?v=FbKOI9-x9hI&list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG
   contact:
@@ -1887,9 +1864,6 @@ sigs:
     tz: UTC
     frequency: biweekly starting Thursday June 7, 2018
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
   - description: 5PM PT Meeting
     day: Thursday
     time: "24:00"
@@ -2028,10 +2002,7 @@ sigs:
     time: "9:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    # TODO: triplicate meetings in calendar - which one is correct?
     url: https://www.google.com/calendar/event?eid=amFoOWdjNHE5NzRjajA0ZmE3MG05Ymwzam9fMjAxOTA0MjVUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
-    # url: https://www.google.com/calendar/event?eid=MmQ3dXBqYmVmNHM1dHY2azQ0MWhyMWk1YnNfMjAxOTA0MjVUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
-    # url: https://www.google.com/calendar/event?eid=MTQ5MTYyb3RvY2FwOTV0ZDdxajV0bXZuOTRfMjAxOTA0MjVUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles
     archive_url: https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing
     recordings_url: https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq
   contact:
@@ -2165,9 +2136,6 @@ sigs:
       tz: PT (Pacific Time)
       frequency: bi-weekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-      # TODO: Add this meeting to the contributor calendar:
-      # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-      # And update the link above
       archive_url: https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit
       recordings_url: https://bit.ly/k8s-sig-testing-videos
   - name: prow
@@ -2378,9 +2346,6 @@ workinggroups:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
   contact:
     slack: wg-apply
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-apply
@@ -2453,9 +2418,6 @@ workinggroups:
     tz: UTC
     frequency: every four weeks
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
     archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
   - description: Regular WG Meeting
     day: Wednesday
@@ -2497,9 +2459,6 @@ workinggroups:
     tz: PT (Pacific Time)
     frequency: bi-weekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
     archive_url: http://bit.ly/wg-k8s-infra-notes
     recordings_url: http://bit.ly/wg-k8s-infra-playlist
   contact:
@@ -2578,9 +2537,6 @@ workinggroups:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
     archive_url: https://goo.gl/gBCdt1
   contact:
     slack: wg-machine-learning
@@ -2662,9 +2618,6 @@ workinggroups:
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    # TODO: Add this meeting to the contributor calendar:
-    # https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
-    # And update the link above
     archive_url: https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing
   contact:
     slack: wg-policy

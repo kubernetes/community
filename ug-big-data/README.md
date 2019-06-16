@@ -11,7 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Serve as a community resource for advising big data and data science related software projects on techniques and best practices for integrating with Kubernetes. Represents the concerns of users from big data communities to Kubernetes for the purposes of driving new features and other enhancements, based on big data use cases.
 
 ## Meetings
-* Regular User Group Meeting: [Wednesdays at 18:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
+* Regular User Group Meeting: [Wednesdays at 18:00 UTC](https://www.google.com/calendar/event?eid=YWpza2NpZzlkazkxMmRlbmY5Nmk2NzhoMzhfMjAxODA5MTlUMTcwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit).
   * [Meeting recordings](https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit).
 

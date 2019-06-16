@@ -13,13 +13,13 @@ Bring together members of the VMware and Kubernetes community to maintain, suppo
 The [charter](charter.md) defines the scope and governance of the VMware Special Interest Group.
 
 ## Meetings
-* Cloud Provider vSphere monthly syncup: [Wednesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly - first Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+* Cloud Provider vSphere monthly syncup: [Wednesdays at 09:00 PT (Pacific Time)](https://www.google.com/calendar/event?eid=NzZtaGxvbHY5Y2V1ZGk1cTBmbTFmaWs5bjRfMjAxOTA0MDNUMTYwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (monthly - first Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR).
-* Cluster API Provider vSphere bi-weekly syncup: [Wednesdays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+* Cluster API Provider vSphere bi-weekly syncup: [Wednesdays at 13:00 PT (Pacific Time)](https://www.google.com/calendar/event?eid=aGlyZjI2cnIwMGV1N3JhajI3NTYzZjN2MW9fMjAxOTAzMTFUMjAwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu).
-* Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://www.google.com/calendar/event?eid=cmozdnZzanNoZGl0NjFsamEyaTRuZGdtZnNfMjAxOTA0MDRUMTgwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y).
 

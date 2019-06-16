@@ -13,7 +13,7 @@ Covers development and maintenance of components for automated scaling in Kubern
 The [charter](charter.md) defines the scope and governance of the Autoscaling Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Mondays at 14:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly/triweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
+* Regular SIG Meeting: [Mondays at 14:00 UTC](https://www.google.com/calendar/event?eid=cWJnYTJzb3BwNnVlNGxmbmY4MDVqaGU4MnNfMjAxOTA0MDhUMTQwMDAwWiBjZ250MzY0dmQ4czg2aHIycGhhcGZqYzZ1a0Bn&ctz=America/Los_Angeles) (biweekly/triweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit).
 
 ## Leadership
