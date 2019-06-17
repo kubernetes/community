@@ -32,6 +32,7 @@ channels:
   - name: cluster-api-azure
   - name: cluster-api-baremetal
   - name: cluster-api-openstack
+  - name: cluster-api-vsphere
   - name: cn-dev
   - name: cn-events
   - name: cn-users
