@@ -63,6 +63,6 @@ We don't coordinate meetups. CNCF leads these efforts and their information can 
 [registration handbook]: ./registration/README.md
 [best-practices.md]: ./best-practices.md
 [here]: https://github.com/cncf/meetups
-[Event Lead Handbook]: /events-lead.md
+[Event Lead Handbook]: ./events-lead.md
 [Marketing Handbook]: ./marketing/README.md
-[Content Lead Handbook]: /content-lead.md
+[Content Lead Handbook]: ./content-lead.md
