@@ -21,7 +21,7 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 * Brian Grant (**[@bgrant0607](https://github.com/bgrant0607)**), Google
 * Brendan Burns (**[@brendandburns](https://github.com/brendandburns)**), Microsoft
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
-* Davanum Srinivas (**[@dims](https://github.com/dims)**), Huawei
+* Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
 * Joe Beda (**[@jbeda](https://github.com/jbeda)**), VMware
 * Michelle Noorali (**[@michelleN](https://github.com/michelleN)**), Microsoft
 * Brandon Philips (**[@philips](https://github.com/philips)**), Red Hat

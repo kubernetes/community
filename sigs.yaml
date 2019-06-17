@@ -232,7 +232,7 @@ sigs:
       company: Red Hat
     - github: dims
       name: Davanum Srinivas
-      company: Huawei
+      company: VMware
     - github: jdumars
       name: Jaice Singer DuMars
       company: Google
@@ -2446,7 +2446,7 @@ workinggroups:
     chairs:
     - github: dims
       name: Davanum Srinivas
-      company: Huawei
+      company: VMware
     - github: spiffxp
       name: Aaron Crickenberger
       company: Google
@@ -2810,7 +2810,7 @@ committees:
       company: Red Hat
     - github: dims
       name: Davanum Srinivas
-      company: Huawei
+      company: VMware
     - github: jbeda
       name: Joe Beda
       company: VMware
