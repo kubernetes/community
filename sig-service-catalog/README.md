@@ -42,9 +42,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following subprojects are owned by sig-service-catalog:
+- **minibroker**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/minibroker/master/OWNERS
 - **service-catalog**
   - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/service-catalog/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/service-catalog/master/OWNERS
 
 ## GitHub Teams
 

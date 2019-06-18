@@ -1970,9 +1970,12 @@ sigs:
     - name: sig-service-catalog-test-failures
       description: Test Failures and Triage
   subprojects:
+  - name: minibroker
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/minibroker/master/OWNERS
   - name: service-catalog
     owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/service-catalog/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/service-catalog/master/OWNERS
 - dir: sig-storage
   name: Storage
   mission_statement: >
