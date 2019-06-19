@@ -33,7 +33,7 @@ Questions will be on a first-come, first-served basis. The first half of the dis
 ### Code snip / PR for peer code review / Suggestion for part of codebase walk through:
 * At least 24 hours before the session to Slack channel (#meet-our-contributors)
 
-Problems will be chosen based on time commitment needed,the skills of the reviewer, and if a large amount are submitted, need for the project.
+Problems will be chosen based on time commitment needed, the skills of the reviewer, and if a large amount are submitted, need for the project.
 
 ## Call for Volunteers:
 Contributors - [sign up to answer questions!](https://goo.gl/uhEJ33)
