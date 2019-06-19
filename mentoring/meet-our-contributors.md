@@ -20,26 +20,26 @@ Tune into the [Kubernetes YouTube Channel](https://www.youtube.com/c/KubernetesC
 * Testing
 
 ## What’s off-topic:
-* End-user questions (Check out [#office-hours](https://kubernetes.slack.com/messages/office-hours) on slack and details [here](/events/office-hours.md))
+* End-user questions (Check out [#office-hours](https://kubernetes.slack.com/messages/office-hours) on Slack and details [here](/events/office-hours.md))
 
 ## Submitting questions and/or code for review/walk through:
 ### Questions:
-* Day of on twitter - use the hashtag [#k8smoc](https://twitter.com/hashtag/k8smoc) after your question   
+* Day of on Twitter - use the hashtag [#k8smoc](https://twitter.com/hashtag/k8smoc) after your question   
 * Slack - Ask your question in [#meet-our-contributors](https://kubernetes.slack.com/messages/meet-our-contributors)
 
 
-Questions will be on a first-come, first-served basis. First half will be dedicated to questions for contributors and the second half, we will pick a problem (in advance) for peer code review.
+Questions will be on a first-come, first-served basis. The first half of the discussion will be dedicated to questions for contributors and in the second half, we will pick a problem (in advance) for peer code review.
 
 ### Code snip / PR for peer code review / Suggestion for part of codebase walk through:
-* At least 24 hours before the session to slack channel (#meet-our-contributors)
+* At least 24 hours before the session to Slack channel (#meet-our-contributors)
 
-Problems will be picked based on time commitment needed, skills of the reviewer, and if a large amount are submitted, need for the project.
+Problems will be chosen based on time commitment needed,the skills of the reviewer, and if a large amount are submitted, need for the project.
 
 ## Call for Volunteers:
 Contributors - [sign up to answer questions!](https://goo.gl/uhEJ33)
 
 Expectations of volunteers:
-* Be on 5 mins early. You can look at questions in the queue by joining the #meet-our-contributors slack channel to give yourself some prep.
-* Expect questions about the contribution process, membership, navigating the kubernetes seas, testing, and general questions about you and your path to open source/kubernetes. It's ok if you don't know the answer!
-* We will be using video chat (zoom but live streaming through YouTube) but voice only is fine if you are more comfortable with that.
-* Be willing to provide suggestions and feedback to make this better!
+* Be online 5 minutes early. You can look at questions in the queue by joining the #meet-our-contributors Slack channel to give yourself some time to prepare.
+* Expect questions about the contribution process, membership, navigating the Kubernetes seas, testing, and general questions about you and your path to open source/Kubernetes. It's okay if you don't know the answer!
+* We will be using video chat (Zoom, but livestreaming through YouTube) but voice-only is fine if you are more comfortable with that.
+* Be willing to provide suggestions and feedback to make this process & experience better!
