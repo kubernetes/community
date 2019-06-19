@@ -77,12 +77,18 @@ The following subprojects are owned by sig-cluster-lifecycle:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
   - Contact
     - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
+- **cluster-api-bootstrap-provider-kubeadm**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-bootstrap-provider-kubeadm/master/OWNERS
 - **cluster-api-provider-aws**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
 - **cluster-api-provider-digitalocean**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
+- **cluster-api-provider-docker**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-docker/master/OWNERS
 - **cluster-api-provider-gcp**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
