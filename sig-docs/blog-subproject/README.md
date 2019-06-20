@@ -6,15 +6,15 @@ This section covers documentation, processes, and roles for the Kubernetes blog.
 
 ## Meetings
 
-Regular Blog Meeting: TBD (biweekly).
+Regular Blog Meeting: Tuesdays at 18:30 UTC (biweekly). [Convert Your Timezone](http://www.thetimezoneconverter.com/?t=18:30&tz=UTC)
 
-* Meeting notes and Agenda
-* Meeting recording
+* [Meeting notes and Agenda](https://docs.google.com/document/d/1W5MKkaQGd3YKKZINzj1tJAQbql5R_Y4KAHlFNsJ44Bc/edit?usp=sharing)
+* [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8)
 
 ## Leadership
 
 * **Editorial Leads:** [Kaitlyn Barnard](https://github.com/kbarnard10), [Zach Corleissen](https://github.com/zacharysarah) (shadow)
-* **Technical Editors:** [Bob Killen](https://github.com/mrbobbytables)
+* **Technical Editors:** [Bob Killen](https://github.com/mrbobbytables), Taylor Dolezal(@onlydole) (shadow)
 * **Copy Editors:** [Alex Handy](https://github.com/vonguard), [Cody Clark](https://github.com/cody-clark)
 * **Blog Community Managers:** [Jorge Castro](https://github.com/castrojo), [Paris Pittman](https://github.com/parispittman) (shadow)
 
@@ -90,7 +90,7 @@ Ultimately, if none of these can be satisfied, responsibility falls to the Edito
 
 ### Shadows
 
-We are always open to adding new shadows to the editorial team roles. If you are interested in shadowing one of the roles on the team, please fill out [this application](TBD). We review applications on a rolling basis.
+We are always open to adding new shadows to the editorial team roles. If you are interested in shadowing one of the roles on the team, please fill out [this application](The application form is now live for anyone interested in joining the blog editorial team: https://docs.google.com/forms/d/e/1FAIpQLScg9fHsyW-LlsBF8rc9J0sR8u3O3g17lwFUKIE-qrjL6Z-AyA/viewform?usp=sf_link). We review applications on a rolling basis.
 
 ### Removing a Team Member
 
