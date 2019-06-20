@@ -11,7 +11,7 @@ To run integration benchmarks use the following command from inside a Kubernetes
 directory. 
 
 ```sh
-make test-integration WHAT=./test/integration/scheduler_perf KUBE_TEST_VMODULE="''" KUBE_TEST_ARGS="-run=xxx -bench=."
+make test-integration WHAT=./test/integration/scheduler_perf KUBE_TEST_VMODULE="''" KUBE_TEST_ARGS="-run=^$$ -bench=."
 ```
 
 You can also provide a benchmark name in order to run a specific set of
@@ -19,8 +19,10 @@ benchmarks. Please refer to [Go documentation on benchmarks](https://golang.org/
 for more information.
 
 ```sh
-make test-integration WHAT=./test/integration/scheduler_perf KUBE_TEST_VMODULE="''" KUBE_TEST_ARGS="-run=xxx -bench=BenchmarkScheduling"
+make test-integration WHAT=./test/integration/scheduler_perf KUBE_TEST_VMODULE="''" KUBE_TEST_ARGS="-run=^$$ -bench=BenchmarkScheduling"
 ```
+
+> To display benchmark output only, you can append `-alsologtostderr=false -logtostderr=false` to `KUBE_TEST_ARGS`.
 
 These benchmarks are located in `./test/integration/scheduler_perf/scheduler_bench_test.go`. 
 The function names start with `BenchmarkScheduling`. At the beginning of each
@@ -51,7 +53,7 @@ it in the `-bench` argument. For example, the following will run only those
 benchmarks with 5000 nodes and 1000 existing pods.
 
 ```sh
-make test-integration WHAT=./test/integration/scheduler_perf KUBE_TEST_VMODULE="''" KUBE_TEST_ARGS="-run=xxx -bench=BenchmarkScheduling/5000Nodes/1000Pods"
+make test-integration WHAT=./test/integration/scheduler_perf KUBE_TEST_VMODULE="''" KUBE_TEST_ARGS="-run=^$$ -bench=BenchmarkScheduling/5000Nodes/1000Pods"
 ```
 
 ## Profiling the scheduler
@@ -60,7 +62,7 @@ You can get CPU profiling information from the benchmarks by adding a `-cpuprofi
 to the command above. Example:
 
 ```sh
-make test-integration WHAT=./test/integration/scheduler_perf KUBE_TEST_VMODULE="''" KUBE_TEST_ARGS="-run=xxx -bench=BenchmarkScheduling -cpuprofile cpu.out"
+make test-integration WHAT=./test/integration/scheduler_perf KUBE_TEST_VMODULE="''" KUBE_TEST_ARGS="-run=^$$ -bench=BenchmarkScheduling -cpuprofile cpu.out"
 ```
 
 After obtaining the CPU profile, you can use `pprof` to view the results. For
