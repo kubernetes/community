@@ -54,7 +54,7 @@ community members, guiding them through the
 GitHub organization.
 
 Our current coordinators are:
-* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**, US Eastern)
+* Naeil Ezzoueidi (**[@nzoueidi](https://github.com/nzoueidi)**, Central European)
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**, US Eastern)
 
 ## Project Owned Organizations
