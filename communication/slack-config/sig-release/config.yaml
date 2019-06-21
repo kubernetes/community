@@ -1,3 +1,4 @@
 channels:
   - name: sig-release
-  - name: release-managers
+  - name: release-management
+    id: CJH2GBF7Y
