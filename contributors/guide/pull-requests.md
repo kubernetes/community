@@ -4,7 +4,7 @@ weight: 1
 slug: "pull-requests"
 ---
 
-This doc explains the process and best practices for submitting a pull request to the [Kubernetes project](https://github.com/kubernetes/kubernetes) and its associated sub repositories. It should serve as a reference for all contributors, and be useful especially to new and infrequent submitters.
+This doc explains the process and best practices for submitting a pull request to the [Kubernetes project](https://github.com/kubernetes/kubernetes) and its associated sub-repositories. It should serve as a reference for all contributors, and be useful especially to new and infrequent submitters.
 
 - [Before You Submit a Pull Request](#before-you-submit-a-pull-request)
   * [Run Local Verifications](#run-local-verifications)
