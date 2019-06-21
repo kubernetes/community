@@ -1,10 +1,10 @@
 ---
 title: "Pull Request Process"
 weight: 1
-slug: "pull-requests" 
+slug: "pull-requests"
 ---
 
-This doc explains the process and best practices for submitting a pull request to the [Kubernetes project](https://github.com/kubernetes/kubernetes) and its associated subrepositories. It should serve as a reference for all contributors, and be useful especially to new and infrequent submitters.
+This doc explains the process and best practices for submitting a pull request to the [Kubernetes project](https://github.com/kubernetes/kubernetes) and its associated sub repositories. It should serve as a reference for all contributors, and be useful especially to new and infrequent submitters.
 
 - [Before You Submit a Pull Request](#before-you-submit-a-pull-request)
   * [Run Local Verifications](#run-local-verifications)
@@ -33,7 +33,7 @@ This doc explains the process and best practices for submitting a pull request t
 
 This guide is for contributors who already have a pull request to submit. If you're looking for information on setting up your developer environment and creating code to contribute to Kubernetes, see the [development guide](/contributors/devel/development.md).
 
-First time contributors should head to the [Contributor Guide](/contributors/guide/README.md) to get started.
+First-time contributors should head to the [Contributor Guide](/contributors/guide/README.md) to get started.
 
 **Make sure your pull request adheres to our best practices. These include following project conventions, making small pull requests, and commenting thoroughly. Please read the more detailed section on [Best Practices for Faster Reviews](#best-practices-for-faster-reviews) at the end of this doc.**
 
@@ -54,7 +54,7 @@ Merging a pull request requires the following steps to be completed before the p
 - [Open a pull request](https://help.github.com/articles/about-pull-requests/)
   - *For kubernetes/kubernetes repository only:* Add [release notes](/contributors/guide/release-notes.md) if needed.
 - Pass all e2e tests
-- Get all necessary approvals from reviewers and code owners 
+- Get all necessary approvals from reviewers and code owners
 
 ## The Testing and Merge Workflow
 
@@ -82,7 +82,7 @@ Here's the process the pull request goes through on its way from submission to m
 
 1. Reviewer suggests edits
 1. Push edits to your pull request branch
-1. Repeat the prior two steps as needed until reviewer(s) add `/lgtm` label. The `/lgtm` label, when applied by someone listed as an `reviewer` in the corresponding project `OWNERS` file, is a signal that the code has passed review from one or more trusted reviewers for that project
+1. Repeat the prior two steps as needed until the reviewer(s) add `/lgtm` label. The `/lgtm` label, when applied by someone listed as a `reviewer` in the corresponding project `OWNERS` file, is a signal that the code has passed review from one or more trusted reviewers for that project
 1. (Optional) Some reviewers prefer that you squash commits at this step
 1. Follow the bot suggestions to assign an OWNER who will add the `/approve` label to the pull request. The `/approve` label, when applied by someone listed as an `approver` in the corresponding project `OWNERS`, is a signal that the code has passed final review and is ready to be automatically merged
 
@@ -119,7 +119,7 @@ The GitHub robots will add and remove the `do-not-merge/hold` label as you use t
 
 ## Pull Requests and the Release Cycle
 
-If a pull request has been reviewed, but held or not approved, it might be due to the current phase in the [Release Cycle](/contributors/devel/sig-release/release.md). Occasionally, a SIG may freeze their own code base when working towards a specific feature or goal that could impact other development. During this time, your pull request could remain unmerged while their release work is completed.
+If a pull request has been reviewed but held or not approved, it might be due to the current phase in the [Release Cycle](/contributors/devel/sig-release/release.md). Occasionally, a SIG may freeze their own code base when working towards a specific feature or goal that could impact other development. During this time, your pull request could remain unmerged while their release work is completed.
 
 If you feel your pull request is in this state, contact the appropriate [SIG](https://git.k8s.io/community/sig-list.md) or [SIG-Release](https://git.k8s.io/sig-release) for clarification.
 
@@ -167,7 +167,7 @@ things you can do to move the process along:
 
    * Ping the assignee by email (many of us have publicly available email addresses).
 
-   * If you're a member of the organization ping the [team](https://github.com/orgs/kubernetes/teams) (via @team-name) that works in the area you're submitting code.
+   * If you're a member of the organization ping the [team](https://github.com/orgs/kubernetes/teams) (via @team-name) that works in the area you're submitting the code.
 
    * If you have fixed all the issues from a review, and you haven't heard back, you should ping the assignee on the comment stream with a "please take another look" (`PTAL`) or similar comment indicating that you are ready for another review.
 
@@ -253,7 +253,7 @@ Read up on [GoDoc](https://blog.golang.org/godoc-documenting-go-code) - follow t
 
 ## 5. Test
 
-Nothing is more frustrating than starting a review, only to find that the tests are inadequate or absent. Very few pull requests can touch code and NOT touch tests.
+Nothing is more frustrating than starting a review, only to find that the tests are inadequate or absent. Very few pull requests can touch the code and NOT touch tests.
 
 If you don't know how to test Feature-X, please ask!  We'll be happy to help you design things for easy testing or to suggest appropriate test cases.
 
@@ -302,10 +302,9 @@ Each incoming Pull Request needs to be reviewed, checked, and then merged.
 
 While automation helps with this, each contribution also has an engineering cost. Therefore it is appreciated if you do NOT make trivial edits and fixes, but instead focus on giving the entire file a review.
 
-If you find one grammatical or spelling error, it is likely there are more in that file, you can really make your Pull Request count by checking formatting, checking for broken links, and fixing errors and then submitting all the fixes at once to that file.
+If you find one grammatical or spelling error, it is likely there are more in that file, you can really make your Pull Request count by checking the formatting, checking for broken links, and fixing errors and then submitting all the fixes at once to that file.
 
 **Some questions to consider:**
 
 * Can the file be improved further?
 * Does the trivial edit greatly improve the quality of the content?
-
