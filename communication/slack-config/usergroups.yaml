@@ -5,7 +5,7 @@ usergroups:
     long_name: Release Managers
     description: Release Managers. Ping for questions on branch cuts and building/packaging Kubernetes.
     channels:
-      - release-managers
+      - release-management
       - sig-release
     members:
       - aleksandra-malinowska
