@@ -42,6 +42,9 @@ The following subprojects are owned by sig-apps:
 - **examples**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/examples/master/OWNERS
+- **execution-hook**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/execution-hook/master/OWNERS
 - **kompose**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS

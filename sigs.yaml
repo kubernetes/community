@@ -181,6 +181,9 @@ sigs:
   - name: examples
     owners:
     - https://raw.githubusercontent.com/kubernetes/examples/master/OWNERS
+  - name: execution-hook
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/execution-hook/master/OWNERS
   - name: kompose
     contact:
       slack: kompose
