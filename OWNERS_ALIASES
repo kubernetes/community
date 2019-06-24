@@ -117,8 +117,8 @@ aliases:
   wg-apply-leads:
     - lavalamp
   wg-component-standard-leads:
-    - luxas
     - mtaufen
+    - stealthybox
     - sttts
   wg-iot-edge-leads:
     - cantbewong

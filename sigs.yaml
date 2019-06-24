@@ -2371,12 +2371,12 @@ workinggroups:
   label: component-standard
   leadership:
     chairs:
-    - github: luxas
-      name: Lucas Käldström
-      company: Luxas Labs (occasionally contracting for Weaveworks)
     - github: mtaufen
       name: Michael Taufen
       company: Google
+    - github: stealthybox
+      name: Leigh Capili
+      company: Weaveworks
     - github: sttts
       name: Dr. Stefan Schimanski
       company: Red Hat
