@@ -8,22 +8,22 @@ This section covers documentation, processes, and roles for the Kubernetes blog.
 
 Regular Blog Meeting: Tuesdays at 18:30 UTC (biweekly). [Convert Your Timezone](http://www.thetimezoneconverter.com/?t=18:30&tz=UTC)
 
-* [Meeting notes and Agenda](https://docs.google.com/document/d/1W5MKkaQGd3YKKZINzj1tJAQbql5R_Y4KAHlFNsJ44Bc/edit?usp=sharing)
-* [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8)
+- [Meeting notes and Agenda](https://docs.google.com/document/d/1W5MKkaQGd3YKKZINzj1tJAQbql5R_Y4KAHlFNsJ44Bc/edit?usp=sharing)
+- [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8)
 
 ## Leadership
 
-* **Editorial Leads:** [Kaitlyn Barnard](https://github.com/kbarnard10), [Zach Corleissen](https://github.com/zacharysarah) (shadow)
-* **Technical Editors:** [Bob Killen](https://github.com/mrbobbytables), Taylor Dolezal(@onlydole) (shadow)
-* **Copy Editors:** [Alex Handy](https://github.com/vonguard), [Cody Clark](https://github.com/cody-clark)
-* **Blog Community Managers:** [Jorge Castro](https://github.com/castrojo), [Paris Pittman](https://github.com/parispittman) (shadow)
+- **Editorial Leads:** [Kaitlyn Barnard](https://github.com/kbarnard10), [Zach Corleissen](https://github.com/zacharysarah) (shadow)
+- **Technical Editors:** [Bob Killen](https://github.com/mrbobbytables), [Taylor Dolezal](https://github.com/onlydole) (shadow)
+- **Copy Editors:** [Alex Handy](https://github.com/vonguard), [Cody Clark](https://github.com/cody-clark)
+- **Blog Community Managers:** [Jorge Castro](https://github.com/castrojo), [Paris Pittman](https://github.com/parispittman) (shadow)
 
 ## Contact
 
-* Slack: #kubernetes-docs-blog
-* Mailing List: [blog@kubernetes.io](mailto:blog@kubernetes.io)
-* Open Community Issues/PRs: area/blog label
-* GitHub Team: @kubernetes/sig-docs-blog-reviews
+- Slack: #kubernetes-docs-blog
+- Mailing List: [blog@kubernetes.io](mailto:blog@kubernetes.io)
+- Open Community Issues/PRs: area/blog label
+- GitHub Team: @kubernetes/sig-docs-blog-reviews
 
 ## Submit a Post
 
@@ -42,25 +42,25 @@ To submit a blog post, you can either submit it using the [Kubernetes blog submi
 
 Requested Content (with examples):
 
-* New Kubernetes capabilities
-* Kubernetes projects updates
-* Updates from Special Interest Groups
-* Tutorials and walkthroughs
-* Thought leadership around Kubernetes
-* Kubernetes Partner OSS integration
-* **Original content only**
+- New Kubernetes capabilities
+- Kubernetes projects updates
+- Updates from Special Interest Groups
+- Tutorials and walkthroughs
+- Thought leadership around Kubernetes
+- Kubernetes Partner OSS integration
+- **Original content only**
 
 Unsuitable Content:
 
-* Vendor product pitches
-* Partner updates without an integration and customer story
-* Syndicated posts (language translations ok)
+- Vendor product pitches
+- Partner updates without an integration and customer story
+- Syndicated posts (language translations ok)
 
 ## Review Process
 
-Once a blog post is submitted either via the form or a PR, it will be routed to the editorial team for review either via email for Google Docs or auto-assigning for a PR.  
+Once a blog post is submitted either via the form or a PR, it will be routed to the editorial team for review either via email for Google Docs or auto-assigning for a PR.
 
-Each blog post requires a LGTM from one copy editor, technical editor*, and blog community manager. Once the necessary LGTMs are in place, an Editorial Lead will schedule and approve the blog post.
+Each blog post requires a LGTM from one copy editor, technical editor\*, and blog community manager. Once the necessary LGTMs are in place, an Editorial Lead will schedule and approve the blog post.
 
 _If a blog post does not contain any technical content (for example, [How You Can Help Localize Kubernetes Docs](https://kubernetes.io/blog/2019/04/26/how-you-can-help-localize-kubernetes-docs/)), the technical review can be omitted._
 
@@ -82,9 +82,9 @@ We typically do not make edits to blog posts more than 1 years old.
 
 Each Editorial Team role is responsible for staffing their respective role, with this order of fall-through in mind:
 
-* training and selecting a successor from the current pool of role shadows
-* training and selecting a successor from non-Editorial Team members
-* staffing the role themselves
+- training and selecting a successor from the current pool of role shadows
+- training and selecting a successor from non-Editorial Team members
+- staffing the role themselves
 
 Ultimately, if none of these can be satisfied, responsibility falls to the Editorial Team Lead and SIG-Docs to staff the roles.
 
