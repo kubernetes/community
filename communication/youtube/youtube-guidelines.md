@@ -90,7 +90,10 @@ community must use it responsibly and are subject to the following guidelines:
 	in uploading should be expected.
 
 
-## Admin Responsibilities
+## Admin Responsibilities  
+
+Purpose: Help maintain a robust YouTube channel that is valuable to contributors
+and upholds our transparency goals as laid out by our governance docs.  
 
 ### Moderator Expectations and Guidelines
 
@@ -101,16 +104,72 @@ Moderation responsibilities for YouTube admins is minimal and is centered around
 checking and removing any potential comments that would violate the [Code of
 Conduct][coc]. Any potential violations should sent to <conduct@kubernetes.io>.
 
-
 ### Trimming and Editing Recordings
 
-YouTube admins may be asked to help [trim] and [edit] recordings. Certain events
-such as the Contributor Summits are not uploaded directly to YouTube and require
-editing. In other instances a Zoom recording may have significant dead-space
-leading the meeting itself. In these instances the playlist owners may be asked
-first to trim a recording; however there are times where this is inopportune and
-an admin may step in.
+YouTube admins are asked to help [trim] and [edit] recordings that come into the
+video queue.  
+Examples:  
+Certain events such as the Contributor Summits are not uploaded directly to
+YouTube and require editing.
+A Zoom recording may have significant dead-space leading the meeting itself
+and also at the end as we end the stream.  
+A SIG Meeting needs to be edited to to make sure it's clear (ie "Kubernetes
+Special Interest Group ContribEx 20190303 Meeting").   
 
+Make sure to save a copy of the video first before making adjustments as this
+can delete the original if not careful. When in doubt, ask.
+
+### Automation
+
+We have been playing around with various integration features with our other
+productivity tools and would love to do more! Reach out if you can help.
+
+One feature that we've implemented with several SIGs is splain.io. This tool
+creates a pipeline between zoom and youtube.
+
+Here's what you need:  
+- UserName and Password for the zoom license account. You'll need a zoom admin
+or the admin of the license (ex: SIG Chair) to either provide it to you or reset
+it to a new one.
+- Kubernetes YouTube admin credentials
+- A correctly set up recurring meeting with a start and end time (this is
+  important) - check zoom guidelines for more details 
+
+Steps:
+- Install splain: https://marketplace.zoom.us/apps/WPKzwuoLQDuj_gPs68AQxw
+- Connect the zoom account
+- Connect YouTube account
+- Click the \manage\ tab next to App Info and scroll to the config button, click
+- The splain dashboard will display: make sure the box for make videos private is
+checked so we can edit before it goes live.
+- Test that it works
+- Enjoy  
+
+The following SIGs and groups are currently running splain.io:  
+- ContribEx
+- PM
+- Docs
+- Steering Committee  
+- The main zoom admin account which holds Meet Our Contributors and others (if
+  you log in to splain using this account, all of the other accounts will be
+  logged here)   
+
+TODO - look into splain.io's google drive to youtube pipeline. Also look into
+using the gsuite contributors@ account to use the API for zoom cloud -> google
+drive -> youtube.
+
+### Descriptions & Playlists
+
+Each video that comes into the queue needs to be added to a playlist, set to
+public, and added context to the description.
+
+Example description:  
+Kubernetes Contributor Experience Special Interest Group Weekly Meeting. Check
+here (link to sig list) for a complete list of SIGs and when they meet. Join us!
+
+### Thumbnails
+
+TODO - someone help us with better thumbnails to lay over the videos!
 
 ### Streaming Events
 
