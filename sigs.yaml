@@ -949,6 +949,7 @@ sigs:
     contact:
       slack: cluster-api
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-bootstrap-provider-kubeadm/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
   - name: cluster-api-provider-aws
     owners:

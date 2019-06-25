@@ -74,6 +74,7 @@ The following subprojects are owned by sig-cluster-lifecycle:
     - Slack: [#cluster-addons](https://kubernetes.slack.com/messages/cluster-addons)
 - **cluster-api**
   - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-bootstrap-provider-kubeadm/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
   - Contact
     - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
