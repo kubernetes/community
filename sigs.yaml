@@ -1100,9 +1100,9 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
     meetings:
-    - description: Contributor Summit strategy, content and planning
+    - description: Contributor Summit Core Planning
       day: Monday
-      time: "9:00"
+      time: "10:00"
       tz: PT (Pacific Time)
       frequency: weekly
   - name: github-management
