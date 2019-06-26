@@ -38,6 +38,10 @@ Recommended experience:
     - Girl Develop it: https://www.girldevelopit.com/ 
     - Mothercoders: http://www.mothercoders.org/ 
     - We can code it: https://wecancodeit.org/
+    - Start Out: https://startout.org/
+    - Out in Tech: https://outintech.com/
+    - https://lgbtq.technology/
+    - Queer Coders: https://queercoders.com/ 
   * Review previously collected anonymous gender and other demographic information to assess the environment, as perceived by different groups in your audience. Specifically ask how comfortable and welcome attendees felt at your conference and work to improve these marks (incorporating ideas they share) at future events
   * Ensure the Code of Conduct is linked from all official communications including the website, and that event staff is familiar with it and how to react in case of someone who needs assistance
 - Speakers and presenters should: 
@@ -50,7 +54,8 @@ Recommended experience:
   * Make sure there is a microphone for all speakers
   * Avoid putting panelists on a stool or on a high platform stage
   * Ensure your check-in table allows attendees in wheelchairs to be greeted at eye-leve
-  * Provide at least one all-gender restroom, conveniently located close to the main session area, with appropriate signage 
+  * Provide at least one all-gender restroom, conveniently located close to the main session area, with appropriate signage
+  * Provide preferred pronoun indication stickers 
   * Every session should include options for people who are vision and/or hearing impaired, etc
   * When people register, leave a box for requested special accommodations
   * There should be a clearly marked, private nursing room, that includes: 
@@ -81,4 +86,4 @@ Ideally, you need to be able to travel to the event (this can be worked around i
 
 ## More reading / Citations 
 - https://www.ncwit.org/resources/ncwit-tips-13-tips-make-technical-conferences-more-inclusive/ncwit-tips-13-tips-make 
-- 
+- https://transequality.org/issues/resources/understanding-non-binary-people-how-to-be-respectful-and-supportive
