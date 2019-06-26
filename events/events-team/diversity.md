@@ -1,7 +1,7 @@
 # Accessibility, Inclusiveness, and Diversity at Events Handbook
 
 ## Overview
-Lead and execute on making events a safe, welcome, navigable and inclusive space to new and continuing contributers. Lead and execute on outreach to underrepresented communities to invite them to participate. Track participant happiness and event inclusiveness over time to make each event more successful.
+Lead and execute on making events a safe, welcome, navigable and inclusive space to new and continuing contributors. Lead and execute on outreach to underrepresented communities to invite them to participate. Track participant happiness and event inclusiveness over time to make each event more successful.
 
 ## Skills and Qualifications
 
@@ -26,7 +26,7 @@ Recommended experience:
 ### Work Plan Items 
 
 - Pre-event: 
-  * Reach out to under-represented group organizations to encourage and invite people to attend both the new Contributor workshops and the Contributer Summit, as appropriate. Remember a personal invitation, making yourself available, and encouragement can go a long way, versus simply blasting a message out to an email distribution and calling it a day
+  * Reach out to under-represented group organizations to encourage and invite people to attend both the new Contributor workshops and the Contributor Summit, as appropriate. Remember a personal invitation, making yourself available, and encouragement can go a long way, versus simply blasting a message out to an email distribution and calling it a day
     - GoBridge 
     - Women Who Go: https://www.womenwhogo.org/ 
     - IEEE Women in Engineering: http://sites.ieee.org/scv-wie/introduction-to-kubernetes/ 
@@ -63,7 +63,7 @@ Recommended experience:
     - clear signage 
     - easy to find and access without missing a lot of the summit due to transit time 
     - a comfortable chair 
-    - working refridgerator 
+    - working refrigerator 
     - power strip near chair 
     - completely private, no clear glass windows etc 
     - washing sink or wipes 
