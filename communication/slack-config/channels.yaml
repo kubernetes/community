@@ -104,6 +104,7 @@ channels:
   - name: k8s-release
     archived: true
   - name: kapitan
+  - name: keda
   - name: keel
   - name: kiam
   - name: kind
