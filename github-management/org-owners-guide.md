@@ -151,7 +151,7 @@ a new repository are described below.
   as per the rules mentioned above.
   * Using the organization and repository name mentioned in the repo creation
   request, create a new repo with:
-    * `Repository Template` as `kubernetes/kubernetes-template-project`
+    * The [kubernetes-template-project] repo as the [template repo]
     * `Description` as mentioned in the repo creation request
   * Clone the newly created repo locally.
   * Make the following changes:
@@ -232,3 +232,4 @@ https://help.github.com/articles/archiving-a-github-repository/
 [kubernetes-retired]: https://github.com/kubernetes-retired
 [kubernetes-template-project]: https://github.com/kubernetes/kubernetes-template-project
 [SIG Repository]: /github-management/kubernetes-repositories.md##sig-repositories
+[template repo]: https://help.github.com/en/articles/creating-a-repository-from-a-template
