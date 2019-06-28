@@ -1100,7 +1100,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
     meetings:
-    - description: Contributor Summit Core Planning
+    - description: Events Planning Subproject
       day: Monday
       time: "10:00"
       tz: PT (Pacific Time)
