@@ -57,7 +57,7 @@ Guide](http://kubernetes.io/docs/admin/).
 * **Annotations** ([Annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)): are for attaching arbitrary non-identifying metadata to objects.
   Programs that automate Kubernetes objects may use annotations to store small amounts of their state.
 
-* **API Conventions** ([api-conventions.md](api-conventions.md)):
+* **API Conventions** ([api-conventions.md](sig-architecture/api-conventions.md)):
   Defining the verbs and resources used in the Kubernetes API.
 
 * **API Client Libraries** ([Client Libraries](https://kubernetes.io/docs/reference/using-api/client-libraries/)):
