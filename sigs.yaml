@@ -1927,12 +1927,9 @@ sigs:
     - github: jberkhahn
       name: Jonathan Berkhahn
       company: IBM
-    - github: jboyd01
-      name: Jay Boyd
-      company: Red Hat
-    - github: kibbles-n-bytes
-      name: Michael Kibbe
-      company: Google
+    - github: mszostok
+      name: Mateusz Szostok
+      company: SAP
     emeritus_leads:
     - github: arschles
       name: Aaron Schlesinger
@@ -1943,6 +1940,12 @@ sigs:
     - github: duglin
       name: Doug Davis
       company: IBM
+    - github: jboyd01
+      name: Jay Boyd
+      company: Red Hat
+    - github: kibbles-n-bytes
+      name: Michael Kibbe
+      company: Google
     - github: pmorie
       name: Paul Morie
       company: Red Hat
