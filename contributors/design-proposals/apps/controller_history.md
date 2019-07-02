@@ -362,7 +362,7 @@ they have a nil revision. That is, without respect to the method of
 [version tracking](#version-tracking) used, the generated Objects may be 
 treated as if they have a version that corresponds to no revision, and the 
 controller may proceed to 
-[reconcile their state](target-object-state-reconciliation) as appropriate to 
+[reconcile their state](#target-object-state-reconciliation) as appropriate to 
 the internal implementation.
 
 ## Kubectl
@@ -442,7 +442,7 @@ create a `.Named` ControllerRevision via the API Server using a
 conflict, the method returns false.
 
 ### Unique Name Generation
-We can use our [hash function](#hashsing) and 
+We can use our [hash function](#hashing) and 
 [collision resolution](#collision-resolution) scheme to generate a system 
 wide unique identifier for an Object based on a deterministic non-unique prefix 
 and a serialized representation of the Object. Kubernetes Object's `.Name` 
