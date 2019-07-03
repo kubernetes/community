@@ -287,7 +287,7 @@ framework.ConformanceIt("it should print the output to logs", func() {
 })
 ```
 
-The corresponding portion of the Kubernetes Conformance Documentfor this test
+The corresponding portion of the Kubernetes Conformance Document for this test
 would then look like this:
 
 > ## [Kubelet: log output](https://github.com/kubernetes/kubernetes/tree/release-1.9/test/e2e_node/kubelet_test.go#L47)
