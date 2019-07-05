@@ -103,8 +103,8 @@ Another good strategy is to find a documentation improvement, such as a missing/
 
 #### Issue Assignment in Github
 
-Often, new contributors ask to be assigned an issue they are willing to take on. Unfortunately, due to GitHub limitations we can only assign issues to [org members](#community) or repo collaborators. 
-Instead, please state in a comment that you intend to work on this issue and it will be assumed to be yours.
+When you are willing to take on an issue, you can assign it to yourself. Just reply with `/assign` or `/assign @yourself` on an issue, 
+then the robot will assign the issue to you and your name will present at `Assignees` list.
 
 ### Learn about SIGs
 
