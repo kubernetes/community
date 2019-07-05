@@ -13,7 +13,7 @@ SIG Scalability is responsible for defining and driving scalability goals for Ku
 The [charter](charter.md) defines the scope and governance of the Scalability Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 17:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 17:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly ([upcoming meeting dates](#upcoming-2019-meeting-dates))). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
   * [Meeting recordings](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
 
@@ -77,21 +77,26 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-scalability-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
+# SIG-Scalability Team Members
+* Janek Lukasiewicz (**[@oxddr](https://github.com/oxddr)**), Google
+* Krzysztof Siedlecki (**[@krzysied](https://github.com/krzysied)**), Google
+* Maciej Borsz (**[@mborsz](https://github.com/mborsz)**), Google
+* Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
+
 ## Upcoming 2019 Meeting Dates
-   * 12/20/2018
-   * 1/3
-   * 1/17
-   * 1/31
-   * 2/14
-   * 2/28
-   * 3/14
-   * 3/28
-   * 4/11
-   * 4/25
-   * 5/9
-   * 5/23
-   * 6/6
-   * 5/20
+   * 07/04
+   * 07/18
+   * 08/01
+   * 08/15
+   * 08/29
+   * 09/12
+   * 09/26
+   * 10/10
+   * 10/24
+   * 11/07
+   * 11/21
+   * 12/05
+   * 12/19
 
 # Details about SIG-Scalability sub-projects
 
