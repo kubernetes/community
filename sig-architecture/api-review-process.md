@@ -1,10 +1,12 @@
 # Kubernetes API Review Process
 
-[API Approvers](mailto:kubernetes-api-reviewers@googlegroups.com): [Clayton Coleman](https://github.com/smarterclayton), [Jordan Liggitt](https://github.com/liggitt), [Tim Hockin](https://github.com/thockin), [Brian Grant](https://github.com/bgrant0607), [Eric Tune](https://github.com/erictune)
+## Contact
+* [Mailing List](mailto:kubernetes-api-reviewers@googlegroups.com)
+* [Slack](https://kubernetes.slack.com/messages/api-review)
 
 # Process Overview and Motivations
 
-To preserve usability and consistency in Kubernetes APIs, changes and additions require oversight.
+To preserve usability and consistency in Kubernetes core APIs, changes and additions require oversight.
 The API review process is intended to maintain logical and functional integrity of the API over time,
 the consistency of user experience and the ability of previously written tools to function with new APIs.
 Wherever possible, the API review process should help change submitters follow [established conventions](/contributors/devel/sig-architecture/api-conventions.md),
@@ -30,39 +32,37 @@ Ideally, those whose API review priority is shifted in a release-impacting way w
 
 # What APIs need to be reviewed?
 
-* What are the kind of reviews?
+## Mandatory
+The changer is expected to submit the changes to API review, and the change is blocked on the API reviewer approval.  As a general rule of thumb, anything that is considered to be part of "core Kubernetes" requires a mandatory API review.  The list below outlines what are considered Kubernetes core APIs:
 
-    * **mandatory**: The changer is expected to submit the changes to API review, and the change is blocked on the API reviewer approval 
+* All API implementations (including alpha versions) that are part of core Kubernetes must be reviewed, including CRDs, so user experience across the Kubernetes ecosystem is consistent.
 
-    * **voluntary**: Changer can request a review, or a 3rd party can nominate the API for review.  The review comments are recommendations.
+* github.com/kubernetes/kubernetes, and any kubernetes-* org projects it depends on are required to be reviewed.
 
-* Which projects are in scope?
+* Kubernetes-style API that uses a *.k8s.io or *.kubernetes.io name, e.g. "storage.k8s.io".
 
-    * github.com/kubernetes/kubernetes, and any kubernetes-* org projects it depends on are required to be reviewed.   (mandatory)
+* "Critical" or other “highly-integrated” APIs, such as our extension points in the node, apiserver, and controllers.  This includes CSI, CNI, CRI, and CPI.
 
-    * Any kubernetes-style API that uses a *.k8s.io or *.kubernetes.io name, e.g. "storage.k8s.io" (mandatory)
+## Voluntary
+Voluntary reviews apply towards non-core APIs that do not meet the [mandatory](#mandatory) requirements listed above.  Changer can request a review, or a 3rd party can nominate the API for review.  The review comments are considered recommendations.    
 
-    * "Critical" or other “highly-integrated” APIs, such as our extension points in the node, apiserver, and controllers as defined by SIG Architecture [TBD].  (mandatory)
+* SIG sponsored CRD based APIs outside of the core that use the "*.x-k8s.io" namespace.
 
-    * any other github projects in the kubernetes-* orgs (informational, for now - may make mandatory in future)
+* SIG sponsored subprojects that produce APIs (including CRDs) that outside of *.k8s.io or *.kubernetes.io API groups, and are intended to work with kubectl and/or kube-apiserver. (intent is to ensure consistent user experience across the Kubernetes ecosystem)
 
-    * Any projects that produce APIs (including CRDs) that are intended to work with kubectl and/or kube-apiserver. (informational - intent is to ensure consistent user experience across the Kubernetes ecosystem)
+## What parts of a PR are "API changes"?
 
-* All API implementations (including alpha versions) that are part of kubernetes must be reviewed, including CRDs, so user experience across the Kubernetes ecosystem is consistent.
+* "Resource APIs" include the versioned data definition (pkg/apis/*/v*/types.go or OpenAPI for CRDs), validation (pkg/apis/*/validation.go or OpenAPI for CRDs).
 
-* What parts of a PR are "API changes"?
+* Configuration files, flags, and command line arguments are all part of our user and script facing APIs and must be reviewed.
 
-    * "Resource APIs" include the versioned data definition (pkg/apis/*/v*/types.go or OpenAPI for CRDs), validation (pkg/apis/*/validation.go or OpenAPI for CRDs).
+* Compiled-in APIs of the kube-apiserver
 
-    * Configuration files, flags, and command line arguments are all part of our user and script facing APIs and must be reviewed.
+* Webhooks request/response formats in kube-apiserver
 
-    * Compiled-in APIs of the kube-apiserver
+* HTTP APIs in kubelet
 
-    * Webhooks request/response formats in kube-apiserver
-
-    * HTTP APIs in kubelet
-
-    * plugins which are not covered by some other standards effort (e.g. CSI and CNI APIs would be deferred to those standards bodies)
+* plugins which are not covered by some other standards effort (e.g. CSI and CNI APIs would be deferred to those standards bodies)
 
 # Mechanics
 
