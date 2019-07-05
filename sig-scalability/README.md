@@ -78,7 +78,7 @@ Note that the links to display team membership will only work if you are a membe
 
 <!-- BEGIN CUSTOM CONTENT -->
 # SIG-Scalability Team Members
-* Janek Lukasiewicz (**[@oxddr](https://github.com/oxddr)**), Google
+* Janek Łukaszewicz (**[@oxddr](https://github.com/oxddr)**), Google
 * Krzysztof Siedlecki (**[@krzysied](https://github.com/krzysied)**), Google
 * Maciej Borsz (**[@mborsz](https://github.com/mborsz)**), Google
 * Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
