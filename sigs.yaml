@@ -971,6 +971,9 @@ sigs:
       slack: etcdadm
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
+  - name: image-builder
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/image-builder/master/OWNERS
   - name: kops
     owners:
     - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS

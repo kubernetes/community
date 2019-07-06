@@ -98,6 +98,9 @@ The following subprojects are owned by sig-cluster-lifecycle:
     - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
   - Contact
     - Slack: [#etcdadm](https://kubernetes.slack.com/messages/etcdadm)
+- **image-builder**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/image-builder/master/OWNERS
 - **kops**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
