@@ -27,7 +27,7 @@ Recommended experience:
 
 - Pre-event: 
   * Reach out to under-represented group organizations to encourage and invite people to attend both the new Contributor workshops and the Contributor Summit, as appropriate. Remember a personal invitation, making yourself available, and encouragement can go a long way, versus simply blasting a message out to an email distribution and calling it a day
-    - GoBridge 
+    - GoBridge: https://github.com/gobridge/about-us
     - Women Who Go: https://www.womenwhogo.org/ 
     - IEEE Women in Engineering: http://sites.ieee.org/scv-wie/introduction-to-kubernetes/ 
     - Women in Infrastructure: https://www.meetup.com/Women-in-Infrastructure/ 
