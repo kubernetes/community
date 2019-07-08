@@ -77,11 +77,16 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-scalability-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-scalability-test-failures) | Test Failures and Triage |
 
 <!-- BEGIN CUSTOM CONTENT -->
-# SIG-Scalability Team Members
-* Janek Łukaszewicz (**[@oxddr](https://github.com/oxddr)**), Google
+# Scalability Regression - Contact Points
+
+*Reach out to these folks if you have any inquiries about scalability regressions, e.g.
+regression status, whether it should block the release or not, etc.*
+
+* Janek Lukasiewicz (**[@oxddr](https://github.com/oxddr)**), Google
 * Krzysztof Siedlecki (**[@krzysied](https://github.com/krzysied)**), Google
 * Maciej Borsz (**[@mborsz](https://github.com/mborsz)**), Google
 * Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
+* Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
 
 ## Upcoming 2019 Meeting Dates
    * 07/04
