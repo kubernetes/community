@@ -19,7 +19,7 @@ Recommended experience:
 
 - Work with Leads cross-functionally to ensure accessibility, inclusiveness, and diversity are core to the event  
 - Use previous surveys, events, focus groups, and anything else needed to determine the success of previous events and how to improve for the next one 
-- Review the previous workplan and use feedback and datat to improve it for the upcoming event 
+- Review the previous workplan and use feedback and data to improve it for the upcoming event 
 - Create a work plan for the upcoming event, review it with the events team for feedback and consensus  
 - Execute the workplan, working cross-functionally with other leads and the CNCF Events team
 
