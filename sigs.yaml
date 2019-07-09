@@ -2785,6 +2785,9 @@ committees:
     - github: joelsmith
       name: Joel Smith
       company: Red Hat
+    - github: jonpulsifer
+      name: Jonathan Pulsifer
+      company: Shopify
     - github: liggitt
       name: Jordan Liggitt
       company: Google
