@@ -21,6 +21,9 @@ Ideally, those whose API review priority is shifted in a release-impacting way w
 
 * Protect Kubernetes APIs from disruptive, inconsistent, or destabilizing changes
 
+* Optimize the experience of users consuming our APIs, balanced with the effort
+  required from API authors.
+
 * Respect, maximize, and expand reviewer bandwidth
 
 * Integration with the regular review process, adding as little API-review-specific overhead as possible
