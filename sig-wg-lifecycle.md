@@ -26,7 +26,7 @@ Out of scope for this document: [subproject] creation.
 - [ ] Send an email to the stakeholder SIG mailing lists and steering committee with the sigs.yaml pull request
 
 ### Prerequisites for a UG
-- [ ] Read [ug-governance.md]
+- [ ] Read the [documentation on user group governance](committee-steering/governance/ug-governance.md)
 - [ ] Require to have 2 Chairs to start a User Group.
 - [ ] Require to have at least 2 members other than chairs to be a part of the User Group.
 - [ ] Requires at least 2 sponsors from steering or lazy consensus (In case of no objection within 7 week days).
