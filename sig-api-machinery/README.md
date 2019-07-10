@@ -99,6 +99,8 @@ The following subprojects are owned by sig-api-machinery:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-controller/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sample-apiserver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sample-controller/master/OWNERS
+  - Contact
+    - [Mailing List](https://groups.google.com/forum/#!forum/kubebuilder)
 - **universal-machinery**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/apimachinery/master/OWNERS

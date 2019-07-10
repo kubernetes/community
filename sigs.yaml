@@ -105,6 +105,8 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/apiserver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/OWNERS
   - name: server-sdk
+    contact:
+      mailing_list: https://groups.google.com/forum/#!forum/kubebuilder
     owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder-alpha/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
