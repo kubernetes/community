@@ -2393,7 +2393,8 @@ workinggroups:
       name: Dr. Stefan Schimanski
       company: Red Hat
   meetings:
-  - description: Regular WG Meeting
+  - description: Regular WG Meeting (please join kubernetes-dev@googlegroups.com or
+      kubernetes-wg-component-standard@googlegroups.com to access the notes)
     day: Tuesday
     time: "08:30"
     tz: PT (Pacific Time)

@@ -16,7 +16,7 @@ Develop a standard foundation (philosophy and libraries) for core Kubernetes com
 * SIG Cluster Lifecycle
 
 ## Meetings
-* Regular WG Meeting: [Tuesdays at 08:30 PT (Pacific Time)](https://zoom.us/j/705540322) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting (please join kubernetes-dev@googlegroups.com or kubernetes-wg-component-standard@googlegroups.com to access the notes): [Tuesdays at 08:30 PT (Pacific Time)](https://zoom.us/j/705540322) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI).
 
 ## Organizers
