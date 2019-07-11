@@ -53,6 +53,10 @@ The following subprojects are owned by sig-cloud-provider:
 - **cloud-provider-vsphere**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
+  - Meetings:
+    - Cloud Provider vSphere monthly syncup: [Wednesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly - first Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+      - [Meeting notes and Agenda](https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing).
+      - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR).
 - **kubernetes-cloud-provider**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-sample/master/OWNERS
@@ -61,6 +65,9 @@ The following subprojects are owned by sig-cloud-provider:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/cloudprovider/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/OWNERS
+- **vsphere-csi-driver**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/vsphere-csi-driver/master/OWNERS
 
 ## GitHub Teams
 
