@@ -93,6 +93,15 @@ The following subprojects are owned by sig-cluster-lifecycle:
 - **cluster-api-provider-openstack**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
+- **cluster-api-provider-vsphere**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
+  - Contact
+    - Slack: [#cluster-api-vsphere](https://kubernetes.slack.com/messages/cluster-api-vsphere)
+  - Meetings:
+    - Cluster API vSphere syncup meeting: [Wednesdays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+      - [Meeting notes and Agenda](https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing).
+      - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu).
 - **etcdadm**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
