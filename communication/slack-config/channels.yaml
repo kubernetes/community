@@ -114,6 +114,7 @@ channels:
   - name: kong
   - name: kops-dev
   - name: kops-users
+  - name: kr-dev
   - name: kr-users
   - name: kraken
   - name: krane
