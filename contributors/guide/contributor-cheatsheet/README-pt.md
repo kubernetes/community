@@ -375,3 +375,4 @@ fase de uma revisão do PR. Se você não tem certeza se deve efetuar o squashin
 [Tutorial git Atlassian]: https://www.atlassian.com/git/tutorials
 [Tutorial git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [Informações de Segurança e Divulgações]: https://kubernetes.io/docs/reference/issues-security/security/
+[approve]: https://prow.k8s.io/command-help#approve
