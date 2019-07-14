@@ -390,3 +390,4 @@ _squashing_ perlu dilakukan atau tidak.
 [Tutorial git Atlassian]: https://www.atlassian.com/git/tutorials
 [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [_Security_ dan _Disclosure_ Informasi]: https://kubernetes.io/docs/reference/issues-security/security/
+[approve]: https://prow.k8s.io/command-help#approve

@@ -326,3 +326,4 @@ git checkout -b myfeature
 [Atlassian git 教程]: https://www.atlassian.com/git/tutorials
 [git 魔法]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [安全和披露信息]: https://kubernetes.io/docs/reference/issues-security/security/
+[approve]: https://prow.k8s.io/command-help#approve
