@@ -2758,6 +2758,7 @@ committees:
     The Kubernetes Code of Conduct Committee (CoCC) is the body that is responsible
     for enforcing and maintaining the Kubernetes Code of Conduct.
 
+  charter_link: charter.md
   label: conduct
   leadership:
     chairs:
