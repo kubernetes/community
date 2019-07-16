@@ -82,6 +82,8 @@ channels:
     id: C67TNP3FF
   - name: hephy-users
     id: C678BMZ89
+  - name: id-events
+  - name: id-users
   - name: il-users
   - name: in-dev
   - name: in-events
