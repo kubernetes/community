@@ -2256,6 +2256,56 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/dashboard-metrics-scraper/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+- dir: sig-usability
+  name: Usability
+  mission_statement: >
+    The scope of SIG usability is the core end-user usability of the Kubernetes project.
+    This covers topics like user experience and accessibility. The goals of the SIG
+    are to ensure that the Kubernetes project is maximally usable by users of a variety
+    of different backgrounds and abilities. Examples of efforts include internationalization
+    and accessibility of documentation.
+
+  charter_link: charter.md
+  label: usability
+  leadership:
+    chairs:
+    - github: Rajakavitha1
+      name: Rajakavitha Kodhandapani
+      company: The Linux Foundation
+    - github: hpandeycodeit
+      name: Himanshu Pandey
+      company: Pivotal?
+    - github: tashimi
+      name: Tasha Drew
+      company: VMWare
+    - github: vllry
+      name: Vallery Lancey
+      company: Lyft
+  meetings:
+  - description: Regular SIG Meeting
+    day: TBD
+    time: TBD
+    tz: PT (Pacific Time)
+    frequency: every third week
+    url: tbd
+    archive_url: tbd
+    recordings_url: tbd
+  contact:
+    slack: sig-usability
+    mailing_list: TBD
+    teams:
+    - name: sig-usability-api-reviews
+      description: API Changes and Reviews
+    - name: sig-usability-bugs
+      description: Bug Triage and Troubleshooting
+    - name: sig-usability-feature-requests
+      description: Feature Requests
+    - name: sig-usability-misc
+      description: General Discussion
+    - name: sig-usability-pr-reviews
+      description: PR Reviews
+    - name: sig-usability-proposals
+      description: Design Proposals
 - dir: sig-vmware
   name: VMware
   mission_statement: >
