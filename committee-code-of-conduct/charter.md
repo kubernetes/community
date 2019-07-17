@@ -8,8 +8,8 @@ Conduct](https://git.k8s.io/community/code-of-conduct.md) serves as the primary
 policy document and is supported with additional references and tools as needed.
 Since maintaining a safe environment is a very large part of what the committee
 does, we must carefully balance transparency of process with preserving the
-privacy of those who come to the committee or other community leaders with an
-incident report.
+privacy of all individuals involved when an incident report is made to this
+committee or to any other community leader.
 
 The committee understands how challenging these matters are for everyone
 involved, and that the process is never perfect by nature of its need to serve
