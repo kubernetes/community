@@ -33,53 +33,12 @@ controller is small.
 Like other parts of core Kubernetes, you can learn about contributing code or
 reviewing pull requests via the [Contributors Guide](https://github.com/kubernetes/community/tree/master/contributors/guide).
 
-### Helm
+### Application CRD and Controller
 
-[Helm](https://helm.sh) is the package manager for Kubernetes. The packages for
-Helm are called Charts. Helm version 2 is the current stable release series and
-is currently focused on stability, minor non-breaking feature additions, and
-better documentation.
-
-Helm is a sub-project on a much smaller scale from Kubernetes core, the most
-active repository on GitHub. Contributing to Helm and navigating the project is
-similar to many other open source projects.
-
-The [Helm Contributing Guide](https://github.com/kubernetes/helm/blob/master/CONTRIBUTING.md)
-contains much of what you need to get started including:
-
-* Support and conversation channels
-* Filing issues and the lifecycle of issues
-* Project milestones and what [Semantic Versioning](http://semver.org) means to Helm
-* Details on contributing a patch, via a pull request, and what to expect
-
-The Helm maintainers have a weekly public meeting that's open to anyone to attend.
-The meeting is recorded and available on YouTube for those unable to attend.
-Details on the meeting are in the [Readme](README.md) for SIG Apps.
-
-In addition to Helm itself, there are a number of sub-projects of Helm. These
-projects can be found on the [kubernetes-helm](https://github.com/kubernetes-helm).
-Each of these projects has its own contribution guide but is part of the broader
-Helm project.
-
-### Community Charts
-
-[Charts](https://github.com/kubernetes/charts) is a community curated set of Helm
-packages for Kubernetes. While organizations and individuals are encouraged to
-create their own charts – something Helm provides tools for – the community
-charts are a place for people to use, share, and contribute to.
-
-There are a few ways to contribute to charts:
-
-1. Create or improve charts
-1. Contribute to continuous testing
-1. Write down best practices or document other details
-
-Charts has its own [contributing guide](https://github.com/kubernetes/charts/blob/master/CONTRIBUTING.md)
-and [review guidelines](https://github.com/kubernetes/charts/blob/master/REVIEW_GUIDELINES.md)
-that can act as a launching off point for involvement.
-
-The charts maintainers have a weekly meeting in addition to the normal SIG Apps
-meeting. Details on the meeting are in the [Readme](README.md) for SIG Apps. 
+The [Application CRD and controller](https://github.com/kubernetes-sigs/application)
+provides a method to group application resources and describe the application.
+This SIG sponsored project has a fairly minimal and straight forward [contributing
+process](https://github.com/kubernetes-sigs/application/blob/master/CONTRIBUTING.md)
 
 ### Kompose
 
@@ -87,7 +46,7 @@ meeting. Details on the meeting are in the [Readme](README.md) for SIG Apps.
 (the docker tooling). This project translates Docker compose configuration into
 Kubernetes configuration.
 
-Kompose, like Helm and the community charts, has its own [contributing guide](https://github.com/kubernetes/kompose/blob/master/CONTRIBUTING.md).
+Kompose has its own [contributing guide](https://github.com/kubernetes/kompose/blob/master/CONTRIBUTING.md).
 
 ## Contributing Beyond Code
 
@@ -98,10 +57,8 @@ There are a couple ways to contribute beyond code and the sub-projects. They inc
   tying different tools together, and more. If you are interested in
   contributing a demo please contact the SIG leads via the
   [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-apps)
-* The **App Def Working Group** is a cross collaboration with SIG CLI, SIG API
-  Machinery, and others to look at how we can improve the core tooling and
-  process for operating applications. To produce real world solutions we want
-  input from people who operate applications. If you are interested in learning
-  more please contact the App Def Working Group mailing list or attend a
-  meeting. You can find out more on the
-  [working groups organization page](https://github.com/kubernetes/community/tree/master/wg-app-def)
+* Documentation is a vital resource for those using Kubernetes. The documentation
+  teaches concepts, usage of resources, how to accomplish tasks, and more. When
+  it comes to running applications, such as when leveraging workloads, the
+  documentation has room for improvement. If you know how to run applications
+  in Kubernetes, consider [contributing to better documentation](https://kubernetes.io/docs/contribute/).
