@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Usability Spec
 
 ## Meetings
 * Regular SIG Meeting: [TBDs at TBD PT (Pacific Time)](tbd) (every third week). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=TBD&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](tbd).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1-dYznZR7Q5XCd2bVYoNfMPYs4uNn1aaePQF0q0JQ0uU/).
   * [Meeting recordings](tbd).
 
 ## Leadership
@@ -29,7 +29,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-usability)
-* [Mailing list](TBD)
+* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-usability)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fusability)
 
 ## GitHub Teams
