@@ -261,6 +261,7 @@ channels:
   - name: sig-storage
   - name: sig-testing
   - name: sig-ui
+  - name: sig-usability
   - name: sig-vmware
   - name: sig-windows
   - name: skaffold
