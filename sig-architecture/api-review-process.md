@@ -48,7 +48,7 @@ Voluntary reviews apply towards non-core APIs that do not meet the [mandatory](#
 
 * SIG sponsored CRD based APIs outside of the core that use the "*.x-k8s.io" namespace.
 
-* SIG sponsored subprojects that produce APIs (including CRDs) that outside of *.k8s.io or *.kubernetes.io API groups, and are intended to work with kubectl and/or kube-apiserver. (intent is to ensure consistent user experience across the Kubernetes ecosystem)
+* SIG sponsored subprojects that produce APIs (including CRDs) outside of *.k8s.io or *.kubernetes.io API groups, and are intended to work with kubectl and/or kube-apiserver. (intent is to ensure consistent user experience across the Kubernetes ecosystem)
 
 ## What parts of a PR are "API changes"?
 
