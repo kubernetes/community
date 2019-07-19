@@ -1833,8 +1833,8 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
-    time: "17:30"
-    tz: UTC
+    time: "18:30"
+    tz: Warsaw
     frequency: bi-weekly ([upcoming meeting dates](#upcoming-2019-meeting-dates))
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
     archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
