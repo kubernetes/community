@@ -21,7 +21,7 @@ These are **guidelines**, not rules. Use your best judgement.
   - [Punctuation](#punctuation)
   - [Quotation](#quotation)
 - [Markdown formatting](#markdown-and-formatting)
-  - [Code Blocks](code-blocks)
+  - [Code Blocks](#code-blocks)
   - [Emphasis](#emphasis)
   - [Headings](#headings)
   - [Horizontal Lines](#horizontal-lines)
@@ -176,7 +176,7 @@ These are **guidelines**, not rules. Use your best judgement.
 - When inserting a code block into an ordered list, indent (space) an additional
   two times.
 
-**[Metadata:](metadata)**
+**[Metadata:](#metadata)**
 - If the document is intended to be surfaced on the Contributor Site; include a
   yaml metadata header at the beginning of the document.
 - Metadata must include the `title` attribute.
