@@ -23,7 +23,7 @@ The [charter](charter.md) defines the scope and governance of the Usability Spec
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Rajakavitha Kodhandapani (**[@Rajakavitha1](https://github.com/Rajakavitha1)**), The Linux Foundation
-* Himanshu Pandey (**[@hpandeycodeit](https://github.com/hpandeycodeit)**), Pivotal?
+* Himanshu Pandey (**[@hpandeycodeit](https://github.com/hpandeycodeit)**), Pivotal
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMWare
 * Vallery Lancey (**[@vllry](https://github.com/vllry)**), Lyft
 
