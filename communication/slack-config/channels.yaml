@@ -25,6 +25,18 @@ channels:
   - name: cka-exam-prep
   - name: ckad-exam-prep
   - name: client-go-docs
+  - name: provider-aws
+    id: C0LRMHZ1T
+  - name: provider-azure
+    id: C5HJXTT9Q
+  - name: provider-gcp
+    id: C6WB33KNJ
+  - name: provider-ibmcloud
+    id: C90BWDWCE
+  - name: provider-openstack
+    id: C0LSA3T7C
+  - name: provider-vsphere
+    id: C9PGCDKV5
   - name: cluster-addons
   - name: cluster-api
   - name: cluster-api-aws
@@ -229,8 +241,6 @@ channels:
   - name: sig-architecture
   - name: sig-auth
   - name: sig-autoscaling
-  - name: sig-aws
-  - name: sig-azure
   - name: sig-cli
   - name: sig-cloud-provider
   - name: sig-clstr-life-leads
@@ -247,16 +257,13 @@ channels:
   - name: sig-docs-release
   - name: sig-docs-security
   - name: sig-docs-tools
-  - name: sig-gcp
   - name: sig-high-availability
     archived: true
-  - name: sig-ibmcloud
   - name: sig-instrumentation
   - name: sig-multicluster
   - name: sig-network
   - name: sig-node
   - name: sig-node-rkt
-  - name: sig-openstack
   - name: sig-pm
   - name: sig-scalability
   - name: sig-scheduling
@@ -265,7 +272,6 @@ channels:
   - name: sig-testing
   - name: sig-ui
   - name: sig-usability
-  - name: sig-vmware
   - name: sig-windows
   - name: skaffold
   - name: slack-admins

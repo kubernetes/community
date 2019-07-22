@@ -22,15 +22,6 @@ aliases:
     - mikedanese
   sig-autoscaling-leads:
     - mwielgus
-  sig-aws-leads:
-    - d-nishi
-    - justinsb
-    - kris-nova
-  sig-azure-leads:
-    - craiglpeters
-    - justaugustus
-    - feiskyer
-    - khenidak
   sig-cli-leads:
     - seans3
     - soltysh
@@ -53,12 +44,6 @@ aliases:
     - bradamant3
     - jaredbhatti
     - zacharysarah
-  sig-gcp-leads:
-    - abgworrall
-  sig-ibmcloud-leads:
-    - khahmed
-    - rtheis
-    - spzala
   sig-instrumentation-leads:
     - brancz
     - piosz
@@ -72,10 +57,6 @@ aliases:
   sig-node-leads:
     - dchen1107
     - derekwaynecarr
-  sig-openstack-leads:
-    - adisky
-    - chrigl
-    - hogepodge
   sig-pm-leads:
     - calebamiles
     - jdumars
@@ -112,9 +93,6 @@ aliases:
     - hpandeycodeit
     - tashimi
     - vllry
-  sig-vmware-leads:
-    - cantbewong
-    - frapposelli
   sig-windows-leads:
     - michmike
     - patricklang

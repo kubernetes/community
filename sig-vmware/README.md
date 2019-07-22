@@ -6,16 +6,13 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 --->
-# VMware Special Interest Group
+# [DEPRECATED] VMware Special Interest Group
 
-Bring together members of the VMware and Kubernetes community to maintain, support and run Kubernetes on VMware platforms.
+The VMware Special Interest Group is now a subproject of [SIG Cloud Provider](https://github.com/kubernetes/community/tree/master/sig-cloud-provider).
 
-The [charter](charter.md) defines the scope and governance of the VMware Special Interest Group.
+The [charter](charter.md) defines the scope and governance of the [DEPRECATED] VMware Special Interest Group.
 
-## Meetings
-* Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1RV0nVtlPoAtM0DQwNYxYCC9lHfiHpTNatyv4bek6XtA/edit?usp=sharing).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIqKv-Zq8WbyibQtemChor9y).
+
 
 ## Leadership
 

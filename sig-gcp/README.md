@@ -6,15 +6,13 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 --->
-# GCP Special Interest Group
+# [DEPRECATED] GCP Special Interest Group
 
-A Special Interest Group for building, deploying, maintaining, supporting, and using Kubernetes on the Google Cloud Platform.
+The GCP Special Interest Group is now a subproject of [SIG Cloud Provider](https://github.com/kubernetes/community/tree/master/sig-cloud-provider).
 
-The [charter](charter.md) defines the scope and governance of the GCP Special Interest Group.
+The [charter](charter.md) defines the scope and governance of the [DEPRECATED] GCP Special Interest Group.
 
-## Meetings
-* Regular SIG Meeting: [Thursdays at 16:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit).
+
 
 ## Leadership
 
@@ -27,16 +25,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * [Slack](https://kubernetes.slack.com/messages/sig-gcp)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-gcp)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fgcp)
-
-## Subprojects
-
-The following subprojects are owned by sig-gcp:
-- **gcp-compute-persistent-disk-csi-driver**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/master/OWNERS
-- **gcp-filestore-csi-driver**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/gcp-filestore-csi-driver/master/OWNERS
 
 ## GitHub Teams
 
