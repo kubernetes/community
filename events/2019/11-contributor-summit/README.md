@@ -34,14 +34,15 @@ During [KubeCon/CloudNativeCon](https://events.linuxfoundation.org/events/kubeco
 
 | Role | Lead | Shadow | Notes |
 |---|---|---|---|
-| Event Lead | Paris | Jeff | |
-| Project Manager | Jamie | himanshu | |
-| Registration | Bob | Nabarun | |
-| Marketing | Jonas | nzoueidi | |
-| CNCF Events Manager | Deb Giles | N/A | CNCF/LF Employee |
-| Overall Content | Josh | Yang | Additional roles TBD |
-| New Contributor Workshop | Guin | Rael and/or Allison | Dawn Foster to organize SIG Meet and Greet |
-| Accessibility, Inclusiveness, and Diversity | Tasha | Arnaud | |
+| Event Lead | Paris [@parispittman](https://github.com/parispittman) | Jeff [@jeefy](https://github.com/jeefy) | |
+| Project Manager | Jamie [@JamieRachel](https://github.com/JamieRachel) | himanshu [@hpandeycodeit](https://github.com/hpandeycodeit) | |
+| Registration | Bob [@mrbobbytables](https://github.com/mrbobbytables) | Nabarun [@palnabarun](https://github.com/palnabarun) | |
+| Marketing | Jonas [@jonasrosland](https://github.com/jonasrosland) | nzoueidi [@nzoueidi](https://github.com/nzoueidi) | |
+| CNCF Events Manager | Deb Giles [@debgiles](https://github.com/debgiles) | N/A | CNCF/LF Employee |
+| Overall Content | Josh [@jberkus](https://github.com/jberkus) | Yang [@idealhack](https://github.com/idealhack) | Additional roles TBD |
+| Unconference | Marky [@markyjackson-taulia](https://github.com/markyjackson-taulia) | | |
+| New Contributor Workshop | Guin [@guineveresaenger](https://github.com/guineveresaenger) | Allison [@alisondy](https://github.com/alisondy)<br />Rael [@raelga](https://github.com/raelga) | Dawn Foster [@geekygirldawn](https://github.com/geekygirldawn) to organize SIG Meet and Greet |
+| Accessibility, Inclusiveness, and Diversity | Tasha [@tashimi](https://github.com/tashimi) | Arnaud [@arnaudmz](https://github.com/arnaudmz) | |
 
 ## Code of Conduct
 
