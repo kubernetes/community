@@ -167,6 +167,7 @@ channels:
   - name: kubicorn
   - name: kudo
   - name: kustomize
+  - name: kyverno
   - name: leadership-summit
     archived: true
   - name: linode
