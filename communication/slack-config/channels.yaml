@@ -168,6 +168,7 @@ channels:
   - name: kudo
   - name: kustomize
   - name: leadership-summit
+    archived: true
   - name: linode
   - name: malaysia-users
   - name: malta-users
