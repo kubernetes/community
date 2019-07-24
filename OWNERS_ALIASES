@@ -29,8 +29,8 @@ aliases:
     - soltysh
   sig-cloud-provider-leads:
     - andrewsykim
+    - cheftako
     - hogepodge
-    - jagosan
   sig-cluster-lifecycle-leads:
     - justinsb
     - luxas

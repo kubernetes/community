@@ -23,7 +23,11 @@ The [charter](CHARTER.md) defines the scope and governance of the Cloud Provider
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Andrew Sy Kim (**[@andrewsykim](https://github.com/andrewsykim)**), VMware
+* Walter Fender (**[@cheftako](https://github.com/cheftako)**), Google
 * Chris Hoge (**[@hogepodge](https://github.com/hogepodge)**), OpenStack Foundation
+
+## Emeritus Leads
+
 * Jago Macleod (**[@jagosan](https://github.com/jagosan)**), Google
 
 ## Contact
