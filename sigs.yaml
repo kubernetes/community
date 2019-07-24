@@ -2397,12 +2397,16 @@ workinggroups:
   label: multitenancy
   leadership:
     chairs:
-    - github: davidopp
-      name: David Oppenheimer
-      company: Google
+    - github: srampal
+      name: Sanjeev Rampal
+      company: Cisco
     - github: tashimi
       name: Tasha Drew
       company: VMware
+    emeritus_leads:
+    - github: davidopp
+      name: David Oppenheimer
+      company: Google
   meetings:
   - description: Regular WG Meeting
     day: Tuesday

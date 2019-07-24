@@ -25,7 +25,7 @@ Define the models of multitenancy that Kubernetes will support. Discuss and exec
 
 ## Organizers
 
-* David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google
+* Sanjeev Rampal (**[@srampal](https://github.com/srampal)**), Cisco
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
 
 ## Contact
