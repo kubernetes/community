@@ -68,7 +68,7 @@ The following subprojects are owned by sig-contributor-experience:
   - Contact
     - Slack: [#events](https://kubernetes.slack.com/messages/events)
   - Meetings:
-    - Events Planning Subproject: [Mondays at 10:00 PT (Pacific Time)]() (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+    - Events Planning Subproject: [Mondays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1oLXv5_rM4f645jlXym_Vd7AUq7x6DV-O87E6tcW1sjU/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
 - **github-management**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
