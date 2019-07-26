@@ -31,6 +31,9 @@ Please open an issue against the [kubernetes/test-infra] repository describing
 your issue. If your request is urgent, please escalate to the
 [test-infra on-call] or reach out to `#testing-ops` on Slack.
 
+## Sensitive issues
+
+To report any sensitive information, please email the private github@kubernetes.io list.
 
 [kubernetes/org]: https://github.com/kubernetes/org/issues
 [@kubernetes/owners]: https://github.com/orgs/kubernetes/teams/owners

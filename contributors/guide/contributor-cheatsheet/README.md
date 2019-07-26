@@ -90,6 +90,8 @@ better.
   Experience) about a community issue.
 - conduct@kubernetes.io - Contact the Code of Conduct committee, private mailing
   list.
+- github@kubernetes.io - Mail the [GitHub Administration Team] privately,
+  for sensitive items.
 - steering@kubernetes.io - Mail the steering committee. Public address with
   public archive.
 - steering-private@kubernetes.io - Mail the steering committee privately, for
@@ -396,3 +398,4 @@ the other contributors assigned to review and approve your PR.
 [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [Security and Disclosure Information]: https://kubernetes.io/docs/reference/issues-security/security/
 [approve]: https://prow.k8s.io/command-help#approve
+[GitHub Administration Team]: /github-management#github-administration-team
