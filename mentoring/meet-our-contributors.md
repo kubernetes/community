@@ -6,8 +6,8 @@ Meet Our Contributors gives you a monthly one-hour opportunity to ask questions 
 
 ## When:
 Every first Wednesday of the month at the following times. Grab a copy of the calendar to yours from [kubernetes.io/community](https://kubernetes.io/community/)
-* 02:30pm UTC
-* 08:00pm UTC 
+* 02:30pm UTC [Convert to your timezone](https://www.thetimezoneconverter.com/?t=02%3A30%20pm&tz=UTC&).
+* 08:00pm UTC [Convert to your timezone](https://www.thetimezoneconverter.com/?t=08%3A00%20pm&tz=UTC&).
 
 Tune into the [Kubernetes YouTube Channel](https://www.youtube.com/c/KubernetesCommunity/live) to follow along with video and [#meet-our-contributors](https://kubernetes.slack.com/messages/meet-our-contributors) on Slack for questions and discourse.
 
