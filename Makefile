@@ -1,4 +1,6 @@
-IMAGE_NAME=golang:1.11
+IMAGE_NAME=golang:1.12
+export GO111MODULE=on
+export GOPROXY?=https://proxy.golang.org
 
 default: \
 	generate \
@@ -10,7 +12,7 @@ generate:
 	go run ./generator/app.go
 
 generate-dockerized:
-	docker run --rm -e WHAT -v $(shell pwd):/go/src/app:Z $(IMAGE_NAME) make -C /go/src/app generate
+	docker run --rm -e WHAT -e GO111MODULE -e GOPROXY -v $(shell pwd):/go/src/app:Z $(IMAGE_NAME) make -C /go/src/app generate
 
 verify:
 	@hack/verify.sh
