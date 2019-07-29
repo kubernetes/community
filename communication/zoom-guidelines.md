@@ -195,7 +195,7 @@ Thanks for making Kubernetes meetings work great!
 [Office Hours]: /events/office-hours.md
 [Meet Our Contributors]: /mentoring/meet-our-contributors.md
 [moderation]: ./moderation.md
-[zoom admins]: /moderators.md#zoom
+[zoom admins]: /communication/moderators.md#zoom
 [host key]: https://support.zoom.us/hc/en-us/articles/205172555-Host-Key
 [CNCF Service Desk]: https://github.com/cncf/servicedesk
 [Kubernetes Code of Conduct]: /code-of-conduct.md
