@@ -19,7 +19,7 @@ APAC Coordinators currently meet at [6:00 UTC](http://www.thetimezoneconverter.c
 
 | **Name** | **GitHub** | **Slack** | **Timezone** |
 | ------ | ------ | ------ | ------ |
-| Yang Li | [@idealhack](https://github.com/idealhack) | `@idealhack` | [CST - China Standard Time](https://time.is/China) |
+| Yang Li | [@idealhack](https://github.com/idealhack) | `@idealhack` | [JST - Japan Standard Time](https://time.is/Japan) |
 | Aravind Putrevu | [@aravindputrevu](https://github.com/aravindputrevu) | `@aravindputrevu` | [IST - Indian Standard Time](https://time.is/India) |
 | Alison Dowdney | [@alisondy](https://github.com/alisondy) | `@alisondy` | [NZST - New Zealand Standard Time](https://time.is/New_Zealand) |
 | Saiyam Pathak | [@saiyam1814](https://github.com/saiyam1814) | `@sammy` | [IST - Indian Standard Time](https://time.is/India) |
