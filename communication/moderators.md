@@ -77,7 +77,7 @@ Regional category moderators seats (per category): 3
 | Name                    | Kubernetes Discuss ID | Region | Timezone                                           |
 |-------------------------|-----------------------|--------|----------------------------------------------------|
 | Peter (Xiang Peng) Zhao | @xiangpengzhao        | APAC   | [CST - China Standard Time](https://time.is/China) |
-| Yang Li                 | @idealhack            | APAC   | [CST - China Standard Time](https://time.is/China) |
+| Yang Li                 | @idealhack            | APAC   | [JST - Japan Standard Time](https://time.is/Japan) |
 | Puja Abbassi            | @puja                 | EMEA   | [CET - Central European Time](https://time.is/CET) |
 
 **[German]**
@@ -171,7 +171,7 @@ Moderators seats: 10
 | Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Noah Kantrowitz     | @coderanger         | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)       |
-| Yang Li             | @idealhack          | APAC     | [CST - China Standard Time](https://time.is/China)      |
+| Yang Li             | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
 
 
 #### Moderators Pro Tempore
