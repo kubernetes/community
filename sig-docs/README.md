@@ -25,7 +25,7 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), Stripe
+* Jennifer Rondeau (**[@Bradamant3](https://github.com/Bradamant3)**), Stripe
 * Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**), Google
 * Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
 

@@ -22,8 +22,8 @@ The [charter](charter.md) defines the scope and governance of the Windows Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Patrick Lang (**[@PatrickLang](https://github.com/PatrickLang)**), Microsoft
 * Michael Michael (**[@michmike](https://github.com/michmike)**), VMware
-* Patrick Lang (**[@patricklang](https://github.com/patricklang)**), Microsoft
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-windows)

@@ -1126,7 +1126,7 @@ sigs:
   label: docs
   leadership:
     chairs:
-    - github: bradamant3
+    - github: Bradamant3
       name: Jennifer Rondeau
       company: Stripe
     - github: jaredbhatti
@@ -2128,12 +2128,12 @@ sigs:
   label: windows
   leadership:
     chairs:
+    - github: PatrickLang
+      name: Patrick Lang
+      company: Microsoft
     - github: michmike
       name: Michael Michael
       company: VMware
-    - github: patricklang
-      name: Patrick Lang
-      company: Microsoft
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
@@ -2583,7 +2583,7 @@ committees:
   label: code-of-conduct
   leadership:
     chairs:
-    - github: bradamant3
+    - github: Bradamant3
       name: Jennifer Rondeau
       company: Stripe
     - github: carolynvs
