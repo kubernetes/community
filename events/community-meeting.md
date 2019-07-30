@@ -5,7 +5,7 @@ a).
  
 See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any [iCal client](https://en.wikipedia.org/wiki/ICalendar). Do NOT copy the meetings over to a your personal calendar, you will miss meeting updates. Instead use your client's calendaring feature to say you are attending the meeting so that any changes made to meetings will be reflected on your personal calendar. 
 
-All meetings are archived on the [Youtube Channel](https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ).
+All meetings are archived on the [YouTube Channel](https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ).
 
 Quick links:
 
@@ -19,7 +19,7 @@ It also provides a forum for discussion of project-level concerns that might nee
 
 ## Notetaker(s)
 
-Notes from the meeting are published to the [Kubernetes dev](https://groups.google.com/forum/#!forum/kubernetes-dev) list. 
+Notes from the meeting are published to [this forum thread](https://discuss.kubernetes.io/t/kubernetes-weekly-community-meeting-notes/35/53) for wider distribution. 
 A good notetaker is important to help get the information out to people who cannot attend. 
 Volunteers are always welcome to either add their notes directly to the document, or inform the host that they would like to help take notes at the beginning of the call.
 
@@ -36,12 +36,13 @@ General speaking the meeting is structured as follows:
   - Development Release
   - Stable Release and point releases
   - Older stable releases and point releases
-- Graph of the Week (~2 minutes)
-  - This is meant to bring attention to different [devstats graphs](https://k8s.devstats.cncf.io/)
+- Contributor Tip of the Week (~2 minutes)
+  - These can be a variety of topics, including [devstats graphs](https://k8s.devstats.cncf.io/)
 - SIG Updates
   - Three SIGs per meeting, 10 minutes per SIG 
 - Announcements (~5 minutes)
   - Any other community announcements should go here
+  - Shoutouts, an aggregation of thanks from community members to other contributors via the #shoutouts channel 
 
 ## Demos
 
@@ -81,12 +82,13 @@ The SIG Update should mention:
 - Any pending Kubernetes Enhancement Proposals (KEPs) or general big ideas that might warrant outside input
 - Prior 1.X.Y release patches in flight status
 - Current 1.X release targeted feature status
+- Rescheduling an update can happen, but is strongly discouraged as the schedule is done with as much lead time as possible to allow SIGs time to plan ahead
+  - SIGs should consider asking someone who is not a chair or lead to give this update as a mentorship/growth opportunity to newer members
+  - There is a [pregenerated slide template](https://docs.google.com/presentation/d/1-nTvKCiqu9UvFYUeM6p6RIqHS5-H-u3_x-V4xj_eIWo/edit#slide=id.g401c104a3c_0_0) that you can use for your status
+  - The update belongs entirely to the SIG, there will be periods when "boring" work happens and the SIG might want to not give a status update, instead consider a shorter update that at least lets the community know if you're in a quiet period. Informing the community that you've been clearing out the backlog in a 1 minute status is much better than not having a status report because you're concerned about not filling out the template in full. Just cut out what doesn't apply to you. 
 
 Since you only usually have ~10 minutes generally speaking if something is internal only to your SIG and doesn't affect others it doesn't need to be mentioned, people can always attend your SIG meeting for the details.
 
 ## Archives
 
-The document gets slow as we add notes, so it is archived regularly into another document:
-
-- [2017](https://docs.google.com/document/d/1sAH-74kIGROvM5MhyAkbJPVcuE9-RDHiOqfv_4PAGdw/edit#heading=h.en8cy6hno0c6)
-- [2014-2016](https://docs.google.com/a/google.com/document/d/1fcs_POhXJCL1dqYrG3IxE4Ivh8jh2JYLCCdgRmBQeb8/edit?usp=sharing) 
+The document gets slow as we add notes, so it is archived regularly into the [Meeting Notes Archive](https://git.kubernetes.io/community/communication/meeting-notes-archive).
