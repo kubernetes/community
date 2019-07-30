@@ -22,7 +22,7 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 ## Contact
 * Private Mailing List: conduct@kubernetes.io
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fconduct)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fcode-of-conduct)
 
 ## GitHub Teams
 

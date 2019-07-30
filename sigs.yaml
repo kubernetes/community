@@ -2580,7 +2580,7 @@ committees:
     for enforcing and maintaining the Kubernetes Code of Conduct.
 
   charter_link: charter.md
-  label: conduct
+  label: code-of-conduct
   leadership:
     chairs:
     - github: bradamant3
