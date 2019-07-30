@@ -180,8 +180,6 @@ aliases:
   provider-gcp:
     - abgworrall
   provider-ibmcloud:
-    - khahmed
-    - rtheis
     - spzala
   provider-openstack:
     - adisky
