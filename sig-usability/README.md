@@ -32,6 +32,13 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-usability)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fusability)
 
+## Subprojects
+
+The following subprojects are owned by sig-usability:
+- **sig-usability**
+  - Owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/sig-usability/master/OWNERS
+
 ## GitHub Teams
 
 The below teams can be mentioned on issues and PRs in order to get attention from the right people.

@@ -2118,6 +2118,10 @@ sigs:
       description: PR Reviews
     - name: sig-usability-proposals
       description: Design Proposals
+  subprojects:
+  - name: sig-usability
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/sig-usability/master/OWNERS
 - dir: sig-windows
   name: Windows
   mission_statement: >
