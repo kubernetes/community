@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 The VMware Special Interest Group is now a subproject of [SIG Cloud Provider](https://github.com/kubernetes/community/tree/master/sig-cloud-provider).
 
+### (This directory is a placeholder to preserve links. Please remove after 6 months or the release of Kubernetes 1.17, whichever comes first.)
+
 The [charter](charter.md) defines the scope and governance of the [DEPRECATED] VMware Special Interest Group.
 
 
