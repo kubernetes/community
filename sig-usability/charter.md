@@ -26,7 +26,7 @@ and positive. Examples of efforts include user research, internationalization an
 - internationalization - https://github.com/kubernetes/kubernetes/tree/master/pkg/kubectl/util/i18n
 
 #### Repos
-The SIG owns a `kubernetes/user-research` repo for the purpose of documenting:
+The SIG owns a `kubernetes-sigs/sig-usability` repo for the purpose of documenting:
 
 - Common end user profiles (aka personas)
 - Ongoing list of research studies and findings
