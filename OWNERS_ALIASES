@@ -41,7 +41,7 @@ aliases:
     - cblecker
     - nikhita
   sig-docs-leads:
-    - bradamant3
+    - Bradamant3
     - jaredbhatti
     - zacharysarah
   sig-instrumentation-leads:
@@ -94,8 +94,8 @@ aliases:
     - tashimi
     - vllry
   sig-windows-leads:
+    - PatrickLang
     - michmike
-    - patricklang
   wg-apply-leads:
     - lavalamp
   wg-component-standard-leads:
@@ -142,7 +142,7 @@ aliases:
     - foxish
     - liyinan926
   committee-code-of-conduct:
-    - bradamant3
+    - Bradamant3
     - carolynvs
     - eparis
     - jdumars

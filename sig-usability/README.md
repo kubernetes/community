@@ -24,7 +24,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Rajakavitha Kodhandapani (**[@Rajakavitha1](https://github.com/Rajakavitha1)**), The Linux Foundation
 * Himanshu Pandey (**[@hpandeycodeit](https://github.com/hpandeycodeit)**), Pivotal
-* Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMWare
+* Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
 * Vallery Lancey (**[@vllry](https://github.com/vllry)**), Lyft
 
 ## Contact
