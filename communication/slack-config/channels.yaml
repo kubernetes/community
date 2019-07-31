@@ -136,6 +136,7 @@ channels:
   - name: kube-aws
   - name: kube-deploy
   - name: kube-monkey
+  - name: kube-oidc-proxy
   - name: kube-router
   - name: kube-score
   - name: kube-spawn
