@@ -1062,12 +1062,15 @@ sigs:
       description: Test Failures and Triage
   subprojects:
   - name: community
+    description: Owns and manages overall community repo, including SIG description and charter maintenance.
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/OWNERS
   - name: community-management
+    description: Manages all communications mechanisms for the community, including Slack, mailing lists, Zoom, social media, and YouTube.
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
   - name: contributors-documentation
+    description: writes and maintains documentation around contributing to Kubernetes, including the Contributor's Guide, Developer's Guide, and contributor website.
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
@@ -1079,11 +1082,13 @@ sigs:
       frequency: biweekly
       url: https://docs.google.com/document/d/1gdFWfkrapQclZ4-z4Lx2JwqKsJjXXUOVoLhBzZiZgSk/edit
   - name: devstats
+    description: Maintains and updates https://k8s.devstats.cncf.io, including taking requests for new charts.
     contact:
       slack: devstats
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
   - name: events
+    description: Creates and runs contributor-focused events, such as the Contributor Summit.  Event Teams are part of this subproject.
     contact:
       slack: events
     owners:
@@ -1096,20 +1101,25 @@ sigs:
       frequency: weekly
       url: https://docs.google.com/document/d/1oLXv5_rM4f645jlXym_Vd7AUq7x6DV-O87E6tcW1sjU/edit
   - name: github-management
+    description: Manages and controls Github permissions, repos, and groups, including Org Membership.
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
     - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
   - name: k8s.io
+    description: Creates and maintains shortcuts and automation apps running in the k8s.io domain.
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
   - name: mentoring
+    description: Oversees and develops programs for helping contributors ascend the contributor ladder, including the New Contributor Workshops, Meet Our Contributors, and other programs.
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
   - name: repo-infra
+    description: Creates and maintains tools and templates for kubernetes-namespace repositories.
     owners:
     - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
   - name: slack-infra
+    description: Creates and maintains tools and automation for Kubernetes Slack.
     contact:
       slack: slack-infra
     owners:
