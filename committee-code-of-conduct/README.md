@@ -39,13 +39,13 @@ Note that the links to display team membership will only work if you are a membe
 The members and their terms are as follows:
 
 ### Term ends on August 7, 2019
-- Carolyn Van Slyck (Microsoft) - 1 year
 - Eric Paris (Red Hat) - 1 year
 - Jennifer Rondeau (Heptio) - 1 year
 
 ### Term ends on August 7, 2020
 - Jaice Singer Dumars (Google) - 2 years
 - Paris Pittman (Google) - 2 years
+- Carolyn Van Slyck (Microsoft) - 2 year
 
 Please see the [bootstrapping document](./bootstrapping-process.md) for more information on how members are picked, their responsibilities, and how the committee will initially function.
 
