@@ -135,9 +135,6 @@ The following subprojects are owned by sig-cluster-lifecycle:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
   - Contact
     - Slack: [#kubeadm](https://kubernetes.slack.com/messages/kubeadm)
-- **kubeadm-dind-cluster**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kubeadm-dind-cluster/master/OWNERS
 - **kubernetes-anywhere**
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS

@@ -986,9 +986,6 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
-  - name: kubeadm-dind-cluster
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kubeadm-dind-cluster/master/OWNERS
   - name: kubernetes-anywhere
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
