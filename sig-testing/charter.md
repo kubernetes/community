@@ -48,11 +48,8 @@ health of the project.
 
 ##### Ongoing Support
 
-- The [Release Team test-infra role] is staffed by a member of SIG Testing, as
-  such their responsibilities are within the scope of this SIG, including
-  the maintenance of release jobs
 - We actively collaborate with SIG Contributor Experience, often producing
-  tooling that they are responsible for using to implement polices and
+  tooling that they are responsible for using to implement policies and
   processes that they own, e.g. the Github Administration subproject uses
   [peribolos] and [label_sync] to reduce the toil involved
 - We reserve the right to halt automation and infrastructure that we own,
