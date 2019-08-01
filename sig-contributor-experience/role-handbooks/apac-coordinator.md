@@ -23,5 +23,8 @@ APAC Coordinators currently meet at [6:00 UTC](http://www.thetimezoneconverter.c
 | Aravind Putrevu | [@aravindputrevu](https://github.com/aravindputrevu) | `@aravindputrevu` | [IST - Indian Standard Time](https://time.is/India) |
 | Alison Dowdney | [@alisondy](https://github.com/alisondy) | `@alisondy` | [NZST - New Zealand Standard Time](https://time.is/New_Zealand) |
 | Saiyam Pathak | [@saiyam1814](https://github.com/saiyam1814) | `@sammy` | [IST - Indian Standard Time](https://time.is/India) |
+| Peeyush Gupta | [@Pensu](https://github.com/Pensu) | `@pensu91` | [IST - Indian Standard Time](https://time.is/India) |
+| Nikhita Raghunath | [@nikhita](https://github.com/nikhita) | `@nikhita` | [IST - Indian Standard Time](https://time.is/India) |
+| Jintao Zhang | [@tao12345666333](https://github.com/tao12345666333) | `@TaoBeier` | [CST - China Standard Time](https://time.is/China) |
 
 Team members will be updated as our meetings go on.
