@@ -2092,13 +2092,13 @@ sigs:
       company: Lyft
   meetings:
   - description: Regular SIG Meeting
-    day: TBD
-    time: TBD
+    day: Tuesday
+    time: 2 PM
     tz: PT (Pacific Time)
     frequency: every third week
-    url: tbd
+    url: https://zoom.us/j/3832562240
     archive_url: https://docs.google.com/document/d/1-dYznZR7Q5XCd2bVYoNfMPYs4uNn1aaePQF0q0JQ0uU/
-    recordings_url: tbd
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0eY-U8DVJWHBwKvMDEtOxx
   contact:
     slack: sig-usability
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-usability
