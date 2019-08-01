@@ -1948,11 +1948,11 @@ sigs:
       name: Timothy St. Clair
       company: VMware
   meetings:
-  - description: Regular SIG Meeting
+  - description: SIG Testing Office Hours
     day: Tuesday
-    time: "13:00"
+    time: "10:00"
     tz: PT (Pacific Time)
-    frequency: weekly
+    frequency: bi-weekly starting Tuesday August 13, 2019
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
     archive_url: https://bit.ly/k8s-sig-testing-notes
     recordings_url: https://bit.ly/k8s-sig-testing-videos
