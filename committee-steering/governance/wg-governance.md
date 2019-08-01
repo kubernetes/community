@@ -11,7 +11,7 @@ more Subprojects owned by SIGs).
 Because a working group is an official part of the Kubernetes project it is subject to steering committee oversight
 over its formation and disbanding.
 
-The tactical checklist to creation and/or retirement is found in the [SIG / WG lifeycle] document.  
+The tactical checklist to creation and/or retirement is found in the [SIG / WG Lifecycle] document.
 
 ## Goals of the process
 
