@@ -13,7 +13,7 @@ The scope of SIG usability is the core end-user usability of the Kubernetes proj
 The [charter](charter.md) defines the scope and governance of the Usability Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 2 PM PT (Pacific Time)](https://zoom.us/j/3832562240) (every third week). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=2 PM&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Tuesdays at 14:00 PT (Pacific Time)](https://zoom.us/j/3832562240) (every third week). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1-dYznZR7Q5XCd2bVYoNfMPYs4uNn1aaePQF0q0JQ0uU/).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0eY-U8DVJWHBwKvMDEtOxx).
 
