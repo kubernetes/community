@@ -13,7 +13,7 @@ Some common tasks include:
 - help with regional channels on Slack
 - run the APAC Contributor Experience SIG update meeting
 
-APAC Coordinators currently meet at [6:00 UTC](http://www.thetimezoneconverter.com/?t=06:00&tz=UTC) on Thursday every two weeks starting from June 13th, the [meeting notes doc](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/) is the same one as the SIG's.
+APAC Coordinators currently meet at [5:00 UTC](http://www.thetimezoneconverter.com/?t=05:00&tz=UTC) on Thursday every two weeks, the [meeting notes doc](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/) is the same one as the SIG's, join our [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex) to get the calendar invite.
 
 ## Team
 
