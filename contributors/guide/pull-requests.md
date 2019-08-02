@@ -193,7 +193,7 @@ Are you sure Feature-X is something the Kubernetes team wants or will accept? Is
 
 It's better to get confirmation beforehand.
 
-When you want to make a large or otherwise significant change, you should follow the [Kubernetes Enhancement Proposal process](/keps/0001-kubernetes-enhancement-proposal-process.md).
+When you want to make a large or otherwise significant change, you should follow the [Kubernetes Enhancement Proposal process](https://git.k8s.io/enhancements/keps/0001-kubernetes-enhancement-proposal-process.md).
 
 Even for small changes, it is often a good idea to gather feedback on an issue you filed, or even simply ask in the appropriate SIG's Slack channel to invite discussion and feedback from code owners. Here's a [list of SIGs](/sig-list.md).
 
