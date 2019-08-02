@@ -234,6 +234,7 @@ channels:
   - name: ro-users
   - name: ru-users
   - name: se-users
+  - name: sealed-secrets
   - name: ship
   - name: shippable
   - name: shipper
