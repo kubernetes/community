@@ -52,6 +52,7 @@ The following subprojects are owned by sig-storage:
     - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-fc/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-iscsi/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-utils/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-proxy/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-release-tools/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-test/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/docs/master/OWNERS
