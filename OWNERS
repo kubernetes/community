@@ -1,17 +1,11 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
-reviewers:
-  - calebamiles
-  - castrojo
-  - cblecker
-  - idvoretskyi
-  - jdumars
-  - parispittman
 approvers:
   - calebamiles
   - castrojo
   - cblecker
   - idvoretskyi
   - jdumars
+  - nikhita
   - parispittman
   - committee-steering
