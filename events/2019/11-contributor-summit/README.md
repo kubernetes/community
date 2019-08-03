@@ -39,8 +39,10 @@ During [KubeCon/CloudNativeCon](https://events.linuxfoundation.org/events/kubeco
 | Registration | Bob [@mrbobbytables](https://github.com/mrbobbytables) | Nabarun [@palnabarun](https://github.com/palnabarun) | |
 | Marketing | Jonas [@jonasrosland](https://github.com/jonasrosland) | nzoueidi [@nzoueidi](https://github.com/nzoueidi) | |
 | CNCF Events Manager | Deb Giles [@debgiles](https://github.com/debgiles) | N/A | CNCF/LF Employee |
-| Overall Content | Josh [@jberkus](https://github.com/jberkus) | Yang [@idealhack](https://github.com/idealhack) | Additional roles TBD |
-| Unconference | Marky [@markyjackson-taulia](https://github.com/markyjackson-taulia) | | |
+| Content Coordinator | Josh [@jberkus](https://github.com/jberkus) | | |
+| Programmed Sessions | Yang Li [@idealhack](https://github.com/idealhack) | Shadow TBD[](https://github.com/) | |
+| Workshops | John Belamaric [@johnbelamaric](https://github.com/johnbelamaric) | Barnabas [@makoscafee](https://github.com/makoscafee) | |
+| Unconference | Marky [@markyjackson-taulia](https://github.com/markyjackson-taulia) | Cody [@thecrudge](https://github.com/thecrudge) | |
 | New Contributor Workshop | Guin [@guineveresaenger](https://github.com/guineveresaenger) | Allison [@alisondy](https://github.com/alisondy)<br />Rael [@raelga](https://github.com/raelga) | Dawn Foster [@geekygirldawn](https://github.com/geekygirldawn) to organize SIG Meet and Greet |
 | Accessibility, Inclusiveness, and Diversity | Tasha [@tashimi](https://github.com/tashimi) | Arnaud [@arnaudmz](https://github.com/arnaudmz) | |
 
