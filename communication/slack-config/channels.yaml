@@ -211,6 +211,7 @@ channels:
   - name: nl-users
   - name: node-problem-detector
   - name: norw-users
+  - name: octant
   - name: office-hours
   - name: okteto
   - name: opencontainers
