@@ -1,6 +1,6 @@
 # Validation Suite Testing in Kubernetes
 
-A Kubernetes Validation suite is a subset of e2e tests that are used to
+A Kubernetes Validation suite is a group of e2e tests that are used to
 validate functionality of an optional capability of Kubernetes for use
 with a specific release. Validation suites can grow or shrink over time, and can also
 change as a functionality progresses from alpha, to beta, and to GA. The flexibility
@@ -14,10 +14,9 @@ suites can be created to validate the functionality of an optional
 capability and the more lengthy community discussion of whether the validation suite
 should be promoted to become a Conformance profile or merged into the base
 Conformance Tests can be deferred.  Validation suites allow the Kuberentes e2e
-testing team to rapidly create test suites for a variety of use cases.  They may
-also be used to identify a group of tests that validate functionality on an
-optional platform such as Kuberenetes on Windows.  Kubernetes SIG groups are
-welcome to define Validation suites as needed.  Validation suites should not 
+testing team to rapidly create test suites for a variety of use cases.    
+Kubernetes SIG groups are welcome to define Validation suites as needed.  
+Validation suites should not 
 be confused with [Conformance Tests](../sig-architecture/conformance-tests.md)
 which refers to the SIG Architecture core set of interoperable features that
 all conformant Kubernetes clusters must support. However, it is important to note that
