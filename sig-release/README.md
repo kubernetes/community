@@ -47,15 +47,12 @@ The following subprojects are owned by sig-release:
   - Description: The Licensing subproject is responsible for analyzing/reporting/remediating licensing concerns within the Kubernetes project orgs.
   - Owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/licensing/OWNERS
-- **publishing-bot**
-  - Description: The publishing-bot publishes the contents of staging repos that live in k8s.io/kubernetes/staging to their own repositories in kubernetes
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
 - **release-engineering**
   - Description: The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
   - Owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-notes/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
 - **release-team**
