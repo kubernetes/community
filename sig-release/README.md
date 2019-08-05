@@ -13,9 +13,9 @@ Ensure quality Kubernetes releases
 The [charter](charter.md) defines the scope and governance of the Release Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 21:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=21:00&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Fu6HxXQu8wl6TwloGUEOXVzZ1rwZ72IAhglnaAMCPqA/edit?usp=sharing).
-  * [Meeting recordings](https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ).
+* Regular SIG Meeting: [Mondays at 15:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+  * [Meeting notes and Agenda](https://bit.ly/k8s-sig-release-meeting).
+  * [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 
 ## Leadership
 
@@ -55,6 +55,12 @@ The following subprojects are owned by sig-release:
     - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
+  - Contact
+    - Slack: [#release-management](https://kubernetes.slack.com/messages/release-management)
+  - Meetings:
+    - Regular SIG Meeting: [Mondays at 15:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+      - [Meeting notes and Agenda](https://bit.ly/k8s-releng-meeting).
+      - [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 - **release-team**
   - Description: The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
   - Owners:

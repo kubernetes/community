@@ -1561,13 +1561,13 @@ sigs:
       company: Google
   meetings:
   - description: Regular SIG Meeting
-    day: Tuesday
-    time: "21:00"
+    day: Monday
+    time: "15:00"
     tz: UTC
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    archive_url: https://docs.google.com/document/d/1Fu6HxXQu8wl6TwloGUEOXVzZ1rwZ72IAhglnaAMCPqA/edit?usp=sharing
-    recordings_url: https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ
+    archive_url: https://bit.ly/k8s-sig-release-meeting
+    recordings_url: https://bit.ly/k8s-sig-release-videos
   contact:
     slack: sig-release
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-release
@@ -1594,12 +1594,23 @@ sigs:
   - name: release-engineering
     description: |
       The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
+    contact:
+      slack: release-management
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-notes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
+    meetings:
+    - description: Regular SIG Meeting
+      day: Monday
+      time: "15:00"
+      tz: UTC
+      frequency: biweekly
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://bit.ly/k8s-releng-meeting
+      recordings_url: https://bit.ly/k8s-sig-release-videos
   - name: release-team
     description: |
       The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
