@@ -212,6 +212,7 @@ channels:
   - name: node-problem-detector
   - name: norw-users
   - name: office-hours
+  - name: okteto
   - name: opencontainers
   - name: openshift-dev
   - name: openshift-users
