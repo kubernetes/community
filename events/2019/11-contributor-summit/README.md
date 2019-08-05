@@ -44,7 +44,7 @@ During [KubeCon/CloudNativeCon](https://events.linuxfoundation.org/events/kubeco
 | Workshops | John Belamaric [@johnbelamaric](https://github.com/johnbelamaric) | Barnabas [@makoscafee](https://github.com/makoscafee) | |
 | Unconference | Marky [@markyjackson-taulia](https://github.com/markyjackson-taulia) | Cody [@thecrudge](https://github.com/thecrudge) | |
 | New Contributor Workshop | Guin [@guineveresaenger](https://github.com/guineveresaenger) | Allison [@alisondy](https://github.com/alisondy)<br />Rael [@raelga](https://github.com/raelga) | Dawn Foster [@geekygirldawn](https://github.com/geekygirldawn) to organize SIG Meet and Greet |
-| Accessibility, Inclusiveness, and Diversity | Tasha [@tashimi](https://github.com/tashimi) | Arnaud [@arnaudmz](https://github.com/arnaudmz) | |
+| Accessibility, Inclusiveness, and Diversity | Tasha [@tashimi](https://github.com/tashimi) | Arnaud [@ameukam](https://github.com/ameukam) | |
 
 ## Code of Conduct
 
