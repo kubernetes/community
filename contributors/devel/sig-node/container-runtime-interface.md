@@ -3,10 +3,12 @@
 ## What is CRI?
 
 CRI (_Container Runtime Interface_) consists of a
-[protobuf API](https://git.k8s.io/kubernetes/pkg/kubelet/apis/cri/runtime/v1alpha2/api.proto),
 specifications/requirements (to-be-added),
+[protobuf API](https://git.k8s.io/kubernetes/staging/src/k8s.io/cri-api/pkg/apis/runtime/v1alpha2/api.proto),
 and [libraries](https://git.k8s.io/kubernetes/pkg/kubelet/server/streaming)
-for container runtimes to integrate with kubelet on a node. CRI is currently in Alpha.
+for container runtimes to integrate with kubelet on a node. The CRI API is
+currently in Alpha, and the CRI-Docker integration is used by default as of
+Kubernetes 1.7+.
 
 In the future, we plan to add more developer tools such as the CRI validation
 tests.
@@ -26,14 +28,7 @@ pluggable container runtimes and build a healthier ecosystem.
 
 ## How to use CRI?
 
-For Kubernetes 1.6+:
-
-1. Start the image and runtime services on your node. You can have a single
-   service acting as both image and runtime services.
-2. Set the kubelet flags
-   - Pass the unix socket(s) to which your services listen to kubelet:
-     `--container-runtime-endpoint` and `--image-service-endpoint`.
-   - Use the "remote" runtime by `--container-runtime=remote`.
+See the [CRI installation documentation](https://kubernetes.io/docs/setup/cri/).
 
 CRI is still young and we are actively incorporating feedback from developers
 to improve the API. Although we strive to maintain backward compatibility,
@@ -54,7 +49,6 @@ The old, pre-CRI Docker integration was removed in 1.7.
 The Kubernetes 1.5 [blog post on CRI](https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/)
 serves as a general introduction.
 
-
 Below is a mixed list of CRI specifications/requirements, design docs and
 proposals. We are working on adding more documentation for the API.
 
@@ -74,7 +68,7 @@ proposals. We are working on adding more documentation for the API.
 
 ## [Status update](#status-update)
 ### Kubernetes v1.7 release (Docker-CRI integration GA, container metrics API)
-  - The Docker CRI integration has been promoted to GA. 
+  - The Docker CRI integration has been promoted to GA.
   - The legacy, non-CRI Docker integration has been completely removed from
     Kubelet. The deprecated `--enable-cri` flag has been removed.
   - CRI has been extended to support collecting container metrics from the
@@ -104,6 +98,9 @@ default in Kubelet**.
 
 #### [CRI known issues](#cri-1.5-known-issues):
 
+Note, these are known issues as of the 1.5 release. They may or may not have
+been fixed since.
+
   - [#27097](https://github.com/kubernetes/kubernetes/issues/27097): Container
     metrics are not yet defined in CRI.
   - [#36401](https://github.com/kubernetes/kubernetes/issues/36401): The new
@@ -117,6 +114,9 @@ default in Kubelet**.
        including user data in the redirect URL.
 
 #### [Docker CRI integration known issues](#docker-cri-1.5-known-issues)
+
+Note, these are known issues as of the 1.5 release. They may or may not have
+been fixed since.
 
   - Docker compatibility: Support only Docker v1.11 and v1.12.
   - Network:
