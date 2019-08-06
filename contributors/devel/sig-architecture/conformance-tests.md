@@ -33,6 +33,9 @@ specifically, a test is eligible for promotion to conformance if:
 
 - it tests only GA, non-optional features or APIs (e.g., no alpha or beta
   endpoints, no feature flags required, no deprecated features)
+- it does not require direct access to kubelet's API to pass (nor does it
+  require indirect access via the API server node proxy endpoint); it MAY
+  use the kubelet API for debugging purposes upon failure
 - it works for all providers (e.g., no `SkipIfProviderIs`/`SkipUnlessProviderIs`
   calls)
 - it is non-privileged (e.g., does not require root on nodes, access to raw
