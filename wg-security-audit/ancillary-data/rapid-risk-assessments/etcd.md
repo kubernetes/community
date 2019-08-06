@@ -46,6 +46,7 @@ There shouldn't be; documentation specifically states:
 - all three may be the same, depends on command line options
 - Consensus is then achieved across nodes via RAFT (leader election + log replication via distributed state machine)
 
+
 ## What is the most sensitive data it stores?
 
 - literally holds the keys to the kingdom:
