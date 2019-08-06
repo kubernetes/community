@@ -1,0 +1,47 @@
+digraph K8S {
+    subgraph cluster_apiserverinternal {
+        node [style=filled];
+        color=green;
+        etcd[label="etcd"];
+       label = "API Server Data Layer";
+    }
+
+    subgraph cluster_apiserver {
+        node [style=filled];
+        color=blue;
+        kubeapiserver[label="kube-apiserver"];
+       kubeapiserver->etcd[label="HTTPS"]
+       label = "API Server";
+    }
+
+    subgraph cluster_mastercomponents {
+        node [style=filled];
+        label = "Master Control Plane Components";
+        scheduler[label="Scheduler"];
+        controllers[label="Controllers"]
+        scheduler->kubeapiserver[label="Callback/HTTPS"];
+        controllers->kubeapiserver[label="Callback/HTTPS"];
+        color=black;
+    }
+
+    subgraph cluster_worker {
+        label="Worker"
+        color="blue"
+       kubelet->kubeapiserver[label="authenticated HTTPS"]
+       kubeproxy[label="kube-proxy"]
+       iptables->kubeproxy->iptables
+       pods[label="pods with various containers"]
+       pods->kubeproxy->pods
+    }
+
+    subgraph cluster_internet {
+        label="Internet"
+        authuser[label="Authorized User via kubebctl"]
+        generaluser[label="General User"]
+        authuser->kubeapiserver[label="Authenticated HTTPS"]
+        generaluser->pods[label="application-specific connection protocol"]
+    }
+    kubeapiserver->kubelet[label="HTTPS"]
+    kubeapiserver->pods[label="HTTP",color=red]
+}
+
