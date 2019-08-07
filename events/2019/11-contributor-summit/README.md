@@ -45,6 +45,7 @@ During [KubeCon/CloudNativeCon](https://events.linuxfoundation.org/events/kubeco
 | Unconference | Marky [@markyjackson-taulia](https://github.com/markyjackson-taulia) | Cody [@thecrudge](https://github.com/thecrudge) | |
 | New Contributor Workshop | Guin [@guineveresaenger](https://github.com/guineveresaenger) | Allison [@alisondy](https://github.com/alisondy)<br />Rael [@raelga](https://github.com/raelga) | |
 | SIG Meet & Greet | Dawn Foster [@geekygirldawn](https://github.com/geekygirldawn) | Jason DeTiberus [@detiber](https://github.com/detiber) |
+| Contributor Awards | Claire Laurence [@claurence](https://github.com/claurence), Tim Pepper [@tpepper](https://github.com/tpepper) | |
 | Accessibility, Inclusiveness, and Diversity | Tasha [@tashimi](https://github.com/tashimi) | Arnaud [@ameukam](https://github.com/ameukam) | |
 
 ## Code of Conduct
