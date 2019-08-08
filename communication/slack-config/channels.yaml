@@ -142,6 +142,7 @@ channels:
   - name: kube-spawn
   - name: kube-state-metrics
   - name: kubeadm
+  - name: kubeadm-cn
   - name: kubeapps
   - name: kubebuilder
   - name: kubecon
