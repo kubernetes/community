@@ -1,6 +1,9 @@
 # 2019 Kubernetes Contributor Summit NA
 
-## *This event is still in the planning stages. Please check back here for updates!*
+## *This event is still in the planning stages. Please check back here for updates!*  
+Planning Info:  
+[Project Board](https://github.com/orgs/kubernetes/projects/21) - this includes content planning issues!
+See [sigs-list.md](/sigs-list.md) for meeting time and agenda
 
 ## What
 
@@ -9,16 +12,18 @@ This event brings together new and current Kubernetes contributors to connect an
 ## Registration
 
 - [Sign the CLA](/CLA.md) if you have not done so already.
-- Registration Form Coming Soon
+- Website will be live in September:   https://events.linuxfoundation.org/events/contributor-summit-north-america-2019/
 
 ## When and Where
 
 The Contributor Summit takes place in the days leading up to [KubeCon + CloudNativeCon NA](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2019/), make sure you plan travel accordingly.
 
-- Sunday, November 17th, 2019 ~5P - 8P (Exact time TBD) - Social event (optional)
-- Monday, November 18th, 2019 ~8A - 6P (Exact time TBD) - Contributor Summit (New Contributor Workshops and Current Contributor Summit)
+- Sunday, November 17th, 2019 ~5P - 9P  
+  Social event (optional)
+- Monday, November 18th, 2019 ~8A - 6P   
+  Full day event
 - San Diego, California
-- Event website with more information: LINK TBD
+- Event website with more information: https://events.linuxfoundation.org/events/contributor-summit-north-america-2019/
 
 **But wait!**
 
