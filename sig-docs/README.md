@@ -70,6 +70,7 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation maintainers |
 | @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR reviews |
 | @kubernetes/sig-docs-pt-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) | Portuguese language content |
+| @kubernetes/sig-docs-ta-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ta-owners) | Tamil language content |
 | @kubernetes/sig-docs-zh-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) | Chinese language content |
 
 <!-- BEGIN CUSTOM CONTENT -->
