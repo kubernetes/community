@@ -57,108 +57,102 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcluster-lifecycle)
+- Slack: [#sig-cluster-lifecycle](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcluster-lifecycle)
+- GitHub Teams:
+    - [@kubernetes/sig-cluster-lifecycle](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle) - Notify group
+    - [@kubernetes/sig-cluster-lifecycle-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle-pr-reviews) - PR Reviews
 
 ## Subprojects
 
-The following subprojects are owned by sig-cluster-lifecycle:
-- **bootkube**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
-  - Contact
-    - Slack: [#bootkube](https://kubernetes.slack.com/messages/bootkube)
-- **cluster-addons**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/addon-operators/master/OWNERS
-  - Contact
-    - Slack: [#cluster-addons](https://kubernetes.slack.com/messages/cluster-addons)
-- **cluster-api**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-bootstrap-provider-kubeadm/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
-  - Contact
-    - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
-- **cluster-api-provider-aws**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
-- **cluster-api-provider-digitalocean**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
-- **cluster-api-provider-docker**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-docker/master/OWNERS
-- **cluster-api-provider-gcp**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
-- **cluster-api-provider-openstack**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
-- **cluster-api-provider-vsphere**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
-  - Contact
-    - Slack: [#cluster-api-vsphere](https://kubernetes.slack.com/messages/cluster-api-vsphere)
-  - Meetings:
-    - Cluster API vSphere syncup meeting: [Wednesdays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
-      - [Meeting notes and Agenda](https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing).
-      - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu).
-- **etcdadm**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
-  - Contact
-    - Slack: [#etcdadm](https://kubernetes.slack.com/messages/etcdadm)
-- **image-builder**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/image-builder/master/OWNERS
-- **kops**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
-- **kube-aws**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
-  - Contact
-    - Slack: [#kube-aws](https://kubernetes.slack.com/messages/kube-aws)
-- **kube-deploy**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
-  - Contact
-    - Slack: [#kube-deploy](https://kubernetes.slack.com/messages/kube-deploy)
-- **kube-up**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
-- **kubeadm**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
-  - Contact
-    - Slack: [#kubeadm](https://kubernetes.slack.com/messages/kubeadm)
-- **kubernetes-anywhere**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
-- **kubespray**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
-  - Contact
-    - Slack: [#kubespray](https://kubernetes.slack.com/messages/kubespray)
-- **minikube**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
-  - Contact
-    - Slack: [#minikube](https://kubernetes.slack.com/messages/minikube)
+The following [subprojects][subproject-definition] are owned by sig-cluster-lifecycle:
+### bootkube
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
+- **Contact:**
+  - Slack: [#bootkube](https://kubernetes.slack.com/messages/bootkube)
+### cluster-addons
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/addon-operators/master/OWNERS
+- **Contact:**
+  - Slack: [#cluster-addons](https://kubernetes.slack.com/messages/cluster-addons)
+### cluster-api
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-bootstrap-provider-kubeadm/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
+- **Contact:**
+  - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
+### cluster-api-provider-aws
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
+### cluster-api-provider-digitalocean
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
+### cluster-api-provider-docker
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-docker/master/OWNERS
+### cluster-api-provider-gcp
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
+### cluster-api-provider-openstack
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
+### cluster-api-provider-vsphere
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
+- **Contact:**
+  - Slack: [#cluster-api-vsphere](https://kubernetes.slack.com/messages/cluster-api-vsphere)
+- **Meetings:**
+  - Cluster API vSphere syncup meeting: [Wednesdays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu).
+### etcdadm
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
+- **Contact:**
+  - Slack: [#etcdadm](https://kubernetes.slack.com/messages/etcdadm)
+### image-builder
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/image-builder/master/OWNERS
+### kops
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
+### kube-aws
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
+- **Contact:**
+  - Slack: [#kube-aws](https://kubernetes.slack.com/messages/kube-aws)
+### kube-deploy
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
+- **Contact:**
+  - Slack: [#kube-deploy](https://kubernetes.slack.com/messages/kube-deploy)
+### kube-up
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
+### kubeadm
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+- **Contact:**
+  - Slack: [#kubeadm](https://kubernetes.slack.com/messages/kubeadm)
+### kubernetes-anywhere
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes-anywhere/master/OWNERS
+### kubespray
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
+- **Contact:**
+  - Slack: [#kubespray](https://kubernetes.slack.com/messages/kubespray)
+### minikube
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
+- **Contact:**
+  - Slack: [#minikube](https://kubernetes.slack.com/messages/minikube)
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-cluster-lifecycle | [link](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle) | Notify group |
-| @kubernetes/sig-cluster-lifecycle-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle-pr-reviews) | PR Reviews |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

@@ -26,34 +26,28 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Michael Michael (**[@michmike](https://github.com/michmike)**), VMware
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-windows)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-windows)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fwindows)
+- Slack: [#sig-windows](https://kubernetes.slack.com/messages/sig-windows)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-windows)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fwindows)
+- GitHub Teams:
+    - [@kubernetes/sig-windows-bugs](https://github.com/orgs/kubernetes/teams/sig-windows-bugs) - Bug Triage and Troubleshooting
+    - [@kubernetes/sig-windows-feature-requests](https://github.com/orgs/kubernetes/teams/sig-windows-feature-requests) - Feature Requests
+    - [@kubernetes/sig-windows-misc](https://github.com/orgs/kubernetes/teams/sig-windows-misc) - General Discussion
 
 ## Subprojects
 
-The following subprojects are owned by sig-windows:
-- **windows-gmsa**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/windows-gmsa/master/OWNERS
-- **windows-testing**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
-- **windows-tools**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
+The following [subprojects][subproject-definition] are owned by sig-windows:
+### windows-gmsa
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/windows-gmsa/master/OWNERS
+### windows-testing
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
+### windows-tools
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-windows-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-windows-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-windows-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-windows-feature-requests) | Feature Requests |
-| @kubernetes/sig-windows-misc | [link](https://github.com/orgs/kubernetes/teams/sig-windows-misc) | General Discussion |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 ## Getting Started
 

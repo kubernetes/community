@@ -26,19 +26,11 @@ Develop a standard foundation (philosophy and libraries) for core Kubernetes com
 * Dr. Stefan Schimanski (**[@sttts](https://github.com/sttts)**), Red Hat
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/wg-component-standard)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-component-standard)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fcomponent-standard)
-
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/wg-component-standard | [link](https://github.com/orgs/kubernetes/teams/wg-component-standard) | Component Standard Discussion |
-
+- Slack: [#wg-component-standard](https://kubernetes.slack.com/messages/wg-component-standard)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-component-standard)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fcomponent-standard)
+- GitHub Teams:
+    - [@kubernetes/wg-component-standard](https://github.com/orgs/kubernetes/teams/wg-component-standard) - Component Standard Discussion
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

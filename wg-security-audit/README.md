@@ -24,10 +24,9 @@ Perform a security audit on k8s with a vendor and produce as artifacts a threat 
 * Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/wg-security-audit)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fsecurity-audit)
-
+- Slack: [#wg-security-audit](https://kubernetes.slack.com/messages/wg-security-audit)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fsecurity-audit)
 <!-- BEGIN CUSTOM CONTENT -->
 ## Published Documents
 

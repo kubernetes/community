@@ -21,18 +21,12 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google
 
 ## Contact
-* Private Mailing List: conduct@kubernetes.io
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fcode-of-conduct)
+- Private Mailing List: conduct@kubernetes.io
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fcode-of-conduct)
+- GitHub Teams:
+    - [@kubernetes/code-of-conduct-committee](https://github.com/orgs/kubernetes/teams/code-of-conduct-committee) - General Discussion
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/code-of-conduct-committee | [link](https://github.com/orgs/kubernetes/teams/code-of-conduct-committee) | General Discussion |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 ## Terms
 

@@ -38,59 +38,53 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**), Red Hat
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-cli)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcli)
+- Slack: [#sig-cli](https://kubernetes.slack.com/messages/sig-cli)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcli)
+- GitHub Teams:
+    - [@kubernetes/sig-cli-api-reviews](https://github.com/orgs/kubernetes/teams/sig-cli-api-reviews) - API Changes and Reviews
+    - [@kubernetes/sig-cli-bugs](https://github.com/orgs/kubernetes/teams/sig-cli-bugs) - Bug Triage and Troubleshooting
+    - [@kubernetes/sig-cli-feature-requests](https://github.com/orgs/kubernetes/teams/sig-cli-feature-requests) - Feature Requests
+    - [@kubernetes/sig-cli-maintainers](https://github.com/orgs/kubernetes/teams/sig-cli-maintainers) - CLI Maintainers
+    - [@kubernetes/sig-cli-misc](https://github.com/orgs/kubernetes/teams/sig-cli-misc) - General Discussion
+    - [@kubernetes/sig-cli-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-cli-pr-reviews) - PR Reviews
+    - [@kubernetes/sig-cli-proposals](https://github.com/orgs/kubernetes/teams/sig-cli-proposals) - Design Proposals
+    - [@kubernetes/sig-cli-test-failures](https://github.com/orgs/kubernetes/teams/sig-cli-test-failures) - Test Failures and Triage
 
 ## Subprojects
 
-The following subprojects are owned by sig-cli:
-- **cli-experimental**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cli-experimental/master/OWNERS
-- **cli-sdk**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cli-runtime/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
-- **cli-utils**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cli-utils/master/OWNERS
-- **krew**
-  - Description: Plugin manager for kubectl.
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/krew/master/OWNERS
-- **krew-index**
-  - Description: Centralized plugin index for krew.
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/krew-index/master/OWNERS
-- **kubectl**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
-- **kustomize**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
-  - Contact
-    - Slack: [#kustomize](https://kubernetes.slack.com/messages/kustomize)
+The following [subprojects][subproject-definition] are owned by sig-cli:
+### cli-experimental
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cli-experimental/master/OWNERS
+### cli-sdk
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/cli-runtime/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
+### cli-utils
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cli-utils/master/OWNERS
+### krew
+Plugin manager for kubectl.
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/krew/master/OWNERS
+### krew-index
+Centralized plugin index for krew.
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/krew-index/master/OWNERS
+### kubectl
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
+### kustomize
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
+- **Contact:**
+  - Slack: [#kustomize](https://kubernetes.slack.com/messages/kustomize)
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-cli-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cli-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-cli-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-cli-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-cli-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-cli-feature-requests) | Feature Requests |
-| @kubernetes/sig-cli-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-cli-maintainers) | CLI Maintainers |
-| @kubernetes/sig-cli-misc | [link](https://github.com/orgs/kubernetes/teams/sig-cli-misc) | General Discussion |
-| @kubernetes/sig-cli-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-cli-pr-reviews) | PR Reviews |
-| @kubernetes/sig-cli-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-cli-proposals) | Design Proposals |
-| @kubernetes/sig-cli-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-cli-test-failures) | Test Failures and Triage |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
