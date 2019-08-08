@@ -34,44 +34,38 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-docs)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fdocs)
+- Slack: [#sig-docs](https://kubernetes.slack.com/messages/sig-docs)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fdocs)
+- GitHub Teams:
+    - [@kubernetes/kubernetes-blog](https://github.com/orgs/kubernetes/teams/kubernetes-blog) - Kubernetes blog maintainers
+    - [@kubernetes/sig-docs-de-owners](https://github.com/orgs/kubernetes/teams/sig-docs-de-owners) - German language content
+    - [@kubernetes/sig-docs-en-owners](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners) - English content (default)
+    - [@kubernetes/sig-docs-es-owners](https://github.com/orgs/kubernetes/teams/sig-docs-es-owners) - Spanish language content
+    - [@kubernetes/sig-docs-fr-owners](https://github.com/orgs/kubernetes/teams/sig-docs-fr-owners) - French language content
+    - [@kubernetes/sig-docs-id-owners](https://github.com/orgs/kubernetes/teams/sig-docs-id-owners) - Indonesian language content
+    - [@kubernetes/sig-docs-it-owners](https://github.com/orgs/kubernetes/teams/sig-docs-it-owners) - Italian language content
+    - [@kubernetes/sig-docs-ja-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) - Japanese language content
+    - [@kubernetes/sig-docs-ko-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) - Korean language content
+    - [@kubernetes/sig-docs-maintainers](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) - Documentation maintainers
+    - [@kubernetes/sig-docs-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) - Documentation PR reviews
+    - [@kubernetes/sig-docs-pt-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) - Portuguese language content
+    - [@kubernetes/sig-docs-zh-owners](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) - Chinese language content
 
 ## Subprojects
 
-The following subprojects are owned by sig-docs:
-- **kubernetes-blog**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/website/master/content/en/blog/OWNERS
-- **reference-docs**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
-- **website**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
+The following [subprojects][subproject-definition] are owned by sig-docs:
+### kubernetes-blog
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/website/master/content/en/blog/OWNERS
+### reference-docs
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
+### website
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/kubernetes-blog | [link](https://github.com/orgs/kubernetes/teams/kubernetes-blog) | Kubernetes blog maintainers |
-| @kubernetes/sig-docs-de-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-de-owners) | German language content |
-| @kubernetes/sig-docs-en-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners) | English content (default) |
-| @kubernetes/sig-docs-es-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-es-owners) | Spanish language content |
-| @kubernetes/sig-docs-fr-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-fr-owners) | French language content |
-| @kubernetes/sig-docs-id-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-id-owners) | Indonesian language content |
-| @kubernetes/sig-docs-it-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-it-owners) | Italian language content |
-| @kubernetes/sig-docs-ja-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | Japanese language content |
-| @kubernetes/sig-docs-ko-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | Korean language content |
-| @kubernetes/sig-docs-maintainers | [link](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) | Documentation maintainers |
-| @kubernetes/sig-docs-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) | Documentation PR reviews |
-| @kubernetes/sig-docs-pt-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) | Portuguese language content |
-| @kubernetes/sig-docs-zh-owners | [link](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) | Chinese language content |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
 * Discuss documentation and docs issues for kubernetes.io

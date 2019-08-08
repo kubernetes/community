@@ -29,10 +29,9 @@ Designing and shepherding cross-cutting features around compute resource isolati
 * Vishnu Kannan (**[@vishh](https://github.com/vishh)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/wg-resource-mgmt)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-resource-management)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fresource-management)
-
+- Slack: [#wg-resource-mgmt](https://kubernetes.slack.com/messages/wg-resource-mgmt)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-resource-management)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fresource-management)
 <!-- BEGIN CUSTOM CONTENT -->
 A working group that is a cross-SIG effort currently sponsored by sig-node and sig-scheduling with
 a focus on improving Kubernetes Compute Resource Management.

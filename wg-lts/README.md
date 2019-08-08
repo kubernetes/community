@@ -30,10 +30,9 @@ The [charter](charter.md) defines the scope and governance of the LTS Working Gr
 * Nick Young (**[@youngnick](https://github.com/youngnick)**), Atlassian
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/wg-lts)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-lts)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Flts)
-
+- Slack: [#wg-lts](https://kubernetes.slack.com/messages/wg-lts)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-lts)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Flts)
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Goals

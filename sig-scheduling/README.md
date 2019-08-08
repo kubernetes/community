@@ -27,45 +27,39 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Klaus Ma (**[@k82cn](https://github.com/k82cn)**), Huawei
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-scheduling)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fscheduling)
+- Slack: [#sig-scheduling](https://kubernetes.slack.com/messages/sig-scheduling)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fscheduling)
+- GitHub Teams:
+    - [@kubernetes/sig-scheduling-api-reviews](https://github.com/orgs/kubernetes/teams/sig-scheduling-api-reviews) - API Changes and Reviews
+    - [@kubernetes/sig-scheduling-bugs](https://github.com/orgs/kubernetes/teams/sig-scheduling-bugs) - Bug Triage and Troubleshooting
+    - [@kubernetes/sig-scheduling-feature-requests](https://github.com/orgs/kubernetes/teams/sig-scheduling-feature-requests) - Feature Requests
+    - [@kubernetes/sig-scheduling-misc](https://github.com/orgs/kubernetes/teams/sig-scheduling-misc) - General Discussion
+    - [@kubernetes/sig-scheduling-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-scheduling-pr-reviews) - PR Reviews
+    - [@kubernetes/sig-scheduling-proposals](https://github.com/orgs/kubernetes/teams/sig-scheduling-proposals) - Design Proposals
+    - [@kubernetes/sig-scheduling-test-failures](https://github.com/orgs/kubernetes/teams/sig-scheduling-test-failures) - Test Failures and Triage
 
 ## Subprojects
 
-The following subprojects are owned by sig-scheduling:
-- **cluster-capacity**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-capacity/master/OWNERS
-- **descheduler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/descheduler/master/OWNERS
-- **kube-batch**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kube-batch/master/OWNERS
-- **poseidon**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
-- **scheduler**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
+The following [subprojects][subproject-definition] are owned by sig-scheduling:
+### cluster-capacity
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-incubator/cluster-capacity/master/OWNERS
+### descheduler
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-incubator/descheduler/master/OWNERS
+### kube-batch
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/kube-batch/master/OWNERS
+### poseidon
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
+### scheduler
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-scheduling-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-scheduling-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-scheduling-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-feature-requests) | Feature Requests |
-| @kubernetes/sig-scheduling-misc | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-misc) | General Discussion |
-| @kubernetes/sig-scheduling-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-pr-reviews) | PR Reviews |
-| @kubernetes/sig-scheduling-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-proposals) | Design Proposals |
-| @kubernetes/sig-scheduling-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-scheduling-test-failures) | Test Failures and Triage |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

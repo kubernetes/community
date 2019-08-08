@@ -22,20 +22,11 @@ Serve as a community resource for advising big data and data science related sof
 * Yinan Li (**[@liyinan926](https://github.com/liyinan926)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/ug-big-data)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-ug-big-data)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fbig-data)
-
-
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/ug-big-data | [link](https://github.com/orgs/kubernetes/teams/ug-big-data) | General Discussion |
-
+- Slack: [#ug-big-data](https://kubernetes.slack.com/messages/ug-big-data)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-ug-big-data)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fbig-data)
+- GitHub Teams:
+    - [@kubernetes/ug-big-data](https://github.com/orgs/kubernetes/teams/ug-big-data) - General Discussion
 <!-- BEGIN CUSTOM CONTENT -->
 
 ### Goals

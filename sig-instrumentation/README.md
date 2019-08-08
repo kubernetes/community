@@ -25,55 +25,49 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Piotr Szczesniak (**[@piosz](https://github.com/piosz)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-instrumentation)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Finstrumentation)
+- Slack: [#sig-instrumentation](https://kubernetes.slack.com/messages/sig-instrumentation)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Finstrumentation)
+- GitHub Teams:
+    - [@kubernetes/sig-instrumentation-api-reviews](https://github.com/orgs/kubernetes/teams/sig-instrumentation-api-reviews) - API Changes and Reviews
+    - [@kubernetes/sig-instrumentation-bugs](https://github.com/orgs/kubernetes/teams/sig-instrumentation-bugs) - Bug Triage and Troubleshooting
+    - [@kubernetes/sig-instrumentation-feature-requests](https://github.com/orgs/kubernetes/teams/sig-instrumentation-feature-requests) - Feature Requests
+    - [@kubernetes/sig-instrumentation-misc](https://github.com/orgs/kubernetes/teams/sig-instrumentation-misc) - General Discussion
+    - [@kubernetes/sig-instrumentation-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-instrumentation-pr-reviews) - PR Reviews
+    - [@kubernetes/sig-instrumentation-proposals](https://github.com/orgs/kubernetes/teams/sig-instrumentation-proposals) - Design Proposals
+    - [@kubernetes/sig-instrumentation-test-failures](https://github.com/orgs/kubernetes/teams/sig-instrumentation-test-failures) - Test Failures and Triage
 
 ## Subprojects
 
-The following subprojects are owned by sig-instrumentation:
-- **custom-metrics-apiserver**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/custom-metrics-apiserver/master/OWNERS
-- **heapster**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
-- **klog**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
-  - Contact
-    - Slack: [#klog](https://kubernetes.slack.com/messages/klog)
-- **kube-state-metrics**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS
-  - Contact
-    - Slack: [#kube-state-metrics](https://kubernetes.slack.com/messages/kube-state-metrics)
-- **metrics**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
-- **metrics-server**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/OWNERS
-- **mutating-trace-admission-controller**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
+The following [subprojects][subproject-definition] are owned by sig-instrumentation:
+### custom-metrics-apiserver
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-incubator/custom-metrics-apiserver/master/OWNERS
+### heapster
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
+### klog
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
+- **Contact:**
+  - Slack: [#klog](https://kubernetes.slack.com/messages/klog)
+### kube-state-metrics
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS
+- **Contact:**
+  - Slack: [#kube-state-metrics](https://kubernetes.slack.com/messages/kube-state-metrics)
+### metrics
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/metrics/master/OWNERS
+### metrics-server
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-incubator/metrics-server/master/OWNERS
+### mutating-trace-admission-controller
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-instrumentation-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-instrumentation-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-instrumentation-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-instrumentation-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-instrumentation-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-instrumentation-feature-requests) | Feature Requests |
-| @kubernetes/sig-instrumentation-misc | [link](https://github.com/orgs/kubernetes/teams/sig-instrumentation-misc) | General Discussion |
-| @kubernetes/sig-instrumentation-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-instrumentation-pr-reviews) | PR Reviews |
-| @kubernetes/sig-instrumentation-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-instrumentation-proposals) | Design Proposals |
-| @kubernetes/sig-instrumentation-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-instrumentation-test-failures) | Test Failures and Triage |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
