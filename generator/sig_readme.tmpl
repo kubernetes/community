@@ -48,64 +48,61 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 {{- end }}
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})
-* [Mailing list]({{.Contact.MailingList}})
+- Slack: [#{{.Contact.Slack}}](https://kubernetes.slack.com/messages/{{.Contact.Slack}})
+- [Mailing list]({{.Contact.MailingList}})
 {{- if .Label }}
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2F{{.Label}})
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2F{{.Label}})
 {{- end }}
+{{- if .Contact.GithubTeams }}
+- GitHub Teams:
+{{- range .Contact.GithubTeams }}
+    - [@kubernetes/{{.Name}}](https://github.com/orgs/kubernetes/teams/{{.Name}}) {{- if .Description }} - {{.Description}} {{- end}}
+{{- end }}
+{{- end }}
+
 {{- if .Subprojects }}
 
 ## Subprojects
 
-The following subprojects are owned by sig-{{.Label}}:
+The following [subprojects][subproject-definition] are owned by sig-{{.Label}}:
 
 {{- range .Subprojects }}
-- **{{.Name}}**
+### {{.Name}}
 {{- if .Description }}
-  - Description: {{ trimSpace .Description }}
+{{ trimSpace .Description }}
 {{- end }}
-  - Owners:
+- **Owners:**
 {{- range .Owners }}
-    - {{.}}
+  - {{.}}
 {{- end }}
 {{- if .Contact }}
-  - Contact
+- **Contact:**
 {{- if .Contact.Slack }}
-    - Slack: [#{{.Contact.Slack}}](https://kubernetes.slack.com/messages/{{.Contact.Slack}})
+  - Slack: [#{{.Contact.Slack}}](https://kubernetes.slack.com/messages/{{.Contact.Slack}})
 {{- end }}
 {{- if .Contact.MailingList }}
-    - [Mailing List]({{.Contact.MailingList}})
+  - [Mailing List]({{.Contact.MailingList}})
 {{- end }}
 {{- if .Contact.GithubTeams }}
-    - GitHub Teams: 
+  - GitHub Teams: 
 {{- range .Contact.GithubTeams }}
-      - [@kubernetes/{{.Name}}](https://github.com/orgs/kubernetes/teams/{{.Name}}) {{- if .Description }}({{.Description}}){{- end}}
+    - [@kubernetes/{{.Name}}](https://github.com/orgs/kubernetes/teams/{{.Name}}) {{- if .Description }} - {{.Description}}{{- end}}
 {{- end }}
 {{- end }}
 {{- end }}
 {{- if .Meetings }}
-  - Meetings:
+- **Meetings:**
 {{- range .Meetings }}
-    - {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}}]({{.URL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.Time}}&tz={{.TZ | tzUrlEncode}}).
+  - {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}}]({{.URL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.Time}}&tz={{.TZ | tzUrlEncode}}).
 {{- if .ArchiveURL }}
-      - [Meeting notes and Agenda]({{.ArchiveURL}}).
+    - [Meeting notes and Agenda]({{.ArchiveURL}}).
 {{- end }}
 {{- if .RecordingsURL }}
-      - [Meeting recordings]({{.RecordingsURL}}).
+    - [Meeting recordings]({{.RecordingsURL}}).
 {{- end }}
 {{- end }}
 {{- end }}
 {{- end }}
 {{- end }}
-{{ if .Contact.GithubTeams }}
-## GitHub Teams
 
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-{{- range .Contact.GithubTeams }}
-| @kubernetes/{{.Name}} | [link](https://github.com/orgs/kubernetes/teams/{{.Name}}) | {{.Description}} |
-{{- end }}
-{{  end }}
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
