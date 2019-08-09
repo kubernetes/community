@@ -8,6 +8,7 @@ approvers:
   - Phillels
   - lukaszgryglicki
   - jberkus
+emeritus_approvers:
   - spiffxp
 labels:
   - sig/contributor-experience
