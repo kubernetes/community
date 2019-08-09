@@ -1107,9 +1107,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
-  - name: repo-infra
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
   - name: slack-infra
     contact:
       slack: slack-infra
@@ -2012,6 +2009,9 @@ sigs:
       slack: prow
     owners:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
+  - name: repo-infra
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
   - name: test-infra
     description: |
       Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project

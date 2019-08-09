@@ -88,9 +88,6 @@ The following [subprojects][subproject-definition] are owned by sig-contributor-
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
-### repo-infra
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
 ### slack-infra
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/slack-infra/master/OWNERS
