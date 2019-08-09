@@ -7,7 +7,7 @@ the Roles and Organization Management outlined in [sig-governance].
 
 The scope of SIG usability is the core end-user usability of the Kubernetes project. This covers
 topics like user experience and accessibility. The goal of SIG Usability is to facilitate adoption of
-the Kubernetes project by as diverse a community of end users as possible. We do this be ensuring that
+the Kubernetes project by as diverse a community of end users as possible. We do this by ensuring that
 each end user’s interaction with Kubernetes, from discovery to successful production use is seamless
 and positive. Examples of efforts include user research, internationalization and accessibility.
 
@@ -42,7 +42,7 @@ SIG Usability will facilitate and collaborate with other SIGs on:
 - documenting common end user interactions with Kubernetes (aka user journeys)
 - design elements and language guidelines for Kubernetes concepts (e.g. 'reconciliation' or 'service')
 - identifying opportunities for user research and best methods to achieve (qualitative and quantitative).
-- tracking adherence to required guidelines such as (WCAG which is required to sell products in Europe.)[https://www.w3.org/WAI/news/2018-09-13/WCAG-21-EN301549/]
+- tracking adherence to required guidelines such as [WCAG which is required to sell products in Europe].
 - documentation in the vein of https://www.microsoft.com/en-us/accessibility/
 
 ### Out of scope
@@ -71,3 +71,4 @@ Federation of Subprojects
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [sig-subprojects]: https://github.com/kubernetes/community/blob/master/sig-YOURSIG/README.md#subprojects
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
+[WCAG which is required to sell products in Europe]: https://www.w3.org/WAI/news/2018-09-13/WCAG-21-EN301549/
