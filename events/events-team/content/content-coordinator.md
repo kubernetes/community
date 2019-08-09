@@ -17,7 +17,7 @@ The following list of activities is for a large Contributor Summit with multiple
 * Work with Event Lead to determine Content Strategy for the event.
 * Determine what Content Programs the event will have.
 * Recruit Leads & Shadows for each Content Program.
-* Post "Save the Date" placeholders for the Summit, and messages to contributors.
+* Give Event Lead/Marketing Lead content solitication for "save the date" email.
 * If having preprogrammed content, draft application form for submissions.
 
 ### Weeks 3-6
