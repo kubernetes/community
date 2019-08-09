@@ -18,8 +18,8 @@ the logistical and operational pieces together.
 | Registration Lead                           | [Registration Handbook] |                                                     |
 | Marketing Lead                              | [Marketing Handbook]                    |                                                     |
 | CNCF Events Manager                         | CNCF                    | CNCF will staff this                                |
-| Content Coordinator                      | [Content Handbooks]                    |                                                     |
-| New Contributor Workshop Lead               | [Content Handbooks]                    | Events Lead and General Content will determine this |
+| Overall Content Lead                        | [Content Lead Handbook]                    |                                                     |
+| New Contributor Workshop Lead               | [Content Lead Handbook]                    | Events Lead and General Content will determine this |
 | Accessibility, Inclusiveness, and Diversity | TODO                    |                                                     |   
 
 
@@ -65,4 +65,4 @@ We don't coordinate meetups. CNCF leads these efforts and their information can 
 [here]: https://github.com/cncf/meetups
 [Event Lead Handbook]: ./events-lead.md
 [Marketing Handbook]: ./marketing/README.md
-[Content Handbooks]: ./content/README.md
+[Content Lead Handbook]: ./content-lead.md
