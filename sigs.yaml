@@ -1124,14 +1124,11 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
-<<<<<<< HEAD
   - name: repo-infra
     description: Creates and maintains tools and templates for kubernetes-namespace
       repositories.
     owners:
     - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
-=======
->>>>>>> master
   - name: slack-infra
     description: Creates and maintains tools and automation for Kubernetes Slack.
     contact:
