@@ -13,7 +13,6 @@ Developing and sustaining a healthy community of contributors is critical to sca
 The [charter](charter.md) defines the scope and governance of the Contributor Experience Special Interest Group.
 
 ## Meetings
-* APAC SIG Meeting: [Wednesdays at 20:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly - fourth Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=PT%20%28Pacific%20Time%29).
 * Regular SIG Meeting: [Wednesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
   * [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
@@ -38,12 +37,20 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-contribex)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcontributor-experience)
+- Slack: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcontributor-experience)
+- GitHub Teams:
+    - [@kubernetes/sig-contributor-experience-bugs](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-bugs) - Bug Triage and Troubleshooting
+    - [@kubernetes/sig-contributor-experience-feature-requests](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-feature-requests) - Feature Requests
+    - [@kubernetes/sig-contributor-experience-misc-use-only-as-a-last-resort](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-misc-use-only-as-a-last-resort) - General Discussion
+    - [@kubernetes/sig-contributor-experience-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-pr-reviews) - PR Reviews
+    - [@kubernetes/sig-contributor-experience-proposals](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-proposals) - Design Proposals
+    - [@kubernetes/sig-contributor-experience-test-failures](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-test-failures) - Test Failures and Triage
 
 ## Subprojects
 
+<<<<<<< HEAD
 The following subprojects are owned by sig-contributor-experience:
 - **community**
   - Description: Owns and manages overall community repo, including community group documentation and operations.
@@ -113,6 +120,53 @@ Note that the links to display team membership will only work if you are a membe
 | @kubernetes/sig-contributor-experience-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-proposals) | Design Proposals |
 | @kubernetes/sig-contributor-experience-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-test-failures) | Test Failures and Triage |
 
+=======
+The following [subprojects][subproject-definition] are owned by sig-contributor-experience:
+### community
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/community/master/OWNERS
+### community-management
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
+- **Meetings:**
+  - APAC Coordinator Meeting: [Thursdays at 5:00 UTC](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
+### contributors-documentation
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
+- **Meetings:**
+  - Non-Code Contributors Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1gdFWfkrapQclZ4-z4Lx2JwqKsJjXXUOVoLhBzZiZgSk/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+### devstats
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
+- **Contact:**
+  - Slack: [#devstats](https://kubernetes.slack.com/messages/devstats)
+### events
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
+- **Contact:**
+  - Slack: [#events](https://kubernetes.slack.com/messages/events)
+- **Meetings:**
+  - Events Planning Subproject: [Mondays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1oLXv5_rM4f645jlXym_Vd7AUq7x6DV-O87E6tcW1sjU/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+### github-management
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
+### k8s.io
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
+### mentoring
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
+### slack-infra
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/slack-infra/master/OWNERS
+- **Contact:**
+  - Slack: [#slack-infra](https://kubernetes.slack.com/messages/slack-infra)
+
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+>>>>>>> master
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

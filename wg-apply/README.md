@@ -23,10 +23,9 @@ Resources can be found in [this Google drive folder](https://drive.google.com/dr
 * Daniel Smith (**[@lavalamp](https://github.com/lavalamp)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/wg-apply)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-apply)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fapply)
-
+- Slack: [#wg-apply](https://kubernetes.slack.com/messages/wg-apply)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-apply)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fapply)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

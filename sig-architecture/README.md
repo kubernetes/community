@@ -35,53 +35,47 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-architecture)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-architecture)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Farchitecture)
+- Slack: [#sig-architecture](https://kubernetes.slack.com/messages/sig-architecture)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-architecture)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Farchitecture)
+- GitHub Teams:
+    - [@kubernetes/sig-architecture-api-reviews](https://github.com/orgs/kubernetes/teams/sig-architecture-api-reviews) - API Changes and Reviews
+    - [@kubernetes/sig-architecture-bugs](https://github.com/orgs/kubernetes/teams/sig-architecture-bugs) - Bug Triage and Troubleshooting
+    - [@kubernetes/sig-architecture-feature-requests](https://github.com/orgs/kubernetes/teams/sig-architecture-feature-requests) - Feature Requests
+    - [@kubernetes/sig-architecture-misc-use-only-as-a-last-resort](https://github.com/orgs/kubernetes/teams/sig-architecture-misc-use-only-as-a-last-resort) - General Discussion
+    - [@kubernetes/sig-architecture-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-architecture-pr-reviews) - PR Reviews
+    - [@kubernetes/sig-architecture-proposals](https://github.com/orgs/kubernetes/teams/sig-architecture-proposals) - Design Proposals
+    - [@kubernetes/sig-architecture-test-failures](https://github.com/orgs/kubernetes/teams/sig-architecture-test-failures) - Test Failures and Triage
 
 ## Subprojects
 
-The following subprojects are owned by sig-architecture:
-- **architecture-and-api-governance**
-  - Description: [Described below](#architecture-and-api-governance)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
-- **code-organization**
-  - Description: [Described below](#code-organization)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
-  - Contact
-    - Slack: [#k8s-code-organization](https://kubernetes.slack.com/messages/k8s-code-organization)
-- **conformance-definition**
-  - Description: [Described below](#conformance-definition)
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
-  - Contact
-    - Slack: [#k8s-conformance](https://kubernetes.slack.com/messages/k8s-conformance)
-    - GitHub Teams:
-      - [@kubernetes/cncf-conformance-wg](https://github.com/orgs/kubernetes/teams/cncf-conformance-wg)
+The following [subprojects][subproject-definition] are owned by sig-architecture:
+### architecture-and-api-governance
+[Described below](#architecture-and-api-governance)
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
+### code-organization
+[Described below](#code-organization)
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
+- **Contact:**
+  - Slack: [#k8s-code-organization](https://kubernetes.slack.com/messages/k8s-code-organization)
+### conformance-definition
+[Described below](#conformance-definition)
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
+- **Contact:**
+  - Slack: [#k8s-conformance](https://kubernetes.slack.com/messages/k8s-conformance)
+  - GitHub Teams:
+    - [@kubernetes/cncf-conformance-wg](https://github.com/orgs/kubernetes/teams/cncf-conformance-wg)
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-architecture-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-architecture-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-architecture-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-feature-requests) | Feature Requests |
-| @kubernetes/sig-architecture-misc-use-only-as-a-last-resort | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-misc-use-only-as-a-last-resort) | General Discussion |
-| @kubernetes/sig-architecture-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-pr-reviews) | PR Reviews |
-| @kubernetes/sig-architecture-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-proposals) | Design Proposals |
-| @kubernetes/sig-architecture-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-architecture-test-failures) | Test Failures and Triage |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 # Details about SIG-Architecture sub-projects

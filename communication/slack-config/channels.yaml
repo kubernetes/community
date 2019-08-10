@@ -136,11 +136,13 @@ channels:
   - name: kube-aws
   - name: kube-deploy
   - name: kube-monkey
+  - name: kube-oidc-proxy
   - name: kube-router
   - name: kube-score
   - name: kube-spawn
   - name: kube-state-metrics
   - name: kubeadm
+  - name: kubeadm-cn
   - name: kubeapps
   - name: kubebuilder
   - name: kubecon
@@ -210,7 +212,9 @@ channels:
   - name: nl-users
   - name: node-problem-detector
   - name: norw-users
+  - name: octant
   - name: office-hours
+  - name: okteto
   - name: opencontainers
   - name: openshift-dev
   - name: openshift-users
@@ -234,6 +238,7 @@ channels:
   - name: ro-users
   - name: ru-users
   - name: se-users
+  - name: sealed-secrets
   - name: ship
   - name: shippable
   - name: shipper

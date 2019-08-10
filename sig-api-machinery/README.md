@@ -28,102 +28,96 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Daniel Smith (**[@lavalamp](https://github.com/lavalamp)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-api-machinery)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fapi-machinery)
+- Slack: [#sig-api-machinery](https://kubernetes.slack.com/messages/sig-api-machinery)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fapi-machinery)
+- GitHub Teams:
+    - [@kubernetes/sig-api-machinery-api-reviews](https://github.com/orgs/kubernetes/teams/sig-api-machinery-api-reviews) - API Changes and Reviews (API Machinery APIs, NOT all APIs)
+    - [@kubernetes/sig-api-machinery-bugs](https://github.com/orgs/kubernetes/teams/sig-api-machinery-bugs) - Bug Triage and Troubleshooting
+    - [@kubernetes/sig-api-machinery-feature-requests](https://github.com/orgs/kubernetes/teams/sig-api-machinery-feature-requests) - Feature Requests
+    - [@kubernetes/sig-api-machinery-misc](https://github.com/orgs/kubernetes/teams/sig-api-machinery-misc) - General Discussion
+    - [@kubernetes/sig-api-machinery-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-api-machinery-pr-reviews) - PR Reviews
+    - [@kubernetes/sig-api-machinery-proposals](https://github.com/orgs/kubernetes/teams/sig-api-machinery-proposals) - Design Proposals
+    - [@kubernetes/sig-api-machinery-test-failures](https://github.com/orgs/kubernetes/teams/sig-api-machinery-test-failures) - Test Failures and Triage
 
 ## Subprojects
 
-The following subprojects are owned by sig-api-machinery:
-- **component-base**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/legacyflag/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/component-base/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/OWNERS
-- **control-plane-features**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kube-storage-version-migrator/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/garbagecollector/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/namespace/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/quota/OWNERS
-- **idl-schema-client-pipeline**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-client/gen/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/structured-merge-diff/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/code-generator/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kube-openapi/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/code-generator/OWNERS
-- **kubernetes-clients**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-client/csharp/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-client/go-base/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-client/go/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-client/haskell/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-client/java/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-client/javascript/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-client/perl/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-client/python-base/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-client/ruby/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-incubator/client-python/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/client-go/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/OWNERS
-- **server-api-aggregation**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kube-aggregator/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/kube-aggregator/OWNERS
-- **server-binaries**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/controller-manager/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-apiserver/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-controller-manager/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubeapiserver/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/master/OWNERS
-- **server-crd**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/apiextensions-apiserver/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiextensions-apiserver/OWNERS
-- **server-frameworks**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/apiserver/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/OWNERS
-- **server-sdk**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder-alpha/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/controller-tools/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder-declarative-pattern/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-apiserver/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-controller/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/sample-apiserver/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/sample-controller/master/OWNERS
-  - Contact
-    - [Mailing List](https://groups.google.com/forum/#!forum/kubebuilder)
-- **universal-machinery**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/apimachinery/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apimachinery/OWNERS
-- **yaml**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/yaml/master/OWNERS
+The following [subprojects][subproject-definition] are owned by sig-api-machinery:
+### component-base
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/legacyflag/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/component-base/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/OWNERS
+### control-plane-features
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/kube-storage-version-migrator/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/garbagecollector/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/namespace/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/quota/OWNERS
+### idl-schema-client-pipeline
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-client/gen/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/structured-merge-diff/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/code-generator/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kube-openapi/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/code-generator/OWNERS
+### kubernetes-clients
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-client/csharp/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-client/go-base/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-client/go/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-client/haskell/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-client/java/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-client/javascript/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-client/perl/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-client/python-base/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-client/ruby/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-incubator/client-python/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/client-go/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/OWNERS
+### server-api-aggregation
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kube-aggregator/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/kube-aggregator/OWNERS
+### server-binaries
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/controller-manager/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-apiserver/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-controller-manager/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubeapiserver/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/master/OWNERS
+### server-crd
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/apiextensions-apiserver/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiextensions-apiserver/OWNERS
+### server-frameworks
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/apiserver/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/OWNERS
+### server-sdk
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-incubator/apiserver-builder-alpha/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/controller-tools/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder-declarative-pattern/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-apiserver/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-controller/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/sample-apiserver/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/sample-controller/master/OWNERS
+- **Contact:**
+  - [Mailing List](https://groups.google.com/forum/#!forum/kubebuilder)
+### universal-machinery
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/apimachinery/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apimachinery/OWNERS
+### yaml
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/yaml/master/OWNERS
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-api-machinery-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-api-reviews) | API Changes and Reviews (API Machinery APIs, NOT all APIs) |
-| @kubernetes/sig-api-machinery-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-api-machinery-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-feature-requests) | Feature Requests |
-| @kubernetes/sig-api-machinery-misc | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-misc) | General Discussion |
-| @kubernetes/sig-api-machinery-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-pr-reviews) | PR Reviews |
-| @kubernetes/sig-api-machinery-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-proposals) | Design Proposals |
-| @kubernetes/sig-api-machinery-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-api-machinery-test-failures) | Test Failures and Triage |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 ## Additional links
 

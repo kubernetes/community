@@ -16,7 +16,7 @@ Develop a standard foundation (philosophy and libraries) for core Kubernetes com
 * SIG Cluster Lifecycle
 
 ## Meetings
-* Regular WG Meeting: [Tuesdays at 08:30 PT (Pacific Time)](https://zoom.us/j/705540322) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting (please join kubernetes-dev@googlegroups.com or kubernetes-wg-component-standard@googlegroups.com to access the notes): [Tuesdays at 08:30 PT (Pacific Time)](https://zoom.us/j/705540322) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI).
 
 ## Organizers
@@ -26,19 +26,11 @@ Develop a standard foundation (philosophy and libraries) for core Kubernetes com
 * Dr. Stefan Schimanski (**[@sttts](https://github.com/sttts)**), Red Hat
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/wg-component-standard)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-component-standard)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fcomponent-standard)
-
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/wg-component-standard | [link](https://github.com/orgs/kubernetes/teams/wg-component-standard) | Component Standard Discussion |
-
+- Slack: [#wg-component-standard](https://kubernetes.slack.com/messages/wg-component-standard)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-component-standard)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fcomponent-standard)
+- GitHub Teams:
+    - [@kubernetes/wg-component-standard](https://github.com/orgs/kubernetes/teams/wg-component-standard) - Component Standard Discussion
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

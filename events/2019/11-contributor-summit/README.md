@@ -1,6 +1,9 @@
 # 2019 Kubernetes Contributor Summit NA
 
-## *This event is still in the planning stages. Please check back here for updates!*
+## *This event is still in the planning stages. Please check back here for updates!*  
+Planning Info:  
+[Project Board](https://github.com/orgs/kubernetes/projects/21) - this includes content planning issues!
+See [sigs-list.md](/sigs-list.md) for meeting time and agenda
 
 ## What
 
@@ -9,16 +12,18 @@ This event brings together new and current Kubernetes contributors to connect an
 ## Registration
 
 - [Sign the CLA](/CLA.md) if you have not done so already.
-- Registration Form Coming Soon
+- Website will be live in September:   https://events.linuxfoundation.org/events/contributor-summit-north-america-2019/
 
 ## When and Where
 
 The Contributor Summit takes place in the days leading up to [KubeCon + CloudNativeCon NA](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2019/), make sure you plan travel accordingly.
 
-- Sunday, November 17th, 2019 ~5P - 8P (Exact time TBD) - Social event (optional)
-- Monday, November 18th, 2019 ~8A - 6P (Exact time TBD) - Contributor Summit (New Contributor Workshops and Current Contributor Summit)
+- Sunday, November 17th, 2019 ~5P - 9P  
+  Social event (optional)
+- Monday, November 18th, 2019 ~8A - 6P   
+  Full day event
 - San Diego, California
-- Event website with more information: LINK TBD
+- Event website with more information: https://events.linuxfoundation.org/events/contributor-summit-north-america-2019/
 
 **But wait!**
 
@@ -39,10 +44,14 @@ During [KubeCon/CloudNativeCon](https://events.linuxfoundation.org/events/kubeco
 | Registration | Bob [@mrbobbytables](https://github.com/mrbobbytables) | Nabarun [@palnabarun](https://github.com/palnabarun) | |
 | Marketing | Jonas [@jonasrosland](https://github.com/jonasrosland) | nzoueidi [@nzoueidi](https://github.com/nzoueidi) | |
 | CNCF Events Manager | Deb Giles [@debgiles](https://github.com/debgiles) | N/A | CNCF/LF Employee |
-| Overall Content | Josh [@jberkus](https://github.com/jberkus) | Yang [@idealhack](https://github.com/idealhack) | Additional roles TBD |
-| Unconference | Marky [@markyjackson-taulia](https://github.com/markyjackson-taulia) | | |
-| New Contributor Workshop | Guin [@guineveresaenger](https://github.com/guineveresaenger) | Allison [@alisondy](https://github.com/alisondy)<br />Rael [@raelga](https://github.com/raelga) | Dawn Foster [@geekygirldawn](https://github.com/geekygirldawn) to organize SIG Meet and Greet |
-| Accessibility, Inclusiveness, and Diversity | Tasha [@tashimi](https://github.com/tashimi) | Arnaud [@arnaudmz](https://github.com/arnaudmz) | |
+| Content Coordinator | Josh [@jberkus](https://github.com/jberkus) | | |
+| Programmed Sessions | Yang Li [@idealhack](https://github.com/idealhack) | Tariq Ibrahim [@tariq1890](https://github.com/tariq1890) | |
+| Workshops | John Belamaric [@johnbelamaric](https://github.com/johnbelamaric) | Barnabas [@makoscafee](https://github.com/makoscafee) | |
+| Unconference | Marky [@markyjackson-taulia](https://github.com/markyjackson-taulia) | Cody [@thecrudge](https://github.com/thecrudge) | |
+| New Contributor Workshop | Guin [@guineveresaenger](https://github.com/guineveresaenger) | Allison [@alisondy](https://github.com/alisondy)<br />Rael [@raelga](https://github.com/raelga) | |
+| SIG Meet & Greet | Dawn Foster [@geekygirldawn](https://github.com/geekygirldawn) | Jason DeTiberus [@detiber](https://github.com/detiber) |
+| Contributor Awards | Claire Laurence [@claurence](https://github.com/claurence), Tim Pepper [@tpepper](https://github.com/tpepper) | |
+| Accessibility, Inclusiveness, and Diversity | Tasha [@tashimi](https://github.com/tashimi) | Arnaud [@ameukam](https://github.com/ameukam) | |
 
 ## Code of Conduct
 

@@ -32,39 +32,33 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
 
 ## Contact
-* [Mailing list](https://groups.google.com/a/kubernetes.io/forum/#!forum/steering)
-* Private Mailing List: steering-private@kubernetes.io
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fsteering)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/forum/#!forum/steering)
+- Private Mailing List: steering-private@kubernetes.io
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fsteering)
+- GitHub Teams:
+    - [@kubernetes/steering-committee](https://github.com/orgs/kubernetes/teams/steering-committee) - General Discussion
 
 ## Subprojects
 
-The following subprojects are owned by the Steering Committee:
-- **funding**
-  - Description: Funding requests for project infrastructure, events, and consulting
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/funding/master/OWNERS
-- **kubernetes-template-project**
-  - Description: Template for starting new projects in the GitHub organizations owned by Kubernetes.
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
-- **spartakus**
-  - Description: Collection of usage information about Kubernetes clusters.
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
-- **steering**
-  - Description: Steering Committee policy and documentation
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
+The following [subprojects][subproject-definition] are owned by the Steering Committee:
+### funding
+Funding requests for project infrastructure, events, and consulting
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/funding/master/OWNERS
+### kubernetes-template-project
+Template for starting new projects in the GitHub organizations owned by Kubernetes.
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
+### spartakus
+Collection of usage information about Kubernetes clusters.
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
+### steering
+Steering Committee policy and documentation
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/steering-committee | [link](https://github.com/orgs/kubernetes/teams/steering-committee) | General Discussion |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

@@ -26,70 +26,65 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Saad Ali (**[@saad-ali](https://github.com/saad-ali)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-storage)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-storage)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fstorage)
+- Slack: [#sig-storage](https://kubernetes.slack.com/messages/sig-storage)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-storage)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fstorage)
+- GitHub Teams:
+    - [@kubernetes/sig-storage-api-reviews](https://github.com/orgs/kubernetes/teams/sig-storage-api-reviews) - API Changes and Reviews
+    - [@kubernetes/sig-storage-bugs](https://github.com/orgs/kubernetes/teams/sig-storage-bugs) - Bug Triage and Troubleshooting
+    - [@kubernetes/sig-storage-feature-requests](https://github.com/orgs/kubernetes/teams/sig-storage-feature-requests) - Feature Requests
+    - [@kubernetes/sig-storage-misc](https://github.com/orgs/kubernetes/teams/sig-storage-misc) - General Discussion
+    - [@kubernetes/sig-storage-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-storage-pr-reviews) - PR Reviews
+    - [@kubernetes/sig-storage-proposals](https://github.com/orgs/kubernetes/teams/sig-storage-proposals) - Design Proposals
+    - [@kubernetes/sig-storage-test-failures](https://github.com/orgs/kubernetes/teams/sig-storage-test-failures) - Test Failures and Triage
 
 ## Subprojects
 
-The following subprojects are owned by sig-storage:
-- **external-storage**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-lib-external-provisioner/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-local-static-provisioner/master/OWNERS
-- **git-sync**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/git-sync/master/OWNERS
-- **kubernetes-csi**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-flex/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-host-path/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-image-populator/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-iscsi/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-fc/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-iscsi/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-utils/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-release-tools/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-test/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/docs/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/driver-registrar/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/drivers/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/external-attacher/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/external-resizer/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi.github.io/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/livenessprobe/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/node-driver-registrar/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/csi-api/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/csi-translation-lib/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-translation-lib/OWNERS
-- **nfs-provisioner**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
-- **volumes**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volume/OWNERS
+The following [subprojects][subproject-definition] are owned by sig-storage:
+### external-storage
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-lib-external-provisioner/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-local-static-provisioner/master/OWNERS
+### git-sync
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/git-sync/master/OWNERS
+### kubernetes-csi
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-flex/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-host-path/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-image-populator/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-iscsi/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-fc/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-iscsi/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-utils/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/csi-proxy/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/csi-release-tools/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/csi-test/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/docs/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/driver-registrar/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/drivers/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/external-attacher/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/external-resizer/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi.github.io/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/livenessprobe/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/node-driver-registrar/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/csi-api/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/csi-translation-lib/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-translation-lib/OWNERS
+### nfs-provisioner
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
+### volumes
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volume/OWNERS
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-storage-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-storage-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-storage-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-storage-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-storage-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-storage-feature-requests) | Feature Requests |
-| @kubernetes/sig-storage-misc | [link](https://github.com/orgs/kubernetes/teams/sig-storage-misc) | General Discussion |
-| @kubernetes/sig-storage-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-storage-pr-reviews) | PR Reviews |
-| @kubernetes/sig-storage-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-storage-proposals) | Design Proposals |
-| @kubernetes/sig-storage-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-storage-test-failures) | Test Failures and Triage |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Details

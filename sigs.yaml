@@ -153,7 +153,7 @@ sigs:
     day: Monday
     time: "9:00"
     tz: PT (Pacific Time)
-    frequency: weekly
+    frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
     archive_url: https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3
@@ -1030,12 +1030,6 @@ sigs:
       name: Garrett Rodrigues
       company: Google
   meetings:
-  - description: APAC SIG Meeting
-    day: Wednesday
-    time: "20:00"
-    tz: PT (Pacific Time)
-    frequency: monthly - fourth Wednesday every month
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
   - description: Regular SIG Meeting
     day: Wednesday
     time: "9:30"
@@ -1071,6 +1065,13 @@ sigs:
       platforms.
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
+    meetings:
+    - description: APAC Coordinator Meeting
+      day: Thursday
+      time: "5:00"
+      tz: UTC
+      frequency: biweekly
+      url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit
   - name: contributors-documentation
     description: writes and maintains documentation around contributing to Kubernetes,
       including the Contributor's Guide, Developer's Guide, and contributor website.
@@ -1123,11 +1124,14 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
+<<<<<<< HEAD
   - name: repo-infra
     description: Creates and maintains tools and templates for kubernetes-namespace
       repositories.
     owners:
     - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
+=======
+>>>>>>> master
   - name: slack-infra
     description: Creates and maintains tools and automation for Kubernetes Slack.
     contact:
@@ -1580,13 +1584,13 @@ sigs:
       company: Google
   meetings:
   - description: Regular SIG Meeting
-    day: Tuesday
-    time: "21:00"
+    day: Monday
+    time: "15:00"
     tz: UTC
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
-    archive_url: https://docs.google.com/document/d/1Fu6HxXQu8wl6TwloGUEOXVzZ1rwZ72IAhglnaAMCPqA/edit?usp=sharing
-    recordings_url: https://www.youtube.com/watch?v=I0KbWz8MTMk&list=PL69nYSiGNLP3QKkOsDsO6A0Y1rhgP84iZ
+    archive_url: https://bit.ly/k8s-sig-release-meeting
+    recordings_url: https://bit.ly/k8s-sig-release-videos
   contact:
     slack: sig-release
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-release
@@ -1610,19 +1614,26 @@ sigs:
       The Licensing subproject is responsible for analyzing/reporting/remediating licensing concerns within the Kubernetes project orgs.
     owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/licensing/OWNERS
-  - name: publishing-bot
-    description: |
-      The publishing-bot publishes the contents of staging repos that live in k8s.io/kubernetes/staging to their own repositories in kubernetes
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
   - name: release-engineering
     description: |
       The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
+    contact:
+      slack: release-management
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-notes/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
+    meetings:
+    - description: Regular SIG Meeting
+      day: Monday
+      time: "15:00"
+      tz: UTC
+      frequency: biweekly
+      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      archive_url: https://bit.ly/k8s-releng-meeting
+      recordings_url: https://bit.ly/k8s-sig-release-videos
   - name: release-team
     description: |
       The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
@@ -1921,6 +1932,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-fc/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-iscsi/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-utils/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/csi-proxy/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-release-tools/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-test/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/docs/master/OWNERS
@@ -1968,11 +1980,11 @@ sigs:
       name: Timothy St. Clair
       company: VMware
   meetings:
-  - description: Regular SIG Meeting
+  - description: SIG Testing Office Hours
     day: Tuesday
-    time: "13:00"
+    time: "10:00"
     tz: PT (Pacific Time)
-    frequency: weekly
+    frequency: bi-weekly starting Tuesday August 13, 2019
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
     archive_url: https://bit.ly/k8s-sig-testing-notes
     recordings_url: https://bit.ly/k8s-sig-testing-videos
@@ -2023,6 +2035,9 @@ sigs:
       slack: prow
     owners:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
+  - name: repo-infra
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
   - name: test-infra
     description: |
       Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
@@ -2112,13 +2127,13 @@ sigs:
       company: Lyft
   meetings:
   - description: Regular SIG Meeting
-    day: TBD
-    time: TBD
+    day: Tuesday
+    time: "14:00"
     tz: PT (Pacific Time)
     frequency: every third week
-    url: tbd
+    url: https://zoom.us/j/3832562240
     archive_url: https://docs.google.com/document/d/1-dYznZR7Q5XCd2bVYoNfMPYs4uNn1aaePQF0q0JQ0uU/
-    recordings_url: tbd
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0eY-U8DVJWHBwKvMDEtOxx
   contact:
     slack: sig-usability
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-usability
@@ -2238,7 +2253,8 @@ workinggroups:
       name: Dr. Stefan Schimanski
       company: Red Hat
   meetings:
-  - description: Regular WG Meeting
+  - description: Regular WG Meeting (please join kubernetes-dev@googlegroups.com or
+      kubernetes-wg-component-standard@googlegroups.com to access the notes)
     day: Tuesday
     time: "08:30"
     tz: PT (Pacific Time)

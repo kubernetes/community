@@ -13,9 +13,9 @@ The scope of SIG usability is the core end-user usability of the Kubernetes proj
 The [charter](charter.md) defines the scope and governance of the Usability Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [TBDs at TBD PT (Pacific Time)](tbd) (every third week). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=TBD&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Tuesdays at 14:00 PT (Pacific Time)](https://zoom.us/j/3832562240) (every third week). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1-dYznZR7Q5XCd2bVYoNfMPYs4uNn1aaePQF0q0JQ0uU/).
-  * [Meeting recordings](tbd).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0eY-U8DVJWHBwKvMDEtOxx).
 
 ## Leadership
 
@@ -28,31 +28,25 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Vallery Lancey (**[@vllry](https://github.com/vllry)**), Lyft
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-usability)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-usability)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fusability)
+- Slack: [#sig-usability](https://kubernetes.slack.com/messages/sig-usability)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-usability)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fusability)
+- GitHub Teams:
+    - [@kubernetes/sig-usability-api-reviews](https://github.com/orgs/kubernetes/teams/sig-usability-api-reviews) - API Changes and Reviews
+    - [@kubernetes/sig-usability-bugs](https://github.com/orgs/kubernetes/teams/sig-usability-bugs) - Bug Triage and Troubleshooting
+    - [@kubernetes/sig-usability-feature-requests](https://github.com/orgs/kubernetes/teams/sig-usability-feature-requests) - Feature Requests
+    - [@kubernetes/sig-usability-misc](https://github.com/orgs/kubernetes/teams/sig-usability-misc) - General Discussion
+    - [@kubernetes/sig-usability-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-usability-pr-reviews) - PR Reviews
+    - [@kubernetes/sig-usability-proposals](https://github.com/orgs/kubernetes/teams/sig-usability-proposals) - Design Proposals
 
 ## Subprojects
 
-The following subprojects are owned by sig-usability:
-- **sig-usability**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/sig-usability/master/OWNERS
+The following [subprojects][subproject-definition] are owned by sig-usability:
+### sig-usability
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/sig-usability/master/OWNERS
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-usability-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-usability-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-usability-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-usability-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-usability-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-usability-feature-requests) | Feature Requests |
-| @kubernetes/sig-usability-misc | [link](https://github.com/orgs/kubernetes/teams/sig-usability-misc) | General Discussion |
-| @kubernetes/sig-usability-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-usability-pr-reviews) | PR Reviews |
-| @kubernetes/sig-usability-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-usability-proposals) | Design Proposals |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

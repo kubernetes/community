@@ -29,10 +29,9 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Work
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/wg-k8s-infra)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fk8s-infra)
-
+- Slack: [#wg-k8s-infra](https://kubernetes.slack.com/messages/wg-k8s-infra)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fk8s-infra)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

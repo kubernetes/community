@@ -28,18 +28,19 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**), Loodse
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-ui)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fui)
+- Slack: [#sig-ui](https://kubernetes.slack.com/messages/sig-ui)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fui)
 
 ## Subprojects
 
-The following subprojects are owned by sig-ui:
-- **dashboard**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/dashboard-metrics-scraper/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+The following [subprojects][subproject-definition] are owned by sig-ui:
+### dashboard
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/dashboard-metrics-scraper/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
 
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

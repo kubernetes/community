@@ -21,26 +21,20 @@ The Kubernetes Product Security Committee is the body that is responsible for re
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Google
 
 ## Contact
-* Private Mailing List: security@kubernetes.io
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fproduct-security)
+- Private Mailing List: security@kubernetes.io
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fproduct-security)
+- GitHub Teams:
+    - [@kubernetes/product-security-committee](https://github.com/orgs/kubernetes/teams/product-security-committee) - General Discussion
 
 ## Subprojects
 
-The following subprojects are owned by the Product Security Committee:
-- **security**
-  - Description: Policies and documentation for the Product Security Committee
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/security/master/OWNERS
+The following [subprojects][subproject-definition] are owned by the Product Security Committee:
+### security
+Policies and documentation for the Product Security Committee
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/security/master/OWNERS
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/product-security-committee | [link](https://github.com/orgs/kubernetes/teams/product-security-committee) | General Discussion |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 **Note**: Information on how members are selected can be found
 [here](https://git.k8s.io/security/security-release-process.md#product-security-committee-membership).

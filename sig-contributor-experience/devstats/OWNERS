@@ -1,16 +1,13 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 reviewers:
-  - Phillels
   - dims
-  - jberkus
   - nikhita
-  - parispittman
-  - spiffxp
 approvers:
   - Phillels
   - lukaszgryglicki
   - jberkus
+emeritus_approvers:
   - spiffxp
 labels:
   - sig/contributor-experience
