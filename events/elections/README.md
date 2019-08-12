@@ -32,6 +32,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
    - Make github.com/kubernetes/community/elections/$YEAR/README.md, this is the voter’s guide.
      - Copy over the voter’s guide from the previous year. The voter’s guide is the single source of truth for the election that year! All announcements and notices should link to this document.
      - Update with new dates, candidates, and procedures (if necessary).
+   - Make github.com/kubernetes/community/elections/$YEAR/OWNERS with all the election officers for the election year.
    - Make github.com/kubernetes/community/elections/$YEAR/voters.md
      - Initial list is generated via the [eligibilty for voting requirements][eligibile to vote]
      - Officers will update this list as voters submit the voting exemption form.
