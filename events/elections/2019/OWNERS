@@ -1,0 +1,12 @@
+# See the OWNERS docs at https://go.k8s.io/owners
+
+reviewers:
+  - castrojo
+  - idvoretskyi
+  - mrbobbytables
+  - bgrant0607
+approvers:
+  - castrojo
+  - idvoretskyi
+  - mrbobbytables
+  - bgrant0607
