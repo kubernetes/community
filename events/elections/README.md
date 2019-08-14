@@ -80,7 +80,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 
 - Must be [eligible to vote][eligible to vote]
 - Cannot be running for office in the current election
-- Cannot be a current member of the steering committee
+- Cannot be a current member of the steering committee that is up for re-election or whose term extends beyond the election period
 - [Recuse themselves from public election activities][election-recusal] except those required to run the election
   - May vote
   - May answer questions about general election specifics, ie:
