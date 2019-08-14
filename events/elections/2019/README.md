@@ -34,18 +34,18 @@ previous [governance meeting video] which led to this whole process.
 
 Please refer to the [Steering Committee Election Charter] for:
 
-- [eligibility for candidacy]
-- [eligibility for voting] and [eligible voters] list (not in charter)
+- [Eligibility for candidacy]
+- [Eligibility for voting] and [Eligible voters] list (not in charter)
 
 ### Schedule
 
 | Date         | Event                    |
 | ------------ | ------------------------ |
-| August 23    | Announcement of Election |
-| September 15 | Due by 11:59pm UTC: All candidate bios and voting exception forms due. |
-| September 20 | Election Begins |
-| October 4    | Election Closes |
-| October 10    | Announcement of Results at Community Meeting |
+| August 21    | Announcement of Election |
+| September 11 | All candidate bios and voting exception forms due by 0000 UTC (5pm PST) |
+| September 28 | Election Begins via email ballots |
+| October 2    | Election Closes byy 0000 UTC (5pm PST) |
+| October 3    | Announcement of Results at Community Meeting |
 
 ## Candidacy Process
 
@@ -90,6 +90,11 @@ roles you may hold.
 
 ## Voting Process
 
+Kubernetes members in [voters.md] will receive a ballot via email. If you are
+not on that list and feel you have worked on Kubernetes in a way that is NOT
+reflected in GitHub contributions, you can use the [voter exemption form] to ask
+to participate in the election. 
+
 Elections will be held using time-limited [Condorcet] ranking on [CIVS]
 using the [IRV method]. The top vote getters will be elected to the open
 seats.
@@ -100,10 +105,13 @@ enforced as spelled out in the [Steering Committee Election Charter].
 You will be ranking your choices of the candidates with an option for
 "no opinion". In the event of a tie, a coin will be flipped.
 
-The election will open for voting on September 20, 2019 around 04:00pm UTC and
-end two weeks after on October 4, 2019 at 01:00am UTC. 
-You will receive an email to the address on file at the start of the election from "Kubernetes (CIVS Poll Supervisor) `<civs@cs.cornell.edu>`, please whitelist if necessary. 
-Detailed voting instructions will be addressed in email and the CIVS polling page.
+The election will open for voting the morning September 28, 2019 via email and
+end two weeks after on October 2, 2019 at 00:00am UTC. You will receive an email
+to the address on file at the start of the election from "Kubernetes (CIVS Poll
+Supervisor) `<civs@cs.cornell.edu>`, please whitelist if necessary. Detailed
+voting instructions will be addressed in email and the CIVS polling page. Please
+note that email ballots might be unreliable, so you are encouraged to contact
+the election officials if you do not receive a ballot by September 29. 
 
 ### Officers
 
@@ -113,12 +121,12 @@ The Steering Committee has selected the following people as [election officers]:
 - Bob Killen, @mrbobbytables, University of Michigan
 - Brian Grant, @bgrant0607, Google
 
-Please direct any questions via email to <community@k8s.io>.
+Please direct any questions via email to <election@k8s.io>.
 
 ### Decision
 
 The newly elected body will be announced in the weekly [Kubernetes Community Meeting]
-on October 10, 2019.
+on October 3, 2019.
 
 Following the meeting, the raw voting results and winners will be published on the
 [Kubernetes Blog]. 
@@ -139,8 +147,8 @@ Name | Organization/Company | GitHub
 [governance meeting video]: https://www.youtube.com/watch?v=ltRKXLl0RaE&list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ&index=23
 
 [Steering Committee Election Charter]: https://git.k8s.io/steering/elections.md
-[eligibility for voting]: https://github.com/kubernetes/steering/blob/master/elections.md#elegibility-for-voting
-[eligibility for candidacy]: https://github.com/kubernetes/steering/blob/master/elections.md#elegibility-for-candidacy
+[Eligibility for voting]: https://github.com/kubernetes/steering/blob/master/elections.md#elegibility-for-voting
+[Eligibility for candidacy]: https://github.com/kubernetes/steering/blob/master/elections.md#elegibility-for-candidacy
 [limiting corporate campaigning]: https://github.com/kubernetes/steering/blob/master/elections.md#limiting-corporate-campaigning
 [pledge to recuse]: https://github.com/kubernetes/steering/blob/master/elections.md#steering-committee-and-election-officer-recusal
 
@@ -152,4 +160,6 @@ Name | Organization/Company | GitHub
 [election officers]: https://github.com/kubernetes/community/tree/master/events/elections#election-officers
 [Kubernetes Community Meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
 [Kubernetes Blog]: https://kubernetes.io/blog/
-[eligible voters]: https://github.com/kubernetes/community/blob/master/events/elections/2018/voters.md
+[eligible voters]: https://github.com/kubernetes/community/blob/master/events/elections/2019/voters.md
+[voter exemption form]: https://www.surveymonkey.com/r/k8s-sc-election-2019
+[voters.md]: ./voters.md
