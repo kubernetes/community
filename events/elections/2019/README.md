@@ -11,17 +11,22 @@ member will serve a two (2) year term.
 This election will shape the future of Kubernetes as a community and project.
 While SIGs and WGs help shape the technical direction of the project, the
 [Steering Committee Charter] covers the health of the project and community
-as a whole. Some examples of responsibilities to consider as you are deciding
+as a whole. Some direct responsibilities of steering members to consider as you are deciding
 whether to run or who to vote for:
 
-- Define, evolve, and defend the vision, values, mission, and scope of the
-  project.
-- Define and evolve project governance structures and policies, including how
-  contributors become committers/maintainers, approvers, reviewers, members,
-  etc.
-- Charter and refine policy for defining new community groups (including
-  Special Interest Groups, Working Groups, and Committees), and establish
-  transparency and accountability policies for such groups
+* Through the chartering review process, delegate ownership of, responsibility for
+  and authority over areas of the project to specific entities.
+* Define, evolve, and defend the non-technical vision / mission and the values
+  of the project.
+* Charter and refine policy for defining new community groups.
+  and establish transparency and accountability policies for such groups
+* Define and evolve project and group governance
+  structures and policies.
+* Act as a final non-technical escalation point for any Kubernetes repository
+* Request funds and other support from the CNCF (e.g. marketing, press, etc.)
+* Define and enforce requirements for community groups to be in good standing 
+  such as having an approved charter.
+
 
 For more context, please see the [current steering committee backlog] or a
 previous [governance meeting video] which led to this whole process.
