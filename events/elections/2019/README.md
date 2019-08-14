@@ -27,7 +27,6 @@ whether to run or who to vote for:
 * Define and enforce requirements for community groups to be in good standing 
   such as having an approved charter.
 
-
 For more context, please see the [current steering committee backlog] or a
 previous [governance meeting video] which led to this whole process.
 
