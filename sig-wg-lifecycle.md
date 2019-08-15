@@ -74,7 +74,7 @@ Each one of these has a linked canonical source guideline from set up to moderat
 - [ ] Create a shared calendar and schedule your weekly/biweekly/triweekly weeks [update meetings]
 - This calendar creation process will allow all of your leads to edit SIG/WG Meetings. This is important as we all change jobs, email addresses, and take breaks from the project. Shared calendars will also provide consistency with contributors looking for your subproject meetings, office hours, and anything else that the SIG/WGs contributors should know about.
 
-## [Retirement]   
+## [Retirement]
 (merging or disbandment)
 Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may also merge with an existing SIG/WG if deemed appropriate, and would save project overhead in the long run. Working Groups in particular are more ephemeral than SIGs, so this process should be followed when the Working Group has accomplished it's mission.
 
@@ -125,7 +125,7 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 [moderation.md]: /communication/moderation.md
 [GoogleGroups]: /communication/mailing-list-guidelines.md
 [slack-guidelines.md]: /communication/slack-guidelines.md
-[youtube-guidelines.md]: /communication/youtube-guidelines.md
+[youtube-guidelines.md]: /communication/youtube/youtube-guidelines.md
 [zoom-guidelines.md]: /communication/zoom-guidelines.md
 [discuss-guidelines.md]: /communication/discuss-guidelines.md
 [Thursday community updates]: /events/community-meeting.md
