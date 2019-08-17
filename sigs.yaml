@@ -896,7 +896,7 @@ sigs:
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: minikube Office Hours
     day: Monday
-    time: "10:00"
+    time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
