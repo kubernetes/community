@@ -14,18 +14,17 @@ While SIGs and WGs help shape the technical direction of the project, the
 as a whole. Some direct responsibilities of steering members to consider as you are deciding
 whether to run or who to vote for:
 
-* Through the chartering review process, delegate ownership of, responsibility for
-  and authority over areas of the project to specific entities.
+* Through the chartering review process, delegate ownership of, responsibility
+  for and authority over areas of the project to specific entities
 * Define, evolve, and defend the non-technical vision / mission and the values
-  of the project.
-* Charter and refine policy for defining new community groups.
-  and establish transparency and accountability policies for such groups
+  of the project
+* Charter and refine policy for defining new community groups and establish transparency and accountability policies for such groups
 * Define and evolve project and group governance
-  structures and policies.
+  structures and policies
 * Act as a final non-technical escalation point for any Kubernetes repository
 * Request funds and other support from the CNCF (e.g. marketing, press, etc.)
 * Define and enforce requirements for community groups to be in good standing 
-  such as having an approved charter.
+  such as having an approved charter
 
 For more context, please see the [current steering committee backlog] or a
 previous [governance meeting video] which led to this whole process.
@@ -43,7 +42,7 @@ Please refer to the [Steering Committee Election Charter] for:
 | ------------ | ------------------------ |
 | August 21    | Announcement of Election |
 | September 11 | All candidate bios and voting exception forms due by 0000 UTC (5pm PST) |
-| September 28 | Election Begins via email ballots |
+| September 18 | Election Begins via email ballots |
 | October 2    | Election Closes byy 0000 UTC (5pm PST) |
 | October 3    | Announcement of Results at Community Meeting |
 
