@@ -136,6 +136,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
   - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/system-validators/master/OWNERS
 - **Contact:**
   - Slack: [#kubeadm](https://kubernetes.slack.com/messages/kubeadm)
 ### kubernetes-anywhere
