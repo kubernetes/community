@@ -43,7 +43,7 @@ Please refer to the [Steering Committee Election Charter] for:
 | August 21    | Announcement of Election |
 | September 11 | All candidate bios and voting exception forms due by 0000 UTC (5pm PST) |
 | September 18 | Election Begins via email ballots |
-| October 2    | Election Closes byy 0000 UTC (5pm PST) |
+| October 2    | Election Closes by 0000 UTC (5pm PST) |
 | October 3    | Announcement of Results at Community Meeting |
 
 ## Candidacy Process
