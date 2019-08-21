@@ -1148,15 +1148,18 @@ sigs:
     - github: Bradamant3
       name: Jennifer Rondeau
       company: Stripe
-    - github: jaredbhatti
-      name: Jared Bhatti
-      company: Google
+    - github: jimangel
+      name: Jim Angel
+      company: General Motors
     - github: zacharysarah
       name: Zach Corleissen
       company: Linux Foundation
     emeritus_leads:
     - github: chenopis
       name: Andrew Chen
+      company: Google
+    - github: jaredbhatti
+      name: Jared Bhatti
       company: Google
   meetings:
   - description: APAC SIG Meeting
