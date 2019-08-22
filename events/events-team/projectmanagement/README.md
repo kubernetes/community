@@ -7,6 +7,8 @@ The Project Manager(s) is responsible for Triaging the project board, related is
 Also, keep track of the timelines of these tasks and outlined activited. 
 The Project Manager role will ideally have a shadow for succession planning. Those who have been a part of a previous event get first dibs on lead roles to maintain consistency.
 
+## Shadow to the Project Manager Role
+This role can include one or more shadows. The PM can delegate/assign tasks to the shadows. The expectation from a shadow is to lead one of the events-team roles in an upcoming summit. The shadows are responsible for handling all Project Management related activities in the absence of the PM.
 
 ## Skills and Qualifications
 The Project Manager will have lead at least one role during a previous Contributor Summit. The shadow is signing up to commit to lead a future event within the next 12 months.
@@ -18,7 +20,14 @@ Good communication
 Impartial and objective
 
 # Activities
-Ensure the overall event is a great experience for all contributors Recruit a core team (see best-practices.md) and help recruit other volunteers as necessary
-Create an event strategy with the Content Lead(s) and consider having a social event (decide if social needs it's own lead) Provide venue ideas and suggestions to CNCF; do a walk thru if possible
-Organize and lead n cadence update meetings
-Direct liaison with CNCF Event Manager
+* Ensure the overall event is a great experience for all contributors. Recruit a core team (see best-practices.md) and help recruit other volunteers as necessary.
+* Create an event strategy with the Content Lead(s) and consider having a social event (decide if social needs it's own lead). 
+* Provide venue ideas and suggestions to CNCF; do a walk thru if possible.
+* Organize and lead n cadence update meetings.
+* Direct liaison with CNCF Event Manager.
+* Maintain a Project Board. 
+   *  Every Issue should be in github and added to the project board. 
+   *  Triaging the project board, related issues, and PRs.
+   *  Assign Labels and track the ongoing issues
+   *  Create a meeting format
+   *  Avoid duplicate issues and if there is an umbrella issue, the related issues should have a reference to it.

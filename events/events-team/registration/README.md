@@ -43,6 +43,9 @@ A successful Registration lead should have the following qualities:
   comfortable with queries and syntax is incredibly helpful, both for for the
   registration approval process and later report generation.
 
+## Shadow to the Registration Lead Role
+This role can include one or more shadows. The Registration Lead can delegate/assign the tasks to the shadows. The expectation from a shadow is to lead one of the events-team roles in an upcoming summit. The shadows to the Registration Lead are responsible for handling all Registration lead related activities in the absence of the Lead.
+
 
 ## Registration Process
 
