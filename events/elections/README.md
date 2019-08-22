@@ -34,7 +34,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
      - Update with new dates, candidates, and procedures (if necessary).
    - Make github.com/kubernetes/community/elections/$YEAR/OWNERS with all the election officers for the election year.
    - Make github.com/kubernetes/community/elections/$YEAR/voters.md
-     - Initial list is generated via the [eligibilty for voting requirements][eligibile to vote]
+     - Initial list is generated via the [eligibility for voting requirements][eligible to vote]
      - Officers will update this list as voters submit the voting exemption form.
    - Announce to the candidates to submit PRs with their platform statement (if they desire), 300 word limit. Each platform document lives in the elections/$YEAR directory, with the voter’s guide (README.md) acting as the index.
 
@@ -78,7 +78,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 
 ### Election Officers
 
-- Must be [eligible to vote][eligible to vote]
+- Must be [eligible to vote]
 - Cannot be running for office in the current election
 - Cannot be a current member of the steering committee that is a candidate in the election or whose term extends beyond the election period
 - [Recuse themselves from public election activities][election-recusal] except those required to run the election
@@ -109,5 +109,6 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - It is impossible for the election officers to see the results of the election until the election ends; for purposes of transparency with the community it is encouraged to release some statistics during the election (ie. “65% of the community has voted so far!”)
 - Ensure that the election results are handed over to the steering committee.
 
-[eligibile to vote]: https://github.com/kubernetes/steering/blob/master/elections.md#elegibility-for-voting
+
+[eligible to vote]: https://github.com/kubernetes/steering/blob/master/elections.md#eligibility-for-voting
 [election-recusal]: https://github.com/kubernetes/steering/blob/master/elections.md#steering-committee-and-election-officer-recusal

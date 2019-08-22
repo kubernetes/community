@@ -146,8 +146,8 @@ Name | Organization/Company | GitHub
 [governance meeting video]: https://www.youtube.com/watch?v=ltRKXLl0RaE&list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ&index=23
 
 [Steering Committee Election Charter]: https://git.k8s.io/steering/elections.md
-[Eligibility for voting]: https://github.com/kubernetes/steering/blob/master/elections.md#elegibility-for-voting
-[Eligibility for candidacy]: https://github.com/kubernetes/steering/blob/master/elections.md#elegibility-for-candidacy
+[Eligibility for voting]: https://github.com/kubernetes/steering/blob/master/elections.md#eligibility-for-voting
+[Eligibility for candidacy]: https://github.com/kubernetes/steering/blob/master/elections.md#eligibility-for-candidacy
 [limiting corporate campaigning]: https://github.com/kubernetes/steering/blob/master/elections.md#limiting-corporate-campaigning
 [pledge to recuse]: https://github.com/kubernetes/steering/blob/master/elections.md#steering-committee-and-election-officer-recusal
 
