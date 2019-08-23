@@ -14,12 +14,12 @@ This document defines planning and activities needed to organize the SIG Meet an
 
 ### Overview
 
-The SIG Meet and Greet is a great place for SIGs to recruit contributors, and 
-every SIG should send one or more experienced members to the Meet and Greet.
+The SIG Meet and Greet is a great place for SIGs and WGs to recruit contributors, and 
+every SIG / WG should send one or more experienced members to the Meet and Greet.
 
-As part of the Contributor Summit SIG Meet and Greet, SIGs will have easy access to 
+As part of the Contributor Summit SIG Meet and Greet, SIGs / WGs will have easy access to 
 
-* experienced Kubernetes contributors who are interested in expanding their involvement into new SIGs.
+* experienced Kubernetes contributors who are interested in expanding their involvement into new SIGs / WGs.
 * new contributors, many of whom have extensive experience from other projects, and 
 are excited to get started in Kubernetes after attending a New Contributor Workshop. 
 
