@@ -152,6 +152,7 @@ channels:
     archived: true
   - name: kubeless
   - name: kubepack
+  - name: kubestack
   - name: kuberhealthy
   - name: kubernetes-batch-jobs
   - name: kubernetes-careers
