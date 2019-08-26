@@ -37,6 +37,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
      - Initial list is generated via the [eligibility for voting requirements][eligible to vote]
      - Officers will update this list as voters submit the voting exemption form.
    - Announce to the candidates to submit PRs with their platform statement (if they desire), 300 word limit. Each platform document lives in the elections/$YEAR directory, with the voter’s guide (README.md) acting as the index.
+   - Ensure officers are members of election@kubernetes.io Google Group and that prior officers are removed. 
 
 2. Announce voting schedule to community
 
