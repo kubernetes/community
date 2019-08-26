@@ -57,6 +57,7 @@ specifically, a test is eligible for promotion to conformance if:
   enough soak time of the changes and gives folks a chance to kick the tires
   either in the community CI or their own infrastructure to make sure the tests
   are robust
+- it has a name that is a literal string
 
 Examples of features which are not currently eligible for conformance tests:
 
