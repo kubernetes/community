@@ -6,7 +6,7 @@ The eligible voter process can be found in the steering committee [elections.md]
 doc.
 
 - **2019-08-20** - Initial snapshot of DevStats based [eligible voters].
-
+- **2019-08-26** - Add voters 2019-08-20 - 2019-08-25.
 
 ---
 
@@ -220,6 +220,7 @@ doc.
 - duglin
 - dvonthenen
 - DylanBLE
+- DylanGraham
 - easeway
 - eduartua
 - egernst
@@ -625,9 +626,11 @@ doc.
 - praseodym
 - priyawadhwa
 - prksu
+- prydonius
 - pswica
 - pwittrock
 - pytimer
+- Qedrakmar
 - qingling128
 - qingsenLi
 - qiujian16
@@ -847,6 +850,7 @@ doc.
 - yliaog
 - yoonian
 - YoubingLi
+- youngnick
 - YouthLab
 - yqwang-ms
 - yuchengwu
