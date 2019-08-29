@@ -645,10 +645,10 @@ sigs:
     - github: cheftako
       name: Walter Fender
       company: Google
+    emeritus_leads:
     - github: hogepodge
       name: Chris Hoge
       company: OpenStack Foundation
-    emeritus_leads:
     - github: jagosan
       name: Jago Macleod
       company: Google
