@@ -71,6 +71,7 @@ channels:
   - name: etcdadm
   - name: events
   - name: external-dns
+  - name: falco
   - name: fi-users
   - name: fr-events
   - name: fr-users
