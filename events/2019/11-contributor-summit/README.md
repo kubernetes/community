@@ -3,7 +3,7 @@
 ## *This event is still in the planning stages. Please check back here for updates!*  
 Planning Info:  
 [Project Board](https://github.com/orgs/kubernetes/projects/21) - this includes content planning issues!
-See [sigs-list.md](/sigs-list.md) for meeting time and agenda
+See [sig-list.md](/sig-list.md) for the meeting times and agenda.
 
 ## What
 
