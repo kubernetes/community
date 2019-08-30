@@ -84,7 +84,6 @@ channels:
   - name: gitops
   - name: gke
   - name: gloo
-  - name: gsoc-apps
   - name: helm-chart-testing
   - name: helm-deprecated
     archived: true
@@ -224,6 +223,8 @@ channels:
   - name: ops-status
     archived: true
   - name: osbkit
+  - name: outreachy-apps
+    id: CDH610735
   - name: pharmer
   - name: pl-users
   - name: pr-reviews
