@@ -8,6 +8,7 @@ doc.
 - **2019-08-20** - Initial snapshot of DevStats based [eligible voters].
 - **2019-08-26** - Add voters 2019-08-20 - 2019-08-25.
 - **2019-08-30** - Add voters 2019-08-26 - 2019-08-29.
+- **2019-09-03** - Add voters 2019-08-30 - 2019-09-03.
 
 ---
 
@@ -134,6 +135,7 @@ doc.
 - chenzhiwei
 - childsb
 - chrigl
+- chris-short
 - chrislovecnm
 - chrisohaver
 - christopherhein
@@ -256,6 +258,7 @@ doc.
 - fisherxu
 - flaper87
 - floreks
+- fntlnz
 - font
 - foxish
 - frapposelli
@@ -416,6 +419,7 @@ doc.
 - kbarnard10
 - kbhawkey
 - kdada
+- kevin-wangzefeng
 - kevtaylor
 - kfox1111
 - kgolab
@@ -485,6 +489,7 @@ doc.
 - mariantalla
 - markthink
 - MarkusTeufelberger
+- markyjackson-taulia
 - marpaia
 - marquiz
 - mars1024
