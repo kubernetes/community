@@ -135,9 +135,12 @@ the [Steering Committee Election Charter]
 
 ## Nominees
 
-Name | Organization/Company | GitHub
---- | --- | -- |
-| [Example Candidate](example.md) | YourCompany | Link to Github | 
+|                    Name                    | Organization/Company |                   GitHub                   |
+|:------------------------------------------:|:--------------------:|:------------------------------------------:|
+| [Christoph Blecker](./christophblecker.md) |        Red Hat       | [@cblecker](https://github.com/cblecker)   |
+|         [Kris Nova](./krisnova.md)         |        Sysdig        | [@kris-nova](https://github.com/kris-nova) |
+|   [Lachlan Evenson](./lachlanevenson.md)   |       Microsoft      | [@lachie83](https://github.com/lachie83)   |
+|        [Pengfei Ni](./pengfeini.md)        |       Microsoft      | [@feiskyer](https://github.com/feiskyer)   |
 
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
