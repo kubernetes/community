@@ -1,4 +1,5 @@
 channels:
   - name: sig-release
+  - name: release-ci-signal
   - name: release-management
     id: CJH2GBF7Y
