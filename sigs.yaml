@@ -705,6 +705,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/OWNERS
   - name: provider-alibaba-cloud
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/alibaba-cloud-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-alibaba-cloud/master/OWNERS
   - name: provider-aws
     owners:
