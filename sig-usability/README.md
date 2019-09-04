@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Usability Spec
 
 ## Meetings
 * Regular SIG Meeting: [Tuesdays at 14:00 PT (Pacific Time)](https://zoom.us/j/3832562240) (every third week). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1-dYznZR7Q5XCd2bVYoNfMPYs4uNn1aaePQF0q0JQ0uU/).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1gJHgt8RpH4TvqPuC8NtR31-CMqtTYkHy_loxubHq8lg/).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0eY-U8DVJWHBwKvMDEtOxx).
 
 ## Leadership
