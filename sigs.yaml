@@ -2184,6 +2184,13 @@ sigs:
     - github: michmike
       name: Michael Michael
       company: VMware
+    tech_leads:
+    - github: benmoss
+      name: Ben Moss
+      company: Pivotal
+    - github: ddebroy
+      name: Deep Debroy
+      company: Docker
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday

@@ -25,6 +25,13 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Patrick Lang (**[@PatrickLang](https://github.com/PatrickLang)**), Microsoft
 * Michael Michael (**[@michmike](https://github.com/michmike)**), VMware
 
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Ben Moss (**[@benmoss](https://github.com/benmoss)**), Pivotal
+* Deep Debroy (**[@ddebroy](https://github.com/ddebroy)**), Docker
+
 ## Contact
 - Slack: [#sig-windows](https://kubernetes.slack.com/messages/sig-windows)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-windows)
