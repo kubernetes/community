@@ -2,7 +2,11 @@
 
 reviewers:
   - sig-windows-leads
+  - benmoss
+  - ddebroy
 approvers:
   - sig-windows-leads
+  - benmoss
+  - ddebroy
 labels:
   - sig/windows
