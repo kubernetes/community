@@ -136,6 +136,22 @@ feature work for the given release has been defined in suitable
 planning artifacts in conjunction with the Release Team's [enhancements
 lead](https://git.k8s.io/sig-release/release-team/role-handbooks/enhancements/README.md).
 
+After enhancement freeze, applying milestones to PRs and Issues is
+important. Items within the milestone are used as a punchdown list to
+complete the release. Milestones **must** be applied correctly and managed
+aggressively to properly gauge what will go into a release and what
+effort may be needed and when.
+
+What would qualify to go into a current milestone? Any item that is
+required for, or slated to go into, the current release. These could
+be issues or PRs in repos including (but not limited to):
+
+- kubernetes/enhancements
+- kubernetes/kubernetes
+- kubernetes/release
+- kubernetes/sig-release
+- kubernetes/website
+
 Implementation and bugfixing is ongoing across the cycle, but
 culminates in a code freeze period:
 * The **code freeze** starts in week ~10 and continues for ~2 weeks.
