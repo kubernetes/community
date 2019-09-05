@@ -141,7 +141,7 @@ the [Steering Committee Election Charter]
 |         [Kris Nova](./krisnova.md)         |        Sysdig        | [@kris-nova](https://github.com/kris-nova) |
 |   [Lachlan Evenson](./lachlanevenson.md)   |       Microsoft      | [@lachie83](https://github.com/lachie83)   |
 |        [Pengfei Ni](./pengfeini.md)        |       Microsoft      | [@feiskyer](https://github.com/feiskyer)   |
-
+|        [Klaus Ma](./klausma.md)            |        Huawei        | [@k82cn](https://github.com/k82cn)         |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
