@@ -64,6 +64,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/OWNERS
 ### provider-alibaba-cloud
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/alibaba-cloud-csi-driver/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/cloud-provider-alibaba-cloud/master/OWNERS
 ### provider-aws
 - **Owners:**
