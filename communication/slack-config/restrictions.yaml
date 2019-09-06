@@ -17,4 +17,9 @@ restrictions:
     channels:
       - "^sig-release$"
       - "^release-"
+  - path: "sig-storage/*.yaml"
+    channels:
+      - "^sig-storage$"
+      - "^csi$"
+      - "^csi-"
   - path: "**/*" # prevent any other file from containing anything

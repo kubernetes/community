@@ -279,7 +279,6 @@ channels:
   - name: sig-scalability
   - name: sig-scheduling
   - name: sig-service-catalog
-  - name: sig-storage
   - name: sig-testing
   - name: sig-ui
   - name: sig-usability
@@ -317,8 +316,6 @@ channels:
     archived: true
   - name: wg-apply
   - name: wg-component-standard
-  - name: wg-csi
-  - name: wg-csi-migration
   - name: wg-iot-edge
   - name: wg-k8s-infra
   - name: wg-lts
