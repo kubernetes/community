@@ -72,6 +72,7 @@ Voluntary reviews apply towards non-core APIs that do not meet the [mandatory](#
         * Any new resource type
         * Any new version of a stable API
         * Any new functionality added to a stable API as defined by SIG Architecture and the API Reviewers
+        * Any change to the meaning, validation, or behavior of a field
     * The existing [API conventions](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md) (and [API change guidelines](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api_changes.md), if applicable) have been read and followed.
 
 1. Request an API review for a PR or issue in the kubernetes org by adding the `api-review` label with a `/label api-review` comment (requests can be cancelled with a `/remove-label api-review` comment)
