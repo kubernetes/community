@@ -97,7 +97,7 @@ We hold a public meeting every two weeks, on Thursdays at 9 AM (PT).
 * Recordings of past meetings: https://www.youtube.com/playlist?list=PLb1_clREIGYVaqvKaUsVyXxjfcSQDBnmB
 
 ### Contributing
-Interested in contributing to storage features in Kubernetes? [Please read our guide for new contributors](/sig-storage/contributing.md)
+Interested in contributing to storage features in Kubernetes? [Please read our guide for new contributors](/sig-storage/CONTRIBUTING.md)
 
 ### Links
 * Public Slack Channel: https://kubernetes.slack.com/messages/sig-storage/details/
