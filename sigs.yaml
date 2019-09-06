@@ -705,6 +705,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/OWNERS
   - name: provider-alibaba-cloud
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/alibaba-cloud-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-alibaba-cloud/master/OWNERS
   - name: provider-aws
     owners:
@@ -1743,12 +1744,16 @@ sigs:
   label: scheduling
   leadership:
     chairs:
-    - github: bsalamat
-      name: Bobby (Babak) Salamat
+    - github: ahg-g
+      name: Abdullah Gharaibeh
       company: Google
     - github: k82cn
       name: Klaus Ma
       company: Huawei
+    emeritus_leads:
+    - github: bsalamat
+      name: Bobby (Babak) Salamat
+      company: Google
   meetings:
   - description: 10AM PT Meeting
     day: Thursday
