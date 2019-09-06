@@ -318,7 +318,7 @@ channels:
   - name: wg-component-standard
   - name: wg-csi
   - name: wg-csi-migration
-  - name: wg-csi-windows
+  - name: csi-windows
   - name: wg-iot-edge
   - name: wg-k8s-infra
   - name: wg-lts
