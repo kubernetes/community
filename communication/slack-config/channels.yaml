@@ -55,6 +55,7 @@ channels:
   - name: contributor-summit
   - name: crd-installation
   - name: crio
+  - name: csi-windows
   - name: de-events
   - name: de-users
   - name: devstats
