@@ -1877,6 +1877,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/minibroker/master/OWNERS
   - name: service-catalog
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/go-open-service-broker-client/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/service-catalog/master/OWNERS
 - dir: sig-storage
   name: Storage
