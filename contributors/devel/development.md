@@ -137,9 +137,10 @@ development environment, please [set one up](http://golang.org/doc/code.html).
 | 1.10           | 1.9.1       |
 | 1.11           | 1.10.2      |
 | 1.12           | 1.10.4      |
-| 1.13           | 1.11.2      |
-| 1.13           | 1.11.4      |
-| 1.14+          | 1.12.1      |
+| 1.13           | 1.11.13     |
+| 1.14+          | 1.12.9      |
+
+Note that Go 1.13 is not supported yet.
 
 Ensure your GOPATH and PATH have been configured in accordance with the Go
 environment instructions.
