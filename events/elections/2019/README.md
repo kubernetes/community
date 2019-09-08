@@ -142,6 +142,7 @@ the [Steering Committee Election Charter]
 |   [Lachlan Evenson](./lachlanevenson.md)   |       Microsoft      | [@lachie83](https://github.com/lachie83)   |
 |        [Pengfei Ni](./pengfeini.md)        |       Microsoft      | [@feiskyer](https://github.com/feiskyer)   |
 |        [Klaus Ma](./klausma.md)            |        Huawei        | [@k82cn](https://github.com/k82cn)         |
+| [Vallery Lancey](./vallerylancey.md)       |         Lyft         | [@vllry](https://github.com/vllry)
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
