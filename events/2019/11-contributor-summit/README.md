@@ -12,7 +12,7 @@ This event brings together new and current Kubernetes contributors to connect an
 ## Registration
 
 - [Sign the CLA](/CLA.md) if you have not done so already.
-- Website will be live in September:   https://events.linuxfoundation.org/events/contributor-summit-north-america-2019/
+- Website will be live in September:   https://events.linuxfoundation.org/events/kubernetes-contributor-summit-north-america-2019/
 
 ## When and Where
 
@@ -23,7 +23,7 @@ The Contributor Summit takes place in the days leading up to [KubeCon + CloudNat
 - Monday, November 18th, 2019 ~8A - 6P   
   Full day event
 - San Diego, California
-- Event website with more information: https://events.linuxfoundation.org/events/contributor-summit-north-america-2019/
+- Event website with more information: https://events.linuxfoundation.org/events/kubernetes-contributor-summit-north-america-2019/
 
 **But wait!**
 
