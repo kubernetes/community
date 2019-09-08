@@ -5,7 +5,7 @@ Vallery Lancey
 * Twitter: https://twitter.com/vllry
 * More/misc: https://timewitch.net
 
-What's I've Done
+What I've Done
 --
 I'm comparably new to Kubernetes upstream;
 I started contributing in late 2018 after years of being a user.
