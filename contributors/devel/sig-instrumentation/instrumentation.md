@@ -90,7 +90,8 @@ apply additionally.
 
 ## Naming 
 
-Metrics added directly by application or package code should have a unique name. 
+General [metric and label naming apply](https://prometheus.io/docs/practices/naming/),
+beyond that, metrics added directly by application or package code should have a unique name. 
 This avoids collisions of metrics added via dependencies. They also clearly
 distinguish metrics collected with different semantics. This is solved through
 prefixes:
