@@ -73,6 +73,7 @@ channels:
   - name: events
   - name: external-dns
   - name: falco
+  - name: fiaas
   - name: fi-users
   - name: fr-events
   - name: fr-users
