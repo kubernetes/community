@@ -27,7 +27,7 @@ The [charter](charter.md) defines the scope and governance of the LTS Working Gr
 * Dhawal Yogesh Bhanusali (**[@imkin](https://github.com/imkin)**), VMware
 * Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei
 * Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
-* Nick Young (**[@youngnick](https://github.com/youngnick)**), Atlassian
+* Nick Young (**[@youngnick](https://github.com/youngnick)**), VMWare
 
 ## Contact
 - Slack: [#wg-lts](https://kubernetes.slack.com/messages/wg-lts)
