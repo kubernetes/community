@@ -86,7 +86,10 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
 - **Meetings:**
-  - Regular Azure Subproject Meeting: [Wednesdays at 16:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+  - Azure Subproject Meeting (First Monday): [Mondays at 14:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
+    - [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
+  - Azure Subproject Meeting (Third Tuesday UTC, Monday Pacific): [Tuesdays at 1:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=1:00&tz=UTC).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
     - [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
 ### provider-gcp
