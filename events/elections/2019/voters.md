@@ -9,6 +9,7 @@ doc.
 - **2019-08-26** - Add voters 2019-08-20 - 2019-08-25.
 - **2019-08-30** - Add voters 2019-08-26 - 2019-08-29.
 - **2019-09-03** - Add voters 2019-08-30 - 2019-09-03.
+- **2019-09-09** - Add voters 2019-09-04 - 2019-09-09.
 
 ---
 
@@ -236,6 +237,7 @@ doc.
 - enisoc
 - enj
 - enxebre
+- eparis
 - EppO
 - ereslibre
 - erictune
@@ -297,6 +299,7 @@ doc.
 - haircommander
 - haiyanmeng
 - hangyan
+- hannibalhuang
 - hantaowang
 - hardikdr
 - harsh-px
@@ -662,6 +665,7 @@ doc.
 - Random-Liu
 - randomvariable
 - ravisantoshgudimetla
+- Rawkode
 - rbenzair
 - rdodev
 - rdrgmnzs
