@@ -135,17 +135,18 @@ the [Steering Committee Election Charter]
 
 ## Nominees
 
-|                    Name                    | Organization/Company |                   GitHub                   |
-|:------------------------------------------:|:--------------------:|:------------------------------------------:|
-| [Christoph Blecker](./christophblecker.md) |        Red Hat       | [@cblecker](https://github.com/cblecker)   |
-|         [Kris Nova](./krisnova.md)         |        Sysdig        | [@kris-nova](https://github.com/kris-nova) |
-|   [Lachlan Evenson](./lachlanevenson.md)   |       Microsoft      | [@lachie83](https://github.com/lachie83)   |
-|        [Pengfei Ni](./pengfeini.md)        |       Microsoft      | [@feiskyer](https://github.com/feiskyer)   |
-|        [Klaus Ma](./klausma.md)            |        Huawei        | [@k82cn](https://github.com/k82cn)         |
-| [Vallery Lancey](./vallerylancey.md)       |         Lyft         | [@vllry](https://github.com/vllry)         |
-| [Nikhita Raghunath](./nikhitaraghunath.md) |        Loodse        | [@nikhita](https://github.com/nikhita)     |
-| [Paris Pittman](./parispittman.md)         |        Google        |[@parispittman](https://github.com/parispittman)|
+|                    Name                    | Organization/Company |                        GitHub                        |
+|:------------------------------------------:|:--------------------:|:----------------------------------------------------:|
+| [Christoph Blecker](./christophblecker.md) |        Red Hat       | [@cblecker](https://github.com/cblecker)             |
 | [Derek Carr](./derekcarr.md)               |        Red Hat       | [@derekwaynecarr](https://github.com/derekwaynecarr) |
+| [Pengfei Ni](./pengfeini.md)               |       Microsoft      | [@feiskyer](https://github.com/feiskyer)             |
+| [Stephen Augustus](./stephenaugustus.md)   |        VMware        | [@justaugustus](https://github.com/justaugustus)     |
+| [Kris Nova](./krisnova.md)                 |        Sysdig        | [@kris-nova](https://github.com/kris-nova)           |
+| [Klaus Ma](./klausma.md)                   |        Huawei        | [@k82cn](https://github.com/k82cn)                   |
+| [Lachlan Evenson](./lachlanevenson.md)     |       Microsoft      | [@lachie83](https://github.com/lachie83)             |
+| [Nikhita Raghunath](./nikhitaraghunath.md) |        Loodse        | [@nikhita](https://github.com/nikhita)               |
+| [Paris Pittman](./parispittman.md)         |        Google        | [@parispittman](https://github.com/parispittman)     |
+| [Vallery Lancey](./vallerylancey.md)       |         Lyft         | [@vllry](https://github.com/vllry)                   |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
