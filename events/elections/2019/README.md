@@ -145,6 +145,7 @@ the [Steering Committee Election Charter]
 | [Vallery Lancey](./vallerylancey.md)       |         Lyft         | [@vllry](https://github.com/vllry)         |
 | [Nikhita Raghunath](./nikhitaraghunath.md) |        Loodse        | [@nikhita](https://github.com/nikhita)     |
 | [Paris Pittman](./parispittman.md)         |        Google        |[@parispittman](https://github.com/parispittman)|
+| [Derek Carr](./derekcarr.md)               |        Red Hat       | [@derekwaynecarr](https://github.com/derekwaynecarr) |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
