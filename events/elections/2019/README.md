@@ -23,7 +23,7 @@ whether to run or who to vote for:
   structures and policies
 * Act as a final non-technical escalation point for any Kubernetes repository
 * Request funds and other support from the CNCF (e.g. marketing, press, etc.)
-* Define and enforce requirements for community groups to be in good standing 
+* Define and enforce requirements for community groups to be in good standing
   such as having an approved charter
 
 For more context, please see the [current steering committee backlog] or a
@@ -92,7 +92,7 @@ roles you may hold.
 Kubernetes members in [voters.md] will receive a ballot via email. If you are
 not on that list and feel you have worked on Kubernetes in a way that is NOT
 reflected in GitHub contributions, you can use the [voter exemption form] to ask
-to participate in the election. 
+to participate in the election.
 
 Elections will be held using time-limited [Condorcet] ranking on [CIVS]
 using the [IRV method]. The top vote getters will be elected to the open
@@ -110,7 +110,7 @@ to the address on file at the start of the election from "Kubernetes (CIVS Poll
 Supervisor) `<civs@cs.cornell.edu>`, please whitelist if necessary. Detailed
 voting instructions will be addressed in email and the CIVS polling page. Please
 note that email ballots might be unreliable, so you are encouraged to contact
-the election officials if you do not receive a ballot by September 29. 
+the election officials if you do not receive a ballot by September 29.
 
 ### Officers
 
@@ -128,7 +128,7 @@ The newly elected body will be announced in the weekly [Kubernetes Community Mee
 on October 3, 2019.
 
 Following the meeting, the raw voting results and winners will be published on the
-[Kubernetes Blog]. 
+[Kubernetes Blog].
 
 For more information, definitions, and/or detailed election process, please refer to
 the [Steering Committee Election Charter]
@@ -144,6 +144,7 @@ the [Steering Committee Election Charter]
 |        [Klaus Ma](./klausma.md)            |        Huawei        | [@k82cn](https://github.com/k82cn)         |
 | [Vallery Lancey](./vallerylancey.md)       |         Lyft         | [@vllry](https://github.com/vllry)         |
 | [Nikhita Raghunath](./nikhitaraghunath.md) |        Loodse        | [@nikhita](https://github.com/nikhita)     |
+| [Paris Pittman](./parispittman.md)         |        Google        |[@parispittman](https://github.com/parispittman)|
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
