@@ -51,7 +51,7 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
   - https://raw.githubusercontent.com/kubernetes-incubator/cluster-capacity/master/OWNERS
 ### descheduler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/descheduler/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/descheduler/master/OWNERS
 ### kube-batch
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/kube-batch/master/OWNERS
