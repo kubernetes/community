@@ -2642,6 +2642,37 @@ usergroups:
     teams:
     - name: ug-big-data
       description: General Discussion
+- dir: ug-vmware-users
+  name: VMware Users
+  mission_statement: >
+    The VMware User Group facilitates communication among Kubernetes users and contributors
+    on topics pertaining to running all conformant forms of Kubernetes on VMware infrastructure.
+
+  label: vmware-users
+  leadership:
+    chairs:
+    - github: cantbewong
+      name: Steve Wong
+      company: VMware
+    - github: mylesgray
+      name: Myles Gray
+      company: VMware
+    tech_leads:
+    - github: brysonshepherd
+      name: Bryson Shepherd
+      company: Walmart
+    - github: phenixblue
+      name: Joe Searcy
+      company: T-Mobile
+  meetings:
+  - description: Regular User Group Meeting
+    day: Thursday
+    time: "11:00"
+    tz: PT (Pacific Time)
+    frequency: monthly
+  contact:
+    slack: ug-vmware
+    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-ug-vmware
 committees:
 - dir: committee-code-of-conduct
   name: Code of Conduct
