@@ -67,7 +67,7 @@ yourself, you count as one of the three.
 
 [Eligible voters] may endorse candidates of their choosing by replying to the
 candidate's nomination email saying something like "I endorse this nominee"
-or "+1".
+or "+1". Please specify your github ID and state that you are in voters.md.
 
 **Running**
 
@@ -137,6 +137,7 @@ the [Steering Committee Election Charter]
 
 |                    Name                    | Organization/Company |                        GitHub                        |
 |:------------------------------------------:|:--------------------:|:----------------------------------------------------:|
+| [Brendan Burns](./brendanburns.md)         |       Microsoft      | [@brendandburns](https://github.com/brendandburns)   |
 | [Christoph Blecker](./christophblecker.md) |        Red Hat       | [@cblecker](https://github.com/cblecker)             |
 | [Derek Carr](./derekcarr.md)               |        Red Hat       | [@derekwaynecarr](https://github.com/derekwaynecarr) |
 | [Pengfei Ni](./pengfeini.md)               |       Microsoft      | [@feiskyer](https://github.com/feiskyer)             |
