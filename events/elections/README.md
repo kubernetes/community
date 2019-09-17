@@ -38,7 +38,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
      - Officers will update this list as voters submit the voting exemption form.
    - Announce to the candidates to submit PRs with their platform statement (if they desire), 300 word limit. Each platform document lives in the elections/$YEAR directory, with the voter’s guide (README.md) acting as the index.
    - Ensure officers are members of election@kubernetes.io Google Group and that prior officers are removed. 
-   - Start a shared postmortem document to document lessons learned so this process can be improved. 
+   - Start a shared postmortem document to log the lessons learned so this process can be improved. 
 
 2. Announce voting schedule to community
 
@@ -52,7 +52,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - Name of supervisor - “Kubernetes Election Officers”
 - Email - election@kubernetes.io : Googlegroups doesn’t work here. This mail should resolve to the election officers.
 - Date and Time: Write in the date and time the election will stop. This field is not programmatic, the election is stopped by hand, so you can write this in plain text.
-- Description: Use the following text, modify it for either 3 or 4 positions, depending on the amount of open seats: This election is to nominate the steering committee for the Kubernetes project. Order the candidates by order of preference, the top $NUMBER candidates will be selected. Please see the voter's guide for more information.  PLEASE NOTE: "No opinion" is also a voting option if you do not feel comfortable ranking every single candidate.
+- Description: Use the following text, modify it for either 3 or 4 positions, depending on the amount of open seats: This election is to nominate the steering committee for the Kubernetes project. Order the candidates by preference, the top $NUMBER candidates will be selected. Please see the voter's guide for more information.  PLEASE NOTE: "No opinion" is also a voting option if you do not feel comfortable ranking every single candidate.
 - Add the candidate list to the form
 - How many choices will win: This number needs to be set to the amount of open seats of a given election
 - More options, check the boxes for:
@@ -70,7 +70,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - Leave the poll open for the duration of voting.
   - Remember to send a 24 hour reminder before closing the poll.
   - Click "Stop poll" at the end of the election, wait a minute then refresh the page for results. 
-  - Select "Condorcet IRV" on the right hand side of the page to select method.
+  - Select "Condorcet IRV" on the right hand side of the page to select the results method.
   - Mail results of the election to the steering committee private list and await instructions. 
 - Push election results into the community repo under events/elections _after_ the Steering Commmittee has announced the results. 
 
