@@ -61,6 +61,7 @@ Administrators seats: 4
 | Jorge Castro  | @castrojo             | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen    | @mrbobbytables        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jeffrey Sica  | @jeefy                | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jorge Alarcon | @alejandrox1          | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 
 Note, due to how the software is designed, dedicated moderators are not required
 for discuss, the [trust system] in place allows for self moderation. In this
