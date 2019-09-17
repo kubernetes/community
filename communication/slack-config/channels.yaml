@@ -153,6 +153,7 @@ channels:
   - name: kubekhan
     archived: true
   - name: kubeless
+  - name: kubeone
   - name: kubepack
   - name: kubestack
   - name: kuberhealthy
