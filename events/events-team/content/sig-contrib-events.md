@@ -33,8 +33,9 @@ Time Commitment
 
 ### Responsibilities
 
-- Contact each SIG and get the names of 1 or more experienced members who will represent the SIG at the Meet and Greet.
-- Expect to spend a fair amount of time following up with SIGs to get the name of their representatives.
+- Create a form to track the details about each SIG / WG representative. See the example from the [2019 San Diego SIG M&G](https://forms.gle/hxx1qz8XtwtXEBMm8) for more details about what information to gather.
+- Contact each SIG / WG and ask them to have 1 or more experienced members complete the form and commit to represent the group at the Meet and Greet.
+- Expect to spend a fair amount of time following up with SIGs and WGs to get the name of their representatives.
 - Add these representatives to a calendar notice for the SIG Meet and Greet.
 - Make sure that we have table stands and buttons for each SIG that are organized and easy to hand out at the beginning of the event.
 - Recruit a few volunteers to distribute table stands and buttons and to help SIGs / contributors find the right tables. 
