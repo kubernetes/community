@@ -57,7 +57,6 @@ Administrators seats: 4
 
 | Name          | Kubernetes Discuss ID | Region   | Timezone                                                |
 |---------------|-----------------------|----------|---------------------------------------------------------|
-| Paris Pittman | @parispittman         | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Jorge Castro  | @castrojo             | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen    | @mrbobbytables        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jeffrey Sica  | @jeefy                | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
