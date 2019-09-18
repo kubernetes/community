@@ -263,6 +263,7 @@ channels:
   - name: sig-configuration
     archived: true
   - name: sig-contribex
+  - name: sig-contribex-triage
   - name: sig-docs
   - name: sig-docs-blog
   - name: sig-docs-maintainers
