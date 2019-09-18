@@ -94,6 +94,12 @@ A former GSoC intern for Kubernetes is now leading this for us - mentoring works
 * Typically a one hour a quarter time commitment is expected; this is an opt-in sign up.
 * You will need to be on the call 5 minutes early to test audio quality and make sure we are good to go for streaming.
 
+*[Pod Mentoring](mentoring-events.md)*
+* Short group sessions with other mentors during KubeCon/CloudNativeCon events answering mentee questions
+  * Setup to eleminate awkwardness of 1:1s and ensure a wider breadth of knowledge to reduce pressure of having to provide an answer
+  * Requires one of the mentors to be an "anchor", someone who facilitates the conversation
+  * Great way to learn about struggles of new contributors
+* Mentees will be advised to ask well-formed questions to maximize time for mentor feedback
 
 ### Other resources
 TODO - add external resources/links on being a good mentor, etc.
