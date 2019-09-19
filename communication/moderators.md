@@ -134,6 +134,7 @@ Moderators seats: 10
 | Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Joe Beda            | @jbeda              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
+| Naeil Ezzoueidi     | @nzoueidi           | EMEA     | [CST - Central European Time](https://time.is/CET)      |
 | *Open*              | *Open*              |          |                                                         |
 
 
@@ -197,12 +198,13 @@ Moderators pro tempore seats: 10
 
 Administrators seats: 4
 
-| Name          | Kubernetes Slack ID | Region   | Timezone                                                |
-|---------------|---------------------|----------|---------------------------------------------------------|
-| Jorge Castro  | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Bob Killen    | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jorge Alarcon | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Paris Pittman | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Name            | Kubernetes Slack ID | Region   | Timezone                                                |
+|-----------------|---------------------|----------|---------------------------------------------------------|
+| Jorge Castro    | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Bob Killen      | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jorge Alarcon   | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Paris Pittman   | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Naeil Ezzoueidi | @nzoueidi           | EMEA     | [CET - Central European Time](https://time.is/CET)      |
 
 - License and main account controlled by the CNCF
 
