@@ -96,8 +96,8 @@ A former GSoC intern for Kubernetes is now leading this for us - mentoring works
 
 *[Pod Mentoring](mentoring-events.md)*
 * Short group sessions with other mentors during KubeCon/CloudNativeCon events answering mentee questions
-  * Setup to eleminate awkwardness of 1:1s and ensure a wider breadth of knowledge to reduce pressure of having to provide an answer
-  * Requires one of the mentors to be an "anchor", someone who facilitates the conversation
+  * Designed to eliminate the awkwardness of 1:1s and ensure a wider breadth of knowledge to reduce pressure of having to provide an answer
+  * Requires one of the mentors to be an "anchor" who is responsible for facilitating the conversation
   * Great way to learn about struggles of new contributors
 * Mentees will be advised to ask well-formed questions to maximize time for mentor feedback
 
