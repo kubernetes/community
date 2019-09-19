@@ -8,32 +8,33 @@ quick reference of useful information to make your GitHub contribution experienc
 better.
 
 **Table of Contents**
-- [Helpful Resources](#Helpful-Resources)
-  - [Getting Started](#Getting-Started)
-  - [SIGs and other Groups](#SIGS-and-Other-Groups)
-  - [Community](#Community)
-  - [Important Email Aliases](#Important-Email-Aliases)
-  - [Workflow](#Workflow)
-  - [Tests](#Tests)
-  - [Other Useful Links](#Other-Useful-Links)
-- [Communicating effectively on GitHub](#Communicating-Effectively-on-GitHub)
-  - [How to be Excellent to Each Other](#How-to-be-Excellent-to-Each-Other)
-    - [Examples of Good/Bad Communication](#Examples-of-GoodBad-Communication)
-- [Submitting a Contribution](#Submitting-a-Contribution)
-  - [Signing the CLA](#signing-the-CLA)
-  - [Opening and Responding to Issues](#Opening-and-Responding-to-Issues)
-    - [Creating an Issue](#Creating-an-Issue)
-    - [Responding to an Issue](#Responding-to-an-Issue)
-  - [Opening a Pull Request](#Opening-a-pull-Request)
-    - [Creating a Pull Request](#Creating-a-Pull-Request)
-    - [Example PR Description](#Example-PR-Description)
-    - [Troubleshooting a Pull Request](#Troubleshooting-a-Pull-Request)
-  - [Labels](#Labels)
-- [Working Locally](#Working-Locally)
-  - [Branch Strategy](#Branch-Strategy)
-    - [Adding Upstream](#Adding-Upstream)
-    - [Keeping Your Fork in Sync](#Keeping-Your-Fork-in-Sync)
-  - [Squashing Commits](#Squashing-Commits)
+- [Kubernetes Contributor Cheat Sheet](#kubernetes-contributor-cheat-sheet)
+  - [Helpful Resources](#helpful-resources)
+    - [Getting Started](#getting-started)
+    - [SIGs and Other Groups](#sigs-and-other-groups)
+    - [Community](#community)
+    - [Workflow](#workflow)
+    - [Tests](#tests)
+    - [Important Email Aliases](#important-email-aliases)
+    - [Other Useful Links](#other-useful-links)
+  - [Communicating Effectively on GitHub](#communicating-effectively-on-github)
+    - [How to be Excellent to Each Other](#how-to-be-excellent-to-each-other)
+      - [Examples of Good/Bad Communication](#examples-of-goodbad-communication)
+  - [Submitting a Contribution](#submitting-a-contribution)
+    - [Signing the CLA](#signing-the-cla)
+    - [Opening and Responding to Issues](#opening-and-responding-to-issues)
+      - [Creating an Issue](#creating-an-issue)
+      - [Responding to an Issue](#responding-to-an-issue)
+    - [Opening a Pull Request](#opening-a-pull-request)
+      - [Creating a Pull Request](#creating-a-pull-request)
+      - [Example PR Description](#example-pr-description)
+      - [Troubleshooting a Pull Request](#troubleshooting-a-pull-request)
+    - [Labels](#labels)
+  - [Working Locally](#working-locally)
+    - [Branch Strategy](#branch-strategy)
+      - [Adding Upstream](#adding-upstream)
+      - [Keeping Your Fork in Sync](#keeping-your-fork-in-sync)
+      - [Squashing Commits](#squashing-commits)
 
 ---
 
@@ -104,6 +105,7 @@ better.
 
 - [Developer Statistics] - View developer statistics for all CNCF managed
   projects.
+- [Kubernetes Patch Release] Schedule and team contact information for Kubernetes patch releases.
 
 ---
 
@@ -399,3 +401,4 @@ the other contributors assigned to review and approve your PR.
 [Security and Disclosure Information]: https://kubernetes.io/docs/reference/issues-security/security/
 [approve]: https://prow.k8s.io/command-help#approve
 [GitHub Administration Team]: /github-management#github-administration-team
+[Kubernetes Patch Release]: https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md
