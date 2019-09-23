@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Component Standard Working Group
 
-Develop a standard foundation (philosophy and libraries) for core Kubernetes components to build on top of. Areas to standardize include configuration (flags, ComponentConfig APIs, ...), status endpoints (healthz, configz, ...), integration points (delegated authn/z, ...), and logging. Details are outlined in KEP 0032: https://github.com/kubernetes/enhancements/blob/master/keps/sig-cluster-lifecycle/0032-create-a-k8s-io-component-repo.md.
+Develop a standard foundation (philosophy and libraries) for core Kubernetes components to build on top of. Areas to standardize include configuration (flags, ComponentConfig APIs, ...), status endpoints (healthz, configz, ...), integration points (delegated authn/z, ...), and logging. Details are outlined in KEP 0032: https://github.com/kubernetes/enhancements/blob/master/keps/sig-cluster-lifecycle/wgs/0032-create-a-k8s-io-component-repo.md.
 
 ## Stakeholder SIGs
 * SIG API Machinery
