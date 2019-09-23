@@ -59,7 +59,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
 ### pod-networking
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/ip-masq-agent/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
 ### services
 - **Owners:**
