@@ -545,8 +545,9 @@ stragglers to finish.
 takes too many resources or restarts nodes), it is labeled `[Serial]`, and
 should be run in serial as part of a separate suite.
 
-  - `[Disruptive]`: If a test restarts components that might cause other tests
-to fail or break the cluster completely, it is labeled `[Disruptive]`. Any
+  - `[Disruptive]`: If a test may impact workloads that it didn't create,
+ it should be marked as `[Disruptive]`. Examples of disruptive behavior
+include, but are not limited to, restarting components or tainting nodes. Any
 `[Disruptive]` test is also assumed to qualify for the `[Serial]` label, but
 need not be labeled as both. These tests are not run against soak clusters to
 avoid restarting components.
