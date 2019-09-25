@@ -26,26 +26,28 @@ The [charter](charter.md) defines the scope and governance of the PM Special Int
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), Google
-* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
+* Lachie Evenson (**[@lachie83](https://github.com/lachie83)**), Microsoft
 
 ## Emeritus Leads
 
 * Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google
+* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-pm)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-pm)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fpm)
+- Slack: [#sig-pm](https://kubernetes.slack.com/messages/sig-pm)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-pm)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fpm)
 
 ## Subprojects
 
-The following subprojects are owned by sig-pm:
-- **enhancements**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
+The following [subprojects][subproject-definition] are owned by sig-pm:
+### enhancements
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
 
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 SIG-PM (Program, Product, Project Management)

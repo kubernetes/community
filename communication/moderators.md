@@ -57,10 +57,10 @@ Administrators seats: 4
 
 | Name          | Kubernetes Discuss ID | Region   | Timezone                                                |
 |---------------|-----------------------|----------|---------------------------------------------------------|
-| Paris Pittman | @parispittman         | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Jorge Castro  | @castrojo             | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen    | @mrbobbytables        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jeffrey Sica  | @jeefy                | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jorge Alarcon | @alejandrox1          | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 
 Note, due to how the software is designed, dedicated moderators are not required
 for discuss, the [trust system] in place allows for self moderation. In this
@@ -77,7 +77,7 @@ Regional category moderators seats (per category): 3
 | Name                    | Kubernetes Discuss ID | Region | Timezone                                           |
 |-------------------------|-----------------------|--------|----------------------------------------------------|
 | Peter (Xiang Peng) Zhao | @xiangpengzhao        | APAC   | [CST - China Standard Time](https://time.is/China) |
-| Yang Li                 | @idealhack            | APAC   | [CST - China Standard Time](https://time.is/China) |
+| Yang Li                 | @idealhack            | APAC   | [JST - Japan Standard Time](https://time.is/Japan) |
 | Puja Abbassi            | @puja                 | EMEA   | [CET - Central European Time](https://time.is/CET) |
 
 **[German]**
@@ -134,6 +134,7 @@ Moderators seats: 10
 | Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Joe Beda            | @jbeda              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
+| Naeil Ezzoueidi     | @nzoueidi           | EMEA     | [CST - Central European Time](https://time.is/CET)      |
 | *Open*              | *Open*              |          |                                                         |
 
 
@@ -171,7 +172,7 @@ Moderators seats: 10
 | Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Noah Kantrowitz     | @coderanger         | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)       |
-| Yang Li             | @idealhack          | APAC     | [CST - China Standard Time](https://time.is/China)      |
+| Yang Li             | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
 
 
 #### Moderators Pro Tempore
@@ -197,12 +198,13 @@ Moderators pro tempore seats: 10
 
 Administrators seats: 4
 
-| Name          | Kubernetes Slack ID | Region   | Timezone                                                |
-|---------------|---------------------|----------|---------------------------------------------------------|
-| Jorge Castro  | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Bob Killen    | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jorge Alarcon | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Paris Pittman | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Name            | Kubernetes Slack ID | Region   | Timezone                                                |
+|-----------------|---------------------|----------|---------------------------------------------------------|
+| Jorge Castro    | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Bob Killen      | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jorge Alarcon   | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Paris Pittman   | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Naeil Ezzoueidi | @nzoueidi           | EMEA     | [CET - Central European Time](https://time.is/CET)      |
 
 - License and main account controlled by the CNCF
 

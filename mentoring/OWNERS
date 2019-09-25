@@ -5,6 +5,7 @@ reviewers:
   - nikhita
 approvers:
   - parispittman
+  - nikhita
   - sig-contributor-experience-leads
 labels:
   - sig/contributor-experience

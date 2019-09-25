@@ -25,14 +25,17 @@ Define the models of multitenancy that Kubernetes will support. Discuss and exec
 
 ## Organizers
 
-* David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google
+* Sanjeev Rampal (**[@srampal](https://github.com/srampal)**), Cisco
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
 
-## Contact
-* [Slack](https://kubernetes.slack.com/messages/wg-multitenancy)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fmultitenancy)
+## Emeritus Organizers
 
+* David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google
+
+## Contact
+- Slack: [#wg-multitenancy](https://kubernetes.slack.com/messages/wg-multitenancy)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fmultitenancy)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

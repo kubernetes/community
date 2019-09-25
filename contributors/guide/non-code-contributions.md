@@ -14,7 +14,7 @@ slug: "non-code"
 
 The list below is meant to help non-code contributors find areas of the Kubernetes project where their expertise can be best utilized. The goal of this is to both provide a starting guide for anyone looking to become a contributor not necessarily writing code, and also to fill any needs that the SIGs have that might not currently be filled by code-focused contributors.
 
-This list is meant to be used by both new contributors looking for a good entrance into the project, and current contributors who would live to do something different.
+This list is meant to be used by both new contributors looking for a good entrance into the project, and current contributors who would like to do something different.
 
 Are you interested in any of the roles below? Come chat with us [on Slack](https://kubernetes.slack.com/messages/sig-contribex)!
 

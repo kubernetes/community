@@ -90,9 +90,6 @@ should probably upgrade it, (and probably should have some time ago)". With
 minor releases happening approximately every three months, that means a minor
 release is supported for approximately nine months.
 
-This policy is in line with
-[GKE's supported upgrades policy](https://cloud.google.com/container-engine/docs/clusters/upgrade).
-
 ## Patch releases
 
 Patch releases are intended for critical bug fixes to the latest minor version,

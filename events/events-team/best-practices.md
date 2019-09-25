@@ -1,3 +1,5 @@
+# Best pracices for running a Kubernetes Contributor Summit
+
 New home for best practices, process documentation, and other artifacts that detail out the 'how to' of running a Kubernetes contributor summit.
 
 //TODO  
@@ -5,7 +7,23 @@ general clean up; style guide check
 add more reference links
 potentially separate into multiple docs or re-organize  
 
-## Kick Off
+- [Kickoff](#kickoff)
+- [Project Management](#project-management)
+- [Registration](#registration)
+- [Badges](#badges)
+- [Venue](#venue)
+- [Social / Celebration](#social-celebration)
+- [Communication and Advertising](#communication-and-advertising)
+- [Sponsorship](#sponsorship)
+- [Swag / T-Shirts](#swag-t-shirts)
+- [Day of Event Staff](#day-off-event-staff)
+- [Transparency](#transparency)
+- [Signage](#signage)
+- [Contributor Awards](#contributor-awards)
+- [Survey](#survey)
+- [Resources](#resources)
+
+## Kickoff
 Event lead will start the event strategy doc that will outline goals and content
 strategy with content team. This doc should first be circulated within contributor experience for
 the [event OWNERs] to review and for the SIG to weigh in. Next, steering committee
@@ -14,10 +32,10 @@ content for most of different types of contributors that we have.
 
 [Seattle 2018 doc]
 
-A GitHub page in the events section will be created to capture history, the team, and other basic information. [(example)] This will not be used as the event website.
+A GitHub repo in the events section will be created to capture history, the team, and other basic information. [(example)] This will not be used as the event website.
 
 ## Project Management
-Each event will have a [project board] created. The incoming team will need to create a label `area/cityfoo-summit` and any issue or PR related to all summits will have the label `area/contributor-summit`.
+Each event will have a [project board] created. The incoming team will need to create a label `area/regionfoo-summit` and any issue or PR related to all summits will have the label `area/contributor-summit`.
 
 The event team can decide if they want a dedicated project manager role at the time of planning.
 
@@ -40,17 +58,17 @@ Accessibility
 
 If the event is being held during KubeCon/CloudNativeCon it's important to get a space that is not with other co-located events to avoid confusion like we have had in the past.
 
-## Social
-Hallway Track is listed as the favorite track at every event. The social is a longer hallway track that doesn't interfere with content. The social should have fun activities!  
+## Social / Celebration
+The Hallway Track is listed as the favorite track at every event. The social/celebration is a longer hallway track that doesn't interfere with content. The social should have fun activities!  
 
 ## Communication and Advertising  
-kubernetes-dev@googlegroups.com is our artery for contributor communication and should be the main news network for contributor events.  
+[kubernetes-dev@googlegroups.com][k-dev] is our artery for contributor communication and should be the main news network for contributor events.  
 Other channels:  
-Slack - #contributor-summit, #kubecon, #kubernetes-dev  
-Twitter  
-Kubernetes blog
-discuss.kubernetes.io
-Thursday Community Meetings
+Slack - [#contributor-summit], [#kubecon], [#kubernetes-dev]  
+[Twitter]  
+[Kubernetes blog]  
+[discuss.kubernetes.io]  
+[Weekly Thursday Community Meetings][community-meetings]
 
 ## Sponsorship
 We like to keep our events clear from sponsorships as it distracts from the mission.
@@ -58,8 +76,9 @@ We like to keep our events clear from sponsorships as it distracts from the miss
 ## Swag / T-Shirts
 What messaging do we want to convey with the swag?  
 thockin has designed all contributor summit NA shirts and jberkus for Shanghai; both have done an EU shirt  
+
 Best practices:  
-Order shirts 10 days before the event to make sure everyone gets the size that they want unless there are custom/shipping issues.  
+Order shirts well in advance before the event to make sure everyone gets the size that they want in case there are custom/shipping issues.  
 Past brand that works well: Dakota. Previous brands had odd sizing and community feedback matched that.
 
 ## Day of Event Staff
@@ -98,3 +117,11 @@ Links to docs that aren't a fit for markdown:
 [blog post example]: https://kubernetes.io/blog/2018/10/16/kubernetes-2018-north-american-contributor-summit/
 [welcome slides]: https://docs.google.com/presentation/d/11eDR_0Dl_MBbeoMDF_mQaJC3shnnd6buhIVei2Ke0SM/edit#slide=id.p
 [project board]: https://github.com/orgs/kubernetes/projects
+[k-dev]: (https://groups.google.com/forum/#!forum/kubernetes-dev)
+[#contributor-summit]: (https://kubernetes.slack.com/messages/contributor-summit)
+[#kubecon]: (https://kubernetes.slack.com/messages/kubecon)
+[#kubernetes-dev]: (https://kubernetes.slack.com/messages/kubernetes-dev)
+[Twitter]: (https://twitter.com/kubernetesio)
+[Kubernetes blog]: (https://kubernetes.io/blog/)
+[discuss.kubernetes.io]: (discuss.kubernetes.io)
+[community-meetings]: (https://github.com/kubernetes/community/blob/master/events/community-meeting.md)

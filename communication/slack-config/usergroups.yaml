@@ -1,6 +1,23 @@
 # This file contains a list of all Slack usergroups that exist.
 
 usergroups:
+  - name: release-managers
+    long_name: Release Managers
+    description: Release Managers. Ping for questions on branch cuts and building/packaging Kubernetes.
+    channels:
+      - release-management
+      - sig-release
+    members:
+      - aleksandra-malinowska
+      - bubblemelon
+      - calebamiles
+      - feiskyer
+      - hoegaarden
+      - idealhack
+      - justaugustus
+      - listx
+      - sumitranr
+      - tpepper
   - name: test-infra-oncall
     external: true
   - name: youtube-admins

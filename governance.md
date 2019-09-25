@@ -69,13 +69,10 @@ Each SIG must have a charter that specifies its scope (topics,
 subsystems, code repos and directories), responsibilities, areas of
 authority, how members and roles of authority/leadership are
 selected/granted, how decisions are made, and how conflicts are
-resolved. See the [SIG charter process] for details on how charters are managed.
-A [short template] for intra-SIG governance has been
-developed in order to simplify SIG creation, and additional templates
-are being developed, but SIGs should be relatively free to customize
-or change how they operate, within some broad guidelines and
-constraints imposed by cross-SIG processes (e.g., the release process)
-and assets (e.g., the kubernetes repo).
+resolved. See the [SIG charter process] for details on how charters are managed. 
+SIGs should be relatively free to customize or change how they operate, 
+within some broad guidelines and constraints imposed by cross-SIG processes 
+(e.g., the release process) and assets (e.g., the kubernetes repo).
 
 A primary reason that SIGs exist is as forums for collaboration.
 Much work in a SIG should stay local within that SIG. However, SIGs
@@ -213,7 +210,6 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 [sig governance]: /committee-steering/governance/sig-governance.md
 [owners]: /community-membership.md#subproject-owner
 [sig charter process]: /committee-steering/governance/README.md
-[short template]: /committee-steering/governance/sig-governance-template-short.md
 [kubernetes repository guidelines]: /github-management/kubernetes-repositories.md
 [working group governance]: /committee-steering/governance/wg-governance.md
 [user group governance]: /committee-steering/governance/ug-governance.md

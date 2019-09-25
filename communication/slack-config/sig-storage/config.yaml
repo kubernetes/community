@@ -1,0 +1,7 @@
+channels:
+  - name: csi
+    id: C8EJ01Z46
+  - name: csi-migration
+    id: CG04EL876
+  - name: csi-windows
+  - name: sig-storage

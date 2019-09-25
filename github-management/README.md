@@ -28,7 +28,7 @@ various tasks.
 
 This team (**[@kubernetes/owners](https://github.com/orgs/kubernetes/teams/owners)**) is as follows:
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**, US Pacific)
-* Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**, US Pacific)
+* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**, US Eastern)
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**, CA Pacific)
 * Erick Fejta (**[@fejta](https://github.com/fejta)**, US Pacific)
 * Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**, Indian Standard Time)
@@ -54,7 +54,7 @@ community members, guiding them through the
 GitHub organization.
 
 Our current coordinators are:
-* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**, US Eastern)
+* Naeil Ezzoueidi (**[@nzoueidi](https://github.com/nzoueidi)**, Central European)
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**, US Eastern)
 
 ## Project Owned Organizations

@@ -32,10 +32,13 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
    - Make github.com/kubernetes/community/elections/$YEAR/README.md, this is the voter’s guide.
      - Copy over the voter’s guide from the previous year. The voter’s guide is the single source of truth for the election that year! All announcements and notices should link to this document.
      - Update with new dates, candidates, and procedures (if necessary).
+   - Make github.com/kubernetes/community/elections/$YEAR/OWNERS with all the election officers for the election year.
    - Make github.com/kubernetes/community/elections/$YEAR/voters.md
-     - Initial list is generated via the [eligibilty for voting requirements][eligibile to vote]
+     - Initial list is generated via the [eligibility for voting requirements][eligible to vote]
      - Officers will update this list as voters submit the voting exemption form.
    - Announce to the candidates to submit PRs with their platform statement (if they desire), 300 word limit. Each platform document lives in the elections/$YEAR directory, with the voter’s guide (README.md) acting as the index.
+   - Ensure officers are members of election@kubernetes.io Google Group and that prior officers are removed. 
+   - Start a shared postmortem document to log the lessons learned so this process can be improved. 
 
 2. Announce voting schedule to community
 
@@ -47,23 +50,29 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - Use [CIVS](http://civs.cs.cornell.edu/civs_create.html) to create the election, which CIVS calls a poll. Once you send out the ballots you cannot UNSEND the emails, ensure everything in the form is correct!
 - Name of the poll - “Kubernetes Steering Committee Election for $YEAR”
 - Name of supervisor - “Kubernetes Election Officers”
-- Email - community@kubernetes.io : Googlegroups doesn’t work here. This mail should resolve to members of the steering committee AND the election officers.
+- Email - election@kubernetes.io : Googlegroups doesn’t work here. This mail should resolve to the election officers.
 - Date and Time: Write in the date and time the election will stop. This field is not programmatic, the election is stopped by hand, so you can write this in plain text.
-- Description: This election is to nominate the steering committee for the Kubernetes project. Select the three(3) candidates, by order of preference. Please see the voter's guide for more information.  PLEASE NOTE: "No opinion" is also a voting option if you do not feel comfortable ranking every single candidate.
+- Description: Use the following text, modify it for either 3 or 4 positions, depending on the amount of open seats: This election is to nominate the steering committee for the Kubernetes project. Order the candidates by preference, the top $NUMBER candidates will be selected. Please see the voter's guide for more information.  PLEASE NOTE: "No opinion" is also a voting option if you do not feel comfortable ranking every single candidate.
 - Add the candidate list to the form
 - How many choices will win: This number needs to be set to the amount of open seats of a given election
 - More options, check the boxes for:
   - Do not release results to all voters.
   - Enable detailed ballot reporting.
   - Allow voters to select “no opinion” for some choices.
-- Click create poll, this will send community@kubernetes.io an email with instructions.
+- Click create poll, this will send election@kubernetes.io an email with instructions.
 - It will send you a link to “Poll Control”, bookmark this generated page as this is where you will add voters and also resend ballots to people if their ballot gets lost or filtered.
 - This page is where the “Start Poll” and “Stop Poll” buttons are, start the poll.
-- Paste in the registered voters and click add voters.
-  - It will mail the ballots to the participants.
-  - It does duplicate detection so multiple entries are fine.
+- WARNING: This is the point of no return: 
+  - Paste in the registered voters and click add voters.
+    - It will mail the ballots to the participants.
+    - It does duplicate detection so multiple entries are fine.
+    - This might take a while and the web page will not update, this has taken up to 10m in the past as it's sending each ballot. Don't panic or refresh the page. 
 - Leave the poll open for the duration of voting.
   - Remember to send a 24 hour reminder before closing the poll.
+  - Click "Stop poll" at the end of the election, wait a minute then refresh the page for results. 
+  - Select "Condorcet IRV" on the right hand side of the page to select the results method.
+  - Mail results of the election to the steering committee private list and await instructions. 
+- Push election results into the community repo under events/elections _after_ the Steering Commmittee has announced the results. 
 
 ## Roles and Responsibilities:
 
@@ -77,9 +86,9 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 
 ### Election Officers
 
-- Must be [eligible to vote][eligible to vote]
+- Must be [eligible to vote]
 - Cannot be running for office in the current election
-- Cannot be a current member of the steering committee
+- Cannot be a current member of the steering committee that is a candidate in the election or whose term extends beyond the election period
 - [Recuse themselves from public election activities][election-recusal] except those required to run the election
   - May vote
   - May answer questions about general election specifics, ie:
@@ -108,5 +117,6 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - It is impossible for the election officers to see the results of the election until the election ends; for purposes of transparency with the community it is encouraged to release some statistics during the election (ie. “65% of the community has voted so far!”)
 - Ensure that the election results are handed over to the steering committee.
 
-[eligibile to vote]: https://github.com/kubernetes/steering/blob/master/elections.md#elegibility-for-voting
+
+[eligible to vote]: https://github.com/kubernetes/steering/blob/master/elections.md#eligibility-for-voting
 [election-recusal]: https://github.com/kubernetes/steering/blob/master/elections.md#steering-committee-and-election-officer-recusal

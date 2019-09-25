@@ -23,15 +23,14 @@ A Working Group dedicated to discussing, designing and documenting using Kuberne
 ## Organizers
 
 * Steve Wong (**[@cantbewong](https://github.com/cantbewong)**), VMware
-* Cindy Xing (**[@cindyxing](https://github.com/cindyxing)**), Huawei
+* Cindy Xing (**[@cindyxing](https://github.com/cindyxing)**), Microsoft
 * Dejan Bosanac (**[@dejanb](https://github.com/dejanb)**), Red Hat
 * Preston Holmes (**[@ptone](https://github.com/ptone)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/wg-iot-edge)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fiot-edge)
-
+- Slack: [#wg-iot-edge](https://kubernetes.slack.com/messages/wg-iot-edge)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fiot-edge)
 <!-- BEGIN CUSTOM CONTENT -->
 This working group is a cross-SIG effort currently sponsored by _sig-networking_ and _sig-multicluster_ with
 a focus on improving Kubernetes IoT and Edge deployments. Community members are encouraged to share their ideas in this working group to reach broad consensus across the SIGs. Once consensus is reached, the enhancements
@@ -47,5 +46,8 @@ are then managed by the appropriate SIGs based on impacted areas of code.
 * Evaluate and extend existing CLI tools to manage k8s clusters running in remote edge locations.
 
 It is an open and active working group, and we always welcome new additions!
+
+## Publications
+* [Edge Security Challenges](whitepapers/edge-securuity-challenges/)
 
 <!-- END CUSTOM CONTENT -->

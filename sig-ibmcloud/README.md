@@ -6,11 +6,13 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 --->
-# IBMCloud Special Interest Group
+# [DEPRECATED] IBMCloud Special Interest Group
 
-A Special Interest Group (SIG) for building, deploying, maintaining, supporting, and using Kubernetes on IBM Public and Private Clouds.
+The IBMCloud Special Interest Group is now a subproject of [SIG Cloud Provider](https://github.com/kubernetes/community/tree/master/sig-cloud-provider).
 
-The [charter](charter.md) defines the scope and governance of the IBMCloud Special Interest Group.
+### (This directory is a placeholder to preserve links. Please remove after 6 months or the release of Kubernetes 1.17, whichever comes first.)
+
+The [charter](charter.md) defines the scope and governance of the [DEPRECATED] IBMCloud Special Interest Group.
 
 ## Meetings
 * Regular SIG Meeting: [Wednesdays at 14:00 EST](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).
@@ -29,13 +31,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * [Slack](https://kubernetes.slack.com/messages/sig-ibmcloud)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-ibmcloud)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fibmcloud)
-
-## Subprojects
-
-The following subprojects are owned by sig-ibmcloud:
-- **cluster-api-provider-ibmcloud**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
 
 ## GitHub Teams
 

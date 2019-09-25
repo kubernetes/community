@@ -48,6 +48,15 @@ Moderation of the SIG/WG lists is up to that individual SIG/WG. The admins
 are there to help facilitate leadership changes, or various other administrative
 functions.
 
+The group management settings for Google Groups have been changed in order
+to make groups simpler to manage. This has caused some breaks in certain groups 
+visibility settings related to SIG and WG Google Groups.
+The instructions on how to fix from Google Groups for owners of the list:
+Near the top right, click **Manage group**.
+- **Informtation** -> **Directory** -> **Edit the setting to set the desired 
+visibility for your group.** -> **Save**.
+- This [link] have all the details related to these changes.
+
 Users who are violating the [Code of Conduct] or other negative activities
 (like spamming) should be moderated.
 - [Lock the thread immediately] so that people cannot reply to the thread.
@@ -199,3 +208,4 @@ To archive a mailing list, use the below procedure.
 [delete the post]: https://support.google.com/groups/answer/1046523?hl=en
 [these instructions]: https://support.google.com/groups/answer/2646833?hl=en&ref_topic=2458761#
 [groups help]: https://support.google.com/groups/answer/2466386?hl=en&ref_topic=2458761
+[link]: https://support.google.com/a/answer/9191148?hl=en

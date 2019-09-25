@@ -22,15 +22,6 @@ aliases:
     - mikedanese
   sig-autoscaling-leads:
     - mwielgus
-  sig-aws-leads:
-    - d-nishi
-    - justinsb
-    - kris-nova
-  sig-azure-leads:
-    - dstrebel
-    - justaugustus
-    - feiskyer
-    - khenidak
   sig-cli-leads:
     - seans3
     - soltysh
@@ -38,8 +29,8 @@ aliases:
     - soltysh
   sig-cloud-provider-leads:
     - andrewsykim
+    - cheftako
     - hogepodge
-    - jagosan
   sig-cluster-lifecycle-leads:
     - justinsb
     - luxas
@@ -50,15 +41,9 @@ aliases:
     - cblecker
     - nikhita
   sig-docs-leads:
-    - bradamant3
-    - jaredbhatti
+    - Bradamant3
+    - jimangel
     - zacharysarah
-  sig-gcp-leads:
-    - abgworrall
-  sig-ibmcloud-leads:
-    - khahmed
-    - rtheis
-    - spzala
   sig-instrumentation-leads:
     - brancz
     - piosz
@@ -72,15 +57,11 @@ aliases:
   sig-node-leads:
     - dchen1107
     - derekwaynecarr
-  sig-openstack-leads:
-    - adisky
-    - chrigl
-    - hogepodge
   sig-pm-leads:
     - calebamiles
-    - idvoretskyi
     - jdumars
     - justaugustus
+    - lachie83
   sig-release-leads:
     - calebamiles
     - justaugustus
@@ -89,12 +70,11 @@ aliases:
     - shyamjvs
     - wojtek-t
   sig-scheduling-leads:
-    - bsalamat
+    - ahg-g
     - k82cn
   sig-service-catalog-leads:
     - jberkhahn
-    - jboyd01
-    - kibbles-n-bytes
+    - mszostok
   sig-storage-leads:
     - childsb
     - saad-ali
@@ -108,17 +88,21 @@ aliases:
     - floreks
     - jeefy
     - maciaszczykm
-  sig-vmware-leads:
-    - cantbewong
-    - frapposelli
+  sig-usability-leads:
+    - Rajakavitha1
+    - hpandeycodeit
+    - tashimi
+    - vllry
   sig-windows-leads:
+    - PatrickLang
     - michmike
-    - patricklang
+    - benmoss
+    - ddebroy
   wg-apply-leads:
     - lavalamp
   wg-component-standard-leads:
-    - luxas
     - mtaufen
+    - stealthybox
     - sttts
   wg-iot-edge-leads:
     - cantbewong
@@ -139,7 +123,7 @@ aliases:
     - kow3ns
     - vishh
   wg-multitenancy-leads:
-    - davidopp
+    - srampal
     - tashimi
   wg-policy-leads:
     - easeway
@@ -160,7 +144,7 @@ aliases:
     - foxish
     - liyinan926
   committee-code-of-conduct:
-    - bradamant3
+    - Bradamant3
     - carolynvs
     - eparis
     - jdumars
@@ -168,6 +152,7 @@ aliases:
   committee-product-security:
     - cjcullen
     - joelsmith
+    - jonpulsifer
     - liggitt
     - philips
     - tallclair
@@ -185,5 +170,24 @@ aliases:
     - spiffxp
     - timothysc
 ## BEGIN CUSTOM CONTENT
-
+  provider-aws:
+    - d-nishi
+    - justinsb
+    - kris-nova
+  provider-azure:
+    - craiglpeters
+    - justaugustus
+    - feiskyer
+    - khenidak
+  provider-gcp:
+    - abgworrall
+  provider-ibmcloud:
+    - spzala
+  provider-openstack:
+    - adisky
+    - chrigl
+    - hogepodge
+  provider-vmware:
+    - cantbewong
+    - frapposelli
 ## END CUSTOM CONTENT

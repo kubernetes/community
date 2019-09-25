@@ -19,19 +19,15 @@ set -o nounset
 set -o pipefail
 
 export KUBE_ROOT=$(dirname "${BASH_SOURCE}")/..
+export GO111MODULE=on
+export GOPROXY="${GOPROXY:-https://proxy.golang.org}"
 
-# Install tools we need, but only from vendor/...
-cd ${KUBE_ROOT}
-go install ./vendor/github.com/client9/misspell/cmd/misspell
-if ! which misspell >/dev/null 2>&1; then
-    echo "Can't find misspell - is your GOPATH 'bin' in your PATH?" >&2
-    echo "  GOPATH: ${GOPATH}" >&2
-    echo "  PATH:   ${PATH}" >&2
-    exit 1
-fi
+# Pick out version of misspell from go.mod
+go mod download
+misspell="$(go list -m -f '{{.Dir}}' github.com/client9/misspell)"
 
 # Spell checking
 # All the skipping files are defined in hack/.spelling_failures
 skipping_file="${KUBE_ROOT}/hack/.spelling_failures"
 failing_packages=$(echo `cat ${skipping_file}` | sed "s| | -e |g")
-git ls-files | grep -v -e ${failing_packages} | xargs misspell -i "" -error -o stderr
+git ls-files | grep -v -e ${failing_packages} | xargs go run "${misspell}/cmd/misspell" -i "" -error -o stderr

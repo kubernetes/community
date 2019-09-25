@@ -468,9 +468,9 @@ func main() {
 	errs := ctx.Validate()
 	if len(errs) != 0 {
 		for _, err := range errs {
-			fmt.Printf("NOTICE: %s\n", err.Error())
+			fmt.Printf("ERROR: %s\n", err.Error())
 		}
-		fmt.Println("NOTICE: validation errors are ignored at present")
+		os.Exit(1)
 	}
 
 	// Write the Context struct back to yaml to enforce formatting

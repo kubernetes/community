@@ -10,41 +10,36 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 The Kubernetes Code of Conduct Committee (CoCC) is the body that is responsible for enforcing and maintaining the Kubernetes Code of Conduct.
 
+The [charter](charter.md) defines the scope and governance of the Code of Conduct Committee.
 
 ## Members
 
-* Jennifer Rondeau (**[@bradamant3](https://github.com/bradamant3)**), Stripe
+* Jennifer Rondeau (**[@Bradamant3](https://github.com/Bradamant3)**), Stripe
 * Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**), Microsoft
 * Eric Paris (**[@eparis](https://github.com/eparis)**), Red Hat
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google
 
 ## Contact
-* Private Mailing List: conduct@kubernetes.io
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fconduct)
+- Private Mailing List: conduct@kubernetes.io
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fcode-of-conduct)
+- GitHub Teams:
+    - [@kubernetes/code-of-conduct-committee](https://github.com/orgs/kubernetes/teams/code-of-conduct-committee) - General Discussion
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/code-of-conduct-committee | [link](https://github.com/orgs/kubernetes/teams/code-of-conduct-committee) | General Discussion |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 ## Terms
 
 The members and their terms are as follows:
 
 ### Term ends on August 7, 2019
-- Carolyn Van Slyck (Microsoft) - 1 year
 - Eric Paris (Red Hat) - 1 year
 - Jennifer Rondeau (Heptio) - 1 year
 
 ### Term ends on August 7, 2020
 - Jaice Singer Dumars (Google) - 2 years
 - Paris Pittman (Google) - 2 years
+- Carolyn Van Slyck (Microsoft) - 2 year
 
 Please see the [bootstrapping document](./bootstrapping-process.md) for more information on how members are picked, their responsibilities, and how the committee will initially function.
 

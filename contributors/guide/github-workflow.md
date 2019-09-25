@@ -107,7 +107,7 @@ in a few cycles.
 
 ### 6 Push
 
-When ready to review (or just to establish an offsite backup or your work),
+When ready to review (or just to establish an offsite backup of your work),
 push your branch to your fork on `github.com`:
 
 ```sh

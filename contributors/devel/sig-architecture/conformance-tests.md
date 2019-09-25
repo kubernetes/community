@@ -33,6 +33,9 @@ specifically, a test is eligible for promotion to conformance if:
 
 - it tests only GA, non-optional features or APIs (e.g., no alpha or beta
   endpoints, no feature flags required, no deprecated features)
+- it does not require direct access to kubelet's API to pass (nor does it
+  require indirect access via the API server node proxy endpoint); it MAY
+  use the kubelet API for debugging purposes upon failure
 - it works for all providers (e.g., no `SkipIfProviderIs`/`SkipUnlessProviderIs`
   calls)
 - it is non-privileged (e.g., does not require root on nodes, access to raw
@@ -48,12 +51,13 @@ specifically, a test is eligible for promotion to conformance if:
 - it passes against the appropriate versions of kubernetes as spelled out in
   the [conformance test version skew policy]
 - it is stable and runs consistently (e.g., no flakes), and has been running
-  for at least one release cycle
+  for at least two weeks
 - new conformance tests or updates to conformance tests for additional scenarios
   are only allowed before code freeze dates set by the release team to allow
   enough soak time of the changes and gives folks a chance to kick the tires
   either in the community CI or their own infrastructure to make sure the tests
   are robust
+- it has a name that is a literal string
 
 Examples of features which are not currently eligible for conformance tests:
 
@@ -242,7 +246,8 @@ To promote a test to the conformance test suite, open a PR as follows:
     than the `framework.It()` function
   - adds a comment immediately before the `ConformanceIt()` call that includes
     all of the required [conformance test comment metadata]
-  - adds the test name to the [conformance.txt] file
+  - `go run test/conformance/walk.go test/e2e > test/conformance/testdata/conformance.txt` 
+    adds the test name to the [conformance.txt] file 
 - add the PR to SIG Architecture's [Conformance Test Review board] in the To
   Triage column
 
@@ -287,7 +292,7 @@ framework.ConformanceIt("it should print the output to logs", func() {
 })
 ```
 
-The corresponding portion of the Kubernetes Conformance Documentfor this test
+The corresponding portion of the Kubernetes Conformance Document for this test
 would then look like this:
 
 > ## [Kubelet: log output](https://github.com/kubernetes/kubernetes/tree/release-1.9/test/e2e_node/kubelet_test.go#L47)

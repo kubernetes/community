@@ -66,7 +66,7 @@ If you haven’t set up your environment, check the [developer resources](/contr
 Kubernetes is a community project.
 Consequently, it is wholly dependent on its community to provide a productive, friendly and collaborative environment.
 
-- Read and review the [Community Expectations](community-expectations.md) for an understanding of code and review expectations.
+- Read and review the [Community Expectations](expectations.md) for an understanding of code and review expectations.
 - See [Community Membership](/community-membership.md) for a list the various responsibilities of contributor roles. You are encouraged to move up this contributor ladder as you gain experience.  
 
 # Your First Contribution
@@ -103,8 +103,8 @@ Another good strategy is to find a documentation improvement, such as a missing/
 
 #### Issue Assignment in Github
 
-Often, new contributors ask to be assigned an issue they are willing to take on. Unfortunately, due to GitHub limitations we can only assign issues to [org members](#community) or repo collaborators. 
-Instead, please state in a comment that you intend to work on this issue and it will be assumed to be yours.
+When you are willing to take on an issue, you can assign it to yourself. Just reply with `/assign` or `/assign @yourself` on an issue, 
+then the robot will assign the issue to you and your name will present at `Assignees` list.
 
 ### Learn about SIGs
 
@@ -213,7 +213,7 @@ Common new contributor PR issues are:
 
 ## Code Review
 
-For a brief description of the importance of code review, please read [On Code Review](/contributors/guide/community-expectations.md#code-review).  
+For a brief description of the importance of code review, please read [On Code Review](/contributors/guide/expectations.md#code-review).  
 There are two aspects of code review: giving and receiving.
 
 To make it easier for your PR to receive reviews, consider the reviewers will need you to:
@@ -223,7 +223,7 @@ To make it easier for your PR to receive reviews, consider the reviewers will ne
 * break large changes into a logical series of smaller patches which individually make easily understandable changes, and in aggregate solve a broader issue
 * label PRs with appropriate SIGs and reviewers: to do this read the messages the bot sends you to guide you through the PR process
 
-Reviewers, the people giving the review, are highly encouraged to revisit the [Code of Conduct](/code-of-conduct.md) and must go above and beyond to promote a collaborative, respectful community.  
+Reviewers, the people giving the review, are highly encouraged to revisit the [Code of Conduct](/code-of-conduct.md) as well as [community expectations](./expectations.md#expectations-of-reviewers-review-latency) and must go above and beyond to promote a collaborative, respectful community.
 When reviewing PRs from others [The Gentle Art of Patch Review](http://sage.thesharps.us/2014/09/01/the-gentle-art-of-patch-review/) suggests an iterative series of focuses which is designed to lead new contributors to positive collaboration without inundating them initially with nuances:
 
 * Is the idea behind the contribution sound?

@@ -3,7 +3,6 @@
 
 channels:
   - name: airflow-operator
-  - name: aks
   - name: announcements
   - name: api-reviews
   - name: apisnoop
@@ -11,6 +10,7 @@ channels:
     archived: true
   - name: argentina
   - name: arm64
+  - name: aus-nz-dev
   - name: aus-nz-users
   - name: awesome-kubernetes
   - name: aws-authenticator
@@ -26,12 +26,26 @@ channels:
   - name: cka-exam-prep
   - name: ckad-exam-prep
   - name: client-go-docs
+  - name: provider-aws
+    id: C0LRMHZ1T
+  - name: provider-azure
+    id: C5HJXTT9Q
+  - name: provider-gcp
+    id: C6WB33KNJ
+  - name: provider-ibmcloud
+    id: C90BWDWCE
+  - name: provider-openstack
+    id: C0LSA3T7C
+  - name: provider-vsphere
+    id: C9PGCDKV5
   - name: cluster-addons
   - name: cluster-api
   - name: cluster-api-aws
   - name: cluster-api-azure
   - name: cluster-api-baremetal
+  - name: cluster-api-docker
   - name: cluster-api-openstack
+  - name: cluster-api-vsphere
   - name: cn-dev
   - name: cn-events
   - name: cn-users
@@ -58,9 +72,13 @@ channels:
   - name: etcdadm
   - name: events
   - name: external-dns
+  - name: falco
+  - name: fiaas
   - name: fi-users
   - name: fr-events
   - name: fr-users
+  - name: garden
+  - name: garden-dev
   - name: gardener
   - name: gimbal
   - name: github
@@ -69,7 +87,6 @@ channels:
   - name: gitops
   - name: gke
   - name: gloo
-  - name: gsoc-apps
   - name: helm-chart-testing
   - name: helm-deprecated
     archived: true
@@ -79,6 +96,8 @@ channels:
     id: C67TNP3FF
   - name: hephy-users
     id: C678BMZ89
+  - name: id-events
+  - name: id-users
   - name: il-users
   - name: in-dev
   - name: in-events
@@ -101,6 +120,7 @@ channels:
   - name: k8s-release
     archived: true
   - name: kapitan
+  - name: keda
   - name: keel
   - name: kiam
   - name: kind
@@ -110,6 +130,7 @@ channels:
   - name: kong
   - name: kops-dev
   - name: kops-users
+  - name: kr-dev
   - name: kr-users
   - name: kraken
   - name: krane
@@ -117,11 +138,13 @@ channels:
   - name: kube-aws
   - name: kube-deploy
   - name: kube-monkey
+  - name: kube-oidc-proxy
   - name: kube-router
   - name: kube-score
   - name: kube-spawn
   - name: kube-state-metrics
   - name: kubeadm
+  - name: kubeadm-cn
   - name: kubeapps
   - name: kubebuilder
   - name: kubecon
@@ -130,7 +153,9 @@ channels:
   - name: kubekhan
     archived: true
   - name: kubeless
+  - name: kubeone
   - name: kubepack
+  - name: kubestack
   - name: kuberhealthy
   - name: kubernetes-batch-jobs
   - name: kubernetes-careers
@@ -148,7 +173,9 @@ channels:
   - name: kubicorn
   - name: kudo
   - name: kustomize
+  - name: kyverno
   - name: leadership-summit
+    archived: true
   - name: linode
   - name: malaysia-users
   - name: malta-users
@@ -156,6 +183,7 @@ channels:
   - name: meetup-athens
   - name: meetup-austin
   - name: meetup-bayarea
+  - name: meetup-bordeaux
   - name: meetup-boston
   - name: meetup-dfw
   - name: meetup-guatemala
@@ -165,11 +193,13 @@ channels:
   - name: meetup-manchester
   - name: meetup-minneapolis
   - name: meetup-nyc
+  - name: meetup-paris
   - name: meetup-pittsburgh
   - name: meetup-sacramento
   - name: meetup-sanantonio
   - name: meetup-sandiego
   - name: meetup-seattle
+  - name: meetup-toulouse
   - name: meetup-trondheim
   - name: meetup-tunisia
   - name: metacontroller
@@ -182,11 +212,14 @@ channels:
     archived: true
   - name: multi-platform
   - name: mysql-operator
+  - name: nais
   - name: navigator
   - name: nl-users
   - name: node-problem-detector
   - name: norw-users
+  - name: octant
   - name: office-hours
+  - name: okteto
   - name: opencontainers
   - name: openshift-dev
   - name: openshift-users
@@ -195,6 +228,8 @@ channels:
   - name: ops-status
     archived: true
   - name: osbkit
+  - name: outreachy-apps
+    id: CDH610735
   - name: pharmer
   - name: pl-users
   - name: pr-reviews
@@ -210,6 +245,7 @@ channels:
   - name: ro-users
   - name: ru-users
   - name: se-users
+  - name: sealed-secrets
   - name: ship
   - name: shippable
   - name: shipper
@@ -219,8 +255,6 @@ channels:
   - name: sig-architecture
   - name: sig-auth
   - name: sig-autoscaling
-  - name: sig-aws
-  - name: sig-azure
   - name: sig-cli
   - name: sig-cloud-provider
   - name: sig-clstr-life-leads
@@ -230,6 +264,7 @@ channels:
   - name: sig-configuration
     archived: true
   - name: sig-contribex
+  - name: sig-contribex-triage
   - name: sig-docs
   - name: sig-docs-blog
   - name: sig-docs-maintainers
@@ -237,24 +272,20 @@ channels:
   - name: sig-docs-release
   - name: sig-docs-security
   - name: sig-docs-tools
-  - name: sig-gcp
   - name: sig-high-availability
     archived: true
-  - name: sig-ibmcloud
   - name: sig-instrumentation
   - name: sig-multicluster
   - name: sig-network
   - name: sig-node
   - name: sig-node-rkt
-  - name: sig-openstack
   - name: sig-pm
   - name: sig-scalability
   - name: sig-scheduling
   - name: sig-service-catalog
-  - name: sig-storage
   - name: sig-testing
   - name: sig-ui
-  - name: sig-vmware
+  - name: sig-usability
   - name: sig-windows
   - name: skaffold
   - name: slack-admins
@@ -289,8 +320,6 @@ channels:
     archived: true
   - name: wg-apply
   - name: wg-component-standard
-  - name: wg-csi
-  - name: wg-csi-migration
   - name: wg-iot-edge
   - name: wg-k8s-infra
   - name: wg-lts

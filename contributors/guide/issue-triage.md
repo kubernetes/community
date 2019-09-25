@@ -71,8 +71,8 @@ If you see support questions on kubernetes-dev@googlegroups.com or issues asking
 support try to redirect them to Stack Overflow. Example response:
 
 ```code
-Please re-post your question to [Stack Overflow]
-(http://stackoverflow.com/questions/tagged/kubernetes).
+Please re-post your question to [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
+or our [Discussion Forums](https://discuss.kubernetes.io).
 
 We are trying to consolidate the channels to which questions for help/support
 are posted so that we can improve our efficiency in responding to your requests,
@@ -84,8 +84,8 @@ thread only in one place or, worse, spread across multiple forums. Also, the
 large volume of support issues on GitHub is making it difficult for us to use
 issues to identify real bugs.
 
-Members of the Kubernetes community use Stack Overflow to field support
-requests. Before posting a new question, please search Stack Overflow for answers
+Members of the Kubernetes community use Stack Overflow and Discussion Forums to field
+support requests. Before posting a new question, please search these for answers
 to similar questions, and also familiarize yourself with:
 
   * [user documentation](https://kubernetes.io/docs/home/)

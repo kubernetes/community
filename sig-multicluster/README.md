@@ -13,7 +13,7 @@ A Special Interest Group focused on solving common challenges related to the man
 The [charter](charter.md) defines the scope and governance of the Multicluster Special Interest Group.
 
 ## Meetings
-* Federation v2 Working Group: [Wednesdays at 7:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=7:30&tz=PT%20%28Pacific%20Time%29).
+* Cluster Federation (KubeFed) Working Group: [Wednesdays at 7:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=7:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3iKP5EzMbtNT2zOZv6RCrX).
 * Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
@@ -29,41 +29,35 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-multicluster)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fmulticluster)
+- Slack: [#sig-multicluster](https://kubernetes.slack.com/messages/sig-multicluster)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fmulticluster)
+- GitHub Teams:
+    - [@kubernetes/sig-multicluster-api-reviews](https://github.com/orgs/kubernetes/teams/sig-multicluster-api-reviews) - API Changes and Reviews
+    - [@kubernetes/sig-multicluster-bugs](https://github.com/orgs/kubernetes/teams/sig-multicluster-bugs) - Bug Triage and Troubleshooting
+    - [@kubernetes/sig-multicluster-feature-requests](https://github.com/orgs/kubernetes/teams/sig-multicluster-feature-requests) - Feature Requests
+    - [@kubernetes/sig-multicluster-misc](https://github.com/orgs/kubernetes/teams/sig-multicluster-misc) - General Discussion
+    - [@kubernetes/sig-multicluster-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-multicluster-pr-reviews) - PR Reviews
+    - [@kubernetes/sig-multicluster-test-failures](https://github.com/orgs/kubernetes/teams/sig-multicluster-test-failures) - Test Failures and Triage
+    - [@kubernetes/sig-mutlicluster-proposals](https://github.com/orgs/kubernetes/teams/sig-mutlicluster-proposals) - Design Proposals
 
 ## Subprojects
 
-The following subprojects are owned by sig-multicluster:
-- **Kubefed**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kubefed/master/OWNERS
-- **cluster-registry**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cluster-registry/master/OWNERS
-- **federation-v1**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/federation/master/OWNERS
-- **kubemci**
-  - Owners:
-    - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
+The following [subprojects][subproject-definition] are owned by sig-multicluster:
+### Kubefed
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/kubefed/master/OWNERS
+### cluster-registry
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/cluster-registry/master/OWNERS
+### federation-v1
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/federation/master/OWNERS
+### kubemci
+- **Owners:**
+  - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-multicluster-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-multicluster-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-multicluster-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-feature-requests) | Feature Requests |
-| @kubernetes/sig-multicluster-misc | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-misc) | General Discussion |
-| @kubernetes/sig-multicluster-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-pr-reviews) | PR Reviews |
-| @kubernetes/sig-multicluster-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-multicluster-test-failures) | Test Failures and Triage |
-| @kubernetes/sig-mutlicluster-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-mutlicluster-proposals) | Design Proposals |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 ## Subprojects
 

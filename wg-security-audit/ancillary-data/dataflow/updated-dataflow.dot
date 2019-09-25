@@ -1,0 +1,217 @@
+digraph tm {
+	graph [
+	fontname = Arial;
+	fontsize = 14;
+	]
+	node [
+	fontname = Arial;
+	fontsize = 14;
+	rankdir = lr;
+	]
+	edge [
+	shape = none;
+	fontname = Arial;
+	fontsize = 12;
+	]
+	labelloc = "t";
+	fontsize = 20;
+	nodesep = 1;
+
+subgraph cluster_bfaefefcfbeeafeefac {
+	graph [
+		fontsize = 10;
+		fontcolor = firebrick2;
+		style = dashed;
+		color = firebrick2;
+		label = <<i>Internet</i>>;
+	]
+
+bfbeacdafaceebdccfdffcdfcedfec [
+	shape = square;
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><b>External Actor</b></td></tr></table>>;
+]
+abaadcacbbafdffbcffffbeedef [
+	shape = square;
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><b>Developer</b></td></tr></table>>;
+]
+adafdaeaedeedcafe [
+	shape = square;
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><b>End User</b></td></tr></table>>;
+]
+
+}
+
+subgraph cluster_bbfdadaacbdaedcebfec {
+	graph [
+		fontsize = 10;
+		fontcolor = firebrick2;
+		style = dashed;
+		color = firebrick2;
+		label = <<i>Master Control Data</i>>;
+	]
+
+bfffcaeeeeedccabfaaeff [
+	shape = none;
+	color = black;
+	label = <<table sides="TB" cellborder="0" cellpadding="2"><tr><td><font color="black"><b>N-ary etcd servers</b></font></td></tr></table>>;
+]
+
+}
+
+subgraph cluster_afeffbbfdbeeefcabddacdba {
+	graph [
+		fontsize = 10;
+		fontcolor = firebrick2;
+		style = dashed;
+		color = firebrick2;
+		label = <<i>API Server</i>>;
+	]
+
+bdfbefabdbefeacdfcabaac [
+	shape = square;
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><b>Malicious Internal User</b></td></tr></table>>;
+]
+fabeebdadbcdffdcdec [
+	shape = square;
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><b>Administrator</b></td></tr></table>>;
+]
+eadddadcfbabebaed [
+	shape = circle
+	color = black
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><b>kube-apiserver</b></td></tr></table>>;
+]
+
+}
+
+subgraph cluster_cebcbebffccbfedcaffbb {
+	graph [
+		fontsize = 10;
+		fontcolor = firebrick2;
+		style = dashed;
+		color = firebrick2;
+		label = <<i>Master Control Components</i>>;
+	]
+
+ffceacecdbcacdddddffbfa [
+	shape = circle
+	color = black
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><b>kube-scheduler</b></td></tr></table>>;
+]
+adffdceecfcfbcfdaefca [
+	shape = circle
+	color = black
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><b>CCM/KCM</b></td></tr></table>>;
+]
+
+}
+
+subgraph cluster_baaffdafbdceebaaafaefeea {
+	graph [
+		fontsize = 10;
+		fontcolor = firebrick2;
+		style = dashed;
+		color = firebrick2;
+		label = <<i>Worker</i>>;
+	]
+
+dbddcfaeaacebaecba [
+	shape = circle
+	color = black
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><b>kubelet</b></td></tr></table>>;
+]
+ddcaffdfdebdaeff [
+	shape = circle
+	color = black
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><b>kube-proxy</b></td></tr></table>>;
+]
+bcdcebabbdaadffeaeddcce [
+	shape = circle;
+	color = black;
+
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color="black"><b>iptables</b></font></td></tr></table>>;
+]
+
+}
+
+subgraph cluster_fdcecbcfbeadaccab {
+	graph [
+		fontsize = 10;
+		fontcolor = firebrick2;
+		style = dashed;
+		color = firebrick2;
+		label = <<i>Container</i>>;
+	]
+
+bdfadfbeeaedceab [
+	shape = square;
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><b>Internal Attacker</b></td></tr></table>>;
+]
+eefbffbeaaeecaceaaabe [
+	shape = circle
+	color = black
+	label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><b>Pods</b></td></tr></table>>;
+]
+
+}
+
+	eadddadcfbabebaed -> bfffcaeeeeedccabfaaeff [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>All kube-apiserver data</b></font></td></tr></table>>;
+	]
+	eadddadcfbabebaed -> dbddcfaeaacebaecba [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>kubelet Health, Status, &amp;c.</b></font></td></tr></table>>;
+	]
+	eadddadcfbabebaed -> ddcaffdfdebdaeff [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>kube-proxy Health, Status, &amp;c.</b></font></td></tr></table>>;
+	]
+	eadddadcfbabebaed -> ffceacecdbcacdddddffbfa [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>kube-scheduler Health, Status, &amp;c.</b></font></td></tr></table>>;
+	]
+	eadddadcfbabebaed -> adffdceecfcfbcfdaefca [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>{kube, cloud}-controller-manager Health, Status, &amp;c.</b></font></td></tr></table>>;
+	]
+	dbddcfaeaacebaecba -> eadddadcfbabebaed [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>HTTP watch for resources on kube-apiserver</b></font></td></tr></table>>;
+	]
+	ddcaffdfdebdaeff -> eadddadcfbabebaed [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>HTTP watch for resources on kube-apiserver</b></font></td></tr></table>>;
+	]
+	adffdceecfcfbcfdaefca -> eadddadcfbabebaed [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>HTTP watch for resources on kube-apiserver</b></font></td></tr></table>>;
+	]
+	ffceacecdbcacdddddffbfa -> eadddadcfbabebaed [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>HTTP watch for resources on kube-apiserver</b></font></td></tr></table>>;
+	]
+	dbddcfaeaacebaecba -> bcdcebabbdaadffeaeddcce [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>kubenet update of iptables (... ipvs, &amp;c) to setup Host-level ports</b></font></td></tr></table>>;
+	]
+	ddcaffdfdebdaeff -> bcdcebabbdaadffeaeddcce [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>kube-prxy update of iptables (... ipvs, &amp;c) to setup all pod networking</b></font></td></tr></table>>;
+	]
+	dbddcfaeaacebaecba -> eefbffbeaaeecaceaaabe [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>kubelet to pod/CRI runtime, to spin up pods within a host</b></font></td></tr></table>>;
+	]
+	adafdaeaedeedcafe -> eefbffbeaaeecaceaaabe [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>End-user access of Kubernetes-hosted applications</b></font></td></tr></table>>;
+	]
+	bfbeacdafaceebdccfdffcdfcedfec -> eefbffbeaaeecaceaaabe [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>External Attacker attempting to compromise a trust boundary</b></font></td></tr></table>>;
+	]
+	bdfadfbeeaedceab -> eefbffbeaaeecaceaaabe [
+		color = black;
+		label = <<table border="0" cellborder="0" cellpadding="2"><tr><td><font color ="black"><b>Internal Attacker with access to a compromised or malicious pod</b></font></td></tr></table>>;
+	]
+}

@@ -50,6 +50,11 @@ the amount of work to do (which is number of objects of a given type in a given
 scope) plus some constant overhead. For better tracking of performance, we
 may want to define purely internal SLI of "latency per object". But that
 isn't in near term plans.
+- To recall, SLOs are guaranteed only if thresholds defined in [thresholds file][]
+are satisfied. This is particularly important for this SLO, because it limits
+the number of objects that are returned by LIST calls.
+
+[thresholds file]: https://github.com/kubernetes/community/blob/master/sig-scalability/configs-and-limits/thresholds.md
 
 ### Caveats
 - The SLO has to be satisfied independently from used encoding in user-originated

@@ -6,11 +6,13 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 --->
-# Azure Special Interest Group
+# [DEPRECATED] Azure Special Interest Group
 
-A Special Interest Group for building, deploying, maintaining, supporting, and using Kubernetes on Azure.
+The Azure Special Interest Group is now a subproject of [SIG Cloud Provider](https://github.com/kubernetes/community/tree/master/sig-cloud-provider).
 
-The [charter](charter.md) defines the scope and governance of the Azure Special Interest Group.
+### (This directory is a placeholder to preserve links. Please remove after 6 months or the release of Kubernetes 1.17, whichever comes first.)
+
+The [charter](charter.md) defines the scope and governance of the [DEPRECATED] Azure Special Interest Group.
 
 ## Meetings
 * Regular SIG Meeting: [Wednesdays at 16:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
@@ -22,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Azure Special 
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Dave Strebel (**[@dstrebel](https://github.com/dstrebel)**), Microsoft
+* Craig Peters (**[@craiglpeters](https://github.com/craiglpeters)**), Microsoft
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
 
 ### Technical Leads
@@ -32,24 +34,15 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Pengfei Ni (**[@feiskyer](https://github.com/feiskyer)**), Microsoft
 * Kal Khenidak (**[@khenidak](https://github.com/khenidak)**), Microsoft
 
+## Emeritus Leads
+
+* Dave Strebel (**[@dstrebel](https://github.com/dstrebel)**), Microsoft
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
+
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-azure)
 * [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-azure)
 * [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fazure)
-
-## Subprojects
-
-The following subprojects are owned by sig-azure:
-- **cloud-provider-azure**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
-- **cluster-api-provider-azure**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
-- **csi-drivers-azure**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
 
 ## GitHub Teams
 

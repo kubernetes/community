@@ -27,53 +27,47 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/sig-network)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnetwork)
+- Slack: [#sig-network](https://kubernetes.slack.com/messages/sig-network)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnetwork)
+- GitHub Teams:
+    - [@kubernetes/sig-network-api-reviews](https://github.com/orgs/kubernetes/teams/sig-network-api-reviews) - API Changes and Reviews
+    - [@kubernetes/sig-network-bugs](https://github.com/orgs/kubernetes/teams/sig-network-bugs) - Bug Triage and Troubleshooting
+    - [@kubernetes/sig-network-feature-requests](https://github.com/orgs/kubernetes/teams/sig-network-feature-requests) - Feature Requests
+    - [@kubernetes/sig-network-misc](https://github.com/orgs/kubernetes/teams/sig-network-misc) - General Discussion
+    - [@kubernetes/sig-network-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-network-pr-reviews) - PR Reviews
+    - [@kubernetes/sig-network-proposals](https://github.com/orgs/kubernetes/teams/sig-network-proposals) - Design Proposals
+    - [@kubernetes/sig-network-test-failures](https://github.com/orgs/kubernetes/teams/sig-network-test-failures) - Test Failures and Triage
 
 ## Subprojects
 
-The following subprojects are owned by sig-network:
-- **external-dns**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/external-dns/master/OWNERS
-  - Contact
-    - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
-- **ingress**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
-- **kube-dns**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
-- **network-policy**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
-- **pod-networking**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/ip-masq-agent/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
-- **services**
-  - Owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
+The following [subprojects][subproject-definition] are owned by sig-network:
+### external-dns
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-incubator/external-dns/master/OWNERS
+- **Contact:**
+  - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
+### ingress
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
+### kube-dns
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
+### network-policy
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
+### pod-networking
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
+### services
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
 
-## GitHub Teams
-
-The below teams can be mentioned on issues and PRs in order to get attention from the right people.
-Note that the links to display team membership will only work if you are a member of the org.
-
-| Team Name | Details | Description |
-| --------- |:-------:| ----------- |
-| @kubernetes/sig-network-api-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-network-api-reviews) | API Changes and Reviews |
-| @kubernetes/sig-network-bugs | [link](https://github.com/orgs/kubernetes/teams/sig-network-bugs) | Bug Triage and Troubleshooting |
-| @kubernetes/sig-network-feature-requests | [link](https://github.com/orgs/kubernetes/teams/sig-network-feature-requests) | Feature Requests |
-| @kubernetes/sig-network-misc | [link](https://github.com/orgs/kubernetes/teams/sig-network-misc) | General Discussion |
-| @kubernetes/sig-network-pr-reviews | [link](https://github.com/orgs/kubernetes/teams/sig-network-pr-reviews) | PR Reviews |
-| @kubernetes/sig-network-proposals | [link](https://github.com/orgs/kubernetes/teams/sig-network-proposals) | Design Proposals |
-| @kubernetes/sig-network-test-failures | [link](https://github.com/orgs/kubernetes/teams/sig-network-test-failures) | Test Failures and Triage |
-
+[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 ## Areas of Responsibility
 

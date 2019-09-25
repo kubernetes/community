@@ -86,6 +86,12 @@ word names ("extensions", "apps"), and any group name ending in "*.k8s.io" for
 its sole use. When choosing a group name, we recommend selecting a subdomain
 your group or organization owns, such as "widget.mycompany.com".
 
+Version strings should match
+[DNS_LABEL](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/identifiers.md)
+format.
+
+
+
 Resource collections should be all lowercase and plural, whereas kinds are
 CamelCase and singular. Group names must be lower case and be valid DNS
 subdomains.

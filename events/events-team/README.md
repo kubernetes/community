@@ -14,7 +14,7 @@ the logistical and operational pieces together.
 | Role                                        | Handbook                | Notes                                               |
 |---------------------------------------------|-------------------------|-----------------------------------------------------|
 | Events Lead/Chair                           | [Event Lead Handbook]                    | May have more than one                              |
-| Project Manager                             | TODO                    |                                                     |
+| Project Manager                             | [Project Manager Handbook]                    |                                                     |
 | Registration Lead                           | [Registration Handbook] |                                                     |
 | Marketing Lead                              | [Marketing Handbook]                    |                                                     |
 | CNCF Events Manager                         | CNCF                    | CNCF will staff this                                |
@@ -28,10 +28,7 @@ the logistical and operational pieces together.
 [Event Lead Handbook]
 
 ### Project Manager
-Triage project board, related issues, and PRs  
-Identify holes in tasks and assign/ask for volunteers; coordinate with lead  
-Track ongoing blockers for the event  
-Keep timelines  
+[Project Manager Handbook]
 
 ### Accessibility, Inclusiveness, and Diversity
 Reach out to underrepresented local groups to advertise new contributor workshop - examples: GoBridge, Women Who Code  
@@ -63,6 +60,7 @@ We don't coordinate meetups. CNCF leads these efforts and their information can 
 [registration handbook]: ./registration/README.md
 [best-practices.md]: ./best-practices.md
 [here]: https://github.com/cncf/meetups
-[Event Lead Handbook]: /events-lead.md
+[Event Lead Handbook]: ./events-lead.md
 [Marketing Handbook]: ./marketing/README.md
-[Content Lead Handbook]: /content-lead.md
+[Content Lead Handbook]: ./content-lead.md
+[Project Manager Handbook]: ./projectmanagement/README.md

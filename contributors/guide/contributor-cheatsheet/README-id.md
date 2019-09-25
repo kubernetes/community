@@ -7,32 +7,33 @@ yang bermanfaat untuk meningkatkan pengalaman kamu ketika berkontribusi
 di GitHub menjadi lebih baik.
 
 **Daftar Isi**
-- [_Resources_](#Resources)
-  - [Mulai Berkontribusi](#Mulai-Berkontribusi)
-  - [_SIG_ dan Grup Lainnya](#SIG-dan-Grup-lainnya)
-  - [Komunitas](#Komunitas)
-  - [Alamat Email Penting](#Alamat-Email-Penting)
-  - [_Workflow_](#Workflow)
-  - [Tes](#Testing)
-  - [Tautan Lain](#Tautan-Lain)
-- [Berkomunikasi Secara Efektif di GitHub](#Berkomunikasi-Secara-Efektif-di-GitHub)
-  - [Bagaimana Cara Bekerja Sama dengan Baik](#Bagaimana-Cara-Bekerja-Sama-dengan-Baik)
-    - [Contoh Komunikasi Yang Baik/Buruk](#Contoh-Komunikasi-yang-BaikBuruk)
-- [Langkah Berkontribusi](#Langkah-Berkontribusi)
-  - [Menyetujui CLA](#Menyetujui-CLA)
-  - [Membuka dan Menanggapi Isu](#Membuka-dan-Menanggapi-Isu)
-    - [Membuat sebuah Isu](#Membuat-sebuah-Isu)
-    - [Menanggapi sebuah Isu](#Menaggapi-sebuah-Isu)
-  - [Membuka _Pull Request_](#Membuka-Pull-Request)
-    - [Membuat a _Pull Request_](#Membuat-Pull-Request)
-    - [Contoh Deskripsi _Pull Request_](#Contoh-Deskripsi-Pull-Request)
-    - [_Troubleshoot_ sebuah _Pull Request_](#Troubleshooting-sebuah-Pull-Request)
-  - [Label](#Label)
-- [Mekanisme Pengerjaan Lokal](#Mekanisme-Pengerjaan-Lokal)
-  - [Mekanisme Penggunaan _Branch_](#Mekanisme-Penggunaan-Branch)
-    - [Menambahkan _Upstream_](#Menambahkan-Upstream)
-    - [Memastikan _Fork_ Kamu tetap Sinkron](#Memastikan-Fork-Kamu-Tetap-Sinkron)
-  - [Melakukan _Commit_ _Squashing_](#Squashing-Commits)
+- [_Cheat Sheet_ Kontributor Kubernetes](#cheat-sheet-kontributor-kubernetes)
+  - [_Resources_](#resources)
+    - [Mulai Berkontribusi](#mulai-berkontribusi)
+    - [_SIG_ dan Grup Lainnya](#sig-dan-grup-lainnya)
+    - [Komunitas](#komunitas)
+    - [_Workflow_](#workflow)
+    - [_Testing_](#testing)
+    - [Alamat Email Penting](#alamat-email-penting)
+    - [Tautan Lain](#tautan-lain)
+  - [Berkomunikasi Secara Efektif di GitHub](#berkomunikasi-secara-efektif-di-github)
+    - [Bagaimana Cara Bekerja Sama dengan Baik](#bagaimana-cara-bekerja-sama-dengan-baik)
+      - [Contoh Komunikasi Yang Baik/Buruk](#contoh-komunikasi-yang-baikburuk)
+  - [Mengumpulkan Kontribusi](#mengumpulkan-kontribusi)
+    - [Signing the CLA](#signing-the-cla)
+    - [Membuka dan Menanggapi Isu](#membuka-dan-menanggapi-isu)
+      - [Membuat Sebuah Isu](#membuat-sebuah-isu)
+      - [Menanggapi sebuah Isu](#menanggapi-sebuah-isu)
+    - [Membuka sebuah Pull Request (PR)](#membuka-sebuah-pull-request-pr)
+      - [Membuat sebuah Pull Request (PR)](#membuat-sebuah-pull-request-pr)
+      - [Contoh Deskripsi PR](#contoh-deskripsi-pr)
+      - [_Troubleshooting_ sebuah PR](#troubleshooting-sebuah-pr)
+    - [Label](#label)
+  - [Bekerja pada Mesin Lokal](#bekerja-pada-mesin-lokal)
+    - [Mekanisme _Branch_](#mekanisme-branch)
+      - [Menambahkan _Upstream_](#menambahkan-upstream)
+      - [Menjaga agar _Fork_ Kamu tetap Sinkron](#menjaga-agar-fork-kamu-tetap-sinkron)
+      - [Melakukan _Commit_ _Squashing_](#melakukan-commit-squashing)
 
 
 ---
@@ -68,9 +69,8 @@ di GitHub menjadi lebih baik.
 - [Tide] - _Plugin_ Prow yang melakukan manajemen _merge_ dan _test_. [Dashbor Tide]
 - [Perintah Bot] - Perintah yang dapat kamu gunakan untuk berinteraksi dengan Bot Kubernetes (contoh:
   `/cc`, `/lgtm`, dan `/retest`)
-- [_Label_ GitHub] - _List_ _label_ yang digunakan pada proyek Kubernetes
+- [Label GitHub] - _List_ _label_ yang digunakan pada proyek Kubernetes
 - [Pencarian Kode Kubernetes], di-_maintain_ oleh [@dims]
-
 
 ### _Testing_
 
@@ -95,6 +95,7 @@ di GitHub menjadi lebih baik.
 ### Tautan Lain
 
 - [Statistik Pengembang] - Melihat statistik pengembang untuk semua proyek yang dikelola oleh CNCF.
+- [Rilis Patch Kubernetes] Jadwal dan informasi kontak tim untuk rilis _patch_ Kubernetes
 
 ---
 
@@ -150,7 +151,7 @@ atau ikuti [forum Kubernetes].
 - [Perintah Prow][perintah bot]
 
 
-#### Mmebuat Sebuah Isu
+#### Membuat Sebuah Isu
 
 - Gunakan templat isu (jika tersedia). Menggunakan templat yang tersedia akan 
   memudahkan kontributor lain ketika menanggapi isu yang kamu buat.
@@ -288,7 +289,7 @@ pembelajaran yang baik. Sebagai alternatif lain, juga terdapat tutorial [_Stanfo
 - [Git magic]
 - [GitHub workflow]
 - [Testing locally]
-- [Developer guide]
+- [Panduan Pengembang]
 
 
 ### Mekanisme _Branch_
@@ -353,8 +354,8 @@ _squashing_ perlu dilakukan atau tidak.
 [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [asbor tide]: https://prow.k8s.io/tide
 [perintah bot]: https://go.k8s.io/bot-commands
-[gitHub labels]: https://go.k8s.io/github-labels
-[Kubernetes Code Search]: https://cs.k8s.io/
+[Label GitHub]: https://go.k8s.io/github-labels
+[Pencarian Kode Kubernetes]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
 [kalender]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
@@ -364,7 +365,7 @@ _squashing_ perlu dilakukan atau tidak.
 [dasbor triase]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
 [velodrome]: https://go.k8s.io/test-health
-[developer statistics]: https://k8s.devstats.cncf.io
+[Statistik Pengembang]: https://k8s.devstats.cncf.io
 [code of conduct]: /code-of-conduct.md
 [_user support request_]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request
 [petunjuk _troubleshooting_]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
@@ -390,3 +391,5 @@ _squashing_ perlu dilakukan atau tidak.
 [Tutorial git Atlassian]: https://www.atlassian.com/git/tutorials
 [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [_Security_ dan _Disclosure_ Informasi]: https://kubernetes.io/docs/reference/issues-security/security/
+[approve]: https://prow.k8s.io/command-help#approve
+[Rilis Patch Kubernetes]: https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md

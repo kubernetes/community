@@ -394,3 +394,4 @@ PR을 검토하고 승인하도록 지정된 다른 참여자의 판단에 맡�
 [Atlassian git 튜토리얼]: https://www.atlassian.com/git/tutorials
 [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [보안과 정보 공개]: https://kubernetes.io/docs/reference/issues-security/security/
+[approve]: https://prow.k8s.io/command-help#approve

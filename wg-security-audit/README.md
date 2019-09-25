@@ -10,6 +10,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Perform a security audit on k8s with a vendor and produce as artifacts a threat model and whitepaper outlining everything found during the audit.
 
+## Stakeholder SIGs
+* SIG Auth
+
 ## Meetings
 * Regular WG Meeting: [Mondays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1RbC4SBZBlKth7IjYv_NaEpnmLGwMJ0ElpUOmsG-bdRA/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
 
@@ -21,23 +24,39 @@ Perform a security audit on k8s with a vendor and produce as artifacts a threat 
 * Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
 
 ## Contact
-* [Slack](https://kubernetes.slack.com/messages/wg-security-audit)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit)
-* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fsecurity-audit)
-
+- Slack: [#wg-security-audit](https://kubernetes.slack.com/messages/wg-security-audit)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fsecurity-audit)
 <!-- BEGIN CUSTOM CONTENT -->
+## Published Documents
+
+Trail of Bits and Atredis Partners, in collaboration with the Security Audit Working Group, have released the following documents which
+detail their assessment of Kubernetes security posture and their findings.
+
+### Findings
+
+* [Kubernetes Security Review](findings/Kubernetes%20Final%20Report.pdf)
+* [Attacking and Defending Kubernetes Installations](findings/AtredisPartners_Attacking_Kubernetes-v1.0.pdf)
+* [Whitepaper](findings/Kubernetes%20White%20Paper.pdf)
+* [Threat Model](findings/Kubernetes%20Threat%20Model.pdf)
+
+### Ancillary Data
+
+* [Rapid Risk Assessments](ancillary-data/rapid-risk-assessments)
+* [Dataflow](ancillary-data/dataflow)
+
+## Mailing Lists
+
+* Sensitive communications regarding the audit should be sent to the [private variant of the mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit-private).
+
 ## Request For Proposals
-      
-The RFP will be open between 2018/10/29 and 2018/11/30 and has been published [here](https://github.com/kubernetes/community/blob/master/wg-security-audit/RFP.md).
+
+The RFP was open between 2018/10/29 and 2018/11/30 and has been published [here](https://github.com/kubernetes/community/blob/master/wg-security-audit/RFP.md).
 
 ## Vendor Selection
 
 The [RFP](https://github.com/kubernetes/community/blob/master/wg-security-audit/RFP.md) is now closed. The working group selected Trail of Atredis, a collaboration between [Trail of Bits](https://www.trailofbits.com/) and [Atredis Partners](https://www.atredis.com/) to perform the audit.
 
 You can read more about the vendor selection [here](RFP_Decision.md).
-
-## Mailing Lists
-
-* Sensitive communications regarding the audit should be sent to the [private variant of the mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-security-audit-private).
 
 <!-- END CUSTOM CONTENT -->
