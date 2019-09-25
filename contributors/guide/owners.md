@@ -260,7 +260,7 @@ pieces of prow are used to implement the code review process above.
 - [plugin: approve](https://git.k8s.io/test-infra/prow/plugins/approve)
   - per-repo configuration:
     - `issue_required`: defaults to `false`; when `true`, require that the PR description link to
-      an issue, or that at least one **approver** issues a `/approve no-isse`
+      an issue, or that at least one **approver** issues a `/approve no-issue`
     - `implicit_self_approve`: defaults to `false`; when `true`, if the PR author is in relevant
       OWNERS files, act as if they have implicitly `/approve`'d
   - adds the  `approved` label once an **approver** for each of the required
