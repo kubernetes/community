@@ -1330,7 +1330,7 @@ sigs:
       name: Quinton Hoole
       company: Huawei
   meetings:
-  - description: Federation v2 Working Group
+  - description: Cluster Federation (KubeFed) Working Group
     day: Wednesday
     time: "7:30"
     tz: PT (Pacific Time)

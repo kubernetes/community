@@ -8,8 +8,8 @@ the Roles and Organization Management outlined in [sig-governance].
 The scope of SIG Multicluster is limited to the following subprojects:
 
 - The [cluster-registry](https://github.com/kubernetes/cluster-registry)
-- Kubernetes federation:
-  - [Kubefed](https://github.com/kubernetes-sigs/kubefed)
+- Kubernetes Cluster Federation:
+  - [KubeFed](https://github.com/kubernetes-sigs/kubefed)
   - [Federation v1](https://github.com/kubernetes/federation)
 - [Kubemci](https://github.com/GoogleCloudPlatform/k8s-multicluster-ingress)
 
