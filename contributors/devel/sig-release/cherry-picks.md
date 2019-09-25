@@ -31,37 +31,102 @@ branches.
    * You will need to run the cherry-pick script separately for each patch release you want to cherry-pick to.
 
  * Your cherry-pick PR will immediately get the `do-not-merge/cherry-pick-not-approved` label. 
+   [Normal rules apply for code merge](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-release/release.md#tldr),
+   with some additional caveats outlined in the next section of this document.
+
+## Cherry-pick Review
+
+As with any other PR, code OWNERS review (`/lgtm`) and approve (`/approve`) on
+cherry-pick PRs as they deem appropriate.
+
+The same release note requirements apply as normal pull requests,
+except the release note stanza will auto-populate from the master
+branch pull request from which the cherry-pick originated.  If this
+is unsuccessful the `do-not-merge/release-note-label-needed` label
+will be applied and the cherry-pick author must edit the pull request
+description to [add a release note](https://git.k8s.io/community/contributors/guide/release-notes.md)
+or include in a comment the `/release-note-none` command.
+
+Cherry-pick pull requests are reviewed slightly differently than normal
+pull requests on the master branch in that they:
+
+ * Are by default expected to be `kind/bug` and `priority/critical-urgent`.
+
+ * Milestones must be set on the PR reflecting the milestone for the target
+   release branch (for example, milestone v1.11 for a cherry-pick onto branch
+   release-1.11). This is normally done for you by automation.
+
+ * Have one additional level of review in that they must be approved specifically
+   for cherry-pick by branch approvers.
+
    The [Branch Manager](https://git.k8s.io/sig-release/release-team/role-handbooks/branch-manager)
    will triage PRs targeted to the next .0 minor release branch up until the 
    release, while the [Patch Release Team](https://git.k8s.io/sig-release/release-team/role-handbooks/patch-release-manager) 
    will handle all cherry-picks to patch releases.
-   Normal rules apply for code merge.
-   * Reviewers `/lgtm` and owners `/approve` as they deem appropriate.
-   * Milestones on cherry-pick PRs should be the milestone for the target 
-   release branch (for example, milestone 1.11 for a cherry-pick onto 
-   release-1.11).
-   * During code freeze, to get attention on a cherry-pick by the current
-   release team members see the [appropriate release folder](https://git.k8s.io/sig-release/releases)
-   for the target release's team contact information. You may cc them with
-   `<@githubusername>` on your cherry-pick PR.
+
+   The [Branch Manager](https://git.k8s.io/sig-release/release-team/role-handbooks/branch-manager)
+   or the [Patch Release Team](https://git.k8s.io/sig-release/release-team/role-handbooks/patch-release-manager)
+   are the final authority on branch approval by removing the `do-not-merge/cherry-pick-not-approved`
+   label and triggering a merge into the target branch.
+
+   The team scrubs through incoming cherry-picks on at least a weekly basis, daily during
+   burndown ahead of a .0 release.  Ahead of point releases, reminders of the
+   cherry-pick deadline will be sent out to the community.  Cherry-pick PRs are
+   often metered into the release branches to give more deliberate CI signal across
+   changes.  For this reason your cherry-pick must be ready to merge ahead of
+   the cherry-pick deadline, but those candidates may be merged during the days
+   between the deadline and release.
+
+   Open cherry-pick PRs which do not land in the current release will
+   continue to be tracked by the team for consideration for inclusion in a next
+   patch release.
+
+   If you are concerned about the status of your cherry-pick, err on the
+   side of overcommunicating and reach out to the branch reviewer(s):
+
+   * During code freeze or after code thaw and ahead of a .0 release, to get attention on a cherry-pick by the current
+     release team members see the [appropriate release folder](https://git.k8s.io/sig-release/releases)
+     for the target release's team contact information. You may cc them with
+     `@<githubusername>` on your cherry-pick PR.
+
    * For prior branches, check the [patch release schedule](https://git.k8s.io/sig-release/releases/patch-releases.md), which includes contact information for the patch release team.
 
-## Cherry-pick Review
+Compared to the normal master branch's merge volume across time,
+the release branches see one or two orders of magnitude less PRs.
+This is because there is an order or two of magnitude higher scrutiny.
+Again the emphasis is on critical bug fixes, eg:
+ * Loss of data
+ * Memory corruption
+ * Panic, crash, hang
+ * Security
 
-Cherry-pick pull requests have an additional requirement compared to normal pull
-requests.
-They must be approved specifically for cherry-pick by Approvers.
-The [Branch Manager](https://git.k8s.io/sig-release/release-team/role-handbooks/branch-manager) 
-or the [Patch Release Team](https://git.k8s.io/sig-release/release-team/role-handbooks/patch-release-manager)
-are the final authority on removing the `do-not-merge/cherry-pick-not-approved`
-label  and triggering a merge into the target branch.
+If you are proposing a cherry-pick and it is not a clear and obvious
+critical bug fix, please reconsider.  If upon reflection you wish to
+continue, bolster your case by supplementing your PR with, eg:
 
-Cherry-pick pull requests follow the same release note requirements as
-other pull requests, except the release note stanza will auto-populate from
-the master branch pull request from which the cherry-pick originated.  If
-this is unsuccessful the `do-not-merge/release-note-label-needed` label
-will be applied and the cherry-pick author must edit the pull request
-description to [add a release note](https://git.k8s.io/community/contributors/guide/release-notes.md).
+ * A GitHub issue detailing the problem
+
+ * Scope of the change
+
+ * Risks of adding a change
+
+ * Risks of associated regression
+
+ * Testing performed, test cases added
+
+ * Key stakeholder SIG reviewers/approvers attesting to their confidence in the
+   change being a required backport
+
+ * If the change is in cloud-provider-specific platform code (which is in the
+   process of being moved out of core Kubernetes), describe the customer impact,
+   how the issue escaped initial testing, remediation taken to prevent similar
+   future escapes, and why the change cannot be carried in your downstream
+   fork of the Kubernetes project branches.  It is critical that our full
+   community is actively engaged on enhancements in the project.  If a
+   released feature was not enabled on a particular provider's platform, this
+   is a community miss that needs to be resolved in the master branch for
+   subsequent releases.  Such enabling will not be backported to the patch
+   release branches.
 
 ## Searching for Cherry-picks
 
