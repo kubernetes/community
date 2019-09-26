@@ -4,7 +4,7 @@ GITHUB_ORG="hoveytechllc"
 REPO_NAME="visio-stencil-creator"
 TAG_NAME="v1.0"
 
-GCR_REPO="hoveytech/${REPO_NAME}:${TAG_NAME}"
+GCR_REPO="gcr.k8s.io/${REPO_NAME}:${TAG_NAME}"
 
 rm -fdr ./tools/${REPO_NAME}
 
