@@ -38,8 +38,8 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Emeritus Leads
 
-* Eric Chiang (**[@ericchiang](https://github.com/ericchiang)**), Red Hat
-* Eric Tune (**[@erictune](https://github.com/erictune)**), Google
+* Eric Chiang (**[@ericchiang](https://github.com/ericchiang)**)
+* Eric Tune (**[@erictune](https://github.com/erictune)**)
 
 ## Contact
 - Slack: [#sig-auth](https://kubernetes.slack.com/messages/sig-auth)

@@ -34,8 +34,8 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Emeritus Leads
 
-* Tony Ado (**[@AdoHe](https://github.com/AdoHe)**), Alibaba
-* Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**), Red Hat
+* Tony Ado (**[@AdoHe](https://github.com/AdoHe)**)
+* Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**)
 
 ## Contact
 - Slack: [#sig-cli](https://kubernetes.slack.com/messages/sig-cli)

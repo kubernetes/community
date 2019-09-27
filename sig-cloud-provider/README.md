@@ -27,8 +27,8 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 ## Emeritus Leads
 
-* Chris Hoge (**[@hogepodge](https://github.com/hogepodge)**), OpenStack Foundation
-* Jago Macleod (**[@jagosan](https://github.com/jagosan)**), Google
+* Chris Hoge (**[@hogepodge](https://github.com/hogepodge)**)
+* Jago Macleod (**[@jagosan](https://github.com/jagosan)**)
 
 ## Contact
 - Slack: [#sig-cloud-provider](https://kubernetes.slack.com/messages/sig-cloud-provider)

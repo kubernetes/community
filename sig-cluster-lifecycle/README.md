@@ -55,8 +55,8 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 ## Emeritus Leads
 
-* Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)
-* Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
+* Lucas Käldström (**[@luxas](https://github.com/luxas)**)
+* Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**)
 
 ## Contact
 - Slack: [#sig-cluster-lifecycle](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)

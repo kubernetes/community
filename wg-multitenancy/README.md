@@ -30,7 +30,7 @@ Define the models of multitenancy that Kubernetes will support. Discuss and exec
 
 ## Emeritus Organizers
 
-* David Oppenheimer (**[@davidopp](https://github.com/davidopp)**), Google
+* David Oppenheimer (**[@davidopp](https://github.com/davidopp)**)
 
 ## Contact
 - Slack: [#wg-multitenancy](https://kubernetes.slack.com/messages/wg-multitenancy)
