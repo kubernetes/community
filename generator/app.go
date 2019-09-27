@@ -68,7 +68,7 @@ func (x FoldedString) MarshalYAML() (interface{}, error) {
 type Person struct {
 	GitHub  string
 	Name    string
-	Company string
+	Company string `yaml:"company,omitempty"`
 }
 
 // Meeting represents a regular meeting for a group.
@@ -233,11 +233,15 @@ func (c *Context) Validate() []error {
 			for prefix, persons := range group.Leadership.PrefixToPersonMap() {
 				for _, person := range persons {
 					if val, ok := people[person.GitHub]; ok {
-						if val.Name != person.Name || val.Company != person.Company {
+						if val.Name != person.Name || (prefix != "emeritus_lead" && val.Company != person.Company) {
 							errors = append(errors, fmt.Errorf("%s: %ss: expected person: %v, got: %v", group.Dir, prefix, val, person))
 						}
-					} else {
+					} else if prefix != "emeritus_lead" {
 						people[person.GitHub] = person
+					}
+
+					if prefix == "emeritus_lead" && person.Company != "" {
+						errors = append(errors, fmt.Errorf("%s: emeritus leads should not have company specified; company specified for: %s", group.Dir, person.Name))
 					}
 				}
 			}
