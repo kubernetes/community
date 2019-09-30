@@ -53,7 +53,8 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
   - https://raw.githubusercontent.com/kubernetes-sigs/kube-storage-version-migrator/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/garbagecollector/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/namespace/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/quota/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/resourcequota/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/quota/v1/OWNERS
 ### idl-schema-client-pipeline
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-client/gen/master/OWNERS
