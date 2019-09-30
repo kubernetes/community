@@ -1231,7 +1231,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/website/master/content/en/blog/OWNERS
   - name: reference-docs
     owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/reference-docs/master/OWNERS
   - name: website
     owners:
     - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS

@@ -64,7 +64,7 @@ The following [subprojects][subproject-definition] are owned by sig-docs:
   - https://raw.githubusercontent.com/kubernetes/website/master/content/en/blog/OWNERS
 ### reference-docs
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/reference-docs/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/reference-docs/master/OWNERS
 ### website
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
