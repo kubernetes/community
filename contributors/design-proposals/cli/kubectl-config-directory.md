@@ -36,7 +36,7 @@ Consider the following project:
 
 [terraform-aws-openshift](https://github.com/dwmkerr/terraform-aws-openshift)
 
-This project creates a Kubernetes Cluster. One the cluster has been created, it is convenient to offer the user a way to access it. At the moment, the only options are:
+This project creates a Kubernetes Cluster. Once the cluster has been created, it is convenient to offer the user a way to access it. At the moment, the only options are:
 
 1. Generate a config file, ask the user to download it, and ask them to refer to it with the `KUBECONFIG` variable. This has the drawback of forcing the user to decide where to store the file, and remember that location whenever they access the cluster.
 2. Ask the user to modify their config file. This has the drawback of forcing the user to modify a complex, and sometimes very large file.
