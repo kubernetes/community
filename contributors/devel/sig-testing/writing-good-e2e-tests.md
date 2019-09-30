@@ -229,3 +229,16 @@ Unreachable nodes are evacuated and then repopulated upon rejoining [Disruptive]
 Note that opening issues for specific better tooling is welcome, and
 code implementing that tooling is even more welcome :-).
 
+### Resource usage ###
+When writing tests, resources used in the tests should be chosen specifically and sanely quanified.
+
+Therefore it is important to use resources that are:
+1. appropriate to the test
+2. inexpensive (containing little or no overhead)
+3. create just as many an needed, no more
+
+For example:
+1. only using the resource type which is appropriate to the `test/e2e/<AREA>/<SPECIFIC_AREA>`
+2. the resource type `ConfigMap` is inexpensive, common, and stateless. It should be used for such things as fetching created resources
+3. although the clusters used for testing are generally beefy, an overamount of resources should not be created as it is unnecessary
+
