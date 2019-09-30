@@ -20,7 +20,7 @@ di GitHub menjadi lebih baik.
     - [Bagaimana Cara Bekerja Sama dengan Baik](#bagaimana-cara-bekerja-sama-dengan-baik)
       - [Contoh Komunikasi Yang Baik/Buruk](#contoh-komunikasi-yang-baikburuk)
   - [Mengumpulkan Kontribusi](#mengumpulkan-kontribusi)
-    - [Signing the CLA](#signing-the-cla)
+    - [Menandatangani CLA](#menandatangani-cla)
     - [Membuka dan Menanggapi Isu](#membuka-dan-menanggapi-isu)
       - [Membuat Sebuah Isu](#membuat-sebuah-isu)
       - [Menanggapi sebuah Isu](#menanggapi-sebuah-isu)
@@ -66,7 +66,7 @@ di GitHub menjadi lebih baik.
 
 - [Dasbor Gubernator] - Melihat Pull Request yang masuk dan keluar yang memerlukan perhatian.
 - [Prow] - Mekanisme CI/CD Kubernetes.
-- [Tide] - _Plugin_ Prow yang melakukan manajemen _merge_ dan _test_. [Dashbor Tide]
+- [Tide] - _Plugin_ Prow yang melakukan manajemen _merge_ dan _test_. [Dasbor Tide]
 - [Perintah Bot] - Perintah yang dapat kamu gunakan untuk berinteraksi dengan Bot Kubernetes (contoh:
   `/cc`, `/lgtm`, dan `/retest`)
 - [Label GitHub] - _List_ _label_ yang digunakan pada proyek Kubernetes
@@ -85,6 +85,7 @@ di GitHub menjadi lebih baik.
 - community@kubernetes.io - Mengirim surat pada seseorang yang berada dalam tim komunitas (Kontributor SIG
   _Experience_) mengenai isu komunitas.
 - conduct@kubernetes.io - Mengirim surat pada komite _Code of Conduct_, _mailing_ _list_ _private_.
+- github@kubernetes.io - Mengirim Surat pada Tim Administrasi GitHub secara pribadi, untuk item sensitif.
 - steering@kubernetes.io - Mengirim surat pada _steering_ _committee_. Alamat publik dengan _archieve_.
 - steering-private@kubernetes.io - Mengirim surat pada _steering_ _committee_ secara _private_, untuk 
   informasi yang sensitif.
@@ -129,7 +130,7 @@ tersebut tidak memenuhi standar untuk di-_merge_.
 
 ## Mengumpulkan Kontribusi
 
-### Signing the CLA
+### Menandatangani CLA
 
 Sebelum kamu mengumpulkan kontribusi kamu, kamu harus terlebih dahulu [menyetujui _Contributor License
 Agreement(CLA)_][cla]. Proyek Kubernetes _hanya_ menerima kontribusi yang kamu kerjakan apabila 
@@ -155,7 +156,7 @@ atau ikuti [forum Kubernetes].
 
 - Gunakan templat isu (jika tersedia). Menggunakan templat yang tersedia akan 
   memudahkan kontributor lain ketika menanggapi isu yang kamu buat.
-- Ikuti petunjuk yang dideskripsikan di templat tersebut.
+  - Ikuti petunjuk yang dideskripsikan di templat tersebut.
 - Berikan deskripsi yang cukup ketika membuat suatu isu.
 - Gunakan [label] yang tepat. Jika kamu kurang yakin, [k8s-ci-robot][prow] bot
   ([Kubernetes CI bot][prow]) akan membalas isu yang kamu buat dengan respons
@@ -230,17 +231,17 @@ Semua file yang dimiliki oleh SIG testing dipidahkan dari folder `/devel` ke fol
 Apa saja yang dimasukkan dalam deskripsi:
 - **Baris 1** - Referensi ke isu atau PR lain (#3064 #3097).
 - **Baris 2** - Deskripsi singkat mengenai apa yang dikerjakan dalam PR tersebut.
-- **Baris 4** - [SIG][sigs] _assignment_ dengan [perintah][commands]
+- **Baris 4** - [SIG][sigs] _assignment_ dengan [perintah]
   `/sig contributor-experience`..
 - **Baris 5** - _Reviewer_ yang terkait dengan isu atau PR yang dispesifikasikan dengan perintah [`/cc`][cc].
-- **Baris 6** - Perintah [`/kind cleanup`][kind] menambahkan [label][labels] yang 
+- **Baris 6** - Perintah [`/kind cleanup`][kind] menambahkan [label] yang 
   mengkategorisasi isu atau PR yang terkait untuk membersihkan kode, _process_, atau _technical
   debt_.
 - **Baris 7** - Perintah [`/area developer-guide`][kind] mengkategorisasi isu atau PR 
   yang terkait dengan petunjuk pengembang.
 - **Baris 8** - Perintah [`/assign`][assign] meng-_assign_ seorang _approver_ untuk PR.
   Seorang _approver_ akan disarankan oleh [k8s-ci-robot][prow] dan dipilih dari _list_ 
-  _owner_ pada _file_ [OWNERS]. Merekalah yang akan menambahkan _label_ 
+  _owner_ pada _file_ [_owner_]. Merekalah yang akan menambahkan _label_ 
   [`/approve`][approve] pada PR yang sudah di-_review_.
 
 
@@ -281,8 +282,8 @@ Label yang sering digunakan:
 ## Bekerja pada Mesin Lokal
 
 Sebelum kamu membuat sebuah PR, sebagian besar kamu akan mengerjakan pekerjaan kamu pada mesin lokal. 
-Jika kamu merupakan pengguna baru git, [tutorial git Atlassian git] merupakan awal 
-pembelajaran yang baik. Sebagai alternatif lain, juga terdapat tutorial [_Stanford's Git magic_].
+Jika kamu merupakan pengguna baru git, [Tutorial git Atlassian ] merupakan awal 
+pembelajaran yang baik. Sebagai alternatif lain, juga terdapat tutorial Stanford's [Git magic] untuk pilihan multi-bahasa yang bagus.
 
 **Referensi:**
 - [Tutorial git Atlassian]
@@ -352,7 +353,7 @@ _squashing_ perlu dilakukan atau tidak.
 [dasbor gubernator]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
 [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
-[asbor tide]: https://prow.k8s.io/tide
+[dasbor tide]: https://prow.k8s.io/tide
 [perintah bot]: https://go.k8s.io/bot-commands
 [Label GitHub]: https://go.k8s.io/github-labels
 [Pencarian Kode Kubernetes]: https://cs.k8s.io/
@@ -383,13 +384,14 @@ _squashing_ perlu dilakukan atau tidak.
 [SIGs]: /sig-list.md
 [testing guide]: /contributors/devel/sig-testing/testing.md
 [label]: https://git.k8s.io/test-infra/label_sync/labels.md
-[_trivial_ _fix_]: /contributors/guide/pull-requests.md#10-trivial-edits
+[_trivial fix_]: /contributors/guide/pull-requests.md#10-trivial-edits
 [GitHub workflow]: /contributors/guide/github-workflow.md#3-branch
 [_commit_ _squashing_]: /contributors/guide/pull-requests.md#6-squashing-and-commit-titles
 [_owner_]: /contributors/guide/owners.md
 [testing locally]: /contributors/guide/README.md#testing
 [Tutorial git Atlassian]: https://www.atlassian.com/git/tutorials
 [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
+[Panduan _Testing_]: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/testing.md
 [_Security_ dan _Disclosure_ Informasi]: https://kubernetes.io/docs/reference/issues-security/security/
 [approve]: https://prow.k8s.io/command-help#approve
 [Rilis Patch Kubernetes]: https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md
