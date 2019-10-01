@@ -35,3 +35,7 @@ For pull requests that don't need to be mentioned at release time, use the `/rel
 To see how to format your release notes, view the kubernetes/kubernetes [pull request template](https://git.k8s.io/kubernetes/.github/PULL_REQUEST_TEMPLATE.md) for a brief example. Pull Request titles and body comments can be modified at any time prior to the release to make them friendly for release notes.
 
 Release notes apply to pull requests on the master branch. For patch release branches the automated cherry-pick pull requests process (see the [cherry-pick instructions](/contributors/devel/sig-release/cherry-picks.md)) should be followed.  That automation will pull release notes from the master branch PR from which the cherry-pick originated. On a rare occasion a pull request on a patch release branch is not a cherry-pick, but rather is targeted directly to the non-master branch and in this case, a `release-note-*` label is required for that non-master pull request.
+
+## Related
+
+* [Behind The Scenes: Kubernetes Release Notes Tips & Tricks - Mike Arpaia, Kolide (KubeCon 2018 Lightning Talk)](https://www.youtube.com/watch?v=n62oPohOyYs)
