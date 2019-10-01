@@ -177,6 +177,7 @@ channels:
   - name: leadership-summit
     archived: true
   - name: linode
+  - name: litmus
   - name: malaysia-users
   - name: malta-users
   - name: meet-our-contributors
