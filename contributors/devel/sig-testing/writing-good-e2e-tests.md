@@ -236,9 +236,11 @@ Therefore it is important to use resources that are:
 1. appropriate to the test
 2. inexpensive (containing little or no overhead)
 3. create just as many an needed, no more
+4. should be cleaned up at the end of the tests's run
 
 For example:
 1. only using the resource type which is appropriate to the `test/e2e/<AREA>/<SPECIFIC_AREA>`
 2. the resource type `ConfigMap` is inexpensive, common, and stateless. It should be used for such things as fetching created resources
 3. although the clusters used for testing are generally beefy, an overamount of resources should not be created as it is unnecessary
+4. using afterEach, make sure that your test destroys any resources leftover from the test 
 
