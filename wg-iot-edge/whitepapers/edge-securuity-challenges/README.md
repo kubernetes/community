@@ -122,25 +122,19 @@ Once the later stage operating system drivers are loading and user space softwar
 
 Because edge software is dynamic, we can monitor the binaries that get loaded at the close of the standard secure boot process and afterward but we cannot simply block non-whitelist software. An attestation method may be most appropriate here, but regardless of the technique some form of remote awareness and control of running processes is needed. The security challenge does not end with this, however, because it is likely that rogue software would falsify or cancel reporting of process monitoring as an immediate step once invoked. The challenge in this situation includes finding a way to take action immediately at the edge for the detection of unauthorized software running directly on the operating system.
 
-
 ### 4.4 Component Firmware Vulnerabilities
 
 This is sometimes grouped into the same challenge as BIOS/Secure Boot concerns but the reality is this is a separate and somewhat unsolvable challenge. Many of the features that may be deployed when designing a secure system built from hardware and software components tied together by cryptography have also been implemented by the suppliers of the most fundamental components of a device’s hardware. At first blush this is fantastic that suppliers of CPUs like Intel and AMD have designed components that are secure but the reality is that their [security systems are a black box](https://boingboing.net/2016/06/15/intel-x86-processors-ship-with.html) as are any additional features designed into these systems or vulnerabilities that may exist. It doesn’t matter how secure of a system that you built on top of these core components, if they are exploitable, none of the security layers you carefully constructed on top will matter. This was a big enough concern that the NSA specifically asked those manufacturers to give the agency a way to completely [disable the systems](https://www.csoonline.com/article/3220476/researchers-say-now-you-too-can-disable-intel-me-backdoor-thanks-to-the-nsa.html).
-
 
 ### 4.5 Security Updates of the Operating System
 
 Once a system is started, the necessity for a security update increases. For a secure delivery of updates to the operating system, the update mirror has to be trust and verified. This configuration will not change often, and therefore can usually be embedded into the edge OS. 
 
-To help secure the delivery channel for the updates, https can be used instead of http. This helps avoid any alterations during the download of the software package. However, once the package is available on the system, it still must be verified, e.g. by checking the signature, before replacing the binary of the system. \
-
-
+To help secure the delivery channel for the updates, https can be used instead of http. This helps avoid any alterations during the download of the software package. However, once the package is available on the system, it still must be verified, e.g. by checking the signature, before replacing the binary of the system.
 
 ### 4.6 Audit Trail and Log Files
 
 The operating system has to log all occurred events with the intention of facilitating an audit. These log files have to be protected in the same manner as regular data. A single event includes the following information but is not limited to:
-
-
 
 *   Timestamp of the event
 *   Process identifier
@@ -167,17 +161,9 @@ To avoid exposing network ports to the public, it is common to use VPNs to inter
 
 ### 5.3 Network access control
 
-Controlling the network access is a crucial aspect of protecting the connected devices, services and data against its unintentional usage. To avoid such requests, a restriction of 
+Controlling the network access is a crucial aspect of protecting the connected devices, services and data against its unintentional usage. To avoid such requests, a restriction of these resources for example via an access control list of trusted and secured identities is a viable approach. A secure identity is a trusted person or process that facilitates a secure communication between multiple parties. Once this precondition is ensured, the device or service has to properly handle the requests of the ACLs other non-trusted requests are dropped. To avoid a theft of an identity a periodic re-evaluation or change is recommended.
 
-these resources for example via an access control list of trusted and secured identities is a viable approach. A secure identity is a trusted person or process that facilitates
-
-a secure communication between multiple parties.  
-
-Once this precondition is ensured, the device or service has to properly handle the requests of the ACLs other non-trusted requests are dropped. To avoid a theft of an identity a periodic re-evaluation or change is recommended.
-
-In addition, the connection to the network can be secured via access credentials.
-
-They are used to prevent non-authorized connections from various services or databases but those credentials are not tied to any particular network identity in most cases. Possessing the credentials is equivalent to becoming that identity. Even without access credentials, being on the network allows an attacker to occupy the software with invalid requests in a denial-of-service attack.
+In addition, the connection to the network can be secured via access credentials. They are used to prevent non-authorized connections from various services or databases but those credentials are not tied to any particular network identity in most cases. Possessing the credentials is equivalent to becoming that identity. Even without access credentials, being on the network allows an attacker to occupy the software with invalid requests in a denial-of-service attack.
 
 
 ### 5.4 Identity verification of control plane
@@ -220,9 +206,7 @@ Many edge microservices need configuration, API keys, database credentials, and 
 
 ### 6.3 Unauthorized microservices
 
-Any unauthorized edge microservices should be detected and eliminated. The best approach is to prevent any microservice that is not whitelisted from ever starting, of course. Attempts to launch unauthorized microservices should be reported even if prevented successfully.
-
-A further hurdle for access violations is, to run the microservice with the least required privileges. 
+Any unauthorized edge microservices should be detected and eliminated. The best approach is to prevent any microservice that is not whitelisted from ever starting, of course. Attempts to launch unauthorized microservices should be reported even if prevented successfully. A further hurdle for access violations is, to run the microservice with the least required privileges. 
 
 
 ### 6.4 Controlled access to resources
