@@ -1074,6 +1074,7 @@ sigs:
     description: Manages operations and policy for upstream community group communication
       platforms.
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/discuss-theme/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
     meetings:
     - description: APAC Coordinator Meeting

@@ -58,6 +58,7 @@ Owns and manages overall community repo, including community group documentation
 ### community-management
 Manages operations and policy for upstream community group communication platforms.
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/discuss-theme/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
 - **Meetings:**
   - APAC Coordinator Meeting: [Thursdays at 5:00 UTC](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
