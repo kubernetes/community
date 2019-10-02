@@ -32,6 +32,8 @@ As Marketing Lead, you are responsible for the overall marketing communications 
 - Determine signage needs and copy, coordinate with CNCF on explicit needs  
 - Create/update deck templates for curated talks and/or other purposes
 
+## Shadow to the Marketing Lead Role
+This role can include one or more shadows. The Marketing Lead can delegate/assign tasks to the shadows. The expectation from a shadow is to lead one of the events-team roles in an upcoming summit. The shadows to the Marketing Lead are responsible for handling all Marketing lead related activities in the absence of the Lead.
 
 
 ## Documentation
