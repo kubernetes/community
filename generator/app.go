@@ -83,6 +83,12 @@ type Meeting struct {
 	RecordingsURL string `yaml:"recordings_url,omitempty"`
 }
 
+// Issues represents issue/project-management details for a group
+type Issues struct {
+	Links       map[string]string `yaml:"links,omitempty"`
+	Description string            `yaml:"description,omitempty"`
+}
+
 // Contact represents the various contact points for a group.
 type Contact struct {
 	Slack              string       `yaml:",omitempty"`
@@ -132,6 +138,7 @@ type Group struct {
 	Label            string
 	Leadership       LeadershipGroup `yaml:"leadership"`
 	Meetings         []Meeting
+	Issues           *Issues `yaml:"issues,omitempty"`
 	Contact          Contact
 	Subprojects      []Subproject `yaml:",omitempty"`
 }

@@ -19,6 +19,19 @@ Develop a standard foundation (philosophy and libraries) for core Kubernetes com
 * Regular WG Meeting (please join kubernetes-dev@googlegroups.com or kubernetes-wg-component-standard@googlegroups.com to access the notes): [Tuesdays at 08:30 PT (Pacific Time)](https://zoom.us/j/705540322) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI).
 
+## Issues
+* [Project Board](https://github.com/orgs/kubernetes/projects/26)
+* [k/k Issues / PR's needing Review](https://github.com/kubernetes/kubernetes/issues?utf8=%E2%9C%93&q=label%3Awg%2Fcomponent-standard+)
+
+Issues are opened in [k/k](https://github.com/kubernetes/kubernetes) or the appropriate project/component repo with the `wg/component-standard` label.  
+To apply this label to an issue using Prow, leave a comment containing `/wg component-standard` on its own line.  
+
+[k/component-base](https://github.com/kubernetes/component-base) is an automated staging repository managed from the ./staging directory in [k/k](https://github.com/kubernetes/kubernetes). Issues are not currently looked at on this repo.  
+
+Adding issues to the project board is helpful.  
+The `wg/component-standard` label is used in other org's repos such as [k-sigs/kubebuilder](https://github.com/kubernetes-sigs/kubebuilder) meaning you can't link them easily in the Project Board.  
+For repos outside of the kubernetes org, You can `+` a note with links to the respective issues on the Project Board.  
+
 ## Organizers
 
 * Michael Taufen (**[@mtaufen](https://github.com/mtaufen)**), Google

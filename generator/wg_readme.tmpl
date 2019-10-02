@@ -24,6 +24,15 @@ The [charter]({{.CharterLink}}) defines the scope and governance of the {{.Name}
 {{- end }}
 
 {{- end }}
+{{- if .Issues }}
+
+## Issues
+  {{- range $title, $url := .Issues.Links }}
+* [{{ $title }}]({{ $url }})
+  {{- end }}
+{{ println }}
+  {{- .Issues.Description }}
+{{- end }}
 {{- if .Leadership }}
 {{- if .Leadership.Chairs }}
 
