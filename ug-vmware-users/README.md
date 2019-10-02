@@ -16,7 +16,7 @@ The VMware User Group facilitates communication among Kubernetes users and contr
 ## Organizers
 
 * Steve Wong (**[@cantbewong](https://github.com/cantbewong)**), VMware
-* Myles Gray (**[@mylesgray](https://github.com/mylesgray)**), VMware
+* Myles Gray (**[@mylesagray](https://github.com/mylesagray)**), VMware
 
 ## Contact
 - Slack: [#ug-vmware](https://kubernetes.slack.com/messages/ug-vmware)

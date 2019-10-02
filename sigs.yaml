@@ -2654,7 +2654,7 @@ usergroups:
     - github: cantbewong
       name: Steve Wong
       company: VMware
-    - github: mylesgray
+    - github: mylesagray
       name: Myles Gray
       company: VMware
     tech_leads:
