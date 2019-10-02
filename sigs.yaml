@@ -1209,6 +1209,8 @@ sigs:
       description: Spanish language content
     - name: sig-docs-fr-owners
       description: French language content
+    - name: sig-docs-hi-owners
+      description: Hindi language content
     - name: sig-docs-id-owners
       description: Indonesian language content
     - name: sig-docs-it-owners
