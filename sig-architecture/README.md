@@ -32,7 +32,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
-* Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
 
 ## Contact
 - Slack: [#sig-architecture](https://kubernetes.slack.com/messages/sig-architecture)
