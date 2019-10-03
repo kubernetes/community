@@ -241,9 +241,6 @@ sigs:
     - github: jdumars
       name: Jaice Singer DuMars
       company: Google
-    - github: mattfarina
-      name: Matt Farina
-      company: Samsung SDS
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
