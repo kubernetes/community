@@ -28,10 +28,9 @@ The [charter](charter.md) defines the scope and governance of the Architecture S
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Brian Grant (**[@bgrant0607](https://github.com/bgrant0607)**), Google
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
+* John Belamaric (**[@johnbelamaric](https://github.com/johnbelamaric)**), Google
 
 ## Contact
 - Slack: [#sig-architecture](https://kubernetes.slack.com/messages/sig-architecture)
