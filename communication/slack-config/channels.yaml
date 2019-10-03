@@ -323,6 +323,7 @@ channels:
     archived: true
   - name: wg-apply
   - name: wg-component-standard
+  - name: wg-component-standard-mentorship
   - name: wg-iot-edge
   - name: wg-k8s-infra
   - name: wg-lts
