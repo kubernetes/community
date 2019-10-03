@@ -729,7 +729,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
     meetings:
     - description: Azure Subproject Meeting (First Monday)
@@ -945,6 +944,9 @@ sigs:
   - name: cluster-api-provider-aws
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
+  - name: cluster-api-provider-azure
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
   - name: cluster-api-provider-digitalocean
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
