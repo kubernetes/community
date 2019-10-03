@@ -88,6 +88,9 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### cluster-api-provider-aws
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
+### cluster-api-provider-azure
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
 ### cluster-api-provider-digitalocean
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
