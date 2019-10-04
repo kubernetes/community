@@ -51,11 +51,11 @@ The [charter](charter.md) defines the scope and governance of the Cluster Lifecy
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**), Google
-* Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
 
 ## Emeritus Leads
 
+* Lucas Käldström (**[@luxas](https://github.com/luxas)**), Luxas Labs (occasionally contracting for Weaveworks)
 * Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**), Google
 
 ## Contact

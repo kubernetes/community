@@ -806,13 +806,13 @@ sigs:
     - github: justinsb
       name: Justin Santa Barbara
       company: Google
-    - github: luxas
-      name: Lucas Käldström
-      company: Luxas Labs (occasionally contracting for Weaveworks)
     - github: timothysc
       name: Timothy St. Clair
       company: VMware
     emeritus_leads:
+    - github: luxas
+      name: Lucas Käldström
+      company: Luxas Labs (occasionally contracting for Weaveworks)
     - github: roberthbailey
       name: Robert Bailey
       company: Google
