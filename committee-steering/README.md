@@ -18,16 +18,11 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 
 ## Members
 
-* Brian Grant (**[@bgrant0607](https://github.com/bgrant0607)**), Google
-* Brendan Burns (**[@brendandburns](https://github.com/brendandburns)**), Microsoft
+* Christoph Blecker (**[@cblecker](https://github.com/cblecker)**), Red Hat
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
-* Joe Beda (**[@jbeda](https://github.com/jbeda)**), VMware
-* Michelle Noorali (**[@michelleN](https://github.com/michelleN)**), Microsoft
-* Brandon Philips (**[@philips](https://github.com/philips)**), Red Hat
-* Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
-* Sarah Novotny (**[@sarahnovotny](https://github.com/sarahnovotny)**), Google
-* Clayton Coleman (**[@smarterclayton](https://github.com/smarterclayton)**), Red Hat
+* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**), Loodse
+* Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
 

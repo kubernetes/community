@@ -2727,36 +2727,21 @@ committees:
   label: steering
   leadership:
     chairs:
-    - github: bgrant0607
-      name: Brian Grant
-      company: Google
-    - github: brendandburns
-      name: Brendan Burns
-      company: Microsoft
+    - github: cblecker
+      name: Christoph Blecker
+      company: Red Hat
     - github: derekwaynecarr
       name: Derek Carr
       company: Red Hat
     - github: dims
       name: Davanum Srinivas
       company: VMware
-    - github: jbeda
-      name: Joe Beda
-      company: VMware
-    - github: michelleN
-      name: Michelle Noorali
-      company: Microsoft
-    - github: philips
-      name: Brandon Philips
-      company: Red Hat
-    - github: pwittrock
-      name: Phillip Wittrock
+    - github: nikhita
+      name: Nikhita Raghunath
+      company: Loodse
+    - github: parispittman
+      name: Paris Pittman
       company: Google
-    - github: sarahnovotny
-      name: Sarah Novotny
-      company: Google
-    - github: smarterclayton
-      name: Clayton Coleman
-      company: Red Hat
     - github: spiffxp
       name: Aaron Crickenberger
       company: Google
