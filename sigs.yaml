@@ -229,17 +229,14 @@ sigs:
   label: architecture
   leadership:
     chairs:
-    - github: bgrant0607
-      name: Brian Grant
-      company: Google
     - github: derekwaynecarr
       name: Derek Carr
       company: Red Hat
     - github: dims
       name: Davanum Srinivas
       company: VMware
-    - github: jdumars
-      name: Jaice Singer DuMars
+    - github: johnbelamaric
+      name: John Belamaric
       company: Google
   meetings:
   - description: Regular SIG Meeting

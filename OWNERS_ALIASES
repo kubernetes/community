@@ -8,10 +8,9 @@ aliases:
     - mattfarina
     - prydonius
   sig-architecture-leads:
-    - bgrant0607
     - derekwaynecarr
     - dims
-    - jdumars
+    - johnbelamaric
   sig-auth-leads:
     - enj
     - mikedanese
