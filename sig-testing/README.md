@@ -81,7 +81,7 @@ The Testing Commons is a subproject within the Kubernetes sig-testing community 
 - **Contact:**
   - Slack: [#testing-commons](https://kubernetes.slack.com/messages/testing-commons)
 - **Meetings:**
-  - Testing Commons: [Fridays at 07:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:30&tz=PT%20%28Pacific%20Time%29).
+  - Testing Commons: [Mondays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o).
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
