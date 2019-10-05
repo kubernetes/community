@@ -32,8 +32,8 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 ## Emeritus Leads
 
-* Aparna Sinha (**[@apsinha](https://github.com/apsinha)**), Google
-* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**), CNCF
+* Aparna Sinha (**[@apsinha](https://github.com/apsinha)**)
+* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**)
 
 ## Contact
 - Slack: [#sig-pm](https://kubernetes.slack.com/messages/sig-pm)

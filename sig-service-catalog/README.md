@@ -27,13 +27,13 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 ## Emeritus Leads
 
-* Aaron Schlesinger (**[@arschles](https://github.com/arschles)**), Microsoft
-* Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**), Microsoft
-* Doug Davis (**[@duglin](https://github.com/duglin)**), IBM
-* Jay Boyd (**[@jboyd01](https://github.com/jboyd01)**), Red Hat
-* Michael Kibbe (**[@kibbles-n-bytes](https://github.com/kibbles-n-bytes)**), Google
-* Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
-* Ville Aikas (**[@vaikas-google](https://github.com/vaikas-google)**), Google
+* Aaron Schlesinger (**[@arschles](https://github.com/arschles)**)
+* Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**)
+* Doug Davis (**[@duglin](https://github.com/duglin)**)
+* Jay Boyd (**[@jboyd01](https://github.com/jboyd01)**)
+* Michael Kibbe (**[@kibbles-n-bytes](https://github.com/kibbles-n-bytes)**)
+* Paul Morie (**[@pmorie](https://github.com/pmorie)**)
+* Ville Aikas (**[@vaikas-google](https://github.com/vaikas-google)**)
 
 ## Contact
 - Slack: [#sig-service-catalog](https://kubernetes.slack.com/messages/sig-service-catalog)

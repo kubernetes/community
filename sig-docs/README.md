@@ -34,8 +34,8 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 ## Emeritus Leads
 
-* Andrew Chen (**[@chenopis](https://github.com/chenopis)**), Google
-* Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**), Google
+* Andrew Chen (**[@chenopis](https://github.com/chenopis)**)
+* Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**)
 
 ## Contact
 - Slack: [#sig-docs](https://kubernetes.slack.com/messages/sig-docs)

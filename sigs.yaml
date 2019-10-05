@@ -342,10 +342,8 @@ sigs:
     emeritus_leads:
     - github: ericchiang
       name: Eric Chiang
-      company: Red Hat
     - github: erictune
       name: Eric Tune
-      company: Google
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday
@@ -558,10 +556,8 @@ sigs:
     emeritus_leads:
     - github: AdoHe
       name: Tony Ado
-      company: Alibaba
     - github: fabianofranz
       name: Fabiano Franz
-      company: Red Hat
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday
@@ -642,10 +638,8 @@ sigs:
     emeritus_leads:
     - github: hogepodge
       name: Chris Hoge
-      company: OpenStack Foundation
     - github: jagosan
       name: Jago Macleod
-      company: Google
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday
@@ -809,10 +803,8 @@ sigs:
     emeritus_leads:
     - github: luxas
       name: Lucas Käldström
-      company: Luxas Labs (occasionally contracting for Weaveworks)
     - github: roberthbailey
       name: Robert Bailey
-      company: Google
   meetings:
   - description: Cluster API (AWS implementation) office hours
     day: Monday
@@ -1041,7 +1033,6 @@ sigs:
     emeritus_leads:
     - github: grodrigues3
       name: Garrett Rodrigues
-      company: Google
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday
@@ -1170,10 +1161,8 @@ sigs:
     emeritus_leads:
     - github: chenopis
       name: Andrew Chen
-      company: Google
     - github: jaredbhatti
       name: Jared Bhatti
-      company: Google
   meetings:
   - description: APAC SIG Meeting
     day: Wednesday
@@ -1564,10 +1553,8 @@ sigs:
     emeritus_leads:
     - github: apsinha
       name: Aparna Sinha
-      company: Google
     - github: idvoretskyi
       name: Ihor Dvoretskyi
-      company: CNCF
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
@@ -1605,7 +1592,6 @@ sigs:
     emeritus_leads:
     - github: jdumars
       name: Jaice Singer DuMars
-      company: Google
   meetings:
   - description: Regular SIG Meeting
     day: Monday
@@ -1767,7 +1753,6 @@ sigs:
     emeritus_leads:
     - github: bsalamat
       name: Bobby (Babak) Salamat
-      company: Google
   meetings:
   - description: 10AM PT Meeting
     day: Thursday
@@ -1839,25 +1824,18 @@ sigs:
     emeritus_leads:
     - github: arschles
       name: Aaron Schlesinger
-      company: Microsoft
     - github: carolynvs
       name: Carolyn Van Slyck
-      company: Microsoft
     - github: duglin
       name: Doug Davis
-      company: IBM
     - github: jboyd01
       name: Jay Boyd
-      company: Red Hat
     - github: kibbles-n-bytes
       name: Michael Kibbe
-      company: Google
     - github: pmorie
       name: Paul Morie
-      company: Red Hat
     - github: vaikas-google
       name: Ville Aikas
-      company: Google
   meetings:
   - description: Regular SIG Meeting
     day: Monday
@@ -2484,7 +2462,6 @@ workinggroups:
     emeritus_leads:
     - github: davidopp
       name: David Oppenheimer
-      company: Google
   meetings:
   - description: Regular WG Meeting
     day: Tuesday

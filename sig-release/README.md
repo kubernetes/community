@@ -28,7 +28,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 ## Emeritus Leads
 
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**)
 
 ## Contact
 - Slack: [#sig-release](https://kubernetes.slack.com/messages/sig-release)

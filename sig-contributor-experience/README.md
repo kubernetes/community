@@ -34,7 +34,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Emeritus Leads
 
-* Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**), Google
+* Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**)
 
 ## Contact
 - Slack: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex)

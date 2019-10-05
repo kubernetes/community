@@ -28,7 +28,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 ## Emeritus Leads
 
-* Bobby (Babak) Salamat (**[@bsalamat](https://github.com/bsalamat)**), Google
+* Bobby (Babak) Salamat (**[@bsalamat](https://github.com/bsalamat)**)
 
 ## Contact
 - Slack: [#sig-scheduling](https://kubernetes.slack.com/messages/sig-scheduling)
