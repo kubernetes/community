@@ -91,6 +91,8 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### cluster-api-provider-azure
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
+- **Meetings:**
+  - Cluster API Azure meeting: [Thursdays at 13:30 PT (Pacific Time)](https://docs.google.com/document/d/1P2FrRjuCZjGy0Yh72lwWCwmXekSEkqliUVTmJy_ETIk/edit?usp=sharing) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:30&tz=PT%20%28Pacific%20Time%29).
 ### cluster-api-provider-digitalocean
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS

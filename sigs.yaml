@@ -933,6 +933,13 @@ sigs:
   - name: cluster-api-provider-azure
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
+    meetings:
+    - description: Cluster API Azure meeting
+      day: Thursday
+      time: "13:30"
+      tz: PT (Pacific Time)
+      frequency: bi-weekly
+      url: https://docs.google.com/document/d/1P2FrRjuCZjGy0Yh72lwWCwmXekSEkqliUVTmJy_ETIk/edit?usp=sharing
   - name: cluster-api-provider-digitalocean
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
