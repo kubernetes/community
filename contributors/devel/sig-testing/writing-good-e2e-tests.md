@@ -244,3 +244,23 @@ For example:
 3. although the clusters used for testing are generally beefy, an overamount of resources should not be created as it is unnecessary
 4. using afterEach, make sure that your test destroys any resources leftover from the test 
 
+### Logging ###
+When writing tests, it's often useful to have logging of events which take place (at least during the development of the given test).
+To log, import the module `framework`. Once included, in the test, you will be able to call `framework.Logf`.
+
+#### Example usage ####
+1. Printing a single string wrapped in a string
+```golang
+testvar := "Hello World"
+framework.Logf("Logf says: '%v'", testvar)
+```
+
+2. Printing a string and a number wrapping in a string
+```golang
+testvar1 := "a string"
+testvar2 := 1
+framework.Logf("testvar1: %v; testvar2: %v", testvar1, testvar2)
+```
+
+For more information, please refer to [the framework documentation](https://godoc.org/k8s.io/kubernetes/test/e2e/framework#Logf)
+
