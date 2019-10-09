@@ -40,8 +40,8 @@ OWNERS files are in YAML format and support the following keys:
 
 The above keys constitute a *simple OWNERS configuration*.
 
-All users are expected to be assignable. In GitHub terms, this means they are either collaborators
-of the repo, or members of the organization to which the repo belongs.
+All users are expected to be assignable. In GitHub terms, this means they must be
+members of the organization to which the repo belongs.
 
 A typical OWNERS file looks like:
 
@@ -201,7 +201,7 @@ is the state of today.
 - Technically, anyone who is a member of the kubernetes GitHub organization can drive-by `/lgtm` a
   PR
   - Drive-by reviews from non-members are encouraged as a way of demonstrating experience and
-    intent to become a collaborator or reviewer
+    intent to become a member or reviewer.
   - Drive-by `/lgtm`'s from members may be a sign that our OWNERS files are too small, or that the
     existing **reviewers** are too unresponsive
   - This goes against the idea of specifying **reviewers** in the first place, to ensure that
@@ -212,7 +212,7 @@ is the state of today.
   - Many **reviewers** and **approvers** are so overloaded by GitHub notifications that @mention'ing
     is unlikely to get a quick response
   - If an **author** `/assign`'s a PR, **reviewers** and **approvers** will be made aware of it on
-    their [PR dashboard](https://k8s-gubernator.appspot.com/pr)
+    their [PR dashboard](https://gubernator.k8s.io/pr)
   - An **author** can work around this by manually reading the relevant OWNERS files,
     `/unassign`'ing unresponsive individuals, and `/assign`'ing others
   - This is a sign that our OWNERS files are stale; pruning the **reviewers** and **approvers** lists
@@ -289,7 +289,7 @@ We should strive to:
 
 - grow the number of OWNERS files
 - add new people to OWNERS files
-- ensure OWNERS files only contain org members and repo collaborators
+- ensure OWNERS files only contain organization members
 - ensure OWNERS files only contain people are actively contributing to or reviewing the code they own
 - remove inactive people from OWNERS files
 
@@ -298,7 +298,7 @@ Bad examples of OWNERS usage:
 - directories that lack OWNERS files, resulting in too many hitting root OWNERS
 - OWNERS files that have a single person as both approver and reviewer
 - OWNERS files that haven't been touched in over 6 months
-- OWNERS files that have non-collaborators present
+- OWNERS files that have non organization members present
 
 Good examples of OWNERS usage:
 
