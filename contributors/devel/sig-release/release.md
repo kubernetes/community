@@ -107,7 +107,11 @@ be consistent across artifact types.
   contact info for the team associated with any given release can be
   found [here](https://git.k8s.io/sig-release/releases/).
 - *Y days*: Refers to business days (using the location local to the release-manager M-F).
-- *feature*: see "[Is My Thing a Feature?](http://git.k8s.io/features/README.md#is-my-thing-a-feature)
+- *enhancement*: see "[Is My Thing an Enhancement?](https://git.k8s.io/enhancements/README.md#is-my-thing-an-enhancement)
+- *[Enhancement Freeze](https://git.k8s.io/sig-release/releases/release_phases.md#enhancements-freeze)*: Usually during Week 4 of a release cycle: the deadline by which KEPs have to be completed in order for enhancements to be part of the current release
+- *[Exception Request](https://git.k8s.io/sig-release/releases/release_phases.md#exceptions)*: The process of requesting an extension on the deadline for a particular Enhancement
+- *[Code Freeze](https://git.k8s.io/sig-release/releases/release_phases.md#code-freeze)*: The period of ~4 weeks before the final release date, during which only critical bug fixes are merged into the release.
+- *[Pruning](https://git.k8s.io/sig-release/releases/release_phases.md#pruning)*: The process of removing an Enhancement from a release milestone if it is not fully implemented or is otherwise considered not stable.
 - *release milestone*: semantic version string or [GitHub milestone](https://help.github.com/articles/associating-milestones-with-issues-and-pull-requests/) referring to a release MAJOR.MINOR vX.Y version.  See also [release versioning](http://git.k8s.io/community/contributors/design-proposals/release/versioning.md)
 - *release branch*: Git branch "release-X.Y" created for the vX.Y milestone.  Created at the time of the vX.Y-beta.0 release and maintained after the release for approximately 9 months with vX.Y.Z patch releases.
 
