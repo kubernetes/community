@@ -1,0 +1,8 @@
+# See the OWNERS docs at http://git.k8s.io/community/contributors/guide/owners.md
+
+reviewers:
+  - ug-vmware-users-leads
+approvers:
+  - ug-vmware-users-leads
+labels:
+  - ug/vmware
