@@ -123,7 +123,7 @@ func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
 	// make sure the work queue is shutdown which will trigger workers to end
 	defer c.queue.ShutDown()
 
-	glog.Infof("Starting <NAME> controller")
+	klog.Infof("Starting <NAME> controller")
 
 	// wait for your secondary caches to fill before starting your work
 	if !cache.WaitForCacheSync(stopCh, c.podsSynced) {
@@ -140,7 +140,7 @@ func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
 
 	// wait until we're told to stop
 	<-stopCh
-	glog.Infof("Shutting down <NAME> controller")
+	klog.Infof("Shutting down <NAME> controller")
 }
 
 func (c *Controller) runWorker() {
