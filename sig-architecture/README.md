@@ -13,7 +13,7 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 The [charter](charter.md) defines the scope and governance of the Architecture Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 19:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 18:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
 * code organization Office Hours: [Thursdays at 21:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=21:00&tz=UTC).
