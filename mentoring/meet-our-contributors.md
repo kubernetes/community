@@ -9,7 +9,15 @@ Every first Wednesday of the month at the following times. Grab a copy of the ca
 * 02:30pm UTC [Convert to your timezone](https://www.thetimezoneconverter.com/?t=02%3A30%20pm&tz=UTC&).
 * 08:00pm UTC [Convert to your timezone](https://www.thetimezoneconverter.com/?t=08%3A00%20pm&tz=UTC&).
 
-Tune into the [Kubernetes YouTube Channel](https://www.youtube.com/c/KubernetesCommunity/live) to follow along with video and [#meet-our-contributors](https://kubernetes.slack.com/messages/meet-our-contributors) on Slack for questions and discourse.
+Tune into the [Kubernetes YouTube Channel](https://www.youtube.com/c/KubernetesCommunity/live) to follow along with video, check out our playlist of [previous Meet-Our-Contributors monthly meetings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3QpQrhZq_sLYo77BVKv09F) and join [#meet-our-contributors](https://kubernetes.slack.com/messages/meet-our-contributors) on Slack for questions and discussion.
+
+## What You'll Gain By Participating:
+
+* An opportunity to learn more about how to get started contributing to K8s
+* A chance to get your PRs reviewed by members of the community
+* Peer code review that can help you get more eyes on your code, or learn more about a part of the Kubernetes code that may have you struggling
+* A deeper understanding of the unique role that our contributors occupy in the Kubernetes ecosystem as a whole
+* Practical advice and hands-on tips for how you can get started as a Kubernetes contributor, become a member, or otherwise contribute to the project
 
 ## What’s on-topic:
 * How our contributors got started with k8s
