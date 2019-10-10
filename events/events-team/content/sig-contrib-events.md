@@ -37,6 +37,7 @@ Time Commitment
 - Contact each SIG / WG and ask them to have 1 or more experienced members complete the form and commit to represent the group at the Meet and Greet.
 - Expect to spend a fair amount of time following up with SIGs and WGs to get the name of their representatives.
 - Add these representatives to a calendar notice for the SIG Meet and Greet.
+- Work with the registration lead to make sure that representatives are registered for the summit and follow up with any representatives who have not registered.
 - Make sure that we have table stands and buttons for each SIG that are organized and easy to hand out at the beginning of the event.
 - Recruit a few volunteers to distribute table stands and buttons and to help SIGs / contributors find the right tables. 
 - Make a short announcement at the beginning with an overview of how it works.
