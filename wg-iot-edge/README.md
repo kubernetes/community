@@ -48,6 +48,6 @@ are then managed by the appropriate SIGs based on impacted areas of code.
 It is an open and active working group, and we always welcome new additions!
 
 ## Publications
-* [Edge Security Challenges](whitepapers/edge-securuity-challenges/)
+* [Edge Security Challenges](whitepapers/edge-security-challenges/)
 
 <!-- END CUSTOM CONTENT -->
