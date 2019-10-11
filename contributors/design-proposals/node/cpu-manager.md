@@ -360,6 +360,29 @@ func (p *dynamicPolicy) RemoveContainer(s State, containerID string) error {
    directly from the shared pool, is too simplistic.
     1. Mitigation: defer supporting this until a new policy tailored for
        use with `isolcpus` can be added.
+    2. A interim solution is to add a kubelet CLI command option to specify the 
+       explicit cpu list reserved for the system, so the rest CPUs on the system
+       can be allocated exclusively for containers with Guaranteed QoS. Since the 
+       CPUs to be used for containers becomes explicit, the operator can simply 
+       define linux kernel boot parameter isolcpus using the same list. 
+       For example, if the operator wants to use cpu list 4-23 on the system
+       for containers with exclusive CPUs, add `isolcpuson=4-23` on the linux 
+       kernel boot parameter; add `--reserved-cpus=0-3` to the kubelet command.
+       This `--reserved-cpus` option is added after `--system-reserved`
+       and `--kube-reserved`. It has no intention to set up cgroups specified 
+       by the `--system-reserved-cgroup` or `--kube-reserved-cgroup` options. 
+       For backward compatibility:
+       a) If `--system-reserved-cgroup` or `--kube-reserved-cgroup` is specified,
+          `--reserved-cpus` will not be allowed on kubelet command line.
+       b) If the specified cpu list is not available on the machine, `--reserved-cpus`
+          won't do anything.
+       c) only when a) and b) are satisfied, `--reserved-cpus` will try to overwrite
+          the cpu property in `--kube-reserved` and `--system-reserved`. It will 
+	  reset the cpu property in `--kube-reserved` to empty; and set the cpu 
+	  property in `--system-reserved` to the number of CPUs in the explicit 
+	  cpu list.
+
+
 
 ## Implementation roadmap
 
