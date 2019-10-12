@@ -12,6 +12,13 @@ SIG Scalability is responsible for defining and driving scalability goals for Ku
 
 The [charter](charter.md) defines the scope and governance of the Scalability Special Interest Group.
 
+## Meetings
+* Regular SIG Meeting are help at [Thursdays at 18:30 Warsaw](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit)([Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:30&tz=Warsaw)) on **bi-weekly** basis.
+  * [Meeting notes and Agenda](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
+  * See [upcoming meeting dates](#upcoming-2019-meeting-dates)
+  * Current recordings of meeting are unavailable, but every next meeting's recording will be at [Meeting recordings](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
+
+
 ## Leadership
 
 ### Chairs
