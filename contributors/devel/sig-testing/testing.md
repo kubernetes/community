@@ -25,6 +25,9 @@ passed both unit and integration tests.
 Kubernetes only merges pull requests when unit, integration, and e2e tests are
 passing, so it is often a good idea to make sure the e2e tests work as well.
 
+
+
+
 ## Unit tests
 
 * Unit tests should be fully hermetic
@@ -270,3 +273,19 @@ It is useful as a way to:
   - collection of jobs
   - each dashboard is represented as a button
   - some dashboards collect jobs/tests in the domain of a specific SIG (named after and owned by those SIGs), and dashboards to monitor project wide health (owned by SIG-release)
+
+## PR Process
+
+All new PRs for tests should attempt to follow these steps in order to help
+enable a smooth review process:
+
+1. The problem statement should be well defined. (Describe clearly the intended
+purpose of the test, and why it is needed.)
+
+2. Get some agreement on how to design test from relevant SIG.
+
+3. Create the PR.
+
+4. Raise awareness of your PR to respective communities. (eg. via mailing lists,
+Slack channels, Github mentions)
+
