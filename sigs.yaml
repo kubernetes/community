@@ -2766,8 +2766,8 @@ committees:
       company: VMware
   meetings:
   - description: Public Steering Committee Meeting
-    day: Wednesday
-    time: "13:00"
+    day: Monday
+    time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://bit.ly/k8s-steering-wd
