@@ -2672,6 +2672,9 @@ committees:
   label: code-of-conduct
   leadership:
     chairs:
+    - github: AevaOnline
+      name: Aeva van der Veen
+      company: Microsoft
     - github: Bradamant3
       name: Jennifer Rondeau
       company: Stripe
