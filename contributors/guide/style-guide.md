@@ -1,7 +1,7 @@
 ---
 title: "Documentation Style Guide"
 weight: 1
-slug: "documentation-style-guide" 
+slug: "style-guide"
 ---
 
 This style guide is for content in the Kubernetes github [community repository].
@@ -10,21 +10,23 @@ It is an extension of the [Kubernetes documentation style-guide].
 These are **guidelines**, not rules. Use your best judgement.
 
 - [Cheatsheet](#cheatsheet)
-- [Content design, formatting, and language](#content-formatting-and-language)
-  - [Contact information](#contact-information)
-  - [Dates and times](#dates-and-times)
-  - [Diagrams, images and other assets](#diagrams-images-and-other-assets)
+  - [Cheatsheet: Content Design, Formatting, and Language](#cheatsheet-content-design-formatting-and-language)
+  - [Cheatsheet: Markdown](#cheatsheet-markdown)
+- [Content Design, Formatting, and Language](#content-design-formatting-and-language)
+  - [Contact Information](#contact-information)
+  - [Dates and Times](#dates-and-times)
+  - [Diagrams, Images and Other Assets](#diagrams-images-and-other-assets)
   - [Document Layout](#document-layout)
-  - [Formatting text](#formatting-text)
-  - [Language, grammar, and tone](#language-grammar-and-tone)
-  - [Moving a document](#moving-a-document)
+  - [Formatting Text](#formatting-text)
+  - [Language, Grammar and Tone](#language-grammar-and-tone)
+  - [Moving a Document](#moving-a-document)
   - [Punctuation](#punctuation)
   - [Quotation](#quotation)
-- [Markdown formatting](#markdown-and-formatting)
+- [Markdown Formatting](#markdown-formatting)
   - [Code Blocks](#code-blocks)
   - [Emphasis](#emphasis)
   - [Headings](#headings)
-  - [Horizontal Lines](#horizontal-lines)
+  - [Horizontal Rules](#horizontal-rules)
   - [Line Length](#line-length)
   - [Links](#links)
   - [Lists](#lists)
@@ -38,9 +40,11 @@ These are **guidelines**, not rules. Use your best judgement.
 ### Cheatsheet: Content Design, Formatting, and Language
 
 **[Contact Information:](#contact-information)**
+
 - Use official Kubernetes contact information.
 
 **[Dates and Times:](#dates-and-times)**
+
 - Format dates as `month day, year`. (December 13, 2018)
 - When conveying a date in numerical form, use [ISO 8601] Format: `yyyy-mm-dd`.
 - Use the 24 hour clock when referencing time.
@@ -53,6 +57,7 @@ These are **guidelines**, not rules. Use your best judgement.
   - `http://www.thetimezoneconverter.com/?t=<TIME REFERENCE>&tz=<TZ REFERENCE>`
 
 **[Diagrams, Images and Other Assets:](#diagrams-images-and-other-assets)**
+
 - Images and other assets should be stored in the same directory as the document
   that is referencing it.
 - Filenames should be lowercase and descriptive of what they are referencing.
@@ -61,6 +66,7 @@ These are **guidelines**, not rules. Use your best judgement.
 - Use the [Kubernetes icon set] for architectural diagrams.
 
 **[Document Layout:](#document-layout)**
+
 - Documents should follow the general template of:
   - Document metadata (if appropriate).
   - Title in `H1` (a single `#`).
@@ -71,6 +77,7 @@ These are **guidelines**, not rules. Use your best judgement.
 - Large content or topic shifts should be separated with a horizontal rule.
 
 **[Formatting Text:](#formatting-text)**
+
 - API objects:
   - Follow the established [API naming convention] when referring to API Objects.
   - Do not split API object names into their components.
@@ -84,6 +91,7 @@ These are **guidelines**, not rules. Use your best judgement.
   - Object field names.
 
 **[Language, Grammar and Tone:](#language)**
+
 - Documentation should be written in English.
 - Prefer an active voice and present tense when possible.
 - Use simple and direct language.
@@ -97,12 +105,14 @@ These are **guidelines**, not rules. Use your best judgement.
   document unless it is commonly known. (example: TCP/IP)
 
 **[Moving a Document:](#moving-a-document)**
+
 - Use `[git-mv]` to move documents.
 - Commit moved documents separately from any other changes.
 - When a document has moved, leave a tombstone file with a removal date in its
   place.
 
 **[Punctuation:](#punctuation)**
+
 - Do not use punctuation in headings.
 - End full sentences with a period.
   - **Exception:** When a sentence ends with a URL or if the text would be
@@ -123,6 +133,7 @@ These are **guidelines**, not rules. Use your best judgement.
 ### Cheatsheet: Markdown
 
 **[Code Blocks:](#code-blocks)**
+
 - When possible, reference the language at the beginning of a Code Block.
 - When a code block is used to reference a shell, do not include the command
   prompt (`$`).
@@ -130,11 +141,13 @@ These are **guidelines**, not rules. Use your best judgement.
 - Separate commands from output.
 
 **[Emphasis:](#emphasis)**
+
 - Use two asterisks (`**`) for **Bold** text.
 - Use an underscore (`_`) for _Italics_.
 - Use two tildes (`~~`) for ~~Strikethrough~~.
 
 **[Headings:](#headings)**
+
 - Use a single `H1` (`#`) Heading per document.
   - **Exception:** `H1` may be used multiple times in the same document when
     there is a large content shift or "chapter" change.
@@ -149,13 +162,16 @@ These are **guidelines**, not rules. Use your best judgement.
 - Avoid using links in headings.
 
 **[Horizontal Rules:](#horizontal-lines)**
+
 - Use three dashes (`---`) to denote a horizontal rule.
 - Use a horizontal rule (`---`) to logically separate large sections.
 
 **[Line Length:](#line-length)**
+
 - Prefer an 80 character line limit.
 
 **[Links:](#links)**
+
 - Prefer using reference style links over inline style links.
 - When linking within the same directory, use a relative link.
 - When linking to a document outside of the current directory, use the absolute
@@ -166,6 +182,7 @@ These are **guidelines**, not rules. Use your best judgement.
   - sigs.k8s.io -> github.com/kubernetes-sigs
 
 **[Lists:](#lists)**
+
 - Capitalize the first character of each entry unless the item is explicitly
   case sensitive.
 - End each entry with a period if it is a sentence or phrase.
@@ -177,11 +194,13 @@ These are **guidelines**, not rules. Use your best judgement.
   two times.
 
 **[Metadata:](#metadata)**
+
 - If the document is intended to be surfaced on the Contributor Site; include a
   yaml metadata header at the beginning of the document.
 - Metadata must include the `title` attribute.
 
 **[Tables:](#tables)**
+
 - Use tables for structured information.
 - Tables do not need to adhere to the suggested line length.
 - Avoid long inline links.
@@ -387,6 +406,7 @@ external appearance.
   - Tombstones function as a pointer and give users a time to update their own
     documentation and bookmarks. Their usefulness is time-bounded and should be
     removed when they would logically no longer serve their purpose.
+
     ```markdown
     This file has moved to https://git.k8s.io/community/contributors/guide/README.md.
 
@@ -430,6 +450,7 @@ external appearance.
     highlighting. This can be enabled by supplying the name of the language
     after the three back-ticks (`` ``` ``) at the start of a code block.
   - **Good example:**
+
     `````
     ```go
     import (
@@ -439,6 +460,7 @@ external appearance.
     ```
     `````
   - **Bad example:**
+
     `````
     ```
     import (
@@ -453,10 +475,12 @@ external appearance.
     command prompt. The exception to this is when a code block is being used
     for raw shell output such as debug logs.
   - **Good example:**
+  
     ```
     kubectl get pods -o wide
     ```
   - **Bad example:**
+  
     ```
     $ kubectl get pods -o wide
     ```
@@ -464,6 +488,7 @@ external appearance.
   - Separating the command from the output makes both the command and output
     more generally readable.
   - **Good example:**
+
     ```
     kubectl get pods
     ```
@@ -472,6 +497,7 @@ external appearance.
     nginx    1/1       Running   0          13s    10.200.0.4   worker0
     ```
   - **Bad example:**
+
     ```
     kubectl get pods
     NAME     READY     STATUS    RESTARTS   AGE    IP           NODE
@@ -544,12 +570,14 @@ relative links. However, how and what they're being linked to can vary widely.
     large or covers many topics, place the link at the end of the logical
     chapter or section.
   - **Example:**
+  
     ```
     See the [Code of Conduct] for more information.
 
     [code of conduct]: https://git.k8s.io/community/code-of-conduct.md
     ```
   - **Example:**
+
     ```
     See the [Code of Conduct][coc] for more information.
 
@@ -561,10 +589,12 @@ relative links. However, how and what they're being linked to can vary widely.
   - When the file is referenced multiple times within the same document,
     consider using a reference link for a quicker shorthand reference.
   - **Example:**
+
     ```
     See the [Code of Conduct](code-of-conduct.md) for more information
     ```
   - **Example:**
+
     ```
     See the [Code of Conduct][coc] for more information
 
@@ -576,6 +606,7 @@ relative links. However, how and what they're being linked to can vary widely.
     the link to the target or destination document will remain intact and not
     have to be updated.
   - **Example:**
+
     ```
     See the [Coding Convention] doc for more information.
 
@@ -592,6 +623,7 @@ relative links. However, how and what they're being linked to can vary widely.
     | https://sigs.k8s.io | https://github.com/kubernetes-sigs |
 
   - **Example:**
+
     ```
     The super cool [prow tool] resides in the test-infra repo under the kubernetes organization
 
@@ -626,6 +658,7 @@ relative links. However, how and what they're being linked to can vary widely.
     site generators such as [Jekyll] and [Hugo].
   - The metadata header is a yaml block between two sets of `---`.
   - **Example:**
+
     ```
     ---
     title: Super Awesome Doc
@@ -640,6 +673,7 @@ relative links. However, how and what they're being linked to can vary widely.
 
 - Use tables for structured information.
   - **Example:**
+
     ```
     |    Column 1    |    Column 2    |    Column 3    |
     |:--------------:|:--------------:|:--------------:|

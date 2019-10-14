@@ -7,27 +7,28 @@ slug: "pull-requests"
 This doc explains the process and best practices for submitting a pull request to the [Kubernetes project](https://github.com/kubernetes/kubernetes) and its associated sub-repositories. It should serve as a reference for all contributors, and be useful especially to new and infrequent submitters.
 
 - [Before You Submit a Pull Request](#before-you-submit-a-pull-request)
-  * [Run Local Verifications](#run-local-verifications)
+  - [Run Local Verifications](#run-local-verifications)
 - [The Pull Request Submit Process](#the-pull-request-submit-process)
-  * [The Testing and Merge Workflow](#the-testing-and-merge-workflow)
-  * [Marking Unfinished Pull Requests](#marking-unfinished-pull-requests)
-  * [Comment Commands Reference](#comment-commands-reference)
-  * [Automation](#automation)
-  * [How the e2e Tests Work](#how-the-e2e-tests-work)
-- [Why was my Pull Request closed?](#why-was-my-pull-request-closed)
-- [Why is my Pull Request not getting reviewed?](#why-is-my-pull-request-not-getting-reviewed)
+  - [The Testing and Merge Workflow](#the-testing-and-merge-workflow)
+  - [Marking Unfinished Pull Requests](#marking-unfinished-pull-requests)
+  - [Pull Requests and the Release Cycle](#pull-requests-and-the-release-cycle)
+  - [Comment Commands Reference](#comment-commands-reference)
+  - [Automation](#automation)
+  - [How the e2e Tests Work](#how-the-e2e-tests-work)
+- [Why was my pull request closed?](#why-was-my-pull-request-closed)
+- [Why is my pull request not getting reviewed?](#why-is-my-pull-request-not-getting-reviewed)
 - [Best Practices for Faster Reviews](#best-practices-for-faster-reviews)
-  * [0. Familiarize yourself with project conventions](#0-familiarize-yourself-with-project-conventions)
-  * [1. Is the feature wanted? File a Kubernetes Enhancement Proposal](#1-is-the-feature-wanted-file-a-kubernetes-enhancement-proposal)
-  * [2. Smaller Is Better: Small Commits, Small Pull Requests](#2-smaller-is-better-small-commits-small-pull-requests)
-  * [3. Open a Different Pull Request for Fixes and Generic Features](#3-open-a-different-pull-request-for-fixes-and-generic-features)
-  * [4. Comments Matter](#4-comments-matter)
-  * [5. Test](#5-test)
-  * [6. Squashing and Commit Titles](#6-squashing-and-commit-titles)
-  * [7. KISS, YAGNI, MVP, etc.](#7-kiss-yagni-mvp-etc)
-  * [8. It's OK to Push Back](#8-its-ok-to-push-back)
-  * [9. Common Sense and Courtesy](#9-common-sense-and-courtesy)
-  * [10. Trivial Edits](#10-trivial-edits)
+  - [0. Familiarize yourself with project conventions](#0-familiarize-yourself-with-project-conventions)
+  - [1. Is the feature wanted? File a Kubernetes Enhancement Proposal](#1-is-the-feature-wanted-file-a-kubernetes-enhancement-proposal)
+  - [2. Smaller Is Better: Small Commits, Small Pull Requests](#2-smaller-is-better-small-commits-small-pull-requests)
+  - [3. Open a Different Pull Request for Fixes and Generic Features](#3-open-a-different-pull-request-for-fixes-and-generic-features)
+  - [4. Comments Matter](#4-comments-matter)
+  - [5. Test](#5-test)
+  - [6. Squashing and Commit Titles](#6-squashing-and-commit-titles)
+  - [7. KISS, YAGNI, MVP, etc.](#7-kiss-yagni-mvp-etc)
+  - [8. It's OK to Push Back](#8-its-ok-to-push-back)
+  - [9. Common Sense and Courtesy](#9-common-sense-and-courtesy)
+  - [10. Trivial Edits](#10-trivial-edits)
 
 # Before You Submit a Pull Request
 
@@ -62,7 +63,7 @@ The Kubernetes merge workflow uses labels, applied by [commands](https://prow.k8
 
 _Example:_ To apply a SIG label, you would type in a comment:
 ```
-/sig aws
+/sig apps
 ```
 
 *NOTE: For pull requests that are in progress but not ready for review,
@@ -228,7 +229,7 @@ We want every pull request to be useful on its own, so use your best judgment on
 
 As a rule of thumb, if your pull request is directly related to Feature-X and nothing else, it should probably be part of the Feature-X pull request. If you can explain why you are doing seemingly no-op work ("it makes the Feature-X change easier, I promise") we'll probably be OK with it. If you can imagine someone finding value independently of Feature-X, try it as a pull request. (Do not link pull requests by `#` in a commit description, because GitHub creates lots of spam. Instead, reference other pull requests via the pull request your commit is in.)
 
-## 3. Open a Different pull request for Fixes and Generic Features
+## 3. Open a Different Pull Request for Fixes and Generic Features
 
 **Put changes that are unrelated to your feature into a different pull request.**
 

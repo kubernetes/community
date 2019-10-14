@@ -1,7 +1,7 @@
 ---
 title: "Bug Bounty Programs"
 weight: 1
-slug: "bounties"
+slug: "bug-bounty"
 ---
 
 This program is a **work in progress**. This tracks the currently proposed program, but the bug
