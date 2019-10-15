@@ -35,12 +35,51 @@ lower cost of development as we only have to maintain one version of each
 plugin, as well as ease the transition to CSI when we are able to deprecate the
 internal APIs.
 
+## Roadmap
+
+The migration from in-tree plugins to CSI plugins will involve the following phases:
+
+Phase 1: Typically, a CSI plugin (that an in-tree plugin has been migrated to)
+will be invoked for operations on persistent volumes backed by a specific in-tree
+plugin under the following conditions:
+1. An overall feature flag: CSIMigration is enabled for the Kubernetes Controller
+Manager and Kubelet.
+2. A feature flag for the specific in-tree plugin around migration (e.g. CSIMigrationGCE,
+CSIMigrationAWS) is enabled for the Kubernetes Controller Manager and Kubelet.
+In case the Kubelet on a specific node does not have the above feature flags enabled
+(or running an old version that does not support the above feature flags), the in-tree
+plugin code will be executed for operations like attachment/detachment
+and mount/dismount of volumes. To support this, ProbeVolumePlugins function for
+in-tree plugin packages will continue to be invoked (as is the case today). This
+will result in all in-tree plugins added to the list of plugins whose methods
+can be invoked by the Kubelet and Kubernetes cluster-wide volume
+controllers when necessary.
+
+Phase 2: ProbeVolumePlugins function for specific migrated in-tree plugin packages
+will no longer be invoked by the Kubernetes Controller Manager and Kubelet under
+the following conditions:
+1. An overall feature flag: CSIMigration is enabled for the Kubernetes Controller
+Manager and Kubelets on all nodes.
+2. A feature flag for the specific in-tree plugin around migration (e.g. CSIMigrationGCE,
+CSIMigrationAWS) is enabled for the Kubernetes Controller Manager and Kubelets on
+all nodes.
+3. An overall feature flag: CSIMigrationInTreeOff is enabled for the Kubernetes
+Controller Manager and Kubelet.
+All nodes in a cluster must satisfy at least [1] and [2] above in the Kubelet
+configuration for [3] to take effect and function correctly. This requires that
+all nodes in the cluster must have migrated CSI plugins installed and configured.
+
+Phase 3: Files containing in-tree plugin code are no longer compiled as part of
+Kubernetes components using golang build tag: nolegacyproviders in preparation
+for the final Phase 4 below. This may only be in effect in test environments.
+
+Phase 4: In-tree code for specific plugins is removed from Kubernetes.
 
 ## Goals
 
 * Compile all requirements for a successful transition of the in-tree plugins to
   CSI
-    * As little code as possible remains in the Kubernetes Repo
+    * In-tree plugin code for migrated plugins can be completely removed from Kubernetes
     * In-tree plugin API is untouched, user Pods and PVs continue working after
       upgrades
     * Minimize user visible changes
@@ -63,31 +102,36 @@ internal APIs.
 
 ## Implementation Schedule
 
-Alpha [1.14]
-* Off by default
+Alpha [1.16]
+* Feature flag for Phase 1, CSIMigration, disabled by default
 * Proof of concept migration of at least 2 storage plugins [AWS, GCE]
 * Framework for plugin migration built for Dynamic provisioning, pre-provisioned
   volumes, and in-tree volumes
 
-Beta [Target 1.15]
-* On by default
-* Migrate all of the cloud provider plugins*
+Beta [Target 1.17]
+* Feature flags for Phase 1, CSIMigration, disabled by default
+* Feature flags for Phase 2, CSIMigrationInTreeOff disabled by default
+* Feature flag for migrated in-tree plugins disabled by default
+* Translations of a subset of the cloud provider plugins to CSI in progress
 
 GA [TBD]
-* Feature on by default, per-plugin toggle on for relevant cloud provider by
-  default
+* Feature flags for Phase 1 and 2 enabled by default, per-plugin toggle on for
+  relevant cloud provider by default
 * CSI Drivers for migrated plugins available on related cloud provider cluster
   by default
 
 ## Milestones
 
 * Translation Library implemented in Kubernetes staging
-* Migration Shim for Provision, Attach, Detach, Mount, Unmount (including Inline Volumes)
-* Migration Shim for Resize, Block
+* Translation of volumes in volume controllers to support Provision, Attach,
+  Detach, Mount, Unmount (including Inline Volumes) using migrated CSI plugins.
+* Translation of volumes in volume controllers to support Resize, Block using
+  migrated CSI plugins.
 * CSI Driver lifecycle manager
 * GCE PD feature parity in CSI with in-tree implementation
 * AWS EBS feature parity in CSI with in-tree implementation
 * Cloud Driver feature parity in CSI with in-tree implementation
+* Skip ProbeVolumePlugins of migrated in-tree plugin code (Phase 2).
 
 ## Dependency Graph
 
@@ -95,27 +139,53 @@ GA [TBD]
 
 ## Feature Gating
 
-We will have an alpha feature gate for the whole feature that can turn the CSI
-migration on or off, when off all code paths should revert/stay with the in-tree
-plugins. We will also have individual flags for each driver so that admins can
-toggle them on or off.
+We will have two feature gates for the overall feature: CSIMigration and CSIMigrationInTreeOff
+corresponding to Phase 1 and 2 respectively. Additionally, plugin-specific feature flags
+(e.g. CSIMigrationGCE, CSIMigrationEBS) will determine whether a migration phase
+is enabled for a specific in-tree plugin. This allows administrators to enable a specific
+phase of migration functionality on the cluster as a whole as well as the flexibility
+to toggle migration functionality for each legacy in-tree plugin individually.
 
-The feature gate can exist at the interception points in the OperationGenerator
-for Attach and Mount, as well as in the PV Controller for Provisioning.
+With CSIMigration feature flag enabled on Kubernetes Controller Manager and Kubelet,
+several volume actions associated with in-tree plugins (that have plugin specific
+migration feature flags enabled) will be handled by CSI plugins that the in-tree
+plugins have migrated to. If the Kubelet on a cluster node does not have CSIMigration
+and plugin-specific migration feature flags enabled or running an old version of Kubelet
+before the CSI migration feature flags were introduced, the in-tree plugin code
+will continue to handle actions like attach/detach and mount/unmount of volumes on that node.
 
-We will also have one feature flag for each driver’s migration so that each
-driver migration can be turned on and off individually. 
+During initialization, with CSIMigrationInTreeOff feature flag enabled, Kubernetes
+Controller Manager and Kubelet will skip invocation of ProbeVolumePlugins for migrated
+in-tree plugins (that have plugin-specific migration feature flags enabled).
+As a result, all nodes in the cluster must have: [1] CSI plugins (that in-tree
+plugins have been migrated to) configured and installed and [2] CSIMigration and
+plugin specific feature flags enabled for the Kubelet. If these requirements are
+not fulfilled on each node, operations involving volumes backed by in-tree plugins
+will fail with errors.
+
 
 The new feature gates for alpha are:
 ```
 // Enables the in-tree storage to CSI Plugin migration feature.
 CSIMigration utilfeature.Feature = "CSIMigration"
 
+// Disables the in-tree storage plugin code
+CSIMigrationInTreeOff utilfeature.Feature = "CSIMigrationInTreeOff"
+
 // Enables the GCE PD in-tree driver to GCE CSI Driver migration feature.
 CSIMigrationGCE utilfeature.Feature = "CSIMigrationGCE"
 
 // Enables the AWS in-tree driver to AWS CSI Driver migration feature.
 CSIMigrationAWS utilfeature.Feature = "CSIMigrationAWS"
+
+// Enables the Azure Disk in-tree driver to Azure Disk Driver migration feature.
+CSIMigrationAzureDisk featuregate.Feature = "CSIMigrationAzureDisk"
+
+// Enables the Azure File in-tree driver to Azure File Driver migration feature.
+CSIMigrationAzureFile featuregate.Feature = "CSIMigrationAzureFile"
+
+// Enables the OpenStack Cinder in-tree driver to OpenStack Cinder CSI Driver migration feature.
+CSIMigrationOpenStack featuregate.Feature = "CSIMigrationOpenStack"
 ```
 
 ## Translation Layer
@@ -660,6 +730,116 @@ with minimal disruption to users would be:
 
 And at this point users doing their own deployment and not installing the GCE PD
 CSI driver encounter an error.
+
+## Disabling in-tree plugin code
+
+Before we can stop compiling and prepare to remove the code associated with migrated
+in-tree plugins, we need to make sure all persistent volume operations involving
+in-tree plugins continue to function in a backward compatible way when the
+in-tree plugin code paths are disabled. When CSIMigrationInTreeOff feature flag
+is enabled, we will not invoke ProbeVolumePlugins() for the in-tree plugins (that
+have plugin-specific migration feature flag enabled) in appendAttachableLegacyProviderVolumes()
+and appendLegacyProviderVolumes() in the Kubernetes Controller Manager and Kubelet.
+All functions in Kubernetes code base that depend on probed in-tree plugins need to be
+audited and refactored to handle errors returned (due to absence of a probed plugin).
+
+### Enhancements in Probing/Registration of in-tree plugins
+
+Functions appendLegacyProviderVolumes (in the Kubernetes Controller Manager and Kubelet)
+and appendAttachableLegacyProviderVolumes (in the Kubernetes Controller Manager)
+will be enhanced to [1] check plugin specific migration feature flags as well as
+[2] the overall CSIMigrationInTreeOff feature flag to determine whether ProbeVolumePlugins
+function of a legacy in-tree plugin will get invoked.
+
+Once CSIMigrationInTreeOff feature flag and the plugin specific migration
+flags get enabled by default, the build tag `nolegacyproviders` can be enabled
+for testing purposes.
+
+### Detection of migration status for a plugin
+
+Code paths that need to check migration status of a plugin, for example,
+in provisionClaimOperationExternal, findDeletablePlugin, etc. will need to
+depend on an instance of the CSIMigratedPluginManager that provides the following
+utilities:
+```
+func (pm CSIMigratedPluginManager) IsCSIMigrationEnabledForPluginByName(pluginName string) bool
+func (pm CSIMigratedPluginManager) IsPluginMigratableToCSIBySpec(spec *Spec) (bool, error)
+```
+The CSIMigratedPluginManager will be introduced in pkg/volume/csi_migration.go
+
+Note that a per-plugin member function of the form IsMigratedToCSI cannot be used
+since [1] a plugin object for in-tree plugins will typically be nil and [2] the
+code implementing IsMigratedToCSI will be removed as part of disabling plugin code.
+
+### Handling of errors returned by FindPluginBySpec/FindPluginByName for legacy plugins
+
+Once an in-tree plugin is no longer probed (through ProbeVolumePlugins), all the VolumePluginMgr
+functions of the form Find*PluginBySpec/Find*PluginByName will return an error.
+For example, invocation of:
+
+1. FindProvisionablePluginByName in the pv controller will return error for a migrated
+plugin that is no longer probed in ProbeControllerVolumePlugins.
+2. FindExpandablePluginBySpec in the expand controller will return error for a migrated
+plugin that is no longer probed in ProbeExpandableVolumePlugins.
+3. FindAttachablePluginBySpec in the attach/detach controller will return error for
+a migrated plugin that is no longer probed in ProbeAttachableVolumePlugins.
+
+Code invoking the above functions will need to check for migration status of a plugin
+based on Volume spec or Plugin name before invoking the above functions so that
+an error is never encountered due to missing plugins.
+
+### Enhancements in Controllers handling Persistent Volumes
+
+#### AttachDetach Controller
+The AttachDetach Controller will translate volume specs for an in-tree plugin to
+a migrated CSI plugin at the points where Desired State of World cache gets
+populated (through CreateVolumeSpec) when the following conditions are true:
+[1] CSIMigration feature flag is enabled for Kubernetes Controller Manager and
+the Kubelet where the pod with references to volumes got scheduled.
+[2] A plugin-specific migration feature flag is enabled for Kubernetes Controller
+Manager and the Kubelet where the pod with references to volumes got scheduled.
+Translation during population of Desired State of World avoids down-stream functions
+at the operation generator/executor stages from having to handle translation of
+volume specs for migrated PVs whose in-tree plugins are not probed.
+
+Translation of volume specs for an in-tree plugin to a migrated CSI plugin as
+described above will be skipped during Desired State of World population if:
+[1] CSIMigration or plugin specific migration feature flags are disabled in Kubernetes
+Controller Manager.
+[2] CSIMigration or plugin specific migration flags are disabled for Kubelet
+in a specific node where a pod with volumes got scheduled and CSIMigrationInTreeOff
+is disabled in Kubernetes Controller Manager.
+
+Determination of whether migration feature flags are enabled in the Kubelet is
+described earlier in the section: Kubelet CSI/In-tree Sync.
+
+#### Expansion Controller
+The Expansion Controller will set the Storage Resizer annotation (volume.kubernetes.io/storage-resizer)
+on a PVC (referring to a storage class associated with a legacy in-tree plugin)
+with the name of a migrated CSI plugin when the following conditions are true:
+[1] CSIMigration feature flag is enabled in Kubernetes Controller Manager.
+[2] A plugin-specific migration feature flag is enabled in Kubernetes Controller
+Manager.
+This allows a migrated CSI plugin to process the resizing of the volume associated
+with a PVC that refers to a migrated in-tree plugin.
+
+When the above conditions are not met, the Expansion Controller will use FindExpandablePluginBySpec
+to determine the in-tree plugin that can be used for expanding a volume (as is
+the case today).
+
+#### Persistent Volume Controller
+The Persistent Volume Controller will set the Storage Provisioner annotation (volume.beta.kubernetes.io/storage-provisioner)
+on a PVC (referring to a storage class associated with a legacy in-tree plugin)
+with the name of a migrated CSI plugin when the following conditions are true:
+[1] CSIMigration feature flag is enabled in Kubernetes Controller Manager.
+[2] A plugin-specific migration feature flag is enabled in Kubernetes Controller
+Manager.
+This allows a migrated CSI plugin to process the provisioning as well as deleting
+of a volume for a PVC that refers to a migrated in-tree plugin.
+
+When the above conditions are not met, the PV Controller will use FindProvisionablePluginByName
+to determine the in-tree plugin that can be used for provisioning a volume (as is
+the case today).
 
 ## Testing
 
