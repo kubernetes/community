@@ -33,18 +33,17 @@ di GitHub menjadi lebih baik.
     - [Mekanisme _Branch_](#mekanisme-branch)
       - [Menambahkan _Upstream_](#menambahkan-upstream)
       - [Menjaga agar _Fork_ Kamu tetap Sinkron](#menjaga-agar-fork-kamu-tetap-sinkron)
-      - [Melakukan _Commit_ _Squashing_](#melakukan-commit-squashing)
-
+      - [Melakukan _Commit Squashing_](#melakukan-commit-squashing)
 
 ---
 
-## _Resources_
+## Sumber Penting
 
 ### Mulai Berkontribusi
 
 - [Panduan Kontributor] - Panduan bagaimana cara berkontribusi dalam proyek Kubernetes.
 - [Panduan Pengembang] - Panduan untuk berkontribusi dalam pengembangan kode pada proyek Kubernetes.
-- [_Security_ dan _Disclosure_ Informasi] - Panduan pelaporan celah keamanan 
+- [Informasi _Security_ dan _Disclosure_] - Panduan pelaporan celah keamanan 
   dan proses rilis keamanan.
 
 ### _SIG_ dan Grup Lainnya
@@ -69,13 +68,13 @@ di GitHub menjadi lebih baik.
 - [Tide] - _Plugin_ Prow yang melakukan manajemen _merge_ dan _test_. [Dasbor Tide]
 - [Perintah Bot] - Perintah yang dapat kamu gunakan untuk berinteraksi dengan Bot Kubernetes (contoh:
   `/cc`, `/lgtm`, dan `/retest`)
-- [Label GitHub] - _List_ _label_ yang digunakan pada proyek Kubernetes
+- [Label GitHub] - _List label_ yang digunakan pada proyek Kubernetes
 - [Pencarian Kode Kubernetes], di-_maintain_ oleh [@dims]
 
 ### _Testing_
 
 - [Prow] - Mekanisme CI/CD Kubernetes.
-- [Test Grid] - Melihat data _historical_ _testing_ beserta informasi terkait.
+- [Test Grid] - Melihat data _historical testing_ beserta informasi terkait.
 - [Dasbor Triase] - Melakukan agregasi _failure_ untuk mekanisme _troubleshoot_ yang lebih baik.
 - [Velodrome] - Dasbor untuk melacak _job_ dan _testing_ kesehatan.
 
@@ -84,10 +83,10 @@ di GitHub menjadi lebih baik.
 
 - community@kubernetes.io - Mengirim surat pada seseorang yang berada dalam tim komunitas (Kontributor SIG
   _Experience_) mengenai isu komunitas.
-- conduct@kubernetes.io - Mengirim surat pada komite _Code of Conduct_, _mailing_ _list_ _private_.
+- conduct@kubernetes.io - Mengirim surat pada komite _Code of Conduct_, _mailing list private_.
 - github@kubernetes.io - Mengirim Surat pada Tim Administrasi GitHub secara pribadi, untuk item sensitif.
-- steering@kubernetes.io - Mengirim surat pada _steering_ _committee_. Alamat publik dengan _archieve_.
-- steering-private@kubernetes.io - Mengirim surat pada _steering_ _committee_ secara _private_, untuk 
+- steering@kubernetes.io - Mengirim surat pada _steering committee_. Alamat publik dengan _archieve_.
+- steering-private@kubernetes.io - Mengirim surat pada _steering committee_ secara _private_, untuk 
   informasi yang sensitif.
 - social@cncf.io - Mengirim surat pada tim CNCF; blog, akun twitter, and
   properti sosial lainnya.
@@ -132,9 +131,7 @@ tersebut tidak memenuhi standar untuk di-_merge_.
 
 ### Menandatangani CLA
 
-Sebelum kamu mengumpulkan kontribusi kamu, kamu harus terlebih dahulu [menyetujui _Contributor License
-Agreement(CLA)_][cla]. Proyek Kubernetes _hanya_ menerima kontribusi yang kamu kerjakan apabila 
-kamu sudah menyetujui CLA.
+Sebelum kamu mengumpulkan kontribusi kamu, kamu harus terlebih dahulu [menyetujui _Contributor License Agreement(CLA)_][cla]. Proyek Kubernetes _hanya_ menerima kontribusi yang kamu kerjakan apabila kamu sudah menyetujui CLA.
 
 Apabila kamu kesulitan ketika menyetujui CLA, ikuti [petunjuk _troubleshooting_ CLA].
 
@@ -162,7 +159,7 @@ atau ikuti [forum Kubernetes].
   ([Kubernetes CI bot][prow]) akan membalas isu yang kamu buat dengan respons
   `needed labels`.
 - Selektiflah ketika meng-_assign_ suatu isu menggunakan [`/assign @<username>`][assign] atau 
-  [`/cc @<username>`][cc]. Isu yang kamu buat dakan ditriase secara lebih efektif 
+  [`/cc @<username>`][cc]. Isu yang kamu buat akan ditriase secara lebih efektif 
   apabila kamu menambahkan label yang tepat.
 
 
@@ -206,13 +203,13 @@ dokumentasi, atau segala bentuk hal yang disimpan dalam repositori git.
 - Berikan komentar pada PR yang kamu buat, apabila kamu merasa ada hal yang membutuhkan 
   penjelasan lebih lanjut.
 - Selektiflah ketika meng-_assign_ suatu isu menggunakan [`/assign @<username>`][assign]. 
-  Meng-_assign_ _reviewer_ secara berlebihan tidak mempercepat proses _review_ yang dilakukan 
+  Meng-_assign reviewer_ secara berlebihan tidak mempercepat proses _review_ yang dilakukan 
   untuk PR kamu.
 - Jika PR kamu masih dalam tahap _"Work in progress"_ berikan prefiks `[WIP]`
   atau gunakan perintah [`/hold`][hold]. Hal ini mencegah agar PR tidak di-_merge_ hingga _WIP_ 
   dihilangkan.
 - Jika PR kamu tidak di-_review_, jangan tutup PR tersebut dan membukan PR lain 
-  dengan perubahan yang sama. _Ping_ _reviewer_ PR kamu dengan komentar `@<github username>`.
+  dengan perubahan yang sama. _Ping reviewer_ PR kamu dengan komentar `@<github username>`.
 
 
 #### Contoh Deskripsi PR
@@ -241,7 +238,7 @@ Apa saja yang dimasukkan dalam deskripsi:
   yang terkait dengan petunjuk pengembang.
 - **Baris 8** - Perintah [`/assign`][assign] meng-_assign_ seorang _approver_ untuk PR.
   Seorang _approver_ akan disarankan oleh [k8s-ci-robot][prow] dan dipilih dari _list_ 
-  _owner_ pada _file_ [_owner_]. Merekalah yang akan menambahkan _label_ 
+  _owner_ pada _file_ [OWNERS]. Merekalah yang akan menambahkan _label_ 
   [`/approve`][approve] pada PR yang sudah di-_review_.
 
 
@@ -251,7 +248,7 @@ Setelah PR kamu diajukan, serangkaian _testing_ akan dijalankan oleh platform CI
 Jika terdapat salah satu _test_ yang gagal, maka [k8s-ci-robot][prow] akan memberikan 
 balasan pada PR kamu beserta tautan yang memberikan _log_ dari _testing_ yang gagal dijalankan.
 
-Apabila kamu mem-_push_ _commit_ baru, _test_ pada PR kamu akan secara otomatis di-_trigger_.
+Apabila kamu mem-_push commit_ baru, _test_ pada PR kamu akan secara otomatis di-_trigger_.
 
 Terkadang, bisa jadi terdapat masalah pada platform CI Kubernetes. 
 Hal ini dapat terjadi karena berbagai alasan bahkan ketika _test_ yang kamu jalankan di 
@@ -298,7 +295,7 @@ pembelajaran yang baik. Sebagai alternatif lain, juga terdapat tutorial Stanford
 Proyek Kubernetes menggunakan mekanisme _"Fork and Pull"_ yang merupakan 
 standar GitHub. Dalam terminologi git, _fork_ yang kamu buat disebut sebagai _"`origin`"_ 
 dan git proyek yang sebenarnya disebut sebagai _"`upstream`"_. Untuk menjaga _branch_ 
-(`origin`) tetap _up to date_ dengan proyek (`upstream`), _branch_ tersebut harus dikonfigurasi 
+(`origin`) tetap _up to date_ dengan proyek (`upstream`), _branch_ tersebut harus dikonfigurasikan 
 pada _copy_ lokal.
 
 
@@ -332,19 +329,19 @@ git checkout master
 git rebase upstream/master
 ```
 
-Kamu setidaknya harus melakukan hal ini sewbelum membuat sebuah _branch_ baru 
+Kamu setidaknya harus melakukan hal ini sebelum membuat sebuah _branch_ baru 
 yang akan kamu gunakan untuk mengerjakan fitur baru atau melakukan _fix_.
 
 ```
 git checkout -b myfeature
 ```
 
-#### Melakukan _Commit_ _Squashing_
+#### Melakukan _Commit Squashing_
 
-Tujuan utama dari [_commit_ _squashing_] adalah untuk membuat 
+Tujuan utama dari [_commit squashing_] adalah untuk membuat 
 histori atau _log_ git yang mudah dibaca dan bersih. Biasanya hal ini 
-dilakukan pada fase akhir dari revisi yang akmu buat. Jika kamu masih belum yakin apakah kamu 
-harus melakukan _commit_ _squashing_ atau tidak, biarkan revisi kamu apa adanya sampai 
+dilakukan pada fase akhir dari revisi yang kamu buat. Jika kamu masih belum yakin apakah kamu 
+harus melakukan _commit squashing_ atau tidak, biarkan revisi kamu apa adanya sampai 
 ada saran khusus dari kontributor yang di-_assign_ untuk me-_review_ atau meng-_approve_ revisi kamu apakah _commit_ 
 _squashing_ perlu dilakukan atau tidak.
 
@@ -386,12 +383,12 @@ _squashing_ perlu dilakukan atau tidak.
 [label]: https://git.k8s.io/test-infra/label_sync/labels.md
 [_trivial fix_]: /contributors/guide/pull-requests.md#10-trivial-edits
 [GitHub workflow]: /contributors/guide/github-workflow.md#3-branch
-[_commit_ _squashing_]: /contributors/guide/pull-requests.md#6-squashing-and-commit-titles
+[_commit squashing_]: /contributors/guide/pull-requests.md#6-squashing-and-commit-titles
 [_owner_]: /contributors/guide/owners.md
 [testing locally]: /contributors/guide/README.md#testing
 [Tutorial git Atlassian]: https://www.atlassian.com/git/tutorials
 [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [Panduan _Testing_]: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/testing.md
-[_Security_ dan _Disclosure_ Informasi]: https://kubernetes.io/docs/reference/issues-security/security/
+[Informasi _Security_ dan _Disclosure_]: https://kubernetes.io/docs/reference/issues-security/security/
 [approve]: https://prow.k8s.io/command-help#approve
 [Rilis Patch Kubernetes]: https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md
