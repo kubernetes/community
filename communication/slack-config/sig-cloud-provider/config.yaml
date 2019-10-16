@@ -1,0 +1,5 @@
+channels:
+  - name: apiserver-network-proxy
+  - name: cloud-provider-extraction
+  - name: sig-cloud-provider
+    id: C718BPBQ8
