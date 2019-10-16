@@ -172,6 +172,8 @@ things you can do to move the process along:
 
    * If you have fixed all the issues from a review, and you haven't heard back, you should ping the assignee on the comment stream with a "please take another look" (`PTAL`) or similar comment indicating that you are ready for another review.
 
+   * If you still don't hear back, post a link to the pull request in the `#pr-reviews` channel on Slack to find additional reviewers.
+
 Read on to learn more about how to get faster reviews by following best practices.
 
 # Best Practices for Faster Reviews

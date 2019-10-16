@@ -218,6 +218,8 @@ other forms of work that would be stored within a git repository.
   till the `[WIP]` or hold is lifted.
 - If you have not had your PR reviewed, do not close and open a new PR with the
   same changes. Ping your reviewers in a comment with `@<github username>`.
+- If your PR isn't getting enough attention, post a link to the PR in the
+  `#pr-reviews` channel on Slack to find additional reviewers.
 
 
 #### Example PR Description
