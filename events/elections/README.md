@@ -9,7 +9,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 
 - Steering Committee selects the Election Officers
 - Dates should be in UTC time, use a [world clock service](https://www.timeanddate.com/worldclock/fixedtime.html?msg=Election+Test&iso=20181101T00&p1=%3A&ah=10) in documentation and email announcements so that end users see the correct time and date based on where they live.
-- The steering committee was structured in a way so that it does not turn over all at once with staggered terms, therefore all new elections are for two(2) year terms.
+- The steering committee was structured in a way so that it does not turn over all at once with staggered terms, therefore all new elections are for two(2) year terms
 
 
 ### Election Officers select the following dates
@@ -21,24 +21,26 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - Election period start
   - It takes time to create the poll in CIVS, so don’t give a specific hour, instead say “Morning of the 10th” or something vague.
 - Election period stop
-  - CIVS needs to be manually stopped, so an actual person needs to click for the poll to stop, so this needs to be a human friendly time.
+  - CIVS needs to be manually stopped, so an actual person needs to click for the poll to stop, so this needs to be a human friendly time
 - Results announcement date
 - Draft dates will then be passed to the Steering Committee for final approval
+- Once Steering approves the dates election officers will work with SIG Contributor Experience to put the election dates on the community calendar
+- Election officers coordinate with SIG Docs and appropriate subprojects to coordinate election results blog post
 
 ## Process
 
 1. Election officers prepare the election repository
    - Make github.com/kubernetes/community/elections/$YEAR
-   - Make github.com/kubernetes/community/elections/$YEAR/README.md, this is the voter’s guide.
-     - Copy over the voter’s guide from the previous year. The voter’s guide is the single source of truth for the election that year! All announcements and notices should link to this document.
-     - Update with new dates, candidates, and procedures (if necessary).
+   - Make github.com/kubernetes/community/elections/$YEAR/README.md, this is the voter’s guide
+     - Copy over the voter’s guide from the previous year. The voter’s guide is the single source of truth for the election that year! All announcements and notices should link to this document
+     - Update with new dates, candidates, and procedures (if necessary)
    - Make github.com/kubernetes/community/elections/$YEAR/OWNERS with all the election officers for the election year.
    - Make github.com/kubernetes/community/elections/$YEAR/voters.md
      - Initial list is generated via the [eligibility for voting requirements][eligible to vote]
-     - Officers will update this list as voters submit the voting exemption form.
-   - Announce to the candidates to submit PRs with their platform statement (if they desire), 300 word limit. Each platform document lives in the elections/$YEAR directory, with the voter’s guide (README.md) acting as the index.
-   - Ensure officers are members of election@kubernetes.io Google Group and that prior officers are removed. 
-   - Start a shared postmortem document to log the lessons learned so this process can be improved. 
+     - Officers will update this list as voters submit the voting exemption form
+   - Announce to the candidates to submit PRs with their platform statement (if they desire), 300 word limit. Each platform document lives in the elections/$YEAR directory, with the voter’s guide (README.md) acting as the index
+   - Ensure officers are members of election@kubernetes.io Google Group and that prior officers are removed
+   - Start a shared postmortem document to log the lessons learned so this process can be improved
 
 2. Announce voting schedule to community
 
@@ -51,28 +53,31 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - Name of the poll - “Kubernetes Steering Committee Election for $YEAR”
 - Name of supervisor - “Kubernetes Election Officers”
 - Email - election@kubernetes.io : Googlegroups doesn’t work here. This mail should resolve to the election officers.
-- Date and Time: Write in the date and time the election will stop. This field is not programmatic, the election is stopped by hand, so you can write this in plain text.
-- Description: Use the following text, modify it for either 3 or 4 positions, depending on the amount of open seats: This election is to nominate the steering committee for the Kubernetes project. Order the candidates by preference, the top $NUMBER candidates will be selected. Please see the voter's guide for more information.  PLEASE NOTE: "No opinion" is also a voting option if you do not feel comfortable ranking every single candidate.
+- Date and Time: Write in the date and time the election will stop. This field is not programmatic, the election is stopped by hand, so you can write this in plain text
+- Description: Use the following text, modify it for either 3 or 4 positions, depending on the amount of open seats: This election is to nominate the steering committee for the Kubernetes project. Order the candidates by preference, the top $NUMBER candidates will be selected. Please see the voter's guide for more information.  PLEASE NOTE: "No opinion" is also a voting option if you do not feel comfortable ranking every single candidate
 - Add the candidate list to the form
 - How many choices will win: This number needs to be set to the amount of open seats of a given election
 - More options, check the boxes for:
-  - Do not release results to all voters.
-  - Enable detailed ballot reporting.
-  - Allow voters to select “no opinion” for some choices.
-- Click create poll, this will send election@kubernetes.io an email with instructions.
-- It will send you a link to “Poll Control”, bookmark this generated page as this is where you will add voters and also resend ballots to people if their ballot gets lost or filtered.
-- This page is where the “Start Poll” and “Stop Poll” buttons are, start the poll.
+  - Do not release results to all voters
+  - Enable detailed ballot reporting
+  - Allow voters to select “no opinion” for some choices
+- Click create poll, this will send election@kubernetes.io an email with instructions
+- It will send you a link to “Poll Control”, bookmark this generated page as this is where you will add voters and also resend ballots to people if their ballot gets lost or filtered
+- This page is where the “Start Poll” and “Stop Poll” buttons are, start the poll
 - WARNING: This is the point of no return: 
-  - Paste in the registered voters and click add voters.
-    - It will mail the ballots to the participants.
-    - It does duplicate detection so multiple entries are fine.
-    - This might take a while and the web page will not update, this has taken up to 10m in the past as it's sending each ballot. Don't panic or refresh the page. 
-- Leave the poll open for the duration of voting.
-  - Remember to send a 24 hour reminder before closing the poll.
-  - Click "Stop poll" at the end of the election, wait a minute then refresh the page for results. 
-  - Select "Condorcet IRV" on the right hand side of the page to select the results method.
-  - Mail results of the election to the steering committee private list and await instructions. 
-- Push election results into the community repo under events/elections _after_ the Steering Commmittee has announced the results. 
+  - Paste in the registered voters and click add voters
+    - It will mail the ballots to the participants
+    - It does duplicate detection so multiple entries are fine
+    - This might take a while and the web page will not update, this has taken up to 10m in the past as it's sending each ballot. Don't panic or refresh the page
+- Leave the poll open for the duration of voting
+  - Remember to send a 24 hour reminder before closing the poll
+  - Click "Stop poll" at the end of the election, check the previously generated URL that CIVS mailed you when you started the poll
+  - Select "Condorcet IRV" on the right hand side of the page to select the results method
+- Reporting  
+  - Mail results of the election to the incumbent Steering Committee members who are NOT running in the election
+  - Steering Committee announces the results to the entire community at once at the end of the election, currently during the Community Meeting
+  - Submit election results blog to the official Kubernetes blog after the announcement
+- Push election results into the community repo under events/elections _after_ the Steering Commmittee has announced the results, typically a week after the election
 
 ## Roles and Responsibilities:
 
@@ -87,6 +92,8 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 ### Election Officers
 
 - Must be [eligible to vote]
+- May be delegated election-related tasks from the Steering Committee as they see fit
+- Post on behalf of the steering committee if necessary
 - Cannot be running for office in the current election
 - Cannot be a current member of the steering committee that is a candidate in the election or whose term extends beyond the election period
 - [Recuse themselves from public election activities][election-recusal] except those required to run the election
@@ -109,10 +116,8 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - Accept/Review pull requests for the candidate platforms
   - The community generally assists in helping with PRs to give the candidates a quick response time
 - Update the community regularly via the community meeting
-- Post on behalf of the steering committee if necessary
 - Post deadlines and reminders to the kubernetes blog, kubernetes-dev, twitter, and slack.
 - Reissue ballots from CIVS to voters who might have not received their ballot.
-- Miscellaneous election related tasks as decided by the steering committee.
 - Guard the privacy of the email addresses of voters
 - It is impossible for the election officers to see the results of the election until the election ends; for purposes of transparency with the community it is encouraged to release some statistics during the election (ie. “65% of the community has voted so far!”)
 - Ensure that the election results are handed over to the steering committee.
