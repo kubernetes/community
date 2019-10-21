@@ -297,6 +297,7 @@ channels:
   - name: spark-operator
   - name: spinnaker
   - name: sre
+  - name: steering-committee
   - name: summit-staff
   - name: suse-caasp
   - name: talk-proposals
