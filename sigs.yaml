@@ -2714,6 +2714,9 @@ committees:
     - github: liggitt
       name: Jordan Liggitt
       company: Google
+    - github: lukehinds
+      name: Luke Hinds
+      company: Red Hat
     - github: philips
       name: Brandon Philips
       company: Red Hat
