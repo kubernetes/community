@@ -25,6 +25,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), AWS
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
 
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
+
 ## Contact
 - Slack: [#sig-scalability](https://kubernetes.slack.com/messages/sig-scalability)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)
