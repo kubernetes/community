@@ -27,6 +27,7 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
 
 ## Contact
+- Slack: [#steering-committee](https://kubernetes.slack.com/messages/steering-committee)
 - [Mailing list](https://groups.google.com/a/kubernetes.io/forum/#!forum/steering)
 - Private Mailing List: steering-private@kubernetes.io
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fsteering)
