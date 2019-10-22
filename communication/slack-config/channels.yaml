@@ -188,6 +188,7 @@ channels:
   - name: meetup-boston
   - name: meetup-dfw
   - name: meetup-edinburgh
+  - name: meetup-egypt
   - name: meetup-guatemala
   - name: meetup-hannover
   - name: meetup-hongkong
