@@ -260,7 +260,6 @@ channels:
   - name: sig-auth
   - name: sig-autoscaling
   - name: sig-cli
-  - name: sig-cloud-provider
   - name: sig-clstr-life-leads
   - name: sig-cluster-lifecycle
   - name: sig-cluster-ops
