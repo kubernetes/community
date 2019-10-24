@@ -2681,15 +2681,12 @@ committees:
     - github: carolynvs
       name: Carolyn Van Slyck
       company: Microsoft
-    - github: eparis
-      name: Eric Paris
-      company: Red Hat
     - github: jdumars
       name: Jaice Singer DuMars
       company: Google
-    - github: parispittman
-      name: Paris Pittman
-      company: Google
+    - github: tashimi
+      name: Tasha Drew
+      company: VMware
   meetings: []
   contact:
     private_mailing_list: conduct@kubernetes.io
