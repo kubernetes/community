@@ -852,6 +852,7 @@ sigs:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1Pf4QlxwvE4viqyQ7X0EbspY9f-uXNVP7zTTcSVq-Yjs/edit
+    archive_url: https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Kubespray Office Hours
     day: Wednesday
