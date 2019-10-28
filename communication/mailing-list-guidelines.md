@@ -53,7 +53,7 @@ to make groups simpler to manage. This has caused some breaks in certain groups
 visibility settings related to SIG and WG Google Groups.
 The instructions on how to fix from Google Groups for owners of the list:
 Near the top right, click **Manage group**.
-- **Informtation** -> **Directory** -> **Edit the setting to set the desired 
+- **Information** -> **Directory** -> **Edit the setting to set the desired 
 visibility for your group.** -> **Save**.
 - This [link] have all the details related to these changes.
 
