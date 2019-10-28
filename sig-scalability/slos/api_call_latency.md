@@ -27,15 +27,15 @@ namespaces.
 - As a user of vanilla Kubernetes, I want some guarantee how quickly I get the
 response from an API call.
 - As an administrator of Kubernetes cluster, if I know characteristics of my
-external dependencies of apiserver (e.g custom admission plugins, webhooks and
-initializers) I want to be able to provide guarantees for API calls latency to
-users of my cluster.
+external dependencies of apiserver (e.g custom admission plugins and webhooks)
+I want to be able to provide guarantees for API calls latency to users of my
+cluster.
 
 ### Other notes
 - We obviously can’t give any guarantee in general, because cluster
-administrators are allowed to register custom admission plugins, webhooks
-and/or initializers, which we don’t have any control about and they obviously
-impact API call latencies.
+administrators are allowed to register custom admission plugins or webhooks,
+which we don’t have any control about and they obviously impact API call
+latencies.
 - As a result, we define the SLIs to be very generic (no matter how your
 cluster is set up), but we provide SLO only for default installations (where we
 have control over what apiserver is doing). This doesn’t provide a false

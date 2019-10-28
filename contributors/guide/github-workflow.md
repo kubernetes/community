@@ -1,7 +1,7 @@
 ---
 title: "GitHub Workflow"
 weight: 1
-slug: "github"
+slug: "github-workflow"
 ---
 
 ![Git workflow](git_workflow.png)
@@ -173,38 +173,35 @@ _If you have upstream write access_, please refrain from using the
 `Revert` button in the GitHub UI for creating the PR, because GitHub
 will create the PR branch inside the main repository rather than inside your fork.
 
-1. Create a branch and sync it with upstream.
+- Create a branch and sync it with upstream.
 
-```sh
-# create a branch
-git checkout -b myrevert
+  ```sh
+  # create a branch
+  git checkout -b myrevert
 
-# sync the branch with upstream
-git fetch upstream
-git rebase upstream/master
-```
+  # sync the branch with upstream
+  git fetch upstream
+  git rebase upstream/master
+  ```
+- If the commit you wish to revert is a:<br>
+  - **merge commit:**
 
-2. If the commit you wish to revert is a:
+    ```sh
+    # SHA is the hash of the merge commit you wish to revert
+    git revert -m 1 SHA
+    ```
 
-- merge commit:
+  - **single commit:**
 
-```sh
-# SHA is the hash of the merge commit you wish to revert
-git revert -m 1 SHA
-```
+    ```sh
+    # SHA is the hash of the single commit you wish to revert
+    git revert SHA
+    ```
 
-- single commit:
-
-```sh
-# SHA is the hash of the single commit you wish to revert
-git revert SHA
-```
-
-3. This will create a new commit reverting the changes.
-Push this new commit to your remote.
+- This will create a new commit reverting the changes. Push this new commit to your remote.
 
 ```sh
 git push ${your_remote_name} myrevert
 ```
 
-4. [Create a Pull Request](#7-create-a-pull-request) using this branch.
+- [Create a Pull Request](#7-create-a-pull-request) using this branch.

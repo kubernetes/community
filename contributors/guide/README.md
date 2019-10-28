@@ -4,7 +4,6 @@ weight: 1
 slug: "guide" 
 ---
 
-
 <!-- 
 Contributing to this document? 
 Please use semantic line feeds for readability: http://rhodesmill.org/brandon/2012/one-sentence-per-line/ 
@@ -17,35 +16,38 @@ Feel free to browse the [open issues](https://github.com/kubernetes/community/is
 
 Welcome to Kubernetes! 
 
--   [Before you get started](#before-you-get-started)
-    -   [Sign the CLA](#sign-the-cla)
-    -   [Code of Conduct](#code-of-conduct)
-    -   [Setting up your development
-        environment](#setting-up-your-development-environment)
-    -   [Community Expectations and Roles](#community-expectations-and-roles)
-        -   [Thanks](#thanks)
--   [Your First Contribution](#your-first-contribution)
-    -   [Find something to work on](#find-something-to-work-on)
-        -   [Find a good first topic](#find-a-good-first-topic)
-        -   [Learn about SIGs](#learn-about-sigs)
-        -   [SIG-specific contributing guidelines](#sig-specific-contributing-guidelines)
-        -   [File an Issue](#file-an-issue)
--   [Contributing](#contributing)
-    -   [Communication](#communication)
-    -   [GitHub workflow](#github-workflow)
-    -   [Open a Pull Request](#open-a-pull-request)
-    -   [Code Review](#code-review)
-    -   [Testing](#testing)
-    -   [Security](#security)    
-    -   [Documentation](#documentation)
-    -   [Issues Management or Triage](#issues-management-or-triage)
--   [Kubernetes Contributor Playground](#kubernetes-contributor-playground)
-    -   [Youtube playlist](#youtube-playlist)
--   [Community](#community)
-    -   [Communication](#communication-1)
-    -   [Events](#events)
-        -   [Meetups](#meetups)
-    -   [Mentorship](#mentorship)
+- [Welcome](#welcome)
+- [Before you get started](#before-you-get-started)
+  - [Sign the CLA](#sign-the-cla)
+  - [Code of Conduct](#code-of-conduct)
+  - [Setting up your development environment](#setting-up-your-development-environment)
+  - [Community Expectations and Roles](#community-expectations-and-roles)
+- [Your First Contribution](#your-first-contribution)
+  - [Find something to work on](#find-something-to-work-on)
+    - [Find a good first topic](#find-a-good-first-topic)
+      - [Issue Assignment in Github](#issue-assignment-in-github)
+    - [Learn about SIGs](#learn-about-sigs)
+      - [SIG structure](#sig-structure)
+      - [Find a SIG that is related to your contribution](#find-a-sig-that-is-related-to-your-contribution)
+    - [SIG-specific contributing guidelines](#sig-specific-contributing-guidelines)
+    - [File an Issue](#file-an-issue)
+- [Contributing](#contributing)
+    - [Communication](#communication)
+  - [GitHub workflow](#github-workflow)
+  - [Open a Pull Request](#open-a-pull-request)
+  - [Code Review](#code-review)
+  - [Testing](#testing)
+  - [Security](#security)
+  - [Documentation](#documentation)
+  - [Issues Management or Triage](#issues-management-or-triage)
+- [Kubernetes Contributor Playground](#kubernetes-contributor-playground)
+  - [Youtube playlist](#youtube-playlist)
+- [Community](#community)
+  - [Communication](#communication-1)
+  - [Events](#events)
+    - [Meetups](#meetups)
+  - [Mentorship](#mentorship)
+- [Advanced Topics](#advanced-topics)
 
 # Before you get started
 
@@ -146,8 +148,8 @@ If you are not sure about the correct SIG for an issue, you can try SIG-contribu
 ### SIG-specific contributing guidelines
 Some SIGs have their own `CONTRIBUTING.md` files, which may contain extra information or guidelines in addition to these general ones.
 These are located in the SIG-specific community directories:
+
 - [`/sig-apps/CONTRIBUTING.md`](/sig-apps/CONTRIBUTING.md)
-- [`/sig-aws/CONTRIBUTING.md`](/sig-aws/CONTRIBUTING.md)
 - [`/sig-cli/CONTRIBUTING.md`](/sig-cli/CONTRIBUTING.md)
 - [`/sig-multicluster/CONTRIBUTING.md`](/sig-multicluster/CONTRIBUTING.md)
 - [`/sig-storage/CONTRIBUTING.md`](/sig-storage/CONTRIBUTING.md)

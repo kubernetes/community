@@ -1,7 +1,7 @@
 ---
 title: "Adding Release Notes"
 weight: 1
-slug: "adding-release-notes" 
+slug: "release-notes"
 ---
 
 On the kubernetes/kubernetes repository, release notes are required for any pull request with user-visible changes, such as bug-fixes, feature additions, and output format changes.

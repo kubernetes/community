@@ -5,6 +5,15 @@ the kubernetes/kubernetes repository.
 A common use case for this task is backporting PRs from master to release 
 branches.
 
+-   [Prerequisites](#prerequisites)
+-   [What Kind of PRs are Good for Cherry-picks](#what-kind-of-prs-are-good-for-cherry-picks)
+-   [Initiate a Cherry-pick](#initiate-a-cherry-pick)
+-   [Cherry-pick Review](#cherry-pick-review)
+-   [Searching for Cherry-picks](#searching-for-cherry-picks)
+-   [Troubleshooting Cherry-picks](#troubleshooting-cherry-picks)
+
+---
+
 ## Prerequisites
  * [Contributor License Agreement](http://git.k8s.io/community/CLA.md) is
    considered implicit for all code within cherry-pick pull requests,
@@ -18,6 +27,47 @@ branches.
  * Have `hub` installed, which is most easily installed via `go get
    github.com/github/hub` assuming you have a standard golang development
    environment.
+
+
+## What Kind of PRs are Good for Cherry-Picks
+
+Compared to the normal master branch's merge volume across time,
+the release branches see one or two orders of magnitude less PRs.
+This is because there is an order or two of magnitude higher scrutiny.
+Again the emphasis is on critical bug fixes, eg:
+ * Loss of data
+ * Memory corruption
+ * Panic, crash, hang
+ * Security
+
+If you are proposing a cherry-pick and it is not a clear and obvious
+critical bug fix, please reconsider.  If upon reflection you wish to
+continue, bolster your case by supplementing your PR with, eg:
+
+ * A GitHub issue detailing the problem
+
+ * Scope of the change
+
+ * Risks of adding a change
+
+ * Risks of associated regression
+
+ * Testing performed, test cases added
+
+ * Key stakeholder SIG reviewers/approvers attesting to their confidence in the
+   change being a required backport
+
+ * If the change is in cloud-provider-specific platform code (which is in the
+   process of being moved out of core Kubernetes), describe the customer impact,
+   how the issue escaped initial testing, remediation taken to prevent similar
+   future escapes, and why the change cannot be carried in your downstream
+   fork of the Kubernetes project branches.  It is critical that our full
+   community is actively engaged on enhancements in the project.  If a
+   released feature was not enabled on a particular provider's platform, this
+   is a community miss that needs to be resolved in the master branch for
+   subsequent releases.  Such enabling will not be backported to the patch
+   release branches.
+
 
 ## Initiate a Cherry-pick
  * Run the [cherry-pick 
@@ -90,43 +140,6 @@ pull requests on the master branch in that they:
      `@<githubusername>` on your cherry-pick PR.
 
    * For prior branches, check the [patch release schedule](https://git.k8s.io/sig-release/releases/patch-releases.md), which includes contact information for the patch release team.
-
-Compared to the normal master branch's merge volume across time,
-the release branches see one or two orders of magnitude less PRs.
-This is because there is an order or two of magnitude higher scrutiny.
-Again the emphasis is on critical bug fixes, eg:
- * Loss of data
- * Memory corruption
- * Panic, crash, hang
- * Security
-
-If you are proposing a cherry-pick and it is not a clear and obvious
-critical bug fix, please reconsider.  If upon reflection you wish to
-continue, bolster your case by supplementing your PR with, eg:
-
- * A GitHub issue detailing the problem
-
- * Scope of the change
-
- * Risks of adding a change
-
- * Risks of associated regression
-
- * Testing performed, test cases added
-
- * Key stakeholder SIG reviewers/approvers attesting to their confidence in the
-   change being a required backport
-
- * If the change is in cloud-provider-specific platform code (which is in the
-   process of being moved out of core Kubernetes), describe the customer impact,
-   how the issue escaped initial testing, remediation taken to prevent similar
-   future escapes, and why the change cannot be carried in your downstream
-   fork of the Kubernetes project branches.  It is critical that our full
-   community is actively engaged on enhancements in the project.  If a
-   released feature was not enabled on a particular provider's platform, this
-   is a community miss that needs to be resolved in the master branch for
-   subsequent releases.  Such enabling will not be backported to the patch
-   release branches.
 
 ## Searching for Cherry-picks
 

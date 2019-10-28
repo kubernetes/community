@@ -13,7 +13,7 @@ The Kubernetes Steering Committee is the governing body of the Kubernetes projec
 The [charter](https://git.k8s.io/steering/charter.md) defines the scope and governance of the Steering Committee.
 
 ## Meetings
-* Public Steering Committee Meeting: [Wednesdays at 13:00 PT (Pacific Time)](https://bit.ly/k8s-steering-wd) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+* Public Steering Committee Meeting: [Mondays at 11:00 PT (Pacific Time)](https://bit.ly/k8s-steering-wd) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting recordings](https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM).
 
 ## Members
@@ -27,6 +27,7 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
 
 ## Contact
+- Slack: [#steering-committee](https://kubernetes.slack.com/messages/steering-committee)
 - [Mailing list](https://groups.google.com/a/kubernetes.io/forum/#!forum/steering)
 - Private Mailing List: steering-private@kubernetes.io
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fsteering)

@@ -26,18 +26,6 @@ channels:
   - name: cka-exam-prep
   - name: ckad-exam-prep
   - name: client-go-docs
-  - name: provider-aws
-    id: C0LRMHZ1T
-  - name: provider-azure
-    id: C5HJXTT9Q
-  - name: provider-gcp
-    id: C6WB33KNJ
-  - name: provider-ibmcloud
-    id: C90BWDWCE
-  - name: provider-openstack
-    id: C0LSA3T7C
-  - name: provider-vsphere
-    id: C9PGCDKV5
   - name: cluster-addons
   - name: cluster-api
   - name: cluster-api-aws
@@ -188,6 +176,7 @@ channels:
   - name: meetup-boston
   - name: meetup-dfw
   - name: meetup-edinburgh
+  - name: meetup-egypt
   - name: meetup-guatemala
   - name: meetup-hannover
   - name: meetup-hongkong
@@ -237,7 +226,6 @@ channels:
   - name: pr-reviews
   - name: prometheus
   - name: prometheus-operator
-  - name: provider-centurylink
   - name: prow
   - name: pt_br-users
   - name: rancher
@@ -259,7 +247,6 @@ channels:
   - name: sig-auth
   - name: sig-autoscaling
   - name: sig-cli
-  - name: sig-cloud-provider
   - name: sig-clstr-life-leads
   - name: sig-cluster-lifecycle
   - name: sig-cluster-ops
@@ -297,6 +284,7 @@ channels:
   - name: spark-operator
   - name: spinnaker
   - name: sre
+  - name: steering-committee
   - name: summit-staff
   - name: suse-caasp
   - name: talk-proposals

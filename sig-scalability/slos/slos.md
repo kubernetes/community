@@ -135,5 +135,4 @@ sliding window. However, for the purpose of SLO itself, it basically means
 | WIP | Watch latency for every resource, (from the moment when object is stored in database to when it's ready to be sent to all watchers), measured as 99th percentile over last 5 minutes | [Details](./watch_latency.md) |
 | WIP | Admission latency for each admission plugin type, measured as 99th percentile over last 5 minutes | [Details](./api_extensions_latency.md) |
 | WIP | Webhook call latency for each webhook type, measured as 99th percentile over last 5 minutes | [Details](./api_extensions_latency.md) |
-| WIP | Initializer latency for each initializer, measured as 99th percentile over last 5 minutes | [Details](./api_extensions_latency.md) |
 

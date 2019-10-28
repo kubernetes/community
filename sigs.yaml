@@ -950,6 +950,9 @@ sigs:
   - name: cluster-api-provider-gcp
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
+  - name: cluster-api-provider-ibmcloud
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
   - name: cluster-api-provider-openstack
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
@@ -2672,21 +2675,21 @@ committees:
   label: code-of-conduct
   leadership:
     chairs:
+    - github: AevaOnline
+      name: Aeva van der Veen
+      company: Microsoft
     - github: Bradamant3
       name: Jennifer Rondeau
       company: Stripe
     - github: carolynvs
       name: Carolyn Van Slyck
       company: Microsoft
-    - github: eparis
-      name: Eric Paris
-      company: Red Hat
     - github: jdumars
       name: Jaice Singer DuMars
       company: Google
-    - github: parispittman
-      name: Paris Pittman
-      company: Google
+    - github: tashimi
+      name: Tasha Drew
+      company: VMware
   meetings: []
   contact:
     private_mailing_list: conduct@kubernetes.io
@@ -2714,6 +2717,9 @@ committees:
     - github: liggitt
       name: Jordan Liggitt
       company: Google
+    - github: lukehinds
+      name: Luke Hinds
+      company: Red Hat
     - github: philips
       name: Brandon Philips
       company: Red Hat
@@ -2766,13 +2772,14 @@ committees:
       company: VMware
   meetings:
   - description: Public Steering Committee Meeting
-    day: Wednesday
-    time: "13:00"
+    day: Monday
+    time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://bit.ly/k8s-steering-wd
     recordings_url: https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM
   contact:
+    slack: steering-committee
     mailing_list: https://groups.google.com/a/kubernetes.io/forum/#!forum/steering
     private_mailing_list: steering-private@kubernetes.io
     teams:
