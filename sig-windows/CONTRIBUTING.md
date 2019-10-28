@@ -104,7 +104,7 @@ The first example will execute after the pod is up and in this particular case w
               command: ["powershell.exe","-command","do { $Result = @(ping -n 1 dbhost.example.com) } while ( $Result -notcontains 'Approximate round trip times in milli-seconds:' ); Restart-Service -Name dbconnect"]
 ```
 
-This second example is used in pods where gmsa is being used.  This will restart the `netlogon` service until we can affirm that the pod has logged on to the domain correctly.
+This second example is used in pods where GMSA is being used.  This will restart the `netlogon` service until we can affirm that the pod has logged on to the domain correctly.
 
 ```
         lifecycle:
