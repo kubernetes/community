@@ -1433,7 +1433,7 @@ sigs:
     contact:
       slack: external-dns
     owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/external-dns/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/OWNERS
   - name: ingress
     owners:
     - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS

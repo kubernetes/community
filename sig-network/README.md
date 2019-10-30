@@ -44,7 +44,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-network:
 ### external-dns
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/external-dns/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/OWNERS
 - **Contact:**
   - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
 ### ingress
