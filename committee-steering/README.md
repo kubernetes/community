@@ -45,10 +45,6 @@ Funding requests for project infrastructure, events, and consulting
 Template for starting new projects in the GitHub organizations owned by Kubernetes.
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
-### spartakus
-Collection of usage information about Kubernetes clusters.
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
 ### steering
 Steering Committee policy and documentation
 - **Owners:**

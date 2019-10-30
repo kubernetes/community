@@ -2795,10 +2795,6 @@ committees:
       by Kubernetes.
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
-  - name: spartakus
-    description: Collection of usage information about Kubernetes clusters.
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/spartakus/master/OWNERS
   - name: steering
     description: Steering Committee policy and documentation
     owners:
