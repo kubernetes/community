@@ -49,6 +49,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
 ### ingress
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
 ### kube-dns

@@ -1436,6 +1436,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-incubator/external-dns/master/OWNERS
   - name: ingress
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
   - name: kube-dns
