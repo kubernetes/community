@@ -326,3 +326,4 @@ channels:
   - name: wg-virtual-kubelet
     archived: true
   - name: workshop-chat
+  - name: yelp
