@@ -47,6 +47,7 @@ channels:
   - name: de-users
   - name: devstats
   - name: digitalocean-k8s
+  - name: distroless
   - name: diversity
   - name: draft-dev
   - name: draft-users
