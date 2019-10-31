@@ -225,6 +225,7 @@ channels:
   - name: pharmer
   - name: pl-users
   - name: pr-reviews
+  - name: prod-readiness
   - name: prometheus
   - name: prometheus-operator
   - name: prow
