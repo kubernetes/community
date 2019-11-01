@@ -1450,6 +1450,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
   - name: services
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/service-apis/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
