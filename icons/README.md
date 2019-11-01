@@ -2,7 +2,15 @@
 
 These icons are a way to standardize Kubernetes architecture diagrams for presentation. Having uniform architecture diagrams improve understandibility.
 
-## Generate png icons from svg
+## Tools
+
+```shell
+./tools/update-everything.sh
+```
+
+This script generates png from svg, and Visio Stencil from png.
+
+### Generate png icons from svg
 
 ```shell
 ./tools/rasterize.sh
@@ -10,9 +18,19 @@ These icons are a way to standardize Kubernetes architecture diagrams for presen
 
 This script will convert all svg into png. It's based on a docker container defined [here](hack/svgconvertor/Dockefile)
 
+### Generate Visio Stencil from png icons
+
+```shell
+./tools/update-visio.sh
+```
+
+This script will convert png icons into Visio stencil using project from [here](https://github.com/hoveytechllc/visio-stencil-creator)
+
+A Docker image hosted on GCR (`k8s.gcr.io/visio-stencil-creator`), is used to generate the Visio stencil file. The script [./tools/build-visio-stencil-creator.sh](./tools/build-visio-stencil-creator.sh) can be used to update the Docker image if it needs to be built.
+
 ## How to use these icons
 
-Each icons can be found in differents formats
+Each icon can be found in differents formats
 * [png](png)
 * [svg](svg)
 
