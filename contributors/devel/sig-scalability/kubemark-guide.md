@@ -64,17 +64,17 @@ these comments with a clean API that would allow kubemark to run on top of any p
 To start a Kubemark cluster on GCE you need to create an external kubernetes
 cluster (it can be GCE, GKE or anything else) by yourself, make sure that kubeconfig
 points to it by default, build a kubernetes release (e.g. by running
-`make quick-release`) and run `test/kubemark/start-kubemark.sh` script.
+`make quick-release`) and run `kubernetes/test/kubemark/start-kubemark.sh` script.
 This script will create a VM for master (along with mounted PD and firewall rules set),
 then start kubelet and run the pods for the master components. Following this, it
 sets up the HollowNodes as Pods on the external cluster and do all the setup necessary
 to let them talk to the kubemark apiserver. It will use the configuration stored in
-`cluster/kubemark/config-default.sh` - you can tweak it however you want, but note that
+`kubernetes/cluster/kubemark/config-default.sh` - you can tweak it however you want, but note that
 some features may not be implemented yet, as implementation of Hollow components/mocks
 will probably be lagging behind ‘real’ one. For performance tests interesting variables
 are `NUM_NODES` and `KUBEMARK_MASTER_SIZE`. After start-kubemark script is finished,
 you’ll have a ready Kubemark cluster, and a kubeconfig file for talking to the Kubemark
-cluster is stored in `test/kubemark/resources/kubeconfig.kubemark`.
+cluster is stored in `kubernetes/test/kubemark/resources/kubeconfig.kubemark`.
 
 Currently we're running HollowNode with a limit of 0.09 CPU core/pod and 220MB of memory.
 However, if we also take into account the resources absorbed by default cluster addons
@@ -135,7 +135,7 @@ and Scheduler talk with API server using insecure port 8080.</sub>
 ### Running e2e tests on Kubemark cluster
 
 To run standard e2e test on your Kubemark cluster created in the previous step
-you execute `test/kubemark/run-e2e-tests.sh` script. It will configure ginkgo to
+you execute `kubernetes/test/kubemark/run-e2e-tests.sh` script. It will configure ginkgo to
 use Kubemark cluster instead of something else and start an e2e test. This
 script should not need any changes to work on other cloud providers.
 
@@ -179,7 +179,7 @@ HollowNode known by the Master. During self-registeration HollowNodes provide
 their cluster IPs as Names, which means that if you need to find a HollowNode
 named `10.2.4.5` you just need to find a Pod in external cluster with this
 cluster IP. There's a helper script
-`test/kubemark/get-real-pod-for-hollow-node.sh` that does this for you.
+`kubernetes/test/kubemark/get-real-pod-for-hollow-node.sh` that does this for you.
 
 When you have a Pod name you can use `kubectl logs` on external cluster to get
 logs, or use a `kubectl describe pod` call to find an external Node on which
