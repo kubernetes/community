@@ -14,6 +14,13 @@ sigs:
     - github: deads2k
       name: David Eads
       company: Red Hat
+    - github: fedebongio
+      name: Federico Bongiovanni
+      company: Google
+    tech_leads:
+    - github: deads2k
+      name: David Eads
+      company: Red Hat
     - github: lavalamp
       name: Daniel Smith
       company: Google
