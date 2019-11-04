@@ -58,7 +58,7 @@ and opts-in to updates and modifications to [sig-governance].
     * Releases: The subproject owners are responsible for determining the subproject release cadence, producing releases, and communicating releases with SIG Release and any other relevant SIG.
     * Backlog grooming: The subproject owners are responsible for ensuring that the issues for the subproject are correctly associated with milestones and that bugs are triaged in a timely manner.
 PR timeliness: The subproject owners are responsible for ensuring that active pull requests for the subproject are addressed in a timely manner.
-    * Repository ownership: The subproject owners are given admin permissions to repositories under the subproject. For example, the owners of the Azure subproject are given admin access to the `k8s.io/cloud-provider-azure` repository.
+    * Repository ownership: The subproject owners are given admin permissions to repositories under the subproject. For example, the owners of the Azure subproject are given admin access to the `sigs.k8s.io/cloud-provider-azure` repository.
 
 
 ### Subproject Creation
