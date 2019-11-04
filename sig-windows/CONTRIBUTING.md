@@ -10,7 +10,8 @@ Contains a list of common resources when contributing in the effort to support W
     -   [Updating the Node binaries](#updating-the-node-binaries)    
 -   [Creating a PR](#creating-a-pr)
 -   [API Considerations](#api-considerations)
--   [Running Tests](#running-tests)    
+-   [Running Tests](#running-tests)
+-   [Troubleshooting](#troubleshooting)
 -   [Reporting Issues and Feature Requests](#reporting-issues-and-feature-requests)    
 -   [Gathering Logs](#gathering-logs)        
     -   [Collecting Networking Logs](#collecting-networking-logs)
@@ -83,6 +84,34 @@ If you modifying an API in the SIG-Windows codebase, make sure you are aware of 
 ## Running Tests
 
 For the most up-to-date steps on how to build and run tests, please go to [https://github.com/kubernetes-sigs/windows-testing](https://github.com/kubernetes-sigs/windows-testing). It has everything you need to build and run tests, as well as links to the SIG-Windows configurations used on [TestGrid](https://testgrid.k8s.io/sig-windows).
+
+## Troubleshooting
+
+### Intro
+
+If you are having issues with network dependent services coming up with your Windows based container there is a workaround that may help.
+
+We can use the [Container Lifecycle Hooks](https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/) to help ensure the service starts after the network is available.  Specifically we will be using the [PostStart](https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks) hook.
+
+### Examples
+
+The first example will execute after the pod is up and in this particular case will restart the `dbconnect` service once `dbhost.example.com` can be resolved via DNS.  This command could also be modified to require said host to be reachable before exiting.
+
+```
+        lifecycle:
+          postStart:
+            exec:
+              command: ["powershell.exe","-command","do { $Result = @(ping -n 1 dbhost.example.com) } while ( $Result -notcontains 'Approximate round trip times in milli-seconds:' ); Restart-Service -Name dbconnect"]
+```
+
+This second example is used in pods where GMSA is being used.  This will restart the `netlogon` service until we can affirm that the pod has logged on to the domain correctly.
+
+```
+        lifecycle:
+          postStart:
+            exec:
+              command: ["powershell.exe","-command","do { Restart-Service -Name netlogon } while ( $($Result = (nltest.exe /query); if ($Result -like '*0x0 NERR_Success*') {return $true} else {return $false}) -eq $false)"]
+```
 
 ## Reporting Issues and Feature Requests
 
