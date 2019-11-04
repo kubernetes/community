@@ -63,6 +63,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
 ### services
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/service-apis/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
