@@ -591,6 +591,19 @@ saved. For more details on how to use Merge Patch, see the RFC.
 detailed explanation of how it works and why it needed to be introduced, see
 [here](/contributors/devel/sig-api-machinery/strategic-merge-patch.md).
 
+#### Defining Patch Strategy
+In the context of strategic merge patch, a set of go markers can be used by API authors to define the merge strategy of collections of fields (lists, maps and structs).
+
+| Marker | Definition |
+|--------|------------|
+| `// +patchStrategy=merge/replace` |  Defines that the merge strategy will be to merge elements of the two lists into one (merge), use the list provided in the patch literally rather than merging (replace) |
+| `// +patchMergeKey=<key-name>` |  This is applicable in the context of lists being used as maps/dictionaries, i.e. with each entry in the list seen as a key-value pair, with a specific field considered the key. `patchMergeKey` defines what field should be seen as the key. Combined with `patchStrategy`, this describes what changes should take place on specific elements of a list as part of a patch operation. |
+| `// +listType=atomic/set/associative` |            |
+| `// +mapType=separate/atomic` |            |
+| `// +structType=separate/atomic` |            |
+
+
+
 ## Idempotency
 
 All compatible Kubernetes APIs MUST support "name idempotency" and respond with
