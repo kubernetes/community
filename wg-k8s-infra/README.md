@@ -25,6 +25,7 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Work
 
 ## Organizers
 
+* Bart Smykla (**[@bartsmykla](https://github.com/bartsmykla)**), VMware
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 

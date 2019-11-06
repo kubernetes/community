@@ -108,6 +108,7 @@ aliases:
     - dejanb
     - ptone
   wg-k8s-infra-leads:
+    - bartsmykla
     - dims
     - spiffxp
   wg-lts-leads:
