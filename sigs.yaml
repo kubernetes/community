@@ -924,7 +924,7 @@ sigs:
     contact:
       slack: bootkube
     owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/bootkube/master/OWNERS
   - name: cluster-addons
     contact:
       slack: cluster-addons
