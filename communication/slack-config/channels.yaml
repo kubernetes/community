@@ -103,6 +103,7 @@ channels:
   - name: jp-users
   - name: jsonnet
   - name: k14s
+  - name: kaniko
   - name: k8s-code-organization
   - name: k8s-conformance
   - name: k8s-dual-stack
