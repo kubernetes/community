@@ -973,7 +973,7 @@ Twitter | [Sep 19th](https://twitter.com/stephenaugustus/status/1174797710043430
             *   Workgroup: wg-k8s-infra
                 *   Takes all of SIG-testing stuff and implements it on Google Cloud so that we can actually run testing
             *   We are also open sourcing TestGrid!  (help wanted)
-            *   SIG is re-thinking meeting schedule, to accomodate other time zones
+            *   SIG is re-thinking meeting schedule, to accommodate other time zones
             *   Have lots of Good First Issues for you to help with
     *   [ 0:00 ] **📣Announcements 📣**
         *   Don’t forget about the [API deprecations](https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/)!
