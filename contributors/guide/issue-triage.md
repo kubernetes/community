@@ -226,7 +226,7 @@ described.
 order to work on it.
 * `triage/unresolved`: Indicates an issue that can not be resolved.
 
-A triage engineer should add these labels appropriately. Kubernetees GitHub
+A triage engineer should add these labels appropriately. Kubernetes GitHub
 Org members can search [open issues per these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%93&q=triage%2F+kind%2Fsupport+is%3Aopen) to find ones that can be
 quickly closed.
 

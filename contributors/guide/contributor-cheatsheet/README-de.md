@@ -66,7 +66,7 @@ nützlicher Informationen gedacht, um deine Beitragserfahrung auf GitHub besser 
 - [Prow] - Kubernetes CI/CD-System.
 - [Tide] - Prow-Plugin das Merges und Tests verwaltet. [Tide Dashboard]
 - [Bot-Befehle] - Befehle zur Interaktion mit Kubernetes-Bots (zum Beispiel: `/cc`, `/lgtm`, und `/retest`)
-- [GitHub Labels] - Liste an Labels des ganzen Kubernets-Projekts.
+- [GitHub Labels] - Liste an Labels des ganzen Kubernetes-Projekts.
 - [Kubernetes Code Search], von [@dims] maintained.
 
 
