@@ -13,7 +13,7 @@ and [improve][repo] it instead of setting these filters.
 Note: If you are looking to create and manage lists as a chair or other organizer, 
 check this mailing list [guideline][mailinglist-guidelines] doc.
 
-- [Example for setting filters to Kubernets Mailing lists](#example-for-setting-filters-to-kubernets-mailing-lists)
+- [Example for setting filters to Kubernetes Mailing lists](#example-for-setting-filters-to-kubernetes-mailing-lists)
 - [Examples for setting filters to Kubernetes Github notifications](#examples-for-setting-filters-to-kubernetes-github-notifications)
                                                                                 
 ## Example for setting filters to Kubernetes Mailing lists           
