@@ -139,7 +139,7 @@ A non-exhaustive list of tools built by the Kubernetes community (see [spreadshe
 * [Fabric8 client](https://github.com/fabric8io/kubernetes-client)
 * [Kubegen](https://github.com/errordeveloper/kubegen)
 * [kenv](https://github.com/thisendout/kenv)
-* [Ansible](https://docs.ansible.com/ansible/kubernetes_module.html)
+* [Ansible](https://docs.ansible.com/ansible/latest/modules/k8s_module.html)
 * [Puppet](https://forge.puppet.com/garethr/kubernetes/readme)
 * [KPM](https://github.com/coreos/kpm)
 * [Nulecule](https://github.com/projectatomic/nulecule)
