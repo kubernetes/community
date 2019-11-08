@@ -303,6 +303,7 @@ channels:
   - name: tw-users
   - name: ug-big-data
     id: C0ELB338T
+  - name: ug-vmware
   - name: velero
   - name: virtlet
   - name: virtual-kubelet
