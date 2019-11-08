@@ -72,7 +72,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-cluster-lifecycle:
 ### bootkube
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/bootkube/master/OWNERS
 - **Contact:**
   - Slack: [#bootkube](https://kubernetes.slack.com/messages/bootkube)
 ### cluster-addons
