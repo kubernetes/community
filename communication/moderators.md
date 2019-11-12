@@ -112,7 +112,7 @@ Regional category moderators seats (per category): 3
 
 ## YouTube Channel
 
-Youtube owners seats: 2
+YouTube owners seats: 2
 
 ### Owners
 
@@ -135,6 +135,7 @@ Moderators seats: 10
 | Joe Beda            | @jbeda              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
 | Naeil Ezzoueidi     | @nzoueidi           | EMEA     | [CST - Central European Time](https://time.is/CET)      |
+| Yang Li             | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
 | *Open*              | *Open*              |          |                                                         |
 
 
@@ -196,7 +197,7 @@ Moderators pro tempore seats: 10
 
 ## Zoom
 
-Administrators seats: 4
+Administrators seats: 6
 
 | Name            | Kubernetes Slack ID | Region   | Timezone                                                |
 |-----------------|---------------------|----------|---------------------------------------------------------|
@@ -205,6 +206,7 @@ Administrators seats: 4
 | Jorge Alarcon   | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Paris Pittman   | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Naeil Ezzoueidi | @nzoueidi           | EMEA     | [CET - Central European Time](https://time.is/CET)      |
+| Yang Li         | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
 
 - License and main account controlled by the CNCF
 
