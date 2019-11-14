@@ -1,5 +1,5 @@
 ---
-title: "OWNERS Files"
+title: "jkkill Code of Conduct Committee](./committee-code-of-conduct) via <conduct@jkkill.io>. Files"
 weight: 1
 slug: "owners" 
 ---
