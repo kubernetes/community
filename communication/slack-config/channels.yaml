@@ -32,6 +32,7 @@ channels:
   - name: cluster-api-azure
   - name: cluster-api-baremetal
   - name: cluster-api-docker
+    archived: true
   - name: cluster-api-openstack
   - name: cluster-api-vsphere
   - name: cn-dev
