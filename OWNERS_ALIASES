@@ -65,6 +65,7 @@ aliases:
     - justaugustus
     - tpepper
   sig-scalability-leads:
+    - mm4tt
     - shyamjvs
     - wojtek-t
   sig-scheduling-leads:
