@@ -116,7 +116,7 @@ The upstream container events can come from:
 (1). *Event stream provided by each container runtime*
 
 Docker's API exposes an [event
-stream](https://docs.docker.com/reference/api/docker_remote_api_v1.17/#monitor-docker-s-events).
+stream](https://docs.docker.com/engine/api/v1.40/#operation/SystemEvents).
 Nonetheless, rkt does not support this yet, but they will eventually support it
 (see [coreos/rkt#1193](https://github.com/coreos/rkt/issues/1193)).
 
