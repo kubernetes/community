@@ -232,6 +232,7 @@ channels:
   - name: prometheus
   - name: prometheus-operator
   - name: prow
+  - name: prow-alerts
   - name: pt_br-users
   - name: rancher
   - name: random
