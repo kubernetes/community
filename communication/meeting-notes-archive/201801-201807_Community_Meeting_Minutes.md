@@ -2224,7 +2224,7 @@
     *   1.10 [Jaice Singer DuMars ~ Release lead]
         *   It's week 2 of 12 of the release (full schedule and some important information is [here](https://github.com/kubernetes/sig-release/blob/master/releases/release-1.10/release-1.10.md))
         *   The [release team](http://bit.ly/k8s110-team) is fully staffed!
-        *   we have added a role guide for the [Communications Coordinator](https://github.com/kubernetes/sig-release/blob/master/release-process-documentation/release-team-guides/communications_coordinator.md)
+        *   we have added a role guide for the [Communications Coordinator](https://github.com/kubernetes/sig-release/blob/master/release-team/role-handbooks/communications/README.md)
         *   [PR](https://github.com/kubernetes/sig-release/pull/69) out for the Release Leader role documentation
         *   The next major deadline is Feature Freeze on January 22nd [Ihor]
             *   If you're targeting a feature for 1.10 - please, ensure that it's updated in the [Features repo under 1.10 Milestone](https://github.com/kubernetes/features/issues?q=is%3Aopen+is%3Aissue+milestone%3Av1.10);
