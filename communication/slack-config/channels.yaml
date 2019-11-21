@@ -120,6 +120,7 @@ channels:
   - name: knative
   - name: kompose
   - name: kong
+  - name: konveyor
   - name: kops-dev
   - name: kops-users
   - name: kr-dev
