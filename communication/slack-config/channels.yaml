@@ -66,6 +66,7 @@ channels:
   - name: falco
   - name: fiaas
   - name: fi-users
+  - name: flink-operator
   - name: fr-events
   - name: fr-users
   - name: garden
