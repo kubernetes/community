@@ -296,6 +296,7 @@ channels:
   - name: suse-caasp
   - name: talk-proposals
   - name: terraform-providers
+  - name: test-failures
   - name: testing-commons
   - name: testing-ops
   - name: tilt
