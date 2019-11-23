@@ -29,7 +29,7 @@ This workshop differs from the Beginner workshop in that participants are expect
 
 1. Welcome
 1. [Live PR Demo](./live-pr-demo.md)
-1. Paths to Contributorship
+1. [Paths to Contributorship](./contributor-paths.md)
 1. Communication in the Kubernetes Community
 1. Community Group and Governance Overview
 1. Kubernetes Org Overview
