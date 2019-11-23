@@ -12,10 +12,10 @@ This workshop is held at contributor summits at KubeCon but materials and proces
 This workshop is meant for folks who have never contributed to opensource before and/or need help setting up a Kubernetes developer environment.
 
 1. Welcome
-1. Live PR Demo
-1. Paths to Contributorship
-1. Communication in the Kubernetes Community
-1. Community Group and Governance Overview
+1. [Live PR Demo](./live-pr-demo.md)
+1. [Paths to Contributorship](./contributor-paths.md)
+1. [Communication in the Kubernetes Community](./how-we-communicate.md)
+1. [Community Group and Governance Overview](./community-groups.md)
 1. Kubernetes Orgs Overview
 1. Workspace Setup
 1. Local Build&Test
@@ -31,7 +31,7 @@ This workshop differs from the Beginner workshop in that participants are expect
 1. [Live PR Demo](./live-pr-demo.md)
 1. [Paths to Contributorship](./contributor-paths.md)
 1. [Communication in the Kubernetes Community](./how-we-communicate.md)
-1. Community Group and Governance Overview
+1. [Community Group and Governance Overview](./community-groups.md)
 1. Kubernetes Org Overview
 1. k/k Walkthrough
 1. Local Build&Test 
