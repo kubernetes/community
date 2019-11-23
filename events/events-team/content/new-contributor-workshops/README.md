@@ -16,11 +16,11 @@ This workshop is meant for folks who have never contributed to opensource before
 1. [Paths to Contributorship](./contributor-paths.md)
 1. [Communication in the Kubernetes Community](./how-we-communicate.md)
 1. [Community Group and Governance Overview](./community-groups.md)
-1. Kubernetes Orgs Overview
-1. Workspace Setup
-1. Local Build&Test
+1. [Kubernetes Orgs Overview](./repo-tour.md)
+1. [Workspace Setup](./workspace-setup.md)
+1. [Local Build&Test](./build-and-test.md)
 1. Pull Request Exercise
-1. Opensource Citizenship
+1. Find Your First Issue
 1. SIG Meet-and-Greet
 
 ## Sample Track for Intermediate Workshop
@@ -32,8 +32,9 @@ This workshop differs from the Beginner workshop in that participants are expect
 1. [Paths to Contributorship](./contributor-paths.md)
 1. [Communication in the Kubernetes Community](./how-we-communicate.md)
 1. [Community Group and Governance Overview](./community-groups.md)
-1. Kubernetes Org Overview
+1. [Kubernetes Orgs Overview](./repo-tour.md)
 1. k/k Walkthrough
-1. Local Build&Test 
+1. [Local Build&Test](./build-and-test.md)
 1. Labels, Bots and Git Workflow
+1. Find Your First Issue
 1. SIG Meet-and-Greet
