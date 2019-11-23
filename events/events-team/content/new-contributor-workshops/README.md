@@ -28,7 +28,7 @@ This workshop is meant for folks who have never contributed to opensource before
 This workshop differs from the Beginner workshop in that participants are expected to have a working Docker/Kubernetes/Go setup. They have a baisc understanding of how opensource contributions work, and may have opened a PR against Kubernetes before.
 
 1. Welcome
-1. Live PR Demo
+1. [Live PR Demo](./live-pr-demo.md)
 1. Paths to Contributorship
 1. Communication in the Kubernetes Community
 1. Community Group and Governance Overview
