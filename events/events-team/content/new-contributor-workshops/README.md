@@ -19,9 +19,9 @@ This workshop is meant for folks who have never contributed to opensource before
 1. [Kubernetes Orgs Overview](./repo-tour.md)
 1. [Workspace Setup](./workspace-setup.md)
 1. [Local Build&Test](./build-and-test.md)
-1. Pull Request Exercise
-1. Find Your First Issue
-1. SIG Meet-and-Greet
+1. [Pull Request Exercise](./playground-exercise.md)
+1. [Find Your First Issue](./first-issue-help.md)
+1. [SIG Meet-and-Greet](../sig-contrib-events.md#sig-meet-and-greet)x
 
 ## Sample Track for Intermediate Workshop
 
@@ -36,5 +36,5 @@ This workshop differs from the Beginner workshop in that participants are expect
 1. k/k Walkthrough
 1. [Local Build&Test](./build-and-test.md)
 1. Labels, Bots and Git Workflow
-1. Find Your First Issue
-1. SIG Meet-and-Greet
+1. [Find Your First Issue](./first-issue-help.md)
+1. [SIG Meet-and-Greet](../sig-contrib-events.md#sig-meet-and-greet)
