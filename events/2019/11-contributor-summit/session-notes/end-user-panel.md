@@ -51,7 +51,7 @@ Andy: Any manual control of the load balancers?  JoshM: No.  We have an ELB in f
 
 JoshB: is upgrading everyone's biggest problem with Kubernetes?
 
-Federico: yes.   Especially you run into dependancies, and you have to upgrade all of them, it's a puzzle to solve.  We have add-ons to give users a better experience, like DNS, we have the cluster scaler for cost management.  Those need to be maintained when you upgrade the cluster.  Installing them ourselves, not using Kops add-ons, we wrote our own installer.
+Federico: yes.   Especially you run into dependencies, and you have to upgrade all of them, it's a puzzle to solve.  We have add-ons to give users a better experience, like DNS, we have the cluster scaler for cost management.  Those need to be maintained when you upgrade the cluster.  Installing them ourselves, not using Kops add-ons, we wrote our own installer.
 
 Andy: we had the same experience with Helm.  For the cluster to be useful you have to install a lot of add-ons.  Like for resourcing, you need to figure out all your add ons.  Like we only have 70% of our cluster available because of all the add-ons.  Ryan: are you tracking the cost?  Andy: manually, we don't have tools.
 

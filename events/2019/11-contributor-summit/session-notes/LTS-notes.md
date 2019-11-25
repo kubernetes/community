@@ -14,7 +14,7 @@ Why are they falling behind?  Well, some don't care.  Many want to be up to date
 
 The other thing we discussed is what does "support" really mean?  Critical bug fixes, upgrade path so that users can get to newer versions.  ALso user stability & API compatibility.  We're relatively "normal" as a project relatively to the general industry.
 
-Patch releases, we maintain 3 branches, each branch gets 9+ months of support; around the eol edge there's a fuzzy period where we don't necessarily stop patching, depending.  Lots of people said "why 9 months", which is a wierd timespan.  Also we only support upgrading to the next version, but that's standard for industry.
+Patch releases, we maintain 3 branches, each branch gets 9+ months of support; around the eol edge there's a fuzzy period where we don't necessarily stop patching, depending.  Lots of people said "why 9 months", which is a weird timespan.  Also we only support upgrading to the next version, but that's standard for industry.
 
 API discussion: rest APIs, config data, provider abstractions.  We have robust promotion process, better than industry.
 
@@ -22,7 +22,7 @@ Proposals: suggested faster releases, like monthly.  Or maybe slower releases (6
 
 We need to separate out patch releass, upgrades, stability.  Distinct although related.
 
-API stability options:  this is all teh SIG-arch stuff.  KEPs, conformance, pushing for more key APIs to hit stable.  Only 1 or 2 APIs out of 60 still not v1.  What about stale APIs?  Should we do a cleanup?
+API stability options:  this is all the SIG-arch stuff.  KEPs, conformance, pushing for more key APIs to hit stable.  Only 1 or 2 APIs out of 60 still not v1.  What about stale APIs?  Should we do a cleanup?
 
 Upgrades:  this is hard.  maybe preflight checks?
 
@@ -30,9 +30,9 @@ Patch Release: we have a draft KEP for 4 branches of patch release support, whic
 
 The WG should continue for one more year.  Maybe another survey, more concrete action items, and get contributors around those.
 
-Brian Grant:  every version of Kubernets we have has schema changes.  We don't have a way to unbundle those from API changes, which would be required to skip releases.  Releases a year old are just stabilizing now becuase they've been used.  We don't want to support 1.13 for 2 years, so we need to make releases more stable faster.  So more test coverage.   The reason we're patching the same thing into 4 different branches is that we find problems very late.  If we can get people using newer releases sooner we'll find problems sooner.
-How do we fix this?  Better test coverage.  Not letting features going in until they're more mature, but that could mean finding issues slower for those.  Maybe we could not merge things wihtout good test coverage.  We experimented with feature branches.  And with mutliple repos, we should decide maybe we shouuldn't integrate a repo.  We have better test coverage for compatibility, but still happens with one thing every release.
-ANyway, that's the whole philosophy of faster releases.
+Brian Grant:  every version of Kubernets we have has schema changes.  We don't have a way to unbundle those from API changes, which would be required to skip releases.  Releases a year old are just stabilizing now because they've been used.  We don't want to support 1.13 for 2 years, so we need to make releases more stable faster.  So more test coverage.   The reason we're patching the same thing into 4 different branches is that we find problems very late.  If we can get people using newer releases sooner we'll find problems sooner.
+How do we fix this?  Better test coverage.  Not letting features going in until they're more mature, but that could mean finding issues slower for those.  Maybe we could not merge things wihtout good test coverage.  We experimented with feature branches.  And with multiple repos, we should decide maybe we shouuldn't integrate a repo.  We have better test coverage for compatibility, but still happens with one thing every release.
+Anyway, that's the whole philosophy of faster releases.
 
 Jago: need to look at support programs for external repos.  This becomes a combinatorial explosion.  Lots of good work over the last year.  Tim: we can also make ourselve more consumable.  We need more distro experience.  Where's the debian of Kubernetes?  Jago: I support the 1-year extension.  Nick: the 9-month window means you'll have to upgrade at a bad time.  Jago: make sure we know it is 4 this year and not 5 next year.  12 months is the important part.
 
