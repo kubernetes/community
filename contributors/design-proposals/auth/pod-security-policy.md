@@ -156,10 +156,10 @@ type VolumeSecurityPolicy struct {
 	// More info: http://kubernetes.io/docs/user-guide/persistent-volumes/#persistentvolumeclaims
 	PersistentVolumeClaim bool `json:"persistentVolumeClaim,omitempty"`
 	// RBD allows or disallows the use of the RBD volume plugin.
-	// More info: http://github.com/kubernetes/examples/blob/master/volumes/rbd/README.md
+	// More info: https://github.com/kubernetes/examples/blob/master/volumes/rbd/README.md
 	RBD bool `json:"rbd,omitempty"`
 	// Cinder allows or disallows the use of the Cinder volume plugin.
-	// More info: http://github.com/kubernetes/examples/blob/master/mysql-cinder-pd/README.md
+	// More info: https://github.com/kubernetes/examples/blob/master/mysql-cinder-pd/README.md
 	Cinder bool `json:"cinder,omitempty"`
 	// CephFS allows or disallows the use of the CephFS volume plugin.
 	CephFS bool `json:"cephfs,omitempty"`
