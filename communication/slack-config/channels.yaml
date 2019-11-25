@@ -122,6 +122,8 @@ channels:
   - name: kong
   - name: kops-dev
   - name: kops-users
+  - name: kots
+    id: CFFKXV0JZ
   - name: kr-dev
   - name: kr-users
   - name: kraken
@@ -244,7 +246,6 @@ channels:
   - name: scaleway-k8s
   - name: se-users
   - name: sealed-secrets
-  - name: ship
   - name: shippable
   - name: shipper
   - name: shoutouts
