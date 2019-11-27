@@ -60,9 +60,9 @@ The next deadline is XXX , you have until then to complete your ballot. If you h
 // Resources
 
 Voters Guide - https://git.k8s.io/community/events/elections/2020
-Steering Committee -  https://git.k8s.io/steering
-Steering Committee Charter - https://git.k8s.io/steering/charter.md
-Election Process - https://git.k8s.io/steering/elections.md
+Steering Committee -  https://github.com/kubernetes/steering
+Steering Committee Charter - https://github.com/kubernetes/steering/blob/master/charter.md
+Election Process - https://github.com/kubernetes/steering/blob/master/elections.md
 
 On behalf of the election officers,
 Name (github), Name (github), etc
