@@ -4,6 +4,7 @@
 channels:
   - name: airflow-operator
   - name: announcements
+  - name: antrea
   - name: api-reviews
   - name: apisnoop
   - name: archived-sig-release
