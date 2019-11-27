@@ -37,7 +37,7 @@ $ bazel test //pkg/kubectl/...
 
 [Prow]: https://prow.k8s.io
 [bazel-install]: https://www.bazel.io/versions/master/docs/install.html
-[kazel]: https://git.k8s.io/repo-infra/kazel
+[kazel]: https://github.com/kubernetes/repo-infra/tree/master/cmd/kazel
 [gazelle]: https://github.com/bazelbuild/rules_go/tree/master/go/tools/gazelle
 [bazel-python-faq]: https://github.com/bazelbuild/bazel/issues/7899
 
