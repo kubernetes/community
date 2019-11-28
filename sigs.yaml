@@ -651,7 +651,7 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday
-    time: "1:00"
+    time: "13:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
