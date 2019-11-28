@@ -2274,7 +2274,7 @@ Also @jorge for all the live stream work! You two rock
 *   [ 0:00 ] <strong>KEP o' the Week </strong>[Chris Hoge, @hogepodge, on behalf of Nishi Davidson, @d-nishi]
     *   Part of SIG Cloud Provider
         *   Coordinates stuff among all cloud providers
-    *   [https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0019-cloud-provider-documentation.md](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0019-cloud-provider-documentation.md)  - Accepted 
+    *   [https://github.com/kubernetes/community/blob/master/sig-cloud-provider/CHARTER.md](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/CHARTER.md)  - Accepted 
         *   Transfer responsibility of maintaining docs to cloud providers
         *   Provide documentation on how to activate any out-of-tree cloud provider
         *   Set minimum standards for cloud provider documentation
@@ -2438,7 +2438,7 @@ Also @jorge for all the live stream work! You two rock
             *   [Aws-encryption-provider](https://github.com/kubernetes-sigs/aws-encryption-provider) provides envelope encryption for Etcd, still an alpha project where they are debating design elements.
             *   [Aws-csi-driver-ebs](https://github.com/bertinatto/ebs-csi-driver/) allows the CSI driver to work with EBS for PVs.  Collab with Red Hat.  Hope to make stable in 1.13/1.14 and replace the current EBS driver.
             *   Pod-identity-access: just a proposal right now.  Would like to have identity injection inside the pod for IAM credentials.  Target for 1.13/1.14 work.
-            *   Cloud-provider-aws:  project to move AWS cloud provider to the cloud provider API (as per [KEP 0019](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0019-cloud-provider-documentation.md)).  Added a documentation KEP for it.
+            *   Cloud-provider-aws:  project to move AWS cloud provider to the cloud provider API (as per [KEP 0019](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/CHARTER.md)).  Added a documentation KEP for it.
     *   Cluster API [Kris Nova]
         *   Repository: [https://github.com/kubernetes-sigs/cluster-api-provider-aws](https://github.com/kubernetes-sigs/cluster-api-provider-aws)
         *   Doodles and Docs email: [https://groups.google.com/forum/#!topic/kubernetes-sig-cluster-lifecycle/__XIKigkxkA](https://groups.google.com/forum/#!topic/kubernetes-sig-cluster-lifecycle/__XIKigkxkA)
