@@ -1,7 +1,7 @@
 Kubernetes Snapshotting Proposal
 ================================
 
-**Authors:** [Cindy Wang](https://github.com/ciwang)
+**Authors:** [ekkarat.w@gmail.com](https://github.com/ekkarat.w@gmail.com)
 
 ## Background
 
