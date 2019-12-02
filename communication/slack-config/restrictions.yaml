@@ -17,6 +17,9 @@ restrictions:
     channels:
       - "^sig-release$"
       - "^release-"
+  - path: "sig-network/*.yaml"
+    channels:
+      - "^sig-network-.*$"
   - path: "sig-storage/*.yaml"
     channels:
       - "^sig-storage$"
