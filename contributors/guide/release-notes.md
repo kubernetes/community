@@ -76,6 +76,22 @@ To see how to format your release notes, view the kubernetes/kubernetes [pull re
 
 Release notes apply to pull requests on the master branch. For patch release branches the automated cherry-pick pull requests process (see the [cherry-pick instructions](/contributors/devel/sig-release/cherry-picks.md)) should be followed.  That automation will pull release notes from the master branch PR from which the cherry-pick originated. On a rare occasion a pull request on a patch release branch is not a cherry-pick, but rather is targeted directly to the non-master branch and in this case, a `release-note-*` label is required for that non-master pull request.
 
+## Reviewing Release Notes
+
+Reviewing the release notes of a pull request should be a dedicated step in the
+overall review process. It is necessary to rely on the same metrics as other
+reviewers to be able to distinguish release notes which might need to be
+rephrased.
+
+As a guideline, a release notes entry needs to be rephrased if one of the
+following cases apply:
+
+- The release note does not communicate the full purpose of the change.
+- The release note has no impact on any user.
+- The release note is grammatically incorrect.
+
+In any other case the release note should be fine.
+
 ## Related
 
 * [Behind The Scenes: Kubernetes Release Notes Tips & Tricks - Mike Arpaia, Kolide (KubeCon 2018 Lightning Talk)](https://www.youtube.com/watch?v=n62oPohOyYs)
