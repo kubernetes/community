@@ -17,6 +17,8 @@ restrictions:
     channels:
       - "^sig-release$"
       - "^release-"
+    usergroups:
+      - "^release-"
   - path: "sig-storage/*.yaml"
     channels:
       - "^sig-storage$"

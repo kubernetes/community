@@ -1,0 +1,20 @@
+# This file contains a list of all Slack User Groups that are managed by SIG Release.
+
+usergroups:
+  - name: release-managers
+    long_name: Release Managers
+    description: Release Managers. Ping for questions on branch cuts and building/packaging Kubernetes.
+    channels:
+      - release-management
+      - sig-release
+    members:
+      - aleksandra-malinowska # Patch Release Team
+      - calebamiles # subproject owner
+      - cpanato # Branch Manager
+      - dougm # Patch Release Team
+      - feiskyer # Patch Release Team
+      - hoegaarden # Patch Release Team
+      - idealhack # Patch Release Team
+      - justaugustus # subproject owner / Patch Release Team
+      - saschagrunert # Branch Manager
+      - tpepper # subproject owner / Patch Release Team
