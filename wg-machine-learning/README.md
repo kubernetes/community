@@ -20,8 +20,7 @@ Identify and fix gaps in Kubernetes to better support Machine Learning applicati
 
 ## Organizers
 
-* Connor Doyle (**[@ConnorDoyle](https://github.com/ConnorDoyle)**), Intel
-* Balaji Subramaniam (**[@balajismaniam](https://github.com/balajismaniam)**), Intel
+* Klaus Ma (**[@k82cn](https://github.com/k82cn)**), Huawei
 * Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Google
 * Vishnu Kannan (**[@vishh](https://github.com/vishh)**), Google
 
