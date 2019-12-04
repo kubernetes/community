@@ -30,8 +30,6 @@ Shadows and co-presenters are expected to assist and review these updates.
     - ensure participants sign the CLA
     - ensure attendees meet technical and experience requirements for their course
     - obtain a comprehensive list of names, emails, and github handles
-- Incorporate the new contributor playground into the workshop.
-Create a New Contributor Workshop folder specific to this event, with teachers' and participants' github handles in the OWNERS file - [here is an example](sigs.k8s.io/contributor-playground/seattle)
 - Coordinate with the [SIG Meet and Greet organizer](sig-contrib-events.md) (may be a different role to be determined by core team)
 - Ensure to advertise the SIG-Intros
 - Solicit feedback from workshop participants
