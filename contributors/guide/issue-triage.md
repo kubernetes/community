@@ -183,8 +183,8 @@ Ideally the SIG lead should have a SIG member that is a first point
 of contact for SIG new issues. If an issue has a SIG label assigned and no
 action is taken by SIG in 30 days (e.g. no comment was added by SIG or no
 discussion was initiated) then gently poke SIG about this pending issue.
-Also consider attending one of the SIG meetings and brig up issue, if you feel
-this is appropriate.
+Also, consider attending one of the SIG meetings and bringing up the issue, if
+you feel this is appropriate.
 
 ## Milestones
 
@@ -251,6 +251,6 @@ and the `good first issue` label with the `/good-first-issue` command.
 Please note that adding the `good first issue` label will also automatically
 add the `help wanted` label.
 
-If an issue has these labels but does not satisify the guidelines, please
+If an issue has these labels but does not satisfy the guidelines, please
 ask for more details to be added to the issue or remove the labels using
 `/remove-help` or `/remove-good-first-issue` commands.
