@@ -8,13 +8,13 @@ usergroups:
       - release-management
       - sig-release
     members:
-      - aleksandra-malinowska
-      - bubblemelon
-      - calebamiles
-      - feiskyer
-      - hoegaarden
-      - idealhack
-      - justaugustus
-      - listx
-      - sumitranr
-      - tpepper
+      - aleksandra-malinowska # Patch Release Team
+      - calebamiles # subproject owner
+      - cpanato # Branch Manager
+      - dougm # Patch Release Team
+      - feiskyer # Patch Release Team
+      - hoegaarden # Patch Release Team
+      - idealhack # Patch Release Team
+      - justaugustus # subproject owner / Patch Release Team
+      - saschagrunert # Branch Manager
+      - tpepper # subproject owner / Patch Release Team
