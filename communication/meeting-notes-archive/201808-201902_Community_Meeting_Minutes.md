@@ -994,7 +994,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   cs.k8s.io -- Search all repos in seconds
         *   Can _regex_ search across all Kubernetes repos and orgs
         *   Automatically filters out certain types of files, but that can be configured
-    *   Check out the [contributor cheatsheet](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet.md) for other shortcuts (PRs accepted!)
+    *   Check out the [contributor cheatsheet](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet/README.md) for other shortcuts (PRs accepted!)
 *   [ 0:00 ] **SIG Updates**
     *   SIG Leads, check out this set of [recommended topics to cover](https://github.com/kubernetes/community/blob/master/events/community-meeting.md#sig-updates) during your update
     *   [Slide template if you need it](https://docs.google.com/presentation/d/1-nTvKCiqu9UvFYUeM6p6RIqHS5-H-u3_x-V4xj_eIWo/edit#slide=id.g401c104a3c_0_0)
