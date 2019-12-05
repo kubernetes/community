@@ -23,8 +23,12 @@ aspects of the process.
     plane?
   - Will enabling / disabling the feature require downtime or reprovisioning
     of a node?
+    - What controls exist to to avoid accidental deletion or misconfiguration of
+    this feature?
   - What happens if a cluster with this feature enabled is rolled back? What
     happens if it is subsequently upgraded again?
+  - If the feature needs to be re-enabled, how quickly can you recreate the 
+    configuration of the feature?
   - Are there tests for this?
 * Scalability
   - Will enabling / using the feature result in any new API calls?
@@ -51,6 +55,7 @@ aspects of the process.
     log volume), significant amount of data sent and/or received over
     network, etc. Think through this in both small and large cases, again
     with respect to the [supported limits][].
+     - Have you profiled this feature for resource usage?
 * Rollout, Upgrade, and Rollback Planning
 * Dependencies
   - Does this feature depend on any specific services running in the cluster
@@ -59,6 +64,7 @@ aspects of the process.
     which it depends?
   - How does this feature respond to degraded performance or high error rates
     from services on which it depends?
+  - If this feature fails, what impact would it have on cluster workloads? 
 * Monitoring requirements
   - How can an operator determine if the feature is in use by workloads?
   - How can an operator determine if the feature is functioning properly?
