@@ -83,6 +83,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/blobfuse-csi-driver/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-azure/master/OWNERS
 - **Meetings:**
   - Azure Subproject Meeting (First Monday): [Mondays at 14:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
