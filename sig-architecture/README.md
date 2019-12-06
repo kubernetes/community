@@ -13,6 +13,9 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 The [charter](charter.md) defines the scope and governance of the Architecture Special Interest Group.
 
 ## Meetings
+* Production Readiness Office Hours: [Wednesdays at 12:00 PT (Pacific Time)](https://zoom.us/j/482444151) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/10QkXwiZfBL7wBKHHFslooXvGDKHA75jkkgiIXuKFryM/edit?usp=sharing).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
 * Regular SIG Meeting: [Thursdays at 19:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
@@ -72,6 +75,12 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
   - Slack: [#k8s-conformance](https://kubernetes.slack.com/messages/k8s-conformance)
   - GitHub Teams:
     - [@kubernetes/cncf-conformance-wg](https://github.com/orgs/kubernetes/teams/cncf-conformance-wg)
+### production-readiness
+[Described below](#production-readiness)
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/community/master/sig-architecture/OWNERS
+- **Contact:**
+  - Slack: [#prod-readiness](https://kubernetes.slack.com/messages/prod-readiness)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
@@ -107,5 +116,9 @@ Overall code organization, including github repositories and branching methodolo
 
 Please see the [Code Organization](https://github.com/orgs/kubernetes/projects/27) tracking board to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/kubernetes/blob/master/vendor/OWNERS) file if you are interested in joining this effort. Look for the `area/code-organization` label in the kubernetes repositories to mark [issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fcode-organization) and [PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+is%3Aopen+label%3Aarea%2Fcode-organization). We also use `area/dependency` label as well [issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fdependency) and [PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+is%3Aopen+label%3Aarea%2Fdependency).
 
+## Production Readiness
+
+Defining and documenting the processes for ensuring production readiness of new and
+promoted features, as well as producing tooling to enforce those processes.
 
 <!-- END CUSTOM CONTENT -->
