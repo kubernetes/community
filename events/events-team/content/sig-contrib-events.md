@@ -38,14 +38,16 @@ Time Commitment
 - Expect to spend a fair amount of time following up with SIGs and WGs to get the name of their representatives.
 - Add these representatives to a calendar notice for the SIG Meet and Greet.
 - Work with the registration lead to make sure that representatives are registered for the summit and follow up with any representatives who have not registered.
-- Make sure that we have table stands and buttons for each SIG that are organized and easy to hand out at the beginning of the event.
+- Make sure that we have table stands and buttons for each SIG that are organized and easy to hand out at the beginning of the event. These were done in alphabetized reusable bags for San Diego, which worked really well. 
+- Create a plan and map for organizing SIGs / WGs at tables to make it easier for attendees to find SIGs. Get the room layout from the venue and pre-assign SIGs / WGs to tables with some thought given to logical groupings with similar topics in close proximity. Make sure that this plan is communicated to volunteers and other organizers and display the room layout / map on the projector to help people find their tables.
 - Recruit a few volunteers to distribute table stands and buttons and to help SIGs / contributors find the right tables. 
 - Make a short announcement at the beginning with an overview of how it works.
-- Walk around the room to help lost contributors get matched up with a SIG table.
+- Walk around the room throughout the event to help lost contributors get matched up with a SIG table.
 
 ### Documentation
 
 - [SIG Meet and Greet Barcelona 2019](https://github.com/kubernetes/community/issues/3516)
+- [SIG Meet and Greet San Diego 2019](https://github.com/kubernetes/community/issues/3896)
 
 ## SIG F2Fs
 
