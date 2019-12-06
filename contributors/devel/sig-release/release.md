@@ -151,11 +151,13 @@ PRs. This automation only applies to the following repos:
 * kubernetes/sig-release
 * kubernetes/test-infra
 
-**On PRs against the master branch**, milestones are auto-applied so
-this is less necessary. 
+At creation time, PRs against the master branch need humans to hint at which milestone
+they might want the PR to target. Once merged, PRs against the master branch have
+milestones auto-applied so from that time onward human management of that PR's
+milestone is less necessary. On PRs against anything not the master branch, milestones
+are auto-applied when the PR is created so no human management of the milestone
+is ever necessary.
 
-**On PRS against anything not master** the milestone
-requirement is absolute and iron-clad necessary. 
 
 Any other effort that
 should be tracked by the release team that doesn't fall under that
