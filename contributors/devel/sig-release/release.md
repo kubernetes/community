@@ -140,6 +140,35 @@ feature work for the given release has been defined in suitable
 planning artifacts in conjunction with the Release Team's [enhancements
 lead](https://git.k8s.io/sig-release/release-team/role-handbooks/enhancements/README.md).
 
+After enhancement freeze, tracking milestones on PRs and Issues is
+important. Items within the milestone are used as a punchdown list to
+complete the release. *On issues*, milestones must be applied correctly, via
+triage by the SIG, so that release team can track bugs and enhancements (any
+enhancement related issue needs a milestone)
+
+There is some automation in place to help automatically-assign milestones to
+PRs. This automation only applies to the following repos:
+
+* kubernetes/enhancements
+* kubernetes/kubernetes
+* kubernetes/release
+* kubernetes/sig-release
+* kubernetes/test-infra
+
+At creation time, PRs against the master branch need humans to hint at which milestone
+they might want the PR to target. Once merged, PRs against the master branch have
+milestones auto-applied so from that time onward human management of that PR's
+milestone is less necessary. On PRs against anything not the master branch, milestones
+are auto-applied when the PR is created so no human management of the milestone
+is ever necessary.
+
+
+Any other effort that
+should be tracked by the release team that doesn't fall under that
+automation umbrella should be have a milestone applied.
+
+*"Milestone early and milestone often. Everyone will be happier."*
+
 Implementation and bugfixing is ongoing across the cycle, but
 culminates in a code freeze period:
 * The **code freeze** starts in week ~10 and continues for ~2 weeks.
