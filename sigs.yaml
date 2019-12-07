@@ -2341,6 +2341,39 @@ workinggroups:
     teams:
     - name: wg-component-standard
       description: Component Standard Discussion
+- dir: wg-data-protection
+  name: Data Protection
+  mission_statement: >
+    A Working Group dedicated to promoting data protection support in Kubernetes,
+    identifying missing functionality and working together to design features to enable
+    data protection support. Involves collaboration with multiple SIGs such as Apps
+    and Storage.
+
+  charter_link: charter.md
+  stakeholder_sigs:
+  - Apps
+  - Storage
+  label: data-protection
+  leadership:
+    chairs:
+    - github: xing-yang
+      name: Xing Yang
+      company: VMware
+    - github: yuxiangqian
+      name: Xiangqian Yu
+      company: Google
+  meetings:
+  - description: Regular WG Meeting
+    day: Monday
+    time: "9:00"
+    tz: PT (Pacific Time)
+    frequency: bi-weekly
+    url: https://docs.google.com/document/d/15tLCV3csvjHbKb16DVk-mfUmFry_Rlwo-2uG6KNGsfw/edit
+    archive_url: http://bit.ly/wg-data-protection-notes
+    recordings_url: http://bit.ly/data-protection-playlist
+  contact:
+    slack: wg-data-protection
+    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-data-protection
 - dir: wg-iot-edge
   name: IoT Edge
   mission_statement: >
