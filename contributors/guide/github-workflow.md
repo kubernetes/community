@@ -26,7 +26,7 @@ Define a local working directory:
 # You must follow exactly this pattern,
 # neither `$GOPATH/src/github.com/${your github profile name/`
 # nor any other pattern will work.
-export working_dir=$GOPATH/src/k8s.io
+export working_dir="$(go env GOPATH)/src/k8s.io"
 ```
 
 > If you already do Go development on github, the `k8s.io` directory
