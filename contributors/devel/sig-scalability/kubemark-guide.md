@@ -69,10 +69,11 @@ This script will create a VM for master (along with mounted PD and firewall rule
 then start kubelet and run the pods for the master components. Following this, it
 sets up the HollowNodes as Pods on the external cluster and do all the setup necessary
 to let them talk to the kubemark apiserver. It will use the configuration stored in
-`cluster/kubemark/config-default.sh` - you can tweak it however you want, but note that
-some features may not be implemented yet, as implementation of Hollow components/mocks
-will probably be lagging behind ‘real’ one. For performance tests interesting variables
-are `NUM_NODES` and `KUBEMARK_MASTER_SIZE`. After start-kubemark script is finished,
+`cluster/kubemark/{CLOUD_PROVIDER}/config-default.sh` - `CLOUD_PROVIDER` could be `gce`,
+`iks` or `pre-existing` which means you alreay have a local cluster, you can tweak it however
+you want, but note that some features may not be implemented yet, as implementation of Hollow
+components/mocks will probably be lagging behind ‘real’ one. For performance tests interesting
+variables are `NUM_NODES` and `KUBEMARK_MASTER_SIZE`. After start-kubemark script is finished,
 you’ll have a ready Kubemark cluster, and a kubeconfig file for talking to the Kubemark
 cluster is stored in `test/kubemark/resources/kubeconfig.kubemark`.
 
