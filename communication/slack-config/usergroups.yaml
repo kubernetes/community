@@ -12,22 +12,26 @@ usergroups:
     channels:
       - sig-contribex
     members:
-      - jeefy
-      - sarahnovotny
-      - paris
-      - castrojo
-      - mrbobbytables
       - alejandrox1
-      - jdumars
-      - jbeda
+      - castrojo
+      - idealhack
       - idvoretskyi
+      - jbeda
+      - jdumars
+      - jeefy
+      - mrbobbytables
+      - nzoueidi
+      - paris
+      - sarahnovotny
   - name: zoom-admins
     long_name: Zoom Admins
     description: Zoom Admin group. Ping for a Zoom-specific issue
     channels:
       - sig-contribex
     members:
-      - paris
-      - castrojo
-      - mrbobbytables
       - alejandrox1
+      - castrojo
+      - idealhack
+      - mrbobbytables
+      - nzoueidi
+      - paris
