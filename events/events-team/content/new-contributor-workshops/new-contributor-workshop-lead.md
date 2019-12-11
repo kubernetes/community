@@ -29,8 +29,8 @@ Shadows and co-presenters are expected to assist and review these updates.
     - disseminate course materials (slides) in advance
     - ensure participants sign the CLA
     - ensure attendees meet technical and experience requirements for their course
-    - obtain a comprehensive list of names, emails, and github handles
-- Coordinate with the [SIG Meet and Greet organizer](sig-contrib-events.md) (may be a different role to be determined by core team)
+    - obtain a comprehensive list of names, emails, and GitHub handles
+- Coordinate with the [SIG Meet and Greet organizer](/events/events-team/content/sig-contrib-events.md#sig-meet-and-greet) (may be a different role to be determined by core team)
 - Ensure to advertise the SIG-Intros
 - Solicit feedback from workshop participants
 

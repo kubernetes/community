@@ -21,11 +21,11 @@ This workshop is meant for folks who have never contributed to opensource before
 1. [Local Build&Test](./build-and-test.md)
 1. [Pull Request Exercise](./playground-exercise.md)
 1. [Find Your First Issue](./first-issue-help.md)
-1. [SIG Meet-and-Greet](../sig-contrib-events.md#sig-meet-and-greet)x
+1. [SIG Meet-and-Greet](/events/events-team/content/sig-contrib-events.md#sig-meet-and-greet)
 
 ## Sample Track for Intermediate Workshop
 
-This workshop differs from the Beginner workshop in that participants are expected to have a working Docker/Kubernetes/Go setup. They have a baisc understanding of how opensource contributions work, and may have opened a PR against Kubernetes before.
+This workshop differs from the Beginner workshop in that participants are expected to have a working Docker/Kubernetes/Go setup. They have a basic understanding of how opensource contributions work, and may have opened a PR against Kubernetes before.
 
 1. Welcome
 1. [Live PR Demo](./live-pr-demo.md)
@@ -37,4 +37,4 @@ This workshop differs from the Beginner workshop in that participants are expect
 1. [Local Build&Test](./build-and-test.md)
 1. Labels, Bots and Git Workflow
 1. [Find Your First Issue](./first-issue-help.md)
-1. [SIG Meet-and-Greet](../sig-contrib-events.md#sig-meet-and-greet)
+1. [SIG Meet-and-Greet](/events/events-team/content/sig-contrib-events.md#sig-meet-and-greet)

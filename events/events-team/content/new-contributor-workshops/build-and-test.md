@@ -6,7 +6,7 @@
 
 ### Task Overview
 
-Build Kuberentes binaries locally, and do some fun things with them.
+Build Kubernetes binaries locally, and do some fun things with them.
 
 **Important** Have facilitators to help with technical issues (2-3 is enough for Intermediate, you want 5 for Beginner)
 
