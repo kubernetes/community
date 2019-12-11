@@ -61,6 +61,7 @@ Administrators seats: 4
 | Bob Killen    | @mrbobbytables        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jeffrey Sica  | @jeefy                | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jorge Alarcon | @alejandrox1          | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Josh Berkus         | @jberkus           | Americas  | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 Note, due to how the software is designed, dedicated moderators are not required
 for discuss, the [trust system] in place allows for self moderation. In this
@@ -174,7 +175,7 @@ Moderators seats: 10
 | Noah Kantrowitz     | @coderanger         | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)       |
 | Yang Li             | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
-
+| Josh Berkus         | @jberkus           | Americas  | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 #### Moderators Pro Tempore
 
