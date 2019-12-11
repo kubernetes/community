@@ -14,10 +14,18 @@ At the time of this writing, the list of published branches includes:
 - release-1.16 / release-13.0,
 - and release-1.17 / release-14.0
 
-Kubernetes tags (e.g., v1.9.1-beta1) are also applied automatically to the published repositories, prefixed with kubernetes- (e.g., kubernetes-1.9.1-beta1). The client-go semver tags (on client-go only!) including release-notes are still done manually.
+Kubernetes tags (e.g., `v1.17.0-beta.2`) are also applied automatically to the published repositories, prefixed with `kubernetes-`.
+From `v1.17.0` Kubernetes release, matching semver `v0.x.y` tags are also created for each `v1.x.y` Kubernetes tag.
 
-The semver tags are still the (well tested) official releases. The kubernetes-1.x.y tags have limited test coverage (we have some automatic tests in place in the bot), but can be used by early adopters of client-go and the other libraries. Moreover, they help to vendor the correct version of k8s.io/api and k8s.io/apimachinery.
+For example, if you check out the `kubernetes-1.17.0` or the `v0.17.0` tag in
+a published repo, the code you get is exactly the same as if you check out the
+`v1.17.0` tag in Kubernetes, and change directory to `staging/src/k8s.io/<repo-name>`.
 
-If further repos under staging are needed, adding them to the bot is easy. Contact one of the [owners of the bot](https://git.k8s.io/publishing-bot/OWNERS).
+It is recommend to use the semver `v0.x.y` tags for a seamless experience
+with go modules.
 
-Currently, the bot is hosted on a [public CNCF cluster](http://git.k8s.io/publishing-bot/k8s-publishing-bot.md).
+If further repos under staging are needed, adding them to the bot is easy.
+Contact one of the [owners of the bot](https://git.k8s.io/publishing-bot/OWNERS).
+
+Currently, the bot is hosted on a
+[public CNCF cluster](http://git.k8s.io/publishing-bot/k8s-publishing-bot.md).
