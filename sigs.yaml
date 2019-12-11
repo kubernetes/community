@@ -2022,9 +2022,9 @@ sigs:
     - github: stevekuznetsov
       name: Steve Kuznetsov
       company: Red Hat
+    emeritus_leads:
     - github: timothysc
       name: Timothy St. Clair
-      company: VMware
   meetings:
   - description: SIG Testing Office Hours
     day: Tuesday
