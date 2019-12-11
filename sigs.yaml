@@ -819,8 +819,15 @@ sigs:
     - github: justinsb
       name: Justin Santa Barbara
       company: Google
+    - github: neolit123
+      name: Lubomir Ivanov
+      company: VMware
     - github: timothysc
       name: Timothy St. Clair
+      company: VMware
+    tech_leads:
+    - github: fabriziopandini
+      name: Fabrizio Pandini
       company: VMware
     emeritus_leads:
     - github: luxas
