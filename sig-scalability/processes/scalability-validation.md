@@ -123,6 +123,6 @@ Responsibilities lying with other SIGs/teams as applicable (could be sig-scalabi
 [supporting]: http://blog.kubernetes.io/2017/03/scalability-updates-in-kubernetes-1.6.html
 [here]: https://docs.google.com/document/d/15rD6XBtKyvXXifkRAsAVFBqEGApQxDRWM3H1bZSBsKQ
 [#47865]: https://github.com/kubernetes/kubernetes/issues/47865
-[test_owners.csv]: https://github.com/kubernetes/kubernetes/blob/master/test/test_owners.csv
+[test_owners.csv]: https://github.com/kubernetes/kubernetes/blob/master/test/OWNERS
 [calendar]: https://calendar.google.com/calendar?cid=Z29vZ2xlLmNvbV9tNHA3bG1jODVubGlmazFxYzRnNTRqZjg4a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
 
