@@ -22,4 +22,4 @@ The [PR workflow diagram](git.k8s.io/community/contributors/guide/git_workflow.p
 
 ### Ideas
 
-- Play with bots in the [contributor playground]
+- Play with bots in the [contributor playground](https://github.com/kubernetes-sigs/contributor-playground)

@@ -17,10 +17,10 @@ Refer to previous workshops for inspirations
 - Who can contribute?
 - What skills are needed?
 - How to Fit Contributions Into Your Job
-- Balance knowlede with learning and the needs of the project
+- Balance knowledge with learning and the needs of the project
 
 ### Ideas
 
 - Share some contributor origin stories
-- Ask the room why they are at the workshop.
+- Ask the room why they are at the workshop
 - Have a few people share their thoughts

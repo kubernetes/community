@@ -16,12 +16,12 @@ Refer to previous workshops for inspirations
 ### Details To Cover 
 
 - help-wanted and good-first-issue labels
-- up and coming sandbox projects
+- Up and coming sandbox projects
 - Working with your SIG
 - Refer participants to specific SIGs
 - How to "claim" an issue (since non-members cannot self-assign)
-- Encourage the [SIG Meet-and-Greet](../sig-contrib-events.md#sig-meet-and-greet)
-- Path to [membership](git.k8s.io/community-membership.md)
+- Encourage attendance at the [SIG Meet-and-Greet](/events/events-team/content/sig-contrib-events.md#sig-meet-and-greet)
+- Path to [membership](/community-membership.md)
 
 ### Ideas
 

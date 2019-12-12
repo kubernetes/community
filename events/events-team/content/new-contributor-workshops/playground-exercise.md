@@ -9,7 +9,7 @@
 Give new contributors the experience of the Kubernetes GitHub workflow!
 This task requires some setup and planning.
 
-Create a New Contributor Workshop folder specific to this event, with teachers' and participants' github handles in the OWNERS file. 
+Create a New Contributor Workshop folder specific to this event, with teachers' and participants' GitHub handles in the OWNERS file. 
 [Here is an example](sigs.k8s.io/contributor-playground/seattle). Make sure to obtain participants' GitHub handles from the event registrar in advance.
 Issue and PR exercise ideas can be found in sigs.k8s.io/contributor-playground/exercises.
 
