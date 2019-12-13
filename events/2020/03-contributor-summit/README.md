@@ -39,8 +39,16 @@ so make sure you plan travel accordingly.
 
 | Role | Lead | Shadow | Notes |
 |---|---|---|---|
-| Event Lead | Jeff [@jeefy](https://github.com/jeefy) | TBD | |
-| Other Roles| TBD | | |
+| Event Lead | Jeff [@jeefy](https://github.com/jeefy) | Bob [@mrbobbytables](https://github.com/mrbobbytables) <br /> Dawn Foster [@geekygirldawn](https://github.com/geekygirldawn) | |
+| Registration | Nabarun [@palnabarun](https://github.com/palnabarun) | Arnaud [@ameukam](https://github.com/ameukam) | |
+| Communications | Amanda [@amandakatona](https://github.com/amandakatona) | Jorge [@castrojo](https://github.com/castrojo) | |
+| CNCF Events Manager | Deb Giles [@debgiles](https://github.com/debgiles) | Ihor [@idvoretskyi](https://github.com/idvoretskyi) | CNCF/LF Employee |
+| Current Content | Yang Li [@idealhack](https://github.com/idealhack) | | |
+| Unconference | Cody [@thecrudge](https://github.com/thecrudge) | | |
+| New Contributor Workshop 101 | Rael [@raelga](https://github.com/raelga) | Chris Short [@chris-short](https://github.com/chris-short) | Tim Pepper [@tpepper](https://github.com/tpepper) Emeritus |
+| New Contributor Workshop 201 | Alison [@alisondy](https://github.com/alisondy) | | Tim Pepper [@tpepper](https://github.com/tpepper) Emeritus |
+| SIG Meet & Greet | TBD | | |
+| Accessibility, Inclusiveness, and Diversity | TBD | | |
 
 ## Code of Conduct
 
