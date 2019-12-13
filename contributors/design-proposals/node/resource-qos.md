@@ -47,7 +47,7 @@ How the request and limit are enforced depends on whether the resource is [compr
 
 In an overcommitted system (where sum of limits > machine capacity) containers might eventually have to be killed, for example if the system runs out of CPU or memory resources. Ideally, we should kill containers that are less important. For each resource, we divide containers into 3 QoS classes: *Guaranteed*, *Burstable*, and *Best-Effort*, in decreasing order of priority.
 
-The relationship between "Requests and Limits" and "QoS Classes" is subtle. Theoretically, the policy of classifying pods into QoS classes is orthogonal to the requests and limits specified for the container. Hypothetically, users could use an (currently unplanned) API to specify whether a pod is guaranteed or best-effort. However, in the current design, the policy of classifying pods into QoS classes is intimately tied to "Requests and Limits" - in fact, QoS classes are used to implement some of the memory guarantees described in the previous section.
+The relationship between "Requests and Limits" and "QoS Classes" is subtle. Theoretically, the policy of classifying pods into QoS classes is orthogonal to the requests and limits specified for the container. Hypothetically, users could use an (currently unplanned) API to specify whether a pod is guaranteed or best-effort. However, in the current design, the policy of classifying pods into QoS classes is intimately tied to "Requests and Limits". In fact, QoS classes are used to implement some of the memory guarantees described in the previous section.
 
 Pods can be of one of 3 different classes:
 
@@ -165,35 +165,30 @@ Under system memory pressure, these containers are more likely to be killed once
 
 ### OOM Score configuration at the Nodes
 
-Pod OOM score configuration
-- Note that the OOM score of a process is 10 times the % of memory the process consumes, adjusted by OOM_SCORE_ADJ, barring exceptions (e.g. process is launched by root). Processes with higher OOM scores are killed.
+#### Pod OOM score configuration
+- Note that the OOM score of a process is 10 times the percentage of memory the process consumes, adjusted by OOM_SCORE_ADJ, barring exceptions (e.g. process is launched by root). 
+- Processes with higher OOM scores are killed.
 - The base OOM score is between 0 and 1000, so if process A's OOM_SCORE_ADJ - process B's OOM_SCORE_ADJ is over a 1000, then process A will always be OOM killed before B.
-- The final OOM score of a process is also between 0 and 1000
+- The final OOM score of a process is between 0 and 1000.
 
-*Best-effort*
-	- Set OOM_SCORE_ADJ: 1000
-	- So processes in best-effort containers will have an OOM_SCORE of 1000
+#### Best-effort
+- Set OOM_SCORE_ADJ: 1000, so that processes in best-effort containers will have an OOM_SCORE of 1000 and are first to be killed.
 
-*Guaranteed*
-	- Set OOM_SCORE_ADJ: -998
-	- So processes in guaranteed containers will have an OOM_SCORE of 0 or 1
+#### Guaranteed
+- Set OOM_SCORE_ADJ: -998, so that processes in guaranteed containers will have an OOM_SCORE of 0 or 1.
 
-*Burstable*
-	- If total memory request > 99.8% of available memory, OOM_SCORE_ADJ: 2
-	- Otherwise, set OOM_SCORE_ADJ to 1000 - 10 * (% of memory requested)
-	- This ensures that the OOM_SCORE of burstable pod is > 1
-	- If memory request is `0`, OOM_SCORE_ADJ is set to `999`.
-	- So burstable pods will be killed if they conflict with guaranteed pods
-	- If a burstable pod uses less memory than requested, its OOM_SCORE < 1000
-	- So best-effort pods will be killed if they conflict with burstable pods using less than requested memory
-	- If a process in burstable pod's container uses more memory than what the container had requested, its OOM_SCORE will be 1000, if not its OOM_SCORE will be < 1000
-	- Assuming that a container typically has a single big process, if a burstable pod's container that uses more memory than requested conflicts with another burstable pod's container using less memory than requested, the former will be killed
-	- If burstable pod's containers with multiple processes conflict, then the formula for OOM scores is a heuristic, it will not ensure "Request and Limit" guarantees.
+#### Burstable
+- If total memory requested > 99.8% of available memory, OOM_SCORE_ADJ: 2; otherwise, set OOM_SCORE_ADJ to 1000 - 10 * (percentage of memory requested). This ensures that the OOM_SCORE of burstable pods is > 1.
+- If memory requested is `0`, then OOM_SCORE_ADJ is set to `999`, so that burstable pods will be killed if they conflict with guaranteed pods.
+- If a burstable pod uses less memory than requested, then its OOM_SCORE < 1000, so that best-effort pods will be killed if they conflict with burstable pods using less than their requested memory.
+- If a process in a burstable pod's container uses more memory than what the container had requested, its OOM_SCORE will be 1000, if not its OOM_SCORE will be < 1000.
+- Assuming that a container typically has a single big process... if a burstable pod's container, that uses more memory than requested, conflicts with another burstable pod's container, using less memory than requested, the former will be killed.
+- If a burstable pod's containers with multiple processes conflict, then the formula for OOM scores is a heuristic; it will not ensure "Request and Limit" guarantees.
 
-*Pod infra containers* or *Special Pod init process*
+#### Pod infra containers or Special Pod init process
   - OOM_SCORE_ADJ: -998
 
-*Kubelet, Docker*
+#### Kubelet, Docker
   - OOM_SCORE_ADJ: -999 (won't be OOM killed)
   - Hack, because these critical tasks might die if they conflict with guaranteed containers. In the future, we should place all user-pods into a separate cgroup, and set a limit on the memory they can consume.
 
