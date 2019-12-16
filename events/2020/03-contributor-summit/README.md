@@ -44,7 +44,7 @@ so make sure you plan travel accordingly.
 | Communications | Amanda [@amandakatona](https://github.com/amandakatona) | Jorge [@castrojo](https://github.com/castrojo) | |
 | CNCF Events Manager | Deb Giles [@debgiles](https://github.com/debgiles) | Ihor [@idvoretskyi](https://github.com/idvoretskyi) | CNCF/LF Employee |
 | Current Content | Yang Li [@idealhack](https://github.com/idealhack) | | |
-| Unconference | Cody [@thecrudge](https://github.com/thecrudge) | | |
+| Unconference | Cody [@thecrudge](https://github.com/thecrudge) | Peeyush [@pensu](https://github.com/pensu) Vineeth [@VineethReddy02](https://github.com/VineethReddy02) | |
 | New Contributor Workshop 101 | Rael [@raelga](https://github.com/raelga) | Chris Short [@chris-short](https://github.com/chris-short) | Tim Pepper [@tpepper](https://github.com/tpepper) Emeritus |
 | New Contributor Workshop 201 | Alison [@alisondy](https://github.com/alisondy) | | Tim Pepper [@tpepper](https://github.com/tpepper) Emeritus |
 | SIG Meet & Greet | TBD | | |
