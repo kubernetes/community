@@ -52,6 +52,7 @@ Potential design topics include, but are not limited to the following:
   a specific feature including KEP reviews can happen in the working group
   but KEP approvals and code implementation will be owned by SIG-Apps or
   SIG-Storage.
+* Security and privacy protection is an important aspect but not a focus of this WG. This WG will consult with [CNCF SIG-Security](https://github.com/cncf/sig-security) for those issues.
 
 
 ## Stakeholders
