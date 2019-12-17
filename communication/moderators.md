@@ -119,7 +119,7 @@ YouTube owners seats: 2
 
 | Name                | Kubernetes Slack ID | Region   | Timezone                                                |
 |---------------------|---------------------|----------|---------------------------------------------------------|
-| Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| *Open*       | *Open*              |                 |                                |
 | Sarah Novotny       | @sarahnovotny       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 ### Primary Moderators
