@@ -52,7 +52,14 @@ The [charter](charter.md) defines the scope and governance of the Cluster Lifecy
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**), Google
+* Lubomir Ivanov (**[@neolit123](https://github.com/neolit123)**), VMware
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Fabrizio Pandini (**[@fabriziopandini](https://github.com/fabriziopandini)**), VMware
 
 ## Emeritus Leads
 
