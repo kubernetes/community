@@ -122,7 +122,7 @@ try to post on discuss.kubernetes.io or if you think you found a bug, please [fi
 
 ### Office Hours
 
-Office hours are held once a month. Please refer to [events/office-hours](../events/office-hours.md)
+Office hours are held once a month. Please refer to [the docs][office-hours]
 to learn more. Join the conversation on slack under [#office-hours].
 
 ### Other
@@ -201,4 +201,4 @@ place!
 [#kubernetes-dev]: https://app.slack.com/client/T09NY5SBT/C09R23FHP
 [#sig-contribex]: https://app.slack.com/client/T09NY5SBT/C1TU9EB9S
 [#office-hours]: https://app.slack.com/client/T09NY5SBT/C6RFQ3T5H
-[office hours]: /events/office-hours.md
+[office-hours]: /events/office-hours.md
