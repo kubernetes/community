@@ -36,6 +36,7 @@ Welcome to Kubernetes!
   - [GitHub workflow](#github-workflow)
   - [Open a Pull Request](#open-a-pull-request)
   - [Code Review](#code-review)
+  - [Contributions best practices](#contributions-best-practices)
   - [Testing](#testing)
   - [Security](#security)
   - [Documentation](#documentation)
@@ -233,6 +234,18 @@ When reviewing PRs from others [The Gentle Art of Patch Review](http://sage.thes
 * Is the contribution polished?
 
 Note: if your pull request isn't getting enough attention, you can use the [#pr-reviews](https://kubernetes.slack.com/messages/pr-reviews) channel on Slack to get help finding reviewers.
+
+## Contributions best practices
+
+- Write clear and meaningful git commit messages.
+- If the PR will *completely* fix a specific issue, include `fixes #123` in the PR body (where 123 is the specific issue number the PR will fix. This will automatically close the issue when the PR is merged.
+- Make sure you don't include `@mentions` or `fixes` keywords in your git commit messages. These should be included in the PR body instead.
+- When you make a PR for small change (such as fixing a typo, style change, or grammar fix), please squash your commits so that we can maintain a cleaner git history.
+- Make sure you include a clear and detailed PR description explaining the reasons for the changes, and ensuring there is sufficient information for the reviewer to understand your PR.
+- Additional Readings : 
+    - [chris.beams.io/posts/git-commit/](https://chris.beams.io/posts/git-commit/)
+    - [github.com/blog/1506-closing-issues-via-pull-requests ](https://github.com/blog/1506-closing-issues-via-pull-requests )
+    - [davidwalsh.name/squash-commits-git ](https://davidwalsh.name/squash-commits-git )
 
 ## Testing
 
