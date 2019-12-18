@@ -201,4 +201,4 @@ place!
 [#kubernetes-dev]: https://app.slack.com/client/T09NY5SBT/C09R23FHP
 [#sig-contribex]: https://app.slack.com/client/T09NY5SBT/C1TU9EB9S
 [#office-hours]: https://app.slack.com/client/T09NY5SBT/C6RFQ3T5H
-[office hours]: /events/office-hours.md
+[office-hours]: /events/office-hours.md
