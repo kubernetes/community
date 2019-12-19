@@ -30,10 +30,3 @@ changes.
 
 Expect reviewers to request that you avoid [common go style
 mistakes](https://github.com/golang/go/wiki/CodeReviewComments) in your PRs.
-
-## Assigned reviews
-
-Maintainers can assign reviews to other maintainers, when appropriate. The
-assignee becomes the shepherd for that PR and is responsible for merging the PR
-once they are satisfied with it or else closing it. The assignee might request
-reviews from non-maintainers.
