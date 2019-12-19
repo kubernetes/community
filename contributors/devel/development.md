@@ -115,10 +115,29 @@ environment. Recent Linux distros should work out-of-the-box.
 macOS ships with outdated BSD-based tools. We recommend installing [macOS GNU
 tools].
 
+### make
+
+Kubernetes local build system requires `make` command to be present in your corresponding development platform.
+
+To install `make` command:
+- OS X
+    + `xcode-select --install` (Following command will install CLI Tools to your local development environment)
+- Linux
+    + `sudo apt-get install build-essential` (Following command will install essential commands like `gcc`, `make` etc.)
+
+### Docker
+
+Kubernetes Development requires some of the verification tests which are ran through Docker. Hence, you will need [Docker](https://docs.docker.com/v17.09/engine/installation/) Pre-Installed on your development environment. 
+
 ### rsync
 
 Kubernetes build system requires `rsync` command present in the development
 platform.
+
+### jq
+
+Kube-apiserver requires the `jq` to be installed to successfully build your Local Kubernetes Deployment. 
+You can see installation guide for `jq` over [here](https://stedolan.github.io/jq/download/).
 
 ### Go
 
