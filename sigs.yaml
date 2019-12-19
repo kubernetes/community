@@ -1552,9 +1552,6 @@ sigs:
       slack: node-problem-detector
     owners:
     - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
-  - name: rktlet
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/rktlet/master/OWNERS
 - dir: sig-pm
   name: PM
   mission_statement: >
