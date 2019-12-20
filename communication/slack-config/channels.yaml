@@ -3,7 +3,6 @@
 
 channels:
   - name: airflow-operator
-  - name: alibaba-cloud
   - name: announcements
   - name: antrea
   - name: api-reviews

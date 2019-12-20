@@ -1,6 +1,8 @@
 channels:
   - name: apiserver-network-proxy
   - name: cloud-provider-extraction
+  - name: provider-alibaba-cloud
+    id: CRX9UN2DN
   - name: provider-aws
     id: C0LRMHZ1T
   - name: provider-azure
