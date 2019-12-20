@@ -26,10 +26,11 @@ This doc explains the process and best practices for submitting a pull request t
   - [4. Comments Matter](#4-comments-matter)
   - [5. Test](#5-test)
   - [6. Squashing and Commit Titles](#6-squashing-and-commit-titles)
-  - [7. KISS, YAGNI, MVP, etc.](#7-kiss-yagni-mvp-etc)
-  - [8. It's OK to Push Back](#8-its-ok-to-push-back)
-  - [9. Common Sense and Courtesy](#9-common-sense-and-courtesy)
-  - [10. Trivial Edits](#10-trivial-edits)
+  - [7. Commit Message Guidelines](#7-commit-message-guidelines)
+  - [8. KISS, YAGNI, MVP, etc.](#7-kiss-yagni-mvp-etc)
+  - [9. It's OK to Push Back](#8-its-ok-to-push-back)
+  - [10. Common Sense and Courtesy](#9-common-sense-and-courtesy)
+  - [11. Trivial Edits](#10-trivial-edits)
 
 # Before You Submit a Pull Request
 
@@ -280,7 +281,7 @@ Nothing is more frustrating than starting a review, only to find that the tests 
 
 If you don't know how to test Feature-X, please ask!  We'll be happy to help you design things for easy testing or to suggest appropriate test cases.
 
-## 6. Squashing and Commit Titles
+## 6. Squashing
 
 Your reviewer has finally sent you feedback on Feature-X.
 
@@ -302,13 +303,28 @@ For more information, see [squash commits](./github-workflow.md#squash-commits).
 
  Don't squash when there are independent changes layered to achieve a single goal. For instance, writing a code munger could be one commit, applying it could be another, and adding a precommit check could be a third. One could argue they should be separate pull requests, but there's really no way to test/review the munger without seeing it applied, and there needs to be a precommit check to ensure the munged output doesn't immediately get out of date.
 
-A commit, as much as possible, should be a single logical change.
+## 7. Commit Message Guidelines
+ 
+- Each commit should have a good title line (< 50 characters) and can include an additional description paragraph in the PR Description describing the change in more detail.
+- Wrap the body of the commit message at 72 characters and use the body to explain **What and Why** is the change and **How** it has been done.
+- It is better if the Pull Request follow the `Semantic PR Commit Guidelines` which is `{Type}: {Subject}`. **Types** can be classified as :
+    + `feat` : A PR concerning with a new feature.
+    + `fix` : A PR concerning with a bug fix.
+    + `improvement` : A PR concerning with an improvement to a current feature.
+    + `docs` : A PR which only make changes to the documentation.
+    + `refactor` : A PR concerning with a code change that neither fixes a bug nor adds a feature.
+    + `test` : A PR which adds missing tests or corrects the existing tests.
+    + `chore` : Other changes which don't modify src or test files and can be regarded as maintenance check-up for the same.
+- Additional Readings :
+    + [Git Commit](https://chris.beams.io/posts/git-commit/)
+    + [Commit Style](https://pythonhosted.org/deis/contributing/standards/#commit-style)
+    + [Conventional Commit Types](https://github.com/commitizen/conventional-commit-types/blob/master/index.json)
 
-## 7. KISS, YAGNI, MVP, etc.
+## 8. KISS, YAGNI, MVP, etc.
 
 Sometimes we need to remind each other of core tenets of software design - Keep It Simple, You Aren't Gonna Need It, Minimum Viable Product, and so on. Adding a feature "because we might need it later" is antithetical to software that ships. Add the things you need NOW and (ideally) leave room for things you might need later - but don't implement them now.
 
-## 8. It's OK to Push Back
+## 9. It's OK to Push Back
 
 Sometimes reviewers make mistakes. It's OK to push back on changes your reviewer requested. If you have a good reason for doing something a certain way, you are absolutely allowed to debate the merits of a requested change. Both the reviewer and reviewee should strive to discuss these issues in a polite and respectful manner.
 
@@ -316,12 +332,12 @@ You might be overruled, but you might also prevail. We're pretty reasonable peop
 
 Another phenomenon of open-source projects (where anyone can comment on any issue) is the dog-pile - your pull request gets so many comments from so many people it becomes hard to follow. In this situation, you can ask the primary reviewer (assignee) whether they want you to fork a new pull request to clear out all the comments. You don't HAVE to fix every issue raised by every person who feels like commenting, but you should answer reasonable comments with an explanation.
 
-## 9. Common Sense and Courtesy
+## 10. Common Sense and Courtesy
 
 No document can take the place of common sense and good taste. Use your best judgment, while you put
 a bit of thought into how your work can be made easier to review. If you do these things your pull requests will get merged with less friction.
 
-## 10. Trivial Edits
+## 11. Trivial Edits
 
 Each incoming Pull Request needs to be reviewed, checked, and then merged.
 
