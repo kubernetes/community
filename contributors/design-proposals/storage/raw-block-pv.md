@@ -33,21 +33,20 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   
   For applications that use block storage natively (like MongoDB) no additional configuration is required as the mount path passed
   to the application provides the device which MongoDB then uses for the storage path in the configuration file (dbpath). Specific
-  tuning for each application to achieve the highest possibly performance is provided as part of its recommended configurations.
+  tuning for each application to achieve the highest possible performance is provided as part of its recommended configurations.
   
-  Specific use cases around improved usage of storage consumption are included in the use cases listed below as follows:
-  * An admin wishes to expose a block volume to be consumed as a block volume for the user  
-  * An admin wishes to expose a block volume to be consumed as a block volume for an administrative function such 
+  Specific use cases around improved storage consumption are:
+  * An admin wishes to expose a block volume to be consumed as a block volume, for the user  
+  * An admin wishes to expose a block volume to be consumed as a block volume, for an administrative function such 
     as bootstrapping 
-  * A user wishes to utilize block storage to fully realize the performance of an application tuned to using block devices
+  * A user wishes to utilize block storage to fully realize the performance of an application tuned for block devices
   * A user wishes to read from a block storage device and write to a filesystem (big data analytics processing)
-  Also use cases include dynamically provisioning and intelligent discovery of existing devices, which this proposal sets the
-  foundation for more fully developing these methods. 
+  Additional use cases include dynamic provisioning and intelligent discovery of existing devices, for which this proposal provides the needed foundation. 
 
  
 # Design Overview
 
-  The proposed design is based on the idea of leveraging well defined concepts for storage in Kubernetes. The consumption and 
+  The proposed design is based on the idea of leveraging well defined concepts of storage in Kubernetes. The consumption and 
   definitions for the block devices will be driven through the PVC and PV definitions. Along with Storage
   Resource definitions, this will provide the admin with a consistent way of managing all storage. 
   The API changes proposed in the following section are minimal with the idea of defining a volumeMode to indicate both the definition
@@ -55,21 +54,21 @@ This document presents a proposal for managing raw block storage in Kubernetes u
   a filesystem on top, the design requires explicit intent for how the volume will be used.
   The additional benefit of explicitly defining how the volume is to be consumed will provide a means for indicating the method
   by which the device should be scrubbed when the claim is deleted, as this method will differ from a raw block device compared to a 
-  filesystem. The ownership and responsibility of defining the retention policy shall be up to the plugin method being utilized and is
+  filesystem. The ownership and responsibility of defining the retention policy shall be up to the plugin being utilized and is
   not covered in this proposal.
   
   Limiting use of the volumeMode to block can be executed through the use of storage resource quotas and storageClasses defined by the 
   administrator.
   
-  To ensure backwards compatibility and a phased transition of this feature, the consensus from the community is to intentionally disable
+  To ensure backwards compatibility and a phased transition to this feature, the consensus from the community is to intentionally disable
   the volumeMode: Block for both in-tree and external provisioners until a suitable implementation for provisioner versioning has been
   accepted and implemented in the community. In addition, in-tree provisioners should be able to gracefully ignore volumeMode API objects
   for plugins that haven't been updated to accept this value.
   
   It is important to note that when a PV is bound, it is either bound as a raw block device or formatted with a filesystem. Therefore, 
   the PVC drives the request and intended usage of the device by specifying the volumeMode as part of the API. This design lends itself
-  to support of dynamic provisioning by also letting the request initiate from the PVC defining the role for the PV. It also
-  allows flexibility in the implementation and storage plugins to determine their support of this feature. Acceptable values for 
+  to support dynamic provisioning by also letting the request initiated from the PVC defining the role for the PV. It also
+  allows flexibility in the implementation and storage plugins to determine their support for this feature. Acceptable values for 
   volumeMode are 'Block' and 'Filesystem'. Where 'Filesystem' is the default value today and not required to be set in the PV/PVC.
   
 # Proposed API Changes
@@ -112,7 +111,7 @@ spec:
 ```
 
 ## Persistent Volume API Changes:
-For static provisioning the admin creates the volume and also is intentional about how the volume should be consumed. For backwards
+For static provisioning the admin creates the volume and also determines how the volume should be consumed. For backward
 compatibility, the absence of volumeMode will default to filesystem which is how volumes work today, which are formatted with a filesystem depending on the plug-in chosen. Recycling will not be a supported reclaim policy as it has been deprecated. The path value in the local PV definition would be overloaded to define the path of the raw block device rather than the filesystem path.
 ```
 kind: PersistentVolume
@@ -295,7 +294,7 @@ spec:
 
 DESCRIPTION: 
 
-A developer wishes to enable their application to use a local raw block device as the volume for the container. The admin has already created PVs that the user will bind to by specifying 'block' as the volume type of their PVC.
+A developer wishes to enable his/her application to use a local raw block device as the volume for the container. The admin has already created PVs that the user will bind to by specifying 'block' as the volume type of their PVC.
 
 BACKGROUND:
 
@@ -497,7 +496,7 @@ spec:
     requests:
       storage: 50Gi
 ```
-* User creates a Pod yaml which will utilize both block and filesystem storage by its containers.
+* User creates a Pod yaml which will utilize both block and filesystem storage for its containers.
 
 ```
 apiVersion: v1
@@ -533,8 +532,8 @@ DESCRIPTION:
 * A user wishes to read data from a read-only raw block device, an example might be a database for analytics processing. 
 
 USER:
-* User creates pod and specifies 'readOnly' as a parameter in the persistent volume claim to indicate they would
-like to be bound to a PV with this setting enabled.
+* User creates pod and specifies 'readOnly' as a parameter in the persistent volume claim to indicate he/she would
+like it to be bound to a PV with this setting enabled.
 
 ```
 apiVersion: v1
@@ -560,14 +559,14 @@ spec:
 
 
 # Container Runtime considerations
-It is important the values that are passed to the container runtimes are valid and support the current implementation of these various runtimes. Listed below are a table of various runtime and the mapping of their values to what is passed from the kubelet.
+It is important the values that are passed to the container runtimes are valid and are supported by the current implementation of these various runtimes. Listed below is a table of various runtimes and the mapping of their values to what is passed from the kubelet.
 
 | runtime engine    | runtime options  | accessMode       |  
 | --------------    |:----------------:| ----------------:|
 | docker/runc/rkt   |  mknod / RWM     | RWO              |
 | docker/runc/rkt   |       R          | ROX              |
 
-The accessModes would be passed as part of the options array and would need validate against the specific runtime engine. 
+The accessModes would be passed as part of the options array and would need to be validated against the specific runtime engine. 
 Since rkt doesn't use the CRI, the config values would need to be passed in the legacy method.
 Note: the container runtime doesn't require a privileged pod to enable the device as RWX (RMW), but still requires privileges to mount as is consistent with the filesystem implementation today.
 
@@ -728,9 +727,9 @@ The usage of pod device map path is;
 
 
 
-* unspecified defaults to 'file/ext4' today for backwards compatibility and in mount_linux.go
+* unspecified defaults to 'file/ext4' today for backwards compatibility in mount_linux.go
 
-# Dynamically provisioning
+# Dynamic provisioning
 
 Using dynamic provisioning, user is able to create block volume via provisioners. Currently,
 we have two types of provisioners, internal provisioner and external provisioner.
@@ -739,19 +738,19 @@ contains `volumeMode` parameter, then the persistent volume claim object is pass
 provisioners. Therefore, in order to create block volume, provisioners need to support
 `volumeMode` and then create persistent volume with `volumeMode`.
 
-If a storage and plugin don't have an ability to create raw block type of volume,
+If storage and plugin don't have an ability to create raw block type of volume,
 then `both internal and external provisioner don't need any update` to support `volumeMode`
 because `volumeMode` in PV and PVC are automatically set to `Filesystem` as a default when
 these volume object are created.
-However, there is a case that use specifies `volumeMode` as `Block` even if both plugin and
+However, there is a case that user specifies `volumeMode` as `Block` even if both plugin and
 provisioner don't support. As a result, PVC will be created, PV will be provisioned
-but both of them will stuck Pending status since `volumeMode` between them don't match.
+but both of them will be stuck in Pending status since `volumeMode` between them don't match.
 For this situation, we will add error propagation into persistent volume controller to make
 it more clear to the user what's wrong.
 
 If admin provides external provisioner to provision both filesystem and block volume,
-admin have to carefully prepare Kubernetes environment for their users because both
-Kubernetes itself and external provisioner have to support block volume functionality.
+admin has to carefully prepare Kubernetes environment for users because both
+Kubernetes itself and external provisioner has to support block volume functionality.
 This means Kubernetes v1.9 or later must be used to provide block volume with external
 provisioner which supports block volume.
 
