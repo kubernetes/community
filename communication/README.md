@@ -175,7 +175,7 @@ place!
 [weekly community meeting]: https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#
 [recordings on YouTube]: https://www.youtube.com/channel/UCvqbFHwN-nwalWPjPUKpvTA
 [community groups]: /governance.md#community-groups
-[these instructions]: /slack-guidelines.md#requesting-a-channel
+[these instructions]: /communication/slack-guidelines.md#requesting-a-channel
 [community management]: /sig-contributor-experience#community-management
 [kubeweekly]: https://kubeweekly.io/
 [the docs]: /events/office-hours.md
