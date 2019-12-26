@@ -36,7 +36,7 @@ Welcome to Kubernetes!
   - [GitHub workflow](#github-workflow)
   - [Open a Pull Request](#open-a-pull-request)
   - [Code Review](#code-review)
-  - [Contributions best practices](#contributions-best-practices)
+  - [Best Practices](#best-practices)
   - [Testing](#testing)
   - [Security](#security)
   - [Documentation](#documentation)
@@ -235,7 +235,7 @@ When reviewing PRs from others [The Gentle Art of Patch Review](http://sage.thes
 
 Note: if your pull request isn't getting enough attention, you can use the [#pr-reviews](https://kubernetes.slack.com/messages/pr-reviews) channel on Slack to get help finding reviewers.
 
-## Contributions best practices
+## Best practices
 
 - Write clear and meaningful git commit messages.
 - If the PR will *completely* fix a specific issue, include `fixes #123` in the PR body (where 123 is the specific issue number the PR will fix. This will automatically close the issue when the PR is merged.
