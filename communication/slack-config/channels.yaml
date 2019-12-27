@@ -105,6 +105,7 @@ channels:
   - name: jp-dev
   - name: jp-events
   - name: jp-users
+  - name: jp-studying-users
   - name: jsonnet
   - name: k14s
   - name: kaniko
