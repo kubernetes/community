@@ -32,7 +32,7 @@ We offer the following tools to aid in finding or troubleshooting flakes
   - http://velodrome.k8s.io/dashboard/db/job-health-release-blocking?orgId=1 - includes flake rate and top flakes for release-blocking jobs for kubernetes/kubernetes
 - [`kind/flake` github query][flake] - open issues or PRs related to flaky jobs or tests for kubernetes/kubernetes
 
-[go.k8s.io/triage]: https//go.k8s.io/triage
+[go.k8s.io/triage]: https://go.k8s.io/triage
 [testgrid.k8s.io]: https://testgrid.k8s.io
 [velodrome.k8s.io]: https://velodrome.k8s.io
 
