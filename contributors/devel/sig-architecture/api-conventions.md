@@ -591,17 +591,17 @@ saved. For more details on how to use Merge Patch, see the RFC.
 detailed explanation of how it works and why it needed to be introduced, see
 [here](/contributors/devel/sig-api-machinery/strategic-merge-patch.md).
 
-#### Defining Patch Strategy
-In the context of strategic merge patch, a set of go markers can be used by API authors to define the merge strategy of collections of fields (lists, maps and structs).
+#### Declaring Patch Strategy
+In the context of [strategic merge patch](/contributors/devel/sig-api-machinery/strategic-merge-patch.md), a set of go markers can be used by API authors to declare the merge strategy of collections of fields (lists, maps and structs).
 
 | Marker | Definition |
 |--------|------------|
-| `//+patchStrategy=merge/replace` |  Defines that the merge strategy will be to: merge elements of the two lists into one (if set to merge), or use the list provided in the patch literally rather than merging (if set to replace) |
-| `// +patchMergeKey=<key-name>` |  Applicable in the context of lists being used as maps/dictionaries, i.e. with each entry in the list seen as a key-value pair, with a specific field considered the key. `patchMergeKey` defines what field should be seen as the key. Combined with `patchStrategy`, this describes what changes should take place on specific elements of a list as part of a patch operation. |
-| `//+listType=atomic/set/map` |  Applicable to objects that are of type list. If set to `atomic`, it defines that a single actor can replace the entire list, but cannot change individual elements of it. If not set to `atomic`, different actors can update individual elements in the list. In that case, the listType can either be `set` (contains scalar elements) or `map` (contains map-like elements). |
-| `//+listMapKeys=<list of keys>` |  Applicable in the context of lists being used as maps/dictionaries. A list of strings, that defines which combination of keys should be used as the identifier of each element.          |
-| `//+mapType=atomic/granular` |  If set to `atomic`, a single actor can replace the map entirely. If set to `granular`, multiple actors can update individual map entries seprately. |
-| `//+structType=atomic/granular` |  If set to `atomic`, a single actor can replace the struct entirely. If set to `granular`, multiple actors can update individual struct fields seprately. |
+| `//+patchStrategy=merge/replace` |  Defines that the merge strategy will be to: merge elements of the two lists into one (if set to merge), or use the list provided in the patch literally rather than merging (if set to replace). Default is `replace`. |
+| `// +patchMergeKey=<key-name>` |  Applicable in the context where lists are used as maps/dictionaries, i.e. where each list entry is a key-value pair. `patchMergeKey` defines which field should be seen as the key. Combined with `patchStrategy`, this describes what changes should take place on specific elements of a list as part of a patch operation. |
+| `//+listType=atomic/set/map` |  Applicable to objects that are of type list. If set to `atomic`, it defines that a single actor can replace the entire list, but cannot change individual elements of it. Unless set to `atomic`, different actors can update individual elements in the list. In that case, the listType can either be `set` (contains scalar elements only) or `map` (contains map-like elements). |
+| `//+listMapKeys=<list of keys>` |  Applicable in the context of lists being used as maps/dictionaries. It's a list of strings, that defines which combination of keys should be used as the identifier of each element.          |
+| `//+mapType=atomic/granular` |  If set to `atomic`, a single actor can replace the map entirely. If set to `granular`, multiple actors can update individual map entries separately. |
+| `//+structType=atomic/granular` |  If set to `atomic`, a single actor can replace the struct entirely. If set to `granular`, multiple actors can update individual struct fields separately. |
 
 
 
