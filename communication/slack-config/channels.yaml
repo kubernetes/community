@@ -150,6 +150,7 @@ channels:
   - name: kubekhan
     archived: true
   - name: kubeless
+  - name: kubemove
   - name: kubeone
   - name: kubepack
   - name: kubestack
