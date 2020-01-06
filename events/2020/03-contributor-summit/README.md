@@ -46,7 +46,7 @@ so make sure you plan travel accordingly.
 | Current Content | Yang Li [@idealhack](https://github.com/idealhack) | | |
 | Unconference | Cody [@thecrudge](https://github.com/thecrudge) | | |
 | New Contributor Workshop 101 | Rael [@raelga](https://github.com/raelga) | Chris Short [@chris-short](https://github.com/chris-short) | Tim Pepper [@tpepper](https://github.com/tpepper) Emeritus |
-| New Contributor Workshop 201 | Alison [@alisondy](https://github.com/alisondy) | | Tim Pepper [@tpepper](https://github.com/tpepper) Emeritus |
+| New Contributor Workshop 201 | Alison [@alisondy](https://github.com/alisondy) | Benjamin Elder [@BenTheElder](https://github.com/BenTheElder) <br /> James Munnelly [@munnerz](https://github.com/munnerz) <br /> Vineeth Pothulapati [@VineethReddy02](https://github.com/VineethReddy02) | Tim Pepper [@tpepper](https://github.com/tpepper) Emeritus |
 | SIG Meet & Greet | TBD | | |
 | Accessibility, Inclusiveness, and Diversity | TBD | | |
 
