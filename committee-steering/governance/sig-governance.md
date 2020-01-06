@@ -8,7 +8,10 @@ In order to standardize Special Interest Group efforts, create maximum transpare
 - Meet regularly, at least for 30 minutes every 3 weeks, except November and December
 - Keep up-to-date meeting notes, linked from the SIG's page in the community repo
 - Record meetings and make them publicly available on a YouTube playlist
-- Report activity in the weekly community meeting at least once every quarter
+- Report activity with the community at least once a quarter via any of the following means:
+  - During the assigned SIG section of the monthly community meeting
+  - As part of a SIG's update during KubeCon + CloudNativeCon
+  - YouTube presentation or mailing list update sent to the kubernetes-dev mailing list
 - Participate in release planning meetings and retrospectives, and burndown meetings, as needed
 - Ensure related work happens in a project-owned github org and repository, with code and tests explicitly owned and supported by the SIG, including issue triage, PR reviews, test-failure response, bug fixes, etc.
 - Use the [forums provided] as the primary means of working, communicating, and collaborating, as opposed to private emails and meetings
