@@ -8,6 +8,9 @@ applicable to a Working Group.
 
 ## Scope
 
+The purpose of Data Protection is to ensure that application and its associated
+data can be restored quickly after any corruption or loss.
+
 Data protection in Kubernetes context typically involves backup and recovery
 of two types of entities:
 * Kubernetes API object resources
