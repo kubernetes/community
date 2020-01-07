@@ -214,10 +214,9 @@ Every object SHOULD have the following metadata in a nested object field called
 * resourceVersion: a string that identifies the internal version of this object
 that can be used by clients to determine when objects have changed. This value
 MUST be treated as opaque by clients and passed unmodified back to the server.
-Clients should not assume that the resource version has meaning across
-namespaces, different kinds of resources, or different servers. (See
-[concurrency control](#concurrency-control-and-consistency), below, for more
-details.)
+Clients should not assume that the resource version has meaning across different
+objects or different servers. (See [concurrency control](#concurrency-control-and-consistency),
+below, for more details.)
 * generation: a sequence number representing a specific generation of the
 desired state. Set by the system and monotonically increasing, per-resource. May
 be compared, such as for RAW and WAW consistency.
@@ -513,7 +512,8 @@ field called "metadata":
 * resourceVersion: a string that identifies the common version of the objects
 returned by in a list. This value MUST be treated as opaque by clients and
 passed unmodified back to the server. A resource version is only valid within a
-single namespace on a single kind of resource.
+single kind of resource. For lists that explictly request items from a single
+namespace, the resource version is only valid within that namespace.
 
 Every simple kind returned by the server, and any simple kind sent to the server
 that must support idempotency or optimistic concurrency should return this
@@ -727,7 +727,12 @@ The only way for a client to know the expected value of resourceVersion is to
 have received it from the server in response to a prior operation, typically a
 GET. This value MUST be treated as opaque by clients and passed unmodified back
 to the server. Clients should not assume that the resource version has meaning
-across namespaces, different kinds of resources, or different servers.
+across different kinds of resources or different servers. Clients should not
+assume that the resource version of an object has meaning with respect to other
+objects. The resource version of a list on the other hand, represents the common
+version of the objects in the list results; however, clients that process the
+objects in the list results one at a time should only consider the individual
+objects' resource versions and ignore the resource version of the list.
 Currently, the value of resourceVersion is set to match etcd's sequencer. You
 could think of it as a logical clock the API server can use to order requests.
 However, we expect the implementation of resourceVersion to change in the
