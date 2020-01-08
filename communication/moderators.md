@@ -137,6 +137,7 @@ Moderators seats: 10
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
 | Naeil Ezzoueidi     | @nzoueidi           | EMEA     | [CST - Central European Time](https://time.is/CET)      |
 | Yang Li             | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
+| Marky Jackson       | @markyjackson       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) | 
 | *Open*              | *Open*              |          |                                                         |
 
 
@@ -208,6 +209,7 @@ Administrators seats: 6
 | Paris Pittman   | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Naeil Ezzoueidi | @nzoueidi           | EMEA     | [CET - Central European Time](https://time.is/CET)      |
 | Yang Li         | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
+| Marky Jackson   | @markyjackson       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 - License and main account controlled by the CNCF
 
