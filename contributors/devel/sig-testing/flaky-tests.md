@@ -34,7 +34,7 @@ We offer the following tools to aid in finding or troubleshooting flakes
 
 [go.k8s.io/triage]: https://go.k8s.io/triage
 [testgrid.k8s.io]: https://testgrid.k8s.io
-[velodrome.k8s.io]: https://velodrome.k8s.io
+[velodrome.k8s.io]: http://velodrome.k8s.io
 
 # GitHub Issues for Known Flakes
 
