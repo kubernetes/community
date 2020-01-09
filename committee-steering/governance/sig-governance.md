@@ -8,12 +8,16 @@ In order to standardize Special Interest Group efforts, create maximum transpare
 - Meet regularly, at least for 30 minutes every 3 weeks, except November and December
 - Keep up-to-date meeting notes, linked from the SIG's page in the community repo
 - Record meetings and make them publicly available on a YouTube playlist
-- Report activity in the weekly community meeting at least once every quarter
+- Report activity with the community via the kubernetes-dev mailing list at least once a quarter. Whichever format the SIG uses should _always_ be reported to the kubernetes-dev mailing list as this is the list the community depends on for SIG updates.  
+  - Each SIG is assigned an update during the monthly community meeting throughout the year. The meeting host will publish the notes to the kubernetes-dev mailing list with the update.  
+  - If a SIG is doing an update during KubeCon + CloudNativeCon, the SIG Chairs should ensure that a link to the recording of the video is sent to the kubernetes-dev mailing list.  
+  - YouTube presentation or mailing list update sent to the kubernetes-dev mailing list.
 - Participate in release planning meetings and retrospectives, and burndown meetings, as needed
 - Ensure related work happens in a project-owned github org and repository, with code and tests explicitly owned and supported by the SIG, including issue triage, PR reviews, test-failure response, bug fixes, etc.
 - Use the [forums provided] as the primary means of working, communicating, and collaborating, as opposed to private emails and meetings
 
 The process for setting up a SIG or Working Group (WG) is listed in the [sig-wg-lifecycle] document.
+
 ## Roles
 
 ### Notes on Roles
