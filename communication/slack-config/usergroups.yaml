@@ -23,6 +23,7 @@ usergroups:
       - nzoueidi
       - paris
       - sarahnovotny
+      - markyjackson-taulia
   - name: zoom-admins
     long_name: Zoom Admins
     description: Zoom Admin group. Ping for a Zoom-specific issue
@@ -35,3 +36,4 @@ usergroups:
       - mrbobbytables
       - nzoueidi
       - paris
+      - markyjackson-taulia
