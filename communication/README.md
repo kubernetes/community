@@ -36,6 +36,16 @@ devoted to the Kubernetes project. Please check the guidelines and any relevant
 chat/conversation history before posting. Spam and sales pitches are not tolerated
 on these platforms.
 
+### Appropriate Content for Community Resources
+
+All communications properties are under the [Kubernetes code of conduct]. 
+Additionally, these resources are for the contributors and users of Kubernetes, commercial usage of these properties is heavily moderated.
+
+Examples of inappropriate content:
+- Posting content of a commercial nature on Slack or the Forums
+- Messaging people individually on a platform with content of a commercial nature
+- Unsolicited pitching of products during a Kubernetes meeting
+
 ## Decisions Are Made Here
 
 The project is very large with a robust community group ecosystem and bubbling up
