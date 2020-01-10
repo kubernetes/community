@@ -85,7 +85,6 @@ Following are some of the path specific questions that have been asked in the pa
 |----------------------------------------------------------------|-----------|----------|---------------------------------------------------------------|
 | Laptop availability for workshop                               | Dropdown  | Yes      | Should be mentioned that workshop can still be attended if laptop is not available and pair with other participants. Options: Yes, No - do not have a laptop, No - have one but cannot install software on it without IT approval |
 | Have you joined the kubernetes slack? If so, what is your handle? | Free Text | No    |                                                               |
-| If you had a speaking slot, what would you like to talk about? | Free Text | No       |                                                               |
 | Are there any areas of Kubernetes you're already interested in contributing to? | Checkbox | No | Options: `API`, `CLI`, `testing`, `docs`, `community`, `release`, etc |
 | Are there any SIG's you are interested in joining?             | Free Text | No       |                                                               |
 | What are you hoping to get out of the contributor summit?      | Free Text | No       |                                                               |
