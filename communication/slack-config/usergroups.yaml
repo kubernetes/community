@@ -19,11 +19,13 @@ usergroups:
       - jbeda
       - jdumars
       - jeefy
+      - markyjackson-taulia
       - mrbobbytables
       - nzoueidi
+      - onlydole
       - paris
       - sarahnovotny
-      - markyjackson-taulia
+
   - name: zoom-admins
     long_name: Zoom Admins
     description: Zoom Admin group. Ping for a Zoom-specific issue
@@ -33,7 +35,8 @@ usergroups:
       - alejandrox1
       - castrojo
       - idealhack
+      - markyjackson-taulia
       - mrbobbytables
       - nzoueidi
+      - onlydole
       - paris
-      - markyjackson-taulia
