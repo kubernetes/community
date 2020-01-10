@@ -55,6 +55,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-docs-maintainers](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) - Documentation maintainers
     - [@kubernetes/sig-docs-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) - Documentation PR reviews
     - [@kubernetes/sig-docs-pt-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) - Portuguese language content
+    - [@kubernetes/sig-docs-uk-owners](https://github.com/orgs/kubernetes/teams/sig-docs-uk-owners) - Ukrainian language content
     - [@kubernetes/sig-docs-zh-owners](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) - Chinese language content
 
 ## Subprojects
