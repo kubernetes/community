@@ -171,6 +171,7 @@ channels:
   - name: kubespray-dev
   - name: kubicorn
   - name: kudo
+  - name: kurl
   - name: kustomize
   - name: kyverno
   - name: leadership-summit
