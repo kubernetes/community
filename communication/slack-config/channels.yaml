@@ -251,6 +251,7 @@ channels:
   - name: ro-users
   - name: ru-users
   - name: scaleway-k8s
+  - name: schemahero
   - name: se-users
   - name: sealed-secrets
   - name: shippable
