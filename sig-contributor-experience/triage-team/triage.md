@@ -14,7 +14,7 @@ Everyone is welcome to help manage issues and PRs, however, the work and respons
 
 ## Work involved
 
-The main work is to keep track of issues and PRs, ping people, add labels and milestone, and discuss the overall status with the SIG leads. If you can not add or can not decide the correct label or milestone, that’s fine, contact leaders of the SIG to do so.
+The main work is to keep track of issues and PRs, ping people, add labels and milestones, and discuss the overall status with the SIG leads. If you can not add or can not decide the correct label or milestone, that’s fine, contact leaders of the SIG to do so.
 
 ### Issues
 
@@ -24,7 +24,7 @@ Validate if the issue is indeed a bug by following these [instructions](https://
 
 #### Determine SIG
 
-In order to determine a correct SIG, charter of the SIG can be helpful. For example, you can determine if an issue belongs to one of the `sig/contributor-experience` [Subprojects](https://git.k8s.io/community/sig-contributor-experience#subprojects) by looking at the [charter](https://git.k8s.io/community/sig-contributor-experience/charter.md).
+In order to determine a correct SIG, the charter of the SIG can be helpful. For example, you can determine if an issue belongs to one of the `sig/contributor-experience` [Subprojects](https://git.k8s.io/community/sig-contributor-experience#subprojects) by looking at the [charter](https://git.k8s.io/community/sig-contributor-experience/charter.md).
 
 An issue can have an incorrect SIG label. If you think an issue does not belong to the labeled SIG, remove the label and provide a reason by adding a comment. For example, provide this response when an issue is incorrectly labeled with the `sig/contributor-experience`:
 
@@ -40,7 +40,7 @@ If you think this is incorrect, please provide a reason and add it back with /si
 
 #### Determine milestone
 
-[Milestone](https://git.k8s.io/community/milestones) should be defined considering the [priority](#determine-priorities). If the priority is `priority/critical-urgent`, the milestone should be the current milestone. If priority is not critical, the milestone can be set to current or future one. Use your experience and reference of related past issues while determining a milestone.
+[Milestone](https://git.k8s.io/community/milestones) should be defined considering the [priority](#determine-priorities). If the priority is `priority/critical-urgent`, the milestone should be the current milestone. If priority is not critical, the milestone can be set to current or a future one. Use your experience and reference of related past issues while determining a milestone.
 
 #### Determine projects
 
@@ -52,7 +52,7 @@ An issue `area/*` label is defined around the [Subprojects](https://git.k8s.io/c
 
 #### Determine priorities
 
-WIP. For now, define priority of an issue by following these generic [instructions](https://git.k8s.io/community/contributors/guide/issue-triage.md#define-priority).
+WIP. For now, define the priority of an issue by following these generic [instructions](https://git.k8s.io/community/contributors/guide/issue-triage.md#define-priority).
 
 #### Determine kind
 
@@ -64,7 +64,7 @@ An issue can be a good candidate for a new contributor to work. Such issues shou
 
 #### Discuss the work
 
-Maintain a list of issues and PRs which seem to be delaying, at risk of not making it in time, labeled with `lifecycle/stale` and `lifecycle/rotten` or in need of attention by the SIG leads or other roles. Discuss this list in the bi-weekly SIG meetings. If needed, also send the list of issues and PRs that aren't getting enough attention to the mailing list biweekly.
+Maintain a list of issues and PRs which seem to be delayed, at risk of not making it in time, labeled with `lifecycle/stale` and `lifecycle/rotten` or in need of attention by the SIG leads or other roles. Discuss this list in the bi-weekly SIG meetings. If needed, also send the list of issues and PRs that aren't getting enough attention to the mailing list biweekly.
 
 ### PRs
 
@@ -72,11 +72,11 @@ TODO - PR specific work.
 
 ## How to Escalate
 
-Whenever you find out that an issue or PR is not active and it needs to be taken care, try the following escalation path.
+Whenever you find out that an issue or PR is not active and it needs to be taken care of, try the following escalation path.
 
 ### Leave a comment in the issue or PR
 
-"This issue hasn't been updated in 3 months. Are you still expecting to complete it in the current milestone?". It's helpful here to @ mention individuals you want an attention from.
+"This issue hasn't been updated in 3 months. Are you still expecting to complete it in the current milestone?". It's helpful here to @ mention individuals you want attention from.
 
 ### Send a message on the SIG slack channel or mailing list
 
