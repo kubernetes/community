@@ -39,12 +39,18 @@ on these platforms.
 ### Appropriate Content for Community Resources
 
 All communications properties are under the [Kubernetes code of conduct]. 
-Additionally, these resources are for the contributors and users of Kubernetes, commercial usage of these properties is heavily moderated.
+Additionally, these resources are for the contributors and users of Kubernetes; commercial usage of these properties is heavily moderated.
+Note that commercial content is allowed, unsolicited commercial content mostly is NOT:
 
 Examples of inappropriate content:
-- Posting content of a commercial nature on Slack or the Forums
-- Messaging people individually on a platform with content of a commercial nature
-- Unsolicited pitching of products during a Kubernetes meeting
+- Posting unsolicited content of a commercial nature on Slack or other community forums
+- Messaging people individually on a platform with content of an unsolicited commercial nature
+- Unsolicited pitching of commercial products during a Kubernetes meeting
+
+Examples of appropriate content:
+- Asking about commercial products in an appropriate channel. For example most clouds had a channel in Slack, asking how to use GKE on the GKE channel or AKS on the Azure channels is fine.
+- "Does anyone have experience with project foo?" is fine
+- Some OSS projects are also hosted on the Kubernetes Slack that also have a commercial offering, these are allowed. 
 
 ## Decisions Are Made Here
 
