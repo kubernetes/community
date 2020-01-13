@@ -841,6 +841,59 @@ When the above conditions are not met, the PV Controller will use FindProvisiona
 to determine the in-tree plugin that can be used for provisioning a volume (as is
 the case today).
 
+Update: 1/13/2020
+
+In Beta we discovered issue: https://github.com/kubernetes/kubernetes/issues/79043
+
+In order to resolve this the design needs to be modified. When migration is "on"
+the Persistent Volume Controller will still set the Storage Provisioner
+annotation `volume.beta.kubernetes.io/storage-provisioner` with the name of the
+migrated CSI driver. However, it will also set an additional annotation
+`volume.beta.kubernetes.io/migrated-to` to the CSI Driver name.
+
+The PV Controller will be modified so that when it does a `syncClaim`,
+`syncVolume`, or `provisionClaim` operation it will check
+`volume.beta.kubernetes.io/storage-provisioner` and
+`pv.kubernetes.io/provisioned-by` annotations respectively to set the correct
+`volume.beta.kubernetes.io/migrated-to` annotation. Doing this on each `sync`
+operation will incur an additional cost of checking the annotation each time we
+process a claim or volume but allows the controller to re-try on error.
+
+Following is an example of the operation done to a PV object with
+`volume.beta.kubernetes.io/storage-provisioner=kubernetes.io/gce-pd`. When the
+PV controller has `CSIMigrationGCE=true` the controller will additionally
+annotate the PV with
+`volume.beta.kubernetes.io/migrated-to=pd.csi.storage.gke.io`. The PV controller
+will also remove `migrated-to` annotations on PV/PVCs with migration OFF to
+support rollback scenarios.
+
+On cluster start-up there is a potential for there to be a race between the PV
+Controller removing the `migrated-to` annotation and the external provisioner
+deleting the volume. This is migitated by relying on idempotency requirements of
+both CSI Drivers and in-tree volume plugins. One component attempting to delete
+a volume already deleted or being deleted should return as a success.
+
+This `migrated-to` annotation will be used by `v1.6.0+` of the CSI External
+provisioner to determine whether a PV or PVC should be operated on by the
+provisioner. The annotation will be set (and removed on rollback) for Kubernetes
+`v1.17.2+`, we will carefully document the fact that rollback with migration on
+may not be successful to a version before `v1.17.2`. The benefit being that PV
+Controller start-up annealing of this annotation will allow the PV Controller to
+stand down and the CSI External Provisioner to pick up a PV that was dynamically
+provisioned before migration was enabled. These newer external provisioners will
+still be compatible with older versions of Kubernetes with migration on even if
+they do not set the `migrated-to` annotation. However, without the `migrated-to`
+annotation a newer provisioner with a Kubernetes cluster `<1.17.2` will not be
+able to delete volumes provisioned before migration until the Kubenetes cluster
+is upgraded to `v1.17.2+`.
+
+We are intentionally not changing the original implementation of "set\[ting\]
+the Storage Provisioner annotation on a PVC with the name of a migrated CSI
+plugin" so that the Kubernetes implementation is backward compatible with older
+versions of the external provisioner. Because the Storage Provisioner annotation
+remains in the CSI Driver, older external provisioners will continue to provision
+and delete those volumes.
+
 ## Testing
 
 ### Migration Shim Testing
