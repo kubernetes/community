@@ -66,6 +66,7 @@ Examples of features which are not currently eligible for conformance tests:
 - optional features, eg: policy enforcement
 - cloud-provider-specific features, eg: GCE monitoring, S3 Bucketing, etc.
 - anything that requires a non-default admission plugin
+- features that are pending deprecation, eg: componentstatus
 
 Conformance tests are intended to be stable and backwards compatible according to 
 the standard API deprecation policies. Therefore any test that relies on specific 
@@ -75,6 +76,8 @@ Examples of tests which are not eligible to conformance:
   about the contents of events, nor their delivery
     - If a test depends on events it is recommended to change the test to 
       use an informer pattern and watch specific resource changes instead.
+    - An exception to this is tests that generates synthetic events themselves 
+      to verify that the API is capable of being exercised
 - anything that checks optional Condition fields, such as Reason or Message, as
   these may change over time (however it is reasonable to verify these fields
   exist or are non-empty)
