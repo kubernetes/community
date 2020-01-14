@@ -21,7 +21,7 @@ of this proposal is:
 
 **Design of client/server container runtime**
 
-The main idea of client/server container runtime is to keep main control logic in kubelet while letting remote runtime only do dedicated actions. An alpha [container runtime API](../../pkg/kubelet/api/v1alpha1/runtime/api.proto) is introduced for integrating new container runtimes. The API is based on [protobuf](https://developers.google.com/protocol-buffers/) and [gRPC](http://www.grpc.io) for a number of benefits:
+The main idea of client/server container runtime is to keep main control logic in kubelet while letting remote runtime only do dedicated actions. An alpha [container runtime API](https://github.com/kubernetes/kubernetes/blob/v1.5.0-alpha.0/pkg/kubelet/api/v1alpha1/runtime/api.proto) is introduced for integrating new container runtimes. The API is based on [protobuf](https://developers.google.com/protocol-buffers/) and [gRPC](http://www.grpc.io) for a number of benefits:
 
 - Perform faster than json
 - Get client bindings for free: gRPC supports ten languages
@@ -30,7 +30,7 @@ The main idea of client/server container runtime is to keep main control logic i
 
 A new container runtime manager `KubeletGenericRuntimeManager` will be introduced to kubelet, which will
 
-- conforms to kubelet's [Runtime](../../pkg/kubelet/container/runtime.go#L58) interface
+- conforms to kubelet's [Runtime](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/container/runtime.go#L58) interface
 - manage Pods and Containers lifecycle according to kubelet policies
 - call remote runtime's API to perform specific pod, container or image operations
 
@@ -109,7 +109,7 @@ Kubelet                  KubeletGenericRuntimeManager      RemoteRuntime
 
 **API definition**
 
-Since we are going to introduce more image formats and want to separate image management from containers and pods, this proposal introduces two services `RuntimeService` and `ImageService`. Both services are defined at [pkg/kubelet/api/v1alpha1/runtime/api.proto](../../pkg/kubelet/api/v1alpha1/runtime/api.proto):
+Since we are going to introduce more image formats and want to separate image management from containers and pods, this proposal introduces two services `RuntimeService` and `ImageService`. Both services are defined at [pkg/kubelet/api/v1alpha1/runtime/api.proto](https://github.com/kubernetes/kubernetes/blob/v1.5.0-alpha.0/pkg/kubelet/api/v1alpha1/runtime/api.proto):
 
 ```proto
 // Runtime service defines the public APIs for remote container runtimes
@@ -162,10 +162,10 @@ service ImageService {
 }
 ```
 
-Note that some types in [pkg/kubelet/api/v1alpha1/runtime/api.proto](../../pkg/kubelet/api/v1alpha1/runtime/api.proto) are already defined at [Container runtime interface/integration](https://github.com/kubernetes/kubernetes/pull/25899).
+Note that some types in [pkg/kubelet/api/v1alpha1/runtime/api.proto](https://github.com/kubernetes/kubernetes/blob/v1.5.0-alpha.0/pkg/kubelet/api/v1alpha1/runtime/api.proto) are already defined at [Container runtime interface/integration](https://github.com/kubernetes/kubernetes/pull/25899).
 We should decide how to integrate the types in [#25899](https://github.com/kubernetes/kubernetes/pull/25899) with gRPC services:
 
-* Auto-generate those types into protobuf by [go2idl](../../cmd/libs/go2idl/)
+* Auto-generate those types into protobuf by [go2idl](https://github.com/kubernetes/kubernetes/tree/v1.5.0-alpha.0/cmd/libs/go2idl)
   - Pros:
     - trace type changes automatically, all type changes in Go will be automatically generated into proto files
   - Cons:
@@ -186,7 +186,7 @@ For better version controlling and fast iterations, this proposal embeds all tho
 
 ## Implementation
 
-Each new runtime should implement the [gRPC](http://www.grpc.io) server based on [pkg/kubelet/api/v1alpha1/runtime/api.proto](../../pkg/kubelet/api/v1alpha1/runtime/api.proto). For version controlling, `KubeletGenericRuntimeManager` will request `RemoteRuntime`'s `Version()` interface with the runtime api version. To keep backward compatibility, the API follows standard [protobuf guide](https://developers.google.com/protocol-buffers/docs/proto) to deprecate or add new interfaces.
+Each new runtime should implement the [gRPC](http://www.grpc.io) server based on [pkg/kubelet/api/v1alpha1/runtime/api.proto](https://github.com/kubernetes/kubernetes/blob/v1.5.0-alpha.0/pkg/kubelet/api/v1alpha1/runtime/api.proto). For version controlling, `KubeletGenericRuntimeManager` will request `RemoteRuntime`'s `Version()` interface with the runtime api version. To keep backward compatibility, the API follows standard [protobuf guide](https://developers.google.com/protocol-buffers/docs/proto) to deprecate or add new interfaces.
 
 A new flag `--container-runtime-endpoint` (overrides `--container-runtime`) will be introduced to kubelet which identifies the unix socket file of the remote runtime service. And new flag `--image-service-endpoint` will be introduced to kubelet which identifies the unix socket file of the image service.
 
