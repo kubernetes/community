@@ -2190,7 +2190,7 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
-    time: "14:00"
+    time: "9:00"
     tz: PT (Pacific Time)
     frequency: every third week
     url: https://zoom.us/j/3832562240
