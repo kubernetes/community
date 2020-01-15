@@ -28,7 +28,7 @@ groups/[SIGs] page.
 
 You can actively or passively participate in one of the following ways:
 - The community groups public meeting(s) listed in the above community groups page
-- Every Thursday at our [weekly community meeting] over [zoom] at [10am US Pacific Time]
+- Every Third Thursday at our [monthly community meeting] over [zoom] at [10am US Pacific Time]
 - Intro sessions at KubeCon/CloudNativeCon live or [recordings on YouTube]
 
 Nevertheless, below find a list of many general channels, groups and meetings
@@ -172,7 +172,7 @@ place!
 [Josh Berkus]: https://github.com/jberkus
 [zoom]: https://zoom.us/my/kubernetescommunity
 [k-dev moderators]: ./moderators.md#kubernetes-dev
-[weekly community meeting]: https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#
+[monthly community meeting]: https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#
 [recordings on YouTube]: https://www.youtube.com/channel/UCvqbFHwN-nwalWPjPUKpvTA
 [community groups]: /governance.md#community-groups
 [these instructions]: /communication/slack-guidelines.md#requesting-a-channel
