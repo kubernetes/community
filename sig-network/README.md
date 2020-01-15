@@ -13,9 +13,15 @@ Covers networking in Kubernetes.
 The [charter](charter.md) defines the scope and governance of the Network Special Interest Group.
 
 ## Meetings
+* Ingress V1 GA Meeting: [Thursdays at 14:00 PT (Pacific Time)]() (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1K5KzrrZdiwvx6iRvgMEj_fcvHOvGRZj_ve2sGdxTZm8/edit).
 * Regular SIG Meeting: [Thursdays at 14:00 PT (Pacific Time)](https://zoom.us/j/361123509) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
+* Service APIs Meeting (APAC Friendly Time): [Thursdays at 16:30 PT (Pacific Time)]() (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:30&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
+* Service APIs Meeting (EMEA Friendly Time): [Thursdays at 10:30 PT (Pacific Time)]() (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
 
 ## Leadership
 
@@ -62,7 +68,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
-### services
+### service-apis
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/service-apis/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
