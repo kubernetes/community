@@ -1448,6 +1448,7 @@ sigs:
     time: "14:00"
     tz: PT (Pacific Time)
     frequency: biweekly
+    url: https://zoom.us/j/289465529
     archive_url: https://docs.google.com/document/d/1K5KzrrZdiwvx6iRvgMEj_fcvHOvGRZj_ve2sGdxTZm8/edit
   - description: Regular SIG Meeting
     day: Thursday
@@ -1462,12 +1463,14 @@ sigs:
     time: "16:30"
     tz: PT (Pacific Time)
     frequency: biweekly
+    url: https://zoom.us/j/441530404
     archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
   - description: Service APIs Meeting (EMEA Friendly Time)
     day: Thursday
     time: "10:30"
     tz: PT (Pacific Time)
     frequency: biweekly
+    url: https://zoom.us/j/140577552
     archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
   contact:
     slack: sig-network
