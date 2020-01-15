@@ -48,7 +48,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-scheduling:
 ### cluster-capacity
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/cluster-capacity/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-capacity/master/OWNERS
 ### descheduler
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/descheduler/master/OWNERS
