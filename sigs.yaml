@@ -1844,7 +1844,7 @@ sigs:
   subprojects:
   - name: cluster-capacity
     owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-capacity/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-capacity/master/OWNERS
   - name: descheduler
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/descheduler/master/OWNERS
