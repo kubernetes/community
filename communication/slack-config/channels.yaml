@@ -342,6 +342,7 @@ channels:
   - name: wg-policy
   - name: wg-resource-mgmt
   - name: wg-security-audit
+  - name: wg-service-binding
   - name: wg-virtual-kubelet
     archived: true
   - name: workshop-chat
