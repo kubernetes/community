@@ -1877,6 +1877,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
   - name: scheduler
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/scheduler-plugins/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
 - dir: sig-service-catalog
