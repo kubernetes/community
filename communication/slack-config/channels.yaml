@@ -254,6 +254,7 @@ channels:
   - name: schemahero
   - name: se-users
   - name: sealed-secrets
+  - name: service-binding
   - name: shippable
   - name: shipper
   - name: shoutouts
@@ -342,7 +343,6 @@ channels:
   - name: wg-policy
   - name: wg-resource-mgmt
   - name: wg-security-audit
-  - name: wg-service-binding
   - name: wg-virtual-kubelet
     archived: true
   - name: workshop-chat
