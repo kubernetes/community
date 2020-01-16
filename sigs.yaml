@@ -1963,12 +1963,12 @@ sigs:
   label: storage
   leadership:
     chairs:
-    - github: childsb
-      name: Bradley Childs
-      company: Red Hat
     - github: saad-ali
       name: Saad Ali
       company: Google
+    emeritus_leads:
+    - github: childsb
+      name: Bradley Childs
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
