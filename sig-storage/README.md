@@ -22,8 +22,11 @@ The [charter](charter.md) defines the scope and governance of the Storage Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Bradley Childs (**[@childsb](https://github.com/childsb)**), Red Hat
 * Saad Ali (**[@saad-ali](https://github.com/saad-ali)**), Google
+
+## Emeritus Leads
+
+* Bradley Childs (**[@childsb](https://github.com/childsb)**)
 
 ## Contact
 - Slack: [#sig-storage](https://kubernetes.slack.com/messages/sig-storage)
