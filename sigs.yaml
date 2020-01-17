@@ -1070,9 +1070,9 @@ sigs:
     - github: Phillels
       name: Elsie Phillips
       company: Red Hat
-    - github: parispittman
-      name: Paris Pittman
-      company: Google
+    - github: mrbobbytables
+      name: Bob Killen
+      company: University of Michigan
     tech_leads:
     - github: cblecker
       name: Christoph Blecker
@@ -1083,6 +1083,8 @@ sigs:
     emeritus_leads:
     - github: grodrigues3
       name: Garrett Rodrigues
+    - github: parispittman
+      name: Paris Pittman
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday
@@ -1096,18 +1098,14 @@ sigs:
     slack: sig-contribex
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
     teams:
-    - name: sig-contributor-experience-bugs
-      description: Bug Triage and Troubleshooting
-    - name: sig-contributor-experience-feature-requests
-      description: Feature Requests
-    - name: sig-contributor-experience-misc-use-only-as-a-last-resort
+    - name: sig-contributor-experience
       description: General Discussion
+    - name: sig-contributor-experience-apac-coordinators
+      description: APAC Coordinator Team
+    - name: sig-contributor-experience-leads
+      description: Chairs and Technical Leads
     - name: sig-contributor-experience-pr-reviews
       description: PR Reviews
-    - name: sig-contributor-experience-proposals
-      description: Design Proposals
-    - name: sig-contributor-experience-test-failures
-      description: Test Failures and Triage
   subprojects:
   - name: community
     description: Owns and manages overall community repo, including community group
