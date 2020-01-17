@@ -97,6 +97,7 @@ channels:
   - name: in-events
   - name: in-users
   - name: ingress-nginx
+  - name: inspektor-gadget
   - name: it-events
   - name: it-users
   - name: java
