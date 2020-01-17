@@ -187,6 +187,7 @@ channels:
     archived: true
   - name: linode
   - name: litmus
+  - name: lokomotive
   - name: malaysia-users
   - name: malta-users
   - name: meet-our-contributors
