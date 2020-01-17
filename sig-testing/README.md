@@ -79,7 +79,6 @@ Miscellaneous tools and configuration to run the testing infrastructure for the 
 ### testing-commons
 The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
 - **Contact:**
   - Slack: [#testing-commons](https://kubernetes.slack.com/messages/testing-commons)

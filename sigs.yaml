@@ -2133,7 +2133,6 @@ sigs:
     contact:
       slack: testing-commons
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
     meetings:
     - description: Testing Commons
