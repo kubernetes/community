@@ -218,6 +218,7 @@ channels:
   - name: mysql-operator
   - name: nais
   - name: navigator
+    archived: true
   - name: ncw-staff
   - name: nl-users
   - name: node-problem-detector
