@@ -591,32 +591,22 @@ saved. For more details on how to use Merge Patch, see the RFC.
 detailed explanation of how it works and why it needed to be introduced, see
 [here](/contributors/devel/sig-api-machinery/strategic-merge-patch.md).
 
-#### Declaring Patch Strategy
-In the context of [strategic merge patch](/contributors/devel/sig-api-machinery/strategic-merge-patch.md), a set of go markers can be used by API authors to declare the patch strategy of collections of fields (lists, maps and structs).
+#### Declaring Patch Strategy and Object Topology
+In the context of [strategic merge patch](/contributors/devel/sig-api-machinery/strategic-merge-patch.md), a set of go markers can be used by API authors to declare the patch strategy of lists, maps and structs (`//+patchStrategy` and `//+patchMergeKey`). Work to move the `apply` functionality to the control plane ([KEP](https://github.com/kubernetes/enhancements/blob/master/keps/sig-api-machinery/0006-apply.md)) has also introduced markers to describe the topology of lists, maps and structs (`//+listType`, `//+listMapKeys`, `//+mapType`, `//+structType`).
 
 | Marker | Definition |
 |--------|------------|
-| `//+patchStrategy=merge/replace` |  Defines that the merge strategy will be to: merge elements of the two lists into one (if set to merge), or use the list provided in the patch literally rather than merging (if set to replace). Default is `replace`. |
+| `//+patchStrategy=merge` |  Defines that the merge strategy will be to merge elements of the two lists into one. |
+| `//+patchStrategy=replace` (default)|  Defines that the merge strategy will be touse the list provided in the patch literally rather than merging. |
 | `// +patchMergeKey=<key-name>` |  Applicable in the context where lists are used as maps/dictionaries, i.e. where each list entry is a key-value pair. `patchMergeKey` defines which field should be seen as the key. Combined with `patchStrategy`, this describes what changes should take place on specific elements of a list as part of a patch operation. |
-| `//+listType=atomic/set/map` |  Applicable to objects that are of type list. If set to `atomic`, it defines that a single actor can replace the entire list, but cannot change individual elements of it. Unless set to `atomic`, different actors can update individual elements in the list. In that case, the listType can either be `set` (contains scalar elements only) or `map` (contains map-like elements). |
-| `//+listMapKeys=<list of keys>` |  Applicable in the context of lists being used as maps/dictionaries. It's a list of strings, that defines which combination of keys should be used as the identifier of each element.          |
-| `//+mapType=atomic/granular` |  If set to `atomic`, a single actor can only replace the map entirely. If set to `granular`, multiple actors can update individual map entries separately. |
-| `//+structType=atomic/granular` |  If set to `atomic`, a single actor can only replace the struct entirely. If set to `granular`, multiple actors can update individual struct fields separately. |
-
-##### Considerations on updates to patch strategies/topologies, and server-side apply
-
-A newer version of an API may decide to redefine the patch strategy or topology for a list, map, or struct. This section lists some scenarios and expected behaviours.
-
-* A `listType` can only be updated from `atomic` to `set` if the list elements are scalars. Similarly, `listType` updates from `atomic` to `map` will only succeed if the list items are key-value pairs, and a `listMapKeys` marker is added to define the list of keys that uniquely identify a list entry.
-* When updating `listType` from `set` to `atomic`, the next actor (e.g. `kubectl`) to apply the list will entirely replace it. The operation will not give out conflicts, even if the actor has't previously issued requests against this field.
-* When using a Kubernetes API version that does not support setting list, map and struct topologies (1.15 and before): lists, maps and structs are considered atomic. When upgrading to an API version that supports declaring topology for these fields (starting at 1.16):
-  * if `listType` is set to `set` or `map`
-  * if `listType` is set to `atomic`, `apply` operations using server-side apply will result in conflicts, unless they leave the field values unchanged.
-* Updates from specifying topologies to _not_ specifying them, will be equivalent to the topologies being set to `atomic`.
-* Updates between scalar and nested types are allowed, but are risky. If such a path must be followed, it's best to test outside a production system, and configure to `atomic` as a middle step.
-  * From `set` to `map`: while new objects can be created without problems following the updated topology, existing objects can no longer be changed.
-  * From `map` to `set`: there's high risk of losing or corrupting data of existing objects. Just reconfiguring `listType` without reapplying objects will empty the contents of existing objects.
-* Updating `listMapKeys` for a `listType=map` will succeed as long as the spec of the existing objects is valid by both key validations; the original and the update. For example, with an original configuration of `listMapKeys=port,protocol` and an updated configuration of `listMapKeys=name,version`, list entries of an existing object must have unique, not omitted combinations of both `port,protocol` and `name,version`; otherwise the object can't be updated.
+| `//+listType=atomic/set/map` |  Applicable to objects that are of type list. A single actor can replace the entire list, but cannot change individual elements of it. Unless set to `atomic`, different actors can update individual elements in the list. In that case, the listType can either be `set` (contains scalar elements only) or `map` (contains map-like elements). |
+| `//+listType=set` |  Applicable to objects that are of type list, and the elements are scalar. Different actors can update individual elements in the list.  |
+| `//+listType=map` |  Applicable to objects that are of type list, and elements are map-like, i.e. lists that are used as dictionaries. Different actors can update individual elements in the list. |
+| `//+listMapKeys=<list of keys>` |  Applicable in the context where `listType=map`. `listMapKeys` a list of strings, that defines which combination of keys should be used as the identifier of each element. |
+| `//+mapType=atomic` |  A single actor can only replace the map entirely. |
+| `//+mapType=granular` (default) | Multiple actors can update individual map entries separately. |
+| `//+structType=atomic` |  A single actor can only replace the struct entirely. |
+| `//+structType=granular` (default) |  Multiple actors can update individual struct fields separately. |
 
 ## Idempotency
 
