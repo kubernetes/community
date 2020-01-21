@@ -273,7 +273,7 @@ The `Burstable` cgroup sandbox CPU share allocation is dynamic based
 on the set of pods currently scheduled to the node.  
 
 ```
-ROOT/burstable/cpu.shares = max(sum(Burstable pods cpu requests, 2)
+ROOT/burstable/cpu.shares = max(sum(Burstable pods cpu requests), 2)
 ```
 
 The Burstable cgroup sandbox is updated dynamically in the exit
