@@ -41,6 +41,9 @@ for file in $(ls ${CRT_DIR}/sigs.yaml ${CRT_DIR}/sig-*/README.md ${CRT_DIR}/wg-*
   real=${file#$CRT_DIR/}
   if ! diff -q ${file} ${WORKING_DIR}/${real} &>/dev/null; then
     echo "${file} does not match ${WORKING_DIR}/${real}";
+    if [[ ${file} == *"OWNERS_ALIASES"* ]]; then
+      echo "make sure you run ./hack/update-owners-aliases.sh"
+    fi
     mismatches=$((mismatches+1))
   fi;
 done

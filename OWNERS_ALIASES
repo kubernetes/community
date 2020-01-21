@@ -1,8 +1,29 @@
 aliases:
+  committee-code-of-conduct:
+    - AevaOnline
+    - Bradamant3
+    - carolynvs
+    - jdumars
+    - tashimi
+  committee-product-security:
+    - cjcullen
+    - joelsmith
+    - jonpulsifer
+    - liggitt
+    - lukehinds
+    - philips
+    - tallclair
+  committee-steering:
+    - cblecker
+    - derekwaynecarr
+    - dims
+    - nikhita
+    - parispittman
+    - spiffxp
+    - timothysc
   sig-api-machinery-leads:
     - deads2k
     - fedebongio
-    - deads2k
     - lavalamp
   sig-apps-leads:
     - janetkuo
@@ -14,31 +35,29 @@ aliases:
     - dims
     - johnbelamaric
   sig-auth-leads:
-    - enj
-    - mikedanese
-    - tallclair
     - deads2k
+    - enj
     - liggitt
     - mikedanese
+    - tallclair
   sig-autoscaling-leads:
     - mwielgus
   sig-cli-leads:
-    - seans3
-    - soltysh
     - pwittrock
+    - seans3
     - soltysh
   sig-cloud-provider-leads:
     - andrewsykim
     - cheftako
   sig-cluster-lifecycle-leads:
+    - fabriziopandini
     - justinsb
     - neolit123
     - timothysc
-    - fabriziopandini
   sig-contributor-experience-leads:
     - Phillels
-    - mrbobbytables
     - cblecker
+    - mrbobbytables
     - nikhita
   sig-docs-leads:
     - Bradamant3
@@ -94,9 +113,16 @@ aliases:
     - vllry
   sig-windows-leads:
     - PatrickLang
-    - michmike
     - benmoss
     - ddebroy
+    - michmike
+  ug-big-data-leads:
+    - erikerlandson
+    - foxish
+    - liyinan926
+  ug-vmware-users-leads:
+    - cantbewong
+    - mylesagray
   wg-apply-leads:
     - lavalamp
   wg-component-standard-leads:
@@ -142,35 +168,6 @@ aliases:
     - cji
     - jaybeale
     - joelsmith
-  ug-big-data-leads:
-    - erikerlandson
-    - foxish
-    - liyinan926
-  ug-vmware-users-leads:
-    - cantbewong
-    - mylesagray
-  committee-code-of-conduct:
-    - AevaOnline
-    - Bradamant3
-    - carolynvs
-    - jdumars
-    - tashimi
-  committee-product-security:
-    - cjcullen
-    - joelsmith
-    - jonpulsifer
-    - liggitt
-    - lukehinds
-    - philips
-    - tallclair
-  committee-steering:
-    - cblecker
-    - derekwaynecarr
-    - dims
-    - nikhita
-    - parispittman
-    - spiffxp
-    - timothysc
 ## BEGIN CUSTOM CONTENT
   provider-aws:
     - d-nishi
@@ -178,8 +175,8 @@ aliases:
     - kris-nova
   provider-azure:
     - craiglpeters
-    - justaugustus
     - feiskyer
+    - justaugustus
     - khenidak
   provider-gcp:
     - abgworrall

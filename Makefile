@@ -10,6 +10,7 @@ reset-docs:
 
 generate:
 	go run ./generator/app.go
+	./hack/update-owners-aliases.sh
 
 generate-dockerized:
 	docker run --rm -e WHAT -e GO111MODULE -e GOPROXY -v $(shell pwd):/go/src/app:Z $(IMAGE_NAME) make -C /go/src/app generate
