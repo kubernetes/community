@@ -23,12 +23,13 @@ The [charter](charter.md) defines the scope and governance of the Scheduling Spe
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), IBM
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
-* Klaus Ma (**[@k82cn](https://github.com/k82cn)**), Huawei
 
 ## Emeritus Leads
 
 * Bobby (Babak) Salamat (**[@bsalamat](https://github.com/bsalamat)**)
+* Klaus Ma (**[@k82cn](https://github.com/k82cn)**)
 
 ## Contact
 - Slack: [#sig-scheduling](https://kubernetes.slack.com/messages/sig-scheduling)
