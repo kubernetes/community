@@ -994,7 +994,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   cs.k8s.io -- Search all repos in seconds
         *   Can _regex_ search across all Kubernetes repos and orgs
         *   Automatically filters out certain types of files, but that can be configured
-    *   Check out the [contributor cheatsheet](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet.md) for other shortcuts (PRs accepted!)
+    *   Check out the [contributor cheatsheet](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet/README.md) for other shortcuts (PRs accepted!)
 *   [ 0:00 ] **SIG Updates**
     *   SIG Leads, check out this set of [recommended topics to cover](https://github.com/kubernetes/community/blob/master/events/community-meeting.md#sig-updates) during your update
     *   [Slide template if you need it](https://docs.google.com/presentation/d/1-nTvKCiqu9UvFYUeM6p6RIqHS5-H-u3_x-V4xj_eIWo/edit#slide=id.g401c104a3c_0_0)
@@ -1203,7 +1203,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
             *   **Code Freeze** is just 2 weeks away !
             *   If you need to enhancement adjusted, please work with the Release team
             *   Ensure 1.13 PRs are uptodate on labels (sig, kind, priority, milestone)
-            *   **_Tide will start enforcing [Code slush merge label requirements](https://github.com/kubernetes/community/blob/master/contributors/devel/release.md#tldr) _**
+            *   **_Tide will start enforcing [Code slush merge label requirements](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-release/release.md#tldr) _**
         *   **CI Signal**
             *   [This week report](https://groups.google.com/forum/#!topic/kubernetes-dev/_7aSN1agv_4)
             *   Kudos to SIG** Autoscaling** and** Cluster-Lifecycle **for closing out some long standing failing tests ([69444](https://github.com/kubernetes/kubernetes/issues/69444), [70058](https://github.com/kubernetes/kubernetes/issues/70058)) !
@@ -1841,7 +1841,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   Can also run on private Slack instances
 *   [ 0:00 ]** Release Updates**
     *   Current Release Development Cycle  [Tim Pepper ~ 1.12 Release lead]
-        *   Still in Code Freeze.  See [here](https://github.com/kubernetes/community/blob/master/contributors/devel/release.md#tldr) for TLDR what do I do to get a merge.
+        *   Still in Code Freeze.  See [here](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-release/release.md#tldr) for TLDR what do I do to get a merge.
         *   Beta 2			-  Sept. 11
         *   RC			-  Sept. 18
         *   Release target 	- ** Sept. 25: AT RISK**
@@ -1911,7 +1911,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   [Google Slides](https://docs.google.com/presentation/d/1KSqGj3AwpFDKdRLk678zSXkdTvmjzut6scZhSwLr0gw/edit?usp=sharing)
 *   [ 0:00 ]** Release Updates**
     *   Current Release Development Cycle  [Tim Pepper ~ 1.12 Release lead]
-        *   Code Freeze arrived this week.  See [here](https://github.com/kubernetes/community/blob/master/contributors/devel/release.md#tldr) for TLDR what do I do to get a merge
+        *   Code Freeze arrived this week.  See [here](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-release/release.md#tldr) for TLDR what do I do to get a merge
         *   Release target Sept. 25
         *   Release at risk currently due to poor CI Signal ([sig-release-1.12-all](https://k8s-testgrid.appspot.com/sig-release-1.12-all) & [sig-release-1.12-blocking](https://k8s-testgrid.appspot.com/sig-release-1.12-blocking) & [sig-release-master-blocking](https://k8s-testgrid.appspot.com/sig-release-master-blocking) & [sig-release-master-upgrade](https://k8s-testgrid.appspot.com/sig-release-master-upgrade)).  Considering kicking out all GKE blocking tests.  Also significant GCE issues.  Blurs the signal when the hosting is unstable.
         *   Tide...looking to move to it on Monday. 
@@ -1921,7 +1921,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 *   **Moving from Submit Queue to Tide** [spiffxp]
     *   Tide is used on the [majority of our repos](https://github.com/kubernetes/test-infra/issues/6227) now, kubernetes/kubernetes is the only repo using submit-queue.  We plan on changing that next week.
     *   Stop talking SIG Beard, just show me the docs because...
-        *   [I just want my PR to merge](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/pr-authors.md) ([using whatever labels the release team tells me to](https://github.com/kubernetes/community/blob/master/contributors/devel/release.md#tldr))
+        *   [I just want my PR to merge](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/pr-authors.md) ([using whatever labels the release team tells me to](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-release/release.md#tldr))
         *   [I just want my repo added to tide](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/config.md)
     *   Ways that tide differs from the submit queue
         *   Tide uses GitHub queries to select PR's into "tide pools", runs as many in a batch as it can ("tide comes in"), and merges them ("tide goes out")

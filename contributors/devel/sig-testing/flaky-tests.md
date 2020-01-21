@@ -5,30 +5,88 @@ all tests are green, and we have a number of different CI systems running the
 tests in various combinations, even a small percentage of flakes results in a
 lot of pain for people waiting for their PRs to merge.
 
-Therefore, it's very important that we write tests defensively. Situations that
-"almost never happen" happen with some regularity when run thousands of times in
-resource-constrained environments. Since flakes can often be quite hard to
-reproduce while still being common enough to block merges occasionally, it's
-additionally important that the test logs be useful for narrowing down exactly
-what caused the failure.
+Therefore, it's important we take flakes seriously. We should avoid flakes by
+writing our tests defensively. When flakes are identified, we should prioritize
+addressing them, either by fixing them or quarantining them off the critical
+path.
 
-Note that flakes can occur in unit tests, integration tests, or end-to-end
-tests, but probably occur most commonly in end-to-end tests.
+# Avoiding Flakes
 
-## Hunting Flakes
+Write tests defensively. Remember that "almost never" happens all the time when
+tests are run thousands of times in a CI environment. Tests need to be tolerant
+of other tests running concurrently, resource contention, and things taking
+longer than expected.
 
-You may notice lots of your PRs or ones you watch are having a common
-pre-submit failure, but less frequent issues that are still of concern take
-more analysis over time.  There are metrics recorded and viewable in:
-- [TestGrid](https://k8s-testgrid.appspot.com/presubmits-kubernetes-blocking#Summary)
-- [Velodrome](http://velodrome.k8s.io/dashboard/db/bigquery-metrics?orgId=1)
+There is a balance to be had here. Don't log too much, but don't log too little.
+Don't assume things will succeed after a fixed delay, but don't wait forever.
 
-It is worth noting tests are going to fail in presubmit a lot due
-to unbuildable code, but that wont happen as much on the same commit unless
-there's a true issue in the code or a broader problem like a dep failed to
-pull in.
+- Ensure the test functions in parallel with other tests
+  - Be specific enough to ensure a test isn't thrown off by other tests' assets
+    - https://github.com/kubernetes/kubernetes/pull/85849 - eg: ensure resource name and namespace match
+    - https://github.com/kubernetes/kubernetes/pull/85967 - eg: tolerate errors for non k8s.io APIs
+    - https://github.com/kubernetes/kubernetes/pull/85619 - eg: tolerate multiple storage plugins
+- Ensure the test functions in a resource constrained environment
+  - Only ask for the resources you need
+    - https://github.com/kubernetes/kubernetes/pull/84975 - eg: drop memory constraints for test cases that only need cpu
+  - Don't use overly tight deadlines (but not overly broad either, non-[Slow] tests timeout after 5min)
+    - https://github.com/kubernetes/kubernetes/pull/85847 - eg: poll for `wait.ForeverTestTimeout` instead of 10s
+    - https://github.com/kubernetes/kubernetes/pull/84238 - eg: poll for 2min instead of 1min
+    - mark tests as [Slow] if they are unable to pass within 5min
+  - Do not expect actions to happen instantaneously or after a fixed delay
+  - Prefer informers and wait loops
+- Ensure the test provides sufficient context in logs for forensic debugging
+  - Explain what the test is doing, eg:
+    - "creating a foo with invalid configuration"
+    - "patching the foo to have a bar"
+  - Explain what specific check failed, and how, eg:
+    - "failed to create resource foo in namespace bar because of err"
+    - "expected all items to be deleted, but items foo, bar, and baz remain"
+  - Explain why a polling loop is failing, eg: 
+    - "expected 3 widgets, found 2, will retry"
+    - "expected pod to be in state foo, currently in state bar, will retry"
 
-## Filing issues for flaky tests
+# Quarantining Flakes
+
+- When quarantining a presubmit test, ensure an issue exists in the current
+  release milestone assigned to the owning SIG. The issue should be labeled
+  `priority/critical-urgent`, `lifecycle/frozen`, and `kind/flake`. The
+  expectation is for the owning SIG to resolve the flakes and reintroduce the
+  test, or determine the tested functionality is covered via another method
+  and delete the test in question.
+- Quarantine a single test case by adding `[Flaky]` to the test name in question,
+  most CI jobs exclude these tests. This makes the most sense for flakes that
+  are merge-blocking and taking too long to troubleshoot, or occurring across
+  multiple jobs.    - eg: https://github.com/kubernetes/kubernetes/pull/83792
+  - eg: https://github.com/kubernetes/kubernetes/pull/86327
+- Quarantine an entire set of tests by adding `[Feature:Foo]` to the test(s) in
+  question. This will require creating jobs that focus specifically on this
+  feature. The majority of release-blocking and merge-blocking suites avoid
+  these jobs unless they're proven to be non-flaky.
+
+# Hunting Flakes
+
+We offer the following tools to aid in finding or troubleshooting flakes
+
+- [flakes-latest.json](http://storage.googleapis.com/k8s-metrics/flakes-latest.json)
+  - shows the top 10 flakes over the past week for all PR jobs
+- [go.k8s.io/triage] - an interactive test failure report providing filtering and drill-down by job name, test name, failure text for failures in the last two weeks
+  - https://storage.googleapis.com/k8s-gubernator/triage/index.html?pr=1&job=pull-kubernetes-e2e-gce%24 - all failures that happened in the `pull-kubernetes-e2e-gce` job
+  - https://storage.googleapis.com/k8s-gubernator/triage/index.html?text=timed%20out - all failures containing the text `timed out`
+  - https://storage.googleapis.com/k8s-gubernator/triage/index.html?test=%5C%5Bsig-apps%5C%5D - all failures that happened in tests with `[sig-apps]` in their name
+- [testgrid.k8s.io] - display test results in a grid for visual identififcation of flakes
+  - https://testgrid.k8s.io/presubmits-kubernetes-blocking - all merge-blocking jobs
+  - https://testgrid.k8s.io/presubmits-kubernetes-blocking#pull-kubernetes-e2e-gce&exclude-filter-by-regex=BeforeSuite&sort-by-flakiness= - results for the pull-kubernetes-e2e-gce job sorted by flakiness
+  - https://testgrid.k8s.io/sig-release-master-informing#gce-cos-master-default&sort-by-flakiness=&width=10 - results for the equivalent CI job
+- [velodrome.k8s.io] - dashboards driven by the results of queries run against test results using bigquery
+  - http://velodrome.k8s.io/dashboard/db/job-health-merge-blocking?orgId=1 - includes flake rate and top flakes for merge-blocking jobs for kubernetes/kubernetes
+  - http://velodrome.k8s.io/dashboard/db/job-health-release-blocking?orgId=1 - includes flake rate and top flakes for release-blocking jobs for kubernetes/kubernetes
+- [`kind/flake` github query][flake] - open issues or PRs related to flaky jobs or tests for kubernetes/kubernetes
+
+[go.k8s.io/triage]: https://go.k8s.io/triage
+[testgrid.k8s.io]: https://testgrid.k8s.io
+[velodrome.k8s.io]: http://velodrome.k8s.io
+
+# GitHub Issues for Known Flakes
 
 Because flakes may be rare, it's very important that all relevant logs be
 discoverable from the issue.
@@ -36,24 +94,18 @@ discoverable from the issue.
 1. Search for the test name. If you find an open issue and you're 90% sure the
    flake is exactly the same, add a comment instead of making a new issue.
 2. If you make a new issue, you should title it with the test name, prefixed by
-   "e2e/unit/integration flake:" (whichever is appropriate)
+   "[Flaky test]"
 3. Reference any old issues you found in step one. Also, make a comment in the
    old issue referencing your new issue, because people monitoring only their
    email do not see the backlinks github adds. Alternatively, tag the person or
    people who most recently worked on it.
 4. Paste, in block quotes, the entire log of the individual failing test, not
    just the failure line.
-5. Link to durable storage with the rest of the logs. This means (for all the
-   tests that Google runs) the GCS link is mandatory! The Jenkins test result
-   link is nice but strictly optional: not only does it expire more quickly,
-   it's not accessible to non-Googlers.
-
-## Finding failed flaky test cases
+5. Link to spyglass to provide access to all durable artifacts and logs (eg: https://prow.k8s.io/view/gcs/kubernetes-jenkins/logs/ci-kubernetes-e2e-gci-gce-flaky/1204178407886163970)
 
 Find flaky tests issues on GitHub under the [kind/flake issue label][flake].
-There are significant numbers of flaky tests reported on a regular basis and P2
-flakes are under-investigated. Fixing flakes is a quick way to gain expertise
-and community goodwill.
+There are significant numbers of flaky tests reported on a regular basis. Fixing
+flakes is a quick way to gain expertise and community goodwill.
 
 [flake]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Akind%2Fflake
 
@@ -62,8 +114,8 @@ and community goodwill.
 Note that we won't randomly assign these issues to you unless you've opted in or
 you're part of a group that has opted in. We are more than happy to accept help
 from anyone in fixing these, but due to the severity of the problem when merges
-are blocked, we need reasonably quick turn-around time on test flakes. Therefore
-we have the following guidelines:
+are blocked, we need reasonably quick turn-around time on merge-blocking or
+release-blocking flakes. Therefore we have the following guidelines:
 
 1. If a flaky test is assigned to you, it's more important than anything else
    you're doing unless you can get a special dispensation (in which case it will
@@ -88,6 +140,9 @@ we have the following guidelines:
 6. If a flake has been open, could not be reproduced, and has not manifested in
    3 months, it is reasonable to close the flake issue with a note saying
    why.
+7. If you are unable to deflake the test, consider adding `[Flaky]` to the test
+   name, which will result in the test being quarantined to only those jobs that
+   explicitly run flakes (eg: https://testgrid.k8s.io/google-gce#gci-gce-flaky)
 
 # Reproducing unit test flakes
 

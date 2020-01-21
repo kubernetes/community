@@ -6,7 +6,7 @@ Most users will deploy a combination of applications they build themselves, also
 
 In the case of the latter, users sometimes have the choice of using hosted SaaS products that are entirely managed by the service provider and are therefore opaque, also known as **_blackbox_** *services*. However, they often run open-source components themselves, and must configure, deploy, scale, secure, monitor, update, and otherwise manage the lifecycles of these **_whitebox_** *COTS applications*.
 
-This document proposes a unified method of managing both bespoke and off-the-shelf applications declaratively using the same tools and application operator workflow, while leveraging developer-friendly CLIs and UIs, streamlining common tasks, and avoiding common pitfalls. The approach is based on observations of several dozen configuration projects and hundreds of configured applications within Google and in the Kubernetes ecosystem, as well as quantitative analysis of Borg configurations and work on the Kubernetes [system architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture.md), [API](/contributors/devel/sig-architecture/api-conventions.md), and command-line tool ([kubectl](https://github.com/kubernetes/community/wiki/Roadmap:-kubectl)).
+This document proposes a unified method of managing both bespoke and off-the-shelf applications declaratively using the same tools and application operator workflow, while leveraging developer-friendly CLIs and UIs, streamlining common tasks, and avoiding common pitfalls. The approach is based on observations of several dozen configuration projects and hundreds of configured applications within Google and in the Kubernetes ecosystem, as well as quantitative analysis of Borg configurations and work on the Kubernetes [system architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/architecture.md), [API](/contributors/devel/sig-architecture/api-conventions.md), and command-line tool ([kubectl](https://github.com/kubernetes/community/wiki/Roadmap:-kubectl)).
 
 The central idea is that a toolbox of composable configuration tools should manipulate configuration data in the form of declarative API resource specifications, which serve as a [declarative data model](https://docs.google.com/document/d/1RmHXdLhNbyOWPW_AtnnowaRfGejw-qlKQIuLKQWlwzs/edit#), not express configuration as code or some other representation that is restrictive, non-standard, and/or difficult to manipulate.
 
@@ -139,7 +139,7 @@ A non-exhaustive list of tools built by the Kubernetes community (see [spreadshe
 * [Fabric8 client](https://github.com/fabric8io/kubernetes-client)
 * [Kubegen](https://github.com/errordeveloper/kubegen)
 * [kenv](https://github.com/thisendout/kenv)
-* [Ansible](https://docs.ansible.com/ansible/kubernetes_module.html)
+* [Ansible](https://docs.ansible.com/ansible/latest/modules/k8s_module.html)
 * [Puppet](https://forge.puppet.com/garethr/kubernetes/readme)
 * [KPM](https://github.com/coreos/kpm)
 * [Nulecule](https://github.com/projectatomic/nulecule)

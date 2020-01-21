@@ -41,5 +41,21 @@ Unconference
 * Move whiteboard during lull to caffeine area
 * Move about to encourage voting
 * Hard stop for voting should be 8:30 AM PST
-* Make sure to communicate the timing
+* Make sure to communicate the timing. This means having schd updated to reflect session, speakers name and time
+* Get contact information for session speakers
+* Send out a calendar invite for each session speaker so they are aware
+
+
+## Notes for the Unconference 
+* Make sure to introduce yourself
+* Make sure the session speaker introduces themselves
+* If there is not a recording of the session, make sure you have a note taker. Use the following [note template](/community/events/2019/11-contributor-summit/unconference-notes/unconference-notes-template.md)
+* Make sure the note taker knows where to submit a PR. Example is 2019 NA [summit](/community/events/2019/11-contributor-summit/unconference-notes/)
+* Make sure to capture in the notes things like actions, KEP's and PR's
+* Make sure to give a 10 minute warning toward the end of the session so action items can be noted
+* Make sure to ask ask those attending if anyone has not had a chance to ask a questions (be respectful)
+* Make this inclusive 
+* Make sure you end on time
+* Above all else, make sure the conversation is productive and adhering to the code of conduct
+
 

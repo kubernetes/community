@@ -1,0 +1,6 @@
+approvers:
+- sig-contributor-experience-leads # Replace when NA summit leads are decided
+
+labels:
+- area/contributor-summit
+- area/na-summit

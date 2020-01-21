@@ -25,6 +25,13 @@ The [charter](charter.md) defines the scope and governance of the API Machinery 
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
+* Federico Bongiovanni (**[@fedebongio](https://github.com/fedebongio)**), Google
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
 * Daniel Smith (**[@lavalamp](https://github.com/lavalamp)**), Google
 
 ## Contact

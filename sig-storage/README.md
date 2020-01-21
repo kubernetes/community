@@ -22,8 +22,11 @@ The [charter](charter.md) defines the scope and governance of the Storage Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Bradley Childs (**[@childsb](https://github.com/childsb)**), Red Hat
 * Saad Ali (**[@saad-ali](https://github.com/saad-ali)**), Google
+
+## Emeritus Leads
+
+* Bradley Childs (**[@childsb](https://github.com/childsb)**)
 
 ## Contact
 - Slack: [#sig-storage](https://kubernetes.slack.com/messages/sig-storage)
@@ -93,7 +96,7 @@ The Kubernetes Storage Special-Interest-Group (SIG) is a working group within th
 ### Meeting
 We hold a public meeting every two weeks, on Thursdays at 9 AM (PT).
 * Agenda and any notes from each meeting are captured in [this document](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing).
-* Contact saadali@google.com to be added to the calendar invite.
+* Copy the meeting invite from the [Shared SIG Storage Calendar](https://calendar.google.com/calendar/embed?src=vvvo48r6cprccii1lsava6p2uc%40group.calendar.google.com).
 * Recordings of past meetings: https://www.youtube.com/playlist?list=PLb1_clREIGYVaqvKaUsVyXxjfcSQDBnmB
 
 ### Contributing

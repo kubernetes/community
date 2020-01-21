@@ -13,7 +13,7 @@ Ensures that the Kubernetes ecosystem is evolving in a way that is neutral to al
 The [charter](CHARTER.md) defines the scope and governance of the Cloud Provider Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 1:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=1:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3dXLcYbRKCbpPCN-8CDFAB).
 
@@ -66,6 +66,10 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/alibaba-cloud-csi-driver/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/cloud-provider-alibaba-cloud/master/OWNERS
+- **Meetings:**
+  - Regular Alibaba Cloud Subproject Meeting: [Tuesdays at 12:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly 2020 start date: Jan. 7th). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=UTC).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1x7E2Brzx8rAEI4IIsfOZuZUBIf-J4NTIGuDaKb8z_sM/edit).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PLWpmsLfcyyD7HAhlLTuwmI9KWuoiaN9nO).
 ### provider-aws
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/master/OWNERS
@@ -83,7 +87,8 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/cloud-provider-azure/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/blobfuse-csi-driver/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-azure/master/OWNERS
 - **Meetings:**
   - Azure Subproject Meeting (First Monday): [Mondays at 14:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).

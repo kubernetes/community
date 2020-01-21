@@ -17,9 +17,20 @@ restrictions:
     channels:
       - "^sig-release$"
       - "^release-"
+    usergroups:
+      - "^release-"
+  - path: "sig-network/*.yaml"
+    channels:
+      - "^sig-network-.*$"
   - path: "sig-storage/*.yaml"
     channels:
       - "^sig-storage$"
       - "^csi$"
       - "^csi-"
+  - path: "sig-cloud-provider/*.yaml"
+    channels:
+      - "^sig-cloud-provider$"
+      - "^cloud-provider-extraction$"
+      - "^provider-"
+      - "^apiserver-network-proxy$"
   - path: "**/*" # prevent any other file from containing anything

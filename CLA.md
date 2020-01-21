@@ -75,8 +75,8 @@ Once you have this, the CLA authorizer bot will authorize your PRs.
 
 If you've changed employers and still contribute to Kubernetes, your affiliation
 needs to be updated. The Cloud Native Computing Foundation uses [gitdm](https://github.com/cncf/gitdm)
-to track who is contributing and from where. Create a pull request to the gitdm
-repository with a change to [developers_affiliations.txt](https://github.com/cncf/gitdm/blob/master/developers_affiliations.txt).
+to track who is contributing and from where. Create a pull request on the [gitdm](https://github.com/cncf/gitdm)
+repository with a change to the corresponding developer affiliation text file.
 Your entry should look similar to this:
 
 ```

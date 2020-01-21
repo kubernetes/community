@@ -23,11 +23,12 @@ The [charter](charter.md) defines the scope and governance of the Cluster Lifecy
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 * Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ys-DOR5UsgbMEeciuG0HOgDQc8kZsaWIWJeKJ1-UfbY/edit).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1fQNlqsDkvEggWFi51GVxOglL2P1Bvo2JhZlMhm2d-Co/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 * Cluster Addons meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit).
 * Image Builder office hours: [Wednesdays at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1Pf4QlxwvE4viqyQ7X0EbspY9f-uXNVP7zTTcSVq-Yjs/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 * Kubespray Office Hours: [Wednesdays at 08:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit).
@@ -51,7 +52,14 @@ The [charter](charter.md) defines the scope and governance of the Cluster Lifecy
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**), Google
+* Lubomir Ivanov (**[@neolit123](https://github.com/neolit123)**), VMware
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Fabrizio Pandini (**[@fabriziopandini](https://github.com/fabriziopandini)**), VMware
 
 ## Emeritus Leads
 
@@ -71,7 +79,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-cluster-lifecycle:
 ### bootkube
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/bootkube/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/bootkube/master/OWNERS
 - **Contact:**
   - Slack: [#bootkube](https://kubernetes.slack.com/messages/bootkube)
 ### cluster-addons
@@ -102,6 +110,9 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### cluster-api-provider-gcp
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
+### cluster-api-provider-ibmcloud
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
 ### cluster-api-provider-openstack
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS

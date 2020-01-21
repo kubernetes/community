@@ -270,3 +270,19 @@ It is useful as a way to:
   - collection of jobs
   - each dashboard is represented as a button
   - some dashboards collect jobs/tests in the domain of a specific SIG (named after and owned by those SIGs), and dashboards to monitor project wide health (owned by SIG-release)
+
+## PR Process
+
+All new PRs for tests should attempt to follow these steps in order to help
+enable a smooth review process:
+
+1. The problem statement should clearly describe the intended purpose of the
+test and why it is needed.
+
+2. Get some agreement on how to design your test from the relevant SIG.
+
+3. Create the PR.
+
+4. Raise awareness of your PR to respective communities (eg. via mailing lists,
+Slack channels, Github mentions).
+

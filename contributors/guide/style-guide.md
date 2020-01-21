@@ -410,7 +410,7 @@ external appearance.
     ```markdown
     This file has moved to https://git.k8s.io/community/contributors/guide/README.md.
 
-    This file is a placeholder to preserve links.  Please remove after 2019-03-10 or the release of kubernetes 1.10, whichever comes first.
+    This file is a placeholder to preserve links.  Please remove after 2019-03-10 or the release of Kubernetes 1.10, whichever comes first.
     ```
 
 

@@ -1,6 +1,8 @@
 aliases:
   sig-api-machinery-leads:
     - deads2k
+    - fedebongio
+    - deads2k
     - lavalamp
   sig-apps-leads:
     - janetkuo
@@ -30,10 +32,12 @@ aliases:
     - cheftako
   sig-cluster-lifecycle-leads:
     - justinsb
+    - neolit123
     - timothysc
+    - fabriziopandini
   sig-contributor-experience-leads:
     - Phillels
-    - parispittman
+    - mrbobbytables
     - cblecker
     - nikhita
   sig-docs-leads:
@@ -63,6 +67,7 @@ aliases:
     - justaugustus
     - tpepper
   sig-scalability-leads:
+    - mm4tt
     - shyamjvs
     - wojtek-t
   sig-scheduling-leads:
@@ -72,13 +77,11 @@ aliases:
     - jberkhahn
     - mszostok
   sig-storage-leads:
-    - childsb
     - saad-ali
   sig-testing-leads:
     - fejta
     - spiffxp
     - stevekuznetsov
-    - timothysc
   sig-ui-leads:
     - danielromlein
     - floreks
@@ -100,12 +103,16 @@ aliases:
     - mtaufen
     - stealthybox
     - sttts
+  wg-data-protection-leads:
+    - xing-yang
+    - yuxiangqian
   wg-iot-edge-leads:
     - cantbewong
     - cindyxing
     - dejanb
     - ptone
   wg-k8s-infra-leads:
+    - bartsmykla
     - dims
     - spiffxp
   wg-lts-leads:
@@ -146,14 +153,14 @@ aliases:
     - AevaOnline
     - Bradamant3
     - carolynvs
-    - eparis
     - jdumars
-    - parispittman
+    - tashimi
   committee-product-security:
     - cjcullen
     - joelsmith
     - jonpulsifer
     - liggitt
+    - lukehinds
     - philips
     - tallclair
   committee-steering:

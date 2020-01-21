@@ -22,7 +22,13 @@ The [charter](charter.md) defines the scope and governance of the Scalability Sp
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Mateusz Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
 * Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), AWS
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
 
 ## Contact

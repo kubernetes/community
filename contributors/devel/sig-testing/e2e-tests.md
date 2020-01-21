@@ -120,12 +120,6 @@ GINKGO_PARALLEL=y kubetest --test --test_args="--ginkgo.skip=\[Serial\] --delete
 #
 # e.g.:
 kubetest --provider=aws --build --up --test --down
-
-# -ctl can be used to quickly call kubectl against your e2e cluster. Useful for
-# cleaning up after a failed test or viewing logs.
-# kubectl output is default on, you can use --verbose-commands=false to suppress output.
-kubetest -ctl='get events'
-kubetest -ctl='delete pod foobar'
 ```
 
 The tests are built into a single binary which can be used to deploy a

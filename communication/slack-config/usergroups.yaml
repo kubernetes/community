@@ -1,23 +1,9 @@
-# This file contains a list of all Slack usergroups that exist.
+# This file contains a top-level list of Slack User Groups.
+# SIG-specific User Groups may be defined within a SIG's subdirectory
+#
+# e.g., @release-managers is defined in sig-release/usergroups.yaml
 
 usergroups:
-  - name: release-managers
-    long_name: Release Managers
-    description: Release Managers. Ping for questions on branch cuts and building/packaging Kubernetes.
-    channels:
-      - release-management
-      - sig-release
-    members:
-      - aleksandra-malinowska
-      - bubblemelon
-      - calebamiles
-      - feiskyer
-      - hoegaarden
-      - idealhack
-      - justaugustus
-      - listx
-      - sumitranr
-      - tpepper
   - name: test-infra-oncall
     external: true
   - name: youtube-admins
@@ -26,22 +12,31 @@ usergroups:
     channels:
       - sig-contribex
     members:
-      - jeefy
-      - sarahnovotny
-      - paris
-      - castrojo
-      - mrbobbytables
       - alejandrox1
-      - jdumars
-      - jbeda
+      - castrojo
+      - idealhack
       - idvoretskyi
+      - jbeda
+      - jdumars
+      - jeefy
+      - markyjackson-taulia
+      - mrbobbytables
+      - nzoueidi
+      - onlydole
+      - paris
+      - sarahnovotny
+
   - name: zoom-admins
     long_name: Zoom Admins
     description: Zoom Admin group. Ping for a Zoom-specific issue
     channels:
       - sig-contribex
     members:
-      - paris
-      - castrojo
-      - mrbobbytables
       - alejandrox1
+      - castrojo
+      - idealhack
+      - markyjackson-taulia
+      - mrbobbytables
+      - nzoueidi
+      - onlydole
+      - paris

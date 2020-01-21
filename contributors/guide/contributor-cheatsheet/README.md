@@ -332,12 +332,13 @@ remotes.
 #### Keeping Your Fork in Sync
 
 Fetch all the changes from `upstream` and _"rebase"_ them on your local `master`
-branch. This will sync your local repo with the `upstream` project.
+branch. This will sync your local repo with the `upstream` project. Push the local changes to your `remote master`.
 
 ```
 git fetch upstream
 git checkout master
 git rebase upstream/master
+git push
 ```
 
 You should do this minimally before creating a new branch to work on your

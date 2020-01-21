@@ -5,6 +5,16 @@ the kubernetes/kubernetes repository.
 A common use case for this task is backporting PRs from master to release 
 branches.
 
+-   [Prerequisites](#prerequisites)
+-   [What Kind of PRs are Good for Cherry-picks](#what-kind-of-prs-are-good-for-cherry-picks)
+-   [Initiate a Cherry-pick](#initiate-a-cherry-pick)
+-   [Cherry-pick Review](#cherry-pick-review)
+-   [Searching for Cherry-picks](#searching-for-cherry-picks)
+-   [Troubleshooting Cherry-picks](#troubleshooting-cherry-picks)
+-   [Cherry-picks for unsupported releases](#cherry-picks-for-unsupported-releases)
+
+---
+
 ## Prerequisites
  * [Contributor License Agreement](http://git.k8s.io/community/CLA.md) is
    considered implicit for all code within cherry-pick pull requests,
@@ -18,6 +28,47 @@ branches.
  * Have `hub` installed, which is most easily installed via `go get
    github.com/github/hub` assuming you have a standard golang development
    environment.
+
+
+## What Kind of PRs are Good for Cherry-Picks
+
+Compared to the normal master branch's merge volume across time,
+the release branches see one or two orders of magnitude less PRs.
+This is because there is an order or two of magnitude higher scrutiny.
+Again the emphasis is on critical bug fixes, eg:
+ * Loss of data
+ * Memory corruption
+ * Panic, crash, hang
+ * Security
+
+If you are proposing a cherry-pick and it is not a clear and obvious
+critical bug fix, please reconsider.  If upon reflection you wish to
+continue, bolster your case by supplementing your PR with, eg:
+
+ * A GitHub issue detailing the problem
+
+ * Scope of the change
+
+ * Risks of adding a change
+
+ * Risks of associated regression
+
+ * Testing performed, test cases added
+
+ * Key stakeholder SIG reviewers/approvers attesting to their confidence in the
+   change being a required backport
+
+ * If the change is in cloud-provider-specific platform code (which is in the
+   process of being moved out of core Kubernetes), describe the customer impact,
+   how the issue escaped initial testing, remediation taken to prevent similar
+   future escapes, and why the change cannot be carried in your downstream
+   fork of the Kubernetes project branches.  It is critical that our full
+   community is actively engaged on enhancements in the project.  If a
+   released feature was not enabled on a particular provider's platform, this
+   is a community miss that needs to be resolved in the master branch for
+   subsequent releases.  Such enabling will not be backported to the patch
+   release branches.
+
 
 ## Initiate a Cherry-pick
  * Run the [cherry-pick 
@@ -91,43 +142,6 @@ pull requests on the master branch in that they:
 
    * For prior branches, check the [patch release schedule](https://git.k8s.io/sig-release/releases/patch-releases.md), which includes contact information for the patch release team.
 
-Compared to the normal master branch's merge volume across time,
-the release branches see one or two orders of magnitude less PRs.
-This is because there is an order or two of magnitude higher scrutiny.
-Again the emphasis is on critical bug fixes, eg:
- * Loss of data
- * Memory corruption
- * Panic, crash, hang
- * Security
-
-If you are proposing a cherry-pick and it is not a clear and obvious
-critical bug fix, please reconsider.  If upon reflection you wish to
-continue, bolster your case by supplementing your PR with, eg:
-
- * A GitHub issue detailing the problem
-
- * Scope of the change
-
- * Risks of adding a change
-
- * Risks of associated regression
-
- * Testing performed, test cases added
-
- * Key stakeholder SIG reviewers/approvers attesting to their confidence in the
-   change being a required backport
-
- * If the change is in cloud-provider-specific platform code (which is in the
-   process of being moved out of core Kubernetes), describe the customer impact,
-   how the issue escaped initial testing, remediation taken to prevent similar
-   future escapes, and why the change cannot be carried in your downstream
-   fork of the Kubernetes project branches.  It is critical that our full
-   community is actively engaged on enhancements in the project.  If a
-   released feature was not enabled on a particular provider's platform, this
-   is a community miss that needs to be resolved in the master branch for
-   subsequent releases.  Such enabling will not be backported to the patch
-   release branches.
-
 ## Searching for Cherry-picks
 
 - [A sample search on kubernetes/kubernetes pull requests that are labeled as `cherry-pick-approved`](https://github.com/kubernetes/kubernetes/pulls?q=is%3Aopen+is%3Apr+label%3Acherry-pick-approved)
@@ -145,3 +159,23 @@ In that case, you will need to manually fix conflicts.
 - The cherry-pick PR includes code that does not pass CI tests.
 In such a case you will have to fetch the auto-generated branch from your fork, amend the problematic commit and force push to the auto-generated branch.
 Alternatively, you can create a new PR, which is noisier.
+
+## Cherry-picks for unsupported releases
+
+The release team only supports & patches `n-3` releases (`n` being the latest release of Kubernetes). In January of 2019 the community discovered a regression, that was introduced in a post-release patch, but was currently no longer supported.
+
+As discussed in a sig-release meeting on 2019-01-15, a fix was backported to the non supported version.
+
+Reference PR: [#72860](https://github.com/kubernetes/kubernetes/pull/72860#issuecomment-454072746)
+
+The specific criteria driving the decision was:
+
+- CI was still available for the version
+- The regression was introduced as a patch (and not part of the official release)
+- The issue being fixed is of sufficient **[severity & impact](#what-kind-of-prs-are-good-for-cherry-picks)**
+- The fix is well understood and contained (doesn’t introduce risk of additional regressions)
+
+A note about the specific case in [#72860](https://github.com/kubernetes/kubernetes/pull/72860#issuecomment-454072746):
+
+- The patch was exceedingly tiny and very unlikely to introduce new problems
+- Luckily, it was caught shortly after the release was supposed to be unsupported

@@ -1,0 +1,21 @@
+channels:
+  - name: apiserver-network-proxy
+  - name: cloud-provider-extraction
+  - name: provider-alibaba-cloud
+    id: CRX9UN2DN
+  - name: provider-aws
+    id: C0LRMHZ1T
+  - name: provider-azure
+    id: C5HJXTT9Q
+  - name: provider-centurylink
+    id: C0P8MQUM9
+  - name: provider-gcp
+    id: C6WB33KNJ
+  - name: provider-ibmcloud
+    id: C90BWDWCE
+  - name: provider-openstack
+    id: C0LSA3T7C
+  - name: provider-vsphere
+    id: C9PGCDKV5
+  - name: sig-cloud-provider
+    id: C718BPBQ8

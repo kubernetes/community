@@ -25,7 +25,10 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Erick Fejta (**[@fejta](https://github.com/fejta)**), Google
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
-* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
+
+## Emeritus Leads
+
+* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**)
 
 ## Contact
 - Slack: [#sig-testing](https://kubernetes.slack.com/messages/sig-testing)
@@ -76,7 +79,6 @@ Miscellaneous tools and configuration to run the testing infrastructure for the 
 ### testing-commons
 The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/testing_frameworks/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
 - **Contact:**
   - Slack: [#testing-commons](https://kubernetes.slack.com/messages/testing-commons)

@@ -31,7 +31,7 @@ There are couple caveats to the thresholds we are presenting below:
 1. In majority of cases, thresholds are NOT hard limits - crossing
    the limit results in degraded performance and doesn't mean cluster
    immediately fails over.
-1. **Many of the tresholds (for cluster scope) are given for the largest
+1. **Many of the thresholds (for cluster scope) are given for the largest
    possible cluster. For smaller clusters, the limits are proportionally
    lower.**
 1. The thresholds may differ (hopefully be non-decreasing) across Kubernetes

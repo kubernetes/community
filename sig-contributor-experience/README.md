@@ -23,7 +23,7 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), Red Hat
-* Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google
+* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), University of Michigan
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -35,18 +35,17 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Emeritus Leads
 
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**)
+* Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
 
 ## Contact
 - Slack: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcontributor-experience)
 - GitHub Teams:
-    - [@kubernetes/sig-contributor-experience-bugs](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-bugs) - Bug Triage and Troubleshooting
-    - [@kubernetes/sig-contributor-experience-feature-requests](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-feature-requests) - Feature Requests
-    - [@kubernetes/sig-contributor-experience-misc-use-only-as-a-last-resort](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-misc-use-only-as-a-last-resort) - General Discussion
+    - [@kubernetes/sig-contributor-experience](https://github.com/orgs/kubernetes/teams/sig-contributor-experience) - General Discussion
+    - [@kubernetes/sig-contributor-experience-apac-coordinators](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-apac-coordinators) - APAC Coordinator Team
+    - [@kubernetes/sig-contributor-experience-leads](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-leads) - Chairs and Technical Leads
     - [@kubernetes/sig-contributor-experience-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-pr-reviews) - PR Reviews
-    - [@kubernetes/sig-contributor-experience-proposals](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-proposals) - Design Proposals
-    - [@kubernetes/sig-contributor-experience-test-failures](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-test-failures) - Test Failures and Triage
 
 ## Subprojects
 
