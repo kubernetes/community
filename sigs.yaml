@@ -2529,12 +2529,9 @@ workinggroups:
   label: machine-learning
   leadership:
     chairs:
-    - github: ConnorDoyle
-      name: Connor Doyle
-      company: Intel
-    - github: balajismaniam
-      name: Balaji Subramaniam
-      company: Intel
+    - github: k82cn
+      name: Klaus Ma
+      company: Huawei
     - github: kow3ns
       name: Kenneth Owens
       company: Google
