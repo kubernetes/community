@@ -1818,15 +1818,17 @@ sigs:
   label: scheduling
   leadership:
     chairs:
+    - github: Huang-Wei
+      name: Wei Huang
+      company: IBM
     - github: ahg-g
       name: Abdullah Gharaibeh
       company: Google
-    - github: k82cn
-      name: Klaus Ma
-      company: Huawei
     emeritus_leads:
     - github: bsalamat
       name: Bobby (Babak) Salamat
+    - github: k82cn
+      name: Klaus Ma
   meetings:
   - description: 10AM PT Meeting
     day: Thursday
