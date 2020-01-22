@@ -13,7 +13,7 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
 The [charter](charter.md) defines the scope and governance of the Docs Special Interest Group.
 
 ## Meetings
-* APAC SIG Meeting: [Wednesdays at 02:00 UTC](https://docs.google.com/document/d/1zg6By77SGg90EVUrhDIhopjZlSDg2jCebU-Ks9cYx0w/edit) (monthly - fourth Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=02:00&tz=UTC).
+* APAC SIG Meeting: [Wednesdays at 02:00 UTC](https://docs.google.com/document/d/1zg6By77SGg90EVUrhDIhopjZlSDg2jCebU-Ks9cYx0w/edit) (monthly - Wednesday, after the fourth Tuesday, every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=02:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ds87eRiNZeXwRBEbFr6Z7ukjbTow5RQcNZLaSvWWQsE/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 * Korean Team Meeting: [Thursdays at 13:00 UTC](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=UTC).
