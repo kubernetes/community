@@ -599,10 +599,10 @@ In the context of [strategic merge patch](/contributors/devel/sig-api-machinery/
 | `//+patchStrategy=merge` |  Defines that the merge strategy will be to merge elements of the two lists into one. |
 | `//+patchStrategy=replace` (default)|  Defines that the merge strategy will be touse the list provided in the patch literally rather than merging. |
 | `// +patchMergeKey=<key-name>` |  Applicable in the context where lists are used as maps/dictionaries, i.e. where each list entry is a key-value pair. `patchMergeKey` defines which field should be seen as the key. Combined with `patchStrategy`, this describes what changes should take place on specific elements of a list as part of a patch operation. |
-| `//+listType=atomic/set/map` |  Applicable to objects that are of type list. A single actor can replace the entire list, but cannot change individual elements of it. Unless set to `atomic`, different actors can update individual elements in the list. In that case, the listType can either be `set` (contains scalar elements only) or `map` (contains map-like elements). |
-| `//+listType=set` |  Applicable to objects that are of type list, and the elements are scalar. Different actors can update individual elements in the list.  |
+| `//+listType=atomic` |  Applicable to objects that are of type list. A single actor owns and can replace the entire list, but cannot change individual elements of it. |
+| `//+listType=set` |  Applicable to objects that are of type list, and the elements are unique and scalar. Different actors can update individual elements in the list. |
 | `//+listType=map` |  Applicable to objects that are of type list, and elements are map-like, i.e. lists that are used as dictionaries. Different actors can update individual elements in the list. |
-| `//+listMapKeys=<list of keys>` |  Applicable in the context where `listType=map`. `listMapKeys` a list of strings, that defines which combination of keys should be used as the identifier of each element. |
+| `//+listMapKeys=<list of keys>` |  Applicable in the context where `listType=map`. `listMapKeys` is a list of strings, that defines which combination of keys should be used as the identifier of each element. Combinations of `listMapKeys` must be unique. Values of keys may be of any scalar type. |
 | `//+mapType=atomic` |  A single actor can only replace the map entirely. |
 | `//+mapType=granular` (default) | Multiple actors can update individual map entries separately. |
 | `//+structType=atomic` |  A single actor can only replace the struct entirely. |
