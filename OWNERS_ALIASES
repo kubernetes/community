@@ -2,7 +2,6 @@ aliases:
   sig-api-machinery-leads:
     - deads2k
     - fedebongio
-    - deads2k
     - lavalamp
   sig-apps-leads:
     - janetkuo
@@ -14,31 +13,29 @@ aliases:
     - dims
     - johnbelamaric
   sig-auth-leads:
-    - enj
-    - mikedanese
-    - tallclair
     - deads2k
+    - enj
     - liggitt
     - mikedanese
+    - tallclair
   sig-autoscaling-leads:
     - mwielgus
   sig-cli-leads:
-    - seans3
-    - soltysh
     - pwittrock
+    - seans3
     - soltysh
   sig-cloud-provider-leads:
     - andrewsykim
     - cheftako
   sig-cluster-lifecycle-leads:
+    - fabriziopandini
     - justinsb
     - neolit123
     - timothysc
-    - fabriziopandini
   sig-contributor-experience-leads:
     - Phillels
-    - mrbobbytables
     - cblecker
+    - mrbobbytables
     - nikhita
   sig-docs-leads:
     - Bradamant3
@@ -94,9 +91,9 @@ aliases:
     - vllry
   sig-windows-leads:
     - PatrickLang
-    - michmike
     - benmoss
     - ddebroy
+    - michmike
   wg-apply-leads:
     - lavalamp
   wg-component-standard-leads:
@@ -146,8 +143,10 @@ aliases:
     - foxish
     - liyinan926
   ug-vmware-users-leads:
+    - brysonshepherd
     - cantbewong
     - mylesagray
+    - phenixblue
   committee-code-of-conduct:
     - AevaOnline
     - Bradamant3
