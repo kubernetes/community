@@ -1,17 +1,21 @@
+<!-- omit in toc -->
 # YouTube Channel Guidelines
 
 YouTube serves as primary means of distribution for recorded Kubernetes
 community content including Zoom recordings, official project Workshops and
 Contributor Summit sessions.
 
-- [Code of Conduct](#Code-of-Conduct)
-- [Admins](#Admins)
+- [Code of Conduct](#code-of-conduct)
+- [Admins](#admins)
 - [Meeting Playlists](#meeting-playlists)
-  - [Uploading Guidelines for Collaborators](#Uploading-Guidelines-for-Collaborators)
-- [Admin Responsibilities](#Admin-Responsibilities)
-  - [Moderator Expectations and Guidelines](#Moderator-Expectations-and-Guidelines)
-  - [Trimming and Editing Recordings](#Trimming-and-Editing-Recordings)
-  - [Streaming Events](#Streaming-Events)
+  - [Uploading Guidelines for Collaborators](#uploading-guidelines-for-collaborators)
+- [Admin Responsibilities](#admin-responsibilities)
+  - [Moderator Expectations and Guidelines](#moderator-expectations-and-guidelines)
+  - [Trimming and Editing Recordings](#trimming-and-editing-recordings)
+  - [Automation](#automation)
+  - [Descriptions & Playlists](#descriptions--playlists)
+  - [Thumbnails](#thumbnails)
+  - [Streaming Events](#streaming-events)
 
 ## Code of Conduct
 
