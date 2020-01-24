@@ -149,14 +149,17 @@ checked so we can edit before it goes live.
 - Test that it works
 - Enjoy  
 
-The following SIGs and groups are currently running splain.io:  
-- ContribEx
-- PM
-- Docs
-- Steering Committee  
-- The main zoom admin account which holds Meet Our Contributors and others (if
-  you log in to splain using this account, all of the other accounts will be
-  logged here)   
+The following SIGs and groups are currently running splain.io:
+- [SIG Auth](/sig-auth/README.md)
+- [SIG Contributor Experience](/sig-contributor-experience/README.md)
+- [SIG Docs](/sig-docs/README.md)
+- [SIG PM](/sig-pm/README.md)
+- [Steering Committee](/committee-steering/governance/README.md)
+- [WG K8s Infra](/wg-k8s-infra/README.md)
+- [WG LTS](/wg-lts/README.md)
+The main zoom admin account which holds Meet Our Contributors and others (if
+you log in to splain using this account, all of the other accounts will be
+logged here)
 
 TODO - look into splain.io's google drive to youtube pipeline. Also look into
 using the gsuite contributors@ account to use the API for zoom cloud -> google
