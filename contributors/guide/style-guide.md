@@ -200,6 +200,7 @@ These are **guidelines**, not rules. Use your best judgement.
 - If the document is intended to be surfaced on the Contributor Site; include a
   yaml metadata header at the beginning of the document.
 - Metadata must include the `title` attribute.
+- If including the `slug` attribute. It **must** match the filename.
 
 **[Tables:](#tables)**
 
@@ -673,6 +674,8 @@ relative links. However, how and what they're being linked to can vary widely.
 - Metadata must include the `title` attribute.
   - `title` will be used as the title of the document when rendered with
     [Hugo].
+- If including the `slug` attribute. It **must** match the filename for
+  intra-site links to be resolved correctly.
 
 
 ### Tables
