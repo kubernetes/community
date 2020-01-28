@@ -1327,7 +1327,7 @@ sigs:
   subprojects:
   - name: custom-metrics-apiserver
     owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/custom-metrics-apiserver/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/custom-metrics-apiserver/master/OWNERS
   - name: heapster
     owners:
     - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
