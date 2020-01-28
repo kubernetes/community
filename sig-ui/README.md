@@ -24,7 +24,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Dan Romlein (**[@danielromlein](https://github.com/danielromlein)**), Google
 * Sebastian Florek (**[@floreks](https://github.com/floreks)**), Loodse
-* Jeffrey Sica (**[@jeefy](https://github.com/jeefy)**), University of Michigan
+* Jeffrey Sica (**[@jeefy](https://github.com/jeefy)**), Red Hat
 * Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**), Loodse
 
 ## Contact
