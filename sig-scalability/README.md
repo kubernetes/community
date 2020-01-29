@@ -22,7 +22,7 @@ The [charter](charter.md) defines the scope and governance of the Scalability Sp
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Mateusz Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
+* Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
 * Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), AWS
 
 ### Technical Leads
@@ -82,26 +82,30 @@ The following [subprojects][subproject-definition] are owned by sig-scalability:
 *Reach out to these folks if you have any inquiries about scalability regressions, e.g.
 regression status, whether it should block the release or not, etc.*
 
+* Jacek Kaniuk (**[@jkaniuk](https://github.com/jkaniuk)**), Google
+* Jakub Przychodzeń (**[@jprzychodzen](https://github.com/jprzychodzen)**), Google
 * Janek Lukasiewicz (**[@oxddr](https://github.com/oxddr)**), Google
-* Krzysztof Siedlecki (**[@krzysied](https://github.com/krzysied)**), Google
 * Maciej Borsz (**[@mborsz](https://github.com/mborsz)**), Google
 * Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
 
-## Upcoming 2019 Meeting Dates
-   * 07/04
-   * 07/18
-   * 08/01
-   * 08/15
-   * 08/29
-   * 09/12
-   * 09/26
-   * 10/10
-   * 10/24
-   * 11/07
-   * 11/21
-   * 12/05
-   * 12/19
+## Upcoming 2020 Meeting Dates
+   * 01/30
+   * 02/13
+   * 02/27
+   * 03/12
+   * 03/26
+   * 04/09
+   * 04/23
+   * 05/07
+   * 05/21
+   * 06/04
+   * 06/18
+
+# Scalability Regressions and Bugs
+The following document lists regressions and bugs that SIG Scalability has been working on.
+
+[Scalability Regressions and Bugs](https://docs.google.com/document/d/1_mqv_T7i5k7_HgcQihEuFdq7ZCIf3AAGyAo9axzdAGI/edit)
 
 # Details about SIG-Scalability sub-projects
 
