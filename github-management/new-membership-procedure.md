@@ -92,9 +92,19 @@ resolving. One PR can be used to resolve multiple membership requests.
 1. Add a note to the original membership request stating that a membership
 invite will be sent out once the PR has merged.
 
-1. Wait for a member of the GitHub administration team to approve the PR for
-merge.
+1. Wait for another New Membership Coordinator or a member of the
+GitHub administration team to lgtm the PR for merge.
 
+## Approving New Membership Requests
+
+New Membership Coordinators and members of the GitHub administration team
+have approval privileges for the GitHub config in the
+[kubernetes/org] repo.
+
+New Membership Coordinators should ensure that they approve PRs that
+_only_ update members. Approval for any other config changes (like
+GitHub teams) should be delegated to the respective SIG/WG/UG leads
+or the GitHub administration team.
 
 
 
