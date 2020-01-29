@@ -35,4 +35,17 @@ Develop a standard foundation (philosophy and libraries) for core Kubernetes com
     - [@kubernetes/wg-component-standard](https://github.com/orgs/kubernetes/teams/wg-component-standard) - Component Standard Discussion
 <!-- BEGIN CUSTOM CONTENT -->
 
+## Issues
+* [Project Board](https://github.com/orgs/kubernetes/projects/26)
+* [kubernetes/kubernetes Issues / PR's needing Review](https://github.com/kubernetes/kubernetes/issues?utf8=%E2%9C%93&q=label%3Awg%2Fcomponent-standard+)
+
+Issues are opened in [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) or the appropriate project/component repo with the `wg/component-standard` label.  
+To apply this label to an issue using Prow, leave a comment containing `/wg component-standard` on its own line.  
+
+[kubernetes/component-base](https://github.com/kubernetes/component-base) is an automated staging repository managed from the ./staging directory in [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes). Issues are not currently looked at on this repo.  
+
+Adding issues to the project board is helpful.  
+The `wg/component-standard` label is used in other org's repos such as [kubernetes-sigs/kubebuilder](https://github.com/kubernetes-sigs/kubebuilder) meaning you can't link them easily in the Project Board.  
+For repos outside of the kubernetes org, You can add(`+`) a note with links to the issues on the Project Board.  
+
 <!-- END CUSTOM CONTENT -->
