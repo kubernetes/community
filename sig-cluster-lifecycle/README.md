@@ -84,7 +84,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
   - Slack: [#bootkube](https://kubernetes.slack.com/messages/bootkube)
 ### cluster-addons
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/addon-operators/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-addons/master/OWNERS
 - **Contact:**
   - Slack: [#cluster-addons](https://kubernetes.slack.com/messages/cluster-addons)
 ### cluster-api

@@ -960,7 +960,7 @@ sigs:
     contact:
       slack: cluster-addons
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/addon-operators/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-addons/master/OWNERS
   - name: cluster-api
     contact:
       slack: cluster-api
