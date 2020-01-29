@@ -58,6 +58,7 @@ They also have approval privileges for adding new members to the GitHub config.
 Our current coordinators are:
 * Naeil Ezzoueidi (**[@nzoueidi](https://github.com/nzoueidi)**, Central European)
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**, US Eastern)
+* Yang Li (**[@idealhack](https://github.com/idealhack)**, Japan Standard Time)
 
 ## Project Owned Organizations
 
