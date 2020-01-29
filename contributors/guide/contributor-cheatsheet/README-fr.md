@@ -1,3 +1,4 @@
+<!-- omit in toc -->
 # Cheat Sheet pour contributeur Kubernetes
 
 Une liste des ressources communes pour contribuer à Kubernetes, des trucs, des astuces et des bonnes pratiques communes utilisées dans le projet Kubernetes.
@@ -5,32 +6,32 @@ C'est un "TL;DR" ou une référence rapide d'informations utiles pour améliorer
 
 **Table des matières**
 
-- [Ressources utiles](#Ressources-utiles)
-  - [Commencer](#Commencer)
-  - [SIGs et autres groupes](#SIGs-et-autres-groupes)
-  - [Communauté](#Communauté)
-  - [Alias de messagerie importants](#Alias-de-messagerie-importants)
-  - [Workflow](#Workflow)
-  - [Tests](#Tests)
-  - [Autres liens utiles](#Autres-liens-utiles)
-- [Communiquer efficacement sur GitHub](#Communiquer-efficacement-sur-GitHub)
-  - [Comment être excellent les uns envers les autres](#Comment-être-excellent-les-uns-envers-les-autres)
-    - [Exemples de bonne mauvaise communication](#Exemples-de-bonne-mauvaise-communication)
-- [Soumettre une contribution](#Soumettre-une-contribution)
-  - [Signature de la CLA](#Signature-de-la-CLA)
-  - [Ouverture et réponse aux Issues](#Ouverture-et-réponse-aux-Issues)
-    - [Créer une Issue](#Créer-une-Issue)
+- [Ressources utiles](#ressources-utiles)
+  - [Commencer](#commencer)
+  - [SIGs et autres groupes](#sigs-et-autres-groupes)
+  - [Communauté](#communaut%c3%a9)
+  - [Workflow](#workflow)
+  - [Tests](#tests)
+  - [Alias de messagerie importants](#alias-de-messagerie-importants)
+  - [Autres liens utiles](#autres-liens-utiles)
+- [Communiquer efficacement sur GitHub](#communiquer-efficacement-sur-github)
+  - [Comment être excellent les uns envers les autres](#comment-%c3%aatre-excellent-les-uns-envers-les-autres)
+    - [Exemples de bonne / mauvaise communication](#exemples-de-bonne--mauvaise-communication)
+- [Soumettre une contribution](#soumettre-une-contribution)
+  - [Signature de la CLA](#signature-de-la-cla)
+  - [Ouverture et réponse aux Issues](#ouverture-et-r%c3%a9ponse-aux-issues)
+    - [Créer un Issue](#cr%c3%a9er-un-issue)
     - [Répondre à une Issue](#Répondre-à-une-Issue)
-  - [Ouverture d'une Pull Request](#Ouverture-d-une-Pull-Request)
-    - [Créer une Pull Request](#Créer-une-Pull-Request)
+  - [Ouverture d'une Pull Request](#ouverture-dune-pull-request)
+    - [Création d'une Pull Request](#cr%c3%a9ation-dune-pull-request)
     - [Exemple d'une description de Pull Request](#Exemple-d'une-description-de-Pull-Request)
     - [Dépannage d'une Pull Request](#Dépannage-d'une-Pull-Request)
-  - [Labels](#Labels)
-- [Travailler localement](#Travailler-localement)
-  - [Stratégie de branche](#Stratégie-de-branche)
-    - [Ajouter Upstream](#Ajouter-Upstream)
-    - [Garder votre Fork synchronisé](#Garder-votre-Fork-synchronisé)
-  - [Squashing Commits](#Squashing-Commits)
+  - [Labels](#labels)
+- [Travailler localement](#travailler-localement)
+  - [Stratégie de branche](#strat%c3%a9gie-de-branche)
+    - [Ajouter Upstream](#ajouter-upstream)
+    - [Garder votre dépôt synchronisé](#garder-votre-d%c3%a9p%c3%b4t-synchronis%c3%a9)
+    - [Squashing Commits](#squashing-commits)
 
 ---
 
@@ -138,7 +139,7 @@ Pour ceux-ci, veuillez consulter le [guide de dépannage], signaler le problème
 - Soyez sélectif lorsque vous attribuez des Issues à l'aide de [`/assign @<username>`][assign] ou
   [`/cc @<username>`][cc]. Votre Issue sera triée plus efficacement en appliquant les labels corrects sur l'affectation de plus de personnes à la question.
 
-#### Responding to an Issue
+#### Répondre à une Issue
 
 - Lorsque vous abordez un problème, laissez-le savoir aux autres sur lesquels vous travaillez cela pour éviter le travail en double.
 - Lorsque vous avez résolu quelque chose par vous-même à un moment ultérieur, commentez la question de faire savoir aux gens avant de la fermer.
@@ -168,7 +169,7 @@ Les Pull requests (PR) sont les principaux moyens de contribuer au code, à la d
 - Si votre PR est considéré comme un _"Work in progress"_ ajoutez un prefixe dans son nom avec `[WIP]` ou utilisez la commande [`/hold`][hold]. Ceci empêchera le merge de la PR jusqu'à la levée du `[WIP]` ou le retrait du hold.
 - Si votre demande PullRequest n'a pas été relue, ne la fermez pas et n'ouvrez pas une nouvelle demande PullRequest avec les mêmes modifications. Notifiez les relecteurs dans un commentaire avec `@<github username>`.
 
-#### Example PR Description
+#### Exemple d'une description de Pull Request
 
 ```text
 Ref. #3064 #3097
@@ -193,7 +194,7 @@ Quel est le contenu de cette PR:
 - **Line 8** - La commande [`/assign`][assign] assigne un approbateur à la PR.
   Un approbateur sera suggéré par le [k8s-ci-robot][prow] est sélectionné dans la liste des propriétaires définis dans le fichier [OWNERS]. Ils vont ajouter le label [`/approve`][approve] à la PR après l'avoir passé en revue.
 
-#### Troubleshooting a Pull Request
+#### Dépannage d'une Pull Request
 
 Après la proposition de votre PR, une série de tests est exécutée par la plateforme Kubernetes CI, [Prow].
 Si l’un des tests échoue, le [k8s-ci-robot][prow] répondra à la PR avec des liens vers les tests ayant échoué et les journaux disponibles.
