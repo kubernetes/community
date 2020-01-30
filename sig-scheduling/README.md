@@ -23,12 +23,13 @@ The [charter](charter.md) defines the scope and governance of the Scheduling Spe
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), IBM
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
-* Klaus Ma (**[@k82cn](https://github.com/k82cn)**), Huawei
 
 ## Emeritus Leads
 
 * Bobby (Babak) Salamat (**[@bsalamat](https://github.com/bsalamat)**)
+* Klaus Ma (**[@k82cn](https://github.com/k82cn)**)
 
 ## Contact
 - Slack: [#sig-scheduling](https://kubernetes.slack.com/messages/sig-scheduling)
@@ -48,7 +49,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-scheduling:
 ### cluster-capacity
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/cluster-capacity/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-capacity/master/OWNERS
 ### descheduler
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/descheduler/master/OWNERS
@@ -60,6 +61,7 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
   - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
 ### scheduler
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/scheduler-plugins/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
 

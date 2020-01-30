@@ -5,20 +5,70 @@ all tests are green, and we have a number of different CI systems running the
 tests in various combinations, even a small percentage of flakes results in a
 lot of pain for people waiting for their PRs to merge.
 
-Therefore, it's very important that we write tests defensively. Situations that
-"almost never happen" happen with some regularity when run thousands of times in
-resource-constrained environments. Since flakes can often be quite hard to
-reproduce while still being common enough to block merges occasionally, it's
-additionally important that the test logs be useful for narrowing down exactly
-what caused the failure.
+Therefore, it's important we take flakes seriously. We should avoid flakes by
+writing our tests defensively. When flakes are identified, we should prioritize
+addressing them, either by fixing them or quarantining them off the critical
+path.
 
-Note that flakes can occur in unit tests, integration tests, or end-to-end
-tests, but probably occur most commonly in end-to-end tests.
+# Avoiding Flakes
+
+Write tests defensively. Remember that "almost never" happens all the time when
+tests are run thousands of times in a CI environment. Tests need to be tolerant
+of other tests running concurrently, resource contention, and things taking
+longer than expected.
+
+There is a balance to be had here. Don't log too much, but don't log too little.
+Don't assume things will succeed after a fixed delay, but don't wait forever.
+
+- Ensure the test functions in parallel with other tests
+  - Be specific enough to ensure a test isn't thrown off by other tests' assets
+    - https://github.com/kubernetes/kubernetes/pull/85849 - eg: ensure resource name and namespace match
+    - https://github.com/kubernetes/kubernetes/pull/85967 - eg: tolerate errors for non k8s.io APIs
+    - https://github.com/kubernetes/kubernetes/pull/85619 - eg: tolerate multiple storage plugins
+- Ensure the test functions in a resource constrained environment
+  - Only ask for the resources you need
+    - https://github.com/kubernetes/kubernetes/pull/84975 - eg: drop memory constraints for test cases that only need cpu
+  - Don't use overly tight deadlines (but not overly broad either, non-[Slow] tests timeout after 5min)
+    - https://github.com/kubernetes/kubernetes/pull/85847 - eg: poll for `wait.ForeverTestTimeout` instead of 10s
+    - https://github.com/kubernetes/kubernetes/pull/84238 - eg: poll for 2min instead of 1min
+    - mark tests as [Slow] if they are unable to pass within 5min
+  - Do not expect actions to happen instantaneously or after a fixed delay
+  - Prefer informers and wait loops
+- Ensure the test provides sufficient context in logs for forensic debugging
+  - Explain what the test is doing, eg:
+    - "creating a foo with invalid configuration"
+    - "patching the foo to have a bar"
+  - Explain what specific check failed, and how, eg:
+    - "failed to create resource foo in namespace bar because of err"
+    - "expected all items to be deleted, but items foo, bar, and baz remain"
+  - Explain why a polling loop is failing, eg: 
+    - "expected 3 widgets, found 2, will retry"
+    - "expected pod to be in state foo, currently in state bar, will retry"
+
+# Quarantining Flakes
+
+- When quarantining a presubmit test, ensure an issue exists in the current
+  release milestone assigned to the owning SIG. The issue should be labeled
+  `priority/critical-urgent`, `lifecycle/frozen`, and `kind/flake`. The
+  expectation is for the owning SIG to resolve the flakes and reintroduce the
+  test, or determine the tested functionality is covered via another method
+  and delete the test in question.
+- Quarantine a single test case by adding `[Flaky]` to the test name in question,
+  most CI jobs exclude these tests. This makes the most sense for flakes that
+  are merge-blocking and taking too long to troubleshoot, or occurring across
+  multiple jobs.    - eg: https://github.com/kubernetes/kubernetes/pull/83792
+  - eg: https://github.com/kubernetes/kubernetes/pull/86327
+- Quarantine an entire set of tests by adding `[Feature:Foo]` to the test(s) in
+  question. This will require creating jobs that focus specifically on this
+  feature. The majority of release-blocking and merge-blocking suites avoid
+  these jobs unless they're proven to be non-flaky.
 
 # Hunting Flakes
 
 We offer the following tools to aid in finding or troubleshooting flakes
 
+- [flakes-latest.json](http://storage.googleapis.com/k8s-metrics/flakes-latest.json)
+  - shows the top 10 flakes over the past week for all PR jobs
 - [go.k8s.io/triage] - an interactive test failure report providing filtering and drill-down by job name, test name, failure text for failures in the last two weeks
   - https://storage.googleapis.com/k8s-gubernator/triage/index.html?pr=1&job=pull-kubernetes-e2e-gce%24 - all failures that happened in the `pull-kubernetes-e2e-gce` job
   - https://storage.googleapis.com/k8s-gubernator/triage/index.html?text=timed%20out - all failures containing the text `timed out`
@@ -32,9 +82,9 @@ We offer the following tools to aid in finding or troubleshooting flakes
   - http://velodrome.k8s.io/dashboard/db/job-health-release-blocking?orgId=1 - includes flake rate and top flakes for release-blocking jobs for kubernetes/kubernetes
 - [`kind/flake` github query][flake] - open issues or PRs related to flaky jobs or tests for kubernetes/kubernetes
 
-[go.k8s.io/triage]: https//go.k8s.io/triage
+[go.k8s.io/triage]: https://go.k8s.io/triage
 [testgrid.k8s.io]: https://testgrid.k8s.io
-[velodrome.k8s.io]: https://velodrome.k8s.io
+[velodrome.k8s.io]: http://velodrome.k8s.io
 
 # GitHub Issues for Known Flakes
 

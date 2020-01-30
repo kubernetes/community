@@ -28,13 +28,29 @@ groups/[SIGs] page.
 
 You can actively or passively participate in one of the following ways:
 - The community groups public meeting(s) listed in the above community groups page
-- Every Thursday at our [weekly community meeting] over [zoom] at [10am US Pacific Time]
+- Every Third Thursday at our [monthly community meeting] over [zoom] at [10am US Pacific Time]
 - Intro sessions at KubeCon/CloudNativeCon live or [recordings on YouTube]
 
 Nevertheless, below find a list of many general channels, groups and meetings
 devoted to the Kubernetes project. Please check the guidelines and any relevant
 chat/conversation history before posting. Spam and sales pitches are not tolerated
 on these platforms.
+
+### Appropriate Content for Community Resources
+
+All communications properties are under the [Kubernetes code of conduct]. 
+Additionally, these resources are for the contributors and users of Kubernetes; commercial usage of these properties is heavily moderated.
+Note that commercial content is allowed, unsolicited commercial content mostly is NOT:
+
+Examples of inappropriate content:
+- Posting unsolicited content of a commercial nature on Slack or other community forums
+- Messaging people individually on a platform with content of an unsolicited commercial nature
+- Unsolicited pitching of commercial products during a Kubernetes meeting
+
+Examples of appropriate content:
+- Asking about commercial products in an appropriate channel. For example most clouds have a channel in Slack, asking how to use GKE on the GKE channel or AKS on the Azure channels is fine.
+- "Does anyone have experience with project foo?" is fine
+- Some OSS projects are also hosted on the Kubernetes Slack that also have a commercial offering, these are allowed. 
 
 ## Decisions Are Made Here
 
@@ -172,10 +188,10 @@ place!
 [Josh Berkus]: https://github.com/jberkus
 [zoom]: https://zoom.us/my/kubernetescommunity
 [k-dev moderators]: ./moderators.md#kubernetes-dev
-[weekly community meeting]: https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#
+[monthly community meeting]: https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit#
 [recordings on YouTube]: https://www.youtube.com/channel/UCvqbFHwN-nwalWPjPUKpvTA
 [community groups]: /governance.md#community-groups
-[these instructions]: /slack-guidelines.md#requesting-a-channel
+[these instructions]: /communication/slack-guidelines.md#requesting-a-channel
 [community management]: /sig-contributor-experience#community-management
 [kubeweekly]: https://kubeweekly.io/
 [the docs]: /events/office-hours.md
@@ -201,4 +217,4 @@ place!
 [#kubernetes-dev]: https://app.slack.com/client/T09NY5SBT/C09R23FHP
 [#sig-contribex]: https://app.slack.com/client/T09NY5SBT/C1TU9EB9S
 [#office-hours]: https://app.slack.com/client/T09NY5SBT/C6RFQ3T5H
-[office hours]: /events/office-hours.md
+[office-hours]: /events/office-hours.md

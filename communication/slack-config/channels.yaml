@@ -7,6 +7,7 @@ channels:
   - name: antrea
   - name: api-reviews
   - name: apisnoop
+  - name: app-troubleshoot
   - name: archived-sig-release
     archived: true
   - name: argentina
@@ -96,6 +97,7 @@ channels:
   - name: in-events
   - name: in-users
   - name: ingress-nginx
+  - name: inspektor-gadget
   - name: it-events
   - name: it-users
   - name: java
@@ -105,6 +107,7 @@ channels:
   - name: jp-dev
   - name: jp-events
   - name: jp-users
+  - name: jp-users-novice
   - name: jsonnet
   - name: k14s
   - name: kaniko
@@ -150,6 +153,7 @@ channels:
   - name: kubekhan
     archived: true
   - name: kubeless
+  - name: kubemove
   - name: kubeone
   - name: kubepack
   - name: kubestack
@@ -169,6 +173,7 @@ channels:
   - name: kubespray-dev
   - name: kubicorn
   - name: kudo
+  - name: kurl
   - name: kustomize
   - name: kyverno
   - name: leadership-summit
@@ -214,6 +219,7 @@ channels:
   - name: mysql-operator
   - name: nais
   - name: navigator
+    archived: true
   - name: ncw-staff
   - name: nl-users
   - name: node-problem-detector
@@ -247,6 +253,7 @@ channels:
   - name: ro-users
   - name: ru-users
   - name: scaleway-k8s
+  - name: schemahero
   - name: se-users
   - name: sealed-secrets
   - name: shippable
@@ -326,6 +333,7 @@ channels:
   - name: wg-apply
   - name: wg-component-standard
   - name: wg-component-standard-mentorship
+  - name: wg-data-protection
   - name: wg-iot-edge
   - name: wg-k8s-infra
   - name: wg-lts

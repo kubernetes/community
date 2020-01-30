@@ -11,6 +11,7 @@ branches.
 -   [Cherry-pick Review](#cherry-pick-review)
 -   [Searching for Cherry-picks](#searching-for-cherry-picks)
 -   [Troubleshooting Cherry-picks](#troubleshooting-cherry-picks)
+-   [Cherry-picks for unsupported releases](#cherry-picks-for-unsupported-releases)
 
 ---
 
@@ -158,3 +159,23 @@ In that case, you will need to manually fix conflicts.
 - The cherry-pick PR includes code that does not pass CI tests.
 In such a case you will have to fetch the auto-generated branch from your fork, amend the problematic commit and force push to the auto-generated branch.
 Alternatively, you can create a new PR, which is noisier.
+
+## Cherry-picks for unsupported releases
+
+The release team only supports & patches `n-3` releases (`n` being the latest release of Kubernetes). In January of 2019 the community discovered a regression, that was introduced in a post-release patch, but was currently no longer supported.
+
+As discussed in a sig-release meeting on 2019-01-15, a fix was backported to the non supported version.
+
+Reference PR: [#72860](https://github.com/kubernetes/kubernetes/pull/72860#issuecomment-454072746)
+
+The specific criteria driving the decision was:
+
+- CI was still available for the version
+- The regression was introduced as a patch (and not part of the official release)
+- The issue being fixed is of sufficient **[severity & impact](#what-kind-of-prs-are-good-for-cherry-picks)**
+- The fix is well understood and contained (doesn’t introduce risk of additional regressions)
+
+A note about the specific case in [#72860](https://github.com/kubernetes/kubernetes/pull/72860#issuecomment-454072746):
+
+- The patch was exceedingly tiny and very unlikely to introduce new problems
+- Luckily, it was caught shortly after the release was supposed to be unsupported

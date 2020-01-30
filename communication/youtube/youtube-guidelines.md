@@ -1,17 +1,21 @@
+<!-- omit in toc -->
 # YouTube Channel Guidelines
 
 YouTube serves as primary means of distribution for recorded Kubernetes
 community content including Zoom recordings, official project Workshops and
 Contributor Summit sessions.
 
-- [Code of Conduct](#Code-of-Conduct)
-- [Admins](#Admins)
+- [Code of Conduct](#code-of-conduct)
+- [Admins](#admins)
 - [Meeting Playlists](#meeting-playlists)
-  - [Uploading Guidelines for Collaborators](#Uploading-Guidelines-for-Collaborators)
-- [Admin Responsibilities](#Admin-Responsibilities)
-  - [Moderator Expectations and Guidelines](#Moderator-Expectations-and-Guidelines)
-  - [Trimming and Editing Recordings](#Trimming-and-Editing-Recordings)
-  - [Streaming Events](#Streaming-Events)
+  - [Uploading Guidelines for Collaborators](#uploading-guidelines-for-collaborators)
+- [Admin Responsibilities](#admin-responsibilities)
+  - [Moderator Expectations and Guidelines](#moderator-expectations-and-guidelines)
+  - [Trimming and Editing Recordings](#trimming-and-editing-recordings)
+  - [Automation](#automation)
+  - [Descriptions & Playlists](#descriptions--playlists)
+  - [Thumbnails](#thumbnails)
+  - [Streaming Events](#streaming-events)
 
 ## Code of Conduct
 
@@ -20,7 +24,7 @@ project, and includes all communication mediums.
 
 ## Admins
 
-- Check the [centralized list of administrators] for contact information.
+- Check the [centralized list of administrators][admins] for contact information.
 - To contact the admin group in Slack, ping `@youtube-admins` in the `#sig-contribex`
   Slack channel.
 
@@ -145,14 +149,17 @@ checked so we can edit before it goes live.
 - Test that it works
 - Enjoy  
 
-The following SIGs and groups are currently running splain.io:  
-- ContribEx
-- PM
-- Docs
-- Steering Committee  
-- The main zoom admin account which holds Meet Our Contributors and others (if
-  you log in to splain using this account, all of the other accounts will be
-  logged here)   
+The following SIGs and groups are currently running splain.io:
+- [SIG Auth](/sig-auth/README.md)
+- [SIG Contributor Experience](/sig-contributor-experience/README.md)
+- [SIG Docs](/sig-docs/README.md)
+- [SIG PM](/sig-pm/README.md)
+- [Steering Committee](/committee-steering/governance/README.md)
+- [WG K8s Infra](/wg-k8s-infra/README.md)
+- [WG LTS](/wg-lts/README.md)
+The main zoom admin account which holds Meet Our Contributors and others (if
+you log in to splain using this account, all of the other accounts will be
+logged here)
 
 TODO - look into splain.io's google drive to youtube pipeline. Also look into
 using the gsuite contributors@ account to use the API for zoom cloud -> google

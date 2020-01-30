@@ -2,7 +2,6 @@ aliases:
   sig-api-machinery-leads:
     - deads2k
     - fedebongio
-    - deads2k
     - lavalamp
   sig-apps-leads:
     - janetkuo
@@ -14,29 +13,29 @@ aliases:
     - dims
     - johnbelamaric
   sig-auth-leads:
-    - enj
-    - mikedanese
-    - tallclair
     - deads2k
+    - enj
     - liggitt
     - mikedanese
+    - tallclair
   sig-autoscaling-leads:
     - mwielgus
   sig-cli-leads:
-    - seans3
-    - soltysh
     - pwittrock
+    - seans3
     - soltysh
   sig-cloud-provider-leads:
     - andrewsykim
     - cheftako
   sig-cluster-lifecycle-leads:
+    - fabriziopandini
     - justinsb
+    - neolit123
     - timothysc
   sig-contributor-experience-leads:
     - Phillels
-    - parispittman
     - cblecker
+    - mrbobbytables
     - nikhita
   sig-docs-leads:
     - Bradamant3
@@ -69,13 +68,12 @@ aliases:
     - shyamjvs
     - wojtek-t
   sig-scheduling-leads:
+    - Huang-Wei
     - ahg-g
-    - k82cn
   sig-service-catalog-leads:
     - jberkhahn
     - mszostok
   sig-storage-leads:
-    - childsb
     - saad-ali
   sig-testing-leads:
     - fejta
@@ -93,15 +91,18 @@ aliases:
     - vllry
   sig-windows-leads:
     - PatrickLang
-    - michmike
     - benmoss
     - ddebroy
+    - michmike
   wg-apply-leads:
     - lavalamp
   wg-component-standard-leads:
     - mtaufen
     - stealthybox
     - sttts
+  wg-data-protection-leads:
+    - xing-yang
+    - yuxiangqian
   wg-iot-edge-leads:
     - cantbewong
     - cindyxing
@@ -117,8 +118,7 @@ aliases:
     - tpepper
     - youngnick
   wg-machine-learning-leads:
-    - ConnorDoyle
-    - balajismaniam
+    - k82cn
     - kow3ns
     - vishh
   wg-multitenancy-leads:
@@ -143,8 +143,10 @@ aliases:
     - foxish
     - liyinan926
   ug-vmware-users-leads:
+    - brysonshepherd
     - cantbewong
     - mylesagray
+    - phenixblue
   committee-code-of-conduct:
     - AevaOnline
     - Bradamant3

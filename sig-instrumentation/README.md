@@ -42,7 +42,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-instrumentation:
 ### custom-metrics-apiserver
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/custom-metrics-apiserver/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/custom-metrics-apiserver/master/OWNERS
 ### heapster
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS

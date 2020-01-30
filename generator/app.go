@@ -122,6 +122,29 @@ func (g *LeadershipGroup) PrefixToPersonMap() map[string][]Person {
 	}
 }
 
+// Owners returns a sorted and de-duped list of owners for a LeadershipGroup
+func (g *LeadershipGroup) Owners() []Person {
+	o := append(g.Chairs, g.TechnicalLeads...)
+
+	// Sort
+	sort.Slice(o, func(i, j int) bool {
+		return o[i].GitHub < o[j].GitHub
+	})
+
+	// De-dupe
+	seen := make(map[string]struct{}, len(o))
+	i := 0
+	for _, p := range o {
+		if _, ok := seen[p.GitHub]; ok {
+			continue
+		}
+		seen[p.GitHub] = struct{}{}
+		o[i] = p
+		i++
+	}
+	return o[:i]
+}
+
 // Group represents either a Special Interest Group (SIG) or a Working Group (WG)
 type Group struct {
 	Dir              string

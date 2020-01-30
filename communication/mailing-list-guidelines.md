@@ -32,9 +32,7 @@ channel.
 Mailing list owners should include the Chairs for your [SIG or WG][sig-list] and
 the below contacts:
 
-- parispittman[at]google.com
-- jorgec[at]vmware.com
-- ihor[at]cncf.io
+- contributors@kubernetes.io
 
 ---
 

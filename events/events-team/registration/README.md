@@ -63,43 +63,44 @@ workshop organizers.
 In addition to any path specific questions, all attendees should be asked the
 following:
 
-| Question                                                       | Type      | Required | Notes                                                         |
-|----------------------------------------------------------------|-----------|----------|---------------------------------------------------------------|
-| Name                                                           | Free Text | Yes      |                                                               |
-| Email                                                          | Free Text | Yes      |                                                               |
-| GitHub Handle                                                  | Free Text | Yes      |                                                               |
+| Question                                                       | Type      | Required | Notes                                                                                                          |
+|----------------------------------------------------------------|-----------|----------|----------------------------------------------------------------------------------------------------------------|
+| Name                                                           | Free Text | Yes      |                                                                                                                |
+| Email                                                          | Free Text | Yes      |                                                                                                                |
+| GitHub Handle                                                  | Free Text | Yes      |                                                                                                                |
 | Signed the CLA                                                 | Dropdown  | Yes      | Provide link to CLA. Options: Yes, No - but will do before workshop, No - cannot sign due to work resrictions. |
-| Food Restrictions                                              | Dropdown  | Yes      | Options: `none`, `Gluten Free`, `Vegetarian`, `Vegan`, `Other` |
-| Swag Related Question                                          | Dropdown  | Yes      | Swag question is generally shirt size.                        |
-| Social Event                                                   | Dropdown  | Yes      | Required if there is an independent social event.             |
-| Emergency Contact                                              | Free Text | No       | Name and Phone Number. Phone number to be verified.           |
-| How can we make this a valuable event for you?                 | Free Text | No       |                                                               |
-| If you had a speaking slot, what would you like to talk about? | Free Text | No       |                                                               |
-| Where did you hear about the Contributor Summit?               | Checkbox  | No       | Options: `Twitter`, `mailing list`, `GitHub`, `community meeting`, `SIG/WG Meeting`, `Slack`, `Other` |
+| Food Restrictions                                              | Dropdown  | Yes      | Options: `none`, `Gluten Free`, `Vegetarian`, `Vegan`, `Other`                                                 |
+| Swag Related Question                                          | Dropdown  | Yes      | Swag question is generally shirt size.                                                                         |
+| Social Event                                                   | Dropdown  | Yes      | Required if there is an independent social event.                                                              |
+| Emergency Contact                                              | Free Text | No       | Name and Phone Number. Phone number to be verified.                                                            |
+| How can we make this a valuable event for you?                 | Free Text | No       |                                                                                                                |
+| If you had a speaking slot, what would you like to talk about? | Free Text | No       |                                                                                                                |
+| Where did you hear about the Contributor Summit?               | Checkbox  | No       | Options: `Twitter`, `mailing list`, `GitHub`, `community meeting`, `SIG/WG Meeting`, `Slack`, `Other`          |
 
 Following are some of the path specific questions that have been asked in the past:
 
 **New Contributor**
 
-| Question                                                       | Type      | Required | Notes                                                         |
-|----------------------------------------------------------------|-----------|----------|---------------------------------------------------------------|
-| Laptop availability for workshop                               | Dropdown  | Yes      | Should be mentioned that workshop can still be attended if laptop is not available and pair with other participants. Options: Yes, No - do not have a laptop, No - have one but cannot install software on it without IT approval |
-| Have you joined the kubernetes slack? If so, what is your handle? | Free Text | No    |                                                               |
-| If you had a speaking slot, what would you like to talk about? | Free Text | No       |                                                               |
-| Are there any areas of Kubernetes you're already interested in contributing to? | Checkbox | No | Options: `API`, `CLI`, `testing`, `docs`, `community`, `release`, etc |
-| Are there any SIG's you are interested in joining?             | Free Text | No       |                                                               |
-| What are you hoping to get out of the contributor summit?      | Free Text | No       |                                                               |
-| Experience with Go                                             | Dropdown  | No       | Rate from 1 to 5, with 1 being no experience                  |
-| Experience with kubernetes as a user                           | Dropdown  | No       | Rate from 1 to 5, with 1 being no experience                  |
-| Experience of developing application that integrate with kubernetes | Dropdown | No   | Rate from 1 to 5, with 1 being no experience                  |
+| Question                                                                        | Type      | Required | Notes                                                                                                                                                                                                                             |
+|---------------------------------------------------------------------------------|-----------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Laptop availability for workshop                                                | Dropdown  | Yes      | Should be mentioned that workshop can still be attended if laptop is not available and pair with other participants. Options: Yes, No - do not have a laptop, No - have one but cannot install software on it without IT approval |
+| Have you joined the kubernetes slack? If so, what is your handle?               | Free Text | No       |                                                                                                                                                                                                                                   |
+| Are there any areas of Kubernetes you're already interested in contributing to? | Checkbox  | No       | Options: `API`, `CLI`, `testing`, `docs`, `community`, `release`, etc                                                                                                                                                             |
+| Are there any SIG's you are interested in joining?                              | Free Text | No       |                                                                                                                                                                                                                                   |
+| What are you hoping to get out of the contributor summit?                       | Free Text | No       |                                                                                                                                                                                                                                   |
+| Experience with Go                                                              | Dropdown  | No       | Rate from 1 to 5, with 1 being no experience                                                                                                                                                                                      |
+| Experience with kubernetes as a user                                            | Dropdown  | No       | Rate from 1 to 5, with 1 being no experience                                                                                                                                                                                      |
+| Experience of developing application that integrate with kubernetes             | Dropdown  | No       | Rate from 1 to 5, with 1 being no experience                                                                                                                                                                                      |
+
 
 **Active Contributor**
 
-| Question                                                       | Type      | Required | Notes                                                         |
-|----------------------------------------------------------------|-----------|----------|---------------------------------------------------------------|
-| Are you member of a Kubernetes Github Org?                     | Dropdown  | Yes      |                                                               |
-| What SIG's or WG's are you most active in?                     | Checkbox  | Yes      | Options: List of the SIG's and WG's                           |
-| What session(s) would like to see at the summit? what would make this event valuable to you? We've changed content based on contributor feedback to this question in the past. | Free Text | No       |          |
+| Question                                                                                                                                                                       | Type      | Required | Notes                               |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|----------|-------------------------------------|
+| Are you member of a Kubernetes Github Org?                                                                                                                                     | Dropdown  | Yes      |                                     |
+| What SIG's or WG's are you most active in?                                                                                                                                     | Checkbox  | Yes      | Options: List of the SIG's and WG's |
+| What session(s) would like to see at the summit? what would make this event valuable to you? We've changed content based on contributor feedback to this question in the past. | Free Text | No       |                                     |
+
 
 Additionally, a separate form can be created for registering the `summit staff`.
 

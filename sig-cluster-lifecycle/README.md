@@ -23,7 +23,7 @@ The [charter](charter.md) defines the scope and governance of the Cluster Lifecy
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 * Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ys-DOR5UsgbMEeciuG0HOgDQc8kZsaWIWJeKJ1-UfbY/edit).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1fQNlqsDkvEggWFi51GVxOglL2P1Bvo2JhZlMhm2d-Co/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 * Cluster Addons meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit).
@@ -52,7 +52,14 @@ The [charter](charter.md) defines the scope and governance of the Cluster Lifecy
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**), Google
+* Lubomir Ivanov (**[@neolit123](https://github.com/neolit123)**), VMware
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Fabrizio Pandini (**[@fabriziopandini](https://github.com/fabriziopandini)**), VMware
 
 ## Emeritus Leads
 
@@ -77,7 +84,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
   - Slack: [#bootkube](https://kubernetes.slack.com/messages/bootkube)
 ### cluster-addons
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/addon-operators/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-addons/master/OWNERS
 - **Contact:**
   - Slack: [#cluster-addons](https://kubernetes.slack.com/messages/cluster-addons)
 ### cluster-api

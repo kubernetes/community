@@ -1126,7 +1126,7 @@ Twitter | [Sep 19th](https://twitter.com/stephenaugustus/status/1174797710043430
 *   [ 0:00 ] **📣Announcements 📣**
     *   More testgrid stuff I forgot if we have time (prefer shoutouts if we don’t) [Aaron Crickenberger]
         *   [We moved a lot of existing job configs over to annotations for you](https://github.com/kubernetes/test-infra/pull/13205)
-        *   [Testgrid changes (annotations or not) must pass tests](https://github.com/kubernetes/test-infra/blob/master/testgrid/cmd/configurator/config_test.go)
+        *   [Testgrid changes (annotations or not) must pass tests](https://github.com/kubernetes/test-infra/blob/31b2a35/testgrid/cmd/configurator/main_test.go)
 
         **👏 **Shoutouts this week (Check in #shoutouts on slack) **👏**
 

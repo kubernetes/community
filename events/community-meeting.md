@@ -1,9 +1,9 @@
-# Kubernetes Weekly Community Meeting
+# Kubernetes Monthly Community Meeting
 
-We have PUBLIC and RECORDED [weekly meeting](https://zoom.us/my/kubernetescommunity) every Thursday at [10am PT](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29)
-a).
+We have PUBLIC and RECORDED [monthly meeting](https://zoom.us/my/kubernetescommunity) the third Thursday of the month at [10am PT](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29)
+a). There will be no community meeting in the month of December, or in a week that conflicts with KubeCon + CloudNativeCon.
  
-See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any [iCal client](https://en.wikipedia.org/wiki/ICalendar). Do NOT copy the meetings over to a your personal calendar, you will miss meeting updates. Instead use your client's calendaring feature to say you are attending the meeting so that any changes made to meetings will be reflected on your personal calendar. 
+See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any [iCal client](https://en.wikipedia.org/wiki/ICalendar). Do NOT copy the meetings over to your personal calendar, you will miss meeting updates. Instead use your client's calendaring feature to say you are attending the meeting so that any changes made to meetings will be reflected on your personal calendar. 
 
 All meetings are archived on the [YouTube Channel](https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ).
 
@@ -31,15 +31,15 @@ please propose a specific date on the [Kubernetes Community Meeting Agenda](http
 General speaking the meeting is structured as follows:
 
 - Introduction by Host (~3 minutes)
-- Community Demo (~10 minutes)
-- Release Updates
+- Community Demo (~10 minutes, Optional)
+- Release Updates (~10 minutes, Optional, release manager's discretion)
   - Development Release
   - Stable Release and point releases
   - Older stable releases and point releases
-- Contributor Tip of the Week (~2 minutes)
+- Contributor Tip of the Week (~2 minutes, Optional)
   - These can be a variety of topics, including [devstats graphs](https://k8s.devstats.cncf.io/)
 - SIG Updates
-  - Three SIGs per meeting, 10 minutes per SIG 
+  - Three SIGs per meeting, 10 minutes per SIG, if time allows 4 SIGs may present 
 - Announcements (~5 minutes)
   - Any other community announcements should go here
   - Shoutouts, an aggregation of thanks from community members to other contributors via the #shoutouts channel 
@@ -50,7 +50,7 @@ The first 10 minutes of a meeting is dedicated to demonstrations from the commun
 These demos are noted at the top of the community document. 
 There is a hard stop of the demo at 10 minutes, with up to 5 more minutes for questions.
 Feel free to add your demo request to the bottom of the list, then one of the organizers will get back to you to schedule an exact date. 
-Demo submissions MUST follow the requirements listed below. 
+Demo submissions MUST follow the requirements listed below: 
 
 ### Requirements
 
@@ -58,7 +58,7 @@ This meeting has a large number of attendees.
 Out of respect for their time, we ask that you be fully prepared for your demo. Make sure slides are clear if applicable, and the link to them is posted in the meeting agenda. 
 Also, if you are doing a live coding demo, please make sure it has a reasonable chance of completing within the allotted time box.
 
-- Your demo should provide clear, valuable information to the community without being commercial in nature. Typical sales pitches are not permitted, and could potentially alienate your audience. Commercial software and services can be demo'ed, but a prior discussion with the community team is advised to ensure a positive experience.
+- Demos must be about a core component of Kubernetes or a related project that is owned by a SIG. For projects in the Kubernetes ecosystem, you can sign up for a [CNCF Webinar](https://www.cncf.io/webinars/).
 - You are required to show up 10 minutes before the meeting to verify your audio and screensharing capabilities with the hosts. If you cannot make and keep this commitment, you will not be allowed to proceed with your demo until such time you can.
 - You also required to commit to being available the week before your demo date in case there is an issue with that week's demo.
 - The use of a headset or other high-quality audio equipment is strongly encouraged. Typing on a laptop while using the system microphone is distracting, so please insulate your microphone from key noises.

@@ -24,8 +24,8 @@ TODO
 [2018 retro]  
 
 #### Barcelona  
-TODO  
-
+[2019 EU feedback]
+[2019 EU retro]  
 
 
 [2016 feedback]: https://docs.google.com/spreadsheets/d/1W443ToSJGvk5O2ah1bOC6OUM4F7zsBoJRtq2qbLC36E/edit?usp=sharing
@@ -34,3 +34,5 @@ TODO
 [2018 EU retro]: https://docs.google.com/document/d/1XyjCDFiEx06TkD4vDkci00h0uZR9OVNnKd6MxVo_bAo/edit
 [2018 feedback]: https://docs.google.com/spreadsheets/d/1VXwAYo8sJQk1amrayUaYRN5Ly5cYi-t2Yw355veRcDs/edit?usp=sharing
 [2018 retro]: https://docs.google.com/document/d/1lonVMIO15xZoxZtX5Gr5N-Wb5GtDY5lGnjKgrfNEAyU/edit?usp=sharing&urp=gmail_link
+[2019 EU feedback]: https://docs.google.com/spreadsheets/d/1ZapdCqXyq5Gx-eMl5qfIuE_UhQh2hUu-VzwlTMQL4k8/edit?usp=sharing
+[2019 EU retro]: https://docs.google.com/document/d/1pwVJLPLJtv_vyLFF3BTuuZ24yEn0TJbxihd1I_e4p48/edit?usp=sharing
