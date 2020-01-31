@@ -5,6 +5,7 @@ Blogging serves as a way to highlight and give exposure to the work that is bein
 ## Guidelines for contributor blogs: 
 
 * Use inclusive language understandable by everyone
+* Ensure that the blog post is reviewed by the anyone being mentioned in the piece
 * Stay on topic and stick to the facts
 * Avoid interjecting personal reactions 
 * Shy away from jargon and colloquial expressions
@@ -23,7 +24,7 @@ Blogging serves as a way to highlight and give exposure to the work that is bein
 1. Active bloggers should write one blog a quarter. The time commitment is typically 5-10 hours per quarter depending on the number of blog posts in the review queue.
 2. Adhere to the code of conduct, values, and principles of the project.
 3. Bloggers are expected to attend at least one upstream marketing team meeting a month or check-in to remain active. 
-4. If you receive a request to write about someone or a group of people from your employer, ask another blogger to write it. 
+4. If you receive a request to write about a project, an individual, or a group of people from your employer, you should ask a non-partisan blogger to write it.
 
 ## Submit a Post
 
