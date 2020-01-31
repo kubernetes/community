@@ -1,6 +1,6 @@
 ---
 title: "Help Wanted and Good First Issue Labels"
-weight: 1
+weight: 9
 slug: "help-wanted"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Pull Request Process"
-weight: 1
+weight: 5
 slug: "pull-requests"
 ---
 

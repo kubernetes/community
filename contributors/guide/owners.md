@@ -1,6 +1,6 @@
 ---
 title: "OWNERS Files"
-weight: 1
+weight: 15
 slug: "owners" 
 ---
 

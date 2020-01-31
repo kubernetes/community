@@ -1,6 +1,6 @@
 ---
 title: "Scalability Good Practices"
-weight: 1
+weight: 13
 slug: "scalability-good-practices" 
 ---
 

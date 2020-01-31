@@ -1,6 +1,6 @@
 ---
 title: "Community Expectations"
-weight: 1
+weight: 17
 slug: "expectations"
 ---
 

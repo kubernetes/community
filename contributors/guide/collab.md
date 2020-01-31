@@ -1,6 +1,6 @@
 ---
 title: "Collaborative Development"
-weight: 1
+weight: 7
 slug: "collab"
 ---
 

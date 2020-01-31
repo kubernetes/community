@@ -1,6 +1,6 @@
 ---
 title: "Contributing to Kubernetes"
-weight: 2
+weight: 4
 slug: "contributing" 
 ---
 

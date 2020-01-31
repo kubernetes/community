@@ -1,6 +1,6 @@
 ---
 title: "Issue Triage Guidelines"
-weight: 1
+weight: 10
 slug: "issue-triage"
 ---
 
