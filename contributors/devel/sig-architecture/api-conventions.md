@@ -597,7 +597,7 @@ In the context of [strategic merge patch](/contributors/devel/sig-api-machinery/
 | Marker | Definition |
 |--------|------------|
 | `//+patchStrategy=merge` |  Defines that the merge strategy will be to merge elements of the two lists into one. |
-| `//+patchStrategy=replace` (default)|  Defines that the merge strategy will be touse the list provided in the patch literally rather than merging. |
+| `//+patchStrategy=replace` (default)|  Defines that the merge strategy will be to use the list provided in the patch literally rather than merging. |
 | `// +patchMergeKey=<key-name>` |  Applicable in the context where lists are used as maps/dictionaries, i.e. where each list entry is a key-value pair. `patchMergeKey` defines which field should be seen as the key. Combined with `patchStrategy`, this describes what changes should take place on specific elements of a list as part of a patch operation. |
 | `//+listType=atomic` |  Applicable to objects that are of type list. A single actor owns and can replace the entire list, but cannot change individual elements of it. |
 | `//+listType=set` |  Applicable to objects that are of type list, and the elements are unique and scalar. Different actors can update individual elements in the list. |
