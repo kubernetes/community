@@ -12,7 +12,7 @@ Make sure all Beginning Contributors have a workspace setup for hacking on Kuber
 
 ### Slides
 
-Clear and large download commands to copy into terminal
+Clear and large download commands to copy into the terminal.
 
 ### Details To Cover 
 

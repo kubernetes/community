@@ -13,7 +13,7 @@ As this role is part of a subproject of SIG-contributor-experience, the New Cont
 ## Activities
 
 *These tasks reflect a rough timeline leading from the end of the previous Contributor Summit to the currently planned one.*
-- Attend event planning meetings in preparation for the Contributor Summit, where applicable
+- Attend event planning meetings in preparation for the Contributor Summit, where applicable.
 - Create a Workshop Content Proposal and link in an Issue to k/community:
     - determine sessions and their overall topic (e.g. How We Communicate, Code Base Walkthrough, etc)
     - determine what difficulty/experience levels will be offered, if any, and coordinate with Lead
@@ -31,8 +31,8 @@ Shadows and co-presenters are expected to assist and review these updates.
     - ensure attendees meet technical and experience requirements for their course
     - obtain a comprehensive list of names, emails, and GitHub handles
 - Coordinate with the [SIG Meet and Greet organizer](/events/events-team/content/sig-contrib-events.md#sig-meet-and-greet) (may be a different role to be determined by core team)
-- Ensure to advertise the SIG-Intros
-- Solicit feedback from workshop participants
+- Ensure to advertise the SIG-Intros.
+- Solicit feedback from workshop participants.
 
 ## Time Commitment
 

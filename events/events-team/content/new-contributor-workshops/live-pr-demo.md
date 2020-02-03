@@ -6,7 +6,7 @@ Plan for about 30 minutes
 
 ### Task Overview
 
-Demonstrate opening a pull request against k/k. There are some docs cleanup good-first-issues, but feel free to show off something you've been working on for a while.
+Demonstrate opening a pull request against the [Kubernetes/Kubernetes](https://git.k8s.io/kubernetes) (k/k) repository. There are some docs cleanup good-first-issues, but feel free to show off something you've been working on for a while.
 
 ### Slides
 
