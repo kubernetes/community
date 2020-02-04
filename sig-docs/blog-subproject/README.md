@@ -14,7 +14,7 @@ Regular Blog Meeting: Tuesdays at 18:30 UTC (biweekly). [Convert Your Timezone](
 ## Leadership
 
 - **Editorial Leads:** [Kaitlyn Barnard](https://github.com/kbarnard10), [Zach Corleissen](https://github.com/zacharysarah) (shadow)
-- **Technical Editors:** [Bob Killen](https://github.com/mrbobbytables), [Taylor Dolezal](https://github.com/onlydole) (shadow)
+- **Technical Editors:** [Bob Killen](https://github.com/mrbobbytables), [Taylor Dolezal](https://github.com/onlydole)
 - **Copy Editors:** [Alex Handy](https://github.com/vonguard), [Cody Clark](https://github.com/cody-clark)
 - **Blog Community Managers:** [Jorge Castro](https://github.com/castrojo), [Paris Pittman](https://github.com/parispittman) (shadow)
 
