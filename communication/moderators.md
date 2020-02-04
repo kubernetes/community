@@ -110,14 +110,9 @@ Regional category moderators seats (per category): 3
 
 ## YouTube Channel
 
-YouTube owners seats: 2
-
 ### Owners
 
-| Name          | Kubernetes Slack ID | Region   | Timezone                                                |
-| ------------- | ------------------- | -------- | ------------------------------------------------------- |
-| _Open_        | _Open_              |          |                                                         |
-| Sarah Novotny | @sarahnovotny       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+Email: contributors@kubernetes.io
 
 ### Primary Moderators
 
@@ -129,14 +124,12 @@ Moderators seats: 10
 | Jeffrey Sica        | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen          | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jorge Alarcon       | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Joe Beda            | @jbeda              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Chris Short	      | @chrisshort         | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
 | Naeil Ezzoueidi     | @nzoueidi           | EMEA     | [CST - Central European Time](https://time.is/CET)      |
 | Yang Li             | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
 | Marky Jackson       | @markyjackson       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Taylor Dolezal      | @onlydole           | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| _Open_              | _Open_              |          |                                                         |
 
 ### Moderators Pro Tempore
 
