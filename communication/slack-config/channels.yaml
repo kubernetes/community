@@ -134,6 +134,7 @@ channels:
   - name: kr-users
   - name: kraken
   - name: krane
+  - name: krew
   - name: krex
   - name: kube-aws
   - name: kube-deploy
