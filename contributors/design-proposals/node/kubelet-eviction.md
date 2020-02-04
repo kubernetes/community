@@ -456,16 +456,7 @@ placing **any** new pods on the node since they will be rejected by the `kubelet
 
 ### DaemonSet
 
-It is never desired for a `kubelet` to evict a pod that was derived from
-a `DaemonSet` since the pod will immediately be recreated and rescheduled
-back to the same node.
-
-At the moment, the `kubelet` has no ability to distinguish a pod created
-from `DaemonSet` versus any other object.  If/when that information is
-available, the `kubelet` could pro-actively filter those pods from the
-candidate set of pods provided to the eviction strategy.
-
-In general, it should be strongly recommended that `DaemonSet` not
-create `BestEffort` pods to avoid being identified as a candidate pod
-for eviction. Instead `DaemonSet` should ideally include Guaranteed pods only.
-
+As `Priority` is a key factor in the eviction strategy, if you do not want 
+pods belonging to a `DaemonSet` to be evicted, specify a sufficiently high priorityClass 
+in the pod spec template. If you want pods belonging to a `DaemonSet` to run only if 
+there are sufficient resources, specify a lower or default priorityClass.
