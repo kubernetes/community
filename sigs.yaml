@@ -1262,6 +1262,8 @@ sigs:
       description: Korean language content
     - name: sig-docs-maintainers
       description: Documentation maintainers
+    - name: sig-docs-pl-owners
+      description: Polish language content
     - name: sig-docs-pr-reviews
       description: Documentation PR reviews
     - name: sig-docs-pt-owners

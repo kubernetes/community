@@ -53,6 +53,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-docs-ja-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) - Japanese language content
     - [@kubernetes/sig-docs-ko-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) - Korean language content
     - [@kubernetes/sig-docs-maintainers](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) - Documentation maintainers
+    - [@kubernetes/sig-docs-pl-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pl-owners) - Polish language content
     - [@kubernetes/sig-docs-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) - Documentation PR reviews
     - [@kubernetes/sig-docs-pt-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) - Portuguese language content
     - [@kubernetes/sig-docs-uk-owners](https://github.com/orgs/kubernetes/teams/sig-docs-uk-owners) - Ukrainian language content
