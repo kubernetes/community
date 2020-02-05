@@ -251,3 +251,40 @@ The PR builder runs tests against the images listed in [jenkins-pull.properties]
 
 The post submit tests run against the images listed in [jenkins-ci.properties](https://git.k8s.io/kubernetes/test/e2e_node/jenkins/jenkins-ci.properties)
 
+
+# Notes on the Topology Manager tests
+
+The Topology Manager tests require a multi-numa node box (two or more nodes) with at least one SRIOV device installed to run.
+The tests automatically skip if the conditions aren't met.
+
+The test code statically includes the manifests needed to configure the SRIOV device plugin.
+However, is not possible to anticipate all the possible configuration, hence the included configuration is intentionally minimal.
+
+It is recommended you supply a ConfigMap describing the cards installed in the machine running the tests using TEST_ARGS.
+[Here's the upstream reference](https://github.com/intel/sriov-network-device-plugin/blob/master/deployments/configMap.yaml)
+```sh
+make test-e2e-node TEST_ARGS='--sriovdp-configmap-file="/path/to/sriovdp-config-map.yaml"'
+```
+
+You must have the Virtual Functions (VFs) already created in the node you want to run the test on.
+Example command to create the VFs - please note the PCI address of the SRIOV device depends on the host
+system hardware.
+```bash
+cat /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.1/sriov_numvfs
+echo 7 > /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.1/sriov_numvfs
+```
+
+Some topology manager tests require minimal knowledge of the host topology in order to be performed.
+The required information is to which NUMA node in the system are the SRIOV device attached to.
+
+To enable these tests, the config map should supply annotations to convey this information:
+```yaml
+metadata:
+  annotations:
+    pcidevice_node0: 1
+    pcidevice_node1: 0
+    pcidevice_node2: 0
+    pcidevice_node3: 0
+```
+
+For each NUMA node, you should specify the number of SRIOV devices attached, even if it is zero.
