@@ -125,11 +125,8 @@ aliases:
     - srampal
     - tashimi
   wg-policy-leads:
-    - easeway
     - ericavonb
     - hannibalhuang
-    - mdelder
-    - tsandall
   wg-resource-management-leads:
     - derekwaynecarr
     - vishh

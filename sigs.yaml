@@ -2611,21 +2611,12 @@ workinggroups:
   label: policy
   leadership:
     chairs:
-    - github: easeway
-      name: Yisui Hu
-      company: Google
     - github: ericavonb
       name: Erica von Buelow
       company: Red Hat
     - github: hannibalhuang
       name: Howard Huang
       company: Huawei
-    - github: mdelder
-      name: Michael Elder
-      company: IBM
-    - github: tsandall
-      name: Torin Sandall
-      company: Styra
   meetings:
   - description: Regular WG Meeting
     day: Wednesday
