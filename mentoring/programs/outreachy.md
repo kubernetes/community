@@ -1,10 +1,8 @@
 # Outreachy
 
-Kubernetes is happy to announce our participation in the Outreachy program running from December 2019 to March 2020.
-Please see the [main program page](https://www.outreachy.org/) for general information about the program,
-such as its purpose, timeline, eligibility requirements, and how to apply.
+Kubernetes is happy to announce our participation in the Outreachy program. Please see the [main program page](https://www.outreachy.org/) for general information including the time line for semesters as it's only a few times a year. The outreachy site also provides the eligibility requirements and how to apply.
 
-The current list of projects, mentors and other details can be found [here](https://www.outreachy.org/apply/project-selection/#kubernetes).
+If we are currently participating, you will see the Kubernetes project listed [here](https://www.outreachy.org/apply/project-selection/#kubernetes). If you are interested in becoming a mentor or have a Kubernetes project that would be good for an Outreachy intern, please reach out to #sig-contribex on slack. 
 
 ## What is Kubernetes?
 
