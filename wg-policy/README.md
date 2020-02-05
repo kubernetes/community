@@ -25,11 +25,8 @@ Provide an overall architecture that describes both the current policy related i
 
 ## Organizers
 
-* Yisui Hu (**[@easeway](https://github.com/easeway)**), Google
 * Erica von Buelow (**[@ericavonb](https://github.com/ericavonb)**), Red Hat
 * Howard Huang (**[@hannibalhuang](https://github.com/hannibalhuang)**), Huawei
-* Michael Elder (**[@mdelder](https://github.com/mdelder)**), IBM
-* Torin Sandall (**[@tsandall](https://github.com/tsandall)**), Styra
 
 ## Contact
 - Slack: [#wg-policy](https://kubernetes.slack.com/messages/wg-policy)
