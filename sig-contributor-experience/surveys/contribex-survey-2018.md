@@ -7,9 +7,9 @@ Authors | @parispittman, @jberkus, and many contributor experience members
 Tool Used | SurveyMonkey; @idvoretskyi entered into the tool from the CNCF account and exported the data
 Start | September 08, 2018 (soft launch on Slack); September 11, 2018 (full launch on kubernetes-sig-contribex@googlegroups.com)
 End | October 1, 2018
-Subject(s) | automation, community meeting, mentoring, communication, demographic information about contributors, events, 
+Subject(s) | automation, community meeting, mentoring, communication, demographic information about contributors, events,
 Langauage | English
-Data Processing | All personal identifiers have been removed. 73 respondents provided their email addresses for follow up. They have been scrubbed. 
+Data Processing | All personal identifiers have been removed. 73 respondents provided their email addresses for follow up. They have been scrubbed.
 Format | .csv
 File Name | contribex-survey-2018.csv
 
