@@ -1,7 +1,5 @@
 # Шпаргалка для контриб'юторів Kubernetes
 
-[Deutsch](README-de.md) | [Français](README-fr.md) | [Bahasa Indonesia](README-id.md) | [日本語](README-ja.md) | [한국어](README-ko.md) | [Português](README-pt.md) | [中文](README-zh.md)
-
 Список загальних джерел для контриб'юторів Kubernetes, корисні поради, прийоми та найкращі практики, що застосовуються у Kubernetes. Це "TL;DR", або стислий довідник корисної інформації, що має на меті покращити ваш досвід контриб'ютора на GitHub.
 
 **Зміст**
