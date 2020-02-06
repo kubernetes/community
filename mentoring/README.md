@@ -1,17 +1,24 @@
 ---
-Title: Kubernetes Mentoring Initiative
+Title: Kubernetes Upstream Mentoring Programs
 ---
 
-# Kubernetes Mentoring Initiatives
+# Kubernetes Upstream Mentoring Programs
 
-This folder will be used for all mentoring initiatives for Kubernetes.
+This folder will be used for all mentoring initiatives for contributing to
+Kubernetes. Check out KubeCon and other CNCF events and programs for end user
+training and learning.  
 
 ---
 
-We understand that everyone has different learning styles and we want to support as many of those as possible. Mentoring is vital to the growth of an individual and organization of every kind. For Kubernetes, the larger the project becomes, it's necessary to keep a continuous pipeline of quality contributors.
+We understand that everyone has different learning styles and we want to support
+as many of those as possible. Mentoring is vital to the growth of an individual
+and organization of every kind. For Kubernetes, the larger the project becomes,
+it's necessary to keep a continuous pipeline of quality contributors and we like
+having you around!  
 
 ## Current mentoring activities:
-Please reach out to #sig-contribex on slack or come to a mentoring meeting to get involved in planning //TODO add contribex README when this is updated
+Please reach out to #sig-contribex on slack or come to a mentoring meeting to
+get involved in planning //TODO add contribex README when this is updated
 
 Mentors On Demand  
 * [Meet Our Contributors](/mentoring/meet-our-contributors.md)
@@ -47,6 +54,6 @@ This is not an out of the box program but was largely inspired by the following:
 Thanks to:  
 * the many contributors who reviewed and participated in brainstorming,  
 * founding mentees for their willingness to try this out,  
-* founding mentors (@chrislovecnm, @luxas, @kow3ns)
+* founding mentors (@chrislovecnm, @luxas, @kow3ns, @nikhita)
 
 We welcome PRs, suggestions, and help!
