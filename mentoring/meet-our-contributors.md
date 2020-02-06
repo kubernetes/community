@@ -80,7 +80,7 @@ better!
 
 [kubernetes.io/community]: https://kubernetes.io/community/
 [#meet-our-contributors]: https://kubernetes.slack.com/messages/meet-our-contributors
-[Convert to your timezone]: https://www.thetimezoneconverter.com/?t=02%3A30%20pm&tz=UTC&
+[Convert to your timezone]: https://www.thetimezoneconverter.com/?t=03%3A30%20pm&tz=UTC&
 [Kubernetes YouTube Channel]: (https://www.youtube.com/c/KubernetesCommunity/live
 [previous Meet-Our-Contributors monthly meetings]: https://www.youtube.com/playlist?list=PL69nYSiGNLP3QpQrhZq_sLYo77BVKv09F
 [#office-hours]: https://kubernetes.slack.com/messages/office-hours
