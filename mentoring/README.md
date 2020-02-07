@@ -19,7 +19,7 @@ We understand that everyone has different learning styles and we want to support
 Please reach out to #sig-contribex on slack or come to a mentoring meeting to get involved in planning //TODO add contribex README when this is updated
 
 Mentors On Demand  
-* [Meet Our Contributors](/mentoring/meet-our-contributors.md)
+* [Meet Our Contributors](/mentoring/programs/meet-our-contributors.md)
 
 Long Term Contributor Ladder Growth  
 * Through [Group Mentoring Cohorts](/mentoring/programs/group-mentoring.md)
@@ -38,7 +38,7 @@ Groups Traditionally Underrepresented in Tech
 
 In person
 * [New Contributor Workshop] //TODO link to something that talks about these
-* Pod Mentoring! [aka group mentoring](/mentoring/programs/mentoring-events)
+* Pod Mentoring! [aka group mentoring](/mentoring/programs/mentoring-events.md)
 
 #### Inspiration and Thanks
 This is not an out of the box program but was largely inspired by the following:  
