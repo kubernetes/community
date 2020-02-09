@@ -1165,6 +1165,13 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
     - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
+    meetings:
+    - description: GitHub Administration Subproject
+      day: Thursday
+      time: "09:30"
+      tz: PT (Pacific Time)
+      frequency: monthly on 4th Thursday
+      url: https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit
   - name: k8s.io
     description: Creates and maintains shortcuts and automation apps running in the
       k8s.io domain.

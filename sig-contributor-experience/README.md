@@ -87,6 +87,8 @@ Manages and controls Github permissions, repos, and groups, including Org Member
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
   - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
+- **Meetings:**
+  - GitHub Administration Subproject: [Thursdays at 09:30 PT (Pacific Time)](https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit) (monthly on 4th Thursday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:30&tz=PT%20%28Pacific%20Time%29).
 ### k8s.io
 Creates and maintains shortcuts and automation apps running in the k8s.io domain.
 - **Owners:**
