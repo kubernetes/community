@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-weight: 3
+weight: 2
 slug: "getting-started" 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Documentation Style Guide"
-weight: 1
+weight: 14
 slug: "style-guide"
 ---
 

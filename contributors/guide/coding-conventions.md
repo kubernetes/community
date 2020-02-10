@@ -1,6 +1,6 @@
 ---
 title: "Coding Conventions"
-weight: 1
+weight: 8
 slug: "coding-conventions"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Non-code Contributions"
-weight: 1
+weight: 11
 slug: "non-code-contributions"
 ---
 

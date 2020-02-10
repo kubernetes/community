@@ -1,6 +1,6 @@
 ---
 title: "GitHub Workflow"
-weight: 1
+weight: 6
 slug: "github-workflow"
 ---
 

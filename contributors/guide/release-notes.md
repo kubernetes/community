@@ -1,6 +1,6 @@
 ---
 title: "Adding Release Notes"
-weight: 1
+weight: 12
 slug: "release-notes"
 ---
 

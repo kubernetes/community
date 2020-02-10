@@ -1,6 +1,6 @@
 ---
 title: "Bug Bounty Programs"
-weight: 1
+weight: 16
 slug: "bug-bounty"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Making your First Contribution"
-weight: 2
+weight: 3
 slug: "first-contribution" 
 ---
 
