@@ -2396,13 +2396,13 @@ workinggroups:
       company: Google
   meetings:
   - description: Regular WG Meeting
-    day: Monday
+    day: Wednesday
     time: "9:00"
     tz: PT (Pacific Time)
     frequency: bi-weekly
-    url: https://docs.google.com/document/d/15tLCV3csvjHbKb16DVk-mfUmFry_Rlwo-2uG6KNGsfw/edit
-    archive_url: http://bit.ly/wg-data-protection-notes
-    recordings_url: http://bit.ly/data-protection-playlist
+    url: https://zoom.us/j/6933410772
+    archive_url: https://docs.google.com/document/d/15tLCV3csvjHbKb16DVk-mfUmFry_Rlwo-2uG6KNGsfw/edit
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP336DulLgPdlWJ_gzRz1iL5
   contact:
     slack: wg-data-protection
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-data-protection
