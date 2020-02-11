@@ -7,7 +7,7 @@ In order to standardize Special Interest Group efforts, create maximum transpare
 - Create a charter and have it approved according to the [SIG charter process]
 - Meet regularly, at least for 30 minutes every 3 weeks, except November and December
 - Keep up-to-date meeting notes, linked from the SIG's page in the community repo
-- Record meetings and make them publicly available on a YouTube playlist
+- Record meetings and make them publicly available on the [Kubernetes Community YouTube playlist]
 - Report activity with the community via the kubernetes-dev mailing list at least once a quarter. Whichever format the SIG uses should _always_ be reported to the kubernetes-dev mailing list as this is the list the community depends on for SIG updates.  
   - Each SIG is assigned an update during the monthly community meeting throughout the year. The meeting host will publish the notes to the kubernetes-dev mailing list with the update.  
   - If a SIG is doing an update during KubeCon + CloudNativeCon, the SIG Chairs should ensure that a link to the recording of the video is sent to the kubernetes-dev mailing list.  
@@ -97,7 +97,7 @@ Subproject Owner Role.  (this different from a SIG or Organization Member).
 
 ## Organizational Management
 
-- SIG meets bi-weekly on zoom with agenda in meeting notes
+- SIG meets at least once every three weeks on zoom with agenda in meeting notes except November and December
   - *SHOULD* be facilitated by chairs unless delegated to specific Members
 - SIG overview and deep-dive sessions organized for KubeCon/CloudNativeCon
   - *SHOULD* be organized by chairs unless delegated to specific Members
@@ -190,3 +190,4 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [SECURITY_CONTACTS]: https://github.com/kubernetes/kubernetes-template-project/blob/master/SECURITY_CONTACTS
 [sig-wg-lifecycle]: /sig-wg-lifecycle.md
 [community members]: /community-membership.md
+[Kubernetes Community YouTube playlist]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
