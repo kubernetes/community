@@ -1204,16 +1204,18 @@ sigs:
   label: docs
   leadership:
     chairs:
-    - github: Bradamant3
-      name: Jennifer Rondeau
-      company: Stripe
     - github: jimangel
       name: Jim Angel
       company: General Motors
+    - github: kbarnard10
+      name: Kaitlyn Barnard
+      company: Kong
     - github: zacharysarah
       name: Zach Corleissen
       company: Linux Foundation
     emeritus_leads:
+    - github: Bradamant3
+      name: Jennifer Rondeau
     - github: chenopis
       name: Andrew Chen
     - github: jaredbhatti
