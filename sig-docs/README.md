@@ -28,14 +28,15 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Jennifer Rondeau (**[@Bradamant3](https://github.com/Bradamant3)**), Stripe
 * Jim Angel (**[@jimangel](https://github.com/jimangel)**), General Motors
+* Kaitlyn Barnard (**[@kbarnard10](https://https://github.com/kbarnard10)**), Kong
 * Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
 
 ## Emeritus Leads
 
 * Andrew Chen (**[@chenopis](https://github.com/chenopis)**)
 * Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**)
+* Jennifer Rondeau (**[@Bradamant3](https://github.com/Bradamant3)**), Stripe
 
 ## Contact
 - Slack: [#sig-docs](https://kubernetes.slack.com/messages/sig-docs)
