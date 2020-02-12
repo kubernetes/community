@@ -79,8 +79,13 @@ The following [subprojects][subproject-definition] are owned by sig-scalability:
 <!-- BEGIN CUSTOM CONTENT -->
 # Scalability Regression - Contact Points
 
-*Reach out to these folks if you have any inquiries about scalability regressions, e.g.
-regression status, whether it should block the release or not, etc.*
+SIG Scalability has established best-effort oncall rotation operating in
+CEST/CET business hours (~9:00-18:00). If you have any inquiries about
+scalability regressions, e.g. regression status, whether it should block the
+release or not, etc. please reach out to the current oncaller. They can be found
+on https://go.k8s.io/oncall .
+
+Also do not hesitate to contact those SIG members for status update:
 
 * Jacek Kaniuk (**[@jkaniuk](https://github.com/jkaniuk)**), Google
 * Jakub Przychodzeń (**[@jprzychodzen](https://github.com/jprzychodzen)**), Google
