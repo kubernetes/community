@@ -1086,12 +1086,19 @@ sigs:
     - github: parispittman
       name: Paris Pittman
   meetings:
+  - description: Biweekly Issue Triage
+    day: Wednesday
+    time: "10:30"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/308291410
+    recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - description: Regular SIG Meeting
     day: Wednesday
     time: "9:30"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/397264241
     archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
     recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   contact:
@@ -1124,7 +1131,14 @@ sigs:
       time: "5:00"
       tz: UTC
       frequency: biweekly
-      url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit
+      url: https://zoom.us/j/144440337
+    - description: Marketing Team Meeting
+      day: Friday
+      time: "8:00"
+      tz: PT (Pacific Time)
+      frequency: weekly
+      url: https://zoom.us/j/596959769
+      recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: contributors-documentation
     description: writes and maintains documentation around contributing to Kubernetes,
       including the Contributor's Guide, Developer's Guide, and contributor website.

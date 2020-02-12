@@ -13,7 +13,9 @@ Developing and sustaining a healthy community of contributors is critical to sca
 The [charter](charter.md) defines the scope and governance of the Contributor Experience Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 9:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+* Biweekly Issue Triage: [Wednesdays at 10:30 PT (Pacific Time)](https://zoom.us/j/308291410) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
+* Regular SIG Meeting: [Wednesdays at 9:30 PT (Pacific Time)](https://zoom.us/j/397264241) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
   * [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 
@@ -60,7 +62,9 @@ Manages operations and policy for upstream community group communication platfor
   - https://raw.githubusercontent.com/kubernetes-sigs/discuss-theme/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
 - **Meetings:**
-  - APAC Coordinator Meeting: [Thursdays at 5:00 UTC](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
+  - APAC Coordinator Meeting: [Thursdays at 5:00 UTC](https://zoom.us/j/144440337) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
+  - Marketing Team Meeting: [Fridays at 8:00 PT (Pacific Time)](https://zoom.us/j/596959769) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### contributors-documentation
 writes and maintains documentation around contributing to Kubernetes, including the Contributor's Guide, Developer's Guide, and contributor website.
 - **Owners:**
