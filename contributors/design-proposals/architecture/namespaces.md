@@ -191,6 +191,52 @@ If the *namespace controller* sees a *Namespace* whose
 list is empty, it will signal the server to permanently remove the *Namespace*
 from storage by sending a final DELETE action to the API server.
 
+There are situations where the *namespace controller* is unable to guarantee 
+cleanup of all resources. During a cleanup run, it attempts a best-effort 
+resource deletion, remembers the errors that occurred and reports back via
+**namespace status condition**. Some errors can be transient and will
+auto-resolve in the following cleanup runs, others may require manual
+intervention.
+
+These are the status conditions reporting on the process of namespace 
+termination:
+- `NamespaceDeletionDiscoveryFailure` reports on errors during the first phase
+   of namespace termination - 
+   [resource discovery](../api-machinery/api-group.md).
+- `NamespaceDeletionGroupVersionParsingFailure` reports on errors that happen
+   when parsing the [GVK](../api-machinery/api-group.md) 
+   of all discovered resources.
+- `NamespaceDeletionContentFailure` reports on errors preventing the controller
+   from deleting resources belonging to successfully discovered and parsed GVK.
+
+When any part of a certain phase fails, the *namespace controller* sets appropriate
+status condition with a descriptive message of what went wrong. After 
+the controller successfully passes that phase, it sets the status condition to
+report success. 
+
+Example of a failing namespace termination where
+`NamespaceDeletionContentFailure` is no longer reporting any error and 
+`NamespaceDeletionDiscoveryFailure` continues to fail.
+
+```yaml
+status:
+  conditions:
+  - lastTransitionTime: "2019-02-13T12:58:03Z"
+    message: All content successfully deleted
+    reason: ContentDeleted
+    status: "False"
+    type: NamespaceDeletionContentFailure
+  - lastTransitionTime: "2019-02-13T12:55:16Z"
+    message: 'Discovery failed for some groups, 2 failing: unable to retrieve the
+      complete list of server APIs: mutators.abc.com/v1alpha1: the server is currently
+      unable to handle the request, validators.abc.com/v1alpha1: the server is
+      currently unable to handle the request'
+    reason: DiscoveryFailed
+    status: "True"
+    type: NamespaceDeletionDiscoveryFailure
+  phase: Terminating
+```
+
 ### REST API
 
 To interact with the Namespace API:
