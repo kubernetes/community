@@ -308,17 +308,47 @@ response reduces the complexity of these clients.
 
 ##### Typical status properties
 
-**Conditions** represent the latest available observations of an object's
-state.  They are an extension mechanism intended to be used when the details of
-an observation are not a priori known or would not apply to all instances of a
-given Kind.  For observations that are well known and apply to all instances, a
-regular field is preferred.  An example of a Condition that probably should
-have been a regular field is Pod's "Ready" condition - it is managed by core
-controllers, it is well understood, and it applies to all Pods.
+**Conditions** provide a standard mechanism for higher-level status reporting
+from a controller. They are an extension mechanism which allows tools and other
+controllers to collect summary information about resources without needing to
+understand resource-specific status details. Conditions should complement more
+detailed information about the observed status of an object written by a
+controller, rather than replace it. For example, the "Available" condition of a
+Deployment can be determined by examining `readyReplicas`, `replicas`, and
+other properties of the Deployment. However, the "Available" condition allows
+other components to avoid duplicating the availability logic in the Deployment
+controller.
 
 Objects may report multiple conditions, and new types of conditions may be
 added in the future or by 3rd party controllers. Therefore, conditions are
-represented using a list/slice, where all have similar structure.
+represented using a list/slice of objects, where each condition has a similar
+structure. Conditions are most useful when they follow some consistent
+conventions:
+
+* Conditions should be added to explicitly convey properties that users and
+  components care about rather than requiring those properties to be inferred
+  from other observations.  Once defined, the meaning of a Condition can not be
+  changed arbitrarily - it becomes part of the API, and has the same backwards-
+  and forwards-compatibility concerns of any other part of the API.
+
+* Conditions should have a consistent polarity. **A "positive" polarity where
+  "True" indicates normal operation and "False" indicates a failure is
+  recommended.** (Note that this is an explicit reversal from earlier
+  recommendations of "abnormal-true" polarity. Experience indicates that humans
+  are better at interpreting the "positive" polarity.)
+
+   * Condition names should clearly indicate what "True" and "False" mean. This
+     may require adjusting condition type names, for example changing the type
+     name from "QuotaExhausted" to "ResourcesAvailable".
+
+   * The `Unknown` status is the default, and typically indicates that
+     reconciliation has not yet finished (or that the resource state may not
+     yet be observable).
+
+* It's helpful to have a common top-level condition which summarizes more
+  detailed conditions. Simple consumers may simply query the top-level
+  condition. The `Ready` and `Succeeded` condition types may be used for
+  long-running and bounded-execution objects, respectively.
 
 The `FooCondition` type for some resource type `Foo` may include a subset of the
 following fields, but must contain at least `type` and `status` fields:
@@ -347,19 +377,9 @@ Use of the `Reason` field is encouraged.
 Use the `LastHeartbeatTime` with great caution - frequent changes to this field
 can cause a large fan-out effect for some resources.
 
-Conditions should be added to explicitly convey properties that users and
-components care about rather than requiring those properties to be inferred from
-other observations.  Once defined, the meaning of a Condition can not be
-changed arbitrarily - it becomes part of the API, and has the same backwards-
-and forwards-compatibility concerns of any other part of the API.
-
 Condition status values may be `True`, `False`, or `Unknown`. The absence of a
 condition should be interpreted the same as `Unknown`.  How controllers handle
 `Unknown` depends on the Condition in question.
-
-Condition types should indicate state in the "abnormal-true" polarity.  For
-example, if the condition indicates when a policy is invalid, the "is valid"
-case is probably the norm, so the condition should be called "Invalid".
 
 The thinking around conditions has evolved over time, so there are several
 non-normative examples in wide use.
@@ -374,9 +394,9 @@ and should assume an Open World.
 An example of an oscillating condition type is `Ready` (despite it running
 afoul of current guidance), which indicates the object was believed to be fully
 operational at the time it was last probed. A possible monotonic condition
-could be `Failed`. A `True` status for `Failed` would imply failure with no
-retry. An object that was still active would generally not have a `Failed`
-condition.
+could be `Succeeded`. A `True` status for `Succeeded` would imply completion
+and that the resource was no longer active. An object that was still active
+would generally not have a `Succeeded` condition.
 
 Some resources in the v1 API contain fields called **`phase`**, and associated
 `message`, `reason`, and other status fields. The pattern of using `phase` is
