@@ -7,7 +7,7 @@ TODO: Add overview (ties to contribex charter, what we do, how, why), other reso
 | Role | Handbook | Notes |
 | --- | --- | --- |
 | Blogger(s) | TODO | alex vonguard has taken interest |
-| Social Media | TODO | for future contributor channels |
+| Social Media | [Chris Short](https://github.com/chris-short) | for future contributor channels |
 | Editor | TODO | unsure if this will be a position but could be good for making sure we are using the style guide and ensuring a consistent tone and brand |
 | Designer | TODO | help us with thumbnail graphics, digital assets, infographics, contributor site |
 
