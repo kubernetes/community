@@ -33,6 +33,7 @@ channels:
   - name: cluster-api-aws
   - name: cluster-api-azure
   - name: cluster-api-baremetal
+  - name: cluster-api-digitalocean
   - name: cluster-api-docker
     archived: true
   - name: cluster-api-openstack
