@@ -3,6 +3,8 @@
 
 channels:
   - name: airflow-operator
+  - name: aks-engine-users
+  - name: aks-engine-devs
   - name: announcements
   - name: antrea
   - name: api-reviews
