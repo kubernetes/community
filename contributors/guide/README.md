@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with Contributing"
+title: "Contributors Guide"
 weight: 1
 slug: "guide" 
 ---
