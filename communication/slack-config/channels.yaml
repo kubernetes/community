@@ -4,7 +4,8 @@
 channels:
   - name: airflow-operator
   - name: aks-engine-users
-  - name: aks-engine-devs
+  - name: aks-engine-dev
+    id: CU1CXUHN0
   - name: announcements
   - name: antrea
   - name: api-reviews
