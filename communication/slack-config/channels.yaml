@@ -213,6 +213,7 @@ channels:
   - name: meetup-tunisia
   - name: metacontroller
   - name: metallb
+  - name: metallb-dev
   - name: microk8s
   - name: minikube
   - name: minikube-dev
