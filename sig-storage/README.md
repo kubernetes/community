@@ -23,6 +23,14 @@ The [charter](charter.md) defines the scope and governance of the Storage Specia
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Saad Ali (**[@saad-ali](https://github.com/saad-ali)**), Google
+* Xing Yang (**[@xing-yang](https://github.com/xing-yang)**), VMware
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Jan Šafránek (**[@jsafrane](https://github.com/jsafrane)**), Red Hat
+* Michelle Au (**[@msau42](https://github.com/msau42)**), Google
 
 ## Emeritus Leads
 

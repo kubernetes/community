@@ -1991,6 +1991,16 @@ sigs:
     - github: saad-ali
       name: Saad Ali
       company: Google
+    - github: xing-yang
+      name: Xing Yang
+      company: VMware
+    tech_leads:
+    - github: jsafrane
+      name: Jan Šafránek
+      company: Red Hat
+    - github: msau42
+      name: Michelle Au
+      company: Google
     emeritus_leads:
     - github: childsb
       name: Bradley Childs

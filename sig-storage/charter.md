@@ -50,7 +50,7 @@ and opts-in to updates and modifications to [sig-governance].
 
 ### Deviations from [sig-governance]
 
-SIG Storage does not have separate tech leads: SIG Storage chairs serve as tech leads.
+None.
 
 ### Subproject Creation
 
