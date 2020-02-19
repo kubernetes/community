@@ -1001,11 +1001,11 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
     meetings:
-    - description: Cluster API vSphere syncup meeting
-      day: Wednesday
+    - description: Cluster API vSphere meeting
+      day: Monday
       time: "13:00"
       tz: PT (Pacific Time)
-      frequency: bi-weekly
+      frequency: 'biweekly 2020 start date: Jan. 13th'
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu
