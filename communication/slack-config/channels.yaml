@@ -234,6 +234,7 @@ channels:
   - name: office-hours
   - name: okteto
   - name: opencontainers
+  - name: openebs
   - name: openshift-dev
   - name: openshift-users
   - name: openstack-helm
