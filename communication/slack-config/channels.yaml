@@ -204,6 +204,7 @@ channels:
   - name: meetup-manchester
   - name: meetup-minneapolis
   - name: meetup-nyc
+  - name: meetup-dc
   - name: meetup-paris
   - name: meetup-pittsburgh
   - name: meetup-sacramento
