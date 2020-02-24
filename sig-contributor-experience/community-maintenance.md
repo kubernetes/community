@@ -11,8 +11,7 @@ If you find that any one person is in charge of a resource it is your responsibi
 ### Slack
 
 - [ ] Channels - Anything out of place or not following the guidelines? 
-  - [ ] Close unused channels. 
-  - [ ] Check to see if there is a purpose, pinned documents like agendas, and other best practices being used in the channel. These are not required but are useful.
+  - [ ] For community group channels - Check to see if there is a purpose, pinned documents like agendas, and other best practices being used in the channel. These are not required but are useful.
 - [ ] Audit the Integrations and apps
 - [ ] Audit the user tokens
 - [ ] Audit the Emojis
@@ -24,8 +23,8 @@ If you find that any one person is in charge of a resource it is your responsibi
 - [ ] Audit Integrations
 - [ ] Check Label usage (education, deprecation, etc)
 - [ ] Is the PR and/or issue message still good/the best?
-- [ ] Check kubernetes/community/.github/PULL_REQUEST_TEMPLATE
-- [ ] Where’s the issue template located? 
+- [ ] Check community [PR Template]
+- [ ] Check community [Issue Templates]
 
 ### Calendars
 
@@ -53,11 +52,6 @@ If you find that any one person is in charge of a resource it is your responsibi
 - [ ] Ensure leads have access to their upgraded Zoom account
 - [ ] If appropriate change the password if a SIG has changed leadership 
   - Contact CNCF to adjust upgraded licenses if necessary
-- [ ] Audit kubernetes.io GSuite - this is primarily needed to create associated resources like GoogleGroups and the Google Cloud organization.  Accounts in  this domain cost the CNCF actual money, so are not available for individuals. Three steering committee members will hold the keys to three accounts on the domain, which can be used to create `@kubernetes.io` groups as needed.
-  - Volunteers (Ask for new representatives from the steering committee if election turnover affects this list):
-    - Joe Beda (@jbeda)
-    - Brendan Burns (@brendandburns)
-    - Tim Hockin (@thockin)
 
 ### Community Meeting
 
@@ -68,6 +62,10 @@ If you find that any one person is in charge of a resource it is your responsibi
 - [ ] Ensure the [SIG Schedule](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=1543199895) have SIGs assigned for the next few months
   - [ ] Ensure the assigned SIGs in this sheet match the actual SIGs in sigs.yaml. Double check that a SIG hasn't missed an update this past cycle and if they have schedule them for an upcoming meeting
 
+### Devstats
+
+ - [ ] Ensure [new repos] have been added to the correct repo group.
+
 ### Properties Managed by the CNCF
 
 The CNCF provides support to Kubernetes for the following properties, you do not need to check them, however members of SIG Contributor Experience should have a working relationship with the administrators of the following properties:
@@ -75,6 +73,7 @@ The CNCF provides support to Kubernetes for the following properties, you do not
 - Twitter
 - Blog
 - GCP Organization
+- Devstats
 
 ### Unknown State
 
@@ -82,3 +81,7 @@ Properties we should learn how to maintain, or at least document:
 
 - Kubernetes.io DNS
 - Kubernetes.io URL redirector
+
+[PR Template]:  /.github/PULL_REQUEST_TEMPLATE.md
+[Issue Templates]: /.github/ISSUE_TEMPLATE
+[new repos]: https://k8s.devstats.cncf.io/d/68/repository-groups?orgId=1
