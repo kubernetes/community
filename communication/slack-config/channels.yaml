@@ -126,6 +126,7 @@ channels:
   - name: keel
   - name: kiam
   - name: kind
+  - name: kcli
   - name: klog
   - name: knative
   - name: kompose
