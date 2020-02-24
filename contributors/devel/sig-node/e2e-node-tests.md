@@ -276,8 +276,9 @@ echo 7 > /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.1/sriov_numvfs
 
 Some topology manager tests require minimal knowledge of the host topology in order to be performed.
 The required information is to which NUMA node in the system are the SRIOV device attached to.
+The test code tries to autodetect the information it needs, skipping the relevant tests if the autodetection fails.
 
-To enable these tests, the config map should supply annotations to convey this information:
+You can override the autodetection adding annotations to the the config map like this example:
 ```yaml
 metadata:
   annotations:
@@ -287,4 +288,6 @@ metadata:
     pcidevice_node3: 0
 ```
 
-For each NUMA node, you should specify the number of SRIOV devices attached, even if it is zero.
+Please note that if you add the annotations, then you must provide the full information:
+you must should specify the number of SRIOV devices attached to each NUMA node in the system,
+even if the number is zero.
