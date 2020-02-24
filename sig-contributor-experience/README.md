@@ -102,6 +102,9 @@ Oversees and develops programs for helping contributors ascend the contributor l
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
+- **Meetings:**
+  - sig-contribex mentoring subproject meeting: [Fridays at 10:00 PT](https://zoom.us/j/739807514) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT).
+    - [Meeting recordings](https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### repo-infra
 Creates and maintains tools and templates for kubernetes-namespace repositories.
 - **Owners:**

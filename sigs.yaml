@@ -1198,6 +1198,14 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
+    meetings:
+    - description: sig-contribex mentoring subproject meeting
+      day: Friday
+      time: "10:00"
+      tz: PT
+      frequency: biweekly
+      url: https://zoom.us/j/739807514
+      recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: repo-infra
     description: Creates and maintains tools and templates for kubernetes-namespace
       repositories.
