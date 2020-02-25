@@ -250,7 +250,7 @@ make update
 make test
 
 # Run package tests verbosely
-make test WHAT=./pkg/api/helper GOFLAGS=-v
+make test WHAT=./pkg/apis/core/helper GOFLAGS=-v
 
 # Run integration tests, requires etcd
 # For more info, visit https://git.k8s.io/community/contributors/devel/sig-testing/testing.md#integration-tests
