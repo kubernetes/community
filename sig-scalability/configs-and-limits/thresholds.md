@@ -43,21 +43,23 @@ There are couple caveats to the thresholds we are presenting below:
 
 The table below is **NOT exhaustive** - more content is coming soon.
 
-| Quantity               | Threshold scope=namespace | Threshold: scope=cluster |
-|------------------------|---------------------------|--------------------------|
-| #Nodes                 | n/a                       | 5000                     |
-| #Namespaces            | n/a                       | 10000                    |
-| #Pods                  | 3000                      | 150000                   |
-| #Pods per node         | min(110, 10*#cores)       | min(110, 10*#cores)      |
-| #Services              | 5000                      | 10000                    |
-| #All service endpoints | TBD                       | TBD                      |
-| #Endpoints per service | 250                       | n/a                      |
-| #Secrets               | TBD                       | TBD                      |
-| #ConfigMaps            | TBD                       | TBD                      |
-| #Deployments           | 2000                      | TBD                      |
-| #DaemonSets            | TBD                       | TBD                      |
-| #Jobs                  | TBD                       | TBD                      |
-| #StatefulSets          | TBD                       | TBD                      |
+| Quantity                    | Threshold scope=namespace | Threshold: scope=cluster |
+|-----------------------------|---------------------------|--------------------------|
+| #Nodes                      | n/a                       | 5000                     |
+| #Namespaces                 | n/a                       | 10000                    |
+| #Pods                       | 3000                      | 150000                   |
+| #Pods per node              | min(110, 10*#cores)       | min(110, 10*#cores)      |
+| #Services                   | 5000                      | 10000                    |
+| #All service endpoints      | TBD                       | TBD                      |
+| #Endpoints per service      | 250                       | n/a                      |
+| #Secrets                    | TBD                       | TBD                      |
+| #ConfigMaps                 | TBD                       | TBD                      |
+| #Deployments                | 2000                      | TBD                      |
+| #DaemonSets                 | TBD                       | TBD                      |
+| #Jobs                       | TBD                       | TBD                      |
+| #StatefulSets               | TBD                       | TBD                      |
+| #AccessTokens               | 2000                      | 2000                     |
+| #AccessTokens verifications | 5000 QPS                  | 5000 QPS                 |
 
 There are also thresholds that depend on environment/cloud provider. The **NOT
 exhaustive** list includes:
