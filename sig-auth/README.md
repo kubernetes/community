@@ -133,6 +133,10 @@ API validation and policies enforced during admission, such as PodSecurityPolicy
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/security/podsecuritypolicy/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/imagepolicy/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/policy/OWNERS
+### secrets-store-csi-driver
+Integrates secrets stores with Kubernetes via a CSI volume.
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/OWNERS
 ### service-accounts
 Infrastructure implementing Kubernetes service account based workload identity.
 - **Owners:**

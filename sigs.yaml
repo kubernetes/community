@@ -478,6 +478,11 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/security/podsecuritypolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/imagepolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/policy/OWNERS
+  - name: secrets-store-csi-driver
+    description: |
+      Integrates secrets stores with Kubernetes via a CSI volume.
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/OWNERS
   - name: service-accounts
     description: |
       Infrastructure implementing Kubernetes service account based workload identity.
