@@ -22,6 +22,6 @@ Clear command line instructions.
 
 ### Ideas
 
-- Do a fun thing with the go client and a kind cluster
-- Build and modify kubectl
+- Do a fun thing with the Kubernetes [go client](https://git.k8s.io/client-go) and a [kind](https://sigs.k8s.io/kind) cluster.
+- Build and modify `kubectl`.
 - Try a `make` command; be aware you may need to give docker a lot of space on your machine for a successful build.

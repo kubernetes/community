@@ -11,7 +11,7 @@ This task is meant as a short overview for Intermediate content.
 
 ### Slides
 
-The [PR workflow diagram](git.k8s.io/community/contributors/guide/git_workflow.png) is useful here. There are also previous slides that explain the differnet labels.
+The [PR workflow diagram](https://git.k8s.io/community/blob/master/contributors/guide/git_workflow.png) is useful here. There are also previous slides that explain the differnet labels.
 
 ### Details To Cover 
 
@@ -22,4 +22,4 @@ The [PR workflow diagram](git.k8s.io/community/contributors/guide/git_workflow.p
 
 ### Ideas
 
-- Play with bots in the [contributor playground](https://github.com/kubernetes-sigs/contributor-playground)
+- Play with bots in the [contributor playground](https://sigs.k8s.io/contributor-playground)

@@ -10,11 +10,11 @@ Show how we communicate in the community, and which tools are for what purpose.
 
 ### Slides
 
-Refer to previous workshops for inspirations
+Refer to previous workshops for inspirations.
 
 ### Details To Cover 
 
-- Code of Conduct
+- [Code of Conduct](https://git.k8s.io/community/code-of-conduct.md) (CoC)
 - Where We Talk:
     - Slack
     - Discuss

@@ -10,7 +10,7 @@ Introduce SIGs, Working Groups, and a tiny bit of governance (if you must).
 
 ### Slides
 
-Refer to previous workshops for inspirations
+Refer to previous workshops for inspirations.
 
 ### Details To Cover 
 
