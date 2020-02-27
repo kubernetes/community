@@ -616,7 +616,7 @@
         *   No Kubernetes operator yet, but it's in progress.
     *   Answers from Q&A:
         *   @jberkus - For q1 - YB is optimized for small reads and writes, but can also perform batch reads and writes efficiently - mostly oriented towards modern OLTP/user-facing applications. Example is using spark or presto on top for use-cases like iot, fraud detection, alerting, user-personalization, etc.
-        *   q2: operator in the works. We are just wrapping up our helm charts[ https://github.com/YugaByte/yugabyte-db/tree/master/cloud/kubernetes/helm](https://github.com/YugaByte/yugabyte-db/tree/master/cloud/kubernetes/helm)
+        *   q2: operator in the works. We are just wrapping up our helm charts[ https://github.com/yugabyte/yugabyte-db/tree/v1.3.0/cloud/kubernetes/helm](https://github.com/YugaByte/yugabyte-db/tree/master/cloud/kubernetes/helm)
         *   q3: the enterprise edition does have net new DB features like async replication and enforcing geographic affinity for reads/writes, etc. Here is a comparison:[ https://www.yugabyte.com/product/compare/](https://www.yugabyte.com/product/compare/)
         *   q4: You cannot write data using redis and read using another API. Its often tough to model across api's. Aim is to use a single database to build the app, so support common apis
         *   The storage layer is common
