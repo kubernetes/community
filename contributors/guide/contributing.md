@@ -55,7 +55,7 @@ Refer to its [command reference documentation](https://go.k8s.io/bot-commands).
 
 Common new contributor PR issues are:
 
-* not having correctly signed the CLA ahead of your first PR (see [Sign the CLA](#sign-the-cla) section)
+* not having correctly signed the CLA ahead of your first PR (see [Sign the CLA](/contributors/guide/getting-started.md#sign-the-cla) section)
 * finding the right SIG or reviewer(s) for the PR (see [Code Review](#code-review) section) and following any SIG or repository specific contributing guidelines (see [Learn about SIGs](#learn-about-sigs) section)
 * dealing with test cases which fail on your PR, unrelated to the changes you introduce (see [Test Flakes](http://velodrome.k8s.io/dashboard/db/bigquery-metrics?orgId=1))
 * Not following [scalability good practices](scalability-good-practices.md)
