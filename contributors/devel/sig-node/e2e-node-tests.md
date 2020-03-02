@@ -282,10 +282,10 @@ You can override the autodetection adding annotations to the the config map like
 ```yaml
 metadata:
   annotations:
-    pcidevice_node0: 1
-    pcidevice_node1: 0
-    pcidevice_node2: 0
-    pcidevice_node3: 0
+    pcidevice_node0: "1"
+    pcidevice_node1: "0"
+    pcidevice_node2: "0"
+    pcidevice_node3: "0"
 ```
 
 Please note that if you add the annotations, then you must provide the full information:
