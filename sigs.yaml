@@ -1243,6 +1243,10 @@ sigs:
     - github: zacharysarah
       name: Zach Corleissen
       company: Linux Foundation
+    tech_leads:
+    - github: kbhawkey
+      name: Karen Bradshaw
+      company: Independent
     emeritus_leads:
     - github: Bradamant3
       name: Jennifer Rondeau
