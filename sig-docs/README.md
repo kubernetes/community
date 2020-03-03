@@ -32,6 +32,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Kaitlyn Barnard (**[@kbarnard10](https://github.com/kbarnard10)**), Kong
 * Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
 
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Karen Bradshaw (**[@kbhawkey](https://github.com/kbhawkey)**), Independent
+
 ## Emeritus Leads
 
 * Jennifer Rondeau (**[@Bradamant3](https://github.com/Bradamant3)**)
