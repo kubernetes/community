@@ -67,7 +67,7 @@ should also read [Writing Good e2e Tests](writing-good-e2e-tests.md)
 There are a variety of ways to run e2e tests, but we aim to decrease the number
 of ways to run e2e tests to a canonical way: `kubetest`.
 
-You can install `kubetest` as follows:
+You can install `kubetest` as follows (If you face a download issue, please see issue [#14712](https://github.com/kubernetes/test-infra/issues/14712#issuecomment-541560441)):
 ```sh
 go get -u k8s.io/test-infra/kubetest
 ```
