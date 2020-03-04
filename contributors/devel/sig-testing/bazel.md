@@ -104,7 +104,7 @@ further exploration.
 ### The CC toolchain is not fully hermetic
 Bazel requires several tools and development packages to be installed in the system, including `gcc`, `g++`, `glibc and libstdc++ development headers` and `glibc static development libraries`. Please check your distribution for exact names of the packages. Examples for some commonly used distributions are below:
 
-|     Dependency        | Debian/Ubuntu                 | CentOS                         | OpenSuSE                                |
+|     Dependency        | Debian/Ubuntu                 | CentOS                         | openSUSE                                |
 |:---------------------:|-------------------------------|--------------------------------|-----------------------------------------|
 | Build essentials      | `apt install build-essential` | `yum groupinstall development` | `zypper install -t pattern devel_C_C++` |
 | GCC C++               | `apt install g++`             | `yum install gcc-c++`          | `zypper install gcc-c++`                |
