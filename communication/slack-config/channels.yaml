@@ -305,6 +305,7 @@ channels:
   - name: sig-ui
   - name: sig-usability
   - name: sig-windows
+  - name: sig-windows-leads
   - name: skaffold
   - name: slack-admins
   - name: slack-infra
