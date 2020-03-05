@@ -43,7 +43,8 @@ aliases:
     - zacharysarah
   sig-instrumentation-leads:
     - brancz
-    - piosz
+    - ehashman
+    - logicalhan
   sig-multicluster-leads:
     - pmorie
     - quinton-hoole

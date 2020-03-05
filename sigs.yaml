@@ -1330,12 +1330,16 @@ sigs:
   label: instrumentation
   leadership:
     chairs:
+    - github: ehashman
+      name: Elana Hashman
+      company: Red Hat
+    - github: logicalhan
+      name: Han Kang
+      company: Google
+    tech_leads:
     - github: brancz
       name: Frederic Branczyk
       company: Red Hat
-    - github: piosz
-      name: Piotr Szczesniak
-      company: Google
   meetings:
   - description: Regular SIG Meeting
     day: Thursday

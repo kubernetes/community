@@ -21,8 +21,14 @@ The [charter](charter.md) defines the scope and governance of the Instrumentatio
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Elana Hashman (**[@ehashman](https://github.com/ehashman)**), Red Hat
+* Han Kang (**[@logicalhan](https://github.com/logicalhan)**), Google
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
 * Frederic Branczyk (**[@brancz](https://github.com/brancz)**), Red Hat
-* Piotr Szczesniak (**[@piosz](https://github.com/piosz)**), Google
 
 ## Contact
 - Slack: [#sig-instrumentation](https://kubernetes.slack.com/messages/sig-instrumentation)
