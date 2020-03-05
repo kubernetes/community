@@ -248,7 +248,7 @@ set. The flags asks ginkgo to run the test repeatedly until it fails.
 
 ### Federation e2e tests
 
--By default, `kubetest` provisions a single Kubernetes cluster, and any `Feature:Federation` ginkgo tests will be skipped.-
+- By default, `kubetest` provisions a single Kubernetes cluster, and any `Feature:Federation` ginkgo tests will be skipped.
 
 Federation e2e testing involves bringing up multiple "underlying" Kubernetes clusters,
 and deploying the federation control plane as a Kubernetes application on the underlying clusters.
