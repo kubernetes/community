@@ -37,7 +37,7 @@ Groups Traditionally Underrepresented in Tech
 * [Outreachy](/mentoring/programs/outreachy.md)
 
 In person
-* [New Contributor Workshop] //TODO link to something that talks about these
+* [Videos of New Contributor Workshop](https://www.youtube.com/playlist?list=PL69nYSiGNLP3M5X7stuD7N4r3uP2PZQUx)
 * Pod Mentoring! [aka group mentoring](/mentoring/programs/mentoring-events.md)
 
 #### Inspiration and Thanks
