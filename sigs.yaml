@@ -1340,6 +1340,9 @@ sigs:
     - github: brancz
       name: Frederic Branczyk
       company: Red Hat
+    emeritus_leads:
+    - github: piosz
+      name: Piotr Szczesniak
   meetings:
   - description: Regular SIG Meeting
     day: Thursday

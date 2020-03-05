@@ -30,6 +30,10 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Frederic Branczyk (**[@brancz](https://github.com/brancz)**), Red Hat
 
+## Emeritus Leads
+
+* Piotr Szczesniak (**[@piosz](https://github.com/piosz)**)
+
 ## Contact
 - Slack: [#sig-instrumentation](https://kubernetes.slack.com/messages/sig-instrumentation)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation)
