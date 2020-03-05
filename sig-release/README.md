@@ -36,7 +36,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Frelease)
 - GitHub Teams:
     - [@kubernetes/kubernetes-milestone-maintainers](https://github.com/orgs/kubernetes/teams/kubernetes-milestone-maintainers) - Milestone Maintainers
-    - [@kubernetes/release-managers](https://github.com/orgs/kubernetes/teams/release-managers) - Release Managers
+    - [@kubernetes/kubernetes-release-managers](https://github.com/orgs/kubernetes/teams/kubernetes-release-managers) - Release Managers
     - [@kubernetes/sig-release](https://github.com/orgs/kubernetes/teams/sig-release) - SIG Release Members
     - [@kubernetes/sig-release-admins](https://github.com/orgs/kubernetes/teams/sig-release-admins) - Admins for SIG Release repositories
 
