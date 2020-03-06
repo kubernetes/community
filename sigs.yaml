@@ -1715,7 +1715,7 @@ sigs:
     teams:
     - name: kubernetes-milestone-maintainers
       description: Milestone Maintainers
-    - name: kubernetes-release-managers
+    - name: release-managers
       description: Release Managers
     - name: sig-release
       description: SIG Release Members
