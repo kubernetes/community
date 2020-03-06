@@ -176,6 +176,7 @@ channels:
   - name: kubernetes-security
   - name: kubernetes-teachers
   - name: kubernetes-users
+  - name: kuberneto
   - name: kubespray
   - name: kubespray-dev
   - name: kubicorn
