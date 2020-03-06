@@ -62,8 +62,8 @@ The conversion process is logically a "star" with the internal form at the
 center. Every versioned API can be converted to the internal form (and
 vice-versa), but versioned APIs do not convert to other versioned APIs directly.
 This sounds like a heavy process, but in reality we do not intend to keep more
-than a small number of versions alive at once. While all of the Kubernetes code
-operates on the internal structures, they are always converted to a versioned
+than a small number of versions alive at once. While some of the Kubernetes code
+operates on the internal types, they are always converted to a versioned
 form before being written to storage (disk or etcd) or being sent over a wire.
 Clients should consume and operate on the versioned APIs exclusively.
 
@@ -128,6 +128,9 @@ continue to function as they did previously, even when your change is in use.
 does not include your change and have no impact on API objects which do not use
 your change.  API objects that use your change will be impacted in case of a
 rollback.
+7. Reading an unmodified object via the same API version, across different
+Kubernetes versions, must produce the same result with the exception of
+status fields.
 
 If your change does not meet these criteria, it is not considered compatible,
 and may break older clients, or result in newer clients causing undefined
@@ -135,6 +138,8 @@ behavior.  Such changes are generally disallowed, though exceptions have been
 made in extreme cases (e.g. security or obvious bugs).
 
 Let's consider some examples.
+
+### Adding a field
 
 In a hypothetical API (assume we're at version v6), the `Frobber` struct looks
 something like this:
@@ -154,18 +159,42 @@ without changing the API version, so you can simply change it to:
 // Still API v6.
 type Frobber struct {
   Height int    `json:"height"`
-  Width  int    `json:"width"`
+  Width  *int   `json:"width"`  // optional, defaults to 42
   Param  string `json:"param"`
 }
 ```
+
+Note that fields which are added MUST be optional.  Optional fields must be
+nil-able (pointers or slices or (rarely) maps).
 
 The onus is on you to define a sane default value for `Width` such that rules
 #1 and #2 above are true - API calls and stored objects that used to work must
 continue to work.
 
+For newly added fields, the default behavior must be defined.  If this is a net
+new capability which did not exist before (i.e. a user must explicitly
+set it to change behavior), the default value should be "nothing" (`nil` in
+Go), meaning the feature is not activated. If this new field is extending an
+existing behavior, the default value should also be "nothing" (`nil`), meaning
+the existing behavior.  This satisfies rule #7.  If a user read the object
+before your feature and again after your feature, they would not see any
+change.
+
+NOTE: The default being `nil` is a change from previous guidance, and is
+counter to many previous changes.  The rationale for this is that clients (e.g.
+controllers) sometimes do things like hash objects and save that hash.  When a
+new field appears, even with a default value that codifies existing behavior,
+that hash will change, even though the semantic meaning of the object did not.
+
+When creating a new API version, you may actually set the default value for
+existing fields (e.g. 42 instead of `nil`).  The makes behavior explicit and
+allows different API versions to have different default values.
+
+### Pluralizing a field
+
 For your next change you want to allow multiple `Param` values. You can not
 simply remove `Param string` and add `Params []string` (without creating a
-whole new API version) - that fails rules #1, #2, #3, and #6.  Nor can you
+whole new API version) - that fails rules #1, #2, #3, #6, and #7.  Nor can you
 simply add `Params []string` and use it instead - that fails #2 and #6.
 
 You must instead define a new field and the relationship between that field and
@@ -175,32 +204,52 @@ the existing field(s).  Start by adding the new plural field:
 // Still API v6.
 type Frobber struct {
   Height int           `json:"height"`
-  Width  int           `json:"width"`
+  Width  *int          `json:"width"`  // optional, defaults to 42
   Param  string        `json:"param"`  // the first param
   Params []string      `json:"params"` // all of the params
 }
 ```
 
-This new field must be inclusive of the singular field.  In order to satisfy
-the compatibility rules you must handle all the cases of version skew, multiple
-clients, and rollbacks.  This can be handled by defaulting or admission control
-logic linking the fields together with context from the API operation to get as
-close as possible to the user's intentions.
+This new field must be semantically inclusive of the singular field.  In order
+to satisfy the compatibility rules you must handle all the cases of version
+skew, multiple clients, and rollbacks.  This can be handled by defaulting or
+admission control logic linking the fields together with context from the API
+operation to get as close as possible to the user's intentions.
 
-Upon any mutating API operation:
-  * If only the singular field is specified (e.g. an older client), API logic
-    must populate plural[0] from the singular value, and de-dup the plural
-    field.
+As with `Width` above, the default value of the new field must be "nothing".
+If that field is empty, clients must fall back to the older field.
+
+Upon a create operation:
+  * If only the singular field is specified (e.g. an older client), that value
+    is used, and the plural field is `nil`.
+////////////////////////////////////////////
+// TO DEBATE
+// If only plural is specified, we have 2 choices:
+//   1) Error - clients must set singular to the same value as plural[0]
+//   2) API server populates singular from plural[0]
+//
+// Option 1 is "safer".  Option 2 is "cleaner".  For create it seems fine.  For
+// update/patch it could be ambiguous.  Worth the risk?
   * If only the plural field is specified (e.g. a newer client), API logic must
     populate the singular value from plural[0].
+////////////////////////////////////////////
   * If both the singular and plural fields are specified, API logic must
     validate that the singular value matches plural[0].
   * Any other case is an error and must be rejected.
 
-For this purpose "is specified" means the following:
-  * On a create or patch operation: the field is present in the user-provided input
-  * On an update operation: the field is present and has changed from the
-    current value
+Upon an update or patch operation:
+  * If only the singular field is modified (e.g. an older client), API logic
+    must clear the plural field.
+////////////////////////////////////////////
+// TO DEBATE
+// See above - RMW is weird here.  User could have specified both but left
+// singular unchanged.  Should that be an error or OK?
+  * If only the plural field is modified (e.g. a newer client), API logic must
+    populate the singular value from plural[0].
+////////////////////////////////////////////
+  * If both the singular and plural fields are modified, API logic must
+    validate that the singular value matches plural[0].
+  * Any other case is an error and must be rejected.
 
 Older clients that only know the singular field will continue to succeed and
 produce the same results as before the change.  Newer clients can use your
@@ -211,11 +260,37 @@ Part of the reason for versioning APIs and for using internal types that are
 distinct from any one version is to handle growth like this. The internal
 representation can be implemented as:
 
+////////////////////////////////////////////
+// TO DEBATE
+// Internalizing this way loses information.  I am not sure we care, but here's
+// the decision.  Assume a used CREATEd with `singular: X, plural: [X]`.  We
+// internalize that as `plural: [X]`.  When we read it back as versioned, we
+// have to populate `singular` but we can't know if we need to populate
+// `plural[0]` or not.
+//
+// If the user set both and we elide `plural[0]` in this case, the user will read back something other than they wrote.
+// If the user only set singular and we do not elide `plural[0]`, we break rule 7 - a new field appears.
+//
+// We could:
+// 1) internally track a bool `pluralWasSet` so that we can round-trip correctly.
+// 2) normalize `singular: X, plural: [X]` to `singular: X, plural: []` (which
+//    is semantically the same)
+// 3) ???
+// I think the lesser evil is 2
+//
+// Similar argument if internalization formalizes `nil` -> explicit value.  In
+// that case, we know we can elide the result, but if that field is nested in a
+// struct (under a struct under a struct...) we have to elide the whole struct
+// hierarchy, which basically means open-coding it.
+//
+// Also CRDs..?
+////////////////////////////////////////////
+
 ```go
 // Internal, soon to be v7beta1.
 type Frobber struct {
   Height int
-  Width  int
+  Width  *int
   Params []string
 }
 ```
@@ -223,6 +298,8 @@ type Frobber struct {
 The code that converts to/from versioned APIs can decode this into the
 compatible structure. Eventually, a new API version, e.g. v7beta1,
 will be forked and it can drop the singular field entirely.
+
+### Multiple API versions
 
 We've seen how to satisfy rules #1, #2, and #3. Rule #4 means that you can not
 extend one versioned API without also extending the others. For example, an
@@ -336,6 +413,7 @@ worked before the change.
   release, and do not make it the storage version. The latter is necessary so that a rollback of the
   apiserver doesn't render resources in etcd undecodable after rollback.
 
+//////// FIXME: rethink this.
 * Any field with a default value in one API version must have a *non-nil* default
   value in all API versions.  This can be split into 2 cases:
   * Adding a new API version with a default value for an existing non-defaulted
