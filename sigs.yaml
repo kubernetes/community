@@ -2303,8 +2303,8 @@ sigs:
   label: windows
   leadership:
     chairs:
-    - github: PatrickLang
-      name: Patrick Lang
+    - github: marosset
+      name: Mark Rossetti
       company: Microsoft
     - github: michmike
       name: Michael Michael
@@ -2316,6 +2316,9 @@ sigs:
     - github: ddebroy
       name: Deep Debroy
       company: Docker
+    emeritus_leads:
+    - github: PatrickLang
+      name: Patrick Lang
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
