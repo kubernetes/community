@@ -1240,6 +1240,12 @@ sigs:
     - github: zacharysarah
       name: Zach Corleissen
       company: Linux Foundation
+    tech_leads:
+    - github: kbhawkey
+      name: Karen Bradshaw
+    - github: sftim
+      name: Tim Bannister
+      company: The Scale Factory
     emeritus_leads:
     - github: Bradamant3
       name: Jennifer Rondeau
