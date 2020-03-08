@@ -1247,6 +1247,9 @@ sigs:
     - github: kbhawkey
       name: Karen Bradshaw
       company: Independent
+    - github: sftim
+      name: Tim Bannister
+      company: The Scale Factory
     emeritus_leads:
     - github: Bradamant3
       name: Jennifer Rondeau
