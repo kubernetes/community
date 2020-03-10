@@ -153,10 +153,13 @@ The following SIGs and groups are currently running splain.io:
 - [SIG Auth](/sig-auth/README.md)
 - [SIG Contributor Experience](/sig-contributor-experience/README.md)
 - [SIG Docs](/sig-docs/README.md)
+- [SIG Network](/sig-network/README.md)
 - [SIG PM](/sig-pm/README.md)
 - [Steering Committee](/committee-steering/governance/README.md)
+- [WG Data Protection](/wg-data-protection/README.md)
 - [WG K8s Infra](/wg-k8s-infra/README.md)
 - [WG LTS](/wg-lts/README.md)
+
 The main zoom admin account which holds Meet Our Contributors and others (if
 you log in to splain using this account, all of the other accounts will be
 logged here)
