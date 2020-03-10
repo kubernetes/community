@@ -178,7 +178,7 @@ following branches:
 
 Conformance tests are designed to be run even when there is no cloud provider
 configured. Conformance tests must be able to be run against clusters that have
-not been created with `hack/e2e.go`, just provide a kubeconfig with the
+not been created with `test-infra/kubetest`, just provide a kubeconfig with the
 appropriate endpoint and credentials.
 
 These commands are intended to be run within a kubernetes directory, either

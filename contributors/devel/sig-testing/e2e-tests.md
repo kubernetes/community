@@ -124,8 +124,7 @@ kubetest --provider=aws --build --up --test --down
 
 The tests are built into a single binary which can be used to deploy a
 Kubernetes system or run tests against an already-deployed Kubernetes system.
-See `kubetest --help` (or the flag definitions in `hack/e2e.go`) for
-more options, such as reusing an existing cluster.
+See `kubetest --help` for more options, such as reusing an existing cluster.
 
 ### Cleaning up
 
@@ -249,20 +248,21 @@ set. The flags asks ginkgo to run the test repeatedly until it fails.
 
 ### Federation e2e tests
 
-By default, `e2e.go` provisions a single Kubernetes cluster, and any `Feature:Federation` ginkgo tests will be skipped.
+By default, `kubetest` provisions a single Kubernetes cluster, and any `Feature:Federation` ginkgo tests will be skipped.
 
-Federation e2e testing involve bringing up multiple "underlying" Kubernetes clusters,
+Federation e2e testing involves bringing up multiple "underlying" Kubernetes clusters,
 and deploying the federation control plane as a Kubernetes application on the underlying clusters.
 
-The federation e2e tests are still managed via `e2e.go`, but require some extra configuration items.
+-The federation e2e tests are still managed via `kubetest`, but require some extra configuration items.-
 
 #### Configuring federation e2e tests
 
 The following environment variables will enable federation e2e building, provisioning and testing.
 
 ```sh
-$ export FEDERATION=true
-$ export E2E_ZONES="us-central1-a us-central1-b us-central1-f"
+export FEDERATION=true
+export E2E_ZONES="us-central1-a us-central1-b us-central1-f"
+
 ```
 
 A Kubernetes cluster will be provisioned in each zone listed in `E2E_ZONES`. A zone can only appear once in the `E2E_ZONES` list.
@@ -297,7 +297,7 @@ Next, specify the docker repository where your ci images will be pushed.
 	Given this example, the `federation-apiserver` container image will be pushed to the repository
 	`quay.io/colin_hom/federation-apiserver`.
 
-	The docker client on the machine running `e2e.go` must have push access for the following pre-existing repositories:
+	The docker client on the machine running `kubetest` must have push access for the following pre-existing repositories:
 
 	* `${FEDERATION_PUSH_REPO_BASE}/federation-apiserver`
 	* `${FEDERATION_PUSH_REPO_BASE}/federation-controller-manager`
