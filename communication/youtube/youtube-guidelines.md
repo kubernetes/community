@@ -174,6 +174,15 @@ Example description:
 Kubernetes Contributor Experience Special Interest Group Weekly Meeting. Check
 here (link to sig list) for a complete list of SIGs and when they meet. Join us!
 
+Please note the following items:
+* The date must be in title and description
+* The date format must be YYYYMMDD
+* The section titled `Is this video made for kids?` should not be altered for search reasons
+
+Below are a good and incorrect example:
+* Incorrect description: `Data Protection WG Bi-Weekly Meeting for 2/26/2020`
+* Correct description: `Data Protection WG Bi-Weekly Meeting for 20200226`
+
 ### Thumbnails
 
 TODO - someone help us with better thumbnails to lay over the videos!
