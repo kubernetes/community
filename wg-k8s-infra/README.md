@@ -19,7 +19,7 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Work
 * SIG Testing
 
 ## Meetings
-* Regular WG Meeting: [Wednesdays at 8:30 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:30&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Wednesdays at 8:30 PT (Pacific Time)](https://zoom.us/j/8152322659) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](http://bit.ly/wg-k8s-infra-notes).
   * [Meeting recordings](http://bit.ly/wg-k8s-infra-playlist).
 

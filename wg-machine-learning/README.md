@@ -15,7 +15,7 @@ Identify and fix gaps in Kubernetes to better support Machine Learning applicati
 * SIG Node
 
 ## Meetings
-* Regular WG Meeting: [Thursdays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Thursdays at 13:00 PT (Pacific Time)](https://zoom.com.cn/j/103404077) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://goo.gl/gBCdt1).
 
 ## Organizers
