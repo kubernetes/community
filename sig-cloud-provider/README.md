@@ -90,10 +90,10 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - https://raw.githubusercontent.com/kubernetes-sigs/blobfuse-csi-driver/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-azure/master/OWNERS
 - **Meetings:**
-  - Azure Subproject Meeting (First Monday): [Mondays at 14:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
+  - Azure Subproject Meeting (First Monday): [Mondays at 14:30 UTC](https://zoom.us/j/586836662) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
     - [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
-  - Azure Subproject Meeting (Third Tuesday UTC, Monday Pacific): [Tuesdays at 1:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=1:00&tz=UTC).
+  - Azure Subproject Meeting (Third Tuesday UTC, Monday Pacific): [Tuesdays at 1:00 UTC](https://zoom.us/j/586836662) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=1:00&tz=UTC).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
     - [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
 ### provider-gcp
@@ -111,7 +111,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
 - **Meetings:**
-  - Regular IBM Subproject Meeting: [Wednesdays at 14:00 EST](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly - last Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).
+  - Regular IBM Subproject Meeting: [Wednesdays at 14:00 EST](https://zoom.us/j/9392903494) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit).
 ### provider-openstack
 - **Owners:**
@@ -125,7 +125,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - https://raw.githubusercontent.com/kubernetes-sigs/vsphere-csi-driver/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
 - **Meetings:**
-  - Cloud Provider vSphere monthly syncup: [Wednesdays at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly - first Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+  - Cloud Provider vSphere monthly syncup: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/584244729) (monthly - first Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR).
 
