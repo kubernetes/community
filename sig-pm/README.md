@@ -16,7 +16,7 @@ It is also important to remember that the role of managing an open source projec
 The [charter](charter.md) defines the scope and governance of the PM Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 18:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:30&tz=UTC).
+* Regular SIG Meeting: [Tuesdays at 18:30 UTC](https://zoom.us/j/577372069) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/13uHgcLf-hcR4a5QbV888fhnVsF3djBEpN8HolwS0kWM/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/watch?v=VcdjaZAol2I&list=PL69nYSiGNLP3EBqpUGVsK1sMgUZVomfEQ).
 
