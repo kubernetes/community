@@ -1830,7 +1830,7 @@ sigs:
     time: "17:30"
     tz: UTC
     frequency: weekly/bi-weekly as per demand ([upcoming meeting dates](#upcoming-meeting-dates))
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/989573207
     archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
     recordings_url: https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL
   contact:
@@ -1905,13 +1905,13 @@ sigs:
     time: "17:00"
     tz: UTC
     frequency: biweekly starting Thursday June 7, 2018
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/841218129
   - description: 5PM PT Meeting
     day: Thursday
     time: "24:00"
     tz: UTC
     frequency: biweekly starting Thursday June 14, 2018
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/350635606
     archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
     recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
   contact:
@@ -1991,7 +1991,7 @@ sigs:
     time: "13:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/7201225346
     archive_url: https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit
     recordings_url: https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs
   contact:
