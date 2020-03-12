@@ -780,6 +780,9 @@ sigs:
       frequency: biweekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
+  - name: provider-huaweicloud
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-huaweicloud/master/OWNERS
   - name: provider-ibmcloud
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
