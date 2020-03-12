@@ -187,14 +187,26 @@ clients, and rollbacks.  This can be handled by defaulting or admission control
 logic linking the fields together with context from the API operation to get as
 close as possible to the user's intentions.
 
+The following possible patch/update behaviors of old clients must be considered,
+and all API operations that previously succeeded must continue to succeed:
+  * old clients that PUT updates which drop the new field
+    (for example, clients that unmarshal into typed structs, dropping unknown fields)
+  * old clients that PUT updates which preserve the new field
+    (for example, clients that operate on untyped JSON data, preserving unknown fields)
+  * old clients that PATCH updates which only modify the singular field
+
+Test cases exercising each of those scenarios are recommended.
+
+!!! REWORK - a simple reading of "specified" is incorrect... this section defines "specified" on update to mean "present and changed"
+
 Upon any mutating API operation:
   * If only the singular field is specified (e.g. an older client), API logic
-    must populate plural[0] from the singular value, and de-dup the plural
-    field.
+    must populate plural[0] from the singular value.
   * If only the plural field is specified (e.g. a newer client), API logic must
     populate the singular value from plural[0].
-  * If both the singular and plural fields are specified, API logic must
-    validate that the singular value matches plural[0].
+  * If both the singular and plural fields are specified, and the singular value
+    does not match plural[0], the singular value must rule, and API logic must
+    set the plural value to a single-item list containing the singular value.
   * Any other case is an error and must be rejected.
 
 For this purpose "is specified" means the following:
@@ -202,9 +214,12 @@ For this purpose "is specified" means the following:
   * On an update operation: the field is present and has changed from the
     current value
 
+!!! /REWORK
+
 Older clients that only know the singular field will continue to succeed and
 produce the same results as before the change.  Newer clients can use your
-change without impacting older clients.  The API server can be rolled back and
+change without impacting older clients, but on update are responsible for
+updating both the old and the new field. The API server can be rolled back and
 only objects that use your change will be impacted.
 
 Part of the reason for versioning APIs and for using internal types that are
