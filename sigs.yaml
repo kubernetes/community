@@ -1544,6 +1544,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
+  - name: iptables-wrappers
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/iptables-wrappers/master/OWNERS
   - name: kube-dns
     owners:
     - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
