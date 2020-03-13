@@ -256,6 +256,7 @@ channels:
   - name: prow
   - name: prow-alerts
   - name: pt_br-users
+  - name: raksh
   - name: rancher
   - name: random
     archived: true
