@@ -58,6 +58,9 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
+### iptables-wrappers
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/iptables-wrappers/master/OWNERS
 ### kube-dns
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
