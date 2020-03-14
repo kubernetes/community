@@ -104,6 +104,9 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
 - **Meetings:**
   - Regular GCP Subproject Meeting: [Thursdays at 16:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit).
+### provider-huaweicloud
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-huaweicloud/master/OWNERS
 ### provider-ibmcloud
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
