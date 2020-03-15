@@ -358,7 +358,7 @@ Report any actions taken to the other slack admins, and if needed the
 
 [coc]: /code-of-conduct.md
 [admins]: ./moderators.md#Slack
-[Slack Archive Download]: https://drive.google.com/drive/folders/1idJkWcDuSfs8nFUm-1BgvzZxCqPMpDCb?usp=sharing
+[Slack Archive Download]: https://drive.google.com/drive/folders/1Xnkwsxis3tu0pT7rwp-crRq4IciZ5b1o?usp=sharing
 [cocc]: /committee-code-of-conduct/README.md
 [GitHub Issue]: https://github.com/kubernetes/community/issues/new/choose
 [sig-list]: /sig-list.md
