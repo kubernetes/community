@@ -6,6 +6,7 @@ Contributor Summit.
 - [Overview](#overview)
 - [Skills and Qualifications](#skills-and-qualifications)
 - [Responsibilities](#responsibilities)
+  - [Communication Channels and Property Access](#communication-channels-and-property-access)
 - [Documentation](#documentation)
 
 ## Overview
@@ -37,6 +38,35 @@ Time Commitment:
 - Determine signage needs and copy, coordinate with CNCF on explicit needs  
 - Create/update deck templates for curated talks and/or other purposes
 
+### Communication Channels and Property Access
+
+Communications to the Kubernetes Contributor Community should be sent from
+official Kubernetes accounts to ensure they reach the community. Mass messages
+from personal accounts can easily wind up being marked as spam.
+
+**Email**
+
+Mail should be sent from the contributors@kubernetes.io account. For access, work
+with the event lead who will coordinate with [SIG Contributor Experience leads] 
+to grant temporary access to the account for the duration of the event.
+
+**Twitter**
+
+Tweets can be sent from two accounts: [@K8sContributors] and [@Kubernetesio].
+
+Tweets targeting the greater Kubernetes community should use the [@Kubernetesio]
+account. Tweets using this account must be coordinated with the [CNCF]. Work
+with the CNCF events rep to schedule the tweets or put you in contact with
+the CNCF marketing members in charge of the account. Tweets using this account
+are often limited in the content and quantity that may be sent.
+
+Tweets targeting the current contributor base should use the [@K8sContributors]
+account. There are no restrictions with this account for the amount or kind of
+messages that may be sent. This account may be used for announcements,
+live-tweeting, pictures and more. Reach out to the Kubernetes [upstream marketing
+team] to schedule or use this account.
+
+
 ## Shadow to the Marketing Lead Role
 
 This role can include one or more shadows. The Marketing Lead can delegate/assign
@@ -52,3 +82,8 @@ the Lead.
 
 
 [Email comms used for Contributor Summit Barcelona, 2019]: /events/2019/05-contributor-summit/communications.md
+[SIG Contributor Experience leads]: /sig-contributor-experience/README.md#leadership
+[@K8sContributors]: https://twitter.com/K8sContributors
+[@Kubernetesio]: https://twitter.com/kubernetesio
+[CNCF]: https://www.cncf.io/
+[upstream marketing team]: /communication/marketing-team/README.md
