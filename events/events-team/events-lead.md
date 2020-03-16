@@ -12,17 +12,19 @@ the strategic vision, and being the glue needed to execute on the event.
 
 The Event Lead(s) is responsible for determining which core roles need to be
 filled at the start of planning for each event. After initial core team meetings,
-each lead will determine how to best staff for that function and fill in other
-roles. Each role will ideally have a shadow for succession planning. Those who
-have been a part of a previous event get first dibs on lead roles to maintain
-consistency.
+each respective lead will determine how to best staff for that function and fill
+in other roles. Each role will ideally have at least one, preferably two shadows
+for succession planning. Those who have been a part of a previous event should
+be first in line to fill the lead roles to maintain continuity.
 
 Time Commitment:
-- 1-8 hours per week leading up to the event
+- 6-8 hours per week during initial planning
+- 1-3 hours per week after content is posted and registration is live
+- 6-8 hours in the last phase leading up to the event
 
 ## Skills and Qualifications
 
-The Event Lead must have lead at least one role during a previous Contributor
+The Event Lead must have led at least one role during a previous Contributor
 Summit. The shadow is signing up to commit to lead a future event within the
 next 12 months.
 
@@ -42,10 +44,11 @@ next 12 months.
 - Create an event strategy with the Content Lead(s) and consider having a social
   event (decide if social needs it's own lead)
 - Provide venue ideas and suggestions to CNCF; do a walk through if possible
-- Organize and lead N cadence update meetings
+- Organize and lead weekly update meetings
 - Direct liaison with CNCF Event Manager
 - Create day of operations event brief for all staff members
-- Create welcome slides and MC day of event
+- Create welcome slides and either MC or assign someone to MC day of event
+  sessions
 - Event wrap up: blog post, summary emails to steering committee and k-dev, lead
   retro, create survey
 
