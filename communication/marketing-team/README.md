@@ -1,57 +1,41 @@
-Future home for all things marketing team for contributor experience
-
-# Charter
-view our charter in this [marketing folder] for more about us and how to join
+# Contributor Marketing  
+The Contributor Marketing Team is part of the community-management subproject in
+[Contributor Experience] view our [charter] to learn more about us
 
 ## Purpose  
 to better inform the Kubernetes contributor community and highlight their work to
 the broader ecosystem
 
-# Core Marketing Team roles
-
-| Role | Handbook | Notes |
-| --- | --- | --- |
-| Blogger(s) | TODO | |
-| Social Media Lead | TODO | for future contributor channels |
-| Social Media Team Members | TODO | |
-| Editor | TODO | unsure if this will be a position but could be good for making sure we are using the style guide and ensuring a consistent tone and brand; should be an approver in the communications folder |
-| Designer | TODO | help us with thumbnail graphics, digital assets, infographics, contributor site |
-| sig-docs blog community liaison | TODO link to sig-docs handbook | onlydole |
-| Internal Comms Lead | TODO | |  
+| Area | Handbook | Lead | Team | Notes |
+| --- | --- | --- | --- | --- |
+| Editorial | TODO | editor: @parispittman (to bootstrap)| assoc editor: @mbbroberg |  |
+| Internal Communications | TODO | @jonasrosland | @simplytunde |  |
+| Social Media | TODO | @chris-short | [Could be you!] (paris to help bootstrap) | |
+| Storytellers | TODO | liaison to sig-docs-blog team @onlydole |  @celanthe, @vonguard, @boluisa, [Could be you!] |  |
+| Designer | TODO | [Could be you!] |  | help us with digital assets, infographics, contributor site |  
 
 
-How to get in contact with us:  
-TODO: add slack team handle  
-tag us on your issues and PRs in kubernetes/community with `area/contributor-comms`
+## Contact Us!
+Reach out to an individual above via slack  
+Whole group - @contributor-comms in #sig-contribex on slack    
+Tag us in an issue in `kubernetes/community` with the label `area/contributor-comms`
 
-# Focus Areas  
+## Focus Areas  
 1.  inter-community group comms/project-wide contributor communications,   
 2.  contributor twitter/social and web (contributor site),   
 3.  blogging (work happening in SIGs, stories about contributors, recaps),  
 4.  program and event promotion (community meeting, meet our contributors, steering
   election, et al)  
 
-# Resources for the team
-[Entire community repo]  
-The future home of the [contributor site], [project board]  
-[surveys]  
-[Communication]  
-[style guide]  
-[Org structure] and [Community Groups List]
+## Could be you!
+We still have many roles available!  
 
-[Values] and [principles] of the project  
-[YouTube playlist] TODO add  
-`area/contributor-comms` - label for issues and PRs  
+Come to one of our [meetings] (join kubernetes-sig-contribex@googlegroups.com for the invite)
+or reach out to us on the #sig-contribex channel on the Kubernetes slack (slack.k8s.io for invite)
+Let us know you are interested and if you have any questions.
 
 
-[contributor site]: https://github.com/kubernetes-sigs/contributor-site
-[project board]: https://github.com/orgs/kubernetes-sigs/projects/3
-[surveys]: https://github.com/kubernetes/community/tree/master/sig-contributor-experience
-[Communication]: https://github.com/kubernetes/community/tree/master/communication
-[style guide]: https://git.k8s.io/community/contributors/guide/style-guide.md
-[Org structure]: https://github.com/kubernetes/community/blob/master/governance.md
-[Community Groups List]: https://github.com/kubernetes/community/blob/master/sig-list.md
-[Values]: https://github.com/kubernetes/community/blob/master/values.md
-[principles]: https://github.com/kubernetes/community/blob/master/governance.md#principles
-[Entire community repo]: https://github.com/kubernetes/community
-[marketing folder]:  https://github.com/kubernetes/community/blob/master/communication/marketing-team/CHARTER.md
+[meetings]: /sig-contributor-experience#community-management
+[charter]: ./CHARTER.md
+[Could be you!]: (#Could-be-you!)
+[Contributor Experience]: /sig-contributor-experience
