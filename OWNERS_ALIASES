@@ -187,9 +187,9 @@ aliases:
   provider-ibmcloud:
     - spzala
   provider-openstack:
-    - adisky
     - chrigl
-    - hogepodge
+    - lingxiankong
+    - ramineni
   provider-vmware:
     - cantbewong
     - frapposelli
