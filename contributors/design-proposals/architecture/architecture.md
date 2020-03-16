@@ -241,7 +241,7 @@ A number of components, called [*add-ons*](https://git.k8s.io/kubernetes/cluster
 itself:
 * [DNS](https://git.k8s.io/kubernetes/cluster/addons/dns)
 * [Ingress controller](https://github.com/kubernetes/ingress-gce)
-* [Heapster](https://github.com/kubernetes/heapster/) (resource monitoring)
+* [metrics-server](https://github.com/kubernetes-sigs/metrics-server) (resource monitoring)
 * [Dashboard](https://github.com/kubernetes/dashboard/) (GUI)
 
 ### Federation
