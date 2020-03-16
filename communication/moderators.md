@@ -166,6 +166,7 @@ Moderators seats: 10
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
 | Yang Li             | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
 | Josh Berkus         | @jberkus            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Marky Jackson       | @markyjackson       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 #### Moderators Pro Tempore
 
