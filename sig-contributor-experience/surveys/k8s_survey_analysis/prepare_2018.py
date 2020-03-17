@@ -84,8 +84,9 @@ next_level_interest_2018_2019 = {
     'Not really': 'no'
 }
 
-def get_df():
-    survey_data = pd.read_csv('2018_survey/contribex-survey-2018.csv')
+def get_df(path):
+
+    survey_data = pd.read_csv(path)
 
     #Clean Data
     for x in survey_data.columns:
