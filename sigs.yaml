@@ -2629,10 +2629,10 @@ workinggroups:
   meetings:
   - description: Regular WG Meeting
     day: Thursday
-    time: "13:00"
+    time: "17:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.com.cn/j/103404077
+    url: https://zoom.us/j/103404077
     archive_url: https://goo.gl/gBCdt1
   contact:
     slack: wg-machine-learning
