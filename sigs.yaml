@@ -2043,7 +2043,7 @@ sigs:
     time: "9:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/614261834
     archive_url: https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing
     recordings_url: https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq
   contact:
@@ -2138,7 +2138,7 @@ sigs:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: bi-weekly starting Tuesday August 13, 2019
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/135450138
     archive_url: https://bit.ly/k8s-sig-testing-notes
     recordings_url: https://bit.ly/k8s-sig-testing-videos
   contact:
@@ -2178,7 +2178,7 @@ sigs:
       time: "11:00"
       tz: PT (Pacific Time)
       frequency: bi-weekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      url: https://zoom.us/j/960461819
       archive_url: https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit
       recordings_url: https://bit.ly/k8s-sig-testing-videos
   - name: prow
@@ -2209,7 +2209,7 @@ sigs:
       time: "10:00"
       tz: PT (Pacific Time)
       frequency: bi-weekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      url: https://zoom.us/j/790505720
       archive_url: https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o
 - dir: sig-ui
   name: UI
