@@ -73,7 +73,7 @@ The flag will be specified as a serialized `ResourceList`, with resources define
 --kube-reserved=cpu=500m,memory=5Mi
 ```
 
-Initially we will only support CPU and memory, but will eventually support more resources like [local storage](#phase-3) and io proportional weights to improve node reliability.
+Initially we will only support CPU and memory, but will eventually support more resources like [local storage](#phase-3---metrics--support-for-storage) and io proportional weights to improve node reliability.
 
 #### System-Reserved
 
@@ -128,7 +128,7 @@ The recommendation is to enforce `SystemReserved` only if a user has profiled th
 
 To begin with enforce `Allocatable` on `pods` only.
 Once adequate monitoring and alerting is in place to track kube daemons, attempt to enforce `KubeReserved` based on heuristics.
-More on this in [Phase 2](#phase-2-enforce-allocatable-on-pods).
+More on this in [Phase 2](#phase-2---enforce-allocatable-on-pods).
 
 The resource requirements of kube system daemons will grow over time as more and more features are added.
 Over time, the project will attempt to bring down utilization, but that is not a priority as of now.
