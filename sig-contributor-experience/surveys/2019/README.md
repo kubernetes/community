@@ -50,8 +50,7 @@ survey_data = prepare_2019.get_df(
 )
 ```
 
-
-![png](https://drive.google.com/uc?export=view&id=1W6Gf37Lm5D6gYtW7Fo0wfqDR5aHcYQEqs)
+![png](https://drive.google.com/uc?export=view&id=1W6Gf37Lm5D6gYtW7Fo0wfqDR5aHcYQEq)
 
 
 The high spike seen on  1/13/20 aligns with the time when the survey was publicized on Twitter. To consider the potential effects of this, we examine how the response rate varied by various demographic information. 
@@ -100,7 +99,7 @@ response_rates = response_rates.assign(
             y='Number of Responses') +
     p9.theme(axis_text_x = p9.element_text(angle=45, ha='right'))
 )
-    
+
 ```
 
 
