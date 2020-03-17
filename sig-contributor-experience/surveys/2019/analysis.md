@@ -34,7 +34,7 @@ warnings.filterwarnings("ignore", category=PlotnineWarning)
 
 ```python
 survey_data = prepare_2019.get_df(
-    "2019 Kubernetes Contributor Experience Survey PUBLIC.csv"
+    "contribex-survey-2019.csv"
 )
 ```
 
@@ -50,7 +50,15 @@ survey_data = prepare_2019.get_df(
 )
 ```
 
-![png](https://drive.google.com/uc?export=view&id=1W6Gf37Lm5D6gYtW7Fo0wfqDR5aHcYQEq)
+
+![png](analysis_files/analysis_5_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029839363135)>
+
 
 
 The high spike seen on  1/13/20 aligns with the time when the survey was publicized on Twitter. To consider the potential effects of this, we examine how the response rate varied by various demographic information. 
@@ -103,7 +111,14 @@ response_rates = response_rates.assign(
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1b7kNt4fxSRJQ7mviX53H7-woSDmYdXw2)
+![png](analysis_files/analysis_10_0.png)
+
+
+
+
+
+    <ggplot: (7015469565)>
+
 
 
 The survey was advertised on Twitter, and two groups had the largest number of disproportionate responses. Those responses came from either contributors working on their membership, or users that have been contributing less than a year. The largest group is users that fall into both categories.
@@ -114,12 +129,19 @@ The survey was advertised on Twitter, and two groups had the largest number of d
     p9.ggplot(survey_data, p9.aes(x="date_taken", fill="factor(Contributing_Length)"))
     + p9.geom_bar()
     + p9.theme(axis_text_x=p9.element_text(angle=45, ha="right"))
-    + p9.labs(x="Survey Date", y="Number of Responses", title="Responses Per Day", fill='Contributing Length' )
+    + p9.labs(x="Survey Date", y="Number of Responses", title="Responses Per Day", fill='Contributing Length')
 )
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1puOglRnAqlIS1tE5xSW4jSSo9SmkKu0U)
+![png](analysis_files/analysis_12_0.png)
+
+
+
+
+
+    <ggplot: (7018440624)>
+
 
 
 
@@ -136,7 +158,15 @@ The survey was advertised on Twitter, and two groups had the largest number of d
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1Gks-vFCK0bQApJJ2nfaHBmPjdYDqv4LT)
+![png](analysis_files/analysis_13_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029837872636)>
+
+
 
 
 ```python
@@ -151,8 +181,14 @@ The survey was advertised on Twitter, and two groups had the largest number of d
 )
 ```
 
-![png](https://drive.google.com/uc?export=view&id=1rqznSlBSOILcjSIvOzX9CENOZa6ipBMZ)
 
+![png](analysis_files/analysis_14_0.png)
+
+
+
+
+
+    <ggplot: (7015784943)>
 
 
 
@@ -181,7 +217,15 @@ In the following sections, we look at the rest of the demographic variables indi
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1GXhbQB19XCjCnXlid7Brj14vzcXtYDQZ)
+![png](analysis_files/analysis_16_0.png)
+
+
+
+
+
+    <ggplot: (7015345910)>
+
+
 
 
 ```python
@@ -202,7 +246,14 @@ In the following sections, we look at the rest of the demographic variables indi
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1AUz9fQo8Tj2jkJCeCkM-2ZSR3cT7mtT-)
+![png](analysis_files/analysis_17_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029838284491)>
+
 
 
 
@@ -221,8 +272,13 @@ In the following sections, we look at the rest of the demographic variables indi
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1blrdWGRKJ0r738H2p76JLoV2tSdQNWH0)
+![png](analysis_files/analysis_18_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029839392992)>
 
 
 
@@ -245,8 +301,13 @@ In the following sections, we look at the rest of the demographic variables indi
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1rTC4_7wBGUb6dH2JORbTDS2vEe-WfvlO)
+![png](analysis_files/analysis_19_0.png)
 
+
+
+
+
+    <ggplot: (7016493895)>
 
 
 
@@ -266,8 +327,13 @@ In the following sections, we look at the rest of the demographic variables indi
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1U2cfdQzXANn0HsWu5l31cY07gqaesiht)
+![png](analysis_files/analysis_20_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029838082921)>
 
 
 
@@ -283,9 +349,13 @@ employer_support
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1Fg1YINYNwyc3-8nZSavaEuPZRfe75sFD)
+![png](analysis_files/analysis_21_0.png)
 
 
+
+
+
+    <ggplot: (-9223372029838074827)>
 
 
 
@@ -910,7 +980,13 @@ The following plots use offset stacked bar charts, showing the overall rankings 
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1Fg1YINYNwyc3-8nZSavaEuPZRfe75sFD)
+![png](analysis_files/analysis_31_0.png)
+
+
+
+
+
+    <ggplot: (7016794120)>
 
 
 
@@ -939,7 +1015,13 @@ Mentoring is the most important project, with very few respondents rating it neg
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1Nc4ilrRJV9HxPGLuy7tuJLPU9OC6PRTZ)
+![png](analysis_files/analysis_33_0.png)
+
+
+
+
+
+    <ggplot: (7017332863)>
 
 
 
@@ -968,7 +1050,13 @@ It is reasonable to expect that different roles in Kubernetes may value differen
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1lD-5YyheOsgoTbG49Ww67T4h6AWRtdQq)
+![png](analysis_files/analysis_35_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029838092712)>
 
 
 
@@ -997,8 +1085,13 @@ Similarly to contributor roles, the interest in the next level does not appear t
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1TgA6wwdPxmiDYDeRW9UAcIYzZe_Svm3V)
+![png](analysis_files/analysis_37_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029839318321)>
 
 
 
@@ -1032,8 +1125,13 @@ blocker_ratings = list(
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
+![png](analysis_files/analysis_40_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029839178976)>
 
 
 
@@ -1057,7 +1155,13 @@ The most frequent blocker across all contributors is debugging test failures, fo
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
+![png](analysis_files/analysis_42_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029836919622)>
 
 
 
@@ -1082,8 +1186,13 @@ When we look at blockers, by the length of the contributor, we can see that cont
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
+![png](analysis_files/analysis_44_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029837391093)>
 
 
 
@@ -1110,8 +1219,13 @@ When it comes to debugging, it is less of an issue for new contributors, most li
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
+![png](analysis_files/analysis_46_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029837637751)>
 
 
 
@@ -1134,7 +1248,13 @@ Looking at contributors that have trouble finding issues to work on there is a c
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
+![png](analysis_files/analysis_48_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029839031983)>
 
 
 
@@ -1160,8 +1280,13 @@ When we segment the contributors by level, we again see that debugging test fail
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1ZKCFzXenoZgpLebVkol4KSoc24QtvsK3)
+![png](analysis_files/analysis_50_0.png)
 
+
+
+
+
+    <ggplot: (7017143777)>
 
 
 
@@ -1185,8 +1310,13 @@ This in-depth view confirms that debugging test failures is an issue across all 
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1TKrqRZ3Cb_nczOMD3GPURjUXCrijkv9X)
+![png](analysis_files/analysis_52_0.png)
 
+
+
+
+
+    <ggplot: (7016031366)>
 
 
 
@@ -1208,7 +1338,13 @@ When we look at the spread of blockers across interest in the next level, we see
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1wW1eW6onA3n9soklzeV5sTVkUS86whHd)
+![png](analysis_files/analysis_54_0.png)
+
+
+
+
+
+    <ggplot: (7015519131)>
 
 
 
@@ -1241,8 +1377,13 @@ survey_data.loc[:, "Check_for_news:_@kubernetesio_twitter"] = survey_data[
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1Zs-MdvCDurVthlLkMqMYW6vfRg3YLLZf)
+![png](analysis_files/analysis_57_0.png)
 
+
+
+
+
+    <ggplot: (7015647261)>
 
 
 
@@ -1270,8 +1411,13 @@ Contributors who use Twitter as their primary source of news, about Kubernetes, 
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1xC11xkpDhYqWET6nkQoY-8qOnKXeFdww)
+![png](analysis_files/analysis_59_0.png)
 
+
+
+
+
+    <ggplot: (7015657813)>
 
 
 
@@ -1295,8 +1441,13 @@ survey_data.loc[:,'Check_for_news:_@kubernetesio_twitter'] = survey_data[
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1VwujJD1dcx5t_qR_88Cag43W9MIC_GVR)
+![png](analysis_files/analysis_62_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029836698196)>
 
 
 
@@ -1319,7 +1470,13 @@ Most contributors are getting their news primarily from the official dev mailing
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1Kxds5kbDTII9fHh8oRkUsj0XBSL8rRON)
+![png](analysis_files/analysis_64_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029838193909)>
 
 
 
@@ -1345,7 +1502,13 @@ Looking across each level of the contributor ladder, most levels display the sam
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1qYMmyjLNo6vl75wrqIJJ44jkS1HoHcIc)
+![png](analysis_files/analysis_66_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029839332590)>
 
 
 
@@ -1375,8 +1538,13 @@ Because of the large increase in responses after the survey was advertised on Tw
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1LPz9vCzwYKTlakagLx5OY8y0RuArEhsl)
+![png](analysis_files/analysis_70_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029838700007)>
 
 
 
@@ -1400,7 +1568,13 @@ Of users who get their news primarily through Twitter, most are members, or thos
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1yq7Dof7irIskyPHvN11_Js0YW8Uis1wG)
+![png](analysis_files/analysis_72_0.png)
+
+
+
+
+
+    <ggplot: (7017826964)>
 
 
 
@@ -1426,7 +1600,13 @@ Many contributors, who use Twitter as their primary news source, have been contr
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1q6YqWuwBzu_Ul0--tZbPoSVyJ1ehNSjo)
+![png](analysis_files/analysis_75_0.png)
+
+
+
+
+
+    <ggplot: (7018445295)>
 
 
 
@@ -1450,8 +1630,13 @@ Of the contributors that rely on the k/community GitHub page, there are relative
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=119RgOOAf3JUoPUIXmKLHCOfSO7v9jZdr)
-s
+![png](analysis_files/analysis_77_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029838672398)>
 
 
 
@@ -1477,7 +1662,13 @@ The distribution of contributors by their levels is an interesting mix, showing 
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1A0i8L_Wxzrg83IxRCabMGsuSDidl5iot)
+![png](analysis_files/analysis_79_0.png)
+
+
+
+
+
+    <ggplot: (7018422981)>
 
 
 
@@ -1495,8 +1686,13 @@ The above plot shows the proportion of users in each bucket created by the two-w
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=16ot2FRDeZSFMd06RwX4VKDo_mMBh3Hv6)
+![png](analysis_files/analysis_82_0.png)
 
+
+
+
+
+    <ggplot: (7017384943)>
 
 
 
@@ -1513,8 +1709,13 @@ contributions are being made in other repositories. Most of these are still unde
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1PMAVipitufE2i6dKwOYFf3SjI-A0CsLI)
+![png](analysis_files/analysis_84_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029836350965)>
 
 
 
@@ -1537,8 +1738,13 @@ When we exclude first year users, the pattern remains mostly the same, with Docu
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=183wgKDMRYaju6G5-Ykewd79YA7IpEpjK)
+![png](analysis_files/analysis_86_0.png)
 
+
+
+
+
+    <ggplot: (7018087467)>
 
 
 
@@ -1561,8 +1767,13 @@ The contribution areas vary by the user level on the ladder, with those working 
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1NFSualzaY__mKnV1n1oi6-h6I6zYtrhz)
+![png](analysis_files/analysis_88_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029837326855)>
 
 
 
@@ -1589,8 +1800,13 @@ Looking at contribution areas by length of time contributing, it is clear that t
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1bneGCKDiKlkxdVfp4Neo1ZahN3GadG7c)
+![png](analysis_files/analysis_90_0.png)
 
+
+
+
+
+    <ggplot: (7016597957)>
 
 
 
@@ -1617,8 +1833,13 @@ Contributors with employer support are more likely to contribute to the main rep
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1cwWDEBocVRM9pYMEbduSu_VkJGeKvxSX)
+![png](analysis_files/analysis_92_0.png)
 
+
+
+
+
+    <ggplot: (7017487599)>
 
 
 
@@ -1650,8 +1871,13 @@ use_ratings.reverse()
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1VH0F5sw_QBfm2uIgUJM05Ss8IAiGDu-t)
+![png](analysis_files/analysis_95_0.png)
 
+
+
+
+
+    <ggplot: (7016995725)>
 
 
 
@@ -1679,8 +1905,13 @@ Among all contributors, Slack and GitHub are the most frequently used resources,
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1-mF6IW1fn8YY5rtIXou4zdgpAP9qoIVns)
+![png](analysis_files/analysis_97_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029838196252)>
 
 
 
@@ -1708,8 +1939,13 @@ When segmenting out the resource use by contribution length, the pattern stays r
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=116ClKhbQUGQIgKNaHabNH-4OqF6Gu4SR)
+![png](analysis_files/analysis_99_0.png)
 
+
+
+
+
+    <ggplot: (7016587412)>
 
 
 
@@ -1737,8 +1973,13 @@ The use of resources, across interest in the next level, shows only one major di
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1VN3RmxtffngvrKLRC06mW-4PGzkh5uo3)
+![png](analysis_files/analysis_101_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029839089334)>
 
 
 
@@ -1764,8 +2005,14 @@ The level of the contributor on the ladder shows a large difference between thos
 )
 ```
 
-![png](https://drive.google.com/uc?export=view&id=1_fTfYNE5GC1N0fnbLMDW709fsVy2V2st)
 
+![png](analysis_files/analysis_103_0.png)
+
+
+
+
+
+    <ggplot: (7017355163)>
 
 
 
@@ -1798,7 +2045,15 @@ The largest group not using Google Groups are those who do not know that there i
     )
 )
 ```
-![png](https://drive.google.com/uc?export=view&id=1MIWL05G0uEYmtqUKLo9oR3CBgCHnq-mp)
+
+
+![png](analysis_files/analysis_105_0.png)
+
+
+
+
+
+    <ggplot: (7017393044)>
 
 
 
@@ -1824,8 +2079,14 @@ The use of Google Drive, which is primarily used for administrative tasks, incre
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1UY1VgKjqikN20eQJ0LrNn91DFZbjcw6Q)
-       
+![png](analysis_files/analysis_107_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029838242286)>
+
 
 
 There is a slight tendency that the longer the contributor is involved in the project, the less they use YouTube. This is a very weak association, though, and hides the fact that most contributors across all lengths do not use YouTube.
@@ -1848,8 +2109,14 @@ There is a slight tendency that the longer the contributor is involved in the pr
 
 ```
 
-![png](https://drive.google.com/uc?export=view&id=1Nc_Crvp0eq37S_zvCNMsDFCW8AdsCqbd)
 
+![png](analysis_files/analysis_109_0.png)
+
+
+
+
+
+    <ggplot: (7016535865)>
 
 
 
@@ -1889,8 +2156,13 @@ help_plot
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1EVRkj_1Wvp4LTxfoLWrK9uSknPPXQ82O)
+![png](analysis_files/analysis_113_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029837298884)>
 
 
 
@@ -1910,8 +2182,13 @@ A majority of users, across all demographics, make use of the Help Wanted and Go
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=19Vx8uhtXUxansGxiEbuZEiq_20ezNDEH)
-s
+![png](analysis_files/analysis_115_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029838602671)>
 
 
 
@@ -1947,8 +2224,13 @@ The relative proportions of contributors who use the labels does not change with
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1yGrSNcWhDnBV9Iuok_ysfdyaUz5ba9lr)
+![png](analysis_files/analysis_117_0.png)
 
+
+
+
+
+    <ggplot: (7016888724)>
 
 
 
@@ -1971,8 +2253,13 @@ The plot above shows that these labels are especially helpful for those who are 
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1xgEb7VAOrHBD96dUrbYqUGqZM-0GfeVE)
+![png](analysis_files/analysis_119_0.png)
 
+
+
+
+
+    <ggplot: (7015657967)>
 
 
 
@@ -2006,8 +2293,13 @@ mentoring_plot
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1wlXkoPwRGys7UKSvyK2PyOFprjF-6VOr)
+![png](analysis_files/analysis_123_0.png)
 
+
+
+
+
+    <ggplot: (7016103386)>
 
 
 
@@ -2028,9 +2320,14 @@ Most contributors feel that they do not have enough experience to mentor others,
 )
 ```
 
-![png](https://drive.google.com/uc?export=view&id=1neMFpjhoSHbVcs24eA5UJpqwzmMizJI_)
+
+![png](analysis_files/analysis_125_0.png)
 
 
+
+
+
+    <ggplot: (-9223372029838078183)>
 
 
 
@@ -2053,7 +2350,13 @@ A majority of those who already mentor, as well as those who are interested in m
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1AvdEyTV-dKHAycStrAPlsu3BA-cORIWY)
+![png](analysis_files/analysis_127_0.png)
+
+
+
+
+
+    <ggplot: (7016224183)>
 
 
 
@@ -2079,8 +2382,13 @@ moc_plot
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1oe5cyzxxzINZrMLotDUGJQdmerQew7Jj)
+![png](analysis_files/analysis_131_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029838977697)>
 
 
 
@@ -2112,8 +2420,13 @@ Across all contributors, most do not know about the existence of Meet our Contri
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=19AqhjvPwFmg1LEyyMxNm5iQUT74D6E2q)
+![png](analysis_files/analysis_133_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029838672615)>
 
 
 
@@ -2136,8 +2449,13 @@ Among all contributors who are interested in the next level of the ladder, most 
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1IGzM448DUHsc_Dqan8G38XD3dqAIroiP)
+![png](analysis_files/analysis_135_0.png)
 
+
+
+
+
+    <ggplot: (7016149845)>
 
 
 
@@ -2172,9 +2490,13 @@ In the next series of plots, we analyze only those contributors who do not know 
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1qmYjlzJBfusOCRAtkvz-C5A46PV0dpdv)
+![png](analysis_files/analysis_137_0.png)
 
 
+
+
+
+    <ggplot: (-9223372029839084186)>
 
 
 
@@ -2209,8 +2531,13 @@ Across all levels of the contributor ladder, many who are interested in the next
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=198z0hvSwo0oMpoaxZJC3vYzyiRS1qGKo)
+![png](analysis_files/analysis_139_0.png)
 
+
+
+
+
+    <ggplot: (7018096434)>
 
 
 
@@ -2247,8 +2574,13 @@ The plot above shows that a majority of those unaware, have not been contributor
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=10fwjEpn5Zut7FekILqzUXdDJBznc4k7u)
+![png](analysis_files/analysis_141_0.png)
 
+
+
+
+
+    <ggplot: (7017328262)>
 
 
 
@@ -2282,8 +2614,13 @@ The plot above shows that MoC is found useful by those who watch it. This is the
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1Z3boJpbrv3nL5_wSMD04Xu7ZgPK7yY65)
+![png](analysis_files/analysis_143_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029839085424)>
 
 
 
@@ -2300,8 +2637,13 @@ The majority of those who found MoC useful are contributors who are working towa
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=15fHTdSjALZwZqIWf79TwgQWO71JZNv6h)
+![png](analysis_files/analysis_146_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029838744376)>
 
 
 
@@ -2324,9 +2666,13 @@ The primary reason contributors don't attend Thursday meetings is that they have
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1AV7pI-jk0iXfWRvffx3c5_MpUYYPEQ7W)
+![png](analysis_files/analysis_148_0.png)
 
 
+
+
+
+    <ggplot: (-9223372029838181793)>
 
 
 
@@ -2346,7 +2692,13 @@ Across contributor levels, the dominant reason for their attendance would be "fe
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1acgzabv_wa8AQn9HKxOf0USVGrl5JJ2p)
+![png](analysis_files/analysis_150_0.png)
+
+
+
+
+
+    <ggplot: (7020113805)>
 
 
 
@@ -2367,8 +2719,13 @@ Segmenting the contributors, by their length of contribution, does not reveal an
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=10empO1p_HyNXpAsCIzexdRhHMhnmTSjl)
+![png](analysis_files/analysis_152_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029837641121)>
 
 
 
@@ -2397,7 +2754,14 @@ reason_for_not_going = (
 reason_for_not_going
 ```
 
-![png](https://drive.google.com/uc?export=view&id=1cjVR0twMcBwx_qPOPhb2H6L6IR5xQcva)
+
+![png](analysis_files/analysis_156_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029836335146)>
 
 
 
@@ -2437,8 +2801,13 @@ unattendance_contrib = unattendance_contrib.assign(
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=19bVtgmpd1AZJUM4dA_Mgam3Q0nlSYSdC)
+![png](analysis_files/analysis_159_0.png)
 
+
+
+
+
+    <ggplot: (7017451675)>
 
 
 
@@ -2463,8 +2832,14 @@ unattendance_level = unattendance_level.assign(percent = unattendance_level.Resp
 
 ```
 
-![png](https://drive.google.com/uc?export=view&id=12j645GuwP-bSsIQ2XG6mOBhWv_vvOxwe)
 
+![png](analysis_files/analysis_161_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029837300599)>
 
 
 
@@ -2500,12 +2875,17 @@ unattendance_support = unattendance_support.assign(
         x="Reason",
         fill='Employer Support'
     )
-)               
+)
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1_oAZg9wmD19pMdJ-mtCMhWxi7CXy3FuT)
+![png](analysis_files/analysis_163_0.png)
 
+
+
+
+
+    <ggplot: (-9223372029838742798)>
 
 
 
@@ -2523,7 +2903,13 @@ agree_ratings = ["Strongly Disgree", "Disagree", "Neutral", "Agree", "Strongly A
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1ROFkqZ0Rm8VnBMNkzNigfyJeQet9xeMh)
+![png](analysis_files/analysis_166_0.png)
+
+
+
+
+
+    <ggplot: (-9223372029839030128)>
 
 
 
@@ -2543,8 +2929,13 @@ Overall, the plot above displays the proportions one would hope to see. Many con
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1k1uIEVLnGhVaEvP6YY3S_9h-mHZAvZAu)
+![png](analysis_files/analysis_168_0.png)
 
+
+
+
+
+    <ggplot: (7017012579)>
 
 
 

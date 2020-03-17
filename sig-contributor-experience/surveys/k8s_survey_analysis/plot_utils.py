@@ -20,7 +20,7 @@ class reverse_scale_color_brewer(p9.scale_color_brewer):
 
 class reverse_scale_fill_brewer(p9.scale_fill_brewer):
     def __init__(self, type="seq", palette=1, direction=-1, **kwargs):
-        self.palette = brewer_pal(type, palette, direction) 
+        self.palette = brewer_pal(type, palette, direction)
         scale_discrete.__init__(self, **kwargs)
 
 
@@ -76,7 +76,6 @@ def split_for_likert(topic_data_long, mid_point):
         )
         .reset_index()
     )
-
 
     # The mid point is in both the top and bottom halves, so divide by two
     bottom_scores.loc[bottom_scores["rating"] == mid_point, "level_1"] = (
@@ -518,20 +517,17 @@ def make_likert_chart_multi_year(
 
     if facet_by:
         facet_by.remove(".")
-       
+
     else:
-       facet_by.append(".")
-    
+        facet_by.append(".")
+
     vp = (
         vp
         + p9.facet_grid(
             facet_by + ["level_0"],
             labeller=lambda x: "\n".join(
                 wrap(
-                    x.replace(topic, "")
-                    .replace("_", " ")
-                    .replace("/", "/ ")
-                    .strip(),
+                    x.replace(topic, "").replace("_", " ").replace("/", "/ ").strip(),
                     15,
                 )
             ),
@@ -540,7 +536,7 @@ def make_likert_chart_multi_year(
             strip_text_x=p9.element_text(wrap=True, ma="left"), panel_spacing_x=0.1
         )
     )
-   
+
     return vp
 
 
@@ -668,6 +664,7 @@ def make_bar_chart(survey_data, topic, facet_by=[], proportional=False):
         )
     return br
 
+
 def make_likert_chart(
     survey_data,
     topic,
@@ -700,7 +697,7 @@ def make_likert_chart(
         (plotnine.ggplot): Offset stacked barchart plot object which 
             can be displayed in a notebook or saved out to a file
     """
-    
+
     mid_point = math.ceil(max_value / 2)
 
     og_cols = [x for x in survey_data.columns if x.startswith(topic)]
@@ -934,7 +931,10 @@ def make_single_likert_chart(survey_data, column, facet, labels, five_is_high=Fa
         vp = (
             vp
             + p9.scale_color_brewer(
-                "div", "RdBu", limits=[1, 2, 3, 4, 5], labels=labels
+                "div",
+                "RdBu",
+                limits=[1, 2, 3, 4, 5],
+                labels=["\n".join(wrap(x, 15)) for x in labels],
             )
             + p9.scale_fill_brewer(
                 "div",
