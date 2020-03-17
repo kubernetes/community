@@ -104,7 +104,7 @@ response_rates = response_rates.assign(
 ```
 
 
-![png](https://drive.google.com/open?id=1b7kNt4fxSRJQ7mviX53H7-woSDmYdXw2)
+![png](https://drive.google.com/uc?export=view&id=1b7kNt4fxSRJQ7mviX53H7-woSDmYdXw2)
 
 
 The survey was advertised on Twitter, and two groups had the largest number of disproportionate responses. Those responses came from either contributors working on their membership, or users that have been contributing less than a year. The largest group is users that fall into both categories.
@@ -120,7 +120,7 @@ The survey was advertised on Twitter, and two groups had the largest number of d
 ```
 
 
-![png](https://drive.google.com/open?id=1Wh5lNNKbEov2WqSDpl7rOQ6tAZxG2tKJ)
+![png](https://drive.google.com/uc?export=view&id=1Wh5lNNKbEov2WqSDpl7rOQ6tAZxG2tKJ)
 
 
 
@@ -137,7 +137,7 @@ The survey was advertised on Twitter, and two groups had the largest number of d
 ```
 
 
-![png](https://drive.google.com/open?id=1cC77G5lqoADiHX1EEbNpcow2urq9iAVU)
+![png](https://drive.google.com/uc?export=view&id=1cC77G5lqoADiHX1EEbNpcow2urq9iAVU)
 
 
 ```python
@@ -153,7 +153,7 @@ The survey was advertised on Twitter, and two groups had the largest number of d
 ```
 
 
-![png](https://drive.google.com/open?id=1BF1Hoi2ECIUv-vnh2DJ7TrVQ6xywnLcr)
+![png](https://drive.google.com/uc?export=view&id=1BF1Hoi2ECIUv-vnh2DJ7TrVQ6xywnLcr)
 
 
 
@@ -183,7 +183,7 @@ In the following sections, we look at the rest of the demographic variables indi
 ```
 
 
-![png](https://drive.google.com/open?id=1GXhbQB19XCjCnXlid7Brj14vzcXtYDQZ)
+![png](https://drive.google.com/uc?export=view&id=1GXhbQB19XCjCnXlid7Brj14vzcXtYDQZ)
 
 
 ```python
@@ -204,7 +204,7 @@ In the following sections, we look at the rest of the demographic variables indi
 ```
 
 
-![png](https://drive.google.com/open?id=1AUz9fQo8Tj2jkJCeCkM-2ZSR3cT7mtT-)
+![png](https://drive.google.com/uc?export=view&id=1AUz9fQo8Tj2jkJCeCkM-2ZSR3cT7mtT-)
 s
 
 
@@ -223,7 +223,7 @@ s
 ```
 
 
-![png](https://drive.google.com/open?id=1blrdWGRKJ0r738H2p76JLoV2tSdQNWH0)
+![png](https://drive.google.com/uc?export=view&id=1blrdWGRKJ0r738H2p76JLoV2tSdQNWH0)
 s
 
 
@@ -247,7 +247,7 @@ s
 ```
 
 
-![png](https://drive.google.com/open?id=1rTC4_7wBGUb6dH2JORbTDS2vEe-WfvlO)
+![png](https://drive.google.com/uc?export=view&id=1rTC4_7wBGUb6dH2JORbTDS2vEe-WfvlO)
 
 
 
@@ -268,7 +268,7 @@ s
 ```
 
 
-![png](https://drive.google.com/open?id=1U2cfdQzXANn0HsWu5l31cY07gqaesiht)
+![png](https://drive.google.com/uc?export=view&id=1U2cfdQzXANn0HsWu5l31cY07gqaesiht)
 
 
 
@@ -285,7 +285,7 @@ employer_support
 ```
 
 
-![png](https://drive.google.com/open?id=1Fg1YINYNwyc3-8nZSavaEuPZRfe75sFD)
+![png](https://drive.google.com/uc?export=view&id=1Fg1YINYNwyc3-8nZSavaEuPZRfe75sFD)
 
 
 
@@ -912,7 +912,7 @@ The following plots use offset stacked bar charts, showing the overall rankings 
 ```
 
 
-![png](https://drive.google.com/open?id=1Fg1YINYNwyc3-8nZSavaEuPZRfe75sFD)
+![png](https://drive.google.com/uc?export=view&id=1Fg1YINYNwyc3-8nZSavaEuPZRfe75sFD)
 
 
 
@@ -941,7 +941,7 @@ Mentoring is the most important project, with very few respondents rating it neg
 ```
 
 
-![png](https://drive.google.com/open?id=1Nc4ilrRJV9HxPGLuy7tuJLPU9OC6PRTZ)
+![png](https://drive.google.com/uc?export=view&id=1Nc4ilrRJV9HxPGLuy7tuJLPU9OC6PRTZ)
 
 
 
@@ -970,7 +970,7 @@ It is reasonable to expect that different roles in Kubernetes may value differen
 ```
 
 
-![png](https://drive.google.com/open?id=1lD-5YyheOsgoTbG49Ww67T4h6AWRtdQq)
+![png](https://drive.google.com/uc?export=view&id=1lD-5YyheOsgoTbG49Ww67T4h6AWRtdQq)
 
 
 
@@ -999,7 +999,7 @@ Similarly to contributor roles, the interest in the next level does not appear t
 ```
 
 
-![png](https://drive.google.com/open?id=1TgA6wwdPxmiDYDeRW9UAcIYzZe_Svm3V)
+![png](https://drive.google.com/uc?export=view&id=1TgA6wwdPxmiDYDeRW9UAcIYzZe_Svm3V)
 
 
 
@@ -1034,7 +1034,7 @@ blocker_ratings = list(
 ```
 
 
-![png](https://drive.google.com/open?id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
+![png](https://drive.google.com/uc?export=view&id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
 
 
 
@@ -1059,7 +1059,7 @@ The most frequent blocker across all contributors is debugging test failures, fo
 ```
 
 
-![png](https://drive.google.com/open?id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
+![png](https://drive.google.com/uc?export=view&id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
 
 
 
@@ -1084,7 +1084,7 @@ When we look at blockers, by the length of the contributor, we can see that cont
 ```
 
 
-![png](https://drive.google.com/open?id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
+![png](https://drive.google.com/uc?export=view&id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
 
 
 
@@ -1112,7 +1112,7 @@ When it comes to debugging, it is less of an issue for new contributors, most li
 ```
 
 
-![png](https://drive.google.com/open?id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
+![png](https://drive.google.com/uc?export=view&id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
 
 
 
@@ -1136,7 +1136,7 @@ Looking at contributors that have trouble finding issues to work on there is a c
 ```
 
 
-![png](https://drive.google.com/open?id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
+![png](https://drive.google.com/uc?export=view&id=11DTA_CKrz-C8tJTCqTSTjFtq3-vv2vQa)
 
 
 
@@ -1162,7 +1162,7 @@ When we segment the contributors by level, we again see that debugging test fail
 ```
 
 
-![png](https://drive.google.com/open?id=1ZKCFzXenoZgpLebVkol4KSoc24QtvsK3)
+![png](https://drive.google.com/uc?export=view&id=1ZKCFzXenoZgpLebVkol4KSoc24QtvsK3)
 
 
 
@@ -1187,7 +1187,7 @@ This in-depth view confirms that debugging test failures is an issue across all 
 ```
 
 
-![png](https://drive.google.com/open?id=1TKrqRZ3Cb_nczOMD3GPURjUXCrijkv9X)
+![png](https://drive.google.com/uc?export=view&id=1TKrqRZ3Cb_nczOMD3GPURjUXCrijkv9X)
 
 
 
@@ -1210,7 +1210,7 @@ When we look at the spread of blockers across interest in the next level, we see
 ```
 
 
-![png](https://drive.google.com/open?id=1wW1eW6onA3n9soklzeV5sTVkUS86whHd)
+![png](https://drive.google.com/uc?export=view&id=1wW1eW6onA3n9soklzeV5sTVkUS86whHd)
 
 
 
@@ -1243,7 +1243,7 @@ survey_data.loc[:, "Check_for_news:_@kubernetesio_twitter"] = survey_data[
 ```
 
 
-![png](https://drive.google.com/open?id=1Zs-MdvCDurVthlLkMqMYW6vfRg3YLLZf)
+![png](https://drive.google.com/uc?export=view&id=1Zs-MdvCDurVthlLkMqMYW6vfRg3YLLZf)
 
 
 
@@ -1272,7 +1272,7 @@ Contributors who use Twitter as their primary source of news, about Kubernetes, 
 ```
 
 
-![png](https://drive.google.com/open?id=1xC11xkpDhYqWET6nkQoY-8qOnKXeFdww)
+![png](https://drive.google.com/uc?export=view&id=1xC11xkpDhYqWET6nkQoY-8qOnKXeFdww)
 
 
 
@@ -1297,7 +1297,7 @@ survey_data.loc[:,'Check_for_news:_@kubernetesio_twitter'] = survey_data[
 ```
 
 
-![png](https://drive.google.com/open?id=1VwujJD1dcx5t_qR_88Cag43W9MIC_GVR)
+![png](https://drive.google.com/uc?export=view&id=1VwujJD1dcx5t_qR_88Cag43W9MIC_GVR)
 
 
 
@@ -1321,7 +1321,7 @@ Most contributors are getting their news primarily from the official dev mailing
 ```
 
 
-![png](https://drive.google.com/open?id=1Kxds5kbDTII9fHh8oRkUsj0XBSL8rRON)
+![png](https://drive.google.com/uc?export=view&id=1Kxds5kbDTII9fHh8oRkUsj0XBSL8rRON)
 
 
 
@@ -1347,7 +1347,7 @@ Looking across each level of the contributor ladder, most levels display the sam
 ```
 
 
-![png](https://drive.google.com/open?id=1qYMmyjLNo6vl75wrqIJJ44jkS1HoHcIc)
+![png](https://drive.google.com/uc?export=view&id=1qYMmyjLNo6vl75wrqIJJ44jkS1HoHcIc)
 
 
 
@@ -1377,7 +1377,7 @@ Because of the large increase in responses after the survey was advertised on Tw
 ```
 
 
-![png](https://drive.google.com/open?id=1LPz9vCzwYKTlakagLx5OY8y0RuArEhsl)
+![png](https://drive.google.com/uc?export=view&id=1LPz9vCzwYKTlakagLx5OY8y0RuArEhsl)
 
 
 
@@ -1402,7 +1402,7 @@ Of users who get their news primarily through Twitter, most are members, or thos
 ```
 
 
-![png](https://drive.google.com/open?id=1yq7Dof7irIskyPHvN11_Js0YW8Uis1wG)
+![png](https://drive.google.com/uc?export=view&id=1yq7Dof7irIskyPHvN11_Js0YW8Uis1wG)
 
 
 
@@ -1428,7 +1428,7 @@ Many contributors, who use Twitter as their primary news source, have been contr
 ```
 
 
-![png](https://drive.google.com/open?id=1q6YqWuwBzu_Ul0--tZbPoSVyJ1ehNSjo)
+![png](https://drive.google.com/uc?export=view&id=1q6YqWuwBzu_Ul0--tZbPoSVyJ1ehNSjo)
 
 
 
@@ -1452,7 +1452,7 @@ Of the contributors that rely on the k/community GitHub page, there are relative
 ```
 
 
-![png](https://drive.google.com/open?id=119RgOOAf3JUoPUIXmKLHCOfSO7v9jZdr)
+![png](https://drive.google.com/uc?export=view&id=119RgOOAf3JUoPUIXmKLHCOfSO7v9jZdr)
 s
 
 
@@ -1479,7 +1479,7 @@ The distribution of contributors by their levels is an interesting mix, showing 
 ```
 
 
-![png](https://drive.google.com/open?id=1A0i8L_Wxzrg83IxRCabMGsuSDidl5iot)
+![png](https://drive.google.com/uc?export=view&id=1A0i8L_Wxzrg83IxRCabMGsuSDidl5iot)
 
 
 
@@ -1497,7 +1497,7 @@ The above plot shows the proportion of users in each bucket created by the two-w
 ```
 
 
-![png](https://drive.google.com/open?id=16ot2FRDeZSFMd06RwX4VKDo_mMBh3Hv6)
+![png](https://drive.google.com/uc?export=view&id=16ot2FRDeZSFMd06RwX4VKDo_mMBh3Hv6)
 
 
 
@@ -1515,7 +1515,7 @@ contributions are being made in other repositories. Most of these are still unde
 ```
 
 
-![png](https://drive.google.com/open?id=1PMAVipitufE2i6dKwOYFf3SjI-A0CsLI)
+![png](https://drive.google.com/uc?export=view&id=1PMAVipitufE2i6dKwOYFf3SjI-A0CsLI)
 
 
 
@@ -1539,7 +1539,7 @@ When we exclude first year users, the pattern remains mostly the same, with Docu
 ```
 
 
-![png](https://drive.google.com/open?id=183wgKDMRYaju6G5-Ykewd79YA7IpEpjK)
+![png](https://drive.google.com/uc?export=view&id=183wgKDMRYaju6G5-Ykewd79YA7IpEpjK)
 
 
 
@@ -1563,7 +1563,7 @@ The contribution areas vary by the user level on the ladder, with those working 
 ```
 
 
-![png](https://drive.google.com/open?id=1NFSualzaY__mKnV1n1oi6-h6I6zYtrhz)
+![png](https://drive.google.com/uc?export=view&id=1NFSualzaY__mKnV1n1oi6-h6I6zYtrhz)
 
 
 
@@ -1591,7 +1591,7 @@ Looking at contribution areas by length of time contributing, it is clear that t
 ```
 
 
-![png](https://drive.google.com/open?id=1bneGCKDiKlkxdVfp4Neo1ZahN3GadG7c)
+![png](https://drive.google.com/uc?export=view&id=1bneGCKDiKlkxdVfp4Neo1ZahN3GadG7c)
 
 
 
@@ -1619,7 +1619,7 @@ Contributors with employer support are more likely to contribute to the main rep
 ```
 
 
-![png](https://drive.google.com/open?id=1cwWDEBocVRM9pYMEbduSu_VkJGeKvxSX)
+![png](https://drive.google.com/uc?export=view&id=1cwWDEBocVRM9pYMEbduSu_VkJGeKvxSX)
 
 
 
@@ -1652,7 +1652,7 @@ use_ratings.reverse()
 ```
 
 
-![png](https://drive.google.com/open?id=1VH0F5sw_QBfm2uIgUJM05Ss8IAiGDu-t)
+![png](https://drive.google.com/uc?export=view&id=1VH0F5sw_QBfm2uIgUJM05Ss8IAiGDu-t)
 
 
 
@@ -1681,7 +1681,7 @@ Among all contributors, Slack and GitHub are the most frequently used resources,
 ```
 
 
-![png](https://drive.google.com/open?id=1-mF6IW1fn8YY5rtIXou4zdgpAP9qoIVns)
+![png](https://drive.google.com/uc?export=view&id=1-mF6IW1fn8YY5rtIXou4zdgpAP9qoIVns)
 
 
 
@@ -1710,7 +1710,7 @@ When segmenting out the resource use by contribution length, the pattern stays r
 ```
 
 
-![png](https://drive.google.com/open?id=116ClKhbQUGQIgKNaHabNH-4OqF6Gu4SR)
+![png](https://drive.google.com/uc?export=view&id=116ClKhbQUGQIgKNaHabNH-4OqF6Gu4SR)
 
 
 
@@ -1739,7 +1739,7 @@ The use of resources, across interest in the next level, shows only one major di
 ```
 
 
-![png](https://drive.google.com/open?id=1VN3RmxtffngvrKLRC06mW-4PGzkh5uo3)
+![png](https://drive.google.com/uc?export=view&id=1VN3RmxtffngvrKLRC06mW-4PGzkh5uo3)
 
 
 
@@ -1767,7 +1767,7 @@ The level of the contributor on the ladder shows a large difference between thos
 ```
 
 
-![png](https://drive.google.com/open?id=17C11qIFdBpyCPKDQDCI8-7rvVloCHqmm)
+![png](https://drive.google.com/uc?export=view&id=17C11qIFdBpyCPKDQDCI8-7rvVloCHqmm)
 
 
 
@@ -1803,7 +1803,7 @@ The largest group not using Google Groups are those who do not know that there i
 ```
 
 
-![png](https://drive.google.com/open?id=1tKuGok94LBqRNA6fqmU96cPOJJWSDTWp)
+![png](https://drive.google.com/uc?export=view&id=1tKuGok94LBqRNA6fqmU96cPOJJWSDTWp)
 
 
 
@@ -1829,7 +1829,7 @@ The use of Google Drive, which is primarily used for administrative tasks, incre
 ```
 
 
-![png](https://drive.google.com/open?id=1B4uFW_kgJDuy-xUcepyLk8mXbGIcy1UV)
+![png](https://drive.google.com/uc?export=view&id=1B4uFW_kgJDuy-xUcepyLk8mXbGIcy1UV)
 s       
 
 
@@ -1854,7 +1854,7 @@ There is a slight tendency that the longer the contributor is involved in the pr
 ```
 
 
-![png](https://drive.google.com/open?id=1l7-m4bQKDm4d1fUFWL4GE_oXKUHLO5YS)
+![png](https://drive.google.com/uc?export=view&id=1l7-m4bQKDm4d1fUFWL4GE_oXKUHLO5YS)
 
 
 
@@ -1895,7 +1895,7 @@ help_plot
 ```
 
 
-![png](https://drive.google.com/open?id=1EVRkj_1Wvp4LTxfoLWrK9uSknPPXQ82O)
+![png](https://drive.google.com/uc?export=view&id=1EVRkj_1Wvp4LTxfoLWrK9uSknPPXQ82O)
 
 
 
@@ -1916,7 +1916,7 @@ A majority of users, across all demographics, make use of the Help Wanted and Go
 ```
 
 
-![png](https://drive.google.com/open?id=19Vx8uhtXUxansGxiEbuZEiq_20ezNDEH)
+![png](https://drive.google.com/uc?export=view&id=19Vx8uhtXUxansGxiEbuZEiq_20ezNDEH)
 s
 
 
@@ -1953,7 +1953,7 @@ The relative proportions of contributors who use the labels does not change with
 ```
 
 
-![png](https://drive.google.com/open?id=1yGrSNcWhDnBV9Iuok_ysfdyaUz5ba9lr)
+![png](https://drive.google.com/uc?export=view&id=1yGrSNcWhDnBV9Iuok_ysfdyaUz5ba9lr)
 
 
 
@@ -1977,7 +1977,7 @@ The plot above shows that these labels are especially helpful for those who are 
 ```
 
 
-![png](https://drive.google.com/open?id=1xgEb7VAOrHBD96dUrbYqUGqZM-0GfeVE)
+![png](https://drive.google.com/uc?export=view&id=1xgEb7VAOrHBD96dUrbYqUGqZM-0GfeVE)
 
 
 
@@ -2012,7 +2012,7 @@ mentoring_plot
 ```
 
 
-![png](https://drive.google.com/open?id=1wlXkoPwRGys7UKSvyK2PyOFprjF-6VOr)
+![png](https://drive.google.com/uc?export=view&id=1wlXkoPwRGys7UKSvyK2PyOFprjF-6VOr)
 
 
 
@@ -2029,7 +2029,7 @@ Most contributors feel that they do not have enough experience to mentor others,
 ```
 
 
-![png](https://drive.google.com/open?id=14xAwpOATQKvuai7xgtJFH-pDLCWhgkbJ)
+![png](https://drive.google.com/uc?export=view&id=14xAwpOATQKvuai7xgtJFH-pDLCWhgkbJ)
 
 
 
@@ -2054,7 +2054,7 @@ A majority of those who already mentor, as well as those who are interested in m
 ```
 
 
-![png](https://drive.google.com/open?id=1AvdEyTV-dKHAycStrAPlsu3BA-cORIWY)
+![png](https://drive.google.com/uc?export=view&id=1AvdEyTV-dKHAycStrAPlsu3BA-cORIWY)
 
 
 
@@ -2080,7 +2080,7 @@ moc_plot
 ```
 
 
-![png](https://drive.google.com/open?id=1oe5cyzxxzINZrMLotDUGJQdmerQew7Jj)
+![png](https://drive.google.com/uc?export=view&id=1oe5cyzxxzINZrMLotDUGJQdmerQew7Jj)
 
 
 
@@ -2113,7 +2113,7 @@ Across all contributors, most do not know about the existence of Meet our Contri
 ```
 
 
-![png](https://drive.google.com/open?id=19AqhjvPwFmg1LEyyMxNm5iQUT74D6E2q)
+![png](https://drive.google.com/uc?export=view&id=19AqhjvPwFmg1LEyyMxNm5iQUT74D6E2q)
 
 
 
@@ -2137,7 +2137,7 @@ Among all contributors who are interested in the next level of the ladder, most 
 ```
 
 
-![png](https://drive.google.com/open?id=1IGzM448DUHsc_Dqan8G38XD3dqAIroiP)
+![png](https://drive.google.com/uc?export=view&id=1IGzM448DUHsc_Dqan8G38XD3dqAIroiP)
 
 
 
@@ -2173,7 +2173,7 @@ In the next series of plots, we analyze only those contributors who do not know 
 ```
 
 
-![png](https://drive.google.com/open?id=1qmYjlzJBfusOCRAtkvz-C5A46PV0dpdv)
+![png](https://drive.google.com/uc?export=view&id=1qmYjlzJBfusOCRAtkvz-C5A46PV0dpdv)
 
 
 
@@ -2210,7 +2210,7 @@ Across all levels of the contributor ladder, many who are interested in the next
 ```
 
 
-![png](https://drive.google.com/open?id=198z0hvSwo0oMpoaxZJC3vYzyiRS1qGKo)
+![png](https://drive.google.com/uc?export=view&id=198z0hvSwo0oMpoaxZJC3vYzyiRS1qGKo)
 
 
 
@@ -2248,7 +2248,7 @@ The plot above shows that a majority of those unaware, have not been contributor
 ```
 
 
-![png](https://drive.google.com/open?id=10fwjEpn5Zut7FekILqzUXdDJBznc4k7u)
+![png](https://drive.google.com/uc?export=view&id=10fwjEpn5Zut7FekILqzUXdDJBznc4k7u)
 
 
 
@@ -2283,7 +2283,7 @@ The plot above shows that MoC is found useful by those who watch it. This is the
 ```
 
 
-![png](https://drive.google.com/open?id=1Z3boJpbrv3nL5_wSMD04Xu7ZgPK7yY65)
+![png](https://drive.google.com/uc?export=view&id=1Z3boJpbrv3nL5_wSMD04Xu7ZgPK7yY65)
 
 
 
@@ -2301,7 +2301,7 @@ The majority of those who found MoC useful are contributors who are working towa
 ```
 
 
-![png](https://drive.google.com/open?id=15fHTdSjALZwZqIWf79TwgQWO71JZNv6h)
+![png](https://drive.google.com/uc?export=view&id=15fHTdSjALZwZqIWf79TwgQWO71JZNv6h)
 
 
 
@@ -2325,7 +2325,7 @@ The primary reason contributors don't attend Thursday meetings is that they have
 ```
 
 
-![png](https://drive.google.com/open?id=1AV7pI-jk0iXfWRvffx3c5_MpUYYPEQ7W)
+![png](https://drive.google.com/uc?export=view&id=1AV7pI-jk0iXfWRvffx3c5_MpUYYPEQ7W)
 
 
 
@@ -2347,7 +2347,7 @@ Across contributor levels, the dominant reason for their attendance would be "fe
 ```
 
 
-![png](https://drive.google.com/open?id=1npvG9_lzl6bJ3lXcDuicHcgZLTSPyIAo)
+![png](https://drive.google.com/uc?export=view&id=1npvG9_lzl6bJ3lXcDuicHcgZLTSPyIAo)
 
 
 
@@ -2368,7 +2368,7 @@ Segmenting the contributors, by their length of contribution, does not reveal an
 ```
 
 
-![png](https://drive.google.com/open?id=10empO1p_HyNXpAsCIzexdRhHMhnmTSjl)
+![png](https://drive.google.com/uc?export=view&id=10empO1p_HyNXpAsCIzexdRhHMhnmTSjl)
 
 
 
@@ -2399,7 +2399,7 @@ reason_for_not_going
 ```
 
 
-![png](https://drive.google.com/open?id=1cjVR0twMcBwx_qPOPhb2H6L6IR5xQcva)
+![png](https://drive.google.com/uc?export=view&id=1cjVR0twMcBwx_qPOPhb2H6L6IR5xQcva)
 
 
 
@@ -2438,7 +2438,7 @@ unattendance_contrib = unattendance_contrib.assign(
 ```
 
 
-![png](https://drive.google.com/open?id=1rFq0HFqdfnmTGNQr_vurQAsdJtfjntgX)
+![png](https://drive.google.com/uc?export=view&id=1rFq0HFqdfnmTGNQr_vurQAsdJtfjntgX)
 
 
 
@@ -2464,11 +2464,11 @@ unattendance_level = unattendance_level.assign(percent = unattendance_level.Resp
 ```
 
 
-![png](https://drive.google.com/open?id=1a6K0oohD6MR54icIlzQxKRCoIXHR6t5I)
+![png](https://drive.google.com/uc?export=view&id=1a6K0oohD6MR54icIlzQxKRCoIXHR6t5I)
 
 
 
-
+        
 As with above, the higher up the  ladder one is, the more likely the are to be helping out at another event. Interestingly, while approvers are higher on the ladder than reviewers, they are less likely to be attending KubeCon, as well as the summits.
 
 
@@ -2504,7 +2504,7 @@ unattendance_support = unattendance_support.assign(
 ```
 
 
-![png](https://drive.google.com/open?id=16Nzd2-bY7EutSOR2YG7gdIJKZAR5ACeZ)
+![png](https://drive.google.com/uc?export=view&id=16Nzd2-bY7EutSOR2YG7gdIJKZAR5ACeZ)
 s
 
 
@@ -2523,7 +2523,7 @@ agree_ratings = ["Strongly Disgree", "Disagree", "Neutral", "Agree", "Strongly A
 ```
 
 
-![png](https://drive.google.com/open?id=1ROFkqZ0Rm8VnBMNkzNigfyJeQet9xeMh)
+![png](https://drive.google.com/uc?export=view&id=1ROFkqZ0Rm8VnBMNkzNigfyJeQet9xeMh)
 
 
 
@@ -2543,7 +2543,7 @@ Overall, the plot above displays the proportions one would hope to see. Many con
 ```
 
 
-![png](https://drive.google.com/open?id=1k1uIEVLnGhVaEvP6YY3S_9h-mHZAvZAu)
+![png](https://drive.google.com/uc?export=view&id=1k1uIEVLnGhVaEvP6YY3S_9h-mHZAvZAu)
 
 
 
