@@ -12,6 +12,7 @@ branches.
 - [Searching for Cherry-picks](#searching-for-cherry-picks)
 - [Troubleshooting Cherry-picks](#troubleshooting-cherry-picks)
 - [Cherry-picks for unsupported releases](#cherry-picks-for-unsupported-releases)
+- [What qualifies for a milestone](#what-qualifies-for-a-milestone)
 
 ---
 
@@ -178,3 +179,15 @@ A note about the specific case in [#72860](https://github.com/kubernetes/kuberne
 
 - The patch was exceedingly tiny and very unlikely to introduce new problems
 - Luckily, it was caught shortly after the release was supposed to be unsupported
+
+## What qualifies for a milestone
+
+In practice, you should fix anything simple that saves folks time when the intent is obvious or a milestone decision has been made. For example, you might add/modify kind and priority labels for a PR to match a correlating issue, or make sure an urgently awaited PR is in the milestone so it will pass CI.
+
+Milestones must be set on the PR reflecting the milestone for the target release branch (for example, milestone v1.11 for a cherry-pick onto branch release-1.11). This is normally done for you by automation.
+
+Here's what is believed are the important functions that the milestone-maintainer performs:
+
+1. Reminds Issue/PR owners that `kind/` `sig/` and `priority/` labels are required (see below, though).
+
+2. Removes issues/PRs from the milestone that don't belong there.
