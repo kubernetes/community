@@ -204,7 +204,7 @@ In the following sections, we look at the rest of the demographic variables indi
 
 
 ![png](https://drive.google.com/uc?export=view&id=1AUz9fQo8Tj2jkJCeCkM-2ZSR3cT7mtT-)
-s
+
 
 
 ```python
@@ -223,7 +223,7 @@ s
 
 
 ![png](https://drive.google.com/uc?export=view&id=1blrdWGRKJ0r738H2p76JLoV2tSdQNWH0)
-s
+
 
 
 
