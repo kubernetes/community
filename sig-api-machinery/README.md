@@ -72,6 +72,7 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/code-generator/OWNERS
 ### kubernetes-clients
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-client/c/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-client/csharp/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-client/go-base/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-client/go/master/OWNERS
