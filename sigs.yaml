@@ -796,7 +796,7 @@ sigs:
       day: Wednesday
       time: "14:00"
       tz: EST
-      frequency: biweekly
+      frequency: monthly - last Wednesday every month
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit
   - name: provider-openstack

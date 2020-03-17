@@ -111,7 +111,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
 - **Meetings:**
-  - Regular IBM Subproject Meeting: [Wednesdays at 14:00 EST](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).
+  - Regular IBM Subproject Meeting: [Wednesdays at 14:00 EST](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly - last Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit).
 ### provider-openstack
 - **Owners:**
