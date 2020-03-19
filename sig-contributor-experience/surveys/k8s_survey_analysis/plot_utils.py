@@ -165,7 +165,7 @@ def get_data_subset(
 def get_multi_year_data_subset(
     survey_data, topic, facet_by=[], exclude_new_contributors=False
 ):
-    """Get approprate data for multi-year plots and convert it to long form
+    """Get appropriate data for multi-year plots and convert it to long form
 
     Args:
         survey_data (pandas.DataFrame): Raw data read in from Kubernetes Survey   
@@ -196,7 +196,7 @@ def get_multi_year_data_subset(
 
 
 def get_single_year_data_subset(survey_data, topic, facet_by=[]):
-    """Get approprate data for single-year plots and convert it to long form
+    """Get appropriate data for single-year plots and convert it to long form
 
     Args:
         survey_data (pandas.DataFrame): Raw data read in from Kubernetes Survey   
@@ -233,7 +233,7 @@ def make_bar_chart_multi_year(
 ):
     """Make a barchart showing proportions of respondents listing each 
         column that starts with topic. Bars are colored by which year of 
-        the survey they corrispond to. If facet_by is not empty, the resulting
+        the survey they correspond to. If facet_by is not empty, the resulting
         plot will be faceted into subplots by the variables given. 
 
     Args:
@@ -323,7 +323,7 @@ def make_bar_chart_multi_year(
 
 def make_single_bar_chart_multi_year(survey_data, column, facet, proportionally=False):
     """Make a barchart showing the number of respondents responding to a single column.
-        Bars are colored by which year of the survey they corrispond to. If facet
+        Bars are colored by which year of the survey they correspond to. If facet
         is not empty, the resulting plot will be faceted into subplots by the variables
         given. 
 
