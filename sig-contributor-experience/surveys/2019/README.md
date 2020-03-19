@@ -1542,7 +1542,7 @@ use_ratings = [
     "Every Day",
     "Several Times a Week",
     "Several Times a Month",
-    "Ocassionally",
+    "Occasionally",
     "Never",
 ]
 use_ratings.reverse()
@@ -1560,7 +1560,7 @@ use_ratings.reverse()
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1VH0F5sw_QBfm2uIgUJM05Ss8IAiGDu-t)
+![png](https://drive.google.com/uc?export=view&id=1KRDk_oVsXnMNXM0sgMuhukvuaGWiilWD)
 
 
 
@@ -1588,8 +1588,7 @@ Among all contributors, Slack and GitHub are the most frequently used resources,
 )
 ```
 
-
-![png](https://drive.google.com/uc?export=view&id=1-mF6IW1fn8YY5rtIXou4zdgpAP9qoIVns)
+![png](https://drive.google.com/uc?export=view&id=1nGmJ8hKyG-QMUrvnJ62fN1hpZb1BtS6O)
 
 
 
@@ -1617,8 +1616,7 @@ When segmenting out the resource use by contribution length, the pattern stays r
 )
 ```
 
-
-![png](https://drive.google.com/uc?export=view&id=116ClKhbQUGQIgKNaHabNH-4OqF6Gu4SR)
+![png](https://drive.google.com/uc?export=view&id=1qFKuq4363lWYHytCBpE2abK2J3RsNEcr)
 
 
 
@@ -1645,9 +1643,7 @@ The use of resources, across interest in the next level, shows only one major di
     + p9.theme(strip_text_y=p9.element_text(margin={"r": 0.8, "units": "in"}))
 )
 ```
-
-
-![png](https://drive.google.com/uc?export=view&id=1VN3RmxtffngvrKLRC06mW-4PGzkh5uo3)
+![png](https://drive.google.com/uc?export=view&id=13L7vJ88slMxNN6ae1fgDf8XbXAVMCQhp)
 
 
 
@@ -2182,7 +2178,7 @@ The plot above shows that MoC is found useful by those who watch it. This is the
         axis_text_x=p9.element_text(angle=45, ha="right"),
     )
     + p9.labs(
-        x="Length of Contirbution",
+        x="Length of Contribution",
         y="Count",
         title="Contributors who watched or participated in \n MoC and found it helpful",
     )

@@ -1210,7 +1210,7 @@ use_ratings = [
     "Every Day",
     "Several Times a Week",
     "Several Times a Month",
-    "Ocassionally",
+    "Occasionally",
     "Never",
 ]
 use_ratings.reverse()
@@ -1230,7 +1230,7 @@ use_ratings.reverse()
 ```
 
 
-![png](https://drive.google.com/uc?export=view&id=1ELuKO-5xMzIKsi3T9Ug67YWqyHkoxIPm)
+![png](https://drive.google.com/uc?export=view&id=1WifsGFFpn--lyEZ63VjIX8iPCOMKQbQa)
 
 
 
@@ -1243,7 +1243,7 @@ use_ratings = [
     "Every Day",
     "Several Times a Week",
     "Several Times a Month",
-    "Ocassionally",
+    "Occasionally",
     "Never",
 ]
 use_ratings.reverse()
@@ -1272,8 +1272,7 @@ use_ratings.reverse()
 )
 ```
 
-
-![png](https://drive.google.com/uc?export=view&id=1n1CqDg8t0h5y54cRAjopTY-Apjcc-8Rg)
+![png](https://drive.google.com/uc?export=view&id=1ZsQEhse5W-Byk7k5L3TBYF6JoEgHW7Ms)
 
 
 
@@ -1373,7 +1372,7 @@ Contributors who have less than one year of experience saw the greatest increase
     + p9.labs(
         x="Contribution",
         y="Count",
-        title="Areas Contributed To by Employeer Support",
+        title="Areas Contributed To by Employer Support",
         fill="Proportion",
     )
     + p9.theme(
@@ -1383,8 +1382,7 @@ Contributors who have less than one year of experience saw the greatest increase
 )
 ```
 
-
-![png](https://drive.google.com/uc?export=view&id=1Ce6mlKuDnfDYN4kEa6O5h3aPShi75XqJ)
+![png](https://drive.google.com/uc?export=view&id=1pRfkqZ290jrC735BjBvBKTBprpQWy3r1)
 
 
 The plot above shows the proportion of each cohort that contributes to a certain area. A large drop is seen among those who use their own time in their contribution to the core repository. This is matched by an almost equal increase in the same group's contributions to other repositories owned by the Kubernetes project. 
