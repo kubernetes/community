@@ -318,6 +318,7 @@ channels:
   - name: spinnaker
   - name: sre
   - name: steering-committee
+  - name: submariner
   - name: summit-staff
   - name: suse-caasp
   - name: talk-proposals
