@@ -96,6 +96,9 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - Azure Subproject Meeting (Third Tuesday UTC, Monday Pacific): [Tuesdays at 1:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=1:00&tz=UTC).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
     - [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
+### provider-baiducloud
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-baiducloud/master/OWNERS
 ### provider-gcp
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/master/OWNERS
