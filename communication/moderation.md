@@ -220,6 +220,19 @@ umbrella.
 - [Zoom Guidelines](./zoom-guidelines.md)
 - [Moderators](./moderators.md#zoom)
 
+### Process for Adding a Moderator
+
+This is the workflow for adding a moderator.
+
+- Moderator applies by [filing an issue] in the kubernetes/community repo
+- Moderator gets approval from 2 current moderators
+- Add the person to their respective moderation tool:
+  - Slack - Add them as a slack workspace admins (instructions pinned on #slack-admins-private): Invite them to #slack-admins-private, #slack-admins, #slack-log, #slack-reports and #slack-invites
+  - Discuss - Change their permission to moderator
+  - Kubernetes.io Google group - PR the person into the correct yaml file in kubernetes/k8s.io. (Note: This only applies to groups using @kubernetes.io, most other lists are still managed out of band)
+  - Ensure they add that they are an admin in their profile page on whatever service they are administrating
+- Add them to the moderators mailing list by PRing them into this file, ensure you link to the person's moderator github application as part of the PR for reference: https://github.com/kubernetes/k8s.io/blob/master/groups/groups.yaml
+- Ensure person is enrolled for a future bias training course, this can either be provided by the project or their employer.
 
 ## References and Resources
 
@@ -244,3 +257,4 @@ guidelines:
 [Steering Committee]: https://git.k8s.io/steering
 [moderator request]: https://github.com/kubernetes/community/issues/new/choose
 [moderator template]: https://git.k8s.io/community/.github/ISSUE_TEMPLATE/moderator_application.md
+[filing an issue]: https://github.com/kubernetes/community/issues/new/?assignees=&labels=area%2Fcommunity-management%2C+sig%2Fcontributor-experience&template=moderator_application.md&title=REQUEST%3A+New+moderator+for+%3Cyour-GH-handle%3E+of+%3Ck8s+property%3E
