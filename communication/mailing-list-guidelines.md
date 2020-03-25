@@ -46,15 +46,6 @@ Moderation of the SIG/WG lists is up to that individual SIG/WG. The admins
 are there to help facilitate leadership changes, or various other administrative
 functions.
 
-The group management settings for Google Groups have been changed in order
-to make groups simpler to manage. This has caused some breaks in certain groups 
-visibility settings related to SIG and WG Google Groups.
-The instructions on how to fix from Google Groups for owners of the list:
-Near the top right, click **Manage group**.
-- **Information** -> **Directory** -> **Edit the setting to set the desired 
-visibility for your group.** -> **Save**.
-- This [link] have all the details related to these changes.
-
 Users who are violating the [Code of Conduct] or other negative activities
 (like spamming) should be moderated.
 - [Lock the thread immediately] so that people cannot reply to the thread.
@@ -98,21 +89,23 @@ Create a Google Group at https://groups.google.com/forum/#!creategroup,
 following the below procedure:
 - Each SIG must have two discussion groups with the following settings.
   - `kubernetes-sig-<foo>` (the discussion group):
-    - Anyone can view content.
-    - Anyone can join.
-    - Moderate messages from non-members of the group.
-    - Only members can view the list of members.
+    - Group type: Email list
+    - Group visibility: Anyone on the web
+    - View topics: Anyone on the web
+    - Post: Owners of the group, Managers of the group, All members of the group. Ensure that "Anyone on the web" is NOT selected here. 
+    - Join the group: Anyone can ask
   - `kubernetes-sig-<foo>-leads` (list for the leads, to be used with Zoom and
     Calendars)
-    - Only members can view group content.
-    - Anyone can apply to join.
-    - Moderate messages from non-members of the group.
-    - Only members can view the list of members.
+    - Group type: Email list
+    - Group visibility: All members of the group
+    - View topics: All members of the group
+    - Post: Owners of the group, Managers of the group, All members of the group. Ensure that "Anyone on the web" is NOT selected here. 
+    - Join the group: Only invited users
+    
 - Groups should be created as e-mail lists with at least three owners and must
   include the [Mailing list owners](#mailing-list-owners).
 -  To add the owners, visit the **Group Settings** (drop-down menu on the right
-   side), select **Direct Add Members** on the left side and add them via their
-   email address (with a suitable welcome message).
+   side), select **Members**, then **Direct Add Members** on the left side and add them via their email address (with a suitable welcome message). Do NOT forget to invite contributors@kubernetes.io in addition to your leads.
 - In **Members/All Members** select the [Mailing list owners] and assign them
   to the **owner role**.
 - Set the following permissions to **Public**:
@@ -132,6 +125,12 @@ Familiarize yourself with the [moderation guidelines] for the project and create
 a [moderation queue]. Chairs should be cognizant that a new group will require
 an initial time investment moderation-wise as the group establishes itself.
 
+### Visibility
+
+If you need to ensure that an existing group is visible to the internet. 
+
+Near the top right, click **Manage group**.
+- **Information** -> **Group Visibility** -> **Edit the setting to set the desired visibility for your group.** -> **Save**.
 
 ### Create moderation queue
 
@@ -140,31 +139,13 @@ queue before being posted to the Mailing List.
 
 - From the Google Groups management page goto **Settings** -> **Moderation**.
 - Configure the following settings:
-  - **Post:**
-    - Owners of the Group
-    - Manager of the Group
-    - All Members of the Group
-  - **Post as the Group:**
-    - Owners of the Group
-    - Managers of the Group
-  - **Approve Members:**
-    - Managers of the Group
-  - **Lock Topics:**
-    - Owners of the Group
-    - Managers of the Group
-  - **Modify Members:** (should be Greyed out)
-    - Owners of the Group
-    - Managers of the Group
-  - **New Member Restrictions:**
-    - New member posts are moderated
-  - **Reject author notification:**
-    - Notify authors when moderators reject their posts -> **checked**
-    - Message:
+  - Leave "Moderate all messages to the group" off
+  - New member restrictions: New member posts are moderated
+  - Rejected author notification: Checked, use this text:
       ```
       Since you're a new subscriber you're in a moderation queue, sorry for the inconvenience, a moderator will check your message shortly.
       ```
-  - **Spam messages:**
-    - Send them to moderation queue and send notification to moderators.
+  - Spam messages: Send them to moderation queue and send notification to moderators.
 
 ### Archive a mailing list
 
@@ -193,8 +174,6 @@ To archive a mailing list, use the below procedure.
     - **Join the group:**
       - Only invited users
 
-
-
 [mailing list owners]: #mailing-list-owners
 [moderation queue]: #create-moderation-queue
 [sig-list]: /sig-list.md
@@ -206,4 +185,3 @@ To archive a mailing list, use the below procedure.
 [delete the post]: https://support.google.com/groups/answer/1046523?hl=en
 [these instructions]: https://support.google.com/groups/answer/2646833?hl=en&ref_topic=2458761#
 [groups help]: https://support.google.com/groups/answer/2466386?hl=en&ref_topic=2458761
-[link]: https://support.google.com/a/answer/9191148?hl=en
