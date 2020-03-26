@@ -61,9 +61,11 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
   - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
 ### scheduler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/scheduler-plugins/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
+### scheduler-plugins
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/scheduler-plugins/master/OWNERS
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
