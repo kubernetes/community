@@ -391,12 +391,12 @@ we define comprehensive state machines for objects, nor behaviors associated
 with state transitions. The system is level-based rather than edge-triggered,
 and should assume an Open World.
 
-An example of an oscillating condition type is `Ready` (despite it running
-afoul of current guidance), which indicates the object was believed to be fully
-operational at the time it was last probed. A possible monotonic condition
-could be `Succeeded`. A `True` status for `Succeeded` would imply completion
-and that the resource was no longer active. An object that was still active
-would generally not have a `Succeeded` condition.
+An example of an oscillating condition type is `Ready`, which indicates the
+object was believed to be fully operational at the time it was last probed. A
+possible monotonic condition could be `Succeeded`. A `True` status for
+`Succeeded` would imply completion and that the resource was no longer
+active. An object that was still active would generally not have a `Succeeded`
+condition.
 
 Some resources in the v1 API contain fields called **`phase`**, and associated
 `message`, `reason`, and other status fields. The pattern of using `phase` is
