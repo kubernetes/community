@@ -133,6 +133,8 @@ further stages (e.g. Beta/Ga) of feature lifecycle.
 * **What are other known failure modes?**
 
 * **How can those be detected via metrics or logs?**
+  Stated another way: how can an operator troubleshoot without logging into a
+  master or worker node?
 
 * **What are the mitigations for each of those failure modes?**
 

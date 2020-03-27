@@ -13,7 +13,7 @@ Covers best practices for cluster observability through metrics, logging, and ev
 The [charter](charter.md) defines the scope and governance of the Instrumentation Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 17:30 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 17:30 UTC](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/17emKiwJeqfrCsv0NZ2FtyDbenXGtTNCsDEiLbPa7x7Y/edit).
 
 ## Leadership
@@ -21,8 +21,18 @@ The [charter](charter.md) defines the scope and governance of the Instrumentatio
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Elana Hashman (**[@ehashman](https://github.com/ehashman)**), Red Hat
+* Han Kang (**[@logicalhan](https://github.com/logicalhan)**), Google
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
 * Frederic Branczyk (**[@brancz](https://github.com/brancz)**), Red Hat
-* Piotr Szczesniak (**[@piosz](https://github.com/piosz)**), Google
+
+## Emeritus Leads
+
+* Piotr Szczesniak (**[@piosz](https://github.com/piosz)**)
 
 ## Contact
 - Slack: [#sig-instrumentation](https://kubernetes.slack.com/messages/sig-instrumentation)

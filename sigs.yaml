@@ -36,7 +36,7 @@ sigs:
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/my/apimachinery
     archive_url: https://goo.gl/0lbiM9
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R
   contact:
@@ -88,8 +88,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-client/javascript/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-client/perl/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-client/python-base/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-client/python/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-client/ruby/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-incubator/client-python/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/clientgofix/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/client-go/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/OWNERS
   - name: server-api-aggregation
@@ -162,7 +163,7 @@ sigs:
     time: "9:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/739385290
     archive_url: https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3
   contact:
@@ -260,7 +261,7 @@ sigs:
     time: "19:00"
     tz: UTC
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/845605479
     archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
   - description: code organization Office Hours
@@ -268,7 +269,7 @@ sigs:
     time: "14:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/845605479
     archive_url: https://docs.google.com/document/d/1HtTI0rJEGP_MSf6eO87aCmx_tzpovPAAg7U2Zxwm8FE/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP03VEluzh0wpSRPzgve8kI5
   - description: conformance Office Hours
@@ -276,7 +277,7 @@ sigs:
     time: "12:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/427337923
     archive_url: https://docs.google.com/document/d/1W31nXh9RYAb_VaYkwuPLd1hFxuRX3iU0DmaQ4lkCsX8/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
   contact:
@@ -372,7 +373,7 @@ sigs:
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/264572674
     archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
   contact:
@@ -478,6 +479,11 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/security/podsecuritypolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/imagepolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/policy/OWNERS
+  - name: secrets-store-csi-driver
+    description: |
+      Integrates secrets stores with Kubernetes via a CSI volume.
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/OWNERS
   - name: service-accounts
     description: |
       Infrastructure implementing Kubernetes service account based workload identity.
@@ -507,7 +513,7 @@ sigs:
     time: "14:00"
     tz: UTC
     frequency: biweekly/triweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/944410904
     archive_url: https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit
   contact:
     slack: sig-autoscaling
@@ -586,7 +592,7 @@ sigs:
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/288426795
     archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
   contact:
@@ -668,7 +674,7 @@ sigs:
     time: "13:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/508079177
     archive_url: https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3dXLcYbRKCbpPCN-8CDFAB
   contact:
@@ -741,7 +747,7 @@ sigs:
       time: "9:00"
       tz: PT (Pacific Time)
       frequency: 'biweekly 2019 start date: Jan. 11th'
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      url: https://zoom.us/my/k8ssigaws
       archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29DzPOBBaJi-SO3AQ_b4HC
   - name: provider-azure
@@ -756,7 +762,7 @@ sigs:
       time: "14:30"
       tz: UTC
       frequency: monthly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      url: https://zoom.us/j/586836662
       archive_url: https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit
       recordings_url: https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4
     - description: Azure Subproject Meeting (Third Tuesday UTC, Monday Pacific)
@@ -764,7 +770,7 @@ sigs:
       time: "1:00"
       tz: UTC
       frequency: monthly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      url: https://zoom.us/j/586836662
       archive_url: https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit
       recordings_url: https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4
   - name: provider-gcp
@@ -780,6 +786,9 @@ sigs:
       frequency: biweekly
       url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
       archive_url: https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit
+  - name: provider-huaweicloud
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-huaweicloud/master/OWNERS
   - name: provider-ibmcloud
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
@@ -789,7 +798,7 @@ sigs:
       time: "14:00"
       tz: EST
       frequency: biweekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      url: https://zoom.us/j/9392903494
       archive_url: https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit
   - name: provider-openstack
     owners:
@@ -813,7 +822,7 @@ sigs:
       time: "09:00"
       tz: PT (Pacific Time)
       frequency: monthly - first Wednesday every month
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      url: https://zoom.us/j/584244729
       archive_url: https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR
 - dir: sig-cluster-lifecycle
@@ -850,7 +859,7 @@ sigs:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/423312508
     archive_url: https://docs.google.com/document/d/1ojR0jooQaHEuz3gGW6DxcZlsws9ZX7jHPC8walm1G3A/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API Provider Implementers' office hours (EMEA)
@@ -858,7 +867,7 @@ sigs:
     time: "15:00"
     tz: CEST (Central European Summer Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/424743530
     archive_url: https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API Provider Implementers' office hours (US West Coast)
@@ -866,7 +875,7 @@ sigs:
     time: "12:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/140808484
     archive_url: https://docs.google.com/document/d/1IZ2-AZhe4r3CYiJuttyciS7bGZTTx4iMppcA8_Pr3xE/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API office hours
@@ -874,7 +883,7 @@ sigs:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/861487554
     archive_url: https://docs.google.com/document/d/1fQNlqsDkvEggWFi51GVxOglL2P1Bvo2JhZlMhm2d-Co/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster Addons meeting
@@ -882,14 +891,14 @@ sigs:
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/130096731
     archive_url: https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit
   - description: Image Builder office hours
     day: Wednesday
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1Pf4QlxwvE4viqyQ7X0EbspY9f-uXNVP7zTTcSVq-Yjs/edit
+    url: https://zoom.us/j/807524571
     archive_url: https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Kubespray Office Hours
@@ -897,14 +906,14 @@ sigs:
     time: "08:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/532465189
     archive_url: https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit
   - description: Regular SIG Meeting
     day: Tuesday
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/916523531
     archive_url: https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Regular SIG Meeting in China
@@ -912,27 +921,27 @@ sigs:
     time: "20:00"
     tz: Beijing
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/179916854
     archive_url: https://shimo.im/docs/YcoaYlvRmIYcrwnd
   - description: etcdadm Office Hours
     day: Monday
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit#
+    url: https://zoom.us/j/612375927
   - description: kops Office Hours
     day: Friday
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/my/k8ssigaws
     archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
   - description: kubeadm Office Hours
     day: Wednesday
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/179916854
     archive_url: https://docs.google.com/document/d/130_kiXjG7graFNSnIAgtMS1G8zPDwpkshgfRYS0nggo/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: minikube Office Hours
@@ -940,7 +949,7 @@ sigs:
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/905156508
     archive_url: https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit
   contact:
     slack: sig-cluster-lifecycle
@@ -1001,12 +1010,12 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
     meetings:
-    - description: Cluster API vSphere syncup meeting
-      day: Wednesday
+    - description: Cluster API vSphere meeting
+      day: Monday
       time: "13:00"
       tz: PT (Pacific Time)
-      frequency: bi-weekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      frequency: 'biweekly 2020 start date: Jan. 13th'
+      url: https://zoom.us/j/875399243
       archive_url: https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu
   - name: etcdadm
@@ -1198,6 +1207,14 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
+    meetings:
+    - description: sig-contribex mentoring subproject meeting
+      day: Friday
+      time: "10:00"
+      tz: PT
+      frequency: biweekly
+      url: https://zoom.us/j/739807514
+      recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: repo-infra
     description: Creates and maintains tools and templates for kubernetes-namespace
       repositories.
@@ -1227,6 +1244,13 @@ sigs:
     - github: zacharysarah
       name: Zach Corleissen
       company: Linux Foundation
+    tech_leads:
+    - github: kbhawkey
+      name: Karen Bradshaw
+      company: Independent
+    - github: sftim
+      name: Tim Bannister
+      company: The Scale Factory
     emeritus_leads:
     - github: Bradamant3
       name: Jennifer Rondeau
@@ -1317,19 +1341,26 @@ sigs:
   label: instrumentation
   leadership:
     chairs:
+    - github: ehashman
+      name: Elana Hashman
+      company: Red Hat
+    - github: logicalhan
+      name: Han Kang
+      company: Google
+    tech_leads:
     - github: brancz
       name: Frederic Branczyk
       company: Red Hat
+    emeritus_leads:
     - github: piosz
       name: Piotr Szczesniak
-      company: Google
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
     time: "17:30"
     tz: UTC
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing
     archive_url: https://docs.google.com/document/d/17emKiwJeqfrCsv0NZ2FtyDbenXGtTNCsDEiLbPa7x7Y/edit
   contact:
     slack: sig-instrumentation
@@ -1405,7 +1436,7 @@ sigs:
     time: "7:30"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/my/k8s.mc
     archive_url: https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3iKP5EzMbtNT2zOZv6RCrX
   - description: Regular SIG Meeting
@@ -1413,7 +1444,7 @@ sigs:
     time: "9:30"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/my/k8s.mc
     archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
     recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
   contact:
@@ -1466,14 +1497,7 @@ sigs:
       name: Tim Hockin
       company: Google
   meetings:
-  - description: Ingress V1 GA Meeting
-    day: Thursday
-    time: "14:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/289465529
-    archive_url: https://docs.google.com/document/d/1K5KzrrZdiwvx6iRvgMEj_fcvHOvGRZj_ve2sGdxTZm8/edit
-  - description: Regular SIG Meeting
+  - description: SIG Network Meeting
     day: Thursday
     time: "14:00"
     tz: PT (Pacific Time)
@@ -1494,6 +1518,13 @@ sigs:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/140577552
+    archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
+  - description: Service APIs Office Hours
+    day: Wednesday
+    time: "15:00"
+    tz: PT (Pacific Time)
+    frequency: weekly
+    url: https://zoom.us/j/289465529
     archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
   contact:
     slack: sig-network
@@ -1524,6 +1555,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
+  - name: iptables-wrappers
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/iptables-wrappers/master/OWNERS
   - name: kube-dns
     owners:
     - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
@@ -1702,7 +1736,7 @@ sigs:
     teams:
     - name: kubernetes-milestone-maintainers
       description: Milestone Maintainers
-    - name: kubernetes-release-managers
+    - name: release-managers
       description: Release Managers
     - name: sig-release
       description: SIG Release Members
@@ -1782,9 +1816,9 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
-    time: "18:30"
-    tz: Warsaw
-    frequency: bi-weekly ([upcoming meeting dates](#upcoming-2019-meeting-dates))
+    time: "17:30"
+    tz: UTC
+    frequency: weekly/bi-weekly as per demand ([upcoming meeting dates](#upcoming-meeting-dates))
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
     archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
     recordings_url: https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL
@@ -1902,9 +1936,11 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
   - name: scheduler
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/scheduler-plugins/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
+  - name: scheduler-plugins
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/scheduler-plugins/master/OWNERS
 - dir: sig-service-catalog
   name: Service Catalog
   mission_statement: >
@@ -1991,6 +2027,16 @@ sigs:
     - github: saad-ali
       name: Saad Ali
       company: Google
+    - github: xing-yang
+      name: Xing Yang
+      company: VMware
+    tech_leads:
+    - github: jsafrane
+      name: Jan Šafránek
+      company: Red Hat
+    - github: msau42
+      name: Michelle Au
+      company: Google
     emeritus_leads:
     - github: childsb
       name: Bradley Childs
@@ -2000,7 +2046,7 @@ sigs:
     time: "9:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/614261834
     archive_url: https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing
     recordings_url: https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq
   contact:
@@ -2048,6 +2094,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-csi/driver-registrar/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/drivers/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/external-attacher/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/external-health-monitor/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/external-resizer/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
@@ -2094,7 +2141,7 @@ sigs:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: bi-weekly starting Tuesday August 13, 2019
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://zoom.us/j/135450138
     archive_url: https://bit.ly/k8s-sig-testing-notes
     recordings_url: https://bit.ly/k8s-sig-testing-videos
   contact:
@@ -2134,7 +2181,7 @@ sigs:
       time: "11:00"
       tz: PT (Pacific Time)
       frequency: bi-weekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      url: https://zoom.us/j/960461819
       archive_url: https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit
       recordings_url: https://bit.ly/k8s-sig-testing-videos
   - name: prow
@@ -2165,7 +2212,7 @@ sigs:
       time: "10:00"
       tz: PT (Pacific Time)
       frequency: bi-weekly
-      url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+      url: https://zoom.us/j/790505720
       archive_url: https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o
 - dir: sig-ui
   name: UI
@@ -2272,8 +2319,8 @@ sigs:
   label: windows
   leadership:
     chairs:
-    - github: PatrickLang
-      name: Patrick Lang
+    - github: marosset
+      name: Mark Rossetti
       company: Microsoft
     - github: michmike
       name: Michael Michael
@@ -2285,6 +2332,9 @@ sigs:
     - github: ddebroy
       name: Deep Debroy
       company: Docker
+    emeritus_leads:
+    - github: PatrickLang
+      name: Patrick Lang
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday

@@ -4,6 +4,21 @@
 # e.g., @release-managers is defined in sig-release/usergroups.yaml
 
 usergroups:
+  - name: contributor-comms
+    long_name: Upstream Marketing
+    description: Upstream Marketing group.
+    channels:
+      - sig-contribex
+    members:
+      - chrisshort
+      - jonasrosland
+      - mbbroberg
+      - onlydole
+      - paris
+      - "Rin Oliver"
+      - simplytunde
+      - Tunde
+
   - name: test-infra-oncall
     external: true
   - name: youtube-admins
@@ -16,7 +31,6 @@ usergroups:
       - castrojo
       - idealhack
       - idvoretskyi
-      - jbeda
       - jdumars
       - jeefy
       - markyjackson-taulia
@@ -24,7 +38,6 @@ usergroups:
       - nzoueidi
       - onlydole
       - paris
-      - sarahnovotny
 
   - name: zoom-admins
     long_name: Zoom Admins

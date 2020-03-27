@@ -40,10 +40,13 @@ aliases:
   sig-docs-leads:
     - jimangel
     - kbarnard10
+    - kbhawkey
+    - sftim
     - zacharysarah
   sig-instrumentation-leads:
     - brancz
-    - piosz
+    - ehashman
+    - logicalhan
   sig-multicluster-leads:
     - pmorie
     - quinton-hoole
@@ -74,7 +77,10 @@ aliases:
     - jberkhahn
     - mszostok
   sig-storage-leads:
+    - jsafrane
+    - msau42
     - saad-ali
+    - xing-yang
   sig-testing-leads:
     - fejta
     - spiffxp
@@ -90,9 +96,9 @@ aliases:
     - tashimi
     - vllry
   sig-windows-leads:
-    - PatrickLang
     - benmoss
     - ddebroy
+    - marosset
     - michmike
   wg-apply-leads:
     - lavalamp
@@ -181,9 +187,9 @@ aliases:
   provider-ibmcloud:
     - spzala
   provider-openstack:
-    - adisky
     - chrigl
-    - hogepodge
+    - lingxiankong
+    - ramineni
   provider-vmware:
     - cantbewong
     - frapposelli

@@ -55,7 +55,7 @@ Areas covered by SIGs may be vertically focused on particular
 components or functions, cross-cutting/horizontal, spanning many/all
 functional areas of the project, or in support of the project
 itself. Examples:
-* Vertical: Network, Storage, Node, Scheduling, Big Data
+* Vertical: Network, Storage, Node, Scheduling
 * Horizontal: Scalability, Architecture
 * Project: Testing, Release, Docs, PM, Contributor Experience
 

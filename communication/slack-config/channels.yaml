@@ -3,6 +3,9 @@
 
 channels:
   - name: airflow-operator
+  - name: aks-engine-users
+  - name: aks-engine-dev
+    id: CU1CXUHN0
   - name: announcements
   - name: antrea
   - name: api-reviews
@@ -115,6 +118,7 @@ channels:
   - name: k8s-code-organization
   - name: k8s-conformance
   - name: k8s-dual-stack
+  - name: k8s-infra-alerts
   - name: k8s-release
     archived: true
   - name: kapitan
@@ -122,6 +126,7 @@ channels:
   - name: keel
   - name: kiam
   - name: kind
+  - name: kcli
   - name: klog
   - name: knative
   - name: kompose
@@ -169,6 +174,7 @@ channels:
   - name: kubernetes-operators
   - name: kubernetes-ruby
   - name: kubernetes-security
+  - name: kubernetes-streaming
   - name: kubernetes-teachers
   - name: kubernetes-users
   - name: kubespray
@@ -182,6 +188,7 @@ channels:
     archived: true
   - name: linode
   - name: litmus
+  - name: lokomotive
   - name: malaysia-users
   - name: malta-users
   - name: meet-our-contributors
@@ -200,6 +207,7 @@ channels:
   - name: meetup-manchester
   - name: meetup-minneapolis
   - name: meetup-nyc
+  - name: meetup-dc
   - name: meetup-paris
   - name: meetup-pittsburgh
   - name: meetup-sacramento
@@ -211,6 +219,7 @@ channels:
   - name: meetup-tunisia
   - name: metacontroller
   - name: metallb
+  - name: metallb-dev
   - name: microk8s
   - name: minikube
   - name: minikube-dev
@@ -230,6 +239,7 @@ channels:
   - name: office-hours
   - name: okteto
   - name: opencontainers
+  - name: openebs
   - name: openshift-dev
   - name: openshift-users
   - name: openstack-helm
@@ -248,6 +258,7 @@ channels:
   - name: prow
   - name: prow-alerts
   - name: pt_br-users
+  - name: raksh
   - name: rancher
   - name: random
     archived: true
@@ -297,6 +308,7 @@ channels:
   - name: sig-ui
   - name: sig-usability
   - name: sig-windows
+  - name: sig-windows-leads
   - name: skaffold
   - name: slack-admins
   - name: slack-infra
@@ -306,6 +318,7 @@ channels:
   - name: spinnaker
   - name: sre
   - name: steering-committee
+  - name: submariner
   - name: summit-staff
   - name: suse-caasp
   - name: talk-proposals

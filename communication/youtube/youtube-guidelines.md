@@ -153,10 +153,13 @@ The following SIGs and groups are currently running splain.io:
 - [SIG Auth](/sig-auth/README.md)
 - [SIG Contributor Experience](/sig-contributor-experience/README.md)
 - [SIG Docs](/sig-docs/README.md)
+- [SIG Network](/sig-network/README.md)
 - [SIG PM](/sig-pm/README.md)
 - [Steering Committee](/committee-steering/governance/README.md)
+- [WG Data Protection](/wg-data-protection/README.md)
 - [WG K8s Infra](/wg-k8s-infra/README.md)
 - [WG LTS](/wg-lts/README.md)
+
 The main zoom admin account which holds Meet Our Contributors and others (if
 you log in to splain using this account, all of the other accounts will be
 logged here)
@@ -173,6 +176,15 @@ public, and added context to the description.
 Example description:  
 Kubernetes Contributor Experience Special Interest Group Weekly Meeting. Check
 here (link to sig list) for a complete list of SIGs and when they meet. Join us!
+
+Please note the following items:
+* The date must be in title and description
+* The date format must be YYYYMMDD
+* The section titled `Is this video made for kids?` should not be altered for search reasons
+
+Below are a good and incorrect example:
+* Incorrect description: `Data Protection WG Bi-Weekly Meeting for 2/26/2020`
+* Correct description: `Data Protection WG Bi-Weekly Meeting for 20200226`
 
 ### Thumbnails
 

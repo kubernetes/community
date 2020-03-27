@@ -35,10 +35,14 @@ The README in the [community repo](https://github.com/kubernetes/community) deta
 |----------|-----------|-----------|
 | [Paris Pittman](https://github.com/parispittman) | @paris |  parispittman@google.com |
 | [Nikhita Raghunath](https://github.com/nikhita) | @nikhita | nikitaraghunath@gmail.com |
+| [Marky Jackson](https://github.com/markyjackson-taulia) | @markyjackson | marky.r.jackson@gmail.com |
 
 The coordinators can be contacted at any time. The easiest way is to send a slack message.
 
 Do you have an idea for a task that is suitable for this program? Contact the mentors or coordinators! Or even better, volunteer for mentoring an intern during the work on your idea!
+
+* Administrative Note: There must always be 3 coordinators for the Outreachy project. If a coordinator leaves at any 
+point, remaining coordinators must advertise for a new coordinator to backfill the vacant spot.
 
 ## Code of Conduct
 
