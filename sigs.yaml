@@ -2883,18 +2883,15 @@ committees:
     - github: joelsmith
       name: Joel Smith
       company: Red Hat
-    - github: jonpulsifer
-      name: Jonathan Pulsifer
-      company: Shopify
     - github: liggitt
       name: Jordan Liggitt
       company: Google
     - github: lukehinds
       name: Luke Hinds
       company: Red Hat
-    - github: philips
-      name: Brandon Philips
-      company: Red Hat
+    - github: micahhausler
+      name: Micah Hausler
+      company: Amazon
     - github: tallclair
       name: Tim Allclair
       company: Google
