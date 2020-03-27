@@ -1816,9 +1816,9 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
-    time: "18:30"
-    tz: Warsaw
-    frequency: bi-weekly ([upcoming meeting dates](#upcoming-2019-meeting-dates))
+    time: "17:30"
+    tz: UTC
+    frequency: weekly/bi-weekly as per demand ([upcoming meeting dates](#upcoming-meeting-dates))
     url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
     archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
     recordings_url: https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL
