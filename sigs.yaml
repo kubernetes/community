@@ -80,6 +80,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/code-generator/OWNERS
   - name: kubernetes-clients
     owners:
+    - https://raw.githubusercontent.com/kubernetes-client/c/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-client/csharp/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-client/go-base/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-client/go/master/OWNERS
