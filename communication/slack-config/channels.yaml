@@ -165,6 +165,7 @@ channels:
   - name: kubepack
   - name: kubestack
   - name: kuberhealthy
+  - name: kubernetes-arm
   - name: kubernetes-batch-jobs
   - name: kubernetes-careers
   - name: kubernetes-client
