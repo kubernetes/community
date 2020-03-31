@@ -1017,9 +1017,9 @@ sigs:
     meetings:
     - description: Cluster API vSphere meeting
       day: Monday
-      time: "13:00"
+      time: "11:00"
       tz: PT (Pacific Time)
-      frequency: 'biweekly 2020 start date: Jan. 13th'
+      frequency: biweekly
       url: https://zoom.us/j/875399243
       archive_url: https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu
