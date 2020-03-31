@@ -204,6 +204,7 @@ channels:
   - name: meetup-guatemala
   - name: meetup-hannover
   - name: meetup-hongkong
+  - name: meetup-lasvegas
   - name: meetup-losangeles
   - name: meetup-manchester
   - name: meetup-minneapolis
