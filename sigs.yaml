@@ -2119,6 +2119,8 @@ sigs:
   - name: nfs-provisioner
     owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/OWNERS
   - name: volumes
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volume/OWNERS

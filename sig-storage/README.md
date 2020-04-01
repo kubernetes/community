@@ -92,6 +92,8 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
 ### nfs-provisioner
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/OWNERS
 ### volumes
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volume/OWNERS
