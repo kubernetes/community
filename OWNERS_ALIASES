@@ -19,6 +19,7 @@ aliases:
     - mikedanese
     - tallclair
   sig-autoscaling-leads:
+    - gjtempleton
     - mwielgus
   sig-cli-leads:
     - pwittrock

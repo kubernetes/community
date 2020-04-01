@@ -21,6 +21,7 @@ The [charter](charter.md) defines the scope and governance of the Autoscaling Sp
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Guy Templeton (**[@gjtempleton](https://github.com/gjtempleton)**), Skyscanner
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
 
 ## Contact

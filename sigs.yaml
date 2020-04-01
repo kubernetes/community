@@ -506,6 +506,9 @@ sigs:
   label: autoscaling
   leadership:
     chairs:
+    - github: gjtempleton
+      name: Guy Templeton
+      company: Skyscanner
     - github: mwielgus
       name: Marcin Wielgus
       company: Google
