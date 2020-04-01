@@ -1253,6 +1253,9 @@ sigs:
     - github: kbhawkey
       name: Karen Bradshaw
       company: Independent
+    - github: onlydole
+      name: Taylor Dolezal
+      company: Independent
     - github: sftim
       name: Tim Bannister
       company: The Scale Factory
