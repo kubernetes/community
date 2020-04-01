@@ -41,6 +41,67 @@ aspects of the process.
   with and without the feature are necessary. At the very least, think about
   conversion tests if API types are being modified.
 
+
+#### Rollout, Upgrade and Rollback Planning
+
+* **How can a rollout fail? Can it impact already running workloads?**
+  Try to be as paranoid as possible - e.g. what if some components will restart
+  in the middle of rollout?
+
+* **What specific metrics should inform a rollback?**
+
+* **Were upgrade and rollback tested? Was upgrade->downgrade->upgrade path tested?**
+  Describe manual testing that was done and the outcomes.
+  Longer term, we may want to require automated upgrade/rollback tests, but we
+  are missing a bunch of machinery and tooling and do that now.
+
+
+#### Monitoring requirements
+
+* **How can an operator determine if the feature is in use by workloads?**
+  Ideally, this should be a metrics. Operations against Kubernetes API (e.g.
+  checking if there are objects with field X set) may be last resort. Avoid
+  logs or events for this purpose.
+
+* **How can an operator determine if the feature is functioning properly?**
+  Focus on metrics that cluster operators may gather from different
+  components and treat other signals as last resort.
+  TODO: Provide examples to make answering this question easier.
+
+* **What are the SLIs (Service Level Indicators) an operator can use to
+  determine the health of the service?**
+  - [ ] Metrics
+    - Metric name:
+    - [Optional] Aggregation method:
+    - Components exposing the metric:
+  - [ ] Other (treat as last resort)
+    - Details:
+
+* **What are the reasonable SLOs (Service Level Objectives) for the above SLIs?**
+  TODO: Provide examples for different features (e.g. server-side apply, user-space
+  proxy, cronjob controller) to make answering this question easier
+
+* **Are there any missing metrics that would be useful to have to improve
+  observability if this feature?**
+  Describe the metrics themselves and the reason they weren't added (e.g. cost,
+  implementation difficulties, etc.).
+
+#### Dependencies
+
+* **Does this feature depend on any specific services running in the cluster?**
+  Think about both cluster-level services (e.g. metrics-server) as well
+  as node-level agents (e.g. specific version of CRI). Focus on external or
+  optional services that are needed. For example, if this feature depends on
+  a cloud provider API, or upon an external software-defined storage or network
+  control plane.
+	For each of the fill in the following, thinking both about running user workloads
+  and creating new ones, as well as about cluster-level services (e.g. DNS):
+  - [Dependency name]
+    - Usage description:
+		- Impact of its outage on the feature:
+		- Impact of its degraded performance or high error rates on the feature:
+
+
 #### Scalability
 
 * **Will enabling / using this feature result in any new API calls?**
@@ -65,7 +126,7 @@ aspects of the process.
   provider?**
 
 * **Will enabling / using this feature result in increasing size or count
-  of the existing API objects?*
+  of the existing API objects?**
   Describe them providing:
   - API type(s):
   - Estimated increase in size: (e.g. new annotation of size 32B)
@@ -84,43 +145,6 @@ aspects of the process.
   This through this both in small and large cases, again with respect to the
   [supported limits][].
 
-#### Rollout, Upgrade and Rollback Planning
-
-#### Dependencies
-
-* **Does this feature depend on any specific services running in the cluster?**
-  Think about both cluster-level services (e.g. metrics-server) as well
-  as node-level agents (e.g. specific version of CRI). Focus on external or
-  optional services that are needed. For example, if this feature depends on
-  a cloud provider API, or upon an external software-defined storage or network
-  control plane.
-
-* **How does this feature respond to complete failures of the services on which
-  it depends?**
-  Think about both running and newly created user workloads as well as
-  cluster-level services (e.g. DNS).
-
-* **How does this feature respond to degraded performance or high error rates
-  from services on which it depends?**
-
-#### Monitoring requirements
-
-* **How can an operator determine if the feature is in use by workloads?**
-
-* **How can an operator determine if the feature is functioning properly?**
-  Focus on metrics that cluster operators may gather from different
-  components and treat other signals as last resort.
-
-* **What are the SLIs (Service Level Indicators) an operator can use to
-  determine the health of the service?**
-  - [ ] Metrics
-    - Metric name:
-    - [Optional] Aggregation method:
-    - Components exposing the metric:
-  - [ ] Other (treat as last resort)
-    - Details:
-
-* **What are the reasonable SLOs (Service Level Objectives) for the above SLIs?**
 
 #### Troubleshooting
 Troubleshooting section serves the `Playbook` role as of now. We may consider
@@ -128,18 +152,19 @@ splitting it into a dedicated `Playbook` document (potentially with some monitor
 details). For now we leave it here though, with some questions not required until
 further stages (e.g. Beta/Ga) of feature lifecycle.
 
-* **How does this feature react if the API server is unavailable?**
+* **How does this feature react if the API server and/or etcd is unavailable?**
 
 * **What are other known failure modes?**
-
-* **How can those be detected via metrics or logs?**
-  Stated another way: how can an operator troubleshoot without logging into a
-  master or worker node?
-
-* **What are the mitigations for each of those failure modes?**
-
-* **What are the most useful log messages and what logging levels to they require?**
-  Not required until feature graduates to Beta.
+  For each of them fill in the following information by copying the below template:
+  - [Failure mode brief description]
+    - Detection: How can it be detected via metrics? Stated another way:
+      how can an operator troubleshoot without loogging into a master or worker node?
+    - Mitigations: What can be done to stop the bleeding, especially for already
+      running user workloads?
+	  - Diagnostics: What are the useful log messages and their required logging
+      levels that could help debugging the issue?
+      Not required until feature graduated to Beta.
+    - Testing: Are there any tests for failure mode? If not describe why.
 
 * **What steps should be taken if SLOs are not being met to determine the problem?**
 
