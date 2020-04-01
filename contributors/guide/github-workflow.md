@@ -137,33 +137,100 @@ fork.
 
 Very small PRs are easy to review.  Very large PRs are very difficult to review.
 
-#### Squash and Merge
+#### Squash commits
 
-Upon merge (by either you or your reviewer), all commits left on the review
-branch should represent meaningful milestones or units of work.  Use commits to
-add clarity to the development and review process.
+After a review, prepare your PR for merging by squashing your commits.
 
-Before merging a PR, squash any _fix review feedback_, _typo_, _merged_, and
-_rebased_ sorts of commits.
+All commits left on the timeline after a review should represent meaningful milestones or units of work. Use commits to add clarity to the development and review process.
 
-It is not imperative that every commit in a PR compile and pass tests
-independently, but it is worth striving for.
+Before merging a PR, squash the following kinds of commits:
 
-In particular, if you happened to have used `git merge` and have merge
-commits, please squash those away: they do not meet the above test.
+- Fixes/review feedback
+- Typos
+- Merges and rebases
+- Work in progress
 
-A nifty way to manage the commits in your PR is to do an [interactive
-rebase](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History),
-which will let you tell git what to do with every commit:
+Aim to have every commit in a PR compile and pass tests independently if you can, but it's not a requirement. In particular, squash `git merge` commits won't pass tests and should be squashed.
 
-```sh
-git fetch upstream
-git rebase -i upstream/master
-```
+To squash your commits, perform an [interactive
+rebase](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History):
+
+1. Check your git branch:
+  
+  ```
+  git status
+  ```
+  
+  Output is similar to:
+  
+  ```
+  On branch your-contribution
+  Your branch is up to date with 'origin/your-contribution'.
+  ```
+  
+2. Start an interactive rebase using a specific commit hash, or count backwards from your last commit using `HEAD~<n>`, where `<n>` represents the number of commits to include in the rebase. 
+
+  ```
+  git rebase -i HEAD~3
+  ```
+  
+  Output is similar to: 
+  
+  ```
+  pick 2ebe926 Original commit
+  pick 31f33e9 Address feedback
+  pick b0315fe Second unit of work
+
+  # Rebase 7c34fc9..b0315ff onto 7c34fc9 (3 commands)
+  #
+  # Commands:
+  # p, pick <commit> = use commit
+  # r, reword <commit> = use commit, but edit the commit message
+  # e, edit <commit> = use commit, but stop for amending
+  # s, squash <commit> = use commit, but meld into previous commit
+  # f, fixup <commit> = like "squash", but discard this commit's log message
+  
+  ...
+  
+  ```
+
+3. Use a command line text editor to change the word `pick` to `fixup` for the commits you want to squash, then save your changes and continue the rebase: 
+
+  ```
+  pick 2ebe926 Original commit
+  squash 31f33e9 Address feedback
+  pick b0315fe Second unit of work
+  
+  ...
+  
+  ```
+  
+  Output (after saving changes) is similar to: 
+  
+  ```
+  [detached HEAD 61fdded] Second unit of work
+   Date: Thu Mar 5 19:01:32 2020 +0100
+   2 files changed, 15 insertions(+), 1 deletion(-)
+   
+   ...
+   
+  Successfully rebased and updated refs/heads/master.
+  ```
+4. Force push your changes to your remote branch:
+
+  ```
+  git push --force
+  ```
 
 For mass automated fixups (e.g. automated doc formatting), use one or more
 commits for the changes to tooling and a final commit to apply the fixup en
 masse. This makes reviews easier.
+
+### Merging a commit
+
+Once you've received review and approval, your commits are squashed, your PR is ready for merging. 
+
+Merging happens automatically when a Reviewer or Approver approves the PR. If you haven't squashed your commits, they may ask you to do so before approving a PR. .
 
 ### Reverting a commit
 
