@@ -141,7 +141,7 @@ Very small PRs are easy to review.  Very large PRs are very difficult to review.
 
 After a review, prepare your PR for merging by squashing your commits.
 
-All commits left on the timeline after a review should represent meaningful milestones or units of work. Use commits to add clarity to the development and review process.
+All commits left on your branch after a review should represent meaningful milestones or units of work. Use commits to add clarity to the development and review process.
 
 Before merging a PR, squash the following kinds of commits:
 
@@ -150,7 +150,7 @@ Before merging a PR, squash the following kinds of commits:
 - Merges and rebases
 - Work in progress
 
-Aim to have every commit in a PR compile and pass tests independently if you can, but it's not a requirement. In particular, squash `git merge` commits won't pass tests and should be squashed.
+Aim to have every commit in a PR compile and pass tests independently if you can, but it's not a requirement. In particular, remove `merge` commits should be removed. They won't pass tests and should be removed.
 
 To squash your commits, perform an [interactive
 rebase](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History):
@@ -230,7 +230,7 @@ masse. This makes reviews easier.
 
 Once you've received review and approval, your commits are squashed, your PR is ready for merging. 
 
-Merging happens automatically when a Reviewer or Approver approves the PR. If you haven't squashed your commits, they may ask you to do so before approving a PR. .
+Merging happens automatically after both a  Reviewer and Approver have approved the PR. If you haven't squashed your commits, they may ask you to do so before approving a PR.
 
 ### Reverting a commit
 

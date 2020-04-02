@@ -350,13 +350,13 @@ git checkout -b myfeature
 
 #### Squashing Commits
 
-The main purpose of [squashing commits](https://github.com/kubernetes/community/blob/master/contributors/guide/github-workflow.md#squash-commits) is to create a clean readable git
+The main purpose of [squashing commits] is to create a clean readable git
 history or log of the changes that were made. Usually this is done in last
 phase of a PR revision. If you are unsure if you should squash your commits, it
 is better to err on the side of having more and leave it up to the judgement of
 the other contributors assigned to review and approve your PR.
 
-Perform an interactive rebase to choose which commits you want to keep and which you want to squash, then force push your new timeline:
+Perform an interactive rebase to choose which commits you want to keep and which you want to squash, then force push your branch:
 
 ```
 git rebase -i HEAD~3
