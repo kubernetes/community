@@ -13,7 +13,7 @@ Focuses on supporting Windows Node and scheduling Windows Server containers on K
 The [charter](charter.md) defines the scope and governance of the Windows Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 12:30 Eastern Standard Time (EST)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:30&tz=Eastern%20Standard%20Time%20%28EST%29).
+* Regular SIG Meeting: [Tuesdays at 12:30 Eastern Standard Time (EST)](https://zoom.us/j/297282383) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:30&tz=Eastern%20Standard%20Time%20%28EST%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4).
 
