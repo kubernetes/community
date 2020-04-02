@@ -13,7 +13,7 @@ Ensure quality Kubernetes releases
 The [charter](charter.md) defines the scope and governance of the Release Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Mondays at 15:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+* Regular SIG Meeting: [Mondays at 15:00 UTC](https://zoom.us/j/327142148) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-release-meeting).
   * [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 
@@ -63,7 +63,7 @@ The Release Engineering subproject is responsible for the [process/procedures](h
 - **Contact:**
   - Slack: [#release-management](https://kubernetes.slack.com/messages/release-management)
 - **Meetings:**
-  - Regular SIG Meeting: [Mondays at 15:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+  - Regular SIG Meeting: [Mondays at 15:00 UTC](https://zoom.us/j/240812475) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
     - [Meeting notes and Agenda](https://bit.ly/k8s-releng-meeting).
     - [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 ### release-team
