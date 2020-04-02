@@ -121,6 +121,7 @@ channels:
   - name: k8s-infra-alerts
   - name: k8s-release
     archived: true
+  - name: k8spin
   - name: kapitan
   - name: keda
   - name: keel
