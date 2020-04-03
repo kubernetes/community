@@ -1,23 +1,34 @@
-Future home of social media guidelines
+# Social media guidelines
 
-**Twitter:** K8sContributor
+**Twitter:** [K8sContributor](https://twitter.com/k8scontributors)
 
-Examples:
-1. Try and tweet at least twice a week
-2. No more than two original tweets a day, unlimited retweets; responding to others does not count in this  
-3. should respond within 48 hours
-4. Contributor information/news/stories is the target; forward others to social@cncf.io for @kubernetesio main twitter account  
-5. Bio should mention that this is powered by sig-contribex, link to the kubernetes/community repo  
-6. Never include someones photo, twitter handle, or other personal identifiable info without their explicit permission  
-7. try not to abbreviate as much as possible  
-8. all event tweets should have an action and/or thumbnail image    
+## General guidelines
 
-Themes:
-- contributor/sig blog posts
-- events
-- keps
-- process changes
-- release info, code freeze, et al
+All messaging must be consistent with the values and principles of the project and the [ethos/vision of the team](https://github.com/kubernetes/community/blob/master/communication/marketing-team/CHARTER.md#ethosvision). Messaging should be positive and uplifting. Be aware that sarcasm and/or jokes are generally hard to read over a medium such as social media.
 
-### open-ended questions:
-who do we follow / does it matter  
+Original messages should come out of this teams' accounts at least twice a week (if not more). However, there should be no more than three original messages per day. Retweets, likes, and responses are unlimited but, they should be thoughtful. All event messages should have an action and/or thumbnail image (click link for details, register today, etc. are example actions). Never include photos, user handles, or other personally identifiable information without explicit permission.
+
+Attempt to keep abbreviations to a minimum. Things like `k/k`, for example, might be known in the community, but for new contributors, this is something that is learned with time. Minimizing abbreviations and using plain language is strongly encouraged.
+
+Responses should include helpful links, validation, and/or additional information. Responses should occur within 48 hours. At the very least, like things as an acknowledgment. Sources of information should include Kubernetes contributor related web properties and documentation. TODO: CLEARLY DEFINE THOSE WEB PROPERTIES
+
+Ideally, no individuals outside of the contributor community with the possible exception that they are talking about contributors should be an considered a topic of messaging. Example: Bill Gates isn't part of the Kubernetes community, it wouldn't be prudent to message him.
+
+Other CNCF projects, unless there is a common contributor cause, are out of scope for coverage by this team's social media accounts.
+
+## Themes/Topics
+
+- Contributor/SIG blog posts
+- Events
+- KEPs
+- Process changes
+- Release info, code freeze, et al
+- Significant historical events as related to the project (Kubernetes birthday, previous events, etc.)
+
+### Open-ended questions
+
+This team's social media accounts need to be incredibly mindful of who it follows. As it is an information dissemination channel some might think that following no one is a better choice but, that could end up limiting exposure. Attempt to keep follower count low to make it easier to manage.
+
+Trolls: Don't feed them, mute them. Block them as a last resort and only after discussing with team members. Reasons to block include verbal abuse, violating the platform's terms, or violating the [Code of Conduct](https://github.com/kubernetes/community/blob/master/code-of-conduct.md). The community is open and its accounts should be too but, there are limits.
+
+Credit: [Fedora Community](https://fedoraproject.org/wiki/Marketing)
