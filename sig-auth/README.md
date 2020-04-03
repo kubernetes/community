@@ -125,6 +125,7 @@ Node identity management (co-owned with sig-lifecycle), and authorization restri
 ### policy-management
 API validation and policies enforced during admission, such as PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and Seccomp.
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/wg-policy-prototypes/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/imagepolicy/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/policy/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/policy/OWNERS
