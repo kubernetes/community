@@ -150,7 +150,7 @@ Before merging a PR, squash the following kinds of commits:
 - Merges and rebases
 - Work in progress
 
-Aim to have every commit in a PR compile and pass tests independently if you can, but it's not a requirement. In particular, remove `merge` commits should be removed. They won't pass tests and should be removed.
+Aim to have every commit in a PR compile and pass tests independently if you can, but it's not a requirement. In particular, `merge` commits must be removed, as they will not pass tests.
 
 To squash your commits, perform an [interactive
 rebase](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History):
