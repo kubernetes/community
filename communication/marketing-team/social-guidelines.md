@@ -16,6 +16,11 @@ Ideally, no individuals outside of the contributor community with the possible e
 
 Other CNCF projects, unless there is a common contributor cause, are out of scope for coverage by this team's social media accounts.
 
+Kubernetes Organization Members with access to account are:
+- @parispittman
+- @mrbobbytables
+- @chris-short
+
 ## Themes/Topics
 
 - Contributor/SIG blog posts
