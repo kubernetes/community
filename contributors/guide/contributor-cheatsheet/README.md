@@ -356,6 +356,14 @@ phase of a PR revision. If you are unsure if you should squash your commits, it
 is better to err on the side of having more and leave it up to the judgement of
 the other contributors assigned to review and approve your PR.
 
+Perform an interactive rebase to choose which commits you want to keep and which you want to squash, then force push your branch:
+
+```
+git rebase -i HEAD~3
+...
+git push --force
+```
+
 
 
 [contributor guide]: /contributors/guide/README.md
