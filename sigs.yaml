@@ -2282,9 +2282,6 @@ sigs:
   label: usability
   leadership:
     chairs:
-    - github: Rajakavitha1
-      name: Rajakavitha Kodhandapani
-      company: The Linux Foundation
     - github: hpandeycodeit
       name: Himanshu Pandey
       company: VMware
@@ -2294,6 +2291,9 @@ sigs:
     - github: vllry
       name: Vallery Lancey
       company: Lyft
+    emeritus_leads:
+    - github: Rajakavitha1
+      name: Rajakavitha Kodhandapani
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
