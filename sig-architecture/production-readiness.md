@@ -63,11 +63,6 @@ aspects of the process.
   checking if there are objects with field X set) may be last resort. Avoid
   logs or events for this purpose.
 
-* **How can an operator determine if the feature is functioning properly?**
-  Focus on metrics that cluster operators may gather from different
-  components and treat other signals as last resort.
-  TODO: Provide examples to make answering this question easier.
-
 * **What are the SLIs (Service Level Indicators) an operator can use to
   determine the health of the service?**
   - [ ] Metrics
@@ -78,8 +73,13 @@ aspects of the process.
     - Details:
 
 * **What are the reasonable SLOs (Service Level Objectives) for the above SLIs?**
-  TODO: Provide examples for different features (e.g. server-side apply, user-space
-  proxy, cronjob controller) to make answering this question easier
+  At the high-level this usually will be in the form of "high percentile of SLI
+  per day <= X". It's impossible to provide a comprehensive guidance, but at the very
+  high level (they needs more precise definitions) those may be things like:
+  - per-day percentage of API calls finishing with 5XX errors <= 1%
+  - 99% percentile over day of absolute value from (job creation time minus expected
+    job creation time) for cron job <= 10%
+  - 99,9% of /health requests per day finish with 200 code
 
 * **Are there any missing metrics that would be useful to have to improve
   observability if this feature?**
