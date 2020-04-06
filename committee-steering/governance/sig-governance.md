@@ -131,6 +131,8 @@ Run operations and processes governing the SIG:
 - *MUST* provide quarterly updates through our community channels: twice a year
 to kubernetes-dev@googlegroups.com mailing list and twice a year presenting at
 the monthly community meeting  
+- *MUST* present yearly [annual report] for the group but *SHOULD* get help with
+curation from other SIG participants
 
 ### Tech Lead
 
@@ -250,6 +252,7 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [sig-wg-lifecycle]: /sig-wg-lifecycle.md
 ["member" on our contributor ladder]: /community-membership.md
 [Kubernetes Community YouTube playlist]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
+[annual report]: ./annual-reports.md
 [contributor guide]: /contributors/guide/README.md
 [devel]: /contributors/devel/README.md
 [#tech-lead]: #Tech-Lead
