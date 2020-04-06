@@ -135,9 +135,6 @@ aliases:
   wg-policy-leads:
     - ericavonb
     - hannibalhuang
-  wg-resource-management-leads:
-    - derekwaynecarr
-    - vishh
   wg-security-audit-leads:
     - aasmall
     - cji
