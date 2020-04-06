@@ -54,6 +54,7 @@ channels:
   - name: de-events
   - name: de-users
   - name: devstats
+  - name: dex
   - name: digitalocean-k8s
   - name: distroless
   - name: diversity
