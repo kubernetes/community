@@ -1,44 +1,12 @@
-# <p style="text-align: right">
-San Diego Contributor Summit 2019 - Retro</p>
+# San Diego Contributor Summit 2019 - Retrospective
 
-
-<p style="text-align: right">
-status: <em>in progress</em></p>
-
-
-<p style="text-align: right">
-date:  2019-11-06</p>
-
-
-<p style="text-align: right">
-<em>author: jeefy + paris</em></p>
-
-
-
-# Summary
-
-
-<table>
-  <tr>
-   <td>Project Team
-   </td>
-   <td><a href="https://github.com/kubernetes/community/tree/master/events/2019/11-contributor-summit">https://github.com/kubernetes/community/tree/master/events/2019/11-contributor-summit</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Project Duration
-   </td>
-   <td>May - Nov 2019
-   </td>
-  </tr>
-</table>
-
-
+[Project Team](https://github.com/kubernetes/community/tree/master/events/2019/11-contributor-summit)
+Date: 2019-11-06
+Authors: @jeefy and @parispittman
 
 # Project Overview
 
 Continue on our contributor summit event journey to San Diego to bring contributors together for face to face conversations, fun, learning, and planning. 
-
 
 # Key Accomplishments [3-5 mins]
 
@@ -49,6 +17,7 @@ Continue on our contributor summit event journey to San Diego to bring contribut
     *   New Contributor: 162
     *   Evening Event: ?
     *   Total: 
+
 # Lessons Learned 
 
 _What went well?  Why? [10-15 mins]_
@@ -94,8 +63,6 @@ _What could be improved? [10-15 mins]_
 [New Contributor Workshop Survey Results](https://docs.google.com/spreadsheets/d/1qfWcCsuXdrpl49bMiFS9ID3yXpC7lRJDvOd8eoxRvSg/edit#gid=1846336934)
 
 [Active Contributor Survey Results](https://docs.google.com/spreadsheets/d/1bnuB3aLRwSB2FaDZCWfARQ5TBiApyKU8Elv6bprxfzI/edit#gid=4535733)
-
-
 
 *   How to collect more event feedback?
     *   Survey response rate has been extreeeemely low (&lt;10%)
