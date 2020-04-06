@@ -19,6 +19,10 @@ Example User Groups:
 - Creating Kubernetes project roles.
 - Claiming ownership of any specific topic.
 
+## UG Activities
+- Present yearly [group health check] to Steering Committee
+
+
 ## UG Example Activities
 - Facilitating collaboration between user group members - which may result in the production of - blogs, docs, guides, demos, presentations, prototypes, external contributions, etc. (UG is itself not responsible to create any such content, it merely facilitate members creating them).
 - Anything produced within the context of the user group can be ultimately owned by a SIG as a subproject or is owned by individuals in the user group.
@@ -37,3 +41,4 @@ Example User Groups:
 The process for setting up a User Group (UG) is listed in the [sig-wg-lifecycle] document.
 
 [sig-wg-lifecycle]: /sig-wg-lifecycle.md
+[group health check]: ./annual-reports.md
