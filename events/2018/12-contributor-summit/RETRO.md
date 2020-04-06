@@ -1,4 +1,4 @@
-# Seattle Contributor Summit 2018 - Retrospective
+# Contributor Summit Seattle 2018 - Retrospective
 
 # Summary
 

@@ -1,4 +1,4 @@
-# Barcelona Contributor Summit 2019 - Retrospective</p>
+# Contributor Summit Barcelona 2019 - Retrospective</p>
 
 # Summary
 
