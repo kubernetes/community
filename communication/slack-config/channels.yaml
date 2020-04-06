@@ -347,6 +347,7 @@ channels:
     archived: true
   - name: wg-api-expression
   - name: wg-apply
+    archived: true
   - name: wg-component-standard
   - name: wg-component-standard-mentorship
   - name: wg-data-protection

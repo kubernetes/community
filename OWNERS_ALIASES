@@ -103,8 +103,6 @@ aliases:
   wg-api-expression-leads:
     - apelisse
     - kwiesmueller
-  wg-apply-leads:
-    - lavalamp
   wg-component-standard-leads:
     - mtaufen
     - stealthybox
