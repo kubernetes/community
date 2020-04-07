@@ -362,6 +362,7 @@ channels:
     archived: true
   - name: wg-policy
   - name: wg-resource-mgmt
+    archived: true
   - name: wg-security-audit
   - name: wg-virtual-kubelet
     archived: true
