@@ -366,4 +366,5 @@ channels:
   - name: wg-security-audit
   - name: wg-virtual-kubelet
     archived: true
+  - name: windows-containerd
   - name: workshop-chat
