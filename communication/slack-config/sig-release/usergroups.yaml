@@ -5,14 +5,15 @@ usergroups:
     long_name: Release Managers
     description: Release Managers. Ping for questions on branch cuts and building/packaging Kubernetes.
     channels:
+      - release-ci-signal
       - release-management
       - sig-release
     members:
-      - aleksandra-malinowska # Patch Release Team
       - calebamiles # subproject owner
       - cpanato # Branch Manager
       - dougm # Patch Release Team
       - feiskyer # Patch Release Team
+      - hasheddan # Branch Manager
       - hoegaarden # Patch Release Team
       - idealhack # Patch Release Team
       - justaugustus # subproject owner / Patch Release Team
