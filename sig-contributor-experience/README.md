@@ -24,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), Red Hat
+* Jorge Castro (**[@castrojo](https://github.com/castrojo)**), VMware
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), University of Michigan
 
 ### Technical Leads
@@ -36,6 +36,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Emeritus Leads
 
+* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**)
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**)
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
 
