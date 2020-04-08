@@ -1085,9 +1085,9 @@ sigs:
   label: contributor-experience
   leadership:
     chairs:
-    - github: Phillels
-      name: Elsie Phillips
-      company: Red Hat
+    - github: castrojo
+      name: Jorge Castro
+      company: VMware
     - github: mrbobbytables
       name: Bob Killen
       company: University of Michigan
@@ -1099,6 +1099,8 @@ sigs:
       name: Nikhita Raghunath
       company: Loodse
     emeritus_leads:
+    - github: Phillels
+      name: Elsie Phillips
     - github: grodrigues3
       name: Garrett Rodrigues
     - github: parispittman
