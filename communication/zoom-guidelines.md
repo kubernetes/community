@@ -61,8 +61,10 @@ After the meeting has started:
 If you're dealing with a troll or bad actor:
 
 - Put the troll or bad actor on **hold**. The participant will be put into a
-  "waiting room" and will not be able to participate in the call until the host
+  "[waiting room]" and will not be able to participate in the call until the host
   removes the hold.
+  - **NOTE:** Depending on your client version this will be called
+    "**Put in Waiting Room**" instead of on **hold**.
 - Remove the participant. Please be cautious when testing or using this feature,
   as it is **permanent**. They will never be able to come back into that meeting
   ID on that particular device. Do **not** joke around with this feature; it's
@@ -213,3 +215,4 @@ Thanks for making Kubernetes meetings work great!
 [Blue Yeti]: https://www.bluedesigns.com/products/yeti/
 [pop filter]: https://en.wikipedia.org/wiki/Pop_filter
 [Join on muted audio and video]: https://support.zoom.us/hc/en-us/articles/203024649-Video-Or-Microphone-Off-By-Attendee
+[waiting room]: https://support.zoom.us/hc/en-us/articles/115000332726-Waiting-Room
