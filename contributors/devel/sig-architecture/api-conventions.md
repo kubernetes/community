@@ -427,11 +427,36 @@ ensure that GETs of individual objects remain bounded in time and space, these
 sets may be queried via separate API queries, but will not be expanded in the
 referring object's status.
 
-References to specific objects, especially specific resource versions and/or
-specific fields of those objects, are specified using the `ObjectReference` type
-(or other types representing strict subsets of it). Unlike partial URLs, the
-ObjectReference type facilitates flexible defaulting of fields from the
-referring object or other contextual information.
+References to specific objects are specified using object reference types that
+uniquely identify their referents.  Object reference types may be defined along
+with the referring object types.  An object reference type must have a required
+`name` field.  In addition, the type may have a `namespace` field to accommodate
+references to non-local objects (that is, namespaced referents that are not in
+the same namespace as the referring object).  If the reference needs to
+accommodate referents of different resource types, the object reference type may
+also have `group` and `resource` fields.  For example:
+
+```go
+// FooReference holds a reference to an API object that can be used as a foo.
+type FooReference struct {
+	// group is the group of the referent.  The empty string represents
+	// the core API group.
+	Group string
+	// resource is the resource of the referent.
+	Resource string
+	// namespace is the namespace of the referent.
+	Namespace string
+	// name is the name of the referent.
+	Name string
+}
+```
+
+Unlike partial URLs, object reference types facilitate flexible defaulting of
+fields from the referring object or other contextual information.
+
+Some existing APIs use the generic `ObjectReference`, `LocalObjectReference`,
+and `TypedLocalObjectReference` types.  Use of these types is discouraged when
+defining new APIs.
 
 References in the status of the referee to the referrer may be permitted, when
 the references are one-to-one and do not need to be frequently updated,
@@ -803,8 +828,8 @@ Examples:
 
 Object references should either be called `fooName` if referring to an object of
 kind `Foo` by just the name (within the current namespace, if a namespaced
-resource), or should be called `fooRef`, and should contain a subset of the
-fields of the `ObjectReference` type.
+resource), or should be called `fooRef`, and should contain the fields of the
+corresponding object reference type (see [References to related objects](#references-to-related-objects)).
 
 
 TODO: Plugins, extensions, nested kinds, headers
@@ -1173,7 +1198,7 @@ be all lowercase, such as "httpGet". Where used as a constant, all letters
 should be uppercase, such as "TCP" or "UDP".
 * The name of a field referring to another resource of kind `Foo` by name should
 be called `fooName`. The name of a field referring to another resource of kind
-`Foo` by ObjectReference (or subset thereof) should be called `fooRef`.
+`Foo` using an object reference type should be called `fooRef`.
 * More generally, include the units and/or type in the field name if they could
 be ambiguous and they are not specified by the value or value type.
 * The name of a field expressing a boolean property called 'fooable' should be
