@@ -6,7 +6,7 @@
 
 All messaging must be consistent with the values and principles of the project and the [ethos/vision of the team](https://github.com/kubernetes/community/blob/master/communication/marketing-team/CHARTER.md#ethosvision). Messaging should be positive and uplifting. Be aware that sarcasm and/or jokes are generally hard to read over a medium such as social media.
 
-Original messages should come out of this teams' accounts at least twice a week (if not more). However, there should be no more than three original messages per day. Retweets, likes, and responses are unlimited but, they should be thoughtful. All event messages should have an action and/or thumbnail image (click link for details, register today, etc. are example actions). Never include photos, user handles, or other personally identifiable information without explicit permission.
+Original messages should come out of this teams' accounts at least twice a week (if not more). However, there should be no more than three tweets per hour (including retweets). Retweets, likes, and responses are unlimited, but they should be used thoughtfully to encourage inclusive and kind participation. Use scheduling software as needed to space out messages. All messages should serve a purpose: have an action and/or thumbnail image ("click link for details," "register today," etc. are example actions). Never include photos, user handles, or other personally identifiable information without explicit permission.
 
 Attempt to keep abbreviations to a minimum. Things like `k/k`, for example, might be known in the community, but for new contributors, this is something that is learned with time. Minimizing abbreviations and using plain language is strongly encouraged.
 
