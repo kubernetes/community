@@ -12,7 +12,7 @@ Attempt to keep abbreviations to a minimum. Things like `k/k`, for example, migh
 
 Responses should include helpful links, validation, and/or additional information. Responses should occur within 48 hours. At the very least, like things as an acknowledgment. Sources of information should include Kubernetes contributor related web properties and documentation. TODO: CLEARLY DEFINE THOSE WEB PROPERTIES
 
-Ideally, no individuals outside of the contributor community with the possible exception that they are talking about contributors should be an considered a topic of messaging. Example: Bill Gates isn't part of the Kubernetes community, it wouldn't be prudent to message him.
+Ideally, no individuals outside of the contributor community with the possible exception that they are talking about contributors should be an considered a topic of messaging. Example: Bill Gates isn't part of the Kubernetes community, so tweets with @BillGates will not be published.
 
 Other CNCF projects, unless there is a common contributor cause, are out of scope for coverage by this team's social media accounts.
 
