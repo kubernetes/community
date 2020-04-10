@@ -33,7 +33,8 @@ Kubernetes Organization Members with access to account are:
 
 ### Frequently Asked Questions (FAQ)
 
-This team's social media accounts need to be incredibly mindful of who it follows. As it is an information dissemination channel some might think that following no one is a better choice but, that could end up limiting exposure. Attempt to keep follower count low to make it easier to manage.
+Q: Will the account follow other accounts?
+A: TODO (Y/N). The account is designed for information dissemination, so we will focus on that by (following no one and focusing on sharing || following everyone to extend our reach).
 
 Trolls: Don't feed them, mute them. Block them as a last resort and only after discussing with team members. Reasons to block include verbal abuse, violating the platform's terms, or violating the [Code of Conduct](https://github.com/kubernetes/community/blob/master/code-of-conduct.md). The community is open and its accounts should be too but, there are limits.
 
