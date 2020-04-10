@@ -31,7 +31,7 @@ Kubernetes Organization Members with access to account are:
 - Accomplishments (reaching 100,000 GitHub stars for example)
 - Significant historical events as related to the project (Kubernetes birthday, previous events, etc.)
 
-### Open-ended questions
+### Frequently Asked Questions (FAQ)
 
 This team's social media accounts need to be incredibly mindful of who it follows. As it is an information dissemination channel some might think that following no one is a better choice but, that could end up limiting exposure. Attempt to keep follower count low to make it easier to manage.
 
