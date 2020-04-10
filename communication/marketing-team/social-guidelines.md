@@ -28,6 +28,7 @@ Kubernetes Organization Members with access to account are:
 - KEPs
 - Process changes
 - Release info, code freeze, et al
+- Accomplishments (reaching 100,000 GitHub stars for example)
 - Significant historical events as related to the project (Kubernetes birthday, previous events, etc.)
 
 ### Open-ended questions
