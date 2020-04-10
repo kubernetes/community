@@ -194,10 +194,10 @@ TODO - someone help us with better thumbnails to lay over the videos!
 
 YouTube admins with a system capable of streaming may be asked to stream public
 Kubernetes Community events such as the weekly [Community Meeting],
-[Office Hours], [Meet our Contributors], or other publicly streamed events.
-<!--
-TODO: Add details on streaming/using OBS after  https://github.com/kubernetes/community/pull/3337 is merged.
--->
+[Office Hours], [Meet our Contributors], or other publicly streamed events. For
+detailed information about streaming, see our [Streaming Config]
+
+
 
 
 [coc]: /code-of-conduct.md
@@ -212,3 +212,4 @@ TODO: Add details on streaming/using OBS after  https://github.com/kubernetes/co
 [Community Meeting]: /events/community-meeting.md
 [Office Hours]: /events/office-hours.md
 [Meet our Contributors]: /mentoring/meet-our-contributors.md
+[Streaming Config]: ./youtube/streaming-config.md
