@@ -101,8 +101,9 @@ aliases:
     - ddebroy
     - marosset
     - michmike
-  wg-apply-leads:
-    - lavalamp
+  wg-api-expression-leads:
+    - apelisse
+    - kwiesmueller
   wg-component-standard-leads:
     - mtaufen
     - stealthybox

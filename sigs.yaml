@@ -2383,34 +2383,36 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
 workinggroups:
-- dir: wg-apply
-  name: Apply
+- dir: wg-api-expression
+  name: API Expression
   mission_statement: >
-    Improve the state of declarative object management by fixing `kubectl apply`,
-    moving the logic from the client to the server. This move also enables new/fixed
-    features included in the scope of this working-group: diff, dry-run and prune.
+    Enable API authors to better serve API consumers, by improving and documenting
+    all aspects of Kubernetes API development.
 
-    Resources can be found in [this Google drive folder](https://drive.google.com/drive/folders/1wlpgkS2gFZXdp4x2WlRsfUBxkFlt2Gx0)
+    [See full Mission Statement](https://docs.google.com/document/d/1XYbQXfge2qKM9psksfC5XZnW8hybtLqL1EcJLU4JwKg).
 
   stakeholder_sigs:
   - API Machinery
-  - CLI
-  label: apply
+  - Architecture
+  label: api-expression
   leadership:
     chairs:
-    - github: lavalamp
-      name: Daniel Smith
+    - github: apelisse
+      name: Antoine Pelisse
       company: Google
+    - github: kwiesmueller
+      name: Kevin Wiesmueller
+      company: //SEIBERT/MEDIA GmbH
   meetings:
   - description: Regular WG Meeting
     day: Tuesday
     time: "9:30"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit
+    url: https://calendar.google.com/calendar/embed?src=seibert-media.net_s7j7r6giqmr2l6g8ev5idh3ij8%40group.calendar.google.com&ctz=Europe%2FBerlin
   contact:
-    slack: wg-apply
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-apply
+    slack: wg-api-expression
+    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-api-expression
 - dir: wg-component-standard
   name: Component Standard
   mission_statement: >
