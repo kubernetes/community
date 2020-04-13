@@ -14,7 +14,6 @@ All roles may have shadows.  Click the role name for that role's Handbook.
 | Role | Needed For | Notes |
 |------|------|------|
 | [Content Coordinator] | Almost all Summits | |
-| [New Contributor Workshop] Lead | Summits with an NCW track | Also some standalone NCW events |
 | [Programmed Sessions] Lead | Summits with an advance session submission process | |
 | [Contributor Workshops] Lead | Some Summits with a session proposal process | |
 | [Unconference] Lead | Summits with an Unconference Track | |
@@ -24,7 +23,6 @@ All roles may have shadows.  Click the role name for that role's Handbook.
 | [Awards Ceremony] Leads | If giving contributor awards | |
 
 [Content Coordinator]: ./content-coordinator.md
-[New Contributor Workshop]: ./new-contributor.md
 [Programmed Sessions]: ./session-manager.md
 [Unconference]: ./unconference.md
 [Contributor Workshops]: ./contributor-workshops.md

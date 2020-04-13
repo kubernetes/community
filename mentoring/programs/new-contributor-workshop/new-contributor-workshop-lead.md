@@ -1,7 +1,7 @@
-# New Contributor Content Lead
+# New Contributor Workshop Lead
 
 ## Overview
-The New Contributor Content Lead is in charge of planning and executing the New Contributor Workshop at the Kubernetes Contributor Summit. They will coordinate with the overall Events Team and the organizers of related activities aimed at new contributors.
+The New Contributor Workshop Lead is in charge of planning and executing the New Contributor Workshop. They will coordinate with the overall Events Team and the organizers of related activities aimed at new contributors.
 
 ## Skills and Qualifications
 
@@ -12,8 +12,8 @@ As this role is part of a subproject of SIG-contributor-experience, the New Cont
 
 ## Activities
 
-*These tasks reflect a rough timeline leading from the end of the previous Contributor Summit to the currently planned one.*
-- Attend event planning meetings in preparation for the Contributor Summit, where applicable.
+*These tasks reflect a rough timeline leading from the end of the previous New Contributor Workshop to the currently planned one.*
+- Attend event planning meetings in preparation for the New Contributor Workshop, where applicable.
 - Create a Workshop Content Proposal and link in an Issue to k/community:
     - determine sessions and their overall topic (e.g. How We Communicate, Code Base Walkthrough, etc)
     - determine what difficulty/experience levels will be offered, if any, and coordinate with Lead
@@ -30,10 +30,9 @@ Shadows and co-presenters are expected to assist and review these updates.
     - ensure participants sign the CLA
     - ensure attendees meet technical and experience requirements for their course
     - obtain a comprehensive list of names, emails, and GitHub handles
-- Coordinate with the [SIG Meet and Greet organizer](/events/events-team/content/sig-contrib-events.md#sig-meet-and-greet) (may be a different role to be determined by core team)
 - Ensure to advertise the SIG-Intros.
 - Solicit feedback from workshop participants.
 
 ## Time Commitment
 
-1-2 hours/week most of the time, 4-5 in the weeks leading up to KubeCon, depending on previous teaching/shadowing experience.
+1-2 hours/week most of the time, 4-5 in the weeks leading up to NCW, depending on previous teaching/shadowing experience.

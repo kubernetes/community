@@ -20,7 +20,6 @@ Refer to previous workshops for inspirations
 - Working with your SIG
 - Refer participants to specific SIGs
 - How to "claim" an issue (since non-members cannot self-assign)
-- Encourage attendance at the [SIG Meet-and-Greet](/events/events-team/content/sig-contrib-events.md#sig-meet-and-greet)
 - Path to [membership](/community-membership.md)
 
 ### Ideas
