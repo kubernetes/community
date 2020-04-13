@@ -44,6 +44,7 @@ The following [subprojects][subproject-definition] are owned by sig-testing:
 ### boskos
 Boskos is a resource manager service that handles different kinds of resources and transitions between different states. We use it on the Kubernetes project to manage pools of GCP projects for CI/CD.
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/boskos/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
 ### gopherage
 Gopherage is a tool for manipulating Go coverage files. We use it on the Kubernetes project to report on code coverage due to e2e tests
