@@ -136,8 +136,8 @@ platform.
 
 ### jq
 
-Kube-apiserver requires the `jq` to be installed to successfully build your Local Kubernetes Deployment. 
-You can see installation guide for `jq` over [here](https://stedolan.github.io/jq/download/).
+Kube-apiserver requires `jq` to be installed to successfully build in your local environment. 
+The [jq installation guide](https://stedolan.github.io/jq/download/) provides detailed instructions for supported platforms.
 
 ### Go
 
@@ -176,9 +176,15 @@ images.
 - The desired Go verion in
   [test/images/Makefile](https://git.k8s.io/kubernetes/test/images/Makefile).
 
+### PyYAML
+
+Some Kubernetes verification tests use [PyYAML](https://pyyaml.org/) and it therefore needs to be installed to successfully run all verification tests in your local environment. 
+You can use the [PyYAML documentation](https://pyyaml.org/wiki/PyYAMLDocumentation) to find the installation instructions.
+
 ### Quick Start
 
-The following section is a quick start on how to build Kubernetes locally, for more detailed information you can see [kubernetes/build](https://git.k8s.io/kubernetes/build/README.md).
+The following section is a quick start on how to build Kubernetes locally, for more detailed information you can see [kubernetes/build](https://git.k8s.io/kubernetes/build/README.md). Before you start you will need to clone a local Kubernetes code base, refer to [GitHub workflow](#github-workflow) for details on how to set this up.
+
 The best way to validate your current setup is to build a small part of Kubernetes. This way you can address issues without waiting for the full build to complete. To build a specific part of Kubernetes use the `WHAT` environment variable to let the build scripts know you want to build only a certain package/executable.
 
 ```sh
@@ -197,8 +203,11 @@ If everything checks out you will have an executable in the `_output/bin` direct
 
 *Note:* If you are using `CDPATH`, you must either start it with a leading colon, or unset the variable. The make rules and scripts to build require the current directory to come first on the CD search path in order to properly navigate between directories.
 
+To build everything:
 ```sh
 cd $working_dir/kubernetes
+
+# This is equivalent to calling 'make all'
 make
 ```
 
