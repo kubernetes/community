@@ -1,0 +1,5 @@
+channels:
+  - name: sig-architecture
+  - name: k8s-code-organization
+  - name: k8s-conformance
+  - name: prod-readiness
