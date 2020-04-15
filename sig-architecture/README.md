@@ -79,6 +79,8 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
 [Described below](#enhancements)
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
+- **Contact:**
+  - Slack: [#enhancements](https://kubernetes.slack.com/messages/enhancements)
 ### production-readiness
 [Described below](#production-readiness)
 - **Owners:**

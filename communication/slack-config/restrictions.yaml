@@ -13,6 +13,7 @@ restrictions:
   - path: "sig-architecture/*.yaml"
     channels:
       - "^sig-architecture$"
+      - "^enhancements$"
       - "^k8s-code-organization$"
       - "^k8s-conformance$"
       - "^prod-readiness$"

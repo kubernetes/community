@@ -300,7 +300,6 @@ channels:
   - name: sig-network
   - name: sig-node
   - name: sig-node-rkt
-  - name: sig-pm
   - name: sig-scalability
   - name: sig-scheduling
   - name: sig-service-catalog

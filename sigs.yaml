@@ -327,6 +327,8 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
   - name: enhancements
     description: '[Described below](#enhancements)'
+    contact:
+      slack: enhancements
     owners:
     - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
   - name: production-readiness
