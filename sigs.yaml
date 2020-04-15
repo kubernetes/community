@@ -546,12 +546,6 @@ sigs:
   - name: cluster-autoscaler
     owners:
     - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
-  - name: cluster-proportional-autoscaler
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
-  - name: cluster-proportional-vertical-autoscaler
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
   - name: horizontal-pod-autoscaler
     owners:
     - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
@@ -1560,6 +1554,12 @@ sigs:
     - name: sig-network-test-failures
       description: Test Failures and Triage
   subprojects:
+  - name: cluster-proportional-autoscaler
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
+  - name: cluster-proportional-vertical-autoscaler
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
   - name: external-dns
     contact:
       slack: external-dns
