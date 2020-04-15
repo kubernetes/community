@@ -18,7 +18,7 @@ restrictions:
       - "^k8s-conformance$"
       - "^prod-readiness$"
     usergroups:
-      - ".*"
+      - "^enhancements-owners$"
   - path: "sig-docs/*.yaml"
     channels:
       - "^kubernetes-docs-[a-z]{2}$"
