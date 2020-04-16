@@ -1194,6 +1194,20 @@ sigs:
       tz: PT (Pacific Time)
       frequency: weekly
       url: https://docs.google.com/document/d/1oLXv5_rM4f645jlXym_Vd7AUq7x6DV-O87E6tcW1sjU/edit
+    - description: Office Hours European Edition (Open Q&A for end-user kubernetes
+        related questions)
+      day: Wednesday
+      time: "09:00"
+      tz: ET (Eastern Time)
+      frequency: monthly on 3rd Wednesday
+      url: https://hackmd.io/@k8s/office-hours
+    - description: Office Hours Western Edition (Open Q&A for end-user kubernetes
+        related questions)
+      day: Wednesday
+      time: "12:00"
+      tz: ET (Eastern Time)
+      frequency: monthly on 3rd Wednesday
+      url: https://hackmd.io/@k8s/office-hours
   - name: github-management
     description: Manages and controls Github permissions, repos, and groups, including
       Org Membership.
