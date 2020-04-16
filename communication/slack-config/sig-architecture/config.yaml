@@ -1,0 +1,7 @@
+channels:
+  - name: sig-architecture
+  - name: enhancements
+    id: C1L57L91V
+  - name: k8s-code-organization
+  - name: k8s-conformance
+  - name: prod-readiness

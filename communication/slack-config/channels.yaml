@@ -116,8 +116,6 @@ channels:
   - name: jsonnet
   - name: k14s
   - name: kaniko
-  - name: k8s-code-organization
-  - name: k8s-conformance
   - name: k8s-dual-stack
   - name: k8s-infra-alerts
   - name: k8s-release
@@ -256,7 +254,6 @@ channels:
   - name: pharmer
   - name: pl-users
   - name: pr-reviews
-  - name: prod-readiness
   - name: prometheus
   - name: prometheus-operator
   - name: prow
@@ -278,7 +275,6 @@ channels:
   - name: shoutouts
   - name: sig-api-machinery
   - name: sig-apps
-  - name: sig-architecture
   - name: sig-auth
   - name: sig-autoscaling
   - name: sig-cli
@@ -304,7 +300,6 @@ channels:
   - name: sig-network
   - name: sig-node
   - name: sig-node-rkt
-  - name: sig-pm
   - name: sig-scalability
   - name: sig-scheduling
   - name: sig-service-catalog
