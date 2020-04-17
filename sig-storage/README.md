@@ -60,6 +60,10 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
 ### git-sync
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/git-sync/master/OWNERS
+### gluster-provisioner
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/gluster-block-external-provisioner/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/gluster-file-external-provisioner/master/OWNERS
 ### kubernetes-csi
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
