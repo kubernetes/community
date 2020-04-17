@@ -93,7 +93,7 @@ following the below procedure:
     - Group visibility: Anyone on the web
     - View topics: Anyone on the web
     - Post: Owners of the group, Managers of the group, All members of the group. Ensure that "Anyone on the web" is NOT selected here. 
-    - Join the group: Anyone can ask
+    - Join the group: Anyone on the web
   - `kubernetes-sig-<foo>-leads` (list for the leads, to be used with Zoom and
     Calendars)
     - Group type: Email list
