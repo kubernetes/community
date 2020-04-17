@@ -331,24 +331,26 @@ conventions:
   changed arbitrarily - it becomes part of the API, and has the same backwards-
   and forwards-compatibility concerns of any other part of the API.
 
-* Conditions should have a consistent polarity. **A "positive" polarity where
-  "True" indicates normal operation and "False" indicates a failure is
-  recommended.** (Note that this is an explicit reversal from earlier
-  recommendations of "abnormal-true" polarity. Experience indicates that humans
-  are better at interpreting the "positive" polarity.)
+* Within a resource, Conditions should have a consistent polarity. **A
+  "positive" polarity where "True" indicates normal operation and "False"
+  indicates a failure is recommended if there is not an established polarity.**
+  (Note that this is an explicit reversal from earlier recommendations of
+  "abnormal-true" polarity. Experience indicates that humans are better at
+  interpreting the "positive" polarity.)
 
    * Condition names should clearly indicate what "True" and "False" mean. This
      may require adjusting condition type names, for example changing the type
      name from "QuotaExhausted" to "ResourcesAvailable".
 
-   * The `Unknown` status is the default, and typically indicates that
-     reconciliation has not yet finished (or that the resource state may not
-     yet be observable).
+   * The absence of a condition status should be interpreted the same as
+     `Unknown`, and typically indicates that reconciliation has not yet finished
+     (or that the resource state may not yet be observable).
 
-* It's helpful to have a common top-level condition which summarizes more
-  detailed conditions. Simple consumers may simply query the top-level
-  condition. The `Ready` and `Succeeded` condition types may be used for
-  long-running and bounded-execution objects, respectively.
+* When designing Conditions for a resource, it's helpful to have a common
+  top-level condition which summarizes more detailed conditions. Simple
+  consumers may simply query the top-level condition. Although they are not a
+  consistent standard, the `Ready` and `Succeeded` condition types may be used
+  by API designers for long-running and bounded-execution objects, respectively.
 
 The `FooCondition` type for some resource type `Foo` may include a subset of the
 following fields, but must contain at least `type` and `status` fields:
