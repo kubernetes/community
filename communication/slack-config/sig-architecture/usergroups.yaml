@@ -1,0 +1,15 @@
+# This file contains a list of all Slack User Groups that are managed by SIG Architecture.
+
+usergroups:
+  - name: enhancements-owners
+    long_name: Enhancements Owners
+    description: Process owners for the Enhancements subproject.
+    channels:
+      - enhancements
+      - sig-architecture
+      - sig-release
+    members:
+      - jeremyrickard # subproject owner
+      - johnbelamaric # subproject owner
+      - justaugustus # subproject owner
+      - mrbobbytables # subproject owner

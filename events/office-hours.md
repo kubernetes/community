@@ -97,6 +97,6 @@ The hack.md notes document will have a list of who has asked questions, roll a d
 
 (Note, the companies will change over time depending on the hosts)
 
-- Thanks to the following companies for supporting the community with developer volunteers: Giant Swarm, StockX, Pivotal, Pusher.com, Weaveworks, VMware, University of Michigan, Red Hat, Utility Warehouse and the city of Ottawa, Ontario, Canada. Special thanks to CNCF for sponsoring the t-shirt giveaway. 
+- Thanks to the following companies for supporting the community with developer volunteers: Giant Swarm, StockX, Pivotal, Pusher.com, Weaveworks, VMware, University of Michigan, Red Hat, and Utility Warehouse. Special thanks to CNCF for sponsoring the t-shirt giveaway. 
 
 And lastly, feel free to hang out in #office-hours afterwards, if the other channels are too busy for you and you’re looking for a friendly home, you’re more than welcome to pull up a chair and hang out. 

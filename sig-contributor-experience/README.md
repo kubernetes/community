@@ -24,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**), Red Hat
+* Jorge Castro (**[@castrojo](https://github.com/castrojo)**), VMware
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), University of Michigan
 
 ### Technical Leads
@@ -36,6 +36,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Emeritus Leads
 
+* Elsie Phillips (**[@Phillels](https://github.com/Phillels)**)
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**)
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
 
@@ -64,6 +65,7 @@ Manages operations and policy for upstream community group communication platfor
 - **Meetings:**
   - APAC Coordinator Meeting: [Thursdays at 5:00 UTC](https://zoom.us/j/144440337) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
   - Marketing Team Meeting: [Fridays at 8:00 PT (Pacific Time)](https://zoom.us/j/596959769) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1IlHAJ131akGhI5ffF4OoVW0PrsVY4C0BB8l-UyQaQVo/edit).
     - [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### contributors-documentation
 writes and maintains documentation around contributing to Kubernetes, including the Contributor's Guide, Developer's Guide, and contributor website.

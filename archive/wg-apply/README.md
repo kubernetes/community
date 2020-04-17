@@ -8,6 +8,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Apply Working Group
 
+Superseded by [wg-api-expression](/wg-api-expression/README.md).
+
 Improve the state of declarative object management by fixing `kubectl apply`, moving the logic from the client to the server. This move also enables new/fixed features included in the scope of this working-group: diff, dry-run and prune.
 Resources can be found in [this Google drive folder](https://drive.google.com/drive/folders/1wlpgkS2gFZXdp4x2WlRsfUBxkFlt2Gx0)
 

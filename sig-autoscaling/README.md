@@ -21,6 +21,7 @@ The [charter](charter.md) defines the scope and governance of the Autoscaling Sp
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Guy Templeton (**[@gjtempleton](https://github.com/gjtempleton)**), Skyscanner
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
 
 ## Contact
@@ -45,12 +46,6 @@ The following [subprojects][subproject-definition] are owned by sig-autoscaling:
 ### cluster-autoscaler
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
-### cluster-proportional-autoscaler
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
-### cluster-proportional-vertical-autoscaler
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
 ### horizontal-pod-autoscaler
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS

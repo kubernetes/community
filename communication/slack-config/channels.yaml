@@ -54,6 +54,7 @@ channels:
   - name: de-events
   - name: de-users
   - name: devstats
+  - name: dexidp
   - name: digitalocean-k8s
   - name: distroless
   - name: diversity
@@ -115,12 +116,11 @@ channels:
   - name: jsonnet
   - name: k14s
   - name: kaniko
-  - name: k8s-code-organization
-  - name: k8s-conformance
   - name: k8s-dual-stack
   - name: k8s-infra-alerts
   - name: k8s-release
     archived: true
+  - name: k8spin
   - name: kapitan
   - name: keda
   - name: keel
@@ -165,6 +165,7 @@ channels:
   - name: kubepack
   - name: kubestack
   - name: kuberhealthy
+  - name: kubernetes-arm
   - name: kubernetes-batch-jobs
   - name: kubernetes-careers
   - name: kubernetes-client
@@ -203,6 +204,7 @@ channels:
   - name: meetup-guatemala
   - name: meetup-hannover
   - name: meetup-hongkong
+  - name: meetup-lasvegas
   - name: meetup-losangeles
   - name: meetup-manchester
   - name: meetup-minneapolis
@@ -252,7 +254,6 @@ channels:
   - name: pharmer
   - name: pl-users
   - name: pr-reviews
-  - name: prod-readiness
   - name: prometheus
   - name: prometheus-operator
   - name: prow
@@ -274,7 +275,6 @@ channels:
   - name: shoutouts
   - name: sig-api-machinery
   - name: sig-apps
-  - name: sig-architecture
   - name: sig-auth
   - name: sig-autoscaling
   - name: sig-cli
@@ -300,7 +300,6 @@ channels:
   - name: sig-network
   - name: sig-node
   - name: sig-node-rkt
-  - name: sig-pm
   - name: sig-scalability
   - name: sig-scheduling
   - name: sig-service-catalog
@@ -345,7 +344,9 @@ channels:
     archived: true
   - name: wg-app-def
     archived: true
+  - name: wg-api-expression
   - name: wg-apply
+    archived: true
   - name: wg-component-standard
   - name: wg-component-standard-mentorship
   - name: wg-data-protection
@@ -358,6 +359,7 @@ channels:
     archived: true
   - name: wg-policy
   - name: wg-resource-mgmt
+    archived: true
   - name: wg-security-audit
   - name: wg-virtual-kubelet
     archived: true

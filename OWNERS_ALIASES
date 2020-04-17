@@ -19,6 +19,7 @@ aliases:
     - mikedanese
     - tallclair
   sig-autoscaling-leads:
+    - gjtempleton
     - mwielgus
   sig-cli-leads:
     - pwittrock
@@ -33,7 +34,7 @@ aliases:
     - neolit123
     - timothysc
   sig-contributor-experience-leads:
-    - Phillels
+    - castrojo
     - cblecker
     - mrbobbytables
     - nikhita
@@ -41,6 +42,7 @@ aliases:
     - jimangel
     - kbarnard10
     - kbhawkey
+    - onlydole
     - sftim
     - zacharysarah
   sig-instrumentation-leads:
@@ -57,11 +59,6 @@ aliases:
   sig-node-leads:
     - dchen1107
     - derekwaynecarr
-  sig-pm-leads:
-    - calebamiles
-    - jdumars
-    - justaugustus
-    - lachie83
   sig-release-leads:
     - calebamiles
     - justaugustus
@@ -91,7 +88,6 @@ aliases:
     - jeefy
     - maciaszczykm
   sig-usability-leads:
-    - Rajakavitha1
     - hpandeycodeit
     - tashimi
     - vllry
@@ -100,8 +96,9 @@ aliases:
     - ddebroy
     - marosset
     - michmike
-  wg-apply-leads:
-    - lavalamp
+  wg-api-expression-leads:
+    - apelisse
+    - kwiesmueller
   wg-component-standard-leads:
     - mtaufen
     - stealthybox
@@ -133,9 +130,6 @@ aliases:
   wg-policy-leads:
     - ericavonb
     - hannibalhuang
-  wg-resource-management-leads:
-    - derekwaynecarr
-    - vishh
   wg-security-audit-leads:
     - aasmall
     - cji
@@ -159,10 +153,9 @@ aliases:
   committee-product-security:
     - cjcullen
     - joelsmith
-    - jonpulsifer
     - liggitt
     - lukehinds
-    - philips
+    - micahhausler
     - tallclair
   committee-steering:
     - cblecker

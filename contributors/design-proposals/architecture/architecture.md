@@ -20,7 +20,7 @@ for easy management and discovery.
 
 ## Scope
 
-Kubernetes is a [platform for deploying and managing containers](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/).
+[Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) is a platform for deploying and managing containers.
 Kubernetes provides a container runtime, container
 orchestration, container-centric infrastructure orchestration, self-healing mechanisms such as health checking and re-scheduling, and service discovery and load balancing.
 

@@ -60,7 +60,7 @@ You may also contact Paris Pittman via direct message on Kubernetes Slack (@pari
 ## Mentorship
 
 Please learn about our mentoring initiatives [here](http://git.k8s.io/community/mentoring/README.md).
-Feel free to ask us anything during our [Meet Our Contributors](https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md) to connect with us.
+Feel free to ask us anything during our [Meet Our Contributors](https://github.com/kubernetes/community/blob/master/mentoring/programs/meet-our-contributors.md) to connect with us.
 # Advanced Topics
 
 This section includes things that need to be documented, but typical contributors do not need to interact with regularly.

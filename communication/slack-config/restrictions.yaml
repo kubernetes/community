@@ -10,6 +10,15 @@ restrictions:
       - ".*"
   - path: template.yaml
     template: true
+  - path: "sig-architecture/*.yaml"
+    channels:
+      - "^sig-architecture$"
+      - "^enhancements$"
+      - "^k8s-code-organization$"
+      - "^k8s-conformance$"
+      - "^prod-readiness$"
+    usergroups:
+      - "^enhancements-owners$"
   - path: "sig-docs/*.yaml"
     channels:
       - "^kubernetes-docs-[a-z]{2}$"

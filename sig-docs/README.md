@@ -37,6 +37,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Karen Bradshaw (**[@kbhawkey](https://github.com/kbhawkey)**), Independent
+* Taylor Dolezal (**[@onlydole](https://github.com/onlydole)**), Independent
 * Tim Bannister (**[@sftim](https://github.com/sftim)**), The Scale Factory
 
 ## Emeritus Leads

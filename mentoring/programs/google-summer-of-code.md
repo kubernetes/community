@@ -2,7 +2,7 @@
 
 Kubernetes is happy to announce that we have participated in the Google Summer of Code (GSoC) program
 under the Cloud Native Computing Foundation (CNCF) in 2017, 2018, 2019 and as an independent organization
-in 2015. The details for the current year can be found [here](https://github.com/cncf/soc).
+in 2015. The details for the current year can be found [here](https://github.com/cncf/mentoring).
 
 Please see the [main program page](https://summerofcode.withgoogle.com/) for general information about the program,
 such as its purpose, timeline, eligibility requirements, and how to apply.
@@ -55,7 +55,7 @@ Or even better, volunteer for mentoring an intern during the work on your idea!
 
 Kubernetes has participated in Google Summer of Code in [2019](https://summerofcode.withgoogle.com/archive/2019/organizations/6034778267058176/), [2018](https://summerofcode.withgoogle.com/organizations/6453865516367872/) and [2017](https://summerofcode.withgoogle.com/archive/2017/organizations/6018829461225472/) as a part of CNCF and in [2015](https://www.google-melange.com/archive/gsoc/2015/orgs/kubernetes) as an independent organization.
 
-To get an idea about the projects, you can take a look at the list of project ideas published for GSoC [2017](https://github.com/cncf/soc/blob/master/2017.md#kubernetes), [2018](https://github.com/cncf/soc/blob/master/2018.md#kubernetes), and [2019](https://github.com/cncf/soc/blob/master/2019.md#kubernetes)
+To get an idea about the projects, you can take a look at the list of project ideas published for GSoC [2017](https://github.com/cncf/mentoring/blob/master/2017.md#kubernetes), [2018](https://github.com/cncf/mentoring/blob/master/2018.md#kubernetes), and [2019](https://github.com/cncf/mentoring/blob/master/2019.md#kubernetes)
 
 ## Code of Conduct
 

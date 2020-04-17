@@ -290,6 +290,8 @@ We might still ask you to clean up your commits at the very end for the sake of 
 
 Each commit should have a good title line (<70 characters) and include an additional description paragraph describing in more detail the change intended.
 
+For more information, see [squash commits](./github-workflow.md#squash-commits).
+
 **General squashing guidelines:**
 
 * Sausage => squash

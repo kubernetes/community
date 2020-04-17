@@ -4,6 +4,22 @@
 # e.g., @release-managers is defined in sig-release/usergroups.yaml
 
 usergroups:
+  - name: apac-coordinators
+    long_name: APAC Coordinators
+    description: APAC Coordinator group.
+    channels:
+      - sig-contribex
+    members:
+      - alisondy
+      - aravindputrevu
+      - idealhack
+      - nikhita
+      - palnabarun
+      - pensu91
+      - sammy
+      - "Sujay Pillai"
+      - TaoBeier
+
   - name: contributor-comms
     long_name: Upstream Marketing
     description: Upstream Marketing group.
@@ -21,6 +37,7 @@ usergroups:
 
   - name: test-infra-oncall
     external: true
+
   - name: youtube-admins
     long_name: YouTube Admins
     description: YouTube Admin group. Ping for a YouTube-specific issue
