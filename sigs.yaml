@@ -2039,6 +2039,10 @@ sigs:
   - name: git-sync
     owners:
     - https://raw.githubusercontent.com/kubernetes/git-sync/master/OWNERS
+  - name: gluster-provisioner
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/gluster-block-external-provisioner/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/gluster-file-external-provisioner/master/OWNERS
   - name: kubernetes-csi
     owners:
     - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
