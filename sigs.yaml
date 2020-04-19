@@ -2865,6 +2865,9 @@ committees:
     - github: dims
       name: Davanum Srinivas
       company: VMware
+    - github: lachie83
+      name: Lachlan Evenson
+      company: Microsoft
     - github: nikhita
       name: Nikhita Raghunath
       company: VMware
@@ -2874,9 +2877,6 @@ committees:
     - github: spiffxp
       name: Aaron Crickenberger
       company: Google
-    - github: timothysc
-      name: Timothy St. Clair
-      company: VMware
   meetings:
   - description: Public Steering Committee Meeting
     day: Monday
