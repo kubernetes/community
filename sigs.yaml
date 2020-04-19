@@ -1097,7 +1097,7 @@ sigs:
       company: Red Hat
     - github: nikhita
       name: Nikhita Raghunath
-      company: Loodse
+      company: VMware
     emeritus_leads:
     - github: Phillels
       name: Elsie Phillips
@@ -2867,7 +2867,7 @@ committees:
       company: VMware
     - github: nikhita
       name: Nikhita Raghunath
-      company: Loodse
+      company: VMware
     - github: parispittman
       name: Paris Pittman
       company: Google

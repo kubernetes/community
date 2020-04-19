@@ -21,7 +21,7 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**), Red Hat
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
-* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**), Loodse
+* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**), VMware
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Google
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware

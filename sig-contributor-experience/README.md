@@ -32,7 +32,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**), Red Hat
-* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**), Loodse
+* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**), VMware
 
 ## Emeritus Leads
 
