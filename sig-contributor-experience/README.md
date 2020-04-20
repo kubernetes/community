@@ -88,6 +88,8 @@ Creates and runs contributor-focused events, such as the Contributor Summit.  Ev
   - Slack: [#events](https://kubernetes.slack.com/messages/events)
 - **Meetings:**
   - Events Planning Subproject: [Mondays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1oLXv5_rM4f645jlXym_Vd7AUq7x6DV-O87E6tcW1sjU/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  - Office Hours European Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 09:00 ET (Eastern Time)](https://hackmd.io/@k8s/office-hours) (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=ET%20%28Eastern%20Time%29).
+  - Office Hours Western Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 12:00 ET (Eastern Time)](https://hackmd.io/@k8s/office-hours) (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=ET%20%28Eastern%20Time%29).
 ### github-management
 Manages and controls Github permissions, repos, and groups, including Org Membership.
 - **Owners:**
