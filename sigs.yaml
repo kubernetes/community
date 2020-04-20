@@ -1097,7 +1097,7 @@ sigs:
       company: Red Hat
     - github: nikhita
       name: Nikhita Raghunath
-      company: Loodse
+      company: VMware
     emeritus_leads:
     - github: Phillels
       name: Elsie Phillips
@@ -2879,18 +2879,18 @@ committees:
     - github: dims
       name: Davanum Srinivas
       company: VMware
+    - github: lachie83
+      name: Lachlan Evenson
+      company: Microsoft
     - github: nikhita
       name: Nikhita Raghunath
-      company: Loodse
+      company: VMware
     - github: parispittman
       name: Paris Pittman
       company: Google
     - github: spiffxp
       name: Aaron Crickenberger
       company: Google
-    - github: timothysc
-      name: Timothy St. Clair
-      company: VMware
   meetings:
   - description: Public Steering Committee Meeting
     day: Monday
