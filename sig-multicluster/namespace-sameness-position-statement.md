@@ -1,8 +1,8 @@
 # Namespace Sameness - SIG Multicluster Position Statement
 
 Author: Jeremy Olmsted-Thompson (**[@jeremyot](https://github.com/jeremyot)**), Google  
-Last Edit: 2020/03/24  
-Status: IN REVIEW  
+Last Edit: 2020/04/20  
+Status: RELEASED
 
 ## Goal
 To establish a normative statement for multi-cluster namespace semantics and
@@ -65,7 +65,7 @@ called "database" in cluster A, no other team may request a namespace called
 ### Example 2: RBAC sync
 
 Consider the same organization from example 1.  As with many large-sized
-organizations, they alreadyhave a central LDAP server which stores policies
+organizations, they already have a central LDAP server which stores policies
 about who is supposed to be able to access what systems.  They enforce this by
 converting those policies into Kubernetes RBAC rules and pushing them down into
 their clusters.
