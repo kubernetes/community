@@ -27,24 +27,35 @@ slug: "issue-triage"
 - [Five: Close out issues]
 
 ## Scope
-These guidelines serve as a primary document for triaging incoming issues to Kubernetes. SIGs and projects are encouraged to use these guidelines as a starting point, with customization encouraged to addresss specific triaging needs.
+These guidelines serve as a primary document for triaging incoming issues to Kubernetes. SIGs and projects are encouraged to use these guidelines as a starting point, and customize to address specific triaging needs.
 
-**Note:** These guidelines only apply to the Kubernetes repository. Usage for other GitHub repositories related to Kubernetes is TBD.
+**Note:** These guidelines only apply to the Kubernetes repository. Usage for other Kubernetes-related GitHub repositories is TBD.
 
 ## What is triaging?
-Similar to what happens in a hospital emergency room, issue triage is a process by which a SIG intakes issues and requests, then applies a collection of important GitHub labels meant to categorize and organize that work based on these factors:
-- urgency/priority
-- the SIG or SIGs responsible for taking an action on the issue
-- the kind of work 
+For our purposes, issue triage is a process by which a SIG intakes and reviews new GitHub issues and requests, and organizes them to be actioned. Kubernetes SIGs do this mainly by applying GitHub labels that categorize issues and pull requests based on factors such as:
+- priority/urgency
+- the SIG or SIGs responsible for handling the issue or pull request
+- the kind of work: bug, feature, etc.
+
+Triage can happen asynchronously and continously, or in regularly scheduled meetings. Several Kubernetes SIGs and projects have adopted their own approaches to triaging. 
 
 ## Why is triaging beneficial?
 Triaging offers several benefits to SIGs:
 - Speeds up issue management
 - Quicker response times keeps contributors engaged
-- Reduces "special requests" and context switches as issues and PRs are managed via a process
+- Prevents work from falling through the cracks
+- Reduces "special requests" and sudden context switches—issues and PRs are managed via a process, and response-time SLAs can be communicated upfront
 - Leads to greater transparency, broader input and more informed decision-making about priorities
 
 ## Who should triage?
+Everyone belonging to a SIG is encouraged to triage. You might find it fulfilling for any of the following reasons:
+- it leads to interesting discussions within your SIG
+- it maintains a healthy, positive contributor experience
+- it helps build prioritization, negotiation and decision-making skills, which are critical to most tech roles
+- it reinforces SIG community and culture
+
+That said, people who enjoy product management and iterating on processes tend to enjoy triaging because it empowers their SIGs to maintain a steady, continuous flow of work that is assessed and prioritized based on feedback and value.
+
 Kubernetes issues are listed at https://github.com/kubernetes/kubernetes/issues. New issues start out without any labels.
 
 ## SIG Labels
