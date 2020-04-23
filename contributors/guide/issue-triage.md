@@ -9,7 +9,8 @@ slug: "issue-triage"
 ## Table of Contents
 - [Scope]
 - [What is triaging?]
-- [Why triage?]
+- [Why is triaging beneficial?]
+- [Who should triage?]
 - [Tools for Triage]
 - [A Sample Step-by-Step]
  - [Review newly created open issues]
@@ -36,13 +37,14 @@ Similar to what happens in a hospital emergency room, issue triage is a process 
 - the SIG or SIGs responsible for taking an action on the issue
 - the kind of work 
 
-## Why triage?
+## Why is triaging beneficial?
 Triaging offers several benefits to SIGs:
 - Speeds up issue management
 - Quicker response times keeps contributors engaged
 - Reduces "special requests" and context switches as issues and PRs are managed via a process
 - Leads to greater transparency, broader input and more informed decision-making about priorities
 
+## Who should triage?
 Kubernetes issues are listed at https://github.com/kubernetes/kubernetes/issues. New issues start out without any labels.
 
 ## SIG Labels
