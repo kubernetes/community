@@ -27,7 +27,7 @@ slug: "issue-triage"
  - [Five: Close out issues]
 
 ## Scope
-These guidelines serve as a primary document for triaging incoming issues to Kubernetes. SIGs and projects are encouraged to use these guidelines as a starting point, and customize to address specific triaging needs.
+These guidelines serve as a primary document for triaging incoming issues to Kubernetes. SIGs and projects are encouraged to use this guidance as a starting point, and customize to address specific triaging needs.
 
 **Note:** These guidelines only apply to the Kubernetes repository. Usage for other Kubernetes-related GitHub repositories is TBD.
 
@@ -56,47 +56,42 @@ Everyone belonging to a SIG is encouraged to triage. You might find it fulfillin
 
 That said, people who enjoy product management and iterating on processes tend to enjoy triaging because it empowers their SIGs to maintain a steady, continuous flow of work that is assessed and prioritized based on feedback and value. 
 
-## Tools to help you triage
-These are the fundamental building blocks of a standard triaging effort.
 
-### Issues
-Kubernetes issues are listed at https://github.com/kubernetes/kubernetes/issues. New issues start out without any labels attached.
+# A Sample Step-by-Step
+This aims to walk you through a standard triaging process.
 
-### Labels
-These are the primary organizing tools you'll use. The detailed list resides here:
+## Review newly created open issues
+Kubernetes issues are listed at https://github.com/kubernetes/kubernetes/issues. New, untriaged issues start out without any labels attached. Labels are the primary tools for triaging. The detailed label list resides here:
 https://github.com/kubernetes/kubernetes/labels.
 
-### Searches
-GitHub allows you to filter out types of issues. This table includes some predetermined searches that make triaging more convenient:
+### Conducting Searches
+GitHub allows you to filter out types of issues and pull requests, which helps you discover items in need of triaging. This table includes some predetermined searches for convenience:
 
 |  Search | What it sorts  |
-|---|---|---|---|---|
+|---|---|
 | [created-asc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc)  | untriaged issues by age |
 |  [needs-sig](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aneeds-sig) | issues that need to be assigned to a SIG  |
 | [`is:open is:issue`](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue)   | Newest incoming issues  |
 | [comments-desc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc)   | busiest untriaged issues, sorted by # of comments  |
 | [comments-asc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-asc)   | Issues that need more attention, based on # of comments  |
 
-SIG label | example/`sig/network` | 
+We suggest clicking different labels and inputting different searches to get familiar with them. But you can also dive right into the issues list. Start with the oldest issues and/or pull requests first.
 
-## Permissions and the Bot
-Opening new issues, and leaving comments on other people's issues, are both possible for most people. However, permission to assign specific labels (e.g. `triaged`), change milestones or close other contributors' issues is not. For this reason, we use a bot to manage labelling and triaging. 
+### Permissions and the Bot
+Opening new issues, and leaving comments on other people's issues, are both usually possible. However, permission to assign specific labels (e.g. `triaged`), change milestones, or close other contributors' issues is only granted to the author of an issue, assignees and component organization members. For this reason, we use a bot to manage labelling and triaging. The bot has a set of [commands and permissions](https://go.k8s.io/bot-commands).  
 
-The bot has a set of [commands and permissions](https://go.k8s.io/bot-commands). Here, we'll cover the basic ones.
+## Types of Issues You'll Find While Triaging, and What to Do
+This table aims to help you successfully manage different types of issues.
+|  Type | Step One: Identify it | Step Two: Apply the correct label (if applicable)  | Step Three: Resolve  |
+|---|---|---|
+| Abandoned issue | **not sure** | **not sure** |  close or comment | 
+| Wrongly placed issue | **not sure** | **not sure** |  close or comment | 
+| Support request | These requests usually ask for help configuring some aspect of Kubernetes | `triage/support`, directed to our support structures (see below) |  close or comment | 
 
-## Determine if it's a support request
+If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, just comment your findings. 
 
-Sometimes users ask for support requests in issues; these are usually requests
-from people who need help configuring some aspect of Kubernetes. These issues
-should be labeled with `triage/support`, directed to our support structures
-(see below) and then closed. Also, if the issue is clearly abandoned or in the
-wrong place, it should be closed. Keep in mind that only issue reporters,
-assignees and component organization members can close issues. If you do not
-have such privilege, just comment your findings. Otherwise, first `/assign`
-issue to yourself and then `/close`.
-
-### Support Structures
-
+### More on Support Structures
+ 
 Support requests should be directed to the following:
 
 * [User documentation](https://kubernetes.io/docs/home/) and
