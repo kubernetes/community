@@ -57,7 +57,7 @@ Everyone belonging to a SIG is encouraged to triage. You might find it fulfillin
 That said, people who enjoy product management and iterating on processes tend to enjoy triaging because it empowers their SIGs to maintain a steady, continuous flow of work that is assessed and prioritized based on feedback and value. 
 
 ## Tools to help you triage
-Let's start at the beginning:
+These are the fundamental building blocks of a standard triaging effort.
 
 ### Issues
 Kubernetes issues are listed at https://github.com/kubernetes/kubernetes/issues. New issues start out without any labels attached.
@@ -69,14 +69,15 @@ https://github.com/kubernetes/kubernetes/labels.
 ### Searches
 GitHub allows you to filter out types of issues. This table includes some predetermined searches that make triaging more convenient:
 
-SIG label | example/`sig/network` | 
+|  Search | What it sorts  |
+|---|---|---|---|---|
+| [created-asc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc)  | untriaged issues by age |
+|  [needs-sig](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aneeds-sig) | issues that need to be assigned to a SIG  |
+| [`is:open is:issue`](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue)   | Newest incoming issues  |
+| [comments-desc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc)   | busiest untriaged issues, sorted by # of comments  |
+| [comments-asc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-asc)   | Issues that need more attention, based on # of comments  |
 
-Following are few predetermined searches on issues for convenience:
-* [Longest untriaged issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc) (sorted by age)
-* [Needs to be assigned to a SIG](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aneeds-sig)
-* [Newest incoming issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue)
-* [Busy untriaged issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc) (sorted by number of comments)
-* [Issues that need more attention](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-asc)
+SIG label | example/`sig/network` | 
 
 ## Permissions and the Bot
 Opening new issues, and leaving comments on other people's issues, are both possible for most people. However, permission to assign specific labels (e.g. `triaged`), change milestones or close other contributors' issues is not. For this reason, we use a bot to manage labelling and triaging. 
