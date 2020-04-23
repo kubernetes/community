@@ -82,14 +82,32 @@ We suggest preparing your triage by filtering out the oldest, unlabelled issues 
 Opening new issues, and leaving comments on other people's issues, are both usually possible. However, permission to assign specific labels (e.g. `triaged`), change milestones, or close other contributors' issues is only granted to the author of an issue, assignees and component organization members. For this reason, we use a bot to manage labelling and triaging. The bot has a set of [commands and permissions](https://go.k8s.io/bot-commands).  
 
 ## Types of Issues You'll Find While Triaging, and What to Do
-This table aims to help you successfully manage different types of issues.
-|  Type | Step One: Identify it | Step Two: Apply the correct label (if applicable)  | Step Three: Resolve  |
-|---|---|---|
-| Abandoned issue | **not sure** | **not sure** |  close or comment | 
-| Wrongly placed issue | **not sure** | **not sure** |  close or comment | 
-| Support request | These requests usually ask for help configuring some aspect of Kubernetes | `triage/support`, directed to our support structures (see below) |  close or comment | 
+How to successfully manage different types of issues:
 
-If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, just comment your findings. 
+### Abandoned or wrongly placed issue
+Depending on your permissions, either close or comment on it.
+
+### Support request
+Some people mistakenly file support requests in GitHub issues. These requests usually ask for help configuring some aspect of Kubernetes. 
+* First, apply the `triage/support`, directed to our support structures (see below) 
+* Then, close or comment
+
+### Bugs
+First, validate if the problem is a bug by trying to reproduce it.
+
+If you can reproduce it:
+* Define its priority
+* Do a quick duplicate search to see if the issue has been reported already. If a duplicate is found, let the issue reporter know it by marking it duplicate. Label such issues as `triage/duplicate`.
+
+If you can't reproduce it:
+* label it as a `triage/not-reproducible`
+* Contact the issue reporter with your findings 
+* Close the issue if both the parties agree that it could not be reproduced.
+
+If you need more information to further work on the issue:
+* let the reporter know it by adding an issue comment followed by label `triage/needs-information`.
+
+In all cases, if you do not get a response in 20 days then close the issue with an appropriate comment. If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, just comment your findings. 
 
 Please find more detailed information about Support Requests in the [Footnotes section](#footnotes).
 
@@ -102,24 +120,6 @@ example.
 
 Keep in mind that these commands must be on their own lines, and at the front of the
 comment.
-
-## Validate if the issue is a bug
-
-Validate if the problem is a bug by reproducing it. If reproducible, move to
-the next step of defining priority. You may need to contact the issue reporter
-in the following cases:
-* Do a quick duplicate search to see if the issue has been reported already.
-If a duplicate is found, let the issue reporter know it by marking it
-duplicate. Label such issues as `triage/duplicate`.
-* If you can not reproduce the issue, label it as a `triage/not-reproducible`.
-Contact the issue reporter with your findings and close the issue if both the
-parties agree that it could not be reproduced.
-* If you need more information to further work on the issue, let the reporter
-know it by adding an issue comment followed by label
-`triage/needs-information`.
-
-In all cases, if you do not get a response in 20 days then close the issue
-with an appropriate comment.
 
 ## Define priority
 
