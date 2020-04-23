@@ -50,10 +50,10 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-network:
 ### cluster-proportional-autoscaler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-autoscaler/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-proportional-autoscaler/master/OWNERS
 ### cluster-proportional-vertical-autoscaler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/cluster-proportional-vertical-autoscaler/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-proportional-vertical-autoscaler/master/OWNERS
 ### external-dns
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/OWNERS
