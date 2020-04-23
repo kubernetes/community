@@ -6,6 +6,25 @@ slug: "issue-triage"
 
 # Issue Triage: A Primer
 
+## Table of Contents
+- [Scope]
+- [What is triaging?]
+- [Why triage?]
+- [Tools for Triage]
+- [A Sample Step-by-Step]
+ - [Review newly created open issues]
+  - [Determine if an issue is a support request]
+  - [Find the Right SIG]
+    - [Set the `kind` issue to validate type (feature, documentation, bug, etc.)]
+    - [Set the priority label to define urgency]
+    - [Set the `sig/` label to define ownership]
+- [After you label]
+    * Poke issue owner if PR is not created for it in 30 days
+    * Poke SIG if a SIG label is assigned but no comment was added by SIG in 30 days
+* Plan milestones
+* Closing issues
+* Help Wanted
+
 ## Scope
 These guidelines serve as a primary document for triaging incoming issues to Kubernetes. SIGs and projects are encouraged to use these guidelines as a starting point, with customization encouraged to addresss specific triaging needs.
 
