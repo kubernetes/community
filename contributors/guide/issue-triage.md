@@ -56,12 +56,13 @@ Everyone belonging to a SIG is encouraged to triage. You might find it fulfillin
 
 That said, people who enjoy product management and iterating on processes tend to enjoy triaging because it empowers their SIGs to maintain a steady, continuous flow of work that is assessed and prioritized based on feedback and value. 
 
-
 # A Sample Step-by-Step
 This aims to walk you through a standard triaging process.
 
 ## Review newly created open issues
-Kubernetes issues are listed at https://github.com/kubernetes/kubernetes/issues. New, untriaged issues start out without any labels attached. Labels are the primary tools for triaging. The detailed label list resides here:
+Kubernetes issues are listed at https://github.com/kubernetes/kubernetes/issues. New, untriaged issues start out without any labels attached. 
+
+Labels are the primary tools for triaging. The detailed label list resides here:
 https://github.com/kubernetes/kubernetes/labels.
 
 ### Conducting Searches
@@ -75,7 +76,7 @@ GitHub allows you to filter out types of issues and pull requests, which helps y
 | [comments-desc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc)   | busiest untriaged issues, sorted by # of comments  |
 | [comments-asc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-asc)   | Issues that need more attention, based on # of comments  |
 
-We suggest clicking different labels and inputting different searches to get familiar with them. But you can also dive right into the issues list. Start with the oldest issues and/or pull requests first.
+We suggest preparing your triage by filtering out the oldest, unlabelled issues and/or pull requests first.
 
 ### Permissions and the Bot
 Opening new issues, and leaving comments on other people's issues, are both usually possible. However, permission to assign specific labels (e.g. `triaged`), change milestones, or close other contributors' issues is only granted to the author of an issue, assignees and component organization members. For this reason, we use a bot to manage labelling and triaging. The bot has a set of [commands and permissions](https://go.k8s.io/bot-commands).  
@@ -90,50 +91,7 @@ This table aims to help you successfully manage different types of issues.
 
 If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, just comment your findings. 
 
-### More on Support Structures
- 
-Support requests should be directed to the following:
-
-* [User documentation](https://kubernetes.io/docs/home/) and
-[troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
-
-* [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes) and
-[ServerFault](http://serverfault.com/questions/tagged/kubernetes)
-
-* [Slack](https://kubernetes.slack.com) ([registration](http://slack.k8s.io))
-
-* [Discussion forums](https://discuss.kubernetes.io)
-
-### User support response example
-
-If you see support questions on kubernetes-dev@googlegroups.com or issues asking for
-support try to redirect them to Stack Overflow. Example response:
-
-```code
-Please re-post your question to [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
-or our [Discussion Forums](https://discuss.kubernetes.io).
-
-We are trying to consolidate the channels to which questions for help/support
-are posted so that we can improve our efficiency in responding to your requests,
-and to make it easier for you to find answers to frequently asked questions and
-how to address common use cases.
-
-We regularly see messages posted in multiple forums, with the full response
-thread only in one place or, worse, spread across multiple forums. Also, the
-large volume of support issues on GitHub is making it difficult for us to use
-issues to identify real bugs.
-
-Members of the Kubernetes community use Stack Overflow and Discussion Forums to field
-support requests. Before posting a new question, please search these for answers
-to similar questions, and also familiarize yourself with:
-
-  * [user documentation](https://kubernetes.io/docs/home/)
-  * [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
-
-Again, thanks for using Kubernetes.
-
-The Kubernetes Team
-```
+Please find more detailed information about Support Requests in the [Footnotes section].
 
 ## Find the right SIG(s)
 Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). Find a proper SIG for the ownership of the issue using the bot:
@@ -293,3 +251,47 @@ add the `help wanted` label.
 If an issue has these labels but does not satisfy the guidelines, please
 ask for more details to be added to the issue or remove the labels using
 `/remove-help` or `/remove-good-first-issue` commands.
+
+## Footnotes 
+### Support requests
+These should be directed to the following:
+* [User documentation](https://kubernetes.io/docs/home/) and
+[troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
+
+* [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes) and
+[ServerFault](http://serverfault.com/questions/tagged/kubernetes)
+
+* [Slack](https://kubernetes.slack.com) ([registration](http://slack.k8s.io))
+
+* [Discussion forums](https://discuss.kubernetes.io)
+
+### User support response example
+
+If you see support questions on kubernetes-dev@googlegroups.com or issues asking for
+support try to redirect them to Stack Overflow. Example response:
+
+```code
+Please re-post your question to [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
+or our [Discussion Forums](https://discuss.kubernetes.io).
+
+We are trying to consolidate the channels to which questions for help/support
+are posted so that we can improve our efficiency in responding to your requests,
+and to make it easier for you to find answers to frequently asked questions and
+how to address common use cases.
+
+We regularly see messages posted in multiple forums, with the full response
+thread only in one place or, worse, spread across multiple forums. Also, the
+large volume of support issues on GitHub is making it difficult for us to use
+issues to identify real bugs.
+
+Members of the Kubernetes community use Stack Overflow and Discussion Forums to field
+support requests. Before posting a new question, please search these for answers
+to similar questions, and also familiarize yourself with:
+
+  * [user documentation](https://kubernetes.io/docs/home/)
+  * [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
+
+Again, thanks for using Kubernetes.
+
+The Kubernetes Team
+```
