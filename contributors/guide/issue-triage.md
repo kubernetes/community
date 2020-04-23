@@ -91,7 +91,7 @@ This table aims to help you successfully manage different types of issues.
 
 If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, just comment your findings. 
 
-Please find more detailed information about Support Requests in the [Footnotes section].
+Please find more detailed information about Support Requests in the [Footnotes section](#footnotes).
 
 ## Find the right SIG(s)
 Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). Find a proper SIG for the ownership of the issue using the bot:
