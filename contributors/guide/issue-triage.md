@@ -83,20 +83,31 @@ GitHub allows you to filter out types of issues and pull requests, which helps y
 We suggest preparing your triage by filtering out the oldest, unlabelled issues and/or pull requests first.
 
 ### Permissions and the Bot
-Opening new issues, and leaving comments on other people's issues, are both usually possible. However, permission to assign specific labels (e.g. `triaged`), change milestones, or close other contributors' issues is only granted to the author of an issue, assignees and component organization members. For this reason, we use a bot to manage labelling and triaging. The bot has a set of [commands and permissions](https://go.k8s.io/bot-commands).  
+Opening new issues and leaving comments on other people's issues are possible for all contributors. However, permission to assign specific labels (e.g. `triaged`), change milestones, or close other contributors' issues is only granted to the author of an issue, assignees, and component organization members. For this reason, we use a bot to manage labelling and triaging. The bot has a set of [commands and permissions](https://go.k8s.io/bot-commands).  
 
 ## Step Two: Triage Issues by Type
-Some categories of issues:
+Use [these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%93&q=triage%2F+kind%2Fsupport+is%3Aopen) to find open issues that can be quickly closed. A triage engineer can add the appropriate labels.
 
-### Abandoned or wrongly placed issue
-Depending on your permissions, either close or comment on it.
-
+Depending on your permissions, either close or comment on any issues that are identified as support requests, duplicates, or not-reproducible bugs, or that lack enough information from the reporter.
+ 
 ### Support requests
-Some people mistakenly file support requests in GitHub issues. These requests usually ask for help configuring some aspect of Kubernetes. 
-* First, apply the `triage/support`, directed to our support structures (see below) 
+Some people mistakenly use GitHub issues to file support requests— usually asking for help configuring some aspect of Kubernetes.
+* First, apply the `triage/support` label, which is directed to our support structures (see below) 
 * Then, close or comment
 
 Please find more detailed information about Support Requests in the [Footnotes section](#footnotes).
+
+### Duplicates
+* Duplicates of other open issues should have the self-readable label `triage/duplicate`, then be commented on or closed. 
+
+### Abandoned or wrongly placed issues
+Depending on your permissions, either close or comment on it.
+
+### Needs more information
+* The `triage/needs-information` label indicates an issue needs more information in order to work on it; comment on or close it.
+
+### Unresolved
+* The `triage/unresolved` label indicates an issue that can not be resolved.
 
 ### Bugs
 First, validate if the problem is a bug by trying to reproduce it.
@@ -116,20 +127,32 @@ If you need more information to further work on the issue:
 In all cases, if you do not get a response in 20 days then close the issue with an appropriate comment. If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, just comment your findings. 
 
 ### Help Wanted/Good First Issues
-We use the labels [help wanted](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
-and [good first issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
-to identify issues that have been specially groomed for new contributors.
+To identify issues that are specifically groomed for new contributors, we use the [help wanted](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
+and [good first issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) labels. To use these labels:
+* review our specific [guidelines](/contributors/guide/help-wanted.md) for how to use them.
+* If the issue satisfies these guidelines, you can add the `help wanted` label with the `/help` command
+and the `good first issue` label with the `/good-first-issue` command. Please note that adding the `good first issue` label will also automatically add the `help wanted` label.
+* If an issue has these labels but does not satisfy the guidelines, please ask for more details to be added to the issue or remove the labels using the `/remove-help` or `/remove-good-first-issue` commands.
 
-We have specific [guidelines](/contributors/guide/help-wanted.md)
-for how to use these labels. If you see an issue that satisfies these
-guidelines, you can add the `help wanted` label with the `/help` command
-and the `good first issue` label with the `/good-first-issue` command.
-Please note that adding the `good first issue` label will also automatically
-add the `help wanted` label.
+## Define priority
+We use GitHub labels for prioritization. The absence of a `priority` label
+means the issue has not been reviewed and prioritized yet. We aim for consistency across the entire project,
+but if you notice an issue that you believe to be incorrectly prioritized,
+please let us know by leaving a comment. We will evaluate your counter-proposal.
 
-If an issue has these labels but does not satisfy the guidelines, please
-ask for more details to be added to the issue or remove the labels using
-`/remove-help` or `/remove-good-first-issue` commands.
+|  Priority label | What it means  | Examples |
+|---|---|---|
+| **priority/critical-urgent**  | Team leaders are responsible for making sure that these issues (in their area) are being actively worked on. Someone is expected to drop what they're doing immediately to work on it. Stuff is burning. | * user-visible bugs in core features * broken builds * tests and critical
+security issues | 
+| **priority/important-soon**  | Must be staffed and worked on either currently,
+or very soon, ideally in time for the next release. | [**XXXX**] |  
+| **priority/important-longterm**  | Important over the long term, but may not be
+currently staffed and/or may require multiple releases to complete. | [**XXXX**] |  
+| **priority/backlog**  | General agreement that this is a nice-to-have, but no one's available to work on it anytime soon. Community contributions would be most welcome in the meantime, though it might take a while to get them reviewed if reviewers are fully occupied with higher-priority issues—for example, immediately before a release.| [**XXXX**]  | 
+| **priority/awaiting-more-evidence**  | Possibly useful, but not yet enough
+support to actually get it done. | * mostly placeholders for potentially
+good ideas, so that they don't get completely forgotten, and can be referenced
+/deduped every time they come up | 
 
 ## Find the right SIG(s)
 Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). Find a proper SIG for the ownership of the issue using the bot:
@@ -141,42 +164,7 @@ example.
 Keep in mind that these commands must be on their own lines, and at the front of the
 comment.
 
-## Define priority
-
-We use GitHub issue labels for prioritization. The absence of a priority label
-means the bug has not been reviewed and prioritized yet.
-
-We try to apply these priority labels consistently across the entire project,
-but if you notice an issue that you believe to be incorrectly prioritized,
-please do let us know and we will evaluate your counter-proposal.
-
-- **priority/critical-urgent**: Must be actively worked on as someone's top
-priority right now. Stuff is burning. If it's not being actively worked on,
-someone is expected to drop what they're doing immediately to work on it. Team
-leaders are responsible for making sure that all the issues, labeled with this
-priority, in their area are being actively worked on. Examples include
-user-visible bugs in core features, broken builds or tests and critical
-security issues.
-
-- **priority/important-soon**: Must be staffed and worked on either currently,
-or very soon, ideally in time for the next release.
-
-- **priority/important-longterm**: Important over the long term, but may not be
-currently staffed and/or may require multiple releases to complete.
-
-- **priority/backlog**: There appears to be general agreement that this would be
-good to have, but we may not have anyone available to work on it right now or in
-the immediate future. Community contributions would be most welcome in the meantime 
-(although it might take a while to get them reviewed if 
-reviewers are fully occupied with higher priority issues, for example immediately before a release).
-
-- **priority/awaiting-more-evidence**: Possibly useful, but not yet enough
-support to actually get it done. These are mostly place-holders for potentially
-good ideas, so that they don't get completely forgotten, and can be referenced
-/deduped every time they come up.
-
 ## Set ownership
-
 If you are not sure of who should own an issue, defer to the
 SIG label only. If you feel the issue should warrant a notification, you can ping
 a team with an @ mention, in this format, `@kubernetes/sig-<group-name>-<group-suffix>`.
@@ -230,23 +218,6 @@ More information can be found in the developer guide section for
 [targeting issues and PRs to a milestone release](/contributors/devel/sig-release/release.md).
 
 ## Closing issues
-Issues that are identified as a support request, duplicate, not-reproducible
-or lacks enough information from reporter should be closed following guidelines
-explained in this file. Also, any issues that can not be resolved because of
-any particular reason should be closed. These issues should have one or more
-of following self-readable labels:
-* `triage/support`: Indicates an issues is not a bug but a support request.
-* `triage/duplicate`: Indicates an issue is a duplicate of other open issue.
-* `triage/not-reproducible`: Indicates an issue can not be reproduced as
-described.
-* `triage/needs-information`: Indicates an issue needs more information in
-order to work on it.
-* `triage/unresolved`: Indicates an issue that can not be resolved.
-
-A triage engineer should add these labels appropriately. Kubernetes GitHub
-Org members can search [open issues per these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%93&q=triage%2F+kind%2Fsupport+is%3Aopen) to find ones that can be
-quickly closed.
-
 Also note that, `fejta-bot` will add `lifecycle/stale` label to issues with no
 activity for 90 days. Such issues will be eventually auto closed if the label is
 not removed with the `/remove-lifecycle stale` label or prevented with the
