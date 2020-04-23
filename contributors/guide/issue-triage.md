@@ -11,15 +11,19 @@ slug: "issue-triage"
 - [What is triaging?]
 - [Why is triaging beneficial?]
 - [Who should triage?]
-- [Tools to help you triage]
-- [A Workflow for Handling Triage]
- - [One: Review newly created open issues]
-  - [What to do if it's a support request]
- - [Two: Apply labels]
+- [A Sample Step-by-Step]
+ - [Step One: Review newly created open issues]
+  - [Conducting Searches]
+  - [Permissions and the Bot]
+ - [Step Two: Triage Issues by Type]
+  - [Abandoned or wrongly placed issue]
+  - [Support requests]
+  - [Bugs]
+  - [Help Wanted/Good First Issues]]
+  
     - [Set the `kind` issue to validate type (feature, documentation, bug, etc.)]
     - [Set a `priority` label to define urgency]
     - [Set a `sig/` label to define ownership]
-  - [Help Wanted/Good First PRs]]
  - [Three: Follow up]
     - [Poke issue owner if PR is not created for it in 30 days]
    - [Poke SIG if a SIG label is assigned but no comment was added by SIG in 30 days]
@@ -59,7 +63,7 @@ That said, people who enjoy product management and iterating on processes tend t
 # A Sample Step-by-Step
 This aims to walk you through a standard triaging process.
 
-## Review newly created open issues
+## Step One: Review newly created open issues
 Kubernetes issues are listed at https://github.com/kubernetes/kubernetes/issues. New, untriaged issues start out without any labels attached. 
 
 Labels are the primary tools for triaging. The detailed label list resides here:
@@ -81,16 +85,18 @@ We suggest preparing your triage by filtering out the oldest, unlabelled issues 
 ### Permissions and the Bot
 Opening new issues, and leaving comments on other people's issues, are both usually possible. However, permission to assign specific labels (e.g. `triaged`), change milestones, or close other contributors' issues is only granted to the author of an issue, assignees and component organization members. For this reason, we use a bot to manage labelling and triaging. The bot has a set of [commands and permissions](https://go.k8s.io/bot-commands).  
 
-## Types of Issues You'll Find While Triaging, and What to Do
-How to successfully manage different types of issues:
+## Step Two: Triage Issues by Type
+Some categories of issues:
 
 ### Abandoned or wrongly placed issue
 Depending on your permissions, either close or comment on it.
 
-### Support request
+### Support requests
 Some people mistakenly file support requests in GitHub issues. These requests usually ask for help configuring some aspect of Kubernetes. 
 * First, apply the `triage/support`, directed to our support structures (see below) 
 * Then, close or comment
+
+Please find more detailed information about Support Requests in the [Footnotes section](#footnotes).
 
 ### Bugs
 First, validate if the problem is a bug by trying to reproduce it.
@@ -109,7 +115,21 @@ If you need more information to further work on the issue:
 
 In all cases, if you do not get a response in 20 days then close the issue with an appropriate comment. If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, just comment your findings. 
 
-Please find more detailed information about Support Requests in the [Footnotes section](#footnotes).
+### Help Wanted/Good First Issues
+We use the labels [help wanted](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
+and [good first issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
+to identify issues that have been specially groomed for new contributors.
+
+We have specific [guidelines](/contributors/guide/help-wanted.md)
+for how to use these labels. If you see an issue that satisfies these
+guidelines, you can add the `help wanted` label with the `/help` command
+and the `good first issue` label with the `/good-first-issue` command.
+Please note that adding the `good first issue` label will also automatically
+add the `help wanted` label.
+
+If an issue has these labels but does not satisfy the guidelines, please
+ask for more details to be added to the issue or remove the labels using
+`/remove-help` or `/remove-good-first-issue` commands.
 
 ## Find the right SIG(s)
 Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). Find a proper SIG for the ownership of the issue using the bot:
@@ -234,23 +254,6 @@ not removed with the `/remove-lifecycle stale` label or prevented with the
 for more details. It is fine to add any of the `triage/*` labels described in
 this issue triage guidelines to issues triaged by the `fejta-bot` for a better
 understanding of the issue and closing of it.
-
-## Help Wanted issues
-
-We use two labels [help wanted](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
-and [good first issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
-to identify issues that have been specially groomed for new contributors.
-
-We have specific [guidelines](/contributors/guide/help-wanted.md)
-for how to use these labels. If you see an issue that satisfies these
-guidelines, you can add the `help wanted` label with the `/help` command
-and the `good first issue` label with the `/good-first-issue` command.
-Please note that adding the `good first issue` label will also automatically
-add the `help wanted` label.
-
-If an issue has these labels but does not satisfy the guidelines, please
-ask for more details to be added to the issue or remove the labels using
-`/remove-help` or `/remove-good-first-issue` commands.
 
 ## Footnotes 
 ### Support requests
