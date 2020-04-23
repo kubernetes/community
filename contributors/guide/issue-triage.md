@@ -11,24 +11,32 @@ slug: "issue-triage"
 - [What is triaging?]
 - [Why is triaging beneficial?]
 - [Who should triage?]
-- [A Sample Step-by-Step]
+- [How to Triage: A Step-by-Step Flow]
  - [Step One: Review newly created open issues]
   - [Conducting Searches]
   - [Permissions and the Bot]
  - [Step Two: Triage Issues by Type]
-  - [Abandoned or wrongly placed issue]
   - [Support requests]
+  - [Duplicates]
+  - [Abandoned or wrongly placed issues]
+  - [Needs more information]
+  - [Unresolved]
   - [Bugs]
   - [Help Wanted/Good First Issues]]
-  
-    - [Set the `kind` issue to validate type (feature, documentation, bug, etc.)]
-    - [Set a `priority` label to define urgency]
-    - [Set a `sig/` label to define ownership]
- - [Three: Follow up]
-    - [Poke issue owner if PR is not created for it in 30 days]
+ - [Step Three: Define Priority]
+ - [Step Four: Find and set the right SIG(s) to own an issue]
+ - [Step Five: Follow Up]  
+   - [Poke issue owner if PR is not created for it in 30 days]
    - [Poke SIG if a SIG label is assigned but no comment was added by SIG in 30 days]
+ - [Footnotes]
+  - [Support Requests: Channels]
+  - [User support response: example]
+ 
+ 
  - [Four: Plan milestones]
  - [Five: Close out issues]
+  - [Set the `kind` issue to validate type (feature, documentation, bug, etc.)]
+  
 
 ## Scope
 These guidelines serve as a primary document for triaging incoming issues to Kubernetes. SIGs and projects are encouraged to use this guidance as a starting point, and customize to address specific triaging needs.
