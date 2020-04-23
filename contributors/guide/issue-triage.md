@@ -4,17 +4,34 @@ weight: 10
 slug: "issue-triage"
 ---
 
-## Purpose
+# Issue Triage: A Primer
 
-Speed up issue management.
+## Scope
+These guidelines serve as a primary document for triaging incoming issues to Kubernetes. SIGs and projects are encouraged to use these guidelines as a starting point, with customization encouraged to addresss specific triaging needs.
 
-The Kubernetes issues are listed at https://github.com/kubernetes/kubernetes/issues
-and are identified with labels. For example, an issue that belongs to the SIG
-Network group will eventually be set to label `sig/network`. New issues will
-start out without any labels. The detailed list of labels can be found at
-https://github.com/kubernetes/kubernetes/labels. While working on triaging
-issues you may not have privilege to assign a specific label (e.g. `triaged`)
-and in that case simply add a comment in the issue with your findings.
+**Note:** These guidelines only apply to the Kubernetes repository. Usage for other GitHub repositories related to Kubernetes is TBD.
+
+## What is triaging?
+Similar to what happens in a hospital emergency room, issue triage is a process by which a SIG intakes issues and requests, then applies a collection of important GitHub labels meant to categorize and organize that work based on these factors:
+- urgency/priority
+- the SIG or SIGs responsible for taking an action on the issue
+- the kind of work 
+
+## Why triage?
+Triaging offers several benefits to SIGs:
+- Speeds up issue management
+- Quicker response times keeps contributors engaged
+- Reduces "special requests" and context switches as issues and PRs are managed via a process
+- Leads to greater transparency, broader input and more informed decision-making about priorities
+
+Kubernetes issues are listed at https://github.com/kubernetes/kubernetes/issues. New issues start out without any labels.
+
+## SIG Labels
+The detailed list of labels can be found at
+https://github.com/kubernetes/kubernetes/labels.
+
+
+SIG label | example/`sig/network` | 
 
 Following are few predetermined searches on issues for convenience:
 * [Longest untriaged issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc) (sorted by age)
@@ -23,22 +40,10 @@ Following are few predetermined searches on issues for convenience:
 * [Busy untriaged issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc) (sorted by number of comments)
 * [Issues that need more attention](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-asc)
 
-## Scope
+## Permissions and the Bot
+Opening new issues, and leaving comments on other people's issues, are both possible for most people. However, permission to assign specific labels (e.g. `triaged`), change milestones or close other contributors' issues is not. For this reason, we use a bot to manage labelling and triaging. 
 
-These guidelines serves as a primary document for triaging incoming issues to
-Kubernetes. SIGs and projects are encouraged to either use these guidelines, or
-use this as a starting point if necessary. For example, if your SIG has specific
-triaging needs, extend these guidelines.
-**Note:** These guidelines only applies to the Kubernetes repository. Its usage
-for other GitHub repositories related to Kubernetes is TBD.
-
-## Using the bot
-
-Most people can leave comments and open issues. They don't have the ability to
-set labels, change milestones and close other people's issues. For that we use
-a bot to manage labelling and triaging. The bot has a set of
-[commands and permissions](https://go.k8s.io/bot-commands)
-and this document will cover the basic ones.
+The bot has a set of [commands and permissions](https://go.k8s.io/bot-commands). Here, we'll cover the basic ones.
 
 ## Determine if it's a support request
 
