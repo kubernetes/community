@@ -10,10 +10,14 @@ slug: "issue-triage"
 - [Scope](#scope.md)
 - [What is triaging?](#what-is-triaging)
 - [Why is triaging beneficial?](#why-is-triaging-beneficial)
-- **How to Triage: A Step-by-Step Flow**
+**How to Triage: A Step-by-Step Flow**
+- [Triage-Related Tools](#triage-related-tools)
+   - [Permissions and the Bot](#permissions-and-the-bot)
+   - [GUbernator](#gubernator)
+   - [GitHub Project Boards)(#github-project-boards)
+ - [Triaging Processes and Advice from SIGs](#triaging-processes-and-advice-from-sigs)
  - [Step One: Review newly created open issues](#step-one-review-newly-created-open-issues)
    - [Conducting Searches](#conducting-searches)
-   - [Permissions and the Bot](#permissions-and-the-bot)
    - [Other Tools for Triaging]()
  - [Step Two: Triage Issues by Type](#step-two-triage-issues-by-type)
    - [Support requests](#support-requests)
