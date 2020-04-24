@@ -8,7 +8,8 @@ slug: "issue-triage"
 
 ## Table of Contents
 - [Scope]
-- [What is triaging, and why is it beneficial?]
+- [What is triaging?]
+- [Why is it beneficial?]
 - [How to Triage: A Step-by-Step Flow]
  - [Step One: Review newly created open issues]
   - [Conducting Searches]
@@ -41,7 +42,7 @@ These guidelines serve as a primary document for triaging incoming issues to Kub
 
 **Note:** These guidelines only apply to the Kubernetes repository. Usage for other Kubernetes-related GitHub repositories is TBD.
 
-## What is triaging, and why is it beneficial?
+## What is triaging?
 Issue triage is a process by which a SIG intakes and reviews new GitHub issues and requests, and organizes them to be actioned—either by its own members, or by other SIGs. Triaging involves categorizing issues and pull requests based on factors such as priority/urgency, SIG ownership of the issue, and the issue kind (bug, feature, etc.)
 - the SIG or SIGs responsible for handling the issue or pull request
 
