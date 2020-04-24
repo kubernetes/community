@@ -30,7 +30,7 @@ the logistical and operational pieces together.
 [Project Manager Handbook]
 
 ### Accessibility, Inclusiveness, and Diversity
-Reach out to underrepresented local groups to advertise new contributor workshop - examples: GoBridge, Women Who Code  
+Reach out to underrepresented local groups to advertise contributor summit - examples: GoBridge, Women Who Code  
 Advertise to past and current diversity scholarship winners  
 Code of Conduct process/reporting and training for event staff  
 Confirming that shirt sizes are true to fit, measurements are posted with the registration  
@@ -39,7 +39,7 @@ Advertise childcare (get information from CNCF)
 Advertise quiet room (get information from CNCF)  
 
 ### Content Subteam
-The [Content Subteam Handbook] includes detailed handbooks for Content Coordinator, New Contributor Workshop lead, and other roles.
+The [Content Subteam Handbook] includes detailed handbooks for Content Coordinator, and other roles.
 
 ### Marketing and Comms
 [Marketing Handbook]

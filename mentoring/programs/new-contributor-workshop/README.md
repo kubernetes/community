@@ -5,7 +5,14 @@
 
 This folder contains the [handbook for the New Contributor Workshop Content Lead](./new-contributor-workshop-lead.md) as well as playbooks for each of the New Contributor Workshop sessions.
 
-This workshop is held at contributor summits at KubeCon but materials and processes may be used at contributor focused summits and events anywhere.
+This workshop is held periodically by the Kubernetes Community, but materials and processes may be used at contributor focused summits and events anywhere.
+
+## Upcoming Workshops
+
+None scheduled
+
+## Previous Workshops
+* [2019 NA Contributor Summit NCW](https://www.youtube.com/watch?v=uUJrGwAom-E&list=PL69nYSiGNLP0OWp38tPBc-jSlMmwWr6Ci&index=16) (Videos in playlist, links to first NCW video)
 
 ## Sample Track for Beginner Workshop
 
@@ -21,7 +28,6 @@ This workshop is meant for folks who have never contributed to opensource before
 1. [Local Build&Test](./build-and-test.md)
 1. [Pull Request Exercise](./playground-exercise.md)
 1. [Find Your First Issue](./first-issue-help.md)
-1. [SIG Meet-and-Greet](/events/events-team/content/sig-contrib-events.md#sig-meet-and-greet)
 
 ## Sample Track for Intermediate Workshop
 
@@ -37,4 +43,3 @@ This workshop differs from the Beginner workshop in that participants are expect
 1. [Local Build&Test](./build-and-test.md)
 1. Labels, Bots and Git Workflow
 1. [Find Your First Issue](./first-issue-help.md)
-1. [SIG Meet-and-Greet](/events/events-team/content/sig-contrib-events.md#sig-meet-and-greet)

@@ -1,0 +1,17 @@
+reviewers:
+  - alisondy
+  - guineveresaenger
+  - jberkus
+  - jeefy
+  - tpepper
+
+approvers:
+  - alisondy
+  - guineveresaenger
+  - jberkus
+  - jeefy
+  - tpepper
+
+labels:
+  - area/mentorship-planning
+  - sig/contributor-experience
