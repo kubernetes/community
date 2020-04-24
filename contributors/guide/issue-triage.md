@@ -16,8 +16,7 @@ slug: "issue-triage"
       - [Gubernator](#gubernator)
       - [GitHub Project Boards](#github-project-boards)
       - [DevStats](#devstats)
-   - [Triaging Processes and Advice from SIGs](#triaging-processes-and-advice-from-sigs)
-      - [Quick Best Practices Roundup]()
+   - [Process Pointers and Advice from SIGs](#process-pointers-and-advice-from-sigs)
  - [Step One: Review newly created open issues](#step-one-review-newly-created-open-issues)
    - [Conducting Searches](#conducting-searches)
    - [Other Tools for Triaging]()
@@ -110,10 +109,30 @@ The CNCF has created a [suite of Grafana dashboards and charts](https://k8s.devs
 - [Issue Velocity](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&from=1587157094179&to=1587758294179&refresh=15m&panelId=8&fullscreen): How quickly issues are resolved
 - [PR Velocity](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&from=1587157166022&to=1587758366022&refresh=15m&panelId=9&fullscreen): Including PR workload per SIG, PR time to approve and merge, and other data
 
-## Triaging Processes and Advice from SIGs
-Several SIGs consistently meet weekly or monthly to triage issues. Here are some of their process guides:
-- **api-machinery**: **[NEED TO INCLUDE]**
-- **cluster-lifecycle** has developed a [triaging page](https://github.com/kubernetes/community/blob/72ee7150e13af39acf45cf4ed770a75b2698cdb4/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
+## Process Pointers and Advice from SIGs
+Several SIGs consistently meet weekly or monthly to triage issues. Here are some details about their processes:
+
+### api-machinery: running a triage meeting
+According to SIG Chair Federico Bongiovanni (**[@fedebongio](https://github.com/fedebongio)**), triage meetings offer a great opportunity for newcomers to listen, learn, and start contributing. The SIG holds triage meetings every Tuesday and Thursday and archives meetings via its [Youtube playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R); here is an [example](https://www.youtube.com/watch?v=bRptR9vd4S8&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R&index=2&t=13s). 
+
+Federico says that consistency and a regular, fixed schedule are key to success. The SIG has noted that regular, small meetings are better than infrequent, large meetings.
+
+In a typical meeting, they sort through every issue that wasn't triaged since last meeting, using a simple query and issue # to track Open PRs and Issues. They usually then:
+- read through the comments and the code briefly to understand what the issue is about.
+- determine by consensus if it belongs to the api-machinery SIG or not. If not, remove the `sig/api-machinery` label.
+- label other SIGs, if appropriate
+- discuss briefly the technical implications
+- assign people with expertise in the domain to review, comment, reject, etc.
+
+Some other pointers from Federico:
+- We try to balance the load, and ask people if they are okay taking on an issue before assigning it to them
+- We skip issues that are closed
+- We also skip cherrypicks, because we consider that the code change was reviewed in the original PR
+- We ensure participation from the entire SIG and support company diversity. 
+- We use this opportunity to mark "help needed", "good first issue".
+
+### **cluster-lifecycle's triage guide
+has developed a [triaging page](https://github.com/kubernetes/community/blob/72ee7150e13af39acf45cf4ed770a75b2698cdb4/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
 
 ### Quick Best Practices Roundup [To Do]
 [General process steps like how often to meet, how to staff a triage meeting, etc.]
