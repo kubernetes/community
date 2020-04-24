@@ -8,19 +8,19 @@ slug: "issue-triage"
 
 ## Table of Contents
 - [Scope](#scope.md)
-- [What is triaging?]
-- [Why is it beneficial?]
+- [What is triaging?](#what-is-triaging)
+- [Why is triaging beneficial?](#why-is-triaging-beneficial)
 - [How to Triage: A Step-by-Step Flow]
- - [Step One: Review newly created open issues]
-   - [Conducting Searches]
-   - [Permissions and the Bot]
- - [Step Two: Triage Issues by Type]
-   - [Support requests]
-   - [Duplicates]
-   - [Abandoned or wrongly placed issues]
-   - [Needs more information]
-   - [Unresolved]
-   - [Bugs]
+ - [Step One: Review newly created open issues](#step-one-review-newly-created-open-issues)
+   - [Conducting Searches](#conducting-searches)
+   - [Permissions and the Bot](#permissions-and-the-bot)
+ - [Step Two: Triage Issues by Type](#step-two-triage-issues-by-type)
+   - [Support requests](#support-requests)
+   - [Duplicates](#duplicates)
+   - [Abandoned or wrongly placed issues](#abandoned-or-wrongly-placed-issues)
+   - [Needs more information](#needs-more-information)
+   - [Unresolved](#unresolved)
+   - [Bugs](#bugs)
    - [Help Wanted/Good First Issues]]
  - [Step Three: Define Priority]
  - [Step Four: Find and set the right SIG(s) to own an issue]
@@ -61,7 +61,7 @@ SIGs who triage regularly say it:
 
 People who enjoy product management and iterating on processes tend to enjoy triaging because it empowers their SIGs to maintain a steady, continuous flow of work that is assessed and prioritized based on feedback and value. 
 
-# A Sample Step-by-Step
+# How to Triage: A Step-by-Step Flow
 This aims to walk you through a standard triaging process.
 
 ## Step One: Review newly created open issues
