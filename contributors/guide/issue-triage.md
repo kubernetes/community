@@ -80,9 +80,28 @@ Opening new issues and leaving comments on other people's issues are possible fo
 
 This tool is also a frontend for displaying Kubernetes test results stored in GCS. Please visit [sig-testing's extensive documentation](https://github.com/kubernetes/community/blob/362bc1c406a604dbe6a56e60146a67fcce56d5cf/contributors/devel/sig-testing/gubernator.md) on the benefits it offers, such as simplifying the debugging process by automating many of the steps commonly taken in searching through logs to track down failures, and displaying relevant logs.
 
+### Triage Party
+[Triage Party](https://github.com/google/triage-party) is a tool for triaging incoming GitHub issues for large open-source projects, built with the GitHub API. Made public in April 2020, it facilitates "massively multi-player GitHub triage" and reduces contributor response latency. 
+
+Some of its features:
+- Queries across multiple repositories
+- Queries that are not possible on GitHub:
+   - conversation direction (tag: recv)
+   - duration (updated: +30d)
+   - regexp (label: priority/.*)
+   - reactions (reactions: >=5)
+   - comment popularity (comments-per-month: >0.9)
+- Multi-player mode: for simultaneous group triage of a pool of issues
+- Button to open issue groups as browser tabs (pop-ups must be disabled)
+- "Shift-Reload" for live data pull
+
 ### GitHub Project Boards
 GitHub offers project boards, set up like kanban boards, to help teams organize and track their workflow in order to get work done. The Release Team has come to depend on [their project board](https://github.com/orgs/kubernetes/projects/29) for planning new Kubernetes releases; they also use it as an archiveto show the work Done for past releases. Other SIGs using project boards:
 - [Contributor Experience](https://github.com/orgs/kubernetes/projects/1)
+- [Network](https://github.com/orgs/kubernetes/projects/10)
+- [windows](https://github.com/orgs/kubernetes/projects/8)
+
+We encourage more SIGs to use project boards to enhance visibility and tracking. If you'd like some help getting started, visit [GitHub's documentation](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) or reach out to **#sig-contribex**.
 
 ## Triaging Processes and Advice from SIGs
 Several SIGs consistently meet weekly or monthly to triage issues. Here are some of their process guides:
