@@ -141,8 +141,7 @@ please let us know by leaving a comment. We will evaluate your counter-proposal.
 
 |Priority label|What it means|Examples|
 |---|---|---|
-| **priority/critical-urgent** | Team leaders are responsible for making sure that these issues (in their area) are being actively worked on. Someone is expected to drop what they're doing immediately to work on it. Stuff is burning.| * user-visible bugs in core features <br> broken builds <br> tests and critical
-security issues | 
+| **priority/critical-urgent** | Team leaders are responsible for making sure that these issues (in their area) are being actively worked on. Someone is expected to drop what they're doing immediately to work on it. Stuff is burning.| user-visible bugs in core features <br> broken builds <br> tests and critical security issues | 
 | **priority/important-soon**  | Must be staffed and worked on either currently
 or very soon—ideally in time for the next release. | [**XXXX**] |  
 | **priority/important-longterm** | Important over the long term, but may not be
