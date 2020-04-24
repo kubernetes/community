@@ -10,10 +10,11 @@ slug: "issue-triage"
 - [Scope](#scope.md)
 - [What is triaging?](#what-is-triaging)
 - [Why is triaging beneficial?](#why-is-triaging-beneficial)
-- [How to Triage: A Step-by-Step Flow]
+- [How to Triage: A Step-by-Step Flow](#how-to-triage-a-step-by-step-flow)
  - [Step One: Review newly created open issues](#step-one-review-newly-created-open-issues)
    - [Conducting Searches](#conducting-searches)
    - [Permissions and the Bot](#permissions-and-the-bot)
+   - [Other Tools for Triaging]()
  - [Step Two: Triage Issues by Type](#step-two-triage-issues-by-type)
    - [Support requests](#support-requests)
    - [Duplicates](#duplicates)
@@ -82,8 +83,25 @@ GitHub allows you to filter out types of issues and pull requests, which helps y
 
 We suggest preparing your triage by filtering out the oldest, unlabelled issues and/or pull requests first.
 
+### Triage-Related Tools
+Here are some tools that your SIG can use to make the process simpler, more efficient and faster.
+
 ### Permissions and the Bot
 Opening new issues and leaving comments on other people's issues are possible for all contributors. However, permission to assign specific labels (e.g. `triaged`), change milestones, or close other contributors' issues is only granted to the author of an issue, assignees, and component organization members. For this reason, we use a bot to manage labelling and triaging. The bot has a set of [commands and permissions](https://go.k8s.io/bot-commands).  
+
+### Gubernator
+[Gubernator](https://gubernator.k8s.io/pr) offers a dashboard that tells you which pull requests are waiting for your feedback and which PRs are waiting for the contributor to respond. 
+
+This tool is also a frontend for displaying Kubernetes test results stored in GCS. Please visit [sig-testing's extensive documentation](https://github.com/kubernetes/community/blob/362bc1c406a604dbe6a56e60146a67fcce56d5cf/contributors/devel/sig-testing/gubernator.md) on the benefits it offers, such as simplifying the debugging process by automating many of the steps commonly taken in searching through logs to track down failures, and displaying relevant logs.
+
+### GitHub Project Boards
+GitHub offers project boards, set up like kanban boards, to help teams organize and track their workflow in order to get work done. The Release Team has come to depend on [their project board](https://github.com/orgs/kubernetes/projects/29) for planning new Kubernetes releases; they also use it as an archiveto show the work Done for past releases. Other SIGs using project boards:
+- [Contributor Experience](https://github.com/orgs/kubernetes/projects/1)
+
+### SIG Guides to Triaging 
+Several SIGs consistently meet weekly or monthly to triage issues. Here are some of their process guides:
+- [api-machinery]
+- **cluster-lifecycle** has developed a [triaging page](https://github.com/kubernetes/community/blob/72ee7150e13af39acf45cf4ed770a75b2698cdb4/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
 
 ## Step Two: Triage Issues by Type
 Use [these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%93&q=triage%2F+kind%2Fsupport+is%3Aopen) to find open issues that can be quickly closed. A triage engineer can add the appropriate labels.
@@ -91,7 +109,7 @@ Use [these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%9
 Depending on your permissions, either close or comment on any issues that are identified as support requests, duplicates, or not-reproducible bugs, or that lack enough information from the reporter.
  
 ### Support requests
-Some people mistakenly use GitHub issues to file support requests— usually asking for help configuring some aspect of Kubernetes.
+Some people mistakenly use GitHub issues to file support requests—usually asking for help configuring some aspect of Kubernetes.
 * First, apply the `triage/support` label, which is directed to our support structures (see below) 
 * Then, close or comment
 
