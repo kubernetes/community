@@ -17,6 +17,8 @@ slug: "issue-triage"
       - [GitHub Project Boards](#github-project-boards)
       - [DevStats](#devstats)
    - [Process Pointers and Advice from SIGs](#process-pointers-and-advice-from-sigs)
+      - [Running a triage meeting: Tips from api-machinery]()
+      - [Triage guide, by cluster-lifecycle]()
  - [Step One: Review newly created open issues](#step-one-review-newly-created-open-issues)
    - [Conducting Searches](#conducting-searches)
    - [Other Tools for Triaging]()
@@ -112,7 +114,7 @@ The CNCF has created a [suite of Grafana dashboards and charts](https://k8s.devs
 ## Process Pointers and Advice from SIGs
 Several SIGs consistently meet weekly or monthly to triage issues. Here are some details about their processes:
 
-### api-machinery: running a triage meeting
+### Running a triage meeting: Tips from api-machinery
 According to SIG Chair Federico Bongiovanni (**[@fedebongio](https://github.com/fedebongio)**), triage meetings offer a great opportunity for newcomers to listen, learn, and start contributing. The SIG holds triage meetings every Tuesday and Thursday and archives meetings via its [Youtube playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R); here is an [example](https://www.youtube.com/watch?v=bRptR9vd4S8&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R&index=2&t=13s). 
 
 Federico says that consistency and a regular, fixed schedule are key to success. The SIG has noted that regular, small meetings are better than infrequent, large meetings.
@@ -131,11 +133,8 @@ Some other pointers from Federico:
 - We ensure participation from the entire SIG and support company diversity. 
 - We use this opportunity to mark "help needed", "good first issue".
 
-### **cluster-lifecycle's triage guide
+### Triage guide, by cluster-lifecycle
 has developed a [triaging page](https://github.com/kubernetes/community/blob/72ee7150e13af39acf45cf4ed770a75b2698cdb4/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
-
-### Quick Best Practices Roundup [To Do]
-[General process steps like how often to meet, how to staff a triage meeting, etc.]
 
 ## Step One: Review newly created open issues
 Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). New, untriaged issues come without labels attached. SIG leads should identify at least one SIG member to serve as a first point of contact for new issues.
