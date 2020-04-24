@@ -7,7 +7,7 @@ slug: "issue-triage"
 # Issue Triage: A Primer
 
 ## Table of Contents
-- [Scope]
+- [Scope](#scope.md)
 - [What is triaging?]
 - [Why is it beneficial?]
 - [How to Triage: A Step-by-Step Flow]
