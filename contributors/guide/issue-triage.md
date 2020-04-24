@@ -30,7 +30,7 @@ slug: "issue-triage"
  - [Step Three: Define Priority](#step-three-define-priority)
  - [Step Four: Find and set the right SIG(s) to own an issue](#step-four-find-and-set-the-right-sigs-to-own-an-issue)
    - [Self-assigning](#self-assigning)
- - [Step Five: Follow Up]  
+ - [Step Five: Follow Up](#step-five-follow-up)
    - [If no PR is created for an issue within 30 days](#if-no-pr-is-created-for-an-issue-within-30-days)
    - [If a SIG label is assigned, but no action is taken within 30 days](#if-a-sig-label-is-assigned-but-no-action-is-taken-within-30-days)
    - [If an issue has no activity after 90 days](#if-an-issue-has-no-activity-after-90-days)
