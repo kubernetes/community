@@ -16,6 +16,7 @@ slug: "issue-triage"
       - [Gubernator](#gubernator)
       - [GitHub Project Boards](#github-project-boards)
    - [Triaging Processes and Advice from SIGs](#triaging-processes-and-advice-from-sigs)
+      - [Quick Best Practices Roundup]()
  - [Step One: Review newly created open issues](#step-one-review-newly-created-open-issues)
    - [Conducting Searches](#conducting-searches)
    - [Other Tools for Triaging]()
@@ -107,6 +108,9 @@ We encourage more SIGs to use project boards to enhance visibility and tracking.
 Several SIGs consistently meet weekly or monthly to triage issues. Here are some of their process guides:
 - **api-machinery**: **[NEED TO INCLUDE]**
 - **cluster-lifecycle** has developed a [triaging page](https://github.com/kubernetes/community/blob/72ee7150e13af39acf45cf4ed770a75b2698cdb4/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
+
+### Quick Best Practices Roundup [To Do]
+[General process steps like how often to meet, how to staff a triage meeting, etc.]
 
 ## Step One: Review newly created open issues
 Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). New, untriaged issues come without labels attached. SIG leads should identify at least one SIG member to serve as a first point of contact for new issues.
