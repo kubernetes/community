@@ -26,8 +26,8 @@ slug: "issue-triage"
  - [Step Four: Find and set the right SIG(s) to own an issue]
    - [Self-assigning]
  - [Step Five: Follow Up]  
-   - [Poke issue owner if PR is not created for it in 30 days]
-   - [Poke SIG if a SIG label is assigned but no comment was added by SIG in 30 days]
+   - [If no PR is created for an issue within 30 days]
+   - [If a SIG label is assigned, but no action is taken within 30 days]
  - [Footnotes]
    - [Support Requests: Channels]
    - [User support response: example]
@@ -64,7 +64,7 @@ People who enjoy product management and iterating on processes tend to enjoy tri
 This aims to walk you through a standard triaging process.
 
 ## Step One: Review newly created open issues
-Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). New, untriaged issues come without labels attached. 
+Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). New, untriaged issues come without labels attached. SIG leads should identify at least one SIG member to serve as a first point of contact for new issues.
 
 Labels are the primary tools for triaging. [Here's a comprehensive label list](https://github.com/kubernetes/kubernetes/labels).
 
@@ -123,7 +123,7 @@ If you can't reproduce it:
 If you need more information to further work on the issue:
 * let the reporter know it by adding an issue comment followed by label `triage/needs-information`.
 
-In all cases, if you do not get a response in 20 days then close the issue with an appropriate comment. If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, just comment your findings. 
+In all cases, if you do not get a response in 20 days then close the issue with an appropriate comment. If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, just comment your findings.
 
 ### Help Wanted/Good First Issues
 To identify issues that are specifically groomed for new contributors, we use the [help wanted](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
@@ -134,16 +134,13 @@ and the `good first issue` label with the `/good-first-issue` command. Please no
 * If an issue has these labels but does not satisfy the guidelines, please ask for more details to be added to the issue or remove the labels using the `/remove-help` or `/remove-good-first-issue` commands.
 
 ## Define priority
-We use GitHub labels for prioritization. The absence of a `priority` label
-means the issue has not been reviewed and prioritized yet. We aim for consistency across the entire project,
-but if you notice an issue that you believe to be incorrectly prioritized,
-please let us know by leaving a comment. We will evaluate your counter-proposal.
+We use GitHub labels for prioritization. If an issue lacks a `priority` label, this means it has not been reviewed and prioritized yet. We aim for consistency across the entire project. However, if you notice an issue that you believe to be incorrectly prioritized, please leave a comment offering your counter-proposal and we will evaluate it.
 
 |Priority label|What it means|Examples|
 |---|---|---|
-| **priority/critical-urgent** | Team leaders are responsible for making sure that these issues (in their area) are being actively worked on. Someone is expected to drop what they're doing immediately to work on it. Stuff is burning.| user-visible bugs in core features <br> broken builds <br> tests and critical security issues | 
-| **priority/important-soon**  | Must be staffed and worked on either currently or very soon—ideally in time for the next release. | [**XXXX**] |  
-| **priority/important-longterm** | Important over the long term, but may not be currently staffed and/or may require multiple releases to complete. | [**XXXX**] |  
+| **priority/critical-urgent** | Team leaders are responsible for making sure that these issues (in their area) are being actively worked on—i.e., drop what you're doing. Stuff is burning. These should be fixed before the next release. | user-visible bugs in core features <br> broken builds <br> tests and critical security issues | 
+| **priority/important-soon** | Must be staffed and worked on either currently or very soon—ideally in time for the next release. Important, but wouldn't block a release. | [**XXXX**] |  
+| **priority/important-longterm** | Important over the long term, but may not be currently staffed and/or may require multiple releases to complete. Wouldn't block a release. | [**XXXX**]|  
 | **priority/backlog**  | General agreement that this is a nice-to-have, but no one's available to work on it anytime soon. Community contributions would be most welcome in the meantime, though it might take a while to get them reviewed if reviewers are fully occupied with higher-priority issues—for example, immediately before a release.| [**XXXX**]  | 
 | **priority/awaiting-more-evidence** | Possibly useful, but not yet enough support to actually get it done. | Mostly placeholders for potentially good ideas, so that they don't get completely forgotten, and can be referenced or deduped every time they come up | 
 
@@ -160,20 +157,16 @@ comment.
 ### Self-assigning
 If you are an issue reporter or a component organization member, and you think you can fix the issue, assign it to yourself with *just* the `/assign` label. If you cannot self-assign for permissions-related reasons, leave a comment that you'd like to claim it and work on creating a PR.
 
-### If a PR is not created for an issue within 30 days
+### If no PR is created for an issue within 30 days
 A Triage engineer should contact the owner and ask them to either create a PR or release ownership.
 
-### If a SIG label is assigned but no comment is added within 30 days
-Ideally, a SIG lead will identify at least one SIG member to serve as a first point
-of contact for new issues. If an issue has a SIG label assigned, and no
-action is taken by SIG in 30 days (e.g. no discussion initiative, no comment added), then gently poke the SIG about this pending issue. Also, consider attending one of their meetings to bring up the issue, if you feel this is appropriate.
+### If a SIG label is assigned, but no action is taken within 30 days
+If you find an issue with a SIG label assigned, but there's no evidence of movement or discussion within 30 days, then gently poke the SIG about this pending issue. Also, consider attending one of their meetings to bring up the issue, if you feel this is appropriate.
 
 ## Milestones
-We additionally use milestones, based on minor version, for determining if a bug
-should be fixed for the next release. These milestones will be especially
-scrutinized as we get to the weeks just before a release. We can release a new
-version of Kubernetes once they are empty. We will have two milestones per minor
-release.
+
+We use milestones, based on minor version, for determining if a bug should be fixed as part of the next Kubernetes release. These milestones are increasingly scrutinized in the weeks just before a release. We can release a new
+version of Kubernetes once they are empty. We will have two milestones per minor release.
 
 - **vX.Y**: The list of bugs that will be merged for that milestone once ready.
 
@@ -182,11 +175,9 @@ bug shouldn't be in this milestone for more than a day or two towards the end of
 a milestone. It should be triaged either into vX.Y, or moved out of the release
 milestones.
 
-The above [priority](#define-priority) scheme still applies. The
-`priority/critical-urgent` issues are work we feel must get done before
-release.  The `priority/important-soon` and `priority/important-longterm`
-issues are work we would merge into the release if it gets done, but we wouldn't
-block the release on it. A few days before release, we will probably move all
+The above [priority](#define-priority) scheme still applies. 
+
+A few days before release, we will probably move all
 `priority/important-soon` and `priority/important-longterm` bugs out of
 that milestone in bulk.
 
