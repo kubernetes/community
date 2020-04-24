@@ -16,7 +16,9 @@ Enable API authors to better serve API consumers, by improving and documenting a
 * SIG Architecture
 
 ## Meetings
-* Regular WG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://calendar.google.com/calendar/embed?src=seibert-media.net_s7j7r6giqmr2l6g8ev5idh3ij8%40group.calendar.google.com&ctz=Europe%2FBerlin) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/j/94238112084) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1CSpNaicbEqKJoW306qaQEBIkwC1mGIcKl3yiB_C0HZk).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0CU9g6-yb1NgZXGAhMxfFE&jct=9Leh8O_yrRTB0Kcv3rMKZHncZq8POg).
 
 ## Organizers
 
