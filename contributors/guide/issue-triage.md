@@ -15,6 +15,7 @@ slug: "issue-triage"
       - [Permissions and the Bot](#permissions-and-the-bot)
       - [Gubernator](#gubernator)
       - [GitHub Project Boards](#github-project-boards)
+      - [DevStats](#devstats)
    - [Triaging Processes and Advice from SIGs](#triaging-processes-and-advice-from-sigs)
       - [Quick Best Practices Roundup]()
  - [Step One: Review newly created open issues](#step-one-review-newly-created-open-issues)
@@ -103,6 +104,11 @@ GitHub offers project boards, set up like kanban boards, to help teams organize 
 - [windows](https://github.com/orgs/kubernetes/projects/8)
 
 We encourage more SIGs to use project boards to enhance visibility and tracking. If you'd like some help getting started, visit [GitHub's documentation](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) or reach out to **#sig-contribex**.
+
+### DevStats
+The CNCF has created a [suite of Grafana dashboards and charts](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&from=now-7d&to=now-1h&refresh=15m) for collecting metrics about Kubernetes. These help SIGs to view real-time metrics on many aspects of their workflow, including:
+- [Issue Velocity](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&from=1587157094179&to=1587758294179&refresh=15m&panelId=8&fullscreen): How quickly issues are resolved
+- [PR Velocity](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&from=1587157166022&to=1587758366022&refresh=15m&panelId=9&fullscreen): Including PR workload per SIG, PR time to approve and merge, and other data
 
 ## Triaging Processes and Advice from SIGs
 Several SIGs consistently meet weekly or monthly to triage issues. Here are some of their process guides:
