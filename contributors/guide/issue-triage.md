@@ -28,6 +28,7 @@ slug: "issue-triage"
  - [Step Five: Follow Up]  
    - [If no PR is created for an issue within 30 days]
    - [If a SIG label is assigned, but no action is taken within 30 days]
+ - [Planning Milestones]
  - [Footnotes]
    - [Support Requests: Channels]
    - [User support response: example]
@@ -165,22 +166,16 @@ A Triage engineer should contact the owner and ask them to either create a PR or
 ### If a SIG label is assigned, but no action is taken within 30 days
 If you find an issue with a SIG label assigned, but there's no evidence of movement or discussion within 30 days, then gently poke the SIG about this pending issue. Also, consider attending one of their meetings to bring up the issue, if you feel this is appropriate.
 
-## Planning a Milestone
-[Adapted from the cluster-lifecycle SIG's documentation for their [triaging process]((https://github.com/kubernetes/community/blob/72ee7150e13af39acf45cf4ed770a75b2698cdb4/sig-cluster-lifecycle/grooming.md).]
-We use milestones, based on minor version, for determining if a bug should be fixed as part of the next Kubernetes release. These milestones are increasingly scrutinized in the weeks just before a release. We can release a new
-version of Kubernetes once milestones are empty. We will have two milestones per minor release.
+## Planning Milestones
+[Please go here](https://github.com/LappleApple/community/blob/master/contributors/devel/sig-release/release.md) for extensive details on how to create a feature, issue, or pull request that targets a specific release milestone. We use milestones, based on minor version, for determining if a bug should be fixed as part of the next Kubernetes release. Every minor release has two milestones, and they are increasingly scrutinized in the weeks just before a release. When our milestones are empty, we can release a new version of Kubernetes.
 
+### Some pointers about bugs
 - **vX.Y**: The list of bugs that will be merged for that milestone once ready.
-
 - **vX.Y-candidate**: The list of bugs that we might merge for that milestone. A
-bug shouldn't be in this milestone for more than a day or two towards the end of
-a milestone. It should be triaged either into vX.Y, or moved out of the release
-milestones.
+bug shouldn't be in this milestone for more than a day or two towards the end of the milestone's lifespan. It should either be triaged either into vX.Y, or moved out of the release milestones.
+- The above [priority](#define-priority) scheme still applies. 
 
-The above [priority](#define-priority) scheme still applies. 
-
-A few days before release, we will probably move all
-`priority/important-soon` and `priority/important-longterm` bugs out of
+A few days before release, we will probably move all `priority/important-soon` and `priority/important-longterm` bugs out of
 that milestone in bulk.
 
 More information can be found in the developer guide section for
