@@ -166,29 +166,21 @@ A Triage engineer should contact the owner and ask them to either create a PR or
 ### If a SIG label is assigned, but no action is taken within 30 days
 If you find an issue with a SIG label assigned, but there's no evidence of movement or discussion within 30 days, then gently poke the SIG about this pending issue. Also, consider attending one of their meetings to bring up the issue, if you feel this is appropriate.
 
+### If an issue has no activity after 90 days
+When this happens, the `fejta-bot` adds the `lifecycle/stale` label to that issue. You can block the bot by applying the `/lifecycle frozen` label preemptively, or remove the bale with the `/remove-lifecycle stale` label. The `fejta-bot` adds comments in the issue that include additional details. If you take neither step, the issue will eventually be auto-closed. 
+
+To gain a better understanding of an issue triaged by the `fejta-bot`, so that you can close it, you can add any of the `triage/*` labels described above.
+
 ## Planning Milestones
-[Please go here](https://github.com/LappleApple/community/blob/master/contributors/devel/sig-release/release.md) for extensive details on how to create a feature, issue, or pull request that targets a specific release milestone. We use milestones, based on minor version, for determining if a bug should be fixed as part of the next Kubernetes release. Every minor release has two milestones, and they are increasingly scrutinized in the weeks just before a release. When our milestones are empty, we can release a new version of Kubernetes.
+Please visit the developer guide section for detailed information on [targeting features, issues and PRs to release milestones](https://github.com/LappleApple/community/blob/master/contributors/devel/sig-release/release.md). We use milestones, based on minor version, for determining if a bug should be fixed as part of the next Kubernetes release. Every minor release has two milestones, and they are increasingly scrutinized in the weeks just before a release. When our milestones are empty, we can release a new version of Kubernetes.
 
 ### Some pointers about bugs
 - **vX.Y**: The list of bugs that will be merged for that milestone once ready.
 - **vX.Y-candidate**: The list of bugs that we might merge for that milestone. A
 bug shouldn't be in this milestone for more than a day or two towards the end of the milestone's lifespan. It should either be triaged either into vX.Y, or moved out of the release milestones.
 - The above [priority](#define-priority) scheme still applies. 
-
-A few days before release, we will probably move all `priority/important-soon` and `priority/important-longterm` bugs out of
+- A few days before release, we will probably move all `priority/important-soon` and `priority/important-longterm` bugs out of
 that milestone in bulk.
-
-More information can be found in the developer guide section for
-[targeting issues and PRs to a milestone release](/contributors/devel/sig-release/release.md).
-
-## Closing issues
-Also note that, `fejta-bot` will add `lifecycle/stale` label to issues with no
-activity for 90 days. Such issues will be eventually auto closed if the label is
-not removed with the `/remove-lifecycle stale` label or prevented with the
-`/lifecycle frozen` label. Refer to the `fejta-bot` added comments in the issue
-for more details. It is fine to add any of the `triage/*` labels described in
-this issue triage guidelines to issues triaged by the `fejta-bot` for a better
-understanding of the issue and closing of it.
 
 ## Footnotes 
 ### Support requests
