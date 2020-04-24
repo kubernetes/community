@@ -112,7 +112,7 @@ Depending on your permissions, either close or comment on it.
 First, validate if the problem is a bug by trying to reproduce it.
 
 If you can reproduce it:
-* Define its priority
+* [Define its priority](define-priority)
 * Do a quick duplicate search to see if the issue has been reported already. If a duplicate is found, let the issue reporter know it by marking it duplicate. Label such issues as `triage/duplicate`.
 
 If you can't reproduce it:
@@ -134,7 +134,9 @@ and the `good first issue` label with the `/good-first-issue` command. Please no
 * If an issue has these labels but does not satisfy the guidelines, please ask for more details to be added to the issue or remove the labels using the `/remove-help` or `/remove-good-first-issue` commands.
 
 ## Define priority
-We use GitHub labels for prioritization. If an issue lacks a `priority` label, this means it has not been reviewed and prioritized yet. We aim for consistency across the entire project. However, if you notice an issue that you believe to be incorrectly prioritized, please leave a comment offering your counter-proposal and we will evaluate it.
+We use GitHub labels for prioritization. If an issue lacks a `priority` label, this means it has not been reviewed and prioritized yet. 
+
+We aim for consistency across the entire project. However, if you notice an issue that you believe to be incorrectly prioritized, please leave a comment offering your counter-proposal and we will evaluate it.
 
 |Priority label|What it means|Examples|
 |---|---|---|
@@ -149,10 +151,10 @@ Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [Th
 
 * For example, typing `/sig network` in a comment should add the sig/network label.
 * Multiword SIGs use dashes: for example, `/sig cluster-lifecycle`.
-* Keep in mind that these commands must be on their own lines, and at the front of the
-comment.
+* Keep in mind that these commands must be on their own lines, and at the front of the comment.
 * If you are not sure about who should own an issue, defer to the SIG label only. 
-* If you feel an issue should warrant a notification, ping a team with an @ mention, in this format: `@kubernetes/sig-<group-name>-<group-suffix>`. Here, the `<group-suffix>` can be one of `bugs, feature-requests, pr-reviews, test-failures, proposals`. For example, `@kubernetes/sig-cluster-lifecycle-bugs, can you have a look at this?`
+* If you feel an issue should warrant a notification, ping a team with an @ mention, in this format: `@kubernetes/sig-<group-name>-<group-suffix>`. 
+ - Here, the `<group-suffix>` can be one of `bugs, feature-requests, pr-reviews, test-failures, proposals`. For example, `@kubernetes/sig-cluster-lifecycle-bugs, can you have a look at this?`
 
 ### Self-assigning
 If you are an issue reporter or a component organization member, and you think you can fix the issue, assign it to yourself with *just* the `/assign` label. If you cannot self-assign for permissions-related reasons, leave a comment that you'd like to claim it and work on creating a PR.
@@ -163,10 +165,10 @@ A Triage engineer should contact the owner and ask them to either create a PR or
 ### If a SIG label is assigned, but no action is taken within 30 days
 If you find an issue with a SIG label assigned, but there's no evidence of movement or discussion within 30 days, then gently poke the SIG about this pending issue. Also, consider attending one of their meetings to bring up the issue, if you feel this is appropriate.
 
-## Milestones
-
+## Planning a Milestone
+[Adapted from the cluster-lifecycle SIG's documentation for their [triaging process]((https://github.com/kubernetes/community/blob/72ee7150e13af39acf45cf4ed770a75b2698cdb4/sig-cluster-lifecycle/grooming.md).]
 We use milestones, based on minor version, for determining if a bug should be fixed as part of the next Kubernetes release. These milestones are increasingly scrutinized in the weeks just before a release. We can release a new
-version of Kubernetes once they are empty. We will have two milestones per minor release.
+version of Kubernetes once milestones are empty. We will have two milestones per minor release.
 
 - **vX.Y**: The list of bugs that will be merged for that milestone once ready.
 
