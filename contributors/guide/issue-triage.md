@@ -131,7 +131,7 @@ Some other pointers from Federico:
 - We skip issues that are closed
 - We also skip cherrypicks, because we consider that the code change was reviewed in the original PR
 - We ensure participation from the entire SIG and support company diversity. 
-- We use this opportunity to mark "help needed", "good first issue".
+- We use this opportunity to mark ["help needed", "good first issue"](#help-wantedgood-first-issues).
 
 ### Triage guide, by cluster-lifecycle
 has developed a [triaging page](https://github.com/kubernetes/community/blob/72ee7150e13af39acf45cf4ed770a75b2698cdb4/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
