@@ -139,19 +139,16 @@ means the issue has not been reviewed and prioritized yet. We aim for consistenc
 but if you notice an issue that you believe to be incorrectly prioritized,
 please let us know by leaving a comment. We will evaluate your counter-proposal.
 
-|  Priority label | What it means  | Examples |
+|Priority label|What it means|Examples|
 |---|---|---|
-| **priority/critical-urgent**  | Team leaders are responsible for making sure that these issues (in their area) are being actively worked on. Someone is expected to drop what they're doing immediately to work on it. Stuff is burning. | * user-visible bugs in core features * broken builds * tests and critical
+| **priority/critical-urgent** | Team leaders are responsible for making sure that these issues (in their area) are being actively worked on. Someone is expected to drop what they're doing immediately to work on it. Stuff is burning.| * user-visible bugs in core features <br> broken builds <br> tests and critical
 security issues | 
-| **priority/important-soon**  | Must be staffed and worked on either currently,
-or very soon, ideally in time for the next release. | [**XXXX**] |  
-| **priority/important-longterm**  | Important over the long term, but may not be
+| **priority/important-soon**  | Must be staffed and worked on either currently
+or very soon—ideally in time for the next release. | [**XXXX**] |  
+| **priority/important-longterm** | Important over the long term, but may not be
 currently staffed and/or may require multiple releases to complete. | [**XXXX**] |  
 | **priority/backlog**  | General agreement that this is a nice-to-have, but no one's available to work on it anytime soon. Community contributions would be most welcome in the meantime, though it might take a while to get them reviewed if reviewers are fully occupied with higher-priority issues—for example, immediately before a release.| [**XXXX**]  | 
-| **priority/awaiting-more-evidence**  | Possibly useful, but not yet enough
-support to actually get it done. | * mostly placeholders for potentially
-good ideas, so that they don't get completely forgotten, and can be referenced
-/deduped every time they come up | 
+| **priority/awaiting-more-evidence** | Possibly useful, but not yet enough support to actually get it done. | mostly placeholders for potentially good ideas, so that they don't get completely forgotten, and can be referenced or deduped every time they come up | 
 
 ## Step Four: Find and set the right SIG(s) to own an issue 
 Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [The bot](https://go.k8s.io/bot-commands) assists in finding a proper SIG to own an issue.
