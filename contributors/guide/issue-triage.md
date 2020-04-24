@@ -21,22 +21,22 @@ slug: "issue-triage"
    - [Needs more information](#needs-more-information)
    - [Unresolved](#unresolved)
    - [Bugs](#bugs)
-   - [Help Wanted/Good First Issues]]
- - [Step Three: Define Priority]
- - [Step Four: Find and set the right SIG(s) to own an issue]
-   - [Self-assigning]
+   - [Help Wanted/Good First Issues](#help-wantedgood-first-issues)
+ - [Step Three: Define Priority](#step-three-define-priority)
+ - [Step Four: Find and set the right SIG(s) to own an issue](#step-four-find-and-set-the-right-sigs-to-own-an-issue)
+   - [Self-assigning](#self-assigning)
  - [Step Five: Follow Up]  
-   - [If no PR is created for an issue within 30 days]
-   - [If a SIG label is assigned, but no action is taken within 30 days]
- - [Planning Milestones]
- - [Footnotes]
-   - [Support Requests: Channels]
-   - [User support response: example]
+   - [If no PR is created for an issue within 30 days](#if-no-pr-is-created-for-an-issue-within-30-days)
+   - [If a SIG label is assigned, but no action is taken within 30 days](#if-a-sig-label-is-assigned-but-no-action-is-taken-within-30-days)
+   - [If an issue has no activity after 90 days](#if-an-issue-has-no-activity-after-90-days)
+ - [Planning Milestones](#planning-milestones)
+  - [Some pointers about bugs](#some-pointers-about-bugs)
+ - [Footnotes](#footnotes)
+   - [Support Requests: Channels](#support-requests-1)
+   - [User support response: example](#user-support-response-example)
  
- 
- - [Four: Plan milestones]
- - [Five: Close out issues]
-  - [Set the `kind` issue to validate type (feature, documentation, bug, etc.)]
+
+- [Set the `kind` issue to validate type (feature, documentation, bug, etc.)]
   
 ## Scope
 These guidelines serve as a primary document for triaging incoming issues to Kubernetes. SIGs and projects are encouraged to use this guidance as a starting point, and customize to address specific triaging needs.
@@ -134,7 +134,7 @@ and [good first issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aop
 and the `good first issue` label with the `/good-first-issue` command. Please note that adding the `good first issue` label will also automatically add the `help wanted` label.
 * If an issue has these labels but does not satisfy the guidelines, please ask for more details to be added to the issue or remove the labels using the `/remove-help` or `/remove-good-first-issue` commands.
 
-## Define priority
+## Step Three: Define priority
 We use GitHub labels for prioritization. If an issue lacks a `priority` label, this means it has not been reviewed and prioritized yet. 
 
 We aim for consistency across the entire project. However, if you notice an issue that you believe to be incorrectly prioritized, please leave a comment offering your counter-proposal and we will evaluate it.
@@ -160,6 +160,7 @@ Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [Th
 ### Self-assigning
 If you are an issue reporter or a component organization member, and you think you can fix the issue, assign it to yourself with *just* the `/assign` label. If you cannot self-assign for permissions-related reasons, leave a comment that you'd like to claim it and work on creating a PR.
 
+## Step Five: Follow Up
 ### If no PR is created for an issue within 30 days
 A Triage engineer should contact the owner and ask them to either create a PR or release ownership.
 
