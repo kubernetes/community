@@ -14,7 +14,7 @@ slug: "issue-triage"
 - [Triage-Related Tools](#triage-related-tools)
    - [Permissions and the Bot](#permissions-and-the-bot)
    - [GUbernator](#gubernator)
-   - [GitHub Project Boards)(#github-project-boards)
+   - [GitHub Project Boards](#github-project-boards)
  - [Triaging Processes and Advice from SIGs](#triaging-processes-and-advice-from-sigs)
  - [Step One: Review newly created open issues](#step-one-review-newly-created-open-issues)
    - [Conducting Searches](#conducting-searches)
