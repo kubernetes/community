@@ -6,13 +6,13 @@ The Contributor Marketing Team is part of the community-management subproject in
 to better inform the Kubernetes contributor community and highlight their work to
 the broader ecosystem
 
-| Area | Handbook | Lead | Team | Notes |
-| --- | --- | --- | --- | --- |
-| Editorial | TODO | editor: @parispittman (to bootstrap)| assoc editor: @mbbroberg |  |
-| Internal Communications | TODO | @jonasrosland | @simplytunde |  |
-| Social Media | TODO | @chris-short | [Could be you!] (paris to help bootstrap) | |
-| Storytellers | TODO | liaison to sig-docs-blog team @onlydole |  @celanthe, @vonguard, @boluisa, [Could be you!] |  |
-| Designer | TODO | [Could be you!] |  | help us with digital assets, infographics, contributor site |  
+| Area & Handbook Link | Lead | Team | Notes |
+| --- | --- | --- | --- |
+| [Editorial] | editor: @parispittman (to bootstrap)| assoc editor: @mbbroberg |  |
+| [Internal Communications] | @jonasrosland | @simplytunde |  |
+| [Social Media] | @chris-short | @kaslin (paris to help bootstrap) | |
+| [Storytellers] | liaison to sig-docs-blog team @onlydole |  @celanthe, @vonguard, @boluisa, @kaslin, and [Could be you!] |  |
+| [Designer] | [Could be you!] |  | help us with digital assets, infographics, contributor site |  
 
 
 ## Contact Us!
@@ -39,3 +39,8 @@ Let us know you are interested and if you have any questions.
 [charter]: ./CHARTER.md
 [Could be you!]: (#Could-be-you!)
 [Contributor Experience]: /sig-contributor-experience
+[Editorial]: /role-handbooks/editor.md
+[Internal Communications]: /role-handbooks/internal-marketing.md
+[Social Media]: /role-handbooks/social-media.md
+[Storytellers]: /role-handbooks/storytellers.md
+[Designer]: /role-handboos/wip-roles.md
