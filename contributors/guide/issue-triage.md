@@ -40,7 +40,7 @@ slug: "issue-triage"
    - [Support Requests: Channels](#support-requests-1)
    - [User support response: example](#user-support-response-example)
  
-
+**SHOULD THIS BE INCLUDED?**
 - [Set the `kind` issue to validate type (feature, documentation, bug, etc.)]
   
 ## Scope
@@ -105,7 +105,7 @@ We encourage more SIGs to use project boards to enhance visibility and tracking.
 
 ## Triaging Processes and Advice from SIGs
 Several SIGs consistently meet weekly or monthly to triage issues. Here are some of their process guides:
-- **api-machinery**: 
+- **api-machinery**: **[NEED TO INCLUDE]**
 - **cluster-lifecycle** has developed a [triaging page](https://github.com/kubernetes/community/blob/72ee7150e13af39acf45cf4ed770a75b2698cdb4/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
 
 ## Step One: Review newly created open issues
