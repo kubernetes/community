@@ -8,8 +8,8 @@ slug: "issue-triage"
 
 ## Table of Contents
 - [Scope](#scope.md)
-- [What is triaging?](#what-is-triaging)
-- [Why is triaging beneficial?](#why-is-triaging-beneficial)
+- [What is Triaging?](#what-is-triaging)
+- [Why Is Triaging Beneficial?](#why-is-triaging-beneficial)
 - [How to Triage: A Step-by-Step Flow](#how-to-triage-a-step-by-step-flow)
    - [Triage-Related Tools](#triage-related-tools)
       - [Permissions and the Bot](#permissions-and-the-bot)
@@ -17,31 +17,30 @@ slug: "issue-triage"
       - [GitHub Project Boards](#github-project-boards)
       - [DevStats](#devstats)
    - [Process Pointers and Advice from SIGs](#process-pointers-and-advice-from-sigs)
-      - [Running a triage meeting: Tips from api-machinery](#running-a-triage-meeting-tips-from-api-machinery)
-      - [Triage guide, by cluster-lifecycle](#triage-guide-by-cluster-lifecycle)
- - [Step One: Review newly created open issues](#step-one-review-newly-created-open-issues)
+      - [Running a Triage Meeting: Tips from api-machinery](#running-a-triage-meeting-tips-from-api-machinery)
+      - [Triage Guide by cluster-lifecycle](#triage-guide-by-cluster-lifecycle)
+ - [Step One: Review Newly Created Open Issues](#step-one-review-newly-created-open-issues)
    - [Conducting Searches](#conducting-searches)
-   - [Other Tools for Triaging]()
  - [Step Two: Triage Issues by Type](#step-two-triage-issues-by-type)
-   - [Support requests](#support-requests)
+   - [Support Requests](#support-requests)
    - [Duplicates](#duplicates)
-   - [Abandoned or wrongly placed issues](#abandoned-or-wrongly-placed-issues)
-   - [Needs more information](#needs-more-information)
+   - [Abandoned or Wrongly Placed Issues](#abandoned-or-wrongly-placed-issues)
+   - [Needs More Information](#needs-more-information)
    - [Unresolved](#unresolved)
    - [Bugs](#bugs)
    - [Help Wanted/Good First Issues](#help-wantedgood-first-issues)
  - [Step Three: Define Priority](#step-three-define-priority)
- - [Step Four: Find and set the right SIG(s) to own an issue](#step-four-find-and-set-the-right-sigs-to-own-an-issue)
-   - [Self-assigning](#self-assigning)
+ - [Step Four: Find and Set the Right SIG(s) to Own an Issue](#step-four-find-and-set-the-right-sigs-to-own-an-issue)
+   - [Self-Assigning](#self-assigning)
  - [Step Five: Follow Up](#step-five-follow-up)
-   - [If no PR is created for an issue within 30 days](#if-no-pr-is-created-for-an-issue-within-30-days)
-   - [If a SIG label is assigned, but no action is taken within 30 days](#if-a-sig-label-is-assigned-but-no-action-is-taken-within-30-days)
-   - [If an issue has no activity after 90 days](#if-an-issue-has-no-activity-after-90-days)
+   - [If No PR Is Created for an Issue Within 30 Days](#if-no-pr-is-created-for-an-issue-within-30-days)
+   - [If a SIG Label Is Assigned, but No Action Is Taken Within 30 Days](#if-a-sig-label-is-assigned-but-no-action-is-taken-within-30-days)
+   - [If an Issue Has No Activity After 90 Days](#if-an-issue-has-no-activity-after-90-days)
  - [Planning Milestones](#planning-milestones)
-  - [Some pointers about bugs](#some-pointers-about-bugs)
+  - [Some Pointers About Bugs](#some-pointers-about-bugs)
  - [Footnotes](#footnotes)
    - [Support Requests: Channels](#support-requests-1)
-   - [User support response: example](#user-support-response-example)
+   - [User Support Response: Example](#user-support-response-example)
  
 **SHOULD THIS BE INCLUDED?**
 - [Set the `kind` issue to validate type (feature, documentation, bug, etc.)]
@@ -51,13 +50,13 @@ These guidelines serve as a primary document for triaging incoming issues to Kub
 
 **Note:** These guidelines only apply to the Kubernetes repository. Usage for other Kubernetes-related GitHub repositories is TBD.
 
-## What is triaging?
+## What Is Triaging?
 Issue triage is a process by which a SIG intakes and reviews new GitHub issues and requests, and organizes them to be actioned—either by its own members, or by other SIGs. Triaging involves categorizing issues and pull requests based on factors such as priority/urgency, SIG ownership of the issue, and the issue kind (bug, feature, etc.)
 - the SIG or SIGs responsible for handling the issue or pull request
 
-Triage can happen asynchronously and continously, or in regularly scheduled meetings. Several Kubernetes SIGs and projects have adopted their own approaches to triaging. 
+Triage can happen asynchronously and continuously, or in regularly scheduled meetings. Several Kubernetes SIGs and projects have adopted their own approaches to triaging. 
 
-## Why is triaging beneficial?
+## Why Is Triaging Beneficial?
 SIGs who triage regularly say it:
 - speeds up issue management
 - keeps contributors engaged by shortening response times
@@ -94,12 +93,12 @@ Some of its features:
    - regexp (label: priority/.*)
    - reactions (reactions: >=5)
    - comment popularity (comments-per-month: >0.9)
-- Multi-player mode: for simultaneous group triage of a pool of issues
+- Multiplayer mode: for simultaneous group triage of a pool of issues
 - Button to open issue groups as browser tabs (pop-ups must be disabled)
 - "Shift-Reload" for live data pull
 
 ### GitHub Project Boards
-GitHub offers project boards, set up like kanban boards, to help teams organize and track their workflow in order to get work done. The Release Team has come to depend on [their project board](https://github.com/orgs/kubernetes/projects/29) for planning new Kubernetes releases; they also use it as an archiveto show the work Done for past releases. Other SIGs using project boards:
+GitHub offers project boards, set up like kanban boards, to help teams organize and track their workflow in order to get work done. The Release Team has come to depend on [their project board](https://github.com/orgs/kubernetes/projects/29) for planning new Kubernetes releases; they also use it as an archive to show the work Done for past releases. Other SIGs using project boards:
 - [Contributor Experience](https://github.com/orgs/kubernetes/projects/1)
 - [Network](https://github.com/orgs/kubernetes/projects/10)
 - [windows](https://github.com/orgs/kubernetes/projects/8)
@@ -114,7 +113,7 @@ The CNCF has created a [suite of Grafana dashboards and charts](https://k8s.devs
 ## Process Pointers and Advice from SIGs
 Several SIGs consistently meet weekly or monthly to triage issues. Here are some details about their processes:
 
-### Running a triage meeting: Tips from api-machinery
+### Running a Triage Meeting: Tips from api-machinery
 According to SIG Chair Federico Bongiovanni (**[@fedebongio](https://github.com/fedebongio)**), triage meetings offer a great opportunity for newcomers to listen, learn, and start contributing. The SIG holds triage meetings every Tuesday and Thursday and archives meetings via its [Youtube playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R); here is an [example](https://www.youtube.com/watch?v=bRptR9vd4S8&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R&index=2&t=13s). 
 
 Federico says that consistency and a regular, fixed schedule are key to success. The SIG has noted that regular, small meetings are better than infrequent, large meetings.
@@ -133,10 +132,10 @@ Some other pointers from Federico:
 - We ensure participation from the entire SIG and support company diversity. 
 - We use this opportunity to mark ["help needed", "good first issue"](#help-wantedgood-first-issues).
 
-### Triage guide, by cluster-lifecycle
+### Triage Guide by cluster-lifecycle
 has developed a [triaging page](https://github.com/kubernetes/community/blob/72ee7150e13af39acf45cf4ed770a75b2698cdb4/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
 
-## Step One: Review newly created open issues
+## Step One: Review Newly Created Open Issues
 Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). New, untriaged issues come without labels attached. SIG leads should identify at least one SIG member to serve as a first point of contact for new issues.
 
 Labels are the primary tools for triaging. [Here's a comprehensive label list](https://github.com/kubernetes/kubernetes/labels).
@@ -159,7 +158,7 @@ Use [these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%9
 
 Depending on your permissions, either close or comment on any issues that are identified as support requests, duplicates, or not-reproducible bugs, or that lack enough information from the reporter.
  
-### Support requests
+### Support Requests
 Some people mistakenly use GitHub issues to file support requests—usually asking for help configuring some aspect of Kubernetes.
 * First, apply the `triage/support` label, which is directed to our support structures (see below) 
 * Then, close or comment
@@ -169,10 +168,10 @@ Please find more detailed information about Support Requests in the [Footnotes s
 ### Duplicates
 * Duplicates of other open issues should have the self-readable label `triage/duplicate`, then be commented on or closed. 
 
-### Abandoned or wrongly placed issues
+### Abandoned or Wrongly Placed Issues
 Depending on your permissions, either close or comment on it.
 
-### Needs more information
+### Needs More Information
 * The `triage/needs-information` label indicates an issue needs more information in order to work on it; comment on or close it.
 
 ### Unresolved
@@ -193,7 +192,7 @@ If you can't reproduce it:
 If you need more information to further work on the issue:
 * let the reporter know it by adding an issue comment followed by label `triage/needs-information`.
 
-In all cases, if you do not get a response in 20 days then close the issue with an appropriate comment. If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, just comment your findings.
+In all cases, if you do not get a response in 20 days then close the issue with an appropriate comment. If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, please leave a comment describing your findings.
 
 ### Help Wanted/Good First Issues
 To identify issues that are specifically groomed for new contributors, we use the [help wanted](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
@@ -203,7 +202,7 @@ and [good first issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aop
 and the `good first issue` label with the `/good-first-issue` command. Please note that adding the `good first issue` label will also automatically add the `help wanted` label.
 * If an issue has these labels but does not satisfy the guidelines, please ask for more details to be added to the issue or remove the labels using the `/remove-help` or `/remove-good-first-issue` commands.
 
-## Step Three: Define priority
+## Step Three: Define Priority
 We use GitHub labels for prioritization. If an issue lacks a `priority` label, this means it has not been reviewed and prioritized yet. 
 
 We aim for consistency across the entire project. However, if you notice an issue that you believe to be incorrectly prioritized, please leave a comment offering your counter-proposal and we will evaluate it.
@@ -216,7 +215,7 @@ We aim for consistency across the entire project. However, if you notice an issu
 | **priority/backlog**  | General agreement that this is a nice-to-have, but no one's available to work on it anytime soon. Community contributions would be most welcome in the meantime, though it might take a while to get them reviewed if reviewers are fully occupied with higher-priority issues—for example, immediately before a release.| [**XXXX**]  | 
 | **priority/awaiting-more-evidence** | Possibly useful, but not yet enough support to actually get it done. | Mostly placeholders for potentially good ideas, so that they don't get completely forgotten, and can be referenced or deduped every time they come up | 
 
-## Step Four: Find and set the right SIG(s) to own an issue 
+## Step Four: Find and Set the Right SIG(s) to Own an Issue 
 Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [The bot](https://go.k8s.io/bot-commands) assists in finding a proper SIG to own an issue.
 
 * For example, typing `/sig network` in a comment should add the sig/network label.
@@ -226,17 +225,17 @@ Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [Th
 * If you feel an issue should warrant a notification, ping a team with an @ mention, in this format: `@kubernetes/sig-<group-name>-<group-suffix>`. 
  - Here, the `<group-suffix>` can be one of `bugs, feature-requests, pr-reviews, test-failures, proposals`. For example, `@kubernetes/sig-cluster-lifecycle-bugs, can you have a look at this?`
 
-### Self-assigning
+### Self-Assigning
 If you are an issue reporter or a component organization member, and you think you can fix the issue, assign it to yourself with *just* the `/assign` label. If you cannot self-assign for permissions-related reasons, leave a comment that you'd like to claim it and work on creating a PR.
 
 ## Step Five: Follow Up
 ### If no PR is created for an issue within 30 days
 A Triage engineer should contact the owner and ask them to either create a PR or release ownership.
 
-### If a SIG label is assigned, but no action is taken within 30 days
+### If a SIG label Is Assigned, but No Action Is Taken Within 30 Days
 If you find an issue with a SIG label assigned, but there's no evidence of movement or discussion within 30 days, then gently poke the SIG about this pending issue. Also, consider attending one of their meetings to bring up the issue, if you feel this is appropriate.
 
-### If an issue has no activity after 90 days
+### If an Issue Has No Activity After 90 Days
 When this happens, the `fejta-bot` adds the `lifecycle/stale` label to that issue. You can block the bot by applying the `/lifecycle frozen` label preemptively, or remove the bale with the `/remove-lifecycle stale` label. The `fejta-bot` adds comments in the issue that include additional details. If you take neither step, the issue will eventually be auto-closed. 
 
 To gain a better understanding of an issue triaged by the `fejta-bot`, so that you can close it, you can add any of the `triage/*` labels described above.
@@ -244,16 +243,14 @@ To gain a better understanding of an issue triaged by the `fejta-bot`, so that y
 ## Planning Milestones
 Please visit the developer guide section for detailed information on [targeting features, issues and PRs to release milestones](https://github.com/LappleApple/community/blob/master/contributors/devel/sig-release/release.md). We use milestones, based on minor version, for determining if a bug should be fixed as part of the next Kubernetes release. Every minor release has two milestones, and they are increasingly scrutinized in the weeks just before a release. When our milestones are empty, we can release a new version of Kubernetes.
 
-### Some pointers about bugs
+### Some Pointers About Bugs
 - **vX.Y**: The list of bugs that will be merged for that milestone once ready.
-- **vX.Y-candidate**: The list of bugs that we might merge for that milestone. A
-bug shouldn't be in this milestone for more than a day or two towards the end of the milestone's lifespan. It should either be triaged either into vX.Y, or moved out of the release milestones.
+- **vX.Y-candidate**: The list of bugs that we might merge for that milestone. A bug shouldn't be in this milestone for more than a day or two towards the end of the milestone's lifespan. It should either be triaged either into vX.Y, or moved out of the release milestones.
 - The above [priority](#define-priority) scheme still applies. 
-- A few days before release, we will probably move all `priority/important-soon` and `priority/important-longterm` bugs out of
-that milestone in bulk.
+- A few days before release, we will probably move all `priority/important-soon` and `priority/important-longterm` bugs out of that milestone in bulk.
 
 ## Footnotes 
-### Support requests
+### Support Requests: Channels
 These should be directed to the following:
 * [User documentation](https://kubernetes.io/docs/home/) and
 [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
@@ -265,10 +262,10 @@ These should be directed to the following:
 
 * [Discussion forums](https://discuss.kubernetes.io)
 
-### User support response example
+### User Support Response: Example
 
 If you see support questions on kubernetes-dev@googlegroups.com or issues asking for
-support try to redirect them to Stack Overflow. Example response:
+support, try to redirect them to Stack Overflow. Example response:
 
 ```code
 Please re-post your question to [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
