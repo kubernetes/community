@@ -83,6 +83,8 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
+- **Contact:**
+  - Slack: [#sig-network-service-apis](https://kubernetes.slack.com/messages/sig-network-service-apis)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
