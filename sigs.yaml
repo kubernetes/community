@@ -2207,9 +2207,6 @@ sigs:
   label: ui
   leadership:
     chairs:
-    - github: danielromlein
-      name: Dan Romlein
-      company: Google
     - github: floreks
       name: Sebastian Florek
       company: Loodse
@@ -2219,6 +2216,9 @@ sigs:
     - github: maciaszczykm
       name: Marcin Maciaszczyk
       company: Loodse
+    emeritus_leads:
+    - github: danielromlein
+      name: Dan Romlein
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
