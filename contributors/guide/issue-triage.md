@@ -39,7 +39,7 @@ slug: "issue-triage"
  - [Planning Milestones](#planning-milestones)
   - [Some Pointers About Bugs](#some-pointers-about-bugs)
  - [Footnotes](#footnotes)
-   - [Support Requests: Channels](#support-requests-1)
+   - [Support Requests: Channels](##support-requests-channels)
    - [User Support Response: Example](#user-support-response-example)
  
 **SHOULD THIS BE INCLUDED?**
