@@ -101,7 +101,7 @@ GitHub offers project boards, set up like kanban boards, to help teams organize 
 - [Network](https://github.com/orgs/kubernetes/projects/10)
 - [Windows](https://github.com/orgs/kubernetes/projects/8)
 
-We encourage more SIGs to use project boards to enhance visibility and tracking. If you'd like some help getting started, visit [GitHub's documentation](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) or reach out to **#sig-contribex**.
+We encourage more SIGs to use project boards to enhance visibility and tracking. If you'd like some help getting started, visit [GitHub's documentation](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) or reach out to [SIG Contributor Experience](/sig-contributor-experience/README.md#contact).
 
 ### DevStats
 The CNCF has created a [suite of Grafana dashboards and charts](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&from=now-7d&to=now-1h&refresh=15m) for collecting metrics about Kubernetes. These help SIGs to view real-time metrics on many aspects of their workflow, including:
