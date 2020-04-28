@@ -164,7 +164,7 @@ Some people mistakenly use GitHub issues to file support requests—usually aski
 Please find more detailed information about Support Requests in the [Footnotes section](#footnotes).
 
 ### Duplicates
-* Duplicates of other open issues should have the self-readable label `triage/duplicate`, then be commented on or closed. 
+* Duplicates of other open issues should be left with a comment referencing the original issue and closed.
 
 ### Abandoned or Wrongly Placed Issues
 Depending on your permissions, either close or comment on it.
