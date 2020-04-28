@@ -85,11 +85,11 @@ Opening new issues and leaving comments on other people's issues are possible fo
 Some of its features:
 - Queries across multiple repositories
 - Queries that are not possible on GitHub:
-   - conversation direction (tag: recv)
-   - duration (updated: +30d)
-   - regexp (label: priority/.*)
-   - reactions (reactions: >=5)
-   - comment popularity (comments-per-month: >0.9)
+   - conversation direction (`tag: recv`, `tag: send`)
+   - duration (`updated: +30d`)
+   - regexp (`label: priority/.*`)
+   - reactions (`reactions: >=5`)
+   - comment popularity (`comments-per-month: >0.9`)
 - Multiplayer mode: for simultaneous group triage of a pool of issues
 - Button to open issue groups as browser tabs (pop-ups must be disabled)
 - "Shift-Reload" for live data pull
