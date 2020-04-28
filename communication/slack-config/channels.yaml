@@ -20,6 +20,7 @@ channels:
   - name: awesome-kubernetes
   - name: aws-authenticator
   - name: bazel
+  - name: bindings-discuss
   - name: bootkube
   - name: brigade
   - name: cdk
