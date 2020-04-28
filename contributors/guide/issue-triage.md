@@ -26,7 +26,6 @@ slug: "issue-triage"
    - [Duplicates](#duplicates)
    - [Abandoned or Wrongly Placed Issues](#abandoned-or-wrongly-placed-issues)
    - [Needs More Information](#needs-more-information)
-   - [Unresolved](#unresolved)
    - [Bugs](#bugs)
    - [Help Wanted/Good First Issues](#help-wantedgood-first-issues)
  - [Step Three: Define Priority](#step-three-define-priority)
@@ -171,9 +170,6 @@ Depending on your permissions, either close or comment on it.
 
 ### Needs More Information
 * The `triage/needs-information` label indicates an issue needs more information in order to work on it; comment on or close it.
-
-### Unresolved
-* The `triage/unresolved` label indicates an issue that can not be resolved.
 
 ### Bugs
 First, validate if the problem is a bug by trying to reproduce it.
