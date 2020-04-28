@@ -75,7 +75,7 @@ This aims to walk you through a standard triaging process, first covering tools 
 These  tools that your SIG can use to make the process simpler, more efficient and faster.
 
 ### Permissions and the Bot
-Opening new issues and leaving comments on other people's issues are possible for all contributors. However, permission to assign specific labels (e.g. `triaged`), change milestones, or close other contributors' issues is only granted to the author of an issue, assignees, and component organization members. For this reason, we use a bot to manage labelling and triaging. The bot has a set of [commands and permissions](https://go.k8s.io/bot-commands).  
+Opening new issues and leaving comments on other people's issues are possible for all contributors. However, permission to assign specific labels (e.g. `triage`), change milestones, or close other contributors issues is only granted to the author of an issue, assignees, and organization members. For this reason, we use a bot to manage labelling and triaging. For a full list of commands and permissions, see the [Prow command reference page](https://go.k8s.io/bot-commands).
 
 ### Gubernator
 [Gubernator](https://gubernator.k8s.io/pr) offers a dashboard that tells you which pull requests are waiting for your feedback and which PRs are waiting for the contributor to respond. 
