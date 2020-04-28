@@ -80,8 +80,6 @@ Opening new issues and leaving comments on other people's issues are possible fo
 ### Gubernator
 [Gubernator](https://gubernator.k8s.io/pr) offers a dashboard that tells you which pull requests are waiting for your feedback and which PRs are waiting for the contributor to respond. Please note that Gubernator only shows *pull requests*. You will not see which issues are assigned to you.
 
-This tool is also a frontend for displaying Kubernetes test results stored in GCS. Please visit [sig-testing's extensive documentation](https://github.com/kubernetes/community/blob/362bc1c406a604dbe6a56e60146a67fcce56d5cf/contributors/devel/sig-testing/gubernator.md) on the benefits it offers, such as simplifying the debugging process by automating many of the steps commonly taken in searching through logs to track down failures, and displaying relevant logs.
-
 ### Triage Party
 [Triage Party](https://github.com/google/triage-party) is a tool for triaging incoming GitHub issues for large open-source projects, built with the GitHub API. Made public in April 2020, it facilitates "massively multi-player GitHub triage" and reduces contributor response latency. 
 
