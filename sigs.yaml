@@ -1593,6 +1593,8 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
   - name: service-apis
+    contact:
+      slack: sig-network-service-apis
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/service-apis/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
