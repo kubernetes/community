@@ -131,7 +131,7 @@ Some other pointers from Federico:
 - We use this opportunity to mark ["help needed", "good first issue"](#help-wantedgood-first-issues).
 
 ### Triage Guide by cluster-lifecycle
-has developed a [triaging page](https://github.com/kubernetes/community/blob/72ee7150e13af39acf45cf4ed770a75b2698cdb4/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
+has developed a [triaging page](/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
 
 ## Step One: Review Newly Created Open Issues
 Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). New, untriaged issues come without labels attached. SIG leads should identify at least one SIG member to serve as a first point of contact for new issues.
