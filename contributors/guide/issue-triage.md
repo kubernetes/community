@@ -104,7 +104,7 @@ GitHub offers project boards, set up like kanban boards, to help teams organize 
 We encourage more SIGs to use project boards to enhance visibility and tracking. If you'd like some help getting started, visit [GitHub's documentation](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) or reach out to [SIG Contributor Experience](/sig-contributor-experience/README.md#contact).
 
 ### DevStats
-The CNCF has created a [suite of Grafana dashboards and charts](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&from=now-7d&to=now-1h&refresh=15m) for collecting metrics about Kubernetes. These help SIGs to view real-time metrics on many aspects of their workflow, including:
+The CNCF has created a [suite of Grafana dashboards and charts](https://devstats.cncf.io/) for collecting metrics related to all the CNCF projects. The [Kubernetes dashboard](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&refresh=15m) can be used to help SIGs view real-time metrics on many aspects of their workflow, including:
 - [Issue Velocity](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&from=1587157094179&to=1587758294179&refresh=15m&panelId=8&fullscreen): How quickly issues are resolved
 - [PR Velocity](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&from=1587157166022&to=1587758366022&refresh=15m&panelId=9&fullscreen): Including PR workload per SIG, PR time to approve and merge, and other data
 
