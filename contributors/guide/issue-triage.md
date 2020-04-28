@@ -176,7 +176,7 @@ First, validate if the problem is a bug by trying to reproduce it.
 
 If you can reproduce it:
 * [Define its priority](##step-three-define-priority)
-* Do a quick duplicate search to see if the issue has been reported already. If a duplicate is found, let the issue reporter know it by marking it duplicate. Label such issues as `triage/duplicate`.
+* Do a quick duplicate search to see if the issue has been reported already. If a duplicate is found, let the issue reporter know, reference the original issue, and close the duplicate.
 
 If you can't reproduce it:
 * label it as a `triage/not-reproducible`
