@@ -176,7 +176,6 @@ If you can reproduce it:
 * Do a quick duplicate search to see if the issue has been reported already. If a duplicate is found, let the issue reporter know, reference the original issue, and close the duplicate.
 
 If you can't reproduce it:
-* label it as a `triage/not-reproducible`
 * Contact the issue reporter with your findings 
 * Close the issue if both the parties agree that it could not be reproduced.
 
