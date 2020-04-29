@@ -232,7 +232,6 @@ If you find an issue with a SIG label assigned, but there's no evidence of movem
 ### If an Issue Has No Activity After 90 Days
 When this happens, the `fejta-bot` adds the `lifecycle/stale` label to that issue. You can block the bot by applying the `/lifecycle frozen` label preemptively, or remove the bale with the `/remove-lifecycle stale` label. The `fejta-bot` adds comments in the issue that include additional details. If you take neither step, the issue will eventually be auto-closed. 
 
-To gain a better understanding of an issue triaged by the `fejta-bot`, so that you can close it, you can add any of the `triage/*` labels described above.
 
 ## Planning Milestones
 Please visit the developer guide section for detailed information on [targeting features, issues and PRs to release milestones](https://github.com/LappleApple/community/blob/master/contributors/devel/sig-release/release.md). We use milestones, based on minor version, for determining if a bug should be fixed as part of the next Kubernetes release. Every minor release has two milestones, and they are increasingly scrutinized in the weeks just before a release. When our milestones are empty, we can release a new version of Kubernetes.
