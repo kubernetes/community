@@ -220,7 +220,7 @@ Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [Th
  - Here, the `<group-suffix>` can be one of `bugs, feature-requests, pr-reviews, test-failures, proposals`. For example, `@kubernetes/sig-cluster-lifecycle-bugs, can you have a look at this?`
 
 ### Self-Assigning
-If you are an issue reporter or a component organization member, and you think you can fix the issue, assign it to yourself with *just* the `/assign` label. If you cannot self-assign for permissions-related reasons, leave a comment that you'd like to claim it and work on creating a PR.
+If you think you can fix the issue, assign it to yourself with *just* the `/assign` label. If you cannot self-assign for permissions-related reasons, leave a comment that you'd like to claim it and work on creating a PR.
 
 ## Step Five: Follow Up
 ### If no PR is created for an issue within 30 days
