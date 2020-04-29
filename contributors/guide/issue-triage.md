@@ -32,8 +32,8 @@ slug: "issue-triage"
  - [Step Four: Find and Set the Right SIG(s) to Own an Issue](#step-four-find-and-set-the-right-sigs-to-own-an-issue)
    - [Self-Assigning](#self-assigning)
  - [Step Five: Follow Up](#step-five-follow-up)
-   - [If No PR Is Created for an Issue Within 30 Days](#if-no-pr-is-created-for-an-issue-within-30-days)
-   - [If a SIG Label Is Assigned, but No Action Is Taken Within the Current Release Cycle](#if-a-sig-label-is-assigned-but-no-action-is-taken-within-30-days)
+   - [If No PR Is Created for an Issue Within the Current Release Cycle](#if-no-pr-is-created-for-an-issue-within-the-current release cycle)
+   - [If a SIG Label Is Assigned, but No Action Is Taken Within 30 Days](#if-a-sig-label-is-assigned-but-no-action-is-taken-within-30-days)
    - [If an Issue Has No Activity After 90 Days](#if-an-issue-has-no-activity-after-90-days)
  - [Footnotes](#footnotes)
    - [Support Requests: Channels](##support-requests-channels)
@@ -153,7 +153,7 @@ Depending on your permissions, either close or comment on any issues that are id
  
 ### Support Requests
 Some people mistakenly use GitHub issues to file support requests. Usually they're asking for help configuring some aspect of Kubernetes. Here's how to handle these:
-* First, direct the person to discuss on Slack [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes) and visit the [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
+* First, direct the person to discuss the issue on [Stack Overflow](https://stackoverflow.com/questions/tagged/kubernetes) and visit the [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
 * Then, apply the `triage/support` label, which is directed to our support structures (see below), and apply the `close` label
 
 Please find more detailed information about Support Requests in the [Footnotes section](#footnotes).
@@ -218,10 +218,10 @@ Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [Th
 If you think you can fix the issue, assign it to yourself with *just* the `/assign` label. If you cannot self-assign for permissions-related reasons, leave a comment that you'd like to claim it and work on creating a PR.
 
 ## Step Five: Follow Up
-### If no PR is created for an issue within 30 days
+### If no PR is created for an Issue Within the Current Release Cycle
 If you see any issue which is owned by a developer but a PR is not created in 30 days, a Triage engineer should contact the issue owner and ask them to either create a PR or release ownership.
 
-### If a SIG label Is Assigned, but No Action Is Taken Within the Current Release Cycle
+### If a SIG label Is Assigned, but No Action Is Taken Within 30 Days
 If you find an issue with a SIG label assigned, but there's no evidence of movement or discussion within 30 days, then gently poke the SIG about this pending issue. Also, consider attending one of their meetings to bring up the issue, if you feel this is appropriate.
 
 ### If an Issue Has No Activity After 90 Days
