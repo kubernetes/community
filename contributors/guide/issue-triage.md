@@ -36,7 +36,6 @@ slug: "issue-triage"
    - [If a SIG Label Is Assigned, but No Action Is Taken Within 30 Days](#if-a-sig-label-is-assigned-but-no-action-is-taken-within-30-days)
    - [If an Issue Has No Activity After 90 Days](#if-an-issue-has-no-activity-after-90-days)
  - [Planning Milestones](#planning-milestones)
-  - [Some Pointers About Bugs](#some-pointers-about-bugs)
  - [Footnotes](#footnotes)
    - [Support Requests: Channels](##support-requests-channels)
    - [User Support Response: Example](#user-support-response-example)
@@ -111,18 +110,16 @@ The CNCF has created a [suite of Grafana dashboards and charts](https://devstats
 Several SIGs consistently meet weekly or monthly to triage issues. Here are some details about their processes:
 
 ### Running a Triage Meeting: Tips from api-machinery
-According to SIG Chair Federico Bongiovanni (**[@fedebongio](https://github.com/fedebongio)**), triage meetings offer a great opportunity for newcomers to listen, learn, and start contributing. The SIG holds triage meetings every Tuesday and Thursday and archives meetings via its [Youtube playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R); here is an [example](https://www.youtube.com/watch?v=bRptR9vd4S8&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R&index=2&t=13s). 
+The api-machinery SIG has found that triage meetings offer valuable opportunities for newcomers to listen, learn, and start contributing. api-machinery hold triage meetings every Tuesday and Thursday and archive recordings via their [Youtube playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R); here is an [example](https://www.youtube.com/watch?v=bRptR9vd4S8&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R&index=2&t=13s). 
 
-Federico says that consistency and a regular, fixed schedule are key to success. The SIG has noted that regular, small meetings are better than infrequent, large meetings.
-
-In a typical meeting, they sort through every issue that wasn't triaged since last meeting, using a simple query and issue # to track Open PRs and Issues. They usually then:
+In a typical triage meeting, api-machinery members sort through every issue that they haven't triaged since the previous meeting, using a simple query and issue # to track Open PRs and Issues. They usually then:
 - read through the comments and the code briefly to understand what the issue is about.
 - determine by consensus if it belongs to the api-machinery SIG or not. If not, remove the `sig/api-machinery` label.
 - label other SIGs, if appropriate
 - discuss briefly the technical implications
 - assign people with expertise in the domain to review, comment, reject, etc.
 
-Some other pointers from Federico:
+api-machinery has found that consistently meeting on a regular, fixed schedule is key to the success of a triaging effort. More frequent, small meetings are better than infrequent, large meetings, they've found. A few other pointers:
 - We try to balance the load, and ask people if they are okay taking on an issue before assigning it to them
 - We skip issues that are closed
 - We also skip cherrypicks, because we consider that the code change was reviewed in the original PR
@@ -235,12 +232,6 @@ When this happens, the `fejta-bot` adds the `lifecycle/stale` label to that issu
 
 ## Planning Milestones
 Please visit the developer guide section for detailed information on [targeting features, issues and PRs to release milestones](https://github.com/LappleApple/community/blob/master/contributors/devel/sig-release/release.md). We use milestones, based on minor version, for determining if a bug should be fixed as part of the next Kubernetes release. Every minor release has two milestones, and they are increasingly scrutinized in the weeks just before a release. When our milestones are empty, we can release a new version of Kubernetes.
-
-### Some Pointers About Bugs
-- **vX.Y**: The list of bugs that will be merged for that milestone once ready.
-- **vX.Y-candidate**: The list of bugs that we might merge for that milestone. A bug shouldn't be in this milestone for more than a day or two towards the end of the milestone's lifespan. It should either be triaged either into vX.Y, or moved out of the release milestones.
-- The above [priority](#define-priority) scheme still applies. 
-- A few days before release, we will probably move all `priority/important-soon` and `priority/important-longterm` bugs out of that milestone in bulk.
 
 ## Footnotes 
 ### Support Requests: Channels
