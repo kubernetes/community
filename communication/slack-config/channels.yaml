@@ -328,6 +328,7 @@ channels:
   - name: testing-ops
   - name: tilt
   - name: tn-users
+  - name: topology-aware-scheduling
   - name: tor-controller
   - name: tr-events
   - name: tr-users
