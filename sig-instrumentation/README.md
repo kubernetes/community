@@ -29,6 +29,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Frederic Branczyk (**[@brancz](https://github.com/brancz)**), Red Hat
+* David Ashpole (**[@dashpole](https://github.com/dashpole)**), Google
 
 ## Emeritus Leads
 
