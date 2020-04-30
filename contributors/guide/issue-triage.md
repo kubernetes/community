@@ -28,6 +28,7 @@ slug: "issue-triage"
    - [Needs More Information](#needs-more-information)
    - [Bugs](#bugs)
    - [Help Wanted/Good First Issues](#help-wantedgood-first-issues)
+   - [Kind Labels](#kind-labels)
  - [Step Three: Define Priority](#step-three-define-priority)
  - [Step Four: Find and Set the Right SIG(s) to Own an Issue](#step-four-find-and-set-the-right-sigs-to-own-an-issue)
    - [Self-Assigning](#self-assigning)
@@ -38,9 +39,6 @@ slug: "issue-triage"
  - [Footnotes](#footnotes)
    - [Support Requests: Channels](##support-requests-channels)
    - [User Support Response: Example](#user-support-response-example)
- 
-**SHOULD THIS BE INCLUDED?**
-- [Set the `kind` issue to validate type (feature, documentation, bug, etc.)]
   
 ## Scope
 These guidelines serve as a primary document for triaging incoming issues to Kubernetes. SIGs and projects are encouraged to use this guidance as a starting point, and customize to address specific triaging needs.
@@ -190,6 +188,9 @@ and [good first issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aop
 * If the issue satisfies these guidelines, you can add the `help wanted` label with the `/help` command
 and the `good first issue` label with the `/good-first-issue` command. Please note that adding the `good first issue` label will also automatically add the `help wanted` label.
 * If an issue has these labels but does not satisfy the guidelines, please ask for more details to be added to the issue or remove the labels using the `/remove-help` or `/remove-good-first-issue` commands.
+
+### Kind Labels
+Usually the `kind` label is applied by the person submitting the issue. Issues that feature the wrong `kind` (for example, support requests labelled as bugs) can be corrected by someone triaging; double-checking is a good approach. Our [issue templates](https://github.com/kubernetes/kubernetes/issues/new/choose) aim to steer people to the right kind.
 
 ## Step Three: Define Priority
 We use GitHub labels for prioritization. If an issue lacks a `priority` label, this means it has not been reviewed and prioritized yet. 
