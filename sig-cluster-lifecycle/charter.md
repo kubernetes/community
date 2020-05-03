@@ -9,7 +9,7 @@ SIG Cluster Lifecycle’s objective is to simplify creation, configuration, upgr
 The following topics fall under ownership of this SIG:
 
 - Improving the Kubernetes user experience for cluster administration.
-- Tools that assist in the creation, configuration, upgrade, downgrade, and teardown of Kubernetes control plane components. 
+- Tools that assist in the creation, configuration, upgrade, downgrade, and teardown of Kubernetes control plane components.
 - Portable APIs for provisioning, configuration, upgrade/downgrade, and de-provisioning of nodes.
 - Tools that assist in management of configuration of Kubernetes components.
 - The configuration of core add-ons that are required for cluster bootstrapping.
@@ -22,11 +22,10 @@ The following topics fall under ownership of this SIG:
 
 #### Cross-cutting and Externally Facing Processes
 
-- This SIG works closely with SIG Release during the end of the cycle, because of how the release of kubeadm is currently managed. The process requires a lock-step coordination which is outlined [here](https://github.com/kubernetes/kubeadm/blob/master/docs/release-cycle.md).
 - The SIG recommends and verifies compatibility of critical cluster add-ons for networking, network policy, service discovery, etc. The SIG maintains the health check of container images for some add-ons that are required for cluster bootstrapping. While the SIG could provide support to users that have add-on related issues, the SIG can decide to delegate issues to the add-on maintainers or other SIGs.
-- The SIG owns the framework for upgrade / downgrade testing of Kubernetes. However, the SIG does not own the individual tests for each feature. While the SIG is often involved in triaging and debugging upgrade or downgrade test failures, the SIG will normally delegate issues to the feature owner for the failing test.
 - The SIG collaborates regularly with SIG Auth in an effort to follow best practices in order to promote secure default clusters.
 - The SIG co-owns cloud provider specific code related to cluster and machine provisioning with the respective SIGs for each cloud provider but does not own the cloud controller manager or any other provider specific code.
+- The SIG ensures that the Kubernetes "release informing" and "release blocking" E2E test jobs that it maintains are in good health.
 
 ### Out of scope
 
@@ -34,7 +33,8 @@ The following topics fall under ownership of this SIG:
 - User interface, or user experience, issues other than cluster bootstrapping or management (see [sig-ui](../sig-ui) and  [sig-cli](../sig-cli)).
 - Node related issues (see [sig-node](../sig-node)).
 - Kubernetes control plane issues:
-   - Control plane component related issues (see [sig-api-machinery](../sig-api-machinery)).
+   - Control plane component related issues (see [sig-api-machinery](../sig-api-machinery) and [sig-scheduling](../sig-scheduling)).
+- Deployment and lifecycle issues related to user application deployments (see [sig-apps](../sig-apps)).
 
 ## Roles and Organization Management
 
@@ -51,7 +51,7 @@ and opts-in to updates and modifications to [sig-governance].
 
 ### Deviations from [sig-governance]
 
-- As SIG cluster lifecycle contains a number of subprojects, the SIG has empowered subproject leads with a number of additional responsibilities, including but not limited to:
+- As SIG Cluster Lifecycle contains a number of subprojects, the SIG has empowered subproject leads with a number of additional responsibilities, including but not limited to:
    * Releases: The subproject owners are responsible for determining the subproject release cadence, producing releases, and communicating releases with SIG Release and SIG Cluster Lifecycle.
    * Backlog grooming: The subproject owners are responsible for ensuring that the issues for the subproject are correctly associated with milestones and that bugs are triaged in a timely manner.
    * PR timeliness: The subproject owners are responsible for ensuring that active pull requests for the subproject are addressed in a timely manner.
