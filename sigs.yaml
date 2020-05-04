@@ -1125,6 +1125,8 @@ sigs:
       tz: UTC
       frequency: biweekly
       url: https://zoom.us/j/144440337
+      archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
     - description: Marketing Team Meeting
       day: Friday
       time: "8:00"
@@ -1159,7 +1161,9 @@ sigs:
       time: "10:00"
       tz: PT (Pacific Time)
       frequency: weekly
-      url: https://docs.google.com/document/d/1oLXv5_rM4f645jlXym_Vd7AUq7x6DV-O87E6tcW1sjU/edit
+      url: https://zoom.us/j/702991595
+      archive_url: https://docs.google.com/document/d/1oLXv5_rM4f645jlXym_Vd7AUq7x6DV-O87E6tcW1sjU/edit
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3SLsQMQT8Pglu1JSmxZwgk
     - description: Office Hours European Edition (Open Q&A for end-user kubernetes
         related questions)
       day: Wednesday
@@ -1173,7 +1177,8 @@ sigs:
       time: "12:00"
       tz: ET (Eastern Time)
       frequency: monthly on 3rd Wednesday
-      url: https://hackmd.io/@k8s/office-hours
+      archive_url: https://hackmd.io/@k8s/office-hours
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3azFUvYJjGn45YbF6C-uIg
   - name: github-management
     description: Manages and controls Github permissions, repos, and groups, including
       Org Membership.
@@ -1186,7 +1191,9 @@ sigs:
       time: "09:30"
       tz: PT (Pacific Time)
       frequency: monthly on 4th Thursday
-      url: https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit
+      url: https://zoom.us/j/442435463
+      archive_url: https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: k8s.io
     description: Creates and maintains shortcuts and automation apps running in the
       k8s.io domain.
@@ -1206,6 +1213,7 @@ sigs:
       tz: PT
       frequency: biweekly
       url: https://zoom.us/j/739807514
+      archive_url: https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit
       recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: repo-infra
     description: Creates and maintains tools and templates for kubernetes-namespace

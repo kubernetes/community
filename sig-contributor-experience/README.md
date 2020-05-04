@@ -64,6 +64,8 @@ Manages operations and policy for upstream community group communication platfor
   - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
 - **Meetings:**
   - APAC Coordinator Meeting: [Thursdays at 5:00 UTC](https://zoom.us/j/144440337) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
   - Marketing Team Meeting: [Fridays at 8:00 PT (Pacific Time)](https://zoom.us/j/596959769) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1IlHAJ131akGhI5ffF4OoVW0PrsVY4C0BB8l-UyQaQVo/edit).
     - [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
@@ -85,16 +87,22 @@ Creates and runs contributor-focused events, such as the Contributor Summit.  Ev
 - **Contact:**
   - Slack: [#events](https://kubernetes.slack.com/messages/events)
 - **Meetings:**
-  - Events Planning Subproject: [Mondays at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1oLXv5_rM4f645jlXym_Vd7AUq7x6DV-O87E6tcW1sjU/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  - Events Planning Subproject: [Mondays at 10:00 PT (Pacific Time)](https://zoom.us/j/702991595) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1oLXv5_rM4f645jlXym_Vd7AUq7x6DV-O87E6tcW1sjU/edit).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3SLsQMQT8Pglu1JSmxZwgk).
   - Office Hours European Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 09:00 ET (Eastern Time)](https://hackmd.io/@k8s/office-hours) (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=ET%20%28Eastern%20Time%29).
-  - Office Hours Western Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 12:00 ET (Eastern Time)](https://hackmd.io/@k8s/office-hours) (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=ET%20%28Eastern%20Time%29).
+  - Office Hours Western Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 12:00 ET (Eastern Time)]() (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=ET%20%28Eastern%20Time%29).
+    - [Meeting notes and Agenda](https://hackmd.io/@k8s/office-hours).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3azFUvYJjGn45YbF6C-uIg).
 ### github-management
 Manages and controls Github permissions, repos, and groups, including Org Membership.
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
   - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
 - **Meetings:**
-  - GitHub Administration Subproject: [Thursdays at 09:30 PT (Pacific Time)](https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit) (monthly on 4th Thursday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:30&tz=PT%20%28Pacific%20Time%29).
+  - GitHub Administration Subproject: [Thursdays at 09:30 PT (Pacific Time)](https://zoom.us/j/442435463) (monthly on 4th Thursday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:30&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### k8s.io
 Creates and maintains shortcuts and automation apps running in the k8s.io domain.
 - **Owners:**
@@ -106,6 +114,7 @@ Oversees and develops programs for helping contributors ascend the contributor l
   - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
 - **Meetings:**
   - sig-contribex mentoring subproject meeting: [Fridays at 10:00 PT](https://zoom.us/j/739807514) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit).
     - [Meeting recordings](https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### repo-infra
 Creates and maintains tools and templates for kubernetes-namespace repositories.
