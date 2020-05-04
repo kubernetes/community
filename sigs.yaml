@@ -1139,13 +1139,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
-    meetings:
-    - description: Non-Code Contributors Meeting
-      day: Wednesday
-      time: "11:00"
-      tz: PT (Pacific Time)
-      frequency: biweekly
-      url: https://docs.google.com/document/d/1gdFWfkrapQclZ4-z4Lx2JwqKsJjXXUOVoLhBzZiZgSk/edit
   - name: devstats
     description: Maintains and updates https://k8s.devstats.cncf.io, including taking
       requests for new charts.
