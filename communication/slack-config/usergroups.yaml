@@ -34,6 +34,7 @@ usergroups:
       - "Rin Oliver"
       - simplytunde
       - Tunde
+      - kaslin
 
   - name: test-infra-oncall
     external: true
