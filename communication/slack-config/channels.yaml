@@ -109,6 +109,7 @@ channels:
   - name: java
   - name: jenkins-ci
   - name: jenkins-x-dev
+  - name: jenkins-x-gsoc
   - name: jenkins-x-user
   - name: jp-dev
   - name: jp-events
