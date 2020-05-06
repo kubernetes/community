@@ -250,6 +250,22 @@ sigs:
       name: John Belamaric
       company: Google
   meetings:
+  - description: Code Organization Office Hours
+    day: Thursday
+    time: "14:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/159990793
+    archive_url: https://docs.google.com/document/d/1HtTI0rJEGP_MSf6eO87aCmx_tzpovPAAg7U2Zxwm8FE/edit#
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP03VEluzh0wpSRPzgve8kI5
+  - description: Conformance Office Hours
+    day: Tuesday
+    time: "19:00"
+    tz: UTC
+    frequency: biweekly
+    url: https://zoom.us/j/427337923
+    archive_url: https://docs.google.com/document/d/1W31nXh9RYAb_VaYkwuPLd1hFxuRX3iU0DmaQ4lkCsX8/edit#
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
   - description: Production Readiness Office Hours
     day: Wednesday
     time: "12:00"
@@ -265,22 +281,6 @@ sigs:
     frequency: biweekly
     url: https://zoom.us/j/845605479
     archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
-  - description: code organization Office Hours
-    day: Thursday
-    time: "14:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/159990793
-    archive_url: https://docs.google.com/document/d/1HtTI0rJEGP_MSf6eO87aCmx_tzpovPAAg7U2Zxwm8FE/edit#
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP03VEluzh0wpSRPzgve8kI5
-  - description: Conformance Office Hours
-    day: Tuesday
-    time: "19:00"
-    tz: UTC
-    frequency: weekly
-    url: https://zoom.us/j/427337923
-    archive_url: https://docs.google.com/document/d/1W31nXh9RYAb_VaYkwuPLd1hFxuRX3iU0DmaQ4lkCsX8/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
   contact:
     slack: sig-architecture
