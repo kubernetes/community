@@ -52,7 +52,7 @@ There are multiple directives:
 - delete
 - delete from primitive list
 
-`replace`, `merge` and `delete` are mutual exclusive.
+`replace`, `merge` and `delete` are mutually exclusive.
 
 ## `replace` Directive
 
