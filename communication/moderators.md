@@ -180,7 +180,6 @@ Moderators pro tempore seats: 10
 | Manjunath Kumatagi      | @mkumatag           | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
 | Pandiyaraja Ramamoorthy | @pontiya            | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
 | Roy Lenferink           | @rlenferink         | EMEA   | [CET - Central European Time](https://time.is/CET)         |
-| Loic Le Dru             | @lledru             | EMEA   | [CET - Central European Time](https://time.is/CET)         |
 | Puja Abbassi            | @puja108            | EMEA   | [CET - Central European Time](https://time.is/CET)         |
 | James Munnelly          | @munnerz            | EMEA   | [GMT - Greenwich Mean Time](https://time.is/GMT)           |
 | Joel Speed              | @JoelSpeed          | EMEA   | [GMT - Greenwich Mean Time](https://time.is/GMT)           |
