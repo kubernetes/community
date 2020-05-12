@@ -51,6 +51,9 @@ The following [subprojects][subproject-definition] are owned by sig-windows:
 ### windows-gmsa
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/windows-gmsa/master/OWNERS
+### windows-samples
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-samples/master/OWNERS
 ### windows-testing
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
