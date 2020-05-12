@@ -2321,6 +2321,9 @@ sigs:
   - name: windows-gmsa
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/windows-gmsa/master/OWNERS
+  - name: windows-samples
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-samples/master/OWNERS
   - name: windows-testing
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
