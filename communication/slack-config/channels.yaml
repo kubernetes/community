@@ -96,6 +96,7 @@ channels:
     id: C67TNP3FF
   - name: hephy-users
     id: C678BMZ89
+  - name: homelab
   - name: id-events
   - name: id-users
   - name: il-users
