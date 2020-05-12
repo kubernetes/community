@@ -115,6 +115,13 @@ environment. Recent Linux distros should work out-of-the-box.
 macOS ships with outdated BSD-based tools. We recommend installing [macOS GNU
 tools].
 
+Developers with Windows machines have two choices available to run the needed tools:
+1. If you're using Windows 10 20h1, then you may [install WSL2] and your distro of choice
+2. If you're using a previous version of Windows, then set up a Linux VM with at least 8GB of memory and 60GB of disk space.
+
+In either case, the same Linux development tools and Kubernetes source code are needed. Start your WSL2 distro or connect 
+to your Linux VM and follow the steps below to install the required tools.
+
 ### make
 
 Kubernetes local build system requires `make` command to be present in your corresponding development platform.
@@ -229,6 +236,12 @@ To build binaries for all platforms:
 make cross
 ```
 
+To build binaries for a specific platform, add `KUBE_BUILD_PLATFORMS=<os>/<arch>`. For example:
+
+```sh
+make cross KUBE_BUILD_PLATFORMS=windows/amd64
+```
+
 #### Install etcd
 
 ```sh
@@ -308,3 +321,4 @@ To check out code to work on, please refer to [this guide](/contributors/guide/g
 [kubernetes.io]: https://kubernetes.io
 [mercurial]: http://mercurial.selenic.com/wiki/Download
 [Build with Bazel]: sig-testing/bazel.md
+[install WSL2]: https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
