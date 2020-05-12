@@ -41,7 +41,7 @@ based framework. It's used for the Kubernetes website and several subprojects.
   follow up with any questions in the issue.
 
 - Once Netlify has been configured, you can preview the site using the Netlify
-  URL (example: `kubernetes-sigs-foo.netlify.com`). After this looks good to you,
+  URL (example: `kubernetes-sigs-foo.netlify.app`). After this looks good to you,
   [request a subproject domain](#subproject-domain-request) and reference the
   issue you created.
 
@@ -105,7 +105,7 @@ k8s.io
 # https://github.com/kubernetes-sigs/foo (@bar)
 foo.sigs:
   type: CNAME
-  value: kubernetes-sigs-foo.netlify.com
+  value: kubernetes-sigs-foo.netlify.app
   ```
 ### Reason for update:
 The sig-foo subproject has requested a netlify site to host its documentation. ref #0000, #0000.
@@ -141,8 +141,8 @@ Netlify admin to follow the procedure.
   updated, HTTPS will be enabled automatically.
 
 - Follow up with the requestor in the issue and let them know the site has been
-  deployed and give them the Netlify site url (site name + `netlify.com`).
-  Example `kubernetes-sigs-foo.netlify.com`. They may use this address for
+  deployed and give them the Netlify site url (site name + `netlify.app`).
+  Example `kubernetes-sigs-foo.netlify.app`. They may use this address for
   testing and use before their DNS Request has been processed.
 
 Once complete, the rest of the Netlify site configuration can be handled by the
