@@ -116,7 +116,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 - **Contact:**
   - Slack: [#cluster-api-vsphere](https://kubernetes.slack.com/messages/cluster-api-vsphere)
 - **Meetings:**
-  - Cluster API vSphere meeting: [Mondays at 11:00 PT (Pacific Time)](https://zoom.us/j/875399243) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API vSphere meeting: [Tuesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/875399243) (biweekly starting Wednesday March 31st, 2020). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu).
 ### etcdadm
