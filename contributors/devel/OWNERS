@@ -1,19 +1,18 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 reviewers:
-  - calebamiles
   - cblecker
   - idvoretskyi
   - spiffxp
   - guineveresaenger
 approvers:
-  - calebamiles
   - cblecker
   - idvoretskyi
   - lavalamp
   - spiffxp
   - thockin
 emeritus_approvers:
+- calebamiles
 - Phillels
 labels:
   - area/developer-guide
