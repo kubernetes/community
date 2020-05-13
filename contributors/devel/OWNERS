@@ -4,7 +4,6 @@ reviewers:
   - calebamiles
   - cblecker
   - idvoretskyi
-  - Phillels
   - spiffxp
   - guineveresaenger
 approvers:
@@ -12,8 +11,9 @@ approvers:
   - cblecker
   - idvoretskyi
   - lavalamp
-  - Phillels
   - spiffxp
   - thockin
+emeritus_approvers:
+- Phillels
 labels:
   - area/developer-guide

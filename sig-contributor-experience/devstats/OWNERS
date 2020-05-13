@@ -4,10 +4,10 @@ reviewers:
   - dims
   - nikhita
 approvers:
-  - Phillels
   - lukaszgryglicki
   - jberkus
 emeritus_approvers:
+  - Phillels
   - spiffxp
 labels:
   - sig/contributor-experience
