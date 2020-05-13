@@ -1145,11 +1145,11 @@ reduce data volume, load on the system, and noise exposed to users.
 
 ## Naming conventions
 
-* Go field names must be CamelCase. JSON field names must be camelCase. Other
+* Go field names must be Pascal case. JSON field names must be camelCase. Other
 than capitalization of the initial letter, the two should almost always match.
-No underscores nor dashes in either.
-* Field and resource names should be declarative, not imperative (DoSomething,
-SomethingDoer, DoneBy, DoneAt).
+No underscores or dashes in either.
+* Field and resource names should be declarative, not imperative (SomethingDoer, 
+DoneBy, DoneAt).
 * Use `Node` where referring to
 the node resource in the context of the cluster. Use `Host` where referring to
 properties of the individual physical/virtual system, such as `hostname`,
