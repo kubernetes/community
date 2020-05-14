@@ -272,6 +272,7 @@ channels:
   - name: schemahero
   - name: se-users
   - name: sealed-secrets
+  - name: seccomp-operator
   - name: shippable
   - name: shipper
   - name: shoutouts
