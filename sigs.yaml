@@ -2464,9 +2464,9 @@ workinggroups:
     - github: dejanb
       name: Dejan Bosanac
       company: Red Hat
+    emeritus_leads:
     - github: ptone
       name: Preston Holmes
-      company: Google
   meetings:
   - description: APAC WG Meeting
     day: Wednesday
