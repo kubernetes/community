@@ -113,6 +113,7 @@ channels:
   - name: jenkins-x-user
   - name: jp-dev
   - name: jp-events
+  - name: jp-mentoring
   - name: jp-users
   - name: jp-users-novice
   - name: jsonnet
